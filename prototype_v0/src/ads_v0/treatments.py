@@ -17,8 +17,8 @@ prospective enforcement, or dependency-aware repair.
 Generation reliability is handled by this common runner rather than by a
 provider-specific treatment. The same retry semantics can therefore be reused
 by P0 later. Successful generations and failed attempts are written into the
-condition-neutral experiment trace, making provider reliability and inference
-cost visible rather than silently hiding them inside an adapter.
+condition-neutral experiment trace, making provider reliability and observable
+inference cost visible rather than silently hiding them inside an adapter.
 """
 
 from __future__ import annotations
@@ -182,9 +182,14 @@ class BaselineTreatmentRunner:
     provider failure may be retried ``max_generation_retries`` additional times
     for the same reasoning turn. Retry attempts are tracked separately so a
     provider cannot appear equally reliable merely because failed calls are
-    hidden. Provider APIs do not always expose token billing for failed network
-    attempts, so reported token totals remain the observable successful-response
-    usage rather than a claim about unknowable provider-side cost.
+    hidden.
+
+    Provider APIs do not always expose usage for failures that happen before a
+    response exists. When a failed response *does* report usage, such as an
+    incomplete reasoning response that exhausted ``max_output_tokens``, those
+    tokens are accumulated and traced exactly like observable usage from a
+    successful generation. Totals therefore mean provider-reported observable
+    usage, not a claim about unknowable provider-side work.
     """
 
     def __init__(
@@ -333,13 +338,16 @@ class BaselineTreatmentRunner:
                 return self.model.generate(tuple(self.messages))
             except Exception as exc:
                 self.generation_failures += 1
-                provider = exc.provider if isinstance(exc, ModelGenerationError) else None
-                error_code = (
-                    exc.error_code if isinstance(exc, ModelGenerationError) else None
+                is_model_error = isinstance(exc, ModelGenerationError)
+                provider = exc.provider if is_model_error else None
+                error_code = exc.error_code if is_model_error else None
+                retryable = exc.retryable if is_model_error else True
+                failed_usage = exc.usage if is_model_error else ModelUsage()
+                provider_metadata = (
+                    dict(exc.provider_metadata) if is_model_error else {}
                 )
-                retryable = (
-                    exc.retryable if isinstance(exc, ModelGenerationError) else True
-                )
+                self._accumulate_usage(failed_usage)
+
                 self.workspace.trace.append(
                     event_type="MODEL_GENERATION_ERROR",
                     phase=self.workspace.phase,
@@ -356,6 +364,12 @@ class BaselineTreatmentRunner:
                         "provider": provider,
                         "error_code": error_code,
                         "retryable": retryable,
+                        "usage": {
+                            "input_tokens": failed_usage.input_tokens,
+                            "output_tokens": failed_usage.output_tokens,
+                            "total_tokens": failed_usage.total_tokens,
+                        },
+                        "provider_metadata": provider_metadata,
                     },
                 )
 
@@ -379,6 +393,11 @@ class BaselineTreatmentRunner:
                             "retryable": retryable,
                             "provider": provider,
                             "error_code": error_code,
+                            "observable_usage_so_far": {
+                                "input_tokens": self.input_tokens,
+                                "output_tokens": self.output_tokens,
+                                "total_tokens": self.total_tokens,
+                            },
                             "retry_budget_exhausted": (
                                 retryable and attempt_in_turn == max_attempts
                             ),
