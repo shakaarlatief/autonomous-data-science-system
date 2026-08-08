@@ -8,11 +8,13 @@ Questions may later be answered, split, merged, reframed, or marked obsolete. Th
 
 ## Q-001. What exactly must the system accomplish to be considered successful?
 
-This is the current highest-priority question.
+**Status:** Partially answered
 
-The project needs a precise first version of its goals, success criteria, requirements, and boundaries before architecture is selected.
+The project has now established a working primary purpose: the system should create the best data-science process for the particular project, where what "best" means depends on project goals, constraints, required outputs, and desired human involvement.
 
-Relevant dimensions include analytical quality, reliability, reproducibility, efficiency, generality, learning value, professional output quality, autonomy, and human control.
+The remaining work is to turn that purpose into explicit success criteria, requirements, boundaries, and evaluation standards.
+
+Relevant dimensions still include analytical quality, reliability, reproducibility, efficiency, generality, learning value, professional output quality, autonomy, and human control.
 
 ---
 
@@ -189,6 +191,8 @@ Possible controls include:
 - human-defined priorities;
 - and adaptive stopping rules.
 
+The current direction is that named modes may be convenient presets rather than the fundamental representation. The deeper problem is how project intent, risk, uncertainty, and expected analytical value should determine where additional effort is spent.
+
 ---
 
 ## Q-014. How should the system decide when further experimentation is no longer worth the cost?
@@ -339,3 +343,59 @@ The current documentation layout is intentionally small.
 Future needs may include dedicated areas for knowledge modules, project cases, experiments, evaluation suites, architecture, implementation, sources, session records, and gap logs.
 
 These should be introduced in response to actual needs rather than speculative completeness.
+
+---
+
+## Q-027. What belongs in the non-negotiable methodological quality floor?
+
+**Current priority:** Highest
+
+The system is intended to adapt its process to project intent, but not every methodological standard should become configurable.
+
+The project must determine which requirements should hold across all project profiles and which can legitimately vary with goals, constraints, risk, depth, and resources.
+
+Candidate quality-floor topics include:
+
+- train, validation, and test integrity;
+- leakage prevention;
+- evaluation design appropriate to intended use;
+- explicit consequential assumptions;
+- evidence versus speculation;
+- reproducibility of consequential experiments;
+- material limitations and uncertainty;
+- and escalation when critical information is missing.
+
+The exact floor has not been defined.
+
+---
+
+## Q-028. How should project intent be represented?
+
+A strong design hypothesis is to distinguish at least:
+
+- objectives;
+- constraints;
+- deliverables;
+- human-control preferences.
+
+The project must determine whether these categories are sufficient, how they interact, what dimensions belong under each, and how conflicts should be resolved.
+
+It must also decide whether project-level, model-level, and operational objectives need explicit separate representation.
+
+---
+
+## Q-029. How should the system prioritize analytical effort?
+
+The system should not spend resources merely because more analysis is possible.
+
+A future prioritization mechanism may need to consider:
+
+- relevance;
+- risk if ignored;
+- uncertainty reduction;
+- expected information value;
+- computational cost;
+- human cost;
+- and likely downstream impact.
+
+The project has not decided whether this should remain qualitative, become a formal scoring system, or use another adaptive strategy.
