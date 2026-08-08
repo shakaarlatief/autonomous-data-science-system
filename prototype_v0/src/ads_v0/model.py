@@ -26,7 +26,7 @@ class ModelMessage:
 
 @dataclass(frozen=True)
 class ModelUsage:
-    """Provider-neutral accounting information for one model generation."""
+    """Provider-neutral accounting information for one model generation attempt."""
 
     input_tokens: int | None = None
     output_tokens: int | None = None
@@ -55,14 +55,23 @@ class ModelGenerationError(RuntimeError):
         Whether repeating the same semantic generation request can reasonably
         recover from the failure. Examples include transient connection errors,
         rate limits, and server errors. Authentication, permission, invalid-model,
-        or malformed-request failures should normally be non-retryable.
+        malformed-request, or exhausted fixed output-budget failures should
+        normally be non-retryable.
     provider:
         Optional provider label used only for diagnostics.
     error_code:
         Optional provider-neutral or HTTP-style code used for diagnostics.
+    usage:
+        Observable token usage reported by the provider for the failed attempt.
+        Some failures occur before a normal provider response and therefore have
+        no observable usage. Incomplete reasoning responses can report real
+        billable usage even though no usable structured command was produced.
+    provider_metadata:
+        Credential-safe diagnostic metadata from the failed provider response.
 
-    Centralizing this distinction prevents provider SDK retry behavior from
-    silently creating different reliability conditions for B0, B1, and P0.
+    Centralizing these fields prevents provider SDK retry behavior and failed
+    response accounting from silently creating different reliability or cost
+    conditions for B0, B1, and P0.
     """
 
     def __init__(
@@ -72,11 +81,15 @@ class ModelGenerationError(RuntimeError):
         retryable: bool,
         provider: str | None = None,
         error_code: str | int | None = None,
+        usage: ModelUsage | None = None,
+        provider_metadata: Mapping[str, Any] | None = None,
     ) -> None:
         super().__init__(message)
         self.retryable = retryable
         self.provider = provider
         self.error_code = error_code
+        self.usage = usage if usage is not None else ModelUsage()
+        self.provider_metadata = dict(provider_metadata or {})
 
 
 class ModelClient(Protocol):
