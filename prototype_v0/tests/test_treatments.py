@@ -16,6 +16,12 @@ def case_bundle(tmp_path_factory: pytest.TempPathFactory) -> Path:
     return output
 
 
+def _assertion(report: dict, assertion_id: str) -> dict:
+    return next(
+        item for item in report["assertions"] if item["assertion_id"] == assertion_id
+    )
+
+
 def _clean_scripted_trajectory() -> list[dict]:
     return [
         {
@@ -149,12 +155,13 @@ def test_b1_gets_static_knowledge_that_b0_does_not(case_bundle: Path) -> None:
 
     b0_system = b0_model.received_messages[0][0].content
     b1_system = b1_model.received_messages[0][0].content
+    normalized_b1_system = " ".join(b1_system.split())
 
     assert "Additional explicit methodological knowledge for this run" not in b0_system
     assert "Additional explicit methodological knowledge for this run" in b1_system
     assert "Learned transformation evaluation boundary" in b1_system
     assert "Prediction-time feature eligibility" in b1_system
-    assert "Repeated IDs do not mechanically imply" in b1_system
+    assert "Repeated IDs do not mechanically imply" in normalized_b1_system
 
 
 def test_baseline_runner_surfaces_premature_test_access_as_evaluator_failure(
