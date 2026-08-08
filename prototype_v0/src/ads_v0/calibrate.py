@@ -7,6 +7,13 @@ run is in progress.
 The first supported real provider adapter is OpenAI Responses API, isolated
 behind the provider-neutral ``ModelClient`` protocol. Provider/model choice is
 experiment configuration rather than a production architecture decision.
+
+Development-calibration defaults are deliberately conservative enough to limit
+paid inference while still leaving substantially more room than the nine-turn
+clean scripted trajectory. They are calibration defaults, not frozen held-out
+budgets. If a strong baseline cannot finish within them, that observation is
+part of the calibration evidence and may justify a condition-neutral budget
+revision before P0 is implemented.
 """
 
 from __future__ import annotations
@@ -18,6 +25,11 @@ from typing import Any
 
 from .openai_model import OpenAIResponsesModel
 from .treatments import BaselineTreatmentRunner, TreatmentRunResult
+
+
+DEFAULT_MAX_MODEL_CALLS = 20
+DEFAULT_MAX_OUTPUT_TOKENS = 10_000
+DEFAULT_MAX_GENERATION_RETRIES = 2
 
 
 def run_openai_baseline(
@@ -54,15 +66,26 @@ def run_openai_baseline(
         trace_path=trace_path,
     )
     result = runner.run()
-    _write_run_artifacts(result, output_dir, model_name, reasoning_effort)
+    _write_run_artifacts(
+        result,
+        output_dir,
+        run_config={
+            "provider": "openai",
+            "requested_model": model_name,
+            "reasoning_effort": reasoning_effort,
+            "max_model_calls": max_model_calls,
+            "max_generation_retries": max_generation_retries,
+            "max_output_tokens_per_call": max_output_tokens,
+        },
+    )
     return result
 
 
 def _write_run_artifacts(
     result: TreatmentRunResult,
     output_dir: Path,
-    requested_model: str,
-    reasoning_effort: str,
+    *,
+    run_config: dict[str, Any],
 ) -> None:
     """Persist condition-neutral outputs plus baseline conversation diagnostics."""
 
@@ -70,8 +93,7 @@ def _write_run_artifacts(
         "condition": result.condition,
         "run_id": result.run_id,
         "completed": result.completed,
-        "requested_model": requested_model,
-        "reasoning_effort": reasoning_effort,
+        "run_config": run_config,
         "model_calls": result.model_calls,
         "generation_attempts": result.generation_attempts,
         "generation_failures": result.generation_failures,
@@ -139,17 +161,27 @@ def _parse_args() -> argparse.Namespace:
         choices=["none", "low", "medium", "high", "xhigh", "max"],
         default="high",
     )
-    parser.add_argument("--max-model-calls", type=int, default=40)
+    parser.add_argument(
+        "--max-model-calls",
+        type=int,
+        default=DEFAULT_MAX_MODEL_CALLS,
+        help="Development-calibration call ceiling; not a frozen held-out budget.",
+    )
     parser.add_argument(
         "--max-generation-retries",
         type=int,
-        default=2,
+        default=DEFAULT_MAX_GENERATION_RETRIES,
         help=(
             "Additional provider-generation attempts allowed for one reasoning turn. "
             "The same policy should be used for all experimental conditions."
         ),
     )
-    parser.add_argument("--max-output-tokens", type=int, default=12_000)
+    parser.add_argument(
+        "--max-output-tokens",
+        type=int,
+        default=DEFAULT_MAX_OUTPUT_TOKENS,
+        help="Per-call ceiling including reasoning/output tokens where applicable.",
+    )
     return parser.parse_args()
 
 
