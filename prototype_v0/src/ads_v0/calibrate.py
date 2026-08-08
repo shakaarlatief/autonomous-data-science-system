@@ -10,10 +10,11 @@ experiment configuration rather than a production architecture decision.
 
 Development-calibration defaults are deliberately conservative enough to limit
 paid inference while still leaving substantially more room than the nine-turn
-clean scripted trajectory. They are calibration defaults, not frozen held-out
-budgets. If a strong baseline cannot finish within them, that observation is
-part of the calibration evidence and may justify a condition-neutral budget
-revision before P0 is implemented.
+clean scripted trajectory. Reasoning-model output budgets must also accommodate
+hidden reasoning tokens, not only visible JSON. The current 30,000-token ceiling
+therefore follows the first real calibration failure and exceeds the 25,000-token
+starting buffer recommended in current OpenAI reasoning guidance. These remain
+calibration defaults, not frozen held-out budgets.
 """
 
 from __future__ import annotations
@@ -28,7 +29,7 @@ from .treatments import BaselineTreatmentRunner, TreatmentRunResult
 
 
 DEFAULT_MAX_MODEL_CALLS = 20
-DEFAULT_MAX_OUTPUT_TOKENS = 10_000
+DEFAULT_MAX_OUTPUT_TOKENS = 30_000
 DEFAULT_MAX_GENERATION_RETRIES = 2
 
 
@@ -180,7 +181,10 @@ def _parse_args() -> argparse.Namespace:
         "--max-output-tokens",
         type=int,
         default=DEFAULT_MAX_OUTPUT_TOKENS,
-        help="Per-call ceiling including reasoning/output tokens where applicable.",
+        help=(
+            "Per-call ceiling including reasoning, visible output, and formatting "
+            "tokens where applicable."
+        ),
     )
     return parser.parse_args()
 
