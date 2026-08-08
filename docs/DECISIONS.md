@@ -217,3 +217,22 @@ The first repository artifacts capture the state reached during the initial desi
 ### Rationale
 
 The initial conversation already contains foundational ideas that should not be allowed to disappear as the chat grows.
+
+---
+
+## D-017. Define the primary purpose in project-relative terms
+
+**Status:** Accepted  
+**Date:** 2026-08-08
+
+The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.
+
+The project therefore does not define maximum automation, maximum predictive performance, maximum analytical depth, minimum cost, or maximum speed as the universal objective of the system.
+
+### Rationale
+
+Different projects legitimately require different balances. A research project, production project, rapid exploratory analysis, learning-focused portfolio project, and high-stakes analytical project should not all optimize the same process characteristics.
+
+Autonomy and predictive performance remain important capabilities, but they are means that should serve project intent rather than universal ends.
+
+This decision does not yet define the exact project-intent schema or the non-negotiable methodological standards that must hold across all project profiles.
