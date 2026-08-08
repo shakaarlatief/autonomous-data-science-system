@@ -90,10 +90,14 @@ def _write_run_artifacts(
 ) -> None:
     """Persist condition-neutral outputs plus baseline conversation diagnostics."""
 
+    behavior_evaluable = result.terminal_generation_error is None
+    deterministic = result.deterministic_evaluation
+
     summary = {
         "condition": result.condition,
         "run_id": result.run_id,
         "completed": result.completed,
+        "behavior_evaluable": behavior_evaluable,
         "run_config": run_config,
         "model_calls": result.model_calls,
         "generation_attempts": result.generation_attempts,
@@ -103,18 +107,21 @@ def _write_run_artifacts(
         "output_tokens": result.output_tokens,
         "total_tokens": result.total_tokens,
         "project_phase": result.workspace.phase.value,
-        "deterministic_passed_all": result.deterministic_evaluation[
-            "passed_all_deterministic"
-        ],
-        "deterministic_passed_critical": result.deterministic_evaluation[
-            "passed_all_critical"
-        ],
-        "critical_failures": result.deterministic_evaluation["critical_failures"],
+        "deterministic_passed_all": (
+            deterministic["passed_all_deterministic"] if behavior_evaluable else None
+        ),
+        "deterministic_passed_critical": (
+            deterministic["passed_all_critical"] if behavior_evaluable else None
+        ),
+        "critical_failures": (
+            deterministic["critical_failures"] if behavior_evaluable else []
+        ),
+        "raw_deterministic_evaluation_written": True,
     }
     _write_json(output_dir / "summary.json", summary)
     _write_json(
         output_dir / "deterministic_evaluation.json",
-        result.deterministic_evaluation,
+        deterministic,
     )
     _write_json(
         output_dir / "milestones.json",
@@ -212,10 +219,17 @@ def main() -> None:
     print(f"Generation attempts: {result.generation_attempts}")
     print(f"Generation failures: {result.generation_failures}")
     print(f"Total observed tokens: {result.total_tokens}")
-    print(
-        "Critical deterministic assertions passed: "
-        f"{result.deterministic_evaluation['passed_all_critical']}"
-    )
+
+    behavior_evaluable = result.terminal_generation_error is None
+    print(f"Behavioral evaluation eligible: {behavior_evaluable}")
+    if behavior_evaluable:
+        print(
+            "Critical deterministic assertions passed: "
+            f"{result.deterministic_evaluation['passed_all_critical']}"
+        )
+    else:
+        print("Critical deterministic assertions passed: not scored")
+
     print(f"Output: {args.output.resolve()}")
 
 
