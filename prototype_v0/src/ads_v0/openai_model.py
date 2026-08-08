@@ -23,6 +23,13 @@ Responses API objects can still contain observable token usage, so the adapter
 preserves that usage on ``ModelGenerationError`` rather than silently reporting
 zero cost for a failed reasoning attempt.
 
+Responses API objects may contain more than one assistant message/output-text
+block. The SDK ``output_text`` convenience property concatenates all such blocks.
+That is convenient for ordinary prose, but two independently valid structured
+JSON objects become invalid when concatenated. The adapter therefore inspects
+message-level output blocks and condition-neutrally collapses exact semantic
+duplicates while rejecting genuinely different multiple commands as ambiguous.
+
 The adapter is not imported by the core package and the OpenAI SDK is an
 optional dependency. ``OPENAI_API_KEY`` is read by the SDK in the ordinary way
 when no client is injected.
@@ -295,28 +302,27 @@ class OpenAIResponsesModel:
                 provider_metadata=provider_metadata,
             )
 
-        output_text = getattr(response, "output_text", None)
-        if not isinstance(output_text, str) or not output_text.strip():
+        payload, output_metadata = _parse_structured_response_payload(response)
+        provider_metadata.update(output_metadata)
+        if payload is None:
+            error_code = str(output_metadata.get("structured_output_error") or "invalid_json")
+            if error_code == "empty_output":
+                message = "OpenAI response contained no structured output text."
+            elif error_code == "ambiguous_structured_output":
+                message = (
+                    "OpenAI response contained multiple distinct structured commands; "
+                    "the adapter cannot choose among them without changing semantics."
+                )
+            else:
+                message = "OpenAI structured output was not valid JSON."
             raise ModelGenerationError(
-                "OpenAI response contained no structured output text.",
+                message,
                 retryable=False,
                 provider="openai",
-                error_code="empty_output",
+                error_code=error_code,
                 usage=usage,
                 provider_metadata=provider_metadata,
             )
-
-        try:
-            payload = json.loads(output_text)
-        except json.JSONDecodeError as exc:
-            raise ModelGenerationError(
-                "OpenAI structured output was not valid JSON.",
-                retryable=False,
-                provider="openai",
-                error_code="invalid_json",
-                usage=usage,
-                provider_metadata=provider_metadata,
-            ) from exc
 
         response_id = getattr(response, "id", None)
         if self.use_previous_response_id:
@@ -392,6 +398,102 @@ class OpenAIResponsesModel:
             {"role": message.role, "content": message.content}
             for message in selected
         ]
+
+
+def _parse_structured_response_payload(
+    response: Any,
+) -> tuple[Mapping[str, Any] | None, dict[str, Any]]:
+    """Normalize a completed Responses API object into one semantic command.
+
+    The SDK ``Response.output_text`` property joins every ``output_text`` block
+    across all assistant-message output items. If a provider response contains
+    the same structured command twice, that convenience value becomes
+    ``{...}{...}`` and is not valid JSON even though each message-level block is
+    independently valid and semantically identical.
+
+    The normalization rule is deliberately conservative:
+
+    * prefer the aggregate text when it is valid JSON;
+    * otherwise parse each non-empty message-level ``output_text`` block;
+    * accept multiple blocks only when every block is valid JSON and all parsed
+      payloads are equal;
+    * reject multiple distinct valid payloads as ambiguous rather than choosing
+      one arbitrarily;
+    * reject malformed or absent structured output.
+
+    This is provider normalization, not treatment-specific recovery. B0, B1,
+    and future P0 therefore receive the same semantics.
+    """
+
+    blocks = _response_output_text_blocks(response)
+    metadata: dict[str, Any] = {
+        "output_text_block_count": len(blocks),
+        "distinct_output_text_block_count": len(set(blocks)),
+        "duplicate_identical_output_blocks_collapsed": False,
+    }
+
+    if blocks:
+        aggregate_text: Any = "".join(blocks)
+    else:
+        aggregate_text = getattr(response, "output_text", None)
+
+    if not isinstance(aggregate_text, str) or not aggregate_text.strip():
+        metadata["structured_output_error"] = "empty_output"
+        return None, metadata
+
+    try:
+        aggregate_payload = json.loads(aggregate_text)
+    except json.JSONDecodeError:
+        aggregate_payload = None
+    else:
+        metadata["structured_output_source"] = "aggregate_output_text"
+        return aggregate_payload, metadata
+
+    if not blocks:
+        metadata["structured_output_error"] = "invalid_json"
+        return None, metadata
+
+    parsed_blocks: list[Any] = []
+    for block in blocks:
+        try:
+            parsed_blocks.append(json.loads(block))
+        except json.JSONDecodeError:
+            metadata["structured_output_error"] = "invalid_json"
+            return None, metadata
+
+    first_payload = parsed_blocks[0]
+    if all(payload == first_payload for payload in parsed_blocks[1:]):
+        metadata["structured_output_source"] = "deduplicated_output_text_blocks"
+        metadata["duplicate_identical_output_blocks_collapsed"] = len(blocks) > 1
+        return first_payload, metadata
+
+    metadata["structured_output_error"] = "ambiguous_structured_output"
+    return None, metadata
+
+
+def _response_output_text_blocks(response: Any) -> list[str]:
+    """Extract non-empty assistant ``output_text`` blocks without SDK joining."""
+
+    output_items = _optional_attr(response, "output")
+    if not isinstance(output_items, Sequence) or isinstance(output_items, (str, bytes)):
+        return []
+
+    blocks: list[str] = []
+    for output in output_items:
+        if _optional_attr(output, "type") != "message":
+            continue
+        content_items = _optional_attr(output, "content")
+        if not isinstance(content_items, Sequence) or isinstance(
+            content_items, (str, bytes)
+        ):
+            continue
+        for content in content_items:
+            if _optional_attr(content, "type") != "output_text":
+                continue
+            text = _optional_attr(content, "text")
+            if isinstance(text, str) and text.strip():
+                blocks.append(text)
+    return blocks
 
 
 def _classify_openai_exception(exc: Exception) -> tuple[bool, str | int | None]:
