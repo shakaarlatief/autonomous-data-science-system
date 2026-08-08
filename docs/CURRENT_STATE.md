@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-**Checkpoint:** 9  
+**Checkpoint:** 10  
 **Date:** 2026-08-08  
-**Development stage:** Conceptual research and system definition  
+**Development stage:** Transition from conceptual research to controlled prototype specification  
 **Implementation status:** Not started
 
 ## Primary purpose
@@ -13,9 +13,9 @@
 
 Maximum predictive performance, autonomy, analytical depth, speed, or low cost are project-dependent objectives rather than universal goals.
 
-## Project constitution
+## Current project constitution
 
-The current conceptual hierarchy remains:
+The conceptual hierarchy remains:
 
 ```text
 Admissibility
@@ -32,288 +32,280 @@ The five candidate epistemic invariants remain:
 4. claim validity;
 5. traceability and dependency integrity.
 
-These remain strong design hypotheses rather than finalized requirements.
+These remain strong design hypotheses rather than finalized system requirements.
 
-## Checkpoint 4: project state and state-driven orchestration
+## Development foundations so far
 
-Project state is treated as a living representation of what the system is currently entitled to believe and do.
+### Checkpoint 4: project state and orchestration
 
-Candidate first-class objects include project intent, facts, assumptions, questions, investigations, evidence, claims, decisions, risks, controls, approvals, constraints/rules, actions, and artifacts.
+Project state is treated as a living dependency-aware representation of what the system is currently entitled to believe and do. Important ideas include typed state, validity versus currency, dependency impact, reopening, computational plus information lineage, a runnable frontier, and state-driven rather than fixed-plan orchestration.
 
-Strong hypotheses include typed dependencies, separate validity and currency, impact analysis, reopening of affected questions and decisions, computational plus information lineage, a runnable frontier, mandatory obligations separated from optional value-improving work, and state-driven rather than plan-driven orchestration.
+Detailed reasoning:
 
-Detailed reasoning: `docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`.
+`docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`
 
-## Checkpoint 5: project initialization and universal bootstrap
+### Checkpoint 5: project initialization
 
-A new project should enter through progressive state construction rather than one-shot problem definition.
+New projects should enter through progressive source-aware state construction and a small universal bootstrap rather than one-shot problem definition.
 
-The system should preserve original project input separately from its current project interpretation, register sources and information boundaries, establish structural facts, compare sources for consistency, generate multidimensional project-characterization hypotheses, emit questions and triggers, and construct a first legitimate runnable frontier.
+Detailed reasoning:
 
-The fixed universal process may therefore be small:
+`docs/foundations/005_project_initialization_and_universal_bootstrap.md`
 
-```text
-SMALL UNIVERSAL BOOTSTRAP
-        +
-ADAPTIVE STATE-DRIVEN REASONING
-```
+### Checkpoint 6: knowledge activation
 
-A concise rule remains:
+Reusable knowledge should activate from meaningful project-state patterns and contribute questions, obligations, safeguards, evidence requirements, reviews, or candidate actions back into shared state. Activation may be reactive or prospective and should remain open-world.
 
-> **Observe broadly, infer cautiously.**
+Detailed reasoning:
 
-Detailed reasoning: `docs/foundations/005_project_initialization_and_universal_bootstrap.md`.
+`docs/foundations/006_knowledge_activation_and_open_world_reasoning.md`
 
-## Checkpoint 6: knowledge activation
+### Checkpoint 7: reusable knowledge representation
 
-Reusable analytical knowledge should activate from meaningful project-state patterns and contribute structured state rather than directly controlling one fixed workflow.
+The strongest representation hypothesis is a thin semantic knowledge package containing versioned, provenance-aware, typed composable reasoning components such as question templates, invariants, evidence requirements, failure modes, claim constraints, dependencies, resolution criteria, and reopen conditions.
 
-The project distinguishes knowledge, capability, and actor.
+Detailed reasoning:
 
-Activation may arise from observations, combinations of facts, requested analytical objectives, proposed methods, actions, claims or decisions, missing prerequisites, contradictions, risk, governance, dependency revisions, or novel open-ended concerns.
+`docs/foundations/007_reusable_knowledge_representation_and_composable_components.md`
 
-The system should support deterministic, interpretive, and open-ended activation, including both reactive and prospective activation.
+### Checkpoint 8: knowledge quality and evolution
 
-Activation is not execution. Activated knowledge normally creates questions, obligations, safeguards, evidence requirements, reviews, or candidate actions that then compete on the runnable frontier.
+Reusable knowledge should itself obey epistemic discipline. Important hypotheses include minimum justified generalization, separation of project-specific lessons from reusable knowledge, different thresholds for reasoning/reuse/enforcement, counterexample-driven scope discovery, staged promotion, challenge history, knowledge versioning, and cross-project invalidation after material knowledge revisions.
 
-Shared analytical questions may integrate several knowledge areas. Coverage review may search for orphaned material facts and orphaned actions.
+Detailed reasoning:
 
-Detailed reasoning: `docs/foundations/006_knowledge_activation_and_open_world_reasoning.md`.
+`docs/foundations/008_knowledge_quality_generalization_and_evolution.md`
 
-## Checkpoint 7: reusable knowledge representation
+### Checkpoint 9: behavioral system evaluation
 
-The strongest current representation hypothesis is:
+The system should be evaluated as a trajectory through a partially observable project world rather than by one final model metric. Behavioral cases should specify an acceptance envelope: mandatory obligations, prohibited behavior, acceptable alternative resolutions, dynamic state changes, repair expectations, claim constraints, and optional quality opportunities.
 
-> **The reusable knowledge library should consist of versioned, provenance-aware, composable semantic reasoning components grouped into coherent knowledge packages.**
+Detailed reasoning:
 
-A thin knowledge-package shell may carry identity, purpose, scope semantics, activation/applicability metadata, version, and maturity.
+`docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`
 
-Candidate component types include question templates, hard invariants, decision principles, evidence requirements, investigation templates, strategy or repair alternatives, assumption templates, failure modes, detection hooks, claim constraints, human/authority hooks, review/assurance hooks, dependencies, resolution criteria, and reopen conditions.
+## Major development at Checkpoint 10: minimum falsification prototype
 
-Activation differs from applicability. Evidence requirements differ from investigation methods. Knowledge statements may have different force. Important components need their own provenance, rationale, limitations, version, and maturity.
+The project now has a concrete first implementation experiment.
 
-Knowledge definitions remain separate from project-specific instances. Project decisions and assumptions live in project state, not in the reusable package.
+The central experimental question is:
 
-Missing Data and Information Legitimacy were used as contrasting stress tests. They supported the same thin-package plus typed-components abstraction despite very different reasoning shapes.
+> **Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than an equally capable simpler LLM workflow?**
 
-Detailed reasoning: `docs/foundations/007_reusable_knowledge_representation_and_composable_components.md`.
-
-## Checkpoint 8: knowledge quality, generalization, and evolution
-
-The knowledge library should itself obey epistemic-integrity principles.
-
-The project distinguishes:
+The first prototype should test the semantic spine rather than build a production system:
 
 ```text
-PROJECT-SPECIFIC KNOWLEDGE
-    -> CANDIDATE GENERALIZABLE LESSON
-    -> REUSABLE SYSTEM KNOWLEDGE
+PROJECT STATE
+      ↓
+KNOWLEDGE ACTIVATION
+      ↓
+QUESTIONS / OBLIGATIONS / CONSTRAINTS
+      ↓
+RUNNABLE ACTIONS
+      ↓
+EXECUTION
+      ↓
+EVIDENCE
+      ↓
+STATE UPDATE
+      ↓
+DEPENDENCY IMPACT / REOPENING
 ```
 
-A strong current principle-level hypothesis is **minimum justified generalization**: promote the least-general reusable proposition that captures the mechanism and is actually supported, then broaden scope only when further evidence or reasoning justifies doing so.
+Detailed reasoning and the experimental contract:
 
-The safest project-derived updates are often improved reasoning structures rather than copied local winners: new questions, failure modes, counterexamples, known limitations, strategy alternatives, repair patterns, claim constraints, scope refinements, or regression cases.
+`docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`
 
-The project also distinguishes knowledge role, maturity, and enforcement authority. A mature heuristic remains a heuristic. Deterministic enforcement requires a higher bar than ordinary reuse.
+Historical snapshot:
 
-Three thresholds are conceptually distinct:
+`docs/checkpoints/010_minimum_falsification_prototype.md`
+
+## Experimental conditions
+
+The first experiment should compare three conditions using the same strong underlying LLM and comparable execution resources:
 
 ```text
-REASONING THRESHOLD
-Enough plausibility to investigate.
+B0
+Strong generic LLM workflow.
 
-REUSE THRESHOLD
-Enough justification to influence future projects.
+B1
+Same model plus the prototype's small methodological
+knowledge set supplied as static prompt guidance.
+No typed state, activation, prospective gate, or dependency repair.
 
-ENFORCEMENT THRESHOLD
-Enough support and scope precision to constrain future actions automatically.
+P0
+Same model plus minimal typed state, a tiny knowledge set,
+activation/applicability, prospective safeguards,
+a simple runnable frontier, and dependency-aware reopening.
 ```
 
-Counterexamples are important for discovering scope and rejecting over-broad rules. Challenged, rejected, superseded, and negative knowledge should preserve provenance rather than disappear silently.
+B1 is the critical control. If B1 matches P0 at lower complexity, then much of the explicit state machinery may not be justified for this project scale.
 
-Knowledge validity and knowledge currency are separate. Material knowledge revisions may create cross-project revalidation obligations through dependency analysis.
+## Prototype project
 
-Detailed reasoning: `docs/foundations/008_knowledge_quality_generalization_and_evolution.md`.
+The first benchmark family is a synthetic customer-month churn project.
 
-## Major development since Checkpoint 8: behavioral reasoning regression and system evaluation
-
-Checkpoint 9 develops the first coherent theory of how the Autonomous Data Science System itself should be evaluated.
-
-The central formulation is:
-
-> **A behavioral reasoning regression case should define a partially observable project world together with an acceptance envelope over system behavior, not one expected sequence of analytical steps.**
-
-The evaluated object is a project trajectory through observations, questions, actions, evidence, decisions, revisions, and final claims.
-
-Two strong systems may take different valid paths. Two systems may reach similar numerical results while only one used legitimate evidence.
-
-## System-visible information versus evaluator truth
-
-A serious reasoning case should distinguish:
+Visible files include:
 
 ```text
-SYSTEM-VISIBLE INFORMATION
-what the system can legitimately know at a moment
-
-EVALUATOR-ONLY WORLD STATE
-underlying project semantics and mechanisms known to the benchmark
+project_brief.md
+README.md
+train.csv
+validation.csv
+test.csv
+baseline_model.py
 ```
 
-The evaluator should judge decisions relative to information legitimately available at the time rather than omniscient hindsight.
+The project contains repeated customers, timestamps, a stale README claiming one row per customer, an inherited baseline with learned-preprocessing contamination, a protected final test, and an `account_state_code` whose timing is initially described incorrectly by stale documentation.
 
-This makes uncertainty management and self-correction directly testable.
-
-## Behavioral acceptance envelopes
-
-Cases should express concepts such as:
+The temporal partitions are approximately:
 
 ```text
-mandatory obligations
-prohibited behaviors
-acceptable alternative resolutions
-optional quality opportunities
+train: months 1-16
+validation: months 17-20
+test: months 21-24
 ```
 
-The evaluator should constrain milestone dependencies rather than impose one total workflow.
+Deployment includes future observations of both known and newly entering customers. Repeated IDs should therefore activate generalization reasoning but should not mechanically imply a pure unseen-entity split.
 
-For example, comparative model evidence should not become trusted before the validation regime is sufficiently legitimate, but many descriptive investigations can occur in different orders.
+## Dynamic state change
 
-## Hybrid evaluator
+After a provisional model/validation milestone, the evaluator reveals an authoritative notice showing that `account_state_code` is populated only after the churn outcome and retrospectively backfilled.
 
-Some evaluation assertions can eventually be deterministic from project state and lineage, such as protected-test contamination, learned preprocessing crossing validation boundaries, use of invalidated evidence, or execution despite a blocking governance state.
+The system must then revise feature eligibility, discover affected dependencies, reopen materially affected models/evidence/decisions/claims, preserve unrelated valid work, rerun legitimate evaluation, and ensure final claims use current evidence.
 
-Other judgments remain semantic, such as whether prediction timing was interpreted correctly, whether validation represents deployment, whether human clarification was necessary, or whether a claim is too strong.
+This is the central Version 0 test of dependency-aware self-correction.
 
-The future evaluator will therefore likely combine deterministic checks, semantic reasoning, and empirical outcomes.
+## Minimal P0 state vocabulary
 
-## Evaluation hierarchy
-
-The current direction avoids an early scalar score that lets methodological violations be offset by higher predictive performance.
-
-Conceptually:
+The first structured prototype currently requires only:
 
 ```text
-critical admissibility and epistemic-integrity failures
-    -> mandatory reasoning and repair obligations
-    -> evidence and claim quality
-    -> project effectiveness
-    -> efficiency, optional depth, and human cost
+ARTIFACT
+FACT
+ASSUMPTION
+QUESTION
+EVIDENCE
+CLAIM
+DECISION
+OBLIGATION
+ACTION
 ```
 
-No final scoring system has been selected.
-
-## Self-correction, dynamic cases, and repair
-
-Cases should deliberately contain misleading or stale sources, contradictory evidence, later project-state changes, and inherited mistakes.
-
-The system should be tested on whether it recognizes contradictions, reopens the correct questions, invalidates or weakens only affected evidence and claims, creates legitimate repair work, and preserves unrelated valid work.
-
-Both under-propagation and over-propagation are evaluation failures.
-
-Correct abstention or scope reduction can be a successful outcome when the requested conclusion is not defensible.
-
-## Failure cases and harmless suspicious cases
-
-Evaluation must include both genuine hidden failure mechanisms and negative-applicability cases.
-
-Otherwise a system can maximize apparent safety by activating every concern and blocking too much work.
-
-The benchmark should therefore test concern coverage and selectivity.
-
-## Process quality, outcome quality, and efficiency
-
-Checkpoint 9 distinguishes:
+Candidate minimal relations:
 
 ```text
-process quality
-ex-ante decision quality given available evidence
-ex-post realized outcome quality
+DEPENDS_ON
+SUPPORTS
+CONTRADICTS
+ANSWERS
+GENERATED_BY
 ```
 
-A lucky outcome should not erase invalid reasoning, and later hindsight should not retroactively invalidate a decision that was defensible under the information then available.
+The exact serialization and storage technology remain open.
 
-Efficiency means justified analytical effort rather than minimum work. Both over-investigation and premature stopping are failures.
+## Minimal reusable knowledge
 
-Detection latency matters: finding a critical issue before dependent work accumulates is better than finding it after large portions of the project are contaminated.
-
-## Multi-scale evaluation
-
-A future suite may include atomic component cases, package-interaction cases, state-transition cases, mini-projects, full projects, and novel/open-world cases.
-
-Public regression cases may eventually need held-out or parameterized variants to reduce benchmark overfitting.
-
-Evaluator expectations themselves should be versioned, challengeable, and supported by mechanistic rationale.
-
-## Churn mini-project stress test
-
-The behavioral-case abstraction was tested on a deliberately difficult tabular churn project.
-
-The visible project asks for 30-day monthly churn prediction under a 500-customer outreach capacity. A stale README says one row is one customer and designates a final test set. Visible data contain repeated customer identifiers, timestamps, missing Income, class imbalance, and a `cancellation_reason` field.
-
-Evaluator-only truth establishes that rows are monthly snapshots, `cancellation_reason` is post-outcome, deployment scores at the beginning of the monthly outreach cycle, production contains both previously seen and newly observed customers, Income can be missing in production, the inherited baseline contains learned-preprocessing contamination, and final-test outcomes should remain protected.
-
-The system must eventually resolve the row-unit contradiction, prediction moment, feature eligibility, temporal/entity validation regime, production-relevant missingness, protected-test integrity, and operational decision behavior under capacity.
-
-The benchmark does not require one exact model, split algorithm, imputation strategy, metric, or experiment order.
-
-Multiple validation approaches are acceptable if they defensibly estimate the intended deployment quantity. Repeated IDs do not automatically imply an all-unseen-entity GroupKFold because deployment contains known and new customers.
-
-A later deployment change can increase missing Income among newly observed customers. Correct behavior is targeted reopening and revalidation rather than blanket restart or silent continuation.
-
-The stress test therefore supports the acceptance-envelope approach.
-
-Detailed reasoning: `docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`.
-
-Historical snapshot: `docs/checkpoints/009_behavioral_reasoning_regression_and_system_evaluation.md`.
-
-## Current conceptual system picture
+Version 0 should contain only four manually authored components:
 
 ```text
-                         KNOWLEDGE LIBRARY
-                   packages + typed components
-                               |
-                               v
-PROJECT STATE ----------> ACTIVATION / APPLICABILITY
-     ^                         |
-     |                         v
-     |                scoped knowledge instances
-     |                         |
-     |                         v
-     |              questions / constraints /
-     |              evidence / reviews / actions
-     |                         |
-     |                         v
-     |                   RUNNABLE FRONTIER
-     |                         |
-     |                         v
-     |                    ORCHESTRATION
-     |                         |
-     |                         v
-     +--------- evidence / result / revision
-
-                   BEHAVIORAL EVALUATOR
-              observes trajectory and lineage
+K-INFO-001 Protected Final Evaluation
+K-INFO-002 Learned Transformation Evaluation Boundary
+K-INFO-003 Prediction-Time Feature Eligibility
+K-VAL-001  Generalization-Regime Question
 ```
 
-Coverage review searches for missed material concerns. Behavioral regression cases test the knowledge, activation, state, orchestration, execution, review, and repair system.
+This is enough to test both deterministic safeguard behavior and interpretive applicability without building a large knowledge library or retrieval system.
+
+## Evaluation logic
+
+The evaluator should measure behavioral dimensions such as:
+
+```text
+semantic correction
+validation reasoning
+preprocessing integrity
+test integrity
+feature legitimacy
+repair completeness
+repair precision
+claim validity
+detection latency
+analytical efficiency
+project utility
+```
+
+Critical integrity failures should not be compensated by marginally better predictive performance.
+
+A development case can be used for implementation debugging, followed by at least two held-out surface variants with changed field names, documentation wording, random seeds, and nonessential DGP details.
+
+A reasonable first protocol is three calibration runs per condition on the development case, followed by five paired held-out runs per condition on each of two surface variants.
+
+Quantitative continuation thresholds should be frozen after calibration and before held-out evaluation.
+
+## Falsification criteria
+
+The structured architecture is not assumed to be necessary.
+
+Strong evidence against P0 would occur if B1 matches it across critical integrity behavior, repair completeness, repair precision, and held-out variants while using materially less reasoning/state-management cost.
+
+Repeated false blockers, duplicate obligations, excessive reopening, or case-specific hard-coded rules also count against P0.
+
+The strongest reason to continue would be repeated held-out evidence that P0 prevents or repairs critical methodological failures more reliably and precisely than B1 without unacceptable cost or systematic false blocking.
+
+Higher AUROC alone is not a reason to continue the architecture.
+
+## Explicit prototype exclusions
+
+Version 0 does not require:
+
+```text
+multi-agent architecture
+provider routing
+vector database
+graph database
+large reusable knowledge library
+automatic knowledge learning
+full admissibility implementation
+full risk/assurance implementation
+external web research
+production deployment
+monitoring
+workflow engine
+UI
+```
+
+These should remain deferred until the semantic spine earns additional complexity.
+
+## Continuity and chat rotation
+
+Checkpoint timing and chat rotation are proactive AI responsibilities.
+
+A new chat should not be opened merely because the conceptual topic changes or a checkpoint is reached. One chat may contain many checkpoints while continuity remains healthy.
+
+The AI collaborator should recommend a new chat before context pressure materially threatens continuity, preserve the repository first, and provide the next numbered content-specific chat title and minimal continuation instruction.
+
+See `DECISIONS.md` D-018 through D-020 and `docs/CONTINUITY.md`.
 
 ## Explicit non-decisions
 
-The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, project-state schema, trigger language, semantic retrieval technology, package/component storage format, maturity implementation, evaluator framework, semantic judge, scalar score, hidden-case infrastructure, execution sandbox, automatic knowledge-learning system, final autonomy model, or production architecture.
+The project has still not selected a production agent architecture, provider strategy, workflow framework, database, graph technology, vector retrieval system, full state schema, full knowledge schema, final status vocabulary, final evaluation framework, deployment architecture, automatic knowledge-learning mechanism, or full autonomy model.
+
+Prototype conveniences must not be mistaken for production architecture decisions.
 
 ## Current focus
 
-The next major question is increasingly architectural:
+The conceptual architecture is now sufficiently specified to support a first limited implementation.
 
-> **What is the smallest end-to-end prototype that can test or falsify the core semantic architecture without prematurely building a full production system?**
+The immediate next question is:
 
-The first prototype should test the loop connecting project initialization, typed state, knowledge activation, project-specific obligations, action selection, evidence, state updates, invalidation, repair, and behavioral evaluation.
+> **How should Prototype V0 be represented and implemented concretely while preserving the experimental contract and avoiding premature production architecture?**
 
-It should be designed as an experiment on the architecture rather than as the first production implementation.
+The next work should specify the benchmark/evaluator implementation first, then the minimal state model, action gate, knowledge components, baseline harness, P0 control loop, run logging, and resource instrumentation.
 
 ## Required context for a new chat
 
-A new design chat should read, at minimum:
+A new design/implementation chat should read, at minimum:
 
 1. `README.md`
 2. `docs/CURRENT_STATE.md`
@@ -323,11 +315,11 @@ A new design chat should read, at minimum:
 6. `docs/OPEN_QUESTIONS.md`
 7. `docs/DEVELOPMENT_METHOD.md`
 8. `docs/CONTINUITY.md`
+9. `docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`
+10. `docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`
 
-For detailed reasoning, also read Foundations 001 through 009.
-
-Relevant historical checkpoints are Checkpoints 0 through 9.
+If deeper architectural context is needed, read Foundations 002 through 008 as relevant.
 
 ## Next step
 
-Develop the minimum falsifiable end-to-end prototype boundary before choosing production technology.
+Define the concrete implementation contract for Prototype V0, beginning with the synthetic benchmark generator and evaluator rather than the autonomous treatment.
