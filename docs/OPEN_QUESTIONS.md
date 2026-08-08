@@ -150,21 +150,23 @@ Exact representation remains open.
 
 ## Q-016. How should system quality itself be evaluated?
 
-**Status:** Substantially advanced through Q-039
+**Status:** Substantially advanced through Q-039 and Q-040
 
-Checkpoint 9 develops behavioral-trajectory evaluation, acceptance envelopes, visible-versus-hidden evaluator state, repair testing, process-versus-outcome separation, and meaningful simpler baselines.
+Checkpoint 9 develops behavioral-trajectory evaluation, acceptance envelopes, visible-versus-hidden evaluator state, repair testing, process-versus-outcome separation, and meaningful simpler baselines. Checkpoint 10 turns these ideas into a first falsification experiment with B0, B1, and P0 conditions.
 
-Still unresolved: exact metrics, evaluator implementation, benchmark suite, scoring, and held-out-case strategy.
+Still unresolved: exact evaluator implementation, semantic-judge assurance, final metrics, broader benchmark diversity, and later system-level scoring.
 
 ---
 
 ## Q-017. How should real projects become regression tests?
 
-**Status:** Substantially advanced through Q-038 and Q-039
+**Status:** Substantially advanced through Q-038, Q-039, and Q-040
 
 Real failures can be distilled into reusable behavioral cases without copying private project circumstances. Cases should test applicability, safeguards, claim constraints, repair, reopening, and interaction.
 
-Still unresolved: exact case representation, maintenance, diversity, and held-out evaluation.
+Checkpoint 10 adds a first synthetic partially observable project family with held-out surface variants.
+
+Still unresolved: long-term case representation, maintenance, diversity, and expansion beyond the first prototype family.
 
 ---
 
@@ -184,15 +186,19 @@ Deduplication, composition, and cycle control remain open.
 
 Typed dependency semantics, validity versus currency, materiality, reopening, and repair obligations are established conceptually. Later checkpoints extend invalidation to reusable knowledge and cross-project effects.
 
-Exact propagation rules and automation remain open.
+Checkpoint 10 provides the first concrete prototype event that must exercise dependency-aware reopening after an authoritative feature-timing revision.
+
+Exact general propagation rules and automation beyond the prototype remain open.
 
 ---
 
 ## Q-020. What should the execution environment look like?
 
-**Status:** Open
+**Status:** Open, now entering prototype implementation
 
-Isolation, dependencies, data access, artifact tracking, random-state control, failure recovery, compute limits, reproducibility, information barriers, and executable validators remain unresolved.
+Isolation, dependencies, data access, artifact tracking, random-state control, failure recovery, compute limits, reproducibility, information barriers, and executable validators remain unresolved at production scale.
+
+Checkpoint 10 narrows Version 0 to local file inspection, Python execution, simple model evaluation, project-state updates, and a controlled evaluator event.
 
 ---
 
@@ -202,6 +208,8 @@ Isolation, dependencies, data access, artifact tracking, random-state control, f
 
 Provider diversity, quality/cost trade-offs, independent viewpoints, capability routing, and provider abstraction remain open. Provider choice should not determine the semantic architecture.
 
+Checkpoint 10 requires the same strong underlying model across B0, B1, and P0 to isolate architecture from model capability.
+
 ---
 
 ## Q-022. How should external knowledge and source material be integrated?
@@ -210,7 +218,7 @@ Provider diversity, quality/cost trade-offs, independent viewpoints, capability 
 
 Reusable components need proposition-specific provenance, source scope, limitations, authority, version, and freshness handling.
 
-The permanent source architecture remains open.
+The permanent source architecture remains open. Prototype V0 uses manually authored knowledge and therefore deliberately defers large-scale source integration.
 
 ---
 
@@ -228,6 +236,8 @@ Raw transcripts contain provenance but also duplication and obsolete reasoning. 
 
 Automatic extraction of lessons, failures, candidate components, conflicts, or activation signals may become useful, but extraction must not imply automatic promotion into trusted knowledge.
 
+Checkpoint 10 deliberately excludes automatic knowledge learning from Version 0.
+
 ---
 
 ## Q-025. What maturity model should be used for ideas and reusable knowledge?
@@ -242,9 +252,11 @@ Exact statuses remain open.
 
 ## Q-026. How should repository structure evolve?
 
-**Status:** Open
+**Status:** Open and now implementation-relevant
 
 Future areas may include knowledge components, cases, experiments, evaluation suites, implementation, and sources. They should be added in response to real needs rather than speculative completeness.
+
+Checkpoint 10 creates a concrete need to decide where prototype code, benchmark cases, evaluator assets, run logs, and treatment definitions should live.
 
 ---
 
@@ -254,7 +266,9 @@ Future areas may include knowledge components, cases, experiments, evaluation su
 
 The current project constitution centers on semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance.
 
-Formalization and project testing remain necessary.
+Prototype V0 operationalizes only a small subset through protected-final-evaluation, learned-transformation, feature-eligibility, and generalization-regime knowledge.
+
+Formalization and broader project testing remain necessary.
 
 ---
 
@@ -264,7 +278,7 @@ Formalization and project testing remain necessary.
 
 Objectives, constraints, deliverables, human-control preferences, and distinctions among project/model/operational objectives are important. Intent may begin provisionally and become more specific with evidence.
 
-Exact schema remains open.
+Prototype V0 uses only a narrow project brief rather than attempting the final intent schema.
 
 ---
 
@@ -274,7 +288,9 @@ Exact schema remains open.
 
 The runnable-frontier concept separates mandatory obligations from optional work. Candidate factors include blocking power, risk reduction, decision impact, uncertainty reduction, dependency leverage, deliverable relevance, cost, reversibility, and project intent.
 
-No scoring mechanism is selected.
+Checkpoint 10 deliberately uses only a minimal priority policy: satisfy hard blockers, resolve blocking questions, then use contextual LLM judgment among remaining legitimate high-value actions.
+
+No general scoring mechanism is selected.
 
 ---
 
@@ -282,7 +298,7 @@ No scoring mechanism is selected.
 
 **Status:** Strong design hypothesis under validation
 
-The framework has survived conceptual stress tests and now informs knowledge components and behavioral evaluation, but still requires formalization and real-project testing.
+The framework has survived conceptual stress tests and now informs knowledge components and behavioral evaluation. Prototype V0 begins empirical testing of a small subset rather than claiming the invariant set is complete.
 
 ---
 
@@ -292,7 +308,7 @@ The framework has survived conceptual stress tests and now informs knowledge com
 
 Admissibility is action-specific, source-aware, authority-aware, and may yield permitted, permitted-with-controls, approval-required, unresolved, or prohibited states.
 
-Final authority and governance models remain open.
+Final authority and governance models remain open. Full admissibility is intentionally excluded from Prototype V0.
 
 ---
 
@@ -302,17 +318,17 @@ Final authority and governance models remain open.
 
 Current direction favors failure-scenario-based risk, inherent versus residual risk, credible controls, assurance obligations, and explicit risk acceptance authority.
 
-Exact representation remains open.
+Exact representation remains open and is intentionally outside Prototype V0.
 
 ---
 
 ## Q-033. Should analytical questions and claims be primary state objects?
 
-**Status:** Strong design hypothesis
+**Status:** Strong design hypothesis entering implementation test
 
 Questions act as integration points for modular reasoning. Proposed claims can activate evidence and validity checks. Reusable knowledge includes question templates and claim constraints.
 
-Exact schemas remain open.
+Prototype V0 includes both `QUESTION` and `CLAIM` as distinct state types so this hypothesis can be exercised.
 
 ---
 
@@ -322,7 +338,7 @@ Exact schemas remain open.
 
 Completion likely requires all mandatory epistemic, admissibility, assurance, approval, and deliverable obligations to be sufficiently resolved; critical state to be consistent; no important output to depend on known-invalid state; and optional work to have insufficient marginal value.
 
-Coverage review may search for orphaned material concerns before completion.
+Prototype V0 uses a much narrower milestone model: provisional development, repair after the authoritative notice, explicit readiness for final test, then final evaluation.
 
 ---
 
@@ -332,6 +348,8 @@ Coverage review may search for orphaned material concerns before completion.
 
 These concepts belong in the candidate typed state and activation model. Exact schemas, authority provenance, control-effectiveness evidence, and approval staleness remain unresolved.
 
+They are outside the first prototype except for methodological action blocking.
+
 ---
 
 ## Q-036. How should a new project be initialized?
@@ -340,17 +358,19 @@ These concepts belong in the candidate typed state and activation model. Exact s
 
 Checkpoint 5 develops progressive state construction, source-aware interpretation, information boundaries, structural bootstrap, multidimensional characterization, selective human clarification, and a stopping condition based on reaching a legitimate runnable frontier.
 
-Exact bootstrap representation and enforcement remain open.
+Prototype V0 will exercise only the minimum needed to ingest the project brief, README, files, code, structural facts, and contradictions.
 
 ---
 
 ## Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Substantially refined, not resolved
+**Status:** Substantially refined, entering empirical test
 
 Checkpoint 6 develops reusable definitions, project-specific instances, deterministic/interpretive/open activation, prospective checks, missing-prerequisite activation, shared questions, coverage review, and orphaned-state detection. Checkpoint 7 adds component applicability.
 
-Exact trigger representation, semantic retrieval, applicability protocol, deduplication, and coverage implementation remain open.
+Prototype V0 narrows this to four manually authored components and a combination of deterministic safeguards plus interpretive relevance/applicability reasoning.
+
+Large-scale retrieval, deduplication, and coverage implementation remain open.
 
 ---
 
@@ -370,30 +390,11 @@ Detailed reasoning: `docs/foundations/008_knowledge_quality_generalization_and_e
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 9 develops the first coherent evaluation model.
+Checkpoint 9 develops behavioral project trajectories, visible versus hidden evaluator truth, acceptance envelopes, dynamic state changes, self-correction, repair precision, claim evaluation, selectivity tests, human-effort evaluation, process-versus-outcome separation, held-out cases, and strong simpler baselines.
 
-Current hypotheses include:
+Checkpoint 10 translates this into the first concrete synthetic churn case family and B0/B1/P0 comparison.
 
-- evaluate project trajectories, not just final artifacts;
-- separate system-visible information from evaluator-only world truth;
-- specify behavioral acceptance envelopes rather than one expected workflow;
-- distinguish mandatory obligations, prohibited behavior, acceptable resolutions, and optional quality opportunities;
-- evaluate dependency and milestone relationships rather than exact step order;
-- combine deterministic assertions, semantic judgment, and empirical outcomes;
-- prevent critical integrity/admissibility failures from being compensated by higher predictive performance;
-- test self-correction, dynamic state changes, invalidation, reopening, repair precision, and claim weakening;
-- include both genuine hidden failures and harmless suspicious patterns to test selectivity;
-- evaluate human interaction for value and authority need rather than minimum interruption count;
-- separate process quality, ex-ante decision quality, and ex-post outcome quality;
-- treat correct abstention or scope reduction as valid outcomes;
-- evaluate justified effort rather than minimum work;
-- include multiple case scales and eventually held-out or parameterized cases;
-- version and challenge evaluator expectations themselves;
-- compare against strong simpler LLM workflows and architectural ablations.
-
-A difficult churn mini-project stress test showed that the acceptance-envelope approach can evaluate repeated entities, timestamps, post-outcome features, missingness, stale documentation, protected test data, validation ambiguity, inherited preprocessing contamination, and deployment-capacity constraints without prescribing one exact model or workflow.
-
-Still unresolved: exact case schema, evaluator implementation, semantic judge assurance, scoring, hidden-case infrastructure, scenario generation, benchmark diversity, human simulation, and tooling.
+Still unresolved beyond Version 0: exact general case schema, semantic-judge assurance, system-wide scoring, larger benchmark diversity, human simulation, and long-term evaluator tooling.
 
 Detailed reasoning: `docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`.
 
@@ -401,25 +402,71 @@ Detailed reasoning: `docs/foundations/009_behavioral_reasoning_regression_and_sy
 
 ## Q-040. What is the minimum end-to-end prototype that can falsify the core architecture?
 
+**Status:** Substantially refined and specified for Version 0
+
+Checkpoint 10 develops a concrete falsification experiment.
+
+Current Version 0 hypothesis:
+
+```text
+one strong LLM
++ Python execution
++ nine minimal state object types
++ five minimal relation types
++ four manually authored knowledge components
++ deterministic prospective safeguards
++ interpretive activation/applicability
++ simple state-derived action selection
++ dependency-aware invalidation/reopening
++ one synthetic partially observable churn case family
+```
+
+Three experimental conditions should be compared:
+
+```text
+B0 = strong generic LLM workflow
+B1 = same LLM plus the same small knowledge set as static prompt guidance
+P0 = same LLM plus the structured semantic spine
+```
+
+The project includes repeated customer snapshots, temporal deployment, stale documentation, inherited preprocessing contamination, a protected final test, and an `account_state_code` whose legitimacy changes after an authoritative field-timing notice.
+
+The central repair test is whether materially dependent models, evidence, decisions, and claims are reopened while unrelated valid work is preserved.
+
+A development case plus two held-out surface variants should be used. Calibration may set budgets and remove evaluator ambiguity, but evaluation rules and numerical continuation thresholds must be frozen before held-out runs.
+
+Strong evidence against P0 would occur if B1 matches its critical-integrity and repair behavior at materially lower complexity/cost, or if P0 introduces systematic false blockers, duplicate obligations, excessive reopening, or case-specific rules.
+
+The strongest continuation signal would be reliable held-out reduction of critical methodological failures or stale conclusions without unacceptable overhead.
+
+Detailed reasoning: `docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`.
+
+---
+
+## Q-041. How should Prototype V0 be represented and implemented concretely?
+
 **Current priority:** Highest
 
-The project now has substantial conceptual theories for project constitution, persistent state, bootstrap initialization, knowledge activation, reusable knowledge representation, knowledge evolution, and behavioral evaluation.
+Checkpoint 10 establishes what the first experiment must test while deliberately leaving production architecture unresolved.
 
-The next step should not be a production implementation. It should be the smallest prototype capable of testing whether these semantic ideas materially outperform a strong simpler workflow.
+The immediate implementation task is to build the benchmark/evaluator first and then the smallest P0 treatment needed to execute the pre-specified experiment.
 
-Important questions include:
+Important unresolved questions include:
 
-- What exact subset of project-state objects is required for a first prototype?
-- What is the smallest knowledge representation needed to exercise activation and applicability?
-- Which deterministic safeguard should be implemented first?
-- Which interpretive knowledge package should be implemented first?
-- What minimal runnable-frontier/orchestration behavior is necessary?
-- How should one behavioral mini-project drive the prototype end to end?
-- Which state changes and repair scenario must be included so dependency invalidation is genuinely tested?
-- What should remain manual or mocked in version 0?
-- Which architecture choices can be deliberately deferred?
-- What baseline should the prototype be compared against?
-- What result would falsify the need for a more complex state/knowledge architecture?
-- What result would justify moving to a broader implementation?
+- What exact synthetic data generator and fixed DGP version should be implemented?
+- What should the visible contents and provenance metadata of `project_brief.md`, `README.md`, and the authoritative Phase 2 notice be?
+- How should the hidden evaluator truth and acceptance assertions be represented?
+- What exact baseline-model contamination should be encoded?
+- What minimal status vocabulary is required for the nine state object types?
+- How should objects and the five dependency relations be serialized for Version 0?
+- How should state history be preserved without introducing a premature event-sourcing architecture?
+- How should actions be proposed, checked, allowed, blocked, executed, and logged?
+- How should deterministic safeguards and interpretive knowledge activation share one control loop?
+- How should the four knowledge components be represented minimally?
+- How should B0, B1, and P0 receive comparable model/tool budgets?
+- How should run traces, token/tool cost, critical violations, repair completeness, repair precision, detection latency, and project utility be logged?
+- Which evaluator assertions can be deterministic and which require semantic judgment?
+- What repository structure is appropriate for prototype code, cases, evaluators, treatment definitions, and run results?
+- Which implementation choices should be treated explicitly as disposable prototype conveniences rather than architectural commitments?
 
-This should be developed before choosing a production framework, database, agent roster, provider architecture, or large-scale execution system.
+The benchmark world and evaluator should be implemented before tuning P0 behavior so that the treatment is not judged against a benchmark retrospectively designed around its own trajectory.
