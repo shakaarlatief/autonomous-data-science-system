@@ -10,6 +10,32 @@ The central requirement is:
 
 This requirement exists because long conversations are temporary working environments, not durable project storage.
 
+## ChatGPT project and session naming
+
+The current ChatGPT project is named:
+
+`Autonomous Data Science System`
+
+Design chats use a numbered, content-specific naming convention:
+
+```text
+NN - Main Topic / Stage
+```
+
+Examples:
+
+```text
+01 - Foundations & Checkpoint 0
+02 - System Definition & Success Criteria
+03 - Knowledge Architecture
+```
+
+The number preserves chronology. The content-specific title makes old sessions discoverable without requiring the user to remember which numbered chat contained a topic.
+
+Session names are navigation and provenance metadata. The repository must never depend on a chat retaining a particular title.
+
+If a session evolves beyond its initial title, checkpoints remain the authoritative record of the specific conceptual milestones reached inside that session. A chat may therefore contain more than one checkpoint.
+
 ## New-session start procedure
 
 A new design session should begin by reading the repository rather than asking the user to manually restate the project.
@@ -27,10 +53,13 @@ A new design session should begin by reading the repository rather than asking t
 
 Then read the foundational or historical documents explicitly listed in `CURRENT_STATE.md` as relevant to the next step.
 
-At Checkpoint 0, this includes:
+At Checkpoint 2, this includes:
 
 - `docs/foundations/001_initial_vision_and_reasoning.md`
+- `docs/foundations/002_epistemic_integrity_and_project_constitution.md`
 - `docs/checkpoints/000_checkpoint_0.md`
+- `docs/checkpoints/001_primary_purpose_and_project_intent.md`
+- `docs/checkpoints/002_epistemic_integrity_and_project_constitution.md`
 
 ### Required behavior after reading
 
@@ -59,6 +88,23 @@ and continue from the recorded next step.
 If the chat has access to the GitHub repository directly, the session should read the files itself.
 
 If direct repository access is unavailable, the relevant files should be provided to the new session rather than relying on remembered summaries.
+
+## Proactive preservation during a session
+
+Beginning with continuity procedure version 0.2, the user does not need to request every checkpoint explicitly.
+
+The AI design collaborator should decide when repository preservation is warranted, using the criteria in `DEVELOPMENT_METHOD.md`.
+
+The intended behavior is:
+
+```text
+continue freely while reasoning is still developing
+    -> detect when a coherent conceptual milestone has formed
+    -> preserve it before the next major topic or before continuity risk grows
+    -> resume discussion from the recorded next step
+```
+
+Proactive checkpointing must preserve maturity distinctions. A compelling idea should remain a design hypothesis unless it has actually reached the status required for a principle or decision.
 
 ## End-of-session procedure
 
@@ -156,7 +202,23 @@ Long-running data projects should have explicit persistent state so that executi
 
 The implementation of that future project-state mechanism has not yet been selected.
 
-## Version
+## Version history
 
-**Continuity procedure version:** 0.1  
+### Version 0.2
+
+**Introduced:** Checkpoint 2, 2026-08-08
+
+Changes:
+
+- added the numbered, content-specific design-session naming convention;
+- clarified that session names are provenance rather than system dependencies;
+- made proactive checkpoint detection part of the continuity process;
+- updated the required historical context through Checkpoint 2.
+
+### Version 0.1
+
 **Introduced:** Checkpoint 0, 2026-08-07
+
+Initial cross-chat continuity procedure.
+
+**Current continuity procedure version:** 0.2
