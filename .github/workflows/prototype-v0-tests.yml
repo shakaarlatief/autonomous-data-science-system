@@ -33,3 +33,21 @@ jobs:
       - name: Run tests
         working-directory: prototype_v0
         run: pytest
+
+      - name: Generate development benchmark
+        working-directory: prototype_v0
+        run: python -m ads_v0.casegen --output generated/ci-development
+
+      - name: Print benchmark self-test metrics
+        working-directory: prototype_v0
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(
+              Path("generated/ci-development/evaluator_only/self_test_report.json")
+              .read_text(encoding="utf-8")
+          )
+          print(json.dumps(report["metrics"], indent=2, sort_keys=True))
+          PY
