@@ -236,3 +236,43 @@ Different projects legitimately require different balances. A research project, 
 Autonomy and predictive performance remain important capabilities, but they are means that should serve project intent rather than universal ends.
 
 This decision does not yet define the exact project-intent schema or the non-negotiable methodological standards that must hold across all project profiles.
+
+---
+
+## D-018. Make checkpoint detection a proactive AI responsibility
+
+**Status:** Accepted  
+**Date:** 2026-08-08
+
+The AI design collaborator should decide when repository preservation or a checkpoint is warranted during an active design conversation. The user should not need to request every update manually.
+
+The AI should preserve material when substantial conceptual progress, a major transition, continuity risk, or another natural checkpoint makes preservation more valuable than further uninterrupted discussion.
+
+### Rationale
+
+The user should be able to focus on the substance of the project rather than on remembering when documentation maintenance is due. The repository is intended to protect the project from conversational loss, so the design collaborator should actively manage that continuity risk.
+
+This does not authorize automatic promotion of ideas into accepted decisions. Maturity distinctions must still be respected.
+
+See `DEVELOPMENT_METHOD.md` version 0.2.
+
+---
+
+## D-019. Use numbered, content-specific design-session names
+
+**Status:** Accepted  
+**Date:** 2026-08-08
+
+Chats inside the `Autonomous Data Science System` ChatGPT project use the convention:
+
+```text
+NN - Main Topic / Stage
+```
+
+The sequence number preserves chronology and the content-specific title makes earlier sessions easier to locate.
+
+### Rationale
+
+A purely numbered convention becomes difficult to navigate as the project grows, while completely free-form names obscure chronological order. The hybrid convention provides both.
+
+Session names are provenance and navigation metadata only. The repository must not depend on a chat retaining a specific title, and a single chat may contain multiple repository checkpoints.
