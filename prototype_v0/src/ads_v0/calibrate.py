@@ -16,7 +16,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .model import ModelMessage
 from .openai_model import OpenAIResponsesModel
 from .treatments import BaselineTreatmentRunner, TreatmentRunResult
 
@@ -30,6 +29,7 @@ def run_openai_baseline(
     model_name: str,
     reasoning_effort: str,
     max_model_calls: int,
+    max_generation_retries: int,
     max_output_tokens: int,
 ) -> TreatmentRunResult:
     """Run one B0/B1 trajectory with the provisional OpenAI adapter."""
@@ -50,6 +50,7 @@ def run_openai_baseline(
         condition=condition,
         run_id=run_id,
         max_model_calls=max_model_calls,
+        max_generation_retries=max_generation_retries,
         trace_path=trace_path,
     )
     result = runner.run()
@@ -72,6 +73,9 @@ def _write_run_artifacts(
         "requested_model": requested_model,
         "reasoning_effort": reasoning_effort,
         "model_calls": result.model_calls,
+        "generation_attempts": result.generation_attempts,
+        "generation_failures": result.generation_failures,
+        "terminal_generation_error": result.terminal_generation_error,
         "input_tokens": result.input_tokens,
         "output_tokens": result.output_tokens,
         "total_tokens": result.total_tokens,
@@ -136,6 +140,15 @@ def _parse_args() -> argparse.Namespace:
         default="high",
     )
     parser.add_argument("--max-model-calls", type=int, default=40)
+    parser.add_argument(
+        "--max-generation-retries",
+        type=int,
+        default=2,
+        help=(
+            "Additional provider-generation attempts allowed for one reasoning turn. "
+            "The same policy should be used for all experimental conditions."
+        ),
+    )
     parser.add_argument("--max-output-tokens", type=int, default=12_000)
     return parser.parse_args()
 
@@ -153,13 +166,16 @@ def main() -> None:
         model_name=args.model,
         reasoning_effort=args.reasoning_effort,
         max_model_calls=args.max_model_calls,
+        max_generation_retries=args.max_generation_retries,
         max_output_tokens=args.max_output_tokens,
     )
 
     print(f"Condition: {result.condition}")
     print(f"Completed: {result.completed}")
-    print(f"Model calls: {result.model_calls}")
-    print(f"Total tokens: {result.total_tokens}")
+    print(f"Successful model calls: {result.model_calls}")
+    print(f"Generation attempts: {result.generation_attempts}")
+    print(f"Generation failures: {result.generation_failures}")
+    print(f"Total observed tokens: {result.total_tokens}")
     print(
         "Critical deterministic assertions passed: "
         f"{result.deterministic_evaluation['passed_all_critical']}"
