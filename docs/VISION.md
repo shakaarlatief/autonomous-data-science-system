@@ -33,6 +33,39 @@ A mature version should be able to:
 - produce reproducible code, experiments, reports, and final artifacts;
 - and learn from completed projects by extracting generalizable improvements into the system itself.
 
+## Primary purpose: the best process for the particular project
+
+The project now adopts the following working purpose:
+
+> **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
+
+This rejects the idea that every project should optimize the same universal objective.
+
+Maximum predictive performance, maximum automation, maximum analytical depth, minimum cost, and maximum speed can all be valuable, but none is automatically the highest-level objective for every project.
+
+A portfolio project may prioritize learning value, technical breadth, and detailed reporting. A production project may prioritize reliability, maintainability, latency, and deployment readiness. A rapid exploratory project may prioritize speed. A research-oriented project may prioritize robustness, uncertainty analysis, and methodological depth.
+
+The system should therefore adapt the process to project intent rather than forcing every project through the same notion of success.
+
+A strong current design hypothesis is that this configurability should operate **inside a non-negotiable methodological quality floor**. Project priorities may change the amount and type of work, but should not make invalid methodology acceptable. The exact content of this quality floor is not yet defined.
+
+## Project intent as a structured concept
+
+A promising conceptual direction is to distinguish several kinds of project instructions rather than compressing them into one vague mode.
+
+Possible categories include:
+
+- **objectives**, describing what the project should prioritize;
+- **constraints**, describing limits the project must operate under;
+- **deliverables**, describing the outputs that must be produced;
+- **human-control preferences**, describing how and when the system should involve the user.
+
+Named modes such as `QUICK`, `STANDARD`, or `RESEARCH` may later be useful as presets, but they should probably map to a richer project-intent profile rather than define the underlying architecture.
+
+The project has also identified a potentially important distinction between project-level objectives, model-level objectives, and operational objectives. These can conflict, so a mature system should avoid reducing all project success to a single model metric.
+
+These ideas are currently strong design hypotheses, not finalized schemas or implementation commitments.
+
 ## Not simply a collection of agents
 
 The project is not based on the assumption that adding more agents automatically produces better data science.
@@ -226,7 +259,11 @@ A sophisticated system should not equate quality with executing every imaginable
 
 The system should eventually be able to vary depth according to project needs. A quick exploratory project may need basic checks and a few baselines. A serious research or production project may justify broad ablation studies, independent review, robustness analysis, calibration, subgroup evaluation, and more extensive documentation.
 
-Depth could eventually be controlled through modes, budgets, risk levels, compute limits, or other mechanisms. The specific design remains open.
+The current direction is that depth should emerge from project intent, resource constraints, risk, uncertainty, and expected analytical value rather than from one rigid universal workflow.
+
+An important related hypothesis is that additional effort should be allocated where it is most likely to improve validity, reduce consequential uncertainty, or change downstream decisions. The system should not spend resources merely because more analysis is possible.
+
+The specific prioritization mechanism remains open.
 
 ## Learning from projects
 
@@ -269,4 +306,4 @@ This repository is intended to gradually develop that asset.
 
 This document describes the direction of the project, not a final specification.
 
-The next stage must turn this broad vision into explicit goals, requirements, success criteria, boundaries, and evaluation standards. Only after those are sufficiently clear should the project choose a concrete architecture and implementation stack.
+The next design task is to define what belongs in the non-negotiable methodological quality floor and what should remain configurable according to project intent. The broader goals, requirements, success criteria, boundaries, and evaluation standards will continue to be developed before a concrete architecture and implementation stack are selected.
