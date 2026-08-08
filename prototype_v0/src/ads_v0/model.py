@@ -12,7 +12,7 @@ rather than part of the semantic architecture.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, Mapping, Protocol, Sequence
 
 
@@ -24,14 +24,34 @@ class ModelMessage:
     content: str
 
 
+@dataclass(frozen=True)
+class ModelUsage:
+    """Provider-neutral accounting information for one model generation."""
+
+    input_tokens: int | None = None
+    output_tokens: int | None = None
+    total_tokens: int | None = None
+
+
+@dataclass(frozen=True)
+class ModelGeneration:
+    """One structured model response plus experiment-accounting metadata."""
+
+    payload: Mapping[str, Any]
+    model_name: str
+    usage: ModelUsage = field(default_factory=ModelUsage)
+    provider_metadata: Mapping[str, Any] = field(default_factory=dict)
+
+
 class ModelClient(Protocol):
     """Minimal model interface required by the Version 0 treatment loop."""
 
-    def generate(self, messages: Sequence[ModelMessage]) -> Mapping[str, Any]:
-        """Return one structured treatment command.
+    def generate(self, messages: Sequence[ModelMessage]) -> ModelGeneration:
+        """Return one structured treatment command and usage metadata.
 
-        Implementations must return a JSON-serializable mapping following the
-        treatment command contract documented in ``treatments.py``.
+        ``payload`` must follow the treatment command contract documented in
+        ``treatments.py``. Provider-specific response objects should be reduced
+        to this representation before entering the experiment runner.
         """
 
 
@@ -43,16 +63,26 @@ class ScriptedModel:
     provider-specific adapter is introduced.
     """
 
-    def __init__(self, responses: Sequence[Mapping[str, Any]]) -> None:
+    def __init__(
+        self,
+        responses: Sequence[Mapping[str, Any]],
+        *,
+        model_name: str = "scripted-model",
+    ) -> None:
         self._responses = [dict(response) for response in responses]
         self._index = 0
+        self.model_name = model_name
         self.received_messages: list[tuple[ModelMessage, ...]] = []
 
-    def generate(self, messages: Sequence[ModelMessage]) -> Mapping[str, Any]:
+    def generate(self, messages: Sequence[ModelMessage]) -> ModelGeneration:
         self.received_messages.append(tuple(messages))
         if self._index >= len(self._responses):
             raise RuntimeError("ScriptedModel exhausted its predefined responses.")
 
         response = self._responses[self._index]
         self._index += 1
-        return dict(response)
+        return ModelGeneration(
+            payload=dict(response),
+            model_name=self.model_name,
+            usage=ModelUsage(input_tokens=0, output_tokens=0, total_tokens=0),
+        )
