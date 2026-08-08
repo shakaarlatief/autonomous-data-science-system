@@ -13,6 +13,12 @@ B0 and B1 differ only in system-level methodological guidance:
 
 Neither baseline receives typed project state, dynamic knowledge activation,
 prospective enforcement, or dependency-aware repair.
+
+Generation reliability is handled by this common runner rather than by a
+provider-specific treatment. The same retry semantics can therefore be reused
+by P0 later. Successful generations and failed attempts are written into the
+condition-neutral experiment trace, making provider reliability and inference
+cost visible rather than silently hiding them inside an adapter.
 """
 
 from __future__ import annotations
@@ -20,10 +26,10 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any, Mapping
 
 from .evaluator import evaluate_deterministic_behavior
-from .model import ModelClient, ModelMessage, ModelUsage
+from .model import ModelClient, ModelGeneration, ModelMessage, ModelUsage
 from .runtime import (
     ActionBlockedError,
     ActionCategory,
@@ -152,6 +158,9 @@ class TreatmentRunResult:
     run_id: str
     completed: bool
     model_calls: int
+    generation_attempts: int
+    generation_failures: int
+    terminal_generation_error: str | None
     input_tokens: int
     output_tokens: int
     total_tokens: int
@@ -161,7 +170,16 @@ class TreatmentRunResult:
 
 
 class BaselineTreatmentRunner:
-    """Run B0 or B1 against the common experiment workspace."""
+    """Run B0 or B1 against the common experiment workspace.
+
+    ``max_model_calls`` limits successful reasoning generations. A transient
+    provider failure may be retried ``max_generation_retries`` additional times
+    for the same reasoning turn. Retry attempts are tracked separately so a
+    provider cannot appear equally reliable merely because failed calls are
+    hidden. Provider APIs do not always expose token billing for failed network
+    attempts, so reported token totals remain the observable successful-response
+    usage rather than a claim about unknowable provider-side cost.
+    """
 
     def __init__(
         self,
@@ -171,18 +189,22 @@ class BaselineTreatmentRunner:
         condition: str,
         run_id: str,
         max_model_calls: int = 40,
+        max_generation_retries: int = 2,
         trace_path: str | Path | None = None,
     ) -> None:
         if condition not in {"B0", "B1"}:
             raise ValueError("BaselineTreatmentRunner condition must be B0 or B1.")
         if max_model_calls <= 0:
             raise ValueError("max_model_calls must be positive.")
+        if max_generation_retries < 0:
+            raise ValueError("max_generation_retries cannot be negative.")
 
         self.bundle_dir = Path(bundle_dir)
         self.model = model
         self.condition = condition
         self.run_id = run_id
         self.max_model_calls = max_model_calls
+        self.max_generation_retries = max_generation_retries
         self.workspace = ExperimentWorkspace(
             self.bundle_dir,
             run_id=run_id,
@@ -204,6 +226,9 @@ class BaselineTreatmentRunner:
             ),
         ]
         self.model_calls = 0
+        self.generation_attempts = 0
+        self.generation_failures = 0
+        self.terminal_generation_error: str | None = None
         self.input_tokens = 0
         self.output_tokens = 0
         self.total_tokens = 0
@@ -221,10 +246,14 @@ class BaselineTreatmentRunner:
     def run(self) -> TreatmentRunResult:
         completed = False
 
-        for _ in range(self.max_model_calls):
-            generation = self.model.generate(tuple(self.messages))
+        for turn_index in range(1, self.max_model_calls + 1):
+            generation = self._generate_with_retries(turn_index=turn_index)
+            if generation is None:
+                break
+
             self.model_calls += 1
             self._accumulate_usage(generation.usage)
+            self._trace_successful_generation(generation, turn_index=turn_index)
 
             payload = dict(generation.payload)
             self.messages.append(
@@ -277,12 +306,100 @@ class BaselineTreatmentRunner:
             run_id=self.run_id,
             completed=completed,
             model_calls=self.model_calls,
+            generation_attempts=self.generation_attempts,
+            generation_failures=self.generation_failures,
+            terminal_generation_error=self.terminal_generation_error,
             input_tokens=self.input_tokens,
             output_tokens=self.output_tokens,
             total_tokens=self.total_tokens,
             messages=tuple(self.messages),
             workspace=self.workspace,
             deterministic_evaluation=deterministic,
+        )
+
+    def _generate_with_retries(self, *, turn_index: int) -> ModelGeneration | None:
+        """Generate one command using a condition-neutral bounded retry policy."""
+
+        max_attempts = self.max_generation_retries + 1
+        for attempt_in_turn in range(1, max_attempts + 1):
+            self.generation_attempts += 1
+            try:
+                return self.model.generate(tuple(self.messages))
+            except Exception as exc:
+                self.generation_failures += 1
+                self.workspace.trace.append(
+                    event_type="MODEL_GENERATION_ERROR",
+                    phase=self.workspace.phase,
+                    category=ActionCategory.REPORTING,
+                    purpose="Record a failed model-generation attempt.",
+                    allowed=False,
+                    blocked_reason=str(exc),
+                    details={
+                        "turn_index": turn_index,
+                        "attempt_in_turn": attempt_in_turn,
+                        "max_attempts_for_turn": max_attempts,
+                        "error_type": type(exc).__name__,
+                        "error": str(exc),
+                    },
+                )
+
+                if attempt_in_turn == max_attempts:
+                    self.terminal_generation_error = (
+                        f"{type(exc).__name__}: {exc}"
+                    )
+                    self.workspace.trace.append(
+                        event_type="RUN_TERMINATED_GENERATION_ERROR",
+                        phase=self.workspace.phase,
+                        category=ActionCategory.PHASE_CONTROL,
+                        purpose=(
+                            "Terminate the run because the common generation retry "
+                            "budget was exhausted."
+                        ),
+                        allowed=False,
+                        blocked_reason=self.terminal_generation_error,
+                        details={
+                            "turn_index": turn_index,
+                            "generation_attempts": self.generation_attempts,
+                            "generation_failures": self.generation_failures,
+                        },
+                    )
+                    return None
+
+        raise AssertionError("Unreachable generation retry state.")
+
+    def _trace_successful_generation(
+        self,
+        generation: ModelGeneration,
+        *,
+        turn_index: int,
+    ) -> None:
+        usage = generation.usage
+        provider_metadata = dict(generation.provider_metadata)
+        command = generation.payload.get("command")
+        command_type = (
+            str(command.get("type"))
+            if isinstance(command, Mapping) and command.get("type") is not None
+            else None
+        )
+        self.workspace.trace.append(
+            event_type="MODEL_GENERATION",
+            phase=self.workspace.phase,
+            category=ActionCategory.REPORTING,
+            purpose="Record one successful provider-neutral reasoning generation.",
+            details={
+                "turn_index": turn_index,
+                "successful_model_call": self.model_calls,
+                "generation_attempts_so_far": self.generation_attempts,
+                "generation_failures_so_far": self.generation_failures,
+                "model_name": generation.model_name,
+                "command_type": command_type,
+                "usage": {
+                    "input_tokens": usage.input_tokens,
+                    "output_tokens": usage.output_tokens,
+                    "total_tokens": usage.total_tokens,
+                },
+                "provider_metadata": provider_metadata,
+            },
         )
 
     def _dispatch(self, payload: Mapping[str, Any]) -> tuple[dict[str, Any], bool]:
