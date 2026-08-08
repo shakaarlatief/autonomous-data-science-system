@@ -35,7 +35,7 @@ A mature version should be able to:
 
 ## Primary purpose: the best process for the particular project
 
-The project now adopts the following working purpose:
+The project adopts the following working purpose:
 
 > **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
 
@@ -47,7 +47,7 @@ A portfolio project may prioritize learning value, technical breadth, and detail
 
 The system should therefore adapt the process to project intent rather than forcing every project through the same notion of success.
 
-A strong current design hypothesis is that this configurability should operate **inside a non-negotiable methodological quality floor**. Project priorities may change the amount and type of work, but should not make invalid methodology acceptable. The exact content of this quality floor is not yet defined.
+Configurability should operate inside non-negotiable boundaries. Project priorities may change the amount and type of work, but should not make invalid or impermissible methodology acceptable.
 
 ## Project intent as a structured concept
 
@@ -65,6 +65,57 @@ Named modes such as `QUICK`, `STANDARD`, or `RESEARCH` may later be useful as pr
 The project has also identified a potentially important distinction between project-level objectives, model-level objectives, and operational objectives. These can conflict, so a mature system should avoid reducing all project success to a single model metric.
 
 These ideas are currently strong design hypotheses, not finalized schemas or implementation commitments.
+
+## Emerging project constitution
+
+The project has moved beyond the idea of one flat methodological quality floor.
+
+A stronger current hypothesis is that each project operates inside a broader constitution with conceptually distinct layers:
+
+```text
+Admissibility
+    -> Epistemic integrity
+    -> Risk-sensitive assurance
+    -> Project optimization
+```
+
+Hard external project constraints may cut across these layers.
+
+### Admissibility
+
+Admissibility concerns whether a data use, action, analysis, deployment, or intended application is permitted or acceptable under relevant legal, ethical, privacy, policy, safety, organizational, and explicit user constraints.
+
+This is distinct from methodological validity. An analysis can be statistically and computationally excellent while still being impermissible.
+
+The exact scope and decision authority of this layer remain open.
+
+### Epistemic integrity
+
+A strong current design hypothesis is that the methodological core may be organized around five invariants:
+
+1. **Semantic validity** - the analysis must answer the right project question.
+2. **Information legitimacy** - each analytical step may use only information legitimately available to it under the represented conditions.
+3. **Evidence validity** - the procedure, assumptions, execution, and uncertainty treatment must validly generate evidence about the question.
+4. **Claim validity** - the content, strength, scope, and certainty of conclusions must not exceed what the evidence and assumptions justify.
+5. **Traceability and dependency integrity** - consequential results and claims must be reconstructable and connected to the upstream assumptions, data, procedures, and decisions on which they depend.
+
+These five invariants have been conceptually stress-tested across several project types but are not yet a finalized specification.
+
+### Risk-sensitive assurance
+
+Risk may determine how much verification is required before a conclusion is trusted or an action is taken.
+
+A low-risk exploratory analysis and a consequential production system may obey the same epistemic principles while requiring very different levels of review, replication, robustness testing, subgroup analysis, human approval, monitoring, documentation, or fallback planning.
+
+The exact risk and assurance model remains open.
+
+### Project optimization
+
+Only within the admissible and methodologically defensible region should the system optimize project-relative priorities such as predictive quality, learning value, speed, interpretability, report depth, simplicity, compute cost, human effort, production readiness, and exploration breadth.
+
+A candidate principle is that when hard validity requirements conflict with project objectives, the system should reduce the scope or strength of the deliverable rather than silently lower integrity.
+
+This candidate principle still requires testing before formal promotion.
 
 ## Not simply a collection of agents
 
@@ -113,6 +164,25 @@ EDA -> preprocessing -> modelling -> evaluation -> report
 ```
 
 Those conventional stages remain useful organizational concepts, but they should not constrain the reasoning process. A finding during error analysis may require new EDA. A validation failure may require redefining the split strategy. A newly discovered repeated-entity structure may require group-aware validation. A production assumption may change the correct missing-data strategy. The system therefore needs to support iteration and backward movement.
+
+## Questions and claims as possible primary orchestration objects
+
+The project now has a strong hypothesis that analytical questions and claims may be more fundamental than models or pipeline stages.
+
+Conceptually:
+
+```text
+project
+  -> important questions
+  -> candidate investigations
+  -> evidence
+  -> claims and decisions
+  -> new questions
+```
+
+This perspective could allow the system to distinguish project-defining questions, validity questions, and optional value-improving questions, and to track whether important questions are open, assumed, supported, disputed, inconclusive, blocked, invalidated, or closed.
+
+The exact question representation and state model remain undecided.
 
 ## Project diversity as a central design problem
 
@@ -194,7 +264,7 @@ A stronger objective is:
 
 > **Use human attention where human judgment creates the most value.**
 
-The system should be able to continue autonomously through routine or well-defined work while escalating questions that materially affect the meaning or validity of the project.
+The system should be able to continue autonomously through routine or well-defined work while escalating questions that materially affect the meaning, validity, admissibility, or consequences of the project.
 
 Possible human gates include:
 
@@ -203,7 +273,7 @@ Possible human gates include:
 - uncertain feature semantics;
 - choices involving business or scientific trade-offs;
 - decisions about acceptable false-positive and false-negative costs;
-- ethical or policy considerations;
+- ethical, privacy, legal, or policy considerations;
 - choices among materially different modelling objectives;
 - and situations where evidence remains genuinely inconclusive.
 
@@ -224,7 +294,7 @@ The system should make important conclusions challengeable.
 Possible mechanisms include:
 
 - a separate reviewer that inspects methodology rather than merely the final metric;
-- specialized reviews for leakage, validation, statistics, or deployment assumptions;
+- specialized reviews for leakage, validation, statistics, admissibility, or deployment assumptions;
 - proposer-reviewer separation;
 - independent re-analysis that does not receive the original conclusion;
 - and automatic invalidation or rerunning of experiments when methodological flaws are discovered.
@@ -240,15 +310,17 @@ A project state may eventually track concepts such as:
 - objective and deployment setting;
 - dataset and data version;
 - assumptions;
+- analytical questions and their status;
 - decisions and rationale;
 - rejected alternatives;
 - experiments and results;
 - validation design;
 - unresolved questions;
 - evidence supporting important claims;
-- confidence or uncertainty;
+- claim status and uncertainty;
 - human approvals;
 - invalidated experiments;
+- provenance and dependencies;
 - and current next actions.
 
 The exact storage representation has not been selected.
@@ -298,6 +370,9 @@ Models and software frameworks will change. The durable asset could instead be a
 - what common mistakes should be prevented;
 - when one finding should trigger another investigation;
 - how uncertainty should be represented;
+- how claims depend on evidence and assumptions;
+- what actions are admissible;
+- how much assurance risk requires;
 - and when human judgment is required.
 
 This repository is intended to gradually develop that asset.
@@ -306,4 +381,6 @@ This repository is intended to gradually develop that asset.
 
 This document describes the direction of the project, not a final specification.
 
-The next design task is to define what belongs in the non-negotiable methodological quality floor and what should remain configurable according to project intent. The broader goals, requirements, success criteria, boundaries, and evaluation standards will continue to be developed before a concrete architecture and implementation stack are selected.
+The next design task is to define the first rigorous conceptual boundary of the **admissibility layer**, including how ethics, privacy, law, safety, organizational policy, explicit user constraints, and external requirements should interact with system reasoning and human escalation.
+
+The epistemic-core hypothesis, project-intent model, risk-sensitive assurance model, success criteria, and other system requirements will continue to be tested and refined before a concrete implementation architecture is selected.
