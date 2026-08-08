@@ -30,6 +30,8 @@ The exact autonomy model remains open.
 
 The project distinguishes preferred human involvement from required human involvement. Human input may be required for semantics, normative trade-offs, authority decisions, risk acceptance, unresolved admissibility, or consequential uncertainty even when the user otherwise prefers minimal interruption.
 
+Checkpoint 5 strengthens the idea that the system should first attempt cheap, reliable autonomous resolution before interrupting the human, except where authoritative human input is intrinsically required.
+
 The exact escalation and approval model remains open.
 
 ---
@@ -38,25 +40,39 @@ The exact escalation and approval model remains open.
 
 Possible representations include decision modules, rules, structured documents, schemas, executable checks, graphs, or hybrids. No representation has been selected.
 
+This is now tightly coupled to Q-037, because the representation must support activation from project state.
+
 ---
 
 ## Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-The project continues to favor a hybrid of hard constraints, explicit decision frameworks, and open-ended reasoning. The exact boundary and implementation remain unresolved.
+The project continues to favor a hybrid of hard constraints, explicit decision frameworks, and open-ended reasoning.
+
+Checkpoint 5 makes the activation boundary more concrete: some discovered conditions may deterministically activate required safeguards, others may invoke reusable decision frameworks, and novel or ambiguous states may require open-ended reasoning.
+
+The exact boundary and implementation remain unresolved.
 
 ---
 
 ## Q-006. How should relevant investigations be activated?
 
-Open issues include deterministic versus LLM-generated triggers, module cross-activation, false-negative activation detection, and avoiding irrelevant work.
+**Current priority:** Highest, now substantially reframed as Q-037
 
-Checkpoint 4 adds the idea that activation may create questions, obligations, or candidate actions in project state rather than directly invoking one fixed next step.
+The original activation question remains central.
+
+Checkpoints 4 and 5 suggest that activation should probably create questions, obligations, reviews, or candidate actions in project state rather than directly invoke one fixed next step.
+
+Important issues include deterministic versus LLM-generated triggers, false-negative activation detection, module cross-activation, state subscriptions, and avoiding irrelevant work.
+
+Q-037 now develops this as the primary knowledge-activation problem.
 
 ---
 
-## Q-007. What should a reusable decision module contain?
+## Q-007. What should a reusable decision or knowledge module contain?
 
 Possible contents include activation conditions, questions, rationale, required evidence, diagnostics, alternatives, common failure modes, human gates, dependencies, outputs, and references.
+
+Checkpoint 5 adds a stronger requirement: modules should likely consume relevant project state and produce state changes, questions, evidence requirements, reviews, or candidate actions rather than exist as isolated prose guides.
 
 No declarative or executable schema has been selected.
 
@@ -70,9 +86,11 @@ Checkpoint 4 developed a strong conceptual model of typed, dependency-aware pers
 
 Candidate first-class objects include project intent, facts, assumptions, questions, investigations, evidence, claims, decisions, risks, controls, approvals, constraints, actions, and artifacts.
 
+Checkpoint 5 adds source registration, source-aware reported statements, current project interpretations, conflicts, and initialization state as possible concepts that may need explicit representation.
+
 Current unresolved issues include exact object boundaries, schemas, status models, versioning, storage, query patterns, and which concepts are truly first-class after real-project testing.
 
-Detailed reasoning is preserved in `docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`.
+Detailed reasoning is preserved in `docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md` and `docs/foundations/005_project_initialization_and_universal_bootstrap.md`.
 
 ---
 
@@ -82,7 +100,7 @@ Potential responsibilities include problem understanding, analysis, experimentat
 
 These are responsibilities, not accepted permanent agents.
 
-Checkpoint 4 strengthens the idea that agents should operate on shared project state rather than become the authoritative memory of the project.
+The current direction is that agents should operate on shared project state rather than become authoritative memory, and that roles should be activated because current state requires them rather than because a fixed roster exists.
 
 ---
 
@@ -92,7 +110,7 @@ The current direction is risk- and value-sensitive review rather than reviewing 
 
 Checkpoint 4 adds dependency-based triggers such as epistemic single points of failure, high-leverage weak assumptions, conclusions with only one independent support path, or multiple results sharing one vulnerable ancestor.
 
-The exact review policy remains open.
+Q-037 must determine how such review triggers participate in the same activation mechanism as analytical knowledge modules.
 
 ---
 
@@ -106,7 +124,7 @@ Checkpoint 4 adds the need to consider evidence independence and shared dependen
 
 ## Q-012. How should uncertainty and confidence be represented?
 
-Open issues include numerical versus categorical versus structural representations, and how uncertainty should propagate through dependent claims, risks, and decisions.
+Open issues include numerical versus categorical versus structural representations, and how uncertainty should propagate through dependent claims, risks, decisions, and activation priorities.
 
 Challenge history and surviving independent support paths may eventually provide more interpretable evidence of robustness than one generic confidence number.
 
@@ -132,9 +150,13 @@ The exact stopping policy remains open.
 
 ## Q-015. How should different project types be characterized?
 
-The system needs enough characterization to activate appropriate reasoning without creating an impossible rigid taxonomy. Candidate dimensions include predictive versus causal, temporal versus IID, grouped, panel, sequence, ranking, spatial, structured versus unstructured, and others.
+**Status:** Substantially reframed
 
-This question is now closely connected to initial project-state construction in Q-036.
+Checkpoint 5 strengthens the hypothesis that project characterization should be multidimensional rather than one mutually exclusive type label.
+
+A project may simultaneously be supervised, binary, temporal, grouped, forward-looking, sequence-derived, imbalanced, or have other structural properties.
+
+The unresolved problem is how these properties should be represented, inferred, revised, and used as activation signals without creating an unmanageable taxonomy.
 
 ---
 
@@ -142,13 +164,15 @@ This question is now closely connected to initial project-state construction in 
 
 The system should eventually be compared with strong single-LLM workflows, human-guided LLM workflows, and other meaningful baselines across process quality as well as final predictive performance.
 
+Future evaluation should include bootstrap quality, missed activation, unnecessary activation, information-boundary violations, state correction, and whether the right questions become active.
+
 ---
 
 ## Q-017. How should real projects become regression tests for the system?
 
 The project needs a way to preserve failure cases, expected behaviors, and reusable tests without overfitting the system to a small benchmark set.
 
-Checkpoint 4 suggests future tests should include state propagation and self-correction behavior, not only final analytical outputs.
+Checkpoints 4 and 5 suggest future tests should include state propagation, project initialization, source contradictions, information barriers, trigger activation, and self-correction behavior, not only final analytical outputs.
 
 ---
 
@@ -156,7 +180,9 @@ Checkpoint 4 suggests future tests should include state propagation and self-cor
 
 Issues such as missingness, leakage, validation, imbalance, calibration, temporal structure, feature engineering, and risk can interact.
 
-Checkpoint 4 suggests that modules may interact through typed project-state objects and dependencies rather than direct hard-coded module-to-module calls, but this remains a hypothesis.
+The current hypothesis is that modules may interact indirectly through typed project-state changes and triggers rather than primarily through hard-coded direct module-to-module calls.
+
+Q-037 is the next place to develop this idea.
 
 ---
 
@@ -166,20 +192,17 @@ Checkpoint 4 suggests that modules may interact through typed project-state obje
 
 Checkpoint 4 developed a change-propagation hypothesis based on typed dependency semantics, separate validity and currency, materiality, impact analysis, reopening of questions and decisions, and generation of new obligations.
 
-Important unresolved issues include:
-
-- exact propagation rules by object and relationship type;
-- when effects are deterministic versus review-required;
-- materiality thresholds;
-- versioning and history representation;
-- how much repair should happen automatically;
-- how to detect and prevent circular or contaminated support.
+Important unresolved issues include exact propagation rules, deterministic versus review-required effects, materiality thresholds, versioning, repair automation, and circular or contaminated support.
 
 ---
 
 ## Q-020. What should the execution environment look like?
 
-Isolation, dependency management, data access, artifact tracking, random-state control, failure recovery, compute limits, and reproducibility remain open. No execution architecture has been selected.
+Isolation, dependency management, data access, artifact tracking, random-state control, failure recovery, compute limits, reproducibility, and enforceable information boundaries remain open.
+
+Checkpoint 5 strengthens the requirement that the execution environment may need to prevent illegitimate inspection of restricted test or holdout information rather than relying only on instructions.
+
+No execution architecture has been selected.
 
 ---
 
@@ -193,6 +216,8 @@ Open issues include provider diversity, cost-quality trade-offs, independent vie
 
 The project has not selected a permanent architecture for references, educational material, derived knowledge, provenance, updating, licensing, or retrieval.
 
+Checkpoint 5 adds the need to represent source authority, scope, version, and question-specific relevance during project initialization.
+
 ---
 
 ## Q-023. Should raw conversations be archived, and if so, how?
@@ -203,7 +228,7 @@ Raw transcripts contain valuable provenance but also outdated ideas and duplicat
 
 ## Q-024. How much of knowledge capture should eventually be automated?
 
-The current manual process may later be partially automated, for example by detecting proposed decisions, hypotheses, gaps, and open questions for human approval.
+The current manual process may later be partially automated, for example by detecting proposed decisions, hypotheses, gaps, open questions, conflicts, and source-derived facts for approval or structured persistence.
 
 ---
 
@@ -243,9 +268,13 @@ Formal requirements and real-project validation remain necessary.
 
 ## Q-028. How should project intent be represented?
 
+**Status:** Substantially refined, not resolved
+
 A strong hypothesis distinguishes objectives, constraints, deliverables, and human-control preferences, with additional separation between project-level, model-level, and operational objectives.
 
-The exact schema remains open and is now part of the project-initialization question in Q-036.
+Checkpoint 5 adds progressive initialization: project intent may begin as provisional source-aware interpretation and become more specific as evidence and human clarification accumulate.
+
+The exact schema remains open.
 
 ---
 
@@ -275,6 +304,8 @@ The framework has survived conceptual stress tests but still needs real-project 
 
 Current strong hypotheses are that admissibility should be action-specific, source-aware, authority-aware, and able to return states such as permitted, permitted with controls, approval required, unresolved, or prohibited.
 
+Checkpoint 5 adds that admissibility-relevant facts and explicit processing restrictions should begin entering project state during bootstrap rather than only at deployment.
+
 Still unresolved: final scope, authority precedence, legal/privacy/fairness governance model, and formal state representation.
 
 ---
@@ -285,7 +316,7 @@ Still unresolved: final scope, authority precedence, legal/privacy/fairness gove
 
 Current direction favors scenario-based multidimensional risk over an unexplained aggregate label. Candidate concepts include inherent risk, controls, residual risk, assurance requirements, and an explicit risk-acceptance authority.
 
-Still unresolved: final risk dimensions, control-effectiveness model, assurance levels, routing rules, and whether aggregate scores are useful.
+Checkpoint 5 adds that risk-relevant project facts should begin to activate risk reasoning during initialization without requiring a premature aggregate risk score.
 
 ---
 
@@ -294,6 +325,8 @@ Still unresolved: final risk dimensions, control-effectiveness model, assurance 
 **Status:** Strong design hypothesis, substantially developed in Checkpoint 4
 
 The current direction is yes at the conceptual level, but the exact question taxonomy, status model, support relationships, and real-project behavior still require testing.
+
+Checkpoint 5 adds that bootstrap conflicts and structural observations should often create questions automatically.
 
 ---
 
@@ -315,27 +348,60 @@ The exact completion rule remains open.
 
 Checkpoint 4 incorporates these concepts into the candidate typed project-state model and dependency structure.
 
+Checkpoint 5 adds that obvious governance constraints, sensitive-data indicators, external-service use, licenses, and operational intent may be discovered during bootstrap and should activate the appropriate governance reasoning.
+
 Still unresolved: exact schemas, authority provenance, control-effectiveness evidence, approval staleness rules, and how governance objects participate in automated impact analysis.
 
 ---
 
 ## Q-036. How should a new project be initialized into project state?
 
+**Status:** Substantially refined, not resolved
+
+Checkpoint 5 develops a strong conceptual answer based on progressive state construction and universal bootstrap inspection.
+
+Current hypotheses include:
+
+- treat initial user requests and documentation as source-aware reported information rather than automatic truth;
+- distinguish original project input from current project interpretation;
+- make authority question-specific;
+- represent material contradictions explicitly;
+- use progressive semantic commitment so only action-relevant unknowns block work;
+- establish information-legitimate inspection boundaries before consuming restricted data;
+- perform a small structural bootstrap rather than exhaustive EDA;
+- characterize projects through multiple structural properties rather than one exclusive type;
+- use bootstrap observations to emit triggers and questions;
+- ask the human selectively when authoritative clarification has high expected value;
+- consider initialization sufficiently advanced when a legitimate first runnable frontier exists.
+
+Still unresolved: exact source schema, bootstrap checklist, authority representation, information-barrier enforcement, project-characterization representation, and deterministic versus LLM-driven bootstrap responsibilities.
+
+Detailed reasoning is preserved in `docs/foundations/005_project_initialization_and_universal_bootstrap.md`.
+
+---
+
+## Q-037. How should project state activate reusable knowledge and reasoning?
+
 **Current priority:** Highest
 
-The project now has a strong conceptual model for how project state may evolve after it exists, but has not defined how a new, incomplete real-world request becomes an initial state and first runnable frontier.
+Checkpoint 5 reveals a major next bottleneck. The system may have a small universal bootstrap and rich project state, but it still needs a scalable mechanism for turning discovered facts, conflicts, open questions, and structural properties into the right specialized reasoning.
+
+The design should avoid one enormous centralized decision tree and should not rely on an LLM to remember the entire universe of data-science concerns on every step.
 
 Important questions include:
 
-- What should be extracted from the initial user request before inspecting data?
-- What should be inferred from files, documentation, repository context, and early data inspection?
-- What information should be asked of the human immediately versus investigated first?
-- How should project intent, analytical object, population, time, intended use, and desired claim strength be initialized?
-- How should project characterization activate relevant questions and knowledge modules?
-- When should admissibility and initial risk assessment begin?
-- Which missing facts should block modelling immediately?
-- How should the system avoid overwhelming the user with unnecessary questions?
-- How should uncertain or contradictory initial information be represented?
-- How does initial inspection generate the first runnable frontier?
+- What exactly is a trigger?
+- Should knowledge modules subscribe to state patterns or activation predicates?
+- What state should a module receive?
+- What can a module produce: questions, obligations, diagnostics, evidence requirements, candidate actions, review requests, constraints, or all of these?
+- Can multiple modules activate from one state change?
+- Can modules activate further modules indirectly through new state facts rather than direct calls?
+- Which activations should be deterministic hard requirements versus LLM-proposed hypotheses?
+- How should open-ended reasoning be activated when no explicit module fits?
+- How should specialized reviewers participate in the same activation model?
+- How should the system detect missed activations or false negatives?
+- How should it avoid over-activation and running many irrelevant modules?
+- How should activation priority interact with mandatory obligations, risk, expected value, and the runnable frontier?
+- How should module knowledge evolve when real projects expose gaps?
 
-This is the next recorded conceptual design problem after Checkpoint 4.
+This should be explored conceptually before selecting a rule engine, graph system, workflow framework, agent architecture, or module storage format.
