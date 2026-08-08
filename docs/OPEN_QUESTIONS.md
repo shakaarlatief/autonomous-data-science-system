@@ -1,8 +1,8 @@
 # Open Questions
 
-This document records important unresolved questions. It is canonical and current rather than a complete historical transcript. Detailed reasoning is preserved in foundations, checkpoints, and Git history.
+This document records important unresolved questions. It is intentionally canonical and current rather than a complete historical transcript. Detailed reasoning is preserved in foundations, checkpoints, and Git history.
 
-Existing identifiers are retained for continuity even when a question is reframed or substantially answered.
+Questions may later be answered, split, merged, reframed, or marked obsolete. Existing identifiers are retained for continuity.
 
 ## Q-001. What exactly must the system accomplish to be considered successful?
 
@@ -10,7 +10,7 @@ Existing identifiers are retained for continuity even when a question is reframe
 
 The accepted primary purpose is to create the best data-science process for the particular project, where "best" depends on project goals, constraints, deliverables, and desired human involvement.
 
-Still unresolved: explicit end-to-end success criteria and how they are operationalized in evaluation.
+Still unresolved: final system-level success criteria and evaluation standards.
 
 ---
 
@@ -18,9 +18,9 @@ Still unresolved: explicit end-to-end success criteria and how they are operatio
 
 **Status:** Substantially reframed
 
-Autonomy is currently hypothesized to be dynamic rather than one project-wide level. Risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state may restrict autonomy locally.
+Autonomy should probably be dynamic rather than fixed project-wide. Risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state may determine when autonomy is permitted or restricted.
 
-The exact autonomy model remains open.
+The exact model remains open.
 
 ---
 
@@ -28,9 +28,9 @@ The exact autonomy model remains open.
 
 **Status:** Substantially refined
 
-The project distinguishes preferred human involvement from required human involvement. Humans may be required for semantic clarification, normative trade-offs, authority decisions, risk acceptance, unresolved admissibility, consequential uncertainty, or knowledge-quality review.
+Preferred human involvement should remain distinct from required human involvement. Human input may be necessary for semantic authority, normative choices, approvals, risk acceptance, unresolved admissibility, consequential uncertainty, or knowledge-quality review.
 
-The system should usually attempt cheap reliable autonomous resolution before interrupting the human unless authoritative human input is intrinsically required.
+The system should generally attempt cheap reliable autonomous resolution before interrupting a human unless authoritative input is intrinsically required.
 
 ---
 
@@ -38,11 +38,9 @@ The system should usually attempt cheap reliable autonomous resolution before in
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 7 develops a strong architecture-neutral hypothesis based on thin knowledge packages containing versioned, provenance-aware, typed composable reasoning components.
+Checkpoint 7 develops a thin-package plus typed-component hypothesis. Candidate components include questions, invariants, decision principles, evidence requirements, investigations, alternatives, assumptions, failure modes, detection hooks, claim constraints, review/authority hooks, dependencies, resolution criteria, and reopen conditions.
 
-Still unresolved: exact representation syntax, package/component boundaries, storage, querying, composition semantics, executable attachments, and formal validation rules.
-
-Detailed reasoning: `docs/foundations/007_reusable_knowledge_representation_and_composable_components.md`.
+Still unresolved: exact schema, package/component boundaries, composition, querying, executable attachments, and storage.
 
 ---
 
@@ -52,7 +50,7 @@ Detailed reasoning: `docs/foundations/007_reusable_knowledge_representation_and_
 
 The project favors a hybrid of deterministic safeguards, explicit decision frameworks, semantic retrieval, interpretive reasoning, and open-ended discovery.
 
-Checkpoint 8 adds progressively stronger thresholds for reasoning, reusable knowledge, and deterministic enforcement.
+The reusable library should remain open-world rather than becoming an exhaustive closed rule base.
 
 ---
 
@@ -60,9 +58,9 @@ Checkpoint 8 adds progressively stronger thresholds for reasoning, reusable know
 
 **Status:** Substantially refined through Q-037
 
-Activation is treated as a project-state relevance problem rather than a direct workflow transition. It may arise from observations, proposals, missing prerequisites, contradictions, risk, governance, or dependency revisions.
+Activation is now treated as a project-state relevance problem rather than a direct workflow transition. Activated knowledge should normally create state objects such as questions, obligations, reviews, safeguards, or candidate actions rather than execute automatically.
 
-Still unresolved: implementation of triggers, retrieval, applicability, deduplication, and coverage.
+Implementation remains open.
 
 ---
 
@@ -70,11 +68,9 @@ Still unresolved: implementation of triggers, retrieval, applicability, deduplic
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 7 develops the strongest answer so far: a thin semantic package plus typed components such as question templates, invariants, decision principles, evidence requirements, investigations, alternatives, assumptions, failure modes, detection hooks, claim constraints, review hooks, dependencies, resolution criteria, and reopen conditions.
+Checkpoint 7 provides the strongest answer so far: thin semantic packages containing typed, composable, provenance-aware components. Activation differs from applicability; evidence requirements differ from investigation methods; claim constraints, failure modes, assumptions, lifecycle conditions, and cross-package reusable safeguards are first-class.
 
-Checkpoint 8 adds that each important component also needs explicit knowledge role, evidential status, scope, provenance, maturity, challenge history, currency, and enforcement authority.
-
-Still unresolved: final schema, granularity, composition rules, executable semantics, and storage.
+Still unresolved: exact schema, component granularity, composition rules, executable semantics, and storage.
 
 ---
 
@@ -82,19 +78,17 @@ Still unresolved: final schema, granularity, composition rules, executable seman
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 4 develops typed dependency-aware state. Later checkpoints add source registration, conflicts, knowledge instances, activation provenance, component/version dependencies, instantiated assumptions, and claim constraints.
+Checkpoint 4 develops typed dependency-aware state. Later checkpoints add source registration, project-specific knowledge instances, activation provenance, component/version dependencies, and state instantiated from reusable knowledge.
 
-Still unresolved: exact object boundaries, schemas, status models, versioning, storage, and query patterns.
+Still unresolved: exact object boundaries, schemas, status machines, persistence, querying, and implementation.
 
 ---
 
-## Q-009. What agent or responsibility structure is actually useful?
+## Q-009. What agent or responsibility structure is useful?
 
 **Status:** Reframed
 
-Knowledge, capabilities, and actors are now conceptually separate. Agents should operate on shared state and be activated because current work requires them rather than because a fixed roster exists.
-
-No permanent agent architecture has been selected.
+Knowledge, capabilities, and actors should remain separate. Responsibilities may include analysis, execution, methodological review, admissibility review, risk review, and synthesis, but no permanent agent roster is accepted.
 
 ---
 
@@ -102,9 +96,9 @@ No permanent agent architecture has been selected.
 
 **Status:** Substantially refined, not resolved
 
-Candidate triggers include epistemic single points of failure, high-leverage weak assumptions, consequential claims with limited independent support, governance requirements, high residual risk, or low-maturity reusable knowledge used consequentially.
+Candidate triggers include high-risk use, epistemic single points of failure, weak high-leverage assumptions, consequential claims with fragile support, governance requirements, or consequential reliance on low-maturity reusable knowledge.
 
-Checkpoint 8 adds knowledge-library centrality and consequence of incorrect reusable knowledge as review factors.
+Exact review policy remains open.
 
 ---
 
@@ -112,9 +106,9 @@ Checkpoint 8 adds knowledge-library centrality and consequence of incorrect reus
 
 **Status:** Active
 
-Different decisions require different evidence standards. Evidence independence and shared ancestry matter in addition to the number of supporting results.
+Evidence standards are decision-specific. Evidence independence, shared ancestry, uncertainty, methodological validity, and whether more information could change the decision may matter.
 
-Reusable knowledge may specify evidence requirements and context-sensitive sufficiency conditions, but the general sufficiency model remains open.
+Exact sufficiency semantics remain open.
 
 ---
 
@@ -122,69 +116,65 @@ Reusable knowledge may specify evidence requirements and context-sensitive suffi
 
 **Status:** Open
 
-The system may need numerical, categorical, narrative, and structural uncertainty representations, plus propagation through claims, risks, decisions, knowledge instances, and activation priorities.
-
-Checkpoint 8 argues against collapsing reusable-knowledge quality into one generic confidence score.
+Possible numerical, categorical, narrative, and structural representations remain under consideration. Uncertainty may need to propagate through claims, decisions, risks, knowledge instances, and activation priorities.
 
 ---
 
 ## Q-013. How should analysis depth and resource budgets work?
 
-**Status:** Substantially reframed
+**Status:** Open
 
-Mandatory obligations remain mandatory. Project intent and budget primarily affect how far optional value-improving work is pursued and how many candidate investigations exposed by knowledge packages are instantiated.
+Mandatory integrity obligations remain mandatory. Project intent and budget should mainly influence optional value-improving work and evidence depth.
 
-The final policy remains open.
+No final depth or budget policy exists.
 
 ---
 
-## Q-014. How should the system decide when further experimentation is no longer worth the cost?
+## Q-014. How should the system decide when experimentation can stop?
 
 **Status:** Substantially refined, not resolved
 
-Candidate stopping reasons include sufficient evidence, decision-irrelevant residual uncertainty, diminishing expected value, unavailable information, or resource limits that do not violate integrity requirements.
-
-Package-specific resolution and evidence-sufficiency criteria now participate in this reasoning.
+Candidate stopping reasons include sufficient evidence, decision-irrelevant uncertainty, diminishing expected value, lack of discriminating information, or resource limits that do not violate mandatory obligations.
 
 ---
 
-## Q-015. How should different project types be characterized?
+## Q-015. How should project types be characterized?
 
 **Status:** Substantially reframed
 
-Checkpoint 5 favors multidimensional characterization rather than one exclusive project type. Analytical objective and desired claim type are activation-relevant alongside data structure.
+The project favors multidimensional characterization rather than one exclusive project-type label. Structural properties, analytical objective, desired claim type, intended use, and deployment regime may all matter.
 
-The exact characterization representation remains open.
+Exact representation remains open.
 
 ---
 
 ## Q-016. How should system quality itself be evaluated?
 
-**Status:** Highest priority through Q-039
+**Status:** Substantially advanced through Q-039
 
-The system should eventually be compared with strong single-LLM workflows, human-guided LLM workflows, and other meaningful baselines across process quality as well as final analytical outputs.
+Checkpoint 9 develops behavioral-trajectory evaluation, acceptance envelopes, visible-versus-hidden evaluator state, repair testing, process-versus-outcome separation, and meaningful simpler baselines.
 
-Checkpoint 8 makes behavioral reasoning regression tests central to this problem.
-
----
-
-## Q-017. How should real projects become regression tests for the system?
-
-**Status:** Highest priority through Q-039
-
-Real projects should preserve failure cases, expected behaviors, state transitions, and reusable tests without overfitting the system to a small benchmark set.
-
-Checkpoint 8 adds that project cases should test reusable knowledge applicability, false positives, false negatives, repair behavior, reopening, and claim constraints.
+Still unresolved: exact metrics, evaluator implementation, benchmark suite, scoring, and held-out-case strategy.
 
 ---
 
-## Q-018. How should the system handle interaction between modules?
+## Q-017. How should real projects become regression tests?
+
+**Status:** Substantially advanced through Q-038 and Q-039
+
+Real failures can be distilled into reusable behavioral cases without copying private project circumstances. Cases should test applicability, safeguards, claim constraints, repair, reopening, and interaction.
+
+Still unresolved: exact case representation, maintenance, diversity, and held-out evaluation.
+
+---
+
+## Q-018. How should knowledge modules/packages interact?
 
 **Status:** Substantially refined, not resolved
 
-Modules should primarily interact through typed project-state changes and shared questions rather than direct calls. Cross-package reuse of smaller components is also supported.
+The preferred model is interaction through shared project state and shared questions, with cross-package reuse of smaller components. Direct hard-coded module calls should not be the primary integration mechanism.
 
-Composition, deduplication, granularity, and cycle control remain open.
+Deduplication, composition, and cycle control remain open.
 
 ---
 
@@ -192,11 +182,9 @@ Composition, deduplication, granularity, and cycle control remain open.
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 4 develops typed dependency semantics, separate validity and currency, impact analysis, reopening, and repair obligations.
+Typed dependency semantics, validity versus currency, materiality, reopening, and repair obligations are established conceptually. Later checkpoints extend invalidation to reusable knowledge and cross-project effects.
 
-Checkpoints 7 and 8 extend this to reusable knowledge: a material knowledge revision may reopen dependent project decisions or claims.
-
-Exact propagation rules remain open.
+Exact propagation rules and automation remain open.
 
 ---
 
@@ -204,7 +192,7 @@ Exact propagation rules remain open.
 
 **Status:** Open
 
-Isolation, dependency management, data access, artifact tracking, random-state control, failure recovery, compute limits, reproducibility, enforceable information boundaries, and executable knowledge validators remain unresolved.
+Isolation, dependencies, data access, artifact tracking, random-state control, failure recovery, compute limits, reproducibility, information barriers, and executable validators remain unresolved.
 
 ---
 
@@ -212,9 +200,7 @@ Isolation, dependency management, data access, artifact tracking, random-state c
 
 **Status:** Open
 
-Provider diversity, cost-quality trade-offs, independent viewpoints, capability routing, and provider abstraction remain unresolved.
-
-Provider choice should remain separate from the semantic knowledge architecture.
+Provider diversity, quality/cost trade-offs, independent viewpoints, capability routing, and provider abstraction remain open. Provider choice should not determine the semantic architecture.
 
 ---
 
@@ -222,47 +208,43 @@ Provider choice should remain separate from the semantic knowledge architecture.
 
 **Status:** Increasingly coupled to knowledge quality
 
-Reusable components require proposition-specific provenance, source-supported scope, limitations, version, and currency.
-
-Checkpoint 8 adds that source authority is proposition-specific and external guidance should not automatically become a hard reusable rule.
+Reusable components need proposition-specific provenance, source scope, limitations, authority, version, and freshness handling.
 
 The permanent source architecture remains open.
 
 ---
 
-## Q-023. Should raw conversations be archived, and if so, how?
+## Q-023. Should raw conversations be archived?
 
 **Status:** Open
 
-Raw transcripts contain valuable provenance but also outdated ideas and duplication. Their future storage and safe use remain undecided.
+Raw transcripts contain provenance but also duplication and obsolete reasoning. Their long-term role remains undecided.
 
 ---
 
-## Q-024. How much of knowledge capture should eventually be automated?
+## Q-024. How much knowledge capture should be automated?
 
-**Status:** Reframed and risk-sensitive
+**Status:** Open and risk-sensitive
 
-Automatic extraction may identify candidate lessons, failure cases, counterexamples, or gaps, but should not directly promote them into trusted reusable knowledge.
-
-Checkpoint 8 favors automated **knowledge change proposals** rather than automatic library mutation.
+Automatic extraction of lessons, failures, candidate components, conflicts, or activation signals may become useful, but extraction must not imply automatic promotion into trusted knowledge.
 
 ---
 
-## Q-025. What maturity model should be used for ideas and knowledge?
+## Q-025. What maturity model should be used for ideas and reusable knowledge?
 
-**Status:** Substantially refined, not resolved
+**Status:** Substantially refined by Q-038, not resolved
 
-Checkpoint 8 distinguishes knowledge role, maturity, and enforcement authority and argues that maturity may itself be multidimensional.
+Knowledge role, maturity, and enforcement authority should remain separate. Challenge history, scope confidence, operational coverage, and independent review may matter more than one scalar confidence score.
 
-Exact maturity states, transitions, review requirements, and any quantitative representation remain open.
+Exact statuses remain open.
 
 ---
 
-## Q-026. How should the repository structure evolve as the project grows?
+## Q-026. How should repository structure evolve?
 
 **Status:** Open
 
-Possible future areas include knowledge packages/components, reasoning cases, experiments, evaluation suites, implementation, sources, and gap logs. They should be introduced in response to actual needs.
+Future areas may include knowledge components, cases, experiments, evaluation suites, implementation, and sources. They should be added in response to real needs rather than speculative completeness.
 
 ---
 
@@ -270,9 +252,9 @@ Possible future areas include knowledge packages/components, reasoning cases, ex
 
 **Status:** Substantially refined, not resolved
 
-The project favors a project-constitution model over one flat checklist. The epistemic core currently centers on semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity.
+The current project constitution centers on semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance.
 
-Formal requirements and real-project validation remain necessary.
+Formalization and project testing remain necessary.
 
 ---
 
@@ -280,41 +262,37 @@ Formal requirements and real-project validation remain necessary.
 
 **Status:** Substantially refined, not resolved
 
-A strong hypothesis distinguishes objectives, constraints, deliverables, and human-control preferences, with additional separation between project-level, model-level, and operational objectives.
+Objectives, constraints, deliverables, human-control preferences, and distinctions among project/model/operational objectives are important. Intent may begin provisionally and become more specific with evidence.
 
-The exact schema remains open.
+Exact schema remains open.
 
 ---
 
-## Q-029. How should the system prioritize analytical effort?
+## Q-029. How should analytical effort be prioritized?
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 4 introduces the runnable frontier and separates hard obligations from optional prioritization.
+The runnable-frontier concept separates mandatory obligations from optional work. Candidate factors include blocking power, risk reduction, decision impact, uncertainty reduction, dependency leverage, deliverable relevance, cost, reversibility, and project intent.
 
-Candidate factors include blocking power, validity importance, risk reduction, probability of changing an important decision, uncertainty reduction, dependency leverage, deliverable relevance, urgency, compute/human cost, reversibility, parallelizability, and project intent.
-
-No scoring mechanism has been selected.
+No scoring mechanism is selected.
 
 ---
 
-## Q-030. Are the five candidate epistemic invariants complete and precise enough?
+## Q-030. Are the five epistemic invariants complete and precise enough?
 
 **Status:** Strong design hypothesis under validation
 
-The framework has survived conceptual stress tests but still needs formalization and real-project testing.
-
-Checkpoint 8 shows that the same integrity ideas can recursively govern reusable knowledge without proving that the invariant set is complete.
+The framework has survived conceptual stress tests and now informs knowledge components and behavioral evaluation, but still requires formalization and real-project testing.
 
 ---
 
-## Q-031. What exactly belongs in the admissibility layer?
+## Q-031. What belongs in the admissibility layer?
 
 **Status:** Substantially refined, not resolved
 
-Admissibility is hypothesized to be action-specific, source-aware, authority-aware, and capable of returning states such as permitted, permitted with controls, approval required, unresolved, or prohibited.
+Admissibility is action-specific, source-aware, authority-aware, and may yield permitted, permitted-with-controls, approval-required, unresolved, or prohibited states.
 
-The final scope and authority model remain open.
+Final authority and governance models remain open.
 
 ---
 
@@ -322,29 +300,29 @@ The final scope and authority model remain open.
 
 **Status:** Substantially refined, not resolved
 
-Current direction favors scenario-based multidimensional risk, inherent versus residual risk, credible controls, assurance requirements, and explicit risk-acceptance authority.
+Current direction favors failure-scenario-based risk, inherent versus residual risk, credible controls, assurance obligations, and explicit risk acceptance authority.
 
-Checkpoint 8 applies the same logic to reusable knowledge: consequential enforcement requires stronger knowledge assurance.
+Exact representation remains open.
 
 ---
 
-## Q-033. Should analytical questions and claims be primary project-state objects?
+## Q-033. Should analytical questions and claims be primary state objects?
 
 **Status:** Strong design hypothesis
 
-Questions act as integration points for activated knowledge, while proposed claims can activate evidence and validity checks. Reusable question templates and claim constraints strengthen this architecture.
+Questions act as integration points for modular reasoning. Proposed claims can activate evidence and validity checks. Reusable knowledge includes question templates and claim constraints.
 
 Exact schemas remain open.
 
 ---
 
-## Q-034. How should project completion be defined in a question-driven system?
+## Q-034. How should project completion be defined?
 
 **Status:** Substantially refined, not resolved
 
-Completion likely requires mandatory epistemic, admissibility, assurance, approval, and deliverable obligations to be sufficiently resolved, critical state to be internally consistent, and no material current output to depend on known invalid state.
+Completion likely requires all mandatory epistemic, admissibility, assurance, approval, and deliverable obligations to be sufficiently resolved; critical state to be consistent; no important output to depend on known-invalid state; and optional work to have insufficient marginal value.
 
-A coverage check for unresolved or orphaned material concerns is likely.
+Coverage review may search for orphaned material concerns before completion.
 
 ---
 
@@ -352,19 +330,17 @@ A coverage check for unresolved or orphaned material concerns is likely.
 
 **Status:** Substantially refined, coupled to Q-008
 
-These concepts participate in the candidate typed project-state and activation model.
-
-Exact schemas, authority provenance, control-effectiveness evidence, approval staleness, and impact semantics remain open.
+These concepts belong in the candidate typed state and activation model. Exact schemas, authority provenance, control-effectiveness evidence, and approval staleness remain unresolved.
 
 ---
 
-## Q-036. How should a new project be initialized into project state?
+## Q-036. How should a new project be initialized?
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 5 develops progressive state construction, question-specific authority, conflict representation, information-legitimate bootstrap inspection, multidimensional characterization, selective human clarification, and initialization based on reaching a legitimate first runnable frontier.
+Checkpoint 5 develops progressive state construction, source-aware interpretation, information boundaries, structural bootstrap, multidimensional characterization, selective human clarification, and a stopping condition based on reaching a legitimate runnable frontier.
 
-Detailed reasoning: `docs/foundations/005_project_initialization_and_universal_bootstrap.md`.
+Exact bootstrap representation and enforcement remain open.
 
 ---
 
@@ -372,13 +348,9 @@ Detailed reasoning: `docs/foundations/005_project_initialization_and_universal_b
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 6 develops reusable definitions, project-specific instances, deterministic and interpretive activation, prospective checks, missing-prerequisite activation, open-ended discovery, shared state, and coverage review.
+Checkpoint 6 develops reusable definitions, project-specific instances, deterministic/interpretive/open activation, prospective checks, missing-prerequisite activation, shared questions, coverage review, and orphaned-state detection. Checkpoint 7 adds component applicability.
 
-Checkpoint 7 adds package activation versus component applicability.
-
-Still unresolved: exact trigger representation, semantic retrieval, applicability protocol, scope model, deduplication, and coverage implementation.
-
-Detailed reasoning: `docs/foundations/006_knowledge_activation_and_open_world_reasoning.md`.
+Exact trigger representation, semantic retrieval, applicability protocol, deduplication, and coverage implementation remain open.
 
 ---
 
@@ -386,30 +358,9 @@ Detailed reasoning: `docs/foundations/006_knowledge_activation_and_open_world_re
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 8 develops a strong conceptual governance model.
+Checkpoint 8 establishes a strong governance model: epistemic discipline applies to the knowledge library itself; project-specific results must be separated from candidate generalizations; minimum justified generalization should be preferred; reasoning mechanisms should be generalized rather than local winners; knowledge role, maturity, and enforcement authority are distinct; reasoning, reuse, and enforcement thresholds should rise progressively; counterexamples should challenge scope; negative and superseded knowledge should retain provenance; validity and currency are separate; staged change proposals should precede trusted mutation; material revisions may create cross-project revalidation obligations; and `no reusable knowledge update` is a valid outcome.
 
-Current hypotheses include:
-
-- the knowledge library should itself obey epistemic-integrity principles;
-- project-specific knowledge, candidate generalizable lessons, and trusted reusable knowledge should remain distinct;
-- use **minimum justified generalization** and expand scope gradually;
-- generalize reasoning mechanisms rather than local winners;
-- distinguish knowledge role, maturity, and enforcement authority;
-- use progressively higher thresholds for reasoning, reuse, and deterministic enforcement;
-- treat LLM-generated knowledge as low-authority candidate knowledge until independently justified;
-- use counterexamples actively for scope discovery and rejection of over-broad rules;
-- preserve challenged, rejected, superseded, and negative knowledge with provenance;
-- distinguish knowledge validity from currency;
-- use staged promotion and knowledge change proposals rather than direct automatic mutation;
-- use behavioral regression cases at component, package, activation, and project levels;
-- account for self-confirmation when project evidence was generated under the influence of the knowledge being assessed;
-- allow material knowledge revisions to create cross-project revalidation obligations;
-- prioritize review of uncertain, highly reused, consequential components;
-- treat `no reusable knowledge update` as a valid lesson-extraction outcome.
-
-Four project-to-library stress tests covered a broad invariant candidate, a heuristic candidate, a genuinely project-specific lesson, and an apparent general rule rejected by a counterexample.
-
-Still unresolved: exact maturity/status model, promotion authorities, quantitative quality representation, review workflow, contradiction-resolution implementation, freshness policy, and automatic learning architecture.
+Still unresolved: exact maturity model, promotion authority, contradiction-resolution implementation, freshness policies, automatic learning architecture, and quantitative quality representation.
 
 Detailed reasoning: `docs/foundations/008_knowledge_quality_generalization_and_evolution.md`.
 
@@ -417,27 +368,58 @@ Detailed reasoning: `docs/foundations/008_knowledge_quality_generalization_and_e
 
 ## Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
+**Status:** Substantially refined, not resolved
+
+Checkpoint 9 develops the first coherent evaluation model.
+
+Current hypotheses include:
+
+- evaluate project trajectories, not just final artifacts;
+- separate system-visible information from evaluator-only world truth;
+- specify behavioral acceptance envelopes rather than one expected workflow;
+- distinguish mandatory obligations, prohibited behavior, acceptable resolutions, and optional quality opportunities;
+- evaluate dependency and milestone relationships rather than exact step order;
+- combine deterministic assertions, semantic judgment, and empirical outcomes;
+- prevent critical integrity/admissibility failures from being compensated by higher predictive performance;
+- test self-correction, dynamic state changes, invalidation, reopening, repair precision, and claim weakening;
+- include both genuine hidden failures and harmless suspicious patterns to test selectivity;
+- evaluate human interaction for value and authority need rather than minimum interruption count;
+- separate process quality, ex-ante decision quality, and ex-post outcome quality;
+- treat correct abstention or scope reduction as valid outcomes;
+- evaluate justified effort rather than minimum work;
+- include multiple case scales and eventually held-out or parameterized cases;
+- version and challenge evaluator expectations themselves;
+- compare against strong simpler LLM workflows and architectural ablations.
+
+A difficult churn mini-project stress test showed that the acceptance-envelope approach can evaluate repeated entities, timestamps, post-outcome features, missingness, stale documentation, protected test data, validation ambiguity, inherited preprocessing contamination, and deployment-capacity constraints without prescribing one exact model or workflow.
+
+Still unresolved: exact case schema, evaluator implementation, semantic judge assurance, scoring, hidden-case infrastructure, scenario generation, benchmark diversity, human simulation, and tooling.
+
+Detailed reasoning: `docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`.
+
+---
+
+## Q-040. What is the minimum end-to-end prototype that can falsify the core architecture?
+
 **Current priority:** Highest
 
-Checkpoint 8 makes behavioral regression testing a prerequisite for trustworthy knowledge evolution and for evaluating the autonomous system itself.
+The project now has substantial conceptual theories for project constitution, persistent state, bootstrap initialization, knowledge activation, reusable knowledge representation, knowledge evolution, and behavioral evaluation.
 
-The system must be testable without assuming that every good data-science project follows one exact workflow or produces one exact model.
+The next step should not be a production implementation. It should be the smallest prototype capable of testing whether these semantic ideas materially outperform a strong simpler workflow.
 
-Important unresolved questions include:
+Important questions include:
 
-- What should a reasoning regression case contain?
-- What project information is visible to the system and what evaluator-only truth should remain hidden?
-- Which expected behaviors are mandatory versus merely acceptable alternatives?
-- How should the evaluator allow multiple valid analytical paths?
-- How should cases test activation precision and recall?
-- How should hidden leakage, semantic ambiguity, missing prerequisites, admissibility constraints, or state changes be represented?
-- How should state transitions, invalidation, reopening, repair, and claim weakening be evaluated?
-- How should process quality be separated from final model performance?
-- How should efficiency, unnecessary work, and human interruption be measured?
-- How should independent review behavior be tested?
-- Which baseline systems should be compared?
-- How should project diversity, held-out cases, and case generation reduce benchmark overfitting?
-- How should real project failures become reusable regression cases without leaking private or organization-specific information?
-- How should knowledge-component regression tests connect to full-project system evaluation?
+- What exact subset of project-state objects is required for a first prototype?
+- What is the smallest knowledge representation needed to exercise activation and applicability?
+- Which deterministic safeguard should be implemented first?
+- Which interpretive knowledge package should be implemented first?
+- What minimal runnable-frontier/orchestration behavior is necessary?
+- How should one behavioral mini-project drive the prototype end to end?
+- Which state changes and repair scenario must be included so dependency invalidation is genuinely tested?
+- What should remain manual or mocked in version 0?
+- Which architecture choices can be deliberately deferred?
+- What baseline should the prototype be compared against?
+- What result would falsify the need for a more complex state/knowledge architecture?
+- What result would justify moving to a broader implementation?
 
-This should be developed conceptually before selecting an evaluation framework or implementation harness.
+This should be developed before choosing a production framework, database, agent roster, provider architecture, or large-scale execution system.
