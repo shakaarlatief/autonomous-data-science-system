@@ -2,7 +2,7 @@
 
 ## Checkpoint
 
-**Checkpoint:** 4  
+**Checkpoint:** 5  
 **Date:** 2026-08-08  
 **Development stage:** Conceptual research and system definition  
 **Implementation status:** Not started
@@ -11,11 +11,11 @@
 
 > **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
 
-Maximum predictive performance, autonomy, depth, speed, or low cost are therefore project-dependent objectives rather than universal goals.
+Maximum predictive performance, autonomy, depth, speed, or low cost are project-dependent objectives rather than universal goals.
 
 ## Current project-constitution hypothesis
 
-The current conceptual hierarchy is:
+The current conceptual hierarchy remains:
 
 ```text
 Admissibility
@@ -34,23 +34,21 @@ The five candidate epistemic invariants remain:
 
 These remain strong design hypotheses rather than finalized requirements.
 
-## Admissibility, risk, and assurance
+## Checkpoint 3: admissibility, risk, and assurance
 
-Checkpoint 3 established strong hypotheses that admissibility should be action-specific and authority-aware, risk should be scenario-based rather than one unexplained label, inherent and residual risk should be distinguished, controls should be credible, and risk should dynamically affect assurance, autonomy, and human gates.
+The project currently hypothesizes that admissibility should be action-specific and authority-aware, risk should be represented through failure scenarios rather than one unexplained project-level label, inherent and residual risk should be distinguished, controls should be credible, and risk should dynamically affect assurance, autonomy, review, monitoring, and human gates.
 
-Detailed reasoning is preserved in:
+Detailed reasoning:
 
 `docs/foundations/003_admissibility_risk_and_assurance.md`
 
-## Major development since Checkpoint 3: project state
+## Checkpoint 4: project state and state-driven orchestration
 
-The central new hypothesis is:
+The central Checkpoint 4 hypothesis remains:
 
 > **Project state should not be passive memory. It should represent the evolving epistemic and operational situation strongly enough to determine what the system is still entitled to believe, what is stale or invalid, what obligations exist, and what should happen next.**
 
-### Candidate state objects
-
-The current minimal conceptual vocabulary is:
+Candidate first-class state objects include:
 
 ```text
 PROJECT INTENT
@@ -69,255 +67,309 @@ ACTION
 ARTIFACT
 ```
 
-This is not a finalized ontology or schema.
+Typed dependency relationships may include meanings such as support, contradiction, hard dependency, derivation, information influence, blocking, invalidation, supersession, requirement, mitigation, and approval.
 
-The important distinction is epistemic role. Facts, assumptions, evidence, claims, decisions, approvals, risks, and controls should not collapse into one narrative record.
+Important current hypotheses from Checkpoint 4 include:
 
-## Questions as a likely orchestration backbone
+- separate validity from currency;
+- preserve both current state and meaningful history;
+- perform impact analysis when consequential upstream state changes;
+- reopen questions and decisions when their support changes;
+- treat invalidation as creating new obligations rather than merely changing a status label;
+- track information lineage in addition to computational lineage;
+- detect high-leverage fragile assumptions and epistemic single points of failure;
+- derive plans from state rather than treating plans as the deepest source of truth;
+- maintain a runnable frontier of useful executable actions;
+- separate mandatory integrity/admissibility/assurance obligations from optional value-improving work;
+- select optional actions using expected project value, information value, dependency leverage, risk reduction, cost, and project intent.
 
-The hypothesis that analytical questions are more fundamental than pipeline stages has strengthened.
+Detailed reasoning:
 
-Questions may differ by purpose, blocking power, importance, evidence requirements, and current resolution state. A question can be sufficiently resolved even when the result is inconclusive if the remaining uncertainty is acceptable for the current decision.
+`docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`
 
-## Evidence, claims, and decisions
+## Major development since Checkpoint 4: project initialization
 
-The current reasoning structure distinguishes:
+Checkpoint 5 addresses how a project enters the system before a rich project state already exists.
 
-```text
-question
-    -> investigation
-    -> evidence
-    -> claim
-    -> decision
-```
+The strongest current formulation is:
 
-while allowing later evidence to reopen questions, claims, or decisions.
+> **A new project should enter the system through progressive state construction rather than one-shot problem definition. Initial requests, documentation, code, data, and external information should be registered with provenance, converted into provisional facts, assumptions, questions, constraints, and candidate interpretations, and continuously reconciled as evidence accumulates.**
 
-Evidence should preserve how it was produced. Claims should preserve support and assumptions. Decisions should preserve rationale, alternatives, and dependencies.
-
-## State and history
-
-The system needs both:
-
-1. a usable current view of what should be believed and acted upon now; and
-2. historical preservation of how important state changed.
-
-Important state should not simply be overwritten. No event-sourcing or storage architecture has been selected.
-
-## Validity and currency
-
-The project now distinguishes whether an object is valid from whether it is current.
-
-Examples include valid but stale, invalid, valid but superseded, and under review.
-
-## Dependency-aware state
-
-A major hypothesis is that state objects should have typed relationships with enough semantic meaning to support change propagation.
-
-Candidate relationship meanings include:
-
-```text
-supports
-contradicts
-hard_depends_on
-derived_from
-informed_by
-answers
-motivates
-blocks
-invalidates
-supersedes
-requires
-implements
-mitigates
-approves
-generated_by
-```
-
-The exact vocabulary remains open.
-
-Different dependency types should propagate differently. Hard validity dependencies may invalidate downstream work. Loss of one evidence item may only require claim reassessment. New source versions may create staleness. Missing approvals may block actions. Failed controls may reopen risk.
-
-## Impact analysis and self-correction
-
-A consequential state change should trigger impact analysis:
-
-```text
-new fact / revision / invalidation / new version
-        -> identify changed object
-        -> traverse typed dependencies
-        -> determine impact
-        -> apply deterministic effects
-        -> mark ambiguous dependents for reassessment
-        -> reopen affected questions or decisions
-        -> generate new obligations
-        -> prioritize repair, review, rerun, or clarification
-```
-
-This is a central candidate mechanism for making the future system self-correcting.
-
-Invalidation should therefore create obligations rather than merely change a status label.
-
-## Materiality and repair priority
-
-Not every affected object should be repaired immediately.
-
-The system should distinguish what is affected from what must be repaired now. Priority may depend on materiality, downstream importance, risk, deliverable relevance, cost, and expected value.
-
-The exact materiality model remains open.
-
-## Computational lineage versus information lineage
-
-File and code lineage are insufficient because human or LLM reasoning can create indirect information dependencies.
+The initial user request should therefore be treated as source material about the project rather than automatically converted into ground truth.
 
 The project now distinguishes conceptually:
 
 ```text
-computational / provenance lineage
-    dataset -> transformation -> model -> prediction
+ORIGINAL PROJECT INPUT
+what a source actually stated
 
-epistemic / information lineage
-    fact -> question -> evidence -> claim -> decision -> action
-
-governance lineage
-    constraint -> control -> approval -> action
+CURRENT PROJECT INTERPRETATION
+what the system currently believes the project means
 ```
 
-This may be important for leakage auditing, reviewer independence, and reasoning provenance.
+Material disagreement between sources should become explicit state rather than being silently resolved.
 
-## Fragility and epistemic single points of failure
+## Source-aware project entry
 
-Dependency structure could reveal claims with one support path, apparently independent experiments sharing one flawed ancestor, high-leverage assumptions with large downstream effects, circular support, and unresolved questions that gate much of the project.
+A new project may include user requests, datasets, schemas, READMEs, data dictionaries, notebooks, code, saved models, configuration, deployment descriptions, reports, and external requirements.
 
-The project currently refers to such high-leverage fragile nodes conceptually as **epistemic single points of failure**.
+The bootstrap should first register what sources exist before relying on them.
 
-## Major development since Checkpoint 3: state-driven orchestration
+A strong current hypothesis is:
 
-Plans should likely be derived from project state rather than act as the deepest source of truth.
+> **Authority is question-specific.**
 
-Every consequential next action should ideally be traceable to an unresolved question, obligation, risk, constraint, deliverable need, repair requirement, or accepted decision.
+The user may be authoritative about desired project intent, while a production system owner or deployment specification may be more authoritative about operational feature availability. Direct data inspection is authoritative about what is present in a file but does not by itself determine business semantics.
 
-### Runnable frontier
+No universal source-precedence model has been selected.
 
-The discussion introduced the conceptual **runnable frontier**: currently useful candidate actions whose prerequisites are satisfied and which are not blocked by admissibility, approval, dependencies, resources, or required independence.
+## Progressive semantic commitment
 
-### Hard gates versus prioritization
+Different actions require different semantic prerequisites.
 
-Mandatory validity, admissibility, and assurance obligations should not compete as ordinary weighted preferences with optional optimization work.
+The system should therefore avoid both blindly modelling from an incomplete initial request and requiring exhaustive project understanding before any useful work can begin.
 
-A candidate policy is:
+The emerging rule is:
 
-1. identify hard blockers and mandatory obligations;
-2. filter actions that are not currently executable;
-3. satisfy prerequisites needed to unlock consequential work;
-4. prioritize remaining runnable actions according to expected project value.
+> **Require only the semantic information necessary for the next action, while preventing actions whose material semantic prerequisites remain unresolved.**
 
-### Candidate prioritization factors
+Project understanding remains revisable throughout the project.
 
-Current candidate factors include blocking power, validity importance, risk reduction, probability of changing an important decision, uncertainty reduction, downstream dependency leverage, deliverable relevance, urgency, compute and human cost, reversibility, parallelizability, and project objectives.
+## Universal bootstrap inspection
 
-No weighted formula has been selected.
+A major Checkpoint 5 hypothesis is that the fixed project-entry process may be much smaller than a complete universal data-science workflow.
 
-A useful qualitative value-of-information intuition is:
+The bootstrap should remain:
 
 ```text
-value of investigation
-    ~ probability it changes an important decision
-      x importance of that decision
-      - cost of obtaining the information
+broadly relevant
+low semantic commitment
+low risk
+high trigger value
+relatively cheap
+non-destructive
+provenance-preserving
+reversible
 ```
 
-## Parallelism and human clarification
+Its purpose is not to complete EDA or choose modelling strategy.
 
-Dependency structure can determine what can run in parallel, what must wait, and what should remain isolated for independent review.
+Its purpose is to create enough trustworthy structural state for specialized reasoning to activate.
 
-Asking the human is also a first-class candidate action when a high-impact semantic, normative, domain, or authority question cannot be resolved reliably from available evidence.
+A concise behavioral rule is:
 
-## Stopping and completion
+> **Observe broadly, infer cautiously.**
 
-The current direction distinguishes local stopping from project completion.
+## Information boundaries apply during bootstrap
 
-A question may stop when evidence is sufficient for the current decision, remaining uncertainty is decision-irrelevant, further work has low expected value, or available data cannot discriminate alternatives.
+The bootstrap itself must obey information legitimacy.
 
-A project may be complete when mandatory epistemic, admissibility, assurance, approval, and deliverable obligations are sufficiently resolved, critical state is internally consistent, no important current output depends on known invalid state, and remaining optional work has insufficient expected value for the project's intent and budget.
+Before deeply inspecting a source, the system should determine its likely role and what information is legitimate to consume.
 
-The final completion rule remains open.
+This is especially important for final test or holdout data. Structural metadata may be legitimate to inspect while target values or outcome associations remain protected from development.
 
-## Current control-loop hypothesis
+A future execution environment may need enforceable information barriers, but no implementation has been selected.
+
+## Candidate bootstrap observations
+
+High-value structural observations may include:
+
+- available sources, files, and versions;
+- dataset shape and schema;
+- physical data types;
+- candidate identifiers and cardinality;
+- timestamps or ordering variables;
+- candidate target structure where legitimate;
+- missingness presence and approximate rates;
+- duplicate or repeated-entity structure;
+- data partitions;
+- entity and temporal overlap across partitions;
+- obvious structural inconsistencies;
+- existing implementation and environment structure;
+- executability and resource availability;
+- obvious governance-relevant facts or hard restrictions.
+
+These observations should create facts, conflicts, hypotheses, and triggers rather than immediately dictate downstream responses.
+
+## Bootstrap detects conditions; specialized knowledge reasons about responses
+
+Examples:
 
 ```text
-CURRENT PROJECT STATE
-        -> identify unresolved questions, obligations, risks,
-           stale/invalid objects, approvals, deliverable needs
-        -> generate candidate actions
-        -> filter by prerequisites and constraints
-        -> identify mandatory blockers
-        -> prioritize remaining runnable candidates
-        -> execute one action or compatible parallel set
-        -> update evidence, artifacts, decisions, approvals, or revisions
-        -> perform impact analysis
-        -> recompute state and runnable frontier
+42% missingness detected
+    -> activate missing-data reasoning
+    -> do not automatically median-impute
 ```
 
-This is a behavioral hypothesis, not an implementation commitment.
+```text
+timestamp detected
+    -> activate temporal-structure reasoning
+    -> do not automatically fit a time-series model
+```
 
-## Project state may be more fundamental than the orchestrator
+```text
+2% positive class detected
+    -> activate imbalance / metric / threshold reasoning
+    -> do not automatically apply SMOTE
+```
 
-A conceptual shift has occurred: the durable core may be project state, with reasoning, execution, review, and orchestration acting on that state.
+This separation is central to keeping the universal process small while preserving project-specific methodological depth.
 
-No database, graph, workflow, agent, or event-log technology has been selected.
+## Multidimensional project characterization
+
+The project should probably be characterized by multiple structural properties rather than one exclusive project-type label.
+
+For example, one task may simultaneously be:
+
+```text
+supervised
+binary classification
+temporal
+grouped
+forward-looking
+sequence-derived
+imbalanced
+```
+
+Those properties can activate different reasoning modules.
+
+The exact representation remains open.
+
+## Intended use remains high leverage
+
+Intended use affects validation, feature legitimacy, metrics, interpretation, risk, admissibility, monitoring, and human gates.
+
+The system should try to establish intended use relatively early while keeping it revisable.
+
+A later transition from exploratory analysis to operational deployment should trigger impact analysis and new assurance obligations rather than acting like a harmless metadata edit.
+
+## Selective human clarification
+
+The system should not start every project with a large questionnaire.
+
+It should first use available data, documentation, schemas, code, and authoritative sources when they can resolve a question cheaply and reliably.
+
+Human clarification becomes a first-class action when a material semantic, normative, authority-dependent, or blocking question cannot be resolved reliably from existing evidence.
+
+A derived human-facing **Current Project Interpretation** may eventually help users correct high-leverage misunderstandings efficiently without making the summary itself the source of truth.
+
+## Initialization stopping condition
+
+Checkpoint 5 introduces the following strong hypothesis:
+
+> **Initialization is sufficiently advanced once at least one useful, admissible, methodologically legitimate action can proceed, while important unresolved questions and blockers are explicitly represented.**
+
+Initialization therefore does not require complete certainty about every future project decision.
+
+Blocking is relative to actions and milestones rather than one project-wide yes/no flag.
+
+## Six candidate universal bootstrap responsibilities
+
+The current bootstrap can be compressed conceptually into six responsibilities:
+
+1. **Register sources and information boundaries.**
+2. **Establish structural facts.**
+3. **Compare sources for consistency.**
+4. **Generate project-characterization hypotheses.**
+5. **Emit triggers and questions.**
+6. **Construct the first runnable frontier.**
+
+This is a conceptual protocol, not a selected implementation workflow.
+
+## Major simplification
+
+One of the strongest simplifications found so far is:
+
+```text
+SMALL UNIVERSAL BOOTSTRAP PROTOCOL
+                +
+ADAPTIVE STATE-DRIVEN REASONING
+```
+
+rather than one complete universal data-science pipeline.
+
+Conceptually:
+
+```text
+NEW PROJECT
+    -> source registration
+    -> provisional interpretation
+    -> information-boundary determination
+    -> universal bootstrap inspection
+    -> structural facts and conflicts
+    -> characterization hypotheses
+    -> triggers
+    -> specialized questions / knowledge modules
+    -> first runnable frontier
+```
+
+Then the Checkpoint 4 control loop takes over:
+
+```text
+action
+    -> evidence
+    -> state update
+    -> impact analysis
+    -> new obligations
+    -> new runnable frontier
+```
 
 Detailed reasoning is preserved in:
 
-`docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`
+`docs/foundations/005_project_initialization_and_universal_bootstrap.md`
 
 Historical snapshot:
 
-`docs/checkpoints/004_project_state_and_state_driven_orchestration.md`
+`docs/checkpoints/005_project_initialization_and_universal_bootstrap.md`
 
 ## Strong design hypotheses currently active
 
 Important active hypotheses include:
 
-- fact-triggered investigations and reusable knowledge modules;
 - five candidate epistemic invariants;
-- the project-constitution model;
-- action-specific admissibility and scenario-based risk;
-- dynamic autonomy and required versus preferred human involvement;
-- typed persistent project-state objects;
-- analytical questions as an orchestration backbone;
-- typed dependency relationships;
-- separate validity and currency;
+- a project constitution separating admissibility, epistemic integrity, risk-sensitive assurance, and optimization;
+- typed dependency-aware project state;
+- questions and claims as important orchestration objects;
 - impact analysis and change propagation;
 - information lineage in addition to computational lineage;
-- epistemic single points of failure;
-- plans as derived views;
 - a runnable frontier;
-- separation of hard obligations from optional prioritization;
-- dependency-aware value-of-information action selection;
-- dynamic stopping based on unresolved obligations rather than fixed pipeline stages.
+- separation of mandatory obligations from optional prioritization;
+- state-driven rather than plan-driven orchestration;
+- source-aware progressive project initialization;
+- question-specific authority;
+- explicit representation of source conflicts;
+- progressive semantic commitment;
+- a small universal bootstrap protocol;
+- trigger-oriented structural inspection;
+- multidimensional project characterization;
+- initialization completion based on a legitimate runnable frontier.
 
 ## Explicit non-decisions
 
-The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, event-log architecture, exact project-state schemas, exact relationship vocabulary, exact status machines, materiality model, priority formula, parallel scheduler, execution sandbox, final autonomy model, final completion rule, or system-evaluation framework.
+The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, event-log architecture, exact project-state schemas, source schema, authority model, exact bootstrap checklist, project-characterization schema, information-barrier implementation, trigger representation, module representation, rule engine, exact status machines, materiality model, priority formula, parallel scheduler, execution sandbox, final autonomy model, final completion rule, or system-evaluation framework.
 
 ## Current focus
 
 The next major conceptual question is:
 
-> **How should a new project enter the system and be initialized into the project-state model when the user's initial request, data, documentation, constraints, and intended use may be incomplete or partially wrong?**
+> **How should discovered project facts, conflicts, questions, and characterization properties activate the correct reusable knowledge modules, rules, reviewers, or open-ended reasoning without creating one impossibly large centralized decision tree?**
+
+This is the **knowledge-activation problem**.
 
 Important subquestions include:
 
-- What should be extracted from the initial request before inspecting data?
-- What should be inferred from files, documentation, repository context, and early data inspection?
-- What should the system ask the human immediately versus investigate itself first?
-- How should project intent be initialized?
-- How should the analytical object, population, time, prediction point, intended use, and desired claim strength be established?
-- When should admissibility and initial risk assessment begin?
-- Which missing facts should block modelling?
-- How should the system avoid overwhelming the user with unnecessary questions?
-- How does initial inspection create the first runnable frontier?
+- What exactly is a trigger?
+- What should a reusable knowledge module receive and produce?
+- Should modules subscribe to state patterns rather than call each other directly?
+- Can multiple modules activate from the same fact?
+- Can modules activate further modules through new state changes?
+- Which activations should be deterministic versus proposed by an LLM?
+- How should missed activations be detected?
+- How should the system avoid over-activation and irrelevant work?
+- How should reviewers and open-ended reasoning participate in the same activation mechanism?
+- How should activations create questions, obligations, or candidate actions on the runnable frontier?
+
+This should remain conceptual before choosing a rule engine, graph system, workflow framework, or agent architecture.
 
 ## Required context for a new chat
 
@@ -332,10 +384,10 @@ A new design chat should read, at minimum:
 7. `docs/DEVELOPMENT_METHOD.md`
 8. `docs/CONTINUITY.md`
 
-For detailed reasoning, also read the four files currently under `docs/foundations/`.
+For detailed reasoning, also read the five files currently under `docs/foundations/`.
 
-Relevant historical checkpoints are Checkpoints 0 through 4 under `docs/checkpoints/`.
+Relevant historical checkpoints are Checkpoints 0 through 5 under `docs/checkpoints/`.
 
 ## Next step
 
-Develop the conceptual project-initialization process: how an incomplete real-world request becomes a sufficiently specified initial project state and first runnable frontier without assuming that the initial framing is complete, valid, or operationally sufficient.
+Develop the conceptual knowledge-activation mechanism linking project-state facts and questions to reusable modules, rules, reviewers, and open-ended reasoning before choosing implementation technology.
