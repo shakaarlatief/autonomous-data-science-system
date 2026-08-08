@@ -2,26 +2,20 @@
 
 ## Checkpoint
 
-**Checkpoint:** 3  
+**Checkpoint:** 4  
 **Date:** 2026-08-08  
 **Development stage:** Conceptual research and system definition  
 **Implementation status:** Not started
 
-## Working project definition
-
-The Autonomous Data Science System is intended to become a rigorous, adaptive, semi-autonomous system for carrying out data science projects through a combination of structured reasoning, executable tools, persistent project state, empirical evidence, review, reusable knowledge, governance constraints, and human judgment.
-
-The accepted primary purpose remains:
+## Primary purpose
 
 > **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
 
-Maximum predictive performance, maximum autonomy, maximum analytical depth, minimum cost, or maximum speed are therefore not universal goals. They are project-dependent objectives or means.
+Maximum predictive performance, autonomy, depth, speed, or low cost are therefore project-dependent objectives rather than universal goals.
 
 ## Current project-constitution hypothesis
 
-The project has moved beyond a single flat methodological quality floor.
-
-A strong current conceptual hierarchy is:
+The current conceptual hierarchy is:
 
 ```text
 Admissibility
@@ -30,364 +24,300 @@ Admissibility
     -> Project optimization
 ```
 
-A more detailed interpretation is:
+The five candidate epistemic invariants remain:
 
-```text
-PROPOSED ACTION / INTENDED USE
-        |
-        v
-ADMISSIBILITY
-Is this action permitted?
-        |
-        v
-EPISTEMIC INTEGRITY
-Is the reasoning and evidence defensible?
-        |
-        v
-RISK ASSESSMENT
-What could fail, with what consequence and uncertainty?
-        |
-        v
-ASSURANCE REQUIREMENTS
-What evidence, review, controls, approvals, monitoring,
-and recovery mechanisms are required?
-        |
-        v
-RESIDUAL-RISK ACCEPTANCE
-Who is authorized to accept what remains?
-        |
-        v
-PROJECT OPTIMIZATION
-Which defensible and admissible path best serves project intent?
-```
+1. semantic validity;
+2. information legitimacy;
+3. evidence validity;
+4. claim validity;
+5. traceability and dependency integrity.
 
-This remains a **strong design hypothesis**, not a selected implementation architecture or final workflow.
+These remain strong design hypotheses rather than finalized requirements.
 
-## Candidate epistemic core
+## Admissibility, risk, and assurance
 
-The five-invariant epistemic framework from Checkpoint 2 remains active:
-
-1. **Semantic validity** - are we answering the right question?
-2. **Information legitimacy** - did each step use only information legitimate for its role and represented conditions?
-3. **Evidence validity** - did the design, assumptions, execution, and uncertainty treatment validly generate evidence about the question?
-4. **Claim validity** - are conclusions limited to what the evidence and assumptions justify?
-5. **Traceability and dependency integrity** - can consequential conclusions be reconstructed, and can downstream dependencies be identified when upstream state changes?
-
-The framework has survived conceptual stress tests across several project types but has not yet been validated through heterogeneous real-project tests or formalized into system requirements.
+Checkpoint 3 established strong hypotheses that admissibility should be action-specific and authority-aware, risk should be scenario-based rather than one unexplained label, inherent and residual risk should be distinguished, controls should be credible, and risk should dynamically affect assurance, autonomy, and human gates.
 
 Detailed reasoning is preserved in:
 
-`docs/foundations/002_epistemic_integrity_and_project_constitution.md`
-
-## Major development since Checkpoint 2: admissibility
-
-The project has substantially refined the admissibility layer.
-
-A central distinction is:
-
-```text
-VALIDITY
-Can the conclusion be justified?
-
-ADMISSIBILITY
-May the action, data use, output, or intended application occur?
-```
-
-An analysis may be epistemically excellent while still being impermissible because of privacy, security, contractual, legal, policy, ethical, fairness, organizational, or operational constraints.
-
-### Reasoning versus authority
-
-A strong current hypothesis is that the system may reason about admissibility without automatically having authority to approve it.
-
-The system may detect issues, retrieve or interpret available rules, identify missing facts, map actions to constraints, propose controls, generate safer alternatives, and prepare questions for experts or decision authorities.
-
-Material ambiguity about permission should not be silently converted into permission merely because an LLM can produce a plausible interpretation.
-
-### Source and authority awareness
-
-Admissibility constraints may originate from different sources, including system rules, law, contracts, data-use permissions, organizational policy, project-owner requirements, stakeholder decisions, or user instructions.
-
-The exact precedence model remains unresolved, but a strong hypothesis is that constraints should eventually preserve their source, scope, authority, status, and relevant version or exception authority.
-
-### Action-specific admissibility
-
-Admissibility should likely attach to proposed actions rather than one project-level boolean.
-
-Examples include reading or transferring data, joining external information, transforming sensitive fields, training models, generating individual predictions, exporting artifacts, reporting, deployment, and retention.
-
-A project can be admissible overall while a particular operation is prohibited or requires controls.
-
-### Candidate admissibility statuses
-
-The following are currently exploratory:
-
-```text
-PERMITTED
-PERMITTED WITH CONTROLS
-APPROVAL REQUIRED
-UNRESOLVED
-PROHIBITED
-```
-
-These are not yet a finalized state machine.
-
-### Safe alternatives
-
-A constrained or prohibited action should not automatically terminate a project when an admissible alternative can still serve the objective.
-
-Examples include local execution instead of external transfer, aggregate reporting instead of row-level disclosure, excluding a restricted feature, or preparing a deployment artifact instead of automatically deploying it.
-
-## Major development since Checkpoint 2: risk and assurance
-
-The project now has a clearer distinction between risk and assurance.
-
-> **Admissibility asks whether an action is allowed. Assurance asks how much justified confidence and operational control are required before an allowed action proceeds.**
-
-A strong hypothesis is that risk primarily changes assurance intensity rather than the meaning of valid evidence.
-
-### Risk attaches to intended use and action
-
-The same model can have very different risk depending on whether it supports offline exploration, an optional human decision, or a fully automated consequential action.
-
-The primary risk-bearing object should therefore likely be an intended use, decision, action, or consequential claim rather than a model alone.
-
-### Scenario-based risk
-
-The project currently rejects an unexplained project-level label such as `risk = high` as the primary representation.
-
-A stronger direction is:
-
-```text
-intended action
-    -> plausible failure scenario
-    -> affected entity / population / system
-    -> consequence
-    -> likelihood or uncertainty
-    -> controls
-    -> residual exposure
-```
-
-Aggregate categories may later help routing, but should remain traceable to their underlying scenarios and evidence.
-
-### Candidate risk drivers
-
-Current candidate dimensions include:
-
-- consequence severity;
-- exposure or scale;
-- likelihood;
-- uncertainty;
-- reversibility;
-- detectability and time to detection;
-- human control and override ability;
-- degree of automation;
-- distribution-shift exposure;
-- population sensitivity;
-- operational coupling;
-- fallback quality;
-- governance sensitivity.
-
-This set is exploratory rather than final.
-
-### Unknown consequential risk
-
-Unknown risk should remain explicit rather than silently becoming low risk. Where possible consequences are substantial or difficult to reverse, uncertainty may itself justify stronger investigation, assurance, or escalation.
-
-### Inherent and residual risk
-
-The project distinguishes conceptually:
-
-```text
-inherent risk
-    -> controls
-    -> residual risk
-```
-
-Controls should not count merely because they are mentioned. Human review, monitoring, rollback, abstention, and similar safeguards need to be credible in the actual operating process.
-
-### Residual-risk acceptance
-
-The system may generate evidence about risk without necessarily having authority to accept the remaining risk.
-
-A strong hypothesis is that residual-risk acceptance should identify an appropriate decision authority and should use authoritative thresholds or requirements where available.
-
-## Assurance is broader than model validation
-
-Risk-sensitive assurance may include:
-
-- stronger validation and robustness analysis;
-- subgroup analysis;
-- implementation and reproducibility tests;
-- independent methodological or code review;
-- independent replication;
-- staged rollout or shadow deployment;
-- human approval;
-- monitoring and drift detection;
-- rollback and fallback mechanisms;
-- abstention and escalation rules;
-- stronger auditability and governance documentation.
-
-The correct assurance mechanisms should respond to particular failure scenarios rather than to a universal high-risk checklist.
-
-## Dynamic risk, autonomy, and human involvement
-
-Risk and assurance requirements should be revisable when project state or intended use changes.
-
-For example:
-
-```text
-offline exploratory model
-    -> proposed production automation
-    -> operational risk changes
-    -> additional assurance obligations activate
-```
-
-This produces an important current hypothesis: autonomy should probably be conditional rather than one fixed project-wide level.
-
-The project now conceptually distinguishes:
-
-- **preferred human involvement**, expressing the user's desired interaction style;
-- **required human involvement**, activated by epistemic validity, admissibility, risk, uncertainty, or authority requirements.
-
-A preference for minimal interruption should not override a mandatory approval gate.
-
-## Unmet assurance requirements
-
-A model or artifact may be valid for one purpose without being ready for a more consequential use.
-
-The discussion introduced the concept of unfulfilled assurance requirements, informally called `assurance debt`, for additional validation, monitoring, review, controls, or approval that must be satisfied before intended use expands.
-
-The terminology is not final.
-
-## Dependency-aware governance and risk
-
-Risk, controls, admissibility, approvals, and assurance should likely participate in the same dependency-aware project state as evidence and claims.
-
-For example:
-
-```text
-population-stability assumption invalidated
-    -> generalization evidence weakens
-    -> uncertainty increases
-    -> residual risk increases
-    -> assurance requirements change
-    -> deployment approval becomes stale
-```
-
-This observation creates the transition to the next major design problem.
-
-Detailed reasoning for the current checkpoint is preserved in:
-
 `docs/foundations/003_admissibility_risk_and_assurance.md`
+
+## Major development since Checkpoint 3: project state
+
+The central new hypothesis is:
+
+> **Project state should not be passive memory. It should represent the evolving epistemic and operational situation strongly enough to determine what the system is still entitled to believe, what is stale or invalid, what obligations exist, and what should happen next.**
+
+### Candidate state objects
+
+The current minimal conceptual vocabulary is:
+
+```text
+PROJECT INTENT
+FACT
+ASSUMPTION
+QUESTION
+INVESTIGATION
+EVIDENCE
+CLAIM
+DECISION
+RISK
+CONTROL
+APPROVAL
+CONSTRAINT / RULE
+ACTION
+ARTIFACT
+```
+
+This is not a finalized ontology or schema.
+
+The important distinction is epistemic role. Facts, assumptions, evidence, claims, decisions, approvals, risks, and controls should not collapse into one narrative record.
+
+## Questions as a likely orchestration backbone
+
+The hypothesis that analytical questions are more fundamental than pipeline stages has strengthened.
+
+Questions may differ by purpose, blocking power, importance, evidence requirements, and current resolution state. A question can be sufficiently resolved even when the result is inconclusive if the remaining uncertainty is acceptable for the current decision.
+
+## Evidence, claims, and decisions
+
+The current reasoning structure distinguishes:
+
+```text
+question
+    -> investigation
+    -> evidence
+    -> claim
+    -> decision
+```
+
+while allowing later evidence to reopen questions, claims, or decisions.
+
+Evidence should preserve how it was produced. Claims should preserve support and assumptions. Decisions should preserve rationale, alternatives, and dependencies.
+
+## State and history
+
+The system needs both:
+
+1. a usable current view of what should be believed and acted upon now; and
+2. historical preservation of how important state changed.
+
+Important state should not simply be overwritten. No event-sourcing or storage architecture has been selected.
+
+## Validity and currency
+
+The project now distinguishes whether an object is valid from whether it is current.
+
+Examples include valid but stale, invalid, valid but superseded, and under review.
+
+## Dependency-aware state
+
+A major hypothesis is that state objects should have typed relationships with enough semantic meaning to support change propagation.
+
+Candidate relationship meanings include:
+
+```text
+supports
+contradicts
+hard_depends_on
+derived_from
+informed_by
+answers
+motivates
+blocks
+invalidates
+supersedes
+requires
+implements
+mitigates
+approves
+generated_by
+```
+
+The exact vocabulary remains open.
+
+Different dependency types should propagate differently. Hard validity dependencies may invalidate downstream work. Loss of one evidence item may only require claim reassessment. New source versions may create staleness. Missing approvals may block actions. Failed controls may reopen risk.
+
+## Impact analysis and self-correction
+
+A consequential state change should trigger impact analysis:
+
+```text
+new fact / revision / invalidation / new version
+        -> identify changed object
+        -> traverse typed dependencies
+        -> determine impact
+        -> apply deterministic effects
+        -> mark ambiguous dependents for reassessment
+        -> reopen affected questions or decisions
+        -> generate new obligations
+        -> prioritize repair, review, rerun, or clarification
+```
+
+This is a central candidate mechanism for making the future system self-correcting.
+
+Invalidation should therefore create obligations rather than merely change a status label.
+
+## Materiality and repair priority
+
+Not every affected object should be repaired immediately.
+
+The system should distinguish what is affected from what must be repaired now. Priority may depend on materiality, downstream importance, risk, deliverable relevance, cost, and expected value.
+
+The exact materiality model remains open.
+
+## Computational lineage versus information lineage
+
+File and code lineage are insufficient because human or LLM reasoning can create indirect information dependencies.
+
+The project now distinguishes conceptually:
+
+```text
+computational / provenance lineage
+    dataset -> transformation -> model -> prediction
+
+epistemic / information lineage
+    fact -> question -> evidence -> claim -> decision -> action
+
+governance lineage
+    constraint -> control -> approval -> action
+```
+
+This may be important for leakage auditing, reviewer independence, and reasoning provenance.
+
+## Fragility and epistemic single points of failure
+
+Dependency structure could reveal claims with one support path, apparently independent experiments sharing one flawed ancestor, high-leverage assumptions with large downstream effects, circular support, and unresolved questions that gate much of the project.
+
+The project currently refers to such high-leverage fragile nodes conceptually as **epistemic single points of failure**.
+
+## Major development since Checkpoint 3: state-driven orchestration
+
+Plans should likely be derived from project state rather than act as the deepest source of truth.
+
+Every consequential next action should ideally be traceable to an unresolved question, obligation, risk, constraint, deliverable need, repair requirement, or accepted decision.
+
+### Runnable frontier
+
+The discussion introduced the conceptual **runnable frontier**: currently useful candidate actions whose prerequisites are satisfied and which are not blocked by admissibility, approval, dependencies, resources, or required independence.
+
+### Hard gates versus prioritization
+
+Mandatory validity, admissibility, and assurance obligations should not compete as ordinary weighted preferences with optional optimization work.
+
+A candidate policy is:
+
+1. identify hard blockers and mandatory obligations;
+2. filter actions that are not currently executable;
+3. satisfy prerequisites needed to unlock consequential work;
+4. prioritize remaining runnable actions according to expected project value.
+
+### Candidate prioritization factors
+
+Current candidate factors include blocking power, validity importance, risk reduction, probability of changing an important decision, uncertainty reduction, downstream dependency leverage, deliverable relevance, urgency, compute and human cost, reversibility, parallelizability, and project objectives.
+
+No weighted formula has been selected.
+
+A useful qualitative value-of-information intuition is:
+
+```text
+value of investigation
+    ~ probability it changes an important decision
+      x importance of that decision
+      - cost of obtaining the information
+```
+
+## Parallelism and human clarification
+
+Dependency structure can determine what can run in parallel, what must wait, and what should remain isolated for independent review.
+
+Asking the human is also a first-class candidate action when a high-impact semantic, normative, domain, or authority question cannot be resolved reliably from available evidence.
+
+## Stopping and completion
+
+The current direction distinguishes local stopping from project completion.
+
+A question may stop when evidence is sufficient for the current decision, remaining uncertainty is decision-irrelevant, further work has low expected value, or available data cannot discriminate alternatives.
+
+A project may be complete when mandatory epistemic, admissibility, assurance, approval, and deliverable obligations are sufficiently resolved, critical state is internally consistent, no important current output depends on known invalid state, and remaining optional work has insufficient expected value for the project's intent and budget.
+
+The final completion rule remains open.
+
+## Current control-loop hypothesis
+
+```text
+CURRENT PROJECT STATE
+        -> identify unresolved questions, obligations, risks,
+           stale/invalid objects, approvals, deliverable needs
+        -> generate candidate actions
+        -> filter by prerequisites and constraints
+        -> identify mandatory blockers
+        -> prioritize remaining runnable candidates
+        -> execute one action or compatible parallel set
+        -> update evidence, artifacts, decisions, approvals, or revisions
+        -> perform impact analysis
+        -> recompute state and runnable frontier
+```
+
+This is a behavioral hypothesis, not an implementation commitment.
+
+## Project state may be more fundamental than the orchestrator
+
+A conceptual shift has occurred: the durable core may be project state, with reasoning, execution, review, and orchestration acting on that state.
+
+No database, graph, workflow, agent, or event-log technology has been selected.
+
+Detailed reasoning is preserved in:
+
+`docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`
 
 Historical snapshot:
 
-`docs/checkpoints/003_admissibility_risk_and_assurance.md`
-
-## Established working principles
-
-The following continue to have strong support. Detailed formulations are maintained in `PRINCIPLES.md`.
-
-1. The repository is the persistent source of truth.
-2. Important reasoning should be preserved at multiple levels of detail.
-3. Empirical evidence should dominate unsupported LLM judgment when a question is testable.
-4. The workflow should be adaptive and revisitable rather than globally linear.
-5. The system should combine hard constraints, explicit decision frameworks, and open-ended reasoning.
-6. Relevant investigations should activate from project facts.
-7. Important decisions should expose assumptions, evidence, uncertainty, and alternatives.
-8. Human attention should be used where human judgment creates value.
-9. Important conclusions should be challengeable through review or replication where justified.
-10. Real projects should act as coverage tests for the evolving system.
-11. Generalizable project lessons should become reusable system knowledge.
-12. Both the target system and the development method should remain evolvable.
-13. The meaning of a good project is project-relative.
+`docs/checkpoints/004_project_state_and_state_driven_orchestration.md`
 
 ## Strong design hypotheses currently active
 
-Important hypotheses now include:
+Important active hypotheses include:
 
-- reusable decision or knowledge modules;
-- fact-triggered activation of relevant investigations;
-- a revisitable reasoning graph;
-- analytical questions and claims as primary orchestration objects;
-- explicit question states and dependencies;
+- fact-triggered investigations and reusable knowledge modules;
 - five candidate epistemic invariants;
-- a project constitution separating admissibility, epistemic integrity, assurance, and optimization;
-- action-specific, source-aware, authority-aware admissibility;
-- scenario-based multidimensional risk rather than unexplained aggregate labels;
-- inherent risk, controls, and residual risk;
-- risk-sensitive assurance;
-- required versus preferred human involvement;
-- dynamic autonomy based on project state, risk, and admissibility;
-- dependency-aware risk, approvals, claims, and controls;
-- allocation of analytical effort according to expected value, uncertainty reduction, risk, and downstream impact;
-- reducing scope or changing route rather than silently lowering integrity when hard constraints conflict with project objectives.
-
-These remain hypotheses to test and refine.
+- the project-constitution model;
+- action-specific admissibility and scenario-based risk;
+- dynamic autonomy and required versus preferred human involvement;
+- typed persistent project-state objects;
+- analytical questions as an orchestration backbone;
+- typed dependency relationships;
+- separate validity and currency;
+- impact analysis and change propagation;
+- information lineage in addition to computational lineage;
+- epistemic single points of failure;
+- plans as derived views;
+- a runnable frontier;
+- separation of hard obligations from optional prioritization;
+- dependency-aware value-of-information action selection;
+- dynamic stopping based on unresolved obligations rather than fixed pipeline stages.
 
 ## Explicit non-decisions
 
-The project has **not** selected:
-
-- agent count or permanent role structure;
-- LLM provider strategy;
-- orchestration framework;
-- workflow engine;
-- database, knowledge graph, or rule-engine technology;
-- exact decision-module representation;
-- execution sandbox architecture;
-- experiment-tracking platform;
-- deployment or UI architecture;
-- final project-type taxonomy;
-- final project-intent schema;
-- final epistemic invariant set;
-- exact analytical-question schema or state machine;
-- final admissibility rule architecture;
-- legal, fairness, privacy, or governance decision framework;
-- authority precedence model;
-- risk-scoring method;
-- final risk taxonomy;
-- formal assurance levels;
-- control-effectiveness model;
-- residual-risk acceptance workflow;
-- final autonomy model or human gates;
-- project-state storage representation;
-- completion rule;
-- system-evaluation framework.
-
-## Project-development method
-
-The repository continues to use layered preservation:
-
-1. canonical current documents;
-2. detailed foundational design memos;
-3. historical checkpoints and session records;
-4. raw conversation material, if later archived, as provenance rather than authority.
-
-The AI design collaborator is responsible for recognizing natural repository checkpoints proactively rather than requiring the user to request each update.
+The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, event-log architecture, exact project-state schemas, exact relationship vocabulary, exact status machines, materiality model, priority formula, parallel scheduler, execution sandbox, final autonomy model, final completion rule, or system-evaluation framework.
 
 ## Current focus
 
 The next major conceptual question is:
 
-> **How should the system represent and manage analytical questions, project facts, assumptions, evidence, claims, decisions, risks, controls, approvals, dependencies, unresolved issues, and next actions as the core persistent project state?**
-
-This question is now the major bottleneck because the project has accumulated many interacting conceptual objects but has not yet defined how they relate as one coherent state model.
+> **How should a new project enter the system and be initialized into the project-state model when the user's initial request, data, documentation, constraints, and intended use may be incomplete or partially wrong?**
 
 Important subquestions include:
 
-- Which concepts deserve first-class project-state objects?
-- What is the difference between a fact, observation, assumption, evidence item, claim, and decision?
-- How should analytical questions generate investigations and claims?
-- How should evidence support or contradict claims?
-- How should decisions depend on claims, objectives, and constraints?
-- How should risks, controls, approvals, and assurance obligations connect to actions?
-- How should invalidation propagate through dependencies?
-- Which state is canonical and which material is merely historical?
-- How should unresolved issues and blockers be represented?
-- How should the system determine the next action from current state?
-
-This should remain conceptual before selecting database, graph, workflow, or agent technology.
+- What should be extracted from the initial request before inspecting data?
+- What should be inferred from files, documentation, repository context, and early data inspection?
+- What should the system ask the human immediately versus investigate itself first?
+- How should project intent be initialized?
+- How should the analytical object, population, time, prediction point, intended use, and desired claim strength be established?
+- When should admissibility and initial risk assessment begin?
+- Which missing facts should block modelling?
+- How should the system avoid overwhelming the user with unnecessary questions?
+- How does initial inspection create the first runnable frontier?
 
 ## Required context for a new chat
 
@@ -402,19 +332,10 @@ A new design chat should read, at minimum:
 7. `docs/DEVELOPMENT_METHOD.md`
 8. `docs/CONTINUITY.md`
 
-For detailed reasoning, also read:
+For detailed reasoning, also read the four files currently under `docs/foundations/`.
 
-9. `docs/foundations/001_initial_vision_and_reasoning.md`
-10. `docs/foundations/002_epistemic_integrity_and_project_constitution.md`
-11. `docs/foundations/003_admissibility_risk_and_assurance.md`
-
-Relevant historical checkpoints are:
-
-12. `docs/checkpoints/000_checkpoint_0.md`
-13. `docs/checkpoints/001_primary_purpose_and_project_intent.md`
-14. `docs/checkpoints/002_epistemic_integrity_and_project_constitution.md`
-15. `docs/checkpoints/003_admissibility_risk_and_assurance.md`
+Relevant historical checkpoints are Checkpoints 0 through 4 under `docs/checkpoints/`.
 
 ## Next step
 
-Develop the first conceptual model of persistent project state and the relationships between questions, facts, assumptions, evidence, claims, decisions, risks, controls, approvals, dependencies, unresolved issues, and actions before discussing storage or orchestration technology.
+Develop the conceptual project-initialization process: how an incomplete real-world request becomes a sufficiently specified initial project state and first runnable frontier without assuming that the initial framing is complete, valid, or operationally sufficient.
