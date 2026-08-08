@@ -51,8 +51,8 @@ Historical material is useful for provenance, but current canonical documents ta
 - `docs/OPEN_QUESTIONS.md` - important unresolved questions that must not be silently treated as settled.
 - `docs/DEVELOPMENT_METHOD.md` - how the system itself will be designed, tested, documented, and evolved.
 - `docs/CONTINUITY.md` - procedure for ending one chat or design session and resuming correctly in another.
-- `docs/foundations/001_initial_vision_and_reasoning.md` - detailed reconstruction of the foundational reasoning from the first design discussion.
-- `docs/checkpoints/000_checkpoint_0.md` - historical snapshot of the project at the first formal checkpoint.
+- `docs/foundations/` - long-form design memos preserving reasoning that should not be compressed away.
+- `docs/checkpoints/` - historical snapshots of important project milestones.
 
 ## Relationship to individual data projects
 
@@ -74,22 +74,23 @@ Lessons discovered in one project should not remain isolated patches when they a
 
 ## Immediate next step
 
-The next major task is to define the system more precisely before selecting implementation architecture.
+The project is currently refining the system's methodological constitution before selecting implementation architecture.
 
-The project must clarify:
+The primary purpose has been defined in project-relative terms, and the current design work is separating:
 
-- what the system is ultimately expected to accomplish;
-- what degree of autonomy is desirable;
-- what role the human should play;
-- what "high quality" means across different project types;
-- which properties are mandatory for success;
-- how the system should be evaluated against a strong single-LLM workflow;
-- and how quality, efficiency, learning value, reproducibility, and general applicability should be balanced.
+- epistemic integrity;
+- admissibility constraints;
+- risk-sensitive assurance;
+- project-specific optimization.
 
-See `docs/CURRENT_STATE.md` for the current working state and the exact continuation point.
+See `docs/CURRENT_STATE.md` for the exact current working state and continuation point.
 
-## Status of this structure
+## Status of the development methodology
 
-The current repository and documentation structure is **version 0.1 of the project-development methodology**.
+The repository and knowledge-preservation process are themselves expected to evolve through use.
 
-It exists to prevent knowledge loss and support disciplined iteration. It should not be treated as the final documentation architecture. Problems discovered while using it should lead to revisions of the methodology itself.
+The initial methodology was introduced as version 0.1 at Checkpoint 0. The current methodology is version 0.2 and now explicitly makes proactive checkpoint detection a responsibility of the AI design collaborator rather than requiring the user to request every repository update.
+
+This versioning applies to the **project-development methodology**, not to a finished Autonomous Data Science System product. The current structure exists to prevent knowledge loss and support disciplined iteration; it should not be treated as the final documentation or system architecture.
+
+See `docs/DEVELOPMENT_METHOD.md` and `docs/CONTINUITY.md` for the current procedures and version history.
