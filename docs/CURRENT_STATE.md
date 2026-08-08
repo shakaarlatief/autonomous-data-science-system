@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 11  
+**Checkpoint:** 12  
 **Date:** 2026-08-08  
-**Development stage:** Controlled prototype specification complete; benchmark-first implementation is next  
-**Implementation status:** Not started
+**Development stage:** Experimental construction  
+**Implementation status:** Benchmark generator and self-validation implemented; experiment harness is next
 
 ## Primary purpose
 
@@ -13,9 +13,9 @@
 
 Maximum predictive performance, autonomy, analytical depth, speed, or low cost remain project-dependent objectives rather than universal goals.
 
-## Current project constitution
+## Project constitution
 
-The conceptual hierarchy remains:
+The current conceptual hierarchy remains:
 
 ```text
 Admissibility
@@ -32,34 +32,33 @@ The five candidate epistemic invariants remain:
 4. claim validity;
 5. traceability and dependency integrity.
 
-These remain strong design hypotheses under empirical validation.
+These are strong design hypotheses now entering limited empirical testing.
 
 ## Foundations established before implementation
 
-The project has developed architecture-neutral theories for:
+The relevant design progression is:
 
 ```text
-Checkpoint 4  dependency-aware project state and state-driven orchestration
-Checkpoint 5  progressive project initialization and universal bootstrap
-Checkpoint 6  knowledge activation and open-world reasoning
-Checkpoint 7  reusable knowledge packages and typed components
-Checkpoint 8  knowledge quality, generalization, and evolution
-Checkpoint 9  behavioral reasoning regression and system evaluation
-Checkpoint 10 minimum falsification prototype and experimental contract
-Checkpoint 11 concrete Prototype V0 technical specification
+Checkpoint 4   dependency-aware project state and state-driven orchestration
+Checkpoint 5   progressive initialization and universal bootstrap
+Checkpoint 6   knowledge activation and open-world reasoning
+Checkpoint 7   reusable knowledge packages and typed components
+Checkpoint 8   knowledge quality, generalization, and evolution
+Checkpoint 9   behavioral reasoning regression and system evaluation
+Checkpoint 10  minimum falsification prototype and experimental contract
+Checkpoint 11  concrete Prototype V0 technical specification
+Checkpoint 12  first implemented benchmark milestone
 ```
 
-Detailed reasoning lives in `docs/foundations/004_...` through `docs/foundations/011_...`.
+Detailed rationale is preserved in Foundations 004 through 011 and the historical checkpoint files.
 
-## Checkpoint 10 experimental question
+## Central Prototype V0 experiment
 
-The first implementation is a falsification experiment rather than a production system.
-
-The central question is:
+Prototype V0 asks:
 
 > **Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than equally capable simpler workflows?**
 
-The three conditions are:
+The three planned conditions remain:
 
 ```text
 B0
@@ -75,131 +74,160 @@ activation/applicability, prospective safeguards, dependency-aware reopening,
 and minimal state-derived action selection.
 ```
 
-B1 is the most important control. If static guidance matches P0 at materially lower complexity or cost, the explicit semantic runtime is not justified for this project scale.
+B1 is the critical control. If B1 matches P0's critical integrity and repair behavior at materially lower complexity/cost, the structured semantic runtime is not justified at this project scale.
 
-## Checkpoint 11 technical specification
+## Prototype technical specification
 
-Foundation 011 makes the experiment implementable while deliberately avoiding production architecture.
-
-Detailed specification:
+The full Version 0 technical contract is preserved in:
 
 `docs/foundations/011_prototype_v0_technical_specification.md`
 
-Historical snapshot:
+Checkpoint 11 snapshot:
 
 `docs/checkpoints/011_prototype_v0_technical_specification.md`
 
-## Benchmark world
+## Checkpoint 12: benchmark implementation milestone
 
-The first case is a synthetic customer-month churn project.
-
-Fixed conceptual structure:
+The benchmark-first implementation has begun under:
 
 ```text
-24 monthly periods
-approximately 4,000 underlying customers
-train: months 1-16
+prototype_v0/
+├── .gitignore
+├── README.md
+├── pyproject.toml
+├── src/
+│   └── ads_v0/
+│       ├── __init__.py
+│       ├── casegen.py
+│       └── selftest.py
+└── tests/
+    └── test_casegen.py
+```
+
+Continuous integration is defined in:
+
+`.github/workflows/prototype-v0-tests.yml`
+
+Historical implementation snapshot:
+
+`docs/checkpoints/012_benchmark_generator_and_self_validation.md`
+
+## Implemented benchmark world
+
+The generator creates a 24-month synthetic customer-month churn project with approximately 4,000 underlying customers.
+
+```text
+train:      months 1-16
 validation: months 17-20
-test: months 21-24
+test:       months 21-24
 prediction moment: beginning of month
 target: churn during the following 30 days
 ```
 
-Customers enter over time and remain observable until churn, creating repeated customer snapshots plus newly entering customers in validation and test.
+Customers enter over time and disappear after churn. Later partitions contain both previously observed and newly entering customers.
 
-The actual row unit is customer-month, while a stale README incorrectly says one row is one customer.
+The true row unit is customer-month, while the visible stale README incorrectly says one row is one customer.
 
-## Synthetic DGP
+Legitimate visible predictors include tenure, plan tier, monthly charge, support tickets, late payments, and usage change.
 
-The DGP is now concretely specified.
+## Dynamic feature-legitimacy mechanism
 
-Persistent customer heterogeneity is represented by a random effect `u_i ~ N(0, 0.65^2)`.
+`account_state_code` is generated after the churn outcome with opaque categories `S1`, `S2`, and `S3`.
 
-Visible legitimate features include:
+The initial README incorrectly describes it as available during monthly scoring.
 
-```text
-customer_id
-snapshot_month
-tenure_months
-plan_tier
-monthly_charge
-support_tickets_90d
-late_payments_90d
-usage_change_30d
-```
+After Phase 1, an authoritative timing notice establishes that the field is generated after the outcome window and retrospectively backfilled.
 
-The target is generated through a logistic hazard using these features, customer heterogeneity, plan effects, and mild time evolution. The current intercept and coefficients are intended to produce roughly 10 percent monthly churn prevalence with meaningful but nontrivial predictive signal.
-
-Exact Version 0 equations and parameters are recorded in Foundation 011.
-
-## Dynamic feature-legitimacy event
-
-`account_state_code` is generated after observing the churn outcome, with opaque values `S1`, `S2`, and `S3`.
-
-Its relationship with churn is deliberately useful but imperfect so illegitimacy must be established through timing/provenance rather than a perfect target proxy.
-
-The stale README incorrectly describes the field as available during monthly scoring.
-
-After the system reaches a provisional Phase 1 position, the harness reveals an authoritative timing notice establishing that the field is created after the outcome window and retrospectively backfilled.
-
-The system must then revise feature eligibility and repair materially dependent reasoning without discarding unrelated valid work.
+This creates the controlled belief-revision event that will later test dependency-aware repair.
 
 ## Inherited preprocessing contamination
 
-`baseline_model.py` deliberately fits learned preprocessing using combined train and validation information before evaluating on validation.
+The generated `baseline_model.py` deliberately fits learned preprocessing on combined train and validation inputs before reporting validation performance.
 
-This tests the `Learned Transformation Evaluation Boundary` knowledge component.
+The generated script is valid executable code. A dedicated test now runs it in a subprocess so the benchmark tests methodological reasoning rather than incidental debugging.
 
-Version 0 does not attempt arbitrary static program analysis. The LLM inspects the simple baseline code and applies the explicit reusable invariant.
+## Visible versus evaluator-only artifacts
 
-## Information boundary and instrumented workspace
-
-Visible project material and evaluator-only truth must be operationally separated.
-
-All three experimental conditions use the same instrumented project-access interface.
-
-Important distinctions are:
+Each generated case contains:
 
 ```text
-metadata-level artifact access
-value-level artifact access
-explicitly declared Python input artifacts
-condition-neutral action and artifact-access logging
+visible/
+    project_brief.md
+    README.md
+    train.csv
+    validation.csv
+    test.csv
+    baseline_model.py
+
+phase_2/
+    crm_field_timing_notice.md
+
+evaluator_only/
+    manifest.json
+    self_test_report.json
 ```
 
-Evaluator-only files must never become ordinary runtime-visible project artifacts.
+The serialized separation is implemented. The next runtime milestone must make the information boundary operational so treatments cannot browse evaluator-only material.
 
-## Project phases
+## Benchmark self-tests
 
-Version 0 uses only:
+The generator automatically verifies:
 
 ```text
-PHASE 1: provisional development
-PHASE 2: revised development after authoritative timing notice
-FINAL EVALUATION: after explicit final-model lock
+repeated entity IDs
+unique entity-month pairs
+correct temporal partitions
+known + new entities in later periods
+absorbing churn
+prevalence range
+README row-unit contradiction
+README feature-timing contradiction
+Phase 2 notice consistency
+test role = protected final evaluation
+inherited preprocessing contamination
+post-outcome feature relevance without perfect target copying
+legitimate predictive signal
+moderate incremental post-outcome signal
+expected visible columns only
 ```
 
-The dynamic notice is milestone-triggered rather than released after an arbitrary fixed number of LLM calls.
+A benchmark instance that fails a required check is rejected before any LLM run.
 
-Value-level final-test access is methodologically legitimate only after explicit final-model lock.
+## Validated development-case properties
 
-## First deterministic prospective safeguard
-
-The first genuinely enforced P0 action gate is `K-INFO-001 Protected Final Evaluation`.
-
-During development:
+The current deterministic development case produces:
 
 ```text
-protected final-test role
-+ proposed value-level access
--> block
+rows:                              31,220
+customers:                          4,000
+target prevalence:                  0.1018578
+validation new-customer share:      0.1981020
+test new-customer share:            0.1209486
+legitimate validation AUROC:         0.6883573
+AUROC with post-outcome field:       0.7211739
+post-outcome AUROC gain:             0.0328166
+post-outcome total variation:        0.2050478
 ```
 
-B0 and B1 use the same workspace interface but do not receive this enforcement layer. Invalid accesses are logged and executed so the evaluator can observe whether they voluntarily respect the same rule.
+This is a useful benchmark shape: legitimate signal is meaningful but nontrivial, the post-outcome field can influence model choice without being a perfect target proxy, and later periods genuinely mix known and new entities.
 
-## Minimal P0 state
+## Automated validation status
 
-Version 0 keeps:
+GitHub Actions now installs Prototype V0, runs tests, generates the full development case, executes benchmark self-validation, and prints benchmark sanity metrics.
+
+Latest validated implementation run completed successfully with:
+
+```text
+4 passed in 4.76s
+```
+
+The earlier `python -m ads_v0.casegen` `runpy` warning was fixed by removing eager executable-submodule imports from `ads_v0/__init__.py`. The generated CLI now runs cleanly. Remaining GitHub runner Node deprecation notices are external to Prototype V0.
+
+## Minimal P0 semantics remain specified but unimplemented
+
+P0 is still intentionally absent.
+
+Its planned state vocabulary remains:
 
 ```text
 ARTIFACT
@@ -213,7 +241,7 @@ OBLIGATION
 ACTION
 ```
 
-with only:
+with relations:
 
 ```text
 DEPENDS_ON
@@ -223,32 +251,7 @@ ANSWERS
 GENERATED_BY
 ```
 
-Typed status vocabularies are used rather than one universal state enum.
-
-A simple append-only audit history preserves state changes and reasons without selecting event-sourcing architecture.
-
-## Dependency repair
-
-Version 0 explicitly rejects blind recursive invalidation.
-
-Current repair semantics are:
-
-```text
-hard dependency becomes invalid
--> reopen or invalidate dependent state
-
-support becomes invalid
--> remove that support
--> reassess whether remaining support is sufficient
-```
-
-Dependency discovery can be deterministic while materiality/sufficiency reassessment remains interpretive.
-
-The evaluator should distinguish under-propagation, correct propagation, and over-propagation.
-
-## Minimal knowledge set
-
-P0 contains only:
+Its four planned knowledge components remain:
 
 ```text
 K-INFO-001 Protected Final Evaluation
@@ -257,116 +260,31 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001  Generalization-Regime Question
 ```
 
-B1 receives the same substantive knowledge upfront in static prose.
-
-No embeddings, vector database, graph database, large knowledge library, or automatic knowledge learning are required.
-
-## Evaluation
-
-Primary scoring should rely on condition-neutral observable behavior wherever possible rather than awarding P0 points for possessing structured internal state.
-
-Deterministic assertions should cover at least:
-
-```text
-premature final-test value access
-post-test development changes
-final use of account_state_code after the timing notice
-required legitimate re-evaluation after material feature invalidation
-benchmark self-test validity
-```
-
-Blinded semantic evaluation remains necessary for:
-
-```text
-row-unit correction
-validation/generalization reasoning
-handling of inherited preprocessing contamination
-response to the timing notice
-repair completeness and precision
-claim validity
-```
-
-Critical semantic criteria should initially use at least two independent judge passes, with calibration-time adjudication for disagreement.
-
-## Resource accounting
-
-Every condition logs:
-
-```text
-LLM calls
-input/output tokens
-Python executions
-tool operations
-runtime
-artifact accesses
-```
-
-P0 additionally logs architecture diagnostics such as state updates, activations, blocks, and reopen events.
-
-A common held-out resource envelope and continuation thresholds must be frozen after calibration and before held-out evaluation.
-
-## Case validation and held-out variants
-
-The case generator must automatically produce visible artifacts and hidden evaluator truth from one underlying case specification.
-
-Before any LLM run, deterministic benchmark self-tests verify row uniqueness semantics, temporal partitioning, later-entry customers, post-outcome feature generation, documentation contradictions, timing-notice correctness, baseline contamination, final-test role, prevalence, and predictive-signal sanity.
-
-The development case is followed by held-out H1/H2 surface variants with changed names, wording, seeds, and nonessential DGP details while preserving underlying mechanisms.
-
-## Prototype repository boundary
-
-A provisional `prototype_v0/` area is now justified.
-
-It may contain:
-
-```text
-README.md
-case_spec/
-src/
-tests/
-configs/
-results/
-```
-
-This is explicitly an experiment boundary rather than a commitment to the eventual production repository architecture.
+P0 should not be implemented until the common experiment boundary and simpler baselines exist.
 
 ## Explicit non-decisions
 
-The project still has not selected a production agent architecture, permanent state database, graph technology, vector retrieval system, workflow framework, provider strategy, automatic knowledge-learning mechanism, full admissibility engine, full risk/assurance implementation, deployment architecture, UI, or monitoring stack.
+The project has still not selected a production agent architecture, permanent state database, graph technology, vector retrieval system, workflow framework, provider strategy, automatic knowledge-learning mechanism, full admissibility engine, full risk/assurance implementation, deployment architecture, UI, or monitoring stack.
 
-Prototype conveniences such as plain Python records, JSON, simple audit logs, and local configuration files must not be interpreted as final architectural choices.
-
-## Implementation order
-
-The benchmark must be implemented before P0 is tuned:
-
-```text
-1. synthetic DGP
-2. visible artifact generation
-3. hidden evaluator manifest
-4. Phase 2 notice
-5. benchmark self-tests
-6. instrumented workspace and trace
-7. deterministic evaluator
-8. B0
-9. B1
-10. P0 state / knowledge / gate / repair
-11. experiment runner
-12. semantic evaluator
-13. calibration
-14. freeze held-out protocol
-15. held-out H1/H2
-```
+Prototype conveniences such as Python records, local files, JSON, pytest, and GitHub Actions are experimental tools rather than production commitments.
 
 ## Current focus
 
-Broad conceptual design should now stop expanding unless implementation exposes a concrete gap.
+The first benchmark-construction milestone is complete.
 
-The immediate task is:
+The next implementation milestone is:
 
-> **Implement the benchmark generator, visible case artifacts, hidden evaluator manifest, Phase 2 notice, and benchmark self-tests before implementing P0.**
+> **Build the common instrumented workspace, project-phase runtime, condition-neutral action trace, and deterministic behavioral evaluator that B0, B1, and P0 will all use.**
 
-This is the first real construction milestone.
+The order remains benchmark-first and treatment-neutral:
+
+```text
+instrumented workspace / trace
+-> deterministic behavioral evaluator
+-> B0 runner
+-> B1 runner
+-> only then P0 state / knowledge / action gate / repair
+```
 
 ## Required context for a new chat
 
@@ -383,9 +301,10 @@ A new implementation chat should read, at minimum:
 9. `docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`
 10. `docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`
 11. `docs/foundations/011_prototype_v0_technical_specification.md`
+12. `docs/checkpoints/012_benchmark_generator_and_self_validation.md`
 
-Deeper foundations should be consulted only when implementation questions require their rationale.
+Deeper foundations should be read when an implementation issue needs their rationale.
 
 ## Next step
 
-Begin benchmark-first implementation with the deterministic synthetic DGP and case self-tests.
+Implement the treatment-neutral experiment boundary: artifact registry/access control, project phases, common action/event trace, and deterministic behavioral assertions.
