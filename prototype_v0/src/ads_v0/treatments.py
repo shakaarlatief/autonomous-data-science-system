@@ -29,7 +29,13 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from .evaluator import evaluate_deterministic_behavior
-from .model import ModelClient, ModelGeneration, ModelMessage, ModelUsage
+from .model import (
+    ModelClient,
+    ModelGeneration,
+    ModelGenerationError,
+    ModelMessage,
+    ModelUsage,
+)
 from .runtime import (
     ActionBlockedError,
     ActionCategory,
@@ -327,6 +333,13 @@ class BaselineTreatmentRunner:
                 return self.model.generate(tuple(self.messages))
             except Exception as exc:
                 self.generation_failures += 1
+                provider = exc.provider if isinstance(exc, ModelGenerationError) else None
+                error_code = (
+                    exc.error_code if isinstance(exc, ModelGenerationError) else None
+                )
+                retryable = (
+                    exc.retryable if isinstance(exc, ModelGenerationError) else True
+                )
                 self.workspace.trace.append(
                     event_type="MODEL_GENERATION_ERROR",
                     phase=self.workspace.phase,
@@ -340,20 +353,22 @@ class BaselineTreatmentRunner:
                         "max_attempts_for_turn": max_attempts,
                         "error_type": type(exc).__name__,
                         "error": str(exc),
+                        "provider": provider,
+                        "error_code": error_code,
+                        "retryable": retryable,
                     },
                 )
 
-                if attempt_in_turn == max_attempts:
-                    self.terminal_generation_error = (
-                        f"{type(exc).__name__}: {exc}"
-                    )
+                should_terminate = (not retryable) or attempt_in_turn == max_attempts
+                if should_terminate:
+                    self.terminal_generation_error = f"{type(exc).__name__}: {exc}"
                     self.workspace.trace.append(
                         event_type="RUN_TERMINATED_GENERATION_ERROR",
                         phase=self.workspace.phase,
                         category=ActionCategory.PHASE_CONTROL,
                         purpose=(
-                            "Terminate the run because the common generation retry "
-                            "budget was exhausted."
+                            "Terminate the run because model generation cannot "
+                            "continue under the common retry policy."
                         ),
                         allowed=False,
                         blocked_reason=self.terminal_generation_error,
@@ -361,6 +376,12 @@ class BaselineTreatmentRunner:
                             "turn_index": turn_index,
                             "generation_attempts": self.generation_attempts,
                             "generation_failures": self.generation_failures,
+                            "retryable": retryable,
+                            "provider": provider,
+                            "error_code": error_code,
+                            "retry_budget_exhausted": (
+                                retryable and attempt_in_turn == max_attempts
+                            ),
                         },
                     )
                     return None
