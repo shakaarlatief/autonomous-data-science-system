@@ -6,11 +6,11 @@ It is not the production architecture.
 
 The experiment asks whether explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make the same strong LLM materially more reliable than strong simpler workflows.
 
-The benchmark is implemented before the P0 treatment so the treatment cannot define its own evaluation retrospectively.
+The benchmark and common experiment boundary are being implemented before the P0 treatment so P0 cannot define its own evaluation retrospectively.
 
 ## Current implementation scope
 
-The first construction milestone contains only:
+Implemented:
 
 ```text
 synthetic customer-month churn DGP
@@ -18,9 +18,25 @@ visible Phase 1 project artifacts
 hidden evaluator manifest
 Phase 2 authoritative timing notice
 benchmark self-tests
+instrumented project workspace
+Phase 1 / Phase 2 / final-evaluation transitions
+metadata-versus-value access logging
+declared-input Python execution
+optional protected-final-test action gate
+condition-neutral trajectory trace
+deterministic behavioral evaluator
 ```
 
-The autonomous P0 state runtime is intentionally not implemented yet.
+Not implemented yet:
+
+```text
+B0 model runner
+B1 static-knowledge runner
+P0 typed project-state runtime
+P0 knowledge activation and dependency repair
+semantic evaluator
+paired calibration / held-out experiment runner
+```
 
 ## Install
 
@@ -36,7 +52,7 @@ python -m pip install -e ".[dev]"
 pytest
 ```
 
-The repository also runs these tests in GitHub Actions whenever Prototype V0 code or its workflow changes.
+The repository also runs the tests in GitHub Actions whenever Prototype V0 code or its workflow changes. CI additionally generates and self-validates the complete development benchmark.
 
 ## Generate the development case
 
@@ -63,7 +79,23 @@ evaluator_only/
     self_test_report.json
 ```
 
-Future treatment runners must expose only the appropriate visible material to the model. `evaluator_only/` is never part of the treatment workspace.
+Treatment runtimes expose only the currently legitimate project region through `ExperimentWorkspace`. `evaluator_only/` is never registered as a treatment-facing project artifact.
+
+Python analysis is executed in a fresh temporary directory containing copies of only the explicitly declared project artifacts. This is an experimental declared-input boundary, not an OS-level security sandbox.
+
+## Deterministic behavioral evaluation
+
+The first common evaluator can detect:
+
+```text
+premature value-level final-test access
+new development after final-test feedback
+final model lock that still includes the established post-outcome feature
+missing Phase 2 development re-evaluation after relied-upon feature invalidation
+benchmark self-validation failure
+```
+
+Semantic questions such as validation-design quality and claim scope remain outside the deterministic evaluator and will be handled by a later blinded semantic evaluation layer.
 
 ## Governing specification
 
