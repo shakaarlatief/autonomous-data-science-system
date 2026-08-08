@@ -5,7 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from ads_v0.model import ModelMessage
+from ads_v0.model import ModelGenerationError, ModelMessage
 from ads_v0.openai_model import OpenAIResponsesModel, TREATMENT_RESPONSE_SCHEMA
 
 
@@ -34,6 +34,46 @@ class FakeResponses:
 class FakeClient:
     def __init__(self, payloads: list[dict]) -> None:
         self.responses = FakeResponses(payloads)
+
+
+class FixedResponses:
+    """Return one preconstructed Responses API-shaped object for adapter tests."""
+
+    def __init__(self, response: SimpleNamespace) -> None:
+        self.response = response
+        self.calls: list[dict] = []
+
+    def create(self, **kwargs):
+        self.calls.append(kwargs)
+        return self.response
+
+
+class FixedClient:
+    def __init__(self, response: SimpleNamespace) -> None:
+        self.responses = FixedResponses(response)
+
+
+def _message_output(text: str) -> SimpleNamespace:
+    return SimpleNamespace(
+        type="message",
+        content=[SimpleNamespace(type="output_text", text=text)],
+    )
+
+
+def _completed_response_with_blocks(blocks: list[str]) -> SimpleNamespace:
+    return SimpleNamespace(
+        id="resp-fixed",
+        status="completed",
+        model="gpt-5.6-terra",
+        output_text="".join(blocks),
+        output=[_message_output(text) for text in blocks],
+        usage=SimpleNamespace(
+            input_tokens=1107,
+            output_tokens=130,
+            total_tokens=1237,
+            output_tokens_details=SimpleNamespace(reasoning_tokens=41),
+        ),
+    )
 
 
 def test_openai_adapter_uses_strict_structured_outputs_and_threads_context() -> None:
@@ -95,6 +135,66 @@ def test_openai_adapter_uses_strict_structured_outputs_and_threads_context() -> 
     ]
     assert second.payload["command"]["type"] == "table_metadata"
     assert second.usage.total_tokens == 124
+
+
+def test_openai_adapter_collapses_duplicate_identical_structured_outputs() -> None:
+    payload = {
+        "rationale": "Inspect the available artifacts first.",
+        "command": {"type": "list_artifacts"},
+    }
+    text = json.dumps(payload, separators=(",", ":"))
+    response = _completed_response_with_blocks([text, text])
+    model = OpenAIResponsesModel(client=FixedClient(response))
+
+    result = model.generate(
+        [
+            ModelMessage(role="system", content="system instructions"),
+            ModelMessage(role="user", content="begin project"),
+        ]
+    )
+
+    assert result.payload == payload
+    assert result.provider_metadata["output_text_block_count"] == 2
+    assert result.provider_metadata["distinct_output_text_block_count"] == 1
+    assert result.provider_metadata["duplicate_identical_output_blocks_collapsed"] is True
+    assert (
+        result.provider_metadata["structured_output_source"]
+        == "deduplicated_output_text_blocks"
+    )
+
+
+def test_openai_adapter_rejects_multiple_distinct_structured_commands() -> None:
+    first_payload = {
+        "rationale": "Inspect artifacts.",
+        "command": {"type": "list_artifacts"},
+    }
+    second_payload = {
+        "rationale": "Inspect the training table.",
+        "command": {
+            "type": "table_metadata",
+            "artifact_id": "train.csv",
+            "purpose": "Inspect schema.",
+        },
+    }
+    response = _completed_response_with_blocks(
+        [json.dumps(first_payload), json.dumps(second_payload)]
+    )
+    model = OpenAIResponsesModel(client=FixedClient(response))
+
+    with pytest.raises(ModelGenerationError) as exc_info:
+        model.generate(
+            [
+                ModelMessage(role="system", content="system instructions"),
+                ModelMessage(role="user", content="begin project"),
+            ]
+        )
+
+    assert exc_info.value.error_code == "ambiguous_structured_output"
+    assert exc_info.value.provider_metadata["output_text_block_count"] == 2
+    assert (
+        exc_info.value.provider_metadata["duplicate_identical_output_blocks_collapsed"]
+        is False
+    )
 
 
 def test_openai_adapter_rejects_threading_without_storage() -> None:
