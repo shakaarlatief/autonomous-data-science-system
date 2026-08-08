@@ -10,7 +10,7 @@ Questions may later be answered, split, merged, reframed, or marked obsolete. Th
 
 **Status:** Partially answered
 
-The project has now established a working primary purpose: the system should create the best data-science process for the particular project, where what "best" means depends on project goals, constraints, required outputs, and desired human involvement.
+The project has established a working primary purpose: the system should create the best data-science process for the particular project, where what "best" means depends on project goals, constraints, required outputs, and desired human involvement.
 
 The remaining work is to turn that purpose into explicit success criteria, requirements, boundaries, and evaluation standards.
 
@@ -348,24 +348,13 @@ These should be introduced in response to actual needs rather than speculative c
 
 ## Q-027. What belongs in the non-negotiable methodological quality floor?
 
-**Current priority:** Highest
+**Status:** Substantially refined, not resolved
 
-The system is intended to adapt its process to project intent, but not every methodological standard should become configurable.
+The project has moved from a flat quality-floor concept toward a project-constitution hypothesis.
 
-The project must determine which requirements should hold across all project profiles and which can legitimately vary with goals, constraints, risk, depth, and resources.
+The current view distinguishes universal integrity requirements from conditional methodological obligations, and proposes a five-invariant epistemic core consisting of semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity.
 
-Candidate quality-floor topics include:
-
-- train, validation, and test integrity;
-- leakage prevention;
-- evaluation design appropriate to intended use;
-- explicit consequential assumptions;
-- evidence versus speculation;
-- reproducibility of consequential experiments;
-- material limitations and uncertainty;
-- and escalation when critical information is missing.
-
-The exact floor has not been defined.
+The framework still needs real-project testing, formal definitions, and a determination of whether any fundamentally different epistemic invariants are missing.
 
 ---
 
@@ -399,3 +388,95 @@ A future prioritization mechanism may need to consider:
 - and likely downstream impact.
 
 The project has not decided whether this should remain qualitative, become a formal scoring system, or use another adaptive strategy.
+
+---
+
+## Q-030. Are the five candidate epistemic invariants complete and precise enough?
+
+**Current status:** Strong design hypothesis under validation
+
+The proposed invariants are:
+
+1. semantic validity;
+2. information legitimacy;
+3. evidence validity;
+4. claim validity;
+5. traceability and dependency integrity.
+
+They have survived conceptual stress tests across multiple project types, but the project has not established that they are complete, mutually useful, or precise enough to become formal requirements.
+
+Questions include:
+
+- Does execution fidelity fit fully inside evidence validity?
+- Are statistical uncertainty and robustness adequately covered by evidence and claim validity?
+- Are there other epistemic requirements that cannot be derived from these five?
+- Can each invariant be translated into testable system behavior?
+
+---
+
+## Q-031. What exactly belongs in the admissibility layer?
+
+**Current priority:** Highest
+
+The project now distinguishes epistemic validity from admissibility.
+
+Admissibility may include:
+
+- legal constraints;
+- privacy constraints;
+- ethical constraints;
+- fairness obligations;
+- organizational policy;
+- explicit user rules;
+- data-usage permissions;
+- operational safety constraints;
+- deployment restrictions.
+
+The project must determine which of these should be reasoned about by the system, which should be supplied as external constraints, which require expert or human escalation, and how uncertainty about admissibility should be handled.
+
+---
+
+## Q-032. How should risk-sensitive assurance be represented?
+
+The project currently hypothesizes that risk changes the amount of assurance required rather than the meaning of valid evidence.
+
+Open questions include:
+
+- What dimensions define project risk?
+- Should there be discrete assurance levels or continuous risk assessment?
+- Which risks require independent review or replication?
+- When is human approval mandatory?
+- How should monitoring, rollback, fallback, and documentation requirements scale with risk?
+- How should assurance requirements interact with admissibility constraints?
+
+---
+
+## Q-033. Should analytical questions and claims be primary project-state objects?
+
+A strong design hypothesis is that questions and claims are more fundamental than pipeline stages or models.
+
+Open questions include:
+
+- What information defines an analytical question?
+- How are questions generated and prioritized?
+- Which question categories are useful?
+- Which epistemic states are necessary?
+- How are claims linked to evidence, assumptions, and decisions?
+- How should downstream questions activate when upstream claims change?
+
+No schema or implementation has been selected.
+
+---
+
+## Q-034. How should project completion be defined in a question-driven system?
+
+A project may eventually be considered complete when all questions required by its epistemic, admissibility, assurance, and deliverable obligations are sufficiently resolved, explicitly accepted as residual uncertainty, or documented as unresolvable under the available conditions.
+
+The project must determine:
+
+- which questions are mandatory versus optional;
+- what "sufficiently resolved" means;
+- when residual uncertainty is acceptable;
+- which unresolved questions block completion;
+- how resource limits affect stopping without weakening integrity;
+- and how completion interacts with final reporting and human approval.
