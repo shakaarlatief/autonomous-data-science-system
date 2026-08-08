@@ -2,7 +2,7 @@
 
 ## Checkpoint
 
-**Checkpoint:** 5  
+**Checkpoint:** 6  
 **Date:** 2026-08-08  
 **Development stage:** Conceptual research and system definition  
 **Implementation status:** Not started
@@ -15,7 +15,7 @@ Maximum predictive performance, autonomy, depth, speed, or low cost are project-
 
 ## Current project-constitution hypothesis
 
-The current conceptual hierarchy remains:
+The conceptual hierarchy remains:
 
 ```text
 Admissibility
@@ -44,11 +44,9 @@ Detailed reasoning:
 
 ## Checkpoint 4: project state and state-driven orchestration
 
-The central Checkpoint 4 hypothesis remains:
+Project state is now treated conceptually as a living representation of what the system is currently entitled to believe and do rather than passive memory.
 
-> **Project state should not be passive memory. It should represent the evolving epistemic and operational situation strongly enough to determine what the system is still entitled to believe, what is stale or invalid, what obligations exist, and what should happen next.**
-
-Candidate first-class state objects include:
+Candidate state objects include:
 
 ```text
 PROJECT INTENT
@@ -67,309 +65,403 @@ ACTION
 ARTIFACT
 ```
 
-Typed dependency relationships may include meanings such as support, contradiction, hard dependency, derivation, information influence, blocking, invalidation, supersession, requirement, mitigation, and approval.
-
-Important current hypotheses from Checkpoint 4 include:
-
-- separate validity from currency;
-- preserve both current state and meaningful history;
-- perform impact analysis when consequential upstream state changes;
-- reopen questions and decisions when their support changes;
-- treat invalidation as creating new obligations rather than merely changing a status label;
-- track information lineage in addition to computational lineage;
-- detect high-leverage fragile assumptions and epistemic single points of failure;
-- derive plans from state rather than treating plans as the deepest source of truth;
-- maintain a runnable frontier of useful executable actions;
-- separate mandatory integrity/admissibility/assurance obligations from optional value-improving work;
-- select optional actions using expected project value, information value, dependency leverage, risk reduction, cost, and project intent.
+Strong hypotheses include typed dependencies, separate validity and currency, impact analysis, reopening of questions and decisions, information lineage in addition to computational lineage, a runnable frontier, hard obligations separated from optional value-improving work, and state-driven rather than plan-driven orchestration.
 
 Detailed reasoning:
 
 `docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`
 
-## Major development since Checkpoint 4: project initialization
+## Checkpoint 5: project initialization and universal bootstrap
 
-Checkpoint 5 addresses how a project enters the system before a rich project state already exists.
+A new project should enter through progressive state construction rather than one-shot problem definition.
 
-The strongest current formulation is:
+Initial requests, documentation, code, data, and external information should enter project state with provenance and should remain revisable.
 
-> **A new project should enter the system through progressive state construction rather than one-shot problem definition. Initial requests, documentation, code, data, and external information should be registered with provenance, converted into provisional facts, assumptions, questions, constraints, and candidate interpretations, and continuously reconciled as evidence accumulates.**
+The fixed project-entry process may be much smaller than a complete universal workflow:
 
-The initial user request should therefore be treated as source material about the project rather than automatically converted into ground truth.
+```text
+SMALL UNIVERSAL BOOTSTRAP
+        +
+ADAPTIVE STATE-DRIVEN REASONING
+```
+
+The six candidate bootstrap responsibilities are:
+
+1. register sources and information boundaries;
+2. establish structural facts;
+3. compare sources for consistency;
+4. generate project-characterization hypotheses;
+5. emit triggers and questions;
+6. construct the first runnable frontier.
+
+A concise bootstrap rule remains:
+
+> **Observe broadly, infer cautiously.**
+
+Detailed reasoning:
+
+`docs/foundations/005_project_initialization_and_universal_bootstrap.md`
+
+## Major development since Checkpoint 5: knowledge activation
+
+Checkpoint 6 develops the first coherent conceptual model for how reusable data-science knowledge becomes relevant to a live project.
+
+The central hypothesis is:
+
+> **Reusable data-science knowledge should be activated from patterns in project state and should contribute structured questions, obligations, safeguards, evidence requirements, review needs, and candidate actions back into that state rather than directly controlling one fixed workflow.**
+
+This is intended to avoid both one enormous centralized decision tree and a design in which one LLM must remember the entire universe of data-science concerns at every step.
+
+## Knowledge, capability, and actor are conceptually separate
+
+The project now strongly distinguishes:
+
+```text
+KNOWLEDGE
+What should be considered?
+
+CAPABILITY
+How can it be investigated or enforced?
+
+ACTOR
+Who or what performs the work?
+```
+
+A missing-data knowledge unit is therefore not inherently a `MissingDataAgent`. The same knowledge may be used by a general reasoning model, deterministic validator, code executor, specialist reviewer, or human-facing clarification flow.
+
+## Reusable definitions versus project-specific instances
+
+The system-level knowledge library should contain reusable definitions.
+
+A project should create scoped instances when that knowledge becomes relevant to particular facts, questions, datasets, features, actions, claims, models, decisions, or deployment contexts.
+
+Project-specific instances can then be resolved, reopened, or revised without changing the reusable definition itself.
+
+## Activation is not execution
+
+A trigger means that current state has created sufficient reason for a concern to be represented or considered.
+
+Actual work still competes on the runnable frontier.
+
+The project therefore distinguishes:
+
+```text
+ACTIVATION PRIORITY
+What knowledge is relevant?
+
+EXECUTION PRIORITY
+What work should happen now?
+```
+
+## Candidate activation strengths
+
+A useful conceptual distinction is:
+
+```text
+ENFORCE
+A sufficiently established condition creates a mandatory requirement.
+
+INVESTIGATE
+Applicability or consequences need to be established.
+
+CONSIDER
+Potentially useful but not currently mandatory.
+```
+
+The exact labels and status model remain open.
+
+## Hybrid activation mechanisms
+
+The current direction combines:
+
+1. **deterministic activation** for precise hard safeguards;
+2. **interpretive activation** for state patterns whose relevance requires reasoning;
+3. **open-ended discovery** for novel concerns not represented by the current knowledge library.
+
+No rule engine, retrieval technology, or LLM routing architecture has been selected.
+
+## Trigger sources are broader than data observations
+
+Checkpoint 6 substantially expands the original fact-trigger concept.
+
+Knowledge may activate because of:
+
+- an observed fact;
+- a combination of facts;
+- a requested analytical objective;
+- a desired claim type or strength;
+- a proposed action;
+- a proposed method;
+- a proposed decision;
+- a proposed claim;
+- a missing prerequisite;
+- a contradiction;
+- risk or governance state;
+- a dependency revision;
+- a novel concern proposed through open-ended reasoning.
+
+The activation layer should therefore react to meaningful project-state transitions broadly rather than only raw data observations.
+
+## Reactive and prospective activation
 
 The project now distinguishes conceptually:
 
 ```text
-ORIGINAL PROJECT INPUT
-what a source actually stated
+REACTIVE ACTIVATION
+Something material was discovered.
 
-CURRENT PROJECT INTERPRETATION
-what the system currently believes the project means
+PROSPECTIVE ACTIVATION
+Something consequential is about to be claimed,
+decided, or executed.
 ```
 
-Material disagreement between sources should become explicit state rather than being silently resolved.
+Prospective activation is especially important for methodological and governance safeguards.
 
-## Source-aware project entry
+Examples include protecting a final test set before an agent inspects outcomes, checking target encoding for information leakage before execution, or evaluating a sensitive-data transfer before it occurs.
 
-A new project may include user requests, datasets, schemas, READMEs, data dictionaries, notebooks, code, saved models, configuration, deployment descriptions, reports, and external requirements.
+## Missing prerequisites can activate obligations
 
-The bootstrap should first register what sources exist before relying on them.
+Absence of required state can itself be a trigger.
 
-A strong current hypothesis is:
-
-> **Authority is question-specific.**
-
-The user may be authoritative about desired project intent, while a production system owner or deployment specification may be more authoritative about operational feature availability. Direct data inspection is authoritative about what is present in a file but does not by itself determine business semantics.
-
-No universal source-precedence model has been selected.
-
-## Progressive semantic commitment
-
-Different actions require different semantic prerequisites.
-
-The system should therefore avoid both blindly modelling from an incomplete initial request and requiring exhaustive project understanding before any useful work can begin.
-
-The emerging rule is:
-
-> **Require only the semantic information necessary for the next action, while preventing actions whose material semantic prerequisites remain unresolved.**
-
-Project understanding remains revisable throughout the project.
-
-## Universal bootstrap inspection
-
-A major Checkpoint 5 hypothesis is that the fixed project-entry process may be much smaller than a complete universal data-science workflow.
-
-The bootstrap should remain:
+Examples include:
 
 ```text
-broadly relevant
-low semantic commitment
-low risk
-high trigger value
-relatively cheap
-non-destructive
-provenance-preserving
-reversible
-```
-
-Its purpose is not to complete EDA or choose modelling strategy.
-
-Its purpose is to create enough trustworthy structural state for specialized reasoning to activate.
-
-A concise behavioral rule is:
-
-> **Observe broadly, infer cautiously.**
-
-## Information boundaries apply during bootstrap
-
-The bootstrap itself must obey information legitimacy.
-
-Before deeply inspecting a source, the system should determine its likely role and what information is legitimate to consume.
-
-This is especially important for final test or holdout data. Structural metadata may be legitimate to inspect while target values or outcome associations remain protected from development.
-
-A future execution environment may need enforceable information barriers, but no implementation has been selected.
-
-## Candidate bootstrap observations
-
-High-value structural observations may include:
-
-- available sources, files, and versions;
-- dataset shape and schema;
-- physical data types;
-- candidate identifiers and cardinality;
-- timestamps or ordering variables;
-- candidate target structure where legitimate;
-- missingness presence and approximate rates;
-- duplicate or repeated-entity structure;
-- data partitions;
-- entity and temporal overlap across partitions;
-- obvious structural inconsistencies;
-- existing implementation and environment structure;
-- executability and resource availability;
-- obvious governance-relevant facts or hard restrictions.
-
-These observations should create facts, conflicts, hypotheses, and triggers rather than immediately dictate downstream responses.
-
-## Bootstrap detects conditions; specialized knowledge reasons about responses
-
-Examples:
-
-```text
-42% missingness detected
-    -> activate missing-data reasoning
-    -> do not automatically median-impute
+causal claim requested
+but identification assumptions absent
 ```
 
 ```text
-timestamp detected
-    -> activate temporal-structure reasoning
-    -> do not automatically fit a time-series model
+deployment proposed
+but monitoring obligations unsatisfied
 ```
 
 ```text
-2% positive class detected
-    -> activate imbalance / metric / threshold reasoning
-    -> do not automatically apply SMOTE
+final model selection proposed
+but no accepted validation design exists
 ```
-
-This separation is central to keeping the universal process small while preserving project-specific methodological depth.
-
-## Multidimensional project characterization
-
-The project should probably be characterized by multiple structural properties rather than one exclusive project-type label.
-
-For example, one task may simultaneously be:
 
 ```text
-supervised
-binary classification
-temporal
-grouped
-forward-looking
-sequence-derived
-imbalanced
+external transfer proposed
+but permission state unresolved
 ```
 
-Those properties can activate different reasoning modules.
+This allows the system to generate missing semantic, methodological, evidence, governance, or assurance obligations before unsafe downstream actions occur.
 
-The exact representation remains open.
+## Module input and output
 
-## Intended use remains high leverage
+Activated knowledge should receive a relevant project-state slice rather than the entire conversational history.
 
-Intended use affects validation, feature legitimacy, metrics, interpretation, risk, admissibility, monitoring, and human gates.
+A knowledge unit may contribute typed objects such as:
 
-The system should try to establish intended use relatively early while keeping it revisable.
+- analytical questions;
+- semantic or methodological obligations;
+- evidence requirements;
+- candidate investigations;
+- constraints and safeguards;
+- risk scenarios;
+- review requests;
+- human clarification requests;
+- candidate decisions or alternatives;
+- conditions for sufficient resolution.
 
-A later transition from exploratory analysis to operational deployment should trigger impact analysis and new assurance obligations rather than acting like a harmless metadata edit.
+The output should update project state rather than remain an isolated prose response.
 
-## Selective human clarification
+## Module interaction through shared state
 
-The system should not start every project with a large questionnaire.
-
-It should first use available data, documentation, schemas, code, and authoritative sources when they can resolve a question cheaply and reliably.
-
-Human clarification becomes a first-class action when a material semantic, normative, authority-dependent, or blocking question cannot be resolved reliably from existing evidence.
-
-A derived human-facing **Current Project Interpretation** may eventually help users correct high-leverage misunderstandings efficiently without making the summary itself the source of truth.
-
-## Initialization stopping condition
-
-Checkpoint 5 introduces the following strong hypothesis:
-
-> **Initialization is sufficiently advanced once at least one useful, admissible, methodologically legitimate action can proceed, while important unresolved questions and blockers are explicitly represented.**
-
-Initialization therefore does not require complete certainty about every future project decision.
-
-Blocking is relative to actions and milestones rather than one project-wide yes/no flag.
-
-## Six candidate universal bootstrap responsibilities
-
-The current bootstrap can be compressed conceptually into six responsibilities:
-
-1. **Register sources and information boundaries.**
-2. **Establish structural facts.**
-3. **Compare sources for consistency.**
-4. **Generate project-characterization hypotheses.**
-5. **Emit triggers and questions.**
-6. **Construct the first runnable frontier.**
-
-This is a conceptual protocol, not a selected implementation workflow.
-
-## Major simplification
-
-One of the strongest simplifications found so far is:
+The preferred conceptual pattern is:
 
 ```text
-SMALL UNIVERSAL BOOTSTRAP PROTOCOL
-                +
-ADAPTIVE STATE-DRIVEN REASONING
+MODULE A
+    -> PROJECT STATE UPDATE
+    -> activation layer evaluates new state
+    -> MODULE B may become relevant
 ```
 
-rather than one complete universal data-science pipeline.
+rather than direct hard-coded module-to-module calls.
 
-Conceptually:
+This reduces coupling and makes the reason for cross-activation traceable.
+
+## Shared questions as integration points
+
+Multiple knowledge units may converge on one analytical question.
+
+For example, temporal structure, repeated entities, and leakage concerns may all motivate:
+
+> Does the validation design represent the intended deployment regime?
+
+The project therefore increasingly views shared analytical questions as a mechanism for recombining modular knowledge without creating duplicated workflows.
+
+## Evidence frameworks rather than cookbook rules
+
+Knowledge units should encode distinctions, failure modes, evidence requirements, and conditional strategies rather than unconditional recipes such as:
 
 ```text
-NEW PROJECT
-    -> source registration
-    -> provisional interpretation
-    -> information-boundary determination
-    -> universal bootstrap inspection
-    -> structural facts and conflicts
-    -> characterization hypotheses
-    -> triggers
-    -> specialized questions / knowledge modules
-    -> first runnable frontier
+missing values -> median imputation
+imbalance -> SMOTE
 ```
 
-Then the Checkpoint 4 control loop takes over:
+The response should emerge from project-specific evidence and constraints.
+
+A knowledge unit may contain hard safeguards, explicit decision frameworks, and open-ended reasoning within the same analytical area.
+
+## Scope and applicability
+
+Knowledge instances should likely be scoped to entities such as a project, dataset, partition, feature, target, subgroup, model, claim, decision, action, or deployment environment.
+
+The exact scope representation remains open.
+
+To control over-activation, semantic retrieval may use a two-step process:
 
 ```text
-action
-    -> evidence
-    -> state update
-    -> impact analysis
-    -> new obligations
-    -> new runnable frontier
+candidate relevance
+    -> applicability determination
+    -> project-specific knowledge instance
 ```
 
-Detailed reasoning is preserved in:
+Precise deterministic rules may not need this interpretive applicability stage.
 
-`docs/foundations/005_project_initialization_and_universal_bootstrap.md`
+## Open-world and compositional knowledge
+
+The system should assume its reusable knowledge library is incomplete.
+
+Open-ended reasoning must be able to create novel concerns when no exact module fits.
+
+A complex concern may compose several partial knowledge units rather than mapping to one perfect module.
+
+This means the project has not committed to one homogeneous module granularity or taxonomy.
+
+## Coverage review and omission detection
+
+Because false-negative activation is possible, the system likely needs a residual coverage process asking whether important project facts remain unrepresented by active reasoning, accepted resolution, explicit irrelevance, or acknowledged residual uncertainty.
+
+This produced the concept of an **orphaned material fact**:
+
+> An important project-state fact with no reasoning consequence and no explicit rationale for why it is irrelevant.
+
+The complementary concept is an **orphaned action**:
+
+> Consequential work with no state-based justification such as a question, obligation, objective, risk reduction need, deliverable requirement, or accepted decision.
+
+These are promising general integrity checks.
+
+## Review participates in the same activation model
+
+Independent review, replication, leakage review, privacy review, validation review, or other specialist checks need not form a fixed always-on roster.
+
+They can activate because of risk, weak high-leverage assumptions, evidence fragility, governance state, or assurance requirements.
+
+## Activation quality is itself a system-evaluation target
+
+The activation mechanism has symmetrical failure modes:
+
+```text
+FALSE POSITIVE
+irrelevant concern activated and resources wasted
+
+FALSE NEGATIVE
+material concern never represented
+```
+
+Future project tests should therefore measure important concerns correctly activated, important concerns missed, irrelevant activations, unnecessary analytical cost, delay before issue discovery, and whether coverage review recovers omissions.
+
+## Stress-test result
+
+The activation abstraction was stress-tested conceptually against:
+
+- missing data;
+- temporal structure;
+- repeated entities / group dependence;
+- target leakage and test-set integrity;
+- class imbalance;
+- causal inference;
+- clustering;
+- privacy and admissibility;
+- novel domain-specific feedback-loop concerns.
+
+The abstraction remained coherent across these cases but required the refinements documented above.
+
+Detailed reasoning:
+
+`docs/foundations/006_knowledge_activation_and_open_world_reasoning.md`
 
 Historical snapshot:
 
-`docs/checkpoints/005_project_initialization_and_universal_bootstrap.md`
+`docs/checkpoints/006_knowledge_activation_and_open_world_reasoning.md`
+
+## Current conceptual control picture
+
+```text
+                         KNOWLEDGE LIBRARY
+                               |
+                               v
+PROJECT STATE ----------> ACTIVATION / APPLICABILITY
+     ^                         |
+     |                         v
+     |                questions / obligations /
+     |                safeguards / review needs
+     |                         |
+     |                         v
+     |                   RUNNABLE FRONTIER
+     |                         |
+     |                         v
+     |                    ORCHESTRATION
+     |                         |
+     |                         v
+     +--------- evidence / result / revision
+```
+
+Coverage review surrounds this loop to search for missed material concerns.
 
 ## Strong design hypotheses currently active
 
-Important active hypotheses include:
+Important active hypotheses now include:
 
 - five candidate epistemic invariants;
-- a project constitution separating admissibility, epistemic integrity, risk-sensitive assurance, and optimization;
+- project constitution separating admissibility, epistemic integrity, assurance, and optimization;
 - typed dependency-aware project state;
 - questions and claims as important orchestration objects;
-- impact analysis and change propagation;
-- information lineage in addition to computational lineage;
-- a runnable frontier;
-- separation of mandatory obligations from optional prioritization;
-- state-driven rather than plan-driven orchestration;
-- source-aware progressive project initialization;
-- question-specific authority;
-- explicit representation of source conflicts;
-- progressive semantic commitment;
-- a small universal bootstrap protocol;
-- trigger-oriented structural inspection;
-- multidimensional project characterization;
-- initialization completion based on a legitimate runnable frontier.
+- impact analysis and information lineage;
+- runnable frontier and state-driven orchestration;
+- progressive, source-aware project initialization;
+- a small universal bootstrap;
+- reusable knowledge separate from actors and tools;
+- system-level knowledge definitions separate from project-specific instances;
+- hybrid deterministic, interpretive, and open-ended activation;
+- prospective activation around proposed actions, methods, claims, and decisions;
+- missing-prerequisite activation;
+- modules consuming relevant state slices and producing typed state contributions;
+- indirect module interaction through project state;
+- shared questions as integration points;
+- evidence frameworks rather than cookbook prescriptions;
+- open-world and compositional knowledge;
+- coverage review and orphaned-state detection;
+- activation quality as an evaluation target.
 
 ## Explicit non-decisions
 
-The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, event-log architecture, exact project-state schemas, source schema, authority model, exact bootstrap checklist, project-characterization schema, information-barrier implementation, trigger representation, module representation, rule engine, exact status machines, materiality model, priority formula, parallel scheduler, execution sandbox, final autonomy model, final completion rule, or system-evaluation framework.
+The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, event-log architecture, project-state schemas, trigger language, rule engine, semantic retrieval technology, embedding model, module schema, module taxonomy, activation thresholds, scope representation, deduplication algorithm, coverage-review implementation, execution sandbox, final autonomy model, final completion rule, or system-evaluation framework.
 
 ## Current focus
 
-The next major conceptual question is:
+The next conceptual question is:
 
-> **How should discovered project facts, conflicts, questions, and characterization properties activate the correct reusable knowledge modules, rules, reviewers, or open-ended reasoning without creating one impossibly large centralized decision tree?**
+> **What should a reusable knowledge unit contain internally so that, once activated, it can reliably generate the right questions, safeguards, evidence requirements, candidate investigations, review behavior, resolution criteria, and state transitions across heterogeneous projects?**
 
-This is the **knowledge-activation problem**.
+This is the internal knowledge-representation problem already foreshadowed by Q-007.
 
 Important subquestions include:
 
-- What exactly is a trigger?
-- What should a reusable knowledge module receive and produce?
-- Should modules subscribe to state patterns rather than call each other directly?
-- Can multiple modules activate from the same fact?
-- Can modules activate further modules through new state changes?
-- Which activations should be deterministic versus proposed by an LLM?
-- How should missed activations be detected?
-- How should the system avoid over-activation and irrelevant work?
-- How should reviewers and open-ended reasoning participate in the same activation mechanism?
-- How should activations create questions, obligations, or candidate actions on the runnable frontier?
+- What fields or semantic components are truly necessary?
+- How should activation conditions differ from applicability conditions?
+- How should hard invariants coexist with conditional decision logic and open-ended prompts?
+- How should a knowledge unit express required evidence rather than preferred methods?
+- How should scopes, dependencies, sufficient-resolution conditions, and reopen conditions be represented?
+- How should references, rationale, examples, known limitations, version, and maturity be stored?
+- How should knowledge units support composition without becoming excessively fragmented?
+- Which parts should eventually be executable or machine-checkable?
+- How should real-project lessons revise a reusable unit without corrupting historical project records?
 
-This should remain conceptual before choosing a rule engine, graph system, workflow framework, or agent architecture.
+This should remain conceptual before selecting YAML, JSON, code, rules, graphs, databases, or another storage representation.
 
 ## Required context for a new chat
 
@@ -384,10 +476,10 @@ A new design chat should read, at minimum:
 7. `docs/DEVELOPMENT_METHOD.md`
 8. `docs/CONTINUITY.md`
 
-For detailed reasoning, also read the five files currently under `docs/foundations/`.
+For detailed reasoning, also read the six files currently under `docs/foundations/`.
 
-Relevant historical checkpoints are Checkpoints 0 through 5 under `docs/checkpoints/`.
+Relevant historical checkpoints are Checkpoints 0 through 6 under `docs/checkpoints/`.
 
 ## Next step
 
-Develop the conceptual knowledge-activation mechanism linking project-state facts and questions to reusable modules, rules, reviewers, and open-ended reasoning before choosing implementation technology.
+Develop the internal semantic structure of reusable knowledge units before selecting their implementation format.
