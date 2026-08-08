@@ -276,3 +276,24 @@ The sequence number preserves chronology and the content-specific title makes ea
 A purely numbered convention becomes difficult to navigate as the project grows, while completely free-form names obscure chronological order. The hybrid convention provides both.
 
 Session names are provenance and navigation metadata only. The repository must not depend on a chat retaining a specific title, and a single chat may contain multiple repository checkpoints.
+
+---
+
+## D-020. Make design-chat rotation a proactive AI responsibility
+
+**Status:** Accepted  
+**Date:** 2026-08-08
+
+The AI design collaborator should decide when the active design conversation should move to a new chat. A new chat should be opened primarily because conversation capacity, context pressure, degraded continuity, or another practical session-boundary risk makes continuing in the current chat unsafe or inefficient, not merely because the conceptual subject changes or a new checkpoint is reached.
+
+A single chat may therefore span many topics and many repository checkpoints when continuity remains healthy.
+
+Before recommending a new chat, the AI should normally ensure that material reasoning has been preserved, `CURRENT_STATE.md` and the relevant canonical documents are current, and the next step is explicit. It should then give the user a suitable numbered, content-specific chat title and a minimal continuation instruction. The user should not need to manually reconstruct or re-explain the project.
+
+The AI does not need an exact client-side context-limit meter to perform this responsibility. It should use the conversational context and continuity signals available to it and recommend rotation before meaningful context loss is likely. If a platform-specific limit becomes ambiguous and cannot otherwise be assessed, the AI may ask the user for relevant UI information, but screenshots should not be a routine requirement.
+
+### Rationale
+
+The goal of session management is reliable continuity, not creating many chats. Topic changes and checkpoints are useful documentation boundaries but are not, by themselves, reasons to fragment the working conversation. Proactive session rotation reduces the risk of reaching a context boundary unexpectedly and then requiring the user to recover the project manually.
+
+See `CONTINUITY.md`.
