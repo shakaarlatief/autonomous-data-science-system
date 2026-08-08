@@ -6,9 +6,9 @@ This document records important unresolved questions in current canonical form. 
 
 **Status:** Partially answered
 
-The accepted primary purpose is project-relative: create the best defensible data-science process for the project's goals, constraints, deliverables, and desired human involvement.
+The primary purpose is project-relative: create the best defensible data-science process for the project's goals, constraints, deliverables, and desired human involvement.
 
-Still open: final system-level success criteria and evidence standards across project classes.
+Still open: final system-level success criteria across project classes.
 
 ---
 
@@ -16,9 +16,9 @@ Still open: final system-level success criteria and evidence standards across pr
 
 **Status:** Substantially reframed
 
-Autonomy should probably be dynamic and depend on risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state.
+Autonomy should probably vary with risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state.
 
-The exact autonomy model remains open.
+The final autonomy model remains open.
 
 ---
 
@@ -26,9 +26,7 @@ The exact autonomy model remains open.
 
 **Status:** Substantially refined
 
-Preferred human involvement should remain distinct from required involvement. Human authority may be needed for semantics, normative choices, approvals, risk acceptance, unresolved admissibility, or consequential uncertainty.
-
-The exact escalation policy remains open.
+Preferred involvement should remain distinct from required authoritative involvement. Exact escalation policy remains open.
 
 ---
 
@@ -36,9 +34,9 @@ The exact escalation policy remains open.
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 7 favors thin semantic packages containing typed, composable, provenance-aware components.
+Current hypothesis: thin semantic packages containing typed, composable, provenance-aware reasoning components.
 
-Still open: final representation syntax, component boundaries, composition, storage, querying, and executable attachments.
+Final syntax, component boundaries, storage, querying, and executable attachments remain open.
 
 ---
 
@@ -46,9 +44,7 @@ Still open: final representation syntax, component boundaries, composition, stor
 
 **Status:** Substantially refined, not resolved
 
-The preferred direction is hybrid: deterministic safeguards, explicit decision frameworks, semantic interpretation, and open-ended concern discovery.
-
-The knowledge library should remain open-world.
+Current direction is hybrid: deterministic safeguards, explicit decision frameworks, interpretive reasoning, and open-ended concern discovery.
 
 ---
 
@@ -56,7 +52,7 @@ The knowledge library should remain open-world.
 
 **Status:** Substantially refined through Q-037
 
-Activation is treated as a project-state relevance problem. Activated knowledge normally creates questions, obligations, reviews, safeguards, or candidate actions rather than immediately executing a workflow.
+Activation is treated as a project-state relevance problem that creates questions, obligations, safeguards, reviews, or candidate actions rather than directly invoking a fixed workflow.
 
 Large-scale implementation remains open.
 
@@ -66,19 +62,17 @@ Large-scale implementation remains open.
 
 **Status:** Substantially refined, not resolved
 
-Current hypothesis: thin packages plus typed components for questions, invariants, principles, evidence requirements, investigations, alternatives, assumptions, failure modes, claim constraints, dependencies, review hooks, resolution criteria, and reopen conditions.
+Checkpoint 7 provides a thin-package plus typed-component model covering questions, invariants, principles, evidence requirements, investigations, alternatives, assumptions, failure modes, claim constraints, dependencies, and lifecycle semantics.
 
-Exact schema and granularity remain open.
+Exact schema/granularity remain open.
 
 ---
 
 ## Q-008. How should project state be represented?
 
-**Status:** Substantially refined, entering prototype test
+**Status:** Substantially refined; entering Prototype V0 test
 
-Checkpoint 4 develops typed dependency-aware state. Prototype V0 now gives a deliberately small implementation vocabulary.
-
-The final system schema, persistence model, query model, and status semantics remain open.
+The final production schema and persistence/query architecture remain open. Prototype V0 intentionally uses a much smaller test vocabulary.
 
 ---
 
@@ -86,9 +80,7 @@ The final system schema, persistence model, query model, and status semantics re
 
 **Status:** Reframed
 
-Knowledge, capabilities, and actors should remain separate. No permanent agent roster is accepted.
-
-Prototype V0 deliberately uses one reasoner so agent structure does not confound the architecture experiment.
+Knowledge, capabilities, and actors should remain separate. Prototype V0 deliberately uses one reasoner to avoid agent-count confounding.
 
 ---
 
@@ -98,17 +90,13 @@ Prototype V0 deliberately uses one reasoner so agent structure does not confound
 
 Candidate triggers include high risk, epistemic single points of failure, weak high-leverage assumptions, fragile consequential claims, governance requirements, and consequential use of low-maturity knowledge.
 
-The final review policy remains open.
-
 ---
 
 ## Q-011. What counts as sufficient evidence for a decision?
 
 **Status:** Active
 
-Evidence sufficiency is decision-specific and may depend on methodological validity, uncertainty, independence, shared ancestry, risk, and whether further evidence could change the decision.
-
-No universal sufficiency model exists yet.
+Evidence sufficiency remains decision-specific and may depend on validity, uncertainty, independence, shared ancestry, risk, and the probability that more evidence changes the decision.
 
 ---
 
@@ -116,7 +104,7 @@ No universal sufficiency model exists yet.
 
 **Status:** Open
 
-Numerical, categorical, narrative, structural, and dependency-aware representations remain possible.
+No final numerical, categorical, narrative, or structural representation has been selected.
 
 ---
 
@@ -124,9 +112,9 @@ Numerical, categorical, narrative, structural, and dependency-aware representati
 
 **Status:** Open
 
-Mandatory integrity obligations remain mandatory. Project intent and budget should mainly control optional depth and evidence expansion.
+Mandatory obligations remain mandatory. Optional depth should depend on project value and resource constraints.
 
-Prototype V0 introduces experimental token/tool budgets but does not solve the general problem.
+Prototype V0 now measures calls/tokens/tools but does not solve the general budgeting problem.
 
 ---
 
@@ -134,7 +122,7 @@ Prototype V0 introduces experimental token/tool budgets but does not solve the g
 
 **Status:** Substantially refined, not resolved
 
-Candidate stopping reasons include sufficient evidence, decision-irrelevant uncertainty, diminishing information value, unavailable discriminating evidence, or resource limits compatible with the quality floor.
+Candidate stopping reasons include sufficient evidence, decision-irrelevant residual uncertainty, diminishing information value, unavailable discriminating evidence, or compatible resource limits.
 
 ---
 
@@ -142,7 +130,7 @@ Candidate stopping reasons include sufficient evidence, decision-irrelevant unce
 
 **Status:** Substantially reframed
 
-The project favors multidimensional characterization rather than one exclusive project-type label.
+The system should use multidimensional project characterization rather than one exclusive type label.
 
 Exact representation remains open.
 
@@ -150,11 +138,11 @@ Exact representation remains open.
 
 ## Q-016. How should system quality itself be evaluated?
 
-**Status:** Substantially advanced through Checkpoints 9-11
+**Status:** Substantially advanced; Prototype V0 implementation underway
 
-Behavioral trajectories, visible-versus-hidden evaluator state, acceptance envelopes, dynamic repair, process-versus-outcome separation, strong baselines, and resource accounting are now specified conceptually and technically for Prototype V0.
+Behavioral trajectories, hidden evaluator truth, acceptance envelopes, dynamic repair, process/outcome separation, strong baselines, deterministic assertions, and resource accounting are now operational in the first benchmark.
 
-Broader benchmark design and long-term scoring remain open.
+Broader evaluation remains open.
 
 ---
 
@@ -164,7 +152,7 @@ Broader benchmark design and long-term scoring remain open.
 
 Real failures should be distilled into mechanism-preserving behavioral cases rather than copied blindly.
 
-Long-term case maintenance, privacy-safe extraction, diversity, and held-out strategy remain open beyond Version 0.
+Long-term privacy-safe case extraction, diversity, and maintenance remain open.
 
 ---
 
@@ -172,45 +160,43 @@ Long-term case maintenance, privacy-safe extraction, diversity, and held-out str
 
 **Status:** Substantially refined, not resolved
 
-The preferred model is shared-state interaction plus reusable cross-package components rather than direct hard-coded package calls.
-
-Deduplication, composition, and cycle control remain open at scale.
+Preferred direction: shared-state composition plus reusable cross-package components. Large-scale deduplication, composition, and cycle control remain open.
 
 ---
 
 ## Q-019. How should invalidation work?
 
-**Status:** Substantially refined, entering prototype test
+**Status:** Substantially refined; planned Prototype V0 experiment
 
-Current theory distinguishes hard dependencies from support relationships, validity from currency, and targeted repair from blind recursive invalidation.
+Theory distinguishes hard dependencies from support relations and targeted repair from blind recursive invalidation.
 
-Prototype V0 will test under-propagation, correct propagation, and over-propagation after an authoritative feature-timing revision.
+The dynamic feature-timing event will empirically test under-propagation, correct propagation, and over-propagation once P0 exists.
 
 ---
 
 ## Q-020. What should the execution environment look like?
 
-**Status:** Open at production scale; narrowly specified for V0
+**Status:** Open at production scale; narrow V0 boundary implemented
 
-Prototype V0 requires instrumented artifact access, explicit Python inputs, hidden evaluator separation, trace logging, and a prospective action gate.
+Prototype V0 now has instrumented artifact access, explicit Python inputs, hidden evaluator separation, trace logging, and optional prospective blocking.
 
-Production isolation, dependency management, recovery, compute control, and sandbox architecture remain open.
+Production sandboxing/recovery/dependency management remain open.
 
 ---
 
 ## Q-021. How should model and tool providers be selected?
 
-**Status:** Open
+**Status:** Open; first experiment configuration chosen provisionally
 
-Provider choice should remain separate from semantic architecture.
+Provider choice remains separate from semantic architecture.
 
-Prototype experiments require the same underlying strong model across B0, B1, and P0 within paired comparisons.
+Prototype V0 now has a provider-neutral model protocol plus a provisional OpenAI GPT-5.6 Terra calibration adapter. This is not a production-provider decision.
 
 ---
 
 ## Q-022. How should external knowledge and source material be integrated?
 
-**Status:** Increasingly coupled to knowledge quality
+**Status:** Coupled to knowledge quality
 
 Reusable knowledge needs proposition-specific provenance, authority, scope, limitations, freshness, and versioning.
 
@@ -222,7 +208,7 @@ Prototype V0 deliberately uses only four manually authored components.
 
 **Status:** Open
 
-Raw transcripts may be useful provenance but contain duplication and obsolete reasoning. Their long-term role remains undecided.
+Raw transcripts may provide provenance but contain duplication and obsolete reasoning.
 
 ---
 
@@ -230,9 +216,7 @@ Raw transcripts may be useful provenance but contain duplication and obsolete re
 
 **Status:** Open and risk-sensitive
 
-Automatic extraction must not imply automatic promotion into trusted knowledge.
-
-Prototype V0 excludes automatic knowledge learning.
+Automatic extraction should never imply automatic promotion into trusted reusable knowledge. Prototype V0 excludes automatic learning.
 
 ---
 
@@ -242,17 +226,13 @@ Prototype V0 excludes automatic knowledge learning.
 
 Knowledge role, maturity, enforcement authority, challenge history, scope confidence, and operational coverage should remain distinct.
 
-Exact statuses remain open.
-
 ---
 
 ## Q-026. How should repository structure evolve?
 
 **Status:** Partially answered for Prototype V0
 
-A provisional `prototype_v0/` experiment boundary is now justified for case specification, source code, tests, configuration, and results.
-
-This does not determine the future production repository architecture.
+A provisional `prototype_v0/` experiment boundary now exists. This does not define the future production repository architecture.
 
 ---
 
@@ -260,9 +240,7 @@ This does not determine the future production repository architecture.
 
 **Status:** Substantially refined, not resolved
 
-The current epistemic core remains semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance.
-
-Prototype V0 operationalizes only a small subset.
+Current epistemic core: semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance.
 
 ---
 
@@ -270,9 +248,9 @@ Prototype V0 operationalizes only a small subset.
 
 **Status:** Substantially refined, not resolved
 
-Objectives, constraints, deliverables, human-control preferences, and distinctions among project/model/operational objectives remain important.
+Objectives, constraints, deliverables, human-control preferences, and project/model/operational distinctions remain important.
 
-Prototype V0 uses a narrow project brief rather than the final intent schema.
+Prototype V0 uses a narrow brief rather than the final intent schema.
 
 ---
 
@@ -280,9 +258,7 @@ Prototype V0 uses a narrow project brief rather than the final intent schema.
 
 **Status:** Substantially refined, not resolved
 
-The runnable-frontier concept separates mandatory blockers from optional work.
-
-Prototype V0 uses only a minimal qualitative order: hard blocker, blocking semantic/methodological question, repair obligation, then high-value optional analysis.
+Current runnable-frontier concept separates blockers/repair from optional value-improving work. No final scoring mechanism exists.
 
 ---
 
@@ -290,7 +266,7 @@ Prototype V0 uses only a minimal qualitative order: hard blocker, blocking seman
 
 **Status:** Strong design hypothesis under validation
 
-The framework has survived conceptual stress tests and now enters limited empirical testing.
+They now inform executable Prototype V0 behavior but remain open to empirical revision.
 
 ---
 
@@ -298,9 +274,7 @@ The framework has survived conceptual stress tests and now enters limited empiri
 
 **Status:** Substantially refined, not resolved
 
-Admissibility is currently treated as action-specific, source-aware, and authority-aware.
-
-Full governance/admissibility is outside Prototype V0.
+Full governance/admissibility remains outside Prototype V0.
 
 ---
 
@@ -308,17 +282,15 @@ Full governance/admissibility is outside Prototype V0.
 
 **Status:** Substantially refined, not resolved
 
-Current direction favors failure-scenario-based risk, inherent versus residual risk, credible controls, assurance obligations, and explicit risk-acceptance authority.
-
-Full assurance is outside Prototype V0.
+Full assurance remains outside Prototype V0.
 
 ---
 
 ## Q-033. Should analytical questions and claims be primary state objects?
 
-**Status:** Strong design hypothesis entering implementation test
+**Status:** Strong design hypothesis awaiting P0 implementation test
 
-Prototype V0 keeps `QUESTION` and `CLAIM` as distinct state types specifically so this hypothesis can be exercised.
+Prototype V0's planned P0 state keeps `QUESTION` and `CLAIM` distinct specifically to test this hypothesis.
 
 ---
 
@@ -326,7 +298,7 @@ Prototype V0 keeps `QUESTION` and `CLAIM` as distinct state types specifically s
 
 **Status:** Substantially refined, not resolved
 
-General completion remains question/obligation driven. Prototype V0 uses narrower milestones: provisional development, repair after Phase 2, explicit final-model lock, then final evaluation.
+General completion remains obligation/question driven. Prototype V0 uses narrower experimental milestones.
 
 ---
 
@@ -334,25 +306,23 @@ General completion remains question/obligation driven. Prototype V0 uses narrowe
 
 **Status:** Substantially refined, coupled to Q-008
 
-These remain candidate state concepts for the full system but are intentionally outside the first prototype except for methodological blocking.
+These remain full-system concepts and are intentionally omitted from V0 except for methodological blocking.
 
 ---
 
 ## Q-036. How should a new project be initialized?
 
-**Status:** Substantially refined, entering narrow prototype test
+**Status:** Substantially refined; narrow benchmark test pending real model
 
-Prototype V0 exercises only the minimum initialization behavior needed to ingest the brief, README, datasets, baseline code, structural facts, and contradictions.
+Prototype V0 exposes the brief, stale README, datasets, and inherited baseline to test whether a strong reasoner corrects initial project semantics before/while modeling.
 
 ---
 
 ## Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Substantially refined, entering empirical test
+**Status:** Substantially refined; P0 empirical test pending
 
-Prototype V0 uses four manually authored components, direct deterministic checks for precise safeguards, simple state-pattern activation for interpretive knowledge, idempotent scoped instances, and no retrieval infrastructure.
-
-Large-scale semantic retrieval and coverage remain open.
+V0 will use four components, direct checks for precise safeguards, simple state-pattern activation, scoped idempotent instances, and no retrieval infrastructure.
 
 ---
 
@@ -360,85 +330,87 @@ Large-scale semantic retrieval and coverage remain open.
 
 **Status:** Substantially refined, not resolved
 
-Checkpoint 8 establishes minimum justified generalization, separation of project lessons from trusted reusable knowledge, different reasoning/reuse/enforcement thresholds, counterexample-driven scope discovery, staged promotion, versioning, and cross-project impact analysis.
+Checkpoint 8 establishes minimum justified generalization, staged promotion, role/maturity/enforcement separation, counterexample-driven scope discovery, and versioned challenge history.
 
-Exact maturity, promotion, freshness, contradiction, and automatic-learning mechanisms remain open.
+Exact maturity/promotion/freshness/automatic-learning mechanisms remain open.
 
 ---
 
 ## Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
-**Status:** Substantially refined; first implementation specified
+**Status:** Substantially refined; first benchmark operational
 
-Checkpoint 9 defines behavioral trajectories and acceptance envelopes. Checkpoints 10-11 instantiate those ideas in a concrete synthetic churn case with dynamic revelation, deterministic assertions, blinded semantic evaluation, held-out surface variants, and B0/B1/P0 controls.
+The first synthetic churn benchmark, hidden truth, dynamic revelation, deterministic assertions, and baseline runtime are implemented.
 
-Broader benchmark infrastructure remains open.
+Blinded semantic judging, held-out H1/H2 execution, and broader benchmark diversity remain open.
 
 ---
 
 ## Q-040. What is the minimum end-to-end prototype that can falsify the core architecture?
 
-**Status:** Substantially specified for Version 0
+**Status:** Substantially specified and under construction
 
-The current experiment contains one strong reasoner, Python execution, nine minimal state types, five relations, four knowledge components, one deterministic prospective gate, interpretive activation, dependency repair, a synthetic churn case family, and strong B0/B1 baselines.
+The experiment contains one strong reasoner, Python, a small benchmark family, four knowledge concepts, strong B0/B1 controls, and a planned minimal P0.
 
-The architecture should be simplified or rejected for this project scale if B1 matches P0's critical-integrity and repair behavior at materially lower complexity/cost.
+The architecture should be simplified/rejected for this scale if B1 matches P0's reliability at materially lower complexity/cost.
 
-Detailed reasoning:
-
-`docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`
+Detailed reasoning: `docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`.
 
 ---
 
 ## Q-041. How should Prototype V0 be represented and implemented concretely?
 
-**Current priority:** Highest  
-**Status:** Substantially specified; implementation evidence is now required
+**Status:** Substantially implemented through the real-baseline boundary
 
-Foundation 011 defines the concrete technical contract.
-
-Current Version 0 specification includes:
+Foundation 011 defines the technical contract. Checkpoints 12-15 have now implemented:
 
 ```text
-common experiment harness
-hard visible/evaluator information boundary
-instrumented artifact access
-metadata versus value-level access
-explicit Python input declaration
-three project phases
-concrete 24-month customer-month DGP
-fixed initial DGP equations and parameters
-stale README semantics
-post-outcome account_state_code mechanism
-inherited preprocessing contamination
-Phase 2 authoritative timing notice
-machine-readable hidden evaluator manifest
-benchmark self-tests
-condition-neutral milestone reports
-common action/trace model
-nine typed P0 state objects
-five explicit relations
-typed Version 0 statuses
-append-only audit history
-dependency-aware repair
-four minimal knowledge components
-idempotent activation
-minimal runnable-frontier behavior
-deterministic evaluator assertions
-blinded semantic judging
-resource accounting
-held-out surface variants
-benchmark-first implementation order
+synthetic DGP and generated artifacts
+hidden evaluator truth and benchmark self-tests
+instrumented treatment workspace
+project phases and protected-test semantics
+condition-neutral trace
+deterministic evaluator
+provider-neutral model contract
+strong B0 runner
+static-knowledge B1 runner
+model-call/token accounting
+common generation retry semantics
+provisional OpenAI real-model adapter
+real-model calibration CLI
 ```
 
-Detailed reasoning:
+P0 remains deliberately unimplemented until real B0/B1 viability is observed.
 
-`docs/foundations/011_prototype_v0_technical_specification.md`
+Detailed reasoning: `docs/foundations/011_prototype_v0_technical_specification.md` and Checkpoints 012-015.
 
-The immediate unresolved task is no longer broad architecture design. It is to implement and mechanically validate the benchmark generator before P0 exists.
+---
 
-The first implementation milestone is:
+## Q-042. What do real B0/B1 calibration runs show, and what common baseline protocol should be frozen before P0?
 
-> **Generate one deterministic synthetic case and prove that the visible artifacts, hidden evaluator truth, dynamic notice, inherited contamination, and benchmark self-tests are internally consistent.**
+**Current priority:** Highest  
+**Status:** Awaiting empirical execution
 
-Only concrete implementation failures should now reopen the Version 0 specification.
+The next decision must be based on real strong-model trajectories, not additional architecture speculation.
+
+Development calibration should answer:
+
+```text
+Does the real model reliably follow the structured command protocol?
+Does B0 complete the project within a reasonable budget?
+Does B1 actually use the four static methodological concepts?
+Do B0/B1 respect the protected final test voluntarily?
+Do they identify the inherited preprocessing contamination?
+Do they reason correctly about repeated entities and future deployment?
+How do they react to the Phase 2 timing notice?
+How many calls/tokens/tool actions are required?
+Are retries or command-recovery semantics fair and reliable?
+Which outputs must be retained for later blinded semantic judging?
+What common development budget should be used when P0 is added?
+```
+
+Calibration may repair provider/interface defects affecting all conditions fairly. It must not be treated as held-out evidence.
+
+The current assistant cannot execute paid calibration without a securely configured API credential and should not request that secret in chat.
+
+After B0/B1 viability is established, the project can implement P0 against a baseline interface and budget that were fixed independently of P0.
