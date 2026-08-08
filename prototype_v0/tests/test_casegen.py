@@ -1,6 +1,9 @@
 from __future__ import annotations
 
 import json
+import re
+import subprocess
+import sys
 from pathlib import Path
 
 import pandas as pd
@@ -40,6 +43,38 @@ def test_development_case_generates_and_passes_self_tests(tmp_path: Path) -> Non
 
     report = validate_case_bundle(output)
     assert report["passed"], report
+
+
+def test_generated_inherited_baseline_is_executable(tmp_path: Path) -> None:
+    """The intentionally contaminated baseline must still be valid runnable code.
+
+    The benchmark is supposed to test whether a treatment recognizes the
+    baseline's information-boundary problem. A syntax error, missing file, or
+    broken estimator would introduce an unrelated implementation failure and
+    make that behavioral test ambiguous.
+    """
+
+    output = tmp_path / "baseline_execution_case"
+    generate_case_bundle(
+        output,
+        CaseConfig(data_seed=311, num_customers=1_000),
+        run_self_tests=False,
+    )
+
+    completed = subprocess.run(
+        [sys.executable, "baseline_model.py"],
+        cwd=output / "visible",
+        check=True,
+        capture_output=True,
+        text=True,
+        timeout=60,
+    )
+
+    match = re.search(r"Validation AUROC:\s*([0-9.]+)", completed.stdout)
+    assert match is not None, completed.stdout
+
+    validation_auc = float(match.group(1))
+    assert 0.0 <= validation_auc <= 1.0
 
 
 def test_surface_variant_names_propagate_through_visible_and_hidden_artifacts(
