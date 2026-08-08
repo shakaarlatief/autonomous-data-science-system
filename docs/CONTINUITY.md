@@ -36,6 +36,40 @@ Session names are navigation and provenance metadata. The repository must never 
 
 If a session evolves beyond its initial title, checkpoints remain the authoritative record of the specific conceptual milestones reached inside that session. A chat may therefore contain more than one checkpoint.
 
+## When to start a new design chat
+
+Opening a new chat is a continuity action, not a topic-management convention.
+
+The AI design collaborator should proactively decide when a new chat is warranted. The default is to continue in the current chat across topic changes and repository checkpoints while conversational continuity remains healthy.
+
+A new chat should normally be recommended only when one or more of the following become material:
+
+- the active conversation is becoming long enough that context loss or compression is a realistic risk;
+- earlier reasoning that is still needed is becoming difficult to retain or recover reliably within the active context;
+- responses, tool interactions, or continuity begin to show signs of degradation attributable to session length;
+- a platform or model context boundary is approaching or has become a meaningful operational concern;
+- or another practical session-boundary condition makes continuing in the same chat less reliable than rotating cleanly.
+
+A new conceptual topic, a new checkpoint, or a new foundation document is **not by itself** a reason to open another chat.
+
+The goal is to use a chat for as long as it remains an effective working context without waiting until continuity has already failed.
+
+The AI may not always have an exact client-side meter for the platform's remaining conversation capacity. Exact UI visibility is not required for this procedure. It should use the context and continuity signals available to it and rotate conservatively before meaningful loss is likely. If a platform-specific limit becomes important but cannot be inferred, the AI may ask the user for relevant UI information. Screenshots should not be requested routinely.
+
+### Proactive rotation procedure
+
+When the AI decides that a new chat should be opened, it should normally:
+
+1. preserve any important uncheckpointed reasoning;
+2. ensure the relevant canonical documents and `CURRENT_STATE.md` are current;
+3. record the exact next step and any material unresolved questions;
+4. verify that the repository is sufficient for reconstruction without the current conversation;
+5. tell the user that this is a good point to rotate chats before continuity becomes risky;
+6. propose the next numbered, content-specific session title;
+7. provide a minimal continuation prompt if useful.
+
+The user should not need to summarize the previous chat or manually reconstruct the project.
+
 ## New-session start procedure
 
 A new design session should begin by reading the repository rather than asking the user to manually restate the project.
@@ -53,13 +87,7 @@ A new design session should begin by reading the repository rather than asking t
 
 Then read the foundational or historical documents explicitly listed in `CURRENT_STATE.md` as relevant to the next step.
 
-At Checkpoint 2, this includes:
-
-- `docs/foundations/001_initial_vision_and_reasoning.md`
-- `docs/foundations/002_epistemic_integrity_and_project_constitution.md`
-- `docs/checkpoints/000_checkpoint_0.md`
-- `docs/checkpoints/001_primary_purpose_and_project_intent.md`
-- `docs/checkpoints/002_epistemic_integrity_and_project_constitution.md`
+The exact historical reading set should follow the current checkpoint rather than the obsolete example set from an earlier checkpoint.
 
 ### Required behavior after reading
 
@@ -177,7 +205,7 @@ The project should behave as though any chat may eventually end.
 
 Important reasoning should therefore be extracted before it becomes dependent on inaccessible context.
 
-This does **not** mean constantly summarizing everything. It means making checkpointing a normal part of the development process.
+This does **not** mean constantly summarizing everything or rotating chats frequently. It means making checkpointing and proactive session rotation normal continuity responsibilities.
 
 ## Model independence
 
@@ -204,6 +232,19 @@ The implementation of that future project-state mechanism has not yet been selec
 
 ## Version history
 
+### Version 0.3
+
+**Introduced:** 2026-08-08
+
+Changes:
+
+- made design-chat rotation a proactive AI responsibility;
+- clarified that chat rotation is driven primarily by context/continuity risk rather than topic or checkpoint changes;
+- explicitly allowed one chat to span many topics and checkpoints while continuity remains healthy;
+- defined a proactive rotation procedure that preserves repository state before asking the user to move chats;
+- clarified that exact client-side context-limit visibility is not required and screenshots are only a fallback when platform-specific information is genuinely needed;
+- removed the obsolete fixed Checkpoint 2 historical-reading example in favor of following the current checkpoint.
+
 ### Version 0.2
 
 **Introduced:** Checkpoint 2, 2026-08-08
@@ -221,4 +262,4 @@ Changes:
 
 Initial cross-chat continuity procedure.
 
-**Current continuity procedure version:** 0.2
+**Current continuity procedure version:** 0.3
