@@ -2,7 +2,7 @@
 
 ## Checkpoint
 
-**Checkpoint:** 7  
+**Checkpoint:** 8  
 **Date:** 2026-08-08  
 **Development stage:** Conceptual research and system definition  
 **Implementation status:** Not started
@@ -32,19 +32,11 @@ The five candidate epistemic invariants remain:
 4. claim validity;
 5. traceability and dependency integrity.
 
-These are strong design hypotheses rather than finalized system requirements.
-
-## Checkpoint 3: admissibility, risk, and assurance
-
-The project hypothesizes that admissibility should be action-specific and authority-aware, risk should be represented through failure scenarios rather than one unexplained label, inherent and residual risk should be distinguished, controls should be credible, and risk should dynamically affect assurance, autonomy, review, monitoring, and human gates.
-
-Detailed reasoning:
-
-`docs/foundations/003_admissibility_risk_and_assurance.md`
+These are strong design hypotheses rather than finalized requirements.
 
 ## Checkpoint 4: project state and state-driven orchestration
 
-Project state is treated conceptually as a living representation of what the system is currently entitled to believe and do rather than passive memory.
+Project state is treated as a living representation of what the system is currently entitled to believe and do rather than passive memory.
 
 Candidate state objects include:
 
@@ -65,7 +57,7 @@ ACTION
 ARTIFACT
 ```
 
-Strong hypotheses include typed dependencies, separate validity and currency, impact analysis, reopening of questions and decisions, computational plus information lineage, a runnable frontier, hard obligations separated from optional value-improving work, and state-driven rather than plan-driven orchestration.
+Strong hypotheses include typed dependencies, separate validity and currency, impact analysis, reopening of questions and decisions, computational plus information lineage, a runnable frontier, separation of mandatory obligations from optional value-improving work, and state-driven rather than plan-driven orchestration.
 
 Detailed reasoning:
 
@@ -95,7 +87,7 @@ Detailed reasoning:
 
 ## Checkpoint 6: knowledge activation
 
-Reusable analytical knowledge should activate from meaningful project-state patterns and contribute structured state rather than directly controlling one fixed workflow.
+Reusable analytical knowledge should activate from meaningful project-state patterns and contribute structured state rather than directly control one fixed workflow.
 
 The project distinguishes:
 
@@ -110,35 +102,27 @@ ACTOR
 Who or what performs the work?
 ```
 
-Activation may arise from observations, combinations of facts, requested objectives, proposed methods, proposed actions, proposed claims, missing prerequisites, contradictions, risk, governance, dependency revisions, or novel open-ended concerns.
+Activation may arise from observations, requested objectives, proposed methods/actions/claims, missing prerequisites, contradictions, risk, governance, dependency revisions, or novel open-ended concerns.
 
 The system should support deterministic, interpretive, and open-ended activation, plus reactive and prospective activation.
 
 Activated knowledge should normally create questions, obligations, safeguards, evidence requirements, reviews, or candidate actions in project state. Actual work still competes on the runnable frontier.
 
-Coverage review may search for orphaned material facts and orphaned actions as omission or justification failures.
+Coverage review may search for orphaned material facts and orphaned actions.
 
 Detailed reasoning:
 
 `docs/foundations/006_knowledge_activation_and_open_world_reasoning.md`
 
-## Major development since Checkpoint 6: reusable knowledge representation
+## Checkpoint 7: reusable knowledge representation
 
-Checkpoint 7 develops the internal semantic structure of reusable analytical knowledge.
-
-The strongest current formulation is:
+The strongest current representation hypothesis is:
 
 > **The reusable knowledge library should consist of versioned, provenance-aware, composable semantic reasoning components grouped into coherent knowledge packages. When applicable, packages instantiate scoped project-specific concerns that contribute typed questions, constraints, evidence requirements, assumptions, alternatives, claim limitations, review needs, resolution criteria, and reopen conditions to project state.**
 
-The durable intellectual asset is therefore not an agent persona, a prompt, or a fixed workflow.
+The durable asset is therefore not an agent persona, prompt, or fixed workflow. It is an explicit representation of what good reasoning requires.
 
-It is an explicit representation of what good reasoning requires.
-
-## Thin knowledge packages and typed components
-
-A monolithic schema with dozens of mandatory fields appears too rigid, while one independent module for every small rule would fragment reasoning excessively.
-
-The current middle-ground hypothesis is:
+The current middle-ground representation is:
 
 ```text
 REUSABLE KNOWLEDGE PACKAGE
@@ -148,18 +132,7 @@ REUSABLE KNOWLEDGE PACKAGE
         +-- typed composable components
 ```
 
-The thin shell may contain:
-
-```text
-identity
-purpose
-scope semantics
-activation / applicability metadata
-version
-maturity
-```
-
-Candidate typed components that survived the current stress tests include:
+Candidate component types include:
 
 ```text
 question template
@@ -179,260 +152,308 @@ resolution criterion
 reopen condition
 ```
 
-This is a semantic inventory, not a final schema or taxonomy.
+Important distinctions include activation versus applicability, evidence requirements versus investigation methods, component role versus generic recommendation, and reusable definitions versus scoped project-specific instances.
 
-## Activation versus applicability
+Important components should preserve their own rationale, provenance, scope, limitations, version, and maturity.
 
-Checkpoint 7 strengthens the distinction between:
+The architecture was stress-tested against Missing Data and Information Legitimacy. Missing Data showed decision-heavy branching, while Information Legitimacy showed hard safeguards, prospective proposal validation, computational and reasoning lineage, repair patterns, and claim invalidation.
 
-```text
-ACTIVATION
-There is enough reason to consider the knowledge.
+Detailed reasoning:
 
-APPLICABILITY
-The component actually governs the current project scope.
-```
+`docs/foundations/007_reusable_knowledge_representation_and_composable_components.md`
 
-Applicability may itself be unresolved and generate a project question.
+## Major development since Checkpoint 7: knowledge quality and evolution
 
-This avoids treating every trigger as proof that a concern definitely applies.
+Checkpoint 8 addresses the second-order epistemic risk created by reusable knowledge.
 
-## Knowledge statements have different force
+A project-specific mistake may damage one project. An incorrect reusable component may affect many future projects.
 
-Reusable knowledge should preserve distinctions among concepts such as:
+The strongest current formulation is:
 
-```text
-hard invariant
-decision principle
-heuristic
-candidate strategy
-open hypothesis
-```
+> **The knowledge library should itself be treated as an epistemic system whose reusable claims have explicit scope, evidential support, provenance, maturity, dependencies, limitations, challenge history, currency, and enforcement authority.**
 
-The system should not flatten all of these into generic recommendations.
+The same core integrity ideas used in project reasoning apply recursively to reusable knowledge: semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity.
 
-Hard methodological or governance requirements should not compete as ordinary preferences with optional optimization opportunities.
+The additional central problem is generalization beyond the source project or source material.
 
-## Evidence requirements versus investigation methods
+## Minimum justified generalization
 
-A central Checkpoint 7 principle-level hypothesis is:
+A strong new hypothesis is:
 
-> **Reusable knowledge should distinguish what must become known from one particular method for learning it.**
+> **Promote the least-general reusable proposition that captures the mechanism and is actually supported by the evidence; expand scope only when additional evidence or reasoning justifies expansion.**
 
-Evidence requirements describe the information needed to resolve a question or justify a decision.
+This protects against abstraction drift, where project-specific conditions are silently removed while the local conclusion is preserved.
 
-Investigation templates describe possible ways of generating that evidence.
+Project learning should therefore often generalize the reasoning structure rather than the locally successful action.
 
-This is intended to keep the knowledge durable as analytical methods and tools evolve.
-
-## Evidence sufficiency and autonomous stopping
-
-Knowledge components may need to describe what counts as adequate evidence for the current question and intended use.
-
-Sufficiency may depend on project materiality, uncertainty, methodological validity, stability, risk, assurance, and whether additional information could plausibly change the decision.
-
-This directly connects reusable knowledge to local stopping and project completion.
-
-## Failure modes as operational knowledge
-
-Failure modes should be first-class components rather than educational notes.
-
-They may participate in:
+Example:
 
 ```text
-prospective proposal validation
-active project review
-coverage review
+Local result:
+A missingness indicator improved one project's validation performance.
+
+Bad reusable rule:
+Always add missingness indicators.
+
+Safer reusable knowledge:
+When missingness itself may carry information relevant to the objective,
+a missingness indicator is a candidate strategy worth evaluating under
+legitimate validation.
 ```
 
-Where feasible, a failure mode may have a deterministic or semi-deterministic detection hook. Other failures require semantic or domain reasoning.
+## Project knowledge and reusable knowledge are separated
 
-## Assumptions should become live project state
+The current conceptual boundary is:
 
-If a selected strategy relies on assumptions, the reusable knowledge should instantiate those assumptions into project state rather than leave them hidden inside the module.
+```text
+PROJECT-SPECIFIC KNOWLEDGE
+        -> CANDIDATE GENERALIZABLE LESSON
+        -> REUSABLE SYSTEM KNOWLEDGE
+```
 
-Those assumptions then become dependency roots that can be challenged, strengthened, invalidated, or reopened.
+A project result should not directly mutate the trusted library.
 
-## Claim constraints
+Future automated lesson extraction should produce **knowledge change proposals** that can be challenged and validated before influencing future projects.
 
-Checkpoint 7 substantially strengthens the role of claim constraints.
+`NO REUSABLE KNOWLEDGE UPDATE` is an important valid outcome when a lesson is genuinely local.
 
-Reusable methodological knowledge may determine not only what actions are valid but what conclusions the resulting evidence can support.
+## Knowledge role, maturity, and enforcement authority
 
-Examples include distinguishing sensitivity evidence from an exact production-performance claim, or recognizing that a contaminated holdout cannot support an independent final-evaluation claim.
+Checkpoint 8 strongly separates:
 
-This provides a direct operational bridge to the Claim Validity invariant.
+```text
+ROLE
+What kind of reusable statement is this?
 
-## Dependencies, resolution, and reopening
+MATURITY
+How well established is it within its claimed scope?
 
-Knowledge instances should depend explicitly on the project state they require.
+ENFORCEMENT AUTHORITY
+How strongly may the system constrain project behavior with it?
+```
 
-They should be considered satisfied only for a particular scope and intended use, not permanently solved for all future conditions.
+A mature heuristic remains a heuristic. Repeated empirical usefulness does not turn it into a methodological invariant.
 
-Material changes to data, validation, prediction timing, intended use, production workflow, feature logic, assumptions, or reusable knowledge may reopen a previously resolved instance.
+The current conceptual threshold ordering is:
 
-This connects reusable knowledge directly to the Checkpoint 4 self-correction mechanism.
+```text
+REASONING THRESHOLD
+    < REUSE THRESHOLD
+    < DETERMINISTIC ENFORCEMENT THRESHOLD
+```
 
-## Component-level provenance, version, and maturity
+The system should reason more creatively than it learns permanently, and learn more liberally than it enforces.
 
-Package-level references alone appear insufficient.
+## Evidence and knowledge assurance
 
-Important reusable components should preserve enough provenance to explain why they exist, what supports them, where they apply, their known limitations, which version introduced them, and how mature they are.
+Different knowledge roles require different evidence forms. Methodological derivation, authoritative technical documentation, empirical project evidence, counterexamples, domain review, and LLM-generated hypotheses are not interchangeable.
 
-Knowledge maturity may eventually affect whether a component is merely advisory, actively reviewed, or suitable for deterministic enforcement.
+LLM generation can create valuable candidate knowledge without conferring independent authority.
 
-The exact maturity model remains open.
+Knowledge assurance should be consequence-sensitive. A component that can block actions, invalidate evidence, or constrain claims should require stronger justification than a component that merely suggests an optional investigation.
+
+Deterministic enforcement should have a high bar: sufficiently precise applicability, strong methodological or governance justification, understood scope, and acceptably controlled consequences of false enforcement.
+
+## One-sided evidence asymmetry
+
+Checkpoint 8 identifies an important asymmetry:
+
+- one project example does not establish a universal rule;
+- one valid counterexample can refute a truly universal rule;
+- one valid failure case can establish that a failure mechanism is possible under the observed conditions without establishing its prevalence;
+- many similar projects do not automatically establish transfer to dissimilar project types;
+- some broad invariants may be justified mainly by methodological reasoning, while project cases provide regression coverage rather than the logical proof.
+
+Counterexamples are therefore especially valuable for discovering hidden scope conditions.
+
+## Candidate knowledge lifecycle
+
+The current conceptual lifecycle is:
+
+```text
+SOURCE / PROJECT LESSON / HYPOTHESIS
+        -> CANDIDATE COMPONENT
+        -> proposition clarified
+        -> scope and limitations stated
+        -> provenance attached
+        -> duplicate / contradiction search
+        -> challenge and counterexample search
+        -> reasoning regression cases
+        -> review appropriate to consequence
+        -> LIMITED ACTIVE KNOWLEDGE
+        -> heterogeneous project exposure
+        -> maturity / scope revision
+        -> ACTIVE
+        -> CHALLENGED / REAFFIRMED / REVISED / SUPERSEDED / RETIRED
+```
+
+Exact states are not selected.
+
+Different knowledge roles should have different admission paths. A software fact, methodological invariant, heuristic, domain claim, and binding governance rule do not require the same evidence or authority.
+
+## Contradictions and challenge
+
+Apparent contradictions may reflect different scopes, assumptions, or analytical objectives.
+
+The system should first attempt to resolve conflict through applicability refinement before treating it as genuine epistemic disagreement.
+
+Genuine disagreement should remain visible rather than being hidden by source ranking or forced consensus.
+
+Challenged knowledge may lose enforcement power before it is revised or retired.
+
+Rejected generalizations and counterexamples should be preserved because they prevent future rediscovery of attractive but invalid simplifications.
+
+## Validity and currency for reusable knowledge
+
+Knowledge validity and knowledge currency are distinct.
+
+A methodological principle may remain valid for years. API behavior, software capabilities, regulation, policies, provider behavior, or operational infrastructure may become stale much faster.
+
+The relevant freshness question is how sensitive a proposition is to external change, not simply the age of its source.
+
+Material knowledge revisions should carry enough change semantics to determine whether dependent active projects require revalidation.
 
 ## Cross-project self-correction
 
-Versioned knowledge creates a powerful future possibility.
-
-If a reusable component is later found to be materially wrong, projects that depended on it could theoretically be discovered and re-evaluated:
+Reusable knowledge versions can participate in dependency analysis:
 
 ```text
-knowledge component invalidated
-    -> dependent projects discovered
-    -> affected claims / decisions reopened
-    -> revalidation obligations created
+knowledge component changes
+    -> dependent packages identified
+    -> project-specific instances identified
+    -> materiality assessed
+    -> affected claims / decisions / actions reopened where necessary
 ```
 
-This is a strong design hypothesis rather than an implementation decision.
+A highly reused weak component may become a **knowledge-library single point of failure**.
 
-## Stress Test 1: Missing Data
-
-Missing Data was used as a decision-heavy test.
-
-The test showed that reusable knowledge must support branching questions, intended-use dependence, alternative strategy families, evidence requirements, uncertainty handling, claim constraints, and hierarchical composition.
-
-It also exposed an important cross-package dependency: learned imputation should reference a shared information-legitimacy component about fitting learned transformations only from legitimate training information rather than duplicating the same safeguard in every preprocessing package.
-
-## Stress Test 2: Information Legitimacy
-
-Information Legitimacy was used as a constraint-heavy contrasting test.
-
-The test showed that the same representation can support hard invariants, prospective proposal checking, computational lineage, reasoning lineage, information contracts, repair alternatives, failure modes, and claim invalidation.
-
-A particularly reusable atomic component is the conceptual `Learned Transformation Evaluation Boundary`, which can apply to imputation, scaling, PCA, feature selection, target encoding, and other learned preprocessing.
-
-The test also confirmed that a numerical artifact can remain computationally correct while its role as independent evidence becomes invalid, reinforcing the separation among artifact correctness, evidence validity, and claim validity.
-
-## Knowledge packages need not have one rigid type
-
-Missing Data is decision-heavy. Information Legitimacy is safeguard-heavy. Other packages may be assumption-heavy, evidence-heavy, authority-heavy, or review-heavy.
-
-The current direction therefore avoids mutually exclusive package classes such as `DecisionPackage` or `SafeguardPackage`.
-
-A common thin shell plus heterogeneous typed components appears more general.
-
-## Semantic knowledge with optional executable attachments
-
-The durable core should remain tool-independent where possible.
-
-Some components may later have executable attachments such as:
+A qualitative review-priority intuition is:
 
 ```text
-semantic invariant + deterministic validator
+review importance rises with
+uncertainty x reuse centrality x consequence of error
 ```
 
-or:
+No numeric formula is selected.
+
+## Reasoning regression tests
+
+Checkpoint 8 makes behavioral regression tests central to knowledge governance.
+
+Candidate case types include:
 
 ```text
-question template + diagnostic implementation
+positive applicability
+negative applicability
+boundary / unresolved applicability
+known failure
+counterexample
+repair
+reopen
+claim limitation
 ```
 
-No implementation representation has been selected.
+Tests should examine false positives as well as false negatives.
 
-## Current conceptual system picture
-
-The project now has a fairly coherent architecture-neutral semantic loop:
+Knowledge quality should eventually be evaluated at several levels:
 
 ```text
-                         KNOWLEDGE LIBRARY
-                   packages + typed components
-                               |
-                               v
-PROJECT STATE ----------> ACTIVATION / APPLICABILITY
-     ^                         |
-     |                         v
-     |                scoped knowledge instance
-     |                         |
-     |                         v
-     |              questions / constraints /
-     |              evidence needs / claims /
-     |              reviews / candidate actions
-     |                         |
-     |                         v
-     |                   RUNNABLE FRONTIER
-     |                         |
-     |                         v
-     |                    ORCHESTRATION
-     |                         |
-     |                         v
-     +--------- evidence / result / revision
+component correctness
+package coherence
+activation quality
+project-level effect
 ```
 
-Coverage review surrounds the loop to search for missed material concerns.
+## Self-confirmation risk
+
+Project evidence generated by a process already influenced by reusable knowledge is not automatically independent confirmation of that knowledge.
+
+Information lineage should therefore preserve when knowledge affected experiment design, action selection, or interpretation.
+
+Independent challenge is particularly important for consequential or highly reused components.
+
+## Stress tests for project-to-library learning
+
+Four contrasting cases were used.
+
+### Broad invariant candidate
+
+A project fits learned preprocessing on all observations before cross-validation. The correct reusable abstraction is not `never standardize before CV`, but a learned-transformation information-boundary safeguard. The project supplies a failure case; broad invariant status requires methodological justification beyond one incident.
+
+### Heuristic candidate
+
+A missingness indicator helps one project. The project can support a candidate strategy or question template, but not mandatory use.
+
+### Project-specific lesson
+
+An organization-specific account-ID prefix identifies a legacy cohort with unusual churn because of a one-time migration. The finding should remain local unless an independently supported broader mechanism appears.
+
+### Rejected apparent rule
+
+Repeated patient IDs make grouped validation appropriate for one unseen-patient deployment. The tempting rule `repeated IDs -> GroupKFold` fails when another application predicts future observations for known entities. The better reusable knowledge is a question and decision principle about the intended generalization regime.
+
+The central lesson is:
+
+> **Generalize the reasoning, not the outcome.**
 
 ## Strong design hypotheses currently active
 
 Important active hypotheses now include:
 
 - five candidate epistemic invariants;
-- the project-constitution hierarchy;
+- project constitution separating admissibility, epistemic integrity, assurance, and optimization;
 - typed dependency-aware project state;
-- state-driven orchestration and a runnable frontier;
-- progressive source-aware project initialization;
-- a small universal bootstrap;
-- reusable knowledge separate from actors and tools;
-- project-specific knowledge instances separate from reusable definitions;
-- hybrid deterministic, interpretive, and open-ended activation;
-- reactive and prospective activation;
-- shared questions as integration points;
-- open-world knowledge and coverage review;
-- thin knowledge packages plus typed composable components;
-- activation distinct from applicability;
+- runnable frontier and state-driven orchestration;
+- progressive source-aware initialization and a small universal bootstrap;
+- reusable knowledge separate from capabilities and actors;
+- activation distinct from execution and applicability;
+- open-world knowledge with coverage review;
+- thin knowledge packages plus typed components;
 - evidence requirements distinct from investigation methods;
-- failure modes and detection hooks as operational knowledge;
-- claim constraints as reusable knowledge;
-- explicit assumptions created from selected strategies;
-- component-level provenance, version, maturity, limitations, and lifecycle;
-- cross-package reuse of atomic components;
-- potential cross-project invalidation when reusable knowledge changes.
+- claim constraints, failure modes, assumptions, and reopen conditions as reusable knowledge;
+- project-specific instances separate from reusable definitions;
+- component-level provenance and versioning;
+- minimum justified generalization;
+- separate knowledge role, maturity, and enforcement authority;
+- separate reasoning, reuse, and enforcement thresholds;
+- staged and challengeable knowledge promotion;
+- counterexample-driven scope discovery;
+- project learning through knowledge-change proposals rather than direct library mutation;
+- reasoning regression cases as knowledge-quality evidence;
+- potential cross-project revalidation after material knowledge revisions.
 
 ## Explicit non-decisions
 
-The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, project-state schemas, trigger language, semantic retrieval technology, package schema, component schema, final component taxonomy, package inheritance rules, source/provenance representation, knowledge maturity model, executable validator framework, execution sandbox, final autonomy model, final completion rule, automatic knowledge-learning mechanism, or system-evaluation framework.
+The project has not selected agent count, LLM providers, orchestration framework, workflow engine, database, graph technology, project-state schemas, trigger language, semantic retrieval technology, knowledge package/component schemas, exact component taxonomy, maturity states, numeric knowledge-confidence system, promotion authority, contradiction-resolution algorithm, regression-case representation, freshness schedule, deterministic enforcement tiers, execution sandbox, automatic knowledge-learning mechanism, or final system-evaluation framework.
 
 ## Current focus
 
-The next major conceptual question is:
+The knowledge-quality work makes one previously broad question concrete:
 
-> **How should reusable knowledge components be validated, tested, promoted, revised, challenged, and learned from real projects without allowing the system to accumulate incorrect, contradictory, stale, or over-generalized knowledge?**
+> **How should behavioral reasoning regression cases and the overall evaluation framework test project understanding, knowledge activation, safeguards, state transitions, claims, repair, and self-correction without reducing data science to one expected workflow or overfitting the system to a small benchmark suite?**
 
-This is the **knowledge quality and evolution problem**.
+This now couples Q-016 and Q-017 and is the next major conceptual design problem.
 
 Important subquestions include:
 
-- How does candidate reusable knowledge enter the library?
-- What evidence or review is required before it becomes stable or enforceable?
-- How should externally sourced guidance, project-derived lessons, deterministic methodological constraints, and LLM-generated hypotheses differ in status?
-- How should contradictions between reusable components be detected and handled?
-- How should knowledge updates be regression-tested?
-- How should maturity change over time?
-- When can a project-specific lesson be generalized safely?
-- How should the system avoid overfitting its knowledge library to a small number of projects?
-- How should a new knowledge version affect active projects that depended on an older version?
-- How should incorrect knowledge be downgraded, challenged, superseded, or removed without erasing provenance?
+- What should a reasoning regression case contain?
+- What outputs should be exact versus behaviorally constrained?
+- How should multiple valid analytical paths be accepted?
+- How should hidden traps and expected concerns be represented without leaking them to the system being evaluated?
+- How should cases test false-positive as well as false-negative activation?
+- How should state transitions, invalidation, reopening, and claim weakening be scored?
+- How should evaluation distinguish final model quality from process quality?
+- Which baselines should be compared?
+- How should project diversity and held-out cases reduce benchmark overfitting?
+- How should real projects become durable regression cases without leaking private or project-specific information into reusable knowledge?
 
-This should be explored before implementing a persistent knowledge store or an automatic knowledge-learning loop.
+Detailed reasoning for Checkpoint 8:
 
-Detailed reasoning for Checkpoint 7:
-
-`docs/foundations/007_reusable_knowledge_representation_and_composable_components.md`
+`docs/foundations/008_knowledge_quality_generalization_and_evolution.md`
 
 Historical snapshot:
 
-`docs/checkpoints/007_reusable_knowledge_representation.md`
+`docs/checkpoints/008_knowledge_quality_and_generalization.md`
 
 ## Required context for a new chat
 
@@ -447,10 +468,10 @@ A new design chat should read, at minimum:
 7. `docs/DEVELOPMENT_METHOD.md`
 8. `docs/CONTINUITY.md`
 
-For detailed reasoning, also read the seven files currently under `docs/foundations/`.
+For detailed reasoning, also read the eight files currently under `docs/foundations/`.
 
-Relevant historical checkpoints are Checkpoints 0 through 7 under `docs/checkpoints/`.
+Relevant historical checkpoints are Checkpoints 0 through 8 under `docs/checkpoints/`.
 
 ## Next step
 
-Develop the conceptual knowledge-quality and knowledge-evolution process before choosing how the knowledge library is stored or automatically updated.
+Develop the behavioral reasoning-regression and system-evaluation framework before choosing implementation architecture.
