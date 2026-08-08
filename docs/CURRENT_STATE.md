@@ -2,45 +2,222 @@
 
 ## Checkpoint
 
-**Checkpoint:** 1  
+**Checkpoint:** 2  
 **Date:** 2026-08-08  
 **Development stage:** Conceptual research and system definition  
 **Implementation status:** Not started
 
 ## Working project definition
 
-The Autonomous Data Science System is intended to become a rigorous, adaptive, semi-autonomous system for carrying out data science projects with the help of multiple reasoning roles, executable tools, persistent knowledge, explicit review processes, empirical evidence, and human judgment.
+The Autonomous Data Science System is intended to become a rigorous, adaptive, semi-autonomous system for carrying out data science projects with multiple reasoning responsibilities, executable tools, persistent knowledge, explicit review processes, empirical evidence, and human judgment.
 
 The system should eventually be able to begin with a new data project, understand the problem, inspect and characterize the data, determine which questions and risks are relevant, plan investigations, execute code, evaluate evidence, compare alternatives, revisit earlier assumptions when necessary, involve the human at appropriate decision points, preserve project state, and produce reproducible analytical and reporting artifacts.
 
-The primary purpose is now defined more precisely:
+The accepted primary purpose remains:
 
 > **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
 
-This means maximum automation, maximum predictive performance, maximum analytical depth, minimum cost, or maximum speed are not universal objectives. They are project-dependent priorities or means that should serve the broader project intent.
+Maximum automation, maximum predictive performance, maximum analytical depth, minimum cost, or maximum speed are therefore not universal objectives. They are project-dependent priorities or means that should serve the broader project intent.
 
-The next stage is to determine which methodological standards must remain invariant across project profiles and which aspects of the process can safely be configured.
+## Major development since Checkpoint 1
 
-## Core problem being addressed
+The project has substantially refined the idea of a non-negotiable methodological quality floor.
 
-A capable LLM can often perform an entire data science project from end to end. However, a single conversational workflow has important weaknesses:
+The current strong hypothesis is that project-specific optimization should occur inside a broader project constitution rather than inside one flat mandatory checklist.
 
-- decisions may be made prematurely;
-- assumptions may remain implicit;
-- important project-specific questions may be missed;
-- reasonable alternatives may not be explored;
-- preprocessing or validation choices may be technically valid but poorly matched to the actual deployment setting;
-- interpretations may be accepted without independent criticism;
-- LLM agreement can be mistaken for evidence;
-- the workflow can become too linear even when later discoveries should cause earlier stages to be revisited;
-- knowledge from one project may not be systematically generalized into future projects;
-- and the reasoning behind earlier decisions can be lost as conversations become long.
+The emerging hierarchy is:
 
-The system is intended to improve the **process**, not merely replace one LLM with several LLMs.
+```text
+Admissibility
+    -> Epistemic integrity
+    -> Risk-sensitive assurance
+    -> Project optimization
+```
+
+Hard external project constraints may cut across these layers.
+
+This is a conceptual design hypothesis, not a selected implementation architecture.
+
+## Candidate epistemic core
+
+The project currently has a strong five-invariant hypothesis for epistemic integrity.
+
+### 1. Semantic validity
+
+The analytical object being predicted, estimated, described, compared, or optimized should correspond sufficiently to the actual project question and intended use.
+
+Core question:
+
+> **Are we answering the right question?**
+
+### 2. Information legitimacy
+
+Every analytical step should use only information legitimately available to that step under the conditions the analysis is intended to represent.
+
+Core question:
+
+> **Did we use only information we were legitimately allowed to use?**
+
+This concept may unify target leakage, temporal leakage, preprocessing leakage, test-set feedback, and several related failures.
+
+### 3. Evidence validity
+
+The procedure should be appropriate for the question, its material assumptions should be adequately satisfied or acknowledged, and the executed computation should faithfully implement the intended procedure.
+
+Core question:
+
+> **Did our procedure validly generate evidence about that question?**
+
+Execution fidelity is currently treated as a likely component of evidence validity rather than a separate invariant.
+
+### 4. Claim validity
+
+The content, strength, scope, and certainty of a claim should not exceed what the evidence and supporting assumptions justify.
+
+Core question:
+
+> **Are we saying only what the evidence justifies?**
+
+### 5. Traceability and dependency integrity
+
+Consequential results, claims, and decisions should be reconstructable and connected to the data, assumptions, procedures, computations, evidence, and upstream decisions on which they depend.
+
+Core question:
+
+> **Can we reconstruct why we believe this, and what depends on it?**
+
+The dependency aspect matters because later discoveries may invalidate earlier results and require downstream conclusions or artifacts to become stale.
+
+## Status of the five-invariant framework
+
+The framework has survived conceptual stress tests across classification, forecasting, causal inference, clustering, anomaly detection, dimensionality reduction, and recommendation-style settings.
+
+It has not yet been systematically tested on real projects or converted into precise requirements.
+
+It therefore remains a **strong design hypothesis**, not a finalized specification.
+
+Detailed reasoning is preserved in:
+
+`docs/foundations/002_epistemic_integrity_and_project_constitution.md`
+
+## Universal requirements versus conditional obligations
+
+The quality floor should not become a universal checklist of analyses.
+
+The current view distinguishes:
+
+1. **Universal integrity requirements**, which apply broadly.
+2. **Conditional methodological obligations**, which become mandatory when project facts activate them.
+
+For example, temporal-information restrictions are mandatory when the project represents prediction through time but are irrelevant to a purely static retrospective description.
+
+This preserves both rigor and adaptivity.
+
+## Analytical questions as a possible central abstraction
+
+A strong design hypothesis is that the system should primarily manage analytical questions and claims rather than merely models or pipeline stages.
+
+Conceptually:
+
+```text
+project
+  -> important questions
+  -> investigations
+  -> evidence
+  -> claims and decisions
+  -> new questions
+```
+
+A future analytical-question representation may need concepts such as:
+
+- what is being learned or decided;
+- analytical object;
+- population or environment;
+- time or horizon;
+- intended use;
+- desired strength of conclusion.
+
+No machine representation has been selected.
+
+## Candidate question categories and states
+
+Three conceptual question categories have emerged:
+
+- **project-defining questions**, which establish what the project means;
+- **validity questions**, which determine whether available evidence can support the project;
+- **value-improving questions**, which may improve outcomes but are not always mandatory.
+
+Possible question states discussed include:
+
+```text
+OPEN
+ASSUMED
+SUPPORTED
+DISPUTED
+INCONCLUSIVE
+BLOCKED
+INVALIDATED
+CLOSED
+```
+
+These are design hypotheses, not a finalized state machine.
+
+## When validity cannot be established
+
+Autonomy should not mean always continuing.
+
+The system may need to respond by:
+
+- resolving the uncertainty with more evidence;
+- researching external information;
+- asking the human or a domain source;
+- restricting the intended conclusion;
+- branching over multiple plausible assumptions;
+- stopping when the requested conclusion cannot be made defensibly.
+
+A candidate principle is:
+
+> **When project objectives and hard validity requirements conflict, degrade scope rather than integrity.**
+
+This has not yet been promoted to a canonical principle.
+
+## Admissibility is distinct from epistemic validity
+
+The project has identified a major distinction:
+
+```text
+VALIDITY
+Can the conclusion be justified?
+
+ADMISSIBILITY
+Is the action, data use, or intended application permissible?
+```
+
+An analysis may be methodologically excellent while still violating privacy, legal, policy, ethical, or operational-safety constraints.
+
+These should not be conflated with epistemic validity.
+
+## Risk-sensitive assurance
+
+Project risk appears to affect how much verification, review, replication, and control is required before proceeding rather than changing what valid evidence means.
+
+Higher-risk projects may require stronger assurance through mechanisms such as:
+
+- additional validation;
+- specialized review;
+- independent replication;
+- subgroup analysis;
+- robustness analysis;
+- human approval;
+- monitoring requirements;
+- fallback or rollback mechanisms;
+- stricter reproducibility and documentation.
+
+The exact risk and assurance model remains unresolved.
 
 ## Established working principles
 
-The following ideas currently have strong support and are treated as working principles. Detailed formulations are maintained in `PRINCIPLES.md`.
+The following continue to have strong support. Detailed formulations are maintained in `PRINCIPLES.md`.
 
 1. The repository, not conversational memory, is the persistent source of truth.
 2. Important reasoning should be preserved at multiple levels of detail.
@@ -54,147 +231,106 @@ The following ideas currently have strong support and are treated as working pri
 10. Real data projects should be used as coverage tests for the evolving system.
 11. Generalizable lessons from project failures or omissions should become reusable system knowledge rather than project-specific patches.
 12. Both the target system and the methodology used to build it should remain evolvable.
-13. The meaning of a good project is project-relative. The process should adapt to project goals, constraints, required outputs, and desired human involvement rather than optimize one universal objective.
+13. The meaning of a good project is project-relative.
 
-## Accepted decisions added since Checkpoint 0
+## Accepted project-development decisions since Checkpoint 1
 
-The primary-purpose question has been partially resolved.
+The user has explicitly delegated repository checkpoint timing to the AI design collaborator.
 
-The project now explicitly accepts that:
+The AI should therefore decide proactively when substantial conceptual progress, a major transition, continuity risk, or another natural checkpoint makes repository preservation worthwhile. The user should not need to request every update.
 
-- the system should optimize the data-science process relative to project intent;
-- maximum autonomy is not the universal goal;
-- maximum predictive performance is not the universal goal;
-- different projects can legitimately prioritize different combinations of rigor, learning value, interpretability, speed, cost, production readiness, reporting depth, and other dimensions.
-
-See `DECISIONS.md`, especially D-017.
+The project also uses a numbered, content-specific chat naming convention inside the ChatGPT project. Chat titles are provenance and navigation aids, not dependencies of the system.
 
 ## Strong design hypotheses, not yet validated architecture
 
-Several ideas appear promising but are **not yet final architectural decisions**:
+Important active hypotheses now include:
 
-- reusable decision or knowledge modules for topics such as missing data, leakage, class imbalance, validation, outliers, metric selection, calibration, and temporal structure;
+- reusable decision or knowledge modules;
 - a trigger mechanism that activates relevant modules when project facts are discovered;
-- a project reasoning graph in which observations create facts, facts trigger investigations, evidence produces decisions, and decisions can create new facts and investigations;
-- specialized responsibilities such as problem understanding, data analysis, experiment planning, execution, statistical review, leakage review, model review, and decision synthesis;
-- proposer-reviewer separation for consequential analytical choices;
+- a revisitable project reasoning graph;
+- specialized reasoning and review responsibilities;
+- proposer-reviewer separation;
 - independent replication for selected high-risk findings;
-- configurable analysis depth or resource budgets;
-- explicit state records for decisions, rejected ideas, assumptions, experiments, evidence, confidence, and unresolved questions;
-- a non-negotiable methodological quality floor that remains protected even when project priorities favor speed, low cost, or limited depth;
-- a project-intent representation that distinguishes objectives, constraints, deliverables, and human-control preferences;
-- treating named modes such as Quick, Standard, or Research as presets over a richer project-intent representation rather than as fundamental architecture;
-- distinguishing project-level, model-level, and operational objectives;
-- and allocating additional analytical effort where expected value, risk reduction, uncertainty reduction, and downstream impact justify it.
+- configurable analysis depth and resource budgets;
+- explicit state for decisions, assumptions, experiments, evidence, uncertainty, and unresolved questions;
+- a project-intent representation distinguishing objectives, constraints, deliverables, and human-control preferences;
+- named modes as possible presets rather than the underlying representation;
+- separation of project-level, model-level, and operational objectives;
+- allocation of additional analytical effort according to expected value, uncertainty reduction, risk, and downstream impact;
+- a project constitution separating admissibility, epistemic integrity, risk-sensitive assurance, and project optimization;
+- five candidate epistemic invariants;
+- analytical questions and claims as more fundamental orchestration objects than pipeline stages;
+- explicit epistemic states for questions;
+- completion based on sufficient resolution of required questions rather than fixed stage completion;
+- reducing scope rather than silently lowering integrity when hard validity requirements conflict with project objectives.
 
-These are design hypotheses to be tested and refined. The project must not silently treat them as implementation commitments.
+These remain hypotheses to test and refine.
 
 ## Explicit non-decisions
 
-The following have **not** been decided:
+The following remain undecided:
 
-- number of agents;
-- whether agents are permanent, dynamic, or both;
-- which LLM providers or models will be used;
-- whether multiple model providers are necessary;
-- orchestration framework;
-- agent framework;
+- number and permanence of agents;
+- LLM providers and model strategy;
+- orchestration or agent framework;
 - workflow engine;
-- database technology;
-- knowledge graph technology;
-- rule engine technology;
-- whether decision modules are stored as Markdown, YAML, code, database records, graph nodes, or another representation;
-- experiment tracking platform;
+- database, knowledge graph, or rule-engine technology;
+- exact representation of decision modules;
+- experiment-tracking platform;
 - execution sandbox architecture;
-- deployment environment;
-- UI architecture;
+- deployment and UI architecture;
 - final repository structure;
-- final taxonomy of data science project types;
-- exact level of autonomy;
-- exact human approval gates;
-- exact evaluation framework for the system itself;
-- exact contents of the non-negotiable methodological quality floor;
-- exact project-intent schema;
-- whether named project modes will exist;
-- how project, model, and operational objectives will be represented;
-- how analytical effort will be prioritized or scored.
-
-## Current view of project intent
-
-The project now has a stronger working concept of what information may be needed before an appropriate process can be planned.
-
-A promising decomposition is:
-
-1. **Objectives** - what the project should prioritize or maximize.
-2. **Constraints** - limits the project must operate under.
-3. **Deliverables** - outputs the project must produce.
-4. **Human-control preferences** - how and when the system should involve the user.
-
-This decomposition is not yet a finalized schema.
-
-A second promising distinction is between:
-
-- the **project-level objective**, which defines what makes the overall project valuable;
-- the **model-level objective**, which defines the predictive or inferential task;
-- the **operational objective**, which defines how outputs will be used in the real setting.
-
-These distinctions may be important because improvements at one level do not automatically improve the others.
-
-## Current view of configurable depth
-
-Different projects should be allowed to consume different amounts of analytical effort.
-
-A learning- or research-focused project may justify broad model comparison, theoretical explanation, ablations, robustness analysis, specialized review, and detailed reporting. A speed-focused project may justify a strong baseline, a few high-value alternatives, appropriate validation, and concise reporting.
-
-The emerging principle is that selective depth should change the amount of work, not the validity of the work.
-
-An additional hypothesis is that the system should allocate effort where additional analysis has the highest expected analytical value, rather than simply performing more experiments because resources remain available.
+- final taxonomy of project types;
+- exact autonomy levels and human gates;
+- exact system-evaluation framework;
+- final epistemic-invariant set and formal definitions;
+- exact admissibility layer;
+- exact treatment of ethics, privacy, law, policy, and operational safety;
+- exact risk taxonomy and assurance requirements;
+- exact analytical-question schema;
+- exact question-state machine;
+- exact project-completion rule;
+- exact provenance and dependency representation;
+- exact analytical-effort prioritization mechanism.
 
 ## Current knowledge-preservation approach
 
-The project currently uses several layers:
+The project continues to use:
 
-1. **Canonical documents** for concise, current, intentionally maintained knowledge.
-2. **Foundational design memos** for detailed reasoning, examples, motivations, distinctions, and arguments that should not be compressed away.
-3. **Checkpoints and later session records** for historical snapshots of what was known or believed at a particular time.
-4. **Raw conversational material**, if archived later, as provenance rather than authoritative specification.
+1. canonical documents for concise current state;
+2. foundational design memos for detailed reasoning;
+3. checkpoints and session records for historical snapshots;
+4. raw conversation material, if archived later, as provenance rather than authority.
 
-The current documentation methodology is provisional and should be revised when real use exposes weaknesses.
+The project-development methodology has now evolved from version 0.1 to version 0.2. Version 0.2 makes proactive checkpoint detection an explicit responsibility of the AI design collaborator and records the session-naming convention used for continuity and navigation.
 
 ## Current external/source material
 
-The ChatGPT project currently contains machine learning and time-series/econometrics material that may help when developing data science knowledge modules and testing reasoning coverage. It also contains an existing `Missing_Data.md` decision tree that has already served as a useful miniature example of explicit conditional data science reasoning.
+The ChatGPT project contains machine-learning and time-series/econometrics material that may later help develop knowledge modules and test reasoning coverage. It also contains an existing `Missing_Data.md` decision tree that has served as a useful miniature example of conditional data-science reasoning.
 
-These materials have **not** yet been copied into this repository. The permanent source architecture has not been decided.
+These materials have not yet been copied into the repository. The permanent source architecture remains undecided.
 
 ## Relationship to existing data projects
 
-Individual data projects remain separate from this repository. They are expected to become important test environments for the system.
+Individual data projects remain separate and are expected to become test environments for the system.
 
-Examples already discussed include:
-
-- tabular binary classification such as customer churn;
-- forecasting and time-series problems;
-- and future deliberately selected projects that expose different analytical structures and failure modes.
-
-The system should eventually be tested across heterogeneous cases rather than optimized only for one project type.
+The five-invariant framework and wider project-constitution hypothesis must eventually be stress-tested on heterogeneous real projects rather than accepted from conceptual elegance alone.
 
 ## Current focus
 
-The highest-priority conceptual question is now:
+The next major conceptual question is:
 
-> **What belongs in the non-negotiable methodological quality floor, and what should remain configurable according to project intent?**
-
-This question follows directly from the accepted primary purpose. The system cannot safely optimize differently for different projects until it knows which standards may vary and which standards must remain protected.
+> **What exactly should the admissibility layer contain, and how much of ethics, privacy, law, safety, user policy, and external constraints should the data-science system itself reason about versus receive as hard constraints?**
 
 Important subquestions include:
 
-- Which methodological requirements must hold for every project?
-- Which requirements depend on project type or intended deployment?
-- Which aspects of depth, review, explanation, experimentation, and reporting can legitimately vary?
-- Can a quality floor be expressed as universal principles, conditional invariants, or both?
-- How should conflicts between project constraints and methodological validity be handled?
-- When should the system refuse, pause, or escalate because a minimum standard cannot be satisfied?
+- Which admissibility constraints are universal system rules versus project-specific rules?
+- Which legal or regulatory questions should trigger human or expert escalation rather than autonomous judgment?
+- How should privacy, fairness, ethics, organizational policy, user instructions, and operational safety interact?
+- How should uncertainty about admissibility be represented?
+- Can admissibility rules conflict with each other?
+- Which admissibility failures should block a project, restrict its scope, or require explicit approval?
+- How should risk-sensitive assurance relate to admissibility?
 
 ## Required context for a new chat
 
@@ -209,15 +345,17 @@ A new design chat should read, at minimum:
 7. `docs/DEVELOPMENT_METHOD.md`
 8. `docs/CONTINUITY.md`
 
-For the reasoning behind the initial concepts, also read:
+For detailed reasoning, also read:
 
 9. `docs/foundations/001_initial_vision_and_reasoning.md`
+10. `docs/foundations/002_epistemic_integrity_and_project_constitution.md`
 
 Relevant historical checkpoints are:
 
-10. `docs/checkpoints/000_checkpoint_0.md`
-11. `docs/checkpoints/001_primary_purpose_and_project_intent.md`
+11. `docs/checkpoints/000_checkpoint_0.md`
+12. `docs/checkpoints/001_primary_purpose_and_project_intent.md`
+13. `docs/checkpoints/002_epistemic_integrity_and_project_constitution.md`
 
 ## Next step
 
-Define the first rigorous version of the non-negotiable methodological quality floor and distinguish it from project-configurable objectives, constraints, deliverables, depth, and human-control preferences.
+Develop the first rigorous conceptual boundary of the admissibility layer before promoting the epistemic-core hypothesis into formal system requirements or choosing implementation architecture.
