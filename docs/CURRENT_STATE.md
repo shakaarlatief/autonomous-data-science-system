@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 15  
+**Checkpoint:** 16  
 **Date:** 2026-08-08  
-**Development stage:** Experimental construction and baseline calibration  
-**Implementation status:** Benchmark, common runtime/evaluator, B0/B1 runners, and real-model calibration infrastructure implemented; real B0/B1 execution is next
+**Development stage:** Experimental construction and real-model baseline calibration  
+**Implementation status:** First paid B0 provider request exposed an output-budget/accounting defect; the common infrastructure has been corrected and CI-validated; corrected B0 execution is next
 
 ## Primary purpose
 
@@ -106,111 +106,141 @@ Generalization-Regime Reasoning
 
 B1 still has no typed project state, dynamic activation, prospective action gate, or dependency-aware repair.
 
-## Checkpoint 15: real-model calibration infrastructure
+## Checkpoint 16: first real-model calibration diagnostic
 
-A provisional OpenAI Responses API adapter exists in:
+The first genuine provider-backed B0 attempt used:
 
-`prototype_v0/src/ads_v0/openai_model.py`
+```text
+run: dev-b0-01
+model: gpt-5.6-terra
+reasoning effort: high
+max successful model calls: 20
+max generation retries: 2
+max output tokens per call: 10,000
+```
 
-The first calibration model configuration is:
+The provider accepted the request but returned:
+
+```text
+status = incomplete
+incomplete_details.reason = max_output_tokens
+```
+
+before any usable structured command was produced.
+
+Therefore:
+
+```text
+successful B0 model commands: 0
+B0 data-science behavior observed: none
+behavioral interpretation: not eligible
+```
+
+`dev-b0-01` is infrastructure calibration evidence, not B0 methodological evidence.
+
+## Reasoning-aware output budget
+
+For the selected reasoning model, `max_output_tokens` covers hidden reasoning as well as visible response generation. The 10,000-token ceiling was too restrictive for the first high-effort turn.
+
+The current development-calibration configuration is now:
 
 ```text
 model: gpt-5.6-terra
 reasoning effort: high
+max successful model calls: 20
+max output tokens per call: 30,000
+max additional generation retries: 2
+request timeout: 300 seconds
 strict Structured Outputs
 multi-turn previous_response_id continuation
 all-turn reasoning context
-request timeout: 300 seconds
 ```
 
-The adapter class permits a 12,000-token output ceiling by default, but the **current development-calibration CLI deliberately uses the more conservative defaults**:
+These remain calibration values, not frozen held-out budgets. They must be applied condition-neutrally to B0, B1, and later P0 within paired comparisons.
+
+## Failed-generation resource accounting
+
+The first attempt also revealed that the old adapter raised on incomplete responses before extracting provider-reported usage. Its `0` token summary therefore did not establish zero provider work or zero cost.
+
+`ModelGenerationError` now carries optional:
 
 ```text
-max successful model calls: 20
-max output tokens per call: 10,000
-max additional generation retries: 2
+usage
+provider_metadata
 ```
 
-These are calibration limits, not frozen held-out budgets. They may be revised condition-neutrally if the first genuine baseline runs show that the interface is unnecessarily restrictive.
-
-This provider/model choice is experimental only. OpenAI support remains an optional dependency rather than a core architecture dependency.
-
-## Centralized generation reliability
-
-The OpenAI SDK's internal automatic retries are disabled for clients created by the adapter so provider retries do not silently nest under the experiment runner.
-
-The common treatment runner owns retry behavior for B0/B1 and future P0.
-
-`ModelGenerationError` distinguishes retryable transient failures from non-retryable provider/configuration failures.
-
-The trajectory records:
+The OpenAI adapter extracts usage before response-status validation and preserves, where reported:
 
 ```text
-successful model calls
-generation attempts
-generation failures
-model/provider metadata
-provider response IDs where available
-observable input/output/total token usage
-terminal generation failure if any
+input tokens
+output tokens
+total tokens
+reasoning tokens
+response ID
+response status
+max-output-token setting
 ```
 
-Non-retryable errors terminate immediately; retryable errors may use the common bounded retry allowance.
+The common runner accumulates observable usage from failed generations as well as successful generations.
 
-## Real calibration CLI
+The totals are explicitly **observable provider-reported usage**, not a claim about provider work that cannot be observed when a request fails before a normal response exists.
 
-`prototype_v0/src/ads_v0/calibrate.py` can execute B0 or B1 against an already generated benchmark.
+## Failure classification and behavioral scoring
 
-Example:
+Incomplete responses now expose their specific reason, for example:
 
 ```text
-python -m ads_v0.calibrate \
-  --bundle generated/development \
-  --condition B0 \
-  --run-id dev-b0-01 \
-  --output results/raw/dev-b0-01
+max_output_tokens
 ```
 
-B1 uses the same model/runtime configuration with `--condition B1`.
+rather than only the generic status `incomplete`.
 
-Generated run artifacts are:
+Exhausting a fixed output ceiling is non-retryable for the same request configuration because immediately repeating the identical request would predictably spend more inference without changing the constraint.
+
+Infrastructure-aborted runs are now separated from behavioral treatment failures in calibration summaries:
 
 ```text
-trace.jsonl
-summary.json
-deterministic_evaluation.json
-milestones.json
-conversation.json
+behavior_evaluable = false
 ```
 
-`summary.json` preserves the exact run configuration and observed usage.
+when a terminal provider-generation error prevents the treatment from proceeding.
 
-Local credentials must remain outside the repository. `.env` and `.env.*` are ignored.
+The raw deterministic evaluator output is still persisted for diagnosis, but summary-level behavioral pass/fail is not reported for such runs. This prevents a missing final-model report caused by an infrastructure abort from being misread as an actual A3 treatment failure.
 
 ## Automated validation
 
-The current CI suite passes:
+After the Checkpoint 16 correction, CI passes:
 
 ```text
-21 passed in 7.47s
+23 passed in 8.17s
 ```
 
-CI installs the optional OpenAI dependency, validates the adapter without network calls, tests common retry/error semantics, and regenerates/self-validates the benchmark.
+The suite now additionally verifies:
 
-No paid API request is made in CI.
+```text
+incomplete OpenAI response usage preservation
+specific max_output_tokens failure classification
+reasoning-token metadata preservation
+30,000-token provider request ceiling
+failed-generation usage aggregation
+failed-generation trace accounting
+```
 
-Historical implementation checkpoints:
+The same CI run regenerated and self-validated the benchmark with unchanged sanity metrics.
+
+Historical implementation/calibration checkpoints:
 
 ```text
 docs/checkpoints/012_benchmark_generator_and_self_validation.md
 docs/checkpoints/013_instrumented_workspace_and_deterministic_evaluator.md
 docs/checkpoints/014_provider_neutral_baseline_runners.md
 docs/checkpoints/015_real_model_calibration_infrastructure.md
+docs/checkpoints/016_first_real_model_calibration_output_budget.md
 ```
 
 ## P0 remains intentionally unimplemented
 
-The experimental protocol requires genuine B0/B1 viability evidence before P0 is built.
+The experimental protocol still requires genuine B0/B1 viability evidence before P0 is built.
 
 Planned P0 state remains:
 
@@ -246,32 +276,19 @@ No production agent architecture, permanent state database, graph technology, ve
 
 ## Current priority
 
-**Q-042 is now the highest-priority question:** what do real B0/B1 development-calibration runs show, and what common protocol/budget should be frozen before P0?
+**Q-042 remains the highest-priority question:** what do real B0/B1 development-calibration trajectories show, and what common protocol/budget should be frozen before P0?
 
-The next evidence should establish:
+The first paid attempt already answered a narrow infrastructure question: 10,000 generated tokens was not a viable first-turn ceiling for the selected high-effort model configuration.
 
-```text
-structured-command reliability
-provider retry/error behavior
-reasonable call/token budget
-B0 development-case behavior
-B1 development-case behavior
-runtime/tool usability
-resource accounting
-outputs needed for later semantic judging
-```
-
-No additional P0 implementation should occur before this evidence is obtained unless a concrete baseline-interface defect requires condition-neutral repair.
+The next evidence must establish actual B0 behavior under the corrected interface before B1 is run.
 
 ## External execution requirement
 
-The current assistant cannot execute paid OpenAI API calibration without a securely configured API credential and should not request that secret in chat.
-
-The next practical step is to run the prepared B0 and B1 commands in an environment where `OPENAI_API_KEY` is configured securely, then inspect the generated result artifacts.
+Paid calibration requires a securely configured local API credential. Credentials must remain outside the repository and must not be pasted into project conversations or committed files.
 
 ## Required context for a future chat
 
-A future implementation session should read the canonical project documents plus:
+A future implementation/calibration session should read the canonical project documents plus:
 
 ```text
 docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
@@ -281,8 +298,11 @@ docs/checkpoints/012_benchmark_generator_and_self_validation.md
 docs/checkpoints/013_instrumented_workspace_and_deterministic_evaluator.md
 docs/checkpoints/014_provider_neutral_baseline_runners.md
 docs/checkpoints/015_real_model_calibration_infrastructure.md
+docs/checkpoints/016_first_real_model_calibration_output_budget.md
 ```
 
 ## Next step
 
-Run one real B0 and one real B1 development-calibration trajectory with identical model configuration, then review command reliability, deterministic assertions, cost, and semantic behavior before implementing P0.
+Pull the corrected repository, rerun the local test suite, and execute a fresh B0 development-calibration trajectory with a new run ID and an explicit 30,000-token per-call ceiling.
+
+Do not run B1 until the corrected B0 trajectory is operationally viable and inspected.
