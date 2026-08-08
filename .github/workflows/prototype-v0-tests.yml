@@ -1,0 +1,35 @@
+name: Prototype V0 Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "prototype_v0/**"
+      - ".github/workflows/prototype-v0-tests.yml"
+  pull_request:
+    paths:
+      - "prototype_v0/**"
+      - ".github/workflows/prototype-v0-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: prototype_v0/pyproject.toml
+
+      - name: Install Prototype V0
+        run: python -m pip install -e "./prototype_v0[dev]"
+
+      - name: Run tests
+        working-directory: prototype_v0
+        run: pytest
