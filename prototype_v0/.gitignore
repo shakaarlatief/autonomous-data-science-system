@@ -1,0 +1,9 @@
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated benchmark bundles and run outputs are reproducible artifacts.
+generated/
+results/raw/
