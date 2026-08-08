@@ -17,6 +17,12 @@ creates itself so the common treatment runner owns one observable retry policy
 for B0, B1, and future P0. Provider errors are translated to
 ``ModelGenerationError`` with a provider-neutral ``retryable`` flag.
 
+Reasoning tokens count against ``max_output_tokens`` and may consume the entire
+output budget before any visible structured command is produced. Incomplete
+Responses API objects can still contain observable token usage, so the adapter
+preserves that usage on ``ModelGenerationError`` rather than silently reporting
+zero cost for a failed reasoning attempt.
+
 The adapter is not imported by the core package and the OpenAI SDK is an
 optional dependency. ``OPENAI_API_KEY`` is read by the SDK in the ordinary way
 when no client is injected.
@@ -175,8 +181,11 @@ class OpenAIResponsesModel:
     reasoning_effort:
         Explicit reasoning effort passed to GPT-5.6-family requests.
     max_output_tokens:
-        Per-turn output ceiling. Each turn produces only one treatment command,
-        but Python code may be several thousand tokens long.
+        Per-turn generated-token ceiling. For reasoning models this budget
+        includes hidden reasoning tokens, visible output tokens, and formatting
+        tokens. The development-calibration default intentionally exceeds the
+        25,000-token starting buffer recommended in current OpenAI reasoning
+        guidance.
     verbosity:
         Responses API text verbosity setting.
     store:
@@ -200,7 +209,7 @@ class OpenAIResponsesModel:
         *,
         model: str = "gpt-5.6-terra",
         reasoning_effort: str = "high",
-        max_output_tokens: int = 12_000,
+        max_output_tokens: int = 30_000,
         verbosity: str = "low",
         store: bool = True,
         use_previous_response_id: bool = True,
@@ -267,8 +276,13 @@ class OpenAIResponsesModel:
 
         response = self._create_response(request)
         status = str(getattr(response, "status", ""))
+        usage = _usage_from_response(response)
+        provider_metadata = self._response_metadata(response, status=status)
+
         if status != "completed":
             details = getattr(response, "incomplete_details", None)
+            incomplete_reason = _optional_attr(details, "reason")
+            error_code = str(incomplete_reason or status or "incomplete")
             raise ModelGenerationError(
                 (
                     "OpenAI response did not complete successfully: "
@@ -276,7 +290,9 @@ class OpenAIResponsesModel:
                 ),
                 retryable=False,
                 provider="openai",
-                error_code=status or None,
+                error_code=error_code,
+                usage=usage,
+                provider_metadata=provider_metadata,
             )
 
         output_text = getattr(response, "output_text", None)
@@ -286,6 +302,8 @@ class OpenAIResponsesModel:
                 retryable=False,
                 provider="openai",
                 error_code="empty_output",
+                usage=usage,
+                provider_metadata=provider_metadata,
             )
 
         try:
@@ -296,14 +314,9 @@ class OpenAIResponsesModel:
                 retryable=False,
                 provider="openai",
                 error_code="invalid_json",
+                usage=usage,
+                provider_metadata=provider_metadata,
             ) from exc
-
-        usage_object = getattr(response, "usage", None)
-        usage = ModelUsage(
-            input_tokens=_optional_int(usage_object, "input_tokens"),
-            output_tokens=_optional_int(usage_object, "output_tokens"),
-            total_tokens=_optional_int(usage_object, "total_tokens"),
-        )
 
         response_id = getattr(response, "id", None)
         if self.use_previous_response_id:
@@ -313,6 +326,8 @@ class OpenAIResponsesModel:
                     retryable=False,
                     provider="openai",
                     error_code="missing_response_id",
+                    usage=usage,
+                    provider_metadata=provider_metadata,
                 )
             self._previous_response_id = response_id
 
@@ -322,16 +337,23 @@ class OpenAIResponsesModel:
             payload=payload,
             model_name=str(getattr(response, "model", self.model_name)),
             usage=usage,
-            provider_metadata={
-                "provider": "openai",
-                "response_id": response_id,
-                "status": status,
-                "reasoning_effort": self.reasoning_effort,
-                "threaded_with_previous_response_id": self.use_previous_response_id,
-                "sdk_retries_disabled": True,
-                "request_timeout_seconds": self.request_timeout_seconds,
-            },
+            provider_metadata=provider_metadata,
         )
+
+    def _response_metadata(self, response: Any, *, status: str) -> dict[str, Any]:
+        usage_object = getattr(response, "usage", None)
+        output_details = _optional_attr(usage_object, "output_tokens_details")
+        return {
+            "provider": "openai",
+            "response_id": getattr(response, "id", None),
+            "status": status,
+            "reasoning_effort": self.reasoning_effort,
+            "reasoning_tokens": _optional_int(output_details, "reasoning_tokens"),
+            "threaded_with_previous_response_id": self.use_previous_response_id,
+            "sdk_retries_disabled": True,
+            "request_timeout_seconds": self.request_timeout_seconds,
+            "max_output_tokens": self.max_output_tokens,
+        }
 
     def _create_response(self, request: Mapping[str, Any]) -> Any:
         """Execute one provider request and normalize provider error semantics."""
@@ -419,10 +441,24 @@ def _safe_openai_error_message(
     )
 
 
-def _optional_int(value: Any, attribute: str) -> int | None:
+def _usage_from_response(response: Any) -> ModelUsage:
+    usage_object = getattr(response, "usage", None)
+    return ModelUsage(
+        input_tokens=_optional_int(usage_object, "input_tokens"),
+        output_tokens=_optional_int(usage_object, "output_tokens"),
+        total_tokens=_optional_int(usage_object, "total_tokens"),
+    )
+
+
+def _optional_attr(value: Any, attribute: str) -> Any:
     if value is None:
         return None
     item = getattr(value, attribute, None)
     if item is None and isinstance(value, Mapping):
         item = value.get(attribute)
+    return item
+
+
+def _optional_int(value: Any, attribute: str) -> int | None:
+    item = _optional_attr(value, attribute)
     return int(item) if item is not None else None
