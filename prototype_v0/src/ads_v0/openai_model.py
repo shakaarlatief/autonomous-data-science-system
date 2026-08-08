@@ -11,6 +11,12 @@ responses with ``previous_response_id`` so multi-turn reasoning context remains
 available without teaching the treatment runner about provider-specific response
 objects.
 
+The official OpenAI Python SDK performs automatic retries for several transient
+errors by default. Prototype V0 disables those SDK-level retries for clients it
+creates itself so the common treatment runner owns one observable retry policy
+for B0, B1, and future P0. Provider errors are translated to
+``ModelGenerationError`` with a provider-neutral ``retryable`` flag.
+
 The adapter is not imported by the core package and the OpenAI SDK is an
 optional dependency. ``OPENAI_API_KEY`` is read by the SDK in the ordinary way
 when no client is injected.
@@ -21,7 +27,12 @@ from __future__ import annotations
 import json
 from typing import Any, Mapping, Sequence
 
-from .model import ModelGeneration, ModelMessage, ModelUsage
+from .model import (
+    ModelGeneration,
+    ModelGenerationError,
+    ModelMessage,
+    ModelUsage,
+)
 
 
 _ACTION_CATEGORIES = [
@@ -176,9 +187,12 @@ class OpenAIResponsesModel:
         Whether to chain Responses API calls so prior response reasoning/context
         remains available. This is enabled for the first calibration because
         the task is explicitly multi-turn.
+    request_timeout_seconds:
+        Timeout applied to SDK clients constructed by this adapter. SDK retries
+        are disabled so the common experiment runner owns the retry budget.
     client:
         Optional injected SDK-compatible client used by unit tests. When absent,
-        the official ``OpenAI`` client is created lazily.
+        the official ``OpenAI`` client is created lazily with ``max_retries=0``.
     """
 
     def __init__(
@@ -190,10 +204,13 @@ class OpenAIResponsesModel:
         verbosity: str = "low",
         store: bool = True,
         use_previous_response_id: bool = True,
+        request_timeout_seconds: float = 300.0,
         client: Any | None = None,
     ) -> None:
         if max_output_tokens <= 0:
             raise ValueError("max_output_tokens must be positive.")
+        if request_timeout_seconds <= 0:
+            raise ValueError("request_timeout_seconds must be positive.")
         if use_previous_response_id and not store:
             raise ValueError(
                 "This Version 0 adapter requires store=True when "
@@ -208,7 +225,7 @@ class OpenAIResponsesModel:
                     "Install the optional OpenAI dependency with "
                     "`python -m pip install -e \".[openai]\"`."
                 ) from exc
-            client = OpenAI()
+            client = OpenAI(max_retries=0, timeout=request_timeout_seconds)
 
         self.client = client
         self.model_name = model
@@ -217,6 +234,7 @@ class OpenAIResponsesModel:
         self.verbosity = verbosity
         self.store = store
         self.use_previous_response_id = use_previous_response_id
+        self.request_timeout_seconds = request_timeout_seconds
 
         self._previous_response_id: str | None = None
         self._message_count_at_previous_request = 0
@@ -247,23 +265,38 @@ class OpenAIResponsesModel:
         if self._previous_response_id is not None and self.use_previous_response_id:
             request["previous_response_id"] = self._previous_response_id
 
-        response = self.client.responses.create(**request)
+        response = self._create_response(request)
         status = str(getattr(response, "status", ""))
         if status != "completed":
             details = getattr(response, "incomplete_details", None)
-            raise RuntimeError(
-                f"OpenAI response did not complete successfully: status={status!r}, "
-                f"details={details!r}."
+            raise ModelGenerationError(
+                (
+                    "OpenAI response did not complete successfully: "
+                    f"status={status!r}, details={details!r}."
+                ),
+                retryable=False,
+                provider="openai",
+                error_code=status or None,
             )
 
         output_text = getattr(response, "output_text", None)
         if not isinstance(output_text, str) or not output_text.strip():
-            raise RuntimeError("OpenAI response contained no structured output text.")
+            raise ModelGenerationError(
+                "OpenAI response contained no structured output text.",
+                retryable=False,
+                provider="openai",
+                error_code="empty_output",
+            )
 
         try:
             payload = json.loads(output_text)
         except json.JSONDecodeError as exc:
-            raise RuntimeError("OpenAI structured output was not valid JSON.") from exc
+            raise ModelGenerationError(
+                "OpenAI structured output was not valid JSON.",
+                retryable=False,
+                provider="openai",
+                error_code="invalid_json",
+            ) from exc
 
         usage_object = getattr(response, "usage", None)
         usage = ModelUsage(
@@ -275,8 +308,11 @@ class OpenAIResponsesModel:
         response_id = getattr(response, "id", None)
         if self.use_previous_response_id:
             if not isinstance(response_id, str) or not response_id:
-                raise RuntimeError(
-                    "OpenAI response did not provide an ID required for threading."
+                raise ModelGenerationError(
+                    "OpenAI response did not provide an ID required for threading.",
+                    retryable=False,
+                    provider="openai",
+                    error_code="missing_response_id",
                 )
             self._previous_response_id = response_id
 
@@ -292,8 +328,24 @@ class OpenAIResponsesModel:
                 "status": status,
                 "reasoning_effort": self.reasoning_effort,
                 "threaded_with_previous_response_id": self.use_previous_response_id,
+                "sdk_retries_disabled": True,
+                "request_timeout_seconds": self.request_timeout_seconds,
             },
         )
+
+    def _create_response(self, request: Mapping[str, Any]) -> Any:
+        """Execute one provider request and normalize provider error semantics."""
+
+        try:
+            return self.client.responses.create(**dict(request))
+        except Exception as exc:
+            retryable, error_code = _classify_openai_exception(exc)
+            raise ModelGenerationError(
+                _safe_openai_error_message(exc, error_code),
+                retryable=retryable,
+                provider="openai",
+                error_code=error_code,
+            ) from exc
 
     def _input_for_request(self, messages: Sequence[ModelMessage]) -> list[dict[str, str]]:
         if self._previous_response_id is None or not self.use_previous_response_id:
@@ -307,12 +359,64 @@ class OpenAIResponsesModel:
             selected = [message for message in delta if message.role != "assistant"]
 
         if not selected:
-            raise RuntimeError("No new provider input messages are available.")
+            raise ModelGenerationError(
+                "No new provider input messages are available.",
+                retryable=False,
+                provider="openai",
+                error_code="no_new_messages",
+            )
 
         return [
             {"role": message.role, "content": message.content}
             for message in selected
         ]
+
+
+def _classify_openai_exception(exc: Exception) -> tuple[bool, str | int | None]:
+    """Map current OpenAI SDK error classes/statuses to common retry semantics."""
+
+    status_code = getattr(exc, "status_code", None)
+    error_code: str | int | None = status_code or type(exc).__name__
+
+    # Import lazily so the module remains importable without the optional SDK
+    # when a test injects a fake client.
+    try:
+        import openai
+    except ImportError:  # pragma: no cover - optional dependency not installed
+        return False, error_code
+
+    retryable_types = tuple(
+        error_type
+        for error_type in (
+            getattr(openai, "APIConnectionError", None),
+            getattr(openai, "APITimeoutError", None),
+            getattr(openai, "RateLimitError", None),
+            getattr(openai, "InternalServerError", None),
+        )
+        if isinstance(error_type, type)
+    )
+    if retryable_types and isinstance(exc, retryable_types):
+        return True, error_code
+
+    if isinstance(status_code, int):
+        if status_code in {408, 409, 429} or status_code >= 500:
+            return True, status_code
+        return False, status_code
+
+    return False, error_code
+
+
+def _safe_openai_error_message(
+    exc: Exception,
+    error_code: str | int | None,
+) -> str:
+    """Return a credential-safe provider diagnostic for experiment traces."""
+
+    return (
+        "OpenAI generation request failed: "
+        f"{type(exc).__name__}"
+        + (f" (code={error_code})" if error_code is not None else "")
+    )
 
 
 def _optional_int(value: Any, attribute: str) -> int | None:
