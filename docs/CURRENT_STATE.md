@@ -2,16 +2,16 @@
 
 ## Checkpoint
 
-**Checkpoint:** 10  
+**Checkpoint:** 11  
 **Date:** 2026-08-08  
-**Development stage:** Transition from conceptual research to controlled prototype specification  
+**Development stage:** Controlled prototype specification complete; benchmark-first implementation is next  
 **Implementation status:** Not started
 
 ## Primary purpose
 
 > **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
 
-Maximum predictive performance, autonomy, analytical depth, speed, or low cost are project-dependent objectives rather than universal goals.
+Maximum predictive performance, autonomy, analytical depth, speed, or low cost remain project-dependent objectives rather than universal goals.
 
 ## Current project constitution
 
@@ -32,153 +32,174 @@ The five candidate epistemic invariants remain:
 4. claim validity;
 5. traceability and dependency integrity.
 
-These remain strong design hypotheses rather than finalized system requirements.
+These remain strong design hypotheses under empirical validation.
 
-## Development foundations so far
+## Foundations established before implementation
 
-### Checkpoint 4: project state and orchestration
-
-Project state is treated as a living dependency-aware representation of what the system is currently entitled to believe and do. Important ideas include typed state, validity versus currency, dependency impact, reopening, computational plus information lineage, a runnable frontier, and state-driven rather than fixed-plan orchestration.
-
-Detailed reasoning:
-
-`docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md`
-
-### Checkpoint 5: project initialization
-
-New projects should enter through progressive source-aware state construction and a small universal bootstrap rather than one-shot problem definition.
-
-Detailed reasoning:
-
-`docs/foundations/005_project_initialization_and_universal_bootstrap.md`
-
-### Checkpoint 6: knowledge activation
-
-Reusable knowledge should activate from meaningful project-state patterns and contribute questions, obligations, safeguards, evidence requirements, reviews, or candidate actions back into shared state. Activation may be reactive or prospective and should remain open-world.
-
-Detailed reasoning:
-
-`docs/foundations/006_knowledge_activation_and_open_world_reasoning.md`
-
-### Checkpoint 7: reusable knowledge representation
-
-The strongest representation hypothesis is a thin semantic knowledge package containing versioned, provenance-aware, typed composable reasoning components such as question templates, invariants, evidence requirements, failure modes, claim constraints, dependencies, resolution criteria, and reopen conditions.
-
-Detailed reasoning:
-
-`docs/foundations/007_reusable_knowledge_representation_and_composable_components.md`
-
-### Checkpoint 8: knowledge quality and evolution
-
-Reusable knowledge should itself obey epistemic discipline. Important hypotheses include minimum justified generalization, separation of project-specific lessons from reusable knowledge, different thresholds for reasoning/reuse/enforcement, counterexample-driven scope discovery, staged promotion, challenge history, knowledge versioning, and cross-project invalidation after material knowledge revisions.
-
-Detailed reasoning:
-
-`docs/foundations/008_knowledge_quality_generalization_and_evolution.md`
-
-### Checkpoint 9: behavioral system evaluation
-
-The system should be evaluated as a trajectory through a partially observable project world rather than by one final model metric. Behavioral cases should specify an acceptance envelope: mandatory obligations, prohibited behavior, acceptable alternative resolutions, dynamic state changes, repair expectations, claim constraints, and optional quality opportunities.
-
-Detailed reasoning:
-
-`docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`
-
-## Major development at Checkpoint 10: minimum falsification prototype
-
-The project now has a concrete first implementation experiment.
-
-The central experimental question is:
-
-> **Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than an equally capable simpler LLM workflow?**
-
-The first prototype should test the semantic spine rather than build a production system:
+The project has developed architecture-neutral theories for:
 
 ```text
-PROJECT STATE
-      ↓
-KNOWLEDGE ACTIVATION
-      ↓
-QUESTIONS / OBLIGATIONS / CONSTRAINTS
-      ↓
-RUNNABLE ACTIONS
-      ↓
-EXECUTION
-      ↓
-EVIDENCE
-      ↓
-STATE UPDATE
-      ↓
-DEPENDENCY IMPACT / REOPENING
+Checkpoint 4  dependency-aware project state and state-driven orchestration
+Checkpoint 5  progressive project initialization and universal bootstrap
+Checkpoint 6  knowledge activation and open-world reasoning
+Checkpoint 7  reusable knowledge packages and typed components
+Checkpoint 8  knowledge quality, generalization, and evolution
+Checkpoint 9  behavioral reasoning regression and system evaluation
+Checkpoint 10 minimum falsification prototype and experimental contract
+Checkpoint 11 concrete Prototype V0 technical specification
 ```
 
-Detailed reasoning and the experimental contract:
+Detailed reasoning lives in `docs/foundations/004_...` through `docs/foundations/011_...`.
 
-`docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`
+## Checkpoint 10 experimental question
 
-Historical snapshot:
+The first implementation is a falsification experiment rather than a production system.
 
-`docs/checkpoints/010_minimum_falsification_prototype.md`
+The central question is:
 
-## Experimental conditions
+> **Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than equally capable simpler workflows?**
 
-The first experiment should compare three conditions using the same strong underlying LLM and comparable execution resources:
+The three conditions are:
 
 ```text
 B0
 Strong generic LLM workflow.
 
 B1
-Same model plus the prototype's small methodological
-knowledge set supplied as static prompt guidance.
-No typed state, activation, prospective gate, or dependency repair.
+Same model and tools plus the same small methodological knowledge set
+supplied statically in the prompt.
 
 P0
-Same model plus minimal typed state, a tiny knowledge set,
-activation/applicability, prospective safeguards,
-a simple runnable frontier, and dependency-aware reopening.
+Same model and tools plus minimal typed project state, structured knowledge,
+activation/applicability, prospective safeguards, dependency-aware reopening,
+and minimal state-derived action selection.
 ```
 
-B1 is the critical control. If B1 matches P0 at lower complexity, then much of the explicit state machinery may not be justified for this project scale.
+B1 is the most important control. If static guidance matches P0 at materially lower complexity or cost, the explicit semantic runtime is not justified for this project scale.
 
-## Prototype project
+## Checkpoint 11 technical specification
 
-The first benchmark family is a synthetic customer-month churn project.
+Foundation 011 makes the experiment implementable while deliberately avoiding production architecture.
 
-Visible files include:
+Detailed specification:
+
+`docs/foundations/011_prototype_v0_technical_specification.md`
+
+Historical snapshot:
+
+`docs/checkpoints/011_prototype_v0_technical_specification.md`
+
+## Benchmark world
+
+The first case is a synthetic customer-month churn project.
+
+Fixed conceptual structure:
 
 ```text
-project_brief.md
-README.md
-train.csv
-validation.csv
-test.csv
-baseline_model.py
-```
-
-The project contains repeated customers, timestamps, a stale README claiming one row per customer, an inherited baseline with learned-preprocessing contamination, a protected final test, and an `account_state_code` whose timing is initially described incorrectly by stale documentation.
-
-The temporal partitions are approximately:
-
-```text
+24 monthly periods
+approximately 4,000 underlying customers
 train: months 1-16
 validation: months 17-20
 test: months 21-24
+prediction moment: beginning of month
+target: churn during the following 30 days
 ```
 
-Deployment includes future observations of both known and newly entering customers. Repeated IDs should therefore activate generalization reasoning but should not mechanically imply a pure unseen-entity split.
+Customers enter over time and remain observable until churn, creating repeated customer snapshots plus newly entering customers in validation and test.
 
-## Dynamic state change
+The actual row unit is customer-month, while a stale README incorrectly says one row is one customer.
 
-After a provisional model/validation milestone, the evaluator reveals an authoritative notice showing that `account_state_code` is populated only after the churn outcome and retrospectively backfilled.
+## Synthetic DGP
 
-The system must then revise feature eligibility, discover affected dependencies, reopen materially affected models/evidence/decisions/claims, preserve unrelated valid work, rerun legitimate evaluation, and ensure final claims use current evidence.
+The DGP is now concretely specified.
 
-This is the central Version 0 test of dependency-aware self-correction.
+Persistent customer heterogeneity is represented by a random effect `u_i ~ N(0, 0.65^2)`.
 
-## Minimal P0 state vocabulary
+Visible legitimate features include:
 
-The first structured prototype currently requires only:
+```text
+customer_id
+snapshot_month
+tenure_months
+plan_tier
+monthly_charge
+support_tickets_90d
+late_payments_90d
+usage_change_30d
+```
+
+The target is generated through a logistic hazard using these features, customer heterogeneity, plan effects, and mild time evolution. The current intercept and coefficients are intended to produce roughly 10 percent monthly churn prevalence with meaningful but nontrivial predictive signal.
+
+Exact Version 0 equations and parameters are recorded in Foundation 011.
+
+## Dynamic feature-legitimacy event
+
+`account_state_code` is generated after observing the churn outcome, with opaque values `S1`, `S2`, and `S3`.
+
+Its relationship with churn is deliberately useful but imperfect so illegitimacy must be established through timing/provenance rather than a perfect target proxy.
+
+The stale README incorrectly describes the field as available during monthly scoring.
+
+After the system reaches a provisional Phase 1 position, the harness reveals an authoritative timing notice establishing that the field is created after the outcome window and retrospectively backfilled.
+
+The system must then revise feature eligibility and repair materially dependent reasoning without discarding unrelated valid work.
+
+## Inherited preprocessing contamination
+
+`baseline_model.py` deliberately fits learned preprocessing using combined train and validation information before evaluating on validation.
+
+This tests the `Learned Transformation Evaluation Boundary` knowledge component.
+
+Version 0 does not attempt arbitrary static program analysis. The LLM inspects the simple baseline code and applies the explicit reusable invariant.
+
+## Information boundary and instrumented workspace
+
+Visible project material and evaluator-only truth must be operationally separated.
+
+All three experimental conditions use the same instrumented project-access interface.
+
+Important distinctions are:
+
+```text
+metadata-level artifact access
+value-level artifact access
+explicitly declared Python input artifacts
+condition-neutral action and artifact-access logging
+```
+
+Evaluator-only files must never become ordinary runtime-visible project artifacts.
+
+## Project phases
+
+Version 0 uses only:
+
+```text
+PHASE 1: provisional development
+PHASE 2: revised development after authoritative timing notice
+FINAL EVALUATION: after explicit final-model lock
+```
+
+The dynamic notice is milestone-triggered rather than released after an arbitrary fixed number of LLM calls.
+
+Value-level final-test access is methodologically legitimate only after explicit final-model lock.
+
+## First deterministic prospective safeguard
+
+The first genuinely enforced P0 action gate is `K-INFO-001 Protected Final Evaluation`.
+
+During development:
+
+```text
+protected final-test role
++ proposed value-level access
+-> block
+```
+
+B0 and B1 use the same workspace interface but do not receive this enforcement layer. Invalid accesses are logged and executed so the evaluator can observe whether they voluntarily respect the same rule.
+
+## Minimal P0 state
+
+Version 0 keeps:
 
 ```text
 ARTIFACT
@@ -192,7 +213,7 @@ OBLIGATION
 ACTION
 ```
 
-Candidate minimal relations:
+with only:
 
 ```text
 DEPENDS_ON
@@ -202,11 +223,32 @@ ANSWERS
 GENERATED_BY
 ```
 
-The exact serialization and storage technology remain open.
+Typed status vocabularies are used rather than one universal state enum.
 
-## Minimal reusable knowledge
+A simple append-only audit history preserves state changes and reasons without selecting event-sourcing architecture.
 
-Version 0 should contain only four manually authored components:
+## Dependency repair
+
+Version 0 explicitly rejects blind recursive invalidation.
+
+Current repair semantics are:
+
+```text
+hard dependency becomes invalid
+-> reopen or invalidate dependent state
+
+support becomes invalid
+-> remove that support
+-> reassess whether remaining support is sufficient
+```
+
+Dependency discovery can be deterministic while materiality/sufficiency reassessment remains interpretive.
+
+The evaluator should distinguish under-propagation, correct propagation, and over-propagation.
+
+## Minimal knowledge set
+
+P0 contains only:
 
 ```text
 K-INFO-001 Protected Final Evaluation
@@ -215,97 +257,120 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001  Generalization-Regime Question
 ```
 
-This is enough to test both deterministic safeguard behavior and interpretive applicability without building a large knowledge library or retrieval system.
+B1 receives the same substantive knowledge upfront in static prose.
 
-## Evaluation logic
+No embeddings, vector database, graph database, large knowledge library, or automatic knowledge learning are required.
 
-The evaluator should measure behavioral dimensions such as:
+## Evaluation
+
+Primary scoring should rely on condition-neutral observable behavior wherever possible rather than awarding P0 points for possessing structured internal state.
+
+Deterministic assertions should cover at least:
 
 ```text
-semantic correction
-validation reasoning
-preprocessing integrity
-test integrity
-feature legitimacy
-repair completeness
-repair precision
+premature final-test value access
+post-test development changes
+final use of account_state_code after the timing notice
+required legitimate re-evaluation after material feature invalidation
+benchmark self-test validity
+```
+
+Blinded semantic evaluation remains necessary for:
+
+```text
+row-unit correction
+validation/generalization reasoning
+handling of inherited preprocessing contamination
+response to the timing notice
+repair completeness and precision
 claim validity
-detection latency
-analytical efficiency
-project utility
 ```
 
-Critical integrity failures should not be compensated by marginally better predictive performance.
+Critical semantic criteria should initially use at least two independent judge passes, with calibration-time adjudication for disagreement.
 
-A development case can be used for implementation debugging, followed by at least two held-out surface variants with changed field names, documentation wording, random seeds, and nonessential DGP details.
+## Resource accounting
 
-A reasonable first protocol is three calibration runs per condition on the development case, followed by five paired held-out runs per condition on each of two surface variants.
-
-Quantitative continuation thresholds should be frozen after calibration and before held-out evaluation.
-
-## Falsification criteria
-
-The structured architecture is not assumed to be necessary.
-
-Strong evidence against P0 would occur if B1 matches it across critical integrity behavior, repair completeness, repair precision, and held-out variants while using materially less reasoning/state-management cost.
-
-Repeated false blockers, duplicate obligations, excessive reopening, or case-specific hard-coded rules also count against P0.
-
-The strongest reason to continue would be repeated held-out evidence that P0 prevents or repairs critical methodological failures more reliably and precisely than B1 without unacceptable cost or systematic false blocking.
-
-Higher AUROC alone is not a reason to continue the architecture.
-
-## Explicit prototype exclusions
-
-Version 0 does not require:
+Every condition logs:
 
 ```text
-multi-agent architecture
-provider routing
-vector database
-graph database
-large reusable knowledge library
-automatic knowledge learning
-full admissibility implementation
-full risk/assurance implementation
-external web research
-production deployment
-monitoring
-workflow engine
-UI
+LLM calls
+input/output tokens
+Python executions
+tool operations
+runtime
+artifact accesses
 ```
 
-These should remain deferred until the semantic spine earns additional complexity.
+P0 additionally logs architecture diagnostics such as state updates, activations, blocks, and reopen events.
 
-## Continuity and chat rotation
+A common held-out resource envelope and continuation thresholds must be frozen after calibration and before held-out evaluation.
 
-Checkpoint timing and chat rotation are proactive AI responsibilities.
+## Case validation and held-out variants
 
-A new chat should not be opened merely because the conceptual topic changes or a checkpoint is reached. One chat may contain many checkpoints while continuity remains healthy.
+The case generator must automatically produce visible artifacts and hidden evaluator truth from one underlying case specification.
 
-The AI collaborator should recommend a new chat before context pressure materially threatens continuity, preserve the repository first, and provide the next numbered content-specific chat title and minimal continuation instruction.
+Before any LLM run, deterministic benchmark self-tests verify row uniqueness semantics, temporal partitioning, later-entry customers, post-outcome feature generation, documentation contradictions, timing-notice correctness, baseline contamination, final-test role, prevalence, and predictive-signal sanity.
 
-See `DECISIONS.md` D-018 through D-020 and `docs/CONTINUITY.md`.
+The development case is followed by held-out H1/H2 surface variants with changed names, wording, seeds, and nonessential DGP details while preserving underlying mechanisms.
+
+## Prototype repository boundary
+
+A provisional `prototype_v0/` area is now justified.
+
+It may contain:
+
+```text
+README.md
+case_spec/
+src/
+tests/
+configs/
+results/
+```
+
+This is explicitly an experiment boundary rather than a commitment to the eventual production repository architecture.
 
 ## Explicit non-decisions
 
-The project has still not selected a production agent architecture, provider strategy, workflow framework, database, graph technology, vector retrieval system, full state schema, full knowledge schema, final status vocabulary, final evaluation framework, deployment architecture, automatic knowledge-learning mechanism, or full autonomy model.
+The project still has not selected a production agent architecture, permanent state database, graph technology, vector retrieval system, workflow framework, provider strategy, automatic knowledge-learning mechanism, full admissibility engine, full risk/assurance implementation, deployment architecture, UI, or monitoring stack.
 
-Prototype conveniences must not be mistaken for production architecture decisions.
+Prototype conveniences such as plain Python records, JSON, simple audit logs, and local configuration files must not be interpreted as final architectural choices.
+
+## Implementation order
+
+The benchmark must be implemented before P0 is tuned:
+
+```text
+1. synthetic DGP
+2. visible artifact generation
+3. hidden evaluator manifest
+4. Phase 2 notice
+5. benchmark self-tests
+6. instrumented workspace and trace
+7. deterministic evaluator
+8. B0
+9. B1
+10. P0 state / knowledge / gate / repair
+11. experiment runner
+12. semantic evaluator
+13. calibration
+14. freeze held-out protocol
+15. held-out H1/H2
+```
 
 ## Current focus
 
-The conceptual architecture is now sufficiently specified to support a first limited implementation.
+Broad conceptual design should now stop expanding unless implementation exposes a concrete gap.
 
-The immediate next question is:
+The immediate task is:
 
-> **How should Prototype V0 be represented and implemented concretely while preserving the experimental contract and avoiding premature production architecture?**
+> **Implement the benchmark generator, visible case artifacts, hidden evaluator manifest, Phase 2 notice, and benchmark self-tests before implementing P0.**
 
-The next work should specify the benchmark/evaluator implementation first, then the minimal state model, action gate, knowledge components, baseline harness, P0 control loop, run logging, and resource instrumentation.
+This is the first real construction milestone.
 
 ## Required context for a new chat
 
-A new design/implementation chat should read, at minimum:
+A new implementation chat should read, at minimum:
 
 1. `README.md`
 2. `docs/CURRENT_STATE.md`
@@ -317,9 +382,10 @@ A new design/implementation chat should read, at minimum:
 8. `docs/CONTINUITY.md`
 9. `docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md`
 10. `docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md`
+11. `docs/foundations/011_prototype_v0_technical_specification.md`
 
-If deeper architectural context is needed, read Foundations 002 through 008 as relevant.
+Deeper foundations should be consulted only when implementation questions require their rationale.
 
 ## Next step
 
-Define the concrete implementation contract for Prototype V0, beginning with the synthetic benchmark generator and evaluator rather than the autonomous treatment.
+Begin benchmark-first implementation with the deterministic synthetic DGP and case self-tests.
