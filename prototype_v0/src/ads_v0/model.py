@@ -43,6 +43,42 @@ class ModelGeneration:
     provider_metadata: Mapping[str, Any] = field(default_factory=dict)
 
 
+class ModelGenerationError(RuntimeError):
+    """Provider-neutral failure raised by a model adapter.
+
+    Parameters
+    ----------
+    message:
+        Human-readable diagnostic suitable for experiment logs. It must never
+        contain credentials or secret request headers.
+    retryable:
+        Whether repeating the same semantic generation request can reasonably
+        recover from the failure. Examples include transient connection errors,
+        rate limits, and server errors. Authentication, permission, invalid-model,
+        or malformed-request failures should normally be non-retryable.
+    provider:
+        Optional provider label used only for diagnostics.
+    error_code:
+        Optional provider-neutral or HTTP-style code used for diagnostics.
+
+    Centralizing this distinction prevents provider SDK retry behavior from
+    silently creating different reliability conditions for B0, B1, and P0.
+    """
+
+    def __init__(
+        self,
+        message: str,
+        *,
+        retryable: bool,
+        provider: str | None = None,
+        error_code: str | int | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.retryable = retryable
+        self.provider = provider
+        self.error_code = error_code
+
+
 class ModelClient(Protocol):
     """Minimal model interface required by the Version 0 treatment loop."""
 
