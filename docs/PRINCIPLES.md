@@ -135,3 +135,11 @@ Both the target data science system and the methodology used to design it are ex
 New project cases, failures, tools, research findings, and better abstractions may require changes to the architecture, documentation method, knowledge representation, or principles themselves.
 
 Evolution should be explicit and traceable rather than accidental.
+
+## P-021. The meaning of a good project is project-relative
+
+The system should create the best data-science process for the particular project rather than optimize one universal objective across all projects.
+
+What "best" means should depend on project intent, including goals, constraints, required outputs, and desired human involvement. Predictive performance, autonomy, speed, cost, interpretability, learning value, production readiness, and analytical depth may all matter, but their relative importance can differ by project.
+
+Project-specific priorities should shape the process without silently redefining invalid methodology as acceptable. The exact boundary between configurable priorities and non-negotiable methodological standards remains under active design.
