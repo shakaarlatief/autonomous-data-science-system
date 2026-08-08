@@ -6,7 +6,7 @@ It is not the production architecture.
 
 The experiment asks whether explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make the same strong LLM materially more reliable than strong simpler workflows.
 
-The benchmark, common experiment boundary, and strong baseline runners are being implemented before the P0 treatment so P0 cannot define its own evaluation retrospectively.
+The benchmark, common experiment boundary, and strong baseline runners are implemented before the P0 treatment so P0 cannot define its own evaluation retrospectively.
 
 ## Current implementation scope
 
@@ -30,13 +30,14 @@ deterministic scripted-model test double
 B0 strong generic baseline runner
 B1 static-knowledge baseline runner
 model-call and token-usage accounting contract
+provisional OpenAI Responses API adapter
+real-model calibration CLI
 ```
 
 Not implemented yet:
 
 ```text
-real model-provider adapter
-real B0/B1 development calibration
+executed real B0/B1 development calibration
 P0 typed project-state runtime
 P0 knowledge activation and dependency repair
 semantic evaluator
@@ -45,11 +46,19 @@ paired calibration / held-out experiment runner
 
 ## Install
 
-From this directory:
+For benchmark development and tests:
 
 ```bash
 python -m pip install -e ".[dev]"
 ```
+
+For the current provisional OpenAI calibration adapter as well:
+
+```bash
+python -m pip install -e ".[dev,openai]"
+```
+
+The provider extra is experiment-specific. It does not make OpenAI a permanent architecture dependency.
 
 ## Run tests
 
@@ -58,8 +67,6 @@ pytest
 ```
 
 The repository also runs the tests in GitHub Actions whenever Prototype V0 code or its workflow changes. CI additionally generates and self-validates the complete development benchmark.
-
-The current validated suite contains 14 tests.
 
 ## Generate the development case
 
@@ -107,7 +114,56 @@ Generalization-Regime Reasoning
 
 B1 still has no typed state, dynamic activation, action gate, or dependency-repair mechanism.
 
-A provider-neutral `ModelClient` contract keeps model/provider choice outside the treatment architecture. `ScriptedModel` is currently used only for deterministic runner tests. No real model provider is connected yet.
+A provider-neutral `ModelClient` contract keeps model/provider choice outside the treatment architecture. `ScriptedModel` is used for deterministic runner tests.
+
+## Provisional real-model calibration
+
+The first real adapter is isolated in `ads_v0.openai_model.OpenAIResponsesModel`.
+
+The current calibration default is:
+
+```text
+model: gpt-5.6-terra
+reasoning effort: high
+Responses API structured JSON commands
+multi-turn continuation through previous_response_id
+```
+
+This is a provisional experiment configuration, not a production-provider decision.
+
+Set `OPENAI_API_KEY` in the local environment. Do not place keys in repository files or generated run artifacts.
+
+Run B0:
+
+```bash
+python -m ads_v0.calibrate \
+  --bundle generated/development \
+  --condition B0 \
+  --run-id dev-b0-01 \
+  --output results/raw/dev-b0-01
+```
+
+Run B1 with the same model configuration:
+
+```bash
+python -m ads_v0.calibrate \
+  --bundle generated/development \
+  --condition B1 \
+  --run-id dev-b1-01 \
+  --output results/raw/dev-b1-01
+```
+
+The calibration CLI writes:
+
+```text
+trace.jsonl
+summary.json
+deterministic_evaluation.json
+milestones.json
+conversation.json
+```
+
+Calibration results should be reviewed before selecting or freezing the common held-out resource budget. P0 should still not be implemented until the real baseline interface is shown to be viable.
 
 ## Deterministic behavioral evaluation
 
