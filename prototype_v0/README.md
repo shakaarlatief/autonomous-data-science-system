@@ -36,6 +36,8 @@ python -m pip install -e ".[dev]"
 pytest
 ```
 
+The repository also runs these tests in GitHub Actions whenever Prototype V0 code or its workflow changes.
+
 ## Generate the development case
 
 ```bash
