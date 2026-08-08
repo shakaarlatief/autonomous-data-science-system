@@ -1,348 +1,194 @@
 # Open Questions
 
-This document records important unresolved questions.
+This document records important unresolved questions. It is intentionally canonical and current rather than a complete historical transcript. Detailed reasoning is preserved in foundations, checkpoints, and Git history.
 
-The purpose is to prevent promising ideas from silently becoming assumptions and to ensure that unresolved design problems remain visible across chats and checkpoints.
-
-Questions may later be answered, split, merged, reframed, or marked obsolete. Their history should remain traceable.
+Questions may later be answered, split, merged, reframed, or marked obsolete. Existing identifiers are retained for continuity.
 
 ## Q-001. What exactly must the system accomplish to be considered successful?
 
 **Status:** Partially answered
 
-The project has established a working primary purpose: the system should create the best data-science process for the particular project, where what "best" means depends on project goals, constraints, required outputs, and desired human involvement.
+The accepted primary purpose is to create the best data-science process for the particular project, where "best" depends on project goals, constraints, deliverables, and desired human involvement.
 
-The remaining work is to turn that purpose into explicit success criteria, requirements, boundaries, and evaluation standards.
-
-Relevant dimensions still include analytical quality, reliability, reproducibility, efficiency, generality, learning value, professional output quality, autonomy, and human control.
+Still unresolved: explicit success criteria, requirements, boundaries, and evaluation standards.
 
 ---
 
 ## Q-002. What degree of autonomy should the system have?
 
-Should autonomy be fixed or configurable?
+**Status:** Substantially reframed
 
-Possible distinctions include:
+The current hypothesis is that autonomy should be dynamic rather than one fixed project-wide level. Risk, admissibility, uncertainty, reversibility, authority requirements, and action type may determine when autonomy is permitted or restricted.
 
-- fully autonomous routine work;
-- automatic continuation unless a defined gate is reached;
-- mandatory human approval for high-impact decisions;
-- project-specific autonomy settings;
-- and different autonomy levels for analysis, code changes, model selection, reporting, or deployment.
+The exact autonomy model remains open.
 
 ---
 
 ## Q-003. What should the human's role be?
 
-Which questions genuinely benefit from human judgment?
+**Status:** Substantially refined
 
-How should the system distinguish:
+The project now distinguishes preferred human involvement from required human involvement. Human input may be required for semantics, normative trade-offs, authority decisions, risk acceptance, unresolved admissibility, or consequential uncertainty even when the user otherwise prefers minimal interruption.
 
-- questions it can answer through analysis;
-- questions it should research;
-- questions it should experimentally test;
-- questions it should escalate to the human;
-- and questions where several valid options should be presented rather than resolved automatically?
+The exact escalation and approval model remains open.
 
 ---
 
 ## Q-004. How should data science knowledge be represented?
 
-Promising possibilities include reusable decision modules, rules, structured documents, schemas, graphs, executable checks, or combinations of these.
-
-The correct abstraction has not been selected.
+Possible representations include decision modules, rules, structured documents, schemas, executable checks, graphs, or hybrids. No representation has been selected.
 
 ---
 
 ## Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-A central design problem is balancing reliability and flexibility.
-
-Too much hard-coding may become unmanageable and brittle. Too much generative reasoning may recreate the weaknesses of a one-dimensional LLM workflow.
-
-The boundary between hard constraints, decision frameworks, and open-ended reasoning must be developed.
+The project continues to favor a hybrid of hard constraints, explicit decision frameworks, and open-ended reasoning. The exact boundary and implementation remain unresolved.
 
 ---
 
 ## Q-006. How should relevant investigations be activated?
 
-If the system eventually contains hundreds of possible checks or knowledge modules, it needs an efficient way to determine which ones matter for the current project.
-
-Questions include:
-
-- What creates a trigger?
-- Are triggers deterministic, LLM-generated, learned, or hybrid?
-- Can modules activate other modules?
-- How are false-negative activations detected?
-- How does the system avoid running too many irrelevant investigations?
+Open issues include deterministic versus LLM-generated triggers, module cross-activation, false-negative activation detection, and avoiding irrelevant work.
 
 ---
 
 ## Q-007. What should a reusable decision module contain?
 
-Possible fields include:
+Possible contents include activation conditions, questions, rationale, required evidence, diagnostics, alternatives, common failure modes, human gates, dependencies, outputs, and references.
 
-- activation conditions;
-- questions to answer;
-- rationale;
-- required evidence;
-- relevant diagnostics;
-- possible strategies;
-- common failure modes;
-- human gates;
-- dependencies;
-- outputs;
-- references;
-- and examples.
-
-It is not yet known whether this should be declarative, executable, or both.
+No declarative or executable schema has been selected.
 
 ---
 
 ## Q-008. How should project state be represented?
 
-Potential state includes:
+**Current priority:** Highest
 
-- problem definition;
-- prediction timing;
-- data version;
-- facts discovered about the data;
-- assumptions;
-- active questions;
-- decisions;
-- evidence;
-- experiments;
-- rejected alternatives;
-- invalidated results;
-- uncertainty;
-- human input;
-- and next actions.
+The project now needs a coherent conceptual model for analytical questions, facts, observations, assumptions, evidence, claims, decisions, risks, controls, approvals, assurance requirements, dependencies, unresolved issues, and next actions.
 
-The storage technology and schema remain open.
+This should be solved conceptually before selecting storage technology.
 
 ---
 
 ## Q-009. What agent or responsibility structure is actually useful?
 
-The initial discussion considered roles such as problem analyst, data analyst, experiment planner, coding agent, statistical reviewer, leakage reviewer, model reviewer, and decision synthesizer.
+Potential responsibilities include problem understanding, analysis, experimentation, execution, methodological review, leakage review, admissibility review, risk review, and decision synthesis.
 
-These are conceptual responsibilities, not accepted permanent agents.
-
-Open questions include:
-
-- How many roles are useful?
-- Which should be separate?
-- Which can be temporary?
-- Which should be deterministic tools rather than LLM agents?
-- Should different models be used for independent viewpoints?
+These are responsibilities, not accepted permanent agents.
 
 ---
 
 ## Q-010. When is independent review required?
 
-Not every action deserves multiple reviewers.
-
-The project needs a risk- and value-sensitive way to decide when to use:
-
-- a lightweight critique;
-- specialized methodological review;
-- independent replication;
-- multiple model providers;
-- or human approval.
+The current direction is risk- and value-sensitive review rather than reviewing everything. Open questions include triggers for lightweight critique, specialized review, independent replication, multiple-model review, and mandatory human approval.
 
 ---
 
 ## Q-011. What counts as sufficient evidence for a decision?
 
-The system must distinguish between:
-
-- descriptive observations;
-- statistically uncertain estimates;
-- cross-validation comparisons;
-- robustness checks;
-- causal claims;
-- theoretical arguments;
-- domain assumptions;
-- and LLM-generated hypotheses.
-
-Different decision types may require different evidence standards.
+Different decisions may require different evidence standards. The project must distinguish descriptive observations, statistical estimates, cross-validation, robustness checks, theoretical arguments, domain assumptions, causal evidence, and LLM-generated hypotheses.
 
 ---
 
 ## Q-012. How should uncertainty and confidence be represented?
 
-Should the system record confidence numerically, categorically, narratively, or through evidence structure?
-
-How should uncertainty propagate when later decisions depend on earlier uncertain conclusions?
+Open issues include numerical versus categorical versus structural representations, and how uncertainty should propagate through dependent claims, risks, and decisions.
 
 ---
 
 ## Q-013. How should analysis depth and resource budgets work?
 
-A quick exploratory project should not require the same process as a production-critical or research-grade project.
-
-Possible controls include:
-
-- named depth modes;
-- compute budgets;
-- time budgets;
-- maximum experiment counts;
-- risk levels;
-- human-defined priorities;
-- and adaptive stopping rules.
-
-The current direction is that named modes may be convenient presets rather than the fundamental representation. The deeper problem is how project intent, risk, uncertainty, and expected analytical value should determine where additional effort is spent.
+Named modes may eventually be presets rather than fundamental architecture. The deeper problem is how intent, risk, uncertainty, expected value, compute cost, and human cost determine analytical depth.
 
 ---
 
 ## Q-014. How should the system decide when further experimentation is no longer worth the cost?
 
-A mature process needs stopping criteria.
-
-Examples include diminishing expected value, stable conclusions, uncertainty below a useful threshold, insufficient data to discriminate alternatives, or resource limits.
+Potential stopping reasons include diminishing expected value, stable conclusions, insufficient information to distinguish alternatives, acceptable residual uncertainty, and resource limits.
 
 ---
 
 ## Q-015. How should different project types be characterized?
 
-The system needs enough project characterization to route reasoning correctly without creating an impossible taxonomy.
-
-Potential dimensions include:
-
-- supervised versus unsupervised;
-- classification versus regression;
-- IID versus temporal;
-- grouped or panel structure;
-- sequence or spatial structure;
-- ranking or recommendation;
-- causal versus predictive objective;
-- online or reinforcement settings;
-- and structured versus unstructured inputs.
-
-The project should avoid prematurely assuming these are mutually exclusive categories.
+The system needs enough characterization to activate appropriate reasoning without creating an impossible rigid taxonomy. Candidate dimensions include predictive versus causal, temporal versus IID, grouped, panel, sequence, ranking, spatial, structured versus unstructured, and others.
 
 ---
 
 ## Q-016. How should system quality itself be evaluated?
 
-The system should eventually be compared against meaningful baselines such as:
-
-- a strong single-LLM end-to-end workflow;
-- a human-guided LLM workflow;
-- manually designed project pipelines;
-- and perhaps alternative agent systems.
-
-Evaluation should examine more than final predictive performance.
-
-Potential criteria include missed issues, leakage prevention, decision quality, reproducibility, unnecessary work, robustness, report quality, cost, and human effort.
+The system should eventually be compared with strong single-LLM workflows, human-guided LLM workflows, and other meaningful baselines across process quality as well as final predictive performance.
 
 ---
 
 ## Q-017. How should real projects become regression tests for the system?
 
-If a project teaches the system a lesson, later versions should be tested to ensure the same failure does not return.
-
-The project needs a way to preserve cases, expected behaviors, and failure conditions without overfitting the system to a small benchmark set.
+The project needs a way to preserve failure cases, expected behaviors, and reusable tests without overfitting the system to a small benchmark set.
 
 ---
 
 ## Q-018. How should the system handle interaction between modules?
 
-Data science issues are not independent.
-
-Examples include:
-
-- missingness interacting with validation and selection bias;
-- class imbalance interacting with metrics, thresholds, and calibration;
-- temporal structure interacting with leakage, validation, and feature engineering;
-- feature engineering interacting with preprocessing and interpretability.
-
-The system must support dependencies and cross-triggering without becoming an unmanageable graph.
+Issues such as missingness, leakage, validation, imbalance, calibration, temporal structure, feature engineering, and risk can interact. Cross-triggering and dependencies must remain manageable.
 
 ---
 
 ## Q-019. How should invalidation work?
 
-If a later review discovers leakage, a bad split, an incorrect assumption, or a data bug, which downstream experiments and conclusions should be invalidated automatically?
-
-This may require explicit dependency tracking between project artifacts.
+If an upstream assumption, dataset, procedure, or control becomes invalid, which downstream experiments, claims, decisions, risks, approvals, and artifacts should automatically become stale or require reconsideration?
 
 ---
 
 ## Q-020. What should the execution environment look like?
 
-The system will eventually need safe and reproducible code execution.
-
-Open questions include isolation, dependency management, data access, compute limits, artifact tracking, random-state control, failure recovery, and reproducibility.
-
-No execution architecture has been selected.
+Isolation, dependency management, data access, artifact tracking, random-state control, failure recovery, compute limits, and reproducibility remain open. No execution architecture has been selected.
 
 ---
 
 ## Q-021. How should model and tool providers be selected?
 
-The system may or may not benefit from using multiple LLM providers.
-
-Questions include:
-
-- whether model diversity materially improves review;
-- when a stronger reasoning model is worth additional cost;
-- how provider-specific capabilities should be abstracted;
-- and how changing future models should affect the system design.
+Open issues include provider diversity, cost-quality trade-offs, independent viewpoints, model capability routing, and provider abstraction.
 
 ---
 
 ## Q-022. How should external knowledge and source material be integrated?
 
-The project currently has access to educational and technical source material outside the repository.
-
-The permanent approach for references, derived knowledge, provenance, licensing, updating, and retrieval has not been decided.
+The project has not selected a permanent architecture for references, educational material, derived knowledge, provenance, updating, licensing, or retrieval.
 
 ---
 
 ## Q-023. Should raw conversations be archived, and if so, how?
 
-Detailed conversations can contain valuable reasoning that may not survive even a careful memo.
-
-At the same time, raw transcripts contain duplication, outdated ideas, and noise.
-
-The project needs to decide whether raw archives are worth maintaining and how future systems should use them safely.
+Raw transcripts contain valuable provenance but also outdated ideas and duplication. Their future storage and safe use remain undecided.
 
 ---
 
 ## Q-024. How much of knowledge capture should eventually be automated?
 
-A future system could detect proposed principles, decisions, open questions, gaps, and design hypotheses during discussion and propose repository updates.
-
-The project first needs experience with manual curation so that automation does not preserve the wrong things or prematurely canonize speculative ideas.
+The current manual process may later be partially automated, for example by detecting proposed decisions, hypotheses, gaps, and open questions for human approval.
 
 ---
 
 ## Q-025. What maturity model should be used for ideas and knowledge?
 
-An early concept discussed the progression:
+The current conceptual path remains:
 
 ```text
 raw thought
   -> candidate idea
   -> active design hypothesis
-  -> tested on examples
+  -> tested
   -> accepted principle or decision
   -> challenged
-  -> revised or superseded
+  -> revised / superseded / rejected
 ```
 
-This seems useful, but the exact statuses and transitions have not been standardized.
+The exact statuses and transitions are not formalized.
 
 ---
 
 ## Q-026. How should the repository structure evolve as the project grows?
 
-The current documentation layout is intentionally small.
-
-Future needs may include dedicated areas for knowledge modules, project cases, experiments, evaluation suites, architecture, implementation, sources, session records, and gap logs.
-
-These should be introduced in response to actual needs rather than speculative completeness.
+Possible future areas include knowledge modules, cases, experiments, evaluation suites, architecture, implementation, sources, session records, and gap logs. They should be introduced in response to actual need.
 
 ---
 
@@ -350,133 +196,86 @@ These should be introduced in response to actual needs rather than speculative c
 
 **Status:** Substantially refined, not resolved
 
-The project has moved from a flat quality-floor concept toward a project-constitution hypothesis.
+The project now prefers a project-constitution model over one flat checklist. The epistemic core currently centers on semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity.
 
-The current view distinguishes universal integrity requirements from conditional methodological obligations, and proposes a five-invariant epistemic core consisting of semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity.
-
-The framework still needs real-project testing, formal definitions, and a determination of whether any fundamentally different epistemic invariants are missing.
+Formal requirements and real-project validation remain necessary.
 
 ---
 
 ## Q-028. How should project intent be represented?
 
-A strong design hypothesis is to distinguish at least:
+A strong hypothesis distinguishes objectives, constraints, deliverables, and human-control preferences, with additional separation between project-level, model-level, and operational objectives.
 
-- objectives;
-- constraints;
-- deliverables;
-- human-control preferences.
-
-The project must determine whether these categories are sufficient, how they interact, what dimensions belong under each, and how conflicts should be resolved.
-
-It must also decide whether project-level, model-level, and operational objectives need explicit separate representation.
+The exact schema remains open.
 
 ---
 
 ## Q-029. How should the system prioritize analytical effort?
 
-The system should not spend resources merely because more analysis is possible.
+Potential drivers include relevance, risk if ignored, uncertainty reduction, expected information value, computational cost, human cost, and downstream impact.
 
-A future prioritization mechanism may need to consider:
-
-- relevance;
-- risk if ignored;
-- uncertainty reduction;
-- expected information value;
-- computational cost;
-- human cost;
-- and likely downstream impact.
-
-The project has not decided whether this should remain qualitative, become a formal scoring system, or use another adaptive strategy.
+No scoring or routing mechanism has been selected.
 
 ---
 
 ## Q-030. Are the five candidate epistemic invariants complete and precise enough?
 
-**Current status:** Strong design hypothesis under validation
+**Status:** Strong design hypothesis under validation
 
-The proposed invariants are:
-
-1. semantic validity;
-2. information legitimacy;
-3. evidence validity;
-4. claim validity;
-5. traceability and dependency integrity.
-
-They have survived conceptual stress tests across multiple project types, but the project has not established that they are complete, mutually useful, or precise enough to become formal requirements.
-
-Questions include:
-
-- Does execution fidelity fit fully inside evidence validity?
-- Are statistical uncertainty and robustness adequately covered by evidence and claim validity?
-- Are there other epistemic requirements that cannot be derived from these five?
-- Can each invariant be translated into testable system behavior?
+The framework has survived conceptual stress tests but still needs real-project testing, formal definitions, and translation into testable system behavior.
 
 ---
 
 ## Q-031. What exactly belongs in the admissibility layer?
 
-**Current priority:** Highest
+**Status:** Substantially refined, not resolved
 
-The project now distinguishes epistemic validity from admissibility.
+Current strong hypotheses are that admissibility should be action-specific, source-aware, authority-aware, and able to return states such as permitted, permitted with controls, approval required, unresolved, or prohibited.
 
-Admissibility may include:
+The system may reason about rules but should not treat uncertain interpretation as self-authorizing permission.
 
-- legal constraints;
-- privacy constraints;
-- ethical constraints;
-- fairness obligations;
-- organizational policy;
-- explicit user rules;
-- data-usage permissions;
-- operational safety constraints;
-- deployment restrictions.
-
-The project must determine which of these should be reasoned about by the system, which should be supplied as external constraints, which require expert or human escalation, and how uncertainty about admissibility should be handled.
+Still unresolved: final scope, authority precedence, legal/privacy/fairness governance model, and formal state representation.
 
 ---
 
 ## Q-032. How should risk-sensitive assurance be represented?
 
-The project currently hypothesizes that risk changes the amount of assurance required rather than the meaning of valid evidence.
+**Status:** Substantially refined, not resolved
 
-Open questions include:
+Current direction favors scenario-based multidimensional risk over an unexplained aggregate label. Candidate concepts include inherent risk, controls, residual risk, assurance requirements, and an explicit risk-acceptance authority.
 
-- What dimensions define project risk?
-- Should there be discrete assurance levels or continuous risk assessment?
-- Which risks require independent review or replication?
-- When is human approval mandatory?
-- How should monitoring, rollback, fallback, and documentation requirements scale with risk?
-- How should assurance requirements interact with admissibility constraints?
+Still unresolved: final risk dimensions, control-effectiveness model, assurance levels, routing rules, and whether aggregate scores are useful.
 
 ---
 
 ## Q-033. Should analytical questions and claims be primary project-state objects?
 
-A strong design hypothesis is that questions and claims are more fundamental than pipeline stages or models.
+**Status:** Strong design hypothesis; now part of Q-008 work
 
-Open questions include:
-
-- What information defines an analytical question?
-- How are questions generated and prioritized?
-- Which question categories are useful?
-- Which epistemic states are necessary?
-- How are claims linked to evidence, assumptions, and decisions?
-- How should downstream questions activate when upstream claims change?
-
-No schema or implementation has been selected.
+Open issues include question generation, question categories, epistemic states, links from evidence to claims, contradiction, dependencies, and downstream activation.
 
 ---
 
 ## Q-034. How should project completion be defined in a question-driven system?
 
-A project may eventually be considered complete when all questions required by its epistemic, admissibility, assurance, and deliverable obligations are sufficiently resolved, explicitly accepted as residual uncertainty, or documented as unresolvable under the available conditions.
+A project may eventually be complete when mandatory questions and obligations are sufficiently resolved, accepted as residual uncertainty by an appropriate authority, or explicitly documented as unresolvable.
 
-The project must determine:
+The exact completion rule remains open.
 
-- which questions are mandatory versus optional;
-- what "sufficiently resolved" means;
-- when residual uncertainty is acceptable;
-- which unresolved questions block completion;
-- how resource limits affect stopping without weakening integrity;
-- and how completion interacts with final reporting and human approval.
+---
+
+## Q-035. How should admissibility, risk, controls, approvals, and assurance participate in project state?
+
+**Current priority:** High and coupled to Q-008
+
+The project now needs to determine whether risk scenarios, controls, admissibility constraints, approvals, assurance obligations, and residual-risk decisions should be first-class state objects and how they depend on claims, assumptions, intended uses, and actions.
+
+Important questions include:
+
+- How should authority and constraint provenance be represented?
+- How should a control's effectiveness be evidenced?
+- How does a change in intended use invalidate or strengthen assurance obligations?
+- How should approvals become stale when upstream evidence changes?
+- How should risk and governance affect next-action selection and autonomy?
+
+Detailed reasoning is preserved in `docs/foundations/003_admissibility_risk_and_assurance.md`.
