@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 46  
+**Checkpoint:** 48  
 **Date:** 2026-08-10  
-**Development stage:** P0 behavior frozen; common B0/B1 held-out resource envelope implemented; deterministic validation pending  
-**Implementation status:** The final planned P0 development trajectory (`dev-p0-04`) completed end-to-end within the independently frozen resource envelope and full raw inspection found no experiment-invalidating defect. P0 behavioral/controller logic is frozen. B0/B1 now implement the same optional token/Python accounting needed for the preregistered held-out 24-call / 250,000-token / 12-Python envelope. Four baseline resource tests were added. No held-out H1/H2 treatment run has occurred.
+**Development stage:** P0 behavior frozen; B0/B1 resource parity validated; held-out bundle verification and exact 30-slot run-plan materialization implemented; deterministic validation pending  
+**Implementation status:** The complete suite passed 58/58 after common B0/B1 resource-envelope enforcement. The next condition-neutral held-out layer now validates local H1/H2 bundles against the identities frozen before P0 implementation and materializes the exact preregistered 30-slot schedule with stable replacement-attempt identifiers. Four new deterministic tests were added. No held-out H1/H2 treatment call has occurred.
 
 ## Primary purpose
 
@@ -52,28 +52,6 @@ Same underlying model/tools + typed project state
 
 B1 remains the primary architectural control.
 
-## Baseline development calibration
-
-All six B0/B1 development trajectories completed and passed critical deterministic assertions.
-
-```text
-B0 calls: 15, 18, 19
-B0 mean tokens: 144,331
-
-B1 calls: 15, 16, 17
-B1 mean tokens: 124,434
-```
-
-Clearest repeated B1 semantic advantage:
-
-```text
-explicit inherited learned-preprocessing diagnosis
-B0: 0/3 strong
-B1: 2/3 strong
-```
-
-Both simpler conditions were already strong on protected-test discipline and Phase 2 repair.
-
 ## Frozen held-out protocol
 
 Authoritative records:
@@ -81,6 +59,7 @@ Authoritative records:
 ```text
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 prototype_v0/configs/held_out_protocol_v0_1.json
+prototype_v0/configs/held_out_bundle_fingerprints_v0_1.json
 ```
 
 Run design:
@@ -89,10 +68,10 @@ Run design:
 H1: 5 runs per condition
 H2: 5 runs per condition
 B0/B1/P0: 10 held-out runs each
-30 treatment runs total
+30 treatment slots total
 ```
 
-Registered common treatment configuration:
+Common treatment configuration:
 
 ```text
 provider: OpenAI
@@ -107,35 +86,43 @@ reasoning effort: high
 300 s provider timeout
 ```
 
-Total-token rule:
+Token semantics remain:
 
 ```text
-if prior cumulative observed usage is >= 250,000,
-no new model call may begin;
+if prior observed cumulative usage is >= 250,000,
+no new treatment call may begin;
 
-if an admitted completed call crosses the ceiling,
-the call remains in the trajectory,
-the run is marked budget-exceeded,
+if an admitted completed call crosses 250,000,
+that call remains in the trajectory,
+the run becomes budget-exceeded,
 and no later treatment call may begin.
 ```
 
-Observable failed-attempt usage counts. Python exceptions/timeouts count when execution is actually attempted. Behavioral budget exhaustion is never replacement-run eligible.
+Observable usage from failed provider attempts counts. Model-authored Python exceptions/timeouts count as attempts if execution is reached. Behavioral resource exhaustion is not replacement-run eligible.
 
-Frozen bundles:
+## Frozen held-out bundles
 
 ```text
-H1 seed 811
-SHA-256 7d3cdfe90f262b604ad637ebb0b07b35e2604c3feb5365d2e9648adf54b7b4c8
+H1
+case_id: churn_v0_h1
+surface_variant: held_out_h1
+seed: 811
+file_count: 9
+SHA-256: 7d3cdfe90f262b604ad637ebb0b07b35e2604c3feb5365d2e9648adf54b7b4c8
 
-H2 seed 1601
-SHA-256 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
+H2
+case_id: churn_v0_h2
+surface_variant: held_out_h2
+seed: 1601
+file_count: 9
+SHA-256: 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-No held-out treatment trajectory has run.
+Both seeds were the first preregistered candidates and passed deterministic benchmark self-tests before P0 implementation.
 
 ## Frozen semantic judge
 
-Targeted score:
+Targeted architecture score:
 
 ```text
 mean(S1, S2, S3, S6, S7)
@@ -143,7 +130,7 @@ mean(S1, S2, S3, S6, S7)
 
 Strong targeted pass requires all five targeted criteria to equal 2.0.
 
-Pre-P0 calibration:
+Pre-P0 judge calibration:
 
 ```text
 59/60 exact ordinary-criterion agreements
@@ -153,11 +140,11 @@ Pre-P0 calibration:
 0/6 manual-adjudication runs
 ```
 
-The judge reproduced the key development S3 comparison exactly: B0 0/3 strong versus B1 2/3 strong.
+The judge reproduced the key development S3 result exactly: B0 0/3 strong versus B1 2/3 strong.
 
 ## Frozen P0
 
-P0 typed objects:
+Typed objects:
 
 ```text
 ARTIFACT FACT ASSUMPTION QUESTION EVIDENCE CLAIM DECISION OBLIGATION ACTION
@@ -184,96 +171,126 @@ P0 development history:
 dev-p0-01: incomplete, 10 calls, 250,279 tokens, early Phase 2
 dev-p0-02: incomplete, 12 calls, 291,350 tokens, reached final evaluation
 dev-p0-03: incomplete, 14 calls, 260,234 tokens, repaired Phase 2 evidence
-dev-p0-04: COMPLETE WITHIN BUDGET, 12 calls, 228,064 tokens, 4 Python attempts
+dev-p0-04: complete within budget, 12 calls, 228,064 tokens, 4 Python attempts
 ```
 
-The first three runs exposed generic prototype/controller defects that were documented and repaired during development. `dev-p0-04` was predeclared as the final planned behavioral development run before its result was known.
+`dev-p0-04` was predeclared as the final planned behavioral development run before its result was known. Full inspection found no experiment-invalidating mechanical defect. P0 behavioral/controller logic is frozen and must not be tuned for held-out semantic scores, efficiency, state relation quality, model choice, or report wording.
 
-Full inspection of `dev-p0-04` found:
+## Common baseline resource layer
 
-```text
-0 P0 state-control errors
-0 treatment-command recovery loops
-0 model-generation failures
-0 resource-budget events
-all four knowledge components activated
-explicit inherited preprocessing diagnosis
-future temporal/repeated-entity validation reasoning
-strong targeted Phase 2 repair
-six-feature eligible final model
-single protected final evaluation after lock
-no post-test development
-all deterministic assertions passed
-```
+`BaselineTreatmentRunner` now enforces the same optional held-out token and Python ceilings as P0 when orchestration supplies them.
 
-Two ordinary semantic imperfections remain for held-out scoring rather than tuning: row-unit contradiction correction can be implicit rather than maximally explicit, and pre-Phase-2 feature-timing uncertainty can be only moderately qualified.
-
-P0 behavioral/controller logic is now **frozen**. Do not run another P0 development trajectory and do not change P0 to improve benchmark scores, resource use, state relation quality, model choice, or reporting style.
-
-## Common baseline resource enforcement now implemented
-
-`BaselineTreatmentRunner` now supports optional:
+Validated behaviors include:
 
 ```text
-max_total_tokens
-max_python_execution_attempts
-```
-
-and records:
-
-```text
-completed_within_budget
-budget_exhausted
-python_execution_attempts
-```
-
-Held-out orchestration will explicitly pass the frozen 250,000-token and 12-Python ceilings. Development CLI defaults remain unset for these two new limits so historical B0/B1 calibration commands remain reproducible.
-
-Baseline enforcement now mirrors the registered/P0 semantics for:
-
-```text
-pre-call token checks
-failed-attempt observable token accounting
+pre-call total-token checks
+observable failed-attempt token accounting
 crossing-call retention
-terminal completion above ceiling => completed but not within budget
-Python-attempt counting
-blocking execution beyond the Python ceiling
+terminal completion above token ceiling => completed but not within budget
+Python-attempt accounting
+blocking execution beyond Python ceiling
 resource-budget trace events
 ```
 
-B0/B1 still do not receive P0's prospective protected-final-test gate. This change is resource-control parity only.
+B0/B1 do not receive P0's prospective final-test safeguard.
 
-Four resource regression tests were added. Expected full suite:
+Deterministic validation after this implementation:
 
 ```text
-58 passed
+58 passed in 22.70s
+```
+
+## Held-out pre-execution planning now implemented
+
+New module:
+
+```text
+prototype_v0/src/ads_v0/heldout_execution.py
+```
+
+It performs no model inference. It now provides:
+
+```text
+execution-time loading of the preregistered protocol;
+execution-time loading of the pre-P0 frozen bundle identity record;
+verification of H1/H2 case_id, surface_variant, selected seed, self-test status,
+file count, and aggregate SHA-256 fingerprint;
+exact materialization of the registered 30-slot H1/H2 order;
+validation that each replicate contains B0, B1, and P0 exactly once;
+validation of 10 slots per condition;
+stable initial and replacement-attempt identifiers;
+a deterministic run-plan JSON containing the verified bundle identities and
+registered treatment resource configuration;
+no-overwrite protection for an existing run plan unless explicitly forced.
+```
+
+Stable slot example:
+
+```text
+slot: h1-r01-b0
+initial attempt: h1-r01-b0-a01
+replacement 1: h1-r01-b0-a02
+replacement 2: h1-r01-b0-a03
+```
+
+Replacement attempts remain inside the original slot and therefore cannot alter preregistered order.
+
+Foundation 012 replacement semantics remain unchanged:
+
+```text
+provider/infrastructure generation termination after registered retries
+    -> non-behavior-evaluable, replacement eligible
+
+Python error/timeout, methodological error, semantic failure, budget exhaustion,
+or any other treatment behavior
+    -> behavior-evaluable, not replacement eligible
+```
+
+At most two replacement attempts are permitted after the initial attempt. If all three attempts for one slot terminate non-behavior-evaluable, execution must pause for investigation.
+
+## New run-plan tests
+
+Four tests were added for:
+
+```text
+exact preregistered 30-slot order and per-condition counts;
+stable attempt IDs inside a slot;
+exact frozen-bundle acceptance and tamper rejection;
+run-plan resource snapshot and no-overwrite protection.
+```
+
+Expected complete suite:
+
+```text
+62 passed
 ```
 
 ## Remaining pre-held-out engineering
 
-After deterministic validation of the baseline resource layer:
+After the new plan/bundle-validation tests pass:
 
 ```text
-1. load/validate the frozen protocol and bundle fingerprints at execution time;
-2. materialize the exact preregistered 30-slot H1/H2 run plan;
-3. support replacement-attempt identifiers for non-behavior-evaluable provider failures without changing slot order;
-4. implement safe sequential held-out execution for B0/B1/P0;
-5. implement batch blinded semantic judging;
-6. implement blinded manual-adjudication routing;
-7. aggregate semantic/resource/completion outcomes and apply continuation/falsification rules.
+1. validate the real local H1/H2 bundles and materialize results/held_out/run_plan.json;
+2. implement a safe resumable sequential run-next executor;
+3. ensure replacement attempts remain inside their original slot and are used only
+   for non-behavior-evaluable provider/infrastructure termination;
+4. implement batch blinded semantic judging;
+5. implement blinded manual-adjudication routing;
+6. aggregate semantic/resource/completion outcomes and apply the preregistered
+   continuation/falsification rules.
 ```
 
-These are common experiment-control tasks, not treatment tuning.
+The planned executor should advance one unresolved attempt at a time rather than accidentally launching all 30 paid trajectories. This keeps the preregistered ordering deterministic while allowing infrastructure failures to be inspected and replaced under the frozen policy.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/043_p0_reference_semantics_validated_and_final_development_run_boundary.md
-docs/checkpoints/044_final_p0_development_run_terminal_success.md
 docs/checkpoints/045_dev_p0_04_full_inspection_and_p0_behavioral_freeze.md
 docs/checkpoints/046_common_baseline_resource_envelope_implemented.md
+docs/checkpoints/047_common_baseline_resource_envelope_deterministically_validated.md
+docs/checkpoints/048_held_out_bundle_validation_and_run_plan_materialization.md
 ```
 
 ## Current priority
 
-**Run the complete local test suite. Expected result: 58 passed. Do not begin H1/H2 execution yet.**
+**Run the complete local test suite. Expected result: 62 passed. Do not start any H1/H2 treatment call yet.**
