@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 37  
+**Checkpoint:** 38  
 **Date:** 2026-08-09  
-**Development stage:** P0 post-diagnosis corrections deterministically validated; second real-model development run authorized  
-**Implementation status:** All pre-P0 experimental controls remain frozen. The first real-model P0 development trajectory (`dev-p0-01`) exposed two implementation defects, both were corrected within the pre-specified P0 scope, and the complete Prototype V0 suite now passes 48/48 tests. `dev-p0-02` is authorized on the development benchmark under the unchanged common resource envelope. No held-out H1/H2 treatment run has occurred.
+**Development stage:** Second real P0 development run exhausted token budget but passed critical deterministic integrity; raw diagnosis pending  
+**Implementation status:** All pre-P0 experimental controls remain frozen. The first P0 run exposed two implementation defects that were corrected and validated with 48/48 tests. The second real-model P0 development trajectory (`dev-p0-02`) progressed further and passed all current critical deterministic assertions, but again failed to complete within the unchanged 250,000-token envelope. No held-out H1/H2 treatment run has occurred. Do not run `dev-p0-03` before complete raw-artifact inspection of `dev-p0-02`.
 
 ## Primary purpose
 
@@ -88,6 +88,8 @@ Common treatment envelope:
 
 Every P0 provider-backed reasoning call counts inside the same call/token envelope. Deterministic state operations are uncharged. The resource envelope is not being increased in response to development failures.
 
+A completed provider call may push cumulative usage above 250,000 because usage is only known after the call returns. That crossing call remains part of the trajectory and no further call may begin.
+
 ## Frozen held-out bundles
 
 ```text
@@ -163,81 +165,120 @@ K-VAL-001 Generalization-Regime Question
 
 The controller supports state-triggered scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived action motivators, blocking/repair priority, phase-transition gates, dependency-aware reopening, and append-only state history.
 
-## First real P0 development trajectory
+## `dev-p0-01`
 
-`dev-p0-01` was behavior-evaluable but did not complete:
+The first P0 development run was behavior-evaluable but did not complete:
 
 ```text
 Completed: False
-Completed within budget: False
 Budget exhausted: True
 Successful model calls: 10
-Generation attempts: 10
 Generation failures: 0
 Input tokens: 242,743
 Output tokens: 7,536
 Total observed tokens: 250,279
 Python execution attempts: 2
+Critical deterministic assertions passed: False
 ```
 
-The run stopped because the local experiment crossed the frozen 250,000-token ceiling. The user's near-empty API-credit balance was not the cause; all ten provider calls completed successfully.
-
-The run reached Phase 2 after strong substantive progress: it protected the final test, identified repeated temporal entities, activated all four V0 knowledge components, explicitly diagnosed inherited preprocessing contamination, chose a defensible validation regime, established clean development evidence, completed Phase 1, and read the authoritative Phase 2 timing notice.
-
-It stopped before the next reasoning turn could perform Phase 2 repair and final lock.
-
-## `dev-p0-01` implementation defects and corrections
-
-### 1. Same-turn motivator closure
-
-Two valid actions were rejected because the response's state patch resolved/satisfied the cited motivator before the controller checked whether that motivator was current.
-
-Observed wasted calls:
+Raw diagnosis found two implementation defects:
 
 ```text
-call 6: 24,659 tokens
-call 8: 40,399 tokens
-combined: 65,058 tokens
+1. same-turn motivator closure was incorrectly rejected after patch application;
+2. model-facing state repeatedly serialized audit-only ACTION history and closed controls.
 ```
 
-Correction:
+Corrections:
 
 ```text
 validate motivators against the pre-patch frontier visible to the model;
-then apply the patch;
 allow the same response to resolve/satisfy its motivating concern;
-retain the original canonical motivator on the ACTION audit record.
+retain complete state/history for audit;
+compact only the model-facing current-state projection by excluding ACTION audit payloads,
+closed workflow controls, and irrelevant old knowledge prose.
 ```
 
-### 2. Audit history repeated as current reasoning state
-
-The model-facing state projection repeatedly serialized historical ACTION objects, embedded Python source, embedded milestone reports, ACTION relations, resolved questions, satisfied obligations, and stale knowledge prose.
-
-The complete audited state still needs those records, but the LLM does not need them resent as current reasoning state each turn.
-
-Correction:
-
-```text
-retain full state/history for audit and dependency logic;
-exclude ACTION objects and ACTION relations from the model-facing current-state view;
-exclude resolved questions and satisfied obligations;
-retain current facts, assumptions, evidence, claims, decisions, open concerns,
-relevant relations, current frontier, relevant knowledge, and a filtered change tail.
-```
-
-On the exact `dev-p0-01` state snapshots, this projection would reduce serialized P0 state-view characters from approximately 162,367 to 73,946, about 54.5%, without changing the underlying semantic state.
-
-## Deterministic validation after corrections
-
-The complete local suite now passes:
+The full suite passed after these corrections:
 
 ```text
 48 passed in 9.97s
 ```
 
-The added regression tests directly cover both real-model defects while all earlier benchmark/runtime/provider/evaluator/P0 tests continue to pass.
+## `dev-p0-02` terminal result
 
-This establishes deterministic coherence of the corrections only. It does not establish behavioral superiority or guarantee that the next stochastic P0 run will finish within budget.
+The second real-model P0 development trajectory used the unchanged resource envelope:
+
+```text
+Completed: False
+Completed within budget: False
+Budget exhausted: True
+Successful model calls: 12
+Generation attempts: 12
+Generation failures: 0
+Total observed tokens: 291,350
+Python execution attempts: 4
+Behavioral evaluation eligible: True
+Critical deterministic assertions passed: True
+```
+
+Immediate implications:
+
+```text
+provider generation remained clean with 0 failures;
+the local treatment token rule again stopped the run;
+P0 progressed further than dev-p0-01, using 12 calls and 4 Python actions;
+all current critical deterministic integrity assertions passed;
+overall project completion still failed within budget.
+```
+
+The total exceeding 250,000 does not indicate a raised budget. A provider call was admitted while cumulative usage was below the ceiling and the completed call then carried cumulative usage to 291,350. The final overshoot was 41,350 tokens.
+
+The critical deterministic pass is encouraging but cannot safely identify the exact project position from terminal output alone. Raw artifacts are needed to determine whether Phase 2 repair, final model lock, protected final evaluation, or only the final report had been reached before termination.
+
+## Comparison of real P0 development runs
+
+| Measure | `dev-p0-01` | `dev-p0-02` |
+|---|---:|---:|
+| Completed | No | No |
+| Budget exhausted | Yes | Yes |
+| Successful model calls | 10 | 12 |
+| Generation failures | 0 | 0 |
+| Total observed tokens | 250,279 | 291,350 |
+| Python attempts | 2 | 4 |
+| Critical deterministic pass | No | Yes |
+
+The larger terminal token total in `dev-p0-02` is not enough to judge whether context compaction helped because crossing-call overshoot varies with the size of the final completed call. Per-call input/output usage and state-view sizes must be compared directly.
+
+## Required `dev-p0-02` diagnosis
+
+Inspect:
+
+```text
+summary.json
+deterministic_evaluation.json
+conversation.json
+trace.jsonl
+milestones.json
+p0_state.json
+p0_state_history.json
+p0_knowledge_activations.json
+```
+
+Determine:
+
+```text
+exact project phase at termination;
+per-call token and cumulative-usage curves;
+whether the two known retry-loop defects disappeared;
+model-facing state-view sizes;
+state-object/relation growth and current-state composition;
+knowledge activation/reopening/resolution timing;
+Phase 2 invalidation and dependency propagation precision;
+preservation of unrelated valid state;
+protected final-evaluation behavior;
+whether only a final reporting turn was missing or broader work remained;
+whether any remaining excessive cost is intrinsic architecture cost or another implementation defect.
+```
 
 ## What remains unchanged
 
@@ -257,7 +298,7 @@ held-out run ordering
 continuation/falsification thresholds
 ```
 
-`dev-p0-01` remains part of the development record and is not discarded or relabeled.
+Both `dev-p0-01` and `dev-p0-02` remain part of the development record.
 
 ## Relevant latest records
 
@@ -266,28 +307,11 @@ docs/checkpoints/034_p0_deterministic_validation_complete.md
 docs/checkpoints/035_first_real_p0_run_budget_exhaustion.md
 docs/checkpoints/036_dev_p0_01_raw_diagnosis_and_controller_compaction_fix.md
 docs/checkpoints/037_p0_controller_corrections_deterministically_validated.md
+docs/checkpoints/038_second_real_p0_run_budget_exhaustion_with_critical_integrity_pass.md
 ```
 
 ## Current priority
 
-**Run the second real-model P0 development-calibration trajectory under the unchanged frozen treatment envelope.**
+**Inspect the complete `dev-p0-02` raw trajectory before any third P0 development run or held-out execution.**
 
-Run:
-
-```bash
-python -m ads_v0.calibrate_p0 \
-  --bundle generated/development \
-  --run-id dev-p0-02 \
-  --output results/raw/dev-p0-02 \
-  --model gpt-5.6-terra \
-  --reasoning-effort high \
-  --max-model-calls 24 \
-  --max-total-tokens 250000 \
-  --max-python-execution-attempts 12 \
-  --max-generation-retries 2 \
-  --max-output-tokens 30000
-```
-
-Inspect the terminal summary before any further P0 replicate.
-
-H1/H2 remain untouched until P0 development debugging is complete and the implementation is frozen for held-out execution.
+H1/H2 remain untouched.
