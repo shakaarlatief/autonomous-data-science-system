@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 34  
+**Checkpoint:** 35  
 **Date:** 2026-08-09  
-**Development stage:** P0 deterministic validation complete; first real-model P0 development run authorized  
-**Implementation status:** All pre-P0 experimental controls are frozen. The corrected initial P0 implementation passed the complete deterministic suite with 46/46 tests. No real-model P0 run has occurred yet. The next step is the first paid P0 development-calibration trajectory on the development case only.
+**Development stage:** First real P0 development run completed as a behavior-evaluable budget-exhaustion failure; raw trajectory diagnosis pending  
+**Implementation status:** All pre-P0 experimental controls remain frozen. The corrected P0 candidate passed 46/46 deterministic tests, but its first real-model development trajectory exhausted the registered 250,000-token envelope after only 10 successful model calls and did not complete. No held-out H1/H2 treatment run has occurred. Do not run another P0 trajectory until the complete `dev-p0-01` artifacts are inspected.
 
 ## Primary purpose
 
@@ -37,7 +37,7 @@ B1 is the primary architectural control. P0 must demonstrate value from operatio
 
 ## Completed B0/B1 development calibration
 
-All six behavior-evaluable baseline trajectories completed with zero provider-generation failures and passed the current critical deterministic assertions.
+All six behavior-evaluable baseline trajectories completed with zero provider-generation failures and passed the critical deterministic assertions.
 
 ```text
 B0 calls: 15, 18, 19
@@ -86,11 +86,9 @@ Common treatment envelope:
 300 s provider timeout
 ```
 
-P0 has no hidden provider-backed reasoning budget. Every P0 model call counts inside the same model-call/token envelope. Deterministic state operations are uncharged.
+Every P0 provider-backed reasoning call counts inside the same call/token envelope. Deterministic state operations are uncharged.
 
 ## Frozen held-out bundles
-
-Both preregistered starting seeds passed immediately:
 
 ```text
 H1
@@ -104,11 +102,11 @@ account_ref / observation_period / profile_code
 SHA-256: 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-These identities were frozen before P0 implementation.
+Both preregistered starting seeds passed immediately and were frozen before P0 implementation.
 
 ## Frozen semantic judge
 
-The targeted architecture score remains:
+Targeted architecture score:
 
 ```text
 mean(S1, S2, S3, S6, S7)
@@ -116,7 +114,7 @@ mean(S1, S2, S3, S6, S7)
 
 Strong targeted pass requires all five targeted criteria to equal 2.0.
 
-Pre-P0 judge calibration on the six development baselines produced:
+Pre-P0 judge calibration produced:
 
 ```text
 59 / 60 exact ordinary-criterion agreements = 98.3%
@@ -126,14 +124,7 @@ Pre-P0 judge calibration on the six development baselines produced:
 0 / 6 manual-adjudication runs
 ```
 
-It reproduced the key manual S3 pattern exactly:
-
-```text
-B0 S3=2: 0 / 3
-B1 S3=2: 2 / 3
-```
-
-No rubric, continuation threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component was changed after calibration.
+It reproduced the key manual S3 result exactly: B0 0/3 strong versus B1 2/3 strong. No rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component changed after calibration.
 
 ## Current P0 implementation
 
@@ -182,86 +173,93 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001 Generalization-Regime Question
 ```
 
-The controller supports:
+The controller supports state-triggered scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived action motivators, blocking/repair priority, phase-transition gates, dependency-aware reopening, and append-only state history.
 
-```text
-state-triggered scoped knowledge activation
-idempotent knowledge instances
-hard DEPENDS_ON propagation
-SUPPORTS reassessment obligations
-prospective final-test blocking
-state-derived action motivators
-blocking/repair priority
-phase-transition gates
-dependency-aware reopening
-append-only state history
-```
+Two controller edge cases were corrected before any real P0 model call: same-turn activation cannot retroactively require a newly created knowledge ID, and already-open feature/generalization concerns become repair-priority after material invalidation.
 
-Two implementation edge cases were corrected before any real P0 model call:
+P0 retains the same external command set as B0/B1. P0-only state and architecture diagnostics are excluded from the primary blinded semantic score.
 
-```text
-same-turn activation does not retroactively require citing a just-created knowledge ID;
-already-open feature/generalization concerns are promoted to repair priority after material invalidation.
-```
+## Deterministic P0 validation
 
-P0 retains the same external command interface as B0/B1 and the same underlying model/provider semantics. Its primary blinded semantic score excludes P0-only internal state and architecture diagnostics.
-
-## Deterministic P0 validation complete
-
-The local full test suite passed after the corrected P0 implementation was pulled:
+The corrected implementation passed:
 
 ```text
 46 passed in 23.18s
 ```
 
-Composition:
+This validates internal deterministic consistency only, not behavioral superiority.
+
+## First real P0 development trajectory
+
+Run:
 
 ```text
-34 pre-P0 tests
-9 P0 core tests
-3 P0 controller tests
+dev-p0-01
 ```
 
-This validates the implementation candidate deterministically. It does not establish behavioral superiority.
-
-The green suite covers the new P0 machinery together with the unchanged pre-existing benchmark/runtime/provider/evaluator tests.
-
-## First real P0 development run
-
-The first paid P0 trajectory is now authorized on the development benchmark only:
+Terminal result:
 
 ```text
-run_id: dev-p0-01
-bundle: generated/development
-condition: P0
-model: gpt-5.6-terra
-reasoning effort: high
-successful-call ceiling: 24
-observed-token ceiling: 250,000
-Python-attempt ceiling: 12
-per-call output ceiling: 30,000
-additional generation retries: 2
+Completed: False
+Completed within budget: False
+Budget exhausted: True
+Successful model calls: 10
+Generation attempts: 10
+Generation failures: 0
+Total observed tokens: 250,279
+Python execution attempts: 2
+Behavioral evaluation eligible: True
+Critical deterministic assertions passed: False
 ```
 
-Purpose:
+Immediate facts:
 
 ```text
-verify real-model P0 schema use
-observe state-patch coherence over a full trajectory
-observe knowledge activation timing
-check for controller deadlock or excessive friction
-observe Phase 2 dependency repair
-check resource-envelope viability
-confirm the common semantic normalizer can judge the resulting external behavior
+all provider generations completed successfully;
+this is not an infrastructure/provider failure;
+the run crossed the 250,000-token ceiling on call 10;
+it used only 10/24 successful-call slots and 2/12 Python-attempt slots;
+the trajectory therefore terminated because of token usage rather than call/Python ceilings;
+the run is behavior-evaluable under the registered rules.
 ```
 
-The development run is implementation calibration only. H1/H2 remain untouched.
+The crude average is about 25,028 observed tokens per successful call. This is a major development-calibration signal because the baseline trajectories completed with substantially lower total resource use.
 
-If a genuine P0 implementation defect is found during development calibration, it may be repaired provided the change stays inside the pre-specified P0 scope and does not use held-out treatment behavior.
+The failed critical deterministic result must not yet be interpreted as an independent methodological failure. Because the run did not complete, milestone-dependent assertions may fail mechanically. Exact assertion IDs and causes require raw-artifact inspection.
+
+## Investigation required before another P0 run
+
+Inspect the complete `dev-p0-01` artifacts:
+
+```text
+summary.json
+deterministic_evaluation.json
+conversation.json
+trace.jsonl
+milestones.json
+p0_state.json
+p0_state_history.json
+p0_knowledge_activations.json
+```
+
+Determine:
+
+```text
+project phase at termination;
+per-call token growth;
+state-object and relation growth;
+knowledge activation timing;
+whether state views or controller traffic are repeatedly serializing avoidable context;
+whether the LLM made useful project progress or encountered architecture friction;
+which deterministic critical assertions failed and why;
+whether any issue is a genuine implementation defect that may be repaired inside the frozen P0 scope.
+```
+
+Do not raise the frozen held-out resource envelope simply because P0 exceeded it. First determine whether P0 can represent the same preregistered semantics more efficiently without changing treatment capability.
 
 ## Registered continuation boundary
 
-The held-out thresholds remain unchanged. P0 must satisfy all integrity, cross-variant, completion, resource, and architecture-friction requirements and show material reliability improvement over B1.
+Held-out thresholds remain unchanged. P0 must satisfy integrity, cross-variant, completion, resource, and architecture-friction requirements and show material reliability improvement over B1.
 
 Material improvement remains either:
 
@@ -282,10 +280,11 @@ docs/checkpoints/031_initial_p0_implementation_candidate.md
 docs/checkpoints/032_p0_activation_order_correction_before_test.md
 docs/checkpoints/033_p0_open_feature_repair_priority_correction.md
 docs/checkpoints/034_p0_deterministic_validation_complete.md
+docs/checkpoints/035_first_real_p0_run_budget_exhaustion.md
 ```
 
 ## Current priority
 
-**Run the first real-model P0 development-calibration trajectory.**
+**Diagnose `dev-p0-01` from its complete raw trajectory before modifying P0 or running another real-model P0 trajectory.**
 
-Do not begin held-out H1/H2 execution until P0 development debugging is complete and the implementation is frozen for held-out use.
+H1/H2 remain untouched.
