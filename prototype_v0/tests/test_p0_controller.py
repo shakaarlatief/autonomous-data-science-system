@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import pytest
@@ -156,3 +157,108 @@ def test_open_feature_eligibility_question_becomes_repair_priority_after_invalid
     question = runner.state.objects[question_id]
     assert question.status == "OPEN"
     assert "priority:repair" in question.tags
+
+
+def test_action_can_resolve_the_pre_patch_motivator_that_generated_it(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-prepatch-motivator",
+        max_model_calls=1,
+    )
+    question = runner.state.create_object(
+        state_type="QUESTION",
+        status="OPEN",
+        scope="project",
+        content="Has the current blocking concern been resolved by existing evidence?",
+        tags=["priority:blocking"],
+    )
+
+    result, completed = runner._process_payload(
+        {
+            "rationale": "Existing evidence resolves the question; continue inspection.",
+            "state_patch": {
+                "creates": [],
+                "status_updates": [
+                    {
+                        "object_id": question.id,
+                        "new_status": "RESOLVED",
+                        "reason": "The required evidence was established on the prior turn.",
+                        "source_refs": ["prior_harness_result"],
+                    }
+                ],
+                "add_relations": [],
+                "remove_relations": [],
+            },
+            "motivator_ids": [question.id],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+
+    assert not completed
+    assert result["status"] == "ok"
+    assert runner.state.objects[question.id].status == "RESOLVED"
+    actions = [obj for obj in runner.state.objects.values() if obj.type == "ACTION"]
+    assert len(actions) == 1
+    assert actions[0].status == "EXECUTED"
+    assert actions[0].source_refs == [question.id]
+    assert not any(
+        event.event_type == "P0_STATE_CONTROL_ERROR"
+        for event in runner.workspace.events
+    )
+
+
+def test_model_state_view_excludes_audit_only_actions_and_closed_controls(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-compact-state-view",
+        max_model_calls=1,
+    )
+    active_fact = runner.state.create_object(
+        state_type="FACT",
+        status="ACTIVE",
+        scope="project",
+        content="A current semantic fact that must remain visible.",
+    )
+    resolved_question = runner.state.create_object(
+        state_type="QUESTION",
+        status="RESOLVED",
+        scope="project",
+        content="A closed question whose semantic answer should live elsewhere in state.",
+    )
+    action = runner.state.create_action(
+        command={
+            "type": "execute_python",
+            "input_artifacts": ["train.csv"],
+            "category": "INSPECTION",
+            "purpose": "Large historical action payload used only for audit.",
+            "code": "print('audit-only-marker')\n" * 500,
+        },
+        motivator_ids=["O-0001"],
+        status="EXECUTED",
+        rationale="Historical controller action.",
+    )
+
+    full_snapshot_ids = {obj["id"] for obj in runner.state.snapshot()["objects"]}
+    assert resolved_question.id in full_snapshot_ids
+    assert action.id in full_snapshot_ids
+
+    message = runner._state_view_message()
+    payload = json.loads(message.content.split("\n", 1)[1])
+    visible_objects = payload["state"]["objects"]
+    visible_ids = {obj["id"] for obj in visible_objects}
+
+    assert active_fact.id in visible_ids
+    assert "O-0001" in visible_ids
+    assert resolved_question.id not in visible_ids
+    assert action.id not in visible_ids
+    assert "audit-only-marker" not in message.content
+    assert all(
+        relation["source_id"] != action.id and relation["target_id"] != action.id
+        for relation in payload["state"]["relations"]
+    )
