@@ -415,3 +415,232 @@ def test_terminal_completion_call_above_token_ceiling_is_budget_exceeded(
         budget_events[0].blocked_reason
         == "total_token_budget_crossed_by_completed_terminal_call"
     )
+
+
+def test_persistent_client_ref_alias_resolves_in_later_patch(case_bundle: Path) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-persistent-alias",
+        max_model_calls=1,
+    )
+
+    first, _ = runner._process_payload(
+        {
+            "rationale": "Create a fact with a model-side alias.",
+            "state_patch": {
+                "creates": [
+                    {
+                        "client_ref": "F_alias",
+                        "type": "FACT",
+                        "status": "ACTIVE",
+                        "scope": "project",
+                        "content": "A durable fact referenced on a later turn.",
+                        "source_refs": ["evidence"],
+                        "tags": [],
+                    }
+                ],
+                "status_updates": [],
+                "add_relations": [],
+                "remove_relations": [],
+            },
+            "motivator_ids": ["O-0001"],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+    assert first["status"] == "ok"
+    fact_id = runner._client_ref_aliases["F_alias"]
+
+    second, _ = runner._process_payload(
+        {
+            "rationale": "Use the remembered fact alias in a later relation.",
+            "state_patch": {
+                "creates": [
+                    {
+                        "client_ref": "D_alias",
+                        "type": "DECISION",
+                        "status": "ACCEPTED",
+                        "scope": "project",
+                        "content": "A decision supported by the earlier fact.",
+                        "source_refs": ["evidence"],
+                        "tags": [],
+                    }
+                ],
+                "status_updates": [],
+                "add_relations": [
+                    {
+                        "source_ref": "F_alias",
+                        "relation": "SUPPORTS",
+                        "target_ref": "D_alias",
+                    }
+                ],
+                "remove_relations": [],
+            },
+            "motivator_ids": ["O-0001"],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+
+    assert second["status"] == "ok"
+    decision_id = runner._client_ref_aliases["D_alias"]
+    assert any(
+        edge.source_id == fact_id
+        and edge.relation == "SUPPORTS"
+        and edge.target_id == decision_id
+        for edge in runner.state.relations
+    )
+    payload = json.loads(runner._state_view_message().content.split("\n", 1)[1])
+    assert payload["client_ref_aliases"]["F_alias"] == fact_id
+    assert payload["client_ref_aliases"]["D_alias"] == decision_id
+
+
+def test_same_patch_motivator_is_supplemental_when_current_motivator_exists(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-supplemental-local-motivator",
+        max_model_calls=1,
+    )
+
+    result, _ = runner._process_payload(
+        {
+            "rationale": "Record a new question while continuing the existing deliverable.",
+            "state_patch": {
+                "creates": [
+                    {
+                        "client_ref": "Q_local",
+                        "type": "QUESTION",
+                        "status": "OPEN",
+                        "scope": "project",
+                        "content": "A newly surfaced question for subsequent work.",
+                        "source_refs": ["current_observation"],
+                        "tags": [],
+                    }
+                ],
+                "status_updates": [],
+                "add_relations": [],
+                "remove_relations": [],
+            },
+            "motivator_ids": ["O-0001", "Q_local"],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+
+    assert result["status"] == "ok"
+    question_id = runner._client_ref_aliases["Q_local"]
+    actions = [obj for obj in runner.state.objects.values() if obj.type == "ACTION"]
+    assert actions[-1].status == "EXECUTED"
+    assert actions[-1].source_refs == ["O-0001", question_id]
+
+
+def test_same_patch_only_motivator_cannot_bypass_prepatch_frontier(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-no-retroactive-motivator",
+        max_model_calls=1,
+    )
+
+    result, _ = runner._process_payload(
+        {
+            "rationale": "Attempt to invent the only motivator in the same response.",
+            "state_patch": {
+                "creates": [
+                    {
+                        "client_ref": "Q_local",
+                        "type": "QUESTION",
+                        "status": "OPEN",
+                        "scope": "project",
+                        "content": "A same-turn question cannot justify its own action alone.",
+                        "source_refs": ["current_observation"],
+                        "tags": [],
+                    }
+                ],
+                "status_updates": [],
+                "add_relations": [],
+                "remove_relations": [],
+            },
+            "motivator_ids": ["Q_local"],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+
+    assert result["status"] == "error"
+    assert "Every P0 action must cite at least one current motivator ID" in result["error"]
+    assert not any(
+        obj.type == "QUESTION" and obj.content.startswith("A same-turn question")
+        for obj in runner.state.objects.values()
+    )
+
+
+def test_support_loss_to_obligation_does_not_create_open_repair_blocker(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-obligation-support-reassessment",
+        max_model_calls=1,
+    )
+    old_decision = runner.state.create_object(
+        state_type="DECISION",
+        status="ACCEPTED",
+        scope="project",
+        content="Old project decision supporting the deliverable.",
+    )
+    runner.state.add_relation(old_decision.id, "SUPPORTS", "O-0001")
+
+    result, _ = runner._process_payload(
+        {
+            "rationale": "Replace the old decision with current support for the deliverable.",
+            "state_patch": {
+                "creates": [
+                    {
+                        "client_ref": "replacement",
+                        "type": "DECISION",
+                        "status": "ACCEPTED",
+                        "scope": "project",
+                        "content": "Replacement project decision.",
+                        "source_refs": ["new_evidence"],
+                        "tags": [],
+                    }
+                ],
+                "status_updates": [
+                    {
+                        "object_id": old_decision.id,
+                        "new_status": "SUPERSEDED",
+                        "reason": "Replacement evidence supports a new decision.",
+                        "source_refs": ["new_evidence"],
+                    }
+                ],
+                "add_relations": [
+                    {
+                        "source_ref": "replacement",
+                        "relation": "SUPPORTS",
+                        "target_ref": "O-0001",
+                    }
+                ],
+                "remove_relations": [],
+            },
+            "motivator_ids": ["O-0001"],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+
+    assert result["status"] == "ok"
+    reassessments = [
+        obj
+        for obj in runner.state.objects.values()
+        if obj.type == "OBLIGATION"
+        and any(
+            tag.endswith(":O-0001") and tag.startswith("support_reassessment:")
+            for tag in obj.tags
+        )
+    ]
+    assert len(reassessments) == 1
+    assert reassessments[0].status == "SATISFIED"
+    assert reassessments[0].id not in runner.state.frontier()["all_motivator_ids"]
