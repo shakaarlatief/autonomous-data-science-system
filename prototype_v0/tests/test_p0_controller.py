@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 from ads_v0.casegen import CaseConfig, generate_case_bundle
-from ads_v0.model import ScriptedModel
+from ads_v0.model import ModelGeneration, ModelUsage, ScriptedModel
 from ads_v0.p0_controller import P0TreatmentRunner
 
 
@@ -39,6 +39,15 @@ def _activation_patch() -> dict:
                 "tags": ["repeated_entities"],
             },
         ],
+        "status_updates": [],
+        "add_relations": [],
+        "remove_relations": [],
+    }
+
+
+def _empty_patch() -> dict:
+    return {
+        "creates": [],
         "status_updates": [],
         "add_relations": [],
         "remove_relations": [],
@@ -258,7 +267,151 @@ def test_model_state_view_excludes_audit_only_actions_and_closed_controls(
     assert resolved_question.id not in visible_ids
     assert action.id not in visible_ids
     assert "audit-only-marker" not in message.content
+    assert "recent_changes" not in payload["state"]
+    assert all("created_step" not in obj for obj in visible_objects)
+    assert all("updated_step" not in obj for obj in visible_objects)
     assert all(
         relation["source_id"] != action.id and relation["target_id"] != action.id
         for relation in payload["state"]["relations"]
+    )
+
+
+def test_next_state_view_exposes_client_ref_to_canonical_id_handoff(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-client-ref-handoff",
+        max_model_calls=1,
+    )
+
+    result, completed = runner._process_payload(
+        {
+            "rationale": "Record one observed fact and continue.",
+            "state_patch": {
+                "creates": [
+                    {
+                        "client_ref": "observed_fact",
+                        "type": "FACT",
+                        "status": "ACTIVE",
+                        "scope": "project",
+                        "content": "An observed fact requiring a canonical state ID.",
+                        "source_refs": ["project_evidence"],
+                        "tags": [],
+                    }
+                ],
+                "status_updates": [],
+                "add_relations": [],
+                "remove_relations": [],
+            },
+            "motivator_ids": ["O-0001"],
+            "command": {"type": "list_artifacts"},
+        }
+    )
+
+    assert result["status"] == "ok"
+    assert not completed
+    message = runner._state_view_message()
+    payload = json.loads(message.content.split("\n", 1)[1])
+    mapping = payload["last_patch_client_ref_map"]
+    assert mapping.keys() == {"observed_fact"}
+    canonical_id = mapping["observed_fact"]
+    assert canonical_id in runner.state.objects
+    assert runner.state.objects[canonical_id].content.startswith("An observed fact")
+
+
+class _UsageScriptedModel:
+    def __init__(self, responses: list[dict], total_tokens: list[int]) -> None:
+        self.responses = list(responses)
+        self.total_tokens = list(total_tokens)
+        self.index = 0
+
+    def generate(self, messages):
+        payload = self.responses[self.index]
+        total = self.total_tokens[self.index]
+        self.index += 1
+        return ModelGeneration(
+            payload=payload,
+            model_name="usage-scripted-model",
+            usage=ModelUsage(
+                input_tokens=total,
+                output_tokens=0,
+                total_tokens=total,
+            ),
+        )
+
+
+def test_terminal_completion_call_above_token_ceiling_is_budget_exceeded(
+    case_bundle: Path,
+) -> None:
+    responses = [
+        {
+            "rationale": "Close provisional development.",
+            "state_patch": _empty_patch(),
+            "motivator_ids": ["O-0001"],
+            "command": {
+                "type": "phase_1_complete",
+                "report": {
+                    "summary": "Provisional position.",
+                    "selected_features": ["tenure_months"],
+                    "validation_approach": "Temporal development validation.",
+                    "development_evidence": "Development-only evidence.",
+                    "unresolved_issues": [],
+                },
+            },
+        },
+        {
+            "rationale": "Lock development before final evaluation.",
+            "state_patch": _empty_patch(),
+            "motivator_ids": ["O-0001"],
+            "command": {
+                "type": "final_model_locked",
+                "report": {
+                    "summary": "Locked model.",
+                    "selected_features": ["tenure_months"],
+                    "validation_approach": "Temporal development validation.",
+                    "development_evidence": "Development-only evidence.",
+                    "limitations": [],
+                },
+            },
+        },
+        {
+            "rationale": "Submit the terminal report.",
+            "state_patch": _empty_patch(),
+            "motivator_ids": ["O-0001"],
+            "command": {
+                "type": "submit_final_report",
+                "report": {
+                    "summary": "Project complete.",
+                    "final_test_evidence": "Terminal accounting test.",
+                    "claim_scope": "Accounting test only.",
+                    "limitations": [],
+                },
+            },
+        },
+    ]
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=_UsageScriptedModel(responses, [10, 10, 90]),
+        run_id="p0-terminal-budget-crossing",
+        max_model_calls=5,
+        max_total_tokens=100,
+    )
+
+    result = runner.run()
+
+    assert result.completed
+    assert result.total_tokens == 110
+    assert result.budget_exhausted
+    assert not result.completed_within_budget
+    budget_events = [
+        event
+        for event in result.workspace.events
+        if event.event_type == "RESOURCE_BUDGET_EXHAUSTED"
+    ]
+    assert len(budget_events) == 1
+    assert (
+        budget_events[0].blocked_reason
+        == "total_token_budget_crossed_by_completed_terminal_call"
     )
