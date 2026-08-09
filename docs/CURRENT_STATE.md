@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 41  
+**Checkpoint:** 42  
 **Date:** 2026-08-09  
-**Development stage:** Third real P0 development trajectory exhausted the frozen token envelope and failed the current critical deterministic set; raw diagnosis pending  
-**Implementation status:** All pre-P0 experimental controls remain frozen. The corrected P0 implementation passed 50/50 deterministic tests before `dev-p0-03`. The third real-model P0 development run used the unchanged 24-call / 250,000-token / 12-Python envelope, reached 14 successful model calls and 260,234 observed tokens, did not complete, and did not pass all current critical deterministic assertions. No held-out H1/H2 treatment run has occurred. Do not modify P0 or run another trajectory until the complete `dev-p0-03` artifacts are inspected.
+**Development stage:** `dev-p0-03` fully diagnosed; persistent alias handling, supplemental-motivator tolerance, and obligation-support reassessment semantics corrected; deterministic re-validation pending  
+**Implementation status:** All pre-P0 experimental controls remain frozen. The third real P0 development run materially improved context efficiency but again exhausted the 250,000-token envelope. Raw inspection showed that its critical failure was caused by failure to reach final lock, after three avoidable state-reference rejections and a redundant repair blocker created when an obsolete model decision stopped supporting the broad deliverable obligation. Generic controller/interface corrections are implemented and four regression tests were added. No held-out H1/H2 treatment run has occurred. The next step is local deterministic validation, expected at 54 tests.
 
 ## Primary purpose
 
@@ -103,7 +103,7 @@ Common treatment envelope:
 300 s provider timeout
 ```
 
-A call may begin only while cumulative observed usage is below 250,000. The completed crossing call remains part of the trajectory, marks the run budget-exceeded, and prevents any further call.
+A call may begin only while cumulative observed usage is below 250,000. The completed crossing call remains part of the trajectory, marks the run budget-exceeded, and prevents any further call. The resource envelope has not been increased in response to P0 development failures.
 
 Frozen held-out bundles:
 
@@ -176,14 +176,7 @@ Generation failures: 0
 Critical deterministic pass: False
 ```
 
-Reached early Phase 2. Raw diagnosis found two implementation defects:
-
-```text
-same-turn motivator closure was incorrectly rejected;
-audit-only ACTION history and closed controls were repeatedly serialized to the model.
-```
-
-Both were corrected and regression-tested.
+Reached early Phase 2. Raw diagnosis found same-turn motivator-closure rejection and repeated audit-state serialization. Both were corrected.
 
 ### `dev-p0-02`
 
@@ -197,63 +190,146 @@ Generation failures: 0
 Critical deterministic pass: True
 ```
 
-Reached legitimate final evaluation. It completed Phase 2 targeted repair, locked a six-feature eligible logistic model, and evaluated the protected test once. Only final state/evidence reconciliation and `submit_final_report` remained.
-
-Final test AUROC was approximately 0.66004. All deterministic assertions A0-A4 passed.
-
-Raw diagnosis found:
-
-```text
-missing temporary-client-ref -> canonical-state-ID handoff, causing one rejected final-lock turn;
-remaining audit timestamps/change-history overhead in the model-facing state view;
-a terminal budget-accounting edge case.
-```
-
-Corrections implemented:
-
-```text
-explicit last_patch_client_ref_map in the private next-turn state view;
-remove audit-only timestamps/change-history from repeated model state;
-terminal completion above token limit is correctly marked budget-exceeded.
-```
-
-The complete local suite then passed:
-
-```text
-50 passed in 12.76s
-```
+Reached legitimate protected final evaluation after strong targeted repair. Only final reconciliation/reporting remained. Raw diagnosis found one temporary/canonical-ID handoff failure, more removable audit metadata, and a terminal budget-accounting edge case. Corrections were validated with 50/50 tests.
 
 ### `dev-p0-03`
-
-Third real P0 development trajectory under the same frozen envelope:
 
 ```text
 Completed: False
 Completed within budget: False
 Budget exhausted: True
-Successful model calls: 14
+Calls: 14
 Generation attempts: 14
 Generation failures: 0
-Total observed tokens: 260,234
-Python execution attempts: 4
-Behavioral evaluation eligible: True
-Critical deterministic assertions passed: False
+Input tokens: 250,015
+Output tokens: 10,219
+Total tokens: 260,234
+Python attempts: 4
+Critical deterministic pass: False
 ```
 
-Terminal facts only are currently known. The run used more call slots than either prior P0 development run and crossed the token ceiling by 10,234 tokens on its final admitted call. The terminal summary does not identify the failed critical assertion or exact project phase.
+Exact position at termination:
 
-Do not interpret the regression from critical-pass in `dev-p0-02` to critical-fail in `dev-p0-03` until the raw trajectory is inspected. It may reflect stochastic model behavior, incomplete progression, state/controller friction, or another implementation defect.
+```text
+phase: PHASE_2_REVISED_DEVELOPMENT
+phase_1_report: present
+final_lock_report: absent
+final_report: absent
+```
+
+Deterministic assertions:
+
+```text
+A0 PASS
+A1 PASS
+A2 PASS
+A3 FAIL because no final lock existed
+A4 FAIL because final lock was absent, although legitimate Phase 2 development re-evaluation occurred
+```
+
+The run again performed strong substantive Phase 1 and Phase 2 analysis, including explicit inherited-preprocessing diagnosis, future temporal validation, authoritative feature-timing repair, invalidation of old development evidence, and fresh eligible-feature model comparison.
+
+## `dev-p0-03` context efficiency
+
+Per-call totals:
+
+```text
+3,009
+4,250
+5,885
+7,301
+9,879
+13,176
+15,475
+19,411
+22,427
+25,276
+27,753
+31,483
+35,618
+39,291
+```
+
+For the first twelve common positions, calls were approximately 13% to 40% cheaper than `dev-p0-02`, confirming that the second model-state compaction worked materially.
+
+Model-facing state views ranged from about 2.0k to 9.7k characters.
+
+## `dev-p0-03` reference-interface failures
+
+Three rejected calls were caused by state-reference handling rather than missing analytical work:
+
+```text
+call 3: same-patch Q2 was listed as an extra motivator although valid pre-patch motivators were also present
+call 6: earlier client ref F3 was reused instead of canonical F-0003
+call 13: earlier client ref D4 was reused instead of canonical D-0004
+```
+
+Those rejected calls consumed:
+
+```text
+5,885 + 13,176 + 35,618 = 54,679 tokens
+```
+
+Corrections now implemented:
+
+```text
+accepted client refs persist as controller-level aliases to canonical state IDs;
+later patch relations/status updates can use either canonical IDs or remembered aliases;
+the private state view exposes the small persistent alias map;
+a same-patch client ref may be a supplemental motivator when at least one valid pre-patch motivator already satisfies the frontier;
+a same-patch-only motivator still cannot retroactively manufacture action justification.
+```
+
+These are state-interface corrections, not new methodological knowledge.
+
+## `dev-p0-03` final-lock support-reassessment blocker
+
+On call 14 the corrected final-lock patch superseded old model decision D-0003 and created replacement current evidence/decision. Generic SUPPORTS-loss handling then created:
+
+```text
+O-0006: Reassess O-0001 because supporting object D-0003 is no longer current.
+priority:repair
+```
+
+Here O-0001 is the broad project deliverable obligation. Because O-0006 was created during the same patch, the model could not know its ID in advance and the final-lock gate blocked.
+
+This is a type-semantics mismatch. SUPPORTS represents non-exclusive evidential support. Facts/assumptions/evidence/claims/decisions can require support sufficiency reassessment. An OBLIGATION's force is instead represented directly by OPEN/SATISFIED/BLOCKED status. Losing a decision that supported the deliverable should not create a second repair obligation about whether the original deliverable still exists.
+
+The controller now closes support-loss reassessment objects whose target is an OBLIGATION before phase-gate evaluation. The audit trail retains their creation/closure. Real Phase 2 support-reassessment obligations targeting the obsolete model decision remain unchanged and must still be explicitly satisfied.
+
+## Deliberately unresolved state-graph issue
+
+The model authored a hard `DEPENDS_ON` edge from its Phase 2 timing question Q-0006 to old decision D-0003. Superseding D-0003 later reopened Q-0006 even though the question had already been answered. This did not cause the registered critical failure or a repair-priority block.
+
+No automatic dependency rewrite is introduced from this single observation. Relation quality remains behavior to monitor rather than something silently corrected in a development-case-specific way.
+
+## New regression coverage
+
+Four tests were added:
+
+```text
+persistent client-ref alias resolution across later patches;
+same-patch supplemental motivators with an existing valid pre-patch motivator;
+rejection of same-patch-only retroactive motivators;
+no open repair blocker when SUPPORTS loss targets an OBLIGATION.
+```
+
+Expected full suite:
+
+```text
+54 passed
+```
 
 ## What remains unchanged
 
 ```text
 B0/B1 prompts
 four privileged knowledge components
-P0 state vocabulary and dependency semantics
+P0 state object/relation vocabulary
+P0 hard-dependency semantics
 P0 prospective final-test gate
 model and reasoning effort
-previous-response continuation
-all-turn reasoning context
+provider continuation/all-turn context
 H1/H2 frozen bundles
 semantic rubric and judge
 held-out ordering
@@ -263,30 +339,32 @@ held-out ordering
 continuation/falsification thresholds
 ```
 
-All three P0 development trajectories remain part of the development record.
+All three failed P0 development trajectories remain part of the record.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/038_second_real_p0_run_budget_exhaustion_with_critical_integrity_pass.md
 docs/checkpoints/039_dev_p0_02_raw_diagnosis_id_handoff_and_further_context_compaction.md
 docs/checkpoints/040_p0_second_corrections_deterministically_validated.md
 docs/checkpoints/041_third_real_p0_run_budget_exhaustion_terminal_record.md
+docs/checkpoints/042_dev_p0_03_raw_diagnosis_and_reference_semantics_hardening.md
 ```
 
 ## Current priority
 
-**Inspect the complete `dev-p0-03` raw trajectory before modifying P0, running another development trajectory, or beginning H1/H2.**
+**Deterministically validate the generic `dev-p0-03` controller/interface corrections before any further paid P0 run.**
 
-Required artifacts:
+Immediate next action:
 
 ```text
-summary.json
-deterministic_evaluation.json
-conversation.json
-trace.jsonl
-milestones.json
-p0_state.json
-p0_state_history.json
-p0_knowledge_activations.json
+git pull origin main
+pytest
 ```
+
+Expected result:
+
+```text
+54 passed
+```
+
+Do not run `dev-p0-04` or begin held-out H1/H2 before this validation is green and the implementation boundary is reviewed.
