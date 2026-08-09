@@ -1,6 +1,6 @@
 """Operational P0 controller with prospective state and compact context semantics.
 
-The controller resolves three timing and representation details that matter for
+The controller resolves several timing and representation details that matter for
 real-model P0 execution.
 
 First, knowledge can become applicable because of facts created in the current
@@ -21,30 +21,43 @@ accepted patch.
 Third, the model-facing state view is a current-state interface, not the audit
 log. Full ACTION objects can contain complete Python programs or milestone
 reports, and retaining every historical ACTION in every subsequent state view
-causes quadratic context growth when Responses API continuation also preserves
-prior turns. The compact view therefore excludes ACTION history and closed
-workflow-control objects while retaining current facts, assumptions, evidence,
-claims, decisions, open concerns, artifacts, relevant relations, and a short
-filtered change tail. The complete state snapshot and append-only history remain
-available in P0 diagnostic artifacts for auditability.
+causes quadratic context growth when provider continuation also preserves prior
+turns. The current view therefore excludes ACTION history and closed workflow
+controls. It also omits audit timestamps and repeated change-history records
+that are already preserved in the full append-only diagnostic state. Current
+semantic content, provenance, status, tags, relations, active knowledge, and the
+runnable frontier remain available to the model.
+
+Fourth, temporary client references exist only inside one model patch. Once a
+patch is accepted, the controller exposes the exact temporary-to-canonical ID
+mapping in the next internal state view. Without that handoff, a model can
+reasonably remember its own temporary reference while the state store knows only
+the assigned canonical ID, creating avoidable rejected actions.
 
 A further repair subtlety is that a Phase 1 feature-eligibility question may
 still be OPEN when authoritative Phase 2 information invalidates a feature
 assumption. That is not a semantic no-op. The existing scoped question becomes
 a repair priority even if its status does not need to transition from RESOLVED
 to REOPENED.
+
+Finally, provider usage is known only after a call returns. If a terminal call
+completes the project but pushes cumulative usage above the registered ceiling,
+the project is complete but it is still a budget-exceeded run. The subclass
+normalizes that terminal accounting case after the common base loop returns.
 """
 
 from __future__ import annotations
 
 import copy
 import json
+from dataclasses import replace
 from typing import Any, Mapping, Sequence
 
 from .model import ModelMessage
 from .p0 import (
     P0KnowledgeActivator,
     P0StateStore,
+    P0TreatmentRunResult,
     P0TreatmentRunner as _BaseP0TreatmentRunner,
 )
 from .runtime import ActionCategory
@@ -66,14 +79,37 @@ _MODEL_VIEW_STATUSES: dict[str, set[str]] = {
 class P0TreatmentRunner(_BaseP0TreatmentRunner):
     """Final Version 0 P0 controller used by calibration and held-out execution."""
 
+    def run(self) -> P0TreatmentRunResult:
+        """Run P0 and enforce the registered token rule on terminal calls too.
+
+        The common base loop already stops after any nonterminal call that
+        crosses the token ceiling. A terminal ``submit_final_report`` response
+        returns immediately because the project is complete. Usage accounting
+        still has to classify that trajectory as budget-exceeded when the
+        terminal completed provider call moved cumulative usage above the hard
+        envelope.
+        """
+
+        result = super().run()
+        if result.total_tokens > self.max_total_tokens and not result.budget_exhausted:
+            self._record_budget_exhaustion(
+                "total_token_budget_crossed_by_completed_terminal_call"
+            )
+            return replace(
+                result,
+                completed_within_budget=False,
+                budget_exhausted=True,
+            )
+        return result
+
     def _state_view_message(self) -> ModelMessage:
         """Return the authoritative current-state view used for the next model turn.
 
-        The full state store remains append-only for diagnostics, but historical
-        ACTION objects and already-closed control concerns are intentionally not
-        repeated to the model. Their durable semantic consequences should be
-        represented by current FACT, EVIDENCE, CLAIM, DECISION, ASSUMPTION, or
-        reopened repair objects rather than by replaying prior commands.
+        The full state store remains append-only for diagnostics. The model view
+        intentionally contains only current semantic fields required for the
+        next reasoning step. Creation/update timestamps and recent change-history
+        entries remain available in ``p0_state.json`` and
+        ``p0_state_history.json`` and are not resent every turn.
         """
 
         visible_objects = [
@@ -83,16 +119,27 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
         ]
         visible_ids = {obj.id for obj in visible_objects}
 
+        object_payloads = [
+            {
+                "id": obj.id,
+                "type": obj.type,
+                "status": obj.status,
+                "scope": obj.scope,
+                "content": obj.content,
+                "source_refs": list(obj.source_refs),
+                "tags": list(obj.tags),
+            }
+            for obj in visible_objects
+        ]
         relations = [
-            edge.to_dict()
+            {
+                "source_id": edge.source_id,
+                "relation": edge.relation,
+                "target_id": edge.target_id,
+            }
             for edge in self.state.relations
             if edge.source_id in visible_ids and edge.target_id in visible_ids
         ]
-        recent_changes = [
-            change.to_dict()
-            for change in self.state.history
-            if change.object_id in visible_ids
-        ][-12:]
 
         active_knowledge = []
         for component in self.knowledge.active_component_payload():
@@ -100,17 +147,27 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
                 instance_id in visible_ids
                 for instance_id in component["instance_object_ids"]
             ):
-                active_knowledge.append(component)
+                active_knowledge.append(
+                    {
+                        "component_id": component["component_id"],
+                        "title": component["title"],
+                        "role": component["role"],
+                        "content": component["content"],
+                        "instance_object_ids": list(component["instance_object_ids"]),
+                    }
+                )
 
         payload = {
             "state": {
                 "step": self.state.step,
-                "objects": [obj.to_dict() for obj in visible_objects],
+                "objects": object_payloads,
                 "relations": relations,
                 "runnable_frontier": self.state.frontier(),
-                "recent_changes": recent_changes,
             },
             "active_knowledge": active_knowledge,
+            "last_patch_client_ref_map": dict(
+                getattr(self, "_last_patch_client_ref_map", {})
+            ),
             "resource_status": {
                 "successful_model_calls": self.model_calls,
                 "max_successful_model_calls": self.max_model_calls,
@@ -256,6 +313,7 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
 
         self.state = candidate_state
         self.knowledge = candidate_knowledge
+        self._last_patch_client_ref_map = dict(patch_result["client_ref_map"])
 
         if newly_activated_from_patch:
             self.workspace.trace.append(
