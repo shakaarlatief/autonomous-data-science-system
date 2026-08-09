@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 28  
+**Checkpoint:** 29  
 **Date:** 2026-08-09  
-**Development stage:** Held-out protocol preregistered; final pre-P0 controls pending  
-**Implementation status:** B0/B1 development calibration is complete and fully analyzed. The held-out evaluation contract, resource envelope, semantic rubric, run ordering, and continuation/falsification criteria are now registered independently of P0. P0 remains intentionally unimplemented until H1/H2 are generated and fingerprinted and the blinded semantic judge is calibrated on the six development baseline trajectories.
+**Development stage:** Exact held-out bundles frozen; blinded semantic judge implemented; judge calibration pending  
+**Implementation status:** B0/B1 development calibration is complete and fully analyzed. The held-out evaluation protocol was preregistered before P0. Exact H1/H2 bundles are now generated, self-tested, and cryptographically frozen. The condition-blinded two-pass semantic judge and calibration CLI are implemented. New judge tests still need local execution, followed by the six-run judge calibration. P0 remains intentionally unimplemented until that evaluator-control step is accepted.
 
 ## Primary purpose
 
@@ -13,7 +13,7 @@
 
 ## System-level vision
 
-Checkpoint 22 distinguishes:
+The long-term project distinguishes three abstraction levels:
 
 ```text
 1. Human-executed data-science project
@@ -21,9 +21,7 @@ Checkpoint 22 distinguishes:
 3. System-mediated data-science project
 ```
 
-The long-term goal is not merely better prompting. The intended system should operationalize reusable process intelligence that otherwise remains in human methodological memory and project navigation.
-
-The LLM is a reasoning component inside the intended system, not the system itself.
+The LLM is a reasoning component inside the intended system, not the system itself. The system should operationalize reusable process intelligence that would otherwise remain in human methodological memory and project navigation.
 
 ## Prototype V0 conditions
 
@@ -41,11 +39,11 @@ Same model/tools + typed project state + four structured knowledge components
 + dependency-aware repair + minimal state-derived action selection.
 ```
 
-B1 remains the primary architectural control because it isolates the value of static methodological prompting from the value of operational state/activation machinery.
+B1 remains the primary architectural control because it isolates better static prompting from operational state/activation machinery.
 
-## Development calibration complete
+## Baseline development calibration
 
-The six behavior-evaluable baseline trajectories are:
+Six behavior-evaluable runs completed under the fixed common development configuration:
 
 | Run | Condition | Calls | Total tokens | Python actions | Critical deterministic assertions |
 |---|---|---:|---:|---:|---|
@@ -56,111 +54,95 @@ The six behavior-evaluable baseline trajectories are:
 | `dev-b1-02` | B1 | 16 | 112,683 | 5 | Pass |
 | `dev-b1-03` | B1 | 17 | 143,014 | 6 | Pass |
 
-Every run completed with zero provider-generation failures and passed the current critical deterministic assertions.
+Every run had zero provider-generation failures.
 
-### Resource summary
-
-```text
-B0 mean calls: 17.33
-B0 mean tokens: 144,331
-B0 call range: 15-19
-B0 token range: 103,240-182,271
-
-B1 mean calls: 16.00
-B1 mean tokens: 124,434
-B1 call range: 15-17
-B1 token range: 112,683-143,014
-```
-
-The first matched pair made B1 appear more expensive, while the three-run mean reversed. This confirms that stochastic trajectory choice materially affects resource use.
-
-## Main baseline semantic findings
-
-Across all six runs, both baseline conditions strongly handled:
+Main semantic findings:
 
 ```text
-protected final-test discipline
-legitimate preprocessing in their own evaluation pipelines
-future-facing temporal validation
-non-mechanical treatment of repeated entities
-provisional use of the opaque field under initial documentation
-Phase 2 removal of the newly invalid feature
-fresh legitimate development evidence before lock
-one final protected evaluation
-bounded non-causal claims
+B0 and B1 both strongly protected final test.
+B0 and B1 both repaired the Phase 2 invalid feature in 3/3 runs.
+B0 and B1 both used legitimate preprocessing in their own models.
+B1 explicitly diagnosed inherited learned-preprocessing contamination in 2/3 runs.
+B0 explicitly diagnosed that inherited contamination in 0/3 runs.
+Row-unit semantics were operationally understood but not always durably stated.
+Static knowledge presence did not guarantee activation.
+Optional methodological coverage remained stochastic.
 ```
 
-The strongest repeatable B1 advantage was explicit diagnosis of inherited learned-preprocessing contamination:
+This gives P0 a meaningful falsification target while preventing credit for merely reproducing baseline ceiling behavior.
 
-```text
-B0: 0 / 3 explicit diagnoses
-B1: 2 / 3 explicit diagnoses
-```
+## Preregistered held-out protocol
 
-This is important because B1 had the relevant concept statically available yet still failed to activate it explicitly in one run. Calibration therefore provides a concrete empirical target for P0's knowledge-activation hypothesis.
-
-Row-unit semantics were operationally understood in all runs but not consistently captured as an explicit durable project conclusion.
-
-Both conditions showed a ceiling effect on Phase 2 repair:
-
-```text
-B0: 3 / 3 strong repair
-B1: 3 / 3 strong repair
-```
-
-P0 therefore cannot justify dependency machinery merely by reproducing that repair on this case family.
-
-Optional methodological coverage remained stochastic. Only `dev-b0-05` independently used customer-cluster bootstrap uncertainty; the other five runs used row-level resampling despite repeated customers.
-
-## Registered held-out protocol
-
-The authoritative protocol is:
+Authoritative files:
 
 ```text
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 prototype_v0/configs/held_out_protocol_v0_1.json
 ```
 
-Checkpoint 28 records the registration boundary.
+The protocol freezes, before P0:
 
-### Held-out variants
+```text
+held-out surface mechanisms and seed-selection rule
+5 runs per condition on H1 and H2
+30 total held-out treatment runs
+interleaved run order
+common treatment model
+resource envelope
+semantic rubric
+critical triggers
+condition-blinded two-pass judge procedure
+consensus/adjudication rules
+primary and diagnostic outcomes
+continuation thresholds
+strong falsification conditions
+```
 
-H1:
+## Exact frozen held-out bundles
+
+The registered preparation code was executed after a clean pre-judge test run:
+
+```text
+29 passed in 10.06s
+```
+
+Both registered starting seeds passed all benchmark self-tests immediately.
+
+### H1
 
 ```text
 case_id: churn_v0_h1
-surface: held_out_h1
-seed search starts: 811
-customer field: member_key
+surface_variant: held_out_h1
+selected seed: 811
+entity field: member_key
 time field: scoring_period
 post-outcome field: lifecycle_flag
+file count: 9
+aggregate SHA-256: 7d3cdfe90f262b604ad637ebb0b07b35e2604c3feb5365d2e9648adf54b7b4c8
 ```
 
-H2:
+### H2
 
 ```text
 case_id: churn_v0_h2
-surface: held_out_h2
-seed search starts: 1601
-customer field: account_ref
+surface_variant: held_out_h2
+selected seed: 1601
+entity field: account_ref
 time field: observation_period
 post-outcome field: profile_code
+file count: 9
+aggregate SHA-256: 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-For each variant, the first seed at or above the registered start value that passes all deterministic benchmark self-tests is selected. Treatment performance cannot influence seed selection.
-
-### Held-out run count
+Committed aggregate identity record:
 
 ```text
-H1: 5 runs per condition
-H2: 5 runs per condition
-B0/B1/P0: 10 held-out runs each
-30 treatment runs total
+prototype_v0/configs/held_out_bundle_fingerprints_v0_1.json
 ```
 
-Condition order is pre-registered and interleaved across replicate blocks.
+Generated bundle files and file-level registry remain reproducible under the git-ignored `generated/held_out` boundary.
 
-### Common treatment resource envelope
+## Common held-out treatment resource envelope
 
 ```text
 maximum successful model calls: 24
@@ -172,13 +154,11 @@ Python timeout: 60 seconds
 provider request timeout: 300 seconds
 ```
 
-Every P0 LLM call, including state/repair reasoning, counts inside the same model-call and token envelope. Deterministic state operations do not create hidden reasoning budget.
+Every P0 LLM call, including state or repair reasoning, must fit inside the same call/token envelope. Deterministic state operations do not create hidden LLM budget.
 
-Wall-clock time is recorded but remains diagnostic rather than a hard failure criterion in V0.
+## Semantic evaluator
 
-## Registered semantic evaluator
-
-Ten condition-neutral semantic criteria are scored on an anchored 0/1/2 scale:
+Primary criteria:
 
 ```text
 S1 row-unit correction
@@ -190,10 +170,10 @@ S6 repair completeness
 S7 repair precision
 S8 claim validity
 S9 final validation rationale
-S10 final conclusions answer the project question
+S10 final conclusions answer project question
 ```
 
-Interpretation:
+Scale:
 
 ```text
 0 = materially wrong/absent/invalid
@@ -201,27 +181,73 @@ Interpretation:
 2 = explicit, correct, scoped, and methodologically strong
 ```
 
-Each behavior-evaluable run receives two fresh condition-blinded judge passes. Primary judge input excludes treatment condition labels, treatment prompts, and P0-only internal state. P0 internal state is diagnostic evidence, not automatic primary-score credit.
-
-Adjacent judge disagreement is averaged. A 0-versus-2 disagreement or disagreement on a semantic critical flag requires blinded manual adjudication.
-
-The targeted architecture score is the mean of:
+Semantic critical triggers:
 
 ```text
-S1 row-unit correction
-S2 validation/generalization
-S3 inherited preprocessing integrity
-S6 repair completeness
-S7 repair precision
+SC1 invalid final-evidence dependency
+SC2 unresolved blocking semantic contradiction
 ```
 
-A strong targeted pass requires all five consensus scores to equal 2.0.
+Targeted architecture score:
+
+```text
+mean(S1, S2, S3, S6, S7)
+```
+
+Strong targeted pass requires all five targeted consensus scores to equal 2.0.
+
+## Condition-blinded judge implementation
+
+Added:
+
+```text
+prototype_v0/src/ads_v0/semantic_judge.py
+prototype_v0/src/ads_v0/calibrate_semantic_judge.py
+prototype_v0/tests/test_semantic_judge.py
+```
+
+The primary judge packet contains only:
+
+```text
+hidden evaluator truth and acceptance contract
+common external treatment commands and rationales
+common HARNESS_RESULT tool outputs
+Phase 1 milestone report
+final-lock report
+final report
+```
+
+It excludes:
+
+```text
+condition label
+run identifier
+treatment system prompt
+provider metadata
+non-command architecture-internal traffic
+P0 typed state
+P0 knowledge-activation logs
+P0 dependency graph
+```
+
+Every external action/result receives a neutral evidence reference. The normalized packet is SHA-256 fingerprinted.
+
+Every run receives two fresh independent `gpt-5.6-terra` judge calls at high reasoning effort, without `previous_response_id` and without shared judge context.
+
+Consensus is mechanical:
+
+```text
+exact score agreement -> agreed score
+adjacent disagreement -> arithmetic mean
+0-versus-2 disagreement -> manual blinded adjudication
+SC1/SC2 disagreement -> manual blinded adjudication
+```
+
+Judge resource usage is logged separately and is not charged to treatment budgets.
 
 ## Registered continuation boundary
 
-P0 provides a continuation signal only if all safety, completion, robustness, and cost requirements hold and it shows a material reliability advantage over B1.
-
-Material reliability is pre-registered as either:
+P0 provides a continuation signal only if all integrity, completion, cross-variant robustness, architecture-friction, and resource requirements hold, plus either:
 
 ```text
 A. at least 2 fewer critical integrity failures than B1 across 10 held-out runs
@@ -232,36 +258,7 @@ B. at least +0.30 pooled targeted-architecture mean over B1
    AND at least 2 additional strong targeted-pass runs
 ```
 
-Additional requirements include:
-
-```text
-no more critical failures than B1 overall
-no critical architecture-induced false block/over-invalidation
-no >0.10 targeted-score deficit versus B1 on either H1 or H2
-at least 9/10 P0 completions within budget
-median tokens/calls/Python attempts each <=1.50 times B1
-at most one P0 budget-exhausted run
-architecture-induced noncritical friction in at most 1/10 P0 runs
-```
-
-Strong falsification includes P0 having more critical failures than B1, critical false blocking/over-invalidation, architecture friction in at least 2/10 runs, held-out-specific hard coding, or B1 matching/exceeding reliability while P0 is at least 25 percent more expensive in median calls or tokens.
-
-If neither continuation nor strong falsification thresholds are met, the result is classified as inconclusive/no demonstrated need for the architecture on this case family. The default response is not automatic architectural expansion.
-
-## Infrastructure-versus-behavior rule
-
-Terminal provider/infrastructure failure after registered retries is non-behavior-evaluable and may be replaced in the same replicate slot.
-
-Behavioral failures are not replaced, including:
-
-```text
-Python exceptions/timeouts
-poor methodology
-budget exhaustion
-semantic failure
-failure to finish
-critical integrity failure
-```
+If neither continuation nor strong falsification conditions are met, V0 is classified as inconclusive/no demonstrated need for the architecture on this case family.
 
 ## P0 remains intentionally unimplemented
 
@@ -279,7 +276,7 @@ OBLIGATION
 ACTION
 ```
 
-with relations:
+Relations remain:
 
 ```text
 DEPENDS_ON
@@ -289,36 +286,32 @@ ANSWERS
 GENERATED_BY
 ```
 
-and only the four pre-specified knowledge components.
+Only the four pre-specified knowledge components may be used in P0.
 
-## Relevant latest checkpoints/foundations
+## Latest checkpoints/foundations
 
 ```text
 docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
 docs/foundations/011_prototype_v0_technical_specification.md
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
-docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
 docs/checkpoints/027_full_six_run_baseline_calibration_analysis.md
 docs/checkpoints/028_preregistered_held_out_protocol.md
+docs/checkpoints/029_frozen_heldout_bundles_and_semantic_judge_infrastructure.md
 ```
 
 ## Current priority
 
-**Q-042 is substantively answered for B0/B1 calibration and resource/rubric registration.**
-
-The project is now at the final pre-P0 control boundary.
+The final pre-P0 control is now **semantic judge calibration**.
 
 ## Next step
 
-Before P0 implementation:
-
 ```text
-1. Generate and self-test H1 and H2 according to the registered first-passing-seed rule.
-2. Fingerprint the exact first-passing bundles and record their hashes.
-3. Implement the condition-neutral semantic trajectory normalizer and two-pass judge.
-4. Calibrate that judge on the six already observed B0/B1 development trajectories.
-5. Resolve only genuine evaluator ambiguity before P0 exists.
+1. Pull Checkpoint 29 evaluator code.
+2. Run the complete test suite, including the new semantic-judge tests.
+3. If green, run the two-pass judge calibration on all six development B0/B1 trajectories.
+4. Inspect judge agreement, critical-trigger disagreements, and correspondence with the already documented manual semantic calibration evidence.
+5. Resolve only genuine evaluator ambiguity while P0 still does not exist.
+6. Freeze the accepted judge calibration record.
+7. Begin P0 implementation.
 ```
-
-After those controls are frozen, P0 implementation can begin.
