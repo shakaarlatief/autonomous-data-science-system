@@ -20,19 +20,83 @@ activated blocking concern and can block the transition. For ordinary actions,
 the new concern becomes part of the next state view. This preserves prospective
 blocking without demanding that the model cite an object ID that did not yet
 exist.
+
+A second subtlety is that a Phase 1 feature-eligibility question may still be
+OPEN when authoritative Phase 2 information invalidates a feature assumption.
+That is not a semantic no-op. The existing scoped question must become a repair
+priority even if its status did not need to transition from RESOLVED to
+REOPENED. The controller therefore promotes the existing knowledge instance to
+`priority:repair` whenever a tagged dependency is invalidated.
 """
 
 from __future__ import annotations
 
 import copy
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
-from .p0 import P0TreatmentRunner as _BaseP0TreatmentRunner
+from .p0 import P0KnowledgeActivator, P0StateStore, P0TreatmentRunner as _BaseP0TreatmentRunner
 from .runtime import ActionCategory
 
 
 class P0TreatmentRunner(_BaseP0TreatmentRunner):
     """Final Version 0 P0 controller used by calibration and held-out execution."""
+
+    def _reopen_knowledge_after_patch(
+        self,
+        state: P0StateStore,
+        knowledge: P0KnowledgeActivator,
+        changed_ids: Sequence[str],
+    ) -> None:
+        for object_id in changed_ids:
+            obj = state.objects.get(object_id)
+            if obj is None or obj.status != "INVALIDATED":
+                continue
+
+            component_id: str | None = None
+            if "feature_eligibility" in obj.tags:
+                component_id = "K-INFO-003"
+            elif "validation_regime" in obj.tags:
+                component_id = "K-VAL-001"
+
+            if component_id is None:
+                continue
+
+            # If applicability already exists, keep the same scoped instance.
+            # Calling evaluate is idempotent and can instantiate the component
+            # here if its state pattern is already satisfied but it had not yet
+            # been materialized for some earlier reason.
+            knowledge.evaluate(state)
+            knowledge.reopen(
+                component_id,
+                state,
+                repair_priority=True,
+                reason=(
+                    "A previously accepted dependency covered by this knowledge "
+                    "component was invalidated by newer project evidence."
+                ),
+                source_ref=object_id,
+            )
+
+            activation = knowledge.activations.get((component_id, "project"))
+            if activation is None:
+                continue
+            for instance_id in activation.instance_object_ids:
+                instance = state.objects.get(instance_id)
+                if instance is None:
+                    continue
+                if (
+                    (instance.type == "QUESTION" and instance.status in {"OPEN", "REOPENED"})
+                    or (instance.type == "OBLIGATION" and instance.status == "OPEN")
+                ):
+                    state.add_tags(
+                        instance_id,
+                        ["priority:repair"],
+                        reason=(
+                            "An already-open scoped knowledge concern became a "
+                            "material repair obligation after dependency invalidation."
+                        ),
+                        trigger=component_id,
+                    )
 
     def _process_payload(self, payload: Mapping[str, Any]) -> tuple[dict[str, Any], bool]:
         rationale = str(payload.get("rationale", ""))
