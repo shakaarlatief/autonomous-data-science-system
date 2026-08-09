@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 33  
+**Checkpoint:** 34  
 **Date:** 2026-08-09  
-**Development stage:** Corrected initial P0 implementation candidate; deterministic validation pending  
-**Implementation status:** All pre-P0 experimental controls are frozen. The initial P0 implementation now includes typed state, the same four methodological knowledge components with state-triggered activation, dependency-aware reopening, support reassessment, runnable-frontier validation, prospective protected-test blocking, strict P0 Structured Outputs, development calibration tooling, corrected same-turn activation ordering, and repair-priority promotion for already-open feature/generalization concerns after material invalidation. No real-model P0 run has occurred yet.
+**Development stage:** P0 deterministic validation complete; first real-model P0 development run authorized  
+**Implementation status:** All pre-P0 experimental controls are frozen. The corrected initial P0 implementation passed the complete deterministic suite with 46/46 tests. No real-model P0 run has occurred yet. The next step is the first paid P0 development-calibration trajectory on the development case only.
 
 ## Primary purpose
 
@@ -135,7 +135,9 @@ B1 S3=2: 2 / 3
 
 No rubric, continuation threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component was changed after calibration.
 
-## P0 implementation files
+## Current P0 implementation
+
+Files:
 
 ```text
 prototype_v0/src/ads_v0/p0.py
@@ -147,9 +149,7 @@ prototype_v0/tests/test_p0.py
 prototype_v0/tests/test_p0_controller.py
 ```
 
-### Typed state
-
-Objects:
+Typed state objects:
 
 ```text
 ARTIFACT
@@ -173,11 +173,7 @@ ANSWERS
 GENERATED_BY
 ```
 
-State records canonical IDs, type-specific status, scope, proposition content, source references, semantic tags, creation/update steps, and append-only history.
-
-Hard `DEPENDS_ON` failure reopens or invalidates downstream hard dependents while unrelated state stays current. Loss of one `SUPPORTS` path creates a reassessment obligation instead of blindly invalidating its target.
-
-### Four and only four privileged knowledge components
+Exactly four privileged knowledge components:
 
 ```text
 K-INFO-001 Protected Final Evaluation
@@ -186,81 +182,82 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001 Generalization-Regime Question
 ```
 
-P0 does not receive the entire library as one static B1-style prompt block. Components instantiate scoped questions/obligations when current state makes them applicable. Activation is idempotent and existing instances can reopen.
-
-### Runnable frontier
-
-Every P0 command must cite a current motivator:
+The controller supports:
 
 ```text
-open/reopened question
-open obligation
-reopened decision
-project deliverable need
+state-triggered scoped knowledge activation
+idempotent knowledge instances
+hard DEPENDS_ON propagation
+SUPPORTS reassessment obligations
+prospective final-test blocking
+state-derived action motivators
+blocking/repair priority
+phase-transition gates
+dependency-aware reopening
+append-only state history
 ```
 
-Blocking and repair concerns receive priority. ACTION objects are controller-maintained and retain `GENERATED_BY` links to motivators.
-
-### Corrected activation ordering
-
-A newly applicable blocking knowledge instance may be created by facts in the current model patch. The controller must not require the same response to cite an ID that did not exist when it was generated.
-
-Operational order is now:
+Two implementation edge cases were corrected before any real P0 model call:
 
 ```text
-1. transactionally apply patch
-2. reopen existing affected knowledge instances
-3. validate motivators against the frontier visible when the model responded
-4. create ACTION object
-5. instantiate newly applicable knowledge
-6. execute common command
+same-turn activation does not retroactively require citing a just-created knowledge ID;
+already-open feature/generalization concerns are promoted to repair priority after material invalidation.
 ```
 
-Ordinary actions see the new concern on the next turn. Phase-transition actions can still be blocked before transition because newly activated blockers exist before dispatch.
+P0 retains the same external command interface as B0/B1 and the same underlying model/provider semantics. Its primary blinded semantic score excludes P0-only internal state and architecture diagnostics.
 
-### Repair-priority correction
+## Deterministic P0 validation complete
 
-If a feature-eligibility or validation-regime assumption is invalidated while its knowledge-derived question is already OPEN, that existing scoped question is now explicitly promoted to `priority:repair` rather than remaining an ordinary unresolved question. This lets final lock be blocked until material repair is resolved without creating duplicates.
-
-Both controller corrections were made before any real P0 model call or held-out run.
-
-### Common external behavior and provider semantics
-
-P0 retains the same external command set as B0/B1. Its response adds `state_patch` and `motivator_ids` around the same command. The blinded semantic normalizer ignores P0 state-view messages and patch metadata.
-
-`OpenAIP0ResponsesModel` subclasses the calibrated OpenAI adapter and keeps the same model, reasoning effort semantics, previous-response threading, all-turn context, disabled SDK retries, timeout, usage accounting, and duplicate-equal output normalization. Only the strict response schema changes.
-
-### P0 diagnostic outputs
-
-`calibrate_p0.py` writes the common run artifacts plus:
+The local full test suite passed after the corrected P0 implementation was pulled:
 
 ```text
-p0_state.json
-p0_state_history.json
-p0_knowledge_activations.json
+46 passed in 23.18s
 ```
 
-These are architecture diagnostics and are excluded from the primary blinded semantic score.
-
-## Deterministic validation pending
-
-The pre-P0 suite had 34 passing tests.
-
-New P0 tests:
+Composition:
 
 ```text
-9 in test_p0.py
-3 in test_p0_controller.py
-12 new tests total
+34 pre-P0 tests
+9 P0 core tests
+3 P0 controller tests
 ```
 
-Expected total if all pass:
+This validates the implementation candidate deterministically. It does not establish behavioral superiority.
+
+The green suite covers the new P0 machinery together with the unchanged pre-existing benchmark/runtime/provider/evaluator tests.
+
+## First real P0 development run
+
+The first paid P0 trajectory is now authorized on the development benchmark only:
 
 ```text
-46 passed
+run_id: dev-p0-01
+bundle: generated/development
+condition: P0
+model: gpt-5.6-terra
+reasoning effort: high
+successful-call ceiling: 24
+observed-token ceiling: 250,000
+Python-attempt ceiling: 12
+per-call output ceiling: 30,000
+additional generation retries: 2
 ```
 
-No paid P0 run should begin before this suite is green.
+Purpose:
+
+```text
+verify real-model P0 schema use
+observe state-patch coherence over a full trajectory
+observe knowledge activation timing
+check for controller deadlock or excessive friction
+observe Phase 2 dependency repair
+check resource-envelope viability
+confirm the common semantic normalizer can judge the resulting external behavior
+```
+
+The development run is implementation calibration only. H1/H2 remain untouched.
+
+If a genuine P0 implementation defect is found during development calibration, it may be repaired provided the change stays inside the pre-specified P0 scope and does not use held-out treatment behavior.
 
 ## Registered continuation boundary
 
@@ -284,17 +281,11 @@ docs/checkpoints/030_semantic_judge_calibration_and_p0_boundary.md
 docs/checkpoints/031_initial_p0_implementation_candidate.md
 docs/checkpoints/032_p0_activation_order_correction_before_test.md
 docs/checkpoints/033_p0_open_feature_repair_priority_correction.md
+docs/checkpoints/034_p0_deterministic_validation_complete.md
 ```
 
 ## Current priority
 
-**Validate the corrected P0 implementation deterministically before any paid P0 run.**
+**Run the first real-model P0 development-calibration trajectory.**
 
-Immediate next action:
-
-```text
-git pull origin main
-pytest
-```
-
-If all 46 tests pass, record that boundary and run the first real-model P0 development-calibration trajectory on the development case only. H1/H2 remain untouched until P0 development debugging is complete.
+Do not begin held-out H1/H2 execution until P0 development debugging is complete and the implementation is frozen for held-out use.
