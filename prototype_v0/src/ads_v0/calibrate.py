@@ -1,4 +1,4 @@
-"""CLI for running real-model B0/B1 Prototype V0 calibration trajectories.
+"""CLI for running real-model B0/B1 Prototype V0 trajectories.
 
 The command intentionally operates on an already generated and self-validated
 benchmark bundle. It does not generate or mutate benchmark truth while a model
@@ -8,13 +8,12 @@ The first supported real provider adapter is OpenAI Responses API, isolated
 behind the provider-neutral ``ModelClient`` protocol. Provider/model choice is
 experiment configuration rather than a production architecture decision.
 
-Development-calibration defaults are deliberately conservative enough to limit
-paid inference while still leaving substantially more room than the nine-turn
-clean scripted trajectory. Reasoning-model output budgets must also accommodate
-hidden reasoning tokens, not only visible JSON. The current 30,000-token ceiling
-therefore follows the first real calibration failure and exceeds the 25,000-token
-starting buffer recommended in current OpenAI reasoning guidance. These remain
-calibration defaults, not frozen held-out budgets.
+Development calibration historically used only a model-call ceiling. The runner
+now also supports explicit total-token and Python-attempt ceilings so held-out
+B0/B1 execution can use the exact same preregistered 24-call / 250,000-token /
+12-Python-attempt envelope as P0. The optional CLI defaults remain ``None`` for
+the two newly added limits so historical development commands stay reproducible;
+held-out orchestration must pass the frozen limits explicitly.
 """
 
 from __future__ import annotations
@@ -42,6 +41,8 @@ def run_openai_baseline(
     model_name: str,
     reasoning_effort: str,
     max_model_calls: int,
+    max_total_tokens: int | None,
+    max_python_execution_attempts: int | None,
     max_generation_retries: int,
     max_output_tokens: int,
 ) -> TreatmentRunResult:
@@ -63,6 +64,8 @@ def run_openai_baseline(
         condition=condition,
         run_id=run_id,
         max_model_calls=max_model_calls,
+        max_total_tokens=max_total_tokens,
+        max_python_execution_attempts=max_python_execution_attempts,
         max_generation_retries=max_generation_retries,
         trace_path=trace_path,
     )
@@ -75,6 +78,8 @@ def run_openai_baseline(
             "requested_model": model_name,
             "reasoning_effort": reasoning_effort,
             "max_model_calls": max_model_calls,
+            "max_total_tokens": max_total_tokens,
+            "max_python_execution_attempts": max_python_execution_attempts,
             "max_generation_retries": max_generation_retries,
             "max_output_tokens_per_call": max_output_tokens,
         },
@@ -97,6 +102,8 @@ def _write_run_artifacts(
         "condition": result.condition,
         "run_id": result.run_id,
         "completed": result.completed,
+        "completed_within_budget": result.completed_within_budget,
+        "budget_exhausted": result.budget_exhausted,
         "behavior_evaluable": behavior_evaluable,
         "run_config": run_config,
         "model_calls": result.model_calls,
@@ -106,6 +113,7 @@ def _write_run_artifacts(
         "input_tokens": result.input_tokens,
         "output_tokens": result.output_tokens,
         "total_tokens": result.total_tokens,
+        "python_execution_attempts": result.python_execution_attempts,
         "project_phase": result.workspace.phase.value,
         "deterministic_passed_all": (
             deterministic["passed_all_deterministic"] if behavior_evaluable else None
@@ -151,7 +159,7 @@ def _write_json(path: Path, payload: Any) -> None:
 
 def _parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Run a real-model Prototype V0 B0/B1 calibration trajectory."
+        description="Run a real-model Prototype V0 B0/B1 trajectory."
     )
     parser.add_argument("--bundle", type=Path, required=True)
     parser.add_argument("--condition", choices=["B0", "B1"], required=True)
@@ -162,7 +170,7 @@ def _parse_args() -> argparse.Namespace:
         "--model",
         type=str,
         default="gpt-5.6-terra",
-        help="Provisional calibration model. Provider choice is not architecture.",
+        help="Configured treatment model. Provider choice is not architecture.",
     )
     parser.add_argument(
         "--reasoning-effort",
@@ -173,7 +181,23 @@ def _parse_args() -> argparse.Namespace:
         "--max-model-calls",
         type=int,
         default=DEFAULT_MAX_MODEL_CALLS,
-        help="Development-calibration call ceiling; not a frozen held-out budget.",
+        help="Successful model-call ceiling.",
+    )
+    parser.add_argument(
+        "--max-total-tokens",
+        type=int,
+        default=None,
+        help=(
+            "Optional cumulative observed-token ceiling. Held-out V0 uses 250000."
+        ),
+    )
+    parser.add_argument(
+        "--max-python-execution-attempts",
+        type=int,
+        default=None,
+        help=(
+            "Optional Python execution-attempt ceiling. Held-out V0 uses 12."
+        ),
     )
     parser.add_argument(
         "--max-generation-retries",
@@ -209,16 +233,21 @@ def main() -> None:
         model_name=args.model,
         reasoning_effort=args.reasoning_effort,
         max_model_calls=args.max_model_calls,
+        max_total_tokens=args.max_total_tokens,
+        max_python_execution_attempts=args.max_python_execution_attempts,
         max_generation_retries=args.max_generation_retries,
         max_output_tokens=args.max_output_tokens,
     )
 
     print(f"Condition: {result.condition}")
     print(f"Completed: {result.completed}")
+    print(f"Completed within budget: {result.completed_within_budget}")
+    print(f"Budget exhausted: {result.budget_exhausted}")
     print(f"Successful model calls: {result.model_calls}")
     print(f"Generation attempts: {result.generation_attempts}")
     print(f"Generation failures: {result.generation_failures}")
     print(f"Total observed tokens: {result.total_tokens}")
+    print(f"Python execution attempts: {result.python_execution_attempts}")
 
     behavior_evaluable = result.terminal_generation_error is None
     print(f"Behavioral evaluation eligible: {behavior_evaluable}")
