@@ -2,18 +2,46 @@
 
 ## Checkpoint
 
-**Checkpoint:** 21  
+**Checkpoint:** 23  
 **Date:** 2026-08-09  
-**Development stage:** Real-model baseline calibration and matched B0/B1 comparison  
-**Implementation status:** One behavior-evaluable B0 trajectory and one matched B1 trajectory have now been fully inspected semantically. The common interface is viable as-is. Remaining development-calibration replicates should be completed before P0 implementation or held-out budget freezing.
+**Development stage:** Real-model baseline calibration and run-to-run variability measurement  
+**Implementation status:** Two behavior-evaluable B0 trajectories and one behavior-evaluable B1 trajectory have completed under the fixed common configuration. The first B0/B1 pair has been semantically compared. The second B0 run also completed but used materially more calls and tokens, confirming that multiple calibration replicates are necessary before freezing the held-out resource envelope. P0 remains intentionally unimplemented.
 
 ## Primary purpose
 
 > **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
 
-## Prototype V0 experimental question
+## System-level vision
 
-Prototype V0 asks whether operationalized semantic machinery materially improves reliability beyond a strong reasoner and excellent prompting.
+Checkpoint 22 makes an important abstraction explicit:
+
+```text
+1. Human-executed data-science project
+2. Human + interactive LLM project
+3. System-mediated data-science project
+```
+
+The long-term goal is not merely a better one-shot prompt or a better single LLM conversation. The system should progressively operationalize process navigation that otherwise remains in the human's head or must be reconstructed in every project conversation:
+
+```text
+reusable methodological knowledge
+project-state tracking
+questions / assumptions / claims / evidence
+context-sensitive investigation activation
+alternative generation and applicability reasoning
+prospective safeguards
+dependency-aware repair
+resource-aware prioritization
+persistent project memory
+selective human escalation
+cross-project reasoning reuse
+```
+
+The LLM is therefore a reasoning component inside the intended system, not the system itself.
+
+B0/B1 remain useful lower-level controls because they test how much of a specific methodological benefit can already be achieved by a strong reasoner and static prompting before system machinery is credited.
+
+## Prototype V0 experimental question
 
 ```text
 B0
@@ -29,11 +57,11 @@ Same model/tools + typed project state + four structured knowledge components
 + dependency-aware repair + minimal state-derived action selection.
 ```
 
-B1 remains the critical control. If B1 matches P0's reliability at materially lower complexity or cost, P0 should be simplified or rejected for this project scale.
+B1 is the critical control. If B1 matches P0's reliability at materially lower complexity or cost, P0 should be simplified or rejected for this project scale.
 
 ## Benchmark and common harness
 
-The first synthetic benchmark is a 24-month customer-month churn project with:
+The synthetic development benchmark is a 24-month customer-month churn project with:
 
 ```text
 train months 1-16
@@ -47,11 +75,11 @@ Phase 2 authoritative notice showing account_state_code is post-outcome/backfill
 protected final test
 ```
 
-The runtime provides phase-aware artifact visibility, metadata/value access, declared-input Python execution, condition-neutral tracing, Phase 1 / Phase 2 / final-evaluation transitions, milestone reports, and optional prospective final-test enforcement.
+The common runtime provides phase-aware artifact visibility, metadata/value access, declared-input Python execution, tracing, milestone transitions, final-model lock semantics, and resource accounting.
 
 The deterministic evaluator checks benchmark validity, premature test access, post-test development, final feature legitimacy, and Phase 2 re-evaluation after material feature invalidation.
 
-## Common development-calibration configuration
+## Fixed development-calibration configuration
 
 ```text
 model: gpt-5.6-terra
@@ -65,21 +93,17 @@ multi-turn previous_response_id continuation
 all-turn reasoning context
 ```
 
-These remain development-calibration settings, not frozen held-out budgets.
+Do not change these settings during the remaining baseline development replicates unless a genuine condition-neutral infrastructure failure makes continuation impossible.
 
 ## Calibration history
 
 ### Infrastructure diagnostics
 
-`dev-b0-01` exposed the original 10,000-token output ceiling and missing failed-response usage accounting. Checkpoint 16 corrected both condition-neutrally.
+`dev-b0-01` was not behavior-evaluable. It exposed the original 10,000-token output ceiling and missing incomplete-response usage accounting. Checkpoint 16 corrected both condition-neutrally.
 
-`dev-b0-02` exposed duplicate-equal structured message blocks whose SDK aggregate was not valid as one JSON document. Checkpoint 17 added conservative normalization while preserving ambiguity errors for distinct commands.
+`dev-b0-02` was not behavior-evaluable. It exposed duplicate-equal structured message blocks whose SDK aggregate was invalid as one JSON document. Checkpoint 17 added conservative duplicate-equal normalization while preserving ambiguity errors for distinct commands.
 
-Neither diagnostic is behavior-evaluable.
-
-### First behavior-evaluable B0
-
-`dev-b0-03`:
+### `dev-b0-03`: first behavior-evaluable B0
 
 ```text
 completed: true
@@ -92,11 +116,9 @@ total observed tokens: 103,240
 all deterministic assertions passed: true
 ```
 
-Checkpoint 19 records the semantic review.
+Semantic review found strong final-test discipline, temporal validation reasoning, precise Phase 2 feature invalidation/repair, and bounded claims. Main weaknesses were an implicit rather than explicit row-unit correction, failure to explicitly diagnose the inherited train+validation preprocessing contamination, and row-level bootstrap uncertainty that ignored repeated-customer dependence.
 
-### First behavior-evaluable B1
-
-`dev-b1-01`:
+### `dev-b1-01`: first behavior-evaluable B1
 
 ```text
 completed: true
@@ -109,138 +131,68 @@ total observed tokens: 117,606
 all deterministic assertions passed: true
 ```
 
-Checkpoint 21 records the matched semantic comparison.
-
-## First matched B0/B1 comparison
-
-| Measure | B0 `dev-b0-03` | B1 `dev-b1-01` |
-|---|---:|---:|
-| Completed | Yes | Yes |
-| Successful model calls | 15 | 15 |
-| Generation failures | 0 | 0 |
-| Deterministic assertions | All pass | All pass |
-| Input tokens | 96,525 | 109,884 |
-| Output tokens | 6,715 | 7,722 |
-| Reported reasoning tokens | 1,203 | 2,060 |
-| Total observed tokens | 103,240 | 117,606 |
-
-B1 used 14,366 more observed tokens, approximately 13.9 percent more than B0 in this first matched pair.
-
-Both conditions used the same number of successful model turns and twelve ordinary project actions. B0 used one table sample and four Python executions; B1 used no table sample and five Python executions.
-
-## Semantic findings from the first pair
-
-### Strong behavior shared by B0 and B1
-
-Both conditions:
+The first matched semantic comparison found that B1 improved explicit reasoning on the exact methodological concepts supplied statically:
 
 ```text
-protected final-test values during development
-used train-only learned preprocessing for valid evaluation
-used a chronological future-facing validation interpretation
-did not mechanically require unseen-entity splitting because IDs repeat
-provisionally retained account_state_code while initial documentation supported availability
-removed account_state_code immediately after the authoritative Phase 2 notice
-re-established valid development evidence without the field
-locked development choices before final-test access
-performed one protected final evaluation
-made no post-test development changes
-made bounded non-causal claims
-avoided inventing an intervention threshold without utility/capacity information
+explicit diagnosis of inherited learned-preprocessing contamination
+explicit customer-month observation-unit statement
+more explicit deployment/generalization-regime reasoning
+known-versus-new customer subgroup analysis
 ```
 
-The final legitimate feature set was the same in both runs. Final protected-test AUROC was effectively identical at about 0.660.
+B0 already matched B1 on the central critical-integrity outcomes, especially protected-test discipline and Phase 2 repair. Final protected-test AUROC was effectively identical at about 0.660.
 
-### Clear B1 improvement: learned-transformation contamination
+Both conditions shared the optional uncertainty weakness: row-level bootstrap resampling did not account for repeated-customer dependence.
 
-B0 read the inherited baseline and independently used valid train-only preprocessing, but never explicitly stated that the inherited validation estimate was contaminated because preprocessing was fit using train+validation.
+B1 used approximately 13.9 percent more total observed tokens than B0 in the first matched pair.
 
-B1 explicitly diagnosed this immediately:
+### `dev-b0-04`: second behavior-evaluable B0
 
 ```text
-The inherited baseline leaks validation covariate information through preprocessing.
+completed: true
+successful model calls: 18
+generation attempts: 18
+generation failures: 0
+total observed tokens: 147,482
+behavior_evaluable: true
+critical deterministic assertions passed: true
 ```
 
-Its Phase 1 report also stated that the inherited baseline improperly fit preprocessing on validation and would not be used.
-
-This is the clearest observed benefit from the static Learned Transformation Evaluation Boundary concept.
-
-### B1 improvement: row unit and deployment regime
-
-B0 operationally understood the repeated customer-month structure but left the durable observation-unit correction implicit.
-
-B1 explicitly stated in its Phase 1 report:
+Compared with `dev-b0-03`, the second B0 replicate used:
 
 ```text
-Rows are unique monthly customer snapshots.
++3 successful model calls
++44,242 total observed tokens
+approximately +42.9% total token usage
 ```
 
-B1 also quantified the 80.2 percent validation-customer overlap with train and correctly interpreted the deployment regime as future monthly scoring with both continuing and new customers.
+The 20-call ceiling remained sufficient but only two calls were unused, compared with five in the first B0 run.
 
-After Phase 2 it additionally reported development performance for seen versus new customers:
+This is important calibration evidence: resource demand varies substantially even within the same condition, benchmark, model, and fixed settings. One trajectory is therefore not enough to characterize the common budget.
+
+No provider/runtime defect or deterministic critical failure is indicated by the terminal summary. Full semantic interpretation of `dev-b0-04` remains pending.
+
+## First-pair semantic conclusions
+
+The first B0/B1 pair supports only preliminary development conclusions:
 
 ```text
-seen in train: AUROC approximately 0.693, n=4,587
-new to train: AUROC approximately 0.656, n=709
+Both are strong viable baselines.
+Static knowledge can improve explicit reasoning on targeted concerns.
+B0 already performs strongly on critical-integrity mechanics.
+B1's observed benefit was mainly semantic/process quality, not predictive accuracy.
+The observed B1 benefit came with higher token cost.
+Neither condition solved every methodological issue.
+One matched pair is insufficient to estimate stable treatment effects.
 ```
-
-This is a concrete value-add aligned with the supplied Generalization-Regime Reasoning concept.
-
-### Prediction-time feature eligibility before Phase 2
-
-No clear B1 advantage appeared before the timing notice.
-
-Both conditions correctly retained `account_state_code` because the strongest visible timing evidence said it was available during monthly scoring.
-
-B0 actually expressed a more specific provisional concern that its upstream production timing should be verified before deployment. B1 treated the documentation as sufficient provisional evidence and left Phase 2 review as a general unresolved issue.
-
-Both behaviors remain acceptable for the benchmark.
-
-### Phase 2 repair
-
-Both repairs were strong and precise.
-
-B0 explicitly retired the earlier feature-dependent validation result.
-
-B1 re-ran expanding temporal model selection without the field and then separately evaluated the selected frozen pipeline on the chronological development holdout before locking. This creates somewhat cleaner observed separation between model-family selection and final development evidence than B0's trajectory, although one paired run cannot establish that this is a stable treatment effect.
-
-## Shared methodological weakness
-
-Both conditions introduced uncertainty intervals that did not account for repeated-customer dependence.
-
-B0 used ordinary row-level bootstrap resampling.
-
-B1 used outcome-stratified row-level bootstrap resampling. Stratification preserves event prevalence but still resamples customer-month rows as if they were independent units.
-
-This weakness does not invalidate point metrics, model selection, final-test discipline, or Phase 2 repair. It weakens nominal bootstrap interval interpretation.
-
-The issue is useful calibration evidence but must not be retroactively inserted as a new privileged B1/P0 knowledge component in V0.
-
-## Resource interpretation
-
-B1's additional static prompt adds direct context overhead, but the full +14,366-token difference cannot be attributed to prompt length alone.
-
-B1 also:
-
-```text
-used more reported reasoning tokens
-executed an additional Python development analysis
-separated train-fold model selection from chronological validation assessment
-quantified known-versus-new customer performance
-produced a longer accumulated interaction history
-```
-
-The first pair therefore suggests a genuine cost-quality trade-off rather than pure prompt overhead.
-
-B1's observed quality gains are concentrated in the concerns explicitly supplied to it, especially learned-preprocessing leakage and generalization-regime reasoning.
 
 ## Common-interface decision
 
-No new provider/runtime defect was found in `dev-b1-01`.
+No new shared provider/runtime defect has been identified since Checkpoint 17.
 
-Do not change the command protocol, milestone schema, model, reasoning effort, or budget based on this first pair.
+Do not change the command protocol, milestone schema, benchmark, prompts, model, reasoning effort, or resource ceilings during the remaining baseline development replicates.
 
-The common interface should remain fixed during the remaining development-calibration replicates unless a genuine condition-neutral infrastructure failure makes continuation impossible.
+The observed row-unit reporting omission and repeated-customer bootstrap weakness must not be converted into post-hoc privileged B1/P0 prompt knowledge during V0.
 
 ## Automated validation
 
@@ -250,28 +202,24 @@ The latest code-affecting calibration repair remains CI-validated with:
 25 passed in 8.30s
 ```
 
-No code was changed during Checkpoints 18-21 empirical review.
+No code has changed during the empirical-review checkpoints since that repair.
 
-Historical implementation/calibration checkpoints now include:
+## Relevant checkpoints
 
 ```text
-docs/checkpoints/012_benchmark_generator_and_self_validation.md
-docs/checkpoints/013_instrumented_workspace_and_deterministic_evaluator.md
-docs/checkpoints/014_provider_neutral_baseline_runners.md
-docs/checkpoints/015_real_model_calibration_infrastructure.md
 docs/checkpoints/016_first_real_model_calibration_output_budget.md
 docs/checkpoints/017_duplicate_structured_output_normalization.md
 docs/checkpoints/018_first_behavior_evaluable_b0_run.md
 docs/checkpoints/019_first_b0_semantic_trajectory_review.md
 docs/checkpoints/020_first_behavior_evaluable_b1_run.md
 docs/checkpoints/021_first_matched_b0_b1_semantic_comparison.md
+docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
+docs/checkpoints/023_second_behavior_evaluable_b0_calibration_run.md
 ```
 
 ## P0 remains intentionally unimplemented
 
-The experiment still requires the pre-specified baseline development calibration before P0 is built.
-
-The planned minimal P0 state remains:
+Planned minimal P0 state remains:
 
 ```text
 ARTIFACT
@@ -297,27 +245,27 @@ GENERATED_BY
 
 and only the four pre-specified knowledge components.
 
+The experiment still requires three behavior-evaluable development trajectories per baseline condition before the held-out evaluator/resource protocol is frozen and P0 is implemented.
+
 ## Current priority
 
-**Q-042 remains highest priority.**
+**Q-042 remains highest priority:** characterize real B0/B1 behavior and resource variability well enough to freeze a fair common protocol independently of P0.
 
-The first matched pair suggests that static knowledge improves some targeted semantic behaviors while B0 already performs strongly on the central critical-integrity mechanics. One pair is insufficient to estimate stable treatment differences or freeze the held-out protocol.
+Current behavior-evaluable replicate counts:
 
-Foundation 011 pre-specified three development-calibration runs per condition.
+```text
+B0: 2 / 3
+B1: 1 / 3
+```
 
 ## Next step
 
-Complete the remaining four behavior-evaluable development-calibration trajectories with the common interface unchanged.
-
-Use alternating order to reduce simple ordering bias:
+Continue the fixed alternating development-calibration order:
 
 ```text
-dev-b0-04
-dev-b1-02
-dev-b1-03
-dev-b0-05
+next: dev-b1-02
+then: dev-b1-03
+then: dev-b0-05
 ```
 
-All four use the same model, reasoning effort, 20-call ceiling, two-retry allowance, and 30,000-token per-call ceiling.
-
-After three behavior-evaluable runs per condition exist, compare run-to-run variance, semantic criteria, repair precision, critical outcomes, optional methodological errors, action counts, and token distributions. Then freeze the held-out evaluator/resource protocol and only then implement P0.
+After three behavior-evaluable runs per condition exist, compare run-to-run variance, deterministic outcomes, semantic criteria, repair precision, optional methodological errors, action counts, and token distributions. Then freeze the held-out evaluator/resource protocol and only then implement P0.
