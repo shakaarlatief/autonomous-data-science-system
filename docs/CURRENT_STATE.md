@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 17  
-**Date:** 2026-08-08  
-**Development stage:** Experimental construction and real-model baseline calibration  
-**Implementation status:** Two provider-interface diagnostics have run before any behavior-evaluable B0 trajectory. Output-budget/accounting and duplicate-structured-output normalization defects have been repaired condition-neutrally and CI-validated. A fresh B0 run is next.
+**Checkpoint:** 18  
+**Date:** 2026-08-09  
+**Development stage:** Real-model baseline calibration and semantic trajectory review  
+**Implementation status:** The first behavior-evaluable B0 trajectory has completed successfully after two condition-neutral provider-interface repairs. Full semantic inspection of that trajectory is now the required next step before B1.
 
 ## Primary purpose
 
@@ -85,7 +85,7 @@ A3 final locked model excludes the established post-outcome feature
 A4 relied-upon invalid feature triggers Phase 2 development re-evaluation
 ```
 
-Semantic project-quality judgments remain for a later blinded evaluator.
+Semantic project-quality judgments remain separate from these deterministic checks.
 
 ## Implemented B0/B1 baselines
 
@@ -122,11 +122,11 @@ multi-turn previous_response_id continuation
 all-turn reasoning context
 ```
 
-These are development-calibration values, not frozen held-out budgets. They must be applied condition-neutrally across B0, B1, and future P0 comparisons.
+These remain development-calibration values, not frozen held-out budgets. They must be applied condition-neutrally across B0, B1, and future P0 comparisons.
 
 ## Real-model calibration record
 
-### `dev-b0-01`
+### `dev-b0-01`: output-budget diagnostic
 
 The first provider-backed B0 attempt used a 10,000-token per-call ceiling and returned:
 
@@ -137,142 +137,109 @@ successful model commands = 0
 behavior_evaluable = false
 ```
 
-This exposed two infrastructure issues:
+Checkpoint 16 raised the development-calibration ceiling condition-neutrally to 30,000 tokens, preserved failed-response usage/provider metadata, and separated infrastructure-aborted runs from behavioral scores.
 
-1. the 10,000-token ceiling was too restrictive for the first high-effort reasoning turn;
-2. the old adapter raised before preserving usage from an incomplete Responses API object.
+### `dev-b0-02`: duplicate structured-output diagnostic
 
-Checkpoint 16 corrected both. Incomplete responses now preserve observable usage/provider metadata, specific incomplete reasons are retained, infrastructure-aborted runs are separated from treatment-behavior scores, and the development-calibration ceiling was raised condition-neutrally to 30,000 tokens.
+The second attempt completed at the provider but returned two identical strict-JSON message outputs. The SDK aggregate concatenated them, causing the old adapter's single `json.loads(...)` call to fail.
 
-### `dev-b0-02`
-
-The second B0 attempt used the corrected 30,000-token ceiling. The provider response itself completed successfully:
+Observed provider usage was:
 
 ```text
-status = completed
-input tokens = 1107
+input tokens = 1,107
 output tokens = 130
 reasoning tokens = 41
-total tokens = 1237
-successful model commands accepted by old adapter = 0
+total tokens = 1,237
 behavior_evaluable = false
 ```
 
-The terminal adapter error was `invalid_json`.
+Checkpoint 17 added conservative normalization: duplicate-equal output blocks may collapse to one provider-neutral command, while distinct multiple commands remain an error.
 
-Retrieving the stored response by response ID showed why. The response contained two assistant message items, each holding the same independently valid strict-JSON command:
+### `dev-b0-03`: first behavior-evaluable B0 trajectory
 
-```json
-{
-  "rationale": "I need to identify the available documentation and data artifacts before assessing the task or modeling plan.",
-  "command": {
-    "type": "list_artifacts"
-  }
-}
-```
-
-The OpenAI Python SDK `Response.output_text` convenience property concatenates all message-level `output_text` blocks. The old adapter therefore saw conceptually:
+After both shared infrastructure repairs, the next B0 run completed:
 
 ```text
-{valid JSON object}{the same valid JSON object}
+Completed: True
+Successful model calls: 15
+Generation attempts: 15
+Generation failures: 0
+Total observed tokens: 103,240
+Behavioral evaluation eligible: True
+Critical deterministic assertions passed: True
 ```
 
-and `json.loads(...)` correctly rejected that aggregate as one JSON document.
+This is the first genuine provider-backed B0 trajectory eligible for methodological interpretation.
 
-This was a provider-normalization defect, not a B0 methodological failure. The model's actual proposed first action was valid, but the common adapter never admitted it to the treatment runtime.
-
-## Duplicate structured-output normalization
-
-The OpenAI adapter now uses a conservative condition-neutral normalization rule:
+Immediate operational implications are narrow but important:
 
 ```text
-extract non-empty message-level output_text blocks
-try the aggregate normally when it is valid JSON
-if aggregate parsing fails, parse blocks independently
-accept multiple blocks only when every block is valid JSON and all parsed payloads are equal
-collapse duplicate-equal blocks into one provider-neutral generation
-reject multiple distinct valid commands as ambiguous
-reject malformed or absent structured output
+the command/runtime interface can support a complete B0 trajectory
+the 20-call ceiling was sufficient in this run, with 5 calls unused
+the 30,000-token per-call ceiling did not prevent completion
+no provider-generation retry was needed
+the current critical deterministic integrity assertions all passed
 ```
 
-The adapter never arbitrarily chooses a first or last command when multiple distinct commands are present.
+The 103,240-token total is now a material budget observation. It must be decomposed and interpreted from the raw trace before a common protocol is frozen.
 
-Provider metadata now records:
+## What has not yet been established about B0
+
+The successful deterministic result does not establish the full quality of the trajectory.
+
+The raw artifacts still need semantic review for:
 
 ```text
-output_text_block_count
-distinct_output_text_block_count
-duplicate_identical_output_blocks_collapsed
-structured_output_source
+row-unit contradiction resolution
+validation and generalization-regime reasoning
+inherited preprocessing contamination recognition and handling
+Phase 1 feature-eligibility assumptions
+response to the Phase 2 authoritative timing notice
+repair completeness and precision
+final model lock discipline
+final-test use
+claim scope and limitations
+unnecessary or weak analyses
+command/tool efficiency
+token growth across turns
 ```
 
-An unsafe-to-normalize multi-command response is classified as `ambiguous_structured_output`.
-
-This normalization applies identically to B0, B1, and future P0.
-
-## Failed-generation resource accounting
-
-`ModelGenerationError` carries optional:
+The required raw artifacts are:
 
 ```text
-usage
-provider_metadata
+results/raw/dev-b0-03/trace.jsonl
+results/raw/dev-b0-03/summary.json
+results/raw/dev-b0-03/deterministic_evaluation.json
+results/raw/dev-b0-03/milestones.json
+results/raw/dev-b0-03/conversation.json
 ```
 
-The OpenAI adapter extracts usage before response-status validation and preserves, where reported:
+## Provider/runtime robustness now implemented
+
+The OpenAI adapter and common runner currently preserve:
 
 ```text
-input tokens
-output tokens
-total tokens
-reasoning tokens
-response ID
-response status
-max-output-token setting
+successful model calls
+generation attempts and failures
+observable input/output/total token usage
+reasoning-token metadata where available
+provider response IDs and status
+specific incomplete reasons
+duplicate structured-output normalization metadata
+terminal generation errors
 ```
 
-The common runner accumulates observable usage from failed generations as well as successful generations.
-
-The totals are explicitly **observable provider-reported usage**, not a claim about provider work that cannot be observed when a request fails before a normal response exists.
-
-## Failure classification and behavioral scoring
-
-Incomplete responses expose their specific reason, for example `max_output_tokens`, instead of only a generic `incomplete` status.
-
-Exhausting a fixed output ceiling is non-retryable for the same request configuration because immediately repeating the identical request would predictably spend more inference without changing the constraint.
-
-Infrastructure-aborted runs are separated from behavioral treatment failures:
-
-```text
-behavior_evaluable = false
-```
-
-when a terminal provider-generation error prevents the treatment from proceeding.
-
-The raw deterministic evaluator output remains persisted for diagnosis, but summary-level behavioral pass/fail is not reported for such runs.
+Infrastructure-aborted runs are marked `behavior_evaluable = false` rather than being misread as methodological failures.
 
 ## Automated validation
 
-After the Checkpoint 17 duplicate-output repair, GitHub Actions passes:
+After the Checkpoint 17 repair, GitHub Actions passes:
 
 ```text
 25 passed in 8.30s
 ```
 
-The suite now additionally verifies:
-
-```text
-incomplete OpenAI response usage preservation
-specific max_output_tokens failure classification
-reasoning-token metadata preservation
-30,000-token provider request ceiling
-failed-generation usage aggregation
-failed-generation trace accounting
-duplicate identical structured output blocks are safely collapsed
-multiple distinct structured commands are rejected as ambiguous
-```
-
-The same CI run regenerated and self-validated the benchmark with unchanged sanity metrics.
+The suite covers the benchmark/runtime/evaluator/baseline harness plus the real-provider adapter's current error accounting and duplicate-output normalization behavior. CI does not make paid API requests.
 
 Historical implementation/calibration checkpoints:
 
@@ -283,11 +250,12 @@ docs/checkpoints/014_provider_neutral_baseline_runners.md
 docs/checkpoints/015_real_model_calibration_infrastructure.md
 docs/checkpoints/016_first_real_model_calibration_output_budget.md
 docs/checkpoints/017_duplicate_structured_output_normalization.md
+docs/checkpoints/018_first_behavior_evaluable_b0_run.md
 ```
 
 ## P0 remains intentionally unimplemented
 
-The experimental protocol still requires genuine B0/B1 viability evidence before P0 is built.
+The experimental protocol still requires baseline calibration before P0 is built.
 
 Planned P0 state remains:
 
@@ -315,7 +283,7 @@ GENERATED_BY
 
 and only four initial structured knowledge components.
 
-Implementing P0 before real baseline calibration would weaken the falsification design by allowing the interface or resource budget to be tuned around the treatment.
+Implementing P0 before B0/B1 calibration is sufficiently understood would weaken the falsification design by allowing the treatment to influence the interface or resource budget.
 
 ## Explicit non-decisions
 
@@ -325,16 +293,9 @@ No production agent architecture, permanent state database, graph technology, ve
 
 **Q-042 remains the highest-priority question:** what do real B0/B1 development-calibration trajectories show, and what common protocol/budget should be frozen before P0?
 
-Calibration has now exposed and repaired two shared infrastructure assumptions before P0 exists:
+The project has now crossed the first genuine behavioral boundary: one B0 trajectory completed and is evaluable.
 
-```text
-1. reasoning-aware output budget and failed-response accounting
-2. multi-message structured-output normalization
-```
-
-Neither `dev-b0-01` nor `dev-b0-02` is behavior-evaluable. No genuine B0 methodological trajectory has yet been observed.
-
-The next evidence must establish actual B0 behavior under the corrected common interface before B1 is run.
+The immediate priority is not another model run. It is to inspect `dev-b0-03` in full and decide whether the completed trajectory reveals any shared interface defect or budget issue that should be resolved before B1.
 
 ## External execution requirement
 
@@ -354,10 +315,9 @@ docs/checkpoints/014_provider_neutral_baseline_runners.md
 docs/checkpoints/015_real_model_calibration_infrastructure.md
 docs/checkpoints/016_first_real_model_calibration_output_budget.md
 docs/checkpoints/017_duplicate_structured_output_normalization.md
+docs/checkpoints/018_first_behavior_evaluable_b0_run.md
 ```
 
 ## Next step
 
-Pull the corrected repository, rerun the local test suite, and execute a fresh B0 development-calibration trajectory using a new run ID such as `dev-b0-03` with the same 30,000-token, high-reasoning configuration.
-
-Do not run B1 until the corrected B0 trajectory is operationally viable and inspected.
+Inspect the complete raw `dev-b0-03` trajectory, including trace, milestones, deterministic evaluation, and conversation. Do not run B1 until that review determines whether the common interface is viable as-is or needs one more condition-neutral calibration repair.
