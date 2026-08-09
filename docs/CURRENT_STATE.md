@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 23  
+**Checkpoint:** 24  
 **Date:** 2026-08-09  
 **Development stage:** Real-model baseline calibration and run-to-run variability measurement  
-**Implementation status:** Two behavior-evaluable B0 trajectories and one behavior-evaluable B1 trajectory have completed under the fixed common configuration. The first B0/B1 pair has been semantically compared. The second B0 run also completed but used materially more calls and tokens, confirming that multiple calibration replicates are necessary before freezing the held-out resource envelope. P0 remains intentionally unimplemented.
+**Implementation status:** Two behavior-evaluable B0 trajectories and two behavior-evaluable B1 trajectories have completed under the fixed common configuration. The first matched pair has been semantically reviewed. All four completed baseline trajectories pass the current critical deterministic assertions. Two final development replicates remain before cross-run comparison, held-out protocol freezing, and P0 implementation.
 
 ## Primary purpose
 
@@ -37,7 +37,7 @@ selective human escalation
 cross-project reasoning reuse
 ```
 
-The LLM is therefore a reasoning component inside the intended system, not the system itself.
+The LLM is a reasoning component inside the intended system, not the system itself.
 
 B0/B1 remain useful lower-level controls because they test how much of a specific methodological benefit can already be achieved by a strong reasoner and static prompting before system machinery is credited.
 
@@ -158,19 +158,36 @@ behavior_evaluable: true
 critical deterministic assertions passed: true
 ```
 
-Compared with `dev-b0-03`, the second B0 replicate used:
+Compared with `dev-b0-03`, the second B0 replicate used three additional model calls and 44,242 more tokens, approximately 42.9 percent more total token usage. The 20-call ceiling remained sufficient but only two calls were unused.
+
+### `dev-b1-02`: second behavior-evaluable B1
 
 ```text
-+3 successful model calls
-+44,242 total observed tokens
-approximately +42.9% total token usage
+completed: true
+successful model calls: 16
+generation attempts: 16
+generation failures: 0
+total observed tokens: 112,683
+behavior_evaluable: true
+critical deterministic assertions passed: true
 ```
 
-The 20-call ceiling remained sufficient but only two calls were unused, compared with five in the first B0 run.
+Compared with `dev-b1-01`, the second B1 replicate used one additional successful model turn but 4,923 fewer observed tokens, approximately 4.2 percent less total usage.
 
-This is important calibration evidence: resource demand varies substantially even within the same condition, benchmark, model, and fixed settings. One trajectory is therefore not enough to characterize the common budget.
+This confirms that model-call count and total token usage need not move together. Per-turn output length, accumulated interaction history, and action selection can materially change total resource use.
 
-No provider/runtime defect or deterministic critical failure is indicated by the terminal summary. Full semantic interpretation of `dev-b0-04` remains pending.
+## Current operational baseline table
+
+| Run | Condition | Calls | Generation failures | Total observed tokens | Critical deterministic assertions |
+|---|---|---:|---:|---:|---|
+| `dev-b0-03` | B0 | 15 | 0 | 103,240 | Pass |
+| `dev-b0-04` | B0 | 18 | 0 | 147,482 | Pass |
+| `dev-b1-01` | B1 | 15 | 0 | 117,606 | Pass |
+| `dev-b1-02` | B1 | 16 | 0 | 112,683 | Pass |
+
+The first two B0 runs show much larger token variation than the first two B1 runs, but two trajectories per condition are insufficient to infer a stable variance difference.
+
+All four behavior-evaluable runs completed within the 20-call ceiling and all passed the current critical deterministic assertions.
 
 ## First-pair semantic conclusions
 
@@ -181,7 +198,7 @@ Both are strong viable baselines.
 Static knowledge can improve explicit reasoning on targeted concerns.
 B0 already performs strongly on critical-integrity mechanics.
 B1's observed benefit was mainly semantic/process quality, not predictive accuracy.
-The observed B1 benefit came with higher token cost.
+The observed B1 benefit came with higher token cost in the first pair.
 Neither condition solved every methodological issue.
 One matched pair is insufficient to estimate stable treatment effects.
 ```
@@ -215,6 +232,7 @@ docs/checkpoints/020_first_behavior_evaluable_b1_run.md
 docs/checkpoints/021_first_matched_b0_b1_semantic_comparison.md
 docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
 docs/checkpoints/023_second_behavior_evaluable_b0_calibration_run.md
+docs/checkpoints/024_second_behavior_evaluable_b1_calibration_run.md
 ```
 
 ## P0 remains intentionally unimplemented
@@ -255,7 +273,7 @@ Current behavior-evaluable replicate counts:
 
 ```text
 B0: 2 / 3
-B1: 1 / 3
+B1: 2 / 3
 ```
 
 ## Next step
@@ -263,9 +281,8 @@ B1: 1 / 3
 Continue the fixed alternating development-calibration order:
 
 ```text
-next: dev-b1-02
-then: dev-b1-03
+next: dev-b1-03
 then: dev-b0-05
 ```
 
-After three behavior-evaluable runs per condition exist, compare run-to-run variance, deterministic outcomes, semantic criteria, repair precision, optional methodological errors, action counts, and token distributions. Then freeze the held-out evaluator/resource protocol and only then implement P0.
+After those two runs complete, compare all six baseline trajectories for run-to-run variance, deterministic outcomes, semantic criteria, repair precision, optional methodological errors, action counts, and token distributions. Then freeze the held-out evaluator/resource protocol and only then implement P0.
