@@ -4,17 +4,19 @@ The controller resolves several timing and representation details that matter fo
 real-model P0 execution.
 
 First, knowledge can become applicable because of facts created in the current
-model patch. A newly instantiated blocking question cannot reasonably be cited
-as the motivator for the same model response because its canonical ID did not
-exist when that response was generated. The proposed action is therefore
-validated against the runnable frontier visible before the patch. Newly
-activated blockers still exist before command dispatch, so a phase transition
-can be stopped prospectively.
+model patch. A newly instantiated blocking question cannot reasonably be the
+only valid motivator for the same model response because its canonical ID did
+not exist when that response was generated. The proposed action is therefore
+validated against the runnable frontier visible before the patch. Newly created
+client references may be listed as supplemental motivators when at least one
+valid pre-patch motivator still satisfies the frontier. Newly activated blockers
+still exist before command dispatch, so a phase transition can be stopped
+prospectively.
 
 Second, a model response may legitimately resolve or satisfy the very question
 or obligation that motivated that response. Motivator validity must therefore
 be checked against the pre-patch state rather than after status updates have
-already closed the motivating object. ACTION audit records retain the original
+already closed the motivating object. ACTION audit records retain the resolved
 canonical motivator IDs even when those objects become resolved in the same
 accepted patch.
 
@@ -28,11 +30,22 @@ that are already preserved in the full append-only diagnostic state. Current
 semantic content, provenance, status, tags, relations, active knowledge, and the
 runnable frontier remain available to the model.
 
-Fourth, temporary client references exist only inside one model patch. Once a
-patch is accepted, the controller exposes the exact temporary-to-canonical ID
-mapping in the next internal state view. Without that handoff, a model can
-reasonably remember its own temporary reference while the state store knows only
-the assigned canonical ID, creating avoidable rejected actions.
+Fourth, model-created client references are an interface alias for controller-
+assigned canonical state IDs. The controller exposes the latest mapping and a
+small persistent alias map in the private state view, and it also resolves those
+aliases deterministically in later patches. This avoids forcing the reasoner to
+manually translate every remembered temporary label back to a canonical ID.
+Same-patch client references still resolve locally to the object created in that
+patch.
+
+Fifth, SUPPORTS is a non-exclusive evidential relation. Losing one support path
+can require reassessment of a fact, assumption, evidence item, claim, or
+decision, but an OBLIGATION is governed by its own lifecycle status rather than
+by evidential support sufficiency. If generic support-loss propagation creates a
+reassessment obligation whose target is itself an OBLIGATION, the controller
+closes that redundant secondary obligation before phase-gate evaluation. The
+full audit history still records that it was created and deterministically
+reconciled.
 
 A further repair subtlety is that a Phase 1 feature-eligibility question may
 still be OPEN when authoritative Phase 2 information invalidates a feature
@@ -168,6 +181,7 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
             "last_patch_client_ref_map": dict(
                 getattr(self, "_last_patch_client_ref_map", {})
             ),
+            "client_ref_aliases": dict(getattr(self, "_client_ref_aliases", {})),
             "resource_status": {
                 "successful_model_calls": self.model_calls,
                 "max_successful_model_calls": self.max_model_calls,
@@ -182,6 +196,134 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
             content="P0_STATE_VIEW\n"
             + json.dumps(payload, sort_keys=True, default=str),
         )
+
+    def _canonicalize_persistent_ref(
+        self,
+        ref: str,
+        *,
+        same_patch_client_refs: set[str],
+    ) -> str:
+        """Resolve an earlier model client-ref alias without shadowing local refs."""
+
+        if ref in same_patch_client_refs:
+            return ref
+        return str(getattr(self, "_client_ref_aliases", {}).get(ref, ref))
+
+    def _normalize_patch_references(
+        self,
+        patch: Mapping[str, Any],
+    ) -> tuple[dict[str, Any], set[str]]:
+        """Normalize persistent aliases in state-reference fields of one patch."""
+
+        normalized = copy.deepcopy(dict(patch))
+        creates = normalized.get("creates", [])
+        same_patch_client_refs = {
+            str(item.get("client_ref", ""))
+            for item in creates
+            if isinstance(item, Mapping) and str(item.get("client_ref", ""))
+        }
+
+        for item in normalized.get("status_updates", []):
+            if isinstance(item, dict):
+                ref = str(item.get("object_id", ""))
+                item["object_id"] = self._canonicalize_persistent_ref(
+                    ref,
+                    same_patch_client_refs=same_patch_client_refs,
+                )
+
+        for field_name in ("add_relations", "remove_relations"):
+            for item in normalized.get(field_name, []):
+                if not isinstance(item, dict):
+                    continue
+                for ref_field in ("source_ref", "target_ref"):
+                    ref = str(item.get(ref_field, ""))
+                    item[ref_field] = self._canonicalize_persistent_ref(
+                        ref,
+                        same_patch_client_refs=same_patch_client_refs,
+                    )
+
+        return normalized, same_patch_client_refs
+
+    def _resolve_action_motivators(
+        self,
+        requested: Sequence[str],
+        *,
+        same_patch_client_refs: set[str],
+        patch_client_map: Mapping[str, str],
+    ) -> tuple[list[str], list[str]]:
+        """Return pre-patch motivators for validation and final canonical IDs.
+
+        At least one motivator must exist in the pre-patch frontier. A client ref
+        created by the current patch can be supplemental, but it cannot create
+        the justification for an otherwise unmotivated action retroactively.
+        """
+
+        prepatch: list[str] = []
+        supplemental_local: list[str] = []
+        unknown: list[str] = []
+
+        for raw in requested:
+            ref = str(raw)
+            if ref in same_patch_client_refs:
+                supplemental_local.append(ref)
+                continue
+            canonical = self._canonicalize_persistent_ref(
+                ref,
+                same_patch_client_refs=same_patch_client_refs,
+            )
+            if canonical in self.state.objects:
+                prepatch.append(canonical)
+            else:
+                unknown.append(ref)
+
+        if unknown:
+            raise ValueError(
+                "Action cites unknown motivator IDs or aliases: " + ", ".join(unknown)
+            )
+
+        self.state.validate_motivators(list(dict.fromkeys(prepatch)))
+
+        final_ids = list(dict.fromkeys(prepatch))
+        for local_ref in supplemental_local:
+            canonical = patch_client_map.get(local_ref)
+            if canonical is not None and canonical not in final_ids:
+                final_ids.append(canonical)
+        return list(dict.fromkeys(prepatch)), final_ids
+
+    def _reconcile_obligation_support_reassessments(self, state: P0StateStore) -> None:
+        """Close redundant support-loss reassessments whose target is an obligation.
+
+        ``SUPPORTS`` is evidential. An obligation's current force is represented
+        by OPEN/SATISFIED/BLOCKED status, so losing one object that happened to
+        support the deliverable does not create a second repair obligation about
+        whether the original obligation still exists.
+        """
+
+        for obj in list(state.objects.values()):
+            if obj.type != "OBLIGATION" or obj.status != "OPEN":
+                continue
+            markers = [
+                tag for tag in obj.tags if tag.startswith("support_reassessment:")
+            ]
+            for marker in markers:
+                parts = marker.split(":", 2)
+                if len(parts) != 3:
+                    continue
+                target_id = parts[2]
+                target = state.objects.get(target_id)
+                if target is None or target.type != "OBLIGATION":
+                    continue
+                state.update_status(
+                    obj.id,
+                    "SATISFIED",
+                    reason=(
+                        "Support-loss reassessment is not applicable to an obligation "
+                        "target; obligation lifecycle is represented directly by status."
+                    ),
+                    trigger="controller_support_semantics",
+                    propagate=False,
+                )
+                break
 
     def _reopen_knowledge_after_patch(
         self,
@@ -203,10 +345,6 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
             if component_id is None:
                 continue
 
-            # If applicability already exists, keep the same scoped instance.
-            # Calling evaluate is idempotent and can instantiate the component
-            # here if its state pattern is already satisfied but it had not yet
-            # been materialized for some earlier reason.
             knowledge.evaluate(state)
             knowledge.reopen(
                 component_id,
@@ -262,22 +400,54 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
                 "motivator_ids must be a list of state IDs."
             ), False
 
-        canonical_motivators = [str(item) for item in motivators]
         candidate_state = copy.deepcopy(self.state)
         candidate_knowledge = copy.deepcopy(self.knowledge)
+        prepatch_motivators: list[str] = []
         try:
-            # The model generated this action from the frontier in the state view
-            # that preceded the response. Validate against exactly that frontier.
-            # A patch may then resolve the motivating question/obligation without
-            # retroactively making the action invalid.
-            self.state.validate_motivators(canonical_motivators)
+            normalized_patch, same_patch_client_refs = self._normalize_patch_references(
+                patch
+            )
 
-            patch_result = candidate_state.apply_model_patch(patch)
+            # Validate only motivators that existed in the state view that
+            # preceded this response. Same-patch client refs may be supplemental,
+            # but cannot retroactively satisfy the runnable-frontier requirement.
+            provisional_prepatch: list[str] = []
+            unknown_motivators: list[str] = []
+            supplemental_local: list[str] = []
+            for raw in motivators:
+                if raw in same_patch_client_refs:
+                    supplemental_local.append(raw)
+                    continue
+                canonical = self._canonicalize_persistent_ref(
+                    raw,
+                    same_patch_client_refs=same_patch_client_refs,
+                )
+                if canonical in self.state.objects:
+                    provisional_prepatch.append(canonical)
+                else:
+                    unknown_motivators.append(raw)
+            if unknown_motivators:
+                raise ValueError(
+                    "Action cites unknown motivator IDs or aliases: "
+                    + ", ".join(unknown_motivators)
+                )
+            prepatch_motivators = list(dict.fromkeys(provisional_prepatch))
+            self.state.validate_motivators(prepatch_motivators)
+
+            patch_result = candidate_state.apply_model_patch(normalized_patch)
             self._reopen_knowledge_after_patch(
                 candidate_state,
                 candidate_knowledge,
                 patch_result["changed_object_ids"],
             )
+            self._reconcile_obligation_support_reassessments(candidate_state)
+
+            canonical_motivators = list(prepatch_motivators)
+            for local_ref in supplemental_local:
+                canonical = patch_result["client_ref_map"].get(local_ref)
+                if canonical is not None and canonical not in canonical_motivators:
+                    canonical_motivators.append(canonical)
+
             action = candidate_state.create_action(
                 command=command,
                 motivator_ids=canonical_motivators,
@@ -289,7 +459,7 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
             blocked_action = self.state.create_action(
                 command=command,
                 motivator_ids=[
-                    item for item in canonical_motivators if item in self.state.objects
+                    item for item in prepatch_motivators if item in self.state.objects
                 ],
                 status="BLOCKED",
                 rationale=f"State/controller rejected proposal: {exc}",
@@ -314,6 +484,9 @@ class P0TreatmentRunner(_BaseP0TreatmentRunner):
         self.state = candidate_state
         self.knowledge = candidate_knowledge
         self._last_patch_client_ref_map = dict(patch_result["client_ref_map"])
+        aliases = dict(getattr(self, "_client_ref_aliases", {}))
+        aliases.update(patch_result["client_ref_map"])
+        self._client_ref_aliases = aliases
 
         if newly_activated_from_patch:
             self.workspace.trace.append(
