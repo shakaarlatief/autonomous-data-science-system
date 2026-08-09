@@ -104,3 +104,55 @@ def test_newly_activated_blocker_can_prevent_phase_transition(case_bundle: Path)
         if obj["type"] == "ACTION" and obj["status"] == "BLOCKED"
     ]
     assert len(blocked_actions) == 1
+
+
+def test_open_feature_eligibility_question_becomes_repair_priority_after_invalidation(
+    case_bundle: Path,
+) -> None:
+    runner = P0TreatmentRunner(
+        bundle_dir=case_bundle,
+        model=ScriptedModel([]),
+        run_id="p0-open-feature-repair",
+        max_model_calls=1,
+    )
+
+    train = runner.state.artifact_object("train.csv")
+    assert train is not None
+    runner.state.add_tags(
+        train.id,
+        ["metadata_inspected"],
+        reason="Schema inspected.",
+        trigger="train.csv",
+    )
+    runner.state.create_object(
+        state_type="FACT",
+        status="ACTIVE",
+        scope="project",
+        content="Prediction occurs at the beginning of the scoring period.",
+        tags=["prediction_moment"],
+    )
+    runner.knowledge.evaluate(runner.state)
+    activation = runner.knowledge.activations[("K-INFO-003", "project")]
+    question_id = activation.instance_object_ids[0]
+    assert runner.state.objects[question_id].status == "OPEN"
+    assert "priority:repair" not in runner.state.objects[question_id].tags
+
+    assumption = runner.state.create_object(
+        state_type="ASSUMPTION",
+        status="PROVISIONAL",
+        scope="project",
+        content="A candidate feature is available at prediction time.",
+        tags=["feature_eligibility"],
+    )
+    changed = runner.state.update_status(
+        assumption.id,
+        "INVALIDATED",
+        reason="Authoritative timing evidence invalidates the assumption.",
+        trigger="timing_notice",
+    )
+
+    runner._reopen_knowledge_after_patch(runner.state, runner.knowledge, changed)
+
+    question = runner.state.objects[question_id]
+    assert question.status == "OPEN"
+    assert "priority:repair" in question.tags
