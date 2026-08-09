@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 42  
+**Checkpoint:** 43  
 **Date:** 2026-08-09  
-**Development stage:** `dev-p0-03` fully diagnosed; persistent alias handling, supplemental-motivator tolerance, and obligation-support reassessment semantics corrected; deterministic re-validation pending  
-**Implementation status:** All pre-P0 experimental controls remain frozen. The third real P0 development run materially improved context efficiency but again exhausted the 250,000-token envelope. Raw inspection showed that its critical failure was caused by failure to reach final lock, after three avoidable state-reference rejections and a redundant repair blocker created when an obsolete model decision stopped supporting the broad deliverable obligation. Generic controller/interface corrections are implemented and four regression tests were added. No held-out H1/H2 treatment run has occurred. The next step is local deterministic validation, expected at 54 tests.
+**Development stage:** `dev-p0-03` controller/reference corrections deterministically validated; one final P0 development trajectory authorized before behavioral freeze  
+**Implementation status:** All pre-P0 experimental controls remain frozen. The generic P0 corrections discovered in `dev-p0-03` now pass the complete local suite at 54/54 tests. `dev-p0-04` is designated the final planned P0 behavioral development-calibration trajectory before held-out freeze. No held-out H1/H2 treatment run has occurred.
 
 ## Primary purpose
 
@@ -52,7 +52,7 @@ Same underlying model/tools + typed project state
 
 B1 remains the primary architectural control. P0 must demonstrate value from operationalization rather than from receiving better methodological knowledge.
 
-## Baseline calibration
+## Baseline development calibration
 
 All six B0/B1 development trajectories completed and passed critical deterministic assertions.
 
@@ -64,7 +64,7 @@ B1 calls: 15, 16, 17
 B1 mean tokens: 124,434
 ```
 
-The clearest repeatable B1 semantic advantage was explicit inherited learned-preprocessing diagnosis:
+The clearest repeated B1 semantic advantage was explicit inherited learned-preprocessing diagnosis:
 
 ```text
 B0: 0/3 strong
@@ -137,7 +137,7 @@ Pre-P0 calibration:
 
 No rubric, threshold, bundle, B0/B1 prompt, or privileged knowledge component changed afterward.
 
-## P0 architecture under development calibration
+## P0 architecture
 
 Typed objects:
 
@@ -160,7 +160,7 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001 Generalization-Regime Question
 ```
 
-The controller supports scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived motivators/frontier, blocking and repair priority, phase gates, dependency-aware reopening, append-only audit history, and a compact model-facing current-state projection.
+Current controller capabilities include scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived motivators/frontier, blocking and repair priority, phase gates, dependency-aware reopening, append-only audit history, compact current-state projection, and persistent model-created client-ref aliases to canonical state IDs.
 
 ## Real P0 development history
 
@@ -172,7 +172,6 @@ Budget exhausted: True
 Calls: 10
 Tokens: 250,279
 Python: 2
-Generation failures: 0
 Critical deterministic pass: False
 ```
 
@@ -186,185 +185,85 @@ Budget exhausted: True
 Calls: 12
 Tokens: 291,350
 Python: 4
-Generation failures: 0
 Critical deterministic pass: True
 ```
 
-Reached legitimate protected final evaluation after strong targeted repair. Only final reconciliation/reporting remained. Raw diagnosis found one temporary/canonical-ID handoff failure, more removable audit metadata, and a terminal budget-accounting edge case. Corrections were validated with 50/50 tests.
+Reached legitimate protected final evaluation after targeted repair. Only final reconciliation/reporting remained. Raw diagnosis found temporary/canonical-ID handoff failure, removable audit metadata, and a terminal budget-accounting edge case. Corrections were validated with 50/50 tests.
 
 ### `dev-p0-03`
 
 ```text
 Completed: False
-Completed within budget: False
 Budget exhausted: True
 Calls: 14
-Generation attempts: 14
-Generation failures: 0
 Input tokens: 250,015
 Output tokens: 10,219
 Total tokens: 260,234
-Python attempts: 4
+Python: 4
 Critical deterministic pass: False
 ```
 
-Exact position at termination:
+The run reached revised Phase 2 development and had already produced legitimate replacement six-feature model evidence. It failed to reach final lock because of three avoidable state-reference/controller rejections and a redundant support-loss repair blocker targeting the broad deliverable obligation.
+
+Per-call context cost improved materially versus `dev-p0-02`; the first twelve common calls were approximately 13% to 40% cheaper, and model-facing state views were about 2.0k to 9.7k characters.
+
+Corrections from `dev-p0-03`:
 
 ```text
-phase: PHASE_2_REVISED_DEVELOPMENT
-phase_1_report: present
-final_lock_report: absent
-final_report: absent
+accepted client refs persist as aliases to canonical state IDs;
+later relations/status updates may use canonical IDs or remembered aliases;
+same-patch client refs may be supplemental motivators only when a valid pre-patch motivator already satisfies the frontier;
+same-patch-only motivators remain invalid;
+redundant support-loss reassessment of an OBLIGATION is closed before phase gates.
 ```
 
-Deterministic assertions:
+A questionable model-authored hard dependency observed in `dev-p0-03` was deliberately not auto-rewritten because it did not cause the registered critical failure and relation quality is behavior to evaluate rather than silently repair benchmark-specifically.
+
+## Deterministic validation after `dev-p0-03` corrections
+
+The complete local suite passes:
 
 ```text
-A0 PASS
-A1 PASS
-A2 PASS
-A3 FAIL because no final lock existed
-A4 FAIL because final lock was absent, although legitimate Phase 2 development re-evaluation occurred
+54 passed in 17.43s
 ```
 
-The run again performed strong substantive Phase 1 and Phase 2 analysis, including explicit inherited-preprocessing diagnosis, future temporal validation, authoritative feature-timing repair, invalidation of old development evidence, and fresh eligible-feature model comparison.
+This validates deterministic coherence of the corrections only. It does not establish P0 completion, resource viability, or superiority over B1.
 
-## `dev-p0-03` context efficiency
+## Final P0 development-run boundary
 
-Per-call totals:
+`dev-p0-04` is the **final planned P0 behavioral development-calibration trajectory before held-out freeze**.
+
+It must use the unchanged common resource envelope and model configuration.
+
+After `dev-p0-04`, P0 behavioral/controller logic should be frozen for held-out execution regardless of whether the run completes successfully, unless a purely mechanical protocol/runtime correctness defect makes the experiment itself invalid.
+
+Do not continue tuning P0 merely because a further heuristic could improve this benchmark, a model-authored state relation is questionable, or another run might fit within budget. Those outcomes must remain observable evidence about the architecture.
+
+## Remaining common pre-held-out engineering
+
+After P0 behavioral freeze, held-out execution still requires common experiment infrastructure:
 
 ```text
-3,009
-4,250
-5,885
-7,301
-9,879
-13,176
-15,475
-19,411
-22,427
-25,276
-27,753
-31,483
-35,618
-39,291
+B0/B1 enforcement of the registered 24-call / 250k-token / 12-Python envelope;
+held-out run scheduler and preregistered ordering;
+batch blinded semantic judging;
+manual-adjudication handling;
+resource/outcome aggregation and continuation/falsification comparison.
 ```
 
-For the first twelve common positions, calls were approximately 13% to 40% cheaper than `dev-p0-02`, confirming that the second model-state compaction worked materially.
-
-Model-facing state views ranged from about 2.0k to 9.7k characters.
-
-## `dev-p0-03` reference-interface failures
-
-Three rejected calls were caused by state-reference handling rather than missing analytical work:
-
-```text
-call 3: same-patch Q2 was listed as an extra motivator although valid pre-patch motivators were also present
-call 6: earlier client ref F3 was reused instead of canonical F-0003
-call 13: earlier client ref D4 was reused instead of canonical D-0004
-```
-
-Those rejected calls consumed:
-
-```text
-5,885 + 13,176 + 35,618 = 54,679 tokens
-```
-
-Corrections now implemented:
-
-```text
-accepted client refs persist as controller-level aliases to canonical state IDs;
-later patch relations/status updates can use either canonical IDs or remembered aliases;
-the private state view exposes the small persistent alias map;
-a same-patch client ref may be a supplemental motivator when at least one valid pre-patch motivator already satisfies the frontier;
-a same-patch-only motivator still cannot retroactively manufacture action justification.
-```
-
-These are state-interface corrections, not new methodological knowledge.
-
-## `dev-p0-03` final-lock support-reassessment blocker
-
-On call 14 the corrected final-lock patch superseded old model decision D-0003 and created replacement current evidence/decision. Generic SUPPORTS-loss handling then created:
-
-```text
-O-0006: Reassess O-0001 because supporting object D-0003 is no longer current.
-priority:repair
-```
-
-Here O-0001 is the broad project deliverable obligation. Because O-0006 was created during the same patch, the model could not know its ID in advance and the final-lock gate blocked.
-
-This is a type-semantics mismatch. SUPPORTS represents non-exclusive evidential support. Facts/assumptions/evidence/claims/decisions can require support sufficiency reassessment. An OBLIGATION's force is instead represented directly by OPEN/SATISFIED/BLOCKED status. Losing a decision that supported the deliverable should not create a second repair obligation about whether the original deliverable still exists.
-
-The controller now closes support-loss reassessment objects whose target is an OBLIGATION before phase-gate evaluation. The audit trail retains their creation/closure. Real Phase 2 support-reassessment obligations targeting the obsolete model decision remain unchanged and must still be explicitly satisfied.
-
-## Deliberately unresolved state-graph issue
-
-The model authored a hard `DEPENDS_ON` edge from its Phase 2 timing question Q-0006 to old decision D-0003. Superseding D-0003 later reopened Q-0006 even though the question had already been answered. This did not cause the registered critical failure or a repair-priority block.
-
-No automatic dependency rewrite is introduced from this single observation. Relation quality remains behavior to monitor rather than something silently corrected in a development-case-specific way.
-
-## New regression coverage
-
-Four tests were added:
-
-```text
-persistent client-ref alias resolution across later patches;
-same-patch supplemental motivators with an existing valid pre-patch motivator;
-rejection of same-patch-only retroactive motivators;
-no open repair blocker when SUPPORTS loss targets an OBLIGATION.
-```
-
-Expected full suite:
-
-```text
-54 passed
-```
-
-## What remains unchanged
-
-```text
-B0/B1 prompts
-four privileged knowledge components
-P0 state object/relation vocabulary
-P0 hard-dependency semantics
-P0 prospective final-test gate
-model and reasoning effort
-provider continuation/all-turn context
-H1/H2 frozen bundles
-semantic rubric and judge
-held-out ordering
-24-call ceiling
-250,000-token ceiling
-12-Python-attempt ceiling
-continuation/falsification thresholds
-```
-
-All three failed P0 development trajectories remain part of the record.
+These are common experiment-control tasks, not P0 behavioral tuning.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/039_dev_p0_02_raw_diagnosis_id_handoff_and_further_context_compaction.md
 docs/checkpoints/040_p0_second_corrections_deterministically_validated.md
 docs/checkpoints/041_third_real_p0_run_budget_exhaustion_terminal_record.md
 docs/checkpoints/042_dev_p0_03_raw_diagnosis_and_reference_semantics_hardening.md
+docs/checkpoints/043_p0_reference_semantics_validated_and_final_development_run_boundary.md
 ```
 
 ## Current priority
 
-**Deterministically validate the generic `dev-p0-03` controller/interface corrections before any further paid P0 run.**
+**Run `dev-p0-04` under the unchanged frozen resource envelope, inspect it completely, then freeze P0 behavioral/controller logic and move to common held-out experiment infrastructure.**
 
-Immediate next action:
-
-```text
-git pull origin main
-pytest
-```
-
-Expected result:
-
-```text
-54 passed
-```
-
-Do not run `dev-p0-04` or begin held-out H1/H2 before this validation is green and the implementation boundary is reviewed.
+H1/H2 remain untouched.
