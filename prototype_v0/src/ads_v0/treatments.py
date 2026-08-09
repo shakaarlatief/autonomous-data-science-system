@@ -9,16 +9,15 @@ B0 and B1 differ only in system-level methodological guidance:
 
 * B0 receives a strong generic data-science instruction.
 * B1 receives the same instruction plus the exact four methodological concepts
-  that P0 will later operationalize as structured reusable knowledge.
+  that P0 operationalizes as structured reusable knowledge.
 
 Neither baseline receives typed project state, dynamic knowledge activation,
 prospective enforcement, or dependency-aware repair.
 
-Generation reliability is handled by this common runner rather than by a
-provider-specific treatment. The same retry semantics can therefore be reused
-by P0 later. Successful generations and failed attempts are written into the
-condition-neutral experiment trace, making provider reliability and observable
-inference cost visible rather than silently hiding them inside an adapter.
+Generation reliability and resource accounting are handled by this common
+runner rather than by a provider-specific treatment. Successful generations,
+failed provider attempts, Python attempts, and resource-boundary events are
+therefore observable in the same condition-neutral trace used for evaluation.
 """
 
 from __future__ import annotations
@@ -163,6 +162,8 @@ class TreatmentRunResult:
     condition: str
     run_id: str
     completed: bool
+    completed_within_budget: bool
+    budget_exhausted: bool
     model_calls: int
     generation_attempts: int
     generation_failures: int
@@ -170,6 +171,7 @@ class TreatmentRunResult:
     input_tokens: int
     output_tokens: int
     total_tokens: int
+    python_execution_attempts: int
     messages: tuple[ModelMessage, ...]
     workspace: ExperimentWorkspace
     deterministic_evaluation: dict[str, Any]
@@ -183,6 +185,14 @@ class BaselineTreatmentRunner:
     for the same reasoning turn. Retry attempts are tracked separately so a
     provider cannot appear equally reliable merely because failed calls are
     hidden.
+
+    ``max_total_tokens`` and ``max_python_execution_attempts`` are optional so
+    historical development-calibration behavior remains reproducible. Held-out
+    execution supplies the preregistered 250,000-token and 12-Python-attempt
+    ceilings explicitly. Token accounting follows the registered rule: a call
+    may begin while prior cumulative usage is below the ceiling; if the completed
+    call crosses it, that call remains part of the trajectory and no later model
+    call may begin. Observable usage from failed provider attempts also counts.
 
     Provider APIs do not always expose usage for failures that happen before a
     response exists. When a failed response *does* report usage, such as an
@@ -200,6 +210,8 @@ class BaselineTreatmentRunner:
         condition: str,
         run_id: str,
         max_model_calls: int = 40,
+        max_total_tokens: int | None = None,
+        max_python_execution_attempts: int | None = None,
         max_generation_retries: int = 2,
         trace_path: str | Path | None = None,
     ) -> None:
@@ -207,6 +219,15 @@ class BaselineTreatmentRunner:
             raise ValueError("BaselineTreatmentRunner condition must be B0 or B1.")
         if max_model_calls <= 0:
             raise ValueError("max_model_calls must be positive.")
+        if max_total_tokens is not None and max_total_tokens <= 0:
+            raise ValueError("max_total_tokens must be positive when provided.")
+        if (
+            max_python_execution_attempts is not None
+            and max_python_execution_attempts <= 0
+        ):
+            raise ValueError(
+                "max_python_execution_attempts must be positive when provided."
+            )
         if max_generation_retries < 0:
             raise ValueError("max_generation_retries cannot be negative.")
 
@@ -215,6 +236,8 @@ class BaselineTreatmentRunner:
         self.condition = condition
         self.run_id = run_id
         self.max_model_calls = max_model_calls
+        self.max_total_tokens = max_total_tokens
+        self.max_python_execution_attempts = max_python_execution_attempts
         self.max_generation_retries = max_generation_retries
         self.workspace = ExperimentWorkspace(
             self.bundle_dir,
@@ -243,6 +266,8 @@ class BaselineTreatmentRunner:
         self.input_tokens = 0
         self.output_tokens = 0
         self.total_tokens = 0
+        self.python_execution_attempts = 0
+        self.budget_exhausted = False
 
     def _system_prompt(self) -> str:
         parts = [
@@ -258,6 +283,10 @@ class BaselineTreatmentRunner:
         completed = False
 
         for turn_index in range(1, self.max_model_calls + 1):
+            if self._token_limit_reached():
+                self._record_budget_exhaustion("total_token_budget_before_model_call")
+                break
+
             generation = self._generate_with_retries(turn_index=turn_index)
             if generation is None:
                 break
@@ -302,8 +331,20 @@ class BaselineTreatmentRunner:
                 )
             )
 
+            if self._token_limit_crossed():
+                reason = (
+                    "total_token_budget_crossed_by_completed_terminal_call"
+                    if completed
+                    else "total_token_budget_crossed_by_completed_call"
+                )
+                self._record_budget_exhaustion(reason)
+                break
+
             if completed:
                 break
+
+        if not completed and self.model_calls >= self.max_model_calls:
+            self._record_budget_exhaustion("successful_model_call_budget_exhausted")
 
         deterministic = evaluate_deterministic_behavior(
             bundle_dir=self.bundle_dir,
@@ -316,6 +357,8 @@ class BaselineTreatmentRunner:
             condition=self.condition,
             run_id=self.run_id,
             completed=completed,
+            completed_within_budget=completed and not self.budget_exhausted,
+            budget_exhausted=self.budget_exhausted,
             model_calls=self.model_calls,
             generation_attempts=self.generation_attempts,
             generation_failures=self.generation_failures,
@@ -323,6 +366,7 @@ class BaselineTreatmentRunner:
             input_tokens=self.input_tokens,
             output_tokens=self.output_tokens,
             total_tokens=self.total_tokens,
+            python_execution_attempts=self.python_execution_attempts,
             messages=tuple(self.messages),
             workspace=self.workspace,
             deterministic_evaluation=deterministic,
@@ -333,6 +377,12 @@ class BaselineTreatmentRunner:
 
         max_attempts = self.max_generation_retries + 1
         for attempt_in_turn in range(1, max_attempts + 1):
+            if self._token_limit_reached():
+                self._record_budget_exhaustion(
+                    "total_token_budget_before_generation_attempt"
+                )
+                return None
+
             self.generation_attempts += 1
             try:
                 return self.model.generate(tuple(self.messages))
@@ -372,6 +422,12 @@ class BaselineTreatmentRunner:
                         "provider_metadata": provider_metadata,
                     },
                 )
+
+                if self._token_limit_reached():
+                    self._record_budget_exhaustion(
+                        "total_token_budget_crossed_by_failed_attempt"
+                    )
+                    return None
 
                 should_terminate = (not retryable) or attempt_in_turn == max_attempts
                 if should_terminate:
@@ -476,6 +532,31 @@ class BaselineTreatmentRunner:
             return {"status": "ok", "rows": sample}, False
 
         if command_type == "execute_python":
+            if (
+                self.max_python_execution_attempts is not None
+                and self.python_execution_attempts
+                >= self.max_python_execution_attempts
+            ):
+                self.budget_exhausted = True
+                self.workspace.trace.append(
+                    event_type="PYTHON_BUDGET_BLOCK",
+                    phase=self.workspace.phase,
+                    category=ActionCategory.REPORTING,
+                    purpose=(
+                        "Prevent a Python execution beyond the registered treatment limit."
+                    ),
+                    allowed=False,
+                    blocked_reason="Python execution-attempt budget exhausted.",
+                    details={
+                        "attempts": self.python_execution_attempts,
+                        "limit": self.max_python_execution_attempts,
+                    },
+                )
+                return {
+                    "status": "blocked",
+                    "reason": "Python execution-attempt budget exhausted.",
+                }, False
+
             category = ActionCategory(_required_str(command, "category"))
             input_artifacts = command.get("input_artifacts", [])
             if not isinstance(input_artifacts, list) or not all(
@@ -483,6 +564,7 @@ class BaselineTreatmentRunner:
             ):
                 raise ValueError("execute_python input_artifacts must be a list of strings.")
 
+            before_events = len(self.workspace.events)
             try:
                 result = self.workspace.execute_python(
                     _required_str(command, "code"),
@@ -491,8 +573,10 @@ class BaselineTreatmentRunner:
                     category=category,
                 )
             except ActionBlockedError as exc:
+                self._count_new_python_attempt(before_events)
                 return {"status": "blocked", "reason": str(exc)}, False
 
+            self._count_new_python_attempt(before_events)
             return {"status": "ok", "execution": result}, False
 
         if command_type == "phase_1_complete":
@@ -517,6 +601,47 @@ class BaselineTreatmentRunner:
             return {"status": "ok", "run_complete": True}, True
 
         raise ValueError(f"Unknown treatment command type: {command_type!r}")
+
+    def _count_new_python_attempt(self, before_events: int) -> None:
+        new_events = self.workspace.events[before_events:]
+        if any(
+            event.event_type == "EXECUTE_PYTHON" and event.allowed
+            for event in new_events
+        ):
+            self.python_execution_attempts += 1
+
+    def _token_limit_reached(self) -> bool:
+        return (
+            self.max_total_tokens is not None
+            and self.total_tokens >= self.max_total_tokens
+        )
+
+    def _token_limit_crossed(self) -> bool:
+        return (
+            self.max_total_tokens is not None
+            and self.total_tokens > self.max_total_tokens
+        )
+
+    def _record_budget_exhaustion(self, reason: str) -> None:
+        if self.budget_exhausted:
+            return
+        self.budget_exhausted = True
+        self.workspace.trace.append(
+            event_type="RESOURCE_BUDGET_EXHAUSTED",
+            phase=self.workspace.phase,
+            category=ActionCategory.PHASE_CONTROL,
+            purpose="Record exhaustion of the registered treatment resource envelope.",
+            allowed=False,
+            blocked_reason=reason,
+            details={
+                "model_calls": self.model_calls,
+                "max_model_calls": self.max_model_calls,
+                "total_tokens": self.total_tokens,
+                "max_total_tokens": self.max_total_tokens,
+                "python_execution_attempts": self.python_execution_attempts,
+                "max_python_execution_attempts": self.max_python_execution_attempts,
+            },
+        )
 
     def _accumulate_usage(self, usage: ModelUsage) -> None:
         self.input_tokens += int(usage.input_tokens or 0)
