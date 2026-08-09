@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 36  
+**Checkpoint:** 37  
 **Date:** 2026-08-09  
-**Development stage:** First real P0 trajectory diagnosed; controller/context corrections implemented; deterministic re-validation pending  
-**Implementation status:** All pre-P0 experimental controls remain frozen. `dev-p0-01` was fully inspected after exhausting the 250,000-token treatment envelope. The run exposed two genuine P0 implementation defects: same-turn motivator closure was incorrectly rejected after patch application, and the model-facing state view repeatedly serialized audit-only ACTION history and closed controls. Both defects are corrected inside the pre-specified P0 scope. No held-out H1/H2 treatment run has occurred. The next step is local deterministic validation, expected at 48 tests, before `dev-p0-02`.
+**Development stage:** P0 post-diagnosis corrections deterministically validated; second real-model development run authorized  
+**Implementation status:** All pre-P0 experimental controls remain frozen. The first real-model P0 development trajectory (`dev-p0-01`) exposed two implementation defects, both were corrected within the pre-specified P0 scope, and the complete Prototype V0 suite now passes 48/48 tests. `dev-p0-02` is authorized on the development benchmark under the unchanged common resource envelope. No held-out H1/H2 treatment run has occurred.
 
 ## Primary purpose
 
@@ -33,7 +33,7 @@ Same underlying model/tools + typed project state
 + append-only state-change history.
 ```
 
-B1 is the primary architectural control. P0 must demonstrate value from operationalization rather than from receiving better methodological knowledge.
+B1 remains the primary architectural control. P0 must demonstrate value from operationalization rather than from receiving better methodological knowledge.
 
 ## Completed B0/B1 development calibration
 
@@ -47,14 +47,14 @@ B1 calls: 15, 16, 17
 B1 mean tokens: 124,434
 ```
 
-The clearest repeatable B1 semantic advantage was explicit inherited learned-preprocessing diagnosis:
+The clearest repeatable B1 semantic advantage was explicit diagnosis of inherited learned-preprocessing contamination:
 
 ```text
 B0: 0 / 3 strong explicit diagnoses
 B1: 2 / 3 strong explicit diagnoses
 ```
 
-Static knowledge helped but did not guarantee activation. Both B0 and B1 were already 3/3 strong on protected-test discipline and Phase 2 repair, creating a serious falsification bar for P0.
+Both B0 and B1 were already 3/3 strong on protected-test discipline and Phase 2 repair, so P0 faces a meaningful falsification bar.
 
 ## Frozen held-out experiment
 
@@ -86,7 +86,7 @@ Common treatment envelope:
 300 s provider timeout
 ```
 
-Every P0 provider-backed reasoning call counts inside the same call/token envelope. Deterministic state operations are uncharged. The 250,000-token ceiling is not being raised in response to development failure.
+Every P0 provider-backed reasoning call counts inside the same call/token envelope. Deterministic state operations are uncharged. The resource envelope is not being increased in response to development failures.
 
 ## Frozen held-out bundles
 
@@ -124,9 +124,9 @@ Pre-P0 judge calibration produced:
 0 / 6 manual-adjudication runs
 ```
 
-It reproduced the key manual S3 result exactly: B0 0/3 strong versus B1 2/3 strong. No rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component changed after calibration.
+The judge reproduced the important manual S3 result exactly: B0 0/3 strong versus B1 2/3 strong. No rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component changed afterward.
 
-## P0 architecture currently under development calibration
+## P0 architecture under development calibration
 
 Typed state objects:
 
@@ -163,13 +163,9 @@ K-VAL-001 Generalization-Regime Question
 
 The controller supports state-triggered scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived action motivators, blocking/repair priority, phase-transition gates, dependency-aware reopening, and append-only state history.
 
-Before the first real-model run, deterministic validation had reached:
+## First real P0 development trajectory
 
-```text
-46 passed in 23.18s
-```
-
-## `dev-p0-01` terminal result
+`dev-p0-01` was behavior-evaluable but did not complete:
 
 ```text
 Completed: False
@@ -182,157 +178,66 @@ Input tokens: 242,743
 Output tokens: 7,536
 Total observed tokens: 250,279
 Python execution attempts: 2
-Behavioral evaluation eligible: True
-Critical deterministic assertions passed: False
 ```
 
-The user's near-empty API-credit balance was not the termination cause. Every provider request completed, including call 10. The local experiment stopped only after the completed tenth response pushed cumulative observed usage over the frozen 250,000-token ceiling.
+The run stopped because the local experiment crossed the frozen 250,000-token ceiling. The user's near-empty API-credit balance was not the cause; all ten provider calls completed successfully.
 
-## `dev-p0-01` project progress before termination
+The run reached Phase 2 after strong substantive progress: it protected the final test, identified repeated temporal entities, activated all four V0 knowledge components, explicitly diagnosed inherited preprocessing contamination, chose a defensible validation regime, established clean development evidence, completed Phase 1, and read the authoritative Phase 2 timing notice.
 
-The run reached Phase 2 and had already:
+It stopped before the next reasoning turn could perform Phase 2 repair and final lock.
 
-```text
-read the project brief and README;
-identified the future monthly prediction objective;
-protected the final test;
-inspected train/validation temporal structure and repeated entities;
-inspected the inherited baseline;
-activated all four Version 0 knowledge components;
-explicitly diagnosed the inherited learned-preprocessing violation;
-selected a defensible future-month validation regime;
-run a clean train-only development comparison;
-selected a provisional logistic model;
-completed Phase 1;
-read the newly released authoritative Phase 2 timing notice.
-```
+## `dev-p0-01` implementation defects and corrections
 
-The token ceiling was crossed after reading the Phase 2 notice and before the next reasoning turn could process the notice and perform repair.
+### 1. Same-turn motivator closure
 
-The Phase 1 report explicitly excluded inherited validation because its preprocessing had been fit on train plus validation.
+Two valid actions were rejected because the response's state patch resolved/satisfied the cited motivator before the controller checked whether that motivator was current.
 
-## Deterministic failures in `dev-p0-01`
+Observed wasted calls:
 
 ```text
-A0 benchmark self-validation: PASS
-A1 no premature final-test access: PASS
-A2 no post-test development: PASS
-A3 final model excludes invalid feature: FAIL because no final lock existed
-A4 Phase 2 repair re-evaluation: FAIL because the run stopped before repair
-```
-
-No final-test value access occurred. A3/A4 reflect incomplete progression rather than execution of an illegitimate final model.
-
-## Raw diagnosis: controller bug 1
-
-Two otherwise legitimate responses were rejected because motivator validation occurred after the same response's state patch had already resolved/satisfied the cited motivator.
-
-Observed failures:
-
-```text
-call 6:
-response cited Q-0005, then resolved Q-0005 in the same patch
-controller rejected: Action cites non-current motivator IDs: Q-0005
-
-call 8:
-response cited O-0003, then satisfied O-0003 in the same patch
-controller rejected: Action cites non-current motivator IDs: O-0003
-```
-
-The model repeated the substantive work on calls 7 and 9.
-
-The two rejected calls alone consumed:
-
-```text
-65,058 tokens
+call 6: 24,659 tokens
+call 8: 40,399 tokens
+combined: 65,058 tokens
 ```
 
 Correction:
 
 ```text
-validate motivators against the pre-patch runnable frontier visible when the model generated the response;
+validate motivators against the pre-patch frontier visible to the model;
 then apply the patch;
-retain the original canonical motivator IDs on the ACTION audit record;
-activate newly applicable knowledge before command dispatch.
+allow the same response to resolve/satisfy its motivating concern;
+retain the original canonical motivator on the ACTION audit record.
 ```
 
-New blockers can still prevent phase transitions prospectively.
+### 2. Audit history repeated as current reasoning state
 
-## Raw diagnosis: controller/context bug 2
+The model-facing state projection repeatedly serialized historical ACTION objects, embedded Python source, embedded milestone reports, ACTION relations, resolved questions, satisfied obligations, and stale knowledge prose.
 
-The model-facing state projection was not genuinely compact. It repeatedly included:
+The complete audited state still needs those records, but the LLM does not need them resent as current reasoning state each turn.
+
+Correction:
 
 ```text
-all historical ACTION objects;
-full Python source embedded inside ACTION commands;
-full milestone reports embedded inside ACTION commands;
-relations involving those ACTIONs;
-resolved questions;
-satisfied obligations;
-all activated knowledge prose even when the concern was already closed.
+retain full state/history for audit and dependency logic;
+exclude ACTION objects and ACTION relations from the model-facing current-state view;
+exclude resolved questions and satisfied obligations;
+retain current facts, assumptions, evidence, claims, decisions, open concerns,
+relevant relations, current frontier, relevant knowledge, and a filtered change tail.
 ```
 
-The full state store should retain these for audit, but they are not all current reasoning state.
+On the exact `dev-p0-01` state snapshots, this projection would reduce serialized P0 state-view characters from approximately 162,367 to 73,946, about 54.5%, without changing the underlying semantic state.
 
-Observed state-view size grew from about:
+## Deterministic validation after corrections
+
+The complete local suite now passes:
 
 ```text
-3.7k characters initially
-29.7k characters before call 10
+48 passed in 9.97s
 ```
 
-Per-call total tokens grew monotonically:
+The added regression tests directly cover both real-model defects while all earlier benchmark/runtime/provider/evaluator/P0 tests continue to pass.
 
-```text
-3,503
-5,687
-8,581
-12,490
-17,451
-24,659
-31,760
-40,399
-48,648
-57,101
-```
-
-Approximately 97% of total observed treatment usage was input/context rather than generated output.
-
-Because the frozen provider configuration continues the multi-turn response context, repeating full current-state snapshots also leaves prior obsolete snapshots in the continuing context.
-
-## Model-facing state compaction correction
-
-The complete state snapshot/history is unchanged for audit and dependency logic.
-
-The new model-facing projection excludes:
-
-```text
-ACTION objects and ACTION relations;
-RESOLVED questions;
-SATISFIED obligations;
-other non-current workflow-control objects;
-recent-change records for excluded objects;
-knowledge prose whose instantiated concern is no longer current.
-```
-
-It retains current artifacts, facts, assumptions, evidence, claims, decisions, open/reopened/blocked questions, open/blocked obligations, relevant relations, runnable frontier, filtered recent changes, currently relevant knowledge, and resource status.
-
-Applying this projection mechanically to the already observed `dev-p0-01` state snapshots would reduce serialized P0 state-view text from approximately 162,367 to 73,946 characters, about 54.5%, without changing semantic state or the resource envelope. This is a diagnostic counterfactual, not a prediction of `dev-p0-02` token usage.
-
-## New regression tests
-
-Two new tests cover the real-model failures:
-
-```text
-same-turn closure of the pre-patch motivator remains a valid generated action;
-model state view excludes audit-only ACTION payloads and closed controls while the full snapshot retains them.
-```
-
-Expected local test total:
-
-```text
-48 passed
-```
+This establishes deterministic coherence of the corrections only. It does not establish behavioral superiority or guarantee that the next stochastic P0 run will finish within budget.
 
 ## What remains unchanged
 
@@ -352,25 +257,37 @@ held-out run ordering
 continuation/falsification thresholds
 ```
 
+`dev-p0-01` remains part of the development record and is not discarded or relabeled.
+
 ## Relevant latest records
 
 ```text
 docs/checkpoints/034_p0_deterministic_validation_complete.md
 docs/checkpoints/035_first_real_p0_run_budget_exhaustion.md
 docs/checkpoints/036_dev_p0_01_raw_diagnosis_and_controller_compaction_fix.md
+docs/checkpoints/037_p0_controller_corrections_deterministically_validated.md
 ```
 
 ## Current priority
 
-**Deterministically validate the two `dev-p0-01` implementation corrections before another paid P0 trajectory.**
+**Run the second real-model P0 development-calibration trajectory under the unchanged frozen treatment envelope.**
 
-Immediate next action:
+Run:
 
-```text
-git pull origin main
-pytest
+```bash
+python -m ads_v0.calibrate_p0 \
+  --bundle generated/development \
+  --run-id dev-p0-02 \
+  --output results/raw/dev-p0-02 \
+  --model gpt-5.6-terra \
+  --reasoning-effort high \
+  --max-model-calls 24 \
+  --max-total-tokens 250000 \
+  --max-python-execution-attempts 12 \
+  --max-generation-retries 2 \
+  --max-output-tokens 30000
 ```
 
-If all 48 tests pass, run `dev-p0-02` on the development benchmark under the unchanged frozen treatment envelope.
+Inspect the terminal summary before any further P0 replicate.
 
-H1/H2 remain untouched.
+H1/H2 remain untouched until P0 development debugging is complete and the implementation is frozen for held-out execution.
