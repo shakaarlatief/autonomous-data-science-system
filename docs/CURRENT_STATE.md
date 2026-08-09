@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 39  
+**Checkpoint:** 40  
 **Date:** 2026-08-09  
-**Development stage:** `dev-p0-02` fully diagnosed; canonical-ID handoff, terminal budget accounting, and further model-state compaction implemented; deterministic re-validation pending  
-**Implementation status:** All pre-P0 experimental controls remain frozen. `dev-p0-02` reached legitimate protected final evaluation and passed all deterministic assertions but exhausted the 250,000-token envelope before the final reporting turn. Raw inspection exposed one further P0 interface defect and one protocol-accounting edge case, while also showing that additional audit metadata could be removed from the model-facing current-state projection without changing semantic state. These corrections are implemented. No held-out H1/H2 treatment run has occurred. The next step is the local test suite, expected at 50 tests, before any `dev-p0-03` run.
+**Development stage:** `dev-p0-02` corrections deterministically validated; third real-model P0 development run authorized  
+**Implementation status:** All pre-P0 experimental controls remain frozen. `dev-p0-02` reached legitimate protected final evaluation and passed all deterministic assertions but exhausted the 250,000-token envelope before the final reporting turn. Its raw diagnosis exposed a canonical-ID handoff defect, a terminal budget-accounting edge case, and further audit-only model-context overhead. Those corrections are implemented and the complete Prototype V0 suite now passes 50/50 tests. `dev-p0-03` is authorized on the development benchmark under the unchanged common resource envelope. No held-out H1/H2 treatment run has occurred.
 
 ## Primary purpose
 
@@ -207,7 +207,7 @@ The run reached early Phase 2. Raw diagnosis exposed:
 
 Those defects were corrected and the suite then passed 48/48 tests.
 
-## `dev-p0-02` terminal result
+## `dev-p0-02`
 
 Second real P0 development trajectory under the unchanged envelope:
 
@@ -226,8 +226,6 @@ Behavioral evaluation eligible: True
 Critical deterministic assertions passed: True
 ```
 
-## Exact `dev-p0-02` progression
-
 The run completed substantive work through legitimate final evaluation:
 
 ```text
@@ -245,18 +243,7 @@ The run completed substantive work through legitimate final evaluation:
 12 single protected final evaluation
 ```
 
-At termination:
-
-```text
-phase_1_report: present
-final_lock_report: present
-final_report: absent
-project phase: FINAL_EVALUATION
-```
-
-Only the final evidence/state reconciliation and `submit_final_report` remained.
-
-## `dev-p0-02` deterministic result
+At termination only final evidence/state reconciliation and `submit_final_report` remained.
 
 Every deterministic assertion passed:
 
@@ -279,9 +266,7 @@ late_payments_90d
 usage_change_30d
 ```
 
-## `dev-p0-02` final test evidence
-
-The single legitimate final evaluation produced:
+Final protected-test evidence:
 
 ```text
 n_test: 4,084
@@ -292,149 +277,50 @@ Brier: 0.09304
 customer-cluster bootstrap AUROC 95% interval: [0.63266, 0.68720]
 ```
 
-Subgroups:
+The Phase 2 timing notice caused targeted repair rather than project reset: stale timing semantics and dependent evidence/claims were retired, the model decision was reconsidered, unrelated temporal-validation reasoning was preserved, eligible-feature evidence was re-established, and a repaired logistic model was locked.
 
-```text
-seen in development: n=3,775, AUROC=0.65468
-new to development: n=309, AUROC=0.72621
-```
+## Context-efficiency progress
 
-No post-test development occurred.
+`dev-p0-02` used fewer tokens than `dev-p0-01` at every one of the first ten common call positions. By calls 8-10 the reduction was approximately 27-29%, confirming that the first state compaction materially helped.
 
-## Phase 2 repair behavior
+The second raw diagnosis then exposed a missing handoff between temporary model-created client references and controller-assigned canonical IDs. Call 10 reused a temporary reference after it had become canonical and was rejected, costing 40,698 tokens before call 11 repeated the final lock successfully.
 
-The authoritative timing notice caused targeted repair rather than project reset.
+The controller now exposes the last accepted `client_ref -> canonical_state_id` mapping in the next private P0 state view.
 
-P0:
+The model-facing state projection was also further compacted by removing repeated audit-only object/relation timestamps and the repeated recent-change history tail. Full audit state/history remain unchanged.
 
-```text
-superseded the stale README timing fact;
-reopened/superseded the Phase 1 feature/model decision;
-marked Phase 1 model evidence stale;
-invalidated the corresponding deployable-performance claim;
-created support-reassessment obligations;
-preserved the unrelated temporal validation-regime decision;
-re-evaluated only eligible features;
-created replacement current evidence;
-locked a repaired logistic specification.
-```
-
-All four registered knowledge components activated. Their instantiated concerns were resolved/satisfied before final evaluation.
-
-## Context-efficiency comparison
-
-`dev-p0-02` per-call total tokens:
-
-```text
-3,463
-5,335
-7,767
-11,252
-15,947
-21,178
-25,986
-29,310
-34,359
-40,698
-45,575
-50,480
-```
-
-For every one of the first ten common call positions, `dev-p0-02` used fewer tokens than `dev-p0-01`. By calls 8-10 the reduction was approximately 27-29%, confirming that the first model-state compaction materially helped.
-
-Model-facing state-view sizes in `dev-p0-02` ranged from about 3.7k to 13.0k characters. They were much smaller than the roughly 29.7k-character state view reached before call 10 in `dev-p0-01`, but current-state serialization still represented a large share of continuing context.
-
-## New defect found in `dev-p0-02`: missing canonical-ID handoff
-
-Call 9 created the authoritative feature-timing FACT with temporary patch reference:
-
-```text
-f_account_state_ineligible
-```
-
-The controller assigned canonical ID:
-
-```text
-F-0007
-```
-
-The next state view showed `F-0007`, but did not explicitly map the model's previous temporary reference to that canonical ID. Call 10 reused the temporary reference in a new relation and was rejected:
-
-```text
-Unknown state object ID: 'f_account_state_ineligible'
-```
-
-Call 11 repeated the final-lock transition using `F-0007` and succeeded.
-
-The rejected call consumed 40,698 tokens.
-
-Correction implemented:
-
-```text
-after an accepted state patch, expose the exact temporary-client-ref -> canonical-ID
-mapping in the next internal P0_STATE_VIEW as last_patch_client_ref_map.
-```
-
-This is an internal state-interface handoff, not new methodological knowledge. `P0_STATE_VIEW` remains excluded from the blinded primary semantic trajectory.
-
-## Further current-state compaction
-
-The model-facing view still repeated audit-only metadata:
-
-```text
-created_step
-updated_step
-relation created_step
-recent_changes history tail
-```
-
-These remain in the full audit state/history but are no longer resent each turn.
-
-The current model view now retains:
-
-```text
-id, type, status, scope, content, source_refs, tags
-current relations
-runnable frontier
-active knowledge
-resource status
-last accepted patch's canonical-ID handoff
-```
-
-On the exact twelve `dev-p0-02` state views, this generic projection would reduce combined serialized state-view text from approximately 114,720 to 76,562 characters, roughly one third, without changing semantic state or treatment capability.
+On the exact `dev-p0-02` snapshots, this second generic projection would reduce combined serialized state-view text by about one third without changing semantic state or capabilities.
 
 ## Protocol-accounting correction
 
-A terminal `submit_final_report` call could previously complete the project and cross 250,000 tokens before the base loop recorded budget exhaustion. That would violate the already frozen rule by incorrectly classifying the run as completed-within-budget.
-
-The operational P0 controller now ensures:
+A terminal `submit_final_report` call that crosses the token ceiling is now correctly classified as:
 
 ```text
-terminal completion above token ceiling:
-    completed = true
-    budget_exhausted = true
-    completed_within_budget = false
+completed = true
+budget_exhausted = true
+completed_within_budget = false
 ```
 
-This is an accounting correction to match the preregistered protocol. The resource ceiling itself is unchanged.
+This matches the already frozen protocol and does not relax the resource threshold.
 
-## New regression coverage
+## Deterministic validation after `dev-p0-02` corrections
 
-Two new tests were added and the compact-state test was strengthened.
-
-Expected full suite:
+The complete local suite now passes:
 
 ```text
-50 passed
+50 passed in 12.76s
 ```
 
-Coverage now additionally verifies:
+The added/strengthened regression coverage verifies:
 
 ```text
 explicit temporary-client-ref -> canonical-ID handoff;
-terminal completion above the token ceiling is still budget-exceeded;
-model-facing state omits repeated audit timestamps/change-history metadata.
+terminal completion above the token ceiling remains budget-exceeded;
+model-facing state omits repeated audit timestamps/change-history metadata;
+all earlier P0 and pre-P0 tests remain green.
 ```
+
+This establishes deterministic coherence of the corrections only. It does not establish P0 resource viability or architectural superiority.
 
 ## What remains unchanged
 
@@ -456,7 +342,7 @@ held-out run ordering
 continuation/falsification thresholds
 ```
 
-Both failed P0 development runs remain part of the record.
+Both failed P0 development runs remain part of the development record.
 
 ## Relevant latest records
 
@@ -465,19 +351,13 @@ docs/checkpoints/036_dev_p0_01_raw_diagnosis_and_controller_compaction_fix.md
 docs/checkpoints/037_p0_controller_corrections_deterministically_validated.md
 docs/checkpoints/038_second_real_p0_run_budget_exhaustion_with_critical_integrity_pass.md
 docs/checkpoints/039_dev_p0_02_raw_diagnosis_id_handoff_and_further_context_compaction.md
+docs/checkpoints/040_p0_second_corrections_deterministically_validated.md
 ```
 
 ## Current priority
 
-**Deterministically validate the `dev-p0-02` corrections before any third P0 development run.**
+**Run `dev-p0-03` on the development benchmark under the unchanged frozen resource envelope.**
 
-Immediate next action:
+This run should determine whether the already specified P0 machinery can now complete end-to-end after removal of the concrete implementation/interface defects observed in the first two real P0 runs.
 
-```text
-git pull origin main
-pytest
-```
-
-If all 50 tests pass, run `dev-p0-03` on the development benchmark under the unchanged frozen resource envelope.
-
-H1/H2 remain untouched.
+Do not begin held-out H1/H2 execution until `dev-p0-03` is inspected and the P0 development implementation is explicitly frozen for held-out use.
