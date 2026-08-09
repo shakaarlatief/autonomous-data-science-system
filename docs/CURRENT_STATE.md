@@ -2,18 +2,18 @@
 
 ## Checkpoint
 
-**Checkpoint:** 32  
+**Checkpoint:** 33  
 **Date:** 2026-08-09  
-**Development stage:** Initial P0 implementation candidate corrected; deterministic validation pending  
-**Implementation status:** All pre-P0 experimental controls are frozen. The first P0 implementation now includes typed state, four-component state-triggered knowledge activation, dependency-aware repair, runnable-frontier validation, prospective protected-test blocking, strict P0 Structured Outputs, a development calibration CLI, and a corrected controller ordering that avoids retroactively requiring a model response to cite knowledge-instance IDs created by that same response. No real-model P0 run has occurred yet.
+**Development stage:** Corrected initial P0 implementation candidate; deterministic validation pending  
+**Implementation status:** All pre-P0 experimental controls are frozen. The initial P0 implementation now includes typed state, the same four methodological knowledge components with state-triggered activation, dependency-aware reopening, support reassessment, runnable-frontier validation, prospective protected-test blocking, strict P0 Structured Outputs, development calibration tooling, corrected same-turn activation ordering, and repair-priority promotion for already-open feature/generalization concerns after material invalidation. No real-model P0 run has occurred yet.
 
-## Primary purpose and system vision
+## Primary purpose
 
-> **Create the best possible data-science process for the particular project, where what “best” means is configurable according to the project's goals, constraints, required outputs, and desired human involvement.**
+> **Create the best possible data-science process for the particular project, where what “best” means is configurable according to project goals, constraints, required outputs, and desired human involvement.**
 
 The long-term target is a system-mediated data-science process that operationalizes methodological knowledge, questions, checks, dependencies, repair, persistent state, and selective human involvement. The LLM is one reasoning component inside that system, not the system itself.
 
-## Prototype V0 conditions
+## Experimental conditions
 
 ```text
 B0
@@ -33,11 +33,11 @@ Same underlying model/tools + typed project state
 + append-only state-change history.
 ```
 
-B1 remains the primary architectural control. P0 must demonstrate value from operationalization rather than from receiving better methodological knowledge.
+B1 is the primary architectural control. P0 must demonstrate value from operationalization rather than from receiving better methodological knowledge.
 
-## Baseline development calibration
+## Completed B0/B1 development calibration
 
-All six behavior-evaluable B0/B1 runs completed with zero provider-generation failures and passed the current critical deterministic assertions.
+All six behavior-evaluable baseline trajectories completed with zero provider-generation failures and passed the current critical deterministic assertions.
 
 ```text
 B0 calls: 15, 18, 19
@@ -54,22 +54,22 @@ B0: 0 / 3 strong explicit diagnoses
 B1: 2 / 3 strong explicit diagnoses
 ```
 
-Static knowledge therefore helped but did not guarantee activation. Both baseline conditions were already 3/3 strong on protected-test discipline and Phase 2 repair.
+Static knowledge helped but did not guarantee activation. Both B0 and B1 were already 3/3 strong on protected-test discipline and Phase 2 repair, creating a serious falsification bar for P0.
 
 ## Frozen held-out experiment
 
-Protocol:
+Authoritative protocol:
 
 ```text
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 prototype_v0/configs/held_out_protocol_v0_1.json
 ```
 
-Runs:
+Run design:
 
 ```text
-H1: 5 per condition
-H2: 5 per condition
+H1: 5 runs per condition
+H2: 5 runs per condition
 B0/B1/P0: 10 held-out runs each
 30 treatment runs total
 ```
@@ -86,11 +86,11 @@ Common treatment envelope:
 300 s provider timeout
 ```
 
-P0 has no hidden provider-backed reasoning budget. Deterministic state operations are uncharged, but every P0 LLM reasoning call counts within the same model-call/token envelope.
+P0 has no hidden provider-backed reasoning budget. Every P0 model call counts inside the same model-call/token envelope. Deterministic state operations are uncharged.
 
 ## Frozen held-out bundles
 
-Both preregistered starting seeds passed immediately.
+Both preregistered starting seeds passed immediately:
 
 ```text
 H1
@@ -104,17 +104,11 @@ account_ref / observation_period / profile_code
 SHA-256: 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-Registry:
-
-```text
-prototype_v0/configs/held_out_bundle_fingerprints_v0_1.json
-```
-
 These identities were frozen before P0 implementation.
 
-## Frozen semantic evaluator and calibration
+## Frozen semantic judge
 
-The targeted architecture score is:
+The targeted architecture score remains:
 
 ```text
 mean(S1, S2, S3, S6, S7)
@@ -122,7 +116,7 @@ mean(S1, S2, S3, S6, S7)
 
 Strong targeted pass requires all five targeted criteria to equal 2.0.
 
-The two-pass condition-blinded judge was calibrated on all six baseline development trajectories before P0 implementation:
+Pre-P0 judge calibration on the six development baselines produced:
 
 ```text
 59 / 60 exact ordinary-criterion agreements = 98.3%
@@ -132,18 +126,16 @@ The two-pass condition-blinded judge was calibrated on all six baseline developm
 0 / 6 manual-adjudication runs
 ```
 
-It reproduced the important manual S3 pattern exactly:
+It reproduced the key manual S3 pattern exactly:
 
 ```text
 B0 S3=2: 0 / 3
 B1 S3=2: 2 / 3
 ```
 
-No rubric, continuation threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component was changed after judge calibration.
+No rubric, continuation threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component was changed after calibration.
 
-## P0 implementation candidate
-
-Implementation files:
+## P0 implementation files
 
 ```text
 prototype_v0/src/ads_v0/p0.py
@@ -157,7 +149,7 @@ prototype_v0/tests/test_p0_controller.py
 
 ### Typed state
 
-Object types:
+Objects:
 
 ```text
 ARTIFACT
@@ -181,11 +173,11 @@ ANSWERS
 GENERATED_BY
 ```
 
-State records canonical IDs, type-specific status, scope, proposition content, sources, semantic tags, creation/update steps, and append-only change history.
+State records canonical IDs, type-specific status, scope, proposition content, source references, semantic tags, creation/update steps, and append-only history.
 
-Hard `DEPENDS_ON` failure reopens or invalidates downstream hard dependents while unrelated state remains current. Loss of a `SUPPORTS` path creates a reassessment obligation rather than blindly invalidating the supported target.
+Hard `DEPENDS_ON` failure reopens or invalidates downstream hard dependents while unrelated state stays current. Loss of one `SUPPORTS` path creates a reassessment obligation instead of blindly invalidating its target.
 
-### Four and only four privileged components
+### Four and only four privileged knowledge components
 
 ```text
 K-INFO-001 Protected Final Evaluation
@@ -194,11 +186,11 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001 Generalization-Regime Question
 ```
 
-P0 does not receive the entire library as one B1-style static prompt block. Components instantiate scoped questions/obligations from current state patterns. Activation is idempotent and existing instances can reopen.
+P0 does not receive the entire library as one static B1-style prompt block. Components instantiate scoped questions/obligations when current state makes them applicable. Activation is idempotent and existing instances can reopen.
 
 ### Runnable frontier
 
-Every P0 command cites at least one current motivator:
+Every P0 command must cite a current motivator:
 
 ```text
 open/reopened question
@@ -207,16 +199,16 @@ reopened decision
 project deliverable need
 ```
 
-Blocking and repair concerns receive priority. ACTION objects are controller-maintained and retain `GENERATED_BY` relations to motivators.
+Blocking and repair concerns receive priority. ACTION objects are controller-maintained and retain `GENERATED_BY` links to motivators.
 
 ### Corrected activation ordering
 
-An implementation issue was identified before any real P0 run: if a current state patch itself caused a new blocking knowledge instance to be created, the initial ordering could have required the same model response to cite that newly created canonical ID even though the ID did not exist when the response was generated.
+A newly applicable blocking knowledge instance may be created by facts in the current model patch. The controller must not require the same response to cite an ID that did not exist when it was generated.
 
-The operational controller in `p0_controller.py` now uses:
+Operational order is now:
 
 ```text
-1. apply patch transactionally
+1. transactionally apply patch
 2. reopen existing affected knowledge instances
 3. validate motivators against the frontier visible when the model responded
 4. create ACTION object
@@ -224,21 +216,23 @@ The operational controller in `p0_controller.py` now uses:
 6. execute common command
 ```
 
-For an ordinary action, the new concern enters the next state view. For a phase-transition action, the new blocker exists before dispatch and can still prevent the transition. This correction happened before any real P0 model call or held-out run.
+Ordinary actions see the new concern on the next turn. Phase-transition actions can still be blocked before transition because newly activated blockers exist before dispatch.
 
-`calibrate_p0.py` uses this corrected controller.
+### Repair-priority correction
 
-### Common external behavior and blinding
+If a feature-eligibility or validation-regime assumption is invalidated while its knowledge-derived question is already OPEN, that existing scoped question is now explicitly promoted to `priority:repair` rather than remaining an ordinary unresolved question. This lets final lock be blocked until material repair is resolved without creating duplicates.
 
-P0 uses the same external command set as B0/B1. Its response adds `state_patch` and `motivator_ids` around the same command. The primary semantic normalizer ignores P0 state-view messages and patch metadata, so internal architecture does not automatically earn semantic score.
+Both controller corrections were made before any real P0 model call or held-out run.
 
-### Provider semantics
+### Common external behavior and provider semantics
 
-`OpenAIP0ResponsesModel` subclasses the calibrated OpenAI adapter and retains the same model, reasoning effort semantics, previous-response threading, all-turn context, disabled SDK retries, timeout, usage accounting, and duplicate-equal output normalization. Only the strict output schema changes.
+P0 retains the same external command set as B0/B1. Its response adds `state_patch` and `motivator_ids` around the same command. The blinded semantic normalizer ignores P0 state-view messages and patch metadata.
 
-### P0 diagnostic artifacts
+`OpenAIP0ResponsesModel` subclasses the calibrated OpenAI adapter and keeps the same model, reasoning effort semantics, previous-response threading, all-turn context, disabled SDK retries, timeout, usage accounting, and duplicate-equal output normalization. Only the strict response schema changes.
 
-The P0 development CLI writes the common run outputs plus:
+### P0 diagnostic outputs
+
+`calibrate_p0.py` writes the common run artifacts plus:
 
 ```text
 p0_state.json
@@ -246,31 +240,31 @@ p0_state_history.json
 p0_knowledge_activations.json
 ```
 
-These remain architecture diagnostics and are excluded from the primary blinded semantic score.
+These are architecture diagnostics and are excluded from the primary blinded semantic score.
 
-## Deterministic tests awaiting execution
+## Deterministic validation pending
 
 The pre-P0 suite had 34 passing tests.
 
-Added P0 tests:
+New P0 tests:
 
 ```text
-9 tests in test_p0.py
-2 activation-order regression tests in test_p0_controller.py
-11 new tests total
+9 in test_p0.py
+3 in test_p0_controller.py
+12 new tests total
 ```
 
 Expected total if all pass:
 
 ```text
-45 passed
+46 passed
 ```
 
-No paid P0 run should be started before this deterministic suite is green.
+No paid P0 run should begin before this suite is green.
 
 ## Registered continuation boundary
 
-The held-out continuation/falsification thresholds remain unchanged. P0 must satisfy all integrity, cross-variant, completion, resource, and friction requirements and show material reliability improvement over B1.
+The held-out thresholds remain unchanged. P0 must satisfy all integrity, cross-variant, completion, resource, and architecture-friction requirements and show material reliability improvement over B1.
 
 Material improvement remains either:
 
@@ -289,6 +283,7 @@ B. pooled targeted architecture score at least +0.30 over B1
 docs/checkpoints/030_semantic_judge_calibration_and_p0_boundary.md
 docs/checkpoints/031_initial_p0_implementation_candidate.md
 docs/checkpoints/032_p0_activation_order_correction_before_test.md
+docs/checkpoints/033_p0_open_feature_repair_priority_correction.md
 ```
 
 ## Current priority
@@ -302,4 +297,4 @@ git pull origin main
 pytest
 ```
 
-If all 45 tests pass, record that boundary and run the first real-model P0 development-calibration trajectory on the development case only. H1/H2 remain untouched until P0 development debugging is complete.
+If all 46 tests pass, record that boundary and run the first real-model P0 development-calibration trajectory on the development case only. H1/H2 remain untouched until P0 development debugging is complete.
