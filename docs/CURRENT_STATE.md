@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 24  
+**Checkpoint:** 25  
 **Date:** 2026-08-09  
 **Development stage:** Real-model baseline calibration and run-to-run variability measurement  
-**Implementation status:** Two behavior-evaluable B0 trajectories and two behavior-evaluable B1 trajectories have completed under the fixed common configuration. The first matched pair has been semantically reviewed. All four completed baseline trajectories pass the current critical deterministic assertions. Two final development replicates remain before cross-run comparison, held-out protocol freezing, and P0 implementation.
+**Implementation status:** All three pre-specified B1 development-calibration trajectories are behavior-evaluable and complete. Two of three B0 trajectories are complete. Every completed baseline trajectory passes the current critical deterministic assertions. One final B0 replicate remains before cross-run baseline analysis, held-out protocol freezing, and P0 implementation.
 
 ## Primary purpose
 
@@ -13,7 +13,7 @@
 
 ## System-level vision
 
-Checkpoint 22 makes an important abstraction explicit:
+Checkpoint 22 distinguishes three abstraction levels:
 
 ```text
 1. Human-executed data-science project
@@ -21,27 +21,13 @@ Checkpoint 22 makes an important abstraction explicit:
 3. System-mediated data-science project
 ```
 
-The long-term goal is not merely a better one-shot prompt or a better single LLM conversation. The system should progressively operationalize process navigation that otherwise remains in the human's head or must be reconstructed in every project conversation:
+The long-term goal is not merely better prompting. The intended system should operationalize reusable process intelligence that otherwise remains in human methodological memory and project navigation, including project-state tracking, reusable knowledge, context-sensitive investigations, safeguards, dependency-aware repair, resource-aware prioritization, persistent project memory, and selective human escalation.
 
-```text
-reusable methodological knowledge
-project-state tracking
-questions / assumptions / claims / evidence
-context-sensitive investigation activation
-alternative generation and applicability reasoning
-prospective safeguards
-dependency-aware repair
-resource-aware prioritization
-persistent project memory
-selective human escalation
-cross-project reasoning reuse
-```
+The LLM is a reasoning component inside that system, not the system itself.
 
-The LLM is a reasoning component inside the intended system, not the system itself.
+B0 and B1 remain important lower-level controls because they test how much of a specific methodological benefit can already be achieved by a strong reasoner and static prompting before richer system machinery is credited.
 
-B0/B1 remain useful lower-level controls because they test how much of a specific methodological benefit can already be achieved by a strong reasoner and static prompting before system machinery is credited.
-
-## Prototype V0 experimental question
+## Prototype V0 conditions
 
 ```text
 B0
@@ -59,9 +45,9 @@ Same model/tools + typed project state + four structured knowledge components
 
 B1 is the critical control. If B1 matches P0's reliability at materially lower complexity or cost, P0 should be simplified or rejected for this project scale.
 
-## Benchmark and common harness
+## Development benchmark
 
-The synthetic development benchmark is a 24-month customer-month churn project with:
+The synthetic churn benchmark contains:
 
 ```text
 train months 1-16
@@ -93,45 +79,56 @@ multi-turn previous_response_id continuation
 all-turn reasoning context
 ```
 
-Do not change these settings during the remaining baseline development replicates unless a genuine condition-neutral infrastructure failure makes continuation impossible.
+Do not change these settings during the remaining baseline development calibration unless a genuine condition-neutral infrastructure failure makes continuation impossible.
 
-## Calibration history
-
-### Infrastructure diagnostics
+## Infrastructure diagnostics
 
 `dev-b0-01` was not behavior-evaluable. It exposed the original 10,000-token output ceiling and missing incomplete-response usage accounting. Checkpoint 16 corrected both condition-neutrally.
 
 `dev-b0-02` was not behavior-evaluable. It exposed duplicate-equal structured message blocks whose SDK aggregate was invalid as one JSON document. Checkpoint 17 added conservative duplicate-equal normalization while preserving ambiguity errors for distinct commands.
 
-### `dev-b0-03`: first behavior-evaluable B0
+No later completed run has exposed another shared provider/runtime defect.
+
+## Behavior-evaluable calibration runs
+
+| Run | Condition | Calls | Generation failures | Total observed tokens | Critical deterministic assertions |
+|---|---|---:|---:|---:|---|
+| `dev-b0-03` | B0 | 15 | 0 | 103,240 | Pass |
+| `dev-b0-04` | B0 | 18 | 0 | 147,482 | Pass |
+| `dev-b1-01` | B1 | 15 | 0 | 117,606 | Pass |
+| `dev-b1-02` | B1 | 16 | 0 | 112,683 | Pass |
+| `dev-b1-03` | B1 | 17 | 0 | 143,014 | Pass |
+
+Current replicate counts:
 
 ```text
-completed: true
-successful model calls: 15
-generation failures: 0
-input tokens: 96,525
-output tokens: 6,715
-reported reasoning tokens: 1,203
-total observed tokens: 103,240
-all deterministic assertions passed: true
+B0: 2 / 3
+B1: 3 / 3
 ```
 
-Semantic review found strong final-test discipline, temporal validation reasoning, precise Phase 2 feature invalidation/repair, and bounded claims. Main weaknesses were an implicit rather than explicit row-unit correction, failure to explicitly diagnose the inherited train+validation preprocessing contamination, and row-level bootstrap uncertainty that ignored repeated-customer dependence.
+### B0 observations so far
 
-### `dev-b1-01`: first behavior-evaluable B1
+`dev-b0-03` was fully reviewed semantically. It showed strong final-test discipline, defensible temporal validation reasoning, precise Phase 2 feature invalidation/repair, and bounded claims. Its main weaknesses were:
 
 ```text
-completed: true
-successful model calls: 15
-generation failures: 0
-input tokens: 109,884
-output tokens: 7,722
-reported reasoning tokens: 2,060
-total observed tokens: 117,606
-all deterministic assertions passed: true
+row-unit correction remained implicit rather than explicit
+inherited train+validation preprocessing contamination was avoided but not explicitly diagnosed
+row-level bootstrap uncertainty ignored repeated-customer dependence
 ```
 
-The first matched semantic comparison found that B1 improved explicit reasoning on the exact methodological concepts supplied statically:
+`dev-b0-04` also completed and passed all critical deterministic assertions but used substantially more resources:
+
+```text
+15 -> 18 calls relative to dev-b0-03
+103,240 -> 147,482 total observed tokens
+approximately +42.9% token usage
+```
+
+Its full semantic interpretation remains pending until the complete replicate set is available.
+
+### B1 observations so far
+
+`dev-b1-01` was fully compared with `dev-b0-03`. The first pair suggested that static methodological knowledge improved explicit reasoning on the exact supplied concepts, especially:
 
 ```text
 explicit diagnosis of inherited learned-preprocessing contamination
@@ -140,100 +137,37 @@ more explicit deployment/generalization-regime reasoning
 known-versus-new customer subgroup analysis
 ```
 
-B0 already matched B1 on the central critical-integrity outcomes, especially protected-test discipline and Phase 2 repair. Final protected-test AUROC was effectively identical at about 0.660.
+B0 already matched B1 on central critical-integrity outcomes such as protected-test discipline and Phase 2 repair. Final protected-test AUROC in the first pair was effectively identical at about 0.660.
 
-Both conditions shared the optional uncertainty weakness: row-level bootstrap resampling did not account for repeated-customer dependence.
-
-B1 used approximately 13.9 percent more total observed tokens than B0 in the first matched pair.
-
-### `dev-b0-04`: second behavior-evaluable B0
+All three B1 development runs are now complete:
 
 ```text
-completed: true
-successful model calls: 18
-generation attempts: 18
-generation failures: 0
-total observed tokens: 147,482
-behavior_evaluable: true
-critical deterministic assertions passed: true
+dev-b1-01: 15 calls, 117,606 tokens
+dev-b1-02: 16 calls, 112,683 tokens
+dev-b1-03: 17 calls, 143,014 tokens
 ```
 
-Compared with `dev-b0-03`, the second B0 replicate used three additional model calls and 44,242 more tokens, approximately 42.9 percent more total token usage. The 20-call ceiling remained sufficient but only two calls were unused.
+B1 mean calls across development calibration: 16.0.  
+B1 mean total observed tokens: approximately 124,434.  
+B1 token range: 30,331.
 
-### `dev-b1-02`: second behavior-evaluable B1
+The third B1 run shows that B1 resource demand also varies materially. Model-call count alone is not a sufficient proxy for total token cost.
 
-```text
-completed: true
-successful model calls: 16
-generation attempts: 16
-generation failures: 0
-total observed tokens: 112,683
-behavior_evaluable: true
-critical deterministic assertions passed: true
-```
+## Shared methodological weakness identified during calibration
 
-Compared with `dev-b1-01`, the second B1 replicate used one additional successful model turn but 4,923 fewer observed tokens, approximately 4.2 percent less total usage.
+The first semantically reviewed B0/B1 pair both introduced bootstrap intervals that resampled customer-month rows without accounting for repeated-customer dependence.
 
-This confirms that model-call count and total token usage need not move together. Per-turn output length, accumulated interaction history, and action selection can materially change total resource use.
+This does not invalidate point metrics, model selection, final-test discipline, or Phase 2 repair, but weakens nominal interval interpretation.
 
-## Current operational baseline table
-
-| Run | Condition | Calls | Generation failures | Total observed tokens | Critical deterministic assertions |
-|---|---|---:|---:|---:|---|
-| `dev-b0-03` | B0 | 15 | 0 | 103,240 | Pass |
-| `dev-b0-04` | B0 | 18 | 0 | 147,482 | Pass |
-| `dev-b1-01` | B1 | 15 | 0 | 117,606 | Pass |
-| `dev-b1-02` | B1 | 16 | 0 | 112,683 | Pass |
-
-The first two B0 runs show much larger token variation than the first two B1 runs, but two trajectories per condition are insufficient to infer a stable variance difference.
-
-All four behavior-evaluable runs completed within the 20-call ceiling and all passed the current critical deterministic assertions.
-
-## First-pair semantic conclusions
-
-The first B0/B1 pair supports only preliminary development conclusions:
-
-```text
-Both are strong viable baselines.
-Static knowledge can improve explicit reasoning on targeted concerns.
-B0 already performs strongly on critical-integrity mechanics.
-B1's observed benefit was mainly semantic/process quality, not predictive accuracy.
-The observed B1 benefit came with higher token cost in the first pair.
-Neither condition solved every methodological issue.
-One matched pair is insufficient to estimate stable treatment effects.
-```
+This issue is calibration evidence and must not be retroactively inserted as privileged B1/P0 prompt knowledge in Prototype V0.
 
 ## Common-interface decision
 
-No new shared provider/runtime defect has been identified since Checkpoint 17.
+The common interface remains fixed.
 
-Do not change the command protocol, milestone schema, benchmark, prompts, model, reasoning effort, or resource ceilings during the remaining baseline development replicates.
+Do not change the command protocol, milestone schema, benchmark, prompts, model, reasoning effort, or resource ceilings during the final baseline replicate.
 
-The observed row-unit reporting omission and repeated-customer bootstrap weakness must not be converted into post-hoc privileged B1/P0 prompt knowledge during V0.
-
-## Automated validation
-
-The latest code-affecting calibration repair remains CI-validated with:
-
-```text
-25 passed in 8.30s
-```
-
-No code has changed during the empirical-review checkpoints since that repair.
-
-## Relevant checkpoints
-
-```text
-docs/checkpoints/016_first_real_model_calibration_output_budget.md
-docs/checkpoints/017_duplicate_structured_output_normalization.md
-docs/checkpoints/018_first_behavior_evaluable_b0_run.md
-docs/checkpoints/019_first_b0_semantic_trajectory_review.md
-docs/checkpoints/020_first_behavior_evaluable_b1_run.md
-docs/checkpoints/021_first_matched_b0_b1_semantic_comparison.md
-docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
-docs/checkpoints/023_second_behavior_evaluable_b0_calibration_run.md
-docs/checkpoints/024_second_behavior_evaluable_b1_calibration_run.md
-```
+Observed baseline weaknesses must remain evaluative evidence rather than becoming post-hoc prompt additions.
 
 ## P0 remains intentionally unimplemented
 
@@ -263,26 +197,33 @@ GENERATED_BY
 
 and only the four pre-specified knowledge components.
 
-The experiment still requires three behavior-evaluable development trajectories per baseline condition before the held-out evaluator/resource protocol is frozen and P0 is implemented.
+The baseline calibration boundary must be completed and the common held-out evaluator/resource protocol frozen independently of P0 before P0 is implemented.
+
+## Relevant checkpoints
+
+```text
+docs/checkpoints/016_first_real_model_calibration_output_budget.md
+docs/checkpoints/017_duplicate_structured_output_normalization.md
+docs/checkpoints/018_first_behavior_evaluable_b0_run.md
+docs/checkpoints/019_first_b0_semantic_trajectory_review.md
+docs/checkpoints/020_first_behavior_evaluable_b1_run.md
+docs/checkpoints/021_first_matched_b0_b1_semantic_comparison.md
+docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
+docs/checkpoints/023_second_behavior_evaluable_b0_calibration_run.md
+docs/checkpoints/024_second_behavior_evaluable_b1_calibration_run.md
+docs/checkpoints/025_third_behavior_evaluable_b1_calibration_run.md
+```
 
 ## Current priority
 
-**Q-042 remains highest priority:** characterize real B0/B1 behavior and resource variability well enough to freeze a fair common protocol independently of P0.
-
-Current behavior-evaluable replicate counts:
-
-```text
-B0: 2 / 3
-B1: 2 / 3
-```
+**Q-042 remains highest priority:** characterize B0/B1 behavior and resource variability well enough to freeze a fair common held-out protocol independently of P0.
 
 ## Next step
 
-Continue the fixed alternating development-calibration order:
+Run the third and final B0 development-calibration trajectory under the unchanged common configuration:
 
 ```text
-next: dev-b1-03
-then: dev-b0-05
+dev-b0-05
 ```
 
-After those two runs complete, compare all six baseline trajectories for run-to-run variance, deterministic outcomes, semantic criteria, repair precision, optional methodological errors, action counts, and token distributions. Then freeze the held-out evaluator/resource protocol and only then implement P0.
+After it completes, there will be three behavior-evaluable development runs per baseline condition. The next phase is then a full cross-run baseline analysis covering deterministic outcomes, semantic criteria, repair precision, optional methodological errors, action counts, token distributions, and run-to-run variance. Only after that analysis should the held-out evaluator/resource protocol be frozen and P0 implementation begin.
