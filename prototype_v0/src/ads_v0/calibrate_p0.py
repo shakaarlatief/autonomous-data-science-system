@@ -17,7 +17,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .p0 import P0TreatmentRunResult, P0TreatmentRunner
+from .p0 import P0TreatmentRunResult
+from .p0_controller import P0TreatmentRunner
 from .p0_openai_model import OpenAIP0ResponsesModel
 
 
