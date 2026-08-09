@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 44  
+**Checkpoint:** 45  
 **Date:** 2026-08-09  
-**Development stage:** Final planned P0 behavioral development trajectory completed successfully within the frozen resource envelope; raw inspection pending before formal P0 freeze  
-**Implementation status:** `dev-p0-04`, predeclared as the final planned P0 behavioral development-calibration run, completed the full development benchmark within 228,064 observed tokens, used 12 successful model calls and 4 Python executions, had zero provider-generation failures, and passed all current critical deterministic assertions. No held-out H1/H2 treatment run has occurred. Do not run another P0 development trajectory. Inspect `dev-p0-04` completely, then freeze P0 behavioral/controller logic unless a purely mechanical protocol/runtime correctness defect is found.
+**Development stage:** Final P0 development trajectory fully inspected; P0 behavioral/controller logic frozen for held-out evaluation  
+**Implementation status:** `dev-p0-04`, predeclared as the final planned P0 behavioral development run, completed end-to-end inside the unchanged 24-call / 250,000-token / 12-Python envelope. Full raw inspection found no experiment-invalidating mechanical defect. Ordinary P0 behavioral/controller tuning is now closed. No held-out H1/H2 treatment run has occurred. The next work is common held-out experiment infrastructure, beginning with resource-envelope enforcement for B0/B1.
 
 ## Primary purpose
 
@@ -50,7 +50,7 @@ Same underlying model/tools + typed project state
 + append-only audit history.
 ```
 
-B1 remains the primary architectural control.
+B1 remains the primary architectural control. P0 must demonstrate value from operationalization, not from receiving better methodological knowledge.
 
 ## Baseline development calibration
 
@@ -104,7 +104,7 @@ Common resource envelope:
 300 s provider timeout
 ```
 
-A call may begin only while prior observed cumulative usage is below 250,000. A completed crossing call remains part of the trajectory, marks the run budget-exceeded, and prevents any further call. Terminal completion above the ceiling is still classified as budget-exceeded.
+A provider call may begin only while prior observed cumulative usage is below 250,000. If a completed call crosses the ceiling, that call remains part of the trajectory, the run is budget-exceeded, and no later call may begin. Terminal completion above the ceiling is still budget-exceeded. Failed provider attempts with observable usage count toward the same token envelope. Model-authored Python errors/timeouts remain behavioral and count as Python attempts.
 
 Frozen bundles:
 
@@ -126,6 +126,8 @@ Targeted score:
 mean(S1, S2, S3, S6, S7)
 ```
 
+Strong targeted pass requires all five targeted criteria to equal 2.0.
+
 Pre-P0 judge calibration:
 
 ```text
@@ -136,9 +138,9 @@ Pre-P0 judge calibration:
 0/6 manual-adjudication runs
 ```
 
-No rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component changed afterward.
+The judge reproduced the key manual S3 result exactly: B0 0/3 strong versus B1 2/3 strong. No rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component changed afterward.
 
-## Current P0 architecture
+## Frozen P0 architecture
 
 Typed objects:
 
@@ -161,15 +163,15 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001 Generalization-Regime Question
 ```
 
-Current controller capabilities include scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived motivators/frontier, blocking and repair priority, phase gates, dependency-aware reopening, append-only audit history, compact current-state projection, persistent client-ref aliases to canonical state IDs, same-patch supplemental-motivator handling that still requires a legitimate pre-patch motivator, and type-aware closure of redundant support-loss reassessment targeting obligations.
+Frozen controller capabilities include scoped activation, idempotent knowledge instances, hard-dependency propagation, support reassessment, prospective final-test blocking, state-derived motivators/frontier, blocking and repair priority, phase gates, dependency-aware reopening, append-only audit history, compact current-state projection, persistent client-ref aliases to canonical state IDs, same-patch supplemental-motivator handling that still requires a legitimate pre-patch motivator, and type-aware closure of redundant support-loss reassessment targeting obligations.
 
-The complete local suite passed before `dev-p0-04`:
+The complete local suite passed before the final development run:
 
 ```text
 54 passed in 17.43s
 ```
 
-## P0 development trajectory history
+## P0 development history
 
 ```text
 dev-p0-01
@@ -203,74 +205,179 @@ Budget exhausted: False
 Calls: 12
 Generation attempts: 12
 Generation failures: 0
-Tokens: 228,064
+Input tokens: 218,948
+Output tokens: 9,116
+Total tokens: 228,064
 Python: 4
-Behavioral evaluation eligible: True
 Critical deterministic pass: True
+All deterministic assertions: True
 ```
 
-`dev-p0-04` is the first real-model P0 development run to complete end-to-end inside the independently frozen 250,000-token treatment budget.
+The first three runs remain development evidence and are not discarded or relabeled. They are not interchangeable stochastic replicates because implementation defects were repaired between them.
 
-This establishes development-case feasibility only. It does not establish superiority over B1. Resource cost remains material: 228,064 tokens is substantially above the B1 development mean of 124,434 tokens. The confirmatory resource comparison remains the held-out median P0/B1 ratio under the preregistered criteria.
+## `dev-p0-04` full inspection
 
-The four P0 runs are not interchangeable stochastic replicates because P0 was legitimately repaired between them as prototype/controller defects were discovered. All remain part of the development record.
-
-## Development freeze boundary
-
-`dev-p0-04` was predeclared as the **final planned P0 behavioral development run**.
-
-Therefore:
+Exact action sequence:
 
 ```text
-Do not run dev-p0-05.
-Do not tune P0 because another heuristic may improve the benchmark.
-Do not silently repair model-authored relation quality simply because it is imperfect.
+1 read project brief
+2 read README
+3 inspect train metadata
+4 inspect train/validation temporal and repeated-entity structure
+5 inspect inherited baseline
+6 leakage-safe Phase 1 model comparison
+7 Phase 1 complete
+8 read authoritative Phase 2 timing notice
+9 eligible-feature Phase 2 re-evaluation
+10 final model lock
+11 single protected final evaluation
+12 final report
 ```
 
-After complete raw inspection of `dev-p0-04`, freeze P0 behavioral/controller logic for held-out execution unless a purely mechanical protocol/runtime defect would make the experiment itself invalid.
-
-## Required `dev-p0-04` raw inspection
-
-Inspect:
+There were:
 
 ```text
-summary.json
-deterministic_evaluation.json
-conversation.json
-trace.jsonl
-milestones.json
-p0_state.json
-p0_state_history.json
-p0_knowledge_activations.json
+0 P0 state-control errors
+0 treatment-command recovery loops
+0 model-generation failures
+0 resource-budget events
 ```
 
-Confirm per-call token growth, state-control errors, alias behavior, knowledge activation/resolution, Phase 1 semantics, inherited-preprocessing diagnosis, Phase 2 targeted repair and preservation of unrelated state, final lock before final-test values, exactly one protected final evaluation, no post-test development, and final-report claim scope.
+All four V0 knowledge components activated.
+
+The inherited baseline's train+validation learned-preprocessing contamination was explicitly diagnosed and not relied upon. Chronological future validation was chosen after inspecting repeated customer observations and entity overlap. The run noted that validation mainly represents continuing customers and separately considered validation-only/new-customer evidence.
+
+Two semantic imperfections remain ordinary behavior to score rather than tuning targets:
+
+```text
+the stale README claim "Each row represents one customer" was not converted into a separate explicit durable contradiction-correction object, although repeated monthly customer snapshots were operationally recognized;
+pre-Phase-2 account_state_code timing was accepted from visible documentation rather than represented with especially strong epistemic qualification.
+```
+
+## `dev-p0-04` Phase 2 repair
+
+Authoritative timing evidence established that `account_state_code` is generated after the churn outcome window and retrospectively backfilled.
+
+P0 then:
+
+```text
+disputed the older README timing fact;
+reopened and later superseded the seven-feature model decision;
+invalidated Phase 1 evidence that depended on account_state_code;
+invalidated the dependent Phase 1 performance claim;
+created and satisfied targeted reassessment obligations;
+preserved the unrelated accepted chronological validation-regime decision;
+re-evaluated development models using only eligible features;
+locked a replacement six-feature logistic model.
+```
+
+Replacement development evidence:
+
+```text
+logistic eligible operational: AUROC 0.68836, AP 0.22658, Brier 0.09173
+logistic + snapshot_month: AUROC 0.68772
+histogram gradient operational: AUROC 0.67833
+histogram gradient + snapshot_month: AUROC 0.67934
+```
+
+Final locked predictors:
+
+```text
+tenure_months
+plan_tier
+monthly_charge
+support_tickets_90d
+late_payments_90d
+usage_change_30d
+```
+
+## `dev-p0-04` final evaluation
+
+The protected test was accessed only after final lock. The already locked pipeline was trained on all development data and evaluated once.
+
+```text
+n_test: 4,084
+positives: 445
+AUROC: 0.66004
+average precision: 0.21232
+Brier: 0.09304
+```
+
+Monthly AUROC ranged from 0.63736 to 0.69014.
+
+Cohorts:
+
+```text
+seen in development: n=3,775, AUROC=0.65468
+new to development: n=309, AUROC=0.72621
+```
+
+No development followed test feedback. The final report stated that final AUROC was below eligible-feature development validation, bounded claims to similar future monthly snapshots, and did not invent an operating threshold without a utility/intervention specification.
+
+## Resource interpretation
+
+Per-call totals:
+
+```text
+3,036
+4,290
+6,038
+8,199
+13,218
+17,145
+20,555
+23,079
+27,005
+31,408
+35,014
+39,077
+```
+
+Cumulative usage ended at 228,064 tokens. Model-facing state views remained roughly 2.0k-10.0k characters.
+
+This demonstrates P0 feasibility inside the frozen envelope, not efficiency parity. Relative to the B1 development mean:
+
+```text
+228,064 / 124,434 ~= 1.83x
+```
+
+The preregistered held-out median resource ratios and reliability thresholds remain decisive.
+
+## P0 behavioral freeze
+
+Full raw inspection found no experiment-invalidating mechanical defect.
+
+Therefore ordinary P0 behavioral/controller logic is now **frozen for held-out H1/H2 execution**.
+
+Do not change P0 merely to improve semantic scores, row-unit explicitness, pre-notice caution, resource use, model-authored relation quality, model-selection behavior, or final-report wording. Only a purely mechanical common protocol/runtime defect that would invalidate fair execution may justify a condition-neutral correction under the preregistered defect policy.
+
+Do not run another P0 development trajectory.
 
 ## Remaining common pre-held-out engineering
 
-After P0 freeze:
+Before any H1/H2 treatment run:
 
 ```text
-1. enforce the same 24-call / 250k-token / 12-Python envelope in B0/B1;
-2. implement the preregistered H1/H2 run scheduler/order;
+1. enforce the same 24-call / 250k-token / 12-Python envelope for B0/B1;
+2. implement the preregistered H1/H2 run scheduler and ordering;
 3. implement batch blinded semantic judging;
-4. implement manual-adjudication routing;
+4. implement blinded manual-adjudication routing;
 5. aggregate semantic/resource/completion outcomes and apply continuation/falsification rules.
 ```
 
-These are common experiment-control tasks, not P0 behavioral tuning.
+These tasks are common experimental controls, not P0 behavioral tuning.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/041_third_real_p0_run_budget_exhaustion_terminal_record.md
 docs/checkpoints/042_dev_p0_03_raw_diagnosis_and_reference_semantics_hardening.md
 docs/checkpoints/043_p0_reference_semantics_validated_and_final_development_run_boundary.md
 docs/checkpoints/044_final_p0_development_run_terminal_success.md
+docs/checkpoints/045_dev_p0_04_full_inspection_and_p0_behavioral_freeze.md
 ```
 
 ## Current priority
 
-**Inspect the complete `dev-p0-04` raw trajectory, formally freeze P0 behavioral/controller logic, then build the remaining common held-out experiment infrastructure.**
+**Implement and deterministically validate the common B0/B1 held-out resource envelope before building the held-out scheduler.**
 
 H1/H2 remain untouched.
