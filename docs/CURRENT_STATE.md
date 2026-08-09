@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 19  
+**Checkpoint:** 20  
 **Date:** 2026-08-09  
-**Development stage:** Real-model baseline calibration and semantic trajectory comparison  
-**Implementation status:** The first behavior-evaluable B0 trajectory has been fully reviewed. The common interface is viable as-is, B0 shows strong critical-integrity behavior with several semantic weaknesses, and the first B1 trajectory is now the required next experiment.
+**Development stage:** Real-model baseline calibration and B0/B1 semantic trajectory comparison  
+**Implementation status:** The first behavior-evaluable B0 and B1 trajectories have both completed under the same common configuration. B0 has been fully reviewed semantically; B1 has passed the operational and deterministic viability boundary and now requires full raw-trajectory review before more calibration runs or P0 implementation.
 
 ## Primary purpose
 
@@ -121,17 +121,41 @@ all deterministic assertions passed: true
 
 Checkpoint 18 recorded the operational result. Checkpoint 19 records the full semantic review.
 
-## First B0 semantic review
+### `dev-b1-01`
 
-The complete `dev-b0-03` trajectory was reconstructed from:
+First genuine behavior-evaluable B1 trajectory.
 
 ```text
-trace.jsonl
-summary.json
-deterministic_evaluation.json
-milestones.json
-conversation.json
+completed: true
+successful model calls: 15
+generation attempts: 15
+generation failures: 0
+total observed tokens: 117,606
+behavior_evaluable: true
+all critical deterministic assertions passed: true
 ```
+
+Checkpoint 20 records this operational result. Full semantic review is still pending.
+
+## First matched operational B0/B1 pair
+
+| Measure | B0 `dev-b0-03` | B1 `dev-b1-01` |
+|---|---:|---:|
+| Completed | Yes | Yes |
+| Successful model calls | 15 | 15 |
+| Generation attempts | 15 | 15 |
+| Generation failures | 0 | 0 |
+| Behavior evaluable | Yes | Yes |
+| Critical deterministic assertions passed | Yes | Yes |
+| Total observed tokens | 103,240 | 117,606 |
+
+B1 used 14,366 more observed tokens in this first matched pair, approximately 13.9 percent more than B0. This is descriptive only until the raw B1 trace is decomposed. It may reflect static-prompt overhead, more substantive reasoning, longer interactions, redundancy, or ordinary run variation.
+
+The first pair has identical successful-call counts and no generation failures in either condition. The current 20-call and 30,000-token per-call ceilings are therefore operationally viable for at least one full run of each baseline condition.
+
+## First B0 semantic review
+
+The complete `dev-b0-03` trajectory was reconstructed from all five raw run artifacts.
 
 ### Strong B0 behavior
 
@@ -158,42 +182,34 @@ The final locked feature set excluded `account_state_code` and the final test AU
 
 ### B0 semantic weaknesses
 
-The first B0 run was not semantically perfect.
-
-1. **Row-unit correction remained implicit.** B0 empirically established repeated customer-month structure, unique customer-month pairs, and exact tenure/month progression, and then reasoned in later-snapshot terms. But it never cleanly recorded the durable semantic conclusion that the observation unit is a customer-month snapshot and the README's one-row-per-customer statement is stale.
+1. **Row-unit correction remained implicit.** B0 empirically established repeated customer-month structure, unique customer-month pairs, and exact tenure/month progression, then reasoned in later-snapshot terms. It never cleanly recorded the durable semantic conclusion that the observation unit is a customer-month snapshot and the README's one-row-per-customer statement is stale.
 
 2. **Inherited preprocessing contamination was avoided but not explicitly diagnosed.** B0 read the baseline code, never relied on its contaminated validation evidence, and built train-only pipelines. It did not explicitly state that fitting learned preprocessing on train+validation invalidates the inherited validation comparison.
 
-3. **Optional iid bootstrap uncertainty was too strong for repeated entities.** B0 added row-wise bootstrap AUROC intervals/contrasts despite repeated observations from customers. Point metrics and the model lock remain valid, but nominal interval interpretation should account for within-customer dependence, for example through an estimand-appropriate clustered resampling design.
+3. **Optional iid bootstrap uncertainty was too strong for repeated entities.** B0 added row-wise bootstrap AUROC intervals/contrasts despite repeated customer observations. Point metrics and model lock remain valid, but nominal interval interpretation should account for within-customer dependence.
 
-These weaknesses are useful calibration evidence. They show that a strong generic baseline can satisfy major integrity requirements while leaving important semantics implicit or introducing weaker inferential precision through optional analysis.
+These weaknesses are especially informative for the B1 comparison because row-unit/generalization reasoning and learned-transformation boundaries are already among the four pre-specified static methodological concepts. They must not be converted into newly invented post-hoc requirements.
 
-## Generalization-regime judgment
+## B1 semantic questions now pending
 
-B0's use of the supplied chronological holdout is defensible for the intended deployment regime.
-
-It explicitly recognized that train and validation share customers and interpreted this as later-snapshot scoring rather than automatically requiring pure unseen-entity validation. It also noted that evidence for entirely new customers is weaker.
-
-It did not quantify known/new subgroup performance. That remains an optional depth opportunity rather than a blocking defect for this case.
-
-## Phase 2 repair judgment
-
-The repair was especially strong and precise:
+The full `dev-b1-01` review should determine whether static knowledge materially changes behavior relative to B0, especially:
 
 ```text
-feature-timing fact changed
--> account_state_code removed
--> same candidate comparison re-run
--> old feature-dependent evidence retired
--> unrelated project semantics retained
--> final model locked only after new valid evidence existed
+Does B1 make the customer-month observation unit explicit?
+Does it explicitly diagnose the inherited train+validation preprocessing contamination?
+Does it reason more explicitly about the intended temporal/entity generalization regime?
+Does it treat account_state_code appropriately before Phase 2 rather than rejecting it only because of generic leakage suspicion?
+Does it repair Phase 2 evidence as precisely as B0?
+Does it preserve strict final-test discipline?
+Does it improve or worsen optional uncertainty analysis?
+Does the additional token usage buy methodological value or mainly add overhead?
 ```
 
-This gives B0 a serious baseline against which B1 and P0 must demonstrate additional value.
+The raw trajectory must be inspected before any answer is recorded.
 
 ## Resource behavior
 
-The first completed trajectory consumed:
+B0's first completed trajectory consumed:
 
 ```text
 96,525 input tokens
@@ -203,17 +219,19 @@ The first completed trajectory consumed:
 15 successful calls
 ```
 
-About 93.5% of observed tokens were input tokens. Per-turn input grew from 1,107 on the first turn to 14,693 on the final turn as the threaded project context accumulated.
+About 93.5 percent of B0's observed tokens were input tokens, with per-turn input growing from 1,107 on turn 1 to 14,693 on the final turn as threaded project context accumulated.
 
-The one-command-per-turn protocol therefore has material serial/context cost, but no blocking interface defect was observed. Changing the command model now after seeing B0 would materially alter the experiment and is not justified by this run.
+B1 consumed 117,606 total observed tokens in the first matched run. Its input/output/reasoning decomposition and per-turn growth are not yet known from the terminal summary and must be recovered from the raw artifacts.
+
+The one-command-per-turn protocol has material serial/context cost, but the completed B0 review found no blocking interface defect. No common-interface change should be made before B1's trajectory is inspected.
 
 ## Common-interface decision
 
-No further condition-neutral provider/runtime repair is required before B1.
+No condition-neutral provider/runtime repair is currently indicated.
 
-A minor reporting-specification mismatch remains: Foundation 011 describes observation-unit interpretation as a Phase 1 report element, while the current milestone schema has no dedicated observation-unit field. The full trajectory still exposes enough evidence for semantic judging. Adding a field now merely to force an observed B0 omission would risk tuning the interface after seeing the baseline and would require rerunning B0 for parity.
+A minor reporting-specification mismatch remains: Foundation 011 describes observation-unit interpretation as a Phase 1 report element, while the implemented milestone schema has no dedicated observation-unit field. The trajectory provides enough evidence for semantic judging. Adding a field after observing B0's omission would risk tuning the interface to an observed baseline weakness and require parity reruns.
 
-Therefore the common interface should remain unchanged for the first B1 comparison.
+The interface therefore remains unchanged for the B1 comparison.
 
 ## Automated validation
 
@@ -223,7 +241,7 @@ The latest code-affecting calibration repair remains CI-validated with:
 25 passed in 8.30s
 ```
 
-No code was changed during the Checkpoint 18/19 empirical review.
+No code has been changed during Checkpoints 18-20 empirical review.
 
 Historical implementation/calibration checkpoints now include:
 
@@ -236,11 +254,12 @@ docs/checkpoints/016_first_real_model_calibration_output_budget.md
 docs/checkpoints/017_duplicate_structured_output_normalization.md
 docs/checkpoints/018_first_behavior_evaluable_b0_run.md
 docs/checkpoints/019_first_b0_semantic_trajectory_review.md
+docs/checkpoints/020_first_behavior_evaluable_b1_run.md
 ```
 
 ## P0 remains intentionally unimplemented
 
-The experiment still requires real B0/B1 calibration evidence before P0 is built.
+The experiment still requires sufficiently understood B0/B1 calibration before P0 is built.
 
 The planned minimal P0 state remains:
 
@@ -272,23 +291,22 @@ and only the four pre-specified knowledge components.
 
 **Q-042 remains highest priority.**
 
-B0 operational viability and one full B0 semantic trajectory are now known. The next uncertainty is whether the static four-component knowledge treatment B1 changes behavior meaningfully under the same common interface and budget.
+The project now has one complete behavior-evaluable trajectory from each baseline condition under matched configuration. The immediate uncertainty is semantic: what did the static knowledge change, if anything, and was the additional resource use useful?
 
-The development protocol still calls for multiple calibration trajectories per condition before budgets and semantic-evaluation rules are frozen.
+Foundation 011 still calls for multiple development-calibration trajectories per condition before semantic-evaluation rules and held-out budgets are frozen.
 
 ## Next step
 
-Run the first B1 development-calibration trajectory with the exact same common configuration as `dev-b0-03`:
+Inspect the complete raw `dev-b1-01` trajectory and compare it directly with the already reviewed `dev-b0-03` trajectory.
+
+Required B1 artifacts:
 
 ```text
-condition: B1
-model: gpt-5.6-terra
-reasoning effort: high
-max successful model calls: 20
-max generation retries: 2
-max output tokens per call: 30,000
+trace.jsonl
+summary.json
+deterministic_evaluation.json
+milestones.json
+conversation.json
 ```
 
-Inspect that trajectory semantically before deciding the ordering of the remaining development-calibration replicates.
-
-Do not implement P0 yet.
+Do not run additional B0/B1 replicates and do not implement P0 until this first matched semantic comparison is complete.
