@@ -1,0 +1,24 @@
+{
+  "protocol_version": "v0.1.0",
+  "recorded_on": "2026-08-09",
+  "selection_rule": "first_seed_at_or_above_start_that_passes_all_benchmark_self_tests",
+  "bundles": {
+    "H1": {
+      "case_id": "churn_v0_h1",
+      "selected_seed": 811,
+      "seed_start": 811,
+      "first_candidate_passed": true,
+      "file_count": 9,
+      "aggregate_sha256": "7d3cdfe90f262b604ad637ebb0b07b35e2604c3feb5365d2e9648adf54b7b4c8"
+    },
+    "H2": {
+      "case_id": "churn_v0_h2",
+      "selected_seed": 1601,
+      "seed_start": 1601,
+      "first_candidate_passed": true,
+      "file_count": 9,
+      "aggregate_sha256": "44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e"
+    }
+  },
+  "note": "The generated bundle registry under generated/held_out contains file-level hashes. Generated bundles are reproducible and intentionally git-ignored; this committed record freezes the selected seeds and aggregate bundle identities before P0 implementation."
+}
