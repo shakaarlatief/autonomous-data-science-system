@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 51  
+**Checkpoint:** 52  
 **Date:** 2026-08-10  
-**Development stage:** P0 behavior frozen; common held-out resource parity validated; frozen H1/H2 inputs verified; exact 30-slot local plan materialized; resumable one-attempt held-out executor implemented; deterministic validation pending  
-**Implementation status:** No H1/H2 treatment model call has occurred. The real local H1/H2 bundles were verified against their pre-P0 SHA-256 identities and `results/held_out/run_plan.json` was materialized successfully. A new executor now supports no-inference status inspection and explicit one-attempt-at-a-time advancement with append-only attempt bookkeeping and preregistered replacement semantics. Seven new tests were added; expected complete suite is 69 tests.
+**Development stage:** Held-out treatment execution infrastructure fully validated and frozen; first preregistered H1 attempt authorized  
+**Implementation status:** P0 behavioral/controller logic is frozen. B0/B1 share the registered held-out resource envelope. Frozen H1/H2 bundles have been verified against pre-P0 SHA-256 identities, the exact 30-slot local run plan has been materialized, and the resumable one-attempt executor has passed the complete 69-test suite. A real no-inference status check reports `READY_INITIAL`, `0/30` resolved slots, and next attempt `h1-r01-b0-a01`. No H1/H2 treatment model call occurred before this checkpoint. The first explicit `run-next` call is now authorized.
 
 ## Primary purpose
 
@@ -73,10 +73,10 @@ reasoning effort: high
 300 s provider request timeout
 ```
 
-Token rule:
+Resource semantics:
 
 ```text
-if prior cumulative observed usage is >= 250,000,
+if prior observed cumulative usage is >= 250,000,
 no new treatment call may begin;
 
 if an admitted provider call crosses 250,000,
@@ -105,55 +105,33 @@ file_count: 9
 SHA-256: 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-Both selected seeds were the first preregistered candidates and passed benchmark self-tests before P0 implementation.
+The real local directories were revalidated and matched these identities exactly before run-plan materialization.
 
-## Real local freeze verification and run-plan materialization
-
-After the planning layer passed 62/62 tests, the user ran:
-
-```bash
-python -m ads_v0.heldout_execution
-```
-
-Observed:
-
-```text
-Protocol: v0.1.0
-Validated bundles: H1, H2
-H1: seed=811 files=9 sha256=7d3cdfe90f262b604ad637ebb0b07b35e2604c3feb5365d2e9648adf54b7b4c8
-H2: seed=1601 files=9 sha256=44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
-Run slots: 30
-Output: C:\Projects_Data\autonomous-data-science-system\prototype_v0\results\held_out\run_plan.json
-```
-
-This command made zero model/API calls. The output identities exactly match the committed pre-P0 freeze record.
-
-`results/held_out/run_plan.json` is now the local execution plan and should not be overwritten or regenerated after held-out execution begins.
-
-## Preregistered run order
+## Preregistered order
 
 ```text
 H1
-replicate 1: B0, B1, P0
-replicate 2: B1, P0, B0
-replicate 3: P0, B0, B1
-replicate 4: B0, B1, P0
-replicate 5: B1, P0, B0
+r1: B0, B1, P0
+r2: B1, P0, B0
+r3: P0, B0, B1
+r4: B0, B1, P0
+r5: B1, P0, B0
 
 H2
-replicate 1: P0, B0, B1
-replicate 2: B0, B1, P0
-replicate 3: B1, P0, B0
-replicate 4: P0, B0, B1
-replicate 5: B0, B1, P0
+r1: P0, B0, B1
+r2: B0, B1, P0
+r3: B1, P0, B0
+r4: P0, B0, B1
+r5: B0, B1, P0
 ```
 
-Stable first slot:
+The materialized local execution plan is:
 
 ```text
-slot: h1-r01-b0
-initial attempt: h1-r01-b0-a01
+results/held_out/run_plan.json
 ```
+
+It must not be overwritten or regenerated after held-out execution begins.
 
 ## Frozen semantic judge
 
@@ -175,7 +153,7 @@ Judge calibration before P0 implementation:
 0/6 manual-adjudication runs
 ```
 
-No semantic rubric, threshold, bundle, B0/B1 prompt, or privileged knowledge component may be changed after this boundary.
+No rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component may be revised in response to held-out treatment outcomes.
 
 ## Frozen P0
 
@@ -191,7 +169,7 @@ Relations:
 DEPENDS_ON SUPPORTS CONTRADICTS ANSWERS GENERATED_BY
 ```
 
-Exactly four privileged knowledge components:
+Exactly four privileged components:
 
 ```text
 K-INFO-001 Protected Final Evaluation
@@ -209,80 +187,36 @@ dev-p0-03: incomplete, 14 calls, 260,234 tokens
 dev-p0-04: complete within budget, 12 calls, 228,064 tokens, 4 Python attempts
 ```
 
-`dev-p0-04` was predeclared as the final planned P0 behavioral development run. Full inspection found no experiment-invalidating defect. P0 behavioral/controller logic is frozen.
-
-Do not change P0 to improve held-out semantics, resource use, state relation quality, model choice, or report wording.
+`dev-p0-04` was predeclared as the final planned behavioral development run. Full inspection found no experiment-invalidating defect. P0 behavioral/controller logic remains frozen.
 
 ## Common B0/B1 resource parity
 
-`BaselineTreatmentRunner` now supports and enforces the same held-out total-token and Python-attempt limits when orchestration supplies them.
-
-Validated common semantics:
-
-```text
-pre-call token check
-failed-attempt observable token accounting
-crossing-call retention
-terminal completion above token ceiling => completed but not within budget
-Python-attempt accounting
-execution blocking beyond Python ceiling
-resource-budget trace events
-```
+`BaselineTreatmentRunner` now enforces the same held-out token and Python ceilings when orchestration supplies them. Validated common semantics include pre-call token checks, failed-attempt observable token accounting, crossing-call retention, terminal completion above the token ceiling being classified as not within budget, Python-attempt accounting, and resource-budget trace events.
 
 B0/B1 still do not receive P0's prospective protected-final-test safeguard.
 
-The complete suite passed 58/58 after this layer.
+## Held-out execution infrastructure
 
-## Held-out planning layer
+The planning layer provides frozen-bundle verification, exact 30-slot schedule materialization, stable attempt IDs, and run-plan overwrite protection.
 
-`ads_v0.heldout_execution` performs no treatment inference and provides:
-
-```text
-frozen-bundle identity verification
-exact 30-slot schedule materialization
-10-slot-per-condition validation
-stable replacement-attempt IDs
-resource-config snapshot
-run-plan no-overwrite protection
-```
-
-The complete suite passed 62/62 after this layer.
-
-## Resumable held-out executor now implemented
-
-New module:
+The executor is:
 
 ```text
 prototype_v0/src/ads_v0/heldout_runner.py
 ```
 
-Safe CLI separation:
+CLI:
 
-```text
+```bash
 python -m ads_v0.heldout_runner status
 python -m ads_v0.heldout_runner run-next
 ```
 
-`status` validates inputs and reports the next action but makes zero model calls.
+`status` makes zero treatment model calls.
 
-`run-next` may launch **at most one** treatment attempt per explicit invocation.
+`run-next` may launch at most one attempt per explicit invocation. Before launch it revalidates frozen bundles, reconstructs the registered plan, requires exact equality with the materialized plan, selects only the earliest unresolved slot, and propagates the frozen model/resource configuration.
 
-Before every launch the executor:
-
-```text
-revalidates both frozen local bundles;
-rebuilds the plan from the preregistered protocol and verified identities;
-requires exact equality with materialized run_plan.json;
-selects only the earliest unresolved slot;
-loads the registered model/resource configuration;
-validates the frozen timeout contract.
-```
-
-Any plan edit, bundle drift, or configuration mismatch stops before inference.
-
-## Attempt ledger and duplicate-run protection
-
-Attempt artifacts are stored under:
+Attempt artifacts live under:
 
 ```text
 results/held_out/attempts/<attempt_id>/
@@ -294,29 +228,16 @@ Before provider inference:
 attempt_started.json
 ```
 
-is persisted with slot identity, plan SHA-256, bundle SHA-256, start time, and registered configuration.
-
-After a valid treatment `summary.json` exists:
+After a valid treatment result:
 
 ```text
+summary.json
 attempt_record.json
 ```
 
-is written with outcome classification and diagnostic wall-clock time.
+An interrupted start marker without a valid summary blocks automatic duplicate execution. A valid summary without final executor bookkeeping is reconciled without launching another model attempt.
 
-If only the start marker exists, status becomes:
-
-```text
-INTERRUPTED_ATTEMPT
-```
-
-and no duplicate attempt is launched automatically.
-
-If a valid summary exists but the final executor record is missing, the next `run-next` call performs bookkeeping reconciliation only and launches no model attempt.
-
-## Replacement policy encoded in executor
-
-Behavior-evaluable attempt:
+## Replacement policy
 
 ```text
 behavior_evaluable = true
@@ -324,17 +245,15 @@ behavior_evaluable = true
 => never replaced
 ```
 
-This includes incomplete work, budget exhaustion, Python errors/timeouts, deterministic failure, semantic mistakes, and poor methodology.
-
-Non-behavior-evaluable provider termination:
+This includes incomplete work, budget exhaustion, Python errors/timeouts, deterministic failures, semantic mistakes, and poor methodology.
 
 ```text
 behavior_evaluable = false
 terminal_generation_error = non-empty
-=> replacement eligible inside same slot
+=> replacement eligible inside the same slot
 ```
 
-At most:
+Maximum attempts inside one slot:
 
 ```text
 a01 initial
@@ -342,55 +261,63 @@ a02 replacement 1
 a03 replacement 2
 ```
 
-If all three are non-behavior-evaluable, execution returns `REPLACEMENTS_EXHAUSTED` and pauses.
+Three non-behavior-evaluable attempts cause `REPLACEMENTS_EXHAUSTED` and execution pauses. The executor never skips a still-unresolved earlier slot.
 
-The executor never skips to a later slot while an earlier slot remains unresolved.
+## Final execution validation
 
-## New executor tests
-
-Seven deterministic tests were added for:
+The user pulled the executor and ran the complete deterministic suite:
 
 ```text
-exact first slot h1-r01-b0-a01;
-behavior-evaluable slot resolution and next-slot advancement;
-in-slot provider-failure replacement;
-pause after three non-behavior-evaluable attempts;
-interrupted-start duplicate prevention;
-summary-only reconciliation without a model call;
-registered model/resource propagation and tampered-plan rejection.
+69 passed in 11.52s
 ```
 
-Expected complete suite:
+Then the user ran the real no-inference status command:
 
 ```text
-69 passed
+Status: READY_INITIAL
+Resolved slots: 0/30
+Next attempt: h1-r01-b0-a01
+Initial attempt is ready for earliest unresolved slot h1-r01-b0.
+Model attempt launched: False
 ```
 
-## Remaining pre-held-out work
+This confirms that the real materialized plan and attempt ledger are clean at the execution boundary.
 
-Before the first H1/H2 paid treatment attempt:
+## Execution-infrastructure freeze
+
+Held-out execution infrastructure is now frozen for ordinary use.
+
+Do not change condition order, slot identities, resource budgets, replacement semantics, B0/B1 prompts, P0 behavioral/controller logic, provider/model configuration, bundle identities, phase semantics, attempt bookkeeping, or outcome classification merely to improve held-out results.
+
+A future change during held-out execution is permitted only for a genuine common mechanical harness/runtime correctness defect under Foundation 012. Such a defect must be documented and tested, and affected comparable runs must be invalidated/rerun condition-neutrally as required by the preregistered policy.
+
+## First authorized held-out attempt
 
 ```text
-1. pull the executor implementation and run the complete suite;
-2. require all 69 tests to pass;
-3. run `python -m ads_v0.heldout_runner status` against the real materialized plan;
-4. confirm status reports h1-r01-b0-a01 and zero resolved slots;
-5. checkpoint the final execution-infrastructure freeze;
-6. only then authorize the first explicit `run-next` call.
+variant: H1
+replicate: 1
+condition: B0
+slot: h1-r01-b0
+attempt: h1-r01-b0-a01
 ```
 
-Semantic judging, adjudication, aggregation, and continuation/falsification logic remain to be implemented after treatment execution infrastructure is frozen. No semantic judge should inspect H1/H2 before treatment execution begins.
+Authorized command:
+
+```bash
+python -m ads_v0.heldout_runner run-next
+```
+
+The command may launch only this one attempt. After it returns, inspect the terminal output and persisted attempt artifacts before launching another attempt.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/047_common_baseline_resource_envelope_deterministically_validated.md
-docs/checkpoints/048_held_out_bundle_validation_and_run_plan_materialization.md
 docs/checkpoints/049_held_out_plan_layer_deterministically_validated.md
 docs/checkpoints/050_real_held_out_run_plan_materialized_and_frozen_inputs_verified.md
 docs/checkpoints/051_resumable_one_attempt_held_out_executor_implemented.md
+docs/checkpoints/052_held_out_execution_infrastructure_frozen_and_first_run_authorized.md
 ```
 
 ## Current priority
 
-**Deterministically validate the new one-attempt held-out executor. Do not run `run-next` yet. Expected complete suite: 69 passed.**
+**Run exactly one held-out attempt with `python -m ads_v0.heldout_runner run-next`, then inspect its terminal outcome and persisted artifacts before any second attempt.**
