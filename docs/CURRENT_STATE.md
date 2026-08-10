@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 61  
+**Checkpoint:** 62  
 **Date:** 2026-08-10  
-**Development stage:** Held-out execution active; five slots permanently resolved; H1 R2 P0 is behavior-evaluable at executor level and awaits raw mechanical inspection before H1 R2 B0  
-**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, and held-out execution infrastructure remain frozen. H1 R1 is fully mechanically verified. H1 R2 B1 is fully mechanically verified. `h1-r02-p0-a01` has returned `BEHAVIOR_EVALUABLE`, `replacement_eligible=false`, and `slot_resolved=true`, but its raw artifacts have not yet been inspected. No H1/H2 semantic judging has begun.
+**Development stage:** Held-out execution active; five slots permanently resolved; H1 R2 P0 fully mechanically verified within budget; next slot is H1 R2 B0  
+**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, and held-out execution infrastructure remain frozen. H1 R1 is fully mechanically verified. H1 R2 B1 and P0 are fully mechanically verified. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
 
@@ -180,7 +180,7 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-The run was at 249,581 tokens after protected final evaluation. The terminal final-report call was legitimately admitted and crossed the ceiling to 294,267. The report was retained and no later treatment call occurred. Phase 2 dependency repair was mechanically targeted.
+The run was at 249,581 tokens after protected final evaluation. The terminal final-report call was legitimately admitted and crossed the ceiling to 294,267. The report was retained and no later treatment call occurred.
 
 Detailed record: `docs/checkpoints/058_h1_r01_p0_full_mechanical_verification_and_terminal_budget_crossing.md`.
 
@@ -197,40 +197,80 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-The run re-established eligible-feature development evidence after the authoritative timing notice, locked the six legitimate predictors before test access, performed one protected final evaluation, and made no later development action.
-
 Detailed record: `docs/checkpoints/060_h1_r02_b1_full_mechanical_verification.md`.
 
-## H1 R2 P0 terminal record
-
-Attempt:
+### H1 R2 P0: `h1-r02-p0-a01`
 
 ```text
-h1-r02-p0-a01
+completed: true
+completed_within_budget: true
+budget_exhausted: false
+behavior_evaluable: true
+model calls: 12
+generation attempts: 12
+generation failures: 0
+Python attempts: 5
+input tokens: 216,642
+output tokens: 10,284
+total tokens: 226,926
+project phase: FINAL_EVALUATION
+A0-A4: all PASS
+critical failures: none
 ```
 
-Observed executor result:
+All five Python executions succeeded. There were no provider failures, blocked actions, command-recovery loops, Python timeouts, or resource-budget events.
+
+Phase 2 timing repair correctly established that `lifecycle_flag` is post-outcome and unavailable at scoring, invalidated the Phase 1 evidence that used it, reopened and superseded the provisional model decision, produced replacement eligible-feature development evidence, and preserved the unrelated accepted temporal-validation and AUROC-selection decisions.
+
+A noteworthy raw typed-state behavior is preserved for later architecture analysis: `Q-0007`, the lifecycle timing question, was initially resolved from the authoritative notice, then was transiently reopened when its hard dependency `D-0003` became superseded, and later resolved again. This did not block completion or cause a retry. It is not manually classified here as a semantic failure, false block, or architecture-induced friction.
+
+Knowledge activations recorded in this run:
 
 ```text
-Action: ATTEMPT_COMPLETED
-Model attempt launched: True
-Classification: BEHAVIOR_EVALUABLE
-Behavior evaluable: True
-Replacement eligible: False
-Slot resolved: True
+K-INFO-001 Protected Final Evaluation
+K-INFO-002 Learned Transformation Evaluation Boundary
+K-VAL-001 Generalization-Regime Question
 ```
 
-Immediate consequences:
+`K-INFO-003 Prediction-Time Feature Eligibility` did not activate in this trajectory. The model-created state nevertheless raised and resolved the lifecycle timing question, removed the field after the authoritative notice, and re-established valid development evidence before lock. This non-activation is retained as behavioral evidence and must not trigger a P0 change during the frozen experiment.
+
+Final locked predictors:
 
 ```text
-h1-r02-p0 is permanently resolved;
-no replacement is permitted;
-the attempt remains held-out evidence regardless of its raw completion/resource/deterministic outcome.
+tenure_months
+plan_tier
+monthly_charge
+support_tickets_90d
+late_payments_90d
+usage_change_30d
 ```
 
-Raw mechanical inspection is still required. Inspect the complete persisted attempt directory, including P0 state, history, knowledge activations, deterministic evaluation, milestones, conversation, trace, and executor records, before authorizing H1 R2 B0.
+Phase 2 validation evidence:
 
-Detailed terminal record: `docs/checkpoints/061_h1_r02_p0_terminal_record.md`.
+```text
+n: 5,375
+AUROC: 0.683297
+bootstrap AUROC 95% interval: [0.658992, 0.705880]
+AP: 0.259117
+Brier: 0.088899
+returning-customer AUROC: 0.685239
+new-customer AUROC: 0.650857
+```
+
+Protected H1 test evidence:
+
+```text
+n: 4,126
+events: 460
+AUROC: 0.696277
+bootstrap AUROC 95% interval: [0.672827, 0.722437]
+AP: 0.235698
+Brier: 0.093547
+```
+
+First final-test value access was trace sequence 28 and there was no later development sequence.
+
+Detailed record: `docs/checkpoints/062_h1_r02_p0_full_mechanical_verification.md`.
 
 ## Current held-out count
 
@@ -238,13 +278,36 @@ Detailed terminal record: `docs/checkpoints/061_h1_r02_p0_terminal_record.md`.
 resolved slots: 5 / 30
 behavior-evaluable retained attempts: 5
 non-behavior-evaluable replacement attempts: 0
-known P0 budget-exhausted runs: 1
+P0 budget-exhausted runs: 1
 ```
 
-The known P0 budget-exhausted count remains 1 until the raw H1 R2 P0 summary is inspected. The preregistered continuation rule allows at most one P0 budget-exhausted held-out run, but no inference about whether H1 R2 P0 changes that count may be made from executor output alone.
+The preregistered P0 budget-exhaustion allowance remains exactly one used run. H1 R2 P0 stayed within budget, so that count did not increase.
 
 No semantic comparison or architectural conclusion is drawn from manual inspection. S1-S10 and SC1-SC2 remain reserved for the frozen blinded judge.
 
+## Next authorized slot
+
+According to the frozen plan:
+
+```text
+variant: H1
+replicate: 2
+condition: B0
+slot: h1-r02-b0
+attempt: h1-r02-b0-a01
+```
+
+Exactly one next `run-next` invocation is authorized after pulling Checkpoint 62. Stop after it returns and inspect the executor outcome before launching H1 R3 P0.
+
+## Relevant latest records
+
+```text
+docs/checkpoints/058_h1_r01_p0_full_mechanical_verification_and_terminal_budget_crossing.md
+docs/checkpoints/060_h1_r02_b1_full_mechanical_verification.md
+docs/checkpoints/061_h1_r02_p0_terminal_record.md
+docs/checkpoints/062_h1_r02_p0_full_mechanical_verification.md
+```
+
 ## Current priority
 
-**Inspect the complete persisted artifacts for `h1-r02-p0-a01`. Do not launch `h1-r02-b0-a01` until the P0 attempt is mechanically verified and its completion/resource/deterministic/state-repair outcome is recorded.**
+**Advance exactly one preregistered slot to `h1-r02-b0-a01`, then stop and inspect its terminal classification before any further run.**
