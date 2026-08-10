@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 48  
+**Checkpoint:** 49  
 **Date:** 2026-08-10  
-**Development stage:** P0 behavior frozen; B0/B1 resource parity validated; held-out bundle verification and exact 30-slot run-plan materialization implemented; deterministic validation pending  
-**Implementation status:** The complete suite passed 58/58 after common B0/B1 resource-envelope enforcement. The next condition-neutral held-out layer now validates local H1/H2 bundles against the identities frozen before P0 implementation and materializes the exact preregistered 30-slot schedule with stable replacement-attempt identifiers. Four new deterministic tests were added. No held-out H1/H2 treatment call has occurred.
+**Development stage:** P0 behavior frozen; common baseline resource parity validated; held-out bundle verification and exact 30-slot planning layer deterministically validated; real local plan materialization is next  
+**Implementation status:** The complete suite now passes 62/62 after adding execution-time frozen H1/H2 bundle verification, exact preregistered 30-slot schedule materialization, stable replacement-attempt identifiers, and run-plan overwrite protection. No held-out H1/H2 treatment call has occurred.
 
 ## Primary purpose
 
@@ -16,19 +16,6 @@ The LLM is one reasoning component inside a system that should operationalize me
 ## Prototype V0 question
 
 > Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than an equally capable simpler LLM workflow?
-
-Semantic spine:
-
-```text
-PROJECT STATE
-  -> KNOWLEDGE ACTIVATION
-  -> QUESTIONS / OBLIGATIONS / CONSTRAINTS
-  -> RUNNABLE ACTIONS
-  -> EXECUTION
-  -> EVIDENCE
-  -> STATE UPDATE
-  -> DEPENDENCY IMPACT / REOPENING
-```
 
 ## Conditions
 
@@ -71,7 +58,7 @@ B0/B1/P0: 10 held-out runs each
 30 treatment slots total
 ```
 
-Common treatment configuration:
+Registered common treatment configuration:
 
 ```text
 provider: OpenAI
@@ -86,7 +73,7 @@ reasoning effort: high
 300 s provider timeout
 ```
 
-Token semantics remain:
+Token semantics:
 
 ```text
 if prior observed cumulative usage is >= 250,000,
@@ -118,7 +105,7 @@ file_count: 9
 SHA-256: 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-Both seeds were the first preregistered candidates and passed deterministic benchmark self-tests before P0 implementation.
+Both seeds were the first preregistered candidates and passed benchmark self-tests before P0 implementation.
 
 ## Frozen semantic judge
 
@@ -140,7 +127,7 @@ Pre-P0 judge calibration:
 0/6 manual-adjudication runs
 ```
 
-The judge reproduced the key development S3 result exactly: B0 0/3 strong versus B1 2/3 strong.
+No semantic rubric, threshold, held-out bundle, B0/B1 prompt, or privileged knowledge component may be changed after this boundary.
 
 ## Frozen P0
 
@@ -168,17 +155,17 @@ K-VAL-001 Generalization-Regime Question
 P0 development history:
 
 ```text
-dev-p0-01: incomplete, 10 calls, 250,279 tokens, early Phase 2
-dev-p0-02: incomplete, 12 calls, 291,350 tokens, reached final evaluation
-dev-p0-03: incomplete, 14 calls, 260,234 tokens, repaired Phase 2 evidence
+dev-p0-01: incomplete, 10 calls, 250,279 tokens
+dev-p0-02: incomplete, 12 calls, 291,350 tokens
+dev-p0-03: incomplete, 14 calls, 260,234 tokens
 dev-p0-04: complete within budget, 12 calls, 228,064 tokens, 4 Python attempts
 ```
 
-`dev-p0-04` was predeclared as the final planned behavioral development run before its result was known. Full inspection found no experiment-invalidating mechanical defect. P0 behavioral/controller logic is frozen and must not be tuned for held-out semantic scores, efficiency, state relation quality, model choice, or report wording.
+`dev-p0-04` was predeclared as the final planned behavioral development run. Full inspection found no experiment-invalidating mechanical defect. P0 behavioral/controller logic is frozen.
 
 ## Common baseline resource layer
 
-`BaselineTreatmentRunner` now enforces the same optional held-out token and Python ceilings as P0 when orchestration supplies them.
+`BaselineTreatmentRunner` now supports and enforces the held-out total-token and Python-attempt ceilings when orchestration supplies them.
 
 Validated behaviors include:
 
@@ -194,33 +181,32 @@ resource-budget trace events
 
 B0/B1 do not receive P0's prospective final-test safeguard.
 
-Deterministic validation after this implementation:
+Deterministic validation after this layer:
 
 ```text
 58 passed in 22.70s
 ```
 
-## Held-out pre-execution planning now implemented
+## Held-out planning layer
 
-New module:
+Module:
 
 ```text
 prototype_v0/src/ads_v0/heldout_execution.py
 ```
 
-It performs no model inference. It now provides:
+It performs no model inference. It provides:
 
 ```text
 execution-time loading of the preregistered protocol;
-execution-time loading of the pre-P0 frozen bundle identity record;
+loading of the pre-P0 frozen bundle identity record;
 verification of H1/H2 case_id, surface_variant, selected seed, self-test status,
-file count, and aggregate SHA-256 fingerprint;
+file count, and aggregate SHA-256;
 exact materialization of the registered 30-slot H1/H2 order;
-validation that each replicate contains B0, B1, and P0 exactly once;
+validation that every replicate contains B0, B1, and P0 exactly once;
 validation of 10 slots per condition;
 stable initial and replacement-attempt identifiers;
-a deterministic run-plan JSON containing the verified bundle identities and
-registered treatment resource configuration;
+a deterministic run-plan JSON containing verified bundle identities and resource configuration;
 no-overwrite protection for an existing run plan unless explicitly forced.
 ```
 
@@ -242,45 +228,59 @@ provider/infrastructure generation termination after registered retries
     -> non-behavior-evaluable, replacement eligible
 
 Python error/timeout, methodological error, semantic failure, budget exhaustion,
-or any other treatment behavior
+or other treatment behavior
     -> behavior-evaluable, not replacement eligible
 ```
 
 At most two replacement attempts are permitted after the initial attempt. If all three attempts for one slot terminate non-behavior-evaluable, execution must pause for investigation.
 
-## New run-plan tests
+## Latest deterministic validation
 
-Four tests were added for:
-
-```text
-exact preregistered 30-slot order and per-condition counts;
-stable attempt IDs inside a slot;
-exact frozen-bundle acceptance and tamper rejection;
-run-plan resource snapshot and no-overwrite protection.
-```
-
-Expected complete suite:
+The user pulled Checkpoints 47-48 and ran the complete suite:
 
 ```text
-62 passed
+62 passed in 9.77s
 ```
 
-## Remaining pre-held-out engineering
+This validates the current common resource and planning infrastructure. It does not constitute held-out evidence because no H1/H2 treatment inference has occurred.
 
-After the new plan/bundle-validation tests pass:
+## Immediate next action
+
+Materialize the real local frozen run plan from the actual git-ignored H1/H2 bundle directories:
+
+```bash
+python -m ads_v0.heldout_execution
+```
+
+Expected behavior:
 
 ```text
-1. validate the real local H1/H2 bundles and materialize results/held_out/run_plan.json;
-2. implement a safe resumable sequential run-next executor;
-3. ensure replacement attempts remain inside their original slot and are used only
-   for non-behavior-evaluable provider/infrastructure termination;
-4. implement batch blinded semantic judging;
-5. implement blinded manual-adjudication routing;
-6. aggregate semantic/resource/completion outcomes and apply the preregistered
-   continuation/falsification rules.
+validate H1/H2 against the committed pre-P0 fingerprints;
+write results/held_out/run_plan.json;
+make zero model/API calls.
 ```
 
-The planned executor should advance one unresolved attempt at a time rather than accidentally launching all 30 paid trajectories. This keeps the preregistered ordering deterministic while allowing infrastructure failures to be inspected and replaced under the frozen policy.
+Do not use `--force`. If `results/held_out/run_plan.json` already exists, stop and inspect rather than overwrite it.
+
+## After plan materialization
+
+Implement a resumable one-attempt-at-a-time `run-next` executor that:
+
+```text
+revalidates the frozen protocol and bundle identity before every launch;
+reads the immutable materialized plan rather than recomputing order ad hoc;
+selects only the earliest unresolved slot;
+launches exactly one attempt per invocation;
+passes the registered model/configuration and 24 / 250k / 12 limits explicitly;
+persists attempt metadata before and after execution;
+uses replacement attempts only for non-behavior-evaluable provider/infrastructure termination;
+never replaces poor methodology, Python failures/timeouts, semantic mistakes,
+deterministic failures, or treatment budget exhaustion;
+pauses after three non-behavior-evaluable attempts in one slot;
+never skips ahead while an earlier slot is unresolved.
+```
+
+No semantic judging should begin until treatment execution infrastructure is frozen and validated.
 
 ## Relevant latest records
 
@@ -289,8 +289,9 @@ docs/checkpoints/045_dev_p0_04_full_inspection_and_p0_behavioral_freeze.md
 docs/checkpoints/046_common_baseline_resource_envelope_implemented.md
 docs/checkpoints/047_common_baseline_resource_envelope_deterministically_validated.md
 docs/checkpoints/048_held_out_bundle_validation_and_run_plan_materialization.md
+docs/checkpoints/049_held_out_plan_layer_deterministically_validated.md
 ```
 
 ## Current priority
 
-**Run the complete local test suite. Expected result: 62 passed. Do not start any H1/H2 treatment call yet.**
+**Materialize and inspect the real local frozen held-out run plan. Do not start any H1/H2 treatment call yet.**
