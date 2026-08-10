@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 58  
+**Checkpoint:** 59  
 **Date:** 2026-08-10  
-**Development stage:** Held-out execution active; all three H1 replicate 1 conditions fully mechanically verified; next slot is H1 replicate 2 B1  
-**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, and held-out execution infrastructure remain frozen. H1 replicate 1 now contains one permanently retained behavior-evaluable attempt for B0, B1, and P0. B0 and B1 completed within budget. P0 completed the project but its terminal final-report generation crossed the 250,000-token ceiling, so `completed=true`, `budget_exhausted=true`, and `completed_within_budget=false`. All three runs passed A0-A4. No H1/H2 semantic judging has begun.
+**Development stage:** Held-out execution active; H1 replicate 1 fully mechanically verified; H1 replicate 2 B1 slot behavior-evaluable and resolved at executor level; raw B1 inspection required before H1 R2 P0  
+**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, and held-out execution infrastructure remain frozen. H1 replicate 1 contains one permanently retained behavior-evaluable attempt for B0, B1, and P0. The fourth held-out attempt, `h1-r02-b1-a01`, has now returned `BEHAVIOR_EVALUABLE`, `replacement_eligible=false`, and `slot_resolved=true`. Its raw artifacts have not yet been mechanically inspected. No H1/H2 semantic judging has begun.
 
 ## Primary purpose
 
@@ -245,16 +245,6 @@ Detailed record: `docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md
 
 ### P0: `h1-r01-p0-a01`
 
-Executor classification remains:
-
-```text
-BEHAVIOR_EVALUABLE
-replacement_eligible: false
-slot_resolved: true
-```
-
-Raw mechanical outcome:
-
 ```text
 completed: true
 completed_within_budget: false
@@ -270,94 +260,90 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-The token crossing occurred only on the terminal final-report call:
+The budget crossing occurred only on the terminal final-report call. Cumulative usage after protected final evaluation was 249,581. The terminal report call was therefore legitimately admitted and brought cumulative usage to 294,267. The report was retained, the run was marked budget-exhausted, and no later treatment call occurred.
+
+All four P0 knowledge components activated. Phase 2 dependency repair invalidated affected evidence and decisions while preserving unrelated accepted state. Final locked predictors were the six legitimate variables.
+
+Protected test:
 
 ```text
-cumulative after call 13 / protected final evaluation: 249,581
-call 14 / submit_final_report: 44,686
-terminal cumulative: 294,267
-```
-
-Because 249,581 was below the ceiling before call 14 began, the call was legitimately admitted. Its final report was retained and executed, then `RESOURCE_BUDGET_EXHAUSTED` was recorded with `total_token_budget_crossed_by_completed_terminal_call`. No later model call occurred.
-
-All six Python executions succeeded with return code 0 and no timeout. There were no provider retries, state-control errors, or treatment-command recovery loops.
-
-All four P0 knowledge components activated once. The terminal typed state explicitly represented the customer-month observation unit, the future temporal validation regime, inherited preprocessing contamination, and the authoritative Phase 2 timing correction.
-
-Phase 2 state repair was targeted:
-
-```text
-F-0005 ACTIVE -> DISPUTED
-D-0001 ACCEPTED -> REOPENED -> SUPERSEDED
-D-0004 ACCEPTED -> REOPENED -> SUPERSEDED
-E-0001 CURRENT -> INVALIDATED
-E-0002 CURRENT -> INVALIDATED
-O-0004/O-0005/O-0006 OPEN -> SATISFIED
-```
-
-Unrelated accepted validation and metric decisions were preserved. Replacement eligible-feature evidence was established before final lock.
-
-Final locked predictors for all three H1 R1 runs were the same six legitimate variables:
-
-```text
-tenure_months
-plan_tier
-monthly_charge
-support_tickets_90d
-late_payments_90d
-usage_change_30d
-```
-
-P0 protected test:
-
-```text
-n: 4,126
-event rate: 0.11149
 AUROC: 0.69628
-bootstrap AUROC 95% CI: [0.66865, 0.72359]
 average precision: 0.23570
-log loss: 0.32463
 Brier: 0.09355
+log loss: 0.32463
 ```
 
 Detailed record: `docs/checkpoints/058_h1_r01_p0_full_mechanical_verification_and_terminal_budget_crossing.md`.
 
+## H1 replicate 2
+
+### B1 terminal record: `h1-r02-b1-a01`
+
+Observed executor result:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Attempt: h1-r02-b1-a01
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
+```
+
+Immediate consequences:
+
+```text
+slot h1-r02-b1 is permanently resolved;
+no replacement is permitted;
+the attempt remains part of held-out evidence regardless of completion,
+resource, deterministic, or later semantic outcome.
+```
+
+The executor output alone does not establish the underlying completion status, token/call/Python usage, deterministic A0-A4 results, final-test sequencing, or final report status. Raw mechanical inspection is required before the next P0 slot may be authorized.
+
+Required artifact directory:
+
+```text
+results/held_out/attempts/h1-r02-b1-a01/
+```
+
+Inspect at minimum:
+
+```text
+attempt_started.json
+attempt_record.json
+summary.json
+deterministic_evaluation.json
+milestones.json
+conversation.json
+trace.jsonl
+```
+
+Detailed terminal record: `docs/checkpoints/059_h1_r02_b1_terminal_record.md`.
+
 ## Current held-out count
 
 ```text
-resolved slots: 3 / 30
-behavior-evaluable retained attempts: 3
+resolved slots: 4 / 30
+behavior-evaluable retained attempts: 4
 non-behavior-evaluable replacement attempts: 0
 P0 budget-exhausted runs: 1
 ```
 
-The preregistered continuation rule allows at most one P0 budget-exhausted held-out run. The first P0 run has therefore used that entire allowance. Any later P0 budget exhaustion would exceed that specific continuation threshold. This arithmetic consequence must not alter treatment execution, model behavior, or resource limits.
+The preregistered continuation rule allows at most one P0 budget-exhausted held-out run. That allowance is already fully used by `h1-r01-p0-a01`. This arithmetic consequence must not alter future treatment execution, model behavior, or resource limits.
 
-No semantic comparison or architectural conclusion is drawn from H1 replicate 1. S1-S10 and SC1-SC2 remain reserved for blinded judging after execution infrastructure and treatment trajectories are collected according to protocol.
-
-## Next authorized slot
-
-According to the frozen plan:
-
-```text
-variant: H1
-replicate: 2
-condition: B1
-slot: h1-r02-b1
-attempt: h1-r02-b1-a01
-```
-
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 58. Stop after it returns and inspect the executor outcome before launching the H1 R2 P0 slot.
+No semantic comparison or architectural conclusion is drawn from manual inspection. S1-S10 and SC1-SC2 remain reserved for the frozen blinded judge.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/054_first_held_out_attempt_h1_r01_b0_full_mechanical_verification.md
 docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md
 docs/checkpoints/057_first_held_out_p0_attempt_h1_r01_terminal_record.md
 docs/checkpoints/058_h1_r01_p0_full_mechanical_verification_and_terminal_budget_crossing.md
+docs/checkpoints/059_h1_r02_b1_terminal_record.md
 ```
 
 ## Current priority
 
-**Advance exactly one preregistered slot to `h1-r02-b1-a01`, then stop and inspect its terminal classification before any further run.**
+**Inspect the complete persisted artifacts for `h1-r02-b1-a01`. Do not launch `h1-r02-p0-a01` until the B1 attempt is mechanically verified and its completion/resource/deterministic outcome is recorded.**
