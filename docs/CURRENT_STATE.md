@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 64  
+**Checkpoint:** 65  
 **Date:** 2026-08-10  
-**Development stage:** Held-out execution active; five slots permanently resolved; H1 R2 B0 A01 verified as a legitimate non-behavior-evaluable provider/interface generation failure; replacement A02 is next  
-**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. H1 R1 is fully mechanically verified. H1 R2 B1 and P0 are fully mechanically verified. `h1-r02-b0-a01` is retained as non-behavior-evaluable provider-failure evidence and does not resolve the slot. No H1/H2 semantic judging has begun.
+**Development stage:** Held-out execution active; five slots permanently resolved; H1 R2 B0 A01 was fully verified as a legitimate non-behavior-evaluable provider/interface failure; replacement A02 has now also returned non-behavior-evaluable and awaits raw inspection before the final permitted replacement A03  
+**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. H1 R1 is fully mechanically verified. H1 R2 B1 and P0 are fully mechanically verified. `h1-r02-b0-a01` is retained as verified non-behavior-evaluable provider-failure evidence. `h1-r02-b0-a02` is replacement eligible at executor level but has not yet been raw-inspected. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
 
@@ -133,7 +133,15 @@ behavior_evaluable = false
 => replacement eligible inside same slot
 ```
 
-Maximum attempts per slot are `a01`, `a02`, and `a03`. A later slot may not start while an earlier slot is unresolved.
+Maximum attempts per slot are:
+
+```text
+a01 initial
+a02 replacement 1
+a03 replacement 2
+```
+
+A later slot may not start while an earlier slot is unresolved. If `a03` is also non-behavior-evaluable, execution pauses with `REPLACEMENTS_EXHAUSTED` rather than skipping the slot.
 
 ## Mechanically verified behavior-evaluable runs
 
@@ -260,83 +268,82 @@ reasoning_tokens: 132
 
 No usable assistant command entered the common runtime. The conversation contains only the initial system and user messages, no Python action ran, and no milestone report exists.
 
-### Why the one-attempt termination is valid
-
-The failed generation records:
+The failed generation records `attempt_in_turn: 1`, `max_attempts_for_turn: 3`, `retryable: false`, and `retry_budget_exhausted: false`. This is correct under the frozen common retry policy because `ambiguous_structured_output` is a non-retryable provider-normalization class. Checkpoint 17, before P0 implementation and before held-out registration, already froze the condition-neutral rule:
 
 ```text
-attempt_in_turn: 1
-max_attempts_for_turn: 3
-retryable: false
-retry_budget_exhausted: false
+identical valid output blocks -> collapse to one semantic command
+distinct valid output blocks  -> reject as ambiguous rather than choose arbitrarily
 ```
 
-The common runner only retries transient errors whose `ModelGenerationError.retryable` flag is true. `ambiguous_structured_output` was already a pre-held-out, condition-neutral non-retryable provider-normalization class. The two nominal additional retries were therefore not silently skipped; the registered retry policy itself permits no additional generation for this error class.
-
-### Why this is not a newly discovered harness defect
-
-Checkpoint 17, before P0 implementation and before held-out registration, identified the Responses API multi-output-block behavior and froze the normalization rule:
-
-```text
-identical valid blocks -> collapse to one semantic command
-distinct valid blocks  -> reject as ambiguous rather than choose arbitrarily
-```
-
-The current adapter did exactly that. The event therefore exercised an already known provider/interface ambiguity branch rather than exposing a new common harness correctness defect. No code change is justified.
-
-The executor record is consistent with the summary:
-
-```text
-classification: NON_BEHAVIOR_EVALUABLE_PROVIDER_FAILURE
-replacement_eligible: true
-slot_resolved: false
-```
-
-The raw deterministic file contains an A3 failure because no final lock exists, but this provider-failure attempt is not a behavioral trajectory. Summary deterministic pass fields are null, `critical_failures` is empty, and no methodological score is assigned.
+A01 therefore exercised a known provider/interface ambiguity branch rather than revealing a common harness defect. No code change was made.
 
 Detailed record: `docs/checkpoints/064_h1_r02_b0_a01_provider_ambiguity_verified_and_replacement_authorized.md`.
+
+## H1 R2 B0 A02: second provider failure at executor level
+
+Attempt:
+
+```text
+h1-r02-b0-a02
+```
+
+Observed executor result:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Classification: NON_BEHAVIOR_EVALUABLE_PROVIDER_FAILURE
+Behavior evaluable: False
+Replacement eligible: True
+Slot resolved: False
+```
+
+Immediate protocol consequences:
+
+```text
+h1-r02-b0 remains the earliest unresolved slot;
+h1-r02-b0-a02 does not count as behavior-evaluable B0 evidence;
+no H1 R3 attempt may begin yet;
+if raw inspection confirms an ordinary provider/infrastructure generation failure,
+h1-r02-b0-a03 is the final permitted replacement attempt.
+```
+
+The executor classification alone does not establish the exact provider error, provider response status, retry path, token accounting, or whether any usable command entered the runtime. Raw inspection is required before A03 is authorized.
+
+Required directory:
+
+```text
+results/held_out/attempts/h1-r02-b0-a02/
+```
+
+Inspect at minimum:
+
+```text
+attempt_started.json
+attempt_record.json
+summary.json
+deterministic_evaluation.json
+conversation.json
+trace.jsonl
+milestones.json, if present
+```
+
+Detailed terminal record: `docs/checkpoints/065_h1_r02_b0_a02_second_non_behavior_evaluable_provider_failure.md`.
 
 ## Current held-out count
 
 ```text
 resolved slots: 5 / 30
 behavior-evaluable retained attempts: 5
-non-behavior-evaluable provider/interface failures: 1
-replacement attempts already launched: 0
+non-behavior-evaluable provider/interface failures: 2
+replacement attempts launched: 1
 P0 budget-exhausted runs: 1
 ```
 
 The preregistered P0 budget-exhaustion allowance remains exactly one used run.
 
-## Next authorized attempt
-
-The earliest unresolved slot remains:
-
-```text
-variant: H1
-replicate: 2
-condition: B0
-slot: h1-r02-b0
-```
-
-The next attempt is the first permitted replacement:
-
-```text
-h1-r02-b0-a02
-```
-
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 64. If A02 is behavior-evaluable, the slot resolves. If A02 again terminates as a legitimate non-behavior-evaluable provider failure, A03 is the final permitted replacement. No H1 R3 attempt may start until this slot resolves or replacement attempts are exhausted and execution pauses.
-
-## Relevant latest records
-
-```text
-docs/checkpoints/060_h1_r02_b1_full_mechanical_verification.md
-docs/checkpoints/061_h1_r02_p0_terminal_record.md
-docs/checkpoints/062_h1_r02_p0_full_mechanical_verification.md
-docs/checkpoints/063_h1_r02_b0_a01_non_behavior_evaluable_provider_failure.md
-docs/checkpoints/064_h1_r02_b0_a01_provider_ambiguity_verified_and_replacement_authorized.md
-```
+No semantic comparison or architectural conclusion is drawn from manual inspection. S1-S10 and SC1-SC2 remain reserved for the frozen blinded judge.
 
 ## Current priority
 
-**Pull Checkpoint 64 and run exactly one replacement attempt, `h1-r02-b0-a02`. Stop immediately after the executor returns and inspect its classification before any further held-out execution.**
+**Inspect the complete persisted artifacts for `h1-r02-b0-a02`. Do not invoke `run-next` again until the second provider-failure classification is mechanically verified. If confirmed, `h1-r02-b0-a03` is the final permitted replacement attempt for the unresolved H1 R2 B0 slot.**
