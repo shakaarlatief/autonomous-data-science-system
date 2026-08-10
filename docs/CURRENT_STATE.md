@@ -2,10 +2,10 @@
 
 ## Checkpoint
 
-**Checkpoint:** 56  
+**Checkpoint:** 57  
 **Date:** 2026-08-10  
-**Development stage:** Held-out execution active; H1 replicate 1 B0 and B1 slots mechanically verified and permanently resolved; first held-out P0 slot is next  
-**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, and held-out execution infrastructure remain frozen. `h1-r01-b0-a01` and `h1-r01-b1-a01` both completed end-to-end within budget, passed all deterministic assertions, and are retained as behavior-evaluable held-out evidence. No semantic judging has begun. The next preregistered attempt is `h1-r01-p0-a01`.
+**Development stage:** Held-out execution active; H1 replicate 1 B0/B1 are fully mechanically verified; first held-out P0 attempt is behavior-evaluable and resolved at executor level; P0 raw inspection required before H1 replicate 2  
+**Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, and held-out execution infrastructure remain frozen. `h1-r01-b0-a01` and `h1-r01-b1-a01` both completed end-to-end within budget and passed all deterministic assertions. `h1-r01-p0-a01` has now returned `BEHAVIOR_EVALUABLE`, `replacement_eligible=false`, `slot_resolved=true`, but its raw artifacts have not yet been inspected. No H1/H2 semantic judging has begun.
 
 ## Primary purpose
 
@@ -74,7 +74,7 @@ reasoning effort: high
 300 s provider request timeout
 ```
 
-Resource semantics:
+Token semantics:
 
 ```text
 if prior observed cumulative usage is >= 250,000,
@@ -138,7 +138,7 @@ mean(S1, S2, S3, S6, S7)
 
 Strong targeted pass requires all five targeted criteria to equal 2.0.
 
-Judge calibration before P0 implementation:
+Pre-P0 judge calibration:
 
 ```text
 59/60 exact ordinary-criterion agreements
@@ -148,9 +148,7 @@ Judge calibration before P0 implementation:
 0/6 manual-adjudication runs
 ```
 
-No rubric, threshold, bundle, B0/B1 prompt, or privileged knowledge component may be revised in response to held-out outcomes.
-
-No H1/H2 semantic judging has begun.
+No rubric, threshold, bundle, B0/B1 prompt, P0 behavior, or privileged knowledge component may be revised in response to held-out outcomes. No H1/H2 semantic judging has begun.
 
 ## Frozen P0
 
@@ -175,7 +173,7 @@ K-INFO-003 Prediction-Time Feature Eligibility
 K-VAL-001 Generalization-Regime Question
 ```
 
-P0 development history:
+Development history:
 
 ```text
 dev-p0-01: incomplete, 10 calls, 250,279 tokens
@@ -195,25 +193,9 @@ python -m ads_v0.heldout_runner status
 python -m ads_v0.heldout_runner run-next
 ```
 
-`status` makes zero treatment calls. `run-next` launches at most one attempt and only for the earliest unresolved slot.
+`status` makes zero treatment calls. `run-next` launches at most one attempt and only for the earliest unresolved slot. Before execution began, the complete deterministic suite passed `69 passed in 11.52s`, the real status check confirmed `0/30` resolved slots, and the execution infrastructure was frozen.
 
-Attempt artifacts:
-
-```text
-results/held_out/attempts/<attempt_id>/attempt_started.json
-results/held_out/attempts/<attempt_id>/summary.json
-results/held_out/attempts/<attempt_id>/attempt_record.json
-```
-
-Before execution began, the complete deterministic suite passed:
-
-```text
-69 passed in 11.52s
-```
-
-The real no-inference status check confirmed `0/30` resolved slots and `h1-r01-b0-a01` as the first attempt. Execution infrastructure was frozen before the first treatment call.
-
-## Replacement policy
+Replacement policy:
 
 ```text
 behavior_evaluable = true
@@ -225,15 +207,7 @@ behavior_evaluable = false
 => replacement eligible inside same slot
 ```
 
-Maximum attempts per slot:
-
-```text
-a01 initial
-a02 replacement 1
-a03 replacement 2
-```
-
-Three non-behavior-evaluable attempts pause execution. The executor never skips an unresolved earlier slot.
+Maximum attempts per slot: `a01`, `a02`, `a03`. Three non-behavior-evaluable attempts pause execution.
 
 ## Held-out progress
 
@@ -276,11 +250,7 @@ Brier: 0.093547
 log loss: 0.324630
 ```
 
-Detailed record:
-
-```text
-docs/checkpoints/054_first_held_out_attempt_h1_r01_b0_full_mechanical_verification.md
-```
+Detailed record: `docs/checkpoints/054_first_held_out_attempt_h1_r01_b0_full_mechanical_verification.md`.
 
 ### Slot 2: `h1-r01-b1`
 
@@ -291,7 +261,7 @@ completed: true
 completed_within_budget: true
 budget_exhausted: false
 model_calls: 14
-generation_attempts: 14
+generation attempts: 14
 generation failures: 0
 Python attempts: 6
 input tokens: 111,863
@@ -302,22 +272,7 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-High-level trajectory:
-
-```text
-read README, project brief, inherited baseline
-inspect schema and repeated temporal/entity structure
-run leakage-safe rolling-origin Phase 1 comparison
-complete Phase 1
-read authoritative lifecycle_flag timing notice
-redo development comparison without lifecycle_flag
-confirm candidate on future validation
-lock six-feature C=0.1 logistic model
-perform exactly one protected final evaluation
-submit bounded final report
-```
-
-The inherited baseline's learned-preprocessing boundary problem was explicitly recognized and not relied upon as clean evidence.
+The inherited baseline's learned-preprocessing boundary problem was explicitly recognized and not relied upon as clean evidence. After the authoritative timing notice, `lifecycle_flag` was removed and development evidence was re-established before model lock.
 
 Final locked predictors:
 
@@ -330,7 +285,7 @@ late_payments_90d
 usage_change_30d
 ```
 
-Phase 2 validation evidence for the locked model:
+Phase 2 validation evidence:
 
 ```text
 n: 5,375
@@ -351,54 +306,74 @@ average precision: 0.2358
 Brier: 0.0935
 ```
 
-No provider retries, treatment-command errors, Python timeouts, resource-budget events, premature test access, or post-test development occurred.
+Detailed record: `docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md`.
 
-Detailed record:
+### Slot 3: `h1-r01-p0`
+
+Attempt `h1-r01-p0-a01` has returned at executor level:
 
 ```text
-docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
 ```
+
+Immediate consequences:
+
+```text
+slot h1-r01-p0 is permanently resolved;
+no replacement is permitted;
+the attempt remains held-out evidence regardless of completion, budget, deterministic, or semantic outcome.
+```
+
+The terminal classification alone does not establish the P0 run's completion, resource usage, deterministic A0-A4 results, state-control behavior, knowledge activations, Phase 2 dependency repair, protected-test sequencing, or final claims. The complete persisted artifact directory must be inspected before H1 replicate 2 begins.
+
+Required artifact directory:
+
+```text
+results/held_out/attempts/h1-r01-p0-a01/
+```
+
+Inspect at minimum:
+
+```text
+attempt_started.json
+attempt_record.json
+summary.json
+deterministic_evaluation.json
+milestones.json
+conversation.json
+trace.jsonl
+p0_state.json
+p0_state_history.json
+p0_knowledge_activations.json
+```
+
+Detailed terminal record: `docs/checkpoints/057_first_held_out_p0_attempt_h1_r01_terminal_record.md`.
 
 ## Current held-out count
 
 ```text
-resolved slots: 2 / 30
-behavior-evaluable attempts retained: 2
+resolved slots: 3 / 30
+behavior-evaluable attempts retained: 3
 non-behavior-evaluable replacement attempts: 0
 ```
 
-No semantic comparison between B0 and B1 is drawn from these two runs. Their S1-S10 and SC1-SC2 outcomes remain reserved for the blinded judge.
-
-## Next authorized slot
-
-According to the frozen plan:
-
-```text
-variant: H1
-replicate: 1
-condition: P0
-slot: h1-r01-p0
-attempt: h1-r01-p0-a01
-```
-
-After pulling this checkpoint, exactly one invocation is authorized:
-
-```bash
-python -m ads_v0.heldout_runner run-next
-```
-
-The executor must launch only `h1-r01-p0-a01`. Stop after it returns and inspect the executor classification before any H1 replicate 2 run.
+H1 replicate 1 is executor-complete across all three conditions, but P0 raw verification remains required. No semantic comparison among B0, B1, and P0 is yet permitted from manual inspection.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/052_held_out_execution_infrastructure_frozen_and_first_run_authorized.md
 docs/checkpoints/053_first_held_out_attempt_h1_r01_b0_terminal_record.md
 docs/checkpoints/054_first_held_out_attempt_h1_r01_b0_full_mechanical_verification.md
 docs/checkpoints/055_second_held_out_attempt_h1_r01_b1_terminal_record.md
 docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md
+docs/checkpoints/057_first_held_out_p0_attempt_h1_r01_terminal_record.md
 ```
 
 ## Current priority
 
-**Run exactly one next held-out attempt, `h1-r01-p0-a01`, then stop and inspect its executor outcome before H1 replicate 2 begins.**
+**Inspect the complete persisted artifacts for `h1-r01-p0-a01`. Do not launch H1 replicate 2 until the P0 attempt is mechanically verified and its completion/resource/deterministic outcome is recorded.**
