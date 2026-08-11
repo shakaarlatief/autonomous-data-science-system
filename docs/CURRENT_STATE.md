@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-**Checkpoint:** 68  
-**Date:** 2026-08-10  
-**Development stage:** Held-out execution active; H1 replicates 1 and 2 are fully mechanically verified; six treatment slots are permanently resolved; next slot is H1 R3 P0  
+**Checkpoint:** 69  
+**Date:** 2026-08-11  
+**Development stage:** Held-out execution active; H1 replicates 1 and 2 are fully mechanically verified; seven treatment slots are permanently resolved; H1 R3 P0 is behavior-evaluable at executor level and awaits raw mechanical inspection before H1 R3 B0  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
@@ -152,20 +152,20 @@ h1-r02-b0-a01
 model calls: 0
 total tokens: 1,327
 output blocks: 2
- distinct blocks: 2
+distinct blocks: 2
 error: ambiguous_structured_output
 
 h1-r02-b0-a02
 model calls: 0
 total tokens: 1,291
 output blocks: 3
- distinct blocks: 2
+distinct blocks: 2
 error: ambiguous_structured_output
 ```
 
 Both exercised the provider-normalization rule frozen before held-out execution: identical structured blocks may be collapsed, while distinct structured commands are rejected as ambiguous rather than arbitrarily selected. No harness change was justified.
 
-The final permitted replacement, `h1-r02-b0-a03`, is now fully mechanically verified and permanently resolves the slot:
+The final permitted replacement, `h1-r02-b0-a03`, fully mechanically verified and permanently resolved the slot:
 
 ```text
 completed: true
@@ -183,26 +183,7 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-All 16 provider generations returned one unambiguous structured output block. There were no provider failures, treatment-command errors, or resource-budget events.
-
 Of the seven Python attempts, six succeeded and one Phase 1 customer-cluster bootstrap implementation timed out. The timeout was correctly counted as a behavioral Python attempt. The model then reran the same intended analysis using cluster frequency weights and completed successfully.
-
-Trajectory:
-
-```text
-read README, project brief, inherited baseline
--> inspect development temporal and repeated-member structure
--> Phase 1 expanding-window model comparison
--> one validation/bootstrap Python timeout
--> successful computationally revised validation analysis
--> Phase 1 complete
--> authoritative lifecycle_flag timing notice
--> eligible-feature Phase 2 model comparison
--> selected-model validation/calibration analysis
--> final model lock
--> exactly one protected final evaluation
--> final report
-```
 
 Final locked predictors:
 
@@ -245,50 +226,83 @@ Detailed record:
 docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
 ```
 
+## H1 R3 P0 terminal result
+
+Attempt:
+
+```text
+h1-r03-p0-a01
+```
+
+Observed executor result:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
+```
+
+Immediate consequences:
+
+```text
+h1-r03-p0 is permanently resolved;
+h1-r03-p0-a01 is the retained P0 trajectory for the slot;
+no replacement is permitted regardless of later mechanical findings.
+```
+
+Raw inspection is still required. The executor-level terminal result alone does not establish project completion, resource usage, budget exhaustion, A0-A4 outcomes, P0 knowledge activations, dependency-repair behavior, final-test sequencing, or final-report status.
+
+Detailed terminal record:
+
+```text
+docs/checkpoints/069_h1_r03_p0_behavior_evaluable_terminal_record.md
+```
+
 ## Current held-out count
 
 ```text
-resolved slots: 6 / 30
-behavior-evaluable retained attempts: 6
+resolved slots: 7 / 30
+behavior-evaluable retained attempts: 7
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
-P0 budget-exhausted retained runs: 1
+known P0 budget-exhausted retained runs: 1
 ```
 
-H1 replicate 2 is mechanically complete:
-
-```text
-B1: h1-r02-b1-a01
-P0: h1-r02-p0-a01
-B0: h1-r02-b0-a03
-```
+The P0 budget-exhausted count is stated as `known = 1` until `h1-r03-p0-a01` is inspected. If this run is budget-exhausted, the count becomes 2, which would mean the preregistered continuation criterion allowing at most one P0 budget-exhausted held-out run is no longer satisfied. That arithmetic consequence must not alter the remaining frozen treatment execution or resource limits.
 
 No S1-S10 or SC1-SC2 scoring has begun and no semantic or architectural conclusion is drawn from the manual mechanical inspections.
 
-## Next authorized slot
+## Current priority
 
-According to the frozen plan:
+Inspect the complete persisted artifacts for:
 
 ```text
-variant: H1
-replicate: 3
-condition: P0
-slot: h1-r03-p0
-attempt: h1-r03-p0-a01
+results/held_out/attempts/h1-r03-p0-a01/
 ```
 
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 68. Stop immediately after its executor result before any H1 R3 B0 run.
+For P0, inspect the normal executor artifacts plus persisted P0 state, state-history, action/dependency, and knowledge-activation evidence. Do not launch H1 R3 B0 until this attempt is fully mechanically verified.
+
+If the attempt is mechanically valid, the next frozen slot will be:
+
+```text
+H1 replicate 3
+condition: B0
+slot: h1-r03-b0
+attempt: h1-r03-b0-a01
+```
 
 ## Relevant latest records
 
 ```text
 docs/checkpoints/062_h1_r02_p0_full_mechanical_verification.md
-docs/checkpoints/064_h1_r02_b0_a01_provider_ambiguity_verified_and_replacement_authorized.md
 docs/checkpoints/066_h1_r02_b0_a02_provider_ambiguity_verified_and_final_replacement_authorized.md
-docs/checkpoints/067_h1_r02_b0_a03_behavior_evaluable_terminal_record.md
 docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
+docs/checkpoints/069_h1_r03_p0_behavior_evaluable_terminal_record.md
 ```
 
-## Current priority
+## Current priority statement
 
-**Advance exactly one preregistered slot to `h1-r03-p0-a01`, then stop and inspect its terminal classification before any further held-out execution.**
+**Inspect `h1-r03-p0-a01` fully before any H1 R3 B0 execution.**
