@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 83  
+**Checkpoint:** 84  
 **Date:** 2026-08-18  
 **Development stage:** Prototype V0 held-out execution active  
 **Resolved treatment slots:** 13 / 30  
 **Remaining treatment slots:** 17 / 30  
 **Next frozen slot:** `h1-r05-p0-a01`  
-**Execution mode:** prospectively validated sequential supervisor; large bounded unattended batch authorized
+**Execution mode:** prospectively validated sequential supervisor; large bounded unattended batch authorized; optional read-only live monitor available
 
 ## Current experiment
 
@@ -44,21 +44,18 @@ completed attempt directories mechanically verified: 15
 mechanical integrity failures: 0
 ```
 
-## First prospective supervisor batch passed
+## Supervisor validation status
 
-The first live batch used:
-
-```bash
-python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
-```
-
-Batch:
+The held-out supervisor/verifier has passed both required validation stages:
 
 ```text
-batch-20260818T170118Z
+software tests before live use: 77 passed
+retrospective verification: 12 / 12 PASS
+first prospective batch: 3 / 3 new attempts PASS
+current completed-attempt verification: 15 / 15 PASS
 ```
 
-It launched exactly three paid attempts in the frozen order:
+The first prospective batch launched, in frozen order:
 
 ```text
 h1-r04-b1-a01
@@ -66,17 +63,7 @@ h1-r04-p0-a01
 h1-r05-b1-a01
 ```
 
-All three were behavior-evaluable, permanently resolved their treatment slots, and passed all M01-M11 mechanical integrity checks.
-
-Post-batch verifier state:
-
-```text
-15 completed attempt directories verified
-15 integrity PASS
-0 integrity FAIL
-```
-
-The supervisor stopped exactly because the explicit three-attempt batch limit was reached and derived the correct next slot:
+All three were behavior-evaluable and mechanically coherent. The supervisor stopped exactly at the explicit three-attempt limit and derived the correct next slot:
 
 ```text
 h1-r05-p0-a01
@@ -88,39 +75,9 @@ Detailed record:
 docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md
 ```
 
-## New retained mechanical outcomes
+## Important current resource consequence
 
-### H1 R4 B1
-
-```text
-attempt: h1-r04-b1-a01
-completed: true
-budget exhausted: false
-model calls: 16
-Python attempts: 6
-total tokens: 152,391
-A0-A4: PASS
-review flags: none
-```
-
-Final lock sequence 30, protected-test access sequence 33, final report sequence 35.
-
-### H1 R4 P0
-
-```text
-attempt: h1-r04-p0-a01
-completed: false
-budget exhausted: true
-model calls: 14
-Python attempts: 5
-total tokens: 262,255
-A0-A4: PASS
-review flags: budget_exhausted, incomplete_run
-```
-
-The run reached final lock and one protected-test evaluation but no final report before the resource envelope stopped further reasoning.
-
-This is the third retained P0 budget exhaustion:
+P0 has now exhausted the common 250,000-token envelope in three retained H1 runs:
 
 ```text
 H1 R1 P0: budget exhausted
@@ -129,46 +86,40 @@ H1 R3 P0: budget exhausted
 H1 R4 P0: budget exhausted
 ```
 
-The preregistered maximum of one P0 budget-exhausted run was already impossible after H1 R3. The frozen experiment continues unchanged.
+The preregistered maximum of one P0 budget-exhausted run was already impossible after H1 R3. The frozen experiment continues unchanged so the remaining reliability, semantic, and comparative evidence can still be collected without selective stopping.
 
-### H1 R5 B1
+## Live observability before the large batch
+
+A separate read-only monitor was added after the prospective supervisor smoke test:
 
 ```text
-attempt: h1-r05-b1-a01
-completed: true
-budget exhausted: false
-model calls: 17
-Python attempts: 7
-total tokens: 155,299
-A0-A4: PASS
-review flags: python_execution_error_or_timeout
+prototype_v0/src/ads_v0/heldout_monitor.py
+prototype_v0/tests/test_heldout_monitor.py
 ```
 
-One model-authored Python execution returned code 1. The trajectory remained behavior-evaluable and completed normally. Final lock was sequence 32, protected-test access sequence 35, and final report sequence 37.
+This did **not** modify the validated supervisor, verifier, runner, treatments, protocol, or experiment state.
 
-## Supervisor status
-
-The supervision layer has now passed both validation stages:
+The monitor only reads the append-only attempt and verification directories and can display:
 
 ```text
-software tests: 77 passed
-retrospective verification before paid use: 12 / 12 PASS
-first prospective batch: 3 / 3 new attempts PASS
-current completed-attempt verification: 15 / 15 PASS
+active attempt identity
+current phase
+successful model generations observed in trace
+Python attempts
+generation errors
+trace-event count
+latest event type
+completed attempt-record count
+verification-report count
+verification-integrity failures
 ```
 
-The validated implementation remains frozen for Prototype V0 operational use unless a genuine condition-neutral infrastructure defect is discovered.
+It also prints periodic heartbeats. Stopping the monitor does not stop the supervisor.
 
-The supervisor still:
+Detailed record:
 
 ```text
-uses the unchanged frozen execute_next_attempt() path;
-runs sequentially only;
-preserves slot order and replacement semantics;
-does not modify B0, B1, or P0;
-does not expose previous outcomes to later treatments;
-does not perform semantic judging;
-does not write verifier output into treatment attempt directories.
+docs/checkpoints/084_read_only_live_observability_added_before_large_unattended_batch.md
 ```
 
 ## Next authorized action
@@ -183,17 +134,32 @@ slot: h1-r05-p0
 attempt: h1-r05-p0-a01
 ```
 
-The live smoke-test gate is complete. A large bounded supervisor batch is now authorized:
+Before the large batch, pull the latest repository state and run the test suite once to validate the newly added monitor module:
+
+```bash
+git pull origin main
+pytest
+```
+
+Then use two terminals from `prototype_v0/`.
+
+Terminal 1, read-only observability:
+
+```bash
+python -m ads_v0.heldout_monitor watch
+```
+
+Terminal 2, actual experiment execution:
 
 ```bash
 python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
 ```
 
-There are 17 unresolved treatment slots. If every remaining slot resolves on its first attempt, the command will stop at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional attempt allowance. The supervisor must stop earlier if it encounters a mechanical integrity failure or another frozen runner safety state.
+There are 17 unresolved treatment slots. If every remaining slot resolves on its first attempt, the supervisor will stop at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional attempt allowance. The supervisor must stop earlier if it encounters a mechanical integrity failure or another frozen runner safety state.
 
 Do not invoke `heldout_runner run-next` separately while the supervisor workflow is active.
 
-After the batch stops, review its single compact export before beginning semantic judging.
+After the batch stops, upload the single compact supervisor export before beginning semantic judging.
 
 ## Knowledge and continuity
 
@@ -223,4 +189,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Use the validated supervisor to continue the remaining held-out treatment execution in one large bounded sequential batch where possible, then stop for compact-export review before semantic evaluation.**
+**Validate the new read-only monitor with the software suite, then use the monitor and validated supervisor in separate terminals for the remaining large bounded held-out batch.**
