@@ -1,17 +1,18 @@
 # Prototype V0 Held-Out Status
 
 **Status:** Current detailed experiment ledger  
-**Experiment authority:** Descriptive execution status only. Frozen experimental rules are governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
+**Experiment authority:** Descriptive execution status only. Frozen experimental rules remain governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-18  
-**Resolved treatment slots:** 10 / 30  
-**Next frozen slot:** `h1-r04-b1-a01`  
-**Execution mode:** validated sequential supervisor
+**Resolved treatment slots:** 13 / 30  
+**Remaining treatment slots:** 17 / 30  
+**Next frozen slot:** `h1-r05-p0-a01`  
+**Execution mode:** prospectively validated sequential supervisor; large bounded batch authorized
 
 ## Purpose
 
 This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, supervisor status, and the next frozen execution point.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, supervisor status, and the exact next frozen execution point.
 
 No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 
@@ -80,13 +81,25 @@ Maximum attempts per slot remain `a01`, `a02`, and `a03`.
 ## Current counts
 
 ```text
-resolved treatment slots: 10 / 30
-remaining treatment slots: 20 / 30
-behavior-evaluable retained attempts: 10
+resolved treatment slots: 13 / 30
+remaining treatment slots: 17 / 30
+behavior-evaluable retained attempts: 13
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
-P0 budget-exhausted retained runs: 2
+P0 budget-exhausted retained runs: 3
 administrative pre-provider interruptions: 1
+completed attempt directories mechanically verified: 15
+mechanical integrity failures: 0
+```
+
+H1 status:
+
+```text
+replicate 1: B0, B1, P0 resolved
+replicate 2: B1, P0, B0 resolved
+replicate 3: P0, B0, B1 resolved
+replicate 4: B0, B1, P0 resolved
+replicate 5: B1 resolved; P0 then B0 remain
 ```
 
 ## Mechanically verified retained runs
@@ -103,8 +116,11 @@ administrative pre-provider interruptions: 1
 | H1 | 3 | B0 | `h1-r03-b0-a01` | yes | no | 14 | 6 | 108,508 | PASS |
 | H1 | 3 | B1 | `h1-r03-b1-a01` | yes | no | 16 | 5 | 113,234 | PASS |
 | H1 | 4 | B0 | `h1-r04-b0-a01` | yes | no | 16 | 6 | 131,266 | PASS |
+| H1 | 4 | B1 | `h1-r04-b1-a01` | yes | no | 16 | 6 | 152,391 | PASS |
+| H1 | 4 | P0 | `h1-r04-p0-a01` | no | yes | 14 | 5 | 262,255 | PASS |
+| H1 | 5 | B1 | `h1-r05-b1-a01` | yes | no | 17 | 7 | 155,299 | PASS |
 
-This table is mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
+This table contains mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
 
 ## Notable attempt-level events
 
@@ -134,23 +150,57 @@ One local invocation failed before provider inference because `OPENAI_API_KEY` w
 
 `h1-r04-b0-a01` contained one model-authored Python error followed by successful correction. This remains behavioral evidence, not infrastructure failure.
 
-## Preregistered P0 resource consequence
+### H1 R4 P0 third retained budget exhaustion
 
-P0 budget-exhausted retained runs currently equal two:
+`h1-r04-p0-a01` was behavior-evaluable and mechanically coherent but exhausted the common token envelope:
+
+```text
+completed: false
+budget exhausted: true
+model calls: 14
+Python attempts: 5
+total tokens: 262,255
+final lock sequence: 32
+protected test access: 35
+final report: absent
+A0-A4: PASS
+```
+
+It is permanently retained and not replacement-eligible.
+
+### H1 R5 B1 model-authored Python error
+
+`h1-r05-b1-a01` contained one Python execution with return code 1 at trace sequence 28. The trajectory remained behavior-evaluable, recovered, completed, and passed all mechanical integrity checks.
+
+```text
+completed: true
+model calls: 17
+Python attempts: 7
+total tokens: 155,299
+final lock sequence: 32
+protected test access: 35
+final report sequence: 37
+A0-A4: PASS
+```
+
+## P0 resource consequence
+
+P0 budget-exhausted retained runs now equal three:
 
 ```text
 H1 R1 P0: budget exhausted
 H1 R2 P0: within budget
 H1 R3 P0: budget exhausted
+H1 R4 P0: budget exhausted
 ```
 
-The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes.
+The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That criterion became impossible after H1 R3 and remains impossible regardless of later outcomes.
 
-This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment continues unchanged.
+This is an objective resource-envelope result. It is not a substitute for the later blinded semantic evaluation or overall architectural interpretation.
 
-## Automated supervision validation
+## Automated supervision architecture
 
-After ten resolved slots, the project introduced an external condition-neutral supervision layer:
+The condition-neutral external supervision layer is:
 
 ```text
 prototype_v0/src/ads_v0/heldout_verifier.py
@@ -163,19 +213,6 @@ Detailed architecture:
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 ```
 
-The implementation was not used prospectively until it passed retrospective validation.
-
-Validation result:
-
-```text
-pytest: 77 passed in 30.43s
-completed attempt directories verified: 12
-integrity passed: 12
-integrity failed: 0
-```
-
-The verifier covered all ten behavior-evaluable retained attempts plus both non-behavior-evaluable H1 R2 B0 provider/interface attempts. Its compact reports reproduced the previously established manual classifications, resource totals, budget states, milestone presence, protected-test sequencing, and known Python/provider exceptional events with no discovered discrepancy.
-
 Validated implementation blob identities:
 
 ```text
@@ -186,18 +223,64 @@ heldout_verifier.py
     03fb33280f87d0056a3dbb264a63651df9ffb431
 ```
 
-The supervisor/verifier layer is therefore frozen for remaining V0 operational use unless a genuine condition-neutral infrastructure defect is discovered.
+### Retrospective validation
 
-Detailed validation checkpoint:
+Before prospective paid use:
+
+```text
+pytest: 77 passed
+completed attempt directories verified: 12
+integrity passed: 12
+integrity failed: 0
+```
+
+Checkpoint:
 
 ```text
 docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
 ```
 
-Operational decision:
+### First prospective batch
+
+Batch command:
+
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
+```
+
+Batch identity:
 
 ```text
-docs/DECISIONS.md, D-026
+batch-20260818T170118Z
+```
+
+Result:
+
+```text
+model attempts launched: 3
+stop reason: MAX_MODEL_ATTEMPTS_REACHED
+new attempts:
+    h1-r04-b1-a01  BEHAVIOR_EVALUABLE  integrity PASS
+    h1-r04-p0-a01  BEHAVIOR_EVALUABLE  integrity PASS
+    h1-r05-b1-a01  BEHAVIOR_EVALUABLE  integrity PASS
+resolved slots after batch: 13 / 30
+next attempt: h1-r05-p0-a01
+```
+
+Post-batch verification state:
+
+```text
+15 completed attempt directories verified
+15 integrity PASS
+0 integrity FAIL
+```
+
+All M01-M11 checks passed for all three prospective attempts. No replacement or order deviation occurred. The supervisor stopped exactly at the explicit paid-attempt bound.
+
+Detailed record:
+
+```text
+docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md
 ```
 
 ## Supervisor execution semantics
@@ -221,22 +304,24 @@ Behavioral issues such as Python errors, deterministic failures, incomplete work
 
 ## Next frozen execution
 
-The next treatment identity remains:
+The next treatment identity is:
 
 ```text
 variant: H1
-replicate: 4
-condition: B1
-slot: h1-r04-b1
-attempt: h1-r04-b1-a01
+replicate: 5
+condition: P0
+slot: h1-r05-p0
+attempt: h1-r05-p0-a01
 ```
 
-The first prospective supervisor batch is authorized for at most three paid model attempts:
+The three-attempt prospective smoke test has passed. A large bounded batch is authorized:
 
 ```bash
-python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
 ```
 
-A provider failure can consume one paid-attempt allowance without resolving a treatment slot. After the batch, inspect the automatically generated compact export before increasing unattended batch size.
+There are 17 unresolved treatment slots. If all resolve on their first attempts, the supervisor will stop at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional allowance. Automatic execution must still stop on verifier integrity failure, interrupted attempt, replacement exhaustion, or another existing runner safety state.
 
-Do not separately invoke `heldout_runner run-next` while this supervisor workflow is active.
+After this batch stops, inspect its single compact export before any semantic judging begins.
+
+Do not separately invoke `heldout_runner run-next` while the supervisor workflow is active.
