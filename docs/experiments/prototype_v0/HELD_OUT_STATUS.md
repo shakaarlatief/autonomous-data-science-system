@@ -4,19 +4,15 @@
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules are governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-18  
 **Resolved treatment slots:** 9 / 30  
-**Current gate:** raw mechanical inspection of `h1-r03-b1-a01`
+**Next frozen slot:** `h1-r04-b0-a01`
 
 ## Purpose
 
-This file holds the detailed current execution ledger for the preregistered Prototype V0 held-out experiment.
+This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-It exists so `docs/CURRENT_STATE.md` can remain concise while the experiment continues to accumulate run-level mechanical details.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve full run-level provenance. This ledger keeps the current experiment state, retained-run resource summaries, exceptional attempts, and the next frozen slot in one place.
 
-Individual checkpoints remain the detailed historical provenance for each milestone. This ledger is the current consolidated execution view.
-
-No S1-S10 or SC1-SC2 semantic judging has begun.
-
----
+No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 
 ## Frozen experiment summary
 
@@ -80,12 +76,11 @@ behavior_evaluable = false
 
 Maximum attempts per slot are `a01`, `a02`, and `a03`.
 
----
-
 ## Current counts
 
 ```text
 resolved treatment slots: 9 / 30
+remaining treatment slots: 21 / 30
 behavior-evaluable retained attempts: 9
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
@@ -93,113 +88,27 @@ P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
 
-No semantic cross-condition conclusion is drawn from mechanical inspection.
+H1 replicate 3 is fully resolved across P0, B0, and B1.
 
----
+## Mechanically verified retained runs
 
-## H1 replicate 1
+| Variant | Replicate | Condition | Retained attempt | Completed | Budget exhausted | Model calls | Python | Total tokens | A0-A4 |
+|---|---:|---|---|---|---|---:|---:|---:|---|
+| H1 | 1 | B0 | `h1-r01-b0-a01` | yes | no | 15 | 5 | 108,891 | PASS |
+| H1 | 1 | B1 | `h1-r01-b1-a01` | yes | no | 14 | 6 | 120,424 | PASS |
+| H1 | 1 | P0 | `h1-r01-p0-a01` | yes | yes | 14 | 6 | 294,267 | PASS |
+| H1 | 2 | B1 | `h1-r02-b1-a01` | yes | no | 15 | 7 | 139,150 | PASS |
+| H1 | 2 | P0 | `h1-r02-p0-a01` | yes | no | 12 | 5 | 226,926 | PASS |
+| H1 | 2 | B0 | `h1-r02-b0-a03` | yes | no | 16 | 7 | 131,563 | PASS |
+| H1 | 3 | P0 | `h1-r03-p0-a01` | no | yes | 13 | 6 | 258,485 | PASS |
+| H1 | 3 | B0 | `h1-r03-b0-a01` | yes | no | 14 | 6 | 108,508 | PASS |
+| H1 | 3 | B1 | `h1-r03-b1-a01` | yes | no | 16 | 5 | 113,234 | PASS |
 
-### B0: `h1-r01-b0-a01`
+The table is mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
 
-```text
-behavior_evaluable: true
-completed: true
-completed_within_budget: true
-model calls: 15
-Python attempts: 5
-total tokens: 108,891
-A0-A4: PASS
-```
+## Notable attempt-level events
 
-Detailed record:
-
-```text
-docs/checkpoints/054_first_held_out_attempt_h1_r01_b0_full_mechanical_verification.md
-```
-
-### B1: `h1-r01-b1-a01`
-
-```text
-behavior_evaluable: true
-completed: true
-completed_within_budget: true
-model calls: 14
-Python attempts: 6
-total tokens: 120,424
-A0-A4: PASS
-```
-
-The trajectory explicitly identified inherited preprocessing contamination, reasoned about repeated longitudinal observations, used temporal development, removed `lifecycle_flag` after the timing notice, and completed protected final evaluation.
-
-Detailed record:
-
-```text
-docs/checkpoints/056_h1_r01_b1_full_mechanical_verification.md
-```
-
-### P0: `h1-r01-p0-a01`
-
-```text
-behavior_evaluable: true
-completed: true
-budget_exhausted: true
-model calls: 14
-Python attempts: 6
-total tokens: 294,267
-A0-A4: PASS
-```
-
-The token ceiling was crossed on the terminal final-report call after cumulative usage had been below the ceiling before that call. The completed report was retained and no later treatment call occurred.
-
-Detailed record:
-
-```text
-docs/checkpoints/058_h1_r01_p0_full_mechanical_verification_and_terminal_budget_crossing.md
-```
-
----
-
-## H1 replicate 2
-
-### B1: `h1-r02-b1-a01`
-
-```text
-behavior_evaluable: true
-completed: true
-completed_within_budget: true
-model calls: 15
-Python attempts: 7
-total tokens: 139,150
-A0-A4: PASS
-```
-
-Detailed record:
-
-```text
-docs/checkpoints/060_h1_r02_b1_full_mechanical_verification.md
-```
-
-### P0: `h1-r02-p0-a01`
-
-```text
-behavior_evaluable: true
-completed: true
-completed_within_budget: true
-model calls: 12
-Python attempts: 5
-total tokens: 226,926
-A0-A4: PASS
-```
-
-`K-INFO-003` did not activate in this held-out trajectory. The model independently raised the timing concern and completed the Phase 2 repair. This remains frozen behavioral evidence and does not authorize P0 changes.
-
-Detailed record:
-
-```text
-docs/checkpoints/062_h1_r02_p0_full_mechanical_verification.md
-```
-
-### B0 slot replacement sequence
+### H1 R2 B0 provider/interface replacements
 
 ```text
 h1-r02-b0-a01
@@ -214,81 +123,40 @@ h1-r02-b0-a03
     behavior-evaluable retained trajectory
 ```
 
-Both A01 and A02 failed at the provider/interface structured-output boundary before a usable treatment command entered the runtime. Frozen replacement semantics therefore applied.
+The first two failures occurred before a usable treatment command entered the runtime. Frozen replacement semantics therefore applied. The retained A03 trajectory included one model-authored Phase 1 Python timeout followed by a successful computational rewrite; that timeout is behavioral evidence, not provider failure.
 
-Retained A03:
-
-```text
-completed: true
-completed_within_budget: true
-model calls: 16
-Python attempts: 7
-total tokens: 131,563
-A0-A4: PASS
-```
-
-One model-authored Phase 1 Python bootstrap attempt timed out and the model later used a successful computational rewrite. This is behavioral runtime evidence, not a provider failure.
-
-Detailed records include:
+Detailed records:
 
 ```text
 docs/checkpoints/066_h1_r02_b0_a02_provider_ambiguity_verified_and_final_replacement_authorized.md
 docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
 ```
 
----
+### H1 R3 B0 administrative pre-provider interruption
 
-## H1 replicate 3
+A local `run-next` invocation failed during OpenAI client construction because `OPENAI_API_KEY` was absent in a newly opened terminal. Only `attempt_started.json` had been written and no provider inference occurred.
+
+The false-start directory was moved outside the active treatment ledger. The genuine `h1-r03-b0-a01` was then launched and retained without consuming a replacement attempt.
+
+Detailed record:
+
+```text
+docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
+```
+
+## H1 replicate 3 mechanical summaries
 
 ### P0: `h1-r03-p0-a01`
 
+The run crossed the 250,000-token ceiling on the legitimately admitted protected final-evaluation call. It reached protected final evidence but did not receive a later final-report call.
+
 ```text
-behavior_evaluable: true
 completed: false
-completed_within_budget: false
 budget_exhausted: true
 model calls: 13
-generation attempts: 13
-generation failures: 0
 Python attempts: 6
-input tokens: 247,734
-output tokens: 10,751
 total tokens: 258,485
-project phase: FINAL_EVALUATION
-A0-A4: all PASS
-critical failures: none
-```
-
-All 13 provider generations and six Python executions completed normally.
-
-Cumulative usage was 217,919 after call 12, so the protected final-evaluation call was legitimately admitted. Call 13 raised cumulative usage to 258,485. The resource gate then stopped later reasoning, so the run reached protected final evidence but did not receive a final-report call.
-
-All four P0 knowledge components activated.
-
-Phase 2 repair invalidated the provisional `lifecycle_flag` evidence and decision, preserved unrelated validation decisions, established eligible replacement evidence, and locked the legal six-feature model.
-
-Final locked predictors:
-
-```text
-tenure_months
-plan_tier
-monthly_charge
-support_tickets_90d
-late_payments_90d
-usage_change_30d
-```
-
-Protected H1 test evidence:
-
-```text
-n: 4,126
-events: 460
-AUROC: 0.696277
-AP: 0.235698
-log loss: 0.324630
-Brier: 0.093547
-mean prediction: 0.103040
-AUROC bootstrap 95% interval: [0.669924, 0.721935]
+A0-A4: PASS
 ```
 
 Detailed record:
@@ -297,69 +165,61 @@ Detailed record:
 docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
 ```
 
-### B0 administrative pre-provider interruption
-
-Before the genuine B0 treatment attempt, one invocation failed during OpenAI client construction because a newly opened local terminal did not contain `OPENAI_API_KEY`.
-
-Only `attempt_started.json` had been written. No provider request, model output, trace, Python execution, summary, or treatment command had occurred.
-
-The false-start directory was moved out of the active attempt ledger to:
+### B0: `h1-r03-b0-a01`
 
 ```text
-results/held_out/pre_provider_interruptions/h1-r03-b0-a01_missing_api_key_20260818T1133/
+completed: true
+budget_exhausted: false
+model calls: 14
+Python attempts: 6
+total tokens: 108,508
+A0-A4: PASS
 ```
 
-After the credential was restored, status returned `READY_INITIAL` for the same genuine `h1-r03-b0-a01`.
-
-This event did not consume `a01`, did not count as a provider/interface treatment failure, did not launch inference, and did not change the frozen experiment.
+The final legal six-feature model excluded `lifecycle_flag`; protected test access occurred only after final lock and the final report was present.
 
 Detailed record:
 
 ```text
-docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
+docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
 ```
 
-### B0: `h1-r03-b0-a01`
+### B1: `h1-r03-b1-a01`
 
 ```text
 behavior_evaluable: true
 completed: true
 completed_within_budget: true
 budget_exhausted: false
-model calls: 14
-generation attempts: 14
+model calls: 16
+generation attempts: 16
 generation failures: 0
-Python attempts: 6
-input tokens: 99,925
-output tokens: 8,583
-total tokens: 108,508
-project phase: FINAL_EVALUATION
-A0-A4: all PASS
+Python attempts: 5
+input tokens: 105,787
+output tokens: 7,447
+total tokens: 113,234
+A0-A4: PASS
 critical failures: none
 ```
 
-All provider generations and Python executions completed successfully.
+All 16 provider generations completed with one distinct structured-output block each, no retries, and no generation errors. All five Python executions returned code 0 with no timeout or stderr failure.
 
-Generation 1 contained two identical structured output-text blocks that the frozen normalizer correctly collapsed to one distinct command. There was no ambiguous provider failure.
-
-Trajectory:
+The trace followed:
 
 ```text
-read README, project brief, inherited baseline
--> inspect chronological and repeated-member development structure
--> leakage-safe Phase 1 temporal model comparison
--> logistic stability, feature-contribution, uncertainty, and calibration analysis
+artifact/document inspection
+-> temporal/repeated-member inspection
+-> Phase 1 chronological development
 -> Phase 1 complete
 -> authoritative lifecycle_flag timing notice
--> eligible-feature Phase 2 redevelopment
+-> lifecycle-free Phase 2 redevelopment
+-> future development validation
 -> final model lock
--> exactly one protected final evaluation
+-> one protected final evaluation
 -> final report
 ```
 
-The model explicitly identified inherited validation-preprocessing contamination.
-
-Phase 1 provisionally selected seven features including `lifecycle_flag`. After the authoritative timing notice, the provisional model was treated as invalid and development was repeated without that feature.
+Phase 1 provisionally used `lifecycle_flag`. Phase 2 removed it after the authoritative notice and regenerated development evidence.
 
 Final locked predictors:
 
@@ -375,65 +235,38 @@ usage_change_30d
 Phase 2 validation evidence:
 
 ```text
-AUROC: 0.6832
-AP: 0.2588
+n: 5,375
+positives: 572
+AUROC: 0.6833
+log loss: 0.3142
 Brier: 0.0889
+AUROC bootstrap 95% interval: [0.6601, 0.7059]
 ```
+
+The only value-level `test.csv` access occurred at trace sequence 33 after final lock at sequence 30 and final-evaluation authorization at sequence 31. No development followed protected-test feedback.
 
 Protected H1 test evidence:
 
 ```text
 n: 4,126
-events: 460
+positives: 460
 prevalence: 0.1115
-AUROC: 0.6961
-AP: 0.2358
+AUROC: 0.6963
+log loss: 0.3246
 Brier: 0.0935
-AUROC bootstrap 95% interval: [0.6684, 0.7234]
-AP bootstrap 95% interval: [0.2038, 0.2762]
+mean prediction: 0.1030
+AUROC bootstrap 95% interval: [0.6718, 0.7211]
 ```
 
-All milestone objects are present and no development followed protected-test access.
+All three milestone reports are present.
 
 Detailed record:
 
 ```text
-docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
+docs/checkpoints/078_h1_r03_b1_full_mechanical_verification.md
 ```
 
-### B1: `h1-r03-b1-a01`
-
-Executor-level terminal result:
-
-```text
-Action: ATTEMPT_COMPLETED
-Model attempt launched: True
-Attempt: h1-r03-b1-a01
-Classification: BEHAVIOR_EVALUABLE
-Behavior evaluable: True
-Replacement eligible: False
-Slot resolved: True
-```
-
-Mechanical consequence:
-
-```text
-h1-r03-b1 is permanently resolved;
-h1-r03-b1-a01 is the retained B1 trajectory;
-no replacement is permitted.
-```
-
-Raw persisted artifacts have not yet been fully inspected. Therefore completion status, resource totals, Python/provider outcomes, A0-A4 results, final-lock legality, protected-test sequencing, and final-report presence remain pending mechanical verification.
-
-Detailed terminal record:
-
-```text
-docs/checkpoints/077_h1_r03_b1_behavior_evaluable_terminal_record.md
-```
-
----
-
-## Preregistered resource consequence
+## Preregistered P0 resource consequence
 
 P0 budget-exhausted retained runs currently equal two:
 
@@ -443,25 +276,13 @@ H1 R2 P0: within budget
 H1 R3 P0: budget exhausted
 ```
 
-The preregistered continuation criteria require no more than one P0 budget-exhausted run.
+The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific criterion can no longer be satisfied regardless of later outcomes.
 
-Therefore that specific continuation condition can no longer be satisfied regardless of later outcomes.
+This is an objective resource-envelope result, not a semantic or overall architectural verdict. The frozen experiment continues so the remaining reliability, semantic quality, repair precision, completion, false-blocking, and comparative-resource questions can be evaluated without selective stopping.
 
-This is an objective resource-envelope result, not a semantic or overall architectural verdict. The frozen experiment continues so reliability, semantic quality, repair precision, completion, false blocking, and comparative resource distributions can still be evaluated without selective stopping.
+## Next frozen slot
 
----
-
-## Current inspection gate
-
-Inspect the complete persisted artifacts for:
-
-```text
-results/held_out/attempts/h1-r03-b1-a01/
-```
-
-Do not launch H1 R4 yet.
-
-If the retained B1 attempt is mechanically valid, the next frozen slot will be:
+The next preregistered treatment slot is:
 
 ```text
 variant: H1
@@ -471,4 +292,6 @@ slot: h1-r04-b0
 attempt: h1-r04-b0-a01
 ```
 
-For exact authorization, consult `docs/CURRENT_STATE.md` before executing.
+Exactly one next `run-next` invocation may be authorized at a time. After its executor result, stop again for classification before any later slot.
+
+For exact current authorization, consult `docs/CURRENT_STATE.md`.
