@@ -1,11 +1,12 @@
 # Current State
 
-**Checkpoint:** 82  
+**Checkpoint:** 83  
 **Date:** 2026-08-18  
 **Development stage:** Prototype V0 held-out execution active  
-**Resolved treatment slots:** 10 / 30  
-**Next frozen slot:** `h1-r04-b1-a01`  
-**Execution mode:** retrospectively validated sequential supervisor
+**Resolved treatment slots:** 13 / 30  
+**Remaining treatment slots:** 17 / 30  
+**Next frozen slot:** `h1-r05-p0-a01`  
+**Execution mode:** prospectively validated sequential supervisor; large bounded unattended batch authorized
 
 ## Current experiment
 
@@ -21,7 +22,7 @@ Frozen held-out protocol:
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Detailed current run ledger:
+Detailed run ledger:
 
 ```text
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
@@ -32,136 +33,171 @@ No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 ## Current counts
 
 ```text
-resolved treatment slots: 10 / 30
-remaining treatment slots: 20 / 30
-behavior-evaluable retained attempts: 10
+resolved treatment slots: 13 / 30
+remaining treatment slots: 17 / 30
+behavior-evaluable retained attempts: 13
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
-P0 budget-exhausted retained runs: 2
+P0 budget-exhausted retained runs: 3
 administrative pre-provider interruptions: 1
+completed attempt directories mechanically verified: 15
+mechanical integrity failures: 0
 ```
 
-## Automated supervision is now validated
+## First prospective supervisor batch passed
 
-The external held-out supervisor and read-only verifier introduced in Foundation 015 have passed their retrospective validation gate.
-
-Software tests:
-
-```text
-77 passed in 30.43s
-```
-
-Retrospective verifier result:
-
-```text
-completed attempt directories verified: 12
-integrity passed: 12
-integrity failed: 0
-```
-
-The 12 reports cover the ten behavior-evaluable retained attempts plus the two earlier H1 R2 B0 non-behavior-evaluable provider/interface attempts.
-
-The compact reports reproduce the established manual resource, classification, milestone, protected-test sequencing, budget-exhaustion, provider-failure, Python-timeout, and Python-error mechanics with no discovered discrepancy.
-
-Frozen implementation identities at validation:
-
-```text
-heldout_supervisor.py blob SHA
-    ef6ffbea671d4f177e41002becfd8751e176ddad
-
-heldout_verifier.py blob SHA
-    03fb33280f87d0056a3dbb264a63651df9ffb431
-```
-
-The supervisor remains external to the treatments. It calls the unchanged frozen `execute_next_attempt()` function sequentially, mechanically verifies each persisted attempt, and pauses only when experiment integrity cannot be established or the frozen runner itself reaches a safety state.
-
-Detailed validation record:
-
-```text
-docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
-```
-
-Accepted operational decision:
-
-```text
-docs/DECISIONS.md, D-026
-```
-
-## Important existing resource consequence
-
-P0 has exhausted the common 250,000-token envelope in two retained H1 runs:
-
-```text
-H1 R1 P0: budget exhausted
-H1 R2 P0: within budget
-H1 R3 P0: budget exhausted
-```
-
-The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes.
-
-This remains an objective resource result, not a semantic or overall architectural verdict. The frozen experiment continues unchanged.
-
-## Frozen experiment integrity
-
-The supervisor validation did not modify:
-
-```text
-P0 treatment behavior
-B0/B1 prompts
-P0 knowledge components
-H1/H2 benchmark bundles
-run order
-resource budgets
-provider/model configuration
-provider normalization and retry semantics
-A0-A4 definitions
-semantic rubric
-blinded judge protocol
-continuation/falsification criteria
-held-out executor behavior
-```
-
-## Next authorized action
-
-The next frozen treatment is still:
-
-```text
-variant: H1
-replicate: 4
-condition: B1
-slot: h1-r04-b1
-attempt: h1-r04-b1-a01
-```
-
-The first prospective supervisor batch is now authorized with a maximum of three paid treatment attempts:
+The first live batch used:
 
 ```bash
 python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
 ```
 
-The supervisor remains sequential. A provider failure can consume one of the three paid-attempt allowances while keeping execution inside the same preregistered slot.
-
-After the batch finishes, stop and review the compact export produced automatically by the command before increasing the unattended batch size.
-
-Do not separately invoke `heldout_runner run-next` while the supervisor workflow is active.
-
-## Knowledge-preservation architecture
-
-Current preservation flow remains Development Method v0.3:
+Batch:
 
 ```text
-discussion
-    -> checkpoint
-    -> promotion audit
-    -> canonical/foundational/specification update when warranted
-    -> KNOWLEDGE_MAP routing update when warranted
-    -> concise CURRENT_STATE
-
-meaningful stage boundary
-    -> knowledge reconciliation
+batch-20260818T170118Z
 ```
 
-## Minimum reading for a future session
+It launched exactly three paid attempts in the frozen order:
+
+```text
+h1-r04-b1-a01
+h1-r04-p0-a01
+h1-r05-b1-a01
+```
+
+All three were behavior-evaluable, permanently resolved their treatment slots, and passed all M01-M11 mechanical integrity checks.
+
+Post-batch verifier state:
+
+```text
+15 completed attempt directories verified
+15 integrity PASS
+0 integrity FAIL
+```
+
+The supervisor stopped exactly because the explicit three-attempt batch limit was reached and derived the correct next slot:
+
+```text
+h1-r05-p0-a01
+```
+
+Detailed record:
+
+```text
+docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md
+```
+
+## New retained mechanical outcomes
+
+### H1 R4 B1
+
+```text
+attempt: h1-r04-b1-a01
+completed: true
+budget exhausted: false
+model calls: 16
+Python attempts: 6
+total tokens: 152,391
+A0-A4: PASS
+review flags: none
+```
+
+Final lock sequence 30, protected-test access sequence 33, final report sequence 35.
+
+### H1 R4 P0
+
+```text
+attempt: h1-r04-p0-a01
+completed: false
+budget exhausted: true
+model calls: 14
+Python attempts: 5
+total tokens: 262,255
+A0-A4: PASS
+review flags: budget_exhausted, incomplete_run
+```
+
+The run reached final lock and one protected-test evaluation but no final report before the resource envelope stopped further reasoning.
+
+This is the third retained P0 budget exhaustion:
+
+```text
+H1 R1 P0: budget exhausted
+H1 R2 P0: within budget
+H1 R3 P0: budget exhausted
+H1 R4 P0: budget exhausted
+```
+
+The preregistered maximum of one P0 budget-exhausted run was already impossible after H1 R3. The frozen experiment continues unchanged.
+
+### H1 R5 B1
+
+```text
+attempt: h1-r05-b1-a01
+completed: true
+budget exhausted: false
+model calls: 17
+Python attempts: 7
+total tokens: 155,299
+A0-A4: PASS
+review flags: python_execution_error_or_timeout
+```
+
+One model-authored Python execution returned code 1. The trajectory remained behavior-evaluable and completed normally. Final lock was sequence 32, protected-test access sequence 35, and final report sequence 37.
+
+## Supervisor status
+
+The supervision layer has now passed both validation stages:
+
+```text
+software tests: 77 passed
+retrospective verification before paid use: 12 / 12 PASS
+first prospective batch: 3 / 3 new attempts PASS
+current completed-attempt verification: 15 / 15 PASS
+```
+
+The validated implementation remains frozen for Prototype V0 operational use unless a genuine condition-neutral infrastructure defect is discovered.
+
+The supervisor still:
+
+```text
+uses the unchanged frozen execute_next_attempt() path;
+runs sequentially only;
+preserves slot order and replacement semantics;
+does not modify B0, B1, or P0;
+does not expose previous outcomes to later treatments;
+does not perform semantic judging;
+does not write verifier output into treatment attempt directories.
+```
+
+## Next authorized action
+
+The next frozen treatment is:
+
+```text
+variant: H1
+replicate: 5
+condition: P0
+slot: h1-r05-p0
+attempt: h1-r05-p0-a01
+```
+
+The live smoke-test gate is complete. A large bounded supervisor batch is now authorized:
+
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
+```
+
+There are 17 unresolved treatment slots. If every remaining slot resolves on its first attempt, the command will stop at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional attempt allowance. The supervisor must stop earlier if it encounters a mechanical integrity failure or another frozen runner safety state.
+
+Do not invoke `heldout_runner run-next` separately while the supervisor workflow is active.
+
+After the batch stops, review its single compact export before beginning semantic judging.
+
+## Knowledge and continuity
+
+Minimum reading for a future session:
 
 ```text
 README.md
@@ -173,13 +209,13 @@ docs/foundations/015_held_out_supervision_and_mechanical_verification_architectu
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-For system-level architecture:
+System-level architecture:
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 ```
 
-For preservation architecture:
+Knowledge-preservation architecture:
 
 ```text
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
@@ -187,4 +223,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Run the first validated sequential supervisor batch with at most three paid attempts, then inspect its single compact export before increasing batch size.**
+**Use the validated supervisor to continue the remaining held-out treatment execution in one large bounded sequential batch where possible, then stop for compact-export review before semantic evaluation.**
