@@ -4,7 +4,7 @@
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules are governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-18  
 **Resolved treatment slots:** 10 / 30  
-**Current gate:** raw mechanical inspection of `h1-r04-b0-a01`
+**Next frozen slot:** `h1-r04-b1-a01`
 
 ## Purpose
 
@@ -88,7 +88,7 @@ P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
 
-H1 replicate 3 is fully resolved and mechanically verified across P0, B0, and B1.
+H1 replicate 3 is fully resolved and mechanically verified across P0, B0, and B1. H1 replicate 4 B0 is also fully mechanically verified.
 
 ## Mechanically verified retained runs
 
@@ -103,6 +103,7 @@ H1 replicate 3 is fully resolved and mechanically verified across P0, B0, and B1
 | H1 | 3 | P0 | `h1-r03-p0-a01` | no | yes | 13 | 6 | 258,485 | PASS |
 | H1 | 3 | B0 | `h1-r03-b0-a01` | yes | no | 14 | 6 | 108,508 | PASS |
 | H1 | 3 | B1 | `h1-r03-b1-a01` | yes | no | 16 | 5 | 113,234 | PASS |
+| H1 | 4 | B0 | `h1-r04-b0-a01` | yes | no | 16 | 6 | 131,266 | PASS |
 
 The table is mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
 
@@ -144,7 +145,13 @@ Detailed record:
 docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
 ```
 
-## H1 replicate 3 mechanical summaries
+### H1 R4 B0 model-authored Python recovery
+
+`h1-r04-b0-a01` made six Python attempts. The first inspection script returned code 1 because it accessed `pairs.diff` instead of the created `diff` column. The model corrected the computation on the next attempt, which returned code 0.
+
+This is behavior-evaluable model-authored runtime evidence, not provider or infrastructure failure. There were no Python timeouts.
+
+## H1 replicate 3 summary
 
 ### P0: `h1-r03-p0-a01`
 
@@ -176,8 +183,6 @@ total tokens: 108,508
 A0-A4: PASS
 ```
 
-The final legal six-feature model excluded `lifecycle_flag`; protected test access occurred only after final lock and the final report was present.
-
 Detailed record:
 
 ```text
@@ -187,47 +192,12 @@ docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
 ### B1: `h1-r03-b1-a01`
 
 ```text
-behavior_evaluable: true
 completed: true
-completed_within_budget: true
 budget_exhausted: false
 model calls: 16
-generation attempts: 16
-generation failures: 0
 Python attempts: 5
-input tokens: 105,787
-output tokens: 7,447
 total tokens: 113,234
 A0-A4: PASS
-critical failures: none
-```
-
-All 16 provider generations completed with one distinct structured-output block each, no retries, and no generation errors. All five Python executions returned code 0 with no timeout or stderr failure.
-
-The trace followed artifact/document inspection, temporal/repeated-member inspection, Phase 1 chronological development, Phase 1 completion, authoritative timing notice, lifecycle-free Phase 2 redevelopment, future development validation, final lock, one protected final evaluation, and final report.
-
-Final locked predictors:
-
-```text
-tenure_months
-plan_tier
-monthly_charge
-support_tickets_90d
-late_payments_90d
-usage_change_30d
-```
-
-Protected H1 test evidence:
-
-```text
-n: 4,126
-positives: 460
-prevalence: 0.1115
-AUROC: 0.6963
-log loss: 0.3246
-Brier: 0.0935
-mean prediction: 0.1030
-AUROC bootstrap 95% interval: [0.6718, 0.7211]
 ```
 
 Detailed record:
@@ -240,33 +210,111 @@ docs/checkpoints/078_h1_r03_b1_full_mechanical_verification.md
 
 ### B0: `h1-r04-b0-a01`
 
-Executor-level terminal result:
-
 ```text
-Action: ATTEMPT_COMPLETED
-Model attempt launched: True
-Attempt: h1-r04-b0-a01
-Classification: BEHAVIOR_EVALUABLE
-Behavior evaluable: True
-Replacement eligible: False
-Slot resolved: True
+behavior_evaluable: true
+completed: true
+completed_within_budget: true
+budget_exhausted: false
+model calls: 16
+generation attempts: 16
+generation failures: 0
+Python attempts: 6
+input tokens: 122,342
+output tokens: 8,924
+total tokens: 131,266
+A0-A4: PASS
+critical failures: none
 ```
 
-Mechanical consequence:
+Provider mechanics:
 
 ```text
-h1-r04-b0 is permanently resolved;
-h1-r04-b0-a01 is the retained B0 trajectory;
-no replacement is permitted.
+all 16 generations status completed
+no provider retries
+no generation failures
+no ambiguous structured outputs
+first generation: 2 identical output-text blocks collapsed to 1 distinct command
+all later generations: 1 block / 1 distinct command
 ```
 
-Raw persisted artifacts have not yet been fully inspected. Completion status, resource totals, Python/provider outcomes, A0-A4 results, final-lock legality, protected-test sequencing, and final-report presence remain pending mechanical verification.
-
-Detailed terminal record:
+Python mechanics:
 
 ```text
-docs/checkpoints/079_h1_r04_b0_behavior_evaluable_terminal_record.md
+six attempts
+five return code 0
+one model-authored inspection error at sequence 15
+corrected successfully at sequence 17
+zero timeouts
 ```
+
+Trace trajectory:
+
+```text
+artifact/document inspection
+-> inherited baseline read
+-> development-data inspection and corrected sequence diagnostics
+-> Phase 1 temporal model comparison
+-> Phase 1 complete
+-> authoritative lifecycle_flag timing notice
+-> lifecycle-free Phase 2 redevelopment
+-> calibration/association analysis
+-> final model lock
+-> one protected final evaluation
+-> final report
+```
+
+Final locked predictors:
+
+```text
+tenure_months
+plan_tier
+monthly_charge
+support_tickets_90d
+late_payments_90d
+usage_change_30d
+```
+
+The final locked logistic pipeline excluded `lifecycle_flag`, `member_key`, and `scoring_period`.
+
+Phase 2 development evidence for the selected eligible-feature logistic model:
+
+```text
+historical periods 13-16:
+AUROC 0.6863
+AP 0.2391
+Brier 0.0915
+
+provided periods 17-20:
+AUROC 0.6833
+AP 0.2591
+Brier 0.0889
+AUROC bootstrap 95% interval [0.6591, 0.7082]
+```
+
+The first value-level protected-test access occurred at sequence 33 after final lock at sequence 30. No later development sequence exists.
+
+Protected H1 test evidence:
+
+```text
+n: 4,126
+positives: 460
+prevalence: 0.1115
+AUROC: 0.6963
+average precision: 0.2357
+Brier: 0.0935
+mean predicted risk: 0.1030
+AUROC bootstrap 95% interval: [0.6693, 0.7204]
+```
+
+All milestone objects are present.
+
+Detailed record:
+
+```text
+docs/checkpoints/080_h1_r04_b0_full_mechanical_verification.md
+```
+
+Whether the transcript sufficiently diagnosed the inherited baseline contamination is intentionally reserved for the blinded S3 semantic criterion and is not determined by this mechanical ledger.
 
 ## Preregistered P0 resource consequence
 
@@ -282,17 +330,9 @@ The preregistered continuation criteria permit no more than one P0 budget-exhaus
 
 This is an objective resource-envelope result, not a semantic or overall architectural verdict. The frozen experiment continues unchanged.
 
-## Current inspection gate
+## Next frozen slot
 
-Inspect the complete persisted artifacts for:
-
-```text
-results/held_out/attempts/h1-r04-b0-a01/
-```
-
-Do not launch H1 R4 B1 yet.
-
-If the retained B0 attempt is mechanically valid, the next frozen slot will be:
+The next preregistered treatment slot is:
 
 ```text
 variant: H1
@@ -302,4 +342,6 @@ slot: h1-r04-b1
 attempt: h1-r04-b1-a01
 ```
 
-For exact authorization, consult `docs/CURRENT_STATE.md` before executing.
+Exactly one next `run-next` invocation may be authorized at a time. Stop after its executor result before any H1 R4 P0 execution.
+
+For exact current authorization, consult `docs/CURRENT_STATE.md`.
