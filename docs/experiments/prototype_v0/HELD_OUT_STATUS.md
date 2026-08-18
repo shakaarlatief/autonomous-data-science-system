@@ -5,13 +5,13 @@
 **Last reviewed:** 2026-08-18  
 **Resolved treatment slots:** 10 / 30  
 **Next frozen slot:** `h1-r04-b1-a01`  
-**Current gate:** validate automated supervisor before any new paid attempt
+**Execution mode:** validated sequential supervisor
 
 ## Purpose
 
 This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve full run-level provenance. This ledger keeps current experiment counts, retained-run resource summaries, exceptional attempt mechanics, and the execution gate in one place.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, supervisor status, and the next frozen execution point.
 
 No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 
@@ -121,36 +121,18 @@ h1-r02-b0-a02
 
 h1-r02-b0-a03
     behavior-evaluable retained trajectory
+    one model-authored Python timeout
 ```
 
-The first two failures occurred before a usable treatment command entered the runtime. Frozen replacement semantics applied. The retained A03 trajectory included one model-authored Phase 1 Python timeout followed by a successful computational rewrite; that timeout is behavioral evidence, not provider failure.
-
-Detailed records:
-
-```text
-docs/checkpoints/066_h1_r02_b0_a02_provider_ambiguity_verified_and_final_replacement_authorized.md
-docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
-```
+The first two failures occurred before a usable treatment command entered the runtime. Frozen replacement semantics applied.
 
 ### H1 R3 B0 administrative pre-provider interruption
 
-A local `run-next` invocation failed during OpenAI client construction because `OPENAI_API_KEY` was absent in a newly opened terminal. No provider inference occurred. The false-start directory was moved outside the active treatment ledger and the genuine `h1-r03-b0-a01` was later run normally.
-
-Detailed record:
-
-```text
-docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
-```
+One local invocation failed before provider inference because `OPENAI_API_KEY` was absent. No treatment attempt was consumed. The genuine `h1-r03-b0-a01` later ran normally.
 
 ### H1 R4 B0 model-authored Python recovery
 
-`h1-r04-b0-a01` made six Python attempts. The first inspection script returned code 1 because it accessed `pairs.diff` instead of the created `diff` column. The model corrected the computation on the next attempt. There were no Python timeouts.
-
-Detailed record:
-
-```text
-docs/checkpoints/080_h1_r04_b0_full_mechanical_verification.md
-```
+`h1-r04-b0-a01` contained one model-authored Python error followed by successful correction. This remains behavioral evidence, not infrastructure failure.
 
 ## Preregistered P0 resource consequence
 
@@ -164,52 +146,82 @@ H1 R3 P0: budget exhausted
 
 The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes.
 
-This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment continues.
+This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment continues unchanged.
 
-## Automated supervision architecture introduced after slot 10
+## Automated supervision validation
 
-The first ten slots established that repeated manual transport and mechanical inspection were no longer adding enough value to justify their cost.
-
-New external infrastructure:
+After ten resolved slots, the project introduced an external condition-neutral supervision layer:
 
 ```text
 prototype_v0/src/ads_v0/heldout_verifier.py
 prototype_v0/src/ads_v0/heldout_supervisor.py
 ```
 
-Detailed design:
+Detailed architecture:
 
 ```text
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 ```
 
-Implementation checkpoint:
+The implementation was not used prospectively until it passed retrospective validation.
+
+Validation result:
 
 ```text
-docs/checkpoints/081_automated_held_out_supervision_implemented_pending_retroactive_validation.md
+pytest: 77 passed in 30.43s
+completed attempt directories verified: 12
+integrity passed: 12
+integrity failed: 0
 ```
 
-The new layer does not alter the frozen treatment runner. It automates read-only mechanical verification and bounded sequential calls to the existing `execute_next_attempt()` function.
+The verifier covered all ten behavior-evaluable retained attempts plus both non-behavior-evaluable H1 R2 B0 provider/interface attempts. Its compact reports reproduced the previously established manual classifications, resource totals, budget states, milestone presence, protected-test sequencing, and known Python/provider exceptional events with no discovered discrepancy.
 
-### Required validation before prospective use
+Validated implementation blob identities:
 
-No paid supervisor batch is currently authorized.
+```text
+heldout_supervisor.py
+    ef6ffbea671d4f177e41002becfd8751e176ddad
 
-First run:
-
-```bash
-pytest
-python -m ads_v0.heldout_supervisor verify-existing
-python -m ads_v0.heldout_supervisor export
+heldout_verifier.py
+    03fb33280f87d0056a3dbb264a63651df9ffb431
 ```
 
-The full existing ledger, including both H1 R2 B0 non-behavior-evaluable provider attempts, must pass verifier integrity checks. The compact export must then be compared with the manual records already preserved for the first ten resolved slots.
+The supervisor/verifier layer is therefore frozen for remaining V0 operational use unless a genuine condition-neutral infrastructure defect is discovered.
 
-Only after that parity check may the supervisor be frozen for the remaining V0 execution.
+Detailed validation checkpoint:
 
-## Next frozen slot
+```text
+docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
+```
 
-The next treatment identity remains unchanged:
+Operational decision:
+
+```text
+docs/DECISIONS.md, D-026
+```
+
+## Supervisor execution semantics
+
+The supervisor:
+
+```text
+calls the unchanged frozen execute_next_attempt() path;
+runs attempts sequentially only;
+mechanically verifies each persisted attempt before advancing;
+preserves frozen slot order;
+preserves frozen replacement semantics;
+does not modify B0/B1/P0;
+does not expose previous outcomes to later treatments;
+does not perform semantic judging;
+does not write inside completed attempt directories;
+creates one compact batch export for review.
+```
+
+Behavioral issues such as Python errors, deterministic failures, incomplete work, or budget exhaustion remain retained outcomes and do not become replacement reasons.
+
+## Next frozen execution
+
+The next treatment identity remains:
 
 ```text
 variant: H1
@@ -219,4 +231,12 @@ slot: h1-r04-b1
 attempt: h1-r04-b1-a01
 ```
 
-It is currently held behind the no-inference supervisor-validation gate. Do not run `heldout_runner run-next` or a paid supervisor batch until `docs/CURRENT_STATE.md` explicitly authorizes prospective execution.
+The first prospective supervisor batch is authorized for at most three paid model attempts:
+
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
+```
+
+A provider failure can consume one paid-attempt allowance without resolving a treatment slot. After the batch, inspect the automatically generated compact export before increasing unattended batch size.
+
+Do not separately invoke `heldout_runner run-next` while this supervisor workflow is active.
