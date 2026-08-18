@@ -198,7 +198,7 @@ This was the concrete event that exposed the need to strengthen the preservation
 Historical source:
 
 ```text
-docs/checkpoints/075_checkpoint_22_system_level_vision_promoted_to_foundation_013.md
+docs/checkpoints/075_checkpoint_22_system_vision_promoted_to_foundation_013.md
 ```
 
 ---
@@ -239,7 +239,7 @@ This change is meta-architectural. It changes how the project preserves and navi
 
 ---
 
-## 2026-08-18: Prototype V0 gained automated held-out supervision and mechanical verification
+## 2026-08-18: Prototype V0 gained validated automated held-out supervision and mechanical verification
 
 After ten resolved held-out treatment slots, the project identified a second scaling problem: the scientific experiment was stable, but each ordinary run still required the user to manually transport terminal output, create and upload a raw ZIP, wait for repeated mechanical inspection, pull repository updates, and then launch the next slot.
 
@@ -258,14 +258,16 @@ heldout_supervisor.py
 
 The verifier checks attempt identity, frozen plan/bundle provenance, runtime configuration, executor classification, resource accounting, trace reconciliation, deterministic evaluator reproducibility, milestone consistency, protected-test sequencing, and conversation/model-call consistency. Behavioral events such as budget exhaustion or Python errors are recorded but do not become replacement reasons.
 
-The supervisor may execute multiple preregistered attempts sequentially without changing order, treatments, budgets, replacement semantics, or later semantic judging. It pauses if mechanical experiment integrity cannot be established and produces compact exports so normal runs no longer require one raw ZIP upload each.
+Before prospective paid use, the new layer was retrospectively validated against all completed attempt directories. The full test suite returned `77 passed`, and all 12 completed attempt directories received mechanical integrity `PASS` with zero integrity failures. The reports reproduced the established manual record for the ten retained behavior-evaluable trajectories and the two H1 R2 B0 provider/interface failures.
 
-Prospective paid use is gated on the software test suite plus retroactive verification of every existing completed attempt, providing parity against the manual process used for the first ten slots.
+The validated supervisor/verifier versions were then frozen for the remainder of Prototype V0 operational use. The first live batch remains deliberately bounded to three paid model attempts and sequential execution only.
 
-Key source:
+Key sources:
 
 ```text
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
+docs/DECISIONS.md, D-026
 ```
 
 This is an evaluation-infrastructure architecture change, not a treatment change.
