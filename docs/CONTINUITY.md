@@ -1,5 +1,9 @@
 # Continuity
 
+**Status:** Current canonical continuity procedure  
+**Aligned development-method version:** 0.3  
+**Last reviewed:** 2026-08-18
+
 ## Purpose
 
 This document defines how the Autonomous Data Science System project should continue across chats, sessions, models, or other context boundaries.
@@ -8,135 +12,188 @@ The central requirement is:
 
 > **A new chat must be able to reconstruct the current project state from persistent repository artifacts without requiring the previous chat or relying on model memory.**
 
-This requirement exists because long conversations are temporary working environments, not durable project storage.
+Long conversations are temporary working environments, not durable project storage.
+
+Continuity therefore depends on more than preserving files. Important knowledge must also remain discoverable, correctly classified, and current.
 
 ## ChatGPT project and session naming
 
 The current ChatGPT project is named:
 
-`Autonomous Data Science System`
+```text
+Autonomous Data Science System
+```
 
-Design chats use a numbered, content-specific naming convention:
+Design chats use:
 
 ```text
 NN - Main Topic / Stage
 ```
 
-Examples:
+The number preserves chronology and the content-specific title makes earlier sessions easier to locate.
 
-```text
-01 - Foundations & Checkpoint 0
-02 - System Definition & Success Criteria
-03 - Knowledge Architecture
-```
+Session names are navigation and provenance metadata only. The repository must never depend on a chat retaining a particular title.
 
-The number preserves chronology. The content-specific title makes old sessions discoverable without requiring the user to remember which numbered chat contained a topic.
-
-Session names are navigation and provenance metadata. The repository must never depend on a chat retaining a particular title.
-
-If a session evolves beyond its initial title, checkpoints remain the authoritative record of the specific conceptual milestones reached inside that session. A chat may therefore contain more than one checkpoint.
+A chat may contain many topics and many checkpoints while continuity remains healthy.
 
 ## When to start a new design chat
 
 Opening a new chat is a continuity action, not a topic-management convention.
 
-The AI design collaborator should proactively decide when a new chat is warranted. The default is to continue in the current chat across topic changes and repository checkpoints while conversational continuity remains healthy.
+The AI design collaborator should proactively decide when rotation is warranted.
 
 A new chat should normally be recommended only when one or more of the following become material:
 
 - the active conversation is becoming long enough that context loss or compression is a realistic risk;
-- earlier reasoning that is still needed is becoming difficult to retain or recover reliably within the active context;
-- responses, tool interactions, or continuity begin to show signs of degradation attributable to session length;
-- a platform or model context boundary is approaching or has become a meaningful operational concern;
-- or another practical session-boundary condition makes continuing in the same chat less reliable than rotating cleanly.
+- earlier reasoning that is still needed is becoming difficult to retain or recover reliably;
+- responses or tool interactions begin to show continuity degradation attributable to session length;
+- a platform or model context boundary is approaching;
+- or another practical session-boundary condition makes continuing less reliable than rotating cleanly.
 
-A new conceptual topic, a new checkpoint, or a new foundation document is **not by itself** a reason to open another chat.
+A topic change, checkpoint, foundation, or implementation milestone is not by itself a reason to rotate.
 
-The goal is to use a chat for as long as it remains an effective working context without waiting until continuity has already failed.
+The goal is to use a chat while it remains an effective working context without waiting until continuity has already failed.
 
-The AI may not always have an exact client-side meter for the platform's remaining conversation capacity. Exact UI visibility is not required for this procedure. It should use the context and continuity signals available to it and rotate conservatively before meaningful loss is likely. If a platform-specific limit becomes important but cannot be inferred, the AI may ask the user for relevant UI information. Screenshots should not be requested routinely.
-
-### Proactive rotation procedure
+## Proactive rotation procedure
 
 When the AI decides that a new chat should be opened, it should normally:
 
 1. preserve any important uncheckpointed reasoning;
-2. ensure the relevant canonical documents and `CURRENT_STATE.md` are current;
-3. record the exact next step and any material unresolved questions;
-4. verify that the repository is sufficient for reconstruction without the current conversation;
-5. tell the user that this is a good point to rotate chats before continuity becomes risky;
-6. propose the next numbered, content-specific session title;
-7. provide a minimal continuation prompt if useful.
+2. perform the checkpoint promotion audit where appropriate;
+3. ensure relevant canonical documents are current;
+4. ensure `docs/KNOWLEDGE_MAP.md` routes to any newly important durable knowledge;
+5. ensure `docs/CURRENT_STATE.md` is concise and current;
+6. ensure detailed active-experiment status is current if the next session depends on it;
+7. record the exact next step and material unresolved questions;
+8. verify that the repository is sufficient for reconstruction without the current conversation;
+9. tell the user that rotation is appropriate;
+10. propose the next numbered, content-specific session title;
+11. provide a minimal continuation prompt if useful.
 
-The user should not need to summarize the previous chat or manually reconstruct the project.
+The user should not need to summarize the previous chat manually.
 
 ## New-session start procedure
 
-A new design session should begin by reading the repository rather than asking the user to manually restate the project.
+A new design session should reconstruct the project from repository state before beginning substantial new reasoning.
 
 ### Minimum reading order
 
 1. `README.md`
 2. `docs/CURRENT_STATE.md`
-3. `docs/VISION.md`
-4. `docs/PRINCIPLES.md`
-5. `docs/DECISIONS.md`
-6. `docs/OPEN_QUESTIONS.md`
-7. `docs/DEVELOPMENT_METHOD.md`
-8. this file, `docs/CONTINUITY.md`
+3. `docs/KNOWLEDGE_MAP.md`
+4. `docs/VISION.md`
+5. `docs/PRINCIPLES.md`
+6. `docs/DECISIONS.md`
+7. `docs/OPEN_QUESTIONS.md`
+8. `docs/DEVELOPMENT_METHOD.md`
+9. `docs/CONTINUITY.md`
 
-Then read the foundational or historical documents explicitly listed in `CURRENT_STATE.md` as relevant to the next step.
+Then follow the routing and explicit read instructions in `CURRENT_STATE.md` and `KNOWLEDGE_MAP.md`.
 
-The exact historical reading set should follow the current checkpoint rather than the obsolete example set from an earlier checkpoint.
+For active Prototype V0 held-out work, the normal additional reading set is:
 
-### Required behavior after reading
+```text
+prototype_v0/README.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+```
 
-The new session should be able to state, before continuing substantial design work:
+If the current task concerns the broader system-level vision rather than only V0 execution, also read:
+
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+```
+
+The exact historical reading set should follow current routing rather than an obsolete fixed list of checkpoints.
+
+## Required behavior after reading
+
+Before continuing substantial work, the new session should be able to state:
 
 - what the project is trying to build;
 - what stage the project is in;
 - what has already been decided;
-- which ideas are still hypotheses rather than accepted architecture;
+- which ideas remain hypotheses rather than accepted architecture;
 - what major questions remain open;
-- and what the recorded next step is.
+- what experiment or prototype is currently active, if any;
+- what the exact next step is;
+- and which documents govern that next step.
 
 If repository documents are inconsistent, the session should identify the conflict rather than invent a reconciliation.
 
+## Knowledge authority during reconstruction
+
+The default authority order is:
+
+```text
+1. frozen specifications/contracts within their declared scope
+2. current explicit decisions and canonical specifications
+3. current vision/principles/current-state material
+4. foundational design memos for rationale and durable hypotheses
+5. checkpoints/session records for historical state
+6. raw historical material for provenance
+```
+
+`docs/KNOWLEDGE_MAP.md` helps route to these sources but is not itself a replacement for them.
+
+If a material conflict cannot be resolved by status, scope, or supersession information, it should become an explicit open question.
+
 ## Suggested new-chat prompt
 
-A minimal continuation prompt can be:
+A minimal continuation prompt is:
 
 ```text
 Continue the Autonomous Data Science System project.
-Read the repository state and the context required by CURRENT_STATE.md first.
-Reconstruct where the project stands, distinguish accepted decisions from open hypotheses,
+Read the repository state and the context required by CURRENT_STATE.md and KNOWLEDGE_MAP.md first.
+Reconstruct where the project stands, distinguish accepted decisions from active hypotheses and historical material,
 and continue from the recorded next step.
 ```
 
-If the chat has access to the GitHub repository directly, the session should read the files itself.
+If the chat has direct repository access, it should read the files itself.
 
-If direct repository access is unavailable, the relevant files should be provided to the new session rather than relying on remembered summaries.
+If direct repository access is unavailable, the relevant repository artifacts should be provided rather than relying on remembered summaries.
 
 ## Proactive preservation during a session
 
-Beginning with continuity procedure version 0.2, the user does not need to request every checkpoint explicitly.
+The user does not need to request every checkpoint explicitly.
 
-The AI design collaborator should decide when repository preservation is warranted, using the criteria in `DEVELOPMENT_METHOD.md`.
+The AI design collaborator should decide when preservation is warranted using `DEVELOPMENT_METHOD.md`.
 
 The intended behavior is:
 
 ```text
-continue freely while reasoning is still developing
-    -> detect when a coherent conceptual milestone has formed
-    -> preserve it before the next major topic or before continuity risk grows
-    -> resume discussion from the recorded next step
+continue freely while reasoning is developing
+    -> detect a coherent conceptual or operational milestone
+    -> create a checkpoint when warranted
+    -> perform the promotion audit
+    -> update durable knowledge/routing only when warranted
+    -> resume from the recorded next step
 ```
 
-Proactive checkpointing must preserve maturity distinctions. A compelling idea should remain a design hypothesis unless it has actually reached the status required for a principle or decision.
+Proactive preservation must preserve maturity distinctions. A compelling idea remains a design hypothesis until it has actually earned a stronger status.
+
+## Promotion and continuity
+
+A checkpoint alone is not enough when the material has become important current knowledge.
+
+A substantive checkpoint should therefore explicitly ask whether material should be promoted into:
+
+```text
+canonical documents
+foundations
+specifications/contracts
+experiment ledgers
+KNOWLEDGE_MAP
+MAJOR_CHANGES
+```
+
+No promotion is a valid outcome.
+
+This requirement exists because historically safe information can still become practically lost if future sessions do not know where to find it.
 
 ## End-of-session procedure
 
-Before a substantial session is abandoned because of length, context limits, a change of topic, or a deliberate stopping point, the project should create a checkpoint when the session contains material that has not yet been preserved.
+Before a substantial session is abandoned because of length, context limits, a deliberate stop, or another session boundary, the project should create a checkpoint when material work remains unpreserved.
 
 The end-of-session process should normally include:
 
@@ -145,121 +202,122 @@ The end-of-session process should normally include:
 3. record new decisions;
 4. record unresolved questions;
 5. preserve long-form reasoning if compression would lose important context;
-6. record important design hypotheses without presenting them as settled;
-7. update `CURRENT_STATE.md`;
-8. record the exact next step;
-9. list the documents a new session should read;
-10. create a historical checkpoint or session record when useful.
+6. record strong hypotheses without presenting them as settled;
+7. complete the promotion audit;
+8. update `KNOWLEDGE_MAP.md` when routing changed;
+9. update the active experiment ledger when relevant;
+10. update `CURRENT_STATE.md` with only the concise present-tense state;
+11. record the exact next step;
+12. list the documents a new session should read;
+13. create a historical checkpoint/session record where useful.
 
 The project does not need a checkpoint after every short conversation. The purpose is continuity, not bureaucracy.
 
 ## Current-state document requirements
 
-`CURRENT_STATE.md` should remain relatively concise compared with foundational memos.
+`docs/CURRENT_STATE.md` should remain concise compared with foundations, checkpoints, and experiment ledgers.
 
 It should answer:
 
-- What are we building?
-- What development stage are we in?
-- What principles or conclusions are currently established?
-- What strong hypotheses are active but not yet validated?
-- What has explicitly not been decided?
-- What are we working on now?
-- What should happen next?
-- What must a future session read?
+```text
+What are we building?
+What development stage are we in?
+What current conclusions or constraints materially affect the next step?
+What is the exact current priority?
+What should happen next?
+What must a future session read?
+```
 
-It should not become a duplicate of every other file.
+It should not contain a growing duplicate of every run, checkpoint, or foundation.
 
-## Conflict resolution across time
+Detailed long-running experiment mechanics should live in experiment-specific status documents.
 
-The project is expected to change.
+For Prototype V0:
 
-Therefore, future sessions must distinguish current state from historical reasoning.
+```text
+docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+```
 
-A practical priority order is:
+## Knowledge map requirements
 
-1. current accepted decisions and current specifications;
-2. current principles;
-3. current-state summary;
-4. foundational memos for detailed rationale;
-5. checkpoints and session records for historical context;
-6. raw archived conversations, if introduced later.
+`docs/KNOWLEDGE_MAP.md` should remain a routing layer, not another foundation.
 
-A historical memo can explain why a decision was originally made without implying that the decision is still current.
+It should be updated when:
 
-## Superseded material
+- an important new foundation is created;
+- a checkpoint is promoted into a durable source;
+- a canonical document changes role;
+- an experiment-specific ledger is introduced or retired;
+- a source becomes superseded;
+- or a future session would otherwise be likely to look in the wrong place.
 
-When an important document or decision becomes outdated, it should not simply disappear if its history matters.
+Routine checkpoint creation does not automatically require a knowledge-map update.
 
-Prefer one of the following:
+## Major-changes ledger
 
-- mark the old item as superseded and link to the replacement;
-- preserve the old version through Git history and document the replacement decision;
-- move historical material to an archive if the active structure later requires it.
+`docs/MAJOR_CHANGES.md` records selective project-level structural changes.
 
-The exact archive strategy has not yet been standardized.
+It should be updated when a change materially alters:
 
-## Conversation capacity should not determine project quality
+```text
+system-level vision
+target architecture direction
+prototype architecture
+evaluation architecture
+development methodology
+knowledge-preservation architecture
+major experimental phase/frozen contract
+repository structure that changes how future work should operate
+```
 
-The project should behave as though any chat may eventually end.
+It is not a replacement for Git history or checkpoints.
 
-Important reasoning should therefore be extracted before it becomes dependent on inaccessible context.
+## Knowledge reconciliation
 
-This does **not** mean constantly summarizing everything or rotating chats frequently. It means making checkpointing and proactive session rotation normal continuity responsibilities.
+At meaningful stage boundaries, the project should perform the reconciliation process defined in `DEVELOPMENT_METHOD.md`.
 
-## Model independence
+The continuity-specific goal is to verify that a new session can find the correct current knowledge without depending on historical-memory luck.
 
-Continuity should not depend on one specific LLM remembering prior conversations.
+A reconciliation should therefore verify at minimum:
 
-A future GPT, Claude, Gemini, open-source model, human collaborator, or other agent should be able to understand the project from the repository if given the appropriate access and instructions.
+```text
+CURRENT_STATE is concise and current;
+KNOWLEDGE_MAP routes correctly;
+important accepted decisions are recorded;
+OPEN_QUESTIONS does not contain obviously stale priorities;
+important recent checkpoint insights were promoted if warranted;
+active experiment ledgers are current;
+major structural changes are discoverable.
+```
 
-This is one reason the repository must distinguish explicit decisions, principles, hypotheses, and historical reasoning.
+## Deferred future continuity tooling
 
-## Continuity as a system requirement
+The current continuity substrate remains Git + Markdown + explicit repository structure.
 
-The continuity method being used to build this project also suggests a requirement for the future Autonomous Data Science System itself.
+Future versions may introduce machine-readable metadata, semantic retrieval, generated indexes, dependency graphs, automated reconciliation proposals, or raw-conversation provenance archives.
 
-Long-running data projects should have explicit persistent state so that execution can resume after:
+Those options are preserved in Foundation 014 but remain deferred until observed scale or consistency problems justify them.
 
-- a model context ends;
-- an agent is replaced;
-- a process crashes;
-- a human pauses the project;
-- a different model provider is used;
-- or the project is revisited months later.
+## Version relationship
 
-The implementation of that future project-state mechanism has not yet been selected.
+The current continuity procedure is aligned with Development Method version 0.3.
 
-## Version history
+The major methodological progression is:
 
-### Version 0.3
+```text
+v0.1
+layered durable preservation and explicit new-chat reconstruction
 
-**Introduced:** 2026-08-08
+v0.2
+proactive checkpoint detection and proactive chat rotation
 
-Changes:
+v0.3
+promotion audit + knowledge map + reconciliation + authority metadata
++ concise current state + experiment ledgers + major-changes history
+```
 
-- made design-chat rotation a proactive AI responsibility;
-- clarified that chat rotation is driven primarily by context/continuity risk rather than topic or checkpoint changes;
-- explicitly allowed one chat to span many topics and checkpoints while continuity remains healthy;
-- defined a proactive rotation procedure that preserves repository state before asking the user to move chats;
-- clarified that exact client-side context-limit visibility is not required and screenshots are only a fallback when platform-specific information is genuinely needed;
-- removed the obsolete fixed Checkpoint 2 historical-reading example in favor of following the current checkpoint.
+Detailed preservation rationale:
 
-### Version 0.2
-
-**Introduced:** Checkpoint 2, 2026-08-08
-
-Changes:
-
-- added the numbered, content-specific design-session naming convention;
-- clarified that session names are provenance rather than system dependencies;
-- made proactive checkpoint detection part of the continuity process;
-- updated the required historical context through Checkpoint 2.
-
-### Version 0.1
-
-**Introduced:** Checkpoint 0, 2026-08-07
-
-Initial cross-chat continuity procedure.
-
-**Current continuity procedure version:** 0.3
+```text
+docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
+```
