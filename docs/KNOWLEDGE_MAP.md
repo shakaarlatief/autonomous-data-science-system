@@ -57,6 +57,8 @@ prototype_v0/README.md
 
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
+docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
@@ -226,7 +228,7 @@ H1/H2 bundles, run counts/order, model/provider configuration, budgets, replacem
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-Detailed current run ledger, mechanical summaries, resource consequences, interruptions, and next frozen slot.
+Detailed current run ledger, mechanical summaries, resource consequences, interruptions, supervisor validation, and next frozen execution point.
 
 ### Current project-level navigation
 
@@ -234,7 +236,49 @@ Detailed current run ledger, mechanical summaries, resource consequences, interr
 docs/CURRENT_STATE.md
 ```
 
-Contains only the concise V0 status and next action needed for continuity.
+Contains the concise V0 status and next action needed for continuity.
+
+---
+
+## Prototype V0 held-out supervision and mechanical verification
+
+### Durable architecture
+
+```text
+docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+```
+
+Explains the separation between frozen treatment execution and external experiment supervision, the read-only M01-M11 mechanical verifier, bounded sequential batching, compact exports, replacement-policy preservation, and the path toward a larger future evaluation platform.
+
+### Accepted operational decision
+
+```text
+docs/DECISIONS.md, D-026
+```
+
+The retrospectively validated supervisor/verifier is frozen for the remaining Prototype V0 operational execution unless a genuine condition-neutral infrastructure defect is discovered.
+
+### Validation provenance
+
+```text
+docs/checkpoints/081_automated_held_out_supervision_implemented_pending_retroactive_validation.md
+docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
+```
+
+Checkpoint 81 records implementation before use. Checkpoint 82 records the successful `77 passed` software test result, 12/12 retrospective mechanical integrity passes, comparison with the manual ledger, and authorization of the first bounded live supervisor batch.
+
+### Implementation
+
+```text
+prototype_v0/src/ads_v0/heldout_runner.py
+    frozen treatment executor
+
+prototype_v0/src/ads_v0/heldout_verifier.py
+    read-only mechanical verifier
+
+prototype_v0/src/ads_v0/heldout_supervisor.py
+    sequential external supervisor
+```
 
 ---
 
