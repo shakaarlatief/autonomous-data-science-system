@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-**Checkpoint:** 71  
+**Checkpoint:** 72  
 **Date:** 2026-08-18  
-**Development stage:** Held-out execution active; seven treatment slots permanently resolved; H1 R3 P0 fully mechanically verified; H1 R3 B0 restored to a clean pre-inference state after one administrative missing-credential interruption  
+**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 is behavior-evaluable at executor level and awaits raw mechanical inspection before H1 R3 B1  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
@@ -170,20 +170,7 @@ The preregistered continuation criteria require no more than one P0 budget-exhau
 
 ## H1 R3 B0 administrative pre-provider interruption
 
-An invocation intended to start `h1-r03-b0-a01` failed during OpenAI client construction because the newly opened terminal did not contain `OPENAI_API_KEY`.
-
-The executor had already written `attempt_started.json`, so its interruption protection correctly blocked further execution. Mechanical inspection established:
-
-```text
-OPENAI_API_KEY set after recovery: True
-persisted treatment files at failure: attempt_started.json only
-summary.json: absent
-attempt_record.json: absent
-trace.jsonl: absent
-conversation/model-output artifacts: absent
-Python-execution artifacts: absent
-provider generation request: none
-```
+Before the genuine B0 attempt, one invocation failed during OpenAI client construction because a newly opened terminal did not contain `OPENAI_API_KEY`. Only `attempt_started.json` existed and no provider request, model output, trace, Python execution, or summary had occurred.
 
 The start-marker directory was preserved outside the treatment ledger at:
 
@@ -191,27 +178,49 @@ The start-marker directory was preserved outside the treatment ledger at:
 results/held_out/pre_provider_interruptions/h1-r03-b0-a01_missing_api_key_20260818T1133/
 ```
 
-A no-inference status check then returned:
+After the credential was restored, a no-inference status check returned `READY_INITIAL` for the same genuine `h1-r03-b0-a01`. This administrative interruption does not consume `a01`, does not count as a provider/interface treatment failure, and does not alter the frozen experiment.
 
-```text
-Status: READY_INITIAL
-Resolved slots: 7/30
-Next attempt: h1-r03-b0-a01
-Initial attempt is ready for earliest unresolved slot h1-r03-b0.
-Model attempt launched: False
-```
-
-This is classified as an administrative pre-provider interruption. It does not consume `a01`, does not count as a provider/interface treatment failure, and does not alter the frozen experiment. Detailed record:
+Detailed record:
 
 ```text
 docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
 ```
 
+## H1 R3 B0 terminal result
+
+The genuine initial attempt returned:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Attempt: h1-r03-b0-a01
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
+```
+
+Immediate consequence:
+
+```text
+h1-r03-b0 is permanently resolved;
+h1-r03-b0-a01 is the retained B0 trajectory;
+no replacement is permitted regardless of later mechanical findings.
+```
+
+Raw inspection is still required. The terminal executor result alone does not establish project completion, resource usage, budget exhaustion, A0-A4 results, provider retry behavior, Python outcomes, final-test sequencing, or final-report status.
+
+Detailed terminal record:
+
+```text
+docs/checkpoints/072_h1_r03_b0_behavior_evaluable_terminal_record.md
+```
+
 ## Current held-out count
 
 ```text
-resolved treatment slots: 7 / 30
-behavior-evaluable retained attempts: 7
+resolved treatment slots: 8 / 30
+behavior-evaluable retained attempts: 8
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
 P0 budget-exhausted retained runs: 2
@@ -220,29 +229,19 @@ administrative pre-provider interruptions: 1
 
 No S1-S10 or SC1-SC2 judging has begun.
 
-## Next authorized slot
-
-According to the frozen plan, the genuine initial attempt remains:
-
-```text
-variant: H1
-replicate: 3
-condition: B0
-slot: h1-r03-b0
-attempt: h1-r03-b0-a01
-```
-
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 71. Stop immediately after its executor result before any H1 R3 B1 run.
-
-## Relevant latest records
-
-```text
-docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
-docs/checkpoints/069_h1_r03_p0_behavior_evaluable_terminal_record.md
-docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
-docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
-```
-
 ## Current priority
 
-**Launch exactly one genuine `h1-r03-b0-a01` treatment attempt, then stop and inspect its terminal classification before any further held-out execution.**
+Inspect the complete persisted artifacts for:
+
+```text
+results/held_out/attempts/h1-r03-b0-a01/
+```
+
+Do not launch H1 R3 B1 until this attempt is fully mechanically verified. If the attempt is mechanically valid, the next frozen slot will be:
+
+```text
+H1 replicate 3
+condition: B1
+slot: h1-r03-b1
+attempt: h1-r03-b1-a01
+```
