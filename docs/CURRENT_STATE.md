@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-**Checkpoint:** 70  
+**Checkpoint:** 71  
 **Date:** 2026-08-18  
-**Development stage:** Held-out execution active; seven treatment slots permanently resolved; H1 R3 P0 fully mechanically verified; next slot is H1 R3 B0  
+**Development stage:** Held-out execution active; seven treatment slots permanently resolved; H1 R3 P0 fully mechanically verified; H1 R3 B0 restored to a clean pre-inference state after one administrative missing-credential interruption  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
@@ -87,8 +87,6 @@ B1  h1-r01-b1-a01   complete, within budget, 14 calls, 6 Python, 120,424 tokens,
 P0  h1-r01-p0-a01   complete, budget exhausted, 14 calls, 6 Python, 294,267 tokens, A0-A4 PASS
 ```
 
-H1 R1 P0 crossed the token ceiling on the terminal final-report call after cumulative usage was 249,581. The completed report was retained and no later treatment call occurred.
-
 ### H1 R2
 
 ```text
@@ -97,21 +95,15 @@ P0  h1-r02-p0-a01   complete, within budget, 12 calls, 5 Python, 226,926 tokens,
 B0  h1-r02-b0-a03   complete, within budget, 16 calls, 7 Python, 131,563 tokens, A0-A4 PASS
 ```
 
-The H1 R2 B0 slot required two replacements before the retained A03 trajectory:
+The H1 R2 B0 slot required two non-behavior-evaluable provider/interface replacements before the retained A03 trajectory:
 
 ```text
-h1-r02-b0-a01  non-behavior-evaluable ambiguous_structured_output
-h1-r02-b0-a02  non-behavior-evaluable ambiguous_structured_output
+h1-r02-b0-a01  ambiguous_structured_output
+h1-r02-b0-a02  ambiguous_structured_output
 h1-r02-b0-a03  behavior-evaluable retained trajectory
 ```
 
-Both provider/interface failures occurred before any usable treatment command entered the runtime and exercised provider-normalization behavior frozen before held-out execution. No harness change was made.
-
-H1 R2 P0 correctly repaired `lifecycle_flag` timing invalidation and re-established eligible-feature evidence. `K-INFO-003` did not activate in that trajectory, which remains frozen behavioral evidence.
-
 ### H1 R3 P0: `h1-r03-p0-a01`
-
-Fully mechanically verified result:
 
 ```text
 behavior_evaluable: true
@@ -130,34 +122,9 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-All 13 provider generations completed normally and all six Python executions succeeded. There were no provider failures, retries, Python timeouts, command errors, or architecture-control errors.
+All 13 provider generations and six Python executions completed normally. The run crossed the resource ceiling on the protected final-evaluation generation after 217,919 cumulative tokens before that call. It therefore reached protected final evidence but did not receive a later final-report call.
 
-Exact cumulative token usage was 217,919 after call 12. Call 13, the protected final-evaluation generation, was therefore legitimately admitted. It contributed 40,566 tokens and moved cumulative usage to 258,485. The resource gate then terminated later treatment reasoning. No final-report call occurred.
-
-The run completed the analytical trajectory through one protected final evaluation, but `milestones.json` has `final_report: null`; the top-level deliverable obligation remains open in the final P0 frontier. This incompleteness is behavioral and is retained without replacement.
-
-All four frozen P0 knowledge components activated:
-
-```text
-K-INFO-001 Protected Final Evaluation
-K-INFO-002 Learned Transformation Evaluation Boundary
-K-INFO-003 Prediction-Time Feature Eligibility
-K-VAL-001 Generalization-Regime Question
-```
-
-Phase 2 state repair was targeted:
-
-```text
-prior lifecycle availability fact: ACTIVE -> DISPUTED
-provisional pipeline decision: PROVISIONAL -> REOPENED -> SUPERSEDED
-Phase 1 model evidence: CURRENT -> INVALIDATED
-Phase 1 robustness evidence: CURRENT -> INVALIDATED
-replacement eligible evidence: CURRENT
-replacement eligible pipeline decision: ACCEPTED
-support-loss obligations: satisfied before final lock
-```
-
-The accepted temporal-validation and model-selection-metric decisions were preserved. As in H1 R2 P0, the lifecycle timing question was transiently reopened when its hard dependency on the superseded provisional decision became invalid, then resolved again after the eligible pipeline was established. Preserve this for later architecture diagnostics; do not score it manually during execution.
+All four frozen P0 knowledge components activated. Phase 2 repair invalidated the provisional `lifecycle_flag` evidence and decision, preserved unrelated validation decisions, established eligible replacement evidence, and locked the legal six-feature model.
 
 Final locked predictors:
 
@@ -168,16 +135,6 @@ monthly_charge
 support_tickets_90d
 late_payments_90d
 usage_change_30d
-```
-
-Phase 2 validation evidence:
-
-```text
-n: 5,375
-AUROC: 0.683297
-AP: 0.259117
-log loss: 0.314238
-Brier: 0.088899
 ```
 
 Protected H1 test evidence:
@@ -192,8 +149,6 @@ Brier: 0.093547
 mean prediction: 0.103040
 AUROC bootstrap 95% interval: [0.669924, 0.721935]
 ```
-
-First final-test value access was trace sequence 32, after final lock, with no later development sequence.
 
 Detailed record:
 
@@ -211,25 +166,63 @@ H1 R2 P0: within budget
 H1 R3 P0: budget exhausted
 ```
 
-The preregistered continuation criteria require no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later held-out outcomes.
+The preregistered continuation criteria require no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes. This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment still continues.
 
-This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment must still be completed so reliability, semantic quality, repair precision, completion, false blocking, and comparative resource distributions can be evaluated without selective stopping. No treatment or budget change is permitted.
+## H1 R3 B0 administrative pre-provider interruption
+
+An invocation intended to start `h1-r03-b0-a01` failed during OpenAI client construction because the newly opened terminal did not contain `OPENAI_API_KEY`.
+
+The executor had already written `attempt_started.json`, so its interruption protection correctly blocked further execution. Mechanical inspection established:
+
+```text
+OPENAI_API_KEY set after recovery: True
+persisted treatment files at failure: attempt_started.json only
+summary.json: absent
+attempt_record.json: absent
+trace.jsonl: absent
+conversation/model-output artifacts: absent
+Python-execution artifacts: absent
+provider generation request: none
+```
+
+The start-marker directory was preserved outside the treatment ledger at:
+
+```text
+results/held_out/pre_provider_interruptions/h1-r03-b0-a01_missing_api_key_20260818T1133/
+```
+
+A no-inference status check then returned:
+
+```text
+Status: READY_INITIAL
+Resolved slots: 7/30
+Next attempt: h1-r03-b0-a01
+Initial attempt is ready for earliest unresolved slot h1-r03-b0.
+Model attempt launched: False
+```
+
+This is classified as an administrative pre-provider interruption. It does not consume `a01`, does not count as a provider/interface treatment failure, and does not alter the frozen experiment. Detailed record:
+
+```text
+docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
+```
 
 ## Current held-out count
 
 ```text
-resolved slots: 7 / 30
+resolved treatment slots: 7 / 30
 behavior-evaluable retained attempts: 7
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
 P0 budget-exhausted retained runs: 2
+administrative pre-provider interruptions: 1
 ```
 
 No S1-S10 or SC1-SC2 judging has begun.
 
 ## Next authorized slot
 
-According to the frozen plan:
+According to the frozen plan, the genuine initial attempt remains:
 
 ```text
 variant: H1
@@ -239,17 +232,17 @@ slot: h1-r03-b0
 attempt: h1-r03-b0-a01
 ```
 
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 70. Stop immediately after its executor result before any H1 R3 B1 run.
+Exactly one next `run-next` invocation is authorized after pulling Checkpoint 71. Stop immediately after its executor result before any H1 R3 B1 run.
 
 ## Relevant latest records
 
 ```text
-docs/checkpoints/066_h1_r02_b0_a02_provider_ambiguity_verified_and_final_replacement_authorized.md
 docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
 docs/checkpoints/069_h1_r03_p0_behavior_evaluable_terminal_record.md
 docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
+docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
 ```
 
 ## Current priority
 
-**Advance exactly one preregistered slot to `h1-r03-b0-a01`, then stop and inspect its terminal classification before any further held-out execution.**
+**Launch exactly one genuine `h1-r03-b0-a01` treatment attempt, then stop and inspect its terminal classification before any further held-out execution.**
