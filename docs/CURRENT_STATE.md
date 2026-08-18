@@ -2,10 +2,34 @@
 
 ## Checkpoint
 
-**Checkpoint:** 73  
+**Checkpoint:** 74  
 **Date:** 2026-08-18  
-**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 fully mechanically verified; next slot is H1 R3 B1  
+**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 fully mechanically verified; Prototype V0 README refreshed as the current entry point; next slot is H1 R3 B1  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
+
+## Documentation refresh
+
+`prototype_v0/README.md` is now the current short conceptual and operational entry point for Prototype V0.
+
+It explains in one place:
+
+```text
+what one run does
+benchmark traps and project phases
+B0 / B1 / P0
+P0 architecture and semantic spine
+H1 / H2 and the 30-run design
+mechanical versus semantic evaluation
+repository navigation and implementation locations
+```
+
+This was a documentation-only update. No frozen treatment behavior, prompt, benchmark, resource limit, judge, bundle, run order, provider configuration, or execution rule changed.
+
+Detailed record:
+
+```text
+docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md
+```
 
 ## Prototype V0 question
 
@@ -294,7 +318,7 @@ slot: h1-r03-b1
 attempt: h1-r03-b1-a01
 ```
 
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 73. Stop immediately after its executor result before any H1 R4 run.
+Exactly one next `run-next` invocation is authorized after pulling Checkpoint 74. Stop immediately after its executor result before any H1 R4 run.
 
 ## Relevant latest records
 
@@ -303,6 +327,7 @@ docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_ex
 docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
 docs/checkpoints/072_h1_r03_b0_behavior_evaluable_terminal_record.md
 docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
+docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md
 ```
 
 ## Current priority
