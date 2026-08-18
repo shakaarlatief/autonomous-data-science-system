@@ -4,13 +4,14 @@
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules are governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-18  
 **Resolved treatment slots:** 10 / 30  
-**Next frozen slot:** `h1-r04-b1-a01`
+**Next frozen slot:** `h1-r04-b1-a01`  
+**Current gate:** validate automated supervisor before any new paid attempt
 
 ## Purpose
 
 This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve full run-level provenance. This ledger keeps current experiment state, retained-run resource summaries, exceptional attempts, and the next frozen gate in one place.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve full run-level provenance. This ledger keeps current experiment counts, retained-run resource summaries, exceptional attempt mechanics, and the execution gate in one place.
 
 No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 
@@ -62,7 +63,7 @@ r4: P0, B0, B1
 r5: B0, B1, P0
 ```
 
-Replacement policy:
+Replacement policy remains:
 
 ```text
 behavior_evaluable = true
@@ -74,7 +75,7 @@ behavior_evaluable = false
 => replacement eligible inside same slot
 ```
 
-Maximum attempts per slot are `a01`, `a02`, and `a03`.
+Maximum attempts per slot remain `a01`, `a02`, and `a03`.
 
 ## Current counts
 
@@ -87,8 +88,6 @@ replacement attempts launched: 2
 P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
-
-H1 replicate 3 is fully resolved and mechanically verified across P0, B0, and B1. H1 replicate 4 B0 is also fully mechanically verified.
 
 ## Mechanically verified retained runs
 
@@ -105,7 +104,7 @@ H1 replicate 3 is fully resolved and mechanically verified across P0, B0, and B1
 | H1 | 3 | B1 | `h1-r03-b1-a01` | yes | no | 16 | 5 | 113,234 | PASS |
 | H1 | 4 | B0 | `h1-r04-b0-a01` | yes | no | 16 | 6 | 131,266 | PASS |
 
-The table is mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
+This table is mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
 
 ## Notable attempt-level events
 
@@ -135,9 +134,7 @@ docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
 
 ### H1 R3 B0 administrative pre-provider interruption
 
-A local `run-next` invocation failed during OpenAI client construction because `OPENAI_API_KEY` was absent in a newly opened terminal. Only `attempt_started.json` had been written and no provider inference occurred.
-
-The false-start directory was moved outside the active treatment ledger. The genuine `h1-r03-b0-a01` was then launched and retained without consuming a replacement attempt.
+A local `run-next` invocation failed during OpenAI client construction because `OPENAI_API_KEY` was absent in a newly opened terminal. No provider inference occurred. The false-start directory was moved outside the active treatment ledger and the genuine `h1-r03-b0-a01` was later run normally.
 
 Detailed record:
 
@@ -147,174 +144,13 @@ docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_a
 
 ### H1 R4 B0 model-authored Python recovery
 
-`h1-r04-b0-a01` made six Python attempts. The first inspection script returned code 1 because it accessed `pairs.diff` instead of the created `diff` column. The model corrected the computation on the next attempt, which returned code 0.
-
-This is behavior-evaluable model-authored runtime evidence, not provider or infrastructure failure. There were no Python timeouts.
-
-## H1 replicate 3 summary
-
-### P0: `h1-r03-p0-a01`
-
-```text
-completed: false
-budget_exhausted: true
-model calls: 13
-Python attempts: 6
-total tokens: 258,485
-A0-A4: PASS
-```
-
-The run crossed the token ceiling on the legitimately admitted protected final-evaluation call. It reached protected final evidence but did not receive a later final-report call.
-
-Detailed record:
-
-```text
-docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
-```
-
-### B0: `h1-r03-b0-a01`
-
-```text
-completed: true
-budget_exhausted: false
-model calls: 14
-Python attempts: 6
-total tokens: 108,508
-A0-A4: PASS
-```
-
-Detailed record:
-
-```text
-docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
-```
-
-### B1: `h1-r03-b1-a01`
-
-```text
-completed: true
-budget_exhausted: false
-model calls: 16
-Python attempts: 5
-total tokens: 113,234
-A0-A4: PASS
-```
-
-Detailed record:
-
-```text
-docs/checkpoints/078_h1_r03_b1_full_mechanical_verification.md
-```
-
-## H1 replicate 4
-
-### B0: `h1-r04-b0-a01`
-
-```text
-behavior_evaluable: true
-completed: true
-completed_within_budget: true
-budget_exhausted: false
-model calls: 16
-generation attempts: 16
-generation failures: 0
-Python attempts: 6
-input tokens: 122,342
-output tokens: 8,924
-total tokens: 131,266
-A0-A4: PASS
-critical failures: none
-```
-
-Provider mechanics:
-
-```text
-all 16 generations status completed
-no provider retries
-no generation failures
-no ambiguous structured outputs
-first generation: 2 identical output-text blocks collapsed to 1 distinct command
-all later generations: 1 block / 1 distinct command
-```
-
-Python mechanics:
-
-```text
-six attempts
-five return code 0
-one model-authored inspection error at sequence 15
-corrected successfully at sequence 17
-zero timeouts
-```
-
-Trace trajectory:
-
-```text
-artifact/document inspection
--> inherited baseline read
--> development-data inspection and corrected sequence diagnostics
--> Phase 1 temporal model comparison
--> Phase 1 complete
--> authoritative lifecycle_flag timing notice
--> lifecycle-free Phase 2 redevelopment
--> calibration/association analysis
--> final model lock
--> one protected final evaluation
--> final report
-```
-
-Final locked predictors:
-
-```text
-tenure_months
-plan_tier
-monthly_charge
-support_tickets_90d
-late_payments_90d
-usage_change_30d
-```
-
-The final locked logistic pipeline excluded `lifecycle_flag`, `member_key`, and `scoring_period`.
-
-Phase 2 development evidence for the selected eligible-feature logistic model:
-
-```text
-historical periods 13-16:
-AUROC 0.6863
-AP 0.2391
-Brier 0.0915
-
-provided periods 17-20:
-AUROC 0.6833
-AP 0.2591
-Brier 0.0889
-AUROC bootstrap 95% interval [0.6591, 0.7082]
-```
-
-The first value-level protected-test access occurred at sequence 33 after final lock at sequence 30. No later development sequence exists.
-
-Protected H1 test evidence:
-
-```text
-n: 4,126
-positives: 460
-prevalence: 0.1115
-AUROC: 0.6963
-average precision: 0.2357
-Brier: 0.0935
-mean predicted risk: 0.1030
-AUROC bootstrap 95% interval: [0.6693, 0.7204]
-```
-
-All milestone objects are present.
+`h1-r04-b0-a01` made six Python attempts. The first inspection script returned code 1 because it accessed `pairs.diff` instead of the created `diff` column. The model corrected the computation on the next attempt. There were no Python timeouts.
 
 Detailed record:
 
 ```text
 docs/checkpoints/080_h1_r04_b0_full_mechanical_verification.md
 ```
-
-Whether the transcript sufficiently diagnosed the inherited baseline contamination is intentionally reserved for the blinded S3 semantic criterion and is not determined by this mechanical ledger.
 
 ## Preregistered P0 resource consequence
 
@@ -326,13 +162,54 @@ H1 R2 P0: within budget
 H1 R3 P0: budget exhausted
 ```
 
-The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific criterion can no longer be satisfied regardless of later outcomes.
+The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes.
 
-This is an objective resource-envelope result, not a semantic or overall architectural verdict. The frozen experiment continues unchanged.
+This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment continues.
+
+## Automated supervision architecture introduced after slot 10
+
+The first ten slots established that repeated manual transport and mechanical inspection were no longer adding enough value to justify their cost.
+
+New external infrastructure:
+
+```text
+prototype_v0/src/ads_v0/heldout_verifier.py
+prototype_v0/src/ads_v0/heldout_supervisor.py
+```
+
+Detailed design:
+
+```text
+docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+```
+
+Implementation checkpoint:
+
+```text
+docs/checkpoints/081_automated_held_out_supervision_implemented_pending_retroactive_validation.md
+```
+
+The new layer does not alter the frozen treatment runner. It automates read-only mechanical verification and bounded sequential calls to the existing `execute_next_attempt()` function.
+
+### Required validation before prospective use
+
+No paid supervisor batch is currently authorized.
+
+First run:
+
+```bash
+pytest
+python -m ads_v0.heldout_supervisor verify-existing
+python -m ads_v0.heldout_supervisor export
+```
+
+The full existing ledger, including both H1 R2 B0 non-behavior-evaluable provider attempts, must pass verifier integrity checks. The compact export must then be compared with the manual records already preserved for the first ten resolved slots.
+
+Only after that parity check may the supervisor be frozen for the remaining V0 execution.
 
 ## Next frozen slot
 
-The next preregistered treatment slot is:
+The next treatment identity remains unchanged:
 
 ```text
 variant: H1
@@ -342,6 +219,4 @@ slot: h1-r04-b1
 attempt: h1-r04-b1-a01
 ```
 
-Exactly one next `run-next` invocation may be authorized at a time. Stop after its executor result before any H1 R4 P0 execution.
-
-For exact current authorization, consult `docs/CURRENT_STATE.md`.
+It is currently held behind the no-inference supervisor-validation gate. Do not run `heldout_runner run-next` or a paid supervisor batch until `docs/CURRENT_STATE.md` explicitly authorizes prospective execution.
