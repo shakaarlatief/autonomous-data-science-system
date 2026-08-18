@@ -297,3 +297,106 @@ The AI does not need an exact client-side context-limit meter to perform this re
 The goal of session management is reliable continuity, not creating many chats. Topic changes and checkpoints are useful documentation boundaries but are not, by themselves, reasons to fragment the working conversation. Proactive session rotation reduces the risk of reaching a context boundary unexpectedly and then requiring the user to recover the project manually.
 
 See `CONTINUITY.md`.
+
+---
+
+## D-021. Add an explicit promotion audit to substantive checkpoints
+
+**Status:** Accepted  
+**Date:** 2026-08-18
+
+Every substantive checkpoint should explicitly determine whether any newly stabilized material deserves promotion into a more durable current layer such as a canonical document, foundation, specification, experiment ledger, knowledge-map route, or major-change entry.
+
+No promotion is a valid outcome.
+
+### Rationale
+
+Checkpoint 22 demonstrated that knowledge can be physically durable but conceptually buried. The system-level vision remained safely stored in Git, yet its importance still depended on someone remembering that the checkpoint existed.
+
+The promotion audit turns that failure mode into an explicit process responsibility rather than relying on human memory.
+
+See `DEVELOPMENT_METHOD.md` version 0.3 and Foundation 014.
+
+---
+
+## D-022. Maintain a knowledge map as a routing layer
+
+**Status:** Accepted  
+**Date:** 2026-08-18
+
+The repository will maintain:
+
+```text
+docs/KNOWLEDGE_MAP.md
+```
+
+as a concise routing/index layer that points to current canonical knowledge, detailed foundational reasoning, frozen specifications, active experiment ledgers, and important historical origins.
+
+The knowledge map does not become another copy of the substantive knowledge.
+
+### Rationale
+
+As the number of foundations, checkpoints, experiments, and prototypes increases, Git history alone does not answer where the authoritative explanation of a concept lives.
+
+A routing layer improves discoverability without introducing a database or duplicating every document.
+
+---
+
+## D-023. Perform periodic knowledge reconciliation and separate current state from detailed experiment ledgers
+
+**Status:** Accepted  
+**Date:** 2026-08-18
+
+At meaningful stage boundaries, the project should reconcile canonical documents, foundations, decisions, open questions, routing, current state, and experiment records for stale, duplicated, contradictory, or unpromoted knowledge.
+
+`docs/CURRENT_STATE.md` should remain concise and present-tense. Long-running detailed experiment mechanics should live in experiment-specific ledgers such as:
+
+```text
+docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+```
+
+### Rationale
+
+The held-out experiment caused `CURRENT_STATE.md` to accumulate detailed run histories already preserved elsewhere. Separating navigation from the detailed ledger reduces duplication and improves new-session reconstruction.
+
+See Foundation 014 and Development Method v0.3.
+
+---
+
+## D-024. Keep Git and Markdown as the current preservation substrate and defer advanced knowledge infrastructure
+
+**Status:** Accepted for the current stage  
+**Date:** 2026-08-18
+
+The project will not currently introduce a graph database, vector database, ontology service, automatic summarization pipeline, or similar preservation infrastructure merely because the repository is growing.
+
+Potential future upgrades such as machine-readable metadata, semantic retrieval, generated indexes, contradiction detection, dependency graphs, promotion queues, and reconciliation assistants are explicitly preserved as future options.
+
+### Rationale
+
+The demonstrated failure is currently about semantic lifecycle management: discoverability, promotion, authority, and reconciliation. It is not yet a storage-capacity problem.
+
+More advanced infrastructure should be introduced only when observed retrieval, dependency, consistency, concurrency, or automation problems justify its cost and complexity.
+
+See `docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`.
+
+---
+
+## D-025. Maintain a selective major-changes ledger
+
+**Status:** Accepted  
+**Date:** 2026-08-18
+
+The project will maintain:
+
+```text
+docs/MAJOR_CHANGES.md
+```
+
+for major architectural, methodological, evaluation, preservation, repository, and experimental-phase changes that future sessions should be able to discover quickly.
+
+It is intentionally selective and does not replace Git history or detailed checkpoints.
+
+### Rationale
+
+Git records every implementation change, while checkpoints record many local milestones. Neither by itself gives a concise conceptual history of the few structural changes that materially altered how the project operates.
