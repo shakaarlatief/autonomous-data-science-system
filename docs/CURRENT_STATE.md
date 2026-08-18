@@ -1,23 +1,11 @@
 # Current State
 
-**Checkpoint:** 81  
+**Checkpoint:** 82  
 **Date:** 2026-08-18  
-**Development stage:** Prototype V0 held-out execution active; automated supervision validation gate  
+**Development stage:** Prototype V0 held-out execution active  
 **Resolved treatment slots:** 10 / 30  
 **Next frozen slot:** `h1-r04-b1-a01`  
-**Current authorization:** no paid held-out inference until the new supervisor passes deterministic and retroactive validation
-
-## What we are building
-
-The Autonomous Data Science System aims to create the best defensible data-science process for the particular project, where the meaning of "best" depends on project goals, constraints, deliverables, and desired human involvement while methodological integrity remains non-negotiable.
-
-System-level architectural context:
-
-```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-```
-
-The LLM is one reasoning component inside a wider system. Explicit system mechanisms must earn their complexity empirically.
+**Execution mode:** retrospectively validated sequential supervisor
 
 ## Current experiment
 
@@ -27,19 +15,13 @@ Prototype V0 asks:
 
 B1 remains the primary architectural control.
 
-Quick overview:
-
-```text
-prototype_v0/README.md
-```
-
 Frozen held-out protocol:
 
 ```text
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Detailed run ledger:
+Detailed current run ledger:
 
 ```text
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
@@ -47,7 +29,7 @@ docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 
 No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 
-## Current experiment counts
+## Current counts
 
 ```text
 resolved treatment slots: 10 / 30
@@ -59,123 +41,53 @@ P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
 
-The next preregistered treatment slot remains:
+## Automated supervision is now validated
+
+The external held-out supervisor and read-only verifier introduced in Foundation 015 have passed their retrospective validation gate.
+
+Software tests:
 
 ```text
-variant: H1
-replicate: 4
-condition: B1
-slot: h1-r04-b1
-attempt: h1-r04-b1-a01
+77 passed in 30.43s
 ```
 
-It has not been skipped or reordered.
-
-## New automated supervision layer
-
-After ten resolved slots, the manual run-by-run transport and inspection loop was judged unnecessarily expensive and non-scalable.
-
-Implemented:
+Retrospective verifier result:
 
 ```text
-prototype_v0/src/ads_v0/heldout_verifier.py
-    read-only mechanical verification of completed attempts
-
-prototype_v0/src/ads_v0/heldout_supervisor.py
-    bounded sequential orchestration around the unchanged frozen executor
-
-prototype_v0/tests/test_heldout_verifier.py
-prototype_v0/tests/test_heldout_supervisor.py
+completed attempt directories verified: 12
+integrity passed: 12
+integrity failed: 0
 ```
 
-Detailed architecture:
+The 12 reports cover the ten behavior-evaluable retained attempts plus the two earlier H1 R2 B0 non-behavior-evaluable provider/interface attempts.
+
+The compact reports reproduce the established manual resource, classification, milestone, protected-test sequencing, budget-exhaustion, provider-failure, Python-timeout, and Python-error mechanics with no discovered discrepancy.
+
+Frozen implementation identities at validation:
 
 ```text
-docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+heldout_supervisor.py blob SHA
+    ef6ffbea671d4f177e41002becfd8751e176ddad
+
+heldout_verifier.py blob SHA
+    03fb33280f87d0056a3dbb264a63651df9ffb431
 ```
 
-Implementation checkpoint:
+The supervisor remains external to the treatments. It calls the unchanged frozen `execute_next_attempt()` function sequentially, mechanically verifies each persisted attempt, and pauses only when experiment integrity cannot be established or the frozen runner itself reaches a safety state.
+
+Detailed validation record:
 
 ```text
-docs/checkpoints/081_automated_held_out_supervision_implemented_pending_retroactive_validation.md
+docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
 ```
 
-Major structural history:
+Accepted operational decision:
 
 ```text
-docs/MAJOR_CHANGES.md
+docs/DECISIONS.md, D-026
 ```
 
-## What the verifier checks
-
-The first verifier version checks:
-
-```text
-M01 required attempt artifacts
-M02 attempt identity / frozen slot mapping
-M03 frozen plan and bundle provenance
-M04 registered runtime configuration
-M05 executor classification consistency
-M06 resource and budget accounting
-M07 trace sequencing and resource reconciliation
-M08 exact deterministic-evaluator recomputation
-M09 milestone / completion consistency
-M10 protected final-test access sequencing
-M11 conversation / model-call consistency
-```
-
-Verifier output is written outside the treatment attempt directories under:
-
-```text
-results/held_out/mechanical_verification/
-```
-
-Behavioral events such as Python errors, budget exhaustion, incomplete work, or deterministic failures are recorded but do not become replacement reasons.
-
-## Supervisor boundary
-
-The supervisor:
-
-```text
-uses heldout_runner.execute_next_attempt() unchanged;
-remains sequential;
-preserves frozen slot order;
-preserves frozen replacement semantics;
-does not modify B0/B1/P0;
-does not expose previous outcomes to later treatments;
-does not perform semantic judging;
-does not write inside completed attempt directories;
-can create compact review exports instead of one raw ZIP per ordinary run.
-```
-
-The frozen treatment experiment has therefore not changed.
-
-## Validation gate before using the supervisor for paid inference
-
-No new held-out attempt is authorized yet.
-
-First run, from `prototype_v0/`:
-
-```bash
-pytest
-python -m ads_v0.heldout_supervisor verify-existing
-python -m ads_v0.heldout_supervisor export
-```
-
-Required result before prospective use:
-
-```text
-full pytest suite passes;
-all completed held-out attempts are retroactively verified;
-zero verifier integrity failures;
-compact export is reviewed against existing manual records.
-```
-
-The retroactive pass must include the two non-behavior-evaluable H1 R2 B0 provider/interface attempts in addition to all retained behavior-evaluable attempts.
-
-If the verifier exposes a verifier/supervisor defect, only that external supervision infrastructure may be repaired. No treatment, prompt, benchmark, budget, frozen rule, or semantic evaluator may be changed from held-out evidence.
-
-## Important existing experimental consequence
+## Important existing resource consequence
 
 P0 has exhausted the common 250,000-token envelope in two retained H1 runs:
 
@@ -185,9 +97,53 @@ H1 R2 P0: within budget
 H1 R3 P0: budget exhausted
 ```
 
-The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific criterion can no longer be satisfied regardless of later outcomes.
+The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes.
 
-This is an objective resource result, not a semantic or overall architectural verdict. The remaining frozen experiment continues after the supervisor validation gate.
+This remains an objective resource result, not a semantic or overall architectural verdict. The frozen experiment continues unchanged.
+
+## Frozen experiment integrity
+
+The supervisor validation did not modify:
+
+```text
+P0 treatment behavior
+B0/B1 prompts
+P0 knowledge components
+H1/H2 benchmark bundles
+run order
+resource budgets
+provider/model configuration
+provider normalization and retry semantics
+A0-A4 definitions
+semantic rubric
+blinded judge protocol
+continuation/falsification criteria
+held-out executor behavior
+```
+
+## Next authorized action
+
+The next frozen treatment is still:
+
+```text
+variant: H1
+replicate: 4
+condition: B1
+slot: h1-r04-b1
+attempt: h1-r04-b1-a01
+```
+
+The first prospective supervisor batch is now authorized with a maximum of three paid treatment attempts:
+
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
+```
+
+The supervisor remains sequential. A provider failure can consume one of the three paid-attempt allowances while keeping execution inside the same preregistered slot.
+
+After the batch finishes, stop and review the compact export produced automatically by the command before increasing the unattended batch size.
+
+Do not separately invoke `heldout_runner run-next` while the supervisor workflow is active.
 
 ## Knowledge-preservation architecture
 
@@ -205,15 +161,6 @@ meaningful stage boundary
     -> knowledge reconciliation
 ```
 
-Key preservation sources:
-
-```text
-docs/KNOWLEDGE_MAP.md
-docs/DEVELOPMENT_METHOD.md
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/MAJOR_CHANGES.md
-```
-
 ## Minimum reading for a future session
 
 ```text
@@ -226,6 +173,18 @@ docs/foundations/015_held_out_supervision_and_mechanical_verification_architectu
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
+For system-level architecture:
+
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+```
+
+For preservation architecture:
+
+```text
+docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
+```
+
 ## Current priority
 
-**Validate the new external supervisor without inference. Do not launch `h1-r04-b1-a01` until the tests, retroactive verifier pass, and compact export have been reviewed.**
+**Run the first validated sequential supervisor batch with at most three paid attempts, then inspect its single compact export before increasing batch size.**
