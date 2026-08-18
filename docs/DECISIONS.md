@@ -400,3 +400,31 @@ It is intentionally selective and does not replace Git history or detailed check
 ### Rationale
 
 Git records every implementation change, while checkpoints record many local milestones. Neither by itself gives a concise conceptual history of the few structural changes that materially altered how the project operates.
+
+---
+
+## D-026. Use the retrospectively validated held-out supervisor for remaining Prototype V0 execution
+
+**Status:** Accepted and frozen for Prototype V0 operational use  
+**Date:** 2026-08-18
+
+The remaining Prototype V0 held-out treatment attempts may be launched through the external condition-neutral supervisor implemented in:
+
+```text
+prototype_v0/src/ads_v0/heldout_supervisor.py
+prototype_v0/src/ads_v0/heldout_verifier.py
+```
+
+The supervisor must continue to delegate every paid treatment attempt to the unchanged frozen `heldout_runner.execute_next_attempt()` path, preserve sequential preregistered order, preserve the registered replacement policy, and perform only external mechanical verification between attempts.
+
+The validated implementation is frozen for the remainder of held-out execution unless a genuine condition-neutral infrastructure defect is discovered and handled transparently under the experiment's existing defect policy.
+
+The first prospective batch is intentionally bounded to at most three paid model attempts. Later batch size may increase after the first live batch confirms that the supervisor behaves as validated.
+
+### Rationale
+
+The full test suite passed and the verifier retrospectively reproduced the established mechanical record for all 12 completed attempt directories with 12 integrity passes and zero integrity failures. This provides direct parity evidence against the manual process used for the first ten resolved slots while removing repeated human transport and bookkeeping.
+
+This decision changes experiment operations, not treatment behavior, scoring, benchmarks, budgets, run order, semantic judging, or continuation/falsification criteria.
+
+See Foundation 015 and Checkpoint 82.
