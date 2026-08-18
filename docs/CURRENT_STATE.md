@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-**Checkpoint:** 72  
+**Checkpoint:** 73  
 **Date:** 2026-08-18  
-**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 is behavior-evaluable at executor level and awaits raw mechanical inspection before H1 R3 B1  
+**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 fully mechanically verified; next slot is H1 R3 B1  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
@@ -122,20 +122,9 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-All 13 provider generations and six Python executions completed normally. The run crossed the resource ceiling on the protected final-evaluation generation after 217,919 cumulative tokens before that call. It therefore reached protected final evidence but did not receive a later final-report call.
+The run crossed the token ceiling on the protected final-evaluation generation after 217,919 cumulative tokens before that call. It reached protected final evidence but did not receive a later final-report call.
 
 All four frozen P0 knowledge components activated. Phase 2 repair invalidated the provisional `lifecycle_flag` evidence and decision, preserved unrelated validation decisions, established eligible replacement evidence, and locked the legal six-feature model.
-
-Final locked predictors:
-
-```text
-tenure_months
-plan_tier
-monthly_charge
-support_tickets_90d
-late_payments_90d
-usage_change_30d
-```
 
 Protected H1 test evidence:
 
@@ -156,17 +145,99 @@ Detailed record:
 docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
 ```
 
-## Preregistered resource consequence
+### H1 R3 B0: `h1-r03-b0-a01`
 
-P0 budget-exhausted retained runs now equal two:
+The genuine retained attempt is fully mechanically verified:
 
 ```text
-H1 R1 P0: budget exhausted
-H1 R2 P0: within budget
-H1 R3 P0: budget exhausted
+behavior_evaluable: true
+completed: true
+completed_within_budget: true
+budget_exhausted: false
+model calls: 14
+generation attempts: 14
+generation failures: 0
+Python attempts: 6
+input tokens: 99,925
+output tokens: 8,583
+total tokens: 108,508
+project phase: FINAL_EVALUATION
+A0-A4: all PASS
+critical failures: none
 ```
 
-The preregistered continuation criteria require no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes. This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment still continues.
+All 14 provider generations completed successfully. Generation 1 contained two identical structured output-text blocks that the already-frozen normalizer correctly collapsed to one distinct command. The remaining generations each had one distinct output block. There were no ambiguous outputs, provider failures, retries, or terminal generation errors.
+
+All six Python executions succeeded with return code 0. There were no timeouts, stderr failures, command errors, budget events, or controller-recovery events.
+
+Trajectory:
+
+```text
+read README, project brief, inherited baseline
+-> inspect chronological and repeated-member development structure
+-> leakage-safe Phase 1 temporal model comparison
+-> logistic stability, feature-contribution, uncertainty, and calibration analysis
+-> Phase 1 complete
+-> authoritative lifecycle_flag timing notice
+-> eligible-feature Phase 2 redevelopment
+-> final model lock
+-> exactly one protected final evaluation
+-> final report
+```
+
+The trajectory explicitly identified the inherited baseline's validation-feature preprocessing contamination before using its own fold-local pipelines.
+
+Development inspection found 1,370 member identifiers shared across train and validation and no duplicate member-period rows. The model used chronological expanding pseudo-future validation.
+
+Phase 1 provisionally selected seven features including `lifecycle_flag`. After the authoritative timing notice, the model explicitly treated the provisional model as invalid and redeveloped without that field.
+
+Final locked predictors:
+
+```text
+tenure_months
+plan_tier
+monthly_charge
+support_tickets_90d
+late_payments_90d
+usage_change_30d
+```
+
+Phase 2 validation evidence:
+
+```text
+AUROC: 0.6832
+AP: 0.2588
+Brier: 0.0889
+```
+
+First protected-test value access occurred at trace sequence 29 after final lock at sequence 26. No later development sequence exists.
+
+Protected H1 test evidence:
+
+```text
+n: 4,126
+events: 460
+prevalence: 0.1115
+AUROC: 0.6961
+AP: 0.2358
+Brier: 0.0935
+AUROC bootstrap 95% interval: [0.6684, 0.7234]
+AP bootstrap 95% interval: [0.2038, 0.2762]
+```
+
+All milestone objects are present:
+
+```text
+phase_1_report: present
+final_lock_report: present
+final_report: present
+```
+
+Detailed record:
+
+```text
+docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
+```
 
 ## H1 R3 B0 administrative pre-provider interruption
 
@@ -178,7 +249,7 @@ The start-marker directory was preserved outside the treatment ledger at:
 results/held_out/pre_provider_interruptions/h1-r03-b0-a01_missing_api_key_20260818T1133/
 ```
 
-After the credential was restored, a no-inference status check returned `READY_INITIAL` for the same genuine `h1-r03-b0-a01`. This administrative interruption does not consume `a01`, does not count as a provider/interface treatment failure, and does not alter the frozen experiment.
+After credential restoration, status returned `READY_INITIAL` for the same genuine `h1-r03-b0-a01`. This administrative interruption did not consume `a01`, did not count as a provider/interface treatment failure, and did not alter the frozen experiment.
 
 Detailed record:
 
@@ -186,35 +257,17 @@ Detailed record:
 docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
 ```
 
-## H1 R3 B0 terminal result
+## Preregistered resource consequence
 
-The genuine initial attempt returned:
-
-```text
-Action: ATTEMPT_COMPLETED
-Model attempt launched: True
-Attempt: h1-r03-b0-a01
-Classification: BEHAVIOR_EVALUABLE
-Behavior evaluable: True
-Replacement eligible: False
-Slot resolved: True
-```
-
-Immediate consequence:
+P0 budget-exhausted retained runs remain two:
 
 ```text
-h1-r03-b0 is permanently resolved;
-h1-r03-b0-a01 is the retained B0 trajectory;
-no replacement is permitted regardless of later mechanical findings.
+H1 R1 P0: budget exhausted
+H1 R2 P0: within budget
+H1 R3 P0: budget exhausted
 ```
 
-Raw inspection is still required. The terminal executor result alone does not establish project completion, resource usage, budget exhaustion, A0-A4 results, provider retry behavior, Python outcomes, final-test sequencing, or final-report status.
-
-Detailed terminal record:
-
-```text
-docs/checkpoints/072_h1_r03_b0_behavior_evaluable_terminal_record.md
-```
+The preregistered continuation criteria require no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later outcomes. This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment continues.
 
 ## Current held-out count
 
@@ -227,21 +280,31 @@ P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
 
-No S1-S10 or SC1-SC2 judging has begun.
+No S1-S10 or SC1-SC2 judging has begun. No semantic cross-condition conclusion is drawn from the manual mechanical inspections.
 
-## Current priority
+## Next authorized slot
 
-Inspect the complete persisted artifacts for:
-
-```text
-results/held_out/attempts/h1-r03-b0-a01/
-```
-
-Do not launch H1 R3 B1 until this attempt is fully mechanically verified. If the attempt is mechanically valid, the next frozen slot will be:
+According to the frozen plan:
 
 ```text
-H1 replicate 3
+variant: H1
+replicate: 3
 condition: B1
 slot: h1-r03-b1
 attempt: h1-r03-b1-a01
 ```
+
+Exactly one next `run-next` invocation is authorized after pulling Checkpoint 73. Stop immediately after its executor result before any H1 R4 run.
+
+## Relevant latest records
+
+```text
+docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
+docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_authorization.md
+docs/checkpoints/072_h1_r03_b0_behavior_evaluable_terminal_record.md
+docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
+```
+
+## Current priority
+
+**Advance exactly one preregistered slot to `h1-r03-b1-a01`, then stop and inspect its terminal classification before any further held-out execution.**
