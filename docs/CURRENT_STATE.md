@@ -1,10 +1,10 @@
 # Current State
 
-**Checkpoint:** 76  
+**Checkpoint:** 77  
 **Date:** 2026-08-18  
 **Development stage:** Prototype V0 held-out execution active  
-**Resolved treatment slots:** 8 / 30  
-**Next frozen slot:** `h1-r03-b1-a01`
+**Resolved treatment slots:** 9 / 30  
+**Current gate:** mechanically inspect `h1-r03-b1-a01` before any H1 R4 execution
 
 ## What we are building
 
@@ -16,7 +16,7 @@ The long-term system-level distinction is documented in:
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 ```
 
-The LLM is treated as one reasoning component inside a wider system. Explicit system mechanisms must still earn their complexity empirically.
+The LLM is one reasoning component inside a wider system. Explicit system mechanisms must still earn their complexity empirically.
 
 ## Current experiment
 
@@ -26,7 +26,7 @@ Prototype V0 asks:
 
 B1 remains the primary architectural control.
 
-Quick V0 overview:
+Quick overview:
 
 ```text
 prototype_v0/README.md
@@ -38,7 +38,7 @@ Frozen held-out protocol:
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Detailed current held-out run ledger:
+Detailed run ledger:
 
 ```text
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
@@ -49,17 +49,43 @@ No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 ## Current experiment counts
 
 ```text
-resolved treatment slots: 8 / 30
-behavior-evaluable retained attempts: 8
+resolved treatment slots: 9 / 30
+behavior-evaluable retained attempts: 9
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
 P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
 
-The two non-behavior-evaluable provider/interface attempts belong to the H1 R2 B0 slot. Its third attempt was behavior-evaluable and permanently resolved that slot.
+## H1 replicate 3 status
 
-The one administrative pre-provider interruption occurred before the genuine H1 R3 B0 attempt because a local terminal lacked `OPENAI_API_KEY`. No provider inference occurred and the genuine `a01` was preserved.
+All three H1 R3 treatment slots are now permanently resolved at executor level:
+
+```text
+P0  h1-r03-p0-a01  behavior-evaluable, fully mechanically verified
+B0  h1-r03-b0-a01  behavior-evaluable, fully mechanically verified
+B1  h1-r03-b1-a01  behavior-evaluable, raw mechanical inspection pending
+```
+
+The B1 executor returned:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Attempt: h1-r03-b1-a01
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
+```
+
+Therefore `h1-r03-b1-a01` is the retained trajectory and cannot be replaced. The executor result alone does not yet establish completion status, resource use, A0-A4 results, Python/provider behavior, final-lock contents, protected-test sequencing, or final-report presence.
+
+Detailed terminal record:
+
+```text
+docs/checkpoints/077_h1_r03_b1_behavior_evaluable_terminal_record.md
+```
 
 ## Important current experimental consequence
 
@@ -71,9 +97,9 @@ H1 R2 P0: within budget
 H1 R3 P0: budget exhausted
 ```
 
-The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific criterion can therefore no longer be satisfied regardless of later outcomes.
+The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific criterion can no longer be satisfied regardless of later outcomes.
 
-This is an objective resource result, not a semantic or overall architectural verdict. The frozen experiment continues so reliability, semantic quality, repair precision, completion, false blocking, and comparative resource distributions can still be evaluated without selective stopping.
+This is an objective resource result, not a semantic or overall architectural verdict. The frozen experiment continues unchanged.
 
 ## Frozen experiment integrity
 
@@ -94,13 +120,11 @@ continuation/falsification criteria
 held-out executor behavior
 ```
 
-No preservation/documentation update in Checkpoints 74-76 changed treatment behavior.
+The preservation/documentation changes in Checkpoints 74-77 did not alter treatment behavior.
 
 ## Knowledge-preservation architecture v0.3
 
-Checkpoint 76 upgrades the way this project preserves its own knowledge after actual use exposed that historically safe knowledge can still become conceptually buried.
-
-Current preservation architecture:
+Current preservation flow:
 
 ```text
 discussion
@@ -118,85 +142,33 @@ Key files:
 
 ```text
 docs/KNOWLEDGE_MAP.md
-    Routing layer showing where important knowledge lives.
-
 docs/DEVELOPMENT_METHOD.md
-    Current method, now version 0.3.
-
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-    Detailed rationale and deferred future tooling.
-
 docs/MAJOR_CHANGES.md
-    Selective history of major structural changes.
-
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
-    Detailed current V0 experiment ledger.
-```
-
-The current storage substrate remains Git + Markdown. Graph databases, vector retrieval, automatic summarization, generated dependency graphs, and similar infrastructure are explicitly preserved as future options but deferred until demonstrated need justifies the complexity.
-
-Detailed change record:
-
-```text
-docs/checkpoints/076_knowledge_preservation_architecture_v0_3.md
-```
-
-## Current documentation roles
-
-```text
-README.md
-    project-level entry point
-
-docs/CURRENT_STATE.md
-    concise present state and next step
-
-docs/KNOWLEDGE_MAP.md
-    routing to current and foundational knowledge
-
-docs/VISION.md
-    current system vision
-
-docs/PRINCIPLES.md
-    current principles
-
-docs/DECISIONS.md
-    accepted project-level decisions
-
-docs/OPEN_QUESTIONS.md
-    reconciled unresolved questions
-
-docs/foundations/
-    detailed durable reasoning and specifications
-
-docs/checkpoints/
-    historical provenance
-
-docs/experiments/
-    detailed current experiment ledgers
-
-docs/MAJOR_CHANGES.md
-    selective structural history
 ```
 
 ## Next authorized action
 
-According to the frozen preregistered order:
+Do **not** run `heldout_runner run-next` again yet.
+
+First inspect the complete persisted artifacts for:
+
+```text
+results/held_out/attempts/h1-r03-b1-a01/
+```
+
+If the retained B1 attempt is mechanically valid, the next frozen slot will be:
 
 ```text
 variant: H1
-replicate: 3
-condition: B1
-slot: h1-r03-b1
-attempt: h1-r03-b1-a01
+replicate: 4
+condition: B0
+slot: h1-r04-b0
+attempt: h1-r04-b0-a01
 ```
 
-After pulling Checkpoint 76, exactly one next invocation is authorized:
-
-```bash
-python -m ads_v0.heldout_runner run-next
-```
-
-Stop immediately after the executor result. Do not begin H1 R4 before the H1 R3 B1 terminal result is classified and mechanically inspected.
+That slot is not authorized until the H1 R3 B1 raw inspection is complete.
 
 ## Minimum reading for a future session
 
@@ -209,7 +181,7 @@ docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-For system-level architectural context also read:
+For system-level architecture also read:
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
@@ -223,4 +195,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Resume the unchanged frozen held-out experiment with exactly one `h1-r03-b1-a01` attempt, then stop for inspection.**
+**Fully mechanically inspect the retained `h1-r03-b1-a01` artifacts before any H1 R4 execution.**
