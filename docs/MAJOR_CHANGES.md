@@ -236,3 +236,36 @@ docs/KNOWLEDGE_MAP.md
 ```
 
 This change is meta-architectural. It changes how the project preserves and navigates its own knowledge, not the frozen Prototype V0 treatment architecture.
+
+---
+
+## 2026-08-18: Prototype V0 gained automated held-out supervision and mechanical verification
+
+After ten resolved held-out treatment slots, the project identified a second scaling problem: the scientific experiment was stable, but each ordinary run still required the user to manually transport terminal output, create and upload a raw ZIP, wait for repeated mechanical inspection, pull repository updates, and then launch the next slot.
+
+The project introduced a condition-neutral external supervision layer:
+
+```text
+heldout_runner.py
+    unchanged frozen one-attempt executor
+
+heldout_verifier.py
+    read-only mechanical verification of persisted attempts
+
+heldout_supervisor.py
+    bounded sequential orchestration around the frozen executor
+```
+
+The verifier checks attempt identity, frozen plan/bundle provenance, runtime configuration, executor classification, resource accounting, trace reconciliation, deterministic evaluator reproducibility, milestone consistency, protected-test sequencing, and conversation/model-call consistency. Behavioral events such as budget exhaustion or Python errors are recorded but do not become replacement reasons.
+
+The supervisor may execute multiple preregistered attempts sequentially without changing order, treatments, budgets, replacement semantics, or later semantic judging. It pauses if mechanical experiment integrity cannot be established and produces compact exports so normal runs no longer require one raw ZIP upload each.
+
+Prospective paid use is gated on the software test suite plus retroactive verification of every existing completed attempt, providing parity against the manual process used for the first ten slots.
+
+Key source:
+
+```text
+docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+```
+
+This is an evaluation-infrastructure architecture change, not a treatment change.
