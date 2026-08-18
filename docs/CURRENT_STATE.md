@@ -2,9 +2,9 @@
 
 ## Checkpoint
 
-**Checkpoint:** 69  
-**Date:** 2026-08-11  
-**Development stage:** Held-out execution active; H1 replicates 1 and 2 are fully mechanically verified; seven treatment slots are permanently resolved; H1 R3 P0 is behavior-evaluable at executor level and awaits raw mechanical inspection before H1 R3 B0  
+**Checkpoint:** 70  
+**Date:** 2026-08-18  
+**Development stage:** Held-out execution active; seven treatment slots permanently resolved; H1 R3 P0 fully mechanically verified; next slot is H1 R3 B0  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
 
 ## Prototype V0 question
@@ -61,7 +61,7 @@ r4: P0, B0, B1
 r5: B0, B1, P0
 ```
 
-No rubric, threshold, bundle, B0/B1 prompt, P0 behavior, privileged knowledge component, provider-normalization rule, retry rule, or resource limit may be revised in response to held-out outcomes.
+No rubric, threshold, bundle, B0/B1 prompt, P0 behavior, privileged knowledge component, provider-normalization rule, retry rule, or resource limit may be revised from held-out observations.
 
 ## Replacement policy
 
@@ -79,111 +79,85 @@ Maximum attempts per slot are `a01`, `a02`, and `a03`. Three non-behavior-evalua
 
 ## Mechanically verified retained runs
 
-### H1 R1 B0: `h1-r01-b0-a01`
+### H1 R1
 
 ```text
-completed: true
-completed_within_budget: true
-budget_exhausted: false
-model calls: 15
-Python attempts: 5
-total tokens: 108,891
-A0-A4: all PASS
+B0  h1-r01-b0-a01   complete, within budget, 15 calls, 5 Python, 108,891 tokens, A0-A4 PASS
+B1  h1-r01-b1-a01   complete, within budget, 14 calls, 6 Python, 120,424 tokens, A0-A4 PASS
+P0  h1-r01-p0-a01   complete, budget exhausted, 14 calls, 6 Python, 294,267 tokens, A0-A4 PASS
 ```
 
-### H1 R1 B1: `h1-r01-b1-a01`
+H1 R1 P0 crossed the token ceiling on the terminal final-report call after cumulative usage was 249,581. The completed report was retained and no later treatment call occurred.
+
+### H1 R2
 
 ```text
-completed: true
-completed_within_budget: true
-budget_exhausted: false
-model calls: 14
-Python attempts: 6
-total tokens: 120,424
-A0-A4: all PASS
+B1  h1-r02-b1-a01   complete, within budget, 15 calls, 7 Python, 139,150 tokens, A0-A4 PASS
+P0  h1-r02-p0-a01   complete, within budget, 12 calls, 5 Python, 226,926 tokens, A0-A4 PASS
+B0  h1-r02-b0-a03   complete, within budget, 16 calls, 7 Python, 131,563 tokens, A0-A4 PASS
 ```
 
-### H1 R1 P0: `h1-r01-p0-a01`
+The H1 R2 B0 slot required two replacements before the retained A03 trajectory:
 
 ```text
-completed: true
+h1-r02-b0-a01  non-behavior-evaluable ambiguous_structured_output
+h1-r02-b0-a02  non-behavior-evaluable ambiguous_structured_output
+h1-r02-b0-a03  behavior-evaluable retained trajectory
+```
+
+Both provider/interface failures occurred before any usable treatment command entered the runtime and exercised provider-normalization behavior frozen before held-out execution. No harness change was made.
+
+H1 R2 P0 correctly repaired `lifecycle_flag` timing invalidation and re-established eligible-feature evidence. `K-INFO-003` did not activate in that trajectory, which remains frozen behavioral evidence.
+
+### H1 R3 P0: `h1-r03-p0-a01`
+
+Fully mechanically verified result:
+
+```text
+behavior_evaluable: true
+completed: false
 completed_within_budget: false
 budget_exhausted: true
-model calls: 14
-Python attempts: 6
-total tokens: 294,267
-A0-A4: all PASS
-```
-
-The P0 budget crossing occurred on the terminal final-report call after cumulative usage was 249,581. The completed report was retained and no later call occurred.
-
-### H1 R2 B1: `h1-r02-b1-a01`
-
-```text
-completed: true
-completed_within_budget: true
-budget_exhausted: false
-model calls: 15
-Python attempts: 7
-total tokens: 139,150
-A0-A4: all PASS
-```
-
-### H1 R2 P0: `h1-r02-p0-a01`
-
-```text
-completed: true
-completed_within_budget: true
-budget_exhausted: false
-model calls: 12
-Python attempts: 5
-total tokens: 226,926
-A0-A4: all PASS
-```
-
-The timing notice triggered legitimate feature repair and replacement development evidence. Three of four P0 knowledge components activated; `K-INFO-003` did not activate in that trajectory. This remains frozen behavioral evidence rather than a trigger for implementation change.
-
-### H1 R2 B0 replacement sequence
-
-The first two attempts were verified non-behavior-evaluable provider/interface failures before any usable treatment command entered the runtime:
-
-```text
-h1-r02-b0-a01
-model calls: 0
-total tokens: 1,327
-output blocks: 2
-distinct blocks: 2
-error: ambiguous_structured_output
-
-h1-r02-b0-a02
-model calls: 0
-total tokens: 1,291
-output blocks: 3
-distinct blocks: 2
-error: ambiguous_structured_output
-```
-
-Both exercised the provider-normalization rule frozen before held-out execution: identical structured blocks may be collapsed, while distinct structured commands are rejected as ambiguous rather than arbitrarily selected. No harness change was justified.
-
-The final permitted replacement, `h1-r02-b0-a03`, fully mechanically verified and permanently resolved the slot:
-
-```text
-completed: true
-completed_within_budget: true
-budget_exhausted: false
-behavior_evaluable: true
-model calls: 16
-generation attempts: 16
+model calls: 13
+generation attempts: 13
 generation failures: 0
-Python attempts: 7
-input tokens: 122,500
-output tokens: 9,063
-total tokens: 131,563
+Python attempts: 6
+input tokens: 247,734
+output tokens: 10,751
+total tokens: 258,485
+project phase: FINAL_EVALUATION
 A0-A4: all PASS
 critical failures: none
 ```
 
-Of the seven Python attempts, six succeeded and one Phase 1 customer-cluster bootstrap implementation timed out. The timeout was correctly counted as a behavioral Python attempt. The model then reran the same intended analysis using cluster frequency weights and completed successfully.
+All 13 provider generations completed normally and all six Python executions succeeded. There were no provider failures, retries, Python timeouts, command errors, or architecture-control errors.
+
+Exact cumulative token usage was 217,919 after call 12. Call 13, the protected final-evaluation generation, was therefore legitimately admitted. It contributed 40,566 tokens and moved cumulative usage to 258,485. The resource gate then terminated later treatment reasoning. No final-report call occurred.
+
+The run completed the analytical trajectory through one protected final evaluation, but `milestones.json` has `final_report: null`; the top-level deliverable obligation remains open in the final P0 frontier. This incompleteness is behavioral and is retained without replacement.
+
+All four frozen P0 knowledge components activated:
+
+```text
+K-INFO-001 Protected Final Evaluation
+K-INFO-002 Learned Transformation Evaluation Boundary
+K-INFO-003 Prediction-Time Feature Eligibility
+K-VAL-001 Generalization-Regime Question
+```
+
+Phase 2 state repair was targeted:
+
+```text
+prior lifecycle availability fact: ACTIVE -> DISPUTED
+provisional pipeline decision: PROVISIONAL -> REOPENED -> SUPERSEDED
+Phase 1 model evidence: CURRENT -> INVALIDATED
+Phase 1 robustness evidence: CURRENT -> INVALIDATED
+replacement eligible evidence: CURRENT
+replacement eligible pipeline decision: ACCEPTED
+support-loss obligations: satisfied before final lock
+```
+
+The accepted temporal-validation and model-selection-metric decisions were preserved. As in H1 R2 P0, the lifecycle timing question was transiently reopened when its hard dependency on the superseded provisional decision became invalid, then resolved again after the eligible pipeline was established. Preserve this for later architecture diagnostics; do not score it manually during execution.
 
 Final locked predictors:
 
@@ -200,10 +174,10 @@ Phase 2 validation evidence:
 
 ```text
 n: 5,375
-AUROC: 0.6833
-AP: 0.2591
-Brier: 0.0889
-customer-cluster bootstrap AUROC 95% interval: [0.6612, 0.7122]
+AUROC: 0.683297
+AP: 0.259117
+log loss: 0.314238
+Brier: 0.088899
 ```
 
 Protected H1 test evidence:
@@ -211,55 +185,35 @@ Protected H1 test evidence:
 ```text
 n: 4,126
 events: 460
-AUROC: 0.6963
-AP: 0.2357
-Brier: 0.0935
-mean prediction: 0.1030
-customer-cluster bootstrap AUROC 95% interval: [0.6724, 0.7246]
+AUROC: 0.696277
+AP: 0.235698
+log loss: 0.324630
+Brier: 0.093547
+mean prediction: 0.103040
+AUROC bootstrap 95% interval: [0.669924, 0.721935]
 ```
 
-A2 records first final-test value access at trace sequence 33 with no later development sequence.
+First final-test value access was trace sequence 32, after final lock, with no later development sequence.
 
 Detailed record:
 
 ```text
-docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
+docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
 ```
 
-## H1 R3 P0 terminal result
+## Preregistered resource consequence
 
-Attempt:
+P0 budget-exhausted retained runs now equal two:
 
 ```text
-h1-r03-p0-a01
+H1 R1 P0: budget exhausted
+H1 R2 P0: within budget
+H1 R3 P0: budget exhausted
 ```
 
-Observed executor result:
+The preregistered continuation criteria require no more than one P0 budget-exhausted run. That specific condition can no longer be satisfied regardless of later held-out outcomes.
 
-```text
-Action: ATTEMPT_COMPLETED
-Model attempt launched: True
-Classification: BEHAVIOR_EVALUABLE
-Behavior evaluable: True
-Replacement eligible: False
-Slot resolved: True
-```
-
-Immediate consequences:
-
-```text
-h1-r03-p0 is permanently resolved;
-h1-r03-p0-a01 is the retained P0 trajectory for the slot;
-no replacement is permitted regardless of later mechanical findings.
-```
-
-Raw inspection is still required. The executor-level terminal result alone does not establish project completion, resource usage, budget exhaustion, A0-A4 outcomes, P0 knowledge activations, dependency-repair behavior, final-test sequencing, or final-report status.
-
-Detailed terminal record:
-
-```text
-docs/checkpoints/069_h1_r03_p0_behavior_evaluable_terminal_record.md
-```
+This is an objective resource-envelope result, not a semantic or overall architectural verdict. The remaining frozen experiment must still be completed so reliability, semantic quality, repair precision, completion, false blocking, and comparative resource distributions can be evaluated without selective stopping. No treatment or budget change is permitted.
 
 ## Current held-out count
 
@@ -268,41 +222,34 @@ resolved slots: 7 / 30
 behavior-evaluable retained attempts: 7
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
-known P0 budget-exhausted retained runs: 1
+P0 budget-exhausted retained runs: 2
 ```
 
-The P0 budget-exhausted count is stated as `known = 1` until `h1-r03-p0-a01` is inspected. If this run is budget-exhausted, the count becomes 2, which would mean the preregistered continuation criterion allowing at most one P0 budget-exhausted held-out run is no longer satisfied. That arithmetic consequence must not alter the remaining frozen treatment execution or resource limits.
+No S1-S10 or SC1-SC2 judging has begun.
 
-No S1-S10 or SC1-SC2 scoring has begun and no semantic or architectural conclusion is drawn from the manual mechanical inspections.
+## Next authorized slot
 
-## Current priority
-
-Inspect the complete persisted artifacts for:
+According to the frozen plan:
 
 ```text
-results/held_out/attempts/h1-r03-p0-a01/
-```
-
-For P0, inspect the normal executor artifacts plus persisted P0 state, state-history, action/dependency, and knowledge-activation evidence. Do not launch H1 R3 B0 until this attempt is fully mechanically verified.
-
-If the attempt is mechanically valid, the next frozen slot will be:
-
-```text
-H1 replicate 3
+variant: H1
+replicate: 3
 condition: B0
 slot: h1-r03-b0
 attempt: h1-r03-b0-a01
 ```
 
+Exactly one next `run-next` invocation is authorized after pulling Checkpoint 70. Stop immediately after its executor result before any H1 R3 B1 run.
+
 ## Relevant latest records
 
 ```text
-docs/checkpoints/062_h1_r02_p0_full_mechanical_verification.md
 docs/checkpoints/066_h1_r02_b0_a02_provider_ambiguity_verified_and_final_replacement_authorized.md
 docs/checkpoints/068_h1_r02_b0_a03_full_mechanical_verification.md
 docs/checkpoints/069_h1_r03_p0_behavior_evaluable_terminal_record.md
+docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_exhaustion.md
 ```
 
-## Current priority statement
+## Current priority
 
-**Inspect `h1-r03-p0-a01` fully before any H1 R3 B0 execution.**
+**Advance exactly one preregistered slot to `h1-r03-b0-a01`, then stop and inspect its terminal classification before any further held-out execution.**
