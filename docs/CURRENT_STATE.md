@@ -2,16 +2,69 @@
 
 ## Checkpoint
 
-**Checkpoint:** 74  
+**Checkpoint:** 75  
 **Date:** 2026-08-18  
-**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 fully mechanically verified; Prototype V0 README refreshed as the current entry point; next slot is H1 R3 B1  
+**Development stage:** Held-out execution active; eight treatment slots permanently resolved; H1 R3 B0 fully mechanically verified; system-level vision promoted from Checkpoint 22 into Foundation 013; next slot is H1 R3 B1  
 **Implementation status:** P0 behavioral/controller logic, B0/B1 prompts, bundle identities, resource budgets, semantic rubric, provider/model configuration, materialized run plan, common provider normalization, retry semantics, and held-out execution infrastructure remain frozen. No H1/H2 semantic judging has begun.
 
-## Documentation refresh
+## System-level vision preservation
 
-`prototype_v0/README.md` is now the current short conceptual and operational entry point for Prototype V0.
+The durable synthesis first made explicit in Checkpoint 22 is now promoted into:
 
-It explains in one place:
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+```
+
+Checkpoint 22 remains unchanged as historical provenance:
+
+```text
+docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
+```
+
+The intended preservation relationship is:
+
+```text
+Checkpoint 22
+    historical provenance and original synthesis
+
+Foundation 013
+    durable foundational system-level interpretation
+```
+
+Foundation 013 preserves the distinction among:
+
+```text
+human-executed data-science project
+human + interactive LLM project
+system-mediated data-science project
+```
+
+and the key project stance that the LLM is one reasoning component inside a wider system whose explicit mechanisms must earn their complexity empirically.
+
+It also preserves the distinction between:
+
+```text
+LOCAL TREATMENT QUESTION
+Does explicit machinery improve a particular benchmark beyond a strong prompted LLM?
+
+SYSTEM-LEVEL QUESTION
+Across substantial changing projects, can the system reduce dependence on the
+human remembering and re-supplying the right process reasoning at the right time?
+```
+
+Detailed record:
+
+```text
+docs/checkpoints/075_checkpoint_22_system_level_vision_promoted_to_foundation_013.md
+```
+
+This was a documentation-only change. No frozen treatment, prompt, benchmark, resource limit, judge rule, bundle, provider configuration, run order, controller behavior, or execution rule changed.
+
+## Prototype V0 documentation entry point
+
+`prototype_v0/README.md` is the current short conceptual and operational entry point for Prototype V0.
+
+It explains:
 
 ```text
 what one run does
@@ -23,9 +76,7 @@ mechanical versus semantic evaluation
 repository navigation and implementation locations
 ```
 
-This was a documentation-only update. No frozen treatment behavior, prompt, benchmark, resource limit, judge, bundle, run order, provider configuration, or execution rule changed.
-
-Detailed record:
+Detailed README refresh record:
 
 ```text
 docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md
@@ -171,8 +222,6 @@ docs/checkpoints/070_h1_r03_p0_full_mechanical_verification_and_second_budget_ex
 
 ### H1 R3 B0: `h1-r03-b0-a01`
 
-The genuine retained attempt is fully mechanically verified:
-
 ```text
 behavior_evaluable: true
 completed: true
@@ -190,9 +239,7 @@ A0-A4: all PASS
 critical failures: none
 ```
 
-All 14 provider generations completed successfully. Generation 1 contained two identical structured output-text blocks that the already-frozen normalizer correctly collapsed to one distinct command. The remaining generations each had one distinct output block. There were no ambiguous outputs, provider failures, retries, or terminal generation errors.
-
-All six Python executions succeeded with return code 0. There were no timeouts, stderr failures, command errors, budget events, or controller-recovery events.
+All 14 provider generations completed successfully. Generation 1 contained two identical structured output-text blocks that the frozen normalizer correctly collapsed to one distinct command. The remaining generations each had one distinct output block. There were no ambiguous outputs, provider failures, retries, terminal generation errors, Python failures, or timeouts.
 
 Trajectory:
 
@@ -208,12 +255,6 @@ read README, project brief, inherited baseline
 -> exactly one protected final evaluation
 -> final report
 ```
-
-The trajectory explicitly identified the inherited baseline's validation-feature preprocessing contamination before using its own fold-local pipelines.
-
-Development inspection found 1,370 member identifiers shared across train and validation and no duplicate member-period rows. The model used chronological expanding pseudo-future validation.
-
-Phase 1 provisionally selected seven features including `lifecycle_flag`. After the authoritative timing notice, the model explicitly treated the provisional model as invalid and redeveloped without that field.
 
 Final locked predictors:
 
@@ -234,8 +275,6 @@ AP: 0.2588
 Brier: 0.0889
 ```
 
-First protected-test value access occurred at trace sequence 29 after final lock at sequence 26. No later development sequence exists.
-
 Protected H1 test evidence:
 
 ```text
@@ -249,13 +288,7 @@ AUROC bootstrap 95% interval: [0.6684, 0.7234]
 AP bootstrap 95% interval: [0.2038, 0.2762]
 ```
 
-All milestone objects are present:
-
-```text
-phase_1_report: present
-final_lock_report: present
-final_report: present
-```
+All milestone objects are present and no development followed protected-test access.
 
 Detailed record:
 
@@ -318,7 +351,7 @@ slot: h1-r03-b1
 attempt: h1-r03-b1-a01
 ```
 
-Exactly one next `run-next` invocation is authorized after pulling Checkpoint 74. Stop immediately after its executor result before any H1 R4 run.
+Exactly one next `run-next` invocation is authorized after pulling Checkpoint 75. Stop immediately after its executor result before any H1 R4 run.
 
 ## Relevant latest records
 
@@ -328,6 +361,7 @@ docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_a
 docs/checkpoints/072_h1_r03_b0_behavior_evaluable_terminal_record.md
 docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
 docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md
+docs/checkpoints/075_checkpoint_22_system_level_vision_promoted_to_foundation_013.md
 ```
 
 ## Current priority
