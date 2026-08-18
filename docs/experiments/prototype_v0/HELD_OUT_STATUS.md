@@ -3,8 +3,8 @@
 **Status:** Current detailed experiment ledger  
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules are governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-18  
-**Resolved treatment slots:** 8 / 30  
-**Next frozen slot:** `h1-r03-b1-a01`
+**Resolved treatment slots:** 9 / 30  
+**Current gate:** raw mechanical inspection of `h1-r03-b1-a01`
 
 ## Purpose
 
@@ -85,8 +85,8 @@ Maximum attempts per slot are `a01`, `a02`, and `a03`.
 ## Current counts
 
 ```text
-resolved treatment slots: 8 / 30
-behavior-evaluable retained attempts: 8
+resolved treatment slots: 9 / 30
+behavior-evaluable retained attempts: 9
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
 P0 budget-exhausted retained runs: 2
@@ -110,8 +110,6 @@ Python attempts: 5
 total tokens: 108,891
 A0-A4: PASS
 ```
-
-The run completed the intended three-phase trajectory and retained the legal six-feature final model.
 
 Detailed record:
 
@@ -313,14 +311,7 @@ results/held_out/pre_provider_interruptions/h1-r03-b0-a01_missing_api_key_202608
 
 After the credential was restored, status returned `READY_INITIAL` for the same genuine `h1-r03-b0-a01`.
 
-This event:
-
-```text
-did not consume a01;
-did not count as a provider/interface treatment failure;
-did not launch inference;
-did not change the frozen experiment.
-```
+This event did not consume `a01`, did not count as a provider/interface treatment failure, did not launch inference, and did not change the frozen experiment.
 
 Detailed record:
 
@@ -410,6 +401,36 @@ Detailed record:
 docs/checkpoints/073_h1_r03_b0_full_mechanical_verification.md
 ```
 
+### B1: `h1-r03-b1-a01`
+
+Executor-level terminal result:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Attempt: h1-r03-b1-a01
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
+```
+
+Mechanical consequence:
+
+```text
+h1-r03-b1 is permanently resolved;
+h1-r03-b1-a01 is the retained B1 trajectory;
+no replacement is permitted.
+```
+
+Raw persisted artifacts have not yet been fully inspected. Therefore completion status, resource totals, Python/provider outcomes, A0-A4 results, final-lock legality, protected-test sequencing, and final-report presence remain pending mechanical verification.
+
+Detailed terminal record:
+
+```text
+docs/checkpoints/077_h1_r03_b1_behavior_evaluable_terminal_record.md
+```
+
 ---
 
 ## Preregistered resource consequence
@@ -430,16 +451,24 @@ This is an objective resource-envelope result, not a semantic or overall archite
 
 ---
 
-## Next frozen slot
+## Current inspection gate
+
+Inspect the complete persisted artifacts for:
+
+```text
+results/held_out/attempts/h1-r03-b1-a01/
+```
+
+Do not launch H1 R4 yet.
+
+If the retained B1 attempt is mechanically valid, the next frozen slot will be:
 
 ```text
 variant: H1
-replicate: 3
-condition: B1
-slot: h1-r03-b1
-attempt: h1-r03-b1-a01
+replicate: 4
+condition: B0
+slot: h1-r04-b0
+attempt: h1-r04-b0-a01
 ```
 
-The next `run-next` invocation must advance at most this one attempt and then stop for terminal classification and mechanical inspection before any H1 R4 execution.
-
-For the exact current authorization, consult `docs/CURRENT_STATE.md` before executing.
+For exact authorization, consult `docs/CURRENT_STATE.md` before executing.
