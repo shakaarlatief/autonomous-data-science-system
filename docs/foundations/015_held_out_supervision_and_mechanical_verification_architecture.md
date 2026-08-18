@@ -224,7 +224,7 @@ Because the supervisor was introduced after ten treatment slots had already reso
 
 This ensures that the same verifier applies to earlier and later attempts rather than creating one set of integrity rules only for the remaining slots.
 
-### Validation result
+### Retrospective validation result
 
 The gate passed on 2026-08-18:
 
@@ -245,20 +245,7 @@ The 12 completed attempt directories included:
 2 non-behavior-evaluable H1 R2 B0 provider/interface attempts
 ```
 
-The compact reports reproduced the established manual record for:
-
-```text
-attempt identities and classifications;
-model-call, token, and Python-attempt totals;
-P0 budget-exhaustion states;
-H1 R2 B0 provider failures and replacement eligibility;
-H1 R2 B0 A03 Python timeout;
-H1 R3 P0 incomplete final-report state;
-H1 R4 B0 Python error and recovery;
-final-lock and protected-test sequencing;
-final-report presence;
-A0-A4 deterministic results.
-```
+The compact reports reproduced the established manual record for attempt identities and classifications, model-call/token/Python totals, P0 budget states, provider failures and replacement eligibility, known Python exceptional events, final-lock and protected-test sequencing, final-report presence, and A0-A4 results.
 
 No mechanical discrepancy with the prior manual record was found.
 
@@ -300,13 +287,7 @@ or another existing runner safety state;
 export one compact review ZIP.
 ```
 
-A batch is bounded explicitly by a maximum number of paid model attempts:
-
-```bash
-python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
-```
-
-Three paid attempts do not necessarily mean three resolved treatment slots. A provider failure followed by a replacement consumes two paid attempts while remaining inside one preregistered slot.
+A batch is bounded explicitly by a maximum number of paid model attempts. A provider failure followed by a replacement consumes two paid attempts while remaining inside one preregistered treatment slot.
 
 The batch remains sequential. No second attempt begins until the previous attempt has returned, persisted its executor record, and passed mechanical integrity verification.
 
@@ -326,17 +307,7 @@ and the verifier confirms mechanical coherence, the next supervisor loop iterati
 
 This is automation of the frozen replacement rule, not a new replacement decision.
 
-If a result is behavior-evaluable, including an outcome with:
-
-```text
-poor methodology
-Python error or timeout
-budget exhaustion
-incomplete work
-deterministic failure
-```
-
-the slot remains resolved and the supervisor must not replace it.
+If a result is behavior-evaluable, including an outcome with poor methodology, Python error or timeout, budget exhaustion, incomplete work, or deterministic failure, the slot remains resolved and the supervisor must not replace it.
 
 ---
 
@@ -357,7 +328,7 @@ results/held_out/supervisor_exports/
 
 The normal compact export deliberately excludes raw treatment conversation text.
 
-The review model is therefore tiered:
+The review model is tiered:
 
 ```text
 normal mechanically coherent run
@@ -376,28 +347,9 @@ Raw attempt artifacts remain local and available for anomaly investigation, late
 
 ## 9. Semantic judging remains deferred
 
-The supervisor can establish mechanical facts such as:
+The supervisor can establish mechanical facts such as which files and hashes were used, how many provider calls and Python attempts occurred, whether usage arithmetic reconciles, whether A0-A4 recompute, which features were locked, when protected test access occurred, and whether a final report exists.
 
-```text
-what files exist;
-which hashes were used;
-how many provider calls and Python attempts occurred;
-whether usage arithmetic reconciles;
-whether A0-A4 recompute;
-which features were locked;
-when protected test access occurred;
-whether a final report exists.
-```
-
-It must not decide during execution:
-
-```text
-whether row semantics were understood deeply enough;
-whether validation reasoning was scientifically appropriate;
-whether inherited preprocessing contamination was adequately recognized;
-whether Phase 2 repair was semantically precise;
-whether final claims were appropriately scoped.
-```
+It must not decide during execution whether row semantics were understood deeply enough, validation reasoning was scientifically appropriate, inherited preprocessing contamination was adequately recognized, Phase 2 repair was semantically precise, or final claims were appropriately scoped.
 
 Those remain S1-S10/SC1-SC2 questions for the preregistered blinded semantic stage.
 
@@ -420,23 +372,7 @@ experiment specification
     -> experiment report
 ```
 
-Potential later capabilities include:
-
-```text
-parallel workers for experiments that preregister concurrency;
-provider rate-limit management;
-cost ceilings across experiment families;
-resume/retry orchestration;
-artifact-store integration;
-content-addressed attempt bundles;
-generated experiment dashboards;
-automatic blinded semantic-judge queues;
-aggregate statistical analysis;
-multiple benchmark families;
-multiple treatment-model families;
-reproducible experiment manifests;
-CI-style behavioral regression suites.
-```
+Potential later capabilities include parallel workers for experiments that preregister concurrency, provider rate-limit management, experiment-family cost ceilings, resume/retry orchestration, artifact-store integration, content-addressed attempt bundles, generated experiment dashboards, automatic blinded semantic-judge queues, aggregate statistical analysis, multiple benchmark/model families, reproducible experiment manifests, and CI-style behavioral regression suites.
 
 Prototype V0 should not retroactively adopt concurrency because concurrency was not part of its frozen execution regime.
 
@@ -456,19 +392,83 @@ This is closely aligned with the long-term Autonomous Data Science System vision
 
 ---
 
-## 12. Current operational status
+## 12. Prospective live validation
 
-At validation freeze:
+Retrospective parity was intentionally not treated as sufficient evidence for immediately running the whole remaining experiment unattended. The first prospective batch was bounded to three paid model attempts:
 
-```text
-10 / 30 held-out treatment slots resolved
-20 / 30 remain
-next frozen attempt: h1-r04-b1-a01
-retrospective verification: 12 / 12 integrity PASS
-software tests: 77 passed
-semantic judging: not started
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
 ```
 
-The first prospective supervisor batch is intentionally bounded to three paid model attempts. Its compact export should be reviewed before increasing unattended batch size.
+Batch identity:
 
-This remains an experiment-infrastructure architecture change, not a treatment change.
+```text
+batch-20260818T170118Z
+```
+
+The supervisor launched exactly:
+
+```text
+h1-r04-b1-a01
+h1-r04-p0-a01
+h1-r05-b1-a01
+```
+
+in the preregistered order. Each attempt was behavior-evaluable and each passed M01-M11 mechanical integrity verification before the supervisor advanced.
+
+Post-batch state:
+
+```text
+resolved treatment slots: 13 / 30
+completed attempt directories verified: 15
+integrity passed: 15
+integrity failed: 0
+next attempt: h1-r05-p0-a01
+stop reason: MAX_MODEL_ATTEMPTS_REACHED
+```
+
+The batch record confirmed:
+
+```text
+uses_frozen_execute_next_attempt: true
+sequential_only: true
+changes_slot_order: false
+changes_replacement_policy: false
+performs_semantic_judging: false
+writes_inside_attempt_directories: false
+```
+
+No prospective supervisor-integrity discrepancy was discovered.
+
+Detailed provenance:
+
+```text
+docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md
+```
+
+---
+
+## 13. Current operational boundary
+
+The supervisor has now passed:
+
+```text
+77 software tests
+12 / 12 retrospective completed-attempt integrity passes
+3 / 3 first prospective live-attempt integrity passes
+15 / 15 total completed-attempt integrity passes after prospective use
+```
+
+The three-attempt smoke-test restriction is therefore complete.
+
+For the remaining Prototype V0 treatment execution, a larger bounded sequential batch may be used:
+
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
+```
+
+At the time of this authorization, 17 treatment slots remain. If all remaining slots resolve on their first attempt, the supervisor stops at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional paid-attempt allowance. The batch must still stop automatically on mechanical integrity failure, interrupted-attempt state, replacement exhaustion, or another existing runner safety state.
+
+This authorization changes only the amount of already-validated sequential supervision performed in one invocation. It does not introduce concurrency or modify any frozen treatment or evaluation rule.
+
+Semantic judging remains deferred until treatment execution is complete and the final compact export has been reviewed.
