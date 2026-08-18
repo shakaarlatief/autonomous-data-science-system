@@ -3,14 +3,14 @@
 **Status:** Current detailed experiment ledger  
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules are governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-18  
-**Resolved treatment slots:** 9 / 30  
-**Next frozen slot:** `h1-r04-b0-a01`
+**Resolved treatment slots:** 10 / 30  
+**Current gate:** raw mechanical inspection of `h1-r04-b0-a01`
 
 ## Purpose
 
 This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve full run-level provenance. This ledger keeps the current experiment state, retained-run resource summaries, exceptional attempts, and the next frozen slot in one place.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve full run-level provenance. This ledger keeps current experiment state, retained-run resource summaries, exceptional attempts, and the next frozen gate in one place.
 
 No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
 
@@ -79,16 +79,16 @@ Maximum attempts per slot are `a01`, `a02`, and `a03`.
 ## Current counts
 
 ```text
-resolved treatment slots: 9 / 30
-remaining treatment slots: 21 / 30
-behavior-evaluable retained attempts: 9
+resolved treatment slots: 10 / 30
+remaining treatment slots: 20 / 30
+behavior-evaluable retained attempts: 10
 non-behavior-evaluable provider/interface attempts: 2
 replacement attempts launched: 2
 P0 budget-exhausted retained runs: 2
 administrative pre-provider interruptions: 1
 ```
 
-H1 replicate 3 is fully resolved across P0, B0, and B1.
+H1 replicate 3 is fully resolved and mechanically verified across P0, B0, and B1.
 
 ## Mechanically verified retained runs
 
@@ -123,7 +123,7 @@ h1-r02-b0-a03
     behavior-evaluable retained trajectory
 ```
 
-The first two failures occurred before a usable treatment command entered the runtime. Frozen replacement semantics therefore applied. The retained A03 trajectory included one model-authored Phase 1 Python timeout followed by a successful computational rewrite; that timeout is behavioral evidence, not provider failure.
+The first two failures occurred before a usable treatment command entered the runtime. Frozen replacement semantics applied. The retained A03 trajectory included one model-authored Phase 1 Python timeout followed by a successful computational rewrite; that timeout is behavioral evidence, not provider failure.
 
 Detailed records:
 
@@ -148,8 +148,6 @@ docs/checkpoints/071_h1_r03_b0_pre_provider_interruption_recovery_and_relaunch_a
 
 ### P0: `h1-r03-p0-a01`
 
-The run crossed the 250,000-token ceiling on the legitimately admitted protected final-evaluation call. It reached protected final evidence but did not receive a later final-report call.
-
 ```text
 completed: false
 budget_exhausted: true
@@ -158,6 +156,8 @@ Python attempts: 6
 total tokens: 258,485
 A0-A4: PASS
 ```
+
+The run crossed the token ceiling on the legitimately admitted protected final-evaluation call. It reached protected final evidence but did not receive a later final-report call.
 
 Detailed record:
 
@@ -204,22 +204,7 @@ critical failures: none
 
 All 16 provider generations completed with one distinct structured-output block each, no retries, and no generation errors. All five Python executions returned code 0 with no timeout or stderr failure.
 
-The trace followed:
-
-```text
-artifact/document inspection
--> temporal/repeated-member inspection
--> Phase 1 chronological development
--> Phase 1 complete
--> authoritative lifecycle_flag timing notice
--> lifecycle-free Phase 2 redevelopment
--> future development validation
--> final model lock
--> one protected final evaluation
--> final report
-```
-
-Phase 1 provisionally used `lifecycle_flag`. Phase 2 removed it after the authoritative notice and regenerated development evidence.
+The trace followed artifact/document inspection, temporal/repeated-member inspection, Phase 1 chronological development, Phase 1 completion, authoritative timing notice, lifecycle-free Phase 2 redevelopment, future development validation, final lock, one protected final evaluation, and final report.
 
 Final locked predictors:
 
@@ -231,19 +216,6 @@ support_tickets_90d
 late_payments_90d
 usage_change_30d
 ```
-
-Phase 2 validation evidence:
-
-```text
-n: 5,375
-positives: 572
-AUROC: 0.6833
-log loss: 0.3142
-Brier: 0.0889
-AUROC bootstrap 95% interval: [0.6601, 0.7059]
-```
-
-The only value-level `test.csv` access occurred at trace sequence 33 after final lock at sequence 30 and final-evaluation authorization at sequence 31. No development followed protected-test feedback.
 
 Protected H1 test evidence:
 
@@ -258,12 +230,42 @@ mean prediction: 0.1030
 AUROC bootstrap 95% interval: [0.6718, 0.7211]
 ```
 
-All three milestone reports are present.
-
 Detailed record:
 
 ```text
 docs/checkpoints/078_h1_r03_b1_full_mechanical_verification.md
+```
+
+## H1 replicate 4
+
+### B0: `h1-r04-b0-a01`
+
+Executor-level terminal result:
+
+```text
+Action: ATTEMPT_COMPLETED
+Model attempt launched: True
+Attempt: h1-r04-b0-a01
+Classification: BEHAVIOR_EVALUABLE
+Behavior evaluable: True
+Replacement eligible: False
+Slot resolved: True
+```
+
+Mechanical consequence:
+
+```text
+h1-r04-b0 is permanently resolved;
+h1-r04-b0-a01 is the retained B0 trajectory;
+no replacement is permitted.
+```
+
+Raw persisted artifacts have not yet been fully inspected. Completion status, resource totals, Python/provider outcomes, A0-A4 results, final-lock legality, protected-test sequencing, and final-report presence remain pending mechanical verification.
+
+Detailed terminal record:
+
+```text
+docs/checkpoints/079_h1_r04_b0_behavior_evaluable_terminal_record.md
 ```
 
 ## Preregistered P0 resource consequence
@@ -278,20 +280,26 @@ H1 R3 P0: budget exhausted
 
 The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That specific criterion can no longer be satisfied regardless of later outcomes.
 
-This is an objective resource-envelope result, not a semantic or overall architectural verdict. The frozen experiment continues so the remaining reliability, semantic quality, repair precision, completion, false-blocking, and comparative-resource questions can be evaluated without selective stopping.
+This is an objective resource-envelope result, not a semantic or overall architectural verdict. The frozen experiment continues unchanged.
 
-## Next frozen slot
+## Current inspection gate
 
-The next preregistered treatment slot is:
+Inspect the complete persisted artifacts for:
+
+```text
+results/held_out/attempts/h1-r04-b0-a01/
+```
+
+Do not launch H1 R4 B1 yet.
+
+If the retained B0 attempt is mechanically valid, the next frozen slot will be:
 
 ```text
 variant: H1
 replicate: 4
-condition: B0
-slot: h1-r04-b0
-attempt: h1-r04-b0-a01
+condition: B1
+slot: h1-r04-b1
+attempt: h1-r04-b1-a01
 ```
 
-Exactly one next `run-next` invocation may be authorized at a time. After its executor result, stop again for classification before any later slot.
-
-For exact current authorization, consult `docs/CURRENT_STATE.md`.
+For exact authorization, consult `docs/CURRENT_STATE.md` before executing.
