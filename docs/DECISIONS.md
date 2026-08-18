@@ -428,3 +428,30 @@ The full test suite passed and the verifier retrospectively reproduced the estab
 This decision changes experiment operations, not treatment behavior, scoring, benchmarks, budgets, run order, semantic judging, or continuation/falsification criteria.
 
 See Foundation 015 and Checkpoint 82.
+
+---
+
+## D-027. Allow large bounded unattended supervisor batches after the prospective smoke test
+
+**Status:** Accepted for the remaining Prototype V0 treatment-execution phase  
+**Date:** 2026-08-18
+
+The initial three-paid-attempt prospective supervisor gate has passed. The validated supervisor may therefore be invoked with a substantially larger explicit paid-attempt allowance, including:
+
+```bash
+python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
+```
+
+The command remains bounded rather than unconditionally running 30 treatments. It must stop at `EXPERIMENT_COMPLETE` when all frozen treatment slots are resolved, at the explicit paid-attempt limit, or earlier on an existing supervisor/runner safety state such as mechanical integrity failure, interrupted attempt, or replacement exhaustion.
+
+Prototype V0 remains strictly sequential. This decision does not authorize concurrency.
+
+### Rationale
+
+The first prospective live batch launched exactly three new attempts in frozen order, mechanically verified each one before advancing, produced 3 / 3 integrity PASS results, stopped exactly at the explicit batch limit, and derived the correct next frozen slot. After that batch, all 15 completed attempt directories had verifier integrity PASS and zero had integrity failure.
+
+The operational evidence now consists of 77 passing software tests, 12 / 12 retrospective verification passes before live use, and 3 / 3 prospective live verification passes. Continuing to require artificial three-attempt batches would preserve human waiting and transport without a demonstrated integrity benefit.
+
+This decision changes only how many already-validated sequential supervisor iterations may occur inside one invocation. It does not change the experiment plan, treatments, budgets, replacement rules, scoring, or semantic evaluation.
+
+See Foundation 015 and Checkpoint 83.
