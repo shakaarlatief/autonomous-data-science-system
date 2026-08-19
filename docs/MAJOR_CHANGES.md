@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, and Git history remain authoritative for their own content.  
-**Last reviewed:** 2026-08-18
+**Last reviewed:** 2026-08-19
 
 ## Purpose
 
@@ -271,3 +271,57 @@ docs/DECISIONS.md, D-026
 ```
 
 This is an evaluation-infrastructure architecture change, not a treatment change.
+
+---
+
+## 2026-08-19: Prototype V0 held-out treatment and blinded semantic execution reached completion
+
+The preregistered held-out treatment phase resolved all 30 treatment slots, and all 34 persisted attempt directories passed external mechanical verification.
+
+The subsequent condition-blind semantic stage then completed:
+
+```text
+30 / 30 blinded cases
+60 / 60 logical judge passes
+60 provider calls
+0 provider-recovery calls
+0 manual-adjudication cases
+stop reason: JUDGE_COMPLETE
+```
+
+No condition decoding or B0/B1/P0 semantic comparison was performed during judge execution. The next phase is blinded export verification and freezing, followed by unblinding and application of the preregistered continuation/falsification criteria.
+
+Key sources:
+
+```text
+docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
+docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+```
+
+---
+
+## 2026-08-19: Execution and observability were separated as a system-level architectural principle
+
+Comparing held-out treatment monitoring with semantic-judge live progress exposed a reusable architectural lesson: detailed human-facing observability should not be part of the trusted execution surface merely because terminal output is convenient.
+
+The preferred pattern is now:
+
+```text
+execution / reasoning
+    -> persisted structured state or events
+    -> read-only observability
+    -> human interface
+```
+
+The observer owns timestamps, heartbeats, elapsed time, progress rendering, and future dashboard concerns. It must be replaceable or allowed to fail without changing execution semantics, and it must respect information boundaries such as experimental blinding.
+
+Prototype V0 now has sidecar observers for both held-out treatment execution and blinded semantic judging. The evidence-producing supervisors themselves are not rewritten after the fact solely for presentation consistency.
+
+Key sources:
+
+```text
+docs/PRINCIPLES.md, P-022
+docs/foundations/016_execution_observability_separation.md
+docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
+```
