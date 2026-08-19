@@ -28,7 +28,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import statistics
 import zipfile
 from datetime import datetime, timezone
@@ -97,7 +96,9 @@ def _median(values: Iterable[float]) -> float:
     return float(statistics.median(materialized))
 
 
-def _validate_frozen_boundary(semantic_root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+def _validate_frozen_boundary(
+    semantic_root: Path,
+) -> tuple[dict[str, Any], dict[str, Any]]:
     """Re-verify blinded evidence before any private decoder is read."""
 
     freeze_path = semantic_root / FREEZE_FILE
@@ -114,8 +115,6 @@ def _validate_frozen_boundary(semantic_root: Path) -> tuple[dict[str, Any], dict
     if int(frozen.get("manual_adjudication_cases", -1)) != 0:
         raise ValueError("Cannot decode while frozen manual adjudication remains unresolved.")
 
-    # This call is decoder-free by construction. It recomputes packet identities,
-    # pass/consensus consistency, provider accounting, file hashes, and aggregate.
     verification = verify_blinded_state(semantic_root=semantic_root)
     if verification["aggregate_sha256"] != frozen.get("aggregate_sha256"):
         raise ValueError(
@@ -275,7 +274,9 @@ def _decode_run_rows(
         if str(summary.get("condition")) != str(slot["condition"]):
             raise ValueError(f"Decoded condition disagrees with summary for {blind_id}.")
         if not bool(summary.get("behavior_evaluable", False)):
-            raise ValueError(f"Decoded retained trajectory is not behavior evaluable: {attempt_id}.")
+            raise ValueError(
+                f"Decoded retained trajectory is not behavior evaluable: {attempt_id}."
+            )
 
         deterministic_critical = summary.get("critical_failures", [])
         if not isinstance(deterministic_critical, list):
@@ -338,12 +339,16 @@ def _group_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "semantic_critical_SC1_count": sum(bool(row["SC1"]) for row in rows),
         "semantic_critical_SC2_count": sum(bool(row["SC2"]) for row in rows),
         "critical_failure_runs": sum(bool(row["critical_failure_run"]) for row in rows),
-        "critical_failure_events": sum(int(row["critical_failure_events"]) for row in rows),
+        "critical_failure_events": sum(
+            int(row["critical_failure_events"]) for row in rows
+        ),
         "completed_count": sum(bool(row["completed"]) for row in rows),
         "completed_within_budget_count": sum(
             bool(row["completed_within_budget"]) for row in rows
         ),
-        "budget_exhausted_count": sum(bool(row["budget_exhausted"]) for row in rows),
+        "budget_exhausted_count": sum(
+            bool(row["budget_exhausted"]) for row in rows
+        ),
         "final_report_count": sum(bool(row["final_report_present"]) for row in rows),
         "resource_medians": {
             "total_tokens": _median(row["total_tokens"] for row in rows),
@@ -457,6 +462,7 @@ def _registered_comparison_facts(summaries: Mapping[str, Any]) -> dict[str, Any]
 
     reliability_a = critical_event_diff <= -2
     reliability_b = targeted_diff >= 0.30 and strong_diff >= 2
+    reliability_a_or_b = reliability_a or reliability_b
     cross_variant = all(diff >= -0.10 for diff in variant_diffs.values())
     completion = (
         int(p0["completed_within_budget_count"]) >= 9
@@ -467,25 +473,29 @@ def _registered_comparison_facts(summaries: Mapping[str, Any]) -> dict[str, Any]
         all(value is not None and value <= 1.50 for value in ratios.values())
         and int(p0["budget_exhausted_count"]) <= 1
     )
+    critical_not_worse = (
+        int(p0["critical_failure_events"])
+        <= int(b1["critical_failure_events"])
+    )
 
-    # Architecture-specific P0 diagnostic clauses are intentionally unresolved
-    # here. The continuation criterion already fails if any mechanically resolved
-    # mandatory component is false, but final strong-falsification classification
-    # must also consider the separate architecture-diagnostic clauses.
-    continuation_mechanical_components = {
-        "critical_failures_not_worse_than_B1": (
-            int(p0["critical_failure_events"])
-            <= int(b1["critical_failure_events"])
-        ),
+    continuation_component_details = {
+        "critical_failures_not_worse_than_B1": critical_not_worse,
         "material_reliability_A": reliability_a,
         "material_reliability_B": reliability_b,
-        "material_reliability_A_or_B": reliability_a or reliability_b,
+        "material_reliability_A_or_B": reliability_a_or_b,
+        "cross_variant_robustness": cross_variant,
+        "completion": completion,
+        "acceptable_resource_cost": resource_cost,
+    }
+    mandatory_resolved_components = {
+        "critical_failures_not_worse_than_B1": critical_not_worse,
+        "material_reliability_A_or_B": reliability_a_or_b,
         "cross_variant_robustness": cross_variant,
         "completion": completion,
         "acceptable_resource_cost": resource_cost,
     }
     continuation_already_impossible = any(
-        not value for value in continuation_mechanical_components.values()
+        not value for value in mandatory_resolved_components.values()
     )
 
     return {
@@ -501,9 +511,10 @@ def _registered_comparison_facts(summaries: Mapping[str, Any]) -> dict[str, Any]
             "B1_budget_exhausted": int(b1["budget_exhausted_count"]),
             "P0_budget_exhausted": int(p0["budget_exhausted_count"]),
         },
-        "continuation_components_resolved_from_common_evidence": (
-            continuation_mechanical_components
+        "continuation_component_details_resolved_from_common_evidence": (
+            continuation_component_details
         ),
+        "continuation_mandatory_resolved_components": mandatory_resolved_components,
         "continuation_signal_already_impossible_from_resolved_components": (
             continuation_already_impossible
         ),
