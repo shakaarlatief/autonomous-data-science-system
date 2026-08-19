@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 92  
+**Checkpoint:** 94  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 treatment and blinded semantic execution complete; explicit blinded consensus freeze pending local validation  
+**Development stage:** Prototype V0 treatment and semantic inference complete; blinded consensus frozen and independently verified; deterministic condition decoding pending  
 **Resolved treatment slots:** 30 / 30  
 **Semantic logical passes:** 60 / 60  
 **Completed blinded semantic cases:** 30 / 30  
 **Manual adjudication required:** 0 / 30  
-**Execution mode:** no further treatment or semantic-judge inference is authorized for the completed V0 evidence
+**Execution mode:** no further treatment or semantic-judge inference is authorized for Prototype V0
 
 ## Current experiment
 
@@ -23,13 +23,13 @@ Frozen protocol:
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Detailed treatment ledger:
+Detailed held-out ledger:
 
 ```text
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-## Treatment execution
+## Fixed treatment evidence
 
 Held-out treatment execution is complete:
 
@@ -53,43 +53,43 @@ P0 budget-exhausted runs: 7 / 10
 P0/B1 pooled median-token ratio: 2.160
 ```
 
-Semantic evidence is still required for the registered final classification and architectural interpretation.
-
 Treatment completion provenance:
 
 ```text
 docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
 ```
 
-## Blinded semantic evaluation
+## Fixed semantic evidence
 
-The preregistered two-pass judge batch completed successfully.
-
-Batch:
+The preregistered two-pass semantic judge completed successfully:
 
 ```text
-semantic-batch-20260819T121018Z
-```
-
-Observed result:
-
-```text
+semantic batch: semantic-batch-20260819T121018Z
 provider calls launched: 60
 logical passes persisted: 60 / 60
 completed blinded cases: 30 / 30
+provider failures: 0
 manual-adjudication cases: 0
 stop reason: JUDGE_COMPLETE
 ```
 
-Original blinded review export:
+Two-pass agreement over 300 ordinary semantic comparisons:
 
 ```text
-semantic_judge_blinded_20260819T122617Z.zip
+exact agreement: 288 / 300 = 96.0%
+adjacent disagreements: 12 / 300 = 4.0%
+extreme 0-vs-2 disagreements: 0
 ```
 
-No provider-recovery call was needed. Because every case completed both passes and the supervisor reported zero manual-adjudication cases, no 0-vs-2 or semantic-critical disagreement requires human adjudication under Foundation 012.
+Semantic-critical agreement:
 
-No private-decoder inspection or condition-level semantic comparison has been performed yet.
+```text
+60 / 60 exact
+SC1 consensus flags: 0 / 30
+SC2 consensus flags: 0 / 30
+```
+
+No manual semantic adjudication is required.
 
 Detailed provenance:
 
@@ -97,84 +97,129 @@ Detailed provenance:
 docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
 ```
 
-## Explicit blinded consensus freeze
+## Blinded freeze complete
 
-A deterministic pre-unblinding freeze layer has now been added:
-
-```text
-prototype_v0/src/ads_v0/semantic_judge_freeze.py
-prototype_v0/tests/test_semantic_judge_freeze.py
-```
-
-It performs no inference and never reads `private_decoder.json`.
-
-Before freezing it requires:
+The user pulled the freeze/monitor implementation and validated it locally:
 
 ```text
-30 / 30 prepared cases
-60 / 60 logical pass files
-30 / 30 consensus files
-packet fingerprint agreement
-pass identity and packet-fingerprint agreement
-exact consensus recomputation from the two judge passes
-provider-attempt marker reconciliation
-0 unresolved manual-adjudication cases
+pytest: 95 passed in 20.43s
+semantic monitor: 60/60 passes, 30/30 cases, 0 manual, 60 provider calls
+freeze verify: 30 cases, 60 passes, 0 manual cases, private decoder read=no
+freeze status: FROZEN
 ```
 
-When those checks pass it writes a blinded freeze manifest containing per-file SHA-256 hashes and one aggregate SHA-256, then creates a decoder-free frozen review ZIP.
+Frozen semantic aggregate SHA-256:
 
-Detailed design record:
+```text
+836a6677e2803338697395afea431de5af0fc8ece469940bb687855bf7ec0757
+```
+
+The uploaded frozen decoder-free ZIP was independently checked against its own freeze manifest:
+
+```text
+archive entries: 243
+freeze-covered files: 242
+file hash mismatches: 0
+recomputed aggregate matches frozen aggregate: yes
+private decoder included: no
+```
+
+Therefore the condition-blind evidence boundary is complete and condition decoding is now authorized.
+
+Condition-blind aggregate semantic shape at freeze:
+
+```text
+S1 mean: 1.000
+S2 mean: 1.650
+S3 mean: 1.683
+S4 mean: 1.033
+S5 mean: 2.000
+S6 mean: 2.000
+S7 mean: 1.967
+S8 mean: 1.967
+S9 mean: 1.733
+S10 mean: 1.900
+blinded targeted mean: 1.660
+strong-targeted-pass cases: 0 / 30
+```
+
+Freeze provenance:
 
 ```text
 docs/checkpoints/092_blinded_semantic_consensus_freeze_implemented_pending_validation.md
+docs/checkpoints/093_blinded_semantic_freeze_independently_verified_and_unblinding_authorized.md
 ```
 
-The new freeze code and tests were added after all semantic judge evidence had already been generated. Local validation is still required.
+## Deterministic post-freeze decoder
 
-## Next experimental step
+A reproducible decoder is now implemented:
 
-Do not launch more B0, B1, P0, or semantic-judge calls.
+```text
+prototype_v0/src/ads_v0/semantic_judge_decode.py
+prototype_v0/tests/test_semantic_judge_decode.py
+```
 
-After pulling the latest repository state, run from `prototype_v0/`:
+It must first recompute the blinded freeze aggregate without reading `private_decoder.json`. Only after exact freeze agreement may it reveal the mapping.
+
+The decoder then produces:
+
+```text
+30 run-level decoded rows
+pooled B0/B1/P0 summaries
+H1 and H2 summaries by condition
+paired replicate-level targeted-score differences
+critical-failure counts
+completion/budget summaries
+median resource ratios
+registered continuation-component facts
+```
+
+It explicitly does not infer P0-internal architecture-specific clauses such as false blocking, broad reopening/over-invalidation, or held-out hard coding. Those remain a separate post-unblinding diagnostic stage.
+
+Implementation provenance:
+
+```text
+docs/checkpoints/094_post_freeze_condition_decoder_implemented_pending_validation.md
+```
+
+## Next step
+
+From the repository root, pull the latest decoder implementation, then from `prototype_v0/` run:
 
 ```bash
+git pull origin main
 pytest
-python -m ads_v0.semantic_judge_monitor status
-python -m ads_v0.semantic_judge_freeze verify
-python -m ads_v0.semantic_judge_freeze freeze
+python -m ads_v0.semantic_judge_decode verify-freeze
+python -m ads_v0.semantic_judge_decode decode
 ```
 
-Expected high-level shape:
+Expected predecode freeze identity:
 
 ```text
-all tests pass
-semantic monitor: 60 / 60 passes, 30 / 30 completed, 60 provider calls
-freeze verify: 30 cases, 60 passes, 0 manual cases, 60 provider attempts
-freeze: FROZEN with an aggregate SHA-256 and decoder-free ZIP path
+836a6677e2803338697395afea431de5af0fc8ece469940bb687855bf7ec0757
 ```
 
-Then upload the new:
+The `decode` command is the first authorized read of the private condition mapping. It launches no model calls and does not modify frozen evidence.
+
+Upload the resulting:
 
 ```text
-semantic_judge_frozen_blinded_<timestamp>.zip
+semantic_judge_decoded_<timestamp>.zip
 ```
 
-Do not upload or inspect the private decoder yet.
-
-After the frozen blinded ZIP is reviewed:
+After decoded common semantic/mechanical outcomes are independently reviewed:
 
 ```text
-1. confirm the aggregate freeze and evidence integrity;
-2. authorize use of the private decoder;
-3. compute H1, H2, and pooled B0/B1/P0 semantic comparisons;
-4. combine semantic, deterministic, completion, and resource evidence;
-5. apply the preregistered continuation and strong-falsification criteria;
-6. record the final Prototype V0 architectural conclusion.
+1. determine the P0 versus B1 semantic reliability result;
+2. inspect the separate P0 architecture diagnostics required by Foundation 012;
+3. apply every continuation and strong-falsification clause;
+4. record the final Prototype V0 classification;
+5. decide what architecture, if any, should survive into the next system iteration.
 ```
 
 ## Execution and observability architecture
 
-The project has promoted a system-level principle:
+The project now uses the system-level principle:
 
 ```text
 execution / reasoning
@@ -182,8 +227,6 @@ execution / reasoning
     -> read-only observability
     -> human interface
 ```
-
-Detailed timestamps, heartbeats, elapsed-time reporting, and progress rendering belong preferentially in a sidecar observer rather than the trusted execution path.
 
 Canonical principle:
 
@@ -204,14 +247,6 @@ prototype_v0/src/ads_v0/heldout_monitor.py
 prototype_v0/src/ads_v0/semantic_judge_monitor.py
 ```
 
-The semantic monitor was added after the completed judge run and therefore did not influence any current experimental evidence. Its new local tests are part of the next required `pytest` run.
-
-Detailed promotion record:
-
-```text
-docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
-```
-
 ## Knowledge and continuity
 
 Minimum reading for a future session:
@@ -226,11 +261,11 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 docs/foundations/016_execution_observability_separation.md
-docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
-docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
-docs/checkpoints/092_blinded_semantic_consensus_freeze_implemented_pending_validation.md
+docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+docs/checkpoints/093_blinded_semantic_freeze_independently_verified_and_unblinding_authorized.md
+docs/checkpoints/094_post_freeze_condition_decoder_implemented_pending_validation.md
 ```
 
 ## Current priority
 
-**Validate and execute the condition-blind semantic freeze. Upload the frozen decoder-free ZIP. Do not inspect or upload the private decoder before that frozen evidence is reviewed.**
+**Validate and run the deterministic post-freeze decoder, then upload its compact decoded ZIP. No further treatment or semantic-judge inference is allowed.**
