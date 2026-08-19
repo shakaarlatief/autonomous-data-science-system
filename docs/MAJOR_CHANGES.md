@@ -1,16 +1,14 @@
 # Major Changes
 
 **Status:** Current selective structural history  
-**Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, and Git history remain authoritative for their own content.  
+**Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
 **Last reviewed:** 2026-08-19
 
 ## Purpose
 
 This file records only changes that materially alter how the project is understood, built, evaluated, preserved, or continued.
 
-It is not a commit changelog and it does not list routine checkpoint creation, typo fixes, ordinary run execution, or small implementation changes.
-
-A change belongs here when a future contributor or model would benefit from knowing that the project crossed a meaningful architectural, methodological, experimental, or preservation boundary.
+It is not a commit changelog.
 
 ---
 
@@ -18,18 +16,18 @@ A change belongs here when a future contributor or model would benefit from know
 
 The Autonomous Data Science System became a dedicated repository separate from individual data projects.
 
-The initial preservation architecture established the distinction between:
+The initial preservation model distinguished:
 
 ```text
 chat as exploratory workspace
 repository as durable source of truth
 canonical documents
 foundational design memos
-checkpoints/session records
+checkpoints
 historical provenance
 ```
 
-This also introduced the principle:
+This established the maxim:
 
 > The chat is where we think. The repository is where the system remembers.
 
@@ -38,29 +36,19 @@ Key sources:
 ```text
 docs/foundations/001_initial_vision_and_reasoning.md
 docs/DECISIONS.md, D-001 through D-010
-docs/DEVELOPMENT_METHOD.md, version 0.1
 ```
 
 ---
 
-## 2026-08-08: Development Method v0.2 made checkpointing and chat rotation proactive AI responsibilities
+## 2026-08-08: Checkpointing and chat rotation became proactive AI responsibilities
 
-The user no longer needed to remember when project preservation or chat rotation was due.
-
-The AI design collaborator became responsible for:
-
-```text
-detecting natural checkpoints;
-preserving important uncheckpointed reasoning;
-recommending chat rotation when continuity risk becomes material;
-keeping maturity distinctions explicit rather than canonizing ideas automatically.
-```
+Development Method v0.2 made the AI design collaborator responsible for detecting natural checkpoints, preserving important uncheckpointed reasoning, and recommending session rotation when continuity risk becomes material.
 
 Key sources:
 
 ```text
 docs/DECISIONS.md, D-018 and D-020
-docs/DEVELOPMENT_METHOD.md, version 0.2
+docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```
 
@@ -68,17 +56,17 @@ docs/CONTINUITY.md
 
 ## 2026-08-08 to 2026-08-09: Core system theory expanded into dedicated foundations
 
-The project moved from an inspiring general vision toward explicit theory for:
+The project moved from a broad vision to explicit theories for:
 
 ```text
-epistemic integrity and project constitution;
-admissibility and risk-sensitive assurance;
-project state and dependency-aware revision;
-project initialization;
-knowledge activation;
-reusable knowledge representation;
-knowledge quality and evolution;
-behavioral system evaluation.
+epistemic integrity
+admissibility and risk-sensitive assurance
+project state and dependency-aware revision
+project initialization
+knowledge activation
+reusable knowledge representation
+knowledge quality and evolution
+behavioral system evaluation
 ```
 
 Key sources:
@@ -96,36 +84,31 @@ docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 
 ---
 
-## 2026-08-09: Prototype V0 became a falsification experiment rather than an architecture demonstration
+## 2026-08-09: Prototype V0 became a falsification experiment
 
-The project deliberately chose to test the smallest explicit semantic architecture against strong simpler controls rather than building a large autonomous system immediately.
-
-The central comparison became:
+The project deliberately chose to test a small explicit semantic architecture against strong simpler controls rather than building a large autonomous platform first.
 
 ```text
-B0: strong LLM + strong generic data-science workflow
+B0: strong LLM + strong generic workflow
 B1: B0 + the same methodological knowledge supplied statically
-P0: same model + explicit typed state, activation, safeguards, dependency repair,
-    and state-driven action selection
+P0: same model + typed state + activation + safeguards + dependency repair
+    + state-driven action selection
 ```
 
-The experiment was designed so P0 could fail and be simplified.
+The experiment was explicitly designed so P0 could lose and be simplified.
 
 Key sources:
 
 ```text
 docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
 docs/foundations/011_prototype_v0_technical_specification.md
-prototype_v0/
 ```
 
 ---
 
-## 2026-08-09: Held-out experiment preregistered before P0 implementation
+## 2026-08-09: Held-out evaluation was preregistered before P0 implementation
 
-The H1/H2 bundles, 30-run order, common model/provider configuration, resource limits, replacement policy, semantic rubric, blinded judging procedure, and continuation/falsification criteria were frozen independently of P0 behavior.
-
-This created the experimental integrity boundary that governs current held-out execution.
+The H1/H2 bundles, 30-run order, common model/provider configuration, budgets, replacement policy, semantic rubric, blinded judging procedure, and continuation/falsification criteria were frozen before P0 implementation.
 
 Key source:
 
@@ -135,7 +118,7 @@ docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
 ---
 
-## 2026-08-09: System-level abstraction made explicit at Checkpoint 22
+## 2026-08-09 to 2026-08-18: The system-level LLM/system/human boundary became explicit and durable
 
 The project distinguished:
 
@@ -145,167 +128,76 @@ human + interactive LLM data science
 system-mediated data science
 ```
 
-This clarified that the long-term goal is not merely a better prompt or one longer LLM conversation. The system is intended to externalize reusable process-navigation intelligence while still requiring every architectural mechanism to justify its cost.
+The key implication is that the LLM is one reasoning component inside the system, while every explicit mechanism must still justify its complexity empirically.
 
-Historical source:
+The idea originated in Checkpoint 22 and was later promoted to Foundation 013 after the project recognized that historically preserved knowledge can still become conceptually buried.
+
+Key sources:
 
 ```text
 docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
-```
-
-The durable synthesis was later promoted to Foundation 013.
-
----
-
-## 2026-08-18: Prototype V0 documentation received a current simple entry point
-
-`prototype_v0/README.md` was rewritten so the experiment can be understood without reconstructing dozens of checkpoints.
-
-It now explains:
-
-```text
-what one run does;
-benchmark traps;
-B0/B1/P0;
-P0 architecture;
-H1/H2;
-mechanical and semantic evaluation;
-repository navigation.
-```
-
-Historical source:
-
-```text
-docs/checkpoints/074_prototype_v0_readme_refreshed_as_current_entry_point.md
-```
-
----
-
-## 2026-08-18: Checkpoint 22 system-level vision promoted into Foundation 013
-
-The project recognized that historically preserved knowledge can still become conceptually buried.
-
-The stable system-level synthesis from Checkpoint 22 was promoted into:
-
-```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 ```
 
-Checkpoint 22 remains unchanged as provenance.
-
-This was the concrete event that exposed the need to strengthen the preservation lifecycle beyond durability alone.
-
-Historical source:
-
-```text
-docs/checkpoints/075_checkpoint_22_system_vision_promoted_to_foundation_013.md
-```
-
 ---
 
-## 2026-08-18: Development Method v0.3 introduced a knowledge-preservation architecture
+## 2026-08-18: Development Method v0.3 introduced an explicit knowledge-preservation architecture
 
-The preservation method was upgraded after the Checkpoint 22 promotion exposed three scaling risks:
+Actual project growth exposed risks in discoverability, implicit promotion, and canonical duplication/drift.
 
-```text
-discoverability
-implicit promotion
-canonical duplication/drift
-```
-
-Version 0.3 adds:
+Version 0.3 introduced:
 
 ```text
-an explicit promotion audit at substantive checkpoints;
-docs/KNOWLEDGE_MAP.md as a routing layer;
-periodic knowledge reconciliation at stage boundaries;
-lightweight authority/maturity/provenance metadata conventions;
-a selective MAJOR_CHANGES ledger;
-separation of concise CURRENT_STATE from detailed experiment ledgers;
-explicit deferral criteria for graph/vector/database/automation infrastructure.
+checkpoint promotion audits
+KNOWLEDGE_MAP routing
+periodic stage-boundary reconciliation
+lightweight authority/maturity conventions
+MAJOR_CHANGES structural history
+separation of CURRENT_STATE from detailed experiment ledgers
+explicit deferral criteria for more advanced knowledge infrastructure
 ```
 
-The current storage foundation remains Git + Markdown. More advanced infrastructure is deliberately deferred until observed scale, retrieval, dependency, or consistency problems justify it.
+Git + Markdown remains the current preservation substrate until demonstrated retrieval, dependency, consistency, concurrency, or automation problems justify more complex infrastructure.
 
 Key sources:
 
 ```text
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/DEVELOPMENT_METHOD.md, version 0.3
+docs/DEVELOPMENT_METHOD.md
 docs/KNOWLEDGE_MAP.md
 ```
 
-This change is meta-architectural. It changes how the project preserves and navigates its own knowledge, not the frozen Prototype V0 treatment architecture.
-
 ---
 
-## 2026-08-18: Prototype V0 gained validated automated held-out supervision and mechanical verification
+## 2026-08-18: Prototype V0 gained validated external supervision and mechanical verification
 
-After ten resolved held-out treatment slots, the project identified a second scaling problem: the scientific experiment was stable, but each ordinary run still required the user to manually transport terminal output, create and upload a raw ZIP, wait for repeated mechanical inspection, pull repository updates, and then launch the next slot.
-
-The project introduced a condition-neutral external supervision layer:
+After early held-out execution showed that manual transport/bookkeeping no longer added scientific value, the project introduced a condition-neutral external layer:
 
 ```text
 heldout_runner.py
-    unchanged frozen one-attempt executor
+    frozen one-attempt executor
 
 heldout_verifier.py
-    read-only mechanical verification of persisted attempts
+    read-only mechanical verification
 
 heldout_supervisor.py
-    bounded sequential orchestration around the frozen executor
+    bounded sequential orchestration
 ```
 
-The verifier checks attempt identity, frozen plan/bundle provenance, runtime configuration, executor classification, resource accounting, trace reconciliation, deterministic evaluator reproducibility, milestone consistency, protected-test sequencing, and conversation/model-call consistency. Behavioral events such as budget exhaustion or Python errors are recorded but do not become replacement reasons.
-
-Before prospective paid use, the new layer was retrospectively validated against all completed attempt directories. The full test suite returned `77 passed`, and all 12 completed attempt directories received mechanical integrity `PASS` with zero integrity failures. The reports reproduced the established manual record for the ten retained behavior-evaluable trajectories and the two H1 R2 B0 provider/interface failures.
-
-The validated supervisor/verifier versions were then frozen for the remainder of Prototype V0 operational use. The first live batch remains deliberately bounded to three paid model attempts and sequential execution only.
+The verifier was retrospectively validated against all existing attempts before prospective use. This automated repetitive experiment operations without changing treatment semantics.
 
 Key sources:
 
 ```text
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
-docs/DECISIONS.md, D-026
-```
-
-This is an evaluation-infrastructure architecture change, not a treatment change.
-
----
-
-## 2026-08-19: Prototype V0 held-out treatment and blinded semantic execution reached completion
-
-The preregistered held-out treatment phase resolved all 30 treatment slots, and all 34 persisted attempt directories passed external mechanical verification.
-
-The subsequent condition-blind semantic stage then completed:
-
-```text
-30 / 30 blinded cases
-60 / 60 logical judge passes
-60 provider calls
-0 provider-recovery calls
-0 manual-adjudication cases
-stop reason: JUDGE_COMPLETE
-```
-
-No condition decoding or B0/B1/P0 semantic comparison was performed during judge execution. The next phase is blinded export verification and freezing, followed by unblinding and application of the preregistered continuation/falsification criteria.
-
-Key sources:
-
-```text
-docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
-docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
 ---
 
-## 2026-08-19: Execution and observability were separated as a system-level architectural principle
+## 2026-08-19: Execution and observability were separated as a system-level principle
 
-Comparing held-out treatment monitoring with semantic-judge live progress exposed a reusable architectural lesson: detailed human-facing observability should not be part of the trusted execution surface merely because terminal output is convenient.
-
-The preferred pattern is now:
+Running long treatment and semantic-evaluation processes exposed a reusable design principle:
 
 ```text
 execution / reasoning
@@ -314,9 +206,7 @@ execution / reasoning
     -> human interface
 ```
 
-The observer owns timestamps, heartbeats, elapsed time, progress rendering, and future dashboard concerns. It must be replaceable or allowed to fail without changing execution semantics, and it must respect information boundaries such as experimental blinding.
-
-Prototype V0 now has sidecar observers for both held-out treatment execution and blinded semantic judging. The evidence-producing supervisors themselves are not rewritten after the fact solely for presentation consistency.
+Detailed timestamps, heartbeats, elapsed time, progress rendering, and future dashboards belong preferentially in a sidecar observer rather than the trusted execution path.
 
 Key sources:
 
@@ -324,4 +214,63 @@ Key sources:
 docs/PRINCIPLES.md, P-022
 docs/foundations/016_execution_observability_separation.md
 docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
+```
+
+---
+
+## 2026-08-19: Prototype V0 completed and strongly falsified the current P0 design
+
+All treatment and semantic evidence completed under the preregistered protocol:
+
+```text
+30 / 30 treatment slots resolved
+34 / 34 persisted attempts mechanically verified PASS
+60 / 60 blinded semantic judge passes completed
+0 manual semantic adjudications
+blinded evidence frozen before condition decoding
+```
+
+The final pooled comparison was:
+
+```text
+                         B0          B1          P0
+Targeted mean           1.47        1.73        1.78
+Strong targeted pass    0/10        0/10        0/10
+Critical failure runs   0/10        0/10        0/10
+Completed in budget    10/10       10/10        3/10
+Budget exhausted        0/10        0/10        7/10
+Median total tokens  122,544.5   120,564.5   260,370.0
+```
+
+P0's targeted semantic gain over B1 was only `+0.05`, far below the preregistered material-reliability threshold. B1 and P0 had identical critical-failure and strong-targeted-pass counts, while P0 used `2.160x` B1's median tokens.
+
+Post-unblinding P0 diagnostics found no false action blocks, no critical over-invalidation, and no held-out-specific hard coding. P0 dependency repair was precise, but the same repair behavior was already near ceiling in B1. The current activation mechanism also showed path sensitivity, and generic support-reassessment produced avoidable internal state churn.
+
+Foundation 012's reliability-cost strong-falsification clause is therefore met.
+
+Final classification:
+
+> **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN.**
+
+The architectural consequence is simplification, not abandonment of the broader system vision.
+
+Do not continue unchanged:
+
+```text
+full typed state resent every reasoning cycle
+large always-on state/relation context
+generic support-reassessment propagation
+path-sensitive tag-trigger activation
+universal dependency reopening machinery
+full P0 frontier representation
+```
+
+The next design stage starts from the strong B1 baseline and asks what smallest low-overhead mechanism can improve reliability on harder, longer, changing project trajectories.
+
+Key sources:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+prototype_v0/README.md
+docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
 ```
