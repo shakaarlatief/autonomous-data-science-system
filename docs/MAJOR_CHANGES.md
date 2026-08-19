@@ -274,3 +274,105 @@ docs/experiments/prototype_v0/FINAL_RESULTS.md
 prototype_v0/README.md
 docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
 ```
+
+---
+
+## 2026-08-19: Post-V0 product vision became a professional interactive data-science workspace
+
+After closing V0, the project deliberately returned to the broader product goal before choosing another backend architecture.
+
+The target experience was made concrete as a professional interactive project workspace in which the system itself carries much of the methodological-navigation burden while the user can inspect, discuss, select, override, and guide the work.
+
+Important product ideas include:
+
+```text
+recommended analyses
+relevant option space
+full methodological knowledge catalog
+living project memory
+living reports
+project replay evaluation
+configurable human involvement
+```
+
+A central distinction is:
+
+```text
+what the system remembers
+    !=
+what the LLM receives on every reasoning call
+```
+
+Key sources:
+
+```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/checkpoints/097_post_v0_product_vision_concretized_as_interactive_methodological_workspace.md
+```
+
+---
+
+## 2026-08-19: Product object model and professional developer-workflow integration were concretized
+
+The project next derived a candidate object model from the desired user experience rather than from a storage technology or state-machine implementation.
+
+The conceptual separation is now:
+
+```text
+OBJECTS
+RELATIONS
+EVENTS
+VIEWS
+```
+
+Candidate project objects include:
+
+```text
+Project / IntentItem
+Artifact / Dataset / Variable
+Question / Assumption / Finding / Claim
+Method
+Proposal / Investigation / Run / Evidence / Decision
+Report / ReportSection
+Event / Relation
+```
+
+The design also established two new professional-workflow principles:
+
+```text
+P-023
+The system should complement the professional developer workbench rather than replace it.
+
+P-024
+Generated project code should remain independently runnable and professionally maintainable.
+```
+
+The current conceptual responsibility split is:
+
+```text
+Autonomous Data Science System
+    project/process control plane
+
+VS Code
+    developer workbench
+
+Python / Docker / local or remote compute
+    execution plane
+
+Git + GitHub
+    source versioning, collaboration, and code provenance
+```
+
+System-triggered and manually triggered executions should preferentially share the same reproducible run contract. Git/GitHub should be deeply integrated without becoming the storage substrate for every large artifact.
+
+Local-first execution is a strong current hypothesis for typical projects, but remains deliberately uncommitted as a universal architecture because future remote/cloud/cluster execution should remain possible.
+
+Key sources:
+
+```text
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/checkpoints/098_project_object_model_and_professional_developer_workflow_concretized.md
+docs/PRINCIPLES.md, P-023 and P-024
+```
+
+The next design problem is the methodological-navigation brain: how broad reusable knowledge becomes applicable, relevant, recommended, required, or inapplicable for a particular project without making the LLM the only memory or decision structure.
