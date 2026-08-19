@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 86  
+**Checkpoint:** 87  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 held-out treatment execution complete; blinded semantic evaluation pending  
+**Development stage:** Prototype V0 held-out treatment execution complete; blinded semantic-evaluation supervisor implemented pending preflight  
 **Resolved treatment slots:** 30 / 30  
 **Remaining treatment slots:** 0 / 30  
 **Next treatment slot:** none  
-**Execution mode:** frozen held-out execution completed under the prospectively validated sequential supervisor
+**Execution mode:** frozen treatment execution complete; semantic judging not yet started
 
 ## Current experiment
 
@@ -28,7 +28,7 @@ Detailed run ledger:
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-Held-out treatment execution is now complete. No treatment slot remains runnable.
+Held-out treatment execution is complete. No B0, B1, or P0 treatment slot remains runnable.
 
 ## Final treatment-execution counts
 
@@ -97,46 +97,11 @@ P0/B1 median total-token ratio: 2.160
 
 Semantic judging is still required before deciding whether the overall V0 result meets a registered strong-falsification condition or should be classified as inconclusive/no demonstrated continuation signal.
 
-## Final unattended batch
+## Post-execution observer correction
 
-The final batch was:
+The optional live monitor incorrectly counted aggregate `mechanical_verification/index.json` as an attempt-level report, producing `integrity_failures=index` and a count one above the authoritative verifier total.
 
-```bash
-python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
-```
-
-Batch identity:
-
-```text
-batch-20260818T212414Z
-```
-
-Result:
-
-```text
-model attempts launched: 19
-behavior-evaluable attempts in batch: 17
-provider-failure attempts in batch: 2
-stop reason: EXPERIMENT_COMPLETE
-resolved slots: 30 / 30
-```
-
-The two provider failures occurred at H2 R5 B0 `a01` and `a02`; the registered final replacement `a03` completed and became the retained trajectory.
-
-## Observer-only monitor correction
-
-The uploaded live-monitor log exposed a display/counting defect:
-
-```text
-verified count was one too high
-integrity_failures=index
-```
-
-The authoritative supervisor export shows 34 verified attempts and zero integrity failures. The monitor was accidentally counting aggregate `mechanical_verification/index.json` as though it were an attempt-level report.
-
-The monitor has now been corrected to count only JSON objects that contain an attempt-level string `attempt_id` and an `integrity_status` of `PASS` or `FAIL`. A regression test was added that places `index.json` beside genuine attempt reports and verifies it is ignored.
-
-This correction affects only the optional read-only observer and was made after treatment execution completed. It does not modify any held-out trajectory, verifier result, or supervisor decision.
+The monitor has been corrected to count only attempt-level reports with a valid `attempt_id` and `integrity_status`. This observer-only fix occurred after treatment execution completed and cannot have affected treatment evidence.
 
 Detailed record:
 
@@ -144,37 +109,87 @@ Detailed record:
 docs/checkpoints/086_post_execution_monitor_correction_and_public_release_preflight.md
 ```
 
-Local test-suite confirmation of this post-execution observer fix is still required before starting judge execution.
+## Blinded semantic-evaluation supervisor
+
+A resumable condition-blind semantic-evaluation layer has now been added:
+
+```text
+prototype_v0/src/ads_v0/semantic_judge_supervisor.py
+prototype_v0/tests/test_semantic_judge_supervisor.py
+```
+
+It uses the already calibrated `semantic_judge.py` implementation and does not change the registered rubric, judge model, two-pass rule, consensus rule, critical triggers, or treatment trajectories.
+
+Before any judge inference it must:
+
+```text
+require EXPERIMENT_COMPLETE;
+discover exactly one behavior-evaluable retained trajectory per frozen slot;
+build the common external judge packet;
+reject packet leakage of B0/B1/P0, slot IDs, or attempt IDs;
+assign an opaque case identifier derived only from packet fingerprint;
+write the treatment-to-case mapping to a separate local private decoder;
+order judge work by opaque case identity rather than treatment order.
+```
+
+The private decoder is stored under ignored local `results/` state and is explicitly excluded from blinded review exports. It must not be inspected until all required blinded manual adjudications are frozen.
+
+Each logical judge pass is persisted independently so completed judgments are never rerun because of their score. A condition-neutral transport-recovery rule, recorded before the first held-out semantic judge call, permits at most three provider attempts to obtain one usable logical pass when earlier provider attempts produce no usable judgment.
+
+Detailed implementation boundary:
+
+```text
+docs/checkpoints/087_blinded_semantic_judge_supervisor_implemented_pending_preflight.md
+```
+
+At the current boundary:
+
+```text
+held-out semantic judge calls launched: 0
+held-out semantic scores generated through this supervisor: 0
+local deterministic validation after implementation: pending
+30-case no-inference preparation validation: pending
+```
 
 ## Next experimental stage
 
 Do not run any further B0, B1, or P0 held-out treatment attempt.
 
-After pulling the latest repository state, run:
+First validate the new semantic orchestration without inference:
 
 ```bash
 pytest
+python -m ads_v0.heldout_monitor status
+python -m ads_v0.semantic_judge_supervisor prepare
+python -m ads_v0.semantic_judge_supervisor status
 ```
 
-Then begin the preregistered blinded semantic evaluation:
+Expected semantic preflight shape:
 
 ```text
-1. build condition-neutral normalized judge inputs for all 30 retained trajectories;
-2. run two independent semantic-judge passes per trajectory;
-3. score S1-S10 and SC1/SC2;
-4. combine exact and adjacent disagreements according to Foundation 012;
-5. manually adjudicate every 0-vs-2 criterion disagreement and every SC disagreement while blinded;
-6. only after consensus is frozen, decode condition identity;
-7. calculate H1, H2, and pooled comparisons and apply continuation/falsification criteria.
+30 blinded cases prepared
+0 model inference launched during preparation
+0 / 60 logical judge passes persisted
+30 / 30 treatment trajectories represented exactly once
+next blinded work identified only by opaque case ID
 ```
 
-No unblinded midstream semantic scoring should occur.
+After that preflight is reviewed, begin the preregistered blinded semantic evaluation:
+
+```text
+1. run two independent semantic-judge passes per retained trajectory;
+2. combine exact and adjacent disagreements according to Foundation 012;
+3. manually adjudicate every 0-vs-2 criterion disagreement and every SC disagreement while blinded;
+4. freeze all blinded consensus values;
+5. only then decode condition identity;
+6. calculate H1, H2, and pooled comparisons and apply continuation/falsification criteria.
+```
+
+No unblinded midstream semantic scoring or condition comparison may occur.
 
 ## Public-release preflight
 
-A local public-release audit has been run after adding a conservative repository/history scanner.
-
-Result:
+The repository/history audit has reported:
 
 ```text
 blocking findings: 0
@@ -183,8 +198,6 @@ result: PASS WITH WARNINGS
 ```
 
 The warnings concern commit-email visibility, the absence of a chosen LICENSE, and two absolute local project-path references. None is evidence of a leaked credential or tracked runtime-result directory.
-
-The repository should remain private through completion of the blinded semantic evaluation and final V0 interpretation. Publication preparation can continue without changing visibility.
 
 ## Knowledge and continuity
 
@@ -200,6 +213,7 @@ docs/foundations/015_held_out_supervision_and_mechanical_verification_architectu
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
 docs/checkpoints/086_post_execution_monitor_correction_and_public_release_preflight.md
+docs/checkpoints/087_blinded_semantic_judge_supervisor_implemented_pending_preflight.md
 ```
 
 System-level architecture:
@@ -216,4 +230,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Pull the post-execution observer correction, run the deterministic test suite once, then begin the preregistered blinded semantic-judge stage without modifying or rerunning held-out treatment trajectories.**
+**Run the deterministic suite and no-inference semantic-judge preparation/status preflight. Do not launch paid held-out judge calls until that preflight is reviewed.**
