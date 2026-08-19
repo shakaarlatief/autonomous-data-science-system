@@ -175,10 +175,11 @@ def test_prepare_creates_opaque_packets_and_private_decoder(
 
     for row in manifest["cases"]:
         blind_id = row["blind_id"]
+        packet_sha = row["packet_sha256"]
+        assert blind_id == supervisor._opaque_blind_id(packet_sha)
         assert blind_id.startswith("case-")
-        assert "b0" not in blind_id.lower()
-        assert "b1" not in blind_id.lower()
-        assert "p0" not in blind_id.lower()
+        assert len(blind_id) == len("case-") + 16
+        assert all(character in "0123456789abcdef" for character in blind_id[5:])
         assert (semantic_root / supervisor.BLINDED_DIR / blind_id / "packet.json").is_file()
 
 
