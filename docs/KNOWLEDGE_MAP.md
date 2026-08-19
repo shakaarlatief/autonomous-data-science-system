@@ -82,18 +82,21 @@ Current system-level synthesis of human-executed, human-plus-LLM, and system-med
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 ```
 
-Current detailed vision of the eventual professional interactive data-science environment. It explains the project workspace concept, methodological option-space navigation, recommended versus applicable versus full-catalog views, configurable human involvement, project memory versus LLM-context separation, living reports, and project-replay evaluation.
+Detailed vision of the eventual professional interactive data-science environment: project workspace, methodological option-space navigation, recommended versus applicable versus full-catalog views, configurable human involvement, project-memory versus LLM-context separation, living reports, and project-replay evaluation.
 
-Historical origin of the system-level abstraction:
+### Candidate project object model and professional developer workflow
 
 ```text
-docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-The post-V0 product clarification is preserved historically in:
+Defines the current product-level candidate object model and the separation among project workspace, VS Code, execution environment, Git/GitHub, artifact storage, and LLM context. It also preserves the requirement that generated consequential code remain independently runnable and professionally maintainable.
+
+Historical product-clarification checkpoints:
 
 ```text
 docs/checkpoints/097_post_v0_product_vision_concretized_as_interactive_methodological_workspace.md
+docs/checkpoints/098_project_object_model_and_professional_developer_workflow_concretized.md
 ```
 
 ---
@@ -123,11 +126,98 @@ surfacing what becomes relevant next;
 maintaining living project outputs and reports.
 ```
 
-EDA is the current concrete reference example for this vision.
+EDA is the current concrete reference example.
 
 The central product principle is that the user should not need to repeatedly remember every useful methodological question to ask a general-purpose LLM.
 
 The system may remain highly interactive and should support guided, semi-autonomous, and more autonomous project styles according to project intent.
+
+---
+
+## Product object model, events, relations, and views
+
+Read:
+
+```text
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+The current product-level conceptual model separates:
+
+```text
+OBJECTS
+RELATIONS
+EVENTS
+VIEWS
+```
+
+Candidate object families include:
+
+```text
+Project / IntentItem
+Artifact / Dataset / Variable
+Question / Assumption / Finding / Claim
+Method
+Proposal / Investigation / Run / Evidence / Decision
+Report / ReportSection
+Event / Relation
+```
+
+Important distinctions include:
+
+```text
+Investigation != Run
+Evidence != Finding
+Finding != Claim
+Claim != Decision
+current state != event history
+persisted object != derived recommendation
+workspace section != fundamental object
+```
+
+EDA, Validation, Features, and Models are currently best understood as user-facing views over shared project objects rather than backend silos.
+
+The candidate object model is **not** a frozen storage schema.
+
+---
+
+## Professional developer workbench, VS Code, Git, GitHub, and execution
+
+Canonical principles:
+
+```text
+docs/PRINCIPLES.md, P-023 and P-024
+```
+
+Deep rationale:
+
+```text
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+Current conceptual split:
+
+```text
+Autonomous Data Science System
+    project/process control plane
+
+VS Code
+    developer workbench
+
+Python / Docker / local or remote compute
+    execution plane
+
+Git + GitHub
+    source versioning, collaboration, and code provenance
+```
+
+The system should complement VS Code rather than reproduce a full IDE.
+
+Consequential generated project code should remain normal, professional, independently runnable code. A system-triggered execution and a manual terminal/VS Code execution should preferentially share the same reproducible command/configuration contract.
+
+Git/GitHub should be deeply integrated for source versioning and provenance, while large datasets, models, and generated arrays may live in separate artifact storage.
+
+Local-first execution is a strong current hypothesis for typical projects, but it is **not yet a universal architecture decision**. Future execution should remain compatible with remote GPU, cloud, cluster, or organizational infrastructure.
 
 ---
 
@@ -156,13 +246,13 @@ docs/PRINCIPLES.md
 
 ## Project state, dependencies, and orchestration
 
-The broad theory lives in:
+Broad theory:
 
 ```text
 docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
 ```
 
-Prototype V0's concrete implementation lives in:
+Prototype V0 implementation:
 
 ```text
 prototype_v0/src/ads_v0/p0.py
@@ -170,13 +260,15 @@ prototype_v0/src/ads_v0/p0_controller.py
 prototype_v0/src/ads_v0/p0_schema.py
 ```
 
-The V0 implementation is now **falsified as the architecture to continue unchanged**. For the evidence and exact mechanism-level lessons, read:
+The V0 implementation is **falsified as the architecture to continue unchanged**.
+
+Final evidence:
 
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-Important distinction:
+Important distinctions:
 
 ```text
 broad state/dependency theory remains an open design space
@@ -184,9 +276,7 @@ broad state/dependency theory remains an open design space
 current P0 always-on representation is justified
 ```
 
-V0 found that P0's dependency repair was technically precise, but B1 repaired almost as well while P0 incurred severe repeated-context cost.
-
-Foundation 017 adds another important distinction:
+and:
 
 ```text
 what the system persists
@@ -194,7 +284,17 @@ what the system persists
 what an LLM receives on every turn
 ```
 
-Future project memory may be large while model context is selectively retrieved and small.
+Foundation 018 adds:
+
+```text
+current project state
+!=
+event history
+
+workspace section
+!=
+fundamental persisted object
+```
 
 ---
 
@@ -212,6 +312,7 @@ Concrete product interpretation:
 
 ```text
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
 V0 evidence:
@@ -220,24 +321,25 @@ V0 evidence:
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-The important V0 result is that B1 gained most of the semantic benefit simply by receiving the same four methodological concepts statically. P0's explicit activation layer added only a small further improvement and showed path-sensitive activation brittleness.
+B1 gained most of the semantic benefit by receiving the same four methodological concepts statically. P0's explicit activation layer added only a small additional improvement and showed path-sensitive activation brittleness.
 
-The post-V0 product vision does not reduce methodological knowledge to a static prompt. Instead it treats a broad, inspectable, evolving method/decision catalog as a candidate system asset while leaving its retrieval, ranking, applicability, and reasoning interface open for design and testing.
+The post-V0 product vision does not reduce methodological knowledge to a static prompt. It treats a broad, inspectable, evolving method/decision catalog as a candidate system asset while leaving its representation, retrieval, applicability, ranking, and reasoning interface open for design and testing.
 
 ---
 
 ## Project initialization
 
+Deep theory:
+
 ```text
 docs/foundations/005_project_initialization_and_universal_bootstrap.md
 ```
 
-How a new project may be characterized and bootstrapped without assuming one global workflow.
-
-For the concrete desired project-start experience, also read:
+Concrete desired project-start experience:
 
 ```text
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
 ---
@@ -248,8 +350,6 @@ docs/foundations/017_interactive_data_science_workspace_and_methodological_navig
 docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 ```
 
-Why the evaluated object is a project trajectory rather than only a final model.
-
 Prototype V0 is the first completed controlled realization:
 
 ```text
@@ -259,43 +359,25 @@ docs/foundations/011_prototype_v0_technical_specification.md
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-V0 demonstrates the value of strong controls, preregistration, deterministic checks, blinded semantic judging, explicit resource criteria, and allowing a richer architecture to lose.
-
-For the broader post-V0 evaluation direction, including project replay and mixed quantitative/qualitative product evaluation, read:
-
-```text
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-```
+For the broader post-V0 evaluation direction, including project replay and mixed quantitative/qualitative product evaluation, read Foundation 017.
 
 ---
 
 ## Prototype V0 final result
 
-### Final authoritative report
+Authoritative report:
 
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-### Quick explanation
+Quick explanation:
 
 ```text
 prototype_v0/README.md
 ```
 
-### Final compact execution ledger
-
-```text
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
-```
-
-### Frozen protocol
-
-```text
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-```
-
-### Final classification
+Final classification:
 
 ```text
 STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
@@ -316,16 +398,6 @@ P0/B1 median token ratio: 2.160
 
 The current P0 representation must not be expanded merely because it already exists. The broader system vision remains active.
 
-Historical completion checkpoints include:
-
-```text
-docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
-docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
-docs/checkpoints/093_blinded_semantic_freeze_independently_verified_and_unblinding_authorized.md
-docs/checkpoints/095_decoded_semantic_results_verified_and_p0_diagnostic_export_added.md
-docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
-```
-
 ---
 
 ## Held-out supervision and mechanical verification
@@ -345,7 +417,7 @@ prototype_v0/src/ads_v0/heldout_supervisor.py
 prototype_v0/src/ads_v0/heldout_monitor.py
 ```
 
-These evaluation-infrastructure components are not part of the falsified P0 semantic treatment. They remain evidence-supported operational infrastructure.
+These evaluation-infrastructure components are not part of the falsified P0 semantic treatment.
 
 ---
 
@@ -361,13 +433,6 @@ Deep rationale:
 
 ```text
 docs/foundations/016_execution_observability_separation.md
-```
-
-Prototype observers:
-
-```text
-prototype_v0/src/ads_v0/heldout_monitor.py
-prototype_v0/src/ads_v0/semantic_judge_monitor.py
 ```
 
 System pattern:
@@ -388,12 +453,12 @@ Read:
 ```text
 1. docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 2. docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-3. docs/VISION.md
-4. docs/experiments/prototype_v0/FINAL_RESULTS.md
-5. docs/foundations/001_initial_vision_and_reasoning.md
+3. docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+4. docs/VISION.md
+5. docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-V0 shows that the answer cannot simply be "add more architecture." Foundation 017 makes the product goal concrete: the system should externalize project navigation and methodological option-space intelligence so the user does not have to reconstruct it through repeated prompts.
+V0 shows that the answer cannot simply be "add more architecture." Foundations 017 and 018 make the product goal concrete: externalize project navigation and methodological option-space intelligence while integrating cleanly with the normal professional code/execution workflow.
 
 ---
 
@@ -417,17 +482,6 @@ Deep preservation rationale:
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 ```
 
-Current routing/history layers:
-
-```text
-docs/KNOWLEDGE_MAP.md
-docs/MAJOR_CHANGES.md
-docs/checkpoints/
-Git history
-```
-
-The storage substrate remains Git + Markdown until observed retrieval, dependency, consistency, concurrency, or automation problems justify more advanced infrastructure.
-
 ---
 
 ## Current unresolved questions
@@ -436,9 +490,9 @@ The storage substrate remains Git + Markdown until observed retrieval, dependenc
 docs/OPEN_QUESTIONS.md
 ```
 
-Several V0-related question statuses still require post-V0 stage-boundary reconciliation. `docs/CURRENT_STATE.md` and `docs/experiments/prototype_v0/FINAL_RESULTS.md` govern the current experimental interpretation until that reconciliation is complete.
+Several older V0-related statuses still require the planned post-V0 reconciliation. `CURRENT_STATE.md` and the final V0 report govern current interpretation in the meantime.
 
-New product/system questions raised by Foundation 017 should be reconciled into the canonical question register during the upcoming post-V0 reconciliation rather than silently treated as settled architecture.
+Product/system questions introduced by Foundations 017 and 018 should be reconciled into the canonical question register during that stage-boundary reconciliation rather than silently treated as settled architecture.
 
 ---
 
@@ -456,33 +510,25 @@ Default order when documents disagree:
 7. raw historical material for provenance
 ```
 
-A material unresolved conflict should become an explicit open question rather than being silently reconciled.
-
 ---
 
 ## Current next-design question
 
-Before selecting a V1 architecture, the project should make the desired product/system contract more explicit.
+Before selecting a V1 architecture, continue designing the **methodological-navigation brain**.
 
 Current questions include:
 
 ```text
-What should the professional project workspace expose?
-What should initialize automatically from project sources?
-What is a reusable methodological knowledge object?
-How should applicability and recommendation be represented?
-How should recommended, relevant, and full-catalog views interact?
-What should execute automatically versus await user selection?
-What project information must persist?
-How should LLM context be selected from persistent project memory?
-How should findings change later recommendations and decisions?
-How should living reports evolve?
-How should guided versus autonomous operation be configured?
-How should completed projects become project-replay evaluations?
+What should a reusable Method/knowledge object contain?
+How should applicability conditions be represented?
+How should known methods become applicable, relevant, recommended, or required?
+How should inapplicable methods remain inspectable?
+How should alternatives be surfaced?
+How should recommendations explain their reasoning?
+What role should the LLM play versus explicit knowledge structures?
+How should cost, risk, project intent, and human preference affect ranking?
+How should knowledge grow from completed projects without unsafe overgeneralization?
+How should recommendation quality be evaluated through project replay and other tests?
 ```
 
-After this product/system contract is clearer, the next experimental architecture question remains approximately:
-
-> What is the smallest low-overhead mechanism that improves reliability beyond a strong B1-like baseline on substantial changing project trajectories where conversational memory and static prompting are expected to fail?
-
-No V1 architecture has yet been accepted.
+No V1 backend architecture has yet been accepted.
