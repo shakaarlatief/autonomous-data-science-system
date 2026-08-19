@@ -179,9 +179,17 @@ def snapshot_progress(
         payload = _safe_json(path)
         if payload is None:
             continue
+
+        attempt_id = payload.get("attempt_id")
+        integrity_status = payload.get("integrity_status")
+        if not isinstance(attempt_id, str) or integrity_status not in {"PASS", "FAIL"}:
+            # The verification directory also contains aggregate metadata such as
+            # index.json. Only attempt-level reports belong in live report counts.
+            continue
+
         valid_verification_reports += 1
-        if payload.get("integrity_status") != "PASS":
-            integrity_failures.append(str(payload.get("attempt_id", path.stem)))
+        if integrity_status != "PASS":
+            integrity_failures.append(attempt_id)
 
     return MonitorSnapshot(
         generated_at_utc=_utc_now(),
