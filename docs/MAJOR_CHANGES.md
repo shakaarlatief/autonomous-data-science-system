@@ -375,4 +375,48 @@ docs/checkpoints/098_project_object_model_and_professional_developer_workflow_co
 docs/PRINCIPLES.md, P-023 and P-024
 ```
 
-The next design problem is the methodological-navigation brain: how broad reusable knowledge becomes applicable, relevant, recommended, required, or inapplicable for a particular project without making the LLM the only memory or decision structure.
+---
+
+## 2026-08-19: Methodological-navigation brain became a concrete relevance architecture
+
+The project moved from the broad idea of a reusable method catalog to a more explicit candidate architecture for methodological navigation.
+
+The brain is now understood as potentially containing multiple reusable knowledge types:
+
+```text
+methods
+question templates
+decision frameworks
+invariants / hard rules
+failure modes
+investigation patterns
+interpretation knowledge
+follow-up / dependency knowledge
+```
+
+A staged relevance model was introduced:
+
+```text
+KNOWN
+    -> APPLICABLE
+    -> RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
+```
+
+A new concept, the **methodological horizon**, separates a potentially large global knowledge base from the small project-specific slice that should be evaluated and surfaced at a particular moment.
+
+The current candidate flow combines explicit filtering where prerequisites or hard rules are reliable with flexible reasoning for semantic applicability, relevance, tradeoffs, and prioritization.
+
+Recommendation rationale should be inspectable, and reusable knowledge should eventually retain scope, provenance, maturity, counterexamples, and challenge history. Methodological meaning should remain separate from concrete execution templates.
+
+The brain should also remain open-world: flexible reasoning may identify important concerns absent from the explicit catalog, creating candidate knowledge gaps for later review and promotion.
+
+Key sources:
+
+```text
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
+```
+
+The next design exercise will test the reusable knowledge representation against Histogram, Missing-data investigation, Temporal validation, Random Forest, and Prediction-time feature eligibility before selecting any V1 storage or backend architecture.
