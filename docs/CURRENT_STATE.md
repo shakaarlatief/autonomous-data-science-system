@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 87  
+**Checkpoint:** 88  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 held-out treatment execution complete; blinded semantic-evaluation supervisor implemented pending preflight  
+**Development stage:** Prototype V0 held-out treatment execution complete; blinded semantic-evaluation preflight prepared with one test false positive corrected pending rerun  
 **Resolved treatment slots:** 30 / 30  
 **Remaining treatment slots:** 0 / 30  
 **Next treatment slot:** none  
@@ -101,7 +101,14 @@ Semantic judging is still required before deciding whether the overall V0 result
 
 The optional live monitor incorrectly counted aggregate `mechanical_verification/index.json` as an attempt-level report, producing `integrity_failures=index` and a count one above the authoritative verifier total.
 
-The monitor has been corrected to count only attempt-level reports with a valid `attempt_id` and `integrity_status`. This observer-only fix occurred after treatment execution completed and cannot have affected treatment evidence.
+The monitor has been corrected to count only attempt-level reports with a valid `attempt_id` and `integrity_status`. The user has now confirmed the corrected status locally:
+
+```text
+active=none
+completed_attempts=34
+verified=34
+integrity_failures=none
+```
 
 Detailed record:
 
@@ -111,7 +118,7 @@ docs/checkpoints/086_post_execution_monitor_correction_and_public_release_prefli
 
 ## Blinded semantic-evaluation supervisor
 
-A resumable condition-blind semantic-evaluation layer has now been added:
+A resumable condition-blind semantic-evaluation layer is implemented:
 
 ```text
 prototype_v0/src/ads_v0/semantic_judge_supervisor.py
@@ -120,16 +127,16 @@ prototype_v0/tests/test_semantic_judge_supervisor.py
 
 It uses the already calibrated `semantic_judge.py` implementation and does not change the registered rubric, judge model, two-pass rule, consensus rule, critical triggers, or treatment trajectories.
 
-Before any judge inference it must:
+Before any judge inference it:
 
 ```text
-require EXPERIMENT_COMPLETE;
-discover exactly one behavior-evaluable retained trajectory per frozen slot;
-build the common external judge packet;
-reject packet leakage of B0/B1/P0, slot IDs, or attempt IDs;
-assign an opaque case identifier derived only from packet fingerprint;
-write the treatment-to-case mapping to a separate local private decoder;
-order judge work by opaque case identity rather than treatment order.
+requires EXPERIMENT_COMPLETE;
+discovers exactly one behavior-evaluable retained trajectory per frozen slot;
+builds the common external judge packet;
+rejects packet leakage of B0/B1/P0, slot IDs, or attempt IDs;
+assigns an opaque case identifier derived only from packet fingerprint;
+writes the treatment-to-case mapping to a separate local private decoder;
+orders judge work by opaque case identity rather than treatment order.
 ```
 
 The private decoder is stored under ignored local `results/` state and is explicitly excluded from blinded review exports. It must not be inspected until all required blinded manual adjudications are frozen.
@@ -142,39 +149,71 @@ Detailed implementation boundary:
 docs/checkpoints/087_blinded_semantic_judge_supervisor_implemented_pending_preflight.md
 ```
 
+## First no-inference semantic preflight
+
+The user ran the preflight after pulling the new supervisor.
+
+Observed:
+
+```text
+pytest: 1 failed, 83 passed
+heldout monitor: active=none, completed_attempts=34, verified=34, integrity_failures=none
+prepared blinded cases: 30 / 30
+model inference launched during prepare: 0
+semantic logical passes: 0 / 60
+completed semantic cases: 0 / 30
+provider calls: 0
+```
+
+The sole failed test required an opaque hexadecimal blind ID to contain none of the literal substrings `b0`, `b1`, or `p0`. A digest happened to contain `b0` by chance. This was a test false positive, not a production blinding defect, because blind IDs are derived only from the condition-neutral packet fingerprint.
+
+Only the test was corrected. Production semantic-supervisor code and the already prepared packets were not changed. The corrected test now verifies the actual invariant directly: each blind ID must equal the deterministic opaque ID derived from its packet SHA-256 and have the expected hexadecimal form.
+
+Detailed record:
+
+```text
+docs/checkpoints/088_semantic_judge_preflight_caught_false_positive_blind_id_test.md
+```
+
 At the current boundary:
 
 ```text
 held-out semantic judge calls launched: 0
-held-out semantic scores generated through this supervisor: 0
-local deterministic validation after implementation: pending
-30-case no-inference preparation validation: pending
+held-out semantic logical passes persisted: 0 / 60
+prepared blinded cases locally: 30 / 30
+condition decoding performed: no
+semantic condition comparison performed: no
+corrected deterministic suite rerun: pending
 ```
 
 ## Next experimental stage
 
 Do not run any further B0, B1, or P0 held-out treatment attempt.
 
-First validate the new semantic orchestration without inference:
+Pull the test correction and rerun the no-inference preflight:
 
 ```bash
+git pull origin main
 pytest
 python -m ads_v0.heldout_monitor status
 python -m ads_v0.semantic_judge_supervisor prepare
 python -m ads_v0.semantic_judge_supervisor status
 ```
 
-Expected semantic preflight shape:
+Expected shape:
 
 ```text
+all tests pass
+active=none, completed_attempts=34, verified=34, integrity_failures=none
 30 blinded cases prepared
 0 model inference launched during preparation
 0 / 60 logical judge passes persisted
-30 / 30 treatment trajectories represented exactly once
-next blinded work identified only by opaque case ID
+provider_calls=0
 ```
 
-After that preflight is reviewed, begin the preregistered blinded semantic evaluation:
+Because preparation is idempotent, the existing 30 local packets should be revalidated rather than regenerated incompatibly.
+
+After this corrected preflight is reviewed, begin the preregistered blinded semantic evaluation:
 
 ```text
 1. run two independent semantic-judge passes per retained trajectory;
@@ -214,6 +253,7 @@ docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
 docs/checkpoints/086_post_execution_monitor_correction_and_public_release_preflight.md
 docs/checkpoints/087_blinded_semantic_judge_supervisor_implemented_pending_preflight.md
+docs/checkpoints/088_semantic_judge_preflight_caught_false_positive_blind_id_test.md
 ```
 
 System-level architecture:
@@ -230,4 +270,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Run the deterministic suite and no-inference semantic-judge preparation/status preflight. Do not launch paid held-out judge calls until that preflight is reviewed.**
+**Pull the blind-ID test correction and rerun the deterministic/no-inference semantic preflight. Do not launch paid held-out judge calls until it passes.**
