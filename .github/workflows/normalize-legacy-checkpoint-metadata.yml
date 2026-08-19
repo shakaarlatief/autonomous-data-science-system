@@ -1,0 +1,45 @@
+name: Normalize legacy checkpoint metadata
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/normalize_checkpoint_metadata.py
+      - .github/workflows/normalize-legacy-checkpoint-metadata.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Normalize legacy checkpoint headers
+        run: python scripts/normalize_checkpoint_metadata.py --write
+
+      - name: Validate all checkpoint metadata
+        run: python scripts/check_checkpoint_metadata.py --all
+
+      - name: Commit normalization if needed
+        shell: bash
+        run: |
+          if git diff --quiet -- docs/checkpoints; then
+            echo "No legacy checkpoint metadata changes were required."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/checkpoints
+          git commit -m "Normalize legacy checkpoint metadata"
+          git push
