@@ -5,12 +5,33 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
 
 # Local environment and secret files
 .env
 .env.*
 !.env.example
+.envrc
+.direnv/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+service_account*.json
+
+# IDE and operating-system local files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
 
 # Generated experiment artifacts and runtime outputs
 **/generated/
 **/results/
+
+# Local logs
+*.log
