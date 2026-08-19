@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 85  
+**Checkpoint:** 86  
 **Date:** 2026-08-19  
 **Development stage:** Prototype V0 held-out treatment execution complete; blinded semantic evaluation pending  
 **Resolved treatment slots:** 30 / 30  
@@ -123,11 +123,40 @@ resolved slots: 30 / 30
 
 The two provider failures occurred at H2 R5 B0 `a01` and `a02`; the registered final replacement `a03` completed and became the retained trajectory.
 
+## Observer-only monitor correction
+
+The uploaded live-monitor log exposed a display/counting defect:
+
+```text
+verified count was one too high
+integrity_failures=index
+```
+
+The authoritative supervisor export shows 34 verified attempts and zero integrity failures. The monitor was accidentally counting aggregate `mechanical_verification/index.json` as though it were an attempt-level report.
+
+The monitor has now been corrected to count only JSON objects that contain an attempt-level string `attempt_id` and an `integrity_status` of `PASS` or `FAIL`. A regression test was added that places `index.json` beside genuine attempt reports and verifies it is ignored.
+
+This correction affects only the optional read-only observer and was made after treatment execution completed. It does not modify any held-out trajectory, verifier result, or supervisor decision.
+
+Detailed record:
+
+```text
+docs/checkpoints/086_post_execution_monitor_correction_and_public_release_preflight.md
+```
+
+Local test-suite confirmation of this post-execution observer fix is still required before starting judge execution.
+
 ## Next experimental stage
 
 Do not run any further B0, B1, or P0 held-out treatment attempt.
 
-The next stage is the preregistered blinded semantic evaluation:
+After pulling the latest repository state, run:
+
+```bash
+pytest
+```
+
+Then begin the preregistered blinded semantic evaluation:
 
 ```text
 1. build condition-neutral normalized judge inputs for all 30 retained trajectories;
@@ -143,7 +172,7 @@ No unblinded midstream semantic scoring should occur.
 
 ## Public-release preflight
 
-A local public-release audit has also been run after adding a conservative repository/history scanner.
+A local public-release audit has been run after adding a conservative repository/history scanner.
 
 Result:
 
@@ -170,6 +199,7 @@ docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
+docs/checkpoints/086_post_execution_monitor_correction_and_public_release_preflight.md
 ```
 
 System-level architecture:
@@ -186,4 +216,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Begin the preregistered blinded semantic-judge stage without modifying or rerunning held-out treatment trajectories.**
+**Pull the post-execution observer correction, run the deterministic test suite once, then begin the preregistered blinded semantic-judge stage without modifying or rerunning held-out treatment trajectories.**
