@@ -1,21 +1,65 @@
 # Current State
 
-**Checkpoint:** 95  
+**Checkpoint:** 96  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 treatment and semantic inference complete; blinded consensus frozen; condition decoding complete; P0 architecture-specific diagnostics pending  
+**Development stage:** Prototype V0 complete; current P0 design strongly falsified; transition to post-V0 reconciliation and next-architecture design  
 **Resolved treatment slots:** 30 / 30  
 **Semantic logical passes:** 60 / 60  
-**Completed semantic cases:** 30 / 30  
-**Manual adjudication required:** 0 / 30  
-**Execution mode:** no further treatment or semantic-judge inference is authorized for Prototype V0
+**Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
+**Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
-## Current experiment
+## Current project question
 
-Prototype V0 asks:
+The broader Autonomous Data Science System still aims to create the best defensible data-science process for a project's objectives, constraints, deliverables, and desired human involvement.
+
+Prototype V0 tested one narrower architectural claim:
 
 > Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than an equally capable simpler LLM workflow?
 
-B1 is the primary architectural control.
+The V0 answer for the implemented P0 design and churn benchmark family is now **no at the required reliability/cost threshold**.
+
+## Final Prototype V0 result
+
+Primary pooled comparison:
+
+```text
+                         B0          B1          P0
+Targeted mean           1.47        1.73        1.78
+Strong targeted pass    0/10        0/10        0/10
+Critical failure runs   0/10        0/10        0/10
+Completed in budget    10/10       10/10        3/10
+Budget exhausted        0/10        0/10        7/10
+Median total tokens  122,544.5   120,564.5   260,370.0
+Median calls            16          16          13
+Median Python            6           6           5
+```
+
+P0 versus B1:
+
+```text
+targeted semantic gain: +0.05
+registered material-gain threshold: +0.30 plus >=2 additional strong passes
+critical-failure difference: 0
+strong-targeted-pass difference: 0
+median token ratio: 2.160
+```
+
+The small P0 semantic advantage is consistent across both held-out variants:
+
+```text
+H1 P0 - B1 targeted mean: +0.06
+H2 P0 - B1 targeted mean: +0.04
+```
+
+but it is not material under the preregistered reliability criterion.
+
+B1 already improved substantially over B0 using only the same four methodological concepts supplied statically. P0 added little semantic reliability beyond B1 while more than doubling median token use and causing seven budget-exhausted runs.
+
+Detailed final result:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
 
 Frozen protocol:
 
@@ -23,269 +67,149 @@ Frozen protocol:
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Detailed held-out ledger:
+## Why the classification is strong falsification
+
+Foundation 012 defines a strong-falsification condition when B1 matches or exceeds P0 reliability while P0 median tokens or calls are at least 25% higher.
+
+Observed reliability evidence:
 
 ```text
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+critical failures: B1 0, P0 0
+strong targeted passes: B1 0, P0 0
+targeted-score difference: P0 +0.05
+registered material targeted improvement: +0.30 plus strong-pass improvement
 ```
 
-## Fixed treatment evidence
-
-Held-out treatment execution is complete:
+Observed cost:
 
 ```text
-resolved treatment slots: 30 / 30
-behavior-evaluable retained attempts: 30
-B0 retained runs: 10
-B1 retained runs: 10
-P0 retained runs: 10
-non-behavior-evaluable provider/interface attempts: 4
-mechanical integrity PASS: 34
-mechanical integrity FAIL: 0
+P0/B1 median token ratio: 2.160
 ```
 
-Pooled mechanical outcomes:
+Therefore the current P0 architecture meets the preregistered strong-falsification condition.
 
-| Condition | Completed within budget | Budget exhausted | Median tokens | Median calls | Median Python |
-|---|---:|---:|---:|---:|---:|
-| B0 | 10 / 10 | 0 / 10 | 122,544.5 | 16 | 6 |
-| B1 | 10 / 10 | 0 / 10 | 120,564.5 | 16 | 6 |
-| P0 | 3 / 10 | 7 / 10 | 260,370.0 | 13 | 5 |
+This conclusion is about the **current P0 design on this benchmark family**. It does not falsify the broader system vision or prove that structured memory, dependency tracking, knowledge activation, or deterministic controls are universally useless.
 
-P0/B1 median ratios:
+## Architecture-specific P0 diagnostics
+
+The ten retained P0 trajectories were reviewed after unblinding using their internal state, state history, knowledge activations, traces, conversations, milestones, and execution records.
+
+Observed across all ten:
 
 ```text
-total tokens: 2.160
-model calls: 0.813
-Python attempts: 0.833
+state objects: 506
+relations: 483
+invalidated transitions: 14
+reopened transitions: 24
+repair-priority objects: 32
+support-reassessment objects: 30
+knowledge reopens: 2
+P0 state-control errors: 0
+blocked P0 ACTION objects: 0
+P0 Python-budget blocks: 0
 ```
 
-## Fixed and frozen semantic evidence
+The 14 invalidations were materially tied to the post-outcome feature or evidence generated from models containing it. No critical over-invalidation was found.
 
-The preregistered two-pass judge completed:
+No false P0 action block occurred.
+
+One H2 R4 internal validation-regime question was reopened more broadly than necessary after invalidation of a model-specific claim, then immediately re-resolved without additional analysis. This is a useful over-propagation warning but does not exceed the registered friction threshold.
+
+The generic support-reassessment mechanism also created avoidable internal obligation churn. That mechanism should not be carried forward unchanged.
+
+Knowledge activation was path-sensitive: K-INFO-003 activated in only 8/10 P0 runs because two trajectories learned schema/value information through Python rather than the table-metadata path expected by the trigger. The LLM still reasoned correctly, but the trigger design is brittle.
+
+No held-out-specific hard coding was found in P0 source or trajectories.
+
+## What survives V0
+
+Strong current defaults:
 
 ```text
-provider calls: 60
-logical passes: 60 / 60
-completed cases: 30 / 30
-provider failures: 0
-manual-adjudication cases: 0
+one strong LLM reasoner
+compact explicit methodological guidance
+instrumented execution and traceability
+precise deterministic information-boundary controls where justified
+append-only experiment provenance
+external mechanical verification
+read-only observability separated from execution
 ```
 
-Two-pass agreement:
+The validated supervision, verification, freeze, and observability infrastructure is not part of the failed P0 semantic treatment and remains useful.
+
+Do not carry forward unchanged:
 
 ```text
-ordinary comparisons: 300
-exact: 288 / 300 = 96.0%
-adjacent: 12 / 300 = 4.0%
-0-vs-2: 0
-SC comparisons: 60 / 60 exact
-SC1 consensus flags: 0 / 30
-SC2 consensus flags: 0 / 30
+full typed project state resent every reasoning cycle
+large always-on object/relation context
+current generic support-reassessment propagation
+current path-sensitive tag-trigger activation design
+current dependency-reopening machinery as a universal mandatory layer
+full P0 state-derived frontier representation
 ```
 
-Frozen blinded semantic aggregate SHA-256:
+Candidate ideas to retest in cheaper form include compact question/claim/decision memory, delta state, selective retrieval, event-driven repair after material changes, precise gates outside the LLM context, and a lightweight unresolved-blocker frontier.
+
+These are hypotheses, not a chosen V1 architecture.
+
+## Hypothesis summary
 
 ```text
-836a6677e2803338697395afea431de5af0fc8ece469940bb687855bf7ec0757
+H1 typed state:
+    no material reliability advantage demonstrated
+
+H2 knowledge activation:
+    no material advantage over static B1 knowledge; trigger brittleness observed
+
+H3 prospective safeguards:
+    zero false blocks, but no invalid final-test proposal occurred, so incremental benefit was not discriminated
+
+H4 dependency-aware correction:
+    mechanically precise and semantically strong, but B1 repaired almost as well without the state cost
+
+H5 state-driven action selection:
+    fewer calls and Python actions than B1, but much larger per-call context caused severe token failure
 ```
 
-The decoder-free frozen ZIP was independently verified with zero file-hash mismatches and an exact aggregate recomputation before unblinding.
+## Next stage
 
-## Condition decoding complete
+Prototype V0 is closed. Do not tune P0 against the completed held-out benchmark and do not launch more V0 treatment or judge calls.
 
-The deterministic decoder re-established the frozen boundary before reading the private condition mapping and produced 30 decoded run rows:
+The next project stage is:
 
 ```text
-B0: 10
-B1: 10
-P0: 10
-H1: 5 per condition
-H2: 5 per condition
+1. perform the post-V0 knowledge reconciliation;
+2. update stale canonical/open-question material that still describes V0 as active;
+3. preserve the V0 result as an architectural constraint, not merely an experiment anecdote;
+4. design the smallest post-V0 candidate architecture from the evidence;
+5. design a harder benchmark targeted at mechanisms B1 may actually fail on;
+6. preregister the next comparison before implementing the new treatment.
 ```
 
-The uploaded decoded ZIP was independently checked. Its CSV and JSON representations agree on all shared scalar fields, and pooled/variant summaries reproduce from the run-level rows.
+The next experimental question should be approximately:
 
-### Primary pooled semantic result
+> What is the smallest low-overhead mechanism that improves reliability beyond B1 on longer changing project trajectories where conversational memory and static methodological prompting are expected to fail?
 
-| Condition | Targeted architecture mean | Strong targeted pass | Critical-failure runs |
-|---|---:|---:|---:|
-| B0 | 1.47 | 0 / 10 | 0 / 10 |
-| B1 | 1.73 | 0 / 10 | 0 / 10 |
-| P0 | 1.78 | 0 / 10 | 0 / 10 |
+The next benchmark should consider multiple sequential state changes, longer dependency chains, partially shared evidence, selectively relevant knowledge, and meaningful under-propagation versus over-propagation risk.
 
-Primary P0 versus B1 facts:
+## Knowledge and continuity
+
+Minimum reading for a future session:
 
 ```text
-P0 - B1 targeted mean: +0.05
-strong-targeted-pass difference: 0
-critical-failure-event difference: 0
-```
-
-The preregistered material-reliability improvement is therefore not met.
-
-Criterion-level P0 minus B1 pooled differences:
-
-```text
-S1   0.00
-S2   0.00
-S3  +0.20
-S4  -0.05
-S5   0.00
-S6   0.00
-S7  +0.05
-S8  -0.05
-S9  -0.05
-S10 -0.30
-```
-
-P0's clearest semantic gain is explicit inherited-preprocessing diagnosis (S3). B1 already captures most of the semantic improvement over B0. P0 does not materially improve the broader targeted reliability vector over B1.
-
-### Cross-variant result
-
-```text
-H1 targeted means:
-B0 1.44
-B1 1.70
-P0 1.76
-P0 - B1 = +0.06
-
-H2 targeted means:
-B0 1.50
-B1 1.76
-P0 1.80
-P0 - B1 = +0.04
-```
-
-Cross-variant robustness passes, but the gains over B1 are small on both variants.
-
-Paired P0 minus B1 targeted differences:
-
-```text
-H1: +0.10, 0.00, 0.00, 0.00, +0.20
-H2:  0.00, +0.20, 0.00, 0.00, 0.00
-```
-
-Seven of ten paired comparisons are exact ties.
-
-## Continuation status
-
-The preregistered continuation signal is definitively absent. P0 fails multiple mandatory components:
-
-```text
-material reliability improvement: fail
-completion: fail
-acceptable resource cost: fail
-budget-exhaustion limit: fail
-```
-
-P0 does pass:
-
-```text
-critical failures not worse than B1
-cross-variant targeted-score floor
-```
-
-Therefore Prototype V0 does not justify continuing the current structured P0 architecture under the preregistered criterion.
-
-## Final classification still pending
-
-Foundation 012 distinguishes between:
-
-```text
-strong falsification
-
-and
-
-inconclusive / no demonstrated continuation signal
-```
-
-The common semantic/mechanical evidence does not by itself resolve every strong-falsification clause. The remaining P0-internal architecture-specific questions are:
-
-```text
-critical architecture-induced false blocking or over-invalidation;
-noncritical architecture-induced false blocking or unnecessary broad reopening;
-held-out-case-specific hard coding.
-```
-
-The resource side of the final B1-versus-P0 strong-falsification clause is already triggered because P0 median tokens are 2.160 times B1. The reliability-match-or-exceed part requires final interpretation of the complete reliability evidence rather than silently treating one scalar as definitive.
-
-## P0 architecture diagnostic export
-
-A read-only diagnostic exporter is implemented:
-
-```text
-prototype_v0/src/ads_v0/p0_architecture_diagnostic_export.py
-prototype_v0/tests/test_p0_architecture_diagnostic_export.py
-```
-
-It selects exactly the ten retained P0 trajectories and exports:
-
-```text
-attempt_started.json
-attempt_record.json
-summary.json
-deterministic_evaluation.json
-milestones.json
-conversation.json
-trace.jsonl
-p0_state.json
-p0_state_history.json
-p0_knowledge_activations.json
-```
-
-It also records deterministic structural counts for state-control errors, blocked actions, reopening/invalidation, repair-priority objects, support reassessment, knowledge activation, and relations.
-
-The export launches no model calls, mutates no experiment evidence, includes no B0/B1 trajectory, and does not include the semantic private decoder.
-
-Detailed decoded-result record:
-
-```text
-docs/checkpoints/095_decoded_semantic_results_verified_and_p0_diagnostic_export_added.md
-```
-
-## Execution and observability architecture
-
-The system-level principle remains:
-
-```text
-execution / reasoning
-    -> persisted structured state or events
-    -> read-only observability
-    -> human interface
-```
-
-Canonical source:
-
-```text
-docs/PRINCIPLES.md, P-022
-```
-
-Deep rationale:
-
-```text
+README.md
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+prototype_v0/README.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/foundations/016_execution_observability_separation.md
 ```
 
-## Next step
-
-Pull the latest diagnostic exporter and run from `prototype_v0/`:
-
-```bash
-git pull origin main
-pytest
-python -m ads_v0.p0_architecture_diagnostic_export verify
-python -m ads_v0.p0_architecture_diagnostic_export export
-```
-
-Upload the resulting:
-
-```text
-p0_architecture_diagnostics_<timestamp>.zip
-```
-
-Then inspect the ten P0 trajectories against the remaining architecture-specific clauses and issue the final Prototype V0 classification and architectural decision.
+Treatment and semantic provenance remains in the Prototype V0 checkpoints and held-out ledger.
 
 ## Current priority
 
-**Validate and export the retained P0 internal diagnostics. No further treatment or semantic-judge inference is allowed.**
+**Reconcile project knowledge after the completed V0 strong-falsification result, then design the smallest evidence-driven post-V0 architecture. Do not preserve P0 mechanisms merely because they already exist.**
