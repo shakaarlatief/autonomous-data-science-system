@@ -2,7 +2,7 @@
 
 **Status:** Current canonical continuity procedure  
 **Aligned development-method version:** 0.3  
-**Last reviewed:** 2026-08-18
+**Last reviewed:** 2026-08-19
 
 ## Purpose
 
@@ -68,7 +68,7 @@ When the AI decides that a new chat should be opened, it should normally:
 8. verify that the repository is sufficient for reconstruction without the current conversation;
 9. tell the user that rotation is appropriate;
 10. propose the next numbered, content-specific session title;
-11. provide a minimal continuation prompt if useful.
+11. use the standardized continuation prompt below.
 
 The user should not need to summarize the previous chat manually.
 
@@ -90,18 +90,19 @@ A new design session should reconstruct the project from repository state before
 
 Then follow the routing and explicit read instructions in `CURRENT_STATE.md` and `KNOWLEDGE_MAP.md`.
 
-For active Prototype V0 held-out work, the normal additional reading set is:
+For the completed Prototype V0 result and its experimental provenance, current routing may include:
 
 ```text
 prototype_v0/README.md
+docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-If the current task concerns the broader system-level vision rather than only V0 execution, also read:
+If the current task concerns the broader system-level vision rather than experiment provenance only, also read the foundations routed by `CURRENT_STATE.md` and `KNOWLEDGE_MAP.md`, including when relevant:
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 ```
 
 The exact historical reading set should follow current routing rather than an obsolete fixed list of checkpoints.
@@ -138,16 +139,15 @@ The default authority order is:
 
 If a material conflict cannot be resolved by status, scope, or supersession information, it should become an explicit open question.
 
-## Suggested new-chat prompt
+## Standardized new-chat prompt
 
-A minimal continuation prompt is:
+When a new chat is opened for this project, the default first prompt is:
 
 ```text
-Continue the Autonomous Data Science System project.
-Read the repository state and the context required by CURRENT_STATE.md and KNOWLEDGE_MAP.md first.
-Reconstruct where the project stands, distinguish accepted decisions from active hypotheses and historical material,
-and continue from the recorded next step.
+Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/CURRENT_STATE.md, docs/KNOWLEDGE_MAP.md, and the governing documents they point to for the active stage. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Follow the project's development/preservation method. Do not make changes yet; first align with me on the current state.
 ```
+
+This prompt is intentionally stable and generic. The user should not need to invent a custom handoff prompt for each session.
 
 If the chat has direct repository access, it should read the files itself.
 
@@ -231,12 +231,6 @@ What must a future session read?
 It should not contain a growing duplicate of every run, checkpoint, or foundation.
 
 Detailed long-running experiment mechanics should live in experiment-specific status documents.
-
-For Prototype V0:
-
-```text
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
-```
 
 ## Knowledge map requirements
 
