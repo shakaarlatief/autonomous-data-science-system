@@ -1,8 +1,8 @@
 # Development Method
 
 **Status:** Current canonical project-development method  
-**Current version:** 0.3  
-**Last reviewed:** 2026-08-18
+**Current version:** 0.4  
+**Last reviewed:** 2026-08-19
 
 ## Purpose
 
@@ -119,6 +119,43 @@ A checkpoint should normally capture:
 
 A checkpoint should not be created merely because a fixed number of messages has passed.
 
+### Checkpoint metadata contract
+
+Beginning with Development Method v0.4, checkpoint metadata is an explicit contract rather than a loose authoring convention.
+
+The current checkpoint-format specification is:
+
+```text
+docs/checkpoints/README.md
+```
+
+Every new checkpoint must contain the following core fields immediately after the title:
+
+```text
+Date
+Status
+Checkpoint class
+Project stage
+Scope
+Authority
+```
+
+The common core exists so a checkpoint can be interpreted without reconstructing its role from the filename, surrounding Git history, or memory of the session that created it.
+
+Different checkpoint classes should add type-specific metadata when useful. For example, design checkpoints may record design-session and session-title provenance, while experiment records may record condition, run, attempt, blinding, or verification information. The project should not force semantically irrelevant fields into every checkpoint merely to make the headers visually identical.
+
+The historical checkpoint body remains provenance. Metadata normalization may improve classification and discoverability, but it must not rewrite historical conclusions using later knowledge or silently promote old records into current authority.
+
+Checkpoints 000-099 predate this explicit contract and require conservative normalization. Until that backfill is complete, missing legacy metadata should be interpreted conservatively as historical provenance unless a frozen specification or other authoritative source establishes a stronger role.
+
+The lightweight validator:
+
+```text
+scripts/check_checkpoint_metadata.py
+```
+
+should be used to prevent future silent drift and to measure completion of the legacy normalization pass.
+
 ## Promotion audit
 
 Beginning with version 0.3, every substantive checkpoint should explicitly ask whether newly stabilized material deserves promotion beyond the historical checkpoint layer.
@@ -196,6 +233,8 @@ These preserve what the project believed or was working on at a particular time.
 
 They are historical snapshots rather than automatically current truth.
 
+Their minimum metadata and authority semantics are governed by `docs/checkpoints/README.md`.
+
 ### 4. Experiment-specific status ledgers
 
 Long-running experiments may maintain detailed current ledgers separate from `CURRENT_STATE.md`.
@@ -251,11 +290,11 @@ A practical hierarchy is:
 
 If a conflict is material and cannot be resolved from status metadata, it should become an explicit open question rather than being guessed away.
 
-## Lightweight document metadata
+## Document metadata
 
-Version 0.3 introduces an explicit requirement that important documents make their role and authority visible enough that a future reader does not need to infer it from folder location alone.
+Important documents should make their role and authority visible enough that a future reader does not need to infer it from folder location alone.
 
-Where useful, documents should include some subset of:
+For documents other than checkpoints, where useful, metadata may include some subset of:
 
 ```text
 Status
@@ -268,9 +307,11 @@ Superseded by
 Change constraints
 ```
 
-This is currently a semantic convention rather than a rigid machine-readable schema.
+This remains a semantic convention rather than a rigid machine-readable schema for every repository document.
 
-A future version may formalize the metadata if manual conventions become insufficient.
+Checkpoint records are the exception. Actual repository use showed that the earlier loose convention produced inconsistent checkpoint headers, so v0.4 gives checkpoints a small mandatory core plus type-specific extensions through `docs/checkpoints/README.md`.
+
+A future version may formalize metadata for additional document classes if observed inconsistency justifies doing so.
 
 ## Knowledge maturity
 
@@ -316,6 +357,7 @@ Are important foundations still correctly scoped?
 Does KNOWLEDGE_MAP route to the right current sources?
 Is CURRENT_STATE concise and present-tense?
 Are detailed experiment records stored outside CURRENT_STATE?
+Are checkpoint metadata and authority classifications consistent?
 Are there contradictions or duplicated canonical statements?
 Does MAJOR_CHANGES capture significant structural evolution?
 ```
@@ -395,6 +437,8 @@ Possible reusable improvements include:
 
 The Checkpoint 22 promotion gap is an example at Level 2: knowledge was durable but not sufficiently discoverable/promoted, so the project generalized the lesson into Development Method v0.3.
 
+The checkpoint-header drift discovered at Checkpoint 100 is another Level-2 example: a deliberately loose metadata convention became inconsistent under sustained operational use, so the lesson was generalized into the v0.4 checkpoint metadata contract and mechanical validation direction.
+
 ## Avoiding premature completeness
 
 The project should not attempt to enumerate all possible data-science decisions before building or testing anything.
@@ -428,9 +472,9 @@ explicit repository structure
 manual or AI-assisted curation
 ```
 
-Version 0.3 deliberately does not introduce Neo4j, another graph database, a vector database, an ontology service, or an automatic summarization pipeline.
+Version 0.4 does not alter the decision to defer a graph database, vector database, ontology service, or automatic summarization pipeline for repository preservation.
 
-Potential future upgrades are preserved in Foundation 014 and include:
+Potential future upgrades preserved in Foundation 014 include:
 
 ```text
 machine-readable metadata;
@@ -446,11 +490,13 @@ stronger transactional knowledge storage when multiple contributors require it.
 
 These are deferred rather than rejected. They should be introduced when an observed scale, retrieval, consistency, dependency, or automation problem justifies the added complexity.
 
+A small checkpoint-metadata validator is not a reversal of that deferral. It is a narrow mechanical check introduced because a precise, repeatedly observed consistency requirement now exists.
+
 ## Meta-decisions are part of the project
 
 Changes to the development method should themselves be preserved.
 
-Version 0.2 recorded proactive checkpoint detection. Version 0.3 records the move from durability-focused preservation toward an explicit lifecycle covering discoverability, promotion, authority, reconciliation, and selective structural history.
+Version 0.2 recorded proactive checkpoint detection. Version 0.3 recorded the move from durability-focused preservation toward an explicit lifecycle covering discoverability, promotion, authority, reconciliation, and selective structural history. Version 0.4 records the move from optional checkpoint metadata conventions to an explicit minimum contract after actual checkpoint growth demonstrated inconsistency.
 
 The evolution of the methodology is itself useful knowledge.
 
@@ -462,7 +508,9 @@ The project should prefer natural checkpoints over constant micro-updates.
 
 Promotion audits should be short when no promotion is required. Reconciliation should happen at stage boundaries, not continuously.
 
-If maintaining the knowledge map, current state, metadata, or reconciliation process becomes repetitive or inconsistent, that is evidence that partial automation may now be justified.
+Checkpoint metadata is intentionally a small mandatory core. It should improve professional consistency without forcing every historical or operational record into a large universal template.
+
+If maintaining the knowledge map, current state, metadata, or reconciliation process becomes repetitive or inconsistent, that is evidence that partial automation may be justified. Version 0.4 applies that principle narrowly by adding mechanical validation for checkpoint headers.
 
 ## Future automation of knowledge capture
 
@@ -484,6 +532,20 @@ A reconciliation assistant could also detect candidate stale or contradictory st
 Automatic extraction must not imply automatic promotion into trusted reusable knowledge. Manual curation remains useful at the current stage because it continues to reveal what good preservation actually requires.
 
 ## Version history
+
+### Version 0.4
+
+**Introduced:** Checkpoint 100, 2026-08-19
+
+Changes:
+
+- converted checkpoint metadata from a loose "some subset" convention into an explicit mandatory minimum contract;
+- introduced `docs/checkpoints/README.md` as the checkpoint-format specification;
+- required `Date`, `Status`, `Checkpoint class`, `Project stage`, `Scope`, and `Authority` for every new checkpoint;
+- preserved type-specific metadata extensions rather than forcing heterogeneous checkpoint classes into one oversized header;
+- required conservative historical normalization of Checkpoints 000-099 without rewriting their substantive historical content;
+- added `scripts/check_checkpoint_metadata.py` to detect metadata drift mechanically;
+- treated the observed checkpoint-header inconsistency as a real Level-2 development-method failure and generalized the lesson.
 
 ### Version 0.3
 
