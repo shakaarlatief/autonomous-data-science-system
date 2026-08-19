@@ -1,20 +1,20 @@
 # Prototype V0 Held-Out Status
 
-**Status:** Current detailed experiment ledger  
+**Status:** Held-out treatment execution complete; blinded semantic evaluation pending  
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules remain governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
-**Last reviewed:** 2026-08-18  
-**Resolved treatment slots:** 13 / 30  
-**Remaining treatment slots:** 17 / 30  
-**Next frozen slot:** `h1-r05-p0-a01`  
-**Execution mode:** prospectively validated sequential supervisor; large bounded batch authorized
+**Last reviewed:** 2026-08-19  
+**Resolved treatment slots:** 30 / 30  
+**Remaining treatment slots:** 0 / 30  
+**Next frozen treatment slot:** none  
+**Execution mode:** completed prospectively validated sequential-supervisor execution
 
 ## Purpose
 
 This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, supervisor status, and the exact next frozen execution point.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, supervisor status, and the transition to blinded semantic evaluation.
 
-No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
+No H1/H2 S1-S10 or SC1-SC2 semantic judging has yet been completed.
 
 ## Frozen experiment summary
 
@@ -46,282 +46,207 @@ H2 seed 1601
 SHA-256 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-Preregistered order:
+## Final execution counts
 
 ```text
-H1
-r1: B0, B1, P0
-r2: B1, P0, B0
-r3: P0, B0, B1
-r4: B0, B1, P0
-r5: B1, P0, B0
-
-H2
-r1: P0, B0, B1
-r2: B0, B1, P0
-r3: B1, P0, B0
-r4: P0, B0, B1
-r5: B0, B1, P0
-```
-
-Replacement policy remains:
-
-```text
-behavior_evaluable = true
-=> slot permanently resolved
-=> never replaced
-
-behavior_evaluable = false
-+ terminal provider/interface generation failure
-=> replacement eligible inside same slot
-```
-
-Maximum attempts per slot remain `a01`, `a02`, and `a03`.
-
-## Current counts
-
-```text
-resolved treatment slots: 13 / 30
-remaining treatment slots: 17 / 30
-behavior-evaluable retained attempts: 13
-non-behavior-evaluable provider/interface attempts: 2
-replacement attempts launched: 2
-P0 budget-exhausted retained runs: 3
+resolved treatment slots: 30 / 30
+remaining treatment slots: 0 / 30
+behavior-evaluable retained attempts: 30
+B0 retained runs: 10
+B1 retained runs: 10
+P0 retained runs: 10
+non-behavior-evaluable provider/interface attempts: 4
+replacement attempts launched: 4
 administrative pre-provider interruptions: 1
-completed attempt directories mechanically verified: 15
-mechanical integrity failures: 0
+completed attempt directories mechanically verified: 34
+mechanical verification integrity PASS: 34
+mechanical verification integrity FAIL: 0
 ```
 
-H1 status:
+The four non-behavior-evaluable provider/interface attempts were:
 
 ```text
-replicate 1: B0, B1, P0 resolved
-replicate 2: B1, P0, B0 resolved
-replicate 3: P0, B0, B1 resolved
-replicate 4: B0, B1, P0 resolved
-replicate 5: B1 resolved; P0 then B0 remain
+h1-r02-b0-a01
+h1-r02-b0-a02
+h2-r05-b0-a01
+h2-r05-b0-a02
 ```
 
-## Mechanically verified retained runs
+Both affected B0 slots resolved on `a03` under the frozen replacement policy.
+
+## Final retained-run table
 
 | Variant | Replicate | Condition | Retained attempt | Completed | Budget exhausted | Model calls | Python | Total tokens | A0-A4 |
 |---|---:|---|---|---|---|---:|---:|---:|---|
 | H1 | 1 | B0 | `h1-r01-b0-a01` | yes | no | 15 | 5 | 108,891 | PASS |
 | H1 | 1 | B1 | `h1-r01-b1-a01` | yes | no | 14 | 6 | 120,424 | PASS |
 | H1 | 1 | P0 | `h1-r01-p0-a01` | yes | yes | 14 | 6 | 294,267 | PASS |
+| H1 | 2 | B0 | `h1-r02-b0-a03` | yes | no | 16 | 7 | 131,563 | PASS |
 | H1 | 2 | B1 | `h1-r02-b1-a01` | yes | no | 15 | 7 | 139,150 | PASS |
 | H1 | 2 | P0 | `h1-r02-p0-a01` | yes | no | 12 | 5 | 226,926 | PASS |
-| H1 | 2 | B0 | `h1-r02-b0-a03` | yes | no | 16 | 7 | 131,563 | PASS |
-| H1 | 3 | P0 | `h1-r03-p0-a01` | no | yes | 13 | 6 | 258,485 | PASS |
 | H1 | 3 | B0 | `h1-r03-b0-a01` | yes | no | 14 | 6 | 108,508 | PASS |
 | H1 | 3 | B1 | `h1-r03-b1-a01` | yes | no | 16 | 5 | 113,234 | PASS |
+| H1 | 3 | P0 | `h1-r03-p0-a01` | no | yes | 13 | 6 | 258,485 | PASS |
 | H1 | 4 | B0 | `h1-r04-b0-a01` | yes | no | 16 | 6 | 131,266 | PASS |
 | H1 | 4 | B1 | `h1-r04-b1-a01` | yes | no | 16 | 6 | 152,391 | PASS |
 | H1 | 4 | P0 | `h1-r04-p0-a01` | no | yes | 14 | 5 | 262,255 | PASS |
+| H1 | 5 | B0 | `h1-r05-b0-a01` | yes | no | 14 | 6 | 123,055 | PASS |
 | H1 | 5 | B1 | `h1-r05-b1-a01` | yes | no | 17 | 7 | 155,299 | PASS |
+| H1 | 5 | P0 | `h1-r05-p0-a01` | no | yes | 14 | 5 | 257,290 | PASS |
+| H2 | 1 | B0 | `h2-r01-b0-a01` | yes | no | 16 | 6 | 122,034 | PASS |
+| H2 | 1 | B1 | `h2-r01-b1-a01` | yes | no | 13 | 5 | 107,134 | PASS |
+| H2 | 1 | P0 | `h2-r01-p0-a01` | yes | no | 13 | 4 | 240,025 | PASS |
+| H2 | 2 | B0 | `h2-r02-b0-a01` | yes | no | 16 | 5 | 116,745 | PASS |
+| H2 | 2 | B1 | `h2-r02-b1-a01` | yes | no | 16 | 6 | 114,529 | PASS |
+| H2 | 2 | P0 | `h2-r02-p0-a01` | no | yes | 14 | 5 | 269,711 | PASS |
+| H2 | 3 | B0 | `h2-r03-b0-a01` | yes | no | 17 | 6 | 143,832 | PASS |
+| H2 | 3 | B1 | `h2-r03-b1-a01` | yes | no | 15 | 4 | 119,011 | PASS |
+| H2 | 3 | P0 | `h2-r03-p0-a01` | yes | yes | 13 | 6 | 285,470 | PASS |
+| H2 | 4 | B0 | `h2-r04-b0-a01` | yes | no | 16 | 6 | 112,263 | PASS |
+| H2 | 4 | B1 | `h2-r04-b1-a01` | yes | no | 16 | 6 | 120,705 | PASS |
+| H2 | 4 | P0 | `h2-r04-p0-a01` | yes | yes | 13 | 4 | 267,296 | PASS |
+| H2 | 5 | B0 | `h2-r05-b0-a03` | yes | no | 18 | 8 | 157,554 | PASS |
+| H2 | 5 | B1 | `h2-r05-b1-a01` | yes | no | 16 | 8 | 142,948 | PASS |
+| H2 | 5 | P0 | `h2-r05-p0-a01` | yes | no | 12 | 4 | 228,549 | PASS |
 
-This table contains mechanical execution evidence only and must not be used as an unblinded semantic condition comparison.
+All 30 retained behavior-evaluable trajectories pass the registered deterministic A0-A4 layer according to the final compact mechanical-verification export.
 
-## Notable attempt-level events
+## Pooled resource and completion summary
 
-### H1 R2 B0 provider/interface replacements
+| Condition | Completed | Completed within budget | Budget exhausted | Final reports | Median total tokens | Median model calls | Median Python attempts |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| B0 | 10 / 10 | 10 / 10 | 0 / 10 | 10 / 10 | 122,544.5 | 16 | 6 |
+| B1 | 10 / 10 | 10 / 10 | 0 / 10 | 10 / 10 | 120,564.5 | 16 | 6 |
+| P0 | 6 / 10 | 3 / 10 | 7 / 10 | 6 / 10 | 260,370.0 | 13 | 5 |
 
-```text
-h1-r02-b0-a01
-    non-behavior-evaluable
-    ambiguous_structured_output
-
-h1-r02-b0-a02
-    non-behavior-evaluable
-    ambiguous_structured_output
-
-h1-r02-b0-a03
-    behavior-evaluable retained trajectory
-    one model-authored Python timeout
-```
-
-The first two failures occurred before a usable treatment command entered the runtime. Frozen replacement semantics applied.
-
-### H1 R3 B0 administrative pre-provider interruption
-
-One local invocation failed before provider inference because `OPENAI_API_KEY` was absent. No treatment attempt was consumed. The genuine `h1-r03-b0-a01` later ran normally.
-
-### H1 R4 B0 model-authored Python recovery
-
-`h1-r04-b0-a01` contained one model-authored Python error followed by successful correction. This remains behavioral evidence, not infrastructure failure.
-
-### H1 R4 P0 third retained budget exhaustion
-
-`h1-r04-p0-a01` was behavior-evaluable and mechanically coherent but exhausted the common token envelope:
+P0/B1 pooled median resource ratios:
 
 ```text
-completed: false
-budget exhausted: true
-model calls: 14
-Python attempts: 5
-total tokens: 262,255
-final lock sequence: 32
-protected test access: 35
-final report: absent
-A0-A4: PASS
+total tokens: 2.160
+successful model calls: 0.813
+Python attempts: 0.833
 ```
 
-It is permanently retained and not replacement-eligible.
+The unusually high P0 token cost despite fewer calls is now a central mechanical result to interpret alongside semantic reliability.
 
-### H1 R5 B1 model-authored Python error
+## Continuation criterion status before semantic judging
 
-`h1-r05-b1-a01` contained one Python execution with return code 1 at trace sequence 28. The trajectory remained behavior-evaluable, recovered, completed, and passed all mechanical integrity checks.
+Foundation 012 requires all continuation conditions to hold. Three mechanically observable requirements are already impossible:
 
 ```text
-completed: true
-model calls: 17
-Python attempts: 7
-total tokens: 155,299
-final lock sequence: 32
-protected test access: 35
-final report sequence: 37
-A0-A4: PASS
+required P0 completion within budget: at least 9 / 10
+observed: 3 / 10
+
+allowed P0 budget-exhausted runs: at most 1 / 10
+observed: 7 / 10
+
+allowed P0/B1 median token ratio: at most 1.50
+observed: 2.160
 ```
 
-## P0 resource consequence
+Therefore the current P0 design cannot obtain the preregistered V0 continuation signal regardless of later S1-S10 scores.
 
-P0 budget-exhausted retained runs now equal three:
+The final interpretation still requires blinded semantic evaluation. In particular, the experiment has not yet established whether the result satisfies a registered strong-falsification condition or should be classified as inconclusive/no demonstrated continuation signal.
+
+## Final unattended batch
+
+Batch:
 
 ```text
-H1 R1 P0: budget exhausted
-H1 R2 P0: within budget
-H1 R3 P0: budget exhausted
-H1 R4 P0: budget exhausted
-```
-
-The preregistered continuation criteria permit no more than one P0 budget-exhausted run. That criterion became impossible after H1 R3 and remains impossible regardless of later outcomes.
-
-This is an objective resource-envelope result. It is not a substitute for the later blinded semantic evaluation or overall architectural interpretation.
-
-## Automated supervision architecture
-
-The condition-neutral external supervision layer is:
-
-```text
-prototype_v0/src/ads_v0/heldout_verifier.py
-prototype_v0/src/ads_v0/heldout_supervisor.py
-```
-
-Detailed architecture:
-
-```text
-docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
-```
-
-Validated implementation blob identities:
-
-```text
-heldout_supervisor.py
-    ef6ffbea671d4f177e41002becfd8751e176ddad
-
-heldout_verifier.py
-    03fb33280f87d0056a3dbb264a63651df9ffb431
-```
-
-### Retrospective validation
-
-Before prospective paid use:
-
-```text
-pytest: 77 passed
-completed attempt directories verified: 12
-integrity passed: 12
-integrity failed: 0
-```
-
-Checkpoint:
-
-```text
-docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
-```
-
-### First prospective batch
-
-Batch command:
-
-```bash
-python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 3
-```
-
-Batch identity:
-
-```text
-batch-20260818T170118Z
+batch-20260818T212414Z
 ```
 
 Result:
 
 ```text
-model attempts launched: 3
-stop reason: MAX_MODEL_ATTEMPTS_REACHED
-new attempts:
-    h1-r04-b1-a01  BEHAVIOR_EVALUABLE  integrity PASS
-    h1-r04-p0-a01  BEHAVIOR_EVALUABLE  integrity PASS
-    h1-r05-b1-a01  BEHAVIOR_EVALUABLE  integrity PASS
-resolved slots after batch: 13 / 30
-next attempt: h1-r05-p0-a01
+model attempts launched: 19
+behavior-evaluable attempts in batch: 17
+non-behavior-evaluable provider failures in batch: 2
+stop reason: EXPERIMENT_COMPLETE
+resolved treatment slots after batch: 30 / 30
 ```
 
-Post-batch verification state:
+The batch started at `h1-r05-p0-a01`, followed the preregistered order, and terminated because no unresolved treatment slot remained.
+
+The two provider failures were both in H2 R5 B0:
 
 ```text
-15 completed attempt directories verified
-15 integrity PASS
-0 integrity FAIL
+h2-r05-b0-a01: NON_BEHAVIOR_EVALUABLE_PROVIDER_FAILURE
+h2-r05-b0-a02: NON_BEHAVIOR_EVALUABLE_PROVIDER_FAILURE
+h2-r05-b0-a03: retained BEHAVIOR_EVALUABLE trajectory
 ```
 
-All M01-M11 checks passed for all three prospective attempts. No replacement or order deviation occurred. The supervisor stopped exactly at the explicit paid-attempt bound.
+This used the full three-attempt allowance for the slot without exceeding it.
 
-Detailed record:
+Final supervisor snapshot:
 
 ```text
-docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md
+status: EXPERIMENT_COMPLETE
+resolved slots: 30 / 30
+attempts mechanically verified: 34
+integrity PASS: 34
+integrity FAIL: 0
 ```
 
-## Supervisor execution semantics
-
-The supervisor:
+Detailed completion record:
 
 ```text
-calls the unchanged frozen execute_next_attempt() path;
-runs attempts sequentially only;
-mechanically verifies each persisted attempt before advancing;
-preserves frozen slot order;
-preserves frozen replacement semantics;
-does not modify B0/B1/P0;
-does not expose previous outcomes to later treatments;
-does not perform semantic judging;
-does not write inside completed attempt directories;
-creates one compact batch export for review.
+docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
 ```
 
-Behavioral issues such as Python errors, deterministic failures, incomplete work, or budget exhaustion remain retained outcomes and do not become replacement reasons.
+## Notable behavioral execution events
 
-## Next frozen execution
-
-The next treatment identity is:
+Model-authored Python execution failures/timeouts remain behavior evidence and were not replaced. Retained runs with at least one such event include:
 
 ```text
-variant: H1
-replicate: 5
-condition: P0
-slot: h1-r05-p0
-attempt: h1-r05-p0-a01
+h1-r02-b0-a03
+h1-r04-b0-a01
+h1-r05-b1-a01
+h2-r01-b0-a01
+h2-r03-b0-a01
+h2-r05-b1-a01
 ```
 
-The three-attempt prospective smoke test has passed. A large bounded batch is authorized:
+They remain eligible for the later semantic judge exactly as executed.
 
-```bash
-python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
+## P0 completion pattern
+
+```text
+H1 R1: completed, budget exhausted
+H1 R2: completed within budget
+H1 R3: incomplete, budget exhausted
+H1 R4: incomplete, budget exhausted
+H1 R5: incomplete, budget exhausted
+H2 R1: completed within budget
+H2 R2: incomplete, budget exhausted
+H2 R3: completed, budget exhausted
+H2 R4: completed, budget exhausted
+H2 R5: completed within budget
 ```
 
-There are 17 unresolved treatment slots. If all resolve on their first attempts, the supervisor will stop at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional allowance. Automatic execution must still stop on verifier integrity failure, interrupted attempt, replacement exhaustion, or another existing runner safety state.
+Totals:
 
-After this batch stops, inspect its single compact export before any semantic judging begins.
+```text
+completed: 6 / 10
+completed within budget: 3 / 10
+budget exhausted: 7 / 10
+final report present: 6 / 10
+```
 
-Do not separately invoke `heldout_runner run-next` while the supervisor workflow is active.
+## Semantic-evaluation boundary
+
+Treatment execution is complete and must not be rerun because of poor methodology, disappointing results, cost, incompleteness, or budget exhaustion.
+
+The next experimental stage is the frozen blinded semantic procedure:
+
+```text
+1. construct condition-neutral normalized judge inputs for the 30 retained behavior-evaluable trajectories;
+2. run two independent judge passes for every trajectory;
+3. score S1-S10 and SC1/SC2;
+4. combine exact/adjacent scores under Foundation 012;
+5. manually adjudicate 0-vs-2 criterion disagreements and every SC disagreement while still blinded;
+6. only then decode condition identity and perform H1, H2, and pooled B0/B1/P0 comparisons;
+7. apply the preregistered continuation/falsification interpretation.
+```
+
+The primary architectural comparison remains P0 versus B1.
