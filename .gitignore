@@ -11,6 +11,6 @@ __pycache__/
 .env.*
 !.env.example
 
-# Generated experiment artifacts
+# Generated experiment artifacts and runtime outputs
 **/generated/
-**/results/raw/
+**/results/
