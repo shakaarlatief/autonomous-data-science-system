@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 96  
+**Checkpoint:** 97  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 complete; current P0 design strongly falsified; transition to post-V0 reconciliation and next-architecture design  
+**Development stage:** Prototype V0 complete; current P0 design strongly falsified; post-V0 product/system vision now concretized before next architecture design  
 **Resolved treatment slots:** 30 / 30  
 **Semantic logical passes:** 60 / 60  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
@@ -12,13 +12,31 @@
 
 The broader Autonomous Data Science System still aims to create the best defensible data-science process for a project's objectives, constraints, deliverables, and desired human involvement.
 
+The system-level goal has not changed after V0. The intended destination is not a single prompt that returns a completed project. The intended product is increasingly concrete as a professional interactive data-science environment in which the system itself carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden that otherwise has to be repeatedly supplied by the human through prompts.
+
+The strongest current product statement is:
+
+> **The system should make high-quality data-science process navigation an explicit, reusable, inspectable capability, so the user does not need to repeatedly remember what to ask an LLM, while still remaining able to inspect, discuss, select, override, and guide the project interactively.**
+
+Detailed promoted product/system vision:
+
+```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+```
+
+The broader LLM-system-human boundary remains governed by:
+
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+```
+
+## Prototype V0 constraint on future design
+
 Prototype V0 tested one narrower architectural claim:
 
 > Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than an equally capable simpler LLM workflow?
 
-The V0 answer for the implemented P0 design and churn benchmark family is now **no at the required reliability/cost threshold**.
-
-## Final Prototype V0 result
+The V0 answer for the implemented P0 design and churn benchmark family is **no at the required reliability/cost threshold**.
 
 Primary pooled comparison:
 
@@ -44,89 +62,164 @@ strong-targeted-pass difference: 0
 median token ratio: 2.160
 ```
 
-The small P0 semantic advantage is consistent across both held-out variants:
-
-```text
-H1 P0 - B1 targeted mean: +0.06
-H2 P0 - B1 targeted mean: +0.04
-```
-
-but it is not material under the preregistered reliability criterion.
-
-B1 already improved substantially over B0 using only the same four methodological concepts supplied statically. P0 added little semantic reliability beyond B1 while more than doubling median token use and causing seven budget-exhausted runs.
-
 Detailed final result:
 
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-Frozen protocol:
+The V0 conclusion falsifies the **current P0 implementation strategy on this benchmark family**. It does not establish that persistent project memory, dependency tracking, reusable methodological knowledge, knowledge activation, or deterministic controls are universally unnecessary.
+
+## Important post-V0 scaling interpretation
+
+Do not extrapolate the B1/P0 token and reliability differences as linear scaling laws.
+
+V0 gives evidence at one benchmark complexity level.
+
+Future project complexity could change both curves substantially.
+
+A particularly important distinction is now explicit:
 
 ```text
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
 ```
 
-## Why the classification is strong falsification
+A mature system may retain a very large project memory while retrieving only the small subset relevant to the current reasoning decision.
 
-Foundation 012 defines a strong-falsification condition when B1 matches or exceeds P0 reliability while P0 median tokens or calls are at least 25% higher.
+Therefore P0's context/token failure is evidence against repeatedly injecting a large always-on state representation into each reasoning cycle. It is not evidence against persistent project memory itself.
 
-Observed reliability evidence:
+## Concretized target user experience
+
+A new project should eventually begin by providing the available sources, for example:
 
 ```text
-critical failures: B1 0, P0 0
-strong targeted passes: B1 0, P0 0
-targeted-score difference: P0 +0.05
-registered material targeted improvement: +0.30 plus strong-pass improvement
+project brief / assignment
+datasets
+README / documentation
+existing notebooks or baseline code
+business/domain documents
+other relevant artifacts
 ```
 
-Observed cost:
+The system should initialize a professional project workspace rather than immediately attempting to produce a final answer.
+
+Useful project areas may include:
 
 ```text
-P0/B1 median token ratio: 2.160
+Overview
+Data
+EDA
+Validation
+Features
+Models
+Experiments
+Evaluation
+Report
+Decisions
+History
 ```
 
-Therefore the current P0 architecture meets the preregistered strong-falsification condition.
+These are interface/navigation concepts, not a rigid analytical pipeline.
 
-This conclusion is about the **current P0 design on this benchmark family**. It does not falsify the broader system vision or prove that structured memory, dependency tracking, knowledge activation, or deterministic controls are universally useless.
+The underlying scientific process must remain iterative and able to revisit earlier work when findings, requirements, evidence, or assumptions change.
 
-## Architecture-specific P0 diagnostics
+## Methodological-navigation brain
 
-The ten retained P0 trajectories were reviewed after unblinding using their internal state, state history, knowledge activations, traces, conversations, milestones, and execution records.
+The future system should maintain a broad, evolving, inspectable catalog of data-science process knowledge rather than depending solely on an LLM recalling an arbitrary subset on each run.
 
-Observed across all ten:
+Candidate knowledge includes:
 
 ```text
-state objects: 506
-relations: 483
-invalidated transitions: 14
-reopened transitions: 24
-repair-priority objects: 32
-support-reassessment objects: 30
-knowledge reopens: 2
-P0 state-control errors: 0
-blocked P0 ACTION objects: 0
-P0 Python-budget blocks: 0
+methods
+diagnostics
+visualizations
+tests
+model families
+validation strategies
+feature strategies
+assumptions and preconditions
+alternatives
+failure modes
+follow-up investigations
+cost and expected value
+applicability
 ```
 
-The 14 invalidations were materially tied to the post-outcome feature or evidence generated from models containing it. No critical over-invalidation was found.
-
-No false P0 action block occurred.
-
-One H2 R4 internal validation-regime question was reopened more broadly than necessary after invalidation of a model-specific claim, then immediately re-resolved without additional analysis. This is a useful over-propagation warning but does not exceed the registered friction threshold.
-
-The generic support-reassessment mechanism also created avoidable internal obligation churn. That mechanism should not be carried forward unchanged.
-
-Knowledge activation was path-sensitive: K-INFO-003 activated in only 8/10 P0 runs because two trajectories learned schema/value information through Python rather than the table-metadata path expected by the trigger. The LLM still reasoned correctly, but the trigger design is brittle.
-
-No held-out-specific hard coding was found in P0 source or trajectories.
-
-## What survives V0
-
-Strong current defaults:
+A useful product separation is:
 
 ```text
-one strong LLM reasoner
+RECOMMENDED
+    what currently deserves attention
+
+RELEVANT OPTION SPACE
+    everything currently judged applicable
+
+FULL KNOWLEDGE CATALOG
+    everything the system knows, browsable/searchable even when not recommended
+```
+
+EDA is the current concrete reference case. The system should know the broad EDA option space, automatically provide basic project/data orientation, recommend analyses appropriate to the current dataset and objective, expose additional applicable alternatives, and allow the user to discuss, select, skip, or add work.
+
+The product should reduce the need for the human to repeatedly remember and prompt for every useful analysis.
+
+## Human involvement
+
+The target is interactive, not necessarily black-box autonomous.
+
+A future project may support a continuum such as:
+
+```text
+GUIDED
+system proposes; user selects; system executes
+
+SEMI-AUTONOMOUS
+system runs safe/high-confidence work and pauses at important decisions
+
+MORE AUTONOMOUS
+system proceeds under an agreed project constitution and escalates where human judgment or authority adds value
+```
+
+The desired level of involvement remains a project-intent dimension.
+
+## Evaluation direction after V0
+
+Future system evaluation should not rely on one scalar score alone.
+
+Useful measures may include:
+
+```text
+important-method coverage
+recommendation precision
+critical omissions
+unnecessary recommendations
+human reminder burden
+human intervention burden
+state-recall failures
+methodological violations
+repeated work
+reproducibility
+```
+
+Expert qualitative judgment also remains necessary for questions such as whether recommendations were sensible, the option space was useful, the system understood what mattered, and the project felt credible and professional to navigate.
+
+A major candidate evaluation method is **project replay**:
+
+```text
+completed historical project
+    -> restore only original starting inputs
+    -> initialize the system from scratch
+    -> observe what it surfaces, recommends, remembers, executes, and repairs
+    -> compare with known project experience
+```
+
+Existing projects can therefore become both methodological knowledge sources and realistic regression/evaluation environments.
+
+## What survives V0 as strong defaults
+
+```text
+strong LLM reasoning as a flexible component, not the whole system
 compact explicit methodological guidance
 instrumented execution and traceability
 precise deterministic information-boundary controls where justified
@@ -134,8 +227,6 @@ append-only experiment provenance
 external mechanical verification
 read-only observability separated from execution
 ```
-
-The validated supervision, verification, freeze, and observability infrastructure is not part of the failed P0 semantic treatment and remains useful.
 
 Do not carry forward unchanged:
 
@@ -148,49 +239,41 @@ current dependency-reopening machinery as a universal mandatory layer
 full P0 state-derived frontier representation
 ```
 
-Candidate ideas to retest in cheaper form include compact question/claim/decision memory, delta state, selective retrieval, event-driven repair after material changes, precise gates outside the LLM context, and a lightweight unresolved-blocker frontier.
+These are constraints from V0, not a complete next architecture.
 
-These are hypotheses, not a chosen V1 architecture.
+## Current design stage
 
-## Hypothesis summary
+Do **not** implement V1 yet.
 
-```text
-H1 typed state:
-    no material reliability advantage demonstrated
-
-H2 knowledge activation:
-    no material advantage over static B1 knowledge; trigger brittleness observed
-
-H3 prospective safeguards:
-    zero false blocks, but no invalid final-test proposal occurred, so incremental benefit was not discriminated
-
-H4 dependency-aware correction:
-    mechanically precise and semantically strong, but B1 repaired almost as well without the state cost
-
-H5 state-driven action selection:
-    fewer calls and Python actions than B1, but much larger per-call context caused severe token failure
-```
-
-## Next stage
-
-Prototype V0 is closed. Do not tune P0 against the completed held-out benchmark and do not launch more V0 treatment or judge calls.
-
-The next project stage is:
+The project should first continue clarifying the target product/system contract, including:
 
 ```text
-1. perform the post-V0 knowledge reconciliation;
-2. update stale canonical/open-question material that still describes V0 as active;
-3. preserve the V0 result as an architectural constraint, not merely an experiment anecdote;
-4. design the smallest post-V0 candidate architecture from the evidence;
-5. design a harder benchmark targeted at mechanisms B1 may actually fail on;
-6. preregister the next comparison before implementing the new treatment.
+what the professional project workspace should expose;
+what should initialize automatically from project sources;
+what a reusable methodological knowledge object should contain;
+how applicability and recommendation should work;
+what should be recommended versus merely available;
+what should execute automatically versus await user choice;
+how the full option space remains inspectable;
+what project information must persist;
+how LLM context is selected from persistent memory;
+how findings change later recommendations and decisions;
+how living reports and artifacts evolve;
+how guided versus autonomous behavior is configured;
+how project replay evaluates reduction in human process-navigation burden.
 ```
 
-The next experimental question should be approximately:
+Only after this product/system contract is clearer should the project choose the smallest backend architecture worth prototyping next.
 
-> What is the smallest low-overhead mechanism that improves reliability beyond B1 on longer changing project trajectories where conversational memory and static methodological prompting are expected to fail?
+## Continuity
 
-The next benchmark should consider multiple sequential state changes, longer dependency chains, partially shared evidence, selectively relevant knowledge, and meaningful under-propagation versus over-propagation risk.
+The canonical new-chat continuation prompt is now standardized in:
+
+```text
+docs/CONTINUITY.md
+```
+
+A new chat should not require the user to invent a handoff summary.
 
 ## Knowledge and continuity
 
@@ -200,16 +283,15 @@ Minimum reading for a future session:
 README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-prototype_v0/README.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+docs/VISION.md
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/foundations/016_execution_observability_separation.md
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+docs/CONTINUITY.md
 ```
 
-Treatment and semantic provenance remains in the Prototype V0 checkpoints and held-out ledger.
+For V0 experimental provenance, follow the routing in `KNOWLEDGE_MAP.md` to the frozen protocol, final results, and relevant checkpoints.
 
 ## Current priority
 
-**Reconcile project knowledge after the completed V0 strong-falsification result, then design the smallest evidence-driven post-V0 architecture. Do not preserve P0 mechanisms merely because they already exist.**
+**Continue discussing and defining the professional interactive product/system experience and methodological-navigation brain before selecting or implementing a post-V0 architecture. Preserve the V0 result as a constraint, but do not let the local P0 failure shrink the broader system ambition.**
