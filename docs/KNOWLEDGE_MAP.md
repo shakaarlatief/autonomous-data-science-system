@@ -4,32 +4,22 @@
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-19
 
-## Purpose
-
-This file answers a practical question:
-
-> Where does the current project knowledge about a particular topic live?
-
-It is intentionally a routing layer rather than another copy of the project's knowledge.
-
-When this file conflicts with an authoritative current specification or decision, the authoritative source governs.
-
 ## Start here
 
-For a new session or a quick reconstruction:
+For a new session or quick reconstruction:
 
 ```text
 README.md
-    project-level overview
+    project-level overview and current stage
 
 docs/CURRENT_STATE.md
-    concise present state and exact next step
+    concise present state and exact next priority
 
 docs/KNOWLEDGE_MAP.md
-    where important knowledge lives
+    routing layer for important project knowledge
 
 docs/VISION.md
-    current system vision
+    current system purpose and vision
 
 docs/PRINCIPLES.md
     current design principles
@@ -38,43 +28,39 @@ docs/DECISIONS.md
     accepted project-level decisions
 
 docs/OPEN_QUESTIONS.md
-    unresolved questions
+    unresolved canonical questions
 
 docs/DEVELOPMENT_METHOD.md
-    how this project is developed and preserved
+    how the project is developed and preserved
 
 docs/CONTINUITY.md
-    how work continues across chats/sessions
+    how work continues across sessions
 
 docs/MAJOR_CHANGES.md
-    selective history of major structural changes
+    selective structural history
 ```
 
-For active Prototype V0 work also read:
+For the completed Prototype V0 experiment, read:
 
 ```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
 prototype_v0/README.md
-
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-
-docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
-
-docs/foundations/016_execution_observability_separation.md
-
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
+
+Prototype V0 is complete. Its final classification is **strong falsification of the current P0 design**. It is no longer an active execution stage.
 
 ---
 
 ## System purpose and long-term vision
 
-### Read first
+### Canonical orientation
 
 ```text
 docs/VISION.md
+README.md
 ```
-
-Current canonical statement of what the project is trying to build and what "best" means for a project.
 
 ### Deep reasoning
 
@@ -82,69 +68,98 @@ Current canonical statement of what the project is trying to build and what "bes
 docs/foundations/001_initial_vision_and_reasoning.md
 ```
 
-Origin of the project, why a single end-to-end LLM workflow can be insufficient, questions/evidence orientation, human gates, persistent state, reusable knowledge modules, adaptive activation, and the original preservation philosophy.
+Origin of the project, why a single end-to-end LLM workflow can be insufficient, and the original state/knowledge/process-navigation vision.
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 ```
 
-Current system-level synthesis of human-executed projects, human + interactive LLM projects, and system-mediated projects. Explains why the LLM is one reasoning component inside the wider system and why explicit mechanisms must still earn their complexity empirically.
+Current system-level synthesis of human-executed, human-plus-LLM, and system-mediated data-science projects. This is the best current explanation of why the LLM is one reasoning component inside a wider system while explicit mechanisms must still earn their complexity empirically.
 
-### Important historical origin
+Historical origin:
 
 ```text
 docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
 ```
 
-Historical checkpoint where the system-level distinction was first made explicit. Foundation 013 is the durable promoted synthesis.
-
 ---
 
 ## Epistemic integrity, admissibility, risk, and project constitution
 
-### Canonical orientation
+```text
+docs/foundations/002_epistemic_integrity_and_project_constitution.md
+```
+
+Semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity.
+
+```text
+docs/foundations/003_admissibility_risk_and_assurance.md
+```
+
+Admissibility, risk-sensitive assurance, controls, and integrity requirements.
+
+Canonical high-level orientation:
 
 ```text
 docs/VISION.md
 docs/PRINCIPLES.md
 ```
 
-### Deep reasoning
-
-```text
-docs/foundations/002_epistemic_integrity_and_project_constitution.md
-```
-
-Semantic validity, information legitimacy, evidence validity, claim validity, traceability/dependency integrity, and the broader project constitution.
-
-```text
-docs/foundations/003_admissibility_risk_and_assurance.md
-```
-
-Admissibility, risk-sensitive assurance, controls, and the relationship between integrity requirements and project optimization.
-
 ---
 
 ## Project state, dependencies, and orchestration
 
-### Deep reasoning
+The broad theory lives in:
 
 ```text
 docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
 ```
 
-Typed project state, facts versus assumptions versus evidence versus claims versus decisions, dependency semantics, invalidation, staleness, reopening, and state-driven next-action selection.
-
-### Prototype realization
+Prototype V0's concrete implementation lives in:
 
 ```text
-prototype_v0/README.md
 prototype_v0/src/ads_v0/p0.py
 prototype_v0/src/ads_v0/p0_controller.py
 prototype_v0/src/ads_v0/p0_schema.py
 ```
 
-Prototype V0 implements only a deliberately minimal experimental subset of the broader theory.
+The V0 implementation is now **falsified as the architecture to continue unchanged**. For the evidence and the exact mechanism-level lessons, read:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
+
+Important distinction:
+
+```text
+broad state/dependency theory remains an open design space
+!=
+current P0 always-on representation is justified
+```
+
+V0 found that P0's dependency repair was technically precise, but B1 repaired almost as well while P0 incurred severe repeated-context cost.
+
+---
+
+## Knowledge activation and reusable methodological knowledge
+
+Deep theory:
+
+```text
+docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
+docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
+docs/foundations/008_knowledge_quality_generalization_and_evolution.md
+```
+
+V0 evidence:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
+
+The important V0 result is that B1 gained most of the semantic benefit simply by receiving the same four methodological concepts statically. P0's explicit activation layer added only a small further improvement and showed path-sensitive activation brittleness.
+
+Current implication: compact explicit or selectively retrieved methodological knowledge is a stronger default than the current P0 trigger architecture. The final production interaction between knowledge and LLM reasoning remains open.
 
 ---
 
@@ -154,29 +169,7 @@ Prototype V0 implements only a deliberately minimal experimental subset of the b
 docs/foundations/005_project_initialization_and_universal_bootstrap.md
 ```
 
-How a new project might be characterized, what initial facts/questions should be surfaced, and how initialization can remain general across project types.
-
----
-
-## Knowledge activation and open-world reasoning
-
-```text
-docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
-```
-
-How project state may activate relevant methodological concerns without requiring one fixed global workflow.
-
-```text
-docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
-```
-
-Candidate structure for reusable knowledge components, composability, role separation, and interaction with reasoning.
-
-```text
-docs/foundations/008_knowledge_quality_generalization_and_evolution.md
-```
-
-Knowledge quality, maturity, scope, promotion, challenge history, generalization, and evolution.
+How a new project may be characterized and bootstrapped without assuming one global workflow.
 
 ---
 
@@ -186,220 +179,172 @@ Knowledge quality, maturity, scope, promotion, challenge history, generalization
 docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 ```
 
-Why the evaluated object is a project trajectory rather than only a final model, and how hidden truth, behavioral envelopes, deterministic checks, semantic judging, self-correction, and dependency-aware evaluation fit together.
+Why the evaluated object is a project trajectory rather than only a final model.
+
+Prototype V0 is the first completed concrete realization:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
+docs/foundations/011_prototype_v0_technical_specification.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+```
+
+V0 demonstrates the value of strong controls, preregistration, deterministic checks, blinded semantic judging, explicit resource criteria, and allowing a richer architecture to lose.
 
 ---
 
-## Prototype V0: conceptual experiment
+## Prototype V0 final result
 
-### Quick entry point
+### Final authoritative report
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
+
+### Quick explanation
 
 ```text
 prototype_v0/README.md
 ```
 
-Short current explanation of what one run does, the benchmark traps, B0/B1/P0, P0 architecture, H1/H2, 30-run design, and evaluation layers.
-
-### Experimental contract
-
-```text
-docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
-```
-
-Why V0 exists, falsifiable hypotheses, benchmark design, B0/B1/P0 conditions, semantic spine, required behavior, and acceptance envelope.
-
-### Technical specification
-
-```text
-docs/foundations/011_prototype_v0_technical_specification.md
-```
-
-Detailed technical contract for the V0 implementation.
-
-### Frozen held-out protocol
-
-```text
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-```
-
-H1/H2 bundles, run counts/order, model/provider configuration, budgets, replacement rules, semantic judge, and continuation/falsification criteria.
-
-### Current held-out execution ledger
+### Final compact execution ledger
 
 ```text
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-Detailed current run ledger, mechanical summaries, resource consequences, interruptions, supervisor validation, and next frozen execution point.
-
-### Current project-level navigation
+### Frozen protocol
 
 ```text
-docs/CURRENT_STATE.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Contains the concise V0 status and next action needed for continuity.
+### Final classification
+
+```text
+STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
+```
+
+Central pooled result:
+
+```text
+B1 targeted mean: 1.73
+P0 targeted mean: 1.78
+incremental P0 gain: +0.05
+
+B1 completed within budget: 10/10
+P0 completed within budget: 3/10
+
+P0/B1 median token ratio: 2.160
+```
+
+The current post-V0 architectural direction is simplification. Do not tune P0 against the completed held-out benchmark.
+
+Historical completion checkpoints include:
+
+```text
+docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
+docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
+docs/checkpoints/093_blinded_semantic_freeze_independently_verified_and_unblinding_authorized.md
+docs/checkpoints/095_decoded_semantic_results_verified_and_p0_diagnostic_export_added.md
+docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
+```
 
 ---
 
-## Prototype V0 held-out supervision and mechanical verification
+## Held-out supervision and mechanical verification
 
-### Durable architecture
+Durable architecture:
 
 ```text
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 ```
 
-Explains the separation between frozen treatment execution and external experiment supervision, the read-only M01-M11 mechanical verifier, bounded sequential batching, compact exports, replacement-policy preservation, and the path toward a larger future evaluation platform.
-
-### Accepted operational decision
-
-```text
-docs/DECISIONS.md, D-026
-```
-
-The retrospectively validated supervisor/verifier is frozen for the remaining Prototype V0 operational execution unless a genuine condition-neutral infrastructure defect is discovered.
-
-### Validation provenance
-
-```text
-docs/checkpoints/081_automated_held_out_supervision_implemented_pending_retroactive_validation.md
-docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
-```
-
-Checkpoint 81 records implementation before use. Checkpoint 82 records the successful `77 passed` software test result, 12/12 retrospective mechanical integrity passes, comparison with the manual ledger, and authorization of the first bounded live supervisor batch.
-
-### Implementation
+Implementation:
 
 ```text
 prototype_v0/src/ads_v0/heldout_runner.py
-    frozen treatment executor
-
 prototype_v0/src/ads_v0/heldout_verifier.py
-    read-only mechanical verifier
-
 prototype_v0/src/ads_v0/heldout_supervisor.py
-    sequential external supervisor
-
 prototype_v0/src/ads_v0/heldout_monitor.py
-    read-only live observability sidecar
 ```
+
+These evaluation-infrastructure components are not part of the falsified P0 semantic treatment. They remain evidence-supported operational infrastructure.
 
 ---
 
 ## Execution and observability separation
 
-### Canonical principle
+Canonical principle:
 
 ```text
 docs/PRINCIPLES.md, P-022
 ```
 
-### Deep reasoning
+Deep rationale:
 
 ```text
 docs/foundations/016_execution_observability_separation.md
 ```
 
-Explains why long-running reasoning, execution, orchestration, and evaluation should persist structured state or events while detailed human-facing timestamps, heartbeats, progress rendering, and dashboards live in a separate read-only observability layer.
-
-The principle applies beyond Prototype V0 experiments to future autonomous project execution.
-
-### Prototype implementations
+Prototype observers:
 
 ```text
 prototype_v0/src/ads_v0/heldout_monitor.py
-    read-only held-out treatment observer
-
 prototype_v0/src/ads_v0/semantic_judge_monitor.py
-    read-only condition-blind semantic-judge observer
 ```
 
-The evidence-producing supervisors remain identifiable in Git history and are not rewritten after the fact merely to conform aesthetically to the later-promoted architecture.
-
-Historical promotion checkpoint:
+System pattern:
 
 ```text
-docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
+execution / reasoning
+    -> persisted state/events
+    -> read-only observability
+    -> human interface
 ```
 
 ---
 
 ## Why a system instead of only one strong LLM?
 
-Read in this order:
+Read:
 
 ```text
 1. docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 2. docs/VISION.md
-3. docs/foundations/001_initial_vision_and_reasoning.md
-4. docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
+3. docs/experiments/prototype_v0/FINAL_RESULTS.md
+4. docs/foundations/001_initial_vision_and_reasoning.md
 ```
 
-Foundation 013 is the best current synthesis. Checkpoint 22 is provenance, not the primary current source.
+V0 is important here because it shows that the answer cannot simply be "add more architecture." The system-level thesis survives only if individual mechanisms continue to earn their cost against strong simpler workflows.
 
 ---
 
-## Why B1 matters and what a P0 loss would mean
+## Knowledge preservation architecture
 
-Read:
-
-```text
-prototype_v0/README.md
-docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-```
-
-The key distinction is between a local treatment result and the broader system-level question.
-
----
-
-## How this project preserves its own knowledge
-
-### Current method
+Current method:
 
 ```text
 docs/DEVELOPMENT_METHOD.md
 ```
 
-### Continuity across chats and models
-
-```text
-docs/CONTINUITY.md
-```
-
-### Deep rationale and future evolution
+Deep rationale:
 
 ```text
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 ```
 
-### Selective structural history
+Current routing/history layers:
 
 ```text
+docs/KNOWLEDGE_MAP.md
 docs/MAJOR_CHANGES.md
-```
-
-### Historical checkpoints
-
-```text
 docs/checkpoints/
+Git history
 ```
 
-Checkpoints preserve provenance but should not be treated as automatically current truth.
-
----
-
-## Major accepted decisions
-
-```text
-docs/DECISIONS.md
-```
-
-Use this for explicit project-level decisions and their rationale.
-
-Do not infer an accepted decision solely from a foundation or checkpoint when `DECISIONS.md` states otherwise.
+The storage substrate remains Git + Markdown until observed retrieval, dependency, consistency, concurrency, or automation problems justify more advanced infrastructure.
 
 ---
 
@@ -409,50 +354,34 @@ Do not infer an accepted decision solely from a foundation or checkpoint when `D
 docs/OPEN_QUESTIONS.md
 ```
 
-Use this before assuming an architectural detail is settled.
-
----
-
-## Major structural evolution
-
-```text
-docs/MAJOR_CHANGES.md
-```
-
-This is a selective conceptual change log, not a replacement for Git history or checkpoints.
+Several V0-related question statuses still require post-V0 stage-boundary reconciliation. `docs/CURRENT_STATE.md` and `docs/experiments/prototype_v0/FINAL_RESULTS.md` govern the current experimental interpretation until that reconciliation is complete.
 
 ---
 
 ## Repository authority model
 
-Use the following default interpretation when documents disagree:
+Default order when documents disagree:
 
 ```text
 1. frozen current specifications/contracts for their declared scope
 2. current accepted decisions and canonical specifications
 3. current vision/principles/current-state material
-4. foundational design memos for rationale and durable hypotheses
-5. checkpoints/session records for historical state
-6. raw historical material for provenance
+4. final experiment reports for their declared experiment scope
+5. foundational design memos for rationale and durable hypotheses
+6. checkpoints for historical state
+7. raw historical material for provenance
 ```
 
 A material unresolved conflict should become an explicit open question rather than being silently reconciled.
 
 ---
 
-## Knowledge lifecycle
+## Current next-design question
 
-The current preservation lifecycle is:
+The post-V0 project should ask:
 
-```text
-discussion
-    -> checkpoint
-    -> promotion audit
-    -> canonical/foundational/specification update when warranted
-    -> knowledge-map routing update when warranted
-    -> periodic knowledge reconciliation
-```
+> What is the smallest low-overhead mechanism that improves reliability beyond B1 on longer changing project trajectories where conversational memory and static methodological prompting are expected to fail?
 
-No promotion is a valid outcome. Promotion should follow maturity, not enthusiasm.
+Candidate stressors for the next benchmark include multiple sequential state changes, longer dependency chains, partially shared evidence, selectively relevant knowledge, and meaningful under-propagation versus over-propagation consequences.
 
-Detailed rationale: `docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`.
+No V1 architecture has yet been accepted.
