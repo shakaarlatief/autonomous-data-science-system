@@ -26,7 +26,10 @@ from pathlib import Path
 
 CHECKPOINT_DIR = Path("docs/checkpoints")
 CHECKPOINT_FILE_RE = re.compile(r"^(?P<number>\d{3})_.*\.md$")
-TITLE_RE = re.compile(r"^#\s+Checkpoint\s+(?P<number>\d+)\s*(?::|-)\s*(?P<title>.+?)\s*$", re.IGNORECASE)
+TITLE_RE = re.compile(
+    r"^#\s+Checkpoint\s+(?P<number>\d+)(?:\s*[:\-–—]\s*(?P<title>.+?))?\s*$",
+    re.IGNORECASE,
+)
 BOLD_META_RE = re.compile(r"^\*\*(?P<key>[^*:\n]+):\*\*\s*(?P<value>.*?)\s*$")
 PLAIN_META_RE = re.compile(r"^(?P<key>[A-Za-z][A-Za-z0-9 /_-]*):\s*(?P<value>.*?)\s*$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -92,7 +95,7 @@ def parse_checkpoint(path: Path) -> ParsedCheckpoint:
         raise ValueError(f"{path}: first line is not a recognized checkpoint H1 title")
 
     number = int(title_match.group("number"))
-    title_text = title_match.group("title").strip()
+    title_text = (title_match.group("title") or f"Checkpoint {number}").strip()
 
     metadata: list[tuple[str, str]] = []
     index = 1
