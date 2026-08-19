@@ -122,6 +122,23 @@ Before continuing substantial work, the new session should be able to state:
 
 If repository documents are inconsistent, the session should identify the conflict rather than invent a reconciliation.
 
+## Optional cross-session handoff verification
+
+When the previous design session is still accessible after a new session has reconstructed the repository state, an optional additional robustness check is to ask the previous session to independently review the new session's reconstruction before substantial work continues.
+
+A useful verification asks whether the new session correctly identified:
+
+- the current development stage;
+- important accepted conclusions and architectural constraints;
+- hypotheses that must not be mistaken for settled architecture;
+- material unresolved questions;
+- the exact next legitimate step;
+- and any stale or conflicting repository wording that should not silently override newer authoritative sources.
+
+This check is supplementary rather than required. The previous chat is not an authority over the repository and continuity must not depend on that chat remaining available. If the two sessions disagree, the disagreement should be resolved from the repository using the authority hierarchy below. A material unresolved conflict should be made explicit rather than settled by whichever chat sounds more confident.
+
+The value of this check is independent reconstruction plus a second read of the handoff, not transfer of hidden conversational memory into the new session.
+
 ## Knowledge authority during reconstruction
 
 The default authority order is:
