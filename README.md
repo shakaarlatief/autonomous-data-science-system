@@ -6,7 +6,7 @@ This repository is the persistent home of the Autonomous Data Science System pro
 
 The project explores how to build a rigorous, adaptive, semi-autonomous system for carrying out data-science projects from problem understanding through analysis, experimentation, modelling, evaluation, reporting, and delivery.
 
-Modern LLMs can already perform substantial portions of a data project. That capability does not imply that one long end-to-end conversation reliably produces the best possible process for every project.
+Modern LLMs can already perform substantial portions of a data project. That does not imply that one long end-to-end conversation reliably produces the best possible process for every project.
 
 The project therefore studies a higher-level question:
 
@@ -14,7 +14,7 @@ The project therefore studies a higher-level question:
 
 The LLM is treated as a powerful reasoning component inside that wider system, not as the system itself.
 
-The project also takes the opposite risk seriously: explicit architecture is not automatically valuable. Every mechanism should earn its complexity through evidence.
+The opposite risk matters just as much: explicit architecture is not automatically valuable. Every mechanism should earn its complexity through evidence.
 
 ## Working purpose
 
@@ -26,44 +26,92 @@ The project therefore does not define maximum automation, maximum predictive per
 
 ## Current stage
 
-The project is currently running **Prototype V0**, the first falsification-oriented implementation experiment.
+**Prototype V0 is complete.**
 
-Prototype V0 asks whether a small explicit semantic architecture around the same strong LLM provides meaningful value beyond strong simpler workflows.
-
-The three conditions are:
+V0 was the first preregistered falsification experiment. It compared:
 
 ```text
 B0 = strong LLM + Python + project artifacts + strong generic data-science instructions
 
-B1 = B0 + the same four methodological concepts supplied statically in the prompt
+B1 = B0 + four methodological concepts supplied statically
 
-P0 = same strong LLM + minimal typed state + structured knowledge activation
-     + a prospective safeguard + state-derived action selection
+P0 = same strong LLM + typed project state + structured knowledge activation
+     + prospective safeguards + state-derived action selection
      + dependency-aware repair
 ```
 
-B1 is the primary architectural control. If B1 matches P0 reliably with less cost or friction, the tested P0 machinery is not justified for this benchmark.
+The experiment asked whether the extra P0 architecture materially improves reliability beyond B1 at acceptable cost.
 
-The held-out experiment is preregistered and currently executing. The treatment architecture, prompts, benchmark bundles, budgets, semantic rubric, provider/model configuration, and run order are frozen during execution.
+### V0 result
 
-For a short explanation of V0, start with:
+**The current P0 design received a strong falsification signal.**
+
+```text
+                         B0          B1          P0
+Targeted mean           1.47        1.73        1.78
+Strong targeted pass    0/10        0/10        0/10
+Critical failure runs   0/10        0/10        0/10
+Completed in budget    10/10       10/10        3/10
+Budget exhausted        0/10        0/10        7/10
+Median total tokens  122,544.5   120,564.5   260,370.0
+```
+
+P0 improved the targeted semantic score over B1 by only `+0.05`. The preregistered material-reliability threshold required `+0.30` together with at least two additional strong-targeted passes, or at least two fewer critical failures.
+
+P0 and B1 had identical critical-failure and strong-pass counts, while P0 used `2.160x` B1's median tokens and completed only `3/10` runs within budget.
+
+Most of the semantic gain over the generic baseline came from the simpler B1 intervention: make the relevant methodological knowledge explicitly available to the strong LLM.
+
+Detailed result:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
+
+Quick V0 overview:
 
 ```text
 prototype_v0/README.md
 ```
 
-For exact current execution status, use:
+The next stage is not to tune P0 until it passes the completed benchmark. The project is now reconciling what V0 taught and designing the smallest lower-overhead successor architecture that can be tested against B1 on a harder problem.
+
+## What V0 changed
+
+The V0 result does **not** falsify the broader Autonomous Data Science System vision.
+
+It does falsify the assumption that more explicit state and orchestration machinery should be preserved merely because it looks systematic.
+
+The current evidence favors keeping:
 
 ```text
-docs/CURRENT_STATE.md
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+one strong LLM reasoner
+compact explicit methodological guidance
+instrumented execution and traceability
+precise deterministic boundaries where justified
+append-only experiment provenance
+external mechanical verification
+read-only observability separated from execution
 ```
+
+The current P0 mechanisms should not be carried forward unchanged:
+
+```text
+full typed project state resent every reasoning cycle
+large always-on object/relation context
+generic support-reassessment propagation
+path-sensitive tag-trigger knowledge activation
+universal dependency reopening machinery
+full state-derived frontier representation
+```
+
+Potential successors such as compact question/claim memory, incremental state deltas, selective retrieval, event-driven repair, and lightweight blocker/frontier representations remain hypotheses for the next design stage.
 
 ## System-level vision versus Prototype V0
 
-Prototype V0 tests a narrow local question. It does not define the final system architecture.
+Prototype V0 tested a narrow local architecture. It does not define the final system.
 
-The broader system-level distinction is:
+The broader system-level distinction remains:
 
 ```text
 1. human-executed data-science project
@@ -71,7 +119,7 @@ The broader system-level distinction is:
 3. system-mediated data-science project
 ```
 
-The long-term question is whether a system can make high-quality project navigation, methodological coverage, state maintenance, repair, and knowledge reuse less dependent on the user remembering and supplying the right reasoning at the right time.
+The long-term question is whether a system can make high-quality project navigation, methodological coverage, state maintenance, repair, and knowledge reuse less dependent on the human remembering and supplying the right reasoning at the right time.
 
 The best current synthesis is:
 
@@ -85,13 +133,13 @@ This repository is the project's durable source of truth.
 
 Chat conversations are used for exploration, reasoning, criticism, and design work. Stable knowledge is extracted into repository artifacts so the project does not depend on conversational memory or any single chat remaining available.
 
-The preservation architecture deliberately distinguishes:
+The preservation architecture distinguishes:
 
 ```text
 canonical current documents
 foundational design memos
-checkpoints / historical provenance
-experiment-specific status ledgers
+checkpoints and historical provenance
+experiment-specific ledgers
 routing/index knowledge
 Git history
 ```
@@ -100,15 +148,13 @@ The core maxim remains:
 
 > **The chat is where we think. The repository is where the system remembers.**
 
-But preservation now includes not only durability, but also discoverability, promotion, authority, and reconciliation.
+Preservation includes not only durability, but also discoverability, promotion, authority, and reconciliation.
 
 ## Start here
 
-The main project-level documents are:
-
 ```text
 docs/CURRENT_STATE.md
-    Concise current state, exact current priority, and next step.
+    Concise current state, exact priority, and next step.
 
 docs/KNOWLEDGE_MAP.md
     Routing layer showing where important knowledge lives.
@@ -126,7 +172,7 @@ docs/OPEN_QUESTIONS.md
     Important unresolved questions.
 
 docs/DEVELOPMENT_METHOD.md
-    Current method for developing and preserving the project.
+    Method for developing and preserving the project.
 
 docs/CONTINUITY.md
     Procedure for reliable continuation across chats and models.
@@ -141,17 +187,17 @@ docs/checkpoints/
     Historical snapshots and milestone records.
 ```
 
-If you are looking for a topic and do not know which document contains it, use:
+For the completed V0 experiment specifically:
 
 ```text
-docs/KNOWLEDGE_MAP.md
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+prototype_v0/README.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
 ## Knowledge preservation architecture
 
-Development Method version 0.3 introduced a stronger preservation lifecycle after actual use exposed the risk that historically safe knowledge can still become conceptually buried.
-
-The current flow is:
+Development Method v0.3 uses the lifecycle:
 
 ```text
 discussion
@@ -162,68 +208,38 @@ discussion
     -> periodic knowledge reconciliation
 ```
 
-Important changes include:
-
-```text
-explicit checkpoint promotion audits;
-KNOWLEDGE_MAP as a routing layer;
-periodic reconciliation of stale/duplicated knowledge;
-lightweight document authority/maturity metadata;
-separation of concise CURRENT_STATE from detailed experiment ledgers;
-MAJOR_CHANGES as a selective structural history.
-```
-
 Detailed rationale:
 
 ```text
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 ```
 
-The current storage foundation remains Git + Markdown. Graph databases, vector retrieval, automatic summarization, generated dependency graphs, and similar advanced preservation infrastructure are deliberately deferred until demonstrated scale, retrieval, consistency, dependency, or automation problems justify them.
+The current preservation substrate remains Git + Markdown. More advanced infrastructure is deferred until observed retrieval, dependency, consistency, concurrency, or automation problems justify it.
 
-## Prototype V0 repository area
+## Execution and observability
 
-The executable experiment lives under:
+A system-level lesson discovered while running V0 is that execution and human-facing observability should be separated:
 
 ```text
-prototype_v0/
+execution / reasoning
+    -> persisted structured state or events
+    -> read-only observability
+    -> human interface
 ```
 
-Key locations:
+This allows monitors, dashboards, timestamps, heartbeats, and progress displays to evolve without modifying the trusted execution path.
+
+Deep rationale:
 
 ```text
-prototype_v0/README.md
-    Current simple conceptual and operational V0 overview.
-
-prototype_v0/src/ads_v0/
-    Executable implementation.
-
-prototype_v0/tests/
-    Prototype tests.
-
-prototype_v0/configs/
-    Frozen experiment configuration.
-
-docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
-    V0 conceptual and benchmark contract.
-
-docs/foundations/011_prototype_v0_technical_specification.md
-    V0 technical specification.
-
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-    Frozen held-out experiment protocol.
-
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
-    Detailed current held-out execution ledger.
+docs/foundations/016_execution_observability_separation.md
 ```
 
 ## Relationship to individual data projects
 
-This repository is intentionally separate from repositories or folders containing individual data-science projects.
+This repository is intentionally separate from repositories containing individual data-science projects.
 
 Individual projects can serve as coverage tests and development environments for the system.
-
-The relationship is:
 
 ```text
 Autonomous Data Science System
@@ -233,11 +249,11 @@ Autonomous Data Science System
 Individual Data Projects
 ```
 
-When a project reveals a generalizable weakness, the lesson should be extracted into reusable system knowledge, decision frameworks, behavioral regression tests, or architectural changes rather than patched only locally.
+When a project reveals a generalizable weakness, the lesson should become reusable system knowledge, a decision framework, a behavioral regression test, or an architectural revision rather than remaining a local patch.
 
-## Current development philosophy
+## Development philosophy
 
-The project intentionally resists two opposite mistakes:
+The project deliberately resists two opposite mistakes:
 
 ```text
 Mistake 1:
@@ -253,4 +269,4 @@ The current stance is empirical:
 
 > **Build only the system mechanisms that demonstrably improve the reliability, coverage, efficiency, reuse, or human-navigation burden of real data-science work beyond what strong simpler workflows already achieve.**
 
-See `docs/CURRENT_STATE.md` for the exact current continuation point.
+Prototype V0 is the first concrete example of that philosophy: a more elaborate treatment was allowed to lose, and the result is now an architectural constraint for what comes next.
