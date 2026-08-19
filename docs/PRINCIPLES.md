@@ -143,3 +143,15 @@ The system should create the best data-science process for the particular projec
 What "best" means should depend on project intent, including goals, constraints, required outputs, and desired human involvement. Predictive performance, autonomy, speed, cost, interpretability, learning value, production readiness, and analytical depth may all matter, but their relative importance can differ by project.
 
 Project-specific priorities should shape the process without silently redefining invalid methodology as acceptable. The exact boundary between configurable priorities and non-negotiable methodological standards remains under active design.
+
+## P-022. Separate execution from observability
+
+Long-running reasoning, analytical execution, orchestration, and evaluation processes should persist structured state or events that can be observed by separate read-only interfaces.
+
+The execution path should own correctness, state transitions, and safety decisions. Observability should own timestamps, heartbeats, progress rendering, elapsed-time display, dashboards, and other human-facing presentation.
+
+An observer should be startable, stoppable, replaceable, or allowed to fail without changing execution semantics. It must also respect information boundaries such as experimental blinding and must not expose privileged state merely because it is convenient to display.
+
+Minimal lifecycle output from an execution process remains acceptable, but detailed monitoring should preferentially be a downstream projection of persisted state rather than part of the trusted execution surface.
+
+See `docs/foundations/016_execution_observability_separation.md`.
