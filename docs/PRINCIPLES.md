@@ -155,3 +155,23 @@ An observer should be startable, stoppable, replaceable, or allowed to fail with
 Minimal lifecycle output from an execution process remains acceptable, but detailed monitoring should preferentially be a downstream projection of persisted state rather than part of the trusted execution surface.
 
 See `docs/foundations/016_execution_observability_separation.md`.
+
+## P-023. The system should complement the professional developer workbench rather than replace it
+
+The Autonomous Data Science System should own project understanding, methodological navigation, process orchestration, provenance, and interactive project control without trying to recreate a full code editor and debugging environment inside the product.
+
+Professional tools such as VS Code should remain first-class ways to inspect, edit, debug, and manually execute the same underlying project. The system workspace and the developer workbench should therefore interoperate around one coherent project rather than create unrelated copies or competing sources of truth.
+
+Project orchestration, code editing, execution, and version control are distinct responsibilities even when they are tightly integrated in the user experience.
+
+See `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`.
+
+## P-024. Generated project code should remain independently runnable and professionally maintainable
+
+Analytical code created or maintained by the system should remain normal project code rather than hidden logic that only functions through the system UI.
+
+Where consequential work is promoted into project code, it should aim to be readable, modular, reproducible, configurable, documented, tested where appropriate, and version controlled. The same reproducible run contract should preferentially support both system-triggered execution and manual execution from a terminal or developer environment.
+
+If the Autonomous Data Science System were removed, the resulting repository should still be a credible professional data-science project.
+
+See `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`.
