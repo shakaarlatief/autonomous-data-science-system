@@ -1,20 +1,20 @@
 # Prototype V0 Held-Out Status
 
-**Status:** Held-out treatment execution complete; blinded semantic evaluation pending  
+**Status:** Held-out treatment execution complete; blinded semantic consensus frozen; condition decoding pending  
 **Experiment authority:** Descriptive execution status only. Frozen experimental rules remain governed by `docs/foundations/012_preregistered_held_out_evaluation_protocol.md`.  
 **Last reviewed:** 2026-08-19  
 **Resolved treatment slots:** 30 / 30  
 **Remaining treatment slots:** 0 / 30  
 **Next frozen treatment slot:** none  
-**Execution mode:** completed prospectively validated sequential-supervisor execution
+**Execution mode:** treatment and judge inference complete; post-freeze deterministic decoding pending
 
 ## Purpose
 
 This file is the consolidated execution ledger for the preregistered Prototype V0 held-out experiment.
 
-`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, supervisor status, and the transition to blinded semantic evaluation.
+`docs/CURRENT_STATE.md` remains the concise project-navigation layer. Individual checkpoints preserve detailed provenance. This ledger records current counts, retained-run resource summaries, exceptional attempt mechanics, semantic-judge completion, the blinded freeze identity, and the transition to decoded condition comparison.
 
-No H1/H2 S1-S10 or SC1-SC2 semantic judging has yet been completed.
+No further B0/B1/P0 treatment call or semantic-judge call is authorized for Prototype V0.
 
 ## Frozen experiment summary
 
@@ -46,7 +46,7 @@ H2 seed 1601
 SHA-256 44ebc4775c0faefaaa01dbd5c81b2de28d6239d6a53fa9d64a8ad8e73680928e
 ```
 
-## Final execution counts
+## Final treatment-execution counts
 
 ```text
 resolved treatment slots: 30 / 30
@@ -127,9 +127,9 @@ successful model calls: 0.813
 Python attempts: 0.833
 ```
 
-The unusually high P0 token cost despite fewer calls is now a central mechanical result to interpret alongside semantic reliability.
+The unusually high P0 token cost despite fewer calls is a central mechanical result to interpret alongside semantic reliability.
 
-## Continuation criterion status before semantic judging
+## Continuation criterion status from mechanical outcomes
 
 Foundation 012 requires all continuation conditions to hold. Three mechanically observable requirements are already impossible:
 
@@ -144,11 +144,11 @@ allowed P0/B1 median token ratio: at most 1.50
 observed: 2.160
 ```
 
-Therefore the current P0 design cannot obtain the preregistered V0 continuation signal regardless of later S1-S10 scores.
+Therefore the current P0 design cannot obtain the preregistered V0 continuation signal regardless of S1-S10 outcomes.
 
-The final interpretation still requires blinded semantic evaluation. In particular, the experiment has not yet established whether the result satisfies a registered strong-falsification condition or should be classified as inconclusive/no demonstrated continuation signal.
+The final registered classification still requires decoded semantic reliability plus the P0-specific architecture diagnostic clauses relevant to strong falsification.
 
-## Final unattended batch
+## Final unattended treatment batch
 
 Batch:
 
@@ -207,7 +207,7 @@ h2-r03-b0-a01
 h2-r05-b1-a01
 ```
 
-They remain eligible for the later semantic judge exactly as executed.
+They remain part of the final retained trajectories exactly as executed.
 
 ## P0 completion pattern
 
@@ -233,20 +233,128 @@ budget exhausted: 7 / 10
 final report present: 6 / 10
 ```
 
-## Semantic-evaluation boundary
+## Blinded semantic-judge execution
 
-Treatment execution is complete and must not be rerun because of poor methodology, disappointing results, cost, incompleteness, or budget exhaustion.
+The preregistered two-pass semantic judge completed after all treatment trajectories were fixed.
 
-The next experimental stage is the frozen blinded semantic procedure:
+Observed execution:
 
 ```text
-1. construct condition-neutral normalized judge inputs for the 30 retained behavior-evaluable trajectories;
-2. run two independent judge passes for every trajectory;
-3. score S1-S10 and SC1/SC2;
-4. combine exact/adjacent scores under Foundation 012;
-5. manually adjudicate 0-vs-2 criterion disagreements and every SC disagreement while still blinded;
-6. only then decode condition identity and perform H1, H2, and pooled B0/B1/P0 comparisons;
-7. apply the preregistered continuation/falsification interpretation.
+semantic batch: semantic-batch-20260819T121018Z
+prepared blinded cases: 30 / 30
+logical passes persisted: 60 / 60
+completed blinded cases: 30 / 30
+provider attempts: 60
+provider failures: 0
+manual-adjudication cases: 0
+stop reason: JUDGE_COMPLETE
 ```
+
+Two-pass agreement across the frozen blinded pool:
+
+```text
+ordinary criterion comparisons: 300
+exact agreement: 288 / 300 = 96.0%
+adjacent disagreements: 12 / 300 = 4.0%
+extreme 0-vs-2 disagreements: 0
+
+semantic-critical comparisons: 60
+exact agreement: 60 / 60
+critical disagreements: 0
+SC1 consensus flags: 0 / 30
+SC2 consensus flags: 0 / 30
+```
+
+The twelve adjacent disagreements were resolved by the already-preregistered arithmetic-mean rule. No manual semantic intervention was required.
+
+Judge resource usage, separate from treatment budgets:
+
+```text
+total judge tokens: 1,073,492
+mean per pass: approximately 17,891.5
+median per pass: 18,668.5
+minimum: 12,303
+maximum: 23,182
+```
+
+Detailed record:
+
+```text
+docs/checkpoints/090_blinded_semantic_judge_execution_complete.md
+```
+
+## Frozen blinded consensus
+
+The complete blinded semantic evidence was mechanically verified and frozen before condition decoding.
+
+Local freeze validation:
+
+```text
+pytest: 95 passed
+prepared cases verified: 30 / 30
+logical passes verified: 60 / 60
+completed cases verified: 30 / 30
+manual-adjudication cases: 0
+provider attempts: 60
+private decoder read: no
+```
+
+Frozen aggregate SHA-256:
+
+```text
+836a6677e2803338697395afea431de5af0fc8ece469940bb687855bf7ec0757
+```
+
+The decoder-free frozen ZIP was uploaded and independently checked byte-for-byte against its manifest:
+
+```text
+freeze-covered files: 242
+file SHA-256 mismatches: 0
+recomputed aggregate matches: yes
+private decoder present: no
+```
+
+Condition-blind aggregate semantic shape at the freeze boundary:
+
+```text
+S1 mean: 1.000
+S2 mean: 1.650
+S3 mean: 1.683
+S4 mean: 1.033
+S5 mean: 2.000
+S6 mean: 2.000
+S7 mean: 1.967
+S8 mean: 1.967
+S9 mean: 1.733
+S10 mean: 1.900
+blinded targeted-architecture mean: 1.660
+strong-targeted-pass cases: 0 / 30
+```
+
+Detailed freeze records:
+
+```text
+docs/checkpoints/092_blinded_semantic_consensus_freeze_implemented_pending_validation.md
+docs/checkpoints/093_blinded_semantic_freeze_independently_verified_and_unblinding_authorized.md
+```
+
+## Current post-freeze boundary
+
+The scientific ordering is now:
+
+```text
+treatment trajectories fixed
+-> deterministic mechanics verified
+-> semantic judge completed
+-> two-pass consensus completed
+-> no manual adjudication required
+-> blinded evidence frozen
+-> frozen archive independently verified
+-> condition decoding authorized
+```
+
+The next stage is deterministic condition decoding. The decoder must first re-verify the frozen aggregate without reading the private mapping, then reveal the mapping and compute H1, H2, pooled, and paired B0/B1/P0 comparisons.
+
+After decoded common semantic outcomes are available, P0-specific diagnostics must separately assess the registered architecture-induced false-blocking, over-invalidation/broad-reopening, and held-out-specific hard-coding clauses before the final strong-falsification versus no-demonstrated-continuation classification is recorded.
 
 The primary architectural comparison remains P0 versus B1.
