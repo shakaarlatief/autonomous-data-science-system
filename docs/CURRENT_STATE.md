@@ -1,20 +1,18 @@
 # Current State
 
-**Checkpoint:** 98  
+**Checkpoint:** 99  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 complete; post-V0 product/system vision, candidate project object model, and professional developer-workflow integration now concretized before next architecture design  
+**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, and methodological-navigation relevance architecture concretized; proactive session rotation now recommended  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
 ## Current project goal
 
-The broader Autonomous Data Science System still aims to create the best defensible data-science process for a project's objectives, constraints, deliverables, and desired human involvement.
+The Autonomous Data Science System aims to create the best defensible data-science process for a project's objectives, constraints, deliverables, and desired human involvement.
 
-The intended destination is **not** a single prompt that returns a completed project.
+The intended product is **not** a single prompt that returns a finished project. It is a professional interactive data-science environment in which the system carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden that otherwise has to be repeatedly supplied by the human through prompts.
 
-The current product vision is a professional interactive data-science environment in which the system itself carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden that otherwise has to be repeatedly supplied by the human through prompts.
-
-The user should remain able to inspect, discuss, select, override, and guide the work interactively.
+The user remains able to inspect, discuss, select, override, edit, run, and guide the work interactively.
 
 Core product vision:
 
@@ -22,7 +20,7 @@ Core product vision:
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 ```
 
-System/LLM/human boundary:
+System / LLM / human boundary:
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
@@ -32,7 +30,7 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 
 Prototype V0 strongly falsified the **current P0 implementation strategy on the churn benchmark family**.
 
-Primary result:
+Central result:
 
 ```text
 B1 targeted mean: 1.73
@@ -47,7 +45,7 @@ P0/B1 median token ratio: 2.160
 
 This does not falsify the broader system vision or persistent project memory.
 
-One of the strongest V0 lessons is:
+The strongest scaling lesson remains:
 
 ```text
 what the SYSTEM should remember
@@ -65,7 +63,7 @@ docs/experiments/prototype_v0/FINAL_RESULTS.md
 
 ## Professional interactive workspace
 
-A new project should eventually begin by providing available sources such as:
+A new project should eventually begin by supplying available sources such as:
 
 ```text
 assignment / project brief
@@ -76,7 +74,7 @@ business/domain documents
 other relevant artifacts
 ```
 
-The system should initialize a professional project workspace rather than immediately trying to produce a final answer.
+The system should initialize a professional project workspace rather than immediately produce a final answer.
 
 Useful user-facing areas may include:
 
@@ -95,36 +93,13 @@ Report
 History
 ```
 
-These are navigation/views, not a rigid analytical pipeline.
+These are views, not a rigid analytical pipeline.
 
-The underlying process remains iterative and should be able to revisit earlier work when findings, requirements, evidence, assumptions, or code change.
+The system should reduce the need for the human to repeatedly remember every useful analysis or methodological question.
 
-## Methodological-navigation brain
+## Candidate project object model
 
-The system should maintain a broad, evolving, inspectable catalog of data-science process knowledge rather than depending solely on an LLM recalling an arbitrary subset on each run.
-
-A useful product separation is:
-
-```text
-RECOMMENDED
-    what currently deserves attention
-
-RELEVANT OPTION SPACE
-    everything currently judged applicable
-
-FULL KNOWLEDGE CATALOG
-    everything the system knows, browsable/searchable even when not recommended
-```
-
-EDA remains the concrete reference example: basic orientation should happen automatically, while the system should know and organize the wider space of possible descriptive statistics, visualizations, data-quality checks, missingness analyses, relationships, temporal analyses, diagnostics, and follow-up investigations.
-
-The goal is to reduce the need for the human to repeatedly remember and prompt for every useful next analysis.
-
-## Candidate product object model
-
-The latest discussion derived a candidate project model from the desired user experience rather than from a backend schema.
-
-The core conceptual separation is:
+The current product-level conceptual model separates:
 
 ```text
 OBJECTS
@@ -133,50 +108,19 @@ EVENTS
 VIEWS
 ```
 
-Candidate objects:
+Candidate objects include:
 
 ```text
-PROJECT CONSTITUTION
-Project
-IntentItem
-    Objective
-    Constraint
-    Deliverable
-    HumanPreference
-    Definition
-
-PROJECT MATERIAL
-Artifact
-Dataset
-Variable
-
-PROJECT EPISTEMIC STATE
-Question
-Assumption
-Finding
-Claim
-
-GLOBAL SYSTEM KNOWLEDGE
-Method
-MethodFamily / MethodKnowledge
-
-WORK AND CHOICE
-Proposal
-Investigation
-Run
-Evidence
-Decision
-
-PRESENTATION
-Report
-ReportSection
-
-HISTORY / CONNECTIVITY
-Event
-Relation
+Project / IntentItem
+Artifact / Dataset / Variable
+Question / Assumption / Finding / Claim
+Method / methodological knowledge
+Proposal / Investigation / Run / Evidence / Decision
+Report / ReportSection
+Event / Relation
 ```
 
-Important distinctions include:
+Important distinctions:
 
 ```text
 Investigation != Run
@@ -188,9 +132,7 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-This is a candidate **product model**, not a frozen database ontology.
-
-Detailed reasoning:
+Detailed product-model reasoning:
 
 ```text
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
@@ -198,7 +140,7 @@ docs/foundations/018_project_object_model_and_professional_developer_workflow_in
 
 ## Professional developer workflow
 
-The system should **complement VS Code rather than replace it**.
+The system should complement VS Code rather than replace it.
 
 Current conceptual separation:
 
@@ -216,8 +158,6 @@ GIT + GITHUB
     source versioning, collaboration, and code provenance
 ```
 
-The system workspace and VS Code should operate on the same coherent project rather than creating unrelated project copies.
-
 Promoted principles:
 
 ```text
@@ -225,160 +165,120 @@ P-023  The system should complement the professional developer workbench rather 
 P-024  Generated project code should remain independently runnable and professionally maintainable.
 ```
 
-Generated consequential code should aim to be normal professional project code:
+System-triggered and manually triggered executions should preferentially share the same reproducible command/configuration contract.
+
+Git/GitHub should be first-class source-versioning and provenance infrastructure, while large datasets/models/arrays may live in separate artifact storage.
+
+Local-first execution is a strong current hypothesis for typical projects, not yet a universal architecture decision.
+
+## Methodological-navigation brain
+
+The current promoted design hypothesis is broader than a method catalog.
+
+Reusable knowledge may include:
 
 ```text
-readable
-modular
-reproducible
-configurable
-documented
-tested where appropriate
-version controlled
+methods
+question templates
+decision frameworks
+invariants / hard rules
+failure modes
+investigation patterns
+interpretation knowledge
+follow-up / dependency knowledge
 ```
 
-A system-triggered execution and a manual VS Code/terminal execution should preferentially use the same reproducible command/configuration contract.
-
-If code changes after a run, old evidence must keep its original code provenance and a new run should be required for new evidence.
-
-## GitHub and artifact integration
-
-Git/GitHub should be first-class infrastructure for code versioning, collaboration, and experiment provenance.
-
-The system should eventually understand concepts such as:
+The main relevance progression is:
 
 ```text
-repository
-branch
-working-tree state
-commit used for a run
-remote synchronization
-code changes made inside or outside the system
+KNOWN
+    -> APPLICABLE
+    -> RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
 ```
 
-Git is **not** intended to store every large data/model artifact.
+The system should also explain why known options were not recommended.
 
-A likely separation is:
+A key new concept is the **methodological horizon**:
 
 ```text
-source code / configs / tests / lightweight docs
-    -> Git
-
-large datasets / models / prediction arrays / caches
-    -> local or external artifact storage
+large global knowledge base
+    -> project-specific retrieval/filtering
+    -> small current methodological horizon
+    -> explicit checks + flexible reasoning
+    -> applicability / prioritization
+    -> required / recommended / relevant / not now
 ```
 
-The project system should track provenance across both.
+The horizon should change as project facts and findings change.
 
-## Execution direction
+Recommendation reasoning should remain inspectable through project signals, applicable knowledge areas, alternatives, cost, risk, information value, downstream impact, and human preferences.
 
-A local-first workflow is currently a strong **hypothesis** for the user's typical projects because the same working tree can be used by the system, VS Code, Git, GitHub synchronization, and local Python/Docker execution.
+Knowledge units should retain scope/provenance/maturity/counterexamples where appropriate, and the system should remain open-world by allowing flexible reasoning to surface important concerns missing from the explicit catalog.
 
-It is not yet a universal architecture decision.
-
-The execution abstraction should remain compatible with future local GPU, remote GPU, cloud, cluster, or organizational infrastructure.
-
-Useful execution maturity levels may be:
+Detailed promoted reasoning:
 
 ```text
-EPHEMERAL ANALYSIS
-REPRODUCIBLE INVESTIGATION
-PROJECT / FINAL CODE
-```
-
-Notebooks and Python modules can coexist according to purpose.
-
-## Human involvement
-
-The target remains interactive, not necessarily black-box autonomous.
-
-A project may support a continuum such as:
-
-```text
-GUIDED
-system proposes; user selects; system executes
-
-SEMI-AUTONOMOUS
-system runs safe/high-confidence work and pauses at important decisions
-
-MORE AUTONOMOUS
-system proceeds under an agreed project constitution and escalates where human judgment or authority adds value
-```
-
-The desired level of involvement remains a project-intent dimension.
-
-## Evaluation direction
-
-Future evaluation should combine controlled benchmarks with realistic project replay and expert judgment.
-
-Useful measures include:
-
-```text
-important-method coverage
-recommendation precision
-critical omissions
-unnecessary recommendations
-human reminder burden
-human intervention burden
-state-recall failures
-methodological violations
-repeated work
-reproducibility
-```
-
-Project replay remains a major candidate evaluation method:
-
-```text
-completed historical project
-    -> restore only original starting inputs
-    -> initialize the system from scratch
-    -> observe what it surfaces, recommends, remembers, executes, and repairs
-    -> compare with known project experience
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
 ## Current design stage
 
 Do **not** implement V1 yet.
 
-The product/system contract is now substantially clearer in three areas:
+The next design task is to go one level deeper into the reusable methodological knowledge representation using deliberately different examples:
 
 ```text
-1. interactive workspace and methodological-navigation experience
-2. candidate product object model
-3. integration with VS Code, reproducible execution, Git, and GitHub
+Histogram
+Missing-data investigation
+Temporal validation
+Random Forest
+Prediction-time feature eligibility
 ```
 
-The next major design problem is the **methodological-navigation brain**:
-
-> How should the system represent a broad universe of data-science knowledge and transform it into known, applicable, relevant, recommended, required, or inapplicable options for the current project?
-
-Questions to resolve next include:
+For each example, determine:
 
 ```text
-What does a reusable Method/knowledge object contain in practice?
-How are applicability conditions represented?
-How are relevant options ranked and recommended?
-How are alternatives exposed?
-How does the system explain why something was or was not recommended?
-What role should the LLM play in applicability and ranking?
-How should project intent, cost, risk, and human preferences affect priority?
-How does knowledge grow from completed projects without overgeneralizing?
-How should recommendation quality be evaluated?
+what information every reusable knowledge unit should share;
+what requires type-specific extensions;
+how prerequisites and applicability are represented;
+how alternatives, complements, failure modes, and follow-ups are represented;
+what can be explicit/deterministic versus requiring flexible reasoning;
+what belongs in methodological knowledge versus executable implementation.
 ```
 
-Only after this product/system reasoning is clearer should the project select the smallest backend architecture worth prototyping.
+The goal is to learn whether the knowledge system needs a common core plus typed extensions rather than forcing all knowledge into one universal schema.
 
-## Continuity
+Do not choose a database, graph store, vector store, retrieval engine, agent framework, or V1 backend before this conceptual exercise is complete.
 
-The standardized new-chat prompt is stored in:
+## Session rotation
+
+The active ChatGPT design session is now long enough that further substantial work creates avoidable continuity risk.
+
+The repository has been preserved through Checkpoint 099 specifically so the session can rotate **before** hitting the platform length limit.
+
+Recommended next chat title:
+
+```text
+02 - Methodological Brain & Knowledge Units
+```
+
+Use the standardized repository-first continuation prompt stored in:
 
 ```text
 docs/CONTINUITY.md
 ```
 
-A future session should reconstruct the project from the repository rather than requiring the user to invent a handoff summary.
+No manual transcript handoff should be required.
 
-## Minimum reading for a future session
+Historical rotation checkpoint:
+
+```text
+docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
+```
+
+## Minimum reading for the next session
 
 ```text
 README.md
@@ -389,10 +289,11 @@ docs/PRINCIPLES.md
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Continue designing the methodological-navigation brain from the product perspective. Do not select a V1 architecture or implementation stack yet. Preserve the V0 constraints, the interactive workspace goal, the product object model, and the professional VS Code/Git/GitHub workflow as separate but interoperable concerns.**
+**Rotate to a new chat now. In the new session, begin the reusable knowledge-unit design exercise with Histogram, Missing-data investigation, Temporal validation, Random Forest, and Prediction-time feature eligibility. Do not implement V1 yet.**
