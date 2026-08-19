@@ -95,6 +95,15 @@ def test_snapshot_counts_completed_and_verification_integrity(tmp_path: Path) ->
         verification / "h1-r04-p0-a01.json",
         {"attempt_id": second.name, "integrity_status": "FAIL"},
     )
+    _write_json(
+        verification / "index.json",
+        {
+            "attempts_verified": 2,
+            "integrity_passed": 1,
+            "integrity_failed": 1,
+            "reports": [],
+        },
+    )
 
     snapshot = snapshot_progress(
         attempts_root=attempts,
