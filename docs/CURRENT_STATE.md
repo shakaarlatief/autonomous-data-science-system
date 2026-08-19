@@ -1,84 +1,53 @@
 # Current State
 
-**Checkpoint:** 97  
+**Checkpoint:** 98  
 **Date:** 2026-08-19  
-**Development stage:** Prototype V0 complete; current P0 design strongly falsified; post-V0 product/system vision now concretized before next architecture design  
-**Resolved treatment slots:** 30 / 30  
-**Semantic logical passes:** 60 / 60  
+**Development stage:** Prototype V0 complete; post-V0 product/system vision, candidate project object model, and professional developer-workflow integration now concretized before next architecture design  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
-## Current project question
+## Current project goal
 
 The broader Autonomous Data Science System still aims to create the best defensible data-science process for a project's objectives, constraints, deliverables, and desired human involvement.
 
-The system-level goal has not changed after V0. The intended destination is not a single prompt that returns a completed project. The intended product is increasingly concrete as a professional interactive data-science environment in which the system itself carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden that otherwise has to be repeatedly supplied by the human through prompts.
+The intended destination is **not** a single prompt that returns a completed project.
 
-The strongest current product statement is:
+The current product vision is a professional interactive data-science environment in which the system itself carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden that otherwise has to be repeatedly supplied by the human through prompts.
 
-> **The system should make high-quality data-science process navigation an explicit, reusable, inspectable capability, so the user does not need to repeatedly remember what to ask an LLM, while still remaining able to inspect, discuss, select, override, and guide the project interactively.**
+The user should remain able to inspect, discuss, select, override, and guide the work interactively.
 
-Detailed promoted product/system vision:
+Core product vision:
 
 ```text
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 ```
 
-The broader LLM-system-human boundary remains governed by:
+System/LLM/human boundary:
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 ```
 
-## Prototype V0 constraint on future design
+## Prototype V0 constraint
 
-Prototype V0 tested one narrower architectural claim:
+Prototype V0 strongly falsified the **current P0 implementation strategy on the churn benchmark family**.
 
-> Can explicit project state, reusable knowledge activation, prospective safeguards, and dependency-aware repair make a strong LLM's data-science reasoning materially more reliable across a changing project than an equally capable simpler LLM workflow?
-
-The V0 answer for the implemented P0 design and churn benchmark family is **no at the required reliability/cost threshold**.
-
-Primary pooled comparison:
+Primary result:
 
 ```text
-                         B0          B1          P0
-Targeted mean           1.47        1.73        1.78
-Strong targeted pass    0/10        0/10        0/10
-Critical failure runs   0/10        0/10        0/10
-Completed in budget    10/10       10/10        3/10
-Budget exhausted        0/10        0/10        7/10
-Median total tokens  122,544.5   120,564.5   260,370.0
-Median calls            16          16          13
-Median Python            6           6           5
+B1 targeted mean: 1.73
+P0 targeted mean: 1.78
+incremental P0 gain: +0.05
+
+B1 completed within budget: 10/10
+P0 completed within budget: 3/10
+
+P0/B1 median token ratio: 2.160
 ```
 
-P0 versus B1:
+This does not falsify the broader system vision or persistent project memory.
 
-```text
-targeted semantic gain: +0.05
-registered material-gain threshold: +0.30 plus >=2 additional strong passes
-critical-failure difference: 0
-strong-targeted-pass difference: 0
-median token ratio: 2.160
-```
-
-Detailed final result:
-
-```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-The V0 conclusion falsifies the **current P0 implementation strategy on this benchmark family**. It does not establish that persistent project memory, dependency tracking, reusable methodological knowledge, knowledge activation, or deterministic controls are universally unnecessary.
-
-## Important post-V0 scaling interpretation
-
-Do not extrapolate the B1/P0 token and reliability differences as linear scaling laws.
-
-V0 gives evidence at one benchmark complexity level.
-
-Future project complexity could change both curves substantially.
-
-A particularly important distinction is now explicit:
+One of the strongest V0 lessons is:
 
 ```text
 what the SYSTEM should remember
@@ -86,16 +55,20 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-A mature system may retain a very large project memory while retrieving only the small subset relevant to the current reasoning decision.
+Do not carry forward P0's large always-on state/context representation unchanged.
 
-Therefore P0's context/token failure is evidence against repeatedly injecting a large always-on state representation into each reasoning cycle. It is not evidence against persistent project memory itself.
-
-## Concretized target user experience
-
-A new project should eventually begin by providing the available sources, for example:
+Final V0 evidence:
 
 ```text
-project brief / assignment
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
+
+## Professional interactive workspace
+
+A new project should eventually begin by providing available sources such as:
+
+```text
+assignment / project brief
 datasets
 README / documentation
 existing notebooks or baseline code
@@ -103,9 +76,9 @@ business/domain documents
 other relevant artifacts
 ```
 
-The system should initialize a professional project workspace rather than immediately attempting to produce a final answer.
+The system should initialize a professional project workspace rather than immediately trying to produce a final answer.
 
-Useful project areas may include:
+Useful user-facing areas may include:
 
 ```text
 Overview
@@ -116,36 +89,19 @@ Features
 Models
 Experiments
 Evaluation
-Report
+Findings
 Decisions
+Report
 History
 ```
 
-These are interface/navigation concepts, not a rigid analytical pipeline.
+These are navigation/views, not a rigid analytical pipeline.
 
-The underlying scientific process must remain iterative and able to revisit earlier work when findings, requirements, evidence, or assumptions change.
+The underlying process remains iterative and should be able to revisit earlier work when findings, requirements, evidence, assumptions, or code change.
 
 ## Methodological-navigation brain
 
-The future system should maintain a broad, evolving, inspectable catalog of data-science process knowledge rather than depending solely on an LLM recalling an arbitrary subset on each run.
-
-Candidate knowledge includes:
-
-```text
-methods
-diagnostics
-visualizations
-tests
-model families
-validation strategies
-feature strategies
-assumptions and preconditions
-alternatives
-failure modes
-follow-up investigations
-cost and expected value
-applicability
-```
+The system should maintain a broad, evolving, inspectable catalog of data-science process knowledge rather than depending solely on an LLM recalling an arbitrary subset on each run.
 
 A useful product separation is:
 
@@ -160,15 +116,183 @@ FULL KNOWLEDGE CATALOG
     everything the system knows, browsable/searchable even when not recommended
 ```
 
-EDA is the current concrete reference case. The system should know the broad EDA option space, automatically provide basic project/data orientation, recommend analyses appropriate to the current dataset and objective, expose additional applicable alternatives, and allow the user to discuss, select, skip, or add work.
+EDA remains the concrete reference example: basic orientation should happen automatically, while the system should know and organize the wider space of possible descriptive statistics, visualizations, data-quality checks, missingness analyses, relationships, temporal analyses, diagnostics, and follow-up investigations.
 
-The product should reduce the need for the human to repeatedly remember and prompt for every useful analysis.
+The goal is to reduce the need for the human to repeatedly remember and prompt for every useful next analysis.
+
+## Candidate product object model
+
+The latest discussion derived a candidate project model from the desired user experience rather than from a backend schema.
+
+The core conceptual separation is:
+
+```text
+OBJECTS
+RELATIONS
+EVENTS
+VIEWS
+```
+
+Candidate objects:
+
+```text
+PROJECT CONSTITUTION
+Project
+IntentItem
+    Objective
+    Constraint
+    Deliverable
+    HumanPreference
+    Definition
+
+PROJECT MATERIAL
+Artifact
+Dataset
+Variable
+
+PROJECT EPISTEMIC STATE
+Question
+Assumption
+Finding
+Claim
+
+GLOBAL SYSTEM KNOWLEDGE
+Method
+MethodFamily / MethodKnowledge
+
+WORK AND CHOICE
+Proposal
+Investigation
+Run
+Evidence
+Decision
+
+PRESENTATION
+Report
+ReportSection
+
+HISTORY / CONNECTIVITY
+Event
+Relation
+```
+
+Important distinctions include:
+
+```text
+Investigation != Run
+Evidence != Finding
+Finding != Claim
+Claim != Decision
+current state != event history
+persisted object != derived recommendation
+workspace section != fundamental object
+```
+
+This is a candidate **product model**, not a frozen database ontology.
+
+Detailed reasoning:
+
+```text
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+## Professional developer workflow
+
+The system should **complement VS Code rather than replace it**.
+
+Current conceptual separation:
+
+```text
+AUTONOMOUS DATA SCIENCE SYSTEM
+    project/process control plane
+
+VS CODE
+    developer workbench
+
+PYTHON / DOCKER / LOCAL OR REMOTE COMPUTE
+    execution plane
+
+GIT + GITHUB
+    source versioning, collaboration, and code provenance
+```
+
+The system workspace and VS Code should operate on the same coherent project rather than creating unrelated project copies.
+
+Promoted principles:
+
+```text
+P-023  The system should complement the professional developer workbench rather than replace it.
+P-024  Generated project code should remain independently runnable and professionally maintainable.
+```
+
+Generated consequential code should aim to be normal professional project code:
+
+```text
+readable
+modular
+reproducible
+configurable
+documented
+tested where appropriate
+version controlled
+```
+
+A system-triggered execution and a manual VS Code/terminal execution should preferentially use the same reproducible command/configuration contract.
+
+If code changes after a run, old evidence must keep its original code provenance and a new run should be required for new evidence.
+
+## GitHub and artifact integration
+
+Git/GitHub should be first-class infrastructure for code versioning, collaboration, and experiment provenance.
+
+The system should eventually understand concepts such as:
+
+```text
+repository
+branch
+working-tree state
+commit used for a run
+remote synchronization
+code changes made inside or outside the system
+```
+
+Git is **not** intended to store every large data/model artifact.
+
+A likely separation is:
+
+```text
+source code / configs / tests / lightweight docs
+    -> Git
+
+large datasets / models / prediction arrays / caches
+    -> local or external artifact storage
+```
+
+The project system should track provenance across both.
+
+## Execution direction
+
+A local-first workflow is currently a strong **hypothesis** for the user's typical projects because the same working tree can be used by the system, VS Code, Git, GitHub synchronization, and local Python/Docker execution.
+
+It is not yet a universal architecture decision.
+
+The execution abstraction should remain compatible with future local GPU, remote GPU, cloud, cluster, or organizational infrastructure.
+
+Useful execution maturity levels may be:
+
+```text
+EPHEMERAL ANALYSIS
+REPRODUCIBLE INVESTIGATION
+PROJECT / FINAL CODE
+```
+
+Notebooks and Python modules can coexist according to purpose.
 
 ## Human involvement
 
-The target is interactive, not necessarily black-box autonomous.
+The target remains interactive, not necessarily black-box autonomous.
 
-A future project may support a continuum such as:
+A project may support a continuum such as:
 
 ```text
 GUIDED
@@ -183,11 +307,11 @@ system proceeds under an agreed project constitution and escalates where human j
 
 The desired level of involvement remains a project-intent dimension.
 
-## Evaluation direction after V0
+## Evaluation direction
 
-Future system evaluation should not rely on one scalar score alone.
+Future evaluation should combine controlled benchmarks with realistic project replay and expert judgment.
 
-Useful measures may include:
+Useful measures include:
 
 ```text
 important-method coverage
@@ -202,9 +326,7 @@ repeated work
 reproducibility
 ```
 
-Expert qualitative judgment also remains necessary for questions such as whether recommendations were sensible, the option space was useful, the system understood what mattered, and the project felt credible and professional to navigate.
-
-A major candidate evaluation method is **project replay**:
+Project replay remains a major candidate evaluation method:
 
 ```text
 completed historical project
@@ -214,84 +336,63 @@ completed historical project
     -> compare with known project experience
 ```
 
-Existing projects can therefore become both methodological knowledge sources and realistic regression/evaluation environments.
-
-## What survives V0 as strong defaults
-
-```text
-strong LLM reasoning as a flexible component, not the whole system
-compact explicit methodological guidance
-instrumented execution and traceability
-precise deterministic information-boundary controls where justified
-append-only experiment provenance
-external mechanical verification
-read-only observability separated from execution
-```
-
-Do not carry forward unchanged:
-
-```text
-full typed project state resent every reasoning cycle
-large always-on object/relation context
-current generic support-reassessment propagation
-current path-sensitive tag-trigger activation design
-current dependency-reopening machinery as a universal mandatory layer
-full P0 state-derived frontier representation
-```
-
-These are constraints from V0, not a complete next architecture.
-
 ## Current design stage
 
 Do **not** implement V1 yet.
 
-The project should first continue clarifying the target product/system contract, including:
+The product/system contract is now substantially clearer in three areas:
 
 ```text
-what the professional project workspace should expose;
-what should initialize automatically from project sources;
-what a reusable methodological knowledge object should contain;
-how applicability and recommendation should work;
-what should be recommended versus merely available;
-what should execute automatically versus await user choice;
-how the full option space remains inspectable;
-what project information must persist;
-how LLM context is selected from persistent memory;
-how findings change later recommendations and decisions;
-how living reports and artifacts evolve;
-how guided versus autonomous behavior is configured;
-how project replay evaluates reduction in human process-navigation burden.
+1. interactive workspace and methodological-navigation experience
+2. candidate product object model
+3. integration with VS Code, reproducible execution, Git, and GitHub
 ```
 
-Only after this product/system contract is clearer should the project choose the smallest backend architecture worth prototyping next.
+The next major design problem is the **methodological-navigation brain**:
+
+> How should the system represent a broad universe of data-science knowledge and transform it into known, applicable, relevant, recommended, required, or inapplicable options for the current project?
+
+Questions to resolve next include:
+
+```text
+What does a reusable Method/knowledge object contain in practice?
+How are applicability conditions represented?
+How are relevant options ranked and recommended?
+How are alternatives exposed?
+How does the system explain why something was or was not recommended?
+What role should the LLM play in applicability and ranking?
+How should project intent, cost, risk, and human preferences affect priority?
+How does knowledge grow from completed projects without overgeneralizing?
+How should recommendation quality be evaluated?
+```
+
+Only after this product/system reasoning is clearer should the project select the smallest backend architecture worth prototyping.
 
 ## Continuity
 
-The canonical new-chat continuation prompt is now standardized in:
+The standardized new-chat prompt is stored in:
 
 ```text
 docs/CONTINUITY.md
 ```
 
-A new chat should not require the user to invent a handoff summary.
+A future session should reconstruct the project from the repository rather than requiring the user to invent a handoff summary.
 
-## Knowledge and continuity
-
-Minimum reading for a future session:
+## Minimum reading for a future session
 
 ```text
 README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/VISION.md
+docs/PRINCIPLES.md
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
-For V0 experimental provenance, follow the routing in `KNOWLEDGE_MAP.md` to the frozen protocol, final results, and relevant checkpoints.
-
 ## Current priority
 
-**Continue discussing and defining the professional interactive product/system experience and methodological-navigation brain before selecting or implementing a post-V0 architecture. Preserve the V0 result as a constraint, but do not let the local P0 failure shrink the broader system ambition.**
+**Continue designing the methodological-navigation brain from the product perspective. Do not select a V1 architecture or implementation stack yet. Preserve the V0 constraints, the interactive workspace goal, the product object model, and the professional VS Code/Git/GitHub workflow as separate but interoperable concerns.**
