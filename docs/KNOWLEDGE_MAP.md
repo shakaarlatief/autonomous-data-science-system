@@ -2,7 +2,7 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-18
+**Last reviewed:** 2026-08-19
 
 ## Purpose
 
@@ -58,6 +58,8 @@ prototype_v0/README.md
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+
+docs/foundations/016_execution_observability_separation.md
 
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
@@ -278,6 +280,47 @@ prototype_v0/src/ads_v0/heldout_verifier.py
 
 prototype_v0/src/ads_v0/heldout_supervisor.py
     sequential external supervisor
+
+prototype_v0/src/ads_v0/heldout_monitor.py
+    read-only live observability sidecar
+```
+
+---
+
+## Execution and observability separation
+
+### Canonical principle
+
+```text
+docs/PRINCIPLES.md, P-022
+```
+
+### Deep reasoning
+
+```text
+docs/foundations/016_execution_observability_separation.md
+```
+
+Explains why long-running reasoning, execution, orchestration, and evaluation should persist structured state or events while detailed human-facing timestamps, heartbeats, progress rendering, and dashboards live in a separate read-only observability layer.
+
+The principle applies beyond Prototype V0 experiments to future autonomous project execution.
+
+### Prototype implementations
+
+```text
+prototype_v0/src/ads_v0/heldout_monitor.py
+    read-only held-out treatment observer
+
+prototype_v0/src/ads_v0/semantic_judge_monitor.py
+    read-only condition-blind semantic-judge observer
+```
+
+The evidence-producing supervisors remain identifiable in Git history and are not rewritten after the fact merely to conform aesthetically to the later-promoted architecture.
+
+Historical promotion checkpoint:
+
+```text
+docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
 ```
 
 ---
