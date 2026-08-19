@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 84  
-**Date:** 2026-08-18  
-**Development stage:** Prototype V0 held-out execution active  
-**Resolved treatment slots:** 13 / 30  
-**Remaining treatment slots:** 17 / 30  
-**Next frozen slot:** `h1-r05-p0-a01`  
-**Execution mode:** prospectively validated sequential supervisor; large bounded unattended batch authorized; optional read-only live monitor available
+**Checkpoint:** 85  
+**Date:** 2026-08-19  
+**Development stage:** Prototype V0 held-out treatment execution complete; blinded semantic evaluation pending  
+**Resolved treatment slots:** 30 / 30  
+**Remaining treatment slots:** 0 / 30  
+**Next treatment slot:** none  
+**Execution mode:** frozen held-out execution completed under the prospectively validated sequential supervisor
 
 ## Current experiment
 
@@ -28,138 +28,134 @@ Detailed run ledger:
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
 ```
 
-No H1/H2 S1-S10 or SC1-SC2 semantic judging has begun.
+Held-out treatment execution is now complete. No treatment slot remains runnable.
 
-## Current counts
+## Final treatment-execution counts
 
 ```text
-resolved treatment slots: 13 / 30
-remaining treatment slots: 17 / 30
-behavior-evaluable retained attempts: 13
-non-behavior-evaluable provider/interface attempts: 2
-replacement attempts launched: 2
-P0 budget-exhausted retained runs: 3
+resolved treatment slots: 30 / 30
+behavior-evaluable retained attempts: 30
+B0 retained runs: 10
+B1 retained runs: 10
+P0 retained runs: 10
+non-behavior-evaluable provider/interface attempts: 4
+mechanically verified persisted attempts: 34
+mechanical integrity PASS: 34
+mechanical integrity FAIL: 0
 administrative pre-provider interruptions: 1
-completed attempt directories mechanically verified: 15
-mechanical integrity failures: 0
 ```
 
-## Supervisor validation status
-
-The held-out supervisor/verifier has passed both required validation stages:
+The final compact supervisor export has been reviewed mechanically:
 
 ```text
-software tests before live use: 77 passed
-retrospective verification: 12 / 12 PASS
-first prospective batch: 3 / 3 new attempts PASS
-current completed-attempt verification: 15 / 15 PASS
-```
-
-The first prospective batch launched, in frozen order:
-
-```text
-h1-r04-b1-a01
-h1-r04-p0-a01
-h1-r05-b1-a01
-```
-
-All three were behavior-evaluable and mechanically coherent. The supervisor stopped exactly at the explicit three-attempt limit and derived the correct next slot:
-
-```text
-h1-r05-p0-a01
+heldout_supervisor_export_20260818T220552Z.zip
 ```
 
 Detailed record:
 
 ```text
-docs/checkpoints/083_first_live_supervisor_batch_validated_and_unattended_execution_authorized.md
+docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
 ```
 
-## Important current resource consequence
+## Final pooled mechanical outcomes
 
-P0 has now exhausted the common 250,000-token envelope in three retained H1 runs:
+| Condition | Completed | Completed within budget | Budget exhausted | Final reports | Median total tokens | Median calls | Median Python |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| B0 | 10 / 10 | 10 / 10 | 0 / 10 | 10 / 10 | 122,544.5 | 16 | 6 |
+| B1 | 10 / 10 | 10 / 10 | 0 / 10 | 10 / 10 | 120,564.5 | 16 | 6 |
+| P0 | 6 / 10 | 3 / 10 | 7 / 10 | 6 / 10 | 260,370.0 | 13 | 5 |
+
+P0/B1 pooled median ratios:
 
 ```text
-H1 R1 P0: budget exhausted
-H1 R2 P0: within budget
-H1 R3 P0: budget exhausted
-H1 R4 P0: budget exhausted
+total tokens: 2.160
+successful model calls: 0.813
+Python attempts: 0.833
 ```
 
-The preregistered maximum of one P0 budget-exhausted run was already impossible after H1 R3. The frozen experiment continues unchanged so the remaining reliability, semantic, and comparative evidence can still be collected without selective stopping.
+All 30 retained behavior-evaluable trajectories pass the registered deterministic A0-A4 checks according to the final mechanical-verification export.
 
-## Live observability before the large batch
+## Continuation criterion status
 
-A separate read-only monitor was added after the prospective supervisor smoke test:
+The registered V0 continuation signal is already impossible on mechanical resource/completion outcomes alone.
+
+Foundation 012 requires:
 
 ```text
-prototype_v0/src/ads_v0/heldout_monitor.py
-prototype_v0/tests/test_heldout_monitor.py
+P0 completed within budget: at least 9 / 10
+P0 budget-exhausted runs: at most 1 / 10
+P0/B1 median total-token ratio: at most 1.50
 ```
 
-This did **not** modify the validated supervisor, verifier, runner, treatments, protocol, or experiment state.
-
-The monitor only reads the append-only attempt and verification directories and can display:
+Observed:
 
 ```text
-active attempt identity
-current phase
-successful model generations observed in trace
-Python attempts
-generation errors
-trace-event count
-latest event type
-completed attempt-record count
-verification-report count
-verification-integrity failures
+P0 completed within budget: 3 / 10
+P0 budget-exhausted runs: 7 / 10
+P0/B1 median total-token ratio: 2.160
 ```
 
-It also prints periodic heartbeats. Stopping the monitor does not stop the supervisor.
+Semantic judging is still required before deciding whether the overall V0 result meets a registered strong-falsification condition or should be classified as inconclusive/no demonstrated continuation signal.
 
-Detailed record:
+## Final unattended batch
 
-```text
-docs/checkpoints/084_read_only_live_observability_added_before_large_unattended_batch.md
-```
-
-## Next authorized action
-
-The next frozen treatment is:
-
-```text
-variant: H1
-replicate: 5
-condition: P0
-slot: h1-r05-p0
-attempt: h1-r05-p0-a01
-```
-
-Before the large batch, pull the latest repository state and run the test suite once to validate the newly added monitor module:
-
-```bash
-git pull origin main
-pytest
-```
-
-Then use two terminals from `prototype_v0/`.
-
-Terminal 1, read-only observability:
-
-```bash
-python -m ads_v0.heldout_monitor watch
-```
-
-Terminal 2, actual experiment execution:
+The final batch was:
 
 ```bash
 python -m ads_v0.heldout_supervisor run-batch --max-model-attempts 30
 ```
 
-There are 17 unresolved treatment slots. If every remaining slot resolves on its first attempt, the supervisor will stop at `EXPERIMENT_COMPLETE` after 17 paid attempts. Provider-failure replacements consume additional attempt allowance. The supervisor must stop earlier if it encounters a mechanical integrity failure or another frozen runner safety state.
+Batch identity:
 
-Do not invoke `heldout_runner run-next` separately while the supervisor workflow is active.
+```text
+batch-20260818T212414Z
+```
 
-After the batch stops, upload the single compact supervisor export before beginning semantic judging.
+Result:
+
+```text
+model attempts launched: 19
+behavior-evaluable attempts in batch: 17
+provider-failure attempts in batch: 2
+stop reason: EXPERIMENT_COMPLETE
+resolved slots: 30 / 30
+```
+
+The two provider failures occurred at H2 R5 B0 `a01` and `a02`; the registered final replacement `a03` completed and became the retained trajectory.
+
+## Next experimental stage
+
+Do not run any further B0, B1, or P0 held-out treatment attempt.
+
+The next stage is the preregistered blinded semantic evaluation:
+
+```text
+1. build condition-neutral normalized judge inputs for all 30 retained trajectories;
+2. run two independent semantic-judge passes per trajectory;
+3. score S1-S10 and SC1/SC2;
+4. combine exact and adjacent disagreements according to Foundation 012;
+5. manually adjudicate every 0-vs-2 criterion disagreement and every SC disagreement while blinded;
+6. only after consensus is frozen, decode condition identity;
+7. calculate H1, H2, and pooled comparisons and apply continuation/falsification criteria.
+```
+
+No unblinded midstream semantic scoring should occur.
+
+## Public-release preflight
+
+A local public-release audit has also been run after adding a conservative repository/history scanner.
+
+Result:
+
+```text
+blocking findings: 0
+warnings: 4
+result: PASS WITH WARNINGS
+```
+
+The warnings concern commit-email visibility, the absence of a chosen LICENSE, and two absolute local project-path references. None is evidence of a leaked credential or tracked runtime-result directory.
+
+The repository should remain private through completion of the blinded semantic evaluation and final V0 interpretation. Publication preparation can continue without changing visibility.
 
 ## Knowledge and continuity
 
@@ -173,6 +169,7 @@ prototype_v0/README.md
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 docs/experiments/prototype_v0/HELD_OUT_STATUS.md
+docs/checkpoints/085_held_out_execution_complete_and_full_compact_export_verified.md
 ```
 
 System-level architecture:
@@ -189,4 +186,4 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 
 ## Current priority
 
-**Validate the new read-only monitor with the software suite, then use the monitor and validated supervisor in separate terminals for the remaining large bounded held-out batch.**
+**Begin the preregistered blinded semantic-judge stage without modifying or rerunning held-out treatment trajectories.**
