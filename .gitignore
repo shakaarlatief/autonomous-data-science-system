@@ -1,0 +1,15 @@
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+
+# Generated experiment artifacts
+**/generated/
+**/results/raw/
