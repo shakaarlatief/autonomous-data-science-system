@@ -1,7 +1,14 @@
 # Checkpoint 71: H1 R3 B0 pre-provider interruption recovery and relaunch authorization
 
 **Date:** 2026-08-18  
-**Stage:** Frozen held-out execution
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Frozen held-out execution  
+**Scope:** Records the historical milestone described by this checkpoint: H1 R3 B0 pre-provider interruption recovery and relaunch authorization.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Event
 

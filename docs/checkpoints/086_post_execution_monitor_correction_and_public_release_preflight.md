@@ -1,7 +1,14 @@
 # Checkpoint 86: Post-Execution Monitor Correction and Public-Release Preflight
 
 **Date:** 2026-08-19  
-**Status:** Observer-only defect corrected after held-out execution; public-release audit has no blocking findings; local test confirmation pending
+**Status:** Observer-only defect corrected after held-out execution; public-release audit has no blocking findings; local test confirmation pending  
+**Checkpoint class:** EXPERIMENT_VERIFICATION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: Post-Execution Monitor Correction and Public-Release Preflight.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

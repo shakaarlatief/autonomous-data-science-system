@@ -1,7 +1,14 @@
 # Checkpoint 012: Benchmark Generator and Self-Validation
 
 **Date:** 2026-08-08  
-**Development stage:** Experimental construction  
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Experimental construction  
+**Scope:** Records the historical milestone described by this checkpoint: Benchmark Generator and Self-Validation.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** Benchmark generation milestone implemented and validated
 
 ## Why this checkpoint exists

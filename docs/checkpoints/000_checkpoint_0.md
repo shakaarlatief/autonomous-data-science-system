@@ -1,8 +1,15 @@
 # Checkpoint 0
 
 **Date:** 2026-08-07  
+**Status:** Historical design checkpoint  
+**Checkpoint class:** DESIGN  
+**Project stage:** Initial conceptual design  
+**Scope:** Records the historical milestone described by this checkpoint: Checkpoint 0.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Project:** Autonomous Data Science System  
-**Stage:** Initial conceptual design  
 **Implementation:** Not started
 
 ## Purpose of this checkpoint

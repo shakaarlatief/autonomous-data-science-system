@@ -1,6 +1,14 @@
 # Checkpoint 72 - H1 R3 B0 behavior-evaluable terminal record
 
-Date: 2026-08-18
+**Date:** 2026-08-18  
+**Status:** Historical experiment record  
+**Checkpoint class:** EXPERIMENT_EXECUTION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: H1 R3 B0 behavior-evaluable terminal record.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Observed executor result
 

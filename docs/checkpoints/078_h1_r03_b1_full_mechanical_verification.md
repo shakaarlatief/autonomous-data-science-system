@@ -1,10 +1,17 @@
 # Checkpoint 78: H1 R3 B1 Full Mechanical Verification
 
 **Date:** 2026-08-18  
+**Status:** Behavior-evaluable retained trajectory, fully mechanically verified  
+**Checkpoint class:** EXPERIMENT_VERIFICATION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: H1 R3 B1 Full Mechanical Verification.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Run:** `h1-r03-b1-a01`  
 **Condition:** B1  
-**Variant / replicate:** H1 / 3  
-**Status:** Behavior-evaluable retained trajectory, fully mechanically verified
+**Variant / replicate:** H1 / 3
 
 ## Purpose
 

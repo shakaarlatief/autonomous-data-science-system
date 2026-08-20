@@ -1,10 +1,17 @@
 # Checkpoint 80: H1 R4 B0 Full Mechanical Verification
 
 **Date:** 2026-08-18  
+**Status:** Historical verification record  
+**Checkpoint class:** EXPERIMENT_VERIFICATION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Mechanical inspection only. No S1-S10 or SC1-SC2 semantic judging is performed here.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Run:** `h1-r04-b0-a01`  
 **Condition:** B0  
-**Variant / replicate:** H1 / 4  
-**Scope:** Mechanical inspection only. No S1-S10 or SC1-SC2 semantic judging is performed here.
+**Variant / replicate:** H1 / 4
 
 ## Purpose
 

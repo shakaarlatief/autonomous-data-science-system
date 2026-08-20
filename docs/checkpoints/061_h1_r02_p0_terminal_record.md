@@ -1,6 +1,14 @@
 # Checkpoint 61: H1 R2 P0 Terminal Record
 
-**Date:** 2026-08-10
+**Date:** 2026-08-10  
+**Status:** Historical experiment record  
+**Checkpoint class:** EXPERIMENT_EXECUTION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: H1 R2 P0 Terminal Record.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

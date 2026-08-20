@@ -1,10 +1,14 @@
 # Checkpoint 2: Epistemic Integrity and the Project Constitution
 
 **Date:** 2026-08-08  
+**Status:** Historical design checkpoint  
+**Checkpoint class:** DESIGN  
+**Project stage:** Conceptual research and system definition  
+**Scope:** Records the historical milestone described by this checkpoint: Epistemic Integrity and the Project Constitution.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
 **Design session:** 01  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 01 - Foundations & Checkpoint 0  
-**Development stage:** Conceptual research and system definition  
 **Implementation status:** Not started
 
 ## Why this checkpoint was created

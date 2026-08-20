@@ -1,6 +1,14 @@
 # Checkpoint 48: Held-Out Bundle Validation and Run-Plan Materialization
 
-**Date:** 2026-08-10
+**Date:** 2026-08-10  
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Prototype V0 held-out execution preparation  
+**Scope:** Records the historical milestone described by this checkpoint: Held-Out Bundle Validation and Run-Plan Materialization.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

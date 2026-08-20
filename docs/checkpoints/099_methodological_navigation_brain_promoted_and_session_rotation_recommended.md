@@ -1,7 +1,14 @@
 # Checkpoint 099: Methodological Navigation Brain Promoted and Session Rotation Recommended
 
 **Date:** 2026-08-19  
-**Status:** Historical checkpoint and continuity boundary
+**Status:** Historical checkpoint and continuity boundary  
+**Checkpoint class:** CONTINUITY  
+**Project stage:** Post-V0 product and architecture design  
+**Scope:** Records the historical milestone described by this checkpoint: Methodological Navigation Brain Promoted and Session Rotation Recommended.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Context
 

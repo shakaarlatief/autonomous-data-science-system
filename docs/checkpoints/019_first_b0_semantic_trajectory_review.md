@@ -1,6 +1,14 @@
 # Checkpoint 19: First B0 Semantic Trajectory Review
 
-**Date:** 2026-08-09
+**Date:** 2026-08-09  
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Prototype V0 development calibration  
+**Scope:** Records the historical milestone described by this checkpoint: First B0 Semantic Trajectory Review.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

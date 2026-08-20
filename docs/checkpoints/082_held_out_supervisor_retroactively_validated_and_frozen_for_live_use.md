@@ -2,7 +2,13 @@
 
 **Date:** 2026-08-18  
 **Status:** Completed infrastructure-validation checkpoint  
-**Scope:** External held-out supervision and mechanical verification only. No B0, B1, P0, benchmark, protocol, evaluator, or judge behavior changed.
+**Checkpoint class:** EXPERIMENT_VERIFICATION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** External held-out supervision and mechanical verification only. No B0, B1, P0, benchmark, protocol, evaluator, or judge behavior changed.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## 1. Why this checkpoint exists
 

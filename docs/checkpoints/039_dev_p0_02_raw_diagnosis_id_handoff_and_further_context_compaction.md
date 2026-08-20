@@ -1,6 +1,14 @@
 # Checkpoint 39: `dev-p0-02` Raw Diagnosis, Canonical-ID Handoff, and Further Context Compaction
 
-**Date:** 2026-08-09
+**Date:** 2026-08-09  
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Prototype V0 development correction and behavioral freeze  
+**Scope:** Records the historical milestone described by this checkpoint: `dev-p0-02` Raw Diagnosis, Canonical-ID Handoff, and Further Context Compaction.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

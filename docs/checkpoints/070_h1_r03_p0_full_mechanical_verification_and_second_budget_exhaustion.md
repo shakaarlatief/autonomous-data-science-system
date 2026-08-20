@@ -1,10 +1,17 @@
 # Checkpoint 70: H1 R3 P0 full mechanical verification and second P0 budget exhaustion
 
 **Date:** 2026-08-18  
+**Status:** Historical experiment record  
+**Checkpoint class:** EXPERIMENT_EXECUTION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Raw mechanical verification only. No S1-S10 or SC1-SC2 semantic scoring is performed here.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Attempt:** `h1-r03-p0-a01`  
 **Condition:** P0  
-**Variant / replicate:** H1 / 3  
-**Scope:** Raw mechanical verification only. No S1-S10 or SC1-SC2 semantic scoring is performed here.
+**Variant / replicate:** H1 / 3
 
 ## Outcome
 

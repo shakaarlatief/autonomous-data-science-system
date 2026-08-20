@@ -1,6 +1,14 @@
 # Checkpoint 59: H1 R2 B1 Terminal Held-Out Record
 
-**Date:** 2026-08-10
+**Date:** 2026-08-10  
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: H1 R2 B1 Terminal Held-Out Record.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

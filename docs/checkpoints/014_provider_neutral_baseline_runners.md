@@ -1,7 +1,14 @@
 # Checkpoint 014: Provider-Neutral B0/B1 Treatment Runners
 
 **Date:** 2026-08-08  
-**Development stage:** Experimental construction  
+**Status:** Historical infrastructure record  
+**Checkpoint class:** INFRASTRUCTURE  
+**Project stage:** Experimental construction  
+**Scope:** Records the historical milestone described by this checkpoint: Provider-Neutral B0/B1 Treatment Runners.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** Benchmark, common runtime/evaluator, and baseline treatment orchestration implemented; real-model baseline calibration is next
 
 ## Why this checkpoint exists

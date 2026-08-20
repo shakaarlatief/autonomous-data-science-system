@@ -1,7 +1,14 @@
 # Checkpoint 015: Real-Model Calibration Infrastructure
 
 **Date:** 2026-08-08  
-**Development stage:** Experimental construction  
+**Status:** Historical infrastructure record  
+**Checkpoint class:** INFRASTRUCTURE  
+**Project stage:** Experimental construction  
+**Scope:** Records the historical milestone described by this checkpoint: Real-Model Calibration Infrastructure.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** Real-model B0/B1 calibration path implemented and test-validated; paid baseline execution has not yet been run
 
 ## Why this checkpoint exists

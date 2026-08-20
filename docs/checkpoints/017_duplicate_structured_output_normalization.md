@@ -1,8 +1,14 @@
 # Checkpoint 17: Duplicate Structured Output Normalization
 
 **Date:** 2026-08-08  
-**Stage:** Prototype V0 real-model calibration  
-**Scope:** Second provider-interface diagnostic before any behavior-evaluable B0 run
+**Status:** Historical infrastructure record  
+**Checkpoint class:** INFRASTRUCTURE  
+**Project stage:** Prototype V0 real-model calibration  
+**Scope:** Second provider-interface diagnostic before any behavior-evaluable B0 run  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Why this checkpoint exists
 

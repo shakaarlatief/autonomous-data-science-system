@@ -1,6 +1,14 @@
 # Checkpoint 74: Prototype V0 README refreshed as current entry point
 
-**Date:** 2026-08-18
+**Date:** 2026-08-18  
+**Status:** Historical preservation-method record  
+**Checkpoint class:** PRESERVATION_METHOD  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: Prototype V0 README refreshed as current entry point.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Purpose
 

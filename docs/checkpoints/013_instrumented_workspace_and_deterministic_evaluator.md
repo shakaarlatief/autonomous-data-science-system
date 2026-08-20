@@ -1,7 +1,14 @@
 # Checkpoint 013: Instrumented Workspace and Deterministic Evaluator
 
 **Date:** 2026-08-08  
-**Development stage:** Experimental construction  
+**Status:** Historical infrastructure record  
+**Checkpoint class:** INFRASTRUCTURE  
+**Project stage:** Experimental construction  
+**Scope:** Records the historical milestone described by this checkpoint: Instrumented Workspace and Deterministic Evaluator.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** Common experiment boundary implemented; baseline model integration is next
 
 ## Why this checkpoint exists

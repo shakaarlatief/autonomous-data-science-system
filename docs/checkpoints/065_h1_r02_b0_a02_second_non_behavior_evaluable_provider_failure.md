@@ -1,8 +1,14 @@
 # Checkpoint 65: H1 R2 B0 A02 Second Non-Behavior-Evaluable Provider Failure
 
 **Date:** 2026-08-10  
-**Stage:** Prototype V0 held-out execution  
-**Scope:** Terminal executor record for the second attempt in H1 replicate 2 B0
+**Status:** Historical experiment record  
+**Checkpoint class:** EXPERIMENT_EXECUTION  
+**Project stage:** Prototype V0 held-out execution  
+**Scope:** Terminal executor record for the second attempt in H1 replicate 2 B0  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Attempt identity
 

@@ -1,7 +1,14 @@
 # Checkpoint 097: Post-V0 Product Vision Concretized as an Interactive Methodological Workspace
 
 **Date:** 2026-08-19  
-**Stage:** Post-Prototype-V0 system/product clarification before next architecture design
+**Status:** Historical infrastructure record  
+**Checkpoint class:** INFRASTRUCTURE  
+**Project stage:** Post-Prototype-V0 system/product clarification before next architecture design  
+**Scope:** Records the historical milestone described by this checkpoint: Post-V0 Product Vision Concretized as an Interactive Methodological Workspace.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Context
 

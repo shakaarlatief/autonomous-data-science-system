@@ -1,7 +1,14 @@
 # Checkpoint 84: Read-Only Live Observability Added Before Large Unattended Batch
 
 **Date:** 2026-08-18  
-**Status:** Operational observability improvement; no treatment or supervisor execution semantics changed
+**Status:** Operational observability improvement; no treatment or supervisor execution semantics changed  
+**Checkpoint class:** MIXED  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: Read-Only Live Observability Added Before Large Unattended Batch.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Why this checkpoint exists
 

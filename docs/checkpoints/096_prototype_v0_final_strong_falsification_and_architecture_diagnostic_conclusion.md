@@ -1,7 +1,14 @@
 # Checkpoint 96: Prototype V0 final strong-falsification and architecture-diagnostic conclusion
 
 **Date:** 2026-08-19  
-**Status:** Final V0 experimental checkpoint
+**Status:** Final V0 experimental checkpoint  
+**Checkpoint class:** DESIGN  
+**Project stage:** Prototype V0 final evaluation and closure  
+**Scope:** Records the historical milestone described by this checkpoint: Prototype V0 final strong-falsification and architecture-diagnostic conclusion.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Boundary reached
 

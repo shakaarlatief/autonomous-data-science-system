@@ -2,7 +2,13 @@
 
 **Date:** 2026-08-18  
 **Status:** Complete  
-**Scope:** Prototype V0 external held-out supervision only. No treatment, benchmark, scoring, budget, run-order, replacement, or semantic-judge rule changed.
+**Checkpoint class:** EXPERIMENT_VERIFICATION  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Prototype V0 external held-out supervision only. No treatment, benchmark, scoring, budget, run-order, replacement, or semantic-judge rule changed.  
+**Authority:** Historical provenance for the recorded experiment milestone; frozen experiment contracts and final experiment conclusions govern their declared scopes.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0
 
 ## Why this checkpoint exists
 

@@ -1,7 +1,14 @@
 # Checkpoint 016: First Real-Model Calibration Output-Budget Correction
 
 **Date:** 2026-08-08  
-**Development stage:** Experimental construction and baseline calibration  
+**Status:** Historical mixed checkpoint  
+**Checkpoint class:** MIXED  
+**Project stage:** Experimental construction and baseline calibration  
+**Scope:** Records the historical milestone described by this checkpoint: First Real-Model Calibration Output-Budget Correction.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** First paid B0 request reached the provider but terminated before producing a usable command; the discovered output-budget and accounting defects have been corrected and test-validated
 
 ## Why this checkpoint exists

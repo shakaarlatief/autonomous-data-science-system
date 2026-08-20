@@ -1,6 +1,14 @@
 # Checkpoint 76: Knowledge Preservation Architecture v0.3
 
 **Date:** 2026-08-18  
+**Status:** Historical preservation-method record  
+**Checkpoint class:** PRESERVATION_METHOD  
+**Project stage:** Prototype V0 held-out execution and evaluation  
+**Scope:** Records the historical milestone described by this checkpoint: Knowledge Preservation Architecture v0.3.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Type:** Major project-development / knowledge-preservation architecture update  
 **Prototype V0 treatment impact:** None
 

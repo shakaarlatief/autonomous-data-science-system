@@ -1,7 +1,14 @@
 # Checkpoint 010: Minimum Falsification Prototype
 
 **Date:** 2026-08-08  
-**Development stage:** Transition from conceptual research to controlled prototype specification  
+**Status:** Historical design checkpoint  
+**Checkpoint class:** DESIGN  
+**Project stage:** Transition from conceptual research to controlled prototype specification  
+**Scope:** Records the historical milestone described by this checkpoint: Minimum Falsification Prototype.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** Not started
 
 ## Why this checkpoint exists

@@ -1,7 +1,14 @@
 # Checkpoint 4: Project State and State-Driven Orchestration
 
 **Date:** 2026-08-08  
-**Development stage:** Conceptual research and system definition  
+**Status:** Historical design checkpoint  
+**Checkpoint class:** DESIGN  
+**Project stage:** Conceptual research and system definition  
+**Scope:** Records the historical milestone described by this checkpoint: Project State and State-Driven Orchestration.  
+**Authority:** Historical provenance; current canonical documents and promoted sources govern current interpretation.  
+**Design session:** 01  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 01 - Foundations & Checkpoint 0  
 **Implementation status:** Not started
 
 ## Why this checkpoint exists
