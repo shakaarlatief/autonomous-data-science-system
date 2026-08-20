@@ -16,9 +16,12 @@ REQUIRED_FIELDS = (
     "Project stage",
     "Scope",
     "Authority",
+    "Design session",
+    "ChatGPT project",
+    "Session title",
 )
 CONTRACT_START_CHECKPOINT = 100
-HEADER_SCAN_LINES = 40
+HEADER_SCAN_LINES = 50
 
 
 @dataclass(frozen=True)
@@ -37,8 +40,10 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Validate checkpoint metadata against docs/checkpoints/README.md. "
-            "By default, pre-Checkpoint-100 deficiencies are reported as legacy "
-            "warnings while Checkpoint 100+ deficiencies fail validation."
+            "The required contract includes historical/authority metadata and "
+            "ChatGPT project/session provenance. By default, pre-Checkpoint-100 "
+            "deficiencies are reported as legacy warnings while Checkpoint 100+ "
+            "deficiencies fail validation."
         )
     )
     parser.add_argument(
@@ -50,7 +55,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Treat missing metadata in legacy checkpoints 000-099 as errors too.",
+        help="Treat metadata deficiencies in legacy checkpoints 000-099 as errors too.",
     )
     return parser.parse_args()
 
