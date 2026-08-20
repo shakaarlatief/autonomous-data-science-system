@@ -7,6 +7,9 @@ from typing import Self
 
 from sqlalchemy import Connection, Engine
 
+from ads_system.infrastructure.persistence.interchange_repository import (
+    SqlAlchemyKnowledgeInterchangeRepository,
+)
 from ads_system.infrastructure.persistence.repositories import (
     SqlAlchemyKnowledgeRepository,
     SqlAlchemyProjectRepository,
@@ -22,6 +25,7 @@ class SqlAlchemyUnitOfWork:
         self._transaction = None
         self._committed = False
         self.knowledge: SqlAlchemyKnowledgeRepository
+        self.interchange: SqlAlchemyKnowledgeInterchangeRepository
         self.projects: SqlAlchemyProjectRepository
 
     def __enter__(self) -> Self:
@@ -29,6 +33,7 @@ class SqlAlchemyUnitOfWork:
         self._transaction = self._connection.begin()
         self._committed = False
         self.knowledge = SqlAlchemyKnowledgeRepository(self._connection)
+        self.interchange = SqlAlchemyKnowledgeInterchangeRepository(self._connection)
         self.projects = SqlAlchemyProjectRepository(self._connection)
         return self
 
