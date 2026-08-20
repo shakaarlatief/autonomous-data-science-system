@@ -6,6 +6,9 @@
 **Project stage:** Post-V0 methodological-navigation and reusable-knowledge design  
 **Scope:** Records completion of the five-example reusable methodological-knowledge exercise required by Foundation 019 and preserves the resulting representation hypotheses before architecture design continues.  
 **Authority:** Historical provenance. The results below are active design hypotheses, not a frozen V1 schema or implementation contract.
+**Design session:** 02  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 02 - Methodological Brain & Knowledge Units
 
 ## Why this checkpoint exists
 

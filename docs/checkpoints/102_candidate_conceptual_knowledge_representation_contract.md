@@ -6,6 +6,9 @@
 **Project stage:** Post-V0 methodological-navigation and reusable-knowledge design  
 **Scope:** Defines the first explicit candidate conceptual representation contract for reusable methodological knowledge after the five-example stress test.  
 **Authority:** Historical provenance and active design hypothesis. This is not a frozen V1 schema, storage model, ontology, or implementation contract.
+**Design session:** 02  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 02 - Methodological Brain & Knowledge Units
 
 ## Why this checkpoint exists
 
