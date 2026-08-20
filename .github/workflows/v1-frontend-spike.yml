@@ -1,0 +1,58 @@
+name: V1 frontend spike
+
+on:
+  push:
+    branches: [v1-frontend-spike]
+    paths:
+      - frontend/**
+      - .github/workflows/v1-frontend-spike.yml
+  pull_request:
+    paths:
+      - frontend/**
+      - .github/workflows/v1-frontend-spike.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-unit:
+    name: Build and unit tests (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install exact declared dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build
+        run: npm run build
+      - name: Unit tests
+        run: npm test
+
+  browser-gate:
+    name: Chromium browser gate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Install exact declared dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run browser and accessibility tests
+        run: npm run e2e
