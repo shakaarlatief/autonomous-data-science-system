@@ -1,10 +1,10 @@
 # Current State
 
-**Checkpoint:** 109  
+**Checkpoint:** 111  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, implementation requirements, V1 persistence/retrieval architecture, and candidate V1 technical architecture specification completed; narrow architecture falsification is the active task  
+**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, implementation requirements, V1 architecture selection, technical architecture specification, and architecture falsification gate completed; bounded V1 implementation-contract/tooling design is the active task  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Execution mode:** Prototype V0 is closed; broad V1 implementation is not yet authorized
+**Execution mode:** V1 persistence/retrieval architecture is accepted and validated; broad product implementation remains deferred while the first bounded implementation contract/tooling is selected
 
 ## Active ChatGPT development context
 
@@ -14,7 +14,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 02 - Methodological Brain & Knowledge Units
 ```
 
-This is provenance/navigation metadata. Repository artifacts remain authoritative across chats.
+Repository artifacts remain authoritative across chats.
 
 ## Current product goal
 
@@ -30,7 +30,7 @@ docs/foundations/018_project_object_model_and_professional_developer_workflow_in
 
 ## Prototype V0 constraint
 
-Prototype V0 strongly falsified the current P0 implementation strategy on the churn benchmark family.
+Prototype V0 strongly falsified the then-current P0 implementation strategy on the churn benchmark family.
 
 Key result:
 
@@ -45,7 +45,7 @@ P0 completed within budget: 3/10
 P0/B1 median token ratio: 2.160
 ```
 
-The broader system vision remains open. The strongest scaling lesson remains:
+The strongest scaling lesson remains:
 
 ```text
 what the SYSTEM should remember
@@ -72,7 +72,7 @@ EVENTS
 VIEWS
 ```
 
-Important project distinctions include:
+Important distinctions:
 
 ```text
 Investigation != Run
@@ -84,7 +84,7 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-The system does not currently add a universal top-level `Assessment` object. Subject-specific criterion verdicts should use:
+The design does not add a universal top-level `Assessment` object. Subject-specific criterion verdicts use:
 
 ```text
 Question -> Evidence -> Finding -> Claim/Decision
@@ -92,7 +92,7 @@ Question -> Evidence -> Finding -> Claim/Decision
 
 with a structured criterion-Finding form where useful.
 
-Different project objects retain different lifecycle semantics. The candidate V1 technical architecture therefore does **not** force all project state into one generic JSON object or one universal revision model.
+Project objects retain type-specific lifecycle semantics rather than being collapsed into one generic JSON/revision object.
 
 ## Methodological-navigation brain
 
@@ -116,7 +116,7 @@ large global knowledge base
     -> required / recommended / relevant / not now
 ```
 
-The LLM should receive a selective task-specific projection, not the entire persistent knowledge/project state.
+The LLM receives a selective task-specific projection, not the entire persistent state.
 
 ## Promoted reusable methodological-knowledge representation
 
@@ -156,7 +156,7 @@ P-026  Static methodological relationships are separate from conditional guidanc
 
 ## Technology-neutral implementation requirements
 
-Checkpoint 107 defines 59 implementation requirements covering:
+Checkpoint 107 defines 59 requirements covering:
 
 ```text
 stable identity and recoverable revisions
@@ -180,9 +180,9 @@ Source:
 docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
 ```
 
-## Accepted V1 persistence/retrieval architecture
+## Accepted V1 architecture family
 
-D-028 accepts a SQLite-centered local-first V1 architecture.
+D-028 accepts a SQLite-centered local-first V1 architecture:
 
 ```text
 SQLite operational store
@@ -199,7 +199,6 @@ rebuildable embeddings
     initial in-process exact semantic retrieval
 
 application-layer rule evaluator
-    minimal predicate / ALL / ANY / NOT / UNKNOWN semantics
 
 selective LLM context assembly
 
@@ -207,7 +206,7 @@ filesystem / Git / artifact storage
     project code and large artifacts outside SQLite
 ```
 
-Not selected for V1 without new evidence:
+Not selected without new evidence:
 
 ```text
 dedicated graph database
@@ -217,19 +216,18 @@ PostgreSQL server by default
 ANN index
 ```
 
-PostgreSQL + pgvector is the preferred first migration family if the SQLite envelope is exceeded.
+PostgreSQL + pgvector remains the preferred first migration family if the SQLite envelope is exceeded.
 
-Architecture comparison and initial scale spike:
+Architecture comparison:
 
 ```text
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
-experiments/architecture_spikes/sqlite_v1_viability.py
 docs/DECISIONS.md, D-028
 ```
 
-## Candidate V1 technical architecture specification
+## Accepted V1 technical architecture
 
-The first implementation-level technical contract is now preserved at:
+Specification 001 is now the accepted V1 technical contract:
 
 ```text
 docs/specifications/001_v1_sqlite_technical_architecture.md
@@ -238,84 +236,130 @@ docs/specifications/001_v1_sqlite_technical_architecture.md
 Status:
 
 ```text
-candidate v0.1
-frozen for narrow architecture falsification
-not yet broad implementation authority
+Accepted V1 technical specification v1.0
 ```
 
-The specification is explicitly designed to avoid foreseeable expensive rearchitecture.
-
-Key directions include:
+Key technical boundaries:
 
 ```text
-one SQLite operational database with logical sys_/kg_/prj_/exec_/idx_ modules
-application/domain persistence ports around SQLite
+one SQLite operational DB with logical sys_/kg_/prj_/exec_/idx_ modules
+SQLite hidden behind application/domain persistence ports
 application-generated UUID durable identities, UUIDv7 preferred
-UTC domain timestamps independent of SQLite date semantics
-STRICT authoritative tables where practical
-relational structure for important identities/history/references
-validated/versioned JSON only as a bounded flexible payload
+UTC domain timestamps
+STRICT core tables where practical
+explicit relational integrity for important identity/history/reference semantics
+bounded validated/versioned JSON for flexible payloads
 immutable accepted knowledge content revisions
-separate governance state/events from immutable content
-technical identity supertypes only where they improve FK integrity
+separate governance state/history
 project objects retain type-specific lifecycle semantics
-exact project references to knowledge revisions
-minimal declarative rule AST; no SQL/code stored as rules
-FTS5 and embeddings are rebuildable derived state
-HorizonBuilder and ContextAssembler are application services
+exact project -> knowledge revision references
+minimal declarative tri-valued rule AST; no stored executable code
+FTS5 and embeddings as rebuildable derived state
+HorizonBuilder and ContextAssembler as application services
 one application-owned write path
-short transactions; never hold DB writes across LLM/network work
-foreign_keys=ON on every SQLite connection
-WAL + synchronous=FULL default durability profile
+short transactions only
+foreign_keys=ON, WAL, synchronous=FULL baseline
 ordered migrations
 online backup + verified restore
 human-readable deterministic knowledge export
 explicit PostgreSQL portability contract
 ```
 
-A central portability requirement is:
+The architecture is deliberately designed so foreseeable infrastructure changes are localized:
 
 ```text
 SQLite -> PostgreSQL
-exact vector search -> pgvector/ANN/provider
-bounded relational traversal -> specialized graph projection if later justified
+exact semantic search -> pgvector / ANN / another provider
+bounded relation traversal -> specialized graph projection/provider if later justified
 ```
 
-should be infrastructure evolution behind stable application ports, not a redesign of methodological meaning, project semantics, rule logic, horizon construction, or user workflows.
+without rewriting methodological semantics, project-object meaning, rule semantics, horizon logic, or user-facing workflow concepts.
 
-Historical checkpoint:
+## Architecture falsification evidence
+
+The committed CI gate passed all architecture tests:
 
 ```text
+FT-01  PASS  historical knowledge revision integrity
+FT-02  PASS  component/relation integrity
+FT-03  PASS  Missing Data tri-valued rule reconstruction
+FT-04  PASS  criterion-Finding chain
+FT-05  PASS_ARCHITECTURE_ONLY  bounded hybrid retrieval path
+FT-06  PASS  missing/stale embedding behavior
+FT-07  PASS  context-budget enforcement
+FT-08  PASS  transaction failure injection
+FT-09  PASS  WAL reader/writer behavior
+FT-10  PASS  backup/restore/integrity
+FT-11  PASS  derived-index rebuild
+FT-12  PASS  PostgreSQL 18 portability mapping
+```
+
+Evidence:
+
+```text
+experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
+experiments/architecture_spikes/v1_schema_spike.sql
+experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
+experiments/architecture_spikes/v1_postgres_portability_spike.py
 docs/checkpoints/109_v1_technical_architecture_specified_and_falsification_gate_defined.md
+docs/checkpoints/110_preliminary_v1_sqlite_architecture_spike_passes_and_postgres_gate_pending.md
+docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
 ```
 
-## Architecture falsification gate
-
-Broad V1 implementation remains blocked until a narrow spike addresses the specification's tests:
+Important boundary:
 
 ```text
-FT-01  identity/revision historical integrity
-FT-02  component/relation integrity
-FT-03  Missing Data rule reconstruction
-FT-04  criterion-Finding chain
-FT-05  retrieval/horizon coverage fixture
-FT-06  missing/stale embedding behavior
-FT-07  context-budget enforcement
-FT-08  transaction atomicity/failure injection
-FT-09  WAL reader/writer behavior
-FT-10  backup/restore/integrity
-FT-11  derived-index rebuild
-FT-12  PostgreSQL portability review/spike
+FT-05 does not validate the eventual production embedding model,
+retrieval recall, fusion algorithm, or reranker.
 ```
 
-The spike should use representative knowledge from Histogram, Missing Data, Temporal Validation, Random Forest, Prediction-Time Feature Eligibility, and Class Imbalance rather than database-only toy rows.
+Those remain separate empirical questions behind replaceable retrieval interfaces.
 
-A failing test should trigger the smallest evidence-supported architectural correction. Failure of one retrieval/index component must not automatically imply replacing the authoritative database.
+## Defect learned during architecture testing
+
+The first spike attempted to enforce project-scoped uniqueness using a SQLite subquery expression index. SQLite rejected that construct.
+
+The accepted correction is more professional and portable:
+
+```text
+carry project_id explicitly where project-scoped subtype integrity needs it
+    +
+composite foreign key back to the project entity identity
+    +
+ordinary UNIQUE(project_id, semantic_key)
+```
+
+The relation current-revision pointer is likewise constrained to a revision belonging to the same relation through a composite foreign key.
+
+These corrections are now incorporated into Specification 001 v1.0.
+
+## Current design/implementation stage
+
+Architecture-family selection and architecture-seam validation are complete.
+
+Do **not** jump directly to the full frontend/autonomous product.
+
+The active task is to define the **bounded V1 persistence/retrieval implementation contract and tooling** underneath Specification 001.
+
+Determine:
+
+```text
+1. SQL access / repository implementation approach;
+2. schema migration implementation approach;
+3. reviewed production migration/DDL organization;
+4. typed domain/repository interfaces and UnitOfWork boundary;
+5. UUIDv7 implementation choice;
+6. deterministic export/import representation;
+7. first real retrieval-quality benchmark before embedding-model selection;
+8. retained SQLite + PostgreSQL architecture tests in CI.
+```
+
+The selection should optimize long-term maintainability and portability, not merely fastest prototype coding.
 
 ## Still intentionally unselected
 
 ```text
-exact full DDL
+production full DDL
 ORM / SQL toolkit
 migration library
 embedding model/provider
@@ -327,8 +371,6 @@ job queue
 artifact-storage backend
 cloud deployment
 ```
-
-These should be selected only when the next implementation layer makes their requirements concrete.
 
 ## Continuity status
 
@@ -362,11 +404,12 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
 docs/specifications/001_v1_sqlite_technical_architecture.md
-docs/checkpoints/109_v1_technical_architecture_specified_and_falsification_gate_defined.md
+docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
+experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Implement the narrow V1 architecture falsification spike for Specification 001. Do not begin broad V1 product implementation until the gate has been evaluated.**
+**Select and specify the bounded V1 persistence/retrieval implementation approach and tooling under Specification 001, preserving the validated migration seams. Do not begin broad product implementation yet.**
