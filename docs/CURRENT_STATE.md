@@ -1,10 +1,10 @@
 # Current State
 
-**Checkpoint:** 116  
+**Checkpoint:** 118  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; post-V0 product/object/methodological-knowledge architecture accepted; V1 persistence foundation and reusable-knowledge interchange implemented to their tested scopes; agent-runtime selection and professional frontend product shell are now explicit parallel evaluation tracks while the governed PostgreSQL round-trip remains open pending corrected confirmation  
+**Development stage:** Prototype V0 complete; post-V0 product/object/methodological-knowledge architecture accepted; V1 persistence and reusable-knowledge interchange implemented to their tested scopes; agent-runtime selection remains an explicit evaluation track; the professional frontend now includes a passing first unified Project Cockpit interaction spike whose human visual/product gate is the immediate frontend priority  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Execution mode:** Build bounded professional product slices and falsification gates. Prefer standards/existing infrastructure for agent/runtime/interoperability responsibilities, but keep ADS domain/project semantics independent and authoritative.
+**Execution mode:** Build bounded professional product slices and falsification gates. Prefer standards/existing infrastructure for agent/runtime/interoperability responsibilities, keep ADS domain/project semantics authoritative, and require human product review before freezing major interaction/visual decisions.
 
 ## Active ChatGPT development context
 
@@ -22,7 +22,20 @@ Repository artifacts remain authoritative across chats.
 
 The Autonomous Data Science System should become a professional interactive data-science operating environment that carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden while preserving strong human inspection, discussion, override, editing, execution, and guidance.
 
-The frontend is part of that product architecture rather than a cosmetic layer. The target is now explicitly a modern, visually excellent, premium professional analytical application with strong typography, information hierarchy, dark/light themes, accessibility, responsive professional desktop layouts, polished loading/error/empty states, and high-quality analytical visualization.
+The frontend is part of that architecture rather than a cosmetic layer. The product target is explicitly a modern, visually excellent, premium professional analytical application with strong typography, information hierarchy, dark/light themes, accessibility, responsive professional desktop layouts, polished loading/error/empty states, and high-quality analytical visualization.
+
+A major product-direction refinement is now active:
+
+```text
+Project Cockpit
+    primary immersive active-work environment
+
+Overview / Data / EDA / Validation / Features / Models / Experiments /
+Evaluation / Decisions & History / Report
+    direct project inspection and specialist entry views
+```
+
+The Cockpit should be capable of deep analytical work itself through spatial focus transitions. The specialist views remain valuable alternative entry paths into the same underlying functionality rather than mandatory escape hatches from the Cockpit.
 
 Primary product sources:
 
@@ -31,6 +44,9 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+
+docs/research/002_primary_project_cockpit_interface_concept.md
+docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 ```
 
 ---
@@ -88,6 +104,7 @@ Finding != Claim
 Claim != Decision
 current state != event history
 persisted object != derived recommendation
+workspace section != fundamental object
 ```
 
 The design does not add a universal top-level `Assessment` object. Subject-specific criterion verdicts use:
@@ -98,7 +115,7 @@ Question -> Evidence -> Finding -> Claim/Decision
 
 with a structured criterion-Finding form where useful.
 
-Foundation 019 governs the methodological horizon:
+Foundation 019 governs methodological relevance:
 
 ```text
 KNOWN
@@ -169,7 +186,7 @@ D-030 + Specification 003
 
 PostgreSQL + pgvector remains the preferred first persistence/semantic migration family if real requirements exceed the SQLite envelope.
 
-The first production persistence vertical slice in Checkpoint 114 passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical knowledge-revision pinning for project Findings.
+Checkpoint 114 proves the first production persistence vertical slice on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical knowledge-revision pinning for project Findings.
 
 ---
 
@@ -177,14 +194,14 @@ The first production persistence vertical slice in Checkpoint 114 passed on SQLi
 
 Checkpoint 115 validated the heterogeneous reusable-knowledge bundle under KI-01 through KI-10.
 
-The previously pending promotion is now complete:
+Accepted:
 
 ```text
 D-031
 Specification 004 v1.0
 ```
 
-Accepted interchange:
+Interchange:
 
 ```text
 standard JSON
@@ -243,7 +260,7 @@ migration 0002
 historical project revision pinning
 ```
 
-Current confirmed gate state:
+The last canonically confirmed gate state remains:
 
 ```text
 SQLite roundtrip
@@ -253,7 +270,7 @@ first PostgreSQL 18 roundtrip
     FAIL
 ```
 
-The PostgreSQL failure is understood and localized. Migration 0002 used a manually named foreign-key constraint longer than PostgreSQL's 63-character identifier limit.
+The first PostgreSQL defect is understood and localized: migration 0002 used a manually named foreign-key constraint longer than PostgreSQL's 63-character identifier limit.
 
 Fix committed:
 
@@ -269,21 +286,13 @@ a69b8859696fbd3b45124c257d085989d692a207
 Make roundtrip gate status traceable to source commit
 ```
 
-At Checkpoint 116, a corrected PostgreSQL PASS has not yet been persisted and confirmed. Do not call the governed round-trip complete until that happens.
-
-Temporary diagnostic artifacts/workflow should be removed after final resolution.
+Do not call the governed round-trip complete until a corrected PostgreSQL PASS is persisted and confirmed. Temporary diagnostic artifacts/workflow should be removed after final resolution.
 
 ---
 
 ## 2026 agentic ecosystem architecture audit
 
-A current external-ecosystem audit has now been completed:
-
-```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-```
-
-Main conclusion:
+Research 001 concluded:
 
 ```text
 ADS project/domain/methodological semantics
@@ -293,9 +302,7 @@ agent frameworks / MCP / A2A / AG-UI / runtime checkpointing
     are infrastructure and interoperability mechanisms
 ```
 
-These should not be conflated.
-
-New principles:
+Promoted principles:
 
 ```text
 P-027
@@ -313,7 +320,7 @@ quality surface.
 
 ### MCP
 
-Treat MCP as a first-class candidate external tool/resource integration boundary, not as project memory or an internal application bus. Current 2026 MCP architecture has changed materially and new code should not depend on deprecated Roots, Sampling, or Logging behavior.
+Treat MCP as a first-class candidate external tool/resource integration boundary, not as project memory or an internal application bus.
 
 ### A2A
 
@@ -321,7 +328,7 @@ Deferred until ADS actually needs independently deployed remote agent systems.
 
 ### AG-UI
 
-Evaluate in the frontend spike as an adapter around ADS-owned interaction/run events. Do not make it the domain event model.
+Evaluate as an adapter around ADS-owned interaction/run events. Do not make it the domain event model.
 
 ---
 
@@ -379,7 +386,7 @@ Candidate technical/visual evaluation contract:
 docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
 ```
 
-Leading hypothesis:
+Current leading stack hypothesis, still not fully promoted as final product architecture:
 
 ```text
 React
@@ -388,35 +395,146 @@ Vite
 TanStack Router
 TanStack Query
 TanStack Table v9
-shadcn/ui source-distributed components
-ADS-owned design tokens / visual language
+ADS-owned design system
 Playwright
 Vitest
 ```
 
-This is not yet accepted as the final frontend stack.
-
-Current evidence favors Vite over Next.js for the V1 shell because ADS is local-first, Python-backed, highly interactive, and has no demonstrated SEO/server-rendering requirement. The spike may reopen that decision if it exposes a missing capability.
-
-Chart strategy remains open:
+The first project-view frontend now includes:
 
 ```text
-ECharts
-vs
-Plotly
+Overview
+Data
+EDA
+Decisions & History
+methodological guidance
+Question/Finding/Decision representations
+run/activity state
+human approval interaction
+light/dark themes
+loading/error states
+cross-platform build/unit tests
+Chromium accessibility/interaction tests
+controlled project-view visual regression
 ```
 
-They will be compared on the same ADS analytical examples.
+The human review of this first shell was positive about its breadth and professional direction, while identifying two important points:
 
-Tauri 2 remains a later desktop-packaging candidate after the normal browser shell and Python service boundary are stable.
+1. the methodological right panel needed to stop overlapping the Data workspace and needed folding behavior;
+2. the shell was primarily an inspection/navigation product and did not yet contain the main active-work interface envisioned for ADS.
 
-The first frontend should be visually serious rather than a disposable dashboard. It should test Overview, Data, EDA, Decisions/History, methodological statuses, Question/Finding/Decision representations, run/activity state, one approval interaction, light/dark themes, loading/error/offline states, accessibility, responsive widths, and controlled visual regression screenshots.
+The panel defect has been corrected with a collapsible reserved layout column and browser coverage.
+
+---
+
+## Unified Project Cockpit direction
+
+Research 002 and Research 003 now define the active Cockpit design hypothesis.
+
+Strongly confirmed interaction:
+
+```text
+click a meaningful work block
+    -> smooth spatial focus / zoom experience
+    -> perform real analytical work there
+    -> return to the surrounding living project map
+```
+
+The preferred product model is now:
+
+```text
+Cockpit
+    complete active-work environment
+    project process/reasoning map
+    system interaction composer
+    focused analytical work surfaces
+
+Direct specialist views
+    alternate entry and inspection surfaces
+    same substantive functionality where possible
+```
+
+The Cockpit should not be restricted to shallow summaries. Deep Data/EDA/Validation/Modeling/Evaluation work should be reachable and usable inside the focus experience when technically appropriate.
+
+Critical scalability principle:
+
+```text
+everything reachable from the Cockpit
+    !=
+everything mounted or loaded simultaneously
+```
+
+The implementation should use selective mounting/code splitting/backend pagination or streaming/virtualization where required. Visual continuity does not require one enormous always-rendered DOM graph.
+
+The Cockpit primarily visualizes the project process/reasoning projection. It must not collapse process map, data lineage, methodological knowledge graph, and event history into one unreadable graph.
+
+Sources:
+
+```text
+docs/research/002_primary_project_cockpit_interface_concept.md
+docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
+docs/checkpoints/117_unified_cockpit_workspace_direction_confirmed.md
+```
+
+---
+
+## First executable Cockpit interaction spike
+
+Candidate implementation contract:
+
+```text
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+```
+
+Checkpoint 118 records the first executable proof.
+
+Implemented:
+
+```text
+/cockpit immersive route
+minimal Cockpit chrome
+stage-zone living project map
+dynamic meaningful work blocks
+blocked / attention / selected / complete / deferred visual states
+persistent system composer
+spatial focus handoff
+shared DataPage inside Cockpit focus
+shared EdaPage inside Cockpit focus
+dedicated Production Missingness focused investigation
+URL-addressable focus state
+browser Back restoration
+reduced-motion-safe transition fallback
+```
+
+No graph/canvas framework is selected. The first spike intentionally uses ordinary React/CSS/SVG/browser primitives so the interaction can be evaluated before a library shapes the product.
+
+Automated evidence from GitHub Actions run 70 (`32404745578`) on source commit `5d8412e3d7faeecef1b1669bacda8a5cc2a0466e`:
+
+```text
+Ubuntu build + unit tests
+    PASS
+
+Windows build + unit tests
+    PASS
+
+Chromium browser + accessibility gate
+    PASS
+
+Existing project-view visual regression
+    PASS
+```
+
+The Cockpit itself deliberately does not yet have a canonical screenshot baseline because the human visual/product gate is still pending.
+
+Historical implementation evidence:
+
+```text
+docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
+```
 
 ---
 
 ## Retrieval/horizon track remains active
-
-The agent/frontend audit changes sequencing but does not remove retrieval from the methodological brain.
 
 Still required:
 
@@ -443,9 +561,15 @@ number of agents
 LLM provider/model
 MCP server catalog
 A2A
-AG-UI
-frontend final stack
+AG-UI final role
+frontend final stack promotion
 chart library
+Cockpit final visual identity
+Cockpit graph/canvas library
+Cockpit auto-layout algorithm
+Cockpit final stage taxonomy
+Cockpit final URL contract
+system/persona name
 Tauri desktop packaging
 backend HTTP/API framework
 production FTS implementation
@@ -457,32 +581,58 @@ artifact-storage backend
 job queue/cloud deployment
 ```
 
-These are now attached to explicit requirements or planned spikes rather than being open-ended technology questions.
+These are attached to requirements or explicit spikes rather than being open-ended technology choices.
 
 ---
 
-## Near-term execution order
+## Exact near-term execution order
 
-Three active bounded tracks:
+### A. HUMAN COCKPIT PRODUCT REVIEW
+
+Immediate frontend priority:
 
 ```text
-A. GOVERNED ROUNDTRIP CLOSURE
-   confirm corrected PostgreSQL 18 gate
-   fix any remaining portability defect honestly
-   remove temporary diagnostics
-   close with dedicated checkpoint only on confirmed PASS
+pull v1-frontend-spike
+open /cockpit
+review project-map visual character
+click Data understanding
+click Production missingness
+handoff to full Data focus
+click EDA evidence
+review back/zoom-out behavior
+review composer placement and system presence
+```
 
-B. AGENT RUNTIME BAKEOFF
-   implement Specification 005 representative workload
-   begin single-agent first
-   compare surviving runtimes against actual ADS requirements
+The main question is whether this begins to feel like the primary operating environment of a serious Autonomous Data Science System.
 
-C. FRONTEND PRODUCT SPIKE
-   implement Specification 006 shell from typed deterministic mock state
-   establish real design system and professional visual character
-   test accessibility/visual states
-   compare chart systems
-   evaluate AG-UI mapping without domain coupling
+Do not promote Specification 007 or freeze Cockpit screenshot baselines before this review.
+
+### B. GOVERNED ROUNDTRIP CLOSURE
+
+```text
+confirm corrected PostgreSQL 18 gate
+fix any remaining portability defect honestly
+remove temporary diagnostics
+close with dedicated checkpoint only on confirmed PASS
+```
+
+### C. AGENT RUNTIME BAKEOFF
+
+```text
+implement Specification 005 representative workload
+begin single-agent first
+compare surviving runtimes against actual ADS requirements
+```
+
+### D. FRONTEND REFINEMENT AFTER HUMAN REVIEW
+
+Depending on the review:
+
+```text
+refine Living Project Map + Focus direction
+or compare a materially different Cockpit composition
+then decide whether a dedicated spatial canvas library is justified
+then expand responsive/dark-mode/Cockpit visual gates
 ```
 
 Retrieval benchmark work follows in parallel once the knowledge seam is stable.
@@ -506,6 +656,8 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 
 docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+docs/research/002_primary_project_cockpit_interface_concept.md
+docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 
 docs/specifications/001_v1_sqlite_technical_architecture.md
 docs/specifications/002_v1_persistence_tooling_standard.md
@@ -513,15 +665,11 @@ docs/specifications/003_v1_python_project_and_dependency_tooling.md
 docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
 
 docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
 docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
 docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
-
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-docs/CONTINUITY.md
+docs/checkpoints/117_unified_cockpit_workspace_direction_confirmed.md
+docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
 ```
-
-## Current priority
-
-**Close the corrected governed PostgreSQL round-trip honestly, then begin the Specification 005 agent-runtime bakeoff and Specification 006 professional frontend visual/technical spike as parallel bounded V1 tracks. Keep retrieval-quality work evidence-driven and do not introduce multi-agent, vector, or orchestration complexity before it earns its place.**
