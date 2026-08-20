@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-20  
-**Current checkpoint:** 120  
+**Current checkpoint:** 121  
 **Active development branch:** `v1-frontend-spike`
 
 ## Start here
@@ -21,7 +21,7 @@ docs/KNOWLEDGE_MAP.md
     routing layer
 
 docs/VISION.md
-    system purpose and long-term vision
+    current system purpose and product direction
 
 docs/PRINCIPLES.md
     current high-level design principles
@@ -49,17 +49,17 @@ active frontend/Cockpit work = v1-frontend-spike
 main intentionally trails this work
 ```
 
-A continuation session must not infer the latest project state from `main` alone while this branch relationship remains active.
+A continuation session must identify the active branch rather than assuming the default branch contains the latest project state.
 
 ---
 
-## Current project stage
+## Current project stage and next action
 
-Prototype V0 is complete and its final classification is:
+Prototype V0 is complete with final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**
 
-The project is now implementing bounded V1 slices across:
+The project is now developing bounded V1 slices across:
 
 ```text
 methodological knowledge
@@ -67,12 +67,26 @@ governed persistence/interchange
 retrieval / MethodologicalHorizon construction
 agent/runtime infrastructure
 professional frontend
-unified Project Cockpit
+Project Cockpit
 ```
 
-The immediate substantive product priority is the Specification 007 candidate v0.2 immersive-scale Cockpit slice established by Checkpoint 119.
+The immediate substantive product step is now:
 
-Checkpoint 120 is the current continuity/reconciliation boundary after Session 02 ended unexpectedly at the platform conversation-length limit.
+```text
+HUMAN PRODUCT GATE
+for the Specification 007 candidate v0.2 immersive-scale Cockpit slice
+```
+
+Checkpoint 121 records that the v0.2 implementation has passed its automated gate. No final Cockpit technology, semantic-zoom, layout, or visual baseline should be frozen before the real-browser review.
+
+Primary current routing:
+
+```text
+docs/CURRENT_STATE.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
+docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
+```
 
 ---
 
@@ -87,7 +101,7 @@ docs/foundations/017_interactive_data_science_workspace_and_methodological_navig
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
 
-Current durable interpretation:
+Durable interpretation:
 
 ```text
 LLM
@@ -96,16 +110,15 @@ LLM
 ADS
     persistent project/process intelligence
     methodological knowledge
-    provenance
+    provenance/governance
     deterministic controls where justified
     execution coordination
     professional reasoning/control surface
 
 Human
-    goals
-    semantics
+    goals and semantics
     consequential judgment
-    approvals / intervention where useful
+    approvals/intervention where useful
 ```
 
 Every explicit mechanism must earn its complexity empirically.
@@ -114,14 +127,15 @@ Every explicit mechanism must earn its complexity empirically.
 
 ## Prototype V0 evidence and architectural constraint
 
-Authoritative final evidence:
+Authoritative evidence:
 
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 prototype_v0/README.md
+docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
 ```
 
-Final result:
+Core result:
 
 ```text
 B1 targeted mean: 1.73
@@ -150,18 +164,6 @@ generic recursive support reassessment
 universal dependency reopening machinery
 ```
 
-System-level interpretation:
-
-```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-```
-
-Historical final V0 checkpoint:
-
-```text
-docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
-```
-
 ---
 
 ## Project object model and professional developer workflow
@@ -184,7 +186,7 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-Core conceptual structures:
+Core conceptual structure:
 
 ```text
 OBJECTS
@@ -193,7 +195,7 @@ EVENTS
 VIEWS
 ```
 
-The current design does not add a universal project `Assessment` object.
+No universal top-level project `Assessment` object is currently accepted.
 
 Subject-specific verdicts use:
 
@@ -201,9 +203,9 @@ Subject-specific verdicts use:
 Question -> Evidence -> Finding -> Claim / Decision
 ```
 
-with structured criterion Findings where useful.
+with criterion Findings where useful.
 
-Professional-workflow principles:
+Professional workflow principles:
 
 ```text
 docs/PRINCIPLES.md, P-023 and P-024
@@ -212,7 +214,7 @@ docs/PRINCIPLES.md, P-023 and P-024
 Responsibility split:
 
 ```text
-Autonomous Data Science System
+ADS
     project/process control plane
 
 VS Code
@@ -235,7 +237,7 @@ Primary source:
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
-Current relevance progression:
+Relevance progression:
 
 ```text
 KNOWN
@@ -245,7 +247,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-Core scaling concept:
+Scaling path:
 
 ```text
 large global knowledge universe
@@ -256,7 +258,7 @@ large global knowledge universe
     -> selective task-specific LLM context
 ```
 
-Active unresolved implementation routing:
+Active retrieval questions:
 
 ```text
 docs/OPEN_QUESTIONS.md, Q-044 and Q-045
@@ -281,14 +283,14 @@ NarrativeFacet
 KnowledgeRelation
 Conditional KnowledgeRule
 KnowledgeCollection
-exact stable/revision identity
+stable identity + exact revision identity
 project-object references/influence
 criterion Finding
 ExecutionCapability
 derived Views
 ```
 
-Durable distinctions:
+Durable separations:
 
 ```text
 intrinsic knowledge kind != reasoning function
@@ -300,84 +302,46 @@ global knowledge != project-specific state
 internal representation != human-facing workflow/tree
 ```
 
-Promoted principles:
-
-```text
-docs/PRINCIPLES.md, P-025 and P-026
-```
-
-Important stress-test history:
+Important representation history:
 
 ```text
 docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
 docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
 docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
 docs/checkpoints/105_refined_representation_second_stress_test.md
+docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
 ```
 
 ---
 
-## Accepted V1 persistence/retrieval architecture
+## Accepted V1 persistence architecture and tooling
 
-Primary sources:
+Architecture:
 
 ```text
 docs/DECISIONS.md, D-028
 docs/specifications/001_v1_sqlite_technical_architecture.md
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
+docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
 ```
 
-Accepted architecture family:
+Accepted V1 direction:
 
 ```text
-SQLite-centered local-first operational architecture
+SQLite-centered local-first operational state
+FTS5 rebuildable lexical index
+rebuildable embeddings / initial exact semantic retrieval
+application-level TRUE/FALSE/UNKNOWN rule evaluator
+selective LLM context assembly
+filesystem/Git/artifact storage for large/code artifacts
 ```
-
-Direction:
-
-```text
-SQLite
-    reusable knowledge identities/revisions/components
-    typed relations and conditional rules
-    provenance/governance
-    project epistemic and decision state
-    exact project -> knowledge revision references
-    execution-capability metadata
-
-FTS5
-    rebuildable lexical index
-
-rebuildable embeddings
-    initial exact in-process semantic retrieval
-
-application rule evaluator
-    TRUE / FALSE / UNKNOWN conditional semantics
-
-selective context assembler
-
-filesystem / Git / artifact storage
-    code and large artifacts outside SQLite
-```
-
-PostgreSQL + pgvector remains the preferred first migration family if later concurrency/shared-server/vector-scale requirements exceed the SQLite envelope.
-
-Architecture gate evidence:
-
-```text
-experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
-```
-
-The retrieval seam gate is not evidence of production retrieval quality or embedding choice.
-
----
-
-## Accepted implementation and Python tooling
 
 Persistence tooling:
 
 ```text
 docs/DECISIONS.md, D-029
 docs/specifications/002_v1_persistence_tooling_standard.md
+docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
 ```
 
 Accepted:
@@ -394,6 +358,7 @@ Python project tooling:
 ```text
 docs/DECISIONS.md, D-030
 docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/checkpoints/113_v1_python_project_tooling_validated.md
 ```
 
 Accepted:
@@ -425,7 +390,7 @@ SQLite / Windows
 PostgreSQL 18
 ```
 
-It proves that a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current.
+It proves exact historical project-to-knowledge revision pinning after a newer knowledge revision becomes current.
 
 This result is distinct from the later richer governed import/accept/export round-trip.
 
@@ -461,26 +426,19 @@ interchange representation
 derived retrieval indexes
 ```
 
-Normal candidate/benchmark import cannot silently create accepted methodological authority.
+Candidate/benchmark import cannot silently create accepted methodological authority.
 
 ---
 
 ## Governed knowledge round-trip status
 
-The production bridge includes:
+Status source:
 
 ```text
-candidate import
-explicit acceptance
-accepted snapshot export
-provenance
-relation governance
-collections
-migration 0002
-historical project revision pinning
+experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_STATUS.md
 ```
 
-Last persisted gate status:
+Last persisted state:
 
 ```text
 SQLite
@@ -490,19 +448,15 @@ PostgreSQL 18
     FAIL
 ```
 
-Status source:
+The first PostgreSQL defect was an overlong manually named migration constraint. The identifier was shortened and revalidation was triggered, but closure still requires a persisted corrected PostgreSQL PASS and removal of temporary diagnostics.
 
-```text
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_STATUS.md
-```
-
-The first PostgreSQL defect was an overlong manually named migration constraint. The identifier was shortened and revalidation was triggered, but the round-trip must not be called closed until a corrected PostgreSQL PASS is persisted and temporary diagnostics are removed.
-
-Active open question:
+Active question:
 
 ```text
 docs/OPEN_QUESTIONS.md, Q-048
 ```
+
+Do not conflate this richer gate with Checkpoint 114's already-passing narrower PostgreSQL persistence slice.
 
 ---
 
@@ -530,26 +484,7 @@ Promoted principles:
 docs/PRINCIPLES.md, P-027 through P-029
 ```
 
-Current protocol directions:
-
-```text
-MCP
-    first-class external tool/resource integration candidate
-    not project memory or internal application bus
-
-AG-UI
-    evaluate as transport adapter around ADS-owned interaction/run events
-    not domain event model
-
-A2A
-    defer until independently deployed remote agents are genuinely required
-```
-
----
-
-## Agent-runtime bakeoff
-
-Candidate evaluation contract:
+Runtime bakeoff:
 
 ```text
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
@@ -564,28 +499,9 @@ Microsoft Agent Framework
 Google ADK 2.0
 ```
 
-Pydantic AI / Pydantic Graph remains a watchlist candidate.
+A simpler direct-model-call result remains valid if no framework earns its complexity.
 
-The bakeoff tests ADS-shaped requirements:
-
-```text
-domain isolation
-single-agent tool loop
-MCP
-human approval
-durable resume
-external ADS project-state authority
-bounded context transparency
-cancellation/timeouts
-failure/retry semantics
-structured outputs
-observability
-test/provider substitution
-```
-
-A valid result remains using simpler direct model calls if no framework earns its complexity.
-
-Active open question:
+Active questions:
 
 ```text
 docs/OPEN_QUESTIONS.md, Q-046 and Q-047
@@ -601,7 +517,7 @@ Primary foundation:
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
 
-Candidate technical/visual evaluation contract:
+Initial frontend evaluation contract:
 
 ```text
 docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
@@ -621,22 +537,7 @@ Playwright
 Vitest
 ```
 
-The project-view shell already includes:
-
-```text
-Overview
-Data
-EDA
-Decisions & History
-methodological guidance
-run/activity state
-approval interaction
-light/dark mode
-loading/error states
-cross-platform build/tests
-Chromium accessibility/interaction tests
-controlled project-view visual regression
-```
+The conventional project-view shell already demonstrates Overview, Data, EDA, Decisions & History, methodological guidance, run state, approval interaction, themes, loading/error handling, cross-platform builds/tests, accessibility checks, and controlled direct-project visual regression.
 
 Chart strategy remains under evaluation:
 
@@ -650,35 +551,28 @@ Tauri remains a later packaging candidate.
 
 ---
 
-## Primary Project Cockpit design
+## Project Cockpit concept and deep-work architecture
 
-### Initial concept
+Initial product concept:
 
 ```text
 docs/research/002_primary_project_cockpit_interface_concept.md
 ```
 
-Research 002 establishes:
+Core model:
 
 ```text
 Project Cockpit
     primary active-work environment
+    living project-process map
+    native system interaction
+    focused analytical work surface
 
-normal project views
-    direct inspection / navigation / records
+Direct specialist views
+    alternative inspection / entry paths
 ```
 
-Core concept:
-
-```text
-living project-process map
-+ native conversation/system interaction
-+ focused analytical work surface
-```
-
-Visible Cockpit work units represent meaningful project work, not agents and not every persisted object.
-
-### Unified deep-work refinement
+Unified deep-work architecture:
 
 ```text
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
@@ -694,10 +588,6 @@ click meaningful work block
     -> return to project context
 ```
 
-Deep Data, EDA, Validation, Features, Modeling, Evaluation, and other work should be reachable in the same experience where technically appropriate.
-
-Direct specialist routes remain alternative entrances to the same substantive modules.
-
 Critical engineering boundary:
 
 ```text
@@ -705,6 +595,8 @@ everything reachable from the Cockpit
     !=
 everything mounted or loaded simultaneously
 ```
+
+Direct routes and Cockpit focus reuse the same substantive Data/EDA/etc. workspaces rather than duplicating them.
 
 ---
 
@@ -716,13 +608,13 @@ Candidate contract:
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
 ```
 
-Implementation evidence:
+First implementation evidence:
 
 ```text
 docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
 ```
 
-Implemented:
+Validated in the first slice:
 
 ```text
 /cockpit immersive route
@@ -736,68 +628,136 @@ Production Missingness focus surface
 focus/column/filter/view route state
 browser Back restoration
 reduced-motion fallback
-```
-
-Automated gate:
-
-```text
-Ubuntu build + unit tests
-    PASS
-Windows build + unit tests
-    PASS
-Chromium interaction + accessibility
-    PASS
-existing direct project-view visual regression
-    PASS
+cross-platform build/unit tests
+Chromium interaction/accessibility
+existing direct-project visual regression
 ```
 
 No graph/canvas library was selected.
 
 ---
 
-## Second Cockpit human review and immersive-scale requirements
+## Second human review and immersive-scale requirements
 
-Current design evidence:
+Design evidence:
 
 ```text
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
 ```
 
-The second real-browser review accepted the stage-zone visual grammar:
+The second real-browser review accepted the stage-zone visual grammar and exposed a real scale/reachability defect.
+
+It established requirements for:
 
 ```text
-technical dark operating canvas
-Framing
-Data & Exploration
-Validation
-Modeling
-Evaluation
-semantic work blocks
-meaningful connectors
-clear project-state distinctions
-```
-
-It also established new requirements:
-
-```text
-2D project-space navigation
-horizontal + vertical growth
+genuine 2D project-space navigation
+horizontal + vertical project growth
 later/right/lower work always reachable
 future semantic zoom/grouping
 compact/expandable Cockpit HUD
-stage orientation at top of operating viewport
+stage orientation near top of operating viewport
 true browser fullscreen
-collision-safe floating surfaces
+collision-safe floating/docked surfaces
 fit/reset/jump navigation
 keyboard-accessible recovery
 ```
 
-Specification 007 is now **candidate v0.2** and governs the next bounded frontend implementation slice.
+Specification 007 was revised to candidate v0.2 for this bounded slice.
 
-No final canvas library, auto-layout, semantic-zoom implementation, minimap, stage taxonomy, URL contract, or visual identity is accepted yet.
+---
 
-Active open questions:
+## Immersive-scale Cockpit implementation and automated gate
+
+Current implementation evidence:
+
+```text
+docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
+```
+
+Current implementation now demonstrates:
+
+```text
+1960 x 980 representative logical project plane
+genuine horizontal and vertical viewport movement
+scroll/trackpad navigation
+Arrow-key and Shift+Arrow panning
+Home reset
+explicit Reset
+Jump to blocker
+Jump to evaluation
+sticky top stage strip + stage jumps
+later/right/lower representative work
+compact default project chrome
+expandable/collapsible project HUD
+collapsible System Focus sibling drawer
+composer-safe map geometry
+explicit browser Fullscreen API control
+fullscreen denial/unavailable fallback
+shared Data/EDA/Missingness focus behavior retained
+URL/history/reduced-motion behavior retained
+```
+
+Final corrected CI evidence:
+
+```text
+V1 frontend spike run 97
+32421209920
+
+Ubuntu build + unit tests                  PASS
+Windows build + unit tests                 PASS
+Chromium browser + accessibility           PASS
+Existing direct-project visual regression  PASS
+```
+
+The first expanded run failed only because one newly authored test used stale fixture wording. Checkpoint 121 records that failure and the test-contract correction transparently.
+
+### Current Cockpit status
+
+```text
+Specification 007
+    candidate v0.2
+
+automated immersive-scale gate
+    PASS
+
+human product gate
+    PENDING
+```
+
+No final graph/canvas library, minimap, auto-layout system, semantic-zoom algorithm, stage taxonomy, URL contract, visual identity, or Cockpit screenshot baseline has been selected.
+
+---
+
+## Current frontend continuation
+
+Immediate next work:
+
+```text
+real-browser human product review of /cockpit
+```
+
+Review specifically:
+
+```text
+2D navigation quality
+large-project orientation
+lower/right reachability
+compact/expanded HUD
+stage strip
+System Focus drawer
+composer clearance
+Reset/jump navigation
+keyboard recovery
+browser fullscreen
+visual hierarchy / professional quality
+```
+
+If the review exposes weaknesses, perform another bounded iteration and preserve the evidence.
+
+If it passes strongly, decide explicitly which parts are mature enough to promote. Do not infer promotion from the automated gate alone.
+
+Active open frontend questions:
 
 ```text
 docs/OPEN_QUESTIONS.md, Q-049 through Q-052
@@ -805,47 +765,7 @@ docs/OPEN_QUESTIONS.md, Q-049 through Q-052
 
 ---
 
-## Continuity boundary after unexpected Session 02 termination
-
-Primary source:
-
-```text
-docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
-```
-
-Session 02 reached the platform conversation-length limit immediately after Checkpoint 119 preservation.
-
-Substantive Cockpit knowledge survived in Research 004, Specification 007 v0.2, and Checkpoint 119, but the normal end-of-session reconciliation did not finish.
-
-Session 03 repaired:
-
-```text
-README
-CURRENT_STATE
-KNOWLEDGE_MAP
-OPEN_QUESTIONS
-CONTINUITY
-checkpoint-session provenance
-MAJOR_CHANGES
-frontend local generated/dependency ignore hygiene
-```
-
-Current active session:
-
-```text
-Design session: 03
-Session title: 03 - Project Cockpit & V1 Integration
-```
-
-Unplanned-boundary recovery procedure:
-
-```text
-docs/CONTINUITY.md
-```
-
----
-
-## Retrieval and MethodologicalHorizon track
+## Retrieval / MethodologicalHorizon track
 
 Still required:
 
@@ -859,30 +779,15 @@ first real MethodologicalHorizon construction
 selective LLM context assembly
 ```
 
-Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
+Do not select an embedding model, reranker, ANN service, or vector database from intuition.
 
-The representative knowledge corpus should become a retrieval benchmark only when the governed persistence/interchange seam is stable enough that fixture changes are not competing with migration debugging.
-
----
-
-## Epistemic integrity, admissibility, and risk
-
-Primary sources:
-
-```text
-docs/foundations/002_epistemic_integrity_and_project_constitution.md
-docs/foundations/003_admissibility_risk_and_assurance.md
-docs/VISION.md
-docs/PRINCIPLES.md
-```
-
-These remain durable conceptual sources. Their complete production operationalization remains open.
+The benchmark must test omission quality, relevance, and context cost rather than search speed alone.
 
 ---
 
 ## Current major non-selections
 
-Do not infer acceptance of any of these merely because they have been discussed or used experimentally:
+Do not infer acceptance of any of these merely because they have been discussed or used in a spike:
 
 ```text
 agent runtime
@@ -895,10 +800,12 @@ frontend final stack promotion
 chart library
 Cockpit graph/canvas library
 Cockpit auto-layout algorithm
+Cockpit minimap implementation
 Cockpit semantic-zoom algorithm
 Cockpit final stage taxonomy
 Cockpit final URL contract
 Cockpit final visual identity
+canonical Cockpit screenshot baseline
 system/persona name
 Tauri desktop packaging
 backend HTTP/API framework
@@ -906,85 +813,61 @@ production FTS implementation
 embedding model/provider
 lexical/semantic fusion
 reranker
-complete project persistence schema
+complete Foundation 018 production schema
 artifact-storage backend
 job queue/cloud deployment
 ```
 
 ---
 
-## Exact current priorities
+## Continuity and preservation routing
 
-### 1. Project Cockpit immersive-scale slice
-
-Governed by:
+Current development/preservation method:
 
 ```text
-docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
+docs/DEVELOPMENT_METHOD.md
 ```
 
-Implement:
+Cross-session procedure:
 
 ```text
-unreachable-content fix
-2D viewport navigation
-larger-than-one-screen project extent
-compact/expandable HUD
-top-aligned stage orientation
-true browser fullscreen
-collision-safe floating surfaces
-fit/reset/jump navigation
-keyboard-accessible recovery
+docs/CONTINUITY.md
 ```
 
-Then rerun automated gates and return to human product review before freezing the design.
+Checkpoint-format contract:
 
-### 2. Governed round-trip closure
+```text
+docs/checkpoints/README.md
+```
 
-Confirm a corrected PostgreSQL 18 PASS, fix any remaining real portability defect, remove temporary diagnostics, and checkpoint closure only when evidence is persisted.
+Checkpoint 120 records recovery from the unexpected Session 02 conversation boundary and the requirement to reconstruct from the active feature branch rather than `main` when branch-local work is newer.
 
-### 3. Agent-runtime bakeoff
-
-Execute Specification 005 with one principal reasoner first.
-
-### 4. Retrieval / MethodologicalHorizon benchmark
-
-Evaluate production retrieval and selective context once the governed knowledge seam is stable enough.
+Checkpoint 121 is the current implementation/verification boundary.
 
 ---
 
-## Minimum current continuation set
+## Exact next execution order
 
 ```text
-README.md
-docs/CURRENT_STATE.md
-docs/KNOWLEDGE_MAP.md
-docs/OPEN_QUESTIONS.md
-docs/DECISIONS.md
-docs/PRINCIPLES.md
-docs/CONTINUITY.md
+A. HUMAN COCKPIT PRODUCT GATE
+   review current /cockpit in a real browser
+   preserve visual/interaction findings
+   iterate if necessary
+   do not freeze architecture or screenshot baseline prematurely
 
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+B. GOVERNED ROUND-TRIP CLOSURE
+   confirm corrected PostgreSQL 18 gate
+   fix remaining portability defects if any
+   remove temporary diagnostics
+   close only on persisted PASS
 
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-docs/research/002_primary_project_cockpit_interface_concept.md
-docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
-docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
+C. AGENT RUNTIME BAKEOFF
+   execute Specification 005
+   begin with one principal reasoner
 
-docs/specifications/004_v1_reusable_knowledge_interchange.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-
-docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
-docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
-docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
+D. RETRIEVAL / HORIZON BENCHMARK
+   validate lexical/semantic retrieval and first real MethodologicalHorizon
+   only after governed knowledge fixtures are stable enough
 ```
+
+For the most exact current state and continuation point, prefer `docs/CURRENT_STATE.md` over this routing index.
