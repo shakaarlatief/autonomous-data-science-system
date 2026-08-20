@@ -40,11 +40,11 @@ docs/MAJOR_CHANGES.md
     selective structural history
 ```
 
-Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now implementing the bounded V1 methodological-navigation architecture.
+Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now implementing bounded V1 product slices across methodological knowledge, governed persistence, agent/runtime infrastructure, and the professional frontend.
 
 ---
 
-## System purpose and long-term vision
+## System purpose and long-term product vision
 
 Primary sources:
 
@@ -52,6 +52,7 @@ Primary sources:
 docs/VISION.md
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
 
 Historical origin:
@@ -61,7 +62,7 @@ docs/foundations/001_initial_vision_and_reasoning.md
 docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
 ```
 
-Foundation 013 explains the LLM/system/human boundary. Foundation 017 makes the target product concrete as a professional interactive data-science workspace rather than an upload-to-final-answer black box.
+Foundation 013 explains the LLM/system/human boundary. Foundation 017 makes the target product concrete as an interactive data-science workspace. Foundation 021 strengthens the interface requirement into a first-class modern, polished, visually excellent professional analytical product rather than an end-stage dashboard or chat shell.
 
 ---
 
@@ -73,7 +74,7 @@ Primary source:
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-Important distinctions include:
+Important distinctions:
 
 ```text
 Investigation != Run
@@ -203,7 +204,7 @@ Primary source:
 docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
 ```
 
-Checkpoint 107 derives the technology-neutral capabilities required before architecture selection, including stable revisions, component provenance, typed relations, tri-valued rules, semantic retrieval, project-state lookup, methodological-horizon construction, selective LLM context assembly, governance, integrity, backup, and portability.
+Checkpoint 107 derives 59 technology-neutral capabilities before architecture selection, including stable revisions, provenance, typed relations, tri-valued rules, semantic retrieval, project-state lookup, methodological-horizon construction, selective LLM context assembly, governance, integrity, backup, and portability.
 
 ---
 
@@ -214,6 +215,7 @@ Accepted decision and comparison:
 ```text
 docs/DECISIONS.md, D-028
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
+docs/specifications/001_v1_sqlite_technical_architecture.md
 ```
 
 Accepted architecture family:
@@ -248,7 +250,7 @@ filesystem / Git / artifact storage
     source code and large artifacts outside SQLite
 ```
 
-Explicit V1 non-selections unless later evidence changes the requirement envelope:
+Explicit V1 non-selections unless evidence changes the requirement envelope:
 
 ```text
 dedicated graph database
@@ -258,158 +260,77 @@ PostgreSQL server by default
 ANN index
 ```
 
-PostgreSQL + pgvector is the preferred first migration family if later concurrency/shared-server/vector-scale needs exceed the SQLite envelope.
+PostgreSQL + pgvector remains the preferred first migration family if later concurrency/shared-server/vector-scale needs exceed the SQLite envelope.
 
-Initial architecture scale spike:
+Architecture evidence:
 
 ```text
 experiments/architecture_spikes/sqlite_v1_viability.py
-```
-
----
-
-## Accepted V1 technical architecture specification
-
-Primary technical contract:
-
-```text
-docs/specifications/001_v1_sqlite_technical_architecture.md
-```
-
-Status:
-
-```text
-Accepted V1 technical specification v1.1
-```
-
-It defines migration-safe implementation boundaries beneath D-028, including:
-
-```text
-application/domain persistence ports around SQLite
-one operational DB with logical sys_/kg_/prj_/exec_/idx_ modules
-application-generated durable UUIDs, UUIDv7 preferred
-UTC domain timestamps
-STRICT authoritative tables where practical
-explicit relational integrity + bounded validated JSON
-immutable accepted knowledge content revisions
-separate governance state/history
-project-type-specific lifecycle semantics
-exact project -> knowledge revision references
-minimal declarative rule AST; no executable stored code
-FTS5 and embeddings as rebuildable derived state
-HorizonBuilder and ContextAssembler application services
-one controlled write path + short transactions
-foreign_keys=ON / WAL / synchronous=FULL baseline
-ordered migrations
-online backup + verified restore
-human-readable deterministic knowledge export
-explicit PostgreSQL migration contract
-```
-
-The contract is intentionally structured so foreseeable infrastructure evolution remains bounded:
-
-```text
-SQLite -> PostgreSQL
-exact semantic retrieval -> pgvector / ANN / other SemanticIndex provider
-bounded relational traversal -> specialized RelationQuery projection/provider
-```
-
-without redefining methodological knowledge, project objects, rules, horizon semantics, or user workflows.
-
----
-
-## V1 technical-architecture falsification evidence
-
-Historical design/validation checkpoints:
-
-```text
-docs/checkpoints/109_v1_technical_architecture_specified_and_falsification_gate_defined.md
-docs/checkpoints/110_preliminary_v1_sqlite_architecture_spike_passes_and_postgres_gate_pending.md
+experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
 docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
 ```
 
-Reproducible gate artifacts:
-
-```text
-experiments/architecture_spikes/v1_schema_spike.sql
-experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
-experiments/architecture_spikes/v1_postgres_portability_spike.py
-experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
-```
-
-Gate result:
-
-```text
-FT-01 through FT-11   PASS on SQLite architecture harness
-FT-12                 PASS on PostgreSQL 18 portability harness
-```
-
-Important boundary:
-
-```text
-FT-05 = PASS_ARCHITECTURE_ONLY
-```
-
-It validates the replaceable retrieval/index/horizon seam with a deterministic toy semantic provider. It does not validate the production embedding model, retrieval recall, fusion algorithm, or reranker.
+FT-05 validates the retrieval architecture seam only. It does not validate production retrieval quality or embedding choice.
 
 ---
 
-## Accepted V1 implementation and Python project tooling
+## Accepted implementation and Python tooling
 
-Persistence tooling:
+Persistence:
 
 ```text
 docs/DECISIONS.md, D-029
 docs/specifications/002_v1_persistence_tooling_standard.md
-docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
-experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
 ```
 
-Accepted direction:
+Accepted:
 
 ```text
 SQLAlchemy Core 2.0 stable series
 Alembic 1.x
-SQLAlchemy ORM not the primary domain/persistence model
-raw DBAPI only for narrow backend-specific adapter behavior
+SQLAlchemy ORM not primary domain/persistence model
+raw DBAPI only for narrow backend-specific behavior
 ```
 
-Python project/dependency/build tooling:
+Python project:
 
 ```text
 docs/DECISIONS.md, D-030
 docs/specifications/003_v1_python_project_and_dependency_tooling.md
-docs/checkpoints/113_v1_python_project_tooling_validated.md
-pyproject.toml
-uv.lock
-experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
 ```
 
-Accepted direction:
+Accepted:
 
 ```text
-standards-based pyproject.toml
+pyproject.toml
 uv 0.12.5
 committed cross-platform uv.lock
-uv_build for the current pure-Python package
-src/ads_system source layout
-Python >=3.12, tested on 3.12/3.13/3.14 on Linux + Windows
+uv_build
+src/ads_system
+Python >=3.12
 ```
 
-The persistence and packaging tools are implementation mechanisms behind the already-accepted architecture; they do not redefine the methodological/domain object model.
+Evidence:
+
+```text
+docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
+docs/checkpoints/113_v1_python_project_tooling_validated.md
+experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
+experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
+```
 
 ---
 
 ## First production V1 persistence vertical slice
 
-Current implementation milestone:
+Primary milestone:
 
 ```text
 docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
 experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
 ```
 
-Production implementation lives under:
+Production package:
 
 ```text
 src/ads_system/domain/
@@ -419,38 +340,232 @@ migrations/
 tests/integration/
 ```
 
-The bounded slice proves:
+The same application/repository scenario passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18. It proves a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current.
+
+---
+
+## Accepted reusable-knowledge interchange
+
+Primary sources:
 
 ```text
-stable KnowledgeAsset identity
-immutable KnowledgeRevision history
-governance/current accepted revision
-component -> exact parent asset revision
-relation -> revision/current pointer
-conditional rule -> exact owner knowledge revision
-Project + Finding persistence
-Finding -> exact historical knowledge revision
-UnitOfWork transaction boundary
-real Alembic base migration
+docs/DECISIONS.md, D-031
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
+experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
 ```
 
-The same application/repository scenario passed on:
+Accepted V1 interchange:
 
 ```text
-SQLite / Linux
-SQLite / Windows
-PostgreSQL 18
+JSON
++ JSON Schema Draft 2020-12
++ application semantic validation
++ deterministic normalization / serialization
 ```
 
-The validation explicitly proves that a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current, and that cross-project reference mismatches are rejected by relational integrity.
+Key authority rule:
 
-This is the first production evidence for the accepted persistence architecture, not completion of the full Foundation 018/020 model.
+```text
+operational database authority
+    !=
+interchange representation
+    !=
+derived retrieval indexes
+```
+
+Normal candidate/benchmark import cannot silently create accepted methodological authority.
+
+---
+
+## Governed knowledge round-trip status
+
+The current production bridge includes candidate import, explicit acceptance, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project-revision pinning.
+
+Current confirmed gate status at Checkpoint 116:
+
+```text
+SQLite
+    PASS
+
+first PostgreSQL 18 attempt
+    FAIL
+```
+
+The PostgreSQL defect was not conceptual. One manually named migration constraint exceeded PostgreSQL's 63-character identifier limit.
+
+Fix:
+
+```text
+ba6a92f83aac3a63ebfb7f97a4378c93fa28547b
+Shorten interchange migration identifiers for PostgreSQL
+```
+
+Traceability improvement:
+
+```text
+a69b8859696fbd3b45124c257d085989d692a207
+Make roundtrip gate status traceable to source commit
+```
+
+Do not treat this governed round-trip as closed until a corrected PostgreSQL PASS is persisted and confirmed.
+
+Historical transition:
+
+```text
+docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
+```
+
+---
+
+## 2026 agentic ecosystem and runtime boundary
+
+Primary research source:
+
+```text
+docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+```
+
+Current architecture conclusion:
+
+```text
+ADS domain/project/methodological semantics
+    owned by ADS
+
+agent runtimes / MCP / A2A / AG-UI / runtime checkpoints
+    replaceable infrastructure/interoperability
+```
+
+Promoted principles:
+
+```text
+docs/PRINCIPLES.md, P-027 through P-029
+```
+
+Important current directions:
+
+```text
+MCP
+    strong candidate external tool/resource integration boundary
+    not internal project memory/application bus
+
+A2A
+    defer until independently deployed remote agents are required
+
+AG-UI
+    evaluate as frontend-agent transport adapter
+    do not make it ADS domain event model
+
+multi-agent
+    do not adopt by default
+    start with one principal reasoner + tools
+```
+
+Current 2026 MCP notes in the research memo include the new stateless core and deprecation of Roots, Sampling, and Logging, so older MCP assumptions should not be copied into V1.
+
+---
+
+## Agent-runtime bakeoff
+
+Candidate evaluation contract:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+```
+
+First-round candidates:
+
+```text
+OpenAI Agents SDK
+LangGraph
+Microsoft Agent Framework
+Google ADK 2.0
+```
+
+Pydantic AI/Pydantic Graph remains a watchlist candidate.
+
+The bakeoff tests actual ADS-shaped requirements rather than generic features:
+
+```text
+domain isolation
+single-agent tools
+MCP
+human approval
+durable resume
+external ADS project-state authority
+bounded context transparency
+cancellation/timeouts
+failure/retry
+structured outputs
+observability
+test/provider substitution
+```
+
+A valid result is still to use simpler direct model calls if no framework earns its complexity.
+
+---
+
+## Professional frontend and product interface
+
+Primary foundation:
+
+```text
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+```
+
+Candidate implementation/visual gate:
+
+```text
+docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+```
+
+Current leading hypothesis, not yet accepted:
+
+```text
+React
+TypeScript
+Vite
+TanStack Router
+TanStack Query
+TanStack Table v9
+shadcn/ui source-distributed components
+ADS-owned design system
+Playwright
+Vitest
+```
+
+Current product requirement:
+
+```text
+modern
+premium/professional
+visually excellent
+compact but calm analytical density
+strong typography
+high-quality light/dark modes
+accessible
+responsive at professional laptop/desktop widths
+polished loading/empty/error/offline states
+high-quality analytical visualizations
+```
+
+The frontend begins before backend completion using deterministic typed ADS mock state behind a replaceable data-source boundary.
+
+Chart strategy remains under test:
+
+```text
+ECharts
+vs
+Plotly
+```
+
+Tauri is a later desktop-packaging candidate, not part of the first web shell.
 
 ---
 
 ## Earlier reusable-knowledge theory
 
-Read when deeper rationale/history is needed:
+Read for deeper design history:
 
 ```text
 docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
@@ -458,11 +573,11 @@ docs/foundations/007_reusable_knowledge_representation_and_composable_components
 docs/foundations/008_knowledge_quality_generalization_and_evolution.md
 ```
 
-Foundations 019 and 020 govern the current promoted post-V0 interpretation.
+Foundations 019 and 020 govern the current post-V0 interpretation.
 
 ---
 
-## Project state, dependencies, and orchestration
+## Project state, dependencies, and orchestration history
 
 Broad theory:
 
@@ -470,7 +585,7 @@ Broad theory:
 docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
 ```
 
-Prototype V0 implementation/evidence:
+Prototype V0 evidence:
 
 ```text
 prototype_v0/src/ads_v0/p0.py
@@ -502,26 +617,16 @@ docs/PRINCIPLES.md
 
 ---
 
-## Project initialization
+## Execution and observability separation
 
 Read:
 
 ```text
-docs/foundations/005_project_initialization_and_universal_bootstrap.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/PRINCIPLES.md, P-022
+docs/foundations/016_execution_observability_separation.md
 ```
 
----
-
-## System evaluation and behavioral regression
-
-Read:
-
-```text
-docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
+Agent/runtime tracing should remain supplementary to ADS-owned project provenance and operational event semantics.
 
 ---
 
@@ -533,30 +638,13 @@ Authoritative report:
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-Frozen protocol:
-
-```text
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-```
-
 Final classification:
 
 ```text
 STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
 ```
 
-Do not restart/tune P0 against the completed benchmark.
-
----
-
-## Execution and observability separation
-
-Read:
-
-```text
-docs/PRINCIPLES.md, P-022
-docs/foundations/016_execution_observability_separation.md
-```
+Do not restart or tune P0 against the completed benchmark.
 
 ---
 
@@ -597,18 +685,31 @@ Default order when documents disagree:
 
 ## Exact next step
 
-Define the **deterministic reusable-knowledge interchange/authoring contract** and a small representative real methodological corpus before choosing a production embedding model.
-
-The next bounded sequence is:
+The active bounded sequence is now:
 
 ```text
-human-readable deterministic knowledge representation
-    -> production import/export through revision/governance semantics
-    -> representative corpus from the existing methodological examples
-    -> explicit retrieval-quality fixtures
-    -> production lexical retrieval
-    -> semantic retrieval candidate evaluation
-    -> first real MethodologicalHorizon construction
+1. close corrected governed PostgreSQL round-trip honestly
+   -> confirm PASS or fix remaining portability defect
+   -> remove temporary diagnostics
+   -> checkpoint closure only after evidence
+
+2. implement Specification 005 agent-runtime bakeoff
+   -> one principal reasoner first
+   -> compare existing runtime infrastructure against ADS workload
+   -> no multi-agent architecture by default
+
+3. implement Specification 006 frontend product spike
+   -> real design system
+   -> Overview / Data / EDA / Decisions-History
+   -> methodological state UI
+   -> approval/run interaction
+   -> accessibility and visual regression
+   -> ECharts vs Plotly comparison
+   -> AG-UI mapping feasibility
+
+4. resume retrieval-quality benchmark and lexical retrieval
+   -> required hits / optional hits / critical omissions
+   -> semantic retrieval comparison only after measurable baseline
 ```
 
-The retrieval benchmark must distinguish required hits, useful optional hits, acceptable omissions, and critical omissions so later embedding/fusion/reranking choices are evidence-driven rather than selected from generic benchmark reputation.
+The goal is now to build the smallest professional end-to-end product architecture in which each new layer has earned its complexity.
