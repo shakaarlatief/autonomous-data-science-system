@@ -1,0 +1,204 @@
+"""Add reusable-knowledge interchange persistence support.
+
+Revision ID: 0002_reusable_knowledge_interchange
+Revises: 0001_v1_persistence_core
+Create Date: 2026-08-20
+"""
+
+from __future__ import annotations
+
+from alembic import op
+import sqlalchemy as sa
+from sqlalchemy.dialects import postgresql
+
+revision = "0002_reusable_knowledge_interchange"
+down_revision = "0001_v1_persistence_core"
+branch_labels = None
+depends_on = None
+
+
+def _uuid_type() -> sa.TypeEngine:
+    if op.get_bind().dialect.name == "postgresql":
+        return postgresql.UUID(as_uuid=False)
+    return sa.Text()
+
+
+def _strict_kwargs() -> dict[str, object]:
+    return {"sqlite_strict": True}
+
+
+def _json_constraints(*pairs: tuple[str, str]) -> list[sa.CheckConstraint]:
+    if op.get_bind().dialect.name != "sqlite":
+        return []
+    return [sa.CheckConstraint(expression, name=name) for expression, name in pairs]
+
+
+def upgrade() -> None:
+    uuid_type = _uuid_type()
+
+    op.create_table(
+        "kg_content_revision_extension",
+        sa.Column("revision_id", uuid_type, primary_key=True),
+        sa.Column("schema_version", sa.Integer(), nullable=False, server_default="1"),
+        sa.Column("structured_json", sa.Text(), nullable=False),
+        sa.ForeignKeyConstraint(
+            ["revision_id"],
+            ["kg_content_revision.revision_id"],
+            name="fk_kg_content_revision_extension_revision_id_kg_content_revision",
+            ondelete="CASCADE",
+        ),
+        sa.CheckConstraint(
+            "schema_version >= 1",
+            name="ck_kg_content_revision_extension_schema_version_positive",
+        ),
+        *_json_constraints(
+            (
+                "json_valid(structured_json)",
+                "ck_kg_content_revision_extension_structured_json_valid",
+            )
+        ),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_provenance_source",
+        sa.Column("source_id", sa.Text(), primary_key=True),
+        sa.Column("source_type", sa.Text(), nullable=False),
+        sa.Column("title", sa.Text(), nullable=False),
+        sa.Column("locator", sa.Text(), nullable=False),
+        sa.Column("version_or_fingerprint", sa.Text(), nullable=True),
+        sa.Column("notes", sa.Text(), nullable=True),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_content_revision_provenance",
+        sa.Column("revision_id", uuid_type, primary_key=True),
+        sa.Column("source_id", sa.Text(), primary_key=True),
+        sa.ForeignKeyConstraint(
+            ["revision_id"],
+            ["kg_content_revision.revision_id"],
+            name="fk_kg_content_revision_provenance_revision_id_kg_content_revision",
+            ondelete="CASCADE",
+        ),
+        sa.ForeignKeyConstraint(
+            ["source_id"],
+            ["kg_provenance_source.source_id"],
+            name="fk_kg_content_revision_provenance_source_id_kg_provenance_source",
+            ondelete="RESTRICT",
+        ),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_rule_provenance",
+        sa.Column("rule_spec_id", uuid_type, primary_key=True),
+        sa.Column("source_id", sa.Text(), primary_key=True),
+        sa.ForeignKeyConstraint(
+            ["rule_spec_id"],
+            ["kg_rule_spec.rule_spec_id"],
+            name="fk_kg_rule_provenance_rule_spec_id_kg_rule_spec",
+            ondelete="CASCADE",
+        ),
+        sa.ForeignKeyConstraint(
+            ["source_id"],
+            ["kg_provenance_source.source_id"],
+            name="fk_kg_rule_provenance_source_id_kg_provenance_source",
+            ondelete="RESTRICT",
+        ),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_relation_revision_state",
+        sa.Column("relation_revision_id", uuid_type, primary_key=True),
+        sa.Column("governance_status", sa.Text(), nullable=False),
+        sa.Column("semantic_content_hash", sa.Text(), nullable=False),
+        sa.Column("updated_at", sa.Text(), nullable=False),
+        sa.ForeignKeyConstraint(
+            ["relation_revision_id"],
+            ["kg_relation_revision.relation_revision_id"],
+            name="fk_kg_relation_revision_state_relation_revision_id_kg_relation_revision",
+            ondelete="CASCADE",
+        ),
+        sa.CheckConstraint(
+            "governance_status IN ('CANDIDATE','REVIEWED','ACCEPTED','SUPERSEDED','REJECTED')",
+            name="ck_kg_relation_revision_state_relation_governance_status_allowed",
+        ),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_relation_governance_event",
+        sa.Column("event_id", uuid_type, primary_key=True),
+        sa.Column("relation_revision_id", uuid_type, nullable=False),
+        sa.Column("from_status", sa.Text(), nullable=True),
+        sa.Column("to_status", sa.Text(), nullable=False),
+        sa.Column("actor", sa.Text(), nullable=False),
+        sa.Column("occurred_at", sa.Text(), nullable=False),
+        sa.Column("note_text", sa.Text(), nullable=True),
+        sa.ForeignKeyConstraint(
+            ["relation_revision_id"],
+            ["kg_relation_revision.relation_revision_id"],
+            name="fk_kg_relation_governance_event_relation_revision_id_kg_relation_revision",
+            ondelete="RESTRICT",
+        ),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_relation_revision_provenance",
+        sa.Column("relation_revision_id", uuid_type, primary_key=True),
+        sa.Column("source_id", sa.Text(), primary_key=True),
+        sa.ForeignKeyConstraint(
+            ["relation_revision_id"],
+            ["kg_relation_revision.relation_revision_id"],
+            name="fk_kg_relation_revision_provenance_relation_revision_id_kg_relation_revision",
+            ondelete="CASCADE",
+        ),
+        sa.ForeignKeyConstraint(
+            ["source_id"],
+            ["kg_provenance_source.source_id"],
+            name="fk_kg_relation_revision_provenance_source_id_kg_provenance_source",
+            ondelete="RESTRICT",
+        ),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_collection",
+        sa.Column("collection_key", sa.Text(), primary_key=True),
+        sa.Column("title", sa.Text(), nullable=False),
+        **_strict_kwargs(),
+    )
+
+    op.create_table(
+        "kg_collection_member",
+        sa.Column("collection_key", sa.Text(), primary_key=True),
+        sa.Column("node_id", uuid_type, primary_key=True),
+        sa.ForeignKeyConstraint(
+            ["collection_key"],
+            ["kg_collection.collection_key"],
+            name="fk_kg_collection_member_collection_key_kg_collection",
+            ondelete="CASCADE",
+        ),
+        sa.ForeignKeyConstraint(
+            ["node_id"],
+            ["kg_node.node_id"],
+            name="fk_kg_collection_member_node_id_kg_node",
+            ondelete="RESTRICT",
+        ),
+        **_strict_kwargs(),
+    )
+
+
+def downgrade() -> None:
+    op.drop_table("kg_collection_member")
+    op.drop_table("kg_collection")
+    op.drop_table("kg_relation_revision_provenance")
+    op.drop_table("kg_relation_governance_event")
+    op.drop_table("kg_relation_revision_state")
+    op.drop_table("kg_rule_provenance")
+    op.drop_table("kg_content_revision_provenance")
+    op.drop_table("kg_provenance_source")
+    op.drop_table("kg_content_revision_extension")
