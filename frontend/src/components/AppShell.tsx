@@ -7,12 +7,10 @@ import {
   BrainCircuit,
   ChevronRight,
   CircleDot,
-  ClipboardCheck,
   Database,
   FileText,
   FlaskConical,
   Gauge,
-  GitBranch,
   History,
   Home,
   Layers3,
@@ -49,11 +47,16 @@ export function AppShell() {
     if (stored === 'light' || stored === 'dark') return stored
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   })
+  const [contextCollapsed, setContextCollapsed] = useState(() => localStorage.getItem('ads-context-panel') === 'collapsed')
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     localStorage.setItem('ads-theme', theme)
   }, [theme])
+
+  useEffect(() => {
+    localStorage.setItem('ads-context-panel', contextCollapsed ? 'collapsed' : 'expanded')
+  }, [contextCollapsed])
 
   const activeRunCount = runs.filter((run) => run.status === 'RUNNING').length
   const approvalCount = runs.filter((run) => run.status === 'WAITING_FOR_APPROVAL').length
@@ -141,11 +144,11 @@ export function AppShell() {
           </div>
         </header>
 
-        <div className="main-grid">
+        <div className={`main-grid ${contextCollapsed ? 'context-collapsed' : ''}`}>
           <main className="content-area" id="main-content">
             <Outlet />
           </main>
-          <MethodologyPanel />
+          <MethodologyPanel collapsed={contextCollapsed} onToggle={() => setContextCollapsed((value) => !value)} />
         </div>
       </div>
     </div>
