@@ -2,7 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-20
+**Last reviewed:** 2026-08-20  
+**Current checkpoint:** 118
 
 ## Start here
 
@@ -40,7 +41,20 @@ docs/MAJOR_CHANGES.md
     selective structural history
 ```
 
-Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now implementing bounded V1 product slices across methodological knowledge, governed persistence, agent/runtime infrastructure, and the professional frontend.
+Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**.
+
+The project is now implementing bounded V1 slices across:
+
+```text
+methodological knowledge
+governed persistence/interchange
+retrieval/horizon construction
+agent/runtime infrastructure
+professional frontend
+unified Project Cockpit
+```
+
+The immediate frontend priority is human review of the first executable Cockpit interaction spike before its visual direction is frozen.
 
 ---
 
@@ -55,6 +69,12 @@ docs/foundations/017_interactive_data_science_workspace_and_methodological_navig
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
 
+Foundation 013 defines the LLM/system/human boundary.
+
+Foundation 017 makes the target product concrete as an interactive data-science workspace.
+
+Foundation 021 strengthens the interface requirement into a first-class modern, polished, visually excellent professional analytical product rather than an end-stage dashboard or chat shell.
+
 Historical origin:
 
 ```text
@@ -62,7 +82,39 @@ docs/foundations/001_initial_vision_and_reasoning.md
 docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
 ```
 
-Foundation 013 explains the LLM/system/human boundary. Foundation 017 makes the target product concrete as an interactive data-science workspace. Foundation 021 strengthens the interface requirement into a first-class modern, polished, visually excellent professional analytical product rather than an end-stage dashboard or chat shell.
+---
+
+## Prototype V0 evidence and constraint
+
+Final evidence:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+```
+
+Final classification:
+
+```text
+STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
+```
+
+Core scaling lesson:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Do not reintroduce P0's full structured state/context, large always-on frontier, generic recursive reopening, or path-sensitive activation unchanged.
+
+Relevant implementation/history:
+
+```text
+prototype_v0/src/ads_v0/p0.py
+prototype_v0/src/ads_v0/p0_controller.py
+prototype_v0/src/ads_v0/p0_schema.py
+```
 
 ---
 
@@ -86,7 +138,15 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-The current design does not add a universal project `Assessment` object. Subject-specific criterion verdicts use the existing Question -> Evidence -> Finding -> Claim/Decision chain, with a structured criterion-Finding form where useful.
+The current design does not add a universal project `Assessment` object.
+
+Subject-specific verdicts use:
+
+```text
+Question -> Evidence -> Finding -> Claim/Decision
+```
+
+with structured criterion Findings where useful.
 
 Professional-workflow principles:
 
@@ -138,9 +198,8 @@ large global knowledge universe
     -> bounded methodological horizon
     -> explicit checks + flexible reasoning
     -> inspectable recommendation/requiredness
+    -> selective task-specific LLM context
 ```
-
-The full knowledge catalog should not be sent to the LLM on every reasoning call.
 
 ---
 
@@ -204,13 +263,13 @@ Primary source:
 docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
 ```
 
-Checkpoint 107 derives 59 technology-neutral capabilities before architecture selection, including stable revisions, provenance, typed relations, tri-valued rules, semantic retrieval, project-state lookup, methodological-horizon construction, selective LLM context assembly, governance, integrity, backup, and portability.
+Checkpoint 107 derives technology-neutral requirements before architecture selection, including revisions, provenance, typed relations, conditional rules, retrieval, project-state lookup, horizon construction, selective context assembly, governance, integrity, backup, and portability.
 
 ---
 
 ## Accepted V1 persistence/retrieval architecture
 
-Accepted decision and comparison:
+Primary sources:
 
 ```text
 docs/DECISIONS.md, D-028
@@ -250,16 +309,6 @@ filesystem / Git / artifact storage
     source code and large artifacts outside SQLite
 ```
 
-Explicit V1 non-selections unless evidence changes the requirement envelope:
-
-```text
-dedicated graph database
-dedicated vector database/service
-external generic rules engine
-PostgreSQL server by default
-ANN index
-```
-
 PostgreSQL + pgvector remains the preferred first migration family if later concurrency/shared-server/vector-scale needs exceed the SQLite envelope.
 
 Architecture evidence:
@@ -270,7 +319,7 @@ experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
 docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
 ```
 
-FT-05 validates the retrieval architecture seam only. It does not validate production retrieval quality or embedding choice.
+FT-05 validates the retrieval seam only. It does not validate production retrieval quality or embedding choice.
 
 ---
 
@@ -321,7 +370,7 @@ experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
 
 ---
 
-## First production V1 persistence vertical slice
+## First production persistence vertical slice
 
 Primary milestone:
 
@@ -340,7 +389,9 @@ migrations/
 tests/integration/
 ```
 
-The same application/repository scenario passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18. It proves a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current.
+The same application/repository scenario passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18.
+
+It proves a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current.
 
 ---
 
@@ -380,9 +431,9 @@ Normal candidate/benchmark import cannot silently create accepted methodological
 
 ## Governed knowledge round-trip status
 
-The current production bridge includes candidate import, explicit acceptance, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project-revision pinning.
+The production bridge includes candidate import, explicit acceptance, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project-revision pinning.
 
-Current confirmed gate status at Checkpoint 116:
+Last canonically confirmed gate status:
 
 ```text
 SQLite
@@ -392,7 +443,7 @@ first PostgreSQL 18 attempt
     FAIL
 ```
 
-The PostgreSQL defect was not conceptual. One manually named migration constraint exceeded PostgreSQL's 63-character identifier limit.
+The first PostgreSQL defect was a too-long manually named migration constraint, not a conceptual persistence failure.
 
 Fix:
 
@@ -408,25 +459,19 @@ a69b8859696fbd3b45124c257d085989d692a207
 Make roundtrip gate status traceable to source commit
 ```
 
-Do not treat this governed round-trip as closed until a corrected PostgreSQL PASS is persisted and confirmed.
-
-Historical transition:
-
-```text
-docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
-```
+Do not call the governed round-trip closed until a corrected PostgreSQL PASS is persisted and confirmed.
 
 ---
 
 ## 2026 agentic ecosystem and runtime boundary
 
-Primary research source:
+Primary research:
 
 ```text
 docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
 ```
 
-Current architecture conclusion:
+Architecture conclusion:
 
 ```text
 ADS domain/project/methodological semantics
@@ -442,7 +487,7 @@ Promoted principles:
 docs/PRINCIPLES.md, P-027 through P-029
 ```
 
-Important current directions:
+Important directions:
 
 ```text
 MCP
@@ -461,7 +506,11 @@ multi-agent
     start with one principal reasoner + tools
 ```
 
-Current 2026 MCP notes in the research memo include the new stateless core and deprecation of Roots, Sampling, and Logging, so older MCP assumptions should not be copied into V1.
+Historical checkpoint:
+
+```text
+docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
+```
 
 ---
 
@@ -484,7 +533,7 @@ Google ADK 2.0
 
 Pydantic AI/Pydantic Graph remains a watchlist candidate.
 
-The bakeoff tests actual ADS-shaped requirements rather than generic features:
+The bakeoff tests ADS-shaped requirements:
 
 ```text
 domain isolation
@@ -505,7 +554,7 @@ A valid result is still to use simpler direct model calls if no framework earns 
 
 ---
 
-## Professional frontend and product interface
+## Professional frontend and project-view shell
 
 Primary foundation:
 
@@ -519,7 +568,7 @@ Candidate implementation/visual gate:
 docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
 ```
 
-Current leading hypothesis, not yet accepted:
+Current leading stack hypothesis, not yet a final product-stack acceptance:
 
 ```text
 React
@@ -528,30 +577,31 @@ Vite
 TanStack Router
 TanStack Query
 TanStack Table v9
-shadcn/ui source-distributed components
 ADS-owned design system
 Playwright
 Vitest
 ```
 
-Current product requirement:
+Current project-view shell implements:
 
 ```text
-modern
-premium/professional
-visually excellent
-compact but calm analytical density
-strong typography
-high-quality light/dark modes
-accessible
-responsive at professional laptop/desktop widths
-polished loading/empty/error/offline states
-high-quality analytical visualizations
+Overview
+Data
+EDA
+Decisions & History
+methodological guidance
+run/activity state
+approval interaction
+light/dark mode
+loading/error states
+cross-platform build/tests
+Chromium accessibility/interaction tests
+controlled project-view visual regression
 ```
 
-The frontend begins before backend completion using deterministic typed ADS mock state behind a replaceable data-source boundary.
+Human review identified and corrected a Data-layout defect where the right methodological panel could overlap the Data workspace. The context panel is now a reserved, collapsible layout column with browser coverage.
 
-Chart strategy remains under test:
+Chart strategy remains under evaluation:
 
 ```text
 ECharts
@@ -559,7 +609,201 @@ vs
 Plotly
 ```
 
-Tauri is a later desktop-packaging candidate, not part of the first web shell.
+Tauri remains a later packaging candidate.
+
+---
+
+## Primary Project Cockpit design
+
+This is now a major active product-design area.
+
+### Initial concept research
+
+```text
+docs/research/002_primary_project_cockpit_interface_concept.md
+```
+
+Research 002 establishes the missing product layer:
+
+```text
+Project Cockpit
+    primary active-work environment
+
+normal project views
+    direct inspection / navigation / records
+```
+
+Core concept:
+
+```text
+living project-process map
++ native conversation/system interaction
++ focused analytical work surface
+```
+
+Visible Cockpit work units should represent meaningful project work, not agents and not every persisted project object.
+
+### Unified deep-work refinement
+
+```text
+docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
+docs/checkpoints/117_unified_cockpit_workspace_direction_confirmed.md
+```
+
+Strongly confirmed human interaction requirement:
+
+```text
+click a work block
+    -> smooth zoom/focus experience
+    -> perform real analytical work
+    -> return smoothly to project context
+```
+
+Deep Data, EDA, Validation, Features, Modeling, Evaluation, and other work should be possible inside this experience where technically appropriate.
+
+Direct specialist routes remain as alternate entrances into the same functionality.
+
+Critical engineering boundary:
+
+```text
+everything reachable from the Cockpit
+    !=
+everything mounted or loaded simultaneously
+```
+
+A professional implementation may use:
+
+```text
+selective component mounting
+route/search state
+code splitting
+backend pagination/streaming
+virtualized large views
+browser View Transition API or another motion layer
+```
+
+while still presenting one continuous workspace to the user.
+
+---
+
+## First executable Project Cockpit spike
+
+Candidate contract:
+
+```text
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+```
+
+Implementation evidence:
+
+```text
+docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
+```
+
+Current implemented interaction:
+
+```text
+/cockpit immersive route
+minimal global Cockpit chrome
+stage-zone living project map
+meaningful dynamic work blocks
+explicit complete/blocked/attention/selected/deferred states
+persistent bottom system composer
+spatial focus handoff
+shared DataPage inside focus host
+shared EdaPage inside focus host
+dedicated Production Missingness focus surface
+focus/column/filter/view search state
+browser Back restoration
+reduced-motion fallback
+```
+
+No graph/canvas library is selected yet.
+
+The first spike intentionally uses React/CSS/SVG/browser primitives to evaluate the interaction before React Flow or another canvas framework is allowed to shape the product.
+
+Automated gate on GitHub Actions run 70:
+
+```text
+Ubuntu build + unit tests
+    PASS
+
+Windows build + unit tests
+    PASS
+
+Chromium interaction + accessibility
+    PASS
+
+existing project-view visual regression
+    PASS
+```
+
+The Cockpit has no canonical visual-regression baseline yet because human visual/product review is intentionally required first.
+
+Immediate frontend action:
+
+```text
+human opens /cockpit
+reviews project map
+focuses Data
+focuses Production Missingness
+hands off to full Data focus
+focuses EDA
+returns / uses browser Back
+reviews composer and overall product feel
+```
+
+Do not promote Specification 007 or select a graph library before this review.
+
+---
+
+## Retrieval and MethodologicalHorizon track
+
+Still required:
+
+```text
+retrieval-quality fixtures
+production lexical retrieval
+semantic retrieval candidate evaluation
+lexical/semantic fusion if justified
+first real MethodologicalHorizon construction
+selective LLM context assembly
+```
+
+Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
+
+The representative knowledge corpus should become a retrieval benchmark only after the governed persistence/interchange seam is stable enough that fixture changes are not competing with migration debugging.
+
+---
+
+## Epistemic integrity, admissibility, and risk
+
+Primary sources:
+
+```text
+docs/foundations/002_epistemic_integrity_and_project_constitution.md
+docs/foundations/003_admissibility_risk_and_assurance.md
+docs/VISION.md
+docs/PRINCIPLES.md
+```
+
+---
+
+## Project state and orchestration history
+
+Broad theory:
+
+```text
+docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
+```
+
+Interpretation after V0:
+
+```text
+broad dependency/state theory remains useful
+    !=
+P0's always-on representation is justified
+```
 
 ---
 
@@ -577,139 +821,53 @@ Foundations 019 and 020 govern the current post-V0 interpretation.
 
 ---
 
-## Project state, dependencies, and orchestration history
+## Current active priorities
 
-Broad theory:
+Exact status and sequencing are maintained in:
 
 ```text
-docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
+docs/CURRENT_STATE.md
 ```
 
-Prototype V0 evidence:
+At Checkpoint 118 the immediate high-value action is the human Cockpit review.
+
+Other active bounded tracks remain:
 
 ```text
-prototype_v0/src/ads_v0/p0.py
-prototype_v0/src/ads_v0/p0_controller.py
-prototype_v0/src/ads_v0/p0_schema.py
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-Interpretation:
-
-```text
-broad dependency/state theory remains useful
-    !=
-P0's always-on representation is justified
+governed PostgreSQL round-trip closure
+agent-runtime bakeoff
+retrieval-quality benchmark preparation
+frontend refinement after Cockpit review
 ```
 
 ---
 
-## Epistemic integrity, admissibility, risk, and project constitution
+## Current major non-selections
 
-Read:
-
-```text
-docs/foundations/002_epistemic_integrity_and_project_constitution.md
-docs/foundations/003_admissibility_risk_and_assurance.md
-docs/VISION.md
-docs/PRINCIPLES.md
-```
-
----
-
-## Execution and observability separation
-
-Read:
+Do not infer acceptance of any of these merely because they have been discussed:
 
 ```text
-docs/PRINCIPLES.md, P-022
-docs/foundations/016_execution_observability_separation.md
+agent runtime
+number of agents
+LLM provider/model
+MCP server catalog
+A2A
+AG-UI final role
+frontend final stack promotion
+chart library
+Cockpit graph/canvas library
+Cockpit final visual identity
+Cockpit stage taxonomy
+Cockpit auto-layout algorithm
+Cockpit final URL contract
+system/persona name
+Tauri desktop packaging
+backend HTTP/API framework
+production FTS implementation
+embedding model/provider
+lexical/semantic fusion
+reranker
+complete project persistence schema
+artifact storage backend
+job queue/cloud deployment
 ```
-
-Agent/runtime tracing should remain supplementary to ADS-owned project provenance and operational event semantics.
-
----
-
-## Prototype V0 final result
-
-Authoritative report:
-
-```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-Final classification:
-
-```text
-STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
-```
-
-Do not restart or tune P0 against the completed benchmark.
-
----
-
-## Knowledge preservation and session continuity
-
-Read:
-
-```text
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/checkpoints/README.md
-```
-
-Current design session:
-
-```text
-02 - Methodological Brain & Knowledge Units
-```
-
----
-
-## Repository authority model
-
-Default order when documents disagree:
-
-```text
-1. frozen/current specifications or contracts for their declared scope
-2. current accepted decisions and canonical specifications
-3. current vision/principles/current-state material
-4. final experiment reports for their declared experiment scope
-5. foundational design memos
-6. checkpoints
-7. raw historical material
-```
-
----
-
-## Exact next step
-
-The active bounded sequence is now:
-
-```text
-1. close corrected governed PostgreSQL round-trip honestly
-   -> confirm PASS or fix remaining portability defect
-   -> remove temporary diagnostics
-   -> checkpoint closure only after evidence
-
-2. implement Specification 005 agent-runtime bakeoff
-   -> one principal reasoner first
-   -> compare existing runtime infrastructure against ADS workload
-   -> no multi-agent architecture by default
-
-3. implement Specification 006 frontend product spike
-   -> real design system
-   -> Overview / Data / EDA / Decisions-History
-   -> methodological state UI
-   -> approval/run interaction
-   -> accessibility and visual regression
-   -> ECharts vs Plotly comparison
-   -> AG-UI mapping feasibility
-
-4. resume retrieval-quality benchmark and lexical retrieval
-   -> required hits / optional hits / critical omissions
-   -> semantic retrieval comparison only after measurable baseline
-```
-
-The goal is now to build the smallest professional end-to-end product architecture in which each new layer has earned its complexity.
