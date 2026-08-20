@@ -7,6 +7,10 @@ Create Date: 2026-08-20
 
 from __future__ import annotations
 
+import hashlib
+import json
+import uuid
+
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
@@ -31,6 +35,97 @@ def _json_constraints(*pairs: tuple[str, str]) -> list[sa.CheckConstraint]:
     if op.get_bind().dialect.name != "sqlite":
         return []
     return [sa.CheckConstraint(expression, name=name) for expression, name in pairs]
+
+
+def _relation_digest(row: sa.RowMapping) -> str:
+    semantic = {
+        "relation_type": row["relation_type"],
+        "source_node_id": str(row["source_node_id"]),
+        "target_node_id": str(row["target_node_id"]),
+        "scope": row["scope_text"],
+        "rationale": row["rationale_text"],
+    }
+    canonical = json.dumps(
+        semantic,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+    )
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def _backfill_relation_governance() -> None:
+    """Preserve the implicit accepted-current meaning of migration 0001 relations."""
+
+    bind = op.get_bind()
+    rows = bind.execute(
+        sa.text(
+            """
+            SELECT
+                rr.relation_revision_id,
+                rr.relation_id,
+                rr.scope_text,
+                rr.rationale_text,
+                rr.created_at,
+                r.source_node_id,
+                r.target_node_id,
+                r.relation_type,
+                rc.relation_revision_id AS current_revision_id
+            FROM kg_relation_revision AS rr
+            JOIN kg_relation AS r
+              ON r.relation_id = rr.relation_id
+            LEFT JOIN kg_relation_current AS rc
+              ON rc.relation_id = rr.relation_id
+            """
+        )
+    ).mappings().all()
+
+    for row in rows:
+        relation_revision_id = str(row["relation_revision_id"])
+        current_revision_id = (
+            str(row["current_revision_id"])
+            if row["current_revision_id"] is not None
+            else None
+        )
+        status = (
+            "ACCEPTED"
+            if current_revision_id == relation_revision_id
+            else "SUPERSEDED"
+        )
+        bind.execute(
+            sa.text(
+                """
+                INSERT INTO kg_relation_revision_state
+                    (relation_revision_id, governance_status, semantic_content_hash, updated_at)
+                VALUES
+                    (:relation_revision_id, :status, :semantic_hash, :updated_at)
+                """
+            ),
+            {
+                "relation_revision_id": relation_revision_id,
+                "status": status,
+                "semantic_hash": _relation_digest(row),
+                "updated_at": row["created_at"],
+            },
+        )
+        bind.execute(
+            sa.text(
+                """
+                INSERT INTO kg_relation_governance_event
+                    (event_id, relation_revision_id, from_status, to_status, actor, occurred_at, note_text)
+                VALUES
+                    (:event_id, :relation_revision_id, NULL, :status, :actor, :occurred_at, :note_text)
+                """
+            ),
+            {
+                "event_id": str(uuid.uuid4()),
+                "relation_revision_id": relation_revision_id,
+                "status": status,
+                "actor": "migration-0002",
+                "occurred_at": row["created_at"],
+                "note_text": "Backfilled governance from migration 0001 current-relation semantics",
+            },
+        )
 
 
 def upgrade() -> None:
@@ -190,6 +285,8 @@ def upgrade() -> None:
         ),
         **_strict_kwargs(),
     )
+
+    _backfill_relation_governance()
 
 
 def downgrade() -> None:
