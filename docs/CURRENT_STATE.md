@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 99  
-**Date:** 2026-08-19  
-**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, and methodological-navigation relevance architecture concretized; proactive session rotation now recommended  
+**Checkpoint:** 101  
+**Date:** 2026-08-20  
+**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, and five-example reusable-knowledge stress test completed; candidate conceptual knowledge representation is the active design task  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
@@ -200,7 +200,7 @@ KNOWN
 
 The system should also explain why known options were not recommended.
 
-A key new concept is the **methodological horizon**:
+A key concept is the **methodological horizon**:
 
 ```text
 large global knowledge base
@@ -223,11 +223,11 @@ Detailed promoted reasoning:
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
-## Current design stage
+## Five-example reusable-knowledge stress test
 
-Do **not** implement V1 yet.
+The exercise required by Foundation 019 is complete.
 
-The next design task is to go one level deeper into the reusable methodological knowledge representation using deliberately different examples:
+Examples studied:
 
 ```text
 Histogram
@@ -237,40 +237,75 @@ Random Forest
 Prediction-time feature eligibility
 ```
 
-For each example, determine:
+The examples strongly support the following active representation hypothesis:
 
 ```text
-what information every reusable knowledge unit should share;
-what requires type-specific extensions;
-how prerequisites and applicability are represented;
-how alternatives, complements, failure modes, and follow-ups are represented;
-what can be explicit/deterministic versus requiring flexible reasoning;
-what belongs in methodological knowledge versus executable implementation.
+SMALL COMMON SEMANTIC CORE
+        +
+TYPED KNOWLEDGE ASSETS / COMPONENTS
+        +
+TYPED RELATIONSHIPS AND COMPOSITION
+        +
+OPTIONAL PACKAGES / GROUPINGS
+        +
+PROJECT-SPECIFIC INSTANTIATION / ASSESSMENT
+        +
+SEPARATE EXECUTION IMPLEMENTATIONS
 ```
 
-The goal is to learn whether the knowledge system needs a common core plus typed extensions rather than forcing all knowledge into one universal schema.
-
-Do not choose a database, graph store, vector store, retrieval engine, agent framework, or V1 backend before this conceptual exercise is complete.
-
-## Session rotation
-
-The active ChatGPT design session is now long enough that further substantial work creates avoidable continuity risk.
-
-The repository has been preserved through Checkpoint 099 specifically so the session can rotate **before** hitting the platform length limit.
-
-Recommended next chat title:
+The candidate common core is deliberately small and currently includes concepts such as:
 
 ```text
-02 - Methodological Brain & Knowledge Units
+identity
+type / semantic role
+purpose
+scope / applicability boundary
+activation or retrieval conditions
+provenance
+maturity / version
+known limitations / counterexamples
 ```
 
-Use the standardized repository-first continuation prompt stored in:
+The exercise also showed that one universal lifecycle/status model is inappropriate. A model candidate, an unresolved methodological concern, and a feature-eligibility assessment have different project-state semantics.
+
+Broad packages such as Missing Data or Information Legitimacy remain useful, but the package should not automatically be the mandatory root form of every reusable knowledge asset. Atomic methods and first-class reusable constraints may be addressable directly.
+
+Detailed historical synthesis:
 
 ```text
-docs/CONTINUITY.md
+docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
 ```
 
-No manual transcript handoff should be required.
+These conclusions are active design hypotheses, not a frozen V1 schema.
+
+## Current design stage
+
+Do **not** implement V1 yet.
+
+The five-example exercise is complete. The next legitimate task is to make the representation hypothesis explicit as the first candidate conceptual knowledge contract.
+
+That design should specify, without choosing storage technology:
+
+```text
+1. minimum common metadata/semantic core for an addressable knowledge asset;
+2. initial typed knowledge-role vocabulary;
+3. optional package/collection semantics;
+4. typed relationship semantics;
+5. separation between applicability/retrieval state and project-specific object status;
+6. global-knowledge to project-instance transformation;
+7. boundary between methodological knowledge and execution capability;
+8. component-level provenance, maturity, versioning, limitations, and challenge history;
+9. derivation of human-facing decision trees and methodological views;
+10. concrete worked encodings for several of the five examples.
+```
+
+Only after the conceptual representation is explicit and challenged should the project evaluate what persistence, retrieval, indexing, or orchestration architecture it actually requires.
+
+Do not choose a database, graph store, vector store, retrieval engine, agent framework, or V1 backend yet.
+
+## Continuity status
+
+The session rotation recommended by Checkpoint 099 has been completed. The active design work is now occurring in the `02 - Methodological Brain & Knowledge Units` session using the repository-first continuation method.
 
 Historical rotation checkpoint:
 
@@ -278,7 +313,17 @@ Historical rotation checkpoint:
 docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
 ```
 
-## Minimum reading for the next session
+Current preservation-method contract:
+
+```text
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/checkpoints/README.md
+```
+
+Checkpoint metadata normalization tooling now exists for the legacy 000-099 records. The historical backfill should not be considered closed until the normalized repository state has been mechanically verified against the checkpoint metadata contract.
+
+## Minimum reading for continuation
 
 ```text
 README.md
@@ -290,10 +335,11 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Rotate to a new chat now. In the new session, begin the reusable knowledge-unit design exercise with Histogram, Missing-data investigation, Temporal validation, Random Forest, and Prediction-time feature eligibility. Do not implement V1 yet.**
+**Design the first explicit candidate conceptual representation contract for reusable methodological knowledge. Preserve the common core as small, use typed semantics and relationships where warranted, keep project-specific state separate from global reusable knowledge, and do not select implementation technology yet.**
