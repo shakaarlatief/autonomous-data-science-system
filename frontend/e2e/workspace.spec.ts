@@ -22,6 +22,31 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page).toHaveURL(/filter=month/)
   })
 
+  test('keeps the data workspace inside its column and folds the context panel', async ({ page }) => {
+    await page.goto('/data?column=tenure_months&filter=')
+
+    const tableRegion = page.getByRole('region', { name: 'Representative dataset rows' })
+    const contextPanel = page.getByRole('complementary', { name: 'Methodological guidance' })
+    await expect(tableRegion).toBeVisible()
+    await expect(contextPanel).toBeVisible()
+
+    const expandedTableBox = await tableRegion.boundingBox()
+    const expandedPanelBox = await contextPanel.boundingBox()
+    expect(expandedTableBox).not.toBeNull()
+    expect(expandedPanelBox).not.toBeNull()
+    expect((expandedTableBox?.x ?? 0) + (expandedTableBox?.width ?? 0)).toBeLessThanOrEqual((expandedPanelBox?.x ?? 0) + 1)
+
+    await page.getByRole('button', { name: 'Collapse methodological guidance' }).click()
+    await expect(page.getByRole('button', { name: 'Expand methodological guidance' })).toBeVisible()
+
+    const collapsedPanelBox = await contextPanel.boundingBox()
+    expect(collapsedPanelBox).not.toBeNull()
+    expect(collapsedPanelBox?.width ?? 1000).toBeLessThanOrEqual(50)
+
+    await page.getByRole('button', { name: 'Expand methodological guidance' }).click()
+    await expect(page.getByRole('button', { name: 'Collapse methodological guidance' })).toBeVisible()
+  })
+
   test('updates EDA view state without leaving the analytical workspace', async ({ page }) => {
     await page.goto('/eda')
 
