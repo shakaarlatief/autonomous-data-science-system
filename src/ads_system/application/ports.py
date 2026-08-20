@@ -1,9 +1,9 @@
-"""Application-facing persistence contracts for the first V1 vertical slice."""
+"""Application-facing persistence contracts for the first V1 vertical slices."""
 
 from __future__ import annotations
 
-from collections.abc import Mapping
-from typing import Protocol, Self
+from collections.abc import Mapping, Sequence
+from typing import Any, Protocol, Self
 
 from ads_system.domain.models import (
     Finding,
@@ -64,6 +64,56 @@ class KnowledgeRepository(Protocol):
     ) -> str: ...
 
 
+class KnowledgeInterchangeRepository(Protocol):
+    """Persistence operations required by Specification 004 services."""
+
+    def import_provenance_source(self, source: Mapping[str, Any]) -> None: ...
+
+    def import_asset_revision(
+        self, asset: Mapping[str, Any], *, actor: str
+    ) -> None: ...
+
+    def import_component_revision(
+        self,
+        *,
+        parent_asset_revision_id: str,
+        component: Mapping[str, Any],
+        actor: str,
+    ) -> None: ...
+
+    def import_rule(
+        self,
+        *,
+        owner_content_revision_id: str,
+        rule: Mapping[str, Any],
+    ) -> None: ...
+
+    def import_relation_revision(
+        self,
+        relation: Mapping[str, Any],
+        *,
+        source_node_id: str,
+        target_node_id: str,
+        actor: str,
+    ) -> None: ...
+
+    def accept_content_revision(self, revision_id: str, *, actor: str) -> None: ...
+
+    def accept_relation_revision(
+        self, relation_revision_id: str, *, actor: str
+    ) -> None: ...
+
+    def sync_collection(
+        self,
+        *,
+        collection_key: str,
+        title: str,
+        node_ids: Sequence[str],
+    ) -> None: ...
+
+    def export_current_accepted_snapshot(self) -> dict[str, Any]: ...
+
+
 class ProjectRepository(Protocol):
     def create_project(self, *, title: str) -> Project: ...
 
@@ -89,6 +139,7 @@ class ProjectRepository(Protocol):
 
 class UnitOfWork(Protocol):
     knowledge: KnowledgeRepository
+    interchange: KnowledgeInterchangeRepository
     projects: ProjectRepository
 
     def __enter__(self) -> Self: ...
