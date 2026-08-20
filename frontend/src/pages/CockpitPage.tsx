@@ -1,4 +1,12 @@
-import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from 'react'
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type FormEvent,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type ReactNode,
+} from 'react'
 import { Link } from '@tanstack/react-router'
 import {
   Activity,
@@ -7,17 +15,26 @@ import {
   BarChart3,
   BrainCircuit,
   Check,
+  ChevronDown,
+  ChevronUp,
   CircleDot,
+  Crosshair,
   Database,
   FlaskConical,
   Gauge,
+  Maximize2,
   MessageSquareText,
+  Minimize2,
+  Move,
+  PanelRightOpen,
   Play,
+  RotateCcw,
   Send,
   Sparkles,
   Target,
   TriangleAlert,
   Workflow,
+  X,
 } from 'lucide-react'
 import { useWorkspace } from '../appState'
 import { DataPage } from './DataPage'
@@ -48,6 +65,9 @@ export function CockpitPage({
 }: CockpitPageProps) {
   const { workspace, runs } = useWorkspace()
   const [lastDirection, setLastDirection] = useState<string | null>(null)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+  const [fullscreenMessage, setFullscreenMessage] = useState<string | null>(null)
+  const shellRef = useRef<HTMLDivElement>(null)
 
   const activeRuns = runs.filter((run) => run.status === 'RUNNING').length
   const approvals = runs.filter((run) => run.status === 'WAITING_FOR_APPROVAL').length
@@ -76,12 +96,42 @@ export function CockpitPage({
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [focus])
 
+  useEffect(() => {
+    const syncFullscreenState = () => {
+      setIsFullscreen(document.fullscreenElement === shellRef.current)
+    }
+
+    document.addEventListener('fullscreenchange', syncFullscreenState)
+    syncFullscreenState()
+    return () => document.removeEventListener('fullscreenchange', syncFullscreenState)
+  }, [])
+
+  const toggleFullscreen = async () => {
+    setFullscreenMessage(null)
+
+    try {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen()
+        return
+      }
+
+      if (!shellRef.current?.requestFullscreen || document.fullscreenEnabled === false) {
+        setFullscreenMessage('Browser fullscreen is unavailable. The immersive Cockpit remains active.')
+        return
+      }
+
+      await shellRef.current.requestFullscreen()
+    } catch {
+      setFullscreenMessage('Browser fullscreen was not granted. The immersive Cockpit remains active.')
+    }
+  }
+
   const submitDirection = (message: string) => {
     setLastDirection(message)
   }
 
   return (
-    <div className={`cockpit-shell focus-${focus}`}>
+    <div ref={shellRef} className={`cockpit-shell focus-${focus}${isFullscreen ? ' is-fullscreen' : ''}`}>
       <header className="cockpit-topbar">
         <div className="cockpit-brand-cluster">
           <div className="cockpit-brand-mark" aria-hidden="true">A</div>
@@ -97,10 +147,27 @@ export function CockpitPage({
           <span className="cockpit-status stage"><Workflow size={14} /> {workspace.project.stage}</span>
         </div>
 
-        <Link to="/" className="cockpit-project-views-link">
-          Project views <ArrowUpRight size={14} />
-        </Link>
+        <div className="cockpit-topbar-actions">
+          <button
+            type="button"
+            className="cockpit-icon-action"
+            onClick={() => void toggleFullscreen()}
+            aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+            title={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+          >
+            {isFullscreen ? <Minimize2 size={15} /> : <Maximize2 size={15} />}
+          </button>
+          <Link to="/" className="cockpit-project-views-link">
+            Project views <ArrowUpRight size={14} />
+          </Link>
+        </div>
       </header>
+
+      {fullscreenMessage && (
+        <div className="cockpit-fullscreen-message" role="status">
+          {fullscreenMessage}
+        </div>
+      )}
 
       {focus === 'map' ? (
         <ProjectMap onFocus={transitionTo} />
@@ -125,142 +192,267 @@ export function CockpitPage({
 
 function ProjectMap({ onFocus }: { onFocus: (focus: CockpitFocus) => void }) {
   const { workspace } = useWorkspace()
+  const viewportRef = useRef<HTMLElement>(null)
+  const [isHudExpanded, setIsHudExpanded] = useState(false)
+  const [isContextOpen, setIsContextOpen] = useState(false)
   const blocker = workspace.recommendations.find((item) => item.status === 'BLOCKING')
   const missingness = workspace.recommendations.find((item) => item.title.toLowerCase().includes('missing'))
 
+  const scrollBehavior = (): ScrollBehavior =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+
+  const resetViewport = () => {
+    viewportRef.current?.scrollTo({ left: 0, top: 0, behavior: scrollBehavior() })
+    viewportRef.current?.focus({ preventScroll: true })
+  }
+
+  const jumpToNode = (nodeId: string) => {
+    const viewport = viewportRef.current
+    const node = viewport?.querySelector<HTMLElement>(`[data-cockpit-node="${nodeId}"]`)
+    if (!node) return
+
+    node.scrollIntoView({ behavior: scrollBehavior(), block: 'center', inline: 'center' })
+    window.requestAnimationFrame(() => node.focus({ preventScroll: true }))
+  }
+
+  const handleViewportKeyDown = (event: ReactKeyboardEvent<HTMLElement>) => {
+    const viewport = viewportRef.current
+    if (!viewport || event.target !== viewport) return
+
+    const step = event.shiftKey ? 320 : 150
+    const movement = {
+      ArrowLeft: [-step, 0],
+      ArrowRight: [step, 0],
+      ArrowUp: [0, -step],
+      ArrowDown: [0, step],
+    }[event.key]
+
+    if (movement) {
+      event.preventDefault()
+      viewport.scrollBy({ left: movement[0], top: movement[1], behavior: scrollBehavior() })
+      return
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault()
+      resetViewport()
+    }
+  }
+
   return (
     <main className="cockpit-stage cockpit-map-stage" aria-labelledby="cockpit-map-title">
-      <div className="cockpit-map-intro">
-        <div>
+      <div className="cockpit-map-control-row">
+        <div className="cockpit-map-identity">
           <span className="cockpit-kicker">Project operating map</span>
           <h1 id="cockpit-map-title">{workspace.project.name}</h1>
-          <p>{workspace.project.objective}</p>
         </div>
-        <div className="cockpit-map-summary">
-          <span><strong>1</strong> blocking question</span>
-          <span><strong>1</strong> approval waiting</span>
-          <span><strong>3</strong> established milestones</span>
+
+        <div className="cockpit-map-controls" aria-label="Project map controls">
+          <button type="button" onClick={() => setIsHudExpanded((value) => !value)} aria-expanded={isHudExpanded}>
+            {isHudExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+            {isHudExpanded ? 'Hide project details' : 'Show project details'}
+          </button>
+          <button type="button" onClick={resetViewport} aria-label="Reset project view">
+            <RotateCcw size={14} /> Reset
+          </button>
+          <button type="button" onClick={() => jumpToNode('prediction')}>
+            <Crosshair size={14} /> Jump to blocker
+          </button>
+          <button type="button" onClick={() => jumpToNode('evaluation')}>
+            <Crosshair size={14} /> Jump to evaluation
+          </button>
+          <button type="button" onClick={() => setIsContextOpen((value) => !value)} aria-expanded={isContextOpen}>
+            <PanelRightOpen size={14} /> System focus
+          </button>
         </div>
       </div>
 
-      <section className="project-canvas" aria-label="Living data science project map">
-        <div className="stage-zone stage-framing"><span>Framing</span></div>
-        <div className="stage-zone stage-exploration"><span>Data & exploration</span></div>
-        <div className="stage-zone stage-validation"><span>Validation</span></div>
-        <div className="stage-zone stage-modeling"><span>Modeling</span></div>
-        <div className="stage-zone stage-evaluation"><span>Evaluation</span></div>
-
-        <svg className="project-connectors" viewBox="0 0 1200 610" aria-hidden="true" preserveAspectRatio="none">
-          <path d="M145 210 C220 210 225 170 300 170" />
-          <path d="M420 170 C485 170 480 170 545 170" />
-          <path d="M360 220 C360 285 360 300 360 350" />
-          <path d="M420 390 C500 390 500 295 575 295" />
-          <path d="M655 215 C655 245 655 260 655 278" />
-          <path d="M735 300 C795 300 805 240 860 240" />
-          <path d="M735 330 C800 340 795 415 860 420" />
-          <path d="M980 240 C1035 240 1035 320 1085 320" />
-          <path className="connector-deferred" d="M980 420 C1035 420 1035 345 1085 345" />
-        </svg>
-
-        <CockpitNode
-          className="node-objective"
-          kicker="Framing"
-          title="Objective defined"
-          description="Predict customer churn with decisions usable before retention intervention."
-          status="complete"
-          icon={<Target size={17} />}
-        />
-
-        <CockpitNode
-          className="node-data"
-          kicker="Dataset"
-          title="Data understanding"
-          description="7,043 rows · 21 source columns · semantic roles mapped"
-          status="complete"
-          icon={<Database size={17} />}
-          onActivate={() => onFocus('data')}
-        />
-
-        <CockpitNode
-          className="node-prediction"
-          kicker="Question"
-          title="Resolve prediction moment"
-          description={blocker?.summary ?? 'Feature eligibility cannot be finalized until the prediction moment is explicit.'}
-          status="blocked"
-          icon={<TriangleAlert size={17} />}
-        />
-
-        <CockpitNode
-          className="node-missingness"
-          kicker="Investigation"
-          title="Production missingness"
-          description={missingness?.summary ?? 'Support-ticket completeness needs production-time investigation.'}
-          status="attention"
-          icon={<FlaskConical size={17} />}
-          onActivate={() => onFocus('missingness')}
-        />
-
-        <CockpitNode
-          className="node-eda"
-          kicker="Exploration"
-          title="EDA evidence"
-          description="Distribution and cohort signals are available for focused inspection."
-          status="ready"
-          icon={<BarChart3 size={17} />}
-          onActivate={() => onFocus('eda')}
-        />
-
-        <CockpitNode
-          className="node-validation"
-          kicker="Decision"
-          title="Chronological validation"
-          description="Temporal ordering selected as the current validation design."
-          status="selected"
-          icon={<Check size={17} />}
-        />
-
-        <CockpitNode
-          className="node-baseline"
-          kicker="Modeling"
-          title="Logistic baseline"
-          description="Reference model completed and available for comparison."
-          status="complete"
-          icon={<Play size={17} />}
-        />
-
-        <CockpitNode
-          className="node-rf"
-          kicker="Modeling"
-          title="Random Forest benchmark"
-          description="Deferred until prediction-time feature eligibility is resolved."
-          status="deferred"
-          icon={<BrainCircuit size={17} />}
-        />
-
-        <CockpitNode
-          className="node-evaluation"
-          kicker="Downstream"
-          title="Evaluation & calibration"
-          description="Waiting on the active validation and modeling path."
-          status="future"
-          icon={<Gauge size={17} />}
-        />
-
-        <aside className="cockpit-now-card" aria-label="Current system focus">
-          <span className="cockpit-kicker">System focus</span>
-          <strong>Resolve validity before expanding model search.</strong>
-          <p>The current blocker affects feature eligibility, validation legitimacy and what evidence later model comparisons can support.</p>
-          <div className="cockpit-now-actions">
-            <button type="button" onClick={() => onFocus('missingness')}>Open active investigation</button>
-            <button type="button" onClick={() => onFocus('data')}>Inspect data</button>
+      {isHudExpanded && (
+        <section className="cockpit-project-hud" aria-label="Expanded project details">
+          <div>
+            <span className="cockpit-kicker">Objective</span>
+            <strong>{workspace.project.objective}</strong>
           </div>
-        </aside>
-      </section>
+          <div className="cockpit-project-hud-stats">
+            <span><strong>1</strong> blocking question</span>
+            <span><strong>1</strong> approval waiting</span>
+            <span><strong>3</strong> established milestones</span>
+          </div>
+        </section>
+      )}
+
+      <div className={`cockpit-map-layout${isContextOpen ? ' context-open' : ''}`}>
+        <section
+          ref={viewportRef}
+          className="project-viewport"
+          aria-label="Living data science project map"
+          aria-description="Two-dimensional project space. Use scrolling or trackpad movement, arrow keys to pan, Home to reset, or the jump controls above."
+          aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home"
+          tabIndex={0}
+          onKeyDown={handleViewportKeyDown}
+        >
+          <div className="project-canvas">
+            <nav className="cockpit-stage-strip" aria-label="Project stages">
+              <button type="button" onClick={() => jumpToNode('objective')}>Framing</button>
+              <button type="button" onClick={() => jumpToNode('data')}>Data & exploration</button>
+              <button type="button" onClick={() => jumpToNode('validation')}>Validation</button>
+              <button type="button" onClick={() => jumpToNode('baseline')}>Modeling</button>
+              <button type="button" onClick={() => jumpToNode('evaluation')}>Evaluation</button>
+            </nav>
+
+            <div className="stage-zone stage-framing" aria-hidden="true" />
+            <div className="stage-zone stage-exploration" aria-hidden="true" />
+            <div className="stage-zone stage-validation" aria-hidden="true" />
+            <div className="stage-zone stage-modeling" aria-hidden="true" />
+            <div className="stage-zone stage-evaluation" aria-hidden="true" />
+
+            <svg className="project-connectors" viewBox="0 0 1960 980" aria-hidden="true" preserveAspectRatio="none">
+              <path d="M250 205 C300 205 300 175 350 175" />
+              <path d="M550 175 C680 175 690 170 830 170" />
+              <path d="M450 225 C450 305 470 340 480 430" />
+              <path d="M520 520 C650 520 700 420 880 420" />
+              <path d="M930 225 C930 280 945 315 960 360" />
+              <path d="M1080 420 C1160 420 1175 315 1260 315" />
+              <path d="M1080 455 C1170 480 1180 625 1260 625" />
+              <path d="M1460 315 C1540 315 1540 480 1600 480" />
+              <path className="connector-deferred" d="M1460 625 C1540 625 1540 510 1600 510" />
+              <path d="M520 760 C820 760 1120 780 1600 780" />
+            </svg>
+
+            <CockpitNode
+              nodeId="objective"
+              className="node-objective"
+              kicker="Framing"
+              title="Objective defined"
+              description="Predict customer churn with decisions usable before retention intervention."
+              status="complete"
+              icon={<Target size={17} />}
+            />
+
+            <CockpitNode
+              nodeId="data"
+              className="node-data"
+              kicker="Dataset"
+              title="Data understanding"
+              description="7,043 rows · 21 source columns · semantic roles mapped"
+              status="complete"
+              icon={<Database size={17} />}
+              onActivate={() => onFocus('data')}
+            />
+
+            <CockpitNode
+              nodeId="prediction"
+              className="node-prediction"
+              kicker="Question"
+              title="Resolve prediction moment"
+              description={blocker?.summary ?? 'Feature eligibility cannot be finalized until the prediction moment is explicit.'}
+              status="blocked"
+              icon={<TriangleAlert size={17} />}
+            />
+
+            <CockpitNode
+              nodeId="missingness"
+              className="node-missingness"
+              kicker="Investigation"
+              title="Production missingness"
+              description={missingness?.summary ?? 'Support-ticket completeness needs production-time investigation.'}
+              status="attention"
+              icon={<FlaskConical size={17} />}
+              onActivate={() => onFocus('missingness')}
+            />
+
+            <CockpitNode
+              nodeId="eda"
+              className="node-eda"
+              kicker="Exploration"
+              title="EDA evidence"
+              description="Distribution and cohort signals are available for focused inspection."
+              status="ready"
+              icon={<BarChart3 size={17} />}
+              onActivate={() => onFocus('eda')}
+            />
+
+            <CockpitNode
+              nodeId="validation"
+              className="node-validation"
+              kicker="Decision"
+              title="Chronological validation"
+              description="Temporal ordering selected as the current validation design."
+              status="selected"
+              icon={<Check size={17} />}
+            />
+
+            <CockpitNode
+              nodeId="baseline"
+              className="node-baseline"
+              kicker="Modeling"
+              title="Logistic baseline"
+              description="Reference model completed and available for comparison."
+              status="complete"
+              icon={<Play size={17} />}
+            />
+
+            <CockpitNode
+              nodeId="rf"
+              className="node-rf"
+              kicker="Modeling"
+              title="Random Forest benchmark"
+              description="Deferred until prediction-time feature eligibility is resolved."
+              status="deferred"
+              icon={<BrainCircuit size={17} />}
+            />
+
+            <CockpitNode
+              nodeId="evaluation"
+              className="node-evaluation"
+              kicker="Downstream"
+              title="Evaluation & calibration"
+              description="Waiting on the active validation and modeling path."
+              status="future"
+              icon={<Gauge size={17} />}
+            />
+
+            <CockpitNode
+              nodeId="review"
+              className="node-review"
+              kicker="Evaluation"
+              title="Subgroup review"
+              description="Reserved downstream work demonstrates lower project-space growth without promoting a final stage taxonomy."
+              status="future"
+              icon={<BarChart3 size={17} />}
+            />
+          </div>
+        </section>
+
+        {isContextOpen && (
+          <aside className="cockpit-context-drawer" aria-label="Current system focus">
+            <div className="cockpit-context-drawer-header">
+              <div>
+                <span className="cockpit-kicker">System focus</span>
+                <strong>Resolve validity before expanding model search.</strong>
+              </div>
+              <button type="button" onClick={() => setIsContextOpen(false)} aria-label="Close system focus">
+                <X size={15} />
+              </button>
+            </div>
+            <p>The current blocker affects feature eligibility, validation legitimacy and what evidence later model comparisons can support.</p>
+            <div className="cockpit-now-actions">
+              <button type="button" onClick={() => onFocus('missingness')}>Open active investigation</button>
+              <button type="button" onClick={() => onFocus('data')}>Inspect data</button>
+            </div>
+          </aside>
+        )}
+      </div>
+
+      <div className="cockpit-navigation-hint" aria-hidden="true">
+        <Move size={13} /> Pan with scroll or trackpad · Arrow keys move · Shift + Arrow moves farther · Home resets
+      </div>
     </main>
   )
 }
 
 function CockpitNode({
+  nodeId,
   className,
   kicker,
   title,
@@ -269,6 +461,7 @@ function CockpitNode({
   icon,
   onActivate,
 }: {
+  nodeId: string
   className: string
   kicker: string
   title: string
@@ -291,13 +484,23 @@ function CockpitNode({
 
   if (onActivate) {
     return (
-      <button type="button" className={`cockpit-node ${status} ${className}`} onClick={onActivate} aria-label={`Open ${title}`}>
+      <button
+        type="button"
+        data-cockpit-node={nodeId}
+        className={`cockpit-node ${status} ${className}`}
+        onClick={onActivate}
+        aria-label={`Open ${title}`}
+      >
         {body}
       </button>
     )
   }
 
-  return <article className={`cockpit-node ${status} ${className}`}>{body}</article>
+  return (
+    <article data-cockpit-node={nodeId} tabIndex={-1} className={`cockpit-node ${status} ${className}`}>
+      {body}
+    </article>
+  )
 }
 
 function FocusHost({
