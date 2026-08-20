@@ -38,10 +38,7 @@ test.describe('ADS V1 frontend spike', () => {
 
     await page.getByRole('button', { name: 'Collapse methodological guidance' }).click()
     await expect(page.getByRole('button', { name: 'Expand methodological guidance' })).toBeVisible()
-
-    const collapsedPanelBox = await contextPanel.boundingBox()
-    expect(collapsedPanelBox).not.toBeNull()
-    expect(collapsedPanelBox?.width ?? 1000).toBeLessThanOrEqual(50)
+    await expect.poll(async () => (await contextPanel.boundingBox())?.width ?? 1000).toBeLessThanOrEqual(50)
 
     await page.getByRole('button', { name: 'Expand methodological guidance' }).click()
     await expect(page.getByRole('button', { name: 'Collapse methodological guidance' })).toBeVisible()
