@@ -195,3 +195,31 @@ Relations should express meanings such as composition, alternatives, complements
 Rules should normally guide project reasoning, horizon construction, questions, proposals, claim validity, and revalidation rather than silently execute analytical decisions as a rigid hidden workflow. Hard constraints may block incompatible claims or actions within their scope, while conflicting soft guidance should remain inspectable and be resolved through project-specific relevance and trade-off reasoning.
 
 See `docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md`.
+
+## P-027. Agent frameworks and interoperability protocols are infrastructure, not domain authority
+
+Agent runtimes, workflow frameworks, MCP, A2A, AG-UI, model-provider SDKs, and similar technologies may provide valuable execution and interoperability capabilities, but they should not define the meaning of ADS project objects or methodological knowledge.
+
+Project state, accepted methodological knowledge, governance, Findings, Decisions, provenance, and other durable domain semantics should remain owned by the Autonomous Data Science System behind stable application boundaries. Framework-specific Agent, Session, Graph, Thread, or Run state should remain execution/runtime state unless explicitly mapped into domain objects through application logic.
+
+This keeps the product replaceable across agent runtimes and protects historical project meaning from external framework lifecycle changes.
+
+See `docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md`.
+
+## P-028. Prefer deterministic software for explicit work and agent reasoning for genuine ambiguity
+
+The presence of an LLM or agent runtime does not imply that every system responsibility should become an agent.
+
+If a capability can be expressed reliably as a normal function, typed application service, database constraint, explicit rule, or reproducible workflow, prefer that mechanism. Use agentic reasoning where interpretation, synthesis, planning, trade-offs, hypothesis generation, or other open-ended judgment materially benefits from model reasoning.
+
+This principle applies recursively: start with one capable reasoner plus clear tools and add specialist agents only when evaluation demonstrates that a simpler design is insufficient.
+
+This operationalizes the hybrid architecture in P-008 and the complexity discipline in P-019 for modern agent systems.
+
+## P-029. The product interface is a first-class reasoning, control, and quality surface
+
+The frontend is not merely a presentation layer added after backend implementation. It is where users understand project state, inspect methodological reasoning, compare alternatives, approve or reject consequential actions, navigate evidence, and guide the analytical process.
+
+The interface should therefore be developed early enough to challenge the object model and workflow design. Visual quality, information hierarchy, accessibility, interaction polish, loading/error behavior, responsive performance, and analytical visualization quality are first-class product requirements rather than cosmetic cleanup tasks deferred to the end.
+
+See `docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md`.
