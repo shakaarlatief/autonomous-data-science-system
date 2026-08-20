@@ -1,0 +1,157 @@
+Downloading cpython-3.13.15-linux-x86_64-gnu (download) (33.2MiB)
+ Downloaded cpython-3.13.15-linux-x86_64-gnu (download)
+Using CPython 3.13.15
+Creating virtual environment at: .venv
+   Building autonomous-data-science-system @ file:///home/runner/work/autonomous-data-science-system/autonomous-data-science-system
+      Built autonomous-data-science-system @ file:///home/runner/work/autonomous-data-science-system/autonomous-data-science-system
+Downloading sqlalchemy (3.2MiB)
+Downloading psycopg-binary (4.9MiB)
+ Downloaded psycopg-binary
+ Downloaded sqlalchemy
+Installed 19 packages in 14ms
+============================= test session starts ==============================
+platform linux -- Python 3.13.15, pytest-8.4.2, pluggy-1.6.0 -- /home/runner/work/autonomous-data-science-system/autonomous-data-science-system/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/runner/work/autonomous-data-science-system/autonomous-data-science-system
+configfile: pyproject.toml
+collecting ... collected 2 items
+
+tests/integration/test_knowledge_interchange_roundtrip.py::test_sqlite_knowledge_interchange_roundtrip PASSED [ 50%]
+tests/integration/test_knowledge_interchange_roundtrip.py::test_postgres_knowledge_interchange_roundtrip_when_configured FAILED [100%]
+
+=================================== FAILURES ===================================
+________ test_postgres_knowledge_interchange_roundtrip_when_configured _________
+
+    def test_postgres_knowledge_interchange_roundtrip_when_configured() -> None:
+        database_url = os.environ.get("ADS_TEST_POSTGRES_URL")
+        if not database_url:
+            pytest.skip("ADS_TEST_POSTGRES_URL is not configured")
+>       _exercise_roundtrip(database_url)
+
+tests/integration/test_knowledge_interchange_roundtrip.py:238: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/integration/test_knowledge_interchange_roundtrip.py:128: in _exercise_roundtrip
+    _upgrade(database_url, "head")
+tests/integration/test_knowledge_interchange_roundtrip.py:44: in _upgrade
+    command.upgrade(config, target)
+.venv/lib/python3.13/site-packages/alembic/command.py:487: in upgrade
+    script.run_env()
+.venv/lib/python3.13/site-packages/alembic/script/base.py:550: in run_env
+    util.load_python_file(self.dir, "env.py")
+.venv/lib/python3.13/site-packages/alembic/util/pyfiles.py:114: in load_python_file
+    module = load_module_py(module_id, path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/alembic/util/pyfiles.py:132: in load_module_py
+    spec.loader.exec_module(module)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap>:488: in _call_with_frames_removed
+    ???
+migrations/env.py:56: in <module>
+    run_migrations_online()
+migrations/env.py:48: in run_migrations_online
+    context.run_migrations()
+<string>:8: in run_migrations
+    ???
+.venv/lib/python3.13/site-packages/alembic/runtime/environment.py:967: in run_migrations
+    self.get_context().run_migrations(**kw)
+.venv/lib/python3.13/site-packages/alembic/runtime/migration.py:621: in run_migrations
+    step.migration_fn(**kw)
+migrations/versions/0002_reusable_knowledge_interchange.py:134: in upgrade
+    op.create_table(
+<string>:8: in create_table
+    ???
+<string>:3: in create_table
+    ???
+.venv/lib/python3.13/site-packages/alembic/operations/ops.py:1323: in create_table
+    return operations.invoke(op)
+           ^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/alembic/operations/base.py:448: in invoke
+    return fn(self, operation)
+           ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/alembic/operations/toimpl.py:140: in create_table
+    operations.impl.create_table(table, **kw)
+.venv/lib/python3.13/site-packages/alembic/ddl/impl.py:434: in create_table
+    self._exec(schema.CreateTable(table, **kw))
+.venv/lib/python3.13/site-packages/alembic/ddl/impl.py:252: in _exec
+    return conn.execute(construct, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1421: in execute
+    return meth(
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/ddl.py:188: in _execute_on_connection
+    return connection._execute_ddl(
+.venv/lib/python3.13/site-packages/sqlalchemy/engine/base.py:1529: in _execute_ddl
+    compiled = ddl.compile(
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/elements.py:311: in compile
+    return self._compiler(dialect, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/ddl.py:77: in _compiler
+    return dialect.ddl_compiler(dialect, self, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:902: in __init__
+    self.string = self.process(self.statement, **compile_kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:6867: in visit_create_table
+    const = self.create_table_constraints(
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:6915: in create_table_constraints
+    return ", \n\t".join(
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:6917: in <genexpr>
+    for p in (
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:6918: in <genexpr>
+    self.process(constraint)
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:948: in process
+    return obj._compiler_dispatch(self, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/visitors.py:138: in _compiler_dispatch
+    return meth(self, **kw)  # type: ignore  # noqa: E501
+           ^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/dialects/postgresql/base.py:2491: in visit_foreign_key_constraint
+    text = super().visit_foreign_key_constraint(constraint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:7183: in visit_foreign_key_constraint
+    text = self.define_constraint_preamble(constraint, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:7210: in define_constraint_preamble
+    formatted_name = self.preparer.format_constraint(constraint)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:7917: in format_constraint
+    return self.truncate_and_render_constraint_name(
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:7945: in truncate_and_render_constraint_name
+    return self._truncate_and_render_maxlen_name(
+.venv/lib/python3.13/site-packages/sqlalchemy/sql/compiler.py:7956: in _truncate_and_render_maxlen_name
+    self.dialect.validate_identifier(name)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <sqlalchemy.dialects.postgresql.psycopg.PGDialect_psycopg object at 0x7f16fab34050>
+ident = 'fk_kg_content_revision_extension_revision_id_kg_content_revision'
+
+    def validate_identifier(self, ident: str) -> None:
+        if len(ident) > self.max_identifier_length:
+>           raise exc.IdentifierError(
+                "Identifier '%s' exceeds maximum length of %d characters"
+                % (ident, self.max_identifier_length)
+            )
+E           sqlalchemy.exc.IdentifierError: Identifier 'fk_kg_content_revision_extension_revision_id_kg_content_revision' exceeds maximum length of 63 characters
+
+.venv/lib/python3.13/site-packages/sqlalchemy/engine/default.py:623: IdentifierError
+=============================== warnings summary ===============================
+tests/integration/test_knowledge_interchange_roundtrip.py::test_sqlite_knowledge_interchange_roundtrip
+tests/integration/test_knowledge_interchange_roundtrip.py::test_sqlite_knowledge_interchange_roundtrip
+tests/integration/test_knowledge_interchange_roundtrip.py::test_postgres_knowledge_interchange_roundtrip_when_configured
+tests/integration/test_knowledge_interchange_roundtrip.py::test_postgres_knowledge_interchange_roundtrip_when_configured
+  /home/runner/work/autonomous-data-science-system/autonomous-data-science-system/.venv/lib/python3.13/site-packages/alembic/config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.
+    util.warn_deprecated(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/integration/test_knowledge_interchange_roundtrip.py::test_postgres_knowledge_interchange_roundtrip_when_configured - sqlalchemy.exc.IdentifierError: Identifier 'fk_kg_content_revision_extension_revision_id_kg_content_revision' exceeds maximum length of 63 characters
+=================== 1 failed, 1 passed, 4 warnings in 2.83s ====================
+
+EXIT_CODE=1
