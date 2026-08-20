@@ -6,6 +6,7 @@ import { WorkspaceProvider } from './appState'
 import { router } from './router'
 import './styles.css'
 import './layout-overrides.css'
+import './cockpit.css'
 import './accessibility.css'
 
 const queryClient = new QueryClient({
