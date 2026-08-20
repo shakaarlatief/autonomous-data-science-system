@@ -10,19 +10,19 @@ For a new session or quick reconstruction:
 
 ```text
 README.md
-    project-level overview and current stage
+    project-level overview
 
 docs/CURRENT_STATE.md
-    concise present state and exact next priority
+    present state and exact active priority
 
 docs/KNOWLEDGE_MAP.md
-    routing layer for important project knowledge
+    routing layer
 
 docs/VISION.md
-    current system purpose and vision
+    system purpose and vision
 
 docs/PRINCIPLES.md
-    current design principles
+    current principles
 
 docs/DECISIONS.md
     accepted project-level decisions
@@ -31,32 +31,28 @@ docs/OPEN_QUESTIONS.md
     unresolved canonical questions
 
 docs/DEVELOPMENT_METHOD.md
-    how the project is developed and preserved
+    development/preservation method
 
 docs/CONTINUITY.md
-    how work continues across sessions and the standardized new-chat prompt
+    cross-session continuation procedure
 
 docs/MAJOR_CHANGES.md
     selective structural history
 ```
 
-Prototype V0 is complete. Its final classification is **strong falsification of the current P0 design**. It is no longer an active execution stage.
+Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now in V1 architecture/tooling design.
 
 ---
 
 ## System purpose and long-term vision
 
-Read:
+Primary sources:
 
 ```text
 docs/VISION.md
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 ```
-
-Foundation 013 explains why the LLM is one reasoning component inside a wider system rather than the whole system.
-
-Foundation 017 makes the target product concrete as a professional interactive data-science workspace that should carry much of the methodological-navigation burden while preserving deep human interaction and control.
 
 Historical origin:
 
@@ -65,59 +61,16 @@ docs/foundations/001_initial_vision_and_reasoning.md
 docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
 ```
 
----
-
-## Professional interactive workspace
-
-Primary source:
-
-```text
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-```
-
-The target product is not an upload-to-final-answer black box and not merely a prettier chat interface.
-
-Key ideas include:
-
-```text
-professional project workspace
-recommended analyses
-relevant option space
-full knowledge catalog
-configurable human involvement
-living project memory
-living reports
-project replay evaluation
-```
+Foundation 013 explains the LLM/system/human boundary. Foundation 017 makes the target product concrete as a professional interactive data-science workspace rather than an upload-to-final-answer black box.
 
 ---
 
-## Product object model, developer workflow, VS Code, Git/GitHub, and execution
+## Project object model and professional developer workflow
 
 Primary source:
 
 ```text
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-```
-
-The candidate project model separates:
-
-```text
-OBJECTS
-RELATIONS
-EVENTS
-VIEWS
-```
-
-Candidate project objects include:
-
-```text
-Project / IntentItem
-Artifact / Dataset / Variable
-Question / Assumption / Finding / Claim
-Proposal / Investigation / Run / Evidence / Decision
-Report / ReportSection
-Event / Relation
 ```
 
 Important distinctions include:
@@ -132,9 +85,9 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-The current representation work does **not** add a universal project `Assessment` object. Foundation 020 instead routes subject-specific criterion verdicts through the existing Question -> Evidence -> Finding -> Claim/Decision chain, with a structured criterion-Finding form where useful.
+The current design does not add a universal project `Assessment` object. Subject-specific criterion verdicts use the existing Question -> Evidence -> Finding -> Claim/Decision chain, with a structured criterion-Finding form where useful.
 
-Professional workflow principles:
+Professional-workflow principles:
 
 ```text
 docs/PRINCIPLES.md, P-023 and P-024
@@ -153,10 +106,8 @@ Python / Docker / local or remote compute
     execution plane
 
 Git + GitHub
-    source versioning, collaboration, and code provenance
+    source versioning, collaboration, provenance
 ```
-
-Generated consequential code should remain independently runnable, professional, and maintainable. System-triggered and manually triggered runs should preferentially share the same reproducible execution contract.
 
 ---
 
@@ -168,8 +119,6 @@ Primary source:
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
-Foundation 019 governs how a large reusable knowledge universe may become a small project-specific methodological horizon.
-
 Current relevance progression:
 
 ```text
@@ -180,25 +129,21 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-Important concepts include:
+Core scaling concept:
 
 ```text
-methodological horizon
-explicit prerequisite filtering where reliable
-flexible reasoning for semantic relevance/tradeoffs
-inspectable recommendation rationale
-project-signal visibility
-ranking by validity importance, information value, impact, cost, risk, redundancy, and user preference
-knowledge provenance / scope / maturity / counterexamples
-separation of methodological meaning from execution templates
-open-world discovery of knowledge gaps
+large global knowledge universe
+    -> project-specific retrieval/filtering
+    -> bounded methodological horizon
+    -> explicit checks + flexible reasoning
+    -> inspectable recommendation/requiredness
 ```
 
-The full global catalog should not be sent to the LLM. Project-specific retrieval should produce a small relevant slice.
+The full knowledge catalog should not be sent to the LLM on every reasoning call.
 
 ---
 
-## Reusable methodological knowledge representation architecture
+## Reusable methodological-knowledge representation
 
 Primary source:
 
@@ -206,76 +151,40 @@ Primary source:
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-Foundation 020 is the current promoted source for how reusable methodological knowledge should be represented conceptually.
-
-It was promoted only after:
-
-```text
-five heterogeneous original examples
-Checkpoint 102 first explicit contract
-Checkpoint 104 adversarial review
-Checkpoint 105 second reconstruction stress test
-an additional Class Imbalance example
-```
-
-Core representation direction:
+Promoted representation:
 
 ```text
 KnowledgeAsset
-    stable identity + revision identity
-    intrinsic kind
-    optional reasoning functions
-    optional retrieval/applicability/context structures
-
 KnowledgeComponent
-    stably identifiable sub-knowledge when needed
-
 NarrativeFacet
-    non-addressable explanatory content
-
 KnowledgeRelation
-    stable semantic relationship
-
 Conditional KnowledgeRule
-    guarded methodological implication
-    standalone or component
-
 KnowledgeCollection
-    organizational/navigation grouping
-
-Project object model
-    references / instantiates / is constrained or informed by
-    global knowledge revisions without one KnowledgeInstance type
-
-Criterion Finding
-    structured project Finding form for subject-specific verdicts
-
+project objects referencing/influenced by exact knowledge revisions
+criterion Finding
 ExecutionCapability
-    separate implementation bridge
-
-Views
-    derived navigation and explanation over knowledge + project state
+derived Views
 ```
 
 Durable distinctions:
 
 ```text
 intrinsic knowledge kind != reasoning function
-asset != identifiable component != narrative facet
-static semantic relation != conditional guidance rule
+asset != component != narrative facet
+static semantic relation != conditional methodological rule
 retrieval cue != applicability predicate != required context != project relevance
 methodological knowledge != execution implementation
-global knowledge != project-specific object/state
-internal representation != human-facing decision tree/workspace view
+global knowledge != project-specific state
+internal representation != human-facing tree/workflow
 ```
 
-Current representation principles:
+Promoted principles:
 
 ```text
 docs/PRINCIPLES.md, P-025 and P-026
 ```
 
-Important historical design evidence:
+Important design history:
 
 ```text
 docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
@@ -286,45 +195,34 @@ docs/checkpoints/105_refined_representation_second_stress_test.md
 
 ---
 
-## V1 implementation requirements and selected persistence/retrieval architecture
+## V1 implementation requirements
 
-**Read first for the current implementation-design task:**
+Primary source:
 
 ```text
 docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
-docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
-docs/DECISIONS.md, D-028
 ```
 
-Checkpoint 107 derived technology-neutral V1 requirements before any database/retrieval choice was allowed.
+Checkpoint 107 derives the technology-neutral capabilities required before architecture selection, including stable revisions, component provenance, typed relations, tri-valued rules, semantic retrieval, project-state lookup, methodological-horizon construction, selective LLM context assembly, governance, integrity, backup, and portability.
 
-The requirements include:
+---
+
+## Accepted V1 persistence/retrieval architecture
+
+Accepted decision and comparison:
 
 ```text
-stable asset + revision identity
-recoverable historical revisions
-component-level provenance where needed
-typed relation lookup and bounded traversal
-minimal TRUE / FALSE / UNKNOWN conditional rules
-high-recall semantic candidate retrieval
-retrieval/applicability/context separation
-project-state lookup for Definitions/Questions/Findings/etc.
-bounded methodological-horizon construction
-selective budgeted LLM context assembly
-human-readable review/export
-local-first operation with one active writer acceptable initially
-large artifacts outside the operational metadata store
+docs/DECISIONS.md, D-028
+docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
 ```
 
-Checkpoint 108 then compared plausible architecture families, consulted current SQLite/PostgreSQL/pgvector/Neo4j/vector-store capabilities, and ran a targeted synthetic SQLite feasibility spike.
-
-Accepted V1 decision:
+Accepted architecture family:
 
 ```text
 SQLite-centered local-first operational architecture
 ```
 
-Current direction:
+Direction:
 
 ```text
 SQLite
@@ -339,43 +237,126 @@ FTS5
     rebuildable lexical index
 
 rebuildable embeddings
-    initial in-process exact semantic similarity search
+    initial in-process exact semantic search
 
-application-level minimal rule evaluator
+application rule evaluator
     predicate / ALL / ANY / NOT / TRUE / FALSE / UNKNOWN
 
 selective context assembler
-    small task-specific projection rather than full state
 
 filesystem / Git / artifact storage
-    project code and large artifacts outside SQLite
+    source code and large artifacts outside SQLite
 ```
 
-Explicit V1 non-selections:
+Explicit V1 non-selections unless later evidence changes the requirement envelope:
 
 ```text
-no dedicated graph database
-no dedicated vector database/service
-no external generic rules engine
-no PostgreSQL server by default
-no ANN index until measured requirements justify it
+dedicated graph database
+dedicated vector database/service
+external generic rules engine
+PostgreSQL server by default
+ANN index
 ```
 
-PostgreSQL + pgvector is the preferred first migration family if later concurrency, shared-server, or semantic-search scale requirements exceed the SQLite envelope.
+PostgreSQL + pgvector is the preferred first migration family if later concurrency/shared-server/vector-scale needs exceed the SQLite envelope.
 
-Reproducible architecture spike:
+Initial architecture scale spike:
 
 ```text
 experiments/architecture_spikes/sqlite_v1_viability.py
 ```
 
-D-011 is superseded for this persistence/retrieval scope by D-028. Other implementation subsystems remain intentionally unselected until requirements justify choices.
+---
+
+## Accepted V1 technical architecture specification
+
+**Read first for current V1 persistence/retrieval implementation work:**
+
+```text
+docs/specifications/001_v1_sqlite_technical_architecture.md
+```
+
+Status:
+
+```text
+Accepted V1 technical specification v1.0
+```
+
+It defines the migration-safe implementation boundaries beneath D-028, including:
+
+```text
+application/domain persistence ports around SQLite
+one operational DB with logical sys_/kg_/prj_/exec_/idx_ modules
+application-generated durable UUIDs, UUIDv7 preferred
+UTC domain timestamps
+STRICT authoritative tables where practical
+explicit relational integrity + bounded validated JSON
+immutable accepted knowledge content revisions
+separate governance state/history
+project-type-specific lifecycle semantics
+exact project -> knowledge revision references
+minimal declarative rule AST; no executable stored code
+FTS5 and embeddings as rebuildable derived state
+HorizonBuilder and ContextAssembler application services
+one controlled write path + short transactions
+foreign_keys=ON / WAL / synchronous=FULL baseline
+ordered migrations
+online backup + verified restore
+human-readable deterministic knowledge export
+explicit PostgreSQL migration contract
+```
+
+The contract is intentionally structured so foreseeable infrastructure evolution remains bounded:
+
+```text
+SQLite -> PostgreSQL
+exact semantic retrieval -> pgvector / ANN / other SemanticIndex provider
+bounded relational traversal -> specialized RelationQuery projection/provider
+```
+
+without redefining methodological knowledge, project objects, rules, horizon semantics, or user workflows.
 
 ---
 
-## Earlier reusable-knowledge foundations
+## V1 technical-architecture falsification evidence
 
-Earlier theory:
+Historical design/validation checkpoints:
+
+```text
+docs/checkpoints/109_v1_technical_architecture_specified_and_falsification_gate_defined.md
+docs/checkpoints/110_preliminary_v1_sqlite_architecture_spike_passes_and_postgres_gate_pending.md
+docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
+```
+
+Reproducible gate artifacts:
+
+```text
+experiments/architecture_spikes/v1_schema_spike.sql
+experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
+experiments/architecture_spikes/v1_postgres_portability_spike.py
+experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
+```
+
+Gate result:
+
+```text
+FT-01 through FT-11   PASS on SQLite architecture harness
+FT-12                 PASS on PostgreSQL 18 portability harness
+```
+
+Important boundary:
+
+```text
+FT-05 = PASS_ARCHITECTURE_ONLY
+```
+
+It validates the replaceable retrieval/index/horizon seam with a deterministic toy semantic provider. It does not validate the production embedding model, retrieval recall, fusion algorithm, or reranker.
+
+---
+
+## Earlier reusable-knowledge theory
+
+Read when deeper rationale/history is needed:
 
 ```text
 docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
@@ -383,22 +364,7 @@ docs/foundations/007_reusable_knowledge_representation_and_composable_components
 docs/foundations/008_knowledge_quality_generalization_and_evolution.md
 ```
 
-Post-V0 promoted interpretation:
-
-```text
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-```
-
-V0 evidence:
-
-```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-B1 gained most of the semantic benefit from the four methodological concepts simply being explicitly available. P0's path-sensitive activation and large always-on representation did not earn their cost.
-
-This does **not** reduce future reusable knowledge to a static prompt. Foundations 019 and 020 support selective retrieval, explicit filtering/rules where justified, flexible semantic reasoning, typed reusable knowledge, and inspectable project-specific relevance.
+Foundations 019 and 020 govern the current promoted post-V0 interpretation.
 
 ---
 
@@ -410,34 +376,21 @@ Broad theory:
 docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
 ```
 
-V0 implementation:
+Prototype V0 implementation/evidence:
 
 ```text
 prototype_v0/src/ads_v0/p0.py
 prototype_v0/src/ads_v0/p0_controller.py
 prototype_v0/src/ads_v0/p0_schema.py
-```
-
-Final V0 evidence:
-
-```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
 Interpretation:
 
 ```text
-broad state/dependency theory remains an open design space
-!=
-current P0 always-on representation is justified
-
-what the system persists
-!=
-what an LLM receives on every turn
-
-current project state
-!=
-event history
+broad dependency/state theory remains useful
+    !=
+P0's always-on representation is justified
 ```
 
 ---
@@ -452,8 +405,6 @@ docs/foundations/003_admissibility_risk_and_assurance.md
 docs/VISION.md
 docs/PRINCIPLES.md
 ```
-
-These sources govern semantic validity, information legitimacy, evidence validity, claim validity, traceability/dependency integrity, admissibility, and risk-sensitive assurance.
 
 ---
 
@@ -478,8 +429,6 @@ docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-For broader post-V0 evaluation, Foundation 017 introduces project replay and mixed quantitative/qualitative measures such as recommendation coverage, critical omissions, human reminder burden, state-recall failures, reproducibility, and expert judgment.
-
 ---
 
 ## Prototype V0 final result
@@ -496,82 +445,35 @@ Frozen protocol:
 docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 ```
 
-Quick overview:
-
-```text
-prototype_v0/README.md
-```
-
 Final classification:
 
 ```text
 STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
 ```
 
-Do not tune or restart P0 against the completed V0 benchmark.
-
----
-
-## Held-out supervision and mechanical verification
-
-Read:
-
-```text
-docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
-```
-
-These evaluation-infrastructure components are separate from the falsified P0 semantic treatment.
+Do not restart/tune P0 against the completed benchmark.
 
 ---
 
 ## Execution and observability separation
 
-Canonical principle:
+Read:
 
 ```text
 docs/PRINCIPLES.md, P-022
-```
-
-Deep rationale:
-
-```text
 docs/foundations/016_execution_observability_separation.md
-```
-
-Pattern:
-
-```text
-execution / reasoning
-    -> persisted state/events
-    -> read-only observability
-    -> human interface
 ```
 
 ---
 
 ## Knowledge preservation and session continuity
 
-Current preservation method:
+Read:
 
 ```text
 docs/DEVELOPMENT_METHOD.md
-```
-
-Standardized new-chat procedure and active session metadata:
-
-```text
 docs/CONTINUITY.md
-```
-
-Deep preservation rationale:
-
-```text
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-```
-
-Checkpoint-format contract:
-
-```text
 docs/checkpoints/README.md
 ```
 
@@ -583,51 +485,37 @@ Current design session:
 
 ---
 
-## Current unresolved questions
-
-```text
-docs/OPEN_QUESTIONS.md
-```
-
-`CURRENT_STATE.md` governs the exact active priority if older open-question wording has not yet been reconciled.
-
----
-
 ## Repository authority model
 
 Default order when documents disagree:
 
 ```text
-1. frozen current specifications/contracts for their declared scope
+1. frozen/current specifications or contracts for their declared scope
 2. current accepted decisions and canonical specifications
 3. current vision/principles/current-state material
 4. final experiment reports for their declared experiment scope
-5. foundational design memos for rationale and durable hypotheses
-6. checkpoints for historical state
-7. raw historical material for provenance
+5. foundational design memos
+6. checkpoints
+7. raw historical material
 ```
 
 ---
 
 ## Exact next step
 
-Write the **V1 technical architecture specification** for D-028's accepted SQLite-centered design.
+With Specification 001 validated and promoted, define the **bounded V1 persistence/retrieval implementation contract and tooling**.
 
-The specification should make concrete:
+Next questions:
 
 ```text
-logical persistence boundaries and authoritative versus derived state
-initial relational entity/table families
-stable knowledge identity + revision representation
-components / relations / conditional rules
-project-object integration and knowledge-revision references
-FTS5 indexing and rebuild strategy
-embedding generation/storage/cache and exact-search interface
-minimal rule evaluator and trace format
-methodological-horizon and LLM context assembly boundary
-transaction ownership / WAL / foreign-key enforcement
-backup/export/recovery and PostgreSQL migration strategy
-narrow falsification tests required before broad V1 implementation
+SQL access / repository implementation approach
+schema migration implementation approach
+production migration/DDL organization
+typed domain/repository interfaces and UnitOfWork boundary
+UUIDv7 implementation choice
+deterministic export/import representation
+first real retrieval-quality benchmark before embedding-model selection
+retained SQLite + PostgreSQL architecture tests in CI
 ```
 
-Do not start broad V1 implementation until this specification is explicit and its highest-risk assumptions have targeted tests.
+Do not build the complete frontend/autonomous product before these implementation seams are concrete.
