@@ -611,3 +611,46 @@ docs/checkpoints/113_v1_python_project_tooling_validated.md
 experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
 ```
 
+---
+
+## D-031. Use JSON plus JSON Schema and semantic validation for V1 reusable-knowledge interchange
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-20
+
+The canonical V1 reusable-methodological-knowledge interchange uses:
+
+```text
+standard JSON
+    +
+JSON Schema Draft 2020-12
+    +
+application-level semantic validation
+    +
+deterministic normalization and serialization
+```
+
+The operational database remains the runtime authority. Interchange files are human-reviewable, storage-neutral representations for review, diffing, seeding, migration verification, fixtures, and deterministic export. Rebuildable lexical and semantic indexes remain separate derived state.
+
+Normal `CANDIDATE_SET` and `BENCHMARK_FIXTURE` import must not silently create accepted methodological authority. Accepted knowledge requires an explicit governance operation. `ACCEPTED_SNAPSHOT` import is restricted to a trusted restore/bootstrap/migration path.
+
+The representative heterogeneous corpus is benchmark material and remains candidate-only unless knowledge is independently reviewed and explicitly accepted.
+
+### Rationale
+
+The interchange layer must preserve Foundation 020's distinction among assets, components, narrative facets, static relations, conditional rules, provenance, retrieval hints, applicability, and required context without making the SQLite physical schema the human authoring format.
+
+JSON provides unambiguous parser behavior, mature cross-language support, deterministic serialization, and a natural representation for recursive rule conditions and heterogeneous typed knowledge. JSON Schema provides a formal structural contract, while application validation covers cross-object uniqueness, reference resolution, governance safety, and other semantic invariants that are not conveniently expressed as document-local schema constraints.
+
+The committed KI-01 through KI-10 validation gate passed on Linux and Windows across Python 3.12, 3.13, and 3.14 using the ten-asset heterogeneous benchmark corpus. The pass includes deterministic byte-stable serialization, formatting-independent semantic digests, recursive condition validation, reference resolution, duplicate rejection, and candidate/accepted import-safety checks.
+
+This decision does not select an embedding model, reranker, vector backend, authoring UI, complete knowledge taxonomy, or full provenance ontology.
+
+See:
+
+```text
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
+experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
+schemas/reusable_knowledge_bundle_v1.schema.json
+```
