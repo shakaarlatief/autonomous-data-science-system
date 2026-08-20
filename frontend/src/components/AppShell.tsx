@@ -19,13 +19,11 @@ import {
   Settings2,
   ShieldCheck,
   Sun,
-  Workflow,
 } from 'lucide-react'
 import { useWorkspace } from '../appState'
 import { MethodologyPanel } from './MethodologyPanel'
 
 const primaryNavigation = [
-  { to: '/cockpit', label: 'Project Cockpit', icon: Workflow, enabled: true },
   { to: '/', label: 'Overview', icon: Home, enabled: true },
   { to: '/data', label: 'Data', icon: Database, enabled: true },
   { to: '/eda', label: 'EDA', icon: BarChart3, enabled: true },
