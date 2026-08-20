@@ -94,6 +94,90 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page.getByText('Project operating map')).toBeVisible()
   })
 
+  test('cockpit exposes a genuinely larger two-dimensional project space with keyboard recovery', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 })
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await page.goto('/cockpit')
+
+    const viewport = page.getByRole('region', { name: 'Living data science project map' })
+    await expect(viewport).toBeVisible()
+
+    const extent = await viewport.evaluate((element) => ({
+      clientWidth: element.clientWidth,
+      clientHeight: element.clientHeight,
+      scrollWidth: element.scrollWidth,
+      scrollHeight: element.scrollHeight,
+    }))
+    expect(extent.scrollWidth).toBeGreaterThan(extent.clientWidth)
+    expect(extent.scrollHeight).toBeGreaterThan(extent.clientHeight)
+
+    await viewport.focus()
+    await viewport.press('ArrowRight')
+    await viewport.press('ArrowDown')
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0)
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBeGreaterThan(0)
+
+    await page.getByRole('button', { name: 'Reset project view' }).click()
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBe(0)
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBe(0)
+
+    await page.getByRole('button', { name: 'Jump to evaluation' }).click()
+    await expect(page.getByText('Evaluation & calibration')).toBeInViewport()
+  })
+
+  test('cockpit keeps project details and system focus collapsible instead of permanently consuming the map', async ({ page }) => {
+    await page.goto('/cockpit')
+
+    const details = page.getByRole('region', { name: 'Expanded project details' })
+    await expect(details).toHaveCount(0)
+    await page.getByRole('button', { name: 'Show project details' }).click()
+    await expect(details).toBeVisible()
+    await expect(details).toContainText('Predict churn')
+    await page.getByRole('button', { name: 'Hide project details' }).click()
+    await expect(details).toHaveCount(0)
+
+    const systemFocus = page.getByRole('complementary', { name: 'Current system focus' })
+    await expect(systemFocus).toHaveCount(0)
+    await page.getByRole('button', { name: 'System focus' }).click()
+    await expect(systemFocus).toBeVisible()
+    await page.getByRole('button', { name: 'Close system focus' }).click()
+    await expect(systemFocus).toHaveCount(0)
+  })
+
+  test('cockpit map viewport remains clear of the docked composer at desktop scale', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 })
+    await page.goto('/cockpit')
+
+    const viewportBox = await page.getByRole('region', { name: 'Living data science project map' }).boundingBox()
+    const composerBox = await page.getByRole('textbox', { name: 'Ask or direct the system' }).locator('xpath=ancestor::form').boundingBox()
+
+    expect(viewportBox).not.toBeNull()
+    expect(composerBox).not.toBeNull()
+    expect((viewportBox?.y ?? 0) + (viewportBox?.height ?? 0)).toBeLessThanOrEqual((composerBox?.y ?? 0) + 1)
+  })
+
+  test('cockpit fullscreen control synchronizes supported enter and exit behavior', async ({ page }) => {
+    await page.addInitScript(() => {
+      let fullscreenElement: Element | null = null
+      Object.defineProperty(document, 'fullscreenEnabled', { configurable: true, get: () => true })
+      Object.defineProperty(document, 'fullscreenElement', { configurable: true, get: () => fullscreenElement })
+      HTMLElement.prototype.requestFullscreen = async function requestFullscreen() {
+        fullscreenElement = this
+        document.dispatchEvent(new Event('fullscreenchange'))
+      }
+      document.exitFullscreen = async () => {
+        fullscreenElement = null
+        document.dispatchEvent(new Event('fullscreenchange'))
+      }
+    })
+
+    await page.goto('/cockpit')
+    await page.getByRole('button', { name: 'Enter fullscreen' }).click()
+    await expect(page.getByRole('button', { name: 'Exit fullscreen' })).toBeVisible()
+    await page.getByRole('button', { name: 'Exit fullscreen' }).click()
+    await expect(page.getByRole('button', { name: 'Enter fullscreen' })).toBeVisible()
+  })
+
   test('cockpit core surface has no serious automated accessibility violations', async ({ page }) => {
     await page.goto('/cockpit')
     await expect(page.getByText('Project operating map')).toBeVisible()
