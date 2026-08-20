@@ -1,25 +1,33 @@
 #!/usr/bin/env python3
 """Normalize checkpoint headers to the repository metadata contract.
 
-This migration utility is intentionally conservative. It modifies only the
-metadata block immediately below a checkpoint H1 title. The historical body is
-left byte-for-byte unchanged apart from the blank-line boundary needed to
-replace that header block.
+This utility exists to repair metadata drift in historical checkpoint records
+without rewriting their substantive content. It replaces only the metadata
+block immediately below the checkpoint H1 title. The historical body is left
+unchanged.
 
-The normalizer is designed for the legacy checkpoints that predate the
-mandatory metadata contract in ``docs/checkpoints/README.md``. It preserves
-existing supported metadata where possible, promotes legacy aliases such as
-``Stage`` and ``Development stage`` into ``Project stage``, and fills missing
-core fields using deliberately coarse historical classifications.
+The default migration target is Checkpoints 000-099, which were all created in
+the first ChatGPT design session. Their ChatGPT project/session provenance is
+now known and is preserved explicitly. The script also accepts post-contract
+checkpoints when requested, but it does not invent session provenance for them.
 
-The script does not reinterpret historical conclusions, infer unavailable chat
-session metadata, or grant stronger authority to old checkpoints.
+The normalizer is deliberately conservative:
+
+* existing supported metadata is preserved where possible;
+* legacy aliases such as ``Stage`` and ``Development stage`` are promoted into
+  the mandatory ``Project stage`` field;
+* absent core metadata is filled using coarse historical classifications;
+* a missing historical date is recovered from Git creation history rather than
+  guessed from the current date;
+* the checkpoint title and substantive body are never reinterpreted;
+* historical records are not granted stronger present-day authority.
 """
 
 from __future__ import annotations
 
 import argparse
 import re
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -43,7 +51,6 @@ CORE_KEYS = (
     "Authority",
 )
 
-# Legacy field names that are semantically absorbed into the mandatory core.
 CORE_ALIASES = {
     "date": "Date",
     "status": "Status",
@@ -54,6 +61,19 @@ CORE_ALIASES = {
     "scope": "Scope",
     "authority": "Authority",
 }
+
+SESSION_ALIASES = {
+    "chatgpt project": "ChatGPT project",
+    "session title": "Session title",
+    "chatgpt chat": "Session title",
+    "design session": "Design session",
+}
+
+# Checkpoints 000-099 were created in the first ChatGPT project session. This
+# provenance is now explicitly confirmed and should be preserved consistently.
+LEGACY_CHATGPT_PROJECT = "Autonomous Data Science System"
+LEGACY_SESSION_TITLE = "01 - Foundations & Checkpoint 0"
+LEGACY_DESIGN_SESSION = "01"
 
 
 @dataclass(frozen=True)
@@ -83,19 +103,84 @@ def parse_metadata_line(line: str) -> tuple[str, str] | None:
     return None
 
 
+def git_creation_date(path: Path) -> str:
+    """Return the file's first Git commit date as YYYY-MM-DD.
+
+    Historical checkpoints should never receive today's date merely because
+    their metadata are being normalized later. A full-history checkout allows
+    the migration to recover the creation date when legacy header metadata is
+    missing or malformed.
+    """
+
+    command = [
+        "git",
+        "log",
+        "--follow",
+        "--diff-filter=A",
+        "--format=%cs",
+        "--",
+        path.as_posix(),
+    ]
+    result = subprocess.run(command, check=False, capture_output=True, text=True)
+    dates = [line.strip() for line in result.stdout.splitlines() if DATE_RE.match(line.strip())]
+    if dates:
+        return dates[-1]
+    raise ValueError(f"{path}: historical date unavailable in header and Git creation history")
+
+
+def extract_historical_date(
+    path: Path,
+    lines: list[str],
+    metadata: list[tuple[str, str]],
+) -> str:
+    """Recover a trustworthy historical date from metadata, header text, or Git."""
+
+    for key, value in metadata:
+        if CORE_ALIASES.get(key.casefold()) == "Date" and DATE_RE.match(value):
+            return value
+
+    # A few legacy files may have a date line separated from the compact
+    # metadata block. Search only the opening section so body examples cannot be
+    # mistaken for checkpoint metadata.
+    for line in lines[1:40]:
+        parsed = parse_metadata_line(line)
+        if parsed is None:
+            continue
+        key, value = parsed
+        if CORE_ALIASES.get(key.casefold()) == "Date" and DATE_RE.match(value):
+            return value
+
+    return git_creation_date(path)
+
+
 def parse_checkpoint(path: Path) -> ParsedCheckpoint:
-    """Parse the title and contiguous legacy metadata block for one checkpoint."""
+    """Parse title and contiguous legacy metadata for one checkpoint."""
 
     lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
     if not lines:
         raise ValueError(f"{path}: empty checkpoint")
 
-    title_match = TITLE_RE.match(lines[0].rstrip("\r\n"))
-    if not title_match:
-        raise ValueError(f"{path}: first line is not a recognized checkpoint H1 title")
+    first_line = lines[0].rstrip("\r\n")
+    title_match = TITLE_RE.match(first_line)
+    file_match = CHECKPOINT_FILE_RE.match(path.name)
+    if file_match is None:
+        raise ValueError(f"{path}: filename does not match checkpoint convention")
 
-    number = int(title_match.group("number"))
-    title_text = (title_match.group("title") or f"Checkpoint {number}").strip()
+    file_number = int(file_match.group("number"))
+    if title_match is None:
+        # Preserve the historical H1 exactly, but use the filename number for
+        # migration classification. This avoids blocking the entire repair on a
+        # cosmetic legacy title variation.
+        number = file_number
+        title_text = first_line.removeprefix("#").strip() or f"Checkpoint {number}"
+    else:
+        number = int(title_match.group("number"))
+        if number != file_number:
+            raise ValueError(
+                f"{path}: checkpoint number mismatch between filename ({file_number}) "
+                f"and H1 ({number})"
+            )
+        title_text = (title_match.group("title") or f"Checkpoint {number}").strip()
 
     metadata: list[tuple[str, str]] = []
     index = 1
@@ -104,8 +189,6 @@ def parse_checkpoint(path: Path) -> ParsedCheckpoint:
 
     while index < len(lines):
         if not lines[index].strip():
-            # Blank lines inside the old header are tolerated only if the next
-            # nonblank line is still metadata.
             probe = index + 1
             while probe < len(lines) and not lines[probe].strip():
                 probe += 1
@@ -123,15 +206,7 @@ def parse_checkpoint(path: Path) -> ParsedCheckpoint:
     while index < len(lines) and not lines[index].strip():
         index += 1
 
-    metadata_by_alias: dict[str, str] = {}
-    for key, value in metadata:
-        canonical = CORE_ALIASES.get(key.casefold())
-        if canonical and canonical not in metadata_by_alias:
-            metadata_by_alias[canonical] = value
-
-    date = metadata_by_alias.get("Date", "")
-    if not DATE_RE.match(date):
-        raise ValueError(f"{path}: missing or invalid historical date {date!r}")
+    date = extract_historical_date(path, lines, metadata)
 
     return ParsedCheckpoint(
         path=path,
@@ -172,7 +247,7 @@ def infer_project_stage(number: int) -> str:
 
 
 def infer_checkpoint_class(number: int, title: str) -> str:
-    """Classify a checkpoint using conservative title and phase signals."""
+    """Classify a checkpoint conservatively from title and historical phase."""
 
     text = title.casefold()
 
@@ -249,7 +324,7 @@ def infer_checkpoint_class(number: int, title: str) -> str:
 
 
 def infer_status(checkpoint_class: str) -> str:
-    """Map checkpoint class to a historical lifecycle status."""
+    """Map checkpoint class to a conservative historical lifecycle status."""
 
     return {
         "DESIGN": "Historical design checkpoint",
@@ -262,11 +337,12 @@ def infer_status(checkpoint_class: str) -> str:
     }[checkpoint_class]
 
 
-def core_value(parsed: ParsedCheckpoint, canonical_key: str) -> str | None:
-    """Return an existing core value, accepting legacy aliases."""
+def canonical_value(parsed: ParsedCheckpoint, canonical_key: str) -> str | None:
+    """Return an existing canonical value, accepting known legacy aliases."""
 
+    aliases = CORE_ALIASES | SESSION_ALIASES
     for key, value in parsed.metadata:
-        if CORE_ALIASES.get(key.casefold()) == canonical_key and value:
+        if aliases.get(key.casefold()) == canonical_key and value:
             return value
     return None
 
@@ -286,17 +362,21 @@ def authority_text(checkpoint_class: str) -> str:
             "Historical provenance for the recorded experiment milestone; frozen experiment "
             "contracts and final experiment conclusions govern their declared scopes."
         )
-    return "Historical provenance; current canonical documents and promoted sources govern current interpretation."
+    return (
+        "Historical provenance; current canonical documents and promoted sources govern "
+        "current interpretation."
+    )
 
 
 def preserved_extensions(parsed: ParsedCheckpoint) -> list[tuple[str, str]]:
-    """Preserve non-core legacy metadata in original order without duplication."""
+    """Preserve non-core/session legacy metadata in original order without duplication."""
 
+    recognized = CORE_ALIASES | SESSION_ALIASES
     result: list[tuple[str, str]] = []
     seen: set[str] = set()
     for key, value in parsed.metadata:
         folded = key.casefold()
-        if folded in CORE_ALIASES:
+        if folded in recognized:
             continue
         if folded in seen:
             continue
@@ -308,13 +388,13 @@ def preserved_extensions(parsed: ParsedCheckpoint) -> list[tuple[str, str]]:
 def normalized_text(parsed: ParsedCheckpoint) -> str:
     """Return checkpoint text with only the metadata block normalized."""
 
-    checkpoint_class = core_value(parsed, "Checkpoint class") or infer_checkpoint_class(
+    checkpoint_class = canonical_value(parsed, "Checkpoint class") or infer_checkpoint_class(
         parsed.number, parsed.title_text
     )
-    status = core_value(parsed, "Status") or infer_status(checkpoint_class)
-    project_stage = core_value(parsed, "Project stage") or infer_project_stage(parsed.number)
-    scope = core_value(parsed, "Scope") or infer_scope(parsed)
-    authority = core_value(parsed, "Authority") or authority_text(checkpoint_class)
+    status = canonical_value(parsed, "Status") or infer_status(checkpoint_class)
+    project_stage = canonical_value(parsed, "Project stage") or infer_project_stage(parsed.number)
+    scope = canonical_value(parsed, "Scope") or infer_scope(parsed)
+    authority = canonical_value(parsed, "Authority") or authority_text(checkpoint_class)
 
     core = [
         ("Date", parsed.date),
@@ -327,6 +407,22 @@ def normalized_text(parsed: ParsedCheckpoint) -> str:
 
     header_lines = [parsed.title_line.rstrip("\r\n"), ""]
     header_lines.extend(f"**{key}:** {value}  " for key, value in core)
+
+    # All pre-100 checkpoints belong to the first ChatGPT project session. Keep
+    # this as provenance metadata, not as methodological authority.
+    if parsed.number < 100:
+        session_fields = [
+            ("Design session", canonical_value(parsed, "Design session") or LEGACY_DESIGN_SESSION),
+            (
+                "ChatGPT project",
+                canonical_value(parsed, "ChatGPT project") or LEGACY_CHATGPT_PROJECT,
+            ),
+            (
+                "Session title",
+                canonical_value(parsed, "Session title") or LEGACY_SESSION_TITLE,
+            ),
+        ]
+        header_lines.extend(f"**{key}:** {value}  " for key, value in session_fields)
 
     extensions = preserved_extensions(parsed)
     if extensions:
@@ -357,30 +453,41 @@ def main() -> int:
     parser.add_argument(
         "--write",
         action="store_true",
-        help="Write normalized metadata headers in place. Without this flag the script only reports changes.",
+        help="Write normalized metadata headers in place. Without this flag only report changes.",
     )
     parser.add_argument(
         "--include-post-contract",
         action="store_true",
-        help="Also normalize checkpoints 100 and above. The historical migration normally targets 000-099 only.",
+        help="Also normalize checkpoints 100 and above. The legacy migration normally targets 000-099.",
     )
     args = parser.parse_args()
 
     changed: list[Path] = []
+    failures: list[tuple[Path, str]] = []
+
     for path in checkpoint_paths(args.include_post_contract):
-        parsed = parse_checkpoint(path)
-        new_text = normalized_text(parsed)
-        old_text = "".join(parsed.lines)
-        if new_text == old_text:
-            continue
-        changed.append(path)
-        if args.write:
-            path.write_text(new_text, encoding="utf-8")
+        try:
+            parsed = parse_checkpoint(path)
+            new_text = normalized_text(parsed)
+            old_text = "".join(parsed.lines)
+            if new_text == old_text:
+                continue
+            changed.append(path)
+            if args.write:
+                path.write_text(new_text, encoding="utf-8")
+        except Exception as exc:  # migration must report every problematic file
+            failures.append((path, str(exc)))
 
     mode = "normalized" if args.write else "would normalize"
     print(f"{mode}: {len(changed)} checkpoint(s)")
     for path in changed:
         print(path.as_posix())
+
+    if failures:
+        print(f"failed: {len(failures)} checkpoint(s)")
+        for path, error in failures:
+            print(f"ERROR {path.as_posix()}: {error}")
+        return 1
 
     return 0
 
