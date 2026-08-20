@@ -175,3 +175,23 @@ Where consequential work is promoted into project code, it should aim to be read
 If the Autonomous Data Science System were removed, the resulting repository should still be a credible professional data-science project.
 
 See `docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md`.
+
+## P-025. Reusable knowledge identity and granularity should be separate from reasoning function
+
+A reusable methodological unit should not be forced into one overloaded semantic-role label merely because the system needs a common representation.
+
+The representation should distinguish the intrinsic form of knowledge, such as a Concept, Method, Framework, Question Template, Rule, or Investigation Pattern, from the reasoning functions that knowledge can play, such as validity constraint, evidence requirement, interpretation guidance, failure mode, repair option, or human escalation hook.
+
+Knowledge granularity should also support independently addressable assets, stably identifiable components inside those assets, and non-addressable narrative facets. This allows provenance, versioning, relation targeting, and reuse where they add value without turning every sentence into a top-level object.
+
+See `docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md`.
+
+## P-026. Static methodological relationships and conditional guidance rules should remain distinct
+
+A stable semantic relationship between knowledge units is not the same thing as a guarded methodological implication.
+
+Relations should express meanings such as composition, alternatives, complements, or conceptual dependency. Conditional rules should express reasoning such as what becomes relevant, required, constrained, or worth asking when project conditions hold.
+
+Rules should normally guide project reasoning, horizon construction, questions, proposals, claim validity, and revalidation rather than silently execute analytical decisions as a rigid hidden workflow. Hard constraints may block incompatible claims or actions within their scope, while conflicting soft guidance should remain inspectable and be resolved through project-specific relevance and trade-off reasoning.
+
+See `docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md`.
