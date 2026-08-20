@@ -1,7 +1,7 @@
 name: Normalize legacy checkpoint metadata
 
-# This workflow is intentionally triggerable by changes to its own definition so
-# the historical normalization can be re-run after migration-script fixes.
+# This workflow is intentionally triggerable by changes to its own definition or
+# the migration script so historical metadata repairs can be re-run safely.
 on:
   push:
     branches: [main]
@@ -18,8 +18,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Check out repository with history
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
