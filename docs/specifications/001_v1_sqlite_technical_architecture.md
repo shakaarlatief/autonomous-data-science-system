@@ -1,7 +1,7 @@
 # Specification 001: V1 SQLite-Centered Technical Architecture
 
 **Date:** 2026-08-20  
-**Status:** Accepted V1 technical specification v1.0  
+**Status:** Accepted V1 technical specification v1.1  
 **Scope:** V1 methodological-knowledge, project-state, retrieval, rule-evaluation, context-assembly, provenance, and operational persistence architecture  
 **Authority:** Current V1 technical architecture contract for this scope. It implements D-028 and Foundations 017-020. Later revisions must preserve explicit migration/history semantics rather than silently changing the contract.  
 **Validated:** 2026-08-20 through the committed V1 architecture falsification gate, FT-01 through FT-12  
@@ -1099,7 +1099,7 @@ migration scripts remain reviewable in source control
 
 Downgrade migrations are not required by default. Recovery from a bad migration may use a pre-migration backup plus a corrected forward migration.
 
-The migration framework/library remains unselected until the bounded implementation/tooling choice clarifies whether a dedicated library is valuable.
+Migration tooling is now specified by Specification 002: SQLAlchemy Core 2.0 stable-series APIs implement the relational adapter and Alembic 1.x is the authoritative production schema-migration mechanism. This later tooling decision preserves the migration semantics defined here.
 
 ---
 
@@ -1317,16 +1317,13 @@ These choices should be made at the layer where their requirements become concre
 
 With the architecture gate passed, broad product implementation is still not the immediate next action.
 
-First define the **bounded V1 persistence/retrieval implementation contract and tooling**:
+Persistence and Python project tooling are now specified by:
 
 ```text
-1. choose the SQL access / repository implementation approach;
-2. choose or deliberately decline a schema migration framework;
-3. convert the validated spike schema into reviewed production migrations;
-4. define typed domain/repository interfaces and transaction boundaries;
-5. define deterministic export/import formats;
-6. define the first production retrieval-evaluation fixture before selecting an embedding model;
-7. preserve PostgreSQL adapter compatibility in tests.
+docs/specifications/002_v1_persistence_tooling_standard.md
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
 ```
 
-After those boundaries are explicit, implement the first bounded V1 subsystem rather than the entire frontend/autonomous product at once.
+The next step is to implement the **first production-quality V1 persistence vertical slice** behind the accepted ports, using SQLAlchemy Core + Alembic inside the reproducible uv-managed project.
+
+The slice should prove stable knowledge identity/revisions, project revision pinning, at least one relation and rule representation, real migration history, SQLite integration, and retained PostgreSQL portability without materializing the whole future product schema.

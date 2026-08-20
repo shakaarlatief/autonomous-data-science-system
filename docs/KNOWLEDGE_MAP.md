@@ -352,6 +352,53 @@ FT-05 = PASS_ARCHITECTURE_ONLY
 
 It validates the replaceable retrieval/index/horizon seam with a deterministic toy semantic provider. It does not validate the production embedding model, retrieval recall, fusion algorithm, or reranker.
 
+
+---
+
+## Accepted V1 implementation and Python project tooling
+
+Persistence tooling:
+
+```text
+docs/DECISIONS.md, D-029
+docs/specifications/002_v1_persistence_tooling_standard.md
+docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
+experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
+```
+
+Accepted direction:
+
+```text
+SQLAlchemy Core 2.0 stable series
+Alembic 1.x
+SQLAlchemy ORM not the primary domain/persistence model
+raw DBAPI only for narrow backend-specific adapter behavior
+```
+
+Python project/dependency/build tooling:
+
+```text
+docs/DECISIONS.md, D-030
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/checkpoints/113_v1_python_project_tooling_validated.md
+pyproject.toml
+uv.lock
+experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
+```
+
+Accepted direction:
+
+```text
+standards-based pyproject.toml
+uv 0.12.5
+committed cross-platform uv.lock
+uv_build for the current pure-Python package
+src/ads_system source layout
+Python >=3.12, tested on 3.12/3.13/3.14 on Linux + Windows
+```
+
+The persistence and packaging tools are implementation mechanisms behind the already-accepted architecture; they do not redefine the methodological/domain object model.
+
 ---
 
 ## Earlier reusable-knowledge theory
@@ -503,19 +550,20 @@ Default order when documents disagree:
 
 ## Exact next step
 
-With Specification 001 validated and promoted, define the **bounded V1 persistence/retrieval implementation contract and tooling**.
+Implement the **first production-quality V1 persistence vertical slice** behind Specifications 001-003.
 
-Next questions:
+The smallest coherent slice should exercise:
 
 ```text
-SQL access / repository implementation approach
-schema migration implementation approach
-production migration/DDL organization
-typed domain/repository interfaces and UnitOfWork boundary
-UUIDv7 implementation choice
-deterministic export/import representation
-first real retrieval-quality benchmark before embedding-model selection
-retained SQLite + PostgreSQL architecture tests in CI
+stable knowledge identity + immutable accepted revision
+knowledge governance/current pointer
+component / relation / conditional-rule storage
+project identity and minimal epistemic state
+exact project -> knowledge revision reference
+repository ports and UnitOfWork
+Alembic base migration
+SQLite integration tests
+PostgreSQL portability CI
 ```
 
-Do not build the complete frontend/autonomous product before these implementation seams are concrete.
+Do not materialize every Foundation 018 object or build the full frontend/autonomous workflow before this first real persistence path has been validated.

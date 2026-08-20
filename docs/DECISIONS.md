@@ -142,7 +142,7 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Superseded for the V1 persistence/retrieval architecture by D-028 and for persistence tooling by D-029; still applicable to implementation subsystems not yet selected  
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, and Python project/dependency tooling by D-030; still applicable to implementation subsystems not yet selected  
 **Date:** 2026-08-07  
 **Superseded in scope:** 2026-08-20
 
@@ -566,3 +566,48 @@ docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
 experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py
 experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
 ```
+
+---
+
+## D-030. Use uv with standards-based pyproject metadata for the V1 Python project
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-20
+
+V1 will use `pyproject.toml` as the standards-based Python project/dependency declaration, `uv` as the project/dependency/environment manager, a committed `uv.lock` for reproducible cross-platform resolution, and `uv_build` as the current PEP 517 build backend for the pure-Python `ads_system` package.
+
+The current validated tooling baseline is:
+
+```text
+uv 0.12.5
+uv_build >=0.12.5,<0.13
+Python >=3.12
+```
+
+The package is tested on Python 3.12, 3.13, and 3.14 on Linux and Windows.
+
+The distribution/import names are:
+
+```text
+distribution: autonomous-data-science-system
+import package: ads_system
+```
+
+The dependency intent remains in standard `pyproject.toml` metadata. `uv.lock` is committed but tool-managed, and uv's PEP 751 `pylock.toml` export is retained as an interoperability path. The project is not architecturally coupled to uv's lock format.
+
+### Rationale
+
+The first production persistence slice now depends on SQLAlchemy/Alembic and needs repeatable local/CI environments. Ad-hoc package installation would undermine the architecture's reproducibility goals.
+
+uv provides one cross-platform workflow for locking, synchronization, Python selection, command execution, and package building while still consuming standard Python project metadata. A committed universal lockfile supports reproducible development and dependency upgrades. The build backend is replaceable through the standard PEP 517 boundary if future extension-module or packaging requirements change.
+
+A committed project-tooling gate generated the lockfile and passed package import/tests/build plus PEP 751 export on Linux and Windows across Python 3.12-3.14.
+
+See:
+
+```text
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/checkpoints/113_v1_python_project_tooling_validated.md
+experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
+```
+

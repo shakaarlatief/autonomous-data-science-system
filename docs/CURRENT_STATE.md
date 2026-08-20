@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 112  
+**Checkpoint:** 113  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, implementation requirements, V1 architecture selection, accepted technical architecture, architecture falsification, and persistence-tooling selection are complete; the first production V1 persistence foundation is the active task  
+**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, implementation requirements, V1 architecture selection, accepted technical architecture, architecture falsification, and persistence-tooling selection, and reproducible Python project/dependency tooling are complete; the first production V1 persistence foundation is the active task  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** V1 persistence/retrieval architecture and persistence tooling are accepted and validated; broad product implementation remains deferred while the first production-quality persistence vertical slice is built and tested
 
@@ -274,6 +274,31 @@ Backend-specific PRAGMAs/FTS remain inside persistence/index adapters or migrati
 
 SQLAlchemy 2.1 remains beta at this checkpoint, so V1 stays on the stable 2.0 API line until an explicit later review.
 
+
+## Accepted V1 Python project/dependency tooling
+
+D-030 and Specification 003 select:
+
+```text
+standards-based pyproject.toml
+uv 0.12.5
+committed cross-platform uv.lock
+uv_build for the current pure-Python package
+src/ads_system source layout
+Python >=3.12
+```
+
+The committed CI gate passed on Linux and Windows under Python 3.12, 3.13, and 3.14 and verified locked synchronization, tests, package building, and PEP 751 `pylock.toml` export.
+
+Sources:
+
+```text
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/checkpoints/113_v1_python_project_tooling_validated.md
+experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
+```
+
+
 ## Current implementation stage
 
 The architecture family, technical seam, SQL toolkit, and migration framework are now selected with executable SQLite/PostgreSQL evidence.
@@ -302,7 +327,6 @@ The implementation should remain bounded enough that architecture defects are ch
 ## Still intentionally unselected
 
 ```text
-project package/build manager and lockfile mechanism
 complete production schema for every Foundation 018 object
 embedding model/provider
 lexical/semantic fusion algorithm
