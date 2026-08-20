@@ -1,8 +1,8 @@
 # Continuity
 
 **Status:** Current canonical continuity procedure  
-**Aligned development-method version:** 0.3  
-**Last reviewed:** 2026-08-19
+**Aligned development-method version:** 0.4  
+**Last reviewed:** 2026-08-20
 
 ## Purpose
 
@@ -35,6 +35,24 @@ The number preserves chronology and the content-specific title makes earlier ses
 Session names are navigation and provenance metadata only. The repository must never depend on a chat retaining a particular title.
 
 A chat may contain many topics and many checkpoints while continuity remains healthy.
+
+### Active development session
+
+```text
+Design session: 02
+ChatGPT project: Autonomous Data Science System
+Session title: 02 - Methodological Brain & Knowledge Units
+```
+
+The previous design session was:
+
+```text
+Design session: 01
+ChatGPT project: Autonomous Data Science System
+Session title: 01 - Foundations & Checkpoint 0
+```
+
+Every checkpoint created while this ChatGPT-based development process remains active must preserve the applicable `Design session`, `ChatGPT project`, and `Session title` fields under `docs/checkpoints/README.md`. Session provenance improves navigation and auditing, but repository state remains the source of truth across sessions.
 
 ## When to start a new design chat
 
@@ -311,7 +329,7 @@ Those options are preserved in Foundation 014 but remain deferred until observed
 
 ## Version relationship
 
-The current continuity procedure is aligned with Development Method version 0.3.
+The current continuity procedure is aligned with Development Method version 0.4.
 
 The major methodological progression is:
 
@@ -325,6 +343,10 @@ proactive checkpoint detection and proactive chat rotation
 v0.3
 promotion audit + knowledge map + reconciliation + authority metadata
 + concise current state + experiment ledgers + major-changes history
+
+v0.4
+explicit checkpoint metadata contract + mechanical validation
++ normalized historical checkpoint provenance + required ChatGPT session provenance
 ```
 
 Detailed preservation rationale:
