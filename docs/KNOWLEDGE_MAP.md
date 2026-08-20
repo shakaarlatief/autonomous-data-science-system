@@ -40,7 +40,7 @@ docs/MAJOR_CHANGES.md
     selective structural history
 ```
 
-Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now in V1 architecture/tooling design.
+Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now implementing the bounded V1 methodological-navigation architecture.
 
 ---
 
@@ -270,7 +270,7 @@ experiments/architecture_spikes/sqlite_v1_viability.py
 
 ## Accepted V1 technical architecture specification
 
-**Read first for current V1 persistence/retrieval implementation work:**
+Primary technical contract:
 
 ```text
 docs/specifications/001_v1_sqlite_technical_architecture.md
@@ -279,10 +279,10 @@ docs/specifications/001_v1_sqlite_technical_architecture.md
 Status:
 
 ```text
-Accepted V1 technical specification v1.0
+Accepted V1 technical specification v1.1
 ```
 
-It defines the migration-safe implementation boundaries beneath D-028, including:
+It defines migration-safe implementation boundaries beneath D-028, including:
 
 ```text
 application/domain persistence ports around SQLite
@@ -352,7 +352,6 @@ FT-05 = PASS_ARCHITECTURE_ONLY
 
 It validates the replaceable retrieval/index/horizon seam with a deterministic toy semantic provider. It does not validate the production embedding model, retrieval recall, fusion algorithm, or reranker.
 
-
 ---
 
 ## Accepted V1 implementation and Python project tooling
@@ -398,6 +397,54 @@ Python >=3.12, tested on 3.12/3.13/3.14 on Linux + Windows
 ```
 
 The persistence and packaging tools are implementation mechanisms behind the already-accepted architecture; they do not redefine the methodological/domain object model.
+
+---
+
+## First production V1 persistence vertical slice
+
+Current implementation milestone:
+
+```text
+docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
+experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
+```
+
+Production implementation lives under:
+
+```text
+src/ads_system/domain/
+src/ads_system/application/
+src/ads_system/infrastructure/persistence/
+migrations/
+tests/integration/
+```
+
+The bounded slice proves:
+
+```text
+stable KnowledgeAsset identity
+immutable KnowledgeRevision history
+governance/current accepted revision
+component -> exact parent asset revision
+relation -> revision/current pointer
+conditional rule -> exact owner knowledge revision
+Project + Finding persistence
+Finding -> exact historical knowledge revision
+UnitOfWork transaction boundary
+real Alembic base migration
+```
+
+The same application/repository scenario passed on:
+
+```text
+SQLite / Linux
+SQLite / Windows
+PostgreSQL 18
+```
+
+The validation explicitly proves that a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current, and that cross-project reference mismatches are rejected by relational integrity.
+
+This is the first production evidence for the accepted persistence architecture, not completion of the full Foundation 018/020 model.
 
 ---
 
@@ -550,20 +597,18 @@ Default order when documents disagree:
 
 ## Exact next step
 
-Implement the **first production-quality V1 persistence vertical slice** behind Specifications 001-003.
+Define the **deterministic reusable-knowledge interchange/authoring contract** and a small representative real methodological corpus before choosing a production embedding model.
 
-The smallest coherent slice should exercise:
+The next bounded sequence is:
 
 ```text
-stable knowledge identity + immutable accepted revision
-knowledge governance/current pointer
-component / relation / conditional-rule storage
-project identity and minimal epistemic state
-exact project -> knowledge revision reference
-repository ports and UnitOfWork
-Alembic base migration
-SQLite integration tests
-PostgreSQL portability CI
+human-readable deterministic knowledge representation
+    -> production import/export through revision/governance semantics
+    -> representative corpus from the existing methodological examples
+    -> explicit retrieval-quality fixtures
+    -> production lexical retrieval
+    -> semantic retrieval candidate evaluation
+    -> first real MethodologicalHorizon construction
 ```
 
-Do not materialize every Foundation 018 object or build the full frontend/autonomous workflow before this first real persistence path has been validated.
+The retrieval benchmark must distinguish required hits, useful optional hits, acceptable omissions, and critical omissions so later embedding/fusion/reranking choices are evidence-driven rather than selected from generic benchmark reputation.
