@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 101  
+**Checkpoint:** 102  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, and five-example reusable-knowledge stress test completed; candidate conceptual knowledge representation is the active design task  
+**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, five-example reusable-knowledge stress test, and first candidate conceptual knowledge representation contract completed; adversarial representation review is the active design task  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
@@ -276,32 +276,106 @@ Detailed historical synthesis:
 docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
 ```
 
-These conclusions are active design hypotheses, not a frozen V1 schema.
+## Candidate conceptual knowledge representation
+
+Checkpoint 102 makes the first explicit candidate representation contract concrete.
+
+The current candidate consists conceptually of:
+
+```text
+KnowledgeAsset
+    small common semantic/governance envelope
+    + role-specific typed facets
+    + optional retrieval/applicability profile
+
+KnowledgeRelation
+    first-class typed semantic relation
+    with rationale/conditions where needed
+
+KnowledgeCollection
+    optional organization/navigation structure
+    not substantive methodological authority by itself
+
+Project objects
+    typed instantiations/applications of global knowledge
+    preserving originating asset/version
+
+ExecutionCapability
+    separate implementation bridge
+
+Views
+    derived from global knowledge + project state + current evidence
+```
+
+The initial candidate semantic roles are:
+
+```text
+METHOD
+FRAMEWORK
+QUESTION_TEMPLATE
+EVIDENCE_REQUIREMENT
+INVESTIGATION_PATTERN
+STRATEGY
+FAILURE_MODE
+INTERPRETATION
+CONSTRAINT
+HUMAN_HOOK
+```
+
+The candidate explicitly distinguishes:
+
+```text
+addressable knowledge asset
+    != embedded method/framework facet
+
+substantive FRAMEWORK
+    != organizational KnowledgeCollection
+
+global knowledge-governance state
+    != project methodological relevance state
+    != project-object lifecycle/assessment state
+
+global knowledge asset
+    != universal project-side KnowledgeInstance
+
+methodological knowledge
+    != execution implementation
+```
+
+A candidate addressability rule now governs granularity: promote knowledge to a standalone asset when independent identity materially improves reuse, retrieval, provenance, versioning, challenge, project instantiation, relationship semantics, or dependency handling; otherwise keep it as a typed facet.
+
+Prediction-time feature eligibility also exposed a possible generic project-side `Assessment` pattern, but this has **not** been promoted into the Foundation 018 object model and must be challenged against existing Question/Finding/Claim/Constraint semantics.
+
+The full candidate contract and five conceptual encodings are preserved in:
+
+```text
+docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
+```
+
+These conclusions remain active design hypotheses. Foundation 020 is intentionally deferred until the contract survives adversarial review.
 
 ## Current design stage
 
 Do **not** implement V1 yet.
 
-The five-example exercise is complete. The next legitimate task is to make the representation hypothesis explicit as the first candidate conceptual knowledge contract.
+The candidate conceptual representation is now explicit enough to attack rather than merely elaborate.
 
-That design should specify, without choosing storage technology:
+The next design task is an adversarial challenge covering:
 
 ```text
-1. minimum common metadata/semantic core for an addressable knowledge asset;
-2. initial typed knowledge-role vocabulary;
-3. optional package/collection semantics;
-4. typed relationship semantics;
-5. separation between applicability/retrieval state and project-specific object status;
-6. global-knowledge to project-instance transformation;
-7. boundary between methodological knowledge and execution capability;
-8. component-level provenance, maturity, versioning, limitations, and challenge history;
-9. derivation of human-facing decision trees and methodological views;
-10. concrete worked encodings for several of the five examples.
+1. encode the five stress-test examples more concretely and identify awkwardness;
+2. test whether the role vocabulary causes duplication or ambiguity;
+3. test the asset-versus-facet granularity rule;
+4. test whether typed relations can reconstruct the Missing Data tree;
+5. test global-to-project instantiation against Foundation 018 objects;
+6. challenge whether a new Assessment object is actually needed;
+7. test conflicting/superseded knowledge and provenance behavior;
+8. identify the minimum structure required for applicability filtering;
+9. identify which parts can remain semantic prose versus requiring structure;
+10. only after the contract survives challenge, consider promotion to Foundation 020.
 ```
 
-Only after the conceptual representation is explicit and challenged should the project evaluate what persistence, retrieval, indexing, or orchestration architecture it actually requires.
-
-Do not choose a database, graph store, vector store, retrieval engine, agent framework, or V1 backend yet.
+Do not choose a database, graph store, vector store, retrieval engine, agent framework, schema language, or V1 backend during this challenge.
 
 ## Continuity status
 
@@ -336,10 +410,11 @@ docs/foundations/017_interactive_data_science_workspace_and_methodological_navig
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
+docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Design the first explicit candidate conceptual representation contract for reusable methodological knowledge. Preserve the common core as small, use typed semantics and relationships where warranted, keep project-specific state separate from global reusable knowledge, and do not select implementation technology yet.**
+**Adversarially challenge the candidate conceptual knowledge representation in Checkpoint 102. Try to break the role vocabulary, granularity rule, typed relationships, global-to-project instantiation, Assessment pattern, applicability structure, and prose-versus-structure boundary before promoting any representation to Foundation 020. Do not implement V1 yet.**
