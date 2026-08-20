@@ -30,16 +30,19 @@ A project of this scope cannot safely depend on long chat histories or model mem
 
 ---
 
-## D-003. Keep the repository private for now
+## D-003. Keep the repository private during the early design stage
 
-**Status:** Accepted  
-**Date:** 2026-08-07
+**Status:** Superseded in current repository state; the repository is now public  
+**Date:** 2026-08-07  
+**Superseded in scope:** By 2026-08-20; the exact visibility-change decision/date is not preserved in this decision record
 
-The repository is private during the early design stage.
+The repository was kept private during the early design stage. The current GitHub repository is public, so this early-stage visibility decision no longer describes present repository state.
 
 ### Rationale
 
-The project is highly exploratory and many ideas are intentionally provisional. Public presentation can be reconsidered once the structure and goals are more mature.
+The project was highly exploratory and many ideas were intentionally provisional. Public presentation was explicitly left open for reconsideration once the structure and goals became more mature.
+
+This reconciliation records the observable current visibility without inventing an unpreserved rationale or exact transition date for the later change.
 
 ---
 
