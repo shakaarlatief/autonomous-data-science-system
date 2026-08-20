@@ -142,8 +142,9 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Accepted  
-**Date:** 2026-08-07
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028; still applicable to implementation subsystems not yet selected  
+**Date:** 2026-08-07  
+**Superseded in scope:** 2026-08-20
 
 The project will not yet choose an agent framework, number of agents, LLM providers, orchestration framework, database, graph technology, rule engine, execution architecture, or other implementation stack.
 
@@ -455,3 +456,67 @@ The operational evidence now consists of 77 passing software tests, 12 / 12 retr
 This decision changes only how many already-validated sequential supervisor iterations may occur inside one invocation. It does not change the experiment plan, treatments, budgets, replacement rules, scoring, or semantic evaluation.
 
 See Foundation 015 and Checkpoint 83.
+
+---
+
+## D-028. Use a SQLite-centered local-first architecture for V1 methodological knowledge and project state
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-20
+
+V1 will use a SQLite-centered local-first operational architecture for reusable methodological knowledge metadata/state and project metadata/state.
+
+The accepted architecture direction is:
+
+```text
+SQLite operational store
+    stable knowledge identities and revisions
+    components / relations / conditional rules
+    provenance / governance
+    project epistemic and decision objects
+    project references to exact knowledge revisions
+    execution-capability metadata
+
+SQLite FTS5
+    rebuildable lexical search index
+
+rebuildable embeddings
+    initial in-process exact semantic similarity search
+
+application-layer rule evaluator
+    minimal TRUE / FALSE / UNKNOWN conditional semantics
+
+selective LLM context assembly
+    bounded projection of project state + methodological horizon
+
+filesystem / Git / artifact storage
+    code and large generated/input artifacts outside SQLite
+```
+
+V1 will **not** introduce a dedicated graph database, vector database/service, external rules engine, or PostgreSQL server unless measured requirements justify the additional complexity.
+
+The relational design must preserve a credible migration path to PostgreSQL. PostgreSQL, with pgvector where appropriate, is the preferred first migration family if future multi-writer, shared-server, concurrency, or semantic-index scale requirements exceed the SQLite envelope.
+
+Human-readable deterministic exports of accepted reusable knowledge must remain available for review, diffing, debugging, backup/migration testing, and optional Git preservation. These exports and rebuildable indexes are not competing runtime authorities.
+
+Large datasets, trained models, arrays, notebooks, and other large artifacts remain outside the operational metadata database; SQLite stores metadata, provenance, and references to them.
+
+### Rationale
+
+Foundations 017 through 020 and Checkpoint 107 now provide the product model, methodological-horizon architecture, reusable-knowledge representation, and technology-neutral implementation requirements that D-011 intentionally waited for.
+
+Architecture comparison in Checkpoint 108 found that SQLite satisfies the current V1 requirement envelope with the lowest operational burden. SQLite provides transactional relational state, foreign-key integrity, FTS5, recursive CTEs for bounded relationship traversal, JSON support, and WAL-based reader/writer concurrency compatible with the accepted initial one-writer model.
+
+A targeted synthetic viability spike also found no order-of-magnitude performance reason to introduce specialized stores at the expected V1 scale. Exact in-process vector similarity over the expected methodological-knowledge scale was comfortably feasible in the spike, so ANN/vector-server infrastructure is currently unnecessary.
+
+PostgreSQL + pgvector is technically stronger for multi-user concurrency and larger integrated vector workloads, but V1 does not currently require the server/extension operational surface. Neo4j is capable of graph and vector workloads, but the current requirement is bounded local traversal rather than graph analytics as a dominant workload. Multi-store architectures introduce consistency and operational boundaries without current evidence of need.
+
+This decision is deliberately scoped to V1. It is not a claim that SQLite is the final database for the complete long-term product.
+
+See:
+
+```text
+docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
+docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
+experiments/architecture_spikes/sqlite_v1_viability.py
+```
