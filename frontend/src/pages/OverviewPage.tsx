@@ -50,7 +50,7 @@ export function OverviewPage() {
               <span className="eyebrow">Priority</span>
               <h2>Current analytical state</h2>
             </div>
-            <Link to="/eda" className="text-link">Open EDA <ArrowRight size={14} /></Link>
+            <Link to="/eda" search={{ view: 'distribution' }} className="text-link">Open EDA <ArrowRight size={14} /></Link>
           </div>
           <div className="priority-list">
             {workspace.recommendations.slice(0, 3).map((item, index) => (
@@ -155,7 +155,7 @@ export function OverviewPage() {
             <h2>customer_churn.csv</h2>
             <p>7,043 rows · 7 profiled fields in this representative slice</p>
           </div>
-          <Link to="/data" className="icon-button" aria-label="Open dataset"><ArrowRight size={16} /></Link>
+          <Link to="/data" search={{ column: 'tenure_months', filter: '' }} className="icon-button" aria-label="Open dataset"><ArrowRight size={16} /></Link>
         </section>
       </div>
     </div>
