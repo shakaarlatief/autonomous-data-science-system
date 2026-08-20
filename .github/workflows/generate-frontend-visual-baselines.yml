@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
 
+# Temporary bootstrap workflow. Remove after canonical baselines are committed.
 jobs:
   generate-baselines:
     name: Generate canonical Playwright screenshots
