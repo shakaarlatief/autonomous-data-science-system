@@ -8,6 +8,8 @@ import {
   CircleHelp,
   Clock3,
   Info,
+  PanelRightClose,
+  PanelRightOpen,
   Play,
   Sparkles,
   X,
@@ -15,10 +17,22 @@ import {
 import { useWorkspace } from '../appState'
 import type { MethodologicalStatus, Recommendation, RunSummary } from '../domain'
 
-export function MethodologyPanel() {
+export function MethodologyPanel({ collapsed, onToggle }: { collapsed: boolean; onToggle: () => void }) {
   const { workspace, runs, approveRun, rejectRun } = useWorkspace()
   const [selected, setSelected] = useState<Recommendation | null>(workspace.recommendations[0] ?? null)
   const waiting = runs.find((run) => run.status === 'WAITING_FOR_APPROVAL')
+
+  if (collapsed) {
+    return (
+      <aside className="context-panel context-panel-collapsed" aria-label="Methodological guidance">
+        <button className="context-panel-toggle collapsed-toggle" type="button" aria-label="Expand methodological guidance" onClick={onToggle}>
+          <PanelRightOpen size={18} />
+        </button>
+        <span className="collapsed-system-mark" aria-hidden="true"><BrainCircuit size={17} /></span>
+        {waiting && <span className="collapsed-attention-dot" aria-label="Approval required" />}
+      </aside>
+    )
+  }
 
   return (
     <aside className="context-panel" aria-label="Methodological guidance">
@@ -27,7 +41,12 @@ export function MethodologyPanel() {
           <span className="eyebrow">System</span>
           <h2>What matters now</h2>
         </div>
-        <BrainCircuit size={19} />
+        <div className="context-panel-header-actions">
+          <BrainCircuit size={19} />
+          <button className="context-panel-toggle" type="button" aria-label="Collapse methodological guidance" onClick={onToggle}>
+            <PanelRightClose size={17} />
+          </button>
+        </div>
       </div>
 
       {waiting && (
