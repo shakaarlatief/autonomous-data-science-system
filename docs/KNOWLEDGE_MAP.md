@@ -200,7 +200,7 @@ The full global catalog should not be sent to the LLM. Project-specific retrieva
 
 ## Reusable methodological knowledge representation architecture
 
-**Read first for the current architecture task:**
+Primary source:
 
 ```text
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
@@ -284,7 +284,92 @@ docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
 docs/checkpoints/105_refined_representation_second_stress_test.md
 ```
 
-No physical schema, database, vector store, graph store, rules engine, retrieval engine, or backend has been selected.
+---
+
+## V1 implementation requirements and selected persistence/retrieval architecture
+
+**Read first for the current implementation-design task:**
+
+```text
+docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
+docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
+docs/DECISIONS.md, D-028
+```
+
+Checkpoint 107 derived technology-neutral V1 requirements before any database/retrieval choice was allowed.
+
+The requirements include:
+
+```text
+stable asset + revision identity
+recoverable historical revisions
+component-level provenance where needed
+typed relation lookup and bounded traversal
+minimal TRUE / FALSE / UNKNOWN conditional rules
+high-recall semantic candidate retrieval
+retrieval/applicability/context separation
+project-state lookup for Definitions/Questions/Findings/etc.
+bounded methodological-horizon construction
+selective budgeted LLM context assembly
+human-readable review/export
+local-first operation with one active writer acceptable initially
+large artifacts outside the operational metadata store
+```
+
+Checkpoint 108 then compared plausible architecture families, consulted current SQLite/PostgreSQL/pgvector/Neo4j/vector-store capabilities, and ran a targeted synthetic SQLite feasibility spike.
+
+Accepted V1 decision:
+
+```text
+SQLite-centered local-first operational architecture
+```
+
+Current direction:
+
+```text
+SQLite
+    reusable knowledge identities/revisions/components
+    typed relations and conditional rules
+    provenance/governance
+    project epistemic and decision state
+    exact project -> knowledge revision references
+    execution-capability metadata
+
+FTS5
+    rebuildable lexical index
+
+rebuildable embeddings
+    initial in-process exact semantic similarity search
+
+application-level minimal rule evaluator
+    predicate / ALL / ANY / NOT / TRUE / FALSE / UNKNOWN
+
+selective context assembler
+    small task-specific projection rather than full state
+
+filesystem / Git / artifact storage
+    project code and large artifacts outside SQLite
+```
+
+Explicit V1 non-selections:
+
+```text
+no dedicated graph database
+no dedicated vector database/service
+no external generic rules engine
+no PostgreSQL server by default
+no ANN index until measured requirements justify it
+```
+
+PostgreSQL + pgvector is the preferred first migration family if later concurrency, shared-server, or semantic-search scale requirements exceed the SQLite envelope.
+
+Reproducible architecture spike:
+
+```text
+experiments/architecture_spikes/sqlite_v1_viability.py
+```
+
+D-011 is superseded for this persistence/retrieval scope by D-028. Other implementation subsystems remain intentionally unselected until requirements justify choices.
 
 ---
 
@@ -313,7 +398,7 @@ docs/experiments/prototype_v0/FINAL_RESULTS.md
 
 B1 gained most of the semantic benefit from the four methodological concepts simply being explicitly available. P0's path-sensitive activation and large always-on representation did not earn their cost.
 
-This does **not** reduce future reusable knowledge to a static prompt. Foundations 019 and 020 instead support selective retrieval, explicit filtering/rules where justified, flexible semantic reasoning, typed reusable knowledge, and inspectable project-specific relevance.
+This does **not** reduce future reusable knowledge to a static prompt. Foundations 019 and 020 support selective retrieval, explicit filtering/rules where justified, flexible semantic reasoning, typed reusable knowledge, and inspectable project-specific relevance.
 
 ---
 
@@ -526,22 +611,23 @@ Default order when documents disagree:
 
 ## Exact next step
 
-With Foundation 020 promoted, derive **implementation requirements from the conceptual knowledge representation before choosing technology**.
+Write the **V1 technical architecture specification** for D-028's accepted SQLite-centered design.
 
-Identify requirements for:
+The specification should make concrete:
 
 ```text
-stable identity and revision history
-component addressing
-relation traversal
-conditional-rule evaluation
-semantic retrieval
-project-state lookup
-provenance/history
-methodological-horizon construction
-LLM context assembly
-human navigation/query
-knowledge mutation/review/governance
+logical persistence boundaries and authoritative versus derived state
+initial relational entity/table families
+stable knowledge identity + revision representation
+components / relations / conditional rules
+project-object integration and knowledge-revision references
+FTS5 indexing and rebuild strategy
+embedding generation/storage/cache and exact-search interface
+minimal rule evaluator and trace format
+methodological-horizon and LLM context assembly boundary
+transaction ownership / WAL / foreign-key enforcement
+backup/export/recovery and PostgreSQL migration strategy
+narrow falsification tests required before broad V1 implementation
 ```
 
-Only after those requirements are explicit should the project compare persistence, indexing, retrieval, and orchestration architecture options.
+Do not start broad V1 implementation until this specification is explicit and its highest-risk assumptions have targeted tests.
