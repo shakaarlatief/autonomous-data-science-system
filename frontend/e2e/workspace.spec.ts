@@ -132,7 +132,7 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(details).toHaveCount(0)
     await page.getByRole('button', { name: 'Show project details' }).click()
     await expect(details).toBeVisible()
-    await expect(details).toContainText('Predict churn')
+    await expect(details).toContainText('deployment-valid evidence')
     await page.getByRole('button', { name: 'Hide project details' }).click()
     await expect(details).toHaveCount(0)
 
