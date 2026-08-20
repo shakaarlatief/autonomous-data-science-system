@@ -8,13 +8,11 @@ The project explores how to build a rigorous, adaptive, semi-autonomous system f
 
 Modern LLMs can already perform substantial portions of a data project. That does not imply that one long end-to-end conversation reliably produces the best possible process for every project.
 
-The project therefore studies a higher-level question:
+The higher-level question is:
 
-> How much of the process navigation, methodological memory, state maintenance, evidence discipline, repair, and selective human involvement that currently lives in a skilled human-LLM workflow should be made explicit and reusable in a wider system?
+> How much of the process navigation, methodological memory, project memory, evidence discipline, repair, execution control, provenance, and selective human involvement that currently lives in a skilled human-LLM workflow should be made explicit and reusable in a wider system?
 
-The LLM is treated as a powerful reasoning component inside that wider system, not as the system itself.
-
-The opposite risk matters just as much: explicit architecture is not automatically valuable. Every mechanism should earn its complexity through evidence.
+The LLM is treated as a powerful reasoning component inside that wider system, not as the system itself. The opposite risk matters just as much: explicit architecture is not automatically valuable, and every mechanism should earn its complexity through evidence.
 
 ## Working purpose
 
@@ -24,9 +22,9 @@ The current working purpose is:
 
 The project therefore does not define maximum automation, maximum predictive performance, maximum analytical depth, minimum cost, or maximum speed as the universal objective.
 
-## Current stage
+## Current development stage
 
-**Prototype V0 is complete.**
+**Prototype V0 is complete. The project is now in bounded V1 implementation and product validation.**
 
 V0 was the first preregistered falsification experiment. It compared:
 
@@ -39,8 +37,6 @@ P0 = same strong LLM + typed project state + structured knowledge activation
      + prospective safeguards + state-derived action selection
      + dependency-aware repair
 ```
-
-The experiment asked whether the extra P0 architecture materially improves reliability beyond B1 at acceptable cost.
 
 ### V0 result
 
@@ -56,75 +52,162 @@ Budget exhausted        0/10        0/10        7/10
 Median total tokens  122,544.5   120,564.5   260,370.0
 ```
 
-P0 improved the targeted semantic score over B1 by only `+0.05`. The preregistered material-reliability threshold required `+0.30` together with at least two additional strong-targeted passes, or at least two fewer critical failures.
+P0 improved the targeted semantic score over B1 by only `+0.05`, while using `2.160x` B1's median tokens and completing only `3/10` runs within budget.
 
-P0 and B1 had identical critical-failure and strong-pass counts, while P0 used `2.160x` B1's median tokens and completed only `3/10` runs within budget.
+The strongest architectural lesson is:
 
-Most of the semantic gain over the generic baseline came from the simpler B1 intervention: make the relevant methodological knowledge explicitly available to the strong LLM.
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
 
-Detailed result:
+The result does **not** falsify persistent project memory, reusable methodological knowledge, provenance, or the broader Autonomous Data Science System vision. It does falsify carrying P0's large always-on state/context, path-sensitive activation, generic recursive reopening, and full frontier machinery forward unchanged.
+
+Detailed evidence:
 
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-Quick V0 overview:
-
-```text
 prototype_v0/README.md
 ```
 
-The next stage is not to tune P0 until it passes the completed benchmark. The project is now reconciling what V0 taught and designing the smallest lower-overhead successor architecture that can be tested against B1 on a harder problem.
+## Current V1 architecture
 
-## What V0 changed
+The post-V0 design now has several connected but deliberately bounded tracks.
 
-The V0 result does **not** falsify the broader Autonomous Data Science System vision.
+### Project and methodological semantics
 
-It does falsify the assumption that more explicit state and orchestration machinery should be preserved merely because it looks systematic.
-
-The current evidence favors keeping:
+The current foundations distinguish:
 
 ```text
-one strong LLM reasoner
-compact explicit methodological guidance
-instrumented execution and traceability
-precise deterministic boundaries where justified
-append-only experiment provenance
-external mechanical verification
-read-only observability separated from execution
+OBJECTS
+RELATIONS
+EVENTS
+VIEWS
 ```
 
-The current P0 mechanisms should not be carried forward unchanged:
+and preserve distinctions such as:
 
 ```text
-full typed project state resent every reasoning cycle
-large always-on object/relation context
-generic support-reassessment propagation
-path-sensitive tag-trigger knowledge activation
-universal dependency reopening machinery
-full state-derived frontier representation
+Investigation != Run
+Evidence != Finding
+Finding != Claim
+Claim != Decision
+current state != event history
+persisted object != derived recommendation
+workspace section != fundamental object
 ```
 
-Potential successors such as compact question/claim memory, incremental state deltas, selective retrieval, event-driven repair, and lightweight blocker/frontier representations remain hypotheses for the next design stage.
-
-## System-level vision versus Prototype V0
-
-Prototype V0 tested a narrow local architecture. It does not define the final system.
-
-The broader system-level distinction remains:
+The methodological-navigation brain uses the staged relevance model:
 
 ```text
-1. human-executed data-science project
-2. human + interactive LLM project
-3. system-mediated data-science project
+KNOWN
+    -> APPLICABLE
+    -> RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
 ```
 
-The long-term question is whether a system can make high-quality project navigation, methodological coverage, state maintenance, repair, and knowledge reuse less dependent on the human remembering and supplying the right reasoning at the right time.
+A potentially large global knowledge universe is narrowed into a bounded project-specific **MethodologicalHorizon** before selective reasoning context is assembled.
 
-The best current synthesis is:
+Primary sources:
 
 ```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+```
+
+### Accepted V1 persistence and interchange
+
+Accepted V1 decisions currently include:
+
+```text
+D-028
+SQLite-centered local-first operational architecture
+
+D-029
+SQLAlchemy Core 2.0 + Alembic 1.x
+
+D-030
+pyproject.toml + uv + committed uv.lock + uv_build
+
+D-031
+JSON + JSON Schema Draft 2020-12
++ application semantic validation
++ deterministic reusable-knowledge serialization
+```
+
+The first production persistence vertical slice passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical project-to-knowledge revision pinning.
+
+The richer governed knowledge import/accept/export round-trip is implemented but is **not yet closed**: SQLite passes, while the last persisted PostgreSQL 18 round-trip status remains failed after an identifier-length portability defect. The defect was fixed and revalidation was triggered, but a corrected PostgreSQL PASS has not yet been persisted.
+
+### Agent/runtime boundary
+
+Agent frameworks and interoperability protocols are treated as replaceable infrastructure, not ADS domain authority.
+
+No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Specification 005 defines an empirical bakeoff among current runtime candidates, beginning with one principal reasoner and allowing a simple direct-model-call result if no framework earns its complexity.
+
+### Professional frontend and Project Cockpit
+
+The frontend is a first-class reasoning, control, and quality surface rather than an end-stage presentation layer.
+
+A conventional project-view shell now exists for Overview, Data, EDA, Decisions & History, methodological guidance, run state, approvals, themes, accessibility, and visual regression.
+
+Human review then established the stronger **Project Cockpit** direction:
+
+```text
+Project Cockpit
+    primary immersive active-work environment
+    living project-process map
+    native system interaction
+    smooth focus into real analytical workspaces
+
+Direct specialist views
+    alternative inspection and entry paths
+    reuse the same substantive analytical modules
+```
+
+The first executable Cockpit spike passed its cross-platform build, browser interaction, and accessibility gate. The second human browser review accepted the stage-zone visual grammar and exposed the next scalability requirements:
+
+```text
+professional two-dimensional project navigation
+collision-safe floating UI
+compact/expandable Cockpit chrome
+stage orientation at the top of the operating surface
+true browser fullscreen
+fit/reset/jump navigation
+keyboard-accessible recovery
+future semantic zoom/grouping without premature library lock-in
+```
+
+Current governing sources:
+
+```text
+docs/research/002_primary_project_cockpit_interface_concept.md
+docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
+docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
+```
+
+No graph/canvas library, auto-layout algorithm, final semantic-zoom implementation, final stage taxonomy, or final Cockpit visual identity has been selected.
+
+## Active branch and continuation
+
+The current frontend/Cockpit work is being developed on:
+
+```text
+v1-frontend-spike
+```
+
+The default `main` branch intentionally trails this active feature branch. New sessions working on the current Cockpit state must reconstruct from `v1-frontend-spike` rather than assuming `main` contains the latest frontend checkpoints.
+
+Current continuity and exact next action are maintained in:
+
+```text
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
 ```
 
 ## Repository role
@@ -138,6 +221,7 @@ The preservation architecture distinguishes:
 ```text
 canonical current documents
 foundational design memos
+current specifications and evaluation contracts
 checkpoints and historical provenance
 experiment-specific ledgers
 routing/index knowledge
@@ -148,7 +232,7 @@ The core maxim remains:
 
 > **The chat is where we think. The repository is where the system remembers.**
 
-Preservation includes not only durability, but also discoverability, promotion, authority, and reconciliation.
+Preservation includes not only durability, but also discoverability, promotion, authority, reconciliation, and recovery after unexpected session boundaries.
 
 ## Start here
 
@@ -169,7 +253,7 @@ docs/DECISIONS.md
     Accepted project-level decisions.
 
 docs/OPEN_QUESTIONS.md
-    Important unresolved questions.
+    Current unresolved questions.
 
 docs/DEVELOPMENT_METHOD.md
     Method for developing and preserving the project.
@@ -181,75 +265,17 @@ docs/MAJOR_CHANGES.md
     Selective history of major architectural and methodological changes.
 
 docs/foundations/
-    Detailed durable reasoning and specifications.
+    Detailed durable reasoning.
+
+docs/research/
+    Current bounded design and ecosystem research.
+
+docs/specifications/
+    Accepted or candidate implementation/evaluation contracts.
 
 docs/checkpoints/
     Historical snapshots and milestone records.
 ```
-
-For the completed V0 experiment specifically:
-
-```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-prototype_v0/README.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-```
-
-## Knowledge preservation architecture
-
-Development Method v0.3 uses the lifecycle:
-
-```text
-discussion
-    -> checkpoint
-    -> promotion audit
-    -> canonical/foundational/specification update when warranted
-    -> knowledge-map routing update when warranted
-    -> periodic knowledge reconciliation
-```
-
-Detailed rationale:
-
-```text
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-```
-
-The current preservation substrate remains Git + Markdown. More advanced infrastructure is deferred until observed retrieval, dependency, consistency, concurrency, or automation problems justify it.
-
-## Execution and observability
-
-A system-level lesson discovered while running V0 is that execution and human-facing observability should be separated:
-
-```text
-execution / reasoning
-    -> persisted structured state or events
-    -> read-only observability
-    -> human interface
-```
-
-This allows monitors, dashboards, timestamps, heartbeats, and progress displays to evolve without modifying the trusted execution path.
-
-Deep rationale:
-
-```text
-docs/foundations/016_execution_observability_separation.md
-```
-
-## Relationship to individual data projects
-
-This repository is intentionally separate from repositories containing individual data-science projects.
-
-Individual projects can serve as coverage tests and development environments for the system.
-
-```text
-Autonomous Data Science System
-        |
-        | designs, guides, reviews, and learns from
-        v
-Individual Data Projects
-```
-
-When a project reveals a generalizable weakness, the lesson should become reusable system knowledge, a decision framework, a behavioral regression test, or an architectural revision rather than remaining a local patch.
 
 ## Development philosophy
 
@@ -267,6 +293,4 @@ every piece of orchestration machinery is automatically justified.
 
 The current stance is empirical:
 
-> **Build only the system mechanisms that demonstrably improve the reliability, coverage, efficiency, reuse, or human-navigation burden of real data-science work beyond what strong simpler workflows already achieve.**
-
-Prototype V0 is the first concrete example of that philosophy: a more elaborate treatment was allowed to lose, and the result is now an architectural constraint for what comes next.
+> **Build only the system mechanisms that demonstrably improve the reliability, coverage, efficiency, reuse, traceability, professional usability, or human-navigation burden of real data-science work beyond what strong simpler workflows already achieve.**
