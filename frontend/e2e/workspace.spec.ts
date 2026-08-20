@@ -7,7 +7,7 @@ test.describe('ADS V1 frontend spike', () => {
 
     await expect(page.getByRole('heading', { name: 'Customer Churn Prediction' })).toBeVisible()
     await expect(page.getByText('Resolve prediction moment').first()).toBeVisible()
-    await expect(page.getByText('Required / blocking').first()).toBeVisible()
+    await expect(page.locator('.method-status.blocking').first()).toContainText('Required / blocking')
     await expect(page.getByRole('navigation', { name: 'Workspace' })).toBeVisible()
     await expect(page.getByRole('complementary', { name: 'Methodological guidance' })).toBeVisible()
   })
@@ -34,9 +34,10 @@ test.describe('ADS V1 frontend spike', () => {
   test('approval action updates run state through the interaction boundary', async ({ page }) => {
     await page.goto('/')
 
-    await expect(page.getByText('Approval required')).toBeVisible()
-    await page.getByRole('button', { name: /Approve & run/i }).click()
-    await expect(page.getByText('Approval required')).toHaveCount(0)
+    const approveButton = page.getByRole('button', { name: /Approve & run/i })
+    await expect(approveButton).toBeVisible()
+    await approveButton.click()
+    await expect(page.getByRole('button', { name: /Approve & run/i })).toHaveCount(0)
     await expect(page.getByText('2 running')).toBeVisible()
   })
 
