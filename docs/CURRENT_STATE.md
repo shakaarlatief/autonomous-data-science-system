@@ -1,10 +1,10 @@
 # Current State
 
-**Checkpoint:** 113  
+**Checkpoint:** 114  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, implementation requirements, V1 architecture selection, accepted technical architecture, architecture falsification, and persistence-tooling selection, and reproducible Python project/dependency tooling are complete; the first production V1 persistence foundation is the active task  
+**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, V1 architecture, persistence tooling, Python project tooling, and the first production persistence vertical slice are implemented/validated to their current scope; representative knowledge interchange and retrieval-quality design are now the active boundary  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Execution mode:** V1 persistence/retrieval architecture and persistence tooling are accepted and validated; broad product implementation remains deferred while the first production-quality persistence vertical slice is built and tested
+**Execution mode:** The first real V1 persistence path is production code and has passed SQLite/Linux/Windows/PostgreSQL integration gates; broad product implementation remains deliberately bounded while real methodological knowledge and retrieval are made testable
 
 ## Active ChatGPT development context
 
@@ -212,7 +212,7 @@ retrieval recall, or fusion algorithm.
 
 ## Accepted V1 persistence tooling
 
-D-029 and Specification 002 now select:
+D-029 and Specification 002 select:
 
 ```text
 SQLAlchemy Core 2.0 stable series
@@ -228,52 +228,15 @@ raw DBAPI / driver SQL
     narrow adapter-specific use only
 ```
 
-Current accepted tooling specification:
+Sources:
 
 ```text
 docs/specifications/002_v1_persistence_tooling_standard.md
-```
-
-Selection rationale and research:
-
-```text
 docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
-```
-
-Dual-backend evidence:
-
-```text
-experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py
 experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
-.github/workflows/v1-persistence-tooling-spike.yml
 ```
 
-The CI spike passed on SQLite and PostgreSQL 18:
-
-```text
-SQLALCHEMY_CORE=PASS
-ALEMBIC_MIGRATION=PASS
-PORTABLE_UUID=PASS
-TRANSACTION_BOUNDARY=PASS
-DIALECT_SPECIFIC_DDL_ISOLATION=PASS
-TOOLING_SPIKE_RESULT=PASS
-```
-
-Important implementation consequences:
-
-```text
-Core MetaData describes the current relational schema.
-Alembic revisions are the authoritative production schema-evolution path.
-Autogenerate may assist but every migration requires human/code review.
-Constraint naming is mandatory.
-SQLite STRICT migrations must preserve STRICT explicitly during table recreation.
-SQLite UUIDs use canonical hyphenated TEXT through a dialect-aware adapter;
-PostgreSQL uses native UUID.
-Backend-specific PRAGMAs/FTS remain inside persistence/index adapters or migrations.
-```
-
-SQLAlchemy 2.1 remains beta at this checkpoint, so V1 stays on the stable 2.0 API line until an explicit later review.
-
+The dual-backend tooling gate passed on SQLite and PostgreSQL 18.
 
 ## Accepted V1 Python project/dependency tooling
 
@@ -298,36 +261,95 @@ docs/checkpoints/113_v1_python_project_tooling_validated.md
 experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
 ```
 
+## First production V1 persistence vertical slice
+
+Checkpoint 114 records the first real production application path behind Specifications 001-003.
+
+Implemented package structure:
+
+```text
+src/ads_system/domain/
+src/ads_system/application/
+src/ads_system/infrastructure/persistence/
+migrations/
+tests/integration/
+```
+
+The bounded slice implements and tests:
+
+```text
+stable KnowledgeAsset identity
+immutable KnowledgeRevision history
+governance/current accepted revision
+KnowledgeComponent tied to an exact parent asset revision
+KnowledgeRelation + relation revision/current pointer
+Conditional KnowledgeRule owned by an exact knowledge revision
+Project + Finding persistence
+exact Finding -> historical knowledge revision references
+SQLAlchemy UnitOfWork transaction boundary
+real Alembic base migration
+```
+
+The production integration gate passed:
+
+```text
+SQLite / Ubuntu        PASS
+SQLite / Windows       PASS
+PostgreSQL 18          PASS
+```
+
+The scenario explicitly proves that after Random Forest R2 is published, a historical project Finding that used R1 still points to and reconstructs R1. It also verifies relational rejection of a cross-project reference mismatch.
+
+Evidence:
+
+```text
+docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
+experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
+.github/workflows/v1-persistence-vertical-slice.yml
+migrations/versions/0001_v1_persistence_core.py
+tests/integration/test_persistence_vertical_slice.py
+```
+
+This is evidence that the accepted architecture can support its central history/provenance semantics in production code. It is not evidence that the full methodological brain is implemented.
 
 ## Current implementation stage
 
-The architecture family, technical seam, SQL toolkit, and migration framework are now selected with executable SQLite/PostgreSQL evidence.
+The persistence foundation has now crossed from architecture/spike work into a validated production vertical slice.
 
-Do **not** implement the entire product schema or frontend at once.
+Do **not** respond by materializing the entire future schema or choosing an embedding model from intuition.
 
-The active task is the first **production-quality V1 persistence vertical slice** behind Specifications 001 and 002.
+The next boundary is to connect the persistence substrate to representative reusable methodological knowledge and make retrieval quality measurable.
 
-It should define and implement the smallest coherent durable core that proves the real application boundary:
+Preferred sequence:
 
 ```text
-system schema/migration metadata
-knowledge node / asset / immutable revision / governance
-knowledge component / relation / rule
-project identity + the minimum epistemic objects required by the slice
-exact project -> knowledge revision references
-repository ports + application UnitOfWork boundary
-SQLite connection factory/adapter contract
-first Alembic base migration
-SQLite integration tests
-PostgreSQL portability CI
+1. define a deterministic human-readable knowledge interchange/authoring contract;
+2. encode a small representative real knowledge corpus from the methodological examples already studied;
+3. import/export that corpus through the production revision/governance path;
+4. define retrieval-quality fixtures, including required hits and unacceptable omissions;
+5. implement production lexical retrieval;
+6. evaluate semantic-retrieval candidates before selecting an embedding model/reranker;
+7. build the first real MethodologicalHorizon path only after retrieval behavior is measurable.
 ```
 
-The implementation should remain bounded enough that architecture defects are cheap to correct.
+This should preserve the distinction:
 
-## Still intentionally unselected
+```text
+operational database authority
+    !=
+human-readable deterministic representation
+    !=
+derived lexical/semantic indexes
+```
+
+## Still intentionally unselected or incomplete
 
 ```text
 complete production schema for every Foundation 018 object
+full Foundation 020 knowledge-schema coverage
+knowledge interchange/authoring format
+UUIDv7 generator implementation
+production FTS/index implementation
 embedding model/provider
 lexical/semantic fusion algorithm
 reranker
@@ -374,13 +396,16 @@ docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_su
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
 docs/specifications/001_v1_sqlite_technical_architecture.md
 docs/specifications/002_v1_persistence_tooling_standard.md
-docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
 experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
 experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
+experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
+experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Implement the first production V1 persistence vertical slice using SQLAlchemy Core + Alembic behind Specifications 001/002, with SQLite as the V1 operational store and retained PostgreSQL portability tests. Keep the slice small enough to falsify remaining implementation assumptions before broad product construction.**
+**Define the deterministic reusable-knowledge interchange/authoring contract and a small representative real methodological corpus, then use that corpus to create the first retrieval-quality benchmark before selecting a production embedding model or broader methodological-horizon implementation.**
