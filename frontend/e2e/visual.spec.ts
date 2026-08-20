@@ -8,7 +8,6 @@ test.describe('ADS V1 visual regression', () => {
     viewport: { width: 1440, height: 900 },
     deviceScaleFactor: 1,
     colorScheme: 'light',
-    reducedMotion: 'reduce',
     locale: 'en-US',
     timezoneId: 'UTC',
   })
@@ -17,6 +16,7 @@ test.describe('ADS V1 visual regression', () => {
     await page.addInitScript(() => {
       window.localStorage.setItem('ads-theme', 'light')
     })
+    await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' })
   })
 
   test('overview workspace remains visually stable', async ({ page }) => {
