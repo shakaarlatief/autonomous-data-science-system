@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-20  
 **Status:** Candidate V1 frontend interaction specification v0.2 after first and second human review; executable interaction gate passed, immersive-scale human gate remains open  
-**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, immersive chrome, and true fullscreen described in Research 002 through Research 004 and Checkpoints 117 through 118  
+**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, immersive chrome, and true fullscreen described in Research 002 through Research 004 and Checkpoints 117 through 119  
 **Design session:** 02  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 02 - Methodological Brain & Knowledge Units
