@@ -1,10 +1,10 @@
 # Current State
 
-**Checkpoint:** 114  
+**Checkpoint:** 116  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; product vision, project object model, methodological-navigation architecture, reusable-knowledge representation, V1 architecture, persistence tooling, Python project tooling, and the first production persistence vertical slice are implemented/validated to their current scope; representative knowledge interchange and retrieval-quality design are now the active boundary  
+**Development stage:** Prototype V0 complete; post-V0 product/object/methodological-knowledge architecture accepted; V1 persistence foundation and reusable-knowledge interchange implemented to their tested scopes; agent-runtime selection and professional frontend product shell are now explicit parallel evaluation tracks while the governed PostgreSQL round-trip remains open pending corrected confirmation  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Execution mode:** The first real V1 persistence path is production code and has passed SQLite/Linux/Windows/PostgreSQL integration gates; broad product implementation remains deliberately bounded while real methodological knowledge and retrieval are made testable
+**Execution mode:** Build bounded professional product slices and falsification gates. Prefer standards/existing infrastructure for agent/runtime/interoperability responsibilities, but keep ADS domain/project semantics independent and authoritative.
 
 ## Active ChatGPT development context
 
@@ -16,9 +16,13 @@ Session title: 02 - Methodological Brain & Knowledge Units
 
 Repository artifacts remain authoritative across chats.
 
+---
+
 ## Current product goal
 
-The Autonomous Data Science System should be a professional interactive data-science environment that carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden while preserving strong human inspection, discussion, override, editing, execution, and guidance.
+The Autonomous Data Science System should become a professional interactive data-science operating environment that carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden while preserving strong human inspection, discussion, override, editing, execution, and guidance.
+
+The frontend is part of that product architecture rather than a cosmetic layer. The target is now explicitly a modern, visually excellent, premium professional analytical application with strong typography, information hierarchy, dark/light themes, accessibility, responsive professional desktop layouts, polished loading/error/empty states, and high-quality analytical visualization.
 
 Primary product sources:
 
@@ -26,13 +30,14 @@ Primary product sources:
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
+
+---
 
 ## Prototype V0 constraint
 
 Prototype V0 strongly falsified the then-current P0 implementation strategy.
-
-Key result:
 
 ```text
 B1 targeted mean: 1.73
@@ -60,6 +65,8 @@ Authoritative evidence:
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
+
+---
 
 ## Project object model and methodological brain
 
@@ -111,7 +118,7 @@ large global knowledge base
     -> selective task-specific LLM context
 ```
 
-Foundation 020 promotes the reusable-knowledge representation:
+Foundation 020 promotes:
 
 ```text
 KnowledgeAsset
@@ -126,260 +133,361 @@ ExecutionCapability
 Derived Views
 ```
 
-Promoted principles:
+Promoted methodological representation principles:
 
 ```text
-P-025  Reusable knowledge identity/granularity is separate from reasoning function.
-P-026  Static methodological relationships are separate from conditional guidance rules.
+P-025  knowledge identity/granularity != reasoning function
+P-026  static relationships != conditional guidance rules
 ```
 
-## Technology-neutral implementation requirements
+---
 
-Checkpoint 107 defines 59 requirements covering stable identity/revisions, component provenance, relation traversal, tri-valued rules, semantic retrieval, project-state lookup, methodological-horizon construction, exact revision references, governance, selective context assembly, backup, integrity, and portability.
+## Accepted V1 persistence architecture and tooling
 
-Source:
+Accepted decisions/specifications:
 
 ```text
-docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
+D-028 + Specification 001
+    SQLite-centered local-first operational architecture
+    FTS5 rebuildable lexical index
+    rebuildable embeddings / initial exact semantic retrieval
+    app-level rule evaluator
+    selective context assembly
+    filesystem/Git/artifact storage outside DB
+
+D-029 + Specification 002
+    SQLAlchemy Core 2.0 stable series
+    Alembic 1.x migrations
+
+D-030 + Specification 003
+    pyproject.toml
+    uv 0.12.5 + committed uv.lock
+    uv_build
+    src/ads_system
+    Python >=3.12
 ```
 
-## Accepted V1 architecture family
+PostgreSQL + pgvector remains the preferred first persistence/semantic migration family if real requirements exceed the SQLite envelope.
 
-D-028 accepts a SQLite-centered local-first V1 architecture:
+The first production persistence vertical slice in Checkpoint 114 passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical knowledge-revision pinning for project Findings.
+
+---
+
+## Accepted reusable-knowledge interchange
+
+Checkpoint 115 validated the heterogeneous reusable-knowledge bundle under KI-01 through KI-10.
+
+The previously pending promotion is now complete:
 
 ```text
-SQLite operational store
-    reusable knowledge metadata/state
-    project metadata/state
-    relations / rules / provenance / governance
-    exact project-to-knowledge references
-    execution-capability metadata
+D-031
+Specification 004 v1.0
+```
 
-SQLite FTS5
-    rebuildable lexical index
+Accepted interchange:
 
-rebuildable embeddings
-    initial in-process exact semantic retrieval
+```text
+standard JSON
++ JSON Schema Draft 2020-12
++ application-level semantic validation
++ deterministic normalization/serialization
+```
 
-application-layer rule evaluator
+Authority model:
+
+```text
+operational database
+    authoritative runtime state
+
+interchange JSON
+    human-reviewable / storage-neutral representation
+
+FTS / embeddings / caches
+    rebuildable derived state
+```
+
+Governance requirement:
+
+```text
+CANDIDATE_SET / BENCHMARK_FIXTURE
+    cannot silently create accepted methodological authority
+
+ACCEPTED_SNAPSHOT
+    trusted restore/bootstrap/migration path
+```
+
+Sources:
+
+```text
+docs/DECISIONS.md, D-031
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
+experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
+```
+
+---
+
+## Governed persistence round-trip status
+
+A richer governed knowledge round-trip path is implemented, including:
+
+```text
+candidate import
+explicit acceptance
+accepted-current pointers
+accepted snapshot export
+provenance
+relation governance
+collections
+migration 0002
+historical project revision pinning
+```
+
+Current confirmed gate state:
+
+```text
+SQLite roundtrip
+    PASS
+
+first PostgreSQL 18 roundtrip
+    FAIL
+```
+
+The PostgreSQL failure is understood and localized. Migration 0002 used a manually named foreign-key constraint longer than PostgreSQL's 63-character identifier limit.
+
+Fix committed:
+
+```text
+ba6a92f83aac3a63ebfb7f97a4378c93fa28547b
+Shorten interchange migration identifiers for PostgreSQL
+```
+
+Status tracing improvement:
+
+```text
+a69b8859696fbd3b45124c257d085989d692a207
+Make roundtrip gate status traceable to source commit
+```
+
+At Checkpoint 116, a corrected PostgreSQL PASS has not yet been persisted and confirmed. Do not call the governed round-trip complete until that happens.
+
+Temporary diagnostic artifacts/workflow should be removed after final resolution.
+
+---
+
+## 2026 agentic ecosystem architecture audit
+
+A current external-ecosystem audit has now been completed:
+
+```text
+docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+```
+
+Main conclusion:
+
+```text
+ADS project/domain/methodological semantics
+    are durable product architecture
+
+agent frameworks / MCP / A2A / AG-UI / runtime checkpointing
+    are infrastructure and interoperability mechanisms
+```
+
+These should not be conflated.
+
+New principles:
+
+```text
+P-027
+Agent frameworks and interoperability protocols are infrastructure,
+not ADS domain authority.
+
+P-028
+Prefer deterministic software for explicit work and agent reasoning
+for genuine ambiguity.
+
+P-029
+The product interface is a first-class reasoning, control, and
+quality surface.
+```
+
+### MCP
+
+Treat MCP as a first-class candidate external tool/resource integration boundary, not as project memory or an internal application bus. Current 2026 MCP architecture has changed materially and new code should not depend on deprecated Roots, Sampling, or Logging behavior.
+
+### A2A
+
+Deferred until ADS actually needs independently deployed remote agent systems.
+
+### AG-UI
+
+Evaluate in the frontend spike as an adapter around ADS-owned interaction/run events. Do not make it the domain event model.
+
+---
+
+## Agent-runtime evaluation track
+
+No agent framework, LLM provider, or multi-agent architecture is accepted yet.
+
+Candidate evaluation contract:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+```
+
+First-round candidates:
+
+```text
+OpenAI Agents SDK
+LangGraph
+Microsoft Agent Framework
+Google ADK 2.0
+```
+
+Pydantic AI / Pydantic Graph remains a watchlist candidate.
+
+Mandatory bakeoff areas include:
+
+```text
+domain isolation
+single-agent tool loop
+current MCP integration
+human approval interruption
+durable resume after process boundary
+external ADS project-state authority
+context transparency
+cancellation/timeouts
+failure/retry semantics
+structured output
+observability
+provider/test substitution
+```
+
+Start with one principal reasoner. Multi-agent complexity must earn its place through evidence.
+
+A valid result remains using simpler direct model calls if no framework provides enough incremental value.
+
+---
+
+## Professional frontend track
+
+Foundation 021 makes the frontend an active parallel V1 track.
+
+Candidate technical/visual evaluation contract:
+
+```text
+docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+```
+
+Leading hypothesis:
+
+```text
+React
+TypeScript
+Vite
+TanStack Router
+TanStack Query
+TanStack Table v9
+shadcn/ui source-distributed components
+ADS-owned design tokens / visual language
+Playwright
+Vitest
+```
+
+This is not yet accepted as the final frontend stack.
+
+Current evidence favors Vite over Next.js for the V1 shell because ADS is local-first, Python-backed, highly interactive, and has no demonstrated SEO/server-rendering requirement. The spike may reopen that decision if it exposes a missing capability.
+
+Chart strategy remains open:
+
+```text
+ECharts
+vs
+Plotly
+```
+
+They will be compared on the same ADS analytical examples.
+
+Tauri 2 remains a later desktop-packaging candidate after the normal browser shell and Python service boundary are stable.
+
+The first frontend should be visually serious rather than a disposable dashboard. It should test Overview, Data, EDA, Decisions/History, methodological statuses, Question/Finding/Decision representations, run/activity state, one approval interaction, light/dark themes, loading/error/offline states, accessibility, responsive widths, and controlled visual regression screenshots.
+
+---
+
+## Retrieval/horizon track remains active
+
+The agent/frontend audit changes sequencing but does not remove retrieval from the methodological brain.
+
+Still required:
+
+```text
+retrieval-quality fixtures
+production lexical retrieval
+semantic retrieval candidate evaluation
+lexical/semantic fusion if justified
+first real MethodologicalHorizon construction
 selective LLM context assembly
-
-filesystem / Git / artifact storage
-    project code and large artifacts outside SQLite
 ```
 
-PostgreSQL + pgvector remains the preferred first migration family if the SQLite envelope is exceeded.
+Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
 
-Architecture comparison:
+The representative reusable-knowledge corpus should become a retrieval benchmark only after the governed persistence/interchange seam is stable enough that fixture changes are not competing with migration debugging.
 
-```text
-docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
-docs/DECISIONS.md, D-028
-```
-
-## Accepted V1 technical architecture
-
-Specification 001 is the accepted V1 persistence/retrieval technical contract:
-
-```text
-docs/specifications/001_v1_sqlite_technical_architecture.md
-```
-
-The committed architecture gate passed:
-
-```text
-FT-01 through FT-11   PASS on SQLite
-FT-12                 PASS on PostgreSQL 18
-```
-
-Evidence:
-
-```text
-experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
-experiments/architecture_spikes/v1_schema_spike.sql
-experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
-experiments/architecture_spikes/v1_postgres_portability_spike.py
-docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
-```
-
-Important boundary:
-
-```text
-FT-05 validates the retrieval architecture seam only.
-It does not validate the eventual embedding model, reranker,
-retrieval recall, or fusion algorithm.
-```
-
-## Accepted V1 persistence tooling
-
-D-029 and Specification 002 select:
-
-```text
-SQLAlchemy Core 2.0 stable series
-    primary V1 relational schema/query/transaction toolkit
-
-Alembic 1.x
-    authoritative production schema-migration history
-
-SQLAlchemy ORM
-    not the primary V1 domain/persistence model
-
-raw DBAPI / driver SQL
-    narrow adapter-specific use only
-```
-
-Sources:
-
-```text
-docs/specifications/002_v1_persistence_tooling_standard.md
-docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
-experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
-```
-
-The dual-backend tooling gate passed on SQLite and PostgreSQL 18.
-
-## Accepted V1 Python project/dependency tooling
-
-D-030 and Specification 003 select:
-
-```text
-standards-based pyproject.toml
-uv 0.12.5
-committed cross-platform uv.lock
-uv_build for the current pure-Python package
-src/ads_system source layout
-Python >=3.12
-```
-
-The committed CI gate passed on Linux and Windows under Python 3.12, 3.13, and 3.14 and verified locked synchronization, tests, package building, and PEP 751 `pylock.toml` export.
-
-Sources:
-
-```text
-docs/specifications/003_v1_python_project_and_dependency_tooling.md
-docs/checkpoints/113_v1_python_project_tooling_validated.md
-experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
-```
-
-## First production V1 persistence vertical slice
-
-Checkpoint 114 records the first real production application path behind Specifications 001-003.
-
-Implemented package structure:
-
-```text
-src/ads_system/domain/
-src/ads_system/application/
-src/ads_system/infrastructure/persistence/
-migrations/
-tests/integration/
-```
-
-The bounded slice implements and tests:
-
-```text
-stable KnowledgeAsset identity
-immutable KnowledgeRevision history
-governance/current accepted revision
-KnowledgeComponent tied to an exact parent asset revision
-KnowledgeRelation + relation revision/current pointer
-Conditional KnowledgeRule owned by an exact knowledge revision
-Project + Finding persistence
-exact Finding -> historical knowledge revision references
-SQLAlchemy UnitOfWork transaction boundary
-real Alembic base migration
-```
-
-The production integration gate passed:
-
-```text
-SQLite / Ubuntu        PASS
-SQLite / Windows       PASS
-PostgreSQL 18          PASS
-```
-
-The scenario explicitly proves that after Random Forest R2 is published, a historical project Finding that used R1 still points to and reconstructs R1. It also verifies relational rejection of a cross-project reference mismatch.
-
-Evidence:
-
-```text
-docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
-experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
-.github/workflows/v1-persistence-vertical-slice.yml
-migrations/versions/0001_v1_persistence_core.py
-tests/integration/test_persistence_vertical_slice.py
-```
-
-This is evidence that the accepted architecture can support its central history/provenance semantics in production code. It is not evidence that the full methodological brain is implemented.
-
-## Current implementation stage
-
-The persistence foundation has now crossed from architecture/spike work into a validated production vertical slice.
-
-Do **not** respond by materializing the entire future schema or choosing an embedding model from intuition.
-
-The next boundary is to connect the persistence substrate to representative reusable methodological knowledge and make retrieval quality measurable.
-
-Preferred sequence:
-
-```text
-1. define a deterministic human-readable knowledge interchange/authoring contract;
-2. encode a small representative real knowledge corpus from the methodological examples already studied;
-3. import/export that corpus through the production revision/governance path;
-4. define retrieval-quality fixtures, including required hits and unacceptable omissions;
-5. implement production lexical retrieval;
-6. evaluate semantic-retrieval candidates before selecting an embedding model/reranker;
-7. build the first real MethodologicalHorizon path only after retrieval behavior is measurable.
-```
-
-This should preserve the distinction:
-
-```text
-operational database authority
-    !=
-human-readable deterministic representation
-    !=
-derived lexical/semantic indexes
-```
+---
 
 ## Still intentionally unselected or incomplete
 
 ```text
-complete production schema for every Foundation 018 object
-full Foundation 020 knowledge-schema coverage
-knowledge interchange/authoring format
-UUIDv7 generator implementation
-production FTS/index implementation
+agent runtime
+number of agents
+LLM provider/model
+MCP server catalog
+A2A
+AG-UI
+frontend final stack
+chart library
+Tauri desktop packaging
+backend HTTP/API framework
+production FTS implementation
 embedding model/provider
-lexical/semantic fusion algorithm
+lexical/semantic fusion
 reranker
-LLM provider
-frontend/API framework
-job queue
+complete Foundation 018 production schema
 artifact-storage backend
-cloud deployment
-async persistence
+job queue/cloud deployment
 ```
 
-These should be selected only when their requirements become concrete.
+These are now attached to explicit requirements or planned spikes rather than being open-ended technology questions.
 
-## Continuity status
+---
 
-Active session:
+## Near-term execution order
+
+Three active bounded tracks:
 
 ```text
-Design session: 02
-ChatGPT project: Autonomous Data Science System
-Session title: 02 - Methodological Brain & Knowledge Units
+A. GOVERNED ROUNDTRIP CLOSURE
+   confirm corrected PostgreSQL 18 gate
+   fix any remaining portability defect honestly
+   remove temporary diagnostics
+   close with dedicated checkpoint only on confirmed PASS
+
+B. AGENT RUNTIME BAKEOFF
+   implement Specification 005 representative workload
+   begin single-agent first
+   compare surviving runtimes against actual ADS requirements
+
+C. FRONTEND PRODUCT SPIKE
+   implement Specification 006 shell from typed deterministic mock state
+   establish real design system and professional visual character
+   test accessibility/visual states
+   compare chart systems
+   evaluate AG-UI mapping without domain coupling
 ```
 
-Current preservation contract:
+Retrieval benchmark work follows in parallel once the knowledge seam is stable.
 
-```text
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
-docs/checkpoints/README.md
-```
+---
 
 ## Minimum reading for continuation
 
@@ -388,24 +496,32 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/DECISIONS.md
+docs/PRINCIPLES.md
+
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
-docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+
+docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+
 docs/specifications/001_v1_sqlite_technical_architecture.md
 docs/specifications/002_v1_persistence_tooling_standard.md
 docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+
 docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
-experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
-experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
-experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
-experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
+docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
+docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
+
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Define the deterministic reusable-knowledge interchange/authoring contract and a small representative real methodological corpus, then use that corpus to create the first retrieval-quality benchmark before selecting a production embedding model or broader methodological-horizon implementation.**
+**Close the corrected governed PostgreSQL round-trip honestly, then begin the Specification 005 agent-runtime bakeoff and Specification 006 professional frontend visual/technical spike as parallel bounded V1 tracks. Keep retrieval-quality work evidence-driven and do not introduce multi-agent, vector, or orchestration complexity before it earns its place.**
