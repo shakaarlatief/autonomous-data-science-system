@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 104  
+**Checkpoint:** 106  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, five-example reusable-knowledge stress test, first candidate conceptual representation, checkpoint/session-provenance repair, and first adversarial representation review completed; a second representation stress test is the active design task  
+**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, reusable-knowledge stress tests, adversarial representation review, and Foundation 020 methodological-knowledge representation architecture completed; implementation-requirements derivation is the active design task  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
@@ -73,17 +73,6 @@ docs/experiments/prototype_v0/FINAL_RESULTS.md
 
 ## Professional interactive workspace
 
-A new project should eventually begin by supplying available sources such as:
-
-```text
-assignment / project brief
-datasets
-README / documentation
-existing notebooks or baseline code
-business/domain documents
-other relevant artifacts
-```
-
 The system should initialize a professional project workspace rather than immediately produce a final answer.
 
 Useful user-facing areas may include:
@@ -105,7 +94,11 @@ History
 
 These are views, not a rigid analytical pipeline.
 
-The system should reduce the need for the human to repeatedly remember every useful analysis or methodological question.
+Primary product source:
+
+```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+```
 
 ## Candidate project object model
 
@@ -118,13 +111,12 @@ EVENTS
 VIEWS
 ```
 
-Candidate objects include:
+Candidate project objects include:
 
 ```text
 Project / IntentItem
 Artifact / Dataset / Variable
 Question / Assumption / Finding / Claim
-Method / methodological knowledge
 Proposal / Investigation / Run / Evidence / Decision
 Report / ReportSection
 Event / Relation
@@ -142,13 +134,24 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-Detailed product-model reasoning:
+Primary source:
 
 ```text
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-The first adversarial knowledge-representation review currently favors **not** adding a new top-level `Assessment` object. A subject-specific methodological verdict should first be tested as a structured criterion-assessment subtype/facet of `Finding`, with unresolved state remaining a `Question` and action remaining a `Decision`.
+The reusable-knowledge stress tests did **not** justify a new top-level `Assessment` object. The current preferred pattern is:
+
+```text
+Question
+    -> Evidence
+    -> Finding
+        optional structured criterion-Finding facet
+    -> Claim when needed
+    -> Decision
+```
+
+Unresolved criterion state remains a Question.
 
 ## Professional developer workflow
 
@@ -177,17 +180,13 @@ P-023  The system should complement the professional developer workbench rather 
 P-024  Generated project code should remain independently runnable and professionally maintainable.
 ```
 
-System-triggered and manually triggered executions should preferentially share the same reproducible command/configuration contract.
-
-Git/GitHub should be first-class source-versioning and provenance infrastructure, while large datasets/models/arrays may live in separate artifact storage.
-
-Local-first execution is a strong current hypothesis for typical projects, not yet a universal architecture decision.
+Local-first execution remains a strong hypothesis for typical projects, not a universal architecture decision.
 
 ## Methodological-navigation brain
 
-The current promoted design hypothesis is broader than a method catalog.
+Foundation 019 governs the current relevance architecture.
 
-Reusable knowledge may include:
+The methodological brain is broader than a method catalog and may contain:
 
 ```text
 methods
@@ -200,7 +199,7 @@ interpretation knowledge
 follow-up / dependency knowledge
 ```
 
-The main relevance progression is:
+Relevance progression:
 
 ```text
 KNOWN
@@ -210,9 +209,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The system should also explain why known options were not recommended.
-
-A key concept is the **methodological horizon**:
+The key scaling abstraction is the **methodological horizon**:
 
 ```text
 large global knowledge base
@@ -223,113 +220,78 @@ large global knowledge base
     -> required / recommended / relevant / not now
 ```
 
-The horizon should change as project facts and findings change.
-
-Recommendation reasoning should remain inspectable through project signals, applicable knowledge areas, alternatives, cost, risk, information value, downstream impact, and human preferences.
-
-Knowledge units should retain scope/provenance/maturity/counterexamples where appropriate, and the system should remain open-world by allowing flexible reasoning to surface important concerns missing from the explicit catalog.
-
-Detailed promoted reasoning:
+Primary source:
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
-## Representation work completed so far
+## Promoted reusable methodological-knowledge representation
 
-The original five-example exercise studied:
+Foundation 020 is now the promoted source for the reusable methodological-knowledge representation architecture.
+
+It was promoted only after:
 
 ```text
-Histogram
-Missing-data investigation
-Temporal validation
-Random Forest
-Prediction-time feature eligibility
+five heterogeneous original examples
+Checkpoint 102 first explicit representation contract
+Checkpoint 104 adversarial review
+Checkpoint 105 refined second stress test
+an additional Class Imbalance generalization example
 ```
 
-Checkpoint 102 then proposed the first explicit candidate representation based on:
+Current conceptual representation:
 
 ```text
 KnowledgeAsset
-KnowledgeRelation
-KnowledgeCollection
-project-specific application/instantiation
-ExecutionCapability
-Views
-```
-
-with one semantic-role vocabulary and an asset-versus-facet granularity rule.
-
-The first adversarial review in Checkpoint 104 found that this contract should **not** be promoted unchanged.
-
-The strongest surviving architectural separations are:
-
-```text
-global reusable knowledge
-    != project-specific state
-
-methodological meaning
-    != execution implementation
-
-internal representation
-    != human-facing workflow/view
-
-evidence requirement
-    != method used to satisfy it
-
-relevance/applicability state
-    != project-object lifecycle state
-```
-
-## Refined candidate knowledge representation after adversarial review
-
-The active hypothesis is now:
-
-```text
-KnowledgeAsset
-    small common semantic/governance envelope
     stable identity + revision identity
-    intrinsic asset kind
-    optional reasoning functions/traits
-    optional retrieval/applicability structures
+    intrinsic kind
+    optional reasoning functions
+    optional retrieval/applicability/context structures
 
 KnowledgeComponent
-    typed stable sub-identity inside an asset
-    provenance/version/relations where useful
-    not independently retrieved by default
+    stably identifiable sub-knowledge when needed
 
 NarrativeFacet
     non-addressable explanatory content
 
 KnowledgeRelation
     stable semantic relationship
-    typed, scoped, provenance-aware
 
 Conditional KnowledgeRule
     guarded methodological implication
-    can be a standalone RULE asset or embedded component
+    standalone or component
 
 KnowledgeCollection
-    organizational/navigation grouping only
+    organizational/navigation grouping
 
-Project objects from Foundation 018
-    reference or are influenced by global knowledge revisions
-    without one universal KnowledgeInstance
+Project objects
+    reference / instantiate / are constrained or informed by
+    global knowledge revisions without one universal KnowledgeInstance
 
 Criterion Finding
-    structured Finding subtype/facet for subject-specific verdicts
-    instead of a new universal Assessment object
+    structured project Finding form for subject-specific verdicts
 
 ExecutionCapability
-    remains separate from methodological meaning
+    separate implementation bridge
 
 Views
-    derived from global knowledge + project state + evidence
+    derived navigation and explanation over knowledge + project state
 ```
 
-The previous single semantic-role field appears too rigid because it mixed intrinsic object form with reasoning function. The refined hypothesis separates these dimensions.
+Durable separations:
 
-A provisional intrinsic-kind vocabulary to challenge is:
+```text
+intrinsic knowledge kind != reasoning function
+asset != component != narrative facet
+static semantic relation != conditional methodological rule
+retrieval cue != applicability predicate != context requirement != project relevance
+methodological knowledge != execution implementation
+global knowledge != project-specific state
+internal representation != human-facing decision tree/workspace view
+```
+
+Provisional intrinsic kinds remain:
 
 ```text
 CONCEPT
@@ -340,84 +302,71 @@ RULE
 INVESTIGATION_PATTERN
 ```
 
-Candidate reasoning functions/traits include concepts such as:
+The exact taxonomy remains open.
+
+Promoted representation principles:
 
 ```text
-evidence requirement
-validity constraint
-interpretation guidance
-failure mode
-strategy / repair option
-human escalation
-claim limitation
-follow-up trigger
+P-025  Reusable knowledge identity and granularity should be separate from reasoning function.
+P-026  Static methodological relationships and conditional guidance rules should remain distinct.
 ```
 
-The exact vocabulary is not settled.
-
-The review also found that pairwise relations should not be overloaded with conditional decision logic. Small guarded methodological rules are needed to express branch semantics such as those in `Missing_Data.md`, while stable semantic relationships remain `KnowledgeRelation`s.
-
-Retrieval and applicability should be separated conceptually into:
+Primary source:
 
 ```text
-RetrievalProfile
-ApplicabilitySpec
-ContextRequirements
-SemanticChecks
-project-specific relevance assessment
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-The full adversarial findings and rationale are preserved in:
+Historical design evidence:
 
 ```text
+docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
 docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
 docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
+docs/checkpoints/105_refined_representation_second_stress_test.md
+docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
 ```
-
-Foundation 020 is intentionally deferred.
 
 ## Current design stage
 
 Do **not** implement V1 yet.
 
-The next task is a second representation stress test using the refined primitives rather than further abstract elaboration.
+The conceptual knowledge representation is now promoted. The next legitimate task is to derive **implementation requirements** from Foundations 018, 019, and 020 before comparing technologies.
 
-The pass should:
+The requirements exercise should identify what the implementation actually needs for:
 
 ```text
-1. reconstruct the Missing_Data.md navigation tree from questions,
-   facts, conditional rules, strategies, relations, and cross-cutting constraints;
-
-2. encode Temporal Validation with explicit separation among concepts,
-   validity rules, framework logic, and concrete validation methods;
-
-3. encode Prediction-Time Feature Eligibility through the
-   Question -> Evidence -> criterion Finding -> Decision chain;
-
-4. re-encode Histogram and Random Forest using the
-   Asset -> Component -> NarrativeFacet granularity model;
-
-5. add at least one deliberately new methodological concern outside
-   the original five examples to test whether the revised representation
-   is overfitted to the stress-test set;
-
-6. verify that conditional rules are expressive enough for useful
-   navigation without becoming a giant deterministic workflow language;
-
-7. only after that pass decide whether the refined contract is mature
-   enough for Foundation 020.
+1. stable knowledge identity and recoverable revision history;
+2. component addressing and component-level provenance;
+3. typed relation lookup and traversal;
+4. conditional-rule storage/evaluation;
+5. semantic retrieval and methodological-horizon construction;
+6. project-state Definition/Question/Finding lookup for applicability/rules;
+7. provenance and historical reconstruction;
+8. selective LLM context assembly;
+9. human navigation/search/browse;
+10. mutation, review, supersession, conflict, and governance;
+11. expected scale, concurrency, latency, local/offline, and portability needs;
+12. boundaries among methodological knowledge, project state, execution metadata, and large artifacts.
 ```
 
-Do not choose a database, graph store, vector store, retrieval engine, rules engine, schema language, agent framework, or V1 backend during this challenge.
+For each requirement distinguish:
+
+```text
+MUST HAVE FOR V1
+VALUABLE LATER
+NOT YET JUSTIFIED
+```
+
+Do not select a database, graph store, vector store, retrieval engine, rules engine, schema language, agent framework, or backend until the requirement matrix is explicit.
 
 ## Continuity status
 
-The session rotation recommended by Checkpoint 099 has been completed. The active design work is now occurring in the `02 - Methodological Brain & Knowledge Units` session using the repository-first continuation method.
-
-Historical rotation checkpoint:
+The active work remains in:
 
 ```text
-docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
+Design session: 02
+Session title: 02 - Methodological Brain & Knowledge Units
 ```
 
 Current preservation-method contract:
@@ -428,7 +377,7 @@ docs/CONTINUITY.md
 docs/checkpoints/README.md
 ```
 
-The checkpoint metadata repair is closed. Checkpoints `000` through `099` were normalized and validated in GitHub Actions commit `bae5b8d00fa5da16029afee790c1a6762dc6c0fc`. Checkpoints `100` through `102` were backfilled with Session 02 provenance in commit `ce6b029af78a33bb64f85377f5ff753f088ba190`. The current checkpoint contract requires the historical/authority core plus `Design session`, `ChatGPT project`, and `Session title`; see Checkpoint 103 and `docs/checkpoints/README.md`.
+The checkpoint metadata/session-provenance repair is closed under Checkpoint 103.
 
 ## Minimum reading for continuation
 
@@ -442,14 +391,13 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
-docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
-docs/checkpoints/103_checkpoint_metadata_normalization_and_session_provenance_closed.md
-docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/checkpoints/105_refined_representation_second_stress_test.md
+docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Run the second representation stress test using the refined Asset / Component / NarrativeFacet model, relation-versus-rule separation, revised applicability layers, and criterion-Finding project pattern. Include at least one new methodological concern outside the original five examples. Do not implement V1 yet.**
+**Derive the implementation-requirements matrix from Foundations 018, 019, and 020. Classify each requirement as V1 must-have, valuable later, or not yet justified. Only after that matrix is explicit should the project compare persistence, indexing, retrieval, rule-evaluation, and orchestration architecture options.**
