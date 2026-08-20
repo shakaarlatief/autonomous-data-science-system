@@ -2,7 +2,7 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-19
+**Last reviewed:** 2026-08-20
 
 ## Start here
 
@@ -90,8 +90,6 @@ living reports
 project replay evaluation
 ```
 
-EDA is the current concrete reference example.
-
 ---
 
 ## Product object model, developer workflow, VS Code, Git/GitHub, and execution
@@ -102,7 +100,7 @@ Primary source:
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-The candidate product model separates:
+The candidate project model separates:
 
 ```text
 OBJECTS
@@ -111,19 +109,18 @@ EVENTS
 VIEWS
 ```
 
-Candidate object families include:
+Candidate project objects include:
 
 ```text
 Project / IntentItem
 Artifact / Dataset / Variable
 Question / Assumption / Finding / Claim
-Method / methodological knowledge
 Proposal / Investigation / Run / Evidence / Decision
 Report / ReportSection
 Event / Relation
 ```
 
-Important distinctions:
+Important distinctions include:
 
 ```text
 Investigation != Run
@@ -134,6 +131,8 @@ current state != event history
 persisted object != derived recommendation
 workspace section != fundamental object
 ```
+
+The current representation work does **not** add a universal project `Assessment` object. Foundation 020 instead routes subject-specific criterion verdicts through the existing Question -> Evidence -> Finding -> Claim/Decision chain, with a structured criterion-Finding form where useful.
 
 Professional workflow principles:
 
@@ -159,32 +158,17 @@ Git + GitHub
 
 Generated consequential code should remain independently runnable, professional, and maintainable. System-triggered and manually triggered runs should preferentially share the same reproducible execution contract.
 
-Git/GitHub are first-class for source history and provenance, but not intended to store every large dataset or model artifact.
-
 ---
 
 ## Methodological-navigation brain and relevance architecture
 
-**Read first for the current design task:**
+Primary source:
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
-This is the current promoted source for how the system may transform broad reusable data-science knowledge into a project-specific methodological horizon.
-
-The brain is broader than a method registry. Candidate reusable knowledge types include:
-
-```text
-methods
-question templates
-decision frameworks
-invariants / hard rules
-failure modes
-investigation patterns
-interpretation knowledge
-follow-up / dependency knowledge
-```
+Foundation 019 governs how a large reusable knowledge universe may become a small project-specific methodological horizon.
 
 Current relevance progression:
 
@@ -196,7 +180,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-Important concepts:
+Important concepts include:
 
 ```text
 methodological horizon
@@ -212,21 +196,99 @@ open-world discovery of knowledge gaps
 
 The full global catalog should not be sent to the LLM. Project-specific retrieval should produce a small relevant slice.
 
-The next design exercise is to test the reusable representation against deliberately different examples:
+---
+
+## Reusable methodological knowledge representation architecture
+
+**Read first for the current architecture task:**
 
 ```text
-Histogram
-Missing-data investigation
-Temporal validation
-Random Forest
-Prediction-time feature eligibility
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-No V1 implementation stack has been accepted.
+Foundation 020 is the current promoted source for how reusable methodological knowledge should be represented conceptually.
+
+It was promoted only after:
+
+```text
+five heterogeneous original examples
+Checkpoint 102 first explicit contract
+Checkpoint 104 adversarial review
+Checkpoint 105 second reconstruction stress test
+an additional Class Imbalance example
+```
+
+Core representation direction:
+
+```text
+KnowledgeAsset
+    stable identity + revision identity
+    intrinsic kind
+    optional reasoning functions
+    optional retrieval/applicability/context structures
+
+KnowledgeComponent
+    stably identifiable sub-knowledge when needed
+
+NarrativeFacet
+    non-addressable explanatory content
+
+KnowledgeRelation
+    stable semantic relationship
+
+Conditional KnowledgeRule
+    guarded methodological implication
+    standalone or component
+
+KnowledgeCollection
+    organizational/navigation grouping
+
+Project object model
+    references / instantiates / is constrained or informed by
+    global knowledge revisions without one KnowledgeInstance type
+
+Criterion Finding
+    structured project Finding form for subject-specific verdicts
+
+ExecutionCapability
+    separate implementation bridge
+
+Views
+    derived navigation and explanation over knowledge + project state
+```
+
+Durable distinctions:
+
+```text
+intrinsic knowledge kind != reasoning function
+asset != identifiable component != narrative facet
+static semantic relation != conditional guidance rule
+retrieval cue != applicability predicate != required context != project relevance
+methodological knowledge != execution implementation
+global knowledge != project-specific object/state
+internal representation != human-facing decision tree/workspace view
+```
+
+Current representation principles:
+
+```text
+docs/PRINCIPLES.md, P-025 and P-026
+```
+
+Important historical design evidence:
+
+```text
+docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
+docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
+docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
+docs/checkpoints/105_refined_representation_second_stress_test.md
+```
+
+No physical schema, database, vector store, graph store, rules engine, retrieval engine, or backend has been selected.
 
 ---
 
-## Reusable knowledge foundations
+## Earlier reusable-knowledge foundations
 
 Earlier theory:
 
@@ -236,11 +298,11 @@ docs/foundations/007_reusable_knowledge_representation_and_composable_components
 docs/foundations/008_knowledge_quality_generalization_and_evolution.md
 ```
 
-Post-V0 product interpretation:
+Post-V0 promoted interpretation:
 
 ```text
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
 V0 evidence:
@@ -249,9 +311,9 @@ V0 evidence:
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 ```
 
-B1 gained most of the semantic benefit from the four methodological concepts simply being explicitly available. P0's path-sensitive activation and always-on context did not earn their cost.
+B1 gained most of the semantic benefit from the four methodological concepts simply being explicitly available. P0's path-sensitive activation and large always-on representation did not earn their cost.
 
-This does **not** reduce future reusable knowledge to a static prompt. Foundation 019 instead explores selective retrieval, explicit filtering, flexible semantic reasoning, and inspectable ranking.
+This does **not** reduce future reusable knowledge to a static prompt. Foundations 019 and 020 instead support selective retrieval, explicit filtering/rules where justified, flexible semantic reasoning, typed reusable knowledge, and inspectable project-specific relevance.
 
 ---
 
@@ -361,19 +423,6 @@ Final classification:
 STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
 ```
 
-Central comparison:
-
-```text
-B1 targeted mean: 1.73
-P0 targeted mean: 1.78
-incremental P0 gain: +0.05
-
-B1 completed within budget: 10/10
-P0 completed within budget: 3/10
-
-P0/B1 median token ratio: 2.160
-```
-
 Do not tune or restart P0 against the completed V0 benchmark.
 
 ---
@@ -423,7 +472,7 @@ Current preservation method:
 docs/DEVELOPMENT_METHOD.md
 ```
 
-Standardized new-chat procedure and first prompt:
+Standardized new-chat procedure and active session metadata:
 
 ```text
 docs/CONTINUITY.md
@@ -435,15 +484,13 @@ Deep preservation rationale:
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 ```
 
-Current session rotation checkpoint:
+Checkpoint-format contract:
 
 ```text
-docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
+docs/checkpoints/README.md
 ```
 
-The current chat is intentionally being rotated before reaching the platform length limit. The repository is sufficient for reconstruction without a manual transcript handoff.
-
-Recommended next chat title:
+Current design session:
 
 ```text
 02 - Methodological Brain & Knowledge Units
@@ -457,7 +504,7 @@ Recommended next chat title:
 docs/OPEN_QUESTIONS.md
 ```
 
-Several older V0-related statuses still require the planned post-V0 reconciliation. `CURRENT_STATE.md` and the final V0 report govern current interpretation in the meantime.
+`CURRENT_STATE.md` governs the exact active priority if older open-question wording has not yet been reconciled.
 
 ---
 
@@ -479,18 +526,22 @@ Default order when documents disagree:
 
 ## Exact next step
 
-Open the next design chat and reconstruct from the repository.
+With Foundation 020 promoted, derive **implementation requirements from the conceptual knowledge representation before choosing technology**.
 
-Then design the reusable knowledge-unit representation using:
+Identify requirements for:
 
 ```text
-Histogram
-Missing-data investigation
-Temporal validation
-Random Forest
-Prediction-time feature eligibility
+stable identity and revision history
+component addressing
+relation traversal
+conditional-rule evaluation
+semantic retrieval
+project-state lookup
+provenance/history
+methodological-horizon construction
+LLM context assembly
+human navigation/query
+knowledge mutation/review/governance
 ```
 
-Determine the common core, typed extensions, applicability/prerequisite representation, alternatives/complements/failure modes/follow-ups, and the boundary between methodological knowledge and executable implementation.
-
-Do not select a database, retrieval engine, graph store, vector store, agent framework, or V1 backend yet.
+Only after those requirements are explicit should the project compare persistence, indexing, retrieval, and orchestration architecture options.
