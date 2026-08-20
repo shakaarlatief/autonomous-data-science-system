@@ -1,8 +1,8 @@
 # Current State
 
-**Checkpoint:** 106  
+**Checkpoint:** 107  
 **Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, reusable-knowledge stress tests, adversarial representation review, and Foundation 020 methodological-knowledge representation architecture completed; implementation-requirements derivation is the active design task  
+**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, reusable-knowledge stress tests, adversarial representation review, Foundation 020 methodological-knowledge representation architecture, and technology-neutral implementation-requirements derivation completed; architecture-family comparison is the active design task  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
 **Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized
 
@@ -228,7 +228,7 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 
 ## Promoted reusable methodological-knowledge representation
 
-Foundation 020 is now the promoted source for the reusable methodological-knowledge representation architecture.
+Foundation 020 is the promoted source for the reusable methodological-knowledge representation architecture.
 
 It was promoted only after:
 
@@ -291,19 +291,6 @@ global knowledge != project-specific state
 internal representation != human-facing decision tree/workspace view
 ```
 
-Provisional intrinsic kinds remain:
-
-```text
-CONCEPT
-METHOD
-FRAMEWORK
-QUESTION_TEMPLATE
-RULE
-INVESTIGATION_PATTERN
-```
-
-The exact taxonomy remains open.
-
 Promoted representation principles:
 
 ```text
@@ -327,38 +314,107 @@ docs/checkpoints/105_refined_representation_second_stress_test.md
 docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
 ```
 
-## Current design stage
+## Technology-neutral implementation requirements
 
-Do **not** implement V1 yet.
+Checkpoint 107 derives the first explicit implementation-requirements matrix from Foundations 018-020.
 
-The conceptual knowledge representation is now promoted. The next legitimate task is to derive **implementation requirements** from Foundations 018, 019, and 020 before comparing technologies.
-
-The requirements exercise should identify what the implementation actually needs for:
+The requirements are classified as:
 
 ```text
-1. stable knowledge identity and recoverable revision history;
-2. component addressing and component-level provenance;
-3. typed relation lookup and traversal;
-4. conditional-rule storage/evaluation;
-5. semantic retrieval and methodological-horizon construction;
-6. project-state Definition/Question/Finding lookup for applicability/rules;
-7. provenance and historical reconstruction;
-8. selective LLM context assembly;
-9. human navigation/search/browse;
-10. mutation, review, supersession, conflict, and governance;
-11. expected scale, concurrency, latency, local/offline, and portability needs;
-12. boundaries among methodological knowledge, project state, execution metadata, and large artifacts.
-```
-
-For each requirement distinguish:
-
-```text
-MUST HAVE FOR V1
+V1 MUST HAVE
 VALUABLE LATER
 NOT YET JUSTIFIED
 ```
 
-Do not select a database, graph store, vector store, retrieval engine, rules engine, schema language, agent framework, or backend until the requirement matrix is explicit.
+The V1 requirements cover:
+
+```text
+stable knowledge identity and exact revision references
+recoverable history and current-governance selection
+component addressing and component-level provenance
+typed relation storage and bounded traversal
+UNKNOWN-aware conditional-rule evaluation
+rule force / consequence / traceability
+structured + semantic candidate retrieval
+explicit applicability and context requirements
+bounded methodological-horizon construction
+project-state lookup and exact knowledge-revision references
+criterion Findings without a universal Assessment object
+selective re-evaluation signaling rather than universal P0 reopening
+candidate/reviewed/superseded knowledge governance
+rebuildable derived indexes
+bounded task-specific LLM context assembly with provenance
+human catalog/search/explanation requirements
+separate ExecutionCapability mapping
+referential integrity, atomic consequential writes, export/backup
+practical single-user/local development and low operational burden
+large-artifact separation
+```
+
+Important implementation consequences already visible:
+
+```text
+graph-like relations do not imply a graph database
+conditional rules do not imply a dedicated rules engine
+semantic retrieval does not imply a dedicated vector database
+search/semantic indexes should be rebuildable derived state where practical
+historical knowledge references are stronger requirements than search indexes
+project-state integration is as important as global knowledge representation
+LLM context assembly is a first-class subsystem
+```
+
+The active architecture-comparison workload is also explicit in Checkpoint 107, including identity/history lookup, relation traversal, rule evaluation, horizon retrieval, project-state lookup, context assembly, human navigation, and governance operations.
+
+Primary active requirements artifact:
+
+```text
+docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
+```
+
+These requirements are active hypotheses to test against architecture options. They are not yet a new foundation and do not select a physical schema or backend.
+
+## Current design stage
+
+Do **not** implement V1 yet.
+
+The implementation-requirements matrix is now explicit enough to begin a technology-neutral **architecture-family comparison**.
+
+At minimum compare:
+
+```text
+A. Git/file-centric canonical knowledge + application indexes
+B. embedded relational database architecture
+C. relational database + integrated/derived semantic retrieval
+D. document-oriented architecture
+E. dedicated graph-oriented architecture
+F. multi-store/hybrid architecture
+```
+
+The comparison must evaluate each family against the canonical workloads and V1 MUST requirements rather than against generic product feature lists.
+
+Key comparison dimensions include:
+
+```text
+semantic fit
+historical integrity
+query/workload fit
+retrieval flexibility
+rule-evaluation fit
+selective context assembly
+human inspectability
+referential/transactional integrity
+local development simplicity
+operational burden
+portability
+extensibility
+testability
+failure isolation
+cost
+```
+
+The goal is to identify the **smallest architecture that satisfies the V1 MUST requirements while preserving credible extension paths**.
+
+No database, graph store, vector store, rules engine, schema language, agent framework, or backend has yet been selected.
 
 ## Continuity status
 
@@ -392,12 +448,12 @@ docs/foundations/017_interactive_data_science_workspace_and_methodological_navig
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/checkpoints/105_refined_representation_second_stress_test.md
 docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
+docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
 docs/experiments/prototype_v0/FINAL_RESULTS.md
 docs/CONTINUITY.md
 ```
 
 ## Current priority
 
-**Derive the implementation-requirements matrix from Foundations 018, 019, and 020. Classify each requirement as V1 must-have, valuable later, or not yet justified. Only after that matrix is explicit should the project compare persistence, indexing, retrieval, rule-evaluation, and orchestration architecture options.**
+**Compare technology-neutral architecture families against Checkpoint 107's V1 requirements and canonical workloads. Identify the smallest architecture that satisfies the must-haves with low operational burden and credible extension paths. Do not implement V1 until the comparison is complete.**
