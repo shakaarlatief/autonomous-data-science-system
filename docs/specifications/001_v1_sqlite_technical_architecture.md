@@ -1,9 +1,10 @@
 # Specification 001: V1 SQLite-Centered Technical Architecture
 
 **Date:** 2026-08-20  
-**Status:** Candidate technical specification v0.1; frozen for narrow architecture falsification before broad V1 implementation  
+**Status:** Accepted V1 technical specification v1.0  
 **Scope:** V1 methodological-knowledge, project-state, retrieval, rule-evaluation, context-assembly, provenance, and operational persistence architecture  
-**Authority:** Technical contract for the next architecture spike. It is subordinate to current canonical decisions and Foundations 017-020. It is not yet a broad implementation authorization.  
+**Authority:** Current V1 technical architecture contract for this scope. It implements D-028 and Foundations 017-020. Later revisions must preserve explicit migration/history semantics rather than silently changing the contract.  
+**Validated:** 2026-08-20 through the committed V1 architecture falsification gate, FT-01 through FT-12  
 **Design session:** 02  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 02 - Methodological Brain & Knowledge Units
@@ -12,7 +13,7 @@
 
 D-028 selected a SQLite-centered local-first architecture for V1 after technology-neutral requirements, architecture comparison, external capability research, and a synthetic viability spike.
 
-The next risk is different:
+The remaining architectural risk was different:
 
 > selecting SQLite correctly at the architecture-family level but implementing it in a way that creates avoidable lock-in, weak history, brittle schema semantics, or an unnecessarily expensive future migration.
 
@@ -24,9 +25,31 @@ V1 simplicity and speed of development
 professional long-term architectural seams
 ```
 
-The design should be good enough that a future move from SQLite to PostgreSQL, exact search to ANN search, or relational traversal to a specialized graph projection can be a bounded infrastructure evolution rather than a rewrite of methodological meaning, project semantics, rule logic, or application behavior.
+The design is intended to make a future move from SQLite to PostgreSQL, exact search to ANN search, or relational traversal to a specialized graph projection a bounded infrastructure evolution rather than a rewrite of methodological meaning, project semantics, rule logic, or application behavior.
 
 The project should not deliberately under-build V1. It should also not pre-pay the complexity of infrastructure whose requirements have not appeared.
+
+### Validation evidence
+
+The candidate v0.1 contract was implemented as a narrow architecture spike before promotion. The committed CI gate passed:
+
+```text
+FT-01 through FT-11   PASS on SQLite architecture harness
+FT-12                 PASS on PostgreSQL 18 portability harness
+```
+
+`FT-05` is explicitly an architecture-boundary pass using a deterministic toy semantic provider. It validates hybrid retrieval/index composition and bounded-horizon mechanics, not the eventual production embedding model or reranker.
+
+Evidence:
+
+```text
+experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
+experiments/architecture_spikes/v1_schema_spike.sql
+experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
+experiments/architecture_spikes/v1_postgres_portability_spike.py
+```
+
+The first spike also found and corrected an attempted SQLite-specific project-scoped uniqueness shortcut: SQLite does not permit the required subquery inside an index expression. The corrected pattern makes the project identity explicit in the subtype table and enforces ordinary composite foreign-key/UNIQUE constraints. This is both clearer and more PostgreSQL-portable. The accepted architecture therefore prefers explicit relational columns for project-scoped integrity over engine-specific expression tricks.
 
 ---
 
@@ -66,17 +89,18 @@ human-facing workflow
 canonical internal representation
 ```
 
-The following implementation-specific principles are candidate consequences of those foundations and must be tested by the architecture spike:
+The validated implementation directions are:
 
 1. authoritative semantic state should use explicit relational structure where query/integrity value is high;
 2. flexible narrative material may remain text or validated semi-structured JSON;
-3. accepted knowledge revisions should be immutable in content;
-4. derived indexes must be rebuildable;
+3. accepted knowledge revisions are immutable in semantic content;
+4. derived indexes are rebuildable;
 5. large artifacts remain outside the operational metadata database;
-6. transactions must remain short and must not span LLM/network/embedding calls;
-7. SQL/storage-dialect details must remain behind application persistence ports;
-8. durable domain identities must not depend on SQLite rowids or database-local sequences;
-9. V1 must preserve a credible PostgreSQL migration path by construction rather than by future cleanup.
+6. transactions remain short and never span LLM/network/embedding calls;
+7. SQL/storage-dialect details remain behind application persistence ports;
+8. durable domain identities do not depend on SQLite rowids or database-local sequences;
+9. project-scoped relational integrity uses explicit portable keys/constraints rather than SQLite-specific expression shortcuts;
+10. V1 preserves a credible PostgreSQL migration path by construction rather than by future cleanup.
 
 ---
 
@@ -337,6 +361,7 @@ business logic hidden in triggers
 FTS rank values as persistent truth
 binary SQLite JSON formats
 arbitrary SQL stored in methodological rules
+subquery/expression tricks to encode project-scoped core integrity
 ```
 
 SQLite-specific functionality is acceptable inside the SQLite adapter when it implements a portable domain contract.
@@ -345,7 +370,7 @@ SQLite-specific functionality is acceptable inside the SQLite adapter when it im
 
 # 9. Global methodological-knowledge table families
 
-The exact DDL remains subject to the architecture spike, but V1 should preserve the following families and integrity semantics.
+The production DDL remains a subsequent implementation artifact, but V1 must preserve the following families and integrity semantics.
 
 ## 9.1 Stable knowledge-node identity
 
@@ -373,6 +398,8 @@ kg_asset
 ```
 
 `current_accepted_revision_id` is a convenience/current-state pointer, not the history itself.
+
+The current pointer must be constrained to a revision belonging to the same asset, using ordinary relational constraints rather than application convention alone.
 
 ## 9.3 Immutable content revisions
 
@@ -447,7 +474,7 @@ kg_component_revision
     ordering metadata where useful
 ```
 
-Component revision rows must be demonstrably tied to an asset revision of the same parent asset. The spike must test whether this invariant is best enforced entirely through composite foreign keys or through a database constraint plus application validation.
+Component revision rows must be tied relationally to an asset revision of the same parent asset. The architecture gate validated the composite-key approach rather than relying only on application validation.
 
 ## 9.6 Narrative facets
 
@@ -489,6 +516,8 @@ kg_relation_revision
 
 kg_relation_revision_governance / provenance
 ```
+
+The current relation pointer must be constrained to a revision belonging to the same relation. This invariant was explicitly strengthened during the spike through a composite foreign key.
 
 Important requirements:
 
@@ -668,6 +697,8 @@ prj_entity
 
 As with `kg_node`, this is a technical identity supertype, not a claim that all project objects have identical semantics.
 
+Where a subtype requires project-scoped uniqueness or composite integrity, `project_id` should be carried explicitly into that subtype and constrained back to `(entity_id, project_id)` in the identity registry. This pattern was validated in the architecture spike and is preferred over SQLite-specific computed/index-expression shortcuts.
+
 ## 14.2 Typed lifecycle tables
 
 Each important object family should retain type-appropriate state/history.
@@ -702,7 +733,7 @@ This means V1 should use common technical patterns where useful but should not i
 
 ## 14.3 Minimum typed state needed by the methodological brain
 
-The first narrow schema spike should cover at least:
+The first bounded implementation should cover at least:
 
 ```text
 Project
@@ -717,7 +748,7 @@ Decision
 
 and enough Proposal/Investigation/Run metadata to prove the knowledge-to-work boundary.
 
-Other Foundation 018 object families may be added before broad product implementation as their concrete workflows are specified.
+Other Foundation 018 object families may be added before broader product workflows as their concrete semantics are specified.
 
 ---
 
@@ -848,6 +879,8 @@ A full rebuild command must be able to regenerate the index from authoritative k
 
 Incremental refresh after an accepted knowledge revision should occur through the application index service, preferably in the same short database transaction for cheap lexical state. V1 should avoid trigger-heavy FTS synchronization because it adds SQLite-specific hidden behavior with little value at the expected write rate.
 
+Derived-index refresh should use explicit adapter operations rather than relying on SQLite `INSERT OR REPLACE` behavior for authoritative semantics.
+
 Search results must rejoin authoritative tables and should ignore stale/superseded revisions by default.
 
 ---
@@ -891,6 +924,8 @@ exact in-process SemanticIndex
 
 without changing the methodological horizon or knowledge model.
 
+The architecture gate validates this provider/index boundary and rebuild behavior. It does **not** select or validate the eventual production embedding model, fusion algorithm, or reranker.
+
 ---
 
 # 20. Methodological-horizon construction
@@ -931,7 +966,7 @@ The architecture must retain why each candidate entered or left the horizon.
 
 A methodological horizon is derived by default. For consequential LLM reasoning, experiments, or debugging, a compact horizon snapshot/manifest should be persistable.
 
-The persistence schema should be designed after the spike establishes which trace fields are genuinely useful rather than logging every intermediate score automatically.
+The persistence schema should be designed during bounded implementation around trace fields demonstrated to be useful rather than logging every intermediate score automatically.
 
 ---
 
@@ -1064,7 +1099,7 @@ migration scripts remain reviewable in source control
 
 Downgrade migrations are not required by default. Recovery from a bad migration may use a pre-migration backup plus a corrected forward migration.
 
-The migration framework/library remains unselected until the schema spike clarifies whether a dedicated library is valuable.
+The migration framework/library remains unselected until the bounded implementation/tooling choice clarifies whether a dedicated library is valuable.
 
 ---
 
@@ -1099,6 +1134,8 @@ The system must also support deterministic human-readable export of accepted reu
 
 The export is not a second runtime authority.
 
+The architecture gate validated online backup/restore and rebuildability of the derived search/embedding state.
+
 ---
 
 # 25. Portability contract: design now so PostgreSQL is a migration, not a rewrite
@@ -1116,13 +1153,14 @@ The V1 design must therefore obey these portability rules:
 6. JSON only behind typed application models and versioned payload schemas;
 7. no arbitrary business logic in SQLite triggers;
 8. FTS5 isolated behind LexicalIndex;
-9. vector BLOB/exact NumPy search isolated behind SemanticIndex;
+9. vector BLOB/exact search isolated behind SemanticIndex;
 10. PRAGMA/connection behavior isolated in SQLite adapter;
 11. SQL statements live in persistence modules, not domain/application services;
 12. canonical exports use storage-neutral domain forms;
 13. rule AST contains semantic predicates, never SQL fragments;
 14. relation traversal uses RelationQuery semantics, not raw recursive-SQL assumptions;
-15. transaction boundaries are application UnitOfWork concepts.
+15. transaction boundaries are application UnitOfWork concepts;
+16. project-scoped uniqueness/integrity is modeled using explicit portable key columns.
 ```
 
 Expected PostgreSQL evolution:
@@ -1137,7 +1175,9 @@ SQLite write coordinator -> normal server-DB transaction manager
 same domain/application interfaces remain
 ```
 
-A migration may require DDL/data-conversion work. It should not require rethinking the methodological knowledge representation or project reasoning architecture.
+The FT-12 PostgreSQL 18 CI gate validated representative UUID, timestamptz, JSONB, composite-revision, component, relation, rule, and project-to-knowledge reference mappings without semantic redesign.
+
+A future migration will still require DDL/data conversion and production validation. It should not require rethinking the methodological knowledge representation or project reasoning architecture.
 
 ---
 
@@ -1178,139 +1218,84 @@ The observability layer must remain downstream/read-only in accordance with P-02
 
 ---
 
-# 28. Architecture falsification gate before broad implementation
+# 28. Validated architecture gate
 
-Broad V1 implementation is blocked until a narrow vertical architecture spike demonstrates the following.
-
-## FT-01: Identity/revision historical integrity
-
-Create a knowledge asset revision R1, create project reasoning that pins R1, publish R2, and verify that:
+The accepted v1.0 architecture is supported by the following gate:
 
 ```text
-new reasoning resolves current R2
-historical project reasoning still reconstructs R1 exactly
-R1 content remains unchanged
+FT-01  PASS  identity/revision historical integrity
+FT-02  PASS  component/relation integrity + bounded traversal
+FT-03  PASS  Missing Data TRUE/FALSE/UNKNOWN rule reconstruction
+FT-04  PASS  criterion-Finding chain + exact criterion revision
+FT-05  PASS_ARCHITECTURE_ONLY  bounded hybrid retrieval/horizon path
+FT-06  PASS  missing/stale embedding behavior + rebuild
+FT-07  PASS  context-budget enforcement
+FT-08  PASS  transaction atomicity/failure injection
+FT-09  PASS  WAL reader/writer behavior under V1 model
+FT-10  PASS  online backup/restore/integrity
+FT-11  PASS  derived-index rebuild
+FT-12  PASS  PostgreSQL 18 portability mapping
 ```
 
-## FT-02: Component and relation integrity
-
-Represent assets/components/relations from at least Histogram, Random Forest, and Missing Data. Verify foreign-key integrity, incoming/outgoing typed lookups, and bounded traversal without loading the whole knowledge network.
-
-## FT-03: Missing Data rule reconstruction
-
-Encode a small but real branch of the `Missing_Data.md` structure and prove:
+Important boundary:
 
 ```text
-TRUE/FALSE/UNKNOWN behavior
-missing context generates/activates the correct Question
-hard safeguard is distinguishable from strategy recommendation
-no rule silently executes a project action
-rule trace identifies exact knowledge revision + project facts
+FT-05 does not validate production retrieval quality.
 ```
 
-## FT-04: Criterion-Finding chain
+The production embedding model, lexical/semantic fusion, reranker, retrieval-recall target, and evaluation suite remain separate decisions requiring their own evidence.
 
-Represent Prediction-Time Feature Eligibility as:
+Reproducible gate evidence lives under:
 
 ```text
-Question -> Evidence -> criterion Finding -> Decision
+experiments/architecture_spikes/
 ```
-
-and verify the Finding pins the exact criterion knowledge revision.
-
-## FT-05: Retrieval/horizon coverage fixture
-
-Create a curated methodological catalog fixture including the six stress-test topics plus distractors. Use representative project/task queries and verify that hybrid candidate retrieval can recover expected relevant knowledge at high recall without passing the full catalog onward.
-
-This test evaluates retrieval coverage/ranking behavior, not just nearest-neighbor speed.
-
-## FT-06: Missing/stale embedding behavior
-
-Remove or stale selected embeddings and verify that:
-
-```text
-index health reports the gap
-knowledge is not silently classified irrelevant
-lexical/structured fallback remains available
-embedding regeneration can repair the cache
-```
-
-## FT-07: Context-budget enforcement
-
-Construct a synthetic large project state and catalog. Verify that `ContextAssembler` stays within its configured budget while retaining required/blocking information and records a reproducible context manifest.
-
-## FT-08: Transaction atomicity and crash boundary
-
-Inject failures during representative semantic write units and verify there is no partially published knowledge revision, orphaned current pointer, half-written criterion Finding, or broken project-to-knowledge reference.
-
-No test may depend on a network call occurring inside the transaction.
-
-## FT-09: Reader/writer behavior
-
-Under WAL, run multiple readers while one controlled writer performs short transactions. Verify correctness, bounded lock handling, and absence of long write transactions.
-
-## FT-10: Backup/restore
-
-Create a live backup, restore it into a separate location, and pass:
-
-```text
-integrity_check
-foreign_key_check
-schema-version check
-historical revision reconstruction
-knowledge export equivalence checks
-```
-
-## FT-11: Derived-index rebuild
-
-Delete/recreate the FTS and embedding-derived state and verify authoritative knowledge/project state is unchanged and retrieval indexes can be reconstructed.
-
-## FT-12: PostgreSQL-portability review/spike
-
-Before broad schema growth, validate that the core domain schema and repository interfaces can map to PostgreSQL without semantic redesign.
-
-At minimum this must review/test:
-
-```text
-UUID mapping
-UTC timestamp mapping
-foreign keys and uniqueness
-JSON payload mapping
-revision/current-pointer model
-project-to-knowledge references
-relation queries
-rule storage
-transaction boundaries
-```
-
-The exact PostgreSQL test mechanism may use a temporary CI/service container once implementation tooling is chosen.
 
 ---
 
-# 29. Architecture acceptance criteria
+# 29. Acceptance and change-control criteria
 
-The candidate technical specification may be promoted from v0.1 to the accepted V1 implementation specification only if the spike shows:
+This v1.0 specification is now accepted for bounded V1 implementation because the architecture gate demonstrated:
 
 ```text
-all correctness-critical FT tests pass
-no semantic invariant requires bypassing the persistence ports
-no major object family is forced into an obviously wrong lifecycle model
-no unacceptable SQLite locking/contention appears under the V1 write model
-retrieval/context behavior is testable without full-state serialization
-backup/recovery is reliable
-PostgreSQL migration remains a bounded adapter/schema evolution
+correct historical revision pinning
+foreign-key backed component/relation integrity
+usable tri-valued rule semantics without hidden action execution
+criterion-Finding compatibility with Foundation 018
+bounded context behavior without full-state serialization
+atomic semantic write units
+acceptable reader/writer behavior under the selected V1 model
+backup/recovery integrity
+rebuildable derived indexes
+bounded PostgreSQL migration seam
 ```
 
-If a test fails, the response should be the smallest correction supported by evidence.
+Future evidence may still require revision. The response should be the smallest layer-specific correction supported by evidence.
 
-Failure of one part, such as exact semantic search, does not automatically justify replacing the authoritative operational database.
+Examples:
+
+```text
+poor embedding recall
+    -> change EmbeddingProvider / fusion / reranking / SemanticIndex
+    != automatically replace SQLite
+
+multi-writer contention
+    -> migrate operational adapter to PostgreSQL
+    != rewrite methodological assets/rules/project semantics
+
+deep graph traversal becomes dominant
+    -> add/migrate RelationQuery projection/provider
+    != change canonical relation meaning
+```
+
+A future infrastructure change becomes a full architecture reconsideration only if evidence shows that the domain/application seams themselves are wrong.
 
 ---
 
 # 30. What remains intentionally unselected after this specification
 
 ```text
-exact full DDL
+production full DDL
 ORM / SQL toolkit
 migration library
 embedding model/provider
@@ -1324,28 +1309,24 @@ artifact-storage backend
 PostgreSQL migration date/trigger threshold
 ```
 
-These choices should be made at the layer where their requirements become concrete.
+These choices should be made at the layer where their requirements become concrete and should preserve this specification's ports and semantic boundaries.
 
 ---
 
 # 31. Exact next step
 
-Implement a **narrow architecture falsification spike**, not the broad product.
+With the architecture gate passed, broad product implementation is still not the immediate next action.
 
-The spike should include only enough code/schema to test FT-01 through FT-12, using real representative knowledge from the current stress-test set.
-
-After the gate:
+First define the **bounded V1 persistence/retrieval implementation contract and tooling**:
 
 ```text
-PASS
-    -> promote this specification with corrections to accepted V1 technical contract
-    -> choose implementation libraries/tooling
-    -> begin bounded V1 subsystem implementation
-
-FAIL
-    -> diagnose which architectural assumption failed
-    -> revise only the affected layer
-    -> rerun the gate before broad implementation
+1. choose the SQL access / repository implementation approach;
+2. choose or deliberately decline a schema migration framework;
+3. convert the validated spike schema into reviewed production migrations;
+4. define typed domain/repository interfaces and transaction boundaries;
+5. define deterministic export/import formats;
+6. define the first production retrieval-evaluation fixture before selecting an embedding model;
+7. preserve PostgreSQL adapter compatibility in tests.
 ```
 
-This is the project's main protection against discovering late that the implementation architecture was structurally wrong.
+After those boundaries are explicit, implement the first bounded V1 subsystem rather than the entire frontend/autonomous product at once.
