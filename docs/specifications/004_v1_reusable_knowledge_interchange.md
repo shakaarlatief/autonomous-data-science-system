@@ -1,9 +1,9 @@
 # Specification 004: V1 Reusable Knowledge Interchange Contract
 
 **Date:** 2026-08-20  
-**Status:** Candidate V1 technical specification v0.1 pending executable validation  
+**Status:** Accepted V1 technical specification v1.0  
 **Scope:** Human-readable, deterministic, storage-neutral interchange for reusable methodological knowledge revisions, components, rules, relations, provenance references, and representative benchmark fixtures  
-**Authority:** Candidate implementation contract subordinate to Foundations 019-020 and Specifications 001-003. It must survive schema/round-trip/representative-corpus tests before promotion.  
+**Authority:** Accepted implementation contract for its declared interchange scope, subordinate to Foundations 019-020 and Specifications 001-003. Promotion is supported by KI-01 through KI-10 recorded in Checkpoint 115 and the committed interchange validation evidence.  
 **Design session:** 02  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 02 - Methodological Brain & Knowledge Units
@@ -97,7 +97,7 @@ keep free-form extension payloads only where Foundation 020 deliberately permits
 
 The Python implementation should use a Draft 2020-12 capable validator with format checking enabled for UUID fields.
 
-The first tested implementation candidate is `jsonschema` 4.x.
+The validated implementation uses `jsonschema` 4.x.
 
 JSON Schema is the interchange-structure contract, not the domain model.
 
@@ -205,7 +205,7 @@ author / generator creates CANDIDATE revision
 
 `ACCEPTED_SNAPSHOT` is a trusted export/restore/migration representation. Normal interactive authoring should not use accepted-snapshot import as a shortcut around governance.
 
-The production repository currently has a convenience `publish_asset_revision()` operation that creates and accepts in one transaction. Before normal interchange import is enabled, persistence APIs should gain explicit candidate-create and accept/publish operations so import cannot bypass the governance model.
+The production repository initially had a convenience `publish_asset_revision()` operation that created and accepted in one transaction. Checkpoint 115 established that normal interchange import requires explicit candidate-create and accept/publish operations so import cannot bypass the governance model. The governed persistence round-trip implementation is validating this seam separately from the interchange-format acceptance gate.
 
 ---
 
@@ -499,7 +499,7 @@ A later full-history archive format may be added if operational recovery/migrati
 
 ## 17. Representative stress corpus
 
-The first executable validation should encode the already-studied heterogeneous examples:
+The first executable validation encodes the already-studied heterogeneous examples:
 
 ```text
 Histogram
@@ -510,7 +510,7 @@ Prediction-Time Feature Eligibility
 Class Imbalance
 ```
 
-and several helper/distractor concepts/methods needed to exercise relations and retrieval, such as:
+and supporting concepts/methods needed to exercise relations and retrieval:
 
 ```text
 Prediction Moment
@@ -519,36 +519,46 @@ ECDF
 Gradient-Boosted Trees
 ```
 
-The corpus must be marked `BENCHMARK_FIXTURE` and `CANDIDATE`; it is not automatically accepted global knowledge.
+The corpus is marked `BENCHMARK_FIXTURE` and `CANDIDATE`; it is not automatically accepted global knowledge.
 
 This gives the interchange schema a real heterogeneity test without silently promoting test fixtures into production methodological authority.
 
 ---
 
-## 18. Executable validation gate
+## 18. Executable validation evidence
 
-Before promotion to v1.0, the candidate must demonstrate:
+The accepted contract demonstrated:
 
 ```text
-KI-01  JSON Schema validates itself under Draft 2020-12
-KI-02  representative heterogeneous bundle validates
-KI-03  unknown typed properties are rejected
-KI-04  malformed UUIDs and stable keys are rejected
-KI-05  malformed recursive rule conditions are rejected
-KI-06  deterministic dump -> load -> dump is byte-identical
-KI-07  semantic digest is unaffected by insignificant input formatting
-KI-08  relation endpoint references resolve uniquely in the representative corpus
-KI-09  duplicate stable keys / IDs / component keys / rule keys are rejected by application validation
-KI-10  bundle-kind/governance safety rejects candidate content masquerading as trusted accepted import
+KI-01  PASS  JSON Schema validates itself under Draft 2020-12
+KI-02  PASS  representative heterogeneous bundle validates
+KI-03  PASS  unknown typed properties are rejected
+KI-04  PASS  malformed UUIDs and stable keys are rejected
+KI-05  PASS  malformed recursive rule conditions are rejected
+KI-06  PASS  deterministic dump -> load -> dump is byte-identical
+KI-07  PASS  semantic digest is unaffected by insignificant input formatting
+KI-08  PASS  relation endpoint references resolve uniquely in the representative corpus
+KI-09  PASS  duplicate stable keys / IDs / component keys / rule keys are rejected by application validation
+KI-10  PASS  bundle-kind/governance safety rejects candidate content masquerading as trusted accepted import
 ```
 
-A later persistence round-trip gate should then prove candidate import, explicit acceptance, accepted export, and revision-history pinning through the production repository.
+Evidence is preserved in:
+
+```text
+docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
+experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
+schemas/reusable_knowledge_bundle_v1.schema.json
+src/ads_system/infrastructure/interchange/knowledge_bundle.py
+tests/unit/test_knowledge_interchange.py
+```
+
+The later persistence round-trip gate remains a separate implementation validation boundary for candidate import, explicit acceptance, accepted export, and revision-history pinning through the production repository.
 
 ---
 
 ## 19. Explicit non-goals
 
-Specification 004 v0.1 does not select:
+Specification 004 v1.0 does not select:
 
 ```text
 embedding model
@@ -568,11 +578,13 @@ The interchange format exists to make those later choices testable rather than t
 
 ---
 
-## 20. Promotion criterion
+## 20. Promotion result
 
-Promote this specification only if the executable interchange tests pass on the representative corpus without requiring a conceptual exception for any of the six core methodological examples.
+The representative heterogeneous corpus passed the executable interchange tests without requiring a conceptual exception for any of the six core methodological examples.
 
-If the corpus requires many format-specific escape hatches, revise the contract before building import/export and retrieval on top of it.
+Specification 004 is therefore promoted from candidate v0.1 to accepted V1 technical specification v1.0 for its declared interchange scope.
+
+This promotion does not imply that the separate database round-trip, retrieval-quality, embedding, reranking, or MethodologicalHorizon gates have passed.
 
 ---
 
