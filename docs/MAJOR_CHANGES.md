@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-19
+**Last reviewed:** 2026-08-20
 
 ## Purpose
 
@@ -419,4 +419,68 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
 ```
 
-The next design exercise will test the reusable knowledge representation against Histogram, Missing-data investigation, Temporal validation, Random Forest, and Prediction-time feature eligibility before selecting any V1 storage or backend architecture.
+---
+
+## 2026-08-20: Reusable methodological knowledge gained a promoted representation architecture
+
+The methodological-navigation design moved from a general relevance architecture to a concrete reusable-knowledge representation that survived two explicit stress-test rounds.
+
+The first contract was tested against:
+
+```text
+Histogram
+Missing Data
+Temporal Validation
+Random Forest
+Prediction-Time Feature Eligibility
+```
+
+and then adversarially challenged. The revised model was tested again against those five plus a new cross-cutting Class Imbalance concern.
+
+The promoted representation now distinguishes:
+
+```text
+KnowledgeAsset
+KnowledgeComponent
+NarrativeFacet
+KnowledgeRelation
+Conditional KnowledgeRule
+KnowledgeCollection
+project object references/influence
+criterion Findings
+ExecutionCapability
+Views
+```
+
+Two important structural principles were promoted:
+
+```text
+P-025
+Reusable knowledge identity/granularity should remain separate from reasoning function.
+
+P-026
+Static methodological relationships should remain separate from conditional guidance rules.
+```
+
+Additional durable conclusions include:
+
+```text
+intrinsic asset kind != reasoning function
+Concepts require first-class reusable identity
+asset != component != narrative facet
+rules guide reasoning/navigation rather than silently executing a rigid pipeline
+retrieval != applicability != required context != project relevance
+historical project reasoning should pin the knowledge revision used
+human-facing decision trees can be derived from reusable knowledge + project state
+```
+
+Key sources:
+
+```text
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
+docs/checkpoints/105_refined_representation_second_stress_test.md
+docs/PRINCIPLES.md, P-025 and P-026
+```
+
+No database, graph store, vector store, rules engine, schema language, retrieval engine, agent framework, or V1 backend was selected. The next architecture stage derives implementation requirements from the promoted conceptual representation before comparing technologies.
