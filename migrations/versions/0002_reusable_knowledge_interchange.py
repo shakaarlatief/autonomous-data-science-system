@@ -139,17 +139,17 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["revision_id"],
             ["kg_content_revision.revision_id"],
-            name="fk_kg_content_revision_extension_revision_id_kg_content_revision",
+            name="fk_kg_rev_ext_revision",
             ondelete="CASCADE",
         ),
         sa.CheckConstraint(
             "schema_version >= 1",
-            name="ck_kg_content_revision_extension_schema_version_positive",
+            name="ck_kg_rev_ext_schema_version",
         ),
         *_json_constraints(
             (
                 "json_valid(structured_json)",
-                "ck_kg_content_revision_extension_structured_json_valid",
+                "ck_kg_rev_ext_json_valid",
             )
         ),
         **_strict_kwargs(),
@@ -173,13 +173,13 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["revision_id"],
             ["kg_content_revision.revision_id"],
-            name="fk_kg_content_revision_provenance_revision_id_kg_content_revision",
+            name="fk_kg_rev_prov_revision",
             ondelete="CASCADE",
         ),
         sa.ForeignKeyConstraint(
             ["source_id"],
             ["kg_provenance_source.source_id"],
-            name="fk_kg_content_revision_provenance_source_id_kg_provenance_source",
+            name="fk_kg_rev_prov_source",
             ondelete="RESTRICT",
         ),
         **_strict_kwargs(),
@@ -192,13 +192,13 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["rule_spec_id"],
             ["kg_rule_spec.rule_spec_id"],
-            name="fk_kg_rule_provenance_rule_spec_id_kg_rule_spec",
+            name="fk_kg_rule_prov_rule",
             ondelete="CASCADE",
         ),
         sa.ForeignKeyConstraint(
             ["source_id"],
             ["kg_provenance_source.source_id"],
-            name="fk_kg_rule_provenance_source_id_kg_provenance_source",
+            name="fk_kg_rule_prov_source",
             ondelete="RESTRICT",
         ),
         **_strict_kwargs(),
@@ -213,12 +213,12 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["relation_revision_id"],
             ["kg_relation_revision.relation_revision_id"],
-            name="fk_kg_relation_revision_state_relation_revision_id_kg_relation_revision",
+            name="fk_kg_rel_state_revision",
             ondelete="CASCADE",
         ),
         sa.CheckConstraint(
             "governance_status IN ('CANDIDATE','REVIEWED','ACCEPTED','SUPERSEDED','REJECTED')",
-            name="ck_kg_relation_revision_state_relation_governance_status_allowed",
+            name="ck_kg_rel_state_status",
         ),
         **_strict_kwargs(),
     )
@@ -235,7 +235,7 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["relation_revision_id"],
             ["kg_relation_revision.relation_revision_id"],
-            name="fk_kg_relation_governance_event_relation_revision_id_kg_relation_revision",
+            name="fk_kg_rel_event_revision",
             ondelete="RESTRICT",
         ),
         **_strict_kwargs(),
@@ -248,13 +248,13 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["relation_revision_id"],
             ["kg_relation_revision.relation_revision_id"],
-            name="fk_kg_relation_revision_provenance_relation_revision_id_kg_relation_revision",
+            name="fk_kg_rel_prov_revision",
             ondelete="CASCADE",
         ),
         sa.ForeignKeyConstraint(
             ["source_id"],
             ["kg_provenance_source.source_id"],
-            name="fk_kg_relation_revision_provenance_source_id_kg_provenance_source",
+            name="fk_kg_rel_prov_source",
             ondelete="RESTRICT",
         ),
         **_strict_kwargs(),
@@ -274,13 +274,13 @@ def upgrade() -> None:
         sa.ForeignKeyConstraint(
             ["collection_key"],
             ["kg_collection.collection_key"],
-            name="fk_kg_collection_member_collection_key_kg_collection",
+            name="fk_kg_coll_member_collection",
             ondelete="CASCADE",
         ),
         sa.ForeignKeyConstraint(
             ["node_id"],
             ["kg_node.node_id"],
-            name="fk_kg_collection_member_node_id_kg_node",
+            name="fk_kg_coll_member_node",
             ondelete="RESTRICT",
         ),
         **_strict_kwargs(),
