@@ -14,7 +14,9 @@ The central requirement is:
 
 Long conversations are temporary working environments, not durable project storage.
 
-Continuity therefore depends on more than preserving files. Important knowledge must also remain discoverable, correctly classified, and current.
+Continuity therefore depends on more than preserving files. Important knowledge must also remain discoverable, correctly classified, current, and routed to the right authority layer.
+
+---
 
 ## ChatGPT project and session naming
 
@@ -39,20 +41,67 @@ A chat may contain many topics and many checkpoints while continuity remains hea
 ### Active development session
 
 ```text
+Design session: 03
+ChatGPT project: Autonomous Data Science System
+Session title: 03 - Project Cockpit & V1 Integration
+```
+
+### Previous design sessions
+
+```text
 Design session: 02
 ChatGPT project: Autonomous Data Science System
 Session title: 02 - Methodological Brain & Knowledge Units
-```
 
-The previous design session was:
-
-```text
 Design session: 01
 ChatGPT project: Autonomous Data Science System
 Session title: 01 - Foundations & Checkpoint 0
 ```
 
-Every checkpoint created while this ChatGPT-based development process remains active must preserve the applicable `Design session`, `ChatGPT project`, and `Session title` fields under `docs/checkpoints/README.md`. Session provenance improves navigation and auditing, but repository state remains the source of truth across sessions.
+Every checkpoint created while this ChatGPT-based development process remains active must preserve the applicable `Design session`, `ChatGPT project`, and `Session title` fields under `docs/checkpoints/README.md`.
+
+Session provenance improves navigation and auditing, but repository state remains the source of truth across sessions.
+
+---
+
+## Why Session 03 exists
+
+Session 02 ended unexpectedly when the platform conversation-length limit was reached immediately after the second Project Cockpit human review.
+
+The prior session had already preserved the most important substantive reasoning through:
+
+```text
+docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
+```
+
+That preservation was enough for Session 03 to reconstruct the substantive product state from the repository without the previous conversation.
+
+However, the unexpected boundary occurred before the normal end-of-session reconciliation was complete. As a result:
+
+```text
+CURRENT_STATE still pointed to Checkpoint 118
+KNOWLEDGE_MAP still pointed to Checkpoint 118
+OPEN_QUESTIONS contained pre-V0-completion status language
+README still described an earlier post-V0 transition state
+checkpoint/session routing still named Session 02 as active
+MAJOR_CHANGES did not yet record the Cockpit transition through Checkpoint 119
+```
+
+This incident is useful validation of the layered preservation design:
+
+```text
+substantive knowledge survived because checkpoint/research/specification preservation happened early enough
+
+but
+
+continuity quality still depends on a final routing/current-state reconciliation when the session boundary is abrupt
+```
+
+Checkpoint 120 records the repair.
+
+---
 
 ## When to start a new design chat
 
@@ -72,6 +121,8 @@ A topic change, checkpoint, foundation, or implementation milestone is not by it
 
 The goal is to use a chat while it remains an effective working context without waiting until continuity has already failed.
 
+---
+
 ## Proactive rotation procedure
 
 When the AI decides that a new chat should be opened, it should normally:
@@ -79,7 +130,7 @@ When the AI decides that a new chat should be opened, it should normally:
 1. preserve any important uncheckpointed reasoning;
 2. perform the checkpoint promotion audit where appropriate;
 3. ensure relevant canonical documents are current;
-4. ensure `docs/KNOWLEDGE_MAP.md` routes to any newly important durable knowledge;
+4. ensure `docs/KNOWLEDGE_MAP.md` routes to newly important durable knowledge;
 5. ensure `docs/CURRENT_STATE.md` is concise and current;
 6. ensure detailed active-experiment status is current if the next session depends on it;
 7. record the exact next step and material unresolved questions;
@@ -89,6 +140,52 @@ When the AI decides that a new chat should be opened, it should normally:
 11. use the standardized continuation prompt below.
 
 The user should not need to summarize the previous chat manually.
+
+---
+
+## Unplanned session-boundary recovery
+
+A session may end before the proactive rotation procedure can finish. Examples include:
+
+```text
+unexpected conversation-length limit
+client/session failure
+model/tool interruption
+browser/session loss
+other hard platform boundary
+```
+
+When this happens, the next session should **not** attempt to recreate missing context from memory or assume that the most prominent canonical document is necessarily the newest artifact.
+
+The recovery procedure is:
+
+1. identify the active repository branch or worktree from Git/GitHub evidence;
+2. read `README.md`, `CURRENT_STATE.md`, and `KNOWLEDGE_MAP.md` from that branch;
+3. inspect the latest checkpoints, specifications, research files, and commits created near the boundary;
+4. compare their authority/status metadata with any older canonical wording;
+5. identify exactly which knowledge was preserved and which routing/current-state updates were interrupted;
+6. reconstruct substantive state from repository authority, not from prior-chat recollection;
+7. repair stale canonical/routing documents conservatively without rewriting historical checkpoint conclusions;
+8. reconcile `OPEN_QUESTIONS` when old experiment status has become materially stale;
+9. update session provenance for the new chat;
+10. create a continuity/reconciliation checkpoint if the repair is substantive;
+11. continue from the newest legitimate implementation/design boundary.
+
+A useful distinction is:
+
+```text
+substantive preservation failure
+    important reasoning was never persisted
+
+versus
+
+routing/reconciliation failure
+    important reasoning was persisted but CURRENT_STATE / KNOWLEDGE_MAP / other current indexes lagged
+```
+
+The Session 02 -> Session 03 transition was the second case. The repository contained Research 004, Specification 007 v0.2, and Checkpoint 119, so no product conclusion needed to be reconstructed from chat memory. The repair concerned current-state routing and reconciliation.
+
+---
 
 ## New-session start procedure
 
@@ -108,22 +205,17 @@ A new design session should reconstruct the project from repository state before
 
 Then follow the routing and explicit read instructions in `CURRENT_STATE.md` and `KNOWLEDGE_MAP.md`.
 
-For the completed Prototype V0 result and its experimental provenance, current routing may include:
+If active work is on a feature branch, the session must first verify that it is reading the branch that actually contains the latest checkpoints and specifications. The default branch must not be assumed to be the current development source of truth merely because it is named `main`.
+
+For the current V1 stage, active frontend/Cockpit work lives on:
 
 ```text
-prototype_v0/README.md
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+v1-frontend-spike
 ```
 
-If the current task concerns the broader system-level vision rather than experiment provenance only, also read the foundations routed by `CURRENT_STATE.md` and `KNOWLEDGE_MAP.md`, including when relevant:
+until a later explicit merge/promotion changes that relationship.
 
-```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-```
-
-The exact historical reading set should follow current routing rather than an obsolete fixed list of checkpoints.
+---
 
 ## Required behavior after reading
 
@@ -134,28 +226,14 @@ Before continuing substantial work, the new session should be able to state:
 - what has already been decided;
 - which ideas remain hypotheses rather than accepted architecture;
 - what major questions remain open;
-- what experiment or prototype is currently active, if any;
+- what experiment or implementation slice is currently active;
 - what the exact next step is;
-- and which documents govern that next step.
+- which documents govern that next step;
+- and whether any canonical/routing documents lag newer higher-relevance repository evidence.
 
 If repository documents are inconsistent, the session should identify the conflict rather than invent a reconciliation.
 
-## Optional cross-session handoff verification
-
-When the previous design session is still accessible after a new session has reconstructed the repository state, an optional additional robustness check is to ask the previous session to independently review the new session's reconstruction before substantial work continues.
-
-A useful verification asks whether the new session correctly identified:
-
-- the current development stage;
-- important accepted conclusions and architectural constraints;
-- hypotheses that must not be mistaken for settled architecture;
-- material unresolved questions;
-- the exact next legitimate step;
-- and any stale or conflicting repository wording that should not silently override newer authoritative sources.
-
-This check is supplementary rather than required. The previous chat is not an authority over the repository and continuity must not depend on that chat remaining available. If the two sessions disagree, the disagreement should be resolved from the repository using the authority hierarchy below. A material unresolved conflict should be made explicit rather than settled by whichever chat sounds more confident.
-
-The value of this check is independent reconstruction plus a second read of the handoff, not transfer of hidden conversational memory into the new session.
+---
 
 ## Knowledge authority during reconstruction
 
@@ -163,16 +241,31 @@ The default authority order is:
 
 ```text
 1. frozen specifications/contracts within their declared scope
-2. current explicit decisions and canonical specifications
+2. current explicit decisions and accepted specifications
 3. current vision/principles/current-state material
 4. foundational design memos for rationale and durable hypotheses
-5. checkpoints/session records for historical state
-6. raw historical material for provenance
+5. research memos for current bounded design exploration
+6. checkpoints/session records for historical state and human-review evidence
+7. raw historical material for provenance
 ```
 
 `docs/KNOWLEDGE_MAP.md` helps route to these sources but is not itself a replacement for them.
 
-If a material conflict cannot be resolved by status, scope, or supersession information, it should become an explicit open question.
+Candidate specifications deserve careful treatment: they can govern the next bounded experiment by explicit checkpoint authority without being promoted into final architecture.
+
+If a material conflict cannot be resolved by status, scope, chronology, or supersession information, it should become an explicit open question.
+
+---
+
+## Optional cross-session handoff verification
+
+When the previous design session is still accessible after a new session has reconstructed repository state, an optional robustness check is to ask the previous session to independently review the new session's reconstruction before substantial work continues.
+
+This check is supplementary, not required. The previous chat is not an authority over the repository and continuity must not depend on that chat remaining available.
+
+The Session 02 -> Session 03 transition demonstrates why this is optional: the prior chat became unavailable, but repository artifacts were still sufficient for recovery.
+
+---
 
 ## Standardized new-chat prompt
 
@@ -187,6 +280,8 @@ This prompt is intentionally stable and generic. The user should not need to inv
 If the chat has direct repository access, it should read the files itself.
 
 If direct repository access is unavailable, the relevant repository artifacts should be provided rather than relying on remembered summaries.
+
+---
 
 ## Proactive preservation during a session
 
@@ -207,16 +302,20 @@ continue freely while reasoning is developing
 
 Proactive preservation must preserve maturity distinctions. A compelling idea remains a design hypothesis until it has actually earned a stronger status.
 
+The Session 02 boundary provides an additional practical lesson: when a conversation is already very long, preserving the substantive checkpoint/specification before continuing cosmetic or routing cleanup is preferable to delaying all preservation until one final end-of-session batch.
+
+---
+
 ## Promotion and continuity
 
 A checkpoint alone is not enough when the material has become important current knowledge.
 
-A substantive checkpoint should therefore explicitly ask whether material should be promoted into:
+A substantive checkpoint should explicitly ask whether material should be promoted into:
 
 ```text
 canonical documents
 foundations
-specifications/contracts
+research/specifications
 experiment ledgers
 KNOWLEDGE_MAP
 MAJOR_CHANGES
@@ -226,9 +325,11 @@ No promotion is a valid outcome.
 
 This requirement exists because historically safe information can still become practically lost if future sessions do not know where to find it.
 
+---
+
 ## End-of-session procedure
 
-Before a substantial session is abandoned because of length, context limits, a deliberate stop, or another session boundary, the project should create a checkpoint when material work remains unpreserved.
+Before a substantial session is deliberately abandoned because of length, a planned stop, or another known session boundary, the project should create a checkpoint when material work remains unpreserved.
 
 The end-of-session process should normally include:
 
@@ -240,17 +341,21 @@ The end-of-session process should normally include:
 6. record strong hypotheses without presenting them as settled;
 7. complete the promotion audit;
 8. update `KNOWLEDGE_MAP.md` when routing changed;
-9. update the active experiment ledger when relevant;
-10. update `CURRENT_STATE.md` with only the concise present-tense state;
+9. update active experiment/status ledgers when relevant;
+10. update `CURRENT_STATE.md` with only concise present-tense state;
 11. record the exact next step;
 12. list the documents a new session should read;
-13. create a historical checkpoint/session record where useful.
+13. update active session provenance where rotation is planned;
+14. create a historical checkpoint/session record where useful;
+15. verify the new-session reconstruction path before declaring the handoff complete.
 
 The project does not need a checkpoint after every short conversation. The purpose is continuity, not bureaucracy.
 
+---
+
 ## Current-state document requirements
 
-`docs/CURRENT_STATE.md` should remain concise compared with foundations, checkpoints, and experiment ledgers.
+`docs/CURRENT_STATE.md` should remain concise compared with foundations, research, checkpoints, and experiment ledgers.
 
 It should answer:
 
@@ -265,22 +370,25 @@ What must a future session read?
 
 It should not contain a growing duplicate of every run, checkpoint, or foundation.
 
-Detailed long-running experiment mechanics should live in experiment-specific status documents.
+---
 
-## Knowledge map requirements
+## Knowledge-map requirements
 
 `docs/KNOWLEDGE_MAP.md` should remain a routing layer, not another foundation.
 
 It should be updated when:
 
-- an important new foundation is created;
-- a checkpoint is promoted into a durable source;
+- an important new foundation/research/specification source is created;
+- a checkpoint is promoted or becomes the latest human-review boundary;
 - a canonical document changes role;
 - an experiment-specific ledger is introduced or retired;
 - a source becomes superseded;
+- branch-local active work would otherwise be mistaken for default-branch state;
 - or a future session would otherwise be likely to look in the wrong place.
 
 Routine checkpoint creation does not automatically require a knowledge-map update.
+
+---
 
 ## Major-changes ledger
 
@@ -295,11 +403,14 @@ prototype architecture
 evaluation architecture
 development methodology
 knowledge-preservation architecture
+major product interaction architecture
 major experimental phase/frozen contract
 repository structure that changes how future work should operate
 ```
 
 It is not a replacement for Git history or checkpoints.
+
+---
 
 ## Knowledge reconciliation
 
@@ -307,17 +418,22 @@ At meaningful stage boundaries, the project should perform the reconciliation pr
 
 The continuity-specific goal is to verify that a new session can find the correct current knowledge without depending on historical-memory luck.
 
-A reconciliation should therefore verify at minimum:
+A reconciliation should verify at minimum:
 
 ```text
+README reflects the actual development stage;
 CURRENT_STATE is concise and current;
 KNOWLEDGE_MAP routes correctly;
 important accepted decisions are recorded;
-OPEN_QUESTIONS does not contain obviously stale priorities;
+OPEN_QUESTIONS does not contain obviously stale experiment status;
 important recent checkpoint insights were promoted if warranted;
-active experiment ledgers are current;
-major structural changes are discoverable.
+active experiment/status ledgers are current;
+checkpoint/session provenance is current;
+major structural changes are discoverable;
+branch-local active work is not mistaken for stale default-branch state.
 ```
+
+---
 
 ## Deferred future continuity tooling
 
@@ -325,11 +441,13 @@ The current continuity substrate remains Git + Markdown + explicit repository st
 
 Future versions may introduce machine-readable metadata, semantic retrieval, generated indexes, dependency graphs, automated reconciliation proposals, or raw-conversation provenance archives.
 
-Those options are preserved in Foundation 014 but remain deferred until observed scale or consistency problems justify them.
+Those options remain deferred until observed scale or consistency problems justify them.
+
+---
 
 ## Version relationship
 
-The current continuity procedure is aligned with Development Method version 0.4.
+The current continuity procedure remains aligned with Development Method version 0.4.
 
 The major methodological progression is:
 
@@ -348,6 +466,8 @@ v0.4
 explicit checkpoint metadata contract + mechanical validation
 + normalized historical checkpoint provenance + required ChatGPT session provenance
 ```
+
+The unplanned-boundary recovery procedure added on 2026-08-20 is a continuity refinement within the existing v0.4 method rather than a new development-method version. The underlying checkpoint/promotion/reconciliation model did not change; the recovery path was made explicit after real use exposed the need.
 
 Detailed preservation rationale:
 
