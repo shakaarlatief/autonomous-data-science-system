@@ -6,6 +6,7 @@ import os
 
 from alembic import context
 
+from ads_system.infrastructure.persistence import interchange_schema as _interchange_schema
 from ads_system.infrastructure.persistence.engine import create_operational_engine
 from ads_system.infrastructure.persistence.schema import metadata
 
