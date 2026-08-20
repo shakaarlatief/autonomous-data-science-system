@@ -1,4 +1,5 @@
 name: V1 governed knowledge roundtrip
+# Revalidation trigger after the PostgreSQL identifier portability fix.
 
 on:
   workflow_dispatch:
