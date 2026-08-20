@@ -1,5 +1,7 @@
 name: Normalize legacy checkpoint metadata
 
+# This workflow is intentionally triggerable by changes to its own definition so
+# the historical normalization can be re-run after migration-script fixes.
 on:
   push:
     branches: [main]
