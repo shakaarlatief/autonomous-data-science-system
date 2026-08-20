@@ -483,4 +483,95 @@ docs/checkpoints/105_refined_representation_second_stress_test.md
 docs/PRINCIPLES.md, P-025 and P-026
 ```
 
-No database, graph store, vector store, rules engine, schema language, retrieval engine, agent framework, or V1 backend was selected. The next architecture stage derives implementation requirements from the promoted conceptual representation before comparing technologies.
+---
+
+## 2026-08-20: V1 implementation requirements were derived before technology selection
+
+The project derived 59 technology-neutral requirements before comparing databases or retrieval architectures.
+
+They cover:
+
+```text
+stable knowledge identity and revision history
+component-level provenance
+typed relations and bounded traversal
+minimal TRUE / FALSE / UNKNOWN conditional rules
+semantic candidate retrieval
+retrieval/applicability/context separation
+project-state integration
+provenance and governance
+selective LLM context assembly
+human navigation and review
+execution-capability boundaries
+local-first operational constraints
+```
+
+This changed the architecture question from technology preference into a concrete workload decision.
+
+Key source:
+
+```text
+docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
+```
+
+---
+
+## 2026-08-20: SQLite-centered local-first V1 persistence/retrieval architecture selected
+
+After the requirements were explicit, the project compared:
+
+```text
+pure files/Git
+Git/file-canonical knowledge + SQLite runtime projection
+SQLite-centered relational state
+PostgreSQL + pgvector
+Neo4j graph-first storage
+multi-store combinations
+```
+
+Current official capability research confirmed that SQLite provides the required relational integrity, FTS5 lexical search, recursive CTE traversal, JSON support, and WAL reader/writer behavior for the accepted initial one-writer envelope.
+
+A targeted synthetic viability spike tested representative relational lookup, typed relation, FTS, bounded traversal, and exact dense-vector similarity workloads. The spike is not a production benchmark, but it found no order-of-magnitude performance reason to introduce dedicated graph/vector infrastructure at the expected V1 scale.
+
+D-028 therefore selects:
+
+```text
+SQLite operational store
+    reusable knowledge + project metadata/state
+
+FTS5
+    rebuildable lexical index
+
+rebuildable embeddings
+    initial in-process exact semantic search
+
+application-level minimal conditional-rule evaluator
+
+selective bounded LLM context assembly
+
+filesystem / Git / artifact storage
+    code and large artifacts outside SQLite
+```
+
+Explicitly deferred until measured requirements justify them:
+
+```text
+dedicated graph database
+dedicated vector database/service
+external rules engine
+PostgreSQL server as the default V1 store
+ANN index
+multi-store architecture
+```
+
+PostgreSQL + pgvector is retained as the preferred first migration family if later multi-writer, shared-server, concurrency, or semantic-search scale requirements exceed the SQLite envelope.
+
+This is the first implementation-architecture selection after D-011's intentional early-stage prohibition on premature technology choice. D-011 is now superseded for this scope while remaining applicable to still-unselected subsystems.
+
+Key sources:
+
+```text
+docs/DECISIONS.md, D-028
+docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
+experiments/architecture_spikes/sqlite_v1_viability.py
+```
