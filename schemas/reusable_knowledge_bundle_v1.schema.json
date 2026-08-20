@@ -1,0 +1,165 @@
+{
+  "$defs": {
+    "assetRevision": {
+      "additionalProperties": false,
+      "properties": {
+        "applicability": {"anyOf": [{"$ref": "#/$defs/condition"}, {"type": "null"}]},
+        "asset_id": {"$ref": "#/$defs/uuid"},
+        "components": {"items": {"$ref": "#/$defs/componentRevision"}, "type": "array"},
+        "context_requirements": {"items": {"$ref": "#/$defs/contextRequirement"}, "type": "array"},
+        "governance_status": {"enum": ["CANDIDATE", "REVIEWED", "ACCEPTED", "SUPERSEDED", "REJECTED"]},
+        "intrinsic_kind": {"$ref": "#/$defs/token"},
+        "limitations": {"$ref": "#/$defs/stringSet"},
+        "narrative_facets": {"items": {"$ref": "#/$defs/narrativeFacet"}, "type": "array"},
+        "provenance_source_ids": {"$ref": "#/$defs/stringSet"},
+        "purpose": {"minLength": 1, "type": "string"},
+        "reasoning_functions": {"$ref": "#/$defs/tokenSet"},
+        "retrieval_profile": {"$ref": "#/$defs/retrievalProfile"},
+        "revision_id": {"$ref": "#/$defs/uuid"},
+        "revision_no": {"minimum": 1, "type": "integer"},
+        "rules": {"items": {"$ref": "#/$defs/ruleSpec"}, "type": "array"},
+        "scope": {"type": ["string", "null"]},
+        "semantic_checks": {"$ref": "#/$defs/stringSet"},
+        "stable_key": {"$ref": "#/$defs/stableKey"},
+        "title": {"minLength": 1, "type": "string"}
+      },
+      "required": ["asset_id", "stable_key", "revision_id", "revision_no", "governance_status", "intrinsic_kind", "title", "purpose", "scope", "limitations", "reasoning_functions", "retrieval_profile", "context_requirements", "applicability", "semantic_checks", "narrative_facets", "components", "rules", "provenance_source_ids"],
+      "type": "object"
+    },
+    "collection": {
+      "additionalProperties": false,
+      "properties": {
+        "collection_key": {"$ref": "#/$defs/stableKey"},
+        "members": {"items": {"$ref": "#/$defs/collectionMember"}, "type": "array"},
+        "title": {"minLength": 1, "type": "string"}
+      },
+      "required": ["collection_key", "title", "members"],
+      "type": "object"
+    },
+    "collectionMember": {
+      "additionalProperties": false,
+      "properties": {"ref": {"$ref": "#/$defs/nodeRef"}},
+      "required": ["ref"],
+      "type": "object"
+    },
+    "componentRevision": {
+      "additionalProperties": false,
+      "properties": {
+        "body": {"type": ["string", "null"]},
+        "component_id": {"$ref": "#/$defs/uuid"},
+        "component_key": {"$ref": "#/$defs/stableKey"},
+        "component_kind": {"$ref": "#/$defs/token"},
+        "governance_status": {"enum": ["CANDIDATE", "REVIEWED", "ACCEPTED", "SUPERSEDED", "REJECTED"]},
+        "payload": {"type": ["object", "array", "string", "number", "integer", "boolean", "null"]},
+        "provenance_source_ids": {"$ref": "#/$defs/stringSet"},
+        "reasoning_functions": {"$ref": "#/$defs/tokenSet"},
+        "revision_id": {"$ref": "#/$defs/uuid"},
+        "revision_no": {"minimum": 1, "type": "integer"}
+      },
+      "required": ["component_id", "component_key", "component_kind", "revision_id", "revision_no", "governance_status", "body", "payload", "reasoning_functions", "provenance_source_ids"],
+      "type": "object"
+    },
+    "condition": {
+      "oneOf": [
+        {"additionalProperties": false, "properties": {"arguments": {"type": "object"}, "predicate": {"pattern": "^[a-z][a-z0-9_]*(?:\\.[a-z][a-z0-9_]*)+$", "type": "string"}}, "required": ["predicate", "arguments"], "type": "object"},
+        {"additionalProperties": false, "properties": {"all": {"items": {"$ref": "#/$defs/condition"}, "minItems": 1, "type": "array"}}, "required": ["all"], "type": "object"},
+        {"additionalProperties": false, "properties": {"any": {"items": {"$ref": "#/$defs/condition"}, "minItems": 1, "type": "array"}}, "required": ["any"], "type": "object"},
+        {"additionalProperties": false, "properties": {"not": {"$ref": "#/$defs/condition"}}, "required": ["not"], "type": "object"}
+      ]
+    },
+    "contextRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {"minLength": 1, "type": "string"},
+        "key": {"$ref": "#/$defs/stableKey"},
+        "required_for": {"items": {"enum": ["RETRIEVAL", "APPLICABILITY", "RULE_EVALUATION", "INTERPRETATION"]}, "minItems": 1, "type": "array", "uniqueItems": true}
+      },
+      "required": ["key", "required_for", "description"],
+      "type": "object"
+    },
+    "narrativeFacet": {
+      "additionalProperties": false,
+      "properties": {"body": {"minLength": 1, "type": "string"}, "facet_kind": {"$ref": "#/$defs/token"}, "position": {"minimum": 0, "type": "integer"}},
+      "required": ["facet_kind", "position", "body"],
+      "type": "object"
+    },
+    "nodeRef": {
+      "additionalProperties": false,
+      "properties": {"asset_key": {"$ref": "#/$defs/stableKey"}, "component_key": {"$ref": "#/$defs/stableKey"}},
+      "required": ["asset_key"],
+      "type": "object"
+    },
+    "provenanceSource": {
+      "additionalProperties": false,
+      "properties": {
+        "locator": {"minLength": 1, "type": "string"},
+        "notes": {"type": ["string", "null"]},
+        "source_id": {"$ref": "#/$defs/stableKey"},
+        "source_type": {"$ref": "#/$defs/token"},
+        "title": {"minLength": 1, "type": "string"},
+        "version_or_fingerprint": {"type": ["string", "null"]}
+      },
+      "required": ["source_id", "source_type", "title", "locator", "version_or_fingerprint", "notes"],
+      "type": "object"
+    },
+    "relationRevision": {
+      "additionalProperties": false,
+      "properties": {
+        "governance_status": {"enum": ["CANDIDATE", "REVIEWED", "ACCEPTED", "SUPERSEDED", "REJECTED"]},
+        "provenance_source_ids": {"$ref": "#/$defs/stringSet"},
+        "rationale": {"type": ["string", "null"]},
+        "relation_id": {"$ref": "#/$defs/uuid"},
+        "relation_revision_id": {"$ref": "#/$defs/uuid"},
+        "relation_type": {"$ref": "#/$defs/token"},
+        "revision_no": {"minimum": 1, "type": "integer"},
+        "scope": {"type": ["string", "null"]},
+        "source_ref": {"$ref": "#/$defs/nodeRef"},
+        "target_ref": {"$ref": "#/$defs/nodeRef"}
+      },
+      "required": ["relation_id", "relation_revision_id", "revision_no", "governance_status", "source_ref", "target_ref", "relation_type", "scope", "rationale", "provenance_source_ids"],
+      "type": "object"
+    },
+    "retrievalProfile": {
+      "additionalProperties": false,
+      "properties": {"aliases": {"$ref": "#/$defs/stringSet"}, "lexical_terms": {"$ref": "#/$defs/stringSet"}, "negative_cues": {"$ref": "#/$defs/stringSet"}, "semantic_cues": {"$ref": "#/$defs/stringSet"}},
+      "required": ["aliases", "lexical_terms", "semantic_cues", "negative_cues"],
+      "type": "object"
+    },
+    "ruleSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "condition": {"$ref": "#/$defs/condition"},
+        "consequence_payload": {"type": ["object", "array", "string", "number", "integer", "boolean", "null"]},
+        "consequence_type": {"$ref": "#/$defs/token"},
+        "force": {"enum": ["HARD", "STRONG", "HEURISTIC", "INFORMATIONAL"]},
+        "provenance_source_ids": {"$ref": "#/$defs/stringSet"},
+        "rationale": {"type": ["string", "null"]},
+        "rule_key": {"$ref": "#/$defs/stableKey"},
+        "rule_spec_id": {"$ref": "#/$defs/uuid"},
+        "unknown_behavior": {"enum": ["ASK", "DEFER", "BLOCK_DEPENDENT", "NO_INFERENCE"]}
+      },
+      "required": ["rule_spec_id", "rule_key", "condition", "consequence_type", "consequence_payload", "force", "unknown_behavior", "rationale", "provenance_source_ids"],
+      "type": "object"
+    },
+    "stableKey": {"pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "type": "string"},
+    "stringSet": {"items": {"type": "string"}, "type": "array", "uniqueItems": true},
+    "token": {"pattern": "^[A-Z][A-Z0-9_]*$", "type": "string"},
+    "tokenSet": {"items": {"$ref": "#/$defs/token"}, "type": "array", "uniqueItems": true},
+    "uuid": {"format": "uuid", "type": "string"}
+  },
+  "$id": "https://autonomous-data-science-system.local/schemas/reusable_knowledge_bundle_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "assets": {"items": {"$ref": "#/$defs/assetRevision"}, "type": "array"},
+    "bundle_kind": {"enum": ["CANDIDATE_SET", "ACCEPTED_SNAPSHOT", "BENCHMARK_FIXTURE"]},
+    "collections": {"items": {"$ref": "#/$defs/collection"}, "type": "array"},
+    "format": {"const": "ads-reusable-knowledge-bundle"},
+    "provenance_sources": {"items": {"$ref": "#/$defs/provenanceSource"}, "type": "array"},
+    "relations": {"items": {"$ref": "#/$defs/relationRevision"}, "type": "array"},
+    "schema_version": {"const": 1}
+  },
+  "required": ["format", "schema_version", "bundle_kind", "assets", "relations", "provenance_sources", "collections"],
+  "title": "Reusable Knowledge Bundle v1",
+  "type": "object"
+}
