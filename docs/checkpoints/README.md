@@ -74,6 +74,8 @@ Prototype V0 development calibration
 Prototype V0 held-out execution
 Post-V0 product and architecture design
 Post-V0 methodological-navigation and reusable-knowledge design
+Post-V0 V1 professional frontend exploration
+Post-V0 V1 bounded implementation and integration
 ```
 
 The field describes historical context. It should not be retroactively rewritten to the current project stage.
@@ -110,14 +112,18 @@ Every checkpoint created under this development process must also record:
 For the current session:
 
 ```text
+Design session: 03
+ChatGPT project: Autonomous Data Science System
+Session title: 03 - Project Cockpit & V1 Integration
+```
+
+Previous sessions:
+
+```text
 Design session: 02
 ChatGPT project: Autonomous Data Science System
 Session title: 02 - Methodological Brain & Knowledge Units
-```
 
-The previous session was:
-
-```text
 Design session: 01
 ChatGPT project: Autonomous Data Science System
 Session title: 01 - Foundations & Checkpoint 0
@@ -223,12 +229,12 @@ A new checkpoint in the current ChatGPT session should normally begin like this:
 **Date:** YYYY-MM-DD  
 **Status:** Historical design checkpoint  
 **Checkpoint class:** DESIGN  
-**Project stage:** Post-V0 methodological-navigation and reusable-knowledge design  
+**Project stage:** Post-V0 V1 bounded implementation and integration  
 **Scope:** Records ...  
 **Authority:** Historical provenance; current promoted sources govern current interpretation.  
-**Design session:** 02  
+**Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
-**Session title:** 02 - Methodological Brain & Knowledge Units
+**Session title:** 03 - Project Cockpit & V1 Integration
 ```
 
 Then add type-specific metadata only where useful.
