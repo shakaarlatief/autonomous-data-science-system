@@ -1,0 +1,211 @@
+name: Finalize checkpoint metadata maintenance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/finalize-checkpoint-metadata-maintenance.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Harden normalizer and reconcile preservation state
+        shell: python
+        run: |
+          from pathlib import Path
+
+          normalizer_path = Path("scripts/normalize_checkpoint_metadata.py")
+          normalizer = normalizer_path.read_text(encoding="utf-8")
+          old = '''    # All pre-100 checkpoints belong to the first ChatGPT project session. Keep
+    # this as provenance metadata, not as methodological authority.
+    if parsed.number < 100:
+        session_fields = [
+            ("Design session", canonical_value(parsed, "Design session") or LEGACY_DESIGN_SESSION),
+            (
+                "ChatGPT project",
+                canonical_value(parsed, "ChatGPT project") or LEGACY_CHATGPT_PROJECT,
+            ),
+            (
+                "Session title",
+                canonical_value(parsed, "Session title") or LEGACY_SESSION_TITLE,
+            ),
+        ]
+        header_lines.extend(f"**{key}:** {value}  " for key, value in session_fields)
+'''
+          new = '''    # Session provenance is mandatory under the current checkpoint contract.
+    # Legacy checkpoints have confirmed Session 01 defaults. Post-contract
+    # checkpoints preserve their explicitly recorded session provenance rather
+    # than receiving an inferred value.
+    if parsed.number < 100:
+        session_fields = [
+            ("Design session", canonical_value(parsed, "Design session") or LEGACY_DESIGN_SESSION),
+            (
+                "ChatGPT project",
+                canonical_value(parsed, "ChatGPT project") or LEGACY_CHATGPT_PROJECT,
+            ),
+            (
+                "Session title",
+                canonical_value(parsed, "Session title") or LEGACY_SESSION_TITLE,
+            ),
+        ]
+    else:
+        session_fields = []
+        for key in ("Design session", "ChatGPT project", "Session title"):
+            value = canonical_value(parsed, key)
+            if value:
+                session_fields.append((key, value))
+
+    header_lines.extend(f"**{key}:** {value}  " for key, value in session_fields)
+'''
+          if old in normalizer:
+              normalizer = normalizer.replace(old, new, 1)
+          elif new not in normalizer:
+              raise SystemExit("Expected session-provenance block not found in normalizer")
+          normalizer_path.write_text(normalizer, encoding="utf-8")
+
+          continuity_path = Path("docs/CONTINUITY.md")
+          continuity = continuity_path.read_text(encoding="utf-8")
+          replacements = [
+              ("**Aligned development-method version:** 0.3  ", "**Aligned development-method version:** 0.4  "),
+              ("**Last reviewed:** 2026-08-19", "**Last reviewed:** 2026-08-20"),
+              ("The current continuity procedure is aligned with Development Method version 0.3.", "The current continuity procedure is aligned with Development Method version 0.4."),
+          ]
+          for old_text, new_text in replacements:
+              if old_text in continuity:
+                  continuity = continuity.replace(old_text, new_text, 1)
+              elif new_text not in continuity:
+                  raise SystemExit(f"Continuity reconciliation anchor missing: {old_text}")
+
+          active_heading = "### Active development session"
+          if active_heading not in continuity:
+              anchor = (
+                  "Session names are navigation and provenance metadata only. The repository must never depend on a chat retaining a particular title.\n\n"
+                  "A chat may contain many topics and many checkpoints while continuity remains healthy."
+              )
+              if anchor not in continuity:
+                  raise SystemExit("Session naming anchor not found in CONTINUITY.md")
+              addition = anchor + """
+
+### Active development session
+
+The current interaction provenance is:
+
+```text
+Design session: 02
+ChatGPT project: Autonomous Data Science System
+Session title: 02 - Methodological Brain & Knowledge Units
+```
+
+The previous design session was:
+
+```text
+Design session: 01
+ChatGPT project: Autonomous Data Science System
+Session title: 01 - Foundations & Checkpoint 0
+```
+
+Every checkpoint created while this ChatGPT-based development process remains active must preserve the applicable `Design session`, `ChatGPT project`, and `Session title` fields under `docs/checkpoints/README.md`. Session provenance improves navigation and auditing, but repository state remains the source of truth across sessions.
+"""
+              continuity = continuity.replace(anchor, addition, 1)
+
+          if "v0.4\nexplicit checkpoint metadata contract" not in continuity:
+              anchor = """v0.3
+promotion audit + knowledge map + reconciliation + authority metadata
++ concise current state + experiment ledgers + major-changes history
+"""
+              if anchor not in continuity:
+                  raise SystemExit("Version progression anchor not found in CONTINUITY.md")
+              continuity = continuity.replace(
+                  anchor,
+                  anchor + """
+v0.4
+explicit checkpoint metadata contract + mechanical validation
++ normalized historical checkpoint provenance + required ChatGPT session provenance
+""",
+                  1,
+              )
+          continuity_path.write_text(continuity, encoding="utf-8")
+
+          state_path = Path("docs/CURRENT_STATE.md")
+          state = state_path.read_text(encoding="utf-8")
+          if "**Checkpoint:** 102  " in state:
+              state = state.replace("**Checkpoint:** 102  ", "**Checkpoint:** 103  ", 1)
+          elif "**Checkpoint:** 103  " not in state:
+              raise SystemExit("Unexpected checkpoint marker in CURRENT_STATE.md")
+
+          old_stage = "**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, five-example reusable-knowledge stress test, and first candidate conceptual knowledge representation contract completed; adversarial representation review is the active design task  "
+          new_stage = "**Development stage:** Prototype V0 complete; post-V0 product vision, project object model, professional developer workflow, methodological-navigation relevance architecture, five-example reusable-knowledge stress test, first candidate conceptual knowledge representation contract, and checkpoint/session-provenance repair completed; adversarial representation review is the active design task  "
+          if old_stage in state:
+              state = state.replace(old_stage, new_stage, 1)
+          elif new_stage not in state:
+              raise SystemExit("Unexpected development-stage text in CURRENT_STATE.md")
+
+          if "## Active ChatGPT development context" not in state:
+              execution_line = "**Execution mode:** Prototype V0 is closed; no further B0/B1/P0 treatment or V0 semantic-judge inference is authorized"
+              if execution_line not in state:
+                  raise SystemExit("Execution-mode anchor not found in CURRENT_STATE.md")
+              state = state.replace(
+                  execution_line,
+                  execution_line + """
+
+## Active ChatGPT development context
+
+```text
+Design session: 02
+ChatGPT project: Autonomous Data Science System
+Session title: 02 - Methodological Brain & Knowledge Units
+```
+
+This is interaction/provenance metadata. Repository artifacts remain authoritative for project reconstruction across chats.
+""",
+                  1,
+              )
+
+          old_backfill = "Checkpoint metadata normalization tooling now exists for the legacy 000-099 records. The historical backfill should not be considered closed until the normalized repository state has been mechanically verified against the checkpoint metadata contract."
+          new_backfill = """The checkpoint metadata repair is closed. Checkpoints `000` through `099` were normalized and validated in GitHub Actions commit `bae5b8d00fa5da16029afee790c1a6762dc6c0fc`. Checkpoints `100` through `102` were subsequently backfilled with Session 02 provenance in commit `ce6b029af78a33bb64f85377f5ff753f088ba190`.
+
+The current checkpoint contract requires the historical/authority core plus `Design session`, `ChatGPT project`, and `Session title`. See Checkpoint 103 and `docs/checkpoints/README.md`."""
+          if old_backfill in state:
+              state = state.replace(old_backfill, new_backfill, 1)
+          elif new_backfill not in state:
+              raise SystemExit("Historical-backfill reconciliation anchor not found")
+
+          cp103 = "docs/checkpoints/103_checkpoint_metadata_normalization_and_session_provenance_closed.md\n"
+          if cp103 not in state:
+              anchor = "docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md\n"
+              if anchor not in state:
+                  raise SystemExit("Checkpoint 102 reading-list anchor not found")
+              state = state.replace(anchor, anchor + cp103, 1)
+          state_path.write_text(state, encoding="utf-8")
+
+      - name: Normalize every checkpoint under the current contract
+        run: python scripts/normalize_checkpoint_metadata.py --write --include-post-contract
+
+      - name: Validate every checkpoint
+        run: python scripts/check_checkpoint_metadata.py --all
+
+      - name: Remove one-off maintenance workflows
+        shell: bash
+        run: |
+          git rm -f .github/workflows/reconcile-session-02-continuity-state.yml 2>/dev/null || true
+          git rm -f .github/workflows/finalize-checkpoint-metadata-maintenance.yml
+
+      - name: Commit finalized maintenance state
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/normalize_checkpoint_metadata.py docs/checkpoints docs/CONTINUITY.md docs/CURRENT_STATE.md .github/workflows
+          git commit -m "Finalize checkpoint metadata and session provenance"
+          git push
