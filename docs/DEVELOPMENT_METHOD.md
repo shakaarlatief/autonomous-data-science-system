@@ -2,7 +2,7 @@
 
 **Status:** Current canonical project-development method  
 **Current version:** 0.4  
-**Last reviewed:** 2026-08-19
+**Last reviewed:** 2026-08-20
 
 ## Purpose
 
@@ -129,7 +129,7 @@ The current checkpoint-format specification is:
 docs/checkpoints/README.md
 ```
 
-Every new checkpoint must contain the following core fields immediately after the title:
+Every new checkpoint created under the current ChatGPT-based development process must contain the following historical/authority core immediately after the title:
 
 ```text
 Date
@@ -140,13 +140,33 @@ Scope
 Authority
 ```
 
-The common core exists so a checkpoint can be interpreted without reconstructing its role from the filename, surrounding Git history, or memory of the session that created it.
+and must also preserve the current interaction-session provenance:
 
-Different checkpoint classes should add type-specific metadata when useful. For example, design checkpoints may record design-session and session-title provenance, while experiment records may record condition, run, attempt, blinding, or verification information. The project should not force semantically irrelevant fields into every checkpoint merely to make the headers visually identical.
+```text
+Design session
+ChatGPT project
+Session title
+```
+
+The historical/authority core exists so a checkpoint can be interpreted without reconstructing its role from the filename or surrounding Git history. Session provenance exists so a future continuation can identify where the checkpoint was produced without depending on the old chat remaining available.
+
+Checkpoint classes may add type-specific metadata when useful. Experiment records, for example, may add condition, run, attempt, blinding, verification, or treatment-impact information. Heterogeneous checkpoint classes should not be forced to carry semantically meaningless fields merely for visual uniformity.
 
 The historical checkpoint body remains provenance. Metadata normalization may improve classification and discoverability, but it must not rewrite historical conclusions using later knowledge or silently promote old records into current authority.
 
-Checkpoints 000-099 predate this explicit contract and require conservative normalization. Until that backfill is complete, missing legacy metadata should be interpreted conservatively as historical provenance unless a frozen specification or other authoritative source establishes a stronger role.
+The legacy normalization is complete. On 2026-08-20, Checkpoints `000` through `099` were normalized conservatively by the repository migration workflow while preserving titles and substantive bodies. The successful normalization commit is:
+
+```text
+bae5b8d00fa5da16029afee790c1a6762dc6c0fc
+Normalize legacy checkpoint metadata
+```
+
+Checkpoints `100` through `102`, which were created in Design Session 02 before session provenance had again become mandatory, were subsequently backfilled in:
+
+```text
+ce6b029af78a33bb64f85377f5ff753f088ba190
+Backfill Session 02 checkpoint provenance
+```
 
 The lightweight validator:
 
@@ -154,7 +174,9 @@ The lightweight validator:
 scripts/check_checkpoint_metadata.py
 ```
 
-should be used to prevent future silent drift and to measure completion of the legacy normalization pass.
+now checks the current checkpoint contract, including the required session-provenance fields. The completed normalization should therefore be treated as closed historical repair, not as pending work.
+
+See Checkpoint 103 and `docs/checkpoints/README.md` for the detailed contract and migration record.
 
 ## Promotion audit
 
@@ -233,7 +255,7 @@ These preserve what the project believed or was working on at a particular time.
 
 They are historical snapshots rather than automatically current truth.
 
-Their minimum metadata and authority semantics are governed by `docs/checkpoints/README.md`.
+Their mandatory historical/authority metadata, ChatGPT session provenance, and type-specific extension rules are governed by `docs/checkpoints/README.md`.
 
 ### 4. Experiment-specific status ledgers
 
@@ -255,7 +277,7 @@ If this layer is introduced, it should be treated as provenance rather than as c
 
 ## Routing layer: KNOWLEDGE_MAP
 
-Version 0.3 introduces:
+Version 0.3 introduced:
 
 ```text
 docs/KNOWLEDGE_MAP.md
@@ -309,7 +331,7 @@ Change constraints
 
 This remains a semantic convention rather than a rigid machine-readable schema for every repository document.
 
-Checkpoint records are the exception. Actual repository use showed that the earlier loose convention produced inconsistent checkpoint headers, so v0.4 gives checkpoints a small mandatory core plus type-specific extensions through `docs/checkpoints/README.md`.
+Checkpoint records are the exception. Actual repository use showed that the earlier loose convention produced inconsistent checkpoint headers, so v0.4 gives checkpoints a mandatory historical/authority core, mandatory ChatGPT session provenance under the current development process, and type-specific extensions through `docs/checkpoints/README.md`.
 
 A future version may formalize metadata for additional document classes if observed inconsistency justifies doing so.
 
@@ -364,9 +386,33 @@ Does MAJOR_CHANGES capture significant structural evolution?
 
 Reconciliation is periodic, not required after every checkpoint.
 
+## Unplanned session-boundary recovery
+
+The normal development loop assumes the project has time to complete its checkpoint, promotion, routing, and current-state updates before a design session ends. A platform conversation limit or other abrupt interruption can prevent that final reconciliation even when substantive reasoning has already been preserved.
+
+The canonical recovery procedure lives in:
+
+```text
+docs/CONTINUITY.md
+```
+
+The Session 02 to Session 03 transition demonstrated the important distinction:
+
+```text
+substantive preservation failure
+    !=
+routing/current-state reconciliation drift
+```
+
+If research/specification/checkpoint artifacts already preserve the material reasoning, a new session should reconstruct from the active repository branch, identify the incomplete routing/canonical updates, and repair those conservatively rather than attempting to recreate an unavailable conversation from memory.
+
+Checkpoint 120 records the first real use of this recovery path.
+
+This clarification does not require Development Method v0.5. Version 0.4 already requires proactive preservation, promotion audits, current-state maintenance, routing, and stage-boundary reconciliation. `CONTINUITY.md` specifies how to finish those responsibilities after an unplanned boundary.
+
 ## Major structural changes
 
-Version 0.3 introduces:
+Version 0.3 introduced:
 
 ```text
 docs/MAJOR_CHANGES.md
@@ -439,6 +485,8 @@ The Checkpoint 22 promotion gap is an example at Level 2: knowledge was durable 
 
 The checkpoint-header drift discovered at Checkpoint 100 is another Level-2 example: a deliberately loose metadata convention became inconsistent under sustained operational use, so the lesson was generalized into the v0.4 checkpoint metadata contract and mechanical validation direction.
 
+The unexpected Session 02 boundary is a third Level-2 example: substantive knowledge survived because important research/specification/checkpoint material had already been preserved, but incomplete end-of-session routing still caused an incorrect initial reconstruction from `main`. The generalized recovery procedure now lives in `CONTINUITY.md` rather than requiring a new method version.
+
 ## Avoiding premature completeness
 
 The project should not attempt to enumerate all possible data-science decisions before building or testing anything.
@@ -496,7 +544,7 @@ A small checkpoint-metadata validator is not a reversal of that deferral. It is 
 
 Changes to the development method should themselves be preserved.
 
-Version 0.2 recorded proactive checkpoint detection. Version 0.3 recorded the move from durability-focused preservation toward an explicit lifecycle covering discoverability, promotion, authority, reconciliation, and selective structural history. Version 0.4 records the move from optional checkpoint metadata conventions to an explicit minimum contract after actual checkpoint growth demonstrated inconsistency.
+Version 0.2 recorded proactive checkpoint detection. Version 0.3 recorded the move from durability-focused preservation toward an explicit lifecycle covering discoverability, promotion, authority, reconciliation, and selective structural history. Version 0.4 records the move from optional checkpoint metadata conventions to a mechanically validated checkpoint contract, including explicit session provenance under the current ChatGPT development process.
 
 The evolution of the methodology is itself useful knowledge.
 
@@ -508,7 +556,7 @@ The project should prefer natural checkpoints over constant micro-updates.
 
 Promotion audits should be short when no promotion is required. Reconciliation should happen at stage boundaries, not continuously.
 
-Checkpoint metadata is intentionally a small mandatory core. It should improve professional consistency without forcing every historical or operational record into a large universal template.
+Checkpoint metadata is intentionally a small mandatory historical/authority core plus mandatory session provenance and genuinely useful type-specific extensions. It should improve professional consistency without forcing every historical or operational record into a large universal template.
 
 If maintaining the knowledge map, current state, metadata, or reconciliation process becomes repetitive or inconsistent, that is evidence that partial automation may be justified. Version 0.4 applies that principle narrowly by adding mechanical validation for checkpoint headers.
 
@@ -535,17 +583,22 @@ Automatic extraction must not imply automatic promotion into trusted reusable kn
 
 ### Version 0.4
 
-**Introduced:** Checkpoint 100, 2026-08-19
+**Introduced:** Checkpoint 100, 2026-08-19  
+**Contract strengthened and normalization closed:** Checkpoint 103, 2026-08-20
 
 Changes:
 
 - converted checkpoint metadata from a loose "some subset" convention into an explicit mandatory minimum contract;
 - introduced `docs/checkpoints/README.md` as the checkpoint-format specification;
-- required `Date`, `Status`, `Checkpoint class`, `Project stage`, `Scope`, and `Authority` for every new checkpoint;
+- required the historical/authority core `Date`, `Status`, `Checkpoint class`, `Project stage`, `Scope`, and `Authority` for every new checkpoint;
+- made `Design session`, `ChatGPT project`, and `Session title` mandatory checkpoint provenance under the current ChatGPT-based development process;
 - preserved type-specific metadata extensions rather than forcing heterogeneous checkpoint classes into one oversized header;
-- required conservative historical normalization of Checkpoints 000-099 without rewriting their substantive historical content;
-- added `scripts/check_checkpoint_metadata.py` to detect metadata drift mechanically;
+- normalized Checkpoints 000-099 conservatively without rewriting their substantive historical content;
+- backfilled Session 02 provenance for Checkpoints 100-102;
+- added and strengthened `scripts/check_checkpoint_metadata.py` to detect metadata and session-provenance drift mechanically;
 - treated the observed checkpoint-header inconsistency as a real Level-2 development-method failure and generalized the lesson.
+
+The subsequent unplanned Session 02 boundary did not create version 0.5. Its recovery procedure is a continuity specialization of the existing v0.4 preservation/reconciliation responsibilities and is documented in `docs/CONTINUITY.md` and Checkpoint 120.
 
 ### Version 0.3
 
