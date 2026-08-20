@@ -8,7 +8,7 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page.getByRole('heading', { name: 'Customer Churn Prediction' })).toBeVisible()
     await expect(page.getByText('Resolve prediction moment').first()).toBeVisible()
     await expect(page.locator('.method-status.blocking').first()).toContainText('Required / blocking')
-    await expect(page.getByRole('navigation', { name: 'Workspace' })).toBeVisible()
+    await expect(page.getByRole('navigation', { name: 'Workspace', exact: true })).toBeVisible()
     await expect(page.getByRole('complementary', { name: 'Methodological guidance' })).toBeVisible()
   })
 
