@@ -19,11 +19,13 @@ import {
   Settings2,
   ShieldCheck,
   Sun,
+  Workflow,
 } from 'lucide-react'
 import { useWorkspace } from '../appState'
 import { MethodologyPanel } from './MethodologyPanel'
 
 const primaryNavigation = [
+  { to: '/cockpit', label: 'Project Cockpit', icon: Workflow, enabled: true },
   { to: '/', label: 'Overview', icon: Home, enabled: true },
   { to: '/data', label: 'Data', icon: Database, enabled: true },
   { to: '/eda', label: 'EDA', icon: BarChart3, enabled: true },
@@ -60,6 +62,10 @@ export function AppShell() {
 
   const activeRunCount = runs.filter((run) => run.status === 'RUNNING').length
   const approvalCount = runs.filter((run) => run.status === 'WAITING_FOR_APPROVAL').length
+
+  if (pathname.startsWith('/cockpit')) {
+    return <Outlet />
+  }
 
   return (
     <div className="app-shell">
