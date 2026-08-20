@@ -53,6 +53,59 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page).toHaveURL(/view=trend/)
   })
 
+  test('cockpit is immersive and spatially focuses into the shared Data workspace', async ({ page }) => {
+    await page.goto('/cockpit')
+
+    await expect(page.getByText('Project operating map')).toBeVisible()
+    await expect(page.getByRole('navigation', { name: 'Workspace', exact: true })).toHaveCount(0)
+    await expect(page.getByRole('link', { name: /Project views/i })).toBeVisible()
+
+    await page.getByRole('button', { name: 'Open Data understanding' }).click()
+    await expect(page.getByRole('heading', { name: 'Data' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'support_tickets' })).toBeVisible()
+    await expect(page).toHaveURL(/focus=data/)
+
+    await page.getByRole('button', { name: 'Return to project map' }).click()
+    await expect(page.getByText('Project operating map')).toBeVisible()
+    await expect(page).toHaveURL(/focus=map/)
+  })
+
+  test('cockpit opens the missingness investigation and can hand off to full Data focus', async ({ page }) => {
+    await page.goto('/cockpit')
+
+    await page.getByRole('button', { name: 'Open Production missingness' }).click()
+    await expect(page.getByRole('heading', { name: 'Production missingness investigation' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Missingness by contract' })).toBeVisible()
+    await expect(page).toHaveURL(/focus=missingness/)
+
+    await page.getByRole('button', { name: /Open full Data workspace/i }).click()
+    await expect(page.getByRole('heading', { name: 'Data' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'support_tickets' })).toBeVisible()
+    await expect(page).toHaveURL(/focus=data/)
+  })
+
+  test('browser Back restores the prior cockpit project-map state', async ({ page }) => {
+    await page.goto('/cockpit')
+    await page.getByRole('button', { name: 'Open EDA evidence' }).click()
+    await expect(page.getByRole('heading', { name: 'EDA' })).toBeVisible()
+    await expect(page).toHaveURL(/focus=eda/)
+
+    await page.goBack()
+    await expect(page.getByText('Project operating map')).toBeVisible()
+  })
+
+  test('cockpit core surface has no serious automated accessibility violations', async ({ page }) => {
+    await page.goto('/cockpit')
+    await expect(page.getByText('Project operating map')).toBeVisible()
+
+    const results = await new AxeBuilder({ page }).analyze()
+    const serious = results.violations.filter((violation) =>
+      violation.impact === 'serious' || violation.impact === 'critical',
+    )
+
+    expect(serious).toEqual([])
+  })
+
   test('approval action updates run state through the interaction boundary', async ({ page }) => {
     await page.goto('/')
 
