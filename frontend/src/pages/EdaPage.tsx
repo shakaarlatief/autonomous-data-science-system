@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { useWorkspace } from '../appState'
 import { StatusLabel } from '../components/MethodologyPanel'
+import type { DistributionBin, TrendPoint } from '../domain'
 
 export function EdaPage({ selectedView, onViewChange }: { selectedView: string; onViewChange: (value: string) => void }) {
   const { workspace } = useWorkspace()
@@ -90,6 +91,10 @@ export function EdaPage({ selectedView, onViewChange }: { selectedView: string; 
   )
 }
 
+function chartValue(item: DistributionBin | TrendPoint): number {
+  return 'value' in item ? item.value : item.count
+}
+
 function EChartView({ view }: { view: 'distribution' | 'trend' }) {
   const { workspace } = useWorkspace()
   const dark = document.documentElement.dataset.theme === 'dark'
@@ -112,7 +117,7 @@ function EChartView({ view }: { view: 'distribution' | 'trend' }) {
       splitLine: { lineStyle: { color: dark ? '#20242b' : '#eef0f4' } },
     },
     series: [{
-      data: data.map((item) => item.value ?? ('count' in item ? item.count : 0)),
+      data: data.map(chartValue),
       type: view === 'distribution' ? 'bar' : 'line',
       smooth: view === 'trend',
       symbolSize: 8,
@@ -131,7 +136,7 @@ function PlotlyView({ view }: { view: 'distribution' | 'trend' }) {
   const dark = document.documentElement.dataset.theme === 'dark'
   const data = view === 'distribution' ? workspace.tenureDistribution : workspace.churnTrend
   const x = data.map((item) => item.label)
-  const y = data.map((item) => item.value ?? ('count' in item ? item.count : 0))
+  const y = data.map(chartValue)
   const color = dark ? '#8da2fb' : '#566bd8'
 
   return (
