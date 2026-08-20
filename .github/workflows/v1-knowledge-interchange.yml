@@ -40,6 +40,22 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Canonicalize representative fixture
+        shell: bash
+        run: |
+          uv run --locked python - <<'PY'
+          from pathlib import Path
+          from ads_system.infrastructure.interchange.knowledge_bundle import load_bundle, dump_bundle
+
+          path = Path("tests/fixtures/knowledge/reusable_knowledge_stress_v1.json")
+          bundle = load_bundle(path)
+          dump_bundle(bundle, path)
+          PY
       - name: Persist successful interchange evidence
         shell: bash
         run: |
@@ -67,14 +83,16 @@ jobs:
 
           The representative corpus includes Histogram, Missing Data, Temporal Validation, Random Forest, Prediction-Time Feature Eligibility, Class Imbalance, Prediction Moment, Bagging, ECDF, and Gradient-Boosted Trees. It remains BENCHMARK_FIXTURE/CANDIDATE material and is not accepted operational methodological knowledge.
 
+          The committed benchmark fixture is canonicalized through the same deterministic application serializer used by KI-06/KI-07.
+
           This result validates representation/interchange structure and safety. It does not yet validate database import/export round-trip behavior, retrieval quality, an embedding model, reranking, or MethodologicalHorizon construction.
           EOF
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
+          git add tests/fixtures/knowledge/reusable_knowledge_stress_v1.json experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
           if git diff --cached --quiet; then
-            echo "Interchange result already current."
+            echo "Interchange evidence and canonical fixture already current."
           else
             git commit -m "Record passing V1 reusable knowledge interchange gate"
             git push
