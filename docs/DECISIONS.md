@@ -142,7 +142,7 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Superseded for the V1 persistence/retrieval architecture by D-028; still applicable to implementation subsystems not yet selected  
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028 and for persistence tooling by D-029; still applicable to implementation subsystems not yet selected  
 **Date:** 2026-08-07  
 **Superseded in scope:** 2026-08-20
 
@@ -519,4 +519,50 @@ See:
 docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
 experiments/architecture_spikes/sqlite_v1_viability.py
+```
+
+---
+
+## D-029. Use SQLAlchemy Core and Alembic for V1 persistence implementation
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-20
+
+V1 persistence adapters will use **SQLAlchemy Core 2.0 stable-series APIs** for relational schema/query/transaction integration and **Alembic 1.x** for ordered schema migration history.
+
+SQLAlchemy ORM will not be the primary V1 domain/persistence model. Raw DBAPI/direct SQL will not be the normal repository implementation style, but remains allowed inside narrowly scoped adapter or migration code for genuinely backend-specific behavior such as SQLite PRAGMAs or FTS5.
+
+The implementation must preserve the boundaries defined by Specification 001:
+
+```text
+domain/application semantics
+    -> stable persistence ports
+    -> SQLAlchemy Core adapter
+    -> SQLite for V1
+    -> PostgreSQL adapter later if requirements justify migration
+```
+
+Alembic revisions are the authoritative production schema-evolution path. `MetaData.create_all()` may support isolated tests/spikes but does not replace migration history for real V1 workspaces.
+
+Alembic autogeneration may assist migration authoring but generated migrations must always be manually reviewed before acceptance.
+
+The production schema must use deterministic constraint naming and preserve SQLite STRICT behavior during batch table recreation.
+
+### Rationale
+
+SQLAlchemy Core matches the accepted explicit relational architecture without requiring the database representation to become the domain object model. It provides schema metadata, explicit transactions, custom type adaptation, SQLite/PostgreSQL dialects, inspection, and conditional DDL while keeping application semantics behind ports.
+
+A raw DBAPI-first approach would force the project to manually own dialect branching, type mapping, query construction, migration integration, schema metadata, and future PostgreSQL portability. The ORM is capable but introduces object/session identity and state-oriented unit-of-work semantics that are not required by the current explicit domain model and type-specific lifecycle architecture.
+
+A committed dual-backend spike tested SQLAlchemy 2.0.52 + Alembic 1.19.0 on SQLite and PostgreSQL 18. It passed SQLite STRICT creation, connection-level foreign-key enforcement, transaction rollback, portable UUID mapping, dialect-isolated FTS DDL, real Alembic migration on both databases, and a forced SQLite batch recreation that preserved data, STRICT mode, and a named CHECK constraint.
+
+SQLAlchemy 2.1 remains beta at this decision point, so V1 stays on the stable 2.0 API line until a later explicit dependency review.
+
+See:
+
+```text
+docs/specifications/002_v1_persistence_tooling_standard.md
+docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
+experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py
+experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
 ```
