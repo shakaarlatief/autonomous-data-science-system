@@ -1,0 +1,53 @@
+name: V1 architecture falsification
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - experiments/architecture_spikes/v1_schema_spike.sql
+      - experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
+      - experiments/architecture_spikes/v1_postgres_portability_spike.py
+      - .github/workflows/v1-architecture-falsification.yml
+
+permissions:
+  contents: read
+
+jobs:
+  sqlite-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run SQLite architecture gates FT-01 through FT-11
+        run: python experiments/architecture_spikes/v1_sqlite_architecture_falsification.py
+
+  postgres-portability:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: ads
+          POSTGRES_PASSWORD: ads
+          POSTGRES_DB: ads
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ads -d ads"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install PostgreSQL client binding
+        run: python -m pip install --disable-pip-version-check "psycopg[binary]>=3.2,<4"
+      - name: Run PostgreSQL portability gate FT-12
+        env:
+          ADS_POSTGRES_DSN: postgresql://ads:ads@127.0.0.1:5432/ads
+        run: python experiments/architecture_spikes/v1_postgres_portability_spike.py
