@@ -5,7 +5,7 @@
 **Checkpoint class:** MIXED  
 **Project stage:** Post-V0 methodological-navigation and reusable-knowledge design  
 **Scope:** Confirms preservation of the project's early missing-data decision-tree reasoning and records a correction to inconsistent checkpoint metadata practice.  
-**Authority:** Historical provenance for this audit. The current checkpoint metadata contract is `docs/checkpoints/README.md`; current project interpretation remains governed by canonical documents and promoted foundations.
+**Authority:** Historical provenance for this audit. The current checkpoint metadata contract is `docs/checkpoints/README.md`; current project interpretation remains governed by canonical documents and promoted foundations.  
 **Design session:** 02  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 02 - Methodological Brain & Knowledge Units
