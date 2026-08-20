@@ -425,19 +425,7 @@ docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotati
 
 The methodological-navigation design moved from a general relevance architecture to a concrete reusable-knowledge representation that survived two explicit stress-test rounds.
 
-The first contract was tested against:
-
-```text
-Histogram
-Missing Data
-Temporal Validation
-Random Forest
-Prediction-Time Feature Eligibility
-```
-
-and then adversarially challenged. The revised model was tested again against those five plus a new cross-cutting Class Imbalance concern.
-
-The promoted representation now distinguishes:
+The promoted representation distinguishes:
 
 ```text
 KnowledgeAsset
@@ -452,7 +440,7 @@ ExecutionCapability
 Views
 ```
 
-Two important structural principles were promoted:
+Promoted principles:
 
 ```text
 P-025
@@ -462,25 +450,12 @@ P-026
 Static methodological relationships should remain separate from conditional guidance rules.
 ```
 
-Additional durable conclusions include:
-
-```text
-intrinsic asset kind != reasoning function
-Concepts require first-class reusable identity
-asset != component != narrative facet
-rules guide reasoning/navigation rather than silently executing a rigid pipeline
-retrieval != applicability != required context != project relevance
-historical project reasoning should pin the knowledge revision used
-human-facing decision trees can be derived from reusable knowledge + project state
-```
-
 Key sources:
 
 ```text
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
 docs/checkpoints/105_refined_representation_second_stress_test.md
-docs/PRINCIPLES.md, P-025 and P-026
 ```
 
 ---
@@ -489,24 +464,7 @@ docs/PRINCIPLES.md, P-025 and P-026
 
 The project derived 59 technology-neutral requirements before comparing databases or retrieval architectures.
 
-They cover:
-
-```text
-stable knowledge identity and revision history
-component-level provenance
-typed relations and bounded traversal
-minimal TRUE / FALSE / UNKNOWN conditional rules
-semantic candidate retrieval
-retrieval/applicability/context separation
-project-state integration
-provenance and governance
-selective LLM context assembly
-human navigation and review
-execution-capability boundaries
-local-first operational constraints
-```
-
-This changed the architecture question from technology preference into a concrete workload decision.
+This changed architecture selection from technology preference into a concrete workload decision.
 
 Key source:
 
@@ -518,55 +476,20 @@ docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_su
 
 ## 2026-08-20: SQLite-centered local-first V1 persistence/retrieval architecture selected
 
-After the requirements were explicit, the project compared:
-
-```text
-pure files/Git
-Git/file-canonical knowledge + SQLite runtime projection
-SQLite-centered relational state
-PostgreSQL + pgvector
-Neo4j graph-first storage
-multi-store combinations
-```
-
-Current official capability research confirmed that SQLite provides the required relational integrity, FTS5 lexical search, recursive CTE traversal, JSON support, and WAL reader/writer behavior for the accepted initial one-writer envelope.
-
-A targeted synthetic viability spike tested representative relational lookup, typed relation, FTS, bounded traversal, and exact dense-vector similarity workloads. The spike is not a production benchmark, but it found no order-of-magnitude performance reason to introduce dedicated graph/vector infrastructure at the expected V1 scale.
-
-D-028 therefore selects:
+After explicit requirements and architecture comparison, D-028 selected:
 
 ```text
 SQLite operational store
-    reusable knowledge + project metadata/state
-
-FTS5
-    rebuildable lexical index
-
-rebuildable embeddings
-    initial in-process exact semantic search
-
-application-level minimal conditional-rule evaluator
-
+FTS5 rebuildable lexical index
+rebuildable embeddings with initial exact search
+application-level conditional-rule evaluator
 selective bounded LLM context assembly
-
-filesystem / Git / artifact storage
-    code and large artifacts outside SQLite
+filesystem/Git/artifact storage for large/code artifacts
 ```
 
-Explicitly deferred until measured requirements justify them:
+Dedicated graph/vector services, external rules engines, PostgreSQL by default, ANN infrastructure, and multi-store architecture remain deferred until measured requirements justify them.
 
-```text
-dedicated graph database
-dedicated vector database/service
-external rules engine
-PostgreSQL server as the default V1 store
-ANN index
-multi-store architecture
-```
-
-PostgreSQL + pgvector is retained as the preferred first migration family if later multi-writer, shared-server, concurrency, or semantic-search scale requirements exceed the SQLite envelope.
-
-This is the first implementation-architecture selection after D-011's intentional early-stage prohibition on premature technology choice. D-011 is now superseded for this scope while remaining applicable to still-unselected subsystems.
+PostgreSQL + pgvector remains the preferred first migration family if the SQLite envelope is exceeded.
 
 Key sources:
 
@@ -574,4 +497,129 @@ Key sources:
 docs/DECISIONS.md, D-028
 docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
 experiments/architecture_spikes/sqlite_v1_viability.py
+```
+
+---
+
+## 2026-08-20: V1 persistence moved from architecture into production code
+
+The project selected SQLAlchemy Core + Alembic, established standards-based Python/uv tooling, and then implemented the first real V1 persistence vertical slice.
+
+The production slice demonstrated on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 that exact historical project-to-knowledge references survive later knowledge revision changes.
+
+Key sources:
+
+```text
+docs/DECISIONS.md, D-029 and D-030
+docs/specifications/001_v1_sqlite_technical_architecture.md
+docs/specifications/002_v1_persistence_tooling_standard.md
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
+```
+
+---
+
+## 2026-08-20: Reusable knowledge gained an accepted deterministic interchange contract
+
+D-031 and Specification 004 now define the accepted V1 interchange as:
+
+```text
+JSON
++ JSON Schema Draft 2020-12
++ application semantic validation
++ deterministic serialization
+```
+
+The heterogeneous benchmark corpus passed KI-01 through KI-10 across Linux/Windows and Python 3.12-3.14.
+
+Normal candidate/benchmark import cannot silently create accepted methodological authority.
+
+The separate governed database round-trip is still being validated. Its first PostgreSQL attempt exposed a real portability defect in one overlong physical constraint name. The defect was localized and corrected; final corrected PostgreSQL confirmation remains pending at Checkpoint 116.
+
+Key sources:
+
+```text
+docs/DECISIONS.md, D-031
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
+docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
+```
+
+---
+
+## 2026-08-20: Agentic ecosystem audit separated ADS semantics from runtime/protocol infrastructure
+
+A current 2026 ecosystem audit examined MCP, OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, Google ADK, A2A, AG-UI, and observability patterns.
+
+The durable conclusion is:
+
+```text
+ADS owns
+    project semantics
+    methodological semantics
+    governance
+    provenance
+    Findings / Questions / Decisions
+    methodological horizon semantics
+
+ADS should preferentially adopt/test
+    agent runtime
+    durable workflow/checkpoint machinery
+    MCP interoperability
+    AG-UI transport if useful
+    A2A only when remote agents are real
+    standard operational observability
+```
+
+This produced:
+
+```text
+P-027
+Agent frameworks and interoperability protocols are infrastructure,
+not domain authority.
+
+P-028
+Prefer deterministic software for explicit work and agent reasoning
+for genuine ambiguity.
+```
+
+No agent framework or multi-agent architecture was selected. Specification 005 defines an ADS-shaped bakeoff in which even a no-framework result remains valid.
+
+Key sources:
+
+```text
+docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/PRINCIPLES.md, P-027 and P-028
+```
+
+---
+
+## 2026-08-20: Professional frontend became an early parallel V1 product track
+
+The product-interface requirement was strengthened from "professional workspace" into a first-class visual/product quality commitment.
+
+Foundation 021 now requires a modern, visually excellent, premium professional analytical interface with strong typography, carefully controlled density, accessibility, responsive professional desktop layouts, coherent light/dark modes, high-quality analytical visualization, and deliberately designed loading/empty/error/offline/approval states.
+
+P-029 makes the interface a reasoning/control/quality surface, not an end-stage presentation layer.
+
+Specification 006 defines the first visual/technical spike. The leading but not yet accepted hypothesis is:
+
+```text
+React + TypeScript + Vite
+TanStack Router / Query / Table
+shadcn/ui source-distributed components
+ADS-owned design system
+Playwright + Vitest
+```
+
+ECharts versus Plotly remains an empirical comparison. AG-UI will be tested as an adapter rather than a domain protocol. Tauri is deferred until the browser shell and Python service boundary are stable.
+
+Key sources:
+
+```text
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+docs/PRINCIPLES.md, P-029
+docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
 ```
