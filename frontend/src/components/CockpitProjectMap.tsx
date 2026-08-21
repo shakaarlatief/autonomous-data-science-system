@@ -295,10 +295,12 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   }
 
   useEffect(() => {
+    viewportRef.current?.scrollTo({ left: PAN_GUTTER, top: PAN_GUTTER, behavior: 'auto' })
+  }, [])
+
+  useEffect(() => {
     const viewport = viewportRef.current
     if (!viewport) return undefined
-
-    viewport.scrollTo({ left: PAN_GUTTER, top: PAN_GUTTER, behavior: 'auto' })
 
     const handlePinchZoom = (event: WheelEvent) => {
       if (!event.ctrlKey) return
@@ -435,7 +437,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
         </section>
 
         {!isToolbarCollapsed ? (
-          <div className="cockpit-map-toolbar" aria-label="Project map controls">
+          <div className="cockpit-map-toolbar" role="group" aria-label="Project map controls">
             <button
               type="button"
               className="cockpit-toolbar-labelled"
