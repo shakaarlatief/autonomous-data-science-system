@@ -1,8 +1,8 @@
 # Specification 007: V1 Unified Project Cockpit Interaction Spike
 
 **Date:** 2026-08-21  
-**Status:** Candidate V1 frontend interaction specification v0.3 after third human review; revised executable interaction gate passed, revised human visual/product gate remains open  
-**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric zoom, scalable project jump/search navigation, canvas-dominant chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 005 and Checkpoints 117 through 121  
+**Status:** Candidate V1 frontend interaction specification v0.4 after fourth human review; revised executable interaction gate passed, next human visual/product gate remains open  
+**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric zoom, scalable project jump/search navigation, balanced always-pannable project space, canvas-dominant and fold-away chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 006 and Checkpoints 117 through 123  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
@@ -17,6 +17,7 @@ The spike must answer whether ADS can provide a professional single-workspace ex
 see the project as a living analytical process
     -> navigate a project larger than the current viewport
     -> zoom and recover project context efficiently
+    -> continue to pan/recenter even when the project is smaller than the viewport
     -> jump/search to meaningful project work
     -> select a meaningful work unit
     -> smoothly enter a focused analytical workspace
@@ -279,6 +280,93 @@ hidden HUD
 
 Pointer-proximity reveal may later supplement this behavior, but hover must not become the only way to recover the HUD.
 
+### CPK-25: Symmetric always-pannable project world
+
+The scrollable spatial world and the logical analytical project plane must be treated as distinct layout concerns.
+
+At every supported geometric zoom, including when the scaled project plane is smaller than the visible browser viewport:
+
+```text
+space must remain available around all four sides of the project plane
+project plane must remain centered inside that surrounding world
+horizontal panning must remain possible
+vertical panning must remain possible
+user must be able to move the project through the visual center rather than being anchored to top/left
+```
+
+A fixed external padding value alone is insufficient if it permits the complete scrollable world to become smaller than the viewport.
+
+The bounded spike should therefore guarantee both:
+
+```text
+minimum symmetric project gutter
+minimum scroll range beyond the current viewport
+```
+
+The final production representation may use a different canvas technology, but it must preserve this interaction property.
+
+### CPK-26: Balanced internal project-plane margins
+
+External pan reserve from CPK-25 is distinct from the layout of content inside the project plane.
+
+The representative project map should not have an arbitrary large unused grid tail on one side while beginning almost immediately at the opposite edge.
+
+Stage zones and representative project work should therefore use visually balanced logical side margins unless project semantics provide a reason for intentional asymmetry.
+
+This requirement does not imply that every future project graph must be perfectly geometrically symmetric.
+
+### CPK-27: Stage orientation must survive geometric zoom
+
+Stage orientation is a navigation aid rather than ordinary node detail.
+
+The stage headings should remain visually clear enough to orient the user at normal, intermediate, and minimum supported geometric zoom. Purely shrinking stage typography proportionally with every canvas zoom is not sufficient if the headings become visually negligible.
+
+The spike may compensate stage-header typography/height against geometric zoom, or later move stage orientation into a more independent semantic/HUD layer.
+
+The stage names/taxonomy remain provisional. This requirement concerns visual orientation, not final stage semantics.
+
+### CPK-28: Fold-away project-map controls
+
+The floating map-control cluster must be explicitly hideable without making its capabilities inaccessible.
+
+Required behavior:
+
+```text
+expanded project-map controls
+    -> explicit fold action
+
+folded project-map controls
+    -> compact edge restore affordance
+    -> project operating surface becomes visually quieter
+```
+
+The restore affordance must remain keyboard reachable and must not depend on pointer hover.
+
+### CPK-29: Upper-corner placement for project detail surfaces
+
+Expanded project-detail surfaces should use the available upper map area efficiently.
+
+On desktop/laptop layouts, the Details surface should sit close to the upper-left available project-map corner while remaining below, rather than on top of, stage orientation.
+
+This is a placement constraint, not a fixed pixel contract. Collision safety and responsive behavior remain authoritative.
+
+### CPK-30: Restrained ambient spatial depth
+
+Human review positively validated the current subtle ambient treatment of the project grid, including soft blended tonal/color variation that gives the large surface depth without competing with analytical content.
+
+The candidate visual direction should preserve that general design quality:
+
+```text
+calm
+subtle
+professional
+spatial
+polished
+analytical content remains dominant
+```
+
+This requirement does not freeze exact circles, gradients, colors, glow coordinates, or opacity values. The principle is restrained ambient depth rather than a specific decorative motif.
+
 ---
 
 ## 3. Representative scenario
@@ -321,14 +409,17 @@ Preferred internal architecture:
 CockpitPage
     CompactFoldableCockpitHud
     ProjectMapSurface
-        StageViewportHeader
+        ScrollableProjectWorld
+            CenteredProjectCanvas
+                StageViewportHeader
+                ProjectWorkUnits
         GeometricZoomController
         ProjectJumpSearch
     FocusHost
         DataPage reuse
         EdaPage reuse
         MissingnessFocus spike
-    FloatingProjectControls
+    FoldableFloatingProjectControls
     FloatingContextSurface
     SystemComposer
 ```
@@ -351,6 +442,8 @@ complex workspace permanently nested inside scaled node
 ```
 
 The map surface must be architected as a viewport over project space rather than a static diagram whose entire logical extent must fit in one browser frame.
+
+The scrollable world must also remain conceptually distinct from the logical project plane so minimum geometric zoom does not eliminate panning merely because the project fits inside the current viewport.
 
 The implementation should prefer scalable navigation primitives directly when their stronger shape is already clear instead of knowingly proliferating disposable one-off toolbar controls.
 
@@ -375,7 +468,7 @@ view=distribution|trend
 
 The exact public URL contract remains provisional. The spike must prove that this state model supports Back/Forward and refresh without visible page-loading semantics.
 
-Viewport position/zoom should not be persisted into project/domain state. Whether pan/zoom/HUD state belongs in URL, browser-session UI state, or transient local UI state remains an implementation question.
+Viewport position/zoom should not be persisted into project/domain state. Whether pan/zoom/HUD/control-fold state belongs in URL, browser-session UI state, or transient local UI state remains an implementation question.
 
 ---
 
@@ -404,6 +497,13 @@ CPK-T17  zoom controls, keyboard zoom, 100% reset, and fit-project behavior oper
 CPK-T18  trackpad-style pinch input changes geometric zoom while ordinary two-axis movement remains available
 CPK-T19  project canvas visually continues behind the floating composer while lower work can still be brought fully clear of it
 CPK-T20  primary Cockpit HUD can explicitly hide and restore without removing access to project navigation
+CPK-T21  minimum zoom retains non-zero horizontal and vertical scroll range on a wide desktop viewport
+CPK-T22  ProjectCanvas has symmetric surrounding margins inside ProjectWorld at minimum zoom
+CPK-T23  user can move away from and recover the canonical position in all four directions
+CPK-T24  stage orientation remains visually substantial at minimum supported zoom
+CPK-T25  project-map controls can explicitly fold to and restore from an edge affordance
+CPK-T26  compact ADS/project identity remains intentional rather than vertically fragmented
+CPK-T27  expanded Details uses the upper available map area without covering stage orientation
 ```
 
 Visual regression should not freeze the exploratory Cockpit design before human review. Screenshot artifacts may be generated for review, but a canonical Cockpit baseline should be promoted only after the visual concept is accepted.
@@ -422,12 +522,14 @@ final semantic-zoom algorithm
 final minimap/navigation implementation
 multi-level arbitrary/infinite spatial nesting
 final zoom range or zoom persistence contract
+final pan-reserve dimensions
 production project-search backend
-pointer-proximity HUD reveal
+pointer-proximity HUD/control reveal
 production agent conversation backend
 production streaming interaction protocol
 full Validation/Features/Models/Evaluation workspaces
 final Cockpit visual identity
+exact permanent ambient-grid styling
 final animation library
 mobile-phone UI
 ```
@@ -449,4 +551,8 @@ Specification 007 may be promoted only after:
 9. geometric zoom, fit/recovery, and trackpad pinch behavior are usable in a real browser;
 10. scalable Jump to/search navigation is preferable to dedicated-control proliferation in real use;
 11. the canvas-dominant composer/control composition is visually accepted;
-12. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
+12. minimum-zoom panning and symmetric surrounding project space feel natural in real browser use;
+13. strengthened stage orientation remains useful rather than visually heavy across zoom levels;
+14. fold-away project-map controls and higher Details placement are accepted through human review;
+15. restrained ambient depth continues to support, rather than distract from, professional analytical use;
+16. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
