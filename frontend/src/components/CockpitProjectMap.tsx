@@ -38,10 +38,29 @@ type ProjectMapProps = {
   onFocus: (focus: ProjectMapFocus) => void
 }
 
-type JumpTarget = {
-  nodeId: string
-  label: string
-  category: string
+type NodeId =
+  | 'objective'
+  | 'data'
+  | 'prediction'
+  | 'missingness'
+  | 'eda'
+  | 'validation'
+  | 'baseline'
+  | 'rf'
+  | 'evaluation'
+  | 'review'
+
+type NodeStatus = 'complete' | 'blocked' | 'attention' | 'ready' | 'selected' | 'deferred' | 'future'
+
+type NodeDefinition = {
+  nodeId: NodeId
+  className: string
+  kicker: string
+  title: string
+  description: string
+  status: NodeStatus
+  icon: ReactNode
+  focus?: ProjectMapFocus
 }
 
 const CANVAS_WIDTH = 2260
@@ -49,6 +68,27 @@ const CANVAS_HEIGHT = 1180
 const MIN_ZOOM = 0.45
 const MAX_ZOOM = 1.6
 const ZOOM_STEP = 0.1
+
+const CONNECTOR_PATHS = [
+  'M250 205 C300 205 300 175 350 175',
+  'M550 175 C680 175 690 170 830 170',
+  'M450 225 C450 305 470 340 480 430',
+  'M520 520 C650 520 700 420 880 420',
+  'M930 225 C930 280 945 315 960 360',
+  'M1080 420 C1160 420 1175 315 1260 315',
+  'M1080 455 C1170 480 1180 625 1260 625',
+  'M1460 315 C1540 315 1540 480 1600 480',
+  'M1460 625 C1540 625 1540 510 1600 510',
+  'M520 760 C820 760 1120 780 1600 780',
+]
+
+const STAGES: Array<{ label: string; nodeId: NodeId }> = [
+  { label: 'Framing', nodeId: 'objective' },
+  { label: 'Data & exploration', nodeId: 'data' },
+  { label: 'Validation', nodeId: 'validation' },
+  { label: 'Modeling', nodeId: 'baseline' },
+  { label: 'Evaluation', nodeId: 'evaluation' },
+]
 
 const clampZoom = (value: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value))
 
@@ -64,26 +104,107 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const blocker = workspace.recommendations.find((item) => item.status === 'BLOCKING')
   const missingness = workspace.recommendations.find((item) => item.title.toLowerCase().includes('missing'))
 
-  const jumpTargets = useMemo<JumpTarget[]>(() => [
-    { nodeId: 'objective', label: 'Objective defined', category: 'Framing' },
-    { nodeId: 'data', label: 'Data understanding', category: 'Dataset' },
-    { nodeId: 'prediction', label: 'Resolve prediction moment', category: 'Blocker' },
-    { nodeId: 'missingness', label: 'Production missingness', category: 'Investigation' },
-    { nodeId: 'eda', label: 'EDA evidence', category: 'Exploration' },
-    { nodeId: 'validation', label: 'Chronological validation', category: 'Decision' },
-    { nodeId: 'baseline', label: 'Logistic baseline', category: 'Modeling' },
-    { nodeId: 'rf', label: 'Random Forest benchmark', category: 'Modeling' },
-    { nodeId: 'evaluation', label: 'Evaluation & calibration', category: 'Evaluation' },
-    { nodeId: 'review', label: 'Subgroup review', category: 'Evaluation' },
-  ], [])
+  const nodes = useMemo<NodeDefinition[]>(() => [
+    {
+      nodeId: 'objective',
+      className: 'node-objective',
+      kicker: 'Framing',
+      title: 'Objective defined',
+      description: 'Predict customer churn with decisions usable before retention intervention.',
+      status: 'complete',
+      icon: <Target size={17} />,
+    },
+    {
+      nodeId: 'data',
+      className: 'node-data',
+      kicker: 'Dataset',
+      title: 'Data understanding',
+      description: '7,043 rows · 21 source columns · semantic roles mapped',
+      status: 'complete',
+      icon: <Database size={17} />,
+      focus: 'data',
+    },
+    {
+      nodeId: 'prediction',
+      className: 'node-prediction',
+      kicker: 'Question',
+      title: 'Resolve prediction moment',
+      description: blocker?.summary ?? 'Feature eligibility cannot be finalized until the prediction moment is explicit.',
+      status: 'blocked',
+      icon: <TriangleAlert size={17} />,
+    },
+    {
+      nodeId: 'missingness',
+      className: 'node-missingness',
+      kicker: 'Investigation',
+      title: 'Production missingness',
+      description: missingness?.summary ?? 'Support-ticket completeness needs production-time investigation.',
+      status: 'attention',
+      icon: <FlaskConical size={17} />,
+      focus: 'missingness',
+    },
+    {
+      nodeId: 'eda',
+      className: 'node-eda',
+      kicker: 'Exploration',
+      title: 'EDA evidence',
+      description: 'Distribution and cohort signals are available for focused inspection.',
+      status: 'ready',
+      icon: <BarChart3 size={17} />,
+      focus: 'eda',
+    },
+    {
+      nodeId: 'validation',
+      className: 'node-validation',
+      kicker: 'Decision',
+      title: 'Chronological validation',
+      description: 'Temporal ordering selected as the current validation design.',
+      status: 'selected',
+      icon: <Check size={17} />,
+    },
+    {
+      nodeId: 'baseline',
+      className: 'node-baseline',
+      kicker: 'Modeling',
+      title: 'Logistic baseline',
+      description: 'Reference model completed and available for comparison.',
+      status: 'complete',
+      icon: <Play size={17} />,
+    },
+    {
+      nodeId: 'rf',
+      className: 'node-rf',
+      kicker: 'Modeling',
+      title: 'Random Forest benchmark',
+      description: 'Deferred until prediction-time feature eligibility is resolved.',
+      status: 'deferred',
+      icon: <BrainCircuit size={17} />,
+    },
+    {
+      nodeId: 'evaluation',
+      className: 'node-evaluation',
+      kicker: 'Downstream',
+      title: 'Evaluation & calibration',
+      description: 'Waiting on the active validation and modeling path.',
+      status: 'future',
+      icon: <Gauge size={17} />,
+    },
+    {
+      nodeId: 'review',
+      className: 'node-review',
+      kicker: 'Evaluation',
+      title: 'Subgroup review',
+      description: 'Reserved downstream work demonstrates lower project-space growth without promoting a final stage taxonomy.',
+      status: 'future',
+      icon: <BarChart3 size={17} />,
+    },
+  ], [blocker?.summary, missingness?.summary])
 
   const filteredJumpTargets = useMemo(() => {
     const query = jumpQuery.trim().toLowerCase()
-    if (!query) return jumpTargets
-    return jumpTargets.filter((target) =>
-      `${target.label} ${target.category}`.toLowerCase().includes(query),
-    )
-  }, [jumpQuery, jumpTargets])
+    if (!query) return nodes
+    return nodes.filter((node) => `${node.title} ${node.kicker}`.toLowerCase().includes(query))
+  }, [jumpQuery, nodes])
 
   const scrollBehavior = (): ScrollBehavior =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
@@ -132,12 +253,17 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     })
   }
 
-  const jumpToNode = (nodeId: string) => {
+  const jumpToNode = (nodeId: NodeId) => {
     const viewport = viewportRef.current
     const node = viewport?.querySelector<HTMLElement>(`[data-cockpit-node="${nodeId}"]`)
-    if (!node) return
+    if (!viewport || !node) return
 
-    node.scrollIntoView({ behavior: scrollBehavior(), block: 'center', inline: 'center' })
+    const nodeCenterX = (node.offsetLeft + node.offsetWidth / 2) * zoom
+    const nodeCenterY = (node.offsetTop + node.offsetHeight / 2) * zoom
+    const targetLeft = Math.max(0, Math.min(nodeCenterX - viewport.clientWidth / 2, viewport.scrollWidth - viewport.clientWidth))
+    const targetTop = Math.max(0, Math.min(nodeCenterY - viewport.clientHeight / 2, viewport.scrollHeight - viewport.clientHeight))
+
+    viewport.scrollTo({ left: targetLeft, top: targetTop, behavior: scrollBehavior() })
     window.requestAnimationFrame(() => node.focus({ preventScroll: true }))
     setIsJumpOpen(false)
     setJumpQuery('')
@@ -237,11 +363,9 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
         >
           <div className="project-canvas" style={canvasStyle}>
             <nav className="cockpit-stage-strip" aria-label="Project stages">
-              <button type="button" onClick={() => jumpToNode('objective')}>Framing</button>
-              <button type="button" onClick={() => jumpToNode('data')}>Data & exploration</button>
-              <button type="button" onClick={() => jumpToNode('validation')}>Validation</button>
-              <button type="button" onClick={() => jumpToNode('baseline')}>Modeling</button>
-              <button type="button" onClick={() => jumpToNode('evaluation')}>Evaluation</button>
+              {STAGES.map((stage) => (
+                <button type="button" key={stage.nodeId} onClick={() => jumpToNode(stage.nodeId)}>{stage.label}</button>
+              ))}
             </nav>
 
             <div className="stage-zone stage-framing" aria-hidden="true" />
@@ -251,120 +375,18 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
             <div className="stage-zone stage-evaluation" aria-hidden="true" />
 
             <svg className="project-connectors" viewBox={`0 0 ${CANVAS_WIDTH} ${CANVAS_HEIGHT}`} aria-hidden="true" preserveAspectRatio="none">
-              <path d="M250 205 C300 205 300 175 350 175" />
-              <path d="M550 175 C680 175 690 170 830 170" />
-              <path d="M450 225 C450 305 470 340 480 430" />
-              <path d="M520 520 C650 520 700 420 880 420" />
-              <path d="M930 225 C930 280 945 315 960 360" />
-              <path d="M1080 420 C1160 420 1175 315 1260 315" />
-              <path d="M1080 455 C1170 480 1180 625 1260 625" />
-              <path d="M1460 315 C1540 315 1540 480 1600 480" />
-              <path className="connector-deferred" d="M1460 625 C1540 625 1540 510 1600 510" />
-              <path d="M520 760 C820 760 1120 780 1600 780" />
+              {CONNECTOR_PATHS.map((path, index) => (
+                <path key={path} className={index === 8 ? 'connector-deferred' : undefined} d={path} />
+              ))}
             </svg>
 
-            <CockpitNode
-              nodeId="objective"
-              className="node-objective"
-              kicker="Framing"
-              title="Objective defined"
-              description="Predict customer churn with decisions usable before retention intervention."
-              status="complete"
-              icon={<Target size={17} />}
-            />
-
-            <CockpitNode
-              nodeId="data"
-              className="node-data"
-              kicker="Dataset"
-              title="Data understanding"
-              description="7,043 rows · 21 source columns · semantic roles mapped"
-              status="complete"
-              icon={<Database size={17} />}
-              onActivate={() => onFocus('data')}
-            />
-
-            <CockpitNode
-              nodeId="prediction"
-              className="node-prediction"
-              kicker="Question"
-              title="Resolve prediction moment"
-              description={blocker?.summary ?? 'Feature eligibility cannot be finalized until the prediction moment is explicit.'}
-              status="blocked"
-              icon={<TriangleAlert size={17} />}
-            />
-
-            <CockpitNode
-              nodeId="missingness"
-              className="node-missingness"
-              kicker="Investigation"
-              title="Production missingness"
-              description={missingness?.summary ?? 'Support-ticket completeness needs production-time investigation.'}
-              status="attention"
-              icon={<FlaskConical size={17} />}
-              onActivate={() => onFocus('missingness')}
-            />
-
-            <CockpitNode
-              nodeId="eda"
-              className="node-eda"
-              kicker="Exploration"
-              title="EDA evidence"
-              description="Distribution and cohort signals are available for focused inspection."
-              status="ready"
-              icon={<BarChart3 size={17} />}
-              onActivate={() => onFocus('eda')}
-            />
-
-            <CockpitNode
-              nodeId="validation"
-              className="node-validation"
-              kicker="Decision"
-              title="Chronological validation"
-              description="Temporal ordering selected as the current validation design."
-              status="selected"
-              icon={<Check size={17} />}
-            />
-
-            <CockpitNode
-              nodeId="baseline"
-              className="node-baseline"
-              kicker="Modeling"
-              title="Logistic baseline"
-              description="Reference model completed and available for comparison."
-              status="complete"
-              icon={<Play size={17} />}
-            />
-
-            <CockpitNode
-              nodeId="rf"
-              className="node-rf"
-              kicker="Modeling"
-              title="Random Forest benchmark"
-              description="Deferred until prediction-time feature eligibility is resolved."
-              status="deferred"
-              icon={<BrainCircuit size={17} />}
-            />
-
-            <CockpitNode
-              nodeId="evaluation"
-              className="node-evaluation"
-              kicker="Downstream"
-              title="Evaluation & calibration"
-              description="Waiting on the active validation and modeling path."
-              status="future"
-              icon={<Gauge size={17} />}
-            />
-
-            <CockpitNode
-              nodeId="review"
-              className="node-review"
-              kicker="Evaluation"
-              title="Subgroup review"
-              description="Reserved downstream work demonstrates lower project-space growth without promoting a final stage taxonomy."
-              status="future"
-              icon={<BarChart3 size={17} />}
-            />
+            {nodes.map((node) => (
+              <CockpitNode
+                key={node.nodeId}
+                {...node}
+                onActivate={node.focus ? () => onFocus(node.focus as ProjectMapFocus) : undefined}
+              />
+            ))}
           </div>
         </section>
 
@@ -436,10 +458,10 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
                   />
                 </label>
                 <div className="cockpit-jump-results">
-                  {filteredJumpTargets.map((target) => (
-                    <button type="button" key={`${target.nodeId}-${target.category}`} onClick={() => jumpToNode(target.nodeId)}>
-                      <span>{target.label}</span>
-                      <small>{target.category}</small>
+                  {filteredJumpTargets.map((node) => (
+                    <button type="button" key={node.nodeId} onClick={() => jumpToNode(node.nodeId)}>
+                      <span>{node.title}</span>
+                      <small>{node.kicker}</small>
                     </button>
                   ))}
                   {filteredJumpTargets.length === 0 && <p>No matching project work.</p>}
@@ -508,16 +530,7 @@ function CockpitNode({
   status,
   icon,
   onActivate,
-}: {
-  nodeId: string
-  className: string
-  kicker: string
-  title: string
-  description: string
-  status: 'complete' | 'blocked' | 'attention' | 'ready' | 'selected' | 'deferred' | 'future'
-  icon: ReactNode
-  onActivate?: () => void
-}) {
+}: NodeDefinition & { onActivate?: () => void }) {
   const body = (
     <>
       <span className={`cockpit-node-icon ${status}`}>{icon}</span>
