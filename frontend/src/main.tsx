@@ -9,6 +9,7 @@ import './layout-overrides.css'
 import './cockpit.css'
 import './cockpit-review-3.css'
 import './cockpit-review-4.css'
+import './cockpit-review-5.css'
 import './accessibility.css'
 
 const queryClient = new QueryClient({
