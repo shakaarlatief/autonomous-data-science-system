@@ -5,7 +5,7 @@
 **Checkpoint class:** EXPERIMENT_VERIFICATION  
 **Project stage:** Post-V0 V1 bounded implementation and integration  
 **Scope:** Closes the richer governed reusable-knowledge persistence/interchange round-trip after successful validation on SQLite/Linux, SQLite/Windows, and PostgreSQL 18, including a new deterministic Alembic revision-ID portability guard.  
-**Authority:** Historical verification provenance. `experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md` records the final gate result; current canonical routing documents govern current priorities.  
+**Authority:** Historical verification provenance. `experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md` records the final gate result; Specification 002 v1.1 carries the promoted tooling portability invariant; current canonical routing documents govern current priorities.  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
@@ -186,6 +186,15 @@ a3f5caad4ed7cf6dc2997f6fc94fad2aab147bd2
 
 The final gate ran this guard together with the governed round-trip on all three validation jobs.
 
+The durable tooling requirement has also been promoted into:
+
+```text
+docs/specifications/002_v1_persistence_tooling_standard.md
+    Accepted V1 technical specification v1.1
+```
+
+Specification 002 now requires unique Alembic revision identifiers that fit the configured version-table envelope and explicitly records the current default `VARCHAR(32)` constraint, while also preserving PostgreSQL's identifier-length portability requirement for manually named schema objects.
+
 ---
 
 ## 6. Validation-branch strategy and cleanup
@@ -210,6 +219,7 @@ real migration portability fix
 final PASS/result artifacts
 removal of temporary PostgreSQL diagnostic workflow
 Alembic revision-ID regression guard
+Specification 002 v1.1 portability amendment
 closure checkpoint and routing reconciliation
 ```
 
@@ -274,6 +284,10 @@ V1_KNOWLEDGE_ROUNDTRIP_STATUS
 V1_KNOWLEDGE_ROUNDTRIP_RESULT
     final cross-backend evidence and portability analysis
 
+Specification 002
+    v1.0 -> v1.1
+    promote Alembic revision-ID and PostgreSQL identifier portability invariants
+
 CURRENT_STATE
     remove PostgreSQL closure as active blocker
     advance to Checkpoint 127
@@ -294,7 +308,7 @@ MAJOR_CHANGES
 
 ### No new project-level decision required
 
-The closure validates implementation of already accepted D-028 through D-031 and Specification 004. It does not introduce a new architectural choice that warrants another D-series decision.
+The closure validates implementation of already accepted D-028 through D-031 and strengthens the technical tooling contract under D-029. It does not introduce a new architectural choice that warrants another D-series decision.
 
 ### No new foundation required
 
