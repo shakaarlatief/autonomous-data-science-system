@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 123  
+**Checkpoint:** 124  
 **Date:** 2026-08-21  
 **Active development branch:** `v1-frontend-spike`  
 **Development stage:** Prototype V0 complete; bounded V1 implementation and product validation across methodological knowledge, persistence/interchange, retrieval/horizon construction, agent/runtime evaluation, and the professional Project Cockpit  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate product priority:** Perform the next real-browser human product gate on the passing Specification 007 candidate v0.4 Cockpit, with particular attention to balanced low-zoom spatial navigation, stronger stage orientation, fold-away map controls, upper Details placement, and preservation of the restrained ambient grid design language
+**Immediate product priority:** Perform the next real-browser human product gate on the passing Specification 007 candidate v0.5 Cockpit, with particular attention to the continuous finite grid world, viewport-aware stage ruler, right-edge vertical map-tool rail, finite-boundary treatment, and whether neutral spatial reserve remains visually expansive without acquiring false stage semantics
 
 ## Active ChatGPT development context
 
@@ -285,9 +285,9 @@ everything mounted or loaded simultaneously
 
 ---
 
-## Cockpit evidence through Checkpoint 123
+## Cockpit evidence through Checkpoint 124
 
-The Cockpit has progressed through four real-browser human review cycles.
+The Cockpit has progressed through five real-browser human review cycles.
 
 ```text
 Checkpoint 117
@@ -318,24 +318,43 @@ Checkpoint 123
     corrected compact identity,
     higher Details placement,
     restrained ambient grid treatment preserved
+
+Checkpoint 124
+    fifth human review implemented and validated:
+    continuous finite grid world,
+    neutral spatial reserve distinct from semantic stage extent,
+    viewport-aware stage ruler,
+    right-edge vertical project-map tool rail,
+    subtle finite-boundary cue,
+    ambient grid depth extended through navigation reserve
 ```
 
-### Current Specification 007 v0.4 implementation
+### Current Specification 007 v0.5 implementation
 
 The current branch implements:
 
 ```text
-ProjectWorld != ProjectCanvas
+FiniteNavigableGridWorld != SemanticProjectPlane
 
-ProjectWorld
+FiniteNavigableGridWorld
     always remains larger than the viewport by a minimum scroll range
-    keeps the ProjectCanvas centered
+    keeps the SemanticProjectPlane centered in the available world
     preserves horizontal and vertical pan at minimum zoom
+    owns the continuous low-contrast grid
+    owns restrained ambient spatial depth
+    exposes only a subtle finite-world boundary cue
 
-ProjectCanvas
+SemanticProjectPlane
     representative logical size 2260 x 1180
     balanced internal left/right stage margins
-    existing subtle ambient grid/glow treatment retained
+    transparent over the continuous world grid
+    owns stage-region semantics, work units and connectors
+
+ViewportStageRuler
+    remains vertically pinned near the top of the operating viewport
+    horizontally tracks the rendered SemanticProjectPlane
+    preserves actual stage proportions rather than stretching into neutral reserve
+    keeps stage labels readable independently of ordinary node-detail scale
 
 navigation
     ordinary two-axis scroll / trackpad movement
@@ -347,10 +366,6 @@ navigation
     + / - / 0 / F keyboard equivalents
     trackpad-style pinch zoom around the approximate gesture anchor
 
-project orientation
-    stronger stage headings
-    stage-heading visual scale compensated against geometric zoom
-
 project location
     scalable Jump to menu
     Active work / Blocker / Investigation / Evaluation
@@ -358,12 +373,12 @@ project location
 
 chrome
     compact fold-away primary HUD
-    floating map-control bar
-    map-control bar can fold to a right-edge restore handle
+    narrow right-edge vertical map-tool rail
+    map-tool rail can fold to a right-edge restore handle
+    Details, zoom, fit/reset, Jump/search and System Focus remain accessible
     floating project Details
-    Details positioned high below stage orientation on desktop
     floating System Focus
-    floating composer over continuous canvas
+    floating composer over continuous grid world
 
 focus/deep work
     Data
@@ -374,20 +389,20 @@ focus/deep work
     fullscreen retained
 ```
 
-The fourth-review implementation was validated through temporary review branch `v1-frontend-spike-review4` and PR #3 before being advanced into `v1-frontend-spike`.
+The fifth-review implementation was validated through temporary review branch `v1-frontend-spike-review5` and PR #4 before being advanced into `v1-frontend-spike`.
 
 Validated code head:
 
 ```text
-38c17edfe1440095d60f7e9f9bf21d42053de990
+dcc265cedb86c7a3917db62667db45cca49cdcd8
 ```
 
 Final validation evidence:
 
 ```text
 V1 frontend spike
-workflow run number 122
-run id 32457992939
+workflow run number 130
+run id 32470701290
 
 Ubuntu build + unit tests
     PASS
@@ -402,11 +417,20 @@ controlled direct-project visual regression
     PASS
 ```
 
-Two failed intermediate gates are important historical evidence rather than hidden noise.
+The first fifth-review CI attempt is important evidence rather than hidden noise.
 
-The first showed that the brand-row CSS fix had not actually beaten an inherited selector. The next showed a deeper low-zoom defect: with a wide viewport, a fixed-gutter world could become narrower than the scrollport and horizontal scrolling collapsed to zero.
+An inherited `<=1180px` CSS rule from the old horizontal toolbar still forced `left: 12px`. The new vertical rail therefore moved to the left edge at 1024px while its Jump/search popover correctly opened leftward, placing search results outside the viewport. The browser gate failed on real searchable navigation behavior.
 
-The fixed-gutter-only model was therefore rejected. The passing implementation sizes the world from both the scaled project and the current viewport so panning remains possible at every supported zoom.
+The responsive rule was made explicit and authoritative:
+
+```text
+left: auto
+right: 8px
+justify-content: flex-start
+overflow: visible
+```
+
+The corrected run then passed the complete browser/accessibility and controlled visual-regression gate.
 
 Primary current sources:
 
@@ -416,11 +440,12 @@ docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
 docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
+docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
 ```
 
-Specification 007 remains **candidate v0.4**. Automated validation does not promote the specification by itself.
+Specification 007 remains **candidate v0.5**. Automated validation does not promote the specification by itself.
 
 ---
 
@@ -429,16 +454,18 @@ Specification 007 remains **candidate v0.4**. Automated validation does not prom
 The next real-browser review should determine whether:
 
 ```text
-top-left ADS · project identity now reads intentionally
-stage headings are sufficiently clear at 100%, intermediate zoom, and 45%
-minimum-zoom project can move/recenter naturally in all four directions
-outside-project reserve feels balanced rather than excessive
-internal left/right project-plane margins feel balanced
-folded map controls are discoverable and unobtrusive
-expanded Details is high enough without covering stage orientation
+45% zoom now feels like one large spatial grid world rather than a small gridded project box
+continuous grid reserve feels intentional and calm in every pan direction
+finite-world edge cue is understandable without becoming a distracting outer-space layer
+stage ruler remains naturally placed at the top during vertical movement
+stage headings remain horizontally aligned with their actual semantic stage regions
+neutral left/right grid reserve does not falsely look like additional stage extent
+vertical map-tool rail is preferable to the previous horizontal control bar
+rail fold/restore, Details, zoom, fit/reset, Jump/search and System Focus feel discoverable
+Jump/search popover remains comfortable at 1024, 1280 and 1440+ widths
 ambient grid depth remains subtle and professional
-zoom / pinch / fit / reset / Jump to remain natural after the world-model change
-canvas dominance, composer integration, and fullscreen still feel strong
+zoom / pinch / fit / reset / Jump to remain natural after the world-grid change
+canvas dominance, composer integration and fullscreen still feel strong
 ```
 
 If the review exposes problems, preserve them and perform another bounded iteration.
@@ -487,11 +514,17 @@ Cockpit auto-layout algorithm
 Cockpit minimap implementation
 Cockpit semantic-zoom algorithm
 final geometric zoom range
+final finite-world extent algorithm
+infinite-canvas semantics
 final pan-reserve dimensions
 pan/zoom URL or session persistence contract
 project-search backend
 pointer-proximity HUD/control reveal
 Cockpit final stage taxonomy
+Cockpit final stage widths
+Cockpit final stage-ruler treatment
+vertical map-tool rail as permanent product chrome
+final tool-rail iconography/tooltip treatment
 Cockpit final URL contract
 Cockpit final visual identity
 exact permanent ambient-grid styling
@@ -512,32 +545,38 @@ job queue/cloud deployment
 
 ## Exact next execution order
 
-### A. HUMAN PRODUCT GATE FOR SPECIFICATION 007 v0.4
+### A. HUMAN PRODUCT GATE FOR SPECIFICATION 007 v0.5
 
 This is the immediate substantive product step.
 
-Open the current `/cockpit` implementation in a real browser and review the fourth-review composition before any further Cockpit architecture is frozen.
+Open the current `/cockpit` implementation in a real browser and review the fifth-review composition before any further Cockpit architecture is frozen.
 
 The review must explicitly cover:
 
 ```text
-compact project identity
-stage orientation across zoom
-balanced minimum-zoom pan reserve
-internal grid balance
-fold-away project-map controls
-Details placement
-ambient grid visual treatment
-2D trackpad panning
-pinch zoom
-explicit zoom / fit / reset
+continuous finite grid world at 45% zoom
+pan to all four extremes
+finite-world boundary cue
+viewport-aware stage ruler during vertical movement
+stage-ruler horizontal alignment during left/right movement
+semantic stage extent versus neutral grid reserve
+vertical map-tool rail versus prior horizontal bar
+map-tool rail fold / restore
+Details
+zoom / fit / reset
 Jump to + search
-composer integration
 System Focus
+ambient grid visual treatment
+composer integration
 keyboard recovery
+trackpad panning and pinch zoom
 fullscreen
 professional visual quality
 ```
+
+If the review exposes problems, preserve them and perform another bounded Cockpit iteration.
+
+If it succeeds strongly enough, decide deliberately what is mature enough to promote. Do not assume a green automated gate alone promotes Specification 007 or selects final canvas, stage-ruler, tool-rail, semantic-zoom, or visual architecture.
 
 ### B. GOVERNED ROUND-TRIP CLOSURE
 
@@ -582,6 +621,7 @@ docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
 docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
 
 docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
@@ -595,4 +635,5 @@ docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity
 docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
 docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
 docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
+docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
 ```
