@@ -1,0 +1,35 @@
+name: V1 runtime bakeoff
+
+on:
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - experiments/runtime_bakeoff/**
+      - tests/unit/test_runtime_bakeoff_*.py
+      - pyproject.toml
+      - uv.lock
+      - .github/workflows/v1-runtime-bakeoff.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-harness:
+    name: Deterministic harness (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run runtime bakeoff harness tests
+        run: uv run --python 3.13 --locked pytest tests/unit/test_runtime_bakeoff_harness.py -q
+      - name: Run existing Python test suite
+        run: uv run --python 3.13 --locked pytest -q
