@@ -168,7 +168,7 @@ Direct specialist views
     reuse the same substantive analytical modules
 ```
 
-The Cockpit has progressed through several real-browser and executable gates:
+The Cockpit has progressed through six real-browser human review cycles and repeated executable gates:
 
 ```text
 Checkpoint 117
@@ -185,23 +185,56 @@ Checkpoint 121
     immersive-scale 2D/fullscreen automated gate passed
 
 Checkpoint 122
-    third human review refined zoom, navigation and canvas dominance
-    revised automated gate passed
+    geometric zoom, scalable Jump/search, canvas dominance,
+    floating composer, and fold-away primary HUD validated
+
+Checkpoint 123
+    symmetric always-pannable ProjectWorld,
+    balanced project-plane geometry, stronger stage orientation,
+    fold-away map controls, and restrained ambient depth validated
+
+Checkpoint 124
+    continuous finite grid world,
+    viewport-aware stage ruler,
+    semantic-stage/neutral-reserve separation,
+    and right-edge vertical map-tool rail validated
+
+Checkpoint 125
+    sixth-review ambient/pinch/ruler/collision repairs validated
 ```
 
-The current Specification 007 candidate v0.3 Cockpit demonstrates:
+The current **Specification 007 candidate v0.6** Cockpit demonstrates:
 
 ```text
 large two-dimensional project space
 horizontal + vertical trackpad/scroll navigation
 Arrow / Shift+Arrow / Home keyboard recovery
 
+FiniteNavigableGridWorld != SemanticProjectPlane
+    symmetric pan reserve at minimum zoom
+    continuous low-contrast grid through navigation reserve
+    world-owned ambient depth
+    subtle finite-world boundary cue
+
 geometric zoom
     explicit zoom out / percentage / zoom in
     100% reset
     fit project
     keyboard zoom equivalents
-    trackpad pinch zoom around the gesture anchor
+
+native laptop pinch candidate
+    normalized wheel delta units
+    animation-frame coalescing
+    bounded per-frame progression
+    immediately current zoom state
+    approximate gesture anchoring
+    obsolete anchor-correction cancellation
+
+viewport-aware stage ruler
+    vertically persistent near the operating viewport top
+    horizontally follows semantic stage geometry
+    begins at rendered Framing boundary
+    ends at rendered Evaluation boundary
 
 scalable project navigation
     Jump to quick semantic destinations
@@ -210,15 +243,15 @@ scalable project navigation
         Investigation
         Evaluation
     searchable meaningful project work
+    collision-safe placement above the persistent composer
+    internally scrolling results
 
 canvas-dominant composition
-    one compact fold-away top HUD
-    stage strip attached to project space
-    floating project controls
+    one compact fold-away primary HUD
+    narrow fold-away right-edge map-tool rail
     floating project details
     floating System Focus
-    system composer floating over continuous project canvas
-    lower/right recovery margin so overlays do not trap work
+    system composer floating over the continuous grid world
 
 shared Data / EDA / Production Missingness focus workspaces
 URL-addressable focus state
@@ -227,22 +260,31 @@ reduced-motion handling
 true browser fullscreen with graceful fallback
 ```
 
-Current governing sources:
+Current governing Cockpit sources:
 
 ```text
 docs/research/002_primary_project_cockpit_interface_concept.md
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
+docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
+docs/checkpoints/125_sixth_cockpit_review_ambient_pinch_ruler_and_collision_repairs_validated.md
 ```
 
-The current revised automated gate passes on Linux, Windows, Chromium interaction/accessibility, and controlled direct-project visual regression.
+The current validated Cockpit refinement head is:
 
-No graph/canvas library, auto-layout algorithm, final semantic-zoom implementation, minimap, final geometric zoom range, project-search backend, final stage taxonomy, final Cockpit visual identity, or canonical Cockpit screenshot baseline has been selected.
+```text
+a2e401408c55a74905e0654c40185f4f9990becc
+```
 
-The immediate frontend step is another real-browser human product gate on the current v0.3 implementation.
+with passing V1 frontend spike run `140` / `32475241980` across Linux build/unit tests, Windows build/unit tests, Chromium interaction/accessibility, and controlled direct-project visual regression.
+
+No graph/canvas library, gesture library, auto-layout algorithm, final semantic-zoom implementation, minimap, final native-pinch tuning, final geometric zoom range, project-search backend, final stage taxonomy, final stage-ruler treatment, final Cockpit visual identity, or canonical Cockpit screenshot baseline has been selected.
+
+The immediate frontend step is another real-browser and real-hardware human product gate on Specification 007 v0.6. In particular, synthetic browser events cannot establish whether slow/faster laptop trackpad pinch, pan-to-pinch switching, and perceived anchor stability now feel correct.
 
 ## Active branch and continuation
 
