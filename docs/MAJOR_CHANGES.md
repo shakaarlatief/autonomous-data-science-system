@@ -6,9 +6,7 @@
 
 ## Purpose
 
-This file records only changes that materially alter how the project is understood, built, evaluated, preserved, or continued.
-
-It is not a commit changelog.
+This file records only changes that materially alter how the project is understood, built, evaluated, preserved, or continued. It is not a commit changelog.
 
 ---
 
@@ -56,18 +54,7 @@ docs/CONTINUITY.md
 
 ## 2026-08-08 to 2026-08-09: Core system theory expanded into dedicated foundations
 
-The project moved from a broad vision to explicit theories for:
-
-```text
-epistemic integrity
-admissibility and risk-sensitive assurance
-project state and dependency-aware revision
-project initialization
-knowledge activation
-reusable knowledge representation
-knowledge quality and evolution
-behavioral system evaluation
-```
+The project moved from a broad vision to explicit theories for epistemic integrity, admissibility/risk, project state and revision, project initialization, knowledge activation, reusable knowledge, knowledge quality/evolution, and behavioral system evaluation.
 
 Key sources:
 
@@ -86,11 +73,11 @@ docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 
 ## 2026-08-09: Prototype V0 became a preregistered falsification experiment
 
-The project deliberately chose to test a small explicit semantic architecture against strong simpler controls rather than building a large autonomous platform first.
+The project deliberately chose to test a small explicit semantic architecture against strong simpler controls before building a large autonomous platform.
 
 ```text
 B0: strong LLM + strong generic workflow
-B1: B0 + the same methodological knowledge supplied statically
+B1: B0 + same methodological knowledge supplied statically
 P0: same model + typed state + activation + safeguards + dependency repair
     + state-driven action selection
 ```
@@ -107,17 +94,11 @@ docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
 ---
 
-## 2026-08-18: System-level LLM/system/human boundary was promoted into durable architecture
+## 2026-08-18: System-level LLM/system/human boundary became durable architecture
 
-The project distinguished:
+The project distinguished human-executed data science, interactive LLM-assisted data science, and system-mediated data science.
 
-```text
-human-executed data science
-human + interactive LLM data science
-system-mediated data science
-```
-
-The LLM is one reasoning component inside the system, while every explicit mechanism must justify its complexity empirically.
+The LLM is one reasoning component inside ADS. Every explicit mechanism must justify its complexity empirically.
 
 Key source:
 
@@ -127,11 +108,9 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 
 ---
 
-## 2026-08-18: Development Method v0.3 introduced explicit preservation routing and reconciliation
+## 2026-08-18: Development preservation gained routing, promotion audits, and reconciliation
 
-Actual project growth exposed risks in discoverability, implicit promotion, and canonical duplication/drift.
-
-Version 0.3 introduced:
+Development Method v0.3 introduced:
 
 ```text
 checkpoint promotion audits
@@ -154,11 +133,11 @@ docs/KNOWLEDGE_MAP.md
 
 ---
 
-## 2026-08-18 to 2026-08-19: Prototype V0 gained validated supervision and execution/observability separation
+## 2026-08-18 to 2026-08-19: Prototype V0 gained validated supervision and observability separation
 
 Held-out execution gained a condition-neutral runner/verifier/supervisor architecture and mechanically validated prospective automation.
 
-Long-running experiment operations also exposed the reusable principle:
+The reusable execution principle became:
 
 ```text
 execution / reasoning
@@ -177,9 +156,9 @@ docs/PRINCIPLES.md, P-022
 
 ---
 
-## 2026-08-19: Prototype V0 completed and strongly falsified the current P0 design
+## 2026-08-19: Prototype V0 strongly falsified the current P0 design
 
-The final pooled comparison was:
+Final pooled evidence:
 
 ```text
                          B0          B1          P0
@@ -191,24 +170,11 @@ Budget exhausted        0/10        0/10        7/10
 Median total tokens  122,544.5   120,564.5   260,370.0
 ```
 
-P0's targeted semantic gain over B1 was only `+0.05`, while P0 used `2.160x` B1's median tokens and completed only `3/10` runs within budget.
-
 Final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN.**
 
 The architectural consequence is simplification, not abandonment of the wider system vision.
-
-Do not carry forward unchanged:
-
-```text
-full typed state resent every reasoning cycle
-large always-on state/relation context
-generic support-reassessment propagation
-path-sensitive tag-trigger activation
-universal dependency reopening machinery
-full P0 frontier representation
-```
 
 The strongest scaling lesson became:
 
@@ -217,6 +183,8 @@ what the SYSTEM should remember
     !=
 what the LLM should receive on every reasoning call
 ```
+
+Do not carry forward unchanged full typed state on every call, large always-on context/frontiers, generic recursive support reassessment, narrow path-sensitive trigger activation, or universal dependency reopening machinery.
 
 Key sources:
 
@@ -230,22 +198,19 @@ docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_di
 
 ## 2026-08-19: Post-V0 product vision became a professional interactive data-science operating environment
 
-The project deliberately returned to the broader product goal before choosing another orchestration architecture.
+The project returned to the broader product goal before selecting another orchestration architecture.
 
-The target became a professional project environment in which the system carries much of the methodological-navigation and project-memory burden while the user can inspect, discuss, select, override, and guide work interactively.
+The target became a professional environment in which ADS carries much of the methodological-navigation and project-memory burden while the human can inspect, discuss, select, override, guide, and approve work interactively.
 
-Key sources:
+Key source:
 
 ```text
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/checkpoints/097_post_v0_product_vision_concretized_as_interactive_methodological_workspace.md
 ```
 
 ---
 
 ## 2026-08-19: Product object model and professional developer workflow were concretized
-
-The project derived a candidate object model from the desired user experience rather than from a storage technology.
 
 The central separation became:
 
@@ -256,7 +221,7 @@ EVENTS
 VIEWS
 ```
 
-with durable distinctions such as:
+with durable distinctions including:
 
 ```text
 Investigation != Run
@@ -267,20 +232,19 @@ current state != event history
 workspace section != fundamental object
 ```
 
-The system should complement VS Code rather than replace it, and generated project code should remain independently runnable and professionally maintainable.
+ADS should complement VS Code rather than replace it, and generated project code should remain independently runnable and professionally maintainable.
 
-Key sources:
+Key source:
 
 ```text
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/PRINCIPLES.md, P-023 and P-024
 ```
 
 ---
 
 ## 2026-08-19 to 2026-08-20: Methodological navigation became a bounded-horizon architecture
 
-The methodological brain became broader than a method catalog and adopted the staged relevance model:
+The methodological brain adopted:
 
 ```text
 KNOWN
@@ -290,9 +254,9 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The **MethodologicalHorizon** concept separates a large global knowledge universe from the bounded project-specific slice relevant to current reasoning.
+The **MethodologicalHorizon** separates a large global knowledge universe from the bounded project-specific slice relevant to current reasoning.
 
-Reusable methodological knowledge then gained a promoted representation around:
+Reusable knowledge gained a promoted representation around:
 
 ```text
 KnowledgeAsset
@@ -304,26 +268,18 @@ KnowledgeCollection
 ExecutionCapability
 ```
 
-with two promoted principles:
-
-```text
-knowledge identity/granularity != reasoning function
-static semantic relation != conditional methodological rule
-```
-
 Key sources:
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/PRINCIPLES.md, P-025 and P-026
 ```
 
 ---
 
 ## 2026-08-20: V1 persistence/retrieval architecture and implementation tooling were selected empirically
 
-After deriving technology-neutral requirements, the project selected:
+The project accepted:
 
 ```text
 D-028
@@ -340,7 +296,7 @@ D-030
 pyproject.toml + uv + committed uv.lock + uv_build
 ```
 
-The first production persistence slice then passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18, including exact historical project-to-knowledge revision pinning.
+The first production persistence slice passed SQLite/Linux, SQLite/Windows, and PostgreSQL 18, including exact historical project-to-knowledge revision pinning.
 
 Key sources:
 
@@ -403,15 +359,7 @@ Replaceable infrastructure includes
     A2A when independently deployed agents are real
 ```
 
-This produced P-027 through P-029 and Specification 005. No agent framework or multi-agent architecture was selected; a simple direct-model-call result remains valid if frameworks do not earn their complexity.
-
-Key sources:
-
-```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/PRINCIPLES.md, P-027 through P-029
-```
+This produced P-027 through P-029 and Specification 005. No agent framework or multi-agent architecture was selected; direct model calls remain a valid bakeoff outcome.
 
 ---
 
@@ -419,20 +367,13 @@ docs/PRINCIPLES.md, P-027 through P-029
 
 Foundation 021 strengthened the interface requirement into a first-class product-quality commitment: ADS should be a modern, visually excellent, accessible, responsive professional analytical application rather than an end-stage dashboard or generic chat shell.
 
-Specification 006 introduced the first frontend technical/visual evaluation contract. React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest became the leading implementation hypothesis, while chart selection and final stack promotion remained empirical questions.
-
-Key sources:
-
-```text
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
-docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
-```
+Specification 006 introduced the first frontend technical/visual evaluation contract. React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest became the leading hypothesis, while chart selection and final stack promotion remained empirical questions.
 
 ---
 
 ## 2026-08-20: Project Cockpit became the strongly preferred primary active-work interface
 
-Human review of the first conventional project-view frontend exposed a missing product layer: the system needed a primary place where the user actively works with the evolving data-science process, not only pages that inspect it.
+Human review exposed a missing product layer: ADS needed a primary place where the user actively works with the evolving data-science process, not only pages that inspect it.
 
 Research 002 introduced the Project Cockpit as:
 
@@ -442,7 +383,7 @@ living project-process map
 + focused analytical work surface
 ```
 
-Checkpoint 117 then strongly confirmed the interaction:
+Checkpoint 117 confirmed:
 
 ```text
 click meaningful work block
@@ -451,56 +392,120 @@ click meaningful work block
     -> return to project context
 ```
 
-The design was strengthened so deep Data, EDA, Validation, Modeling, Evaluation, and other work can be entered inside the same immersive experience using reusable specialist workspaces. Direct project views remain alternative entry/inspection paths rather than mandatory escape hatches.
+Direct project views remain alternative entry/inspection paths rather than mandatory escape hatches.
 
-The first executable Cockpit spike passed cross-platform build, browser interaction, and accessibility gates without selecting a graph/canvas framework.
+---
 
-Key sources:
+## 2026-08-20 to 2026-08-21: Cockpit evolved into a scalable spatial operating surface
+
+Successive human reviews and bounded implementation gates established:
 
 ```text
-docs/research/002_primary_project_cockpit_interface_concept.md
-docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/117_unified_cockpit_workspace_direction_confirmed.md
-docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
+large two-dimensional project extent
+horizontal + vertical navigation
+true fullscreen
+geometric zoom + fit/reset/recovery
+native trackpad pan/pinch candidate
+scalable Jump to + searchable project work
+canvas-dominant floating composer/controls
+compact fold-away primary HUD
+
+ProjectWorld != ProjectCanvas
+    surrounding world stays pannable
+    semantic plane stays distinct
+    neutral reserve does not become stage semantics
+
+continuous finite grid world
+viewport-aware semantic stage ruler
+compact fold-away right-edge map controls
+world-owned restrained ambient depth
+collision-safe Jump/search relative to composer
+```
+
+The seventh review then supplied the missing real-laptop product evidence. Pinch was judged substantially smoother, Jump/search and stage orientation were accepted, and the remaining tiny occasional pinch hitch was explicitly classified as non-blocking polish. The only requested product adjustment was moderately faster pinch travel.
+
+Pinch sensitivity was increased from `0.00135` to `0.0018` without changing the smoothing/anchoring architecture.
+
+The first seventh-review browser gate exposed a reproducible stage-ruler timing defect under rapid zoom. The semantic source of truth was already correct, but ruler measurement could occur before zoomed geometry had fully settled. The implementation was repaired to synchronize after an additional animation frame.
+
+Final validated head:
+
+```text
+2c3b522e2416d73c015ce5ec2a4560a227524dd9
+```
+
+Final gate:
+
+```text
+V1 frontend spike
+run 155 / 32492536072
+
+Ubuntu build + unit tests                 PASS
+Windows build + unit tests                PASS
+Chromium interaction/accessibility        PASS
+controlled direct-view visual regression  PASS
 ```
 
 ---
 
-## 2026-08-20: Second Cockpit review established immersive-scale and true-fullscreen requirements
+## 2026-08-21: Project Cockpit interaction architecture was promoted
 
-The second real-browser review accepted the stage-zone visual grammar and dark technical operating-surface direction while exposing a real scalability defect: lower/right work could become inaccessible behind fixed floating UI.
+Checkpoint 126 closes the bounded Specification 007 interaction spike after seven real-browser human review cycles.
 
-The Cockpit direction therefore gained explicit requirements for:
+The promoted V1 interaction contract is now:
 
 ```text
-two-dimensional project-space navigation
-horizontal and vertical growth
-fit/reset/jump navigation
-future semantic zoom/grouping
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+```
+
+Promoted architecture:
+
+```text
+Project Cockpit as primary immersive active-work model
+living project-process projection
+meaningful work-unit semantics
+spatial focus into real reusable specialist workspaces
+reachability != simultaneous mounting
+FiniteNavigableGridWorld != SemanticProjectPlane
+2D project navigation and recovery
+bounded geometric zoom and native pinch capability
+viewport-aware semantic stage orientation
+scalable Jump/search project location
+compact/fold-away immersive chrome
 collision-safe floating surfaces
-compact/expandable Cockpit HUD
-stage orientation at the top of the operating viewport
-true browser fullscreen with graceful fallback
-keyboard-accessible recovery
+true fullscreen with graceful fallback
+URL-addressable focus/deep-work state
+keyboard accessibility and reduced-motion support
+world-owned restrained ambient depth
 ```
 
-The operating principle became:
+Promotion deliberately does **not** freeze:
 
 ```text
-whole practical viewport = Cockpit operating surface
+remaining tiny pinch hitch
+final pinch/zoom constants
+final graph/canvas or gesture library
+final auto-layout
+final semantic zoom/grouping
+final minimap
+final stage taxonomy/widths
+final stage-ruler material
+permanent tool-rail styling
+final ambient styling
+final public URL contract
+pan/zoom/HUD persistence
+final visual identity
+canonical Cockpit screenshot baseline
 ```
 
-without implying that every project object or deep workspace remains mounted simultaneously.
-
-Research 004 and Specification 007 candidate v0.2 governed the bounded implementation slice. No canvas library, auto-layout algorithm, final semantic-zoom system, final stage taxonomy, or final visual identity was selected.
+The Project Cockpit is therefore no longer the immediate blocking V1 track. The next priority is the governed PostgreSQL reusable-knowledge round-trip closure, followed by the agent-runtime bakeoff and retrieval/MethodologicalHorizon benchmark.
 
 Key sources:
 
 ```text
-docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
+docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 ```
 
 ---
@@ -509,150 +514,20 @@ docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirement
 
 Session 02 reached the platform conversation-length limit immediately after Checkpoint 119 work was preserved.
 
-The substantive design survived because Research 004, Specification 007 v0.2, and Checkpoint 119 already existed in the repository. However, `README`, `CURRENT_STATE`, `KNOWLEDGE_MAP`, `OPEN_QUESTIONS`, active session provenance, and this major-changes ledger had not all completed their normal end-of-session reconciliation.
+Research 004, Specification 007, and Checkpoint 119 protected the substantive work, while incomplete reconciliation left stale routing in README/CURRENT_STATE/KNOWLEDGE_MAP/OPEN_QUESTIONS and provenance files.
 
-Session 03 therefore performed an explicit continuity repair rather than attempting to recreate the missing chat.
+Session 03 repaired the routing explicitly.
 
-The incident validates both sides of the preservation model:
+The incident demonstrated:
 
 ```text
-checkpoint/specification preservation protected substantive knowledge
-
-and
-
-current routing/reconciliation still matters for reliable new-session reconstruction
+checkpoint/specification preservation protects substantive knowledge
+    and
+current routing/reconciliation remains necessary for reliable continuation
 ```
 
-Key sources:
+Key source:
 
 ```text
-docs/CONTINUITY.md
 docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
-```
-
----
-
-## 2026-08-21: Cockpit became a genuinely scalable spatial operating surface
-
-The third and fourth Cockpit review cycles moved the implementation beyond a fixed process diagram toward an operating viewport over project space.
-
-The major structural changes were:
-
-```text
-large two-dimensional project extent
-geometric zoom with fit/reset/recovery
-scalable Jump to + searchable project navigation
-canvas-dominant floating composer and controls
-explicit fold-away primary HUD
-true fullscreen retained
-
-ProjectWorld != ProjectCanvas
-    surrounding world remains pannable at every supported zoom
-    project plane remains centered with symmetric reserve
-    low zoom no longer collapses horizontal/vertical movement
-
-balanced internal project-plane side margins
-stage orientation strengthened across zoom
-fold-away project-map controls
-higher Details placement
-```
-
-This established the durable candidate interaction principle that project-scale navigation and deep analytical focus belong to the same Cockpit without requiring all deep workspaces to remain mounted at once.
-
-Key sources:
-
-```text
-docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
-docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
-docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
-docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
-docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
-```
-
----
-
-## 2026-08-21: Spatial world and semantic project geometry were separated explicitly
-
-The fifth Cockpit review exposed that navigation reserve should feel like part of one continuous operating world without acquiring false project-stage semantics.
-
-The candidate architecture became:
-
-```text
-FiniteNavigableGridWorld
-    continuous grid through navigation reserve
-    restrained ambient spatial depth
-    subtle finite-boundary cue
-
-SemanticProjectPlane
-    stage regions, work units and connectors
-    neutral reserve is not stage space
-
-ViewportStageRuler
-    vertically persistent near viewport top
-    horizontally follows semantic project geometry
-
-VerticalMapToolRail
-    compact right-edge project controls
-    explicit fold / restore
-```
-
-This is an important semantic distinction: visual/navigation space is not automatically project-semantic space.
-
-Key sources:
-
-```text
-docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
-docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-```
-
----
-
-## 2026-08-21: Sixth Cockpit review hardened ambient, pinch, ruler, and collision behavior
-
-The sixth real-browser review found four concrete interaction defects in an otherwise strongly progressing Cockpit:
-
-```text
-ambient depth revealed the old smaller project-plane box at low zoom
-native trackpad pinch was functionally correct but temporally jumpy
-Framing/Evaluation ruler terminals did not match rendered semantic geometry
-Jump/search could overlap the persistent composer
-```
-
-The bounded repair strengthened the candidate contract without adding a graph/canvas or gesture framework:
-
-```text
-ProjectWorld owns workspace-level ambient atmosphere
-ProjectCanvas no longer owns a second clipped atmosphere layer
-
-native pinch candidate
-    delta-mode normalization
-    animation-frame coalescing
-    bounded per-frame progression
-    immediate zoom state
-    approximate gesture anchoring
-    obsolete anchor-correction cancellation
-
-stage ruler
-    left terminal = rendered Framing boundary
-    right terminal = rendered Evaluation boundary
-
-Jump/search
-    explicit composer safe area
-    viewport-bounded palette height
-    independently scrolling results
-```
-
-The first sixth-review browser gate was diagnostically useful. It exposed the real ruler defect and also showed that requiring every small pinch event to change a rounded integer percentage label was an invalid smoothness test. The implementation was repaired, while the synthetic gate was corrected to measure continuous bounded progression and anchor stability rather than forcing artificially aggressive product sensitivity.
-
-The corrected implementation head `a2e401408c55a74905e0654c40185f4f9990becc` passed V1 frontend spike run 140 / `32475241980` across Ubuntu build/unit tests, Windows build/unit tests, Chromium interaction/accessibility, and controlled direct-project visual regression.
-
-Specification 007 is now candidate v0.6. It remains deliberately unpromoted because real laptop trackpad feel and the overall sixth-review product composition still require direct human validation.
-
-Key sources:
-
-```text
-docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
-docs/checkpoints/125_sixth_cockpit_review_ambient_pinch_ruler_and_collision_repairs_validated.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
 ```
