@@ -25,7 +25,7 @@ checkpoints
 historical provenance
 ```
 
-This established the maxim:
+This established:
 
 > The chat is where we think. The repository is where the system remembers.
 
@@ -40,7 +40,7 @@ docs/DECISIONS.md, D-001 through D-010
 
 ## 2026-08-08: Checkpointing and chat rotation became proactive AI responsibilities
 
-Development Method v0.2 made the AI design collaborator responsible for detecting natural checkpoints, preserving important uncheckpointed reasoning, and recommending session rotation when continuity risk becomes material.
+Development Method v0.2 made the AI design collaborator responsible for detecting natural preservation checkpoints and recommending session rotation when continuity risk becomes material.
 
 Key sources:
 
@@ -73,7 +73,7 @@ docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 
 ## 2026-08-09: Prototype V0 became a preregistered falsification experiment
 
-The project deliberately chose to test a small explicit semantic architecture against strong simpler controls before building a large autonomous platform.
+The project chose to test a bounded explicit semantic architecture against strong simpler controls before building a large autonomous platform.
 
 ```text
 B0: strong LLM + strong generic workflow
@@ -82,7 +82,7 @@ P0: same model + typed state + activation + safeguards + dependency repair
     + state-driven action selection
 ```
 
-The H1/H2 bundles, run order, provider/model configuration, budgets, replacement policy, semantic rubric, blinded judging procedure, and falsification criteria were frozen before P0 implementation.
+The benchmark bundles, run order, model/provider configuration, budgets, replacement policy, semantic rubric, blinded judging procedure, and falsification criteria were frozen before P0 implementation.
 
 Key sources:
 
@@ -121,7 +121,7 @@ MAJOR_CHANGES structural history
 separation of CURRENT_STATE from detailed experiment ledgers
 ```
 
-Git + Markdown remains the development-preservation substrate until real retrieval, dependency, consistency, concurrency, or automation problems justify more complex infrastructure.
+Git + Markdown remains the development-preservation substrate until observed retrieval, dependency, consistency, concurrency, or automation problems justify more complex infrastructure.
 
 Key sources:
 
@@ -137,7 +137,7 @@ docs/KNOWLEDGE_MAP.md
 
 Held-out execution gained a condition-neutral runner/verifier/supervisor architecture and mechanically validated prospective automation.
 
-The reusable execution principle became:
+A reusable execution principle emerged:
 
 ```text
 execution / reasoning
@@ -174,7 +174,7 @@ Final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN.**
 
-The architectural consequence is simplification, not abandonment of the wider system vision.
+The architectural consequence was simplification, not abandonment of the wider system vision.
 
 The strongest scaling lesson became:
 
@@ -323,9 +323,9 @@ JSON
 
 Candidate/benchmark import cannot silently create accepted methodological authority.
 
-The heterogeneous benchmark corpus passed KI-01 through KI-10 across Linux/Windows and Python 3.12-3.14.
+The heterogeneous benchmark corpus passed KI-01 through KI-10 across Linux/Windows and Python 3.12 through 3.14.
 
-A richer governed import/accept/export round-trip was then implemented. SQLite passes; the last persisted PostgreSQL 18 round-trip status remains failed after a localized identifier-length portability defect. The defect was fixed and revalidation was triggered, but closure still requires a persisted corrected PostgreSQL PASS.
+A richer governed import/accept/export round-trip was then implemented and became a separate cross-backend closure gate.
 
 Key sources:
 
@@ -333,14 +333,13 @@ Key sources:
 docs/DECISIONS.md, D-031
 docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_STATUS.md
 ```
 
 ---
 
 ## 2026-08-20: Agentic ecosystem audit separated ADS semantics from replaceable runtime infrastructure
 
-The 2026 audit concluded:
+The audit concluded:
 
 ```text
 ADS owns
@@ -365,9 +364,9 @@ This produced P-027 through P-029 and Specification 005. No agent framework or m
 
 ## 2026-08-20: Professional frontend became an early parallel V1 product track
 
-Foundation 021 strengthened the interface requirement into a first-class product-quality commitment: ADS should be a modern, visually excellent, accessible, responsive professional analytical application rather than an end-stage dashboard or generic chat shell.
+Foundation 021 made the interface a first-class reasoning, control, and quality surface.
 
-Specification 006 introduced the first frontend technical/visual evaluation contract. React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest became the leading hypothesis, while chart selection and final stack promotion remained empirical questions.
+Specification 006 introduced the first frontend technical/visual evaluation contract. React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest became the leading implementation hypothesis, while chart selection and final stack promotion remained empirical questions.
 
 ---
 
@@ -396,6 +395,30 @@ Direct project views remain alternative entry/inspection paths rather than manda
 
 ---
 
+## 2026-08-20: Unexpected Session 02 boundary validated preservation but exposed routing drift
+
+Session 02 reached the platform conversation-length limit immediately after Checkpoint 119 work was preserved.
+
+Research 004, Specification 007, and Checkpoint 119 protected the substantive work, while incomplete reconciliation left stale routing in current documents.
+
+Session 03 repaired the routing explicitly through Checkpoint 120.
+
+The incident demonstrated:
+
+```text
+checkpoint/specification preservation protects substantive knowledge
+    and
+current routing/reconciliation remains necessary for reliable continuation
+```
+
+Key source:
+
+```text
+docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
+```
+
+---
+
 ## 2026-08-20 to 2026-08-21: Cockpit evolved into a scalable spatial operating surface
 
 Successive human reviews and bounded implementation gates established:
@@ -405,7 +428,7 @@ large two-dimensional project extent
 horizontal + vertical navigation
 true fullscreen
 geometric zoom + fit/reset/recovery
-native trackpad pan/pinch candidate
+native trackpad pan/pinch capability
 scalable Jump to + searchable project work
 canvas-dominant floating composer/controls
 compact fold-away primary HUD
@@ -422,11 +445,9 @@ world-owned restrained ambient depth
 collision-safe Jump/search relative to composer
 ```
 
-The seventh review then supplied the missing real-laptop product evidence. Pinch was judged substantially smoother, Jump/search and stage orientation were accepted, and the remaining tiny occasional pinch hitch was explicitly classified as non-blocking polish. The only requested product adjustment was moderately faster pinch travel.
+The seventh review supplied the missing real-laptop product evidence. Pinch was judged substantially smoother, Jump/search and stage orientation were accepted, and the remaining tiny occasional pinch hitch was explicitly classified as non-blocking polish.
 
-Pinch sensitivity was increased from `0.00135` to `0.0018` without changing the smoothing/anchoring architecture.
-
-The first seventh-review browser gate exposed a reproducible stage-ruler timing defect under rapid zoom. The semantic source of truth was already correct, but ruler measurement could occur before zoomed geometry had fully settled. The implementation was repaired to synchronize after an additional animation frame.
+The first seventh-review browser gate also exposed a reproducible stage-ruler timing defect under rapid zoom. It was repaired by measuring authoritative rendered stage geometry after an additional layout/render frame.
 
 Final validated head:
 
@@ -450,15 +471,15 @@ controlled direct-view visual regression  PASS
 
 ## 2026-08-21: Project Cockpit interaction architecture was promoted
 
-Checkpoint 126 closes the bounded Specification 007 interaction spike after seven real-browser human review cycles.
+Checkpoint 126 closed the bounded Specification 007 interaction spike after seven real-browser human review cycles.
 
-The promoted V1 interaction contract is now:
+The promoted V1 interaction contract is:
 
 ```text
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Promoted architecture:
+Promoted architecture includes:
 
 ```text
 Project Cockpit as primary immersive active-work model
@@ -479,26 +500,7 @@ keyboard accessibility and reduced-motion support
 world-owned restrained ambient depth
 ```
 
-Promotion deliberately does **not** freeze:
-
-```text
-remaining tiny pinch hitch
-final pinch/zoom constants
-final graph/canvas or gesture library
-final auto-layout
-final semantic zoom/grouping
-final minimap
-final stage taxonomy/widths
-final stage-ruler material
-permanent tool-rail styling
-final ambient styling
-final public URL contract
-pan/zoom/HUD persistence
-final visual identity
-canonical Cockpit screenshot baseline
-```
-
-The Project Cockpit is therefore no longer the immediate blocking V1 track. The next priority is the governed PostgreSQL reusable-knowledge round-trip closure, followed by the agent-runtime bakeoff and retrieval/MethodologicalHorizon benchmark.
+Promotion deliberately does not freeze final canvas/gesture libraries, auto-layout, semantic zoom/grouping, minimap, final stage taxonomy, final chrome styling, final URL contract, or visual identity.
 
 Key sources:
 
@@ -510,24 +512,47 @@ docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architectu
 
 ---
 
-## 2026-08-20: Unexpected Session 02 boundary validated preservation but exposed routing drift
+## 2026-08-21: Governed reusable-knowledge round-trip closed across SQLite and PostgreSQL
 
-Session 02 reached the platform conversation-length limit immediately after Checkpoint 119 work was preserved.
-
-Research 004, Specification 007, and Checkpoint 119 protected the substantive work, while incomplete reconciliation left stale routing in README/CURRENT_STATE/KNOWLEDGE_MAP/OPEN_QUESTIONS and provenance files.
-
-Session 03 repaired the routing explicitly.
-
-The incident demonstrated:
+The richer governed reusable-knowledge persistence/interchange seam is now validated on:
 
 ```text
-checkpoint/specification preservation protects substantive knowledge
-    and
-current routing/reconciliation remains necessary for reliable continuation
+SQLite / Ubuntu     PASS
+SQLite / Windows    PASS
+PostgreSQL 18       PASS
 ```
 
-Key source:
+Final closure gate:
 
 ```text
-docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
+V1 governed knowledge roundtrip closure gate
+run 32496856945
+```
+
+The gate validates candidate import, explicit acceptance, accepted-current pointers, deterministic trusted accepted-snapshot export/reload, provenance, relation governance, collections, migration compatibility, and historical project revision pinning across later knowledge acceptance.
+
+Two independent PostgreSQL portability defects were discovered and repaired:
+
+```text
+1. overlong manually named migration constraint
+    -> shortened to fit PostgreSQL's identifier envelope
+
+2. Alembic revision `0002_reusable_knowledge_interchange`
+    -> exceeded default `alembic_version.version_num VARCHAR(32)`
+    -> shortened to `0002_knowledge_interchange`
+```
+
+The second defect produced a permanent deterministic regression guard requiring every Alembic revision identifier to be unique and no longer than 32 characters.
+
+The temporary PostgreSQL diagnostic workflow was removed after closure. Temporary PR-validation workflow scaffolding was not promoted into the permanent active branch.
+
+Checkpoint 127 closes Q-048 for the current V1 governed seam. Retrieval quality, MethodologicalHorizon construction, semantic retrieval, reranking, external ingestion, and knowledge-authoring UX remain separate open tracks.
+
+The immediate project priority therefore advances to the Specification 005 one-principal-reasoner agent-runtime bakeoff, followed by the production retrieval/MethodologicalHorizon benchmark.
+
+Key sources:
+
+```text
+experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
+docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
