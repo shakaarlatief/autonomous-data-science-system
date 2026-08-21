@@ -1,0 +1,68 @@
+.project-world::before {
+  background:
+    radial-gradient(circle at 23% 20%, color-mix(in srgb, var(--accent) 5.5%, transparent), transparent 27%),
+    radial-gradient(circle at 76% 60%, color-mix(in srgb, var(--relevant) 5%, transparent), transparent 31%),
+    radial-gradient(circle at 54% 84%, color-mix(in srgb, var(--attention) 2.8%, transparent), transparent 22%);
+}
+
+/* Ambient depth belongs to the navigable world, not the smaller semantic project plane. */
+.project-canvas::before {
+  content: none;
+  background: none;
+}
+
+/* The ruler track now represents only semantic stage extent. JS positions it at the
+   left edge of Framing and sizes it through the right edge of Evaluation. */
+.cockpit-stage-ruler-track {
+  padding: 0;
+}
+
+.cockpit-stage-ruler-track button {
+  overflow: hidden;
+}
+
+.cockpit-stage-ruler-track button::after {
+  right: 14px;
+  left: 14px;
+}
+
+/* Keep the jump/search palette inside a collision-safe screen region above the
+   persistent composer instead of letting a long result list descend into it. */
+.cockpit-jump-popover {
+  position: fixed;
+  top: calc(var(--cockpit-topbar-height) + 68px);
+  right: 72px;
+  bottom: auto;
+  z-index: 75;
+  display: flex;
+  flex-direction: column;
+  width: min(360px, calc(100vw - 112px));
+  max-height: calc(100vh - var(--cockpit-topbar-height) - 174px);
+  overflow: hidden;
+  transform: none;
+}
+
+.cockpit-jump-results {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: min(300px, calc(100vh - var(--cockpit-topbar-height) - 292px));
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 1180px) {
+  .cockpit-jump-popover {
+    right: 68px;
+    width: min(350px, calc(100vw - 104px));
+  }
+}
+
+@media (max-height: 760px) {
+  .cockpit-jump-popover {
+    top: calc(var(--cockpit-topbar-height) + 58px);
+    max-height: calc(100vh - var(--cockpit-topbar-height) - 154px);
+  }
+
+  .cockpit-jump-results {
+    max-height: calc(100vh - var(--cockpit-topbar-height) - 270px);
+  }
+}
