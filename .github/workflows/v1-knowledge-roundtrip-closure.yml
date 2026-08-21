@@ -1,0 +1,65 @@
+name: V1 governed knowledge roundtrip closure gate
+
+on:
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - migrations/**
+      - src/ads_system/application/knowledge_interchange.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/interchange/**
+      - src/ads_system/infrastructure/persistence/**
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/integration/test_knowledge_interchange_roundtrip.py
+      - schemas/reusable_knowledge_bundle_v1.schema.json
+      - .github/workflows/v1-knowledge-roundtrip-closure.yml
+
+permissions:
+  contents: read
+
+jobs:
+  sqlite-roundtrip:
+    name: SQLite governed roundtrip (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run SQLite governed knowledge roundtrip
+        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_interchange_roundtrip.py -q
+
+  postgres-roundtrip:
+    name: PostgreSQL 18 governed roundtrip
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: ads
+          POSTGRES_PASSWORD: ads
+          POSTGRES_DB: ads_v1
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ads -d ads_v1"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run PostgreSQL governed knowledge roundtrip
+        env:
+          ADS_TEST_POSTGRES_URL: postgresql+psycopg://ads:ads@127.0.0.1:5432/ads_v1
+        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_interchange_roundtrip.py -q
