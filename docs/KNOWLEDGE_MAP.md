@@ -3,8 +3,8 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-21  
-**Current checkpoint:** 127  
-**Active development branch:** `v1-frontend-spike`
+**Current checkpoint:** 130  
+**Active development branch:** `v1-runtime-bakeoff`
 
 ## Start here
 
@@ -42,11 +42,12 @@ docs/MAJOR_CHANGES.md
     selective structural history
 ```
 
-Current branch warning:
+Current branch relationship:
 
 ```text
-active bounded V1/frontend work = v1-frontend-spike
-main intentionally trails this work
+active executable V1/runtime work = v1-runtime-bakeoff
+preserved promoted V1/frontend boundary = v1-frontend-spike
+main intentionally trails current V1 work
 ```
 
 A continuation session must not infer the latest project state from `main` alone while this branch relationship remains active.
@@ -70,18 +71,26 @@ professional frontend
 Project Cockpit
 ```
 
-Two major V1 boundaries are now past their previous blocking gates:
+Current major boundaries:
 
 ```text
 Project Cockpit interaction architecture
     promoted through Specification 008 / Checkpoint 126
+    post-promotion Jump/pinch polish automatically validated through Checkpoint 130
+    short real-browser/hardware retest remains open
 
 governed reusable-knowledge persistence/interchange seam
     closed across SQLite/Linux, SQLite/Windows, PostgreSQL 18
     Checkpoint 127
+
+runtime bakeoff
+    ecosystem refreshed in Checkpoint 128
+    direct-call control passed in Checkpoint 129
+    OpenAI Agents SDK 0.19.4 core subgate now passes cross-platform
+    remaining OpenAI gates AR-03 / AR-08 / AR-09 / AR-11 still open
 ```
 
-The immediate project priority is the **Specification 005 one-principal-reasoner agent-runtime bakeoff**. The production retrieval/MethodologicalHorizon benchmark is the other highest-value active V1 track.
+The main execution priority is the **Specification 005 one-principal-reasoner runtime bakeoff**. The production retrieval/MethodologicalHorizon benchmark is the other highest-value active V1 track.
 
 ---
 
@@ -299,6 +308,8 @@ filesystem / Git / artifact storage outside SQLite
 
 SQLAlchemy Core 2.0
 Alembic 1.x
+PostgreSQL identifier portability
+unique Alembic revision IDs <= 32 chars while the default version table remains
 
 pyproject.toml
 uv + committed uv.lock
@@ -380,13 +391,21 @@ This evidence does not validate retrieval/horizon quality, embeddings, reranking
 
 ---
 
-## Agentic ecosystem and runtime boundary
+## Agent/runtime bakeoff: ACTIVE
 
-Primary research/specification:
+Primary research/specification/evidence:
 
 ```text
 docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+
+docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
+docs/checkpoints/129_direct_call_control_runtime_baseline_passed.md
+
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/CORE_RESULT.md
 ```
 
 Durable boundary:
@@ -395,22 +414,119 @@ Durable boundary:
 ADS domain/project/methodological semantics
     owned by ADS
 
-agent runtimes / MCP / A2A / AG-UI / runtime checkpoints
+agent runtimes / MCP / runtime checkpoints
     replaceable infrastructure/interoperability
 ```
 
-First-round runtime candidates:
+Current evaluation order, not selection:
 
 ```text
-OpenAI Agents SDK
-LangGraph
-Microsoft Agent Framework
-Google ADK 2.0
+CONTROL
+    direct model calls with ADS-owned execution semantics
+
+FIRST FRAMEWORK CANDIDATE
+    OpenAI Agents SDK
+
+SECOND DURABILITY COMPARATOR
+    LangGraph
+
+SECONDARY / CONDITIONAL
+    Microsoft Agent Framework
+    Google ADK 2.0
 ```
 
-The bakeoff begins with one principal reasoner. A valid outcome remains simpler direct model calls if no framework earns its complexity.
+### Direct-call control
 
-This is the immediate execution track after Checkpoint 127.
+Checkpoint 129 proves the simpler control is executable rather than hypothetical.
+
+Validated cross-platform behavior includes:
+
+```text
+ADS-owned model/tool loop
+exact context-pack digest + revision provenance
+approval before authoritative side effect
+serialized process-boundary resume
+ADS-owned at-most-once proposal ledger
+repeated-resume idempotency
+rejection
+stale-context rejection
+cancellation
+controlled retry
+normalized trace
+ADS-owned structured recommendation
+```
+
+Gate:
+
+```text
+run 32500521858
+Ubuntu PASS
+Windows PASS
+existing Python suite PASS
+```
+
+### OpenAI Agents SDK 0.19.4 core candidate
+
+The candidate is isolated under:
+
+```text
+experiments/runtime_bakeoff/candidates/openai_agents/
+```
+
+The framework remains outside `ads_system.domain` and is not an unconditional production dependency.
+
+Validated core gates:
+
+```text
+AR-01 domain isolation
+AR-02 single-agent tool loop
+AR-04 native approval interruption
+AR-05 serialized RunState process-boundary resume
+AR-06 external ADS project-state authority
+AR-07 exact context/revision transparency
+AR-10 structured output + ADS provenance validation
+AR-12 deterministic no-live-provider testing through released public Model boundary
+```
+
+Core gate:
+
+```text
+run 15 / 32501907783
+Ubuntu PASS
+Windows PASS
+direct controls PASS
+existing Python suite PASS
+```
+
+Latest combined branch gate after Checkpoint-130 frontend polish:
+
+```text
+run 20 / 32503861259
+OpenAI core Ubuntu PASS
+OpenAI core Windows PASS
+direct control Ubuntu PASS
+direct control Windows PASS
+existing Python suite PASS
+```
+
+Research 011 records an important maturity finding:
+
+```text
+current docs advertise agents.testing.ScriptedModel
+published openai-agents==0.19.4 does not ship agents.testing
+released public Model interface is sufficient for an isolated deterministic fake
+```
+
+Remaining OpenAI mandatory work:
+
+```text
+AR-03 current MCP integration
+AR-08 cancellation and bounded timeout
+AR-09 controlled failure/retry behavior
+AR-11 normalized observability
+```
+
+No runtime is selected. Direct calls remain a valid final winner if no framework earns its dependency/operational burden.
 
 ---
 
@@ -449,7 +565,7 @@ Tauri remains deferred.
 
 ---
 
-## Project Cockpit: promoted interaction architecture
+## Project Cockpit: promoted interaction architecture plus bounded post-promotion polish
 
 Historical research and spike evolution:
 
@@ -462,6 +578,7 @@ docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_
 docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
 docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
 docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
+docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
 
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
 ```
@@ -476,6 +593,12 @@ Promotion checkpoint:
 
 ```text
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
+```
+
+Current post-promotion polish checkpoint:
+
+```text
+docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
 Promoted model:
@@ -512,7 +635,7 @@ keyboard accessibility and reduced-motion support
 world-owned restrained ambient depth
 ```
 
-Final promotion validation:
+Promotion validation:
 
 ```text
 head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
@@ -524,7 +647,33 @@ Chromium interaction/accessibility        PASS
 controlled direct-view visual regression  PASS
 ```
 
-The remaining tiny occasional pinch hitch is preserved as non-blocking deferred polish.
+Checkpoint-130 bounded polish:
+
+```text
+normal-window Jump/search collision
+    -> palette now measures actual composer boundary
+    -> re-clamps on resize/fullscreen/composer resize
+
+native pinch scale travel
+    -> PINCH_SENSITIVITY 0.0018 -> 0.0024
+    -> smoothing/coalescing/anchoring retained
+```
+
+Automated polish gate:
+
+```text
+head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
+run 167 / 32503861255
+
+Ubuntu build + unit tests                  PASS
+Windows build + unit tests                 PASS
+Chromium interaction/accessibility         PASS
+controlled direct-view visual regression   PASS
+normal-window Jump re-clamp regression      PASS
+faster anchored pinch regression            PASS
+```
+
+Short human retest remains open for actual Chrome-window geometry and real trackpad feel. The remaining tiny occasional pinch hitch remains non-blocking deferred polish.
 
 Still deliberately unfrozen:
 
@@ -578,9 +727,21 @@ The benchmark should distinguish catalog absence, retrieval omission, applicabil
 ## Current exact cross-track priorities
 
 ```text
-A. Specification 005 one-principal-reasoner runtime bakeoff
-B. Retrieval / MethodologicalHorizon benchmark
-C. Future Cockpit capability/product work on top of Specification 008
+A. Short Checkpoint-130 Cockpit human retest
+   normal-window Jump/composer safety
+   fullscreen non-regression
+   real-trackpad pinch travel
+
+B. Complete OpenAI Agents SDK Specification-005 gates
+   AR-03 MCP
+   AR-08 cancellation/timeouts
+   AR-09 failure/retry
+   AR-11 observability
+   then compare with direct-call control
+
+C. Retrieval / MethodologicalHorizon benchmark
+
+D. LangGraph durability comparator if still decision-relevant after completed OpenAI evidence
 ```
 
 The governed persistence/interchange seam is no longer an active blocker.
@@ -604,4 +765,7 @@ The governed persistence/interchange seam is no longer an active blocker.
 125  ambient/pinch/ruler/collision repairs validated
 126  seventh Cockpit review + final gate + interaction architecture promotion
 127  governed knowledge round-trip closed across SQLite and PostgreSQL
+128  runtime-bakeoff ecosystem evidence refreshed
+129  direct-call runtime control baseline passed cross-platform
+130  post-promotion normal-window Jump/pinch polish automated gate passed; human retest open
 ```
