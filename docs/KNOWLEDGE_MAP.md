@@ -268,7 +268,7 @@ docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
 docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
 docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
 docs/checkpoints/105_refined_representation_second_stress_test.md
-docs/checkpoints/106_reusable_methodological_knowledge_representation_foundation_promoted.md
+docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
 ```
 
 ---
