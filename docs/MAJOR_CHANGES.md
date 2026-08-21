@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-20
+**Last reviewed:** 2026-08-21
 
 ## Purpose
 
@@ -493,7 +493,7 @@ whole practical viewport = Cockpit operating surface
 
 without implying that every project object or deep workspace remains mounted simultaneously.
 
-Research 004 and Specification 007 candidate v0.2 govern the next bounded implementation slice. No canvas library, auto-layout algorithm, final semantic-zoom system, final stage taxonomy, or final visual identity is selected yet.
+Research 004 and Specification 007 candidate v0.2 governed the bounded implementation slice. No canvas library, auto-layout algorithm, final semantic-zoom system, final stage taxonomy, or final visual identity was selected.
 
 Key sources:
 
@@ -528,4 +528,131 @@ Key sources:
 ```text
 docs/CONTINUITY.md
 docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
+```
+
+---
+
+## 2026-08-21: Cockpit became a genuinely scalable spatial operating surface
+
+The third and fourth Cockpit review cycles moved the implementation beyond a fixed process diagram toward an operating viewport over project space.
+
+The major structural changes were:
+
+```text
+large two-dimensional project extent
+geometric zoom with fit/reset/recovery
+scalable Jump to + searchable project navigation
+canvas-dominant floating composer and controls
+explicit fold-away primary HUD
+true fullscreen retained
+
+ProjectWorld != ProjectCanvas
+    surrounding world remains pannable at every supported zoom
+    project plane remains centered with symmetric reserve
+    low zoom no longer collapses horizontal/vertical movement
+
+balanced internal project-plane side margins
+stage orientation strengthened across zoom
+fold-away project-map controls
+higher Details placement
+```
+
+This established the durable candidate interaction principle that project-scale navigation and deep analytical focus belong to the same Cockpit without requiring all deep workspaces to remain mounted at once.
+
+Key sources:
+
+```text
+docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
+docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
+docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
+```
+
+---
+
+## 2026-08-21: Spatial world and semantic project geometry were separated explicitly
+
+The fifth Cockpit review exposed that navigation reserve should feel like part of one continuous operating world without acquiring false project-stage semantics.
+
+The candidate architecture became:
+
+```text
+FiniteNavigableGridWorld
+    continuous grid through navigation reserve
+    restrained ambient spatial depth
+    subtle finite-boundary cue
+
+SemanticProjectPlane
+    stage regions, work units and connectors
+    neutral reserve is not stage space
+
+ViewportStageRuler
+    vertically persistent near viewport top
+    horizontally follows semantic project geometry
+
+VerticalMapToolRail
+    compact right-edge project controls
+    explicit fold / restore
+```
+
+This is an important semantic distinction: visual/navigation space is not automatically project-semantic space.
+
+Key sources:
+
+```text
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
+docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+```
+
+---
+
+## 2026-08-21: Sixth Cockpit review hardened ambient, pinch, ruler, and collision behavior
+
+The sixth real-browser review found four concrete interaction defects in an otherwise strongly progressing Cockpit:
+
+```text
+ambient depth revealed the old smaller project-plane box at low zoom
+native trackpad pinch was functionally correct but temporally jumpy
+Framing/Evaluation ruler terminals did not match rendered semantic geometry
+Jump/search could overlap the persistent composer
+```
+
+The bounded repair strengthened the candidate contract without adding a graph/canvas or gesture framework:
+
+```text
+ProjectWorld owns workspace-level ambient atmosphere
+ProjectCanvas no longer owns a second clipped atmosphere layer
+
+native pinch candidate
+    delta-mode normalization
+    animation-frame coalescing
+    bounded per-frame progression
+    immediate zoom state
+    approximate gesture anchoring
+    obsolete anchor-correction cancellation
+
+stage ruler
+    left terminal = rendered Framing boundary
+    right terminal = rendered Evaluation boundary
+
+Jump/search
+    explicit composer safe area
+    viewport-bounded palette height
+    independently scrolling results
+```
+
+The first sixth-review browser gate was diagnostically useful. It exposed the real ruler defect and also showed that requiring every small pinch event to change a rounded integer percentage label was an invalid smoothness test. The implementation was repaired, while the synthetic gate was corrected to measure continuous bounded progression and anchor stability rather than forcing artificially aggressive product sensitivity.
+
+The corrected implementation head `a2e401408c55a74905e0654c40185f4f9990becc` passed V1 frontend spike run 140 / `32475241980` across Ubuntu build/unit tests, Windows build/unit tests, Chromium interaction/accessibility, and controlled direct-project visual regression.
+
+Specification 007 is now candidate v0.6. It remains deliberately unpromoted because real laptop trackpad feel and the overall sixth-review product composition still require direct human validation.
+
+Key sources:
+
+```text
+docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
+docs/checkpoints/125_sixth_cockpit_review_ambient_pinch_ruler_and_collision_repairs_validated.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
 ```
