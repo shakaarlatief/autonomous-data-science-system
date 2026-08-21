@@ -1,8 +1,8 @@
 # Specification 007: V1 Unified Project Cockpit Interaction Spike
 
 **Date:** 2026-08-21  
-**Status:** Candidate V1 frontend interaction specification v0.4 after fourth human review; revised executable interaction gate passed, next human visual/product gate remains open  
-**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric zoom, scalable project jump/search navigation, balanced always-pannable project space, canvas-dominant and fold-away chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 006 and Checkpoints 117 through 123  
+**Status:** Candidate V1 frontend interaction specification v0.5 after fifth human review; revised executable interaction gate passed, next human visual/product gate remains open  
+**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric zoom, scalable project jump/search navigation, continuous finite grid world, viewport-aware stage orientation, canvas-dominant and fold-away chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 007 and Checkpoints 117 through 124  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
@@ -17,7 +17,9 @@ The spike must answer whether ADS can provide a professional single-workspace ex
 see the project as a living analytical process
     -> navigate a project larger than the current viewport
     -> zoom and recover project context efficiently
-    -> continue to pan/recenter even when the project is smaller than the viewport
+    -> continue to pan/recenter even when the semantic project plane is smaller than the viewport
+    -> experience surrounding navigation reserve as one continuous spatial grid world
+    -> retain stage orientation while moving through that world
     -> jump/search to meaningful project work
     -> select a meaningful work unit
     -> smoothly enter a focused analytical workspace
@@ -367,6 +369,69 @@ analytical content remains dominant
 
 This requirement does not freeze exact circles, gradients, colors, glow coordinates, or opacity values. The principle is restrained ambient depth rather than a specific decorative motif.
 
+### CPK-31: Continuous finite grid world
+
+The navigation reserve around the semantic project plane should participate visually in the Cockpit's spatial world rather than appearing as a large blank outer region.
+
+At supported zoom/pan positions:
+
+```text
+project-plane grid
+    -> continues through surrounding navigation reserve
+
+pan into reserve
+    -> still feels like the same operating grid world
+
+true world boundary
+    -> may use a restrained edge/fade cue
+    -> must not require a large visually empty outer-space layer
+```
+
+The current Cockpit may remain finite. This requirement does not claim or require an infinite canvas.
+
+The grid may scale with geometric zoom so the spatial substrate remains coherent with the project content.
+
+### CPK-32: Viewport-aware stage ruler with stable semantics
+
+Stage orientation must distinguish viewport persistence from semantic project geometry.
+
+The preferred bounded behavior is:
+
+```text
+vertical stage-ruler position
+    -> remains near the top of the visible operating viewport
+
+horizontal stage-ruler position and width
+    -> follows the rendered semantic project plane
+    -> remains aligned with actual stage regions during horizontal pan and zoom
+```
+
+Neutral grid reserve outside the semantic project plane must not silently expand `Framing`, `Data & Exploration`, `Validation`, `Modeling`, or `Evaluation` merely to fill visible space.
+
+Stage widths remain project-semantic/layout properties rather than viewport-size properties.
+
+Stage-ruler text may remain in readable screen space while analytical content geometrically scales. This is an early bounded semantic-scale behavior, not the final semantic-zoom architecture.
+
+### CPK-33: Compact vertical project-map tool rail candidate
+
+For the current continuous-grid composition, project-map controls should be evaluated as a narrow right-edge vertical rail rather than a competing horizontal top bar.
+
+The rail must preserve access to:
+
+```text
+Details
+zoom out / zoom level / zoom in
+fit
+reset
+Jump to / search
+System focus
+fold / restore
+```
+
+The rail must remain right-anchored at supported desktop/laptop widths. Popovers must open into available workspace rather than beyond the browser edge.
+
+Compact visual presentation must not remove accessible names, keyboard reachability, or discoverability. The vertical arrangement remains a candidate pending human review and is not yet a permanent product-standard control layout.
+
 ---
 
 ## 3. Representative scenario
@@ -409,17 +474,19 @@ Preferred internal architecture:
 CockpitPage
     CompactFoldableCockpitHud
     ProjectMapSurface
-        ScrollableProjectWorld
-            CenteredProjectCanvas
-                StageViewportHeader
+        FiniteNavigableGridWorld
+            SemanticProjectPlane
+                StageRegions
                 ProjectWorkUnits
+                ProjectConnectors
+        ViewportStageRuler
         GeometricZoomController
         ProjectJumpSearch
     FocusHost
         DataPage reuse
         EdaPage reuse
         MissingnessFocus spike
-    FoldableFloatingProjectControls
+    VerticalFoldableProjectToolRail
     FloatingContextSurface
     SystemComposer
 ```
@@ -443,7 +510,9 @@ complex workspace permanently nested inside scaled node
 
 The map surface must be architected as a viewport over project space rather than a static diagram whose entire logical extent must fit in one browser frame.
 
-The scrollable world must also remain conceptually distinct from the logical project plane so minimum geometric zoom does not eliminate panning merely because the project fits inside the current viewport.
+The navigable grid world must remain conceptually distinct from the semantic project plane so minimum geometric zoom does not eliminate panning merely because the represented project fits inside the current viewport, and so neutral navigation reserve does not acquire false stage semantics.
+
+The stage ruler may use hybrid ownership: viewport-owned vertical placement with project-plane-owned horizontal geometry.
 
 The implementation should prefer scalable navigation primitives directly when their stronger shape is already clear instead of knowingly proliferating disposable one-off toolbar controls.
 
@@ -504,6 +573,9 @@ CPK-T24  stage orientation remains visually substantial at minimum supported zoo
 CPK-T25  project-map controls can explicitly fold to and restore from an edge affordance
 CPK-T26  compact ADS/project identity remains intentional rather than vertically fragmented
 CPK-T27  expanded Details uses the upper available map area without covering stage orientation
+CPK-T28  surrounding navigation reserve renders as a continuous grid world at minimum zoom rather than a large blank outer region
+CPK-T29  stage ruler remains vertically pinned while horizontally tracking the semantic project plane across pan/zoom
+CPK-T30  right-edge vertical map-tool rail remains responsive, searchable Jump results remain on-screen, and rail fold/restore works
 ```
 
 Visual regression should not freeze the exploratory Cockpit design before human review. Screenshot artifacts may be generated for review, but a canonical Cockpit baseline should be promoted only after the visual concept is accepted.
@@ -518,13 +590,18 @@ This spike does not yet select or fully implement:
 React Flow or another graph framework
 final project auto-layout algorithm
 final stage taxonomy
+final stage-width algorithm
 final semantic-zoom algorithm
 final minimap/navigation implementation
 multi-level arbitrary/infinite spatial nesting
+infinite-canvas semantics
+final finite-world extent algorithm
 final zoom range or zoom persistence contract
 final pan-reserve dimensions
 production project-search backend
 pointer-proximity HUD/control reveal
+final stage-ruler material/interaction treatment
+final vertical tool-rail iconography or permanent placement
 production agent conversation backend
 production streaming interaction protocol
 full Validation/Features/Models/Evaluation workspaces
@@ -555,4 +632,7 @@ Specification 007 may be promoted only after:
 13. strengthened stage orientation remains useful rather than visually heavy across zoom levels;
 14. fold-away project-map controls and higher Details placement are accepted through human review;
 15. restrained ambient depth continues to support, rather than distract from, professional analytical use;
-16. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
+16. the continuous grid world feels spatially expansive without confusing neutral navigation reserve with semantic project stages;
+17. viewport-aware stage-ruler behavior feels natural during vertical and horizontal movement;
+18. the vertical tool rail is visually and interactively preferable to the prior horizontal candidate, or is revised based on human evidence;
+19. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
