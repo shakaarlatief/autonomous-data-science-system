@@ -74,8 +74,10 @@ const FIT_PADDING = 72
 const MIN_ZOOM = 0.45
 const MAX_ZOOM = 1.6
 const ZOOM_STEP = 0.1
-const PINCH_SENSITIVITY = 0.0018
+const PINCH_SENSITIVITY = 0.0024
 const MAX_PINCH_DELTA_PER_FRAME = 64
+const JUMP_COMPOSER_GAP = 12
+const MIN_JUMP_PALETTE_HEIGHT = 180
 
 const CONNECTOR_PATHS = [
   'M250 205 C300 205 300 175 350 175',
@@ -106,6 +108,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const { workspace } = useWorkspace()
   const viewportRef = useRef<HTMLElement>(null)
   const stageRulerTrackRef = useRef<HTMLElement>(null)
+  const jumpPopoverRef = useRef<HTMLDivElement>(null)
   const zoomRef = useRef(1)
   const pinchDeltaRef = useRef(0)
   const pinchAnchorRef = useRef({ x: 0, y: 0 })
@@ -446,6 +449,40 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
 
   useEffect(() => {
     if (!isJumpOpen) return undefined
+
+    const popover = jumpPopoverRef.current
+    const composer = document.querySelector<HTMLElement>('.cockpit-composer-wrap')
+    if (!popover || !composer) return undefined
+
+    let frame = 0
+    const syncJumpSafeArea = () => {
+      window.cancelAnimationFrame(frame)
+      frame = window.requestAnimationFrame(() => {
+        const popoverRect = popover.getBoundingClientRect()
+        const composerRect = composer.getBoundingClientRect()
+        const availableHeight = Math.floor(
+          composerRect.top - popoverRect.top - JUMP_COMPOSER_GAP,
+        )
+        popover.style.maxHeight = `${Math.max(MIN_JUMP_PALETTE_HEIGHT, availableHeight)}px`
+      })
+    }
+
+    const composerObserver = new ResizeObserver(syncJumpSafeArea)
+    composerObserver.observe(composer)
+    syncJumpSafeArea()
+    window.addEventListener('resize', syncJumpSafeArea)
+    document.addEventListener('fullscreenchange', syncJumpSafeArea)
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      composerObserver.disconnect()
+      window.removeEventListener('resize', syncJumpSafeArea)
+      document.removeEventListener('fullscreenchange', syncJumpSafeArea)
+    }
+  }, [isJumpOpen])
+
+  useEffect(() => {
+    if (!isJumpOpen) return undefined
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setIsJumpOpen(false)
     }
@@ -623,7 +660,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
               </button>
 
               {isJumpOpen && (
-                <div className="cockpit-jump-popover" role="dialog" aria-label="Jump to project work">
+                <div ref={jumpPopoverRef} className="cockpit-jump-popover" role="dialog" aria-label="Jump to project work">
                   <div className="cockpit-jump-quick" aria-label="Quick project jumps">
                     <button type="button" onClick={() => jumpToNode('missingness')}>Active work</button>
                     <button type="button" onClick={() => jumpToNode('prediction')}>Blocker</button>
