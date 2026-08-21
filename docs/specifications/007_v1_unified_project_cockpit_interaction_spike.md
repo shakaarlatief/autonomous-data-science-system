@@ -1,8 +1,8 @@
 # Specification 007: V1 Unified Project Cockpit Interaction Spike
 
 **Date:** 2026-08-21  
-**Status:** Candidate V1 frontend interaction specification v0.5 after fifth human review; revised executable interaction gate passed, next human visual/product gate remains open  
-**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric zoom, scalable project jump/search navigation, continuous finite grid world, viewport-aware stage orientation, canvas-dominant and fold-away chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 007 and Checkpoints 117 through 124  
+**Status:** Candidate V1 frontend interaction specification v0.6 after sixth human review; revised executable interaction gate passed, next real-browser/hardware visual-product gate remains open  
+**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric/native laptop zoom, scalable project jump/search navigation, continuous finite grid world, viewport-aware semantic stage orientation, world-owned ambient depth, canvas-dominant and fold-away chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 008 and Checkpoints 117 through 125  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
@@ -20,7 +20,8 @@ see the project as a living analytical process
     -> continue to pan/recenter even when the semantic project plane is smaller than the viewport
     -> experience surrounding navigation reserve as one continuous spatial grid world
     -> retain stage orientation while moving through that world
-    -> jump/search to meaningful project work
+    -> use laptop trackpad pan/pinch without losing spatial orientation
+    -> jump/search to meaningful project work without control collisions
     -> select a meaningful work unit
     -> smoothly enter a focused analytical workspace
     -> perform real Data / EDA work using the same functional components as direct project views
@@ -432,6 +433,87 @@ The rail must remain right-anchored at supported desktop/laptop widths. Popovers
 
 Compact visual presentation must not remove accessible names, keyboard reachability, or discoverability. The vertical arrangement remains a candidate pending human review and is not yet a permanent product-standard control layout.
 
+### CPK-34: World-owned ambient continuity
+
+Workspace-level atmosphere must follow the navigable finite grid world rather than reveal the smaller semantic project plane as a clipped visual box.
+
+If soft radial gradients, glows, tonal fields, or similar ambient depth are used:
+
+```text
+workspace atmosphere
+    -> belongs to ProjectWorld or an equivalent world-level layer
+
+semantic ProjectCanvas boundary
+    -> must not become visible merely because an ambient effect stops there
+```
+
+The semantic project plane may still own stage shading and evidence-bearing project elements. This requirement concerns non-semantic workspace atmosphere.
+
+The exact gradient geometry remains provisional.
+
+### CPK-35: Temporally stable native pinch zoom
+
+Trackpad pinch is a continuous spatial interaction, not merely a sequence of commands that eventually reaches the correct scale.
+
+The browser/native-input candidate must therefore avoid large event-by-event jumps and stale-state feedback.
+
+The bounded implementation should support the equivalent of:
+
+```text
+native pinch/wheel stream
+    -> normalize delta units
+    -> coalesce short event bursts when useful
+    -> bound pathological per-update deltas
+    -> apply conservative geometric scaling
+    -> use immediately current zoom state
+    -> preserve the approximate gesture anchor
+    -> prevent obsolete geometry-correction work from fighting newer input
+```
+
+A displayed integer percentage is only presentation and must not define whether smooth progression occurred.
+
+Automated synthetic wheel tests may validate bounded progression and anchor stability, but real laptop hardware feel remains a mandatory human gate before promotion.
+
+This requirement does not select a final gesture library or final pinch sensitivity constants.
+
+### CPK-36: Authoritative terminal stage-ruler alignment
+
+The viewport-aware stage ruler must align its horizontal terminal boundaries with the semantic stage regions themselves.
+
+At supported pan/zoom positions:
+
+```text
+ruler left boundary
+    -> Framing semantic boundary
+
+ruler right boundary
+    -> Evaluation semantic boundary
+```
+
+When browser transforms make inferred scale geometry unreliable, the view layer should derive alignment from authoritative rendered semantic boundaries rather than reconstructing them from assumptions.
+
+Framing and Evaluation should follow the same label alignment and underline/inset rules as the middle stages unless deliberate semantic styling later justifies a difference.
+
+Neutral finite-world reserve outside the stage regions must remain visually neutral.
+
+### CPK-37: Jump/search safe-area contract
+
+The project Jump-to/search palette must treat other persistent floating Cockpit surfaces, especially the system composer, as explicit safe-area occupants.
+
+At supported laptop/desktop sizes:
+
+```text
+Jump/search opens
+    -> panel remains inside the usable viewport
+    -> panel remains clearly separated from the composer
+    -> long results scroll inside the palette
+    -> lower results remain reachable and selectable
+```
+
+The palette may adapt its height/placement to available viewport space. It must not require the user to move the underlying project merely to access its own controls.
+
+This strengthens CPK-20 for the specific scalable project-navigation surface.
+
 ---
 
 ## 3. Representative scenario
@@ -475,13 +557,16 @@ CockpitPage
     CompactFoldableCockpitHud
     ProjectMapSurface
         FiniteNavigableGridWorld
+            WorldAmbientLayer
             SemanticProjectPlane
                 StageRegions
                 ProjectWorkUnits
                 ProjectConnectors
         ViewportStageRuler
+            geometry follows rendered semantic stage boundaries
         GeometricZoomController
-        ProjectJumpSearch
+            NativePinchNormalizer
+        CollisionSafeProjectJumpSearch
     FocusHost
         DataPage reuse
         EdaPage reuse
@@ -510,9 +595,9 @@ complex workspace permanently nested inside scaled node
 
 The map surface must be architected as a viewport over project space rather than a static diagram whose entire logical extent must fit in one browser frame.
 
-The navigable grid world must remain conceptually distinct from the semantic project plane so minimum geometric zoom does not eliminate panning merely because the represented project fits inside the current viewport, and so neutral navigation reserve does not acquire false stage semantics.
+The navigable grid world must remain conceptually distinct from the semantic project plane so minimum geometric zoom does not eliminate panning merely because the represented project fits inside the current viewport, so neutral navigation reserve does not acquire false stage semantics, and so world-level atmosphere does not reveal project-plane implementation boundaries.
 
-The stage ruler may use hybrid ownership: viewport-owned vertical placement with project-plane-owned horizontal geometry.
+The stage ruler may use hybrid ownership: viewport-owned vertical placement with project-plane-owned horizontal geometry. Its terminal geometry should follow authoritative semantic boundaries rather than an inferred browser-transform model when those differ.
 
 The implementation should prefer scalable navigation primitives directly when their stronger shape is already clear instead of knowingly proliferating disposable one-off toolbar controls.
 
@@ -576,6 +661,10 @@ CPK-T27  expanded Details uses the upper available map area without covering sta
 CPK-T28  surrounding navigation reserve renders as a continuous grid world at minimum zoom rather than a large blank outer region
 CPK-T29  stage ruler remains vertically pinned while horizontally tracking the semantic project plane across pan/zoom
 CPK-T30  right-edge vertical map-tool rail remains responsive, searchable Jump results remain on-screen, and rail fold/restore works
+CPK-T31  world ambient depth does not depend on a clipped ProjectCanvas atmosphere layer
+CPK-T32  stage-ruler terminal edges align with rendered Framing/Evaluation semantic boundaries and use consistent edge styling
+CPK-T33  small synthetic pinch input yields bounded cumulative scale progression while approximately preserving the gesture anchor
+CPK-T34  Jump/search remains above the composer at 1024x768, scrolls results internally, and keeps the lowest representative result selectable
 ```
 
 Visual regression should not freeze the exploratory Cockpit design before human review. Screenshot artifacts may be generated for review, but a canonical Cockpit baseline should be promoted only after the visual concept is accepted.
@@ -588,6 +677,7 @@ This spike does not yet select or fully implement:
 
 ```text
 React Flow or another graph framework
+final gesture library
 final project auto-layout algorithm
 final stage taxonomy
 final stage-width algorithm
@@ -597,6 +687,7 @@ multi-level arbitrary/infinite spatial nesting
 infinite-canvas semantics
 final finite-world extent algorithm
 final zoom range or zoom persistence contract
+final pinch/wheel normalization constants
 final pan-reserve dimensions
 production project-search backend
 pointer-proximity HUD/control reveal
@@ -606,7 +697,7 @@ production agent conversation backend
 production streaming interaction protocol
 full Validation/Features/Models/Evaluation workspaces
 final Cockpit visual identity
-exact permanent ambient-grid styling
+exact permanent ambient-grid/gradient styling
 final animation library
 mobile-phone UI
 ```
@@ -635,4 +726,8 @@ Specification 007 may be promoted only after:
 16. the continuous grid world feels spatially expansive without confusing neutral navigation reserve with semantic project stages;
 17. viewport-aware stage-ruler behavior feels natural during vertical and horizontal movement;
 18. the vertical tool rail is visually and interactively preferable to the prior horizontal candidate, or is revised based on human evidence;
-19. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
+19. world-owned ambient depth no longer reveals the semantic project-plane boundary as an accidental visual box;
+20. stage-ruler terminal alignment remains visually coherent at Framing/Evaluation across real-browser pan/zoom states;
+21. Jump/search remains comfortably usable without composer overlap at laptop viewport sizes;
+22. native laptop trackpad pinch feels temporally smooth and spatially anchored in direct human use, including transitions between two-finger pan and pinch;
+23. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
