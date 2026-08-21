@@ -1,10 +1,10 @@
 # Specification 002: V1 Persistence Tooling Standard
 
 **Date:** 2026-08-20  
-**Status:** Accepted V1 technical specification v1.0  
+**Status:** Accepted V1 technical specification v1.1 after governed-roundtrip portability closure  
 **Scope:** Python persistence toolkit and schema-migration tooling for Specification 001's SQLite-centered architecture and its PostgreSQL migration seam  
 **Authority:** Current V1 technical contract for persistence-tool implementation. Subordinate to D-028, Specification 001, and Foundations 017-020.  
-**Validated:** 2026-08-20 through the committed SQLite + PostgreSQL persistence-tooling spike  
+**Validated:** Initial tooling selection validated 2026-08-20; migration portability strengthened and revalidated 2026-08-21 through Checkpoint 127  
 **Design session:** 02  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 02 - Methodological Brain & Knowledge Units
@@ -41,7 +41,7 @@ SQLite via Python sqlite3
 PostgreSQL 18 via psycopg 3.x
 ```
 
-The architecture selects the stable SQLAlchemy 2.0 API line rather than the SQLAlchemy 2.1 beta line. Exact dependency versions must be locked by the eventual project dependency-management tooling; this specification does not yet select the lockfile/package-manager mechanism.
+The architecture selects the stable SQLAlchemy 2.0 API line rather than the SQLAlchemy 2.1 beta line. Exact dependency versions must be locked by the project dependency-management tooling.
 
 ---
 
@@ -137,6 +137,8 @@ indexes
 
 This is especially important because Alembic's SQLite batch migration workflow cannot reliably address unnamed constraints.
 
+Manual names must also remain inside the portability envelope of supported backends. PostgreSQL identifiers are limited to 63 bytes, so migration/schema identifiers must not rely on silent PostgreSQL truncation.
+
 ### 5.3 SQLite STRICT discipline
 
 Specification 001 requires authoritative SQLite tables to use `STRICT` mode where practical.
@@ -219,10 +221,39 @@ Professional migration policy:
 4. schema version compatibility is checked at application startup;
 5. migrations are tested from an empty/base database and from representative prior versions;
 6. SQLite and PostgreSQL portability tests cover the core durable schema;
-7. migration logic must not hide methodological/business semantics in database code.
+7. migration logic must not hide methodological/business semantics in database code;
+8. revision identifiers are unique and fit the configured Alembic version-table envelope.
 ```
 
 `MetaData.create_all()` may be used in narrow tests/spikes, but it must not replace the production migration history.
+
+### 9.1 Alembic revision-identifier portability
+
+The current Alembic version table uses the default revision-value envelope:
+
+```text
+alembic_version.version_num VARCHAR(32)
+```
+
+The governed reusable-knowledge round-trip exposed that a descriptive revision identity longer than 32 characters can appear harmless under SQLite yet fail on PostgreSQL when Alembic records the migration version.
+
+Therefore, while the default version table remains in use:
+
+```text
+every Alembic revision identifier
+    -> must be unique
+    -> must have length <= 32 characters
+```
+
+Migration filenames may remain more descriptive than the revision identity.
+
+If a future project deliberately changes the Alembic version-table schema, that change must itself be migration-safe and validated across SQLite and PostgreSQL before this invariant is relaxed.
+
+The deterministic regression guard is:
+
+```text
+tests/test_migration_revision_ids.py
+```
 
 ---
 
@@ -234,7 +265,7 @@ Generated candidate revisions must always be manually reviewed and corrected bef
 
 Reasons include known limitations around constraint changes, renames, backend-specific constructs, and SQLite table-recreation behavior.
 
-The CI/tooling layer should eventually use Alembic's schema-drift checking capabilities to detect when model metadata and migration history diverge, but no generated migration should be silently applied merely because autogenerate produced it.
+The CI/tooling layer should use Alembic's schema-drift checking capabilities where useful to detect when model metadata and migration history diverge, but no generated migration should be silently applied merely because autogenerate produced it.
 
 ---
 
@@ -290,7 +321,7 @@ It must not leak into methodological/domain services.
 
 All core relational metadata and migrations must continue to preserve Specification 001's PostgreSQL migration seam.
 
-The tooling spike executed the same Core metadata model on PostgreSQL 18 and verified:
+Initial tooling validation verified:
 
 ```text
 native UUID mapping
@@ -300,6 +331,18 @@ project -> knowledge revision references
 application transaction semantics
 Alembic migration execution
 SQLite-specific FTS DDL isolation
+```
+
+The richer governed reusable-knowledge round-trip later added direct PostgreSQL 18 evidence for migration 0002 and the governed import/accept/export/pinning seam.
+
+That gate exposed two portability classes worth preserving:
+
+```text
+schema/migration object identifiers
+    -> respect PostgreSQL's 63-byte identifier limit
+
+Alembic revision values
+    -> respect the current 32-character version-table limit
 ```
 
 New core persistence features should receive PostgreSQL compile/execution coverage when they materially affect the migration seam.
@@ -318,13 +361,13 @@ psycopg 3.x for PostgreSQL validation/migration work
 
 The current validated versions are evidence, not an instruction to float dependencies in production.
 
-The eventual implementation environment must lock exact transitive dependency versions reproducibly. Updating SQLAlchemy/Alembic requires normal dependency review and CI, including SQLite and PostgreSQL persistence gates.
+The implementation environment locks transitive dependencies reproducibly through the accepted V1 Python project tooling. Updating SQLAlchemy/Alembic requires normal dependency review and CI, including SQLite and PostgreSQL persistence gates.
 
 ---
 
 ## 15. Acceptance evidence
 
-Reproducible evidence:
+Initial tooling-selection evidence:
 
 ```text
 experiments/architecture_spikes/tooling_sqlalchemy_core_alembic_spike.py
@@ -332,7 +375,7 @@ experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
 .github/workflows/v1-persistence-tooling-spike.yml
 ```
 
-The CI spike passed on both SQLite and PostgreSQL:
+The initial CI spike passed on SQLite and PostgreSQL:
 
 ```text
 SQLALCHEMY_CORE=PASS
@@ -343,17 +386,32 @@ DIALECT_SPECIFIC_DDL_ISOLATION=PASS
 TOOLING_SPIKE_RESULT=PASS
 ```
 
+Later portability/production-seam evidence:
+
+```text
+docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
+experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
+docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
+tests/test_migration_revision_ids.py
+```
+
+Checkpoint 127 records the final governed-roundtrip gate:
+
+```text
+SQLite / Ubuntu     PASS
+SQLite / Windows    PASS
+PostgreSQL 18       PASS
+Alembic revision-ID portability guard PASS on all three jobs
+```
+
 ---
 
 ## 16. Explicit non-decisions
 
-This specification does **not** yet select:
+This specification does **not** select:
 
 ```text
-project package/build manager
-lockfile tool
 full physical production DDL
-repository class/module layout
 async database access
 connection-pool tuning beyond current local-first needs
 complete PostgreSQL deployment configuration
@@ -365,19 +423,24 @@ Async persistence is not required for the current V1 architecture. It should not
 
 ---
 
-## 17. Next step
+## 17. Current implementation status
 
-With the database family, architecture seam, SQL toolkit, and migration framework now validated, the next persistence task is to define and implement the **first production V1 schema/migration foundation** behind the accepted ports.
+The first production persistence slice and the richer governed reusable-knowledge persistence/interchange seam are now implemented and cross-backend validated.
 
-That work should begin with the smallest coherent durable core needed for a real vertical slice:
+Current persistence evidence therefore covers:
 
 ```text
-system schema version
-knowledge node/asset/revision/governance
-knowledge components/relations/rules
-project identity + selected epistemic objects
-exact project -> knowledge revision references
-artifact/execution metadata only where the first slice needs it
+production migration foundation
+exact historical project -> knowledge revision references
+candidate-versus-accepted governance
+accepted-current pointers
+trusted deterministic accepted snapshot export/reload
+provenance and relation governance
+collections
+SQLite/Linux
+SQLite/Windows
+PostgreSQL 18
+migration identifier portability regression guard
 ```
 
-The first production migration must be tested from an empty database on SQLite and compiled/exercised against PostgreSQL without changing domain semantics.
+The next major methodological-knowledge work is outside this tooling specification's scope: production retrieval/MethodologicalHorizon evaluation and selective reasoning-context construction.
