@@ -74,6 +74,8 @@ const FIT_PADDING = 72
 const MIN_ZOOM = 0.45
 const MAX_ZOOM = 1.6
 const ZOOM_STEP = 0.1
+const PINCH_SENSITIVITY = 0.00135
+const MAX_PINCH_DELTA_PER_FRAME = 64
 
 const CONNECTOR_PATHS = [
   'M250 205 C300 205 300 175 350 175',
@@ -98,11 +100,17 @@ const STAGES: Array<{ label: string; nodeId: NodeId }> = [
 
 const clampZoom = (value: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value))
 const clampScroll = (value: number, maximum: number) => Math.min(Math.max(0, value), Math.max(0, maximum))
+const clampPinchDelta = (value: number) => Math.min(MAX_PINCH_DELTA_PER_FRAME, Math.max(-MAX_PINCH_DELTA_PER_FRAME, value))
 
 export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const { workspace } = useWorkspace()
   const viewportRef = useRef<HTMLElement>(null)
   const stageRulerTrackRef = useRef<HTMLElement>(null)
+  const zoomRef = useRef(1)
+  const pinchDeltaRef = useRef(0)
+  const pinchAnchorRef = useRef({ x: 0, y: 0 })
+  const pinchFrameRef = useRef<number | null>(null)
+  const zoomLayoutFrameRef = useRef<number | null>(null)
   const [isHudExpanded, setIsHudExpanded] = useState(false)
   const [isContextOpen, setIsContextOpen] = useState(false)
   const [isJumpOpen, setIsJumpOpen] = useState(false)
@@ -239,12 +247,18 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     }
   }
 
+  const setZoomState = (nextZoom: number) => {
+    zoomRef.current = nextZoom
+    setZoom(nextZoom)
+  }
+
   const zoomAround = (nextZoom: number, anchorX?: number, anchorY?: number) => {
     const viewport = viewportRef.current
     if (!viewport) return
 
+    const currentZoom = zoomRef.current
     const boundedZoom = clampZoom(nextZoom)
-    if (Math.abs(boundedZoom - zoom) < 0.001) return
+    if (Math.abs(boundedZoom - currentZoom) < 0.0005) return
 
     const geometry = canvasGeometry(viewport)
     if (!geometry) return
@@ -253,11 +267,16 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const y = anchorY ?? viewport.clientHeight / 2
     const canvasLeftInViewport = geometry.canvasRect.left - geometry.viewportRect.left
     const canvasTopInViewport = geometry.canvasRect.top - geometry.viewportRect.top
-    const logicalX = (x - canvasLeftInViewport) / zoom
-    const logicalY = (y - canvasTopInViewport) / zoom
+    const logicalX = (x - canvasLeftInViewport) / currentZoom
+    const logicalY = (y - canvasTopInViewport) / currentZoom
 
-    setZoom(boundedZoom)
-    window.requestAnimationFrame(() => {
+    setZoomState(boundedZoom)
+
+    if (zoomLayoutFrameRef.current !== null) {
+      window.cancelAnimationFrame(zoomLayoutFrameRef.current)
+    }
+    zoomLayoutFrameRef.current = window.requestAnimationFrame(() => {
+      zoomLayoutFrameRef.current = null
       const nextGeometry = canvasGeometry(viewport)
       if (!nextGeometry) return
       const limits = scrollLimits(viewport)
@@ -273,7 +292,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const viewport = viewportRef.current
     if (!viewport) return
 
-    setZoom(1)
+    setZoomState(1)
     window.requestAnimationFrame(() => {
       const geometry = canvasGeometry(viewport)
       if (!geometry) return
@@ -295,7 +314,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const verticalFit = (viewport.clientHeight - FIT_PADDING * 2) / CANVAS_HEIGHT
     const nextZoom = clampZoom(Math.min(horizontalFit, verticalFit, 1))
 
-    setZoom(nextZoom)
+    setZoomState(nextZoom)
     window.requestAnimationFrame(() => {
       const geometry = canvasGeometry(viewport)
       if (!geometry) return
@@ -351,8 +370,11 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
       if (!canvas) return
       const viewportRect = viewport.getBoundingClientRect()
       const canvasRect = canvas.getBoundingClientRect()
-      rulerTrack.style.width = `${canvasRect.width}px`
-      rulerTrack.style.transform = `translate3d(${canvasRect.left - viewportRect.left}px, 0, 0)`
+      const canvasScale = canvasRect.width / CANVAS_WIDTH
+      const semanticLeft = canvasRect.left - viewportRect.left + GRID_SIDE_GUTTER * canvasScale
+      const semanticWidth = (CANVAS_WIDTH - GRID_SIDE_GUTTER * 2) * canvasScale
+      rulerTrack.style.width = `${semanticWidth}px`
+      rulerTrack.style.transform = `translate3d(${semanticLeft}px, 0, 0)`
     }
     const scheduleSync = () => {
       window.cancelAnimationFrame(frame)
@@ -376,14 +398,46 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const handlePinchZoom = (event: WheelEvent) => {
       if (!event.ctrlKey) return
       event.preventDefault()
+
       const rect = viewport.getBoundingClientRect()
-      const factor = Math.exp(-event.deltaY * 0.004)
-      zoomAround(zoom * factor, event.clientX - rect.left, event.clientY - rect.top)
+      const deltaModeScale = event.deltaMode === 1
+        ? 16
+        : event.deltaMode === 2
+          ? viewport.clientHeight
+          : 1
+      pinchDeltaRef.current += event.deltaY * deltaModeScale
+      pinchAnchorRef.current = {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+      }
+
+      if (pinchFrameRef.current !== null) return
+
+      pinchFrameRef.current = window.requestAnimationFrame(() => {
+        pinchFrameRef.current = null
+        const delta = clampPinchDelta(pinchDeltaRef.current)
+        pinchDeltaRef.current = 0
+        if (Math.abs(delta) < 0.01) return
+
+        const factor = Math.exp(-delta * PINCH_SENSITIVITY)
+        const anchor = pinchAnchorRef.current
+        zoomAround(zoomRef.current * factor, anchor.x, anchor.y)
+      })
     }
 
     viewport.addEventListener('wheel', handlePinchZoom, { passive: false })
-    return () => viewport.removeEventListener('wheel', handlePinchZoom)
-  }, [zoom])
+    return () => {
+      viewport.removeEventListener('wheel', handlePinchZoom)
+      if (pinchFrameRef.current !== null) {
+        window.cancelAnimationFrame(pinchFrameRef.current)
+        pinchFrameRef.current = null
+      }
+      if (zoomLayoutFrameRef.current !== null) {
+        window.cancelAnimationFrame(zoomLayoutFrameRef.current)
+        zoomLayoutFrameRef.current = null
+      }
+    }
+  }, [])
 
   useEffect(() => {
     if (!isJumpOpen) return undefined
@@ -420,13 +474,13 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
 
     if (event.key === '+' || event.key === '=') {
       event.preventDefault()
-      zoomAround(zoom + ZOOM_STEP)
+      zoomAround(zoomRef.current + ZOOM_STEP)
       return
     }
 
     if (event.key === '-') {
       event.preventDefault()
-      zoomAround(zoom - ZOOM_STEP)
+      zoomAround(zoomRef.current - ZOOM_STEP)
       return
     }
 
@@ -469,7 +523,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
           ref={viewportRef}
           className="project-viewport"
           aria-label="Living data science project map"
-          aria-description="Two-dimensional finite grid workspace with symmetric pan reserve around the semantic project plane. Two-finger trackpad movement pans. Trackpad pinch zooms. Arrow keys pan, plus and minus zoom, F fits the project, and Home resets."
+          aria-description="Two-dimensional finite grid workspace with symmetric pan reserve around the semantic project plane. Two-finger trackpad movement pans. Trackpad pinch zooms smoothly around the gesture anchor. Arrow keys pan, plus and minus zoom, F fits the project, and Home resets."
           aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home + - 0 F"
           tabIndex={0}
           onKeyDown={handleViewportKeyDown}
@@ -525,7 +579,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
             </button>
 
             <div className="cockpit-zoom-controls" aria-label="Project map zoom controls">
-              <button type="button" onClick={() => zoomAround(zoom - ZOOM_STEP)} aria-label="Zoom out project map" title="Zoom out">
+              <button type="button" onClick={() => zoomAround(zoomRef.current - ZOOM_STEP)} aria-label="Zoom out project map" title="Zoom out">
                 <ZoomOut size={14} />
               </button>
               <button
@@ -537,7 +591,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
               >
                 {zoomPercent}%
               </button>
-              <button type="button" onClick={() => zoomAround(zoom + ZOOM_STEP)} aria-label="Zoom in project map" title="Zoom in">
+              <button type="button" onClick={() => zoomAround(zoomRef.current + ZOOM_STEP)} aria-label="Zoom in project map" title="Zoom in">
                 <ZoomIn size={14} />
               </button>
             </div>
