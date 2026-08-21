@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 122  
+**Checkpoint:** 123  
 **Date:** 2026-08-21  
 **Active development branch:** `v1-frontend-spike`  
 **Development stage:** Prototype V0 complete; bounded V1 implementation and product validation across methodological knowledge, persistence/interchange, retrieval/horizon construction, agent/runtime evaluation, and the professional Project Cockpit  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate product priority:** Perform the next real-browser human product gate on the passing Specification 007 candidate v0.3 Cockpit refinement, with particular attention to zoom, trackpad interaction, canvas dominance, scalable Jump to/search navigation, floating composer/controls, and fold-away primary HUD
+**Immediate product priority:** Perform the next real-browser human product gate on the passing Specification 007 candidate v0.4 Cockpit, with particular attention to balanced low-zoom spatial navigation, stronger stage orientation, fold-away map controls, upper Details placement, and preservation of the restrained ambient grid design language
 
 ## Active ChatGPT development context
 
@@ -128,14 +128,6 @@ No universal top-level `Assessment` object is currently justified. Subject-speci
 
 ```text
 Question -> Evidence -> Finding -> Claim / Decision
-```
-
-Primary sources:
-
-```text
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
 ---
@@ -293,102 +285,109 @@ everything mounted or loaded simultaneously
 
 ---
 
-## Cockpit evidence through Checkpoint 122
+## Cockpit evidence through Checkpoint 123
 
-Checkpoint 117 confirmed the core click-to-focus interaction.
-
-Checkpoint 118 implemented and automatically validated the first `/cockpit` slice, including shared Data/EDA workspaces, Production Missingness focus, URL-addressable focus state, browser Back restoration, and reduced-motion-safe transitions.
-
-Checkpoint 119's second real-browser review accepted the stage-zone visual grammar but exposed real scale and immersion defects: lower/right work could become unreachable, the project was still too single-screen-like, and persistent chrome consumed too much workspace.
-
-Checkpoint 121 then implemented and validated the first immersive-scale requirements:
+The Cockpit has progressed through four real-browser human review cycles.
 
 ```text
-genuine two-dimensional project viewport
-horizontal + vertical movement
-project extent larger than one viewport
-keyboard panning and recovery
-compact project details
-collapsible System Focus
-true browser fullscreen
-collision-safe map/composer geometry
-```
+Checkpoint 117
+    core click-to-focus interaction confirmed
 
-The third real-browser review, now preserved in Research 005 and Checkpoint 122, accepted the smooth jump interaction but identified a stronger professional composition:
-
-```text
-project canvas should be the dominant visual object
-project navigation should scale through Jump to + search
-geometric zoom is required
-trackpad pan and pinch zoom are required
-composer should float over continuous canvas
-map controls should float rather than consume a full-width row
-one compact top HUD is preferable to duplicated persistent layers
-primary HUD should itself be foldable
-```
-
-### Current Specification 007 v0.3 implementation
-
-The current branch now implements:
-
-```text
-2260 x 1180 representative logical project plane
-native two-axis scroll/trackpad movement
-Arrow / Shift+Arrow / Home navigation
-
-geometric zoom
-    zoom out
-    zoom percentage
-    zoom in
-    reset to 100%
-    fit project
-    + / - / 0 / F keyboard equivalents
-    trackpad-style pinch handling around the gesture anchor
-
-scalable Jump to navigation
-    Active work
-    Blocker
-    Investigation
-    Evaluation
-    searchable project-work list
-
-canvas-dominant chrome
-    no separate full-width Project operating map control row
-    floating translucent map toolbar
-    floating project details
-    floating System Focus
-    composer floating over continuous project canvas
-    lower/right logical margin for unobstructed work recovery
-
-primary Cockpit HUD
-    reduced persistent height
-    explicit hide action
-    small explicit restore affordance
-
-existing deep-work behavior retained
-    Data focus
-    EDA focus
+Checkpoint 118
+    first executable /cockpit slice validated
+    shared Data / EDA focus
     Production Missingness focus
-    URL state
-    browser Back
-    reduced motion
-    fullscreen
+    URL state + browser Back
+
+Checkpoint 119
+    stage-zone grammar positively validated
+    scale/reachability/fullscreen requirements exposed
+
+Checkpoint 121
+    2D immersive-scale viewport implemented and gate passed
+
+Checkpoint 122
+    geometric zoom, trackpad pinch, scalable Jump to/search,
+    canvas-dominant composer/controls, and fold-away primary HUD validated
+
+Checkpoint 123
+    fourth human review implemented and validated:
+    balanced project-plane/world geometry,
+    stronger stage orientation,
+    fold-away map controls,
+    corrected compact identity,
+    higher Details placement,
+    restrained ambient grid treatment preserved
 ```
 
-The implementation was validated on a temporary PR branch and then fast-forwarded into `v1-frontend-spike`.
+### Current Specification 007 v0.4 implementation
 
-Validated implementation head:
+The current branch implements:
 
 ```text
-e500eb45c1de59f24b1531b890f55d2ec3bfffc5
+ProjectWorld != ProjectCanvas
+
+ProjectWorld
+    always remains larger than the viewport by a minimum scroll range
+    keeps the ProjectCanvas centered
+    preserves horizontal and vertical pan at minimum zoom
+
+ProjectCanvas
+    representative logical size 2260 x 1180
+    balanced internal left/right stage margins
+    existing subtle ambient grid/glow treatment retained
+
+navigation
+    ordinary two-axis scroll / trackpad movement
+    Arrow / Shift+Arrow
+    Home reset
+    geometric zoom out / percentage / in
+    100% reset
+    Fit project
+    + / - / 0 / F keyboard equivalents
+    trackpad-style pinch zoom around the approximate gesture anchor
+
+project orientation
+    stronger stage headings
+    stage-heading visual scale compensated against geometric zoom
+
+project location
+    scalable Jump to menu
+    Active work / Blocker / Investigation / Evaluation
+    searchable project work
+
+chrome
+    compact fold-away primary HUD
+    floating map-control bar
+    map-control bar can fold to a right-edge restore handle
+    floating project Details
+    Details positioned high below stage orientation on desktop
+    floating System Focus
+    floating composer over continuous canvas
+
+focus/deep work
+    Data
+    EDA
+    Production Missingness investigation
+    URL/browser-history behavior retained
+    reduced-motion behavior retained
+    fullscreen retained
 ```
 
-Final validation result:
+The fourth-review implementation was validated through temporary review branch `v1-frontend-spike-review4` and PR #3 before being advanced into `v1-frontend-spike`.
+
+Validated code head:
+
+```text
+38c17edfe1440095d60f7e9f9bf21d42053de990
+```
+
+Final validation evidence:
 
 ```text
 V1 frontend spike
-PR workflow run 105
-32453067031
+workflow run number 122
+run id 32457992939
 
 Ubuntu build + unit tests
     PASS
@@ -403,46 +402,50 @@ controlled direct-project visual regression
     PASS
 ```
 
-The browser gate explicitly exercises searchable Jump to navigation, Investigation quick jump, keyboard recovery, zoom buttons, keyboard zoom, fit project, trackpad-style pinch input, primary HUD hide/show, canvas continuation behind the composer, lower-work unobstructed recovery, fullscreen, and automated accessibility.
+Two failed intermediate gates are important historical evidence rather than hidden noise.
 
-An earlier browser assertion measured lower-work placement immediately after starting a deliberately smooth jump. The navigation implementation was hardened with explicit zoom-aware target centering, and the test was corrected to wait for the asynchronous smooth motion before measuring its final unobstructed placement. The product was not degraded to an abrupt jump merely to satisfy a synchronous test.
+The first showed that the brand-row CSS fix had not actually beaten an inherited selector. The next showed a deeper low-zoom defect: with a wide viewport, a fixed-gutter world could become narrower than the scrollport and horizontal scrolling collapsed to zero.
 
----
+The fixed-gutter-only model was therefore rejected. The passing implementation sizes the world from both the scaled project and the current viewport so panning remains possible at every supported zoom.
 
-## Active Cockpit contract and remaining human gate
-
-Current governing sources:
+Primary current sources:
 
 ```text
 docs/research/002_primary_project_cockpit_interface_concept.md
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
+docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
 ```
 
-Specification 007 is now **candidate v0.3**.
+Specification 007 remains **candidate v0.4**. Automated validation does not promote the specification by itself.
 
-The revised implementation has passed its automated gate, but the specification still requires another human product review before broader acceptance or any visual freeze.
+---
 
-The next review should determine whether:
+## Current Cockpit human gate
+
+The next real-browser review should determine whether:
 
 ```text
-the project canvas now visually dominates the application
-one-line top HUD is compact enough
-HUD hide/restore feels natural
-floating map controls are clear without feeling cluttered
-composer feels native to the canvas rather than like a footer
-ordinary two-finger trackpad movement pans naturally
-trackpad pinch zoom feels natural and anchored correctly
-explicit zoom / fit / reset controls feel useful
-Jump to quick destinations + project search feel scalable
-lower/right work remains easy to recover into a clear area
-fullscreen + fold-away chrome create the intended immersive experience
+top-left ADS · project identity now reads intentionally
+stage headings are sufficiently clear at 100%, intermediate zoom, and 45%
+minimum-zoom project can move/recenter naturally in all four directions
+outside-project reserve feels balanced rather than excessive
+internal left/right project-plane margins feel balanced
+folded map controls are discoverable and unobtrusive
+expanded Details is high enough without covering stage orientation
+ambient grid depth remains subtle and professional
+zoom / pinch / fit / reset / Jump to remain natural after the world-model change
+canvas dominance, composer integration, and fullscreen still feel strong
 ```
 
-Do not freeze a Cockpit visual-regression baseline before that review.
+If the review exposes problems, preserve them and perform another bounded iteration.
+
+If it succeeds strongly enough, perform a deliberate promotion decision for Specification 007 rather than automatically continuing visual iteration.
+
+Do not freeze a canonical Cockpit screenshot baseline before that decision.
 
 ---
 
@@ -484,12 +487,14 @@ Cockpit auto-layout algorithm
 Cockpit minimap implementation
 Cockpit semantic-zoom algorithm
 final geometric zoom range
+final pan-reserve dimensions
 pan/zoom URL or session persistence contract
 project-search backend
-pointer-proximity HUD reveal
+pointer-proximity HUD/control reveal
 Cockpit final stage taxonomy
 Cockpit final URL contract
 Cockpit final visual identity
+exact permanent ambient-grid styling
 canonical Cockpit screenshot baseline
 system/persona name
 Tauri desktop packaging
@@ -507,35 +512,32 @@ job queue/cloud deployment
 
 ## Exact next execution order
 
-### A. HUMAN PRODUCT GATE FOR SPECIFICATION 007 v0.3
+### A. HUMAN PRODUCT GATE FOR SPECIFICATION 007 v0.4
 
 This is the immediate substantive product step.
 
-Open the current `/cockpit` implementation in a real browser and review the revised canvas-dominant composition before any further Cockpit architecture is frozen.
+Open the current `/cockpit` implementation in a real browser and review the fourth-review composition before any further Cockpit architecture is frozen.
 
 The review must explicitly cover:
 
 ```text
-canvas dominance
-compact/fold-away primary HUD
-stage strip
-floating map toolbar
-Jump to quick semantics + project search
-2D panning
-trackpad pinch zoom
-explicit zoom controls
-fit/reset recovery
-floating System Focus
+compact project identity
+stage orientation across zoom
+balanced minimum-zoom pan reserve
+internal grid balance
+fold-away project-map controls
+Details placement
+ambient grid visual treatment
+2D trackpad panning
+pinch zoom
+explicit zoom / fit / reset
+Jump to + search
 composer integration
-lower/right reachability
+System Focus
 keyboard recovery
-browser fullscreen
-visual hierarchy and professional quality
+fullscreen
+professional visual quality
 ```
-
-If the review exposes problems, preserve them and perform another bounded Cockpit iteration.
-
-If it succeeds strongly enough, decide what, if anything, is mature enough to promote. Do not assume that an automated PASS alone promotes Specification 007 or selects a final canvas/semantic-zoom architecture.
 
 ### B. GOVERNED ROUND-TRIP CLOSURE
 
@@ -575,11 +577,11 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
 docs/research/002_primary_project_cockpit_interface_concept.md
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
 
 docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
@@ -592,4 +594,5 @@ docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirement
 docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
 docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
 docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
+docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
 ```
