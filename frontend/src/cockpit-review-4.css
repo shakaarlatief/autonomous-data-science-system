@@ -21,9 +21,17 @@
 
 .project-world {
   position: relative;
-  box-sizing: content-box;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   min-width: 0;
   min-height: 0;
+}
+
+.project-world > .project-canvas {
+  flex: none;
 }
 
 .cockpit-stage-strip {
