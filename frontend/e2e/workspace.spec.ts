@@ -122,11 +122,10 @@ test.describe('ADS V1 frontend spike', () => {
     await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBeGreaterThan(initial.top)
 
     await page.getByRole('button', { name: 'Reset project view' }).click()
-    const reset = await expect.poll(async () => viewport.evaluate((element) => ({ left: element.scrollLeft, top: element.scrollTop }))).toEqual({
+    await expect.poll(async () => viewport.evaluate((element) => ({ left: element.scrollLeft, top: element.scrollTop }))).toEqual({
       left: initial.left,
       top: initial.top,
     })
-    void reset
 
     await viewport.focus()
     await viewport.press('ArrowLeft')
@@ -170,7 +169,7 @@ test.describe('ADS V1 frontend spike', () => {
     expect(fittedLabel).not.toBe('100%')
   })
 
-  test('fully zoomed-out project plane has symmetric pan reserve and readable stage orientation', async ({ page }) => {
+  test('fully zoomed-out project plane keeps equal logical pan reserve on all sides and readable stage orientation', async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1000 })
     await page.goto('/cockpit')
 
@@ -180,28 +179,48 @@ test.describe('ADS V1 frontend spike', () => {
     }
     await expect(page.getByRole('button', { name: /Zoom level 45 percent/i })).toBeVisible()
 
-    await viewport.evaluate((element) => {
-      element.scrollTo({
-        left: (element.scrollWidth - element.clientWidth) / 2,
-        top: (element.scrollHeight - element.clientHeight) / 2,
-      })
+    const reserve = await viewport.evaluate((element) => {
+      const world = element.querySelector<HTMLElement>('.project-world')
+      if (!world) return null
+      const style = getComputedStyle(world)
+      return {
+        left: Number.parseFloat(style.paddingLeft),
+        right: Number.parseFloat(style.paddingRight),
+        top: Number.parseFloat(style.paddingTop),
+        bottom: Number.parseFloat(style.paddingBottom),
+        maximumLeft: element.scrollWidth - element.clientWidth,
+        maximumTop: element.scrollHeight - element.clientHeight,
+      }
     })
+    expect(reserve).not.toBeNull()
+    expect(reserve?.left).toBeGreaterThan(300)
+    expect(reserve?.left).toBe(reserve?.right)
+    expect(reserve?.left).toBe(reserve?.top)
+    expect(reserve?.left).toBe(reserve?.bottom)
+    expect(reserve?.maximumLeft ?? 0).toBeGreaterThan((reserve?.left ?? 0) * 2)
+    expect(reserve?.maximumTop ?? 0).toBeGreaterThan((reserve?.top ?? 0) * 2)
 
-    const balance = await viewport.evaluate((element) => {
+    await viewport.evaluate((element) => element.scrollTo({ left: 0, top: 0 }))
+    const startReserve = await viewport.evaluate((element) => {
       const canvas = element.querySelector<HTMLElement>('.project-canvas')
       if (!canvas) return null
       const viewportRect = element.getBoundingClientRect()
       const canvasRect = canvas.getBoundingClientRect()
-      return {
-        left: canvasRect.left - viewportRect.left,
-        right: viewportRect.right - canvasRect.right,
-        top: canvasRect.top - viewportRect.top,
-        bottom: viewportRect.bottom - canvasRect.bottom,
-      }
+      return { left: canvasRect.left - viewportRect.left, top: canvasRect.top - viewportRect.top }
     })
-    expect(balance).not.toBeNull()
-    expect(Math.abs((balance?.left ?? 0) - (balance?.right ?? 0))).toBeLessThan(6)
-    expect(Math.abs((balance?.top ?? 0) - (balance?.bottom ?? 0))).toBeLessThan(6)
+    expect(startReserve?.left ?? 0).toBeGreaterThan(300)
+    expect(startReserve?.top ?? 0).toBeGreaterThan(300)
+
+    await viewport.evaluate((element) => element.scrollTo({ left: element.scrollWidth, top: element.scrollHeight }))
+    const endReserve = await viewport.evaluate((element) => {
+      const canvas = element.querySelector<HTMLElement>('.project-canvas')
+      if (!canvas) return null
+      const viewportRect = element.getBoundingClientRect()
+      const canvasRect = canvas.getBoundingClientRect()
+      return { right: viewportRect.right - canvasRect.right, bottom: viewportRect.bottom - canvasRect.bottom }
+    })
+    expect(endReserve?.right ?? 0).toBeGreaterThan(300)
+    expect(endReserve?.bottom ?? 0).toBeGreaterThan(300)
 
     const stageBox = await page.getByRole('button', { name: 'Data & exploration', exact: true }).boundingBox()
     expect(stageBox).not.toBeNull()
