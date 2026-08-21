@@ -12,7 +12,7 @@ The higher-level question is:
 
 > How much of the process navigation, methodological memory, project memory, evidence discipline, repair, execution control, provenance, and selective human involvement that currently lives in a skilled human-LLM workflow should be made explicit and reusable in a wider system?
 
-The LLM is treated as a powerful reasoning component inside that wider system, not as the system itself. The opposite risk matters just as much: explicit architecture is not automatically valuable, and every mechanism should earn its complexity through evidence.
+The LLM is treated as a powerful reasoning component inside that wider system, not as the system itself. Explicit architecture is not automatically valuable either; every mechanism should earn its complexity through evidence.
 
 ## Working purpose
 
@@ -140,9 +140,47 @@ JSON + JSON Schema Draft 2020-12
 
 The first production persistence vertical slice passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical project-to-knowledge revision pinning.
 
-The richer governed knowledge import/accept/export round-trip is implemented but is **not yet closed**. SQLite passes, while the last persisted PostgreSQL 18 round-trip status remains failed after an identifier-length portability defect. The defect was fixed and revalidation was triggered, but a corrected PostgreSQL PASS has not yet been persisted.
+The richer governed reusable-knowledge persistence/interchange seam is now also **closed across all required environments**.
 
-This governed PostgreSQL round-trip closure is the current immediate project priority.
+Final governed round-trip evidence:
+
+```text
+V1 governed knowledge roundtrip closure gate
+run 32496856945
+
+SQLite / Ubuntu     PASS
+SQLite / Windows    PASS
+PostgreSQL 18       PASS
+Alembic revision-ID portability guard PASS on all three jobs
+```
+
+Validated governed behavior includes candidate import, explicit acceptance, accepted-current pointers, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project revision pinning across later knowledge acceptance.
+
+Two PostgreSQL portability defects were found and repaired before closure:
+
+```text
+1. a manually named migration constraint exceeded PostgreSQL's 63-byte identifier limit
+2. the Alembic revision identity `0002_reusable_knowledge_interchange`
+   exceeded the default `alembic_version.version_num VARCHAR(32)` envelope
+```
+
+Migration 0002 now uses:
+
+```text
+revision = "0002_knowledge_interchange"
+down_revision = "0001_v1_persistence_core"
+```
+
+A deterministic regression test now enforces unique Alembic revision IDs whose length does not exceed 32 characters.
+
+Primary closure sources:
+
+```text
+experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
+docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
+```
+
+This closes the governed persistence/interchange implementation gate. It does not validate retrieval quality, embeddings, reranking, MethodologicalHorizon construction, selective LLM context quality, external-source ingestion, or knowledge-authoring UX.
 
 ### Agent/runtime boundary
 
@@ -150,11 +188,13 @@ Agent frameworks and interoperability protocols are treated as replaceable infra
 
 No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Specification 005 defines an empirical bakeoff among current runtime candidates, beginning with one principal reasoner and allowing a simple direct-model-call result if no framework earns its complexity.
 
+This bakeoff is now the immediate bounded execution track.
+
 ### Professional frontend and Project Cockpit
 
 The frontend is a first-class reasoning, control, and quality surface rather than an end-stage presentation layer.
 
-The Project Cockpit has now moved from candidate interaction spike to a **promoted V1 interaction architecture** after seven real-browser human review cycles and repeated executable gates.
+The Project Cockpit has moved from candidate interaction spike to a **promoted V1 interaction architecture** after seven real-browser human review cycles and repeated executable gates.
 
 Current authoritative interaction contract:
 
@@ -191,51 +231,17 @@ FiniteNavigableGridWorld != SemanticProjectPlane
     world-owned restrained ambient depth
 
 two-dimensional navigation
-    horizontal + vertical movement
-    keyboard recovery
-    fit/reset
-    scalable Jump/search
-
 bounded geometric zoom
-    explicit +/- controls
-    percentage/reset
-    fit project
-    keyboard equivalents
-    native laptop pinch capability
-
+native laptop pinch capability
 viewport-aware stage orientation
-    vertically persistent near viewport top
-    horizontally follows authoritative rendered semantic stage geometry
-
-immersive chrome
-    compact fold-away primary HUD
-    fold-away project-map controls
-    floating Details
-    floating System Focus
-    floating native composer
-    collision-safe overlays
-
-true browser fullscreen with graceful fallback
+scalable Jump/search
+compact/fold-away immersive chrome
+collision-safe floating surfaces
+true fullscreen with graceful fallback
 URL-addressable focus/deep-work state
 keyboard accessibility
 reduced-motion support
 ```
-
-### Seventh-review promotion evidence
-
-The seventh human review found that pinch zoom was substantially smoother than before. A very small occasional hitch remains visible, but the user explicitly classified it as non-major and acceptable to defer.
-
-The remaining requested product adjustment was moderately faster pinch travel. Native pinch sensitivity was increased from:
-
-```text
-0.00135 -> 0.0018
-```
-
-while frame coalescing, per-frame bounds, immediate zoom state, approximate anchoring, and obsolete-correction cancellation remained unchanged.
-
-Jump/search and stage orientation were explicitly accepted in the review.
-
-The first seventh-review browser gate then exposed a real latent stage-ruler timing defect under rapid zoom. The semantic geometry source of truth was already correct, but ruler measurement could occur one rendering step before the zoomed stage geometry had fully settled. That defect was reproduced on rerun and repaired by synchronizing ruler measurement after an additional animation frame.
 
 Final validated Cockpit promotion head:
 
@@ -270,11 +276,14 @@ The tiny remaining pinch hitch is preserved as deferred product polish, not as a
 ## Current execution order
 
 ```text
-1. governed PostgreSQL reusable-knowledge round-trip closure
-2. Specification 005 one-principal-reasoner runtime bakeoff
-3. production retrieval / MethodologicalHorizon benchmark
-4. future Cockpit capability and polish on top of Specification 008
+1. Specification 005 one-principal-reasoner agent-runtime bakeoff
+2. production retrieval / MethodologicalHorizon benchmark
+3. future Cockpit capability and polish on top of Specification 008
 ```
+
+The runtime bakeoff must preserve a simpler direct-model-call architecture as a valid outcome if no framework earns its complexity.
+
+The retrieval/horizon benchmark should evaluate omission quality, relevance, and context cost before selecting embeddings, rerankers, ANN services, or vector infrastructure.
 
 ## Active branch and continuation
 
@@ -284,7 +293,7 @@ The current V1/frontend work is being developed on:
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails this active branch. New sessions working on the current V1 state must reconstruct from `v1-frontend-spike` rather than assuming `main` contains the latest checkpoints and promoted Cockpit contract.
+The default `main` branch intentionally trails this active branch. New sessions working on the current V1 state must reconstruct from `v1-frontend-spike` rather than assuming `main` contains the latest checkpoints and promoted contracts.
 
 Current continuity and exact next action are maintained in:
 
