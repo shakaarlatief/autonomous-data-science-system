@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-21  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 architecture and product foundations established; first production persistence/interchange slices implemented; Project Cockpit third human review and zoom/canvas-dominance/scalable-navigation automated gate completed through Checkpoint 122
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 architecture and product foundations established; first production persistence/interchange slices implemented; Project Cockpit sixth human review and ambient/pinch/ruler/collision repair gate completed through Checkpoint 125; Specification 007 remains candidate v0.6 pending a real-browser/hardware human product gate
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -345,15 +345,15 @@ Do not infer closure from the earlier production persistence slice, which tested
 
 **Status:** Strong direction established; final design not frozen
 
-Human review through Checkpoints 117-122 strongly supports the Project Cockpit as the primary immersive active-work environment, with direct specialist project views retained as alternative entry/inspection paths.
+Human review through Checkpoint 125 strongly supports the Project Cockpit as the primary immersive active-work environment, with direct specialist project views retained as alternative entry/inspection paths.
 
 The Cockpit combines a living project-process projection, native system interaction, and spatial focus into real analytical workspaces.
 
-The direction is strong enough to continue refining rather than return to a conventional dashboard as the primary working surface, but the final interaction and visual architecture remains candidate until the current human product gate succeeds.
+The direction is strong enough to continue refining rather than return to a conventional dashboard as the primary working surface, but the final interaction and visual architecture remains candidate until the current Specification 007 human product gate succeeds and a deliberate promotion decision is made.
 
-### Q-050. How should the Cockpit scale to large projects?
+### Q-050. How should the Cockpit scale to large projects and feel under real spatial interaction?
 
-**Status:** Active Specification 007 v0.3 human/product-gate question
+**Status:** Active Specification 007 v0.6 human/hardware product-gate question
 
 The current implementation now demonstrates:
 
@@ -361,6 +361,8 @@ The current implementation now demonstrates:
 two-dimensional project navigation
 later/right and lower work remaining reachable
 large logical project extent
+symmetric always-pannable ProjectWorld
+continuous finite grid world
 keyboard recovery
 true browser fullscreen
 
@@ -370,9 +372,15 @@ geometric zoom
     100% reset
     fit project
     keyboard equivalents
-    trackpad pinch
 
-two-finger trackpad movement for project panning
+native laptop interaction candidate
+    two-finger trackpad panning
+    trackpad pinch
+    normalized delta units
+    animation-frame coalescing
+    bounded per-frame progression
+    immediately current zoom state
+    approximate gesture anchoring
 
 scalable Jump to navigation
     Active work
@@ -380,51 +388,66 @@ scalable Jump to navigation
     Investigation
     Evaluation
     searchable project work
+    composer-safe placement
+    internally scrollable results
 
 canvas-dominant composition
-    stage strip attached to project space
-    floating map controls
+    viewport-aware stage ruler
+    compact right-edge vertical map-tool rail
     floating project details
     floating System Focus
-    composer over continuous canvas
+    composer over continuous world
     compact fold-away primary HUD
+
+world-owned ambient depth
+    semantic ProjectCanvas does not own a second clipped atmosphere layer
+
+stage-ruler terminal authority
+    ruler begins at rendered Framing boundary
+    ruler ends at rendered Evaluation boundary
 ```
 
-The revised cross-platform/browser automated gate passes.
+The sixth-review cross-platform/browser automated gate passes at validated head `a2e401408c55a74905e0654c40185f4f9990becc` in workflow run 140 / `32475241980`.
 
 Still open before broader promotion:
 
 ```text
-human acceptance of zoom feel and anchor behavior
-human acceptance of Jump to/search interaction
-human acceptance of composer/canvas integration
-human acceptance of compact/fold-away HUD
-human acceptance of the floating map-control density
+real laptop human acceptance of slow pinch in/out
+real laptop human acceptance of faster pinch in/out
+real laptop human acceptance of immediate pan/pinch switching
+human judgment of perceived anchor stability
+human confirmation that world-owned ambient depth no longer exposes the semantic project box
+human confirmation of Framing/Evaluation ruler terminals across real zoom/pan
+human acceptance of Jump/search separation and lowest-result reachability
+human acceptance of overall visual hierarchy and interaction quality
+final native-pinch normalization/sensitivity constants
 final geometric zoom range
 whether pan/zoom/HUD state should persist in URL/session UI state
 final semantic zoom/grouping behavior
 whether a minimap becomes useful at real project scale
-whether a graph/canvas library eventually earns its dependency
+whether a graph/canvas or gesture library eventually earns its dependency
 final project auto-layout strategy
 ```
 
-No graph/canvas framework, minimap, auto-layout algorithm, or final semantic-zoom implementation is selected yet.
+Automated synthetic input can establish bounded geometric behavior but cannot close the real-hardware interaction-feel question.
+
+No graph/canvas framework, gesture library, minimap, auto-layout algorithm, or final semantic-zoom implementation is selected yet.
 
 ### Q-051. What frontend stack and visualization system should be promoted?
 
 **Status:** Partially narrowed, not accepted as final architecture
 
-React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest are the current leading frontend hypothesis and have already supported the current product slices.
+React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest are the current leading frontend hypothesis and have supported all current Cockpit/product gates through Checkpoint 125.
 
 Formal final promotion remains open. ECharts versus Plotly remains an empirical chart comparison. Tauri remains deferred.
 
-### Q-052. What should the final Cockpit visual identity, stage taxonomy, layout, and URL contract be?
+### Q-052. What should the final Cockpit visual identity, stage taxonomy, layout, control architecture, and URL contract be?
 
 **Status:** Open by design
 
-The stage-zone visual grammar has been positively validated. The third human review further supports a canvas-dominant composition with one compact fold-away HUD and floating controls rather than duplicated full-width chrome.
+Human review has positively supported the stage-zone grammar, canvas-dominant composition, compact/fold-away HUD, continuous spatial world, restrained ambient depth, viewport-aware stage orientation, and compact right-edge project-map controls as current candidate directions.
 
-The final visual identity, stage taxonomy, graph/canvas library, auto-layout algorithm, semantic-zoom behavior, geometric zoom tuning, public route contract, and canonical screenshot baseline remain intentionally unfrozen pending the current Specification 007 v0.3 human product gate.
+The final visual identity, stage taxonomy, graph/canvas or gesture library, auto-layout algorithm, semantic-zoom behavior, geometric/pinch tuning, public route contract, permanent stage-ruler treatment, permanent vertical tool-rail design, exact ambient styling, and canonical screenshot baseline remain intentionally unfrozen pending the Specification 007 v0.6 human/hardware product gate and later deliberate promotion decision.
 
 ---
 
@@ -527,7 +550,7 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are:
 
 ```text
-Q-050  complete the human product gate on the current zoomable, canvas-dominant, scalable-navigation Cockpit
+Q-050  complete the real-browser/hardware human product gate on Specification 007 v0.6
 Q-048  close the governed PostgreSQL knowledge round-trip honestly
 Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
 Q-046  execute the agent-runtime bakeoff
