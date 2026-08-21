@@ -381,7 +381,9 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     }
     const scheduleSync = () => {
       window.cancelAnimationFrame(frame)
-      frame = window.requestAnimationFrame(syncRuler)
+      frame = window.requestAnimationFrame(() => {
+        frame = window.requestAnimationFrame(syncRuler)
+      })
     }
 
     scheduleSync()
