@@ -12,6 +12,8 @@ test.describe('ADS Cockpit fifth human-review iteration', () => {
     const ruler = page.locator('.cockpit-stage-ruler')
     const rulerTrack = page.locator('.cockpit-stage-ruler-track')
     const stage = page.getByRole('button', { name: 'Data & exploration', exact: true })
+    const framingZone = page.locator('.stage-framing')
+    const evaluationZone = page.locator('.stage-evaluation')
 
     for (let index = 0; index < 6; index += 1) {
       await page.getByRole('button', { name: 'Zoom out project map' }).click()
@@ -62,10 +64,17 @@ test.describe('ADS Cockpit fifth human-review iteration', () => {
     }).toBeLessThan(4)
 
     await expect.poll(async () => {
-      const canvasRect = await canvas.boundingBox()
+      const framingRect = await framingZone.boundingBox()
       const trackRect = await rulerTrack.boundingBox()
-      if (!canvasRect || !trackRect) return 999
-      return Math.abs(canvasRect.x - trackRect.x)
+      if (!framingRect || !trackRect) return 999
+      return Math.abs(framingRect.x - trackRect.x)
+    }).toBeLessThan(2)
+
+    await expect.poll(async () => {
+      const evaluationRect = await evaluationZone.boundingBox()
+      const trackRect = await rulerTrack.boundingBox()
+      if (!evaluationRect || !trackRect) return 999
+      return Math.abs((evaluationRect.x + evaluationRect.width) - (trackRect.x + trackRect.width))
     }).toBeLessThan(2)
   })
 
