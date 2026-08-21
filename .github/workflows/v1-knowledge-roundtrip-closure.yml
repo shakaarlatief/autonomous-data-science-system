@@ -11,6 +11,7 @@ on:
       - src/ads_system/infrastructure/persistence/**
       - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
       - tests/integration/test_knowledge_interchange_roundtrip.py
+      - tests/test_migration_revision_ids.py
       - schemas/reusable_knowledge_bundle_v1.schema.json
       - .github/workflows/v1-knowledge-roundtrip-closure.yml
 
@@ -32,8 +33,8 @@ jobs:
         with:
           version: '0.12.5'
           enable-cache: true
-      - name: Run SQLite governed knowledge roundtrip
-        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_interchange_roundtrip.py -q
+      - name: Run SQLite governed knowledge roundtrip and migration portability guard
+        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_interchange_roundtrip.py tests/test_migration_revision_ids.py -q
 
   postgres-roundtrip:
     name: PostgreSQL 18 governed roundtrip
@@ -59,7 +60,7 @@ jobs:
         with:
           version: '0.12.5'
           enable-cache: true
-      - name: Run PostgreSQL governed knowledge roundtrip
+      - name: Run PostgreSQL governed knowledge roundtrip and migration portability guard
         env:
           ADS_TEST_POSTGRES_URL: postgresql+psycopg://ads:ads@127.0.0.1:5432/ads_v1
-        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_interchange_roundtrip.py -q
+        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_interchange_roundtrip.py tests/test_migration_revision_ids.py -q
