@@ -169,7 +169,7 @@ test.describe('ADS V1 frontend spike', () => {
     expect(fittedLabel).not.toBe('100%')
   })
 
-  test('fully zoomed-out project plane keeps equal logical pan reserve on all sides and readable stage orientation', async ({ page }) => {
+  test('fully zoomed-out project plane stays centered inside an always-pannable symmetric world', async ({ page }) => {
     await page.setViewportSize({ width: 1920, height: 1000 })
     await page.goto('/cockpit')
 
@@ -179,26 +179,28 @@ test.describe('ADS V1 frontend spike', () => {
     }
     await expect(page.getByRole('button', { name: /Zoom level 45 percent/i })).toBeVisible()
 
-    const reserve = await viewport.evaluate((element) => {
+    const geometry = await viewport.evaluate((element) => {
       const world = element.querySelector<HTMLElement>('.project-world')
-      if (!world) return null
-      const style = getComputedStyle(world)
+      const canvas = element.querySelector<HTMLElement>('.project-canvas')
+      if (!world || !canvas) return null
+      const worldRect = world.getBoundingClientRect()
+      const canvasRect = canvas.getBoundingClientRect()
       return {
-        left: Number.parseFloat(style.paddingLeft),
-        right: Number.parseFloat(style.paddingRight),
-        top: Number.parseFloat(style.paddingTop),
-        bottom: Number.parseFloat(style.paddingBottom),
+        left: canvasRect.left - worldRect.left,
+        right: worldRect.right - canvasRect.right,
+        top: canvasRect.top - worldRect.top,
+        bottom: worldRect.bottom - canvasRect.bottom,
         maximumLeft: element.scrollWidth - element.clientWidth,
         maximumTop: element.scrollHeight - element.clientHeight,
       }
     })
-    expect(reserve).not.toBeNull()
-    expect(reserve?.left).toBeGreaterThan(300)
-    expect(reserve?.left).toBe(reserve?.right)
-    expect(reserve?.left).toBe(reserve?.top)
-    expect(reserve?.left).toBe(reserve?.bottom)
-    expect(reserve?.maximumLeft ?? 0).toBeGreaterThan((reserve?.left ?? 0) * 2)
-    expect(reserve?.maximumTop ?? 0).toBeGreaterThan((reserve?.top ?? 0) * 2)
+    expect(geometry).not.toBeNull()
+    expect(Math.abs((geometry?.left ?? 0) - (geometry?.right ?? 0))).toBeLessThan(2)
+    expect(Math.abs((geometry?.top ?? 0) - (geometry?.bottom ?? 0))).toBeLessThan(2)
+    expect(geometry?.left ?? 0).toBeGreaterThan(300)
+    expect(geometry?.top ?? 0).toBeGreaterThan(300)
+    expect(geometry?.maximumLeft ?? 0).toBeGreaterThanOrEqual(300)
+    expect(geometry?.maximumTop ?? 0).toBeGreaterThanOrEqual(300)
 
     await viewport.evaluate((element) => element.scrollTo({ left: 0, top: 0 }))
     const startReserve = await viewport.evaluate((element) => {
