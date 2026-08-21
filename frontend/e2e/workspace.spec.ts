@@ -56,7 +56,7 @@ test.describe('ADS V1 frontend spike', () => {
   test('cockpit is immersive and spatially focuses into the shared Data workspace', async ({ page }) => {
     await page.goto('/cockpit')
 
-    await expect(page.getByText('Project operating map')).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Living data science project map' })).toBeVisible()
     await expect(page.getByRole('navigation', { name: 'Workspace', exact: true })).toHaveCount(0)
     await expect(page.getByRole('link', { name: /Project views/i })).toBeVisible()
 
@@ -66,7 +66,7 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page).toHaveURL(/focus=data/)
 
     await page.getByRole('button', { name: 'Return to project map' }).click()
-    await expect(page.getByText('Project operating map')).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Living data science project map' })).toBeVisible()
     await expect(page).toHaveURL(/focus=map/)
   })
 
@@ -91,10 +91,10 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page).toHaveURL(/focus=eda/)
 
     await page.goBack()
-    await expect(page.getByText('Project operating map')).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Living data science project map' })).toBeVisible()
   })
 
-  test('cockpit exposes a genuinely larger two-dimensional project space with keyboard recovery', async ({ page }) => {
+  test('cockpit exposes a larger two-dimensional project space with keyboard recovery and searchable jumps', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 })
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.goto('/cockpit')
@@ -121,19 +121,44 @@ test.describe('ADS V1 frontend spike', () => {
     await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBe(0)
     await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBe(0)
 
-    await page.getByRole('button', { name: 'Jump to evaluation' }).click()
-    await expect(page.getByText('Evaluation & calibration')).toBeInViewport()
+    await page.getByRole('button', { name: 'Jump to project work' }).click()
+    await expect(page.getByRole('button', { name: 'Investigation', exact: true })).toBeVisible()
+    await page.getByRole('textbox', { name: 'Search project work' }).fill('evaluation')
+    await page.getByRole('button', { name: /Evaluation & calibration/i }).click()
+    await expect(page.locator('[data-cockpit-node="evaluation"]')).toBeInViewport()
   })
 
-  test('cockpit keeps project details and system focus collapsible instead of permanently consuming the map', async ({ page }) => {
+  test('cockpit zoom works from controls, keyboard, fit command and trackpad-style pinch events', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 })
+    await page.goto('/cockpit')
+
+    const viewport = page.getByRole('region', { name: 'Living data science project map' })
+    await expect(page.getByRole('button', { name: /Zoom level 100 percent/i })).toBeVisible()
+
+    await page.getByRole('button', { name: 'Zoom out project map' }).click()
+    await expect(page.getByRole('button', { name: /Zoom level 90 percent/i })).toBeVisible()
+
+    await viewport.focus()
+    await viewport.press('+')
+    await expect(page.getByRole('button', { name: /Zoom level 100 percent/i })).toBeVisible()
+
+    await viewport.dispatchEvent('wheel', { ctrlKey: true, deltaY: 80, clientX: 500, clientY: 300 })
+    await expect(page.getByRole('button', { name: /Zoom level 100 percent/i })).toHaveCount(0)
+
+    await page.getByRole('button', { name: 'Fit project to viewport' }).click()
+    const fittedLabel = await page.locator('.cockpit-zoom-level').textContent()
+    expect(fittedLabel).not.toBe('100%')
+  })
+
+  test('cockpit project details, system focus and primary HUD are explicitly collapsible', async ({ page }) => {
     await page.goto('/cockpit')
 
     const details = page.getByRole('region', { name: 'Expanded project details' })
     await expect(details).toHaveCount(0)
-    await page.getByRole('button', { name: 'Show project details' }).click()
+    await page.getByRole('button', { name: 'Details' }).click()
     await expect(details).toBeVisible()
     await expect(details).toContainText('deployment-valid evidence')
-    await page.getByRole('button', { name: 'Hide project details' }).click()
+    await page.getByRole('button', { name: 'Details' }).click()
     await expect(details).toHaveCount(0)
 
     const systemFocus = page.getByRole('complementary', { name: 'Current system focus' })
@@ -142,18 +167,36 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(systemFocus).toBeVisible()
     await page.getByRole('button', { name: 'Close system focus' }).click()
     await expect(systemFocus).toHaveCount(0)
+
+    await page.getByRole('button', { name: 'Hide Cockpit HUD' }).click()
+    await expect(page.getByRole('button', { name: 'Show Cockpit HUD' })).toBeVisible()
+    await expect(page.getByRole('banner', { name: 'Cockpit HUD' })).toHaveCount(0)
+    await page.getByRole('button', { name: 'Show Cockpit HUD' }).click()
+    await expect(page.getByRole('banner', { name: 'Cockpit HUD' })).toBeVisible()
   })
 
-  test('cockpit map viewport remains clear of the docked composer at desktop scale', async ({ page }) => {
+  test('cockpit canvas visually continues behind the composer while lower work remains recoverable', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 })
     await page.goto('/cockpit')
 
-    const viewportBox = await page.getByRole('region', { name: 'Living data science project map' }).boundingBox()
-    const composerBox = await page.getByRole('textbox', { name: 'Ask or direct the system' }).locator('xpath=ancestor::form').boundingBox()
+    const viewport = page.getByRole('region', { name: 'Living data science project map' })
+    const composer = page.getByRole('textbox', { name: 'Ask or direct the system' }).locator('xpath=ancestor::form')
+    const viewportBox = await viewport.boundingBox()
+    const composerBox = await composer.boundingBox()
 
     expect(viewportBox).not.toBeNull()
     expect(composerBox).not.toBeNull()
-    expect((viewportBox?.y ?? 0) + (viewportBox?.height ?? 0)).toBeLessThanOrEqual((composerBox?.y ?? 0) + 1)
+    expect((viewportBox?.y ?? 0) + (viewportBox?.height ?? 0)).toBeGreaterThan((composerBox?.y ?? 0) + 1)
+
+    await page.getByRole('button', { name: 'Jump to project work' }).click()
+    await page.getByRole('textbox', { name: 'Search project work' }).fill('subgroup')
+    await page.getByRole('button', { name: /Subgroup review/i }).click()
+
+    const lowerNodeBox = await page.locator('[data-cockpit-node="review"]').boundingBox()
+    const currentComposerBox = await composer.boundingBox()
+    expect(lowerNodeBox).not.toBeNull()
+    expect(currentComposerBox).not.toBeNull()
+    expect((lowerNodeBox?.y ?? 0) + (lowerNodeBox?.height ?? 0)).toBeLessThan((currentComposerBox?.y ?? 0) - 4)
   })
 
   test('cockpit fullscreen control synchronizes supported enter and exit behavior', async ({ page }) => {
@@ -180,7 +223,7 @@ test.describe('ADS V1 frontend spike', () => {
 
   test('cockpit core surface has no serious automated accessibility violations', async ({ page }) => {
     await page.goto('/cockpit')
-    await expect(page.getByText('Project operating map')).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Living data science project map' })).toBeVisible()
 
     const results = await new AxeBuilder({ page }).analyze()
     const serious = results.violations.filter((violation) =>
