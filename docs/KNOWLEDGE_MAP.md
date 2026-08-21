@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-21  
-**Current checkpoint:** 125  
+**Current checkpoint:** 126  
 **Active development branch:** `v1-frontend-spike`
 
 ## Start here
@@ -45,7 +45,7 @@ docs/MAJOR_CHANGES.md
 Current branch warning:
 
 ```text
-active frontend/Cockpit work = v1-frontend-spike
+active bounded V1/frontend work = v1-frontend-spike
 main intentionally trails this work
 ```
 
@@ -67,10 +67,12 @@ governed persistence/interchange
 retrieval / MethodologicalHorizon construction
 agent/runtime infrastructure
 professional frontend
-unified Project Cockpit
+Project Cockpit
 ```
 
-The immediate product priority is the **Specification 007 candidate v0.6 real-browser/hardware human product gate** after the sixth Cockpit review and the passing ambient/pinch/ruler/collision repair recorded in Checkpoint 125.
+The Project Cockpit interaction architecture is now promoted through Specification 008 after seven real-browser human review cycles and a final passing cross-platform/browser gate.
+
+The immediate project priority is the **governed PostgreSQL 18 reusable-knowledge round-trip closure**.
 
 ---
 
@@ -179,13 +181,7 @@ Question -> Evidence -> Finding -> Claim / Decision
 
 with structured criterion Findings where useful.
 
-Professional-workflow principles:
-
-```text
-docs/PRINCIPLES.md, P-023 and P-024
-```
-
-Responsibility split:
+Professional-workflow responsibility split:
 
 ```text
 ADS
@@ -261,7 +257,7 @@ global knowledge != project-specific state
 internal representation != human-facing workflow/tree
 ```
 
-Stress-test history:
+Key stress-test/promotion sources:
 
 ```text
 docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
@@ -348,6 +344,8 @@ Active open question:
 docs/OPEN_QUESTIONS.md, Q-048
 ```
 
+This is now the immediate execution track.
+
 ---
 
 ## Agentic ecosystem and runtime boundary
@@ -417,173 +415,86 @@ Tauri remains a later packaging candidate.
 
 ---
 
-## Project Cockpit evolution
+## Project Cockpit: promoted interaction architecture
 
-### Primary Cockpit concept and unified deep work
+### Historical concept and spike evolution
+
+Primary research/history:
 
 ```text
 docs/research/002_primary_project_cockpit_interface_concept.md
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
-docs/checkpoints/117_unified_cockpit_workspace_direction_confirmed.md
-docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
-```
-
-Core product model:
-
-```text
-Project Cockpit
-    primary active-work environment
-    living project-process map
-    native system interaction
-    focused analytical work
-
-normal project views
-    direct inspection / navigation / records
-```
-
-Confirmed interaction:
-
-```text
-click meaningful work block
-    -> smooth spatial focus
-    -> perform real analytical work
-    -> return to project context
-```
-
-Critical engineering boundary:
-
-```text
-everything reachable from the Cockpit
-    !=
-everything mounted or loaded simultaneously
-```
-
-### Immersive scale, zoom, and scalable navigation
-
-```text
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
+docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
+docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
+
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+
+docs/checkpoints/117_unified_cockpit_workspace_direction_confirmed.md
+docs/checkpoints/118_first_unified_cockpit_interaction_spike_automated_gate_passed.md
 docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
 docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
 docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
-```
-
-Established:
-
-```text
-2D project-space navigation
-large logical project extent
-lower/right reachability
-keyboard recovery
-true browser fullscreen
-geometric zoom
-native two-finger trackpad panning
-trackpad pinch candidate
-scalable Jump to + searchable project work
-canvas-dominant floating composer/controls
-one compact fold-away primary HUD
-```
-
-### Balanced world and orientation
-
-```text
-docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
 docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
-```
-
-Established:
-
-```text
-ProjectWorld distinct from ProjectCanvas
-minimum pan range even when project fits viewport
-symmetric project centering and recentering
-balanced internal side margins
-stronger stage orientation across zoom
-fold-away map-control cluster
-correct compact ADS/project identity
-higher Details placement
-positive human signal for restrained ambient grid depth
-```
-
-### Continuous grid world, stage ruler, and vertical tool rail
-
-```text
-docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
 docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
-```
-
-Established the candidate model:
-
-```text
-FiniteNavigableGridWorld
-    continuous grid through pan reserve
-    restrained ambient depth
-    subtle finite boundary cue
-
-SemanticProjectPlane
-    stage semantics remain stable
-    work units + connectors
-    neutral reserve does not become stage space
-
-ViewportStageRuler
-    vertically pinned to viewport
-    horizontally follows semantic project geometry
-
-VerticalMapToolRail
-    compact right-edge spatial controls
-    fold / restore
-    Jump/search opens into available workspace
-```
-
-### Sixth human review: ambient continuity, pinch stability, ruler authority, and collision safety
-
-Current design and validation evidence:
-
-```text
-docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
 docs/checkpoints/125_sixth_cockpit_review_ambient_pinch_ruler_and_collision_repairs_validated.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 ```
 
-The sixth review strengthened the candidate architecture to:
+### Current authoritative Cockpit interaction contract
 
 ```text
-ProjectWorld
-    owns workspace-level ambient atmosphere
-    prevents a clipped semantic project box from reappearing visually
-
-native pinch candidate
-    normalized delta units
-    animation-frame coalescing
-    bounded per-frame progression
-    immediately current zoom state
-    approximate gesture anchoring
-    obsolete anchor-correction cancellation
-
-ViewportStageRuler
-    terminal geometry sourced from rendered Framing/Evaluation boundaries
-    neutral world reserve remains non-semantic
-
-Jump/search
-    explicit composer safe-area separation
-    bounded viewport-aware height
-    independently scrolling results
-    lowest representative result remains selectable at 1024x768
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Specification 007 is now **candidate v0.6**.
-
-Current validated implementation head:
+Promoted model:
 
 ```text
-a2e401408c55a74905e0654c40185f4f9990becc
+Project Cockpit
+    primary immersive active-work environment
+    living project-process projection
+    native system interaction
+    focused analytical work
+
+Direct specialist views
+    alternative entry / inspection / records
+    reuse the same modules/state
 ```
 
-Final automated validation:
+Promoted interaction principles:
 
 ```text
-PR #5
-V1 frontend spike run 140 / 32475241980
+meaningful work units rather than every persisted object
+spatial focus into real specialist workspaces
+reachability != simultaneous mounting
+FiniteNavigableGridWorld != SemanticProjectPlane
+2D navigation and recovery
+bounded geometric zoom
+native laptop pinch capability
+viewport-aware stage orientation
+scalable Jump/search project location
+compact/fold-away immersive chrome
+collision-safe floating surfaces
+true fullscreen with graceful fallback
+URL-addressable focus/deep-work state
+keyboard accessibility and reduced-motion support
+world-owned restrained ambient depth
+```
+
+Final promotion implementation head:
+
+```text
+2c3b522e2416d73c015ce5ec2a4560a227524dd9
+```
+
+Final validation:
+
+```text
+V1 frontend spike
+run 155 / 32492536072
 
 Ubuntu build + unit tests                 PASS
 Windows build + unit tests                PASS
@@ -591,35 +502,38 @@ Chromium interaction/accessibility        PASS
 controlled direct-view visual regression  PASS
 ```
 
-The first sixth-review browser gate also remains useful evidence. It found a real inferred-ruler-geometry defect and an invalid synthetic pinch assertion that required every small continuous zoom step to change the rounded integer percentage label. The ruler implementation was repaired, while the test was corrected to measure bounded continuous progression and anchor stability rather than forcing higher product sensitivity.
+The seventh human review explicitly accepted Jump/search and stage orientation, judged pinch smoothness substantially improved, classified the remaining tiny occasional pinch hitch as non-blocking polish, and requested only moderately faster pinch travel before proceeding.
 
-No final canvas library, gesture library, auto-layout, semantic zoom, minimap, infinite-canvas semantics, final finite-world extent algorithm, project-search backend, zoom persistence contract, final native-pinch constants, final stage taxonomy, final stage-ruler treatment, permanent vertical tool rail, or Cockpit visual baseline is selected.
+Pinch sensitivity was increased from `0.00135` to `0.0018` while the coalescing/bounding/anchoring architecture remained unchanged.
 
----
+The first seventh-review browser gate also exposed a real ruler timing defect under rapid zoom. It was reproduced on rerun and repaired by measuring authoritative rendered stage geometry after an additional layout/render frame. The final gate then passed.
 
-## Current exact frontend continuation
-
-The immediate action is a **real-browser and real-hardware human product review of Specification 007 v0.6**.
-
-Review:
+### Still deliberately unfrozen
 
 ```text
-world-owned ambient depth no longer reveals the semantic project-plane box
-Framing/Evaluation ruler terminals across zoom and pan
-Jump/search separation from the composer and lowest-result reachability
-
-real laptop trackpad pinch
-    slow pinch in
-    slow pinch out
-    faster pinch in/out
-    pinch around different project regions
-    immediate switching between two-finger pan and pinch
-    perceived anchor stability
-
-overall professional visual and interaction quality
+remaining tiny occasional pinch hitch
+final native-pinch constants
+final geometric zoom range
+final graph/canvas library
+final gesture library
+final auto-layout algorithm
+final semantic zoom/grouping
+final minimap
+infinite-canvas semantics
+final finite-world extent algorithm
+production project-search backend
+final stage taxonomy
+final stage widths
+final stage-ruler visual treatment
+permanent vertical tool-rail styling/iconography
+final ambient-grid/gradient styling
+final public URL contract
+pan/zoom/HUD persistence contract
+final visual identity
+canonical Cockpit screenshot baseline
 ```
 
-Automated synthetic input cannot establish real laptop trackpad feel. Do not freeze the Cockpit visual baseline or select a graph/canvas or gesture framework before that gate.
+Future Cockpit work should build on Specification 008 rather than reopening the basic interaction architecture without new evidence.
 
 ---
 
@@ -641,13 +555,13 @@ Do not choose an embedding model, reranker, ANN service, or vector database from
 
 ---
 
-## Current cross-track priorities
+## Current exact cross-track priorities
 
 ```text
-A. Human/hardware product gate on Specification 007 v0.6 Cockpit refinement
-B. Governed PostgreSQL knowledge-roundtrip closure
-C. Specification 005 one-principal-reasoner runtime bakeoff
-D. Retrieval / MethodologicalHorizon benchmark once persistence seam is stable enough
+A. Governed PostgreSQL knowledge-roundtrip closure
+B. Specification 005 one-principal-reasoner runtime bakeoff
+C. Retrieval / MethodologicalHorizon benchmark once the governed persistence seam is stable enough
+D. Future Cockpit capability/product polish on top of promoted Specification 008
 ```
 
 ---
@@ -667,4 +581,5 @@ D. Retrieval / MethodologicalHorizon benchmark once persistence seam is stable e
 123  fourth Cockpit review + balanced spatial world/orientation gate passed
 124  fifth Cockpit review + continuous grid world/stage-ruler/vertical-tool-rail gate passed
 125  sixth Cockpit review + ambient/pinch/ruler/collision repairs validated
+126  seventh Cockpit review + final gate + interaction architecture promotion
 ```
