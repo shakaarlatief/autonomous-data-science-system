@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 125  
+**Checkpoint:** 126  
 **Date:** 2026-08-21  
 **Active development branch:** `v1-frontend-spike`  
-**Development stage:** Prototype V0 complete; bounded V1 implementation and product validation across methodological knowledge, persistence/interchange, retrieval/horizon construction, agent/runtime evaluation, and the professional Project Cockpit  
+**Development stage:** Prototype V0 complete; bounded V1 implementation and integration across methodological knowledge, governed persistence/interchange, retrieval/MethodologicalHorizon construction, agent/runtime evaluation, and the professional Project Cockpit  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate product priority:** Perform the next real-browser and real-hardware human product gate on the passing Specification 007 candidate v0.6 Cockpit, with particular attention to real laptop trackpad pinch feel, world-owned ambient continuity, authoritative terminal stage-ruler alignment, Jump/search collision safety, and overall product quality after the sixth review
+**Immediate project priority:** Close the governed PostgreSQL 18 reusable-knowledge round-trip gate. The Project Cockpit interaction architecture has now been promoted and is no longer the immediate blocking V1 track.
 
 ## Active ChatGPT development context
 
@@ -17,17 +17,17 @@ Session title: 03 - Project Cockpit & V1 Integration
 
 Repository artifacts remain authoritative across chats.
 
-Current frontend/Cockpit work lives on:
+Current bounded V1/frontend work lives on:
 
 ```text
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails this work and must not be treated as the latest frontend state until an explicit merge/promotion occurs.
+The default `main` branch intentionally trails this work and must not be treated as the latest V1/frontend state until an explicit merge/promotion occurs.
 
 ---
 
-## System purpose and V0 constraint
+## 1. System purpose and V0 constraint
 
 The Autonomous Data Science System is intended to become a professional interactive data-science operating environment in which the system carries much of the methodological memory, project memory, process navigation, evidence discipline, provenance, execution coordination, and reporting burden that otherwise has to be repeatedly supplied by a human through prompts.
 
@@ -66,7 +66,7 @@ docs/experiments/prototype_v0/FINAL_RESULTS.md
 
 ---
 
-## Current project and methodological architecture
+## 2. Current project and methodological architecture
 
 Foundation 018 separates:
 
@@ -132,7 +132,7 @@ Question -> Evidence -> Finding -> Claim / Decision
 
 ---
 
-## Accepted V1 persistence and interchange
+## 3. Accepted V1 persistence and interchange
 
 Accepted decisions/specifications currently include:
 
@@ -169,7 +169,7 @@ Checkpoint 115 validates the heterogeneous reusable-knowledge interchange contra
 
 ---
 
-## Governed knowledge round-trip remains open
+## 4. Governed knowledge round-trip remains open
 
 A richer governed knowledge path is implemented, including:
 
@@ -208,9 +208,11 @@ closure is recorded in a dedicated checkpoint
 
 This gate is separate from Checkpoint 114's narrower persistence slice, which already passed PostgreSQL.
 
+This is now the immediate project priority.
+
 ---
 
-## Agent/runtime track
+## 5. Agent/runtime track
 
 No agent framework, LLM provider, or multi-agent architecture is accepted yet.
 
@@ -237,43 +239,34 @@ The bakeoff begins with one principal reasoner. A simpler direct-model-call resu
 
 ---
 
-## Professional frontend and Project Cockpit
+## 6. Professional frontend and promoted Project Cockpit interaction architecture
 
 Foundation 021 makes the frontend a first-class reasoning, control, and quality surface.
 
-The conventional project-view shell already demonstrates:
+The Project Cockpit is now the promoted V1 primary active-work interaction model.
+
+Current authoritative interaction contract:
 
 ```text
-Overview
-Data
-EDA
-Decisions & History
-methodological guidance
-Question/Finding/Decision representations
-run/activity state
-human approval interaction
-light/dark themes
-loading/error states
-cross-platform build/unit tests
-Chromium accessibility/interaction tests
-controlled direct-project visual regression
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Human review established the stronger product model:
+Promoted product model:
 
 ```text
 Project Cockpit
     primary immersive active-work environment
-    living project-process map
-    native system interaction composer
-    smooth focus into real analytical workspaces
+    living project-process projection
+    native system interaction
+    spatial navigation
+    focused analytical work
 
-Direct specialist views
-    alternative entry and inspection paths
+Direct specialist project views
+    alternative entry / inspection / record paths
     reuse the same substantive modules/state
 ```
 
-The Cockpit remains a derived projection over project state. It must not collapse the project process map, data/artifact lineage, methodological knowledge graph, and event history into one unreadable graph.
+The Cockpit remains a derived projection over project state. It must not collapse the project process map, data/artifact lineage, methodological knowledge graph, event history, and runtime actors into one unreadable graph.
 
 The engineering boundary remains:
 
@@ -283,143 +276,111 @@ everything reachable from the Cockpit
 everything mounted or loaded simultaneously
 ```
 
----
-
-## Cockpit evidence through Checkpoint 125
-
-The Cockpit has progressed through six real-browser human review cycles.
+### Promoted interaction architecture
 
 ```text
-Checkpoint 117
-    core click-to-focus interaction confirmed
+meaningful work units
+    objective/framing
+    data understanding
+    exploration/investigation
+    questions/blockers
+    validation
+    modeling
+    evaluation
 
-Checkpoint 118
-    first executable /cockpit slice validated
-    shared Data / EDA focus
-    Production Missingness focus
-    URL state + browser Back
+spatial focus
+    meaningful work unit
+        -> real specialist workspace
+        -> return to project context
 
-Checkpoint 119
-    stage-zone grammar positively validated
-    scale/reachability/fullscreen requirements exposed
-
-Checkpoint 121
-    2D immersive-scale viewport implemented and gate passed
-
-Checkpoint 122
-    geometric zoom, trackpad pinch, scalable Jump to/search,
-    canvas-dominant composer/controls, and fold-away primary HUD validated
-
-Checkpoint 123
-    balanced project-plane/world geometry,
-    stronger stage orientation,
-    fold-away map controls,
-    corrected compact identity,
-    higher Details placement,
-    restrained ambient grid treatment preserved
-
-Checkpoint 124
-    continuous finite grid world,
-    neutral spatial reserve distinct from semantic stage extent,
-    viewport-aware stage ruler,
-    right-edge vertical project-map tool rail,
-    subtle finite-boundary cue,
-    ambient grid depth extended through navigation reserve
-
-Checkpoint 125
-    sixth human review repair implemented and validated:
-    workspace atmosphere moved to ProjectWorld,
-    native pinch processing made temporally bounded/coalesced and approximately anchored,
-    stage-ruler terminals aligned to authoritative rendered Framing/Evaluation boundaries,
-    Jump/search made collision-safe relative to the persistent composer
-```
-
-### Current Specification 007 v0.6 implementation
-
-The current branch implements the following candidate interaction architecture:
-
-```text
 FiniteNavigableGridWorld != SemanticProjectPlane
 
 FiniteNavigableGridWorld
-    remains larger than the viewport by a minimum scroll range
-    keeps the SemanticProjectPlane centered in the available world
-    preserves horizontal and vertical pan at minimum zoom
-    owns the continuous low-contrast grid
-    owns restrained workspace-level ambient depth
-    exposes only a subtle finite-world boundary cue
+    continuous grid through navigation reserve
+    symmetric pan/recovery capacity
+    world-owned restrained ambient depth
+    subtle finite-boundary cue
 
 SemanticProjectPlane
-    representative logical size 2260 x 1180
-    balanced internal left/right stage margins
-    transparent over the continuous world grid
-    owns stage-region semantics, work units and connectors
-    does not own a second clipped workspace-atmosphere layer
+    stage semantics
+    work units
+    connectors
+    neutral reserve remains non-semantic
+
+2D navigation
+    horizontal + vertical movement
+    keyboard recovery
+    fit/reset
+    Jump/search
+
+bounded geometric zoom
+    explicit +/-
+    zoom indication
+    100% reset
+    fit project
+    keyboard equivalents
+    native laptop pinch capability
 
 ViewportStageRuler
-    remains vertically pinned near the top of the operating viewport
-    horizontally follows authoritative rendered semantic stage geometry
-    begins at the rendered Framing boundary
-    ends at the rendered Evaluation boundary
-    keeps stage labels readable independently of ordinary node-detail scale
+    vertically near the visible viewport top
+    horizontally follows rendered semantic stage geometry
+    terminal alignment sourced from authoritative rendered stage boundaries
 
-navigation
-    ordinary two-axis scroll / trackpad movement
-    Arrow / Shift+Arrow
-    Home reset
-    geometric zoom out / percentage / in
-    100% reset
-    Fit project
-    + / - / 0 / F keyboard equivalents
+scalable project location
+    semantic quick destinations
+    searchable meaningful project work
 
-native pinch candidate
-    normalizes wheel delta units
-    coalesces short event bursts by animation frame
-    clamps pathological per-frame deltas
-    uses immediately current zoom state
-    applies conservative scale progression
-    approximately preserves the gesture anchor
-    cancels obsolete pending anchor corrections
-
-project location
-    scalable Jump to menu
-    Active work / Blocker / Investigation / Evaluation
-    searchable project work
-    collision-safe palette above the persistent composer
-    independently scrolling results
-
-chrome
+immersive chrome
     compact fold-away primary HUD
-    narrow right-edge vertical map-tool rail
-    map-tool rail can fold to a right-edge restore handle
-    Details, zoom, fit/reset, Jump/search and System Focus remain accessible
-    floating project Details
+    fold-away project-map controls
+    floating Details
     floating System Focus
-    floating composer over continuous grid world
+    floating native composer
+    collision-safe overlays
 
-focus/deep work
-    Data
-    EDA
-    Production Missingness investigation
-    URL/browser-history behavior retained
-    reduced-motion behavior retained
-    fullscreen retained
+true browser fullscreen
+    explicit action
+    fullscreenchange synchronization
+    Escape/explicit exit
+    graceful unsupported/denied fallback
+
+URL-addressable focus/deep-work state
+keyboard accessibility
+reduced-motion support
 ```
 
-The sixth-review implementation was validated through temporary branch `v1-frontend-spike-review6` and PR #5 before being advanced into `v1-frontend-spike`.
+### Evidence through Checkpoint 126
 
-Validated code head:
+The Cockpit progressed through seven real-browser human review cycles.
 
 ```text
-a2e401408c55a74905e0654c40185f4f9990becc
+117  core click-to-focus direction confirmed
+118  first executable /cockpit gate passed
+119  scale/reachability/fullscreen requirements exposed
+121  immersive-scale 2D viewport gate passed
+122  geometric zoom, scalable Jump/search, canvas-dominant chrome validated
+123  balanced ProjectWorld/ProjectCanvas geometry and stronger orientation validated
+124  continuous grid world, viewport-aware stage ruler, vertical tool rail validated
+125  world ambient, pinch stability, ruler authority, Jump/composer collision repair passed
+126  real laptop pinch/hardware gate accepted strongly enough for promotion;
+     pinch responsiveness increased;
+     latent ruler-timing defect found and repaired;
+     final cross-platform/browser gate passed;
+     Specification 008 promoted
 ```
 
-Final validation evidence:
+Final promotion implementation head:
+
+```text
+2c3b522e2416d73c015ce5ec2a4560a227524dd9
+```
+
+Final validation:
 
 ```text
 V1 frontend spike
-workflow run number 140
-run id 32475241980
+run number 155
+run id 32492536072
 
 Ubuntu build + unit tests
     PASS
@@ -434,90 +395,26 @@ controlled direct-project visual regression
     PASS
 ```
 
-The first sixth-review browser gate is retained as meaningful evidence rather than hidden noise. It exposed one genuine implementation defect and one invalid test assumption:
+The first seventh-review gate remains useful diagnostic evidence. Ubuntu/Windows passed, while Chromium repeatedly exposed stage-ruler misalignment under rapid minimum-zoom transition. The defect was traced to ruler measurement occurring before the zoomed rendered geometry had fully settled and was repaired by synchronizing after an additional animation frame.
+
+### Known deferred Cockpit polish
+
+The user still observes a very small occasional hitch during native pinch zoom.
+
+Current classification:
 
 ```text
-genuine defect
-    inferred CSS-zoom stage-ruler geometry did not match rendered semantic boundaries
-    observed terminal deltas were approximately 84 px left and 182 px right
-    resolution: derive ruler terminals from rendered Framing/Evaluation boundaries
-
-invalid synthetic assertion
-    demanded every small pinch event change the rounded integer percentage label
-    resolution: test continuous-scale progression, bounded increments, and anchor stability instead
-    product sensitivity was not increased merely to satisfy integer-label changes
+known
+real
+non-blocking
+deferred polish
 ```
 
-Primary current Cockpit sources:
-
-```text
-docs/research/002_primary_project_cockpit_interface_concept.md
-docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
-docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
-docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
-docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
-docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
-docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/125_sixth_cockpit_review_ambient_pinch_ruler_and_collision_repairs_validated.md
-```
-
-Specification 007 remains **candidate v0.6**. Automated validation does not promote the specification by itself.
+It should be revisited when future Cockpit/input-device work makes that efficient. It is not a reason to keep the interaction architecture unpromoted.
 
 ---
 
-## Current Cockpit human/hardware gate
-
-The next real-browser review should explicitly determine whether:
-
-```text
-ambient circles/glow no longer reveal a smaller hidden project box
-Framing and Evaluation ruler terminals remain intentional across zoom/pan
-Jump/search stays comfortably separate from the composer
-lowest Jump/search results remain easy to reach and select
-
-real laptop trackpad pinch
-    slow pinch in
-    slow pinch out
-    faster pinch in/out
-    pinch around different project regions
-    switch immediately between two-finger pan and pinch
-    judge whether the visual anchor remains understandable
-
-overall Cockpit visual hierarchy and interaction quality remain professional
-```
-
-The automated gate establishes bounded geometric and collision behavior. It cannot establish the subjective feel of the user's actual laptop trackpad.
-
-If the review exposes problems, preserve them and perform another bounded iteration.
-
-If it succeeds strongly enough, perform a deliberate promotion decision for Specification 007 rather than automatically continuing visual iteration.
-
-Do not freeze a canonical Cockpit screenshot baseline before that decision.
-
----
-
-## Retrieval / MethodologicalHorizon track
-
-Still required:
-
-```text
-retrieval-quality fixtures
-production lexical retrieval
-semantic retrieval candidate evaluation
-lexical/semantic fusion if justified
-ranking/omission-quality evaluation
-first real MethodologicalHorizon construction
-selective LLM context assembly
-```
-
-Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
-
-The benchmark should evaluate whether important methodological knowledge is found and irrelevant/full-catalog context is avoided, not merely search latency.
-
----
-
-## Current major non-selections
+## 7. Current major non-selections
 
 Do not infer acceptance of any of these merely because they have been discussed or used in a spike:
 
@@ -540,17 +437,16 @@ final geometric zoom range
 final finite-world extent algorithm
 infinite-canvas semantics
 final pan-reserve dimensions
-pan/zoom URL or session persistence contract
-project-search backend
+pan/zoom/HUD/control-fold persistence contract
+production project-search backend
 pointer-proximity HUD/control reveal
 Cockpit final stage taxonomy
 Cockpit final stage widths
-Cockpit final stage-ruler treatment
-vertical map-tool rail as permanent product chrome
-final tool-rail iconography/tooltip treatment
-Cockpit final URL contract
+Cockpit final stage-ruler material/treatment
+permanent vertical map-tool-rail styling/iconography
+Cockpit final public URL contract
 Cockpit final visual identity
-exact permanent ambient-grid styling
+exact permanent ambient-grid/gradient styling
 canonical Cockpit screenshot baseline
 system/persona name
 Tauri desktop packaging
@@ -564,42 +460,57 @@ artifact-storage backend
 job queue/cloud deployment
 ```
 
+Specification 008 promotes interaction architecture, not these final implementation or visual choices.
+
 ---
 
-## Exact next execution order
+## 8. Exact next execution order
 
-### A. HUMAN/HARDWARE PRODUCT GATE FOR SPECIFICATION 007 v0.6
+### A. GOVERNED POSTGRESQL ROUND-TRIP CLOSURE
 
-This is the immediate substantive Cockpit step.
-
-Open the current `/cockpit` implementation in a real browser and review the sixth-review composition before any further Cockpit architecture is frozen.
-
-Explicitly test the real laptop trackpad pinch/pan behavior and inspect the repaired ambient, stage-ruler, and Jump/search behavior described above.
-
-A green automated gate does not by itself promote Specification 007 or select final canvas, gesture, stage-ruler, tool-rail, semantic-zoom, or visual architecture.
-
-### B. GOVERNED ROUND-TRIP CLOSURE
-
-In parallel or immediately after the human Cockpit gate where practical:
+This is now the immediate substantive V1 step.
 
 ```text
-confirm corrected PostgreSQL 18 gate
+confirm corrected PostgreSQL 18 governed round-trip gate
 fix remaining portability defects honestly if present
-remove temporary diagnostics
-record closure only on confirmed PASS
+persist a corrected PASS
+remove temporary diagnostic machinery
+record closure only after evidence exists
 ```
 
-### C. AGENT RUNTIME BAKEOFF
+Do not infer a pass from Checkpoint 114 or from the earlier localized defect fix.
+
+### B. AGENT RUNTIME BAKEOFF
 
 Execute Specification 005 with one principal reasoner first.
 
-### D. RETRIEVAL / HORIZON BENCHMARK
+Direct model calls remain a valid result if no framework earns its complexity.
 
-Begin production retrieval/horizon evaluation once the governed knowledge seam is stable enough that fixture/migration debugging is not competing with retrieval evaluation.
+### C. RETRIEVAL / METHODOLOGICALHORIZON BENCHMARK
+
+Build the first production retrieval/horizon evaluation:
+
+```text
+retrieval-quality fixtures
+production lexical retrieval
+semantic retrieval candidate evaluation
+lexical/semantic fusion only if justified
+ranking / omission-quality evaluation
+first real bounded MethodologicalHorizon
+selective LLM context assembly
+```
+
+Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
+
+### D. FUTURE COCKPIT PRODUCT WORK
+
+Future Cockpit work should build on Specification 008 rather than reopening the basic interaction architecture without new evidence.
+
+Relevant future work includes deeper specialist workspaces, production system conversation, real project-state integration, semantic scale/grouping, project auto-layout, broader project-size tests, and visual/product polish including the deferred tiny pinch hitch.
 
 ---
 
-## Minimum reading for continuation
+## 9. Minimum reading for continuation
 
 ```text
 README.md
@@ -616,6 +527,7 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 
+docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
 docs/research/002_primary_project_cockpit_interface_concept.md
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
@@ -623,11 +535,13 @@ docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.
 docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
 docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
 docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
+docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
 
 docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 
 docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
 docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
@@ -637,4 +551,5 @@ docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_nav
 docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
 docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
 docs/checkpoints/125_sixth_cockpit_review_ambient_pinch_ruler_and_collision_repairs_validated.md
+docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 ```
