@@ -30,7 +30,24 @@ jobs:
         with:
           version: '0.12.5'
           enable-cache: true
-      - name: Run runtime bakeoff harness tests
-        run: uv run --python 3.13 --locked python -m pytest tests/unit/test_runtime_bakeoff_harness.py -q
+      - name: Run runtime bakeoff control tests
+        run: uv run --python 3.13 --locked python -m pytest tests/unit/test_runtime_bakeoff_harness.py tests/unit/test_runtime_bakeoff_direct_call.py -q
       - name: Run existing Python test suite
         run: uv run --python 3.13 --locked python -m pytest -q
+
+  openai-agents-core:
+    name: OpenAI Agents core candidate (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run OpenAI Agents 0.19.4 deterministic core gate
+        run: uv run --python 3.13 --locked --with openai-agents==0.19.4 python -m pytest experiments/runtime_bakeoff/candidates/openai_agents/test_candidate.py -q
