@@ -68,6 +68,7 @@ type NodeDefinition = {
 const CANVAS_WIDTH = 2260
 const CANVAS_HEIGHT = 1180
 const PAN_GUTTER = 420
+const MIN_SCROLL_RANGE = 360
 const GRID_SIDE_GUTTER = 150
 const FIT_PADDING = 72
 const MIN_ZOOM = 0.45
@@ -216,10 +217,26 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const scrollBehavior = (): ScrollBehavior =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
 
-  const scrollBoundsFor = (nextZoom: number, viewport: HTMLElement) => ({
-    maximumLeft: Math.max(0, PAN_GUTTER * 2 + CANVAS_WIDTH * nextZoom - viewport.clientWidth),
-    maximumTop: Math.max(0, PAN_GUTTER * 2 + CANVAS_HEIGHT * nextZoom - viewport.clientHeight),
+  const scrollLimits = (viewport: HTMLElement) => ({
+    maximumLeft: Math.max(0, viewport.scrollWidth - viewport.clientWidth),
+    maximumTop: Math.max(0, viewport.scrollHeight - viewport.clientHeight),
   })
+
+  const canvasGeometry = (viewport: HTMLElement) => {
+    const canvas = viewport.querySelector<HTMLElement>('.project-canvas')
+    if (!canvas) return null
+
+    const viewportRect = viewport.getBoundingClientRect()
+    const canvasRect = canvas.getBoundingClientRect()
+    return {
+      viewportRect,
+      canvasRect,
+      originLeft: viewport.scrollLeft + canvasRect.left - viewportRect.left,
+      originTop: viewport.scrollTop + canvasRect.top - viewportRect.top,
+      centerLeft: viewport.scrollLeft + canvasRect.left - viewportRect.left + canvasRect.width / 2,
+      centerTop: viewport.scrollTop + canvasRect.top - viewportRect.top + canvasRect.height / 2,
+    }
+  }
 
   const zoomAround = (nextZoom: number, anchorX?: number, anchorY?: number) => {
     const viewport = viewportRef.current
@@ -228,17 +245,24 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const boundedZoom = clampZoom(nextZoom)
     if (Math.abs(boundedZoom - zoom) < 0.001) return
 
+    const geometry = canvasGeometry(viewport)
+    if (!geometry) return
+
     const x = anchorX ?? viewport.clientWidth / 2
     const y = anchorY ?? viewport.clientHeight / 2
-    const canvasX = (viewport.scrollLeft + x - PAN_GUTTER) / zoom
-    const canvasY = (viewport.scrollTop + y - PAN_GUTTER) / zoom
-    const bounds = scrollBoundsFor(boundedZoom, viewport)
+    const canvasLeftInViewport = geometry.canvasRect.left - geometry.viewportRect.left
+    const canvasTopInViewport = geometry.canvasRect.top - geometry.viewportRect.top
+    const logicalX = (x - canvasLeftInViewport) / zoom
+    const logicalY = (y - canvasTopInViewport) / zoom
 
     setZoom(boundedZoom)
     window.requestAnimationFrame(() => {
+      const nextGeometry = canvasGeometry(viewport)
+      if (!nextGeometry) return
+      const limits = scrollLimits(viewport)
       viewport.scrollTo({
-        left: clampScroll(PAN_GUTTER + canvasX * boundedZoom - x, bounds.maximumLeft),
-        top: clampScroll(PAN_GUTTER + canvasY * boundedZoom - y, bounds.maximumTop),
+        left: clampScroll(nextGeometry.originLeft + logicalX * boundedZoom - x, limits.maximumLeft),
+        top: clampScroll(nextGeometry.originTop + logicalY * boundedZoom - y, limits.maximumTop),
         behavior: 'auto',
       })
     })
@@ -250,7 +274,14 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
 
     setZoom(1)
     window.requestAnimationFrame(() => {
-      viewport.scrollTo({ left: PAN_GUTTER, top: PAN_GUTTER, behavior: scrollBehavior() })
+      const geometry = canvasGeometry(viewport)
+      if (!geometry) return
+      const limits = scrollLimits(viewport)
+      viewport.scrollTo({
+        left: clampScroll(geometry.originLeft, limits.maximumLeft),
+        top: clampScroll(geometry.originTop, limits.maximumTop),
+        behavior: scrollBehavior(),
+      })
       viewport.focus({ preventScroll: true })
     })
   }
@@ -262,15 +293,15 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const horizontalFit = (viewport.clientWidth - FIT_PADDING * 2) / CANVAS_WIDTH
     const verticalFit = (viewport.clientHeight - FIT_PADDING * 2) / CANVAS_HEIGHT
     const nextZoom = clampZoom(Math.min(horizontalFit, verticalFit, 1))
-    const bounds = scrollBoundsFor(nextZoom, viewport)
-    const targetLeft = PAN_GUTTER + (CANVAS_WIDTH * nextZoom) / 2 - viewport.clientWidth / 2
-    const targetTop = PAN_GUTTER + (CANVAS_HEIGHT * nextZoom) / 2 - viewport.clientHeight / 2
 
     setZoom(nextZoom)
     window.requestAnimationFrame(() => {
+      const geometry = canvasGeometry(viewport)
+      if (!geometry) return
+      const limits = scrollLimits(viewport)
       viewport.scrollTo({
-        left: clampScroll(targetLeft, bounds.maximumLeft),
-        top: clampScroll(targetTop, bounds.maximumTop),
+        left: clampScroll(geometry.centerLeft - viewport.clientWidth / 2, limits.maximumLeft),
+        top: clampScroll(geometry.centerTop - viewport.clientHeight / 2, limits.maximumTop),
         behavior: scrollBehavior(),
       })
       viewport.focus({ preventScroll: true })
@@ -282,20 +313,30 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const node = viewport?.querySelector<HTMLElement>(`[data-cockpit-node="${nodeId}"]`)
     if (!viewport || !node) return
 
-    const nodeCenterX = PAN_GUTTER + (node.offsetLeft + node.offsetWidth / 2) * zoom
-    const nodeCenterY = PAN_GUTTER + (node.offsetTop + node.offsetHeight / 2) * zoom
-    const bounds = scrollBoundsFor(zoom, viewport)
-    const targetLeft = clampScroll(nodeCenterX - viewport.clientWidth / 2, bounds.maximumLeft)
-    const targetTop = clampScroll(nodeCenterY - viewport.clientHeight / 2, bounds.maximumTop)
+    const viewportRect = viewport.getBoundingClientRect()
+    const nodeRect = node.getBoundingClientRect()
+    const limits = scrollLimits(viewport)
+    const nodeCenterLeft = viewport.scrollLeft + nodeRect.left - viewportRect.left + nodeRect.width / 2
+    const nodeCenterTop = viewport.scrollTop + nodeRect.top - viewportRect.top + nodeRect.height / 2
 
-    viewport.scrollTo({ left: targetLeft, top: targetTop, behavior: scrollBehavior() })
+    viewport.scrollTo({
+      left: clampScroll(nodeCenterLeft - viewport.clientWidth / 2, limits.maximumLeft),
+      top: clampScroll(nodeCenterTop - viewport.clientHeight / 2, limits.maximumTop),
+      behavior: scrollBehavior(),
+    })
     window.requestAnimationFrame(() => node.focus({ preventScroll: true }))
     setIsJumpOpen(false)
     setJumpQuery('')
   }
 
   useEffect(() => {
-    viewportRef.current?.scrollTo({ left: PAN_GUTTER, top: PAN_GUTTER, behavior: 'auto' })
+    window.requestAnimationFrame(() => {
+      const viewport = viewportRef.current
+      if (!viewport) return
+      const geometry = canvasGeometry(viewport)
+      if (!geometry) return
+      viewport.scrollTo({ left: geometry.originLeft, top: geometry.originTop, behavior: 'auto' })
+    })
   }, [])
 
   useEffect(() => {
@@ -376,9 +417,8 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     '--cockpit-zoom': zoom,
   } as CSSProperties
   const worldStyle = {
-    width: `${CANVAS_WIDTH * zoom}px`,
-    height: `${CANVAS_HEIGHT * zoom}px`,
-    padding: `${PAN_GUTTER}px`,
+    width: `max(${CANVAS_WIDTH * zoom + PAN_GUTTER * 2}px, calc(100% + ${MIN_SCROLL_RANGE}px))`,
+    height: `max(${CANVAS_HEIGHT * zoom + PAN_GUTTER * 2}px, calc(100% + ${MIN_SCROLL_RANGE}px))`,
   } as CSSProperties
   const zoomPercent = Math.round(zoom * 100)
 
