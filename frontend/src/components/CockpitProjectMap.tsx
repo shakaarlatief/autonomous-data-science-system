@@ -366,13 +366,16 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
 
     let frame = 0
     const syncRuler = () => {
-      const canvas = viewport.querySelector<HTMLElement>('.project-canvas')
-      if (!canvas) return
+      const framing = viewport.querySelector<HTMLElement>('.stage-framing')
+      const evaluation = viewport.querySelector<HTMLElement>('.stage-evaluation')
+      if (!framing || !evaluation) return
+
       const viewportRect = viewport.getBoundingClientRect()
-      const canvasRect = canvas.getBoundingClientRect()
-      const canvasScale = canvasRect.width / CANVAS_WIDTH
-      const semanticLeft = canvasRect.left - viewportRect.left + GRID_SIDE_GUTTER * canvasScale
-      const semanticWidth = (CANVAS_WIDTH - GRID_SIDE_GUTTER * 2) * canvasScale
+      const framingRect = framing.getBoundingClientRect()
+      const evaluationRect = evaluation.getBoundingClientRect()
+      const semanticLeft = framingRect.left - viewportRect.left
+      const semanticWidth = evaluationRect.right - framingRect.left
+
       rulerTrack.style.width = `${semanticWidth}px`
       rulerTrack.style.transform = `translate3d(${semanticLeft}px, 0, 0)`
     }
