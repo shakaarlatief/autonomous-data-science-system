@@ -1,4 +1,4 @@
-.cockpit-brand-cluster > .cockpit-brand-copy {
+.cockpit-topbar .cockpit-brand-cluster > div.cockpit-brand-copy:last-child {
   display: flex;
   align-items: center;
   gap: 6px;
