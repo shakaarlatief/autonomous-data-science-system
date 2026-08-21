@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 128  
+**Checkpoint:** 130  
 **Date:** 2026-08-21  
-**Active development branch:** `v1-frontend-spike`  
-**Development stage:** Prototype V0 complete; bounded V1 implementation and integration across methodological knowledge, governed persistence/interchange, retrieval/MethodologicalHorizon construction, agent/runtime evaluation, and the promoted professional Project Cockpit interaction architecture  
+**Active development branch:** `v1-runtime-bakeoff`  
+**Development stage:** Prototype V0 complete; bounded V1 implementation and integration across methodological knowledge, governed persistence/interchange, retrieval/MethodologicalHorizon construction, runtime evaluation, and the promoted professional Project Cockpit interaction architecture  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** Implement Specification 005's deterministic ADS-owned runtime-bakeoff harness, then execute the direct-call control and first OpenAI Agents SDK candidate. LangGraph is the next durability comparator. No runtime is selected.
+**Immediate project priority:** Complete the remaining OpenAI Agents SDK core bakeoff gates (`AR-03`, `AR-08`, `AR-09`, `AR-11`) against the validated direct-call control, while a short human retest confirms the latest post-promotion Cockpit Jump/composer and faster-pinch polish. No runtime is selected.
 
 ## Active ChatGPT development context
 
@@ -17,13 +17,13 @@ Session title: 03 - Project Cockpit & V1 Integration
 
 Repository artifacts remain authoritative across chats.
 
-Current bounded V1/frontend work lives on:
+Current executable runtime work and the latest frontend polish live on:
 
 ```text
-v1-frontend-spike
+v1-runtime-bakeoff
 ```
 
-The default `main` branch intentionally trails this work and must not be treated as the latest V1/frontend state until an explicit merge/promotion occurs.
+The preserved promoted V1/frontend boundary remains on `v1-frontend-spike`. The default `main` branch intentionally trails current V1 work until an explicit merge/promotion occurs.
 
 ---
 
@@ -161,11 +161,11 @@ Q-048 is closed for the current governed seam.
 
 ---
 
-## 4. Project Cockpit interaction architecture is promoted
+## 4. Project Cockpit interaction architecture is promoted; latest polish awaits a short human retest
 
-Specification 008 is the current V1 Project Cockpit interaction contract after seven real-browser human review cycles.
+Specification 008 remains the accepted V1 Project Cockpit interaction contract after seven real-browser human review cycles.
 
-Promoted interaction principles include:
+Promoted principles include:
 
 ```text
 Project Cockpit as primary immersive active-work model
@@ -185,7 +185,7 @@ keyboard accessibility and reduced-motion support
 world-owned restrained ambient depth
 ```
 
-Final promotion gate:
+Promotion gate:
 
 ```text
 head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
@@ -197,13 +197,59 @@ Chromium interaction/accessibility         PASS
 controlled direct-view visual regression   PASS
 ```
 
-The tiny remaining native-pinch hitch is known, real, non-blocking deferred polish.
+A later post-promotion human review found two bounded polish issues:
+
+```text
+normal Chrome window
+    Jump/search could overlap the persistent composer
+
+native trackpad pinch
+    substantially smoother than before
+    but scale travel per physical gesture still too slow
+```
+
+Checkpoint 130 records the bounded repair:
+
+```text
+Jump/search
+    actual composer geometry is now measured while the palette is open
+    palette re-clamps on resize / fullscreen / composer resize
+    lower results remain internally scrollable
+
+pinch
+    sensitivity 0.0018 -> 0.0024
+    coalescing / bounded delta / anchoring retained
+```
+
+Automated validation:
+
+```text
+head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
+run 167 / 32503861255
+
+Ubuntu build + unit tests                  PASS
+Windows build + unit tests                 PASS
+Chromium interaction/accessibility         PASS
+controlled direct-view visual regression   PASS
+normal-window Jump re-clamp regression      PASS
+faster anchored pinch regression            PASS
+```
+
+The tiny remaining native-pinch hitch is still known, real, and non-blocking deferred polish. Exact pinch constants remain unfrozen.
+
+Short human retest still required:
+
+```text
+normal window: Jump panel stays above composer and lower results scroll
+fullscreen: no regression
+trackpad: one natural full pinch in/out has sufficient scale travel
+```
 
 Future Cockpit work builds on Specification 008 rather than reopening the basic interaction architecture without new evidence.
 
 ---
 
-## 5. Runtime bakeoff is now the active implementation track
+## 5. Runtime bakeoff is the main active implementation track
 
 No agent framework, LLM provider, or multi-agent architecture is accepted.
 
@@ -234,9 +280,9 @@ observability
 provider/fake-model substitution
 ```
 
-Research 010 refreshed the candidate ecosystem against current official documentation on 2026-08-21.
+Research 010 refreshed the ecosystem before implementation. Research 011 then corrected an important package/documentation assumption discovered executable-first: current documentation exposes `agents.testing.ScriptedModel`, but published `openai-agents==0.19.4` does not ship `agents.testing`. The released public `Model` boundary is sufficient for an experiment-local deterministic fake.
 
-Current **implementation order**, not selection:
+Current evaluation order, not selection:
 
 ```text
 CONTROL
@@ -253,81 +299,86 @@ SECONDARY / CONDITIONAL
     Google ADK 2.0
 ```
 
-Fresh evidence supporting the order:
+### Direct-call control
+
+Checkpoint 129 establishes the executable simpler control.
+
+Validated behavior includes:
 
 ```text
-OpenAI Agents SDK
-    serializable RunState
-    structured tool approval interruptions
-    local MCP integration
-    model/tool timeouts and replay-aware retries
-    deterministic provider-neutral ScriptedModel testing
-
-LangGraph
-    strongest persistence/durability comparator
-    explicit interrupt/checkpoint semantics
-    Functional API can minimize graph intrusion
-    interrupted node restarts, so side-effect idempotency must be tested
-
-Microsoft Agent Framework
-    credible MCP/HITL/checkpoint/provider surface
-    Python Functional Workflow API currently experimental
-
-Google ADK 2.0
-    GA workflow/runtime family
-    Tool Confirmation currently experimental
-    resumability documented as best-effort / at-least-once
+ADS-owned model/tool loop
+selective context digest + exact knowledge revision provenance
+approval interrupt before project-state side effect
+serialized process-boundary resume
+ADS-owned at-most-once proposal ledger
+rejection
+stale-context rejection
+retry/cancellation handling
+normalized trace
+ADS-owned structured recommendation
 ```
 
-Direct calls remain a valid final winner if no framework earns its dependency/operational burden.
-
-Primary sources:
+Cross-platform direct-control gate:
 
 ```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
+run 32500521858
+Ubuntu PASS
+Windows PASS
+existing Python suite PASS
 ```
+
+### OpenAI Agents SDK 0.19.4 core candidate
+
+The candidate is isolated under `experiments/runtime_bakeoff/candidates/openai_agents/`; the framework is not an unconditional ADS dependency and does not enter `ads_system.domain`.
+
+Validated core behavior now includes:
+
+```text
+AR-01 domain isolation
+AR-02 single-agent tool loop
+AR-04 native approval interruption
+AR-05 serialized RunState process-boundary resume
+AR-06 ADS remains project-state authority
+AR-07 context/revision transparency
+AR-10 structured output + ADS provenance validation
+AR-12 deterministic no-live-provider testing via released public Model boundary
+```
+
+Core candidate gate:
+
+```text
+run 15 / 32501907783
+OpenAI core Ubuntu PASS
+OpenAI core Windows PASS
+direct controls PASS
+existing Python suite PASS
+```
+
+The latest combined branch gate after the frontend polish also remained green:
+
+```text
+run 20 / 32503861259
+OpenAI core Ubuntu PASS
+OpenAI core Windows PASS
+direct controls Ubuntu PASS
+direct controls Windows PASS
+existing Python suite PASS
+```
+
+OpenAI candidate work still required before any selection judgment:
+
+```text
+AR-03 current MCP integration
+AR-08 cancellation and bounded timeout
+AR-09 controlled failure/retry behavior
+AR-11 normalized observability
+```
+
+Direct calls remain a valid final winner if no framework earns its dependency and operational burden.
 
 ---
 
-## 6. Immediate runtime implementation boundary
-
-Before importing candidate framework types into production application/domain modules, create an isolated ADS-owned bakeoff harness.
-
-The harness should own experiment-level representations for:
-
-```text
-ProjectContextSnapshot
-MethodologicalContextPack
-RuntimeWorkloadInput
-RuntimeRecommendation
-RuntimeInterrupt
-RuntimeResumeToken
-RuntimeTrace
-RuntimeOutcome
-```
-
-Exact names are provisional and do not freeze the final production `ReasoningRuntime` port.
-
-The harness must also own:
-
-```text
-canonical representative workload fixture
-context-pack digest
-exact knowledge revision references
-at-most-once proposal side-effect ledger
-fake deterministic model script
-local side-effect-free MCP reference server/gateway
-normalized AR-01 through AR-12 evidence
-```
-
-Framework-specific types stay below adapters and outside `ads_system.domain`.
-
----
-
-## 7. Retrieval / MethodologicalHorizon track
+## 6. Retrieval / MethodologicalHorizon track
 
 Now that the governed persistence seam is closed, the other highest-value V1 track remains:
 
@@ -345,7 +396,7 @@ Do not choose an embedding model, reranker, ANN service, or vector database from
 
 ---
 
-## 8. Current major non-selections
+## 7. Current major non-selections
 
 Still deliberately unselected:
 
@@ -382,33 +433,41 @@ job queue/cloud deployment
 
 ---
 
-## 9. Exact next execution order
+## 8. Exact next execution order
 
-### A. RUNTIME BAKEOFF HARNESS
+### A. SHORT HUMAN COCKPIT RETEST
 
 ```text
-1. create isolated runtime-bakeoff implementation branch
-2. build ADS-owned deterministic harness and representative fixture
-3. build direct-call control
-4. build OpenAI Agents SDK adapter using fake/scripted model first
-5. evaluate AR-01 through AR-12 without paid calls wherever possible
-6. build LangGraph durability comparator if still decision-relevant
+1. pull latest v1-runtime-bakeoff
+2. normal Chrome window: open Jump/search and confirm no composer overlap
+3. scroll lower Jump results
+4. enter fullscreen and confirm no regression
+5. real trackpad: one natural full pinch in/out and judge scale travel
+```
+
+This is a bounded polish gate, not a reopening of Specification 008.
+
+### B. COMPLETE OPENAI RUNTIME CANDIDATE
+
+```text
+1. implement/test AR-03 MCP integration
+2. implement/test AR-08 cancellation + bounded timeout
+3. implement/test AR-09 controlled failure/retry semantics
+4. implement/test AR-11 normalized observability
+5. compare completed OpenAI evidence against direct-call control
+6. implement LangGraph durability comparator if still decision-relevant
 7. decide from evidence whether Microsoft/Google adapters are needed
 8. use live provider calls only where deterministic infrastructure cannot establish behavior
 9. make explicit runtime/no-runtime promotion decision
 ```
 
-### B. RETRIEVAL / METHODOLOGICALHORIZON BENCHMARK
+### C. RETRIEVAL / METHODOLOGICALHORIZON BENCHMARK
 
 Proceed after or in parallel where it does not compete with the runtime experiment.
 
-### C. FUTURE COCKPIT CAPABILITY WORK
-
-Build on Specification 008 after current backend/runtime seams are better established.
-
 ---
 
-## 10. Minimum reading for continuation
+## 9. Minimum reading for continuation
 
 ```text
 README.md
@@ -424,15 +483,19 @@ docs/foundations/018_project_object_model_and_professional_developer_workflow_in
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
 docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
+docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
 
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/CORE_RESULT.md
 
-docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
+docs/checkpoints/129_direct_call_control_runtime_baseline_passed.md
+docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
