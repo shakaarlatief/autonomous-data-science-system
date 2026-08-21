@@ -98,6 +98,7 @@ class RuntimeResumeToken:
     context_pack_digest: str
     project_snapshot_id: str
     proposal_idempotency_key: str
+    execution_state: dict[str, object] = field(default_factory=dict)
 
     def to_json(self) -> str:
         return json.dumps(asdict(self), sort_keys=True, separators=(",", ":"))
