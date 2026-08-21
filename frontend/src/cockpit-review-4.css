@@ -128,12 +128,6 @@
   top: 52px;
 }
 
-@media (max-width: 1280px) {
-  .cockpit-project-hud {
-    top: 100px;
-  }
-}
-
 @media (max-width: 1180px) {
   .cockpit-map-toolbar,
   .cockpit-map-toolbar-reveal {
