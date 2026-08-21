@@ -13,6 +13,8 @@ import {
   BrainCircuit,
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   ChevronUp,
   Crosshair,
   Database,
@@ -65,6 +67,9 @@ type NodeDefinition = {
 
 const CANVAS_WIDTH = 2260
 const CANVAS_HEIGHT = 1180
+const PAN_GUTTER = 420
+const GRID_SIDE_GUTTER = 150
+const FIT_PADDING = 72
 const MIN_ZOOM = 0.45
 const MAX_ZOOM = 1.6
 const ZOOM_STEP = 0.1
@@ -91,6 +96,7 @@ const STAGES: Array<{ label: string; nodeId: NodeId }> = [
 ]
 
 const clampZoom = (value: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value))
+const clampScroll = (value: number, maximum: number) => Math.min(Math.max(0, value), Math.max(0, maximum))
 
 export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const { workspace } = useWorkspace()
@@ -98,6 +104,7 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const [isHudExpanded, setIsHudExpanded] = useState(false)
   const [isContextOpen, setIsContextOpen] = useState(false)
   const [isJumpOpen, setIsJumpOpen] = useState(false)
+  const [isToolbarCollapsed, setIsToolbarCollapsed] = useState(false)
   const [jumpQuery, setJumpQuery] = useState('')
   const [zoom, setZoom] = useState(1)
 
@@ -209,6 +216,11 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   const scrollBehavior = (): ScrollBehavior =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
 
+  const scrollBoundsFor = (nextZoom: number, viewport: HTMLElement) => ({
+    maximumLeft: Math.max(0, PAN_GUTTER * 2 + CANVAS_WIDTH * nextZoom - viewport.clientWidth),
+    maximumTop: Math.max(0, PAN_GUTTER * 2 + CANVAS_HEIGHT * nextZoom - viewport.clientHeight),
+  })
+
   const zoomAround = (nextZoom: number, anchorX?: number, anchorY?: number) => {
     const viewport = viewportRef.current
     if (!viewport) return
@@ -218,24 +230,28 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
 
     const x = anchorX ?? viewport.clientWidth / 2
     const y = anchorY ?? viewport.clientHeight / 2
-    const worldX = (viewport.scrollLeft + x) / zoom
-    const worldY = (viewport.scrollTop + y) / zoom
+    const canvasX = (viewport.scrollLeft + x - PAN_GUTTER) / zoom
+    const canvasY = (viewport.scrollTop + y - PAN_GUTTER) / zoom
+    const bounds = scrollBoundsFor(boundedZoom, viewport)
 
     setZoom(boundedZoom)
     window.requestAnimationFrame(() => {
       viewport.scrollTo({
-        left: Math.max(0, worldX * boundedZoom - x),
-        top: Math.max(0, worldY * boundedZoom - y),
+        left: clampScroll(PAN_GUTTER + canvasX * boundedZoom - x, bounds.maximumLeft),
+        top: clampScroll(PAN_GUTTER + canvasY * boundedZoom - y, bounds.maximumTop),
         behavior: 'auto',
       })
     })
   }
 
   const resetViewport = () => {
+    const viewport = viewportRef.current
+    if (!viewport) return
+
     setZoom(1)
     window.requestAnimationFrame(() => {
-      viewportRef.current?.scrollTo({ left: 0, top: 0, behavior: scrollBehavior() })
-      viewportRef.current?.focus({ preventScroll: true })
+      viewport.scrollTo({ left: PAN_GUTTER, top: PAN_GUTTER, behavior: scrollBehavior() })
+      viewport.focus({ preventScroll: true })
     })
   }
 
@@ -243,12 +259,20 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const viewport = viewportRef.current
     if (!viewport) return
 
-    const horizontalFit = (viewport.clientWidth - 24) / CANVAS_WIDTH
-    const verticalFit = (viewport.clientHeight - 24) / CANVAS_HEIGHT
+    const horizontalFit = (viewport.clientWidth - FIT_PADDING * 2) / CANVAS_WIDTH
+    const verticalFit = (viewport.clientHeight - FIT_PADDING * 2) / CANVAS_HEIGHT
     const nextZoom = clampZoom(Math.min(horizontalFit, verticalFit, 1))
+    const bounds = scrollBoundsFor(nextZoom, viewport)
+    const targetLeft = PAN_GUTTER + (CANVAS_WIDTH * nextZoom) / 2 - viewport.clientWidth / 2
+    const targetTop = PAN_GUTTER + (CANVAS_HEIGHT * nextZoom) / 2 - viewport.clientHeight / 2
+
     setZoom(nextZoom)
     window.requestAnimationFrame(() => {
-      viewport.scrollTo({ left: 0, top: 0, behavior: scrollBehavior() })
+      viewport.scrollTo({
+        left: clampScroll(targetLeft, bounds.maximumLeft),
+        top: clampScroll(targetTop, bounds.maximumTop),
+        behavior: scrollBehavior(),
+      })
       viewport.focus({ preventScroll: true })
     })
   }
@@ -258,10 +282,11 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     const node = viewport?.querySelector<HTMLElement>(`[data-cockpit-node="${nodeId}"]`)
     if (!viewport || !node) return
 
-    const nodeCenterX = (node.offsetLeft + node.offsetWidth / 2) * zoom
-    const nodeCenterY = (node.offsetTop + node.offsetHeight / 2) * zoom
-    const targetLeft = Math.max(0, Math.min(nodeCenterX - viewport.clientWidth / 2, viewport.scrollWidth - viewport.clientWidth))
-    const targetTop = Math.max(0, Math.min(nodeCenterY - viewport.clientHeight / 2, viewport.scrollHeight - viewport.clientHeight))
+    const nodeCenterX = PAN_GUTTER + (node.offsetLeft + node.offsetWidth / 2) * zoom
+    const nodeCenterY = PAN_GUTTER + (node.offsetTop + node.offsetHeight / 2) * zoom
+    const bounds = scrollBoundsFor(zoom, viewport)
+    const targetLeft = clampScroll(nodeCenterX - viewport.clientWidth / 2, bounds.maximumLeft)
+    const targetTop = clampScroll(nodeCenterY - viewport.clientHeight / 2, bounds.maximumTop)
 
     viewport.scrollTo({ left: targetLeft, top: targetTop, behavior: scrollBehavior() })
     window.requestAnimationFrame(() => node.focus({ preventScroll: true }))
@@ -272,6 +297,8 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
   useEffect(() => {
     const viewport = viewportRef.current
     if (!viewport) return undefined
+
+    viewport.scrollTo({ left: PAN_GUTTER, top: PAN_GUTTER, behavior: 'auto' })
 
     const handlePinchZoom = (event: WheelEvent) => {
       if (!event.ctrlKey) return
@@ -342,8 +369,21 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
     }
   }
 
-  const canvasStyle = { zoom } as CSSProperties
+  const canvasStyle = {
+    zoom,
+    '--cockpit-zoom': zoom,
+  } as CSSProperties
+  const worldStyle = {
+    width: `${CANVAS_WIDTH * zoom}px`,
+    height: `${CANVAS_HEIGHT * zoom}px`,
+    padding: `${PAN_GUTTER}px`,
+  } as CSSProperties
   const zoomPercent = Math.round(zoom * 100)
+
+  const collapseToolbar = () => {
+    setIsJumpOpen(false)
+    setIsToolbarCollapsed(true)
+  }
 
   return (
     <main className="cockpit-stage cockpit-map-stage" aria-labelledby="cockpit-map-title">
@@ -356,129 +396,154 @@ export function CockpitProjectMap({ onFocus }: ProjectMapProps) {
           ref={viewportRef}
           className="project-viewport"
           aria-label="Living data science project map"
-          aria-description="Two-dimensional project space. Two-finger trackpad movement pans. Trackpad pinch zooms. Arrow keys pan, plus and minus zoom, F fits the project, and Home resets."
+          aria-description="Two-dimensional project space with symmetric pan reserve around the project plane. Two-finger trackpad movement pans. Trackpad pinch zooms. Arrow keys pan, plus and minus zoom, F fits the project, and Home resets."
           aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home + - 0 F"
           tabIndex={0}
           onKeyDown={handleViewportKeyDown}
         >
-          <div className="project-canvas" style={canvasStyle}>
-            <nav className="cockpit-stage-strip" aria-label="Project stages">
-              {STAGES.map((stage) => (
-                <button type="button" key={stage.nodeId} onClick={() => jumpToNode(stage.nodeId)}>{stage.label}</button>
+          <div className="project-world" style={worldStyle}>
+            <div className="project-canvas" style={canvasStyle}>
+              <nav className="cockpit-stage-strip" aria-label="Project stages">
+                {STAGES.map((stage) => (
+                  <button type="button" key={stage.nodeId} onClick={() => jumpToNode(stage.nodeId)}>{stage.label}</button>
+                ))}
+              </nav>
+
+              <div className="stage-zone stage-framing" aria-hidden="true" />
+              <div className="stage-zone stage-exploration" aria-hidden="true" />
+              <div className="stage-zone stage-validation" aria-hidden="true" />
+              <div className="stage-zone stage-modeling" aria-hidden="true" />
+              <div className="stage-zone stage-evaluation" aria-hidden="true" />
+
+              <svg className="project-connectors" viewBox={`0 0 ${CANVAS_WIDTH} ${CANVAS_HEIGHT}`} aria-hidden="true" preserveAspectRatio="none">
+                <g transform={`translate(${GRID_SIDE_GUTTER} 0)`}>
+                  {CONNECTOR_PATHS.map((path, index) => (
+                    <path key={path} className={index === 8 ? 'connector-deferred' : undefined} d={path} />
+                  ))}
+                </g>
+              </svg>
+
+              {nodes.map((node) => (
+                <CockpitNode
+                  key={node.nodeId}
+                  {...node}
+                  onActivate={node.focus ? () => onFocus(node.focus as ProjectMapFocus) : undefined}
+                />
               ))}
-            </nav>
-
-            <div className="stage-zone stage-framing" aria-hidden="true" />
-            <div className="stage-zone stage-exploration" aria-hidden="true" />
-            <div className="stage-zone stage-validation" aria-hidden="true" />
-            <div className="stage-zone stage-modeling" aria-hidden="true" />
-            <div className="stage-zone stage-evaluation" aria-hidden="true" />
-
-            <svg className="project-connectors" viewBox={`0 0 ${CANVAS_WIDTH} ${CANVAS_HEIGHT}`} aria-hidden="true" preserveAspectRatio="none">
-              {CONNECTOR_PATHS.map((path, index) => (
-                <path key={path} className={index === 8 ? 'connector-deferred' : undefined} d={path} />
-              ))}
-            </svg>
-
-            {nodes.map((node) => (
-              <CockpitNode
-                key={node.nodeId}
-                {...node}
-                onActivate={node.focus ? () => onFocus(node.focus as ProjectMapFocus) : undefined}
-              />
-            ))}
+            </div>
           </div>
         </section>
 
-        <div className="cockpit-map-toolbar" aria-label="Project map controls">
-          <button
-            type="button"
-            className="cockpit-toolbar-labelled"
-            onClick={() => setIsHudExpanded((value) => !value)}
-            aria-expanded={isHudExpanded}
-          >
-            {isHudExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-            Details
-          </button>
-
-          <div className="cockpit-zoom-controls" aria-label="Project map zoom controls">
-            <button type="button" onClick={() => zoomAround(zoom - ZOOM_STEP)} aria-label="Zoom out project map" title="Zoom out">
-              <ZoomOut size={14} />
-            </button>
-            <button
-              type="button"
-              className="cockpit-zoom-level"
-              onClick={() => zoomAround(1)}
-              aria-label={`Zoom level ${zoomPercent} percent. Reset to 100 percent`}
-              title="Reset zoom to 100%"
-            >
-              {zoomPercent}%
-            </button>
-            <button type="button" onClick={() => zoomAround(zoom + ZOOM_STEP)} aria-label="Zoom in project map" title="Zoom in">
-              <ZoomIn size={14} />
-            </button>
-          </div>
-
-          <button type="button" onClick={fitProject} aria-label="Fit project to viewport" title="Fit project">
-            <LocateFixed size={14} />
-          </button>
-          <button type="button" onClick={resetViewport} aria-label="Reset project view" title="Reset pan and zoom">
-            <RotateCcw size={14} />
-          </button>
-
-          <div className="cockpit-jump-menu">
+        {!isToolbarCollapsed ? (
+          <div className="cockpit-map-toolbar" aria-label="Project map controls">
             <button
               type="button"
               className="cockpit-toolbar-labelled"
-              onClick={() => setIsJumpOpen((value) => !value)}
-              aria-expanded={isJumpOpen}
-              aria-haspopup="dialog"
-              aria-label="Jump to project work"
+              onClick={() => setIsHudExpanded((value) => !value)}
+              aria-expanded={isHudExpanded}
             >
-              <Crosshair size={14} /> Jump to <ChevronDown size={12} />
+              {isHudExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+              Details
             </button>
 
-            {isJumpOpen && (
-              <div className="cockpit-jump-popover" role="dialog" aria-label="Jump to project work">
-                <div className="cockpit-jump-quick" aria-label="Quick project jumps">
-                  <button type="button" onClick={() => jumpToNode('missingness')}>Active work</button>
-                  <button type="button" onClick={() => jumpToNode('prediction')}>Blocker</button>
-                  <button type="button" onClick={() => jumpToNode('missingness')}>Investigation</button>
-                  <button type="button" onClick={() => jumpToNode('evaluation')}>Evaluation</button>
-                </div>
-                <label className="cockpit-jump-search">
-                  <Search size={14} />
-                  <span className="cockpit-visually-hidden">Search project work</span>
-                  <input
-                    autoFocus
-                    value={jumpQuery}
-                    onChange={(event) => setJumpQuery(event.target.value)}
-                    placeholder="Search project work…"
-                    aria-label="Search project work"
-                  />
-                </label>
-                <div className="cockpit-jump-results">
-                  {filteredJumpTargets.map((node) => (
-                    <button type="button" key={node.nodeId} onClick={() => jumpToNode(node.nodeId)}>
-                      <span>{node.title}</span>
-                      <small>{node.kicker}</small>
-                    </button>
-                  ))}
-                  {filteredJumpTargets.length === 0 && <p>No matching project work.</p>}
-                </div>
-              </div>
-            )}
-          </div>
+            <div className="cockpit-zoom-controls" aria-label="Project map zoom controls">
+              <button type="button" onClick={() => zoomAround(zoom - ZOOM_STEP)} aria-label="Zoom out project map" title="Zoom out">
+                <ZoomOut size={14} />
+              </button>
+              <button
+                type="button"
+                className="cockpit-zoom-level"
+                onClick={() => zoomAround(1)}
+                aria-label={`Zoom level ${zoomPercent} percent. Reset to 100 percent`}
+                title="Reset zoom to 100%"
+              >
+                {zoomPercent}%
+              </button>
+              <button type="button" onClick={() => zoomAround(zoom + ZOOM_STEP)} aria-label="Zoom in project map" title="Zoom in">
+                <ZoomIn size={14} />
+              </button>
+            </div>
 
+            <button type="button" onClick={fitProject} aria-label="Fit project to viewport" title="Fit project">
+              <LocateFixed size={14} />
+            </button>
+            <button type="button" onClick={resetViewport} aria-label="Reset project view" title="Reset pan and zoom">
+              <RotateCcw size={14} />
+            </button>
+
+            <div className="cockpit-jump-menu">
+              <button
+                type="button"
+                className="cockpit-toolbar-labelled"
+                onClick={() => setIsJumpOpen((value) => !value)}
+                aria-expanded={isJumpOpen}
+                aria-haspopup="dialog"
+                aria-label="Jump to project work"
+              >
+                <Crosshair size={14} /> Jump to <ChevronDown size={12} />
+              </button>
+
+              {isJumpOpen && (
+                <div className="cockpit-jump-popover" role="dialog" aria-label="Jump to project work">
+                  <div className="cockpit-jump-quick" aria-label="Quick project jumps">
+                    <button type="button" onClick={() => jumpToNode('missingness')}>Active work</button>
+                    <button type="button" onClick={() => jumpToNode('prediction')}>Blocker</button>
+                    <button type="button" onClick={() => jumpToNode('missingness')}>Investigation</button>
+                    <button type="button" onClick={() => jumpToNode('evaluation')}>Evaluation</button>
+                  </div>
+                  <label className="cockpit-jump-search">
+                    <Search size={14} />
+                    <span className="cockpit-visually-hidden">Search project work</span>
+                    <input
+                      autoFocus
+                      value={jumpQuery}
+                      onChange={(event) => setJumpQuery(event.target.value)}
+                      placeholder="Search project work…"
+                      aria-label="Search project work"
+                    />
+                  </label>
+                  <div className="cockpit-jump-results">
+                    {filteredJumpTargets.map((node) => (
+                      <button type="button" key={node.nodeId} onClick={() => jumpToNode(node.nodeId)}>
+                        <span>{node.title}</span>
+                        <small>{node.kicker}</small>
+                      </button>
+                    ))}
+                    {filteredJumpTargets.length === 0 && <p>No matching project work.</p>}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <button
+              type="button"
+              className="cockpit-toolbar-labelled"
+              onClick={() => setIsContextOpen((value) => !value)}
+              aria-expanded={isContextOpen}
+            >
+              <PanelRightOpen size={14} /> System focus
+            </button>
+            <button
+              type="button"
+              className="cockpit-toolbar-fold"
+              onClick={collapseToolbar}
+              aria-label="Hide project map controls"
+              title="Fold controls to the right"
+            >
+              <ChevronRight size={15} />
+            </button>
+          </div>
+        ) : (
           <button
             type="button"
-            className="cockpit-toolbar-labelled"
-            onClick={() => setIsContextOpen((value) => !value)}
-            aria-expanded={isContextOpen}
+            className="cockpit-map-toolbar-reveal"
+            onClick={() => setIsToolbarCollapsed(false)}
+            aria-label="Show project map controls"
+            title="Show project map controls"
           >
-            <PanelRightOpen size={14} /> System focus
+            <ChevronLeft size={15} />
           </button>
-        </div>
+        )}
 
         {isHudExpanded && (
           <section className="cockpit-project-hud" aria-label="Expanded project details">
