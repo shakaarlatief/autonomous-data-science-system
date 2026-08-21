@@ -73,7 +73,7 @@ prototype_v0/README.md
 
 ## Current V1 architecture
 
-The post-V0 design now has several connected but deliberately bounded tracks.
+The post-V0 design has several connected but deliberately bounded tracks.
 
 ### Project and methodological semantics
 
@@ -152,9 +152,9 @@ No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Spe
 
 The frontend is a first-class reasoning, control, and quality surface rather than an end-stage presentation layer.
 
-A conventional project-view shell now exists for Overview, Data, EDA, Decisions & History, methodological guidance, run state, approvals, themes, accessibility, and visual regression.
+A conventional project-view shell exists for Overview, Data, EDA, Decisions & History, methodological guidance, run state, approvals, themes, accessibility, and visual regression.
 
-Human review then established the stronger **Project Cockpit** direction:
+Human review established the stronger **Project Cockpit** direction:
 
 ```text
 Project Cockpit
@@ -168,17 +168,63 @@ Direct specialist views
     reuse the same substantive analytical modules
 ```
 
-The first executable Cockpit spike passed its cross-platform build, browser interaction, and accessibility gate. The second human browser review accepted the stage-zone visual grammar and exposed the next scalability requirements:
+The Cockpit has progressed through several real-browser and executable gates:
 
 ```text
-professional two-dimensional project navigation
-collision-safe floating UI
-compact/expandable Cockpit chrome
-stage orientation at the top of the operating surface
-true browser fullscreen
-fit/reset/jump navigation
-keyboard-accessible recovery
-future semantic zoom/grouping without premature library lock-in
+Checkpoint 117
+    unified deep-work interaction confirmed
+
+Checkpoint 118
+    first executable Cockpit gate passed
+
+Checkpoint 119
+    stage-zone visual grammar accepted
+    2D scale / chrome / fullscreen requirements identified
+
+Checkpoint 121
+    immersive-scale 2D/fullscreen automated gate passed
+
+Checkpoint 122
+    third human review refined zoom, navigation and canvas dominance
+    revised automated gate passed
+```
+
+The current Specification 007 candidate v0.3 Cockpit demonstrates:
+
+```text
+large two-dimensional project space
+horizontal + vertical trackpad/scroll navigation
+Arrow / Shift+Arrow / Home keyboard recovery
+
+geometric zoom
+    explicit zoom out / percentage / zoom in
+    100% reset
+    fit project
+    keyboard zoom equivalents
+    trackpad pinch zoom around the gesture anchor
+
+scalable project navigation
+    Jump to quick semantic destinations
+        Active work
+        Blocker
+        Investigation
+        Evaluation
+    searchable meaningful project work
+
+canvas-dominant composition
+    one compact fold-away top HUD
+    stage strip attached to project space
+    floating project controls
+    floating project details
+    floating System Focus
+    system composer floating over continuous project canvas
+    lower/right recovery margin so overlays do not trap work
+
+shared Data / EDA / Production Missingness focus workspaces
+URL-addressable focus state
+browser Back restoration
+reduced-motion handling
+true browser fullscreen with graceful fallback
 ```
 
 Current governing sources:
@@ -187,11 +233,16 @@ Current governing sources:
 docs/research/002_primary_project_cockpit_interface_concept.md
 docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
 docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
+docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-docs/checkpoints/119_cockpit_spatial_scalability_and_true_fullscreen_requirements_confirmed.md
+docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
 ```
 
-No graph/canvas library, auto-layout algorithm, final semantic-zoom implementation, final stage taxonomy, or final Cockpit visual identity has been selected.
+The current revised automated gate passes on Linux, Windows, Chromium interaction/accessibility, and controlled direct-project visual regression.
+
+No graph/canvas library, auto-layout algorithm, final semantic-zoom implementation, minimap, final geometric zoom range, project-search backend, final stage taxonomy, final Cockpit visual identity, or canonical Cockpit screenshot baseline has been selected.
+
+The immediate frontend step is another real-browser human product gate on the current v0.3 implementation.
 
 ## Active branch and continuation
 
