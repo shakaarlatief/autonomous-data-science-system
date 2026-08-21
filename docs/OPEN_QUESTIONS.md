@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-21  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; first production persistence/interchange slices implemented; Project Cockpit reviewed through seven real-browser human cycles; Specification 008 now promotes the bounded Cockpit interaction architecture after Checkpoint 126; immediate execution priority is the governed PostgreSQL reusable-knowledge round-trip closure.
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; immediate active execution priorities are the Specification 005 agent-runtime bakeoff and production retrieval/MethodologicalHorizon evaluation.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -189,6 +189,8 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 **Status:** Active V1 question
 
+The governed persistence/interchange seam is now closed, so production retrieval/horizon evaluation can proceed without unresolved cross-backend migration debugging competing with the benchmark.
+
 Still required:
 
 ```text
@@ -245,9 +247,11 @@ Provider choice remains separate from ADS domain semantics. Specification 005 re
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
-**Status:** Active V1 evaluation question
+**Status:** Immediate active V1 evaluation question
 
 Specification 005 compares OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, and Google ADK 2.0 against ADS-shaped requirements. No candidate is accepted yet.
+
+The bakeoff should begin with one principal reasoner and preserve a simpler direct-model-call architecture as a valid result if no framework demonstrates enough concrete value to earn its complexity.
 
 ### Q-047. What role should MCP, AG-UI, and A2A ultimately play?
 
@@ -288,16 +292,43 @@ Git + Markdown remains sufficient while routing, reconciliation, and consistency
 
 ### Q-048. When is the governed reusable-knowledge persistence round-trip considered closed?
 
-**Status:** Immediate active implementation gate
+**Status:** Answered and closed for the current V1 governed seam
 
-Current persisted evidence remains:
+Checkpoint 127 and the final result artifact record successful validation of the richer governed import/accept/export/pinning round-trip on:
 
 ```text
-SQLite round-trip: PASS
-PostgreSQL 18 round-trip: FAIL
+SQLite / Ubuntu     PASS
+SQLite / Windows    PASS
+PostgreSQL 18       PASS
 ```
 
-The first PostgreSQL failure was localized to an overlong manually named migration constraint. The identifier was shortened and revalidation was triggered, but closure requires a persisted corrected PostgreSQL PASS plus removal of temporary diagnostic machinery. Do not infer closure from Checkpoint 114's narrower persistence gate.
+Final gate:
+
+```text
+V1 governed knowledge roundtrip closure gate
+run 32496856945
+```
+
+Two PostgreSQL portability defects were resolved before closure:
+
+```text
+1. overlong manually named migration constraint
+2. Alembic migration revision identity longer than the default
+   `alembic_version.version_num VARCHAR(32)` envelope
+```
+
+Migration 0002 now uses `0002_knowledge_interchange`, and a deterministic regression guard enforces unique Alembic revision IDs with length <= 32 characters.
+
+The old PostgreSQL diagnostic workflow was removed after closure.
+
+This answer is scoped to the current governed persistence/interchange seam. It does not close retrieval quality, MethodologicalHorizon construction, external ingestion, or knowledge-authoring questions.
+
+Primary evidence:
+
+```text
+experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
+docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
+```
 
 ---
 
@@ -460,11 +491,11 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-048  close the governed PostgreSQL knowledge round-trip honestly
-Q-046  execute the agent-runtime bakeoff
+Q-046  execute the agent-runtime bakeoff and determine whether any runtime earns its complexity
 Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
+Q-045  evaluate recommendation quality separately from catalog/retrieval coverage
 Q-051  determine which frontend/chart choices deserve final stack promotion
 Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions for V1 because Specification 008 has been promoted after Checkpoint 126.
+Q-048 is now closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions for V1 because Specification 008 has been promoted after Checkpoint 126.
