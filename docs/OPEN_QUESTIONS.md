@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-21  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; immediate active execution priorities are the Specification 005 agent-runtime bakeoff and production retrieval/MethodologicalHorizon evaluation.
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated automatically through Checkpoint 130; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the direct-call runtime control passed through Checkpoint 129 and the OpenAI Agents SDK 0.19.4 core subgate is green, with remaining runtime gates still open.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -247,11 +247,37 @@ Provider choice remains separate from ADS domain semantics. Specification 005 re
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
-**Status:** Immediate active V1 evaluation question
+**Status:** Immediate active V1 evaluation question; direct control and OpenAI core evidence now exist
 
 Specification 005 compares OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, and Google ADK 2.0 against ADS-shaped requirements. No candidate is accepted yet.
 
-The bakeoff should begin with one principal reasoner and preserve a simpler direct-model-call architecture as a valid result if no framework demonstrates enough concrete value to earn its complexity.
+Checkpoint 129 established a real direct-model-call control rather than a paper fallback. It passed cross-platform with ADS-owned tool-loop, approval/resume, context provenance, at-most-once side-effect ledger, cancellation/retry handling, normalized tracing, and structured recommendation behavior.
+
+The OpenAI Agents SDK 0.19.4 core candidate has also passed cross-platform for:
+
+```text
+AR-01 domain isolation
+AR-02 single-agent tool loop
+AR-04 native approval interruption
+AR-05 serialized RunState process-boundary resume
+AR-06 external ADS project-state authority
+AR-07 exact context/revision transparency
+AR-10 structured output with ADS provenance validation
+AR-12 deterministic no-live-provider testing through the released public Model boundary
+```
+
+Research 011 records a material package/docs maturity finding: current documentation advertises `agents.testing.ScriptedModel`, but published `openai-agents==0.19.4` does not ship `agents.testing`. The released public `Model` interface was sufficient for an isolated experiment-local deterministic fake.
+
+OpenAI remains incomplete until at least:
+
+```text
+AR-03 current MCP integration
+AR-08 cancellation and bounded timeout
+AR-09 controlled failure/retry behavior
+AR-11 normalized observability
+```
+
+The simpler direct-call architecture remains a valid final result if no framework demonstrates enough concrete value to earn its complexity.
 
 ### Q-047. What role should MCP, AG-UI, and A2A ultimately play?
 
@@ -342,9 +368,9 @@ Specification 008 now promotes the Project Cockpit as the V1 primary immersive a
 
 ### Q-050. How should the Cockpit scale to large projects and feel under real spatial interaction?
 
-**Status:** Substantially answered and promoted at the interaction-architecture level
+**Status:** Substantially answered and promoted at the interaction-architecture level; latest post-promotion polish awaits one short human retest
 
-Seven real-browser human reviews plus automated cross-platform/browser gates now support:
+Seven real-browser human reviews plus automated cross-platform/browser gates support:
 
 ```text
 FiniteNavigableGridWorld != SemanticProjectPlane
@@ -360,9 +386,43 @@ keyboard/reduced-motion support
 world-owned ambient depth
 ```
 
-The seventh review judged pinch smoothness substantially improved, accepted Jump/search and stage orientation, requested moderately faster scale travel, and explicitly classified the remaining tiny occasional pinch hitch as non-blocking deferred polish. Pinch sensitivity was increased from `0.00135` to `0.0018`; exact constants remain unfrozen.
+The seventh review judged pinch smoothness substantially improved, accepted Jump/search and stage orientation, requested moderately faster scale travel, and explicitly classified the remaining tiny occasional pinch hitch as non-blocking deferred polish. Pinch sensitivity was increased from `0.00135` to `0.0018` before Specification 008 promotion.
 
-Final promotion-validation head `2c3b522e2416d73c015ce5ec2a4560a227524dd9` passed V1 frontend spike run 155 / `32492536072` on Ubuntu, Windows, Chromium interaction/accessibility, and controlled direct-view visual regression.
+A later post-promotion human review then found:
+
+```text
+fullscreen Jump/search
+    good
+
+normal Chrome window
+    Jump/search could still overlap the persistent composer
+
+pinch
+    smoother, but scale travel still too conservative
+```
+
+Checkpoint 130 records the bounded implementation repair:
+
+```text
+Jump/search
+    palette measures actual rendered composer geometry while open
+    re-clamps on window resize, fullscreen changes, and composer resize
+    lower results remain internally scrollable
+
+pinch
+    sensitivity 0.0018 -> 0.0024
+    smoothing/coalescing/anchoring architecture unchanged
+```
+
+Automated validation head `ae83e920b3fa43ee8242bdb1ca2640d23a474c71` passed V1 frontend spike run `167 / 32503861255` on Ubuntu, Windows, Chromium interaction/accessibility, controlled direct-view visual regression, the new normal-window Jump resize regression, and the faster anchored-pinch regression.
+
+One short real-hardware retest remains before treating this polish as settled:
+
+```text
+normal Chrome window: no Jump/composer overlap and lower results scroll
+fullscreen: no regression
+trackpad: one natural full pinch in/out has sufficient scale travel
+```
 
 Still open inside the broader Cockpit product program:
 
@@ -378,13 +438,13 @@ pan/zoom/HUD persistence contract
 broader real-project scale validation
 ```
 
-These are no longer blockers for the promoted basic interaction architecture.
+These are not blockers for the promoted basic interaction architecture.
 
 ### Q-051. What frontend stack and visualization system should be promoted?
 
 **Status:** Partially narrowed, not accepted as final architecture
 
-React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest remain the leading frontend hypothesis and have supported the Cockpit evidence through Checkpoint 126. Formal final stack promotion remains open. ECharts versus Plotly remains an empirical comparison. Tauri remains deferred.
+React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest remain the leading frontend hypothesis and have supported the Cockpit evidence through Checkpoint 130. Formal final stack promotion remains open. ECharts versus Plotly remains an empirical comparison. Tauri remains deferred.
 
 ### Q-052. What should the final Cockpit visual identity, stage taxonomy, layout, control architecture, and URL contract be?
 
@@ -491,11 +551,11 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-046  execute the agent-runtime bakeoff and determine whether any runtime earns its complexity
+Q-046  complete the agent-runtime bakeoff and determine whether any runtime earns its complexity
 Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
 Q-045  evaluate recommendation quality separately from catalog/retrieval coverage
 Q-051  determine which frontend/chart choices deserve final stack promotion
 Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-Q-048 is now closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions for V1 because Specification 008 has been promoted after Checkpoint 126.
+Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted. The Checkpoint-130 Q-050 retest is a bounded product-polish confirmation, not an architecture reopening.
