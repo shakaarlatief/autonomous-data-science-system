@@ -192,11 +192,12 @@ test.describe('ADS V1 frontend spike', () => {
     await page.getByRole('textbox', { name: 'Search project work' }).fill('subgroup')
     await page.getByRole('button', { name: /Subgroup review/i }).click()
 
-    const lowerNodeBox = await page.locator('[data-cockpit-node="review"]').boundingBox()
-    const currentComposerBox = await composer.boundingBox()
-    expect(lowerNodeBox).not.toBeNull()
-    expect(currentComposerBox).not.toBeNull()
-    expect((lowerNodeBox?.y ?? 0) + (lowerNodeBox?.height ?? 0)).toBeLessThan((currentComposerBox?.y ?? 0) - 4)
+    await expect.poll(async () => {
+      const lowerNodeBox = await page.locator('[data-cockpit-node="review"]').boundingBox()
+      const currentComposerBox = await composer.boundingBox()
+      if (!lowerNodeBox || !currentComposerBox) return false
+      return lowerNodeBox.y + lowerNodeBox.height < currentComposerBox.y - 4
+    }).toBe(true)
   })
 
   test('cockpit fullscreen control synchronizes supported enter and exit behavior', async ({ page }) => {
