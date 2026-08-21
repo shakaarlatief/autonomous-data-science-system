@@ -126,8 +126,10 @@ Accepted decisions currently include:
 D-028
 SQLite-centered local-first operational architecture
 
-D-029
+D-029 + Specification 002 v1.1
 SQLAlchemy Core 2.0 + Alembic 1.x
+PostgreSQL identifier portability
+unique Alembic revision IDs <= 32 chars while the default version table remains
 
 D-030
 pyproject.toml + uv + committed uv.lock + uv_build
@@ -138,11 +140,7 @@ JSON + JSON Schema Draft 2020-12
 + deterministic reusable-knowledge serialization
 ```
 
-The first production persistence vertical slice passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical project-to-knowledge revision pinning.
-
-The richer governed reusable-knowledge persistence/interchange seam is now also **closed across all required environments**.
-
-Final governed round-trip evidence:
+The richer governed reusable-knowledge persistence/interchange seam is **closed across all required environments**.
 
 ```text
 V1 governed knowledge roundtrip closure gate
@@ -151,29 +149,14 @@ run 32496856945
 SQLite / Ubuntu     PASS
 SQLite / Windows    PASS
 PostgreSQL 18       PASS
-Alembic revision-ID portability guard PASS on all three jobs
+Alembic revision-ID portability guard PASS
 ```
 
-Validated governed behavior includes candidate import, explicit acceptance, accepted-current pointers, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project revision pinning across later knowledge acceptance.
+Validated behavior includes candidate import, explicit acceptance, accepted-current pointers, accepted snapshot export, provenance, relation governance, collections, migration compatibility, and historical project revision pinning across later knowledge acceptance.
 
-Two PostgreSQL portability defects were found and repaired before closure:
+Two PostgreSQL portability defects were found and repaired before closure: an overlong manually named migration constraint and an Alembic revision identity too long for the default `alembic_version.version_num VARCHAR(32)` envelope. Migration 0002 now uses `0002_knowledge_interchange`, and a deterministic regression guard protects that portability invariant.
 
-```text
-1. a manually named migration constraint exceeded PostgreSQL's 63-byte identifier limit
-2. the Alembic revision identity `0002_reusable_knowledge_interchange`
-   exceeded the default `alembic_version.version_num VARCHAR(32)` envelope
-```
-
-Migration 0002 now uses:
-
-```text
-revision = "0002_knowledge_interchange"
-down_revision = "0001_v1_persistence_core"
-```
-
-A deterministic regression test now enforces unique Alembic revision IDs whose length does not exceed 32 characters.
-
-Primary closure sources:
+Primary sources:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
@@ -182,19 +165,88 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 
 This closes the governed persistence/interchange implementation gate. It does not validate retrieval quality, embeddings, reranking, MethodologicalHorizon construction, selective LLM context quality, external-source ingestion, or knowledge-authoring UX.
 
-### Agent/runtime boundary
+### Agent/runtime boundary and active bakeoff
 
-Agent frameworks and interoperability protocols are treated as replaceable infrastructure, not ADS domain authority.
+Agent frameworks and interoperability protocols are replaceable infrastructure, not ADS domain authority.
 
-No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Specification 005 defines an empirical bakeoff among current runtime candidates, beginning with one principal reasoner and allowing a simple direct-model-call result if no framework earns its complexity.
+No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Specification 005 defines the empirical bakeoff.
 
-This bakeoff is now the immediate bounded execution track.
+The executable control is no longer hypothetical. Checkpoint 129 established a direct-model-call baseline with ADS-owned:
+
+```text
+model/tool loop
+selective context provenance
+approval interruption
+serialized process-boundary resume
+at-most-once project side-effect ledger
+rejection and stale-context checks
+retry/cancellation behavior
+normalized tracing
+structured recommendation validation
+```
+
+Direct-control gate:
+
+```text
+run 32500521858
+Ubuntu PASS
+Windows PASS
+existing Python suite PASS
+```
+
+The first framework candidate, `openai-agents==0.19.4`, now also has a green deterministic core subgate for:
+
+```text
+AR-01 domain isolation
+AR-02 single-agent tool loop
+AR-04 native approval interruption
+AR-05 serialized RunState process-boundary resume
+AR-06 external ADS project-state authority
+AR-07 exact context/revision transparency
+AR-10 structured output + ADS provenance validation
+AR-12 deterministic no-live-provider testing
+```
+
+Core gate:
+
+```text
+run 15 / 32501907783
+OpenAI core Ubuntu PASS
+OpenAI core Windows PASS
+direct controls PASS
+existing Python suite PASS
+```
+
+Research 011 records an important executable-first ecosystem finding: current documentation advertises `agents.testing.ScriptedModel`, but the published 0.19.4 package does not ship `agents.testing`; the released public `Model` interface is sufficient for an isolated deterministic fake.
+
+Remaining mandatory OpenAI work before comparison/selection:
+
+```text
+AR-03 current MCP integration
+AR-08 cancellation and bounded timeout
+AR-09 controlled failure/retry behavior
+AR-11 normalized observability
+```
+
+Direct model calls remain a valid final winner if no framework earns its dependency and operational burden.
+
+Primary sources:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
+docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
+docs/checkpoints/129_direct_call_control_runtime_baseline_passed.md
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/CORE_RESULT.md
+```
 
 ### Professional frontend and Project Cockpit
 
 The frontend is a first-class reasoning, control, and quality surface rather than an end-stage presentation layer.
 
-The Project Cockpit has moved from candidate interaction spike to a **promoted V1 interaction architecture** after seven real-browser human review cycles and repeated executable gates.
+The Project Cockpit is a **promoted V1 interaction architecture** after seven real-browser human review cycles and repeated executable gates.
 
 Current authoritative interaction contract:
 
@@ -202,7 +254,7 @@ Current authoritative interaction contract:
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Promoted product model:
+Promoted model:
 
 ```text
 Project Cockpit
@@ -217,42 +269,29 @@ Direct specialist views
     reuse the same substantive analytical modules and project state
 ```
 
-The promoted interaction architecture includes:
+The accepted interaction architecture includes:
 
 ```text
 meaningful work units rather than every persisted object
 spatial focus into reusable specialist workspaces
 reachability != simultaneous mounting
-
 FiniteNavigableGridWorld != SemanticProjectPlane
-    continuous grid through surrounding reserve
-    symmetric navigation/recovery
-    semantic stage space kept distinct from neutral reserve
-    world-owned restrained ambient depth
-
-two-dimensional navigation
-bounded geometric zoom
-native laptop pinch capability
-viewport-aware stage orientation
+2D project navigation and recovery
+bounded geometric zoom and native laptop pinch
+viewport-aware semantic stage orientation
 scalable Jump/search
 compact/fold-away immersive chrome
 collision-safe floating surfaces
 true fullscreen with graceful fallback
 URL-addressable focus/deep-work state
-keyboard accessibility
-reduced-motion support
+keyboard accessibility and reduced-motion support
+world-owned restrained ambient depth
 ```
 
-Final validated Cockpit promotion head:
+Promotion gate:
 
 ```text
-2c3b522e2416d73c015ce5ec2a4560a227524dd9
-```
-
-Final gate:
-
-```text
-V1 frontend spike
+head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
 run 155 / 32492536072
 
 Ubuntu build + unit tests                 PASS
@@ -261,39 +300,72 @@ Chromium interaction/accessibility        PASS
 controlled direct-view visual regression  PASS
 ```
 
-Key promotion sources:
+A later human review found a bounded normal-window Jump/composer collision and judged pinch scale travel still too slow. Checkpoint 130 records the repair:
 
 ```text
-docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
+Jump/search
+    actual rendered composer geometry is now the active collision boundary
+    palette re-clamps on resize/fullscreen/composer resize
+
+pinch
+    PINCH_SENSITIVITY 0.0018 -> 0.0024
+    coalescing, bounded delta, exponential scaling and anchoring retained
 ```
 
-Promotion deliberately does **not** freeze a graph/canvas library, gesture library, auto-layout algorithm, semantic zoom, minimap, final native-pinch constants, final geometric zoom range, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or canonical Cockpit screenshot baseline.
+Automated polish gate:
 
-The tiny remaining pinch hitch is preserved as deferred product polish, not as a blocker for the interaction architecture.
+```text
+head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
+run 167 / 32503861255
+
+Ubuntu build + unit tests                  PASS
+Windows build + unit tests                 PASS
+Chromium interaction/accessibility         PASS
+controlled direct-view visual regression   PASS
+normal-window Jump re-clamp regression      PASS
+faster anchored pinch regression            PASS
+```
+
+A short real-browser/hardware retest remains open. The tiny occasional pinch hitch remains deferred non-blocking polish, and exact pinch constants remain unfrozen.
+
+Primary latest sources:
+
+```text
+docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
+docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
+```
+
+Promotion deliberately does **not** freeze graph/canvas or gesture libraries, auto-layout, semantic zoom, minimap, final pinch/zoom constants, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or a canonical Cockpit screenshot baseline.
 
 ## Current execution order
 
 ```text
-1. Specification 005 one-principal-reasoner agent-runtime bakeoff
-2. production retrieval / MethodologicalHorizon benchmark
-3. future Cockpit capability and polish on top of Specification 008
+1. short Checkpoint-130 human Cockpit retest
+2. complete OpenAI Specification-005 gates AR-03 / AR-08 / AR-09 / AR-11
+3. compare completed OpenAI evidence against the direct-call control
+4. implement LangGraph durability comparator if still decision-relevant
+5. production retrieval / MethodologicalHorizon benchmark
 ```
 
-The runtime bakeoff must preserve a simpler direct-model-call architecture as a valid outcome if no framework earns its complexity.
+The runtime bakeoff must preserve the simpler direct-model-call architecture as a valid outcome if no framework earns its complexity.
 
 The retrieval/horizon benchmark should evaluate omission quality, relevance, and context cost before selecting embeddings, rerankers, ANN services, or vector infrastructure.
 
 ## Active branch and continuation
 
-The current V1/frontend work is being developed on:
+Current executable V1 work lives on:
+
+```text
+v1-runtime-bakeoff
+```
+
+The promoted frontend boundary is preserved on:
 
 ```text
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails this active branch. New sessions working on the current V1 state must reconstruct from `v1-frontend-spike` rather than assuming `main` contains the latest checkpoints and promoted contracts.
+The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from `v1-runtime-bakeoff` plus the canonical routing documents rather than assuming `main` is current.
 
 Current continuity and exact next action are maintained in:
 
