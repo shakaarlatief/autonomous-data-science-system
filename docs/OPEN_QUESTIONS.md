@@ -2,11 +2,11 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-21  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 architecture and product foundations established; first production persistence/interchange slices implemented; Project Cockpit sixth human review and ambient/pinch/ruler/collision repair gate completed through Checkpoint 125; Specification 007 remains candidate v0.6 pending a real-browser/hardware human product gate
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; first production persistence/interchange slices implemented; Project Cockpit reviewed through seven real-browser human cycles; Specification 008 now promotes the bounded Cockpit interaction architecture after Checkpoint 126; immediate execution priority is the governed PostgreSQL reusable-knowledge round-trip closure.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
-Existing identifiers are retained for continuity even when a question has been substantially reframed or partly answered. A status such as `Substantially answered` means the project has a current governing direction but still has implementation, evaluation, or scope questions to resolve.
+Existing identifiers are retained for continuity even when a question has been substantially reframed or partly answered. `Substantially answered` means a current governing direction exists while implementation, evaluation, or final-scope questions remain.
 
 ---
 
@@ -16,65 +16,55 @@ Existing identifiers are retained for continuity even when a question has been s
 
 **Status:** Partially answered
 
-The primary purpose is project-relative: create the best defensible data-science process for the project's goals, constraints, deliverables, and desired human involvement while preserving non-negotiable methodological integrity.
-
-Still open: system-level success criteria across heterogeneous project classes and how reliability, coverage, human-navigation burden, efficiency, reproducibility, and product usability should be combined in evaluation.
+The primary purpose is project-relative: create the best defensible data-science process for the project's goals, constraints, deliverables, and desired human involvement while preserving non-negotiable methodological integrity. Still open: system-level success criteria across heterogeneous project classes and how reliability, coverage, human-navigation burden, efficiency, reproducibility, and product usability should be combined.
 
 ### Q-002. What degree of autonomy should the system have?
 
 **Status:** Substantially reframed, still open
 
-Autonomy should vary with project intent, risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state rather than being one global mode.
-
-The final policy for automatic action, proposal, approval, escalation, and stopping remains open.
+Autonomy should vary with project intent, risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state rather than being one global mode. The final proposal/approval/automatic-action/escalation policy remains open.
 
 ### Q-003. What should the human's role be?
 
 **Status:** Substantially refined, still open
 
-Foundation 013 establishes the current LLM-system-human boundary. The human should concentrate on goals, semantics, consequential trade-offs, authoritative domain input, critique, approvals, and intervention where judgment adds value.
-
-The exact escalation policy and project-configurable control model remain open.
+Foundation 013 establishes the current boundary: the human should concentrate on goals, semantics, consequential trade-offs, authoritative domain input, critique, approvals, and intervention where judgment adds value. Exact escalation and project-configurable control remain open.
 
 ### Q-027. What belongs in the non-negotiable methodological quality floor?
 
 **Status:** Substantially refined, not finalized
 
-Current epistemic core: semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance.
-
-The exact operationalization across project classes remains open.
+Current epistemic core: semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance. Exact operationalization across project classes remains open.
 
 ### Q-028. How should project intent be represented?
 
 **Status:** Substantially refined, not finalized
 
-Objectives, constraints, deliverables, human-control preferences, definitions, and project/model/operational distinctions remain the leading conceptual structure.
-
-The final schema and interaction model remain open.
+Objectives, constraints, deliverables, human-control preferences, definitions, and project/model/operational distinctions remain the leading structure. Final schema and interaction model remain open.
 
 ### Q-030. Are the five epistemic invariants complete and precise enough?
 
 **Status:** Strong design hypothesis under broader validation
 
-Prototype V0 and later product design are compatible with them, but broader project diversity may expose missing distinctions or needed revisions.
+Prototype V0 and later design remain compatible with them, but broader project diversity may expose missing distinctions or needed revision.
 
 ### Q-031. What belongs in the admissibility layer?
 
 **Status:** Open at production depth
 
-Legal, ethical, privacy, policy, safety, organizational, and explicit user constraints are conceptually distinct from methodological validity. Their exact scope, representation, and authority model remain unresolved.
+Legal, ethical, privacy, policy, safety, organizational, and explicit user constraints are conceptually distinct from methodological validity. Exact scope, representation, and authority remain unresolved.
 
 ### Q-032. How should risk-sensitive assurance be represented?
 
 **Status:** Open at production depth
 
-The project still needs a practical model linking consequence/risk to verification, replication, robustness, subgroup analysis, human approval, monitoring, and documentation requirements.
+A practical model is still needed to link consequence/risk to verification, replication, robustness, subgroup analysis, human approval, monitoring, and documentation requirements.
 
 ### Q-035. How should admissibility, risk, controls, approvals, and assurance participate in project state?
 
 **Status:** Open, coupled to Q-002/Q-008/Q-031/Q-032
 
-The product/object model provides places for Constraints, Questions, Findings, Decisions, events, and approvals, but the complete policy/state representation is not yet specified.
+The product/object model provides places for Constraints, Questions, Findings, Decisions, events, and approvals, but the complete policy/state representation remains unspecified.
 
 ---
 
@@ -84,49 +74,43 @@ The product/object model provides places for Constraints, Questions, Findings, D
 
 **Status:** Substantially advanced, not complete
 
-Foundation 018 establishes the current product-level separation of Objects, Relations, Events, and Views and a candidate object model around Project/Intent, Artifacts/Data, Questions/Assumptions/Findings/Claims, Proposals/Investigations/Runs/Evidence/Decisions, reporting, and history.
-
-The first V1 persistence slice implements only a bounded subset. The complete production schema remains open.
+Foundation 018 establishes Objects, Relations, Events, and Views plus a candidate project object model. The first V1 persistence slice implements only a bounded subset; the complete production schema remains open.
 
 ### Q-010. When is independent review required?
 
 **Status:** Substantially refined, not resolved
 
-Candidate triggers include high risk, epistemic single points of failure, weak high-leverage assumptions, fragile consequential claims, governance requirements, and low-maturity knowledge.
-
-The operational policy remains open.
+Candidate triggers include high risk, epistemic single points of failure, weak high-leverage assumptions, fragile consequential claims, governance requirements, and low-maturity knowledge. Operational policy remains open.
 
 ### Q-011. What counts as sufficient evidence for a decision?
 
 **Status:** Active
 
-Evidence sufficiency remains decision-specific and may depend on validity, uncertainty, independence, shared ancestry, risk, cost, and the probability that more evidence changes the decision.
+Evidence sufficiency remains decision-specific and may depend on validity, uncertainty, independence, shared ancestry, risk, cost, and the probability that additional evidence changes the decision.
 
 ### Q-012. How should uncertainty and confidence be represented?
 
 **Status:** Open
 
-No final numerical, categorical, narrative, or structural representation has been selected.
+No final numerical, categorical, narrative, or structural representation is selected.
 
 ### Q-019. How should invalidation and repair work?
 
 **Status:** Reframed after V0
 
-Prototype V0 showed that its generic dependency reopening/support-reassessment machinery did not earn its cost as a general always-on architecture, even though its repair behavior was precise.
-
-The broader need remains: new evidence or changed assumptions must be able to make downstream claims, decisions, evidence, or report content stale or invalid. Future mechanisms should be targeted, selective, and evidence-driven rather than blindly recursive.
+P0's generic dependency reopening/support-reassessment machinery did not earn its cost as a general always-on architecture. The need remains for selective evidence-driven staleness/invalidation and targeted repair when assumptions or evidence change.
 
 ### Q-033. Should analytical Questions and Claims be primary state objects?
 
 **Status:** Strongly supported conceptually, not frozen as universal orchestration law
 
-Foundation 018 treats Questions, Findings, Claims, Evidence, and Decisions as central project objects. The project still avoids claiming that every workflow must be reducible to one Question/Claim state machine.
+Foundation 018 treats Questions, Findings, Claims, Evidence, and Decisions as central project objects, without claiming every workflow reduces to one Question/Claim state machine.
 
 ### Q-034. How should project completion be defined?
 
 **Status:** Substantially refined, not resolved
 
-General completion should be obligation/question/deliverable driven and should consider residual uncertainty, expected value of additional work, risk, and resource limits.
+General completion should be obligation/question/deliverable driven and consider residual uncertainty, expected value of additional work, risk, and resource limits.
 
 ---
 
@@ -134,63 +118,49 @@ General completion should be obligation/question/deliverable driven and should c
 
 ### Q-004. How should data-science knowledge be represented?
 
-**Status:** Substantially answered at the conceptual/V1 architecture level
+**Status:** Substantially answered at conceptual/V1 architecture level
 
-Foundation 020 now governs the durable conceptual representation: `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, collections, provenance/governance, retrieval/applicability/context structures, exact revisions, and separation from execution capability.
-
-Still open: final knowledge-kind/function taxonomies, authoring experience, full production schema coverage, provenance ontology, and large-scale operational behavior.
+Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, collections, provenance/governance, retrieval/applicability/context structures, exact revisions, and separation from execution capability. Final taxonomies, authoring UX, full schema coverage, provenance ontology, and large-scale behavior remain open.
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
 **Status:** Substantially reframed after V0; active V1 question
 
-The current direction is selective rather than always-on: global knowledge is retrieved/filtered into a bounded MethodologicalHorizon, explicit checks handle reliable prerequisites/hard rules, and flexible reasoning handles semantic relevance, trade-offs, synthesis, and open-world concern discovery.
-
-The quality of selective context assembly remains to be measured.
+Current direction is selective: global knowledge is retrieved/filtered into a bounded MethodologicalHorizon, explicit checks handle reliable prerequisites/hard rules, and flexible reasoning handles semantic relevance, trade-offs, synthesis, and open-world concern discovery. Selective context quality remains to be measured.
 
 ### Q-006. How should relevant investigations be activated?
 
 **Status:** Reframed after V0; active V1 question
 
-P0's narrow path-sensitive tag-trigger activation should not be scaled unchanged. Foundation 019 instead treats activation as staged relevance and horizon construction driven by project state, retrieval, explicit applicability checks, and flexible reasoning.
-
-The production retrieval/ranking mechanism remains unvalidated.
+P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged relevance/horizon construction driven by project state, retrieval, explicit applicability checks, and flexible reasoning. Production retrieval/ranking remains unvalidated.
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
 
 **Status:** Substantially answered conceptually, taxonomy still open
 
-Foundation 020 separates stable asset identity/revisions, components, narrative facets, intrinsic kinds, reasoning functions, static relations, conditional rules, retrieval, applicability, context requirements, semantic checks, provenance, scope, and governance.
-
-Exact production enums and authoring conventions remain intentionally unfrozen.
+Foundation 020 separates stable asset/revision identity, components, narrative facets, intrinsic kinds, reasoning functions, static relations, conditional rules, retrieval, applicability, context requirements, semantic checks, provenance, scope, and governance. Exact production enums and authoring conventions remain intentionally unfrozen.
 
 ### Q-018. How should knowledge packages interact?
 
 **Status:** Substantially refined, not resolved at scale
 
-The current architecture uses explicit stable identities, typed semantic relations, conditional rules, reusable concepts, components, and collections rather than one giant package graph.
-
-Large-scale deduplication, cycle handling, conflicting soft guidance, and composition quality remain open.
+Current architecture uses stable identities, typed semantic relations, conditional rules, reusable concepts, components, and collections rather than one giant package graph. Large-scale deduplication, cycles, conflicting soft guidance, and composition quality remain open.
 
 ### Q-022. How should external knowledge and source material be integrated?
 
 **Status:** Substantially advanced, not complete
 
-Specification 004 and D-031 establish deterministic reusable-knowledge interchange and governance safety. Knowledge still requires proposition-specific provenance, scope, authority, limitations, freshness, and revision identity.
-
-Still open: ingestion/review workflows for heterogeneous external sources and full provenance/source persistence.
+Specification 004 and D-031 establish deterministic interchange and governance safety. Still open: ingestion/review workflows for heterogeneous external sources and full provenance/source persistence.
 
 ### Q-025. What maturity model should be used for ideas and reusable knowledge?
 
 **Status:** Substantially refined, not finalized
 
-Knowledge role, maturity, enforcement authority, scope confidence, provenance, challenge history, and operational coverage should remain distinct. The interchange/persistence layers already prevent candidate material from silently becoming accepted authority.
-
-The final production promotion/review/freshness lifecycle remains open.
+Knowledge role, maturity, enforcement authority, scope confidence, provenance, challenge history, and operational coverage should remain distinct. Final production promotion/review/freshness lifecycle remains open.
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Reframed after V0; active V1 methodological-horizon problem
+**Status:** Reframed after V0; active V1 MethodologicalHorizon problem
 
 Current direction:
 
@@ -259,29 +229,25 @@ A practical benchmark and acceptance envelope remain to be designed.
 
 **Status:** Reframed; implementation deliberately unselected
 
-Knowledge, capabilities, project semantics, and runtime actors remain separate. The current default is one principal reasoner plus tools, with specialist agents added only if evidence demonstrates a concrete benefit.
-
-Specification 005 governs the runtime bakeoff.
+Knowledge, capabilities, project semantics, and runtime actors remain separate. Current default is one principal reasoner plus tools, with specialist agents added only if evidence demonstrates benefit. Specification 005 governs the bakeoff.
 
 ### Q-020. What should the execution environment look like?
 
 **Status:** Open at production scale
 
-Foundation 018 establishes that system-triggered and manual execution should share reproducible run contracts and that VS Code remains the professional developer workbench. Local-first execution is a strong current hypothesis, but local/remote/container/GPU/cloud execution remains an abstraction problem rather than a settled backend.
+Foundation 018 establishes shared reproducible run contracts for system-triggered and manual execution and retains VS Code as the developer workbench. Local/remote/container/GPU/cloud execution remains an abstraction problem rather than a settled backend.
 
 ### Q-021. How should model and tool providers be selected?
 
 **Status:** Open; runtime evaluation contract exists
 
-Provider choice remains separate from ADS domain semantics. Specification 005 requires provider/test substitution and permits a direct-model-call outcome if no runtime earns its complexity.
+Provider choice remains separate from ADS domain semantics. Specification 005 requires provider/test substitution and permits direct-model-call architecture if no runtime earns its complexity.
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
 **Status:** Active V1 evaluation question
 
-Specification 005 compares OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, and Google ADK 2.0 against ADS-shaped requirements including domain isolation, tools, MCP, HITL, durable resume, context transparency, cancellation, retries, structured output, observability, and test substitution.
-
-No candidate is accepted yet.
+Specification 005 compares OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, and Google ADK 2.0 against ADS-shaped requirements. No candidate is accepted yet.
 
 ### Q-047. What role should MCP, AG-UI, and A2A ultimately play?
 
@@ -291,18 +257,18 @@ Current direction:
 
 ```text
 MCP
-    first-class external tool/resource interoperability candidate
+    external tool/resource interoperability candidate
     not project memory or internal application bus
 
 AG-UI
-    evaluate as a transport adapter around ADS-owned interaction/run events
+    possible transport adapter around ADS-owned interaction/run events
     not ADS domain semantics
 
 A2A
     defer until independently deployed remote agent systems are genuinely needed
 ```
 
-The final production adapters remain unselected.
+Final production adapters remain unselected.
 
 ---
 
@@ -312,30 +278,26 @@ The final production adapters remain unselected.
 
 **Status:** Substantially answered for current development needs; still evolvable
 
-The project now uses canonical documents, foundations, research memos, specifications, checkpoints, experiment ledgers, a knowledge map, a major-changes ledger, Git history, and explicit continuity/promotion/reconciliation procedures.
-
-This is the current development-preservation architecture, not the production project-state database architecture.
+The project uses canonical documents, foundations, research memos, specifications, checkpoints, experiment ledgers, a knowledge map, major-changes ledger, Git history, and explicit continuity/promotion/reconciliation procedures. This is development preservation, not the production project-state database.
 
 ### Q-043. When should the project move beyond Git and Markdown for development knowledge preservation?
 
 **Status:** Open with explicit deferral criteria
 
-Git + Markdown remains sufficient while routing, reconciliation, and consistency are manageable. More advanced infrastructure becomes justified if retrieval failures, contradictory canonical state, dependency complexity, multiple concurrent writers, or reconciliation cost become material.
+Git + Markdown remains sufficient while routing, reconciliation, and consistency are manageable. More advanced infrastructure becomes justified only when retrieval failures, contradictory canonical state, dependency complexity, multiple concurrent writers, or reconciliation cost become material.
 
 ### Q-048. When is the governed reusable-knowledge persistence round-trip considered closed?
 
-**Status:** Active implementation gate
+**Status:** Immediate active implementation gate
 
-Current persisted evidence is:
+Current persisted evidence remains:
 
 ```text
 SQLite round-trip: PASS
 PostgreSQL 18 round-trip: FAIL
 ```
 
-The first PostgreSQL failure was localized to an overlong manually named migration constraint. The identifier was shortened and revalidation was triggered, but closure requires a persisted corrected PostgreSQL PASS plus removal of temporary diagnostic machinery.
-
-Do not infer closure from the earlier production persistence slice, which tested a different scope and already passed PostgreSQL.
+The first PostgreSQL failure was localized to an overlong manually named migration constraint. The identifier was shortened and revalidation was triggered, but closure requires a persisted corrected PostgreSQL PASS plus removal of temporary diagnostic machinery. Do not infer closure from Checkpoint 114's narrower persistence gate.
 
 ---
 
@@ -343,111 +305,63 @@ Do not infer closure from the earlier production persistence slice, which tested
 
 ### Q-049. What should the primary active-work interface be?
 
-**Status:** Strong direction established; final design not frozen
+**Status:** Substantially answered and promoted for V1 interaction architecture
 
-Human review through Checkpoint 125 strongly supports the Project Cockpit as the primary immersive active-work environment, with direct specialist project views retained as alternative entry/inspection paths.
-
-The Cockpit combines a living project-process projection, native system interaction, and spatial focus into real analytical workspaces.
-
-The direction is strong enough to continue refining rather than return to a conventional dashboard as the primary working surface, but the final interaction and visual architecture remains candidate until the current Specification 007 human product gate succeeds and a deliberate promotion decision is made.
+Specification 008 now promotes the Project Cockpit as the V1 primary immersive active-work model, with direct specialist views retained as alternative entry/inspection/record paths. This closes the basic interface-direction question for V1 while leaving final visual identity and future capability depth open.
 
 ### Q-050. How should the Cockpit scale to large projects and feel under real spatial interaction?
 
-**Status:** Active Specification 007 v0.6 human/hardware product-gate question
+**Status:** Substantially answered and promoted at the interaction-architecture level
 
-The current implementation now demonstrates:
+Seven real-browser human reviews plus automated cross-platform/browser gates now support:
 
 ```text
-two-dimensional project navigation
-later/right and lower work remaining reachable
-large logical project extent
-symmetric always-pannable ProjectWorld
-continuous finite grid world
-keyboard recovery
-true browser fullscreen
-
-geometric zoom
-    explicit +/- controls
-    zoom indication
-    100% reset
-    fit project
-    keyboard equivalents
-
-native laptop interaction candidate
-    two-finger trackpad panning
-    trackpad pinch
-    normalized delta units
-    animation-frame coalescing
-    bounded per-frame progression
-    immediately current zoom state
-    approximate gesture anchoring
-
-scalable Jump to navigation
-    Active work
-    Blocker
-    Investigation
-    Evaluation
-    searchable project work
-    composer-safe placement
-    internally scrollable results
-
-canvas-dominant composition
-    viewport-aware stage ruler
-    compact right-edge vertical map-tool rail
-    floating project details
-    floating System Focus
-    composer over continuous world
-    compact fold-away primary HUD
-
+FiniteNavigableGridWorld != SemanticProjectPlane
+2D navigation and recovery
+bounded geometric zoom
+native laptop pinch capability
+viewport-aware stage orientation
+scalable Jump/search
+compact/fold-away immersive chrome
+collision-safe floating surfaces
+true fullscreen
+keyboard/reduced-motion support
 world-owned ambient depth
-    semantic ProjectCanvas does not own a second clipped atmosphere layer
-
-stage-ruler terminal authority
-    ruler begins at rendered Framing boundary
-    ruler ends at rendered Evaluation boundary
 ```
 
-The sixth-review cross-platform/browser automated gate passes at validated head `a2e401408c55a74905e0654c40185f4f9990becc` in workflow run 140 / `32475241980`.
+The seventh review judged pinch smoothness substantially improved, accepted Jump/search and stage orientation, requested moderately faster scale travel, and explicitly classified the remaining tiny occasional pinch hitch as non-blocking deferred polish. Pinch sensitivity was increased from `0.00135` to `0.0018`; exact constants remain unfrozen.
 
-Still open before broader promotion:
+Final promotion-validation head `2c3b522e2416d73c015ce5ec2a4560a227524dd9` passed V1 frontend spike run 155 / `32492536072` on Ubuntu, Windows, Chromium interaction/accessibility, and controlled direct-view visual regression.
+
+Still open inside the broader Cockpit product program:
 
 ```text
-real laptop human acceptance of slow pinch in/out
-real laptop human acceptance of faster pinch in/out
-real laptop human acceptance of immediate pan/pinch switching
-human judgment of perceived anchor stability
-human confirmation that world-owned ambient depth no longer exposes the semantic project box
-human confirmation of Framing/Evaluation ruler terminals across real zoom/pan
-human acceptance of Jump/search separation and lowest-result reachability
-human acceptance of overall visual hierarchy and interaction quality
-final native-pinch normalization/sensitivity constants
-final geometric zoom range
-whether pan/zoom/HUD state should persist in URL/session UI state
-final semantic zoom/grouping behavior
-whether a minimap becomes useful at real project scale
-whether a graph/canvas or gesture library eventually earns its dependency
-final project auto-layout strategy
+remaining tiny pinch hitch polish
+final pinch/zoom constants
+final semantic zoom/grouping
+final minimap decision
+final graph/canvas or gesture dependency decision
+final auto-layout strategy
+production project-search backend
+pan/zoom/HUD persistence contract
+broader real-project scale validation
 ```
 
-Automated synthetic input can establish bounded geometric behavior but cannot close the real-hardware interaction-feel question.
-
-No graph/canvas framework, gesture library, minimap, auto-layout algorithm, or final semantic-zoom implementation is selected yet.
+These are no longer blockers for the promoted basic interaction architecture.
 
 ### Q-051. What frontend stack and visualization system should be promoted?
 
 **Status:** Partially narrowed, not accepted as final architecture
 
-React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest are the current leading frontend hypothesis and have supported all current Cockpit/product gates through Checkpoint 125.
-
-Formal final promotion remains open. ECharts versus Plotly remains an empirical chart comparison. Tauri remains deferred.
+React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest remain the leading frontend hypothesis and have supported the Cockpit evidence through Checkpoint 126. Formal final stack promotion remains open. ECharts versus Plotly remains an empirical comparison. Tauri remains deferred.
 
 ### Q-052. What should the final Cockpit visual identity, stage taxonomy, layout, control architecture, and URL contract be?
 
-**Status:** Open by design
+**Status:** Open by design, no longer a prerequisite for basic interaction promotion
 
-Human review has positively supported the stage-zone grammar, canvas-dominant composition, compact/fold-away HUD, continuous spatial world, restrained ambient depth, viewport-aware stage orientation, and compact right-edge project-map controls as current candidate directions.
+Human review strongly supports the current canvas-dominant spatial direction, restrained ambient world, viewport-aware orientation, compact/fold-away HUD, searchable Jump navigation, and compact right-edge map controls as useful current patterns. The final visual identity, stage taxonomy/widths, semantic zoom, auto-layout, minimap, graph/canvas/gesture library, public route contract, permanent stage-ruler treatment, permanent tool-rail styling, exact ambient styling, and canonical screenshot baseline remain intentionally unfrozen.
 
-The final visual identity, stage taxonomy, graph/canvas or gesture library, auto-layout algorithm, semantic-zoom behavior, geometric/pinch tuning, public route contract, permanent stage-ruler treatment, permanent vertical tool-rail design, exact ambient styling, and canonical screenshot baseline remain intentionally unfrozen pending the Specification 007 v0.6 human/hardware product gate and later deliberate promotion decision.
+Specification 008 should be treated as the interaction baseline while these product-design questions evolve.
 
 ---
 
@@ -457,7 +371,7 @@ The final visual identity, stage taxonomy, graph/canvas or gesture library, auto
 
 **Status:** Open; V0 provides strong cost evidence
 
-V0 demonstrated that explicit machinery can consume more than twice the token budget without material reliability gain. Optional depth should therefore depend on expected value, uncertainty, risk, project intent, and resource constraints while mandatory validity obligations remain mandatory.
+V0 demonstrated that explicit machinery can consume more than twice the token budget without material reliability gain. Optional depth should depend on expected value, uncertainty, risk, project intent, and resource constraints while mandatory validity obligations remain mandatory.
 
 ### Q-014. How should the system decide when experimentation can stop?
 
@@ -475,9 +389,7 @@ Use multidimensional project characterization rather than one exclusive project-
 
 **Status:** Substantially advanced; broader V1 evaluation remains open
 
-Prototype V0 completed a preregistered held-out falsification experiment with deterministic assertions, blinded semantic judging, process/outcome separation, strong controls, and resource accounting.
-
-V1 now also requires product/human evaluation, retrieval/horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, and eventually project replay across heterogeneous real projects.
+V0 completed a preregistered held-out falsification experiment. V1 additionally requires product/human evaluation, retrieval/horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, and eventually project replay across heterogeneous real projects.
 
 ### Q-017. How should real projects become regression tests?
 
@@ -489,9 +401,7 @@ Foundation 017 proposes project replay from original starting inputs. Long-term 
 
 **Status:** Substantially refined, not resolved
 
-Foundation 019 provides interpretable candidate dimensions such as validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference.
-
-No final ranking/scoring mechanism exists.
+Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference. No final ranking/scoring mechanism exists.
 
 ### Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
@@ -507,13 +417,13 @@ The V0 synthetic churn benchmark and held-out protocol are completed historical 
 
 **Status:** Narrow V0 mechanism answered; general product initialization remains open
 
-V0 exposed a brief, stale README, datasets, and inherited baseline to test semantic correction. Foundation 017 and the Cockpit research now provide a richer product direction, but the production initialization workflow remains unimplemented.
+V0 exposed a brief, stale README, datasets, and inherited baseline to test semantic correction. Foundation 017 and Cockpit work provide richer direction, but production initialization remains unimplemented.
 
 ### Q-040. What is the minimum end-to-end prototype that can falsify the core architecture?
 
 **Status:** Answered for Prototype V0 and empirically resolved
 
-Prototype V0 was implemented, run, judged, and received a strong falsification signal for the current P0 design. The question is closed for V0; future prototypes require new contracts rather than extending this one indefinitely.
+Prototype V0 was implemented, run, judged, and strongly falsified the current P0 design. Future prototypes require new contracts rather than extending V0 indefinitely.
 
 ### Q-041. How should Prototype V0 be represented and implemented concretely?
 
@@ -525,7 +435,7 @@ Foundation 011 and the completed `prototype_v0/` implementation define the froze
 
 **Status:** Answered for Prototype V0
 
-The development calibration and Foundation 012 preregistration are complete historical experiment design evidence.
+The development calibration and Foundation 012 preregistration are complete historical experiment-design evidence.
 
 ---
 
@@ -535,7 +445,7 @@ The development calibration and Foundation 012 preregistration are complete hist
 
 **Status:** Open and explicitly deferred
 
-Raw transcripts may provide valuable provenance but also contain duplication, sensitive conversational context, and obsolete reasoning. The current continuity design must not depend on them.
+Raw transcripts may provide valuable provenance but also contain duplication, sensitive conversational context, and obsolete reasoning. Current continuity must not depend on them.
 
 ### Q-024. How much knowledge capture should be automated?
 
@@ -547,14 +457,14 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 
 ## Current highest-value unresolved questions
 
-The questions most directly attached to active V1 execution are:
+The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-050  complete the real-browser/hardware human product gate on Specification 007 v0.6
 Q-048  close the governed PostgreSQL knowledge round-trip honestly
-Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
 Q-046  execute the agent-runtime bakeoff
-Q-051  determine which frontend/chart choices deserve formal promotion
+Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
+Q-051  determine which frontend/chart choices deserve final stack promotion
+Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-These are bounded by existing specifications and evidence gates rather than being open-ended technology-selection exercises.
+Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions for V1 because Specification 008 has been promoted after Checkpoint 126.
