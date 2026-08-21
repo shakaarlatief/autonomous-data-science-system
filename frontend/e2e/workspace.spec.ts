@@ -94,7 +94,7 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(page.getByRole('region', { name: 'Living data science project map' })).toBeVisible()
   })
 
-  test('cockpit exposes a larger two-dimensional project space with keyboard recovery and searchable jumps', async ({ page }) => {
+  test('cockpit exposes a larger two-dimensional project space with recovery in every direction and searchable jumps', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 })
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.goto('/cockpit')
@@ -102,24 +102,37 @@ test.describe('ADS V1 frontend spike', () => {
     const viewport = page.getByRole('region', { name: 'Living data science project map' })
     await expect(viewport).toBeVisible()
 
-    const extent = await viewport.evaluate((element) => ({
+    const initial = await viewport.evaluate((element) => ({
+      left: element.scrollLeft,
+      top: element.scrollTop,
       clientWidth: element.clientWidth,
       clientHeight: element.clientHeight,
       scrollWidth: element.scrollWidth,
       scrollHeight: element.scrollHeight,
     }))
-    expect(extent.scrollWidth).toBeGreaterThan(extent.clientWidth)
-    expect(extent.scrollHeight).toBeGreaterThan(extent.clientHeight)
+    expect(initial.scrollWidth).toBeGreaterThan(initial.clientWidth)
+    expect(initial.scrollHeight).toBeGreaterThan(initial.clientHeight)
+    expect(initial.left).toBeGreaterThan(0)
+    expect(initial.top).toBeGreaterThan(0)
 
     await viewport.focus()
     await viewport.press('ArrowRight')
     await viewport.press('ArrowDown')
-    await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0)
-    await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBeGreaterThan(0)
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBeGreaterThan(initial.left)
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBeGreaterThan(initial.top)
 
     await page.getByRole('button', { name: 'Reset project view' }).click()
-    await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBe(0)
-    await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBe(0)
+    const reset = await expect.poll(async () => viewport.evaluate((element) => ({ left: element.scrollLeft, top: element.scrollTop }))).toEqual({
+      left: initial.left,
+      top: initial.top,
+    })
+    void reset
+
+    await viewport.focus()
+    await viewport.press('ArrowLeft')
+    await viewport.press('ArrowUp')
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollLeft)).toBeLessThan(initial.left)
+    await expect.poll(async () => viewport.evaluate((element) => element.scrollTop)).toBeLessThan(initial.top)
 
     await page.getByRole('button', { name: 'Jump to project work' }).click()
     await expect(page.getByRole('button', { name: 'Investigation', exact: true })).toBeVisible()
@@ -142,22 +155,78 @@ test.describe('ADS V1 frontend spike', () => {
     await viewport.press('+')
     await expect(page.getByRole('button', { name: /Zoom level 100 percent/i })).toBeVisible()
 
+    await viewport.evaluate((element) => element.scrollTo({ left: 760, top: 650 }))
+    const beforePinch = await viewport.evaluate((element) => ({ left: element.scrollLeft, top: element.scrollTop }))
     await viewport.dispatchEvent('wheel', { ctrlKey: true, deltaY: 80, clientX: 500, clientY: 300 })
     await expect(page.getByRole('button', { name: /Zoom level 100 percent/i })).toHaveCount(0)
+    const afterPinch = await viewport.evaluate((element) => ({ left: element.scrollLeft, top: element.scrollTop }))
+    expect(afterPinch.left).not.toBe(420)
+    expect(afterPinch.top).not.toBe(420)
+    expect(Math.abs(afterPinch.left - beforePinch.left)).toBeLessThan(300)
+    expect(Math.abs(afterPinch.top - beforePinch.top)).toBeLessThan(300)
 
     await page.getByRole('button', { name: 'Fit project to viewport' }).click()
     const fittedLabel = await page.locator('.cockpit-zoom-level').textContent()
     expect(fittedLabel).not.toBe('100%')
   })
 
-  test('cockpit project details, system focus and primary HUD are explicitly collapsible', async ({ page }) => {
+  test('fully zoomed-out project plane has symmetric pan reserve and readable stage orientation', async ({ page }) => {
+    await page.setViewportSize({ width: 1920, height: 1000 })
     await page.goto('/cockpit')
+
+    const viewport = page.getByRole('region', { name: 'Living data science project map' })
+    for (let index = 0; index < 6; index += 1) {
+      await page.getByRole('button', { name: 'Zoom out project map' }).click()
+    }
+    await expect(page.getByRole('button', { name: /Zoom level 45 percent/i })).toBeVisible()
+
+    await viewport.evaluate((element) => {
+      element.scrollTo({
+        left: (element.scrollWidth - element.clientWidth) / 2,
+        top: (element.scrollHeight - element.clientHeight) / 2,
+      })
+    })
+
+    const balance = await viewport.evaluate((element) => {
+      const canvas = element.querySelector<HTMLElement>('.project-canvas')
+      if (!canvas) return null
+      const viewportRect = element.getBoundingClientRect()
+      const canvasRect = canvas.getBoundingClientRect()
+      return {
+        left: canvasRect.left - viewportRect.left,
+        right: viewportRect.right - canvasRect.right,
+        top: canvasRect.top - viewportRect.top,
+        bottom: viewportRect.bottom - canvasRect.bottom,
+      }
+    })
+    expect(balance).not.toBeNull()
+    expect(Math.abs((balance?.left ?? 0) - (balance?.right ?? 0))).toBeLessThan(6)
+    expect(Math.abs((balance?.top ?? 0) - (balance?.bottom ?? 0))).toBeLessThan(6)
+
+    const stageBox = await page.getByRole('button', { name: 'Data & exploration', exact: true }).boundingBox()
+    expect(stageBox).not.toBeNull()
+    expect(stageBox?.height ?? 0).toBeGreaterThan(32)
+  })
+
+  test('cockpit project details, system focus, map controls and primary HUD are explicitly collapsible', async ({ page }) => {
+    await page.goto('/cockpit')
+
+    const productBox = await page.locator('.cockpit-product-name').boundingBox()
+    const projectBox = await page.locator('.cockpit-project-name').boundingBox()
+    expect(productBox).not.toBeNull()
+    expect(projectBox).not.toBeNull()
+    expect(Math.abs((productBox?.y ?? 0) - (projectBox?.y ?? 0))).toBeLessThan(4)
 
     const details = page.getByRole('region', { name: 'Expanded project details' })
     await expect(details).toHaveCount(0)
     await page.getByRole('button', { name: 'Details' }).click()
     await expect(details).toBeVisible()
     await expect(details).toContainText('deployment-valid evidence')
+    const detailsBox = await details.boundingBox()
+    const viewportBox = await page.getByRole('region', { name: 'Living data science project map' }).boundingBox()
+    expect(detailsBox).not.toBeNull()
+    expect(viewportBox).not.toBeNull()
+    expect((detailsBox?.y ?? 999) - (viewportBox?.y ?? 0)).toBeLessThan(70)
     await page.getByRole('button', { name: 'Details' }).click()
     await expect(details).toHaveCount(0)
 
@@ -167,6 +236,12 @@ test.describe('ADS V1 frontend spike', () => {
     await expect(systemFocus).toBeVisible()
     await page.getByRole('button', { name: 'Close system focus' }).click()
     await expect(systemFocus).toHaveCount(0)
+
+    await page.getByRole('button', { name: 'Hide project map controls' }).click()
+    await expect(page.getByRole('button', { name: 'Show project map controls' })).toBeVisible()
+    await expect(page.getByRole('group', { name: 'Project map controls' })).toHaveCount(0)
+    await page.getByRole('button', { name: 'Show project map controls' }).click()
+    await expect(page.getByRole('group', { name: 'Project map controls' })).toBeVisible()
 
     await page.getByRole('button', { name: 'Hide Cockpit HUD' }).click()
     await expect(page.getByRole('button', { name: 'Show Cockpit HUD' })).toBeVisible()
