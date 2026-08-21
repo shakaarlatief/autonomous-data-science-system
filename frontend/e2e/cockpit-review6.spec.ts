@@ -73,7 +73,7 @@ test.describe('ADS Cockpit sixth human-review repair iteration', () => {
     expect(edgeStyles[0].textAlign).toBe('left')
   })
 
-  test('trackpad-style pinch zoom uses small anchored frame-coalesced progression', async ({ page }) => {
+  test('trackpad-style pinch zoom uses faster anchored frame-coalesced progression', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/cockpit')
 
@@ -96,7 +96,7 @@ test.describe('ADS Cockpit sixth human-review repair iteration', () => {
 
     await expect.poll(async () => Number.parseFloat(await canvas.evaluate((element) => element.style.zoom || '1'))).toBeGreaterThan(1)
     const firstZoom = Number.parseFloat(await canvas.evaluate((element) => element.style.zoom || '1'))
-    expect(firstZoom).toBeLessThanOrEqual(1.04)
+    expect(firstZoom).toBeLessThanOrEqual(1.06)
 
     const nodeAfter = await dataNode.boundingBox()
     expect(nodeAfter).not.toBeNull()
@@ -116,9 +116,9 @@ test.describe('ADS Cockpit sixth human-review repair iteration', () => {
       await page.waitForTimeout(35)
     }
 
-    await expect.poll(async () => Number.parseFloat(await canvas.evaluate((element) => element.style.zoom || '1'))).toBeGreaterThan(firstZoom + 0.08)
+    await expect.poll(async () => Number.parseFloat(await canvas.evaluate((element) => element.style.zoom || '1'))).toBeGreaterThan(firstZoom + 0.12)
     const finalZoom = Number.parseFloat(await canvas.evaluate((element) => element.style.zoom || '1'))
-    expect(finalZoom).toBeLessThan(1.25)
+    expect(finalZoom).toBeLessThan(1.35)
 
     const nodeFinal = await dataNode.boundingBox()
     expect(nodeFinal).not.toBeNull()
@@ -128,8 +128,8 @@ test.describe('ADS Cockpit sixth human-review repair iteration', () => {
     expect(Math.abs(finalCenterY - anchorY)).toBeLessThan(18)
   })
 
-  test('Jump to palette stays above the composer and keeps its lowest results selectable', async ({ page }) => {
-    await page.setViewportSize({ width: 1024, height: 768 })
+  test('Jump to palette re-clamps above the composer when leaving a tall/fullscreen-like viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 1600, height: 900 })
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.goto('/cockpit')
 
@@ -138,10 +138,13 @@ test.describe('ADS Cockpit sixth human-review repair iteration', () => {
     const composer = page.getByRole('textbox', { name: 'Ask or direct the system' }).locator('xpath=ancestor::form')
     await expect(palette).toBeVisible()
 
-    const [paletteBox, composerBox] = await Promise.all([palette.boundingBox(), composer.boundingBox()])
-    expect(paletteBox).not.toBeNull()
-    expect(composerBox).not.toBeNull()
-    expect((paletteBox?.y ?? 0) + (paletteBox?.height ?? 0)).toBeLessThan((composerBox?.y ?? 0) - 8)
+    await page.setViewportSize({ width: 1600, height: 720 })
+
+    await expect.poll(async () => {
+      const [paletteBox, composerBox] = await Promise.all([palette.boundingBox(), composer.boundingBox()])
+      if (!paletteBox || !composerBox) return -999
+      return composerBox.y - (paletteBox.y + paletteBox.height)
+    }).toBeGreaterThanOrEqual(8)
 
     const results = page.locator('.cockpit-jump-results')
     await results.evaluate((element) => element.scrollTo({ top: element.scrollHeight }))
