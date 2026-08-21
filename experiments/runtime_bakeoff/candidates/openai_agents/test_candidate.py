@@ -4,12 +4,15 @@ import asyncio
 import json
 from pathlib import Path
 
-from agents.testing import ScriptedModel, assistant_message, function_call
-
 from experiments.runtime_bakeoff.candidates.openai_agents.adapter import (
     OPENAI_AGENTS_EXPECTED_VERSION,
     OpenAIAgentsCandidate,
     candidate_import_boundary_violations,
+)
+from experiments.runtime_bakeoff.candidates.openai_agents.release_model import (
+    ReleaseScriptedModel,
+    assistant_message,
+    function_call,
 )
 from experiments.runtime_bakeoff.fixtures import REFERENCE_FIXTURE, representative_workload
 from experiments.runtime_bakeoff.harness import (
@@ -21,8 +24,8 @@ from experiments.runtime_bakeoff.harness import (
 )
 
 
-def _initial_model() -> ScriptedModel:
-    return ScriptedModel(
+def _initial_model() -> ReleaseScriptedModel:
+    return ReleaseScriptedModel(
         [
             [
                 function_call(
@@ -87,8 +90,8 @@ def _recommendation_payload(workload, *, approved: bool) -> dict[str, object]:
     }
 
 
-def _final_model(workload, *, approved: bool = True) -> ScriptedModel:
-    return ScriptedModel(
+def _final_model(workload, *, approved: bool = True) -> ReleaseScriptedModel:
+    return ReleaseScriptedModel(
         [
             [
                 assistant_message(
@@ -131,12 +134,14 @@ def test_openai_agents_core_gate_interrupts_before_authoritative_side_effect() -
     assert len(model.calls) == 2
     model.assert_complete()
 
-    first_input = json.dumps(model.first_call.input, sort_keys=True, default=str)
+    assert model.first_call is not None
+    first_input = json.dumps(model.first_call["input"], sort_keys=True, default=str)
     assert workload.context_pack.semantic_digest() in first_input
     for revision in workload.context_pack.revisions:
         assert revision.revision_id in first_input
     assert workload.project.facts["prediction_moment"] not in first_input
     assert workload.project.facts["production_missingness"] not in first_input
+    assert model.first_call["has_output_schema"] is True
 
 
 def test_openai_agents_run_state_resumes_after_process_boundary() -> None:
