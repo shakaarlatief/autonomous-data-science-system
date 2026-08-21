@@ -67,20 +67,66 @@ smooth focus into shared Data and EDA workspaces
 Production Missingness focused investigation
 URL-addressable focus and browser Back restoration
 reduced-motion-safe transitions
+
 large two-dimensional project viewport
-horizontal + vertical navigation
-keyboard panning and recovery
-Reset and jump navigation
-compact/expandable project HUD
-collapsible System Focus context drawer
-collision-safe composer/map geometry
+native horizontal + vertical scroll/trackpad navigation
+Arrow / Shift+Arrow / Home keyboard recovery
+
+geometric project zoom
+    zoom out / percentage / zoom in
+    100% reset
+    fit project
+    + / - / 0 / F keyboard equivalents
+    trackpad-style pinch zoom around the gesture anchor
+
+scalable project navigation
+    Jump to quick semantic destinations
+        Active work
+        Blocker
+        Investigation
+        Evaluation
+    searchable meaningful project work
+
+canvas-dominant immersive chrome
+    one reduced top HUD
+    explicit HUD hide/show
+    stage strip directly attached to project space
+    floating project-map toolbar
+    floating project details
+    floating System Focus
+    composer floating over continuous project canvas
+    lower/right recovery margin so overlays do not trap work
+
 explicit browser fullscreen control with fallback
 ```
 
-The current immersive-scale implementation and automated gate are preserved in:
+Current human-review and implementation evidence:
 
 ```text
-docs/checkpoints/121_immersive_scale_cockpit_slice_automated_gate_passed.md
+docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
+```
+
+Validated refinement head:
+
+```text
+e500eb45c1de59f24b1531b890f55d2ec3bfffc5
+```
+
+Validation:
+
+```text
+Ubuntu build + unit tests
+    PASS
+
+Windows build + unit tests
+    PASS
+
+Chromium interaction + accessibility
+    PASS
+
+controlled direct-project visual regression
+    PASS
 ```
 
 ## Current non-decisions
@@ -96,6 +142,10 @@ graph/canvas library
 auto-layout system
 minimap
 semantic-zoom implementation
+geometric zoom range
+pan/zoom persistence contract
+project-search backend
+pointer-proximity HUD reveal
 Cockpit stage taxonomy
 Cockpit URL contract
 Cockpit visual identity
@@ -103,4 +153,4 @@ Cockpit screenshot baseline
 desktop wrapper
 ```
 
-The immediate next step is real-browser human product review of the current `/cockpit` implementation. The Cockpit visual baseline and deeper canvas/semantic-zoom architecture must not be frozen before that review.
+The immediate next step is real-browser human product review of the current Specification 007 candidate v0.3 `/cockpit` implementation. The Cockpit visual baseline and deeper canvas/semantic-zoom architecture must not be frozen before that review.
