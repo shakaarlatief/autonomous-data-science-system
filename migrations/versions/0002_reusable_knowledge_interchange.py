@@ -187,7 +187,7 @@ def upgrade() -> None:
 
     op.create_table(
         "kg_rule_provenance",
-        sa.Column("rule_spec_id", uuid_type, primary_key_key=True),
+        sa.Column("rule_spec_id", uuid_type, primary_key=True),
         sa.Column("source_id", sa.Text(), primary_key=True),
         sa.ForeignKeyConstraint(
             ["rule_spec_id"],
