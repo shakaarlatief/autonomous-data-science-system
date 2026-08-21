@@ -1,11 +1,11 @@
 # Specification 007: V1 Unified Project Cockpit Interaction Spike
 
-**Date:** 2026-08-20  
-**Status:** Candidate V1 frontend interaction specification v0.2 after first and second human review; executable interaction gate passed, immersive-scale human gate remains open  
-**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, immersive chrome, and true fullscreen described in Research 002 through Research 004 and Checkpoints 117 through 119  
-**Design session:** 02  
+**Date:** 2026-08-21  
+**Status:** Candidate V1 frontend interaction specification v0.3 after third human review; revised executable interaction gate passed, revised human visual/product gate remains open  
+**Scope:** Bounded implementation spike for the immersive Project Cockpit, spatial focus interaction, scalable viewport navigation, geometric zoom, scalable project jump/search navigation, canvas-dominant chrome, true fullscreen, and collision-safe floating surfaces described in Research 002 through Research 005 and Checkpoints 117 through 121  
+**Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
-**Session title:** 02 - Methodological Brain & Knowledge Units
+**Session title:** 03 - Project Cockpit & V1 Integration
 
 ## 1. Purpose
 
@@ -16,6 +16,8 @@ The spike must answer whether ADS can provide a professional single-workspace ex
 ```text
 see the project as a living analytical process
     -> navigate a project larger than the current viewport
+    -> zoom and recover project context efficiently
+    -> jump/search to meaningful project work
     -> select a meaningful work unit
     -> smoothly enter a focused analytical workspace
     -> perform real Data / EDA work using the same functional components as direct project views
@@ -112,7 +114,7 @@ This spike must not create one enormous always-mounted project graph containing 
 
 ### CPK-12: Accessibility and reduced motion
 
-Core map work units, focus entry/exit, composer interactions, viewport navigation, and fullscreen controls must be keyboard reachable. Focus transitions must remain understandable when reduced motion is requested. The experience must preserve semantic headings/landmarks and must not rely on motion alone for state meaning.
+Core map work units, focus entry/exit, composer interactions, viewport navigation, zoom, project jump/search, HUD controls, and fullscreen controls must be keyboard reachable. Focus transitions must remain understandable when reduced motion is requested. The experience must preserve semantic headings/landmarks and must not rely on motion alone for state meaning.
 
 ### CPK-13: Responsive professional desktop behavior
 
@@ -195,6 +197,88 @@ The map viewport must reserve appropriate safe insets or be pannable beyond over
 
 A user must always be able to bring a work unit into an unobstructed working area.
 
+### CPK-21: Scalable project jump and search navigation
+
+Project navigation must not scale by adding one permanent toolbar button for every future work type or destination.
+
+The Cockpit must support a bounded `Jump to` interaction that can combine:
+
+```text
+quick semantic destinations
+    Active work
+    Blocker
+    Investigation
+    Evaluation
+    ...
+
+searchable meaningful project work
+    title/type search
+    select result
+    spatially move to result
+```
+
+The current representative project must expose `Investigation` as a quick destination because Production missingness is an active Investigation.
+
+Smooth spatial relocation is preferred when reduced motion is not requested. The interaction must complete in a known unobstructed region rather than merely making the target barely visible at an edge.
+
+### CPK-22: Geometric zoom with native laptop interaction
+
+The Cockpit must support bounded geometric zoom in addition to two-dimensional panning.
+
+Required interaction paths:
+
+```text
+explicit zoom out
+current zoom indication
+explicit zoom in
+reset to 100%
+fit project
+keyboard zoom/recovery equivalents
+trackpad pinch zoom
+```
+
+Two-finger trackpad movement should continue to pan project space naturally.
+
+Zoom should preserve the user's approximate visual anchor where practical. The implementation may use browser-native wheel/pinch event behavior during the spike; this requirement does not by itself justify a canvas-library dependency.
+
+Geometric zoom is not the final semantic-zoom system. It must coexist with the future semantic-scale architecture required by CPK-17.
+
+### CPK-23: Canvas-dominant composition
+
+The project operating surface should remain perceptually dominant throughout the Cockpit.
+
+The composer, project-map controls, project details, and system context should behave as bounded floating or overlay surfaces where appropriate rather than creating large permanent opaque application bands.
+
+In particular:
+
+```text
+project canvas should visually continue behind/around the composer
+composer should not require a full-width opaque footer
+project map controls should not require a second full-width header row
+empty space between control clusters should remain visually part of the Cockpit where possible
+```
+
+Translucency and blur may be used as restrained material treatment, but the product must avoid decorative glassmorphism or weak contrast.
+
+Collision safety from CPK-20 remains mandatory even when the canvas visually continues beneath floating surfaces.
+
+### CPK-24: Fold-away primary HUD
+
+The compact primary Cockpit HUD must itself be explicitly hideable when the user wants maximum operating space.
+
+Required behavior:
+
+```text
+compact HUD
+    -> explicit hide action
+
+hidden HUD
+    -> project canvas reclaims the vertical space
+    -> small explicit restore affordance remains available
+```
+
+Pointer-proximity reveal may later supplement this behavior, but hover must not become the only way to recover the HUD.
+
 ---
 
 ## 3. Representative scenario
@@ -225,7 +309,7 @@ Production missingness investigation
 
 The Data and EDA targets must use the existing specialist workspace components rather than a second Cockpit-specific implementation.
 
-The scalable-viewport revision should also prove that later-stage work can be located beyond the initial viewport without reducing the project to a single-screen diagram.
+The scalable-viewport revision should also prove that later-stage and lower work can be located beyond the initial viewport without reducing the project to a single-screen diagram.
 
 ---
 
@@ -235,13 +319,16 @@ Preferred internal architecture:
 
 ```text
 CockpitPage
-    CompactCockpitHud
-    StageViewportHeader
+    CompactFoldableCockpitHud
     ProjectMapSurface
+        StageViewportHeader
+        GeometricZoomController
+        ProjectJumpSearch
     FocusHost
         DataPage reuse
         EdaPage reuse
         MissingnessFocus spike
+    FloatingProjectControls
     FloatingContextSurface
     SystemComposer
 ```
@@ -265,6 +352,8 @@ complex workspace permanently nested inside scaled node
 
 The map surface must be architected as a viewport over project space rather than a static diagram whose entire logical extent must fit in one browser frame.
 
+The implementation should prefer scalable navigation primitives directly when their stronger shape is already clear instead of knowingly proliferating disposable one-off toolbar controls.
+
 ---
 
 ## 5. Route-state contract for the spike
@@ -286,7 +375,7 @@ view=distribution|trend
 
 The exact public URL contract remains provisional. The spike must prove that this state model supports Back/Forward and refresh without visible page-loading semantics.
 
-Viewport position/zoom should not be persisted into project/domain state. Whether it belongs in URL/session UI state remains an implementation question.
+Viewport position/zoom should not be persisted into project/domain state. Whether pan/zoom/HUD state belongs in URL, browser-session UI state, or transient local UI state remains an implementation question.
 
 ---
 
@@ -306,13 +395,18 @@ CPK-T08  browser Back restores prior Cockpit focus state
 CPK-T09  core Cockpit has no serious/critical automated accessibility violations
 CPK-T10  normal direct /data and /eda routes continue to work
 CPK-T11  later/right and lower work remains reachable through viewport navigation
-CPK-T12  docked composer/context surfaces do not trap underlying work
+CPK-T12  composer/context surfaces do not trap underlying work
 CPK-T13  compact/expanded project chrome preserves usable viewport
 CPK-T14  fullscreen control enters/exits when supported and degrades safely otherwise
 CPK-T15  keyboard navigation can recover meaningful map locations without pointer-only panning
+CPK-T16  scalable Jump to navigation exposes Investigation and searchable project work
+CPK-T17  zoom controls, keyboard zoom, 100% reset, and fit-project behavior operate correctly
+CPK-T18  trackpad-style pinch input changes geometric zoom while ordinary two-axis movement remains available
+CPK-T19  project canvas visually continues behind the floating composer while lower work can still be brought fully clear of it
+CPK-T20  primary Cockpit HUD can explicitly hide and restore without removing access to project navigation
 ```
 
-Visual regression should not freeze the exploratory Cockpit design before human review. Screenshot artifacts may be generated for review, but a canonical baseline should be promoted only after the visual concept is accepted.
+Visual regression should not freeze the exploratory Cockpit design before human review. Screenshot artifacts may be generated for review, but a canonical Cockpit baseline should be promoted only after the visual concept is accepted.
 
 ---
 
@@ -327,6 +421,9 @@ final stage taxonomy
 final semantic-zoom algorithm
 final minimap/navigation implementation
 multi-level arbitrary/infinite spatial nesting
+final zoom range or zoom persistence contract
+production project-search backend
+pointer-proximity HUD reveal
 production agent conversation backend
 production streaming interaction protocol
 full Validation/Features/Models/Evaluation workspaces
@@ -344,9 +441,12 @@ Specification 007 may be promoted only after:
 1. the executable interaction gate passes;
 2. direct Data/EDA views remain intact;
 3. the focus architecture proves technically clean rather than duplicative;
-4. the user reviews the Cockpit visually and confirms that the interaction direction matches the intended product experience;
+4. the user reviews the revised Cockpit visually and confirms that the interaction direction matches the intended product experience;
 5. large-project horizontal/vertical navigation is demonstrated rather than merely described;
 6. floating surfaces no longer make lower/right project work inaccessible;
-7. immersive header/chrome behavior is accepted through human review;
+7. compact/fold-away HUD behavior is accepted through human review;
 8. true fullscreen behavior is tested with graceful fallback;
-9. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
+9. geometric zoom, fit/recovery, and trackpad pinch behavior are usable in a real browser;
+10. scalable Jump to/search navigation is preferable to dedicated-control proliferation in real use;
+11. the canvas-dominant composer/control composition is visually accepted;
+12. significant scalability/accessibility defects discovered by the spike are resolved or explicitly incorporated into the next specification.
