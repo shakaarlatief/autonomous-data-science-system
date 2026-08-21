@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-21  
-**Current checkpoint:** 122  
+**Current checkpoint:** 124  
 **Active development branch:** `v1-frontend-spike`
 
 ## Start here
@@ -70,7 +70,7 @@ professional frontend
 unified Project Cockpit
 ```
 
-The immediate product priority is the **Specification 007 candidate v0.3 human product gate** after the third Cockpit review and passing zoom/canvas-dominance/navigation refinement gate recorded in Checkpoint 122.
+The immediate product priority is the **Specification 007 candidate v0.5 human product gate** after the fifth Cockpit review and passing continuous-grid-world/stage-ruler/vertical-tool-rail implementation recorded in Checkpoint 124.
 
 ---
 
@@ -497,14 +497,12 @@ true browser fullscreen
 
 ### Third human review: canvas dominance, zoom, and scalable navigation
 
-Current design evidence:
-
 ```text
 docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
 docs/checkpoints/122_third_cockpit_review_zoom_canvas_dominance_and_scalable_navigation_gate_passed.md
 ```
 
-The third real-browser review accepted the smooth spatial jump behavior and refined the product toward:
+Established:
 
 ```text
 continuous canvas dominance
@@ -519,75 +517,109 @@ explicit HUD fold-away/reveal
 restrained translucency rather than decorative glassmorphism
 ```
 
-Current interaction contract:
+### Fourth human review: balanced world and stronger orientation
 
 ```text
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/checkpoints/123_fourth_cockpit_review_balanced_spatial_world_and_orientation_validated.md
+```
+
+Established:
+
+```text
+ProjectWorld distinct from ProjectCanvas
+minimum pan range even when project fits viewport
+symmetric project centering and recentering
+balanced internal side margins
+stronger stage orientation across zoom
+fold-away map-control cluster
+correct compact ADS/project identity
+higher Details placement
+positive human signal for restrained ambient grid depth
+```
+
+### Fifth human review: continuous grid world and viewport-aware stage ruler
+
+Current design evidence:
+
+```text
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
+docs/checkpoints/124_continuous_grid_world_stage_ruler_and_vertical_tool_rail_gate_passed.md
 docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
 ```
 
-Specification 007 is now **candidate v0.3**.
-
-Current implementation includes:
+The fifth review refines the spatial model to:
 
 ```text
-2260 x 1180 representative project plane
-Arrow / Shift+Arrow / Home movement
-zoom out / percent / zoom in
-100% zoom reset
-fit project
-+ / - / 0 / F keyboard controls
-trackpad-style pinch zoom
-Jump to quick destinations
-    Active work
-    Blocker
-    Investigation
-    Evaluation
-searchable project work
-floating map toolbar
-floating project details
-floating System Focus
-composer over continuous canvas
-fold-away top HUD
-true fullscreen
-shared Data / EDA / Missingness deep work
+FiniteNavigableGridWorld
+    continuous grid through pan reserve
+    restrained ambient depth
+    subtle finite boundary cue
+
+SemanticProjectPlane
+    stage semantics remain stable
+    work units + connectors
+    neutral reserve does not become stage space
+
+ViewportStageRuler
+    vertically pinned to viewport
+    horizontally tracks semantic project plane
+    readable independently of ordinary node-detail scale
+
+VerticalMapToolRail
+    compact right-edge spatial controls
+    fold / restore
+    Jump/search opens into available workspace
 ```
 
-Final automated validation for the refinement:
+Specification 007 is now **candidate v0.5**.
+
+Current validated implementation head:
 
 ```text
-validated head e500eb45c1de59f24b1531b890f55d2ec3bfffc5
-PR workflow run 105 / 32453067031
-
-Ubuntu build + unit tests        PASS
-Windows build + unit tests       PASS
-Chromium interaction/accessibility PASS
-controlled direct-view visual regression PASS
+dcc265cedb86c7a3917db62667db45cca49cdcd8
 ```
 
-No final canvas library, auto-layout, semantic zoom, minimap, project-search backend, zoom persistence contract, final stage taxonomy, or Cockpit visual baseline is selected.
+Final automated validation:
+
+```text
+PR #4
+V1 frontend spike run 130 / 32470701290
+
+Ubuntu build + unit tests                 PASS
+Windows build + unit tests                PASS
+Chromium interaction/accessibility        PASS
+controlled direct-view visual regression  PASS
+```
+
+The first fifth-review browser gate failed for a real responsive inheritance defect: an old horizontal-toolbar rule moved the new vertical rail to the left at 1024px, causing the left-opening Jump/search popover to render outside the viewport. The rule was corrected rather than weakening the searchable-navigation gate.
+
+No final canvas library, auto-layout, semantic zoom, minimap, infinite-canvas semantics, final finite-world extent algorithm, project-search backend, zoom persistence contract, final stage taxonomy, final stage-ruler treatment, permanent vertical tool rail, or Cockpit visual baseline is selected.
 
 ---
 
 ## Current exact frontend continuation
 
-The immediate action is a **real-browser human product review of Specification 007 v0.3**.
+The immediate action is a **real-browser human product review of Specification 007 v0.5**.
 
 Review:
 
 ```text
-canvas dominance
-compact/fold-away top HUD
-floating map toolbar
-stage strip
-Jump to quick semantics + search
+continuous grid world at 45% zoom
+pan to all four finite boundaries
+subtle boundary cue
+viewport-aware stage ruler during vertical movement
+stage-ruler alignment during horizontal movement
+neutral grid reserve versus semantic stage extent
+vertical map-tool rail versus prior horizontal bar
+rail fold / restore
+Details / zoom / fit / reset / Jump / search / System Focus
 2D trackpad panning
 trackpad pinch zoom
-explicit zoom / fit / reset
-floating System Focus
 floating composer integration
-lower/right recoverability
 keyboard navigation
 fullscreen
+ambient grid depth
 professional visual hierarchy
 ```
 
@@ -616,7 +648,7 @@ Do not choose an embedding model, reranker, ANN service, or vector database from
 ## Current cross-track priorities
 
 ```text
-A. Human product gate on Specification 007 v0.3 Cockpit refinement
+A. Human product gate on Specification 007 v0.5 Cockpit refinement
 B. Governed PostgreSQL knowledge-roundtrip closure
 C. Specification 005 one-principal-reasoner runtime bakeoff
 D. Retrieval / MethodologicalHorizon benchmark once persistence seam is stable enough
@@ -636,4 +668,6 @@ D. Retrieval / MethodologicalHorizon benchmark once persistence seam is stable e
 120  unexpected-session continuity reconciliation completed
 121  immersive-scale Cockpit automated gate passed
 122  third Cockpit review + zoom/canvas-dominance/scalable-navigation gate passed
+123  fourth Cockpit review + balanced spatial world/orientation gate passed
+124  fifth Cockpit review + continuous grid world/stage-ruler/vertical-tool-rail gate passed
 ```
