@@ -91,12 +91,20 @@ def _recommendation_payload(workload, *, approved: bool) -> dict[str, object]:
 
 
 def _final_model(workload, *, approved: bool = True) -> ReleaseScriptedModel:
+    # OpenAI Agents SDK 0.19.4 wraps non-BaseModel structured output types
+    # beneath the public schema key ``response`` before validation and unwraps
+    # that key back to the requested dataclass after validation.
     return ReleaseScriptedModel(
         [
             [
                 assistant_message(
                     json.dumps(
-                        _recommendation_payload(workload, approved=approved),
+                        {
+                            "response": _recommendation_payload(
+                                workload,
+                                approved=approved,
+                            )
+                        },
                         sort_keys=True,
                     )
                 )
