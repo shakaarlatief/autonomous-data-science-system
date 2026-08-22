@@ -4,7 +4,7 @@ import asyncio
 from dataclasses import replace
 from pathlib import Path
 
-from experiments.runtime_bakeoff.candidates.langgraph.adapter import (
+from experiments.runtime_bakeoff.candidates.langgraph_runtime.adapter import (
     ApprovalReplayProbe,
     DelayedLangGraphReasoner,
     DeterministicLangGraphReasoner,

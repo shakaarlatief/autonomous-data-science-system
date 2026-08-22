@@ -80,5 +80,5 @@ jobs:
           --with langgraph-checkpoint-sqlite==3.1.1
           --with langchain-mcp-adapters==0.3.1
           python -m pytest
-          experiments/runtime_bakeoff/candidates/langgraph/test_candidate.py
+          experiments/runtime_bakeoff/candidates/langgraph_runtime/test_candidate.py
           -q

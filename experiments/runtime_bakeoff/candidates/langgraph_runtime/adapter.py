@@ -834,7 +834,7 @@ async def load_local_mcp_tool() -> tuple[Any, Any]:
                 "command": sys.executable,
                 "args": [
                     "-m",
-                    "experiments.runtime_bakeoff.candidates.langgraph.local_mcp_server",
+                    "experiments.runtime_bakeoff.candidates.langgraph_runtime.local_mcp_server",
                 ],
             }
         }
