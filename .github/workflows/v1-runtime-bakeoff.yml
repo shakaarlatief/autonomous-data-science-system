@@ -35,8 +35,8 @@ jobs:
       - name: Run existing Python test suite
         run: uv run --python 3.13 --locked python -m pytest -q
 
-  openai-agents-core:
-    name: OpenAI Agents core candidate (${{ matrix.os }})
+  openai-agents-candidate:
+    name: OpenAI Agents complete candidate (${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:
@@ -49,5 +49,10 @@ jobs:
         with:
           version: '0.12.5'
           enable-cache: true
-      - name: Run OpenAI Agents 0.19.4 deterministic core gate
-        run: uv run --python 3.13 --locked --with openai-agents==0.19.4 python -m pytest experiments/runtime_bakeoff/candidates/openai_agents/test_candidate.py -q
+      - name: Run OpenAI Agents 0.19.4 deterministic candidate gate
+        run: >-
+          uv run --python 3.13 --locked --with openai-agents==0.19.4
+          python -m pytest
+          experiments/runtime_bakeoff/candidates/openai_agents/test_candidate.py
+          experiments/runtime_bakeoff/candidates/openai_agents/test_advanced.py
+          -q
