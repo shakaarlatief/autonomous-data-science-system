@@ -37,4 +37,5 @@ jobs:
       - name: Run frozen exact semantic comparator
         run: uv run --python 3.13 --with fastembed==0.8.0 python experiments/retrieval/semantic_fastembed_comparator.py
       - name: Run existing V1 Python regression suite without semantic candidate dependency
+        if: always()
         run: uv run --python 3.13 --locked python -m pytest -q
