@@ -3,9 +3,9 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-22  
-**Current checkpoint:** 141  
-**Active development branch:** `v1-semantic-retrieval`  
-**Active promotion PR:** #10 into `v1-frontend-spike`
+**Current checkpoint:** 143  
+**Active development branch:** `v1-relevance-selective-context`  
+**Active promotion PR:** #11 into `v1-frontend-spike`
 
 ## Start here
 
@@ -16,7 +16,7 @@ README.md
     project-level overview and current stage
 
 docs/CURRENT_STATE.md
-    present state, active gates, exact next step
+    present state, active gate, exact next step
 
 docs/KNOWLEDGE_MAP.md
     routing layer
@@ -46,18 +46,19 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-active retrieval / MethodologicalHorizon promotion = v1-semantic-retrieval
-promoted V1 integration branch                    = v1-frontend-spike
+active selective-context promotion branch = v1-relevance-selective-context
+active PR                             = #11 -> v1-frontend-spike
+promoted V1 integration branch       = v1-frontend-spike
 main intentionally trails current V1 work
 ```
 
-The integration branch already contains the independently validated production lexical slice at:
+The integration branch contains the retrieval/MethodologicalHorizon promotion from PR #10 at:
 
 ```text
-73a78d00b8edf440e7fef8c5334b3edb52246d50
+9319ed9b0a401efa1be85c27a9ce4424a8ce5e1e
 ```
 
-PR #10 contains the later dense comparator, hybrid retrieval evidence, and first production-facing MethodologicalHorizon seam.
+PR #11 adds the first accepted bounded `MethodologicalContextPack` selection/serialization seam after a successful preregistered RH-C gate.
 
 ---
 
@@ -90,13 +91,21 @@ production retrieval / MethodologicalHorizon
     Specification 009 benchmark decomposition
     Checkpoint 135 production lexical PASS
     Checkpoint 137 dense-only comparator preserved
-    Checkpoint 139 RRF hybrid comparator PASS
+    Checkpoint 139 hybrid retrieval PASS
     Specification 012 v1.0
     Checkpoint 141 first explained MethodologicalHorizon PASS
 
+relevance / selective methodological context
+    Research 020
+    Specification 013 v1.0 accepted bounded seam
+    Checkpoint 142 frozen contract
+    Checkpoint 143 successful promotion
+    V1_SELECTIVE_CONTEXT_RESULT.md
+
 next
-    relevance / prioritization
-    RH-C selective context quality and cost
+    real reasoning vertical slice
+    selective context vs strong full-Horizon/simple control
+    one concrete model configuration through ReasoningRuntime
 ```
 
 ---
@@ -204,15 +213,16 @@ Relevance progression:
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Scaling path:
+Current scaling path:
 
 ```text
 large global knowledge universe
     -> high-recall project-specific retrieval/filtering
     -> bounded explained MethodologicalHorizon
     -> explicit applicability/context checks
-    -> flexible relevance/prioritization reasoning
-    -> selective task-specific LLM context
+    -> bounded task-specific relevance selection
+    -> selective MethodologicalContextPack
+    -> real reasoning
 ```
 
 Reusable representation includes:
@@ -231,7 +241,7 @@ ExecutionCapability
 
 ---
 
-## Accepted V1 persistence, tooling and interchange
+## Accepted V1 persistence, tooling, and interchange
 
 Primary decisions/specifications:
 
@@ -306,7 +316,7 @@ Primary promoted contract:
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Key product evidence:
+Key evidence:
 
 ```text
 docs/research/002_primary_project_cockpit_interface_concept.md
@@ -323,13 +333,13 @@ docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architectu
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
-The promoted interaction architecture remains current. Exact gesture constants, graph/canvas library, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, project-search backend and visual identity remain unfrozen.
+Specification 008 remains current. Exact gesture constants, graph/canvas library, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, project-search backend, frontend stack promotion, chart library, and final visual identity remain unfrozen.
 
 ---
 
 ## Production retrieval route
 
-### Benchmark and lexical baseline
+### Lexical baseline
 
 ```text
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
@@ -339,7 +349,7 @@ docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 ```
 
-Lexical result:
+Result:
 
 ```text
 RH-L Recall@3  1.00
@@ -347,7 +357,7 @@ RH-L MRR       1.00
 RH-S Recall@3  0.75
 ```
 
-### Exact dense semantic comparator
+### Exact dense comparator
 
 ```text
 docs/research/017_exact_semantic_retrieval_comparator_selection.md
@@ -356,16 +366,7 @@ docs/checkpoints/136_exact_semantic_retrieval_comparator_contract_frozen.md
 docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
 ```
 
-Dense result:
-
-```text
-RH-L Recall@3  1.00
-RH-L MRR       1.00
-RH-S Recall@3  0.75
-RH-S MRR       0.75
-```
-
-Dense fixes lexical RH-S01 `class-imbalance` but misses lexical RH-S04 `ecdf`. Dense-only does not replace lexical retrieval.
+Dense recovers `class-imbalance` but misses lexical `ecdf`; dense-only does not replace lexical retrieval.
 
 ### Hybrid comparator
 
@@ -390,17 +391,12 @@ RH-L MRR       1.00
 
 This is evidence for channel complementarity, not permanent selection of FastEmbed, BGE, RRF `k=60`, embeddings persistence, ANN, or a vector database.
 
-Production lexical implementation routes remain:
+Production lexical implementation routes:
 
 ```text
 src/ads_system/application/retrieval.py
-    KnowledgeRetrievalHit
-
 src/ads_system/application/ports.py
-    KnowledgeRetrievalPort
-
 src/ads_system/infrastructure/retrieval/sqlite_fts.py
-    SqliteFtsKnowledgeRetrieval
 ```
 
 ---
@@ -427,17 +423,6 @@ stable/revision-transparent direct candidate
     -> explained MethodologicalHorizon
 ```
 
-Run `32561727632`:
-
-```text
-Ubuntu PASS
-Windows PASS
-RH-R 4 / 4 PASS
-RH-A 5 / 5 PASS
-authoritative knowledge unchanged
-39 passed, 2 skipped on each OS
-```
-
 Key semantic distinction:
 
 ```text
@@ -446,36 +431,102 @@ unknown required information -> MISSING_CONTEXT
 unknown != false
 ```
 
-Current production routes:
+Current implementation routes:
 
 ```text
 src/ads_system/application/horizon.py
-    Horizon DTOs / evaluator / builder
-
+src/ads_system/application/horizon_models.py
 src/ads_system/application/ports.py
-    KnowledgeNavigationRepository contract
-
 src/ads_system/infrastructure/persistence/navigation_repository.py
-    SQLAlchemy accepted-current navigation adapter
-
-tests/integration/test_methodological_horizon.py
-    frozen RH-R / RH-A executable gate
 ```
+
+---
+
+## Selective MethodologicalContextPack route
+
+### Design and frozen contract
+
+```text
+docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
+docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
+```
+
+### Result and promotion
+
+```text
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
+docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
+```
+
+Frozen policy:
+
+```text
+requested reasoning functions
+    -> primary function matches
+    -> bounded REQUIRES_CONCEPT support
+    -> hard max_assets
+    -> exact accepted-current compact context reads
+    -> MethodologicalContextPack
+```
+
+Observed on the wide ten-asset Horizon:
+
+```text
+RH-C01  2 selected  ratio 0.20020477
+RH-C02  2 selected  ratio 0.16462054
+RH-C03  3 selected  ratio 0.34635417
+RH-C04  2 selected  ratio 0.28222057
+```
+
+Across all cases:
+
+```text
+required stable-key coverage      1.00
+required revision coverage        1.00
+irrelevant selected               0
+unexplained omissions             0
+```
+
+Validated full suite:
+
+```text
+Ubuntu   42 passed, 2 skipped
+Windows  42 passed, 2 skipped
+```
+
+Current implementation routes:
+
+```text
+src/ads_system/application/context_models.py
+src/ads_system/application/context_selection.py
+src/ads_system/application/horizon.py
+src/ads_system/application/horizon_models.py
+src/ads_system/application/ports.py
+src/ads_system/infrastructure/persistence/navigation_repository.py
+
+tests/fixtures/retrieval/selective_context_v1.json
+tests/integration/test_selective_methodological_context.py
+tests/unit/test_context_selection.py
+```
+
+Specification 013 v1.0 accepts the bounded seam but does not promote `max_assets = 3`, reasoning functions as a complete relevance solution, or the ten-asset benchmark as production policy.
 
 ---
 
 ## Current exact priorities
 
 ```text
-A. finish PR #10 routing reconciliation and final-head validation
-B. merge exactly the green PR #10 head into v1-frontend-spike
-C. branch from that promoted boundary
-D. freeze the first relevance / selective-context contract
-E. execute RH-C exact-revision coverage, irrelevant-context, size/token, and omission gates
-F. connect a real reasoning vertical slice only after selective context earns promotion
+A. finish PR #11 canonical/routing reconciliation
+B. update PR #11 with the measured RH-C result
+C. validate the exact final PR #11 head
+D. merge exactly that green head into v1-frontend-spike
+E. branch from the promoted merge boundary
+F. preregister the first real reasoning vertical slice
+G. compare selective context with a strong full-Horizon/simple control under one concrete model configuration
 ```
 
-Do not continue tuning retrieval merely because it can be tuned. The next measured bottleneck is downstream selection and context cost.
+The next measured bottleneck is downstream reasoning quality and real model/token cost, not further retrieval tuning.
 
 ---
 
@@ -497,4 +548,6 @@ Do not continue tuning retrieval merely because it can be tuned. The next measur
 139  RRF hybrid comparator cross-platform PASS
 140  first MethodologicalHorizon builder contract frozen
 141  first MethodologicalHorizon cross-platform PASS
+142  relevance/selective-context contract frozen
+143  selective-context gate passed; Specification 013 promotion authorized
 ```
