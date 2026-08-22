@@ -14,7 +14,7 @@ The working purpose is:
 
 > **Create the best defensible data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, risk, and desired human involvement, while maintaining non-negotiable methodological integrity.**
 
-The project does not assume that more orchestration is automatically better. Explicit machinery must earn its complexity empirically.
+Explicit machinery must earn its complexity empirically.
 
 ---
 
@@ -22,44 +22,30 @@ The project does not assume that more orchestration is automatically better. Exp
 
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
-The current active branch is:
+Current execution state:
 
 ```text
-v1-reasoning-context-value
+checkpoint            145
+active branch         v1-reasoning-context-value
+active PR             #12 -> v1-frontend-spike
+promoted V1 head      fd33184fbff588c6737d77af751bc5def0e31954
+current boundary      Specification 014 pre-live reasoning experiment
 ```
 
-Active promotion PR:
+The provider-free implementation, PR reconciliation, and canonical routing reconciliation are complete. The current branch must remain green under the provider-free cross-platform gates, after which the next substantive action is the manually dispatched frozen live experiment.
 
-```text
-#12 -> v1-frontend-spike
-```
+No live Specification 014 reasoner/judge result has been observed yet.
 
-The promoted V1 integration branch currently ends at the PR #11 selective-context merge:
-
-```text
-fd33184fbff588c6737d77af751bc5def0e31954
-```
-
-Current checkpoint:
-
-```text
-145
-```
-
-The immediate boundary is **pre-live**. The first real reasoning experiment has been preregistered and implemented provider-free, but no live Specification 014 reasoner/judge call has been executed yet.
-
-See:
+For exact continuation, start with:
 
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 ```
 
-for the exact current continuation.
-
 ---
 
-## Prototype V0 result and durable architectural constraint
+## Prototype V0 result and durable constraint
 
 Prototype V0 compared:
 
@@ -97,7 +83,7 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-This result did not reject persistent project memory, reusable methodological knowledge, provenance, or the broader ADS vision. It rejected carrying P0's large always-on state/context, path-sensitive activation, generic recursive reopening, and full frontier machinery forward unchanged.
+V0 did not reject persistent project memory, reusable methodological knowledge, provenance, or the broader ADS vision. It rejected carrying P0's large always-on state/context, path-sensitive activation, generic recursive reopening, and full frontier machinery forward unchanged.
 
 Primary evidence:
 
@@ -164,7 +150,7 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-### Accepted persistence and interchange
+### Accepted persistence, interchange, and runtime boundaries
 
 Accepted V1 decisions include:
 
@@ -182,50 +168,19 @@ D-031
     JSON + JSON Schema Draft 2020-12
     semantic validation
     deterministic reusable-knowledge normalization/serialization
+
+D-032
+    OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
+    validated starting package openai-agents==0.19.4
 ```
 
-The governed reusable-knowledge persistence/interchange seam is closed across:
+The governed reusable-knowledge persistence/interchange seam is closed across SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127.
 
-```text
-SQLite / Ubuntu     PASS
-SQLite / Windows    PASS
-PostgreSQL 18       PASS
-```
-
-Primary evidence:
-
-```text
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
-docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
-```
-
-### Selected initial reasoning runtime infrastructure
-
-D-032 selects:
-
-```text
-OpenAI Agents SDK
-    behind an ADS-owned ReasoningRuntime port
-
-validated starting package
-    openai-agents==0.19.4
-```
-
-Direct model calls remain the fallback/reference path. LangGraph remains a possible future stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
-
-Primary evidence:
-
-```text
-docs/DECISIONS.md, D-032
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
-```
+Direct model calls remain the runtime fallback/reference path. LangGraph remains a possible stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
 
 ### Project Cockpit
 
 Specification 008 promotes the Project Cockpit as the primary immersive V1 active-work interaction model while direct specialist views remain alternative entry, inspection, and record paths.
-
-The accepted interaction architecture includes 2D project navigation and recovery, bounded zoom, native laptop pinch capability, viewport-aware stage orientation, scalable Jump/search, compact immersive chrome, collision-safe floating surfaces, true fullscreen, URL-addressable focus state, keyboard accessibility, reduced-motion support, and restrained world-owned ambient depth.
 
 Primary source:
 
@@ -337,11 +292,11 @@ docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_
 experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
 
-The result does not prove that reasoning functions solve general semantic relevance, that `max_assets = 3` is a universal budget, or that selective context improves downstream reasoning.
+This does not prove that reasoning functions solve general semantic relevance, that `max_assets = 3` is universal, or that selective context improves downstream reasoning.
 
 ---
 
-## Active experiment: does selective context help real reasoning?
+## Active experiment: selective context versus compact full-Horizon reasoning
 
 Research 021, Specification 014 v0.1, the frozen reasoning fixture, and Checkpoint 144 preregister the first downstream real-model comparison.
 
@@ -409,18 +364,20 @@ per-case mean SELECTIVE/FULL_HORIZON <= 0.80
 aggregate mean SELECTIVE/FULL_HORIZON <= 0.80
 ```
 
-Provider-free implementation is now complete. The first production-facing runtime seam exists under `src/ads_system`, deterministic experiment/environment/runner infrastructure exists under `experiments/reasoning_context_value`, ordinary CI is explicitly live-API-free, and the secret-gated live workflow exists separately.
+Provider-free implementation now includes the ADS-owned production-facing reasoning types/port, infrastructure OpenAI Agents adapter, isolated accepted-current experiment environment, deterministic condition and call-plan construction, blinded judge adapter, complete attempt/result ledger, ordinary live-API-free cross-platform CI, and a separate secret-gated live workflow.
 
 Checkpoint 145 records the first provider-free implementation gate:
 
 ```text
-source head aadf425fdb24db2512e2171f4a99be3c87d8cb80
-workflow    V1 reasoning context value / 32568052820
-Ubuntu      PASS
-Windows     PASS
+source head  aadf425fdb24db2512e2171f4a99be3c87d8cb80
+workflow     V1 reasoning context value / 32568052820
+Ubuntu       PASS
+Windows      PASS
 ```
 
-No live Specification 014 model call has occurred yet.
+A later fully reconciled pre-live head `23cf0c09fadbe11330edfed19c10e7e194f5be18` also passed the reasoning-context workflow on Ubuntu and Windows plus the relevant checkpoint/Horizon/selective-context regressions.
+
+No live Specification 014 model result has occurred yet.
 
 Primary active sources:
 
@@ -436,34 +393,28 @@ docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_
 
 ## Exact continuation
 
-Before live execution:
-
-```text
-1. finish PR #12 reconciliation
-2. validate the exact reconciled head cross-platform
-```
-
-Then manually dispatch:
+Pre-live implementation and repository reconciliation are complete. Confirm the **current** PR head remains green under the provider-free cross-platform workflows, then manually dispatch:
 
 ```text
 .github/workflows/v1-reasoning-context-value-live.yml
+branch: v1-reasoning-context-value
+confirmation: RUN_SPEC_014_FROZEN
+secret: OPENAI_API_KEY
 ```
 
-from:
+After the workflow completes:
 
 ```text
-v1-reasoning-context-value
+1. inspect the complete uploaded result artifact
+2. preserve raw and aggregate results before any tuning
+3. create the live-result checkpoint
+4. apply Specification 014's frozen advancement rule
+5. only then decide promotion, repair, or the next experiment
 ```
 
-with confirmation:
+PR #12 must not be merged on provider-free evidence alone.
 
-```text
-RUN_SPEC_014_FROZEN
-```
-
-and repository secret `OPENAI_API_KEY` available.
-
-The live result must be preserved before changing any frozen model, prompt, fixture, rubric, threshold, repetition count, retry policy, or context condition.
+Do not change the frozen model, prompts, fixture, semantic rubric, thresholds, repetitions, retry policy, or context construction before the live result is preserved.
 
 ---
 
@@ -473,52 +424,9 @@ This repository is the project's durable source of truth.
 
 Chat conversations are used for exploration, reasoning, criticism, and design work. Stable knowledge is extracted into repository artifacts so the project does not depend on conversational memory or any single chat remaining available.
 
-The preservation model distinguishes:
-
-```text
-canonical current documents
-foundational design memos
-current specifications and evaluation contracts
-checkpoints and historical provenance
-experiment-specific result ledgers
-routing/index knowledge
-Git history
-```
-
 The core maxim remains:
 
 > **The chat is where we think. The repository is where the system remembers.**
-
-## Start here
-
-```text
-docs/CURRENT_STATE.md
-    concise present state and exact next step
-
-docs/KNOWLEDGE_MAP.md
-    routing layer
-
-docs/VISION.md
-    current high-level product/system direction
-
-docs/PRINCIPLES.md
-    accepted high-level design principles
-
-docs/DECISIONS.md
-    accepted project-level decisions
-
-docs/OPEN_QUESTIONS.md
-    current unresolved questions
-
-docs/DEVELOPMENT_METHOD.md
-    development and preservation method
-
-docs/CONTINUITY.md
-    continuation procedure
-
-docs/MAJOR_CHANGES.md
-    selective structural history
-```
 
 ## Development philosophy
 
