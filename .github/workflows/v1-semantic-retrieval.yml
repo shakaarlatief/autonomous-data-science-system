@@ -1,21 +1,10 @@
 name: V1 semantic retrieval comparator
 
+# Specification 010 is complete and intentionally failed its primary dense-only
+# gate. Keep this workflow available for explicit historical reproduction, but do
+# not make the preserved failed candidate a permanent automatic PR blocker.
 on:
   workflow_dispatch:
-  push:
-    branches: [v1-semantic-retrieval]
-    paths:
-      - experiments/retrieval/semantic_fastembed_comparator.py
-      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
-      - tests/fixtures/retrieval/methodological_horizon_v1.json
-      - .github/workflows/v1-semantic-retrieval.yml
-  pull_request:
-    branches: [v1-frontend-spike]
-    paths:
-      - experiments/retrieval/semantic_fastembed_comparator.py
-      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
-      - tests/fixtures/retrieval/methodological_horizon_v1.json
-      - .github/workflows/v1-semantic-retrieval.yml
 
 permissions:
   contents: read
@@ -34,7 +23,7 @@ jobs:
         with:
           version: '0.12.5'
           enable-cache: true
-      - name: Run frozen exact semantic comparator
+      - name: Reproduce frozen exact semantic comparator
         run: uv run --python 3.13 --with fastembed==0.8.0 python experiments/retrieval/semantic_fastembed_comparator.py
       - name: Run existing V1 Python regression suite without semantic candidate dependency
         if: always()
