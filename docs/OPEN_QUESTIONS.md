@@ -1,8 +1,8 @@
 # Open Questions
 
 **Status:** Current canonical unresolved-question register  
-**Last reconciled:** 2026-08-21  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated automatically through Checkpoint 130; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the direct-call runtime control passed through Checkpoint 129 and the OpenAI Agents SDK 0.19.4 core subgate is green, with remaining runtime gates still open.
+**Last reconciled:** 2026-08-22  
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated through Checkpoint 130 and accepted as good enough to continue in subsequent human review; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the runtime bakeoff is closed through Specification 005 v0.2, Checkpoints 129/131/132, Research 015, and D-032, which selects OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -187,9 +187,9 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 ### Q-044. How should production retrieval and MethodologicalHorizon construction work?
 
-**Status:** Active V1 question
+**Status:** Active V1 question and immediate methodological implementation priority
 
-The governed persistence/interchange seam is now closed, so production retrieval/horizon evaluation can proceed without unresolved cross-backend migration debugging competing with the benchmark.
+The governed persistence/interchange seam is closed and the initial runtime infrastructure is selected, so production retrieval/horizon evaluation can now proceed without unresolved persistence or runtime selection competing with the benchmark.
 
 Still required:
 
@@ -229,9 +229,9 @@ A practical benchmark and acceptance envelope remain to be designed.
 
 ### Q-009. What agent or responsibility structure is useful?
 
-**Status:** Reframed; implementation deliberately unselected
+**Status:** Substantially answered for initial V1; specialist/multi-agent structure remains open
 
-Knowledge, capabilities, project semantics, and runtime actors remain separate. Current default is one principal reasoner plus tools, with specialist agents added only if evidence demonstrates benefit. Specification 005 governs the bakeoff.
+Knowledge, capabilities, project semantics, and runtime actors remain separate. D-032 selects a single-principal-reasoner-first runtime shape through an ADS-owned OpenAI Agents SDK adapter. Specialist agents should be introduced only if later evidence demonstrates a meaningful benefit in quality, separation of responsibility, durability, or context efficiency. No multi-agent architecture is currently selected.
 
 ### Q-020. What should the execution environment look like?
 
@@ -241,43 +241,69 @@ Foundation 018 establishes shared reproducible run contracts for system-triggere
 
 ### Q-021. How should model and tool providers be selected?
 
-**Status:** Open; runtime evaluation contract exists
+**Status:** Open; runtime boundary selected
 
-Provider choice remains separate from ADS domain semantics. Specification 005 requires provider/test substitution and permits direct-model-call architecture if no runtime earns its complexity.
+D-032 selects the initial reasoning-runtime infrastructure, not the final LLM provider or model. Provider/model choice must remain separate from ADS domain semantics and should preserve deterministic fake-model testing and a replaceable adapter boundary. MCP is the selected direction for external tool/resource interoperability where appropriate, but the production server/tool catalog remains open.
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
-**Status:** Immediate active V1 evaluation question; direct control and OpenAI core evidence now exist
+**Status:** Answered and closed for the initial V1 runtime selection
 
-Specification 005 compares OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, and Google ADK 2.0 against ADS-shaped requirements. No candidate is accepted yet.
+Specification 005 was executed rather than resolved from framework documentation alone.
 
-Checkpoint 129 established a real direct-model-call control rather than a paper fallback. It passed cross-platform with ADS-owned tool-loop, approval/resume, context provenance, at-most-once side-effect ledger, cancellation/retry handling, normalized tracing, and structured recommendation behavior.
-
-The OpenAI Agents SDK 0.19.4 core candidate has also passed cross-platform for:
+Evidence:
 
 ```text
-AR-01 domain isolation
-AR-02 single-agent tool loop
-AR-04 native approval interruption
-AR-05 serialized RunState process-boundary resume
-AR-06 external ADS project-state authority
-AR-07 exact context/revision transparency
-AR-10 structured output with ADS provenance validation
-AR-12 deterministic no-live-provider testing through the released public Model boundary
+Direct model calls
+    Checkpoint 129
+    cross-platform PASS
+    viable minimum-dependency control/fallback
+
+OpenAI Agents SDK 0.19.4
+    Checkpoint 131
+    AR-01 through AR-12 PASS
+    Ubuntu PASS
+    Windows PASS
+
+LangGraph 1.2.10
+    Checkpoint 132
+    AR-01 through AR-12 capability envelope PASS
+    Ubuntu PASS
+    Windows PASS
+    stronger explicit persisted execution/checkpoint durability
+    larger dependency/operational surface and explicit interrupt-node replay semantics
 ```
 
-Research 011 records a material package/docs maturity finding: current documentation advertises `agents.testing.ScriptedModel`, but published `openai-agents==0.19.4` does not ship `agents.testing`. The released public `Model` interface was sufficient for an isolated experiment-local deterministic fake.
+Research 015 applied the Specification 005 stop rule. Microsoft Agent Framework and Google ADK 2.0 were not implemented because no current differentiator was judged likely to overturn the now-bracketed choice among minimum-dependency direct calls, the smaller complete agent-loop runtime, and the stronger durable-workflow runtime.
 
-OpenAI remains incomplete until at least:
+D-032 accepts:
 
 ```text
-AR-03 current MCP integration
-AR-08 cancellation and bounded timeout
-AR-09 controlled failure/retry behavior
-AR-11 normalized observability
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+    validated starting package openai-agents==0.19.4
 ```
 
-The simpler direct-call architecture remains a valid final result if no framework demonstrates enough concrete value to earn its complexity.
+The decision is version-governed rather than permanent lock-in. Direct model calls remain the fallback/reference path. LangGraph remains a future escalation path if stronger long-running workflow durability, checkpoint history/time travel, or independently durable workflow stages become empirically necessary.
+
+This closes only the initial runtime-infrastructure question. It does not select the final provider/model, multi-agent architecture, production runtime-state persistence schema, or production MCP catalog.
+
+Primary evidence:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
+```
 
 ### Q-047. What role should MCP, AG-UI, and A2A ultimately play?
 
@@ -287,7 +313,8 @@ Current direction:
 
 ```text
 MCP
-    external tool/resource interoperability candidate
+    external tool/resource interoperability
+    compatible with the selected runtime adapter
     not project memory or internal application bus
 
 AG-UI
@@ -298,7 +325,7 @@ A2A
     defer until independently deployed remote agent systems are genuinely needed
 ```
 
-Final production adapters remain unselected.
+Final production MCP servers/tool catalog, AG-UI adapter choice, and any future A2A integration remain unselected.
 
 ---
 
@@ -368,7 +395,7 @@ Specification 008 now promotes the Project Cockpit as the V1 primary immersive a
 
 ### Q-050. How should the Cockpit scale to large projects and feel under real spatial interaction?
 
-**Status:** Substantially answered and promoted at the interaction-architecture level; latest post-promotion polish awaits one short human retest
+**Status:** Substantially answered and promoted at the interaction-architecture level; latest bounded polish accepted as good enough to continue
 
 Seven real-browser human reviews plus automated cross-platform/browser gates support:
 
@@ -388,20 +415,7 @@ world-owned ambient depth
 
 The seventh review judged pinch smoothness substantially improved, accepted Jump/search and stage orientation, requested moderately faster scale travel, and explicitly classified the remaining tiny occasional pinch hitch as non-blocking deferred polish. Pinch sensitivity was increased from `0.00135` to `0.0018` before Specification 008 promotion.
 
-A later post-promotion human review then found:
-
-```text
-fullscreen Jump/search
-    good
-
-normal Chrome window
-    Jump/search could still overlap the persistent composer
-
-pinch
-    smoother, but scale travel still too conservative
-```
-
-Checkpoint 130 records the bounded implementation repair:
+A later post-promotion human review found a shorter-normal-window Jump/composer collision and pinch scale travel that remained too conservative. Checkpoint 130 records the bounded implementation repair:
 
 ```text
 Jump/search
@@ -414,15 +428,9 @@ pinch
     smoothing/coalescing/anchoring architecture unchanged
 ```
 
-Automated validation head `ae83e920b3fa43ee8242bdb1ca2640d23a474c71` passed V1 frontend spike run `167 / 32503861255` on Ubuntu, Windows, Chromium interaction/accessibility, controlled direct-view visual regression, the new normal-window Jump resize regression, and the faster anchored-pinch regression.
+Automated validation head `ae83e920b3fa43ee8242bdb1ca2640d23a474c71` passed V1 frontend spike run `167 / 32503861255` on Ubuntu, Windows, Chromium interaction/accessibility, controlled direct-view visual regression, the normal-window Jump resize regression, and the faster anchored-pinch regression.
 
-One short real-hardware retest remains before treating this polish as settled:
-
-```text
-normal Chrome window: no Jump/composer overlap and lower results scroll
-fullscreen: no regression
-trackpad: one natural full pinch in/out has sufficient scale travel
-```
+The subsequent real-browser/hardware retest accepted the repaired normal-window Jump behavior, fullscreen non-regression, and faster pinch feel as good enough to continue. The remaining tiny occasional pinch hitch stays explicitly deferred non-blocking polish.
 
 Still open inside the broader Cockpit product program:
 
@@ -551,11 +559,10 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-046  complete the agent-runtime bakeoff and determine whether any runtime earns its complexity
 Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
 Q-045  evaluate recommendation quality separately from catalog/retrieval coverage
 Q-051  determine which frontend/chart choices deserve final stack promotion
 Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted. The Checkpoint-130 Q-050 retest is a bounded product-polish confirmation, not an architecture reopening.
+Q-046 is closed for the initial V1 runtime selection through Specification 005 v0.2, Research 015, Checkpoint 132, and D-032. Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted; the remaining Q-050 pinch hitch is deferred product polish rather than an architecture reopening.
