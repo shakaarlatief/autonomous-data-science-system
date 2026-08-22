@@ -1,12 +1,13 @@
 # Current State
 
-**Checkpoint:** 135  
+**Checkpoint:** 141  
 **Date:** 2026-08-22  
-**Active development branch:** `v1-methodological-horizon`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at runtime-selection merge boundary `de78501c3990bce9657fe02a117c9186c76a7955` plus later explicitly merged slices  
-**Development stage:** Prototype V0 complete; bounded V1 implementation advancing across methodological knowledge, governed persistence/interchange, production retrieval/MethodologicalHorizon construction, selected reasoning-runtime infrastructure, and the promoted Project Cockpit interaction architecture  
+**Active development branch:** `v1-semantic-retrieval`  
+**Active promotion PR:** #10 into `v1-frontend-spike`  
+**Promoted V1 integration branch before PR #10:** `v1-frontend-spike` at the independently merged lexical boundary `73a78d00b8edf440e7fef8c5334b3edb52246d50`  
+**Development stage:** Prototype V0 complete; bounded V1 implementation advancing across methodological knowledge, governed persistence/interchange, retrieval and MethodologicalHorizon construction, selected reasoning-runtime infrastructure, and the promoted Project Cockpit interaction architecture  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** Merge the independently validated production lexical retrieval slice, then evaluate a bounded exact/in-process semantic retrieval comparator against the unchanged Specification 009 RH-S cases before beginning RH-R/RH-A MethodologicalHorizon construction.
+**Immediate project priority:** finish final reconciliation and green validation of PR #10, merge the validated retrieval/Horizon slice, then freeze and execute the first relevance/selective-context gate over the explained MethodologicalHorizon.
 
 ## Active ChatGPT development context
 
@@ -16,17 +17,17 @@ ChatGPT project: Autonomous Data Science System
 Session title: 03 - Project Cockpit & V1 Integration
 ```
 
-Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails current V1 work until explicit later promotion/merge.
+Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails current V1 work until explicit later promotion.
 
 ---
 
-## 1. System purpose and V0 constraint
+## 1. Durable system constraint from V0
 
-ADS is intended to become a professional interactive data-science operating environment in which the system carries much of the methodological memory, project memory, process navigation, evidence discipline, provenance, execution coordination, and reporting burden that otherwise has to be repeatedly supplied through prompts.
+ADS is intended to be a professional interactive data-science operating environment in which the system carries methodological memory, project memory, process navigation, evidence discipline, provenance, execution coordination, and reporting burden while the LLM remains one flexible reasoning component inside the wider system.
 
-The LLM is one flexible reasoning component inside the wider system, not the system itself.
+Prototype V0 strongly falsified the P0 strategy of repeatedly carrying large structured state and frontier machinery through reasoning calls.
 
-Prototype V0 strongly falsified the then-current P0 implementation strategy. The strongest scaling lesson remains:
+The strongest scaling lesson remains:
 
 ```text
 what the SYSTEM should remember
@@ -34,11 +35,11 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-Do not restore P0's large always-on state/context, path-sensitive activation, generic recursive reopening, or full frontier representation unchanged.
+Do not restore P0's large always-on context/state, path-sensitive activation, generic recursive reopening, or full frontier representation unchanged.
 
 ---
 
-## 2. Current methodological/project architecture
+## 2. Governing methodological architecture
 
 Foundation 018 separates:
 
@@ -61,7 +62,7 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-Foundation 019 governs methodological relevance through:
+Foundation 019 governs methodological navigation through:
 
 ```text
 KNOWN
@@ -75,10 +76,10 @@ The current scaling path is:
 
 ```text
 large global methodological knowledge universe
-    -> high-recall project-specific retrieval/filtering
-    -> bounded MethodologicalHorizon
-    -> explicit applicability/context checks
-    -> flexible relevance/prioritization reasoning
+    -> high-recall retrieval
+    -> bounded explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> relevance / prioritization
     -> selective task-specific LLM context
 ```
 
@@ -86,15 +87,14 @@ Foundation 020 governs reusable methodological knowledge around `KnowledgeAsset`
 
 ---
 
-## 3. Accepted persistence/interchange and runtime architecture
+## 3. Accepted persistence, interchange, and runtime boundaries
 
 Accepted V1 decisions include:
 
 ```text
 D-028 + Specification 001
     SQLite-centered local-first operational architecture
-    rebuildable FTS5 lexical retrieval
-    rebuildable semantic retrieval/cache seam
+    rebuildable lexical/semantic retrieval projections
     application-level rule evaluation
     selective context assembly
 
@@ -117,19 +117,13 @@ D-032 + completed Specification 005
 
 Checkpoint 127 closes the governed reusable-knowledge persistence/interchange seam across SQLite/Linux, SQLite/Windows, and PostgreSQL 18.
 
-The completed runtime bakeoff was merged through PR #8 into `v1-frontend-spike` at:
-
-```text
-de78501c3990bce9657fe02a117c9186c76a7955
-```
-
-Direct model calls remain the fallback/reference path. LangGraph remains a future stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
+Checkpoint 133 closes the initial runtime bakeoff. Direct model calls remain the fallback/reference path. LangGraph remains a future stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
 
 ---
 
-## 4. Project Cockpit interaction architecture is promoted
+## 4. Project Cockpit interaction architecture
 
-Specification 008 is the current V1 Project Cockpit interaction contract.
+Specification 008 is the promoted V1 Project Cockpit interaction contract.
 
 Promoted principles include:
 
@@ -151,23 +145,25 @@ keyboard accessibility and reduced-motion support
 world-owned restrained ambient depth
 ```
 
-Checkpoint 130's post-promotion normal-window/pinch repair was subsequently accepted as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish.
+The later normal-window/pinch repair is accepted as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish.
 
 ---
 
-## 5. Production lexical retrieval is now validated
+## 5. Retrieval evidence is now three-stage rather than hypothetical
 
-Research 016 and frozen Specification 009 v0.1 define the Q-044/Q-045 retrieval/Horizon evaluation decomposition:
+Research 016 and Specification 009 define:
 
 ```text
 RH-L    lexical-addressable retrieval
-RH-S    semantic/paraphrase retrieval diagnostics
-RH-R    relational horizon expansion
+RH-S    semantic/paraphrase retrieval
+RH-R    relational Horizon expansion
 RH-A    applicability / required-context behavior
 RH-C    selective context construction
 ```
 
-Checkpoint 135 validates the first production lexical implementation:
+### 5.1 Production lexical baseline
+
+Checkpoint 135 validates the first production lexical retriever:
 
 ```text
 KnowledgeRetrievalPort
@@ -176,74 +172,167 @@ KnowledgeRetrievalHit
     -> rebuildable accepted-current FTS5 projection
 ```
 
-Final observable gate:
-
-```text
-V1 methodological horizon
-run 32559177057
-source head c462365bf64ebe9d676a0d9ce6402bba61e67279
-
-Ubuntu     PASS
-Windows    PASS
-```
-
 Observed quality:
 
 ```text
-indexed accepted-current assets    10
-RH-L Recall@3                      1.00
-RH-L MRR                           1.00
-RH-L critical omissions            0 / 10
-RH-L required target rank 1       10 / 10
-RH-S diagnostic Recall@3           0.75
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-S Recall@3            0.75
 ```
 
-The one frozen semantic miss is:
+The lexical miss is RH-S01 `class-imbalance`.
+
+### 5.2 Exact dense semantic comparator
+
+Specification 010 / Checkpoint 137 preserve the experiment-only FastEmbed 0.8.0 + `BAAI/bge-small-en-v1.5` comparator.
+
+Dense retrieval also achieved:
 
 ```text
-RH-S01
-positive cases are scarce and overall correctness hides failures on them
-    -> target class-imbalance
-    -> lexical result: no hits
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-S Recall@3            0.75
+RH-S MRR                 0.75
 ```
 
-The other three RH-S targets were recovered at rank 1 by the lexical baseline.
+It recovered `class-imbalance` at rank 1 but lost `ecdf` from the semantic top 3. Dense-only therefore did not earn replacement of lexical retrieval.
 
-Detailed result:
+### 5.3 Bounded RRF fusion comparator
+
+Specification 011 / Checkpoint 139 validate the measured complementarity of the two channels using the frozen rank-only RRF comparator:
 
 ```text
-experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+workflow run 32561118325
+Ubuntu PASS
+Windows PASS
+
+RH-S Recall@3            1.00
+RH-S MRR                 0.875
+RH-S omissions           0 / 4
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
 ```
 
-The first workflow attempt also produced a useful non-product diagnostic: the frozen retrieval gate passed, while the broader regression command used bare `pytest` and lost repository-root import visibility for `experiments.*`. Changing only the command to `python -m pytest` restored the already-validated regression behavior. No benchmark or retrieval behavior changed.
+`class-imbalance` survives as dense-only signal and `ecdf` survives as lexical-only signal.
+
+This promotes hybrid lexical + exact semantic retrieval as the leading V1 retrieval hypothesis for this benchmark. It does **not** promote FastEmbed, BGE, RRF `k=60`, vector persistence, ANN, or a vector database as permanent production architecture.
+
+Primary result:
+
+```text
+experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+```
 
 ---
 
-## 6. What remains open in Q-044 / Q-045
+## 6. First real MethodologicalHorizon is validated
 
-The lexical slice is no longer hypothetical, but Q-044 and Q-045 remain open.
+Specification 012 v1.0 and Checkpoint 141 now validate the first production-facing Horizon seam.
 
-Still required:
+Accepted application boundary:
 
 ```text
-semantic retrieval comparator against unchanged RH-S cases
-incremental useful-recall versus candidate-growth analysis
-fusion only if lexical and semantic channels are complementary
-reranking only if candidate coverage is good but ordering is materially weak
-RH-R relation expansion
-RH-A applicability / missing-context handling
-first bounded real MethodologicalHorizon
-RH-C selective context assembly and context-cost evaluation
-recommendation-quality evaluation downstream of coverage/retrieval
+storage-neutral direct candidate identities
+    -> accepted-current KnowledgeNavigationRepository reads
+    -> outbound one-hop accepted relation expansion
+    -> deterministic TRUE / FALSE / UNKNOWN condition evaluation
+    -> POSSIBLY_APPLICABLE / INAPPLICABLE / MISSING_CONTEXT
+    -> explained included/excluded MethodologicalHorizon
 ```
 
-Do not select an embedding model, vector database, ANN service, fusion algorithm, or reranker from intuition.
+The application layer is independent of FTS5, BM25, FastEmbed, BGE, cosine similarity, RRF, and vector-store APIs.
 
-The next semantic comparator should prefer an exact/in-process design at current corpus scale so the project does not pre-pay ANN/vector infrastructure before scale evidence requires it.
+Cross-platform gate:
+
+```text
+V1 first MethodologicalHorizon builder
+run 32561727632
+Ubuntu PASS
+Windows PASS
+
+RH-R relation cases       4 / 4 PASS
+RH-A applicability cases  5 / 5 PASS
+authoritative knowledge   unchanged
+full V1 suite              39 passed, 2 skipped on each OS
+```
+
+Validated relation expansion:
+
+```text
+random-forest
+    -> bagging
+    -> gradient-boosted-trees
+
+temporal-validation
+    -> prediction-moment
+
+prediction-time-feature-eligibility
+    -> prediction-moment
+
+histogram
+    -> ecdf
+```
+
+Validated applicability distinction:
+
+```text
+known negative supervision context
+    random-forest -> INAPPLICABLE
+
+missing class prevalence
+    class-imbalance -> MISSING_CONTEXT
+
+missing prediction moment
+    temporal-validation -> MISSING_CONTEXT
+    prediction-time-feature-eligibility -> MISSING_CONTEXT
+```
+
+The semantic invariant is executable:
+
+```text
+unknown != false
+```
+
+Primary result:
+
+```text
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
+```
 
 ---
 
-## 7. Current major non-selections
+## 7. What remains open in Q-044 / Q-045
+
+The following are no longer open as first-slice questions:
+
+```text
+production lexical accepted-current retrieval
+whether dense semantic signal is complementary on the frozen corpus
+whether simple rank fusion can preserve both measured semantic signals
+one-hop accepted-current relation expansion
+first three-valued applicability / missing-context behavior
+first explained MethodologicalHorizon representation
+```
+
+Still open and now next:
+
+```text
+relevance / prioritization over an explained Horizon
+bounded Horizon budget policy
+RH-C selective context construction
+exact revision coverage after context selection
+irrelevant-context burden
+serialized size / token burden
+omission quality
+recommendation-quality evaluation downstream of relevance
+production semantic-provider / fusion integration only when a vertical slice requires it
+```
+
+Do not optimize the RRF comparator or add vector infrastructure before those downstream questions demonstrate a need.
+
+---
+
+## 8. Current major non-selections
 
 Still deliberately unselected:
 
@@ -269,12 +358,12 @@ Cockpit final public URL contract
 Cockpit final visual identity
 canonical Cockpit screenshot baseline
 backend HTTP/API framework
-embedding model/provider
+production embedding model/provider
 vector database / ANN infrastructure
-lexical/semantic fusion
+permanent production fusion implementation
 reranker
-final MethodologicalHorizon budget/ranking policy
-final applicability evaluator
+final MethodologicalHorizon relevance/budget policy
+final broad predicate/rule language
 final selective context budget
 complete Foundation 018 production schema
 artifact-storage backend
@@ -283,46 +372,51 @@ job queue/cloud deployment
 
 ---
 
-## 8. Exact next execution order
+## 9. Exact next execution order
 
-### A. MERGE THE VALIDATED LEXICAL SLICE
-
-```text
-1. preserve Checkpoint 135 / lexical result / current routing
-2. verify checkpoint metadata on the reconciled head
-3. update PR #9 with final cross-platform evidence
-4. merge PR #9 into v1-frontend-spike
-```
-
-### B. BOUNDED SEMANTIC RETRIEVAL COMPARATOR
+### A. CLOSE PR #10 PROMOTION
 
 ```text
-1. create a new branch from the merged lexical boundary
-2. research exact/in-process semantic comparator options and dependency/testing trade-offs
-3. keep RH-S queries and lexical control unchanged
-4. implement the smallest meaningful semantic candidate
-5. measure RH-S incremental recall and irrelevant candidate growth
-6. decide whether a semantic channel earns retention
-7. introduce fusion only if evidence demonstrates complementarity
+1. preserve Checkpoint 141 and Specification 012 execution result
+2. reconcile current routing/status documents
+3. update PR #10 with dense, fusion, and Horizon evidence
+4. verify final PR-head workflows are green
+5. merge exactly that tested head into v1-frontend-spike
 ```
 
-### C. FIRST REAL METHODOLOGICALHORIZON
+### B. FREEZE RELEVANCE / SELECTIVE-CONTEXT GATE
+
+On a new branch from the promoted boundary:
 
 ```text
-1. execute frozen RH-R relational expansion cases
-2. execute frozen RH-A applicability/context cases
-3. preserve direct/relation-added/inapplicable/missing-context explanations
-4. define and evaluate a bounded horizon representation/budget
-5. advance to RH-C selective LLM context quality and cost
+1. define the smallest real Horizon relevance/prioritization input/output contract
+2. freeze RH-C scenarios before implementation
+3. measure exact required revision coverage
+4. measure irrelevant candidate/context inclusion
+5. measure serialized size / token burden
+6. verify the global catalog is not serialized by default
+7. preserve explicit omissions and reasons
 ```
 
-### D. SELECTED RUNTIME PRODUCTION INTEGRATION
+The first gate should prefer deterministic or simple bounded policy where sufficient. Do not introduce an LLM relevance judge merely because relevance is semantically rich.
 
-Integrate D-032 behind the ADS-owned runtime port when the first real reasoning vertical slice requires it. Do not promote the experiment adapter wholesale before the application contract is clear.
+### C. ONLY THEN CONNECT A REAL REASONING VERTICAL SLICE
+
+If selective context passes:
+
+```text
+explained Horizon
+    -> selective MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime port
+    -> selected OpenAI Agents SDK adapter when needed
+    -> trace exact knowledge revisions supplied to the reasoner
+```
+
+The retrieval/provider implementation should remain replaceable below that application boundary.
 
 ---
 
-## 9. Minimum reading for continuation
+## 10. Minimum reading for continuation
 
 ```text
 README.md
@@ -340,14 +434,22 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
+docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
 
-docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
+docs/research/017_exact_semantic_retrieval_comparator_selection.md
+docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
+docs/research/019_first_methodological_horizon_application_seam.md
 
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
 
-docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
-docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
-docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
+docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
+docs/checkpoints/140_first_methodological_horizon_builder_contract_frozen.md
+docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
 ```
