@@ -1,4 +1,4 @@
-"""SQLAlchemy UnitOfWork adapter for controlled V1 write transactions."""
+"""SQLAlchemy UnitOfWork adapter for controlled V1 transactions."""
 
 from __future__ import annotations
 
@@ -9,6 +9,9 @@ from sqlalchemy import Connection, Engine
 
 from ads_system.infrastructure.persistence.interchange_repository import (
     SqlAlchemyKnowledgeInterchangeRepository,
+)
+from ads_system.infrastructure.persistence.navigation_repository import (
+    SqlAlchemyKnowledgeNavigationRepository,
 )
 from ads_system.infrastructure.persistence.repositories import (
     SqlAlchemyKnowledgeRepository,
@@ -25,6 +28,7 @@ class SqlAlchemyUnitOfWork:
         self._transaction = None
         self._committed = False
         self.knowledge: SqlAlchemyKnowledgeRepository
+        self.navigation: SqlAlchemyKnowledgeNavigationRepository
         self.interchange: SqlAlchemyKnowledgeInterchangeRepository
         self.projects: SqlAlchemyProjectRepository
 
@@ -33,6 +37,7 @@ class SqlAlchemyUnitOfWork:
         self._transaction = self._connection.begin()
         self._committed = False
         self.knowledge = SqlAlchemyKnowledgeRepository(self._connection)
+        self.navigation = SqlAlchemyKnowledgeNavigationRepository(self._connection)
         self.interchange = SqlAlchemyKnowledgeInterchangeRepository(self._connection)
         self.projects = SqlAlchemyProjectRepository(self._connection)
         return self

@@ -3,8 +3,9 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-22  
-**Current checkpoint:** 135  
-**Active development branch:** `v1-methodological-horizon`
+**Current checkpoint:** 141  
+**Active development branch:** `v1-semantic-retrieval`  
+**Active promotion PR:** #10 into `v1-frontend-spike`
 
 ## Start here
 
@@ -45,16 +46,18 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-active retrieval / MethodologicalHorizon work = v1-methodological-horizon
-promoted V1 integration branch             = v1-frontend-spike
+active retrieval / MethodologicalHorizon promotion = v1-semantic-retrieval
+promoted V1 integration branch                    = v1-frontend-spike
 main intentionally trails current V1 work
 ```
 
-Runtime-selection PR #8 is already merged into `v1-frontend-spike` at:
+The integration branch already contains the independently validated production lexical slice at:
 
 ```text
-de78501c3990bce9657fe02a117c9186c76a7955
+73a78d00b8edf440e7fef8c5334b3edb52246d50
 ```
+
+PR #10 contains the later dense comparator, hybrid retrieval evidence, and first production-facing MethodologicalHorizon seam.
 
 ---
 
@@ -84,11 +87,16 @@ reasoning runtime
     Checkpoint 133
 
 production retrieval / MethodologicalHorizon
-    Research 016
-    Specification 009 v0.1
-    Checkpoints 134-135
-    first lexical production slice PASS
-    semantic comparator next
+    Specification 009 benchmark decomposition
+    Checkpoint 135 production lexical PASS
+    Checkpoint 137 dense-only comparator preserved
+    Checkpoint 139 RRF hybrid comparator PASS
+    Specification 012 v1.0
+    Checkpoint 141 first explained MethodologicalHorizon PASS
+
+next
+    relevance / prioritization
+    RH-C selective context quality and cost
 ```
 
 ---
@@ -201,7 +209,7 @@ Scaling path:
 ```text
 large global knowledge universe
     -> high-recall project-specific retrieval/filtering
-    -> bounded MethodologicalHorizon
+    -> bounded explained MethodologicalHorizon
     -> explicit applicability/context checks
     -> flexible relevance/prioritization reasoning
     -> selective task-specific LLM context
@@ -319,62 +327,70 @@ The promoted interaction architecture remains current. Exact gesture constants, 
 
 ---
 
-## Active retrieval / MethodologicalHorizon track
+## Production retrieval route
 
-Primary research and frozen contract:
+### Benchmark and lexical baseline
 
 ```text
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
-```
-
-Preregistration checkpoint:
-
-```text
 docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
-```
-
-First production lexical result:
-
-```text
-experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 ```
 
-Final gate:
+Lexical result:
 
 ```text
-workflow: V1 methodological horizon
-run: 32559177057
-source head: c462365bf64ebe9d676a0d9ce6402bba61e67279
-
-Ubuntu     PASS
-Windows    PASS
+RH-L Recall@3  1.00
+RH-L MRR       1.00
+RH-S Recall@3  0.75
 ```
 
-Observed retrieval quality:
+### Exact dense semantic comparator
 
 ```text
-10 accepted-current assets indexed
-RH-L Recall@3            1.00
-RH-L MRR                 1.00
-RH-L omissions           0 / 10
-required target rank 1  10 / 10
-RH-S diagnostic Recall@3 0.75
+docs/research/017_exact_semantic_retrieval_comparator_selection.md
+docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
+docs/checkpoints/136_exact_semantic_retrieval_comparator_contract_frozen.md
+docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
 ```
 
-Frozen semantic gap:
+Dense result:
 
 ```text
-RH-S01
-positive cases are scarce and overall correctness hides failures on them
-    -> class-imbalance
-    -> lexical: no hits
+RH-L Recall@3  1.00
+RH-L MRR       1.00
+RH-S Recall@3  0.75
+RH-S MRR       0.75
 ```
 
-The other three frozen RH-S targets are already recovered at rank 1 by the lexical baseline.
+Dense fixes lexical RH-S01 `class-imbalance` but misses lexical RH-S04 `ecdf`. Dense-only does not replace lexical retrieval.
 
-Production implementation routes:
+### Hybrid comparator
+
+```text
+docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
+docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
+docs/checkpoints/138_rrf_hybrid_retrieval_comparator_contract_frozen.md
+docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
+experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+```
+
+Run `32561118325`:
+
+```text
+Ubuntu PASS
+Windows PASS
+RH-S Recall@3  1.00
+RH-S MRR       0.875
+RH-L Recall@3  1.00
+RH-L MRR       1.00
+```
+
+This is evidence for channel complementarity, not permanent selection of FastEmbed, BGE, RRF `k=60`, embeddings persistence, ANN, or a vector database.
+
+Production lexical implementation routes remain:
 
 ```text
 src/ads_system/application/retrieval.py
@@ -385,30 +401,81 @@ src/ads_system/application/ports.py
 
 src/ads_system/infrastructure/retrieval/sqlite_fts.py
     SqliteFtsKnowledgeRetrieval
-
-tests/fixtures/retrieval/methodological_horizon_v1.json
-    frozen RH-L / RH-S / RH-R / RH-A cases
-
-tests/integration/test_knowledge_retrieval_fts.py
-    executable retrieval gate
 ```
 
-The retrieval index is derived state and contains only current accepted KnowledgeAsset revisions. Exact revision identity is returned. Candidate benchmark knowledge remains non-authoritative until explicitly accepted inside an isolated test database.
+---
+
+## First production-facing MethodologicalHorizon route
+
+Primary design/evidence:
+
+```text
+docs/research/019_first_methodological_horizon_application_seam.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+docs/checkpoints/140_first_methodological_horizon_builder_contract_frozen.md
+docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
+```
+
+Validated architecture:
+
+```text
+stable/revision-transparent direct candidate
+    -> KnowledgeNavigationRepository
+    -> accepted-current one-hop outbound relations
+    -> deterministic three-valued applicability
+    -> explained MethodologicalHorizon
+```
+
+Run `32561727632`:
+
+```text
+Ubuntu PASS
+Windows PASS
+RH-R 4 / 4 PASS
+RH-A 5 / 5 PASS
+authoritative knowledge unchanged
+39 passed, 2 skipped on each OS
+```
+
+Key semantic distinction:
+
+```text
+known false -> INAPPLICABLE
+unknown required information -> MISSING_CONTEXT
+unknown != false
+```
+
+Current production routes:
+
+```text
+src/ads_system/application/horizon.py
+    Horizon DTOs / evaluator / builder
+
+src/ads_system/application/ports.py
+    KnowledgeNavigationRepository contract
+
+src/ads_system/infrastructure/persistence/navigation_repository.py
+    SQLAlchemy accepted-current navigation adapter
+
+tests/integration/test_methodological_horizon.py
+    frozen RH-R / RH-A executable gate
+```
 
 ---
 
 ## Current exact priorities
 
 ```text
-A. finish Checkpoint-135 routing reconciliation and merge PR #9
-B. create bounded semantic-retrieval comparator from merged lexical boundary
-C. compare semantic incremental recall and candidate growth against frozen RH-S
-D. retain fusion only if channels are demonstrably complementary
-E. execute RH-R and RH-A for the first real MethodologicalHorizon
-F. evaluate RH-C selective LLM context quality and cost
+A. finish PR #10 routing reconciliation and final-head validation
+B. merge exactly the green PR #10 head into v1-frontend-spike
+C. branch from that promoted boundary
+D. freeze the first relevance / selective-context contract
+E. execute RH-C exact-revision coverage, irrelevant-context, size/token, and omission gates
+F. connect a real reasoning vertical slice only after selective context earns promotion
 ```
 
-Do not select an embedding model, vector database, ANN service, fusion method or reranker from intuition.
+Do not continue tuning retrieval merely because it can be tuned. The next measured bottleneck is downstream selection and context cost.
 
 ---
 
@@ -424,4 +491,10 @@ Do not select an embedding model, vector database, ANN service, fusion method or
 133  initial V1 reasoning runtime selected; Specification 005 closed
 134  retrieval / MethodologicalHorizon benchmark contract frozen
 135  first production lexical retrieval baseline cross-platform PASS
+136  exact dense semantic comparator contract frozen
+137  dense semantic comparator result preserved; standalone gate FAIL
+138  RRF hybrid comparator contract frozen
+139  RRF hybrid comparator cross-platform PASS
+140  first MethodologicalHorizon builder contract frozen
+141  first MethodologicalHorizon cross-platform PASS
 ```

@@ -154,8 +154,6 @@ Alembic revision-ID portability guard PASS
 
 Validated behavior includes candidate import, explicit acceptance, accepted-current pointers, accepted snapshot export, provenance, relation governance, collections, migration compatibility, and historical project revision pinning across later knowledge acceptance.
 
-Two PostgreSQL portability defects were found and repaired before closure: an overlong manually named migration constraint and an Alembic revision identity too long for the default `alembic_version.version_num VARCHAR(32)` envelope. Migration 0002 now uses `0002_knowledge_interchange`, and a deterministic regression guard protects that portability invariant.
-
 Primary sources:
 
 ```text
@@ -177,45 +175,6 @@ validated starting package
     openai-agents==0.19.4
 ```
 
-The package version is a validated baseline, not permanent framework lock-in.
-
-The bakeoff compared direct model calls, OpenAI Agents SDK 0.19.4, and LangGraph 1.2.10 against the same ADS-owned workload and authority boundary.
-
-Cross-platform evidence:
-
-```text
-direct-call control
-    workflow 32500521858
-    Ubuntu PASS
-    Windows PASS
-
-OpenAI Agents SDK 0.19.4
-    workflow 32555526773
-    Ubuntu PASS
-    Windows PASS
-    AR-01 through AR-12 PASS
-
-LangGraph 1.2.10 durability comparator
-    workflow 32556382248
-    Ubuntu PASS, 9 tests
-    Windows PASS, 9 tests
-```
-
-The architecture boundary remains:
-
-```text
-ADS owns
-    project and methodological semantics
-    MethodologicalContextPack construction
-    context digests and exact knowledge revisions
-    human-control policy
-    authoritative side-effect idempotency/domain events
-    stable RuntimeTrace/provenance
-
-runtime owns
-    replaceable execution mechanics
-```
-
 Direct model calls remain a fallback/reference escape path. LangGraph remains a future escalation path if materially stronger long-running workflow durability becomes necessary. No final LLM provider/model or multi-agent architecture is selected.
 
 Primary sources:
@@ -229,17 +188,19 @@ docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 
 ### Production retrieval and MethodologicalHorizon track
 
-Research 016 and frozen Specification 009 v0.1 now define the first production retrieval/Horizon evaluation boundary:
+Research 016 and Specification 009 define the current retrieval/Horizon evaluation decomposition:
 
 ```text
 RH-L    lexical-addressable retrieval
-RH-S    semantic/paraphrase retrieval diagnostics
+RH-S    semantic/paraphrase retrieval
 RH-R    relational horizon expansion
 RH-A    applicability / required-context behavior
 RH-C    selective context construction
 ```
 
-The first production retrieval channel is now implemented behind a storage-neutral application port:
+#### 1. Production lexical retrieval
+
+The first production retrieval channel is implemented behind a storage-neutral application port:
 
 ```text
 KnowledgeRetrievalPort
@@ -248,48 +209,130 @@ KnowledgeRetrievalHit
     -> rebuildable accepted-current FTS5 projection
 ```
 
-Checkpoint 135 validates the frozen lexical baseline cross-platform:
+Checkpoint 135 validates:
 
 ```text
-V1 methodological horizon
-run 32559177057
-source head c462365bf64ebe9d676a0d9ce6402bba61e67279
-
-Ubuntu     PASS
-Windows    PASS
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-S Recall@3            0.75
 ```
 
-Observed quality on the ten-asset stress corpus:
+The one lexical semantic miss is RH-S01 `class-imbalance`.
+
+#### 2. Exact dense semantic comparator
+
+Specification 010 / Checkpoint 137 tested FastEmbed 0.8.0 with `BAAI/bge-small-en-v1.5` as an experiment-only exact in-process dense channel.
+
+Observed:
 
 ```text
-indexed accepted-current assets    10
-RH-L Recall@3                      1.00
-RH-L MRR                           1.00
-RH-L critical omissions            0 / 10
-RH-L required target rank 1       10 / 10
-RH-S diagnostic Recall@3           0.75
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-S Recall@3            0.75
+RH-S MRR                 0.75
 ```
 
-The frozen lexical-addressable cases are therefore completely covered. The one measured semantic miss is RH-S01:
+Dense retrieval recovered the lexical `class-imbalance` miss at rank 1, but displaced RH-S04 `ecdf` from the semantic top 3. Dense-only therefore did not earn replacement of lexical retrieval.
+
+#### 3. Complementary rank fusion
+
+Because the two channels made complementary misses, Specification 011 preregistered the smallest score-scale-independent fusion comparator: equal-weight Reciprocal Rank Fusion over the unchanged lexical and dense top-three rankings.
+
+Checkpoint 139 / workflow run `32561118325` passed on Ubuntu and Windows:
 
 ```text
-positive cases are scarce and overall correctness hides failures on them
-    -> target class-imbalance
-    -> lexical result: no hits
+RH-S Recall@3            1.00
+RH-S MRR                 0.875
+RH-S critical omissions  0 / 4
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
 ```
 
-The other three frozen RH-S targets are recovered at rank 1 by the lexical channel.
+`class-imbalance` survives through the dense channel and `ecdf` survives through the lexical channel.
 
-This gives the semantic comparator a concrete measured gap to beat. It does not preselect an embedding model, vector database, ANN service, fusion algorithm, reranker, or final HorizonBuilder.
+This makes hybrid lexical + exact semantic retrieval the leading V1 retrieval hypothesis for this benchmark. It does **not** permanently select FastEmbed, BGE, RRF `k=60`, vector persistence, ANN, or a vector database.
+
+#### 4. First real MethodologicalHorizon
+
+Specification 012 v1.0 / Checkpoint 141 validate the first production-facing Horizon seam:
+
+```text
+stable/revision-transparent direct candidates
+    -> accepted-current KnowledgeNavigationRepository reads
+    -> outbound one-hop accepted relation expansion
+    -> deterministic TRUE / FALSE / UNKNOWN applicability evaluation
+    -> POSSIBLY_APPLICABLE / INAPPLICABLE / MISSING_CONTEXT
+    -> explained included/excluded MethodologicalHorizon
+```
+
+Cross-platform gate:
+
+```text
+V1 first MethodologicalHorizon builder
+run 32561727632
+
+Ubuntu PASS
+Windows PASS
+RH-R relation cases       4 / 4 PASS
+RH-A applicability cases  5 / 5 PASS
+authoritative knowledge   unchanged
+39 passed, 2 skipped on each OS
+```
+
+Validated examples include:
+
+```text
+random-forest
+    -> bagging
+    -> gradient-boosted-trees
+
+temporal-validation
+    -> prediction-moment
+
+prediction-time-feature-eligibility
+    -> prediction-moment
+
+histogram
+    -> ecdf
+```
+
+and the key applicability distinction:
+
+```text
+known false supervision context
+    -> random-forest INAPPLICABLE
+
+missing required context
+    -> MISSING_CONTEXT, not false
+```
+
+The executable semantic invariant is:
+
+```text
+unknown != false
+```
 
 Primary sources:
 
 ```text
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
+docs/research/017_exact_semantic_retrieval_comparator_selection.md
+docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
+docs/research/019_first_methodological_horizon_application_seam.md
+
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
-docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
+docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
+docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
+docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
+docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
+
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
 ```
 
 ### Professional frontend and Project Cockpit
@@ -338,59 +381,53 @@ keyboard accessibility and reduced-motion support
 world-owned restrained ambient depth
 ```
 
-Promotion gate:
-
-```text
-head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
-run 155 / 32492536072
-
-Ubuntu build + unit tests                 PASS
-Windows build + unit tests                PASS
-Chromium interaction/accessibility        PASS
-controlled direct-view visual regression  PASS
-```
-
 Checkpoint 130 records later bounded polish for normal-window Jump/composer collision safety and faster anchored pinch. The subsequent real-browser/hardware retest accepted the repaired behavior as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish.
 
 Promotion deliberately does **not** freeze graph/canvas or gesture libraries, auto-layout, semantic zoom, minimap, final pinch/zoom constants, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or a canonical Cockpit screenshot baseline.
 
 ## Immediate active track
 
-The highest-value methodological track is Q-044/Q-045 production retrieval and MethodologicalHorizon construction.
+The next methodological question is no longer whether the first Horizon can retrieve and classify the ten-asset benchmark. That boundary has passed.
 
-The lexical baseline is now validated. The immediate next comparison is semantic retrieval against the unchanged RH-S cases.
+The immediate next gate is:
 
 ```text
-1. merge the independently validated lexical slice
-2. create a bounded semantic-retrieval branch from that merged boundary
-3. evaluate the smallest meaningful exact/in-process semantic comparator
-4. measure incremental useful recall and irrelevant candidate growth
-5. retain fusion only if lexical and semantic channels are materially complementary
-6. execute RH-R relation expansion and RH-A applicability/context cases
-7. construct the first bounded real MethodologicalHorizon
-8. evaluate RH-C selective LLM context quality and cost
+explained MethodologicalHorizon
+    -> relevance / prioritization
+    -> selective task-specific context
+    -> exact required revision coverage
+    -> irrelevant-context cost
+    -> serialized size / token burden
+    -> explicit omission reasons
 ```
 
-Do not select an embedding model, vector database, ANN service, fusion algorithm, or reranker from intuition.
+Execution order:
+
+```text
+1. finish final PR #10 reconciliation and validate its exact head
+2. merge the green retrieval/Horizon promotion into v1-frontend-spike
+3. branch from that promoted boundary
+4. freeze RH-C relevance/selective-context scenarios before implementation
+5. implement the smallest bounded selection policy that can falsify the design
+6. measure revision coverage, irrelevant context, size/token burden, and omission quality
+7. only then connect a real MethodologicalContextPack to the selected ReasoningRuntime adapter
+```
+
+Do not keep tuning retrieval simply because it can be tuned. Do not introduce an LLM relevance judge, reranker, ANN service, vector database, or large context policy before evidence shows that the simpler boundary is insufficient.
 
 ## Active branch and continuation
 
-Current retrieval / MethodologicalHorizon work lives on:
+Current retrieval / MethodologicalHorizon promotion work lives on:
 
 ```text
-v1-methodological-horizon
+v1-semantic-retrieval
+PR #10 -> v1-frontend-spike
 ```
 
 The promoted V1 integration branch is:
 
 ```text
 v1-frontend-spike
-```
-
-Runtime-selection PR #8 has already been merged into that branch at:
-
-```text
-de78501c3990bce9657fe02a117c9186c76a7955
 ```
 
 The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from the canonical routing documents and the active branch rather than assuming `main` is current.
