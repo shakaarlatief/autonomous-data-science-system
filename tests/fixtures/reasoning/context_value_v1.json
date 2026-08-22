@@ -1,0 +1,265 @@
+{
+  "benchmark_id": "v1-reasoning-context-value-v0.1",
+  "starting_merge_sha": "fd33184fbff588c6737d77af751bc5def0e31954",
+  "specification": "docs/specifications/014_v1_reasoning_context_value_vertical_slice.md",
+  "research": "docs/research/021_first_reasoning_context_value_vertical_slice_design.md",
+  "knowledge_fixture": "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+  "selective_context_fixture": "tests/fixtures/retrieval/selective_context_v1.json",
+  "randomization_seed": 20260822,
+  "reasoner_repetitions_per_condition": 3,
+  "conditions": [
+    "SELECTIVE",
+    "FULL_HORIZON"
+  ],
+  "reasoner": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "text_verbosity": "low",
+    "max_output_tokens": 4000,
+    "tools_enabled": false,
+    "previous_response_state": false,
+    "request_fast_or_priority_processing": false
+  },
+  "judge": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "text_verbosity": "low",
+    "max_output_tokens": 4000,
+    "tools_enabled": false,
+    "condition_blinded": true,
+    "one_judge_call_per_reasoner_output": true
+  },
+  "call_plan": {
+    "planned_reasoner_calls": 24,
+    "planned_judge_calls": 24,
+    "planned_successful_calls": 48,
+    "max_total_provider_attempts": 60,
+    "max_retries_per_planned_call": 1,
+    "retry_only_for": [
+      "TRANSPORT_FAILURE",
+      "PROVIDER_FAILURE",
+      "INCOMPLETE_RESPONSE",
+      "INVALID_STRUCTURED_RESPONSE"
+    ],
+    "preserve_failed_attempts": true,
+    "unique_condition_neutral_nonce_per_request": true
+  },
+  "quality_gate": {
+    "aggregate_selective_minus_full_floor": -0.05,
+    "per_case_selective_minus_full_floor": -0.10,
+    "obligation_satisfied_score_floor": 1,
+    "critical_obligation_repetitions_required": 2,
+    "critical_obligation_repetitions_total": 3,
+    "judge_score_min": 0,
+    "judge_score_max": 2
+  },
+  "efficiency_gate": {
+    "selective_input_tokens_must_be_lower_in_every_matched_pair": true,
+    "max_mean_selective_to_full_input_token_ratio_per_case": 0.80,
+    "max_aggregate_selective_to_full_input_token_ratio": 0.80,
+    "latency_is_hard_gate": false,
+    "monetary_cost_is_hard_gate": false
+  },
+  "common_reasoner_instruction": "Use only the supplied project evidence and methodological context for project-specific claims. General reasoning is allowed, but do not invent hidden project facts. Treat unknown project context as unknown rather than false. Return the required structured result. In methodological_basis, list only supplied stable keys that materially support the answer. Do not infer recommendation strength solely from selection_reason metadata.",
+  "reasoner_output_schema": {
+    "answer": "string",
+    "proposed_actions": "list[string]",
+    "required_clarifications": "list[string]",
+    "warnings": "list[string]",
+    "methodological_basis": "list[string]"
+  },
+  "judge_scoring": {
+    "score_0": "Absent, materially wrong, or contradicted.",
+    "score_1": "Partially or implicitly satisfied without a material contradiction.",
+    "score_2": "Explicitly and correctly satisfied.",
+    "normalized_formula": "sum(scores) / (2 * number_of_obligations)",
+    "judge_may_add_obligations": false
+  },
+  "cases": [
+    {
+      "case_id": "RV-01",
+      "source_case_id": "RH-C01",
+      "task_id": "compare-supervised-tree-model-options",
+      "requested_reasoning_functions": [
+        "MODEL_OPTION"
+      ],
+      "project_evidence": {
+        "project.task.is_supervised": true,
+        "data.representation.is_supported_tabular": true,
+        "project.objective": "Compare plausible tree-ensemble options for flexible supervised tabular prediction."
+      },
+      "user_task": "Compare the methodological model options in the supplied context for this supervised tabular prediction problem. Give a concise choice-oriented comparison of what each option is doing and what the project should consider before choosing. Do not introduce model families that are not present in the supplied methodological context.",
+      "required_selective_keys": [
+        "gradient-boosted-trees",
+        "random-forest"
+      ],
+      "allowed_additional_basis_keys": [
+        "bagging"
+      ],
+      "rubric": [
+        {
+          "obligation_id": "RV-01-O1",
+          "critical": true,
+          "description": "Identifies both Random Forest and Gradient-Boosted Trees as the supplied model options to compare."
+        },
+        {
+          "obligation_id": "RV-01-O2",
+          "critical": true,
+          "description": "Distinguishes Random Forest as aggregating randomized decision trees from Gradient-Boosted Trees as sequential tree boosting."
+        },
+        {
+          "obligation_id": "RV-01-O3",
+          "critical": false,
+          "description": "Treats applicability or presence as grounds for consideration rather than automatic model selection."
+        },
+        {
+          "obligation_id": "RV-01-O4",
+          "critical": false,
+          "description": "Keeps the comparison choice-oriented and does not substitute an unrelated model family for the supplied options."
+        }
+      ]
+    },
+    {
+      "case_id": "RV-02",
+      "source_case_id": "RH-C02",
+      "task_id": "inspect-quantitative-distribution-evidence",
+      "requested_reasoning_functions": [
+        "EVIDENCE_OPTION"
+      ],
+      "project_evidence": {
+        "variable.semantic_type": "quantitative",
+        "project.objective": "Inspect the empirical distribution of one quantitative variable."
+      },
+      "user_task": "Design a compact evidence plan for inspecting this quantitative variable's empirical distribution using the supplied methodological context. Explain how the available options complement or contrast with each other and name important interpretation cautions.",
+      "required_selective_keys": [
+        "ecdf",
+        "histogram"
+      ],
+      "allowed_additional_basis_keys": [],
+      "rubric": [
+        {
+          "obligation_id": "RV-02-O1",
+          "critical": true,
+          "description": "Uses both Histogram and ECDF as evidence options for the quantitative empirical distribution."
+        },
+        {
+          "obligation_id": "RV-02-O2",
+          "critical": true,
+          "description": "Recognizes that apparent Histogram shape can depend on binning while ECDF describes the empirical distribution without bins."
+        },
+        {
+          "obligation_id": "RV-02-O3",
+          "critical": false,
+          "description": "Does not treat an extreme observed value as automatically invalid merely because it is extreme."
+        },
+        {
+          "obligation_id": "RV-02-O4",
+          "critical": false,
+          "description": "Frames the two methods as complementary or contrasting evidence rather than claiming that one universally eliminates the need for judgment."
+        }
+      ]
+    },
+    {
+      "case_id": "RV-03",
+      "source_case_id": "RH-C03",
+      "task_id": "protect-predictive-validity-boundaries",
+      "requested_reasoning_functions": [
+        "VALIDITY_CONSTRAINT"
+      ],
+      "project_evidence": {
+        "project.generalization": "future-facing prediction",
+        "prediction-moment": "UNKNOWN",
+        "feature.availability.assessment": "NOT_YET_COMPLETED"
+      },
+      "user_task": "The project is intended for future-facing prediction. Before accepting the validation design or any feature as legitimate, identify the unresolved validity boundary and state what must be clarified or checked. Do not assume unknown project facts are false.",
+      "required_selective_keys": [
+        "prediction-moment",
+        "prediction-time-feature-eligibility",
+        "temporal-validation"
+      ],
+      "allowed_additional_basis_keys": [],
+      "rubric": [
+        {
+          "obligation_id": "RV-03-O1",
+          "critical": true,
+          "description": "Identifies the prediction moment as unresolved and requires it to be defined or clarified before validity can be established."
+        },
+        {
+          "obligation_id": "RV-03-O2",
+          "critical": true,
+          "description": "Requires temporal validation cutoffs or design to represent the intended future prediction regime."
+        },
+        {
+          "obligation_id": "RV-03-O3",
+          "critical": true,
+          "description": "Requires predictive features to use only information legitimately available by the prediction moment and treats post-prediction information as illegitimate."
+        },
+        {
+          "obligation_id": "RV-03-O4",
+          "critical": false,
+          "description": "Recognizes source and transformation lineage as relevant to feature eligibility."
+        },
+        {
+          "obligation_id": "RV-03-O5",
+          "critical": true,
+          "description": "Preserves UNKNOWN as unresolved rather than concluding that temporal validation or feature eligibility is false or inapplicable."
+        }
+      ]
+    },
+    {
+      "case_id": "RV-04",
+      "source_case_id": "RH-C04",
+      "task_id": "navigate-data-quality-decision-frameworks",
+      "requested_reasoning_functions": [
+        "DECISION_FRAMEWORK"
+      ],
+      "project_evidence": {
+        "data.quality.concerns": [
+          "class-imbalance",
+          "missing-data"
+        ],
+        "class-prevalence": "UNKNOWN",
+        "production-missingness": "UNKNOWN"
+      },
+      "user_task": "We are deciding how to handle class imbalance and missing data. Use the supplied methodological context to identify unresolved project information that must be clarified before committing to evaluation or preprocessing decisions, and explain why it matters. Do not silently convert unknown context into negative facts.",
+      "required_selective_keys": [
+        "class-imbalance",
+        "missing-data"
+      ],
+      "allowed_additional_basis_keys": [],
+      "rubric": [
+        {
+          "obligation_id": "RV-04-O1",
+          "critical": true,
+          "description": "Identifies class prevalence as unresolved and requests or requires it before final class-imbalance decisions."
+        },
+        {
+          "obligation_id": "RV-04-O2",
+          "critical": true,
+          "description": "Identifies whether missingness occurs in production as unresolved and requires clarification before committing to a missing-data strategy."
+        },
+        {
+          "obligation_id": "RV-04-O3",
+          "critical": false,
+          "description": "Recognizes that overall accuracy can conceal poor minority-class behavior and that materially imbalanced data calls for minority-sensitive evaluation evidence."
+        },
+        {
+          "obligation_id": "RV-04-O4",
+          "critical": true,
+          "description": "Does not treat unknown production missingness or class prevalence as false and does not choose a handling strategy on that false assumption."
+        },
+        {
+          "obligation_id": "RV-04-O5",
+          "critical": false,
+          "description": "Connects the missing-data decision to realistic intended-use or production missingness rather than treating preprocessing as isolated from deployment."
+        }
+      ]
+    }
+  ]
+}
