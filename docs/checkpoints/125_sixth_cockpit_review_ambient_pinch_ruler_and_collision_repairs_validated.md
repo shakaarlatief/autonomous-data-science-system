@@ -2,6 +2,10 @@
 
 **Date:** 2026-08-21  
 **Status:** Historical design/implementation checkpoint; Specification 007 remains candidate pending another real-browser human product review, with real laptop pinch feel still requiring direct human validation  
+**Checkpoint class:** DESIGN  
+**Project stage:** Post-V0 V1 professional frontend exploration  
+**Scope:** Preserves the sixth real-browser Cockpit review and the ambient-continuity, pinch-stability, stage-ruler, and Jump/composer collision repair gate.  
+**Authority:** Historical product/design provenance. Later Cockpit research, checkpoints, and Specification 008 govern the promoted current interaction architecture and later human-review status.  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
