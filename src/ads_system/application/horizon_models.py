@@ -1,4 +1,10 @@
-"""Storage-neutral read models for the first MethodologicalHorizon slice."""
+"""Storage-neutral read models for MethodologicalHorizon construction.
+
+These models deliberately represent methodological navigation semantics rather
+than retrieval-engine or persistence details. Later context-selection layers may
+consume the exact stable/revision identities preserved here without depending on
+how a candidate originally entered the Horizon.
+"""
 
 from __future__ import annotations
 
@@ -25,6 +31,7 @@ class NavigableKnowledgeAsset:
     title: str
     applicability: Mapping[str, Any] | None
     context_requirements: tuple[KnowledgeContextRequirement, ...]
+    reasoning_functions: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -58,7 +65,14 @@ class HorizonSeed:
 
 @dataclass(frozen=True, slots=True)
 class HorizonCandidate:
-    """Explained candidate retained or excluded by the first Horizon builder."""
+    """Explained candidate retained or excluded by the bounded Horizon builder.
+
+    ``reasoning_functions`` is accepted-current methodological metadata used by
+    the next task-specific context-selection slice. ``relation_source_key``
+    preserves which direct seed introduced a relation candidate. Both fields are
+    storage-neutral extensions and do not change the one-hop traversal semantics
+    validated by Specification 012.
+    """
 
     stable_key: str
     revision_id: str
@@ -68,11 +82,13 @@ class HorizonCandidate:
     relation_revision_id: str | None
     applicability_state: str
     missing_context_keys: tuple[str, ...]
+    relation_source_key: str | None = None
+    reasoning_functions: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
 class MethodologicalHorizon:
-    """First bounded applicability-aware methodological horizon."""
+    """Bounded applicability-aware methodological horizon."""
 
     included: tuple[HorizonCandidate, ...]
     excluded: tuple[HorizonCandidate, ...]

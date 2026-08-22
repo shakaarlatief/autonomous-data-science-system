@@ -1,0 +1,95 @@
+{
+  "benchmark_id": "v1-selective-context-v0.1",
+  "specification": "docs/specifications/013_v1_horizon_relevance_and_selective_context.md",
+  "knowledge_fixture": "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+  "wide_horizon_seed_keys": [
+    "class-imbalance",
+    "histogram",
+    "missing-data",
+    "prediction-time-feature-eligibility",
+    "random-forest",
+    "temporal-validation"
+  ],
+  "common_known_context": {
+    "data.representation.is_supported_tabular": true,
+    "project.task.is_supervised": true
+  },
+  "expected_wide_horizon_included_count": 10,
+  "cases": [
+    {
+      "case_id": "RH-C01",
+      "task_id": "compare-supervised-tree-model-options",
+      "requested_reasoning_functions": [
+        "MODEL_OPTION"
+      ],
+      "max_assets": 3,
+      "required_selected_keys": [
+        "gradient-boosted-trees",
+        "random-forest"
+      ],
+      "expected_selection_reasons": {
+        "gradient-boosted-trees": "PRIMARY_FUNCTION_MATCH",
+        "random-forest": "PRIMARY_FUNCTION_MATCH"
+      },
+      "required_missing_context_keys": []
+    },
+    {
+      "case_id": "RH-C02",
+      "task_id": "inspect-quantitative-distribution-evidence",
+      "requested_reasoning_functions": [
+        "EVIDENCE_OPTION"
+      ],
+      "max_assets": 3,
+      "required_selected_keys": [
+        "ecdf",
+        "histogram"
+      ],
+      "expected_selection_reasons": {
+        "ecdf": "PRIMARY_FUNCTION_MATCH",
+        "histogram": "PRIMARY_FUNCTION_MATCH"
+      },
+      "required_missing_context_keys": []
+    },
+    {
+      "case_id": "RH-C03",
+      "task_id": "protect-predictive-validity-boundaries",
+      "requested_reasoning_functions": [
+        "VALIDITY_CONSTRAINT"
+      ],
+      "max_assets": 3,
+      "required_selected_keys": [
+        "prediction-moment",
+        "prediction-time-feature-eligibility",
+        "temporal-validation"
+      ],
+      "expected_selection_reasons": {
+        "prediction-moment": "REQUIRED_CONCEPT_SUPPORT",
+        "prediction-time-feature-eligibility": "PRIMARY_FUNCTION_MATCH",
+        "temporal-validation": "PRIMARY_FUNCTION_MATCH"
+      },
+      "required_missing_context_keys": [
+        "prediction-moment"
+      ]
+    },
+    {
+      "case_id": "RH-C04",
+      "task_id": "navigate-data-quality-decision-frameworks",
+      "requested_reasoning_functions": [
+        "DECISION_FRAMEWORK"
+      ],
+      "max_assets": 3,
+      "required_selected_keys": [
+        "class-imbalance",
+        "missing-data"
+      ],
+      "expected_selection_reasons": {
+        "class-imbalance": "PRIMARY_FUNCTION_MATCH",
+        "missing-data": "PRIMARY_FUNCTION_MATCH"
+      },
+      "required_missing_context_keys": [
+        "class-prevalence",
+        "production-missingness"
+      ]
+    }
+  ]
+}

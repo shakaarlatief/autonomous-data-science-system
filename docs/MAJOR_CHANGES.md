@@ -98,7 +98,7 @@ docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
 The project distinguished human-executed data science, interactive LLM-assisted data science, and system-mediated data science.
 
-The LLM is one reasoning component inside ADS. Every explicit mechanism must justify its complexity empirically.
+The LLM became explicitly one reasoning component inside ADS. Every explicit mechanism must justify its complexity empirically.
 
 Key source:
 
@@ -254,7 +254,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The **MethodologicalHorizon** separates a large global knowledge universe from the bounded project-specific slice relevant to current reasoning.
+The **MethodologicalHorizon** separates a large global knowledge universe from the bounded project-specific slice plausibly relevant to current reasoning.
 
 Reusable knowledge gained a promoted representation around:
 
@@ -323,9 +323,7 @@ JSON
 
 Candidate/benchmark import cannot silently create accepted methodological authority.
 
-The heterogeneous benchmark corpus passed KI-01 through KI-10 across Linux/Windows and Python 3.12 through 3.14.
-
-A richer governed import/accept/export round-trip was then implemented and became a separate cross-backend closure gate.
+The heterogeneous benchmark corpus passed its frozen interchange gate across Linux/Windows and multiple Python versions. A richer governed import/accept/export round-trip then became a separate cross-backend closure gate.
 
 Key sources:
 
@@ -339,7 +337,7 @@ docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
 
 ## 2026-08-20: Agentic ecosystem audit separated ADS semantics from replaceable runtime infrastructure
 
-The audit concluded:
+The audit established the durable split:
 
 ```text
 ADS owns
@@ -358,7 +356,7 @@ Replaceable infrastructure includes
     A2A when independently deployed agents are real
 ```
 
-This produced P-027 through P-029 and Specification 005. No agent framework or multi-agent architecture was selected at this stage; direct model calls remained a valid bakeoff outcome.
+This produced P-027 through P-029 and Specification 005.
 
 ---
 
@@ -366,7 +364,7 @@ This produced P-027 through P-029 and Specification 005. No agent framework or m
 
 Foundation 021 made the interface a first-class reasoning, control, and quality surface.
 
-Specification 006 introduced the first frontend technical/visual evaluation contract. React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest became the leading implementation hypothesis, while chart selection and final stack promotion remained empirical questions.
+React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest became the leading implementation hypothesis while final frontend and chart-stack promotion remained empirical questions.
 
 ---
 
@@ -382,26 +380,15 @@ living project-process map
 + focused analytical work surface
 ```
 
-Checkpoint 117 confirmed:
-
-```text
-click meaningful work block
-    -> smooth spatial focus
-    -> perform real analytical work
-    -> return to project context
-```
-
-Direct project views remain alternative entry/inspection paths rather than mandatory escape hatches.
+Direct project views remained alternative entry/inspection paths rather than mandatory escape hatches.
 
 ---
 
 ## 2026-08-20: Unexpected Session 02 boundary validated preservation but exposed routing drift
 
-Session 02 reached the platform conversation-length limit immediately after Checkpoint 119 work was preserved.
+Session 02 reached the platform conversation-length limit after substantive Cockpit work had been preserved but before final routing reconciliation.
 
-Research 004, Specification 007, and Checkpoint 119 protected the substantive work, while incomplete reconciliation left stale routing in current documents.
-
-Session 03 repaired the routing explicitly through Checkpoint 120.
+Session 03 reconstructed the state from repository authority and repaired stale current routing through Checkpoint 120.
 
 The incident demonstrated:
 
@@ -429,43 +416,16 @@ horizontal + vertical navigation
 true fullscreen
 geometric zoom + fit/reset/recovery
 native trackpad pan/pinch capability
-scalable Jump to + searchable project work
+scalable Jump/search
 canvas-dominant floating composer/controls
 compact fold-away primary HUD
-
-ProjectWorld != ProjectCanvas
-    surrounding world stays pannable
-    semantic plane stays distinct
-    neutral reserve does not become stage semantics
-
-continuous finite grid world
-viewport-aware semantic stage ruler
-compact fold-away right-edge map controls
+FiniteNavigableGridWorld != SemanticProjectPlane
+viewport-aware semantic stage orientation
 world-owned restrained ambient depth
-collision-safe Jump/search relative to composer
+collision-safe floating surfaces
 ```
 
-The seventh review supplied the missing real-laptop product evidence. Pinch was judged substantially smoother, Jump/search and stage orientation were accepted, and the remaining tiny occasional pinch hitch was explicitly classified as non-blocking polish.
-
-The first seventh-review browser gate also exposed a reproducible stage-ruler timing defect under rapid zoom. It was repaired by measuring authoritative rendered stage geometry after an additional layout/render frame.
-
-Final validated head:
-
-```text
-2c3b522e2416d73c015ce5ec2a4560a227524dd9
-```
-
-Final gate:
-
-```text
-V1 frontend spike
-run 155 / 32492536072
-
-Ubuntu build + unit tests                 PASS
-Windows build + unit tests                PASS
-Chromium interaction/accessibility        PASS
-controlled direct-view visual regression  PASS
-```
+The seventh real-browser review accepted the core interaction architecture. A reproducible rapid-zoom stage-ruler timing defect was found and repaired before promotion.
 
 ---
 
@@ -473,48 +433,29 @@ controlled direct-view visual regression  PASS
 
 Checkpoint 126 closed the bounded Specification 007 interaction spike after seven real-browser human review cycles.
 
-The promoted V1 interaction contract is:
+The promoted V1 interaction contract became:
 
 ```text
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Promoted architecture includes:
+Promotion deliberately left final canvas/gesture libraries, auto-layout, semantic zoom/grouping, minimap, final stage taxonomy, final chrome styling, final URL contract, frontend stack promotion, and visual identity open.
 
-```text
-Project Cockpit as primary immersive active-work model
-living project-process projection
-meaningful work-unit semantics
-spatial focus into real reusable specialist workspaces
-reachability != simultaneous mounting
-FiniteNavigableGridWorld != SemanticProjectPlane
-2D project navigation and recovery
-bounded geometric zoom and native pinch capability
-viewport-aware semantic stage orientation
-scalable Jump/search project location
-compact/fold-away immersive chrome
-collision-safe floating surfaces
-true fullscreen with graceful fallback
-URL-addressable focus/deep-work state
-keyboard accessibility and reduced-motion support
-world-owned restrained ambient depth
-```
-
-Promotion deliberately does not freeze final canvas/gesture libraries, auto-layout, semantic zoom/grouping, minimap, final stage taxonomy, final chrome styling, final URL contract, or visual identity.
+A later bounded normal-window Jump/composer and pinch-sensitivity repair passed automated and human retesting through Checkpoint 130 and was accepted as good enough to continue.
 
 Key sources:
 
 ```text
-docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
+docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
 ---
 
 ## 2026-08-21: Governed reusable-knowledge round-trip closed across SQLite and PostgreSQL
 
-The richer governed reusable-knowledge persistence/interchange seam is now validated on:
+The richer governed reusable-knowledge persistence/interchange seam was validated on:
 
 ```text
 SQLite / Ubuntu     PASS
@@ -531,22 +472,9 @@ run 32496856945
 
 The gate validates candidate import, explicit acceptance, accepted-current pointers, deterministic trusted accepted-snapshot export/reload, provenance, relation governance, collections, migration compatibility, and historical project revision pinning across later knowledge acceptance.
 
-Two independent PostgreSQL portability defects were discovered and repaired:
+Two PostgreSQL portability defects were discovered and repaired, including an overlong Alembic revision identity. A permanent regression guard now requires unique Alembic revision IDs no longer than 32 characters.
 
-```text
-1. overlong manually named migration constraint
-    -> shortened to fit PostgreSQL's identifier envelope
-
-2. Alembic revision `0002_reusable_knowledge_interchange`
-    -> exceeded default `alembic_version.version_num VARCHAR(32)`
-    -> shortened to `0002_knowledge_interchange`
-```
-
-The second defect produced a permanent deterministic regression guard requiring every Alembic revision identifier to be unique and no longer than 32 characters.
-
-The temporary PostgreSQL diagnostic workflow was removed after closure. Temporary PR-validation workflow scaffolding was not promoted into the permanent active branch.
-
-Checkpoint 127 closes Q-048 for the current V1 governed seam. Retrieval quality, MethodologicalHorizon construction, semantic retrieval, reranking, external ingestion, and knowledge-authoring UX remain separate open tracks.
+Checkpoint 127 closes the current governed persistence/interchange seam.
 
 Key sources:
 
@@ -559,52 +487,17 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 
 ## 2026-08-22: Initial V1 reasoning runtime selected after executable three-way bakeoff
 
-Specification 005 was completed against three meaningful runtime shapes rather than resolved from feature lists:
+Specification 005 compared:
 
 ```text
 ADS-owned direct model calls
-    minimum dependency surface
-    maximum explicit control
-    significant ADS-owned generic orchestration
-
 OpenAI Agents SDK 0.19.4
-    complete AR-01 through AR-12 PASS
-    native approval / RunState / MCP / structured-output / timeout infrastructure
-    smaller framework surface
-
 LangGraph 1.2.10
-    complete ADS-shaped capability PASS
-    stronger explicit persisted checkpoint/replay machinery
-    larger dependency/operational/topology surface
 ```
 
-Cross-platform evidence:
+All candidates were tested as real ADS-shaped runtime paths rather than resolved from framework feature lists.
 
-```text
-direct-call control
-    workflow 32500521858
-    Ubuntu PASS
-    Windows PASS
-
-OpenAI Agents SDK 0.19.4
-    workflow 32555526773
-    Ubuntu PASS
-    Windows PASS
-    AR-01 through AR-12 PASS
-
-LangGraph 1.2.10 durability comparator
-    workflow 32556382248
-    Ubuntu PASS, 9 tests
-    Windows PASS, 9 tests
-```
-
-The LangGraph experiment also made replay semantics concrete: completed earlier read-only nodes remained persisted on the tested resume path, while the node containing `interrupt()` restarted from the beginning. Repeated approved resume still required the ADS-owned `ProposalLedger` to keep authoritative proposal creation at most once.
-
-The LangGraph MCP path exposed a released dependency-compatibility defect: `langchain-mcp-adapters==0.3.1` admitted an incompatible MCP v2 generation, so the validated comparator pinned `mcp==1.28.1`. This remains maturity/operational-cost evidence.
-
-Research 015 applied the bakeoff stop rule and found no current Microsoft Agent Framework or Google ADK 2.0 differentiator likely to overturn the result.
-
-D-032 therefore accepts:
+D-032 accepts:
 
 ```text
 OpenAI Agents SDK
@@ -612,7 +505,7 @@ OpenAI Agents SDK
     validated starting package openai-agents==0.19.4
 ```
 
-The decision preserves the core boundary:
+The decision preserves:
 
 ```text
 ADS owns
@@ -626,9 +519,7 @@ runtime owns
     replaceable execution mechanics
 ```
 
-Direct model calls remain the fallback/reference escape path. LangGraph remains the future escalation path if materially stronger durable workflow requirements appear. No final LLM provider/model or multi-agent architecture is selected.
-
-The runtime bakeoff is closed for the current V1 selection question. The immediate methodological priority advances to production retrieval / MethodologicalHorizon evaluation under Q-044 and Q-045.
+Direct model calls remain the fallback/reference path. LangGraph remains a future escalation path if materially stronger workflow durability becomes necessary. No final LLM provider/model or multi-agent architecture is selected.
 
 Key sources:
 
@@ -636,17 +527,14 @@ Key sources:
 docs/DECISIONS.md, D-032
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
-docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
-docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
-docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
 docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 ```
 
 ---
 
-## 2026-08-22: First production methodological-knowledge retrieval channel passed cross-platform
+## 2026-08-22: First production methodological-knowledge lexical retrieval channel passed
 
-Research 016 and Specification 009 v0.1 froze the production retrieval / MethodologicalHorizon benchmark before implementation and separated:
+Research 016 and Specification 009 froze the retrieval/Horizon benchmark before implementation and separated:
 
 ```text
 RH-L    lexical-addressable retrieval
@@ -656,54 +544,255 @@ RH-A    applicability / required-context behavior
 RH-C    selective context construction
 ```
 
-The first production slice then implemented:
+The first production slice implemented a storage-neutral retrieval port over a rebuildable SQLite FTS5 accepted-current projection.
 
-```text
-storage-neutral KnowledgeRetrievalPort
-revision-transparent KnowledgeRetrievalHit
-rebuildable SQLite FTS5 accepted-current projection
-weighted deterministic BM25 lexical baseline
-```
-
-The index is derived state, not methodological authority. Candidate benchmark knowledge remains non-retrievable until explicitly accepted inside the isolated test database, and superseded accepted revisions remain durable historically while disappearing from the current retrieval projection.
-
-Final observable gate:
-
-```text
-V1 methodological horizon
-run 32559177057
-source head c462365bf64ebe9d676a0d9ce6402bba61e67279
-
-Ubuntu     PASS
-Windows    PASS
-```
-
-Observed quality on the ten-asset frozen corpus:
+Observed quality:
 
 ```text
 RH-L Recall@3            1.00
 RH-L MRR                 1.00
 RH-L critical omissions  0 / 10
-required target rank 1  10 / 10
 RH-S diagnostic Recall@3 0.75
 ```
 
-The one frozen semantic miss is deliberately preserved rather than patched through benchmark changes:
-
-```text
-positive cases are scarce and overall correctness hides failures on them
-    -> class-imbalance
-    -> lexical result: no hits
-```
-
-This gives the semantic-retrieval comparator a measured target while preserving the lexical channel as a strong minimum-dependency control. Embedding models, vector databases, ANN services, fusion, reranking, and the final MethodologicalHorizon remain unselected.
+The lexical miss on semantic paraphrase `class-imbalance` was preserved as a measured target instead of being patched after observation.
 
 Key sources:
 
 ```text
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
-docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+```
+
+---
+
+## 2026-08-22: Dense semantic retrieval demonstrated complementary signal, not replacement
+
+Specification 010 tested FastEmbed 0.8.0 with `BAAI/bge-small-en-v1.5` as an experiment-only exact dense comparator over the unchanged ten-asset accepted-current corpus.
+
+Observed:
+
+```text
+RH-L Recall@3  1.00
+RH-L MRR       1.00
+RH-S Recall@3  0.75
+RH-S MRR       0.75
+```
+
+Dense retrieval recovered the lexical `class-imbalance` miss at rank 1 but displaced lexical `ecdf` from the semantic top three.
+
+Conclusion:
+
+```text
+dense-only does not replace lexical retrieval
+```
+
+The complementary failure pattern, rather than a generic preference for embeddings, justified one bounded fusion comparator.
+
+Key sources:
+
+```text
+docs/research/017_exact_semantic_retrieval_comparator_selection.md
+docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
+docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
+```
+
+---
+
+## 2026-08-22: Bounded hybrid retrieval preserved both measured semantic signals
+
+Specification 011 preregistered equal-weight Reciprocal Rank Fusion over the unchanged lexical and dense top-three rankings.
+
+Workflow `32561118325` passed on Ubuntu and Windows:
+
+```text
+RH-S Recall@3            1.00
+RH-S MRR                 0.875
+RH-S critical omissions  0 / 4
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+```
+
+`class-imbalance` survives through dense retrieval and `ecdf` survives through lexical retrieval.
+
+This makes hybrid lexical + exact semantic retrieval the leading current hypothesis for the frozen benchmark, while deliberately not selecting FastEmbed, BGE, RRF `k=60`, embedding persistence, ANN, or a vector database as permanent production architecture.
+
+Key sources:
+
+```text
+docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
+docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
+docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
+experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+```
+
+---
+
+## 2026-08-22: First production-facing explained MethodologicalHorizon passed
+
+Specification 012 v1.0 / Checkpoint 141 validate the first production-facing Horizon seam:
+
+```text
+stable/revision-transparent direct candidates
+    -> accepted-current KnowledgeNavigationRepository reads
+    -> outbound one-hop accepted relation expansion
+    -> deterministic TRUE / FALSE / UNKNOWN applicability evaluation
+    -> POSSIBLY_APPLICABLE / INAPPLICABLE / MISSING_CONTEXT
+    -> explained included/excluded MethodologicalHorizon
+```
+
+Cross-platform result:
+
+```text
+workflow 32561727632
+Ubuntu PASS
+Windows PASS
+RH-R relation cases       4 / 4 PASS
+RH-A applicability cases  5 / 5 PASS
+authoritative knowledge   unchanged
+```
+
+The key executable semantic invariant is:
+
+```text
+unknown != false
+```
+
+PR #10 containing the dense-complementarity, hybrid-fusion, and first-Horizon progression was merged into `v1-frontend-spike` at:
+
+```text
+9319ed9b0a401efa1be85c27a9ce4424a8ce5e1e
+```
+
+Key sources:
+
+```text
+docs/research/019_first_methodological_horizon_application_seam.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
+```
+
+---
+
+## 2026-08-22: First selective MethodologicalContextPack gate validated the system/model context boundary
+
+Research 020 and Specification 013 v0.1 froze the first RH-C gate before selector/context implementation.
+
+The tested minimum-complexity hypothesis was:
+
+```text
+explicit task reasoning functions
+    -> primary Horizon matches
+    -> bounded REQUIRES_CONCEPT support
+    -> hard max_assets budget
+    -> exact accepted-current compact reasoning projection
+    -> MethodologicalContextPack
+```
+
+A deliberately wide ten-asset Horizon was used so context selection could not pass trivially by starting from only relevant assets.
+
+Observed cross-platform result:
+
+```text
+Ubuntu   PASS
+Windows  PASS
+full suite 42 passed, 2 skipped on each OS
+```
+
+Per-case context ratios:
+
+```text
+RH-C01 MODEL_OPTION         2 / 10 selected   ratio 0.20020477
+RH-C02 EVIDENCE_OPTION      2 / 10 selected   ratio 0.16462054
+RH-C03 VALIDITY_CONSTRAINT  3 / 10 selected   ratio 0.34635417
+RH-C04 DECISION_FRAMEWORK   2 / 10 selected   ratio 0.28222057
+```
+
+Equivalent canonical-context reduction was approximately:
+
+```text
+65% to 84%
+```
+
+Across all cases:
+
+```text
+required stable-key coverage       1.00
+required exact-revision coverage   1.00
+irrelevant selected assets         0
+selected assets                    <= 3
+unexplained omissions              0
+```
+
+The gate also validated stale-revision fail-closed reads, explicit `BUDGET_LIMIT`, full-content materialization only after budget selection, deterministic canonical serialization, identical cross-platform digests, preservation of `MISSING_CONTEXT`, and omission of retrieval metadata from the model-facing pack.
+
+The most important architecture is the separation:
+
+```text
+SYSTEM
+    retains the wider Horizon
+    retains selection and omission decisions
+
+MODEL-FACING PACK
+    contains selected exact methodological revisions only
+```
+
+Checkpoint 143 promotes Specification 013 to accepted bounded v1.0.
+
+This does not establish that reasoning functions solve general semantic relevance, that `max_assets = 3` is a universal budget, or that selective context improves actual LLM reasoning.
+
+Key sources:
+
+```text
+docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
+docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
+docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
+```
+
+---
+
+## 2026-08-22: The next methodological boundary moved from context mechanics to real reasoning value
+
+After the RH-C pass, the project explicitly stopped treating more retrieval or selector tuning as the next justified step.
+
+The next experiment should be preregistered before model calls and compare:
+
+```text
+same frozen project/task evidence
+    -> selective MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> one concrete model configuration
+
+versus
+
+same frozen project/task evidence
+    -> strong full-Horizon/simple context control
+    -> same ReasoningRuntime
+    -> same concrete model configuration
+```
+
+The target evidence is now:
+
+```text
+reasoning quality against frozen obligations
+critical methodological omissions
+exact supplied knowledge revisions
+exact provider/model tokens
+latency and cost where observable
+whether selective omission creates real quality loss
+whether full-Horizon context creates distraction or unnecessary cost
+```
+
+This is the first experiment that can establish whether the mechanically demonstrated context compression earns value at the actual reasoning layer.
+
+Key sources:
+
+```text
+docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
+docs/CURRENT_STATE.md
 ```

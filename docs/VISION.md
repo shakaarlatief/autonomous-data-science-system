@@ -1,8 +1,8 @@
 # Vision
 
 **Status:** Current canonical system vision  
-**Last reviewed:** 2026-08-20  
-**Authority:** Canonical high-level product/system direction. Detailed rationale and narrower design contracts live in the referenced foundations, decisions, research memos, specifications, and current-state documents.
+**Last reviewed:** 2026-08-22  
+**Authority:** Canonical high-level product/system direction. Detailed rationale and narrower design contracts live in the referenced foundations, decisions, research memos, specifications, checkpoints, and current-state documents.
 
 ## Purpose
 
@@ -67,6 +67,9 @@ knowledge               controls               governance
       +----------------------+----------------------+
                              |
                              v
+                  bounded methodological horizon
+                             |
+                             v
                     selective context
                              |
                              v
@@ -87,7 +90,7 @@ knowledge               controls               governance
 
 The LLM should remain the flexible reasoning engine where interpretation, synthesis, planning, hypothesis generation, semantic understanding, trade-offs, and open-ended judgment matter.
 
-The surrounding system may own responsibilities that benefit from explicit persistence, provenance, reproducibility, deterministic enforcement, bounded retrieval, or durable project semantics.
+The surrounding system may own responsibilities that benefit from explicit persistence, provenance, reproducibility, deterministic enforcement, bounded retrieval, selective context construction, or durable project semantics.
 
 The useful boundary must be discovered empirically rather than assumed.
 
@@ -171,7 +174,7 @@ docs/foundations/021_professional_product_interface_and_frontend_design_foundati
 
 ## Project Cockpit as the current primary active-work direction
 
-The current product direction strongly favors a unified **Project Cockpit** as the primary immersive active-work environment.
+The current product direction uses the **Project Cockpit** as the promoted V1 primary immersive active-work model.
 
 The Cockpit combines:
 
@@ -185,7 +188,7 @@ spatial focus into real analytical workspaces
 
 The user should be able to move from the project map into Data, EDA, Validation, Features, Modeling, Evaluation, evidence, decisions, and other deep work while retaining the feeling of one continuous project environment.
 
-Direct specialist views remain valuable as alternative inspection and entry paths. They should reuse the same substantive analytical modules rather than becoming separate implementations.
+Direct specialist views remain useful as alternative inspection, entry, and record paths. They should reuse the same substantive analytical modules rather than becoming separate implementations.
 
 The Cockpit is a derived project-process projection. It should not collapse all of these into one graph:
 
@@ -196,15 +199,14 @@ methodological knowledge relations
 event history
 ```
 
-The current stage-zone visual grammar has received positive human review, but the final visual identity, canvas implementation, auto-layout strategy, semantic-zoom implementation, stage taxonomy, and route contract remain intentionally unfrozen.
+Specification 008 is the promoted interaction contract. It includes bounded 2D navigation, geometric zoom and recovery, native laptop pinch capability, viewport-aware orientation, scalable Jump/search, compact immersive chrome, collision-safe floating surfaces, true fullscreen, URL-addressable focus state, keyboard accessibility, reduced-motion support, and restrained world-owned ambient depth.
 
-Current active design sources:
+Checkpoint 130 records later bounded normal-window/pinch polish that is accepted as good enough to continue. Final visual identity, canvas/gesture libraries, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, production project-search backend, final frontend stack, and final chart library remain intentionally open.
+
+Primary source:
 
 ```text
-docs/research/002_primary_project_cockpit_interface_concept.md
-docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
-docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
 ---
@@ -285,14 +287,15 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-A large global methodological knowledge universe should be narrowed into a bounded project-specific **MethodologicalHorizon** before detailed ranking and selective reasoning context are assembled.
+A large global methodological knowledge universe should be narrowed into a bounded project-specific **MethodologicalHorizon** before detailed prioritization and reasoning context are assembled.
 
 The user should be able to distinguish at least:
 
 ```text
 what the system knows
 what is applicable
-what is relevant
+what is unresolved because context is missing
+what is task-relevant
 what is recommended
 what is required
 what was omitted or deferred and why
@@ -344,6 +347,53 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 
 ---
 
+## Retrieval, horizon construction, and selective context are separate responsibilities
+
+Current V1 evidence supports an explicit staged boundary rather than one monolithic knowledge call:
+
+```text
+accepted global methodological knowledge
+    -> retrieval candidates
+    -> explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> task-specific relevance selection
+    -> exact MethodologicalContextPack
+```
+
+The first production lexical channel passed its frozen lexical benchmark. An exact dense comparator demonstrated complementary semantic signal rather than replacement of lexical retrieval. A bounded RRF comparator preserved both measured semantic signals. The first MethodologicalHorizon then validated accepted-current one-hop relation expansion and three-valued applicability with the executable invariant:
+
+```text
+unknown != false
+```
+
+The first RH-C selector subsequently demonstrated that, on a deliberately wide ten-asset Horizon, explicit task reasoning functions plus bounded `REQUIRES_CONCEPT` support could preserve all frozen required exact revisions while reducing canonical model-facing context by approximately 65% to 84%.
+
+The important architecture is:
+
+```text
+SYSTEM
+    may retain wider project/methodological state
+    may retain omission and audit evidence
+
+MODEL-FACING CONTEXT
+    receives only selected exact methodological revisions
+```
+
+Specification 013 v1.0 accepts this bounded seam.
+
+This does **not** establish that reasoning functions solve general relevance, that the benchmark budget is universal, or that selective context improves real reasoning. Those are downstream questions.
+
+Primary evidence:
+
+```text
+docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
+```
+
+---
+
 ## Evidence requirements and methods are different things
 
 A recurring design conclusion is:
@@ -373,6 +423,8 @@ explicit rule evaluation
 reproducible execution
 permission/control logic
 mechanical validation
+exact revision validation
+canonical serialization
 ```
 
 Use LLM/agent reasoning where genuine ambiguity, interpretation, synthesis, prioritization, or open-ended judgment makes it valuable.
@@ -381,11 +433,21 @@ This principle also applies to agent architecture itself. Begin with one capable
 
 Agent frameworks, MCP, AG-UI, A2A, and runtime checkpointing are infrastructure/interoperability mechanisms. They must not become the authority for ADS project objects or methodological semantics.
 
+Current runtime decision:
+
+```text
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+```
+
+Direct model calls remain the fallback/reference path. LangGraph remains a future stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
+
 Primary sources:
 
 ```text
 docs/PRINCIPLES.md, P-027 through P-029
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
+docs/DECISIONS.md, D-032
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 ```
 
 ---
@@ -441,12 +503,16 @@ The system should therefore support:
 ```text
 large persistent memory
     +
-bounded task-specific retrieval
+bounded project-specific retrieval
     +
-selective context assembly
+explained methodological horizon
+    +
+selective task-specific context assembly
 ```
 
 Consequential reasoning should preserve enough provenance to identify which project state and methodological knowledge revisions influenced it.
+
+The successful RH-C gate strengthens this direction mechanically, but the next experiment must still establish its effect on actual model reasoning quality and exact provider-token burden.
 
 ---
 
@@ -553,35 +619,60 @@ real-project regression cases
 
 A mechanism should be removed or simplified when evidence does not justify its complexity.
 
+The immediate next experiment should directly test whether selective methodological context earns value at the model-reasoning layer rather than assuming that mechanical compression is sufficient.
+
 ---
 
 ## Current V1 implementation boundary
 
-The project has now moved beyond purely conceptual design, but V1 remains deliberately bounded.
+The project has moved beyond purely conceptual design, but V1 remains deliberately bounded.
 
-Accepted V1 implementation decisions currently establish:
+Accepted V1 boundaries currently include:
 
 ```text
-SQLite-centered local-first operational persistence for the current V1 scope
-SQLAlchemy Core + Alembic
-standards-based Python project tooling with uv/uv.lock/uv_build
-JSON + JSON Schema + semantic validation + deterministic knowledge interchange
-```
+D-028
+    SQLite-centered local-first operational persistence
 
-These are current implementation decisions, not claims that the complete long-term product must permanently use these technologies.
+D-029
+    SQLAlchemy Core + Alembic
+
+D-030
+    pyproject.toml + uv + committed uv.lock + uv_build
+
+D-031
+    JSON + JSON Schema + semantic validation
+    + deterministic knowledge interchange
+
+D-032
+    OpenAI Agents SDK behind ADS-owned ReasoningRuntime
+
+Specification 008
+    promoted Project Cockpit interaction architecture
+
+Specification 012 v1.0
+    accepted first explained MethodologicalHorizon seam
+
+Specification 013 v1.0
+    accepted first deterministic selective MethodologicalContextPack seam
+```
 
 Still deliberately unselected or under evaluation are major areas such as:
 
 ```text
-agent runtime and provider
-production retrieval/ranking stack
-embedding/reranking strategy
+final LLM provider/model
+natural-language task -> reasoning-function mapping
+final semantic relevance mechanism
+recommendation / REQUIRED-BLOCKING policy
+final Horizon and context budgets
+production semantic retrieval/fusion stack
+embedding/reranking infrastructure
 final frontend stack promotion
 chart system
-Cockpit spatial/canvas implementation
+Cockpit canvas/gesture implementation dependencies
 complete project schema
 execution backend at production scale
 artifact storage and job infrastructure
+multi-agent architecture
 ```
 
 Current accepted decisions are recorded in:
@@ -603,7 +694,7 @@ docs/KNOWLEDGE_MAP.md
 
 The long-term ambition remains broad: a professional autonomous or semi-autonomous data-science system that can navigate heterogeneous projects while preserving methodological integrity, evidence, provenance, human control, and reusable learning.
 
-The current development strategy is deliberately incremental:
+The development strategy remains deliberately incremental:
 
 ```text
 clarify product/system responsibility
@@ -616,7 +707,7 @@ clarify product/system responsibility
     -> repeat on harder and broader project situations
 ```
 
-The immediate product implementation priority is the immersive-scale Project Cockpit slice defined by Specification 007 candidate v0.2. Parallel V1 tracks remain governed knowledge round-trip closure, agent-runtime evaluation, and retrieval/MethodologicalHorizon benchmarking.
+The immediate methodological boundary is now a real reasoning vertical slice. It should hold the project/task evidence and model configuration constant while comparing the accepted selective `MethodologicalContextPack` against a strong full-Horizon/simple control. That experiment should measure reasoning quality, exact supplied knowledge revisions, exact model/provider tokens, latency/cost where observable, and whether context omission or context overload creates real failures.
 
 The vision should continue to evolve when experiments, real projects, product testing, or improved model capability show that a responsibility belongs somewhere else.
 
@@ -634,4 +725,5 @@ docs/PRINCIPLES.md
 docs/DECISIONS.md
 docs/OPEN_QUESTIONS.md
 docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
 ```
