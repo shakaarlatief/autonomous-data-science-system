@@ -641,3 +641,69 @@ docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gat
 docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
 docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 ```
+
+---
+
+## 2026-08-22: First production methodological-knowledge retrieval channel passed cross-platform
+
+Research 016 and Specification 009 v0.1 froze the production retrieval / MethodologicalHorizon benchmark before implementation and separated:
+
+```text
+RH-L    lexical-addressable retrieval
+RH-S    semantic/paraphrase retrieval diagnostics
+RH-R    relational horizon expansion
+RH-A    applicability / required-context behavior
+RH-C    selective context construction
+```
+
+The first production slice then implemented:
+
+```text
+storage-neutral KnowledgeRetrievalPort
+revision-transparent KnowledgeRetrievalHit
+rebuildable SQLite FTS5 accepted-current projection
+weighted deterministic BM25 lexical baseline
+```
+
+The index is derived state, not methodological authority. Candidate benchmark knowledge remains non-retrievable until explicitly accepted inside the isolated test database, and superseded accepted revisions remain durable historically while disappearing from the current retrieval projection.
+
+Final observable gate:
+
+```text
+V1 methodological horizon
+run 32559177057
+source head c462365bf64ebe9d676a0d9ce6402bba61e67279
+
+Ubuntu     PASS
+Windows    PASS
+```
+
+Observed quality on the ten-asset frozen corpus:
+
+```text
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-L critical omissions  0 / 10
+required target rank 1  10 / 10
+RH-S diagnostic Recall@3 0.75
+```
+
+The one frozen semantic miss is deliberately preserved rather than patched through benchmark changes:
+
+```text
+positive cases are scarce and overall correctness hides failures on them
+    -> class-imbalance
+    -> lexical result: no hits
+```
+
+This gives the semantic-retrieval comparator a measured target while preserving the lexical channel as a strong minimum-dependency control. Embedding models, vector databases, ANN services, fusion, reranking, and the final MethodologicalHorizon remain unselected.
+
+Key sources:
+
+```text
+docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
+docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
+docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+```

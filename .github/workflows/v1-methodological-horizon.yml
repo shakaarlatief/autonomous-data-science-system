@@ -1,0 +1,50 @@
+name: V1 methodological horizon
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [v1-methodological-horizon]
+    paths:
+      - src/ads_system/application/ports.py
+      - src/ads_system/application/retrieval.py
+      - src/ads_system/infrastructure/retrieval/**
+      - src/ads_system/infrastructure/persistence/**
+      - migrations/**
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/fixtures/retrieval/**
+      - tests/integration/test_knowledge_retrieval_fts.py
+      - .github/workflows/v1-methodological-horizon.yml
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - src/ads_system/application/ports.py
+      - src/ads_system/application/retrieval.py
+      - src/ads_system/infrastructure/retrieval/**
+      - src/ads_system/infrastructure/persistence/**
+      - migrations/**
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/fixtures/retrieval/**
+      - tests/integration/test_knowledge_retrieval_fts.py
+      - .github/workflows/v1-methodological-horizon.yml
+
+permissions:
+  contents: read
+
+jobs:
+  lexical-retrieval:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run frozen lexical retrieval benchmark
+        run: uv run --python 3.13 --locked python -m pytest tests/integration/test_knowledge_retrieval_fts.py -q -s
+      - name: Run existing V1 Python regression suite
+        run: uv run --python 3.13 --locked python -m pytest -q

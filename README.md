@@ -163,8 +163,6 @@ experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
 
-This closes the governed persistence/interchange implementation gate. It does not validate retrieval quality, embeddings, reranking, MethodologicalHorizon construction, selective LLM context quality, external-source ingestion, or knowledge-authoring UX.
-
 ### Selected V1 reasoning runtime
 
 Runtime infrastructure is replaceable infrastructure, not ADS domain authority.
@@ -181,24 +179,7 @@ validated starting package
 
 The package version is a validated baseline, not permanent framework lock-in.
 
-The bakeoff compared:
-
-```text
-Direct model calls
-    minimum dependency surface
-    maximum explicit control
-    more ADS-owned generic orchestration
-
-OpenAI Agents SDK 0.19.4
-    AR-01 through AR-12 PASS
-    smaller complete runtime surface
-    native approval / RunState / MCP / structured-output / timeout infrastructure
-
-LangGraph 1.2.10
-    complete ADS-shaped capability PASS
-    stronger explicit persisted checkpoint/replay machinery
-    larger dependency/operational/topology surface
-```
+The bakeoff compared direct model calls, OpenAI Agents SDK 0.19.4, and LangGraph 1.2.10 against the same ADS-owned workload and authority boundary.
 
 Cross-platform evidence:
 
@@ -235,11 +216,7 @@ runtime owns
     replaceable execution mechanics
 ```
 
-`Agent != Project`, `RunState != project memory`, and framework tracing/checkpoints do not become authoritative ADS state.
-
-Direct model calls remain a fallback/reference escape path. LangGraph remains a future escalation path if materially stronger long-running workflow durability becomes necessary. Microsoft Agent Framework and Google ADK 2.0 were not implemented after the Specification 005 stop rule found no current differentiator likely to overturn the selection.
-
-No final LLM provider/model or multi-agent architecture is selected.
+Direct model calls remain a fallback/reference escape path. LangGraph remains a future escalation path if materially stronger long-running workflow durability becomes necessary. No final LLM provider/model or multi-agent architecture is selected.
 
 Primary sources:
 
@@ -247,10 +224,72 @@ Primary sources:
 docs/DECISIONS.md, D-032
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
-docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
-docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
-docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
 docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
+```
+
+### Production retrieval and MethodologicalHorizon track
+
+Research 016 and frozen Specification 009 v0.1 now define the first production retrieval/Horizon evaluation boundary:
+
+```text
+RH-L    lexical-addressable retrieval
+RH-S    semantic/paraphrase retrieval diagnostics
+RH-R    relational horizon expansion
+RH-A    applicability / required-context behavior
+RH-C    selective context construction
+```
+
+The first production retrieval channel is now implemented behind a storage-neutral application port:
+
+```text
+KnowledgeRetrievalPort
+KnowledgeRetrievalHit
+    -> SqliteFtsKnowledgeRetrieval
+    -> rebuildable accepted-current FTS5 projection
+```
+
+Checkpoint 135 validates the frozen lexical baseline cross-platform:
+
+```text
+V1 methodological horizon
+run 32559177057
+source head c462365bf64ebe9d676a0d9ce6402bba61e67279
+
+Ubuntu     PASS
+Windows    PASS
+```
+
+Observed quality on the ten-asset stress corpus:
+
+```text
+indexed accepted-current assets    10
+RH-L Recall@3                      1.00
+RH-L MRR                           1.00
+RH-L critical omissions            0 / 10
+RH-L required target rank 1       10 / 10
+RH-S diagnostic Recall@3           0.75
+```
+
+The frozen lexical-addressable cases are therefore completely covered. The one measured semantic miss is RH-S01:
+
+```text
+positive cases are scarce and overall correctness hides failures on them
+    -> target class-imbalance
+    -> lexical result: no hits
+```
+
+The other three frozen RH-S targets are recovered at rank 1 by the lexical channel.
+
+This gives the semantic comparator a concrete measured gap to beat. It does not preselect an embedding model, vector database, ANN service, fusion algorithm, reranker, or final HorizonBuilder.
+
+Primary sources:
+
+```text
+docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
+docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
+docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 ```
 
 ### Professional frontend and Project Cockpit
@@ -311,84 +350,50 @@ Chromium interaction/accessibility        PASS
 controlled direct-view visual regression  PASS
 ```
 
-Checkpoint 130 records later bounded polish for normal-window Jump/composer collision safety and faster anchored pinch.
-
-```text
-head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
-run 167 / 32503861255
-
-Ubuntu build + unit tests                  PASS
-Windows build + unit tests                 PASS
-Chromium interaction/accessibility         PASS
-controlled direct-view visual regression   PASS
-normal-window Jump re-clamp regression      PASS
-faster anchored pinch regression            PASS
-```
-
-The subsequent real-browser/hardware retest accepted the repaired behavior as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish, and exact pinch constants remain unfrozen.
-
-Primary latest sources:
-
-```text
-docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
-docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
-```
+Checkpoint 130 records later bounded polish for normal-window Jump/composer collision safety and faster anchored pinch. The subsequent real-browser/hardware retest accepted the repaired behavior as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish.
 
 Promotion deliberately does **not** freeze graph/canvas or gesture libraries, auto-layout, semantic zoom, minimap, final pinch/zoom constants, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or a canonical Cockpit screenshot baseline.
 
 ## Immediate active track
 
-The runtime selection question is closed for initial V1. The highest-value methodological track is now production retrieval and MethodologicalHorizon construction.
+The highest-value methodological track is Q-044/Q-045 production retrieval and MethodologicalHorizon construction.
+
+The lexical baseline is now validated. The immediate next comparison is semantic retrieval against the unchanged RH-S cases.
 
 ```text
-Q-044
-    production retrieval / MethodologicalHorizon construction
-
-Q-045
-    recommendation quality separated from catalog/retrieval coverage
+1. merge the independently validated lexical slice
+2. create a bounded semantic-retrieval branch from that merged boundary
+3. evaluate the smallest meaningful exact/in-process semantic comparator
+4. measure incremental useful recall and irrelevant candidate growth
+5. retain fusion only if lexical and semantic channels are materially complementary
+6. execute RH-R relation expansion and RH-A applicability/context cases
+7. construct the first bounded real MethodologicalHorizon
+8. evaluate RH-C selective LLM context quality and cost
 ```
 
-The next benchmark should evaluate:
-
-```text
-retrieval-quality fixtures
-production lexical retrieval
-semantic retrieval as an empirical candidate
-lexical/semantic fusion only if justified
-ranking and omission quality
-first bounded real MethodologicalHorizon
-selective LLM context quality and cost
-```
-
-Do not select an embedding model, reranker, ANN service, or vector database from intuition.
-
-## Current execution order
-
-```text
-1. finish runtime-branch reconciliation, CI and merge into v1-frontend-spike
-2. inspect current production retrieval/persistence surfaces
-3. define retrieval / MethodologicalHorizon benchmark fixtures and acceptance criteria
-4. implement and evaluate lexical retrieval first
-5. evaluate semantic retrieval and fusion/reranking only if evidence justifies them
-6. build the first bounded real MethodologicalHorizon and selective context assembly
-7. integrate the selected runtime behind an ADS-owned production port when a real reasoning vertical slice needs it
-```
+Do not select an embedding model, vector database, ANN service, fusion algorithm, or reranker from intuition.
 
 ## Active branch and continuation
 
-Current runtime-selection reconciliation lives on:
+Current retrieval / MethodologicalHorizon work lives on:
 
 ```text
-v1-runtime-bakeoff
+v1-methodological-horizon
 ```
 
-The promoted frontend/V1 boundary is preserved on:
+The promoted V1 integration branch is:
 
 ```text
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from the canonical routing documents and the active promoted branch rather than assuming `main` is current.
+Runtime-selection PR #8 has already been merged into that branch at:
+
+```text
+de78501c3990bce9657fe02a117c9186c76a7955
+```
+
+The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from the canonical routing documents and the active branch rather than assuming `main` is current.
 
 Current continuity and exact next action are maintained in:
 

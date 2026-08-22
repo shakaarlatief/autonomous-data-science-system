@@ -1,10 +1,11 @@
-"""Application-facing persistence contracts for the first V1 vertical slices."""
+"""Application-facing contracts for the first V1 vertical slices."""
 
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from typing import Any, Protocol, Self
 
+from ads_system.application.retrieval import KnowledgeRetrievalHit
 from ads_system.domain.models import (
     Finding,
     KnowledgeAssetRevision,
@@ -62,6 +63,12 @@ class KnowledgeRepository(Protocol):
         unknown_behavior: str,
         rationale: str | None = None,
     ) -> str: ...
+
+
+class KnowledgeRetrievalPort(Protocol):
+    """Storage-neutral high-recall retrieval over governed reusable knowledge."""
+
+    def search(self, query: str, *, limit: int = 10) -> tuple[KnowledgeRetrievalHit, ...]: ...
 
 
 class KnowledgeInterchangeRepository(Protocol):
