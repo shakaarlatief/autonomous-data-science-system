@@ -1,14 +1,14 @@
 # Specification 012: V1 First MethodologicalHorizon Builder
 
-**Version:** 0.1  
+**Version:** 1.0  
 **Date:** 2026-08-22  
-**Status:** Frozen bounded implementation/evaluation contract before HorizonBuilder code  
+**Status:** Executed and accepted bounded V1 application contract; RH-R/RH-A cross-platform gate passed through Checkpoint 141  
 **Scope:** First production application seam for accepted-current knowledge navigation, one-hop relation expansion, deterministic applicability/context assessment, and an explained bounded MethodologicalHorizon.  
-**Authority:** Governs the first RH-R/RH-A implementation. It does not define final relevance ranking, recommendation policy, recursive graph expansion, final horizon size, context assembly, or production semantic retrieval technology.
+**Authority:** Governs the accepted first RH-R/RH-A implementation. It does not define final relevance ranking, recommendation policy, recursive graph expansion, final horizon size, context assembly, or production semantic retrieval technology.
 
 ## 1. Starting boundary
 
-This specification begins after:
+This specification began after:
 
 ```text
 Checkpoint 135
@@ -25,7 +25,7 @@ Checkpoint 139
     RH-L MRR 1.00
 ```
 
-Retrieval has therefore earned advancement into the first downstream methodological-navigation stage.
+Retrieval therefore earned advancement into the first downstream methodological-navigation stage.
 
 ---
 
@@ -51,7 +51,7 @@ The first Horizon implementation must remain usable with lexical-only, hybrid, f
 
 ## 3. Storage-neutral knowledge-navigation port
 
-Introduce a targeted application read contract capable of:
+The accepted application read contract supports:
 
 ```text
 get_current_asset(stable_key)
@@ -244,7 +244,7 @@ Optional retrieval provenance may also be retained, but provider-specific score 
 
 ## 11. First MethodologicalHorizon representation
 
-The result must preserve two explicit groups:
+The result preserves two explicit groups:
 
 ```text
 included
@@ -257,7 +257,7 @@ excluded
 
 `MISSING_CONTEXT` remains visible inside `included` because the first Horizon is also a navigation/clarification surface. It must not disappear as though the knowledge were irrelevant.
 
-Candidates must be deterministically ordered:
+Candidates are deterministically ordered:
 
 ```text
 DIRECT before RELATION
@@ -357,7 +357,7 @@ Every navigation asset and relation-added target carries its exact current accep
 Non-accepted relation revisions and non-current/non-accepted target asset revisions do not enter relation expansion.
 
 ### HB-03 One-hop boundedness
-Relation-added candidates are not recursively expanded in v0.1.
+Relation-added candidates are not recursively expanded in v1.0.
 
 ### HB-04 Duplicate collapse
 A stable key already present as a direct candidate is not duplicated when reached by a relation.
@@ -400,7 +400,7 @@ included horizon keys
 excluded horizon keys
 ```
 
-The result artifact must distinguish:
+The result artifact distinguishes:
 
 ```text
 DIRECT
@@ -436,14 +436,14 @@ runtime/model calls
 
 ## 17. Advancement rule
 
-If RH-R/RH-A pass:
+Because RH-R/RH-A passed:
 
 1. preserve the result;
-2. promote the storage-neutral navigation/applicability seam if it remains appropriately bounded;
-3. then define a separate relevance/selective-context gate over the explained Horizon;
+2. promote the storage-neutral navigation/applicability seam while keeping it bounded;
+3. define a separate relevance/selective-context gate over the explained Horizon;
 4. integrate the leading hybrid retriever only when a real production retrieval provider is needed by that vertical slice.
 
-If RH-R or RH-A fail, repair the navigation/applicability layer before introducing relevance reasoning.
+The accepted first builder is not itself the final relevance or context-selection policy.
 
 ---
 
@@ -455,5 +455,47 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
 docs/research/019_first_methodological_horizon_application_seam.md
 docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
+docs/checkpoints/140_first_methodological_horizon_builder_contract_frozen.md
+docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
 experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
+```
+
+---
+
+## 19. Execution result and promotion boundary
+
+Specification 012 v0.1 was executed through workflow run `32561727632` on Ubuntu and Windows.
+
+Observed result:
+
+```text
+RH-R relational cases       4 / 4 PASS
+RH-A applicability cases    5 / 5 PASS
+authoritative knowledge     unchanged
+Ubuntu full suite           39 passed, 2 skipped
+Windows full suite          39 passed, 2 skipped
+```
+
+The accepted architecture boundary is therefore:
+
+```text
+stable/revision-transparent Horizon inputs
+    -> accepted-current navigation reads
+    -> one-hop governed relation expansion
+    -> deterministic three-valued applicability/context assessment
+    -> explained included/excluded MethodologicalHorizon
+```
+
+The following remain deliberately open and require separate evidence:
+
+```text
+relevance ranking
+recommendation state
+required/blocking state
+final horizon budget
+selective context construction
+context/token budget
+production semantic retrieval provider
+production fusion implementation
 ```
