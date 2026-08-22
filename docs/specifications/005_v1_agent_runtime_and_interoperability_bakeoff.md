@@ -1,9 +1,9 @@
 # Specification 005: V1 Agent Runtime and Interoperability Bakeoff
 
 **Date:** 2026-08-20  
-**Status:** Candidate V1 evaluation specification v0.1  
+**Status:** Completed V1 evaluation specification v0.2; runtime outcome promoted through D-032 on 2026-08-22  
 **Scope:** Empirical selection of the first V1 reasoning/agent runtime and validation of MCP/HITL/durability/domain-isolation boundaries  
-**Authority:** Candidate evaluation contract. No agent framework is accepted by this specification until the bakeoff is executed and promoted explicitly.  
+**Authority:** Executed evaluation contract and historical selection evidence. The accepted V1 runtime decision is D-032; this specification remains the gate definition and comparison record.  
 **Design session:** 02  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 02 - Methodological Brain & Knowledge Units
@@ -251,6 +251,8 @@ verify that specialist separation is possible without committing to it
 
 This is not evidence that ADS should use multiple agents in production.
 
+The completed bakeoff did not require this optional challenge because the runtime-selection question was already resolved by the mandatory single-principal-reasoner evidence. Multi-agent architecture remains unselected.
+
 ---
 
 ## 7. Comparison dimensions
@@ -284,23 +286,19 @@ Avoid false precision. A small number of clearly explained categories is preferr
 
 ## 8. Expected likely contenders
 
-Current research suggests two especially strong shapes:
+Pre-implementation research identified two especially strong shapes:
 
 ```text
 OpenAI Agents SDK
     smaller agent-loop integration surface
     strong tools / MCP / HITL / tracing
-    durable execution available through supported integrations
 
 LangGraph
     strongest built-in durable workflow/checkpoint model
     strong HITL / replay / recovery
-    Functional API can preserve ordinary Python control flow
 ```
 
-Microsoft Agent Framework and Google ADK remain credible. They should not be rejected from documentation alone because their explicit function/workflow/agent separation aligns well with ADS.
-
-The bakeoff should be willing to stop early if evidence makes one option clearly preferable.
+Microsoft Agent Framework and Google ADK remained credible secondary candidates. Specification 005 allowed the bakeoff to stop before implementing them if executable evidence made another option clearly preferable and no secondary differentiator remained capable of changing the decision.
 
 ---
 
@@ -327,7 +325,7 @@ If a candidate framework lags the newest protocol, determine whether a narrow of
 
 ## 10. AG-UI and A2A are outside the runtime winner gate
 
-AG-UI belongs to the frontend-interaction spike and may be tested against the winning or leading runtime adapter.
+AG-UI belongs to the frontend-interaction spike and may be tested against the selected runtime adapter.
 
 A2A is intentionally not a selection requirement because ADS does not yet need independently deployed agent services.
 
@@ -357,31 +355,118 @@ Any project-level semantic result produced by the run enters the existing ADS ap
 
 Select a V1 runtime only after at least one candidate passes the mandatory workload and the comparison demonstrates that its additional complexity is justified.
 
-A valid outcome is:
+A valid outcome remained:
 
 ```text
 Use direct model/Responses-style calls for the first V1 slice because none of the runtimes adds enough value yet.
 ```
 
-That outcome should remain possible. The bakeoff is designed to prevent framework adoption from becoming a foregone conclusion.
+The executed comparison instead found that one small framework candidate did remove enough generic runtime burden to justify its dependency while preserving ADS authority.
 
 ---
 
-## 13. Current non-decisions
+## 13. Remaining non-decisions after the bakeoff
 
-This specification does not yet choose:
+D-032 selects the initial V1 reasoning runtime infrastructure but does not select:
 
 ```text
-agent runtime
-number of agents
-LLM provider
-model
+final LLM provider
+final model
+number of agents beyond single-principal-reasoner first
+multi-agent collaboration architecture
 MCP server catalog
-durable runtime backend
+production durable runtime-state storage schema
 A2A
-AG-UI
+AG-UI final role
 telemetry backend
 cloud deployment
 ```
 
-The purpose of the bakeoff is to reduce these uncertainties with direct evidence.
+---
+
+## 14. Executed outcome and closure
+
+### 14.1 Direct-call control
+
+```text
+Checkpoint 129
+workflow 32500521858
+Ubuntu PASS
+Windows PASS
+```
+
+The direct-call path proved that ADS can preserve the required architecture without an agent framework, while also exposing the custom generic orchestration burden ADS would otherwise own.
+
+### 14.2 OpenAI Agents SDK 0.19.4
+
+```text
+Checkpoint 131
+workflow 32555526773
+AR-01 through AR-12 PASS
+Ubuntu PASS
+Windows PASS
+```
+
+The candidate demonstrated meaningful reduction in generic runtime plumbing around model/tool iteration, approval interruption, serializable/restorable `RunState`, structured output, local stdio MCP, tool timeout, and lifecycle hooks while ADS retained semantic and authoritative state.
+
+### 14.3 LangGraph 1.2.10
+
+Validated package set:
+
+```text
+langgraph==1.2.10
+langgraph-checkpoint-sqlite==3.1.1
+langchain-mcp-adapters==0.3.1
+mcp==1.28.1
+```
+
+```text
+Checkpoint 132
+workflow 32556382248
+Ubuntu PASS, 9 tests
+Windows PASS, 9 tests
+```
+
+LangGraph demonstrated stronger explicit persisted execution/checkpoint machinery. The comparator also confirmed interrupt-node restart semantics and the continuing need for ADS-owned idempotency under repeated resume. Its released MCP adapter required an explicit MCP v1 pin because its dependency range admitted an incompatible MCP v2 generation.
+
+### 14.4 Stop rule
+
+Research 015 found no current Microsoft Agent Framework or Google ADK 2.0 differentiator likely to overturn the now-bracketed choice between:
+
+```text
+minimum-dependency direct calls
+small complete agent-loop runtime
+stronger durable workflow runtime
+```
+
+Equal implementation effort was never required, so the secondary adapters were not implemented.
+
+### 14.5 Accepted selection
+
+D-032 selects:
+
+```text
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+    validated starting package openai-agents==0.19.4
+```
+
+Direct model calls remain the fallback/reference path. LangGraph remains a future escalation path if stronger long-running durable workflow requirements become empirically necessary.
+
+The runtime bakeoff is therefore **closed for the current V1 selection question**.
+
+Primary evidence:
+
+```text
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
+```
