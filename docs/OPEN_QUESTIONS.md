@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-22  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated through Checkpoint 130 and accepted as good enough to continue; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the initial runtime bakeoff is closed through Specification 005, Checkpoints 129/131/132/133 and D-032, selecting OpenAI Agents SDK behind an ADS-owned runtime port; production retrieval and MethodologicalHorizon work is now evidenced through the lexical baseline at Checkpoint 135, the dense-only comparator at Checkpoint 137, the complementary RRF hybrid comparator at Checkpoint 139, and the first accepted storage-neutral one-hop/applicability-aware MethodologicalHorizon at Specification 012 v1.0 / Checkpoint 141. The next active methodological boundary is relevance/prioritization and RH-C selective-context quality/cost.
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish accepted through Checkpoint 130; governed reusable-knowledge persistence/interchange closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the initial runtime bakeoff is closed through D-032 / Checkpoint 133, selecting OpenAI Agents SDK behind an ADS-owned runtime port; the first production retrieval and MethodologicalHorizon sequence is validated through Checkpoints 135/137/139/141; and the first deterministic RH-C relevance/selective-context gate passed without target or threshold changes and is promoted through Specification 013 v1.0 / Checkpoint 143. The next active methodological boundary is real downstream reasoning quality and model-specific context cost under a preregistered selective-context versus strong full-Horizon/simple-control comparison.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -124,28 +124,66 @@ Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`,
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-**Status:** Substantially reframed after V0; active at relevance/selective-context boundary
+**Status:** Substantially advanced through selective-context construction; downstream reasoning effect now active
 
-Current direction is selective: global knowledge is narrowed through retrieval into a bounded explained MethodologicalHorizon; explicit deterministic checks handle accepted-current navigation, reliable prerequisites, hard negatives, and missing context; flexible reasoning should handle semantic relevance, trade-offs, synthesis, and open-world concern discovery only after a bounded context pack is assembled.
+The current direction is selective:
 
-Checkpoint 141 now validates the first real Horizon and the distinction `unknown != false`. What remains unvalidated is the crucial next boundary: how relevance/prioritization chooses what belongs in task-specific reasoning context, how much irrelevant context remains, and whether a real reasoning vertical slice improves over simpler context construction.
+```text
+large reusable knowledge universe
+    -> retrieval
+    -> explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> bounded task-specific relevance selection
+    -> selective MethodologicalContextPack
+    -> flexible LLM reasoning
+```
+
+Validated executable boundaries now include:
+
+```text
+production lexical accepted-current retrieval          Checkpoint 135
+semantic channel complementarity                       Checkpoints 137-139
+one-hop relation expansion                             Checkpoint 141
+TRUE/FALSE/UNKNOWN applicability + missing context     Checkpoint 141
+deterministic task-profile selective context           Checkpoint 143 / Specification 013 v1.0
+```
+
+The first RH-C gate demonstrated exact revision coverage with approximately 65-84% canonical-context reduction on the frozen ten-asset stress corpus while keeping system omission decisions out of the model-facing pack.
+
+What remains unvalidated is the next crucial boundary:
+
+```text
+does selective methodological context improve or preserve real reasoning quality
+relative to a strong full-Horizon/simple control
+under the same concrete model/runtime configuration?
+```
+
+Also still open are natural-language/project-state task interpretation, when richer semantic/LLM relevance becomes necessary, and open-world discovery of important concerns absent from the catalog.
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Reframed after V0; retrieval and first Horizon validated, activation policy still open
+**Status:** Reframed after V0; retrieval/Horizon/selective-context mechanics validated, activation policy still open
 
-P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, explicit applicability/context checks, relevance/prioritization, and selective reasoning context.
+P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, explicit applicability/context checks, bounded relevance selection, and selective reasoning context.
 
-Current executable evidence now covers:
+Current executable evidence covers:
 
 ```text
-production lexical retrieval            Checkpoint 135
-semantic complementarity                Checkpoints 137-139
-one-hop relation expansion              Checkpoint 141
-applicability / missing context          Checkpoint 141
+retrieval                           Checkpoint 135
+semantic complementarity           Checkpoints 137-139
+one-hop relation expansion         Checkpoint 141
+applicability / missing context     Checkpoint 141
+selective task context              Checkpoint 143
 ```
 
-Still open are relevance/prioritization, selective context assembly, recommendation/required-state transitions, and the exact mechanism by which a relevant methodological concern becomes a concrete investigation or action.
+Still open are:
+
+```text
+how production project state derives the current task profile
+how a relevant concern becomes a concrete Question / Proposal / Investigation
+recommendation and REQUIRED/BLOCKING transitions
+how open-world concerns enter when explicit knowledge is incomplete
+```
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
 
@@ -173,20 +211,30 @@ Knowledge role, maturity, enforcement authority, scope confidence, provenance, c
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Substantially advanced through the first MethodologicalHorizon; relevance/context selection remains active
+**Status:** Substantially advanced through the first selective MethodologicalContextPack; task-profile derivation and reasoning impact remain active
 
-Current direction:
+Current executable path:
 
 ```text
 large global knowledge universe
     -> high-recall project-specific retrieval/filtering
     -> bounded explained MethodologicalHorizon
     -> explicit applicability/context checks
-    -> flexible relevance/prioritization reasoning
-    -> selective task-specific LLM context
+    -> explicit task-profile relevance selection
+    -> selective task-specific MethodologicalContextPack
 ```
 
-The first four structural pieces now have executable evidence through Checkpoints 135, 139, and 141: accepted-current retrieval, complementary semantic coverage, one-hop governed relation expansion, and three-valued applicability/missing-context handling. The next unresolved part is relevance/prioritization and selective context assembly, including how project state supplies the context predicates required to make those choices.
+The first five structural pieces now have executable evidence through Checkpoints 135, 139, 141, and 143.
+
+Still unresolved:
+
+```text
+how project objects/state determine requested reasoning functions
+whether explicit task semantics are expressive enough at larger scale
+how semantic/LLM relevance should participate when they are not
+how the selected pack changes real model reasoning quality/cost
+how reasoning outputs become recommendation, required concern, or action
+```
 
 ### Q-038. How should reusable knowledge quality and evolution be governed?
 
@@ -198,11 +246,21 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 ## Retrieval, ranking, and context construction
 
-### Q-044. How should production retrieval and MethodologicalHorizon construction work?
+### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?
 
-**Status:** Substantially answered through the first explained Horizon; relevance/budget/context policy remains active
+**Status:** Substantially answered through the first accepted selective-context seam; production scaling and task-profile derivation remain open
 
-Research 016 and Specification 009 established the frozen decomposition. The initial retrieval/Horizon sequence has now been executed rather than left hypothetical.
+Research 016 / Specification 009 established the decomposition:
+
+```text
+RH-L    lexical-addressable retrieval
+RH-S    semantic/paraphrase retrieval
+RH-R    relational Horizon expansion
+RH-A    applicability / required-context behavior
+RH-C    selective context construction
+```
+
+The first sequence has now been executed end to end through RH-C.
 
 #### Production lexical baseline
 
@@ -214,24 +272,13 @@ RH-L MRR                 1.00
 RH-S Recall@3            0.75
 ```
 
-The lexical semantic miss is RH-S01 `class-imbalance`.
-
 #### Exact dense semantic comparator
 
-Checkpoint 137 preserves the FastEmbed 0.8.0 / `BAAI/bge-small-en-v1.5` experiment-only result:
-
-```text
-RH-L Recall@3            1.00
-RH-L MRR                 1.00
-RH-S Recall@3            0.75
-RH-S MRR                 0.75
-```
-
-Dense retrieval recovers `class-imbalance` at rank 1 but misses RH-S04 `ecdf`, which lexical retrieval had recovered at rank 1. Dense-only therefore did not earn replacement of lexical retrieval.
+Checkpoint 137 preserved an experiment-only FastEmbed/BGE comparator. It recovered the lexical `class-imbalance` miss but lost `ecdf` from the semantic top three, so dense-only did not replace lexical retrieval.
 
 #### Complementary hybrid comparator
 
-Checkpoint 139 / workflow run `32561118325`:
+Checkpoint 139 / workflow `32561118325`:
 
 ```text
 Ubuntu PASS
@@ -243,45 +290,66 @@ RH-L Recall@3            1.00
 RH-L MRR                 1.00
 ```
 
-The channels are materially complementary on the frozen benchmark. This advances hybrid lexical + exact semantic retrieval as the leading current hypothesis, but does not permanently select FastEmbed, BGE, RRF `k=60`, a vector database, ANN, or embedding persistence.
+This supports lexical+dense complementarity on the frozen benchmark without permanently selecting FastEmbed, BGE, RRF `k=60`, vector persistence, ANN, or a vector database.
 
 #### First explained MethodologicalHorizon
 
-Specification 012 v1.0 / Checkpoint 141 / workflow run `32561727632`:
-
-```text
-Ubuntu PASS
-Windows PASS
-RH-R relation cases       4 / 4 PASS
-RH-A applicability cases  5 / 5 PASS
-authoritative knowledge   unchanged
-```
-
-The accepted bounded seam is:
+Specification 012 v1.0 / Checkpoint 141 validates:
 
 ```text
 stable/revision-transparent candidates
     -> accepted-current navigation reads
     -> outbound one-hop governed relation expansion
-    -> TRUE / FALSE / UNKNOWN applicability evaluation
+    -> TRUE / FALSE / UNKNOWN applicability
     -> POSSIBLY_APPLICABLE / INAPPLICABLE / MISSING_CONTEXT
-    -> explained included/excluded MethodologicalHorizon
+    -> explained MethodologicalHorizon
 ```
 
-This answers the first retrieval, relation-expansion, and applicability-construction questions. It deliberately does not answer final relevance, recommendation, or context budgeting.
+#### First selective MethodologicalContextPack
 
-Still required:
+Specification 013 v1.0 / Checkpoint 143 validates:
 
 ```text
-relevance / prioritization over the explained Horizon
-bounded Horizon budget policy
-RH-C selective context construction
-exact required-revision coverage after context selection
-irrelevant-context inclusion/cost
-serialized size / token burden
-omission quality
-production semantic/fusion integration only when a real vertical slice requires it
-reranking only if ordering becomes a measured downstream problem
+explicit requested reasoning functions
+    -> primary function matches
+    -> bounded REQUIRES_CONCEPT support
+    -> hard max_assets budget
+    -> exact accepted-current selected-context reads
+    -> ContextSelectionResult
+    -> MethodologicalContextPack
+```
+
+On the deliberately wide ten-asset Horizon:
+
+```text
+RH-C01 ratio 0.20020477
+RH-C02 ratio 0.16462054
+RH-C03 ratio 0.34635417
+RH-C04 ratio 0.28222057
+```
+
+Across every case:
+
+```text
+required stable-key coverage       1.00
+required exact-revision coverage   1.00
+irrelevant selected                0
+unexplained omissions              0
+```
+
+This answers the first bounded RH-C construction question. It does not establish a final production relevance policy.
+
+Still open:
+
+```text
+production task-profile derivation
+final Horizon/context budgets
+behavior on larger and more heterogeneous Horizons
+whether semantic/LLM relevance is needed beyond explicit reasoning functions
+production semantic-provider/fusion integration when a vertical slice requires it
+reranking only if downstream ordering becomes a measured problem
+exact provider-token burden under a concrete model
+real reasoning quality under selective versus fuller context
 ```
 
 Primary current evidence:
@@ -291,51 +359,60 @@ docs/research/016_production_retrieval_and_methodological_horizon_benchmark_desi
 docs/research/017_exact_semantic_retrieval_comparator_selection.md
 docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
 docs/research/019_first_methodological_horizon_application_seam.md
+docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
 
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
 docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
 docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
 docs/specifications/012_v1_first_methodological_horizon_builder.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
 
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
 docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
 docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
 docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
+docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
+docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
 
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
 experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
 
-### Q-045. How should recommendation quality be evaluated separately from knowledge coverage?
+### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?
 
-**Status:** Active V1 question; coverage, retrieval, and applicability failure classes are now executable
+**Status:** Active V1 question; upstream failure classes plus context-selection omissions are executable
 
-The evaluation decomposition is now materially stronger than at Specification 009 freeze time. The system can distinguish:
+The evaluation decomposition can now distinguish:
 
 ```text
 knowledge absent from catalog
 known but not retrieved
 retrieved through lexical and/or semantic channel
-retrieved/seeded but rejected as INAPPLICABLE
-retained but unresolved because MISSING_CONTEXT
+retrieved/seeded but INAPPLICABLE
+retained but MISSING_CONTEXT
 relation-added to the Horizon
+Horizon candidate but NO_REASONING_FUNCTION_MATCH
+relevant under the explicit policy but BUDGET_LIMIT
+selected exact revision sent to reasoning
 ```
 
-This means the first `KNOWN_NOT_RETRIEVED`, `INAPPLICABLE`, and `MISSING_CONTEXT` failure classes are executable rather than conceptual.
+This materially separates coverage, retrieval, applicability, and context-selection failures.
 
-The remaining downstream distinction is:
+The next missing layer is downstream reasoning/recommendation quality:
 
 ```text
-applicable but judged irrelevant
-relevant but ranked too low / omitted by context budget
-recommended but skipped
-recommended incorrectly
-required concern omitted
+selected context but reasoner misses an obligation
+omitted context causes a real reasoning failure
+full-Horizon context distracts the reasoner
+relevant concern is recommended incorrectly or too weakly
+required concern is not elevated to REQUIRED/BLOCKING
+recommended work is skipped by human/system
 human/execution outcome after recommendation
 ```
 
-The next relevance/RH-C gate should therefore measure ranking/context omission separately from upstream retrieval and applicability failures. Recommendation correctness should not be collapsed into retrieval recall.
+The next real reasoning vertical slice should therefore hold task evidence and model configuration fixed while comparing selective context against a strong full-Horizon/simple control. Recommendation correctness must remain separate from retrieval/context recall.
 
 ---
 
@@ -357,38 +434,13 @@ Foundation 018 establishes shared reproducible run contracts for system-triggere
 
 **Status:** Open; runtime boundary selected
 
-D-032 selects the initial reasoning-runtime infrastructure, not the final LLM provider or model. Provider/model choice must remain separate from ADS domain semantics and should preserve deterministic fake-model testing and a replaceable adapter boundary. MCP is the selected direction for external tool/resource interoperability where appropriate, but the production server/tool catalog remains open.
+D-032 selects the initial reasoning-runtime infrastructure, not the final LLM provider or model. The next reasoning vertical slice must choose one concrete model configuration for evaluation without prematurely declaring it the final provider/model. Provider/model choice must remain separate from ADS domain semantics and should preserve deterministic fake-model testing and a replaceable adapter boundary. MCP is the selected direction for external tool/resource interoperability where appropriate, but the production server/tool catalog remains open.
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
 **Status:** Answered and closed for the initial V1 runtime selection
 
 Specification 005 was executed rather than resolved from framework documentation alone.
-
-Evidence:
-
-```text
-Direct model calls
-    Checkpoint 129
-    cross-platform PASS
-    viable minimum-dependency control/fallback
-
-OpenAI Agents SDK 0.19.4
-    Checkpoint 131
-    AR-01 through AR-12 PASS
-    Ubuntu PASS
-    Windows PASS
-
-LangGraph 1.2.10
-    Checkpoint 132
-    AR-01 through AR-12 capability envelope PASS
-    Ubuntu PASS
-    Windows PASS
-    stronger explicit persisted execution/checkpoint durability
-    larger dependency/operational surface and explicit interrupt-node replay semantics
-```
-
-Research 015 applied the Specification 005 stop rule. Microsoft Agent Framework and Google ADK 2.0 were not implemented because no current differentiator was judged likely to overturn the now-bracketed choice among minimum-dependency direct calls, the smaller complete agent-loop runtime, and the stronger durable-workflow runtime.
 
 D-032 accepts:
 
@@ -398,26 +450,9 @@ OpenAI Agents SDK
     validated starting package openai-agents==0.19.4
 ```
 
-The decision is version-governed rather than permanent lock-in. Direct model calls remain the fallback/reference path. LangGraph remains a future escalation path if stronger long-running workflow durability, checkpoint history/time travel, or independently durable workflow stages become empirically necessary.
+Direct model calls remain the fallback/reference path. LangGraph remains a future escalation path if stronger long-running workflow durability, checkpoint history/time travel, or independently durable workflow stages become empirically necessary.
 
-This closes only the initial runtime-infrastructure question. It does not select the final provider/model, multi-agent architecture, production runtime-state persistence schema, or production MCP catalog.
-
-Primary evidence:
-
-```text
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
-docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
-docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
-
-docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
-docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
-docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
-
-experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
-experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
-experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
-```
+This does not select the final provider/model, multi-agent architecture, production runtime-state persistence schema, or production MCP catalog.
 
 ### Q-047. What role should MCP, AG-UI, and A2A ultimately play?
 
@@ -461,7 +496,7 @@ Git + Markdown remains sufficient while routing, reconciliation, and consistency
 
 **Status:** Answered and closed for the current V1 governed seam
 
-Checkpoint 127 and the final result artifact record successful validation of the richer governed import/accept/export/pinning round-trip on:
+Checkpoint 127 records successful validation on:
 
 ```text
 SQLite / Ubuntu     PASS
@@ -469,33 +504,7 @@ SQLite / Windows    PASS
 PostgreSQL 18       PASS
 ```
 
-Final gate:
-
-```text
-V1 governed knowledge roundtrip closure gate
-run 32496856945
-```
-
-Two PostgreSQL portability defects were resolved before closure:
-
-```text
-1. overlong manually named migration constraint
-2. Alembic migration revision identity longer than the default
-   `alembic_version.version_num VARCHAR(32)` envelope
-```
-
-Migration 0002 now uses `0002_knowledge_interchange`, and a deterministic regression guard enforces unique Alembic revision IDs with length <= 32 characters.
-
-The old PostgreSQL diagnostic workflow was removed after closure.
-
 This answer is scoped to the current governed persistence/interchange seam. It does not close retrieval quality, MethodologicalHorizon construction, external ingestion, or knowledge-authoring questions.
-
-Primary evidence:
-
-```text
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
-docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
-```
 
 ---
 
@@ -505,7 +514,7 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 
 **Status:** Substantially answered and promoted for V1 interaction architecture
 
-Specification 008 now promotes the Project Cockpit as the V1 primary immersive active-work model, with direct specialist views retained as alternative entry/inspection/record paths. This closes the basic interface-direction question for V1 while leaving final visual identity and future capability depth open.
+Specification 008 promotes the Project Cockpit as the V1 primary immersive active-work model, with direct specialist views retained as alternative entry/inspection/record paths. This closes the basic interface-direction question for V1 while leaving final visual identity and future capability depth open.
 
 ### Q-050. How should the Cockpit scale to large projects and feel under real spatial interaction?
 
@@ -527,26 +536,9 @@ keyboard/reduced-motion support
 world-owned ambient depth
 ```
 
-The seventh review judged pinch smoothness substantially improved, accepted Jump/search and stage orientation, requested moderately faster scale travel, and explicitly classified the remaining tiny occasional pinch hitch as non-blocking deferred polish. Pinch sensitivity was increased from `0.00135` to `0.0018` before Specification 008 promotion.
+Checkpoint 130 records the later bounded normal-window Jump/composer collision repair and faster anchored pinch. The subsequent real-browser/hardware retest accepted the result as good enough to continue. The remaining tiny occasional pinch hitch stays deferred non-blocking polish.
 
-A later post-promotion human review found a shorter-normal-window Jump/composer collision and pinch scale travel that remained too conservative. Checkpoint 130 records the bounded implementation repair:
-
-```text
-Jump/search
-    palette measures actual rendered composer geometry while open
-    re-clamps on window resize, fullscreen changes, and composer resize
-    lower results remain internally scrollable
-
-pinch
-    sensitivity 0.0018 -> 0.0024
-    smoothing/coalescing/anchoring architecture unchanged
-```
-
-Automated validation head `ae83e920b3fa43ee8242bdb1ca2640d23a474c71` passed V1 frontend spike run `167 / 32503861255` on Ubuntu, Windows, Chromium interaction/accessibility, controlled direct-view visual regression, the normal-window Jump resize regression, and the faster anchored-pinch regression.
-
-The subsequent real-browser/hardware retest accepted the repaired normal-window Jump behavior, fullscreen non-regression, and faster pinch feel as good enough to continue. The remaining tiny occasional pinch hitch stays explicitly deferred non-blocking polish.
-
-Still open inside the broader Cockpit product program:
+Still open:
 
 ```text
 remaining tiny pinch hitch polish
@@ -560,21 +552,19 @@ pan/zoom/HUD persistence contract
 broader real-project scale validation
 ```
 
-These are not blockers for the promoted basic interaction architecture.
-
 ### Q-051. What frontend stack and visualization system should be promoted?
 
 **Status:** Partially narrowed, not accepted as final architecture
 
-React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest remain the leading frontend hypothesis and have supported the Cockpit evidence through Checkpoint 130. Formal final stack promotion remains open. ECharts versus Plotly remains an empirical comparison. Tauri remains deferred.
+React + TypeScript + Vite, TanStack Router/Query/Table, an ADS-owned design system, Playwright, and Vitest remain the leading frontend hypothesis and have supported the Cockpit evidence. Formal final stack promotion remains open. ECharts versus Plotly remains an empirical comparison. Tauri remains deferred.
 
 ### Q-052. What should the final Cockpit visual identity, stage taxonomy, layout, control architecture, and URL contract be?
 
 **Status:** Open by design, no longer a prerequisite for basic interaction promotion
 
-Human review strongly supports the current canvas-dominant spatial direction, restrained ambient world, viewport-aware orientation, compact/fold-away HUD, searchable Jump navigation, and compact right-edge map controls as useful current patterns. The final visual identity, stage taxonomy/widths, semantic zoom, auto-layout, minimap, graph/canvas/gesture library, public route contract, permanent stage-ruler treatment, permanent tool-rail styling, exact ambient styling, and canonical screenshot baseline remain intentionally unfrozen.
+The final visual identity, stage taxonomy/widths, semantic zoom, auto-layout, minimap, graph/canvas/gesture library, public route contract, permanent stage-ruler treatment, permanent tool-rail styling, exact ambient styling, and canonical screenshot baseline remain intentionally unfrozen.
 
-Specification 008 should be treated as the interaction baseline while these product-design questions evolve.
+Specification 008 remains the interaction baseline while these product-design questions evolve.
 
 ---
 
@@ -582,9 +572,9 @@ Specification 008 should be treated as the interaction baseline while these prod
 
 ### Q-013. How should analysis depth and resource budgets work?
 
-**Status:** Open; V0 provides strong cost evidence
+**Status:** Open; V0 and RH-C provide strong cost evidence
 
-V0 demonstrated that explicit machinery can consume more than twice the token budget without material reliability gain. Optional depth should depend on expected value, uncertainty, risk, project intent, and resource constraints while mandatory validity obligations remain mandatory.
+V0 demonstrated that explicit machinery can consume more than twice the token budget without material reliability gain. RH-C demonstrated that the model-facing methodological payload can be reduced substantially before model reasoning while preserving frozen required revisions on a small stress corpus. Final context budgets still require model-specific evidence rather than byte-only proxies.
 
 ### Q-014. How should the system decide when experimentation can stop?
 
@@ -602,7 +592,7 @@ Use multidimensional project characterization rather than one exclusive project-
 
 **Status:** Substantially advanced; broader V1 evaluation remains open
 
-V0 completed a preregistered held-out falsification experiment. V1 additionally requires product/human evaluation, retrieval/horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, and eventually project replay across heterogeneous real projects.
+V0 completed a preregistered held-out falsification experiment. V1 now also has runtime bakeoffs, retrieval/Horizon benchmarks, selective-context gates, cross-platform gates, accessibility checks, and human product review. The next direct reasoning experiment should test whether the selective context machinery earns value at the actual model-reasoning layer.
 
 ### Q-017. How should real projects become regression tests?
 
@@ -610,17 +600,28 @@ V0 completed a preregistered held-out falsification experiment. V1 additionally 
 
 Foundation 017 proposes project replay from original starting inputs. Long-term privacy-safe extraction, diversity, benchmark maintenance, and comparison criteria remain open.
 
-### Q-029. How should analytical effort be prioritized?
+### Q-029. How should analytical and methodological attention be prioritized?
 
-**Status:** Substantially refined, not resolved
+**Status:** Substantially refined; first deterministic task-profile policy validated, broader prioritization remains open
 
-Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference. No final ranking/scoring mechanism exists.
+Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference.
+
+Specification 013 v1.0 validates only a narrower policy:
+
+```text
+explicit requested reasoning functions
+    -> primary matches
+    -> required conceptual support
+    -> hard budget
+```
+
+This is evidence that simple explicit task semantics can compress context on the frozen corpus. It is not a final relevance/ranking model. Still open are multidimensional prioritization, recommendation ranking, required/blocking transitions, task-profile derivation, and when semantic/LLM judgment should enter.
 
 ### Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
 **Status:** Prototype V0 completed; broader program open
 
-The V0 synthetic churn benchmark and held-out protocol are completed historical evidence. The next evaluation program should broaden to retrieval/horizon quality, larger changing project trajectories, human-navigation burden, product usability, and project replay across project families.
+The V0 synthetic churn benchmark and held-out protocol are completed historical evidence. The next evaluation program should broaden to real reasoning under alternative context construction, larger changing project trajectories, human-navigation burden, product usability, and project replay across project families.
 
 ---
 
@@ -673,13 +674,14 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-044  define relevance/prioritization and RH-C selective-context quality/cost over the validated explained Horizon
-Q-045  extend executable coverage/retrieval/applicability separation into ranking, recommendation, required-concern, and outcome quality
-Q-029  determine what prioritization dimensions earn an operational relevance policy
+Q-005  test whether the accepted selective MethodologicalContextPack preserves or improves real reasoning versus a strong fuller-context control
+Q-045  separate real reasoning/recommendation failures from catalog, retrieval, applicability, and context-selection failures
+Q-029  determine when the narrow task-profile selector needs richer prioritization/semantic relevance
+Q-021  choose one concrete model configuration for the bounded reasoning experiment without treating it as permanent provider selection
 Q-051  determine which frontend/chart choices deserve final stack promotion
 Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-Q-046 is closed for the initial V1 runtime selection through Specification 005, Research 015, Checkpoint 133, and D-032. Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted. The remaining Q-050 pinch hitch is deferred product polish rather than an architecture reopening.
+Q-046 remains closed for the initial V1 runtime selection through D-032 / Checkpoint 133. Q-048 remains closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are not current blockers because Specification 008 is promoted.
 
-Q-044 remains active, but its boundary has moved materially: production lexical retrieval, semantic complementarity, one-hop relation expansion, applicability/missing-context handling, and the first explained MethodologicalHorizon are now validated. The unresolved question starts at relevance/prioritization, Horizon budgeting, RH-C selective context, and downstream reasoning/recommendation quality.
+Q-044 has materially advanced: the first bounded chain from retrieval through selective context is now executable. Its remaining uncertainty begins at production task-profile derivation, scaling to richer Horizons, final budgets, and whether more semantic relevance machinery is actually needed. The immediate experiment should therefore test downstream reasoning rather than continue tuning retrieval because it can be tuned.
