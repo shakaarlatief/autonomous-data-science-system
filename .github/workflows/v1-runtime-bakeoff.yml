@@ -56,3 +56,29 @@ jobs:
           experiments/runtime_bakeoff/candidates/openai_agents/test_candidate.py
           experiments/runtime_bakeoff/candidates/openai_agents/test_advanced.py
           -q
+
+  langgraph-candidate:
+    name: LangGraph durability comparator (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run LangGraph 1.2.10 deterministic durability comparator
+        run: >-
+          uv run --python 3.13 --locked
+          --with langgraph==1.2.10
+          --with langgraph-checkpoint-sqlite==3.1.1
+          --with langchain-mcp-adapters==0.3.1
+          python -m pytest
+          experiments/runtime_bakeoff/candidates/langgraph/test_candidate.py
+          -q
