@@ -10,6 +10,7 @@ from ads_system.application.horizon_models import (
     NavigableKnowledgeAsset,
     RelatedKnowledgeAsset,
 )
+from ads_system.application.reasoning import ReasoningOutcome, ReasoningRequest
 from ads_system.application.retrieval import KnowledgeRetrievalHit
 from ads_system.domain.models import (
     Finding,
@@ -90,6 +91,12 @@ class KnowledgeNavigationRepository(Protocol):
     ) -> ContextKnowledgeAsset | None:
         """Return compact reasoning content only for the exact current revision."""
         ...
+
+
+class ReasoningRuntime(Protocol):
+    """Provider-neutral runtime for one stateless ADS reasoning request."""
+
+    async def run(self, request: ReasoningRequest) -> ReasoningOutcome: ...
 
 
 class KnowledgeInterchangeRepository(Protocol):
