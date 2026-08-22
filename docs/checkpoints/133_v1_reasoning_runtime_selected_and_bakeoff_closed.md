@@ -5,6 +5,7 @@
 **Checkpoint class:** ARCHITECTURE_PROMOTION  
 **Project stage:** Post-V0 V1 bounded implementation and integration  
 **Scope:** Promotes the initial V1 reasoning-runtime selection after the complete direct-call, OpenAI Agents SDK, and LangGraph evidence and closes Specification 005 for the current selection question.  
+**Authority:** Promotion record. D-032 is the accepted runtime decision and Specification 005 v0.2 is the executed evaluation contract for this scope.  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
