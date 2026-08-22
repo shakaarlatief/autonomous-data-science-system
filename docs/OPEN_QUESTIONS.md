@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-22  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated through Checkpoint 130 and accepted as good enough to continue in subsequent human review; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the runtime bakeoff is closed through Specification 005 v0.2, Checkpoints 129/131/132, Research 015, and D-032, which selects OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime; production retrieval / MethodologicalHorizon work is now governed by Research 016 and frozen Specification 009 v0.1, with the first accepted-current SQLite FTS5 lexical baseline passing cross-platform through Checkpoint 135 and workflow run 32559177057.
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated through Checkpoint 130 and accepted as good enough to continue; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the initial runtime bakeoff is closed through Specification 005, Checkpoints 129/131/132/133 and D-032, selecting OpenAI Agents SDK behind an ADS-owned runtime port; production retrieval and MethodologicalHorizon work is now evidenced through the lexical baseline at Checkpoint 135, the dense-only comparator at Checkpoint 137, the complementary RRF hybrid comparator at Checkpoint 139, and the first accepted storage-neutral one-hop/applicability-aware MethodologicalHorizon at Specification 012 v1.0 / Checkpoint 141. The next active methodological boundary is relevance/prioritization and RH-C selective-context quality/cost.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -124,15 +124,28 @@ Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`,
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-**Status:** Substantially reframed after V0; active V1 question
+**Status:** Substantially reframed after V0; active at relevance/selective-context boundary
 
-Current direction is selective: global knowledge is retrieved/filtered into a bounded MethodologicalHorizon, explicit checks handle reliable prerequisites/hard rules, and flexible reasoning handles semantic relevance, trade-offs, synthesis, and open-world concern discovery. The first production lexical retrieval slice is now validated, but MethodologicalHorizon quality and selective context quality remain to be measured.
+Current direction is selective: global knowledge is narrowed through retrieval into a bounded explained MethodologicalHorizon; explicit deterministic checks handle accepted-current navigation, reliable prerequisites, hard negatives, and missing context; flexible reasoning should handle semantic relevance, trade-offs, synthesis, and open-world concern discovery only after a bounded context pack is assembled.
+
+Checkpoint 141 now validates the first real Horizon and the distinction `unknown != false`. What remains unvalidated is the crucial next boundary: how relevance/prioritization chooses what belongs in task-specific reasoning context, how much irrelevant context remains, and whether a real reasoning vertical slice improves over simpler context construction.
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Reframed after V0; active V1 question with first retrieval slice validated
+**Status:** Reframed after V0; retrieval and first Horizon validated, activation policy still open
 
-P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged relevance/horizon construction driven by project state, retrieval, explicit applicability checks, and flexible reasoning. Checkpoint 135 validates production lexical retrieval for the frozen RH-L slice, but semantic retrieval, relation expansion, applicability/context handling, relevance ranking, and investigation activation remain open.
+P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, explicit applicability/context checks, relevance/prioritization, and selective reasoning context.
+
+Current executable evidence now covers:
+
+```text
+production lexical retrieval            Checkpoint 135
+semantic complementarity                Checkpoints 137-139
+one-hop relation expansion              Checkpoint 141
+applicability / missing context          Checkpoint 141
+```
+
+Still open are relevance/prioritization, selective context assembly, recommendation/required-state transitions, and the exact mechanism by which a relevant methodological concern becomes a concrete investigation or action.
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
 
@@ -160,20 +173,20 @@ Knowledge role, maturity, enforcement authority, scope confidence, provenance, c
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Reframed after V0; active V1 MethodologicalHorizon problem
+**Status:** Substantially advanced through the first MethodologicalHorizon; relevance/context selection remains active
 
 Current direction:
 
 ```text
 large global knowledge universe
     -> high-recall project-specific retrieval/filtering
-    -> bounded MethodologicalHorizon
+    -> bounded explained MethodologicalHorizon
     -> explicit applicability/context checks
     -> flexible relevance/prioritization reasoning
     -> selective task-specific LLM context
 ```
 
-The accepted-current lexical entry layer is now real and cross-platform validated through Checkpoint 135. The first real production horizon, relation expansion, applicability/context evaluator, relevance/prioritization layer, and context assembler have not yet been validated.
+The first four structural pieces now have executable evidence through Checkpoints 135, 139, and 141: accepted-current retrieval, complementary semantic coverage, one-hop governed relation expansion, and three-valued applicability/missing-context handling. The next unresolved part is relevance/prioritization and selective context assembly, including how project state supplies the context predicates required to make those choices.
 
 ### Q-038. How should reusable knowledge quality and evolution be governed?
 
@@ -187,71 +200,142 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 ### Q-044. How should production retrieval and MethodologicalHorizon construction work?
 
-**Status:** Active V1 question; lexical baseline validated, semantic/Horizon layers still open
+**Status:** Substantially answered through the first explained Horizon; relevance/budget/context policy remains active
 
-Research 016 and Specification 009 v0.1 now provide the first frozen decomposition and benchmark. Checkpoint 135 validates the production SQLite FTS5 accepted-current lexical baseline on the ten-asset stress corpus.
+Research 016 and Specification 009 established the frozen decomposition. The initial retrieval/Horizon sequence has now been executed rather than left hypothetical.
 
-Final observable lexical gate:
+#### Production lexical baseline
+
+Checkpoint 135:
 
 ```text
-V1 methodological horizon
-run 32559177057
-Ubuntu PASS
-Windows PASS
-
 RH-L Recall@3            1.00
 RH-L MRR                 1.00
-RH-L critical omissions  0 / 10
-required target rank 1  10 / 10
-RH-S diagnostic Recall@3 0.75
+RH-S Recall@3            0.75
 ```
 
-The one frozen semantic miss is RH-S01, where the paraphrase `positive cases are scarce and overall correctness hides failures on them` fails to retrieve `class-imbalance`. The other three RH-S targets are recovered at rank 1 by the lexical channel.
+The lexical semantic miss is RH-S01 `class-imbalance`.
+
+#### Exact dense semantic comparator
+
+Checkpoint 137 preserves the FastEmbed 0.8.0 / `BAAI/bge-small-en-v1.5` experiment-only result:
+
+```text
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-S Recall@3            0.75
+RH-S MRR                 0.75
+```
+
+Dense retrieval recovers `class-imbalance` at rank 1 but misses RH-S04 `ecdf`, which lexical retrieval had recovered at rank 1. Dense-only therefore did not earn replacement of lexical retrieval.
+
+#### Complementary hybrid comparator
+
+Checkpoint 139 / workflow run `32561118325`:
+
+```text
+Ubuntu PASS
+Windows PASS
+RH-S Recall@3            1.00
+RH-S MRR                 0.875
+RH-S critical omissions  0 / 4
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+```
+
+The channels are materially complementary on the frozen benchmark. This advances hybrid lexical + exact semantic retrieval as the leading current hypothesis, but does not permanently select FastEmbed, BGE, RRF `k=60`, a vector database, ANN, or embedding persistence.
+
+#### First explained MethodologicalHorizon
+
+Specification 012 v1.0 / Checkpoint 141 / workflow run `32561727632`:
+
+```text
+Ubuntu PASS
+Windows PASS
+RH-R relation cases       4 / 4 PASS
+RH-A applicability cases  5 / 5 PASS
+authoritative knowledge   unchanged
+```
+
+The accepted bounded seam is:
+
+```text
+stable/revision-transparent candidates
+    -> accepted-current navigation reads
+    -> outbound one-hop governed relation expansion
+    -> TRUE / FALSE / UNKNOWN applicability evaluation
+    -> POSSIBLY_APPLICABLE / INAPPLICABLE / MISSING_CONTEXT
+    -> explained included/excluded MethodologicalHorizon
+```
+
+This answers the first retrieval, relation-expansion, and applicability-construction questions. It deliberately does not answer final relevance, recommendation, or context budgeting.
 
 Still required:
 
 ```text
-semantic retrieval candidate evaluation against unchanged RH-S
-incremental useful-recall versus candidate-growth analysis
-lexical/semantic fusion only if justified
-reranking only if ordering becomes a measured problem
-RH-R relational horizon expansion
-RH-A applicability / missing-context behavior
-first bounded real MethodologicalHorizon
-RH-C selective LLM context assembly and context-cost evaluation
+relevance / prioritization over the explained Horizon
+bounded Horizon budget policy
+RH-C selective context construction
+exact required-revision coverage after context selection
+irrelevant-context inclusion/cost
+serialized size / token burden
+omission quality
+production semantic/fusion integration only when a real vertical slice requires it
+reranking only if ordering becomes a measured downstream problem
 ```
-
-Do not select an embedding model, reranker, ANN service, vector database, or fusion algorithm from intuition. At the current corpus scale the next semantic comparator should prefer an exact/in-process design unless evidence requires more infrastructure.
 
 Primary current evidence:
 
 ```text
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
+docs/research/017_exact_semantic_retrieval_comparator_selection.md
+docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
+docs/research/019_first_methodological_horizon_application_seam.md
+
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
-docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
+docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
+docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
+docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
+docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
+
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
+experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
 ```
 
 ### Q-045. How should recommendation quality be evaluated separately from knowledge coverage?
 
-**Status:** Active V1 question; first coverage/retrieval separation is executable
+**Status:** Active V1 question; coverage, retrieval, and applicability failure classes are now executable
 
-Specification 009 now makes the first portion of this decomposition operational. The system can distinguish at least whether frozen knowledge is present in the benchmark catalog and whether the lexical channel retrieves it. RH-L therefore provides a concrete `KNOWN_NOT_RETRIEVED` failure class rather than one aggregate recommendation score.
-
-The broader required distinction remains:
+The evaluation decomposition is now materially stronger than at Specification 009 freeze time. The system can distinguish:
 
 ```text
 knowledge absent from catalog
 known but not retrieved
-retrieved but judged inapplicable
-applicable but ranked too low
+retrieved through lexical and/or semantic channel
+retrieved/seeded but rejected as INAPPLICABLE
+retained but unresolved because MISSING_CONTEXT
+relation-added to the Horizon
+```
+
+This means the first `KNOWN_NOT_RETRIEVED`, `INAPPLICABLE`, and `MISSING_CONTEXT` failure classes are executable rather than conceptual.
+
+The remaining downstream distinction is:
+
+```text
+applicable but judged irrelevant
+relevant but ranked too low / omitted by context budget
 recommended but skipped
 recommended incorrectly
 required concern omitted
+human/execution outcome after recommendation
 ```
 
-Still open are the downstream evaluation contracts for applicability, ranking, recommendation correctness, required-concern omission, and human/execution outcomes. RH-R, RH-A and RH-C are preserved next-stage fixtures rather than completed evidence.
+The next relevance/RH-C gate should therefore measure ranking/context omission separately from upstream retrieval and applicability failures. Recommendation correctness should not be collapsed into retrieval recall.
 
 ---
 
@@ -589,10 +673,13 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-044  evaluate semantic retrieval, then construct the first bounded MethodologicalHorizon
-Q-045  extend the executable coverage/retrieval decomposition into applicability, ranking and recommendation quality
+Q-044  define relevance/prioritization and RH-C selective-context quality/cost over the validated explained Horizon
+Q-045  extend executable coverage/retrieval/applicability separation into ranking, recommendation, required-concern, and outcome quality
+Q-029  determine what prioritization dimensions earn an operational relevance policy
 Q-051  determine which frontend/chart choices deserve final stack promotion
 Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-Q-046 is closed for the initial V1 runtime selection through Specification 005 v0.2, Research 015, Checkpoint 133, and D-032. Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted. The remaining Q-050 pinch hitch is deferred product polish rather than an architecture reopening. Q-044 remains active because Checkpoint 135 validates only the first lexical retrieval layer, not semantic retrieval or the MethodologicalHorizon itself.
+Q-046 is closed for the initial V1 runtime selection through Specification 005, Research 015, Checkpoint 133, and D-032. Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted. The remaining Q-050 pinch hitch is deferred product polish rather than an architecture reopening.
+
+Q-044 remains active, but its boundary has moved materially: production lexical retrieval, semantic complementarity, one-hop relation expansion, applicability/missing-context handling, and the first explained MethodologicalHorizon are now validated. The unresolved question starts at relevance/prioritization, Horizon budgeting, RH-C selective context, and downstream reasoning/recommendation quality.
