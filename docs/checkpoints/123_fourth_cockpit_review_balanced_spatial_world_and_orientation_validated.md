@@ -2,6 +2,10 @@
 
 **Date:** 2026-08-21  
 **Status:** Historical design/implementation checkpoint; Specification 007 remains candidate pending another real-browser human product review  
+**Checkpoint class:** DESIGN  
+**Project stage:** Post-V0 V1 professional frontend exploration  
+**Scope:** Preserves the fourth real-browser Cockpit review and the balanced ProjectWorld/ProjectCanvas spatial-orientation implementation gate.  
+**Authority:** Historical product/design provenance. Later Cockpit research, checkpoints, and Specification 008 govern the promoted current interaction architecture.  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
