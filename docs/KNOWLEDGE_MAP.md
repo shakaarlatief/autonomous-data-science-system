@@ -46,9 +46,9 @@ Current branch relationship:
 
 ```text
 active experiment branch  v1-reasoning-context-value
-active PR                 #12 -> v1-frontend-spike
-promoted integration head fd33184fbff588c6737d77af751bc5def0e31954
-main                      intentionally behind current V1 work
+active PR                  #12 -> v1-frontend-spike
+promoted integration head  fd33184fbff588c6737d77af751bc5def0e31954
+main                       intentionally behind current V1 work
 ```
 
 ---
@@ -59,7 +59,7 @@ Prototype V0 is complete with final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**
 
-The durable post-V0 scaling lesson is:
+Durable post-V0 constraint:
 
 ```text
 what the SYSTEM should remember
@@ -96,8 +96,8 @@ Specification 013 v1.0 / Checkpoint 143
 
 Specification 014 v0.1 / Checkpoints 144-145
     first selective-context versus compact full-Horizon real-reasoning experiment
-    provider-free implementation complete and green
-    live experiment pending
+    provider-free implementation and reconciliation complete
+    live experiment is the next substantive action
 ```
 
 ---
@@ -333,12 +333,6 @@ irrelevant selected assets         0
 unexplained omissions              0
 ```
 
-PR #11 exact tested head:
-
-```text
-517a12d14b6bb639258931f5c3c451d35ccd7ec0
-```
-
 PR #11 promoted merge:
 
 ```text
@@ -422,32 +416,51 @@ per-case mean selective/full <= 0.80
 aggregate mean selective/full <= 0.80
 ```
 
-Provider-free implementation evidence before Checkpoint 145:
+Provider-free implementation evidence:
 
 ```text
-source head aadf425fdb24db2512e2171f4a99be3c87d8cb80
-workflow    V1 reasoning context value / 32568052820
-Ubuntu      PASS
-Windows     PASS
+first implementation head  aadf425fdb24db2512e2171f4a99be3c87d8cb80
+workflow                   V1 reasoning context value / 32568052820
+Ubuntu                     PASS
+Windows                    PASS
 ```
 
-This is infrastructure evidence only. No live Specification 014 model call has occurred yet.
+Fully reconciled pre-live head before the final routing-only updates:
+
+```text
+23cf0c09fadbe11330edfed19c10e7e194f5be18
+```
+
+It passed Checkpoint metadata, the reasoning-context workflow on Ubuntu and Windows, selective-context regression, first-Horizon-builder regression, and MethodologicalHorizon regression.
+
+This is infrastructure evidence only. No live Specification 014 reasoner/judge call has occurred yet.
 
 ---
 
 ## Current exact continuation
 
+Pre-live implementation, PR reconciliation, and canonical routing reconciliation are complete.
+
+The only remaining precondition is that the **current** documentation-adjusted PR head remains green under the same provider-free gates. Once confirmed, the next substantive action is:
+
 ```text
-1. finish README / OPEN_QUESTIONS / PR #12 reconciliation
-2. validate the exact reconciled branch head again
-3. manually dispatch .github/workflows/v1-reasoning-context-value-live.yml
-4. enter confirmation RUN_SPEC_014_FROZEN
-5. preserve the complete uploaded result artifact before tuning
-6. create a live-result checkpoint
-7. only then decide promotion or the next experiment
+.github/workflows/v1-reasoning-context-value-live.yml
+branch: v1-reasoning-context-value
+confirmation: RUN_SPEC_014_FROZEN
+secret: OPENAI_API_KEY
 ```
 
-Do not change the frozen model, prompts, fixture, semantic rubric, thresholds, repetitions, retry policy, or context construction after observing live outputs without first preserving the result.
+After the run:
+
+```text
+1. inspect the complete uploaded workflow artifact
+2. preserve raw and aggregate result before any tuning
+3. create the live-result checkpoint
+4. apply Specification 014's frozen advancement rule
+5. only then decide promotion, repair, or the next experiment
+```
+
+Do not merge PR #12 on provider-free evidence alone. Do not change the frozen model, prompts, fixture, semantic rubric, thresholds, repetitions, retry policy, or context construction before the live result is preserved.
 
 ---
 
