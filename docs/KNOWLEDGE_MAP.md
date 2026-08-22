@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-21  
-**Current checkpoint:** 130  
+**Last reviewed:** 2026-08-22  
+**Current checkpoint:** 131  
 **Active development branch:** `v1-runtime-bakeoff`
 
 ## Start here
@@ -12,10 +12,10 @@ For a new session or quick reconstruction:
 
 ```text
 README.md
-    project-level overview and current branch/stage
+    project-level overview and current stage
 
 docs/CURRENT_STATE.md
-    present state, active gates, and exact next step
+    present state, active gates, exact next step
 
 docs/KNOWLEDGE_MAP.md
     routing layer
@@ -30,13 +30,13 @@ docs/DECISIONS.md
     accepted project-level decisions
 
 docs/OPEN_QUESTIONS.md
-    reconciled current unresolved questions
+    current unresolved questions
 
 docs/DEVELOPMENT_METHOD.md
-    development/preservation method
+    preservation/development method
 
 docs/CONTINUITY.md
-    cross-session continuation and unplanned-boundary recovery
+    continuation and unexpected-boundary recovery
 
 docs/MAJOR_CHANGES.md
     selective structural history
@@ -45,67 +45,62 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-active executable V1/runtime work = v1-runtime-bakeoff
-preserved promoted V1/frontend boundary = v1-frontend-spike
+active runtime/integration work = v1-runtime-bakeoff
+preserved promoted frontend boundary = v1-frontend-spike
 main intentionally trails current V1 work
 ```
-
-A continuation session must not infer the latest project state from `main` alone while this branch relationship remains active.
 
 ---
 
 ## Current project stage
 
-Prototype V0 is complete and its final classification is:
+Prototype V0 is complete with final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**
 
-The project is now implementing bounded V1 slices across:
+Current bounded V1 tracks:
 
 ```text
 methodological knowledge
 governed persistence/interchange
 retrieval / MethodologicalHorizon construction
 agent/runtime infrastructure
-professional frontend
-Project Cockpit
+professional frontend / Project Cockpit
 ```
 
-Current major boundaries:
+Major current boundaries:
 
 ```text
 Project Cockpit interaction architecture
     promoted through Specification 008 / Checkpoint 126
-    post-promotion Jump/pinch polish automatically validated through Checkpoint 130
-    short real-browser/hardware retest remains open
+    post-promotion normal-window/pinch polish validated in Checkpoint 130
 
-governed reusable-knowledge persistence/interchange seam
+governed reusable-knowledge persistence/interchange
     closed across SQLite/Linux, SQLite/Windows, PostgreSQL 18
     Checkpoint 127
 
 runtime bakeoff
-    ecosystem refreshed in Checkpoint 128
-    direct-call control passed in Checkpoint 129
-    OpenAI Agents SDK 0.19.4 core subgate now passes cross-platform
-    remaining OpenAI gates AR-03 / AR-08 / AR-09 / AR-11 still open
+    direct-call control viable, Checkpoint 129
+    OpenAI Agents SDK 0.19.4 complete candidate viable, Checkpoint 131
+    LangGraph durability comparator next
+    no runtime selected
 ```
 
-The main execution priority is the **Specification 005 one-principal-reasoner runtime bakeoff**. The production retrieval/MethodologicalHorizon benchmark is the other highest-value active V1 track.
+The other highest-value active V1 track is production retrieval / MethodologicalHorizon evaluation.
 
 ---
 
-## System purpose and LLM/system/human boundary
+## Core system boundary
 
 Primary sources:
 
 ```text
-docs/VISION.md
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-Current durable interpretation:
+Durable interpretation:
 
 ```text
 LLM
@@ -123,14 +118,14 @@ Human
     goals
     semantics
     consequential judgment
-    approvals / intervention where useful
+    approvals/intervention where useful
 ```
 
 Every explicit mechanism must earn its complexity empirically.
 
 ---
 
-## Prototype V0 evidence and architectural constraint
+## Prototype V0 constraint
 
 Authoritative evidence:
 
@@ -140,7 +135,7 @@ prototype_v0/README.md
 docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
 ```
 
-Core scaling lesson:
+Core lesson:
 
 ```text
 what the SYSTEM should remember
@@ -148,24 +143,25 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-Do not reintroduce unchanged:
-
-```text
-full structured state/context every reasoning cycle
-large always-on frontier/context
-path-sensitive tag-trigger activation
-generic recursive support reassessment
-universal dependency reopening machinery
-```
+Do not reintroduce unchanged full structured state every cycle, large always-on context/frontier, path-sensitive trigger activation, generic recursive support reassessment, or universal dependency reopening.
 
 ---
 
-## Project object model and professional developer workflow
+## Project object model
 
 Primary source:
 
 ```text
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+Core structures:
+
+```text
+OBJECTS
+RELATIONS
+EVENTS
+VIEWS
 ```
 
 Important distinctions:
@@ -180,42 +176,18 @@ persisted object != derived recommendation
 workspace section != fundamental object
 ```
 
-Core structures:
+Professional workflow split:
 
 ```text
-OBJECTS
-RELATIONS
-EVENTS
-VIEWS
-```
-
-Subject-specific verdicts use:
-
-```text
-Question -> Evidence -> Finding -> Claim / Decision
-```
-
-with structured criterion Findings where useful.
-
-Professional-workflow responsibility split:
-
-```text
-ADS
-    project/process control plane
-
-VS Code
-    developer workbench
-
-Python / Docker / local or remote compute
-    execution plane
-
-Git + GitHub
-    source versioning, collaboration, provenance
+ADS         project/process control plane
+VS Code     developer workbench
+compute     execution plane
+Git/GitHub  source/provenance/collaboration
 ```
 
 ---
 
-## Methodological-navigation brain and reusable knowledge
+## Methodological navigation and reusable knowledge
 
 Primary sources:
 
@@ -227,14 +199,10 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 Relevance progression:
 
 ```text
-KNOWN
-    -> APPLICABLE
-    -> RELEVANT
-    -> RECOMMENDED
-    -> REQUIRED / BLOCKING
+KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Scaling concept:
+Scaling path:
 
 ```text
 large global knowledge universe
@@ -245,47 +213,23 @@ large global knowledge universe
     -> selective task-specific LLM context
 ```
 
-Reusable representation:
+Reusable representation includes:
 
 ```text
 KnowledgeAsset
 KnowledgeComponent
 NarrativeFacet
 KnowledgeRelation
-Conditional KnowledgeRule
+conditional KnowledgeRule
 KnowledgeCollection
 exact stable/revision identity
-project-object references/influence
 criterion Finding
 ExecutionCapability
-derived Views
-```
-
-Durable distinctions:
-
-```text
-intrinsic knowledge kind != reasoning function
-asset != component != narrative facet
-static semantic relation != conditional methodological rule
-retrieval cue != applicability predicate != required context != project relevance
-methodological knowledge != execution implementation
-global knowledge != project-specific state
-internal representation != human-facing workflow/tree
-```
-
-Key stress-test/promotion sources:
-
-```text
-docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
-docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
-docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
-docs/checkpoints/105_refined_representation_second_stress_test.md
-docs/checkpoints/106_foundation_020_promoted_and_implementation_requirements_next.md
 ```
 
 ---
 
-## Accepted V1 persistence, tooling, and interchange
+## Accepted V1 persistence, tooling and interchange
 
 Primary decisions/specifications:
 
@@ -296,7 +240,7 @@ D-030 + docs/specifications/003_v1_python_project_and_dependency_tooling.md
 D-031 + docs/specifications/004_v1_reusable_knowledge_interchange.md
 ```
 
-Accepted direction:
+Current accepted direction:
 
 ```text
 SQLite-centered local-first operational architecture
@@ -304,270 +248,165 @@ FTS5 rebuildable lexical index
 rebuildable embeddings / initial exact semantic retrieval
 application rule evaluator
 selective context assembler
-filesystem / Git / artifact storage outside SQLite
 
 SQLAlchemy Core 2.0
 Alembic 1.x
-PostgreSQL identifier portability
-unique Alembic revision IDs <= 32 chars while the default version table remains
+PostgreSQL portability rules
+Alembic revision IDs <= 32 chars while default version table remains
 
 pyproject.toml
 uv + committed uv.lock
 uv_build
-src/ads_system
 Python >=3.12
 
 JSON
 JSON Schema Draft 2020-12
-application semantic validation
-deterministic interchange normalization/serialization
+semantic validation
+deterministic normalization/serialization
 ```
 
-Early milestones:
-
-```text
-docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
-docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-```
-
-Checkpoint 114 passed the first production persistence slice on SQLite/Linux, SQLite/Windows, and PostgreSQL 18.
-
-Checkpoint 115 validated the reusable-knowledge interchange contract across Linux/Windows and Python 3.12 through 3.14.
-
----
-
-## Governed reusable-knowledge round-trip: CLOSED
-
-Current authoritative result:
+Governed round-trip closure:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_STATUS.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
 
-Final gate:
-
-```text
-V1 governed knowledge roundtrip closure gate
-run 32496856945
-
-SQLite / Ubuntu     PASS
-SQLite / Windows    PASS
-PostgreSQL 18       PASS
-Alembic revision-ID portability guard PASS on all three jobs
-```
-
-Validated governed behavior includes:
-
-```text
-candidate import
-explicit acceptance
-accepted-current pointers
-accepted snapshot export
-provenance
-relation governance
-collections
-migration 0002
-historical project revision pinning across later acceptance
-```
-
-Two portability defects were resolved:
-
-```text
-PostgreSQL 63-byte identifier limit
-    -> overlong manually named constraint shortened
-
-Alembic default version table VARCHAR(32)
-    -> revision `0002_reusable_knowledge_interchange` shortened to
-       `0002_knowledge_interchange`
-```
-
-A deterministic regression guard now requires unique Alembic revision IDs with length <= 32 characters.
-
-Q-048 is closed as an implementation gate.
-
-This evidence does not validate retrieval/horizon quality, embeddings, reranking, or knowledge-authoring UX.
+Final run `32496856945` passed SQLite Ubuntu, SQLite Windows, PostgreSQL 18, and the Alembic revision-ID guard.
 
 ---
 
-## Agent/runtime bakeoff: ACTIVE
+## Runtime bakeoff: current active track
 
-Primary research/specification/evidence:
+Evaluation contract:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+```
+
+Ecosystem/released-API research:
 
 ```text
 docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
 docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
 docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-
-docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
-docs/checkpoints/129_direct_call_control_runtime_baseline_passed.md
-
-experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
-experiments/runtime_bakeoff/candidates/openai_agents/CORE_RESULT.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
 ```
 
-Durable boundary:
+Durable runtime boundary:
 
 ```text
 ADS domain/project/methodological semantics
     owned by ADS
 
-agent runtimes / MCP / runtime checkpoints
-    replaceable infrastructure/interoperability
+runtime framework / MCP / runtime checkpoint mechanics
+    replaceable infrastructure
 ```
 
-Current evaluation order, not selection:
+### ADS-owned framework-neutral harness
+
+Location:
 
 ```text
-CONTROL
-    direct model calls with ADS-owned execution semantics
+experiments/runtime_bakeoff/
+```
 
-FIRST FRAMEWORK CANDIDATE
-    OpenAI Agents SDK
+Owns:
 
-SECOND DURABILITY COMPARATOR
-    LangGraph
-
-SECONDARY / CONDITIONAL
-    Microsoft Agent Framework
-    Google ADK 2.0
+```text
+representative workload
+ProjectContextSnapshot
+MethodologicalContextPack
+RuntimeWorkloadInput
+RuntimeRecommendation
+RuntimeInterrupt
+RuntimeResumeToken
+RuntimeTrace
+RuntimeOutcome
+context-pack digest and exact knowledge revisions
+ProposalLedger authoritative side-effect idempotency
 ```
 
 ### Direct-call control
 
-Checkpoint 129 proves the simpler control is executable rather than hypothetical.
-
-Validated cross-platform behavior includes:
+Evidence:
 
 ```text
-ADS-owned model/tool loop
-exact context-pack digest + revision provenance
-approval before authoritative side effect
-serialized process-boundary resume
-ADS-owned at-most-once proposal ledger
-repeated-resume idempotency
-rejection
-stale-context rejection
-cancellation
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+```
+
+Run `32500521858`: Ubuntu/Windows PASS. Direct calls are a viable final outcome, with the cost of significant explicit custom orchestration machinery.
+
+### OpenAI Agents SDK 0.19.4
+
+Evidence:
+
+```text
+experiments/runtime_bakeoff/candidates/openai_agents/CORE_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+```
+
+Complete validation:
+
+```text
+validated implementation 08c1c41246d8ece21e443d938ed477176505e40f
+run 32555526773
+AR-01 through AR-12 PASS
+Ubuntu PASS
+Windows PASS
+control/full Python suite PASS
+```
+
+Important evidence:
+
+```text
+real stdio MCP integration
+native approval interruption
+serialized/restored RunState
+application cancellation
+function-tool timeout
 controlled retry
-normalized trace
-ADS-owned structured recommendation
+ADS ProposalLedger idempotency under repeated resume
+ADS-normalized observability
+provider-free deterministic Model fake
 ```
 
-Gate:
+OpenAI is technically viable but not selected.
+
+### Next comparator: LangGraph
+
+Exact next work:
 
 ```text
-run 32500521858
-Ubuntu PASS
-Windows PASS
-existing Python suite PASS
+audit currently released package/API
+implement isolated candidate under experiments/runtime_bakeoff/candidates/langgraph/
+use same workload and ADS authority boundary
+stress durable checkpoint/process-boundary resume
+stress interrupt/node restart/replay semantics
+protect side effects through ADS ProposalLedger
+complete AR-01..AR-12 if viable
+compare direct calls vs OpenAI vs LangGraph
 ```
 
-### OpenAI Agents SDK 0.19.4 core candidate
-
-The candidate is isolated under:
-
-```text
-experiments/runtime_bakeoff/candidates/openai_agents/
-```
-
-The framework remains outside `ads_system.domain` and is not an unconditional production dependency.
-
-Validated core gates:
-
-```text
-AR-01 domain isolation
-AR-02 single-agent tool loop
-AR-04 native approval interruption
-AR-05 serialized RunState process-boundary resume
-AR-06 external ADS project-state authority
-AR-07 exact context/revision transparency
-AR-10 structured output + ADS provenance validation
-AR-12 deterministic no-live-provider testing through released public Model boundary
-```
-
-Core gate:
-
-```text
-run 15 / 32501907783
-Ubuntu PASS
-Windows PASS
-direct controls PASS
-existing Python suite PASS
-```
-
-Latest combined branch gate after Checkpoint-130 frontend polish:
-
-```text
-run 20 / 32503861259
-OpenAI core Ubuntu PASS
-OpenAI core Windows PASS
-direct control Ubuntu PASS
-direct control Windows PASS
-existing Python suite PASS
-```
-
-Research 011 records an important maturity finding:
-
-```text
-current docs advertise agents.testing.ScriptedModel
-published openai-agents==0.19.4 does not ship agents.testing
-released public Model interface is sufficient for an isolated deterministic fake
-```
-
-Remaining OpenAI mandatory work:
-
-```text
-AR-03 current MCP integration
-AR-08 cancellation and bounded timeout
-AR-09 controlled failure/retry behavior
-AR-11 normalized observability
-```
-
-No runtime is selected. Direct calls remain a valid final winner if no framework earns its dependency/operational burden.
+Microsoft Agent Framework and Google ADK 2.0 remain conditional candidates only if they could plausibly change the decision after the primary comparison.
 
 ---
 
-## Professional frontend foundation
+## Professional frontend and Project Cockpit
 
-Primary foundation/specification:
+Primary foundation/specifications:
 
 ```text
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Leading stack hypothesis, not final accepted architecture:
-
-```text
-React
-TypeScript
-Vite
-TanStack Router
-TanStack Query
-TanStack Table
-ADS-owned design system
-Playwright
-Vitest
-```
-
-Chart strategy remains under evaluation:
-
-```text
-ECharts
-vs
-Plotly
-```
-
-Tauri remains deferred.
-
----
-
-## Project Cockpit: promoted interaction architecture plus bounded post-promotion polish
-
-Historical research and spike evolution:
+Promotion/history:
 
 ```text
 docs/research/002_primary_project_cockpit_interface_concept.md
@@ -580,121 +419,30 @@ docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stab
 docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
 docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
 
-docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
-```
-
-Current authoritative interaction contract:
-
-```text
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-```
-
-Promotion checkpoint:
-
-```text
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
-```
-
-Current post-promotion polish checkpoint:
-
-```text
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
-Promoted model:
+Current promoted interaction model:
 
 ```text
-Project Cockpit
-    primary immersive active-work environment
-    living project-process projection
-    native system interaction
-    focused analytical work
-
-Direct specialist views
-    alternative entry / inspection / records
-    reuse the same modules/state
-```
-
-Promoted interaction principles:
-
-```text
-meaningful work units rather than every persisted object
+Project Cockpit as primary immersive active-work environment
+meaningful work-unit projection
 spatial focus into real specialist workspaces
-reachability != simultaneous mounting
 FiniteNavigableGridWorld != SemanticProjectPlane
-2D navigation and recovery
-bounded geometric zoom
-native laptop pinch capability
+2D navigation/recovery
+bounded geometric zoom/native pinch
 viewport-aware stage orientation
-scalable Jump/search project location
-compact/fold-away immersive chrome
+scalable Jump/search
+compact/foldable HUD/tool rail
 collision-safe floating surfaces
-true fullscreen with graceful fallback
-URL-addressable focus/deep-work state
-keyboard accessibility and reduced-motion support
-world-owned restrained ambient depth
+true fullscreen
+URL-addressable focus
+keyboard/reduced-motion support
+world-owned ambient depth
 ```
 
-Promotion validation:
-
-```text
-head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
-run 155 / 32492536072
-
-Ubuntu build + unit tests                 PASS
-Windows build + unit tests                PASS
-Chromium interaction/accessibility        PASS
-controlled direct-view visual regression  PASS
-```
-
-Checkpoint-130 bounded polish:
-
-```text
-normal-window Jump/search collision
-    -> palette now measures actual composer boundary
-    -> re-clamps on resize/fullscreen/composer resize
-
-native pinch scale travel
-    -> PINCH_SENSITIVITY 0.0018 -> 0.0024
-    -> smoothing/coalescing/anchoring retained
-```
-
-Automated polish gate:
-
-```text
-head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
-run 167 / 32503861255
-
-Ubuntu build + unit tests                  PASS
-Windows build + unit tests                 PASS
-Chromium interaction/accessibility         PASS
-controlled direct-view visual regression   PASS
-normal-window Jump re-clamp regression      PASS
-faster anchored pinch regression            PASS
-```
-
-Short human retest remains open for actual Chrome-window geometry and real trackpad feel. The remaining tiny occasional pinch hitch remains non-blocking deferred polish.
-
-Still deliberately unfrozen:
-
-```text
-final pinch/zoom constants
-final graph/canvas or gesture library
-final auto-layout algorithm
-final semantic zoom/grouping
-final minimap
-infinite-canvas semantics
-final finite-world extent algorithm
-production project-search backend
-final stage taxonomy/widths
-final stage-ruler visual treatment
-permanent vertical tool-rail styling/iconography
-final ambient styling
-final public URL contract
-pan/zoom/HUD persistence contract
-final visual identity
-canonical Cockpit screenshot baseline
-```
+Exact gesture constants, final layout/stage taxonomy, graph/canvas library, auto-layout, semantic zoom, minimap, production project-search backend, final URL contract and visual identity remain deliberately unfrozen.
 
 ---
 
@@ -718,33 +466,18 @@ first real MethodologicalHorizon construction
 selective LLM context assembly
 ```
 
-Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
-
-The benchmark should distinguish catalog absence, retrieval omission, applicability judgment, ranking failure, recommendation error, and required-concern omission.
+Do not select embedding/reranking/vector infrastructure from intuition.
 
 ---
 
-## Current exact cross-track priorities
+## Current exact priorities
 
 ```text
-A. Short Checkpoint-130 Cockpit human retest
-   normal-window Jump/composer safety
-   fullscreen non-regression
-   real-trackpad pinch travel
-
-B. Complete OpenAI Agents SDK Specification-005 gates
-   AR-03 MCP
-   AR-08 cancellation/timeouts
-   AR-09 failure/retry
-   AR-11 observability
-   then compare with direct-call control
-
-C. Retrieval / MethodologicalHorizon benchmark
-
-D. LangGraph durability comparator if still decision-relevant after completed OpenAI evidence
+A. LangGraph durability comparator under Specification 005
+B. evidence-based runtime/no-runtime comparison and candidate stopping decision
+C. production retrieval / MethodologicalHorizon benchmark
+D. future Cockpit capability/product work on top of Specification 008
 ```
-
-The governed persistence/interchange seam is no longer an active blocker.
 
 ---
 
@@ -763,9 +496,10 @@ The governed persistence/interchange seam is no longer an active blocker.
 123  balanced spatial world/orientation gate passed
 124  continuous grid world/stage-ruler/vertical-tool-rail gate passed
 125  ambient/pinch/ruler/collision repairs validated
-126  seventh Cockpit review + final gate + interaction architecture promotion
-127  governed knowledge round-trip closed across SQLite and PostgreSQL
-128  runtime-bakeoff ecosystem evidence refreshed
-129  direct-call runtime control baseline passed cross-platform
-130  post-promotion normal-window Jump/pinch polish automated gate passed; human retest open
+126  seventh Cockpit review + interaction architecture promotion
+127  governed knowledge round-trip closed across SQLite/PostgreSQL
+128  runtime-bakeoff preimplementation evidence refreshed
+129  direct model-call runtime control cross-platform PASS
+130  post-promotion Cockpit normal-window/pinch polish PASS
+131  OpenAI Agents SDK 0.19.4 complete candidate cross-platform PASS
 ```
