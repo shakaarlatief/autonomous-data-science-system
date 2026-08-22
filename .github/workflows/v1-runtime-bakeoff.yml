@@ -1,0 +1,85 @@
+name: V1 runtime bakeoff
+
+on:
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - experiments/__init__.py
+      - experiments/runtime_bakeoff/**
+      - tests/unit/test_runtime_bakeoff_*.py
+      - pyproject.toml
+      - uv.lock
+      - .github/workflows/v1-runtime-bakeoff.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deterministic-harness:
+    name: Deterministic harness (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run runtime bakeoff control tests
+        run: uv run --python 3.13 --locked python -m pytest tests/unit/test_runtime_bakeoff_harness.py tests/unit/test_runtime_bakeoff_direct_call.py -q
+      - name: Run existing Python test suite
+        run: uv run --python 3.13 --locked python -m pytest -q
+
+  openai-agents-candidate:
+    name: OpenAI Agents complete candidate (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run OpenAI Agents 0.19.4 deterministic candidate gate
+        run: >-
+          uv run --python 3.13 --locked --with openai-agents==0.19.4
+          python -m pytest
+          experiments/runtime_bakeoff/candidates/openai_agents/test_candidate.py
+          experiments/runtime_bakeoff/candidates/openai_agents/test_advanced.py
+          -q
+
+  langgraph-candidate:
+    name: LangGraph durability comparator (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run LangGraph 1.2.10 deterministic durability comparator
+        run: >-
+          uv run --python 3.13 --locked
+          --with langgraph==1.2.10
+          --with langgraph-checkpoint-sqlite==3.1.1
+          --with langchain-mcp-adapters==0.3.1
+          --with mcp==1.28.1
+          python -m pytest
+          experiments/runtime_bakeoff/candidates/langgraph_runtime/test_candidate.py
+          -q

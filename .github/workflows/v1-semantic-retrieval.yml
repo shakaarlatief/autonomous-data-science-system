@@ -1,0 +1,30 @@
+name: V1 semantic retrieval comparator
+
+# Specification 010 is complete and intentionally failed its primary dense-only
+# gate. Keep this workflow available for explicit historical reproduction, but do
+# not make the preserved failed candidate a permanent automatic PR blocker.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-semantic-comparator:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Reproduce frozen exact semantic comparator
+        run: uv run --python 3.13 --with fastembed==0.8.0 python experiments/retrieval/semantic_fastembed_comparator.py
+      - name: Run existing V1 Python regression suite without semantic candidate dependency
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q

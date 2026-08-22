@@ -1,0 +1,4 @@
+:root:not([data-theme="dark"]) {
+  --text-muted: #646c78;
+  --attention: #985d0f;
+}

@@ -30,16 +30,19 @@ A project of this scope cannot safely depend on long chat histories or model mem
 
 ---
 
-## D-003. Keep the repository private for now
+## D-003. Keep the repository private during the early design stage
 
-**Status:** Accepted  
-**Date:** 2026-08-07
+**Status:** Superseded in current repository state; the repository is now public  
+**Date:** 2026-08-07  
+**Superseded in scope:** By 2026-08-20; the exact visibility-change decision/date is not preserved in this decision record
 
-The repository is private during the early design stage.
+The repository was kept private during the early design stage. The current GitHub repository is public, so this early-stage visibility decision no longer describes present repository state.
 
 ### Rationale
 
-The project is highly exploratory and many ideas are intentionally provisional. Public presentation can be reconsidered once the structure and goals are more mature.
+The project was highly exploratory and many ideas were intentionally provisional. Public presentation was explicitly left open for reconsideration once the structure and goals became more mature.
+
+This reconciliation records the observable current visibility without inventing an unpreserved rationale or exact transition date for the later change.
 
 ---
 
@@ -142,9 +145,9 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, and Python project/dependency tooling by D-030; still applicable to implementation subsystems not yet selected  
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, and initial reasoning runtime by D-032; still applicable to implementation subsystems not yet selected  
 **Date:** 2026-08-07  
-**Superseded in scope:** 2026-08-20
+**Superseded in scope:** 2026-08-20 and 2026-08-22
 
 The project will not yet choose an agent framework, number of agents, LLM providers, orchestration framework, database, graph technology, rule engine, execution architecture, or other implementation stack.
 
@@ -653,4 +656,116 @@ docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
 experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
 schemas/reusable_knowledge_bundle_v1.schema.json
+```
+
+---
+
+## D-032. Use OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-22
+
+The initial V1 reasoning runtime will use **OpenAI Agents SDK** behind an ADS-owned runtime/application boundary.
+
+The validated starting package is:
+
+```text
+openai-agents==0.19.4
+```
+
+The package version is a validated baseline, not a permanent freeze. Upgrades must preserve the runtime contract and receive targeted compatibility validation before replacing the known-good baseline.
+
+The intended boundary is:
+
+```text
+ADS domain / application / methodological services
+        |
+        v
+ADS-owned ReasoningRuntime port
+        |
+        v
+OpenAI Agents adapter
+        |
+        v
+Agent / Runner / RunState / MCP runtime infrastructure
+```
+
+Framework-specific types remain below the adapter boundary. In particular:
+
+```text
+Agent != Project
+RunState != project memory
+SDK session/thread/runtime state != ADS project identity
+SDK tracing != authoritative provenance
+SDK tool definition != the only definition of an ADS ExecutionCapability
+```
+
+ADS continues to own:
+
+```text
+Project and methodological semantics
+MethodologicalContextPack construction
+exact context-pack digest and knowledge revision references
+stale authoritative-context rejection
+human-control and approval policy
+application cancellation policy
+authoritative side-effect idempotency and domain-event persistence
+stable normalized RuntimeTrace / provenance
+runtime-state persistence policy and compatibility checks
+```
+
+The first production runtime remains **single-principal-reasoner first**. This decision does not select a multi-agent architecture.
+
+MCP remains an external tool/resource interoperability boundary. It does not become project memory or ADS's internal application bus.
+
+### Rationale
+
+Specification 005 was executed against three meaningful points in the runtime design space:
+
+```text
+ADS-owned direct model calls
+OpenAI Agents SDK 0.19.4
+LangGraph 1.2.10
+```
+
+The direct-call control proved that ADS can remain framework-independent, but it also exposed the amount of generic orchestration machinery ADS would need to maintain itself: model/tool iteration, approval state, resume serialization, retry/cancellation policy, trace normalization, timeout handling, and related runtime mechanics.
+
+OpenAI Agents SDK 0.19.4 passed all mandatory AR-01 through AR-12 gates on Ubuntu and Windows. It removed meaningful generic plumbing around tool iteration/schema dispatch, approval interruption, serializable/restorable `RunState`, structured output, local stdio MCP, tool timeout, and lifecycle hooks while leaving ADS project, methodological, governance, provenance, and side-effect authority outside the framework.
+
+LangGraph 1.2.10 also passed the complete comparator and demonstrated stronger explicit persisted workflow/checkpoint machinery. However, the current V1 runtime does not yet require a general durable workflow engine strongly enough to justify the additional checkpoint-store lifecycle, workflow topology, adapter dependencies, and explicit interrupt-node replay semantics. ADS still requires an application-level idempotency boundary under LangGraph replay, so the stronger durability does not remove the central domain-side exactly-once rule.
+
+The bakeoff therefore selects the **smallest complete framework candidate that removes meaningful generic runtime burden without taking semantic authority**.
+
+The no-framework direct-call path is retained as an architectural control, fallback, and future escape hatch. LangGraph remains a documented future escalation path if ADS later requires materially stronger long-running workflow durability, checkpoint history/time travel, or independently durable workflow stages.
+
+Microsoft Agent Framework and Google ADK 2.0 are not implemented in the current bakeoff because Research 015 found no current differentiator likely to overturn the selection. This is a stop-rule decision, not a permanent rejection. Reopen those candidates if provider portability, distributed workflow durability, multi-agent collaboration, or another future requirement becomes first-order and is poorly served by the selected runtime.
+
+This decision does **not** select:
+
+```text
+final LLM provider/model
+number of agents beyond single-principal-reasoner first
+multi-agent collaboration architecture
+production durable runtime-state storage schema
+production MCP server catalog
+A2A
+AG-UI final role
+```
+
+See:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
 ```
