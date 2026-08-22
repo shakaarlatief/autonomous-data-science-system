@@ -193,16 +193,6 @@ def main() -> None:
         stable_keys=stable_keys,
     )
 
-    # Specification 010 primary semantic gate.
-    assert rh_s_recall == 1.0, rh_s_results
-    assert rh_s_mrr > 0.75, rh_s_results
-    assert "class-imbalance" in {
-        item["stable_key"] for item in rh_s_results["RH-S01"]
-    }, rh_s_results["RH-S01"]
-
-    # Diagnostic weakness threshold from Specification 010.
-    assert rh_l_recall >= 0.80, rh_l_results
-
     result = {
         "specification": "010-v0.1",
         "benchmark_id": benchmark["benchmark_id"],
@@ -217,7 +207,9 @@ def main() -> None:
         "top_k": TOP_K,
         "rh_s_recall_at_3": rh_s_recall,
         "rh_s_mrr": round(rh_s_mrr, 8),
-        "rh_s_critical_omissions": int((1.0 - rh_s_recall) * len(benchmark["semantic_diagnostic_cases"])),
+        "rh_s_critical_omissions": int(
+            (1.0 - rh_s_recall) * len(benchmark["semantic_diagnostic_cases"])
+        ),
         "rh_s_results": rh_s_results,
         "rh_l_semantic_recall_at_3": rh_l_recall,
         "rh_l_semantic_mrr": round(rh_l_mrr, 8),
@@ -228,7 +220,20 @@ def main() -> None:
         "rh_l_query_seconds": round(rh_l_seconds, 4),
     }
 
+    # Always emit complete evidence before applying the frozen acceptance gates.
+    # This keeps a failed candidate diagnostically useful without changing the
+    # experiment contract or allowing failures to disappear behind assertions.
     print("V1_SEMANTIC_RETRIEVAL_JSON=" + json.dumps(result, sort_keys=True))
+
+    # Specification 010 primary semantic gate.
+    assert rh_s_recall == 1.0, rh_s_results
+    assert rh_s_mrr > 0.75, rh_s_results
+    assert "class-imbalance" in {
+        item["stable_key"] for item in rh_s_results["RH-S01"]
+    }, rh_s_results["RH-S01"]
+
+    # Diagnostic weakness threshold from Specification 010.
+    assert rh_l_recall >= 0.80, rh_l_results
 
 
 if __name__ == "__main__":
