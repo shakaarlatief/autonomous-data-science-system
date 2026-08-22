@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-21
+**Last reviewed:** 2026-08-22
 
 ## Purpose
 
@@ -358,7 +358,7 @@ Replaceable infrastructure includes
     A2A when independently deployed agents are real
 ```
 
-This produced P-027 through P-029 and Specification 005. No agent framework or multi-agent architecture was selected; direct model calls remain a valid bakeoff outcome.
+This produced P-027 through P-029 and Specification 005. No agent framework or multi-agent architecture was selected at this stage; direct model calls remained a valid bakeoff outcome.
 
 ---
 
@@ -548,11 +548,96 @@ The temporary PostgreSQL diagnostic workflow was removed after closure. Temporar
 
 Checkpoint 127 closes Q-048 for the current V1 governed seam. Retrieval quality, MethodologicalHorizon construction, semantic retrieval, reranking, external ingestion, and knowledge-authoring UX remain separate open tracks.
 
-The immediate project priority therefore advances to the Specification 005 one-principal-reasoner agent-runtime bakeoff, followed by the production retrieval/MethodologicalHorizon benchmark.
-
 Key sources:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
+```
+
+---
+
+## 2026-08-22: Initial V1 reasoning runtime selected after executable three-way bakeoff
+
+Specification 005 was completed against three meaningful runtime shapes rather than resolved from feature lists:
+
+```text
+ADS-owned direct model calls
+    minimum dependency surface
+    maximum explicit control
+    significant ADS-owned generic orchestration
+
+OpenAI Agents SDK 0.19.4
+    complete AR-01 through AR-12 PASS
+    native approval / RunState / MCP / structured-output / timeout infrastructure
+    smaller framework surface
+
+LangGraph 1.2.10
+    complete ADS-shaped capability PASS
+    stronger explicit persisted checkpoint/replay machinery
+    larger dependency/operational/topology surface
+```
+
+Cross-platform evidence:
+
+```text
+direct-call control
+    workflow 32500521858
+    Ubuntu PASS
+    Windows PASS
+
+OpenAI Agents SDK 0.19.4
+    workflow 32555526773
+    Ubuntu PASS
+    Windows PASS
+    AR-01 through AR-12 PASS
+
+LangGraph 1.2.10 durability comparator
+    workflow 32556382248
+    Ubuntu PASS, 9 tests
+    Windows PASS, 9 tests
+```
+
+The LangGraph experiment also made replay semantics concrete: completed earlier read-only nodes remained persisted on the tested resume path, while the node containing `interrupt()` restarted from the beginning. Repeated approved resume still required the ADS-owned `ProposalLedger` to keep authoritative proposal creation at most once.
+
+The LangGraph MCP path exposed a released dependency-compatibility defect: `langchain-mcp-adapters==0.3.1` admitted an incompatible MCP v2 generation, so the validated comparator pinned `mcp==1.28.1`. This remains maturity/operational-cost evidence.
+
+Research 015 applied the bakeoff stop rule and found no current Microsoft Agent Framework or Google ADK 2.0 differentiator likely to overturn the result.
+
+D-032 therefore accepts:
+
+```text
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+    validated starting package openai-agents==0.19.4
+```
+
+The decision preserves the core boundary:
+
+```text
+ADS owns
+    project and methodological semantics
+    context construction and exact revision provenance
+    human-control policy
+    authoritative idempotency/domain events
+    stable RuntimeTrace/provenance
+
+runtime owns
+    replaceable execution mechanics
+```
+
+Direct model calls remain the fallback/reference escape path. LangGraph remains the future escalation path if materially stronger durable workflow requirements appear. No final LLM provider/model or multi-agent architecture is selected.
+
+The runtime bakeoff is closed for the current V1 selection question. The immediate methodological priority advances to production retrieval / MethodologicalHorizon evaluation under Q-044 and Q-045.
+
+Key sources:
+
+```text
+docs/DECISIONS.md, D-032
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 ```
