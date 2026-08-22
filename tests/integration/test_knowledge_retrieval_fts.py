@@ -62,6 +62,17 @@ def _ordered_identity(hits) -> tuple[tuple[str, str], ...]:
     return tuple((hit.stable_key, hit.revision_id) for hit in hits)
 
 
+def _observable_hits(hits) -> list[dict[str, object]]:
+    return [
+        {
+            "stable_key": hit.stable_key,
+            "revision_id": hit.revision_id,
+            "score": round(hit.score, 8),
+        }
+        for hit in hits
+    ]
+
+
 def test_sqlite_fts_retrieval_frozen_benchmark(tmp_path: Path) -> None:
     database_url = sqlite_database_url(tmp_path / "retrieval.sqlite3")
     _upgrade(database_url)
@@ -89,11 +100,13 @@ def test_sqlite_fts_retrieval_frozen_benchmark(tmp_path: Path) -> None:
 
         reciprocal_ranks: list[float] = []
         lexical_identities: dict[str, tuple[tuple[str, str], ...]] = {}
+        lexical_results: dict[str, list[dict[str, object]]] = {}
 
         for case in benchmark["lexical_cases"]:
             hits = retriever.search(case["query"], limit=3)
             keys = [hit.stable_key for hit in hits]
             lexical_identities[case["case_id"]] = _ordered_identity(hits)
+            lexical_results[case["case_id"]] = _observable_hits(hits)
             for required_key in case["required_keys"]:
                 assert required_key in keys, (
                     f"{case['case_id']} omitted {required_key!r}; got {keys!r}"
@@ -103,14 +116,38 @@ def test_sqlite_fts_retrieval_frozen_benchmark(tmp_path: Path) -> None:
 
         # Frozen RH-L gate: all ten required keys are present inside top three.
         assert len(reciprocal_ranks) == 10
-        assert sum(rank > 0 for rank in reciprocal_ranks) / 10 == 1.0
+        lexical_recall_at_3 = sum(rank > 0 for rank in reciprocal_ranks) / 10
+        lexical_mrr = sum(reciprocal_ranks) / len(reciprocal_ranks)
+        assert lexical_recall_at_3 == 1.0
 
         # RL-10: execute semantic diagnostics without making them lexical gates.
-        semantic_results: dict[str, tuple[str, ...]] = {}
+        semantic_results: dict[str, list[dict[str, object]]] = {}
+        semantic_hits = 0
         for case in benchmark["semantic_diagnostic_cases"]:
             hits = retriever.search(case["query"], limit=3)
-            semantic_results[case["case_id"]] = tuple(hit.stable_key for hit in hits)
+            semantic_results[case["case_id"]] = _observable_hits(hits)
+            keys = {hit.stable_key for hit in hits}
+            if any(target in keys for target in case["target_keys"]):
+                semantic_hits += 1
         assert set(semantic_results) == {"RH-S01", "RH-S02", "RH-S03", "RH-S04"}
+
+        print(
+            "V1_RETRIEVAL_BENCHMARK_JSON="
+            + json.dumps(
+                {
+                    "benchmark_id": benchmark["benchmark_id"],
+                    "indexed_documents": retriever.indexed_document_count(),
+                    "rh_l_recall_at_3": lexical_recall_at_3,
+                    "rh_l_mrr": round(lexical_mrr, 8),
+                    "rh_l_critical_omissions": 10 - int(lexical_recall_at_3 * 10),
+                    "rh_l_results": lexical_results,
+                    "rh_s_recall_at_3": semantic_hits
+                    / len(benchmark["semantic_diagnostic_cases"]),
+                    "rh_s_results": semantic_results,
+                },
+                sort_keys=True,
+            )
+        )
 
         # RL-02: hits identify the exact current accepted revision.
         with SqlAlchemyUnitOfWork(engine) as uow:
