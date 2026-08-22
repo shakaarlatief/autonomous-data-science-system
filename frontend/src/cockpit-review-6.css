@@ -27,7 +27,10 @@
 }
 
 /* Keep the jump/search palette inside a collision-safe screen region above the
-   persistent composer instead of letting a long result list descend into it. */
+   persistent composer. The dynamic viewport units are the CSS fallback; the
+   component additionally measures the actual composer boundary while open so
+   browser chrome, fullscreen changes, and future composer-height changes cannot
+   make the palette overlap it. */
 .cockpit-jump-popover {
   position: fixed;
   top: calc(var(--cockpit-topbar-height) + 68px);
@@ -37,7 +40,7 @@
   display: flex;
   flex-direction: column;
   width: min(360px, calc(100vw - 112px));
-  max-height: calc(100vh - var(--cockpit-topbar-height) - 174px);
+  max-height: calc(100dvh - var(--cockpit-topbar-height) - 190px);
   overflow: hidden;
   transform: none;
 }
@@ -45,7 +48,7 @@
 .cockpit-jump-results {
   flex: 1 1 auto;
   min-height: 0;
-  max-height: min(300px, calc(100vh - var(--cockpit-topbar-height) - 292px));
+  max-height: min(300px, calc(100dvh - var(--cockpit-topbar-height) - 308px));
   overscroll-behavior: contain;
 }
 
@@ -59,10 +62,10 @@
 @media (max-height: 760px) {
   .cockpit-jump-popover {
     top: calc(var(--cockpit-topbar-height) + 58px);
-    max-height: calc(100vh - var(--cockpit-topbar-height) - 154px);
+    max-height: calc(100dvh - var(--cockpit-topbar-height) - 176px);
   }
 
   .cockpit-jump-results {
-    max-height: calc(100vh - var(--cockpit-topbar-height) - 270px);
+    max-height: calc(100dvh - var(--cockpit-topbar-height) - 292px);
   }
 }

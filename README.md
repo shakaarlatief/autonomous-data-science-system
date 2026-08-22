@@ -126,8 +126,10 @@ Accepted decisions currently include:
 D-028
 SQLite-centered local-first operational architecture
 
-D-029
+D-029 + Specification 002 v1.1
 SQLAlchemy Core 2.0 + Alembic 1.x
+PostgreSQL identifier portability
+unique Alembic revision IDs <= 32 chars while the default version table remains
 
 D-030
 pyproject.toml + uv + committed uv.lock + uv_build
@@ -138,11 +140,7 @@ JSON + JSON Schema Draft 2020-12
 + deterministic reusable-knowledge serialization
 ```
 
-The first production persistence vertical slice passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical project-to-knowledge revision pinning.
-
-The richer governed reusable-knowledge persistence/interchange seam is now also **closed across all required environments**.
-
-Final governed round-trip evidence:
+The richer governed reusable-knowledge persistence/interchange seam is **closed across all required environments**.
 
 ```text
 V1 governed knowledge roundtrip closure gate
@@ -151,29 +149,14 @@ run 32496856945
 SQLite / Ubuntu     PASS
 SQLite / Windows    PASS
 PostgreSQL 18       PASS
-Alembic revision-ID portability guard PASS on all three jobs
+Alembic revision-ID portability guard PASS
 ```
 
-Validated governed behavior includes candidate import, explicit acceptance, accepted-current pointers, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project revision pinning across later knowledge acceptance.
+Validated behavior includes candidate import, explicit acceptance, accepted-current pointers, accepted snapshot export, provenance, relation governance, collections, migration compatibility, and historical project revision pinning across later knowledge acceptance.
 
-Two PostgreSQL portability defects were found and repaired before closure:
+Two PostgreSQL portability defects were found and repaired before closure: an overlong manually named migration constraint and an Alembic revision identity too long for the default `alembic_version.version_num VARCHAR(32)` envelope. Migration 0002 now uses `0002_knowledge_interchange`, and a deterministic regression guard protects that portability invariant.
 
-```text
-1. a manually named migration constraint exceeded PostgreSQL's 63-byte identifier limit
-2. the Alembic revision identity `0002_reusable_knowledge_interchange`
-   exceeded the default `alembic_version.version_num VARCHAR(32)` envelope
-```
-
-Migration 0002 now uses:
-
-```text
-revision = "0002_knowledge_interchange"
-down_revision = "0001_v1_persistence_core"
-```
-
-A deterministic regression test now enforces unique Alembic revision IDs whose length does not exceed 32 characters.
-
-Primary closure sources:
+Primary sources:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
@@ -182,19 +165,99 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 
 This closes the governed persistence/interchange implementation gate. It does not validate retrieval quality, embeddings, reranking, MethodologicalHorizon construction, selective LLM context quality, external-source ingestion, or knowledge-authoring UX.
 
-### Agent/runtime boundary
+### Selected V1 reasoning runtime
 
-Agent frameworks and interoperability protocols are treated as replaceable infrastructure, not ADS domain authority.
+Runtime infrastructure is replaceable infrastructure, not ADS domain authority.
 
-No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Specification 005 defines an empirical bakeoff among current runtime candidates, beginning with one principal reasoner and allowing a simple direct-model-call result if no framework earns its complexity.
+After an executable three-way bakeoff, D-032 selects:
 
-This bakeoff is now the immediate bounded execution track.
+```text
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+
+validated starting package
+    openai-agents==0.19.4
+```
+
+The package version is a validated baseline, not permanent framework lock-in.
+
+The bakeoff compared:
+
+```text
+Direct model calls
+    minimum dependency surface
+    maximum explicit control
+    more ADS-owned generic orchestration
+
+OpenAI Agents SDK 0.19.4
+    AR-01 through AR-12 PASS
+    smaller complete runtime surface
+    native approval / RunState / MCP / structured-output / timeout infrastructure
+
+LangGraph 1.2.10
+    complete ADS-shaped capability PASS
+    stronger explicit persisted checkpoint/replay machinery
+    larger dependency/operational/topology surface
+```
+
+Cross-platform evidence:
+
+```text
+direct-call control
+    workflow 32500521858
+    Ubuntu PASS
+    Windows PASS
+
+OpenAI Agents SDK 0.19.4
+    workflow 32555526773
+    Ubuntu PASS
+    Windows PASS
+    AR-01 through AR-12 PASS
+
+LangGraph 1.2.10 durability comparator
+    workflow 32556382248
+    Ubuntu PASS, 9 tests
+    Windows PASS, 9 tests
+```
+
+The architecture boundary remains:
+
+```text
+ADS owns
+    project and methodological semantics
+    MethodologicalContextPack construction
+    context digests and exact knowledge revisions
+    human-control policy
+    authoritative side-effect idempotency/domain events
+    stable RuntimeTrace/provenance
+
+runtime owns
+    replaceable execution mechanics
+```
+
+`Agent != Project`, `RunState != project memory`, and framework tracing/checkpoints do not become authoritative ADS state.
+
+Direct model calls remain a fallback/reference escape path. LangGraph remains a future escalation path if materially stronger long-running workflow durability becomes necessary. Microsoft Agent Framework and Google ADK 2.0 were not implemented after the Specification 005 stop rule found no current differentiator likely to overturn the selection.
+
+No final LLM provider/model or multi-agent architecture is selected.
+
+Primary sources:
+
+```text
+docs/DECISIONS.md, D-032
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
+```
 
 ### Professional frontend and Project Cockpit
 
 The frontend is a first-class reasoning, control, and quality surface rather than an end-stage presentation layer.
 
-The Project Cockpit has moved from candidate interaction spike to a **promoted V1 interaction architecture** after seven real-browser human review cycles and repeated executable gates.
+The Project Cockpit is a **promoted V1 interaction architecture** after seven real-browser human review cycles and repeated executable gates.
 
 Current authoritative interaction contract:
 
@@ -202,7 +265,7 @@ Current authoritative interaction contract:
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Promoted product model:
+Promoted model:
 
 ```text
 Project Cockpit
@@ -217,42 +280,29 @@ Direct specialist views
     reuse the same substantive analytical modules and project state
 ```
 
-The promoted interaction architecture includes:
+The accepted interaction architecture includes:
 
 ```text
 meaningful work units rather than every persisted object
 spatial focus into reusable specialist workspaces
 reachability != simultaneous mounting
-
 FiniteNavigableGridWorld != SemanticProjectPlane
-    continuous grid through surrounding reserve
-    symmetric navigation/recovery
-    semantic stage space kept distinct from neutral reserve
-    world-owned restrained ambient depth
-
-two-dimensional navigation
-bounded geometric zoom
-native laptop pinch capability
-viewport-aware stage orientation
+2D project navigation and recovery
+bounded geometric zoom and native laptop pinch
+viewport-aware semantic stage orientation
 scalable Jump/search
 compact/fold-away immersive chrome
 collision-safe floating surfaces
 true fullscreen with graceful fallback
 URL-addressable focus/deep-work state
-keyboard accessibility
-reduced-motion support
+keyboard accessibility and reduced-motion support
+world-owned restrained ambient depth
 ```
 
-Final validated Cockpit promotion head:
+Promotion gate:
 
 ```text
-2c3b522e2416d73c015ce5ec2a4560a227524dd9
-```
-
-Final gate:
-
-```text
-V1 frontend spike
+head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
 run 155 / 32492536072
 
 Ubuntu build + unit tests                 PASS
@@ -261,39 +311,84 @@ Chromium interaction/accessibility        PASS
 controlled direct-view visual regression  PASS
 ```
 
-Key promotion sources:
+Checkpoint 130 records later bounded polish for normal-window Jump/composer collision safety and faster anchored pinch.
 
 ```text
-docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
+head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
+run 167 / 32503861255
+
+Ubuntu build + unit tests                  PASS
+Windows build + unit tests                 PASS
+Chromium interaction/accessibility         PASS
+controlled direct-view visual regression   PASS
+normal-window Jump re-clamp regression      PASS
+faster anchored pinch regression            PASS
 ```
 
-Promotion deliberately does **not** freeze a graph/canvas library, gesture library, auto-layout algorithm, semantic zoom, minimap, final native-pinch constants, final geometric zoom range, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or canonical Cockpit screenshot baseline.
+The subsequent real-browser/hardware retest accepted the repaired behavior as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish, and exact pinch constants remain unfrozen.
 
-The tiny remaining pinch hitch is preserved as deferred product polish, not as a blocker for the interaction architecture.
+Primary latest sources:
+
+```text
+docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
+docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
+```
+
+Promotion deliberately does **not** freeze graph/canvas or gesture libraries, auto-layout, semantic zoom, minimap, final pinch/zoom constants, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or a canonical Cockpit screenshot baseline.
+
+## Immediate active track
+
+The runtime selection question is closed for initial V1. The highest-value methodological track is now production retrieval and MethodologicalHorizon construction.
+
+```text
+Q-044
+    production retrieval / MethodologicalHorizon construction
+
+Q-045
+    recommendation quality separated from catalog/retrieval coverage
+```
+
+The next benchmark should evaluate:
+
+```text
+retrieval-quality fixtures
+production lexical retrieval
+semantic retrieval as an empirical candidate
+lexical/semantic fusion only if justified
+ranking and omission quality
+first bounded real MethodologicalHorizon
+selective LLM context quality and cost
+```
+
+Do not select an embedding model, reranker, ANN service, or vector database from intuition.
 
 ## Current execution order
 
 ```text
-1. Specification 005 one-principal-reasoner agent-runtime bakeoff
-2. production retrieval / MethodologicalHorizon benchmark
-3. future Cockpit capability and polish on top of Specification 008
+1. finish runtime-branch reconciliation, CI and merge into v1-frontend-spike
+2. inspect current production retrieval/persistence surfaces
+3. define retrieval / MethodologicalHorizon benchmark fixtures and acceptance criteria
+4. implement and evaluate lexical retrieval first
+5. evaluate semantic retrieval and fusion/reranking only if evidence justifies them
+6. build the first bounded real MethodologicalHorizon and selective context assembly
+7. integrate the selected runtime behind an ADS-owned production port when a real reasoning vertical slice needs it
 ```
-
-The runtime bakeoff must preserve a simpler direct-model-call architecture as a valid outcome if no framework earns its complexity.
-
-The retrieval/horizon benchmark should evaluate omission quality, relevance, and context cost before selecting embeddings, rerankers, ANN services, or vector infrastructure.
 
 ## Active branch and continuation
 
-The current V1/frontend work is being developed on:
+Current runtime-selection reconciliation lives on:
+
+```text
+v1-runtime-bakeoff
+```
+
+The promoted frontend/V1 boundary is preserved on:
 
 ```text
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails this active branch. New sessions working on the current V1 state must reconstruct from `v1-frontend-spike` rather than assuming `main` contains the latest checkpoints and promoted contracts.
+The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from the canonical routing documents and the active promoted branch rather than assuming `main` is current.
 
 Current continuity and exact next action are maintained in:
 
@@ -363,7 +458,7 @@ docs/research/
     Current bounded design and ecosystem research.
 
 docs/specifications/
-    Accepted or candidate implementation/evaluation contracts.
+    Accepted, completed, or candidate implementation/evaluation contracts.
 
 docs/checkpoints/
     Historical snapshots and milestone records.

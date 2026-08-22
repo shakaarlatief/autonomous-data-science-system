@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 128  
-**Date:** 2026-08-21  
-**Active development branch:** `v1-frontend-spike`  
-**Development stage:** Prototype V0 complete; bounded V1 implementation and integration across methodological knowledge, governed persistence/interchange, retrieval/MethodologicalHorizon construction, agent/runtime evaluation, and the promoted professional Project Cockpit interaction architecture  
+**Checkpoint:** 133  
+**Date:** 2026-08-22  
+**Active development branch:** `v1-runtime-bakeoff` pending final CI/reconciliation and merge into `v1-frontend-spike`  
+**Development stage:** Prototype V0 complete; bounded V1 architecture and implementation advancing across methodological knowledge, governed persistence/interchange, retrieval/MethodologicalHorizon construction, selected reasoning-runtime infrastructure, and the promoted Project Cockpit interaction architecture  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** Implement Specification 005's deterministic ADS-owned runtime-bakeoff harness, then execute the direct-call control and first OpenAI Agents SDK candidate. LangGraph is the next durability comparator. No runtime is selected.
+**Immediate project priority:** Finish the runtime-selection reconciliation/merge, then begin the production retrieval / MethodologicalHorizon benchmark for Q-044 and Q-045. Do not expand the runtime bakeoff further without a new requirement capable of changing D-032.
 
 ## Active ChatGPT development context
 
@@ -17,19 +17,25 @@ Session title: 03 - Project Cockpit & V1 Integration
 
 Repository artifacts remain authoritative across chats.
 
-Current bounded V1/frontend work lives on:
+The preserved promoted V1/frontend boundary remains on:
 
 ```text
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails this work and must not be treated as the latest V1/frontend state until an explicit merge/promotion occurs.
+The current runtime selection work is on:
+
+```text
+v1-runtime-bakeoff
+```
+
+The default `main` branch intentionally trails current V1 work until explicit later promotion/merge.
 
 ---
 
 ## 1. System purpose and V0 constraint
 
-ADS is intended to become a professional interactive data-science operating environment in which the system carries much of the methodological memory, project memory, process navigation, evidence discipline, provenance, execution coordination, and reporting burden that otherwise has to be repeatedly supplied by a human through prompts.
+ADS is intended to become a professional interactive data-science operating environment in which the system carries much of the methodological memory, project memory, process navigation, evidence discipline, provenance, execution coordination, and reporting burden that otherwise has to be repeatedly supplied through prompts.
 
 The LLM is one flexible reasoning component inside the wider system, not the system itself.
 
@@ -69,7 +75,7 @@ EVENTS
 VIEWS
 ```
 
-and preserves distinctions including:
+Important distinctions include:
 
 ```text
 Investigation != Run
@@ -91,7 +97,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The intended scaling path is:
+The intended scaling path remains:
 
 ```text
 large global methodological knowledge universe
@@ -102,11 +108,11 @@ large global methodological knowledge universe
     -> selective task-specific LLM context
 ```
 
-Foundation 020 promotes reusable methodological knowledge around `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, `KnowledgeCollection`, exact revisions, and `ExecutionCapability`.
+Foundation 020 governs reusable methodological knowledge around `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, `KnowledgeCollection`, exact revisions, and `ExecutionCapability`.
 
 ---
 
-## 3. Accepted V1 persistence/interchange
+## 3. Accepted V1 persistence and interchange
 
 Accepted decisions/specifications:
 
@@ -122,7 +128,6 @@ D-029 + Specification 002 v1.1
     SQLAlchemy Core 2.0
     Alembic 1.x
     PostgreSQL identifier portability
-    unique Alembic revision IDs <= 32 chars while default version table remains
 
 D-030 + Specification 003
     pyproject.toml
@@ -137,35 +142,23 @@ D-031 + Specification 004
     deterministic normalization/serialization
 ```
 
-Checkpoint 127 closes the richer governed reusable-knowledge persistence/interchange seam.
-
-Final validation:
+Checkpoint 127 closes the governed reusable-knowledge persistence/interchange seam across:
 
 ```text
-V1 governed knowledge roundtrip closure gate
-run 32496856945
-
 SQLite / Ubuntu     PASS
 SQLite / Windows    PASS
 PostgreSQL 18       PASS
-Alembic revision-ID portability guard PASS on all three jobs
 ```
 
-Final result:
-
-```text
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
-```
-
-Q-048 is closed for the current governed seam.
+Q-048 is closed for this seam.
 
 ---
 
 ## 4. Project Cockpit interaction architecture is promoted
 
-Specification 008 is the current V1 Project Cockpit interaction contract after seven real-browser human review cycles.
+Specification 008 is the current V1 Project Cockpit interaction contract.
 
-Promoted interaction principles include:
+Promoted principles include:
 
 ```text
 Project Cockpit as primary immersive active-work model
@@ -185,151 +178,134 @@ keyboard accessibility and reduced-motion support
 world-owned restrained ambient depth
 ```
 
-Final promotion gate:
+Checkpoint 130 validated the bounded normal-window Jump/composer repair and faster anchored pinch implementation. The subsequent human retest accepted the result as good enough to continue.
 
-```text
-head 2c3b522e2416d73c015ce5ec2a4560a227524dd9
-run 155 / 32492536072
-
-Ubuntu build + unit tests                  PASS
-Windows build + unit tests                 PASS
-Chromium interaction/accessibility         PASS
-controlled direct-view visual regression   PASS
-```
-
-The tiny remaining native-pinch hitch is known, real, non-blocking deferred polish.
-
-Future Cockpit work builds on Specification 008 rather than reopening the basic interaction architecture without new evidence.
+The tiny occasional pinch hitch remains non-blocking deferred polish. Exact gesture constants and future Cockpit capabilities remain unfrozen.
 
 ---
 
-## 5. Runtime bakeoff is now the active implementation track
+## 5. Initial V1 reasoning runtime is selected
 
-No agent framework, LLM provider, or multi-agent architecture is accepted.
-
-Durable boundary:
-
-```text
-ADS project/domain/methodological semantics
-    owned by ADS
-
-agent runtimes / MCP / runtime checkpoints
-    replaceable infrastructure
-```
-
-Specification 005 defines mandatory gates AR-01 through AR-12 for:
-
-```text
-domain isolation
-single-agent tool loop
-current MCP integration
-human approval interrupt
-durable process-boundary resume
-external project-state authority
-context transparency
-cancellation/timeouts
-failure/retry behavior
-ADS-owned structured output
-observability
-provider/fake-model substitution
-```
-
-Research 010 refreshed the candidate ecosystem against current official documentation on 2026-08-21.
-
-Current **implementation order**, not selection:
-
-```text
-CONTROL
-    ADS-owned direct model-call runtime
-
-FIRST FRAMEWORK CANDIDATE
-    OpenAI Agents SDK
-
-SECOND FRAMEWORK CANDIDATE
-    LangGraph
-
-SECONDARY / CONDITIONAL
-    Microsoft Agent Framework
-    Google ADK 2.0
-```
-
-Fresh evidence supporting the order:
+D-032 accepts:
 
 ```text
 OpenAI Agents SDK
-    serializable RunState
-    structured tool approval interruptions
-    local MCP integration
-    model/tool timeouts and replay-aware retries
-    deterministic provider-neutral ScriptedModel testing
+    behind an ADS-owned ReasoningRuntime port
 
-LangGraph
-    strongest persistence/durability comparator
-    explicit interrupt/checkpoint semantics
-    Functional API can minimize graph intrusion
-    interrupted node restarts, so side-effect idempotency must be tested
-
-Microsoft Agent Framework
-    credible MCP/HITL/checkpoint/provider surface
-    Python Functional Workflow API currently experimental
-
-Google ADK 2.0
-    GA workflow/runtime family
-    Tool Confirmation currently experimental
-    resumability documented as best-effort / at-least-once
+validated starting package
+    openai-agents==0.19.4
 ```
 
-Direct calls remain a valid final winner if no framework earns its dependency/operational burden.
+This is a version-governed V1 infrastructure decision, not permanent framework lock-in.
 
-Primary sources:
+The durable boundary remains:
 
 ```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
+ADS project/domain/methodological semantics
+    -> owned by ADS
+
+runtime Agent / Runner / RunState / MCP state
+    -> replaceable execution infrastructure
 ```
+
+Framework-specific types remain below the adapter boundary.
+
+In particular:
+
+```text
+Agent != Project
+RunState != project memory
+runtime session/thread != project identity
+framework tracing != authoritative provenance
+framework tool definition != sole ADS ExecutionCapability definition
+```
+
+ADS continues to own:
+
+```text
+MethodologicalContextPack construction
+exact context-pack digest and knowledge revision references
+stale-context rejection
+human-control/approval policy
+application cancellation policy
+authoritative side-effect idempotency and domain events
+stable RuntimeTrace / provenance
+runtime-state compatibility/version policy
+```
+
+MCP remains an external tool/resource interoperability boundary, not project memory or the internal ADS application bus.
+
+The runtime is single-principal-reasoner first. No multi-agent architecture is selected.
 
 ---
 
-## 6. Immediate runtime implementation boundary
+## 6. Runtime bakeoff is closed for the current V1 selection question
 
-Before importing candidate framework types into production application/domain modules, create an isolated ADS-owned bakeoff harness.
+Specification 005 v0.2 is the completed evaluation contract.
 
-The harness should own experiment-level representations for:
+### Direct-call control
 
-```text
-ProjectContextSnapshot
-MethodologicalContextPack
-RuntimeWorkloadInput
-RuntimeRecommendation
-RuntimeInterrupt
-RuntimeResumeToken
-RuntimeTrace
-RuntimeOutcome
-```
-
-Exact names are provisional and do not freeze the final production `ReasoningRuntime` port.
-
-The harness must also own:
+Checkpoint 129:
 
 ```text
-canonical representative workload fixture
-context-pack digest
-exact knowledge revision references
-at-most-once proposal side-effect ledger
-fake deterministic model script
-local side-effect-free MCP reference server/gateway
-normalized AR-01 through AR-12 evidence
+workflow 32500521858
+Ubuntu PASS
+Windows PASS
 ```
 
-Framework-specific types stay below adapters and outside `ads_system.domain`.
+The control remains a viable fallback/reference/escape path, but would require ADS to own more generic orchestration machinery.
+
+### OpenAI Agents SDK 0.19.4
+
+Checkpoint 131:
+
+```text
+workflow 32555526773
+AR-01 through AR-12 PASS
+Ubuntu PASS
+Windows PASS
+```
+
+It removes meaningful generic plumbing around model/tool iteration, tool schema/dispatch, approval interruption, serializable/restorable RunState, structured output, stdio MCP, tool timeout, and lifecycle hooks while preserving ADS authority.
+
+Research 011 records the released-package/docs mismatch around the absent documented `agents.testing.ScriptedModel`. Deterministic testing remained possible through an experiment-local fake against the released public `Model` interface.
+
+### LangGraph 1.2.10
+
+Checkpoint 132:
+
+```text
+workflow 32556382248
+Ubuntu PASS, 9 comparator tests
+Windows PASS, 9 comparator tests
+```
+
+Validated package set:
+
+```text
+langgraph==1.2.10
+langgraph-checkpoint-sqlite==3.1.1
+langchain-mcp-adapters==0.3.1
+mcp==1.28.1
+```
+
+LangGraph demonstrated stronger explicit persisted workflow/checkpoint durability. It also introduced more runtime topology/dependencies and explicit interrupt-node restart semantics. Repeated resume still required the ADS `ProposalLedger` to preserve authoritative exactly-once project meaning.
+
+The MCP v1 pin is preserved as real dependency-maturity evidence because the released adapter's dependency range admitted an incompatible MCP v2 generation.
+
+### Stop rule
+
+Research 015 found no current Microsoft Agent Framework or Google ADK 2.0 differentiator likely to overturn the result. They are not implemented now and remain reopenable if a future first-order requirement justifies reconsideration.
+
+Checkpoint 133 records the promotion and closure.
 
 ---
 
-## 7. Retrieval / MethodologicalHorizon track
+## 7. Immediate active track: retrieval and MethodologicalHorizon
 
-Now that the governed persistence seam is closed, the other highest-value V1 track remains:
+Q-044 and Q-045 are now the highest-value methodological implementation questions.
+
+Required work:
 
 ```text
 retrieval-quality fixtures
@@ -339,9 +315,24 @@ lexical/semantic fusion only if justified
 ranking and omission-quality evaluation
 first real MethodologicalHorizon construction
 selective LLM context assembly
+recommendation quality separated from catalog/retrieval coverage
 ```
 
-Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
+Evaluation must distinguish at least:
+
+```text
+knowledge absent from catalog
+known but not retrieved
+retrieved but judged inapplicable
+applicable but ranked too low
+recommended but skipped
+recommended incorrectly
+required concern omitted
+```
+
+Do not select an embedding model, reranker, ANN service, or vector database from intuition.
+
+The first step after branch reconciliation is to inspect the current production persistence/retrieval implementation and define a benchmark before adding retrieval technology.
 
 ---
 
@@ -350,11 +341,11 @@ Do not choose an embedding model, reranker, ANN service, or vector database from
 Still deliberately unselected:
 
 ```text
-agent runtime
-number of agents
-LLM provider/model
-durable runtime backend
-MCP server catalog
+final LLM provider/model
+number of agents beyond single-principal-reasoner first
+multi-agent collaboration architecture
+production durable runtime-state persistence schema
+MCP production server/tool catalog
 A2A
 AG-UI final role
 frontend final stack promotion
@@ -371,7 +362,7 @@ Cockpit final public URL contract
 Cockpit final visual identity
 canonical Cockpit screenshot baseline
 backend HTTP/API framework
-production FTS implementation
+production FTS retrieval behavior/ranking
 embedding model/provider
 lexical/semantic fusion
 reranker
@@ -384,27 +375,34 @@ job queue/cloud deployment
 
 ## 9. Exact next execution order
 
-### A. RUNTIME BAKEOFF HARNESS
+### A. COMPLETE RUNTIME-BRANCH RECONCILIATION AND MERGE
 
 ```text
-1. create isolated runtime-bakeoff implementation branch
-2. build ADS-owned deterministic harness and representative fixture
-3. build direct-call control
-4. build OpenAI Agents SDK adapter using fake/scripted model first
-5. evaluate AR-01 through AR-12 without paid calls wherever possible
-6. build LangGraph durability comparator if still decision-relevant
-7. decide from evidence whether Microsoft/Google adapters are needed
-8. use live provider calls only where deterministic infrastructure cannot establish behavior
-9. make explicit runtime/no-runtime promotion decision
+1. reconcile CURRENT_STATE / KNOWLEDGE_MAP / OPEN_QUESTIONS / MAJOR_CHANGES
+2. verify Checkpoint 133 metadata and branch CI
+3. merge PR #8 into v1-frontend-spike if green
+4. begin the next bounded branch from that promoted V1 boundary
 ```
 
 ### B. RETRIEVAL / METHODOLOGICALHORIZON BENCHMARK
 
-Proceed after or in parallel where it does not compete with the runtime experiment.
+```text
+1. inspect current production retrieval and persistence surfaces
+2. define benchmark fixtures, expected retrieval/horizon outcomes and failure categories
+3. implement/evaluate lexical retrieval first
+4. evaluate semantic retrieval as a candidate
+5. add fusion/reranking only if measured evidence justifies it
+6. construct and evaluate the first bounded real MethodologicalHorizon
+7. measure selective LLM context quality and cost
+```
 
-### C. FUTURE COCKPIT CAPABILITY WORK
+### C. SELECTED RUNTIME PRODUCTION INTEGRATION
 
-Build on Specification 008 after current backend/runtime seams are better established.
+Integrate D-032 behind an ADS-owned port when the first real reasoning vertical slice requires it. Do not promote the experiment adapter wholesale or add runtime machinery before the application contract is clear.
+
+### D. FUTURE COCKPIT CAPABILITY WORK
+
+Build on Specification 008. Do not reopen the promoted basic interaction architecture without new evidence.
 
 ---
 
@@ -424,15 +422,23 @@ docs/foundations/018_project_object_model_and_professional_developer_workflow_in
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
-
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
+docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
 
-docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
+
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
-docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 ```

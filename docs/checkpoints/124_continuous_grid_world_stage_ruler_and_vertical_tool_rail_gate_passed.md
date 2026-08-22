@@ -2,6 +2,10 @@
 
 **Date:** 2026-08-21  
 **Status:** Preserved implementation and validation checkpoint; Specification 007 remains candidate pending next human visual/product gate  
+**Checkpoint class:** DESIGN  
+**Project stage:** Post-V0 V1 professional frontend exploration  
+**Scope:** Preserves the fifth real-browser Cockpit review and the continuous finite grid world, viewport-aware stage ruler, and vertical tool-rail implementation gate.  
+**Authority:** Historical product/design provenance. Later Cockpit research, checkpoints, and Specification 008 govern the promoted current interaction architecture.  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 03 - Project Cockpit & V1 Integration
