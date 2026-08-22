@@ -437,3 +437,28 @@ docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
 tests/fixtures/reasoning/context_value_v1.json
 docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
 ```
+
+---
+
+## 15. Promotion audit
+
+### Promote
+
+The frozen experiment contract itself should be routed as the active next evidence boundary through:
+
+```text
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+tests/fixtures/reasoning/context_value_v1.json
+```
+
+`CURRENT_STATE.md` and `KNOWLEDGE_MAP.md` should identify this frozen real-reasoning comparison as the next implementation/evaluation track after the promoted selective-context seam.
+
+### Do not promote
+
+No new system principle, project-level runtime decision, final provider/model selection, context budget, relevance mechanism, recommendation policy, or reasoning-quality claim is promoted by this freeze checkpoint.
+
+Reason: Checkpoint 144 records preregistration only. At the freeze boundary there is no downstream live reasoning evidence yet.
+
+### Relationship to later evidence
+
+Checkpoint 145 subsequently records provider-free implementation evidence for this frozen contract. That later checkpoint does not change the historical meaning of Checkpoint 144: the model, conditions, semantic obligations, thresholds, repetitions, and retry policy were already fixed here before implementation/live execution.
