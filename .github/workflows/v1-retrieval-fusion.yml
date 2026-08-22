@@ -1,0 +1,49 @@
+name: V1 retrieval fusion comparator
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [v1-semantic-retrieval]
+    paths:
+      - experiments/retrieval/fusion_rrf_comparator.py
+      - src/ads_system/application/retrieval.py
+      - src/ads_system/infrastructure/retrieval/**
+      - src/ads_system/infrastructure/persistence/**
+      - migrations/**
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/fixtures/retrieval/methodological_horizon_v1.json
+      - .github/workflows/v1-retrieval-fusion.yml
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - experiments/retrieval/fusion_rrf_comparator.py
+      - src/ads_system/application/retrieval.py
+      - src/ads_system/infrastructure/retrieval/**
+      - src/ads_system/infrastructure/persistence/**
+      - migrations/**
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/fixtures/retrieval/methodological_horizon_v1.json
+      - .github/workflows/v1-retrieval-fusion.yml
+
+permissions:
+  contents: read
+
+jobs:
+  rrf-hybrid-comparator:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run frozen RRF hybrid retrieval comparator
+        run: uv run --python 3.13 --with fastembed==0.8.0 python experiments/retrieval/fusion_rrf_comparator.py
+      - name: Run existing V1 Python regression suite without semantic candidate dependency
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q
