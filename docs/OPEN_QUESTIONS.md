@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-22  
-**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated through Checkpoint 130 and accepted as good enough to continue in subsequent human review; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the runtime bakeoff is closed through Specification 005 v0.2, Checkpoints 129/131/132, Research 015, and D-032, which selects OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime.
+**Reconciliation context:** Prototype V0 complete; post-V0 V1 methodological/object foundations established; Project Cockpit interaction architecture promoted through Specification 008 / Checkpoint 126 with bounded post-promotion normal-window/pinch polish validated through Checkpoint 130 and accepted as good enough to continue in subsequent human review; governed reusable-knowledge persistence/interchange round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127; the runtime bakeoff is closed through Specification 005 v0.2, Checkpoints 129/131/132, Research 015, and D-032, which selects OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime; production retrieval / MethodologicalHorizon work is now governed by Research 016 and frozen Specification 009 v0.1, with the first accepted-current SQLite FTS5 lexical baseline passing cross-platform through Checkpoint 135 and workflow run 32559177057.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -126,13 +126,13 @@ Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`,
 
 **Status:** Substantially reframed after V0; active V1 question
 
-Current direction is selective: global knowledge is retrieved/filtered into a bounded MethodologicalHorizon, explicit checks handle reliable prerequisites/hard rules, and flexible reasoning handles semantic relevance, trade-offs, synthesis, and open-world concern discovery. Selective context quality remains to be measured.
+Current direction is selective: global knowledge is retrieved/filtered into a bounded MethodologicalHorizon, explicit checks handle reliable prerequisites/hard rules, and flexible reasoning handles semantic relevance, trade-offs, synthesis, and open-world concern discovery. The first production lexical retrieval slice is now validated, but MethodologicalHorizon quality and selective context quality remain to be measured.
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Reframed after V0; active V1 question
+**Status:** Reframed after V0; active V1 question with first retrieval slice validated
 
-P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged relevance/horizon construction driven by project state, retrieval, explicit applicability checks, and flexible reasoning. Production retrieval/ranking remains unvalidated.
+P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged relevance/horizon construction driven by project state, retrieval, explicit applicability checks, and flexible reasoning. Checkpoint 135 validates production lexical retrieval for the frozen RH-L slice, but semantic retrieval, relation expansion, applicability/context handling, relevance ranking, and investigation activation remain open.
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
 
@@ -173,7 +173,7 @@ large global knowledge universe
     -> selective task-specific LLM context
 ```
 
-The first real production horizon and context assembler have not yet been validated.
+The accepted-current lexical entry layer is now real and cross-platform validated through Checkpoint 135. The first real production horizon, relation expansion, applicability/context evaluator, relevance/prioritization layer, and context assembler have not yet been validated.
 
 ### Q-038. How should reusable knowledge quality and evolution be governed?
 
@@ -187,29 +187,59 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 ### Q-044. How should production retrieval and MethodologicalHorizon construction work?
 
-**Status:** Active V1 question and immediate methodological implementation priority
+**Status:** Active V1 question; lexical baseline validated, semantic/Horizon layers still open
 
-The governed persistence/interchange seam is closed and the initial runtime infrastructure is selected, so production retrieval/horizon evaluation can now proceed without unresolved persistence or runtime selection competing with the benchmark.
+Research 016 and Specification 009 v0.1 now provide the first frozen decomposition and benchmark. Checkpoint 135 validates the production SQLite FTS5 accepted-current lexical baseline on the ten-asset stress corpus.
+
+Final observable lexical gate:
+
+```text
+V1 methodological horizon
+run 32559177057
+Ubuntu PASS
+Windows PASS
+
+RH-L Recall@3            1.00
+RH-L MRR                 1.00
+RH-L critical omissions  0 / 10
+required target rank 1  10 / 10
+RH-S diagnostic Recall@3 0.75
+```
+
+The one frozen semantic miss is RH-S01, where the paraphrase `positive cases are scarce and overall correctness hides failures on them` fails to retrieve `class-imbalance`. The other three RH-S targets are recovered at rank 1 by the lexical channel.
 
 Still required:
 
 ```text
-retrieval-quality fixtures
-production lexical retrieval
-semantic retrieval candidate evaluation
-lexical/semantic fusion if justified
-ranking/relevance evaluation
-first real MethodologicalHorizon construction
-selective LLM context assembly
+semantic retrieval candidate evaluation against unchanged RH-S
+incremental useful-recall versus candidate-growth analysis
+lexical/semantic fusion only if justified
+reranking only if ordering becomes a measured problem
+RH-R relational horizon expansion
+RH-A applicability / missing-context behavior
+first bounded real MethodologicalHorizon
+RH-C selective LLM context assembly and context-cost evaluation
 ```
 
-Do not select an embedding model, reranker, ANN service, or vector database from intuition. The benchmark must test omission quality, relevance, and context cost rather than retrieval speed alone.
+Do not select an embedding model, reranker, ANN service, vector database, or fusion algorithm from intuition. At the current corpus scale the next semantic comparator should prefer an exact/in-process design unless evidence requires more infrastructure.
+
+Primary current evidence:
+
+```text
+docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
+docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
+docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
+experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+```
 
 ### Q-045. How should recommendation quality be evaluated separately from knowledge coverage?
 
-**Status:** Active V1 question
+**Status:** Active V1 question; first coverage/retrieval separation is executable
 
-The system should distinguish at least:
+Specification 009 now makes the first portion of this decomposition operational. The system can distinguish at least whether frozen knowledge is present in the benchmark catalog and whether the lexical channel retrieves it. RH-L therefore provides a concrete `KNOWN_NOT_RETRIEVED` failure class rather than one aggregate recommendation score.
+
+The broader required distinction remains:
 
 ```text
 knowledge absent from catalog
@@ -221,7 +251,7 @@ recommended incorrectly
 required concern omitted
 ```
 
-A practical benchmark and acceptance envelope remain to be designed.
+Still open are the downstream evaluation contracts for applicability, ranking, recommendation correctness, required-concern omission, and human/execution outcomes. RH-R, RH-A and RH-C are preserved next-stage fixtures rather than completed evidence.
 
 ---
 
@@ -559,10 +589,10 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-044  build and evaluate production retrieval / MethodologicalHorizon construction
-Q-045  evaluate recommendation quality separately from catalog/retrieval coverage
+Q-044  evaluate semantic retrieval, then construct the first bounded MethodologicalHorizon
+Q-045  extend the executable coverage/retrieval decomposition into applicability, ranking and recommendation quality
 Q-051  determine which frontend/chart choices deserve final stack promotion
 Q-052  evolve final Cockpit visual/system details on top of Specification 008
 ```
 
-Q-046 is closed for the initial V1 runtime selection through Specification 005 v0.2, Research 015, Checkpoint 132, and D-032. Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted; the remaining Q-050 pinch hitch is deferred product polish rather than an architecture reopening.
+Q-046 is closed for the initial V1 runtime selection through Specification 005 v0.2, Research 015, Checkpoint 133, and D-032. Q-048 is closed through Checkpoint 127. Q-049 and the basic interaction-architecture part of Q-050 are no longer active blocking questions because Specification 008 is promoted. The remaining Q-050 pinch hitch is deferred product polish rather than an architecture reopening. Q-044 remains active because Checkpoint 135 validates only the first lexical retrieval layer, not semantic retrieval or the MethodologicalHorizon itself.
