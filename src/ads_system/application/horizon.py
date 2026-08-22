@@ -1,4 +1,4 @@
-"""Deterministic applicability assessment and first MethodologicalHorizon builder.
+"""Deterministic applicability assessment and bounded MethodologicalHorizon builder.
 
 The application layer intentionally operates on storage-neutral accepted-current
 knowledge projections. Retrieval technology, SQL persistence details, embedding
@@ -37,9 +37,9 @@ def assess_applicability(
 ) -> ApplicabilityAssessment:
     """Assess one accepted-current asset without collapsing unknown into false.
 
-    The first evaluator supports only the structural boolean-expression subset
-    frozen in Specification 012. Predicate names map exactly to context keys.
-    Richer predicate semantics require an explicit later evaluator extension.
+    The evaluator supports only the structural boolean-expression subset frozen
+    in Specification 012. Predicate names map exactly to context keys. Richer
+    predicate semantics require an explicit later evaluator extension.
     """
 
     truth, unknown_predicates = _evaluate_expression(asset.applicability, known_context)
@@ -83,17 +83,19 @@ def build_methodological_horizon(
     known_context: Mapping[str, object],
     uow_factory: UnitOfWorkFactory,
 ) -> MethodologicalHorizon:
-    """Build the first one-hop, applicability-aware MethodologicalHorizon.
+    """Build the one-hop, applicability-aware MethodologicalHorizon.
 
     Direct candidates are verified against accepted-current knowledge. Only
     outbound one-hop relations from direct seeds are expanded. Relation-added
-    candidates are never recursively expanded in this implementation.
+    candidates are never recursively expanded. The relation source that first
+    introduces a deduplicated related asset is preserved for later explainable
+    context-support decisions.
     """
 
     direct_assets: dict[str, NavigableKnowledgeAsset] = {}
     relation_assets: dict[
         str,
-        tuple[NavigableKnowledgeAsset, str, str],
+        tuple[NavigableKnowledgeAsset, str, str, str],
     ] = {}
 
     with uow_factory() as uow:
@@ -122,8 +124,8 @@ def build_methodological_horizon(
 
         # Expansion is deliberately restricted to the direct seed set. Newly
         # related assets are not visited recursively.
-        for stable_key in sorted(direct_assets):
-            for related in uow.navigation.get_outbound_related_assets(stable_key):
+        for source_stable_key in sorted(direct_assets):
+            for related in uow.navigation.get_outbound_related_assets(source_stable_key):
                 if related.stable_key in direct_assets:
                     continue
                 if related.stable_key in relation_assets:
@@ -136,6 +138,7 @@ def build_methodological_horizon(
                     )
                 relation_assets[related.stable_key] = (
                     target,
+                    source_stable_key,
                     related.relation_type,
                     related.relation_revision_id,
                 )
@@ -154,11 +157,15 @@ def build_methodological_horizon(
                 relation_revision_id=None,
                 applicability_state=assessment.state,
                 missing_context_keys=assessment.missing_context_keys,
+                relation_source_key=None,
+                reasoning_functions=asset.reasoning_functions,
             )
         )
 
     for stable_key in sorted(relation_assets):
-        asset, relation_type, relation_revision_id = relation_assets[stable_key]
+        asset, source_stable_key, relation_type, relation_revision_id = relation_assets[
+            stable_key
+        ]
         assessment = assess_applicability(asset, known_context)
         candidates.append(
             HorizonCandidate(
@@ -170,6 +177,8 @@ def build_methodological_horizon(
                 relation_revision_id=relation_revision_id,
                 applicability_state=assessment.state,
                 missing_context_keys=assessment.missing_context_keys,
+                relation_source_key=source_stable_key,
+                reasoning_functions=asset.reasoning_functions,
             )
         )
 
@@ -211,7 +220,7 @@ def _evaluate_expression(
             raise ApplicabilityEvaluationError("Predicate arguments must be an object")
         if arguments:
             raise ApplicabilityEvaluationError(
-                f"Predicate arguments are not supported in v0.1: {predicate!r}"
+                f"Predicate arguments are not supported in v1.0: {predicate!r}"
             )
         if predicate not in known_context:
             return "UNKNOWN", {predicate}
