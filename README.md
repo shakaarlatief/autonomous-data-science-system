@@ -165,81 +165,92 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 
 This closes the governed persistence/interchange implementation gate. It does not validate retrieval quality, embeddings, reranking, MethodologicalHorizon construction, selective LLM context quality, external-source ingestion, or knowledge-authoring UX.
 
-### Agent/runtime boundary and active bakeoff
+### Selected V1 reasoning runtime
 
-Agent frameworks and interoperability protocols are replaceable infrastructure, not ADS domain authority.
+Runtime infrastructure is replaceable infrastructure, not ADS domain authority.
 
-No agent runtime, LLM provider, or multi-agent architecture is accepted yet. Specification 005 defines the empirical bakeoff.
-
-The executable control is no longer hypothetical. Checkpoint 129 established a direct-model-call baseline with ADS-owned:
+After an executable three-way bakeoff, D-032 selects:
 
 ```text
-model/tool loop
-selective context provenance
-approval interruption
-serialized process-boundary resume
-at-most-once project side-effect ledger
-rejection and stale-context checks
-retry/cancellation behavior
-normalized tracing
-structured recommendation validation
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+
+validated starting package
+    openai-agents==0.19.4
 ```
 
-Direct-control gate:
+The package version is a validated baseline, not permanent framework lock-in.
+
+The bakeoff compared:
 
 ```text
-run 32500521858
-Ubuntu PASS
-Windows PASS
-existing Python suite PASS
+Direct model calls
+    minimum dependency surface
+    maximum explicit control
+    more ADS-owned generic orchestration
+
+OpenAI Agents SDK 0.19.4
+    AR-01 through AR-12 PASS
+    smaller complete runtime surface
+    native approval / RunState / MCP / structured-output / timeout infrastructure
+
+LangGraph 1.2.10
+    complete ADS-shaped capability PASS
+    stronger explicit persisted checkpoint/replay machinery
+    larger dependency/operational/topology surface
 ```
 
-The first framework candidate, `openai-agents==0.19.4`, now also has a green deterministic core subgate for:
+Cross-platform evidence:
 
 ```text
-AR-01 domain isolation
-AR-02 single-agent tool loop
-AR-04 native approval interruption
-AR-05 serialized RunState process-boundary resume
-AR-06 external ADS project-state authority
-AR-07 exact context/revision transparency
-AR-10 structured output + ADS provenance validation
-AR-12 deterministic no-live-provider testing
+direct-call control
+    workflow 32500521858
+    Ubuntu PASS
+    Windows PASS
+
+OpenAI Agents SDK 0.19.4
+    workflow 32555526773
+    Ubuntu PASS
+    Windows PASS
+    AR-01 through AR-12 PASS
+
+LangGraph 1.2.10 durability comparator
+    workflow 32556382248
+    Ubuntu PASS, 9 tests
+    Windows PASS, 9 tests
 ```
 
-Core gate:
+The architecture boundary remains:
 
 ```text
-run 15 / 32501907783
-OpenAI core Ubuntu PASS
-OpenAI core Windows PASS
-direct controls PASS
-existing Python suite PASS
+ADS owns
+    project and methodological semantics
+    MethodologicalContextPack construction
+    context digests and exact knowledge revisions
+    human-control policy
+    authoritative side-effect idempotency/domain events
+    stable RuntimeTrace/provenance
+
+runtime owns
+    replaceable execution mechanics
 ```
 
-Research 011 records an important executable-first ecosystem finding: current documentation advertises `agents.testing.ScriptedModel`, but the published 0.19.4 package does not ship `agents.testing`; the released public `Model` interface is sufficient for an isolated deterministic fake.
+`Agent != Project`, `RunState != project memory`, and framework tracing/checkpoints do not become authoritative ADS state.
 
-Remaining mandatory OpenAI work before comparison/selection:
+Direct model calls remain a fallback/reference escape path. LangGraph remains a future escalation path if materially stronger long-running workflow durability becomes necessary. Microsoft Agent Framework and Google ADK 2.0 were not implemented after the Specification 005 stop rule found no current differentiator likely to overturn the selection.
 
-```text
-AR-03 current MCP integration
-AR-08 cancellation and bounded timeout
-AR-09 controlled failure/retry behavior
-AR-11 normalized observability
-```
-
-Direct model calls remain a valid final winner if no framework earns its dependency and operational burden.
+No final LLM provider/model or multi-agent architecture is selected.
 
 Primary sources:
 
 ```text
+docs/DECISIONS.md, D-032
 docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
-docs/research/011_openai_agents_0_19_4_released_api_compatibility_findings.md
-docs/checkpoints/128_runtime_bakeoff_preimplementation_evidence_refreshed.md
-docs/checkpoints/129_direct_call_control_runtime_baseline_passed.md
-experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
-experiments/runtime_bakeoff/candidates/openai_agents/CORE_RESULT.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 ```
 
 ### Professional frontend and Project Cockpit
@@ -300,19 +311,7 @@ Chromium interaction/accessibility        PASS
 controlled direct-view visual regression  PASS
 ```
 
-A later human review found a bounded normal-window Jump/composer collision and judged pinch scale travel still too slow. Checkpoint 130 records the repair:
-
-```text
-Jump/search
-    actual rendered composer geometry is now the active collision boundary
-    palette re-clamps on resize/fullscreen/composer resize
-
-pinch
-    PINCH_SENSITIVITY 0.0018 -> 0.0024
-    coalescing, bounded delta, exponential scaling and anchoring retained
-```
-
-Automated polish gate:
+Checkpoint 130 records later bounded polish for normal-window Jump/composer collision safety and faster anchored pinch.
 
 ```text
 head ae83e920b3fa43ee8242bdb1ca2640d23a474c71
@@ -326,7 +325,7 @@ normal-window Jump re-clamp regression      PASS
 faster anchored pinch regression            PASS
 ```
 
-A short real-browser/hardware retest remains open. The tiny occasional pinch hitch remains deferred non-blocking polish, and exact pinch constants remain unfrozen.
+The subsequent real-browser/hardware retest accepted the repaired behavior as good enough to continue. The tiny occasional pinch hitch remains deferred non-blocking polish, and exact pinch constants remain unfrozen.
 
 Primary latest sources:
 
@@ -337,35 +336,59 @@ docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_
 
 Promotion deliberately does **not** freeze graph/canvas or gesture libraries, auto-layout, semantic zoom, minimap, final pinch/zoom constants, production project-search backend, final stage taxonomy, final stage-ruler visual treatment, permanent tool-rail styling, final visual identity, or a canonical Cockpit screenshot baseline.
 
+## Immediate active track
+
+The runtime selection question is closed for initial V1. The highest-value methodological track is now production retrieval and MethodologicalHorizon construction.
+
+```text
+Q-044
+    production retrieval / MethodologicalHorizon construction
+
+Q-045
+    recommendation quality separated from catalog/retrieval coverage
+```
+
+The next benchmark should evaluate:
+
+```text
+retrieval-quality fixtures
+production lexical retrieval
+semantic retrieval as an empirical candidate
+lexical/semantic fusion only if justified
+ranking and omission quality
+first bounded real MethodologicalHorizon
+selective LLM context quality and cost
+```
+
+Do not select an embedding model, reranker, ANN service, or vector database from intuition.
+
 ## Current execution order
 
 ```text
-1. short Checkpoint-130 human Cockpit retest
-2. complete OpenAI Specification-005 gates AR-03 / AR-08 / AR-09 / AR-11
-3. compare completed OpenAI evidence against the direct-call control
-4. implement LangGraph durability comparator if still decision-relevant
-5. production retrieval / MethodologicalHorizon benchmark
+1. finish runtime-branch reconciliation, CI and merge into v1-frontend-spike
+2. inspect current production retrieval/persistence surfaces
+3. define retrieval / MethodologicalHorizon benchmark fixtures and acceptance criteria
+4. implement and evaluate lexical retrieval first
+5. evaluate semantic retrieval and fusion/reranking only if evidence justifies them
+6. build the first bounded real MethodologicalHorizon and selective context assembly
+7. integrate the selected runtime behind an ADS-owned production port when a real reasoning vertical slice needs it
 ```
-
-The runtime bakeoff must preserve the simpler direct-model-call architecture as a valid outcome if no framework earns its complexity.
-
-The retrieval/horizon benchmark should evaluate omission quality, relevance, and context cost before selecting embeddings, rerankers, ANN services, or vector infrastructure.
 
 ## Active branch and continuation
 
-Current executable V1 work lives on:
+Current runtime-selection reconciliation lives on:
 
 ```text
 v1-runtime-bakeoff
 ```
 
-The promoted frontend boundary is preserved on:
+The promoted frontend/V1 boundary is preserved on:
 
 ```text
 v1-frontend-spike
 ```
 
-The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from `v1-runtime-bakeoff` plus the canonical routing documents rather than assuming `main` is current.
+The default `main` branch intentionally trails current V1 work. New sessions must reconstruct current execution from the canonical routing documents and the active promoted branch rather than assuming `main` is current.
 
 Current continuity and exact next action are maintained in:
 
@@ -435,7 +458,7 @@ docs/research/
     Current bounded design and ecosystem research.
 
 docs/specifications/
-    Accepted or candidate implementation/evaluation contracts.
+    Accepted, completed, or candidate implementation/evaluation contracts.
 
 docs/checkpoints/
     Historical snapshots and milestone records.
