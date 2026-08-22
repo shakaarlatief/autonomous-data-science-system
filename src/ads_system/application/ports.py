@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections.abc import Mapping, Sequence
 from typing import Any, Protocol, Self
 
+from ads_system.application.context_models import ContextKnowledgeAsset
 from ads_system.application.horizon_models import (
     NavigableKnowledgeAsset,
     RelatedKnowledgeAsset,
@@ -76,13 +77,19 @@ class KnowledgeRetrievalPort(Protocol):
 
 
 class KnowledgeNavigationRepository(Protocol):
-    """Targeted accepted-current reads required by MethodologicalHorizon construction."""
+    """Targeted accepted-current reads for Horizon and context construction."""
 
     def get_current_asset(self, stable_key: str) -> NavigableKnowledgeAsset | None: ...
 
     def get_outbound_related_assets(
         self, stable_key: str
     ) -> tuple[RelatedKnowledgeAsset, ...]: ...
+
+    def get_context_asset(
+        self, stable_key: str, revision_id: str
+    ) -> ContextKnowledgeAsset | None:
+        """Return compact reasoning content only for the exact current revision."""
+        ...
 
 
 class KnowledgeInterchangeRepository(Protocol):
