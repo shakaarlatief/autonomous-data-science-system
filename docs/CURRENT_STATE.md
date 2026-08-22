@@ -7,7 +7,7 @@
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`  
 **Development stage:** Prototype V0 complete; bounded V1 implementation now connects governed methodological knowledge, the first explained MethodologicalHorizon, accepted selective model-facing context, and an ADS-owned reasoning runtime seam to the first real-model reasoning-value experiment  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** finish pre-live reconciliation for PR #12, validate its exact reconciled head cross-platform, then execute the frozen Specification 014 live workflow without changing model, prompt, rubric, thresholds, repetition count, or context conditions.
+**Immediate project priority:** pre-live reconciliation is complete and the reconciled provider-free head has passed cross-platform validation; the next action is to execute the frozen Specification 014 live workflow without changing model, prompt, rubric, thresholds, repetition count, retry policy, or context conditions.
 
 ## Active ChatGPT development context
 
@@ -221,7 +221,7 @@ The model configuration is experiment evidence, not a final ADS model selection.
 
 ---
 
-## 6. Provider-free implementation is complete and green
+## 6. Provider-free implementation and reconciliation are complete
 
 Checkpoint 145 preserves the completed pre-live implementation boundary.
 
@@ -244,7 +244,7 @@ experiments/reasoning_context_value/runner.py
 
 Provider-free coverage validates deterministic condition construction, exact context identities, frozen plan generation/digests, judge blinding, rubric recomputation, provider-neutral trace/usage contracts, unsupported-basis rejection, authoritative-state isolation, result-ledger generation, retry/attempt boundaries, and the full fake-runtime end-to-end path.
 
-Exact first implementation gate before Checkpoint 145:
+First provider-free implementation gate:
 
 ```text
 aadf425fdb24db2512e2171f4a99be3c87d8cb80
@@ -254,7 +254,23 @@ Ubuntu PASS
 Windows PASS
 ```
 
-At that head, inherited selective-context and Horizon workflows also passed.
+The subsequent fully reconciled head before this current-state update was:
+
+```text
+23cf0c09fadbe11330edfed19c10e7e194f5be18
+```
+
+and it also passed:
+
+```text
+Checkpoint metadata                 PASS
+V1 reasoning context value          PASS on Ubuntu and Windows
+V1 selective methodological context PASS
+V1 first MethodologicalHorizon       PASS
+V1 methodological horizon            PASS
+```
+
+PR #12 has been updated with the provider-free implementation, cross-platform evidence, live/CI separation, and exact live continuation.
 
 No live reasoner or judge call has occurred yet.
 
@@ -324,29 +340,37 @@ Do not add retrieval/relevance complexity before the frozen reasoning experiment
 
 ## 9. Exact next execution order
 
-### A. PRE-LIVE RECONCILIATION
+### A. CONFIRM CURRENT HEAD REMAINS GREEN
+
+The documentation-only current-state update must not be allowed to bypass the same provider-free gate. Confirm the current PR head has successful:
 
 ```text
-1. reconcile README / KNOWLEDGE_MAP / OPEN_QUESTIONS with Checkpoint 145 and PR #12
-2. update PR #12 with provider-free implementation and cross-platform evidence
-3. validate the exact reconciled PR head again
+Checkpoint metadata
+V1 reasoning context value, Ubuntu + Windows
+relevant inherited Horizon/selective-context workflows
 ```
 
 ### B. EXECUTE THE FROZEN LIVE EXPERIMENT
 
-The only intended repository path is:
+The next substantive action is the manual workflow:
 
 ```text
 .github/workflows/v1-reasoning-context-value-live.yml
 ```
 
-Manual confirmation required:
+Run it from:
+
+```text
+v1-reasoning-context-value
+```
+
+with confirmation:
 
 ```text
 RUN_SPEC_014_FROZEN
 ```
 
-The workflow must run from `v1-reasoning-context-value` with repository secret `OPENAI_API_KEY` available.
+and repository secret `OPENAI_API_KEY` available.
 
 Do not change the model, prompt, fixture, rubric, thresholds, repetitions, retry policy, SELECTIVE construction, or FULL_HORIZON construction before the live result is preserved.
 
@@ -355,12 +379,14 @@ Do not change the model, prompt, fixture, rubric, thresholds, repetitions, retry
 After the live workflow:
 
 ```text
-1. download/read the complete workflow artifact
+1. inspect/download the complete workflow artifact
 2. preserve raw and aggregate result in the repository
 3. create the live-result checkpoint
-4. classify pass/failure under the frozen advancement rule
+4. classify pass/failure under Specification 014's frozen advancement rule
 5. only then decide promotion or the next experiment
 ```
+
+PR #12 must not be merged merely on the provider-free implementation result; its live experimental outcome must first be preserved and interpreted.
 
 ---
 
