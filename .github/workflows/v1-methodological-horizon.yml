@@ -45,6 +45,6 @@ jobs:
           version: '0.12.5'
           enable-cache: true
       - name: Run frozen lexical retrieval benchmark
-        run: uv run --python 3.13 --locked pytest tests/integration/test_knowledge_retrieval_fts.py -q
+        run: uv run --python 3.13 --locked python -m pytest tests/integration/test_knowledge_retrieval_fts.py -q
       - name: Run existing V1 Python regression suite
-        run: uv run --python 3.13 --locked pytest tests -q
+        run: uv run --python 3.13 --locked python -m pytest -q
