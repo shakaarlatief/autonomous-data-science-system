@@ -1,21 +1,22 @@
 # Specification 013: V1 Horizon Relevance and Selective Context
 
-**Version:** 0.1  
+**Version:** 1.0  
 **Date:** 2026-08-22  
-**Status:** Frozen bounded implementation/evaluation contract before relevance/context code  
-**Scope:** First deterministic task-profile relevance filter, bounded required-concept support closure, exact-revision methodological context projection, system-facing omission observability, and RH-C context-size/coverage evaluation.  
-**Authority:** Governs the first RH-C implementation until its result is preserved. It does not define final semantic relevance judgment, recommendation policy, required/blocking policy, final Horizon budget, final LLM context budget, or production semantic-retrieval infrastructure.
+**Status:** Accepted bounded V1 application seam after successful RH-C validation  
+**Scope:** Deterministic task-profile relevance filtering, bounded required-concept support closure, exact-revision methodological context projection, system-facing omission observability, hard context budgeting, and canonical model-facing context serialization.  
+**Authority:** Governs the accepted first V1 `MethodologicalHorizon -> ContextSelectionResult -> MethodologicalContextPack` seam. It does not define final semantic relevance judgment, natural-language task interpretation, recommendation policy, REQUIRED/BLOCKING policy, universal Horizon/context budgets, final LLM provider/model, or production semantic-retrieval infrastructure.  
+**Promoted by:** Checkpoint 143 after the frozen v0.1 RH-C contract passed without target or threshold changes.
 
-## 1. Starting boundary
+## 1. Accepted boundary
 
-This specification begins from the promoted PR #10 merge boundary:
+This specification began from the promoted retrieval/Horizon boundary:
 
 ```text
 v1-frontend-spike
 9319ed9b0a401efa1be85c27a9ce4424a8ce5e1e
 ```
 
-The active implementation branch is:
+The implementation and promotion branch is:
 
 ```text
 v1-relevance-selective-context
@@ -35,17 +36,25 @@ Checkpoint 139
 
 Checkpoint 141
     first storage-neutral one-hop/applicability-aware MethodologicalHorizon PASS
+
+Checkpoint 142
+    this selector/context contract frozen as v0.1 before implementation
+
+Checkpoint 143
+    frozen RH-C gate passed and bounded promotion authorized
 ```
 
-The next frozen question is:
+Accepted question answered by this specification:
 
-> Can an explicit task profile reduce a deliberately wide explained Horizon to a small exact-revision methodological context pack without losing required knowledge or leaking the whole Horizon/catalog into the model-facing payload?
+> Given an already-built explained `MethodologicalHorizon` and an explicit task profile naming the reasoning functions needed for the current reasoning step, can ADS construct a small exact-revision methodological context pack while retaining system-side omission evidence and avoiding serialization of the whole Horizon/catalog into the model-facing payload?
+
+For the frozen RH-C corpus, the answer is yes.
 
 ---
 
 ## 2. Governing architectural constraints
 
-Preserve Foundations 019-020 and the Prototype V0 scaling lesson:
+Preserve Foundations 019-020 and Prototype V0's strongest scaling lesson:
 
 ```text
 what the SYSTEM should remember
@@ -61,22 +70,25 @@ applicability != relevance
 relevance != recommendation
 system observability != model-facing context
 knowledge storage != context serialization
+methodological knowledge != runtime/provider state
 ```
 
-No LLM call participates in the frozen first selector.
+No LLM call participates in this accepted first selector.
+
+The accepted seam is deliberately minimum-complexity. A future semantic relevance stage may be added only when downstream evidence demonstrates that explicit task semantics are insufficient.
 
 ---
 
 ## 3. Input contract
 
-The first selector consumes:
+The selector consumes:
 
 ```text
 MethodologicalHorizon
 MethodologicalContextRequest
 ```
 
-The request contains exactly:
+The request contains:
 
 ```text
 task_id: str
@@ -93,13 +105,24 @@ function names non-empty and deduplicated
 max_assets > 0
 ```
 
-The caller supplying reasoning functions is part of this frozen slice. How a future system derives those functions from natural-language/project semantics remains outside this specification.
+The caller supplying reasoning functions is part of this bounded seam.
+
+Still outside scope:
+
+```text
+natural-language task -> reasoning-function inference
+project-object state -> reasoning-function inference
+LLM task interpretation
+learned task classifiers
+```
+
+Those mechanisms require separate evidence rather than being hidden inside context selection.
 
 ---
 
-## 4. Horizon provenance extension
+## 4. Horizon provenance contract
 
-Add one storage-neutral field to `HorizonCandidate`:
+`HorizonCandidate` includes:
 
 ```text
 relation_source_key: str | None
@@ -116,39 +139,60 @@ RELATION candidate
                           whose accepted outbound relation introduced it
 ```
 
-This is an explainability extension only. Specification 012's one-hop/outbound/accepted-current traversal remains unchanged.
+This field exists so the selector can distinguish relation-added conceptual support from independent primary matches.
 
-When multiple direct sources reach the same related stable key, the existing deterministic first-reached relation provenance remains the first-slice behavior. Multi-edge provenance is not introduced here.
+Specification 012's accepted traversal remains unchanged:
+
+```text
+accepted-current
+outbound
+one-hop
+relation-bounded
+```
+
+No recursive graph expansion is introduced by this specification.
+
+When multiple direct sources reach the same related stable key, the existing deterministic first-reached provenance remains the accepted first-slice behavior. Multi-edge provenance remains open.
 
 ---
 
-## 5. Exact accepted-current context read contract
+## 5. Exact accepted-current context read
 
-Extend the storage-neutral knowledge-navigation boundary with an exact context read conceptually equivalent to:
+The storage-neutral navigation boundary supports an exact context read conceptually equivalent to:
 
 ```text
 get_context_asset(stable_key: str, revision_id: str)
     -> ContextKnowledgeAsset | None
 ```
 
-The adapter must return content only when:
+Content is returned only when:
 
 ```text
 stable_key exists
-revision_id is exactly the current accepted asset revision
+revision_id is exactly the current accepted revision
 ```
 
-A stale/historical revision must not be silently substituted with current content.
+A stale, historical, missing, or mismatched revision must fail closed. The assembler must never silently substitute a newer revision.
 
-The application layer must not use global accepted-snapshot export as its operational context API.
+The application layer must not operationally assemble context by scanning a global accepted-snapshot export.
+
+The accepted ordering is:
+
+```text
+Horizon identities
+    -> relevance/budget selection
+    -> exact context reads for selected candidates only
+```
+
+This ensures a candidate omitted by budget does not have full reasoning content materialized merely to be discarded.
 
 ---
 
 ## 6. Compact reasoning projection
 
-`ContextKnowledgeAsset` must expose only reasoning-relevant, revision-transparent content needed by the first pack.
+`ContextKnowledgeAsset` exposes reasoning-relevant, revision-transparent content for selected knowledge.
 
-Required fields:
+Required asset fields:
 
 ```text
 stable_key
@@ -166,9 +210,9 @@ accepted components
 rules
 ```
 
-### 6.1 Component projection
+### 6.1 Accepted component projection
 
-For accepted components belonging to the exact selected parent asset revision:
+For accepted components belonging to the exact selected parent revision:
 
 ```text
 component_key
@@ -178,7 +222,7 @@ body
 reasoning_functions
 ```
 
-Only components with accepted governance may be serialized.
+Only accepted-governance components may be serialized.
 
 ### 6.2 Narrative facet projection
 
@@ -201,9 +245,9 @@ unknown_behavior
 rationale
 ```
 
-### 6.4 Explicit exclusions from model-facing projection
+### 6.4 Explicit exclusions
 
-Do not serialize merely because the data exists:
+The model-facing projection must not serialize merely because data exists:
 
 ```text
 retrieval lexical terms
@@ -218,19 +262,26 @@ governance event prose
 timestamps
 collection membership
 SQLite / SQLAlchemy implementation details
+provider-specific ranking metadata
 ```
 
-Retrieval metadata is not reasoning context.
+Retrieval and operational audit metadata are not reasoning context.
 
 ---
 
-## 7. Frozen relevance policy
+## 7. Accepted deterministic relevance policy
 
 ### 7.1 Candidate universe
 
-Only `horizon.included` participates in relevance selection.
+Only:
 
-`horizon.excluded` candidates remain available to system observability but cannot enter the model-facing pack in this first policy.
+```text
+horizon.included
+```
+
+participates in relevance selection.
+
+`horizon.excluded` remains system-observable but cannot enter this first model-facing pack.
 
 ### 7.2 Primary match
 
@@ -248,9 +299,9 @@ Selection reason:
 PRIMARY_FUNCTION_MATCH
 ```
 
-### 7.3 Required-concept support closure
+### 7.3 Required-concept support
 
-After primary matches are identified, a relation-added Horizon candidate is a support match only when:
+After primary matches are identified, an already-present relation-added Horizon candidate is a support match only when:
 
 ```text
 candidate.relation_type == "REQUIRES_CONCEPT"
@@ -264,19 +315,46 @@ Selection reason:
 REQUIRED_CONCEPT_SUPPORT
 ```
 
-Do not automatically include `USES_CONCEPT`, `ALTERNATIVE_TO`, `COMPLEMENTS`, or other relation types.
+Do not automatically include relation candidates only because they are connected through:
 
-A candidate that independently matches the requested reasoning functions remains a primary match regardless of relation type.
+```text
+USES_CONCEPT
+ALTERNATIVE_TO
+COMPLEMENTS
+```
+
+or any other relation type.
+
+A relation-added candidate that independently matches a requested reasoning function remains a primary match.
 
 ### 7.4 No recursion
 
-Support closure does not traverse relations again. It only selects already-present one-hop Horizon candidates.
+Support closure selects only already-present one-hop Horizon candidates. It does not traverse relations again.
+
+### 7.5 Interpretation limit
+
+Selected means:
+
+```text
+task-relevant under this bounded explicit policy
+```
+
+It does **not** mean:
+
+```text
+RECOMMENDED
+REQUIRED
+BLOCKING
+universally most important
+```
+
+Those are later Foundation 019 stages.
 
 ---
 
-## 8. Frozen deterministic ordering and budget
+## 8. Deterministic ordering and hard budget
 
-Candidate priority:
+Priority:
 
 ```text
 1. PRIMARY_FUNCTION_MATCH
@@ -296,19 +374,23 @@ Then apply:
 request.max_assets
 ```
 
-Candidates that are relevant under the policy but fall outside the hard limit receive system-facing omission reason:
+A relevant candidate beyond the hard limit receives system-facing omission reason:
 
 ```text
 BUDGET_LIMIT
 ```
 
-No numeric relevance score is introduced.
+It must not be silently dropped.
+
+The validated benchmark used `max_assets = 3`, but this value is an experiment constant, not a universal product budget.
+
+No numeric relevance score is introduced by this seam.
 
 ---
 
 ## 9. System-facing selection result
 
-The first application result is conceptually:
+The accepted application result is conceptually:
 
 ```text
 ContextSelectionResult
@@ -317,18 +399,16 @@ ContextSelectionResult
     decisions
 ```
 
-Every Horizon candidate receives an inspectable decision.
+Every Horizon candidate receives an inspectable system-side decision.
 
-Required decision reasons include:
-
-Selected:
+Required selected reasons:
 
 ```text
 PRIMARY_FUNCTION_MATCH
 REQUIRED_CONCEPT_SUPPORT
 ```
 
-Omitted:
+Required omission reasons include:
 
 ```text
 NO_REASONING_FUNCTION_MATCH
@@ -336,15 +416,28 @@ BUDGET_LIMIT
 INAPPLICABLE
 ```
 
-For candidates in `horizon.excluded`, use `INAPPLICABLE`.
+For `horizon.excluded`, use `INAPPLICABLE` in this first seam.
 
-The result may preserve Horizon origin/applicability/missing-context state for observability.
+The result may preserve:
+
+```text
+Horizon origin
+applicability state
+missing-context state
+relation provenance
+budget diagnostics
+size diagnostics
+```
+
+for observability and future UI use.
+
+These system decisions must not be copied wholesale into the model-facing pack.
 
 ---
 
 ## 10. Model-facing MethodologicalContextPack
 
-The model-facing pack contains selected knowledge only.
+The model-facing pack contains selected methodological knowledge only.
 
 Required envelope:
 
@@ -356,7 +449,7 @@ selected knowledge items
 aggregate missing_context_keys
 ```
 
-Each selected knowledge item includes:
+Each selected item includes:
 
 ```text
 compact exact ContextKnowledgeAsset projection
@@ -367,20 +460,55 @@ relation_source_key / relation_type / relation_revision_id when relation-added
 selection_reason
 ```
 
-The pack must not include omission decisions or names/content of omitted Horizon candidates.
-
-This is a deliberate system/model boundary:
+The pack must not include:
 
 ```text
-system remembers why 8 candidates were omitted
-model receives only the 2 selected candidates
+omission decisions
+names of omitted Horizon candidates
+omitted knowledge content
+global catalog inventory
+retrieval ranking traces
+```
+
+Accepted boundary:
+
+```text
+SYSTEM
+    may retain a ten-asset Horizon and eight omission decisions
+
+MODEL-FACING PACK
+    may receive only the two selected exact revisions
 ```
 
 ---
 
-## 11. Canonical serialization
+## 11. Missing-context preservation
 
-Provide deterministic serialization for the pack:
+A selected `MISSING_CONTEXT` candidate remains selected when it is relevant under the task profile.
+
+Its unresolved context keys must remain visible on the item and in the pack's sorted unique aggregate.
+
+Methodological concept support does not imply the project fact itself is known.
+
+Example validated by RH-C03:
+
+```text
+prediction-moment concept selected as REQUIRED_CONCEPT_SUPPORT
+    while
+project prediction-moment context remains unresolved
+```
+
+This preserves the executable semantic invariant inherited from Specification 012:
+
+```text
+unknown != false
+```
+
+---
+
+## 12. Canonical serialization
+
+The pack has deterministic canonical serialization:
 
 ```text
 UTF-8 JSON
@@ -399,297 +527,243 @@ Unicode character count
 SHA-256 digest
 ```
 
-Do not add a provider tokenizer dependency in this gate.
+Provider-specific tokenizer dependencies remain outside this seam.
 
-A model-specific exact token count is deferred to the first real runtime/model vertical slice.
-
----
-
-## 12. Frozen wide-Horizon stress setup
-
-Use the unchanged accepted knowledge fixture:
-
-```text
-tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
-```
-
-Do not edit that fixture for RH-C.
-
-Use a new scenario fixture:
-
-```text
-tests/fixtures/retrieval/selective_context_v1.json
-```
-
-Every RH-C case builds the same wide Horizon from six direct accepted-current seeds:
-
-```text
-class-imbalance
-histogram
-missing-data
-prediction-time-feature-eligibility
-random-forest
-temporal-validation
-```
-
-The accepted one-hop graph should add:
-
-```text
-bagging
-ecdf
-gradient-boosted-trees
-prediction-moment
-```
-
-Expected wide-Horizon included count:
-
-```text
-10
-```
-
-Common known context contains only:
-
-```text
-project.task.is_supervised = true
-data.representation.is_supported_tabular = true
-```
-
-This resolves Random Forest's frozen applicability predicate while deliberately leaving class-prevalence, production-missingness, and prediction-moment context unresolved.
-
-The setup is a context-selection stress case, not an expected production retrieval pattern.
+Exact model token counts belong in a later experiment that fixes one concrete model/runtime configuration.
 
 ---
 
-## 13. Frozen RH-C cases
+## 13. Frozen RH-C evidence that earned promotion
 
-All cases use:
+The v0.1 contract used the unchanged accepted knowledge fixture and a deliberately wide ten-asset Horizon.
+
+All four cases used:
 
 ```text
 max_assets = 3
 ```
 
-### RH-C01 model-option reasoning
+Observed selected sets:
 
 ```text
-requested_reasoning_functions:
-    MODEL_OPTION
-
-required selected keys:
-    gradient-boosted-trees
+RH-C01 MODEL_OPTION
     random-forest
+    gradient-boosted-trees
 
-required aggregate missing_context_keys:
-    []
-```
-
-### RH-C02 empirical-distribution evidence
-
-```text
-requested_reasoning_functions:
-    EVIDENCE_OPTION
-
-required selected keys:
-    ecdf
+RH-C02 EVIDENCE_OPTION
     histogram
+    ecdf
 
-required aggregate missing_context_keys:
-    []
-```
-
-### RH-C03 predictive-validity constraints
-
-```text
-requested_reasoning_functions:
-    VALIDITY_CONSTRAINT
-
-required selected keys:
-    prediction-moment
+RH-C03 VALIDITY_CONSTRAINT
     prediction-time-feature-eligibility
     temporal-validation
+    prediction-moment as REQUIRED_CONCEPT_SUPPORT
 
-selection expectation:
-    prediction-time-feature-eligibility  PRIMARY_FUNCTION_MATCH
-    temporal-validation                  PRIMARY_FUNCTION_MATCH
-    prediction-moment                    REQUIRED_CONCEPT_SUPPORT
-
-required aggregate missing_context_keys:
-    prediction-moment
-```
-
-### RH-C04 data-quality decision frameworks
-
-```text
-requested_reasoning_functions:
-    DECISION_FRAMEWORK
-
-required selected keys:
+RH-C04 DECISION_FRAMEWORK
     class-imbalance
     missing-data
-
-required aggregate missing_context_keys:
-    class-prevalence
-    production-missingness
 ```
 
-Expected key sets are frozen before running the implementation.
+Observed context ratios:
+
+```text
+RH-C01  0.20020477
+RH-C02  0.16462054
+RH-C03  0.34635417
+RH-C04  0.28222057
+```
+
+Equivalent canonical-context reductions were approximately:
+
+```text
+79.98%
+83.54%
+65.36%
+71.78%
+```
+
+Across every frozen case:
+
+```text
+required stable-key coverage          1.00
+required exact-revision coverage      1.00
+irrelevant selected assets            0
+selected assets                       <= 3
+omitted candidates without reason     0
+selective/full-Horizon byte ratio     <= 0.65
+```
+
+The frozen target sets, threshold, task profiles, budget, relation-support rule, and accepted knowledge fixture were not changed after observing the implementation result.
+
+Primary result:
+
+```text
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
+```
 
 ---
 
-## 14. Frozen quality gates
-
-Across RH-C01 through RH-C04:
-
-```text
-exact required stable-key coverage          = 1.00
-exact required revision coverage            = 1.00
-irrelevant selected asset count             = 0
-selected asset count per case               <= 3
-omitted Horizon candidates missing a reason = 0
-```
-
-For every case:
-
-```text
-selective serialized bytes < full-Horizon control bytes
-selective/full-Horizon byte ratio <= 0.65
-selective serialized bytes < global-catalog control bytes
-```
-
-The full-Horizon and global controls use the same compact reasoning projection and same task envelope so the size comparison is not distorted by different schemas.
-
-The deliberately wide benchmark currently expects the full included Horizon and accepted catalog both to contain ten assets, but they remain distinct conceptual controls in the harness.
-
----
-
-## 15. Non-quality invariants
+## 14. Accepted non-quality invariants
 
 ### RC-01 Exact revision identity
-Every selected item uses the exact revision in its Horizon candidate and that revision is still current accepted when context is read.
+Every selected item uses the exact revision carried by its Horizon candidate and that revision is still accepted-current when context is read.
 
 ### RC-02 Stale context fail-closed
 A stale or unavailable exact revision raises an explicit error. The assembler never silently substitutes another revision.
 
 ### RC-03 No global scan in production selection
-The production selector obtains context only through exact candidate reads. It has no application-level list-all/global-export dependency.
+Production selection obtains full context only through exact selected-candidate reads. It has no application-level list-all/global-export dependency.
 
 ### RC-04 Omitted knowledge absent from model pack
 System omission decisions do not leak omitted candidates into serialized model-facing context.
 
 ### RC-05 Missing context preserved
-Selected `MISSING_CONTEXT` candidates retain their missing keys, and the pack exposes the sorted unique aggregate.
+Selected unresolved candidates retain missing keys and the pack exposes the sorted unique aggregate.
 
 ### RC-06 Inapplicable excluded
-No `INAPPLICABLE` Horizon candidate enters the first pack.
+No `INAPPLICABLE` Horizon candidate enters this first model-facing pack.
 
 ### RC-07 Required-concept closure bounded
-Only already-present relation candidates of type `REQUIRES_CONCEPT` whose recorded source is a primary match are auto-included.
+Only already-present `REQUIRES_CONCEPT` relation candidates whose recorded source is a primary match are auto-included.
 
 ### RC-08 Deterministic serialization
-Repeated assembly from unchanged inputs yields identical serialized bytes and SHA-256 digest.
+Repeated assembly from unchanged inputs yields identical canonical bytes and SHA-256 digest.
 
 ### RC-09 Retrieval metadata omitted
-The context pack contains no lexical terms, aliases, semantic retrieval cues, retrieval scores, or provider-specific ranking metadata.
+The pack contains no lexical terms, aliases, semantic retrieval cues, retrieval scores, or provider ranking metadata.
 
 ### RC-10 Authoritative-state isolation
 Selection/context assembly performs no authoritative knowledge/project writes.
 
 ### RC-11 Storage isolation
-Application modules contain no SQLAlchemy/persistence-schema imports.
+Application modules remain free of SQLAlchemy/persistence-schema imports.
 
 ### RC-12 Regression compatibility
-The existing locked V1 Python suite remains green.
+The locked V1 Python suite remains green.
 
 ### RC-13 Cross-platform
-The RH-C gate passes on Ubuntu and Windows under Python 3.13.
+The validated RH-C gate passes on Ubuntu and Windows under the frozen workflow environment.
 
 ### RC-14 Budget overflow explicit
-Separate unit coverage proves a relevant candidate beyond `max_assets` is omitted as `BUDGET_LIMIT`, not silently dropped.
+A relevant candidate beyond `max_assets` is reported as `BUDGET_LIMIT`, not silently dropped.
+
+### RC-15 Post-budget materialization
+Full context content is fetched only after the hard selection budget has been applied.
 
 ---
 
-## 16. Benchmark observability
+## 15. Explicit non-goals and non-selections
 
-The RH-C result must record per case:
-
-```text
-case_id
-task_id
-wide Horizon keys/revisions
-requested reasoning functions
-selected keys/revisions
-selection reasons
-omitted keys and system-facing reasons
-aggregate missing-context keys
-selected asset count
-full Horizon asset count
-global accepted asset count
-selective UTF-8 bytes
-full-Horizon control UTF-8 bytes
-global-control UTF-8 bytes
-selective/full-Horizon ratio
-canonical SHA-256 digest
-```
-
-Do not print/serialize omitted full knowledge content as part of the model-facing pack merely for benchmark logging.
-
----
-
-## 17. Explicit non-goals
-
-Do not implement in this slice:
+This accepted bounded seam does not select or solve:
 
 ```text
 LLM relevance judgment
-semantic embedding reranking
+semantic embedding relevance reranking
 learned ranking
-opaque relevance score
+opaque relevance scores
 natural-language task -> reasoning-function inference
-recommendation state
-required/blocking state
+final recommendation state
+final REQUIRED/BLOCKING state
 final project-wide Horizon budget
-provider-specific model token budget
+final per-call context budget
+provider-specific token budget
 production semantic retriever integration
 FastEmbed/BGE production dependency
 permanent RRF production implementation
 ANN/vector database
 recursive relation expansion
 open-world concern discovery
-runtime/model calls
+final LLM provider/model
+multi-agent architecture
+runtime/model reasoning quality
 ```
+
+The frozen `max_assets = 3` and ten-asset stress Horizon remain benchmark parameters only.
 
 ---
 
-## 18. Advancement rule
+## 16. Promotion interpretation
 
-If all frozen RH-C gates pass:
+Specification 013 v1.0 promotes the **seam**, not every benchmark constant.
 
-```text
-1. preserve the complete result
-2. promote the bounded task-profile ContextSelectionResult / MethodologicalContextPack seam
-3. reconcile Q-044/Q-045/Q-029
-4. connect one real reasoning vertical slice through the ADS-owned ReasoningRuntime
-5. evaluate selective context versus a strong simple context control under one concrete model
-6. measure exact provider tokens only in that model-specific experiment
-```
-
-If RH-C fails:
+Accepted:
 
 ```text
-1. preserve the failed result before tuning
-2. classify metadata, task-profile, relation-support, budget, or serialization failure
-3. repair the smallest demonstrated defect
-4. consider LLM relevance only if deterministic task semantics prove insufficient
+explicit task-profile request
+exact Horizon identity handling
+deterministic primary reasoning-function selection
+bounded REQUIRES_CONCEPT support
+hard budget with explicit overflow reason
+exact accepted-current context reads
+compact reasoning projection
+system/model-facing separation
+missing-context preservation
+canonical deterministic serialization
 ```
+
+Still hypothesis/open:
+
+```text
+how task profiles are derived in production
+whether semantic/LLM relevance is later necessary
+how relevance becomes recommendation
+how REQUIRED/BLOCKING is decided
+what final budgets should be
+whether selective context improves real reasoning
+```
+
+This status is intentionally narrower than a claim that general methodological relevance is solved.
 
 ---
 
-## 19. Primary sources
+## 17. Next evidence boundary
+
+The next justified experiment is a real reasoning vertical slice, preregistered before model calls:
+
+```text
+same frozen project/task evidence
+    -> selective MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> one concrete model configuration
+
+versus
+
+same frozen project/task evidence
+    -> strong full-Horizon/simple context control
+    -> same ADS-owned ReasoningRuntime
+    -> same concrete model configuration
+```
+
+Measure at least:
+
+```text
+reasoning-output quality against frozen obligations
+critical methodological omissions
+exact knowledge revisions supplied
+exact provider/model tokens
+latency and cost where observable
+whether selective omission causes real quality loss
+whether full-Horizon context creates distraction or unnecessary burden
+```
+
+Do not tune retrieval or add an LLM relevance judge merely because those mechanisms are available. Reopen them when the reasoning vertical slice demonstrates a concrete deficiency.
+
+---
+
+## 18. Primary sources
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+
+docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
+
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
 docs/specifications/012_v1_first_methodological_horizon_builder.md
+
 docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
-docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
+docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
+docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
+
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
