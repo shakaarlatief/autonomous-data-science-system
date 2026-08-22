@@ -15,6 +15,14 @@ on:
       - tests/unit/test_reasoning.py
       - tests/unit/test_reasoning_context_value_harness.py
       - tests/integration/test_reasoning_context_value_vertical_slice.py
+      - docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+      - docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+      - docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
+      - docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
       - .github/workflows/v1-reasoning-context-value.yml
       - .github/workflows/v1-reasoning-context-value-live.yml
   pull_request:
@@ -30,6 +38,14 @@ on:
       - tests/unit/test_reasoning.py
       - tests/unit/test_reasoning_context_value_harness.py
       - tests/integration/test_reasoning_context_value_vertical_slice.py
+      - docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+      - docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+      - docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
+      - docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
       - .github/workflows/v1-reasoning-context-value.yml
       - .github/workflows/v1-reasoning-context-value-live.yml
 
