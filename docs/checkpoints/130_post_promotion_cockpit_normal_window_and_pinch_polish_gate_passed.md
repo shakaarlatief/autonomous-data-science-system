@@ -2,6 +2,10 @@
 
 **Date:** 2026-08-21  
 **Status:** Automated implementation gate passed; short real-browser human retest remains open  
+**Checkpoint class:** DESIGN  
+**Project stage:** Post-V0 V1 bounded implementation and integration  
+**Scope:** Preserves the bounded post-promotion Cockpit normal-window Jump/composer collision repair and faster native-pinch responsiveness gate.  
+**Authority:** Historical product/implementation provenance. Specification 008 governs the promoted V1 Cockpit interaction architecture; later current-state records govern subsequent human-retest status.  
 **Active branch:** `v1-runtime-bakeoff`  
 **Design session:** 03  
 **ChatGPT project:** Autonomous Data Science System  
