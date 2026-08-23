@@ -1,0 +1,49 @@
+name: Apply Specification 019 harness transformation
+
+on:
+  pull_request:
+    branches: [v1-frontend-spike]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  transform:
+    if: ${{ github.head_ref == 'v1-recommendation-action-value-system-provenance' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value-system-provenance
+          fetch-depth: 1
+      - name: Execute the frozen transformation script
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          workflow = Path('.github/workflows/implement-spec019-harness.yml').read_text(encoding='utf-8')
+          marker = "          python - <<'PY'\n"
+          start = workflow.index(marker) + len(marker)
+          end = workflow.index("\n          PY\n", start)
+          lines = workflow[start:end].splitlines()
+          script = "\n".join(
+              line[10:] if line.startswith("          ") else line
+              for line in lines
+          )
+          exec(compile(script, '<spec019-harness-transform>', 'exec'), {})
+          PY
+          python -m py_compile experiments/system_owned_provenance_recommendation_action_value/harness.py
+      - name: Commit transformed harness
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/implement-spec019-harness.yml
+          git rm .github/workflows/implement-spec019-harness-pr.yml
+          git add experiments/system_owned_provenance_recommendation_action_value/harness.py
+          git commit -m 'Implement Specification 019 system-owned provenance harness'
+          git push origin HEAD:v1-recommendation-action-value-system-provenance
