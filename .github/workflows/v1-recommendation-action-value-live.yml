@@ -1,0 +1,63 @@
+name: V1 recommendation action value live
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: 'Type RUN_SPEC_015_FROZEN to authorize the frozen live experiment'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-live-experiment:
+    if: ${{ inputs.confirmation == 'RUN_SPEC_015_FROZEN' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      RESULT_DIR: experiments/recommendation_action_value/generated/run-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify explicit branch and credential boundary
+        shell: bash
+        run: |
+          if [ "${GITHUB_REF}" != "refs/heads/v1-recommendation-action-value" ]; then
+            echo "Run the frozen experiment only from v1-recommendation-action-value."
+            exit 1
+          fi
+          if [ -z "${OPENAI_API_KEY:-}" ]; then
+            echo "OPENAI_API_KEY secret is required for the explicit live workflow."
+            exit 1
+          fi
+          echo "Frozen source head: ${GITHUB_SHA}"
+      - name: Validate frozen provider-free implementation before live calls
+        run: >-
+          uv run --python 3.13 --locked python -m pytest
+          tests/unit/test_recommendation.py
+          tests/unit/test_recommendation_action_harness.py
+          tests/integration/test_recommendation_action_value_vertical_slice.py
+          -q
+      - name: Execute frozen Specification 015 live experiment
+        shell: bash
+        run: |
+          mkdir -p "${RESULT_DIR}"
+          uv run --python 3.13 --with openai-agents==0.19.4 \
+            python -m experiments.recommendation_action_value.runner \
+            --output "${RESULT_DIR}" \
+            --confirm RUN_SPEC_015_FROZEN
+      - name: Upload complete frozen result bundle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1-recommendation-action-value-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ env.RESULT_DIR }}
+          if-no-files-found: warn
+          retention-days: 30
