@@ -25,20 +25,20 @@ Explicit machinery must earn its complexity empirically.
 Current execution state:
 
 ```text
-checkpoint            148
+checkpoint            149
 active branch         v1-recommendation-action-value
 active PR             #13 -> v1-frontend-spike
 promoted V1 head      bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
-current boundary      Specification 015 provider-free gate passed; exact pre-live validation next
+current boundary      Checkpoint 149 live-ready boundary frozen; manual live dispatch next
 ```
 
 Specification 014 v1.0 / Checkpoint 146 established the first real-model evidence that selective exact-revision methodological context can preserve frozen reasoning quality while materially reducing provider input-token burden.
 
 Specification 015 moves downstream from context economy to recommendation/action quality: whether ADS helps a strong reasoner distinguish `RECOMMENDED` from `REQUIRED / BLOCKING`, preserve validity dependencies, avoid important omissions, and avoid unnecessary work.
 
-Checkpoint 148 records a complete provider-free Specification 015 implementation. The full 36 reasoner + 36 blinded-judge fake-runtime shape passes, the three treatment conditions remain isolated, deterministic recommendation metrics are recomputed from hidden fixture truth, no authoritative project mutation occurs, and the dedicated Ubuntu/Windows workflow is green.
+Checkpoint 148 records the complete provider-free Specification 015 implementation. Checkpoint 149 freezes the reconciled live-ready boundary after the checkpoint commit, provider-free recommendation/action workflow, checkpoint metadata, and inherited reasoning-context regression all remained green.
 
-The manual secret-gated live workflow is armed but has not been executed.
+The manual secret-gated live workflow is exposed on the default branch as the dispatcher surface but has not been executed.
 
 For exact continuation, start with:
 
@@ -46,7 +46,7 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
 ```
 
 ---
@@ -310,7 +310,7 @@ The result does not select a final provider/model, universal context budget, gen
 
 ## Active experiment: recommendation and action value
 
-Specification 015 v0.1 / Checkpoints 147-148 govern the first downstream test of:
+Specification 015 v0.1 / Checkpoints 147-149 govern the first downstream test of:
 
 ```text
 RELEVANT
@@ -407,17 +407,22 @@ project state unchanged before/after
 knowledge authority unchanged before/after
 ```
 
-### Live boundary
+### Live-ready boundary
 
-The manual workflow exists at:
+Checkpoint 149 freezes the reconciled pre-live boundary. Its checkpoint commit passed:
 
 ```text
-.github/workflows/v1-recommendation-action-value-live.yml
+Checkpoint metadata                 run 32641146841   PASS
+V1 recommendation action value      run 32641146842   PASS
+V1 reasoning context value          run 32641146840   PASS
 ```
 
-It is `workflow_dispatch` only and requires:
+The recommendation/action workflow passed on both Ubuntu and Windows and again verified that the ordinary CI environment did not receive the live provider credential.
+
+The manual workflow is exposed on the default branch as a dispatcher but requires the experiment ref:
 
 ```text
+workflow      V1 recommendation action value live
 branch        v1-recommendation-action-value
 secret        OPENAI_API_KEY
 confirmation  RUN_SPEC_015_FROZEN
@@ -433,6 +438,7 @@ docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
 ```
 
 ---
@@ -440,16 +446,18 @@ docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_pas
 ## Exact continuation
 
 ```text
-1. validate the exact reconciled pre-live branch head on Ubuntu and Windows
-2. preserve that exact source head and workflow-run evidence in the next checkpoint
-3. keep the frozen Specification 015 treatment unchanged
-4. expose the frozen live workflow on the default branch only as the manual dispatcher surface
-5. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
-6. preserve the complete live raw/result bundle before any tuning
-7. apply the frozen PROMOTE_BOUNDED_RECOMMENDATION_SEAM / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification exactly
+1. keep the frozen Specification 015 treatment unchanged
+2. manually dispatch V1 recommendation action value live
+3. select branch v1-recommendation-action-value
+4. enter confirmation RUN_SPEC_015_FROZEN
+5. preserve the complete raw/result bundle before any tuning
+6. apply the frozen PROMOTE_BOUNDED_RECOMMENDATION_SEAM / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification exactly
+7. create the live-result checkpoint before merge, repair, or subsequent experiment design
 ```
 
-Do not change the fixture, action menus, model/runtime treatment, prompts, rubric, thresholds, repetitions, randomization, retry policy, retrieval stack, or recommendation machinery between pre-live validation and the frozen live run.
+The default branch exposes only the manual workflow dispatcher. The live workflow itself refuses any ref other than `v1-recommendation-action-value`.
+
+Do not change the fixture, action menus, model/runtime treatment, prompts, rubric, thresholds, repetitions, randomization, retry policy, context construction, retrieval stack, or recommendation evaluator before the live result is preserved.
 
 ---
 
