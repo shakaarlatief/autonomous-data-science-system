@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-22  
-**Current checkpoint:** 145  
+**Last reviewed:** 2026-08-23  
+**Current checkpoint:** 146  
 **Active development branch:** `v1-reasoning-context-value`  
 **Active promotion PR:** #12 into `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`
@@ -71,36 +71,29 @@ Current V1 progression:
 
 ```text
 Foundations 018-020
-    object/state model
-    methodological navigation
-    reusable knowledge architecture
+    object/state model, methodological navigation, reusable knowledge
 
 D-028 through D-031 / Checkpoint 127
-    local-first persistence
-    governed reusable-knowledge interchange
+    local-first persistence and governed knowledge interchange
 
 Specification 008 / Checkpoints 126 and 130
-    Project Cockpit interaction architecture
+    promoted Project Cockpit interaction architecture
 
 D-032 / Checkpoint 133
     OpenAI Agents SDK behind ADS-owned ReasoningRuntime
 
 Checkpoints 135 -> 137 -> 139 -> 141
-    lexical retrieval
-    dense semantic comparator
-    complementary hybrid comparator
-    first explained MethodologicalHorizon
+    lexical retrieval -> dense complementarity -> hybrid comparator -> explained Horizon
 
 Specification 013 v1.0 / Checkpoint 143
-    first accepted selective MethodologicalContextPack seam
+    accepted selective exact-revision MethodologicalContextPack
 
-Specification 014 v0.1 / Checkpoints 144-145
-    first selective-context versus compact full-Horizon real-reasoning experiment
-    provider-free implementation and reconciliation complete
-    live experiment is the next substantive action
+Specification 014 v1.0 / Checkpoint 146
+    first real-model selective-context value gate PASS
+    quality 1.000000 vs 1.000000
+    aggregate provider input-token ratio 0.334379
+    66.56% input-token reduction
 ```
-
----
 
 ## Core system and product boundary
 
@@ -160,7 +153,8 @@ large reusable knowledge universe
     -> bounded task-specific relevance selection
     -> selective MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> real reasoning evidence [active]
+    -> real reasoning evidence [first bounded gate passed]
+    -> harder recommendation/action evidence [next]
 ```
 
 ---
@@ -341,128 +335,65 @@ fd33184fbff588c6737d77af751bc5def0e31954
 
 ---
 
-## Active reasoning-context-value vertical slice
+## Accepted reasoning-context-value vertical slice
 
-Frozen design sources:
+Design/freeze:
 
 ```text
 docs/research/021_first_reasoning_context_value_vertical_slice_design.md
-docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
-tests/fixtures/reasoning/context_value_v1.json
 docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
-```
-
-Provider-free implementation checkpoint:
-
-```text
 docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
 ```
 
-Production-facing implementation:
+Accepted contract/result:
 
 ```text
-src/ads_system/application/reasoning.py
-src/ads_system/application/ports.py
-src/ads_system/infrastructure/runtime/openai_agents.py
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
 ```
 
-Experiment implementation:
+Frozen live source:
 
 ```text
-experiments/reasoning_context_value/environment.py
-experiments/reasoning_context_value/harness.py
-experiments/reasoning_context_value/judge.py
-experiments/reasoning_context_value/runner.py
+3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+V1 reasoning context value live / run 32635061634 / successful attempt 2
 ```
 
-Frozen conditions:
+Observed:
 
 ```text
-SELECTIVE
-    Specification 013 pack
-    2-3 exact task-specific revisions
-
-FULL_HORIZON
-    all 10 exact Horizon revisions
-    same compact reasoning projection
+reasoner outputs        24 / 24
+judge outputs           24 / 24
+retries                 0
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+aggregate token ratio   0.334379
+input-token reduction   66.56%
+critical regressions    none
 ```
 
-Frozen live plan:
+Context-expansion diagnostic:
 
 ```text
-4 cases
-2 conditions
-3 repetitions
-24 reasoner outputs
-24 condition-blinded judge outputs
-48 planned successful provider calls
-randomization seed 20260822
-maximum provider attempts 60
+SELECTIVE unexpected basis mean      0.000000
+FULL_HORIZON unexpected basis mean   1.666667
 ```
 
-Frozen quality gates:
-
-```text
-aggregate selective >= full - 0.05
-per-case selective >= full - 0.10
-no reproducible selective-only critical-obligation regression
-```
-
-Frozen provider-token gates:
-
-```text
-selective input tokens < full input tokens in every matched pair
-per-case mean selective/full <= 0.80
-aggregate mean selective/full <= 0.80
-```
-
-Provider-free implementation evidence:
-
-```text
-first implementation head  aadf425fdb24db2512e2171f4a99be3c87d8cb80
-workflow                   V1 reasoning context value / 32568052820
-Ubuntu                     PASS
-Windows                    PASS
-```
-
-Fully reconciled pre-live head before the final routing-only updates:
-
-```text
-23cf0c09fadbe11330edfed19c10e7e194f5be18
-```
-
-It passed Checkpoint metadata, the reasoning-context workflow on Ubuntu and Windows, selective-context regression, first-Horizon-builder regression, and MethodologicalHorizon regression.
-
-This is infrastructure evidence only. No live Specification 014 reasoner/judge call has occurred yet.
-
----
+This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
 
 ## Current exact continuation
 
-Pre-live implementation, PR reconciliation, and canonical routing reconciliation are complete.
-
-The only remaining precondition is that the **current** documentation-adjusted PR head remains green under the same provider-free gates. Once confirmed, the next substantive action is:
-
 ```text
-.github/workflows/v1-reasoning-context-value-live.yml
-branch: v1-reasoning-context-value
-confirmation: RUN_SPEC_014_FROZEN
-secret: OPENAI_API_KEY
+A. validate exact post-result reconciliation head
+B. merge exactly that green PR #12 head into v1-frontend-spike
+C. create the next branch from the promoted merge
+D. design/preregister a harder project-level recommendation/action slice
+E. do not make new live calls before the next frozen contract exists
 ```
 
-After the run:
-
-```text
-1. inspect the complete uploaded workflow artifact
-2. preserve raw and aggregate result before any tuning
-3. create the live-result checkpoint
-4. apply Specification 014's frozen advancement rule
-5. only then decide promotion, repair, or the next experiment
-```
-
-Do not merge PR #12 on provider-free evidence alone. Do not change the frozen model, prompts, fixture, semantic rubric, thresholds, repetitions, retry policy, or context construction before the live result is preserved.
-
----
+The next slice should test recommendation strength and project-level consequences, including whether an omitted concern creates a visible failure and whether unnecessary methodological expansion creates measurable cost. Retrieval/relevance tuning is not the next default action.
 
 ## Recent continuity checkpoints
 
@@ -477,4 +408,5 @@ Do not merge PR #12 on provider-free evidence alone. Do not change the frozen mo
 143  selective-context gate passed and promoted
 144  first reasoning-context-value contract frozen
 145  provider-free reasoning-context-value implementation passed cross-platform
+146  first real reasoning-context-value gate passed and promotion authorized
 ```

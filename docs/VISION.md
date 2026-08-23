@@ -1,7 +1,7 @@
 # Vision
 
 **Status:** Current canonical system vision  
-**Last reviewed:** 2026-08-22  
+**Last reviewed:** 2026-08-23  
 **Authority:** Canonical high-level product/system direction. Detailed rationale and narrower design contracts live in the referenced foundations, decisions, research memos, specifications, checkpoints, and current-state documents.
 
 ## Purpose
@@ -381,7 +381,7 @@ MODEL-FACING CONTEXT
 
 Specification 013 v1.0 accepts this bounded seam.
 
-This does **not** establish that reasoning functions solve general relevance, that the benchmark budget is universal, or that selective context improves real reasoning. Those are downstream questions.
+This does **not** establish that reasoning functions solve general relevance or that the benchmark budget is universal. Specification 014 now provides the first bounded downstream evidence that selective exact-revision context can preserve measured real-model reasoning obligations while materially reducing provider input-token burden; broader generalization remains open.
 
 Primary evidence:
 
@@ -391,6 +391,34 @@ docs/specifications/012_v1_first_methodological_horizon_builder.md
 docs/specifications/013_v1_horizon_relevance_and_selective_context.md
 experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
+
+---
+
+## First downstream evidence for selective model-facing context
+
+The first frozen real-model comparison now supports the selective-context direction beyond mechanical serialization size.
+
+Specification 014 / Checkpoint 146 observed:
+
+```text
+SELECTIVE aggregate quality      1.000000
+FULL_HORIZON aggregate quality   1.000000
+SELECTIVE/FULL input-token ratio 0.334379
+aggregate input-token reduction  66.56%
+critical-obligation regressions  none
+```
+
+The result is consistent with the post-V0 design rule that broader methodological/project state may belong in the system without belonging in every model prompt. It also observed more unexpected methodological-basis expansion under FULL_HORIZON, but no measured quality loss on the frozen rubric. Harder recommendation/action tasks are therefore required before claiming that additional context is generally distracting or harmful.
+
+Accepted continuation is:
+
+```text
+explained MethodologicalHorizon
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+```
+
+Open questions move downstream toward recommendation strength, REQUIRED/BLOCKING transitions, task-profile derivation, broader semantic relevance, and project-level action consequences.
 
 ---
 
@@ -512,7 +540,7 @@ selective task-specific context assembly
 
 Consequential reasoning should preserve enough provenance to identify which project state and methodological knowledge revisions influenced it.
 
-The successful RH-C gate strengthens this direction mechanically, but the next experiment must still establish its effect on actual model reasoning quality and exact provider-token burden.
+The RH-C gate established the mechanical context boundary, and Specification 014 / Checkpoint 146 now provide the first real-model downstream evidence: the selective condition preserved every frozen obligation while reducing aggregate provider input tokens by 66.56% relative to the compact full-Horizon control. This remains bounded evidence rather than a universal context-budget or provider/model conclusion.
 
 ---
 

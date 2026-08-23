@@ -1,10 +1,10 @@
 # Specification 014: V1 Reasoning Context Value Vertical Slice
 
-**Version:** 0.1  
-**Date:** 2026-08-22  
-**Status:** Frozen bounded implementation/evaluation contract before reasoning-runtime implementation and live model calls  
+**Version:** 1.0  
+**Date:** 2026-08-23  
+**Status:** Accepted bounded V1 reasoning-context-value seam after the frozen live gate passed  
 **Scope:** First real-model comparison of the accepted selective `MethodologicalContextPack` against a compact full-Horizon control under the same ADS-owned runtime/model configuration, with frozen semantic quality and provider-token efficiency gates.  
-**Authority:** Governs the first reasoning-context-value implementation and live experiment until its result is preserved. It does not select the final LLM provider/model, final context budget, final semantic relevance mechanism, recommendation policy, or multi-agent architecture.  
+**Authority:** Accepted for the first bounded real-reasoning seam validated by Checkpoint 146. The frozen v0.1 treatment and gates below remain the historical evaluation contract. This v1.0 promotion accepts the tested selective-context + ADS-owned ReasoningRuntime boundary, not a final LLM provider/model, universal context budget, general semantic relevance mechanism, recommendation policy, or multi-agent architecture.  
 **Design session:** 04  
 **ChatGPT project:** Autonomous Data Science System  
 **Session title:** 04 - Selective Context Promotion & Reasoning Vertical Slice
@@ -850,3 +850,90 @@ docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_
 tests/fixtures/reasoning/context_value_v1.json
 experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
+
+
+---
+
+## 22. Accepted live result and promoted bounded seam
+
+The frozen live experiment was executed from exact source head:
+
+```text
+3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+```
+
+Workflow evidence:
+
+```text
+V1 reasoning context value live
+run 32635061634
+successful workflow attempt 2
+```
+
+The first workflow attempt stopped before provider calls because the required repository secret was absent. The unchanged workflow was rerun after the secret was configured. No frozen treatment, rubric, threshold, repetition, randomization, or retry-policy value changed.
+
+Observed completion:
+
+```text
+24 / 24 reasoner outputs
+24 / 24 blinded judge outputs
+48 / 48 planned successful provider calls
+48 provider attempts used
+0 retries
+overall frozen gate PASS
+```
+
+Quality result:
+
+```text
+aggregate SELECTIVE quality     1.000000
+aggregate FULL_HORIZON quality  1.000000
+all four per-case differences   0.000000
+critical-obligation regressions none
+unsupported basis failures      none
+```
+
+Provider input-token result:
+
+```text
+case    SELECTIVE mean   FULL mean    S/F ratio    reduction
+RV-01       911.33       3039.00      0.299879       70.01%
+RV-02       786.67       3015.00      0.260918       73.91%
+RV-03      1258.00       3027.33      0.415547       58.45%
+RV-04      1096.00       3036.67      0.360922       63.91%
+aggregate  1013.00       3029.50      0.334379       66.56%
+```
+
+Every matched pair satisfied `SELECTIVE input_tokens < FULL_HORIZON input_tokens`.
+
+The diagnostic unexpected-methodological-basis count was `0.0` per SELECTIVE output and `1.666667` per FULL_HORIZON output. Both conditions reached the frozen quality ceiling, so this supports measurable methodological expansion under fuller context without establishing general distraction or quality harm.
+
+Accepted v1.0 seam:
+
+```text
+explained MethodologicalHorizon
+    -> accepted selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRequest / ReasoningOutcome / usage / trace contracts
+    -> replaceable ReasoningRuntime port
+    -> OpenAI Agents SDK no-tool infrastructure adapter for the current V1 runtime decision
+```
+
+This result provides the first real-model downstream evidence for the post-V0 distinction:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Complete evidence:
+
+```text
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+```
+
+The result does not establish formal statistical non-inferiority, a final provider/model, `max_assets = 3` as a universal budget, explicit reasoning functions as a complete general relevance solution, universal harm from full-Horizon context, or a final recommendation / REQUIRED-BLOCKING policy.
+
+The next justified slice is a harder project-level recommendation/action experiment in which recommendation strength, omission cost, unnecessary methodological expansion, and downstream consequences can become observable. It must be separately designed and preregistered before new live calls.

@@ -25,25 +25,24 @@ Explicit machinery must earn its complexity empirically.
 Current execution state:
 
 ```text
-checkpoint            145
+checkpoint            146
 active branch         v1-reasoning-context-value
 active PR             #12 -> v1-frontend-spike
 promoted V1 head      fd33184fbff588c6737d77af751bc5def0e31954
-current boundary      Specification 014 pre-live reasoning experiment
+current boundary      Specification 014 live gate passed; promotion reconciliation
 ```
 
-The provider-free implementation, PR reconciliation, and canonical routing reconciliation are complete. The current branch must remain green under the provider-free cross-platform gates, after which the next substantive action is the manually dispatched frozen live experiment.
+The first real-model selective-context value experiment is complete and preserved. SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate frozen quality, while SELECTIVE used `0.334379` of FULL_HORIZON provider input tokens in aggregate, a `66.56%` reduction, with no matched-pair token failures or critical-obligation regressions.
 
-No live Specification 014 reasoner/judge result has been observed yet.
+The immediate task is to validate the exact reconciled PR #12 head, merge that green head into `v1-frontend-spike`, and then preregister a harder recommendation/action slice before new live calls.
 
 For exact continuation, start with:
 
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
 ```
-
----
 
 ## Prototype V0 result and durable constraint
 
@@ -296,127 +295,71 @@ This does not prove that reasoning functions solve general semantic relevance, t
 
 ---
 
-## Active experiment: selective context versus compact full-Horizon reasoning
+## Accepted first real reasoning-context-value seam
 
-Research 021, Specification 014 v0.1, the frozen reasoning fixture, and Checkpoint 144 preregister the first downstream real-model comparison.
+Specification 014 v1.0 / Checkpoint 146 preserve the first downstream real-model test of the accepted selective `MethodologicalContextPack` against a compact full-Horizon control under the same task evidence and model/runtime configuration.
 
-Conditions:
+Frozen result:
 
 ```text
-SELECTIVE
-    accepted Specification 013 context
-    2-3 exact task-specific revisions
+24 / 24 reasoner outputs
+24 / 24 blinded judge outputs
+0 retries
 
-FULL_HORIZON
-    all 10 exact included Horizon revisions
-    same compact reasoning projection
-    same task envelope
+aggregate quality
+    SELECTIVE      1.000000
+    FULL_HORIZON   1.000000
+
+aggregate provider input tokens
+    SELECTIVE mean 1013.00
+    FULL mean      3029.50
+    ratio          0.334379
+    reduction      66.56%
 ```
 
-Frozen reasoner:
+Every matched pair used fewer SELECTIVE input tokens. No critical-obligation regression or unsupported methodological-basis reference occurred.
+
+A diagnostic difference did appear: SELECTIVE produced zero unexpected methodological-basis keys, while FULL_HORIZON averaged `1.666667` unexpected keys per output, concentrated in RV-01 and RV-04. Since both conditions still reached the quality ceiling, this is evidence of methodological expansion rather than proof of general distraction or quality harm.
+
+This is the first real-model downstream evidence supporting:
 
 ```text
-OpenAI Agents SDK behind ADS-owned ReasoningRuntime
-openai-agents==0.19.4
-gpt-5.6-sol
-reasoning effort medium
-verbosity low
-max output tokens 4000
-no tools
-no previous-response state
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
 ```
 
-Frozen blinded judge:
+Accepted continuation:
 
 ```text
-gpt-5.6-sol
-reasoning effort high
-verbosity low
-max output tokens 4000
-condition hidden
+explained MethodologicalHorizon
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
 ```
 
-Frozen plan:
+Primary evidence:
 
 ```text
-4 task classes
-2 context conditions
-3 repetitions
-24 reasoner outputs
-24 blinded judge outputs
-48 planned successful provider calls
-maximum 60 provider attempts
-```
-
-Quality gates:
-
-```text
-aggregate SELECTIVE >= FULL_HORIZON - 0.05
-per-case SELECTIVE >= FULL_HORIZON - 0.10
-no reproducible selective-only critical-obligation regression
-```
-
-Efficiency gates:
-
-```text
-SELECTIVE input tokens < FULL_HORIZON input tokens in every matched pair
-per-case mean SELECTIVE/FULL_HORIZON <= 0.80
-aggregate mean SELECTIVE/FULL_HORIZON <= 0.80
-```
-
-Provider-free implementation now includes the ADS-owned production-facing reasoning types/port, infrastructure OpenAI Agents adapter, isolated accepted-current experiment environment, deterministic condition and call-plan construction, blinded judge adapter, complete attempt/result ledger, ordinary live-API-free cross-platform CI, and a separate secret-gated live workflow.
-
-Checkpoint 145 records the first provider-free implementation gate:
-
-```text
-source head  aadf425fdb24db2512e2171f4a99be3c87d8cb80
-workflow     V1 reasoning context value / 32568052820
-Ubuntu       PASS
-Windows      PASS
-```
-
-A later fully reconciled pre-live head `23cf0c09fadbe11330edfed19c10e7e194f5be18` also passed the reasoning-context workflow on Ubuntu and Windows plus the relevant checkpoint/Horizon/selective-context regressions.
-
-No live Specification 014 model result has occurred yet.
-
-Primary active sources:
-
-```text
-docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
 docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
-tests/fixtures/reasoning/context_value_v1.json
-docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
-docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
 ```
 
----
+The result does not select a final provider/model, universal context budget, general relevance solution, or recommendation/REQUIRED-BLOCKING policy.
 
 ## Exact continuation
 
-Pre-live implementation and repository reconciliation are complete. Confirm the **current** PR head remains green under the provider-free cross-platform workflows, then manually dispatch:
-
 ```text
-.github/workflows/v1-reasoning-context-value-live.yml
-branch: v1-reasoning-context-value
-confirmation: RUN_SPEC_014_FROZEN
-secret: OPENAI_API_KEY
+1. validate the exact post-result reconciliation head
+2. merge exactly that green PR #12 head into v1-frontend-spike
+3. branch from the promoted merge
+4. design and preregister a harder project-level recommendation/action slice
+5. make recommendation strength, important omission, unnecessary expansion, and downstream consequence measurable
+6. make no new live model calls before that next contract is frozen
 ```
 
-After the workflow completes:
-
-```text
-1. inspect the complete uploaded result artifact
-2. preserve raw and aggregate results before any tuning
-3. create the live-result checkpoint
-4. apply Specification 014's frozen advancement rule
-5. only then decide promotion, repair, or the next experiment
-```
-
-PR #12 must not be merged on provider-free evidence alone.
-
-Do not change the frozen model, prompts, fixture, semantic rubric, thresholds, repetitions, retry policy, or context construction before the live result is preserved.
-
----
+Do not return to retrieval or selector tuning without a measured downstream reason. Do not promote `gpt-5.6-sol`, `max_assets = 3`, or the current reasoning-function task profile into universal project decisions from this bounded result.
 
 ## Repository role
 

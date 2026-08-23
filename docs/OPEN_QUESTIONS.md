@@ -1,8 +1,8 @@
 # Open Questions
 
 **Status:** Current canonical unresolved-question register  
-**Last reconciled:** 2026-08-22  
-**Reconciliation context:** Prototype V0 is complete; the post-V0 V1 object/methodological foundations are established; the Project Cockpit interaction architecture is promoted; governed reusable-knowledge persistence/interchange is closed for the current seam; the initial runtime bakeoff is closed through D-032 / Checkpoint 133; the first retrieval through MethodologicalHorizon sequence is validated through Checkpoints 135/137/139/141; the first deterministic selective-context seam is promoted through Specification 013 v1.0 / Checkpoint 143; and the first downstream reasoning-context-value experiment is frozen through Specification 014 / Checkpoint 144 with provider-free implementation validated cross-platform through Checkpoint 145. The immediate unresolved boundary is the frozen live SELECTIVE versus compact FULL_HORIZON reasoning experiment.  
+**Last reconciled:** 2026-08-23  
+**Reconciliation context:** Prototype V0 is complete; the post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, and deterministic selective-context seam are established. Specification 014 v1.0 / Checkpoint 146 now add the first real-model downstream evidence: SELECTIVE preserved every frozen semantic obligation at the same 1.000000 aggregate quality as FULL_HORIZON while using 0.334379 of its provider input tokens in aggregate. The immediate unresolved boundary is no longer context-value compression itself; it is harder project-level recommendation/action quality, recommendation strength and REQUIRED/BLOCKING transitions, task-profile derivation, and broader scaling/generalization.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -124,9 +124,9 @@ Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`,
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-**Status:** Selective-context construction accepted; real reasoning effect is the active experiment
+**Status:** Substantially advanced through the first real-model selective-context gate; broader generalization remains open
 
-Current architecture:
+Accepted bounded path:
 
 ```text
 large reusable knowledge universe
@@ -134,24 +134,14 @@ large reusable knowledge universe
     -> explained MethodologicalHorizon
     -> applicability / missing-context handling
     -> bounded task-specific relevance selection
-    -> selective MethodologicalContextPack
+    -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
     -> flexible LLM reasoning
 ```
 
-Executable evidence now covers production lexical retrieval, semantic-channel complementarity, one-hop relation expansion, three-valued applicability/missing-context behavior, and deterministic selective context through Checkpoint 143.
+Specification 014 v1.0 / Checkpoint 146 provide the first direct downstream evidence. Under the frozen four-case comparison, SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate semantic quality while SELECTIVE used an aggregate input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regressions and no unexpected SELECTIVE methodological-basis keys.
 
-Specification 014 / Checkpoints 144-145 now freeze and implement the first direct downstream test:
-
-```text
-same project/task evidence
-same runtime/model configuration
-SELECTIVE context
-    versus
-compact FULL_HORIZON context
-```
-
-Still open are the live quality/cost result, natural-language/project-state task interpretation, when richer semantic/LLM relevance becomes necessary, and open-world discovery of important concerns absent from the catalog.
+This supports selective methodological context as a real-reasoning V1 seam. Still open are natural-language/project-state task interpretation, behavior on harder and heterogeneous project tasks, when richer semantic/LLM relevance becomes necessary, open-world discovery of concerns absent from explicit knowledge, final budget policy, and how reasoning should become recommendation/action.
 
 ### Q-006. How should relevant investigations be activated?
 
@@ -194,28 +184,30 @@ Knowledge role, maturity, enforcement authority, scope confidence, provenance, c
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Structurally advanced through selective context; task-profile derivation and live reasoning impact remain active
+**Status:** Structurally and downstream advanced; production task-profile derivation remains open
 
-The first executable structural path now reaches:
+The first executable path now has bounded evidence through real model reasoning:
 
 ```text
-large global knowledge universe
-    -> high-recall retrieval/filtering
+project-relevant retrieval
     -> bounded explained MethodologicalHorizon
     -> explicit applicability/context checks
-    -> explicit task-profile relevance selection
-    -> selective MethodologicalContextPack
-    -> ReasoningRuntime
+    -> explicit reasoning-function task profile
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> measured reasoning output
 ```
+
+Checkpoint 146 shows that the accepted selective pack preserved all frozen obligations while reducing actual provider input tokens by about two thirds on the first real-model benchmark.
 
 Still unresolved:
 
 ```text
-how project objects/state determine requested reasoning functions
+how production project objects/state derive requested reasoning functions
 whether explicit task semantics remain expressive enough at larger scale
-how semantic/LLM relevance participates if they are not
-whether selected context preserves/improves real reasoning
-how reasoning becomes recommendation, required concern, or action
+how semantic/LLM relevance participates when they are not
+how reasoning becomes recommendation, required concern, proposal, investigation, or action
+how activation behaves on harder and open-world project states
 ```
 
 ### Q-038. How should reusable knowledge quality and evolution be governed?
@@ -230,9 +222,9 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 ### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?
 
-**Status:** Substantially answered for the first bounded chain; production scaling remains open
+**Status:** Substantially answered for the first bounded chain through real reasoning; production scaling remains open
 
-The initial RH-L/RH-S/RH-R/RH-A/RH-C chain is now executable through Checkpoint 143:
+The initial chain is executable through the first downstream model gate:
 
 ```text
 lexical retrieval                         Checkpoint 135
@@ -240,9 +232,10 @@ dense semantic comparator                 Checkpoint 137
 complementary hybrid comparator            Checkpoint 139
 explained one-hop/applicability Horizon    Checkpoint 141
 selective MethodologicalContextPack        Checkpoint 143
+real-model context-value gate              Checkpoint 146
 ```
 
-The first selective gate preserved all frozen required exact revisions while reducing methodology-only canonical context by about 65% to 84% on the ten-asset stress Horizon.
+The first selective gate reduced methodology-only canonical context by roughly 65% to 84%. The subsequent real-model gate preserved every frozen semantic obligation while reducing actual provider input tokens by `66.56%` in aggregate.
 
 Still open:
 
@@ -251,36 +244,40 @@ production task-profile derivation
 final Horizon/context budgets
 larger and heterogeneous Horizon behavior
 whether semantic/LLM relevance is needed beyond explicit reasoning functions
-production semantic/fusion integration when a real vertical slice requires it
-reranking only if downstream ordering becomes a measured problem
+production semantic/fusion integration when a downstream deficiency requires it
+reranking only if ordering becomes a measured problem
 ```
 
-The immediate experiment is no longer a retrieval-tuning experiment. Specification 014 tests the downstream reasoning consequence.
+The current evidence gives no reason to tune retrieval merely because more tuning is possible.
 
 ### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?
 
-**Status:** Active; the first downstream reasoning-quality experiment is frozen and provider-free implementation is green
+**Status:** First reasoning-quality separation validated; recommendation strength/action quality are now the active gap
 
-The executable failure decomposition can now distinguish:
+The executable failure decomposition can distinguish catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, and reasoner-obligation failures.
+
+Specification 014 adds real evidence at the reasoning layer:
 
 ```text
-knowledge absent from catalog
-known but not retrieved
-retrieved through lexical and/or semantic channel
-retrieved/seeded but INAPPLICABLE
-retained but MISSING_CONTEXT
-relation-added to Horizon
-Horizon candidate but NO_REASONING_FUNCTION_MATCH
-relevant but BUDGET_LIMIT
-selected exact revision sent to reasoning
-selected context but reasoner misses an obligation
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+critical regressions    none
+aggregate input ratio   0.334379
 ```
 
-Specification 014 adds the first direct comparison of the last layer by holding task evidence and model/runtime configuration fixed while comparing SELECTIVE and compact FULL_HORIZON conditions.
+The first bounded result therefore separates context economy from semantic obligation quality successfully. It also records a diagnostic increase in unexpected methodological-basis expansion under FULL_HORIZON without measured rubric-quality loss.
 
-Still open after that first result will be recommendation correctness, strength calibration, REQUIRED/BLOCKING transitions, human/system follow-through, and downstream execution outcome quality.
+The important unresolved layer is now:
 
----
+```text
+is the concern merely relevant or actually recommended?
+how strong should the recommendation be?
+when does RECOMMENDED become REQUIRED / BLOCKING?
+what evidence justifies that transition?
+does the human/system follow the recommendation?
+what downstream project/execution outcome results?
+can important omission and unnecessary expansion both be measured on a harder task?
+```
 
 ## Agent/runtime, execution, and interoperability
 
