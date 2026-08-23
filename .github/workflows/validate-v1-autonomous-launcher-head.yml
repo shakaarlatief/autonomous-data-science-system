@@ -1,0 +1,45 @@
+name: Validate autonomous launcher exact head
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  validate:
+    if: github.actor == 'shakaarlatief' && github.event.issue.user.login == 'shakaarlatief' && github.event.issue.title == '[ADS VALIDATE] launcher 4b818a3e72e599a255fc02c366ae40f4c9ae5221'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: 4b818a3e72e599a255fc02c366ae40f4c9ae5221
+          fetch-depth: 1
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify provider credential is absent
+        shell: bash
+        run: |
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            echo 'Provider credential must not be available in launcher validation.'
+            exit 1
+          fi
+      - name: Run Specification 018 targeted tests
+        run: uv run --python 3.13 --locked python -m pytest tests/unit/test_ads_live_experiment_launcher.py -q
+      - name: Run full V1 Python regression suite
+        run: uv run --python 3.13 --locked python -m pytest -q
+      - name: Record success on validation issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment '${{ github.event.issue.number }}' --repo '${{ github.repository }}' --body 'Specification 018 exact-head provider-free validation passed for `4b818a3e72e599a255fc02c366ae40f4c9ae5221`. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+      - name: Record failure on validation issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment '${{ github.event.issue.number }}' --repo '${{ github.repository }}' --body 'Specification 018 exact-head provider-free validation failed for `4b818a3e72e599a255fc02c366ae40f4c9ae5221`. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
