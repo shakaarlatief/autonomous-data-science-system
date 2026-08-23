@@ -1064,9 +1064,9 @@ def _parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = _parse_args()
-    if os.environ.get("ADS_SPEC017_CONFIRM") != FROZEN_CONFIRMATION:
+    if os.environ.get("ADS_SPEC019_CONFIRM") != FROZEN_CONFIRMATION:
         raise SystemExit(
-            f"live execution requires ADS_SPEC017_CONFIRM={FROZEN_CONFIRMATION}"
+            f"live execution requires ADS_SPEC019_CONFIRM={FROZEN_CONFIRMATION}"
         )
     if not os.environ.get("OPENAI_API_KEY"):
         raise SystemExit("OPENAI_API_KEY is required for live Specification 019 execution")
