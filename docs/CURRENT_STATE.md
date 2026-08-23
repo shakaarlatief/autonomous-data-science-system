@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 156  
+**Checkpoint:** 158  
 **Date:** 2026-08-23  
 **Active development branch:** `v1-recommendation-action-value-relation-backed`  
 **Active PR:** #16 -> `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at Specification 016 promotion merge `6bda0c1efcf078476859b2c2c64fb0586964899d`  
-**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam, an immutable failed first recommendation/action-value experiment, a supported dependency-backed disposition diagnostic, and a newly frozen second recommendation/action-value contract.  
+**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam, an immutable failed first recommendation/action-value experiment, a supported dependency-backed disposition diagnostic, and a second relation-backed recommendation/action-value experiment whose provider-free implementation is cross-platform green and whose explicit live boundary is now frozen.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** implement Specification 017 provider-free exactly as frozen, validate its relation-backed result/pointer semantics and three-condition harness on Ubuntu and Windows, and make no new live provider call before an exact green implementation head is preserved.
+**Immediate project priority:** validate the exact final Checkpoint 158 branch head under all relevant provider-free workflows; if that exact head is green, make no further experiment-branch commit, expose only the identical live workflow on `main`, then execute the unchanged Specification 017 live experiment once.
 
 ## Active ChatGPT development context
 
@@ -67,7 +67,7 @@ large reusable knowledge universe
     -> real reasoning evidence                         [accepted bounded seam]
     -> first recommendation/action-value experiment   [failed, preserved]
     -> relation-backed disposition diagnostic         [supported]
-    -> second recommendation/action-value experiment  [frozen, active]
+    -> second recommendation/action-value experiment  [provider-free green, pre-live]
 ```
 
 Accepted technical/runtime boundaries remain D-028 through D-032. Specification 008 remains the promoted Project Cockpit interaction architecture. Specifications 012-014 remain the accepted bounded Horizon/selective-context/real-reasoning seams.
@@ -173,9 +173,9 @@ experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 
 ---
 
-## Active Specification 017 contract
+## Active Specification 017 experiment
 
-Research 024, Specification 017 v0.1, the new frozen benchmark fixture, and Checkpoint 156 now govern the active slice.
+Research 024, Specification 017 v0.1, the frozen benchmark fixture, Checkpoint 156, provider-free gate Checkpoint 157, and pre-live Checkpoint 158 govern the active slice.
 
 Frozen question:
 
@@ -194,22 +194,20 @@ FULL_HORIZON
     all ten exact current accepted Horizon revisions
 ```
 
-### Frozen cases
+### Frozen cases and selective sets
 
 ```text
 RB-01  VALIDITY_GATE_AND_SEQUENCE
+       prediction-moment + prediction-time-feature-eligibility + temporal-validation
+
 RB-02  COMPACT_MODEL_SHORTLIST_AND_TUNING_SEQUENCE
+       random-forest + gradient-boosted-trees
+
 RB-03  DISTRIBUTION_EVIDENCE_BEFORE_TRANSFORMATION
+       histogram + ecdf
+
 RB-04  MISSINGNESS_IMBALANCE_DECISION_SEQUENCE
-```
-
-Selective sets remain unchanged from the accepted selector benchmark:
-
-```text
-RB-01  prediction-moment + prediction-time-feature-eligibility + temporal-validation
-RB-02  random-forest + gradient-boosted-trees
-RB-03  histogram + ecdf
-RB-04  class-imbalance + missing-data
+       class-imbalance + missing-data
 ```
 
 ### Relation-backed output contract
@@ -252,7 +250,38 @@ FAIL
 
 A strong GENERIC ceiling result is therefore allowed to close as safe but not differentiated.
 
-### Frozen live plan
+### Provider-free implementation gate
+
+Checkpoint 157 preserves exact implementation head:
+
+```text
+07da2a091b5686b0378c7f8114495fe1d0b29c32
+```
+
+Dedicated workflow `32655457836` passed on both operating systems:
+
+```text
+Ubuntu targeted       13 passed
+Windows targeted      13 passed
+Ubuntu full suite     71 passed, 2 skipped
+Windows full suite    71 passed, 2 skipped
+```
+
+Inherited reasoning-context, disposition-semantics, and checkpoint-metadata workflows also passed on the same exact head.
+
+The provider-free full fake execution proves the complete 36-reasoner + 36-judge shape, deterministic plans/gates, relation-backed pointer validation, blinded judge contract, attempt accounting, and authoritative-state isolation. A perfect three-condition ceiling correctly evaluates to `SAFE_BUT_NOT_DIFFERENTIATED` rather than promotion.
+
+### Explicit live boundary
+
+Checkpoint 158 freezes:
+
+```text
+.github/workflows/v1-relation-backed-recommendation-action-value-live.yml
+manual confirmation: RUN_SPEC_017_FROZEN
+required branch: v1-recommendation-action-value-relation-backed
+```
+
+The frozen live plan remains:
 
 ```text
 4 cases
@@ -267,6 +296,8 @@ randomization seed 2026082303
 
 No Specification 017 live provider call has occurred.
 
+The live experiment is not authorized until the exact final branch head containing Checkpoints 157-158, the live workflow, and current routing reconciliation passes ordinary provider-free CI. After that green head, no further experiment-branch commit is permitted before the live run.
+
 Primary active sources:
 
 ```text
@@ -274,6 +305,8 @@ docs/research/024_relation_backed_recommendation_action_value_design.md
 docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
 docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
+docs/checkpoints/157_relation_backed_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/158_specification_017_live_boundary_frozen.md
 ```
 
 ---
@@ -305,14 +338,15 @@ Do not modify or rescore Specifications 015 or 016. Do not change Specification 
 ## Exact continuation
 
 ```text
-1. implement the experiment-owned relation-backed recommendation result and validator
-2. implement the frozen fixture and GENERIC / SELECTIVE / FULL_HORIZON condition construction
-3. implement deterministic action, scope, clarification, basis, and defer-pointer metrics
-4. implement condition-blinded semantic judge mechanics
-5. implement complete fake-runtime reasoner + judge coverage
-6. implement real-persistence provider-free integration coverage
-7. add dedicated ordinary Ubuntu/Windows CI with no provider credential
-8. preserve the exact green implementation head in the next checkpoint
-9. only then expose an explicit secret-gated live workflow
-10. make no new live provider call before that boundary
+1. validate the exact final Checkpoint 158 PR #16 head under:
+       V1 relation-backed recommendation action value
+       V1 reasoning context value
+       V1 disposition semantics diagnostic
+       Checkpoint metadata
+2. if and only if that exact head is green, make no further experiment-branch commits
+3. copy only the identical Specification 017 live workflow to main for workflow_dispatch visibility
+4. manually dispatch V1 relation-backed recommendation action value live
+5. select branch v1-recommendation-action-value-relation-backed
+6. enter RUN_SPEC_017_FROZEN
+7. preserve the complete live artifact before interpretation or design changes
 ```
