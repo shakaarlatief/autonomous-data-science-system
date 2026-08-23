@@ -1,0 +1,311 @@
+{
+  "benchmark_id": "v1-disposition-semantics-diagnostic-v0.1",
+  "starting_merge_sha": "10aa3f59bedc5ee45a38f0ae05c68da901d9adff",
+  "research": "docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md",
+  "specification": "docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md",
+  "randomization_seed": 2026082302,
+  "repetitions_per_variant": 3,
+  "dispositions": [
+    "DEFER",
+    "NOT_NOW"
+  ],
+  "reasoner": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "text_verbosity": "low",
+    "max_output_tokens": 2000,
+    "tools_enabled": false,
+    "previous_response_state": false,
+    "request_fast_or_priority_processing": false
+  },
+  "call_plan": {
+    "pair_count": 6,
+    "variants_per_pair": 2,
+    "planned_successful_reasoner_calls": 36,
+    "max_total_provider_attempts": 45,
+    "max_retries_per_planned_call": 1,
+    "retry_only_for": [
+      "TRANSPORT_FAILURE",
+      "PROVIDER_FAILURE",
+      "INCOMPLETE_RESPONSE",
+      "INVALID_STRUCTURED_RESPONSE"
+    ],
+    "preserve_failed_attempts": true,
+    "unique_condition_neutral_nonce_per_request": true
+  },
+  "operational_definitions": {
+    "DEFER": "The action is already justified for the represented project plan, a specific currently unresolved supplied prerequisite/trigger must occur first, and the supplied state represents the action as current next work once that trigger is satisfied. A DEFER output must identify that exact trigger in defer_until_id.",
+    "NOT_NOW": "The current objective/state does not materially justify prioritizing the action, and no represented supplied trigger establishes that satisfying one current dependency makes the action current next work. A NOT_NOW output must set defer_until_id to null. Do not use DEFER merely because the action might become useful someday."
+  },
+  "common_instruction": "Classify the one candidate action using only DEFER or NOT_NOW. Use DEFER only when the supplied state explicitly establishes that the action is already part of the represented plan, a specific unresolved supplied trigger must happen first, and satisfying that trigger makes the action current next work. When DEFER, return the exact activating trigger ID in defer_until_id. Use NOT_NOW when the current objective/state does not materially justify the action and no supplied trigger is established to activate it as current next work; in that case defer_until_id must be null. The mere possibility that an action could become useful later is not enough for DEFER. Do not invent project facts or trigger IDs.",
+  "user_task": "Classify the candidate action for the supplied project state and identify an exact defer trigger only when the operational DEFER definition is satisfied.",
+  "reasoner_output_schema": {
+    "disposition": "DEFER | NOT_NOW",
+    "defer_until_id": "string | null",
+    "rationale": "string"
+  },
+  "hard_gates": {
+    "max_invalid_successful_outputs": 0,
+    "min_aggregate_exact_disposition_accuracy": 0.95,
+    "min_correct_repetitions_per_variant": 2,
+    "min_correct_repetitions_per_pair_side": 2,
+    "expected_defer_pointer_accuracy": 1.0,
+    "expected_not_now_null_pointer_accuracy": 1.0
+  },
+  "advancement_outcomes": [
+    "DISPOSITION_BOUNDARY_SUPPORTED",
+    "DISPOSITION_BOUNDARY_NOT_SUPPORTED",
+    "INCOMPLETE"
+  ],
+  "construction_rules": {
+    "exactly_two_variants_per_pair": true,
+    "required_variant_labels": [
+      "DEFER",
+      "NOT_NOW"
+    ],
+    "pair_action_and_trigger_menu_are_shared": true,
+    "shared_project_evidence_is_identical_across_pair": true,
+    "defer_variant_requires_one_expected_trigger": true,
+    "not_now_variant_requires_null_expected_trigger": true,
+    "expected_truth_is_never_exposed_to_reasoner": true
+  },
+  "pairs": [
+    {
+      "pair_id": "DS-01",
+      "domain": "model-tuning",
+      "candidate_action": {
+        "action_id": "tune-selected-nonlinear-model",
+        "label": "Tune hyperparameters for the selected nonlinear model."
+      },
+      "available_defer_triggers": [
+        {
+          "trigger_id": "model-family-selected",
+          "description": "The nonlinear model-family comparison has produced the model family to carry forward."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "binary tabular prediction",
+        "evaluation.design": "locked and valid",
+        "current.stage": "nonlinear model-family comparison"
+      },
+      "variants": [
+        {
+          "variant_id": "DS-01-DEFER",
+          "variant_evidence": {
+            "trigger.model-family-selected.status": "UNRESOLVED",
+            "action.plan_status": "Hyperparameter tuning is already the agreed next modeling step immediately after the model family is selected."
+          },
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "model-family-selected"
+        },
+        {
+          "variant_id": "DS-01-NOT-NOW",
+          "variant_evidence": {
+            "trigger.model-family-selected.status": "NOT_AN_ACTIVATOR_FOR_THIS_ACTION",
+            "action.plan_status": "Hyperparameter tuning is not part of the current represented plan; no current dependency is established to activate it as the next step."
+          },
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "DS-02",
+      "domain": "subgroup-error-analysis",
+      "candidate_action": {
+        "action_id": "run-subgroup-error-analysis",
+        "label": "Run subgroup-specific error analysis for the prediction model."
+      },
+      "available_defer_triggers": [
+        {
+          "trigger_id": "baseline-evaluation-complete",
+          "description": "The common held-out baseline evaluation is complete and produces the errors to stratify."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "supervised prediction",
+        "current.stage": "baseline evaluation preparation",
+        "subgroup.columns": "already defined and available"
+      },
+      "variants": [
+        {
+          "variant_id": "DS-02-DEFER",
+          "variant_evidence": {
+            "trigger.baseline-evaluation-complete.status": "UNRESOLVED",
+            "action.plan_status": "Subgroup error analysis is already scheduled as the next evaluation step once common baseline errors exist."
+          },
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "baseline-evaluation-complete"
+        },
+        {
+          "variant_id": "DS-02-NOT-NOW",
+          "variant_evidence": {
+            "trigger.baseline-evaluation-complete.status": "NOT_AN_ACTIVATOR_FOR_THIS_ACTION",
+            "action.plan_status": "The current evaluation plan does not include subgroup error analysis and no represented dependency makes it the next step."
+          },
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "DS-03",
+      "domain": "feature-interaction-engineering",
+      "candidate_action": {
+        "action_id": "engineer-targeted-interaction-features",
+        "label": "Engineer a targeted set of feature interactions."
+      },
+      "available_defer_triggers": [
+        {
+          "trigger_id": "baseline-error-analysis-complete",
+          "description": "Baseline error analysis has identified the specific interaction patterns to target."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "tabular prediction",
+        "current.features": "clean baseline feature set exists",
+        "current.stage": "baseline model diagnosis"
+      },
+      "variants": [
+        {
+          "variant_id": "DS-03-DEFER",
+          "variant_evidence": {
+            "trigger.baseline-error-analysis-complete.status": "UNRESOLVED",
+            "action.plan_status": "Targeted interaction engineering is already the next planned feature step after baseline error analysis identifies which interactions to construct."
+          },
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "baseline-error-analysis-complete"
+        },
+        {
+          "variant_id": "DS-03-NOT-NOW",
+          "variant_evidence": {
+            "trigger.baseline-error-analysis-complete.status": "NOT_AN_ACTIVATOR_FOR_THIS_ACTION",
+            "action.plan_status": "No interaction-engineering step is currently justified or planned, and no represented dependency activates it."
+          },
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "DS-04",
+      "domain": "missingness-sensitivity",
+      "candidate_action": {
+        "action_id": "run-imputation-sensitivity-analysis",
+        "label": "Run a sensitivity analysis across plausible missing-data treatments."
+      },
+      "available_defer_triggers": [
+        {
+          "trigger_id": "production-missingness-characterized",
+          "description": "Production missingness behavior for the affected variables has been characterized."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "binary classification",
+        "training.missingness": "substantial in two candidate features",
+        "current.stage": "missingness characterization"
+      },
+      "variants": [
+        {
+          "variant_id": "DS-04-DEFER",
+          "variant_evidence": {
+            "trigger.production-missingness-characterized.status": "UNRESOLVED",
+            "action.plan_status": "The project plan already requires imputation sensitivity analysis immediately after production missingness is characterized so plausible treatments can be chosen."
+          },
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "production-missingness-characterized"
+        },
+        {
+          "variant_id": "DS-04-NOT-NOW",
+          "variant_evidence": {
+            "trigger.production-missingness-characterized.status": "NOT_AN_ACTIVATOR_FOR_THIS_ACTION",
+            "action.plan_status": "No sensitivity analysis is currently planned or justified by the represented decision, and no current dependency activates it as next work."
+          },
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "DS-05",
+      "domain": "probability-calibration",
+      "candidate_action": {
+        "action_id": "assess-probability-calibration",
+        "label": "Assess probability calibration of the model selected for deployment consideration."
+      },
+      "available_defer_triggers": [
+        {
+          "trigger_id": "candidate-model-finalized",
+          "description": "A candidate probabilistic classifier has been finalized for deployment-oriented evaluation."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "binary probability prediction",
+        "current.stage": "candidate model comparison",
+        "deployment.output": "predicted probabilities"
+      },
+      "variants": [
+        {
+          "variant_id": "DS-05-DEFER",
+          "variant_evidence": {
+            "trigger.candidate-model-finalized.status": "UNRESOLVED",
+            "action.plan_status": "Calibration assessment is already the next deployment-evaluation step once the candidate model is finalized."
+          },
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "candidate-model-finalized"
+        },
+        {
+          "variant_id": "DS-05-NOT-NOW",
+          "variant_evidence": {
+            "trigger.candidate-model-finalized.status": "NOT_AN_ACTIVATOR_FOR_THIS_ACTION",
+            "action.plan_status": "Calibration assessment is not part of the current represented decision plan and no supplied dependency activates it as next work."
+          },
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "DS-06",
+      "domain": "distribution-evidence",
+      "candidate_action": {
+        "action_id": "plot-target-variable-histogram",
+        "label": "Plot a histogram of the target quantitative variable."
+      },
+      "available_defer_triggers": [
+        {
+          "trigger_id": "target-variable-extraction-complete",
+          "description": "The target quantitative variable has been extracted and validated for plotting."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.current_question": "understand the target variable's empirical distribution",
+        "target.semantic_type": "quantitative",
+        "current.stage": "data extraction and validation"
+      },
+      "variants": [
+        {
+          "variant_id": "DS-06-DEFER",
+          "variant_evidence": {
+            "trigger.target-variable-extraction-complete.status": "UNRESOLVED",
+            "action.plan_status": "The histogram is already the next planned evidence step immediately after the target variable is extracted and validated."
+          },
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "target-variable-extraction-complete"
+        },
+        {
+          "variant_id": "DS-06-NOT-NOW",
+          "variant_evidence": {
+            "trigger.target-variable-extraction-complete.status": "NOT_AN_ACTIVATOR_FOR_THIS_ACTION",
+            "action.plan_status": "A histogram is not part of the current represented evidence plan and no current supplied dependency activates it as next work."
+          },
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null
+        }
+      ]
+    }
+  ]
+}
