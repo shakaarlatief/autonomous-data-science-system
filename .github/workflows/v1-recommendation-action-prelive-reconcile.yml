@@ -1,0 +1,411 @@
+name: Reconcile Specification 015 pre-live boundary
+
+on:
+  push:
+    branches: [v1-recommendation-action-value]
+    paths:
+      - .github/workflows/v1-recommendation-action-prelive-reconcile.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value
+          fetch-depth: 0
+
+      - name: Reconcile provider-free pre-live boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def read(path):
+              return Path(path).read_text(encoding="utf-8")
+
+          def write(path, text):
+              Path(path).write_text(text.rstrip() + "\n", encoding="utf-8")
+
+          def replace_section(text, start, end, replacement):
+              pattern = re.compile(rf"(?ms)^{re.escape(start)}\n.*?(?=^{re.escape(end)}\n)")
+              if not pattern.search(text):
+                  raise RuntimeError(f"section not found: {start!r} -> {end!r}")
+              return pattern.sub(replacement.rstrip() + "\n\n", text, count=1)
+
+          write("docs/CURRENT_STATE.md", """# Current State
+
+**Checkpoint:** 148  
+**Date:** 2026-08-23  
+**Active development branch:** `v1-recommendation-action-value`  
+**Active promotion PR:** #13 into `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
+**Development stage:** Prototype V0 complete; bounded V1 now has a frozen recommendation/action-value contract and a complete provider-free implementation that passes cross-platform before the first live recommendation experiment.  
+**Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
+**Immediate project priority:** validate the exact pre-live Specification 015 head with the secret-gated live workflow armed but unexecuted, preserve that boundary, then execute the unchanged frozen 72-call plan once and preserve the result before any tuning.
+
+## Active ChatGPT development context
+
+```text
+Design session: 04
+ChatGPT project: Autonomous Data Science System
+Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
+```
+
+Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails active V1 work.
+
+---
+
+## Durable post-V0 constraint
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Do not restore P0's large always-on context/frontier, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
+
+Current methodological path:
+
+```text
+large reusable knowledge universe
+    -> retrieval
+    -> bounded explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> bounded task-specific relevance selection
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> reasoning evidence
+    -> recommendation / REQUIRED-BLOCKING / action evidence [active]
+```
+
+---
+
+## Accepted V1 boundaries already promoted
+
+```text
+D-028 + Specification 001
+    SQLite-centered local-first operational architecture
+
+D-029 + Specification 002 v1.1
+    SQLAlchemy Core 2.0 + Alembic 1.x
+
+D-030 + Specification 003
+    pyproject.toml + uv + committed uv.lock + uv_build
+
+D-031 + Specification 004
+    deterministic governed reusable-knowledge interchange
+
+Specification 008
+    promoted Project Cockpit interaction architecture
+
+D-032 / Checkpoint 133
+    OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
+
+Specification 012 v1.0 / Checkpoint 141
+    first explained MethodologicalHorizon
+
+Specification 013 v1.0 / Checkpoint 143
+    first accepted selective exact-revision MethodologicalContextPack seam
+
+Specification 014 v1.0 / Checkpoint 146
+    first real-model selective-context value gate passed
+```
+
+Specification 014 observed equal frozen semantic quality (`1.000000` versus `1.000000`) while SELECTIVE used an aggregate provider input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regression.
+
+No final provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or recommendation/REQUIRED-BLOCKING production policy is selected.
+
+---
+
+## Specification 015 contract and provider-free implementation
+
+Research 022, Specification 015 v0.1, `recommendation_action_v1.json`, and Checkpoint 147 freeze the first downstream recommendation/action experiment.
+
+Frozen conditions:
+
+```text
+GENERIC
+    same task/project/action envelope
+    no reusable methodological assets
+
+SELECTIVE
+    accepted Specification 013 exact-revision context
+
+FULL_HORIZON
+    all ten exact current accepted Horizon revisions
+```
+
+Benchmark-only dispositions:
+
+```text
+BLOCKING_REQUIRED
+RECOMMENDED
+DEFER
+NOT_NOW
+```
+
+`BLOCKING_REQUIRED` is tied to a named validity/dependency scope and is not merely a stronger recommendation.
+
+Frozen plan:
+
+```text
+4 cases
+3 conditions
+3 repetitions
+36 planned reasoner outputs
+36 blinded judge outputs
+72 planned successful provider calls
+maximum 90 provider attempts
+```
+
+Primary evaluation is deterministic: exact disposition accuracy, critical omissions, under/over-recommendation, unnecessary recommended cost, blocking-scope false negatives/positives, required-clarification false negatives, and basis provenance. The blinded semantic judge is secondary for rationale/dependency correctness.
+
+Advancement remains exactly:
+
+```text
+PROMOTE_BOUNDED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+```
+
+A promotion claim requires all safety/non-regression/expansion gates plus at least one preregistered positive value signal.
+
+Checkpoint 148 records the complete provider-free implementation gate at implementation head:
+
+```text
+6ccfd15d194a4205b2f554268ccad05fbd38edda
+```
+
+Cross-platform evidence:
+
+```text
+V1 recommendation action value
+run 32640518712
+
+Ubuntu   12 dedicated passed; full suite 63 passed, 2 skipped
+Windows  12 dedicated passed; full suite 63 passed, 2 skipped
+```
+
+The two skips are the existing PostgreSQL-dependent tests without `ADS_TEST_POSTGRES_URL`.
+
+The complete fake-runtime shape executes 36 reasoner + 36 blinded judge observations and deliberately produces a perfect three-way ceiling. The evaluator correctly returns `SAFE_BUT_NOT_DIFFERENTIATED`, proving that the advancement machinery does not manufacture a value claim when all conditions are equal.
+
+The provider-free runner also verifies that GENERIC has no methodological assets, SELECTIVE has the exact 2-3 revision sets, FULL_HORIZON has all ten exact revisions, evaluator truth stays outside reasoner input, judge blinding holds, reusable-knowledge authority remains unchanged, and project-state tables remain unchanged before/after execution.
+
+The explicit live workflow now exists at:
+
+```text
+.github/workflows/v1-recommendation-action-value-live.yml
+```
+
+It is manual `workflow_dispatch` only, requires branch `v1-recommendation-action-value`, repository secret `OPENAI_API_KEY`, and literal confirmation:
+
+```text
+RUN_SPEC_015_FROZEN
+```
+
+It has not been executed yet.
+
+---
+
+## Current non-selections
+
+Still deliberately open:
+
+```text
+natural-language/project-state -> reasoning-function derivation
+open-world proposal generation
+final recommendation enum/ranking model
+complete Foundation 018 production schema
+mapping recommendations to authoritative Proposal/Question/Decision events
+automatic execution
+human approval/escalation policy
+admissibility/risk-sensitive assurance policy
+final provider/model and reasoning-effort policy
+multi-agent/specialist recommendation architecture
+production semantic retrieval/reranking/vector infrastructure
+backend/API, artifact/job, cloud/deployment architecture
+final frontend stack and Cockpit implementation details
+```
+
+Do not return to retrieval/relevance tuning merely because more tuning is possible. Add complexity only when downstream evidence exposes a concrete deficiency.
+
+---
+
+## Exact continuation
+
+```text
+1. validate the exact reconciled pre-live head with Checkpoint metadata and the dedicated Ubuntu/Windows recommendation/action workflow
+2. preserve that exact pre-live source head and run evidence in the next checkpoint
+3. do not change Specification 015, fixture, model, prompt, action menus, rubric, gates, repetitions, or retry policy
+4. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
+5. preserve the complete uploaded raw/result bundle before any tuning
+6. classify the result exactly as PROMOTE_BOUNDED_RECOMMENDATION_SEAM, SAFE_BUT_NOT_DIFFERENTIATED, or FAIL
+```
+
+No live Specification 015 reasoner or judge call has occurred.
+
+Primary active sources:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+.github/workflows/v1-recommendation-action-value-live.yml
+```
+""")
+
+          path = "README.md"
+          text = read(path)
+          text = replace_section(text, "## Current development stage", "## Prototype V0 result and durable constraint", """## Current development stage
+
+**Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
+
+Current execution state:
+
+```text
+checkpoint            148
+active branch         v1-recommendation-action-value
+active PR             #13 -> v1-frontend-spike
+promoted V1 head      bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
+current boundary      Specification 015 provider-free gate passed; exact pre-live validation next
+```
+
+The first real-model selective-context value gate is promoted through Specification 014 v1.0 / Checkpoint 146. Specification 015 now moves downstream to recommendation calibration, REQUIRED/BLOCKING dependencies, bounded action choice, important omission, and unnecessary work.
+
+Checkpoint 148 records a complete provider-free implementation: the full 36 reasoner + 36 blinded-judge fake-runtime shape passes, the three frozen context conditions remain isolated, deterministic recommendation metrics are recomputed from hidden fixture truth, no authoritative project mutation occurs, and the dedicated Ubuntu/Windows workflow is green. The manual secret-gated live workflow is now armed but has not been executed.
+
+For exact continuation, start with:
+
+```text
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+```
+""")
+          text = replace_section(text, "## Active experiment: recommendation and action value", "## Exact continuation", """## Active experiment: recommendation and action value
+
+Specification 015 v0.1 / Checkpoints 147-148 govern the first downstream test of:
+
+```text
+RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
+    -> bounded project action
+```
+
+Three conditions hold the project microstate, explicit reasoning-function profile, candidate action menu, output schema, and concrete model/runtime configuration fixed:
+
+```text
+GENERIC
+    no reusable methodological assets
+
+SELECTIVE
+    accepted exact-revision MethodologicalContextPack
+
+FULL_HORIZON
+    all ten exact Horizon revisions
+```
+
+Every action must be classified exactly once as `BLOCKING_REQUIRED`, `RECOMMENDED`, `DEFER`, or `NOT_NOW`. Primary evaluation is deterministic; a blinded semantic judge is secondary.
+
+Provider-free implementation evidence at Checkpoint 148:
+
+```text
+validated implementation head  6ccfd15d194a4205b2f554268ccad05fbd38edda
+workflow                       V1 recommendation action value
+run                            32640518712
+Ubuntu                         PASS
+Windows                        PASS
+dedicated tests                12 passed on each OS
+full suite                     63 passed, 2 skipped on each OS
+```
+
+The complete fake-runtime 3-condition ceiling returns `SAFE_BUT_NOT_DIFFERENTIATED`, as required when no preregistered value signal exists.
+
+The live boundary is now explicit:
+
+```text
+.github/workflows/v1-recommendation-action-value-live.yml
+branch       v1-recommendation-action-value
+confirmation RUN_SPEC_015_FROZEN
+```
+
+No live Specification 015 call has occurred.
+
+Primary active sources:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+```
+""")
+          text = replace_section(text, "## Exact continuation", "## Repository role", """## Exact continuation
+
+```text
+1. validate the exact reconciled pre-live head on Ubuntu and Windows
+2. preserve that exact pre-live source head and workflow run evidence
+3. execute the unchanged manual secret-gated Specification 015 workflow once
+4. preserve the complete live raw/result bundle before any tuning
+5. apply the frozen three-way advancement classification exactly
+```
+
+Do not change the fixture, action menus, model/runtime treatment, prompt, rubric, thresholds, repetitions, retry policy, retrieval stack, or recommendation machinery between pre-live validation and the frozen live run.
+""")
+          write(path, text)
+
+          path = "docs/KNOWLEDGE_MAP.md"
+          text = read(path)
+          text = text.replace("**Current checkpoint:** 147", "**Current checkpoint:** 148", 1)
+          text = text.replace(
+              "Specification 015 v0.1 / Checkpoint 147\n    first recommendation/action-value contract frozen\n    GENERIC vs SELECTIVE vs FULL_HORIZON\n    provider-free implementation is the active next boundary",
+              "Specification 015 v0.1 / Checkpoints 147-148\n    recommendation/action-value contract frozen\n    GENERIC vs SELECTIVE vs FULL_HORIZON\n    provider-free implementation passed cross-platform\n    exact pre-live validation is the active boundary",
+              1,
+          )
+          text = text.replace(
+              "No provider-free implementation result or live result exists yet.",
+              "Provider-free implementation is now preserved by Checkpoint 148. Exact implementation head `6ccfd15d194a4205b2f554268ccad05fbd38edda` passed the dedicated Ubuntu/Windows workflow run `32640518712`: 12 dedicated tests passed on each OS and the full locked suite reported 63 passed / 2 existing PostgreSQL-dependent skips on each OS. The complete fake 36 + 36 design returns `SAFE_BUT_NOT_DIFFERENTIATED` under a perfect three-way ceiling, and no authoritative project-state or reusable-knowledge mutation occurs. The manual secret-gated live workflow exists but has not been executed.",
+              1,
+          )
+          text = replace_section(text, "## Current exact continuation", "## Recent continuity checkpoints", """## Current exact continuation
+
+```text
+A. validate the exact reconciled pre-live head on Ubuntu and Windows
+B. preserve that source head and exact workflow-run evidence
+C. keep Specification 015, fixture, treatment, action menus, rubric, gates, repetitions, and retry policy unchanged
+D. manually execute V1 recommendation action value live with RUN_SPEC_015_FROZEN
+E. preserve the complete raw/result bundle before any tuning
+F. apply the frozen PROMOTE / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification
+```
+
+Do not return to retrieval/reranking/vector work without a measured downstream reason. No live Specification 015 call has occurred yet.
+""")
+          text = text.replace(
+              "147  first recommendation/action-value contract frozen",
+              "147  first recommendation/action-value contract frozen\n148  recommendation/action provider-free implementation passed cross-platform",
+              1,
+          )
+          write(path, text)
+          PY
+
+      - name: Remove one-shot workflow and commit
+        shell: bash
+        run: |
+          rm .github/workflows/v1-recommendation-action-prelive-reconcile.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Reconcile Specification 015 pre-live boundary"
+          git push origin HEAD:v1-recommendation-action-value
