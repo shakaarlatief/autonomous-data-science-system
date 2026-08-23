@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 146  
-**Active development branch:** `v1-reasoning-context-value`  
-**Active promotion PR:** #12 into `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`
+**Current checkpoint:** 150  
+**Active development branch:** `v1-recommendation-action-failure-preservation`  
+**Rejected experiment PR:** #13 (`v1-recommendation-action-value` -> `v1-frontend-spike`), close without merge  
+**Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`
 
 ## Start here
 
@@ -45,10 +45,11 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-active experiment branch  v1-reasoning-context-value
-active PR                  #12 -> v1-frontend-spike
-promoted integration head  fd33184fbff588c6737d77af751bc5def0e31954
-main                       intentionally behind current V1 work
+accepted integration head        bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
+failed experiment branch         v1-recommendation-action-value
+failed experiment PR             #13, do not merge
+failure-preservation branch      v1-recommendation-action-failure-preservation
+main                             intentionally behind active V1 work except dispatcher exposure
 ```
 
 ---
@@ -93,7 +94,16 @@ Specification 014 v1.0 / Checkpoint 146
     quality 1.000000 vs 1.000000
     aggregate provider input-token ratio 0.334379
     66.56% input-token reduction
+
+Specification 015 v0.1 / Checkpoints 147-150
+    first recommendation/action-value experiment preregistered, implemented, and executed
+    live workflow completed 36 reasoner + 36 blinded judge outputs with zero retries
+    frozen advancement outcome FAIL
+    failure localized to RA-02 DEFER-vs-NOT_NOW exact disposition calibration
+    no recommendation/action seam promoted
 ```
+
+---
 
 ## Core system and product boundary
 
@@ -153,9 +163,11 @@ large reusable knowledge universe
     -> bounded task-specific relevance selection
     -> selective MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> real reasoning evidence [first bounded gate passed]
-    -> harder recommendation/action evidence [next]
+    -> real reasoning evidence                      [accepted first bounded gate]
+    -> recommendation / REQUIRED-BLOCKING evidence [first gate failed; diagnostic next]
 ```
+
+Foundation 020 keeps reusable methodological knowledge distinct from project state, execution capability, and presentation. Important representation distinctions include stable asset identity versus revision identity, intrinsic kind versus reasoning function, static relation versus conditional rule, and retrieval profile versus applicability/context/semantic-check structures.
 
 ---
 
@@ -174,6 +186,8 @@ Governed persistence/interchange closure:
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
+
+The governed accepted-current knowledge seam is validated on SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18.
 
 ---
 
@@ -226,6 +240,8 @@ Important checkpoints:
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
+
+The Project Cockpit is the promoted primary immersive V1 active-work model. Direct specialist views remain alternative entry, inspection, and record paths.
 
 Final frontend stack, chart library, canvas/gesture libraries, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, project-search backend, and visual identity remain open.
 
@@ -383,17 +399,124 @@ FULL_HORIZON unexpected basis mean   1.666667
 
 This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
 
+PR #12 promoted merge:
+
+```text
+bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
+```
+
+---
+
+## Failed recommendation/action-value route
+
+Frozen design/provenance:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
+```
+
+Frozen conditions:
+
+```text
+GENERIC
+    same project/task/action envelope
+    no reusable methodological assets
+
+SELECTIVE
+    accepted Specification 013 exact-revision context
+
+FULL_HORIZON
+    all ten exact current accepted Horizon revisions
+```
+
+Frozen benchmark dispositions:
+
+```text
+BLOCKING_REQUIRED
+RECOMMENDED
+DEFER
+NOT_NOW
+```
+
+Live execution:
+
+```text
+V1 recommendation action value live
+run 32642733784
+source head d91d50fb2cc46b2047bc21bc5b2ea43c2b1049e4
+36 / 36 reasoner outputs
+36 / 36 blinded judge outputs
+72 provider attempts
+0 retries
+```
+
+Frozen advancement:
+
+```text
+absolute gates  FAIL
+relative gates  PASS
+expansion gates PASS
+value signals   0
+outcome          FAIL
+```
+
+Single failed gate:
+
+```text
+RA-G05
+SELECTIVE per-case mean exact disposition accuracy >= 0.80
+```
+
+Localized failure:
+
+```text
+RA-02 MODEL_CHOICE
+GENERIC        0.722222
+SELECTIVE      0.666667
+FULL_HORIZON   0.666667
+```
+
+The repeated mismatches were `DEFER` expected versus `NOT_NOW` observed for:
+
+```text
+add-generic-bagging-baseline
+plot-all-feature-histograms-before-shortlist
+```
+
+All nine RA-02 outputs scored `1.000000` under the condition-blinded semantic judge. The discrepancy therefore motivates disposition-semantics/failure-attribution diagnosis but does not change the frozen FAIL.
+
+Preserved result:
+
+```text
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+```
+
+PR #13 must close without merge. The failed implementation is not an accepted V1 boundary.
+
+---
+
 ## Current exact continuation
 
 ```text
-A. validate exact post-result reconciliation head
-B. merge exactly that green PR #12 head into v1-frontend-spike
-C. create the next branch from the promoted merge
-D. design/preregister a harder project-level recommendation/action slice
-E. do not make new live calls before the next frozen contract exists
+A. validate the preservation-only Checkpoint 150 branch
+B. merge only the failure evidence/provenance into v1-frontend-spike
+C. close PR #13 without merge
+D. branch separately from the preserved accepted integration line
+E. preregister a DEFER-vs-NOT_NOW / failure-attribution diagnostic
+F. make no new live model calls before that diagnostic contract is frozen
+G. only after diagnosis decide whether a revised recommendation/action seam deserves another value experiment
 ```
 
-The next slice should test recommendation strength and project-level consequences, including whether an omitted concern creates a visible failure and whether unnecessary methodological expansion creates measurable cost. Retrieval/relevance tuning is not the next default action.
+Do not return to retrieval/reranking/vector work without a measured downstream reason.
+
+---
 
 ## Recent continuity checkpoints
 
@@ -409,4 +532,8 @@ The next slice should test recommendation strength and project-level consequence
 144  first reasoning-context-value contract frozen
 145  provider-free reasoning-context-value implementation passed cross-platform
 146  first real reasoning-context-value gate passed and promotion authorized
+147  first recommendation/action-value contract frozen
+148  recommendation/action provider-free implementation passed cross-platform
+149  Specification 015 reconciled live-ready boundary frozen
+150  Specification 015 live recommendation/action gate failed on exact disposition calibration
 ```
