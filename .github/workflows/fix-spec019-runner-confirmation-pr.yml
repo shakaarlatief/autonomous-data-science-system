@@ -1,0 +1,43 @@
+name: Fix Specification 019 runner confirmation boundary
+
+on:
+  pull_request:
+    branches: [v1-frontend-spike]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: ${{ github.head_ref == 'v1-recommendation-action-value-system-provenance' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value-system-provenance
+      - name: Align runner environment boundary with Specification 019
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('experiments/system_owned_provenance_recommendation_action_value/runner.py')
+          text = path.read_text(encoding='utf-8')
+          old = 'ADS_SPEC017_CONFIRM'
+          if old not in text:
+              raise RuntimeError('expected inherited confirmation environment variable not found')
+          text = text.replace(old, 'ADS_SPEC019_CONFIRM')
+          path.write_text(text, encoding='utf-8')
+          PY
+          python -m py_compile experiments/system_owned_provenance_recommendation_action_value/runner.py
+      - name: Commit confirmation-boundary correction
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/fix-spec019-runner-confirmation-pr.yml
+          git add experiments/system_owned_provenance_recommendation_action_value/runner.py
+          git commit -m 'Align Specification 019 live confirmation boundary'
+          git push origin HEAD:v1-recommendation-action-value-system-provenance
