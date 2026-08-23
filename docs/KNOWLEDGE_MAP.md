@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 147  
+**Current checkpoint:** 148  
 **Active development branch:** `v1-recommendation-action-value`  
 **Active promotion PR:** #13 into `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`
@@ -94,11 +94,14 @@ Specification 014 v1.0 / Checkpoint 146
     aggregate provider input-token ratio 0.334379
     66.56% input-token reduction
 
-Specification 015 v0.1 / Checkpoint 147
-    first recommendation/action-value contract frozen
+Specification 015 v0.1 / Checkpoints 147-148
+    recommendation/action-value contract frozen
     GENERIC vs SELECTIVE vs FULL_HORIZON
-    provider-free implementation is the active next boundary
+    provider-free implementation passed cross-platform
+    exact pre-live validation is the active boundary
 ```
+
+---
 
 ## Core system and product boundary
 
@@ -159,8 +162,10 @@ large reusable knowledge universe
     -> selective MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
     -> real reasoning evidence [first bounded gate passed]
-    -> recommendation / REQUIRED-BLOCKING / action evidence [active frozen slice]
+    -> recommendation / REQUIRED-BLOCKING / bounded action evidence [active]
 ```
+
+Foundation 020 keeps reusable methodological knowledge distinct from project state, execution capability, and presentation. Important representation distinctions include stable asset identity versus revision identity, intrinsic kind versus reasoning function, static relation versus conditional rule, and retrieval profile versus applicability/context/semantic-check structures.
 
 ---
 
@@ -179,6 +184,8 @@ Governed persistence/interchange closure:
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
+
+The governed accepted-current knowledge seam is validated on SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18.
 
 ---
 
@@ -231,6 +238,8 @@ Important checkpoints:
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
+
+The Project Cockpit is the promoted primary immersive V1 active-work model. Direct specialist views remain alternative entry, inspection, and record paths.
 
 Final frontend stack, chart library, canvas/gesture libraries, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, project-search backend, and visual identity remain open.
 
@@ -388,6 +397,14 @@ FULL_HORIZON unexpected basis mean   1.666667
 
 This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
 
+PR #12 promoted merge:
+
+```text
+bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
+```
+
+---
+
 ## Active recommendation/action-value route
 
 Frozen design sources:
@@ -403,7 +420,8 @@ Frozen conditions:
 
 ```text
 GENERIC
-    same project/task/action envelope, no reusable methodological assets
+    same project/task/action envelope
+    no reusable methodological assets
 
 SELECTIVE
     accepted Specification 013 exact-revision context
@@ -442,23 +460,87 @@ maximum 90 attempts
 
 Primary metrics are deterministic recommendation/action metrics; semantic judging is secondary. Promotion additionally requires at least one preregistered positive value signal. Otherwise a fully safe ceiling result is classified `SAFE_BUT_NOT_DIFFERENTIATED` rather than being overclaimed.
 
-No provider-free implementation result or live result exists yet.
+### Provider-free implementation gate
+
+Checkpoint:
+
+```text
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+```
+
+Exact implementation head:
+
+```text
+6ccfd15d194a4205b2f554268ccad05fbd38edda
+```
+
+Cross-platform evidence:
+
+```text
+V1 recommendation action value
+run 32640518712
+
+Ubuntu   12 dedicated passed; full suite 63 passed, 2 skipped
+Windows  12 dedicated passed; full suite 63 passed, 2 skipped
+```
+
+The two skips are existing PostgreSQL-dependent tests without `ADS_TEST_POSTGRES_URL`. Ordinary CI explicitly verified that `OPENAI_API_KEY` was absent.
+
+The complete fake 36 + 36 observation design deliberately produces perfect recommendation outputs in all three conditions. The deterministic evaluator returns:
+
+```text
+SAFE_BUT_NOT_DIFFERENTIATED
+```
+
+This is the expected infrastructure self-test result and proves the advancement classifier does not manufacture a value signal from a three-way ceiling.
+
+The provider-free runner additionally verifies:
+
+```text
+GENERIC       empty methodology
+SELECTIVE     exact 2-3 accepted revision sets
+FULL_HORIZON  exact ten accepted revisions
+reasoner      hidden evaluator truth absent
+judge         condition/evaluator truth blinded
+project state unchanged before/after
+knowledge authority unchanged before/after
+```
+
+No production Proposal/Question/Decision mutation is authorized by this experiment.
+
+### Explicit live boundary
+
+```text
+.github/workflows/v1-recommendation-action-value-live.yml
+```
+
+The workflow is manual `workflow_dispatch` only and requires:
+
+```text
+branch        v1-recommendation-action-value
+secret        OPENAI_API_KEY
+confirmation  RUN_SPEC_015_FROZEN
+```
+
+No live Specification 015 reasoner or judge call has occurred.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. implement ADS-owned recommendation result/disposition types provider-free
-B. implement exact deterministic evaluator
-C. implement GENERIC / SELECTIVE / FULL_HORIZON condition construction
-D. add deterministic reasoner/judge plans and fake-runtime coverage
-E. add ordinary Ubuntu/Windows provider-free workflow coverage
-F. validate the exact implementation head
-G. only then establish the explicit secret-gated live execution boundary
+A. validate the exact reconciled pre-live branch head on Ubuntu and Windows
+B. preserve that source head and exact workflow-run evidence
+C. keep Specification 015, fixture, treatment, action menus, rubric, gates, repetitions, randomization, and retry policy unchanged
+D. expose the frozen live workflow on the default branch only as the manual dispatcher surface
+E. manually execute V1 recommendation action value live with RUN_SPEC_015_FROZEN from v1-recommendation-action-value
+F. preserve the complete raw/result bundle before any tuning
+G. apply the frozen PROMOTE_BOUNDED_RECOMMENDATION_SEAM / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification
 ```
 
-Do not make a live Specification 015 call before the frozen provider-free implementation is validated. Do not return to retrieval/reranking/vector work without a measured downstream reason.
+Do not return to retrieval/reranking/vector work without a measured downstream reason.
+
+---
 
 ## Recent continuity checkpoints
 
@@ -475,4 +557,5 @@ Do not make a live Specification 015 call before the frozen provider-free implem
 145  provider-free reasoning-context-value implementation passed cross-platform
 146  first real reasoning-context-value gate passed and promotion authorized
 147  first recommendation/action-value contract frozen
+148  recommendation/action provider-free implementation passed cross-platform
 ```
