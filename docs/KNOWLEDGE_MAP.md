@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 156  
+**Current checkpoint:** 158  
 **Active development branch:** `v1-recommendation-action-value-relation-backed`  
 **Active PR:** #16 -> `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at Specification 016 promotion merge `6bda0c1efcf078476859b2c2c64fb0586964899d`
@@ -15,7 +15,7 @@ README.md
     project overview and active track
 
 docs/CURRENT_STATE.md
-    present boundary and exact next action
+    present boundary and exact continuation
 
 docs/KNOWLEDGE_MAP.md
     routing/index layer
@@ -96,20 +96,25 @@ Specification 013 / Checkpoint 143
 Specification 014 / Checkpoint 146
     first real-model selective-context value gate PASS
 
-Specification 015 / Checkpoints 147-150
-    first recommendation/action-value experiment
-    frozen live outcome FAIL
-
-Checkpoint 151 / PR #14
-    negative evidence preserved without adopting failed implementation
+Specification 015 / Checkpoints 147-151
+    first recommendation/action-value experiment FAIL
+    failed implementation rejected
+    negative evidence preserved
 
 Specification 016 / Checkpoints 152-155
-    dependency-backed disposition construct frozen, implemented, run, and supported
+    dependency-backed DEFER-vs-NOT_NOW diagnostic
+    DISPOSITION_BOUNDARY_SUPPORTED
+    promoted through PR #15
 
-Specification 017 / Checkpoint 156 [active]
-    second recommendation/action-value contract frozen
-    relation-backed sequencing truth
-    provider-free implementation next
+Specification 017 / Checkpoint 156
+    second relation-backed recommendation/action-value contract frozen
+
+Checkpoint 157
+    complete provider-free Specification 017 implementation passed Ubuntu + Windows
+
+Checkpoint 158 [active]
+    explicit manual Specification 017 live boundary frozen
+    final reconciled provider-free head validation pending
 ```
 
 ---
@@ -136,7 +141,7 @@ current state != event history
 persisted object != derived recommendation
 ```
 
-### Methodological navigation/reusable knowledge
+### Methodological navigation and reusable knowledge
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
@@ -149,7 +154,7 @@ Navigation sequence:
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Executable path validated through real reasoning:
+Current executable chain:
 
 ```text
 knowledge universe
@@ -159,10 +164,9 @@ knowledge universe
     -> bounded relevance selection
     -> exact selective MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> measured reasoning
+    -> measured real reasoning
+    -> relation-backed recommendation/action evaluation [active]
 ```
-
-Recommendation/action value beyond a strong generic reasoner remains unresolved and is the active empirical boundary.
 
 ---
 
@@ -176,14 +180,14 @@ D-031 + docs/specifications/004_v1_reusable_knowledge_interchange.md
 D-032 + docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 ```
 
-Governed knowledge round-trip closure:
+Governed round-trip closure:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
 
-Initial runtime selection:
+Initial reasoning runtime:
 
 ```text
 OpenAI Agents SDK behind ADS-owned ReasoningRuntime
@@ -212,56 +216,38 @@ docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architectu
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
-The Cockpit is the promoted primary immersive active-work model. Final frontend/chart/canvas choices and production backend/API architecture remain open.
+The Cockpit is the promoted primary immersive active-work model. It is intended to expose project navigation, chat/reasoning, analytical workspaces, evidence, recommendations, decisions, and state through one professional interface. Final frontend/chart/canvas choices and production backend/API wiring remain open.
 
 ---
 
-## Retrieval -> Horizon route
+## Retrieval -> Horizon -> selective context route
 
-### Lexical baseline
+Lexical baseline:
 
 ```text
-docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 ```
 
-```text
-RH-L Recall@3 = 1.00
-RH-L MRR      = 1.00
-```
-
-### Dense complementarity
+Dense complementarity:
 
 ```text
-docs/research/017_exact_semantic_retrieval_comparator_selection.md
 docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
 docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
 ```
 
-Dense recovered `class-imbalance` but lost `ecdf`, so dense-only did not replace lexical retrieval.
-
-### Hybrid comparator
+Hybrid comparator:
 
 ```text
-docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
 docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
 docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
 experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
 ```
 
-```text
-RH-S Recall@3 = 1.00
-RH-S MRR      = 0.875
-```
-
-This remains complementarity evidence, not permanent vector-stack selection.
-
-### Explained Horizon
+Explained Horizon:
 
 ```text
-docs/research/019_first_methodological_horizon_application_seam.md
 docs/specifications/012_v1_first_methodological_horizon_builder.md
 docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
 experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
@@ -275,25 +261,16 @@ unknown required information -> MISSING_CONTEXT
 unknown != false
 ```
 
----
-
-## Selective context route
+Selective context:
 
 ```text
 docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
 docs/specifications/013_v1_horizon_relevance_and_selective_context.md
-docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
 docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
 experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
 
-On the ten-asset Horizon, the four frozen cases selected only 2-3 exact revisions with full required stable-key and exact-revision coverage and no unexplained omissions.
-
-PR #11 promoted merge:
-
-```text
-fd33184fbff588c6737d77af751bc5def0e31954
-```
+On the frozen ten-asset Horizon, SELECTIVE retained every required exact revision while reducing methodology-only context by roughly 65% to 84%.
 
 ---
 
@@ -329,14 +306,13 @@ bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
 
 ---
 
-## Failed first recommendation/action route
+## First recommendation/action route: failed but preserved
 
 Frozen design/result:
 
 ```text
 docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/149_specification_015_live_boundary_frozen.md
@@ -354,21 +330,11 @@ retries             0
 advancement         FAIL
 ```
 
-Only `RA-G05` failed, concentrated on two expected `DEFER` versus observed `NOT_NOW` expansion actions in RA-02. The result remains immutable.
-
-Failure preservation:
-
-```text
-docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
-PR #14 merged at 10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-PR #13 closed without merge
-```
+The only failed named gate was a shared `DEFER` versus `NOT_NOW` exact-label disagreement on two noncritical RA-02 actions. The failed implementation PR #13 was closed without merge; negative evidence was preserved through PR #14 / Checkpoint 151.
 
 ---
 
-## Supported disposition-semantics route
-
-Frozen design and implementation:
+## Dependency-backed disposition route
 
 ```text
 docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
@@ -377,28 +343,18 @@ tests/fixtures/reasoning/disposition_semantics_v1.json
 docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
 docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/154_specification_016_live_boundary_frozen.md
+docs/checkpoints/155_disposition_semantics_live_gate_supported.md
+experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 ```
 
 Live result:
 
 ```text
-frozen source head                    7db27fd35151c10cdb3562cdf4410fb8f4b09e8b
-workflow run                          32652636943
-reasoner outputs                      36 / 36
-provider attempts                     36 / 45
-retries                               0
-aggregate exact disposition accuracy  1.000000
-DEFER trigger-pointer accuracy        1.000000
-NOT_NOW null-pointer correctness      1.000000
-outcome                               DISPOSITION_BOUNDARY_SUPPORTED
-```
-
-Stable result route:
-
-```text
-docs/checkpoints/155_disposition_semantics_live_gate_supported.md
-experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
-experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
+run                               32652636943
+36 / 36 exact dispositions        correct
+18 / 18 expected-DEFER pointers   exact
+18 / 18 expected-NOT_NOW pointers null
+outcome                           DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
 Promoted merge:
@@ -407,20 +363,13 @@ Promoted merge:
 6bda0c1efcf078476859b2c2c64fb0586964899d
 ```
 
-Supported bounded constraint:
-
-```text
-DEFER-like sequencing requires a concrete represented activating dependency/trigger
-if deterministic distinction from NOT_NOW-like absence of current justification is expected.
-```
-
-This is not yet a production enum or complete Foundation 018 relation schema.
+Supported constraint: DEFER-like sequencing should carry a concrete activating dependency/trigger when deterministic separation from NOT_NOW is required. Production enums and persistence schema remain open.
 
 ---
 
-## Active relation-backed recommendation/action-value route
+## Active relation-backed recommendation/action route
 
-Frozen sources:
+Preregistered design:
 
 ```text
 docs/research/024_relation_backed_recommendation_action_value_design.md
@@ -429,88 +378,61 @@ tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
 docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
 ```
 
-Active PR:
+Provider-free implementation:
 
 ```text
-#16 -> v1-frontend-spike
+experiments/relation_backed_recommendation_action_value/environment.py
+experiments/relation_backed_recommendation_action_value/harness.py
+experiments/relation_backed_recommendation_action_value/judge.py
+experiments/relation_backed_recommendation_action_value/runner.py
+tests/unit/test_relation_backed_recommendation_action_harness.py
+tests/integration/test_relation_backed_recommendation_action_value_vertical_slice.py
+.github/workflows/v1-relation-backed-recommendation-action-value.yml
 ```
 
-Conditions:
+Cross-platform implementation gate:
 
 ```text
-GENERIC
-SELECTIVE
-FULL_HORIZON
+docs/checkpoints/157_relation_backed_recommendation_action_provider_free_gate_cross_platform_passed.md
+validated head    07da2a091b5686b0378c7f8114495fe1d0b29c32
+workflow          32655457836
+Ubuntu targeted   13 passed
+Windows targeted  13 passed
+Ubuntu full       71 passed, 2 skipped
+Windows full      71 passed, 2 skipped
 ```
 
-Cases:
+The complete fake experiment executes all 36 reasoner + 36 judge outputs and correctly classifies a perfect three-condition ceiling as `SAFE_BUT_NOT_DIFFERENTIATED`.
+
+Frozen live boundary:
 
 ```text
-RB-01  VALIDITY_GATE_AND_SEQUENCE
-RB-02  COMPACT_MODEL_SHORTLIST_AND_TUNING_SEQUENCE
-RB-03  DISTRIBUTION_EVIDENCE_BEFORE_TRANSFORMATION
-RB-04  MISSINGNESS_IMBALANCE_DECISION_SEQUENCE
+docs/checkpoints/158_specification_017_live_boundary_frozen.md
+.github/workflows/v1-relation-backed-recommendation-action-value-live.yml
+manual confirmation  RUN_SPEC_017_FROZEN
+required branch       v1-recommendation-action-value-relation-backed
 ```
 
-Relation-backed action result:
-
-```text
-action_id
-    + disposition
-    + defer_until_id
-    + rationale
-```
-
-Frozen pointer invariant:
-
-```text
-DEFER -> exact supplied unresolved activating trigger
-non-DEFER -> null pointer
-```
-
-Frozen outcomes:
-
-```text
-PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM
-SAFE_BUT_NOT_DIFFERENTIATED
-FAIL
-```
-
-Call plan:
-
-```text
-36 reasoner outputs
-36 blinded judge outputs
-72 planned successful provider calls
-90 maximum attempts
-seed 2026082303
-```
-
-At Checkpoint 156:
-
-```text
-implementation     not started
-provider-free gate not run
-live calls         0
-```
+No Specification 017 live provider call has occurred.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. implement relation-backed result/validator
-B. implement frozen three-condition context construction
-C. implement deterministic action/scope/clarification/basis/pointer metrics
-D. implement blinded judge contract
-E. prove complete fake-runtime 36 + 36 shape
-F. add real-persistence provider-free integration coverage
-G. add ordinary Ubuntu/Windows CI without provider credentials
-H. preserve exact green implementation head
-I. only then expose/run a secret-gated live workflow
+A. validate the exact final reconciled PR #16 head under:
+       V1 relation-backed recommendation action value
+       V1 reasoning context value
+       V1 disposition semantics diagnostic
+       Checkpoint metadata
+B. if that exact head is green, make no further experiment-branch commits
+C. copy only the identical Specification 017 live workflow to main
+D. manually dispatch it from v1-recommendation-action-value-relation-backed
+E. enter RUN_SPEC_017_FROZEN
+F. preserve the complete artifact before interpretation
 ```
 
-Do not alter or rescore Specifications 015 or 016. Do not change Specification 017's frozen fixture or gates in response to future live results. Do not return to retrieval/reranking/vector work without a measured downstream reason.
+Do not alter Specifications 015 or 016. Do not change Specification 017's fixture, definitions, thresholds, value signals, model treatment, repetitions, randomization, or retry rules after live results are observed.
 
 ---
 
@@ -523,19 +445,12 @@ Do not alter or rescore Specifications 015 or 016. Do not change Specification 0
 137  dense semantic comparator preserved
 139  hybrid retrieval comparator passed
 141  first explained MethodologicalHorizon passed
-142  selective-context contract frozen
 143  selective-context gate passed and promoted
-144  reasoning-context-value contract frozen
-145  provider-free reasoning-context implementation passed
 146  real reasoning-context gate passed
-147  recommendation/action contract frozen
-148  recommendation/action provider-free gate passed
-149  recommendation/action live boundary frozen
-150  recommendation/action live gate failed
+150  first recommendation/action live gate failed
 151  failed evidence preserved without implementation promotion
-152  disposition-semantics diagnostic contract frozen
-153  disposition-semantics provider-free gate passed cross-platform
-154  Specification 016 live boundary frozen
-155  dependency-backed disposition-semantics live gate supported
-156  relation-backed recommendation/action-value contract frozen
+155  dependency-backed disposition live gate supported
+156  relation-backed recommendation/action contract frozen
+157  relation-backed recommendation/action provider-free gate passed
+158  Specification 017 live boundary frozen
 ```
