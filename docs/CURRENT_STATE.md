@@ -7,7 +7,7 @@
 **Promoted V1 integration branch:** `v1-frontend-spike` at Specification 017 preservation merge `4385b83b43582ff6466b519b4e96356d220c44bc`  
 **Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and now governed autonomous live-experiment launch seams. Specification 017 remains preserved incomplete evidence and its recommendation/action implementation remains unpromoted.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact reconciled PR #23 head and merge the bounded Specification 018 launcher, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
+**Immediate project priority:** validate the exact final PR #23 head after conservative checkpoint-metadata repair and merge the bounded Specification 018 launcher, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
 
 ## Active ChatGPT development context
 
@@ -140,6 +140,8 @@ The one-shot `spec018-probe-001` authorization has been retired from the default
 
 The permanent default-branch control-plane exposure is therefore limited to the governed launcher mechanism and its harmless provider-free probe capability, with no active launch authorization until a new frozen experiment explicitly earns one.
 
+Checkpoint 161 records the exact autonomous probe and the first reconciled-head validation evidence. Conservative metadata repair changed only checkpoint metadata afterward, so the exact final PR head is being revalidated before merge.
+
 ---
 
 ## Current non-selections
@@ -168,7 +170,7 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the exact reconciled PR #23 head with provider-free gates
+1. validate the exact final PR #23 head with provider-free gates
 2. merge PR #23 into v1-frontend-spike if that exact head is green
 3. record the exact promoted merge boundary
 4. preregister the next recommendation/action-value experiment
