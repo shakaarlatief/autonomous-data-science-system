@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 161  
-**Active development branch:** `v1-autonomous-live-experiment-launcher`  
-**Active PR:** #23 -> `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 017 preservation merge `4385b83b43582ff6466b519b4e96356d220c44bc`
+**Current checkpoint:** 162  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none; PR #23 merged  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 018 promotion merge `9fd2243c38a8f0f010396847f519e115d30b8f58`
 
 ## Start here
 
@@ -26,12 +26,13 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      4385b83b43582ff6466b519b4e96356d220c44bc
-active branch                  v1-autonomous-live-experiment-launcher
-active PR                      #23 -> v1-frontend-spike
+promoted integration head      9fd2243c38a8f0f010396847f519e115d30b8f58
+active branch                  v1-frontend-spike
+active PR                      none
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
+Specification 018 PR           #23 merged
 main                           intentionally behind V1 application code except narrow launcher exposure
 ```
 
@@ -70,8 +71,8 @@ Specification 016 / Checkpoints 152-155
 Specification 017 / Checkpoints 156-159
     relation-backed recommendation experiment incomplete; raw evidence preserved; implementation rejected
 
-Specification 018 / Checkpoints 160-161
-    governed autonomous live-experiment launcher frozen, implemented, cross-platform validated, and end-to-end provider-free probe passed
+Specification 018 / Checkpoints 160-162
+    governed autonomous live-experiment launcher frozen, implemented, cross-platform validated, end-to-end provider-free probe passed, and promoted to integration
 ```
 
 ---
@@ -235,13 +236,13 @@ The launcher receives no provider credential. A provider-backed experiment may b
 ## Current exact continuation
 
 ```text
-A. reconcile Checkpoint 161 and Specification 018 v1.0
-B. clean one-shot probe authorization and temporary main-branch observer/validation helpers
-C. validate exact final PR #23 head
-D. merge PR #23 into v1-frontend-spike
-E. record exact promoted merge boundary
-F. preregister next recommendation/action-value experiment with system-owned provenance
-G. do not make a new recommendation/action provider call before the new contract and exact implementation head are frozen and green
+A. branch from promoted merge 9fd2243c38a8f0f010396847f519e115d30b8f58
+B. preregister the next recommendation/action-value experiment
+C. keep exact supplied-context provenance system-owned
+D. do not use partial Specification 017 scores to tune truth or gates
+E. freeze the new fixture/call plan/gates/checkpoint before implementation
+F. validate the exact provider-free implementation head
+G. authorize and launch only through Specification 018 after that head is green
 ```
 
 Do not modify or rescore Specifications 015-017. Do not use partial Specification 017 scores as advancement evidence.
@@ -265,4 +266,5 @@ Do not modify or rescore Specifications 015-017. Do not use partial Specificatio
 159  Specification 017 live execution incomplete; provenance boundary identified
 160  governed autonomous launcher contract frozen
 161  governed autonomous launcher end-to-end provider-free gate passed
+162  governed autonomous launcher promoted to V1 integration
 ```

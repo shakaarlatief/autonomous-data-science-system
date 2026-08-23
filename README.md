@@ -23,12 +23,12 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            161
-active branch         v1-autonomous-live-experiment-launcher
-active PR             #23 -> v1-frontend-spike
-promoted V1 head      4385b83b43582ff6466b519b4e96356d220c44bc
+checkpoint            162
+active branch         v1-frontend-spike
+active PR             none
+promoted V1 head      9fd2243c38a8f0f010396847f519e115d30b8f58
 current boundary      Specification 018 governed autonomous live-experiment
-                      launcher passed its end-to-end provider-free gate
+                      launcher promoted to integration
 ```
 
 Current progression:
@@ -66,6 +66,7 @@ For exact continuation, start with:
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/162_governed_autonomous_launcher_promoted_to_integration.md
 docs/checkpoints/161_governed_autonomous_live_experiment_launcher_end_to_end_gate_passed.md
 docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
 ```
@@ -277,15 +278,12 @@ Before any provider-backed launch, the next experiment must be preregistered, it
 ## Exact continuation
 
 ```text
-1. finish Checkpoint 161 canonical reconciliation
-2. clean the one-shot probe authorization and temporary control helpers
-3. validate the exact final PR #23 head
-4. merge PR #23 into v1-frontend-spike
-5. record the exact promoted merge boundary
-6. preregister the next recommendation/action-value experiment with system-owned provenance
-7. validate its exact provider-free implementation head
-8. authorize and launch it through Specification 018
-9. make no recommendation/action provider call before the new contract and implementation gate are frozen and green
+1. preregister the next recommendation/action-value experiment
+2. make exact supplied-context provenance system-owned
+3. preserve Specification 017 scientific truth without tuning from partial scores
+4. freeze the new fixture, gates, call plan, and checkpoint before implementation
+5. implement and validate provider-free
+6. authorize and launch through Specification 018 only after the exact head is green
 ```
 
 ---

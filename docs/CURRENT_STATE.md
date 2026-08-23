@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 161  
+**Checkpoint:** 162  
 **Date:** 2026-08-23  
-**Active development branch:** `v1-autonomous-live-experiment-launcher`  
-**Active PR:** #23 -> `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 017 preservation merge `4385b83b43582ff6466b519b4e96356d220c44bc`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and now governed autonomous live-experiment launch seams. Specification 017 remains preserved incomplete evidence and its recommendation/action implementation remains unpromoted.  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none; Specification 018 PR #23 merged  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 018 promotion merge `9fd2243c38a8f0f010396847f519e115d30b8f58`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and governed autonomous live-experiment launch seams. Specification 017 remains preserved incomplete evidence and its recommendation/action implementation remains unpromoted.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** merge the exact final green PR #23 head, record the promoted Specification 018 integration boundary, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
+**Immediate project priority:** preregister the next recommendation/action-value experiment with system-owned exact context provenance before implementation or any new provider call.
 
 ## Active ChatGPT development context
 
@@ -185,12 +185,14 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. merge exact green PR #23 into v1-frontend-spike
-2. record the exact promoted merge boundary
-3. preregister the next recommendation/action-value experiment
+1. branch from Specification 018 promotion merge 9fd2243c38a8f0f010396847f519e115d30b8f58
+2. preregister the next recommendation/action-value experiment
+3. preserve Specification 017 scientific truth without using partial scores for tuning
 4. make exact supplied-context provenance system-owned
-5. implement and validate the exact provider-free experiment head
-6. add one exact repository-controlled launch authorization
-7. launch through Specification 018 rather than a manual Actions button
-8. make no new recommendation/action provider call before steps 3-6 are frozen and green
+5. remove unnecessary model-authored provenance from structured-output validity
+6. freeze the new fixture, gates, call plan, and checkpoint before implementation
+7. implement provider-free and validate the exact head
+8. add one exact repository-controlled launch authorization
+9. launch through Specification 018 rather than a manual Actions button
+10. make no new recommendation/action provider call before steps 2-8 are frozen and green
 ```
