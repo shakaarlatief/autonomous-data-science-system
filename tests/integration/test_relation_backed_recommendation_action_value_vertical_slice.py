@@ -1,8 +1,7 @@
 from __future__ import annotations
 
+import asyncio
 from pathlib import Path
-
-import pytest
 
 from ads_system.application.reasoning import (
     ReasoningOutcome,
@@ -131,17 +130,18 @@ def _perfect_results_by_run_id():
     return results
 
 
-@pytest.mark.asyncio
-async def test_complete_fake_vertical_slice_preserves_state_and_returns_safe_ceiling(tmp_path) -> None:
+def test_complete_fake_vertical_slice_preserves_state_and_returns_safe_ceiling(tmp_path) -> None:
     runtime = PerfectRuntime(_perfect_results_by_run_id())
     judge = PerfectJudge()
     output_dir = tmp_path / "spec017"
 
-    result = await execute_frozen_experiment(
-        output_dir=output_dir,
-        benchmark_path=FIXTURE,
-        runtime=runtime,
-        judge=judge,
+    result = asyncio.run(
+        execute_frozen_experiment(
+            output_dir=output_dir,
+            benchmark_path=FIXTURE,
+            runtime=runtime,
+            judge=judge,
+        )
     )
 
     assert runtime.calls == 36
