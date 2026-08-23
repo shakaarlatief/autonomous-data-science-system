@@ -25,24 +25,30 @@ Explicit machinery must earn its complexity empirically.
 Current execution state:
 
 ```text
-checkpoint            146
-active branch         v1-reasoning-context-value
-active PR             #12 -> v1-frontend-spike
-promoted V1 head      fd33184fbff588c6737d77af751bc5def0e31954
-current boundary      Specification 014 live gate passed; promotion reconciliation
+checkpoint            150
+active branch         v1-recommendation-action-failure-preservation
+active preservation   pending -> v1-frontend-spike
+rejected experiment   PR #13, close without merge
+promoted V1 head      bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
+current boundary      Specification 015 live result preserved as FAIL; disposition diagnostic next
 ```
 
-The first real-model selective-context value experiment is complete and preserved. SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate frozen quality, while SELECTIVE used `0.334379` of FULL_HORIZON provider input tokens in aggregate, a `66.56%` reduction, with no matched-pair token failures or critical-obligation regressions.
+Specification 014 v1.0 / Checkpoint 146 established the first real-model evidence that selective exact-revision methodological context can preserve frozen reasoning quality while materially reducing provider input-token burden.
 
-The immediate task is to validate the exact reconciled PR #12 head, merge that green head into `v1-frontend-spike`, and then preregister a harder recommendation/action slice before new live calls.
+Specification 015 then tested whether that accepted methodological path adds downstream recommendation/action value beyond strong controls. The frozen live workflow executed completely, but the preregistered advancement outcome is **FAIL** because one per-case exact-disposition gate failed on `RA-02 MODEL_CHOICE`.
+
+The failure is narrow and not treatment-specific: SELECTIVE and FULL_HORIZON repeatedly chose `NOT_NOW` where the frozen evaluator expected `DEFER` for two noncritical expansion actions; GENERIC behaved almost identically, while the blinded semantic judge scored every RA-02 output perfectly. This does not permit post-hoc relabeling of the failed experiment. It establishes the next diagnostic boundary: determine whether `DEFER` versus `NOT_NOW` is operationally separable and benchmarkable before another recommendation-value experiment.
 
 For exact continuation, start with:
 
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
+
+---
 
 ## Prototype V0 result and durable constraint
 
@@ -128,18 +134,21 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The current scaling path is:
+The current executable scaling path is:
 
 ```text
 large reusable methodological knowledge universe
     -> high-recall retrieval
     -> bounded explained MethodologicalHorizon
     -> applicability / missing-context handling
-    -> relevance / prioritization
-    -> selective task-specific MethodologicalContextPack
+    -> bounded task-specific relevance selection
+    -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> reasoning / recommendation evidence
+    -> reasoning evidence
+    -> recommendation / REQUIRED-BLOCKING / bounded action evidence
 ```
+
+The first five arrows plus real-model reasoning are accepted at bounded V1 scope. The recommendation/action transition remains unresolved after Specification 015.
 
 Primary foundations:
 
@@ -149,9 +158,9 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-### Accepted persistence, interchange, and runtime boundaries
+### Accepted persistence, interchange, runtime, and interaction boundaries
 
-Accepted V1 decisions include:
+Accepted V1 decisions and promoted contracts include:
 
 ```text
 D-028
@@ -168,6 +177,9 @@ D-031
     semantic validation
     deterministic reusable-knowledge normalization/serialization
 
+Specification 008
+    promoted Project Cockpit interaction architecture
+
 D-032
     OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
     validated starting package openai-agents==0.19.4
@@ -177,31 +189,13 @@ The governed reusable-knowledge persistence/interchange seam is closed across SQ
 
 Direct model calls remain the runtime fallback/reference path. LangGraph remains a possible stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
 
-### Project Cockpit
-
-Specification 008 promotes the Project Cockpit as the primary immersive V1 active-work interaction model while direct specialist views remain alternative entry, inspection, and record paths.
-
-Primary source:
-
-```text
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-```
+The Project Cockpit remains the promoted primary immersive V1 active-work interaction model, while specialist views remain alternative entry, inspection, and record paths.
 
 ---
 
 ## Retrieval and MethodologicalHorizon progression
 
-The first bounded methodological-navigation program is decomposed as:
-
-```text
-RH-L    lexical-addressable retrieval
-RH-S    semantic/paraphrase retrieval
-RH-R    relational Horizon expansion
-RH-A    applicability / required-context behavior
-RH-C    selective context construction
-```
-
-Current evidence:
+The first bounded methodological-navigation program progressed through:
 
 ```text
 Checkpoint 135
@@ -232,7 +226,7 @@ The key semantic invariant is:
 unknown != false
 ```
 
-The hybrid result is evidence for lexical+dense complementarity. It does not permanently select FastEmbed, BGE, RRF `k=60`, embedding persistence, ANN, or a vector database.
+The hybrid retrieval result is evidence for lexical+dense complementarity. It does not permanently select FastEmbed, BGE, RRF `k=60`, embedding persistence, ANN, reranking, or a vector database.
 
 ---
 
@@ -270,28 +264,9 @@ RH-C03        3 / 10         10,752       3,724     0.3464
 RH-C04        2 / 10         10,754       3,035     0.2822
 ```
 
-Equivalent methodology-only context reduction was approximately **65% to 84%** while preserving:
+Equivalent methodology-only context reduction was approximately **65% to 84%** while preserving required stable-key/revision coverage and explicit omission reasons. Checkpoint 143 promotes Specification 013 to accepted bounded v1.0.
 
-```text
-required stable-key coverage       1.00
-required exact-revision coverage   1.00
-irrelevant selected assets         0
-selected assets                    <= 3
-unexplained omissions              0
-```
-
-Checkpoint 143 promotes Specification 013 to accepted bounded v1.0.
-
-Primary sources:
-
-```text
-docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
-docs/specifications/013_v1_horizon_relevance_and_selective_context.md
-docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
-experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
-```
-
-This does not prove that reasoning functions solve general semantic relevance, that `max_assets = 3` is universal, or that selective context improves downstream reasoning.
+This does not prove that explicit reasoning functions solve general semantic relevance or that `max_assets = 3` is universal.
 
 ---
 
@@ -299,7 +274,7 @@ This does not prove that reasoning functions solve general semantic relevance, t
 
 Specification 014 v1.0 / Checkpoint 146 preserve the first downstream real-model test of the accepted selective `MethodologicalContextPack` against a compact full-Horizon control under the same task evidence and model/runtime configuration.
 
-Frozen result:
+Observed:
 
 ```text
 24 / 24 reasoner outputs
@@ -319,23 +294,7 @@ aggregate provider input tokens
 
 Every matched pair used fewer SELECTIVE input tokens. No critical-obligation regression or unsupported methodological-basis reference occurred.
 
-A diagnostic difference did appear: SELECTIVE produced zero unexpected methodological-basis keys, while FULL_HORIZON averaged `1.666667` unexpected keys per output, concentrated in RV-01 and RV-04. Since both conditions still reached the quality ceiling, this is evidence of methodological expansion rather than proof of general distraction or quality harm.
-
-This is the first real-model downstream evidence supporting:
-
-```text
-what the SYSTEM should remember
-    !=
-what the LLM should receive on every reasoning call
-```
-
-Accepted continuation:
-
-```text
-explained MethodologicalHorizon
-    -> selective exact-revision MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-```
+FULL_HORIZON produced more unexpected methodological-basis expansion, but both conditions reached the frozen quality ceiling. The supported conclusion is bounded quality preservation plus substantial token reduction, not proof that fuller context generally harms reasoning.
 
 Primary evidence:
 
@@ -348,18 +307,108 @@ docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
 
 The result does not select a final provider/model, universal context budget, general relevance solution, or recommendation/REQUIRED-BLOCKING policy.
 
+---
+
+## Failed first recommendation/action-value seam
+
+Specification 015 v0.1 froze the first downstream test of:
+
+```text
+RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
+    -> bounded project action
+```
+
+Three conditions held project microstate, explicit reasoning-function profile, candidate action menu, output schema, and concrete model/runtime configuration fixed:
+
+```text
+GENERIC
+    no reusable methodological assets
+
+SELECTIVE
+    accepted exact-revision MethodologicalContextPack
+
+FULL_HORIZON
+    all ten exact Horizon revisions
+```
+
+The live plan executed:
+
+```text
+4 cases
+3 conditions
+3 repetitions
+36 reasoner outputs
+36 blinded judge outputs
+72 provider attempts
+0 retries
+```
+
+Frozen aggregate behavior:
+
+```text
+                         GENERIC      SELECTIVE      FULL_HORIZON
+exact accuracy           0.916667     0.916667       0.916667
+semantic score           0.960417     0.991667       0.991667
+critical omissions       0            0              0
+blocking false negatives 0            0              0
+blocking false positives 1            0              0
+under-recommendations    0            0              0
+over-recommendations     0            0              0
+unnecessary cost         0            0              0
+```
+
+The sole failed hard gate was per-case SELECTIVE exact accuracy on `RA-02 MODEL_CHOICE`:
+
+```text
+GENERIC        0.722222
+SELECTIVE      0.666667
+FULL_HORIZON   0.666667
+required floor 0.800000
+```
+
+The discrepancy was entirely `DEFER` versus `NOT_NOW` for two noncritical expansion actions. All nine RA-02 outputs scored `1.000000` under the blinded semantic rubric.
+
+Frozen advancement remains:
+
+```text
+FAIL
+```
+
+No preregistered positive value signal was observed. The seam is therefore not promoted. The correct next move is diagnosis, not threshold repair, evaluator relabeling, retrieval tuning, or coupling recommendations to project mutation.
+
+Primary evidence:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
+```
+
+---
+
 ## Exact continuation
 
 ```text
-1. validate the exact post-result reconciliation head
-2. merge exactly that green PR #12 head into v1-frontend-spike
-3. branch from the promoted merge
-4. design and preregister a harder project-level recommendation/action slice
-5. make recommendation strength, important omission, unnecessary expansion, and downstream consequence measurable
-6. make no new live model calls before that next contract is frozen
+1. validate and merge the preservation-only failure record into v1-frontend-spike
+2. close PR #13 without merging the failed recommendation implementation
+3. branch separately from the accepted integration line
+4. preregister a bounded DEFER-vs-NOT_NOW / failure-attribution diagnostic
+5. test disposition semantics independently from SELECTIVE-vs-control system value
+6. only after diagnosis decide whether a revised recommendation/action seam deserves a new value experiment
+7. make no new live calls before that diagnostic contract is frozen
 ```
 
-Do not return to retrieval or selector tuning without a measured downstream reason. Do not promote `gpt-5.6-sol`, `max_assets = 3`, or the current reasoning-function task profile into universal project decisions from this bounded result.
+Do not return to retrieval or selector tuning without a measured downstream reason. Do not promote the current benchmark disposition labels into production semantics from a failed gate.
+
+---
 
 ## Repository role
 
