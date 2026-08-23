@@ -1,0 +1,43 @@
+name: Dispatch autonomous launcher exact-ref CI
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: write
+  contents: read
+  issues: write
+
+jobs:
+  dispatch:
+    if: ${{ github.event.issue.title == '[ADS CI] launcher 27e7bc84b5f63d65d43de9a5bd27d1fdc0677071' }}
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      EXPECTED_SHA: 27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
+      TARGET_REF: v1-autonomous-live-experiment-launcher
+      TARGET_WORKFLOW: v1-autonomous-live-experiment-launcher-ci.yml
+    steps:
+      - name: Verify owner transport identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test '${{ github.actor }}' = 'shakaarlatief'
+          test '${{ github.event.sender.login }}' = 'shakaarlatief'
+          test '${{ github.event.issue.user.login }}' = 'shakaarlatief'
+          test '${{ github.event.repository.owner.login }}' = 'shakaarlatief'
+      - name: Verify target branch exact SHA
+        shell: bash
+        run: |
+          set -euo pipefail
+          OBSERVED="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/${TARGET_REF}" --jq '.object.sha')"
+          test "$OBSERVED" = "$EXPECTED_SHA"
+      - name: Dispatch exact-ref provider-free CI
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run "$TARGET_WORKFLOW" --repo "$GITHUB_REPOSITORY" --ref "$TARGET_REF"
+          gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \
+            --body "Exact-ref launcher CI dispatched for \`$EXPECTED_SHA\`. Dispatcher run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
