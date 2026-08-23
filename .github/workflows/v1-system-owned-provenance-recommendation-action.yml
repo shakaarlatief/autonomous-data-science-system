@@ -12,7 +12,9 @@ on:
       - docs/research/026_system_owned_provenance_recommendation_action_value_design.md
       - docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
       - docs/checkpoints/163_system_owned_provenance_recommendation_action_contract_frozen.md
+      - docs/checkpoints/164_system_owned_provenance_recommendation_action_implementation_gate_cross_platform_passed.md
       - .github/workflows/v1-system-owned-provenance-recommendation-action.yml
+      - .github/workflows/v1-system-owned-provenance-recommendation-action-live.yml
   pull_request:
     branches: [v1-frontend-spike]
     paths:
@@ -24,7 +26,9 @@ on:
       - docs/research/026_system_owned_provenance_recommendation_action_value_design.md
       - docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
       - docs/checkpoints/163_system_owned_provenance_recommendation_action_contract_frozen.md
+      - docs/checkpoints/164_system_owned_provenance_recommendation_action_implementation_gate_cross_platform_passed.md
       - .github/workflows/v1-system-owned-provenance-recommendation-action.yml
+      - .github/workflows/v1-system-owned-provenance-recommendation-action-live.yml
 
 permissions:
   contents: read
@@ -50,6 +54,28 @@ jobs:
             echo "Ordinary Specification 019 CI must not receive OPENAI_API_KEY."
             exit 1
           fi
+      - name: Validate frozen live-workflow boundary statically
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          workflow = Path('.github/workflows/v1-system-owned-provenance-recommendation-action-live.yml').read_text(encoding='utf-8')
+          required = (
+              'workflow_dispatch:',
+              'launch_id:',
+              'expected_source_sha:',
+              'confirmation:',
+              'spec019-system-provenance-001',
+              'RUN_SPEC_019_FROZEN',
+              'ADS_EXPECTED_SOURCE_SHA',
+              'GITHUB_SHA',
+              'secrets.OPENAI_API_KEY',
+              'experiments.system_owned_provenance_recommendation_action_value.runner',
+          )
+          missing = [token for token in required if token not in workflow]
+          if missing:
+              raise SystemExit(f'live workflow boundary drifted; missing={missing}')
+          PY
       - name: Run frozen Specification 019 tests
         run: >-
           uv run --python 3.13 --locked python -m pytest
