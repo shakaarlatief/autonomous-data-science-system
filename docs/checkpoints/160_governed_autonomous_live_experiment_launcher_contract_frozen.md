@@ -2,6 +2,13 @@
 
 **Date:** 2026-08-23  
 **Status:** FROZEN CONTROL-PLANE CONTRACT  
+**Checkpoint class:** EXPERIMENT-CONTROL CONTRACT / IMPLEMENTATION BOUNDARY  
+**Project stage:** Post-V0 bounded V1 implementation and integration  
+**Scope:** Freezes the first governed autonomous live-experiment launcher design before implementation and provider-free validation.  
+**Authority:** Historical contract-freeze boundary. Specification 018 v0.1 is the frozen implementation authority for this bounded control-plane experiment until superseded by a later accepted result.  
+**Design session:** 04  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 04 - Selective Context Promotion & Reasoning Vertical Slice  
 **Development branch:** `v1-autonomous-live-experiment-launcher`  
 **Base integration commit:** `4385b83b43582ff6466b519b4e96356d220c44bc`  
 
