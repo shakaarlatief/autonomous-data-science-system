@@ -1,5 +1,6 @@
 name: Finalize Specification 015 live routing
 
+# Armed after creation so the push-triggered one-shot reconciliation can run.
 on:
   push:
     branches: [v1-recommendation-action-value]
