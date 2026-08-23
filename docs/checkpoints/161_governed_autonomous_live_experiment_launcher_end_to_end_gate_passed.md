@@ -1,10 +1,17 @@
 # Checkpoint 161: Governed Autonomous Live Experiment Launcher End-to-End Gate Passed
 
 **Date:** 2026-08-23  
+**Status:** BOUNDED CONTROL-PLANE GATE PASSED / PROMOTION SUPPORTED  
+**Checkpoint class:** CONTROL-PLANE EXPERIMENT RESULT / PROMOTION BOUNDARY  
+**Project stage:** Post-V0 bounded V1 implementation and integration  
+**Scope:** Records exact provider-free implementation, cross-platform CI, autonomous issue-to-dispatch probe evidence, bounded promotion, and the next authorized development boundary.  
+**Authority:** Current bounded Specification 018 result boundary. Specification 018 v1.0 is accepted only within the scope stated here and does not authorize arbitrary workflow execution or autonomous experiment design.  
+**Design session:** 04  
+**ChatGPT project:** Autonomous Data Science System  
+**Session title:** 04 - Selective Context Promotion & Reasoning Vertical Slice  
 **Branch:** `v1-autonomous-live-experiment-launcher`  
 **PR:** #23 -> `v1-frontend-spike`  
 **Specification:** 018  
-**Classification:** CONTROL-PLANE EXPERIMENT RESULT / PROMOTION BOUNDARY  
 **Outcome:** `GOVERNED_LAUNCHER_SUPPORTED`
 
 ## Boundary reached
