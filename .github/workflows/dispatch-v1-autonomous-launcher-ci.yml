@@ -34,10 +34,18 @@ jobs:
           set -euo pipefail
           OBSERVED="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/${TARGET_REF}" --jq '.object.sha')"
           test "$OBSERVED" = "$EXPECTED_SHA"
-      - name: Dispatch exact-ref provider-free CI
+      - name: Dispatch exact-ref provider-free CI and report target run
         shell: bash
         run: |
           set -euo pipefail
           gh workflow run "$TARGET_WORKFLOW" --repo "$GITHUB_REPOSITORY" --ref "$TARGET_REF"
+          sleep 5
+          read -r TARGET_RUN TARGET_SHA < <(
+            gh run list --repo "$GITHUB_REPOSITORY" --workflow "$TARGET_WORKFLOW" \
+              --branch "$TARGET_REF" --event workflow_dispatch --limit 1 \
+              --json databaseId,headSha --jq '.[0] | "\(.databaseId) \(.headSha)"'
+          )
+          test -n "$TARGET_RUN"
+          test "$TARGET_SHA" = "$EXPECTED_SHA"
           gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" \
-            --body "Exact-ref launcher CI dispatched for \`$EXPECTED_SHA\`. Dispatcher run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            --body "Exact-ref launcher CI dispatched for \`$EXPECTED_SHA\`. Target run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${TARGET_RUN}. Dispatcher run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
