@@ -195,6 +195,27 @@ automatic project mutation or execution policy
 
 The one-shot probe authorization is test evidence, not a standing production authorization. It should be removed or disabled after the evidence is recorded.
 
+## Final reconciled-head validation
+
+Canonical reconciliation and conservative checkpoint-metadata repair were completed before merge.
+
+Exact reconciled PR head:
+
+```text
+ea0441b29f18d056106b1c0ccbe9c4fba8c31883
+```
+
+Exact final provider-free runs on that head:
+
+```text
+Checkpoint metadata                         32661926851  success
+V1 autonomous live experiment launcher CI  32661926840  success
+V1 disposition semantics diagnostic         32661926806  success
+V1 reasoning context value                  32661926796  success
+```
+
+The launcher CI passed on both Ubuntu and Windows, including the launcher-specific test suite, full V1 Python regression suite, and provider-credential absence check.
+
 ## Next justified boundary
 
 The next scientific experiment remains separate from the launcher.
