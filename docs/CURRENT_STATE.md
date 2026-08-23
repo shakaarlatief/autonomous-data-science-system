@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 155  
+**Checkpoint:** 159  
 **Date:** 2026-08-23  
-**Active development branch:** `v1-disposition-semantics-diagnostic`  
-**Active PR:** #15 -> `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at failure-preservation merge `10aa3f59bedc5ee45a38f0ae05c68da901d9adff`  
-**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam, an immutable failed first recommendation/action-value experiment, and a completed live disposition-semantics diagnostic whose frozen outcome is `DISPOSITION_BOUNDARY_SUPPORTED`.  
+**Active development branch:** `v1-recommendation-action-value-relation-backed`  
+**Active PR:** #16 -> `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 016 promotion merge `6bda0c1efcf078476859b2c2c64fb0586964899d`  
+**Development stage:** Prototype V0 complete; bounded V1 has an accepted selective real-reasoning seam, preserved negative recommendation evidence from Specification 015, supported dependency-backed disposition semantics from Specification 016, and an incomplete first live execution of Specification 017 whose raw evidence is preserved but whose recommendation/action seam is not promoted.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** finish the Specification 016 result promotion/reconciliation, validate the exact reconciled PR #15 head, merge exactly that green head into `v1-frontend-spike`, then preregister a new recommendation/action-value experiment using explicit dependency-backed sequencing before any further live model call.
+**Immediate project priority:** close Specification 017 through preservation-only integration, reject its experimental implementation as production code, then design a governed autonomous live-experiment launcher and separately preregister the next recommendation/action-value experiment with system-owned provenance.
 
 ## Active ChatGPT development context
 
@@ -17,7 +17,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` intentionally trails active V1 work except explicit manual-workflow dispatcher exposure.
+Repository artifacts remain authoritative across chats. `main` intentionally trails active V1 work except narrowly scoped control-plane workflow exposure.
 
 ---
 
@@ -55,57 +55,35 @@ Foundation 019:
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Current executable path:
+Current evidence chain:
 
 ```text
 large reusable knowledge universe
     -> retrieval
-    -> bounded explained MethodologicalHorizon
+    -> explained MethodologicalHorizon
     -> applicability / missing-context handling
-    -> bounded task-specific relevance selection
     -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
     -> real reasoning evidence                         [accepted bounded seam]
-    -> recommendation / REQUIRED-BLOCKING / action    [first live seam failed]
-    -> disposition-semantics diagnosis                [completed and supported]
-    -> revised recommendation/action value            [next, not yet frozen]
+    -> first recommendation/action-value experiment   [FAIL, preserved]
+    -> dependency-backed disposition diagnostic       [SUPPORTED, promoted bounded constraint]
+    -> relation-backed recommendation experiment      [INCOMPLETE, preserved, not promoted]
 ```
 
-### Accepted implementation boundaries
+Accepted technical/runtime boundaries remain D-028 through D-032. Specification 008 remains the promoted Project Cockpit interaction architecture. Specifications 012-014 remain the accepted bounded Horizon/selective-context/real-reasoning seams.
 
-```text
-D-028  SQLite-centered local-first architecture
-D-029  SQLAlchemy Core 2.0 + Alembic 1.x
-D-030  pyproject + uv + committed uv.lock + uv_build
-D-031  governed deterministic JSON / JSON Schema knowledge interchange
-D-032  OpenAI Agents SDK behind ADS-owned ReasoningRuntime
-
-Specification 008 / Checkpoints 126,130
-    promoted Project Cockpit interaction architecture
-
-Specification 012 v1.0 / Checkpoint 141
-    explained MethodologicalHorizon
-
-Specification 013 v1.0 / Checkpoint 143
-    selective exact-revision MethodologicalContextPack
-
-Specification 014 v1.0 / Checkpoint 146
-    first real-model selective-context value gate passed
-```
-
-No final provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, production recommendation taxonomy, or automatic project mutation/execution policy is selected.
+No final provider/model, multi-agent architecture, production semantic retrieval stack, final context budget, production recommendation taxonomy, dependency persistence schema, or automatic project mutation/execution policy is selected.
 
 ---
 
 ## Accepted real reasoning-context evidence
 
-Specification 014 observed:
+Specification 014 / Checkpoint 146:
 
 ```text
 24 reasoner outputs
 24 blinded judge outputs
 0 retries
-
 SELECTIVE quality       1.000000
 FULL_HORIZON quality    1.000000
 SELECTIVE/FULL input    0.334379
@@ -113,61 +91,21 @@ input-token reduction   66.56%
 critical regressions    none
 ```
 
-This accepts the bounded selective-context + ADS-owned `ReasoningRuntime` seam, not a universal context budget or final model choice.
-
-Primary evidence:
-
-```text
-docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
-docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
-experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
-```
+Bounded conclusion: selective exact-revision context can preserve measured reasoning quality while materially reducing provider input for the frozen tasks.
 
 ---
 
 ## Immutable Specification 015 negative evidence
 
-Specification 015 tested GENERIC, SELECTIVE, and FULL_HORIZON recommendation/action behavior under a preregistered four-disposition taxonomy:
+Specification 015 returned frozen outcome:
 
 ```text
-BLOCKING_REQUIRED
-RECOMMENDED
-DEFER
-NOT_NOW
+FAIL
 ```
 
-Live run `32642733784` completed all planned calls with no retries, but the frozen result was:
+Only `RA-G05` failed, localized to the old RA-02 `DEFER` versus `NOT_NOW` truth. Its implementation was not promoted. The experiment remains immutable negative evidence.
 
-```text
-absolute gates    FAIL
-relative gates    PASS
-expansion gates   PASS
-value signals     0
-outcome            FAIL
-```
-
-Fourteen of fifteen named gates passed. The sole failed gate was `RA-G05`, localized to `RA-02 MODEL_CHOICE`:
-
-```text
-GENERIC        0.722222
-SELECTIVE      0.666667
-FULL_HORIZON   0.666667
-required floor 0.800000
-```
-
-The repeated mismatch was `DEFER` expected versus `NOT_NOW` observed for two noncritical expansion actions. All nine RA-02 semantic judge outputs scored `1.000000`.
-
-The frozen FAIL is not repaired or rescored.
-
-Negative evidence was isolated from the rejected implementation through PR #14 and merged into `v1-frontend-spike` at:
-
-```text
-10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-```
-
-PR #13 was closed without merge.
-
-Primary evidence:
+Primary sources:
 
 ```text
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
@@ -178,114 +116,155 @@ experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 
 ---
 
-## Completed Specification 016 diagnostic
+## Promoted Specification 016 construct evidence
 
-Specification 016 isolated the exact `DEFER` versus `NOT_NOW` construct-validity question without methodological-context treatment comparison, semantic judge, tools, or project mutation.
-
-Frozen operational distinction:
+Specification 016 isolated dependency-backed sequencing and observed:
 
 ```text
-DEFER
-    action already justified in represented plan
-    + exact unresolved supplied activating trigger
-    + action becomes current next work after trigger
-    + defer_until_id = exact trigger ID
-
-NOT_NOW
-    current objective/state does not materially justify prioritizing action
-    + no represented supplied trigger activates it as current next work
-    + defer_until_id = null
+run                                   32652636943
+reasoner outputs                      36 / 36
+aggregate exact disposition accuracy  1.000000
+DEFER trigger-pointer accuracy        1.000000
+NOT_NOW null-pointer correctness      1.000000
+outcome                               DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
-The live workflow ran from exact frozen source head:
+Promoted bounded constraint:
 
 ```text
-7db27fd35151c10cdb3562cdf4410fb8f4b09e8b
+DEFER-like sequencing
+    must carry a concrete represented activating dependency/trigger
+    if deterministic separation from NOT_NOW is expected.
 ```
 
-Workflow/run provenance:
+This does not make `DEFER` or `NOT_NOW` final production enums.
+
+---
+
+## Specification 017 live result: incomplete, no advancement classification
+
+Specification 017 retained the GENERIC / SELECTIVE / FULL_HORIZON comparison, prospectively rebuilt all expected-DEFER truth under the stronger Specification 016 relation-backed construction, and froze a 36-reasoner + 36-judge live plan.
+
+First live execution:
 
 ```text
-V1 disposition semantics live
-run 32652636943
-artifact 9496624273
+run                         32656446705
+job                         97235820936
+frozen source head          bf041f4b4a485382d0e6e5c508ad916199601ee8
+planned reasoner outputs    36
+successful reasoner         29
+planned judge outputs       36
+successful judge            29
+scored observations         29
+provider attempts           77 / 90
+complete scored design      false
+execution integrity         true
+gate evaluation             none
+advancement outcome         none
 ```
 
-Observed execution:
+Condition completion:
 
 ```text
-reasoner outputs        36 / 36
-validated observations 36 / 36
-provider attempts       36 / 45
-failed attempts         0
-retries                 0
+SELECTIVE       12 / 12
+FULL_HORIZON    12 / 12
+GENERIC          5 / 12
 ```
 
-Frozen gate result:
+All 19 failed reasoner attempts occurred in GENERIC and were mechanically classified `INVALID_STRUCTURED_RESPONSE`. The model repeatedly put the requested reasoning-function label into `methodological_basis`:
 
 ```text
-aggregate exact disposition accuracy    1.000000
-all 12 variants                          3 / 3 correct
-all 6 pair sides                         3 / 3 correct
-expected-DEFER exact pointer accuracy    1.000000
-expected-NOT_NOW null-pointer accuracy   1.000000
-
-outcome                                  DISPOSITION_BOUNDARY_SUPPORTED
+VALIDITY_CONSTRAINT
+MODEL_OPTION
+EVIDENCE_OPTION
+DECISION_FRAMEWORK
 ```
 
-The complete downloaded artifact was preserved before next-experiment design at:
+but GENERIC supplied zero reusable knowledge revisions, so the frozen contract required an empty methodological basis.
+
+Observed boundary:
 
 ```text
-experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
+reasoning function / task profile
+    !=
+reusable knowledge stable-key provenance
 ```
 
-Stable result:
+The system already owns exact supplied-context provenance. Requiring a second model-authored provenance representation created an avoidable structured-output incompatibility.
+
+### Historical interpretation
+
+Specification 017 is **not** classified as any of:
 
 ```text
-experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
-docs/checkpoints/155_disposition_semantics_live_gate_supported.md
+PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
 ```
 
-### Supported failure attribution
+Those outcomes require the complete scored design. Partial condition scores are not advancement evidence and must not be used to tune benchmark truth or thresholds.
 
-The result makes two Specification 015 explanations less likely on explicit unambiguous cases:
+Do not silently sanitize GENERIC output, reinterpret reasoning-function labels as knowledge keys, change the frozen fixture, or rerun the unchanged full workflow merely hoping for stochastic schema conformance.
 
-```text
-A. DEFER / NOT_NOW are inherently operationally inseparable
-C. the fixed reasoner cannot apply an explicit distinction reliably
-```
-
-The historical discrepancy remains consistent with:
+### Raw evidence
 
 ```text
-B. the original RA-02 state did not encode a uniquely activating DEFER relation strongly enough
-```
+experiments/relation_backed_recommendation_action_value/
+    V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 
-The provider-free audit reports both disputed historical expected-DEFER examples as not admissible examples of unambiguous Specification 016 DEFER. This does not change their historical Specification 015 labels or FAIL result.
+experiments/relation_backed_recommendation_action_value/results/
+    spec017-live-20260823-run-32656446705/
 
-The remaining downstream question is still:
-
-```text
-D. does explicit SELECTIVE methodological knowledge add recommendation/action value beyond a strong GENERIC reasoner once sequencing semantics are made measurable?
+docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
 ```
 
 ---
 
-## Current semantic design constraint earned by Specification 016
+## Next recommendation/action design constraint
 
-For future recommendation/action experiments:
+The next experiment must separate:
 
 ```text
-DEFER-like sequencing
-    must not be a bare low-priority label
-    must carry a concrete represented activating dependency/trigger
+SYSTEM-OWNED PROVENANCE
+    exact supplied stable_key@revision_id
+    context digest
+    treatment/context identity
 
-NOT_NOW-like state
-    means no current material justification
-    and no represented activating dependency that makes the action next work
+MODEL-OWNED RECOMMENDATION CONTENT
+    action dispositions
+    dependency pointers
+    blocked scopes
+    clarifications
+    rationales
 ```
 
-This is a result-backed design/evaluation constraint for the next experiment. It is not yet a production enum or persistence contract.
+Any model-authored knowledge citation layer must justify its value separately and be constrained to an explicit supplied-ID menu. GENERIC reusable-knowledge provenance is deterministically empty system-side.
+
+No new recommendation/action live call is authorized until a new contract incorporating that boundary is preregistered and its exact provider-free implementation head is green.
+
+---
+
+## Autonomous live-experiment control-plane observation
+
+During post-result preservation, a default-branch GitHub Actions workflow triggered by a GitHub issue created through the connected GitHub interface successfully:
+
+```text
+received an owner-created issue event
+    -> started GitHub Actions without workflow_dispatch
+    -> downloaded the exact prior run artifact
+    -> verified all frozen SHA-256 digests
+    -> committed the preserved evidence to the experiment branch
+```
+
+Successful preservation run:
+
+```text
+32658108544
+```
+
+This is not Specification 017 scientific evidence. It is control-plane feasibility evidence for the user's requested next capability: allowing ADS development to launch future explicitly authorized live experiments without a repeated manual GitHub button click.
+
+A general launcher is not yet accepted. It must be designed with an allowlisted experiment registry, owner/actor checks, exact frozen source SHA, exact contract/confirmation identity, CI-gate verification, no arbitrary command execution from issue text, and auditable run linking.
 
 ---
 
@@ -294,15 +273,14 @@ This is a result-backed design/evaluation constraint for the next experiment. It
 Still deliberately open:
 
 ```text
-whether DEFER and NOT_NOW should both exist as production enums
-how explicit sequencing dependencies should become Foundation 018 production relations
-whether explicit methodological knowledge adds recommendation value beyond a strong generic reasoner
+whether DEFER and NOT_NOW should exist as production enums
+complete Foundation 018 dependency persistence schema
+whether explicit methodological knowledge adds recommendation/action value beyond a strong generic reasoner
 natural-language/project-state -> reasoning-function derivation
 open-world proposal/action discovery
 final recommendation ranking/priority model
-complete Foundation 018 production schema
-mapping future accepted recommendations to authoritative project events
-automatic execution and human approval/escalation
+mapping accepted recommendations to authoritative project objects/events
+automatic execution and human approval/escalation policy
 admissibility/risk-sensitive assurance policy
 final provider/model and reasoning-effort policy
 multi-agent/specialist recommendation architecture
@@ -310,20 +288,19 @@ backend/API, artifact/job, cloud/deployment architecture
 final frontend stack and Cockpit implementation details
 ```
 
-Do not modify or rescore Specification 015. Do not treat Specification 016's deliberately unambiguous benchmark as proof that real project states will always make sequencing explicit.
-
 ---
 
 ## Exact continuation
 
 ```text
-1. finish current result/routing reconciliation for Checkpoint 155
-2. update PR #15 with the measured live result and bounded interpretation
-3. validate the exact reconciled PR #15 head through all relevant provider-free workflows
-4. merge exactly that green PR #15 head into v1-frontend-spike
-5. branch from the promoted merge boundary
-6. design and preregister the next recommendation/action-value experiment
-7. require explicit dependency-backed sequencing for any DEFER-like frozen truth
-8. test SELECTIVE value versus GENERIC again only under the new separately frozen contract
-9. make no new live model call before that contract and implementation are provider-free validated
+1. reconcile PR #16 to the incomplete Specification 017 result
+2. create a preservation-only PR from v1-frontend-spike
+3. carry frozen Specification 017 sources, raw result, stable result ledger, Checkpoints 156-159, and current routing
+4. do not promote/copy the experimental recommendation/action implementation into the integration branch
+5. validate and merge the preservation-only PR
+6. close PR #16 without merge
+7. remove temporary one-shot preservation workflows and close their control issues
+8. design and provider-free validate a governed autonomous live-experiment launcher
+9. separately preregister the next recommendation/action-value experiment with system-owned provenance
+10. make no new recommendation/action live provider call before that new experiment contract and exact implementation head are frozen and green
 ```

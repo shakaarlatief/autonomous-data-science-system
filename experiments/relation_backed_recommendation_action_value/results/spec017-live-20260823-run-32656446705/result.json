@@ -1,0 +1,124 @@
+{
+  "accepted_snapshot_digest": "d896eecd45745ca951ea01c81f81d313a8cb49dbd54fa6f9b713f4f9c1904933",
+  "accepted_stable_revision_pairs": [
+    {
+      "revision_id": "f0341774-efbb-48a7-b3c7-94820857c7e8",
+      "stable_key": "bagging"
+    },
+    {
+      "revision_id": "f30b1304-f5c0-4070-9f21-dc27945d866f",
+      "stable_key": "class-imbalance"
+    },
+    {
+      "revision_id": "9b6b4a84-526f-4fba-9036-13ad3cc00896",
+      "stable_key": "ecdf"
+    },
+    {
+      "revision_id": "1b9604fc-6cdb-4ff5-b4de-7aafaa157d89",
+      "stable_key": "gradient-boosted-trees"
+    },
+    {
+      "revision_id": "a5035424-0d67-4dfc-9491-dc73df2601ce",
+      "stable_key": "histogram"
+    },
+    {
+      "revision_id": "cfefb760-e70a-4b1a-bb6a-3393334b70fa",
+      "stable_key": "missing-data"
+    },
+    {
+      "revision_id": "4a3189bb-b007-4efd-a2bd-04a8cc6a4d5c",
+      "stable_key": "prediction-moment"
+    },
+    {
+      "revision_id": "8b63f2cd-a1b7-4b2c-939b-5b146c5d7477",
+      "stable_key": "prediction-time-feature-eligibility"
+    },
+    {
+      "revision_id": "fefb0b89-52b5-4353-9eb0-331670c9211c",
+      "stable_key": "random-forest"
+    },
+    {
+      "revision_id": "a952de3e-d761-4cab-9318-91b2f25f3231",
+      "stable_key": "temporal-validation"
+    }
+  ],
+  "advancement_outcome": null,
+  "benchmark_id": "v1-relation-backed-recommendation-action-value-v0.1",
+  "complete_scored_design": false,
+  "context_summary": {
+    "FULL_HORIZON": {
+      "mean_context_utf8_bytes": 10772.0,
+      "observations": 12
+    },
+    "GENERIC": {
+      "mean_context_utf8_bytes": 2.0,
+      "observations": 5
+    },
+    "SELECTIVE": {
+      "mean_context_utf8_bytes": 2691.5,
+      "observations": 12
+    },
+    "SELECTIVE_FULL_RATIO": 0.24986075009283326
+  },
+  "counts": {
+    "judge_attempt_records": 36,
+    "planned_judge_outputs": 36,
+    "planned_reasoner_outputs": 36,
+    "reasoner_attempt_records": 48,
+    "scored_observations": 29,
+    "successful_judge_outputs": 29,
+    "successful_reasoner_outputs": 29
+  },
+  "environment": {
+    "judge_model": "gpt-5.6-sol",
+    "judge_reasoning_effort": "high",
+    "openai_agents_version": "0.19.4",
+    "openai_client_version": "2.54.0",
+    "python_version": "3.13.15",
+    "reasoner_reasoning_effort": "medium",
+    "requested_reasoner_model": "gpt-5.6-sol"
+  },
+  "execution_integrity_passed": true,
+  "finished_at_utc": "2026-08-23T18:10:03.392692+00:00",
+  "gate_evaluation": null,
+  "judge_plan_sha256": "0be170c8ac15551b5a61c7f0e4078b25fe5ada77b2e322d465d6e5a57827b24e",
+  "project_state_after": {
+    "prj_entity": 0,
+    "prj_finding": 0,
+    "prj_knowledge_ref": 0,
+    "prj_project": 0
+  },
+  "project_state_before": {
+    "prj_entity": 0,
+    "prj_finding": 0,
+    "prj_knowledge_ref": 0,
+    "prj_project": 0
+  },
+  "provider_attempts": {
+    "maximum": 90,
+    "used": 77
+  },
+  "reasoning_plan_sha256": "f83b8e2a5da20db1c96292099285b72b6b6a1a49e261401ba605be6e828d4f7e",
+  "source_head": "bf041f4b4a485382d0e6e5c508ad916199601ee8",
+  "specification": "017-v0.1",
+  "started_at_utc": "2026-08-23T17:56:46.729155+00:00",
+  "starting_merge_sha": "6bda0c1efcf078476859b2c2c64fb0586964899d",
+  "technical_invariants": {
+    "RBR-INV-01_fixture_valid": true,
+    "RBR-INV-02_reasoner_plan_36": true,
+    "RBR-INV-03_judge_plan_36_independent": true,
+    "RBR-INV-04_generic_zero_methodology": true,
+    "RBR-INV-05_selective_exact_sets": true,
+    "RBR-INV-06_full_exact_ten_revisions": true,
+    "RBR-INV-07_matched_task_evidence": true,
+    "RBR-INV-08_relation_backed_output_schema": true,
+    "RBR-INV-09_basis_limited_to_supplied": true,
+    "RBR-INV-10_judge_blinded": true,
+    "RBR-INV-11_retry_ceiling_90": true,
+    "RBR-INV-12_complete_fake_shape": true,
+    "RBR-INV-13_ci_no_live_credential": true,
+    "RBR-INV-14_runtime_import_boundary": true,
+    "RBR-INV-15_no_authoritative_mutation": true,
+    "RBR-INV-16_cross_platform_ci": "REQUIRES_CI_EVIDENCE"
+  }
+}

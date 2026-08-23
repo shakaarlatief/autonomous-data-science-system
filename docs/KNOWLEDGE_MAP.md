@@ -3,19 +3,19 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 155  
-**Active development branch:** `v1-disposition-semantics-diagnostic`  
-**Active PR:** #15 -> `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at failure-preservation merge `10aa3f59bedc5ee45a38f0ae05c68da901d9adff`
+**Current checkpoint:** 159  
+**Active development branch:** `v1-recommendation-action-value-relation-backed`  
+**Active PR:** #16 -> `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 016 promotion merge `6bda0c1efcf078476859b2c2c64fb0586964899d`
 
 ## Start here
 
 ```text
 README.md
-    project overview and active track
+    project overview and current evidence boundary
 
 docs/CURRENT_STATE.md
-    present boundary and exact next action
+    present state and exact continuation
 
 docs/KNOWLEDGE_MAP.md
     routing/index layer
@@ -45,12 +45,14 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-promoted integration head      10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-active diagnostic branch       v1-disposition-semantics-diagnostic
-active PR                      #15 -> v1-frontend-spike
-failed implementation PR       #13 closed without merge
-failure preservation PR        #14 merged
-main                           intentionally behind active V1 work except dispatcher exposure
+promoted integration head      6bda0c1efcf078476859b2c2c64fb0586964899d
+active experiment branch       v1-recommendation-action-value-relation-backed
+active PR                      #16 -> v1-frontend-spike
+Specification 015 PR           #13 closed without merge
+Specification 015 preservation #14 merged
+Specification 016 PR           #15 merged
+Specification 017 PR           #16 will close without implementation merge
+main                           intentionally behind V1 except control-plane workflow exposure
 ```
 
 ---
@@ -93,22 +95,25 @@ Specification 013 / Checkpoint 143
     accepted selective exact-revision MethodologicalContextPack
 
 Specification 014 / Checkpoint 146
-    first real-model selective-context value gate PASS
+    real-model selective-context gate PASS
 
-Specification 015 / Checkpoints 147-150
-    first recommendation/action-value experiment
-    frozen live outcome FAIL
+Specification 015 / Checkpoints 147-151
+    recommendation/action experiment FAIL
+    failed implementation rejected
+    negative evidence preserved
 
-Checkpoint 151 / PR #14
-    negative evidence preserved without adopting failed implementation
+Specification 016 / Checkpoints 152-155
+    dependency-backed DEFER-vs-NOT_NOW diagnostic
+    DISPOSITION_BOUNDARY_SUPPORTED
+    bounded construct constraint promoted
 
-Specification 016 / Checkpoints 152-154
-    dependency-backed DEFER-vs-NOT_NOW diagnostic preregistered,
-    implemented cross-platform, and frozen for live execution
-
-Checkpoint 155 [active]
-    Specification 016 live outcome DISPOSITION_BOUNDARY_SUPPORTED
-    result preserved and bounded promotion/reconciliation in progress
+Specification 017 / Checkpoints 156-159
+    relation-backed recommendation/action comparison
+    provider-free implementation passed
+    first live execution incomplete
+    raw evidence preserved
+    no advancement classification
+    implementation not promoted
 ```
 
 ---
@@ -135,7 +140,7 @@ current state != event history
 persisted object != derived recommendation
 ```
 
-### Methodological navigation/reusable knowledge
+### Methodological navigation and reusable knowledge
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
@@ -148,7 +153,7 @@ Navigation sequence:
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Executable path currently validated through real reasoning:
+Current accepted executable chain:
 
 ```text
 knowledge universe
@@ -158,14 +163,14 @@ knowledge universe
     -> bounded relevance selection
     -> exact selective MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> measured reasoning
+    -> measured real reasoning
 ```
 
-The first recommendation/action-value seam failed, but the immediate disposition construct problem has now been narrowed: a DEFER-like sequencing state can be separated from NOT_NOW-like absence of current justification when an exact activating dependency/trigger relation is represented explicitly. Downstream recommendation value remains unresolved.
+The recommendation/action persistence and production seam remains open.
 
 ---
 
-## Persistence, interchange, and runtime
+## Persistence, interchange, runtime, and Cockpit
 
 ```text
 D-028 + docs/specifications/001_v1_sqlite_technical_architecture.md
@@ -175,146 +180,50 @@ D-031 + docs/specifications/004_v1_reusable_knowledge_interchange.md
 D-032 + docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 ```
 
-Governed knowledge round-trip closure:
+Governed round-trip closure:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
 
-Initial runtime selection:
-
-```text
-OpenAI Agents SDK behind ADS-owned ReasoningRuntime
-validated starting package openai-agents==0.19.4
-
-direct model calls   fallback/reference
-LangGraph            possible future durability escalation
-```
-
-No final model/provider or multi-agent architecture is selected.
-
----
-
-## Project Cockpit route
-
-Promoted interaction contract:
+Project Cockpit route:
 
 ```text
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-```
-
-Key checkpoints:
-
-```text
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
-The Cockpit is the promoted primary immersive active-work model. Final frontend/chart/canvas choices and production backend/API architecture remain open.
+The Cockpit remains the promoted primary immersive active-work model. Final backend/API wiring and frontend technology choices remain open.
 
 ---
 
-## Retrieval -> Horizon route
-
-### Lexical baseline
+## Retrieval -> Horizon -> selective context route
 
 ```text
-docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
-docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
-docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
-experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
+Specification 009 / Checkpoint 135
+    lexical retrieval baseline
+
+Specification 010 / Checkpoint 137
+    dense semantic complementarity
+
+Specification 011 / Checkpoint 139
+    bounded RRF hybrid comparator
+
+Specification 012 / Checkpoint 141
+    first explained MethodologicalHorizon
+
+Specification 013 / Checkpoint 143
+    selective exact-revision MethodologicalContextPack
 ```
 
-```text
-RH-L Recall@3 = 1.00
-RH-L MRR      = 1.00
-```
-
-### Dense complementarity
-
-```text
-docs/research/017_exact_semantic_retrieval_comparator_selection.md
-docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
-docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
-```
-
-Dense recovered `class-imbalance` but lost `ecdf`, so dense-only did not replace lexical retrieval.
-
-### Hybrid comparator
-
-```text
-docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
-docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
-docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
-experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
-```
-
-```text
-RH-S Recall@3 = 1.00
-RH-S MRR      = 0.875
-```
-
-This is complementarity evidence, not permanent vector-stack selection.
-
-### Explained Horizon
-
-```text
-docs/research/019_first_methodological_horizon_application_seam.md
-docs/specifications/012_v1_first_methodological_horizon_builder.md
-docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
-experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
-```
-
-Key invariant:
+Key Horizon invariant:
 
 ```text
 known false -> INAPPLICABLE
 unknown required information -> MISSING_CONTEXT
 unknown != false
-```
-
----
-
-## Selective context route
-
-Design/freeze:
-
-```text
-docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
-docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
-```
-
-Accepted result:
-
-```text
-docs/specifications/013_v1_horizon_relevance_and_selective_context.md
-docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
-experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
-```
-
-Ten-asset methodology-only selective/full ratios:
-
-```text
-RH-C01  0.20020477
-RH-C02  0.16462054
-RH-C03  0.34635417
-RH-C04  0.28222057
-```
-
-Across the frozen cases:
-
-```text
-required stable-key coverage       1.00
-required exact-revision coverage   1.00
-irrelevant selected assets         0
-unexplained omissions              0
-```
-
-PR #11 promoted merge:
-
-```text
-fd33184fbff588c6737d77af751bc5def0e31954
 ```
 
 ---
@@ -335,33 +244,23 @@ Observed:
 ```text
 reasoner outputs        24 / 24
 judge outputs           24 / 24
-retries                 0
 SELECTIVE quality       1.000000
 FULL_HORIZON quality    1.000000
 aggregate token ratio   0.334379
 input-token reduction   66.56%
-critical regressions    none
-```
-
-PR #12 promoted merge:
-
-```text
-bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
 ```
 
 ---
 
-## Failed recommendation/action route
-
-Frozen design:
+## Specification 015: failed recommendation/action route
 
 ```text
 docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
-docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/149_specification_015_live_boundary_frozen.md
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
 Live result:
@@ -370,164 +269,140 @@ Live result:
 run                 32642733784
 reasoner outputs    36 / 36
 judge outputs       36 / 36
-retries             0
 advancement         FAIL
 ```
 
-Only `RA-G05` failed. `RA-02` exact disposition means:
-
-```text
-GENERIC        0.722222
-SELECTIVE      0.666667
-FULL_HORIZON   0.666667
-```
-
-Repeated mismatch:
-
-```text
-expected  DEFER
-observed  NOT_NOW
-```
-
-for `add-generic-bagging-baseline` and `plot-all-feature-histograms-before-shortlist`. All RA-02 semantic judge scores were `1.000000`.
-
-Preserved evidence:
-
-```text
-docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
-```
-
-Failure preservation:
-
-```text
-docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
-PR #14 merged at 10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-PR #13 closed without merge
-```
+The failed implementation was not promoted.
 
 ---
 
-## Completed disposition-semantics diagnostic route
-
-Frozen design:
+## Specification 016: dependency-backed disposition route
 
 ```text
 docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
 tests/fixtures/reasoning/disposition_semantics_v1.json
 docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
-```
-
-Provider-free implementation and pre-live freeze:
-
-```text
-experiments/disposition_semantics/harness.py
-experiments/disposition_semantics/runner.py
-tests/unit/test_disposition_semantics_harness.py
-tests/unit/test_disposition_semantics_runner.py
-tests/integration/test_disposition_semantics_vertical_slice.py
-.github/workflows/v1-disposition-semantics.yml
-
 docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/154_specification_016_live_boundary_frozen.md
-```
-
-Operational diagnostic distinction:
-
-```text
-DEFER
-    already justified action
-    + exact unresolved activating trigger
-    + becomes current next work after trigger
-    + exact defer_until_id
-
-NOT_NOW
-    no current material justification
-    + no represented activating trigger relation
-    + null defer_until_id
-```
-
-Live provenance:
-
-```text
-frozen source head   7db27fd35151c10cdb3562cdf4410fb8f4b09e8b
-workflow run         32652636943
-artifact id          9496624273
-artifact SHA-256     edbdb797b433ee93d0c7e353cf7b214c93d004794ebdc58487e54fcace056660
-```
-
-Observed:
-
-```text
-reasoner outputs                     36 / 36
-provider attempts                    36 / 45
-failed attempts                      0
-retries                              0
-aggregate exact disposition accuracy 1.000000
-all 12 variants                      3 / 3 correct
-all 6 pair sides                     3 / 3 correct
-DEFER trigger-pointer accuracy       1.000000
-NOT_NOW null-pointer correctness     1.000000
-```
-
-Frozen outcome:
-
-```text
-DISPOSITION_BOUNDARY_SUPPORTED
-```
-
-Stable result route:
-
-```text
 docs/checkpoints/155_disposition_semantics_live_gate_supported.md
 experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
-experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
 ```
 
-Historical RA-02 construct diagnostic remains:
+Live result:
 
 ```text
-add-generic-bagging-baseline
-    NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER
-
-plot-all-feature-histograms-before-shortlist
-    NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER
+run                               32652636943
+36 / 36 exact dispositions        correct
+18 / 18 expected-DEFER pointers   exact
+18 / 18 expected-NOT_NOW pointers null
+outcome                           DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
-This is not a Specification 015 rescore.
-
-Bounded supported design/evaluation constraint:
+Promoted merge:
 
 ```text
-DEFER-like sequencing
-    requires a concrete represented activating dependency/trigger
-    if it is to be deterministically distinguished from NOT_NOW-like
-    absence of current justification.
+6bda0c1efcf078476859b2c2c64fb0586964899d
 ```
 
-This is not yet a production enum, Foundation 018 relation schema, or recommendation persistence contract.
+---
+
+## Specification 017: incomplete relation-backed recommendation/action route
+
+Frozen design/history:
+
+```text
+docs/research/024_relation_backed_recommendation_action_value_design.md
+docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
+docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
+docs/checkpoints/157_relation_backed_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/158_specification_017_live_boundary_frozen.md
+```
+
+Live incomplete-result boundary:
+
+```text
+docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
+experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705/
+```
+
+Mechanical result:
+
+```text
+run                         32656446705
+frozen source head          bf041f4b4a485382d0e6e5c508ad916199601ee8
+reasoner outputs            29 / 36
+judge outputs               29 / 36
+provider attempts           77 / 90
+complete scored design      false
+execution integrity         true
+advancement outcome         none
+```
+
+Completion by condition:
+
+```text
+SELECTIVE       12 / 12
+FULL_HORIZON    12 / 12
+GENERIC          5 / 12
+```
+
+All 19 failed reasoner attempts were GENERIC `INVALID_STRUCTURED_RESPONSE` cases in which the model placed a requested reasoning-function label into `methodological_basis`. The system had supplied zero reusable knowledge revisions to GENERIC.
+
+Key newly exposed boundary:
+
+```text
+reasoning function / task profile
+    !=
+reusable knowledge stable-key provenance
+```
+
+No Specification 017 PROMOTE / SAFE / FAIL classification is assigned. The complete matched design was not obtained.
+
+---
+
+## Control-plane route: autonomous live-launch feasibility
+
+During Specification 017 artifact preservation, a temporary default-branch issue-triggered workflow was successfully activated by an issue created through the connected GitHub interface.
+
+Successful preservation workflow run:
+
+```text
+32658108544
+```
+
+It:
+
+```text
+received an owner-created issue event
+    -> downloaded artifact 9497737594
+    -> verified every extracted SHA-256 digest
+    -> committed the raw bundle to the target experiment branch
+```
+
+This is not experiment evidence. It is control-plane feasibility evidence for a future governed autonomous live-experiment launcher.
+
+A production-quality launcher must not accept arbitrary shell commands from issue text. It should use a fixed allowlisted experiment registry and verify actor/owner identity, exact frozen source SHA, frozen contract identity, required CI evidence, and launch uniqueness before provider execution.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. finish Checkpoint 155 canonical/routing reconciliation
-B. update PR #15 with the frozen live result and bounded interpretation
-C. validate the exact resulting PR #15 head under:
-       V1 disposition semantics diagnostic
-       V1 reasoning context value
-       Checkpoint metadata
-D. merge exactly that green PR #15 head into v1-frontend-spike
-E. branch from the promoted merge boundary
-F. preregister a new recommendation/action-value experiment
-G. require explicit dependency-backed sequencing for any DEFER-like frozen truth
-H. make no new live model call before the new contract and implementation are provider-free validated
+A. reconcile PR #16 to Checkpoint 159
+B. create a preservation-only branch from v1-frontend-spike
+C. carry Specification 017 frozen sources, Checkpoints 156-159, stable result, raw evidence, and current routing
+D. exclude the unpromoted experiment implementation from integration
+E. validate and merge the preservation-only PR
+F. close PR #16 without merge
+G. remove temporary one-shot preservation workflows and close their issues
+H. design/provider-free validate a governed autonomous live-experiment launcher
+I. separately preregister the next recommendation/action-value experiment with system-owned provenance
 ```
 
-Do not alter or rescore Specification 015. Do not return to retrieval/reranking/vector work without a measured downstream reason.
+Do not modify or rescore Specifications 015-017. Do not use partial Specification 017 condition scores as advancement evidence.
 
 ---
 
@@ -540,18 +415,13 @@ Do not alter or rescore Specification 015. Do not return to retrieval/reranking/
 137  dense semantic comparator preserved
 139  hybrid retrieval comparator passed
 141  first explained MethodologicalHorizon passed
-142  selective-context contract frozen
 143  selective-context gate passed and promoted
-144  reasoning-context-value contract frozen
-145  provider-free reasoning-context implementation passed
 146  real reasoning-context gate passed
-147  recommendation/action contract frozen
-148  recommendation/action provider-free gate passed
-149  recommendation/action live boundary frozen
-150  recommendation/action live gate failed
+150  first recommendation/action live gate failed
 151  failed evidence preserved without implementation promotion
-152  disposition-semantics diagnostic contract frozen
-153  disposition-semantics provider-free gate passed cross-platform
-154  Specification 016 live boundary frozen
-155  dependency-backed disposition-semantics live gate supported
+155  dependency-backed disposition live gate supported
+156  relation-backed recommendation/action contract frozen
+157  relation-backed provider-free gate passed
+158  Specification 017 live boundary frozen
+159  Specification 017 live execution incomplete; provenance boundary identified
 ```
