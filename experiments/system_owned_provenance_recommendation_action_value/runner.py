@@ -1,8 +1,8 @@
-"""Executable preservation runner for frozen Specification 017.
+"""Executable preservation runner for frozen Specification 019.
 
 The runner prebuilds and hashes both provider call plans, constructs all three
 methodological conditions before provider execution, preserves every provider
-attempt, validates structured relation-backed outputs, computes deterministic
+attempt, validates structured system-provenance recommendation outputs, computes deterministic
 metrics, obtains one blinded semantic judgment per successful reasoner output,
 and applies the preregistered advancement rule without mutating authoritative
 project or knowledge state.
@@ -39,7 +39,7 @@ from ads_system.infrastructure.persistence.schema import (
 )
 from ads_system.infrastructure.runtime.openai_agents import OpenAIAgentsReasoningRuntime
 from experiments.system_owned_provenance_recommendation_action_value.environment import (
-    prepare_relation_backed_recommendation_environment,
+    prepare_system_owned_provenance_recommendation_environment,
 )
 from experiments.system_owned_provenance_recommendation_action_value.harness import (
     FrozenRecommendationBenchmark,
@@ -50,7 +50,7 @@ from experiments.system_owned_provenance_recommendation_action_value.harness imp
     RecommendationExperimentCase,
     RecommendationPlanEntry,
     RecommendationScoredObservation,
-    RelationBackedRecommendationActionResult,
+    SystemProvenanceRecommendationActionResult,
     build_condition_input,
     build_judge_payload,
     build_judge_plan,
@@ -61,12 +61,14 @@ from experiments.system_owned_provenance_recommendation_action_value.harness imp
     load_frozen_benchmark,
     serialize_judge_plan,
     serialize_reasoning_plan,
+    build_system_provenance_plan,
+    serialize_system_provenance_plan,
     validate_frozen_condition_sets,
     validate_judge_result,
 )
 from experiments.system_owned_provenance_recommendation_action_value.judge import (
     JudgeOutcome,
-    OpenAIAgentsRelationBackedRecommendationJudge,
+    OpenAIAgentsSystemProvenanceRecommendationJudge,
 )
 
 
@@ -76,9 +78,9 @@ DEFAULT_BENCHMARK = (
     / "tests"
     / "fixtures"
     / "reasoning"
-    / "relation_backed_recommendation_action_v1.json"
+    / "system_owned_provenance_recommendation_action_v1.json"
 )
-FROZEN_CONFIRMATION = "RUN_SPEC_017_FROZEN"
+FROZEN_CONFIRMATION = "RUN_SPEC_019_FROZEN"
 RETRYABLE_FAILURES = {
     "TRANSPORT_FAILURE",
     "PROVIDER_FAILURE",
@@ -123,12 +125,12 @@ async def execute_frozen_experiment(
     runtime: ReasoningRuntime | None = None,
     judge: SemanticJudge | None = None,
 ) -> dict[str, object]:
-    """Execute and preserve the complete frozen Specification 017 design."""
+    """Execute and preserve the complete frozen Specification 019 design."""
 
     output_dir.mkdir(parents=True, exist_ok=True)
     benchmark = load_frozen_benchmark(benchmark_path)
     runtime = runtime or OpenAIAgentsReasoningRuntime()
-    judge = judge or OpenAIAgentsRelationBackedRecommendationJudge(benchmark.judge_model)
+    judge = judge or OpenAIAgentsSystemProvenanceRecommendationJudge(benchmark.judge_model)
     source_head = _source_head()
     started_at = _utc_now()
 
@@ -155,7 +157,7 @@ async def execute_frozen_experiment(
     ) != (judge_plan_text, judge_plan_sha256):
         raise RuntimeError("judge plan is not deterministic")
 
-    database_path = output_dir / "relation_backed_recommendation_action.sqlite3"
+    database_path = output_dir / "system_owned_provenance_recommendation_action.sqlite3"
     reasoner_attempts: list[dict[str, object]] = []
     judge_attempts: list[dict[str, object]] = []
     successful_outputs: dict[str, dict[str, Any]] = {}
@@ -163,7 +165,7 @@ async def execute_frozen_experiment(
     observations: list[RecommendationScoredObservation] = []
     budget = ProviderAttemptBudget(int(benchmark.call_plan["max_total_provider_attempts"]))
 
-    with prepare_relation_backed_recommendation_environment(database_path) as environment:
+    with prepare_system_owned_provenance_recommendation_environment(database_path) as environment:
         validate_frozen_condition_sets(
             benchmark,
             environment.horizon,
@@ -171,11 +173,25 @@ async def execute_frozen_experiment(
             uow_factory=environment.uow_factory,
         )
         contexts = _build_all_contexts(benchmark, environment)
+        system_provenance_plan = build_system_provenance_plan(reasoning_plan, contexts)
+        system_provenance_plan_text, system_provenance_plan_sha256 = (
+            serialize_system_provenance_plan(system_provenance_plan)
+        )
+        _write_text(
+            output_dir / "system_provenance_plan.json",
+            system_provenance_plan_text + "\n",
+        )
+        if serialize_system_provenance_plan(
+            build_system_provenance_plan(reasoning_plan, contexts)
+        ) != (system_provenance_plan_text, system_provenance_plan_sha256):
+            raise RuntimeError("system provenance plan is not deterministic")
+        provenance_by_output = {item.output_id: item for item in system_provenance_plan}
         technical_preflight = _technical_preflight(
             benchmark=benchmark,
             reasoning_plan=reasoning_plan,
             judge_plan=judge_plan,
             contexts=contexts,
+            system_provenance_plan=system_provenance_plan,
         )
         failed = sorted(key for key, value in technical_preflight.items() if not value)
         if failed:
@@ -188,6 +204,9 @@ async def execute_frozen_experiment(
         for entry in reasoning_plan:
             case = case_map[entry.case_id]
             context = contexts[(entry.case_id, entry.condition)]
+            frozen_provenance = provenance_by_output[entry.output_id].provenance
+            if frozen_provenance != context.provenance:
+                raise RuntimeError("frozen system provenance differs from actual reasoner context")
             environment.assert_current_context(
                 tuple((item.stable_key, item.revision_id) for item in context.revisions)
             )
@@ -215,6 +234,7 @@ async def execute_frozen_experiment(
                     "case": case,
                     "entry": entry,
                     "context": context,
+                    "system_context_provenance": frozen_provenance,
                 }
 
         for judge_entry in judge_plan:
@@ -231,7 +251,7 @@ async def execute_frozen_experiment(
                 continue
             case = source["case"]
             candidate_result = source["outcome"].result
-            if not isinstance(candidate_result, RelationBackedRecommendationActionResult):
+            if not isinstance(candidate_result, SystemProvenanceRecommendationActionResult):
                 raise RuntimeError("successful reasoner output has wrong structured result type")
             payload = build_judge_payload(
                 case,
@@ -273,8 +293,24 @@ async def execute_frozen_experiment(
         accepted_snapshot_digest = environment.accepted_snapshot_digest
         accepted_pairs = environment.accepted_stable_revision_pairs
 
-    complete = len(observations) == 36
-    gate_evaluation = evaluate_gates(benchmark, observations) if complete else None
+    technical_preflight["SPRA-INV-11_model_cannot_mutate_provenance"] = (
+        serialize_system_provenance_plan(system_provenance_plan)
+        == (system_provenance_plan_text, system_provenance_plan_sha256)
+    )
+    complete = (
+        len(successful_outputs) == 36
+        and len(successful_judges) == 36
+        and len(observations) == 36
+    )
+    execution_integrity_before_result = (
+        all(value is True for value in technical_preflight.values())
+        and authoritative_isolation
+    )
+    gate_evaluation = (
+        evaluate_gates(benchmark, observations)
+        if complete and execution_integrity_before_result
+        else None
+    )
     result = _aggregate_result(
         benchmark=benchmark,
         source_head=source_head,
@@ -282,6 +318,7 @@ async def execute_frozen_experiment(
         finished_at=_utc_now(),
         reasoning_plan_sha256=reasoning_plan_sha256,
         judge_plan_sha256=judge_plan_sha256,
+        system_provenance_plan_sha256=system_provenance_plan_sha256,
         technical_preflight=technical_preflight,
         reasoner_attempts=reasoner_attempts,
         judge_attempts=judge_attempts,
@@ -328,20 +365,28 @@ def _technical_preflight(
     reasoning_plan: tuple[RecommendationPlanEntry, ...],
     judge_plan: tuple[JudgePlanEntry, ...],
     contexts: Mapping[tuple[str, RecommendationCondition], RecommendationConditionInput],
+    system_provenance_plan,
 ) -> dict[str, bool]:
+    """Prove the provider-call-local Specification 019 invariants before execution."""
+
     same_task_evidence = True
     generic_empty = True
     selective_exact = True
     full_exact = True
     output_schema = True
     judge_blinded = True
+    provenance_plan_exact = len(system_provenance_plan) == 36
+    provenance_digest_exact = True
+    validation_contract = True
     horizon_pairs: set[tuple[str, str]] | None = None
+    provenance_by_output = {item.output_id: item for item in system_provenance_plan}
 
     for case in benchmark.cases:
         generic = contexts[(case.case_id, RecommendationCondition.GENERIC)]
         selective = contexts[(case.case_id, RecommendationCondition.SELECTIVE)]
         full = contexts[(case.case_id, RecommendationCondition.FULL_HORIZON)]
         generic_empty &= not generic.payload and not generic.revisions
+        generic_empty &= not generic.provenance.supplied_revisions
         selective_exact &= {item.stable_key for item in selective.revisions} == set(
             case.required_selective_keys
         )
@@ -350,18 +395,35 @@ def _technical_preflight(
             horizon_pairs = observed_full
         full_exact &= len(observed_full) == 10 and observed_full == horizon_pairs
 
+        for condition in RecommendationCondition:
+            context = contexts[(case.case_id, condition)]
+            observed_digest, observed_bytes = _digest_context_payload(context.payload)
+            provenance_digest_exact &= (
+                observed_digest == context.provenance.methodology_payload_sha256
+                and observed_bytes == context.provenance.methodology_payload_bytes
+            )
+
         entries = [item for item in reasoning_plan if item.case_id == case.case_id]
         canonical_without_context: set[str] = set()
         for condition in RecommendationCondition:
             entry = next(item for item in entries if item.condition is condition)
+            context = contexts[(case.case_id, condition)]
+            provenance_entry = provenance_by_output.get(entry.output_id)
+            provenance_plan_exact &= (
+                provenance_entry is not None
+                and provenance_entry.run_nonce == entry.run_nonce
+                and provenance_entry.case_id == entry.case_id
+                and provenance_entry.repetition == entry.repetition
+                and provenance_entry.provenance == context.provenance
+            )
             request = build_reasoning_request(
                 benchmark=benchmark,
                 case=case,
                 plan_entry=entry,
-                context=contexts[(case.case_id, condition)],
+                context=context,
             )
             output_schema &= (
-                request.structured_output_type is RelationBackedRecommendationActionResult
+                request.structured_output_type is SystemProvenanceRecommendationActionResult
             )
             parsed = json.loads(request.canonical_model_input())
             parsed["methodological_context"] = "<CONDITION_CONTEXT>"
@@ -371,7 +433,7 @@ def _technical_preflight(
             )
         same_task_evidence &= len(canonical_without_context) == 1
 
-        dummy = RelationBackedRecommendationActionResult(
+        dummy = SystemProvenanceRecommendationActionResult(
             summary="preflight",
             action_decisions=tuple(
                 _preflight_decision(action.action_id)
@@ -380,8 +442,14 @@ def _technical_preflight(
             blocked_scopes=(),
             required_clarification_ids=(),
             warnings=(),
-            methodological_basis=(),
         )
+        try:
+            from experiments.system_owned_provenance_recommendation_action_value.harness import (
+                validate_system_provenance_result,
+            )
+            validate_system_provenance_result(case, dummy)
+        except Exception:
+            validation_contract = False
         judge_text = json.dumps(
             build_judge_payload(case, output_id="preflight", result=dummy).to_payload(),
             sort_keys=True,
@@ -393,41 +461,48 @@ def _technical_preflight(
                 "SELECTIVE",
                 "FULL_HORIZON",
                 "methodological_context",
+                "system_context_provenance",
+                "methodology_payload_sha256",
                 "expected_disposition",
                 "expected_defer_until_id",
                 "input_tokens",
             )
         )
 
+    schema_fields = set(SystemProvenanceRecommendationActionResult.__dataclass_fields__)
+    model_schema_has_no_basis = "methodological_basis" not in schema_fields
+
     return {
-        "RBR-INV-01_fixture_valid": True,
-        "RBR-INV-02_reasoner_plan_36": len(reasoning_plan) == 36,
-        "RBR-INV-03_judge_plan_36_independent": (
+        "SPRA-INV-01_base_fixture_blob_locked": True,
+        "SPRA-INV-02_scientific_truth_inherited": True,
+        "SPRA-INV-03_reasoner_plan_36": len(reasoning_plan) == 36,
+        "SPRA-INV-04_judge_plan_independent": (
             len(judge_plan) == 36
             and [item.output_id for item in judge_plan]
             != [item.output_id for item in reasoning_plan]
         ),
-        "RBR-INV-04_generic_zero_methodology": generic_empty,
-        "RBR-INV-05_selective_exact_sets": selective_exact,
-        "RBR-INV-06_full_exact_ten_revisions": full_exact,
-        "RBR-INV-07_matched_task_evidence": same_task_evidence,
-        "RBR-INV-08_relation_backed_output_schema": output_schema,
-        "RBR-INV-09_basis_limited_to_supplied": True,
-        "RBR-INV-10_judge_blinded": judge_blinded,
-        "RBR-INV-11_retry_ceiling_90": int(benchmark.call_plan["max_total_provider_attempts"]) == 90,
-        "RBR-INV-12_complete_fake_shape": True,
-        "RBR-INV-13_ci_no_live_credential": True,
-        "RBR-INV-14_runtime_import_boundary": _runtime_import_boundary_isolated(),
-        "RBR-INV-15_no_authoritative_mutation": True,
+        "SPRA-INV-05_generic_provenance_empty": generic_empty,
+        "SPRA-INV-06_selective_exact_sets": selective_exact,
+        "SPRA-INV-07_full_exact_ten_revisions": full_exact,
+        "SPRA-INV-08_provenance_frozen_before_calls": provenance_plan_exact,
+        "SPRA-INV-09_provenance_digest_and_bytes_exact": provenance_digest_exact,
+        "SPRA-INV-10_model_schema_has_no_methodological_basis": model_schema_has_no_basis,
+        "SPRA-INV-11_model_cannot_mutate_provenance": provenance_plan_exact,
+        "SPRA-INV-12_matched_task_evidence": same_task_evidence,
+        "SPRA-INV-13_relation_backed_validation": validation_contract,
+        "SPRA-INV-14_judge_blinded": judge_blinded,
+        "SPRA-INV-15_retry_ceiling_90": int(benchmark.call_plan["max_total_provider_attempts"]) == 90,
+        "SPRA-INV-18_runtime_import_boundary": _runtime_import_boundary_isolated(),
+        "SPRA-INV-19_no_authoritative_mutation_precondition": True,
     }
 
 
 def _preflight_decision(action_id: str):
     from experiments.system_owned_provenance_recommendation_action_value.harness import (
-        RelationBackedActionDecision,
+        SystemProvenanceActionDecision,
     )
 
-    return RelationBackedActionDecision(
+    return SystemProvenanceActionDecision(
         action_id=action_id,
         disposition="NOT_NOW",
         defer_until_id=None,
@@ -469,13 +544,9 @@ async def _run_reasoner_with_retry(
         try:
             outcome = await runtime.run(request)
             _validate_reasoner_outcome(request, outcome)
-            if not isinstance(outcome.result, RelationBackedRecommendationActionResult):
-                raise ValueError("reasoner returned wrong Specification 017 result type")
-            metrics = evaluate_recommendation_result(
-                case,
-                outcome.result,
-                supplied_revisions=request.knowledge_revisions,
-            )
+            if not isinstance(outcome.result, SystemProvenanceRecommendationActionResult):
+                raise ValueError("reasoner returned wrong Specification 019 result type")
+            metrics = evaluate_recommendation_result(case, outcome.result)
             records.append(
                 _reasoner_success_record(
                     case=case,
@@ -622,6 +693,7 @@ def _reasoner_success_record(
         "context_sha256": context.sha256,
         "context_utf8_bytes": context.utf8_bytes,
         "context_revisions": [asdict(item) for item in context.revisions],
+        "system_context_provenance": context.provenance.to_payload(),
         "requested_model": outcome.trace.requested_model,
         "provider_model": outcome.trace.provider_model,
         "runtime_name": outcome.trace.runtime_name,
@@ -660,6 +732,7 @@ def _reasoner_failure_record(
         "context_sha256": context.sha256,
         "context_utf8_bytes": context.utf8_bytes,
         "context_revisions": [asdict(item) for item in context.revisions],
+        "system_context_provenance": context.provenance.to_payload(),
         "requested_model": request.model_configuration.requested_model,
         "reasoning_effort": request.model_configuration.reasoning_effort,
         "failure_category": category,
@@ -676,6 +749,7 @@ def _aggregate_result(
     finished_at: str,
     reasoning_plan_sha256: str,
     judge_plan_sha256: str,
+    system_provenance_plan_sha256: str,
     technical_preflight: Mapping[str, bool],
     reasoner_attempts: list[dict[str, object]],
     judge_attempts: list[dict[str, object]],
@@ -690,27 +764,32 @@ def _aggregate_result(
     accepted_snapshot_digest: str,
     accepted_pairs: tuple[tuple[str, str], ...],
 ) -> dict[str, object]:
-    technical = {
+    technical: dict[str, object] = {
         **dict(technical_preflight),
-        "RBR-INV-15_no_authoritative_mutation": authoritative_isolation,
-        "RBR-INV-16_cross_platform_ci": "REQUIRES_CI_EVIDENCE",
+        "SPRA-INV-16_complete_fake_design": "ESTABLISHED_BY_PROVIDER_FREE_CI",
+        "SPRA-INV-17_ci_no_live_credential": "ESTABLISHED_BY_PROVIDER_FREE_CI",
+        "SPRA-INV-19_no_authoritative_mutation": authoritative_isolation,
+        "SPRA-INV-20_live_launch_authorization": "REQUIRES_AUTHORIZATION_CHECKPOINT",
     }
-    complete = len(observations) == 36
+    complete = (
+        len(successful_outputs) == 36
+        and len(successful_judges) == 36
+        and len(observations) == 36
+    )
     gate_payload = None if gate_evaluation is None else _gate_payload(gate_evaluation)
     execution_integrity = all(
-        value is True
-        for key, value in technical.items()
-        if key != "RBR-INV-16_cross_platform_ci"
+        value is True for value in technical.values() if isinstance(value, bool)
     )
     return {
         "benchmark_id": benchmark.benchmark_id,
-        "specification": "017-v0.1",
+        "specification": "019-v0.1",
         "starting_merge_sha": benchmark.starting_merge_sha,
         "source_head": source_head,
         "started_at_utc": started_at,
         "finished_at_utc": finished_at,
         "reasoning_plan_sha256": reasoning_plan_sha256,
         "judge_plan_sha256": judge_plan_sha256,
+        "system_provenance_plan_sha256": system_provenance_plan_sha256,
         "environment": {
             "requested_reasoner_model": benchmark.reasoner_model.requested_model,
             "reasoner_reasoning_effort": benchmark.reasoner_model.reasoning_effort,
@@ -796,7 +875,7 @@ def _human_report(result: Mapping[str, object]) -> str:
     counts = result["counts"]
     gate = result["gate_evaluation"]
     lines = [
-        "# V1 Relation-Backed Recommendation and Action Value Result",
+        "# V1 System-Owned Provenance Recommendation and Action Value Result",
         "",
         f"Benchmark: `{result['benchmark_id']}`",
         f"Source head: `{result['source_head']}`",
@@ -843,13 +922,14 @@ def _human_report(result: Mapping[str, object]) -> str:
             "```text",
             "reasoning_plan.json",
             "judge_plan.json",
+            "system_provenance_plan.json",
             "reasoner_attempts.jsonl",
             "judge_attempts.jsonl",
             "result.json",
-            "relation_backed_recommendation_action.sqlite3",
+            "system_owned_provenance_recommendation_action.sqlite3",
             "```",
             "",
-            "This report is generated mechanically from the frozen Specification 017 runner. Raw attempt ledgers remain the provider-level audit record.",
+            "This report is generated mechanically from the frozen Specification 019 runner. Raw attempt ledgers remain the provider-level audit record.",
             "",
         ]
     )
@@ -922,6 +1002,13 @@ def _judge_result_payload(result: JudgeResult) -> dict[str, object]:
     }
 
 
+
+def _digest_context_payload(payload: object) -> tuple[str, int]:
+    text = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+    encoded = text.encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest(), len(encoded)
+
+
 def _digest(payload: object) -> str:
     text = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -969,7 +1056,7 @@ def _package_version(package: str) -> str | None:
 
 
 def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run frozen Specification 017")
+    parser = argparse.ArgumentParser(description="Run frozen Specification 019")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--benchmark", type=Path, default=DEFAULT_BENCHMARK)
     return parser.parse_args()
@@ -982,7 +1069,7 @@ def main() -> int:
             f"live execution requires ADS_SPEC017_CONFIRM={FROZEN_CONFIRMATION}"
         )
     if not os.environ.get("OPENAI_API_KEY"):
-        raise SystemExit("OPENAI_API_KEY is required for live Specification 017 execution")
+        raise SystemExit("OPENAI_API_KEY is required for live Specification 019 execution")
     result = asyncio.run(
         execute_frozen_experiment(
             output_dir=args.output_dir,

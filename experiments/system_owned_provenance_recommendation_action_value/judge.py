@@ -1,7 +1,7 @@
-"""Condition-blinded semantic judge for frozen Specification 017.
+"""Condition-blinded semantic judge for frozen Specification 019.
 
 Deterministic software evaluates exact dispositions, scope menus, clarification
-menus, defer pointers, and methodological-basis containment. The semantic judge
+menus, defer pointers, and system-owned provenance integrity. The semantic judge
 is intentionally limited to the preregistered rubric obligations that require
 interpretation of rationale and project-state consistency.
 """
@@ -36,7 +36,7 @@ class JudgeOutcome:
     provider_request_ids: tuple[str, ...]
 
 
-class OpenAIAgentsRelationBackedRecommendationJudge:
+class OpenAIAgentsSystemProvenanceRecommendationJudge:
     """No-tool OpenAI Agents implementation of the blinded semantic judge."""
 
     def __init__(
@@ -54,7 +54,7 @@ class OpenAIAgentsRelationBackedRecommendationJudge:
             observed = version(OPENAI_AGENTS_PACKAGE)
         except PackageNotFoundError as exc:
             raise RuntimeError(
-                "openai-agents is required for the live Specification 017 judge; "
+                "openai-agents is required for the live Specification 019 judge; "
                 f"expected {OPENAI_AGENTS_EXPECTED_VERSION}"
             ) from exc
         if self._require_expected_version and observed != OPENAI_AGENTS_EXPECTED_VERSION:
@@ -77,7 +77,7 @@ class OpenAIAgentsRelationBackedRecommendationJudge:
             preserve_raw_usage=True,
         )
         agent = agents.Agent(
-            name="ADS blinded relation-backed recommendation judge",
+            name="ADS blinded system-provenance recommendation judge",
             instructions=(
                 "Score only the rubric obligations supplied in the input. Do not add, "
                 "remove, merge, or reinterpret obligations. Return scores in exact rubric "
@@ -112,7 +112,7 @@ class OpenAIAgentsRelationBackedRecommendationJudge:
         final_output = result.final_output
         if not isinstance(final_output, JudgeResult):
             raise ValueError(
-                "Specification 017 judge did not return JudgeResult; "
+                "Specification 019 judge did not return JudgeResult; "
                 f"observed {type(final_output).__name__}"
             )
         raw_entries = self._raw_usage_entries(result)
@@ -187,7 +187,7 @@ class OpenAIAgentsRelationBackedRecommendationJudge:
             total_tokens=int(usage.total_tokens),
             cached_input_tokens=(int(cached_tokens) if cached_tokens is not None else None),
             reasoning_tokens=(int(reasoning_tokens) if reasoning_tokens is not None else None),
-            service_tier=OpenAIAgentsRelationBackedRecommendationJudge._service_tier(raw_entries),
+            service_tier=OpenAIAgentsSystemProvenanceRecommendationJudge._service_tier(raw_entries),
             raw_provider_usage={"responses": raw_entries},
         )
 
