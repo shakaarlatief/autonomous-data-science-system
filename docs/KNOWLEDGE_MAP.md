@@ -3,8 +3,9 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 150  
+**Current checkpoint:** 151  
 **Active development branch:** `v1-recommendation-action-failure-preservation`  
+**Active preservation PR:** #14 -> `v1-frontend-spike`  
 **Rejected experiment PR:** #13 (`v1-recommendation-action-value` -> `v1-frontend-spike`), close without merge  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`
 
@@ -49,6 +50,7 @@ accepted integration head        bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
 failed experiment branch         v1-recommendation-action-value
 failed experiment PR             #13, do not merge
 failure-preservation branch      v1-recommendation-action-failure-preservation
+failure-preservation PR          #14 -> v1-frontend-spike
 main                             intentionally behind active V1 work except dispatcher exposure
 ```
 
@@ -101,6 +103,10 @@ Specification 015 v0.1 / Checkpoints 147-150
     frozen advancement outcome FAIL
     failure localized to RA-02 DEFER-vs-NOT_NOW exact disposition calibration
     no recommendation/action seam promoted
+
+Checkpoint 151 / PR #14
+    preserve frozen negative evidence and canonical routing
+    exclude the rejected recommendation implementation
 ```
 
 ---
@@ -167,7 +173,7 @@ large reusable knowledge universe
     -> recommendation / REQUIRED-BLOCKING evidence [first gate failed; diagnostic next]
 ```
 
-Foundation 020 keeps reusable methodological knowledge distinct from project state, execution capability, and presentation. Important representation distinctions include stable asset identity versus revision identity, intrinsic kind versus reasoning function, static relation versus conditional rule, and retrieval profile versus applicability/context/semantic-check structures.
+Foundation 020 keeps reusable methodological knowledge distinct from project state, execution capability, and presentation.
 
 ---
 
@@ -263,24 +269,20 @@ RH-L Recall@3 = 1.00
 RH-L MRR      = 1.00
 ```
 
-### Dense semantic comparator
+### Dense and hybrid comparators
 
 ```text
 docs/research/017_exact_semantic_retrieval_comparator_selection.md
 docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
 docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
-```
 
-Dense retrieval recovered the lexical miss `class-imbalance` but lost `ecdf`; dense-only therefore did not replace lexical retrieval.
-
-### Complementary hybrid comparator
-
-```text
 docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
 docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
 docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
 experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
 ```
+
+Dense retrieval recovered the lexical `class-imbalance` miss but lost `ecdf`. Equal-weight RRF preserved both measured signals:
 
 ```text
 RH-S Recall@3 = 1.00
@@ -334,7 +336,7 @@ RH-C03  0.34635417
 RH-C04  0.28222057
 ```
 
-Across the four frozen cases:
+Across all cases:
 
 ```text
 required stable-key coverage       1.00
@@ -370,13 +372,6 @@ experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
 experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
 ```
 
-Frozen live source:
-
-```text
-3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
-V1 reasoning context value live / run 32635061634 / successful attempt 2
-```
-
 Observed:
 
 ```text
@@ -388,13 +383,6 @@ FULL_HORIZON quality    1.000000
 aggregate token ratio   0.334379
 input-token reduction   66.56%
 critical regressions    none
-```
-
-Context-expansion diagnostic:
-
-```text
-SELECTIVE unexpected basis mean      0.000000
-FULL_HORIZON unexpected basis mean   1.666667
 ```
 
 This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
@@ -418,29 +406,6 @@ tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/149_specification_015_live_boundary_frozen.md
-```
-
-Frozen conditions:
-
-```text
-GENERIC
-    same project/task/action envelope
-    no reusable methodological assets
-
-SELECTIVE
-    accepted Specification 013 exact-revision context
-
-FULL_HORIZON
-    all ten exact current accepted Horizon revisions
-```
-
-Frozen benchmark dispositions:
-
-```text
-BLOCKING_REQUIRED
-RECOMMENDED
-DEFER
-NOT_NOW
 ```
 
 Live execution:
@@ -488,7 +453,7 @@ add-generic-bagging-baseline
 plot-all-feature-histograms-before-shortlist
 ```
 
-All nine RA-02 outputs scored `1.000000` under the condition-blinded semantic judge. The discrepancy therefore motivates disposition-semantics/failure-attribution diagnosis but does not change the frozen FAIL.
+All nine RA-02 outputs scored `1.000000` under the condition-blinded semantic judge. The discrepancy motivates disposition-semantics/failure-attribution diagnosis but does not change the frozen FAIL.
 
 Preserved result:
 
@@ -502,13 +467,40 @@ PR #13 must close without merge. The failed implementation is not an accepted V1
 
 ---
 
+## Preservation-only failure route
+
+Checkpoint 151 and PR #14 isolate the historical/frozen negative evidence from the rejected implementation.
+
+```text
+docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
+branch  v1-recommendation-action-failure-preservation
+PR      #14 -> v1-frontend-spike
+```
+
+Pre-checkpoint preservation/routing head:
+
+```text
+d843c39a26867c70557b978ff5faf778bda5aaaa
+```
+
+validated:
+
+```text
+Checkpoint metadata            run 32644994687   PASS
+V1 reasoning context value     run 32644994598   PASS
+```
+
+The branch contains no failed recommendation application/runtime/harness implementation. Its purpose is to ensure negative evidence becomes durable project truth without accidentally promoting the mechanism that failed its gate.
+
+---
+
 ## Current exact continuation
 
 ```text
-A. validate the preservation-only Checkpoint 150 branch
-B. merge only the failure evidence/provenance into v1-frontend-spike
+A. validate the exact Checkpoint 151 / PR #14 head
+B. merge PR #14 into v1-frontend-spike only if green
 C. close PR #13 without merge
-D. branch separately from the preserved accepted integration line
+D. branch separately from the preserved integration line
 E. preregister a DEFER-vs-NOT_NOW / failure-attribution diagnostic
 F. make no new live model calls before that diagnostic contract is frozen
 G. only after diagnosis decide whether a revised recommendation/action seam deserves another value experiment
@@ -536,4 +528,5 @@ Do not return to retrieval/reranking/vector work without a measured downstream r
 148  recommendation/action provider-free implementation passed cross-platform
 149  Specification 015 reconciled live-ready boundary frozen
 150  Specification 015 live recommendation/action gate failed on exact disposition calibration
+151  failed Specification 015 evidence isolated on preservation-only accepted-line branch
 ```
