@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 155  
-**Active development branch:** `v1-disposition-semantics-diagnostic`  
-**Active PR:** #15 -> `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at failure-preservation merge `10aa3f59bedc5ee45a38f0ae05c68da901d9adff`
+**Current checkpoint:** 156  
+**Active development branch:** `v1-recommendation-action-value-relation-backed`  
+**Active PR:** #16 -> `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 016 promotion merge `6bda0c1efcf078476859b2c2c64fb0586964899d`
 
 ## Start here
 
@@ -45,11 +45,12 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-promoted integration head      10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-active diagnostic branch       v1-disposition-semantics-diagnostic
-active PR                      #15 -> v1-frontend-spike
-failed implementation PR       #13 closed without merge
+promoted integration head      6bda0c1efcf078476859b2c2c64fb0586964899d
+active experiment branch       v1-recommendation-action-value-relation-backed
+active PR                      #16 -> v1-frontend-spike
+Specification 015 failed PR    #13 closed without merge
 failure preservation PR        #14 merged
+Specification 016 PR           #15 merged
 main                           intentionally behind active V1 work except dispatcher exposure
 ```
 
@@ -102,13 +103,13 @@ Specification 015 / Checkpoints 147-150
 Checkpoint 151 / PR #14
     negative evidence preserved without adopting failed implementation
 
-Specification 016 / Checkpoints 152-154
-    dependency-backed DEFER-vs-NOT_NOW diagnostic preregistered,
-    implemented cross-platform, and frozen for live execution
+Specification 016 / Checkpoints 152-155
+    dependency-backed disposition construct frozen, implemented, run, and supported
 
-Checkpoint 155 [active]
-    Specification 016 live outcome DISPOSITION_BOUNDARY_SUPPORTED
-    result preserved and bounded promotion/reconciliation in progress
+Specification 017 / Checkpoint 156 [active]
+    second recommendation/action-value contract frozen
+    relation-backed sequencing truth
+    provider-free implementation next
 ```
 
 ---
@@ -148,7 +149,7 @@ Navigation sequence:
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Executable path currently validated through real reasoning:
+Executable path validated through real reasoning:
 
 ```text
 knowledge universe
@@ -161,7 +162,7 @@ knowledge universe
     -> measured reasoning
 ```
 
-The first recommendation/action-value seam failed, but the immediate disposition construct problem has now been narrowed: a DEFER-like sequencing state can be separated from NOT_NOW-like absence of current justification when an exact activating dependency/trigger relation is represented explicitly. Downstream recommendation value remains unresolved.
+Recommendation/action value beyond a strong generic reasoner remains unresolved and is the active empirical boundary.
 
 ---
 
@@ -255,7 +256,7 @@ RH-S Recall@3 = 1.00
 RH-S MRR      = 0.875
 ```
 
-This is complementarity evidence, not permanent vector-stack selection.
+This remains complementarity evidence, not permanent vector-stack selection.
 
 ### Explained Horizon
 
@@ -278,38 +279,15 @@ unknown != false
 
 ## Selective context route
 
-Design/freeze:
-
 ```text
 docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
-docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
-```
-
-Accepted result:
-
-```text
 docs/specifications/013_v1_horizon_relevance_and_selective_context.md
+docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
 docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
 experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
 
-Ten-asset methodology-only selective/full ratios:
-
-```text
-RH-C01  0.20020477
-RH-C02  0.16462054
-RH-C03  0.34635417
-RH-C04  0.28222057
-```
-
-Across the frozen cases:
-
-```text
-required stable-key coverage       1.00
-required exact-revision coverage   1.00
-irrelevant selected assets         0
-unexplained omissions              0
-```
+On the ten-asset Horizon, the four frozen cases selected only 2-3 exact revisions with full required stable-key and exact-revision coverage and no unexplained omissions.
 
 PR #11 promoted merge:
 
@@ -351,9 +329,9 @@ bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
 
 ---
 
-## Failed recommendation/action route
+## Failed first recommendation/action route
 
-Frozen design:
+Frozen design/result:
 
 ```text
 docs/research/022_first_recommendation_action_value_vertical_slice_design.md
@@ -362,6 +340,8 @@ tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/149_specification_015_live_boundary_frozen.md
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
 Live result:
@@ -374,30 +354,7 @@ retries             0
 advancement         FAIL
 ```
 
-Only `RA-G05` failed. `RA-02` exact disposition means:
-
-```text
-GENERIC        0.722222
-SELECTIVE      0.666667
-FULL_HORIZON   0.666667
-```
-
-Repeated mismatch:
-
-```text
-expected  DEFER
-observed  NOT_NOW
-```
-
-for `add-generic-bagging-baseline` and `plot-all-feature-histograms-before-shortlist`. All RA-02 semantic judge scores were `1.000000`.
-
-Preserved evidence:
-
-```text
-docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
-```
+Only `RA-G05` failed, concentrated on two expected `DEFER` versus observed `NOT_NOW` expansion actions in RA-02. The result remains immutable.
 
 Failure preservation:
 
@@ -409,73 +366,31 @@ PR #13 closed without merge
 
 ---
 
-## Completed disposition-semantics diagnostic route
+## Supported disposition-semantics route
 
-Frozen design:
+Frozen design and implementation:
 
 ```text
 docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
 tests/fixtures/reasoning/disposition_semantics_v1.json
 docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
-```
-
-Provider-free implementation and pre-live freeze:
-
-```text
-experiments/disposition_semantics/harness.py
-experiments/disposition_semantics/runner.py
-tests/unit/test_disposition_semantics_harness.py
-tests/unit/test_disposition_semantics_runner.py
-tests/integration/test_disposition_semantics_vertical_slice.py
-.github/workflows/v1-disposition-semantics.yml
-
 docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/154_specification_016_live_boundary_frozen.md
 ```
 
-Operational diagnostic distinction:
+Live result:
 
 ```text
-DEFER
-    already justified action
-    + exact unresolved activating trigger
-    + becomes current next work after trigger
-    + exact defer_until_id
-
-NOT_NOW
-    no current material justification
-    + no represented activating trigger relation
-    + null defer_until_id
-```
-
-Live provenance:
-
-```text
-frozen source head   7db27fd35151c10cdb3562cdf4410fb8f4b09e8b
-workflow run         32652636943
-artifact id          9496624273
-artifact SHA-256     edbdb797b433ee93d0c7e353cf7b214c93d004794ebdc58487e54fcace056660
-```
-
-Observed:
-
-```text
-reasoner outputs                     36 / 36
-provider attempts                    36 / 45
-failed attempts                      0
-retries                              0
-aggregate exact disposition accuracy 1.000000
-all 12 variants                      3 / 3 correct
-all 6 pair sides                     3 / 3 correct
-DEFER trigger-pointer accuracy       1.000000
-NOT_NOW null-pointer correctness     1.000000
-```
-
-Frozen outcome:
-
-```text
-DISPOSITION_BOUNDARY_SUPPORTED
+frozen source head                    7db27fd35151c10cdb3562cdf4410fb8f4b09e8b
+workflow run                          32652636943
+reasoner outputs                      36 / 36
+provider attempts                     36 / 45
+retries                               0
+aggregate exact disposition accuracy  1.000000
+DEFER trigger-pointer accuracy        1.000000
+NOT_NOW null-pointer correctness      1.000000
+outcome                               DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
 Stable result route:
@@ -486,48 +401,116 @@ experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
 ```
 
-Historical RA-02 construct diagnostic remains:
+Promoted merge:
 
 ```text
-add-generic-bagging-baseline
-    NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER
-
-plot-all-feature-histograms-before-shortlist
-    NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER
+6bda0c1efcf078476859b2c2c64fb0586964899d
 ```
 
-This is not a Specification 015 rescore.
-
-Bounded supported design/evaluation constraint:
+Supported bounded constraint:
 
 ```text
-DEFER-like sequencing
-    requires a concrete represented activating dependency/trigger
-    if it is to be deterministically distinguished from NOT_NOW-like
-    absence of current justification.
+DEFER-like sequencing requires a concrete represented activating dependency/trigger
+if deterministic distinction from NOT_NOW-like absence of current justification is expected.
 ```
 
-This is not yet a production enum, Foundation 018 relation schema, or recommendation persistence contract.
+This is not yet a production enum or complete Foundation 018 relation schema.
+
+---
+
+## Active relation-backed recommendation/action-value route
+
+Frozen sources:
+
+```text
+docs/research/024_relation_backed_recommendation_action_value_design.md
+docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
+docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
+```
+
+Active PR:
+
+```text
+#16 -> v1-frontend-spike
+```
+
+Conditions:
+
+```text
+GENERIC
+SELECTIVE
+FULL_HORIZON
+```
+
+Cases:
+
+```text
+RB-01  VALIDITY_GATE_AND_SEQUENCE
+RB-02  COMPACT_MODEL_SHORTLIST_AND_TUNING_SEQUENCE
+RB-03  DISTRIBUTION_EVIDENCE_BEFORE_TRANSFORMATION
+RB-04  MISSINGNESS_IMBALANCE_DECISION_SEQUENCE
+```
+
+Relation-backed action result:
+
+```text
+action_id
+    + disposition
+    + defer_until_id
+    + rationale
+```
+
+Frozen pointer invariant:
+
+```text
+DEFER -> exact supplied unresolved activating trigger
+non-DEFER -> null pointer
+```
+
+Frozen outcomes:
+
+```text
+PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+```
+
+Call plan:
+
+```text
+36 reasoner outputs
+36 blinded judge outputs
+72 planned successful provider calls
+90 maximum attempts
+seed 2026082303
+```
+
+At Checkpoint 156:
+
+```text
+implementation     not started
+provider-free gate not run
+live calls         0
+```
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. finish Checkpoint 155 canonical/routing reconciliation
-B. update PR #15 with the frozen live result and bounded interpretation
-C. validate the exact resulting PR #15 head under:
-       V1 disposition semantics diagnostic
-       V1 reasoning context value
-       Checkpoint metadata
-D. merge exactly that green PR #15 head into v1-frontend-spike
-E. branch from the promoted merge boundary
-F. preregister a new recommendation/action-value experiment
-G. require explicit dependency-backed sequencing for any DEFER-like frozen truth
-H. make no new live model call before the new contract and implementation are provider-free validated
+A. implement relation-backed result/validator
+B. implement frozen three-condition context construction
+C. implement deterministic action/scope/clarification/basis/pointer metrics
+D. implement blinded judge contract
+E. prove complete fake-runtime 36 + 36 shape
+F. add real-persistence provider-free integration coverage
+G. add ordinary Ubuntu/Windows CI without provider credentials
+H. preserve exact green implementation head
+I. only then expose/run a secret-gated live workflow
 ```
 
-Do not alter or rescore Specification 015. Do not return to retrieval/reranking/vector work without a measured downstream reason.
+Do not alter or rescore Specifications 015 or 016. Do not change Specification 017's frozen fixture or gates in response to future live results. Do not return to retrieval/reranking/vector work without a measured downstream reason.
 
 ---
 
@@ -554,4 +537,5 @@ Do not alter or rescore Specification 015. Do not return to retrieval/reranking/
 153  disposition-semantics provider-free gate passed cross-platform
 154  Specification 016 live boundary frozen
 155  dependency-backed disposition-semantics live gate supported
+156  relation-backed recommendation/action-value contract frozen
 ```
