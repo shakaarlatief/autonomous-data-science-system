@@ -1,4 +1,4 @@
-"""Provider-neutral harness for frozen Specification 017.
+"""Provider-neutral harness for frozen Specification 019.
 
 The harness owns the experiment semantics that must remain independent from the
 live provider adapter: frozen-fixture validation, deterministic three-condition
@@ -9,7 +9,7 @@ and the preregistered three-way advancement rule.
 No function in this module mutates authoritative project state. Evaluator truth
 is retained in the fixture-side case objects and is deliberately omitted from
 reasoner and judge inputs except for the semantic rubric explicitly allowed by
-Specification 017.
+Specification 019.
 """
 
 from __future__ import annotations
@@ -58,13 +58,13 @@ class RecommendationDisposition(StrEnum):
 
 
 class AdvancementOutcome(StrEnum):
-    PROMOTE = "PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM"
+    PROMOTE = "PROMOTE_SYSTEM_PROVENANCE_RECOMMENDATION_SEAM"
     SAFE_NOT_DIFFERENTIATED = "SAFE_BUT_NOT_DIFFERENTIATED"
     FAIL = "FAIL"
 
 
 @dataclass(frozen=True, slots=True)
-class RelationBackedActionDecision:
+class SystemProvenanceActionDecision:
     """One structured disposition for one supplied candidate action."""
 
     action_id: str
@@ -95,15 +95,14 @@ class RelationBackedActionDecision:
 
 
 @dataclass(frozen=True, slots=True)
-class RelationBackedRecommendationActionResult:
-    """Experiment-owned structured result for one Specification 017 call."""
+class SystemProvenanceRecommendationActionResult:
+    """Experiment-owned structured result for one Specification 019 call."""
 
     summary: str
-    action_decisions: tuple[RelationBackedActionDecision, ...]
+    action_decisions: tuple[SystemProvenanceActionDecision, ...]
     blocked_scopes: tuple[str, ...]
     required_clarification_ids: tuple[str, ...]
     warnings: tuple[str, ...]
-    methodological_basis: tuple[str, ...]
 
     def __post_init__(self) -> None:
         if not self.summary.strip():
@@ -115,7 +114,6 @@ class RelationBackedRecommendationActionResult:
             "blocked_scopes",
             "required_clarification_ids",
             "warnings",
-            "methodological_basis",
         ):
             values = getattr(self, field_name)
             if any(not value.strip() for value in values):
@@ -130,7 +128,6 @@ class RelationBackedRecommendationActionResult:
             "blocked_scopes": list(self.blocked_scopes),
             "required_clarification_ids": list(self.required_clarification_ids),
             "warnings": list(self.warnings),
-            "methodological_basis": list(self.methodological_basis),
         }
 
 
@@ -251,6 +248,24 @@ class JudgePlanEntry:
 
 
 @dataclass(frozen=True, slots=True)
+class SystemContextProvenance:
+    """System-owned exact provenance for one reasoner methodology payload."""
+
+    condition: RecommendationCondition
+    supplied_revisions: tuple[KnowledgeRevisionPointer, ...]
+    methodology_payload_sha256: str
+    methodology_payload_bytes: int
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "condition": self.condition.value,
+            "supplied_revisions": [asdict(item) for item in self.supplied_revisions],
+            "methodology_payload_sha256": self.methodology_payload_sha256,
+            "methodology_payload_bytes": self.methodology_payload_bytes,
+        }
+
+
+@dataclass(frozen=True, slots=True)
 class RecommendationConditionInput:
     condition: RecommendationCondition
     payload: Mapping[str, object]
@@ -258,6 +273,24 @@ class RecommendationConditionInput:
     utf8_bytes: int
     revisions: tuple[KnowledgeRevisionPointer, ...]
     pack: MethodologicalContextPack | None = None
+
+    @property
+    def provenance(self) -> SystemContextProvenance:
+        return SystemContextProvenance(
+            condition=self.condition,
+            supplied_revisions=self.revisions,
+            methodology_payload_sha256=self.sha256,
+            methodology_payload_bytes=self.utf8_bytes,
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class SystemProvenancePlanEntry:
+    output_id: str
+    run_nonce: str
+    case_id: str
+    repetition: int
+    provenance: SystemContextProvenance
 
 
 @dataclass(frozen=True, slots=True)
@@ -272,7 +305,6 @@ class RecommendationMetrics:
     required_clarification_false_negatives: int
     required_clarification_false_positives: int
     defer_pointer_errors: int
-    unsupported_methodological_basis_failures: int
 
 
 @dataclass(frozen=True, slots=True)
@@ -330,7 +362,6 @@ class ConditionAggregate:
     required_clarification_false_negatives: int
     required_clarification_false_positives: int
     defer_pointer_errors: int
-    unsupported_methodological_basis_failures: int
 
 
 @dataclass(frozen=True, slots=True)
@@ -382,8 +413,40 @@ def _digest_payload(payload: object) -> tuple[str, int]:
     return hashlib.sha256(encoded).hexdigest(), len(encoded)
 
 
+def _git_blob_sha(raw_bytes: bytes) -> str:
+    header = f"blob {len(raw_bytes)}\0".encode("utf-8")
+    return hashlib.sha1(header + raw_bytes).hexdigest()
+
+
 def load_frozen_benchmark(path: Path) -> FrozenRecommendationBenchmark:
-    raw = json.loads(path.read_text(encoding="utf-8"))
+    """Load the Specification 019 overlay and fail closed on base-fixture drift."""
+
+    overlay = json.loads(path.read_text(encoding="utf-8"))
+    root = Path(__file__).resolve().parents[2]
+    base_path = root / str(overlay["base_fixture"])
+    base_bytes = base_path.read_bytes()
+    observed_blob = _git_blob_sha(base_bytes)
+    expected_blob = str(overlay["base_fixture_git_blob_sha"])
+    if observed_blob != expected_blob:
+        raise ValueError(
+            "Specification 019 base fixture Git blob drifted: "
+            f"expected {expected_blob}, observed {observed_blob}"
+        )
+
+    raw = json.loads(base_bytes.decode("utf-8"))
+    raw["benchmark_id"] = str(overlay["benchmark_id"])
+    raw["starting_merge_sha"] = str(overlay["starting_integration_head"])
+    raw["randomization_seed"] = int(overlay["randomization_seed_override"])
+    raw["absolute_gate"] = dict(overlay["absolute_gate"])
+
+    delta = overlay["common_reasoner_instruction_delta"]
+    instruction = str(raw["common_reasoner_instruction"])
+    removed = str(delta["remove"])
+    if removed not in instruction:
+        raise ValueError("Specification 019 reasoner-instruction delta no longer matches base fixture")
+    instruction = instruction.replace(removed, str(delta["add"]), 1)
+    raw["common_reasoner_instruction"] = instruction
+
     cases = tuple(_load_case(item) for item in raw["cases"])
     reasoner = raw["reasoner"]
     judge = raw["judge"]
@@ -491,11 +554,11 @@ def validate_fixture_construction(
     """Mechanically enforce the preregistered benchmark construction contract."""
 
     if len(benchmark.cases) != 4:
-        raise ValueError("Specification 017 requires exactly four cases")
+        raise ValueError("Specification 019 requires exactly four cases")
     if len({case.case_id for case in benchmark.cases}) != 4:
-        raise ValueError("Specification 017 case IDs must be unique")
+        raise ValueError("Specification 019 case IDs must be unique")
     if benchmark.repetitions != 3:
-        raise ValueError("Specification 017 requires exactly three repetitions")
+        raise ValueError("Specification 019 requires exactly three repetitions")
     if raw_conditions is not None:
         observed = {str(value) for value in raw_conditions}
         expected = {item.value for item in RecommendationCondition}
@@ -579,7 +642,7 @@ def build_reasoning_plan(
                 ).hexdigest()
                 entries.append(
                     RecommendationPlanEntry(
-                        output_id=f"rbr-{opaque[:16]}",
+                        output_id=f"spra-{opaque[:16]}",
                         run_nonce=f"nonce-{opaque[16:40]}",
                         case_id=case.case_id,
                         repetition=repetition,
@@ -587,7 +650,7 @@ def build_reasoning_plan(
                     )
                 )
     if len(entries) != 36:
-        raise AssertionError("internal Specification 017 plan cardinality error")
+        raise AssertionError("internal Specification 019 plan cardinality error")
     return tuple(entries)
 
 
@@ -603,7 +666,7 @@ def build_judge_plan(
     rng.shuffle(ids)
     return tuple(
         JudgePlanEntry(
-            judge_id="rbr-judge-"
+            judge_id="spra-judge-"
             + hashlib.sha256(
                 f"{randomization_seed}|{position}|{output_id}".encode("utf-8")
             ).hexdigest()[:16],
@@ -632,6 +695,44 @@ def serialize_reasoning_plan(
 
 def serialize_judge_plan(plan: Sequence[JudgePlanEntry]) -> tuple[str, str]:
     text = _canonical_json([asdict(item) for item in plan])
+    return text, hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def build_system_provenance_plan(
+    reasoning_plan: Sequence[RecommendationPlanEntry],
+    contexts: Mapping[tuple[str, RecommendationCondition], RecommendationConditionInput],
+) -> tuple[SystemProvenancePlanEntry, ...]:
+    """Bind every planned output to immutable system-owned context provenance."""
+
+    result: list[SystemProvenancePlanEntry] = []
+    for item in reasoning_plan:
+        context = contexts[(item.case_id, item.condition)]
+        result.append(
+            SystemProvenancePlanEntry(
+                output_id=item.output_id,
+                run_nonce=item.run_nonce,
+                case_id=item.case_id,
+                repetition=item.repetition,
+                provenance=context.provenance,
+            )
+        )
+    return tuple(result)
+
+
+def serialize_system_provenance_plan(
+    plan: Sequence[SystemProvenancePlanEntry],
+) -> tuple[str, str]:
+    payload = [
+        {
+            "output_id": item.output_id,
+            "run_nonce": item.run_nonce,
+            "case_id": item.case_id,
+            "repetition": item.repetition,
+            "provenance": item.provenance.to_payload(),
+        }
+        for item in plan
+    ]
+    text = _canonical_json(payload)
     return text, hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
@@ -798,7 +899,7 @@ def build_reasoning_request(
         methodological_context_sha256=context.sha256,
         knowledge_revisions=context.revisions,
         model_configuration=benchmark.reasoner_model,
-        structured_output_type=RelationBackedRecommendationActionResult,
+        structured_output_type=SystemProvenanceRecommendationActionResult,
     )
     assert_evaluator_truth_absent(request)
     return request
@@ -820,12 +921,10 @@ def assert_evaluator_truth_absent(request: ReasoningRequest) -> None:
         raise ValueError(f"evaluator truth leaked into reasoner input: {leaked}")
 
 
-def validate_relation_backed_result(
+def validate_system_provenance_result(
     case: RecommendationExperimentCase,
-    result: RelationBackedRecommendationActionResult,
-    *,
-    supplied_revisions: tuple[KnowledgeRevisionPointer, ...],
-) -> RelationBackedRecommendationActionResult:
+    result: SystemProvenanceRecommendationActionResult,
+) -> SystemProvenanceRecommendationActionResult:
     expected_actions = set(case.candidate_action_ids)
     observed_actions = {item.action_id for item in result.action_decisions}
     missing = sorted(expected_actions - observed_actions)
@@ -857,22 +956,16 @@ def validate_relation_backed_result(
                 f"{decision.action_id} non-DEFER disposition must have null defer pointer"
             )
 
-    supplied_keys = {item.stable_key for item in supplied_revisions}
-    unsupported = sorted(set(result.methodological_basis) - supplied_keys)
-    if unsupported:
-        raise ValueError(f"unsupported methodological basis keys: {unsupported}")
     return result
 
 
 def evaluate_recommendation_result(
     case: RecommendationExperimentCase,
-    result: RelationBackedRecommendationActionResult,
-    *,
-    supplied_revisions: tuple[KnowledgeRevisionPointer, ...],
+    result: SystemProvenanceRecommendationActionResult,
 ) -> RecommendationMetrics:
     """Compute all frozen deterministic metrics from hidden evaluator truth."""
 
-    validate_relation_backed_result(case, result, supplied_revisions=supplied_revisions)
+    validate_system_provenance_result(case, result)
     expected = {item.action_id: item for item in case.candidate_actions}
     decisions = {item.action_id: item for item in result.action_decisions}
     exact = 0
@@ -915,8 +1008,6 @@ def evaluate_recommendation_result(
     predicted_scopes = set(result.blocked_scopes)
     expected_clarifications = set(case.expected_required_clarification_ids)
     predicted_clarifications = set(result.required_clarification_ids)
-    supplied_keys = {item.stable_key for item in supplied_revisions}
-
     return RecommendationMetrics(
         exact_disposition_accuracy=exact / len(case.candidate_actions),
         critical_action_omissions=critical_omissions,
@@ -932,9 +1023,6 @@ def evaluate_recommendation_result(
             predicted_clarifications - expected_clarifications
         ),
         defer_pointer_errors=pointer_errors,
-        unsupported_methodological_basis_failures=len(
-            set(result.methodological_basis) - supplied_keys
-        ),
     )
 
 
@@ -942,7 +1030,7 @@ def build_judge_payload(
     case: RecommendationExperimentCase,
     *,
     output_id: str,
-    result: RelationBackedRecommendationActionResult,
+    result: SystemProvenanceRecommendationActionResult,
 ) -> JudgePayload:
     """Construct the condition/context/usage-blinded semantic judge payload."""
 
@@ -1002,13 +1090,11 @@ def evaluate_gates(
     benchmark: FrozenRecommendationBenchmark,
     observations: Sequence[RecommendationScoredObservation],
 ) -> RecommendationGateEvaluation:
-    """Apply the preregistered absolute, relative, expansion, and value rules."""
+    """Apply the frozen Specification 019 quality, relative, expansion, and value rules."""
 
     if len(observations) != 36:
         raise ValueError(f"gate evaluation requires 36 scored observations, got {len(observations)}")
-    by_key: dict[
-        tuple[str, RecommendationCondition, int], RecommendationScoredObservation
-    ] = {}
+    by_key: dict[tuple[str, RecommendationCondition, int], RecommendationScoredObservation] = {}
     for item in observations:
         key = (item.case_id, item.condition, item.repetition)
         if key in by_key:
@@ -1031,12 +1117,8 @@ def evaluate_gates(
                 by_key[(case.case_id, condition, repetition)]
                 for repetition in range(1, benchmark.repetitions + 1)
             ]
-            exact_row[condition.value] = _mean(
-                item.metrics.exact_disposition_accuracy for item in items
-            )
-            semantic_row[condition.value] = _mean(
-                item.judge_result.normalized_score for item in items
-            )
+            exact_row[condition.value] = _mean(item.metrics.exact_disposition_accuracy for item in items)
+            semantic_row[condition.value] = _mean(item.judge_result.normalized_score for item in items)
         per_case_exact[case.case_id] = exact_row
         per_case_semantic[case.case_id] = semantic_row
 
@@ -1045,29 +1127,27 @@ def evaluate_gates(
     f = aggregate[RecommendationCondition.FULL_HORIZON]
     a = benchmark.absolute_gate
     r = benchmark.relative_gate
-
     gates: dict[str, bool] = {}
-    gates["RBR-G01"] = s.critical_action_omissions <= int(a["selective_max_critical_action_omissions"])
-    gates["RBR-G02"] = s.blocking_scope_false_negatives <= int(a["selective_max_blocking_scope_false_negatives"])
-    gates["RBR-G03"] = s.unsupported_methodological_basis_failures <= int(a["selective_max_unsupported_basis_failures"])
-    gates["RBR-G04"] = s.defer_pointer_errors <= int(a["selective_max_defer_pointer_errors"])
-    gates["RBR-G05"] = s.required_clarification_false_negatives <= int(a["selective_max_required_clarification_false_negatives"])
-    gates["RBR-G06"] = s.exact_disposition_accuracy >= float(a["selective_min_aggregate_exact_disposition_accuracy"])
-    gates["RBR-G07"] = all(
+
+    gates["SPRA-G01"] = s.critical_action_omissions <= int(a["selective_max_critical_action_omissions"])
+    gates["SPRA-G02"] = s.blocking_scope_false_negatives <= int(a["selective_max_blocking_scope_false_negatives"])
+    gates["SPRA-G03"] = s.defer_pointer_errors <= int(a["selective_max_defer_pointer_errors"])
+    gates["SPRA-G04"] = s.required_clarification_false_negatives <= int(a["selective_max_required_clarification_false_negatives"])
+    gates["SPRA-G05"] = s.exact_disposition_accuracy >= float(a["selective_min_aggregate_exact_disposition_accuracy"])
+    gates["SPRA-G06"] = all(
         per_case_exact[case.case_id][RecommendationCondition.SELECTIVE.value]
         >= float(a["selective_min_per_case_exact_disposition_accuracy"])
         for case in benchmark.cases
     )
-    gates["RBR-G08"] = s.semantic_score >= float(a["selective_min_aggregate_semantic_score"])
-    gates["RBR-G09"] = all(
+    gates["SPRA-G07"] = s.semantic_score >= float(a["selective_min_aggregate_semantic_score"])
+    gates["SPRA-G08"] = all(
         per_case_semantic[case.case_id][RecommendationCondition.SELECTIVE.value]
         >= float(a["selective_min_per_case_semantic_score"])
         for case in benchmark.cases
     )
 
-    gates["RBR-G10"] = (
-        s.exact_disposition_accuracy
-        >= g.exact_disposition_accuracy + float(r["selective_minus_generic_aggregate_exact_accuracy_floor"])
+    gates["SPRA-G09"] = (
+        s.exact_disposition_accuracy >= g.exact_disposition_accuracy + float(r["selective_minus_generic_aggregate_exact_accuracy_floor"])
         and all(
             per_case_exact[case.case_id][RecommendationCondition.SELECTIVE.value]
             >= per_case_exact[case.case_id][RecommendationCondition.GENERIC.value]
@@ -1075,9 +1155,8 @@ def evaluate_gates(
             for case in benchmark.cases
         )
     )
-    gates["RBR-G11"] = (
-        s.exact_disposition_accuracy
-        >= f.exact_disposition_accuracy + float(r["selective_minus_full_aggregate_exact_accuracy_floor"])
+    gates["SPRA-G10"] = (
+        s.exact_disposition_accuracy >= f.exact_disposition_accuracy + float(r["selective_minus_full_aggregate_exact_accuracy_floor"])
         and all(
             per_case_exact[case.case_id][RecommendationCondition.SELECTIVE.value]
             >= per_case_exact[case.case_id][RecommendationCondition.FULL_HORIZON.value]
@@ -1085,7 +1164,7 @@ def evaluate_gates(
             for case in benchmark.cases
         )
     )
-    gates["RBR-G12"] = (
+    gates["SPRA-G11"] = (
         s.semantic_score >= g.semantic_score + float(r["selective_minus_generic_aggregate_semantic_floor"])
         and all(
             per_case_semantic[case.case_id][RecommendationCondition.SELECTIVE.value]
@@ -1094,7 +1173,7 @@ def evaluate_gates(
             for case in benchmark.cases
         )
     )
-    gates["RBR-G13"] = (
+    gates["SPRA-G12"] = (
         s.semantic_score >= f.semantic_score + float(r["selective_minus_full_aggregate_semantic_floor"])
         and all(
             per_case_semantic[case.case_id][RecommendationCondition.SELECTIVE.value]
@@ -1103,26 +1182,20 @@ def evaluate_gates(
             for case in benchmark.cases
         )
     )
-    gates["RBR-G14"] = s.critical_action_omissions <= g.critical_action_omissions
-    gates["RBR-G15"] = s.blocking_scope_false_negatives <= g.blocking_scope_false_negatives
-    gates["RBR-G16"] = s.under_recommendations <= g.under_recommendations
-    gates["RBR-G17"] = (
-        s.required_clarification_false_negatives
-        <= g.required_clarification_false_negatives
-    )
-    gates["RBR-G18"] = s.defer_pointer_errors <= g.defer_pointer_errors
+    gates["SPRA-G13"] = s.critical_action_omissions <= g.critical_action_omissions
+    gates["SPRA-G14"] = s.blocking_scope_false_negatives <= g.blocking_scope_false_negatives
+    gates["SPRA-G15"] = s.under_recommendations <= g.under_recommendations
+    gates["SPRA-G16"] = s.required_clarification_false_negatives <= g.required_clarification_false_negatives
+    gates["SPRA-G17"] = s.defer_pointer_errors <= g.defer_pointer_errors
 
-    gates["RBR-G19"] = s.unnecessary_recommended_cost <= f.unnecessary_recommended_cost
-    gates["RBR-G20"] = s.over_recommendations <= f.over_recommendations
-    gates["RBR-G21"] = s.blocking_scope_false_positives <= f.blocking_scope_false_positives
-    gates["RBR-G22"] = (
-        s.required_clarification_false_positives
-        <= f.required_clarification_false_positives
-    )
+    gates["SPRA-G18"] = s.unnecessary_recommended_cost <= f.unnecessary_recommended_cost
+    gates["SPRA-G19"] = s.over_recommendations <= f.over_recommendations
+    gates["SPRA-G20"] = s.blocking_scope_false_positives <= f.blocking_scope_false_positives
+    gates["SPRA-G21"] = s.required_clarification_false_positives <= f.required_clarification_false_positives
 
-    absolute_passed = all(gates[f"RBR-G{number:02d}"] for number in range(1, 10))
-    relative_passed = all(gates[f"RBR-G{number:02d}"] for number in range(10, 19))
-    expansion_passed = all(gates[f"RBR-G{number:02d}"] for number in range(19, 23))
+    absolute_passed = all(gates[f"SPRA-G{number:02d}"] for number in range(1, 9))
+    relative_passed = all(gates[f"SPRA-G{number:02d}"] for number in range(9, 18))
+    expansion_passed = all(gates[f"SPRA-G{number:02d}"] for number in range(18, 22))
 
     value_signals: list[str] = []
     if s.exact_disposition_accuracy >= g.exact_disposition_accuracy + 0.05:
@@ -1186,7 +1259,6 @@ def _aggregate(observations: Sequence[RecommendationScoredObservation]) -> Condi
         required_clarification_false_negatives=sum(item.metrics.required_clarification_false_negatives for item in observations),
         required_clarification_false_positives=sum(item.metrics.required_clarification_false_positives for item in observations),
         defer_pointer_errors=sum(item.metrics.defer_pointer_errors for item in observations),
-        unsupported_methodological_basis_failures=sum(item.metrics.unsupported_methodological_basis_failures for item in observations),
     )
 
 
