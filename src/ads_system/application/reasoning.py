@@ -3,11 +3,16 @@
 The objects in this module deliberately describe ADS semantics rather than any
 provider or agent-framework API. Infrastructure adapters translate these
 objects to and from concrete runtime implementations.
+
+The runtime request supports a caller-supplied structured dataclass type while
+keeping ``ReasoningContextValueResult`` as the default. This is deliberately a
+provider-neutral capability: application and experiment code can request a
+bounded structured result without importing concrete runtime SDK types.
 """
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
 import hashlib
 import json
 from types import MappingProxyType
@@ -86,7 +91,14 @@ class ReasoningContextValueResult:
 
 @dataclass(frozen=True, slots=True)
 class ReasoningRequest:
-    """Complete authoritative input for one stateless reasoning call."""
+    """Complete authoritative input for one stateless reasoning call.
+
+    ``structured_output_type`` is an ADS-facing Python type requested by the
+    caller. Infrastructure adapters may use it to configure a provider's
+    structured-output mechanism, but provider/framework types never enter this
+    request model. The default preserves the already-promoted Specification 014
+    request behavior.
+    """
 
     run_id: str
     run_nonce: str
@@ -97,6 +109,7 @@ class ReasoningRequest:
     methodological_context_sha256: str
     knowledge_revisions: tuple[KnowledgeRevisionPointer, ...]
     model_configuration: ReasoningModelConfiguration
+    structured_output_type: type[Any] = ReasoningContextValueResult
 
     def __post_init__(self) -> None:
         if not self.run_id.strip():
@@ -115,6 +128,8 @@ class ReasoningRequest:
             raise ValueError(
                 "methodological_context_sha256 must be a SHA-256 hex digest"
             ) from exc
+        if not isinstance(self.structured_output_type, type):
+            raise ValueError("structured_output_type must be a Python type")
 
         keys = [item.stable_key for item in self.knowledge_revisions]
         if len(keys) != len(set(keys)):
@@ -129,6 +144,15 @@ class ReasoningRequest:
             self,
             "methodological_context_payload",
             MappingProxyType(dict(self.methodological_context_payload)),
+        )
+
+    @property
+    def structured_output_schema_id(self) -> str:
+        """Stable code identity of the requested ADS structured output type."""
+
+        return (
+            f"{self.structured_output_type.__module__}."
+            f"{self.structured_output_type.__qualname__}"
         )
 
     def canonical_model_input(self) -> str:
@@ -148,7 +172,7 @@ class ReasoningRequest:
         )
 
     def semantic_digest(self) -> str:
-        payload = {
+        payload: dict[str, object] = {
             "run_id": self.run_id,
             "system_instruction": self.system_instruction,
             "model_input": self.canonical_model_input(),
@@ -156,6 +180,11 @@ class ReasoningRequest:
             "knowledge_revisions": [asdict(item) for item in self.knowledge_revisions],
             "model_configuration": asdict(self.model_configuration),
         }
+        # Preserve the accepted Specification 014 digest contract for the
+        # existing default output family. Non-default structured schemas are a
+        # material request dimension and therefore enter the digest explicitly.
+        if self.structured_output_type is not ReasoningContextValueResult:
+            payload["structured_output_schema_id"] = self.structured_output_schema_id
         canonical = json.dumps(
             payload,
             sort_keys=True,
@@ -213,7 +242,7 @@ class ReasoningTrace:
 class ReasoningOutcome:
     """Completed ADS reasoning result normalized from any runtime provider."""
 
-    result: ReasoningContextValueResult
+    result: Any
     usage: ReasoningUsage
     trace: ReasoningTrace
     latency_seconds: float

@@ -1,0 +1,84 @@
+name: V1 disposition semantics diagnostic
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [v1-disposition-semantics-diagnostic]
+    paths:
+      - src/ads_system/application/reasoning.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/runtime/**
+      - experiments/disposition_semantics/**
+      - tests/fixtures/reasoning/disposition_semantics_v1.json
+      - tests/fixtures/reasoning/recommendation_action_v1.json
+      - tests/unit/test_reasoning.py
+      - tests/unit/test_disposition_semantics_harness.py
+      - tests/unit/test_disposition_semantics_runner.py
+      - tests/integration/test_disposition_semantics_vertical_slice.py
+      - docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+      - docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
+      - docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+      - .github/workflows/v1-disposition-semantics.yml
+      - .github/workflows/v1-disposition-semantics-live.yml
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - src/ads_system/application/reasoning.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/runtime/**
+      - experiments/disposition_semantics/**
+      - tests/fixtures/reasoning/disposition_semantics_v1.json
+      - tests/fixtures/reasoning/recommendation_action_v1.json
+      - tests/unit/test_reasoning.py
+      - tests/unit/test_disposition_semantics_harness.py
+      - tests/unit/test_disposition_semantics_runner.py
+      - tests/integration/test_disposition_semantics_vertical_slice.py
+      - docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+      - docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
+      - docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+      - .github/workflows/v1-disposition-semantics.yml
+      - .github/workflows/v1-disposition-semantics-live.yml
+
+permissions:
+  contents: read
+
+jobs:
+  provider-free-diagnostic:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify live provider credential is absent
+        shell: bash
+        run: |
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            echo "Ordinary disposition-semantics CI must not receive OPENAI_API_KEY."
+            exit 1
+          fi
+      - name: Run frozen provider-free disposition diagnostic gates
+        run: >-
+          uv run --python 3.13 --locked python -m pytest
+          tests/unit/test_reasoning.py
+          tests/unit/test_disposition_semantics_harness.py
+          tests/unit/test_disposition_semantics_runner.py
+          tests/integration/test_disposition_semantics_vertical_slice.py
+          -q
+      - name: Run existing V1 Python regression suite
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q
