@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 147  
+**Checkpoint:** 148  
 **Date:** 2026-08-23  
 **Active development branch:** `v1-recommendation-action-value`  
 **Active promotion PR:** #13 into `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
-**Development stage:** Prototype V0 complete; bounded V1 now connects governed methodological knowledge, an explained Horizon, selective exact-revision context, and an ADS-owned reasoning runtime to the first frozen recommendation/action-value experiment.  
+**Development stage:** Prototype V0 complete; bounded V1 now has a frozen recommendation/action-value contract and a complete provider-free implementation that passes cross-platform before the first live recommendation experiment.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** implement Specification 015 provider-free only, preserving the frozen GENERIC / SELECTIVE / FULL_HORIZON recommendation-action design, exact deterministic evaluator, bounded action menus, and no-authoritative-mutation boundary before any new live model call.
+**Immediate project priority:** validate the exact pre-live Specification 015 head with the secret-gated live workflow armed but unexecuted, preserve that boundary, then execute the unchanged frozen 72-call plan once and preserve the result before any tuning.
 
 ## Active ChatGPT development context
 
@@ -84,13 +84,9 @@ No final provider/model, multi-agent architecture, production semantic retrieval
 
 ---
 
-## Specification 015 recommendation/action contract is frozen
+## Specification 015 contract and provider-free implementation
 
-Research 022, Specification 015 v0.1, `recommendation_action_v1.json`, and Checkpoint 147 preregister the first downstream recommendation/action experiment before implementation or live calls.
-
-Frozen question:
-
-> Given the same project microstate, explicit task profile, candidate action menu, model/runtime configuration, and evaluation rubric, does the accepted ADS methodological path help a strong reasoner choose and calibrate the right methodological actions, preserve blocking dependencies, and avoid unnecessary work relative to strong simpler controls?
+Research 022, Specification 015 v0.1, `recommendation_action_v1.json`, and Checkpoint 147 freeze the first downstream recommendation/action experiment.
 
 Frozen conditions:
 
@@ -104,7 +100,6 @@ SELECTIVE
 
 FULL_HORIZON
     all ten exact current accepted Horizon revisions
-    same compact reasoning projection
 ```
 
 Benchmark-only dispositions:
@@ -116,18 +111,9 @@ DEFER
 NOT_NOW
 ```
 
-The distinction is explicit: `BLOCKING_REQUIRED` is tied to a named validity/dependency scope and is not merely a stronger recommendation.
+`BLOCKING_REQUIRED` is tied to a named validity/dependency scope and is not merely a stronger recommendation.
 
-Frozen cases:
-
-```text
-RA-01 VALIDITY_GATE
-RA-02 MODEL_CHOICE
-RA-03 EVIDENCE_PLAN
-RA-04 MISSINGNESS_IMBALANCE
-```
-
-Frozen design:
+Frozen plan:
 
 ```text
 4 cases
@@ -146,7 +132,7 @@ exact disposition accuracy
 critical action omissions
 under-recommendations
 over-recommendations
-unnecessary recommended cost units
+unnecessary recommended cost
 blocking-scope false negatives / positives
 required-clarification false negatives
 basis-provenance failures
@@ -154,7 +140,7 @@ basis-provenance failures
 
 The blinded semantic judge is secondary for rationale/dependency correctness.
 
-Advancement is explicitly three-way:
+Advancement remains exactly:
 
 ```text
 PROMOTE_BOUNDED_RECOMMENDATION_SEAM
@@ -162,7 +148,53 @@ SAFE_BUT_NOT_DIFFERENTIATED
 FAIL
 ```
 
-A promotion claim requires all safety/non-regression/expansion gates plus at least one preregistered positive value signal. A three-way ceiling result must not be relabeled as added system value after the fact.
+A promotion claim requires all safety/non-regression/expansion gates plus at least one preregistered positive value signal.
+
+Checkpoint 148 records the complete provider-free implementation gate at implementation head:
+
+```text
+6ccfd15d194a4205b2f554268ccad05fbd38edda
+```
+
+Cross-platform evidence:
+
+```text
+V1 recommendation action value
+run 32640518712
+
+Ubuntu   12 dedicated passed; full suite 63 passed, 2 skipped
+Windows  12 dedicated passed; full suite 63 passed, 2 skipped
+```
+
+The two skips are the existing PostgreSQL-dependent tests without `ADS_TEST_POSTGRES_URL`.
+
+The complete fake-runtime shape executes 36 reasoner + 36 blinded judge observations and deliberately produces a perfect three-way ceiling. The evaluator correctly returns `SAFE_BUT_NOT_DIFFERENTIATED`, proving that the advancement machinery does not manufacture a value claim when all conditions are equal.
+
+The provider-free runner also verifies:
+
+```text
+GENERIC       no reusable methodological assets
+SELECTIVE     exact accepted 2-3 revision sets
+FULL_HORIZON  exact ten-revision Horizon
+reasoner      evaluator truth absent from input
+judge         treatment/evaluator truth blinded
+authority     reusable-knowledge state unchanged
+project state prj_project/prj_entity/prj_finding/prj_knowledge_ref unchanged
+```
+
+The explicit live workflow now exists at:
+
+```text
+.github/workflows/v1-recommendation-action-value-live.yml
+```
+
+It is manual `workflow_dispatch` only, requires branch `v1-recommendation-action-value`, repository secret `OPENAI_API_KEY`, and literal confirmation:
+
+```text
+RUN_SPEC_015_FROZEN
+```
+
+It has not been executed yet.
 
 ---
 
@@ -193,15 +225,13 @@ Do not return to retrieval/relevance tuning merely because more tuning is possib
 ## Exact continuation
 
 ```text
-1. implement ADS-owned RecommendationActionResult / disposition types provider-free
-2. implement the exact deterministic evaluator
-3. implement GENERIC / SELECTIVE / FULL_HORIZON condition construction
-4. implement deterministic reasoner/judge plans and blinded semantic-judge contracts
-5. add fake-runtime unit/integration coverage for the complete 36 + 36 observation shape
-6. add ordinary Ubuntu/Windows provider-free workflow coverage with no live API key
-7. validate the exact implementation head
-8. only then establish the explicit secret-gated live boundary
-9. preserve the live result before any treatment or threshold change
+1. validate the exact reconciled pre-live head with Checkpoint metadata and the dedicated Ubuntu/Windows recommendation/action workflow
+2. preserve that exact pre-live source head and run evidence in the next checkpoint
+3. keep Specification 015, fixture, model, prompt, action menus, rubric, gates, repetitions, and retry policy unchanged
+4. expose the frozen live workflow on the default branch only as the manual dispatcher surface
+5. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
+6. preserve the complete uploaded raw/result bundle before any tuning
+7. classify the result exactly as PROMOTE_BOUNDED_RECOMMENDATION_SEAM, SAFE_BUT_NOT_DIFFERENTIATED, or FAIL
 ```
 
 No live Specification 015 reasoner or judge call has occurred.
@@ -213,4 +243,6 @@ docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+.github/workflows/v1-recommendation-action-value-live.yml
 ```
