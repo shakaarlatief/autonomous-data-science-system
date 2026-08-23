@@ -1,14 +1,14 @@
 # Current State
 
-**Checkpoint:** 150  
+**Checkpoint:** 151  
 **Date:** 2026-08-23  
 **Active development branch:** `v1-recommendation-action-failure-preservation`  
-**Active preservation PR:** pending into `v1-frontend-spike`  
+**Active preservation PR:** #14 into `v1-frontend-spike`  
 **Rejected experiment PR:** #13 (`v1-recommendation-action-value` -> `v1-frontend-spike`), to close without merge  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
-**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam through Specification 014 and a preserved failed first recommendation/action-value experiment under Specification 015.  
+**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam through Specification 014 and a preserved failed first recommendation/action-value experiment under Specification 015. Checkpoint 151 now isolates that negative evidence from the rejected implementation on a preservation-only branch.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** preserve the Specification 015 failure on the accepted integration line without merging the failed implementation, then preregister a separate `DEFER` versus `NOT_NOW` disposition-semantics/failure-attribution diagnostic before any new live model call.
+**Immediate project priority:** validate the exact Checkpoint 151 preservation head, merge PR #14 only if green, close PR #13 without merge, then preregister a separate `DEFER` versus `NOT_NOW` disposition-semantics/failure-attribution diagnostic before any new live model call.
 
 ## Active ChatGPT development context
 
@@ -135,14 +135,6 @@ artifact id      9494161645
 artifact SHA-256 30229c8a7f7a00d4c170ba382dcf1817964ede04f61427c057b27d1ac7a78408
 ```
 
-Durable evidence:
-
-```text
-experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
-docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-```
-
 Frozen advancement result:
 
 ```text
@@ -188,9 +180,9 @@ unnecessary recommended cost    0
 clarification false negatives   0
 ```
 
-This does not change the frozen `FAIL`. It does localize the next question: whether the measured miss reflects disposition semantics/benchmark truth versus genuine reasoner calibration.
+This does not change the frozen `FAIL`. It localizes the next question to disposition semantics/benchmark truth versus genuine reasoner calibration.
 
-SELECTIVE also retained descriptive context economy versus FULL_HORIZON:
+Descriptive context economy also remained visible:
 
 ```text
 mean reasoner input tokens
@@ -200,7 +192,49 @@ ratio           0.443880
 reduction       55.61%
 ```
 
-That result is consistent with Specification 014 but does not rescue the failed recommendation gate.
+That observation is consistent with Specification 014 but does not rescue the failed recommendation gate.
+
+Primary preserved evidence:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
+```
+
+---
+
+## Checkpoint 151 preservation-only boundary
+
+PR #14 starts from the accepted Specification 014 integration head rather than from PR #13's failed implementation branch.
+
+The final pre-checkpoint preservation/routing head:
+
+```text
+d843c39a26867c70557b978ff5faf778bda5aaaa
+```
+
+passed:
+
+```text
+Checkpoint metadata
+    run 32644994687
+    PASS
+
+V1 reasoning context value
+    run 32644994598
+    PASS
+```
+
+The preservation diff carries frozen research/specification/fixture/checkpoint/result evidence and canonical routing only. It deliberately excludes the failed recommendation application/runtime/harness implementation from PR #13.
+
+`docs/MAJOR_CHANGES.md` was compacted as a navigation/history aid while retaining the major project milestones and adding the Specification 014 pass / Specification 015 fail transition. Detailed historical authority remains in the original foundations, decisions, specifications, checkpoints, experiment reports, and Git history.
 
 ---
 
@@ -218,9 +252,9 @@ final recommendation ranking or priority policy
 final provider/model selection
 ```
 
-PR #13 must therefore close without merging the failed implementation into `v1-frontend-spike`.
+PR #13 must close without merging the failed implementation into `v1-frontend-spike`.
 
-The failure itself is durable project evidence and should be preserved on the accepted integration line through a preservation-only branch/PR containing the frozen research/specification/fixture/checkpoints/result bundle, but not the failed recommendation implementation.
+The failure itself is durable project evidence and is being preserved separately through PR #14.
 
 ---
 
@@ -253,25 +287,17 @@ Do not repair Specification 015 in place and do not reinterpret its frozen resul
 ## Exact continuation
 
 ```text
-1. reconcile README / KNOWLEDGE_MAP / OPEN_QUESTIONS / MAJOR_CHANGES around Checkpoint 150
-2. validate the preservation-only branch under normal provider-free CI
-3. merge only that preservation record into v1-frontend-spike
-4. close PR #13 without merge
-5. create a separate diagnostic branch from the newly preserved integration boundary
-6. preregister a bounded DEFER-vs-NOT_NOW / failure-attribution diagnostic before new live calls
-7. test semantic separability independently from SELECTIVE-vs-control value
-8. only after diagnosis decide whether a revised recommendation/action seam deserves another value experiment
+1. validate the exact Checkpoint 151 / PR #14 head under normal provider-free CI
+2. merge PR #14 into v1-frontend-spike only if that exact head is green
+3. close PR #13 without merge
+4. create a separate diagnostic branch from the preserved integration head
+5. preregister a bounded DEFER-vs-NOT_NOW / failure-attribution diagnostic before new live calls
+6. test semantic separability independently from SELECTIVE-vs-control value
+7. only after diagnosis decide whether a revised recommendation/action seam deserves another value experiment
 ```
 
-Primary active sources:
+Primary active checkpoint:
 
 ```text
-docs/research/022_first_recommendation_action_value_vertical_slice_design.md
-docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-tests/fixtures/reasoning/recommendation_action_v1.json
-docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
-docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/149_specification_015_live_boundary_frozen.md
-docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
 ```
