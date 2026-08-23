@@ -7,11 +7,14 @@ objects to and from concrete runtime implementations.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass
+from enum import Enum
 import hashlib
 import json
 from types import MappingProxyType
 from typing import Any, Mapping
+
+from ads_system.application.recommendation import RecommendationActionResult
 
 
 @dataclass(frozen=True, slots=True)
@@ -84,6 +87,13 @@ class ReasoningContextValueResult:
         }
 
 
+class ReasoningOutputKind(str, Enum):
+    """ADS-owned structured result family requested from a reasoning runtime."""
+
+    CONTEXT_VALUE = "CONTEXT_VALUE"
+    RECOMMENDATION_ACTION = "RECOMMENDATION_ACTION"
+
+
 @dataclass(frozen=True, slots=True)
 class ReasoningRequest:
     """Complete authoritative input for one stateless reasoning call."""
@@ -97,6 +107,8 @@ class ReasoningRequest:
     methodological_context_sha256: str
     knowledge_revisions: tuple[KnowledgeRevisionPointer, ...]
     model_configuration: ReasoningModelConfiguration
+    task_payload: Mapping[str, object] | None = None
+    structured_output_kind: ReasoningOutputKind = ReasoningOutputKind.CONTEXT_VALUE
 
     def __post_init__(self) -> None:
         if not self.run_id.strip():
@@ -116,6 +128,15 @@ class ReasoningRequest:
                 "methodological_context_sha256 must be a SHA-256 hex digest"
             ) from exc
 
+        if not isinstance(self.structured_output_kind, ReasoningOutputKind):
+            try:
+                normalized_kind = ReasoningOutputKind(self.structured_output_kind)
+            except (TypeError, ValueError) as exc:
+                raise ValueError(
+                    f"unsupported structured_output_kind: {self.structured_output_kind!r}"
+                ) from exc
+            object.__setattr__(self, "structured_output_kind", normalized_kind)
+
         keys = [item.stable_key for item in self.knowledge_revisions]
         if len(keys) != len(set(keys)):
             raise ValueError("knowledge_revisions must contain unique stable keys")
@@ -130,16 +151,30 @@ class ReasoningRequest:
             "methodological_context_payload",
             MappingProxyType(dict(self.methodological_context_payload)),
         )
+        if self.task_payload is not None:
+            object.__setattr__(
+                self,
+                "task_payload",
+                MappingProxyType(dict(self.task_payload)),
+            )
 
     def canonical_model_input(self) -> str:
-        """Return deterministic condition-neutral input for the runtime adapter."""
+        """Return deterministic condition-neutral input for the runtime adapter.
 
-        payload = {
+        ``task_payload`` is optional so the already-promoted Specification 014
+        envelope remains byte-compatible when no structured task-specific menu
+        is required. Specification 015 uses this field for the candidate action,
+        blocked-scope, and clarification menus shared by all three conditions.
+        """
+
+        payload: dict[str, object] = {
             "experiment_run_nonce": self.run_nonce,
             "user_task": self.user_task,
             "project_evidence": dict(self.project_evidence),
-            "methodological_context": dict(self.methodological_context_payload),
         }
+        if self.task_payload is not None:
+            payload["task_payload"] = dict(self.task_payload)
+        payload["methodological_context"] = dict(self.methodological_context_payload)
         return json.dumps(
             payload,
             sort_keys=True,
@@ -155,6 +190,7 @@ class ReasoningRequest:
             "context_sha256": self.methodological_context_sha256,
             "knowledge_revisions": [asdict(item) for item in self.knowledge_revisions],
             "model_configuration": asdict(self.model_configuration),
+            "structured_output_kind": self.structured_output_kind.value,
         }
         canonical = json.dumps(
             payload,
@@ -209,11 +245,14 @@ class ReasoningTrace:
     provider_request_ids: tuple[str, ...] = ()
 
 
+StructuredReasoningResult = ReasoningContextValueResult | RecommendationActionResult
+
+
 @dataclass(frozen=True, slots=True)
 class ReasoningOutcome:
     """Completed ADS reasoning result normalized from any runtime provider."""
 
-    result: ReasoningContextValueResult
+    result: StructuredReasoningResult
     usage: ReasoningUsage
     trace: ReasoningTrace
     latency_seconds: float
@@ -224,7 +263,7 @@ class ReasoningOutcome:
 
 
 def validate_methodological_basis(
-    result: ReasoningContextValueResult,
+    result: StructuredReasoningResult,
     supplied_revisions: tuple[KnowledgeRevisionPointer, ...],
 ) -> None:
     """Reject model references to methodological knowledge outside supplied context."""
