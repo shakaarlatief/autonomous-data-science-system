@@ -23,14 +23,14 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            152
+checkpoint            154
 active branch         v1-disposition-semantics-diagnostic
 active PR             #15 -> v1-frontend-spike
 promoted V1 head      10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-current boundary      Specification 016 diagnostic frozen before implementation/live calls
+current boundary      Specification 016 provider-free gate passed; exact live-ready boundary frozen
 ```
 
-The main progression is now:
+The current progression is:
 
 ```text
 Prototype V0
@@ -46,10 +46,15 @@ Specification 014
 Specification 015
     first recommendation/action-value experiment
     frozen result FAIL
+    failed implementation rejected
+    negative evidence preserved separately
 
 Specification 016 [active]
-    isolate whether DEFER vs NOT_NOW is operationally separable
-    before another recommendation-value experiment
+    DEFER-vs-NOT_NOW construct-validity diagnostic
+    preregistered before implementation
+    provider-free implementation green on Ubuntu and Windows
+    secret-gated live boundary frozen
+    no live Specification 016 call yet
 ```
 
 For exact continuation, start with:
@@ -58,14 +63,15 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/154_specification_016_live_boundary_frozen.md
 ```
 
 ---
 
 ## Durable post-V0 constraint
 
-Prototype V0 strongly falsified the current P0 design.
+Prototype V0 strongly falsified the current P0 design. The broader ADS vision survived, but the original orchestration machinery did not earn its complexity.
 
 The strongest scaling lesson remains:
 
@@ -75,9 +81,9 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-The broader ADS vision survived. What did not survive was carrying large always-on project/methodological state, narrow path-sensitive activation, generic recursive reopening, and full frontier machinery into every reasoning step.
+Do not restore large always-on project/methodological context, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
 
-Primary V0 evidence:
+Primary evidence:
 
 ```text
 docs/experiments/prototype_v0/FINAL_RESULTS.md
@@ -99,7 +105,7 @@ EVENTS
 VIEWS
 ```
 
-with important separations including:
+including:
 
 ```text
 Investigation != Run
@@ -123,7 +129,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The accepted bounded scaling path currently reaches through real reasoning:
+The accepted bounded path now reaches through real reasoning:
 
 ```text
 large reusable methodological knowledge universe
@@ -136,7 +142,7 @@ large reusable methodological knowledge universe
     -> measured real reasoning
 ```
 
-The next transition into recommendation/action semantics remains unresolved after Specification 015.
+The transition from reasoning to recommendation/action semantics remains unresolved after Specification 015 and is the active diagnostic boundary.
 
 Primary foundations:
 
@@ -161,9 +167,7 @@ D-030
     pyproject.toml + uv + committed uv.lock + uv_build
 
 D-031
-    JSON + JSON Schema Draft 2020-12
-    semantic validation
-    deterministic governed reusable-knowledge interchange
+    deterministic governed JSON / JSON Schema knowledge interchange
 
 D-032
     OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
@@ -174,11 +178,11 @@ Specification 008
 
 The governed reusable-knowledge persistence/interchange seam is closed across SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127.
 
-The Project Cockpit remains the promoted primary immersive V1 active-work model. Final frontend/chart/canvas libraries, visual identity, semantic zoom, auto-layout, minimap, final stage taxonomy, and production backend/API architecture remain open.
+The Project Cockpit remains the promoted primary immersive active-work model. Final frontend/chart/canvas choices, visual identity, semantic zoom, auto-layout, minimap, final stage taxonomy, and production backend/API architecture remain open.
 
 ---
 
-## Retrieval and selective-context evidence
+## Retrieval, Horizon, and selective-context evidence
 
 The first bounded methodological-navigation program progressed through:
 
@@ -198,7 +202,7 @@ Specification 012 / Checkpoint 141
     unknown != false
 
 Specification 013 / Checkpoint 143
-    first accepted selective exact-revision MethodologicalContextPack
+    accepted selective exact-revision MethodologicalContextPack
 ```
 
 On a deliberately wide ten-asset Horizon, Specification 013 selected only 2-3 exact revisions per case and reduced methodology-only context by approximately 65% to 84% while preserving required revision coverage.
@@ -208,8 +212,6 @@ On a deliberately wide ten-asset Horizon, Specification 013 selected only 2-3 ex
 ## Accepted real-model reasoning-context seam
 
 Specification 014 / Checkpoint 146 compared the accepted SELECTIVE pack with a compact FULL_HORIZON control under identical task evidence and model/runtime treatment.
-
-Observed:
 
 ```text
 24 reasoner outputs
@@ -241,15 +243,7 @@ experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
 
 ## Failed first recommendation/action-value experiment
 
-Specification 015 tested:
-
-```text
-GENERIC
-SELECTIVE
-FULL_HORIZON
-```
-
-on four frozen project microstates with actions classified as:
+Specification 015 tested GENERIC, SELECTIVE, and FULL_HORIZON on four frozen project microstates using:
 
 ```text
 BLOCKING_REQUIRED
@@ -268,13 +262,9 @@ provider attempts     72
 retries               0
 ```
 
-but the frozen advancement outcome was:
+but the frozen advancement outcome was **FAIL**.
 
-```text
-FAIL
-```
-
-Fourteen of fifteen gates passed. The sole failure was `RA-G05`, because `RA-02 MODEL_CHOICE` SELECTIVE exact disposition accuracy was `0.666667` rather than at least `0.80`.
+Fourteen of fifteen gates passed. The sole failed gate was `RA-G05`, because `RA-02 MODEL_CHOICE` SELECTIVE exact disposition accuracy was `0.666667` rather than at least `0.80`.
 
 The repeated mismatch was:
 
@@ -285,9 +275,7 @@ observed  NOT_NOW
 
 for two noncritical expansion actions. SELECTIVE and FULL_HORIZON behaved identically, GENERIC almost identically, and every RA-02 semantic judge output scored `1.000000`.
 
-The result is therefore preserved as a genuine failed gate rather than repaired after observation.
-
-PR #13 containing the failed implementation was closed without merge. The exact negative evidence was preserved separately through PR #14 and merged into `v1-frontend-spike` at:
+The result remains a genuine failed gate. PR #13 containing the failed implementation was closed without merge. The negative evidence was preserved separately through PR #14 and merged into `v1-frontend-spike` at:
 
 ```text
 10aa3f59bedc5ee45a38f0ae05c68da901d9adff
@@ -306,11 +294,9 @@ experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 
 ## Active diagnostic: DEFER versus NOT_NOW
 
-Specification 016 is intentionally **not** another GENERIC-vs-SELECTIVE value test.
+Specification 016 is deliberately not another GENERIC-vs-SELECTIVE value test. It first asks whether the exact-label boundary that failed Specification 015 can be made operational enough to evaluate reliably.
 
-It first asks whether the failed exact-label boundary can be made operational enough to evaluate at all.
-
-Frozen diagnostic semantics:
+Experimental semantics:
 
 ```text
 DEFER
@@ -333,18 +319,19 @@ Frozen benchmark:
 3 repetitions per variant
 36 planned successful reasoner calls
 45 maximum provider attempts
+randomization seed 2026082302
 ```
 
-No methodological assets, retrieval, Horizon, SELECTIVE treatment, semantic judge, tools, or project mutation participate.
+No methodological assets, retrieval, Horizon, SELECTIVE treatment, semantic judge, tools, or authoritative project mutation participate.
 
 Hard gates require:
 
 ```text
 aggregate exact disposition accuracy >= 0.95
-every variant majority-correct
+every variant >= 2/3 correct
 every pair correct on both contrastive sides
-all 18 expected-DEFER trigger pointers exact
-all 18 expected-NOT_NOW pointers null
+all expected-DEFER trigger pointers exact
+all expected-NOT_NOW pointers null
 ```
 
 Frozen outcomes:
@@ -355,7 +342,40 @@ DISPOSITION_BOUNDARY_NOT_SUPPORTED
 INCOMPLETE
 ```
 
-A pass would only show that the stronger relational distinction is representable and learnable on deliberately unambiguous cases. A failure would mean the taxonomy should be collapsed/redesigned before another recommendation-value comparison.
+### Provider-free implementation result
+
+Checkpoint 153 records the exact implementation head:
+
+```text
+6e7af25fd96d79673a59845e1c608c752970f658
+```
+
+Cross-platform workflow `32646969810` passed:
+
+```text
+Ubuntu targeted       15 passed
+Windows targeted      15 passed
+Ubuntu full suite     62 passed, 2 skipped
+Windows full suite    62 passed, 2 skipped
+```
+
+The same head also passed Checkpoint metadata and the existing V1 reasoning-context regression workflow.
+
+The provider-free historical audit found that the two RA-02 expected-DEFER actions from Specification 015 do not satisfy the stronger Specification 016 construction rule for an unambiguous dependency-backed DEFER example. That is diagnostic evidence only and does not rescore Specification 015.
+
+### Live boundary
+
+Checkpoint 154 freezes the secret-gated live workflow:
+
+```text
+.github/workflows/v1-disposition-semantics-live.yml
+manual confirmation: RUN_SPEC_016_FROZEN
+branch: v1-disposition-semantics-diagnostic
+```
+
+No Specification 016 live provider call has occurred.
+
+A pass would show only that this stronger dependency-backed distinction is representable and reliably classifiable on deliberately unambiguous cases. A failure would mean the taxonomy should be collapsed or redesigned before another recommendation-value comparison.
 
 Primary active sources:
 
@@ -364,23 +384,22 @@ docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
 tests/fixtures/reasoning/disposition_semantics_v1.json
 docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/154_specification_016_live_boundary_frozen.md
 ```
-
-No Specification 016 live model call has occurred.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. implement the experiment-only result/validator
-2. implement provider-free contrastive fixture and historical-admissibility audit
-3. implement deterministic call plan, raw attempt ledger, and gate evaluator
-4. prove the full 36-output fake-runtime shape
-5. add dedicated ordinary CI without provider credentials
-6. preserve and validate the exact implementation head
-7. only then expose an explicit secret-gated live workflow
-8. make no new live call before that pre-live checkpoint is green
+1. validate the exact final PR #15 head under ordinary provider-free CI
+2. require V1 disposition semantics diagnostic, V1 reasoning context value, and Checkpoint metadata to pass
+3. after that exact head is green, make no further experiment-branch commits
+4. copy only the identical live workflow to main for workflow_dispatch visibility
+5. manually run V1 disposition semantics live from v1-disposition-semantics-diagnostic
+6. enter RUN_SPEC_016_FROZEN
+7. preserve the complete live artifact before interpretation or design changes
 ```
 
 Do not modify Specification 015 in place. Do not change Specification 016's fixture, definitions, thresholds, repetitions, randomization, retry policy, or concrete experiment treatment after live results are observed.
