@@ -1,0 +1,802 @@
+from pathlib import Path
+import re
+
+
+def read(path: str) -> str:
+    return Path(path).read_text(encoding="utf-8")
+
+
+def write(path: str, text: str) -> None:
+    Path(path).write_text(text.rstrip() + "\n", encoding="utf-8")
+
+
+def replace_section(text: str, start: str, end: str, replacement: str) -> str:
+    pattern = re.compile(rf"(?ms)^{re.escape(start)}\n.*?(?=^{re.escape(end)}\n)")
+    if not pattern.search(text):
+        raise RuntimeError(f"section not found: {start!r} -> {end!r}")
+    return pattern.sub(replacement.rstrip() + "\n\n", text, count=1)
+
+
+# Specification 014: preserve the frozen body and promote only the result-backed seam.
+path = "docs/specifications/014_v1_reasoning_context_value_vertical_slice.md"
+text = read(path)
+text = text.replace("**Version:** 0.1  ", "**Version:** 1.0  ", 1)
+text = text.replace("**Date:** 2026-08-22  ", "**Date:** 2026-08-23  ", 1)
+text = text.replace(
+    "**Status:** Frozen bounded implementation/evaluation contract before reasoning-runtime implementation and live model calls  ",
+    "**Status:** Accepted bounded V1 reasoning-context-value seam after the frozen live gate passed  ",
+    1,
+)
+text = text.replace(
+    "**Authority:** Governs the first reasoning-context-value implementation and live experiment until its result is preserved. It does not select the final LLM provider/model, final context budget, final semantic relevance mechanism, recommendation policy, or multi-agent architecture.  ",
+    "**Authority:** Accepted for the first bounded real-reasoning seam validated by Checkpoint 146. The frozen v0.1 treatment and gates below remain the historical evaluation contract. This v1.0 promotion accepts the tested selective-context + ADS-owned ReasoningRuntime boundary, not a final LLM provider/model, universal context budget, general semantic relevance mechanism, recommendation policy, or multi-agent architecture.  ",
+    1,
+)
+if "## 22. Accepted live result and promoted bounded seam" not in text:
+    text += """
+
+---
+
+## 22. Accepted live result and promoted bounded seam
+
+The frozen live experiment was executed from exact source head:
+
+```text
+3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+```
+
+Workflow evidence:
+
+```text
+V1 reasoning context value live
+run 32635061634
+successful workflow attempt 2
+```
+
+The first workflow attempt stopped before provider calls because the required repository secret was absent. The unchanged workflow was rerun after the secret was configured. No frozen treatment, rubric, threshold, repetition, randomization, or retry-policy value changed.
+
+Observed completion:
+
+```text
+24 / 24 reasoner outputs
+24 / 24 blinded judge outputs
+48 / 48 planned successful provider calls
+48 provider attempts used
+0 retries
+overall frozen gate PASS
+```
+
+Quality result:
+
+```text
+aggregate SELECTIVE quality     1.000000
+aggregate FULL_HORIZON quality  1.000000
+all four per-case differences   0.000000
+critical-obligation regressions none
+unsupported basis failures      none
+```
+
+Provider input-token result:
+
+```text
+case    SELECTIVE mean   FULL mean    S/F ratio    reduction
+RV-01       911.33       3039.00      0.299879       70.01%
+RV-02       786.67       3015.00      0.260918       73.91%
+RV-03      1258.00       3027.33      0.415547       58.45%
+RV-04      1096.00       3036.67      0.360922       63.91%
+aggregate  1013.00       3029.50      0.334379       66.56%
+```
+
+Every matched pair satisfied `SELECTIVE input_tokens < FULL_HORIZON input_tokens`.
+
+The diagnostic unexpected-methodological-basis count was `0.0` per SELECTIVE output and `1.666667` per FULL_HORIZON output. Both conditions reached the frozen quality ceiling, so this supports measurable methodological expansion under fuller context without establishing general distraction or quality harm.
+
+Accepted v1.0 seam:
+
+```text
+explained MethodologicalHorizon
+    -> accepted selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRequest / ReasoningOutcome / usage / trace contracts
+    -> replaceable ReasoningRuntime port
+    -> OpenAI Agents SDK no-tool infrastructure adapter for the current V1 runtime decision
+```
+
+This result provides the first real-model downstream evidence for the post-V0 distinction:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Complete evidence:
+
+```text
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+```
+
+The result does not establish formal statistical non-inferiority, a final provider/model, `max_assets = 3` as a universal budget, explicit reasoning functions as a complete general relevance solution, universal harm from full-Horizon context, or a final recommendation / REQUIRED-BLOCKING policy.
+
+The next justified slice is a harder project-level recommendation/action experiment in which recommendation strength, omission cost, unnecessary methodological expansion, and downstream consequences can become observable. It must be separately designed and preregistered before new live calls.
+"""
+write(path, text)
+
+
+# CURRENT_STATE is intentionally concise and present-tense.
+write(
+    "docs/CURRENT_STATE.md",
+    """# Current State
+
+**Checkpoint:** 146  
+**Date:** 2026-08-23  
+**Active development branch:** `v1-reasoning-context-value`  
+**Active promotion PR:** #12 into `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`  
+**Development stage:** Prototype V0 complete; bounded V1 now has real-model evidence for the chain from governed methodological knowledge through explained Horizon, selective exact-revision context, and an ADS-owned reasoning runtime seam.  
+**Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
+**Immediate project priority:** validate the exact post-result reconciliation head, merge exactly that green PR #12 head into `v1-frontend-spike`, then design and preregister the next harder project-level recommendation/action slice before new live model calls.
+
+## Active ChatGPT development context
+
+```text
+Design session: 04
+ChatGPT project: Autonomous Data Science System
+Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
+```
+
+Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails active V1 work.
+
+---
+
+## Durable post-V0 constraint
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Do not restore P0's large always-on context/frontier, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
+
+The current methodological scaling path is:
+
+```text
+large reusable knowledge universe
+    -> retrieval
+    -> bounded explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> bounded task-specific relevance selection
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> reasoning / recommendation / action evidence
+```
+
+---
+
+## Accepted V1 boundaries already promoted
+
+```text
+D-028 + Specification 001
+    SQLite-centered local-first operational architecture
+
+D-029 + Specification 002 v1.1
+    SQLAlchemy Core 2.0 + Alembic 1.x
+
+D-030 + Specification 003
+    pyproject.toml + uv + committed uv.lock + uv_build
+
+D-031 + Specification 004
+    deterministic governed reusable-knowledge interchange
+
+Specification 008
+    promoted Project Cockpit interaction architecture
+
+D-032 / Checkpoint 133
+    OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
+
+Specification 012 v1.0 / Checkpoint 141
+    first explained MethodologicalHorizon
+
+Specification 013 v1.0 / Checkpoint 143
+    first accepted selective MethodologicalContextPack seam
+```
+
+No final LLM provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or recommendation/REQUIRED-BLOCKING policy is selected.
+
+---
+
+## Specification 014 live gate passed
+
+Frozen source head:
+
+```text
+3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+```
+
+Live evidence:
+
+```text
+workflow    V1 reasoning context value live
+run         32635061634
+attempt     2
+reasoner    24 / 24 successful
+judge       24 / 24 successful
+retries     0
+overall     PASS
+```
+
+The first workflow attempt failed before provider calls because the repository secret was absent. Attempt 2 used the unchanged preregistered treatment.
+
+Quality:
+
+```text
+aggregate SELECTIVE      1.000000
+aggregate FULL_HORIZON   1.000000
+all four per-case deltas 0.000000
+critical regressions     none
+```
+
+Provider input-token burden:
+
+```text
+RV-01 selective/full ratio  0.299879
+RV-02 selective/full ratio  0.260918
+RV-03 selective/full ratio  0.415547
+RV-04 selective/full ratio  0.360922
+aggregate ratio              0.334379
+aggregate reduction          66.56%
+matched-pair failures        none
+```
+
+Diagnostic methodological expansion:
+
+```text
+SELECTIVE unexpected basis mean      0.000000
+FULL_HORIZON unexpected basis mean   1.666667
+```
+
+Both conditions reached the frozen semantic ceiling, so the supported conclusion is quality preservation plus substantial token reduction, not proof that full context generally harms reasoning.
+
+Specification 014 is therefore promoted to bounded accepted v1.0. The production-facing ADS-owned `ReasoningRuntime` request/outcome/usage/trace seam and no-tool OpenAI Agents adapter used in the gate earn continuation under D-032. `gpt-5.6-sol` at medium reasoning effort remains experiment evidence, not a final model decision.
+
+Primary evidence:
+
+```text
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+```
+
+---
+
+## Current non-selections
+
+Still deliberately open:
+
+```text
+final provider/model
+final reasoning effort / cost-quality policy
+natural-language or project-state -> reasoning-function/task-profile derivation
+general semantic relevance mechanism
+final Horizon/context budgets
+production embedding/fusion/reranking/vector infrastructure
+recommendation strength and RECOMMENDED -> REQUIRED/BLOCKING policy
+human approval/action policy
+multi-agent/specialist architecture
+complete production project-object schema
+backend/API, artifact/job, cloud/deployment architecture
+final frontend stack and Cockpit implementation details
+```
+
+Do not return to retrieval/relevance tuning merely because more tuning is possible. Add complexity only when downstream evidence exposes a concrete deficiency.
+
+---
+
+## Exact continuation
+
+```text
+1. finish live-result canonical/routing reconciliation and PR #12 result summary
+2. validate the exact reconciliation head with checkpoint metadata, V1 reasoning-context Ubuntu/Windows, selective-context, and Horizon regressions
+3. merge exactly that green PR #12 head into v1-frontend-spike
+4. create the next experiment branch from the promoted merge
+5. design the harder recommendation/action slice
+6. preregister its tasks, obligations, controls, model/runtime treatment, metrics, and advancement rule before new live calls
+```
+
+The next experiment should make recommendation strength and downstream consequence observable. It should be capable of exposing both harmful omission and unnecessary methodological expansion rather than repeating the now-passed bounded context-compression question.
+""",
+)
+
+
+# README: update only current/result-facing sections while preserving architecture/history.
+path = "README.md"
+text = read(path)
+text = replace_section(
+    text,
+    "## Current development stage",
+    "## Prototype V0 result and durable constraint",
+    """## Current development stage
+
+**Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
+
+Current execution state:
+
+```text
+checkpoint            146
+active branch         v1-reasoning-context-value
+active PR             #12 -> v1-frontend-spike
+promoted V1 head      fd33184fbff588c6737d77af751bc5def0e31954
+current boundary      Specification 014 live gate passed; promotion reconciliation
+```
+
+The first real-model selective-context value experiment is complete and preserved. SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate frozen quality, while SELECTIVE used `0.334379` of FULL_HORIZON provider input tokens in aggregate, a `66.56%` reduction, with no matched-pair token failures or critical-obligation regressions.
+
+The immediate task is to validate the exact reconciled PR #12 head, merge that green head into `v1-frontend-spike`, and then preregister a harder recommendation/action slice before new live calls.
+
+For exact continuation, start with:
+
+```text
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+```
+""",
+)
+text = replace_section(
+    text,
+    "## Active experiment: selective context versus compact full-Horizon reasoning",
+    "## Exact continuation",
+    """## Accepted first real reasoning-context-value seam
+
+Specification 014 v1.0 / Checkpoint 146 preserve the first downstream real-model test of the accepted selective `MethodologicalContextPack` against a compact full-Horizon control under the same task evidence and model/runtime configuration.
+
+Frozen result:
+
+```text
+24 / 24 reasoner outputs
+24 / 24 blinded judge outputs
+0 retries
+
+aggregate quality
+    SELECTIVE      1.000000
+    FULL_HORIZON   1.000000
+
+aggregate provider input tokens
+    SELECTIVE mean 1013.00
+    FULL mean      3029.50
+    ratio          0.334379
+    reduction      66.56%
+```
+
+Every matched pair used fewer SELECTIVE input tokens. No critical-obligation regression or unsupported methodological-basis reference occurred.
+
+A diagnostic difference did appear: SELECTIVE produced zero unexpected methodological-basis keys, while FULL_HORIZON averaged `1.666667` unexpected keys per output, concentrated in RV-01 and RV-04. Since both conditions still reached the quality ceiling, this is evidence of methodological expansion rather than proof of general distraction or quality harm.
+
+This is the first real-model downstream evidence supporting:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Accepted continuation:
+
+```text
+explained MethodologicalHorizon
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+```
+
+Primary evidence:
+
+```text
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+```
+
+The result does not select a final provider/model, universal context budget, general relevance solution, or recommendation/REQUIRED-BLOCKING policy.
+""",
+)
+text = replace_section(
+    text,
+    "## Exact continuation",
+    "## Repository role",
+    """## Exact continuation
+
+```text
+1. validate the exact post-result reconciliation head
+2. merge exactly that green PR #12 head into v1-frontend-spike
+3. branch from the promoted merge
+4. design and preregister a harder project-level recommendation/action slice
+5. make recommendation strength, important omission, unnecessary expansion, and downstream consequence measurable
+6. make no new live model calls before that next contract is frozen
+```
+
+Do not return to retrieval or selector tuning without a measured downstream reason. Do not promote `gpt-5.6-sol`, `max_assets = 3`, or the current reasoning-function task profile into universal project decisions from this bounded result.
+""",
+)
+write(path, text)
+
+
+# KNOWLEDGE_MAP: route to the passed real-reasoning result and next boundary.
+path = "docs/KNOWLEDGE_MAP.md"
+text = read(path)
+text = text.replace("**Last reviewed:** 2026-08-22", "**Last reviewed:** 2026-08-23", 1)
+text = text.replace("**Current checkpoint:** 145", "**Current checkpoint:** 146", 1)
+text = replace_section(
+    text,
+    "## Current project stage",
+    "## Core system and product boundary",
+    """## Current project stage
+
+Prototype V0 is complete with final classification:
+
+> **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**
+
+Durable post-V0 constraint:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Current V1 progression:
+
+```text
+Foundations 018-020
+    object/state model, methodological navigation, reusable knowledge
+
+D-028 through D-031 / Checkpoint 127
+    local-first persistence and governed knowledge interchange
+
+Specification 008 / Checkpoints 126 and 130
+    promoted Project Cockpit interaction architecture
+
+D-032 / Checkpoint 133
+    OpenAI Agents SDK behind ADS-owned ReasoningRuntime
+
+Checkpoints 135 -> 137 -> 139 -> 141
+    lexical retrieval -> dense complementarity -> hybrid comparator -> explained Horizon
+
+Specification 013 v1.0 / Checkpoint 143
+    accepted selective exact-revision MethodologicalContextPack
+
+Specification 014 v1.0 / Checkpoint 146
+    first real-model selective-context value gate PASS
+    quality 1.000000 vs 1.000000
+    aggregate provider input-token ratio 0.334379
+    66.56% input-token reduction
+```
+""",
+)
+text = text.replace(
+    "    -> real reasoning evidence [active]",
+    "    -> real reasoning evidence [first bounded gate passed]\n    -> harder recommendation/action evidence [next]",
+    1,
+)
+text = replace_section(
+    text,
+    "## Active reasoning-context-value vertical slice",
+    "## Current exact continuation",
+    """## Accepted reasoning-context-value vertical slice
+
+Design/freeze:
+
+```text
+docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
+docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
+```
+
+Accepted contract/result:
+
+```text
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
+```
+
+Frozen live source:
+
+```text
+3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+V1 reasoning context value live / run 32635061634 / successful attempt 2
+```
+
+Observed:
+
+```text
+reasoner outputs        24 / 24
+judge outputs           24 / 24
+retries                 0
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+aggregate token ratio   0.334379
+input-token reduction   66.56%
+critical regressions    none
+```
+
+Context-expansion diagnostic:
+
+```text
+SELECTIVE unexpected basis mean      0.000000
+FULL_HORIZON unexpected basis mean   1.666667
+```
+
+This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
+""",
+)
+text = replace_section(
+    text,
+    "## Current exact continuation",
+    "## Recent continuity checkpoints",
+    """## Current exact continuation
+
+```text
+A. validate exact post-result reconciliation head
+B. merge exactly that green PR #12 head into v1-frontend-spike
+C. create the next branch from the promoted merge
+D. design/preregister a harder project-level recommendation/action slice
+E. do not make new live calls before the next frozen contract exists
+```
+
+The next slice should test recommendation strength and project-level consequences, including whether an omitted concern creates a visible failure and whether unnecessary methodological expansion creates measurable cost. Retrieval/relevance tuning is not the next default action.
+""",
+)
+text = text.replace(
+    "145  provider-free reasoning-context-value implementation passed cross-platform",
+    "145  provider-free reasoning-context-value implementation passed cross-platform\n146  first real reasoning-context-value gate passed and promotion authorized",
+    1,
+)
+write(path, text)
+
+
+# OPEN_QUESTIONS: advance only questions directly changed by the live result.
+path = "docs/OPEN_QUESTIONS.md"
+text = read(path)
+text = text.replace("**Last reconciled:** 2026-08-22", "**Last reconciled:** 2026-08-23", 1)
+text = re.sub(
+    r"(?m)^\*\*Reconciliation context:\*\*.*$",
+    "**Reconciliation context:** Prototype V0 is complete; the post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, and deterministic selective-context seam are established. Specification 014 v1.0 / Checkpoint 146 now add the first real-model downstream evidence: SELECTIVE preserved every frozen semantic obligation at the same 1.000000 aggregate quality as FULL_HORIZON while using 0.334379 of its provider input tokens in aggregate. The immediate unresolved boundary is no longer context-value compression itself; it is harder project-level recommendation/action quality, recommendation strength and REQUIRED/BLOCKING transitions, task-profile derivation, and broader scaling/generalization.",
+    text,
+    count=1,
+)
+text = replace_section(
+    text,
+    "### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?",
+    "### Q-006. How should relevant investigations be activated?",
+    """### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
+
+**Status:** Substantially advanced through the first real-model selective-context gate; broader generalization remains open
+
+Accepted bounded path:
+
+```text
+large reusable knowledge universe
+    -> retrieval
+    -> explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> bounded task-specific relevance selection
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> flexible LLM reasoning
+```
+
+Specification 014 v1.0 / Checkpoint 146 provide the first direct downstream evidence. Under the frozen four-case comparison, SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate semantic quality while SELECTIVE used an aggregate input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regressions and no unexpected SELECTIVE methodological-basis keys.
+
+This supports selective methodological context as a real-reasoning V1 seam. Still open are natural-language/project-state task interpretation, behavior on harder and heterogeneous project tasks, when richer semantic/LLM relevance becomes necessary, open-world discovery of concerns absent from explicit knowledge, final budget policy, and how reasoning should become recommendation/action.
+""",
+)
+text = replace_section(
+    text,
+    "### Q-037. How should project state activate reusable knowledge and reasoning?",
+    "### Q-038. How should reusable knowledge quality and evolution be governed?",
+    """### Q-037. How should project state activate reusable knowledge and reasoning?
+
+**Status:** Structurally and downstream advanced; production task-profile derivation remains open
+
+The first executable path now has bounded evidence through real model reasoning:
+
+```text
+project-relevant retrieval
+    -> bounded explained MethodologicalHorizon
+    -> explicit applicability/context checks
+    -> explicit reasoning-function task profile
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> measured reasoning output
+```
+
+Checkpoint 146 shows that the accepted selective pack preserved all frozen obligations while reducing actual provider input tokens by about two thirds on the first real-model benchmark.
+
+Still unresolved:
+
+```text
+how production project objects/state derive requested reasoning functions
+whether explicit task semantics remain expressive enough at larger scale
+how semantic/LLM relevance participates when they are not
+how reasoning becomes recommendation, required concern, proposal, investigation, or action
+how activation behaves on harder and open-world project states
+```
+""",
+)
+text = replace_section(
+    text,
+    "### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?",
+    "### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?",
+    """### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?
+
+**Status:** Substantially answered for the first bounded chain through real reasoning; production scaling remains open
+
+The initial chain is executable through the first downstream model gate:
+
+```text
+lexical retrieval                         Checkpoint 135
+dense semantic comparator                 Checkpoint 137
+complementary hybrid comparator            Checkpoint 139
+explained one-hop/applicability Horizon    Checkpoint 141
+selective MethodologicalContextPack        Checkpoint 143
+real-model context-value gate              Checkpoint 146
+```
+
+The first selective gate reduced methodology-only canonical context by roughly 65% to 84%. The subsequent real-model gate preserved every frozen semantic obligation while reducing actual provider input tokens by `66.56%` in aggregate.
+
+Still open:
+
+```text
+production task-profile derivation
+final Horizon/context budgets
+larger and heterogeneous Horizon behavior
+whether semantic/LLM relevance is needed beyond explicit reasoning functions
+production semantic/fusion integration when a downstream deficiency requires it
+reranking only if ordering becomes a measured problem
+```
+
+The current evidence gives no reason to tune retrieval merely because more tuning is possible.
+""",
+)
+text = replace_section(
+    text,
+    "### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?",
+    "## Agent/runtime, execution, and interoperability",
+    """### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?
+
+**Status:** First reasoning-quality separation validated; recommendation strength/action quality are now the active gap
+
+The executable failure decomposition can distinguish catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, and reasoner-obligation failures.
+
+Specification 014 adds real evidence at the reasoning layer:
+
+```text
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+critical regressions    none
+aggregate input ratio   0.334379
+```
+
+The first bounded result therefore separates context economy from semantic obligation quality successfully. It also records a diagnostic increase in unexpected methodological-basis expansion under FULL_HORIZON without measured rubric-quality loss.
+
+The important unresolved layer is now:
+
+```text
+is the concern merely relevant or actually recommended?
+how strong should the recommendation be?
+when does RECOMMENDED become REQUIRED / BLOCKING?
+what evidence justifies that transition?
+does the human/system follow the recommendation?
+what downstream project/execution outcome results?
+can important omission and unnecessary expansion both be measured on a harder task?
+```
+""",
+)
+write(path, text)
+
+
+# VISION: promote the downstream evidence without turning it into a universal claim.
+path = "docs/VISION.md"
+text = read(path)
+text = text.replace("**Last reviewed:** 2026-08-22", "**Last reviewed:** 2026-08-23", 1)
+text = text.replace(
+    "This does **not** establish that reasoning functions solve general relevance, that the benchmark budget is universal, or that selective context improves real reasoning. Those are downstream questions.",
+    "This does **not** establish that reasoning functions solve general relevance or that the benchmark budget is universal. Specification 014 now provides the first bounded downstream evidence that selective exact-revision context can preserve measured real-model reasoning obligations while materially reducing provider input-token burden; broader generalization remains open.",
+    1,
+)
+text = text.replace(
+    "The successful RH-C gate strengthens this direction mechanically, but the next experiment must still establish its effect on actual model reasoning quality and exact provider-token burden.",
+    "The RH-C gate established the mechanical context boundary, and Specification 014 / Checkpoint 146 now provide the first real-model downstream evidence: the selective condition preserved every frozen obligation while reducing aggregate provider input tokens by 66.56% relative to the compact full-Horizon control. This remains bounded evidence rather than a universal context-budget or provider/model conclusion.",
+    1,
+)
+marker = "## Evidence requirements and methods are different things"
+if "## First downstream evidence for selective model-facing context" not in text:
+    insert = """## First downstream evidence for selective model-facing context
+
+The first frozen real-model comparison now supports the selective-context direction beyond mechanical serialization size.
+
+Specification 014 / Checkpoint 146 observed:
+
+```text
+SELECTIVE aggregate quality      1.000000
+FULL_HORIZON aggregate quality   1.000000
+SELECTIVE/FULL input-token ratio 0.334379
+aggregate input-token reduction  66.56%
+critical-obligation regressions  none
+```
+
+The result is consistent with the post-V0 design rule that broader methodological/project state may belong in the system without belonging in every model prompt. It also observed more unexpected methodological-basis expansion under FULL_HORIZON, but no measured quality loss on the frozen rubric. Harder recommendation/action tasks are therefore required before claiming that additional context is generally distracting or harmful.
+
+Accepted continuation is:
+
+```text
+explained MethodologicalHorizon
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+```
+
+Open questions move downstream toward recommendation strength, REQUIRED/BLOCKING transitions, task-profile derivation, broader semantic relevance, and project-level action consequences.
+
+---
+
+"""
+    if marker not in text:
+        raise RuntimeError("VISION insertion marker not found")
+    text = text.replace(marker, insert + marker, 1)
+write(path, text)
+
+
+# Structural history.
+path = "docs/MAJOR_CHANGES.md"
+text = read(path)
+if "First real-model selective-context value gate passed" not in text:
+    text += """
+
+---
+
+## 2026-08-23: First real-model selective-context value gate passed
+
+Specification 014 / Checkpoint 146 moved the post-V0 selective-context architecture through its first actual model-reasoning test.
+
+The preregistered comparison held task/project evidence and the concrete runtime/model configuration fixed while comparing the accepted 2-3 revision SELECTIVE pack against a compact ten-revision FULL_HORIZON control.
+
+Observed:
+
+```text
+aggregate semantic quality
+    SELECTIVE      1.000000
+    FULL_HORIZON   1.000000
+
+aggregate provider input tokens
+    SELECTIVE mean 1013.00
+    FULL mean      3029.50
+    ratio          0.334379
+    reduction      66.56%
+
+critical-obligation regressions  none
+matched-pair token failures      none
+retries                           0
+```
+
+This is the first downstream evidence that the post-V0 rule
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+can preserve measured reasoning obligations while materially reducing real provider input burden, rather than merely producing smaller serialized methodology payloads.
+
+The result also promoted the first production-facing ADS-owned `ReasoningRuntime` request/outcome/usage/trace seam used by real calls under D-032. The concrete OpenAI model configuration remains experiment evidence, not a final provider/model decision.
+
+FULL_HORIZON produced more unexpected methodological-basis expansion, but both conditions reached the frozen quality ceiling. The structural lesson is therefore selective-context value under the bounded test, not a universal claim that fuller context harms reasoning.
+
+The next architectural boundary moves downstream to harder recommendation/action quality, recommendation strength, REQUIRED/BLOCKING policy, and observable consequences of omission or unnecessary methodological expansion.
+"""
+write(path, text)
