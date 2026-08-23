@@ -1,0 +1,119 @@
+name: Finalize Specification 015 live routing
+
+on:
+  push:
+    branches: [v1-recommendation-action-value]
+    paths:
+      - .github/workflows/v1-spec015-final-routing.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value
+          fetch-depth: 0
+      - name: Finalize routing
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def read(path):
+              return Path(path).read_text(encoding="utf-8")
+
+          def write(path, text):
+              Path(path).write_text(text.rstrip() + "\n", encoding="utf-8")
+
+          def replace_section(text, start, end, replacement):
+              pattern = re.compile(rf"(?ms)^{re.escape(start)}\n.*?(?=^{re.escape(end)}\n)")
+              if not pattern.search(text):
+                  raise RuntimeError(f"section not found: {start} -> {end}")
+              return pattern.sub(replacement.rstrip() + "\n\n", text, count=1)
+
+          path = "README.md"
+          text = read(path)
+          text = text.replace("checkpoint            148", "checkpoint            149", 1)
+          text = text.replace(
+              "current boundary      Specification 015 provider-free gate passed; exact pre-live validation next",
+              "current boundary      Checkpoint 149 live-ready boundary frozen; manual live dispatch next",
+              1,
+          )
+          text = text.replace(
+              "Checkpoint 148 records a complete provider-free Specification 015 implementation.",
+              "Checkpoint 148 records the complete provider-free Specification 015 implementation, and Checkpoint 149 freezes the reconciled live-ready boundary after that implementation remained green.",
+              1,
+          )
+          text = replace_section(text, "## Exact continuation", "## Repository role", """## Exact continuation
+
+```text
+1. keep the frozen Specification 015 treatment unchanged
+2. manually dispatch V1 recommendation action value live
+3. select branch v1-recommendation-action-value
+4. enter confirmation RUN_SPEC_015_FROZEN
+5. preserve the complete raw/result bundle before any tuning
+6. apply the frozen PROMOTE_BOUNDED_RECOMMENDATION_SEAM / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification exactly
+7. create the live-result checkpoint before merge, repair, or subsequent experiment design
+```
+
+The default branch exposes only the manual workflow dispatcher. The live workflow itself refuses any ref other than `v1-recommendation-action-value`.
+
+Do not change the fixture, action menus, model/runtime treatment, prompts, rubric, thresholds, repetitions, randomization, retry policy, context construction, retrieval stack, or recommendation evaluator before the live result is preserved.
+""")
+          write(path, text)
+
+          path = "docs/KNOWLEDGE_MAP.md"
+          text = read(path)
+          text = text.replace("**Current checkpoint:** 148", "**Current checkpoint:** 149", 1)
+          text = text.replace(
+              "Specification 015 v0.1 / Checkpoints 147-148",
+              "Specification 015 v0.1 / Checkpoints 147-149",
+              1,
+          )
+          text = text.replace(
+              "    exact pre-live validation is the active boundary",
+              "    live-ready boundary frozen; manual live dispatch is next",
+              1,
+          )
+          text = text.replace(
+              "No live Specification 015 reasoner or judge call has occurred.",
+              "Checkpoint 149 freezes the reconciled pre-live boundary after the checkpoint commit and provider-free recommendation/action workflow remained green. No live Specification 015 reasoner or judge call has occurred.",
+              1,
+          )
+          text = replace_section(text, "## Current exact continuation", "## Recent continuity checkpoints", """## Current exact continuation
+
+```text
+A. keep Specification 015 and every frozen treatment/evaluation value unchanged
+B. manually dispatch V1 recommendation action value live
+C. choose branch v1-recommendation-action-value
+D. enter RUN_SPEC_015_FROZEN
+E. preserve the complete raw/result bundle before any tuning
+F. apply the frozen three-way advancement classification exactly
+G. create the live-result checkpoint before merge, repair, or subsequent experiment design
+```
+
+The default branch contains the manual dispatcher only. The workflow branch guard requires `v1-recommendation-action-value` for actual execution.
+
+Do not return to retrieval/reranking/vector work without a measured downstream reason.
+""")
+          text = text.replace(
+              "148  recommendation/action provider-free implementation passed cross-platform",
+              "148  recommendation/action provider-free implementation passed cross-platform\n149  Specification 015 reconciled live-ready boundary frozen",
+              1,
+          )
+          write(path, text)
+          PY
+      - name: Remove helper and commit
+        shell: bash
+        run: |
+          rm .github/workflows/v1-spec015-final-routing.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Finalize Specification 015 live routing"
+          git push origin HEAD:v1-recommendation-action-value
