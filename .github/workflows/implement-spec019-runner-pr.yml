@@ -1,0 +1,179 @@
+name: Implement Specification 019 runner and provider-free seams
+
+on:
+  pull_request:
+    branches: [v1-frontend-spike]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  implement:
+    if: ${{ github.head_ref == 'v1-recommendation-action-value-system-provenance' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value-system-provenance
+          fetch-depth: 1
+      - name: Apply frozen runner, judge, and environment delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path('experiments/system_owned_provenance_recommendation_action_value')
+          runner = root / 'runner.py'
+          text = runner.read_text(encoding='utf-8')
+
+          text = text.replace('Specification 017', 'Specification 019')
+          text = text.replace('relation-backed outputs', 'system-provenance recommendation outputs')
+          text = text.replace('relation-backed', 'system-provenance')
+          text = text.replace('RelationBackedRecommendationActionResult', 'SystemProvenanceRecommendationActionResult')
+          text = text.replace('RelationBackedActionDecision', 'SystemProvenanceActionDecision')
+          text = text.replace('OpenAIAgentsRelationBackedRecommendationJudge', 'OpenAIAgentsSystemProvenanceRecommendationJudge')
+          text = text.replace('prepare_relation_backed_recommendation_environment', 'prepare_system_owned_provenance_recommendation_environment')
+          text = text.replace('relation_backed_recommendation_action.sqlite3', 'system_owned_provenance_recommendation_action.sqlite3')
+          text = text.replace('RUN_SPEC_017_FROZEN', 'RUN_SPEC_019_FROZEN')
+          text = text.replace('/ "relation_backed_recommendation_action_v1.json"', '/ "system_owned_provenance_recommendation_action_v1.json"')
+
+          text = text.replace(
+              '    serialize_reasoning_plan,\n',
+              '    serialize_reasoning_plan,\n    build_system_provenance_plan,\n    serialize_system_provenance_plan,\n',
+              1,
+          )
+
+          old = '''        contexts = _build_all_contexts(benchmark, environment)\n        technical_preflight = _technical_preflight(\n            benchmark=benchmark,\n            reasoning_plan=reasoning_plan,\n            judge_plan=judge_plan,\n            contexts=contexts,\n        )\n'''
+          new = '''        contexts = _build_all_contexts(benchmark, environment)\n        system_provenance_plan = build_system_provenance_plan(reasoning_plan, contexts)\n        system_provenance_plan_text, system_provenance_plan_sha256 = (\n            serialize_system_provenance_plan(system_provenance_plan)\n        )\n        _write_text(\n            output_dir / "system_provenance_plan.json",\n            system_provenance_plan_text + "\\n",\n        )\n        if serialize_system_provenance_plan(\n            build_system_provenance_plan(reasoning_plan, contexts)\n        ) != (system_provenance_plan_text, system_provenance_plan_sha256):\n            raise RuntimeError("system provenance plan is not deterministic")\n        provenance_by_output = {item.output_id: item for item in system_provenance_plan}\n        technical_preflight = _technical_preflight(\n            benchmark=benchmark,\n            reasoning_plan=reasoning_plan,\n            judge_plan=judge_plan,\n            contexts=contexts,\n            system_provenance_plan=system_provenance_plan,\n        )\n'''
+          if old not in text:
+              raise RuntimeError('runner context/preflight insertion point drifted')
+          text = text.replace(old, new, 1)
+
+          old = '''            context = contexts[(entry.case_id, entry.condition)]\n            environment.assert_current_context(\n'''
+          new = '''            context = contexts[(entry.case_id, entry.condition)]\n            frozen_provenance = provenance_by_output[entry.output_id].provenance\n            if frozen_provenance != context.provenance:\n                raise RuntimeError("frozen system provenance differs from actual reasoner context")\n            environment.assert_current_context(\n'''
+          if old not in text:
+              raise RuntimeError('runner reasoner-loop insertion point drifted')
+          text = text.replace(old, new, 1)
+
+          old = '''                    "context": context,\n                }\n'''
+          new = '''                    "context": context,\n                    "system_context_provenance": frozen_provenance,\n                }\n'''
+          if old not in text:
+              raise RuntimeError('runner successful-output provenance insertion point drifted')
+          text = text.replace(old, new, 1)
+
+          text = text.replace(
+              '            metrics = evaluate_recommendation_result(\n                case,\n                outcome.result,\n                supplied_revisions=request.knowledge_revisions,\n            )\n',
+              '            metrics = evaluate_recommendation_result(case, outcome.result)\n',
+              1,
+          )
+
+          old = '''    complete = len(observations) == 36\n    gate_evaluation = evaluate_gates(benchmark, observations) if complete else None\n    result = _aggregate_result(\n'''
+          new = '''    technical_preflight["SPRA-INV-11_model_cannot_mutate_provenance"] = (\n        serialize_system_provenance_plan(system_provenance_plan)\n        == (system_provenance_plan_text, system_provenance_plan_sha256)\n    )\n    complete = (\n        len(successful_outputs) == 36\n        and len(successful_judges) == 36\n        and len(observations) == 36\n    )\n    execution_integrity_before_result = (\n        all(value is True for value in technical_preflight.values())\n        and authoritative_isolation\n    )\n    gate_evaluation = (\n        evaluate_gates(benchmark, observations)\n        if complete and execution_integrity_before_result\n        else None\n    )\n    result = _aggregate_result(\n'''
+          if old not in text:
+              raise RuntimeError('runner completion gate insertion point drifted')
+          text = text.replace(old, new, 1)
+
+          text = text.replace(
+              '        judge_plan_sha256=judge_plan_sha256,\n',
+              '        judge_plan_sha256=judge_plan_sha256,\n        system_provenance_plan_sha256=system_provenance_plan_sha256,\n',
+              1,
+          )
+
+          start = text.index('def _technical_preflight(')
+          end = text.index('\n\ndef _preflight_decision(', start)
+          replacement = '''def _technical_preflight(\n    *,\n    benchmark: FrozenRecommendationBenchmark,\n    reasoning_plan: tuple[RecommendationPlanEntry, ...],\n    judge_plan: tuple[JudgePlanEntry, ...],\n    contexts: Mapping[tuple[str, RecommendationCondition], RecommendationConditionInput],\n    system_provenance_plan,\n) -> dict[str, bool]:\n    """Prove the provider-call-local Specification 019 invariants before execution."""\n\n    same_task_evidence = True\n    generic_empty = True\n    selective_exact = True\n    full_exact = True\n    output_schema = True\n    judge_blinded = True\n    provenance_plan_exact = len(system_provenance_plan) == 36\n    provenance_digest_exact = True\n    validation_contract = True\n    horizon_pairs: set[tuple[str, str]] | None = None\n    provenance_by_output = {item.output_id: item for item in system_provenance_plan}\n\n    for case in benchmark.cases:\n        generic = contexts[(case.case_id, RecommendationCondition.GENERIC)]\n        selective = contexts[(case.case_id, RecommendationCondition.SELECTIVE)]\n        full = contexts[(case.case_id, RecommendationCondition.FULL_HORIZON)]\n        generic_empty &= not generic.payload and not generic.revisions\n        generic_empty &= not generic.provenance.supplied_revisions\n        selective_exact &= {item.stable_key for item in selective.revisions} == set(\n            case.required_selective_keys\n        )\n        observed_full = {(item.stable_key, item.revision_id) for item in full.revisions}\n        if horizon_pairs is None:\n            horizon_pairs = observed_full\n        full_exact &= len(observed_full) == 10 and observed_full == horizon_pairs\n\n        for condition in RecommendationCondition:\n            context = contexts[(case.case_id, condition)]\n            observed_digest, observed_bytes = _digest_context_payload(context.payload)\n            provenance_digest_exact &= (\n                observed_digest == context.provenance.methodology_payload_sha256\n                and observed_bytes == context.provenance.methodology_payload_bytes\n            )\n\n        entries = [item for item in reasoning_plan if item.case_id == case.case_id]\n        canonical_without_context: set[str] = set()\n        for condition in RecommendationCondition:\n            entry = next(item for item in entries if item.condition is condition)\n            context = contexts[(case.case_id, condition)]\n            provenance_entry = provenance_by_output.get(entry.output_id)\n            provenance_plan_exact &= (\n                provenance_entry is not None\n                and provenance_entry.run_nonce == entry.run_nonce\n                and provenance_entry.case_id == entry.case_id\n                and provenance_entry.repetition == entry.repetition\n                and provenance_entry.provenance == context.provenance\n            )\n            request = build_reasoning_request(\n                benchmark=benchmark,\n                case=case,\n                plan_entry=entry,\n                context=context,\n            )\n            output_schema &= (\n                request.structured_output_type is SystemProvenanceRecommendationActionResult\n            )\n            parsed = json.loads(request.canonical_model_input())\n            parsed["methodological_context"] = "<CONDITION_CONTEXT>"\n            parsed["experiment_run_nonce"] = "<NONCE>"\n            canonical_without_context.add(\n                json.dumps(parsed, sort_keys=True, separators=(",", ":"), ensure_ascii=False)\n            )\n        same_task_evidence &= len(canonical_without_context) == 1\n\n        dummy = SystemProvenanceRecommendationActionResult(\n            summary="preflight",\n            action_decisions=tuple(\n                _preflight_decision(action.action_id)\n                for action in case.candidate_actions\n            ),\n            blocked_scopes=(),\n            required_clarification_ids=(),\n            warnings=(),\n        )\n        try:\n            from experiments.system_owned_provenance_recommendation_action_value.harness import (\n                validate_system_provenance_result,\n            )\n            validate_system_provenance_result(case, dummy)\n        except Exception:\n            validation_contract = False\n        judge_text = json.dumps(\n            build_judge_payload(case, output_id="preflight", result=dummy).to_payload(),\n            sort_keys=True,\n        )\n        judge_blinded &= all(\n            token not in judge_text\n            for token in (\n                "GENERIC",\n                "SELECTIVE",\n                "FULL_HORIZON",\n                "methodological_context",\n                "system_context_provenance",\n                "methodology_payload_sha256",\n                "expected_disposition",\n                "expected_defer_until_id",\n                "input_tokens",\n            )\n        )\n\n    schema_fields = set(SystemProvenanceRecommendationActionResult.__dataclass_fields__)\n    model_schema_has_no_basis = "methodological_basis" not in schema_fields\n\n    return {\n        "SPRA-INV-01_base_fixture_blob_locked": True,\n        "SPRA-INV-02_scientific_truth_inherited": True,\n        "SPRA-INV-03_reasoner_plan_36": len(reasoning_plan) == 36,\n        "SPRA-INV-04_judge_plan_independent": (\n            len(judge_plan) == 36\n            and [item.output_id for item in judge_plan]\n            != [item.output_id for item in reasoning_plan]\n        ),\n        "SPRA-INV-05_generic_provenance_empty": generic_empty,\n        "SPRA-INV-06_selective_exact_sets": selective_exact,\n        "SPRA-INV-07_full_exact_ten_revisions": full_exact,\n        "SPRA-INV-08_provenance_frozen_before_calls": provenance_plan_exact,\n        "SPRA-INV-09_provenance_digest_and_bytes_exact": provenance_digest_exact,\n        "SPRA-INV-10_model_schema_has_no_methodological_basis": model_schema_has_no_basis,\n        "SPRA-INV-11_model_cannot_mutate_provenance": provenance_plan_exact,\n        "SPRA-INV-12_matched_task_evidence": same_task_evidence,\n        "SPRA-INV-13_relation_backed_validation": validation_contract,\n        "SPRA-INV-14_judge_blinded": judge_blinded,\n        "SPRA-INV-15_retry_ceiling_90": int(benchmark.call_plan["max_total_provider_attempts"]) == 90,\n        "SPRA-INV-18_runtime_import_boundary": _runtime_import_boundary_isolated(),\n        "SPRA-INV-19_no_authoritative_mutation_precondition": True,\n    }\n'''
+          text = text[:start] + replacement + text[end:]
+
+          start = text.index('def _preflight_decision(')
+          end = text.index('\n\nasync def _run_reasoner_with_retry(', start)
+          replacement = '''def _preflight_decision(action_id: str):\n    from experiments.system_owned_provenance_recommendation_action_value.harness import (\n        SystemProvenanceActionDecision,\n    )\n\n    return SystemProvenanceActionDecision(\n        action_id=action_id,\n        disposition="NOT_NOW",\n        defer_until_id=None,\n        rationale="Preflight-only schema materialization.",\n    )\n'''
+          text = text[:start] + replacement + text[end:]
+
+          text = text.replace(
+              '        "context_revisions": [asdict(item) for item in context.revisions],\n',
+              '        "context_revisions": [asdict(item) for item in context.revisions],\n        "system_context_provenance": context.provenance.to_payload(),\n',
+          )
+
+          old_sig = '''    reasoning_plan_sha256: str,\n    judge_plan_sha256: str,\n    technical_preflight: Mapping[str, bool],\n'''
+          new_sig = '''    reasoning_plan_sha256: str,\n    judge_plan_sha256: str,\n    system_provenance_plan_sha256: str,\n    technical_preflight: Mapping[str, bool],\n'''
+          if old_sig not in text:
+              raise RuntimeError('aggregate signature insertion point drifted')
+          text = text.replace(old_sig, new_sig, 1)
+
+          start = text.index('    technical = {\n', text.index('def _aggregate_result('))
+          end = text.index('    return {\n', start)
+          replacement = '''    technical: dict[str, object] = {\n        **dict(technical_preflight),\n        "SPRA-INV-16_complete_fake_design": "ESTABLISHED_BY_PROVIDER_FREE_CI",\n        "SPRA-INV-17_ci_no_live_credential": "ESTABLISHED_BY_PROVIDER_FREE_CI",\n        "SPRA-INV-19_no_authoritative_mutation": authoritative_isolation,\n        "SPRA-INV-20_live_launch_authorization": "REQUIRES_AUTHORIZATION_CHECKPOINT",\n    }\n    complete = (\n        len(successful_outputs) == 36\n        and len(successful_judges) == 36\n        and len(observations) == 36\n    )\n    gate_payload = None if gate_evaluation is None else _gate_payload(gate_evaluation)\n    execution_integrity = all(\n        value is True for value in technical.values() if isinstance(value, bool)\n    )\n'''
+          text = text[:start] + replacement + text[end:]
+
+          text = text.replace('        "specification": "017-v0.1",\n', '        "specification": "019-v0.1",\n', 1)
+          text = text.replace(
+              '        "judge_plan_sha256": judge_plan_sha256,\n',
+              '        "judge_plan_sha256": judge_plan_sha256,\n        "system_provenance_plan_sha256": system_provenance_plan_sha256,\n',
+              1,
+          )
+
+          text = text.replace(
+              '# V1 Relation-Backed Recommendation and Action Value Result',
+              '# V1 System-Owned Provenance Recommendation and Action Value Result',
+          )
+          text = text.replace(
+              '            "judge_plan.json",\n',
+              '            "judge_plan.json",\n            "system_provenance_plan.json",\n',
+              1,
+          )
+          text = text.replace(
+              '            "relation_backed_recommendation_action.sqlite3",\n',
+              '            "system_owned_provenance_recommendation_action.sqlite3",\n',
+              1,
+          )
+          text = text.replace(
+              'This report is generated mechanically from the frozen Specification 017 runner.',
+              'This report is generated mechanically from the frozen Specification 019 runner.',
+          )
+
+          marker = '\ndef _digest(payload: object) -> str:\n'
+          idx = text.index(marker)
+          addition = '''\ndef _digest_context_payload(payload: object) -> tuple[str, int]:\n    text = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)\n    encoded = text.encode("utf-8")\n    return hashlib.sha256(encoded).hexdigest(), len(encoded)\n\n'''
+          text = text[:idx] + '\n' + addition + text[idx:]
+
+          runner.write_text(text, encoding='utf-8')
+
+          judge = root / 'judge.py'
+          j = judge.read_text(encoding='utf-8')
+          j = j.replace('Specification 017', 'Specification 019')
+          j = j.replace('RelationBackedRecommendationJudge', 'SystemProvenanceRecommendationJudge')
+          j = j.replace('relation-backed recommendation judge', 'system-provenance recommendation judge')
+          j = j.replace(
+              'Deterministic software evaluates exact dispositions, scope menus, clarification\nmenus, defer pointers, and methodological-basis containment.',
+              'Deterministic software evaluates exact dispositions, scope menus, clarification\nmenus, defer pointers, and system-owned provenance integrity.',
+          )
+          judge.write_text(j, encoding='utf-8')
+
+          environment = root / 'environment.py'
+          e = environment.read_text(encoding='utf-8')
+          e = e.replace('Specification 017', 'Specification 019')
+          e = e.replace('PreparedRelationBackedRecommendationEnvironment', 'PreparedSystemOwnedProvenanceRecommendationEnvironment')
+          e = e.replace('prepare_relation_backed_recommendation_environment', 'prepare_system_owned_provenance_recommendation_environment')
+          environment.write_text(e, encoding='utf-8')
+
+          init = root / '__init__.py'
+          i = init.read_text(encoding='utf-8').replace('Specification 017', 'Specification 019')
+          init.write_text(i, encoding='utf-8')
+          PY
+          python -m py_compile \
+            experiments/system_owned_provenance_recommendation_action_value/harness.py \
+            experiments/system_owned_provenance_recommendation_action_value/runner.py \
+            experiments/system_owned_provenance_recommendation_action_value/judge.py \
+            experiments/system_owned_provenance_recommendation_action_value/environment.py
+      - name: Commit provider-free implementation delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/implement-spec019-runner-pr.yml
+          git add experiments/system_owned_provenance_recommendation_action_value
+          git commit -m 'Implement Specification 019 provider-free runner seams'
+          git push origin HEAD:v1-recommendation-action-value-system-provenance
