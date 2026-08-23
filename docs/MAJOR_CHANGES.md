@@ -558,3 +558,8 @@ docs/checkpoints/155_disposition_semantics_live_gate_supported.md
 experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
 ```
+
+
+## 2026-08-23 - Governed autonomous live-experiment launcher supported
+
+Specification 018 established a bounded repository-governed control plane for explicitly authorized frozen experiments. Exact cross-platform provider-free validation passed at source `27e7bc84b5f63d65d43de9a5bd27d1fdc0677071` in run `32660168566`. An owner-created issue then triggered launcher run `32660333663`, which validated the repository authorization and dispatched provider-free probe run `32660340429`; the probe independently verified the exact source/ref/confirmation and completed successfully. Checkpoint 161 classifies the bounded outcome as `GOVERNED_LAUNCHER_SUPPORTED`. This does not authorize autonomous experiment design or arbitrary workflow execution.

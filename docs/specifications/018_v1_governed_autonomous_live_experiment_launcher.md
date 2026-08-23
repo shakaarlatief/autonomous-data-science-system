@@ -1,7 +1,7 @@
 # Specification 018: V1 Governed Autonomous Live Experiment Launcher
 
-**Version:** 0.1 frozen experiment-control contract  
-**Status:** FROZEN FOR PROVIDER-FREE IMPLEMENTATION  
+**Version:** 1.0 bounded accepted control-plane contract  
+**Status:** ACCEPTED FOR BOUNDED V1 USE  
 **Date:** 2026-08-23  
 
 ## 1. Purpose
@@ -361,3 +361,21 @@ Specification 018 does not select:
 ## 20. Next step after promotion
 
 After this bounded launcher is accepted, preregister the next recommendation/action-value experiment using system-owned exact context provenance. Only after that experiment's contract is frozen and its exact implementation head is green may a provider-backed authorization be added to the launcher registry.
+
+## 21. Accepted end-to-end result
+
+Checkpoint 161 records the successful bounded provider-free gate.
+
+```text
+implementation source   27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
+cross-platform CI       32660168566
+launcher run            32660333663
+probe run               32660340429
+probe job               97245432893
+observer run            32660375449
+result                   GOVERNED_LAUNCHER_SUPPORTED
+```
+
+The owner-created issue was transport only. The repository-controlled registry supplied the executable workflow/ref/SHA/CI/confirmation authorization. The launcher dispatched the allowlisted provider-free probe without a manual Actions UI click and without a provider credential. The target probe independently verified its exact source SHA, ref, launch ID, and confirmation and completed successfully.
+
+This acceptance is bounded to explicitly registered frozen experiments. It does not authorize autonomous experiment design, arbitrary workflow execution, arbitrary issue-driven commands, or automatic provider use.

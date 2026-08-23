@@ -3,93 +3,57 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 159  
-**Active development branch:** `v1-recommendation-action-value-relation-backed`  
-**Active PR:** #16 -> `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 016 promotion merge `6bda0c1efcf078476859b2c2c64fb0586964899d`
+**Current checkpoint:** 161  
+**Active development branch:** `v1-autonomous-live-experiment-launcher`  
+**Active PR:** #23 -> `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 017 preservation merge `4385b83b43582ff6466b519b4e96356d220c44bc`
 
 ## Start here
 
 ```text
-README.md
-    project overview and current evidence boundary
-
-docs/CURRENT_STATE.md
-    present state and exact continuation
-
-docs/KNOWLEDGE_MAP.md
-    routing/index layer
-
-docs/VISION.md
-    high-level system and product direction
-
-docs/PRINCIPLES.md
-    accepted high-level design principles
-
-docs/DECISIONS.md
-    accepted project-level decisions
-
-docs/OPEN_QUESTIONS.md
-    unresolved design/evaluation questions
-
-docs/DEVELOPMENT_METHOD.md
-    development/checkpoint/promotion method
-
-docs/CONTINUITY.md
-    continuation and unexpected-boundary recovery
-
-docs/MAJOR_CHANGES.md
-    selective structural history
+README.md                         project overview and current evidence boundary
+docs/CURRENT_STATE.md             present state and exact continuation
+docs/KNOWLEDGE_MAP.md             routing/index layer
+docs/VISION.md                    high-level system and product direction
+docs/PRINCIPLES.md                accepted high-level design principles
+docs/DECISIONS.md                 accepted project-level decisions
+docs/OPEN_QUESTIONS.md            unresolved design/evaluation questions
+docs/DEVELOPMENT_METHOD.md        checkpoint/promotion method
+docs/CONTINUITY.md                continuation procedure
+docs/MAJOR_CHANGES.md             selective structural history
 ```
 
 Current branch relationship:
 
 ```text
-promoted integration head      6bda0c1efcf078476859b2c2c64fb0586964899d
-active experiment branch       v1-recommendation-action-value-relation-backed
-active PR                      #16 -> v1-frontend-spike
-Specification 015 PR           #13 closed without merge
-Specification 015 preservation #14 merged
+promoted integration head      4385b83b43582ff6466b519b4e96356d220c44bc
+active branch                  v1-autonomous-live-experiment-launcher
+active PR                      #23 -> v1-frontend-spike
+Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
-Specification 017 PR           #16 will close without implementation merge
-main                           intentionally behind V1 except control-plane workflow exposure
+Specification 017 PR           #16 closed without merge; preservation #22 merged
+main                           intentionally behind V1 application code except narrow launcher exposure
 ```
 
 ---
 
-## Current project stage
-
-Prototype V0 final classification:
-
-> **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**
-
-Durable post-V0 constraint:
-
-```text
-what the SYSTEM should remember
-    !=
-what the LLM should receive on every reasoning call
-```
-
-Current V1 progression:
+## Current V1 progression
 
 ```text
 Foundations 018-020
-    project object/state model
-    methodological navigation
-    reusable methodological knowledge
+    project objects / methodological navigation / reusable knowledge
 
 D-028 through D-031 / Checkpoint 127
     local-first persistence and governed knowledge interchange
 
-Specification 008 / Checkpoints 126,130
+Specification 008 / Checkpoints 126, 130
     promoted Project Cockpit interaction architecture
 
 D-032 / Checkpoint 133
     OpenAI Agents SDK behind ADS-owned ReasoningRuntime
 
-Checkpoints 135 -> 137 -> 139 -> 141
-    lexical retrieval -> dense complementarity -> hybrid comparator -> explained Horizon
+Specifications 009-012 / Checkpoints 135-141
+    lexical -> dense complementarity -> hybrid comparator -> explained Horizon
 
 Specification 013 / Checkpoint 143
     accepted selective exact-revision MethodologicalContextPack
@@ -98,29 +62,23 @@ Specification 014 / Checkpoint 146
     real-model selective-context gate PASS
 
 Specification 015 / Checkpoints 147-151
-    recommendation/action experiment FAIL
-    failed implementation rejected
-    negative evidence preserved
+    recommendation/action experiment FAIL; negative evidence preserved
 
 Specification 016 / Checkpoints 152-155
-    dependency-backed DEFER-vs-NOT_NOW diagnostic
-    DISPOSITION_BOUNDARY_SUPPORTED
-    bounded construct constraint promoted
+    dependency-backed disposition diagnostic supported
 
 Specification 017 / Checkpoints 156-159
-    relation-backed recommendation/action comparison
-    provider-free implementation passed
-    first live execution incomplete
-    raw evidence preserved
-    no advancement classification
-    implementation not promoted
+    relation-backed recommendation experiment incomplete; raw evidence preserved; implementation rejected
+
+Specification 018 / Checkpoints 160-161
+    governed autonomous live-experiment launcher frozen, implemented, cross-platform validated, and end-to-end provider-free probe passed
 ```
 
 ---
 
 ## Core architecture routes
 
-### Product/object/system boundary
+Product/object/system:
 
 ```text
 docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
@@ -128,19 +86,7 @@ docs/foundations/017_interactive_data_science_workspace_and_methodological_navig
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-Key distinctions:
-
-```text
-OBJECTS / RELATIONS / EVENTS / VIEWS
-Investigation != Run
-Evidence != Finding
-Finding != Claim
-Claim != Decision
-current state != event history
-persisted object != derived recommendation
-```
-
-### Methodological navigation and reusable knowledge
+Methodological navigation and reusable knowledge:
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
@@ -153,41 +99,7 @@ Navigation sequence:
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Current accepted executable chain:
-
-```text
-knowledge universe
-    -> retrieval
-    -> explained MethodologicalHorizon
-    -> applicability / missing context
-    -> bounded relevance selection
-    -> exact selective MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-    -> measured real reasoning
-```
-
-The recommendation/action persistence and production seam remains open.
-
----
-
-## Persistence, interchange, runtime, and Cockpit
-
-```text
-D-028 + docs/specifications/001_v1_sqlite_technical_architecture.md
-D-029 + docs/specifications/002_v1_persistence_tooling_standard.md
-D-030 + docs/specifications/003_v1_python_project_and_dependency_tooling.md
-D-031 + docs/specifications/004_v1_reusable_knowledge_interchange.md
-D-032 + docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-```
-
-Governed round-trip closure:
-
-```text
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
-docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
-```
-
-Project Cockpit route:
+Project Cockpit:
 
 ```text
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
@@ -195,30 +107,20 @@ docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architectu
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
-The Cockpit remains the promoted primary immersive active-work model. Final backend/API wiring and frontend technology choices remain open.
-
 ---
 
-## Retrieval -> Horizon -> selective context route
+## Retrieval -> Horizon -> selective context -> reasoning
 
 ```text
-Specification 009 / Checkpoint 135
-    lexical retrieval baseline
-
-Specification 010 / Checkpoint 137
-    dense semantic complementarity
-
-Specification 011 / Checkpoint 139
-    bounded RRF hybrid comparator
-
-Specification 012 / Checkpoint 141
-    first explained MethodologicalHorizon
-
-Specification 013 / Checkpoint 143
-    selective exact-revision MethodologicalContextPack
+Specification 009 / Checkpoint 135   lexical retrieval baseline
+Specification 010 / Checkpoint 137   dense semantic complementarity
+Specification 011 / Checkpoint 139   bounded RRF comparator
+Specification 012 / Checkpoint 141   explained MethodologicalHorizon
+Specification 013 / Checkpoint 143   selective exact-revision context
+Specification 014 / Checkpoint 146   real reasoning-context value
 ```
 
-Key Horizon invariant:
+Key invariant:
 
 ```text
 known false -> INAPPLICABLE
@@ -226,20 +128,7 @@ unknown required information -> MISSING_CONTEXT
 unknown != false
 ```
 
----
-
-## Accepted real reasoning-context route
-
-```text
-docs/research/021_first_reasoning_context_value_vertical_slice_design.md
-docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
-docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
-docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
-docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
-experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
-```
-
-Observed:
+Specification 014 result:
 
 ```text
 reasoner outputs        24 / 24
@@ -252,157 +141,110 @@ input-token reduction   66.56%
 
 ---
 
-## Specification 015: failed recommendation/action route
+## Recommendation/action evidence
+
+Specification 015 failed first live recommendation/action test:
 
 ```text
 docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
 docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
 experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
-Live result:
-
-```text
-run                 32642733784
-reasoner outputs    36 / 36
-judge outputs       36 / 36
-advancement         FAIL
-```
-
-The failed implementation was not promoted.
-
----
-
-## Specification 016: dependency-backed disposition route
+Specification 016 dependency-backed disposition evidence:
 
 ```text
 docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-tests/fixtures/reasoning/disposition_semantics_v1.json
-docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
-docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/154_specification_016_live_boundary_frozen.md
 docs/checkpoints/155_disposition_semantics_live_gate_supported.md
 experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 ```
 
-Live result:
-
-```text
-run                               32652636943
-36 / 36 exact dispositions        correct
-18 / 18 expected-DEFER pointers   exact
-18 / 18 expected-NOT_NOW pointers null
-outcome                           DISPOSITION_BOUNDARY_SUPPORTED
-```
-
-Promoted merge:
-
-```text
-6bda0c1efcf078476859b2c2c64fb0586964899d
-```
-
----
-
-## Specification 017: incomplete relation-backed recommendation/action route
-
-Frozen design/history:
+Specification 017 incomplete relation-backed comparison:
 
 ```text
 docs/research/024_relation_backed_recommendation_action_value_design.md
 docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
-tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
-docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
-docs/checkpoints/157_relation_backed_recommendation_action_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/158_specification_017_live_boundary_frozen.md
-```
-
-Live incomplete-result boundary:
-
-```text
 docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
 experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705/
 ```
 
-Mechanical result:
+Stable next-experiment boundary:
 
 ```text
-run                         32656446705
-frozen source head          bf041f4b4a485382d0e6e5c508ad916199601ee8
-reasoner outputs            29 / 36
-judge outputs               29 / 36
-provider attempts           77 / 90
-complete scored design      false
-execution integrity         true
-advancement outcome         none
+SYSTEM-OWNED PROVENANCE
+    exact supplied stable_key@revision_id
+    context digest
+    treatment identity
+
+MODEL-OWNED CONTENT
+    dispositions
+    dependency pointers
+    blocked scopes
+    clarifications
+    rationales
 ```
-
-Completion by condition:
-
-```text
-SELECTIVE       12 / 12
-FULL_HORIZON    12 / 12
-GENERIC          5 / 12
-```
-
-All 19 failed reasoner attempts were GENERIC `INVALID_STRUCTURED_RESPONSE` cases in which the model placed a requested reasoning-function label into `methodological_basis`. The system had supplied zero reusable knowledge revisions to GENERIC.
-
-Key newly exposed boundary:
-
-```text
-reasoning function / task profile
-    !=
-reusable knowledge stable-key provenance
-```
-
-No Specification 017 PROMOTE / SAFE / FAIL classification is assigned. The complete matched design was not obtained.
 
 ---
 
-## Control-plane route: autonomous live-launch feasibility
-
-During Specification 017 artifact preservation, a temporary default-branch issue-triggered workflow was successfully activated by an issue created through the connected GitHub interface.
-
-Successful preservation workflow run:
+## Specification 018: governed autonomous live-launch route
 
 ```text
-32658108544
+docs/research/025_governed_autonomous_live_experiment_launcher_design.md
+docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
+docs/checkpoints/160_governed_autonomous_live_experiment_launcher_contract_frozen.md
+docs/checkpoints/161_governed_autonomous_live_experiment_launcher_end_to_end_gate_passed.md
+scripts/ads_live_experiment_launcher.py
+.github/ads_live_experiments.json
+.github/workflows/v1-autonomous-live-experiment-launcher.yml
+.github/workflows/v1-live-launcher-probe.yml
+tests/unit/test_ads_live_experiment_launcher.py
 ```
 
-It:
+Exact evidence:
 
 ```text
-received an owner-created issue event
-    -> downloaded artifact 9497737594
-    -> verified every extracted SHA-256 digest
-    -> committed the raw bundle to the target experiment branch
+implementation source   27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
+provider-free CI        32660168566
+launch issue            31
+launcher run            32660333663
+probe run               32660340429
+probe job               97245432893
+observer issue          32
+observer run            32660375449
+outcome                 GOVERNED_LAUNCHER_SUPPORTED
 ```
 
-This is not experiment evidence. It is control-plane feasibility evidence for a future governed autonomous live-experiment launcher.
+Accepted control-plane sequence:
 
-A production-quality launcher must not accept arbitrary shell commands from issue text. It should use a fixed allowlisted experiment registry and verify actor/owner identity, exact frozen source SHA, frozen contract identity, required CI evidence, and launch uniqueness before provider execution.
+```text
+owner request transport
+    -> repository authorization registry
+    -> exact owner/source/CI/duplicate checks
+    -> allowlisted workflow_dispatch
+    -> independently validating target workflow
+```
+
+The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation head is green.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. reconcile PR #16 to Checkpoint 159
-B. create a preservation-only branch from v1-frontend-spike
-C. carry Specification 017 frozen sources, Checkpoints 156-159, stable result, raw evidence, and current routing
-D. exclude the unpromoted experiment implementation from integration
-E. validate and merge the preservation-only PR
-F. close PR #16 without merge
-G. remove temporary one-shot preservation workflows and close their issues
-H. design/provider-free validate a governed autonomous live-experiment launcher
-I. separately preregister the next recommendation/action-value experiment with system-owned provenance
+A. reconcile Checkpoint 161 and Specification 018 v1.0
+B. clean one-shot probe authorization and temporary main-branch observer/validation helpers
+C. validate exact final PR #23 head
+D. merge PR #23 into v1-frontend-spike
+E. record exact promoted merge boundary
+F. preregister next recommendation/action-value experiment with system-owned provenance
+G. do not make a new recommendation/action provider call before the new contract and exact implementation head are frozen and green
 ```
 
-Do not modify or rescore Specifications 015-017. Do not use partial Specification 017 condition scores as advancement evidence.
+Do not modify or rescore Specifications 015-017. Do not use partial Specification 017 scores as advancement evidence.
 
 ---
 
@@ -420,8 +262,7 @@ Do not modify or rescore Specifications 015-017. Do not use partial Specificatio
 150  first recommendation/action live gate failed
 151  failed evidence preserved without implementation promotion
 155  dependency-backed disposition live gate supported
-156  relation-backed recommendation/action contract frozen
-157  relation-backed provider-free gate passed
-158  Specification 017 live boundary frozen
 159  Specification 017 live execution incomplete; provenance boundary identified
+160  governed autonomous launcher contract frozen
+161  governed autonomous launcher end-to-end provider-free gate passed
 ```
