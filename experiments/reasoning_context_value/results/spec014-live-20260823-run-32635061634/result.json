@@ -1,0 +1,338 @@
+{
+  "accepted_snapshot_digest": "d896eecd45745ca951ea01c81f81d313a8cb49dbd54fa6f9b713f4f9c1904933",
+  "accepted_stable_revision_pairs": [
+    {
+      "revision_id": "f0341774-efbb-48a7-b3c7-94820857c7e8",
+      "stable_key": "bagging"
+    },
+    {
+      "revision_id": "f30b1304-f5c0-4070-9f21-dc27945d866f",
+      "stable_key": "class-imbalance"
+    },
+    {
+      "revision_id": "9b6b4a84-526f-4fba-9036-13ad3cc00896",
+      "stable_key": "ecdf"
+    },
+    {
+      "revision_id": "1b9604fc-6cdb-4ff5-b4de-7aafaa157d89",
+      "stable_key": "gradient-boosted-trees"
+    },
+    {
+      "revision_id": "a5035424-0d67-4dfc-9491-dc73df2601ce",
+      "stable_key": "histogram"
+    },
+    {
+      "revision_id": "cfefb760-e70a-4b1a-bb6a-3393334b70fa",
+      "stable_key": "missing-data"
+    },
+    {
+      "revision_id": "4a3189bb-b007-4efd-a2bd-04a8cc6a4d5c",
+      "stable_key": "prediction-moment"
+    },
+    {
+      "revision_id": "8b63f2cd-a1b7-4b2c-939b-5b146c5d7477",
+      "stable_key": "prediction-time-feature-eligibility"
+    },
+    {
+      "revision_id": "fefb0b89-52b5-4353-9eb0-331670c9211c",
+      "stable_key": "random-forest"
+    },
+    {
+      "revision_id": "a952de3e-d761-4cab-9318-91b2f25f3231",
+      "stable_key": "temporal-validation"
+    }
+  ],
+  "benchmark_id": "v1-reasoning-context-value-v0.1",
+  "complete_scored_design": true,
+  "counts": {
+    "judge_attempt_records": 24,
+    "planned_judge_outputs": 24,
+    "planned_reasoner_outputs": 24,
+    "reasoner_attempt_records": 24,
+    "scored_observations": 24,
+    "successful_judge_outputs": 24,
+    "successful_reasoner_outputs": 24
+  },
+  "distraction_diagnostics": {
+    "case_mean_unexpected_basis_count": {
+      "RV-01": 2.1666666666666665,
+      "RV-02": 0.0,
+      "RV-03": 0.0,
+      "RV-04": 1.1666666666666667
+    },
+    "condition_mean_unexpected_basis_count": {
+      "FULL_HORIZON": 1.6666666666666667,
+      "SELECTIVE": 0.0
+    },
+    "outputs": [
+      {
+        "case_id": "RV-01",
+        "condition": "FULL_HORIZON",
+        "count": 5,
+        "keys": [
+          "class-imbalance",
+          "missing-data",
+          "prediction-moment",
+          "prediction-time-feature-eligibility",
+          "temporal-validation"
+        ],
+        "output_id": "output-0e09072d04540034"
+      },
+      {
+        "case_id": "RV-01",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-003b5c0e588880b5"
+      },
+      {
+        "case_id": "RV-01",
+        "condition": "FULL_HORIZON",
+        "count": 4,
+        "keys": [
+          "class-imbalance",
+          "missing-data",
+          "prediction-time-feature-eligibility",
+          "temporal-validation"
+        ],
+        "output_id": "output-0b0f0377523915a7"
+      },
+      {
+        "case_id": "RV-01",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-a8ff8054e558ea15"
+      },
+      {
+        "case_id": "RV-01",
+        "condition": "FULL_HORIZON",
+        "count": 4,
+        "keys": [
+          "class-imbalance",
+          "missing-data",
+          "prediction-time-feature-eligibility",
+          "temporal-validation"
+        ],
+        "output_id": "output-c6afae8bef2f3ba4"
+      },
+      {
+        "case_id": "RV-01",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-0c5c43906897c80a"
+      },
+      {
+        "case_id": "RV-02",
+        "condition": "FULL_HORIZON",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-4687a87a50b58ece"
+      },
+      {
+        "case_id": "RV-02",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-282b006367b44a37"
+      },
+      {
+        "case_id": "RV-02",
+        "condition": "FULL_HORIZON",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-aaa84aa9e7c5aec9"
+      },
+      {
+        "case_id": "RV-02",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-d4703ae0e8368949"
+      },
+      {
+        "case_id": "RV-02",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-1e4afba787f4d598"
+      },
+      {
+        "case_id": "RV-02",
+        "condition": "FULL_HORIZON",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-17c193c94fe10226"
+      },
+      {
+        "case_id": "RV-03",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-063178086911110d"
+      },
+      {
+        "case_id": "RV-03",
+        "condition": "FULL_HORIZON",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-529daed82491d9c8"
+      },
+      {
+        "case_id": "RV-03",
+        "condition": "FULL_HORIZON",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-3f10242f71356cbf"
+      },
+      {
+        "case_id": "RV-03",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-716f56ea40ce1089"
+      },
+      {
+        "case_id": "RV-03",
+        "condition": "FULL_HORIZON",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-3643b79163f55883"
+      },
+      {
+        "case_id": "RV-03",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-12a7a3c9d371f7b0"
+      },
+      {
+        "case_id": "RV-04",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-2616526301b064a7"
+      },
+      {
+        "case_id": "RV-04",
+        "condition": "FULL_HORIZON",
+        "count": 2,
+        "keys": [
+          "prediction-time-feature-eligibility",
+          "temporal-validation"
+        ],
+        "output_id": "output-3612610a0bb1a7e3"
+      },
+      {
+        "case_id": "RV-04",
+        "condition": "FULL_HORIZON",
+        "count": 2,
+        "keys": [
+          "prediction-time-feature-eligibility",
+          "temporal-validation"
+        ],
+        "output_id": "output-6cf68fd48ad7dbda"
+      },
+      {
+        "case_id": "RV-04",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-2b00708f8fc40806"
+      },
+      {
+        "case_id": "RV-04",
+        "condition": "SELECTIVE",
+        "count": 0,
+        "keys": [],
+        "output_id": "output-d5e173339752cd31"
+      },
+      {
+        "case_id": "RV-04",
+        "condition": "FULL_HORIZON",
+        "count": 3,
+        "keys": [
+          "prediction-moment",
+          "prediction-time-feature-eligibility",
+          "temporal-validation"
+        ],
+        "output_id": "output-24305cd64087273f"
+      }
+    ]
+  },
+  "environment": {
+    "judge_model": "gpt-5.6-sol",
+    "judge_reasoning_effort": "high",
+    "openai_agents_version": "0.19.4",
+    "openai_client_version": "2.54.0",
+    "python_version": "3.13.15",
+    "reasoner_reasoning_effort": "medium",
+    "requested_reasoner_model": "gpt-5.6-sol"
+  },
+  "finished_at_utc": "2026-08-23T11:05:15.331955+00:00",
+  "gate_evaluation": {
+    "aggregate_full_quality": 1.0,
+    "aggregate_input_token_ratio": 0.33437861033173794,
+    "aggregate_selective_quality": 1.0,
+    "critical_regressions": [],
+    "efficiency_passed": true,
+    "matched_pair_token_failures": [],
+    "per_case_input_token_ratios": {
+      "RV-01": 0.29987934627618734,
+      "RV-02": 0.2609176340519624,
+      "RV-03": 0.4155472362915657,
+      "RV-04": 0.3609220636663008
+    },
+    "per_case_quality": {
+      "RV-01": {
+        "FULL_HORIZON": 1.0,
+        "SELECTIVE": 1.0,
+        "difference": 0.0
+      },
+      "RV-02": {
+        "FULL_HORIZON": 1.0,
+        "SELECTIVE": 1.0,
+        "difference": 0.0
+      },
+      "RV-03": {
+        "FULL_HORIZON": 1.0,
+        "SELECTIVE": 1.0,
+        "difference": 0.0
+      },
+      "RV-04": {
+        "FULL_HORIZON": 1.0,
+        "SELECTIVE": 1.0,
+        "difference": 0.0
+      }
+    },
+    "quality_passed": true
+  },
+  "judge_plan_sha256": "939c464190348d860b4459dfadfd732fce1ee7f7802525d582e3a1aeb0da20bd",
+  "overall_frozen_gate_passed": true,
+  "provider_attempts": {
+    "maximum": 60,
+    "used": 48
+  },
+  "reasoning_plan_sha256": "ef2d604453232487b4259b15f947063ef165f059be3d28bac9d5e93c0583858a",
+  "source_head": "3592cc3bd91e0aae7e5c667fa0c762ae4acd5395",
+  "specification": "014-v0.1",
+  "started_at_utc": "2026-08-23T11:00:47.221675+00:00",
+  "technical_invariants": {
+    "RV-INV-01_frozen_selective_sets": true,
+    "RV-INV-02_full_control_ten_revisions": true,
+    "RV-INV-03_same_task_evidence": true,
+    "RV-INV-04_same_model_configuration": true,
+    "RV-INV-05_no_tools": true,
+    "RV-INV-06_no_cross_call_state": true,
+    "RV-INV-07_runtime_isolation": true,
+    "RV-INV-08_structured_output_contracts": true,
+    "RV-INV-09_context_transparency": true,
+    "RV-INV-10_provider_usage_transparency": true,
+    "RV-INV-11_judge_blinding": true,
+    "RV-INV-12_deterministic_plan": true,
+    "RV-INV-13_authoritative_isolation": true,
+    "RV-INV-14_ci_isolation": true,
+    "RV-INV-15_cross_platform_infrastructure": "REQUIRES_CI_EVIDENCE"
+  }
+}
