@@ -25,16 +25,20 @@ Explicit machinery must earn its complexity empirically.
 Current execution state:
 
 ```text
-checkpoint            147
+checkpoint            148
 active branch         v1-recommendation-action-value
 active PR             #13 -> v1-frontend-spike
 promoted V1 head      bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
-current boundary      Specification 015 frozen; provider-free recommendation/action implementation next
+current boundary      Specification 015 provider-free gate passed; exact pre-live validation next
 ```
 
-The first real-model selective-context value gate is promoted through Specification 014 v1.0 / Checkpoint 146. The next frozen question moves downstream from context economy to whether ADS can correctly calibrate `RECOMMENDED` versus `REQUIRED / BLOCKING`, avoid important omissions, and avoid unnecessary work.
+Specification 014 v1.0 / Checkpoint 146 established the first real-model evidence that selective exact-revision methodological context can preserve frozen reasoning quality while materially reducing provider input-token burden.
 
-Research 022, Specification 015 v0.1, the frozen recommendation/action fixture, and Checkpoint 147 now govern that implementation. No new live Specification 015 call has occurred.
+Specification 015 moves downstream from context economy to recommendation/action quality: whether ADS helps a strong reasoner distinguish `RECOMMENDED` from `REQUIRED / BLOCKING`, preserve validity dependencies, avoid important omissions, and avoid unnecessary work.
+
+Checkpoint 148 records a complete provider-free Specification 015 implementation. The full 36 reasoner + 36 blinded-judge fake-runtime shape passes, the three treatment conditions remain isolated, deterministic recommendation metrics are recomputed from hidden fixture truth, no authoritative project mutation occurs, and the dedicated Ubuntu/Windows workflow is green.
+
+The manual secret-gated live workflow is armed but has not been executed.
 
 For exact continuation, start with:
 
@@ -42,7 +46,10 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
 ```
+
+---
 
 ## Prototype V0 result and durable constraint
 
@@ -128,17 +135,18 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The current scaling path is:
+The current executable scaling path is:
 
 ```text
 large reusable methodological knowledge universe
     -> high-recall retrieval
     -> bounded explained MethodologicalHorizon
     -> applicability / missing-context handling
-    -> relevance / prioritization
-    -> selective task-specific MethodologicalContextPack
+    -> bounded task-specific relevance selection
+    -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> reasoning / recommendation evidence
+    -> reasoning evidence
+    -> recommendation / REQUIRED-BLOCKING / bounded action evidence
 ```
 
 Primary foundations:
@@ -149,9 +157,9 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-### Accepted persistence, interchange, and runtime boundaries
+### Accepted persistence, interchange, runtime, and interaction boundaries
 
-Accepted V1 decisions include:
+Accepted V1 decisions and promoted contracts include:
 
 ```text
 D-028
@@ -168,6 +176,9 @@ D-031
     semantic validation
     deterministic reusable-knowledge normalization/serialization
 
+Specification 008
+    promoted Project Cockpit interaction architecture
+
 D-032
     OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
     validated starting package openai-agents==0.19.4
@@ -177,31 +188,13 @@ The governed reusable-knowledge persistence/interchange seam is closed across SQ
 
 Direct model calls remain the runtime fallback/reference path. LangGraph remains a possible stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
 
-### Project Cockpit
-
-Specification 008 promotes the Project Cockpit as the primary immersive V1 active-work interaction model while direct specialist views remain alternative entry, inspection, and record paths.
-
-Primary source:
-
-```text
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-```
+The Project Cockpit remains the promoted primary immersive V1 active-work interaction model, while specialist views remain alternative entry, inspection, and record paths.
 
 ---
 
 ## Retrieval and MethodologicalHorizon progression
 
-The first bounded methodological-navigation program is decomposed as:
-
-```text
-RH-L    lexical-addressable retrieval
-RH-S    semantic/paraphrase retrieval
-RH-R    relational Horizon expansion
-RH-A    applicability / required-context behavior
-RH-C    selective context construction
-```
-
-Current evidence:
+The first bounded methodological-navigation program progressed through:
 
 ```text
 Checkpoint 135
@@ -232,7 +225,7 @@ The key semantic invariant is:
 unknown != false
 ```
 
-The hybrid result is evidence for lexical+dense complementarity. It does not permanently select FastEmbed, BGE, RRF `k=60`, embedding persistence, ANN, or a vector database.
+The hybrid retrieval result is evidence for lexical+dense complementarity. It does not permanently select FastEmbed, BGE, RRF `k=60`, embedding persistence, ANN, reranking, or a vector database.
 
 ---
 
@@ -270,28 +263,9 @@ RH-C03        3 / 10         10,752       3,724     0.3464
 RH-C04        2 / 10         10,754       3,035     0.2822
 ```
 
-Equivalent methodology-only context reduction was approximately **65% to 84%** while preserving:
+Equivalent methodology-only context reduction was approximately **65% to 84%** while preserving required stable-key/revision coverage and explicit omission reasons. Checkpoint 143 promotes Specification 013 to accepted bounded v1.0.
 
-```text
-required stable-key coverage       1.00
-required exact-revision coverage   1.00
-irrelevant selected assets         0
-selected assets                    <= 3
-unexplained omissions              0
-```
-
-Checkpoint 143 promotes Specification 013 to accepted bounded v1.0.
-
-Primary sources:
-
-```text
-docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
-docs/specifications/013_v1_horizon_relevance_and_selective_context.md
-docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
-experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
-```
-
-This does not prove that reasoning functions solve general semantic relevance or that `max_assets = 3` is universal. Specification 014 provides the first bounded downstream reasoning evidence; broader recommendation/action value and scaling remain separate questions.
+This does not prove that explicit reasoning functions solve general semantic relevance or that `max_assets = 3` is universal.
 
 ---
 
@@ -299,7 +273,7 @@ This does not prove that reasoning functions solve general semantic relevance or
 
 Specification 014 v1.0 / Checkpoint 146 preserve the first downstream real-model test of the accepted selective `MethodologicalContextPack` against a compact full-Horizon control under the same task evidence and model/runtime configuration.
 
-Frozen result:
+Observed:
 
 ```text
 24 / 24 reasoner outputs
@@ -319,23 +293,7 @@ aggregate provider input tokens
 
 Every matched pair used fewer SELECTIVE input tokens. No critical-obligation regression or unsupported methodological-basis reference occurred.
 
-A diagnostic difference did appear: SELECTIVE produced zero unexpected methodological-basis keys, while FULL_HORIZON averaged `1.666667` unexpected keys per output, concentrated in RV-01 and RV-04. Since both conditions still reached the quality ceiling, this is evidence of methodological expansion rather than proof of general distraction or quality harm.
-
-This is the first real-model downstream evidence supporting:
-
-```text
-what the SYSTEM should remember
-    !=
-what the LLM should receive on every reasoning call
-```
-
-Accepted continuation:
-
-```text
-explained MethodologicalHorizon
-    -> selective exact-revision MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-```
+FULL_HORIZON produced more unexpected methodological-basis expansion, but both conditions reached the frozen quality ceiling. The supported conclusion is bounded quality preservation plus substantial token reduction, not proof that fuller context generally harms reasoning.
 
 Primary evidence:
 
@@ -348,9 +306,11 @@ docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
 
 The result does not select a final provider/model, universal context budget, general relevance solution, or recommendation/REQUIRED-BLOCKING policy.
 
+---
+
 ## Active experiment: recommendation and action value
 
-Specification 015 v0.1 / Checkpoint 147 freeze the first downstream test of:
+Specification 015 v0.1 / Checkpoints 147-148 govern the first downstream test of:
 
 ```text
 RELEVANT
@@ -372,9 +332,16 @@ FULL_HORIZON
     all ten exact Horizon revisions
 ```
 
-The four frozen microstates test a future-prediction validity gate, compact nonlinear model choice, bounded distribution-evidence planning, and interacting missingness/class-imbalance decisions.
+The four frozen microstates test:
 
-Every action must be classified exactly once as:
+```text
+RA-01  future-prediction validity gate
+RA-02  compact nonlinear model choice
+RA-03  bounded distribution-evidence plan
+RA-04  interacting missingness/class-imbalance decisions
+```
+
+Every candidate action must be classified exactly once as:
 
 ```text
 BLOCKING_REQUIRED
@@ -383,7 +350,7 @@ DEFER
 NOT_NOW
 ```
 
-Primary evaluation is deterministic, including exact disposition accuracy, critical omissions, under/over-recommendation, unnecessary action cost, and blocking-scope errors. A blinded semantic judge is secondary for rationale/dependency correctness.
+Primary evaluation is deterministic, including exact disposition accuracy, critical omissions, under/over-recommendation, unnecessary action cost, blocking-scope errors, clarification misses, and basis provenance. A condition-blinded semantic judge is secondary for rationale/dependency correctness.
 
 The advancement rule deliberately distinguishes:
 
@@ -395,6 +362,69 @@ FAIL
 
 so a ceiling result against strong controls cannot be post-hoc reinterpreted as additional ADS value.
 
+### Provider-free gate
+
+Checkpoint 148 preserves implementation head:
+
+```text
+6ccfd15d194a4205b2f554268ccad05fbd38edda
+```
+
+Cross-platform workflow:
+
+```text
+V1 recommendation action value
+run 32640518712
+
+Ubuntu
+    dedicated  12 passed
+    full suite 63 passed, 2 skipped
+
+Windows
+    dedicated  12 passed
+    full suite 63 passed, 2 skipped
+```
+
+Both jobs explicitly verified that `OPENAI_API_KEY` was absent. The two skips are the existing PostgreSQL-dependent tests without `ADS_TEST_POSTGRES_URL`.
+
+The complete fake-runtime 36 reasoner + 36 blinded-judge design deliberately returns perfect recommendations in all three conditions. The evaluator correctly returns:
+
+```text
+SAFE_BUT_NOT_DIFFERENTIATED
+```
+
+This proves the experiment machinery does not manufacture a benefit when strong controls tie. It is not evidence about the real treatment comparison.
+
+The runner also verifies:
+
+```text
+GENERIC       no reusable methodological assets
+SELECTIVE     exact 2-3 accepted revisions
+FULL_HORIZON  exact ten accepted revisions
+reasoner      evaluator truth excluded
+judge         treatment/evaluator truth blinded
+project state unchanged before/after
+knowledge authority unchanged before/after
+```
+
+### Live boundary
+
+The manual workflow exists at:
+
+```text
+.github/workflows/v1-recommendation-action-value-live.yml
+```
+
+It is `workflow_dispatch` only and requires:
+
+```text
+branch        v1-recommendation-action-value
+secret        OPENAI_API_KEY
+confirmation  RUN_SPEC_015_FROZEN
+```
+
+No live Specification 015 reasoner or judge call has occurred.
+
 Primary active sources:
 
 ```text
@@ -402,6 +432,7 @@ docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
 ```
 
 ---
@@ -409,16 +440,18 @@ docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 ## Exact continuation
 
 ```text
-1. implement Specification 015 provider-free only
-2. establish ADS-owned recommendation result/disposition types and exact evaluator
-3. build GENERIC / SELECTIVE / FULL_HORIZON condition construction and deterministic plans
-4. validate the full fake-runtime 36 reasoner + 36 judge shape
-5. prove no authoritative project mutation and no live-key leakage into ordinary CI
-6. validate Ubuntu + Windows on the exact implementation head
-7. only then establish the explicit secret-gated live boundary
+1. validate the exact reconciled pre-live branch head on Ubuntu and Windows
+2. preserve that exact source head and workflow-run evidence in the next checkpoint
+3. keep the frozen Specification 015 treatment unchanged
+4. expose the frozen live workflow on the default branch only as the manual dispatcher surface
+5. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
+6. preserve the complete live raw/result bundle before any tuning
+7. apply the frozen PROMOTE_BOUNDED_RECOMMENDATION_SEAM / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification exactly
 ```
 
-Do not make a live Specification 015 model call before the provider-free implementation boundary is validated. Do not promote the benchmark disposition labels or bounded candidate menu into final product semantics from the freeze alone.
+Do not change the fixture, action menus, model/runtime treatment, prompts, rubric, thresholds, repetitions, randomization, retry policy, retrieval stack, or recommendation machinery between pre-live validation and the frozen live run.
+
+---
 
 ## Repository role
 
