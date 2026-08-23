@@ -23,11 +23,11 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            154
+checkpoint            155
 active branch         v1-disposition-semantics-diagnostic
 active PR             #15 -> v1-frontend-spike
 promoted V1 head      10aa3f59bedc5ee45a38f0ae05c68da901d9adff
-current boundary      Specification 016 provider-free gate passed; exact live-ready boundary frozen
+current boundary      Specification 016 live diagnostic completed; DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
 The current progression is:
@@ -49,12 +49,12 @@ Specification 015
     failed implementation rejected
     negative evidence preserved separately
 
-Specification 016 [active]
-    DEFER-vs-NOT_NOW construct-validity diagnostic
-    preregistered before implementation
-    provider-free implementation green on Ubuntu and Windows
-    secret-gated live boundary frozen
-    no live Specification 016 call yet
+Specification 016
+    isolated DEFER-vs-NOT_NOW construct validity
+    provider-free implementation green cross-platform
+    live diagnostic completed on the exact frozen head
+    all frozen hard gates passed
+    outcome DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
 For exact continuation, start with:
@@ -63,8 +63,8 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/154_specification_016_live_boundary_frozen.md
+docs/checkpoints/155_disposition_semantics_live_gate_supported.md
+experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 ```
 
 ---
@@ -142,7 +142,7 @@ large reusable methodological knowledge universe
     -> measured real reasoning
 ```
 
-The transition from reasoning to recommendation/action semantics remains unresolved after Specification 015 and is the active diagnostic boundary.
+The first downstream recommendation/action experiment failed, but Specification 016 has now isolated and supported a stronger relation-backed sequencing distinction for future experiments.
 
 Primary foundations:
 
@@ -292,11 +292,11 @@ experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 
 ---
 
-## Active diagnostic: DEFER versus NOT_NOW
+## Completed diagnostic: DEFER versus NOT_NOW
 
-Specification 016 is deliberately not another GENERIC-vs-SELECTIVE value test. It first asks whether the exact-label boundary that failed Specification 015 can be made operational enough to evaluate reliably.
+Specification 016 was deliberately not another GENERIC-vs-SELECTIVE value test. It isolated whether the exact-label boundary that failed Specification 015 could be made operational enough to evaluate reliably.
 
-Experimental semantics:
+Experimental relation-backed semantics:
 
 ```text
 DEFER
@@ -322,70 +322,48 @@ Frozen benchmark:
 randomization seed 2026082302
 ```
 
-No methodological assets, retrieval, Horizon, SELECTIVE treatment, semantic judge, tools, or authoritative project mutation participate.
+No methodological assets, retrieval, Horizon, SELECTIVE treatment, semantic judge, tools, or authoritative project mutation participated.
 
-Hard gates require:
-
-```text
-aggregate exact disposition accuracy >= 0.95
-every variant >= 2/3 correct
-every pair correct on both contrastive sides
-all expected-DEFER trigger pointers exact
-all expected-NOT_NOW pointers null
-```
-
-Frozen outcomes:
+The live workflow executed from exact frozen source head:
 
 ```text
-DISPOSITION_BOUNDARY_SUPPORTED
-DISPOSITION_BOUNDARY_NOT_SUPPORTED
-INCOMPLETE
+7db27fd35151c10cdb3562cdf4410fb8f4b09e8b
 ```
 
-### Provider-free implementation result
-
-Checkpoint 153 records the exact implementation head:
+Live result:
 
 ```text
-6e7af25fd96d79673a59845e1c608c752970f658
+run                                  32652636943
+reasoner outputs                     36 / 36
+provider attempts                    36 / 45
+failed attempts                      0
+retries                              0
+aggregate exact disposition accuracy 1.000000
+all variants                         3 / 3 correct
+all pair sides                       3 / 3 correct
+DEFER exact pointer accuracy         1.000000
+NOT_NOW null-pointer correctness     1.000000
+outcome                              DISPOSITION_BOUNDARY_SUPPORTED
 ```
-
-Cross-platform workflow `32646969810` passed:
-
-```text
-Ubuntu targeted       15 passed
-Windows targeted      15 passed
-Ubuntu full suite     62 passed, 2 skipped
-Windows full suite    62 passed, 2 skipped
-```
-
-The same head also passed Checkpoint metadata and the existing V1 reasoning-context regression workflow.
 
 The provider-free historical audit found that the two RA-02 expected-DEFER actions from Specification 015 do not satisfy the stronger Specification 016 construction rule for an unambiguous dependency-backed DEFER example. That is diagnostic evidence only and does not rescore Specification 015.
 
-### Live boundary
+Supported bounded conclusion:
 
-Checkpoint 154 freezes the secret-gated live workflow:
+> A dependency-backed `DEFER` definition is operationally representable, and the frozen reasoner can distinguish it from `NOT_NOW` on deliberately unambiguous contrastive project microstates.
 
-```text
-.github/workflows/v1-disposition-semantics-live.yml
-manual confirmation: RUN_SPEC_016_FROZEN
-branch: v1-disposition-semantics-diagnostic
-```
+For future recommendation/action experiments, DEFER-like sequencing must therefore carry a concrete represented activating dependency/trigger if deterministic separation from NOT_NOW-like absence of current justification is expected.
 
-No Specification 016 live provider call has occurred.
+This is a design/evaluation constraint, not a final production enum or persistence contract.
 
-A pass would show only that this stronger dependency-backed distinction is representable and reliably classifiable on deliberately unambiguous cases. A failure would mean the taxonomy should be collapsed or redesigned before another recommendation-value comparison.
-
-Primary active sources:
+Primary result sources:
 
 ```text
 docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-tests/fixtures/reasoning/disposition_semantics_v1.json
-docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
-docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/154_specification_016_live_boundary_frozen.md
+docs/checkpoints/155_disposition_semantics_live_gate_supported.md
+experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
+experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
 ```
 
 ---
@@ -393,16 +371,18 @@ docs/checkpoints/154_specification_016_live_boundary_frozen.md
 ## Exact continuation
 
 ```text
-1. validate the exact final PR #15 head under ordinary provider-free CI
-2. require V1 disposition semantics diagnostic, V1 reasoning context value, and Checkpoint metadata to pass
-3. after that exact head is green, make no further experiment-branch commits
-4. copy only the identical live workflow to main for workflow_dispatch visibility
-5. manually run V1 disposition semantics live from v1-disposition-semantics-diagnostic
-6. enter RUN_SPEC_016_FROZEN
-7. preserve the complete live artifact before interpretation or design changes
+1. finish Checkpoint 155 routing/promotion reconciliation
+2. update PR #15 with the measured Specification 016 result
+3. validate the exact reconciled PR #15 head under all relevant provider-free workflows
+4. merge exactly that green head into v1-frontend-spike
+5. branch from the promoted merge boundary
+6. preregister a new recommendation/action-value experiment
+7. require explicit dependency-backed sequencing for any DEFER-like frozen truth
+8. test whether SELECTIVE adds recommendation/action value beyond GENERIC
+9. make no new live model call before that new contract and implementation are provider-free validated
 ```
 
-Do not modify Specification 015 in place. Do not change Specification 016's fixture, definitions, thresholds, repetitions, randomization, retry policy, or concrete experiment treatment after live results are observed.
+Do not modify or rescore Specification 015. Do not treat Specification 016's deliberately unambiguous benchmark as proof that real project states will always make sequencing explicit.
 
 ---
 
