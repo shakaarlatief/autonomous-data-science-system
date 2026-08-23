@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 146  
+**Checkpoint:** 147  
 **Date:** 2026-08-23  
-**Active development branch:** `v1-reasoning-context-value`  
-**Active promotion PR:** #12 into `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`  
-**Development stage:** Prototype V0 complete; bounded V1 now has real-model evidence for the chain from governed methodological knowledge through explained Horizon, selective exact-revision context, and an ADS-owned reasoning runtime seam.  
+**Active development branch:** `v1-recommendation-action-value`  
+**Active promotion PR:** #13 into `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
+**Development stage:** Prototype V0 complete; bounded V1 now connects governed methodological knowledge, an explained Horizon, selective exact-revision context, and an ADS-owned reasoning runtime to the first frozen recommendation/action-value experiment.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** post-result preservation and canonical reconciliation are complete; validate the exact current PR #12 head, merge exactly that green head into `v1-frontend-spike`, then design and preregister the next harder project-level recommendation/action slice before new live model calls.
+**Immediate project priority:** implement Specification 015 provider-free only, preserving the frozen GENERIC / SELECTIVE / FULL_HORIZON recommendation-action design, exact deterministic evaluator, bounded action menus, and no-authoritative-mutation boundary before any new live model call.
 
 ## Active ChatGPT development context
 
@@ -31,7 +31,7 @@ what the LLM should receive on every reasoning call
 
 Do not restore P0's large always-on context/frontier, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
 
-The current methodological scaling path is:
+Current methodological path:
 
 ```text
 large reusable knowledge universe
@@ -41,7 +41,8 @@ large reusable knowledge universe
     -> bounded task-specific relevance selection
     -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> reasoning / recommendation / action evidence
+    -> reasoning evidence
+    -> recommendation / REQUIRED-BLOCKING / action evidence [active]
 ```
 
 ---
@@ -71,78 +72,97 @@ Specification 012 v1.0 / Checkpoint 141
     first explained MethodologicalHorizon
 
 Specification 013 v1.0 / Checkpoint 143
-    first accepted selective MethodologicalContextPack seam
+    first accepted selective exact-revision MethodologicalContextPack seam
 
 Specification 014 v1.0 / Checkpoint 146
     first real-model selective-context value gate passed
 ```
 
-No final LLM provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or recommendation/REQUIRED-BLOCKING policy is selected.
+Specification 014 observed equal frozen semantic quality (`1.000000` versus `1.000000`) while SELECTIVE used an aggregate provider input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regression.
+
+No final provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or recommendation/REQUIRED-BLOCKING production policy is selected.
 
 ---
 
-## Specification 014 live gate passed
+## Specification 015 recommendation/action contract is frozen
 
-Frozen source head:
+Research 022, Specification 015 v0.1, `recommendation_action_v1.json`, and Checkpoint 147 preregister the first downstream recommendation/action experiment before implementation or live calls.
 
-```text
-3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
-```
+Frozen question:
 
-Live evidence:
+> Given the same project microstate, explicit task profile, candidate action menu, model/runtime configuration, and evaluation rubric, does the accepted ADS methodological path help a strong reasoner choose and calibrate the right methodological actions, preserve blocking dependencies, and avoid unnecessary work relative to strong simpler controls?
 
-```text
-workflow    V1 reasoning context value live
-run         32635061634
-attempt     2
-reasoner    24 / 24 successful
-judge       24 / 24 successful
-retries     0
-overall     PASS
-```
-
-The first workflow attempt failed before provider calls because the repository secret was absent. Attempt 2 used the unchanged preregistered treatment.
-
-Quality:
+Frozen conditions:
 
 ```text
-aggregate SELECTIVE      1.000000
-aggregate FULL_HORIZON   1.000000
-all four per-case deltas 0.000000
-critical regressions     none
+GENERIC
+    same task/project/action envelope
+    no reusable methodological assets
+
+SELECTIVE
+    accepted Specification 013 exact-revision context
+
+FULL_HORIZON
+    all ten exact current accepted Horizon revisions
+    same compact reasoning projection
 ```
 
-Provider input-token burden:
+Benchmark-only dispositions:
 
 ```text
-RV-01 selective/full ratio  0.299879
-RV-02 selective/full ratio  0.260918
-RV-03 selective/full ratio  0.415547
-RV-04 selective/full ratio  0.360922
-aggregate ratio              0.334379
-aggregate reduction          66.56%
-matched-pair failures        none
+BLOCKING_REQUIRED
+RECOMMENDED
+DEFER
+NOT_NOW
 ```
 
-Diagnostic methodological expansion:
+The distinction is explicit: `BLOCKING_REQUIRED` is tied to a named validity/dependency scope and is not merely a stronger recommendation.
+
+Frozen cases:
 
 ```text
-SELECTIVE unexpected basis mean      0.000000
-FULL_HORIZON unexpected basis mean   1.666667
+RA-01 VALIDITY_GATE
+RA-02 MODEL_CHOICE
+RA-03 EVIDENCE_PLAN
+RA-04 MISSINGNESS_IMBALANCE
 ```
 
-Both conditions reached the frozen semantic ceiling, so the supported conclusion is quality preservation plus substantial token reduction, not proof that full context generally harms reasoning.
-
-Specification 014 is therefore promoted to bounded accepted v1.0. The production-facing ADS-owned `ReasoningRuntime` request/outcome/usage/trace seam and no-tool OpenAI Agents adapter used in the gate earn continuation under D-032. `gpt-5.6-sol` at medium reasoning effort remains experiment evidence, not a final model decision.
-
-Primary evidence:
+Frozen design:
 
 ```text
-experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
-experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
-docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
-docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+4 cases
+3 conditions
+3 repetitions
+36 planned reasoner outputs
+36 blinded judge outputs
+72 planned successful provider calls
+maximum 90 provider attempts
 ```
+
+Primary evaluation is deterministic:
+
+```text
+exact disposition accuracy
+critical action omissions
+under-recommendations
+over-recommendations
+unnecessary recommended cost units
+blocking-scope false negatives / positives
+required-clarification false negatives
+basis-provenance failures
+```
+
+The blinded semantic judge is secondary for rationale/dependency correctness.
+
+Advancement is explicitly three-way:
+
+```text
+PROMOTE_BOUNDED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+```
+
+A promotion claim requires all safety/non-regression/expansion gates plus at least one preregistered positive value signal. A three-way ceiling result must not be relabeled as added system value after the fact.
 
 ---
 
@@ -151,16 +171,17 @@ docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
 Still deliberately open:
 
 ```text
-final provider/model
-final reasoning effort / cost-quality policy
-natural-language or project-state -> reasoning-function/task-profile derivation
-general semantic relevance mechanism
-final Horizon/context budgets
-production embedding/fusion/reranking/vector infrastructure
-recommendation strength and RECOMMENDED -> REQUIRED/BLOCKING policy
-human approval/action policy
-multi-agent/specialist architecture
-complete production project-object schema
+natural-language/project-state -> reasoning-function derivation
+open-world proposal generation
+final recommendation enum/ranking model
+complete Foundation 018 production schema
+mapping recommendations to authoritative Proposal/Question/Decision events
+automatic execution
+human approval/escalation policy
+admissibility/risk-sensitive assurance policy
+final provider/model and reasoning-effort policy
+multi-agent/specialist recommendation architecture
+production semantic retrieval/reranking/vector infrastructure
 backend/API, artifact/job, cloud/deployment architecture
 final frontend stack and Cockpit implementation details
 ```
@@ -172,11 +193,24 @@ Do not return to retrieval/relevance tuning merely because more tuning is possib
 ## Exact continuation
 
 ```text
-1. validate the exact current PR #12 head with checkpoint metadata, V1 reasoning-context Ubuntu/Windows, selective-context, and Horizon regressions
-2. merge exactly that green PR #12 head into v1-frontend-spike
-3. create the next experiment branch from the promoted merge
-4. design the harder recommendation/action slice
-5. preregister its tasks, obligations, controls, model/runtime treatment, metrics, and advancement rule before new live calls
+1. implement ADS-owned RecommendationActionResult / disposition types provider-free
+2. implement the exact deterministic evaluator
+3. implement GENERIC / SELECTIVE / FULL_HORIZON condition construction
+4. implement deterministic reasoner/judge plans and blinded semantic-judge contracts
+5. add fake-runtime unit/integration coverage for the complete 36 + 36 observation shape
+6. add ordinary Ubuntu/Windows provider-free workflow coverage with no live API key
+7. validate the exact implementation head
+8. only then establish the explicit secret-gated live boundary
+9. preserve the live result before any treatment or threshold change
 ```
 
-The next experiment should make recommendation strength and downstream consequence observable. It should be capable of exposing both harmful omission and unnecessary methodological expansion rather than repeating the now-passed bounded context-compression question.
+No live Specification 015 reasoner or judge call has occurred.
+
+Primary active sources:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+```

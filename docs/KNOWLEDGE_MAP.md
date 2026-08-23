@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 146  
-**Active development branch:** `v1-reasoning-context-value`  
-**Active promotion PR:** #12 into `v1-frontend-spike`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`
+**Current checkpoint:** 147  
+**Active development branch:** `v1-recommendation-action-value`  
+**Active promotion PR:** #13 into `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`
 
 ## Start here
 
@@ -45,9 +45,9 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-active experiment branch  v1-reasoning-context-value
-active PR                  #12 -> v1-frontend-spike
-promoted integration head  fd33184fbff588c6737d77af751bc5def0e31954
+active experiment branch  v1-recommendation-action-value
+active PR                  #13 -> v1-frontend-spike
+promoted integration head  bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
 main                       intentionally behind current V1 work
 ```
 
@@ -93,6 +93,11 @@ Specification 014 v1.0 / Checkpoint 146
     quality 1.000000 vs 1.000000
     aggregate provider input-token ratio 0.334379
     66.56% input-token reduction
+
+Specification 015 v0.1 / Checkpoint 147
+    first recommendation/action-value contract frozen
+    GENERIC vs SELECTIVE vs FULL_HORIZON
+    provider-free implementation is the active next boundary
 ```
 
 ## Core system and product boundary
@@ -154,7 +159,7 @@ large reusable knowledge universe
     -> selective MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
     -> real reasoning evidence [first bounded gate passed]
-    -> harder recommendation/action evidence [next]
+    -> recommendation / REQUIRED-BLOCKING / action evidence [active frozen slice]
 ```
 
 ---
@@ -383,17 +388,77 @@ FULL_HORIZON unexpected basis mean   1.666667
 
 This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
 
+## Active recommendation/action-value route
+
+Frozen design sources:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+```
+
+Frozen conditions:
+
+```text
+GENERIC
+    same project/task/action envelope, no reusable methodological assets
+
+SELECTIVE
+    accepted Specification 013 exact-revision context
+
+FULL_HORIZON
+    all ten exact current accepted Horizon revisions
+```
+
+Frozen benchmark dispositions:
+
+```text
+BLOCKING_REQUIRED
+RECOMMENDED
+DEFER
+NOT_NOW
+```
+
+Frozen cases:
+
+```text
+RA-01 VALIDITY_GATE
+RA-02 MODEL_CHOICE
+RA-03 EVIDENCE_PLAN
+RA-04 MISSINGNESS_IMBALANCE
+```
+
+Frozen plan:
+
+```text
+4 cases x 3 conditions x 3 repetitions
+36 reasoner outputs
+36 condition-blinded judge outputs
+72 planned successful provider calls
+maximum 90 attempts
+```
+
+Primary metrics are deterministic recommendation/action metrics; semantic judging is secondary. Promotion additionally requires at least one preregistered positive value signal. Otherwise a fully safe ceiling result is classified `SAFE_BUT_NOT_DIFFERENTIATED` rather than being overclaimed.
+
+No provider-free implementation result or live result exists yet.
+
+---
+
 ## Current exact continuation
 
 ```text
-A. validate exact post-result reconciliation head
-B. merge exactly that green PR #12 head into v1-frontend-spike
-C. create the next branch from the promoted merge
-D. design/preregister a harder project-level recommendation/action slice
-E. do not make new live calls before the next frozen contract exists
+A. implement ADS-owned recommendation result/disposition types provider-free
+B. implement exact deterministic evaluator
+C. implement GENERIC / SELECTIVE / FULL_HORIZON condition construction
+D. add deterministic reasoner/judge plans and fake-runtime coverage
+E. add ordinary Ubuntu/Windows provider-free workflow coverage
+F. validate the exact implementation head
+G. only then establish the explicit secret-gated live execution boundary
 ```
 
-The next slice should test recommendation strength and project-level consequences, including whether an omitted concern creates a visible failure and whether unnecessary methodological expansion creates measurable cost. Retrieval/relevance tuning is not the next default action.
+Do not make a live Specification 015 call before the frozen provider-free implementation is validated. Do not return to retrieval/reranking/vector work without a measured downstream reason.
 
 ## Recent continuity checkpoints
 
@@ -409,4 +474,5 @@ The next slice should test recommendation strength and project-level consequence
 144  first reasoning-context-value contract frozen
 145  provider-free reasoning-context-value implementation passed cross-platform
 146  first real reasoning-context-value gate passed and promotion authorized
+147  first recommendation/action-value contract frozen
 ```

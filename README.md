@@ -25,23 +25,23 @@ Explicit machinery must earn its complexity empirically.
 Current execution state:
 
 ```text
-checkpoint            146
-active branch         v1-reasoning-context-value
-active PR             #12 -> v1-frontend-spike
-promoted V1 head      fd33184fbff588c6737d77af751bc5def0e31954
-current boundary      Specification 014 live gate passed; promotion reconciliation
+checkpoint            147
+active branch         v1-recommendation-action-value
+active PR             #13 -> v1-frontend-spike
+promoted V1 head      bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
+current boundary      Specification 015 frozen; provider-free recommendation/action implementation next
 ```
 
-The first real-model selective-context value experiment is complete and preserved. SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate frozen quality, while SELECTIVE used `0.334379` of FULL_HORIZON provider input tokens in aggregate, a `66.56%` reduction, with no matched-pair token failures or critical-obligation regressions.
+The first real-model selective-context value gate is promoted through Specification 014 v1.0 / Checkpoint 146. The next frozen question moves downstream from context economy to whether ADS can correctly calibrate `RECOMMENDED` versus `REQUIRED / BLOCKING`, avoid important omissions, and avoid unnecessary work.
 
-The immediate task is to validate the exact reconciled PR #12 head, merge that green head into `v1-frontend-spike`, and then preregister a harder recommendation/action slice before new live calls.
+Research 022, Specification 015 v0.1, the frozen recommendation/action fixture, and Checkpoint 147 now govern that implementation. No new live Specification 015 call has occurred.
 
 For exact continuation, start with:
 
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 ```
 
 ## Prototype V0 result and durable constraint
@@ -291,7 +291,7 @@ docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_
 experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
 
-This does not prove that reasoning functions solve general semantic relevance, that `max_assets = 3` is universal, or that selective context improves downstream reasoning.
+This does not prove that reasoning functions solve general semantic relevance or that `max_assets = 3` is universal. Specification 014 provides the first bounded downstream reasoning evidence; broader recommendation/action value and scaling remain separate questions.
 
 ---
 
@@ -348,18 +348,77 @@ docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
 
 The result does not select a final provider/model, universal context budget, general relevance solution, or recommendation/REQUIRED-BLOCKING policy.
 
+## Active experiment: recommendation and action value
+
+Specification 015 v0.1 / Checkpoint 147 freeze the first downstream test of:
+
+```text
+RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
+    -> bounded project action
+```
+
+Three conditions hold the project microstate, explicit reasoning-function profile, candidate action menu, output schema, and concrete model/runtime configuration fixed:
+
+```text
+GENERIC
+    no reusable methodological assets
+
+SELECTIVE
+    accepted exact-revision MethodologicalContextPack
+
+FULL_HORIZON
+    all ten exact Horizon revisions
+```
+
+The four frozen microstates test a future-prediction validity gate, compact nonlinear model choice, bounded distribution-evidence planning, and interacting missingness/class-imbalance decisions.
+
+Every action must be classified exactly once as:
+
+```text
+BLOCKING_REQUIRED
+RECOMMENDED
+DEFER
+NOT_NOW
+```
+
+Primary evaluation is deterministic, including exact disposition accuracy, critical omissions, under/over-recommendation, unnecessary action cost, and blocking-scope errors. A blinded semantic judge is secondary for rationale/dependency correctness.
+
+The advancement rule deliberately distinguishes:
+
+```text
+PROMOTE_BOUNDED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+```
+
+so a ceiling result against strong controls cannot be post-hoc reinterpreted as additional ADS value.
+
+Primary active sources:
+
+```text
+docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/recommendation_action_v1.json
+docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
+```
+
+---
+
 ## Exact continuation
 
 ```text
-1. validate the exact post-result reconciliation head
-2. merge exactly that green PR #12 head into v1-frontend-spike
-3. branch from the promoted merge
-4. design and preregister a harder project-level recommendation/action slice
-5. make recommendation strength, important omission, unnecessary expansion, and downstream consequence measurable
-6. make no new live model calls before that next contract is frozen
+1. implement Specification 015 provider-free only
+2. establish ADS-owned recommendation result/disposition types and exact evaluator
+3. build GENERIC / SELECTIVE / FULL_HORIZON condition construction and deterministic plans
+4. validate the full fake-runtime 36 reasoner + 36 judge shape
+5. prove no authoritative project mutation and no live-key leakage into ordinary CI
+6. validate Ubuntu + Windows on the exact implementation head
+7. only then establish the explicit secret-gated live boundary
 ```
 
-Do not return to retrieval or selector tuning without a measured downstream reason. Do not promote `gpt-5.6-sol`, `max_assets = 3`, or the current reasoning-function task profile into universal project decisions from this bounded result.
+Do not make a live Specification 015 model call before the provider-free implementation boundary is validated. Do not promote the benchmark disposition labels or bounded candidate menu into final product semantics from the freeze alone.
 
 ## Repository role
 

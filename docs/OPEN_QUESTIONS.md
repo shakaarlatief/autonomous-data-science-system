@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-23  
-**Reconciliation context:** Prototype V0 is complete; the post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, and deterministic selective-context seam are established. Specification 014 v1.0 / Checkpoint 146 now add the first real-model downstream evidence: SELECTIVE preserved every frozen semantic obligation at the same 1.000000 aggregate quality as FULL_HORIZON while using 0.334379 of its provider input tokens in aggregate. The immediate unresolved boundary is no longer context-value compression itself; it is harder project-level recommendation/action quality, recommendation strength and REQUIRED/BLOCKING transitions, task-profile derivation, and broader scaling/generalization.
+**Reconciliation context:** Prototype V0 is complete; the post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, deterministic selective-context seam, and first real-model context-value result are established through Specification 014 v1.0 / Checkpoint 146. Specification 015 v0.1 / Checkpoint 147 now freeze the first downstream recommendation/action-value test across GENERIC, SELECTIVE, and FULL_HORIZON conditions. The immediate unresolved boundary is whether the accepted ADS methodological path improves recommendation calibration, blocking behavior, and unnecessary-action control beyond strong simpler controls; task-profile derivation, open-world proposal generation, project-state mutation, human approval, and broader scaling remain separate questions.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -141,21 +141,33 @@ large reusable knowledge universe
 
 Specification 014 v1.0 / Checkpoint 146 provide the first direct downstream evidence. Under the frozen four-case comparison, SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate semantic quality while SELECTIVE used an aggregate input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regressions and no unexpected SELECTIVE methodological-basis keys.
 
-This supports selective methodological context as a real-reasoning V1 seam. Still open are natural-language/project-state task interpretation, behavior on harder and heterogeneous project tasks, when richer semantic/LLM relevance becomes necessary, open-world discovery of concerns absent from explicit knowledge, final budget policy, and how reasoning should become recommendation/action.
+This supports selective methodological context as a real-reasoning V1 seam. Specification 015 / Checkpoint 147 now freeze the first direct downstream recommendation/action test while deliberately holding task-profile derivation fixed. Still open are its result, natural-language/project-state task interpretation, behavior on harder and heterogeneous project tasks, when richer semantic/LLM relevance becomes necessary, open-world discovery of concerns absent from explicit knowledge, final budget policy, and later authoritative project mutation.
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Retrieval/Horizon/selective-context mechanics validated; activation policy still open
+**Status:** Retrieval/Horizon/selective-context mechanics validated; first recommendation/action calibration experiment frozen
 
-P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, applicability/context checks, bounded relevance selection, and selective reasoning context.
+P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, applicability/context checks, bounded relevance selection, recommendation reasoning, and selective reasoning context.
+
+Specification 015 / Checkpoint 147 now isolate the next step after relevance by supplying the same bounded candidate action menu to three conditions and measuring whether actions are calibrated as:
+
+```text
+BLOCKING_REQUIRED
+RECOMMENDED
+DEFER
+NOT_NOW
+```
+
+The experiment holds action discovery and task-profile derivation constant so recommendation strength and blocking behavior can be attributed cleanly.
 
 Still open:
 
 ```text
 project state -> current task/reasoning-function profile
-relevant concern -> Question / Proposal / Investigation
-recommendation and REQUIRED/BLOCKING transitions
-open-world concerns when explicit knowledge is incomplete
+open-world concern/action discovery
+accepted recommendation -> durable Question / Proposal / Investigation
+human approval / automatic-action policy
+production REQUIRED/BLOCKING semantics and scope
 ```
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
@@ -206,7 +218,8 @@ Still unresolved:
 how production project objects/state derive requested reasoning functions
 whether explicit task semantics remain expressive enough at larger scale
 how semantic/LLM relevance participates when they are not
-how reasoning becomes recommendation, required concern, proposal, investigation, or action
+whether the frozen Specification 015 recommendation/action seam adds value over strong controls
+how a future accepted recommendation becomes Proposal / Question / Investigation / Decision state
 how activation behaves on harder and open-world project states
 ```
 
@@ -252,11 +265,11 @@ The current evidence gives no reason to tune retrieval merely because more tunin
 
 ### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?
 
-**Status:** First reasoning-quality separation validated; recommendation strength/action quality are now the active gap
+**Status:** First reasoning-quality separation validated; first recommendation/action-value contract now frozen
 
-The executable failure decomposition can distinguish catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, and reasoner-obligation failures.
+The executable failure decomposition can already distinguish catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, and reasoner-obligation failures.
 
-Specification 014 adds real evidence at the reasoning layer:
+Specification 014 established the first downstream reasoning evidence:
 
 ```text
 SELECTIVE quality       1.000000
@@ -265,19 +278,29 @@ critical regressions    none
 aggregate input ratio   0.334379
 ```
 
-The first bounded result therefore separates context economy from semantic obligation quality successfully. It also records a diagnostic increase in unexpected methodological-basis expansion under FULL_HORIZON without measured rubric-quality loss.
-
-The important unresolved layer is now:
+Specification 015 / Checkpoint 147 now preregister the next layer with exact deterministic recommendation metrics:
 
 ```text
-is the concern merely relevant or actually recommended?
-how strong should the recommendation be?
-when does RECOMMENDED become REQUIRED / BLOCKING?
-what evidence justifies that transition?
-does the human/system follow the recommendation?
-what downstream project/execution outcome results?
-can important omission and unnecessary expansion both be measured on a harder task?
+exact disposition accuracy
+critical action omissions
+under-recommendations
+over-recommendations
+unnecessary recommended cost
+blocking-scope false negatives / positives
+basis-provenance failures
 ```
+
+and three conditions:
+
+```text
+GENERIC
+SELECTIVE
+FULL_HORIZON
+```
+
+The frozen advancement rule distinguishes `PROMOTE_BOUNDED_RECOMMENDATION_SEAM`, `SAFE_BUT_NOT_DIFFERENTIATED`, and `FAIL`, so equal ceiling performance cannot be claimed as added ADS value without a preregistered positive signal.
+
+Still open after this gate will be open-world proposal generation, final recommendation strength/ranking semantics, production REQUIRED/BLOCKING policy, human/system follow-through, authoritative project-object mutation, and downstream execution outcome quality.
 
 ## Agent/runtime, execution, and interoperability
 
@@ -295,9 +318,9 @@ Foundation 018 establishes shared reproducible run contracts and retains VS Code
 
 ### Q-021. How should model and tool providers be selected?
 
-**Status:** Open; runtime boundary selected, one bounded model treatment frozen for Specification 014
+**Status:** Open; runtime boundary selected, the same bounded model treatment is held fixed through Specification 015 for attribution
 
-D-032 selects runtime infrastructure, not the final LLM provider/model. Specification 014 deliberately freezes `gpt-5.6-sol` under one model configuration only to make the selective/full-context comparison interpretable. That treatment must not be promoted into a permanent model choice merely because the experiment uses it.
+D-032 selects runtime infrastructure, not the final LLM provider/model. Specification 014 froze `gpt-5.6-sol` for the selective/full-context comparison; Specification 015 deliberately holds the same concrete treatment fixed while changing the recommendation/action task. This preserves attribution and still must not be promoted into a permanent model choice merely because the experiments use it.
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
