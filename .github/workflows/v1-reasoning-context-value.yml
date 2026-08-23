@@ -1,0 +1,85 @@
+name: V1 reasoning context value
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [v1-reasoning-context-value]
+    paths:
+      - src/ads_system/application/reasoning.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/runtime/**
+      - experiments/reasoning_context_value/**
+      - tests/fixtures/reasoning/context_value_v1.json
+      - tests/fixtures/retrieval/selective_context_v1.json
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/unit/test_reasoning.py
+      - tests/unit/test_reasoning_context_value_harness.py
+      - tests/integration/test_reasoning_context_value_vertical_slice.py
+      - docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+      - docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+      - docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
+      - docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+      - .github/workflows/v1-reasoning-context-value.yml
+      - .github/workflows/v1-reasoning-context-value-live.yml
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - src/ads_system/application/reasoning.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/runtime/**
+      - experiments/reasoning_context_value/**
+      - tests/fixtures/reasoning/context_value_v1.json
+      - tests/fixtures/retrieval/selective_context_v1.json
+      - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
+      - tests/unit/test_reasoning.py
+      - tests/unit/test_reasoning_context_value_harness.py
+      - tests/integration/test_reasoning_context_value_vertical_slice.py
+      - docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+      - docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+      - docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
+      - docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+      - .github/workflows/v1-reasoning-context-value.yml
+      - .github/workflows/v1-reasoning-context-value-live.yml
+
+permissions:
+  contents: read
+
+jobs:
+  provider-free-vertical-slice:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify live provider credential is absent
+        shell: bash
+        run: |
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            echo "Ordinary reasoning-context CI must not receive OPENAI_API_KEY."
+            exit 1
+          fi
+      - name: Run frozen provider-free reasoning vertical-slice gates
+        run: >-
+          uv run --python 3.13 --locked python -m pytest
+          tests/unit/test_reasoning.py
+          tests/unit/test_reasoning_context_value_harness.py
+          tests/integration/test_reasoning_context_value_vertical_slice.py
+          -q
+      - name: Run existing V1 Python regression suite
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q

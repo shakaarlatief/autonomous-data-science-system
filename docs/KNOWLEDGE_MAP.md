@@ -2,39 +2,38 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-22  
-**Current checkpoint:** 143  
-**Active development branch:** `v1-relevance-selective-context`  
-**Active promotion PR:** #11 into `v1-frontend-spike`
+**Last reviewed:** 2026-08-23  
+**Current checkpoint:** 146  
+**Active development branch:** `v1-reasoning-context-value`  
+**Active promotion PR:** #12 into `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`
 
 ## Start here
 
-For a new session or quick reconstruction:
-
 ```text
 README.md
-    project-level overview and current stage
+    project overview and current active track
 
 docs/CURRENT_STATE.md
-    present state, active gate, exact next step
+    present state, current gate, exact next action
 
 docs/KNOWLEDGE_MAP.md
-    routing layer
+    routing/index layer
 
 docs/VISION.md
-    current system purpose and product direction
+    high-level system and product direction
 
 docs/PRINCIPLES.md
-    current high-level design principles
+    accepted high-level design principles
 
 docs/DECISIONS.md
     accepted project-level decisions
 
 docs/OPEN_QUESTIONS.md
-    current unresolved questions
+    unresolved design/evaluation questions
 
 docs/DEVELOPMENT_METHOD.md
-    preservation/development method
+    development, checkpoint, promotion, and reconciliation method
 
 docs/CONTINUITY.md
     continuation and unexpected-boundary recovery
@@ -46,19 +45,11 @@ docs/MAJOR_CHANGES.md
 Current branch relationship:
 
 ```text
-active selective-context promotion branch = v1-relevance-selective-context
-active PR                             = #11 -> v1-frontend-spike
-promoted V1 integration branch       = v1-frontend-spike
-main intentionally trails current V1 work
+active experiment branch  v1-reasoning-context-value
+active PR                  #12 -> v1-frontend-spike
+promoted integration head  fd33184fbff588c6737d77af751bc5def0e31954
+main                       intentionally behind current V1 work
 ```
-
-The integration branch contains the retrieval/MethodologicalHorizon promotion from PR #10 at:
-
-```text
-9319ed9b0a401efa1be85c27a9ce4424a8ce5e1e
-```
-
-PR #11 adds the first accepted bounded `MethodologicalContextPack` selection/serialization seam after a successful preregistered RH-C gate.
 
 ---
 
@@ -68,94 +59,7 @@ Prototype V0 is complete with final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**
 
-Current V1 boundaries:
-
-```text
-methodological/object architecture
-    Foundations 018-020
-
-governed persistence/interchange
-    D-028 through D-031
-    closed current seam through Checkpoint 127
-
-Project Cockpit interaction architecture
-    Specification 008 promoted through Checkpoint 126
-    bounded post-promotion polish through Checkpoint 130
-
-reasoning runtime
-    D-032 accepted after completed Specification 005 bakeoff
-    OpenAI Agents SDK behind ADS-owned runtime port
-    Checkpoint 133
-
-production retrieval / MethodologicalHorizon
-    Specification 009 benchmark decomposition
-    Checkpoint 135 production lexical PASS
-    Checkpoint 137 dense-only comparator preserved
-    Checkpoint 139 hybrid retrieval PASS
-    Specification 012 v1.0
-    Checkpoint 141 first explained MethodologicalHorizon PASS
-
-relevance / selective methodological context
-    Research 020
-    Specification 013 v1.0 accepted bounded seam
-    Checkpoint 142 frozen contract
-    Checkpoint 143 successful promotion
-    V1_SELECTIVE_CONTEXT_RESULT.md
-
-next
-    real reasoning vertical slice
-    selective context vs strong full-Horizon/simple control
-    one concrete model configuration through ReasoningRuntime
-```
-
----
-
-## Core system boundary
-
-Primary sources:
-
-```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-```
-
-Durable interpretation:
-
-```text
-LLM
-    flexible reasoning component
-
-ADS
-    persistent project/process intelligence
-    methodological knowledge
-    provenance
-    deterministic controls where justified
-    execution coordination
-    professional reasoning/control surface
-
-Human
-    goals
-    semantics
-    consequential judgment
-    approvals/intervention where useful
-```
-
-Every explicit mechanism must earn its complexity empirically.
-
----
-
-## Prototype V0 constraint
-
-Authoritative evidence:
-
-```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-prototype_v0/README.md
-docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
-```
-
-Core lesson:
+Durable post-V0 constraint:
 
 ```text
 what the SYSTEM should remember
@@ -163,38 +67,64 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-Do not reintroduce unchanged full structured state every cycle, large always-on context/frontier, path-sensitive trigger activation, generic recursive support reassessment, or universal dependency reopening.
-
----
-
-## Project object model
-
-Primary source:
+Current V1 progression:
 
 ```text
+Foundations 018-020
+    object/state model, methodological navigation, reusable knowledge
+
+D-028 through D-031 / Checkpoint 127
+    local-first persistence and governed knowledge interchange
+
+Specification 008 / Checkpoints 126 and 130
+    promoted Project Cockpit interaction architecture
+
+D-032 / Checkpoint 133
+    OpenAI Agents SDK behind ADS-owned ReasoningRuntime
+
+Checkpoints 135 -> 137 -> 139 -> 141
+    lexical retrieval -> dense complementarity -> hybrid comparator -> explained Horizon
+
+Specification 013 v1.0 / Checkpoint 143
+    accepted selective exact-revision MethodologicalContextPack
+
+Specification 014 v1.0 / Checkpoint 146
+    first real-model selective-context value gate PASS
+    quality 1.000000 vs 1.000000
+    aggregate provider input-token ratio 0.334379
+    66.56% input-token reduction
+```
+
+## Core system and product boundary
+
+Primary rationale:
+
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 ```
 
-Core structures:
+Current division:
 
 ```text
-OBJECTS
-RELATIONS
-EVENTS
-VIEWS
+LLM
+    flexible reasoning component
+
+ADS
+    project/process memory
+    methodological knowledge/navigation
+    provenance and deterministic controls
+    execution coordination
+    professional interaction surface
+
+Human
+    goals and semantics
+    consequential judgment
+    approvals/intervention where useful
 ```
 
-Important distinctions:
-
-```text
-Investigation != Run
-Evidence != Finding
-Finding != Claim
-Claim != Decision
-current state != event history
-persisted object != derived recommendation
-workspace section != fundamental object
-```
+Every explicit mechanism must earn its complexity empirically.
 
 ---
 
@@ -207,43 +137,29 @@ docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 ```
 
-Relevance progression:
+Navigation progression:
 
 ```text
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
 
-Current scaling path:
+Current executable path:
 
 ```text
-large global knowledge universe
-    -> high-recall project-specific retrieval/filtering
+large reusable knowledge universe
+    -> retrieval
     -> bounded explained MethodologicalHorizon
-    -> explicit applicability/context checks
+    -> applicability / missing-context checks
     -> bounded task-specific relevance selection
     -> selective MethodologicalContextPack
-    -> real reasoning
-```
-
-Reusable representation includes:
-
-```text
-KnowledgeAsset
-KnowledgeComponent
-NarrativeFacet
-KnowledgeRelation
-conditional KnowledgeRule
-KnowledgeCollection
-exact stable/revision identity
-criterion Finding
-ExecutionCapability
+    -> ADS-owned ReasoningRuntime
+    -> real reasoning evidence [first bounded gate passed]
+    -> harder recommendation/action evidence [next]
 ```
 
 ---
 
-## Accepted V1 persistence, tooling, and interchange
-
-Primary decisions/specifications:
+## Accepted persistence, tooling, and interchange
 
 ```text
 D-028 + docs/specifications/001_v1_sqlite_technical_architecture.md
@@ -252,18 +168,16 @@ D-030 + docs/specifications/003_v1_python_project_and_dependency_tooling.md
 D-031 + docs/specifications/004_v1_reusable_knowledge_interchange.md
 ```
 
-Governed round-trip closure:
+Governed persistence/interchange closure:
 
 ```text
 experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
 
-Run `32496856945` passed SQLite Ubuntu, SQLite Windows, PostgreSQL 18, and the Alembic revision-ID guard.
-
 ---
 
-## Selected V1 reasoning runtime and closed bakeoff
+## Selected V1 reasoning runtime infrastructure
 
 Accepted decision:
 
@@ -280,150 +194,95 @@ docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
 docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
 docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
 docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
-
 docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
 docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
 docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
 docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
-
-experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
-experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
-experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
 ```
 
 Interpretation:
 
 ```text
-OpenAI Agents SDK
-    selected initial V1 runtime infrastructure
-
-direct model calls
-    minimum-dependency fallback/reference
-
-LangGraph
-    future stronger-durability escalation path
+OpenAI Agents SDK    initial V1 runtime infrastructure
+direct model calls   fallback/reference
+LangGraph            possible stronger-durability escalation
 ```
 
 No final LLM provider/model or multi-agent architecture is selected.
 
 ---
 
-## Professional frontend and Project Cockpit
+## Project Cockpit route
 
-Primary promoted contract:
+Promoted contract:
 
 ```text
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
-Key evidence:
+Important checkpoints:
 
 ```text
-docs/research/002_primary_project_cockpit_interface_concept.md
-docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
-docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
-docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
-docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
-docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
-docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
-docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
-docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
-
 docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
 docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
 ```
 
-Specification 008 remains current. Exact gesture constants, graph/canvas library, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, project-search backend, frontend stack promotion, chart library, and final visual identity remain unfrozen.
+Final frontend stack, chart library, canvas/gesture libraries, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, project-search backend, and visual identity remain open.
 
 ---
 
-## Production retrieval route
+## Retrieval and MethodologicalHorizon route
 
 ### Lexical baseline
 
 ```text
 docs/research/016_production_retrieval_and_methodological_horizon_benchmark_design.md
 docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
-docs/checkpoints/134_retrieval_and_methodological_horizon_benchmark_contract_frozen.md
 docs/checkpoints/135_first_production_lexical_retrieval_baseline_cross_platform_passed.md
 experiments/retrieval/V1_LEXICAL_RETRIEVAL_RESULT.md
 ```
 
-Result:
-
 ```text
-RH-L Recall@3  1.00
-RH-L MRR       1.00
-RH-S Recall@3  0.75
+RH-L Recall@3 = 1.00
+RH-L MRR      = 1.00
 ```
 
-### Exact dense comparator
+### Dense semantic comparator
 
 ```text
 docs/research/017_exact_semantic_retrieval_comparator_selection.md
 docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
-docs/checkpoints/136_exact_semantic_retrieval_comparator_contract_frozen.md
 docs/checkpoints/137_dense_semantic_retrieval_comparator_cross_platform_result_preserved.md
 ```
 
-Dense recovers `class-imbalance` but misses lexical `ecdf`; dense-only does not replace lexical retrieval.
+Dense retrieval recovered the lexical miss `class-imbalance` but lost `ecdf`; dense-only therefore did not replace lexical retrieval.
 
-### Hybrid comparator
+### Complementary hybrid comparator
 
 ```text
 docs/research/018_dense_semantic_failure_complementarity_and_rrf_fusion_rationale.md
 docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
-docs/checkpoints/138_rrf_hybrid_retrieval_comparator_contract_frozen.md
 docs/checkpoints/139_rrf_hybrid_retrieval_cross_platform_gate_passed.md
 experiments/retrieval/V1_RRF_HYBRID_RETRIEVAL_RESULT.md
 ```
 
-Run `32561118325`:
-
 ```text
-Ubuntu PASS
-Windows PASS
-RH-S Recall@3  1.00
-RH-S MRR       0.875
-RH-L Recall@3  1.00
-RH-L MRR       1.00
+RH-S Recall@3 = 1.00
+RH-S MRR      = 0.875
 ```
 
-This is evidence for channel complementarity, not permanent selection of FastEmbed, BGE, RRF `k=60`, embeddings persistence, ANN, or a vector database.
+This is complementarity evidence, not permanent selection of FastEmbed/BGE/RRF/vector infrastructure.
 
-Production lexical implementation routes:
-
-```text
-src/ads_system/application/retrieval.py
-src/ads_system/application/ports.py
-src/ads_system/infrastructure/retrieval/sqlite_fts.py
-```
-
----
-
-## First production-facing MethodologicalHorizon route
-
-Primary design/evidence:
+### First explained MethodologicalHorizon
 
 ```text
 docs/research/019_first_methodological_horizon_application_seam.md
 docs/specifications/012_v1_first_methodological_horizon_builder.md
-docs/checkpoints/140_first_methodological_horizon_builder_contract_frozen.md
 docs/checkpoints/141_first_methodological_horizon_cross_platform_gate_passed.md
 experiments/retrieval/V1_METHODOLOGICAL_HORIZON_RESULT.md
 ```
 
-Validated architecture:
-
-```text
-stable/revision-transparent direct candidate
-    -> KnowledgeNavigationRepository
-    -> accepted-current one-hop outbound relations
-    -> deterministic three-valued applicability
-    -> explained MethodologicalHorizon
-```
-
-Key semantic distinction:
+Key invariant:
 
 ```text
 known false -> INAPPLICABLE
@@ -431,123 +290,123 @@ unknown required information -> MISSING_CONTEXT
 unknown != false
 ```
 
-Current implementation routes:
-
-```text
-src/ads_system/application/horizon.py
-src/ads_system/application/horizon_models.py
-src/ads_system/application/ports.py
-src/ads_system/infrastructure/persistence/navigation_repository.py
-```
-
 ---
 
 ## Selective MethodologicalContextPack route
 
-### Design and frozen contract
+Design/freeze:
 
 ```text
 docs/research/020_first_horizon_relevance_and_selective_context_gate_design.md
-docs/specifications/013_v1_horizon_relevance_and_selective_context.md
 docs/checkpoints/142_relevance_and_selective_context_contract_frozen.md
 ```
 
-### Result and promotion
+Accepted contract/result:
 
 ```text
-experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
 docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
 ```
 
-Frozen policy:
+Observed ten-asset methodology-only selective/full ratios:
 
 ```text
-requested reasoning functions
-    -> primary function matches
-    -> bounded REQUIRES_CONCEPT support
-    -> hard max_assets
-    -> exact accepted-current compact context reads
-    -> MethodologicalContextPack
+RH-C01  0.20020477
+RH-C02  0.16462054
+RH-C03  0.34635417
+RH-C04  0.28222057
 ```
 
-Observed on the wide ten-asset Horizon:
+Across the four frozen cases:
 
 ```text
-RH-C01  2 selected  ratio 0.20020477
-RH-C02  2 selected  ratio 0.16462054
-RH-C03  3 selected  ratio 0.34635417
-RH-C04  2 selected  ratio 0.28222057
+required stable-key coverage       1.00
+required exact-revision coverage   1.00
+irrelevant selected assets         0
+unexplained omissions              0
 ```
 
-Across all cases:
+PR #11 promoted merge:
 
 ```text
-required stable-key coverage      1.00
-required revision coverage        1.00
-irrelevant selected               0
-unexplained omissions             0
+fd33184fbff588c6737d77af751bc5def0e31954
 ```
-
-Validated full suite:
-
-```text
-Ubuntu   42 passed, 2 skipped
-Windows  42 passed, 2 skipped
-```
-
-Current implementation routes:
-
-```text
-src/ads_system/application/context_models.py
-src/ads_system/application/context_selection.py
-src/ads_system/application/horizon.py
-src/ads_system/application/horizon_models.py
-src/ads_system/application/ports.py
-src/ads_system/infrastructure/persistence/navigation_repository.py
-
-tests/fixtures/retrieval/selective_context_v1.json
-tests/integration/test_selective_methodological_context.py
-tests/unit/test_context_selection.py
-```
-
-Specification 013 v1.0 accepts the bounded seam but does not promote `max_assets = 3`, reasoning functions as a complete relevance solution, or the ten-asset benchmark as production policy.
 
 ---
 
-## Current exact priorities
+## Accepted reasoning-context-value vertical slice
+
+Design/freeze:
 
 ```text
-A. finish PR #11 canonical/routing reconciliation
-B. update PR #11 with the measured RH-C result
-C. validate the exact final PR #11 head
-D. merge exactly that green head into v1-frontend-spike
-E. branch from the promoted merge boundary
-F. preregister the first real reasoning vertical slice
-G. compare selective context with a strong full-Horizon/simple control under one concrete model configuration
+docs/research/021_first_reasoning_context_value_vertical_slice_design.md
+docs/checkpoints/144_first_reasoning_context_value_contract_frozen.md
+docs/checkpoints/145_reasoning_context_value_implementation_gate_cross_platform_passed.md
 ```
 
-The next measured bottleneck is downstream reasoning quality and real model/token cost, not further retrieval tuning.
+Accepted contract/result:
 
----
+```text
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634/
+```
+
+Frozen live source:
+
+```text
+3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+V1 reasoning context value live / run 32635061634 / successful attempt 2
+```
+
+Observed:
+
+```text
+reasoner outputs        24 / 24
+judge outputs           24 / 24
+retries                 0
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+aggregate token ratio   0.334379
+input-token reduction   66.56%
+critical regressions    none
+```
+
+Context-expansion diagnostic:
+
+```text
+SELECTIVE unexpected basis mean      0.000000
+FULL_HORIZON unexpected basis mean   1.666667
+```
+
+This accepts the bounded selective-context + ADS-owned ReasoningRuntime seam. It does not select a final model/provider, universal context budget, general relevance mechanism, or recommendation/REQUIRED-BLOCKING policy.
+
+## Current exact continuation
+
+```text
+A. validate exact post-result reconciliation head
+B. merge exactly that green PR #12 head into v1-frontend-spike
+C. create the next branch from the promoted merge
+D. design/preregister a harder project-level recommendation/action slice
+E. do not make new live calls before the next frozen contract exists
+```
+
+The next slice should test recommendation strength and project-level consequences, including whether an omitted concern creates a visible failure and whether unnecessary methodological expansion creates measurable cost. Retrieval/relevance tuning is not the next default action.
 
 ## Recent continuity checkpoints
 
 ```text
 127  governed knowledge round-trip closed across SQLite/PostgreSQL
-128  runtime-bakeoff preimplementation evidence refreshed
-129  direct model-call runtime control cross-platform PASS
-130  post-promotion Cockpit normal-window/pinch polish PASS
-131  OpenAI Agents SDK complete candidate cross-platform PASS
-132  LangGraph durability comparator cross-platform PASS
-133  initial V1 reasoning runtime selected; Specification 005 closed
-134  retrieval / MethodologicalHorizon benchmark contract frozen
-135  first production lexical retrieval baseline cross-platform PASS
-136  exact dense semantic comparator contract frozen
-137  dense semantic comparator result preserved; standalone gate FAIL
-138  RRF hybrid comparator contract frozen
-139  RRF hybrid comparator cross-platform PASS
-140  first MethodologicalHorizon builder contract frozen
-141  first MethodologicalHorizon cross-platform PASS
-142  relevance/selective-context contract frozen
-143  selective-context gate passed; Specification 013 promotion authorized
+133  initial V1 reasoning runtime selected
+135  first production lexical retrieval baseline passed
+137  dense semantic comparator preserved
+139  hybrid retrieval comparator passed
+141  first explained MethodologicalHorizon passed
+142  selective-context contract frozen
+143  selective-context gate passed and promoted
+144  first reasoning-context-value contract frozen
+145  provider-free reasoning-context-value implementation passed cross-platform
+146  first real reasoning-context-value gate passed and promotion authorized
 ```

@@ -796,3 +796,46 @@ Key sources:
 docs/checkpoints/143_selective_methodological_context_gate_passed_and_promotion_authorized.md
 docs/CURRENT_STATE.md
 ```
+
+
+---
+
+## 2026-08-23: First real-model selective-context value gate passed
+
+Specification 014 / Checkpoint 146 moved the post-V0 selective-context architecture through its first actual model-reasoning test.
+
+The preregistered comparison held task/project evidence and the concrete runtime/model configuration fixed while comparing the accepted 2-3 revision SELECTIVE pack against a compact ten-revision FULL_HORIZON control.
+
+Observed:
+
+```text
+aggregate semantic quality
+    SELECTIVE      1.000000
+    FULL_HORIZON   1.000000
+
+aggregate provider input tokens
+    SELECTIVE mean 1013.00
+    FULL mean      3029.50
+    ratio          0.334379
+    reduction      66.56%
+
+critical-obligation regressions  none
+matched-pair token failures      none
+retries                           0
+```
+
+This is the first downstream evidence that the post-V0 rule
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+can preserve measured reasoning obligations while materially reducing real provider input burden, rather than merely producing smaller serialized methodology payloads.
+
+The result also promoted the first production-facing ADS-owned `ReasoningRuntime` request/outcome/usage/trace seam used by real calls under D-032. The concrete OpenAI model configuration remains experiment evidence, not a final provider/model decision.
+
+FULL_HORIZON produced more unexpected methodological-basis expansion, but both conditions reached the frozen quality ceiling. The structural lesson is therefore selective-context value under the bounded test, not a universal claim that fuller context harms reasoning.
+
+The next architectural boundary moves downstream to harder recommendation/action quality, recommendation strength, REQUIRED/BLOCKING policy, and observable consequences of omission or unnecessary methodological expansion.
