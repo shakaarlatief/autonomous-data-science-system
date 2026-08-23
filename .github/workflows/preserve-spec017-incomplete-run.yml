@@ -79,3 +79,5 @@ jobs:
           git add experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705
           git commit -m 'Preserve incomplete Specification 017 live run'
           git push origin HEAD:v1-recommendation-action-value-relation-backed
+
+# Trigger preservation after workflow registration.
