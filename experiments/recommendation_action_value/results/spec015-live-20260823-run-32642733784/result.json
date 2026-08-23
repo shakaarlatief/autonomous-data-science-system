@@ -1,0 +1,215 @@
+{
+  "accepted_snapshot_digest": "d896eecd45745ca951ea01c81f81d313a8cb49dbd54fa6f9b713f4f9c1904933",
+  "accepted_stable_revision_pairs": [
+    {
+      "revision_id": "f0341774-efbb-48a7-b3c7-94820857c7e8",
+      "stable_key": "bagging"
+    },
+    {
+      "revision_id": "f30b1304-f5c0-4070-9f21-dc27945d866f",
+      "stable_key": "class-imbalance"
+    },
+    {
+      "revision_id": "9b6b4a84-526f-4fba-9036-13ad3cc00896",
+      "stable_key": "ecdf"
+    },
+    {
+      "revision_id": "1b9604fc-6cdb-4ff5-b4de-7aafaa157d89",
+      "stable_key": "gradient-boosted-trees"
+    },
+    {
+      "revision_id": "a5035424-0d67-4dfc-9491-dc73df2601ce",
+      "stable_key": "histogram"
+    },
+    {
+      "revision_id": "cfefb760-e70a-4b1a-bb6a-3393334b70fa",
+      "stable_key": "missing-data"
+    },
+    {
+      "revision_id": "4a3189bb-b007-4efd-a2bd-04a8cc6a4d5c",
+      "stable_key": "prediction-moment"
+    },
+    {
+      "revision_id": "8b63f2cd-a1b7-4b2c-939b-5b146c5d7477",
+      "stable_key": "prediction-time-feature-eligibility"
+    },
+    {
+      "revision_id": "fefb0b89-52b5-4353-9eb0-331670c9211c",
+      "stable_key": "random-forest"
+    },
+    {
+      "revision_id": "a952de3e-d761-4cab-9318-91b2f25f3231",
+      "stable_key": "temporal-validation"
+    }
+  ],
+  "advancement_outcome": "FAIL",
+  "benchmark_id": "v1-recommendation-action-value-v0.1",
+  "complete_scored_design": true,
+  "counts": {
+    "judge_attempt_records": 36,
+    "planned_judge_outputs": 36,
+    "planned_reasoner_outputs": 36,
+    "reasoner_attempt_records": 36,
+    "scored_observations": 36,
+    "successful_judge_outputs": 36,
+    "successful_reasoner_outputs": 36
+  },
+  "environment": {
+    "judge_model": "gpt-5.6-sol",
+    "judge_reasoning_effort": "high",
+    "openai_agents_version": "0.19.4",
+    "openai_client_version": "2.54.0",
+    "python_version": "3.13.15",
+    "reasoner_reasoning_effort": "medium",
+    "requested_reasoner_model": "gpt-5.6-sol"
+  },
+  "finished_at_utc": "2026-08-23T13:43:43.357261+00:00",
+  "gate_evaluation": {
+    "absolute_passed": false,
+    "aggregate_by_condition": {
+      "FULL_HORIZON": {
+        "blocking_scope_false_negatives": 0,
+        "blocking_scope_false_positives": 0,
+        "critical_action_omissions": 0,
+        "exact_disposition_accuracy": 0.9166666666666666,
+        "over_recommendations": 0,
+        "required_clarification_false_negatives": 0,
+        "semantic_score": 0.9916666666666667,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0,
+        "unsupported_methodological_basis": 0
+      },
+      "GENERIC": {
+        "blocking_scope_false_negatives": 0,
+        "blocking_scope_false_positives": 1,
+        "critical_action_omissions": 0,
+        "exact_disposition_accuracy": 0.9166666666666666,
+        "over_recommendations": 0,
+        "required_clarification_false_negatives": 0,
+        "semantic_score": 0.9604166666666667,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0,
+        "unsupported_methodological_basis": 0
+      },
+      "SELECTIVE": {
+        "blocking_scope_false_negatives": 0,
+        "blocking_scope_false_positives": 0,
+        "critical_action_omissions": 0,
+        "exact_disposition_accuracy": 0.9166666666666666,
+        "over_recommendations": 0,
+        "required_clarification_false_negatives": 0,
+        "semantic_score": 0.9916666666666667,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0,
+        "unsupported_methodological_basis": 0
+      }
+    },
+    "expansion_passed": true,
+    "gate_results": {
+      "RA-G01": true,
+      "RA-G02": true,
+      "RA-G03": true,
+      "RA-G04": true,
+      "RA-G05": false,
+      "RA-G06": true,
+      "RA-G07": true,
+      "RA-G08": true,
+      "RA-G09": true,
+      "RA-G10": true,
+      "RA-G11": true,
+      "RA-G12": true,
+      "RA-G13": true,
+      "RA-G14": true,
+      "RA-G15": true
+    },
+    "outcome": "FAIL",
+    "per_case_exact_accuracy": {
+      "RA-01": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RA-02": {
+        "FULL_HORIZON": 0.6666666666666666,
+        "GENERIC": 0.7222222222222222,
+        "SELECTIVE": 0.6666666666666666
+      },
+      "RA-03": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 0.9444444444444445,
+        "SELECTIVE": 1.0
+      },
+      "RA-04": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      }
+    },
+    "per_case_semantic_score": {
+      "RA-01": {
+        "FULL_HORIZON": 0.9666666666666667,
+        "GENERIC": 0.9666666666666667,
+        "SELECTIVE": 0.9666666666666667
+      },
+      "RA-02": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RA-03": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 0.875,
+        "SELECTIVE": 1.0
+      },
+      "RA-04": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      }
+    },
+    "relative_passed": true,
+    "value_signals": []
+  },
+  "judge_plan_sha256": "f154280a001da4b10592d34db507878e15af0037c87608c86508ed6a9de0f2c7",
+  "project_state_after": {
+    "prj_entity": 0,
+    "prj_finding": 0,
+    "prj_knowledge_ref": 0,
+    "prj_project": 0
+  },
+  "project_state_before": {
+    "prj_entity": 0,
+    "prj_finding": 0,
+    "prj_knowledge_ref": 0,
+    "prj_project": 0
+  },
+  "provider_attempts": {
+    "maximum": 90,
+    "used": 72
+  },
+  "provider_free_execution_valid": true,
+  "reasoning_plan_sha256": "fb4e9733303b62df1be80d65343b7428b02fb7ef0a2570573ea0e28742446d22",
+  "source_head": "d91d50fb2cc46b2047bc21bc5b2ea43c2b1049e4",
+  "specification": "015-v0.1",
+  "started_at_utc": "2026-08-23T13:34:17.879923+00:00",
+  "technical_invariants": {
+    "RA-INV-01_frozen_candidate_menus": true,
+    "RA-INV-02_frozen_selective_sets": true,
+    "RA-INV-03_full_horizon_identity": true,
+    "RA-INV-04_generic_no_methodology": true,
+    "RA-INV-05_same_model_configuration": true,
+    "RA-INV-06_no_tools": true,
+    "RA-INV-07_no_cross_call_state": true,
+    "RA-INV-08_condition_hidden_from_reasoner": true,
+    "RA-INV-09_structured_output_exactness": true,
+    "RA-INV-10_basis_provenance": true,
+    "RA-INV-11_judge_blinding": true,
+    "RA-INV-12_deterministic_evaluator": true,
+    "RA-INV-13_deterministic_plan": true,
+    "RA-INV-14_exact_context_transparency": true,
+    "RA-INV-15_authoritative_isolation": true,
+    "RA-INV-16_runtime_isolation": true,
+    "RA-INV-17_ci_isolation": true,
+    "RA-INV-18_cross_platform_provider_free": "REQUIRES_CI_EVIDENCE"
+  }
+}
