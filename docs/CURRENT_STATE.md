@@ -7,7 +7,7 @@
 **Promoted V1 integration branch:** `v1-frontend-spike` at Specification 017 preservation merge `4385b83b43582ff6466b519b4e96356d220c44bc`  
 **Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and now governed autonomous live-experiment launch seams. Specification 017 remains preserved incomplete evidence and its recommendation/action implementation remains unpromoted.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate and merge the bounded Specification 018 launcher, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
+**Immediate project priority:** validate the exact reconciled PR #23 head and merge the bounded Specification 018 launcher, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
 
 ## Active ChatGPT development context
 
@@ -134,6 +134,14 @@ The launcher may be used only for explicitly repository-authorized frozen experi
 
 ---
 
+## Post-probe control-plane cleanup
+
+The one-shot `spec018-probe-001` authorization has been retired from the default-branch registry. The temporary observer workflow and temporary exact-ref CI exposure used only to close the probe evidence were removed from `main`. Temporary validation/dispatch issues 24-32 are closed with their historical evidence retained.
+
+The permanent default-branch control-plane exposure is therefore limited to the governed launcher mechanism and its harmless provider-free probe capability, with no active launch authorization until a new frozen experiment explicitly earns one.
+
+---
+
 ## Current non-selections
 
 Still deliberately open:
@@ -160,15 +168,13 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. finish canonical reconciliation for Checkpoint 161
-2. remove or disable the one-shot probe authorization and temporary observer/validation helpers on main
-3. validate the exact reconciled PR #23 head with provider-free gates
-4. merge PR #23 into v1-frontend-spike
-5. record the exact promoted merge boundary
-6. preregister the next recommendation/action-value experiment
-7. make exact supplied-context provenance system-owned
-8. implement and validate the exact provider-free experiment head
-9. add one exact repository-controlled launch authorization
-10. launch through Specification 018 rather than a manual Actions button
-11. make no new recommendation/action provider call before steps 6-9 are frozen and green
+1. validate the exact reconciled PR #23 head with provider-free gates
+2. merge PR #23 into v1-frontend-spike if that exact head is green
+3. record the exact promoted merge boundary
+4. preregister the next recommendation/action-value experiment
+5. make exact supplied-context provenance system-owned
+6. implement and validate the exact provider-free experiment head
+7. add one exact repository-controlled launch authorization
+8. launch through Specification 018 rather than a manual Actions button
+9. make no new recommendation/action provider call before steps 4-7 are frozen and green
 ```
