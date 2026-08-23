@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 148  
+**Checkpoint:** 149  
 **Date:** 2026-08-23  
 **Active development branch:** `v1-recommendation-action-value`  
 **Active promotion PR:** #13 into `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
-**Development stage:** Prototype V0 complete; bounded V1 now has a frozen recommendation/action-value contract and a complete provider-free implementation that passes cross-platform before the first live recommendation experiment.  
+**Development stage:** Prototype V0 complete; bounded V1 now has a frozen recommendation/action-value contract, complete cross-platform provider-free implementation, and a validated pre-live boundary ready for the first unchanged live recommendation experiment.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact pre-live Specification 015 head with the secret-gated live workflow armed but unexecuted, preserve that boundary, then execute the unchanged frozen 72-call plan once and preserve the result before any tuning.
+**Immediate project priority:** keep the frozen Specification 015 treatment unchanged, validate this final routing-only head, then manually execute the secret-gated 72-call live plan once and preserve the complete result before any tuning or promotion decision.
 
 ## Active ChatGPT development context
 
@@ -17,7 +17,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails active V1 work.
+Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails active V1 work except for explicit manual-workflow dispatcher exposure.
 
 ---
 
@@ -182,19 +182,39 @@ authority     reusable-knowledge state unchanged
 project state prj_project/prj_entity/prj_finding/prj_knowledge_ref unchanged
 ```
 
-The explicit live workflow now exists at:
+---
+
+## Checkpoint 149 live-ready boundary
+
+Checkpoint 149 freezes the pre-live boundary after implementation, routing, and live-workflow reconciliation.
+
+The checkpoint commit itself passed:
 
 ```text
-.github/workflows/v1-recommendation-action-value-live.yml
+Checkpoint metadata
+    run 32641146841   PASS
+
+V1 recommendation action value
+    run 32641146842   PASS
+    Ubuntu            PASS
+    Windows           PASS
+
+V1 reasoning context value
+    run 32641146840   PASS
 ```
 
-It is manual `workflow_dispatch` only, requires branch `v1-recommendation-action-value`, repository secret `OPENAI_API_KEY`, and literal confirmation:
+The dedicated recommendation/action workflow again verified that ordinary CI had no `OPENAI_API_KEY` and passed the complete provider-free suite on both operating systems.
+
+The explicit live workflow is exposed on the default branch only as the GitHub manual-dispatch surface. It still requires the experiment branch and refuses to run from another ref:
 
 ```text
-RUN_SPEC_015_FROZEN
+workflow      V1 recommendation action value live
+branch        v1-recommendation-action-value
+secret        OPENAI_API_KEY
+confirmation  RUN_SPEC_015_FROZEN
 ```
 
-It has not been executed yet.
+No live Specification 015 reasoner or judge call has occurred.
 
 ---
 
@@ -225,16 +245,13 @@ Do not return to retrieval/relevance tuning merely because more tuning is possib
 ## Exact continuation
 
 ```text
-1. validate the exact reconciled pre-live head with Checkpoint metadata and the dedicated Ubuntu/Windows recommendation/action workflow
-2. preserve that exact pre-live source head and run evidence in the next checkpoint
-3. keep Specification 015, fixture, model, prompt, action menus, rubric, gates, repetitions, and retry policy unchanged
-4. expose the frozen live workflow on the default branch only as the manual dispatcher surface
-5. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
-6. preserve the complete uploaded raw/result bundle before any tuning
-7. classify the result exactly as PROMOTE_BOUNDED_RECOMMENDATION_SEAM, SAFE_BUT_NOT_DIFFERENTIATED, or FAIL
+1. validate this final routing-only branch head with Checkpoint metadata and the Ubuntu/Windows recommendation/action workflow
+2. make no change to Specification 015, fixture, model, prompts, action menus, rubric, gates, repetitions, randomization, retry policy, context construction, or evaluator
+3. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
+4. preserve the complete uploaded raw/result bundle before any tuning
+5. classify the result exactly as PROMOTE_BOUNDED_RECOMMENDATION_SEAM, SAFE_BUT_NOT_DIFFERENTIATED, or FAIL
+6. create the live-result checkpoint before merge, repair, or subsequent experiment design
 ```
-
-No live Specification 015 reasoner or judge call has occurred.
 
 Primary active sources:
 
@@ -244,5 +261,6 @@ docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/recommendation_action_v1.json
 docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
 .github/workflows/v1-recommendation-action-value-live.yml
 ```
