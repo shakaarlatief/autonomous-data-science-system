@@ -1,6 +1,7 @@
 name: V1 autonomous live experiment launcher CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [v1-autonomous-live-experiment-launcher]
     paths:
