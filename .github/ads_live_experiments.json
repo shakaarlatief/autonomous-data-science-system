@@ -1,20 +1,4 @@
 {
   "schema_version": 1,
-  "authorizations": [
-    {
-      "launch_id": "spec018-probe-001",
-      "enabled": true,
-      "owner_login": "shakaarlatief",
-      "workflow_file": "v1-live-launcher-probe.yml",
-      "ref": "v1-autonomous-live-experiment-launcher",
-      "expected_source_sha": "27e7bc84b5f63d65d43de9a5bd27d1fdc0677071",
-      "confirmation": "RUN_SPEC018_PROBE_001",
-      "required_ci_runs": [
-        {
-          "run_id": 32660168566,
-          "workflow_name": "V1 autonomous live experiment launcher CI"
-        }
-      ]
-    }
-  ]
+  "authorizations": []
 }
