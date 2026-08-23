@@ -1,0 +1,81 @@
+name: Preserve Specification 017 incomplete live run
+
+on:
+  push:
+    branches: [v1-recommendation-action-value-relation-backed]
+    paths:
+      - .github/workflows/preserve-spec017-incomplete-run.yml
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value-relation-backed
+          fetch-depth: 1
+      - name: Download exact live artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          repository: shakaarlatief/autonomous-data-science-system
+          run-id: 32656446705
+          name: v1-relation-backed-recommendation-action-bf041f4b4a485382d0e6e5c508ad916199601ee8-1
+          path: /tmp/spec017
+      - name: Verify preserved file digests
+        shell: bash
+        run: |
+          cd /tmp/spec017
+          echo 'b1f8634d5d3487fbed6bb2528793866ffd5178cea01c3e09456d6e03f6bc7361  RESULT.md' | sha256sum -c -
+          echo 'a1bc2cc7ef3a640af499c400f3894ec19e153de6b54c4c168ae85c2edeb1bdfc  judge_attempts.jsonl' | sha256sum -c -
+          echo '60817ddc9de5d702eb5304231ff0e03c5d4da762ea5d4db5d87f174bc893133c  judge_plan.json' | sha256sum -c -
+          echo '7b85cdb3fe9899ca5d044ecf7c75eed0a91215ba54578b3ccdfb3f6f7a33c2cf  reasoner_attempts.jsonl' | sha256sum -c -
+          echo 'eb88ce86df7810ec8f0cb3d0d5eecbe6d93db95387076a17d28c0feae604ff08  reasoning_plan.json' | sha256sum -c -
+          echo '78854c4f513e9078203804ee705424d1f3803c89b2e8bfbda57df49386253026  relation_backed_recommendation_action.sqlite3' | sha256sum -c -
+          echo '2a16828d421f33d99e1f4ea808baca74f72c20a183329e2fb8ade5ef208c5ce3  result.json' | sha256sum -c -
+      - name: Preserve result bundle and manifest
+        shell: bash
+        run: |
+          DEST='experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705'
+          mkdir -p "$DEST"
+          cp -a /tmp/spec017/. "$DEST/"
+          cat > "$DEST/MANIFEST.md" <<'EOF'
+          # Specification 017 Live Run 32656446705 Preservation Manifest
+
+          **Run:** 32656446705  
+          **Run attempt:** 1  
+          **Job:** 97235820936  
+          **Source head:** `bf041f4b4a485382d0e6e5c508ad916199601ee8`  
+          **Artifact ID:** 9497737594  
+          **Artifact name:** `v1-relation-backed-recommendation-action-bf041f4b4a485382d0e6e5c508ad916199601ee8-1`  
+          **Artifact ZIP SHA-256:** `a2846d97673e7221ef3dca1792c2902f12039e9b607d1e14917c0aaf62a5df8d`
+
+          This directory preserves the complete uploaded result bundle exactly as downloaded from GitHub Actions before any experiment repair or replacement run.
+
+          ```text
+          planned reasoner outputs     36
+          successful reasoner outputs  29
+          planned judge outputs        36
+          successful judge outputs     29
+          scored observations          29
+          provider attempts used       77 / 90
+          complete scored design       false
+          advancement outcome          none
+          execution integrity          true
+          ```
+
+          No Specification 017 advancement classification is permitted from this incomplete run.
+          EOF
+      - name: Commit preserved evidence and remove one-shot workflow
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/preserve-spec017-incomplete-run.yml
+          git add experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705
+          git commit -m 'Preserve incomplete Specification 017 live run'
+          git push origin HEAD:v1-recommendation-action-value-relation-backed
