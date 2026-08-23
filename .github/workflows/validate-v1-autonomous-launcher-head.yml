@@ -10,9 +10,17 @@ permissions:
 
 jobs:
   validate:
-    if: github.actor == 'shakaarlatief' && github.event.issue.user.login == 'shakaarlatief' && github.event.issue.title == '[ADS VALIDATE] launcher 4b818a3e72e599a255fc02c366ae40f4c9ae5221'
+    if: ${{ github.event.issue.title == '[ADS VALIDATE] launcher 4b818a3e72e599a255fc02c366ae40f4c9ae5221' }}
     runs-on: ubuntu-latest
+    env:
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GH_TOKEN: ${{ github.token }}
     steps:
+      - name: Record validation trigger
+        shell: bash
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --repo "${GITHUB_REPOSITORY}" \
+            --body "Specification 018 exact-head validation accepted. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
       - uses: actions/checkout@v7
         with:
           ref: 4b818a3e72e599a255fc02c366ae40f4c9ae5221
@@ -34,12 +42,14 @@ jobs:
       - name: Run full V1 Python regression suite
         run: uv run --python 3.13 --locked python -m pytest -q
       - name: Record success on validation issue
-        if: success()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh issue comment '${{ github.event.issue.number }}' --repo '${{ github.repository }}' --body 'Specification 018 exact-head provider-free validation passed for `4b818a3e72e599a255fc02c366ae40f4c9ae5221`. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        if: ${{ success() }}
+        shell: bash
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --repo "${GITHUB_REPOSITORY}" \
+            --body "Specification 018 exact-head provider-free validation passed for \`4b818a3e72e599a255fc02c366ae40f4c9ae5221\`. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
       - name: Record failure on validation issue
-        if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh issue comment '${{ github.event.issue.number }}' --repo '${{ github.repository }}' --body 'Specification 018 exact-head provider-free validation failed for `4b818a3e72e599a255fc02c366ae40f4c9ae5221`. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+        if: ${{ failure() }}
+        shell: bash
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --repo "${GITHUB_REPOSITORY}" \
+            --body "Specification 018 exact-head provider-free validation failed for \`4b818a3e72e599a255fc02c366ae40f4c9ae5221\`. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
