@@ -1,0 +1,61 @@
+name: V1 system-owned provenance recommendation action
+
+on:
+  push:
+    branches: [v1-recommendation-action-value-system-provenance]
+    paths:
+      - experiments/system_owned_provenance_recommendation_action_value/**
+      - tests/fixtures/reasoning/system_owned_provenance_recommendation_action_v1.json
+      - tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
+      - tests/unit/test_system_owned_provenance_recommendation_action_harness.py
+      - tests/integration/test_system_owned_provenance_recommendation_action_value_vertical_slice.py
+      - docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+      - docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+      - docs/checkpoints/163_system_owned_provenance_recommendation_action_contract_frozen.md
+      - .github/workflows/v1-system-owned-provenance-recommendation-action.yml
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - experiments/system_owned_provenance_recommendation_action_value/**
+      - tests/fixtures/reasoning/system_owned_provenance_recommendation_action_v1.json
+      - tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
+      - tests/unit/test_system_owned_provenance_recommendation_action_harness.py
+      - tests/integration/test_system_owned_provenance_recommendation_action_value_vertical_slice.py
+      - docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+      - docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+      - docs/checkpoints/163_system_owned_provenance_recommendation_action_contract_frozen.md
+      - .github/workflows/v1-system-owned-provenance-recommendation-action.yml
+
+permissions:
+  contents: read
+
+jobs:
+  provider-free-spec019:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify provider credential is absent
+        shell: bash
+        run: |
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            echo "Ordinary Specification 019 CI must not receive OPENAI_API_KEY."
+            exit 1
+          fi
+      - name: Run frozen Specification 019 tests
+        run: >-
+          uv run --python 3.13 --locked python -m pytest
+          tests/unit/test_system_owned_provenance_recommendation_action_harness.py
+          tests/integration/test_system_owned_provenance_recommendation_action_value_vertical_slice.py
+          -q
+      - name: Run full V1 regression suite
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q
