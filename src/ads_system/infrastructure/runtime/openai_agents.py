@@ -2,7 +2,7 @@
 
 Framework/provider imports are intentionally lazy. Ordinary repository CI can
 validate ADS application logic without installing or contacting the live
-runtime dependency. The explicit live workflow installs the frozen SDK version
+runtime dependency. Explicit live workflows install the frozen SDK version
 before executing provider calls.
 """
 
@@ -14,12 +14,14 @@ import json
 import time
 from typing import Any
 
+from ads_system.application.recommendation import RecommendationActionResult
 from ads_system.application.reasoning import (
+    ReasoningContextValueResult,
     ReasoningOutcome,
+    ReasoningOutputKind,
     ReasoningRequest,
     ReasoningTrace,
     ReasoningUsage,
-    ReasoningContextValueResult,
     validate_methodological_basis,
 )
 
@@ -55,6 +57,7 @@ class OpenAIAgentsReasoningRuntime:
         agents = self._load_agents_module()
         reasoning_type = self._load_reasoning_type()
         runtime_version = self.runtime_version
+        output_type = self._output_type(request.structured_output_kind)
 
         model_settings = agents.ModelSettings(
             reasoning=reasoning_type(effort=request.model_configuration.reasoning_effort),
@@ -69,7 +72,7 @@ class OpenAIAgentsReasoningRuntime:
             model=request.model_configuration.requested_model,
             model_settings=model_settings,
             tools=[],
-            output_type=ReasoningContextValueResult,
+            output_type=output_type,
         )
 
         started = time.perf_counter()
@@ -82,10 +85,10 @@ class OpenAIAgentsReasoningRuntime:
         latency_seconds = time.perf_counter() - started
 
         final_output = result.final_output
-        if not isinstance(final_output, ReasoningContextValueResult):
+        if not isinstance(final_output, output_type):
             raise ValueError(
-                "OpenAI Agents runtime did not return ReasoningContextValueResult; "
-                f"observed {type(final_output).__name__}"
+                "OpenAI Agents runtime returned an unexpected ADS structured result; "
+                f"expected {output_type.__name__}, observed {type(final_output).__name__}"
             )
         validate_methodological_basis(final_output, request.knowledge_revisions)
 
@@ -119,12 +122,20 @@ class OpenAIAgentsReasoningRuntime:
         )
 
     @staticmethod
+    def _output_type(kind: ReasoningOutputKind) -> type:
+        if kind is ReasoningOutputKind.CONTEXT_VALUE:
+            return ReasoningContextValueResult
+        if kind is ReasoningOutputKind.RECOMMENDATION_ACTION:
+            return RecommendationActionResult
+        raise ValueError(f"unsupported ADS reasoning output kind: {kind!r}")
+
+    @staticmethod
     def _load_agents_module() -> Any:
         try:
             return import_module("agents")
         except ModuleNotFoundError as exc:
             raise RuntimeError(
-                "openai-agents is not installed; the live runtime must be executed "
+                "openai-agents is not installed; the live reasoning runtime must be executed "
                 "through the frozen secret-gated environment"
             ) from exc
 
