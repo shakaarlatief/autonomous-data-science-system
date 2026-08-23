@@ -492,3 +492,69 @@ docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
 experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
+
+---
+
+## 2026-08-23: Dependency-backed DEFER versus NOT_NOW construct passed the live diagnostic
+
+Specification 016 isolated the narrow failure mode from Specification 015 before another recommendation-value comparison. It removed methodological-context treatments, retrieval, Horizon construction, semantic judging, tools, and project mutation, and tested only whether a stronger relation-backed sequencing distinction could be represented and applied reliably.
+
+Frozen distinction:
+
+```text
+DEFER
+    action already justified in represented plan
+    + exact unresolved supplied activating trigger
+    + action becomes current next work after trigger
+    + exact defer_until_id
+
+NOT_NOW
+    no current material justification
+    + no represented supplied activating trigger relation
+    + null defer_until_id
+```
+
+The live workflow `32652636943` executed from the exact frozen head `7db27fd35151c10cdb3562cdf4410fb8f4b09e8b` and observed:
+
+```text
+reasoner outputs                     36 / 36
+provider attempts                    36 / 45
+failed attempts                      0
+retries                              0
+aggregate exact disposition accuracy 1.000000
+all 12 variants                      3 / 3 correct
+all 6 contrastive pair sides         3 / 3 correct
+DEFER trigger-pointer accuracy       1.000000
+NOT_NOW null-pointer correctness     1.000000
+```
+
+Frozen outcome:
+
+```text
+DISPOSITION_BOUNDARY_SUPPORTED
+```
+
+The result narrows the Specification 015 failure attribution. Operational inseparability of the labels is less likely when sequencing is represented by an explicit activating relation, and fixed-reasoner inability is less likely on deliberately unambiguous cases. The historical discrepancy remains consistent with the original RA-02 project state not encoding a uniquely activating DEFER relation strongly enough.
+
+Specification 015 remains an immutable `FAIL` and is not rescored. Both disputed historical expected-DEFER examples are merely diagnosed as not admissible examples of unambiguous Specification 016 DEFER under the stronger construction rule.
+
+The architectural consequence is bounded but important:
+
+```text
+DEFER-like sequencing
+    should not be a bare low-priority label
+    if deterministic distinction from NOT_NOW is required;
+    it should carry a concrete represented activating dependency/trigger.
+```
+
+This does not promote production DEFER/NOT_NOW enums or automatic project mutation. The next justified step is a separately preregistered recommendation/action-value experiment that preserves the stronger relation-backed sequencing construction and again tests whether SELECTIVE methodological context adds value beyond a strong GENERIC reasoner.
+
+Key sources:
+
+```text
+docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
+docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+docs/checkpoints/155_disposition_semantics_live_gate_supported.md
+experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
+experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
+```
