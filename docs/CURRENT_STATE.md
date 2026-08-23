@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 149  
+**Checkpoint:** 150  
 **Date:** 2026-08-23  
 **Active development branch:** `v1-recommendation-action-value`  
-**Active promotion PR:** #13 into `v1-frontend-spike`  
+**Active evaluation PR:** #13 into `v1-frontend-spike`; **not eligible for promotion as the accepted recommendation seam**  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
-**Development stage:** Prototype V0 complete; bounded V1 now has a frozen recommendation/action-value contract, complete cross-platform provider-free implementation, and a validated pre-live boundary ready for the first unchanged live recommendation experiment.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted retrieval/Horizon/selective-context/reasoning seams, while the first downstream recommendation/action-value experiment has now completed with frozen outcome **FAIL**.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** keep the frozen Specification 015 treatment unchanged, validate this final routing-only head, then manually execute the secret-gated 72-call live plan once and preserve the complete result before any tuning or promotion decision.
+**Immediate project priority:** preserve and validate the Specification 015 failure record, close PR #13 without promoting the recommendation seam, then start a separately preregistered diagnostic of disposition semantics and failure attribution before another live recommendation experiment or authoritative project-state coupling.
 
 ## Active ChatGPT development context
 
@@ -31,7 +31,7 @@ what the LLM should receive on every reasoning call
 
 Do not restore P0's large always-on context/frontier, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
 
-Current methodological path:
+Accepted methodological path through the last promoted boundary:
 
 ```text
 large reusable knowledge universe
@@ -41,9 +41,17 @@ large reusable knowledge universe
     -> bounded task-specific relevance selection
     -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> reasoning evidence
-    -> recommendation / REQUIRED-BLOCKING / action evidence [active]
+    -> bounded real reasoning evidence
 ```
+
+The attempted next step:
+
+```text
+reasoning evidence
+    -> recommendation / REQUIRED-BLOCKING / bounded action
+```
+
+has **not** yet earned promotion.
 
 ---
 
@@ -72,7 +80,7 @@ Specification 012 v1.0 / Checkpoint 141
     first explained MethodologicalHorizon
 
 Specification 013 v1.0 / Checkpoint 143
-    first accepted selective exact-revision MethodologicalContextPack seam
+    accepted selective exact-revision MethodologicalContextPack seam
 
 Specification 014 v1.0 / Checkpoint 146
     first real-model selective-context value gate passed
@@ -80,19 +88,19 @@ Specification 014 v1.0 / Checkpoint 146
 
 Specification 014 observed equal frozen semantic quality (`1.000000` versus `1.000000`) while SELECTIVE used an aggregate provider input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regression.
 
-No final provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or recommendation/REQUIRED-BLOCKING production policy is selected.
+The accepted integration branch therefore remains at the Specification 014 promotion boundary.
 
 ---
 
-## Specification 015 contract and provider-free implementation
+## Specification 015 completed live result
 
-Research 022, Specification 015 v0.1, `recommendation_action_v1.json`, and Checkpoint 147 freeze the first downstream recommendation/action experiment.
+Research 022, Specification 015 v0.1, the frozen fixture, and Checkpoints 147-149 governed the first downstream recommendation/action experiment.
 
 Frozen conditions:
 
 ```text
 GENERIC
-    same task/project/action envelope
+    same project/task/action envelope
     no reusable methodological assets
 
 SELECTIVE
@@ -102,119 +110,112 @@ FULL_HORIZON
     all ten exact current accepted Horizon revisions
 ```
 
-Benchmark-only dispositions:
-
-```text
-BLOCKING_REQUIRED
-RECOMMENDED
-DEFER
-NOT_NOW
-```
-
-`BLOCKING_REQUIRED` is tied to a named validity/dependency scope and is not merely a stronger recommendation.
-
 Frozen plan:
 
 ```text
 4 cases
 3 conditions
 3 repetitions
-36 planned reasoner outputs
+36 reasoner outputs
 36 blinded judge outputs
 72 planned successful provider calls
 maximum 90 provider attempts
 ```
 
-Primary evaluation is deterministic:
+Live workflow:
 
 ```text
-exact disposition accuracy
-critical action omissions
-under-recommendations
-over-recommendations
-unnecessary recommended cost
-blocking-scope false negatives / positives
-required-clarification false negatives
-basis-provenance failures
+V1 recommendation action value live
+run 32642733784
+source head d91d50fb2cc46b2047bc21bc5b2ea43c2b1049e4
 ```
 
-The blinded semantic judge is secondary for rationale/dependency correctness.
-
-Advancement remains exactly:
+Observed execution:
 
 ```text
-PROMOTE_BOUNDED_RECOMMENDATION_SEAM
-SAFE_BUT_NOT_DIFFERENTIATED
-FAIL
+36 / 36 reasoner outputs
+36 / 36 judge outputs
+36 / 36 scored observations
+72 provider attempts
+0 retries
 ```
 
-A promotion claim requires all safety/non-regression/expansion gates plus at least one preregistered positive value signal.
-
-Checkpoint 148 records the complete provider-free implementation gate at implementation head:
+The complete Actions artifact was preserved before interpretation at commit:
 
 ```text
-6ccfd15d194a4205b2f554268ccad05fbd38edda
+611237d8d412b977a6c66755411dd97bcc22627e
 ```
 
-Cross-platform evidence:
+Durable result route:
 
 ```text
-V1 recommendation action value
-run 32640518712
-
-Ubuntu   12 dedicated passed; full suite 63 passed, 2 skipped
-Windows  12 dedicated passed; full suite 63 passed, 2 skipped
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
 ```
 
-The two skips are the existing PostgreSQL-dependent tests without `ADS_TEST_POSTGRES_URL`.
-
-The complete fake-runtime shape executes 36 reasoner + 36 blinded judge observations and deliberately produces a perfect three-way ceiling. The evaluator correctly returns `SAFE_BUT_NOT_DIFFERENTIATED`, proving that the advancement machinery does not manufacture a value claim when all conditions are equal.
-
-The provider-free runner also verifies:
+Frozen advancement:
 
 ```text
-GENERIC       no reusable methodological assets
-SELECTIVE     exact accepted 2-3 revision sets
-FULL_HORIZON  exact ten-revision Horizon
-reasoner      evaluator truth absent from input
-judge         treatment/evaluator truth blinded
-authority     reusable-knowledge state unchanged
-project state prj_project/prj_entity/prj_finding/prj_knowledge_ref unchanged
+absolute gates    FAIL
+relative gates    PASS
+expansion gates   PASS
+value signals     0
+outcome            FAIL
 ```
+
+Fourteen of fifteen gates passed. The sole failed gate was `RA-G05`, requiring SELECTIVE mean exact disposition accuracy >= `0.80` in every case.
+
+`RA-02 MODEL_CHOICE` observed:
+
+```text
+GENERIC        0.722222
+SELECTIVE      0.666667
+FULL_HORIZON   0.666667
+```
+
+The failure came from two noncritical actions expected as `DEFER` but repeatedly classified as `NOT_NOW`:
+
+```text
+add-generic-bagging-baseline
+plot-all-feature-histograms-before-shortlist
+```
+
+All three SELECTIVE and all three FULL_HORIZON repetitions showed the same two-label pattern. GENERIC showed nearly the same pattern.
+
+The blinded semantic judge nevertheless scored every RA-02 output `1.000000`, and SELECTIVE had zero critical omissions, zero blocking false negatives, zero unsupported basis references, zero under/over-recommendations, zero unnecessary recommended cost, and zero required-clarification misses.
+
+Supported interpretation:
+
+```text
+Specification 015 FAILS its frozen contract.
+The measured failure is narrow and concentrated in exact DEFER-vs-NOT_NOW calibration.
+The discrepancy is not selective-context-specific.
+The bounded recommendation/action seam is not promoted.
+The four benchmark dispositions are not production-ready.
+```
+
+No post-hoc relabeling of the frozen result is allowed.
 
 ---
 
-## Checkpoint 149 live-ready boundary
+## Current diagnostic hypothesis, not accepted decision
 
-Checkpoint 149 freezes the pre-live boundary after implementation, routing, and live-workflow reconciliation.
-
-The checkpoint commit itself passed:
+The live result raises a concrete failure-attribution question:
 
 ```text
-Checkpoint metadata
-    run 32641146841   PASS
+Does the RA-02 failure reflect:
 
-V1 recommendation action value
-    run 32641146842   PASS
-    Ubuntu            PASS
-    Windows           PASS
-
-V1 reasoning context value
-    run 32641146840   PASS
+A. insufficiently operational distinction between DEFER and NOT_NOW,
+B. questionable benchmark truth for those two actions,
+C. genuine model calibration weakness on an otherwise valid distinction,
+or
+D. some combination of these?
 ```
 
-The dedicated recommendation/action workflow again verified that ordinary CI had no `OPENAI_API_KEY` and passed the complete provider-free suite on both operating systems.
+The fact that GENERIC, SELECTIVE, and FULL_HORIZON converged on essentially the same classification makes a selective-context-specific failure unlikely on this benchmark, but this remains diagnosis rather than a rewritten result.
 
-The explicit live workflow is exposed on the default branch only as the GitHub manual-dispatch surface. It still requires the experiment branch and refuses to run from another ref:
-
-```text
-workflow      V1 recommendation action value live
-branch        v1-recommendation-action-value
-secret        OPENAI_API_KEY
-confirmation  RUN_SPEC_015_FROZEN
-```
-
-No live Specification 015 reasoner or judge call has occurred.
+A new diagnostic must be separately versioned and preregistered before any additional live calls.
 
 ---
 
@@ -223,9 +224,10 @@ No live Specification 015 reasoner or judge call has occurred.
 Still deliberately open:
 
 ```text
+production recommendation/disposition vocabulary
 natural-language/project-state -> reasoning-function derivation
 open-world proposal generation
-final recommendation enum/ranking model
+final recommendation ranking/priority policy
 complete Foundation 018 production schema
 mapping recommendations to authoritative Proposal/Question/Decision events
 automatic execution
@@ -238,29 +240,28 @@ backend/API, artifact/job, cloud/deployment architecture
 final frontend stack and Cockpit implementation details
 ```
 
-Do not return to retrieval/relevance tuning merely because more tuning is possible. Add complexity only when downstream evidence exposes a concrete deficiency.
+Do not couple recommendation output into authoritative project mutation while the recommendation semantics are unresolved.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. validate this final routing-only branch head with Checkpoint metadata and the Ubuntu/Windows recommendation/action workflow
-2. make no change to Specification 015, fixture, model, prompts, action menus, rubric, gates, repetitions, randomization, retry policy, context construction, or evaluator
-3. manually execute V1 recommendation action value live from v1-recommendation-action-value with RUN_SPEC_015_FROZEN
-4. preserve the complete uploaded raw/result bundle before any tuning
-5. classify the result exactly as PROMOTE_BOUNDED_RECOMMENDATION_SEAM, SAFE_BUT_NOT_DIFFERENTIATED, or FAIL
-6. create the live-result checkpoint before merge, repair, or subsequent experiment design
+1. validate the exact Checkpoint 150/result-routing head under normal provider-free CI
+2. preserve the final PR #13 failure state and close PR #13 without merging it into v1-frontend-spike
+3. keep v1-frontend-spike at the accepted Specification 014 boundary
+4. create a separate diagnostic branch from that accepted integration boundary
+5. preregister a bounded disposition-semantics / failure-attribution diagnostic before new live calls
+6. test whether DEFER and NOT_NOW can be operationalized with unambiguous sequencing counterfactuals
+7. only then decide whether a revised recommendation/action seam deserves a new live value experiment
 ```
 
 Primary active sources:
 
 ```text
-docs/research/022_first_recommendation_action_value_vertical_slice_design.md
+experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
+docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/recommendation_action_v1.json
-docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
-docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/149_specification_015_live_boundary_frozen.md
-.github/workflows/v1-recommendation-action-value-live.yml
 ```
