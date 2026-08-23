@@ -7,7 +7,7 @@
 **Promoted V1 integration branch:** `v1-frontend-spike` at Specification 017 preservation merge `4385b83b43582ff6466b519b4e96356d220c44bc`  
 **Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and now governed autonomous live-experiment launch seams. Specification 017 remains preserved incomplete evidence and its recommendation/action implementation remains unpromoted.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact final PR #23 head after conservative checkpoint-metadata repair and merge the bounded Specification 018 launcher, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
+**Immediate project priority:** merge the exact final green PR #23 head, record the promoted Specification 018 integration boundary, then preregister the next recommendation/action-value experiment with system-owned exact context provenance before any new provider call.
 
 ## Active ChatGPT development context
 
@@ -140,7 +140,22 @@ The one-shot `spec018-probe-001` authorization has been retired from the default
 
 The permanent default-branch control-plane exposure is therefore limited to the governed launcher mechanism and its harmless provider-free probe capability, with no active launch authorization until a new frozen experiment explicitly earns one.
 
-Checkpoint 161 records the exact autonomous probe and the first reconciled-head validation evidence. Conservative metadata repair changed only checkpoint metadata afterward, so the exact final PR head is being revalidated before merge.
+Checkpoint 161 records the exact autonomous probe and reconciled-head validation evidence. The final PR head is now green across Checkpoint metadata, V1 autonomous live experiment launcher CI, V1 disposition semantics diagnostic, and V1 reasoning context value.
+
+Final validated PR head:
+
+```text
+8964b3c8ee62daafe8e73610bb16adbc98ee1820
+```
+
+Final validation runs:
+
+```text
+Checkpoint metadata                         32662047518  success
+V1 autonomous live experiment launcher CI  32662047486  success
+V1 disposition semantics diagnostic         32662047516  success
+V1 reasoning context value                  32662047433  success
+```
 
 ---
 
@@ -170,13 +185,12 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the exact final PR #23 head with provider-free gates
-2. merge PR #23 into v1-frontend-spike if that exact head is green
-3. record the exact promoted merge boundary
-4. preregister the next recommendation/action-value experiment
-5. make exact supplied-context provenance system-owned
-6. implement and validate the exact provider-free experiment head
-7. add one exact repository-controlled launch authorization
-8. launch through Specification 018 rather than a manual Actions button
-9. make no new recommendation/action provider call before steps 4-7 are frozen and green
+1. merge exact green PR #23 into v1-frontend-spike
+2. record the exact promoted merge boundary
+3. preregister the next recommendation/action-value experiment
+4. make exact supplied-context provenance system-owned
+5. implement and validate the exact provider-free experiment head
+6. add one exact repository-controlled launch authorization
+7. launch through Specification 018 rather than a manual Actions button
+8. make no new recommendation/action provider call before steps 3-6 are frozen and green
 ```
