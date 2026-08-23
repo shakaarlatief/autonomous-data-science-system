@@ -2,7 +2,7 @@
 
 Framework/provider imports are intentionally lazy. Ordinary repository CI can
 validate ADS application logic without installing or contacting the live
-runtime dependency. The explicit live workflow installs the frozen SDK version
+runtime dependency. Explicit live workflows install the frozen SDK version
 before executing provider calls.
 """
 
@@ -15,11 +15,11 @@ import time
 from typing import Any
 
 from ads_system.application.reasoning import (
+    ReasoningContextValueResult,
     ReasoningOutcome,
     ReasoningRequest,
     ReasoningTrace,
     ReasoningUsage,
-    ReasoningContextValueResult,
     validate_methodological_basis,
 )
 
@@ -69,7 +69,7 @@ class OpenAIAgentsReasoningRuntime:
             model=request.model_configuration.requested_model,
             model_settings=model_settings,
             tools=[],
-            output_type=ReasoningContextValueResult,
+            output_type=request.structured_output_type,
         )
 
         started = time.perf_counter()
@@ -82,15 +82,20 @@ class OpenAIAgentsReasoningRuntime:
         latency_seconds = time.perf_counter() - started
 
         final_output = result.final_output
-        if not isinstance(final_output, ReasoningContextValueResult):
+        if not isinstance(final_output, request.structured_output_type):
             raise ValueError(
-                "OpenAI Agents runtime did not return ReasoningContextValueResult; "
-                f"observed {type(final_output).__name__}"
+                "OpenAI Agents runtime did not return the requested ADS structured "
+                f"output {request.structured_output_schema_id}; observed "
+                f"{type(final_output).__module__}.{type(final_output).__qualname__}"
             )
-        validate_methodological_basis(final_output, request.knowledge_revisions)
+        if isinstance(final_output, ReasoningContextValueResult):
+            validate_methodological_basis(final_output, request.knowledge_revisions)
 
         usage = self._normalize_usage(result)
-        provider_model = self._provider_model(result, request.model_configuration.requested_model)
+        provider_model = self._provider_model(
+            result,
+            request.model_configuration.requested_model,
+        )
         trace = ReasoningTrace(
             run_id=request.run_id,
             request_digest=request.semantic_digest(),
