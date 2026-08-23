@@ -7,7 +7,7 @@
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #11 merge commit `fd33184fbff588c6737d77af751bc5def0e31954`  
 **Development stage:** Prototype V0 complete; bounded V1 now has real-model evidence for the chain from governed methodological knowledge through explained Horizon, selective exact-revision context, and an ADS-owned reasoning runtime seam.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact post-result reconciliation head, merge exactly that green PR #12 head into `v1-frontend-spike`, then design and preregister the next harder project-level recommendation/action slice before new live model calls.
+**Immediate project priority:** post-result preservation and canonical reconciliation are complete; validate the exact current PR #12 head, merge exactly that green head into `v1-frontend-spike`, then design and preregister the next harder project-level recommendation/action slice before new live model calls.
 
 ## Active ChatGPT development context
 
@@ -72,6 +72,9 @@ Specification 012 v1.0 / Checkpoint 141
 
 Specification 013 v1.0 / Checkpoint 143
     first accepted selective MethodologicalContextPack seam
+
+Specification 014 v1.0 / Checkpoint 146
+    first real-model selective-context value gate passed
 ```
 
 No final LLM provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or recommendation/REQUIRED-BLOCKING policy is selected.
@@ -169,12 +172,11 @@ Do not return to retrieval/relevance tuning merely because more tuning is possib
 ## Exact continuation
 
 ```text
-1. finish live-result canonical/routing reconciliation and PR #12 result summary
-2. validate the exact reconciliation head with checkpoint metadata, V1 reasoning-context Ubuntu/Windows, selective-context, and Horizon regressions
-3. merge exactly that green PR #12 head into v1-frontend-spike
-4. create the next experiment branch from the promoted merge
-5. design the harder recommendation/action slice
-6. preregister its tasks, obligations, controls, model/runtime treatment, metrics, and advancement rule before new live calls
+1. validate the exact current PR #12 head with checkpoint metadata, V1 reasoning-context Ubuntu/Windows, selective-context, and Horizon regressions
+2. merge exactly that green PR #12 head into v1-frontend-spike
+3. create the next experiment branch from the promoted merge
+4. design the harder recommendation/action slice
+5. preregister its tasks, obligations, controls, model/runtime treatment, metrics, and advancement rule before new live calls
 ```
 
 The next experiment should make recommendation strength and downstream consequence observable. It should be capable of exposing both harmful omission and unnecessary methodological expansion rather than repeating the now-passed bounded context-compression question.
