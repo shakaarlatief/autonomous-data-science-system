@@ -20,6 +20,7 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import subprocess
 from typing import Mapping, Sequence
 
 from ads_system.application.context_models import (
@@ -418,6 +419,29 @@ def _git_blob_sha(raw_bytes: bytes) -> str:
     return hashlib.sha1(header + raw_bytes).hexdigest()
 
 
+def _repository_blob_sha(path: Path, *, repository_root: Path) -> str:
+    """Resolve tracked Git object identity without depending on checkout line endings."""
+
+    resolved_path = path.resolve()
+    resolved_root = repository_root.resolve()
+    try:
+        relative = resolved_path.relative_to(resolved_root)
+    except ValueError:
+        return _git_blob_sha(path.read_bytes())
+
+    completed = subprocess.run(
+        ["git", "rev-parse", f"HEAD:{relative.as_posix()}"],
+        cwd=resolved_root,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    observed = completed.stdout.strip()
+    if completed.returncode == 0 and len(observed) == 40:
+        return observed
+    return _git_blob_sha(path.read_bytes())
+
+
 def load_frozen_benchmark(path: Path) -> FrozenRecommendationBenchmark:
     """Load the Specification 019 overlay and fail closed on base-fixture drift."""
 
@@ -425,7 +449,7 @@ def load_frozen_benchmark(path: Path) -> FrozenRecommendationBenchmark:
     root = Path(__file__).resolve().parents[2]
     base_path = root / str(overlay["base_fixture"])
     base_bytes = base_path.read_bytes()
-    observed_blob = _git_blob_sha(base_bytes)
+    observed_blob = _repository_blob_sha(base_path, repository_root=root)
     expected_blob = str(overlay["base_fixture_git_blob_sha"])
     if observed_blob != expected_blob:
         raise ValueError(
