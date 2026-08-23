@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 152  
+**Checkpoint:** 154  
 **Date:** 2026-08-23  
 **Active development branch:** `v1-disposition-semantics-diagnostic`  
 **Active PR:** #15 -> `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at failure-preservation merge `10aa3f59bedc5ee45a38f0ae05c68da901d9adff`  
-**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam, an immutable failed first recommendation/action-value experiment, and a separately frozen disposition-semantics failure-attribution diagnostic.  
+**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam, an immutable failed first recommendation/action-value experiment, and a separately preregistered disposition-semantics diagnostic whose provider-free implementation is now cross-platform green and whose secret-gated live boundary is frozen.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** implement Specification 016 provider-free without changing its frozen semantics, fixture, thresholds, call plan, retry policy, or model/runtime treatment; validate the exact implementation head before any new live provider call.
+**Immediate project priority:** validate the final Checkpoint 154 live-ready branch head under ordinary provider-free CI, expose only the identical manual workflow dispatcher on `main`, then execute the unchanged Specification 016 live diagnostic once. No live Specification 016 call has occurred yet.
 
 ## Active ChatGPT development context
 
@@ -17,7 +17,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` intentionally trails active V1 work except explicit manual-workflow dispatcher exposure.
+Repository artifacts remain authoritative across chats. `main` intentionally trails active V1 work except for explicit manual-workflow dispatcher exposure.
 
 ---
 
@@ -67,7 +67,7 @@ large reusable knowledge universe
     -> ADS-owned ReasoningRuntime
     -> real reasoning evidence                         [accepted bounded seam]
     -> recommendation / REQUIRED-BLOCKING / action    [first live seam failed]
-    -> disposition-semantics diagnosis                [active]
+    -> disposition-semantics diagnosis                [provider-free green; live next]
 ```
 
 ### Accepted implementation boundaries
@@ -196,11 +196,11 @@ experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 
 ## Active Specification 016 diagnostic
 
-Research 023, Specification 016 v0.1, `disposition_semantics_v1.json`, and Checkpoint 152 are frozen before implementation or new live calls.
+Research 023, Specification 016 v0.1, `disposition_semantics_v1.json`, and Checkpoint 152 froze the diagnostic before implementation and live calls.
 
 The diagnostic intentionally removes the methodological-treatment comparison and asks a narrower construct-validity question.
 
-### Proposed operational distinction
+### Experimental operational distinction
 
 ```text
 DEFER
@@ -215,7 +215,7 @@ NOT_NOW
     + defer_until_id = null
 ```
 
-The distinction is experimental, not production semantics.
+This is not yet a production taxonomy.
 
 ### Frozen benchmark
 
@@ -229,7 +229,7 @@ The distinction is experimental, not production semantics.
 randomization seed 2026082302
 ```
 
-Pair domains:
+Domains:
 
 ```text
 DS-01 model tuning
@@ -270,22 +270,87 @@ DISPOSITION_BOUNDARY_NOT_SUPPORTED
 INCOMPLETE
 ```
 
-### Interpretation boundary
+---
 
-A pass would establish only that the stronger dependency-backed distinction is operationally representable and reliably classifiable on deliberately unambiguous cases. It would not establish SELECTIVE recommendation value.
+## Provider-free implementation gate passed
 
-A failure means another recommendation-value comparison using the same DEFER/NOT_NOW distinction is not justified before taxonomy redesign or explicit dependency representation.
-
-The historical Specification 015 RA-02 cases remain unchanged regardless of this diagnostic.
-
-Primary active sources:
+Checkpoint 153 preserves the implementation head:
 
 ```text
-docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
-docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-tests/fixtures/reasoning/disposition_semantics_v1.json
-docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+6e7af25fd96d79673a59845e1c608c752970f658
 ```
+
+Dedicated workflow:
+
+```text
+V1 disposition semantics diagnostic
+run 32646969810
+```
+
+Results:
+
+```text
+Ubuntu targeted       15 passed
+Windows targeted      15 passed
+Ubuntu full suite     62 passed, 2 skipped
+Windows full suite    62 passed, 2 skipped
+```
+
+Inherited regressions on the same head also passed:
+
+```text
+Checkpoint metadata          run 32646969848 PASS
+V1 reasoning context value   run 32646969808 PASS
+```
+
+Provider-free validation covers:
+
+```text
+fixture construct rules
+36-call deterministic randomized plan
+truth-blinded model input
+exact pointer invariants
+attempt/retry ledger
+full fake-runtime execution
+SUPPORTED / NOT_SUPPORTED / INCOMPLETE gate behavior
+provider-neutral structured-output forwarding
+application/domain isolation from provider SDK imports
+```
+
+The historical RA-02 expected-DEFER examples are diagnostically classified as not admissible under the stronger Specification 016 unambiguous-DEFER construction rule because they lack an explicit trigger-backed dependency. This is a new diagnostic fact, not a rescore of Specification 015.
+
+---
+
+## Specification 016 live boundary frozen
+
+Checkpoint 154 adds the explicit secret-gated workflow:
+
+```text
+.github/workflows/v1-disposition-semantics-live.yml
+```
+
+Manual confirmation:
+
+```text
+RUN_SPEC_016_FROZEN
+```
+
+The workflow:
+
+```text
+runs only from v1-disposition-semantics-diagnostic
+requires OPENAI_API_KEY
+reruns the frozen provider-free targeted suite first
+installs openai-agents==0.19.4 only for live execution
+runs experiments.disposition_semantics.runner
+uploads the complete result directory even after partial failure
+```
+
+No Specification 016 live provider call has occurred.
+
+The final branch head containing Checkpoints 153-154 and reconciled routing must now pass ordinary provider-free CI. After that exact head is green, the experiment branch must not change before the live run.
+
+The identical live-workflow file may then be copied to `main` only to expose GitHub's manual dispatcher. The run itself must explicitly select `v1-disposition-semantics-diagnostic`.
 
 ---
 
@@ -317,12 +382,28 @@ Do not modify Specification 015 in place. Do not change Specification 016 after 
 ## Exact continuation
 
 ```text
-1. implement the experiment-only DispositionSemanticsResult and validator
-2. implement provider-free contrastive fixture/admissibility audit
-3. implement deterministic randomized plan, attempt ledger, and gate evaluator
-4. implement full 36-output fake-runtime integration coverage
-5. add dedicated ordinary CI with no provider credential
-6. preserve and validate the exact implementation head in the next checkpoint
-7. only then create/expose the manual secret-gated live workflow
-8. make no new live provider call before that pre-live checkpoint is green
+1. finish current routing reconciliation around Checkpoint 154
+2. validate the exact resulting PR #15 head with:
+       V1 disposition semantics diagnostic
+       V1 reasoning context value
+       Checkpoint metadata
+3. if and only if that exact head is green, make no further branch commits
+4. expose the identical v1-disposition-semantics-live.yml dispatcher on main only
+5. manually dispatch V1 disposition semantics live
+6. select branch v1-disposition-semantics-diagnostic
+7. enter RUN_SPEC_016_FROZEN
+8. preserve the complete artifact before interpretation or design changes
+```
+
+Primary active sources:
+
+```text
+docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
+docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+tests/fixtures/reasoning/disposition_semantics_v1.json
+docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/154_specification_016_live_boundary_frozen.md
+experiments/disposition_semantics/harness.py
+experiments/disposition_semantics/runner.py
 ```
