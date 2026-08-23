@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-23  
-**Reconciliation context:** Prototype V0 is complete. The post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, deterministic selective-context seam, and first real-model context-value result are established through Specification 014 v1.0 / Checkpoint 146. Specification 015 v0.1 / Checkpoint 150 adds a preserved failed first recommendation/action-value experiment. Specification 016 / Checkpoint 155 now provides a completed positive construct-validity result for a stronger dependency-backed `DEFER` versus `NOT_NOW` distinction on deliberately unambiguous microstates. The immediate unresolved downstream question is no longer whether that boundary can be represented at all, but whether a newly preregistered recommendation/action-value experiment using that explicit relation-backed construction demonstrates value from SELECTIVE methodological context beyond a strong GENERIC reasoner.
+**Reconciliation context:** Prototype V0 is complete. The post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, deterministic selective-context seam, and first real-model context-value result are established through Specification 014 v1.0 / Checkpoint 146. Specification 015 v0.1 / Checkpoint 150 adds a preserved failed first recommendation/action-value experiment. Specification 016 / Checkpoint 155 provides a completed positive construct-validity result for a stronger dependency-backed `DEFER` versus `NOT_NOW` distinction on deliberately unambiguous microstates. Specification 017 / Checkpoint 156 now freezes the next GENERIC-versus-SELECTIVE-versus-FULL_HORIZON recommendation/action-value experiment under that stronger relation-backed construction. Provider-free implementation is active; no Specification 017 live provider call has occurred. The immediate unresolved downstream question is whether SELECTIVE methodological context adds measurable recommendation/action value beyond a strong GENERIC reasoner once sequencing truth is structurally defensible.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -74,7 +74,7 @@ The product/object model provides places for Constraints, Questions, Findings, D
 
 **Status:** Substantially advanced, not complete
 
-Foundation 018 establishes Objects, Relations, Events, and Views plus a candidate project object model. The first V1 persistence slice implements only a bounded subset; the complete production schema remains open. Specification 016 adds evidence that a sequencing state becomes more objectively testable when an exact activating dependency/trigger relation is represented, but it does not yet define the production relation schema.
+Foundation 018 establishes Objects, Relations, Events, and Views plus a candidate project object model. The first V1 persistence slice implements only a bounded subset; the complete production schema remains open. Specification 016 adds evidence that sequencing becomes more objectively testable when an exact activating dependency/trigger relation is represented. Specification 017 now tests that relation-backed structure prospectively inside a recommendation/action result, but still stops before authoritative persistence or mutation.
 
 ### Q-010. When is independent review required?
 
@@ -124,7 +124,7 @@ Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`,
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-**Status:** Substantially advanced through real reasoning; downstream recommendation value remains unresolved and is now the next empirical boundary
+**Status:** Substantially advanced through real reasoning; downstream recommendation value is the active Specification 017 empirical boundary
 
 Accepted bounded path:
 
@@ -141,11 +141,25 @@ large reusable knowledge universe
 
 Specification 014 v1.0 / Checkpoint 146 provide direct downstream evidence: SELECTIVE and FULL_HORIZON both achieved `1.000000` aggregate semantic quality while SELECTIVE used an aggregate input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regressions.
 
-Specification 015 then tested a further recommendation/action layer. It failed one exact-disposition gate, but the miss was shared by all three conditions and concentrated on `DEFER` versus `NOT_NOW`. Specification 016 subsequently isolated that semantic boundary and achieved `1.000000` exact disposition accuracy, `1.000000` exact DEFER trigger-pointer accuracy, and `1.000000` NOT_NOW null-pointer correctness across 36 live observations when the activating dependency relation was made explicit.
+Specification 015 then tested a recommendation/action layer. It failed one exact-disposition gate, but the miss was shared by all three conditions and concentrated on `DEFER` versus `NOT_NOW`. Specification 016 isolated that construct and achieved `1.000000` exact disposition accuracy, `1.000000` exact DEFER trigger-pointer accuracy, and `1.000000` NOT_NOW null-pointer correctness across 36 live observations when the activating dependency was explicit.
 
-Therefore the selective reasoning-context seam remains supported, the immediate disposition construct problem is substantially narrowed, and the unresolved question returns to downstream system value: does SELECTIVE methodological knowledge materially improve recommendation/action behavior over a strong GENERIC reasoner once evaluator truth is made structurally defensible?
+Specification 017 is now preregistered to test the remaining system-value question. It freezes the same three conditions, the already-accepted selective sets, new prospectively relation-backed action truth, deterministic action/pointer metrics, and a condition-blinded semantic judge. Its advancement outcomes explicitly distinguish a promoted value signal from a safe ceiling/tie result:
 
-Still open:
+```text
+PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+```
+
+Still open until Specification 017 is executed:
+
+```text
+whether SELECTIVE improves downstream recommendation/action behavior over GENERIC
+whether FULL_HORIZON causes more unnecessary expansion than SELECTIVE
+whether semantic quality or exact action calibration shows a preregistered positive value signal
+```
+
+Broader open questions remain:
 
 ```text
 natural-language/project-state task interpretation
@@ -153,40 +167,18 @@ harder and heterogeneous project tasks
 when richer semantic/LLM relevance is necessary
 open-world discovery of concerns absent from explicit knowledge
 final context-budget policy
-how accepted reasoning becomes recommendation/action state
-whether explicit methodological knowledge adds downstream recommendation value
+how accepted reasoning becomes authoritative recommendation/action state
 ```
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Retrieval/Horizon/selective-context mechanics validated; relation-backed sequencing construct supported; production activation semantics remain open
+**Status:** Retrieval/Horizon/selective-context mechanics validated; relation-backed sequencing construct supported; Specification 017 prospectively tests downstream action calibration; production activation remains open
 
 P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, applicability/context checks, bounded relevance selection, recommendation reasoning, and selective reasoning context.
 
-Specification 015 exposed an ambiguous `DEFER` versus `NOT_NOW` distinction before activation could become durable project mutation. Specification 016 made that distinction structural and the frozen live diagnostic passed all hard gates:
+Specification 016 supports one structural constraint for future activation: if a DEFER-like state is to be distinguished deterministically from NOT_NOW, it should be backed by an explicit activating dependency/trigger rather than a bare low-priority label.
 
-```text
-DEFER
-    action already justified in the represented plan
-    + exact unresolved supplied activating trigger
-    + action becomes current next work after that trigger
-    + exact defer_until_id
-
-NOT_NOW
-    current state/objective does not materially justify prioritizing the action
-    + no represented supplied trigger activates it as current next work
-    + null defer_until_id
-```
-
-Observed Specification 016 result:
-
-```text
-36 / 36 exact disposition classifications correct
-18 / 18 DEFER pointers exact
-18 / 18 NOT_NOW pointers null
-```
-
-This supports one design/evaluation constraint for future activation work: a DEFER-like sequencing state should not be treated as a bare low-priority label if deterministic distinction from NOT_NOW is expected. It should be backed by an explicit activating dependency/trigger relation.
+Specification 017 now freezes this prospectively for all expected-DEFER actions. Every action decision includes `defer_until_id`; DEFER requires an exact supplied unresolved activating trigger, while `BLOCKING_REQUIRED`, `RECOMMENDED`, and `NOT_NOW` require a null pointer. The experiment still stops before creating `Proposal`, `Question`, `Investigation`, or other authoritative project objects.
 
 Still open:
 
@@ -226,9 +218,9 @@ Knowledge role, maturity, enforcement authority, scope confidence, provenance, c
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Structurally advanced through real reasoning; relation-backed sequencing is supported experimentally, but recommendation-state mapping remains open
+**Status:** Structurally advanced through real reasoning; relation-backed sequencing supported; Specification 017 tests a bounded recommendation result but authoritative state mapping remains open
 
-The first executable path has bounded evidence through real model reasoning:
+The executable path has bounded evidence through real model reasoning:
 
 ```text
 project-relevant retrieval
@@ -240,11 +232,9 @@ project-relevant retrieval
     -> measured reasoning output
 ```
 
-Checkpoint 146 shows that selective context preserved all frozen reasoning obligations while reducing provider input tokens by about two thirds on the first real-model benchmark.
+Checkpoint 146 shows selective context preserving all frozen reasoning obligations while reducing provider input tokens by about two thirds. Checkpoint 150 shows the first downstream recommendation/action benchmark failing one shared disposition gate. Checkpoint 155 shows the stronger dependency-backed distinction is operationally separable on deliberately unambiguous cases.
 
-Checkpoint 150 shows that the first downstream recommendation/action benchmark did not earn promotion. Its only hard-gate failure was a shared `DEFER`/`NOT_NOW` distinction, not a treatment-specific methodological omission.
-
-Checkpoint 155 now shows that the stronger dependency-backed distinction is operationally separable on deliberately unambiguous live cases. This removes one immediate construct-validity blocker, but it does not yet justify mapping reasoner outputs into authoritative project objects or events.
+Specification 017 is the next bounded step: test whether that relation-backed recommendation result can be safe and add value. It explicitly prohibits authoritative project mutation, so even a future promotion outcome would still require a separate design for mapping accepted recommendation outputs into Foundation 018 objects, relations, and events.
 
 Still unresolved:
 
@@ -253,7 +243,7 @@ how production project objects/state derive requested reasoning functions
 whether explicit task semantics remain expressive enough at larger scale
 how semantic/LLM relevance participates when they are not
 whether DEFER/NOT_NOW should both exist as production enums
-how exact activating dependencies should be represented in Foundation 018 state
+how exact activating dependencies should be represented durably
 how recommendation strength becomes Proposal / Question / Investigation / Decision state
 how activation behaves on harder, ambiguous, incomplete, and open-world project states
 ```
@@ -285,7 +275,7 @@ real-model context-value gate              Checkpoint 146
 
 The first selective gate reduced methodology-only canonical context by roughly 65% to 84%. The subsequent real-model gate preserved every frozen semantic obligation while reducing actual provider input tokens by `66.56%` in aggregate.
 
-Specification 015 again observed descriptive SELECTIVE/FULL reasoner input-token ratio `0.443880`, but recommendation/action quality was the governing objective and the seam failed. Specification 016 addressed the downstream disposition construct rather than retrieval and therefore gives no evidence that retrieval should now be retuned.
+Specifications 015 and 016 did not expose a retrieval deficiency. Specification 017 therefore keeps the accepted retrieval, Horizon, and selector mechanics fixed so downstream recommendation/action value can be attributed more cleanly.
 
 Still open:
 
@@ -294,15 +284,15 @@ production task-profile derivation
 final Horizon/context budgets
 larger and heterogeneous Horizon behavior
 whether semantic/LLM relevance is needed beyond explicit reasoning functions
-production semantic/fusion integration when a downstream deficiency requires it
+production semantic/fusion integration only when a downstream deficiency requires it
 reranking only if ordering becomes a measured problem
 ```
 
 ### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?
 
-**Status:** Reasoning-quality separation validated; disposition construct validity supported; recommendation-value comparison remains unresolved
+**Status:** Reasoning-quality separation validated; disposition construct validity supported; Specification 017 now freezes the second recommendation-value comparison
 
-The executable failure decomposition distinguishes catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, reasoner-obligation, recommendation-calibration, disposition-construct, and action-expansion failures.
+The executable failure decomposition distinguishes catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, reasoner-obligation, recommendation-calibration, disposition-construct, pointer, clarification, and action-expansion failures.
 
 Specification 014 established:
 
@@ -313,22 +303,9 @@ critical regressions    none
 aggregate input ratio   0.334379
 ```
 
-Specification 015 added deterministic recommendation metrics and a blinded semantic judge. Frozen aggregate SELECTIVE behavior was strong:
+Specification 015 added deterministic recommendation metrics and a blinded semantic judge, but `RA-G05` failed because `RA-02` exact disposition accuracy was `0.666667` rather than at least `0.80`. The discrepancy was shared across conditions and semantically judged strong, which motivated Specification 016 rather than post-hoc relabeling.
 
-```text
-exact disposition accuracy      0.916667
-semantic score                  0.991667
-critical omissions              0
-blocking false negatives        0
-unsupported basis               0
-under-recommendations           0
-over-recommendations            0
-unnecessary recommended cost    0
-```
-
-but `RA-G05` failed because `RA-02` exact disposition accuracy was `0.666667` rather than at least `0.80`. All three conditions converged on `NOT_NOW` where frozen truth expected `DEFER` for two noncritical expansion actions, while every RA-02 semantic score was `1.000000`.
-
-Specification 016 then isolated the label boundary under explicit relation-backed evidence and observed:
+Specification 016 then observed:
 
 ```text
 aggregate exact disposition accuracy    1.000000
@@ -339,14 +316,14 @@ expected-NOT_NOW null-pointer accuracy   1.000000
 outcome                                  DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
-The historical Specification 015 cases are not rescored. Instead, both disputed RA-02 expected-DEFER examples are described as not admissible examples of unambiguous Specification 016 DEFER because the old fixture did not encode an exact activating dependency relation.
+Specification 017 now freezes a stronger evaluation contract. Deterministic metrics include exact disposition, critical omissions, under/over-recommendation, unnecessary cost, blocking-scope errors, clarification errors, defer-pointer errors, and basis provenance. The blinded judge evaluates methodological rationale separately. Positive value signals are preregistered, including exact or semantic improvement versus GENERIC and lower expansion burden versus FULL_HORIZON.
 
-The next evaluation question is now:
+The active evaluation question is:
 
 ```text
-Can a new recommendation/action benchmark preserve this structurally defensible disposition truth?
-Does SELECTIVE improve recommendation/action behavior over GENERIC once the disposition construct is no longer the main confound?
-Can value be demonstrated on outcomes that matter, such as critical omissions, unjustified blocking, unnecessary actions, or clarification quality, rather than exact labels alone?
+Can SELECTIVE pass all absolute and non-inferiority gates?
+Does it show at least one preregistered downstream value signal?
+Or does a strong GENERIC reasoner remain equally good, yielding SAFE_BUT_NOT_DIFFERENTIATED?
 ```
 
 ---
@@ -367,9 +344,9 @@ Foundation 018 establishes shared reproducible run contracts and retains VS Code
 
 ### Q-021. How should model and tool providers be selected?
 
-**Status:** Open; runtime boundary selected, bounded model treatment reused for Specifications 014-016
+**Status:** Open; runtime boundary selected, bounded model treatment reused for Specifications 014-017
 
-D-032 selects runtime infrastructure, not the final LLM provider/model. Specifications 014, 015, and 016 deliberately used the same concrete frozen model/runtime treatment so adjacent experiment results remained attributable. The passed context-value gate, failed recommendation/action gate, and passed disposition diagnostic do not promote that treatment into a permanent production choice.
+D-032 selects runtime infrastructure, not the final LLM provider/model. Specifications 014, 015, and 016 deliberately used the same concrete frozen model/runtime treatment. Specification 017 freezes the same treatment again to preserve attribution while changing the recommendation construct. None of these experiments promotes the concrete model/provider configuration into a permanent production choice.
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
@@ -399,7 +376,7 @@ Final production MCP servers/tool catalog, AG-UI adapter choice, and any future 
 
 **Status:** Substantially answered for current development needs; still evolvable
 
-The project uses canonical documents, foundations, research memos, specifications, checkpoints, experiment ledgers, a knowledge map, major-changes ledger, Git history, and explicit continuity/promotion/reconciliation procedures. Specifications 015 and 016 together demonstrate why frozen experiment contracts, complete raw result artifacts, positive and negative outcomes, and post-result interpretation should remain separately preservable.
+The project uses canonical documents, foundations, research memos, specifications, checkpoints, experiment ledgers, a knowledge map, major-changes ledger, Git history, and explicit continuity/promotion/reconciliation procedures. Specifications 015-017 demonstrate why failed experiments, diagnostic follow-ups, and new prospectively corrected contracts must remain separately versioned rather than editing historical evaluator truth in place.
 
 ### Q-043. When should the project move beyond Git and Markdown for development knowledge preservation?
 
@@ -467,7 +444,7 @@ Use multidimensional project characterization rather than one exclusive project-
 
 **Status:** Substantially advanced; broader V1 evaluation remains open
 
-V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context-value comparison, a preserved failed recommendation/action experiment, and a completed positive construct-validity diagnostic derived from the exact failure mode. The progression reinforces that workflow execution success must remain distinct from experiment-gate success, narrow failures should be preserved rather than repaired post hoc, and a failed benchmark construct should be isolated before making another system-value claim.
+V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context-value comparison, a preserved failed recommendation/action experiment, a completed positive construct-validity diagnostic derived from that failure, and a separately frozen second recommendation/action-value contract. The progression reinforces that workflow success is distinct from experiment success, historical evaluator truth is immutable, failure attribution should precede redesign, and a new claim requires a new preregistered contract.
 
 ### Q-017. How should real projects become regression tests?
 
@@ -479,13 +456,13 @@ Foundation 017 proposes project replay from original starting inputs. Long-term 
 
 **Status:** Substantially refined, not resolved
 
-Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference. No final ranking/scoring mechanism exists. Specification 015 showed that a sequencing-oriented label was too weakly grounded in its frozen RA-02 state to support the intended exact-label gate. Specification 016 shows that explicit dependency-backed sequencing can make that distinction reproducibly classifiable, but does not yet determine how real project priorities should be ranked or persisted.
+Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference. No final ranking/scoring mechanism exists. Specification 016 shows that explicit dependency-backed sequencing can make one distinction reproducibly classifiable. Specification 017 now tests whether such structure plus selective methodology improves bounded action calibration, but still does not define the production prioritization model.
 
 ### Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
 **Status:** Prototype V0 completed; broader program open
 
-The V0 synthetic churn benchmark and held-out protocol are historical evidence. V1 has added retrieval/Horizon/context/runtime gates, a passed real-model reasoning-context comparison, a failed recommendation/action benchmark, and a successful construct-validity diagnostic derived from that narrow failure. The next recommendation benchmark should preserve this stronger construction discipline while becoming harder on substantive recommendation value rather than merely repeating an easy semantic separation test. Larger changing project trajectories and heterogeneous real-project replay remain open.
+The V0 synthetic churn benchmark and held-out protocol are historical evidence. V1 has added retrieval/Horizon/context/runtime gates, a passed real-model reasoning-context comparison, a failed recommendation/action benchmark, a successful construct-validity diagnostic derived from that narrow failure, and a prospectively relation-backed second recommendation benchmark frozen before implementation. This is the intended pattern: preserve failures, isolate ambiguous constructs, then retest the system-level claim under a new contract rather than retroactively repairing the old result. Larger changing project trajectories and heterogeneous real-project replay remain open.
 
 ---
 
@@ -538,27 +515,23 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-005  does explicit methodological knowledge add downstream recommendation/action value beyond a strong generic reasoner once sequencing truth is structurally defensible?
-Q-045  how should the next recommendation benchmark measure substantive value separately from disposition construct validity?
+Q-005  does Specification 017 show downstream recommendation/action value from SELECTIVE beyond a strong GENERIC reasoner?
+Q-045  can the frozen relation-backed evaluator cleanly separate action quality, pointer validity, semantic rationale, and expansion burden?
 Q-006  should production sequencing remain a disposition, become an explicit dependency relation, or expose both as object/relation plus derived view?
 Q-037  how should future accepted recommendations become durable project state without over-automation?
-Q-029  how should real recommendation priority and sequencing be represented beyond the deliberately clear Specification 016 microstates?
+Q-029  how should real recommendation priority and sequencing scale beyond bounded benchmark microstates?
 Q-021  what model/provider configuration should eventually be selected beyond bounded experiment treatments?
 Q-051  which frontend/chart choices deserve final stack promotion?
 Q-052  how should final Cockpit visual/system details evolve on top of Specification 008?
 ```
 
-The completed disposition diagnostic is governed and preserved by:
+The active frozen experiment is governed by:
 
 ```text
-docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
-docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
-docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/154_specification_016_live_boundary_frozen.md
-docs/checkpoints/155_disposition_semantics_live_gate_supported.md
-experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
-experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
+docs/research/024_relation_backed_recommendation_action_value_design.md
+docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
+docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
 ```
 
-Specification 015 and its frozen FAIL remain immutable historical evidence. The next live model call may occur only under a separately versioned and preregistered recommendation/action-value experiment that preserves the stronger relation-backed sequencing construction, is provider-free validated first, and does not post hoc alter Specification 015 or Specification 016.
+Specifications 015 and 016 remain immutable historical evidence. No Specification 017 live model call may occur until its provider-free implementation is complete, the exact implementation head passes ordinary Ubuntu and Windows CI, and that pre-live boundary is preserved in a later checkpoint. After live execution, the complete raw artifact must be preserved before interpretation or design changes.
