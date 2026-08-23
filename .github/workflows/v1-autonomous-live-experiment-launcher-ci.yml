@@ -1,0 +1,68 @@
+name: V1 autonomous live experiment launcher CI
+
+on:
+  push:
+    branches: [v1-autonomous-live-experiment-launcher]
+    paths:
+      - .github/ads_live_experiments.json
+      - .github/workflows/v1-autonomous-live-experiment-launcher.yml
+      - .github/workflows/v1-live-launcher-probe.yml
+      - .github/workflows/v1-autonomous-live-experiment-launcher-ci.yml
+      - scripts/ads_live_experiment_launcher.py
+      - tests/unit/test_ads_live_experiment_launcher.py
+      - docs/research/025_governed_autonomous_live_experiment_launcher_design.md
+      - docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
+      - docs/checkpoints/160_governed_autonomous_live_experiment_launcher_contract_frozen.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - .github/ads_live_experiments.json
+      - .github/workflows/v1-autonomous-live-experiment-launcher.yml
+      - .github/workflows/v1-live-launcher-probe.yml
+      - .github/workflows/v1-autonomous-live-experiment-launcher-ci.yml
+      - scripts/ads_live_experiment_launcher.py
+      - tests/unit/test_ads_live_experiment_launcher.py
+      - docs/research/025_governed_autonomous_live_experiment_launcher_design.md
+      - docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
+      - docs/checkpoints/160_governed_autonomous_live_experiment_launcher_contract_frozen.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+
+permissions:
+  contents: read
+
+jobs:
+  provider-free-launcher:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify provider credential is absent
+        shell: bash
+        run: |
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            echo "Ordinary launcher CI must not receive OPENAI_API_KEY."
+            exit 1
+          fi
+      - name: Run frozen launcher tests
+        run: >-
+          uv run --python 3.13 --locked python -m pytest
+          tests/unit/test_ads_live_experiment_launcher.py
+          -q
+      - name: Run existing V1 Python regression suite
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q
