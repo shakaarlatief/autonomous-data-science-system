@@ -7,13 +7,19 @@ on:
 permissions:
   contents: write
   actions: read
-  issues: read
+  issues: write
 
 jobs:
   preserve:
     if: ${{ github.event.issue.title == '[ADS] preserve spec017 run 32656446705' }}
     runs-on: ubuntu-latest
+    env:
+      ISSUE_NUMBER: ${{ github.event.issue.number }}
+      GH_TOKEN: ${{ github.token }}
     steps:
+      - name: Record trigger acceptance
+        shell: bash
+        run: gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system --body 'Specification 017 artifact preservation workflow accepted this control-plane trigger.'
       - uses: actions/checkout@v7
         with:
           ref: v1-recommendation-action-value-relation-backed
@@ -60,3 +66,6 @@ jobs:
           git add "$DEST"
           git commit -m 'Preserve incomplete Specification 017 live run'
           git push origin HEAD:v1-recommendation-action-value-relation-backed
+      - name: Record preservation success
+        shell: bash
+        run: gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system --body 'Specification 017 artifact preservation completed and pushed to the active experiment branch.'
