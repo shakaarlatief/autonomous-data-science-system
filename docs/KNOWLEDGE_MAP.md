@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 148  
+**Current checkpoint:** 149  
 **Active development branch:** `v1-recommendation-action-value`  
 **Active promotion PR:** #13 into `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`
@@ -48,7 +48,7 @@ Current branch relationship:
 active experiment branch  v1-recommendation-action-value
 active PR                  #13 -> v1-frontend-spike
 promoted integration head  bd7d1ec5cabc80d39e005d0a12c11295da32f4a6
-main                       intentionally behind current V1 work
+main                       intentionally behind current V1 work except manual-workflow dispatcher exposure
 ```
 
 ---
@@ -94,11 +94,12 @@ Specification 014 v1.0 / Checkpoint 146
     aggregate provider input-token ratio 0.334379
     66.56% input-token reduction
 
-Specification 015 v0.1 / Checkpoints 147-148
+Specification 015 v0.1 / Checkpoints 147-149
     recommendation/action-value contract frozen
     GENERIC vs SELECTIVE vs FULL_HORIZON
     provider-free implementation passed cross-platform
-    exact pre-live validation is the active boundary
+    reconciled live-ready boundary frozen
+    manual live dispatch is next
 ```
 
 ---
@@ -508,13 +509,31 @@ knowledge authority unchanged before/after
 
 No production Proposal/Question/Decision mutation is authorized by this experiment.
 
-### Explicit live boundary
+### Reconciled live-ready boundary
+
+Checkpoint 149:
+
+```text
+docs/checkpoints/149_specification_015_live_boundary_frozen.md
+```
+
+Its checkpoint commit passed:
+
+```text
+Checkpoint metadata                 run 32641146841   PASS
+V1 recommendation action value      run 32641146842   PASS
+V1 reasoning context value          run 32641146840   PASS
+```
+
+The recommendation/action workflow passed on both Ubuntu and Windows and verified that the ordinary provider-free CI environment had no `OPENAI_API_KEY`.
+
+The manual live workflow is exposed on the default branch only as a dispatcher surface:
 
 ```text
 .github/workflows/v1-recommendation-action-value-live.yml
 ```
 
-The workflow is manual `workflow_dispatch` only and requires:
+The workflow requires:
 
 ```text
 branch        v1-recommendation-action-value
@@ -529,14 +548,16 @@ No live Specification 015 reasoner or judge call has occurred.
 ## Current exact continuation
 
 ```text
-A. validate the exact reconciled pre-live branch head on Ubuntu and Windows
-B. preserve that source head and exact workflow-run evidence
-C. keep Specification 015, fixture, treatment, action menus, rubric, gates, repetitions, randomization, and retry policy unchanged
-D. expose the frozen live workflow on the default branch only as the manual dispatcher surface
-E. manually execute V1 recommendation action value live with RUN_SPEC_015_FROZEN from v1-recommendation-action-value
-F. preserve the complete raw/result bundle before any tuning
-G. apply the frozen PROMOTE_BOUNDED_RECOMMENDATION_SEAM / SAFE_BUT_NOT_DIFFERENTIATED / FAIL classification
+A. keep Specification 015 and every frozen treatment/evaluation value unchanged
+B. manually dispatch V1 recommendation action value live
+C. choose branch v1-recommendation-action-value
+D. enter RUN_SPEC_015_FROZEN
+E. preserve the complete raw/result bundle before any tuning
+F. apply the frozen three-way advancement classification exactly
+G. create the live-result checkpoint before merge, repair, or subsequent experiment design
 ```
+
+The default branch contains the manual dispatcher only. The workflow branch guard requires `v1-recommendation-action-value` for actual execution.
 
 Do not return to retrieval/reranking/vector work without a measured downstream reason.
 
@@ -558,4 +579,5 @@ Do not return to retrieval/reranking/vector work without a measured downstream r
 146  first real reasoning-context-value gate passed and promotion authorized
 147  first recommendation/action-value contract frozen
 148  recommendation/action provider-free implementation passed cross-platform
+149  Specification 015 reconciled live-ready boundary frozen
 ```
