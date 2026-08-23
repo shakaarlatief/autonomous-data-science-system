@@ -19,7 +19,9 @@ jobs:
     steps:
       - name: Record trigger acceptance
         shell: bash
-        run: gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system --body 'Specification 017 artifact preservation workflow accepted this control-plane trigger.'
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system \
+            --body "Specification 017 artifact preservation accepted. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
       - uses: actions/checkout@v7
         with:
           ref: v1-recommendation-action-value-relation-backed
@@ -68,4 +70,12 @@ jobs:
           git push origin HEAD:v1-recommendation-action-value-relation-backed
       - name: Record preservation success
         shell: bash
-        run: gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system --body 'Specification 017 artifact preservation completed and pushed to the active experiment branch.'
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system \
+            --body "Specification 017 artifact preservation completed. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+      - name: Record preservation failure
+        if: ${{ failure() }}
+        shell: bash
+        run: |
+          gh issue comment "${ISSUE_NUMBER}" --repo shakaarlatief/autonomous-data-science-system \
+            --body "Specification 017 artifact preservation failed. Inspect: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
