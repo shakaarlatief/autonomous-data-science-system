@@ -1,0 +1,51 @@
+name: Bootstrap Specification 019 from preserved Specification 017 implementation
+
+on:
+  push:
+    branches: [v1-recommendation-action-value-system-provenance]
+    paths:
+      - .github/workflows/bootstrap-spec019-from-spec017.yml
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-recommendation-action-value-system-provenance
+          fetch-depth: 0
+      - name: Copy preserved implementation as an unpromoted starting point
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin v1-recommendation-action-value-relation-backed
+          SRC='origin/v1-recommendation-action-value-relation-backed'
+          DEST='experiments/system_owned_provenance_recommendation_action_value'
+          mkdir -p "$DEST"
+          for FILE in __init__.py environment.py harness.py judge.py runner.py; do
+            git show "$SRC:experiments/relation_backed_recommendation_action_value/$FILE" > "$DEST/$FILE"
+          done
+          python - <<'PY'
+          from pathlib import Path
+          root = Path('experiments/system_owned_provenance_recommendation_action_value')
+          for path in root.glob('*.py'):
+              text = path.read_text(encoding='utf-8')
+              text = text.replace(
+                  'experiments.relation_backed_recommendation_action_value',
+                  'experiments.system_owned_provenance_recommendation_action_value',
+              )
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit bootstrap and remove one-shot workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/bootstrap-spec019-from-spec017.yml
+          git add experiments/system_owned_provenance_recommendation_action_value
+          git commit -m 'Bootstrap Specification 019 implementation from preserved code'
+          git push origin HEAD:v1-recommendation-action-value-system-provenance
