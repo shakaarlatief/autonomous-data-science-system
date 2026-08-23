@@ -23,12 +23,12 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            159
-active branch         v1-recommendation-action-value-relation-backed
-active PR             #16 -> v1-frontend-spike
-promoted V1 head      6bda0c1efcf078476859b2c2c64fb0586964899d
-current boundary      Specification 017 live execution incomplete;
-                      raw evidence preserved; no advancement classification
+checkpoint            161
+active branch         v1-autonomous-live-experiment-launcher
+active PR             #23 -> v1-frontend-spike
+promoted V1 head      4385b83b43582ff6466b519b4e96356d220c44bc
+current boundary      Specification 018 governed autonomous live-experiment
+                      launcher passed its end-to-end provider-free gate
 ```
 
 Current progression:
@@ -45,23 +45,20 @@ Specification 014
     while reducing provider input tokens by 66.56%
 
 Specification 015
-    first recommendation/action-value experiment
-    frozen result FAIL
-    failed implementation rejected
-    negative evidence preserved
+    first recommendation/action-value experiment FAIL; implementation rejected
 
 Specification 016
-    dependency-backed DEFER-vs-NOT_NOW diagnostic
-    outcome DISPOSITION_BOUNDARY_SUPPORTED
-    promoted as a bounded construct/evaluation constraint
+    dependency-backed DEFER-vs-NOT_NOW diagnostic supported
 
 Specification 017
-    second recommendation/action-value experiment
-    relation-backed action sequencing
-    first live execution incomplete at the model-authored provenance field
-    29/36 reasoner outputs and 29/36 judge outputs completed
-    no PROMOTE / SAFE / FAIL advancement outcome assigned
-    raw artifact preserved
+    relation-backed recommendation/action live execution incomplete
+    historical evidence preserved; implementation rejected
+
+Specification 018
+    governed autonomous live-experiment launcher supported
+    exact cross-platform provider-free CI passed
+    owner issue -> launcher -> workflow_dispatch -> probe passed
+    no manual Actions UI click and no provider call required
 ```
 
 For exact continuation, start with:
@@ -69,8 +66,8 @@ For exact continuation, start with:
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
-experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
+docs/checkpoints/161_governed_autonomous_live_experiment_launcher_end_to_end_gate_passed.md
+docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
 ```
 
 ---
@@ -255,9 +252,9 @@ experiments/relation_backed_recommendation_action_value/results/spec017-live-202
 
 ## Next architecture boundary
 
-Two separate tracks are now justified.
+The control-plane problem is now boundedly solved: future explicitly authorized frozen experiments can be launched through the repository-governed Specification 018 mechanism rather than by asking the user to press the GitHub Actions button.
 
-First, the next recommendation/action-value experiment must separate system-owned provenance from model-owned recommendation content:
+The next scientific boundary returns to recommendation/action value. The next experiment must separate:
 
 ```text
 SYSTEM TRACE
@@ -273,22 +270,22 @@ MODEL RESULT
     rationales
 ```
 
-Second, the repeated manual GitHub `workflow_dispatch` step is now a tractable control-plane problem. During Specification 017 result preservation, an owner-created GitHub issue successfully triggered a default-branch workflow through the connected GitHub interface. That workflow downloaded a prior Actions artifact, verified its hashes, and pushed preserved evidence to the target branch.
-
-This is feasibility evidence only, not yet a production launcher. A governed launcher must use an allowlisted experiment registry, verify the owner/actor and exact frozen source SHA, reject arbitrary commands from issue text, verify required CI gates, and keep every launch auditable.
+Before any provider-backed launch, the next experiment must be preregistered, its exact implementation head must pass provider-free gates, and one exact launch authorization must be added to the repository registry.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. preserve Specification 017 evidence through a preservation-only integration PR
-2. do not merge the unpromoted experimental recommendation/action implementation
-3. close PR #16 without merge after preservation integration is green
-4. clean temporary one-shot preservation workflows/issues
-5. design and provider-free validate a governed autonomous live-experiment launcher
-6. separately preregister the next recommendation/action-value experiment with system-owned provenance
-7. make no new recommendation/action live provider call before the new contract and exact implementation head are frozen and green
+1. finish Checkpoint 161 canonical reconciliation
+2. clean the one-shot probe authorization and temporary control helpers
+3. validate the exact final PR #23 head
+4. merge PR #23 into v1-frontend-spike
+5. record the exact promoted merge boundary
+6. preregister the next recommendation/action-value experiment with system-owned provenance
+7. validate its exact provider-free implementation head
+8. authorize and launch it through Specification 018
+9. make no recommendation/action provider call before the new contract and implementation gate are frozen and green
 ```
 
 ---

@@ -1,0 +1,41 @@
+name: V1 live launcher provider-free probe
+run-name: ADS live ${{ inputs.launch_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      launch_id:
+        description: Governed launch authorization identifier
+        required: true
+        type: string
+      expected_source_sha:
+        description: Exact frozen source commit expected by the launcher
+        required: true
+        type: string
+      confirmation:
+        description: Exact frozen confirmation token
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify governed probe identity before any side effect
+        shell: bash
+        env:
+          LAUNCH_ID: ${{ inputs.launch_id }}
+          EXPECTED_SOURCE_SHA: ${{ inputs.expected_source_sha }}
+          CONFIRMATION: ${{ inputs.confirmation }}
+          OBSERVED_SOURCE_SHA: ${{ github.sha }}
+          OBSERVED_REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          test "$LAUNCH_ID" = 'spec018-probe-001'
+          test "$CONFIRMATION" = 'RUN_SPEC018_PROBE_001'
+          test "$OBSERVED_REF_NAME" = 'v1-autonomous-live-experiment-launcher'
+          test "$OBSERVED_SOURCE_SHA" = "$EXPECTED_SOURCE_SHA"
+          printf 'ADS_LIVE_LAUNCHER_PROBE_OK source=%s\n' "$OBSERVED_SOURCE_SHA"

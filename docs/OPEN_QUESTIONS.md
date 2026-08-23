@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-23  
-**Reconciliation context:** Prototype V0 is complete. The post-V0 V1 project/object foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, runtime boundary, retrieval/Horizon chain, selective-context seam, and first real-model context-value result are established. Specification 015 remains an immutable failed first recommendation/action-value experiment. Specification 016 supplies positive bounded evidence for dependency-backed sequencing. Specification 017 completed provider-free validation but its first live run was incomplete because the model-authored methodological provenance field repeatedly conflated reasoning-function labels with reusable knowledge stable keys in GENERIC. The raw run is preserved through Checkpoint 159 and no Specification 017 advancement outcome is assigned. The next high-value boundaries are: preserve/close Specification 017 without promoting its implementation, separate system-owned provenance from model-owned recommendation content, and design a governed autonomous live-experiment launcher so future authorized runs need not depend on a manual GitHub button click.
+**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, preserved negative and incomplete recommendation/action evidence, dependency-backed sequencing evidence, and now a bounded governed autonomous live-experiment launcher. Specification 018 passed cross-platform provider-free CI and an end-to-end owner issue -> launcher -> workflow_dispatch -> independent probe gate without a manual Actions UI click or provider call. Specification 017 remains incomplete historical evidence and its implementation remains unpromoted. The next high-value scientific boundary is a new preregistered recommendation/action-value experiment with exact supplied-context provenance owned by the system.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -177,39 +177,46 @@ Any model-authored knowledge citation layer should be evaluated as a distinct op
 
 ### Q-053. How should authorized live experiments be launched autonomously and safely?
 
-**Status:** New active control-plane question with bounded feasibility evidence
+**Status:** Bounded V1 mechanism answered and supported; broader approval/orchestration policy remains open
 
-Repeated `workflow_dispatch` launches currently require a manual GitHub UI action because that dispatch mutation is not exposed by the connected GitHub interface.
-
-During Specification 017 evidence preservation, a default-branch GitHub Actions workflow triggered successfully from an owner-created GitHub issue created through the connected GitHub interface. The successful workflow downloaded an existing Actions artifact, verified exact hashes, and pushed evidence to the target branch.
-
-This supports a possible control plane:
+Specification 018 now establishes and validates the first governed control plane:
 
 ```text
-assistant creates governed launch request
-    -> default-branch event workflow
-    -> validate actor + allowlisted experiment + exact frozen source SHA
-    -> validate contract identity + required CI evidence + uniqueness
-    -> check out exact frozen head
-    -> run hardcoded allowlisted experiment command
-    -> comment/run-link audit trail
+owner-created [ADS LIVE] issue
+    -> repository-controlled launch authorization
+    -> exact owner identity checks
+    -> exact source SHA
+    -> exact successful CI run IDs
+    -> conservative duplicate check
+    -> allowlisted workflow_dispatch
+    -> independently validating target workflow
 ```
 
-Still required before adoption:
+End-to-end provider-free evidence:
 
 ```text
-owner/actor authorization rule
-allowlisted experiment registry
-exact source-SHA and contract/checkpoint verification
-required-CI verification
-replay/duplicate-launch prevention
-no arbitrary shell/command input from issue text
-secret handling and least privilege
-run/result linking and cleanup
-provider-free tests of positive and rejection paths
+implementation source   27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
+provider-free CI        32660168566
+launcher run            32660333663
+probe run               32660340429
+probe job               97245432893
+outcome                 GOVERNED_LAUNCHER_SUPPORTED
 ```
 
-This control plane is separate from the scientific content of any experiment.
+The launcher receives no provider credential. Issue text cannot supply executable workflow/ref/SHA/command/model/prompt/secret configuration. The target workflow independently checks its exact source SHA and confirmation before any provider call.
+
+Remaining open questions are broader than the bounded launcher itself:
+
+```text
+production human approval/escalation policy
+project-level authorization UX
+authorization expiry/revocation lifecycle
+provider-backed result/status presentation in the Cockpit
+retention and cleanup policy for launch issues and completed authorizations
+multi-user / organization authorization if the project later requires it
+```
+
+The scientific content of an experiment remains separate from this control plane. A provider-backed authorization is permitted only after that experiment's own contract is frozen and its exact implementation head is green.
 
 ---
 
