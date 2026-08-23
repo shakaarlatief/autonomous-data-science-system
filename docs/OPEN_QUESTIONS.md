@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-23  
-**Reconciliation context:** Prototype V0 is complete. The post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, deterministic selective-context seam, and first real-model context-value result are established through Specification 014 v1.0 / Checkpoint 146. Specification 015 v0.1 / Checkpoint 150 now adds a preserved failed first recommendation/action-value experiment. The immediate unresolved boundary is whether `DEFER` and `NOT_NOW` are operationally separable and benchmarkable enough for system-managed recommendation semantics, and whether a revised recommendation/action seam can later demonstrate value beyond a strong generic reasoner.
+**Reconciliation context:** Prototype V0 is complete. The post-V0 V1 object/methodological foundations, Project Cockpit interaction architecture, governed reusable-knowledge persistence/interchange, initial runtime selection, retrieval/Horizon chain, deterministic selective-context seam, and first real-model context-value result are established through Specification 014 v1.0 / Checkpoint 146. Specification 015 v0.1 / Checkpoint 150 adds a preserved failed first recommendation/action-value experiment. Specification 016 / Checkpoints 152-154 now isolate that failure into a preregistered `DEFER` versus `NOT_NOW` construct-validity diagnostic whose provider-free implementation is cross-platform green and whose live boundary is frozen. The immediate unresolved evidence question is whether that stronger dependency-backed distinction survives the unchanged live diagnostic; no Specification 016 live call has occurred yet.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -157,21 +157,24 @@ whether explicit methodological knowledge adds downstream recommendation value
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Retrieval/Horizon/selective-context mechanics validated; recommendation/action transition failed its first gate
+**Status:** Retrieval/Horizon/selective-context mechanics validated; recommendation/action transition failed its first gate and is under construct-validity diagnosis
 
 P0's path-sensitive tag-trigger activation should not scale unchanged. Foundation 019 instead uses staged retrieval, applicability/context checks, bounded relevance selection, recommendation reasoning, and selective reasoning context.
 
-Specification 015 exposed a concrete unresolved distinction before activation can become durable project mutation:
+Specification 015 exposed a concrete unresolved distinction before activation can become durable project mutation. Specification 016 now makes that distinction deliberately structural:
 
 ```text
 DEFER
-    relevant/useful, but sequencing or current priority says later
+    action already justified in the represented plan
+    + exact unresolved supplied trigger
+    + action becomes current next work after that trigger
 
 NOT_NOW
-    current evidence/objective does not materially justify prioritizing it now
+    current state/objective does not materially justify prioritizing the action
+    + no represented supplied trigger activates it as current next work
 ```
 
-The first live benchmark did not demonstrate that this boundary was sufficiently separable for deterministic exact-label evaluation. Before mapping recommendations into `Question`, `Proposal`, or `Investigation`, the system needs a separately preregistered disposition-semantics/failure-attribution diagnostic.
+The Specification 016 provider-free implementation and evaluator mechanics are cross-platform green, but the live reasoner has not yet been tested. Before mapping recommendations into `Question`, `Proposal`, or `Investigation`, the live construct-validity result must be preserved.
 
 Still open:
 
@@ -182,6 +185,7 @@ relevant concern -> recommendation strength
 recommendation -> durable Question / Proposal / Investigation
 human approval / automatic-action policy
 production REQUIRED/BLOCKING semantics and scope
+whether sequencing belongs in a disposition or a separate dependency relation
 ```
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
@@ -210,7 +214,7 @@ Knowledge role, maturity, enforcement authority, scope confidence, provenance, c
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Structurally advanced through real reasoning; recommendation-state mapping remains blocked by diagnosis
+**Status:** Structurally advanced through real reasoning; recommendation-state mapping remains blocked by disposition diagnosis
 
 The first executable path has bounded evidence through real model reasoning:
 
@@ -226,7 +230,7 @@ project-relevant retrieval
 
 Checkpoint 146 shows that selective context preserved all frozen reasoning obligations while reducing provider input tokens by about two thirds on the first real-model benchmark.
 
-Checkpoint 150 shows that the first downstream recommendation/action benchmark did not earn promotion. Its only hard-gate failure was a shared `DEFER`/`NOT_NOW` distinction, not a treatment-specific methodological omission.
+Checkpoint 150 shows that the first downstream recommendation/action benchmark did not earn promotion. Its only hard-gate failure was a shared `DEFER`/`NOT_NOW` distinction, not a treatment-specific methodological omission. Checkpoints 152-154 isolate that question in a separately preregistered diagnostic before any project-state coupling is attempted.
 
 Still unresolved:
 
@@ -235,6 +239,7 @@ how production project objects/state derive requested reasoning functions
 whether explicit task semantics remain expressive enough at larger scale
 how semantic/LLM relevance participates when they are not
 whether DEFER/NOT_NOW should both exist in production
+whether sequencing should instead be represented as an explicit dependency
 how recommendation strength becomes Proposal / Question / Investigation / Decision state
 how activation behaves on harder and open-world project states
 ```
@@ -281,7 +286,7 @@ reranking only if ordering becomes a measured problem
 
 ### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage?
 
-**Status:** Reasoning-quality separation validated; recommendation/action evaluation exposed a disposition-semantics problem
+**Status:** Reasoning-quality separation validated; active live question is disposition construct validity
 
 The executable failure decomposition distinguishes catalog, retrieval, applicability, relation-expansion, relevance/budget, context-selection, reasoner-obligation, recommendation-calibration, and action-expansion failures.
 
@@ -311,13 +316,13 @@ but `RA-G05` failed because `RA-02` exact disposition accuracy was `0.666667` ra
 
 The reason was not a critical methodological error. All three conditions converged on `NOT_NOW` where frozen truth expected `DEFER` for two noncritical expansion actions, while every RA-02 semantic score was `1.000000`.
 
-The next evaluation question is therefore more basic than another SELECTIVE-versus-control comparison:
+Specification 016 therefore tests a stronger, dependency-backed boundary on deliberately unambiguous pairs. Its provider-free fixture, plan, pointer invariants, evaluator, retry ledger, and runtime-output plumbing are green on Ubuntu and Windows. The unresolved evidence is now the live classification result:
 
 ```text
-Are DEFER and NOT_NOW behaviorally separable under clear project evidence?
-Can independent evaluator truth for that boundary be specified without relying on arbitrary wording?
-If they are separable, can the reasoner classify deliberately unambiguous cases reliably?
-If they are not, should the recommendation taxonomy be simplified before further value testing?
+Can the reasoner reliably distinguish explicit dependency-backed DEFER from NOT_NOW?
+Does every DEFER output preserve the exact supplied trigger relation?
+Does every NOT_NOW output avoid inventing a defer dependency?
+If the boundary fails even here, should the taxonomy be collapsed or sequencing moved into a separate dependency relation?
 ```
 
 ---
@@ -338,9 +343,9 @@ Foundation 018 establishes shared reproducible run contracts and retains VS Code
 
 ### Q-021. How should model and tool providers be selected?
 
-**Status:** Open; runtime boundary selected, bounded model treatment reused for Specifications 014-015
+**Status:** Open; runtime boundary selected, bounded model treatment reused for Specifications 014-016
 
-D-032 selects runtime infrastructure, not the final LLM provider/model. Specifications 014 and 015 deliberately used the same concrete `gpt-5.6-sol` treatment to preserve attribution across adjacent experiments. Neither a passed context-value gate nor a failed recommendation/action gate promotes that model into a permanent production choice.
+D-032 selects runtime infrastructure, not the final LLM provider/model. Specifications 014, 015, and 016 deliberately use a concrete frozen model/runtime treatment so adjacent experiment results remain attributable. A passed context-value gate, a failed recommendation/action gate, or either possible outcome of the disposition diagnostic must not promote that treatment into a permanent production choice.
 
 ### Q-046. Which agent/runtime infrastructure, if any, should V1 adopt?
 
@@ -438,7 +443,7 @@ Use multidimensional project characterization rather than one exclusive project-
 
 **Status:** Substantially advanced; broader V1 evaluation remains open
 
-V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context-value comparison, and a preserved failed recommendation/action experiment. The latter reinforces that workflow execution success must remain distinct from experiment-gate success and that narrow failures must be preserved rather than repaired post hoc.
+V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context-value comparison, a preserved failed recommendation/action experiment, and a separately preregistered construct-validity diagnostic. The progression reinforces that workflow execution success must remain distinct from experiment-gate success and that narrow failures must be preserved rather than repaired post hoc.
 
 ### Q-017. How should real projects become regression tests?
 
@@ -450,13 +455,13 @@ Foundation 017 proposes project replay from original starting inputs. Long-term 
 
 **Status:** Substantially refined, not resolved
 
-Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference. No final ranking/scoring mechanism exists. Specification 015 shows that sequencing-oriented labels require clearer operational semantics before they can safely drive durable project prioritization.
+Foundation 019 provides candidate dimensions including validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference. No final ranking/scoring mechanism exists. Specification 015 shows that sequencing-oriented labels require clearer operational semantics before they can safely drive durable project prioritization. Specification 016 now tests whether explicit dependency-backed sequencing can make one such distinction measurable.
 
 ### Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
 **Status:** Prototype V0 completed; broader program open
 
-The V0 synthetic churn benchmark and held-out protocol are historical evidence. V1 has added retrieval/Horizon/context/runtime gates, a passed real-model reasoning-context comparison, and a failed recommendation/action benchmark whose discrepancy was narrow enough to motivate a dedicated semantics diagnostic. Larger changing project trajectories and heterogeneous real-project replay remain open.
+The V0 synthetic churn benchmark and held-out protocol are historical evidence. V1 has added retrieval/Horizon/context/runtime gates, a passed real-model reasoning-context comparison, a failed recommendation/action benchmark, and an explicit construct-validity diagnostic derived from that narrow failure. Larger changing project trajectories and heterogeneous real-project replay remain open.
 
 ---
 
@@ -509,9 +514,9 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 The questions most directly attached to active V1 execution are now:
 
 ```text
-Q-045  are DEFER and NOT_NOW operationally separable and objectively benchmarkable?
-Q-006  how should recommendation strength map into project activation after that semantic boundary is resolved?
-Q-005  does explicit methodological knowledge add downstream recommendation value beyond a strong generic reasoner?
+Q-045  does the dependency-backed DEFER / NOT_NOW boundary pass the frozen live construct-validity diagnostic?
+Q-006  if it passes, should sequencing remain a disposition or become an explicit dependency relation?
+Q-005  after semantics are measurable, does explicit methodological knowledge add recommendation value beyond a strong generic reasoner?
 Q-037  how should future accepted recommendations become durable project state without over-automation?
 Q-029  what prioritization semantics should replace or refine the failed first disposition boundary?
 Q-021  what model/provider configuration should eventually be selected beyond bounded experiment treatments?
@@ -519,15 +524,15 @@ Q-051  which frontend/chart choices deserve final stack promotion?
 Q-052  how should final Cockpit visual/system details evolve on top of Specification 008?
 ```
 
-Immediate historical evidence is governed by:
+The active diagnostic is governed by:
 
 ```text
-docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
-docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/149_specification_015_live_boundary_frozen.md
-docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
+docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
+docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+tests/fixtures/reasoning/disposition_semantics_v1.json
+docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/154_specification_016_live_boundary_frozen.md
 ```
 
-The next live model call should occur only under a separately versioned, preregistered disposition-semantics/failure-attribution diagnostic. Specification 015 and its frozen result must not be repaired in place.
+Specification 015 and its frozen FAIL remain immutable historical evidence. The next live model call may occur only from the exact green Specification 016 pre-live branch boundary, using the unchanged secret-gated workflow and frozen treatment.
