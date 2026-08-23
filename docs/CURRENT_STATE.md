@@ -1,14 +1,13 @@
 # Current State
 
-**Checkpoint:** 151  
+**Checkpoint:** 152  
 **Date:** 2026-08-23  
-**Active development branch:** `v1-recommendation-action-failure-preservation`  
-**Active preservation PR:** #14 into `v1-frontend-spike`  
-**Rejected experiment PR:** #13 (`v1-recommendation-action-value` -> `v1-frontend-spike`), to close without merge  
-**Promoted V1 integration branch:** `v1-frontend-spike` at PR #12 merge commit `bd7d1ec5cabc80d39e005d0a12c11295da32f4a6`  
-**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam through Specification 014 and a preserved failed first recommendation/action-value experiment under Specification 015. Checkpoint 151 now isolates that negative evidence from the rejected implementation on a preservation-only branch.  
+**Active development branch:** `v1-disposition-semantics-diagnostic`  
+**Active PR:** #15 -> `v1-frontend-spike`  
+**Promoted V1 integration branch:** `v1-frontend-spike` at failure-preservation merge `10aa3f59bedc5ee45a38f0ae05c68da901d9adff`  
+**Development stage:** Prototype V0 complete; bounded V1 has an accepted real-model selective-context seam, an immutable failed first recommendation/action-value experiment, and a separately frozen disposition-semantics failure-attribution diagnostic.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact Checkpoint 151 preservation head, merge PR #14 only if green, close PR #13 without merge, then preregister a separate `DEFER` versus `NOT_NOW` disposition-semantics/failure-attribution diagnostic before any new live model call.
+**Immediate project priority:** implement Specification 016 provider-free without changing its frozen semantics, fixture, thresholds, call plan, retry policy, or model/runtime treatment; validate the exact implementation head before any new live provider call.
 
 ## Active ChatGPT development context
 
@@ -18,11 +17,13 @@ ChatGPT project: Autonomous Data Science System
 Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. The default `main` branch intentionally trails active V1 work except for explicit manual-workflow dispatcher exposure.
+Repository artifacts remain authoritative across chats. `main` intentionally trails active V1 work except explicit manual-workflow dispatcher exposure.
 
 ---
 
-## Durable post-V0 constraint
+## Durable architecture already accepted
+
+### Post-V0 scaling rule
 
 ```text
 what the SYSTEM should remember
@@ -30,9 +31,31 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-Do not restore P0's large always-on context/frontier, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
+Do not restore P0's large always-on state/context/frontier, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
 
-Current methodological path:
+### Project semantics
+
+Foundation 018 distinguishes:
+
+```text
+OBJECTS / RELATIONS / EVENTS / VIEWS
+Investigation != Run
+Evidence != Finding
+Finding != Claim
+Claim != Decision
+current state != event history
+persisted object != derived recommendation
+```
+
+### Methodological navigation
+
+Foundation 019:
+
+```text
+KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
+```
+
+Current executable path:
 
 ```text
 large reusable knowledge universe
@@ -42,68 +65,68 @@ large reusable knowledge universe
     -> bounded task-specific relevance selection
     -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
-    -> reasoning evidence                         [accepted bounded seam]
-    -> recommendation / REQUIRED-BLOCKING/action [first live seam failed; diagnostic next]
+    -> real reasoning evidence                         [accepted bounded seam]
+    -> recommendation / REQUIRED-BLOCKING / action    [first live seam failed]
+    -> disposition-semantics diagnosis                [active]
 ```
 
----
-
-## Accepted V1 boundaries already promoted
+### Accepted implementation boundaries
 
 ```text
-D-028 + Specification 001
-    SQLite-centered local-first operational architecture
+D-028  SQLite-centered local-first architecture
+D-029  SQLAlchemy Core 2.0 + Alembic 1.x
+D-030  pyproject + uv + committed uv.lock + uv_build
+D-031  governed deterministic JSON / JSON Schema knowledge interchange
+D-032  OpenAI Agents SDK behind ADS-owned ReasoningRuntime
 
-D-029 + Specification 002 v1.1
-    SQLAlchemy Core 2.0 + Alembic 1.x
-
-D-030 + Specification 003
-    pyproject.toml + uv + committed uv.lock + uv_build
-
-D-031 + Specification 004
-    deterministic governed reusable-knowledge interchange
-
-Specification 008
+Specification 008 / Checkpoints 126,130
     promoted Project Cockpit interaction architecture
 
-D-032 / Checkpoint 133
-    OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
-
 Specification 012 v1.0 / Checkpoint 141
-    first explained MethodologicalHorizon
+    explained MethodologicalHorizon
 
 Specification 013 v1.0 / Checkpoint 143
-    first accepted selective exact-revision MethodologicalContextPack seam
+    selective exact-revision MethodologicalContextPack
 
 Specification 014 v1.0 / Checkpoint 146
     first real-model selective-context value gate passed
 ```
 
-Specification 014 observed equal frozen semantic quality (`1.000000` versus `1.000000`) while SELECTIVE used an aggregate provider input-token ratio of `0.334379`, a `66.56%` reduction, with no critical-obligation regression.
-
-No final provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, task-profile derivation, or production recommendation/REQUIRED-BLOCKING policy is selected.
+No final provider/model, multi-agent architecture, production semantic retrieval stack, final Horizon/context budget, production recommendation taxonomy, or automatic project mutation/execution policy is selected.
 
 ---
 
-## Specification 015 frozen live result
+## Accepted real reasoning-context evidence
 
-Research 022, Specification 015 v0.1, `recommendation_action_v1.json`, and Checkpoint 147 preregistered the first downstream recommendation/action-value experiment before implementation and live calls.
-
-Frozen conditions:
+Specification 014 observed:
 
 ```text
-GENERIC
-    same project/task/action envelope
-    no reusable methodological assets
+24 reasoner outputs
+24 blinded judge outputs
+0 retries
 
-SELECTIVE
-    accepted Specification 013 exact-revision context
-
-FULL_HORIZON
-    all ten exact current accepted Horizon revisions
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+SELECTIVE/FULL input    0.334379
+input-token reduction   66.56%
+critical regressions    none
 ```
 
-Frozen benchmark dispositions:
+This accepts the bounded selective-context + ADS-owned `ReasoningRuntime` seam, not a universal context budget or final model choice.
+
+Primary evidence:
+
+```text
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
+experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
+```
+
+---
+
+## Immutable Specification 015 negative evidence
+
+Specification 015 tested GENERIC, SELECTIVE, and FULL_HORIZON recommendation/action behavior under a preregistered four-disposition taxonomy:
 
 ```text
 BLOCKING_REQUIRED
@@ -112,30 +135,19 @@ DEFER
 NOT_NOW
 ```
 
-The provider-free implementation passed cross-platform through Checkpoint 148, and Checkpoint 149 froze the reconciled live-ready boundary.
-
-Live execution:
+Live run:
 
 ```text
 workflow              V1 recommendation action value live
 run                   32642733784
-job                   frozen-live-experiment / 97202216781
 frozen source head    d91d50fb2cc46b2047bc21bc5b2ea43c2b1049e4
 reasoner outputs      36 / 36
 blinded judge outputs 36 / 36
 provider attempts     72
 retries               0
-workflow execution    SUCCESS
 ```
 
-The exact artifact was preserved before interpretation. GitHub artifact identity:
-
-```text
-artifact id      9494161645
-artifact SHA-256 30229c8a7f7a00d4c170ba382dcf1817964ede04f61427c057b27d1ac7a78408
-```
-
-Frozen advancement result:
+Frozen result:
 
 ```text
 absolute gates    FAIL
@@ -145,56 +157,28 @@ value signals     0
 outcome            FAIL
 ```
 
-Fourteen of fifteen named gates passed. The single failed gate was `RA-G05`, which required SELECTIVE mean exact disposition accuracy >= `0.80` in every case.
-
-Failure localization:
+Fourteen of fifteen named gates passed. The sole failed gate was `RA-G05`, localized to `RA-02 MODEL_CHOICE`:
 
 ```text
-RA-02 MODEL_CHOICE exact disposition accuracy
-
 GENERIC        0.722222
 SELECTIVE      0.666667
 FULL_HORIZON   0.666667
+required floor 0.800000
 ```
 
-All three SELECTIVE and all three FULL_HORIZON repetitions classified:
+The repeated mismatch was `DEFER` expected versus `NOT_NOW` observed for two noncritical expansion actions. All nine RA-02 semantic judge outputs scored `1.000000`.
+
+The frozen FAIL is not repaired or rescored.
+
+Negative evidence was isolated from the rejected implementation through PR #14 and merged into `v1-frontend-spike` at:
 
 ```text
-add-generic-bagging-baseline
-plot-all-feature-histograms-before-shortlist
+10aa3f59bedc5ee45a38f0ae05c68da901d9adff
 ```
 
-as `NOT_NOW`, while the frozen evaluator expected `DEFER`. GENERIC showed nearly the same pattern.
+PR #13 was closed without merge.
 
-The condition-blinded semantic judge nevertheless scored all nine RA-02 outputs `1.000000`. Aggregate SELECTIVE behavior remained strong on the safety-oriented diagnostics:
-
-```text
-exact accuracy                  0.916667
-semantic score                  0.991667
-critical omissions              0
-blocking-scope false negatives  0
-unsupported basis               0
-under-recommendations           0
-over-recommendations            0
-unnecessary recommended cost    0
-clarification false negatives   0
-```
-
-This does not change the frozen `FAIL`. It localizes the next question to disposition semantics/benchmark truth versus genuine reasoner calibration.
-
-Descriptive context economy also remained visible:
-
-```text
-mean reasoner input tokens
-SELECTIVE       1609.25
-FULL_HORIZON    3625.42
-ratio           0.443880
-reduction       55.61%
-```
-
-That observation is consistent with Specification 014 but does not rescue the failed recommendation gate.
-
-Primary preserved evidence:
+Primary evidence:
 
 ```text
 docs/research/022_first_recommendation_action_value_vertical_slice_design.md
@@ -204,57 +188,104 @@ docs/checkpoints/147_first_recommendation_action_value_contract_frozen.md
 docs/checkpoints/148_recommendation_action_provider_free_gate_cross_platform_passed.md
 docs/checkpoints/149_specification_015_live_boundary_frozen.md
 docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
+docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
 experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/recommendation_action_value/results/spec015-live-20260823-run-32642733784/
 ```
 
 ---
 
-## Checkpoint 151 preservation-only boundary
+## Active Specification 016 diagnostic
 
-PR #14 starts from the accepted Specification 014 integration head rather than from PR #13's failed implementation branch.
+Research 023, Specification 016 v0.1, `disposition_semantics_v1.json`, and Checkpoint 152 are frozen before implementation or new live calls.
 
-The final pre-checkpoint preservation/routing head:
+The diagnostic intentionally removes the methodological-treatment comparison and asks a narrower construct-validity question.
 
-```text
-d843c39a26867c70557b978ff5faf778bda5aaaa
-```
-
-passed:
+### Proposed operational distinction
 
 ```text
-Checkpoint metadata
-    run 32644994687
-    PASS
+DEFER
+    action already justified in represented plan
+    + exact unresolved supplied trigger
+    + action becomes current next work after that trigger
+    + defer_until_id = exact trigger ID
 
-V1 reasoning context value
-    run 32644994598
-    PASS
+NOT_NOW
+    current objective/state does not materially justify prioritizing action
+    + no represented supplied trigger activates it as current next work
+    + defer_until_id = null
 ```
 
-The preservation diff carries frozen research/specification/fixture/checkpoint/result evidence and canonical routing only. It deliberately excludes the failed recommendation application/runtime/harness implementation from PR #13.
+The distinction is experimental, not production semantics.
 
-`docs/MAJOR_CHANGES.md` was compacted as a navigation/history aid while retaining the major project milestones and adding the Specification 014 pass / Specification 015 fail transition. Detailed historical authority remains in the original foundations, decisions, specifications, checkpoints, experiment reports, and Git history.
-
----
-
-## Promotion consequence
-
-Specification 015 does **not** earn promotion as an accepted recommendation/action seam.
-
-Do not promote from this result:
+### Frozen benchmark
 
 ```text
-production recommendation dispositions
-automatic Proposal / Question / Investigation / Decision mutation
-automatic execution
-final recommendation ranking or priority policy
-final provider/model selection
+6 contrastive pairs
+2 variants per pair
+3 repetitions per variant
+12 variants
+36 planned successful reasoner calls
+45 maximum provider attempts
+randomization seed 2026082302
 ```
 
-PR #13 must close without merging the failed implementation into `v1-frontend-spike`.
+Pair domains:
 
-The failure itself is durable project evidence and is being preserved separately through PR #14.
+```text
+DS-01 model tuning
+DS-02 subgroup error analysis
+DS-03 feature-interaction engineering
+DS-04 missingness sensitivity
+DS-05 probability calibration
+DS-06 distribution evidence
+```
+
+One reasoner condition only:
+
+```text
+no reusable methodological assets
+no retrieval / Horizon / selective context
+no GENERIC / SELECTIVE / FULL comparison
+no semantic judge
+no tools
+no previous response state
+```
+
+### Frozen hard gates
+
+```text
+DS-G01  zero unresolved invalid successful outputs
+DS-G02  aggregate exact disposition accuracy >= 0.95
+DS-G03  every variant correct >= 2 / 3 repetitions
+DS-G04  every pair has both sides correct >= 2 / 3 repetitions
+DS-G05  expected-DEFER exact trigger-pointer accuracy == 1.00
+DS-G06  expected-NOT_NOW null-pointer correctness == 1.00
+```
+
+Frozen outcomes:
+
+```text
+DISPOSITION_BOUNDARY_SUPPORTED
+DISPOSITION_BOUNDARY_NOT_SUPPORTED
+INCOMPLETE
+```
+
+### Interpretation boundary
+
+A pass would establish only that the stronger dependency-backed distinction is operationally representable and reliably classifiable on deliberately unambiguous cases. It would not establish SELECTIVE recommendation value.
+
+A failure means another recommendation-value comparison using the same DEFER/NOT_NOW distinction is not justified before taxonomy redesign or explicit dependency representation.
+
+The historical Specification 015 RA-02 cases remain unchanged regardless of this diagnostic.
+
+Primary active sources:
+
+```text
+docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
+docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+tests/fixtures/reasoning/disposition_semantics_v1.json
+docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
+```
 
 ---
 
@@ -263,41 +294,35 @@ The failure itself is durable project evidence and is being preserved separately
 Still deliberately open:
 
 ```text
-whether DEFER and NOT_NOW are operationally separable enough for production
-whether the RA-02 frozen DEFER truth was sufficiently defensible
-reasoner calibration on deliberately unambiguous disposition cases
+whether DEFER and NOT_NOW should both exist in production
+whether sequencing should instead be an explicit dependency relation
+whether explicit methodological knowledge adds recommendation value beyond a strong generic reasoner
 natural-language/project-state -> reasoning-function derivation
 open-world proposal/action discovery
-final recommendation enum/ranking model
+final recommendation ranking/priority model
 complete Foundation 018 production schema
 mapping future accepted recommendations to authoritative project events
-automatic execution and human approval/escalation policy
+automatic execution and human approval/escalation
 admissibility/risk-sensitive assurance policy
 final provider/model and reasoning-effort policy
 multi-agent/specialist recommendation architecture
-production semantic retrieval/reranking/vector infrastructure
 backend/API, artifact/job, cloud/deployment architecture
 final frontend stack and Cockpit implementation details
 ```
 
-Do not repair Specification 015 in place and do not reinterpret its frozen result by changing expected labels or thresholds after observation.
+Do not modify Specification 015 in place. Do not change Specification 016 after observing live results.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 151 / PR #14 head under normal provider-free CI
-2. merge PR #14 into v1-frontend-spike only if that exact head is green
-3. close PR #13 without merge
-4. create a separate diagnostic branch from the preserved integration head
-5. preregister a bounded DEFER-vs-NOT_NOW / failure-attribution diagnostic before new live calls
-6. test semantic separability independently from SELECTIVE-vs-control value
-7. only after diagnosis decide whether a revised recommendation/action seam deserves another value experiment
-```
-
-Primary active checkpoint:
-
-```text
-docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
+1. implement the experiment-only DispositionSemanticsResult and validator
+2. implement provider-free contrastive fixture/admissibility audit
+3. implement deterministic randomized plan, attempt ledger, and gate evaluator
+4. implement full 36-output fake-runtime integration coverage
+5. add dedicated ordinary CI with no provider credential
+6. preserve and validate the exact implementation head in the next checkpoint
+7. only then create/expose the manual secret-gated live workflow
+8. make no new live provider call before that pre-live checkpoint is green
 ```
