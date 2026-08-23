@@ -1,0 +1,100 @@
+{
+  "advancement_outcome": "DISPOSITION_BOUNDARY_SUPPORTED",
+  "benchmark_id": "v1-disposition-semantics-diagnostic-v0.1",
+  "complete_scored_design": true,
+  "counts": {
+    "attempt_records": 36,
+    "failed_attempt_records": 0,
+    "planned_reasoner_outputs": 36,
+    "successful_reasoner_outputs": 36,
+    "validated_observations": 36
+  },
+  "environment": {
+    "openai_agents_version": "0.19.4",
+    "openai_client_version": "2.54.0",
+    "python_version": "3.13.15",
+    "reasoning_effort": "medium",
+    "requested_model": "gpt-5.6-sol"
+  },
+  "finished_at_utc": "2026-08-23T16:46:37.818235+00:00",
+  "gate_evaluation": {
+    "aggregate_accuracy_passed": true,
+    "aggregate_exact_disposition_accuracy": 1.0,
+    "all_hard_gates_passed": true,
+    "completed": true,
+    "correct_repetitions_by_variant": {
+      "DS-01-DEFER": 3,
+      "DS-01-NOT-NOW": 3,
+      "DS-02-DEFER": 3,
+      "DS-02-NOT-NOW": 3,
+      "DS-03-DEFER": 3,
+      "DS-03-NOT-NOW": 3,
+      "DS-04-DEFER": 3,
+      "DS-04-NOT-NOW": 3,
+      "DS-05-DEFER": 3,
+      "DS-05-NOT-NOW": 3,
+      "DS-06-DEFER": 3,
+      "DS-06-NOT-NOW": 3
+    },
+    "defer_pointer_passed": true,
+    "expected_defer_pointer_accuracy": 1.0,
+    "expected_not_now_null_pointer_accuracy": 1.0,
+    "not_now_null_pointer_passed": true,
+    "outcome": "DISPOSITION_BOUNDARY_SUPPORTED",
+    "pair_polarity_passed": true,
+    "pair_side_correct_repetitions": {
+      "DS-01": {
+        "DEFER": 3,
+        "NOT_NOW": 3
+      },
+      "DS-02": {
+        "DEFER": 3,
+        "NOT_NOW": 3
+      },
+      "DS-03": {
+        "DEFER": 3,
+        "NOT_NOW": 3
+      },
+      "DS-04": {
+        "DEFER": 3,
+        "NOT_NOW": 3
+      },
+      "DS-05": {
+        "DEFER": 3,
+        "NOT_NOW": 3
+      },
+      "DS-06": {
+        "DEFER": 3,
+        "NOT_NOW": 3
+      }
+    },
+    "structured_validity_passed": true,
+    "variant_majority_passed": true
+  },
+  "historical_ra02_spec016_admissibility": {
+    "add-generic-bagging-baseline": "NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER",
+    "plot-all-feature-histograms-before-shortlist": "NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER"
+  },
+  "overall_frozen_gate_passed": true,
+  "provider_attempts": {
+    "maximum": 45,
+    "used": 36
+  },
+  "reasoning_plan_sha256": "a597b5d99970e4da23e66b19a7c3dab1a5d69d41ee2f9ed388ee60c8e40ef6bb",
+  "source_head": "7db27fd35151c10cdb3562cdf4410fb8f4b09e8b",
+  "specification": "016-v0.1",
+  "started_at_utc": "2026-08-23T16:45:15.780363+00:00",
+  "starting_merge_sha": "10aa3f59bedc5ee45a38f0ae05c68da901d9adff",
+  "technical_invariants": {
+    "DS-INV-01_fixture_structurally_valid": true,
+    "DS-INV-02_exact_36_call_plan": true,
+    "DS-INV-03_unique_run_ids": true,
+    "DS-INV-04_unique_nonces": true,
+    "DS-INV-05_no_methodological_context": true,
+    "DS-INV-06_truth_blinded_inputs": true,
+    "DS-INV-07_structured_output_type": true,
+    "DS-INV-08_no_tools_or_cross_call_state": true,
+    "DS-INV-09_application_runtime_import_isolated": true,
+    "DS-INV-10_historical_spec015_not_rescored": true
+  }
+}
