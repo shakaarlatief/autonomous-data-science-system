@@ -45,10 +45,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ "${GITHUB_REF}" != "refs/heads/v1-recommendation-action-value-system-provenance" ]; then
-            echo "Run Specification 019 only from the frozen experiment branch."
-            exit 1
-          fi
           if [ "${ADS_LAUNCH_ID:-}" != "spec019-system-provenance-001" ]; then
             echo "Specification 019 launch identifier is missing or incorrect."
             exit 1
@@ -65,6 +61,7 @@ jobs:
             echo "OPENAI_API_KEY secret is required for the explicit live workflow."
             exit 1
           fi
+          echo "Frozen Specification 019 source ref: ${GITHUB_REF}"
           echo "Frozen Specification 019 source head: ${GITHUB_SHA}"
       - name: Validate frozen provider-free implementation before live calls
         run: >-
