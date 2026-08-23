@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-23  
-**Current checkpoint:** 152  
+**Current checkpoint:** 154  
 **Active development branch:** `v1-disposition-semantics-diagnostic`  
 **Active PR:** #15 -> `v1-frontend-spike`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at failure-preservation merge `10aa3f59bedc5ee45a38f0ae05c68da901d9adff`
@@ -102,8 +102,14 @@ Specification 015 / Checkpoints 147-150
 Checkpoint 151 / PR #14
     negative evidence preserved without adopting failed implementation
 
-Specification 016 / Checkpoint 152 [active]
-    DEFER-vs-NOT_NOW semantics/failure-attribution diagnostic frozen
+Specification 016 / Checkpoint 152
+    DEFER-vs-NOT_NOW diagnostic preregistered
+
+Checkpoint 153
+    provider-free Specification 016 implementation passed cross-platform
+
+Checkpoint 154 [active]
+    explicit secret-gated Specification 016 live boundary frozen
 ```
 
 ---
@@ -406,7 +412,7 @@ PR #13 closed without merge
 
 ## Active disposition-semantics diagnostic route
 
-Frozen sources:
+Frozen design:
 
 ```text
 docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
@@ -415,10 +421,54 @@ tests/fixtures/reasoning/disposition_semantics_v1.json
 docs/checkpoints/152_disposition_semantics_failure_attribution_contract_frozen.md
 ```
 
-Active PR:
+Provider-free implementation:
 
 ```text
-#15 -> v1-frontend-spike
+experiments/disposition_semantics/harness.py
+experiments/disposition_semantics/runner.py
+tests/unit/test_disposition_semantics_harness.py
+tests/unit/test_disposition_semantics_runner.py
+tests/integration/test_disposition_semantics_vertical_slice.py
+.github/workflows/v1-disposition-semantics.yml
+```
+
+Cross-platform gate:
+
+```text
+docs/checkpoints/153_disposition_semantics_provider_free_gate_cross_platform_passed.md
+validated implementation head  6e7af25fd96d79673a59845e1c608c752970f658
+workflow                        32646969810
+Ubuntu targeted                 15 passed
+Windows targeted                15 passed
+Ubuntu full suite               62 passed, 2 skipped
+Windows full suite              62 passed, 2 skipped
+```
+
+Inherited regression evidence on the same head:
+
+```text
+Checkpoint metadata          32646969848 PASS
+V1 reasoning context value   32646969808 PASS
+```
+
+Historical RA-02 construct diagnostic:
+
+```text
+add-generic-bagging-baseline
+    NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER
+
+plot-all-feature-histograms-before-shortlist
+    NOT_ADMISSIBLE_AS_UNAMBIGUOUS_SPEC016_DEFER
+```
+
+This is not a Specification 015 rescore.
+
+Live boundary:
+
+```text
+docs/checkpoints/154_specification_016_live_boundary_frozen.md
+.github/workflows/v1-disposition-semantics-live.yml
+manual confirmation  RUN_SPEC_016_FROZEN
 ```
 
 Operational diagnostic distinction:
@@ -474,16 +524,19 @@ No live Specification 016 call has occurred.
 ## Current exact continuation
 
 ```text
-A. implement experiment-only result/validation
-B. implement provider-free contrastive fixture and historical-admissibility audit
-C. implement deterministic call plan, attempt ledger, gate evaluator
-D. prove full fake-runtime 36-output shape
-E. add dedicated ordinary CI with no provider credential
-F. preserve exact green implementation head
-G. only then expose/run a secret-gated live workflow
+A. finish Checkpoint 154 routing reconciliation
+B. validate the exact resulting PR #15 head under:
+       V1 disposition semantics diagnostic
+       V1 reasoning context value
+       Checkpoint metadata
+C. if that exact head is green, make no further experiment-branch commits
+D. copy only the identical live workflow to main for workflow_dispatch visibility
+E. manually run V1 disposition semantics live from v1-disposition-semantics-diagnostic
+F. enter RUN_SPEC_016_FROZEN
+G. preserve the complete artifact before interpretation
 ```
 
-Do not alter Specification 015 or return to retrieval/reranking/vector work without a measured downstream reason.
+Do not alter Specification 015. Do not change Specification 016 after live results are observed. Do not return to retrieval/reranking/vector work without a measured downstream reason.
 
 ---
 
@@ -507,4 +560,6 @@ Do not alter Specification 015 or return to retrieval/reranking/vector work with
 150  recommendation/action live gate failed
 151  failed evidence preserved without implementation promotion
 152  disposition-semantics diagnostic contract frozen
+153  disposition-semantics provider-free gate passed cross-platform
+154  Specification 016 live boundary frozen
 ```
