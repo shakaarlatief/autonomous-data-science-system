@@ -5,7 +5,7 @@
 **Last reviewed:** 2026-08-24  
 **Current checkpoint:** 171  
 **Active development branch:** `v1-routing-consistency-guard`  
-**Active PR:** none  
+**Active PR:** #54 draft, machine-checkable current routing consistency guard  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`
 
 ## Start here
@@ -29,7 +29,7 @@ Current branch relationship:
 ```text
 promoted integration head      a856983172f6436b73e3f7d0e609d208b55a443b
 active branch                  v1-routing-consistency-guard
-active PR                      none
+active PR                      #54 draft
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
@@ -37,6 +37,7 @@ Specification 018 PR           #23 merged
 Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
+routing consistency PR         #54 active
 main                           governed live-launch control plane; zero active Spec020 authorization
 ```
 
@@ -84,7 +85,7 @@ Specification 019 / Checkpoints 163-166
 Specification 020 / Checkpoints 167-171
     RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted through PR #44
 
-Level-2 routing hardening
+Level-2 routing hardening / PR #54
     machine-readable current routing pointers + lightweight cross-platform contradiction validator
 ```
 
@@ -366,11 +367,10 @@ Markdown remains the substantive source of truth. The manifest is not a replacem
 ## Current exact continuation
 
 ```text
-A. validate the routing manifest and Ubuntu/Windows consistency CI
-B. create and validate the routing-consistency hardening PR
-C. checkpoint and promote the hardening only if its exact head remains green
-D. reconcile routing back to v1-frontend-spike after merge
-E. only then freeze a successor recommendation-value experiment
+A. validate PR #54 routing manifest and Ubuntu/Windows consistency CI
+B. checkpoint and promote the hardening only if its exact head remains green
+C. reconcile routing back to v1-frontend-spike after merge
+D. only then freeze a successor recommendation-value experiment
 ```
 
 Do not modify or rescore Specifications 015-020. The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
