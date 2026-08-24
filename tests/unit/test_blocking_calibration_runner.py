@@ -88,6 +88,18 @@ class VisibleEvidenceFakeRuntime:
         )
 
 
+class AlwaysTransportFailureRuntime:
+    """Provider-free runtime used to exercise the frozen global attempt ceiling."""
+
+    def __init__(self) -> None:
+        self.calls = 0
+
+    async def run(self, request: ReasoningRequest) -> ReasoningOutcome:
+        del request
+        self.calls += 1
+        raise TimeoutError("deliberate persistent provider-free transport failure")
+
+
 def test_runner_completes_full_frozen_design_with_visible_evidence_fake_runtime(
     tmp_path: Path,
 ) -> None:
@@ -105,6 +117,7 @@ def test_runner_completes_full_frozen_design_with_visible_evidence_fake_runtime(
     assert result["overall_frozen_gate_passed"] is True
     assert result["counts"]["successful_reasoner_outputs"] == 36
     assert result["provider_attempts"]["used"] == 36
+    assert result["provider_attempts"]["exhausted"] is False
     assert result["gate_evaluation"]["aggregate_exact_disposition_accuracy"] == 1.0
     assert result["gate_evaluation"]["expected_blocking_joint_pointer_accuracy"] == 1.0
     assert result["gate_evaluation"]["expected_recommended_null_pointer_correctness"] == 1.0
@@ -142,6 +155,7 @@ def test_runner_preserves_retry_attempt_without_changing_frozen_result(tmp_path:
 
     assert result["advancement_outcome"] == "BLOCKING_BOUNDARY_SUPPORTED"
     assert result["provider_attempts"]["used"] == 37
+    assert result["provider_attempts"]["exhausted"] is False
     assert result["counts"]["failed_attempt_records"] == 1
 
     attempts = [
@@ -153,3 +167,38 @@ def test_runner_preserves_retry_attempt_without_changing_frozen_result(tmp_path:
     failed = [item for item in attempts if item["status"] == "FAILED"]
     assert len(failed) == 1
     assert failed[0]["failure_category"] == "TRANSPORT_FAILURE"
+
+
+def test_runner_returns_incomplete_when_global_attempt_budget_is_exhausted(
+    tmp_path: Path,
+) -> None:
+    runtime = AlwaysTransportFailureRuntime()
+    result = asyncio.run(
+        execute_provider_free_experiment(
+            output_dir=tmp_path,
+            benchmark_path=FIXTURE,
+            runtime=runtime,
+        )
+    )
+
+    assert result["advancement_outcome"] == "INCOMPLETE"
+    assert result["complete_scored_design"] is False
+    assert result["overall_frozen_gate_passed"] is False
+    assert result["provider_attempts"] == {
+        "used": 45,
+        "maximum": 45,
+        "exhausted": True,
+    }
+    assert result["counts"]["successful_reasoner_outputs"] == 0
+    assert result["counts"]["failed_attempt_records"] == 45
+    assert runtime.calls == 45
+
+    attempts = [
+        json.loads(line)
+        for line in (tmp_path / "reasoner_attempts.jsonl")
+        .read_text(encoding="utf-8")
+        .splitlines()
+    ]
+    assert len(attempts) == 45
+    assert all(item["status"] == "FAILED" for item in attempts)
+    assert all(item["failure_category"] == "TRANSPORT_FAILURE" for item in attempts)
