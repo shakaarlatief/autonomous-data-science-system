@@ -24,14 +24,14 @@ Explicit machinery must earn its complexity empirically.
 
 ```text
 checkpoint            171
-active branch         v1-blocking-calibration-diagnostic
-active PR             #44 draft
-promoted V1 head      b9c9c3a38935983075a9ca88632177980bb20ede
-current boundary      Specification 020 live diagnostic complete
+active branch         v1-routing-consistency-guard
+active PR             none
+promoted V1 head      a856983172f6436b73e3f7d0e609d208b55a443b
+current boundary      routing-consistency hardening
+latest experiment     Specification 020
 outcome               BLOCKING_BOUNDARY_SUPPORTED
-next                   retire one-shot control-plane exposure,
-                       validate/promote PR #44,
-                       then add routing-consistency hardening
+next                  validate/promote the routing guard,
+                      then freeze a successor recommendation-value contract
 ```
 
 Current experimental progression:
@@ -45,7 +45,7 @@ Specification 016  dependency-backed DEFER-vs-NOT_NOW boundary supported
 Specification 017  relation-backed recommendation run incomplete; implementation rejected
 Specification 018  governed autonomous live-experiment launcher supported/promoted
 Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
-Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported
+Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 ```
 
 For exact continuation, start with:
@@ -53,9 +53,9 @@ For exact continuation, start with:
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/current_routing.json
 docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
 experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
-docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
 ```
 
 ---
@@ -297,6 +297,8 @@ This makes taxonomy inseparability and fixed-reasoner inability less likely expl
 
 Specification 020 does not establish production recommendation enums, final blocking policy, SELECTIVE recommendation value, ranking, open-world action generation, automatic execution, or final provider/model selection.
 
+The cleaned exact PR #44 head passed the Specification 020 Ubuntu/Windows diagnostic plus accepted V1 reasoning-context, disposition-semantics, launcher, and checkpoint-metadata regressions before merge into `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`.
+
 Primary evidence:
 
 ```text
@@ -329,29 +331,36 @@ The model should not be required to reproduce authoritative context provenance t
 
 ---
 
-## Preservation and continuity boundary
+## Preservation and continuity hardening
 
 The Specification 020 stage-boundary review found no substantive preservation failure. It did confirm recurring lag in mutable routing/current-state documents relative to already durable checkpoint/result evidence.
 
-That observed consistency problem now justifies a small Level-2 hardening:
+The active Level-2 hardening is intentionally narrow:
 
 ```text
-machine-readable current routing pointers
-    -> lightweight CI consistency validator
-    -> Markdown remains substantive source of truth
+docs/current_routing.json
+    machine-readable routing metadata only
+
+scripts/check_current_routing.py
+    manifest contract + checkpoint existence + contradiction checks
+
+.github/workflows/current-routing-consistency.yml
+    Ubuntu/Windows validation for routing-sensitive changes
 ```
 
-This is not a justification for graph/vector preservation storage or wholesale machine-generated documentation.
+The validator checks that `README.md`, `docs/CURRENT_STATE.md`, and `docs/KNOWLEDGE_MAP.md` agree on the small set of duplicated current pointers. Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence.
+
+This hardening is not a justification for graph/vector preservation storage or wholesale machine-generated documentation.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. retire Specification 020 one-shot authorization and temporary main helpers
-2. validate the cleaned PR #44 head cross-platform and on accepted V1 regression seams
-3. promote PR #44 into v1-frontend-spike only if green
-4. add a small machine-checkable routing manifest + CI validator
+1. validate the machine-readable routing manifest and cross-platform consistency CI
+2. create and validate the routing-consistency hardening PR
+3. checkpoint and promote the hardening only if its exact head remains green
+4. reconcile routing back to the promoted v1-frontend-spike boundary after merge
 5. only after that freeze a successor recommendation-value experiment
 6. do not modify or rescore Specifications 015-020
 ```
