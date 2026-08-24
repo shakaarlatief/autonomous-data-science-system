@@ -16,15 +16,19 @@ on:
       - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
       - tests/fixtures/retrieval/selective_context_v1.json
       - tests/unit/test_dependency_backed_recommendation_action_harness.py
+      - tests/unit/test_dependency_backed_recommendation_action_live_runner.py
       - tests/integration/test_dependency_backed_recommendation_action_value_vertical_slice.py
       - docs/research/029_dependency_backed_recommendation_value_design.md
       - docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
       - docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+      - docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
+      - docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
       - docs/CURRENT_STATE.md
       - docs/KNOWLEDGE_MAP.md
       - docs/current_routing.json
       - README.md
       - .github/workflows/v1-dependency-backed-recommendation-action.yml
+      - .github/workflows/v1-dependency-backed-recommendation-action-live.yml
   pull_request:
     branches: [v1-frontend-spike]
     paths:
@@ -39,15 +43,19 @@ on:
       - tests/fixtures/knowledge/reusable_knowledge_stress_v1.json
       - tests/fixtures/retrieval/selective_context_v1.json
       - tests/unit/test_dependency_backed_recommendation_action_harness.py
+      - tests/unit/test_dependency_backed_recommendation_action_live_runner.py
       - tests/integration/test_dependency_backed_recommendation_action_value_vertical_slice.py
       - docs/research/029_dependency_backed_recommendation_value_design.md
       - docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
       - docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+      - docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
+      - docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
       - docs/CURRENT_STATE.md
       - docs/KNOWLEDGE_MAP.md
       - docs/current_routing.json
       - README.md
       - .github/workflows/v1-dependency-backed-recommendation-action.yml
+      - .github/workflows/v1-dependency-backed-recommendation-action-live.yml
 
 permissions:
   contents: read
@@ -73,12 +81,11 @@ jobs:
             echo "Ordinary Specification 021 CI must not receive OPENAI_API_KEY."
             exit 1
           fi
-      - name: Verify no Specification 021 live surface exists
+      - name: Verify Specification 021 has no repository authorization yet
         shell: bash
         run: |
-          test ! -f .github/workflows/v1-dependency-backed-recommendation-action-live.yml
           if grep -qi 'spec021' .github/ads_live_experiments.json; then
-            echo "Specification 021 must not have a live authorization before its provider-free gate."
+            echo "Specification 021 authorization must remain absent until the exact live source is frozen."
             exit 1
           fi
       - name: Verify application and domain layers remain provider neutral
@@ -92,6 +99,7 @@ jobs:
         run: >-
           uv run --python 3.13 --locked python -m pytest
           tests/unit/test_dependency_backed_recommendation_action_harness.py
+          tests/unit/test_dependency_backed_recommendation_action_live_runner.py
           tests/integration/test_dependency_backed_recommendation_action_value_vertical_slice.py
           -q
       - name: Run existing V1 Python regression suite
