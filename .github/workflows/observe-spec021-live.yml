@@ -1,0 +1,55 @@
+name: Observe Specification 021 live
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/observe-spec021-live.yml
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      EXPECTED_SOURCE_SHA: b589bad975880b2d3cccc3596fc82539b1b96577
+      TARGET_WORKFLOW: v1-dependency-backed-recommendation-action-live.yml
+    steps:
+      - name: Locate and follow exact frozen target run
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 360); do
+            runs_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${TARGET_WORKFLOW}/runs?event=workflow_dispatch&per_page=20")"
+            run_id="$(printf '%s' "${runs_json}" | jq -r --arg sha "${EXPECTED_SOURCE_SHA}" '.workflow_runs[] | select(.head_sha == $sha and .event == "workflow_dispatch") | .id' | head -n 1)"
+            if [ -n "${run_id}" ] && [ "${run_id}" != "null" ]; then
+              run_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}")"
+              status="$(printf '%s' "${run_json}" | jq -r '.status')"
+              conclusion="$(printf '%s' "${run_json}" | jq -r '.conclusion // "null"')"
+              head_sha="$(printf '%s' "${run_json}" | jq -r '.head_sha')"
+              event="$(printf '%s' "${run_json}" | jq -r '.event')"
+              echo "SPEC021_TARGET_RUN_ID=${run_id}"
+              echo "SPEC021_TARGET_STATUS=${status}"
+              echo "SPEC021_TARGET_CONCLUSION=${conclusion}"
+              echo "SPEC021_TARGET_HEAD_SHA=${head_sha}"
+              echo "SPEC021_TARGET_EVENT=${event}"
+              if [ "${head_sha}" != "${EXPECTED_SOURCE_SHA}" ] || [ "${event}" != "workflow_dispatch" ]; then
+                echo "Observed run does not match frozen source/event boundary."
+                exit 1
+              fi
+              if [ "${status}" = "completed" ]; then
+                gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/jobs?filter=latest&per_page=100" \
+                  --jq '.jobs[] | "SPEC021_TARGET_JOB_ID=\(.id) NAME=\(.name) STATUS=\(.status) CONCLUSION=\(.conclusion)"'
+                exit 0
+              fi
+            else
+              echo "Specification 021 target run not visible yet (attempt ${attempt})."
+            fi
+            sleep 15
+          done
+          echo "Timed out waiting for Specification 021 target run completion."
+          exit 1
