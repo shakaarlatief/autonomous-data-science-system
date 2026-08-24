@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 188  
+**Checkpoint:** 189  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-methodological-navigation-coverage-diagnostic`  
 **Active PR:** #68  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains the latest completed experiment and remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 moved the next evaluation upstream to state-driven methodological navigation and coverage. Research 032 / Checkpoint 187 resolved the principal design choices. Specification 022 / Checkpoint 188 now freeze the exact first project-state-to-methodological-horizon coverage diagnostic contract before implementation.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains the latest completed experiment and remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 moved the next evaluation upstream to state-driven methodological navigation and coverage. Research 032 / Checkpoint 187 resolved the principal design choices. Specification 022 / Checkpoint 188 froze the exact first project-state-to-methodological-horizon coverage diagnostic contract before implementation. Checkpoint 189 now records a cross-platform-green provider-free implementation and integrity boundary without changing the frozen scientific contract.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact Checkpoint 188 frozen-contract head, then implement provider-free Specification 022 machinery and integrity tests without changing the frozen fixtures, thresholds, treatment, seed, or gates.
+**Immediate project priority:** implement and validate the exact frozen FastEmbed dense-retrieval adapter plus provider-facing reasoner/judge execution path, then freeze an exact live-capable source before any separate provider authorization.
 
 ## Active ChatGPT development context
 
@@ -208,12 +208,13 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 188 / PR #68 frozen-contract head
-2. implement provider-free Specification 022 experiment machinery and contract/integrity tests only after that head is green
-3. preserve the exact frozen universe, episodes, hidden oracle, representation map, runtime treatment, metrics, thresholds, seed, and gates unchanged during implementation
-4. freeze a later exact live-capable source only after provider-free cross-platform validation
-5. do not authorize a provider-backed run until a separate one-shot Specification-018 authorization exists
-6. do not modify or rescore Specifications 015-021
+1. preserve Checkpoint 189 as the provider-free-green Specification 022 implementation boundary
+2. implement the exact frozen FastEmbed 0.8.0 / BAAI/bge-small-en-v1.5 dense adapter and provider-facing reasoner/judge runner without changing the scientific contract
+3. add provider-free/mocked tests for the live-capable path, including role treatment, retry accounting, blinding, and raw-before-interpretation
+4. validate the exact live-capable candidate cross-platform together with all inherited V1 regressions
+5. only then freeze a dedicated exact live-capable source SHA
+6. do not authorize a provider-backed run until a separate one-shot Specification-018 authorization and owner launch request exist
+7. do not modify or rescore Specifications 015-021
 ```
 
 ## Minimum reading for continuation
@@ -223,6 +224,7 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.md
 docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
 docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
 tests/fixtures/methodological_navigation/spec022_contract_fixture_manifest_v1.json
@@ -276,4 +278,4 @@ UNIVERSE COVERAGE
     -> MODEL-FACING CONTEXT VALUE
 ```
 
-The successor experiment now begins from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. Specification 022 / Checkpoint 188 freeze four evolving episode families, 12 scored snapshots, a 28-asset controlled benchmark universe, 33 hidden oracle items, two intentional catalog gaps, an evaluator-only representation map, GENERIC / ADS_HORIZON / ORACLE_HORIZON conditions, matched one-call reasoner treatment, blinded semantic matching, exact runtime settings, seed 2026082403, MN-G01 through MN-G15 gates, and MN-P01 through MN-P05 positive signals. No provider call is authorized at this boundary.
+The successor experiment now begins from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. Specification 022 / Checkpoint 188 freeze four evolving episode families, 12 scored snapshots, a 28-asset controlled benchmark universe, 33 hidden oracle items, two intentional catalog gaps, an evaluator-only representation map, GENERIC / ADS_HORIZON / ORACLE_HORIZON conditions, matched one-call reasoner treatment, blinded semantic matching, exact runtime settings, seed 2026082403, MN-G01 through MN-G15 gates, and MN-P01 through MN-P05 positive signals. Checkpoint 189 records that the provider-free contract, navigation composition, request construction, blinded-judge construction, scoring, outcome classification, retry accounting, and raw-before-interpretation safeguards are now cross-platform green at implementation head `af9ad9d39379e7e268920c307c22bf4b23780cee`. Specification 022 remains scientifically unexecuted and no provider call is authorized at this boundary.

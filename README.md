@@ -23,16 +23,16 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            188
+checkpoint            189
 active branch         v1-methodological-navigation-coverage-diagnostic
 active PR             #68
 promoted V1 head      0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-current boundary      Specification 022 scientific contract frozen; provider-free implementation next
+current boundary      Specification 022 provider-free implementation gate passed; live-capable source next
 latest specification  Specification 022
 latest experiment     Specification 021
 outcome               FAIL
-next                  validate the exact frozen-contract head, then implement
-                      provider-free Specification 022 machinery and integrity tests
+next                  implement and validate the exact frozen dense/runtime
+                      live-capable path; do not authorize provider execution yet
 ```
 
 Current experimental progression:
@@ -55,6 +55,7 @@ Checkpoint 186     methodological-navigation / coverage architecture and evaluat
 Checkpoint 187     project-state methodological coverage diagnostic design choices resolved
 Specification 022  project-state-to-methodological-horizon coverage diagnostic contract frozen
 Checkpoint 188     exact Specification 022 fixtures, runtime treatment, metrics, thresholds, seed, and gates frozen; no provider call authorized
+Checkpoint 189     Specification 022 provider-free implementation and integrity gate passed cross-platform; no provider call authorized
 ```
 
 For exact continuation, start with:
@@ -63,6 +64,10 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.md
+docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
+docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
+docs/research/032_project_state_to_methodological_horizon_coverage_diagnostic_design.md
 docs/checkpoints/186_methodological_navigation_coverage_review_completed.md
 docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
 docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
