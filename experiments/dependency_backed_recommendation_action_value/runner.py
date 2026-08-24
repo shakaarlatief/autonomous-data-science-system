@@ -27,7 +27,7 @@ from sqlalchemy import func, select
 
 from ads_system.application.context_models import MethodologicalContextRequest
 from ads_system.application.ports import ReasoningRuntime
-from ads_system.application.reasoning import ReasoningOutcome, ReasoningRequest
+from ads_system.application.reasoning import ReasoningOutcome, ReasoningRequest, ReasoningUsage
 from ads_system.infrastructure.persistence.schema import (
     prj_entity,
     prj_finding,
@@ -553,7 +553,7 @@ async def _run_judge_with_retry(
                     "local_attempt": local_attempt,
                     "status": "SUCCESS",
                     "timestamp_utc": _utc_now(),
-                    "usage": asdict(outcome.usage),
+                    "usage": _usage_payload(outcome.usage),
                     "latency_seconds": outcome.latency_seconds,
                     "requested_model": outcome.requested_model,
                     "provider_model": outcome.provider_model,
@@ -608,7 +608,7 @@ def _reasoner_attempt_record(
         record.update(
             {
                 "result": _structured_payload(outcome.result),
-                "usage": asdict(outcome.usage),
+                "usage": _usage_payload(outcome.usage),
                 "trace": asdict(outcome.trace),
                 "latency_seconds": outcome.latency_seconds,
             }
@@ -782,6 +782,40 @@ def _no_spec021_live_authorization() -> bool:
     if not registry.exists():
         return True
     return "spec021" not in registry.read_text(encoding="utf-8").lower()
+
+
+def _json_safe_metadata(value: object) -> object:
+    """Recursively copy provider metadata into JSON-native containers.
+
+    ``ReasoningUsage`` deliberately exposes ``raw_provider_usage`` through an
+    immutable mapping proxy. ``dataclasses.asdict`` deep-copies dataclass fields
+    and therefore cannot serialize that proxy. Attempt preservation needs a
+    JSON-safe snapshot, not a deep copy of the immutable wrapper itself.
+    """
+
+    if isinstance(value, Mapping):
+        return {str(key): _json_safe_metadata(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_json_safe_metadata(item) for item in value]
+    return value
+
+
+def _usage_payload(usage: ReasoningUsage) -> dict[str, object]:
+    """Return the complete normalized usage record without copying mapping proxies."""
+
+    return {
+        "input_tokens": usage.input_tokens,
+        "output_tokens": usage.output_tokens,
+        "total_tokens": usage.total_tokens,
+        "cached_input_tokens": usage.cached_input_tokens,
+        "reasoning_tokens": usage.reasoning_tokens,
+        "service_tier": usage.service_tier,
+        "raw_provider_usage": (
+            None
+            if usage.raw_provider_usage is None
+            else _json_safe_metadata(usage.raw_provider_usage)
+        ),
+    }
 
 
 def _structured_payload(value: object) -> object:
