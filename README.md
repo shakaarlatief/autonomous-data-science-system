@@ -23,15 +23,16 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            187
+checkpoint            188
 active branch         v1-methodological-navigation-coverage-diagnostic
 active PR             #68
 promoted V1 head      0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-current boundary      Question A diagnostic design choices resolved; Specification 022 not frozen
+current boundary      Specification 022 scientific contract frozen; provider-free implementation next
+latest specification  Specification 022
 latest experiment     Specification 021
 outcome               FAIL
-next                  validate this design boundary, then freeze the exact
-                      Specification 022 contract before implementation
+next                  validate the exact frozen-contract head, then implement
+                      provider-free Specification 022 machinery and integrity tests
 ```
 
 Current experimental progression:
@@ -51,7 +52,9 @@ Checkpoint 183     clarified that supplied-action disposition calibration does n
 Checkpoint 184     preservation-only promotion candidate for Specification 021 evidence and interpretation
 Checkpoint 185     preservation merged, failed implementation closed, Question A architecture/evaluation review ready
 Checkpoint 186     methodological-navigation / coverage architecture and evaluation review completed; Specification 022 not frozen
-Checkpoint 187     project-state methodological coverage diagnostic design choices resolved; Specification 022 still not frozen
+Checkpoint 187     project-state methodological coverage diagnostic design choices resolved
+Specification 022  project-state-to-methodological-horizon coverage diagnostic contract frozen
+Checkpoint 188     exact Specification 022 fixtures, runtime treatment, metrics, thresholds, seed, and gates frozen; no provider call authorized
 ```
 
 For exact continuation, start with:

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 187,
+  "current_checkpoint": 188,
   "active_development_branch": "v1-methodological-navigation-coverage-diagnostic",
   "active_pr": 68,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e",
-  "latest_specification": "021",
+  "latest_specification": "022",
   "latest_experiment_outcome": "FAIL",
-  "current_boundary": "question-a-diagnostic-design-resolved-spec022-not-frozen"
+  "current_boundary": "spec022-contract-frozen-provider-free-implementation-next"
 }

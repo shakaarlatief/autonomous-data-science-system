@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 187  
+**Current checkpoint:** 188  
 **Active development branch:** `v1-methodological-navigation-coverage-diagnostic`  
 **Active PR:** #68  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`
@@ -41,7 +41,7 @@ routing consistency PR         #54 merged
 Specification 021 impl PR      #55 closed without merge; failed implementation rejected
 Specification 021 preserve PR  #66 merged at ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
 Question A architecture PR     #67 merged at 0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-Question A diagnostic design PR #68 active draft; Specification 022 not frozen
+Question A diagnostic PR        #68 active draft; Specification 022 contract frozen; provider-free implementation next
 main                           governed live-launch control plane; zero active Specification 021 authorization
 ```
 
@@ -108,7 +108,10 @@ Research 031 / Checkpoint 186 / PR #67
     state-driven methodological-navigation / coverage architecture and evaluation review completed and promoted through PR #67
 
 Research 032 / Checkpoint 187 / PR #68
-    first project-state methodological coverage diagnostic design choices resolved; Specification 022 not frozen
+    first project-state methodological coverage diagnostic design choices resolved
+
+Specification 022 / Checkpoint 188 / PR #68
+    exact project-state-to-methodological-horizon coverage diagnostic contract frozen before implementation or provider execution
 ```
 
 ---
@@ -132,6 +135,8 @@ docs/research/028_system_identity_methodological_navigation_and_knowledge_univer
 docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
 docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
 docs/research/032_project_state_to_methodological_horizon_coverage_diagnostic_design.md
+docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
+docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
 ```
 
 Research 028 is forward research only. It records the distinction that the system owns persistent project state, methodological navigation determines what matters from that state, and the broad knowledge base should be a governed revisioned methodological universe rather than an undifferentiated RAG corpus.
