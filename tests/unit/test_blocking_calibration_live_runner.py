@@ -8,6 +8,10 @@ from experiments.blocking_calibration import live_runner
 
 
 LIVE_WORKFLOW = Path(".github/workflows/v1-blocking-calibration-live.yml")
+RESULT_REPORT = Path("experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md")
+RESULT_CHECKPOINT = Path(
+    "docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md"
+)
 
 
 def test_live_wrapper_injects_runtime_and_marks_only_execution_metadata(
@@ -65,34 +69,17 @@ def test_live_wrapper_injects_runtime_and_marks_only_execution_metadata(
     assert (tmp_path / "RESULT.md").read_text(encoding="utf-8") == "provider-neutral report\n"
 
 
-def test_live_workflow_is_fixed_to_governed_specification_020_boundary() -> None:
-    text = LIVE_WORKFLOW.read_text(encoding="utf-8")
+def test_live_workflow_is_retired_without_losing_frozen_provenance() -> None:
+    """The one-shot live surface must not survive promotion after evidence is frozen."""
+    assert not LIVE_WORKFLOW.exists()
 
-    required_fragments = (
-        "workflow_dispatch:",
-        "launch_id:",
-        "expected_source_sha:",
-        "confirmation:",
-        "spec020-blocking-calibration-001",
-        "RUN_SPEC_020_FROZEN",
-        '${{ inputs.expected_source_sha }}',
-        '${GITHUB_SHA}',
-        "OPENAI_API_KEY",
-        "Validate frozen provider-free implementation before live calls",
-        "tests/unit/test_blocking_calibration_live_runner.py",
-        "python -m experiments.blocking_calibration.live_runner",
-        "openai-agents==0.19.4",
-        "actions/upload-artifact@v4",
+    expected_fragments = (
+        "82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a",
+        "32701999678",
+        "9510887324",
+        "BLOCKING_BOUNDARY_SUPPORTED",
     )
-    for fragment in required_fragments:
-        assert fragment in text
-
-    forbidden_fragments = (
-        "model:",
-        "prompt:",
-        "command:",
-        "benchmark_path:",
-        "fixture_path:",
-    )
-    for fragment in forbidden_fragments:
-        assert fragment not in text
+    for path in (RESULT_REPORT, RESULT_CHECKPOINT):
+        text = path.read_text(encoding="utf-8")
+        for fragment in expected_fragments:
+            assert fragment in text
