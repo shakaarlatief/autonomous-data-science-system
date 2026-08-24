@@ -23,12 +23,13 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            166
-active branch         v1-frontend-spike
-active PR             none
-promoted V1 head      e88c41b31788a53c7da115a24b0f9baeea48516b
-current boundary      Specification 019 complete live result = FAIL
-                      negative evidence integrated without implementation promotion
+checkpoint            167
+active branch         v1-blocking-calibration-diagnostic
+active PR             #44 draft
+promoted V1 head      b9c9c3a38935983075a9ca88632177980bb20ede
+current boundary      Specification 020 contract frozen
+                      RECOMMENDED vs dependency-backed BLOCKING_REQUIRED diagnostic
+                      provider-free implementation next
 ```
 
 Current progression:
@@ -62,6 +63,11 @@ Specification 019
     provenance instrumentation worked
     frozen advancement outcome FAIL
     implementation rejected; failure evidence preserved on integration
+
+Specification 020
+    RECOMMENDED-vs-BLOCKING_REQUIRED calibration diagnostic frozen
+    explicit requirement + defended downstream-scope relation
+    no provider call authorized yet
 ```
 
 For exact continuation, start with:
@@ -69,9 +75,10 @@ For exact continuation, start with:
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-docs/checkpoints/166_specification_019_live_result_failed.md
-experiments/system_owned_provenance_recommendation_action_value/
-    V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
+docs/research/027_recommended_vs_blocking_required_calibration_design.md
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+tests/fixtures/reasoning/blocking_calibration_v1.json
 ```
 
 ---
@@ -148,7 +155,7 @@ reusable methodological knowledge
     -> measured real reasoning
 ```
 
-The production-facing recommendation/action layer remains unpromoted after Specifications 015, 017, and 019 failed or incomplete recommendation-value attempts.
+The production-facing recommendation/action layer remains unpromoted after Specifications 015, 017, and 019 failed or incomplete recommendation-value attempts. Specification 020 is a construct-validity diagnostic, not production recommendation promotion.
 
 Primary foundations:
 
@@ -292,11 +299,11 @@ positive value signals   0
 advancement outcome      FAIL
 ```
 
-The central recommendation-calibration problem was RB-02. SELECTIVE repeatedly promoted two useful model-comparison actions from expected `RECOMMENDED` to `BLOCKING_REQUIRED`, while correctly preserving the DEFER dependency for later tuning. GENERIC and FULL_HORIZON showed the same tendency less consistently, so SELECTIVE crossed the frozen per-case non-inferiority margin and accumulated more blocking-scope false positives than FULL_HORIZON.
+The central recommendation-calibration problem was RB-02. SELECTIVE repeatedly promoted two useful model-comparison actions from expected `RECOMMENDED` to `BLOCKING_REQUIRED`, while correctly preserving the DEFER dependency for later tuning. GENERIC and FULL_HORIZON showed the same tendency less consistently.
 
-RB-04 also missed the preregistered per-case semantic floor in all three conditions because the responses omitted one explicit training-only preprocessing/leakage-prevention obligation. That common ceiling does not implicate SELECTIVE specifically, but the frozen contract does not permit a post-hoc exemption.
+RB-04 also missed the preregistered per-case semantic floor in all three conditions because the responses omitted one explicit training-only preprocessing/leakage-prevention obligation. The frozen contract does not permit a post-hoc exemption.
 
-The Specification 019 recommendation/action implementation is therefore not promoted. Its frozen authority and failure evidence were merged through preservation-only PR #43 at `e88c41b31788a53c7da115a24b0f9baeea48516b`; failed implementation PR #33 is closed without merge.
+The Specification 019 recommendation/action implementation is not promoted. Its frozen authority and failure evidence were merged through preservation-only PR #43; failed implementation PR #33 is closed without merge.
 
 Primary evidence:
 
@@ -308,11 +315,60 @@ experiments/system_owned_provenance_recommendation_action_value/
     V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
+### Specification 020
+
+Specification 020 isolates the remaining calibration question before another recommendation-value comparison.
+
+Frozen distinction:
+
+```text
+BLOCKING_REQUIRED
+    candidate action is currently justified
+    + exact unresolved supplied requirement
+    + exact active defended supplied downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + candidate action resolves that requirement for that scope
+    + exact requirement and scope pointers
+
+RECOMMENDED
+    action is materially worthwhile now or soon
+    + no exact active supplied downstream scope is represented as blocked on it
+    + both blocking pointers null
+```
+
+High priority, high expected value, common best practice, and possible future usefulness are explicitly insufficient on their own for blocking status.
+
+The frozen benchmark contains six contrastive pairs across prediction-time feature availability, temporal validation sensitivity, missing-data treatment sensitivity, subgroup error analysis, probability calibration, and nonlinear model-family comparison.
+
+If a later provider-free implementation earns live authorization, the frozen design is:
+
+```text
+6 pairs x 2 variants x 3 repetitions
+36 planned successful reasoner calls
+45 maximum provider attempts
+seed 2026082401
+one reasoner condition
+no reusable methodology
+no semantic judge
+no tools
+no project mutation
+```
+
+Allowed outcomes are only:
+
+```text
+BLOCKING_BOUNDARY_SUPPORTED
+BLOCKING_BOUNDARY_NOT_SUPPORTED
+INCOMPLETE
+```
+
+No provider call is authorized by Checkpoint 167.
+
 ---
 
 ## System-owned provenance boundary
 
-Specification 019 did provide positive bounded evidence for one architecture distinction:
+Specification 019 provided positive bounded evidence for one architecture distinction:
 
 ```text
 SYSTEM-OWNED PROVENANCE
@@ -328,40 +384,46 @@ MODEL-OWNED CONTENT
     rationales
 ```
 
-The complete 36-output design ran without provenance-induced schema failures or retries. Exact supplied-context provenance should remain a deterministic system trace rather than a mandatory duplicate model-authored result field.
-
-This is an instrumentation lesson, not a recommendation-value promotion signal.
+Specification 020 preserves that separation and additionally makes the system own the supplied candidate-action, requirement, and downstream-scope identities used by the diagnostic. The model selects only among supplied IDs and does not create authoritative project relations.
 
 ---
 
-## Next architecture boundary
+## Current architecture boundary
 
-The next scientific target is narrower than another generic recommendation rerun:
+The next executable task is no longer experiment design. The contract is frozen.
+
+Current task:
 
 ```text
-what makes justified work merely RECOMMENDED
-    versus genuinely BLOCKING_REQUIRED
-for an exact defended downstream scope?
+implement Specification 020 provider-free
+    -> fixture construction audit
+    -> truth-blinded deterministic plan
+    -> experiment-only structured output
+    -> strict supplied-ID validation
+    -> attempt ledger
+    -> deterministic gate evaluation
+    -> fake-runtime integration
+    -> Ubuntu/Windows CI with no provider credential
 ```
 
-A successor experiment should prospectively test whether blocking status needs stronger explicit system-owned dependency/claim-scope structure or another bounded calibration mechanism. It must preserve strong GENERIC and FULL_HORIZON controls, retain the system-owned provenance boundary, and avoid tuning from repeated Specification 019 outputs.
-
-No new provider-backed recommendation experiment is currently authorized. The Specification 019 one-shot authorization and temporary live/observer/preservation helpers have been retired from `main`.
+Only after an exact implementation head is green may a later checkpoint freeze a live boundary. Any provider-backed run must then be authorized through Specification 018.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. preregister the next recommendation/blocking-calibration experiment before implementation
-2. define the exact represented relation between unresolved work and defended downstream scope
-3. preserve the accepted DEFER dependency construction and system-owned provenance boundary
-4. retain strong GENERIC and FULL_HORIZON controls
-5. do not tune truth, thresholds, or treatment from repeated Specification 019 outputs
-6. freeze the successor fixture, gates, call plan, and checkpoint
-7. validate its exact implementation head provider-free
-8. authorize any future live run only through Specification 018 after the exact head is green
-9. make no new recommendation/action provider call before those conditions are met
+1. implement Specification 020 provider-free only
+2. mechanically audit all six contrastive pairs and evaluator-truth blinding
+3. build and hash the deterministic 36-call plan before any provider path exists
+4. implement BlockingCalibrationResult, pointer validation, attempt ledger, and deterministic gates
+5. add fake-runtime integration and failure/incomplete tests
+6. add dedicated Ubuntu/Windows provider-free CI with OPENAI_API_KEY absent
+7. validate the exact implementation head plus accepted regression suites
+8. freeze a later exact implementation/live boundary checkpoint
+9. only then expose or authorize a live workflow through Specification 018
+10. do not modify or rescore Specification 019
+11. make no new provider call before the exact green boundary exists
 ```
 
 ---
