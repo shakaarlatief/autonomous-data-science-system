@@ -52,18 +52,24 @@ RETRYABLE_FAILURES = {
 
 
 class AttemptBudgetExceeded(RuntimeError):
-    """Raised when the frozen global provider-attempt ceiling is exhausted."""
+    """Raised if a caller tries to consume beyond the frozen global ceiling."""
 
 
 class ProviderAttemptBudget:
+    """Track the hard Specification 020 provider-attempt ceiling."""
+
     def __init__(self, maximum: int) -> None:
         if maximum <= 0:
             raise ValueError("provider attempt maximum must be positive")
         self.maximum = maximum
         self.used = 0
 
+    @property
+    def exhausted(self) -> bool:
+        return self.used >= self.maximum
+
     def consume(self) -> int:
-        if self.used >= self.maximum:
+        if self.exhausted:
             raise AttemptBudgetExceeded(
                 f"provider attempt ceiling exhausted: {self.used}/{self.maximum}"
             )
@@ -107,6 +113,9 @@ async def execute_provider_free_experiment(
         attempts_path.unlink()
 
     for entry in plan:
+        if budget.exhausted:
+            break
+
         pair = pair_by_id(benchmark, entry.pair_id)
         request = build_reasoning_request(benchmark=benchmark, plan_entry=entry)
         outcome, records = await _run_with_retry(
@@ -119,8 +128,12 @@ async def execute_provider_free_experiment(
         )
         attempts.extend(records)
         _write_jsonl(attempts_path, records, append=True)
+
         if outcome is None:
+            if budget.exhausted:
+                break
             continue
+
         successful_outputs += 1
         observations.append(make_observation(benchmark, entry, outcome.result))
 
@@ -142,6 +155,7 @@ async def execute_provider_free_experiment(
         observations=observations,
         successful_outputs=successful_outputs,
         provider_attempts_used=budget.used,
+        attempt_budget_exhausted=budget.exhausted,
         gate=gate,
     )
     _write_json(output_dir / "result.json", result)
@@ -191,7 +205,11 @@ async def _run_with_retry(
     max_retries: int,
 ) -> tuple[ReasoningOutcome | None, list[dict[str, object]]]:
     records: list[dict[str, object]] = []
+
     for local_attempt in range(1, max_retries + 2):
+        if budget.exhausted:
+            return None, records
+
         global_attempt = budget.consume()
         timestamp = _utc_now()
         try:
@@ -223,6 +241,7 @@ async def _run_with_retry(
             )
             if category not in RETRYABLE_FAILURES or local_attempt > max_retries:
                 return None, records
+
     return None, records
 
 
@@ -321,6 +340,7 @@ def _aggregate_result(
     observations: list[BlockingObservation],
     successful_outputs: int,
     provider_attempts_used: int,
+    attempt_budget_exhausted: bool,
     gate,
 ) -> dict[str, object]:
     result: dict[str, object] = {
@@ -342,6 +362,7 @@ def _aggregate_result(
         "provider_attempts": {
             "used": provider_attempts_used,
             "maximum": int(benchmark.call_plan["max_total_provider_attempts"]),
+            "exhausted": attempt_budget_exhausted,
         },
         "counts": {
             "planned_reasoner_outputs": int(
@@ -421,6 +442,7 @@ def _human_report(result: Mapping[str, object]) -> str:
             "```text",
             f"successful outputs  {counts['successful_reasoner_outputs']} / {counts['planned_reasoner_outputs']}",
             f"provider attempts   {provider_attempts['used']} / {provider_attempts['maximum']}",
+            f"attempt cap reached {provider_attempts['exhausted']}",
             f"validated outputs   {counts['validated_observations']}",
             f"failed attempts     {counts['failed_attempt_records']}",
             "```",
