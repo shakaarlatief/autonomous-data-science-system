@@ -4,9 +4,9 @@
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
 **Current checkpoint:** 172  
-**Active development branch:** `v1-routing-consistency-guard`  
-**Active PR:** #54 draft, machine-checkable current routing consistency guard  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`
 
 ## Start here
 
@@ -27,9 +27,9 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      a856983172f6436b73e3f7d0e609d208b55a443b
-active branch                  v1-routing-consistency-guard
-active PR                      #54 draft
+promoted integration head      a639cfc570290a2169425f43078bbb242fa398e9
+active branch                  v1-frontend-spike
+active PR                      none
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
@@ -37,7 +37,7 @@ Specification 018 PR           #23 merged
 Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
-routing consistency PR         #54 active
+routing consistency PR         #54 merged
 main                           governed live-launch control plane; zero active Spec020 authorization
 ```
 
@@ -86,7 +86,7 @@ Specification 020 / Checkpoints 167-171
     RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted through PR #44
 
 Checkpoint 172 / PR #54
-    machine-readable current routing pointers + lightweight cross-platform contradiction validator green on its pre-checkpoint implementation head
+    machine-readable current routing pointers + lightweight cross-platform contradiction validator green on exact final PR head and promoted into v1-frontend-spike
 ```
 
 ---
@@ -361,7 +361,7 @@ scripts/check_current_routing.py
     cross-platform validation on routing-sensitive pushes and pull requests
 ```
 
-Exact pre-checkpoint head `5f5dfb81a97f089afc91f20d4632683714a43f60` passed routing consistency on Ubuntu and Windows plus the accepted V1 blocking-calibration, reasoning-context, disposition-semantics, and autonomous-launcher seams.
+Final exact PR #54 head `44d92d73029ad56925bd2c49bb373be5bdef44ce` passed checkpoint metadata, routing consistency on Ubuntu and Windows, and all applicable accepted V1 regression seams before merge into `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`.
 
 Markdown remains the substantive source of truth. The manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history. Development Method remains v0.4 because its existing partial-automation rule already covers this bounded hardening.
 
@@ -370,14 +370,14 @@ Markdown remains the substantive source of truth. The manifest is not a replacem
 ## Current exact continuation
 
 ```text
-A. validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams
-B. mark PR #54 ready and merge only if green
-C. reconcile manifest / README / CURRENT_STATE / KNOWLEDGE_MAP back to v1-frontend-spike with no active PR and the PR #54 merge SHA as promoted integration boundary
-D. require routing consistency to pass on that final integration reconciliation
-E. only then freeze a successor recommendation-value experiment
+A. require current-routing consistency to pass on this exact v1-frontend-spike reconciliation
+B. close the Level-2 routing-consistency hardening boundary only if that integration head is green
+C. only then freeze a successor recommendation-value experiment
+D. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
+E. do not modify or rescore Specifications 015-020
 ```
 
-Do not modify or rescore Specifications 015-020. The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
+The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
 
 ---
 
@@ -408,5 +408,5 @@ Do not modify or rescore Specifications 015-020. The next scientific question re
 169  Specification 020 exact pre-live boundary frozen
 170  Specification 020 exact live-capable source frozen
 171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED
-172  machine-checkable current-routing consistency guard passed; promotion candidate
+172  machine-checkable current-routing consistency guard passed; promoted through PR #54, final integration reconciliation pending validation
 ```

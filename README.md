@@ -24,14 +24,13 @@ Explicit machinery must earn its complexity empirically.
 
 ```text
 checkpoint            172
-active branch         v1-routing-consistency-guard
-active PR             #54 draft
-promoted V1 head      a856983172f6436b73e3f7d0e609d208b55a443b
-current boundary      routing-consistency guard green; final PR validation next
+active branch         v1-frontend-spike
+active PR             none
+promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
+current boundary      routing-consistency hardening promoted; final integration validation pending
 latest experiment     Specification 020
 outcome               BLOCKING_BOUNDARY_SUPPORTED
-next                  validate/merge PR #54,
-                      reconcile integration routing,
+next                  require final integration routing validation,
                       then freeze a successor recommendation-value contract
 ```
 
@@ -47,7 +46,7 @@ Specification 017  relation-backed recommendation run incomplete; implementation
 Specification 018  governed autonomous live-experiment launcher supported/promoted
 Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
-Checkpoint 172     machine-checkable current-routing consistency guard green
+Checkpoint 172     machine-checkable current-routing consistency guard green and promoted through PR #54
 ```
 
 For exact continuation, start with:
@@ -166,7 +165,7 @@ Specification 018 promotes the first bounded governed live-experiment control pl
 ```text
 owner-created request
     -> repository authorization registry
-    -> exact owner/source/CI/duplicate checks
+    -> exact owner/source/green CI/duplicate checks
     -> allowlisted workflow_dispatch
     -> independently validating target workflow
 ```
@@ -353,6 +352,8 @@ scripts/check_current_routing.py
 
 Exact pre-checkpoint implementation head `5f5dfb81a97f089afc91f20d4632683714a43f60` passed the routing workflow and the accepted V1 blocking-calibration, reasoning-context, disposition-semantics, and autonomous-launcher regression seams.
 
+The final PR #54 head `44d92d73029ad56925bd2c49bb373be5bdef44ce` then passed checkpoint metadata, cross-platform routing consistency, and all applicable accepted V1 regression seams before merge into `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`.
+
 Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence. Development Method remains v0.4 because its existing rule already permits narrow partial automation once repetitive or inconsistent maintenance is observed.
 
 This hardening is not a justification for graph/vector preservation storage or wholesale machine-generated documentation.
@@ -362,12 +363,11 @@ This hardening is not a justification for graph/vector preservation storage or w
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams
-2. mark PR #54 ready and merge only if green
-3. reconcile routing back to v1-frontend-spike with no active PR and the PR #54 merge SHA as the promoted integration boundary
-4. require routing consistency to pass on that final integration reconciliation
-5. only after that freeze a successor recommendation-value experiment
-6. do not modify or rescore Specifications 015-020
+1. require current-routing consistency to pass on this final v1-frontend-spike reconciliation
+2. close the Level-2 routing-consistency hardening boundary only if that exact integration head is green
+3. then freeze a successor recommendation-value experiment
+4. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
+5. do not modify or rescore Specifications 015-020
 ```
 
 ---

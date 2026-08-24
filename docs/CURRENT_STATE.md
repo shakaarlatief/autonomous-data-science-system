@@ -2,19 +2,19 @@
 
 **Checkpoint:** 172  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-routing-consistency-guard`  
-**Active PR:** #54 draft, machine-checkable current routing consistency guard  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed with `BLOCKING_BOUNDARY_SUPPORTED` and is promoted. Checkpoint 172 records the first green machine-checkable current-routing consistency guard after repeated routing drift justified this narrow Level-2 hardening.  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 020 completed with `BLOCKING_BOUNDARY_SUPPORTED` and is promoted. PR #54 promoted the Level-2 routing-consistency hardening into the V1 integration branch.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams, merge only if green, reconcile routing back to `v1-frontend-spike`, then freeze a successor recommendation-value experiment.
+**Immediate project priority:** require the routing-consistency workflow to pass on this exact `v1-frontend-spike` reconciliation, then close the Level-2 hardening boundary and freeze the successor recommendation-value experiment.
 
 ## Active ChatGPT development context
 
 ```text
-Design session: 04
+Design session: 05
 ChatGPT project: Autonomous Data Science System
-Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
+Session title: 05 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
 Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. Specification 020 one-shot authorization and temporary live/observer/preservation/reconciliation helpers have been retired from `main`, while their GitHub audit history remains preserved.
@@ -151,7 +151,7 @@ scripts/check_current_routing.py
     runs the validator on Ubuntu and Windows for routing-sensitive changes
 ```
 
-Exact pre-checkpoint implementation evidence:
+Pre-checkpoint implementation evidence:
 
 ```text
 head                               5f5dfb81a97f089afc91f20d4632683714a43f60
@@ -161,6 +161,23 @@ V1 autonomous launcher CI          32714760205  success
 V1 reasoning context value         32714760211  success
 V1 disposition semantics           32714760225  success
 ```
+
+Final exact PR #54 promotion evidence:
+
+```text
+head                                      44d92d73029ad56925bd2c49bb373be5bdef44ce
+Checkpoint metadata                       32718585355  success
+Current routing consistency               32718585226  success
+  ubuntu-latest                           success
+  windows-latest                          success
+V1 blocking calibration diagnostic        32718585224  success
+V1 autonomous live experiment launcher CI 32718585218  success
+V1 reasoning context value                32718585213  success
+V1 disposition semantics diagnostic       32718585232  success
+merge                                     a639cfc570290a2169425f43078bbb242fa398e9
+```
+
+Checkpoint 172 provenance belongs to Design session 05, `05 - Selective Context Promotion & Reasoning Vertical Slice`.
 
 Markdown remains the substantive knowledge source. The manifest does not replace foundations, specifications, checkpoints, results, decisions, or explanatory current-state material. Development Method remains v0.4 because that version already authorizes narrow partial automation once repetitive or inconsistent current-routing maintenance is observed.
 
@@ -190,12 +207,11 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams
-2. mark PR #54 ready and merge only if green
-3. reconcile manifest / README / CURRENT_STATE / KNOWLEDGE_MAP back to v1-frontend-spike with no active PR and the PR #54 merge SHA as the promoted integration boundary
-4. require current-routing consistency to pass on that final integration reconciliation
-5. only after that freeze a successor recommendation-value contract
-6. do not modify or rescore Specifications 015-020
+1. require current-routing consistency to pass on this exact v1-frontend-spike reconciliation
+2. close the Level-2 routing-consistency hardening boundary only if that integration head is green
+3. then freeze a successor recommendation-value contract
+4. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
+5. do not modify or rescore Specifications 015-020
 ```
 
 ## Minimum reading for continuation
