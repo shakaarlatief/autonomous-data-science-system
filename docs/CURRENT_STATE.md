@@ -2,12 +2,12 @@
 
 **Checkpoint:** 166  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-spec019-failure-preservation`  
-**Active PR:** #43 preservation-only; Specification 019 implementation PR #33 remains unpromoted and must close without merge  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `ecf37585f576a3c4fd84a884dee4650b52ab1519` before Specification 019 preservation merge  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and governed autonomous live-experiment launch seams. Specification 019 completed the first matched system-owned-provenance recommendation/action rerun and classified `FAIL`; its negative evidence is being preserved without promoting the failed implementation.  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none; preservation-only PR #43 merged and failed Specification 019 implementation PR #33 closed without merge  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 019 preservation merge `e88c41b31788a53c7da115a24b0f9baeea48516b`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and governed autonomous live-experiment launch seams. Specification 019 completed the first matched system-owned-provenance recommendation/action rerun and classified `FAIL`; its frozen authority and negative evidence are integrated without the failed implementation.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** complete preservation-only integration and control-plane cleanup, then prospectively design the next recommendation/blocking-calibration experiment. No new recommendation/action provider call is authorized.
+**Immediate project priority:** prospectively design the next recommendation/blocking-calibration experiment. No new recommendation/action provider call is authorized.
 
 ## Active ChatGPT development context
 
@@ -164,7 +164,7 @@ That instrumentation lesson does not promote the failed recommendation/action tr
 
 ---
 
-## Preservation boundary
+## Integrated preservation boundary
 
 Raw evidence is preserved at:
 
@@ -182,7 +182,15 @@ experiments/system_owned_provenance_recommendation_action_value/
 
 Checkpoint 166 records the frozen failure and promotion audit.
 
-PR #43 is preservation-only. It intentionally excludes the failed Specification 019 harness, runner, judge, tests, and experiment workflows. PR #33 must close without merge after preservation is integrated.
+Preservation-only PR #43 merged into `v1-frontend-spike` at:
+
+```text
+e88c41b31788a53c7da115a24b0f9baeea48516b
+```
+
+Its exact pre-merge head `2d5795246f710ab222bf9a29f6d4e3e3b39ba57e` passed Checkpoint metadata, Ubuntu/Windows governed-launcher CI with no provider credential, the accepted reasoning-context workflow, and the accepted disposition-semantics workflow.
+
+Failed implementation PR #33 is closed without merge. The accepted integration branch therefore contains the frozen Specification 019 authority and evidence, but not its failed harness, runner, judge, implementation tests, or experiment workflows.
 
 ---
 
@@ -200,7 +208,18 @@ owner request transport
 
 The launcher receives no provider credential. Issue text cannot define executable workflow/ref/SHA/command/model/prompt/secret configuration.
 
-The one-shot Specification 019 authorization and temporary live/preservation/observer helpers must be retired after the result is safely integrated. Their audit history remains preserved in GitHub issues and workflow history.
+Post-Specification-019 cleanup is complete on `main`:
+
+```text
+active live authorizations                 0
+Specification 019 live workflow exposure   removed
+Specification 019 observer helper          removed
+Specification 019 result-preservation helper removed
+Specification 019 preservation-copy helper removed
+temporary issues 34-42                    closed; audit history retained
+```
+
+No active authorization exists for another recommendation/action provider run.
 
 ---
 
@@ -231,14 +250,14 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate and merge preservation-only PR #43 into v1-frontend-spike
-2. retire the one-shot Specification 019 launch authorization on main
-3. remove temporary Specification 019 live/preservation/observer control-plane helpers from main
-4. close temporary launch/preservation issues while retaining their audit history
-5. close failed implementation PR #33 without merge
-6. reconcile v1-frontend-spike to the final Checkpoint 166 integration head
-7. prospectively design the next recommendation/blocking-calibration experiment
-8. preserve the system-owned provenance boundary
-9. do not tune from Specification 019 repetitions
-10. make no new provider call until a new frozen contract and exact provider-free implementation head earn a governed launch authorization
+1. begin a new prospective design boundary for recommendation/blocking calibration
+2. define what exact represented relation makes work genuinely BLOCKING_REQUIRED for a defended downstream scope
+3. preserve the accepted dependency-backed DEFER construction from Specification 016
+4. preserve system-owned supplied-context provenance from Specification 019
+5. retain strong GENERIC and FULL_HORIZON controls
+6. do not tune truth, thresholds, or treatment from repeated Specification 019 outputs
+7. freeze the successor research memo, specification, fixture, gates, call plan, and checkpoint before implementation
+8. validate the exact implementation head provider-free on required platforms
+9. authorize any future live run only through Specification 018 after that exact head is green
+10. make no new recommendation/action provider call before steps 1-9 are satisfied
 ```
