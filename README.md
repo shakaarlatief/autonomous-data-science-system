@@ -23,15 +23,16 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            172
-active branch         v1-frontend-spike
-active PR             none
+checkpoint            174
+active branch         v1-dependency-backed-recommendation-value
+active PR             #55 draft
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      routing-consistency hardening promoted; final integration validation pending
-latest experiment     Specification 020
-outcome               BLOCKING_BOUNDARY_SUPPORTED
-next                  require final integration routing validation,
-                      then freeze a successor recommendation-value contract
+current boundary      Specification 021 contract frozen; provider-free implementation next
+latest experiment     Specification 021
+outcome               FROZEN_NOT_RUN
+next                  implement the frozen provider-free contract,
+                      validate it cross-platform,
+                      and only then freeze any live boundary
 ```
 
 Current experimental progression:
@@ -46,7 +47,8 @@ Specification 017  relation-backed recommendation run incomplete; implementation
 Specification 018  governed autonomous live-experiment launcher supported/promoted
 Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
-Checkpoint 172     machine-checkable current-routing consistency guard green and promoted through PR #54
+Checkpoint 173     machine-checkable current-routing hardening promoted and closed
+Specification 021  dependency-backed recommendation-value contract frozen; not run
 ```
 
 For exact continuation, start with:
@@ -55,9 +57,10 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/172_machine_checkable_current_routing_consistency_guard_passed.md
-docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
-experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
+docs/research/029_dependency_backed_recommendation_value_design.md
+tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
 ```
 
 ---
@@ -122,7 +125,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The bounded executable path currently reaches:
+The accepted bounded executable path currently reaches:
 
 ```text
 reusable methodological knowledge
@@ -134,7 +137,7 @@ reusable methodological knowledge
     -> measured real reasoning
 ```
 
-The production-facing recommendation/action layer remains unpromoted because no frozen experiment has yet shown that selective explicit methodological context improves recommendation/action quality beyond the strong generic control.
+Foundation 020 separates reusable methodological knowledge from project state, execution implementation, and presentation.
 
 Primary foundations:
 
@@ -142,6 +145,19 @@ Primary foundations:
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+```
+
+Research 028 preserves the broader forward architecture:
+
+```text
+SYSTEM-OWNED PROJECT STATE
+    What is true about this project?
+
+METHODOLOGICAL NAVIGATION
+    Given what is true, what matters now?
+
+LLM REASONING
+    Given what matters, how should we reason about it?
 ```
 
 ---
@@ -195,29 +211,27 @@ Supported conclusion:
 
 > Selective exact-revision methodological context preserved every frozen reasoning obligation while materially reducing real provider input burden on the bounded benchmark.
 
-This does not establish a universal context budget or final provider/model.
+This does not establish a universal context budget, final provider/model, or downstream recommendation value.
 
 ---
 
-## Recommendation/action evidence
+## Recommendation/action evidence through Specification 020
 
 ### Specification 015
 
-The first three-condition recommendation/action-value experiment classified `FAIL`. The failed implementation was not promoted. The main discrepancy was a preregistered `DEFER` versus `NOT_NOW` boundary.
+The first three-condition recommendation/action-value experiment classified `FAIL`. The failed implementation was not promoted. A central discrepancy was `DEFER` versus `NOT_NOW`.
 
 ### Specification 016
 
-A prospective construct-validity diagnostic then showed that DEFER-like sequencing can be made reliably distinguishable when it is represented as an already-justified action waiting on one exact activating dependency:
+A prospective construct-validity diagnostic established the bounded structural lesson:
 
 ```text
-36 / 36 exact dispositions correct
-18 / 18 DEFER pointers exact
-18 / 18 NOT_NOW pointers null
-0 retries
-DISPOSITION_BOUNDARY_SUPPORTED
+DEFER-like sequencing
+    -> already justified/planned action
+    + exact unresolved activating dependency
 ```
 
-The bounded lesson is structural, not a final production-enum decision.
+The diagnostic returned 36/36 exact dispositions, 18/18 exact DEFER pointers, and 18/18 NOT_NOW null pointers.
 
 ### Specification 017
 
@@ -231,20 +245,7 @@ reusable knowledge stable-key provenance
 
 ### Specification 019
 
-Specification 019 prospectively repaired that boundary by keeping exact supplied-context provenance system-owned while leaving recommendation content model-owned.
-
-The governed live run completed the full frozen design:
-
-```text
-source                    6b5e6237b738250458550f95c9f3a6b0d51e86ec
-reasoner outputs          36 / 36
-judge outputs             36 / 36
-provider attempts         72 / 90
-retries                   0
-execution integrity       true
-```
-
-Frozen aggregate result:
+Specification 019 moved exact supplied-context provenance to deterministic system ownership and completed the full matched comparison:
 
 ```text
                          GENERIC        SELECTIVE       FULL_HORIZON
@@ -256,50 +257,30 @@ blocking false positives 4              6               4
 Frozen outcome:
 
 ```text
-absolute gates           FAIL
-relative gates           FAIL
-expansion gates          FAIL
-positive value signals   0
-advancement outcome      FAIL
+FAIL
 ```
 
-Specification 019 remains immutable historical `FAIL` evidence and its failed recommendation/action implementation is not promoted.
+The main discrepancy was repeated escalation of useful nonlinear model-family comparison into `BLOCKING_REQUIRED`, especially under SELECTIVE. Specification 019 remains immutable historical evidence and is not rescored.
 
 ### Specification 020
 
-Specification 020 prospectively isolated the remaining `RECOMMENDED` versus `BLOCKING_REQUIRED` calibration boundary using explicit requirement/scope relations and no methodological-context treatment.
-
-The governed live design completed exactly as frozen:
+Specification 020 prospectively isolated `RECOMMENDED` versus `BLOCKING_REQUIRED` without methodological-context treatment. It completed 36/36 observations with every frozen hard gate passing:
 
 ```text
-frozen source            82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
-reasoner outputs         36 / 36
-validated observations   36 / 36
-provider attempts        36 / 45
-failed attempts          0
-retries                   0
-aggregate exact accuracy 1.000000
-all hard gates           PASS
-outcome                  BLOCKING_BOUNDARY_SUPPORTED
+outcome   BLOCKING_BOUNDARY_SUPPORTED
 ```
 
-All six contrastive pairs separated perfectly across all three repetitions per side. Every expected `BLOCKING_REQUIRED` output returned the exact unresolved requirement and exact blocked downstream scope. Every expected `RECOMMENDED` output returned both blocking pointers as null.
-
-Supported bounded conclusion:
+Accepted bounded structural lesson:
 
 ```text
 BLOCKING_REQUIRED-like work
-    should identify an exact unresolved requirement
-    + an exact active defended downstream scope
-    + an explicit scope DEPENDS_ON requirement relation
-    + the action that resolves that requirement
+    exact unresolved requirement
+    + exact active defended downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + candidate action RESOLVES requirement
 ```
 
-This makes taxonomy inseparability and fixed-reasoner inability less likely explanations for Specification 019's RB-02 behavior. Specification 019 is not rescored.
-
-Specification 020 does not establish production recommendation enums, final blocking policy, SELECTIVE recommendation value, ranking, open-world action generation, automatic execution, or final provider/model selection.
-
-The cleaned exact PR #44 head passed the Specification 020 Ubuntu/Windows diagnostic plus accepted V1 reasoning-context, disposition-semantics, launcher, and checkpoint-metadata regressions before merge into `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`.
+Specification 020 does not establish production recommendation enums, blocking policy, ranking, automatic execution, or SELECTIVE recommendation value.
 
 Primary evidence:
 
@@ -311,33 +292,104 @@ experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
 
 ---
 
-## System-owned provenance boundary
+## System-owned provenance and relation boundary
 
-Specifications 017-020 established a useful separation:
+The strongest current separation is:
 
 ```text
-SYSTEM-OWNED PROVENANCE / IDENTITIES
+SYSTEM-OWNED IDENTITIES / PROVENANCE
     exact supplied stable_key@revision_id
     methodology payload digest and byte count
     treatment identity
-    supplied action / requirement / downstream-scope identities
+    supplied action identities
+    supplied requirement identities
+    supplied downstream-scope identities
+    supplied dependency / resolver / defer-trigger identities
 
 MODEL-OWNED CONTENT
     dispositions
-    dependency pointers among supplied identities
-    clarifications
+    pointers among supplied identities
     rationales
+    summaries / warnings
 ```
 
-The model should not be required to reproduce authoritative context provenance that the system already knows exactly.
+The model should not be required to reproduce authoritative context provenance that the system already knows exactly, and it must not invent authoritative project relations inside a bounded experiment.
+
+---
+
+## Specification 021: active frozen experiment
+
+Specification 021 is the clean prospective recommendation-value test after the known sequencing, provenance, and blocking-calibration confounds were separately addressed.
+
+It uses four newly authored cases:
+
+```text
+DBRA-01  future validity and model sequencing
+DBRA-02  compact nonlinear model shortlist
+DBRA-03  distribution evidence before transformation
+DBRA-04  missingness / class-imbalance decision framework
+```
+
+and exactly three matched conditions:
+
+```text
+GENERIC
+SELECTIVE
+FULL_HORIZON
+```
+
+The experiment-owned action result carries action-local relation pointers:
+
+```text
+BLOCKING_REQUIRED
+    exact blocking_requirement_id
+    exact blocked_scope_id
+    defer_until_id = null
+
+RECOMMENDED
+    all pointers null
+
+DEFER
+    blocking pointers null
+    exact defer_until_id
+
+NOT_NOW
+    all pointers null
+```
+
+Frozen call plan:
+
+```text
+4 cases
+3 conditions
+3 repetitions
+36 reasoner outputs
+36 blinded judge outputs
+72 planned successful provider calls
+90 maximum provider attempts
+randomization seed 2026082402
+```
+
+Frozen complete outcomes:
+
+```text
+PROMOTE_DEPENDENCY_BACKED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+incomplete / integrity failed -> no advancement classification
+```
+
+`SAFE_BUT_NOT_DIFFERENTIATED` is intentionally legitimate. A strong generic reasoner may already know the small current methodological universe. The benchmark must not be rewritten simply to force SELECTIVE to win.
+
+**No Specification 021 provider call is authorized.** Provider-free implementation, construction audits, complete fake-runtime evaluation, and Ubuntu/Windows CI must be green and checkpointed before any live boundary may be frozen.
 
 ---
 
 ## Preservation and continuity hardening
 
-The Specification 020 stage-boundary review found no substantive preservation failure. It did confirm recurring lag in mutable routing/current-state documents relative to already durable checkpoint/result evidence.
+Checkpoint 173 closes the first machine-checkable routing-consistency hardening.
 
-Checkpoint 172 records the first green hardening of that observed consistency seam:
+Promoted mechanism:
 
 ```text
 docs/current_routing.json
@@ -347,29 +399,27 @@ scripts/check_current_routing.py
     manifest contract + checkpoint existence + contradiction checks
 
 .github/workflows/current-routing-consistency.yml
-    Ubuntu/Windows validation for routing-sensitive changes
+    cross-platform validation for routing-sensitive changes
 ```
 
-Exact pre-checkpoint implementation head `5f5dfb81a97f089afc91f20d4632683714a43f60` passed the routing workflow and the accepted V1 blocking-calibration, reasoning-context, disposition-semantics, and autonomous-launcher regression seams.
+Final closure evidence included push-triggered routing run `32719182489` on exact integration head `09670d5127c14cf3cece727b31823d5de4572211`, with both Ubuntu and Windows jobs successful.
 
-The final PR #54 head `44d92d73029ad56925bd2c49bb373be5bdef44ce` then passed checkpoint metadata, cross-platform routing consistency, and all applicable accepted V1 regression seams before merge into `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`.
-
-The integration reconciliation is deliberately routing-sensitive so the new push guard must validate the merged branch state itself, not only the pre-merge pull-request head.
-
-Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence. Development Method remains v0.4 because its existing rule already permits narrow partial automation once repetitive or inconsistent maintenance is observed.
-
-This hardening is not a justification for graph/vector preservation storage or wholesale machine-generated documentation.
+Markdown remains the substantive source of project knowledge. The manifest is not another store for rationale, decisions, experiment interpretation, or historical evidence.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. require current-routing consistency to pass on this routing-sensitive v1-frontend-spike reconciliation
-2. close the Level-2 routing-consistency hardening boundary only if that exact integration head is green
-3. then freeze a successor recommendation-value experiment
-4. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
-5. do not modify or rescore Specifications 015-020
+1. implement the frozen Specification 021 provider-free contract on v1-dependency-backed-recommendation-value
+2. mechanically audit every blocking/defer relation and matched-condition payload
+3. implement action-local structured output and exact pointer validation
+4. reuse system-owned methodological provenance and accepted exact-revision context construction
+5. implement deterministic metrics, blinded judge payload construction, and complete fake-runtime evaluation
+6. add dedicated Ubuntu/Windows provider-free CI with no provider credential
+7. freeze an exact green implementation head in a later checkpoint
+8. only then consider one governed live authorization boundary
+9. do not modify or rescore Specifications 015-020
 ```
 
 ---
