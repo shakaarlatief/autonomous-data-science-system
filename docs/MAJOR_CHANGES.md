@@ -34,7 +34,6 @@ Development Method v0.2 made the AI design collaborator responsible for detectin
 Key sources:
 
 ```text
-docs/DECISIONS.md, D-018 and D-020
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```
@@ -85,7 +84,7 @@ docs/foundations/012_preregistered_held_out_evaluation_protocol.md
 
 ## 2026-08-18: System-level LLM/system/human boundary became durable architecture
 
-The LLM became explicitly one flexible reasoning component inside ADS. System-managed memory, provenance, deterministic guarantees, execution coordination, and human control must remain separate concerns, and every explicit mechanism must justify its complexity empirically.
+The LLM became explicitly one flexible reasoning component inside ADS. System-managed memory, provenance, deterministic guarantees, execution coordination, and human control remain separate concerns, and every explicit mechanism must justify its complexity empirically.
 
 Key source:
 
@@ -99,7 +98,7 @@ docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 
 Development Method v0.3 introduced checkpoint promotion audits, `KNOWLEDGE_MAP`, periodic reconciliation, authority/maturity conventions, `MAJOR_CHANGES`, and explicit separation of current state from detailed experiment ledgers.
 
-Git + Markdown remains the development-preservation substrate until observed retrieval, consistency, dependency, concurrency, or automation problems justify more complex infrastructure.
+Git + Markdown remained the development-preservation substrate until observed scale or consistency problems justified stronger tooling.
 
 Key sources:
 
@@ -111,7 +110,7 @@ docs/KNOWLEDGE_MAP.md
 
 ---
 
-## 2026-08-18 to 2026-08-19: Prototype V0 gained validated supervision and observability separation
+## 2026-08-18 to 2026-08-19: Validated supervision and observability separation were established
 
 Held-out execution gained a condition-neutral runner/verifier/supervisor architecture and mechanically validated prospective automation.
 
@@ -129,30 +128,17 @@ Key sources:
 ```text
 docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
 docs/foundations/016_execution_observability_separation.md
-docs/PRINCIPLES.md, P-022
 ```
 
 ---
 
-## 2026-08-19: Prototype V0 strongly falsified the current P0 design
-
-Final pooled evidence:
-
-```text
-                         B0          B1          P0
-Targeted mean           1.47        1.73        1.78
-Strong targeted pass    0/10        0/10        0/10
-Critical failure runs   0/10        0/10        0/10
-Completed in budget    10/10       10/10        3/10
-Budget exhausted        0/10        0/10        7/10
-Median total tokens  122,544.5   120,564.5   260,370.0
-```
+## 2026-08-19: Prototype V0 strongly falsified the original P0 design
 
 Final classification:
 
 > **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN.**
 
-The architectural consequence was simplification, not abandonment of the wider system vision. The strongest scaling lesson became:
+The broader ADS vision survived, but the original orchestration machinery did not earn its cost. The strongest scaling lesson became:
 
 ```text
 what the SYSTEM should remember
@@ -172,14 +158,15 @@ docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_di
 
 ---
 
-## 2026-08-19: Post-V0 vision became a professional interactive data-science operating environment
+## 2026-08-19: Post-V0 target became a professional interactive data-science operating environment
 
 The target became a professional environment in which ADS carries much of the methodological-navigation and project-memory burden while the human can inspect, discuss, select, override, guide, and approve work interactively.
 
-Key source:
+Key sources:
 
 ```text
 docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
 
 ---
@@ -239,7 +226,7 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 
 ---
 
-## 2026-08-20: V1 local-first persistence and Python tooling were selected empirically
+## 2026-08-20 to 2026-08-21: V1 local-first persistence, tooling, and governed interchange became operational
 
 The project accepted:
 
@@ -247,41 +234,16 @@ The project accepted:
 D-028  SQLite-centered local-first operational architecture
 D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
+D-031  deterministic JSON + JSON Schema 2020-12 interchange with governance
 ```
 
-The first production persistence slice passed SQLite/Linux, SQLite/Windows, and PostgreSQL 18, including exact historical project-to-knowledge revision pinning.
+The governed knowledge round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18. Exact historical project-to-knowledge revision pinning was preserved.
 
 Key sources:
 
 ```text
-docs/DECISIONS.md, D-028 through D-030
 docs/specifications/001_v1_sqlite_technical_architecture.md
-docs/specifications/002_v1_persistence_tooling_standard.md
-docs/specifications/003_v1_python_project_and_dependency_tooling.md
-```
-
----
-
-## 2026-08-20 to 2026-08-21: Reusable knowledge interchange and governed round-trip became operational
-
-D-031 and Specification 004 established deterministic JSON + JSON Schema 2020-12 interchange, semantic validation, deterministic normalization/serialization, and explicit candidate-versus-accepted governance.
-
-The richer governed round-trip then closed across:
-
-```text
-SQLite / Ubuntu     PASS
-SQLite / Windows    PASS
-PostgreSQL 18       PASS
-```
-
-Checkpoint 127 closes the current governed persistence/interchange seam.
-
-Key sources:
-
-```text
-docs/DECISIONS.md, D-031
 docs/specifications/004_v1_reusable_knowledge_interchange.md
-experiments/architecture_spikes/V1_KNOWLEDGE_ROUNDTRIP_RESULT.md
 docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
 ```
 
@@ -289,9 +251,9 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 
 ## 2026-08-20 to 2026-08-21: Project Cockpit became the promoted primary active-work interaction model
 
-Foundation 021 made the interface a first-class reasoning/control surface. Successive bounded spikes and seven real-browser human review cycles evolved the Cockpit into a scalable spatial operating surface with 2D navigation, bounded zoom, native pinch, scalable Jump/search, floating composer/controls, compact fold-away chrome, fullscreen, and collision-safe surfaces.
+Successive bounded frontend spikes and human review cycles evolved the Cockpit into a scalable spatial operating surface with 2D navigation, bounded zoom, native pinch, scalable Jump/search, floating composer/controls, compact fold-away chrome, fullscreen, and collision-safe surfaces.
 
-Specification 008 promoted the core interaction architecture. Final canvas/gesture libraries, auto-layout, semantic zoom/grouping, minimap, stage taxonomy, visual identity, and final frontend/chart choices remain open.
+Specification 008 promoted the core interaction architecture. Final canvas/gesture libraries, semantic zoom/grouping, visual identity, and final frontend/chart choices remain open.
 
 Key sources:
 
@@ -305,7 +267,7 @@ docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_
 
 ## 2026-08-20: Unexpected Session 02 boundary validated preservation but exposed routing drift
 
-Session 02 reached the platform conversation-length limit after substantive Cockpit work had been preserved but before final routing reconciliation. Session 03 reconstructed from repository authority and repaired stale current routing through Checkpoint 120.
+Session 02 reached the platform conversation-length limit after substantive Cockpit work had been preserved but before final routing reconciliation. Session 03 reconstructed from repository authority and repaired stale current routing.
 
 The incident demonstrated that substantive preservation and current routing are separate requirements.
 
@@ -319,17 +281,16 @@ docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity
 
 ## 2026-08-22: Initial V1 reasoning runtime selected after executable bakeoff
 
-Specification 005 compared ADS-owned direct model calls, OpenAI Agents SDK 0.19.4, and LangGraph 1.2.10 as real ADS-shaped runtime paths.
+Specification 005 compared ADS-owned direct model calls, OpenAI Agents SDK, and LangGraph as ADS-shaped runtime paths.
 
 D-032 accepts:
 
 ```text
 OpenAI Agents SDK
     behind an ADS-owned ReasoningRuntime port
-    validated starting package openai-agents==0.19.4
 ```
 
-Direct model calls remain the fallback/reference path. LangGraph remains a possible future durability escalation. No final LLM provider/model or multi-agent architecture is selected.
+Direct model calls remain a fallback/reference path. No final LLM provider/model or multi-agent architecture is selected.
 
 Key sources:
 
@@ -343,151 +304,58 @@ docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 
 ## 2026-08-22: Retrieval progressed from lexical baseline to explained MethodologicalHorizon
 
-The bounded retrieval/Horizon program produced:
+The bounded retrieval/Horizon program established:
 
 ```text
-Checkpoint 135
-    lexical RH-L Recall@3 1.00 / MRR 1.00
-
-Checkpoint 137
-    dense semantic comparator recovered class-imbalance but lost ecdf
-    dense-only did not replace lexical
-
-Checkpoint 139
-    equal-weight RRF preserved complementary signals
-    RH-S Recall@3 1.00 / MRR 0.875
-
-Checkpoint 141
-    accepted-current one-hop relation expansion
-    TRUE / FALSE / UNKNOWN applicability
-    POSSIBLY_APPLICABLE / INAPPLICABLE / MISSING_CONTEXT
+Checkpoint 135   lexical retrieval baseline
+Checkpoint 137   dense complementary signal
+Checkpoint 139   hybrid comparator
+Checkpoint 141   explained Horizon with TRUE/FALSE/UNKNOWN applicability
 ```
 
-The key executable semantic invariant is:
+The key executable semantic invariant became:
 
 ```text
 unknown != false
 ```
 
-The hybrid result remains complementarity evidence, not permanent selection of FastEmbed, BGE, RRF, vector persistence, ANN, or reranking infrastructure.
+The hybrid result remains complementarity evidence, not permanent selection of an embedding model, RRF, vector persistence, ANN, or reranking infrastructure.
 
 ---
 
-## 2026-08-22: Selective MethodologicalContextPack validated the system/model context boundary
+## 2026-08-22 to 2026-08-23: Selective MethodologicalContextPack validated the system/model context boundary
 
-Specification 013 tested:
-
-```text
-explicit task reasoning functions
-    -> primary Horizon matches
-    -> bounded REQUIRES_CONCEPT support
-    -> hard max_assets budget
-    -> exact accepted-current compact reasoning projection
-    -> MethodologicalContextPack
-```
-
-On a deliberately wide ten-asset Horizon, the four frozen cases selected only 2-3 exact revisions and reduced methodology-only context by roughly 65% to 84% while preserving required revision coverage and explicit omission reasons.
-
-The important architecture is:
+Specification 013 promoted a bounded selector from a wider Horizon to exact selected revisions. Specification 014 then tested the real-model consequence:
 
 ```text
-SYSTEM
-    retains wider Horizon and omission decisions
-
-MODEL-FACING PACK
-    contains selected exact methodological revisions only
+SELECTIVE quality       1.000000
+FULL_HORIZON quality    1.000000
+SELECTIVE/FULL input    0.334379
+input-token reduction   66.56%
+critical regressions    none
 ```
 
-Checkpoint 143 promotes Specification 013 to accepted bounded v1.0.
-
----
-
-## 2026-08-23: First real-model selective-context value gate passed
-
-Specification 014 / Checkpoint 146 tested the accepted SELECTIVE pack against a compact FULL_HORIZON control under the same task/project evidence and concrete runtime/model treatment.
-
-Observed:
-
-```text
-aggregate semantic quality
-    SELECTIVE      1.000000
-    FULL_HORIZON   1.000000
-
-aggregate provider input tokens
-    SELECTIVE mean 1013.00
-    FULL mean      3029.50
-    ratio          0.334379
-    reduction      66.56%
-
-critical regressions  none
-retries               0
-```
-
-This is the first direct evidence that the post-V0 system/model context separation can preserve measured reasoning quality while materially reducing provider input burden. It also promotes the first production-facing ADS-owned `ReasoningRuntime` request/outcome/usage/trace seam used by live calls under D-032.
-
-The concrete model configuration remains experiment evidence, not a final provider/model decision.
+This was the first direct evidence that the post-V0 system/model context separation can preserve measured reasoning quality while materially reducing provider input burden.
 
 Key sources:
 
 ```text
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
 docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
 docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
-experiments/reasoning_context_value/V1_REASONING_CONTEXT_VALUE_RESULT.md
 ```
 
 ---
 
-## 2026-08-23: First recommendation/action-value gate failed and changed the immediate development direction
+## 2026-08-23: First recommendation/action-value gate failed
 
-Specification 015 moved downstream from context economy to:
+Specification 015 moved downstream from context economy to recommendation/action quality. The full frozen design executed, but the exact-disposition gate failed around `DEFER` versus `NOT_NOW` and the experiment classified `FAIL`.
 
-```text
-RELEVANT
-    -> RECOMMENDED
-    -> REQUIRED / BLOCKING
-    -> bounded project action
-```
-
-The experiment was preregistered before implementation and live calls. It compared GENERIC, SELECTIVE, and FULL_HORIZON under the same project microstates, task profiles, action menus, and model/runtime treatment.
-
-Live workflow `32642733784` completed all:
-
-```text
-36 reasoner outputs
-36 condition-blinded judge outputs
-72 provider attempts
-0 retries
-```
-
-The GitHub workflow succeeded as an execution, but the frozen experiment result was:
-
-```text
-absolute gates    FAIL
-relative gates    PASS
-expansion gates   PASS
-value signals     0
-outcome            FAIL
-```
-
-Fourteen of fifteen named gates passed. The single failure was the per-case exact-disposition gate on `RA-02 MODEL_CHOICE`:
-
-```text
-GENERIC        0.722222
-SELECTIVE      0.666667
-FULL_HORIZON   0.666667
-required floor 0.800000
-```
-
-The repeated discrepancy was `DEFER` expected versus `NOT_NOW` observed for two noncritical expansion actions. SELECTIVE and FULL_HORIZON produced the same pattern, GENERIC behaved almost identically, and the blinded semantic judge scored all nine RA-02 outputs `1.000000`.
-
-The result did not justify promoting the recommendation/action seam and did not support blaming selective context specifically. It changed the immediate direction from recommendation-state coupling to a separately preregistered disposition-semantics/failure-attribution diagnostic.
-
-The failed implementation was not merged into the accepted V1 integration branch. Its frozen design, raw result, and failure interpretation were preserved separately as project evidence.
+The result did not justify promoting the recommendation/action seam and did not implicate selective context specifically. The failed implementation was not merged; its frozen design and negative evidence were preserved.
 
 Key sources:
 
 ```text
-docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
 experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
@@ -495,87 +363,36 @@ experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 
 ---
 
-## 2026-08-23: Dependency-backed DEFER versus NOT_NOW construct passed the live diagnostic
+## 2026-08-23: Dependency-backed DEFER versus NOT_NOW construct passed
 
-Specification 016 isolated the narrow failure mode from Specification 015 before another recommendation-value comparison. It removed methodological-context treatments, retrieval, Horizon construction, semantic judging, tools, and project mutation, and tested only whether a stronger relation-backed sequencing distinction could be represented and applied reliably.
-
-Frozen distinction:
-
-```text
-DEFER
-    action already justified in represented plan
-    + exact unresolved supplied activating trigger
-    + action becomes current next work after trigger
-    + exact defer_until_id
-
-NOT_NOW
-    no current material justification
-    + no represented supplied activating trigger relation
-    + null defer_until_id
-```
-
-The live workflow `32652636943` executed from exact frozen head `7db27fd35151c10cdb3562cdf4410fb8f4b09e8b` and observed:
-
-```text
-reasoner outputs                     36 / 36
-provider attempts                    36 / 45
-failed attempts                      0
-retries                              0
-aggregate exact disposition accuracy 1.000000
-all 12 variants                      3 / 3 correct
-all 6 contrastive pair sides         3 / 3 correct
-DEFER trigger-pointer accuracy       1.000000
-NOT_NOW null-pointer correctness     1.000000
-```
-
-Frozen outcome:
+Specification 016 prospectively isolated the failed sequencing construct. The live diagnostic observed 36/36 exact dispositions and exact dependency pointers, producing:
 
 ```text
 DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
-The architectural consequence is bounded but important:
+The architectural consequence was bounded but important:
 
 ```text
 DEFER-like sequencing
-    should not be a bare low-priority label
-    if deterministic distinction from NOT_NOW is required;
-    it should carry a concrete represented activating dependency/trigger.
+    should carry a concrete represented activating dependency/trigger
+    when deterministic distinction from NOT_NOW is required
 ```
 
-Specification 015 remains immutable `FAIL`. The diagnostic did not promote final production DEFER/NOT_NOW enums.
+Specification 015 remains immutable `FAIL` evidence.
 
 Key sources:
 
 ```text
-docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
 docs/checkpoints/155_disposition_semantics_live_gate_supported.md
-experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
 ```
 
 ---
 
-## 2026-08-23: Relation-backed recommendation rerun ended incomplete and exposed a provenance-instrumentation defect
+## 2026-08-23: Relation-backed recommendation rerun exposed a provenance-instrumentation defect
 
-Specification 017 returned to the three-condition recommendation/action comparison while preserving the stronger dependency-backed DEFER construction.
-
-The live run did not complete the matched design:
-
-```text
-run                         32656446705
-source                      bf041f4b4a485382d0e6e5c508ad916199601ee8
-reasoner outputs            29 / 36
-judge outputs               29 / 36
-provider attempts           77 / 90
-complete scored design      false
-execution integrity         true
-advancement outcome         none
-```
-
-All SELECTIVE and FULL_HORIZON outputs completed. GENERIC repeatedly failed the structured-output contract because the model placed requested reasoning-function labels into model-authored `methodological_basis` despite GENERIC receiving no reusable knowledge revisions.
-
-The stable boundary became:
+Specification 017 returned to the recommendation/action comparison but ended incomplete. The key durable lesson was:
 
 ```text
 reasoning function / task profile
@@ -583,24 +400,30 @@ reasoning function / task profile
 reusable knowledge stable-key provenance
 ```
 
-The system already knew exact supplied revisions and context digests, so making completion depend on a duplicate model-authored provenance field was an instrumentation mistake. Specification 017 remains permanently incomplete historical evidence and was not rescored.
+The system already knew exact supplied revisions and context digests, so requiring duplicate model-authored provenance was an instrumentation mistake. Specification 017 remains permanently incomplete historical evidence.
 
 Key sources:
 
 ```text
-docs/research/024_relation_backed_recommendation_action_value_design.md
 docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
 docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
-experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
 ---
 
-## 2026-08-23: Governed autonomous live-experiment launcher supported
+## 2026-08-23: Governed autonomous live-experiment launcher supported and promoted
 
-Specification 018 established a bounded repository-governed control plane for explicitly authorized frozen experiments. Exact cross-platform provider-free validation passed at source `27e7bc84b5f63d65d43de9a5bd27d1fdc0677071` in run `32660168566`.
+Specification 018 established a bounded repository-governed control plane for explicitly authorized frozen experiments:
 
-An owner-created issue then triggered launcher run `32660333663`, which validated the repository authorization and dispatched provider-free probe run `32660340429`; the probe independently verified the exact source/ref/confirmation and completed successfully.
+```text
+owner request
+    -> repository authorization registry
+    -> exact owner/source/CI/duplicate checks
+    -> allowlisted workflow_dispatch
+    -> independently validating target workflow
+```
+
+The launcher receives no provider credential and issue text cannot define arbitrary executable configuration.
 
 Checkpoint 161 classified the bounded outcome as:
 
@@ -608,100 +431,65 @@ Checkpoint 161 classified the bounded outcome as:
 GOVERNED_LAUNCHER_SUPPORTED
 ```
 
-This promoted a control-plane capability, not autonomous experiment design or arbitrary workflow execution. The launcher receives no provider credential and issue text cannot define executable workflow/ref/SHA/model/prompt/secret configuration.
-
-Specification 018 was subsequently promoted to `v1-frontend-spike`.
+Specification 018 was promoted to `v1-frontend-spike`.
 
 ---
 
 ## 2026-08-24: System-owned provenance repair completed the matched recommendation experiment, but recommendation value still failed
 
-Specification 019 prospectively preserved Specification 017 scientific truth while changing exact supplied-context provenance from model-authored output to deterministic system ownership.
+Specification 019 moved exact supplied-context provenance from model-authored output to deterministic system ownership while leaving recommendation content model-owned.
 
-Frozen provenance boundary:
+The complete frozen matched design executed without provenance-induced schema failures or retries, validating the instrumentation repair. The recommendation-value advancement result still classified `FAIL`.
 
-```text
-SYSTEM-OWNED PROVENANCE
-    exact supplied stable_key@revision_id
-    methodology payload digest and byte count
-    treatment identity
-
-MODEL-OWNED CONTENT
-    dispositions
-    dependency pointers
-    blocked scopes
-    clarifications
-    rationales
-```
-
-The exact provider-free validated source was:
-
-```text
-6b5e6237b738250458550f95c9f3a6b0d51e86ec
-```
-
-The accepted Specification 018 launcher then dispatched the governed provider-backed run:
-
-```text
-accepted request issue    35
-launcher run              32664527166
-live run                  32664534864
-artifact                   9499756280
-```
-
-The complete frozen design executed successfully:
-
-```text
-reasoner outputs          36 / 36
-judge outputs             36 / 36
-provider attempts         72 / 90
-retries                   0
-complete scored design    true
-execution integrity       true
-```
-
-Aggregate result:
-
-```text
-                         GENERIC        SELECTIVE       FULL_HORIZON
-exact accuracy           0.944444       0.916667        0.944444
-semantic score           0.950000       0.950000        0.950000
-blocking false positives 4              6               4
-```
-
-Frozen gate result:
-
-```text
-absolute gates           FAIL
-relative gates           FAIL
-expansion gates          FAIL
-positive value signals   0
-outcome                   FAIL
-```
-
-The failed named gates were `SPRA-G06`, `SPRA-G08`, `SPRA-G09`, `SPRA-G10`, and `SPRA-G20`.
-
-The central recommendation-calibration failure was RB-02. SELECTIVE labeled two useful nonlinear model-comparison actions `BLOCKING_REQUIRED` in all three repetitions even though the frozen truth was `RECOMMENDED`, while correctly preserving the DEFER dependency for later tuning. GENERIC and FULL_HORIZON showed the same over-blocking tendency in two repetitions but were correct in one, so SELECTIVE crossed the frozen per-case non-inferiority margin and accumulated six blocking-scope false positives versus four for FULL_HORIZON.
-
-RB-04 was deterministically perfect in all conditions but semantically scored `0.800000` everywhere because one explicit training-only preprocessing/leakage-prevention obligation was omitted. This common ceiling did not implicate SELECTIVE specifically, but the preregistered absolute floor still failed.
-
-The major architectural consequence is two-part:
-
-```text
-1. exact supplied-context provenance should remain system-owned;
-2. recommendation/action promotion remains unsupported, with the next
-   scientific boundary narrowed to RECOMMENDED versus genuinely
-   BLOCKING_REQUIRED work for exact defended downstream scopes.
-```
-
-The failed Specification 019 implementation is not promoted. Its frozen contract, raw result, interpreted report, and checkpoints are preserved through a preservation-only branch/PR. The one-shot live authorization and temporary control-plane helpers were retired after preservation.
+The central recommendation-calibration problem was repeated over-blocking on RB-02. The failed implementation was not promoted; frozen contract, raw result, interpretation, and checkpoints were preserved.
 
 Key sources:
 
 ```text
-docs/research/026_system_owned_provenance_recommendation_action_value_design.md
 docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
 docs/checkpoints/166_specification_019_live_result_failed.md
 experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/
+```
+
+---
+
+## 2026-08-24: Dependency-backed RECOMMENDED versus BLOCKING_REQUIRED boundary supported
+
+Specification 020 prospectively isolated the recommendation-calibration construct exposed by Specification 019. It removed methodological-context treatments and tested one fixed reasoner on six deliberately unambiguous contrastive pairs where genuine blocking was represented by an exact unresolved requirement, an exact active defended downstream scope, an explicit `DEPENDS_ON` relation, and the candidate action that resolves the requirement.
+
+The governed live run completed the frozen 36-observation design with no retries:
+
+```text
+reasoner outputs                     36 / 36
+provider attempts                    36 / 45
+aggregate exact disposition accuracy 1.000000
+all 12 variants                      3 / 3 correct
+all 6 contrastive pair sides         3 / 3 correct
+joint blocking-pointer accuracy      1.000000
+RECOMMENDED null-pointer correctness 1.000000
+outcome                              BLOCKING_BOUNDARY_SUPPORTED
+```
+
+The bounded architectural lesson is:
+
+```text
+blocking should not be represented by urgency or priority alone
+
+genuinely BLOCKING_REQUIRED work
+    -> exact unresolved requirement
+    -> exact active defended downstream scope
+    -> explicit scope DEPENDS_ON requirement relation
+    -> action resolves requirement
+```
+
+This makes taxonomy inseparability and fixed-reasoner inability less likely explanations for Specification 019's RB-02 behavior, but it does not rescore Specification 019 and does not establish selective methodological-context recommendation value or production recommendation enums.
+
+The same stage-boundary review also confirmed recurring lag in mutable routing documents relative to already durable result/checkpoint evidence. That observed consistency problem is now sufficient to justify a small machine-checkable routing manifest and CI validator while retaining Git + Markdown as the substantive preservation architecture.
+
+Key sources:
+
+```text
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
 ```

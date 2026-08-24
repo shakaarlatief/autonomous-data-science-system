@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 166  
+**Checkpoint:** 171  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none; preservation-only PR #43 merged and failed Specification 019 implementation PR #33 closed without merge  
-**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 019 preservation merge `e88c41b31788a53c7da115a24b0f9baeea48516b`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and governed autonomous live-experiment launch seams. Specification 019 completed the first matched system-owned-provenance recommendation/action rerun and classified `FAIL`; its frozen authority and negative evidence are integrated without the failed implementation.  
+**Active development branch:** `v1-blocking-calibration-diagnostic`  
+**Active PR:** #44 draft, Specification 020 diagnostic with preserved supported result  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `b9c9c3a38935983075a9ca88632177980bb20ede`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed its governed frozen diagnostic with `BLOCKING_BOUNDARY_SUPPORTED`.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** prospectively design the next recommendation/blocking-calibration experiment. No new recommendation/action provider call is authorized.
+**Immediate project priority:** retire Specification 020 one-shot control-plane exposure, validate and promote the cleaned PR #44 branch only if green, then implement the small machine-checkable routing-consistency guard before freezing another recommendation-value experiment.
 
 ## Active ChatGPT development context
 
@@ -17,11 +17,11 @@ ChatGPT project: Autonomous Data Science System
 Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` intentionally trails V1 application development but hosts the narrow governed live-launch control plane required for explicitly authorized experiments.
+Repository artifacts remain authoritative across chats. `main` intentionally hosts the narrow governed live-launch control plane plus temporary one-shot experiment exposure only when explicitly authorized. Temporary Specification 020 exposure is now due for retirement.
 
 ---
 
-## Durable architecture
+## Durable architecture and accepted evidence
 
 Prototype V0 established the scaling rule:
 
@@ -39,7 +39,7 @@ KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 
 Foundation 020 separates reusable methodological knowledge from project state, execution implementation, and presentation.
 
-Accepted technical/runtime boundaries remain D-028 through D-032. Specification 008 remains the promoted Project Cockpit interaction architecture. Specifications 012-014 remain the bounded accepted Horizon/selective-context/real-reasoning chain.
+Accepted technical/runtime boundaries remain D-028 through D-032. Specification 008 remains the promoted Project Cockpit interaction architecture. Specifications 012-014 remain the bounded accepted Horizon/selective-context/real-reasoning chain. Specification 018 remains the accepted governed live-experiment launcher.
 
 ---
 
@@ -56,170 +56,97 @@ reusable methodological knowledge
     -> recommendation/action experiment 015                 [FAIL, PRESERVED]
     -> dependency-backed disposition diagnostic 016         [SUPPORTED]
     -> relation-backed recommendation experiment 017        [INCOMPLETE, PRESERVED]
-    -> governed live-experiment launcher 018                 [SUPPORTED]
+    -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
+    -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PRESERVED]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
 
 Specification 016 supported the bounded construct that DEFER-like sequencing needs a concrete represented activating dependency if deterministic separation from NOT_NOW is expected.
 
-Specification 017 did not complete its matched live design because model-authored methodological provenance was not a valid proxy for the task/reasoning-function label.
+Specification 019 completed the matched recommendation-value rerun after system-owned provenance repaired the instrumentation defect, but the frozen result remained `FAIL`.
 
-Specification 019 prospectively repaired that instrumentation boundary by making exact supplied context provenance system-owned. The complete matched live design then produced a genuine scientific `FAIL`, not an incomplete execution.
+Specification 020 prospectively isolated the recommendation/blocking construct and completed successfully.
 
 ---
 
-## Specification 019 complete live result
+## Specification 020 complete result
 
-Frozen source:
-
-```text
-6b5e6237b738250458550f95c9f3a6b0d51e86ec
-```
-
-Provider-free validation:
+Frozen live source:
 
 ```text
-run 32664369953
-Ubuntu dedicated     13 passed
-Windows dedicated    13 passed
-Ubuntu full V1       116 passed, 2 skipped
-Windows full V1      116 passed, 2 skipped
-provider credential  absent
+82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
 ```
 
 Governed live execution:
 
 ```text
-launch issue          35
-launcher run          32664527166
-live run              32664534864
-live job              97255789247
-artifact               9499756280
+launch issue          45
+launcher run          32701990350
+live run              32701999678
+live job              97355284139
+artifact               9510887324
+artifact SHA-256       35ed6b472eac22090e563bbafee30aab1b666c00453ebcfd8cd0a832b79be678
 reasoner outputs       36 / 36
-judge outputs          36 / 36
-provider attempts      72 / 90
+provider attempts      36 / 45
+failed attempts        0
 retries                0
 execution integrity    true
 ```
 
-Aggregate frozen quality:
+Frozen gate result:
 
 ```text
-                         GENERIC        SELECTIVE       FULL_HORIZON
-exact accuracy           0.944444       0.916667        0.944444
-semantic score           0.950000       0.950000        0.950000
-blocking false positives 4              6               4
+BC-G01 structured validity                    PASS
+BC-G02 aggregate exact accuracy               1.000000  PASS
+BC-G03 every variant majority-correct         12 / 12 at 3 / 3  PASS
+BC-G04 every pair both sides majority-correct 6 / 6, both sides 3 / 3  PASS
+BC-G05 exact joint blocking pointers          1.000000  PASS
+BC-G06 RECOMMENDED null pointers              1.000000  PASS
+
+outcome                                      BLOCKING_BOUNDARY_SUPPORTED
 ```
 
-Failed gates:
+Supported conclusion:
 
 ```text
-SPRA-G06  SELECTIVE every-case exact accuracy floor
-SPRA-G08  SELECTIVE every-case semantic floor
-SPRA-G09  SELECTIVE per-case exact non-inferiority vs GENERIC
-SPRA-G10  SELECTIVE per-case exact non-inferiority vs FULL_HORIZON
-SPRA-G20  SELECTIVE blocking false positives <= FULL_HORIZON
+exact unresolved requirement
+    + exact active defended downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + candidate action resolves requirement
+
+can make BLOCKING_REQUIRED operationally separable from RECOMMENDED
+for the frozen deliberately unambiguous microstates with the fixed reasoner.
 ```
 
-Frozen classifier:
+This does not promote production `BLOCKING_REQUIRED`/`RECOMMENDED` enums or establish selective methodological-context recommendation value.
+
+Specification 019 remains immutable `FAIL` evidence and is not rescored.
+
+Raw and interpreted evidence:
 
 ```text
-absolute gates           FAIL
-relative gates           FAIL
-expansion gates          FAIL
-positive value signals   0
-advancement outcome      FAIL
+experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
 ```
-
-RB-02 is the central recommendation-calibration failure. SELECTIVE labeled both compact nonlinear model-comparison actions `BLOCKING_REQUIRED` in all three repetitions although the frozen truth was `RECOMMENDED`, while correctly keeping tuning `DEFER`red behind `model-family-selected`. GENERIC and FULL_HORIZON made the same over-blocking error in two of three repetitions but were correct once, so SELECTIVE crossed the frozen per-case non-inferiority margin and accumulated six blocking-scope false positives versus four for FULL_HORIZON.
-
-RB-04 was deterministically perfect in every condition but semantically scored `0.800000` everywhere because the frozen training-only preprocessing/leakage-prevention obligation was omitted. That treatment-invariant ceiling does not implicate SELECTIVE specifically, but the preregistered absolute case floor still fails.
 
 ---
 
-## Durable positive lesson from Specification 019
+## Preservation and continuity consequence
 
-The provenance instrumentation repair worked:
+The stage-boundary verification found no substantive preservation failure. It did confirm recurring routing drift in mutable current-state/index documents relative to already durable checkpoint/result evidence.
 
-```text
-SYSTEM-OWNED PROVENANCE
-    exact supplied stable_key@revision_id
-    methodology payload digest
-    methodology byte count
-    treatment identity
-
-MODEL-OWNED CONTENT
-    dispositions
-    dependency pointers
-    blocked scopes
-    clarifications
-    rationales
-```
-
-The 36-output reasoner design completed without provenance-induced schema failures and with zero retries. Exact supplied-context provenance should therefore remain a deterministic system trace rather than a mandatory duplicate model-authored field.
-
-That instrumentation lesson does not promote the failed recommendation/action treatment.
-
----
-
-## Integrated preservation boundary
-
-Raw evidence is preserved at:
+This now justifies one small Level-2 hardening:
 
 ```text
-experiments/system_owned_provenance_recommendation_action_value/results/
-    spec019-live-20260824-run-32664534864/
+machine-readable current routing pointers
+    -> lightweight CI consistency validator
+    -> Markdown remains substantive source of truth
 ```
 
-Stable interpretation:
-
-```text
-experiments/system_owned_provenance_recommendation_action_value/
-    V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
-```
-
-Checkpoint 166 records the frozen failure and promotion audit.
-
-Preservation-only PR #43 merged into `v1-frontend-spike` at:
-
-```text
-e88c41b31788a53c7da115a24b0f9baeea48516b
-```
-
-Its exact pre-merge head `2d5795246f710ab222bf9a29f6d4e3e3b39ba57e` passed Checkpoint metadata, Ubuntu/Windows governed-launcher CI with no provider credential, the accepted reasoning-context workflow, and the accepted disposition-semantics workflow.
-
-Failed implementation PR #33 is closed without merge. The accepted integration branch therefore contains the frozen Specification 019 authority and evidence, but not its failed harness, runner, judge, implementation tests, or experiment workflows.
-
----
-
-## Specification 018 accepted control-plane boundary
-
-The accepted launcher remains a bounded capability:
-
-```text
-owner request transport
-    -> repository authorization registry
-    -> exact owner/source/CI/duplicate checks
-    -> allowlisted workflow_dispatch
-    -> independently validating target workflow
-```
-
-The launcher receives no provider credential. Issue text cannot define executable workflow/ref/SHA/command/model/prompt/secret configuration.
-
-Post-Specification-019 cleanup is complete on `main`:
-
-```text
-active live authorizations                 0
-Specification 019 live workflow exposure   removed
-Specification 019 observer helper          removed
-Specification 019 result-preservation helper removed
-Specification 019 preservation-copy helper removed
-temporary issues 34-42                    closed; audit history retained
-```
-
-No active authorization exists for another recommendation/action provider run.
+Do not introduce a graph database, vector database, or machine-generated documentation system for preservation on this evidence.
 
 ---
 
@@ -230,9 +157,6 @@ Still deliberately open:
 ```text
 final recommendation/action taxonomy and ranking policy
 production REQUIRED/BLOCKING semantics
-how defended downstream scope should determine blocking status
-whether DEFER and NOT_NOW become production enums
-complete dependency persistence schema
 whether explicit methodological knowledge adds recommendation/action value beyond a strong generic reasoner
 natural-language/project-state -> reasoning-function derivation
 open-world proposal/action discovery
@@ -250,14 +174,22 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. begin a new prospective design boundary for recommendation/blocking calibration
-2. define what exact represented relation makes work genuinely BLOCKING_REQUIRED for a defended downstream scope
-3. preserve the accepted dependency-backed DEFER construction from Specification 016
-4. preserve system-owned supplied-context provenance from Specification 019
-5. retain strong GENERIC and FULL_HORIZON controls
-6. do not tune truth, thresholds, or treatment from repeated Specification 019 outputs
-7. freeze the successor research memo, specification, fixture, gates, call plan, and checkpoint before implementation
-8. validate the exact implementation head provider-free on required platforms
-9. authorize any future live run only through Specification 018 after that exact head is green
-10. make no new recommendation/action provider call before steps 1-9 are satisfied
+1. retire Specification 020 one-shot authorization and temporary main helpers
+2. validate the cleaned PR #44 head on Specification 020 Ubuntu/Windows CI and accepted V1 regression seams
+3. promote PR #44 into v1-frontend-spike only if green
+4. implement the small routing-consistency manifest + CI validator as the next Level-2 hardening
+5. only after that freeze a successor recommendation-value contract
+6. do not modify or rescore Specifications 015-020
+```
+
+## Minimum reading for continuation
+
+```text
+README.md
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
 ```

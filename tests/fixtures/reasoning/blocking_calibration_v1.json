@@ -1,0 +1,398 @@
+{
+  "benchmark_id": "v1-blocking-calibration-diagnostic-v0.1",
+  "starting_integration_sha": "b9c9c3a38935983075a9ca88632177980bb20ede",
+  "research": "docs/research/027_recommended_vs_blocking_required_calibration_design.md",
+  "specification": "docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md",
+  "randomization_seed": 2026082401,
+  "repetitions_per_variant": 3,
+  "dispositions": [
+    "BLOCKING_REQUIRED",
+    "RECOMMENDED"
+  ],
+  "reasoner": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "text_verbosity": "low",
+    "max_output_tokens": 2000,
+    "tools_enabled": false,
+    "previous_response_state": false,
+    "request_fast_or_priority_processing": false
+  },
+  "call_plan": {
+    "pair_count": 6,
+    "variants_per_pair": 2,
+    "planned_successful_reasoner_calls": 36,
+    "max_total_provider_attempts": 45,
+    "max_retries_per_planned_call": 1,
+    "retry_only_for": [
+      "TRANSPORT_FAILURE",
+      "PROVIDER_FAILURE",
+      "INCOMPLETE_RESPONSE",
+      "INVALID_STRUCTURED_RESPONSE"
+    ],
+    "preserve_failed_attempts": true,
+    "unique_condition_neutral_nonce_per_request": true
+  },
+  "operational_definitions": {
+    "BLOCKING_REQUIRED": "The action is currently justified, one exact supplied requirement is unresolved, one exact supplied downstream scope is active and intended to be defended, that scope is explicitly represented as depending on resolution of the requirement, and the candidate action is the represented work that resolves or establishes the requirement for that scope. Return the exact requirement and scope IDs.",
+    "RECOMMENDED": "The action is materially worthwhile now or soon, but no exact currently active supplied downstream scope is represented as depending on completion of this action. Return null for both blocking pointers. High value, urgency, best practice, or possible future usefulness alone do not make work blocking."
+  },
+  "common_instruction": "Classify the one candidate action using only BLOCKING_REQUIRED or RECOMMENDED. Use BLOCKING_REQUIRED only when the supplied state explicitly establishes all of the following: the action is currently justified; one supplied requirement is unresolved; one supplied downstream scope is active and intended to be defended; that exact scope depends on resolving that exact requirement; and this candidate action is the represented work that resolves or establishes the requirement for that scope. When BLOCKING_REQUIRED, return the exact supplied requirement ID and blocked scope ID. Use RECOMMENDED when the action is worthwhile now or soon but no exact active supplied downstream scope is represented as blocked on it; then both pointer fields must be null. Importance, urgency, common best practice, or possible future usefulness are not sufficient for BLOCKING_REQUIRED. Do not invent project facts, requirement IDs, or scope IDs.",
+  "user_task": "Classify the candidate action for the supplied project state and identify exact blocking pointers only when the operational BLOCKING_REQUIRED definition is satisfied.",
+  "reasoner_output_schema": {
+    "disposition": "BLOCKING_REQUIRED | RECOMMENDED",
+    "blocking_requirement_id": "string | null",
+    "blocked_scope_id": "string | null",
+    "rationale": "string"
+  },
+  "hard_gates": {
+    "max_invalid_successful_outputs": 0,
+    "min_aggregate_exact_disposition_accuracy": 0.95,
+    "min_correct_repetitions_per_variant": 2,
+    "min_correct_repetitions_per_pair_side": 2,
+    "expected_blocking_joint_pointer_accuracy": 1.0,
+    "expected_recommended_null_pointer_correctness": 1.0
+  },
+  "advancement_outcomes": [
+    "BLOCKING_BOUNDARY_SUPPORTED",
+    "BLOCKING_BOUNDARY_NOT_SUPPORTED",
+    "INCOMPLETE"
+  ],
+  "construction_rules": {
+    "exactly_two_variants_per_pair": true,
+    "required_variant_labels": [
+      "BLOCKING_REQUIRED",
+      "RECOMMENDED"
+    ],
+    "pair_action_requirement_menu_and_scope_menu_are_shared": true,
+    "shared_project_evidence_is_identical_across_pair": true,
+    "blocking_variant_requires_one_expected_requirement": true,
+    "blocking_variant_requires_one_expected_scope": true,
+    "recommended_variant_requires_null_expected_requirement": true,
+    "recommended_variant_requires_null_expected_scope": true,
+    "expected_truth_is_never_exposed_to_reasoner": true
+  },
+  "pairs": [
+    {
+      "pair_id": "BC-01",
+      "domain": "prediction-time-feature-availability",
+      "candidate_action": {
+        "action_id": "verify-feature-x-prediction-time-availability",
+        "label": "Verify whether feature X is available at the actual prediction moment."
+      },
+      "available_requirements": [
+        {
+          "requirement_id": "feature-x-availability-confirmed",
+          "description": "Prediction-time availability of feature X is established for the defended model configuration."
+        }
+      ],
+      "available_downstream_scopes": [
+        {
+          "scope_id": "defend-live-scoring-validity",
+          "description": "Defend that the selected model can be evaluated and used under the actual live-scoring information boundary."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "binary production prediction",
+        "feature.x.status": "availability timing not yet independently verified",
+        "current.stage": "deployment-oriented model validation"
+      },
+      "variants": [
+        {
+          "variant_id": "BC-01-BLOCKING",
+          "variant_evidence": {
+            "requirement.feature-x-availability-confirmed.status": "UNRESOLVED",
+            "scope.defend-live-scoring-validity.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-live-scoring-validity.depends_on": "feature-x-availability-confirmed",
+            "model.current_configuration": "uses feature X",
+            "action.role": "This verification is the represented work that resolves feature-x-availability-confirmed for the active live-scoring validity scope."
+          },
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "feature-x-availability-confirmed",
+          "expected_blocked_scope_id": "defend-live-scoring-validity"
+        },
+        {
+          "variant_id": "BC-01-RECOMMENDED",
+          "variant_evidence": {
+            "requirement.feature-x-availability-confirmed.status": "UNRESOLVED_BUT_NOT_BLOCKING_CURRENT_SCOPE",
+            "scope.defend-live-scoring-validity.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-live-scoring-validity.depends_on": "none",
+            "model.current_configuration": "does not use feature X; feature X is reserved for a possible later alternative",
+            "action.role": "Verification is worthwhile now because it may enable a later feature-set alternative, but no active defended scope currently depends on it."
+          },
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "BC-02",
+      "domain": "temporal-validation-sensitivity",
+      "candidate_action": {
+        "action_id": "run-temporal-holdout-sensitivity",
+        "label": "Run a temporal holdout sensitivity analysis."
+      },
+      "available_requirements": [
+        {
+          "requirement_id": "temporal-representativeness-established",
+          "description": "The accepted validation evidence is shown to represent the future-period deployment claim sufficiently."
+        }
+      ],
+      "available_downstream_scopes": [
+        {
+          "scope_id": "defend-future-period-performance-claim",
+          "description": "Defend the stated claim about expected model performance in a future deployment period."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "supervised prediction with timestamps",
+        "deployment.period": "future relative to training data",
+        "current.stage": "validation robustness assessment"
+      },
+      "variants": [
+        {
+          "variant_id": "BC-02-BLOCKING",
+          "variant_evidence": {
+            "requirement.temporal-representativeness-established.status": "UNRESOLVED",
+            "scope.defend-future-period-performance-claim.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-future-period-performance-claim.depends_on": "temporal-representativeness-established",
+            "validation.current_evidence": "current split does not yet establish temporal representativeness",
+            "action.role": "The temporal holdout sensitivity analysis is the represented work that resolves temporal-representativeness-established for the active future-period performance claim."
+          },
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "temporal-representativeness-established",
+          "expected_blocked_scope_id": "defend-future-period-performance-claim"
+        },
+        {
+          "variant_id": "BC-02-RECOMMENDED",
+          "variant_evidence": {
+            "requirement.temporal-representativeness-established.status": "SATISFIED_FOR_CURRENT_SCOPE",
+            "scope.defend-future-period-performance-claim.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-future-period-performance-claim.depends_on": "none_additional",
+            "validation.current_evidence": "accepted primary chronological validation already establishes the deployment-period representation required by the current claim",
+            "action.role": "An extra temporal sensitivity analysis would strengthen robustness evidence but no active defended scope is blocked on it."
+          },
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "BC-03",
+      "domain": "missing-data-treatment-sensitivity",
+      "candidate_action": {
+        "action_id": "compare-missing-data-treatments",
+        "label": "Compare plausible missing-data treatments for the affected variables."
+      },
+      "available_requirements": [
+        {
+          "requirement_id": "missingness-treatment-robustness-established",
+          "description": "The selected preprocessing treatment is shown to be defensible against plausible alternative missing-data handling choices."
+        }
+      ],
+      "available_downstream_scopes": [
+        {
+          "scope_id": "defend-final-preprocessing-decision",
+          "description": "Defend the final preprocessing decision used by the selected model pipeline."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "binary classification",
+        "dataset.missingness": "material missingness exists in two candidate variables",
+        "current.stage": "preprocessing decision"
+      },
+      "variants": [
+        {
+          "variant_id": "BC-03-BLOCKING",
+          "variant_evidence": {
+            "requirement.missingness-treatment-robustness-established.status": "UNRESOLVED",
+            "scope.defend-final-preprocessing-decision.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-final-preprocessing-decision.depends_on": "missingness-treatment-robustness-established",
+            "pipeline.current_configuration": "selected pipeline uses both affected variables and the treatment choice materially changes their representation",
+            "action.role": "The comparison is the represented work that resolves missingness-treatment-robustness-established for the active final preprocessing decision."
+          },
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "missingness-treatment-robustness-established",
+          "expected_blocked_scope_id": "defend-final-preprocessing-decision"
+        },
+        {
+          "variant_id": "BC-03-RECOMMENDED",
+          "variant_evidence": {
+            "requirement.missingness-treatment-robustness-established.status": "NOT_REQUIRED_FOR_CURRENT_SCOPE",
+            "scope.defend-final-preprocessing-decision.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-final-preprocessing-decision.depends_on": "none",
+            "pipeline.current_configuration": "selected pipeline uses complete primary variables; affected variables belong only to an optional expansion",
+            "action.role": "Comparing treatments is worthwhile for the optional expansion, but the current defended preprocessing decision does not depend on it."
+          },
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "BC-04",
+      "domain": "subgroup-error-analysis",
+      "candidate_action": {
+        "action_id": "run-subgroup-error-analysis",
+        "label": "Run subgroup-specific error analysis for the selected model."
+      },
+      "available_requirements": [
+        {
+          "requirement_id": "subgroup-error-behavior-characterized",
+          "description": "Model error behavior for the supplied subgroups is characterized sufficiently for the defended subgroup conclusion."
+        }
+      ],
+      "available_downstream_scopes": [
+        {
+          "scope_id": "defend-subgroup-performance-conclusion",
+          "description": "Defend the deliverable's stated subgroup-specific performance conclusion."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "supervised prediction",
+        "subgroup.columns": "defined and available",
+        "current.stage": "model evaluation"
+      },
+      "variants": [
+        {
+          "variant_id": "BC-04-BLOCKING",
+          "variant_evidence": {
+            "requirement.subgroup-error-behavior-characterized.status": "UNRESOLVED",
+            "scope.defend-subgroup-performance-conclusion.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-subgroup-performance-conclusion.depends_on": "subgroup-error-behavior-characterized",
+            "deliverable.current_claim": "includes a subgroup-specific performance conclusion",
+            "action.role": "The subgroup error analysis is the represented work that resolves subgroup-error-behavior-characterized for the active subgroup-performance conclusion."
+          },
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "subgroup-error-behavior-characterized",
+          "expected_blocked_scope_id": "defend-subgroup-performance-conclusion"
+        },
+        {
+          "variant_id": "BC-04-RECOMMENDED",
+          "variant_evidence": {
+            "requirement.subgroup-error-behavior-characterized.status": "NOT_REQUIRED_FOR_CURRENT_SCOPE",
+            "scope.defend-subgroup-performance-conclusion.status": "INACTIVE_NOT_CURRENTLY_ASSERTED",
+            "scope.defend-subgroup-performance-conclusion.depends_on": "none",
+            "deliverable.current_claim": "contains only aggregate performance conclusions",
+            "action.role": "Subgroup error analysis is worthwhile diagnostic work, but no current defended subgroup-specific scope depends on it."
+          },
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "BC-05",
+      "domain": "probability-calibration",
+      "candidate_action": {
+        "action_id": "assess-probability-calibration",
+        "label": "Assess probability calibration for the selected probabilistic classifier."
+      },
+      "available_requirements": [
+        {
+          "requirement_id": "probability-calibration-characterized",
+          "description": "Calibration of predicted probabilities is characterized for the downstream interpretation being defended."
+        }
+      ],
+      "available_downstream_scopes": [
+        {
+          "scope_id": "defend-risk-probability-interpretation",
+          "description": "Defend interpreting model probabilities as risk estimates in the downstream decision process."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "binary probability prediction",
+        "model.output": "predicted probabilities",
+        "current.stage": "deployment-oriented evaluation"
+      },
+      "variants": [
+        {
+          "variant_id": "BC-05-BLOCKING",
+          "variant_evidence": {
+            "requirement.probability-calibration-characterized.status": "UNRESOLVED",
+            "scope.defend-risk-probability-interpretation.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-risk-probability-interpretation.depends_on": "probability-calibration-characterized",
+            "downstream.use": "probability values are interpreted as risk estimates",
+            "action.role": "The calibration assessment is the represented work that resolves probability-calibration-characterized for the active risk-probability interpretation."
+          },
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "probability-calibration-characterized",
+          "expected_blocked_scope_id": "defend-risk-probability-interpretation"
+        },
+        {
+          "variant_id": "BC-05-RECOMMENDED",
+          "variant_evidence": {
+            "requirement.probability-calibration-characterized.status": "NOT_REQUIRED_FOR_CURRENT_SCOPE",
+            "scope.defend-risk-probability-interpretation.status": "INACTIVE_NOT_CURRENTLY_ASSERTED",
+            "scope.defend-risk-probability-interpretation.depends_on": "none",
+            "downstream.use": "probabilities are currently used only to rank cases; no risk-probability interpretation is asserted",
+            "action.role": "Calibration assessment remains useful diagnostic evidence, but no current defended downstream scope depends on it."
+          },
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null
+        }
+      ]
+    },
+    {
+      "pair_id": "BC-06",
+      "domain": "nonlinear-model-comparison",
+      "candidate_action": {
+        "action_id": "compare-compact-nonlinear-model",
+        "label": "Compare one compact nonlinear model family against the accepted linear baseline."
+      },
+      "available_requirements": [
+        {
+          "requirement_id": "nonlinear-comparator-evaluated",
+          "description": "At least one feasible nonlinear comparator has been evaluated under the accepted validation design."
+        }
+      ],
+      "available_downstream_scopes": [
+        {
+          "scope_id": "defend-final-model-selection-decision",
+          "description": "Defend the final model-selection decision under the project's explicit comparison requirement."
+        }
+      ],
+      "shared_project_evidence": {
+        "project.task": "tabular supervised prediction",
+        "baseline.status": "accepted linear baseline exists",
+        "current.stage": "model-family decision"
+      },
+      "variants": [
+        {
+          "variant_id": "BC-06-BLOCKING",
+          "variant_evidence": {
+            "requirement.nonlinear-comparator-evaluated.status": "UNRESOLVED",
+            "scope.defend-final-model-selection-decision.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-final-model-selection-decision.depends_on": "nonlinear-comparator-evaluated",
+            "project.constraint": "the final model-selection decision must include evidence from at least one feasible nonlinear comparator",
+            "action.role": "This comparison is the represented work that resolves nonlinear-comparator-evaluated for the active final model-selection decision."
+          },
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "nonlinear-comparator-evaluated",
+          "expected_blocked_scope_id": "defend-final-model-selection-decision"
+        },
+        {
+          "variant_id": "BC-06-RECOMMENDED",
+          "variant_evidence": {
+            "requirement.nonlinear-comparator-evaluated.status": "OPTIONAL_FOR_CURRENT_SCOPE",
+            "scope.defend-final-model-selection-decision.status": "ACTIVE_DEFENDED_SCOPE",
+            "scope.defend-final-model-selection-decision.depends_on": "none",
+            "project.constraint": "the accepted linear baseline already satisfies the current model-selection evidence requirement",
+            "action.role": "A compact nonlinear comparison is worthwhile for possible performance improvement, but the current model-selection scope is not blocked on it."
+          },
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null
+        }
+      ]
+    }
+  ]
+}
