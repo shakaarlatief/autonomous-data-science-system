@@ -2,7 +2,7 @@
   "schema_version": 1,
   "current_checkpoint": 171,
   "active_development_branch": "v1-routing-consistency-guard",
-  "active_pr": null,
+  "active_pr": 54,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "a856983172f6436b73e3f7d0e609d208b55a443b",
   "active_specification": "020",
