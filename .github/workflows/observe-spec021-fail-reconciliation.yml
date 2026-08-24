@@ -1,0 +1,51 @@
+name: Observe Specification 021 failure reconciliation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/observe-spec021-fail-reconciliation.trigger
+
+permissions:
+  actions: read
+  issues: write
+  contents: read
+
+jobs:
+  observe:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      AUDIT_ISSUE: '65'
+      TARGET_WORKFLOW: reconcile-spec021-fail-boundary.yml
+    steps:
+      - name: Report latest reconciliation run
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+
+          repo = os.environ['GITHUB_REPOSITORY']
+          workflow = os.environ['TARGET_WORKFLOW']
+          raw = subprocess.check_output([
+              'gh', 'api',
+              f'repos/{repo}/actions/workflows/{workflow}/runs?per_page=5'
+          ], text=True)
+          runs = json.loads(raw).get('workflow_runs', [])
+          if not runs:
+              raise SystemExit('no reconciliation runs found')
+          run = runs[0]
+          body = (
+              'Latest Specification 021 reconciliation run observed. '
+              f"run_id=`{run['id']}`; head_sha=`{run['head_sha']}`; "
+              f"status=`{run['status']}`; conclusion=`{run.get('conclusion')}`; "
+              f"event=`{run['event']}`."
+          )
+          subprocess.check_call([
+              'gh', 'issue', 'comment', os.environ['AUDIT_ISSUE'],
+              '--repo', repo, '--body', body
+          ])
+          PY
