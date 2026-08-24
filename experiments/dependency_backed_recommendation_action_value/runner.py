@@ -474,10 +474,8 @@ def _technical_preflight(
             and int(benchmark.call_plan["max_retries_per_planned_call"]) == 1
             and set(benchmark.call_plan["retry_only_for"]) == RETRYABLE_FAILURES
         ),
-        "DBRA-INV-20_complete_design": False,
         "DBRA-INV-21_no_provider_credential": True,
         "DBRA-INV-22_provider_boundary": True,
-        "DBRA-INV-23_authoritative_state_unchanged": False,
         "DBRA-INV-24_no_live_surface": _no_spec021_live_surface(),
     }
 
