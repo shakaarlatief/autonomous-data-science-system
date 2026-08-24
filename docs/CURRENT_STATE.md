@@ -1,14 +1,14 @@
 # Current State
 
-**Checkpoint:** 178  
+**Checkpoint:** 179  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, Specification 021 first governed live execution incomplete; instrumentation repair next  
+**Active PR:** #55 draft, Specification 021 first governed live execution remains incomplete; usage-serialization repair passed cross-platform; replacement live-source freeze next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 remains prospectively frozen; its first governed live execution is preserved as incomplete because attempt-metadata serialization prevented every reasoner output from becoming a scored observation.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 remains prospectively frozen. Its first governed live execution is immutable `INCOMPLETE` evidence, and the attempt-metadata serialization defect that caused that incompleteness is now reproduced provider-free and repaired cross-platform without changing frozen science.  
 **Latest experiment status:** Specification 021 `INCOMPLETE`  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** keep the first live run immutable as incomplete evidence, repair only the mappingproxy-backed usage-metadata serialization defect for reasoner and judge attempt records, prove the repair provider-free cross-platform, and only then freeze any replacement live-source boundary.
+**Immediate project priority:** validate the fully reconciled Checkpoint 179 head, then freeze a fresh exact replacement live-source boundary and dedicated source ref before any new one-shot Specification 018 authorization is considered.
 
 ## Active ChatGPT development context
 
@@ -18,7 +18,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 05 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. The consumed Specification 021 authorization and temporary default-branch live exposure have been retired after preservation of the first raw run; no replacement Specification 021 provider call is currently authorized.
+Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. The consumed Specification 021 authorization and temporary default-branch live exposure were retired after preservation of the first raw run. No replacement Specification 021 provider call is currently authorized.
 
 ---
 
@@ -73,7 +73,7 @@ reusable methodological knowledge
     -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
     -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PROMOTED]
-    -> dependency-backed recommendation-value experiment 021 [INCOMPLETE; RAW EVIDENCE PRESERVED]
+    -> dependency-backed recommendation-value experiment 021 [INCOMPLETE; INSTRUMENTATION REPAIR GREEN]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -163,7 +163,7 @@ Markdown remains the substantive knowledge source. The manifest is not a second 
 
 ---
 
-## Specification 021 incomplete first live execution
+## Specification 021 incomplete first live execution; instrumentation repair green
 
 Frozen design artifacts remain:
 
@@ -250,7 +250,7 @@ Checkpoint 176 froze the fully reconciled pre-live source:
 aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
 ```
 
-Checkpoint 177 freezes the exact live-capable source and historical source ref:
+Checkpoint 177 freezes the original live-capable source and historical source ref:
 
 ```text
 validated live source                      b589bad975880b2d3cccc3596fc82539b1b96577
@@ -266,9 +266,7 @@ V1 blocking calibration diagnostic         32724242515  success
 V1 autonomous live experiment launcher CI 32724242570  success
 ```
 
-The live source contains only separated provider execution plumbing around the frozen experiment. The first live-plumbing validation exposed one lifecycle mismatch: the implementation-stage `DBRA-INV-24_no_live_surface` invariant correctly became incompatible with Checkpoint 176's permission to add the live wrapper/workflow. It was replaced by `DBRA-INV-24_pre_authorization_boundary`, which requires the one-shot repository authorization to remain absent until the live source is frozen. Frozen scientific authority did not change.
-
-The first governed live execution is now preserved:
+The first governed live execution is preserved immutably:
 
 ```text
 launch issue             56
@@ -288,9 +286,39 @@ advancement outcome      null
 classification           INCOMPLETE
 ```
 
-All 72 reasoner attempts failed uniformly while recording live-shaped usage metadata with `cannot pickle 'mappingproxy' object`. No condition-specific recommendation conclusion is justified. Checkpoint 178 strongly isolates the defect to attempt-metadata serialization and freezes the run as incomplete evidence, not scientific `FAIL`.
+All 72 reasoner attempts failed uniformly while recording live-shaped usage metadata with `cannot pickle 'mappingproxy' object`. No condition-specific recommendation conclusion is justified. Checkpoint 178 isolates the defect to attempt-metadata serialization and freezes the run as incomplete evidence, not scientific `FAIL`.
 
-The consumed launch authorization, temporary default-branch target workflow, observer, and preservation helper have been retired after raw evidence preservation. Issue #56 is closed as completed. No replacement live execution is authorized at this boundary.
+Checkpoint 179 prospectively reproduced and repaired that exact instrumentation boundary.
+
+Red-before-green reproduction:
+
+```text
+test-only head             7cf41dfd5785d754fa62096ec9bd410b75b5f044
+Specification 021 CI       32731748120  failure
+Ubuntu                     97445281173  failure
+Windows                    97445280966  failure
+```
+
+The provider-free fake reasoner and judge were given non-null live-shaped `raw_provider_usage`. Before the production repair the complete design became incomplete on both operating systems, matching the live failure mechanism.
+
+Validated minimal repair:
+
+```text
+repair head                              44983ab9af4b0b3739043466a19541ae2ac9e7ed
+Specification 021 CI                     32732513065  success
+Ubuntu                                   97447719364  success
+Windows                                  97447719596  success
+Current routing consistency              32732513022  success
+Checkpoint metadata                      32732513054  success
+V1 autonomous live experiment launcher   32732513183  success
+V1 reasoning context value               32732513095  success
+V1 blocking calibration diagnostic       32732513090  success
+V1 disposition semantics diagnostic      32732512948  success
+```
+
+The repair explicitly serializes `ReasoningUsage` fields and recursively copies raw provider metadata into JSON-native containers for both reasoner and judge success-attempt records. It does not weaken the immutable application-layer `ReasoningUsage` model and does not change frozen experiment science.
+
+The consumed launch authorization, temporary default-branch target workflow, observer, preservation helper, and temporary repair helpers have been retired. Issues #56-#59 are closed. No replacement live execution is authorized at this boundary.
 
 ---
 
@@ -321,13 +349,13 @@ final frontend stack and Cockpit implementation details
 
 ```text
 1. keep run 32727241852 immutable as INCOMPLETE evidence
-2. replace only unsafe usage attempt-metadata serialization with explicit JSON-safe serialization
-3. cover both reasoner and judge attempt recording with non-null live-shaped raw_provider_usage regression tests
-4. validate the repair on Ubuntu and Windows with no provider credential
-5. run inherited accepted-seam checks on the exact repaired head
-6. freeze a new exact live-source boundary only after all required checks pass
-7. use a new Specification 018 launch ID for any replacement live run
-8. preserve any replacement artifact before interpretation
+2. validate the fully reconciled Checkpoint 179 head with Specification 021 and inherited accepted-seam CI
+3. freeze a new exact replacement live-source boundary and dedicated source ref only after those checks pass
+4. retain the original live source/ref as immutable historical provenance
+5. only then prepare a fresh one-shot Specification 018 authorization if a replacement run is explicitly authorized
+6. use a new launch ID; never reuse spec021-dependency-backed-recommendation-value-001
+7. preserve any replacement artifact before interpretation
+8. classify only with the frozen Specification 021 gates if the replacement design completes with integrity
 9. do not modify or rescore Specification 021 science or Specifications 015-020
 ```
 
@@ -344,6 +372,7 @@ docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_p
 docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
 docs/checkpoints/177_specification_021_live_source_frozen.md
 docs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md
+docs/checkpoints/179_specification_021_usage_serialization_repair_cross_platform_passed.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
