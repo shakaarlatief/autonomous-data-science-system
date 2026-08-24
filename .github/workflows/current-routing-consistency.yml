@@ -1,0 +1,41 @@
+name: Current routing consistency
+
+on:
+  push:
+    branches:
+      - v1-routing-consistency-guard
+      - v1-frontend-spike
+    paths:
+      - docs/current_routing.json
+      - README.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/checkpoints/**
+      - scripts/check_current_routing.py
+      - .github/workflows/current-routing-consistency.yml
+  pull_request:
+    branches:
+      - v1-frontend-spike
+    paths:
+      - docs/current_routing.json
+      - README.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/checkpoints/**
+      - scripts/check_current_routing.py
+      - .github/workflows/current-routing-consistency.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate-current-routing:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate routing manifest and human-facing pointers
+        run: python scripts/check_current_routing.py
