@@ -23,12 +23,12 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            162
-active branch         v1-frontend-spike
-active PR             none
-promoted V1 head      9fd2243c38a8f0f010396847f519e115d30b8f58
-current boundary      Specification 018 governed autonomous live-experiment
-                      launcher promoted to integration
+checkpoint            166
+active branch         v1-spec019-failure-preservation
+active PR             #43 preservation-only
+promoted V1 head      ecf37585f576a3c4fd84a884dee4650b52ab1519
+current boundary      Specification 019 complete live result = FAIL
+                      negative evidence preserved without implementation promotion
 ```
 
 Current progression:
@@ -55,10 +55,13 @@ Specification 017
     historical evidence preserved; implementation rejected
 
 Specification 018
-    governed autonomous live-experiment launcher supported
-    exact cross-platform provider-free CI passed
-    owner issue -> launcher -> workflow_dispatch -> probe passed
-    no manual Actions UI click and no provider call required
+    governed autonomous live-experiment launcher supported and promoted
+
+Specification 019
+    system-owned-provenance recommendation/action rerun completed
+    provenance instrumentation worked
+    frozen advancement outcome FAIL
+    implementation rejected; preservation-only integration in progress
 ```
 
 For exact continuation, start with:
@@ -66,9 +69,9 @@ For exact continuation, start with:
 ```text
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-docs/checkpoints/162_governed_autonomous_launcher_promoted_to_integration.md
-docs/checkpoints/161_governed_autonomous_live_experiment_launcher_end_to_end_gate_passed.md
-docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
+docs/checkpoints/166_specification_019_live_result_failed.md
+experiments/system_owned_provenance_recommendation_action_value/
+    V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
 ---
@@ -145,7 +148,7 @@ reusable methodological knowledge
     -> measured real reasoning
 ```
 
-The next production-facing recommendation/action layer remains unpromoted after the Specification 017 incomplete execution.
+The production-facing recommendation/action layer remains unpromoted after Specifications 015, 017, and 019 failed or incomplete recommendation-value attempts.
 
 Primary foundations:
 
@@ -170,6 +173,18 @@ D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
 The governed reusable-knowledge round-trip is closed across SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127.
 
 Specification 008 promotes the **Project Cockpit** as the V1 primary immersive active-work interaction model. It remains the intended user-facing environment for chat, project navigation, analytical workspaces, evidence, recommendations, decisions, and project state. Final frontend/chart/canvas choices and production backend/API architecture remain open.
+
+Specification 018 promotes the first bounded governed live-experiment control plane:
+
+```text
+owner-created request
+    -> repository authorization registry
+    -> exact owner/source/CI/duplicate checks
+    -> allowlisted workflow_dispatch
+    -> independently validating target workflow
+```
+
+The launcher itself receives no provider credential and does not authorize arbitrary commands, workflows, refs, prompts, models, or secrets from issue text.
 
 ---
 
@@ -198,11 +213,15 @@ This does not establish a universal context budget or final provider/model.
 
 ---
 
-## Recommendation/action evidence so far
+## Recommendation/action evidence
 
-Specification 015 was the first three-condition recommendation/action-value test. Its frozen advancement result was `FAIL`, localized to an exact `DEFER` versus `NOT_NOW` distinction. The failed implementation was not promoted.
+### Specification 015
 
-Specification 016 isolated that semantic boundary prospectively. When DEFER was represented as an already-justified action waiting on one exact activating trigger, the live diagnostic produced:
+The first three-condition recommendation/action-value experiment classified `FAIL`. The failed implementation was not promoted. The main discrepancy was a preregistered `DEFER` versus `NOT_NOW` boundary.
+
+### Specification 016
+
+A prospective construct-validity diagnostic then showed that DEFER-like sequencing can be made reliably distinguishable when it is represented as an already-justified action waiting on one exact activating dependency:
 
 ```text
 36 / 36 exact dispositions correct
@@ -212,13 +231,14 @@ Specification 016 isolated that semantic boundary prospectively. When DEFER was 
 DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
-The bounded lesson is not that DEFER/NOT_NOW are final production enums. It is that deterministic sequencing should carry an explicit dependency relation.
+The bounded lesson is structural, not a final production-enum decision: deterministic sequencing should carry an explicit activating relation when that distinction matters.
 
-Specification 017 then returned to the system-value comparison with prospectively relation-backed sequencing. Its first live run was incomplete rather than scientifically classified:
+### Specification 017
+
+The relation-backed recommendation/action comparison then ended incomplete:
 
 ```text
 run                         32656446705
-source head                 bf041f4b4a485382d0e6e5c508ad916199601ee8
 reasoner outputs            29 / 36
 judge outputs               29 / 36
 provider attempts           77 / 90
@@ -227,9 +247,7 @@ execution integrity         true
 advancement outcome         none
 ```
 
-All SELECTIVE and FULL_HORIZON reasoner outputs succeeded. GENERIC completed 5/12. The remaining GENERIC attempts repeatedly placed the requested reasoning-function label into the model-authored `methodological_basis`, while the frozen GENERIC condition supplied zero reusable knowledge revisions and therefore required that field to be empty.
-
-Observed boundary:
+The failure mode exposed an instrumentation distinction:
 
 ```text
 reasoning function / task profile
@@ -237,53 +255,113 @@ reasoning function / task profile
 reusable knowledge stable-key provenance
 ```
 
-The system already owns exact context provenance. The next design must not make completion depend on an unnecessary duplicate model-authored provenance representation.
+Model-authored `methodological_basis` was an unnecessary duplicate of context provenance that the system already knew exactly.
 
-No Specification 017 `PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM`, `SAFE_BUT_NOT_DIFFERENTIATED`, or `FAIL` classification is assigned because the complete matched design was not obtained.
+### Specification 019
+
+Specification 019 prospectively repaired that boundary by keeping exact supplied-context provenance system-owned while leaving recommendation content model-owned.
+
+The governed live run completed the full frozen design:
+
+```text
+source                    6b5e6237b738250458550f95c9f3a6b0d51e86ec
+run                       32664534864
+reasoner outputs          36 / 36
+judge outputs             36 / 36
+provider attempts         72 / 90
+retries                   0
+execution integrity       true
+```
+
+Frozen aggregate result:
+
+```text
+                         GENERIC        SELECTIVE       FULL_HORIZON
+exact accuracy           0.944444       0.916667        0.944444
+semantic score           0.950000       0.950000        0.950000
+blocking false positives 4              6               4
+```
+
+Frozen outcome:
+
+```text
+absolute gates           FAIL
+relative gates           FAIL
+expansion gates          FAIL
+positive value signals   0
+advancement outcome      FAIL
+```
+
+The central recommendation-calibration problem was RB-02. SELECTIVE repeatedly promoted two useful model-comparison actions from expected `RECOMMENDED` to `BLOCKING_REQUIRED`, while correctly preserving the DEFER dependency for later tuning. GENERIC and FULL_HORIZON showed the same tendency less consistently, so SELECTIVE crossed the frozen per-case non-inferiority margin and accumulated more blocking-scope false positives than FULL_HORIZON.
+
+RB-04 also missed the preregistered per-case semantic floor in all three conditions because the responses omitted one explicit training-only preprocessing/leakage-prevention obligation. That common ceiling does not implicate SELECTIVE specifically, but the frozen contract does not permit a post-hoc exemption.
+
+The Specification 019 recommendation/action implementation is therefore not promoted.
 
 Primary evidence:
 
 ```text
-docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
-experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705/
+docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+docs/checkpoints/166_specification_019_live_result_failed.md
+experiments/system_owned_provenance_recommendation_action_value/
+    V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
+
+---
+
+## System-owned provenance boundary
+
+Specification 019 did provide positive bounded evidence for one architecture distinction:
+
+```text
+SYSTEM-OWNED PROVENANCE
+    exact supplied stable_key@revision_id
+    methodology payload digest and byte count
+    treatment identity
+
+MODEL-OWNED CONTENT
+    dispositions
+    dependency pointers
+    blocked scopes
+    clarifications
+    rationales
+```
+
+The complete 36-output design ran without provenance-induced schema failures or retries. Exact supplied-context provenance should remain a deterministic system trace rather than a mandatory duplicate model-authored result field.
+
+This is an instrumentation lesson, not a recommendation-value promotion signal.
 
 ---
 
 ## Next architecture boundary
 
-The control-plane problem is now boundedly solved: future explicitly authorized frozen experiments can be launched through the repository-governed Specification 018 mechanism rather than by asking the user to press the GitHub Actions button.
-
-The next scientific boundary returns to recommendation/action value. The next experiment must separate:
+The next scientific target is narrower than another generic recommendation rerun:
 
 ```text
-SYSTEM TRACE
-    exact supplied stable_key@revision_id
-    context digest
-    treatment identity
-
-MODEL RESULT
-    action dispositions
-    dependency pointers
-    scopes
-    clarifications
-    rationales
+what makes justified work merely RECOMMENDED
+    versus genuinely BLOCKING_REQUIRED
+for an exact defended downstream scope?
 ```
 
-Before any provider-backed launch, the next experiment must be preregistered, its exact implementation head must pass provider-free gates, and one exact launch authorization must be added to the repository registry.
+A successor experiment should prospectively test whether blocking status needs stronger explicit system-owned dependency/claim-scope structure or another bounded calibration mechanism. It must preserve strong GENERIC and FULL_HORIZON controls, retain the system-owned provenance boundary, and avoid tuning from repeated Specification 019 outputs.
+
+No new provider-backed recommendation experiment is currently authorized.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. preregister the next recommendation/action-value experiment
-2. make exact supplied-context provenance system-owned
-3. preserve Specification 017 scientific truth without tuning from partial scores
-4. freeze the new fixture, gates, call plan, and checkpoint before implementation
-5. implement and validate provider-free
-6. authorize and launch through Specification 018 only after the exact head is green
+1. validate and merge preservation-only PR #43 into v1-frontend-spike
+2. keep the retired Specification 019 authorization absent from main
+3. keep temporary Specification 019 observer/preservation/live helpers removed from main
+4. close failed implementation PR #33 without merge
+5. reconcile the resulting integration head to Checkpoint 166
+6. preregister the next recommendation/blocking-calibration experiment before implementation
+7. validate its exact implementation head provider-free
+8. authorize any future live run only through Specification 018 after the exact head is green
+9. make no new recommendation/action provider call before those conditions are met
 ```
 
 ---
