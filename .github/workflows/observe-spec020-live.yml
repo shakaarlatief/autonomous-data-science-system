@@ -1,0 +1,41 @@
+name: Observe Specification 020 live run
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: read
+  issues: write
+
+jobs:
+  observe:
+    if: ${{ github.event.issue.title == '[ADS OBSERVE] spec020-blocking-calibration-001' && github.actor == github.repository_owner }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Resolve exact dispatched run
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: '82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a'
+          WORKFLOW_FILE: 'v1-blocking-calibration-live.yml'
+        run: |
+          set -euo pipefail
+          run_json=''
+          for attempt in $(seq 1 20); do
+            run_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${WORKFLOW_FILE}/runs?event=workflow_dispatch&per_page=100" \
+              --jq ".workflow_runs[] | select(.head_sha == \"${SOURCE_SHA}\") | {id,html_url,status,conclusion,head_sha,run_attempt,created_at} | @json" \
+              | head -n 1 || true)"
+            if [ -n "${run_json}" ]; then
+              break
+            fi
+            sleep 3
+          done
+          if [ -z "${run_json}" ]; then
+            gh api "repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+              -f body='Specification 020 observer did not resolve a dispatched run for the frozen source.'
+            exit 1
+          fi
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+            -f body="Specification 020 target run: \`${run_json}\`."
