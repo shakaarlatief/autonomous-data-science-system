@@ -43,7 +43,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [ "${{ inputs.launch_id }}" != "spec021-dependency-backed-recommendation-value-001" ]; then
+          if [ "${{ inputs.launch_id }}" != "spec021-dependency-backed-recommendation-value-002" ]; then
             echo "Unexpected Specification 021 launch identifier."
             exit 1
           fi
