@@ -23,17 +23,18 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            176
+checkpoint            177
 active branch         v1-dependency-backed-recommendation-value
 active PR             #55 draft
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 exact pre-live boundary frozen;
-                      minimal live-capable plumbing next
+current boundary      Specification 021 exact live-capable source frozen;
+                      one governed authorization next
 latest experiment     Specification 021
-outcome               PRE_LIVE_BOUNDARY_FROZEN
-next                  implement only the separated live wrapper and target workflow,
-                      validate the exact live-capable source provider-free,
-                      and freeze it before any authorization or provider call
+outcome               LIVE_SOURCE_FROZEN
+next                  validate this checkpointed routing head,
+                      expose the identical target workflow on main,
+                      install one exact Specification 018 authorization,
+                      and create one owner launch request
 ```
 
 Current experimental progression:
@@ -50,7 +51,9 @@ Specification 019  system-owned-provenance recommendation rerun completed; FAIL 
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 Checkpoint 173     machine-checkable current-routing hardening promoted and closed
 Specification 021  dependency-backed recommendation-value contract frozen;
-                   provider-free implementation green; exact pre-live boundary frozen; not run live
+                   provider-free implementation green;
+                   exact pre-live and live-source boundaries frozen;
+                   not yet run live
 ```
 
 For exact continuation, start with:
@@ -62,6 +65,7 @@ docs/current_routing.json
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
 docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
+docs/checkpoints/177_specification_021_live_source_frozen.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
@@ -173,7 +177,7 @@ D-028  SQLite-centered local-first operational architecture
 D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
 D-031  governed deterministic JSON / JSON Schema knowledge interchange
-D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
+D-032  OpenAI Agents SDK behind ADS-owned ReasoningRuntime
 ```
 
 The governed reusable-knowledge round-trip is closed across SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127.
@@ -321,7 +325,7 @@ The model should not be required to reproduce authoritative context provenance t
 
 ---
 
-## Specification 021: exact pre-live boundary frozen
+## Specification 021: exact live source frozen
 
 Specification 021 is the clean prospective recommendation-value test after the known sequencing, provenance, and blocking-calibration confounds were separately addressed.
 
@@ -385,22 +389,27 @@ incomplete / integrity failed -> no advancement classification
 
 `SAFE_BUT_NOT_DIFFERENTIATED` is intentionally legitimate. A strong generic reasoner may already know the small current methodological universe. The benchmark must not be rewritten simply to force SELECTIVE to win.
 
-Checkpoint 175 records the exact provider-free implementation boundary at `8e199c29e3f082b353f92f27868aedca0ebbbf74`. Checkpoint 176 freezes the fully reconciled exact pre-live source after that implementation:
+Checkpoint 175 records the exact provider-free implementation boundary at `8e199c29e3f082b353f92f27868aedca0ebbbf74`. Checkpoint 176 freezes the fully reconciled pre-live source at `aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7`.
+
+Checkpoint 177 freezes the exact provider-capable source and dedicated source ref:
 
 ```text
-pre-live source                            aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
-Specification 021 provider-free CI         32723507005  success
-Ubuntu job                                 97419720247  success
-Windows job                                97419720501  success
-Current routing consistency                32723507062  success
-Checkpoint metadata                        32723507010  success
-V1 reasoning context value                 32723507019  success
-V1 disposition semantics diagnostic        32723507036  success
-V1 blocking calibration diagnostic         32723507108  success
-V1 autonomous live experiment launcher CI 32723507344  success
+live source                                b589bad975880b2d3cccc3596fc82539b1b96577
+live-source ref                            v1-spec021-dependency-backed-recommendation-value-live-source
+Specification 021 provider-free CI         32724242554  success
+Windows job                                97421896915  success
+Ubuntu job                                 97421897042  success
+Current routing consistency                32724242550  success
+Checkpoint metadata                        32724242502  success
+V1 reasoning context value                 32724242572  success
+V1 disposition semantics diagnostic        32724242509  success
+V1 blocking calibration diagnostic         32724242515  success
+V1 autonomous live experiment launcher CI 32724242570  success
 ```
 
-**No Specification 021 provider call is authorized by Checkpoint 176.** It permits only the next engineering step: adding a separated minimal live wrapper and target workflow without changing frozen science.
+The live source adds only the separated wrapper, tightly scoped target workflow, provider-free tests, and a lifecycle correction that changes the final technical invariant from "no live surface" to "no repository authorization" after Checkpoint 176 expressly permitted the live wrapper/workflow. Frozen science is unchanged.
+
+**No Specification 021 provider call is authorized by Checkpoint 177.** The next legitimate boundary is one exact Specification 018 repository authorization and owner launch request after the checkpointed routing head is green.
 
 ---
 
@@ -430,14 +439,16 @@ Markdown remains the substantive source of project knowledge. The manifest is no
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 176 routing reconciliation head
-2. implement only the separated Specification 021 live wrapper/entry path and target workflow
-3. add provider-free tests proving live plumbing does not alter frozen science
-4. validate the live-capable exact source with Specification 021 and inherited accepted-seam CI
-5. freeze a later exact live-source checkpoint only if all required gates pass
-6. only then install one exact Specification 018 authorization and create one owner launch request
-7. preserve raw provider evidence before scientific interpretation
-8. do not modify or rescore Specifications 015-020
+1. validate the exact Checkpoint 177 routing reconciliation head
+2. expose the identical frozen Specification 021 target workflow on main
+3. add one exact enabled Specification 018 authorization on main
+4. create one owner-authored [ADS LIVE] issue with only the frozen launch ID and confirmation
+5. verify launcher acceptance and exact target run identity
+6. make no scientific interpretation from partial provider output
+7. preserve the complete raw artifact before scientific interpretation
+8. classify only with the frozen Specification 021 gates
+9. retire the one-shot main authorization and target-workflow exposure after preservation
+10. do not modify or rescore Specifications 015-020
 ```
 
 ---
