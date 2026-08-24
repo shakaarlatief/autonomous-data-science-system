@@ -1,4 +1,36 @@
 {
   "schema_version": 1,
-  "authorizations": []
+  "authorizations": [
+    {
+      "launch_id": "spec020-blocking-calibration-001",
+      "enabled": true,
+      "owner_login": "shakaarlatief",
+      "workflow_file": "v1-blocking-calibration-live.yml",
+      "ref": "v1-spec020-blocking-calibration-live-source",
+      "expected_source_sha": "82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a",
+      "confirmation": "RUN_SPEC_020_FROZEN",
+      "required_ci_runs": [
+        {
+          "run_id": 32701656679,
+          "workflow_name": "V1 blocking calibration diagnostic"
+        },
+        {
+          "run_id": 32701656608,
+          "workflow_name": "V1 reasoning context value"
+        },
+        {
+          "run_id": 32701656627,
+          "workflow_name": "V1 disposition semantics diagnostic"
+        },
+        {
+          "run_id": 32701656597,
+          "workflow_name": "V1 autonomous live experiment launcher CI"
+        },
+        {
+          "run_id": 32701656653,
+          "workflow_name": "Checkpoint metadata"
+        }
+      ]
+    }
+  ]
 }
