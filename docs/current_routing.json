@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 176,
+  "current_checkpoint": 177,
   "active_development_branch": "v1-dependency-backed-recommendation-value",
   "active_pr": 55,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "a639cfc570290a2169425f43078bbb242fa398e9",
   "latest_specification": "021",
-  "latest_experiment_outcome": "PRE_LIVE_BOUNDARY_FROZEN",
-  "current_boundary": "spec021-pre-live-boundary-frozen-live-plumbing-next"
+  "latest_experiment_outcome": "LIVE_SOURCE_FROZEN",
+  "current_boundary": "spec021-live-source-frozen-authorization-next"
 }
