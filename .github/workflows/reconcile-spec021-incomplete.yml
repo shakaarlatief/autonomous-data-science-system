@@ -1,0 +1,33 @@
+name: Reconcile Specification 021 incomplete
+
+on:
+  push:
+    branches: [v1-dependency-backed-recommendation-value]
+    paths:
+      - .github/workflows/reconcile-spec021-incomplete.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-dependency-backed-recommendation-value
+          fetch-depth: 1
+      - name: Reconcile canonical routing documents
+        run: python scripts/reconcile_spec021_incomplete.py
+      - name: Validate routing consistency
+        run: python scripts/check_current_routing.py
+      - name: Commit reconciled boundary and remove one-shot helpers
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md docs/CURRENT_STATE.md docs/KNOWLEDGE_MAP.md docs/OPEN_QUESTIONS.md docs/current_routing.json
+          git rm scripts/reconcile_spec021_incomplete.py .github/workflows/reconcile-spec021-incomplete.yml
+          git commit -m 'Reconcile Specification 021 incomplete live boundary'
+          git push origin HEAD:v1-dependency-backed-recommendation-value
