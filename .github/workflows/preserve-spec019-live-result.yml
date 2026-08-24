@@ -95,7 +95,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864
+          git add -f experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864
           git commit -m 'Preserve Specification 019 live result'
           git push origin HEAD:v1-recommendation-action-value-system-provenance
 
