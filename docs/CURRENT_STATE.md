@@ -1,14 +1,14 @@
 # Current State
 
-**Checkpoint:** 176  
+**Checkpoint:** 177  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, Specification 021 exact pre-live boundary frozen; minimal live-capable plumbing next  
+**Active PR:** #55 draft, Specification 021 exact live-capable source frozen; one governed authorization next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 is prospectively frozen, provider-free green, and now has an exact reconciled pre-live boundary. It has not run against a provider.  
-**Latest experiment status:** Specification 021 `PRE_LIVE_BOUNDARY_FROZEN`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 is prospectively frozen, provider-free green, and now has exact reconciled pre-live and live-capable source boundaries. It has not run against a provider.  
+**Latest experiment status:** Specification 021 `LIVE_SOURCE_FROZEN`  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the exact Checkpoint 176 routing reconciliation head, then add only the separated Specification 021 live wrapper and target workflow, validate that exact live-capable source provider-free, and freeze it before any authorization or provider call.
+**Immediate project priority:** validate the exact Checkpoint 177 routing reconciliation head, expose the identical frozen target workflow on `main`, install one exact Specification 018 authorization, create one owner launch request, and preserve the complete raw provider artifact before scientific interpretation.
 
 ## Active ChatGPT development context
 
@@ -18,7 +18,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 05 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. No Specification 021 provider call is currently authorized.
+Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. Checkpoint 177 itself authorizes zero Specification 021 provider calls.
 
 ---
 
@@ -73,7 +73,7 @@ reusable methodological knowledge
     -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
     -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PROMOTED]
-    -> dependency-backed recommendation-value experiment 021 [PRE-LIVE FROZEN; NOT RUN LIVE]
+    -> dependency-backed recommendation-value experiment 021 [LIVE SOURCE FROZEN; NOT RUN LIVE]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -163,7 +163,7 @@ Markdown remains the substantive knowledge source. The manifest is not a second 
 
 ---
 
-## Specification 021 exact pre-live boundary
+## Specification 021 exact live-source boundary
 
 Frozen design artifacts remain:
 
@@ -242,26 +242,40 @@ validated implementation head             8e199c29e3f082b353f92f27868aedca0ebbbf
 Specification 021 provider-free run        32722934829  success
 ubuntu job                                 97418007046  success
 windows job                                97418007218  success
-dedicated tests                            8 passed on each OS
-full V1 Python suite                       125 passed, 2 skipped on each OS
 ```
 
-Checkpoint 176 freezes the fully reconciled exact pre-live source:
+Checkpoint 176 froze the fully reconciled pre-live source:
 
 ```text
-validated pre-live source                  aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
-Specification 021 provider-free run        32723507005  success
-ubuntu job                                 97419720247  success
-windows job                                97419720501  success
-Current routing consistency                32723507062  success
-Checkpoint metadata                        32723507010  success
-V1 reasoning context value                 32723507019  success
-V1 disposition semantics diagnostic        32723507036  success
-V1 blocking calibration diagnostic         32723507108  success
-V1 autonomous live experiment launcher CI 32723507344  success
+aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
 ```
 
-At that source, the Specification 021 live wrapper, target workflow, and main authorization are absent. Checkpoint 176 authorizes only implementation of those separated execution-plumbing surfaces, not a provider call.
+Checkpoint 177 freezes the exact live-capable source and historical source ref:
+
+```text
+validated live source                      b589bad975880b2d3cccc3596fc82539b1b96577
+live-source ref                            v1-spec021-dependency-backed-recommendation-value-live-source
+Specification 021 provider-free run        32724242554  success
+windows job                                97421896915  success
+ubuntu job                                 97421897042  success
+Current routing consistency                32724242550  success
+Checkpoint metadata                        32724242502  success
+V1 reasoning context value                 32724242572  success
+V1 disposition semantics diagnostic        32724242509  success
+V1 blocking calibration diagnostic         32724242515  success
+V1 autonomous live experiment launcher CI 32724242570  success
+```
+
+The live source contains only separated provider execution plumbing around the frozen experiment. The first live-plumbing validation exposed one lifecycle mismatch: the implementation-stage `DBRA-INV-24_no_live_surface` invariant correctly became incompatible with Checkpoint 176's permission to add the live wrapper/workflow. It was replaced by `DBRA-INV-24_pre_authorization_boundary`, which requires the one-shot repository authorization to remain absent until the live source is frozen. Frozen scientific authority did not change.
+
+At Checkpoint 177:
+
+```text
+main target-workflow exposure   absent
+Spec021 registry authorization  absent
+Spec021 launch issue            absent
+provider calls                  0
+```
 
 No Specification 021 scientific result exists yet.
 
@@ -293,14 +307,16 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 176 routing reconciliation head
-2. implement only the separate Specification 021 live wrapper/entry path and target workflow
-3. add provider-free tests proving the live plumbing leaves frozen science unchanged
-4. validate the live-capable exact source with Specification 021 and inherited accepted-seam CI
-5. freeze an exact live-source checkpoint only if all required gates pass
-6. only then expose/authorize one exact governed launch through main
-7. preserve all raw provider evidence before scientific interpretation
-8. do not modify or rescore Specifications 015-020
+1. validate the exact Checkpoint 177 routing reconciliation head
+2. expose the identical frozen Specification 021 target workflow on main
+3. add one exact enabled Specification 018 authorization on main using only exact green run IDs from b589bad975880b2d3cccc3596fc82539b1b96577
+4. create one owner-authored [ADS LIVE] issue with only the frozen launch ID and confirmation
+5. verify launcher acceptance and exact target run identity
+6. make no scientific interpretation from partial outputs
+7. preserve the complete raw provider artifact before scientific interpretation
+8. classify only with the frozen Specification 021 gates
+9. retire the one-shot authorization/default-branch target exposure after preservation
+10. do not modify or rescore Specifications 015-020
 ```
 
 ## Minimum reading for continuation
@@ -314,9 +330,11 @@ docs/checkpoints/173_routing_consistency_hardening_promoted_and_closed.md
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
 docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
+docs/checkpoints/177_specification_021_live_source_frozen.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
+docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```
