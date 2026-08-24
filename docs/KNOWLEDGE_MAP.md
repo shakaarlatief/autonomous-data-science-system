@@ -3,11 +3,11 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 174  
+**Current checkpoint:** 175  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, frozen Specification 021 recommendation-value experiment  
+**Active PR:** #55 draft, Specification 021 provider-free implementation green; governed live boundary next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Latest experiment:** Specification 021 `FROZEN_NOT_RUN`
+**Latest experiment:** Specification 021 `PROVIDER_FREE_IMPLEMENTATION_GREEN`
 
 ## Start here
 
@@ -91,8 +91,10 @@ Specification 020 / Checkpoints 167-171
 Checkpoints 172-173 / PR #54
     narrow machine-readable routing pointers + cross-platform contradiction guard accepted, promoted, and closed
 
-Specification 021 / Checkpoint 174 / PR #55
-    new dependency-backed recommendation-value research rationale, contract, and four-case benchmark frozen prospectively; provider-free implementation next; no provider call authorized
+Specification 021 / Checkpoints 174-175 / PR #55
+    new dependency-backed recommendation-value contract and benchmark frozen prospectively;
+    provider-free implementation passed Ubuntu and Windows on exact head 8e199c29e3f082b353f92f27868aedca0ebbbf74;
+    no provider call authorized; separate governed pre-live boundary next
 ```
 
 ---
@@ -290,7 +292,7 @@ exact unresolved requirement
 
 This does not promote production recommendation enums or prove methodological-context recommendation value.
 
-### Specification 021, active and not run
+### Specification 021, provider-free implementation green
 
 Primary sources:
 
@@ -299,12 +301,13 @@ docs/research/029_dependency_backed_recommendation_value_design.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 ```
 
 Current status:
 
 ```text
-FROZEN_NOT_RUN
+PROVIDER_FREE_IMPLEMENTATION_GREEN
 ```
 
 The frozen design keeps GENERIC / SELECTIVE / FULL_HORIZON and the same ten-asset methodological universe, while making the known disposition relations explicit and system-owned:
@@ -337,7 +340,20 @@ SAFE_BUT_NOT_DIFFERENTIATED
 FAIL
 ```
 
-No provider call is authorized before provider-free implementation and exact green cross-platform evidence are checkpointed.
+Exact provider-free implementation evidence:
+
+```text
+validated implementation head             8e199c29e3f082b353f92f27868aedca0ebbbf74
+Specification 021 provider-free CI         32722934829  success
+Ubuntu job                                 97418007046  success
+Windows job                                97418007218  success
+dedicated tests                            8 passed per OS
+full V1 Python suite                       125 passed, 2 skipped per OS
+```
+
+The fake-runtime `SAFE_BUT_NOT_DIFFERENTIATED` classification is a deterministic machinery self-test only. It is not the Specification 021 scientific result.
+
+No provider call is authorized. A separate pre-live boundary must be frozen after this reconciled Checkpoint 175 head is exact-head green.
 
 ---
 
@@ -396,13 +412,13 @@ Markdown remains the substantive source of truth. The routing manifest is not a 
 ## Current exact continuation
 
 ```text
-A. implement the frozen Specification 021 provider-free contract
-B. validate every blocking/defer relation and matched-condition payload mechanically
-C. implement action-local exact pointer validation, system-owned methodology provenance, deterministic metrics, and blinded judge payload construction
-D. prove a complete 36-reasoner + 36-judge fake-runtime design
-E. add dedicated Ubuntu/Windows provider-free CI with no provider credential
-F. checkpoint the exact green implementation boundary
-G. only then freeze any governed live authorization
+A. validate the exact Checkpoint 175 reconciliation head provider-free and cross-platform
+B. only after that exact head is green, freeze a separate Specification 021 pre-live boundary
+C. add the minimal live runner and target workflow only after that pre-live freeze
+D. validate the live-capable exact source provider-free before authorization
+E. freeze exact source SHA, green CI evidence, target workflow, confirmation token, and Specification 018 authorization evidence
+F. authorize at most one exact governed live run through main
+G. preserve raw provider evidence before scientific interpretation
 H. do not modify or rescore Specifications 015-020
 ```
 
@@ -437,5 +453,6 @@ H. do not modify or rescore Specifications 015-020
 171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED
 172  machine-checkable current-routing consistency guard passed; promotion candidate
 173  routing-consistency hardening promoted and closed after final exact integration push validation
-174  Specification 021 dependency-backed recommendation-value contract and benchmark frozen; not run
+174  Specification 021 dependency-backed recommendation-value contract and benchmark frozen
+175  Specification 021 provider-free implementation gate passed cross-platform; no live authorization
 ```
