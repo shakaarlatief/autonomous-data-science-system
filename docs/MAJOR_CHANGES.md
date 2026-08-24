@@ -493,3 +493,11 @@ docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnost
 docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
 experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
 ```
+
+## 2026-08-24: Specification 021 negative result preserved without architecture pivot
+
+Specification 021 completed a relation-backed supplied-action recommendation/disposition experiment with frozen outcome `FAIL`. The deterministic disposition and pointer layer was perfect across GENERIC, SELECTIVE, and FULL_HORIZON, but one preregistered SELECTIVE per-case semantic floor failed and no prospectively frozen SELECTIVE recommendation-value signal was observed.
+
+The failed recommendation implementation did not earn promotion. A preservation-only branch/PR carries the frozen contract, fixture, raw evidence, stable result, and historical checkpoints.
+
+A subsequent architecture review clarified that the benchmark had already supplied much of the decision space and therefore did not test the broader ADS capability of discovering and surfacing methodological pathways from project state. Research 030 and Checkpoint 183 preserve that distinction. The core methodological-navigation vision remains open for direct system-level evaluation rather than being rejected on the downstream disposition result.

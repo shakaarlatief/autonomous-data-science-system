@@ -404,3 +404,19 @@ Knowledge role, maturity, enforcement authority, scope confidence, provenance, c
 **Status:** Substantially refined, not resolved end to end
 
 Foundation 008, Foundation 020, D-031, Specification 004, and Research 028 establish scope-aware, revisioned, provenance-aware, candidate-versus-accepted governance principles. Future automation may propose extraction, relations, contradictions, coverage gaps, or revisions, but automatic learning/promotion remains deliberately unimplemented.
+
+## Specification 021 result: navigation value remains a distinct open question
+
+Specification 021 completed with frozen outcome `FAIL`, but the benchmark supplied the reasoning function, candidate actions, requirements, scopes, dependency/resolver relations, and defer relations to every condition. It therefore does not answer the system-level question of whether ADS can reduce the human burden of remembering and surfacing important methodological pathways from realistic evolving project state.
+
+The next architecture/evaluation review should distinguish:
+
+```text
+path discovery / coverage
+applicability / relevance
+concrete option generation
+prioritization / disposition
+model-facing context value
+```
+
+Do not collapse these into one GENERIC-vs-SELECTIVE recommendation score.

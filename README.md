@@ -23,15 +23,16 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            172
-active branch         v1-frontend-spike
-active PR             none
+checkpoint            184
+active branch         v1-spec021-negative-result-preservation
+active PR             #66
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      routing-consistency hardening promoted; final integration validation pending
-latest experiment     Specification 020
-outcome               BLOCKING_BOUNDARY_SUPPORTED
-next                  require final integration routing validation,
-                      then freeze a successor recommendation-value contract
+current boundary      Specification 021 negative-result preservation promotion candidate
+latest experiment     Specification 021
+outcome               FAIL
+next                  validate and merge preservation-only PR #66,
+                      close rejected implementation PR #55 without merge,
+                      then review methodological-navigation / coverage evaluation
 ```
 
 Current experimental progression:
@@ -46,7 +47,9 @@ Specification 017  relation-backed recommendation run incomplete; implementation
 Specification 018  governed autonomous live-experiment launcher supported/promoted
 Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
-Checkpoint 172     machine-checkable current-routing consistency guard green and promoted through PR #54
+Specification 021  complete supplied-action recommendation/disposition experiment FAIL; negative evidence preserved without implementation promotion
+Checkpoint 183     clarified that supplied-action disposition calibration does not test open-world methodological navigation / coverage
+Checkpoint 184     preservation-only promotion candidate for Specification 021 evidence and interpretation
 ```
 
 For exact continuation, start with:
@@ -55,9 +58,10 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/172_machine_checkable_current_routing_consistency_guard_passed.md
-docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
-experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/checkpoints/184_specification_021_negative_result_preservation_promotion_candidate.md
+docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
+docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
+experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
 ---
@@ -365,11 +369,12 @@ This hardening is not a justification for graph/vector preservation storage or w
 ## Exact continuation
 
 ```text
-1. require current-routing consistency to pass on this routing-sensitive v1-frontend-spike reconciliation
-2. close the Level-2 routing-consistency hardening boundary only if that exact integration head is green
-3. then freeze a successor recommendation-value experiment
-4. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
-5. do not modify or rescore Specifications 015-020
+1. validate preservation-only PR #66 on its exact head
+2. merge PR #66 only if the evidence/history-only boundary remains clean and green
+3. close rejected Specification 021 implementation PR #55 without merge
+4. reconcile v1-frontend-spike to the preserved Specification 021 FAIL boundary
+5. before any Specification 022 freeze, review how to test methodological navigation / coverage from realistic evolving project state
+6. do not modify or rescore Specifications 015-021
 ```
 
 ---
@@ -381,3 +386,17 @@ This repository is the project's durable source of truth.
 > **The chat is where we think. The repository is where the system remembers.**
 
 The project continues to follow one empirical rule: build the smallest mechanism that can test the architectural hypothesis, preregister what success means where possible, preserve failures and incomplete runs as evidence, and promote only what earns its complexity.
+
+## Specification 021 interpretation boundary
+
+The complete Specification 021 result is `FAIL`, but its scope is deliberately narrow. Every condition was already supplied with the explicit reasoning function, candidate action menu, requirements, downstream scopes, dependency/resolver relations, defer triggers, and sequencing relations. The experiment therefore tested downstream disposition calibration over an already-constructed decision space, not whether ADS can discover and surface the methodological option space from raw evolving project state.
+
+Research 030 and Checkpoint 183 preserve the guardrail:
+
+```text
+methodological navigation / coverage
+    !=
+downstream disposition calibration over an already supplied action set
+```
+
+GENERIC remains an essential experimental control, not an architectural replacement for the methodological-navigation brain described by Foundations 006, 017, 019, 020 and Research 028.
