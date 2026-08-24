@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 186  
+**Checkpoint:** 187  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-methodological-navigation-coverage-review`  
-**Active PR:** #67  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `ef6b45a84f43a5dfe33cf5c13351cb1235e6e661`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 complete the first deliberate architecture/evaluation review of the still largely untested state-driven methodological-navigation and coverage value proposition. Specification 022 is not frozen.  
+**Active development branch:** `v1-methodological-navigation-coverage-diagnostic`  
+**Active PR:** #68  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 moved the next evaluation upstream to state-driven methodological navigation and coverage. Research 032 / Checkpoint 187 resolve the principal design choices for the first project-state-to-methodological-horizon coverage diagnostic. Specification 022 is not frozen.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** align on the Research 031 evaluation architecture and resolve the open benchmark/oracle/condition/metric design choices before prospectively freezing any successor experiment.
+**Immediate project priority:** validate the Checkpoint 187 design boundary, then prospectively freeze the exact Specification 022 treatment universe, episodes, hidden oracle, representation map, runtime treatment, metrics, thresholds, seeds, and advancement gates before implementation.
 
 ## Active ChatGPT development context
 
@@ -208,11 +208,11 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the Checkpoint 186 review branch and routing
-2. align on Research 031's state-to-methodological-horizon architecture/evaluation decomposition
-3. resolve its open project-state projection, controlled-universe, hidden-oracle, condition, semantic-matching, noise, repetition, and gate questions
-4. only then prospectively freeze Specification 022
-5. do not rerun the same supplied-action benchmark merely to seek a SELECTIVE win
+1. validate the exact Checkpoint 187 / PR #68 reconciled design head
+2. prospectively author and freeze Specification 022 with exact universe, episodes, hidden oracle, representation map, runtime treatment, metrics, thresholds, seeds, and gates
+3. only after that frozen contract is green, implement provider-free experiment machinery and integrity tests
+4. do not authorize a provider-backed run until a later exact live-capable source is separately frozen and authorized through Specification 018
+5. do not rerun the supplied-action benchmark merely to seek a SELECTIVE win
 6. do not modify or rescore Specifications 015-021
 ```
 
@@ -223,6 +223,8 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/187_project_state_methodological_coverage_design_choices_resolved.md
+docs/research/032_project_state_to_methodological_horizon_coverage_diagnostic_design.md
 docs/checkpoints/186_methodological_navigation_coverage_review_completed.md
 docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
 docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
@@ -271,4 +273,4 @@ UNIVERSE COVERAGE
     -> MODEL-FACING CONTEXT VALUE
 ```
 
-The first successor experiment class should move upstream and begin from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. The leading candidate is a bounded project-state-to-methodological-horizon coverage diagnostic focused on Layers A and B. The exact Specification 022 contract remains open.
+The first successor experiment class should move upstream and begin from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. Research 032 / Checkpoint 187 now resolve the leading diagnostic design as four evolving episode families, a controlled 28-asset benchmark universe, separate hidden oracle and evaluator-only representation map, GENERIC / ADS_HORIZON / ORACLE_HORIZON conditions, matched one-call reasoner treatment, explicit catalog-gap accounting, blinded semantic matching, and reliability/noise metrics. The exact Specification 022 payloads, thresholds, runtime settings, seed, and gates remain to be frozen prospectively.

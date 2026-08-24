@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 186,
-  "active_development_branch": "v1-methodological-navigation-coverage-review",
-  "active_pr": 67,
+  "current_checkpoint": 187,
+  "active_development_branch": "v1-methodological-navigation-coverage-diagnostic",
+  "active_pr": 68,
   "promoted_integration_branch": "v1-frontend-spike",
-  "promoted_integration_sha": "ef6b45a84f43a5dfe33cf5c13351cb1235e6e661",
+  "promoted_integration_sha": "0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e",
   "latest_specification": "021",
   "latest_experiment_outcome": "FAIL",
-  "current_boundary": "question-a-architecture-review-completed-spec022-not-frozen"
+  "current_boundary": "question-a-diagnostic-design-resolved-spec022-not-frozen"
 }
