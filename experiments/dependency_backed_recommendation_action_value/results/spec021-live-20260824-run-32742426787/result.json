@@ -1,0 +1,226 @@
+{
+  "accepted_snapshot_digest": "d896eecd45745ca951ea01c81f81d313a8cb49dbd54fa6f9b713f4f9c1904933",
+  "accepted_stable_revision_pairs": [
+    [
+      "bagging",
+      "f0341774-efbb-48a7-b3c7-94820857c7e8"
+    ],
+    [
+      "class-imbalance",
+      "f30b1304-f5c0-4070-9f21-dc27945d866f"
+    ],
+    [
+      "ecdf",
+      "9b6b4a84-526f-4fba-9036-13ad3cc00896"
+    ],
+    [
+      "gradient-boosted-trees",
+      "1b9604fc-6cdb-4ff5-b4de-7aafaa157d89"
+    ],
+    [
+      "histogram",
+      "a5035424-0d67-4dfc-9491-dc73df2601ce"
+    ],
+    [
+      "missing-data",
+      "cfefb760-e70a-4b1a-bb6a-3393334b70fa"
+    ],
+    [
+      "prediction-moment",
+      "4a3189bb-b007-4efd-a2bd-04a8cc6a4d5c"
+    ],
+    [
+      "prediction-time-feature-eligibility",
+      "8b63f2cd-a1b7-4b2c-939b-5b146c5d7477"
+    ],
+    [
+      "random-forest",
+      "fefb0b89-52b5-4353-9eb0-331670c9211c"
+    ],
+    [
+      "temporal-validation",
+      "a952de3e-d761-4cab-9318-91b2f25f3231"
+    ]
+  ],
+  "advancement_outcome": "FAIL",
+  "authoritative_isolation": true,
+  "benchmark_id": "v1-dependency-backed-recommendation-action-value-v0.1",
+  "complete_scored_design": true,
+  "counts": {
+    "judge_failed_attempts": 0,
+    "planned_judge_outputs": 36,
+    "planned_reasoner_outputs": 36,
+    "reasoner_failed_attempts": 0,
+    "scored_observations": 36,
+    "successful_judge_outputs": 36,
+    "successful_reasoner_outputs": 36
+  },
+  "execution": {
+    "governed": true,
+    "mode": "live",
+    "specification": "021"
+  },
+  "execution_integrity": true,
+  "finished_at_utc": "2026-08-24T15:09:50.977349+00:00",
+  "gate_evaluation": {
+    "absolute_passed": false,
+    "aggregate_by_condition": {
+      "FULL_HORIZON": {
+        "blocking_false_positives": 0,
+        "blocking_pointer_errors": 0,
+        "critical_action_omissions": 0,
+        "defer_pointer_errors": 0,
+        "exact_disposition_accuracy": 1.0,
+        "over_recommendations": 0,
+        "semantic_score": 0.9500000000000001,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0
+      },
+      "GENERIC": {
+        "blocking_false_positives": 0,
+        "blocking_pointer_errors": 0,
+        "critical_action_omissions": 0,
+        "defer_pointer_errors": 0,
+        "exact_disposition_accuracy": 1.0,
+        "over_recommendations": 0,
+        "semantic_score": 0.9583333333333334,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0
+      },
+      "SELECTIVE": {
+        "blocking_false_positives": 0,
+        "blocking_pointer_errors": 0,
+        "critical_action_omissions": 0,
+        "defer_pointer_errors": 0,
+        "exact_disposition_accuracy": 1.0,
+        "over_recommendations": 0,
+        "semantic_score": 0.9500000000000001,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0
+      }
+    },
+    "expansion_passed": true,
+    "gate_results": {
+      "DBRA-G01": true,
+      "DBRA-G02": true,
+      "DBRA-G03": true,
+      "DBRA-G04": true,
+      "DBRA-G05": true,
+      "DBRA-G06": true,
+      "DBRA-G07": true,
+      "DBRA-G08": false,
+      "DBRA-G09": true,
+      "DBRA-G10": true,
+      "DBRA-G11": true,
+      "DBRA-G12": true,
+      "DBRA-G13": true,
+      "DBRA-G14": true,
+      "DBRA-G15": true,
+      "DBRA-G16": true,
+      "DBRA-G17": true,
+      "DBRA-G18": true,
+      "DBRA-G19": true,
+      "DBRA-G20": true,
+      "DBRA-G21": true,
+      "DBRA-G22": true,
+      "DBRA-G23": true
+    },
+    "outcome": "FAIL",
+    "per_case_exact_accuracy": {
+      "DBRA-01": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "DBRA-02": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "DBRA-03": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "DBRA-04": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      }
+    },
+    "per_case_semantic_score": {
+      "DBRA-01": {
+        "FULL_HORIZON": 0.8000000000000002,
+        "GENERIC": 0.8333333333333334,
+        "SELECTIVE": 0.8000000000000002
+      },
+      "DBRA-02": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "DBRA-03": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "DBRA-04": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      }
+    },
+    "relative_passed": true,
+    "value_signals": []
+  },
+  "plan_sha256": {
+    "judge": "850e39a63b6f1b3725adb862fc58190942952ccd3267c7692b7ea2060efdf0b5",
+    "reasoner": "c290637af4db7146d6c5cb4185cb1c5f611428f4c46e22f848b3fb5f615cf53c",
+    "system_provenance": "a760be20b639a568343246804a9cac962333dc81bc66246b9ce3bff982c62ed8"
+  },
+  "project_state_after": {
+    "entities": 0,
+    "findings": 0,
+    "knowledge_refs": 0,
+    "projects": 0
+  },
+  "project_state_before": {
+    "entities": 0,
+    "findings": 0,
+    "knowledge_refs": 0,
+    "projects": 0
+  },
+  "provider_attempts": {
+    "maximum": 90,
+    "used": 72
+  },
+  "source_head": "575a3264ea39a10e35d769f9c54a2d1a13c28c08",
+  "specification": "021",
+  "started_at_utc": "2026-08-24T15:02:51.164880+00:00",
+  "technical_invariants": {
+    "DBRA-INV-01_four_cases": true,
+    "DBRA-INV-02_three_conditions": true,
+    "DBRA-INV-03_reasoner_plan_deterministic": true,
+    "DBRA-INV-04_judge_plan_deterministic_blinded": true,
+    "DBRA-INV-05_generic_empty": true,
+    "DBRA-INV-06_selective_exact": true,
+    "DBRA-INV-07_full_exact": true,
+    "DBRA-INV-08_system_provenance_prebuilt": true,
+    "DBRA-INV-09_context_digest_exact": true,
+    "DBRA-INV-10_no_model_authored_provenance": true,
+    "DBRA-INV-11_blocking_construction": true,
+    "DBRA-INV-12_nonblocking_not_complete_block": true,
+    "DBRA-INV-13_defer_construction": true,
+    "DBRA-INV-14_not_now_has_no_relation": true,
+    "DBRA-INV-15_matched_core_payload": true,
+    "DBRA-INV-16_evaluator_truth_hidden": true,
+    "DBRA-INV-17_pointer_validation": true,
+    "DBRA-INV-18_judge_blinded": true,
+    "DBRA-INV-19_retry_contract": true,
+    "DBRA-INV-20_complete_design": true,
+    "DBRA-INV-21_no_provider_credential": true,
+    "DBRA-INV-22_provider_boundary": true,
+    "DBRA-INV-23_authoritative_state_unchanged": true,
+    "DBRA-INV-24_pre_authorization_boundary": true
+  }
+}

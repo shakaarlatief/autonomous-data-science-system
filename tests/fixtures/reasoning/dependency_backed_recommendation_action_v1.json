@@ -1,0 +1,850 @@
+{
+  "benchmark_id": "v1-dependency-backed-recommendation-action-value-v0.1",
+  "specification": "docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md",
+  "research": "docs/research/029_dependency_backed_recommendation_value_design.md",
+  "starting_integration_head": "8f29894667467e6ef58a02eb8f5d580c895968e6",
+  "knowledge_fixture": "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+  "selective_context_fixture": "tests/fixtures/retrieval/selective_context_v1.json",
+  "randomization_seed": 2026082402,
+  "reasoner_repetitions_per_condition": 3,
+  "conditions": [
+    "GENERIC",
+    "SELECTIVE",
+    "FULL_HORIZON"
+  ],
+  "dispositions": [
+    "BLOCKING_REQUIRED",
+    "RECOMMENDED",
+    "DEFER",
+    "NOT_NOW"
+  ],
+  "full_horizon_keys": [
+    "bagging",
+    "class-imbalance",
+    "ecdf",
+    "gradient-boosted-trees",
+    "histogram",
+    "missing-data",
+    "prediction-moment",
+    "prediction-time-feature-eligibility",
+    "random-forest",
+    "temporal-validation"
+  ],
+  "reasoner": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "text_verbosity": "low",
+    "max_output_tokens": 4000,
+    "tools_enabled": false,
+    "previous_response_state": false,
+    "request_fast_or_priority_processing": false,
+    "store": false
+  },
+  "judge": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "text_verbosity": "low",
+    "max_output_tokens": 4000,
+    "tools_enabled": false,
+    "condition_blinded": true,
+    "one_judge_call_per_reasoner_output": true
+  },
+  "call_plan": {
+    "planned_reasoner_calls": 36,
+    "planned_judge_calls": 36,
+    "planned_successful_calls": 72,
+    "max_total_provider_attempts": 90,
+    "max_retries_per_planned_call": 1,
+    "retry_only_for": [
+      "TRANSPORT_FAILURE",
+      "PROVIDER_FAILURE",
+      "INCOMPLETE_RESPONSE",
+      "INVALID_STRUCTURED_RESPONSE"
+    ],
+    "preserve_failed_attempts": true,
+    "unique_condition_neutral_nonce_per_request": true,
+    "independently_randomized_judge_order": true
+  },
+  "common_reasoner_instruction": "Use only supplied project facts and supplied project relations for project-specific claims. General methodological reasoning is allowed, but unknown project facts remain unknown. Classify every supplied candidate action exactly once using BLOCKING_REQUIRED, RECOMMENDED, DEFER, or NOT_NOW. Do not invent blockers, requirements, downstream scopes, triggers, or relation identities. BLOCKING_REQUIRED requires one exact supplied unresolved requirement, one exact supplied active defended downstream scope with a DEPENDS_ON relation to that requirement, and one exact supplied RESOLVES relation from the candidate action to that requirement. Return those exact requirement and scope IDs and a null defer pointer. RECOMMENDED is worthwhile current work without such a blocking relation and requires null blocking and defer pointers. DEFER requires one exact supplied unresolved trigger and one exact supplied WAITS_FOR relation from the action to that trigger; return that trigger ID and null blocking pointers. NOT_NOW is neither currently justified nor activated by a supplied blocking or defer relation and requires all pointers null. Return only supplied IDs. Do not self-report or invent methodological provenance; the system records supplied context provenance separately. Expected labels, evaluator truth, and gate thresholds are not part of the task.",
+  "reasoner_output_schema": {
+    "summary": "string",
+    "action_decisions": "list[{action_id:string, disposition:enum, blocking_requirement_id:string|null, blocked_scope_id:string|null, defer_until_id:string|null, rationale:string}]",
+    "warnings": "list[string]"
+  },
+  "system_owned_provenance_contract": {
+    "record_name": "SystemContextProvenance",
+    "fields": [
+      "condition",
+      "supplied_revisions",
+      "methodology_payload_sha256",
+      "methodology_payload_bytes"
+    ],
+    "revision_pointer_fields": [
+      "stable_key",
+      "revision_id"
+    ],
+    "generated_before_provider_call": true,
+    "derived_only_from_actual_supplied_methodology_payload": true,
+    "model_output_cannot_modify_provenance": true,
+    "generic_supplied_revisions_must_be_empty": true,
+    "selective_revision_set_must_match_case_keys": true,
+    "full_horizon_revision_count_must_equal": 10,
+    "sha256_must_recompute_exactly": true,
+    "preserve_per_planned_reasoner_output": true
+  },
+  "absolute_gate": {
+    "selective_max_critical_action_omissions": 0,
+    "selective_max_blocking_false_positives": 0,
+    "selective_max_blocking_pointer_errors": 0,
+    "selective_max_defer_pointer_errors": 0,
+    "selective_min_aggregate_exact_disposition_accuracy": 0.9,
+    "selective_min_per_case_exact_disposition_accuracy": 0.85,
+    "selective_min_aggregate_semantic_score": 0.9,
+    "selective_min_per_case_semantic_score": 0.85
+  },
+  "relative_gate": {
+    "selective_minus_generic_aggregate_exact_accuracy_floor": -0.05,
+    "selective_minus_generic_per_case_exact_accuracy_floor": -0.1,
+    "selective_minus_full_aggregate_exact_accuracy_floor": -0.05,
+    "selective_minus_full_per_case_exact_accuracy_floor": -0.1,
+    "selective_minus_generic_aggregate_semantic_floor": -0.05,
+    "selective_minus_generic_per_case_semantic_floor": -0.1,
+    "selective_minus_full_aggregate_semantic_floor": -0.05,
+    "selective_minus_full_per_case_semantic_floor": -0.1,
+    "selective_critical_omissions_must_not_exceed_generic": true,
+    "selective_blocking_false_positives_must_not_exceed_generic": true,
+    "selective_under_recommendations_must_not_exceed_generic": true,
+    "selective_defer_pointer_errors_must_not_exceed_generic": true
+  },
+  "expansion_gate": {
+    "selective_unnecessary_recommended_cost_must_not_exceed_full": true,
+    "selective_over_recommendations_must_not_exceed_full": true,
+    "selective_blocking_false_positives_must_not_exceed_full": true
+  },
+  "promotion_value_signals": {
+    "minimum_required_signals": 1,
+    "signals": [
+      "SELECTIVE_AGGREGATE_EXACT_ACCURACY_AT_LEAST_0_05_ABOVE_GENERIC",
+      "SELECTIVE_AGGREGATE_SEMANTIC_SCORE_AT_LEAST_0_05_ABOVE_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_CRITICAL_OMISSIONS_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_BLOCKING_FALSE_POSITIVES_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_UNDER_RECOMMENDATIONS_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_DEFER_POINTER_ERRORS_THAN_GENERIC",
+      "SELECTIVE_LOWER_TOTAL_UNNECESSARY_RECOMMENDED_COST_THAN_FULL_HORIZON",
+      "SELECTIVE_FEWER_TOTAL_OVER_RECOMMENDATIONS_THAN_FULL_HORIZON",
+      "SELECTIVE_FEWER_TOTAL_BLOCKING_FALSE_POSITIVES_THAN_FULL_HORIZON"
+    ]
+  },
+  "advancement_outcomes": [
+    "PROMOTE_DEPENDENCY_BACKED_RECOMMENDATION_SEAM",
+    "SAFE_BUT_NOT_DIFFERENTIATED",
+    "FAIL"
+  ],
+  "judge_scoring": {
+    "score_0": "Absent, materially wrong, or contradicted.",
+    "score_1": "Partially or implicitly satisfied without a material contradiction.",
+    "score_2": "Explicitly and correctly satisfied.",
+    "normalized_formula": "sum(scores) / (2 * number_of_obligations)",
+    "judge_may_add_obligations": false
+  },
+  "cases": [
+    {
+      "case_id": "DBRA-01",
+      "class": "FUTURE_VALIDITY_AND_MODEL_SEQUENCE",
+      "task_id": "protect-future-model-selection-validity-and-sequence-comparison",
+      "requested_reasoning_functions": [
+        "VALIDITY_CONSTRAINT"
+      ],
+      "required_selective_keys": [
+        "prediction-moment",
+        "prediction-time-feature-eligibility",
+        "temporal-validation"
+      ],
+      "project_evidence": {
+        "project.task": "binary churn prediction",
+        "project.generalization": "future monthly deployment",
+        "prediction_moment.status": "UNRESOLVED",
+        "feature.candidate_x.observation_timing": "contains fields recorded only after the churn outcome is known",
+        "feature_eligibility_audit.status": "UNRESOLVED",
+        "evaluation.current_design": "random row split across all observed months",
+        "temporal_validation.status": "UNRESOLVED",
+        "model_comparison.plan": "Random Forest and Gradient-Boosted Trees comparison is already approved once prediction validity is established",
+        "user.current_goal": "reach a defensible nonlinear model-selection comparison"
+      },
+      "user_task": "Classify every candidate action for the current project state. Protect the future-facing model-selection decision from unresolved prediction validity, preserve exact sequencing dependencies, and avoid unrelated work.",
+      "requirements": [
+        {
+          "requirement_id": "rq-prediction-moment",
+          "description": "The exact prediction moment is established.",
+          "status": "UNRESOLVED"
+        },
+        {
+          "requirement_id": "rq-feature-eligibility",
+          "description": "Candidate feature availability is audited against the prediction moment.",
+          "status": "UNRESOLVED"
+        },
+        {
+          "requirement_id": "rq-temporal-validation",
+          "description": "A future-representative temporal validation design is established.",
+          "status": "UNRESOLVED"
+        }
+      ],
+      "downstream_scopes": [
+        {
+          "scope_id": "scope-future-model-selection",
+          "description": "Defend the future-facing nonlinear model comparison and model-selection decision.",
+          "active": true,
+          "intended_to_be_defended": true
+        }
+      ],
+      "scope_requirement_relations": [
+        {
+          "scope_id": "scope-future-model-selection",
+          "relation": "DEPENDS_ON",
+          "requirement_id": "rq-prediction-moment"
+        },
+        {
+          "scope_id": "scope-future-model-selection",
+          "relation": "DEPENDS_ON",
+          "requirement_id": "rq-feature-eligibility"
+        },
+        {
+          "scope_id": "scope-future-model-selection",
+          "relation": "DEPENDS_ON",
+          "requirement_id": "rq-temporal-validation"
+        }
+      ],
+      "defer_triggers": [
+        {
+          "trigger_id": "prediction-validity-established",
+          "description": "Prediction moment, prediction-time feature eligibility, and future-representative temporal validation are all established.",
+          "status": "UNRESOLVED"
+        }
+      ],
+      "action_requirement_relations": [
+        {
+          "action_id": "establish-prediction-moment",
+          "relation": "RESOLVES",
+          "requirement_id": "rq-prediction-moment"
+        },
+        {
+          "action_id": "audit-prediction-time-feature-availability",
+          "relation": "RESOLVES",
+          "requirement_id": "rq-feature-eligibility"
+        },
+        {
+          "action_id": "establish-future-temporal-validation",
+          "relation": "RESOLVES",
+          "requirement_id": "rq-temporal-validation"
+        }
+      ],
+      "action_trigger_relations": [
+        {
+          "action_id": "compare-random-forest",
+          "relation": "WAITS_FOR",
+          "trigger_id": "prediction-validity-established"
+        },
+        {
+          "action_id": "compare-gradient-boosted-trees",
+          "relation": "WAITS_FOR",
+          "trigger_id": "prediction-validity-established"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "establish-prediction-moment",
+          "label": "Establish the exact prediction moment before judging feature or evaluation legitimacy.",
+          "cost_units": 1,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "rq-prediction-moment",
+          "expected_blocked_scope_id": "scope-future-model-selection",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "audit-prediction-time-feature-availability",
+          "label": "Audit whether candidate features and source transformations are available by the prediction moment.",
+          "cost_units": 2,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "rq-feature-eligibility",
+          "expected_blocked_scope_id": "scope-future-model-selection",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "establish-future-temporal-validation",
+          "label": "Replace the random-across-time evaluation with a future-representative temporal validation design.",
+          "cost_units": 3,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "rq-temporal-validation",
+          "expected_blocked_scope_id": "scope-future-model-selection",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "compare-random-forest",
+          "label": "Evaluate Random Forest under the approved model-comparison plan.",
+          "cost_units": 3,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "prediction-validity-established",
+          "critical": false
+        },
+        {
+          "action_id": "compare-gradient-boosted-trees",
+          "label": "Evaluate Gradient-Boosted Trees under the approved model-comparison plan.",
+          "cost_units": 4,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "prediction-validity-established",
+          "critical": false
+        },
+        {
+          "action_id": "plot-monthly-spend-histogram",
+          "label": "Plot a histogram of monthly spend as the next project action.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "DBRA-01-O1",
+          "critical": true,
+          "description": "Explains that the exact prediction moment is unresolved and is required before future-facing model selection can be defended."
+        },
+        {
+          "obligation_id": "DBRA-01-O2",
+          "critical": true,
+          "description": "Treats post-outcome feature timing as a current validity concern and correctly anchors the feature-eligibility audit to the explicit requirement/scope relation."
+        },
+        {
+          "obligation_id": "DBRA-01-O3",
+          "critical": true,
+          "description": "Explains why the random-across-time split is not sufficient for the stated future deployment and correctly treats temporal validation as blocking the defended model-selection scope."
+        },
+        {
+          "obligation_id": "DBRA-01-O4",
+          "critical": true,
+          "description": "Defers both already-approved nonlinear model comparisons exactly until prediction-validity-established rather than treating them as current blockers or NOT_NOW."
+        },
+        {
+          "obligation_id": "DBRA-01-O5",
+          "critical": false,
+          "description": "Does not elevate the unrelated histogram action into current work."
+        }
+      ]
+    },
+    {
+      "case_id": "DBRA-02",
+      "class": "COMPACT_NONLINEAR_MODEL_SHORTLIST",
+      "task_id": "recommend-compact-nonlinear-shortlist-and-sequence-tuning",
+      "requested_reasoning_functions": [
+        "MODEL_OPTION"
+      ],
+      "required_selective_keys": [
+        "gradient-boosted-trees",
+        "random-forest"
+      ],
+      "project_evidence": {
+        "project.task": "binary supervised tabular prediction",
+        "prediction_validity.status": "ESTABLISHED",
+        "evaluation.design": "future-representative temporal validation locked",
+        "prediction_time_feature_eligibility": "verified for current features",
+        "data.scale": "moderate",
+        "modeling.signal": "nonlinear interactions are plausible",
+        "existing.baseline": "regularized logistic regression fitted",
+        "user.current_goal": "compare a compact nonlinear shortlist before tuning",
+        "model_selection_scope.blocked": false
+      },
+      "user_task": "Classify the candidate model-comparison and tuning actions. Keep the shortlist compact, recommend justified current comparisons, sequence tuning behind the first comparison, and do not invent blockers.",
+      "requirements": [],
+      "downstream_scopes": [
+        {
+          "scope_id": "scope-model-family-selection",
+          "description": "Choose a nonlinear model family after a fair initial comparison.",
+          "active": true,
+          "intended_to_be_defended": true
+        }
+      ],
+      "scope_requirement_relations": [],
+      "defer_triggers": [
+        {
+          "trigger_id": "initial-nonlinear-comparison-complete",
+          "description": "The first fair Random Forest and Gradient-Boosted Trees comparison is complete.",
+          "status": "UNRESOLVED"
+        }
+      ],
+      "action_requirement_relations": [],
+      "action_trigger_relations": [
+        {
+          "action_id": "tune-random-forest",
+          "relation": "WAITS_FOR",
+          "trigger_id": "initial-nonlinear-comparison-complete"
+        },
+        {
+          "action_id": "tune-gradient-boosted-trees",
+          "relation": "WAITS_FOR",
+          "trigger_id": "initial-nonlinear-comparison-complete"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "evaluate-random-forest",
+          "label": "Evaluate Random Forest as one compact nonlinear comparator under the locked validation design.",
+          "cost_units": 3,
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "evaluate-gradient-boosted-trees",
+          "label": "Evaluate Gradient-Boosted Trees as one compact nonlinear comparator under the locked validation design.",
+          "cost_units": 4,
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "tune-random-forest",
+          "label": "Start detailed Random Forest hyperparameter tuning.",
+          "cost_units": 5,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "initial-nonlinear-comparison-complete",
+          "critical": false
+        },
+        {
+          "action_id": "tune-gradient-boosted-trees",
+          "label": "Start detailed Gradient-Boosted Trees hyperparameter tuning.",
+          "cost_units": 6,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "initial-nonlinear-comparison-complete",
+          "critical": false
+        },
+        {
+          "action_id": "add-separate-bagging-baseline",
+          "label": "Add a separate generic bagging baseline before completing the compact Random Forest versus Gradient-Boosted Trees comparison.",
+          "cost_units": 3,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "plot-unrelated-feature-histogram",
+          "label": "Plot an unrelated feature histogram as the next modeling action.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "DBRA-02-O1",
+          "critical": true,
+          "description": "Recommends both Random Forest and Gradient-Boosted Trees as justified current nonlinear comparators under the already-valid evaluation design."
+        },
+        {
+          "obligation_id": "DBRA-02-O2",
+          "critical": true,
+          "description": "Does not classify either model-family comparison as BLOCKING_REQUIRED because no exact blocked-scope dependency is supplied."
+        },
+        {
+          "obligation_id": "DBRA-02-O3",
+          "critical": true,
+          "description": "Defers detailed tuning for both model families exactly until initial-nonlinear-comparison-complete."
+        },
+        {
+          "obligation_id": "DBRA-02-O4",
+          "critical": false,
+          "description": "Keeps the model shortlist compact rather than expanding to a redundant generic bagging baseline before the planned comparison."
+        },
+        {
+          "obligation_id": "DBRA-02-O5",
+          "critical": false,
+          "description": "Does not elevate unrelated distribution plotting into the current model-selection task."
+        }
+      ]
+    },
+    {
+      "case_id": "DBRA-03",
+      "class": "DISTRIBUTION_EVIDENCE_BEFORE_TRANSFORMATION",
+      "task_id": "recommend-distribution-evidence-before-transformation",
+      "requested_reasoning_functions": [
+        "EVIDENCE_OPTION"
+      ],
+      "required_selective_keys": [
+        "ecdf",
+        "histogram"
+      ],
+      "project_evidence": {
+        "project.task": "tabular supervised prediction",
+        "feature.monthly_spend.type": "quantitative continuous",
+        "feature.monthly_spend.signal": "right-skew suspected from summary statistics",
+        "distribution_visual_evidence.status": "NOT_YET_REVIEWED",
+        "transformation_decision.status": "OPEN",
+        "user.current_goal": "decide whether the quantitative feature needs transformation based on distribution evidence"
+      },
+      "user_task": "Classify the candidate evidence and transformation actions. Gather appropriate quantitative distribution evidence now, sequence transformation comparison after that evidence is reviewed, and avoid premature or unrelated work.",
+      "requirements": [],
+      "downstream_scopes": [
+        {
+          "scope_id": "scope-transformation-decision",
+          "description": "Choose whether a transformation should be evaluated after reviewing distribution evidence.",
+          "active": true,
+          "intended_to_be_defended": true
+        }
+      ],
+      "scope_requirement_relations": [],
+      "defer_triggers": [
+        {
+          "trigger_id": "distribution-evidence-reviewed",
+          "description": "Histogram and ECDF evidence for monthly_spend have been reviewed together.",
+          "status": "UNRESOLVED"
+        }
+      ],
+      "action_requirement_relations": [],
+      "action_trigger_relations": [
+        {
+          "action_id": "compare-log-transformation",
+          "relation": "WAITS_FOR",
+          "trigger_id": "distribution-evidence-reviewed"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "inspect-histogram",
+          "label": "Inspect a histogram of monthly_spend to assess shape, tails, and bin-sensitive structure.",
+          "cost_units": 1,
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "inspect-ecdf",
+          "label": "Inspect the ECDF of monthly_spend to assess the distribution without choosing bins.",
+          "cost_units": 1,
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "compare-log-transformation",
+          "label": "Compare a log transformation after the distribution evidence has been reviewed.",
+          "cost_units": 2,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "distribution-evidence-reviewed",
+          "critical": false
+        },
+        {
+          "action_id": "apply-log-transform-now",
+          "label": "Immediately replace monthly_spend with log(monthly_spend) before reviewing distribution evidence.",
+          "cost_units": 2,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "winsorize-tail-now",
+          "label": "Immediately winsorize the upper tail before reviewing distribution evidence or downstream sensitivity.",
+          "cost_units": 2,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "compare-random-forest",
+          "label": "Run a Random Forest comparison as the next action for this distribution-evidence task.",
+          "cost_units": 3,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "DBRA-03-O1",
+          "critical": true,
+          "description": "Recommends both histogram and ECDF as complementary current evidence for the quantitative distribution."
+        },
+        {
+          "obligation_id": "DBRA-03-O2",
+          "critical": true,
+          "description": "Does not invent a blocking relation for either evidence action because no supplied active scope depends on an unresolved requirement they resolve."
+        },
+        {
+          "obligation_id": "DBRA-03-O3",
+          "critical": true,
+          "description": "Defers the log-transformation comparison exactly until distribution-evidence-reviewed."
+        },
+        {
+          "obligation_id": "DBRA-03-O4",
+          "critical": true,
+          "description": "Rejects committing to log transformation or winsorization before the evidence review."
+        },
+        {
+          "obligation_id": "DBRA-03-O5",
+          "critical": false,
+          "description": "Does not elevate unrelated model-family comparison into the current distribution-evidence task."
+        }
+      ]
+    },
+    {
+      "case_id": "DBRA-04",
+      "class": "MISSINGNESS_IMBALANCE_DECISION_FRAMEWORK",
+      "task_id": "resolve-data-quality-requirements-and-sequence-strategy",
+      "requested_reasoning_functions": [
+        "DECISION_FRAMEWORK"
+      ],
+      "required_selective_keys": [
+        "class-imbalance",
+        "missing-data"
+      ],
+      "project_evidence": {
+        "project.task": "binary supervised prediction",
+        "target.prevalence": "UNKNOWN",
+        "feature.x_missingness.current_rate": "12 percent",
+        "feature.x_missingness.production_regime": "UNKNOWN",
+        "missingness_pattern_analysis.status": "NOT_YET_COMPLETED",
+        "preprocessing_plan.status": "OPEN",
+        "evaluation_metric_plan.status": "OPEN",
+        "user.current_goal": "choose a defensible missing-data and evaluation strategy"
+      },
+      "user_task": "Classify the candidate data-quality and evaluation actions. Resolve exact requirements that block the preprocessing and metric plans, recommend useful current evidence work, preserve explicit sequencing, and reject premature leakage-prone or accuracy-only decisions.",
+      "requirements": [
+        {
+          "requirement_id": "rq-class-prevalence",
+          "description": "The observed class prevalence is established for metric and error-priority reasoning.",
+          "status": "UNRESOLVED"
+        },
+        {
+          "requirement_id": "rq-production-missingness",
+          "description": "The expected production missingness regime for feature x is characterized.",
+          "status": "UNRESOLVED"
+        }
+      ],
+      "downstream_scopes": [
+        {
+          "scope_id": "scope-evaluation-metric-plan",
+          "description": "Defend the evaluation metric and class-sensitive error plan.",
+          "active": true,
+          "intended_to_be_defended": true
+        },
+        {
+          "scope_id": "scope-preprocessing-plan",
+          "description": "Defend the missing-data preprocessing strategy for deployment.",
+          "active": true,
+          "intended_to_be_defended": true
+        }
+      ],
+      "scope_requirement_relations": [
+        {
+          "scope_id": "scope-evaluation-metric-plan",
+          "relation": "DEPENDS_ON",
+          "requirement_id": "rq-class-prevalence"
+        },
+        {
+          "scope_id": "scope-preprocessing-plan",
+          "relation": "DEPENDS_ON",
+          "requirement_id": "rq-production-missingness"
+        }
+      ],
+      "defer_triggers": [
+        {
+          "trigger_id": "class-prevalence-established",
+          "description": "Class prevalence has been measured and recorded.",
+          "status": "UNRESOLVED"
+        },
+        {
+          "trigger_id": "data-quality-characterized",
+          "description": "Production missingness regime and current missingness patterns have been characterized.",
+          "status": "UNRESOLVED"
+        }
+      ],
+      "action_requirement_relations": [
+        {
+          "action_id": "measure-class-prevalence",
+          "relation": "RESOLVES",
+          "requirement_id": "rq-class-prevalence"
+        },
+        {
+          "action_id": "characterize-production-missingness",
+          "relation": "RESOLVES",
+          "requirement_id": "rq-production-missingness"
+        }
+      ],
+      "action_trigger_relations": [
+        {
+          "action_id": "assess-minority-sensitive-metrics",
+          "relation": "WAITS_FOR",
+          "trigger_id": "class-prevalence-established"
+        },
+        {
+          "action_id": "compare-imputation-strategies",
+          "relation": "WAITS_FOR",
+          "trigger_id": "data-quality-characterized"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "measure-class-prevalence",
+          "label": "Measure and record the target class prevalence before fixing the evaluation metric plan.",
+          "cost_units": 1,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "rq-class-prevalence",
+          "expected_blocked_scope_id": "scope-evaluation-metric-plan",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "characterize-production-missingness",
+          "label": "Characterize whether and how feature x is expected to be missing at prediction time in production.",
+          "cost_units": 2,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_blocking_requirement_id": "rq-production-missingness",
+          "expected_blocked_scope_id": "scope-preprocessing-plan",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "audit-current-missingness-patterns",
+          "label": "Audit current missingness patterns and associations before choosing a treatment strategy.",
+          "cost_units": 2,
+          "expected_disposition": "RECOMMENDED",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "assess-minority-sensitive-metrics",
+          "label": "Assess minority-sensitive metric choices after class prevalence is established.",
+          "cost_units": 2,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "class-prevalence-established",
+          "critical": false
+        },
+        {
+          "action_id": "compare-imputation-strategies",
+          "label": "Compare candidate imputation strategies after the production missingness regime and current missingness patterns are characterized.",
+          "cost_units": 3,
+          "expected_disposition": "DEFER",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": "data-quality-characterized",
+          "critical": false
+        },
+        {
+          "action_id": "fit-global-imputer-before-split",
+          "label": "Fit one imputer on the full dataset before train/validation splitting.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "use-accuracy-as-only-metric",
+          "label": "Fix accuracy as the only model-selection metric before class prevalence is known.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_blocking_requirement_id": null,
+          "expected_blocked_scope_id": null,
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "DBRA-04-O1",
+          "critical": true,
+          "description": "Treats class-prevalence measurement as the exact current requirement blocking the defended evaluation-metric plan and returns the correct requirement/scope relation."
+        },
+        {
+          "obligation_id": "DBRA-04-O2",
+          "critical": true,
+          "description": "Treats production missingness characterization as the exact current requirement blocking the defended preprocessing plan and returns the correct requirement/scope relation."
+        },
+        {
+          "obligation_id": "DBRA-04-O3",
+          "critical": true,
+          "description": "Recommends current missingness-pattern analysis without falsely escalating it to BLOCKING_REQUIRED."
+        },
+        {
+          "obligation_id": "DBRA-04-O4",
+          "critical": true,
+          "description": "Defers minority-sensitive metric assessment and imputation-strategy comparison to their exact supplied triggers."
+        },
+        {
+          "obligation_id": "DBRA-04-O5",
+          "critical": true,
+          "description": "Rejects full-dataset imputer fitting and an accuracy-only decision made before the required context is established."
+        }
+      ]
+    }
+  ],
+  "technical_invariants": [
+    "DBRA-INV-01 exactly four frozen cases exist",
+    "DBRA-INV-02 exactly three conditions exist",
+    "DBRA-INV-03 exact 36-call reasoner plan is deterministic under seed 2026082402",
+    "DBRA-INV-04 judge plan is deterministic, independently shuffled, and condition blinded",
+    "DBRA-INV-05 GENERIC supplies zero methodology revisions",
+    "DBRA-INV-06 SELECTIVE exact stable-key sets match the frozen per-case sets",
+    "DBRA-INV-07 FULL_HORIZON supplies all ten exact accepted-current revisions",
+    "DBRA-INV-08 system methodology provenance is generated before provider calls from actual payloads",
+    "DBRA-INV-09 methodology payload SHA-256 and byte counts recompute exactly",
+    "DBRA-INV-10 no model-authored methodological provenance field exists",
+    "DBRA-INV-11 every expected BLOCKING_REQUIRED action has an exact unresolved requirement, exact active defended scope, DEPENDS_ON relation, and action RESOLVES relation",
+    "DBRA-INV-12 no expected non-BLOCKING action satisfies the complete blocking construction",
+    "DBRA-INV-13 every expected DEFER action has one exact unresolved trigger and one action WAITS_FOR relation",
+    "DBRA-INV-14 no expected NOT_NOW action has a blocking or defer relation",
+    "DBRA-INV-15 matched core project/action/relation payload is identical across conditions per planned case/repetition",
+    "DBRA-INV-16 evaluator truth does not enter reasoner input",
+    "DBRA-INV-17 structured output validation enforces exact pointer rules",
+    "DBRA-INV-18 judge payload is condition/context/provenance/usage/paired-output blinded",
+    "DBRA-INV-19 retry accounting obeys the 90-attempt ceiling and semantic disagreement is non-retryable",
+    "DBRA-INV-20 complete fake-runtime design evaluates 36 reasoner outputs and 36 judge outputs",
+    "DBRA-INV-21 ordinary CI contains no live provider credential",
+    "DBRA-INV-22 application/domain layers remain free of provider SDK imports",
+    "DBRA-INV-23 authoritative project and knowledge state are not mutated",
+    "DBRA-INV-24 no live workflow or authorization is introduced before an exact green implementation checkpoint"
+  ]
+}
