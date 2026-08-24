@@ -1,5 +1,6 @@
 name: Preserve Specification 019 live result
 
+# One-shot preservation rerun after workflow registration.
 on:
   push:
     branches: [v1-recommendation-action-value-system-provenance]
