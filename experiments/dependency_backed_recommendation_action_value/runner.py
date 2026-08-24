@@ -8,8 +8,9 @@ semantic judgment per successful reasoner output, and applies the preregistered
 complete-design outcome rule without mutating authoritative project or knowledge
 state.
 
-Ordinary CI supplies provider-free doubles. No Specification 021 live workflow
-or repository authorization exists at this implementation stage.
+Ordinary CI supplies provider-free doubles. After Checkpoint 176 a separate live
+wrapper/workflow may exist, but repository authorization must remain absent until
+the exact live-capable source is frozen.
 """
 
 from __future__ import annotations
@@ -303,7 +304,7 @@ async def execute_frozen_experiment(
     technical["DBRA-INV-09_context_digest_exact"] = provenance_unchanged
     technical["DBRA-INV-20_complete_design"] = complete
     technical["DBRA-INV-23_authoritative_state_unchanged"] = authoritative_isolation
-    technical["DBRA-INV-24_no_live_surface"] = _no_spec021_live_surface()
+    technical["DBRA-INV-24_pre_authorization_boundary"] = _no_spec021_live_authorization()
 
     execution_integrity = all(value is True for value in technical.values())
     gate_evaluation = (
@@ -476,7 +477,7 @@ def _technical_preflight(
         ),
         "DBRA-INV-21_no_provider_credential": True,
         "DBRA-INV-22_provider_boundary": True,
-        "DBRA-INV-24_no_live_surface": _no_spec021_live_surface(),
+        "DBRA-INV-24_pre_authorization_boundary": _no_spec021_live_authorization(),
     }
 
 
@@ -774,14 +775,13 @@ def _context_digest(payload: Mapping[str, object]) -> tuple[str, int]:
     return hashlib.sha256(raw).hexdigest(), len(raw)
 
 
-def _no_spec021_live_surface() -> bool:
-    workflow = ROOT / ".github" / "workflows" / "v1-dependency-backed-recommendation-action-live.yml"
+def _no_spec021_live_authorization() -> bool:
+    """Require the one-shot repository authorization to remain absent pre-freeze."""
+
     registry = ROOT / ".github" / "ads_live_experiments.json"
-    if workflow.exists():
-        return False
-    if registry.exists() and "spec021" in registry.read_text(encoding="utf-8").lower():
-        return False
-    return True
+    if not registry.exists():
+        return True
+    return "spec021" not in registry.read_text(encoding="utf-8").lower()
 
 
 def _structured_payload(value: object) -> object:
@@ -826,6 +826,6 @@ def _utc_now() -> str:
 
 if __name__ == "__main__":
     raise SystemExit(
-        "Specification 021 runner is intentionally not exposed as a live CLI before "
-        "the provider-free implementation boundary is checkpointed."
+        "Specification 021 provider-neutral runner is not a live CLI. Use the separately "
+        "governed live_runner entry point after the live source is frozen and authorized."
     )
