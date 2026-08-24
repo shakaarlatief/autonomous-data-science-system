@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-24  
-**Reconciliation context:** Prototype V0 is complete. Bounded V1 has established the project/object foundations, Project Cockpit, governed persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and the governed autonomous live-experiment launcher. Specification 019 completed its matched system-owned-provenance recommendation/action comparison and remained `FAIL`. Specification 020 then prospectively isolated the `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED` construct and returned `BLOCKING_BOUNDARY_SUPPORTED`. Specification 021 is now prospectively frozen as the clean dependency-backed recommendation-value comparison, and its provider-free implementation passed the complete Ubuntu/Windows gate at Checkpoint 175. No Specification 021 provider call has occurred, so methodological-context recommendation value remains unresolved.
+**Reconciliation context:** Prototype V0 is complete. Bounded V1 has established the project/object foundations, Project Cockpit, governed persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and the governed autonomous live-experiment launcher. Specification 019 completed its matched system-owned-provenance recommendation/action comparison and remained `FAIL`. Specification 020 then prospectively isolated the `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED` construct and returned `BLOCKING_BOUNDARY_SUPPORTED`. Specification 021 remains the prospectively frozen clean dependency-backed recommendation-value comparison. Its first governed live execution is preserved as `INCOMPLETE` with zero scored observations after uniform mappingproxy-backed usage-metadata serialization failures. Checkpoint 179 reproduces that instrumentation defect provider-free with live-shaped usage metadata and validates the narrow reasoner/judge serialization repair cross-platform. No Specification 021 scientific advancement classification exists yet, so methodological-context recommendation value remains unresolved.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -12,7 +12,7 @@ This document records important unresolved questions in current canonical form. 
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-**Status:** Selective reasoning-context seam supported; clean recommendation-value experiment provider-free green but not yet run live
+**Status:** Selective reasoning-context seam supported; clean recommendation-value experiment attempted live but scientifically incomplete; repaired instrumentation boundary green
 
 Accepted bounded path:
 
@@ -33,7 +33,7 @@ Specification 015 did not establish recommendation/action value. Specification 0
 
 Specification 020 prospectively isolated the `RECOMMENDED` versus `BLOCKING_REQUIRED` boundary. The frozen governed diagnostic completed 36/36 exact observations with every hard gate passing. This supports the bounded construct that blocking becomes operationally separable when one exact active defended downstream scope explicitly depends on one exact unresolved requirement that the candidate action resolves. It does not establish selective methodological-context recommendation value.
 
-Specification 021 now freezes a new four-case GENERIC/SELECTIVE/FULL_HORIZON comparison with explicit dependency-backed BLOCKING_REQUIRED and DEFER relations plus system-owned methodology provenance. Checkpoint 175 establishes only that this frozen comparison is faithfully executable provider-free on Ubuntu and Windows. Its live scientific result remains unknown.
+Specification 021 freezes a new four-case GENERIC/SELECTIVE/FULL_HORIZON comparison with explicit dependency-backed BLOCKING_REQUIRED and DEFER relations plus system-owned methodology provenance. Its first governed provider-backed execution reached the frozen live source but produced zero scored observations because attempt-metadata serialization failed uniformly on live mappingproxy-backed `raw_provider_usage`. Checkpoint 178 therefore preserves that run as `INCOMPLETE`, not `FAIL`. Checkpoint 179 then reproduced the defect with provider-free live-shaped usage metadata and validated only the narrow serialization repair on Ubuntu and Windows plus inherited seams. The live scientific result remains unknown.
 
 Research 028 preserves the broader forward architecture for the eventual methodological universe: system-owned project state provides durable project identity; methodological navigation maps that state into applicable/relevant/recommended/required considerations; and the broad knowledge base should be a governed, revisioned universe rather than an undifferentiated RAG corpus.
 
@@ -80,7 +80,7 @@ RECOMMENDED
     + no exact active defended scope blocked on it
 ```
 
-The frozen diagnostic returned `BLOCKING_BOUNDARY_SUPPORTED` with exact requirement/scope pointers on all blocking observations and null pointers on all recommended observations. These remain diagnostic semantics only. Specification 021 now composes these explicit blocking relations with the supported dependency-backed DEFER construction in a clean recommendation-value experiment, but only its provider-free implementation has been validated so far. Production activation and blocking policy remain open.
+The frozen diagnostic returned `BLOCKING_BOUNDARY_SUPPORTED` with exact requirement/scope pointers on all blocking observations and null pointers on all recommended observations. These remain diagnostic semantics only. Specification 021 composes these explicit blocking relations with the supported dependency-backed DEFER construction in a clean recommendation-value experiment. Its first governed live run was scientifically incomplete before any scored observation, and Checkpoint 179 validates only the repaired usage-serialization instrumentation boundary. Production activation and blocking policy remain open.
 
 Still open:
 
@@ -98,7 +98,7 @@ production sequencing relation model
 
 **Status:** Substantially advanced, not complete
 
-Foundation 018 establishes Objects, Relations, Events, and Views. Specification 016 provides evidence that sequencing becomes more testable when an exact activating relation is represented. Specifications 017 and 019 used experiment-owned trigger pointers and blocked-scope menus. Specification 020 added experiment-owned requirement and downstream-scope identities and supported the bounded construct that an explicit blocking relation can make `RECOMMENDED` versus `BLOCKING_REQUIRED` operationally separable. Specification 021 now uses explicit supplied requirement, scope, DEPENDS_ON, RESOLVES, trigger, and WAITS_FOR identities in its provider-free-green benchmark implementation. None of this defines production dependency or claim-scope persistence.
+Foundation 018 establishes Objects, Relations, Events, and Views. Specification 016 provides evidence that sequencing becomes more testable when an exact activating relation is represented. Specifications 017 and 019 used experiment-owned trigger pointers and blocked-scope menus. Specification 020 added experiment-owned requirement and downstream-scope identities and supported the bounded construct that an explicit blocking relation can make `RECOMMENDED` versus `BLOCKING_REQUIRED` operationally separable. Specification 021 uses explicit supplied requirement, scope, DEPENDS_ON, RESOLVES, trigger, and WAITS_FOR identities in its frozen benchmark. Its incomplete first live execution and subsequent instrumentation repair do not alter those project-state semantics. None of this defines production dependency or claim-scope persistence.
 
 Research 028 sharpens the system-level role of this layer: the system should own durable project identity, state, history, provenance, relations, and authority independently of any particular model response.
 
@@ -125,7 +125,7 @@ D-032 selects OpenAI Agents SDK behind an ADS-owned `ReasoningRuntime` as the in
 
 Candidate dimensions include validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference.
 
-Specification 016 supports explicit dependency-backed sequencing. Specification 019 failed its frozen recommendation-value advancement gates. Specification 020 subsequently supported a stronger explicit requirement/scope construction for the blocking boundary. Specification 021 is the prospectively frozen clean recommendation-value follow-up and is provider-free green, but it has not produced live scientific evidence. No final recommendation ranking/disposition policy is justified.
+Specification 016 supports explicit dependency-backed sequencing. Specification 019 failed its frozen recommendation-value advancement gates. Specification 020 subsequently supported a stronger explicit requirement/scope construction for the blocking boundary. Specification 021 is the prospectively frozen clean recommendation-value follow-up. Its first live execution produced no scored scientific evidence because of the preserved usage-serialization failure; Checkpoint 179 validates the narrow instrumentation repair but does not answer the scientific question. No final recommendation ranking/disposition policy is justified.
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
@@ -143,7 +143,7 @@ project-relevant retrieval
     -> measured reasoning output
 ```
 
-Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. Specification 020 further supports, at the bounded diagnostic layer, explicit system-owned requirement/scope identities and relations as the basis for distinguishing genuinely blocking work from worthwhile non-blocking work. Specification 021's provider-free-green implementation composes that boundary with explicit DEFER relations while retaining matched GENERIC/SELECTIVE/FULL_HORIZON methodology treatment.
+Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. Specification 020 further supports, at the bounded diagnostic layer, explicit system-owned requirement/scope identities and relations as the basis for distinguishing genuinely blocking work from worthwhile non-blocking work. Specification 021 composes that boundary with explicit DEFER relations while retaining matched GENERIC/SELECTIVE/FULL_HORIZON methodology treatment. Its first live run is incomplete, and Checkpoint 179 changes only attempt-metadata serialization, not the state-to-recommendation semantics.
 
 The production boundary remains how justified recommendations become calibrated, inspectable durable project state without over-automation.
 
@@ -175,7 +175,7 @@ Checkpoint 143   selective exact-revision context
 Checkpoint 146   real-model selective-context value
 ```
 
-No current downstream evidence justifies returning to retrieval/reranking/vector tuning. Specifications 019-021 address downstream recommendation/calibration value and construct questions rather than a demonstrated retrieval deficiency. Specification 021 has not run live, so it cannot yet establish that selective context adds downstream recommendation value.
+No current downstream evidence justifies returning to retrieval/reranking/vector tuning. Specifications 019-021 address downstream recommendation/calibration value and construct questions rather than a demonstrated retrieval deficiency. Specification 021's first live execution is incomplete with zero scored observations, so it still cannot establish that selective context adds downstream recommendation value. Checkpoint 179 repairs only the usage-metadata recording boundary.
 
 Still open:
 
@@ -222,13 +222,13 @@ The complete matched design then ran without provenance-induced schema failures,
 
 Specification 020 kept provenance and supplied requirement/scope identities system-owned while testing only the structural calibration boundary. Its frozen result was `BLOCKING_BOUNDARY_SUPPORTED`, establishing bounded construct-validity evidence only, not methodological-context recommendation value.
 
-Specification 021 preserves that separation prospectively and adds action-local requirement/scope/defer pointers plus a complete blinded judge and deterministic metric pipeline. Checkpoint 175 proves the machinery provider-free only. The live recommendation-value question remains open.
+Specification 021 preserves that separation prospectively and adds action-local requirement/scope/defer pointers plus a complete blinded judge and deterministic metric pipeline. Its first governed live run yielded zero scored observations because usage attempt-metadata serialization failed before successful outputs could be preserved. Checkpoint 179 reproduces and repairs that instrumentation issue provider-free without changing provenance ownership or the evaluation contract. The live recommendation-value question remains open.
 
 Any model-authored knowledge citation layer should be evaluated as a distinct optional capability rather than treated as the authoritative context provenance channel.
 
 ### Q-053. How should authorized live experiments be launched autonomously and safely?
 
-**Status:** Bounded V1 mechanism answered and supported; provider-backed use demonstrated twice; Specification 021 live boundary not yet authorized
+**Status:** Bounded V1 mechanism answered and supported; provider-backed use exercised for Specifications 019, 020, and 021; replacement Specification 021 run not yet authorized
 
 Specification 018 establishes and validates the first governed control plane:
 
@@ -258,7 +258,7 @@ Specification 019 exercised the same control plane for one exact frozen provider
 
 Specification 020 subsequently used the same control plane for one exact frozen provider-backed run at source `82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a`. The run completed, its raw result was preserved before interpretation, and its one-shot authorization and temporary live-control surface were retired.
 
-Specification 021 has a green provider-free implementation at Checkpoint 175, but no live workflow or main authorization exists yet. The next legitimate step is a separately frozen pre-live boundary, followed by exact validation of the minimal live-capable source before any one-shot authorization is added.
+Specification 021 then exercised the same control plane at frozen source `b589bad975880b2d3cccc3596fc82539b1b96577`. The launcher and target identity checks succeeded, but the scientific design ended incomplete because usage attempt-metadata serialization failed uniformly after provider responses returned. The raw artifact was preserved before interpretation, the run was frozen as `INCOMPLETE`, and the one-shot authorization plus temporary default-branch exposure were retired. Checkpoint 179 validates the narrow serialization repair provider-free. Any replacement execution still requires a newly frozen exact source, fresh exact green CI evidence, a new launch ID, and a new one-shot authorization.
 
 Remaining open questions:
 
