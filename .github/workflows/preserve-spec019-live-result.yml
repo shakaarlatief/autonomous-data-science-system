@@ -52,15 +52,14 @@ jobs:
 
           cd "$TMP"
           sha256sum -c <<'EOF'
-          3679d5d97bc42d444299487cad46832907c196d8467707a41abe47e737f5e73e  environment.sqlite
-          90bc527540b59e91b9ecbf4dff72681956d2debcd783ca369bbac8ec26b8aad7  run_metadata.json
-          cad11110a7343db1affa552094a9f9d4ccf0c0170c2bc413e22254b1a200ff25  reasoning_plan.json
-          a31d80b54cd4fe1307cdb5d60b185aaad7bdd47e7cb6ebf3c80279379fb89fa  system_provenance_plan.json
-          88af820916d9971039922318614642032c899374f05353f9fd37a32358263526  reasoner_attempts.jsonl
-          2283e83a4f40131e4adf77b9d63fd8e6b2dffa10507238d979cf72b5b030acb  judge_plan.json
-          5efad31dcbeae16987e32362186093fbbc8d27c98f12e63cef2b203283cc1698  judge_attempts.jsonl
-          85befc90c086eec91ffcc819713d26fb653c2791514f13117313330a3d734a2  result.json
-          2751ca0b9be02b598b6717a6e2b9d20e1c884c31c71c6dfdf56d24a23ef732c  RESULT.md
+          34ec9d90332a699e26fb743501353dc49f653a428cc3392666520c19ddce0d4e  system_owned_provenance_recommendation_action.sqlite3
+          6d65ac267c230da7ab787cdcbab58e4402ef81672993a33f81bff1844fb7f43a  reasoning_plan.json
+          f2c5dcc5979d8365abedf0070d2316cdc21966b5c9b07c8eb573cef450e3a0e2  system_provenance_plan.json
+          21142e034ea8832c9a4de206b72c70978d6c44a96838645e7e4aea2afd00542e  reasoner_attempts.jsonl
+          cfa82f04256b0899a15ebd0852f1cb947cd50ab7e89e0bb4e1748d32772f2d5d  judge_plan.json
+          b9707b9adeef97c91fe5454d3e0a57519f001661605dc724a044a7f31883425e  judge_attempts.jsonl
+          48c556868ebd284933fb4a74c7a0b8c9573c06eeda3990257cf80a0b2d35593d  result.json
+          01d5d60fcb466bcfe4f8ea5e42d589f442276bb3ff7c07beacb909f4d372460a  RESULT.md
           EOF
           cd "$GITHUB_WORKSPACE"
           cp -a "$TMP/." "$DEST/"
@@ -72,22 +71,21 @@ jobs:
           - Frozen source: `6b5e6237b738250458550f95c9f3a6b0d51e86ec`
           - Artifact ID: `9499756280`
           - Artifact name: `v1-system-owned-provenance-recommendation-6b5e6237b738250458550f95c9f3a6b0d51e86ec-1`
-          - Connector-observed artifact ZIP SHA-256: `67cbee97ec644ed5075b71bedc5d50032b0edd526dc829217057ccb3c1361430`
+          - Connector-observed artifact ZIP SHA-256: `c970a8493b6dddee3bc7cbe907febec823f90af6fe5bad503defecce57184079`
           - Base fixture Git blob: `eac949c47a01878dcc47dcca1116493a02ba9805`
           - Overlay SHA-256: `c4e7f567ea24c96efa3c20a61e9ca66cd30f1b0bb2ee47d0ddc57eaafc28d08`
 
-          GitHub may repackage an artifact ZIP on download, so preservation authority is the exact artifact ID plus the verified hashes of every contained experiment file below.
+          Preservation authority is the exact workflow run, artifact ID, frozen source, and verified hashes of every contained experiment file. GitHub may repackage the outer ZIP on separate downloads.
 
           ```text
-          3679d5d97bc42d444299487cad46832907c196d8467707a41abe47e737f5e73e  environment.sqlite
-          90bc527540b59e91b9ecbf4dff72681956d2debcd783ca369bbac8ec26b8aad7  run_metadata.json
-          cad11110a7343db1affa552094a9f9d4ccf0c0170c2bc413e22254b1a200ff25  reasoning_plan.json
-          a31d80b54cd4fe1307cdb5d60b185aaad7bdd47e7cb6ebf3c80279379fb89fa  system_provenance_plan.json
-          88af820916d9971039922318614642032c899374f05353f9fd37a32358263526  reasoner_attempts.jsonl
-          2283e83a4f40131e4adf77b9d63fd8e6b2dffa10507238d979cf72b5b030acb  judge_plan.json
-          5efad31dcbeae16987e32362186093fbbc8d27c98f12e63cef2b203283cc1698  judge_attempts.jsonl
-          85befc90c086eec91ffcc819713d26fb653c2791514f13117313330a3d734a2  result.json
-          2751ca0b9be02b598b6717a6e2b9d20e1c884c31c71c6dfdf56d24a23ef732c  RESULT.md
+          34ec9d90332a699e26fb743501353dc49f653a428cc3392666520c19ddce0d4e  system_owned_provenance_recommendation_action.sqlite3
+          6d65ac267c230da7ab787cdcbab58e4402ef81672993a33f81bff1844fb7f43a  reasoning_plan.json
+          f2c5dcc5979d8365abedf0070d2316cdc21966b5c9b07c8eb573cef450e3a0e2  system_provenance_plan.json
+          21142e034ea8832c9a4de206b72c70978d6c44a96838645e7e4aea2afd00542e  reasoner_attempts.jsonl
+          cfa82f04256b0899a15ebd0852f1cb947cd50ab7e89e0bb4e1748d32772f2d5d  judge_plan.json
+          b9707b9adeef97c91fe5454d3e0a57519f001661605dc724a044a7f31883425e  judge_attempts.jsonl
+          48c556868ebd284933fb4a74c7a0b8c9573c06eeda3990257cf80a0b2d35593d  result.json
+          01d5d60fcb466bcfe4f8ea5e42d589f442276bb3ff7c07beacb909f4d372460a  RESULT.md
           ```
           EOF
 
