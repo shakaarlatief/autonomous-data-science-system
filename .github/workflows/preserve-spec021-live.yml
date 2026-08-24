@@ -1,0 +1,47 @@
+name: Preserve Specification 021 live raw artifact
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/preserve-spec021-live.yml
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  preserve:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: '32727241852'
+      ARTIFACT_NAME: v1-dependency-backed-recommendation-action-b589bad975880b2d3cccc3596fc82539b1b96577-1
+      TARGET_BRANCH: v1-dependency-backed-recommendation-value
+      DESTINATION: experiments/dependency_backed_recommendation_action_value/results/spec021-live-20260824-run-32727241852
+    steps:
+      - name: Checkout preservation target branch
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 1
+
+      - name: Download and preserve raw artifact without interpretation
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -e "${DESTINATION}" ]; then
+            echo "Destination already exists; refusing to overwrite preserved evidence."
+            exit 1
+          fi
+          mkdir -p /tmp/spec021-raw
+          gh run download "${SOURCE_RUN_ID}" --repo "${GITHUB_REPOSITORY}" --name "${ARTIFACT_NAME}" --dir /tmp/spec021-raw
+          mkdir -p "${DESTINATION}"
+          cp -a /tmp/spec021-raw/. "${DESTINATION}/"
+          echo "Preserving raw files:"
+          find "${DESTINATION}" -maxdepth 2 -type f -printf '%P\n' | sort
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "${DESTINATION}"
+          git commit -m "Preserve raw Specification 021 live artifact"
+          git push origin "HEAD:${TARGET_BRANCH}"
