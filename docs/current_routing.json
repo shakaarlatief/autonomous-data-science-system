@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "current_checkpoint": 172,
+  "active_development_branch": "v1-routing-consistency-guard",
+  "active_pr": 54,
+  "promoted_integration_branch": "v1-frontend-spike",
+  "promoted_integration_sha": "a856983172f6436b73e3f7d0e609d208b55a443b",
+  "latest_specification": "020",
+  "latest_experiment_outcome": "BLOCKING_BOUNDARY_SUPPORTED",
+  "current_boundary": "routing-consistency-guard-green"
+}
