@@ -1,0 +1,113 @@
+name: Preserve Specification 020 live result
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: read
+  contents: write
+  issues: write
+
+jobs:
+  preserve:
+    if: ${{ github.event.issue.title == '[ADS PRESERVE] spec020-live-32701999678' && github.actor == github.repository_owner }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      RUN_ID: '32701999678'
+      ARTIFACT_ID: '9510887324'
+      ARTIFACT_NAME: 'v1-blocking-calibration-82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a-1'
+      ARTIFACT_ZIP_SHA256: '35ed6b472eac22090e563bbafee30aab1b666c00453ebcfd8cd0a832b79be678'
+      SOURCE_SHA: '82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a'
+      EXPECTED_BRANCH_HEAD: '253c29a1f1f2c0668e78daf86799488c9b29a90d'
+      TARGET_BRANCH: 'v1-blocking-calibration-diagnostic'
+      DEST: 'experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678'
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout exact experiment branch boundary
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 1
+
+      - name: Verify branch and download exact artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          observed_head="$(git rev-parse HEAD)"
+          if [ "${observed_head}" != "${EXPECTED_BRANCH_HEAD}" ]; then
+            echo "Experiment branch moved before raw-result preservation: ${observed_head}"
+            exit 1
+          fi
+          rm -rf .spec020-artifact
+          mkdir -p .spec020-artifact
+          gh run download "${RUN_ID}" --repo "${GITHUB_REPOSITORY}" --name "${ARTIFACT_NAME}" --dir .spec020-artifact
+
+          test -f .spec020-artifact/RESULT.md
+          test -f .spec020-artifact/reasoner_attempts.jsonl
+          test -f .spec020-artifact/reasoning_plan.json
+          test -f .spec020-artifact/result.json
+
+          printf '%s  %s\n' \
+            '23bc014200e346855682ac45f1bb97e80377915f4b68c3b990a33a4f51338a3f' '.spec020-artifact/RESULT.md' \
+            '3b0e2460bdf8a6da8b2ab15c3c4c3e4c79d051ac459338afb4ddf4324f6015cf' '.spec020-artifact/reasoner_attempts.jsonl' \
+            '9dee436a89536020f0e679d28e9d2294b03a0ea30754b4aa3d4e3c63e2af8810' '.spec020-artifact/reasoning_plan.json' \
+            'd1b5be27bae21d5c8a93361a233bab4dec380de01978d08c643b5f650feb169a' '.spec020-artifact/result.json' \
+            | sha256sum -c -
+
+      - name: Preserve raw bundle and manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -e "${DEST}" ]; then
+            echo "Destination already exists."
+            exit 1
+          fi
+          mkdir -p "${DEST}"
+          cp .spec020-artifact/RESULT.md "${DEST}/RESULT.md"
+          cp .spec020-artifact/reasoner_attempts.jsonl "${DEST}/reasoner_attempts.jsonl"
+          cp .spec020-artifact/reasoning_plan.json "${DEST}/reasoning_plan.json"
+          cp .spec020-artifact/result.json "${DEST}/result.json"
+          cat > "${DEST}/MANIFEST.md" <<'EOF'
+          # Specification 020 Live Artifact Manifest
+
+          This directory preserves the exact extracted result bundle from the governed Specification 020 live run before scientific interpretation or tuning.
+
+          ```text
+          run_id            32701999678
+          job_id            97355284139
+          artifact_id       9510887324
+          artifact_name     v1-blocking-calibration-82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a-1
+          source_sha        82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
+          run_attempt       1
+          run_conclusion    success
+          artifact_zip_sha256 / GitHub digest
+                            35ed6b472eac22090e563bbafee30aab1b666c00453ebcfd8cd0a832b79be678
+          ```
+
+          Contained-file SHA256 values:
+
+          ```text
+          23bc014200e346855682ac45f1bb97e80377915f4b68c3b990a33a4f51338a3f  RESULT.md
+          3b0e2460bdf8a6da8b2ab15c3c4c3e4c79d051ac459338afb4ddf4324f6015cf  reasoner_attempts.jsonl
+          9dee436a89536020f0e679d28e9d2294b03a0ea30754b4aa3d4e3c63e2af8810  reasoning_plan.json
+          d1b5be27bae21d5c8a93361a233bab4dec380de01978d08c643b5f650feb169a  result.json
+          ```
+
+          The manifest records transport/provenance only. Scientific interpretation belongs in a separate stable result record and checkpoint.
+          EOF
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "${DEST}"
+          git commit -m 'Preserve raw Specification 020 live result'
+          git push origin "HEAD:${TARGET_BRANCH}"
+          echo "PRESERVED_COMMIT=$(git rev-parse HEAD)" >> "${GITHUB_ENV}"
+
+      - name: Comment preservation result
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+            -f body="Specification 020 raw live artifact preserved on \`${TARGET_BRANCH}\` at commit \`${PRESERVED_COMMIT}\`; run=\`${RUN_ID}\`; artifact=\`${ARTIFACT_ID}\`."
