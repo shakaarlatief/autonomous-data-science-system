@@ -4,9 +4,9 @@
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
 **Current checkpoint:** 166  
-**Active development branch:** `v1-spec019-failure-preservation`  
-**Active PR:** #43 preservation-only; PR #33 is failed implementation and must close without merge  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `ecf37585f576a3c4fd84a884dee4650b52ab1519` before Specification 019 preservation merge
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none; preservation-only PR #43 merged and failed implementation PR #33 closed without merge  
+**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 019 preservation merge `e88c41b31788a53c7da115a24b0f9baeea48516b`
 
 ## Start here
 
@@ -26,15 +26,15 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      ecf37585f576a3c4fd84a884dee4650b52ab1519
-active preservation branch     v1-spec019-failure-preservation
-active preservation PR         #43
+promoted integration head      e88c41b31788a53c7da115a24b0f9baeea48516b
+active branch                  v1-frontend-spike
+active PR                      none
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
 Specification 018 PR           #23 merged
-Specification 019 PR           #33 failed; close without merge after #43 integrates
-Specification 019 preservation #43
+Specification 019 PR           #33 closed without merge
+Specification 019 preservation #43 merged
 main                           intentionally behind V1 application code except narrow launcher exposure
 ```
 
@@ -266,25 +266,25 @@ owner request transport
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation head is green.
 
-Specification 019 used this path successfully for its one authorized provider-backed run. That one-shot authorization is not a permanent capability and must be retired after preservation.
+Specification 019 used this path successfully for its one authorized provider-backed run. Its one-shot authorization is now retired, the temporary Specification 019 live/observer/preservation helpers have been removed from `main`, and temporary issues 34-42 are closed with audit history retained.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. validate and merge preservation-only PR #43
-B. retire Specification 019 one-shot launch authorization and temporary control-plane helpers
-C. close temporary launch/preservation issues while keeping their audit history
-D. close failed implementation PR #33 without merge
-E. reconcile v1-frontend-spike to Checkpoint 166
-F. prospectively design a recommendation/blocking-calibration experiment
-G. retain system-owned supplied-context provenance
-H. freeze any new semantics/gates before implementation or provider calls
-I. authorize any future live run only through Specification 018 after exact provider-free validation
+A. begin a prospective recommendation/blocking-calibration design
+B. define the exact represented relation between unresolved work and defended downstream scope
+C. preserve the Specification 016 dependency-backed DEFER construction
+D. preserve Specification 019 system-owned supplied-context provenance
+E. retain strong GENERIC and FULL_HORIZON controls
+F. do not tune successor truth or thresholds from repeated Specification 019 outputs
+G. freeze the successor research/specification/fixture/gates/call plan/checkpoint before implementation
+H. validate the exact implementation head provider-free
+I. authorize any future live run only through Specification 018 after exact green evidence
 ```
 
-Do not modify or rescore Specifications 015-017. Do not post-hoc relax Specification 019 gates. Do not use its repeated outputs to tune a successor benchmark without a new prospective contract.
+Do not modify or rescore Specifications 015-017. Do not post-hoc relax Specification 019 gates. No new recommendation/action provider call is currently authorized.
 
 ---
 
