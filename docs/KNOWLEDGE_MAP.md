@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 184  
-**Active development branch:** `v1-spec021-negative-result-preservation`  
-**Active PR:** #66  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`
+**Current checkpoint:** 185  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ef6b45a84f43a5dfe33cf5c13351cb1235e6e661`
 
 ## Start here
 
@@ -38,8 +38,8 @@ Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
 routing consistency PR         #54 merged
-Specification 021 impl PR      #55 open but rejected for promotion; close without merge after preservation
-Specification 021 preserve PR  #66 active preservation-only candidate
+Specification 021 impl PR      #55 closed without merge; failed implementation rejected
+Specification 021 preserve PR  #66 merged at ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
 main                           governed live-launch control plane; zero active Specification 021 authorization
 ```
 
@@ -98,6 +98,9 @@ Research 030 / Checkpoint 183
 
 Checkpoint 184 / PR #66
     preservation-only promotion candidate carrying Specification 021 evidence/history without the rejected implementation
+
+Checkpoint 185
+    PR #66 merged, PR #55 closed without merge, Specification 021 FAIL preserved, and methodological-navigation / coverage architecture-evaluation review is the next legitimate boundary
 ```
 
 ---

@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 184  
+**Checkpoint:** 185  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-spec021-negative-result-preservation`  
-**Active PR:** #66  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 completed with frozen outcome `FAIL`; its negative evidence and architectural interpretation are now in a preservation-only promotion candidate while its failed recommendation implementation remains rejected.  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ef6b45a84f43a5dfe33cf5c13351cb1235e6e661`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 completed with frozen outcome `FAIL`; its negative evidence and architectural interpretation were preserved through PR #66, while failed implementation PR #55 was closed without merge.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate and merge preservation-only PR #66, close rejected implementation PR #55 without merge, reconcile `v1-frontend-spike`, then perform an architecture/evaluation review of the still largely untested methodological-navigation and coverage value proposition before freezing any successor experiment.
+**Immediate project priority:** perform an architecture/evaluation review of the still largely untested methodological-navigation and coverage value proposition before freezing any successor experiment.
 
 ## Active ChatGPT development context
 
@@ -208,13 +208,11 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate preservation-only PR #66 on its exact head
-2. merge PR #66 only if the negative-evidence boundary remains clean and green
-3. close rejected Specification 021 implementation PR #55 without merge
-4. reconcile v1-frontend-spike to the preserved Specification 021 FAIL boundary
-5. review architecture/evaluation for Question A: methodological navigation / coverage from realistic evolving project state
-6. do not freeze Specification 022 or rerun the same supplied-action benchmark merely to seek a SELECTIVE win
-7. do not modify or rescore Specifications 015-021
+1. validate this exact Checkpoint 185 v1-frontend-spike reconciliation
+2. review architecture/evaluation for Question A: methodological navigation / coverage from realistic evolving project state
+3. distinguish path discovery/coverage, applicability/relevance, concrete option generation, prioritization/disposition, and model-facing context value
+4. do not freeze Specification 022 or rerun the same supplied-action benchmark merely to seek a SELECTIVE win
+5. do not modify or rescore Specifications 015-021
 ```
 
 ## Minimum reading for continuation
@@ -224,7 +222,7 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/184_specification_021_negative_result_preservation_promotion_candidate.md
+docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
 docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
 docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
 experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md

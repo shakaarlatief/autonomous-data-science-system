@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 184,
-  "active_development_branch": "v1-spec021-negative-result-preservation",
-  "active_pr": 66,
+  "current_checkpoint": 185,
+  "active_development_branch": "v1-frontend-spike",
+  "active_pr": null,
   "promoted_integration_branch": "v1-frontend-spike",
-  "promoted_integration_sha": "a639cfc570290a2169425f43078bbb242fa398e9",
+  "promoted_integration_sha": "ef6b45a84f43a5dfe33cf5c13351cb1235e6e661",
   "latest_specification": "021",
   "latest_experiment_outcome": "FAIL",
-  "current_boundary": "spec021-negative-result-preservation-promotion-candidate"
+  "current_boundary": "spec021-negative-result-preserved-question-a-architecture-review-ready"
 }

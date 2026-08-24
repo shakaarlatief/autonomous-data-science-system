@@ -23,16 +23,15 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            184
-active branch         v1-spec021-negative-result-preservation
-active PR             #66
-promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 negative-result preservation promotion candidate
+checkpoint            185
+active branch         v1-frontend-spike
+active PR             none
+promoted V1 head      ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
+current boundary      Specification 021 negative result preserved; architecture review ready
 latest experiment     Specification 021
 outcome               FAIL
-next                  validate and merge preservation-only PR #66,
-                      close rejected implementation PR #55 without merge,
-                      then review methodological-navigation / coverage evaluation
+next                  review methodological-navigation / coverage architecture and evaluation;
+                      do not freeze Specification 022 until aligned
 ```
 
 Current experimental progression:
@@ -50,6 +49,7 @@ Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary s
 Specification 021  complete supplied-action recommendation/disposition experiment FAIL; negative evidence preserved without implementation promotion
 Checkpoint 183     clarified that supplied-action disposition calibration does not test open-world methodological navigation / coverage
 Checkpoint 184     preservation-only promotion candidate for Specification 021 evidence and interpretation
+Checkpoint 185     preservation merged, failed implementation closed, Question A architecture/evaluation review ready
 ```
 
 For exact continuation, start with:
@@ -58,7 +58,7 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/184_specification_021_negative_result_preservation_promotion_candidate.md
+docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
 docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
 docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
 experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
@@ -369,12 +369,11 @@ This hardening is not a justification for graph/vector preservation storage or w
 ## Exact continuation
 
 ```text
-1. validate preservation-only PR #66 on its exact head
-2. merge PR #66 only if the evidence/history-only boundary remains clean and green
-3. close rejected Specification 021 implementation PR #55 without merge
-4. reconcile v1-frontend-spike to the preserved Specification 021 FAIL boundary
-5. before any Specification 022 freeze, review how to test methodological navigation / coverage from realistic evolving project state
-6. do not modify or rescore Specifications 015-021
+1. validate this exact v1-frontend-spike Checkpoint 185 reconciliation
+2. perform the architecture/evaluation review of methodological navigation / coverage from realistic evolving project state
+3. distinguish path discovery/coverage, applicability/relevance, option generation, prioritization/disposition, and model-facing context value
+4. do not freeze Specification 022 until that review is aligned
+5. do not modify or rescore Specifications 015-021
 ```
 
 ---
