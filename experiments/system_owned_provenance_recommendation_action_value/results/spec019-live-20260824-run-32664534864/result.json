@@ -1,0 +1,244 @@
+{
+  "accepted_snapshot_digest": "d896eecd45745ca951ea01c81f81d313a8cb49dbd54fa6f9b713f4f9c1904933",
+  "accepted_stable_revision_pairs": [
+    {
+      "revision_id": "f0341774-efbb-48a7-b3c7-94820857c7e8",
+      "stable_key": "bagging"
+    },
+    {
+      "revision_id": "f30b1304-f5c0-4070-9f21-dc27945d866f",
+      "stable_key": "class-imbalance"
+    },
+    {
+      "revision_id": "9b6b4a84-526f-4fba-9036-13ad3cc00896",
+      "stable_key": "ecdf"
+    },
+    {
+      "revision_id": "1b9604fc-6cdb-4ff5-b4de-7aafaa157d89",
+      "stable_key": "gradient-boosted-trees"
+    },
+    {
+      "revision_id": "a5035424-0d67-4dfc-9491-dc73df2601ce",
+      "stable_key": "histogram"
+    },
+    {
+      "revision_id": "cfefb760-e70a-4b1a-bb6a-3393334b70fa",
+      "stable_key": "missing-data"
+    },
+    {
+      "revision_id": "4a3189bb-b007-4efd-a2bd-04a8cc6a4d5c",
+      "stable_key": "prediction-moment"
+    },
+    {
+      "revision_id": "8b63f2cd-a1b7-4b2c-939b-5b146c5d7477",
+      "stable_key": "prediction-time-feature-eligibility"
+    },
+    {
+      "revision_id": "fefb0b89-52b5-4353-9eb0-331670c9211c",
+      "stable_key": "random-forest"
+    },
+    {
+      "revision_id": "a952de3e-d761-4cab-9318-91b2f25f3231",
+      "stable_key": "temporal-validation"
+    }
+  ],
+  "advancement_outcome": "FAIL",
+  "benchmark_id": "v1-system-owned-provenance-recommendation-action-value-v0.1",
+  "complete_scored_design": true,
+  "context_summary": {
+    "FULL_HORIZON": {
+      "mean_context_utf8_bytes": 10772.0,
+      "observations": 12
+    },
+    "GENERIC": {
+      "mean_context_utf8_bytes": 2.0,
+      "observations": 12
+    },
+    "SELECTIVE": {
+      "mean_context_utf8_bytes": 2691.5,
+      "observations": 12
+    },
+    "SELECTIVE_FULL_RATIO": 0.24986075009283326
+  },
+  "counts": {
+    "judge_attempt_records": 36,
+    "planned_judge_outputs": 36,
+    "planned_reasoner_outputs": 36,
+    "reasoner_attempt_records": 36,
+    "scored_observations": 36,
+    "successful_judge_outputs": 36,
+    "successful_reasoner_outputs": 36
+  },
+  "environment": {
+    "judge_model": "gpt-5.6-sol",
+    "judge_reasoning_effort": "high",
+    "openai_agents_version": "0.19.4",
+    "openai_client_version": "2.54.0",
+    "python_version": "3.13.15",
+    "reasoner_reasoning_effort": "medium",
+    "requested_reasoner_model": "gpt-5.6-sol"
+  },
+  "execution_integrity_passed": true,
+  "finished_at_utc": "2026-08-23T20:37:44.296268+00:00",
+  "gate_evaluation": {
+    "absolute_passed": false,
+    "aggregate_by_condition": {
+      "FULL_HORIZON": {
+        "blocking_scope_false_negatives": 0,
+        "blocking_scope_false_positives": 4,
+        "critical_action_omissions": 0,
+        "defer_pointer_errors": 0,
+        "exact_disposition_accuracy": 0.9444444444444445,
+        "over_recommendations": 0,
+        "required_clarification_false_negatives": 0,
+        "required_clarification_false_positives": 0,
+        "semantic_score": 0.9500000000000001,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0
+      },
+      "GENERIC": {
+        "blocking_scope_false_negatives": 0,
+        "blocking_scope_false_positives": 4,
+        "critical_action_omissions": 0,
+        "defer_pointer_errors": 0,
+        "exact_disposition_accuracy": 0.9444444444444445,
+        "over_recommendations": 0,
+        "required_clarification_false_negatives": 0,
+        "required_clarification_false_positives": 0,
+        "semantic_score": 0.9500000000000001,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0
+      },
+      "SELECTIVE": {
+        "blocking_scope_false_negatives": 0,
+        "blocking_scope_false_positives": 6,
+        "critical_action_omissions": 0,
+        "defer_pointer_errors": 0,
+        "exact_disposition_accuracy": 0.9166666666666666,
+        "over_recommendations": 0,
+        "required_clarification_false_negatives": 0,
+        "required_clarification_false_positives": 0,
+        "semantic_score": 0.9500000000000001,
+        "under_recommendations": 0,
+        "unnecessary_recommended_cost": 0
+      }
+    },
+    "expansion_passed": false,
+    "gate_results": {
+      "SPRA-G01": true,
+      "SPRA-G02": true,
+      "SPRA-G03": true,
+      "SPRA-G04": true,
+      "SPRA-G05": true,
+      "SPRA-G06": false,
+      "SPRA-G07": true,
+      "SPRA-G08": false,
+      "SPRA-G09": false,
+      "SPRA-G10": false,
+      "SPRA-G11": true,
+      "SPRA-G12": true,
+      "SPRA-G13": true,
+      "SPRA-G14": true,
+      "SPRA-G15": true,
+      "SPRA-G16": true,
+      "SPRA-G17": true,
+      "SPRA-G18": true,
+      "SPRA-G19": true,
+      "SPRA-G20": false,
+      "SPRA-G21": true
+    },
+    "outcome": "FAIL",
+    "per_case_exact_accuracy": {
+      "RB-01": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RB-02": {
+        "FULL_HORIZON": 0.7777777777777777,
+        "GENERIC": 0.7777777777777777,
+        "SELECTIVE": 0.6666666666666666
+      },
+      "RB-03": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RB-04": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      }
+    },
+    "per_case_semantic_score": {
+      "RB-01": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RB-02": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RB-03": {
+        "FULL_HORIZON": 1.0,
+        "GENERIC": 1.0,
+        "SELECTIVE": 1.0
+      },
+      "RB-04": {
+        "FULL_HORIZON": 0.8000000000000002,
+        "GENERIC": 0.8000000000000002,
+        "SELECTIVE": 0.8000000000000002
+      }
+    },
+    "relative_passed": false,
+    "value_signals": []
+  },
+  "judge_plan_sha256": "1efdc447e91f5eb63fcf63c448b86cfdf008376bc7cdd97e3a7a695e7f292c7d",
+  "project_state_after": {
+    "prj_entity": 0,
+    "prj_finding": 0,
+    "prj_knowledge_ref": 0,
+    "prj_project": 0
+  },
+  "project_state_before": {
+    "prj_entity": 0,
+    "prj_finding": 0,
+    "prj_knowledge_ref": 0,
+    "prj_project": 0
+  },
+  "provider_attempts": {
+    "maximum": 90,
+    "used": 72
+  },
+  "reasoning_plan_sha256": "a1889eaa6f682420038f98affd579b1a08896feaf7f7ec33b5e6d7c69765d268",
+  "source_head": "6b5e6237b738250458550f95c9f3a6b0d51e86ec",
+  "specification": "019-v0.1",
+  "started_at_utc": "2026-08-23T20:29:12.683017+00:00",
+  "starting_merge_sha": "ecf37585f576a3c4fd84a884dee4650b52ab1519",
+  "system_provenance_plan_sha256": "e57876225d708b98ab678a7dcc47384a64aa93eefcedccdd20c88b2a04a31d18",
+  "technical_invariants": {
+    "SPRA-INV-01_base_fixture_blob_locked": true,
+    "SPRA-INV-02_scientific_truth_inherited": true,
+    "SPRA-INV-03_reasoner_plan_36": true,
+    "SPRA-INV-04_judge_plan_independent": true,
+    "SPRA-INV-05_generic_provenance_empty": true,
+    "SPRA-INV-06_selective_exact_sets": true,
+    "SPRA-INV-07_full_exact_ten_revisions": true,
+    "SPRA-INV-08_provenance_frozen_before_calls": true,
+    "SPRA-INV-09_provenance_digest_and_bytes_exact": true,
+    "SPRA-INV-10_model_schema_has_no_methodological_basis": true,
+    "SPRA-INV-11_model_cannot_mutate_provenance": true,
+    "SPRA-INV-12_matched_task_evidence": true,
+    "SPRA-INV-13_relation_backed_validation": true,
+    "SPRA-INV-14_judge_blinded": true,
+    "SPRA-INV-15_retry_ceiling_90": true,
+    "SPRA-INV-16_complete_fake_design": "ESTABLISHED_BY_PROVIDER_FREE_CI",
+    "SPRA-INV-17_ci_no_live_credential": "ESTABLISHED_BY_PROVIDER_FREE_CI",
+    "SPRA-INV-18_runtime_import_boundary": true,
+    "SPRA-INV-19_no_authoritative_mutation": true,
+    "SPRA-INV-19_no_authoritative_mutation_precondition": true,
+    "SPRA-INV-20_live_launch_authorization": "REQUIRES_AUTHORIZATION_CHECKPOINT"
+  }
+}

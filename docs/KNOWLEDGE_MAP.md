@@ -2,11 +2,11 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-23  
-**Current checkpoint:** 162  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none; PR #23 merged  
-**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 018 promotion merge `9fd2243c38a8f0f010396847f519e115d30b8f58`
+**Last reviewed:** 2026-08-24  
+**Current checkpoint:** 166  
+**Active development branch:** `v1-spec019-failure-preservation`  
+**Active PR:** #43 preservation-only; PR #33 is failed implementation and must close without merge  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ecf37585f576a3c4fd84a884dee4650b52ab1519` before Specification 019 preservation merge
 
 ## Start here
 
@@ -26,13 +26,15 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      9fd2243c38a8f0f010396847f519e115d30b8f58
-active branch                  v1-frontend-spike
-active PR                      none
+promoted integration head      ecf37585f576a3c4fd84a884dee4650b52ab1519
+active preservation branch     v1-spec019-failure-preservation
+active preservation PR         #43
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
 Specification 018 PR           #23 merged
+Specification 019 PR           #33 failed; close without merge after #43 integrates
+Specification 019 preservation #43
 main                           intentionally behind V1 application code except narrow launcher exposure
 ```
 
@@ -73,6 +75,9 @@ Specification 017 / Checkpoints 156-159
 
 Specification 018 / Checkpoints 160-162
     governed autonomous live-experiment launcher frozen, implemented, cross-platform validated, end-to-end provider-free probe passed, and promoted to integration
+
+Specification 019 / Checkpoints 163-166
+    system-owned provenance rerun frozen, cross-platform validated, autonomously launched, completed, classified FAIL, and preserved without implementation promotion
 ```
 
 ---
@@ -173,12 +178,40 @@ experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOM
 experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705/
 ```
 
-Stable next-experiment boundary:
+Specification 019 system-owned-provenance rerun:
+
+```text
+docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+docs/checkpoints/166_specification_019_live_result_failed.md
+experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/
+```
+
+Frozen Specification 019 result:
+
+```text
+source                      6b5e6237b738250458550f95c9f3a6b0d51e86ec
+run                         32664534864
+reasoner outputs            36 / 36
+judge outputs               36 / 36
+retries                     0
+execution integrity         true
+GENERIC exact               0.944444
+SELECTIVE exact             0.916667
+FULL_HORIZON exact          0.944444
+semantic all conditions     0.950000
+SELECTIVE blocking FP       6
+FULL_HORIZON blocking FP    4
+outcome                     FAIL
+```
+
+Stable instrumentation boundary after Specifications 017-019:
 
 ```text
 SYSTEM-OWNED PROVENANCE
     exact supplied stable_key@revision_id
-    context digest
+    methodology payload digest and bytes
     treatment identity
 
 MODEL-OWNED CONTENT
@@ -188,6 +221,8 @@ MODEL-OWNED CONTENT
     clarifications
     rationales
 ```
+
+Specification 019 closed the provenance instrumentation defect but did not establish recommendation/action value. The immediate scientific boundary is calibration of `RECOMMENDED` versus genuinely `BLOCKING_REQUIRED` work for exact defended downstream scopes.
 
 ---
 
@@ -205,7 +240,7 @@ scripts/ads_live_experiment_launcher.py
 tests/unit/test_ads_live_experiment_launcher.py
 ```
 
-Exact evidence:
+Exact accepted evidence:
 
 ```text
 implementation source   27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
@@ -231,21 +266,25 @@ owner request transport
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation head is green.
 
+Specification 019 used this path successfully for its one authorized provider-backed run. That one-shot authorization is not a permanent capability and must be retired after preservation.
+
 ---
 
 ## Current exact continuation
 
 ```text
-A. branch from promoted merge 9fd2243c38a8f0f010396847f519e115d30b8f58
-B. preregister the next recommendation/action-value experiment
-C. keep exact supplied-context provenance system-owned
-D. do not use partial Specification 017 scores to tune truth or gates
-E. freeze the new fixture/call plan/gates/checkpoint before implementation
-F. validate the exact provider-free implementation head
-G. authorize and launch only through Specification 018 after that head is green
+A. validate and merge preservation-only PR #43
+B. retire Specification 019 one-shot launch authorization and temporary control-plane helpers
+C. close temporary launch/preservation issues while keeping their audit history
+D. close failed implementation PR #33 without merge
+E. reconcile v1-frontend-spike to Checkpoint 166
+F. prospectively design a recommendation/blocking-calibration experiment
+G. retain system-owned supplied-context provenance
+H. freeze any new semantics/gates before implementation or provider calls
+I. authorize any future live run only through Specification 018 after exact provider-free validation
 ```
 
-Do not modify or rescore Specifications 015-017. Do not use partial Specification 017 scores as advancement evidence.
+Do not modify or rescore Specifications 015-017. Do not post-hoc relax Specification 019 gates. Do not use its repeated outputs to tune a successor benchmark without a new prospective contract.
 
 ---
 
@@ -267,4 +306,8 @@ Do not modify or rescore Specifications 015-017. Do not use partial Specificatio
 160  governed autonomous launcher contract frozen
 161  governed autonomous launcher end-to-end provider-free gate passed
 162  governed autonomous launcher promoted to V1 integration
+163  Specification 019 system-owned-provenance contract frozen
+164  Specification 019 provider-free/live source boundary validated
+165  Specification 019 governed live authorization frozen
+166  Specification 019 complete live result classified FAIL and preserved
 ```
