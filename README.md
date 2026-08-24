@@ -23,13 +23,13 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            167
+checkpoint            168
 active branch         v1-blocking-calibration-diagnostic
 active PR             #44 draft
 promoted V1 head      b9c9c3a38935983075a9ca88632177980bb20ede
-current boundary      Specification 020 contract frozen
+current boundary      Specification 020 provider-free implementation green
                       RECOMMENDED vs dependency-backed BLOCKING_REQUIRED diagnostic
-                      provider-free implementation next
+                      exact reconciled pre-live boundary next
 ```
 
 Current progression:
@@ -65,9 +65,9 @@ Specification 019
     implementation rejected; failure evidence preserved on integration
 
 Specification 020
-    RECOMMENDED-vs-BLOCKING_REQUIRED calibration diagnostic frozen
-    explicit requirement + defended downstream-scope relation
-    no provider call authorized yet
+    RECOMMENDED-vs-BLOCKING_REQUIRED calibration contract frozen
+    provider-free implementation cross-platform green
+    no live workflow or provider call authorized yet
 ```
 
 For exact continuation, start with:
@@ -78,6 +78,7 @@ docs/KNOWLEDGE_MAP.md
 docs/research/027_recommended_vs_blocking_required_calibration_design.md
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
 docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
 tests/fixtures/reasoning/blocking_calibration_v1.json
 ```
 
@@ -340,7 +341,7 @@ High priority, high expected value, common best practice, and possible future us
 
 The frozen benchmark contains six contrastive pairs across prediction-time feature availability, temporal validation sensitivity, missing-data treatment sensitivity, subgroup error analysis, probability calibration, and nonlinear model-family comparison.
 
-If a later provider-free implementation earns live authorization, the frozen design is:
+Frozen planned live shape, only if a later pre-live and live-capable boundary earns authorization:
 
 ```text
 6 pairs x 2 variants x 3 repetitions
@@ -362,7 +363,20 @@ BLOCKING_BOUNDARY_NOT_SUPPORTED
 INCOMPLETE
 ```
 
-No provider call is authorized by Checkpoint 167.
+Provider-free implementation evidence at exact head `fb8327aae859f53bbb0c4d7bba70b32b6033343e`:
+
+```text
+V1 blocking calibration diagnostic   run 32697487230   success
+Ubuntu dedicated                     16 passed
+Windows dedicated                    16 passed
+Ubuntu full V1                       115 passed, 2 skipped
+Windows full V1                      115 passed, 2 skipped
+provider credential                  absent
+```
+
+The same exact head also passed the checkpoint, accepted reasoning-context, prior disposition, and governed-launcher regression workflows. Persistent retryable failure is now verified to stop at exactly 45 attempts and return `INCOMPLETE` with all failed attempts preserved.
+
+No live runtime default, live CLI, live workflow, or Specification 020 authorization exists at Checkpoint 168.
 
 ---
 
@@ -390,40 +404,36 @@ Specification 020 preserves that separation and additionally makes the system ow
 
 ## Current architecture boundary
 
-The next executable task is no longer experiment design. The contract is frozen.
+The frozen diagnostic is now implemented provider-free and cross-platform green.
 
 Current task:
 
 ```text
-implement Specification 020 provider-free
-    -> fixture construction audit
-    -> truth-blinded deterministic plan
-    -> experiment-only structured output
-    -> strict supplied-ID validation
-    -> attempt ledger
-    -> deterministic gate evaluation
-    -> fake-runtime integration
-    -> Ubuntu/Windows CI with no provider credential
+reconcile and validate the exact post-Checkpoint-168 branch head
+    -> Specification 020 Ubuntu/Windows gate
+    -> accepted V1 regression seams
+    -> checkpoint metadata
+
+then
+    -> freeze a separate pre-live boundary
 ```
 
-Only after an exact implementation head is green may a later checkpoint freeze a live boundary. Any provider-backed run must then be authorized through Specification 018.
+Only after that pre-live boundary is frozen may a live runtime entry path and workflow be added. Any provider-backed run must then be independently provider-free validated and authorized through Specification 018.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. implement Specification 020 provider-free only
-2. mechanically audit all six contrastive pairs and evaluator-truth blinding
-3. build and hash the deterministic 36-call plan before any provider path exists
-4. implement BlockingCalibrationResult, pointer validation, attempt ledger, and deterministic gates
-5. add fake-runtime integration and failure/incomplete tests
-6. add dedicated Ubuntu/Windows provider-free CI with OPENAI_API_KEY absent
-7. validate the exact implementation head plus accepted regression suites
-8. freeze a later exact implementation/live boundary checkpoint
-9. only then expose or authorize a live workflow through Specification 018
-10. do not modify or rescore Specification 019
-11. make no new provider call before the exact green boundary exists
+1. finish canonical reconciliation to Checkpoint 168
+2. validate the exact reconciled head cross-platform and across accepted V1 regression workflows
+3. freeze a separate pre-live boundary checkpoint
+4. only after that checkpoint add the explicit live runtime entry path and workflow
+5. validate the live-capable source provider-free
+6. authorize at most one frozen live run through Specification 018
+7. preserve raw evidence before interpretation or tuning
+8. do not modify or rescore Specification 019
+9. make no new provider call before the live boundary and governance checks are complete
 ```
 
 ---
