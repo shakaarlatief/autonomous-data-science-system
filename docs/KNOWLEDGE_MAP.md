@@ -3,9 +3,9 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 178  
+**Current checkpoint:** 179  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, Specification 021 first governed live execution incomplete; instrumentation repair next  
+**Active PR:** #55 draft, Specification 021 usage-serialization repair passed cross-platform; replacement live-source freeze next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
 **Latest experiment:** Specification 021 `INCOMPLETE`
 
@@ -41,7 +41,7 @@ Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
 routing consistency PR         #54 merged
 Specification 021 PR           #55 active
-Spec021 live-source ref        v1-spec021-dependency-backed-recommendation-value-live-source
+Spec021 historical live ref    v1-spec021-dependency-backed-recommendation-value-live-source
 main                           governed live-launch control plane; consumed Spec021 authorization retired
 ```
 
@@ -92,13 +92,14 @@ Specification 020 / Checkpoints 167-171
 Checkpoints 172-173 / PR #54
     narrow machine-readable routing pointers + cross-platform contradiction guard accepted, promoted, and closed
 
-Specification 021 / Checkpoints 174-178 / PR #55
+Specification 021 / Checkpoints 174-179 / PR #55
     dependency-backed recommendation-value contract frozen prospectively;
     provider-free implementation and exact pre-live/live-source boundaries validated;
-    first governed live run 32727241852 completed operationally but scientific design was incomplete;
-    raw artifact preserved before interpretation at 247314916fa028e2d27ea282ee030a26a30a84cc;
-    72/72 reasoner attempts hit the same usage-metadata serialization defect;
-    zero scored observations; no scientific advancement classification
+    first governed live run 32727241852 preserved as scientifically INCOMPLETE;
+    72/72 reasoner attempts hit the same mappingproxy-backed usage serialization defect;
+    zero scored observations and no scientific advancement classification;
+    live-shaped provider-free regression reproduced the defect cross-platform before repair;
+    narrow reasoner/judge usage-metadata repair then passed Ubuntu and Windows plus inherited seams
 ```
 
 ---
@@ -296,7 +297,7 @@ exact unresolved requirement
 
 This does not promote production recommendation enums or prove methodological-context recommendation value.
 
-### Specification 021, first live execution incomplete
+### Specification 021, incomplete live result with repaired instrumentation boundary
 
 Primary sources:
 
@@ -309,9 +310,10 @@ docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_p
 docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
 docs/checkpoints/177_specification_021_live_source_frozen.md
 docs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md
+docs/checkpoints/179_specification_021_usage_serialization_repair_cross_platform_passed.md
 ```
 
-Current status:
+Current scientific status:
 
 ```text
 INCOMPLETE
@@ -348,17 +350,17 @@ FAIL
 incomplete / integrity failed -> no advancement classification
 ```
 
-Exact live-source evidence:
+Historical live-source evidence:
 
 ```text
 provider-free implementation head           8e199c29e3f082b353f92f27868aedca0ebbbf74
 pre-live source                             aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
-live-capable source                         b589bad975880b2d3cccc3596fc82539b1b96577
-live-source ref                             v1-spec021-dependency-backed-recommendation-value-live-source
+first live-capable source                   b589bad975880b2d3cccc3596fc82539b1b96577
+historical live-source ref                  v1-spec021-dependency-backed-recommendation-value-live-source
 Specification 021 provider-free CI          32724242554  success
 Windows job                                 97421896915  success
 Ubuntu job                                  97421897042  success
-routing and inherited accepted-seam checks  all green on the exact live source
+routing and inherited accepted-seam checks  all green on the first live source
 ```
 
 The first live-plumbing validation run `32724023671` exposed only that the implementation-stage "no live surface" invariant had to transition to a "no repository authorization" invariant after Checkpoint 176 permitted the live wrapper/workflow. The repair did not change frozen science.
@@ -382,7 +384,11 @@ execution integrity      false
 advancement outcome      null
 ```
 
-All 72 reasoner attempts failed with the same `cannot pickle 'mappingproxy' object` error while attempt metadata was being serialized. This yields no evidence for or against GENERIC, SELECTIVE, or FULL_HORIZON recommendation quality. Checkpoint 178 freezes the run as incomplete evidence and permits only a narrow instrumentation repair before any replacement live-source boundary.
+All 72 reasoner attempts failed with the same `cannot pickle 'mappingproxy' object` error while attempt metadata was being serialized. This yields no evidence for or against GENERIC, SELECTIVE, or FULL_HORIZON recommendation quality. Checkpoint 178 freezes the run as incomplete evidence.
+
+Checkpoint 179 then validates only the instrumentation repair. Test-only head `7cf41dfd5785d754fa62096ec9bd410b75b5f044` introduced non-null live-shaped `raw_provider_usage` for both the fake reasoner and fake judge and failed the dedicated Specification 021 suite on Ubuntu and Windows. Repair head `44983ab9af4b0b3739043466a19541ae2ac9e7ed` replaced only unsafe `dataclasses.asdict()` usage serialization with explicit JSON-safe usage metadata serialization on both attempt-recording paths. Dedicated run `32732513065` then passed with Ubuntu job `97447719364` and Windows job `97447719596`, while routing, checkpoint metadata, reasoning-context, disposition-semantics, blocking-calibration, and launcher checks all passed on the same repair head.
+
+The scientific result remains `INCOMPLETE`. Checkpoint 179 does not rescore the first live run and does not itself authorize a replacement provider execution.
 
 ---
 
@@ -409,7 +415,7 @@ owner request transport
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation/live-capable source is provider-free green.
 
-The consumed Specification 021 authorization is retired. Any replacement execution requires a newly frozen exact source, fresh exact green CI evidence, and a new launch ID after the instrumentation repair boundary is validated.
+The consumed Specification 021 authorization is retired. Any replacement execution requires a newly frozen exact source, fresh exact green CI evidence, and a new launch ID after the Checkpoint 179 reconciliation boundary is validated.
 
 ---
 
@@ -444,13 +450,13 @@ Markdown remains the substantive source of truth. The routing manifest is not a 
 
 ```text
 A. keep run 32727241852 immutable as INCOMPLETE evidence
-B. repair only usage attempt-metadata serialization for reasoner and judge paths
-C. add provider-free regression coverage with non-null live-shaped raw_provider_usage
-D. validate the repair on Ubuntu and Windows with no provider credential
-E. run inherited accepted-seam checks on the exact repaired head
-F. freeze a new exact live-source boundary only after all required checks pass
-G. use a new Specification 018 launch ID for any replacement live run
-H. preserve replacement raw evidence before interpretation
+B. keep the frozen Specification 021 scientific contract unchanged
+C. complete Checkpoint 179 canonical routing reconciliation
+D. validate the exact reconciled branch head with dedicated cross-platform Specification 021 CI and inherited seams
+E. freeze a new exact replacement live-source boundary only if that head is fully green
+F. create a fresh source ref and record exact green run/job provenance
+G. only after that freeze, install one new Specification 018 authorization with a new launch ID
+H. preserve any replacement raw artifact before interpretation
 I. do not modify or rescore Specification 021 science or Specifications 015-020
 ```
 
@@ -490,4 +496,5 @@ I. do not modify or rescore Specification 021 science or Specifications 015-020
 176  Specification 021 fully reconciled exact pre-live boundary frozen
 177  Specification 021 exact live-capable source frozen and pinned; no provider call authorized
 178  Specification 021 first governed live run preserved as INCOMPLETE after uniform usage-metadata serialization failure
+179  live-shaped regression reproduced the defect cross-platform; narrow reasoner/judge usage serialization repair then passed Ubuntu/Windows and inherited seams
 ```
