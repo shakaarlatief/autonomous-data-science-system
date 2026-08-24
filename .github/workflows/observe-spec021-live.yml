@@ -9,6 +9,7 @@ on:
 permissions:
   actions: read
   contents: read
+  issues: write
 
 jobs:
   observe:
@@ -18,11 +19,13 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       EXPECTED_SOURCE_SHA: b589bad975880b2d3cccc3596fc82539b1b96577
       TARGET_WORKFLOW: v1-dependency-backed-recommendation-action-live.yml
+      LAUNCH_ISSUE: '56'
     steps:
       - name: Locate and follow exact frozen target run
         shell: bash
         run: |
           set -euo pipefail
+          announced=0
           for attempt in $(seq 1 360); do
             runs_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${TARGET_WORKFLOW}/runs?event=workflow_dispatch&per_page=20")"
             run_id="$(printf '%s' "${runs_json}" | jq -r --arg sha "${EXPECTED_SOURCE_SHA}" '.workflow_runs[] | select(.head_sha == $sha and .event == "workflow_dispatch") | .id' | head -n 1)"
@@ -41,9 +44,16 @@ jobs:
                 echo "Observed run does not match frozen source/event boundary."
                 exit 1
               fi
+              if [ "${announced}" -eq 0 ]; then
+                gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
+                  --body "ADS observer located exact Specification 021 target run. target_run=\`${run_id}\`; source=\`${head_sha}\`; status=\`${status}\`."
+                announced=1
+              fi
               if [ "${status}" = "completed" ]; then
-                gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/jobs?filter=latest&per_page=100" \
-                  --jq '.jobs[] | "SPEC021_TARGET_JOB_ID=\(.id) NAME=\(.name) STATUS=\(.status) CONCLUSION=\(.conclusion)"'
+                jobs="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/jobs?filter=latest&per_page=100" --jq '[.jobs[] | {id, name, status, conclusion}]')"
+                artifacts="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts?per_page=100" --jq '[.artifacts[] | {id, name, size_in_bytes, expired, digest}]')"
+                gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
+                  --body "ADS observer completed Specification 021 target observation. target_run=\`${run_id}\`; source=\`${head_sha}\`; conclusion=\`${conclusion}\`. jobs=\`${jobs}\`; artifacts=\`${artifacts}\`."
                 exit 0
               fi
             else
@@ -51,5 +61,6 @@ jobs:
             fi
             sleep 15
           done
-          echo "Timed out waiting for Specification 021 target run completion."
+          gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
+            --body "ADS observer timed out waiting for Specification 021 target completion."
           exit 1
