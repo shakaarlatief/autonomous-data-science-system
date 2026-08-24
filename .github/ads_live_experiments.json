@@ -1,24 +1,4 @@
 {
   "schema_version": 1,
-  "authorizations": [
-    {
-      "launch_id": "spec019-system-provenance-001",
-      "enabled": true,
-      "owner_login": "shakaarlatief",
-      "workflow_file": "v1-system-owned-provenance-recommendation-action-live.yml",
-      "ref": "v1-spec019-system-provenance-live-source",
-      "expected_source_sha": "6b5e6237b738250458550f95c9f3a6b0d51e86ec",
-      "confirmation": "RUN_SPEC_019_FROZEN",
-      "required_ci_runs": [
-        {
-          "run_id": 32664369953,
-          "workflow_name": "V1 system-owned provenance recommendation action"
-        },
-        {
-          "run_id": 32664369955,
-          "workflow_name": "Checkpoint metadata"
-        }
-      ]
-    }
-  ]
+  "authorizations": []
 }
