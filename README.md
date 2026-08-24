@@ -23,18 +23,17 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            177
+checkpoint            178
 active branch         v1-dependency-backed-recommendation-value
 active PR             #55 draft
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 exact live-capable source frozen;
-                      one governed authorization next
+current boundary      Specification 021 first governed live run incomplete;
+                      raw evidence preserved before interpretation
 latest experiment     Specification 021
-outcome               LIVE_SOURCE_FROZEN
-next                  validate this checkpointed routing head,
-                      expose the identical target workflow on main,
-                      install one exact Specification 018 authorization,
-                      and create one owner launch request
+outcome               INCOMPLETE
+next                  retire the consumed one-shot live exposure,
+                      repair only usage-metadata serialization,
+                      and revalidate provider-free cross-platform
 ```
 
 Current experimental progression:
@@ -51,9 +50,9 @@ Specification 019  system-owned-provenance recommendation rerun completed; FAIL 
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 Checkpoint 173     machine-checkable current-routing hardening promoted and closed
 Specification 021  dependency-backed recommendation-value contract frozen;
-                   provider-free implementation green;
-                   exact pre-live and live-source boundaries frozen;
-                   not yet run live
+                   first governed live run incomplete after 72 uniform
+                   usage-metadata serialization failures; zero scored observations;
+                   no scientific advancement classification; raw evidence preserved
 ```
 
 For exact continuation, start with:
@@ -66,6 +65,7 @@ docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_co
 docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
 docs/checkpoints/177_specification_021_live_source_frozen.md
+docs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
@@ -325,7 +325,7 @@ The model should not be required to reproduce authoritative context provenance t
 
 ---
 
-## Specification 021: exact live source frozen
+## Specification 021: first live execution incomplete
 
 Specification 021 is the clean prospective recommendation-value test after the known sequencing, provenance, and blocking-calibration confounds were separately addressed.
 
@@ -409,7 +409,9 @@ V1 autonomous live experiment launcher CI 32724242570  success
 
 The live source adds only the separated wrapper, tightly scoped target workflow, provider-free tests, and a lifecycle correction that changes the final technical invariant from "no live surface" to "no repository authorization" after Checkpoint 176 expressly permitted the live wrapper/workflow. Frozen science is unchanged.
 
-**No Specification 021 provider call is authorized by Checkpoint 177.** The next legitimate boundary is one exact Specification 018 repository authorization and owner launch request after the checkpointed routing head is green.
+The first governed live run used source `b589bad975880b2d3cccc3596fc82539b1b96577`, launcher run `32727227189`, and target run `32727241852`. The raw artifact `9520249437` with SHA-256 `b936fab44a17dc22fb9fe31dacdb6f09104a765fcb2223df8ef517338403fe77` was preserved at commit `247314916fa028e2d27ea282ee030a26a30a84cc` before interpretation.
+
+The preserved run is `INCOMPLETE`: 0/36 reasoner outputs survived attempt recording, 0/36 judge outputs were produced, and all 72 reasoner attempts recorded `cannot pickle 'mappingproxy' object`. Gate evaluation and advancement outcome are null. Checkpoint 178 isolates this to live-shaped usage-metadata serialization, not recommendation quality. The frozen scientific question remains unresolved.
 
 ---
 
@@ -439,16 +441,15 @@ Markdown remains the substantive source of project knowledge. The manifest is no
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 177 routing reconciliation head
-2. expose the identical frozen Specification 021 target workflow on main
-3. add one exact enabled Specification 018 authorization on main
-4. create one owner-authored [ADS LIVE] issue with only the frozen launch ID and confirmation
-5. verify launcher acceptance and exact target run identity
-6. make no scientific interpretation from partial provider output
-7. preserve the complete raw artifact before scientific interpretation
-8. classify only with the frozen Specification 021 gates
-9. retire the one-shot main authorization and target-workflow exposure after preservation
-10. do not modify or rescore Specifications 015-020
+1. retire the consumed Specification 021 authorization and temporary main workflows
+2. preserve run 32727241852 permanently as INCOMPLETE evidence
+3. repair only ReasoningUsage attempt-metadata serialization for reasoner and judge paths
+4. add provider-free regression coverage with non-null live-shaped raw_provider_usage
+5. run dedicated Ubuntu/Windows Specification 021 CI plus inherited accepted-seam checks
+6. freeze a new exact live-source boundary only if those checks pass
+7. use a new launch ID for any governed replacement run
+8. preserve replacement raw evidence before interpretation
+9. do not modify or rescore the frozen Specification 021 scientific contract or Specifications 015-020
 ```
 
 ---
