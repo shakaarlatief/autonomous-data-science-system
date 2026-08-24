@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-23
+**Last reviewed:** 2026-08-24
 
 ## Purpose
 
@@ -480,9 +480,9 @@ required floor 0.800000
 
 The repeated discrepancy was `DEFER` expected versus `NOT_NOW` observed for two noncritical expansion actions. SELECTIVE and FULL_HORIZON produced the same pattern, GENERIC behaved almost identically, and the blinded semantic judge scored all nine RA-02 outputs `1.000000`.
 
-The result therefore does not justify promoting the recommendation/action seam and does not support blaming selective context specifically. It changes the immediate development direction from recommendation-state coupling to a separately preregistered disposition-semantics/failure-attribution diagnostic, especially whether `DEFER` and `NOT_NOW` are operationally separable enough for deterministic project navigation.
+The result did not justify promoting the recommendation/action seam and did not support blaming selective context specifically. It changed the immediate direction from recommendation-state coupling to a separately preregistered disposition-semantics/failure-attribution diagnostic.
 
-The failed implementation is not merged into the accepted V1 integration branch. Its frozen design, raw result, and failure interpretation are preserved separately as project evidence.
+The failed implementation was not merged into the accepted V1 integration branch. Its frozen design, raw result, and failure interpretation were preserved separately as project evidence.
 
 Key sources:
 
@@ -514,7 +514,7 @@ NOT_NOW
     + null defer_until_id
 ```
 
-The live workflow `32652636943` executed from the exact frozen head `7db27fd35151c10cdb3562cdf4410fb8f4b09e8b` and observed:
+The live workflow `32652636943` executed from exact frozen head `7db27fd35151c10cdb3562cdf4410fb8f4b09e8b` and observed:
 
 ```text
 reasoner outputs                     36 / 36
@@ -534,10 +534,6 @@ Frozen outcome:
 DISPOSITION_BOUNDARY_SUPPORTED
 ```
 
-The result narrows the Specification 015 failure attribution. Operational inseparability of the labels is less likely when sequencing is represented by an explicit activating relation, and fixed-reasoner inability is less likely on deliberately unambiguous cases. The historical discrepancy remains consistent with the original RA-02 project state not encoding a uniquely activating DEFER relation strongly enough.
-
-Specification 015 remains an immutable `FAIL` and is not rescored. Both disputed historical expected-DEFER examples are merely diagnosed as not admissible examples of unambiguous Specification 016 DEFER under the stronger construction rule.
-
 The architectural consequence is bounded but important:
 
 ```text
@@ -547,7 +543,7 @@ DEFER-like sequencing
     it should carry a concrete represented activating dependency/trigger.
 ```
 
-This does not promote production DEFER/NOT_NOW enums or automatic project mutation. The next justified step is a separately preregistered recommendation/action-value experiment that preserves the stronger relation-backed sequencing construction and again tests whether SELECTIVE methodological context adds value beyond a strong GENERIC reasoner.
+Specification 015 remains immutable `FAIL`. The diagnostic did not promote final production DEFER/NOT_NOW enums.
 
 Key sources:
 
@@ -556,10 +552,156 @@ docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
 docs/checkpoints/155_disposition_semantics_live_gate_supported.md
 experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
-experiments/disposition_semantics/results/spec016-live-20260823-run-32652636943/
 ```
 
+---
 
-## 2026-08-23 - Governed autonomous live-experiment launcher supported
+## 2026-08-23: Relation-backed recommendation rerun ended incomplete and exposed a provenance-instrumentation defect
 
-Specification 018 established a bounded repository-governed control plane for explicitly authorized frozen experiments. Exact cross-platform provider-free validation passed at source `27e7bc84b5f63d65d43de9a5bd27d1fdc0677071` in run `32660168566`. An owner-created issue then triggered launcher run `32660333663`, which validated the repository authorization and dispatched provider-free probe run `32660340429`; the probe independently verified the exact source/ref/confirmation and completed successfully. Checkpoint 161 classifies the bounded outcome as `GOVERNED_LAUNCHER_SUPPORTED`. This does not authorize autonomous experiment design or arbitrary workflow execution.
+Specification 017 returned to the three-condition recommendation/action comparison while preserving the stronger dependency-backed DEFER construction.
+
+The live run did not complete the matched design:
+
+```text
+run                         32656446705
+source                      bf041f4b4a485382d0e6e5c508ad916199601ee8
+reasoner outputs            29 / 36
+judge outputs               29 / 36
+provider attempts           77 / 90
+complete scored design      false
+execution integrity         true
+advancement outcome         none
+```
+
+All SELECTIVE and FULL_HORIZON outputs completed. GENERIC repeatedly failed the structured-output contract because the model placed requested reasoning-function labels into model-authored `methodological_basis` despite GENERIC receiving no reusable knowledge revisions.
+
+The stable boundary became:
+
+```text
+reasoning function / task profile
+    !=
+reusable knowledge stable-key provenance
+```
+
+The system already knew exact supplied revisions and context digests, so making completion depend on a duplicate model-authored provenance field was an instrumentation mistake. Specification 017 remains permanently incomplete historical evidence and was not rescored.
+
+Key sources:
+
+```text
+docs/research/024_relation_backed_recommendation_action_value_design.md
+docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
+docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
+experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
+```
+
+---
+
+## 2026-08-23: Governed autonomous live-experiment launcher supported
+
+Specification 018 established a bounded repository-governed control plane for explicitly authorized frozen experiments. Exact cross-platform provider-free validation passed at source `27e7bc84b5f63d65d43de9a5bd27d1fdc0677071` in run `32660168566`.
+
+An owner-created issue then triggered launcher run `32660333663`, which validated the repository authorization and dispatched provider-free probe run `32660340429`; the probe independently verified the exact source/ref/confirmation and completed successfully.
+
+Checkpoint 161 classified the bounded outcome as:
+
+```text
+GOVERNED_LAUNCHER_SUPPORTED
+```
+
+This promoted a control-plane capability, not autonomous experiment design or arbitrary workflow execution. The launcher receives no provider credential and issue text cannot define executable workflow/ref/SHA/model/prompt/secret configuration.
+
+Specification 018 was subsequently promoted to `v1-frontend-spike`.
+
+---
+
+## 2026-08-24: System-owned provenance repair completed the matched recommendation experiment, but recommendation value still failed
+
+Specification 019 prospectively preserved Specification 017 scientific truth while changing exact supplied-context provenance from model-authored output to deterministic system ownership.
+
+Frozen provenance boundary:
+
+```text
+SYSTEM-OWNED PROVENANCE
+    exact supplied stable_key@revision_id
+    methodology payload digest and byte count
+    treatment identity
+
+MODEL-OWNED CONTENT
+    dispositions
+    dependency pointers
+    blocked scopes
+    clarifications
+    rationales
+```
+
+The exact provider-free validated source was:
+
+```text
+6b5e6237b738250458550f95c9f3a6b0d51e86ec
+```
+
+The accepted Specification 018 launcher then dispatched the governed provider-backed run:
+
+```text
+accepted request issue    35
+launcher run              32664527166
+live run                  32664534864
+artifact                   9499756280
+```
+
+The complete frozen design executed successfully:
+
+```text
+reasoner outputs          36 / 36
+judge outputs             36 / 36
+provider attempts         72 / 90
+retries                   0
+complete scored design    true
+execution integrity       true
+```
+
+Aggregate result:
+
+```text
+                         GENERIC        SELECTIVE       FULL_HORIZON
+exact accuracy           0.944444       0.916667        0.944444
+semantic score           0.950000       0.950000        0.950000
+blocking false positives 4              6               4
+```
+
+Frozen gate result:
+
+```text
+absolute gates           FAIL
+relative gates           FAIL
+expansion gates          FAIL
+positive value signals   0
+outcome                   FAIL
+```
+
+The failed named gates were `SPRA-G06`, `SPRA-G08`, `SPRA-G09`, `SPRA-G10`, and `SPRA-G20`.
+
+The central recommendation-calibration failure was RB-02. SELECTIVE labeled two useful nonlinear model-comparison actions `BLOCKING_REQUIRED` in all three repetitions even though the frozen truth was `RECOMMENDED`, while correctly preserving the DEFER dependency for later tuning. GENERIC and FULL_HORIZON showed the same over-blocking tendency in two repetitions but were correct in one, so SELECTIVE crossed the frozen per-case non-inferiority margin and accumulated six blocking-scope false positives versus four for FULL_HORIZON.
+
+RB-04 was deterministically perfect in all conditions but semantically scored `0.800000` everywhere because one explicit training-only preprocessing/leakage-prevention obligation was omitted. This common ceiling did not implicate SELECTIVE specifically, but the preregistered absolute floor still failed.
+
+The major architectural consequence is two-part:
+
+```text
+1. exact supplied-context provenance should remain system-owned;
+2. recommendation/action promotion remains unsupported, with the next
+   scientific boundary narrowed to RECOMMENDED versus genuinely
+   BLOCKING_REQUIRED work for exact defended downstream scopes.
+```
+
+The failed Specification 019 implementation is not promoted. Its frozen contract, raw result, interpreted report, and checkpoints are preserved through a preservation-only branch/PR. The one-shot live authorization and temporary control-plane helpers were retired after preservation.
+
+Key sources:
+
+```text
+docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+docs/checkpoints/166_specification_019_live_result_failed.md
+experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/
+```
