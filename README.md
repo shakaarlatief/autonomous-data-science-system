@@ -25,12 +25,12 @@ Explicit machinery must earn its complexity empirically.
 ```text
 checkpoint            171
 active branch         v1-routing-consistency-guard
-active PR             none
+active PR             #54 draft
 promoted V1 head      a856983172f6436b73e3f7d0e609d208b55a443b
 current boundary      routing-consistency hardening
 latest experiment     Specification 020
 outcome               BLOCKING_BOUNDARY_SUPPORTED
-next                  validate/promote the routing guard,
+next                  validate/promote PR #54,
                       then freeze a successor recommendation-value contract
 ```
 
@@ -357,12 +357,11 @@ This hardening is not a justification for graph/vector preservation storage or w
 ## Exact continuation
 
 ```text
-1. validate the machine-readable routing manifest and cross-platform consistency CI
-2. create and validate the routing-consistency hardening PR
-3. checkpoint and promote the hardening only if its exact head remains green
-4. reconcile routing back to the promoted v1-frontend-spike boundary after merge
-5. only after that freeze a successor recommendation-value experiment
-6. do not modify or rescore Specifications 015-020
+1. validate PR #54 machine-readable routing manifest and cross-platform consistency CI
+2. checkpoint and promote the hardening only if its exact head remains green
+3. reconcile routing back to the promoted v1-frontend-spike boundary after merge
+4. only after that freeze a successor recommendation-value experiment
+5. do not modify or rescore Specifications 015-020
 ```
 
 ---
