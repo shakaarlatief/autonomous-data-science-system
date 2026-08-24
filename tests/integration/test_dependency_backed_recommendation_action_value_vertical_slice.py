@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 from pathlib import Path
 
 from ads_system.application.reasoning import (
@@ -59,6 +60,16 @@ class FakeReasoningRuntime:
             cached_input_tokens=0,
             reasoning_tokens=40,
             service_tier="fake",
+            raw_provider_usage={
+                "responses": [
+                    {
+                        "input_tokens": input_tokens,
+                        "output_tokens": 180,
+                        "total_tokens": input_tokens + 180,
+                        "service_tier": "fake",
+                    }
+                ]
+            },
         )
         trace = ReasoningTrace(
             run_id=request.run_id,
@@ -114,6 +125,16 @@ class FakeSemanticJudge:
                 cached_input_tokens=0,
                 reasoning_tokens=20,
                 service_tier="fake",
+                raw_provider_usage={
+                    "responses": [
+                        {
+                            "input_tokens": 500,
+                            "output_tokens": 100,
+                            "total_tokens": 600,
+                            "service_tier": "fake",
+                        }
+                    ]
+                },
             ),
             latency_seconds=0.01,
             requested_model="gpt-5.6-sol",
@@ -209,6 +230,27 @@ def test_frozen_spec021_vertical_slice_is_provider_free_complete_and_determinist
         "RESULT.md",
     ):
         assert (output_dir / filename).is_file()
+
+    reasoner_attempts = [
+        json.loads(line)
+        for line in (output_dir / "reasoner_attempts.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    judge_attempts = [
+        json.loads(line)
+        for line in (output_dir / "judge_attempts.jsonl").read_text(encoding="utf-8").splitlines()
+    ]
+    assert len(reasoner_attempts) == 36
+    assert len(judge_attempts) == 36
+    assert all(item["status"] == "SUCCESS" for item in reasoner_attempts)
+    assert all(item["status"] == "SUCCESS" for item in judge_attempts)
+    assert all(
+        item["usage"]["raw_provider_usage"]["responses"][0]["service_tier"] == "fake"
+        for item in reasoner_attempts
+    )
+    assert all(
+        item["usage"]["raw_provider_usage"]["responses"][0]["service_tier"] == "fake"
+        for item in judge_attempts
+    )
 
     technical = result["technical_invariants"]
     assert len(technical) == 24
