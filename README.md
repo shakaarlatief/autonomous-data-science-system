@@ -23,16 +23,17 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            174
+checkpoint            175
 active branch         v1-dependency-backed-recommendation-value
 active PR             #55 draft
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 contract frozen; provider-free implementation next
+current boundary      Specification 021 provider-free implementation green;
+                      separate governed live boundary next
 latest experiment     Specification 021
-outcome               FROZEN_NOT_RUN
-next                  implement the frozen provider-free contract,
-                      validate it cross-platform,
-                      and only then freeze any live boundary
+outcome               PROVIDER_FREE_IMPLEMENTATION_GREEN
+next                  validate this reconciled exact head,
+                      freeze the separate pre-live boundary,
+                      and only then introduce a live entry path
 ```
 
 Current experimental progression:
@@ -48,7 +49,8 @@ Specification 018  governed autonomous live-experiment launcher supported/promot
 Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 Checkpoint 173     machine-checkable current-routing hardening promoted and closed
-Specification 021  dependency-backed recommendation-value contract frozen; not run
+Specification 021  dependency-backed recommendation-value contract frozen;
+                   provider-free implementation green; not run live
 ```
 
 For exact continuation, start with:
@@ -58,6 +60,7 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
@@ -317,7 +320,7 @@ The model should not be required to reproduce authoritative context provenance t
 
 ---
 
-## Specification 021: active frozen experiment
+## Specification 021: provider-free implementation green
 
 Specification 021 is the clean prospective recommendation-value test after the known sequencing, provenance, and blocking-calibration confounds were separately addressed.
 
@@ -381,7 +384,21 @@ incomplete / integrity failed -> no advancement classification
 
 `SAFE_BUT_NOT_DIFFERENTIATED` is intentionally legitimate. A strong generic reasoner may already know the small current methodological universe. The benchmark must not be rewritten simply to force SELECTIVE to win.
 
-**No Specification 021 provider call is authorized.** Provider-free implementation, construction audits, complete fake-runtime evaluation, and Ubuntu/Windows CI must be green and checkpointed before any live boundary may be frozen.
+Checkpoint 175 records the exact provider-free implementation boundary:
+
+```text
+validated implementation head             8e199c29e3f082b353f92f27868aedca0ebbbf74
+Specification 021 provider-free CI         32722934829  success
+Ubuntu job                                 97418007046  success
+Windows job                                97418007218  success
+dedicated tests                            8 passed per OS
+full V1 Python suite                       125 passed, 2 skipped per OS
+accepted-seam regressions                  all green on the same exact head
+```
+
+The complete fake-runtime pipeline executes 36 reasoner outputs and 36 blinded judge outputs, preserves system-owned provenance, verifies authoritative-state isolation, and mechanically reaches `SAFE_BUT_NOT_DIFFERENTIATED` when all three fake conditions are deliberately oracle-perfect. That result is a machinery self-test only, not scientific evidence.
+
+**No Specification 021 provider call is authorized.** The next legitimate boundary is a separate exact pre-live freeze after the reconciled Checkpoint 175 head is green.
 
 ---
 
@@ -411,15 +428,14 @@ Markdown remains the substantive source of project knowledge. The manifest is no
 ## Exact continuation
 
 ```text
-1. implement the frozen Specification 021 provider-free contract on v1-dependency-backed-recommendation-value
-2. mechanically audit every blocking/defer relation and matched-condition payload
-3. implement action-local structured output and exact pointer validation
-4. reuse system-owned methodological provenance and accepted exact-revision context construction
-5. implement deterministic metrics, blinded judge payload construction, and complete fake-runtime evaluation
-6. add dedicated Ubuntu/Windows provider-free CI with no provider credential
-7. freeze an exact green implementation head in a later checkpoint
-8. only then consider one governed live authorization boundary
-9. do not modify or rescore Specifications 015-020
+1. validate the exact Checkpoint 175 reconciliation head provider-free and cross-platform
+2. only after that exact head is green, freeze a separate Specification 021 pre-live boundary
+3. add the minimal live runner/target workflow only after that pre-live freeze
+4. validate the live-capable exact source provider-free before authorization
+5. freeze exact source SHA, successful CI evidence, target workflow, confirmation token, and Specification 018 authorization evidence
+6. authorize at most one exact governed live run through main
+7. preserve raw provider evidence before scientific interpretation
+8. do not modify or rescore Specifications 015-020
 ```
 
 ---
