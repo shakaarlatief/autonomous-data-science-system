@@ -1,8 +1,8 @@
 # Open Questions
 
 **Status:** Current canonical unresolved-question register  
-**Last reconciled:** 2026-08-23  
-**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, preserved negative and incomplete recommendation/action evidence, dependency-backed sequencing evidence, and now a bounded governed autonomous live-experiment launcher. Specification 018 passed cross-platform provider-free CI and an end-to-end owner issue -> launcher -> workflow_dispatch -> independent probe gate without a manual Actions UI click or provider call. Specification 017 remains incomplete historical evidence and its implementation remains unpromoted. The next high-value scientific boundary is a new preregistered recommendation/action-value experiment with exact supplied-context provenance owned by the system.
+**Last reconciled:** 2026-08-24  
+**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and a bounded governed autonomous live-experiment launcher. Specification 019 then completed the first matched recommendation/action rerun with exact supplied-context provenance owned by the system. Provenance integrity passed, the complete 36-reasoner/36-judge design ran with zero retries, and the frozen advancement outcome was `FAIL`. The failed implementation remains unpromoted. The next high-value scientific boundary is prospective calibration of `RECOMMENDED` versus genuinely `BLOCKING_REQUIRED` work for exact defended downstream scopes.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -29,12 +29,13 @@ large reusable knowledge universe
 
 Specification 014 showed `1.000000` frozen semantic quality for SELECTIVE and FULL_HORIZON with a SELECTIVE/FULL input-token ratio of `0.334379`.
 
-Specification 015 did not establish recommendation/action value. Specification 016 repaired the construct-validity question around sequencing by requiring an explicit activating dependency. Specification 017 then attempted the downstream value comparison under that stronger construction, but its live run was incomplete before a matched quality comparison could be evaluated.
+Specification 015 did not establish recommendation/action value. Specification 016 repaired the construct-validity question around sequencing by requiring an explicit activating dependency. Specification 017 attempted the downstream value comparison under that stronger construction but ended incomplete because model-authored `methodological_basis` duplicated system-known provenance. Specification 019 removed that instrumentation confound prospectively and completed the matched comparison. Its frozen result was `FAIL`: SELECTIVE did not outperform the strong GENERIC control, crossed the preregistered per-case exact non-inferiority margin on RB-02, and produced more blocking-scope false positives than FULL_HORIZON.
 
 Still open:
 
 ```text
 whether selective methodological knowledge adds recommendation/action value beyond a strong generic reasoner
+how explicit methodology should influence recommendation calibration without over-blocking
 natural-language/project-state -> task-profile derivation
 harder heterogeneous/changing project states
 open-world concern/action discovery
@@ -44,7 +45,7 @@ production recommendation/persistence semantics
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Retrieval/Horizon/selective-context mechanics validated; dependency-backed sequencing supported; production activation semantics remain open
+**Status:** Retrieval/Horizon/selective-context mechanics validated; dependency-backed sequencing supported; production activation and blocking semantics remain open
 
 P0's path-sensitive trigger/frontier machinery should not return unchanged. Current evidence supports staged retrieval/applicability/relevance followed by selective reasoning.
 
@@ -56,6 +57,8 @@ DEFER-like sequencing
     when deterministic separation from NOT_NOW is expected
 ```
 
+Specification 019 adds a distinct unresolved boundary: even with relation-backed DEFER sequencing and exact system provenance, useful model-comparison work was repeatedly escalated from `RECOMMENDED` to `BLOCKING_REQUIRED` in SELECTIVE RB-02.
+
 Still open:
 
 ```text
@@ -64,6 +67,7 @@ open-world concern/action generation
 recommendation -> durable Proposal / Question / Investigation
 human approval / automatic-action policy
 production REQUIRED/BLOCKING semantics and scope
+what exact dependency/claim-scope structure makes an action genuinely blocking
 production sequencing relation model
 ```
 
@@ -71,7 +75,7 @@ production sequencing relation model
 
 **Status:** Substantially advanced, not complete
 
-Foundation 018 establishes Objects, Relations, Events, and Views. Specification 016 provides evidence that sequencing becomes more testable when an exact activating relation is represented. Specification 017 used experiment-owned trigger pointers but did not define production relation persistence.
+Foundation 018 establishes Objects, Relations, Events, and Views. Specification 016 provides evidence that sequencing becomes more testable when an exact activating relation is represented. Specifications 017 and 019 used experiment-owned trigger pointers and blocked-scope menus, but neither defines production dependency or claim-scope persistence.
 
 Still open:
 
@@ -79,6 +83,7 @@ Still open:
 complete production object/relation schema
 accepted recommendation -> project object/event mapping
 sequencing/dependency persistence
+blocking relation between unresolved work and defended downstream scopes
 staleness/invalidation semantics
 approval and authority state
 ```
@@ -87,7 +92,7 @@ approval and authority state
 
 **Status:** Open; runtime boundary selected, experiment model treatment intentionally fixed
 
-D-032 selects OpenAI Agents SDK behind an ADS-owned `ReasoningRuntime` as the initial runtime boundary. Specifications 014-017 reused one concrete model/runtime treatment to avoid confounding adjacent experiments. It is not a final provider/model decision.
+D-032 selects OpenAI Agents SDK behind an ADS-owned `ReasoningRuntime` as the initial runtime boundary. Specifications 014-019 reused one concrete model/runtime treatment across adjacent experiments where relevant to avoid confounding. It is not a final provider/model decision.
 
 ### Q-029. How should analytical effort be prioritized?
 
@@ -95,7 +100,7 @@ D-032 selects OpenAI Agents SDK behind an ADS-owned `ReasoningRuntime` as the in
 
 Candidate dimensions include validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference.
 
-Specification 016 supports explicit dependency-backed sequencing as a useful construct. Specification 017 did not complete the downstream system-value comparison, so no final recommendation ranking/disposition policy is justified.
+Specification 016 supports explicit dependency-backed sequencing as a useful construct. Specification 019 completed a matched system-value comparison but failed its frozen advancement gates, particularly around `RECOMMENDED` versus `BLOCKING_REQUIRED` calibration. No final recommendation ranking/disposition policy is justified.
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
@@ -113,7 +118,7 @@ project-relevant retrieval
     -> measured reasoning output
 ```
 
-The next production boundary is not retrieval tuning. It is how justified reasoning/recommendations become inspectable durable project state without over-automation.
+Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. The next production boundary is not retrieval tuning. It is how justified recommendations become calibrated, inspectable durable project state without over-automation.
 
 ### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?
 
@@ -130,7 +135,7 @@ Checkpoint 143   selective exact-revision context
 Checkpoint 146   real-model selective-context value
 ```
 
-No current downstream evidence justifies returning to retrieval/reranking/vector tuning.
+No current downstream evidence justifies returning to retrieval/reranking/vector tuning. Specification 019's failure was downstream recommendation/blocking calibration, not a demonstrated retrieval deficiency.
 
 Still open:
 
@@ -144,11 +149,11 @@ production semantic/fusion infrastructure only when measured deficiency requires
 
 ### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage and provenance?
 
-**Status:** Reasoning-quality separation validated; recommendation evaluator advanced; provenance boundary newly exposed
+**Status:** Reasoning-quality separation and system-owned provenance separation validated; recommendation value remains unresolved
 
 Specification 014 separated reasoning quality from context size. Specification 015 added deterministic recommendation metrics and a blinded semantic judge. Specification 016 isolated and validated the dependency-backed sequencing construct.
 
-Specification 017 additionally exposed that this distinction is necessary:
+Specification 017 exposed:
 
 ```text
 reasoning function / task profile
@@ -156,14 +161,15 @@ reasoning function / task profile
 reusable knowledge stable-key provenance
 ```
 
-The system already knows exact supplied `stable_key@revision_id` identities and context digests. A model-authored `methodological_basis` field duplicated that provenance and caused 19 GENERIC invalid structured attempts by attracting reasoning-function labels even though GENERIC supplied zero knowledge revisions.
+Its model-authored `methodological_basis` field duplicated exact provenance already known by the system and prevented a complete matched design.
 
-Next evaluation design should separate:
+Specification 019 prospectively replaced that field with deterministic system-owned provenance:
 
 ```text
 SYSTEM-OWNED PROVENANCE
-    exact context/revision identity
-    treatment digest
+    exact supplied stable_key@revision_id
+    methodology payload digest and byte count
+    treatment identity
 
 MODEL-OWNED CONTENT
     dispositions
@@ -173,13 +179,15 @@ MODEL-OWNED CONTENT
     rationales
 ```
 
+The complete 36-output reasoner design then ran without provenance-induced schema failures or retries. This validates the instrumentation separation at the bounded experiment layer. It does not validate the recommendation seam: the frozen Specification 019 result was `FAIL`.
+
 Any model-authored knowledge citation layer should be evaluated as a distinct optional capability rather than treated as the authoritative context provenance channel.
 
 ### Q-053. How should authorized live experiments be launched autonomously and safely?
 
-**Status:** Bounded V1 mechanism answered and supported; broader approval/orchestration policy remains open
+**Status:** Bounded V1 mechanism answered and supported; provider-backed use demonstrated; broader approval/orchestration policy remains open
 
-Specification 018 now establishes and validates the first governed control plane:
+Specification 018 establishes and validates the first governed control plane:
 
 ```text
 owner-created [ADS LIVE] issue
@@ -192,7 +200,7 @@ owner-created [ADS LIVE] issue
     -> independently validating target workflow
 ```
 
-End-to-end provider-free evidence:
+Original provider-free end-to-end evidence:
 
 ```text
 implementation source   27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
@@ -203,7 +211,16 @@ probe job               97245432893
 outcome                 GOVERNED_LAUNCHER_SUPPORTED
 ```
 
-The launcher receives no provider credential. Issue text cannot supply executable workflow/ref/SHA/command/model/prompt/secret configuration. The target workflow independently checks its exact source SHA and confirmation before any provider call.
+Specification 019 subsequently exercised the same control plane for one explicitly authorized provider-backed experiment:
+
+```text
+accepted request issue  35
+launcher run            32664527166
+live run                32664534864
+frozen source           6b5e6237b738250458550f95c9f3a6b0d51e86ec
+```
+
+The launcher received no provider credential. The target independently verified its exact source and frozen confirmation. The one-shot authorization was retired after result preservation.
 
 Remaining open questions are broader than the bounded launcher itself:
 
@@ -396,7 +413,7 @@ A2A     defer until independently deployed remote agent systems are real
 
 **Status:** Substantially answered for current development needs; still evolvable
 
-The project uses canonical documents, foundations, research memos, specifications, checkpoints, experiment ledgers, raw artifacts, KNOWLEDGE_MAP, MAJOR_CHANGES, Git history, and explicit continuity/promotion/reconciliation procedures. Specifications 015-017 demonstrate why failed and incomplete experiments must remain separately versioned from production promotion.
+The project uses canonical documents, foundations, research memos, specifications, checkpoints, experiment ledgers, raw artifacts, KNOWLEDGE_MAP, MAJOR_CHANGES, Git history, and explicit continuity/promotion/reconciliation procedures. Specifications 015, 017, and 019 demonstrate why failed or incomplete experiment evidence must be preserved separately from rejected implementation, while Specification 018 demonstrates that control-plane capability promotion can remain independent from a particular scientific result.
 
 ### Q-043. When should the project move beyond Git and Markdown for development knowledge preservation?
 
@@ -464,7 +481,7 @@ Use multidimensional project characterization rather than one exclusive project-
 
 **Status:** Substantially advanced; broader V1 evaluation remains open
 
-V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context comparison, a preserved failed recommendation/action experiment, a successful construct-validity diagnostic, and an incomplete relation-backed recommendation/action experiment that exposed a provenance-instrumentation boundary.
+V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context comparison, a preserved failed recommendation/action experiment, a successful construct-validity diagnostic, an incomplete relation-backed recommendation/action experiment that exposed a provenance-instrumentation boundary, and a complete system-owned-provenance rerun that preserved execution integrity but failed its recommendation/action advancement gates.
 
 ### Q-017. How should real projects become regression tests?
 
@@ -476,7 +493,7 @@ Foundation 017 proposes project replay from original starting inputs. Privacy-sa
 
 **Status:** Prototype V0 completed; broader program open
 
-V1 has progressively separated retrieval, context, reasoning, recommendation calibration, disposition construct validity, provenance, and system-value questions. After the current bounded program, evaluation should increasingly use changing project trajectories and heterogeneous real-project replay rather than indefinitely refining synthetic microstates.
+V1 has progressively separated retrieval, context, reasoning, recommendation calibration, disposition construct validity, provenance, and system-value questions. Specification 019 further shows why instrument validity must be established separately from scientific treatment value. After the current bounded program, evaluation should increasingly use changing project trajectories and heterogeneous real-project replay rather than indefinitely refining synthetic microstates.
 
 ---
 
@@ -529,15 +546,15 @@ Automatic extraction may assist routing, reconciliation, contradiction detection
 Current governing result sources:
 
 ```text
-docs/research/024_relation_backed_recommendation_action_value_design.md
-docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
-tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json
-docs/checkpoints/156_relation_backed_recommendation_action_value_contract_frozen.md
-docs/checkpoints/157_relation_backed_recommendation_action_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/158_specification_017_live_boundary_frozen.md
-docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
-experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
-experiments/relation_backed_recommendation_action_value/results/spec017-live-20260823-run-32656446705/
+docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/system_owned_provenance_recommendation_action_v1.json
+docs/checkpoints/163_specification_019_contract_frozen.md
+docs/checkpoints/164_specification_019_provider_free_gate_cross_platform_passed.md
+docs/checkpoints/165_specification_019_live_boundary_frozen.md
+docs/checkpoints/166_specification_019_live_result_failed.md
+experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
+experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/
 ```
 
-The immediate task is preservation-only integration of this evidence without promoting the experiment implementation, followed by a governed autonomous live-launcher design and a separately preregistered recommendation/action experiment with system-owned provenance. Specifications 015-017 remain immutable historical evidence.
+The immediate task is preservation-only integration of Specification 019 failure evidence without promoting the failed implementation, followed by a separately preregistered recommendation/blocking-calibration design. Exact supplied-context provenance remains system-owned. Specifications 015-017 remain immutable historical evidence, and Specification 019 remains permanently `FAIL` under its frozen contract. No new recommendation/action provider call is authorized before a successor contract and exact provider-free implementation boundary are frozen and green.
