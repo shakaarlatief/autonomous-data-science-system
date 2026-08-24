@@ -501,3 +501,7 @@ Specification 021 completed a relation-backed supplied-action recommendation/dis
 The failed recommendation implementation did not earn promotion. A preservation-only branch/PR carries the frozen contract, fixture, raw evidence, stable result, and historical checkpoints.
 
 A subsequent architecture review clarified that the benchmark had already supplied much of the decision space and therefore did not test the broader ADS capability of discovering and surfacing methodological pathways from project state. Research 030 and Checkpoint 183 preserve that distinction. The core methodological-navigation vision remains open for direct system-level evaluation rather than being rejected on the downstream disposition result.
+
+## 2026-08-24: Question A methodological-navigation coverage review
+
+Research 031 and Checkpoint 186 move the next evaluation boundary upstream from supplied-action recommendation calibration to state-driven methodological path discovery and coverage. The review distinguishes universe gaps, navigation gaps, and downstream reasoning/use gaps; recommends evolving project-state episodes with a hidden coverage oracle; preserves a strong generic control and open-world escape hatch; and identifies a project-state-to-methodological-horizon coverage diagnostic as the leading successor experiment class. Specification 022 remains not frozen.

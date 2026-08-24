@@ -3,9 +3,9 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 185  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none  
+**Current checkpoint:** 186  
+**Active development branch:** `v1-methodological-navigation-coverage-review`  
+**Active PR:** #67  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ef6b45a84f43a5dfe33cf5c13351cb1235e6e661`
 
 ## Start here
@@ -28,8 +28,8 @@ Current branch relationship:
 
 ```text
 promoted integration head      a639cfc570290a2169425f43078bbb242fa398e9
-active branch                  v1-frontend-spike
-active PR                      none
+active branch                  v1-methodological-navigation-coverage-review
+active PR                      #67
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
@@ -40,6 +40,7 @@ Specification 020 PR           #44 merged
 routing consistency PR         #54 merged
 Specification 021 impl PR      #55 closed without merge; failed implementation rejected
 Specification 021 preserve PR  #66 merged at ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
+Question A architecture PR     #67 active draft review; Specification 022 not frozen
 main                           governed live-launch control plane; zero active Specification 021 authorization
 ```
 
@@ -101,6 +102,9 @@ Checkpoint 184 / PR #66
 
 Checkpoint 185
     PR #66 merged, PR #55 closed without merge, Specification 021 FAIL preserved, and methodological-navigation / coverage architecture-evaluation review is the next legitimate boundary
+
+Research 031 / Checkpoint 186 / PR #67
+    state-driven methodological-navigation / coverage architecture and evaluation review completed; successor experiment class identified; Specification 022 not frozen
 ```
 
 ---
@@ -121,6 +125,8 @@ Methodological navigation and reusable knowledge:
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
 docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
+docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
+docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
 ```
 
 Research 028 is forward research only. It records the distinction that the system owns persistent project state, methodological navigation determines what matters from that state, and the broad knowledge base should be a governed revisioned methodological universe rather than an undifferentiated RAG corpus.
