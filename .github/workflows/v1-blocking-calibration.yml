@@ -17,6 +17,8 @@ on:
       - docs/research/027_recommended_vs_blocking_required_calibration_design.md
       - docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
       - docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+      - docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
+      - docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
       - docs/CURRENT_STATE.md
       - docs/KNOWLEDGE_MAP.md
       - docs/OPEN_QUESTIONS.md
@@ -37,6 +39,8 @@ on:
       - docs/research/027_recommended_vs_blocking_required_calibration_design.md
       - docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
       - docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+      - docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
+      - docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
       - docs/CURRENT_STATE.md
       - docs/KNOWLEDGE_MAP.md
       - docs/OPEN_QUESTIONS.md
