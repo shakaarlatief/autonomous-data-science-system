@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 167  
+**Checkpoint:** 168  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-blocking-calibration-diagnostic`  
 **Active PR:** #44 draft, Specification 020 diagnostic  
 **Promoted V1 integration branch:** `v1-frontend-spike` at reconciled head `b9c9c3a38935983075a9ca88632177980bb20ede`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and governed autonomous live-experiment launch seams. Specification 019 completed the first matched system-owned-provenance recommendation/action rerun and classified `FAIL`; its frozen authority and negative evidence are integrated without the failed implementation. Specification 020 is now prospectively frozen as a construct-validity diagnostic for `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED`.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, Horizon/selective-context, real-reasoning, dependency-backed sequencing, and governed autonomous live-experiment launch seams. Specification 019 completed the first matched system-owned-provenance recommendation/action rerun and classified `FAIL`; its frozen authority and negative evidence are integrated without the failed implementation. Specification 020 is prospectively frozen as a construct-validity diagnostic for `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED`, and its provider-free implementation has passed the exact cross-platform gate.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** implement Specification 020 provider-free, validate its exact implementation head cross-platform, and freeze a later live boundary only if those gates pass. No new provider call is authorized.
+**Immediate project priority:** validate the reconciled post-Checkpoint-168 branch head, then freeze a separate pre-live boundary. No Specification 020 live runtime, live workflow, authorization, or provider call exists yet.
 
 ## Active ChatGPT development context
 
@@ -58,7 +58,7 @@ reusable methodological knowledge
     -> relation-backed recommendation experiment 017        [INCOMPLETE, PRESERVED]
     -> governed live-experiment launcher 018                 [SUPPORTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
-    -> recommendation/blocking calibration diagnostic 020   [CONTRACT FROZEN]
+    -> recommendation/blocking calibration diagnostic 020   [CONTRACT FROZEN; PROVIDER-FREE GREEN]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -69,7 +69,7 @@ Specification 017 did not complete its matched live design because model-authore
 
 Specification 019 prospectively repaired that instrumentation boundary by making exact supplied-context provenance system-owned. The complete matched live design then produced a genuine scientific `FAIL`, not an incomplete execution.
 
-Specification 020 now isolates the remaining calibration question before another recommendation-value comparison.
+Specification 020 now isolates the remaining recommendation/blocking calibration question before another recommendation-value comparison.
 
 ---
 
@@ -218,6 +218,7 @@ docs/research/027_recommended_vs_blocking_required_calibration_design.md
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
 tests/fixtures/reasoning/blocking_calibration_v1.json
 docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
 ```
 
 The diagnostic distinction is:
@@ -250,7 +251,7 @@ BC-05  probability calibration assessment
 BC-06  nonlinear model-family comparison
 ```
 
-Frozen live design if a later provider-free boundary earns authorization:
+Frozen live design if a later live boundary earns authorization:
 
 ```text
 6 pairs x 2 variants x 3 repetitions
@@ -287,7 +288,7 @@ BC-G06  all 18 expected-RECOMMENDED observations have exact
          disposition + both pointers null
 ```
 
-BC-G05 and BC-G06 intentionally make support effectively require exact correctness across all 36 deliberately unambiguous observations. This strictness is frozen before implementation.
+BC-G05 and BC-G06 intentionally make support effectively require exact correctness across all 36 deliberately unambiguous observations. This strictness remains frozen.
 
 Allowed outcomes:
 
@@ -297,7 +298,54 @@ BLOCKING_BOUNDARY_NOT_SUPPORTED
 INCOMPLETE
 ```
 
-No provider call is authorized by Checkpoint 167.
+---
+
+## Specification 020 provider-free implementation gate
+
+Exact validated implementation head before Checkpoint 168:
+
+```text
+fb8327aae859f53bbb0c4d7bba70b32b6033343e
+```
+
+Dedicated workflow:
+
+```text
+V1 blocking calibration diagnostic   run 32697487230   success
+Ubuntu dedicated                     16 passed
+Windows dedicated                    16 passed
+Ubuntu full V1                       115 passed, 2 skipped
+Windows full V1                      115 passed, 2 skipped
+provider credential                  absent
+```
+
+Accepted-seam regression workflows on the same exact head also passed:
+
+```text
+Checkpoint metadata                         32697487221  success
+V1 reasoning context value                  32697487202  success
+V1 disposition semantics diagnostic         32697487256  success
+V1 autonomous live experiment launcher CI  32697487239  success
+```
+
+The provider-free runner now preserves the frozen global attempt ceiling correctly:
+
+```text
+persistent retryable failures
+    -> exactly 45 attempts maximum
+    -> all failed attempts preserved
+    -> INCOMPLETE instead of an implementation exception
+```
+
+Current provider boundary remains closed:
+
+```text
+live runtime default       absent
+live CLI                    absent
+live workflow               absent
+Spec020 authorization      absent
+provider calls             0
+```
 
 ---
 
@@ -328,16 +376,13 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. implement Specification 020 provider-free only
-2. add experiment-only BlockingCalibrationResult and strict supplied-ID validation
-3. mechanically audit all six contrastive pairs and evaluator-truth blinding
-4. build and hash the complete deterministic 36-call plan before any provider path exists
-5. implement attempt-ledger, deterministic gate evaluation, and fake-runtime integration
-6. add dedicated provider-free Ubuntu/Windows CI with OPENAI_API_KEY explicitly absent
-7. run accepted V1 regression suites on the exact implementation head
-8. freeze the exact green implementation/live boundary in a later checkpoint
-9. only then expose or authorize a live workflow through Specification 018
-10. preserve raw live evidence before any interpretation or tuning if a live run is eventually authorized
-11. do not modify or rescore Specification 019
-12. make no new provider call before steps 1-8 are complete
+1. reconcile canonical routing to Checkpoint 168
+2. validate the exact reconciled branch head on Specification 020 Ubuntu/Windows CI and accepted regression workflows
+3. freeze a separate exact pre-live boundary only after that reconciled head is green
+4. only after that pre-live checkpoint may a live runtime entry path and workflow be added
+5. validate any live-capable source provider-free before one-shot authorization
+6. authorize at most one frozen Specification 020 run through accepted Specification 018 governance
+7. preserve raw live evidence before interpretation or tuning
+8. do not modify or rescore Specification 019
+9. make no provider call before the live boundary and governance checks are complete
 ```
