@@ -1,0 +1,534 @@
+name: Recover Specification 020 stage boundary
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  recover:
+    if: ${{ github.event.issue.title == '[ADS RECOVER] spec020-stage-boundary' && github.actor == github.repository_owner }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TARGET_BRANCH: v1-blocking-calibration-diagnostic
+      EXPECTED_HEAD: 84552e9baf52ebb5c3d7f86459ba82277a423176
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+          fetch-depth: 1
+
+      - name: Verify exact recovery boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${EXPECTED_HEAD}"
+
+      - name: Reconcile routing and retire promotable live workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def replace_section(path: str, start: str, end: str, replacement: str) -> None:
+              p = Path(path)
+              text = p.read_text()
+              pattern = re.compile(rf"{re.escape(start)}.*?(?={re.escape(end)})", re.S)
+              new, n = pattern.subn(replacement.rstrip() + "\n\n", text, count=1)
+              if n != 1:
+                  raise SystemExit(f"section replacement failed for {path}: {start}")
+              p.write_text(new)
+
+          replace_section(
+              "README.md",
+              "## Current development stage",
+              "## Durable post-V0 constraint",
+              '''## Current development stage
+
+**Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
+
+```text
+checkpoint            171
+active branch         v1-blocking-calibration-diagnostic
+active PR             #44 draft
+promoted V1 head      b9c9c3a38935983075a9ca88632177980bb20ede
+current boundary      Specification 020 live diagnostic complete
+outcome               BLOCKING_BOUNDARY_SUPPORTED
+next                   clean the one-shot control plane, validate/promote PR #44,
+                       then add the routing-consistency guard
+```
+
+Current progression:
+
+```text
+Prototype V0       strong falsification of original P0 design
+Specification 013  selective exact-revision context accepted
+Specification 014  equal frozen reasoning quality with 66.56% fewer SELECTIVE input tokens
+Specification 015  recommendation/action-value FAIL; implementation rejected
+Specification 016  dependency-backed DEFER-vs-NOT_NOW boundary supported
+Specification 017  relation-backed recommendation run incomplete; implementation rejected
+Specification 018  governed autonomous live-experiment launcher supported/promoted
+Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
+Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported
+```
+
+For exact continuation, start with:
+
+```text
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+```'''
+          )
+
+          replace_section(
+              "README.md",
+              "### Specification 020",
+              "## System-owned provenance boundary",
+              '''### Specification 020
+
+Specification 020 prospectively isolated the remaining `RECOMMENDED` versus `BLOCKING_REQUIRED` calibration boundary using explicit requirement/scope relations and no methodological-context treatment.
+
+The governed live design completed exactly as frozen:
+
+```text
+frozen source            82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
+reasoner outputs         36 / 36
+validated observations   36 / 36
+provider attempts        36 / 45
+failed attempts          0
+retries                  0
+aggregate exact accuracy 1.000000
+all hard gates           PASS
+outcome                  BLOCKING_BOUNDARY_SUPPORTED
+```
+
+All six contrastive pairs separated perfectly across all three repetitions per side. Every expected `BLOCKING_REQUIRED` output returned the exact unresolved requirement and exact blocked downstream scope. Every expected `RECOMMENDED` output returned both blocking pointers as null.
+
+Supported bounded conclusion:
+
+```text
+BLOCKING_REQUIRED
+    should be represented by an exact unresolved requirement
+    + exact active defended downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + the action that resolves that requirement
+```
+
+This makes taxonomy inseparability and fixed-reasoner inability less likely explanations for Specification 019's RB-02 behavior. Specification 019 remains immutable `FAIL` evidence and is not rescored.
+
+Specification 020 does not establish production recommendation enums, final blocking policy, SELECTIVE recommendation value, ranking, open-world action generation, automatic execution, or final provider/model selection.
+
+Primary evidence:
+
+```text
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
+```'''
+          )
+
+          replace_section(
+              "README.md",
+              "## Current architecture boundary",
+              "## Exact continuation",
+              '''## Current architecture boundary
+
+The first bounded dependency-backed `BLOCKING_REQUIRED` construct is now supported as experiment-design evidence. The production recommendation/action seam remains unpromoted because no frozen experiment has yet shown that selective explicit methodology improves recommendation/action quality beyond the strong generic control.
+
+The active stage boundary is operational rather than scientific:
+
+```text
+preserved Specification 020 evidence
+    -> reconcile routing
+    -> remove one-shot live/control helpers
+    -> validate cleaned PR #44 head
+    -> promote only if green
+    -> add a small machine-checkable routing-consistency guard
+```
+
+The routing guard is Level-2 preservation hardening only. Git + Markdown remain the substantive preservation architecture.'''
+          )
+
+          replace_section(
+              "README.md",
+              "## Exact continuation",
+              "## Repository role",
+              '''## Exact continuation
+
+```text
+1. retire Specification 020 one-shot authorization and temporary main helpers
+2. validate the cleaned PR #44 head cross-platform and on accepted regression seams
+3. promote PR #44 into v1-frontend-spike only if green
+4. add a small routing-consistency manifest + CI validator
+5. only after that freeze a successor recommendation-value experiment
+6. do not modify or rescore Specifications 015-020
+```'''
+          )
+
+          Path("docs/CURRENT_STATE.md").write_text('''# Current State
+
+**Checkpoint:** 171  
+**Date:** 2026-08-24  
+**Active development branch:** `v1-blocking-calibration-diagnostic`  
+**Active PR:** #44 draft, Specification 020 diagnostic and preserved supported result  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `b9c9c3a38935983075a9ca88632177980bb20ede`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed its governed frozen diagnostic with `BLOCKING_BOUNDARY_SUPPORTED`.  
+**Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
+**Immediate project priority:** retire Specification 020 one-shot control-plane exposure, validate and promote the cleaned PR #44 branch only if green, then implement the small machine-checkable routing-consistency guard before freezing another recommendation-value experiment.
+
+## Active ChatGPT development context
+
+```text
+Design session: 04
+ChatGPT project: Autonomous Data Science System
+Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
+```
+
+Repository artifacts remain authoritative across chats. `main` intentionally hosts only the narrow governed live-launch control plane plus temporary one-shot experiment exposure when explicitly authorized. Temporary Specification 020 exposure is now due for retirement.
+
+---
+
+## Durable architecture and accepted evidence
+
+Prototype V0 established the scaling rule:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Foundation 018 separates Objects, Relations, Events, and Views. Foundation 019 establishes:
+
+```text
+KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
+```
+
+Foundation 020 separates reusable methodological knowledge from project state, execution implementation, and presentation.
+
+Accepted technical/runtime boundaries remain D-028 through D-032. Specification 008 remains the promoted Project Cockpit interaction architecture. Specifications 012-014 remain the bounded accepted Horizon/selective-context/real-reasoning chain. Specification 018 remains the accepted governed live-experiment launcher.
+
+---
+
+## Current evidence chain
+
+```text
+reusable methodological knowledge
+    -> retrieval
+    -> explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> real reasoning evidence                              [SUPPORTED]
+    -> recommendation/action experiment 015                 [FAIL, PRESERVED]
+    -> dependency-backed disposition diagnostic 016         [SUPPORTED]
+    -> relation-backed recommendation experiment 017        [INCOMPLETE, PRESERVED]
+    -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
+    -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
+    -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PRESERVED]
+```
+
+Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
+
+Specification 016 supported the bounded construct that DEFER-like sequencing needs a concrete represented activating dependency if deterministic separation from NOT_NOW is expected.
+
+Specification 019 completed the matched recommendation-value rerun after system-owned provenance repaired the instrumentation defect, but the frozen result remained `FAIL`.
+
+Specification 020 prospectively isolated the recommendation/blocking construct and completed successfully.
+
+---
+
+## Specification 020 complete result
+
+Frozen live source:
+
+```text
+82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
+```
+
+Governed live execution:
+
+```text
+launch issue          45
+launcher run          32701990350
+live run              32701999678
+live job              97355284139
+artifact               9510887324
+artifact SHA-256       35ed6b472eac22090e563bbafee30aab1b666c00453ebcfd8cd0a832b79be678
+reasoner outputs       36 / 36
+provider attempts      36 / 45
+failed attempts        0
+retries                0
+execution integrity    true
+```
+
+Frozen gate result:
+
+```text
+BC-G01 structured validity                    PASS
+BC-G02 aggregate exact accuracy               1.000000  PASS
+BC-G03 every variant majority-correct         12 / 12 at 3 / 3  PASS
+BC-G04 every pair both sides majority-correct 6 / 6, both sides 3 / 3  PASS
+BC-G05 exact joint blocking pointers          1.000000  PASS
+BC-G06 RECOMMENDED null pointers              1.000000  PASS
+
+outcome                                      BLOCKING_BOUNDARY_SUPPORTED
+```
+
+Supported conclusion:
+
+```text
+exact unresolved requirement
+    + exact active defended downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + candidate action resolves requirement
+
+can make BLOCKING_REQUIRED operationally separable from RECOMMENDED
+for the frozen deliberately unambiguous microstates with the fixed reasoner.
+```
+
+This does not promote production `BLOCKING_REQUIRED`/`RECOMMENDED` enums or establish selective methodological-context recommendation value.
+
+Specification 019 remains immutable `FAIL` evidence and is not rescored.
+
+Raw and interpreted evidence:
+
+```text
+experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+```
+
+---
+
+## Preservation and continuity consequence
+
+The stage-boundary verification found no substantive preservation failure. It did confirm recurring routing drift in mutable current-state/index documents relative to already durable checkpoint/result evidence.
+
+This now justifies one small Level-2 hardening:
+
+```text
+machine-readable current routing pointers
+    -> lightweight CI consistency validator
+    -> Markdown remains substantive source of truth
+```
+
+Do not introduce a graph database, vector database, or machine-generated documentation system for preservation on this evidence.
+
+---
+
+## Current non-selections
+
+Still deliberately open:
+
+```text
+final recommendation/action taxonomy and ranking policy
+production REQUIRED/BLOCKING semantics
+whether explicit methodological knowledge adds recommendation/action value beyond a strong generic reasoner
+natural-language/project-state -> reasoning-function derivation
+open-world proposal/action discovery
+mapping accepted recommendations to authoritative project objects/events
+automatic project execution and human approval/escalation policy
+admissibility/risk-sensitive assurance policy
+final provider/model and reasoning-effort policy
+multi-agent/specialist architecture
+backend/API, artifact/job, cloud/deployment architecture
+final frontend stack and Cockpit implementation details
+```
+
+---
+
+## Exact continuation
+
+```text
+1. retire Specification 020 one-shot authorization and temporary main helpers
+2. validate the cleaned PR #44 head on Specification 020 Ubuntu/Windows CI and accepted V1 regression seams
+3. promote PR #44 into v1-frontend-spike only if green
+4. implement the small routing-consistency manifest + CI validator as the next Level-2 hardening
+5. only after that freeze a successor recommendation-value contract
+6. do not modify or rescore Specifications 015-020
+```
+
+## Minimum reading for continuation
+
+```text
+README.md
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+```
+''')
+
+          km = Path("docs/KNOWLEDGE_MAP.md")
+          text = km.read_text()
+          text = text.replace("**Current checkpoint:** 168", "**Current checkpoint:** 171")
+          text = text.replace("**Active PR:** #44 draft", "**Active PR:** #44 draft, supported Specification 020 result preserved")
+          old = '''Specification 020 / Checkpoints 167-168
+    RECOMMENDED-vs-BLOCKING_REQUIRED construct-validity diagnostic frozen and provider-free implementation validated cross-platform'''
+          new = '''Specification 020 / Checkpoints 167-171
+    RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and pre-live/live-capable boundaries validated, governed live run completed, and BLOCKING_BOUNDARY_SUPPORTED preserved'''
+          if old not in text:
+              raise SystemExit("KNOWLEDGE_MAP progression target missing")
+          text = text.replace(old, new)
+          start = "## Specification 020: recommendation/blocking calibration diagnostic"
+          end = "## Specification 018: governed autonomous live-launch route"
+          pattern = re.compile(rf"{re.escape(start)}.*?(?={re.escape(end)})", re.S)
+          replacement = '''## Specification 020: recommendation/blocking calibration diagnostic
+
+Primary sources:
+
+```text
+docs/research/027_recommended_vs_blocking_required_calibration_design.md
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
+docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
+docs/checkpoints/170_recommended_vs_blocking_required_calibration_live_source_frozen.md
+docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
+```
+
+Frozen live result:
+
+```text
+source                               82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
+reasoner outputs                     36 / 36
+provider attempts                    36 / 45
+aggregate exact disposition accuracy 1.000000
+all 12 variants                      3 / 3 correct
+all 6 pair sides                     3 / 3 correct
+joint blocking-pointer accuracy      1.000000
+RECOMMENDED null-pointer correctness 1.000000
+outcome                              BLOCKING_BOUNDARY_SUPPORTED
+```
+
+Accepted bounded experiment-design evidence:
+
+```text
+BLOCKING_REQUIRED-like cases
+    exact unresolved requirement
+    + exact active defended downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + candidate action resolves the requirement
+```
+
+This does not promote production recommendation enums or prove methodological-context recommendation value. Specification 019 remains historical `FAIL` evidence and is not rescored.
+
+---
+
+'''
+          text, n = pattern.subn(replacement, text, count=1)
+          if n != 1:
+              raise SystemExit("KNOWLEDGE_MAP Spec020 section target missing")
+
+          pattern = re.compile(r"## Current exact continuation.*?(?=## Recent continuity checkpoints)", re.S)
+          replacement = '''## Current exact continuation
+
+```text
+A. retire Specification 020 one-shot authorization and temporary main helpers
+B. validate the cleaned PR #44 head cross-platform and on accepted V1 regression seams
+C. promote PR #44 into v1-frontend-spike only if green
+D. implement a small machine-checkable routing manifest + CI validator
+E. only after that freeze a successor recommendation-value experiment
+```
+
+Do not modify or rescore Specifications 015-020. The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
+
+---
+
+'''
+          text, n = pattern.subn(replacement, text, count=1)
+          if n != 1:
+              raise SystemExit("KNOWLEDGE_MAP continuation target missing")
+          if "168  Specification 020 provider-free implementation gate passed cross-platform" not in text:
+              raise SystemExit("KNOWLEDGE_MAP checkpoint tail target missing")
+          text = text.replace(
+              "168  Specification 020 provider-free implementation gate passed cross-platform",
+              "168  Specification 020 provider-free implementation gate passed cross-platform\n169  Specification 020 exact pre-live boundary frozen\n170  Specification 020 exact live-capable source frozen\n171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED"
+          )
+          km.write_text(text)
+
+          oq = Path("docs/OPEN_QUESTIONS.md")
+          text = oq.read_text()
+          old_context = re.search(r"\*\*Reconciliation context:\*\*.*?\n\n", text, re.S)
+          if not old_context:
+              raise SystemExit("OPEN_QUESTIONS context target missing")
+          new_context = "**Reconciliation context:** Prototype V0 is complete. Bounded V1 has established the project/object foundations, Project Cockpit, governed persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and the governed autonomous live-experiment launcher. Specification 019 completed its matched system-owned-provenance recommendation/action comparison and remained `FAIL`. Specification 020 then prospectively isolated the RECOMMENDED-versus-dependency-backed-BLOCKING_REQUIRED construct and completed 36/36 exact observations with every frozen hard gate passing. The bounded outcome is `BLOCKING_BOUNDARY_SUPPORTED`. Production blocking policy and methodological-context recommendation value remain open.\n\n"
+          text = text[:old_context.start()] + new_context + text[old_context.end():]
+
+          text = text.replace(
+              "Specification 020 now isolates the `RECOMMENDED` versus `BLOCKING_REQUIRED` boundary before another system-value comparison. It deliberately removes methodological-context treatments and asks whether blocking becomes operationally stable when one exact active defended downstream scope explicitly depends on one exact unresolved requirement that the candidate action resolves.",
+              "Specification 020 prospectively isolated the `RECOMMENDED` versus `BLOCKING_REQUIRED` boundary before another system-value comparison. The frozen governed diagnostic completed 36/36 exact observations with every hard gate passing. This supports the bounded construct that blocking becomes operationally separable when one exact active defended downstream scope explicitly depends on one exact unresolved requirement that the candidate action resolves. It does not establish selective methodological-context recommendation value."
+          )
+          text = text.replace(
+              "Specification 020 prospectively tests a stronger construct:",
+              "Specification 020 prospectively tested the stronger construct:"
+          )
+          text = text.replace(
+              "This is diagnostic semantics only. Production activation and blocking policy remain open.",
+              "The frozen diagnostic returned `BLOCKING_BOUNDARY_SUPPORTED` with exact requirement/scope pointers on all blocking observations and null pointers on all recommended observations. These remain diagnostic semantics only. Production activation and blocking policy remain open."
+          )
+          text = text.replace(
+              "Specification 020 adds experiment-owned requirement and downstream-scope identities to test whether an explicit blocking relation improves construct validity, but it still does not define production dependency or claim-scope persistence.",
+              "Specification 020 added experiment-owned requirement and downstream-scope identities and supported the bounded construct that an explicit blocking relation can make RECOMMENDED versus BLOCKING_REQUIRED operationally separable. It still does not define production dependency or claim-scope persistence."
+          )
+          text = text.replace(
+              "Specification 016 supports explicit dependency-backed sequencing as a useful construct. Specification 019 completed a matched system-value comparison but failed its frozen advancement gates, particularly around `RECOMMENDED` versus `BLOCKING_REQUIRED` calibration. Specification 020 now freezes a structural diagnostic for that boundary. No final recommendation ranking/disposition policy is justified.",
+              "Specification 016 supports explicit dependency-backed sequencing as a useful construct. Specification 019 completed a matched system-value comparison but failed its frozen advancement gates, particularly around `RECOMMENDED` versus `BLOCKING_REQUIRED` calibration. Specification 020 subsequently supported a stronger explicit requirement/scope construction for that boundary. No final recommendation ranking/disposition policy is justified."
+          )
+          text = text.replace(
+              "Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. Specification 020 further isolates whether blocking classification should depend on explicit system-owned requirement/scope identities and relations.",
+              "Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. Specification 020 further supports, at the bounded diagnostic layer, explicit system-owned requirement/scope identities and relations as the basis for distinguishing genuinely blocking work from worthwhile non-blocking work."
+          )
+          text = text.replace(
+              "Specification 020 keeps provenance and supplied requirement/scope identities system-owned while testing only the structural calibration boundary. If that diagnostic is supported, it will establish construct validity only, not methodological-context recommendation value.",
+              "Specification 020 kept provenance and supplied requirement/scope identities system-owned while testing only the structural calibration boundary. Its frozen result was `BLOCKING_BOUNDARY_SUPPORTED`, establishing bounded construct-validity evidence only, not methodological-context recommendation value."
+          )
+          text = text.replace(
+              "Specification 020 has a green provider-free implementation boundary at Checkpoint 168, but its exact pre-live/live-capable boundary has not yet been frozen. Therefore no live authorization is currently permitted.",
+              "Specification 020 subsequently used the same control plane for one exact frozen provider-backed run at source `82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a`. The run completed and its raw result was preserved before interpretation. Its one-shot authorization and temporary live-control exposure must now be retired before the next experiment."
+          )
+          oq.write_text(text)
+
+          mc = Path("docs/MAJOR_CHANGES.md")
+          text = mc.read_text()
+          marker = "## 2026-08-24: Dependency-backed RECOMMENDED versus BLOCKING_REQUIRED boundary supported"
+          if marker not in text:
+              text += '''\n\n---\n\n## 2026-08-24: Dependency-backed RECOMMENDED versus BLOCKING_REQUIRED boundary supported\n\nSpecification 020 prospectively isolated the recommendation-calibration construct exposed by Specification 019. It removed methodological-context treatments and tested one fixed reasoner on six deliberately unambiguous contrastive pairs where genuine blocking was represented by an exact unresolved requirement, an exact active defended downstream scope, an explicit `DEPENDS_ON` relation, and the candidate action that resolves the requirement.\n\nThe governed live run completed the frozen 36-observation design with no retries:\n\n```text\nreasoner outputs                     36 / 36\nprovider attempts                    36 / 45\naggregate exact disposition accuracy 1.000000\nall 12 variants                      3 / 3 correct\nall 6 contrastive pair sides         3 / 3 correct\njoint blocking-pointer accuracy      1.000000\nRECOMMENDED null-pointer correctness 1.000000\noutcome                              BLOCKING_BOUNDARY_SUPPORTED\n```\n\nThe bounded architectural lesson is:\n\n```text\nblocking should not be represented by urgency or priority alone\n\ngenuinely BLOCKING_REQUIRED work\n    -> exact unresolved requirement\n    -> exact active defended downstream scope\n    -> explicit scope DEPENDS_ON requirement relation\n    -> action resolves requirement\n```\n\nThis makes taxonomy inseparability and fixed-reasoner inability less likely explanations for Specification 019's RB-02 behavior, but it does not rescore Specification 019 and does not establish selective methodological-context recommendation value or production recommendation enums.\n\nThe same stage-boundary review also confirmed recurring lag in mutable routing documents relative to already durable result/checkpoint evidence. That observed consistency problem is now sufficient to justify a small machine-checkable routing manifest and CI validator while retaining Git + Markdown as the substantive preservation architecture.\n\nKey sources:\n\n```text\ndocs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md\ndocs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md\nexperiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md\n```\n'''
+          mc.write_text(text)
+
+          live = Path(".github/workflows/v1-blocking-calibration-live.yml")
+          if live.exists():
+              live.unlink()
+          PY
+
+          git diff --check
+          git status --short
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md docs/CURRENT_STATE.md docs/KNOWLEDGE_MAP.md docs/OPEN_QUESTIONS.md docs/MAJOR_CHANGES.md .github/workflows/v1-blocking-calibration-live.yml
+          git diff --cached --quiet && { echo 'No recovery changes found.'; exit 1; }
+          git commit -m 'Reconcile Specification 020 supported boundary'
+          git push origin "HEAD:${TARGET_BRANCH}"
+          echo "RECOVERED_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Report recovery commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+            -f body="Specification 020 stage-boundary recovery committed to \`${TARGET_BRANCH}\` at \`${RECOVERED_SHA}\`."
