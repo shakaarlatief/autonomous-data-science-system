@@ -1,14 +1,14 @@
 # Current State
 
-**Checkpoint:** 179  
+**Checkpoint:** 180  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, Specification 021 first governed live execution remains incomplete; usage-serialization repair passed cross-platform; replacement live-source freeze next  
+**Active PR:** #55 draft, Specification 021 first governed live execution remains incomplete; repaired replacement live source frozen; new governed authorization next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 remains prospectively frozen. Its first governed live execution is immutable `INCOMPLETE` evidence, and the attempt-metadata serialization defect that caused that incompleteness is now reproduced provider-free and repaired cross-platform without changing frozen science.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 remains prospectively frozen. Its first governed live execution is immutable `INCOMPLETE` evidence. The attempt-metadata serialization defect that caused that incompleteness was reproduced provider-free and repaired cross-platform at Checkpoint 179, and Checkpoint 180 now freezes the fully reconciled repaired replacement live source without changing frozen science.  
 **Latest experiment status:** Specification 021 `INCOMPLETE`  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the fully reconciled Checkpoint 179 head, then freeze a fresh exact replacement live-source boundary and dedicated source ref before any new one-shot Specification 018 authorization is considered.
+**Immediate project priority:** validate the exact Checkpoint 180 routing reconciliation head, then expose the identical repaired target workflow on `main`, install one new exact Specification 018 authorization for the frozen replacement source, and use a new launch ID for any replacement governed execution.
 
 ## Active ChatGPT development context
 
@@ -18,7 +18,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 05 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. The consumed Specification 021 authorization and temporary default-branch live exposure were retired after preservation of the first raw run. No replacement Specification 021 provider call is currently authorized.
+Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. The consumed first Specification 021 authorization and temporary default-branch live exposure were retired after preservation of the first raw run. Checkpoint 180 itself authorizes zero replacement provider calls.
 
 ---
 
@@ -73,7 +73,7 @@ reusable methodological knowledge
     -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
     -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PROMOTED]
-    -> dependency-backed recommendation-value experiment 021 [INCOMPLETE; INSTRUMENTATION REPAIR GREEN]
+    -> dependency-backed recommendation-value experiment 021 [INCOMPLETE; REPAIRED REPLACEMENT LIVE SOURCE FROZEN]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -163,7 +163,7 @@ Markdown remains the substantive knowledge source. The manifest is not a second 
 
 ---
 
-## Specification 021 incomplete first live execution; instrumentation repair green
+## Specification 021 incomplete first live execution; repaired replacement live source frozen
 
 Frozen design artifacts remain:
 
@@ -318,7 +318,25 @@ V1 disposition semantics diagnostic      32732512948  success
 
 The repair explicitly serializes `ReasoningUsage` fields and recursively copies raw provider metadata into JSON-native containers for both reasoner and judge success-attempt records. It does not weaken the immutable application-layer `ReasoningUsage` model and does not change frozen experiment science.
 
-The consumed launch authorization, temporary default-branch target workflow, observer, preservation helper, and temporary repair helpers have been retired. Issues #56-#59 are closed. No replacement live execution is authorized at this boundary.
+Checkpoint 180 freezes the fully reconciled repaired replacement source:
+
+```text
+replacement source                         0b86c8770ba4c9db55f50cc1f7a247ab5afd4e62
+replacement source ref                     v1-spec021-dependency-backed-recommendation-value-repaired-live-source
+Specification 021 provider-free CI         32740472833  success
+Ubuntu job                                 97473452274  success
+Windows job                                97473452933  success
+Current routing consistency                32740472923  success
+Checkpoint metadata                        32740472885  success
+V1 reasoning context value                 32740472953  success
+V1 disposition semantics diagnostic        32740472827  success
+V1 blocking calibration diagnostic         32740472828  success
+V1 autonomous live experiment launcher CI 32740472851  success
+```
+
+This source changes no frozen scientific input relative to the original live source except the accepted attempt-metadata serialization repair and subsequent canonical reconciliation. The historical first source/ref remains immutable provenance.
+
+The consumed first launch authorization, temporary default-branch target workflow, observer, preservation helper, and temporary repair helpers are retired. Issues #56-#59 are closed. At Checkpoint 180, no replacement live execution is authorized.
 
 ---
 
@@ -349,34 +367,14 @@ final frontend stack and Cockpit implementation details
 
 ```text
 1. keep run 32727241852 immutable as INCOMPLETE evidence
-2. validate the fully reconciled Checkpoint 179 head with Specification 021 and inherited accepted-seam CI
-3. freeze a new exact replacement live-source boundary and dedicated source ref only after those checks pass
-4. retain the original live source/ref as immutable historical provenance
-5. only then prepare a fresh one-shot Specification 018 authorization if a replacement run is explicitly authorized
-6. use a new launch ID; never reuse spec021-dependency-backed-recommendation-value-001
-7. preserve any replacement artifact before interpretation
-8. classify only with the frozen Specification 021 gates if the replacement design completes with integrity
-9. do not modify or rescore Specification 021 science or Specifications 015-020
-```
-
-## Minimum reading for continuation
-
-```text
-README.md
-docs/CURRENT_STATE.md
-docs/KNOWLEDGE_MAP.md
-docs/current_routing.json
-docs/checkpoints/173_routing_consistency_hardening_promoted_and_closed.md
-docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
-docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
-docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
-docs/checkpoints/177_specification_021_live_source_frozen.md
-docs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md
-docs/checkpoints/179_specification_021_usage_serialization_repair_cross_platform_passed.md
-docs/research/029_dependency_backed_recommendation_value_design.md
-docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
-tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
-docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
+2. validate the exact Checkpoint 180 routing reconciliation head
+3. expose the identical repaired Specification 021 target workflow on main
+4. install one exact enabled Specification 018 authorization for source 0b86c8770ba4c9db55f50cc1f7a247ab5afd4e62 using the frozen green run IDs
+5. use a new launch ID; never reuse spec021-dependency-backed-recommendation-value-001
+6. create one owner-authored [ADS LIVE] request carrying only the new launch ID and confirmation
+7. verify launcher acceptance and exact target-run identity
+8. preserve any replacement artifact before interpretation
+9. classify only with the frozen Specification 021 gates if the replacement design completes with integrity
+10. retire the replacement one-shot authorization/default-branch exposure after preservation
+11. do not modify or rescore Specification 021 science or Specifications 015-020
 ```
