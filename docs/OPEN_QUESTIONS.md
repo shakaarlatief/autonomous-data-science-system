@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-24  
-**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and a bounded governed autonomous live-experiment launcher. Specification 019 completed the first matched recommendation/action rerun with exact supplied-context provenance owned by the system and classified `FAIL`. Its frozen authority and negative evidence are integrated without the failed implementation. Specification 020 is now prospectively frozen as a construct-validity diagnostic for `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED`, using explicit unresolved-requirement and defended-downstream-scope relations. Provider-free implementation is the current task; no new provider call is authorized.
+**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and a bounded governed autonomous live-experiment launcher. Specification 019 completed the first matched recommendation/action rerun with exact supplied-context provenance owned by the system and classified `FAIL`. Its frozen authority and negative evidence are integrated without the failed implementation. Specification 020 is prospectively frozen as a construct-validity diagnostic for `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED`, using explicit unresolved-requirement and defended-downstream-scope relations. Its corrected provider-free implementation is now green cross-platform at Checkpoint 168; the next task is to freeze the exact pre-live boundary before any live-capable path or authorization. No new provider call is authorized.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -33,6 +33,8 @@ Specification 015 did not establish recommendation/action value. Specification 0
 
 Specification 020 now isolates the `RECOMMENDED` versus `BLOCKING_REQUIRED` boundary before another system-value comparison. It deliberately removes methodological-context treatments and asks whether blocking becomes operationally stable when one exact active defended downstream scope explicitly depends on one exact unresolved requirement that the candidate action resolves.
 
+Research 028 preserves the broader forward architecture for the eventual methodological universe: system-owned project state provides durable project identity; methodological navigation maps that state into applicable/relevant/recommended/required considerations; and the broad knowledge base should be a governed, revisioned universe rather than an undifferentiated RAG corpus.
+
 Still open:
 
 ```text
@@ -43,6 +45,7 @@ harder heterogeneous/changing project states
 open-world concern/action discovery
 final context-budget policy
 production recommendation/persistence semantics
+large-scale governed knowledge-universe construction and coverage measurement
 ```
 
 ### Q-006. How should relevant investigations be activated?
@@ -95,6 +98,8 @@ production sequencing relation model
 
 Foundation 018 establishes Objects, Relations, Events, and Views. Specification 016 provides evidence that sequencing becomes more testable when an exact activating relation is represented. Specifications 017 and 019 used experiment-owned trigger pointers and blocked-scope menus. Specification 020 adds experiment-owned requirement and downstream-scope identities to test whether an explicit blocking relation improves construct validity, but it still does not define production dependency or claim-scope persistence.
 
+Research 028 sharpens the system-level role of this layer: the system should own durable project identity, state, history, provenance, relations, and authority independently of any particular model response. The model reasons about project state; it should not be the sole repository of that state.
+
 Still open:
 
 ```text
@@ -138,6 +143,21 @@ project-relevant retrieval
 
 Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. Specification 020 further isolates whether blocking classification should depend on explicit system-owned requirement/scope identities and relations. The production boundary is how justified recommendations become calibrated, inspectable durable project state without over-automation.
 
+Research 028 records the broader target distinction:
+
+```text
+SYSTEM-OWNED PROJECT STATE
+    What is true about this project?
+
+METHODOLOGICAL NAVIGATION
+    Given what is true, what matters now?
+
+LLM REASONING
+    Given what matters, how should we reason about it?
+```
+
+The long-term knowledge-engineering program should support coverage, applicability, expert questions, evidence expectations, relations, conditional rules, revisions, and governed source-backed expansion rather than relying on model recall alone.
+
 ### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?
 
 **Status:** Substantially answered for the first bounded chain through real reasoning; production scaling remains open
@@ -163,6 +183,7 @@ larger heterogeneous Horizon behavior
 final budgets
 when richer semantic/LLM relevance becomes necessary
 production semantic/fusion infrastructure only when measured deficiency requires it
+knowledge-coverage accounting at broad methodological-universe scale
 ```
 
 ### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage and provenance?
@@ -253,7 +274,7 @@ retention and cleanup policy for launch issues and completed authorizations
 multi-user / organization authorization if the project later requires it
 ```
 
-The scientific content of an experiment remains separate from this control plane. A provider-backed authorization is permitted only after that experiment's own contract is frozen and its exact implementation head is green. Specification 020 has a frozen contract but no green implementation/live boundary yet, so no live authorization is permitted.
+The scientific content of an experiment remains separate from this control plane. A provider-backed authorization is permitted only after that experiment's own contract is frozen and its exact implementation head is green. Specification 020 has a green provider-free implementation boundary at Checkpoint 168, but its exact pre-live/live-capable boundary has not yet been frozen. Therefore no live authorization is currently permitted.
 
 ---
 
@@ -359,39 +380,41 @@ Completion should be obligation/question/deliverable driven and account for resi
 
 ### Q-004. How should data-science knowledge be represented?
 
-**Status:** Substantially answered at conceptual/V1 architecture level
+**Status:** Substantially answered at conceptual/V1 architecture level; broad construction program specified conceptually
 
-Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, collections, provenance/governance, retrieval/applicability/context structures, exact revisions, and separation from execution capability. Final taxonomies, authoring UX, full schema coverage, provenance ontology, and large-scale behavior remain open.
+Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, collections, provenance/governance, retrieval/applicability/context structures, exact revisions, and separation from execution capability.
+
+Research 028 adds the forward construction strategy: first map the methodological universe and coverage gaps, then build small canonical source-backed assets; separate intrinsic knowledge, relations, rules, and narrative; encode expert questions/evidence expectations; revision and govern every accepted asset; test knowledge behavior like software; use project replay to expose candidate coverage gaps; and keep curated methodological core knowledge separate from current/external research. Large-scale taxonomy, authoring UX, provenance ontology, ingestion automation, and coverage metrics remain open.
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
 
 **Status:** Substantially answered conceptually, taxonomy still open
 
-Stable asset/revision identity, components, narrative facets, intrinsic kinds, reasoning functions, static relations, conditional rules, retrieval, applicability, context requirements, semantic checks, provenance, scope, and governance remain distinct. Exact production enums remain intentionally unfrozen.
+Stable asset/revision identity, components, narrative facets, intrinsic kinds, reasoning functions, static relations, conditional rules, retrieval, applicability, context requirements, expert questions, evidence expectations, semantic checks, provenance, scope, and governance remain distinct. Exact production enums remain intentionally unfrozen.
 
 ### Q-018. How should knowledge packages interact?
 
 **Status:** Substantially refined, not resolved at scale
 
-Current architecture uses stable identities, typed semantic relations, conditional rules, reusable concepts, components, and collections rather than one giant package graph. Large-scale deduplication, cycles, conflicting soft guidance, and composition quality remain open.
+Current architecture uses stable identities, typed semantic relations, conditional rules, reusable concepts, components, and collections rather than one giant package graph. Research 028 reinforces that collections should organize reusable neighborhoods without automatically becoming prompt context. Large-scale deduplication, cycles, conflicting soft guidance, relation quality, and composition behavior remain open.
 
 ### Q-022. How should external knowledge and source material be integrated?
 
-**Status:** Substantially advanced, not complete
+**Status:** Substantially advanced conceptually, not complete
 
-Specification 004 and D-031 establish deterministic interchange and governance safety. Ingestion/review workflows for heterogeneous external sources and full provenance/source persistence remain open.
+Specification 004 and D-031 establish deterministic interchange and governance safety. Research 028 proposes source-bundle ingestion with LLM-assisted extraction/decomposition, relation/rule proposal, overlap/contradiction checks, deterministic validation, and governed review before accepted revision. The curated methodological core should remain separate from external/current research that can be retrieved when project state identifies a need. Full ingestion tooling and provenance/source persistence remain open.
 
 ### Q-025. What maturity model should be used for ideas and reusable knowledge?
 
 **Status:** Substantially refined, not finalized
 
-Knowledge role, maturity, enforcement authority, scope confidence, provenance, challenge history, and operational coverage should remain distinct. Final production promotion/review/freshness lifecycle remains open.
+Knowledge role, maturity, enforcement authority, scope confidence, provenance, challenge history, scientific confidence, and operational coverage should remain distinct. Final production promotion/review/freshness lifecycle remains open.
 
 ### Q-038. How should reusable knowledge quality and evolution be governed?
 
 **Status:** Substantially refined, not resolved end to end
 
-Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-aware, revisioned, provenance-aware, candidate-versus-accepted governance principles. Automatic learning/promotion remains deliberately unimplemented.
+Foundation 008, Foundation 020, D-031, Specification 004, and Research 028 establish scope-aware, revisioned, provenance-aware, candidate-versus-accepted governance principles. Future automation may propose extraction, relations, contradictions, coverage gaps, or revisions, but automatic learning/promotion remains deliberately unimplemented.
 
 ---
 
@@ -401,7 +424,7 @@ Foundation 008, Foundation 020, D-031, and Specification 004 establish scope-awa
 
 **Status:** Substantially answered for initial V1; specialist/multi-agent structure remains open
 
-D-032 selects a single-principal-reasoner-first runtime shape through an ADS-owned OpenAI Agents SDK adapter. Specialist agents should be added only if later evidence demonstrates a meaningful benefit.
+D-032 selects a single-principal-reasoner-first runtime shape through an ADS-owned OpenAI Agents SDK adapter. Specialist agents should be added only if later evidence demonstrates a meaningful benefit. Research 028 identifies a plausible future knowledge-engineering use case for separable extraction/relation/contradiction/coverage-review responsibilities, but does not promote multi-agent machinery.
 
 ### Q-020. What should the execution environment look like?
 
@@ -501,13 +524,13 @@ Use multidimensional project characterization rather than one exclusive project-
 
 **Status:** Substantially advanced; broader V1 evaluation remains open
 
-V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context comparison, a preserved failed recommendation/action experiment, a successful disposition construct-validity diagnostic, an incomplete relation-backed recommendation/action experiment that exposed a provenance-instrumentation boundary, a complete system-owned-provenance rerun that failed its recommendation/action advancement gates, and a prospectively frozen recommendation/blocking construct-validity diagnostic.
+V0 completed a preregistered held-out falsification experiment. V1 now includes product/human evaluation, retrieval/Horizon benchmarks, runtime bakeoffs, cross-platform gates, accessibility checks, selective-context construction, a passed real reasoning-context comparison, a preserved failed recommendation/action experiment, a successful disposition construct-validity diagnostic, an incomplete relation-backed recommendation/action experiment that exposed a provenance-instrumentation boundary, a complete system-owned-provenance rerun that failed its recommendation/action advancement gates, and a prospectively frozen recommendation/blocking construct-validity diagnostic whose corrected provider-free implementation is now cross-platform green.
 
 ### Q-017. How should real projects become regression tests?
 
 **Status:** Substantially advanced conceptually
 
-Foundation 017 proposes project replay from original starting inputs. Privacy-safe extraction, diversity, benchmark maintenance, and comparison criteria remain open.
+Foundation 017 proposes project replay from original starting inputs. Research 028 additionally proposes using replay to expose missing methodological paths, late activation, irrelevant activation, over-aggressive rules, and missing concepts/relations as candidate knowledge improvements. Privacy-safe extraction, diversity, benchmark maintenance, and comparison criteria remain open.
 
 ### Q-039. How should behavioral reasoning regression cases and system evaluation be designed?
 
@@ -557,19 +580,31 @@ Raw transcripts may provide useful provenance but also contain duplication, sens
 
 **Status:** Open and risk-sensitive
 
-Automatic extraction may assist routing, reconciliation, contradiction detection, or promotion proposals, but automatic extraction must never imply automatic promotion into trusted methodological or project authority.
+Automatic extraction may assist routing, reconciliation, contradiction detection, relation/rule proposals, coverage analysis, or promotion proposals, but automatic extraction must never imply automatic promotion into trusted methodological or project authority.
 
 ---
 
 ## Active boundary
 
-Current governing sources:
+Current Specification 020 authority and implementation evidence:
 
 ```text
 docs/research/027_recommended_vs_blocking_required_calibration_design.md
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
 tests/fixtures/reasoning/blocking_calibration_v1.json
 docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+docs/checkpoints/168_recommended_vs_blocking_required_provider_free_implementation_gate_passed.md
+experiments/blocking_calibration/
+tests/unit/test_blocking_calibration_harness.py
+tests/unit/test_blocking_calibration_runner.py
+tests/integration/test_blocking_calibration_vertical_slice.py
+.github/workflows/v1-blocking-calibration.yml
+```
+
+Forward architectural synthesis preserved separately:
+
+```text
+docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
 ```
 
 Historical result authority immediately motivating this diagnostic remains:
@@ -580,4 +615,4 @@ experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_
 experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/
 ```
 
-Specification 020 is frozen as diagnostic authority only. Its immediate task is provider-free implementation, truth-blinding audit, deterministic plan construction, strict supplied-ID validation, fake-runtime integration, deterministic gates, and cross-platform CI. Exact supplied-context provenance remains system-owned. Specifications 015-019 remain immutable historical evidence. No new provider call is authorized before an exact provider-free implementation head is green and a later checkpoint freezes the live boundary.
+Specification 020's corrected provider-free implementation is green on Ubuntu and Windows and retains evaluator-truth blinding, deterministic plan construction, strict supplied-ID validation, fake-runtime integration, bounded retry/attempt accounting, and deterministic gate evaluation. Exact supplied-context provenance remains system-owned. Specifications 015-019 remain immutable historical evidence. The next task is to validate the fully reconciled branch head and freeze an exact pre-live boundary in a later checkpoint. No live-capable runner/workflow or provider-backed authorization should be exposed before that boundary is frozen, and no new provider call is currently authorized.
