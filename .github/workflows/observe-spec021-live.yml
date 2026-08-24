@@ -1,4 +1,4 @@
-name: Reconcile Specification 021 incomplete boundary
+name: Inspect Specification 021 reconciliation
 
 on:
   push:
@@ -7,188 +7,31 @@ on:
       - .github/workflows/observe-spec021-live.yml
 
 permissions:
-  contents: write
+  actions: read
+  contents: read
   issues: write
 
 jobs:
-  reconcile:
+  inspect:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-      TARGET_BRANCH: v1-dependency-backed-recommendation-value
       LAUNCH_ISSUE: '56'
+      WORKFLOW_FILE: observe-spec021-live.yml
     steps:
-      - name: Checkout active experiment branch
-        uses: actions/checkout@v7
-        with:
-          ref: ${{ env.TARGET_BRANCH }}
-          fetch-depth: 1
-
-      - name: Reconcile Checkpoint 178 routing and continuity
+      - name: Report prior reconciliation run
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY'
-          from pathlib import Path
-          import json
-
-          def replace_once(path, old, new):
-              p = Path(path)
-              text = p.read_text(encoding='utf-8')
-              if old not in text:
-                  raise SystemExit(f'expected routing text not found in {path}: {old[:100]!r}')
-              p.write_text(text.replace(old, new, 1), encoding='utf-8')
-
-          manifest_path = Path('docs/current_routing.json')
-          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
-          manifest.update({
-              'current_checkpoint': 178,
-              'latest_experiment_outcome': 'INCOMPLETE',
-              'current_boundary': 'spec021-live-execution-incomplete-usage-serialization-repair-next',
-          })
-          manifest_path.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
-
-          replace_once('README.md', '''checkpoint            177
-active branch         v1-dependency-backed-recommendation-value
-active PR             #55 draft
-promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 exact live-capable source frozen;
-                      one governed authorization next
-latest experiment     Specification 021
-outcome               LIVE_SOURCE_FROZEN
-next                  validate this checkpointed routing head,
-                      expose the identical target workflow on main,
-                      install one exact Specification 018 authorization,
-                      and create one owner launch request''', '''checkpoint            178
-active branch         v1-dependency-backed-recommendation-value
-active PR             #55 draft
-promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 first governed live run incomplete;
-                      raw evidence preserved before interpretation
-latest experiment     Specification 021
-outcome               INCOMPLETE
-next                  retire the consumed one-shot live exposure,
-                      repair only usage-metadata serialization,
-                      and revalidate provider-free cross-platform''')
-          replace_once('README.md', '''Specification 021  dependency-backed recommendation-value contract frozen;
-                   provider-free implementation green;
-                   exact pre-live and live-source boundaries frozen;
-                   not yet run live''', '''Specification 021  dependency-backed recommendation-value contract frozen;
-                   first governed live run incomplete after 72 uniform
-                   usage-metadata serialization failures; no scientific
-                   advancement classification; raw evidence preserved''')
-          replace_once('README.md', 'docs/checkpoints/177_specification_021_live_source_frozen.md\n', 'docs/checkpoints/177_specification_021_live_source_frozen.md\ndocs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md\n')
-          replace_once('README.md', '## Specification 021: exact live source frozen', '## Specification 021: first live execution incomplete')
-          replace_once('README.md', '''**No Specification 021 provider call is authorized by Checkpoint 177.** The next legitimate boundary is one exact Specification 018 repository authorization and owner launch request after the checkpointed routing head is green.''', '''The first governed live run used source `b589bad975880b2d3cccc3596fc82539b1b96577`, launcher run `32727227189`, and target run `32727241852`. The raw artifact `9520249437` with SHA-256 `b936fab44a17dc22fb9fe31dacdb6f09104a765fcb2223df8ef517338403fe77` was preserved at commit `247314916fa028e2d27ea282ee030a26a30a84cc` before interpretation.
-
-The preserved run is `INCOMPLETE`: 0/36 reasoner outputs survived attempt recording, 0/36 judge outputs were produced, and all 72 reasoner attempts recorded `cannot pickle 'mappingproxy' object`. Gate evaluation and advancement outcome are null. Checkpoint 178 isolates this to live-shaped usage-metadata serialization, not recommendation quality. The frozen scientific question remains unresolved.''')
-          replace_once('README.md', '''1. validate the exact Checkpoint 177 routing reconciliation head
-2. expose the identical frozen Specification 021 target workflow on main
-3. add one exact enabled Specification 018 authorization on main
-4. create one owner-authored [ADS LIVE] issue with only the frozen launch ID and confirmation
-5. verify launcher acceptance and exact target run identity
-6. make no scientific interpretation from partial provider output
-7. preserve the complete raw artifact before scientific interpretation
-8. classify only with the frozen Specification 021 gates
-9. retire the one-shot main authorization and target-workflow exposure after preservation
-10. do not modify or rescore Specifications 015-020''', '''1. retire the consumed Specification 021 authorization and temporary main workflows
-2. preserve run 32727241852 permanently as INCOMPLETE evidence
-3. repair only ReasoningUsage attempt-metadata serialization for reasoner and judge paths
-4. add provider-free regression coverage with non-null live-shaped raw_provider_usage
-5. run dedicated Ubuntu/Windows Specification 021 CI plus inherited accepted-seam checks
-6. freeze a new exact live-source boundary only if those checks pass
-7. use a new launch ID for any governed replacement run
-8. preserve replacement raw evidence before interpretation
-9. do not modify or rescore the frozen Specification 021 scientific contract or Specifications 015-020''')
-
-          replace_once('docs/CURRENT_STATE.md', '**Checkpoint:** 177  ', '**Checkpoint:** 178  ')
-          replace_once('docs/CURRENT_STATE.md', '**Active PR:** #55 draft, Specification 021 exact live-capable source frozen; one governed authorization next  ', '**Active PR:** #55 draft, Specification 021 first governed live execution incomplete; instrumentation repair next  ')
-          replace_once('docs/CURRENT_STATE.md', '**Latest experiment status:** Specification 021 `LIVE_SOURCE_FROZEN`  ', '**Latest experiment status:** Specification 021 `INCOMPLETE`  ')
-          replace_once('docs/CURRENT_STATE.md', '**Immediate project priority:** validate the exact Checkpoint 177 routing reconciliation head, expose the identical frozen target workflow on `main`, install one exact Specification 018 authorization, create one owner launch request, and preserve the complete raw provider artifact before scientific interpretation.', '**Immediate project priority:** retire the consumed one-shot live exposure, repair only the mappingproxy-backed usage-metadata serialization defect for reasoner and judge attempt records, prove the repair provider-free cross-platform, and only then freeze any replacement live-source boundary.')
-          replace_once('docs/CURRENT_STATE.md', '    -> dependency-backed recommendation-value experiment 021 [LIVE SOURCE FROZEN; NOT RUN LIVE]', '    -> dependency-backed recommendation-value experiment 021 [INCOMPLETE; RAW EVIDENCE PRESERVED]')
-          replace_once('docs/CURRENT_STATE.md', '## Specification 021 exact live-source boundary', '## Specification 021 incomplete first live execution')
-          replace_once('docs/CURRENT_STATE.md', '''At Checkpoint 177:
-
-```text
-main target-workflow exposure   absent
-Spec021 registry authorization  absent
-Spec021 launch issue            absent
-provider calls                  0
-```
-
-No Specification 021 scientific result exists yet.''', '''The first governed live execution is now preserved:
-
-```text
-launch issue             56
-launcher run             32727227189
-live run                 32727241852
-live job                 97431195730
-artifact                 9520249437
-artifact SHA-256         b936fab44a17dc22fb9fe31dacdb6f09104a765fcb2223df8ef517338403fe77
-preservation commit      247314916fa028e2d27ea282ee030a26a30a84cc
-successful reasoners     0 / 36
-successful judges        0 / 36
-reasoner failed attempts 72
-provider attempts        72 / 90
-complete scored design   false
-execution integrity      false
-advancement outcome      null
-classification           INCOMPLETE
-```
-
-All 72 reasoner attempts failed uniformly while recording live-shaped usage metadata with `cannot pickle 'mappingproxy' object`. No condition-specific recommendation conclusion is justified. Checkpoint 178 strongly isolates the defect to attempt-metadata serialization and freezes the run as incomplete evidence, not scientific `FAIL`.''')
-          replace_once('docs/CURRENT_STATE.md', '''1. validate the exact Checkpoint 177 routing reconciliation head
-2. expose the identical frozen Specification 021 target workflow on main
-3. add one exact enabled Specification 018 authorization on main using only exact green run IDs from b589bad975880b2d3cccc3596fc82539b1b96577
-4. create one owner-authored [ADS LIVE] issue with only the frozen launch ID and confirmation
-5. verify launcher acceptance and exact target run identity
-6. make no scientific interpretation from partial outputs
-7. preserve the complete raw provider artifact before scientific interpretation
-8. classify only with the frozen Specification 021 gates
-9. retire the one-shot authorization/default-branch target exposure after preservation
-10. do not modify or rescore Specifications 015-020''', '''1. retire the consumed one-shot Specification 021 authorization and temporary main workflows
-2. keep the preserved first live run immutable as INCOMPLETE evidence
-3. replace only unsafe dataclasses.asdict usage serialization with explicit JSON-safe usage metadata serialization
-4. cover both reasoner and judge attempt recording with non-null raw_provider_usage regression tests
-5. validate the repair on Ubuntu and Windows with no provider credential
-6. freeze a new exact live-source boundary only after all required checks pass
-7. use a new Specification 018 launch ID for any replacement live run
-8. preserve any replacement artifact before interpretation
-9. do not modify or rescore Specification 021 science or Specifications 015-020''')
-          replace_once('docs/CURRENT_STATE.md', 'docs/checkpoints/177_specification_021_live_source_frozen.md\n', 'docs/checkpoints/177_specification_021_live_source_frozen.md\ndocs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md\n')
-
-          replace_once('docs/KNOWLEDGE_MAP.md', '**Current checkpoint:** 177  ', '**Current checkpoint:** 178  ')
-          replace_once('docs/KNOWLEDGE_MAP.md', '**Active PR:** #55 draft, Specification 021 exact live-capable source frozen; one governed authorization next  ', '**Active PR:** #55 draft, Specification 021 first governed live execution incomplete; instrumentation repair next  ')
-          replace_once('docs/KNOWLEDGE_MAP.md', '**Latest experiment:** Specification 021 `LIVE_SOURCE_FROZEN`', '**Latest experiment:** Specification 021 `INCOMPLETE`')
-          replace_once('docs/KNOWLEDGE_MAP.md', '''Specification 021 / Checkpoints 174-177 / PR #55
-    dependency-backed recommendation-value contract frozen prospectively;
-    provider-free implementation green cross-platform;
-    fully reconciled exact pre-live boundary frozen;
-    exact provider-capable source b589bad975880b2d3cccc3596fc82539b1b96577 pinned to dedicated live-source ref;
-    no provider call authorized yet''', '''Specification 021 / Checkpoints 174-178 / PR #55
-    dependency-backed recommendation-value contract frozen prospectively;
-    provider-free implementation and live-source boundaries validated;
-    first governed live run 32727241852 completed operationally but scientific design was incomplete;
-    raw artifact preserved before interpretation at 247314916fa028e2d27ea282ee030a26a30a84cc;
-    72/72 reasoner attempts hit the same usage-metadata serialization defect;
-    zero scored observations; no scientific advancement classification''')
-          replace_once('docs/KNOWLEDGE_MAP.md', 'docs/checkpoints/177_specification_021_live_source_frozen.md\n', 'docs/checkpoints/177_specification_021_live_source_frozen.md\ndocs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md\n')
-
-          open_path = Path('docs/OPEN_QUESTIONS.md')
-          oq = open_path.read_text(encoding='utf-8')
-          old = 'Production blocking policy and methodological-context recommendation value remain open.'
-          new = 'Production blocking policy and methodological-context recommendation value remain open. Specification 021 has now attempted its first governed live execution, but the preserved run is incomplete because live attempt-metadata serialization failed uniformly before any reasoner output could become a scored observation; therefore the recommendation-value question remains unresolved.'
-          if old in oq:
-              open_path.write_text(oq.replace(old, new, 1), encoding='utf-8')
-          else:
-              raise SystemExit('OPEN_QUESTIONS reconciliation anchor missing')
-          PY
-          python scripts/check_current_routing.py
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md docs/CURRENT_STATE.md docs/KNOWLEDGE_MAP.md docs/OPEN_QUESTIONS.md docs/current_routing.json
-          git commit -m 'Reconcile Specification 021 incomplete live boundary'
-          head="$(git rev-parse HEAD)"
-          git push origin "HEAD:${TARGET_BRANCH}"
+          runs="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${WORKFLOW_FILE}/runs?per_page=10")"
+          prior="$(printf '%s' "${runs}" | jq -r '.workflow_runs[1].id // empty')"
+          if [ -z "${prior}" ]; then
+            gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" --body "No prior Specification 021 reconciliation run found."
+            exit 1
+          fi
+          run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${prior}")"
+          status="$(printf '%s' "${run}" | jq -r '.status')"
+          conclusion="$(printf '%s' "${run}" | jq -r '.conclusion // "null"')"
+          jobs="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${prior}/jobs?filter=latest&per_page=100" --jq '[.jobs[] | {id,name,status,conclusion}]')"
           gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
-            --body "Checkpoint 178 routing reconciliation pushed. head=\`${head}\`; latest Specification 021 status=\`INCOMPLETE\`; scientific advancement remains unclassified."
+            --body "Specification 021 reconciliation-helper status. run=\`${prior}\`; status=\`${status}\`; conclusion=\`${conclusion}\`; jobs=\`${jobs}\`."
