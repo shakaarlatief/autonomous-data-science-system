@@ -1,0 +1,33 @@
+name: Temporary Checkpoint 187 reconciliation
+
+on:
+  push:
+    branches:
+      - v1-methodological-navigation-coverage-diagnostic
+    paths:
+      - .github/_tmp_checkpoint187.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v1-methodological-navigation-coverage-diagnostic
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconcile Checkpoint 187 routing
+        run: python scripts/_tmp_reconcile_checkpoint187.py
+      - name: Commit reconciled routing
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add README.md docs/CURRENT_STATE.md docs/KNOWLEDGE_MAP.md docs/current_routing.json
+          git diff --cached --quiet && { echo 'No reconciliation changes'; exit 1; }
+          git commit -m 'Reconcile current routing to Checkpoint 187'
+          git push origin HEAD:v1-methodological-navigation-coverage-diagnostic
