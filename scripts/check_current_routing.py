@@ -17,8 +17,8 @@ EXPECTED_KEYS = {
     "active_pr",
     "promoted_integration_branch",
     "promoted_integration_sha",
-    "active_specification",
-    "current_experiment_outcome",
+    "latest_specification",
+    "latest_experiment_outcome",
     "current_boundary",
 }
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
@@ -33,8 +33,8 @@ class RoutingState:
     active_pr: int | None
     promoted_integration_branch: str
     promoted_integration_sha: str
-    active_specification: str
-    current_experiment_outcome: str
+    latest_specification: str
+    latest_experiment_outcome: str
     current_boundary: str
 
 
@@ -100,8 +100,8 @@ def load_manifest(path: Path) -> RoutingState:
     active_development_branch = require_type(data, "active_development_branch", str)
     promoted_integration_branch = require_type(data, "promoted_integration_branch", str)
     promoted_integration_sha = require_type(data, "promoted_integration_sha", str)
-    active_specification = require_type(data, "active_specification", str)
-    current_experiment_outcome = require_type(data, "current_experiment_outcome", str)
+    latest_specification = require_type(data, "latest_specification", str)
+    latest_experiment_outcome = require_type(data, "latest_experiment_outcome", str)
     current_boundary = require_type(data, "current_boundary", str)
 
     active_pr_raw = data["active_pr"]
@@ -121,10 +121,10 @@ def load_manifest(path: Path) -> RoutingState:
 
     if not SHA_RE.fullmatch(promoted_integration_sha):
         raise ManifestError("promoted_integration_sha must be one lowercase 40-character SHA")
-    if not SPEC_RE.fullmatch(active_specification):
-        raise ManifestError("active_specification must be a zero-padded three-digit identifier")
-    if not current_experiment_outcome.strip():
-        raise ManifestError("current_experiment_outcome must be non-empty")
+    if not SPEC_RE.fullmatch(latest_specification):
+        raise ManifestError("latest_specification must be a zero-padded three-digit identifier")
+    if not latest_experiment_outcome.strip():
+        raise ManifestError("latest_experiment_outcome must be non-empty")
     if not current_boundary.strip():
         raise ManifestError("current_boundary must be non-empty")
 
@@ -134,8 +134,8 @@ def load_manifest(path: Path) -> RoutingState:
         active_pr=active_pr,
         promoted_integration_branch=promoted_integration_branch,
         promoted_integration_sha=promoted_integration_sha,
-        active_specification=active_specification,
-        current_experiment_outcome=current_experiment_outcome,
+        latest_specification=latest_specification,
+        latest_experiment_outcome=latest_experiment_outcome,
         current_boundary=current_boundary,
     )
 
@@ -152,8 +152,8 @@ def required_fragments(state: RoutingState) -> dict[Path, tuple[str, ...]]:
             f"active branch         {state.active_development_branch}",
             f"active PR             {pr_text}",
             f"promoted V1 head      {state.promoted_integration_sha}",
-            f"Specification {state.active_specification}",
-            state.current_experiment_outcome,
+            f"Specification {state.latest_specification}",
+            state.latest_experiment_outcome,
         ),
         Path("docs/CURRENT_STATE.md"): (
             f"**Checkpoint:** {state.current_checkpoint}",
@@ -163,8 +163,8 @@ def required_fragments(state: RoutingState) -> dict[Path, tuple[str, ...]]:
                 f"**Promoted V1 integration branch:** `{state.promoted_integration_branch}` "
                 f"at `{state.promoted_integration_sha}`"
             ),
-            f"Specification {state.active_specification}",
-            state.current_experiment_outcome,
+            f"Specification {state.latest_specification}",
+            state.latest_experiment_outcome,
         ),
         Path("docs/KNOWLEDGE_MAP.md"): (
             f"**Current checkpoint:** {state.current_checkpoint}",
@@ -174,8 +174,8 @@ def required_fragments(state: RoutingState) -> dict[Path, tuple[str, ...]]:
                 f"**Promoted V1 integration branch:** `{state.promoted_integration_branch}` "
                 f"at `{state.promoted_integration_sha}`"
             ),
-            f"Specification {state.active_specification}",
-            state.current_experiment_outcome,
+            f"Specification {state.latest_specification}",
+            state.latest_experiment_outcome,
         ),
     }
 
@@ -233,8 +233,8 @@ def main() -> int:
         f"active_branch={state.active_development_branch} "
         f"active_pr={expected_pr_text(state.active_pr)} "
         f"promoted={state.promoted_integration_branch}@{state.promoted_integration_sha} "
-        f"specification={state.active_specification} "
-        f"outcome={state.current_experiment_outcome}"
+        f"latest_specification={state.latest_specification} "
+        f"latest_outcome={state.latest_experiment_outcome}"
     )
     return 0
 
