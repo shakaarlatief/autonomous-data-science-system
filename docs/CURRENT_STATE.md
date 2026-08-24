@@ -1,14 +1,14 @@
 # Current State
 
-**Checkpoint:** 174  
+**Checkpoint:** 175  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, frozen Specification 021 recommendation-value experiment  
+**Active PR:** #55 draft, Specification 021 provider-free implementation green; governed live boundary next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 is now frozen as the next prospective recommendation-value experiment and has not run.  
-**Latest experiment status:** Specification 021 `FROZEN_NOT_RUN`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological-knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, dependency-backed blocking construct validity, and machine-checkable current-routing consistency seams. Specification 021 is prospectively frozen and its complete provider-free implementation is now green cross-platform. It has not run against a provider.  
+**Latest experiment status:** Specification 021 `PROVIDER_FREE_IMPLEMENTATION_GREEN`  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** implement the frozen Specification 021 contract provider-free, prove its construction and complete fake-runtime design cross-platform, and only then freeze any provider-backed live boundary.
+**Immediate project priority:** validate the exact Checkpoint 175 reconciliation head, then freeze a separate governed Specification 021 pre-live boundary before introducing any live entry path or authorization.
 
 ## Active ChatGPT development context
 
@@ -73,7 +73,7 @@ reusable methodological knowledge
     -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
     -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PROMOTED]
-    -> dependency-backed recommendation-value experiment 021 [FROZEN_NOT_RUN]
+    -> dependency-backed recommendation-value experiment 021 [PROVIDER-FREE GREEN; NOT RUN LIVE]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -163,9 +163,9 @@ Markdown remains the substantive knowledge source. The manifest is not a second 
 
 ---
 
-## Specification 021 frozen boundary
+## Specification 021 provider-free implementation boundary
 
-Frozen artifacts:
+Frozen design artifacts remain:
 
 ```text
 docs/research/029_dependency_backed_recommendation_value_design.md
@@ -235,7 +235,28 @@ incomplete / integrity failed -> no advancement classification
 
 `SAFE_BUT_NOT_DIFFERENTIATED` is a legitimate scientific outcome. The contract must not be changed merely because a strong generic reasoner remains competitive.
 
-No provider call is authorized by Specification 021 itself.
+Provider-free implementation evidence at Checkpoint 175:
+
+```text
+validated implementation head             8e199c29e3f082b353f92f27868aedca0ebbbf74
+Specification 021 provider-free run        32722934829  success
+ubuntu job                                 97418007046  success
+windows job                                97418007218  success
+dedicated tests                            8 passed on each OS
+full V1 Python suite                       125 passed, 2 skipped on each OS
+Current routing consistency                32722934811  success
+Checkpoint metadata                        32722934837  success
+V1 reasoning context value                 32722934804  success
+V1 disposition semantics diagnostic        32722934863  success
+V1 blocking calibration diagnostic         32722934853  success
+V1 autonomous live experiment launcher CI 32722934875  success
+```
+
+The first provider-free execution correctly exposed and then repaired one runner lifecycle defect: post-execution invariants for complete-design coverage and authoritative-state isolation had been represented as preflight `False` values. The repair changed only invariant timing, not benchmark truth, treatment, gates, or outcome semantics.
+
+The fake-runtime complete design yields `SAFE_BUT_NOT_DIFFERENTIATED` by construction because all three conditions are given identical oracle-perfect outputs. That is a machinery self-test, not a scientific result.
+
+No Specification 021 provider call is authorized by Checkpoint 175.
 
 ---
 
@@ -265,17 +286,14 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. implement Specification 021 provider-free only
-2. mechanically validate the frozen four-case fixture and every blocking/defer relation
-3. implement DependencyBackedRecommendationActionResult and exact relation-pointer validation
-4. reuse system-owned methodology provenance from Specification 019
-5. reuse accepted exact-revision GENERIC / SELECTIVE / FULL_HORIZON context construction
-6. implement deterministic metrics and blinded judge payload construction
-7. implement a complete 36-reasoner + 36-judge fake-runtime design evaluation
-8. add dedicated Ubuntu/Windows provider-free CI with no provider credential
-9. checkpoint the exact green implementation boundary
-10. only then freeze any governed live authorization
-11. do not modify or rescore Specifications 015-020
+1. validate the exact Checkpoint 175 reconciliation head provider-free and cross-platform
+2. only after that exact head is green, freeze a separate Specification 021 pre-live boundary
+3. add the minimal live runner/target workflow only after the pre-live boundary permits it
+4. validate the live-capable exact source provider-free before authorization
+5. freeze exact source SHA, successful CI evidence, target workflow, confirmation token, and Specification 018 authorization evidence
+6. authorize at most one exact governed live run through main
+7. preserve all raw provider evidence before scientific interpretation
+8. do not modify or rescore Specifications 015-020
 ```
 
 ## Minimum reading for continuation
@@ -287,6 +305,7 @@ docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 docs/checkpoints/173_routing_consistency_hardening_promoted_and_closed.md
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
