@@ -6,9 +6,9 @@
 **Project stage:** Post-V0 bounded V1 implementation and integration  
 **Scope:** Records the first deliberately small machine-checkable current-routing contract, its cross-platform validation, and the promotion boundary after repeated routing/current-state drift was observed without substantive knowledge loss.  
 **Authority:** Accepts the bounded routing-consistency mechanism as promotion-ready evidence on the exact validated branch head. It does not replace Markdown as the substantive project knowledge source, create a second substantive authority layer, or justify graph/vector preservation infrastructure or generated documentation.  
-**Design session:** 04  
+**Design session:** 05  
 **ChatGPT project:** Autonomous Data Science System  
-**Session title:** 04 - Selective Context Promotion & Reasoning Vertical Slice  
+**Session title:** 05 - Selective Context Promotion & Reasoning Vertical Slice  
 **Branch:** `v1-routing-consistency-guard`  
 **PR:** #54
 
