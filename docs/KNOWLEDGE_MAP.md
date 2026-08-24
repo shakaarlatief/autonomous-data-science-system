@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 171  
+**Current checkpoint:** 172  
 **Active development branch:** `v1-routing-consistency-guard`  
 **Active PR:** #54 draft, machine-checkable current routing consistency guard  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`
@@ -85,8 +85,8 @@ Specification 019 / Checkpoints 163-166
 Specification 020 / Checkpoints 167-171
     RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted through PR #44
 
-Level-2 routing hardening / PR #54
-    machine-readable current routing pointers + lightweight cross-platform contradiction validator
+Checkpoint 172 / PR #54
+    machine-readable current routing pointers + lightweight cross-platform contradiction validator green on its pre-checkpoint implementation head
 ```
 
 ---
@@ -338,6 +338,7 @@ docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/checkpoints/README.md
+docs/checkpoints/172_machine_checkable_current_routing_consistency_guard_passed.md
 ```
 
 Current Level-2 lesson:
@@ -347,7 +348,7 @@ substantive preservation failure      NO
 routing/current-state drift           YES, observed repeatedly
 ```
 
-Active bounded hardening:
+Checkpoint 172 records the first green bounded hardening:
 
 ```text
 docs/current_routing.json
@@ -360,17 +361,20 @@ scripts/check_current_routing.py
     cross-platform validation on routing-sensitive pushes and pull requests
 ```
 
-Markdown remains the substantive source of truth. The manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history.
+Exact pre-checkpoint head `5f5dfb81a97f089afc91f20d4632683714a43f60` passed routing consistency on Ubuntu and Windows plus the accepted V1 blocking-calibration, reasoning-context, disposition-semantics, and autonomous-launcher seams.
+
+Markdown remains the substantive source of truth. The manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history. Development Method remains v0.4 because its existing partial-automation rule already covers this bounded hardening.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. validate PR #54 routing manifest and Ubuntu/Windows consistency CI
-B. checkpoint and promote the hardening only if its exact head remains green
-C. reconcile routing back to v1-frontend-spike after merge
-D. only then freeze a successor recommendation-value experiment
+A. validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams
+B. mark PR #54 ready and merge only if green
+C. reconcile manifest / README / CURRENT_STATE / KNOWLEDGE_MAP back to v1-frontend-spike with no active PR and the PR #54 merge SHA as promoted integration boundary
+D. require routing consistency to pass on that final integration reconciliation
+E. only then freeze a successor recommendation-value experiment
 ```
 
 Do not modify or rescore Specifications 015-020. The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
@@ -404,4 +408,5 @@ Do not modify or rescore Specifications 015-020. The next scientific question re
 169  Specification 020 exact pre-live boundary frozen
 170  Specification 020 exact live-capable source frozen
 171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED
+172  machine-checkable current-routing consistency guard passed; promotion candidate
 ```
