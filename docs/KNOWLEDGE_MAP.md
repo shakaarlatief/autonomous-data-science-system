@@ -3,9 +3,9 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 172  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none  
+**Current checkpoint:** 184  
+**Active development branch:** `v1-spec021-negative-result-preservation`  
+**Active PR:** #66  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`
 
 ## Start here
@@ -38,7 +38,9 @@ Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
 routing consistency PR         #54 merged
-main                           governed live-launch control plane; zero active Spec020 authorization
+Specification 021 impl PR      #55 open but rejected for promotion; close without merge after preservation
+Specification 021 preserve PR  #66 active preservation-only candidate
+main                           governed live-launch control plane; zero active Specification 021 authorization
 ```
 
 ---
@@ -86,7 +88,16 @@ Specification 020 / Checkpoints 167-171
     RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted through PR #44
 
 Checkpoint 172 / PR #54
-    machine-readable current routing pointers + lightweight cross-platform contradiction validator green on exact final PR head and promoted into v1-frontend-spike
+    machine-readable current routing pointers + lightweight cross-platform contradiction validator green and promoted into v1-frontend-spike
+
+Specification 021 / Checkpoints 174-182
+    dependency-backed supplied-action recommendation experiment completed; frozen outcome FAIL; raw evidence and stable result preserved; failed implementation rejected
+
+Research 030 / Checkpoint 183
+    architectural interpretation clarified: methodological navigation / coverage is not equivalent to downstream disposition calibration over an already supplied action set
+
+Checkpoint 184 / PR #66
+    preservation-only promotion candidate carrying Specification 021 evidence/history without the rejected implementation
 ```
 
 ---
@@ -410,3 +421,33 @@ The next scientific question remains whether selective explicit methodological k
 171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED
 172  machine-checkable current-routing consistency guard passed; promoted through PR #54, final integration reconciliation pending validation
 ```
+
+## Specification 021 preservation and interpretation route
+
+```text
+docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
+    frozen supplied-action experiment contract
+
+docs/research/029_dependency_backed_recommendation_value_design.md
+    prospective experiment rationale
+
+docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
+    architectural interpretation guardrail after the result
+
+docs/checkpoints/182_specification_021_complete_live_result_failed.md
+    frozen complete scientific FAIL boundary
+
+docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
+    Question A vs downstream disposition-calibration clarification
+
+docs/checkpoints/184_specification_021_negative_result_preservation_promotion_candidate.md
+    preservation-only promotion boundary
+
+experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
+    stable interpreted result
+
+experiments/dependency_backed_recommendation_action_value/results/
+    immutable first incomplete and complete replacement raw evidence
+```
+
+The failed experiment implementation remains historical on PR #55 and is intentionally absent from the preservation branch.

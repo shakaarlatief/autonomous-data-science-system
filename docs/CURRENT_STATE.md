@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 172  
+**Checkpoint:** 184  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none  
+**Active development branch:** `v1-spec021-negative-result-preservation`  
+**Active PR:** #66  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 020 completed with `BLOCKING_BOUNDARY_SUPPORTED` and is promoted. PR #54 promoted the Level-2 routing-consistency hardening into the V1 integration branch.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 completed with frozen outcome `FAIL`; its negative evidence and architectural interpretation are now in a preservation-only promotion candidate while its failed recommendation implementation remains rejected.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** require the routing-consistency workflow to pass on this exact `v1-frontend-spike` reconciliation, then close the Level-2 hardening boundary and freeze the successor recommendation-value experiment.
+**Immediate project priority:** validate and merge preservation-only PR #66, close rejected implementation PR #55 without merge, reconcile `v1-frontend-spike`, then perform an architecture/evaluation review of the still largely untested methodological-navigation and coverage value proposition before freezing any successor experiment.
 
 ## Active ChatGPT development context
 
@@ -59,6 +59,7 @@ reusable methodological knowledge
     -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
     -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PROMOTED]
+    -> dependency-backed recommendation experiment 021        [FAIL, PRESERVATION ONLY]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -190,7 +191,7 @@ Still deliberately open:
 ```text
 final recommendation/action taxonomy and ranking policy
 production REQUIRED/BLOCKING semantics
-whether explicit methodological knowledge adds recommendation/action value beyond a strong generic reasoner
+whether and how methodological navigation / coverage reduces the human burden of surfacing important analytical paths across realistic evolving projects
 natural-language/project-state -> reasoning-function derivation
 open-world proposal/action discovery
 mapping accepted recommendations to authoritative project objects/events
@@ -207,11 +208,13 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. require current-routing consistency to pass on this exact v1-frontend-spike reconciliation
-2. close the Level-2 routing-consistency hardening boundary only if that integration head is green
-3. then freeze a successor recommendation-value contract
-4. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
-5. do not modify or rescore Specifications 015-020
+1. validate preservation-only PR #66 on its exact head
+2. merge PR #66 only if the negative-evidence boundary remains clean and green
+3. close rejected Specification 021 implementation PR #55 without merge
+4. reconcile v1-frontend-spike to the preserved Specification 021 FAIL boundary
+5. review architecture/evaluation for Question A: methodological navigation / coverage from realistic evolving project state
+6. do not freeze Specification 022 or rerun the same supplied-action benchmark merely to seek a SELECTIVE win
+7. do not modify or rescore Specifications 015-021
 ```
 
 ## Minimum reading for continuation
@@ -221,9 +224,36 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
-docs/checkpoints/172_machine_checkable_current_routing_consistency_guard_passed.md
-experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/checkpoints/184_specification_021_negative_result_preservation_promotion_candidate.md
+docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
+docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
+experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```
+
+## Specification 021 complete result and interpretation boundary
+
+Specification 021 completed after the first live attempt was preserved as `INCOMPLETE` instrumentation evidence and the usage-serialization defect was repaired without changing the frozen scientific contract.
+
+The complete replacement design produced:
+
+```text
+                         GENERIC        SELECTIVE       FULL_HORIZON
+exact accuracy           1.000000       1.000000        1.000000
+semantic score           0.958333       0.950000        0.950000
+blocking false positives 0              0               0
+pointer errors            0              0               0
+```
+
+Frozen outcome:
+
+```text
+DBRA-G08 SELECTIVE DBRA-01 semantic  0.800000 < 0.850000
+positive SELECTIVE value signals     0
+advancement outcome                  FAIL
+```
+
+The failed recommendation implementation is not promoted. PR #66 preserves the contract, fixture, raw evidence, stable result, research, and checkpoints only.
+
+Research 030 / Checkpoint 183 additionally clarify that this supplied-action disposition experiment is not a test of the broader methodological-navigation and coverage capability. Question A remains largely untested end-to-end.
