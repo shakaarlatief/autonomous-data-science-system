@@ -21,6 +21,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # This second workflow-file commit is the intentional execution trigger.
           python scripts/reconcile_spec021_incomplete.py
           python scripts/check_current_routing.py
           git config user.name 'github-actions[bot]'
