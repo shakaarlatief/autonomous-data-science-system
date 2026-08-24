@@ -11,10 +11,18 @@ permissions:
 
 jobs:
   preserve:
-    if: ${{ github.event.issue.title == '[ADS PRESERVE] spec019-live-32664534864' && github.actor == github.repository_owner }}
+    if: ${{ startsWith(github.event.issue.title, '[ADS PRESERVE] spec019-live-32664534864') && github.actor == github.repository_owner }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
+      - name: Record preservation workflow run
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+            -f body="Specification 019 preservation workflow started; run=\`${GITHUB_RUN_ID}\`."
+
       - name: Checkout exact feature branch
         uses: actions/checkout@v7
         with:
