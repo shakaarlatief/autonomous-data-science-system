@@ -1,8 +1,10 @@
 name: Observe Specification 021 replacement target
 
 on:
-  issues:
-    types: [opened]
+  push:
+    branches: [main]
+    paths:
+      - .github/observe-spec021-replacement-target.trigger
 
 permissions:
   actions: read
@@ -11,12 +13,12 @@ permissions:
 
 jobs:
   observe:
-    if: github.event.issue.title == '[ADS MAINT] observe-spec021-replacement-target' && github.event.issue.body == 'authorization: OBSERVE_SPEC021_REPLACEMENT_TARGET'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
       TARGET_SHA: 575a3264ea39a10e35d769f9c54a2d1a13c28c08
       TARGET_WORKFLOW: v1-dependency-backed-recommendation-action-live.yml
+      AUDIT_ISSUE: '61'
     steps:
       - name: Locate exact workflow-dispatch run
         shell: bash
@@ -46,9 +48,7 @@ jobs:
               f"run_attempt=`{run['run_attempt']}`."
           )
           subprocess.check_call([
-              'gh', 'issue', 'comment', str(os.environ['ISSUE_NUMBER']),
+              'gh', 'issue', 'comment', os.environ['AUDIT_ISSUE'],
               '--repo', repo, '--body', body
           ])
           PY
-        env:
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
