@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/home/runner/work/autonomous-data-science-system/autonomous-data-science-system/scripts/_tmp_reconcile_checkpoint188.py", line 16, in <module>
-    replace_once(
-  File "/home/runner/work/autonomous-data-science-system/autonomous-data-science-system/scripts/_tmp_reconcile_checkpoint188.py", line 12, in replace_once
-    raise RuntimeError(f"{path}: expected one exact anchor, found {count}")
-RuntimeError: README.md: expected one exact anchor, found 0
