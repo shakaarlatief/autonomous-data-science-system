@@ -9,6 +9,7 @@ on:
 permissions:
   actions: read
   contents: write
+  issues: write
 
 jobs:
   preserve:
@@ -19,6 +20,7 @@ jobs:
       ARTIFACT_NAME: v1-dependency-backed-recommendation-action-b589bad975880b2d3cccc3596fc82539b1b96577-1
       TARGET_BRANCH: v1-dependency-backed-recommendation-value
       DESTINATION: experiments/dependency_backed_recommendation_action_value/results/spec021-live-20260824-run-32727241852
+      LAUNCH_ISSUE: '56'
     steps:
       - name: Checkout preservation target branch
         uses: actions/checkout@v7
@@ -31,8 +33,10 @@ jobs:
         run: |
           set -euo pipefail
           if [ -e "${DESTINATION}" ]; then
-            echo "Destination already exists; refusing to overwrite preserved evidence."
-            exit 1
+            preservation_sha="$(git rev-parse HEAD)"
+            gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
+              --body "Specification 021 raw artifact was already preserved before interpretation. target_run=\`${SOURCE_RUN_ID}\`; preservation_head=\`${preservation_sha}\`; path=\`${DESTINATION}\`."
+            exit 0
           fi
           mkdir -p /tmp/spec021-raw
           gh run download "${SOURCE_RUN_ID}" --repo "${GITHUB_REPOSITORY}" --name "${ARTIFACT_NAME}" --dir /tmp/spec021-raw
@@ -44,4 +48,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add "${DESTINATION}"
           git commit -m "Preserve raw Specification 021 live artifact"
+          preservation_sha="$(git rev-parse HEAD)"
           git push origin "HEAD:${TARGET_BRANCH}"
+          gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
+            --body "Specification 021 raw artifact preserved before interpretation. target_run=\`${SOURCE_RUN_ID}\`; artifact=\`9520249437\`; artifact_digest=\`sha256:b936fab44a17dc22fb9fe31dacdb6f09104a765fcb2223df8ef517338403fe77\`; preservation_head=\`${preservation_sha}\`; path=\`${DESTINATION}\`."
