@@ -420,3 +420,20 @@ model-facing context value
 ```
 
 Do not collapse these into one GENERIC-vs-SELECTIVE recommendation score.
+
+## Checkpoint 186 methodological-navigation coverage reconciliation
+
+Research 031 sharpens Q-005, Q-006, Q-037, Q-044, and Q-045 without resolving them.
+
+The next evaluation boundary separates:
+
+```text
+universe coverage
+navigation / path coverage
+applicability / missing context
+concrete option generation
+prioritization / disposition
+model-facing context value
+```
+
+A methodological-universe gap, a navigation gap, and a downstream reasoning/use gap are distinct failure classes. The leading successor experiment class is a project-state-to-methodological-horizon coverage diagnostic using evolving Foundation-018-aligned state and withholding explicit reasoning-function/action menus from the main reasoner. Exact Specification 022 cases, universe size, oracle, conditions, semantic matching, metrics, thresholds, and advancement outcomes remain open.

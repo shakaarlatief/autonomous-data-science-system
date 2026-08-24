@@ -23,15 +23,15 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            185
-active branch         v1-frontend-spike
-active PR             none
+checkpoint            186
+active branch         v1-methodological-navigation-coverage-review
+active PR             #67
 promoted V1 head      ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
-current boundary      Specification 021 negative result preserved; architecture review ready
+current boundary      Question A architecture/evaluation review completed; Specification 022 not frozen
 latest experiment     Specification 021
 outcome               FAIL
-next                  review methodological-navigation / coverage architecture and evaluation;
-                      do not freeze Specification 022 until aligned
+next                  align on Research 031 and Checkpoint 186;
+                      then design Specification 022 prospectively
 ```
 
 Current experimental progression:
@@ -50,6 +50,7 @@ Specification 021  complete supplied-action recommendation/disposition experimen
 Checkpoint 183     clarified that supplied-action disposition calibration does not test open-world methodological navigation / coverage
 Checkpoint 184     preservation-only promotion candidate for Specification 021 evidence and interpretation
 Checkpoint 185     preservation merged, failed implementation closed, Question A architecture/evaluation review ready
+Checkpoint 186     methodological-navigation / coverage architecture and evaluation review completed; Specification 022 not frozen
 ```
 
 For exact continuation, start with:
@@ -58,8 +59,9 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/186_methodological_navigation_coverage_review_completed.md
+docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
 docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
-docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
 docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
 experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
@@ -369,11 +371,12 @@ This hardening is not a justification for graph/vector preservation storage or w
 ## Exact continuation
 
 ```text
-1. validate this exact v1-frontend-spike Checkpoint 185 reconciliation
-2. perform the architecture/evaluation review of methodological navigation / coverage from realistic evolving project state
-3. distinguish path discovery/coverage, applicability/relevance, option generation, prioritization/disposition, and model-facing context value
-4. do not freeze Specification 022 until that review is aligned
-5. do not modify or rescore Specifications 015-021
+1. validate the Checkpoint 186 review branch and canonical routing
+2. align on Research 031's state-to-methodological-horizon evaluation architecture
+3. resolve the still-open benchmark/oracle/condition/metric design questions recorded there
+4. only then prospectively freeze Specification 022
+5. do not rerun the supplied-action benchmark merely to seek a SELECTIVE win
+6. do not modify or rescore Specifications 015-021
 ```
 
 ---
@@ -399,3 +402,20 @@ downstream disposition calibration over an already supplied action set
 ```
 
 GENERIC remains an essential experimental control, not an architectural replacement for the methodological-navigation brain described by Foundations 006, 017, 019, 020 and Research 028.
+
+## Methodological navigation coverage review
+
+Research 031 and Checkpoint 186 move the successor evaluation boundary upstream from supplied-action disposition calibration.
+
+The recommended decomposition is:
+
+```text
+UNIVERSE COVERAGE
+    -> NAVIGATION / PATH COVERAGE
+    -> APPLICABILITY / MISSING CONTEXT
+    -> CONCRETE OPTION GENERATION
+    -> PRIORITIZATION / DISPOSITION
+    -> MODEL-FACING CONTEXT VALUE
+```
+
+A methodological-universe gap, a navigation gap, and a downstream reasoning/use gap are separate failure classes. The proposed first successor experiment class is a bounded project-state-to-methodological-horizon coverage diagnostic focused primarily on path discovery and applicability/missing-context handling. Specification 022 is not frozen.

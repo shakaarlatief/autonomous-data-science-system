@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 185  
+**Checkpoint:** 186  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none  
+**Active development branch:** `v1-methodological-navigation-coverage-review`  
+**Active PR:** #67  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ef6b45a84f43a5dfe33cf5c13351cb1235e6e661`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 completed with frozen outcome `FAIL`; its negative evidence and architectural interpretation were preserved through PR #66, while failed implementation PR #55 was closed without merge.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 complete the first deliberate architecture/evaluation review of the still largely untested state-driven methodological-navigation and coverage value proposition. Specification 022 is not frozen.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** perform an architecture/evaluation review of the still largely untested methodological-navigation and coverage value proposition before freezing any successor experiment.
+**Immediate project priority:** align on the Research 031 evaluation architecture and resolve the open benchmark/oracle/condition/metric design choices before prospectively freezing any successor experiment.
 
 ## Active ChatGPT development context
 
@@ -208,11 +208,12 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate this exact Checkpoint 185 v1-frontend-spike reconciliation
-2. review architecture/evaluation for Question A: methodological navigation / coverage from realistic evolving project state
-3. distinguish path discovery/coverage, applicability/relevance, concrete option generation, prioritization/disposition, and model-facing context value
-4. do not freeze Specification 022 or rerun the same supplied-action benchmark merely to seek a SELECTIVE win
-5. do not modify or rescore Specifications 015-021
+1. validate the Checkpoint 186 review branch and routing
+2. align on Research 031's state-to-methodological-horizon architecture/evaluation decomposition
+3. resolve its open project-state projection, controlled-universe, hidden-oracle, condition, semantic-matching, noise, repetition, and gate questions
+4. only then prospectively freeze Specification 022
+5. do not rerun the same supplied-action benchmark merely to seek a SELECTIVE win
+6. do not modify or rescore Specifications 015-021
 ```
 
 ## Minimum reading for continuation
@@ -222,8 +223,9 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/186_methodological_navigation_coverage_review_completed.md
+docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
 docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
-docs/checkpoints/183_specification_021_architectural_interpretation_boundary_clarified.md
 docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
 experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 docs/DEVELOPMENT_METHOD.md
@@ -255,3 +257,18 @@ advancement outcome                  FAIL
 The failed recommendation implementation is not promoted. PR #66 preserves the contract, fixture, raw evidence, stable result, research, and checkpoints only.
 
 Research 030 / Checkpoint 183 additionally clarify that this supplied-action disposition experiment is not a test of the broader methodological-navigation and coverage capability. Question A remains largely untested end-to-end.
+
+## Question A architecture/evaluation review
+
+Research 031 establishes the next evaluation decomposition:
+
+```text
+UNIVERSE COVERAGE
+    -> NAVIGATION / PATH COVERAGE
+    -> APPLICABILITY / MISSING CONTEXT
+    -> CONCRETE OPTION GENERATION
+    -> PRIORITIZATION / DISPOSITION
+    -> MODEL-FACING CONTEXT VALUE
+```
+
+The first successor experiment class should move upstream and begin from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. The leading candidate is a bounded project-state-to-methodological-horizon coverage diagnostic focused on Layers A and B. The exact Specification 022 contract remains open.
