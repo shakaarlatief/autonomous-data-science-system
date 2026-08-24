@@ -24,11 +24,11 @@ Explicit machinery must earn its complexity empirically.
 
 ```text
 checkpoint            166
-active branch         v1-spec019-failure-preservation
-active PR             #43 preservation-only
-promoted V1 head      ecf37585f576a3c4fd84a884dee4650b52ab1519
+active branch         v1-frontend-spike
+active PR             none
+promoted V1 head      e88c41b31788a53c7da115a24b0f9baeea48516b
 current boundary      Specification 019 complete live result = FAIL
-                      negative evidence preserved without implementation promotion
+                      negative evidence integrated without implementation promotion
 ```
 
 Current progression:
@@ -61,7 +61,7 @@ Specification 019
     system-owned-provenance recommendation/action rerun completed
     provenance instrumentation worked
     frozen advancement outcome FAIL
-    implementation rejected; preservation-only integration in progress
+    implementation rejected; failure evidence preserved on integration
 ```
 
 For exact continuation, start with:
@@ -296,7 +296,7 @@ The central recommendation-calibration problem was RB-02. SELECTIVE repeatedly p
 
 RB-04 also missed the preregistered per-case semantic floor in all three conditions because the responses omitted one explicit training-only preprocessing/leakage-prevention obligation. That common ceiling does not implicate SELECTIVE specifically, but the frozen contract does not permit a post-hoc exemption.
 
-The Specification 019 recommendation/action implementation is therefore not promoted.
+The Specification 019 recommendation/action implementation is therefore not promoted. Its frozen authority and failure evidence were merged through preservation-only PR #43 at `e88c41b31788a53c7da115a24b0f9baeea48516b`; failed implementation PR #33 is closed without merge.
 
 Primary evidence:
 
@@ -346,19 +346,19 @@ for an exact defended downstream scope?
 
 A successor experiment should prospectively test whether blocking status needs stronger explicit system-owned dependency/claim-scope structure or another bounded calibration mechanism. It must preserve strong GENERIC and FULL_HORIZON controls, retain the system-owned provenance boundary, and avoid tuning from repeated Specification 019 outputs.
 
-No new provider-backed recommendation experiment is currently authorized.
+No new provider-backed recommendation experiment is currently authorized. The Specification 019 one-shot authorization and temporary live/observer/preservation helpers have been retired from `main`.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. validate and merge preservation-only PR #43 into v1-frontend-spike
-2. keep the retired Specification 019 authorization absent from main
-3. keep temporary Specification 019 observer/preservation/live helpers removed from main
-4. close failed implementation PR #33 without merge
-5. reconcile the resulting integration head to Checkpoint 166
-6. preregister the next recommendation/blocking-calibration experiment before implementation
+1. preregister the next recommendation/blocking-calibration experiment before implementation
+2. define the exact represented relation between unresolved work and defended downstream scope
+3. preserve the accepted DEFER dependency construction and system-owned provenance boundary
+4. retain strong GENERIC and FULL_HORIZON controls
+5. do not tune truth, thresholds, or treatment from repeated Specification 019 outputs
+6. freeze the successor fixture, gates, call plan, and checkpoint
 7. validate its exact implementation head provider-free
 8. authorize any future live run only through Specification 018 after the exact head is green
 9. make no new recommendation/action provider call before those conditions are met
