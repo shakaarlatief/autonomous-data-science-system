@@ -1,0 +1,764 @@
+{
+  "benchmark_id": "spec022-project-state-episodes-v1",
+  "episodes": [
+    {
+      "episode_id": "E1",
+      "snapshots": [
+        {
+          "objects": [
+            {
+              "description": "Score active customers at the start of each month so retention actions can be chosen before the following month unfolds.",
+              "facts": {},
+              "object_id": "E1-O1",
+              "object_type": "Objective",
+              "title": "Monthly churn risk scoring"
+            },
+            {
+              "description": "Each row is one customer-month snapshot. The same customer can appear in many months.",
+              "facts": {
+                "entity_key": "customer_id",
+                "row_unit": "customer-month"
+              },
+              "object_id": "E1-O2",
+              "object_type": "Dataset",
+              "title": "Customer-month modelling table"
+            },
+            {
+              "description": "The team has not yet fixed the exact clock-time cutoff that separates information available for scoring from information arriving later.",
+              "facts": {},
+              "object_id": "E1-O3",
+              "object_type": "Question",
+              "title": "Operational scoring cutoff unresolved"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": true,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": false,
+            "project.generalization.is_future_facing": true,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E1-S0",
+          "transition_summary": "Initial future-facing churn objective and customer-month structure are known; prediction cutoff and class prevalence are not yet established."
+        },
+        {
+          "objects": [
+            {
+              "description": "Score active customers at the start of each month so retention actions can be chosen before the following month unfolds.",
+              "facts": {},
+              "object_id": "E1-O1",
+              "object_type": "Objective",
+              "title": "Monthly churn risk scoring"
+            },
+            {
+              "description": "Each row is one customer-month snapshot. The same customer can appear in many months.",
+              "facts": {
+                "entity_key": "customer_id",
+                "row_unit": "customer-month"
+              },
+              "object_id": "E1-O2",
+              "object_type": "Dataset",
+              "title": "Customer-month modelling table"
+            },
+            {
+              "description": "The production score is computed at 00:00 on the first calendar day of each month using only information committed before that cutoff.",
+              "facts": {
+                "cutoff": "month-start 00:00"
+              },
+              "object_id": "E1-O4",
+              "object_type": "Decision",
+              "title": "Prediction moment fixed"
+            },
+            {
+              "description": "Historical churn prevalence is approximately 4 percent overall and remains between 3 and 5 percent across recent months.",
+              "facts": {
+                "positive_prevalence": 0.04
+              },
+              "object_id": "E1-O5",
+              "object_type": "Finding",
+              "title": "Positive prevalence is 4 percent"
+            },
+            {
+              "description": "Source-system arrival times have not yet been checked against the newly fixed monthly scoring cutoff.",
+              "facts": {},
+              "object_id": "E1-O6",
+              "object_type": "Question",
+              "title": "Feature timing audit pending"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": true,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": true,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true,
+            "target.class_prevalence.is_materially_imbalanced": true
+          },
+          "relations": [],
+          "snapshot_id": "E1-S1",
+          "transition_summary": "The prediction moment is now explicit and the target is materially imbalanced; feature timing still requires an audit."
+        },
+        {
+          "objects": [
+            {
+              "description": "Score active customers at the start of each month so retention actions can be chosen before the following month unfolds.",
+              "facts": {},
+              "object_id": "E1-O1",
+              "object_type": "Objective",
+              "title": "Monthly churn risk scoring"
+            },
+            {
+              "description": "Each row is one customer-month snapshot. The same customer can appear in many months.",
+              "facts": {
+                "entity_key": "customer_id",
+                "row_unit": "customer-month"
+              },
+              "object_id": "E1-O2",
+              "object_type": "Dataset",
+              "title": "Customer-month modelling table"
+            },
+            {
+              "description": "The production score is computed at 00:00 on the first calendar day of each month using only information committed before that cutoff.",
+              "facts": {
+                "cutoff": "month-start 00:00"
+              },
+              "object_id": "E1-O4",
+              "object_type": "Decision",
+              "title": "Prediction moment fixed"
+            },
+            {
+              "description": "Historical churn prevalence is approximately 4 percent overall and remains between 3 and 5 percent across recent months.",
+              "facts": {
+                "positive_prevalence": 0.04
+              },
+              "object_id": "E1-O5",
+              "object_type": "Finding",
+              "title": "Positive prevalence is 4 percent"
+            },
+            {
+              "description": "Three high-ranked behavioural features are populated between two and five days after the month-start scoring cutoff.",
+              "facts": {
+                "late_feature_count": 3
+              },
+              "object_id": "E1-O7",
+              "object_type": "Finding",
+              "title": "Three candidate features arrive after scoring"
+            },
+            {
+              "description": "Churn is defined as 60 days without activity, but the newest training rows have only 20 days of follow-up before the extraction cutoff.",
+              "facts": {
+                "available_followup_days": 20,
+                "required_followup_days": 60
+              },
+              "object_id": "E1-O8",
+              "object_type": "Finding",
+              "title": "Recent churn labels lack full follow-up"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": true,
+            "data.feature_availability.violation_observed": true,
+            "data.leakage.suspected_or_observed": true,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": true,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true,
+            "target.class_prevalence.is_materially_imbalanced": true,
+            "target.label_maturity.violation_observed": true
+          },
+          "relations": [],
+          "snapshot_id": "E1-S2",
+          "transition_summary": "The timing audit found post-cutoff predictors and the current target extraction includes rows without a complete label-observation window."
+        }
+      ],
+      "title": "Future binary prediction"
+    },
+    {
+      "episode_id": "E2",
+      "snapshots": [
+        {
+          "objects": [
+            {
+              "description": "Predict whether a component will fail its destructive quality test from nondestructive measurements collected immediately beforehand. Deployment is to new independent components, not future calendar periods.",
+              "facts": {},
+              "object_id": "E2-O1",
+              "object_type": "Objective",
+              "title": "Static component defect classification"
+            },
+            {
+              "description": "Each row is one component and component identifiers do not repeat across rows.",
+              "facts": {
+                "row_unit": "component"
+              },
+              "object_id": "E2-O2",
+              "object_type": "Dataset",
+              "title": "One row per independent component"
+            },
+            {
+              "description": "A calendar inspection_date column records when the laboratory test occurred, but calendar extrapolation is not part of the deployment claim.",
+              "facts": {},
+              "object_id": "E2-O3",
+              "object_type": "Variable",
+              "title": "Inspection date metadata"
+            },
+            {
+              "description": "The team intends to use separate train, validation, and final test partitions but has not yet frozen the preprocessing workflow.",
+              "facts": {},
+              "object_id": "E2-O4",
+              "object_type": "Decision",
+              "title": "Three-way split planned"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.representation.is_supported_tabular": true,
+            "decision.costs_are_asymmetric": false,
+            "decision.threshold_required": false,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": false,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E2-S0",
+          "transition_summary": "The task is static tabular classification with independent components and a date-like metadata field that does not imply temporal deployment."
+        },
+        {
+          "objects": [
+            {
+              "description": "Predict whether a component will fail its destructive quality test from nondestructive measurements collected immediately beforehand. Deployment is to new independent components, not future calendar periods.",
+              "facts": {},
+              "object_id": "E2-O1",
+              "object_type": "Objective",
+              "title": "Static component defect classification"
+            },
+            {
+              "description": "Each row is one component and component identifiers do not repeat across rows.",
+              "facts": {
+                "row_unit": "component"
+              },
+              "object_id": "E2-O2",
+              "object_type": "Dataset",
+              "title": "One row per independent component"
+            },
+            {
+              "description": "A calendar inspection_date column records when the laboratory test occurred, but calendar extrapolation is not part of the deployment claim.",
+              "facts": {},
+              "object_id": "E2-O3",
+              "object_type": "Variable",
+              "title": "Inspection date metadata"
+            },
+            {
+              "description": "The team intends to use separate train, validation, and final test partitions but has not yet frozen the preprocessing workflow.",
+              "facts": {},
+              "object_id": "E2-O4",
+              "object_type": "Decision",
+              "title": "Three-way split planned"
+            },
+            {
+              "description": "Median imputation and standardization were fitted once on the full dataset before train, validation, and test rows were separated.",
+              "facts": {},
+              "object_id": "E2-O5",
+              "object_type": "Finding",
+              "title": "Imputer and scaler fitted before splitting"
+            },
+            {
+              "description": "A univariate feature screen used the target across all rows before the data split was created.",
+              "facts": {},
+              "object_id": "E2-O6",
+              "object_type": "Finding",
+              "title": "Label-based feature selection used the full dataset"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.leakage.suspected_or_observed": true,
+            "data.representation.is_supported_tabular": true,
+            "decision.costs_are_asymmetric": false,
+            "decision.threshold_required": false,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": false,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E2-S1",
+          "transition_summary": "The initial workflow reveals full-data preprocessing and target-informed feature selection before the split."
+        },
+        {
+          "objects": [
+            {
+              "description": "Predict whether a component will fail its destructive quality test from nondestructive measurements collected immediately beforehand. Deployment is to new independent components, not future calendar periods.",
+              "facts": {},
+              "object_id": "E2-O1",
+              "object_type": "Objective",
+              "title": "Static component defect classification"
+            },
+            {
+              "description": "Each row is one component and component identifiers do not repeat across rows.",
+              "facts": {
+                "row_unit": "component"
+              },
+              "object_id": "E2-O2",
+              "object_type": "Dataset",
+              "title": "One row per independent component"
+            },
+            {
+              "description": "A calendar inspection_date column records when the laboratory test occurred, but calendar extrapolation is not part of the deployment claim.",
+              "facts": {},
+              "object_id": "E2-O3",
+              "object_type": "Variable",
+              "title": "Inspection date metadata"
+            },
+            {
+              "description": "All learned preprocessing and feature selection are now fitted inside training folds. The final test set has been locked away.",
+              "facts": {},
+              "object_id": "E2-O7",
+              "object_type": "Decision",
+              "title": "Split-first pipeline correction accepted"
+            },
+            {
+              "description": "A regularized logistic-regression baseline is complete and valid on the validation split.",
+              "facts": {},
+              "object_id": "E2-O8",
+              "object_type": "Finding",
+              "title": "Logistic baseline established"
+            },
+            {
+              "description": "Error analysis shows consistent interaction-like residual patterns that the linear baseline does not capture.",
+              "facts": {},
+              "object_id": "E2-O9",
+              "object_type": "Finding",
+              "title": "Validation errors suggest nonlinear structure"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.leakage.suspected_or_observed": false,
+            "data.representation.is_supported_tabular": true,
+            "decision.costs_are_asymmetric": false,
+            "decision.threshold_required": false,
+            "deployment.subgroup_reliability_required": false,
+            "final.test.is_locked": true,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": false,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E2-S2",
+          "transition_summary": "Leakage defects are corrected, the final test is locked, and evidence now justifies a compact nonlinear model-family comparison."
+        }
+      ],
+      "title": "Static tabular prediction without temporal deployment"
+    },
+    {
+      "episode_id": "E3",
+      "snapshots": [
+        {
+          "objects": [
+            {
+              "description": "Produce a seven-day failure probability for each machine so preventive-maintenance decisions can use estimated risk.",
+              "facts": {},
+              "object_id": "E3-O1",
+              "object_type": "Objective",
+              "title": "Seven-day equipment failure probability"
+            },
+            {
+              "description": "The positive event occurs in approximately 8 percent of evaluation windows.",
+              "facts": {
+                "positive_prevalence": 0.08
+              },
+              "object_id": "E3-O2",
+              "object_type": "Finding",
+              "title": "Failure prevalence is 8 percent"
+            },
+            {
+              "description": "A prospectively aligned temporal validation protocol and prediction cutoff were previously reviewed and accepted for this project.",
+              "facts": {},
+              "object_id": "E3-O3",
+              "object_type": "Decision",
+              "title": "Temporal evaluation already established"
+            },
+            {
+              "description": "Operations will interpret model outputs as numerical failure probabilities, not only as ranking scores.",
+              "facts": {},
+              "object_id": "E3-O4",
+              "object_type": "Deliverable",
+              "title": "Probabilities used as operational risks"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": true,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": true,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true,
+            "target.class_prevalence.is_materially_imbalanced": true
+          },
+          "relations": [],
+          "snapshot_id": "E3-S0",
+          "transition_summary": "The project already has a valid temporal evaluation design, and the remaining decision problem requires meaningful failure probabilities."
+        },
+        {
+          "objects": [
+            {
+              "description": "Produce a seven-day failure probability for each machine so preventive-maintenance decisions can use estimated risk.",
+              "facts": {},
+              "object_id": "E3-O1",
+              "object_type": "Objective",
+              "title": "Seven-day equipment failure probability"
+            },
+            {
+              "description": "The positive event occurs in approximately 8 percent of evaluation windows.",
+              "facts": {
+                "positive_prevalence": 0.08
+              },
+              "object_id": "E3-O2",
+              "object_type": "Finding",
+              "title": "Failure prevalence is 8 percent"
+            },
+            {
+              "description": "A prospectively aligned temporal validation protocol and prediction cutoff were previously reviewed and accepted for this project.",
+              "facts": {},
+              "object_id": "E3-O3",
+              "object_type": "Decision",
+              "title": "Temporal evaluation already established"
+            },
+            {
+              "description": "Operations will interpret model outputs as numerical failure probabilities, not only as ranking scores.",
+              "facts": {},
+              "object_id": "E3-O4",
+              "object_type": "Deliverable",
+              "title": "Probabilities used as operational risks"
+            },
+            {
+              "description": "Operations estimate the cost of a missed failure at eight times the cost of an unnecessary preventive-maintenance intervention.",
+              "facts": {
+                "false_negative_to_false_positive_cost_ratio": 8
+              },
+              "object_id": "E3-O5",
+              "object_type": "Finding",
+              "title": "False negatives are eight times as costly"
+            },
+            {
+              "description": "A decision rule will be chosen after model comparison using validation evidence rather than a fixed 0.5 cutoff.",
+              "facts": {},
+              "object_id": "E3-O6",
+              "object_type": "Decision",
+              "title": "Decision cutoff must be selected"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.representation.is_supported_tabular": true,
+            "decision.costs_are_asymmetric": true,
+            "decision.threshold_required": true,
+            "deployment.subgroup_reliability_required": false,
+            "output.probability_used_as_probability": true,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": true,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true,
+            "target.class_prevalence.is_materially_imbalanced": true
+          },
+          "relations": [],
+          "snapshot_id": "E3-S1",
+          "transition_summary": "The operational error-cost asymmetry and need for a selected decision cutoff are now explicit."
+        },
+        {
+          "objects": [
+            {
+              "description": "Produce a seven-day failure probability for each machine so preventive-maintenance decisions can use estimated risk.",
+              "facts": {},
+              "object_id": "E3-O1",
+              "object_type": "Objective",
+              "title": "Seven-day equipment failure probability"
+            },
+            {
+              "description": "The positive event occurs in approximately 8 percent of evaluation windows.",
+              "facts": {
+                "positive_prevalence": 0.08
+              },
+              "object_id": "E3-O2",
+              "object_type": "Finding",
+              "title": "Failure prevalence is 8 percent"
+            },
+            {
+              "description": "A prospectively aligned temporal validation protocol and prediction cutoff were previously reviewed and accepted for this project.",
+              "facts": {},
+              "object_id": "E3-O3",
+              "object_type": "Decision",
+              "title": "Temporal evaluation already established"
+            },
+            {
+              "description": "Operations will interpret model outputs as numerical failure probabilities, not only as ranking scores.",
+              "facts": {},
+              "object_id": "E3-O4",
+              "object_type": "Deliverable",
+              "title": "Probabilities used as operational risks"
+            },
+            {
+              "description": "Operations estimate the cost of a missed failure at eight times the cost of an unnecessary preventive-maintenance intervention.",
+              "facts": {
+                "false_negative_to_false_positive_cost_ratio": 8
+              },
+              "object_id": "E3-O5",
+              "object_type": "Finding",
+              "title": "False negatives are eight times as costly"
+            },
+            {
+              "description": "A decision rule will be chosen after model comparison using validation evidence rather than a fixed 0.5 cutoff.",
+              "facts": {},
+              "object_id": "E3-O6",
+              "object_type": "Decision",
+              "title": "Decision cutoff must be selected"
+            },
+            {
+              "description": "The compact model comparison is complete and one probability model is provisionally selected from validation evidence.",
+              "facts": {},
+              "object_id": "E3-O7",
+              "object_type": "Finding",
+              "title": "Candidate models compared on validation data"
+            },
+            {
+              "description": "The final test partition remains untouched until probability calibration and the operational decision policy are frozen.",
+              "facts": {},
+              "object_id": "E3-O8",
+              "object_type": "Decision",
+              "title": "Final test locked"
+            },
+            {
+              "description": "Operations can service at most 50 machines each day, so the final action policy must respect a hard daily capacity constraint.",
+              "facts": {
+                "daily_capacity": 50
+              },
+              "object_id": "E3-O9",
+              "object_type": "Constraint",
+              "title": "Maintenance capacity is exactly 50 machines per day"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.representation.is_supported_tabular": true,
+            "decision.costs_are_asymmetric": true,
+            "decision.threshold_required": true,
+            "deployment.subgroup_reliability_required": false,
+            "final.test.is_locked": true,
+            "output.probability_used_as_probability": true,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": true,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true,
+            "target.class_prevalence.is_materially_imbalanced": true
+          },
+          "relations": [],
+          "snapshot_id": "E3-S2",
+          "transition_summary": "Model comparison is complete, the final test remains locked, and a hard daily intervention-capacity constraint is newly known."
+        }
+      ],
+      "title": "Probability-sensitive decision problem"
+    },
+    {
+      "episode_id": "E4",
+      "snapshots": [
+        {
+          "objects": [
+            {
+              "description": "Assess whether an existing defect-risk model remains valid after a production data-collection migration across manufacturing sites.",
+              "facts": {},
+              "object_id": "E4-O1",
+              "object_type": "Objective",
+              "title": "Revalidate an existing multi-site quality model"
+            },
+            {
+              "description": "The original development data had approximately 3 percent missing sensor values overall.",
+              "facts": {
+                "development_missingness": 0.03
+              },
+              "object_id": "E4-O2",
+              "object_type": "Finding",
+              "title": "Development missingness was 3 percent"
+            },
+            {
+              "description": "The team has not yet quantified missingness after the collection-system migration.",
+              "facts": {},
+              "object_id": "E4-O3",
+              "object_type": "Question",
+              "title": "Production missingness profile not yet measured"
+            },
+            {
+              "description": "The deployment review requires acceptable behaviour separately for sites A, B, and C.",
+              "facts": {},
+              "object_id": "E4-O4",
+              "object_type": "Definition",
+              "title": "Site is a required reliability subgroup"
+            }
+          ],
+          "project_facts": {
+            "data.entities.repeat_across_rows": false,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": true,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": false,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E4-S0",
+          "transition_summary": "The migration review starts with known historical missingness but no measured post-migration missingness profile."
+        },
+        {
+          "objects": [
+            {
+              "description": "Assess whether an existing defect-risk model remains valid after a production data-collection migration across manufacturing sites.",
+              "facts": {},
+              "object_id": "E4-O1",
+              "object_type": "Objective",
+              "title": "Revalidate an existing multi-site quality model"
+            },
+            {
+              "description": "The original development data had approximately 3 percent missing sensor values overall.",
+              "facts": {
+                "development_missingness": 0.03
+              },
+              "object_id": "E4-O2",
+              "object_type": "Finding",
+              "title": "Development missingness was 3 percent"
+            },
+            {
+              "description": "The deployment review requires acceptable behaviour separately for sites A, B, and C.",
+              "facts": {},
+              "object_id": "E4-O4",
+              "object_type": "Definition",
+              "title": "Site is a required reliability subgroup"
+            },
+            {
+              "description": "Site B moved to a new sensor gateway and ingestion pipeline during the deployment period.",
+              "facts": {},
+              "object_id": "E4-O5",
+              "object_type": "Event",
+              "title": "Site B collection system replaced"
+            },
+            {
+              "description": "Post-migration Site B records have 18 percent missing sensor values compared with 3 percent in the development data.",
+              "facts": {
+                "site_b_missingness": 0.18
+              },
+              "object_id": "E4-O6",
+              "object_type": "Finding",
+              "title": "Site B missingness increased to 18 percent"
+            },
+            {
+              "description": "A temperature field at Site B is now stored in Fahrenheit while the original model pipeline assumes Celsius.",
+              "facts": {},
+              "object_id": "E4-O7",
+              "object_type": "Finding",
+              "title": "One sensor changed units"
+            }
+          ],
+          "project_facts": {
+            "data.distribution_shift.suspected_or_observed": true,
+            "data.entities.repeat_across_rows": false,
+            "data.measurement_regime.changed": true,
+            "data.production_missingness_profile.is_known": true,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": true,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": false,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E4-S1",
+          "transition_summary": "Post-migration evidence shows a measurement-regime change, a large missingness shift, and a unit mismatch at Site B."
+        },
+        {
+          "objects": [
+            {
+              "description": "Assess whether an existing defect-risk model remains valid after a production data-collection migration across manufacturing sites.",
+              "facts": {},
+              "object_id": "E4-O1",
+              "object_type": "Objective",
+              "title": "Revalidate an existing multi-site quality model"
+            },
+            {
+              "description": "The original development data had approximately 3 percent missing sensor values overall.",
+              "facts": {
+                "development_missingness": 0.03
+              },
+              "object_id": "E4-O2",
+              "object_type": "Finding",
+              "title": "Development missingness was 3 percent"
+            },
+            {
+              "description": "The deployment review requires acceptable behaviour separately for sites A, B, and C.",
+              "facts": {},
+              "object_id": "E4-O4",
+              "object_type": "Definition",
+              "title": "Site is a required reliability subgroup"
+            },
+            {
+              "description": "The Site B unit conversion is corrected and the missingness-handling pipeline now matches the observed production pattern.",
+              "facts": {},
+              "object_id": "E4-O8",
+              "object_type": "Decision",
+              "title": "Unit conversion and missingness pipeline repaired"
+            },
+            {
+              "description": "After the data-pipeline repair, Site B error remains materially worse than Sites A and C on the current revalidation sample.",
+              "facts": {},
+              "object_id": "E4-O9",
+              "object_type": "Finding",
+              "title": "Site B validation performance remains degraded"
+            },
+            {
+              "description": "The team has not yet decided whether the repaired data pipeline is sufficient or whether the model itself must be updated.",
+              "facts": {},
+              "object_id": "E4-O10",
+              "object_type": "Question",
+              "title": "Model revalidation remains unresolved"
+            }
+          ],
+          "project_facts": {
+            "data.distribution_shift.suspected_or_observed": true,
+            "data.entities.repeat_across_rows": false,
+            "data.measurement_regime.changed": false,
+            "data.production_missingness_profile.is_known": true,
+            "data.representation.is_supported_tabular": true,
+            "deployment.subgroup_reliability_required": true,
+            "output.probability_used_as_probability": false,
+            "prediction.moment.is_defined": true,
+            "project.generalization.is_future_facing": false,
+            "project.task.is_supervised_classification": true,
+            "project.use.requires_pre_outcome_prediction": true
+          },
+          "relations": [],
+          "snapshot_id": "E4-S2",
+          "transition_summary": "The immediate measurement and missingness defects are repaired, but subgroup performance remains degraded and revalidation is still unresolved."
+        }
+      ],
+      "title": "Data-quality and measurement shift"
+    }
+  ],
+  "schema_version": 1
+}

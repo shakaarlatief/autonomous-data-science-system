@@ -1,0 +1,22 @@
+{
+  "benchmark_id": "spec022-contract-fixture-manifest-v1",
+  "files": {
+    "spec022_coverage_oracle_v1.json": {
+      "canonical_bytes": 20548,
+      "canonical_sha256": "e6774d8caed623d913a44a2bca1e6ed4861aa2e2b13a72f44f3df85f834b9eec"
+    },
+    "spec022_methodological_universe_v1.json": {
+      "canonical_bytes": 35162,
+      "canonical_sha256": "2e907c0de7dc5bfb01fbf4fef61de18f96ff6000b4a034aded7fb17ff1ff231e"
+    },
+    "spec022_oracle_representation_map_v1.json": {
+      "canonical_bytes": 2196,
+      "canonical_sha256": "186b554abbb5814333dc9b80611f3524ae5580242708b7add65897bb51374e49"
+    },
+    "spec022_project_state_episodes_v1.json": {
+      "canonical_bytes": 24729,
+      "canonical_sha256": "8650dac2f3332b29553cc8d076c40067361c51bdb489220f6e9101e11b09cc45"
+    }
+  },
+  "schema_version": 1
+}
