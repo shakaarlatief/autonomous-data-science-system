@@ -2,12 +2,12 @@
 
 **Checkpoint:** 171  
 **Date:** 2026-08-24  
-**Active development branch:** `v1-blocking-calibration-diagnostic`  
-**Active PR:** #44 draft, Specification 020 diagnostic with preserved supported result  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `b9c9c3a38935983075a9ca88632177980bb20ede`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed its governed frozen diagnostic with `BLOCKING_BOUNDARY_SUPPORTED`.  
+**Active development branch:** `v1-routing-consistency-guard`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed its governed frozen diagnostic with `BLOCKING_BOUNDARY_SUPPORTED` and PR #44 is promoted. The active Level-2 task is the small machine-checkable routing-consistency guard justified by repeated routing drift.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** retire Specification 020 one-shot control-plane exposure, validate and promote the cleaned PR #44 branch only if green, then implement the small machine-checkable routing-consistency guard before freezing another recommendation-value experiment.
+**Immediate project priority:** validate the routing manifest and lightweight cross-platform consistency validator, promote that hardening if green, then only afterward freeze a successor recommendation-value experiment.
 
 ## Active ChatGPT development context
 
@@ -17,7 +17,7 @@ ChatGPT project: Autonomous Data Science System
 Session title: 04 - Selective Context Promotion & Reasoning Vertical Slice
 ```
 
-Repository artifacts remain authoritative across chats. `main` intentionally hosts the narrow governed live-launch control plane plus temporary one-shot experiment exposure only when explicitly authorized. Temporary Specification 020 exposure is now due for retirement.
+Repository artifacts remain authoritative across chats. `main` hosts the narrow governed live-launch control plane. Specification 020 one-shot authorization and temporary live/observer/preservation/reconciliation helpers have been retired from `main`, while their GitHub audit history remains preserved.
 
 ---
 
@@ -58,7 +58,7 @@ reusable methodological knowledge
     -> relation-backed recommendation experiment 017        [INCOMPLETE, PRESERVED]
     -> governed live-experiment launcher 018                 [SUPPORTED, PROMOTED]
     -> system-owned-provenance recommendation experiment 019 [FAIL, PRESERVED]
-    -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PRESERVED]
+    -> recommendation/blocking calibration diagnostic 020   [SUPPORTED, PROMOTED]
 ```
 
 Specification 014 showed equal frozen reasoning quality for SELECTIVE and FULL_HORIZON while SELECTIVE used 66.56% fewer provider input tokens.
@@ -67,7 +67,7 @@ Specification 016 supported the bounded construct that DEFER-like sequencing nee
 
 Specification 019 completed the matched recommendation-value rerun after system-owned provenance repaired the instrumentation defect, but the frozen result remained `FAIL`.
 
-Specification 020 prospectively isolated the recommendation/blocking construct and completed successfully.
+Specification 020 prospectively isolated the recommendation/blocking construct and completed successfully. Its cleaned exact PR head passed the Specification 020 Ubuntu/Windows diagnostic plus accepted reasoning-context, disposition-semantics, launcher, and checkpoint-metadata regressions before PR #44 merged into `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`.
 
 ---
 
@@ -134,19 +134,26 @@ docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_suppo
 
 ---
 
-## Preservation and continuity consequence
+## Preservation and continuity hardening
 
-The stage-boundary verification found no substantive preservation failure. It did confirm recurring routing drift in mutable current-state/index documents relative to already durable checkpoint/result evidence.
+The stage-boundary verification found no substantive preservation failure. It did confirm repeated routing drift in mutable current-state/index documents relative to already durable checkpoint/result evidence.
 
-This now justifies one small Level-2 hardening:
+The active bounded hardening is deliberately small:
 
 ```text
-machine-readable current routing pointers
-    -> lightweight CI consistency validator
-    -> Markdown remains substantive source of truth
+docs/current_routing.json
+    routing metadata only
+
+scripts/check_current_routing.py
+    validates the manifest contract
+    verifies the current checkpoint exists
+    verifies README / CURRENT_STATE / KNOWLEDGE_MAP do not contradict key pointers
+
+.github/workflows/current-routing-consistency.yml
+    runs the validator on Ubuntu and Windows for routing-sensitive changes
 ```
 
-Do not introduce a graph database, vector database, or machine-generated documentation system for preservation on this evidence.
+Markdown remains the substantive knowledge source. The manifest does not replace foundations, specifications, checkpoints, results, decisions, or explanatory current-state material.
 
 ---
 
@@ -174,10 +181,10 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. retire Specification 020 one-shot authorization and temporary main helpers
-2. validate the cleaned PR #44 head on Specification 020 Ubuntu/Windows CI and accepted V1 regression seams
-3. promote PR #44 into v1-frontend-spike only if green
-4. implement the small routing-consistency manifest + CI validator as the next Level-2 hardening
+1. validate the machine-readable routing manifest and cross-platform consistency CI
+2. create and validate the routing-consistency hardening PR
+3. checkpoint and promote the hardening only if its exact head remains green
+4. reconcile routing back to the promoted v1-frontend-spike boundary after merge
 5. only after that freeze a successor recommendation-value contract
 6. do not modify or rescore Specifications 015-020
 ```
@@ -188,6 +195,7 @@ final frontend stack and Cockpit implementation details
 README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/current_routing.json
 docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
 experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
 docs/DEVELOPMENT_METHOD.md
