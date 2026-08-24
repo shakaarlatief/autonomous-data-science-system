@@ -46,7 +46,7 @@ jobs:
           find "${DESTINATION}" -maxdepth 2 -type f -printf '%P\n' | sort
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add "${DESTINATION}"
+          git add -f "${DESTINATION}"
           git commit -m "Preserve raw Specification 021 live artifact"
           preservation_sha="$(git rev-parse HEAD)"
           git push origin "HEAD:${TARGET_BRANCH}"
