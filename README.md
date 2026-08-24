@@ -23,17 +23,17 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            179
+checkpoint            180
 active branch         v1-dependency-backed-recommendation-value
 active PR             #55 draft
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
 current boundary      Specification 021 first live run remains INCOMPLETE;
-                      usage-metadata serialization repair is cross-platform green
+                      repaired replacement live source frozen and green
 latest experiment     Specification 021
 outcome               INCOMPLETE
-next                  validate this Checkpoint 179 routing head,
-                      freeze a fresh exact replacement live-source boundary,
-                      and only then prepare any new one-shot authorization
+next                  validate this Checkpoint 180 routing head,
+                      expose the identical replacement target on main,
+                      then install one new one-shot authorization and launch ID
 ```
 
 Current experimental progression:
@@ -50,9 +50,9 @@ Specification 019  system-owned-provenance recommendation rerun completed; FAIL 
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 Checkpoint 173     machine-checkable current-routing hardening promoted and closed
 Specification 021  first governed live run preserved as INCOMPLETE after 72 uniform
-                   usage-metadata serialization failures; the defect is now reproduced
-                   provider-free and repaired cross-platform at Checkpoint 179;
-                   no scientific advancement classification exists yet
+                   usage-metadata serialization failures; defect reproduced and repaired
+                   cross-platform at Checkpoint 179; fully reconciled replacement live
+                   source frozen at Checkpoint 180; no scientific advancement result yet
 ```
 
 For exact continuation, start with:
@@ -67,6 +67,7 @@ docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
 docs/checkpoints/177_specification_021_live_source_frozen.md
 docs/checkpoints/178_specification_021_live_execution_incomplete_usage_serialization.md
 docs/checkpoints/179_specification_021_usage_serialization_repair_cross_platform_passed.md
+docs/checkpoints/180_specification_021_repaired_live_source_frozen.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
@@ -326,7 +327,7 @@ The model should not be required to reproduce authoritative context provenance t
 
 ---
 
-## Specification 021: first live execution incomplete; instrumentation repair green
+## Specification 021: first live execution incomplete; repaired replacement source frozen
 
 Specification 021 is the clean prospective recommendation-value test after the known sequencing, provenance, and blocking-calibration confounds were separately addressed.
 
@@ -434,7 +435,23 @@ V1 blocking calibration diagnostic      32732513090  success
 V1 disposition semantics diagnostic     32732512948  success
 ```
 
-The first live run is not rescored or reclassified. The scientific recommendation-value question remains unresolved, and no replacement provider call is authorized at Checkpoint 179.
+Checkpoint 180 freezes the fully reconciled repaired replacement live source:
+
+```text
+replacement source                         0b86c8770ba4c9db55f50cc1f7a247ab5afd4e62
+replacement source ref                     v1-spec021-dependency-backed-recommendation-value-repaired-live-source
+Specification 021 provider-free CI         32740472833  success
+Ubuntu job                                 97473452274  success
+Windows job                                97473452933  success
+Current routing consistency                32740472923  success
+Checkpoint metadata                        32740472885  success
+V1 reasoning context value                 32740472953  success
+V1 disposition semantics diagnostic        32740472827  success
+V1 blocking calibration diagnostic         32740472828  success
+V1 autonomous live experiment launcher CI 32740472851  success
+```
+
+The first live run is not rescored or reclassified. The scientific recommendation-value question remains unresolved. Checkpoint 180 authorizes zero provider calls; any replacement execution still requires a new Specification 018 one-shot authorization and a new launch ID.
 
 ---
 
@@ -465,14 +482,16 @@ Markdown remains the substantive source of project knowledge. The manifest is no
 
 ```text
 1. keep run 32727241852 immutable as INCOMPLETE evidence
-2. validate the fully reconciled Checkpoint 179 head with Specification 021 and inherited CI
-3. freeze a new exact replacement live-source boundary and dedicated source ref
-4. keep the original live source/ref as immutable historical provenance
-5. only after the new source is frozen, prepare a fresh one-shot Specification 018 authorization
-6. use a new launch ID; never reuse spec021-dependency-backed-recommendation-value-001
-7. preserve any replacement raw artifact before interpretation
-8. classify only with the frozen Specification 021 gates if a complete replacement run exists
-9. do not modify or rescore the frozen Specification 021 scientific contract or Specifications 015-020
+2. validate the exact Checkpoint 180 routing reconciliation head
+3. expose the identical repaired Specification 021 target workflow on main
+4. install one exact enabled Specification 018 authorization for source 0b86c8770ba4c9db55f50cc1f7a247ab5afd4e62
+5. use a new launch ID; never reuse spec021-dependency-backed-recommendation-value-001
+6. create one owner-authored [ADS LIVE] request carrying only the new launch ID and frozen confirmation
+7. verify launcher acceptance and exact target-run identity
+8. preserve the complete replacement raw artifact before scientific interpretation
+9. classify only with the unchanged Specification 021 gates if a complete replacement run exists
+10. retire the one-shot authorization/default-branch exposure after preservation
+11. do not modify or rescore the frozen Specification 021 scientific contract or Specifications 015-020
 ```
 
 ---
