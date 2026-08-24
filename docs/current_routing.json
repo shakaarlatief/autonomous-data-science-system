@@ -5,7 +5,7 @@
   "active_pr": 54,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "a856983172f6436b73e3f7d0e609d208b55a443b",
-  "active_specification": "020",
-  "current_experiment_outcome": "BLOCKING_BOUNDARY_SUPPORTED",
+  "latest_specification": "020",
+  "latest_experiment_outcome": "BLOCKING_BOUNDARY_SUPPORTED",
   "current_boundary": "routing-consistency-hardening"
 }
