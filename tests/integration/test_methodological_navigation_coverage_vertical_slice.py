@@ -55,16 +55,22 @@ class FixedDenseRetriever:
     This double exists only to validate RRF, revision identity, Horizon expansion,
     applicability, ordering, capping, and model-facing serialization without a
     network/model download in ordinary CI.
+
+    ``revalidation-after-data-change`` is intentionally ranked first because its
+    frozen outbound relation targets are not ordinary E1 retrieval seeds. This
+    guarantees that the integration test exercises relation-added candidates
+    rather than accidentally deduplicating every relation target as a direct
+    seed.
     """
 
     def __init__(self, accepted_assets: dict[str, dict]) -> None:
         self._accepted_assets = accepted_assets
         self._keys = (
+            "revalidation-after-data-change",
             "prediction-moment",
             "prediction-time-feature-eligibility",
             "temporal-validation",
             "class-imbalance",
-            "group-aware-validation",
             "data-leakage",
         )
 
@@ -156,9 +162,6 @@ def test_spec022_fixed_database_navigation_is_deterministic_and_read_only(
         included_keys = {item.stable_key for item in first.included}
         assert "prediction-moment" in included_keys
         assert "prediction-time-feature-eligibility" in included_keys
-        # Relation expansion is performed before the frozen 12-asset cap. A
-        # relation-added candidate may therefore be retained, excluded by
-        # applicability, or recorded as truncated after the cap.
         assert any(
             item.origin == "RELATION"
             for item in (*first.included, *first.excluded, *first.truncated)
