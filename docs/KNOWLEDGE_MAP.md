@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 167  
+**Current checkpoint:** 168  
 **Active development branch:** `v1-blocking-calibration-diagnostic`  
 **Active PR:** #44 draft  
 **Promoted V1 integration branch:** `v1-frontend-spike` at reconciled head `b9c9c3a38935983075a9ca88632177980bb20ede`
@@ -80,8 +80,8 @@ Specification 018 / Checkpoints 160-162
 Specification 019 / Checkpoints 163-166
     system-owned provenance rerun frozen, cross-platform validated, autonomously launched, completed, classified FAIL, and preserved without implementation promotion
 
-Specification 020 / Checkpoint 167
-    RECOMMENDED-vs-BLOCKING_REQUIRED construct-validity diagnostic frozen before provider-free implementation
+Specification 020 / Checkpoints 167-168
+    RECOMMENDED-vs-BLOCKING_REQUIRED construct-validity diagnostic frozen and provider-free implementation validated cross-platform
 ```
 
 ---
@@ -232,13 +232,17 @@ Specification 019 closed the provenance instrumentation defect but did not estab
 
 ## Specification 020: recommendation/blocking calibration diagnostic
 
-Frozen sources:
+Frozen and implementation-gate sources:
 
 ```text
 docs/research/027_recommended_vs_blocking_required_calibration_design.md
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
 tests/fixtures/reasoning/blocking_calibration_v1.json
 docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
+experiments/blocking_calibration/harness.py
+experiments/blocking_calibration/runner.py
+.github/workflows/v1-blocking-calibration.yml
 ```
 
 Frozen semantic boundary:
@@ -269,7 +273,7 @@ BC-05  probability calibration assessment
 BC-06  nonlinear model-family comparison
 ```
 
-Frozen planned live shape, only if a later provider-free implementation earns authorization:
+Frozen planned live shape, only if later boundaries earn authorization:
 
 ```text
 36 planned successful reasoner calls
@@ -293,7 +297,33 @@ BLOCKING_BOUNDARY_NOT_SUPPORTED
 INCOMPLETE
 ```
 
-No provider call is authorized at Checkpoint 167.
+Exact provider-free implementation boundary:
+
+```text
+head                                fb8327aae859f53bbb0c4d7bba70b32b6033343e
+V1 blocking calibration             32697487230  success
+Ubuntu dedicated                    16 passed
+Windows dedicated                   16 passed
+Ubuntu full V1                      115 passed, 2 skipped
+Windows full V1                     115 passed, 2 skipped
+Checkpoint metadata                 32697487221  success
+V1 reasoning context value          32697487202  success
+V1 disposition semantics            32697487256  success
+V1 autonomous launcher CI           32697487239  success
+provider credential                 absent
+```
+
+A provider-free edge-case repair ensures the frozen 45-attempt ceiling produces a preserved `INCOMPLETE` result rather than escaping the scientific outcome boundary as an exception.
+
+Current provider boundary:
+
+```text
+live runtime default       absent
+live CLI                    absent
+live workflow               absent
+Spec020 authorization      absent
+provider calls             0
+```
 
 ---
 
@@ -335,7 +365,7 @@ owner request transport
     -> independently validating target workflow
 ```
 
-The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation head is green.
+The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation/live-capable head is provider-free green.
 
 Specification 019 used this path successfully for its one authorized provider-backed run. Its one-shot authorization is retired, the temporary Specification 019 live/observer/preservation helpers have been removed from `main`, and temporary issues 34-42 are closed with audit history retained.
 
@@ -344,15 +374,13 @@ Specification 019 used this path successfully for its one authorized provider-ba
 ## Current exact continuation
 
 ```text
-A. implement Specification 020 provider-free only
-B. audit all six fixture pairs and evaluator-truth blinding mechanically
-C. build and hash the complete deterministic 36-call plan before any provider path exists
-D. implement experiment-only result type and strict supplied-ID validation
-E. implement attempt ledger, deterministic gate evaluation, fake-runtime integration, and failure/incomplete tests
-F. add dedicated Ubuntu/Windows CI with provider credential explicitly absent
-G. validate the exact implementation head plus accepted V1 regression suites
-H. freeze a later exact implementation/live boundary checkpoint
-I. only then expose or authorize a live workflow through Specification 018
+A. complete canonical reconciliation to Checkpoint 168
+B. validate the exact reconciled head on Specification 020 Ubuntu/Windows CI and accepted V1 regression seams
+C. freeze a separate pre-live boundary checkpoint only after that head is green
+D. only after the pre-live checkpoint add an explicit live runtime entry path and workflow
+E. validate the live-capable source provider-free
+F. authorize at most one frozen run through Specification 018
+G. preserve raw live evidence before interpretation or tuning
 ```
 
 Do not modify or rescore Specifications 015-019. Do not weaken Specification 020 gates after implementation or results. No new recommendation/action provider call is currently authorized.
@@ -381,5 +409,6 @@ Do not modify or rescore Specifications 015-019. Do not weaken Specification 020
 164  Specification 019 provider-free/live source boundary validated
 165  Specification 019 governed live authorization frozen
 166  Specification 019 complete live result classified FAIL and preserved
-167  RECOMMENDED-vs-BLOCKING_REQUIRED calibration diagnostic contract frozen
+167  RECOMMENDED-vs-BLOCKING_REQUIRED diagnostic contract frozen
+168  Specification 020 provider-free implementation gate passed cross-platform
 ```
