@@ -1,0 +1,54 @@
+name: Observe Specification 021 replacement target
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: read
+  issues: write
+  contents: read
+
+jobs:
+  observe:
+    if: github.event.issue.title == '[ADS MAINT] observe-spec021-replacement-target' && github.event.issue.body == 'authorization: OBSERVE_SPEC021_REPLACEMENT_TARGET'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TARGET_SHA: 575a3264ea39a10e35d769f9c54a2d1a13c28c08
+      TARGET_WORKFLOW: v1-dependency-backed-recommendation-action-live.yml
+    steps:
+      - name: Locate exact workflow-dispatch run
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+
+          repo = os.environ['GITHUB_REPOSITORY']
+          workflow = os.environ['TARGET_WORKFLOW']
+          target_sha = os.environ['TARGET_SHA']
+          raw = subprocess.check_output([
+              'gh', 'api',
+              f'repos/{repo}/actions/workflows/{workflow}/runs?event=workflow_dispatch&per_page=100'
+          ], text=True)
+          data = json.loads(raw)
+          matches = [r for r in data.get('workflow_runs', []) if r.get('head_sha') == target_sha]
+          if len(matches) != 1:
+              raise SystemExit(f'expected exactly one target run, found {len(matches)}')
+          run = matches[0]
+          body = (
+              'Specification 021 replacement target observed. '
+              f"run_id=`{run['id']}`; head_sha=`{run['head_sha']}`; "
+              f"status=`{run['status']}`; conclusion=`{run.get('conclusion')}`; "
+              f"run_attempt=`{run['run_attempt']}`."
+          )
+          subprocess.check_call([
+              'gh', 'issue', 'comment', str(os.environ['ISSUE_NUMBER']),
+              '--repo', repo, '--body', body
+          ])
+          PY
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
