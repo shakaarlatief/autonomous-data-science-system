@@ -3,11 +3,11 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 176  
+**Current checkpoint:** 177  
 **Active development branch:** `v1-dependency-backed-recommendation-value`  
-**Active PR:** #55 draft, Specification 021 exact pre-live boundary frozen; minimal live-capable plumbing next  
+**Active PR:** #55 draft, Specification 021 exact live-capable source frozen; one governed authorization next  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
-**Latest experiment:** Specification 021 `PRE_LIVE_BOUNDARY_FROZEN`
+**Latest experiment:** Specification 021 `LIVE_SOURCE_FROZEN`
 
 ## Start here
 
@@ -41,7 +41,8 @@ Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
 routing consistency PR         #54 merged
 Specification 021 PR           #55 active
-main                           governed live-launch control plane; no Spec021 authorization
+Spec021 live-source ref        v1-spec021-dependency-backed-recommendation-value-live-source
+main                           governed live-launch control plane; no Spec021 authorization yet
 ```
 
 ---
@@ -91,11 +92,12 @@ Specification 020 / Checkpoints 167-171
 Checkpoints 172-173 / PR #54
     narrow machine-readable routing pointers + cross-platform contradiction guard accepted, promoted, and closed
 
-Specification 021 / Checkpoints 174-176 / PR #55
+Specification 021 / Checkpoints 174-177 / PR #55
     dependency-backed recommendation-value contract frozen prospectively;
     provider-free implementation green cross-platform;
-    fully reconciled exact pre-live source frozen at aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7;
-    no provider call authorized; minimal live-capable plumbing next
+    fully reconciled exact pre-live boundary frozen;
+    exact provider-capable source b589bad975880b2d3cccc3596fc82539b1b96577 pinned to dedicated live-source ref;
+    no provider call authorized yet
 ```
 
 ---
@@ -293,7 +295,7 @@ exact unresolved requirement
 
 This does not promote production recommendation enums or prove methodological-context recommendation value.
 
-### Specification 021, exact pre-live boundary frozen
+### Specification 021, exact live source frozen
 
 Primary sources:
 
@@ -304,12 +306,13 @@ tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
 docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
 docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
+docs/checkpoints/177_specification_021_live_source_frozen.md
 ```
 
 Current status:
 
 ```text
-PRE_LIVE_BOUNDARY_FROZEN
+LIVE_SOURCE_FROZEN
 ```
 
 The frozen design keeps GENERIC / SELECTIVE / FULL_HORIZON and the same ten-asset methodological universe, while making the known disposition relations explicit and system-owned:
@@ -342,18 +345,22 @@ SAFE_BUT_NOT_DIFFERENTIATED
 FAIL
 ```
 
-Exact pre-live evidence:
+Exact live-source evidence:
 
 ```text
 provider-free implementation head           8e199c29e3f082b353f92f27868aedca0ebbbf74
-fully reconciled pre-live source             aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
-Specification 021 provider-free CI           32723507005  success
-Ubuntu job                                   97419720247  success
-Windows job                                  97419720501  success
-routing and inherited accepted-seam checks   all green on the exact source
+pre-live source                             aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
+live-capable source                         b589bad975880b2d3cccc3596fc82539b1b96577
+live-source ref                             v1-spec021-dependency-backed-recommendation-value-live-source
+Specification 021 provider-free CI          32724242554  success
+Windows job                                 97421896915  success
+Ubuntu job                                  97421897042  success
+routing and inherited accepted-seam checks  all green on the exact live source
 ```
 
-No provider call is authorized. Checkpoint 176 permits only separated live-capable execution plumbing around the already frozen provider-neutral experiment.
+The first live-plumbing validation run `32724023671` exposed only that the implementation-stage "no live surface" invariant had to transition to a "no repository authorization" invariant after Checkpoint 176 permitted the live wrapper/workflow. The repair did not change frozen science.
+
+No provider call is authorized by Checkpoint 177. The next governed step is one exact Specification 018 authorization and owner issue after the checkpointed routing head is validated.
 
 ---
 
@@ -379,6 +386,8 @@ owner request transport
 ```
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation/live-capable source is provider-free green.
+
+Specification 021's frozen authorization values are recorded only in Checkpoint 177 until the exact routing head is green.
 
 ---
 
@@ -412,14 +421,16 @@ Markdown remains the substantive source of truth. The routing manifest is not a 
 ## Current exact continuation
 
 ```text
-A. validate the exact Checkpoint 176 routing reconciliation head
-B. implement only the separated Specification 021 live wrapper and target workflow
-C. add provider-free tests proving the live plumbing leaves frozen science unchanged
-D. validate the live-capable exact source with Specification 021 and inherited accepted-seam CI
-E. freeze an exact live-source checkpoint only after all required gates pass
-F. only then expose/authorize one exact governed launch through main
-G. preserve raw provider evidence before scientific interpretation
-H. do not modify or rescore Specifications 015-020
+A. validate the exact Checkpoint 177 routing reconciliation head
+B. expose the identical frozen Specification 021 target workflow on main
+C. add one exact enabled Specification 018 authorization on main
+D. create one owner-authored [ADS LIVE] issue containing only the frozen launch ID and confirmation
+E. verify launcher acceptance and exact target run identity
+F. make no scientific interpretation from partial outputs
+G. preserve the complete raw provider artifact before scientific interpretation
+H. classify only with the frozen Specification 021 gates
+I. retire the one-shot authorization/default-branch target exposure after preservation
+J. do not modify or rescore Specifications 015-020
 ```
 
 ---
@@ -455,5 +466,6 @@ H. do not modify or rescore Specifications 015-020
 173  routing-consistency hardening promoted and closed after final exact integration push validation
 174  Specification 021 dependency-backed recommendation-value contract and benchmark frozen
 175  Specification 021 provider-free implementation gate passed cross-platform
-176  Specification 021 fully reconciled exact pre-live boundary frozen; no provider call authorized
+176  Specification 021 fully reconciled exact pre-live boundary frozen
+177  Specification 021 exact live-capable source frozen and pinned; no provider call authorized
 ```
