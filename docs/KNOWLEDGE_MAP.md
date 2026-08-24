@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 166  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none; preservation-only PR #43 merged and failed implementation PR #33 closed without merge  
-**Promoted V1 integration branch:** `v1-frontend-spike` at Specification 019 preservation merge `e88c41b31788a53c7da115a24b0f9baeea48516b`
+**Current checkpoint:** 167  
+**Active development branch:** `v1-blocking-calibration-diagnostic`  
+**Active PR:** #44 draft  
+**Promoted V1 integration branch:** `v1-frontend-spike` at reconciled head `b9c9c3a38935983075a9ca88632177980bb20ede`
 
 ## Start here
 
@@ -26,15 +26,16 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      e88c41b31788a53c7da115a24b0f9baeea48516b
-active branch                  v1-frontend-spike
-active PR                      none
+promoted integration head      b9c9c3a38935983075a9ca88632177980bb20ede
+active branch                  v1-blocking-calibration-diagnostic
+active PR                      #44 draft
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
 Specification 018 PR           #23 merged
 Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
+Specification 020 PR           #44 active diagnostic
 main                           intentionally behind V1 application code except narrow launcher exposure
 ```
 
@@ -78,6 +79,9 @@ Specification 018 / Checkpoints 160-162
 
 Specification 019 / Checkpoints 163-166
     system-owned provenance rerun frozen, cross-platform validated, autonomously launched, completed, classified FAIL, and preserved without implementation promotion
+
+Specification 020 / Checkpoint 167
+    RECOMMENDED-vs-BLOCKING_REQUIRED construct-validity diagnostic frozen before provider-free implementation
 ```
 
 ---
@@ -222,7 +226,74 @@ MODEL-OWNED CONTENT
     rationales
 ```
 
-Specification 019 closed the provenance instrumentation defect but did not establish recommendation/action value. The immediate scientific boundary is calibration of `RECOMMENDED` versus genuinely `BLOCKING_REQUIRED` work for exact defended downstream scopes.
+Specification 019 closed the provenance instrumentation defect but did not establish recommendation/action value.
+
+---
+
+## Specification 020: recommendation/blocking calibration diagnostic
+
+Frozen sources:
+
+```text
+docs/research/027_recommended_vs_blocking_required_calibration_design.md
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+tests/fixtures/reasoning/blocking_calibration_v1.json
+docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+```
+
+Frozen semantic boundary:
+
+```text
+BLOCKING_REQUIRED
+    currently justified action
+    + exact unresolved supplied requirement
+    + exact active defended supplied downstream scope
+    + explicit scope DEPENDS_ON requirement relation
+    + candidate action resolves that requirement
+    + exact requirement and scope pointers
+
+RECOMMENDED
+    materially worthwhile action now or soon
+    + no exact active supplied downstream scope blocked on it
+    + both blocking pointers null
+```
+
+The fixture contains six contrastive pairs:
+
+```text
+BC-01  prediction-time feature availability
+BC-02  temporal validation sensitivity
+BC-03  missing-data treatment sensitivity
+BC-04  subgroup error analysis
+BC-05  probability calibration assessment
+BC-06  nonlinear model-family comparison
+```
+
+Frozen planned live shape, only if a later provider-free implementation earns authorization:
+
+```text
+36 planned successful reasoner calls
+45 maximum provider attempts
+seed 2026082401
+one reasoner condition
+no methodological assets
+no retrieval/Horizon/selective context
+no semantic judge
+no tools
+no project mutation
+```
+
+Frozen hard gates require structural validity, aggregate/per-variant/per-pair correctness, exact requirement/scope pointers for all 18 blocking observations, and both pointers null for all 18 recommended observations.
+
+Allowed outcomes:
+
+```text
+BLOCKING_BOUNDARY_SUPPORTED
+BLOCKING_BOUNDARY_NOT_SUPPORTED
+INCOMPLETE
+```
+
+No provider call is authorized at Checkpoint 167.
 
 ---
 
@@ -266,25 +337,25 @@ owner request transport
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation head is green.
 
-Specification 019 used this path successfully for its one authorized provider-backed run. Its one-shot authorization is now retired, the temporary Specification 019 live/observer/preservation helpers have been removed from `main`, and temporary issues 34-42 are closed with audit history retained.
+Specification 019 used this path successfully for its one authorized provider-backed run. Its one-shot authorization is retired, the temporary Specification 019 live/observer/preservation helpers have been removed from `main`, and temporary issues 34-42 are closed with audit history retained.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. begin a prospective recommendation/blocking-calibration design
-B. define the exact represented relation between unresolved work and defended downstream scope
-C. preserve the Specification 016 dependency-backed DEFER construction
-D. preserve Specification 019 system-owned supplied-context provenance
-E. retain strong GENERIC and FULL_HORIZON controls
-F. do not tune successor truth or thresholds from repeated Specification 019 outputs
-G. freeze the successor research/specification/fixture/gates/call plan/checkpoint before implementation
-H. validate the exact implementation head provider-free
-I. authorize any future live run only through Specification 018 after exact green evidence
+A. implement Specification 020 provider-free only
+B. audit all six fixture pairs and evaluator-truth blinding mechanically
+C. build and hash the complete deterministic 36-call plan before any provider path exists
+D. implement experiment-only result type and strict supplied-ID validation
+E. implement attempt ledger, deterministic gate evaluation, fake-runtime integration, and failure/incomplete tests
+F. add dedicated Ubuntu/Windows CI with provider credential explicitly absent
+G. validate the exact implementation head plus accepted V1 regression suites
+H. freeze a later exact implementation/live boundary checkpoint
+I. only then expose or authorize a live workflow through Specification 018
 ```
 
-Do not modify or rescore Specifications 015-017. Do not post-hoc relax Specification 019 gates. No new recommendation/action provider call is currently authorized.
+Do not modify or rescore Specifications 015-019. Do not weaken Specification 020 gates after implementation or results. No new recommendation/action provider call is currently authorized.
 
 ---
 
@@ -310,4 +381,5 @@ Do not modify or rescore Specifications 015-017. Do not post-hoc relax Specifica
 164  Specification 019 provider-free/live source boundary validated
 165  Specification 019 governed live authorization frozen
 166  Specification 019 complete live result classified FAIL and preserved
+167  RECOMMENDED-vs-BLOCKING_REQUIRED calibration diagnostic contract frozen
 ```
