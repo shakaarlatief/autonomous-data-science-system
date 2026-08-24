@@ -14,53 +14,25 @@ permissions:
 jobs:
   observe:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
     env:
       GH_TOKEN: ${{ github.token }}
-      EXPECTED_SOURCE_SHA: b589bad975880b2d3cccc3596fc82539b1b96577
-      TARGET_WORKFLOW: v1-dependency-backed-recommendation-action-live.yml
       LAUNCH_ISSUE: '56'
+      PRESERVE_WORKFLOW: preserve-spec021-live.yml
     steps:
-      - name: Locate and follow exact frozen target run
+      - name: Inspect latest preservation helper run
         shell: bash
         run: |
           set -euo pipefail
-          announced=0
-          for attempt in $(seq 1 360); do
-            runs_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${TARGET_WORKFLOW}/runs?event=workflow_dispatch&per_page=20")"
-            run_id="$(printf '%s' "${runs_json}" | jq -r --arg sha "${EXPECTED_SOURCE_SHA}" '.workflow_runs[] | select(.head_sha == $sha and .event == "workflow_dispatch") | .id' | head -n 1)"
-            if [ -n "${run_id}" ] && [ "${run_id}" != "null" ]; then
-              run_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}")"
-              status="$(printf '%s' "${run_json}" | jq -r '.status')"
-              conclusion="$(printf '%s' "${run_json}" | jq -r '.conclusion // "null"')"
-              head_sha="$(printf '%s' "${run_json}" | jq -r '.head_sha')"
-              event="$(printf '%s' "${run_json}" | jq -r '.event')"
-              echo "SPEC021_TARGET_RUN_ID=${run_id}"
-              echo "SPEC021_TARGET_STATUS=${status}"
-              echo "SPEC021_TARGET_CONCLUSION=${conclusion}"
-              echo "SPEC021_TARGET_HEAD_SHA=${head_sha}"
-              echo "SPEC021_TARGET_EVENT=${event}"
-              if [ "${head_sha}" != "${EXPECTED_SOURCE_SHA}" ] || [ "${event}" != "workflow_dispatch" ]; then
-                echo "Observed run does not match frozen source/event boundary."
-                exit 1
-              fi
-              if [ "${announced}" -eq 0 ]; then
-                gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
-                  --body "ADS observer located exact Specification 021 target run. target_run=\`${run_id}\`; source=\`${head_sha}\`; status=\`${status}\`."
-                announced=1
-              fi
-              if [ "${status}" = "completed" ]; then
-                jobs="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/jobs?filter=latest&per_page=100" --jq '[.jobs[] | {id, name, status, conclusion}]')"
-                artifacts="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/artifacts?per_page=100" --jq '[.artifacts[] | {id, name, size_in_bytes, expired, digest}]')"
-                gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
-                  --body "ADS observer completed Specification 021 target observation. target_run=\`${run_id}\`; source=\`${head_sha}\`; conclusion=\`${conclusion}\`. jobs=\`${jobs}\`; artifacts=\`${artifacts}\`."
-                exit 0
-              fi
-            else
-              echo "Specification 021 target run not visible yet (attempt ${attempt})."
-            fi
-            sleep 15
-          done
+          runs_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/${PRESERVE_WORKFLOW}/runs?per_page=10")"
+          run_id="$(printf '%s' "${runs_json}" | jq -r '.workflow_runs[0].id // empty')"
+          if [ -z "${run_id}" ]; then
+            gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" --body "Specification 021 preservation observer found no preservation-helper run."
+            exit 1
+          fi
+          run_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}")"
+          status="$(printf '%s' "${run_json}" | jq -r '.status')"
+          conclusion="$(printf '%s' "${run_json}" | jq -r '.conclusion // "null"')"
+          head_sha="$(printf '%s' "${run_json}" | jq -r '.head_sha')"
+          jobs="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}/jobs?filter=latest&per_page=100" --jq '[.jobs[] | {id, name, status, conclusion}]')"
           gh issue comment "${LAUNCH_ISSUE}" --repo "${GITHUB_REPOSITORY}" \
-            --body "ADS observer timed out waiting for Specification 021 target completion."
-          exit 1
+            --body "Specification 021 preservation-helper status. run=\`${run_id}\`; head=\`${head_sha}\`; status=\`${status}\`; conclusion=\`${conclusion}\`; jobs=\`${jobs}\`."
