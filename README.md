@@ -277,7 +277,7 @@ reasoner outputs         36 / 36
 validated observations   36 / 36
 provider attempts        36 / 45
 failed attempts          0
-retries                  0
+retries                   0
 aggregate exact accuracy 1.000000
 all hard gates           PASS
 outcome                  BLOCKING_BOUNDARY_SUPPORTED
@@ -354,6 +354,8 @@ Exact pre-checkpoint implementation head `5f5dfb81a97f089afc91f20d4632683714a43f
 
 The final PR #54 head `44d92d73029ad56925bd2c49bb373be5bdef44ce` then passed checkpoint metadata, cross-platform routing consistency, and all applicable accepted V1 regression seams before merge into `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`.
 
+The integration reconciliation is deliberately routing-sensitive so the new push guard must validate the merged branch state itself, not only the pre-merge pull-request head.
+
 Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence. Development Method remains v0.4 because its existing rule already permits narrow partial automation once repetitive or inconsistent maintenance is observed.
 
 This hardening is not a justification for graph/vector preservation storage or wholesale machine-generated documentation.
@@ -363,7 +365,7 @@ This hardening is not a justification for graph/vector preservation storage or w
 ## Exact continuation
 
 ```text
-1. require current-routing consistency to pass on this final v1-frontend-spike reconciliation
+1. require current-routing consistency to pass on this routing-sensitive v1-frontend-spike reconciliation
 2. close the Level-2 routing-consistency hardening boundary only if that exact integration head is green
 3. then freeze a successor recommendation-value experiment
 4. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
