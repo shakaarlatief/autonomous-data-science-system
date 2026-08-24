@@ -68,7 +68,7 @@ def test_live_wrapper_only_adds_execution_annotation(
 def test_live_workflow_is_tightly_scoped_to_frozen_specification_021() -> None:
     text = LIVE_WORKFLOW.read_text(encoding="utf-8")
 
-    assert "spec021-dependency-backed-recommendation-value-001" in text
+    assert "spec021-dependency-backed-recommendation-value-002" in text
     assert "RUN_SPEC_021_FROZEN" in text
     assert "inputs.expected_source_sha" in text
     assert "${GITHUB_SHA}" in text
