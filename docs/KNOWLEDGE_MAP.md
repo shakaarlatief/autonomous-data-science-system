@@ -4,9 +4,9 @@
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
 **Current checkpoint:** 171  
-**Active development branch:** `v1-blocking-calibration-diagnostic`  
-**Active PR:** #44 draft, supported Specification 020 result preserved  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `b9c9c3a38935983075a9ca88632177980bb20ede`
+**Active development branch:** `v1-routing-consistency-guard`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`
 
 ## Start here
 
@@ -14,6 +14,7 @@
 README.md                         project overview and current evidence boundary
 docs/CURRENT_STATE.md             present state and exact continuation
 docs/KNOWLEDGE_MAP.md             routing/index layer
+docs/current_routing.json         machine-readable routing metadata only
 docs/VISION.md                    high-level system and product direction
 docs/PRINCIPLES.md                accepted high-level design principles
 docs/DECISIONS.md                 accepted project-level decisions
@@ -26,17 +27,17 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      b9c9c3a38935983075a9ca88632177980bb20ede
-active branch                  v1-blocking-calibration-diagnostic
-active PR                      #44 draft
+promoted integration head      a856983172f6436b73e3f7d0e609d208b55a443b
+active branch                  v1-routing-consistency-guard
+active PR                      none
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
 Specification 018 PR           #23 merged
 Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
-Specification 020 PR           #44 active diagnostic with supported result preserved
-main                           governed live-launch control plane; Specification 020 one-shot exposure pending retirement
+Specification 020 PR           #44 merged
+main                           governed live-launch control plane; zero active Spec020 authorization
 ```
 
 ---
@@ -81,7 +82,10 @@ Specification 019 / Checkpoints 163-166
     system-owned provenance rerun completed; recommendation-value gates FAIL; evidence preserved without implementation promotion
 
 Specification 020 / Checkpoints 167-171
-    RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and pre-live/live-capable boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved
+    RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted through PR #44
+
+Level-2 routing hardening
+    machine-readable current routing pointers + lightweight cross-platform contradiction validator
 ```
 
 ---
@@ -187,10 +191,8 @@ The result supports selective context economy on the bounded benchmark. It does 
 ### Specification 015
 
 ```text
-docs/research/022_first_recommendation_action_value_vertical_slice_design.md
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
 docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-docs/checkpoints/151_specification_015_failure_preservation_only_boundary_green.md
 experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
@@ -199,7 +201,6 @@ Frozen result: `FAIL`. Implementation not promoted.
 ### Specification 016
 
 ```text
-docs/research/023_defer_not_now_disposition_semantics_failure_attribution_design.md
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
 docs/checkpoints/155_disposition_semantics_live_gate_supported.md
 experiments/disposition_semantics/V1_DISPOSITION_SEMANTICS_RESULT.md
@@ -215,7 +216,6 @@ DEFER-like sequencing
 ### Specification 017
 
 ```text
-docs/research/024_relation_backed_recommendation_action_value_design.md
 docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
 docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
 experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
@@ -232,7 +232,6 @@ reusable knowledge stable-key provenance
 ### Specification 019
 
 ```text
-docs/research/026_system_owned_provenance_recommendation_action_value_design.md
 docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
 docs/checkpoints/166_specification_019_live_result_failed.md
 experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
@@ -258,22 +257,6 @@ outcome                     FAIL
 
 Specification 019 closed the provenance instrumentation defect but did not establish recommendation/action value.
 
-Stable boundary:
-
-```text
-SYSTEM-OWNED PROVENANCE
-    exact supplied stable_key@revision_id
-    methodology payload digest and bytes
-    treatment identity
-
-MODEL-OWNED CONTENT
-    dispositions
-    dependency pointers
-    blocked scopes
-    clarifications
-    rationales
-```
-
 ### Specification 020
 
 Primary sources:
@@ -281,7 +264,6 @@ Primary sources:
 ```text
 docs/research/027_recommended_vs_blocking_required_calibration_design.md
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
-tests/fixtures/reasoning/blocking_calibration_v1.json
 docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
 docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
 docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
@@ -322,15 +304,12 @@ This does not promote production recommendation enums or prove methodological-co
 ## Governed autonomous live-launch route
 
 ```text
-docs/research/025_governed_autonomous_live_experiment_launcher_design.md
 docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
 docs/checkpoints/160_governed_autonomous_live_experiment_launcher_contract_frozen.md
 docs/checkpoints/161_governed_autonomous_live_experiment_launcher_end_to_end_gate_passed.md
 scripts/ads_live_experiment_launcher.py
 .github/ads_live_experiments.json
 .github/workflows/v1-autonomous-live-experiment-launcher.yml
-.github/workflows/v1-live-launcher-probe.yml
-tests/unit/test_ads_live_experiment_launcher.py
 ```
 
 Accepted control-plane sequence:
@@ -345,7 +324,7 @@ owner request transport
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation/live-capable source is provider-free green.
 
-Specification 019 and Specification 020 both exercised the accepted launcher path for exactly one frozen provider-backed run each. Specification-specific one-shot authorization/exposure is temporary and must be retired after result preservation.
+Specification 019 and Specification 020 both exercised the accepted launcher path for exactly one frozen provider-backed run each. Specification 020 one-shot authorization and temporary live/control helpers are retired from `main`; audit issues remain in GitHub history.
 
 ---
 
@@ -360,31 +339,38 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/checkpoints/README.md
 ```
 
-Current Level-2 lesson after the interrupted Specification 020 boundary:
+Current Level-2 lesson:
 
 ```text
 substantive preservation failure      NO
 routing/current-state drift           YES, observed repeatedly
 ```
 
-The next justified hardening is deliberately small:
+Active bounded hardening:
 
 ```text
-machine-readable current routing pointers
-    -> lightweight CI consistency validator
-    -> Markdown remains substantive source of truth
+docs/current_routing.json
+    routing metadata only
+
+scripts/check_current_routing.py
+    validates manifest shape, checkpoint existence, and key human-facing pointers
+
+.github/workflows/current-routing-consistency.yml
+    cross-platform validation on routing-sensitive pushes and pull requests
 ```
+
+Markdown remains the substantive source of truth. The manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. retire Specification 020 one-shot authorization and temporary main helpers
-B. validate the cleaned PR #44 head cross-platform and on accepted V1 regression seams
-C. promote PR #44 into v1-frontend-spike only if green
-D. implement a small machine-checkable routing manifest + CI validator
-E. only after that freeze a successor recommendation-value experiment
+A. validate the routing manifest and Ubuntu/Windows consistency CI
+B. create and validate the routing-consistency hardening PR
+C. checkpoint and promote the hardening only if its exact head remains green
+D. reconcile routing back to v1-frontend-spike after merge
+E. only then freeze a successor recommendation-value experiment
 ```
 
 Do not modify or rescore Specifications 015-020. The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
