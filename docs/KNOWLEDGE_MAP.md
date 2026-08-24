@@ -3,10 +3,11 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-24  
-**Current checkpoint:** 172  
-**Active development branch:** `v1-frontend-spike`  
-**Active PR:** none  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`
+**Current checkpoint:** 174  
+**Active development branch:** `v1-dependency-backed-recommendation-value`  
+**Active PR:** #55 draft, frozen Specification 021 recommendation-value experiment  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`  
+**Latest experiment:** Specification 021 `FROZEN_NOT_RUN`
 
 ## Start here
 
@@ -27,9 +28,10 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration head      a639cfc570290a2169425f43078bbb242fa398e9
-active branch                  v1-frontend-spike
-active PR                      none
+promoted integration merge     a639cfc570290a2169425f43078bbb242fa398e9
+routing closure checkpoint     8f29894667467e6ef58a02eb8f5d580c895968e6
+active branch                  v1-dependency-backed-recommendation-value
+active PR                      #55 draft
 Specification 015 PR           #13 closed without merge; preservation #14 merged
 Specification 016 PR           #15 merged
 Specification 017 PR           #16 closed without merge; preservation #22 merged
@@ -38,7 +40,8 @@ Specification 019 PR           #33 closed without merge
 Specification 019 preservation #43 merged
 Specification 020 PR           #44 merged
 routing consistency PR         #54 merged
-main                           governed live-launch control plane; zero active Spec020 authorization
+Specification 021 PR           #55 active
+main                           governed live-launch control plane; no Spec021 authorization
 ```
 
 ---
@@ -83,10 +86,13 @@ Specification 019 / Checkpoints 163-166
     system-owned provenance rerun completed; recommendation-value gates FAIL; evidence preserved without implementation promotion
 
 Specification 020 / Checkpoints 167-171
-    RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted through PR #44
+    RECOMMENDED-vs-BLOCKING_REQUIRED contract frozen, provider-free and live boundaries validated, governed live run completed, BLOCKING_BOUNDARY_SUPPORTED preserved and promoted
 
-Checkpoint 172 / PR #54
-    machine-readable current routing pointers + lightweight cross-platform contradiction validator green on exact final PR head and promoted into v1-frontend-spike
+Checkpoints 172-173 / PR #54
+    narrow machine-readable routing pointers + cross-platform contradiction guard accepted, promoted, and closed
+
+Specification 021 / Checkpoint 174 / PR #55
+    new dependency-backed recommendation-value research rationale, contract, and four-case benchmark frozen prospectively; provider-free implementation next; no provider call authorized
 ```
 
 ---
@@ -109,13 +115,13 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
 ```
 
-Research 028 is forward research only. It records the distinction that the system owns persistent project state, methodological navigation determines what matters from that state, and the broad knowledge base should be a governed revisioned methodological universe rather than an undifferentiated RAG corpus.
-
 Navigation sequence:
 
 ```text
 KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
 ```
+
+Research 028 is forward research only. It records the distinction that the system owns persistent project state, methodological navigation determines what matters from that state, and the broad knowledge base should be a governed revisioned methodological universe rather than an undifferentiated RAG corpus.
 
 Project Cockpit:
 
@@ -183,7 +189,7 @@ aggregate token ratio   0.334379
 input-token reduction   66.56%
 ```
 
-The result supports selective context economy on the bounded benchmark. It does not select a final embedding/reranking/vector stack or a universal context budget.
+The result supports selective context economy on the bounded benchmark. It does not establish downstream recommendation value.
 
 ---
 
@@ -242,11 +248,6 @@ experiments/system_owned_provenance_recommendation_action_value/results/spec019-
 Frozen result:
 
 ```text
-source                      6b5e6237b738250458550f95c9f3a6b0d51e86ec
-reasoner outputs            36 / 36
-judge outputs               36 / 36
-retries                     0
-execution integrity         true
 GENERIC exact               0.944444
 SELECTIVE exact             0.916667
 FULL_HORIZON exact          0.944444
@@ -260,45 +261,83 @@ Specification 019 closed the provenance instrumentation defect but did not estab
 
 ### Specification 020
 
-Primary sources:
-
 ```text
 docs/research/027_recommended_vs_blocking_required_calibration_design.md
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
-docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
-docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
-docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
-docs/checkpoints/170_recommended_vs_blocking_required_calibration_live_source_frozen.md
 docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
 experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
 experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
 ```
 
-Frozen live result:
+Frozen result:
 
 ```text
-source                               82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
 reasoner outputs                     36 / 36
-provider attempts                    36 / 45
 aggregate exact disposition accuracy 1.000000
-all 12 variants                      3 / 3 correct
-all 6 pair sides                     3 / 3 correct
 joint blocking-pointer accuracy      1.000000
 RECOMMENDED null-pointer correctness 1.000000
 outcome                              BLOCKING_BOUNDARY_SUPPORTED
 ```
 
-Accepted bounded experiment-design evidence:
+Accepted bounded construction:
 
 ```text
-BLOCKING_REQUIRED-like cases
-    exact unresolved requirement
-    + exact active defended downstream scope
-    + explicit scope DEPENDS_ON requirement relation
-    + candidate action resolves the requirement
+exact unresolved requirement
++ exact active defended downstream scope
++ explicit scope DEPENDS_ON requirement relation
++ candidate action RESOLVES requirement
 ```
 
-This does not promote production recommendation enums or prove methodological-context recommendation value. Specification 019 remains historical `FAIL` evidence and is not rescored.
+This does not promote production recommendation enums or prove methodological-context recommendation value.
+
+### Specification 021, active and not run
+
+Primary sources:
+
+```text
+docs/research/029_dependency_backed_recommendation_value_design.md
+docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
+tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
+docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
+```
+
+Current status:
+
+```text
+FROZEN_NOT_RUN
+```
+
+The frozen design keeps GENERIC / SELECTIVE / FULL_HORIZON and the same ten-asset methodological universe, while making the known disposition relations explicit and system-owned:
+
+```text
+BLOCKING_REQUIRED
+    scope DEPENDS_ON unresolved requirement
+    action RESOLVES requirement
+
+DEFER
+    action WAITS_FOR unresolved trigger
+```
+
+The model returns action-local pointers only among supplied identities. Exact methodological provenance remains system-owned.
+
+Frozen cases:
+
+```text
+DBRA-01 future validity and model sequence
+DBRA-02 compact nonlinear model shortlist
+DBRA-03 distribution evidence before transformation
+DBRA-04 missingness / class-imbalance decision framework
+```
+
+Frozen complete outcomes:
+
+```text
+PROMOTE_DEPENDENCY_BACKED_RECOMMENDATION_SEAM
+SAFE_BUT_NOT_DIFFERENTIATED
+FAIL
+```
+
+No provider call is authorized before provider-free implementation and exact green cross-platform evidence are checkpointed.
 
 ---
 
@@ -325,8 +364,6 @@ owner request transport
 
 The launcher receives no provider credential. A provider-backed experiment may be authorized only after its own contract is frozen and its exact implementation/live-capable source is provider-free green.
 
-Specification 019 and Specification 020 both exercised the accepted launcher path for exactly one frozen provider-backed run each. Specification 020 one-shot authorization and temporary live/control helpers are retired from `main`; audit issues remain in GitHub history.
-
 ---
 
 ## Preservation and continuity
@@ -339,45 +376,35 @@ docs/CONTINUITY.md
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/checkpoints/README.md
 docs/checkpoints/172_machine_checkable_current_routing_consistency_guard_passed.md
+docs/checkpoints/173_routing_consistency_hardening_promoted_and_closed.md
 ```
 
-Current Level-2 lesson:
-
-```text
-substantive preservation failure      NO
-routing/current-state drift           YES, observed repeatedly
-```
-
-Checkpoint 172 records the first green bounded hardening:
+Accepted narrow hardening:
 
 ```text
 docs/current_routing.json
-    routing metadata only
-
 scripts/check_current_routing.py
-    validates manifest shape, checkpoint existence, and key human-facing pointers
-
 .github/workflows/current-routing-consistency.yml
-    cross-platform validation on routing-sensitive pushes and pull requests
 ```
 
-Final exact PR #54 head `44d92d73029ad56925bd2c49bb373be5bdef44ce` passed checkpoint metadata, routing consistency on Ubuntu and Windows, and all applicable accepted V1 regression seams before merge into `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`.
+Final closure evidence was push run `32719182489` on exact integration head `09670d5127c14cf3cece727b31823d5de4572211`, with Ubuntu and Windows successful.
 
-Markdown remains the substantive source of truth. The manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history. Development Method remains v0.4 because its existing partial-automation rule already covers this bounded hardening.
+Markdown remains the substantive source of truth. The routing manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history.
 
 ---
 
 ## Current exact continuation
 
 ```text
-A. require current-routing consistency to pass on this exact v1-frontend-spike reconciliation
-B. close the Level-2 routing-consistency hardening boundary only if that integration head is green
-C. only then freeze a successor recommendation-value experiment
-D. preserve system-owned provenance and clean relation-backed recommendation/blocking semantics
-E. do not modify or rescore Specifications 015-020
+A. implement the frozen Specification 021 provider-free contract
+B. validate every blocking/defer relation and matched-condition payload mechanically
+C. implement action-local exact pointer validation, system-owned methodology provenance, deterministic metrics, and blinded judge payload construction
+D. prove a complete 36-reasoner + 36-judge fake-runtime design
+E. add dedicated Ubuntu/Windows provider-free CI with no provider credential
+F. checkpoint the exact green implementation boundary
+G. only then freeze any governed live authorization
+H. do not modify or rescore Specifications 015-020
 ```
-
-The next scientific question remains whether selective explicit methodological knowledge improves recommendation/action quality beyond a strong generic reasoner when relation-backed semantics are cleanly constructed.
 
 ---
 
@@ -408,5 +435,7 @@ The next scientific question remains whether selective explicit methodological k
 169  Specification 020 exact pre-live boundary frozen
 170  Specification 020 exact live-capable source frozen
 171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED
-172  machine-checkable current-routing consistency guard passed; promoted through PR #54, final integration reconciliation pending validation
+172  machine-checkable current-routing consistency guard passed; promotion candidate
+173  routing-consistency hardening promoted and closed after final exact integration push validation
+174  Specification 021 dependency-backed recommendation-value contract and benchmark frozen; not run
 ```
