@@ -1,44 +1,4 @@
 {
   "schema_version": 1,
-  "authorizations": [
-    {
-      "launch_id": "spec021-dependency-backed-recommendation-value-001",
-      "enabled": true,
-      "owner_login": "shakaarlatief",
-      "workflow_file": "v1-dependency-backed-recommendation-action-live.yml",
-      "ref": "v1-spec021-dependency-backed-recommendation-value-live-source",
-      "expected_source_sha": "b589bad975880b2d3cccc3596fc82539b1b96577",
-      "confirmation": "RUN_SPEC_021_FROZEN",
-      "required_ci_runs": [
-        {
-          "run_id": 32724242554,
-          "workflow_name": "V1 dependency-backed recommendation action value"
-        },
-        {
-          "run_id": 32724242550,
-          "workflow_name": "Current routing consistency"
-        },
-        {
-          "run_id": 32724242502,
-          "workflow_name": "Checkpoint metadata"
-        },
-        {
-          "run_id": 32724242572,
-          "workflow_name": "V1 reasoning context value"
-        },
-        {
-          "run_id": 32724242509,
-          "workflow_name": "V1 disposition semantics diagnostic"
-        },
-        {
-          "run_id": 32724242515,
-          "workflow_name": "V1 blocking calibration diagnostic"
-        },
-        {
-          "run_id": 32724242570,
-          "workflow_name": "V1 autonomous live experiment launcher CI"
-        }
-      ]
-    }
-  ]
+  "authorizations": []
 }
