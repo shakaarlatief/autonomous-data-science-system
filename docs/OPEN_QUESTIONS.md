@@ -2,7 +2,7 @@
 
 **Status:** Current canonical unresolved-question register  
 **Last reconciled:** 2026-08-24  
-**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and a bounded governed autonomous live-experiment launcher. Specification 019 then completed the first matched recommendation/action rerun with exact supplied-context provenance owned by the system. Provenance integrity passed, the complete 36-reasoner/36-judge design ran with zero retries, and the frozen advancement outcome was `FAIL`. The failed implementation remains unpromoted. The next high-value scientific boundary is prospective calibration of `RECOMMENDED` versus genuinely `BLOCKING_REQUIRED` work for exact defended downstream scopes.
+**Reconciliation context:** Prototype V0 is complete. V1 has established the project/object foundations, Project Cockpit interaction architecture, governed knowledge persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and a bounded governed autonomous live-experiment launcher. Specification 019 then completed the first matched recommendation/action rerun with exact supplied-context provenance owned by the system. Provenance integrity passed, the complete 36-reasoner/36-judge design ran with zero retries, and the frozen advancement outcome was `FAIL`. Its frozen authority and negative evidence are now integrated through preservation-only PR #43 while failed implementation PR #33 is closed without merge. The next high-value scientific boundary is prospective calibration of `RECOMMENDED` versus genuinely `BLOCKING_REQUIRED` work for exact defended downstream scopes.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
 
@@ -549,12 +549,12 @@ Current governing result sources:
 docs/research/026_system_owned_provenance_recommendation_action_value_design.md
 docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
 tests/fixtures/reasoning/system_owned_provenance_recommendation_action_v1.json
-docs/checkpoints/163_specification_019_contract_frozen.md
-docs/checkpoints/164_specification_019_provider_free_gate_cross_platform_passed.md
-docs/checkpoints/165_specification_019_live_boundary_frozen.md
+docs/checkpoints/163_system_owned_provenance_recommendation_action_contract_frozen.md
+docs/checkpoints/164_system_owned_provenance_recommendation_action_implementation_gate_cross_platform_passed.md
+docs/checkpoints/165_specification_019_governed_live_authorization_frozen.md
 docs/checkpoints/166_specification_019_live_result_failed.md
 experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
 experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/
 ```
 
-The immediate task is preservation-only integration of Specification 019 failure evidence without promoting the failed implementation, followed by a separately preregistered recommendation/blocking-calibration design. Exact supplied-context provenance remains system-owned. Specifications 015-017 remain immutable historical evidence, and Specification 019 remains permanently `FAIL` under its frozen contract. No new recommendation/action provider call is authorized before a successor contract and exact provider-free implementation boundary are frozen and green.
+Specification 019 failure preservation is integrated at `e88c41b31788a53c7da115a24b0f9baeea48516b`, and failed implementation PR #33 is closed without merge. The immediate task is now a separately preregistered recommendation/blocking-calibration design. Exact supplied-context provenance remains system-owned. Specifications 015-017 remain immutable historical evidence, and Specification 019 remains permanently `FAIL` under its frozen contract. No new recommendation/action provider call is authorized before a successor contract and exact provider-free implementation boundary are frozen and green.
