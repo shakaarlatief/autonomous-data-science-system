@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 174,
+  "current_checkpoint": 175,
   "active_development_branch": "v1-dependency-backed-recommendation-value",
   "active_pr": 55,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "a639cfc570290a2169425f43078bbb242fa398e9",
   "latest_specification": "021",
-  "latest_experiment_outcome": "FROZEN_NOT_RUN",
-  "current_boundary": "spec021-contract-frozen-provider-free-implementation-next"
+  "latest_experiment_outcome": "PROVIDER_FREE_IMPLEMENTATION_GREEN",
+  "current_boundary": "spec021-provider-free-implementation-green-live-boundary-next"
 }
