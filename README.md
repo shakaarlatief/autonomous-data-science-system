@@ -23,17 +23,17 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            175
+checkpoint            176
 active branch         v1-dependency-backed-recommendation-value
 active PR             #55 draft
 promoted V1 head      a639cfc570290a2169425f43078bbb242fa398e9
-current boundary      Specification 021 provider-free implementation green;
-                      separate governed live boundary next
+current boundary      Specification 021 exact pre-live boundary frozen;
+                      minimal live-capable plumbing next
 latest experiment     Specification 021
-outcome               PROVIDER_FREE_IMPLEMENTATION_GREEN
-next                  validate this reconciled exact head,
-                      freeze the separate pre-live boundary,
-                      and only then introduce a live entry path
+outcome               PRE_LIVE_BOUNDARY_FROZEN
+next                  implement only the separated live wrapper and target workflow,
+                      validate the exact live-capable source provider-free,
+                      and freeze it before any authorization or provider call
 ```
 
 Current experimental progression:
@@ -50,7 +50,7 @@ Specification 019  system-owned-provenance recommendation rerun completed; FAIL 
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 Checkpoint 173     machine-checkable current-routing hardening promoted and closed
 Specification 021  dependency-backed recommendation-value contract frozen;
-                   provider-free implementation green; not run live
+                   provider-free implementation green; exact pre-live boundary frozen; not run live
 ```
 
 For exact continuation, start with:
@@ -61,6 +61,7 @@ docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 docs/checkpoints/174_specification_021_dependency_backed_recommendation_value_contract_frozen.md
 docs/checkpoints/175_specification_021_provider_free_implementation_gate_cross_platform_passed.md
+docs/checkpoints/176_specification_021_pre_live_boundary_frozen.md
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
 docs/research/029_dependency_backed_recommendation_value_design.md
 tests/fixtures/reasoning/dependency_backed_recommendation_action_v1.json
@@ -320,7 +321,7 @@ The model should not be required to reproduce authoritative context provenance t
 
 ---
 
-## Specification 021: provider-free implementation green
+## Specification 021: exact pre-live boundary frozen
 
 Specification 021 is the clean prospective recommendation-value test after the known sequencing, provenance, and blocking-calibration confounds were separately addressed.
 
@@ -384,21 +385,22 @@ incomplete / integrity failed -> no advancement classification
 
 `SAFE_BUT_NOT_DIFFERENTIATED` is intentionally legitimate. A strong generic reasoner may already know the small current methodological universe. The benchmark must not be rewritten simply to force SELECTIVE to win.
 
-Checkpoint 175 records the exact provider-free implementation boundary:
+Checkpoint 175 records the exact provider-free implementation boundary at `8e199c29e3f082b353f92f27868aedca0ebbbf74`. Checkpoint 176 freezes the fully reconciled exact pre-live source after that implementation:
 
 ```text
-validated implementation head             8e199c29e3f082b353f92f27868aedca0ebbbf74
-Specification 021 provider-free CI         32722934829  success
-Ubuntu job                                 97418007046  success
-Windows job                                97418007218  success
-dedicated tests                            8 passed per OS
-full V1 Python suite                       125 passed, 2 skipped per OS
-accepted-seam regressions                  all green on the same exact head
+pre-live source                            aa830eda4fe80bc349afcb4f3bd0ab53f37bfcc7
+Specification 021 provider-free CI         32723507005  success
+Ubuntu job                                 97419720247  success
+Windows job                                97419720501  success
+Current routing consistency                32723507062  success
+Checkpoint metadata                        32723507010  success
+V1 reasoning context value                 32723507019  success
+V1 disposition semantics diagnostic        32723507036  success
+V1 blocking calibration diagnostic         32723507108  success
+V1 autonomous live experiment launcher CI 32723507344  success
 ```
 
-The complete fake-runtime pipeline executes 36 reasoner outputs and 36 blinded judge outputs, preserves system-owned provenance, verifies authoritative-state isolation, and mechanically reaches `SAFE_BUT_NOT_DIFFERENTIATED` when all three fake conditions are deliberately oracle-perfect. That result is a machinery self-test only, not scientific evidence.
-
-**No Specification 021 provider call is authorized.** The next legitimate boundary is a separate exact pre-live freeze after the reconciled Checkpoint 175 head is green.
+**No Specification 021 provider call is authorized by Checkpoint 176.** It permits only the next engineering step: adding a separated minimal live wrapper and target workflow without changing frozen science.
 
 ---
 
@@ -428,12 +430,12 @@ Markdown remains the substantive source of project knowledge. The manifest is no
 ## Exact continuation
 
 ```text
-1. validate the exact Checkpoint 175 reconciliation head provider-free and cross-platform
-2. only after that exact head is green, freeze a separate Specification 021 pre-live boundary
-3. add the minimal live runner/target workflow only after that pre-live freeze
-4. validate the live-capable exact source provider-free before authorization
-5. freeze exact source SHA, successful CI evidence, target workflow, confirmation token, and Specification 018 authorization evidence
-6. authorize at most one exact governed live run through main
+1. validate the exact Checkpoint 176 routing reconciliation head
+2. implement only the separated Specification 021 live wrapper/entry path and target workflow
+3. add provider-free tests proving live plumbing does not alter frozen science
+4. validate the live-capable exact source with Specification 021 and inherited accepted-seam CI
+5. freeze a later exact live-source checkpoint only if all required gates pass
+6. only then install one exact Specification 018 authorization and create one owner launch request
 7. preserve raw provider evidence before scientific interpretation
 8. do not modify or rescore Specifications 015-020
 ```
