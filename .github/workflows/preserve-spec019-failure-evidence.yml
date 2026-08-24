@@ -1,0 +1,91 @@
+name: Preserve Specification 019 failure evidence
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  preserve:
+    if: ${{ github.event.issue.title == '[ADS PRESERVE] spec019-failure-evidence' && github.actor == github.repository_owner }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout preservation branch
+        uses: actions/checkout@v7
+        with:
+          ref: v1-spec019-failure-preservation
+          fetch-depth: 1
+
+      - name: Copy frozen authority and preserved result only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin v1-recommendation-action-value-system-provenance
+          SOURCE=origin/v1-recommendation-action-value-system-provenance
+
+          fixed_paths=(
+            docs/research/026_system_owned_provenance_recommendation_action_value_design.md
+            docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+            tests/fixtures/reasoning/system_owned_provenance_recommendation_action_v1.json
+            experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
+          )
+
+          for path in "${fixed_paths[@]}"; do
+            git cat-file -e "${SOURCE}:${path}"
+            git checkout "$SOURCE" -- "$path"
+          done
+
+          while IFS= read -r path; do
+            git checkout "$SOURCE" -- "$path"
+          done < <(git ls-tree -r --name-only "$SOURCE" | grep -E '^docs/checkpoints/16[3-6]_')
+
+          while IFS= read -r path; do
+            git checkout "$SOURCE" -- "$path"
+          done < <(git ls-tree -r --name-only "$SOURCE" | grep -E '^experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864/')
+
+          git status --short
+
+      - name: Assert failed implementation is absent
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e experiments/system_owned_provenance_recommendation_action_value/harness.py
+          test ! -e experiments/system_owned_provenance_recommendation_action_value/runner.py
+          test ! -e experiments/system_owned_provenance_recommendation_action_value/judge.py
+          test ! -e tests/unit/test_system_owned_provenance_recommendation_action_harness.py
+          test ! -e tests/integration/test_system_owned_provenance_recommendation_action_value_vertical_slice.py
+          test ! -e .github/workflows/v1-system-owned-provenance-recommendation-action.yml
+          test ! -e .github/workflows/v1-system-owned-provenance-recommendation-action-live.yml
+
+      - name: Commit preservation payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f \
+            docs/research/026_system_owned_provenance_recommendation_action_value_design.md \
+            docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md \
+            tests/fixtures/reasoning/system_owned_provenance_recommendation_action_v1.json \
+            docs/checkpoints/163_* \
+            docs/checkpoints/164_* \
+            docs/checkpoints/165_* \
+            docs/checkpoints/166_* \
+            experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md \
+            experiments/system_owned_provenance_recommendation_action_value/results/spec019-live-20260824-run-32664534864
+          git commit -m 'Preserve failed Specification 019 evidence'
+          git push origin HEAD:v1-spec019-failure-preservation
+
+      - name: Record preservation evidence
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          commit_sha="$(git rev-parse HEAD)"
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${{ github.event.issue.number }}/comments" \
+            -f body="Specification 019 failure evidence copied onto preservation branch at commit \`${commit_sha}\` without the failed experiment implementation."
