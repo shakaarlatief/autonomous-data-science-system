@@ -3,11 +3,11 @@
 **Checkpoint:** 171  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-routing-consistency-guard`  
-**Active PR:** none  
+**Active PR:** #54 draft, machine-checkable current routing consistency guard  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`  
 **Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed its governed frozen diagnostic with `BLOCKING_BOUNDARY_SUPPORTED` and PR #44 is promoted. The active Level-2 task is the small machine-checkable routing-consistency guard justified by repeated routing drift.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the routing manifest and lightweight cross-platform consistency validator, promote that hardening if green, then only afterward freeze a successor recommendation-value experiment.
+**Immediate project priority:** validate the routing manifest and lightweight cross-platform consistency validator in PR #54, promote that hardening only if green, then only afterward freeze a successor recommendation-value experiment.
 
 ## Active ChatGPT development context
 
@@ -181,12 +181,11 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate the machine-readable routing manifest and cross-platform consistency CI
-2. create and validate the routing-consistency hardening PR
-3. checkpoint and promote the hardening only if its exact head remains green
-4. reconcile routing back to the promoted v1-frontend-spike boundary after merge
-5. only after that freeze a successor recommendation-value contract
-6. do not modify or rescore Specifications 015-020
+1. validate PR #54 machine-readable routing manifest and cross-platform consistency CI
+2. checkpoint and promote the hardening only if its exact head remains green
+3. reconcile routing back to the promoted v1-frontend-spike boundary after merge
+4. only after that freeze a successor recommendation-value contract
+5. do not modify or rescore Specifications 015-020
 ```
 
 ## Minimum reading for continuation
