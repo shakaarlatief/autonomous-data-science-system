@@ -1,0 +1,33 @@
+name: Temporary Specification 022 contract fixture generation
+
+on:
+  push:
+    branches:
+      - v1-methodological-navigation-coverage-diagnostic
+    paths:
+      - .github/_tmp_spec022_fixture_generation.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v1-methodological-navigation-coverage-diagnostic
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate frozen contract fixtures
+        run: python scripts/_tmp_generate_spec022_contract_fixtures.py
+      - name: Commit frozen contract fixtures
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add tests/fixtures/methodological_navigation/spec022_*.json
+          git diff --cached --quiet && { echo 'No generated fixture changes'; exit 1; }
+          git commit -m 'Freeze Specification 022 benchmark fixtures'
+          git push origin HEAD:v1-methodological-navigation-coverage-diagnostic
