@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 171  
+**Checkpoint:** 172  
 **Date:** 2026-08-24  
 **Active development branch:** `v1-routing-consistency-guard`  
 **Active PR:** #54 draft, machine-checkable current routing consistency guard  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed its governed frozen diagnostic with `BLOCKING_BOUNDARY_SUPPORTED` and PR #44 is promoted. The active Level-2 task is the small machine-checkable routing-consistency guard justified by repeated routing drift.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, and governed autonomous live-experiment launch seams. Specification 020 completed with `BLOCKING_BOUNDARY_SUPPORTED` and is promoted. Checkpoint 172 records the first green machine-checkable current-routing consistency guard after repeated routing drift justified this narrow Level-2 hardening.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the routing manifest and lightweight cross-platform consistency validator in PR #54, promote that hardening only if green, then only afterward freeze a successor recommendation-value experiment.
+**Immediate project priority:** validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams, merge only if green, reconcile routing back to `v1-frontend-spike`, then freeze a successor recommendation-value experiment.
 
 ## Active ChatGPT development context
 
@@ -136,9 +136,7 @@ docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_suppo
 
 ## Preservation and continuity hardening
 
-The stage-boundary verification found no substantive preservation failure. It did confirm repeated routing drift in mutable current-state/index documents relative to already durable checkpoint/result evidence.
-
-The active bounded hardening is deliberately small:
+Checkpoint 172 records the green bounded hardening:
 
 ```text
 docs/current_routing.json
@@ -153,7 +151,18 @@ scripts/check_current_routing.py
     runs the validator on Ubuntu and Windows for routing-sensitive changes
 ```
 
-Markdown remains the substantive knowledge source. The manifest does not replace foundations, specifications, checkpoints, results, decisions, or explanatory current-state material.
+Exact pre-checkpoint implementation evidence:
+
+```text
+head                               5f5dfb81a97f089afc91f20d4632683714a43f60
+Current routing consistency        32714760241  success
+V1 blocking calibration diagnostic 32714760194  success
+V1 autonomous launcher CI          32714760205  success
+V1 reasoning context value         32714760211  success
+V1 disposition semantics           32714760225  success
+```
+
+Markdown remains the substantive knowledge source. The manifest does not replace foundations, specifications, checkpoints, results, decisions, or explanatory current-state material. Development Method remains v0.4 because that version already authorizes narrow partial automation once repetitive or inconsistent current-routing maintenance is observed.
 
 ---
 
@@ -181,11 +190,12 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. validate PR #54 machine-readable routing manifest and cross-platform consistency CI
-2. checkpoint and promote the hardening only if its exact head remains green
-3. reconcile routing back to the promoted v1-frontend-spike boundary after merge
-4. only after that freeze a successor recommendation-value contract
-5. do not modify or rescore Specifications 015-020
+1. validate the exact Checkpoint 172 PR #54 head on routing consistency and accepted V1 regression seams
+2. mark PR #54 ready and merge only if green
+3. reconcile manifest / README / CURRENT_STATE / KNOWLEDGE_MAP back to v1-frontend-spike with no active PR and the PR #54 merge SHA as the promoted integration boundary
+4. require current-routing consistency to pass on that final integration reconciliation
+5. only after that freeze a successor recommendation-value contract
+6. do not modify or rescore Specifications 015-020
 ```
 
 ## Minimum reading for continuation
@@ -196,6 +206,7 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
+docs/checkpoints/172_machine_checkable_current_routing_consistency_guard_passed.md
 experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
