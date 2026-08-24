@@ -1,0 +1,53 @@
+name: Patch Specification 021 usage serialization
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.event.issue.title == '[ADS MAINT] spec021-usage-serialization-repair' && github.event.issue.body == 'authorization: PATCH_SPEC_021_USAGE_SERIALIZATION'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-dependency-backed-recommendation-value
+          fetch-depth: 1
+      - name: Apply narrow usage metadata serialization repair
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('experiments/dependency_backed_recommendation_action_value/runner.py')
+          text = path.read_text(encoding='utf-8')
+
+          old_import = 'from ads_system.application.reasoning import ReasoningOutcome, ReasoningRequest\n'
+          new_import = 'from ads_system.application.reasoning import ReasoningOutcome, ReasoningRequest, ReasoningUsage\n'
+          if text.count(old_import) != 1:
+              raise SystemExit('unexpected ReasoningUsage import anchor count')
+          text = text.replace(old_import, new_import, 1)
+
+          old_usage = '"usage": asdict(outcome.usage),'
+          if text.count(old_usage) != 2:
+              raise SystemExit('expected exactly two unsafe usage serialization sites')
+          text = text.replace(old_usage, '"usage": _usage_payload(outcome.usage),')
+
+          anchor = '''def _structured_payload(value: object) -> object:\n'''
+          helper = '''def _json_safe_metadata(value: object) -> object:\n    """Recursively copy provider metadata into JSON-native containers.\n\n    ``ReasoningUsage`` deliberately exposes ``raw_provider_usage`` through an\n    immutable mapping proxy. ``dataclasses.asdict`` deep-copies dataclass fields\n    and therefore cannot serialize that proxy. Attempt preservation needs a\n    JSON-safe snapshot, not a deep copy of the immutable wrapper itself.\n    """\n\n    if isinstance(value, Mapping):\n        return {str(key): _json_safe_metadata(item) for key, item in value.items()}\n    if isinstance(value, (list, tuple)):\n        return [_json_safe_metadata(item) for item in value]\n    return value\n\n\ndef _usage_payload(usage: ReasoningUsage) -> dict[str, object]:\n    """Return the complete normalized usage record without copying mapping proxies."""\n\n    return {\n        "input_tokens": usage.input_tokens,\n        "output_tokens": usage.output_tokens,\n        "total_tokens": usage.total_tokens,\n        "cached_input_tokens": usage.cached_input_tokens,\n        "reasoning_tokens": usage.reasoning_tokens,\n        "service_tier": usage.service_tier,\n        "raw_provider_usage": (\n            None\n            if usage.raw_provider_usage is None\n            else _json_safe_metadata(usage.raw_provider_usage)\n        ),\n    }\n\n\n'''
+          if text.count(anchor) != 1:
+              raise SystemExit('unexpected structured payload anchor count')
+          text = text.replace(anchor, helper + anchor, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+          git diff --check
+          git diff -- experiments/dependency_backed_recommendation_action_value/runner.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/dependency_backed_recommendation_action_value/runner.py
+          git commit -m 'Repair Specification 021 usage metadata serialization'
+          git push origin HEAD:v1-dependency-backed-recommendation-value
