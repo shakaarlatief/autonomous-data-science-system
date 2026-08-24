@@ -101,7 +101,10 @@ Methodological navigation and reusable knowledge:
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
 ```
+
+Research 028 is a research-only forward synthesis. It records the architectural distinction that the system owns persistent project state, methodological navigation determines what matters from that state, and the broad knowledge base should be built as a governed revisioned methodological universe rather than an undifferentiated RAG corpus. It does not modify Specification 020 or authorize provider execution.
 
 Navigation sequence:
 
@@ -374,13 +377,12 @@ Specification 019 used this path successfully for its one authorized provider-ba
 ## Current exact continuation
 
 ```text
-A. complete canonical reconciliation to Checkpoint 168
-B. validate the exact reconciled head on Specification 020 Ubuntu/Windows CI and accepted V1 regression seams
-C. freeze a separate pre-live boundary checkpoint only after that head is green
-D. only after the pre-live checkpoint add an explicit live runtime entry path and workflow
-E. validate the live-capable source provider-free
-F. authorize at most one frozen run through Specification 018
-G. preserve raw live evidence before interpretation or tuning
+A. validate the fully reconciled Checkpoint 168 branch head on Specification 020 Ubuntu/Windows CI and accepted V1 regression seams
+B. freeze a separate pre-live boundary checkpoint only after that head is green
+C. only after the pre-live checkpoint add an explicit live runtime entry path and workflow
+D. validate the live-capable source provider-free
+E. authorize at most one frozen run through Specification 018
+F. preserve raw live evidence before interpretation or tuning
 ```
 
 Do not modify or rescore Specifications 015-019. Do not weaken Specification 020 gates after implementation or results. No new recommendation/action provider call is currently authorized.
