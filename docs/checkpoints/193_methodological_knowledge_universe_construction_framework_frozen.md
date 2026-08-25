@@ -338,7 +338,7 @@ This is one of the major differences between a governed universe and a document 
 The first pressure-test cycle is frozen around six intentionally heterogeneous neighborhoods:
 
 ```text
-A. Validation and generalization design
+A. Validation and Generalization Design
 B. Missing Data
 C. Feature Selection
 D. Tree Models and Ensembles
@@ -516,7 +516,30 @@ user-authored workflow != independently established methodology
 
 The next step must register source identities and support relationships before promoting extracted knowledge.
 
-## 18. Deliberate non-selections
+## 18. Exact framework-head validation
+
+The first fully reconciled framework head was:
+
+```text
+2de6536fb975a557766cbfc7ea0427d294e17703
+```
+
+That exact head passed all applicable current validation seams:
+
+```text
+Checkpoint metadata                         32841001393  success
+Current routing consistency                 32841001463  success
+V1 autonomous live experiment launcher CI  32841001451  success
+V1 disposition semantics diagnostic         32841001385  success
+V1 blocking calibration diagnostic          32841001368  success
+V1 reasoning context value                  32841001534  success
+```
+
+No provider credential or provider-backed knowledge experiment is introduced by this construction stage.
+
+The exact-head result confirms that the documentation/routing stage transition does not regress the accepted bounded V1 seams checked by those workflows.
+
+## 19. Deliberate non-selections
 
 Checkpoint 193 does not freeze:
 
@@ -542,7 +565,7 @@ final knowledge-store layout
 
 No provider call is authorized by this checkpoint.
 
-## 19. Promotion audit
+## 20. Promotion audit
 
 Promote/rout now:
 
@@ -561,18 +584,19 @@ The framework intentionally remains a first-cycle construction contract subject 
 
 Do not create a new Specification 023 merely to name this stage. A production/frozen specification should wait until the pressure test reveals which parts of the construction contract need stable technical enforcement.
 
-## 20. Exact continuation
+## 21. Exact continuation
 
 ```text
-1. reconcile README / CURRENT_STATE / KNOWLEDGE_MAP / current_routing to Checkpoint 193 and PR #73
-2. validate the exact reconciled framework head
-3. preserve the first source-register/source-bundle candidate design
-4. construct one coordinated six-slice representation pressure-test packet
-5. use existing controlled material as seed evidence only after source registration
-6. add stronger external/authoritative sources where proposition support requires them
-7. record every representation defect rather than forcing content into the current schema
-8. revise the representation only where observed content pressure warrants it
-9. only after the six-slice review begin broader accepted-core authoring
-10. do not rerun Specification 022 as the next step
-11. do not modify or rescore Specifications 015-022
+1. validate the final PR #73 head after recording the framework validation
+2. merge the framework-only PR if the final head remains green
+3. create the next bounded branch from the promoted framework integration head
+4. preserve the first source-register/source-bundle candidate design
+5. construct one coordinated six-slice representation pressure-test packet
+6. use existing controlled material as seed evidence only after source registration
+7. add stronger external/authoritative sources where proposition support requires them
+8. record every representation defect rather than forcing content into the current schema
+9. revise the representation only where observed content pressure warrants it
+10. only after the six-slice review begin broader accepted-core authoring
+11. do not rerun Specification 022 as the next step
+12. do not modify or rescore Specifications 015-022
 ```
