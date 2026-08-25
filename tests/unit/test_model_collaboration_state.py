@@ -150,8 +150,9 @@ def test_closed_state_releases_writer_and_next_actor(tmp_path: Path) -> None:
     state = valid_state()
     state["lifecycle_state"] = "CLOSED"
     state["last_transition"]["to_state"] = "CLOSED"
-    assert any("CLOSED state requires target_write_owner = null" in error for error in errors_for(tmp_path, state))
-    assert any("CLOSED state requires next_expected_actor = null" in error for error in errors_for(tmp_path, state))
+    errors = errors_for(tmp_path, state)
+    assert any("CLOSED state requires target_write_owner = null" in error for error in errors)
+    assert any("CLOSED state requires next_expected_actor = null" in error for error in errors)
 
 
 def test_transition_state_must_match_current_state(tmp_path: Path) -> None:
