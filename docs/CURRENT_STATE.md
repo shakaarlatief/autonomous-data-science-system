@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 193  
+**Checkpoint:** 197  
 **Date:** 2026-08-25  
-**Active development branch:** `v1-methodological-knowledge-universe`  
-**Active PR:** #73  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `bb5d0640fff633e87a6a8c024b1a842fadd85a9d`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, reusable-knowledge interchange, runtime, Project Cockpit, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, governed live-experiment launch, and current-routing consistency seams. Specification 022 is preserved as `INCOMPLETE / EXECUTION INTEGRITY FAILED` with no scientific advancement classification. The active stage is now construction of the first serious governed methodological knowledge universe. Research 033, the broad coverage map, and Checkpoint 193 define the first construction-cycle boundary before bulk accepted-knowledge authoring.  
-**Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** validate the first knowledge-universe construction framework, then design the source-register/source-bundle boundary and one coordinated six-slice representation pressure test across Validation, Missing Data, Feature Selection, Tree Ensembles, Class Imbalance/Metrics/Calibration/Thresholding, and Time Series.
+**Active development branch:** `v1-source-universe-substrate`  
+**Active PR:** #74  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `02f4f1bd5b7081c0792cbe2d2e062cc6fb9fdc54`  
+**Development stage:** The serious methodological knowledge-universe construction program is active. Before bulk source intake, the project designed, implemented, and validated a first-class Source Universe substrate. Specification 023 is classified `SOURCE_SUBSTRATE_ACCEPTED`. The next boundary is operational deployment of that accepted substrate on user-controlled durable storage, followed by ingestion and independent backup of the original VU Amsterdam Machine Learning folder.  
+**Final V0 classification:** `STRONG FALSIFICATION OF THE CURRENT P0 DESIGN`  
+**Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
 ## Active ChatGPT development context
 
@@ -27,233 +27,180 @@ Checkpoint 191 changed the project emphasis to:
 
 ```text
 1. serious governed methodological knowledge universe
-        ->
 2. navigation / selection over that universe
-        ->
 3. project-specific concern / question / option generation
-        ->
 4. prioritization / disposition
-        ->
 5. execution and project-state update
-        ->
 6. real end-to-end project trials
-        ->
 7. governed knowledge evolution
 ```
 
-This is chronological with feedback loops. Navigation, option generation, and real projects are expected to expose weaknesses that feed back into knowledge construction.
+Checkpoint 193 then froze the first construction framework and broad coverage map. The first deep representation pressure test remains intentionally heterogeneous:
 
-The next step is therefore not to optimize the current 28-asset navigation benchmark and not to immediately rerun Specification 022.
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+The source substrate became a prerequisite because serious knowledge construction needs durable evidence identity, provenance, recovery, and rights/access boundaries before hundreds of educational and external sources are admitted.
 
 ---
 
-## Durable architecture and accepted evidence
+## Accepted source-universe architecture
 
-Prototype V0 established:
+Primary authority:
 
 ```text
-what the SYSTEM should remember
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+```
+
+Foundation 022 is a numbering-only reconciliation of the source-universe foundation originally drafted as Foundation 021. Foundation 021 was already occupied by the professional product/interface foundation. No source-architecture semantics changed in the renumbering.
+
+Central distinction:
+
+```text
+SOURCE UNIVERSE
     !=
-what the LLM should receive on every reasoning call
+METHODOLOGICAL KNOWLEDGE UNIVERSE
 ```
 
-Foundation 018 separates:
+The accepted bounded V1 source substrate separates:
 
 ```text
-OBJECTS
-RELATIONS
-EVENTS
-VIEWS
+SourceRecord                  logical source identity
+SourceArtifact                exact byte identity
+SourceCollection              course / bundle identity
+SourceCollectionMembership    membership + explicit uncertainty
+SourceLocator                 public/private locators
+SourceIngestionEvent          encounter provenance
+DerivedSourceArtifact         rebuildable derived lineage
 ```
 
-Foundation 019 establishes:
+Exact source bytes are preserved through SHA-256 content addressing behind an ADS-owned `SourceArtifactStore`. Runtime source metadata lives in a relational Source Registry integrated with the accepted SQLAlchemy/Alembic persistence seam.
 
-```text
-KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
-```
+ChatGPT Library, ChatGPT Project Sources, cloud drives, and Git are development/intake/backup/interchange surfaces. None is semantic source authority merely by containing a file.
 
-Foundation 020 currently provides:
-
-```text
-KnowledgeAsset
-KnowledgeComponent
-NarrativeFacet
-KnowledgeRelation
-Conditional KnowledgeRule
-KnowledgeCollection
-exact revision identity
-provenance
-```
-
-Foundation 008 governs reusable-knowledge generalization, challenge, maturity, scope, and enforcement authority.
-
-Research 028 defines the broader target as a governed, revisioned methodological universe rather than an undifferentiated document/RAG corpus.
-
-These are the starting constraints for serious construction. They are not assumed to be the final representation.
+Real educational source binaries remain outside the public Git repository.
 
 ---
 
-## Accepted technical boundaries
+## Specification 023 accepted result
 
-Accepted V1 decisions remain:
-
-```text
-D-028  SQLite-centered local-first operational architecture
-D-029  SQLAlchemy Core 2.0 + Alembic 1.x
-D-030  pyproject.toml + uv + committed uv.lock + uv_build
-D-031  governed deterministic JSON / JSON Schema knowledge interchange
-D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
-```
-
-The governed reusable-knowledge round-trip is closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18.
-
-Important authority rule:
+Provider-free implementation and validation covered:
 
 ```text
-candidate / benchmark knowledge
-    cannot silently become accepted methodological authority
+filesystem source input
+    -> staging + SHA-256 + byte count
+    -> immutable local content-addressed store
+    -> relational Source Registry
+    -> deterministic PRIVATE_SNAPSHOT / PUBLIC_SAFE_CATALOG
+    -> integrity audit
+    -> verified backup package
+    -> clean restore
+    -> restored integrity audit
 ```
 
-The new construction program must use that accepted governance seam.
-
----
-
-## Accepted interaction and reasoning boundaries
-
-Specification 008 promotes the Project Cockpit interaction architecture.
-
-Specifications 009-014 establish the bounded path:
+Cross-platform source-substrate CI passed on Ubuntu and Windows. The Ubuntu matrix job recorded:
 
 ```text
-lexical retrieval
-    -> dense complementarity
-    -> hybrid comparator
-    -> explained MethodologicalHorizon
-    -> selective exact-revision MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-    -> measured real reasoning
+124 passed
+2 skipped
 ```
 
-Specification 014 result:
+The skips were the existing optional PostgreSQL integration tests without a configured PostgreSQL test URL.
 
-```text
-reasoner outputs        24 / 24
-judge outputs           24 / 24
-SELECTIVE quality       1.000000
-FULL_HORIZON quality    1.000000
-SELECTIVE/FULL input    0.334379
-input-token reduction   66.56%
-```
-
-This supports selective context economy on the bounded benchmark. It does not select the final navigation strategy for the large knowledge universe.
-
-Specification 018 promotes the governed autonomous live-experiment launcher.
-
----
-
-## Recommendation/action evidence boundary
-
-The downstream evidence chain remains intentionally bounded:
-
-```text
-Specification 015  FAIL
-Specification 016  dependency-backed DEFER-vs-NOT_NOW boundary supported
-Specification 017  INCOMPLETE
-Specification 019  FAIL after system-owned provenance repair
-Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported
-Specification 021  FAIL on dependency-backed supplied-action recommendation value
-```
-
-Research 030 / Checkpoint 183 preserve the distinction:
-
-```text
-methodological navigation / coverage
-    !=
-downstream disposition calibration over an already supplied action set
-```
-
-Production recommendation taxonomy, ranking, blocking policy, and automatic execution remain open.
-
----
-
-## Specification 022 preserved boundary
-
-Specification 022 moved evaluation upstream to evolving project state and a controlled methodological universe.
-
-Frozen live source:
-
-```text
-cf5893d74fefa699296842b0a48326a9cb50161c
-```
-
-Governed live result counts:
-
-```text
-planned reasoner observations          108
-successful reasoner observations         0
-planned judge observations             108
-successful judge observations             0
-provider attempts used                  216
-execution_complete                     false
-execution_integrity                    false
-advancement_outcome                    null
-```
-
-The frozen output contract accepted only:
-
-```text
-CURRENT
-MISSING_CONTEXT
-```
-
-while the live model repeatedly emitted alternative state vocabulary. All reasoner results failed structured validation and no judge call was scientifically reachable.
+The prospectively frozen SU-G01 through SU-G23 gates all passed. No gate was weakened after observing the first corpus.
 
 Frozen classification:
 
 ```text
-INCOMPLETE / EXECUTION INTEGRITY FAILED
+SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-There is no legitimate `GENERIC` vs `ADS_HORIZON` vs `ORACLE_HORIZON` comparison.
-
-The downloaded artifact was cryptographically committed before interpretation at:
+Detailed evidence:
 
 ```text
-bfda6d9048d3380e2f557b0e7bb3d1585de5f3f9
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 ```
-
-PR #72 preserved durable research, contract, checkpoints, fixtures, result, and artifact commitment. The incomplete experiment implementation was deliberately excluded. PR #68 was closed without merge.
 
 ---
 
-## Active knowledge-universe construction framework
+## First VU Machine Learning corpus evidence
 
-Primary sources:
+The 20-file ChatGPT-observed VU Amsterdam Machine Learning batch was fingerprinted before implementation and then exercised against the implemented source substrate.
 
-```text
-docs/research/033_methodological_knowledge_universe_construction_framework.md
-docs/methodological_knowledge/COVERAGE_MAP.md
-docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
-```
-
-### Coverage map role
-
-The coverage map is:
+Comparison with the prospective fingerprint snapshot:
 
 ```text
-planning / routing / gap visibility
+MATCH                    20
+DIFFERENT_ARTIFACT         0
+MISSING_LOCAL_SOURCE       0
+ADDITIONAL_LOCAL_SOURCE    0
 ```
 
-not:
+Initial ingestion:
 
 ```text
-methodological authority
-accepted asset inventory
-project applicability truth
-recommendation policy
+NEW_ARTIFACT  20
 ```
 
-### Coverage-depth ladder
+Fourteen earlier renamed-equivalent lecture uploads were then re-encountered:
+
+```text
+EXACT_DUPLICATE  14
+```
+
+Final relevant counts:
+
+```text
+logical sources            20
+SourceArtifact rows        20
+stored objects              20
+SourceIngestionEvent rows  34
+```
+
+The two PCA-book-like files remained byte-distinct artifacts. The three uncertain `Lecture9-*` memberships remained `POSSIBLE`; uncertainty was not silently strengthened.
+
+The validation store passed a clean 20/20 integrity audit, was backed up, restored into a clean target, and passed a second 20/20 integrity audit. Safe evidence digests are preserved in the validation result. Private snapshots, private paths, backup payloads, and source binaries were not committed.
+
+Important boundary:
+
+```text
+accepted source-substrate architecture / implementation
+    !=
+permanent user-controlled source vault already instantiated
+```
+
+The first exercise used disposable development storage and currently available uploaded bytes. It proves the mechanism, not permanent deployment.
+
+---
+
+## Decision disposition
+
+D-033 accepts the V1 source-universe substrate architecture. Its original reference to the source foundation as Foundation 021 predates the numbering-collision reconciliation recorded by Checkpoint 197; the current canonical source foundation is Foundation 022.
+
+D-015 is superseded only in its original architectural-uncertainty scope. Its durable conservative outcome remains valid:
+
+```text
+ADS may use a source
+    !=
+source binary belongs in public Git
+```
+
+The current initial physical direction remains local-first and provider-neutral. No cloud/object-store or backup provider has been selected merely for appearance or future-proofing.
+
+---
+
+## Methodological knowledge construction remains next after source operationalization
+
+Research 033 remains the governing construction framework. Coverage depth remains separate from truth, maturity, authority, freshness, or enforcement:
 
 ```text
 C0  MAPPED
@@ -265,221 +212,36 @@ C5  BEHAVIORALLY_TESTED
 C6  PROJECT_EXPOSED
 ```
 
-Coverage depth is not knowledge maturity, truth, source quality, freshness, or enforcement authority.
+Knowledge may include concepts, questions, evidence requirements, assumptions, failure modes, diagnostics, alternatives, claim constraints, relations, conditional guidance, context requirements, resolution/reopen criteria, limitations, and component-level provenance.
 
-### Operational content target
-
-Knowledge may include, where appropriate:
-
-```text
-concepts and definitions
-question templates
-evidence requirements
-hard invariants
-decision principles
-strategies / alternatives
-investigation templates
-assumptions
-failure modes / detection hooks
-diagnostics
-interpretation guidance
-claim constraints
-human / authority / assurance hooks
-relations
-conditional guidance rules
-required context
-semantic applicability questions
-resolution / reopen conditions
-limitations / counterexamples
-component-level provenance
-revision / governance state
-```
-
-### Package boundary
-
-`Knowledge package` is a construction/review neighborhood for the first cycle, not a promoted new persistence primitive.
-
-The six-slice pressure test will determine whether Foundation 020's current Asset / Component / Facet / Relation / Rule / Collection distinctions remain sufficient.
-
----
-
-## Source and authority policy
-
-Research 033 adopts proposition-sensitive source authority.
-
-Different propositions require different appropriate support:
-
-```text
-mathematical/statistical definitions
-    canonical academic sources
-
-empirical methodological claims
-    methodological studies / reviews / scoped benchmark evidence
-
-software behavior
-    current official documentation / source / release notes
-
-standards / governance requirements
-    authoritative standards / official policy
-
-local project facts
-    project evidence, without automatic reusable generalization
-```
-
-LLM-generated content is useful for candidate extraction/decomposition but is not independent support for its own claims.
-
-Consequential reusable claims should move toward component/proposition-level provenance rather than package-level bibliographies only.
-
-The exact source-register schema remains open for the next design slice.
-
----
-
-## Knowledge lifecycle and QA
-
-The construction program keeps separate:
-
-```text
-governance state
-epistemic support
-scope confidence
-freshness state
-operational coverage
-enforcement eligibility
-```
-
-No scalar confidence/maturity score is selected.
-
-QA must eventually cover:
-
-```text
-structural integrity
-source support
-semantic scope / claim strength
-cross-knowledge duplicates / contradictions / aliases / cycles
-behavioral regression cases
-real-project coverage behavior
-```
-
-Duplicate detection and contradiction handling are semantic review problems, not similarity-ranking or source-ranking problems alone.
-
----
-
-## First six vertical slices
-
-The first deep pressure-test program is frozen around:
-
-```text
-A. Validation and Generalization Design
-B. Missing Data
-C. Feature Selection
-D. Tree Models and Ensembles
-E. Class Imbalance / Metrics / Calibration / Thresholding
-F. Time-Series Methodology
-```
-
-These slices are deliberately heterogeneous.
-
-They should reveal whether the current representation works for:
-
-```text
-question-heavy frameworks
-branching decision concerns
-method families
-cross-cutting evaluation concerns
-model mechanisms and relations
-specialized mathematical domains
-```
-
-The representation is allowed to change if serious content exposes a real deficiency.
-
----
-
-## Required pressure-test packet per slice
-
-Before broad accepted-core authoring, each slice should produce:
-
-```text
-slice boundary and purpose
-source bundle / source-register candidates
-coverage decomposition
-canonical concept candidates
-candidate asset/component boundaries
-question templates
-evidence requirements
-alternatives / strategies / methods
-failure modes and claim constraints
-relation candidates
-conditional-rule candidates
-provenance-granularity examples
-duplicate / contradiction examples
-behavioral cases
-representation problems discovered
-```
-
-The first pressure test is therefore serious content construction used as architecture evidence.
-
----
-
-## Breadth-versus-depth sequence
-
-```text
-KU-0  broad coverage map                   CURRENTLY ESTABLISHED
-KU-1  six deep representation pressure tests  NEXT
-KU-2  revise representation/source/lifecycle rules where needed
-KU-3  build accepted supervised-data-science core
-KU-4  expand specialized domains and model families
-KU-5  begin real project trials against materially larger coverage
-KU-6  use project gap extraction to govern expansion and revision
-```
-
-A raw asset-count target is explicitly not a quality gate.
-
----
-
-## Still deliberately open
-
-```text
-final ontology / exact production enums
-final package primitive
-source-register schema
-source-authority taxonomy
-authoring format and UI
-maturity-state taxonomy
-relation vocabulary
-rule vocabulary
-contradiction object model
-coverage score formula
-review roles / permissions
-behavioral-case schema
-automated extraction pipeline
-external source bundle per slice
-final production knowledge-store layout
-final navigation strategy at serious-universe scale
-production recommendation/action taxonomy and ranking
-production REQUIRED/BLOCKING semantics
-automatic project execution / approval policy
-final provider/model policy
-multi-agent architecture
-```
+Candidate extraction may use LLM assistance, but model output is not independent evidence for itself and cannot silently create accepted methodological authority.
 
 ---
 
 ## Exact continuation
 
+Before admitting Course 2:
+
 ```text
-1. validate the reconciled Checkpoint 193 / Research 033 / coverage-map head
-2. design the source-register and source-bundle candidate contract
-3. create one coordinated six-slice representation pressure-test packet
-4. register existing controlled source material before extracting accepted knowledge
-5. add external/authoritative sources when proposition support requires them
-6. preserve representation problems explicitly
-7. revise representation only when content pressure justifies it
-8. after six-slice review, begin broader accepted-core construction
-9. resume navigation/selection evaluation against the serious universe
-10. begin real project trials before the universe is complete
-11. do not rerun Specification 022 as the immediate next step
-12. do not modify or rescore Specifications 015-022
+1. validate the fully reconciled PR #74 head
+2. merge PR #74 into v1-frontend-spike
+3. fetch and preserve the exact promoted integration SHA
+4. instantiate the accepted Source Registry and private SourceArtifactStore on user-controlled durable storage
+5. use the user's original VU Amsterdam Machine Learning folder as the first permanent intake source
+6. compare that folder against the 20-file prospective fingerprint snapshot
+7. ingest all locally intended files or account for every mismatch explicitly
+8. run a clean integrity audit
+9. create an independent recoverable backup
+10. perform a clean restore and verify exact-byte recovery
+11. only then admit the next educational course batch
+12. after broad corpus intake, resume the six-slice methodological representation pressure test
 ```
+
+The permanent-vault step requires access to paths on the user's machine and therefore must not be claimed complete until it is actually executed there.
+
+No immediate Specification 022 rerun is planned. Specifications 015-022 remain immutable historical evidence.
+
+---
 
 ## Minimum reading for continuation
 
@@ -488,18 +250,20 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
+
+docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+
 docs/research/033_methodological_knowledge_universe_construction_framework.md
 docs/methodological_knowledge/COVERAGE_MAP.md
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
 
-docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
-docs/foundations/008_knowledge_quality_generalization_and_evolution.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
-
-docs/checkpoints/191_specification_022_live_execution_incomplete_knowledge_universe_next.md
-docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md
+docs/DECISIONS.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```

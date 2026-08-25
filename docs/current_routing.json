@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 193,
-  "active_development_branch": "v1-methodological-knowledge-universe",
-  "active_pr": 73,
+  "current_checkpoint": 197,
+  "active_development_branch": "v1-source-universe-substrate",
+  "active_pr": 74,
   "promoted_integration_branch": "v1-frontend-spike",
-  "promoted_integration_sha": "bb5d0640fff633e87a6a8c024b1a842fadd85a9d",
-  "latest_specification": "022",
+  "promoted_integration_sha": "02f4f1bd5b7081c0792cbe2d2e062cc6fb9fdc54",
+  "latest_specification": "023",
   "latest_experiment_outcome": "INCOMPLETE",
-  "current_boundary": "methodological-knowledge-universe-framework-frozen-six-slice-pressure-test-next"
+  "current_boundary": "source-substrate-accepted-promotion-candidate-permanent-user-vault-bootstrap-next"
 }

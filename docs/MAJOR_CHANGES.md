@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-24
+**Last reviewed:** 2026-08-25
 
 ## Purpose
 
@@ -10,9 +10,9 @@ This file records only changes that materially alter how the project is understo
 
 ---
 
-## 2026-08-07: Dedicated project and layered repository preservation established
+## 2026-08-07 to 2026-08-08: Dedicated project and durable preservation method established
 
-The Autonomous Data Science System became a dedicated repository separate from individual data projects. The initial preservation model separated chat exploration from durable repository authority and introduced canonical documents, foundations, checkpoints, and historical provenance.
+The Autonomous Data Science System became a dedicated repository separate from individual data projects. Chat remained the design workspace while Git became the durable source of truth. The project introduced layered preservation, foundations, checkpoints, explicit decisions, proactive checkpointing, and a continuity procedure for new chats.
 
 Core maxim:
 
@@ -21,30 +21,18 @@ Core maxim:
 Key sources:
 
 ```text
-docs/foundations/001_initial_vision_and_reasoning.md
-docs/DECISIONS.md, D-001 through D-010
-```
-
----
-
-## 2026-08-08: Checkpointing and chat rotation became proactive AI responsibilities
-
-Development Method v0.2 made the AI design collaborator responsible for detecting natural preservation checkpoints and continuity risk instead of relying on the user to remember repository updates.
-
-Key sources:
-
-```text
+docs/DECISIONS.md, D-001 through D-020
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```
 
 ---
 
-## 2026-08-08 to 2026-08-09: Core system theory expanded into dedicated foundations
+## 2026-08-08 to 2026-08-09: Core system theory became explicit foundations
 
-The project developed explicit theories for epistemic integrity, admissibility/risk, project state and revision, project initialization, knowledge activation, reusable knowledge, knowledge evolution, and behavioral system evaluation.
+The project developed dedicated foundations for epistemic integrity, admissibility/risk, project state, initialization, knowledge activation, reusable knowledge, knowledge quality/evolution, and behavioral system evaluation.
 
-Key sources:
+Key route:
 
 ```text
 docs/foundations/002_epistemic_integrity_and_project_constitution.md
@@ -59,94 +47,23 @@ docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 
 ---
 
-## 2026-08-09: Prototype V0 became a preregistered falsification experiment
+## 2026-08-09 to 2026-08-19: Prototype V0 became a preregistered falsification program and then strongly failed
 
-The project chose to test a bounded explicit semantic architecture against strong simpler controls before building a large autonomous platform.
-
-```text
-B0: strong LLM + strong generic workflow
-B1: B0 + same methodological knowledge supplied statically
-P0: same model + typed state + activation + safeguards + dependency repair
-    + state-driven action selection
-```
-
-The benchmark, run order, model/provider configuration, budgets, judging procedure, and falsification criteria were frozen before P0 implementation.
-
-Key sources:
-
-```text
-docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
-docs/foundations/011_prototype_v0_technical_specification.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-```
-
----
-
-## 2026-08-18: System-level LLM/system/human boundary became durable architecture
-
-The LLM became explicitly one flexible reasoning component inside ADS. System-managed memory, provenance, deterministic guarantees, execution coordination, and human control remain separate concerns, and every explicit mechanism must justify its complexity empirically.
-
-Key source:
-
-```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-```
-
----
-
-## 2026-08-18: Development preservation gained routing, promotion audits, and reconciliation
-
-Development Method v0.3 introduced checkpoint promotion audits, `KNOWLEDGE_MAP`, periodic reconciliation, authority/maturity conventions, `MAJOR_CHANGES`, and explicit separation of current state from detailed experiment ledgers.
-
-Git + Markdown remained the development-preservation substrate until observed scale or consistency problems justified stronger tooling.
-
-Key sources:
-
-```text
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/DEVELOPMENT_METHOD.md
-docs/KNOWLEDGE_MAP.md
-```
-
----
-
-## 2026-08-18 to 2026-08-19: Validated supervision and observability separation were established
-
-Held-out execution gained a condition-neutral runner/verifier/supervisor architecture and mechanically validated prospective automation.
-
-Reusable execution principle:
-
-```text
-execution / reasoning
-    -> persisted state/events
-    -> read-only observability
-    -> human interface
-```
-
-Key sources:
-
-```text
-docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
-docs/foundations/016_execution_observability_separation.md
-```
-
----
-
-## 2026-08-19: Prototype V0 strongly falsified the original P0 design
+The project tested an explicit semantic/orchestration architecture against strong simpler controls before building a large platform. The benchmark and falsification criteria were frozen prospectively.
 
 Final classification:
 
-> **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN.**
+```text
+STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
+```
 
-The broader ADS vision survived, but the original orchestration machinery did not earn its cost. The strongest scaling lesson became:
+The broader ADS vision survived, but the original always-on orchestration machinery did not earn its complexity. The strongest scaling lesson became:
 
 ```text
 what the SYSTEM should remember
     !=
 what the LLM should receive on every reasoning call
 ```
-
-Do not carry forward unchanged full typed state on every call, large always-on context/frontiers, generic recursive support reassessment, narrow path-sensitive trigger activation, or universal dependency reopening machinery.
 
 Key sources:
 
@@ -158,22 +75,25 @@ docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_di
 
 ---
 
-## 2026-08-19: Post-V0 target became a professional interactive data-science operating environment
+## 2026-08-18: Preservation gained routing, promotion audits, and reconciliation
 
-The target became a professional environment in which ADS carries much of the methodological-navigation and project-memory burden while the human can inspect, discuss, select, override, guide, and approve work interactively.
+Development Method v0.3 added explicit promotion audits, `KNOWLEDGE_MAP`, periodic reconciliation, a selective `MAJOR_CHANGES` ledger, and clearer separation between concise current state and detailed historical evidence.
 
 Key sources:
 
 ```text
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
+docs/DEVELOPMENT_METHOD.md
+docs/KNOWLEDGE_MAP.md
 ```
 
 ---
 
-## 2026-08-19: Product object model and developer workflow were concretized
+## 2026-08-19 to 2026-08-21: ADS product/object model and Project Cockpit became concrete
 
-The central model became:
+The target became a professional interactive data-science operating environment in which ADS carries much of the project-memory and methodological-navigation burden while the human can inspect, discuss, select, override, guide, and approve work.
+
+The project object model adopted:
 
 ```text
 OBJECTS
@@ -182,23 +102,17 @@ EVENTS
 VIEWS
 ```
 
-with durable distinctions including:
+with durable distinctions such as `Investigation != Run`, `Evidence != Finding`, `Finding != Claim`, and `Claim != Decision`.
+
+Repeated bounded frontend/human-review cycles promoted the Project Cockpit interaction architecture.
+
+Key sources:
 
 ```text
-Investigation != Run
-Evidence != Finding
-Finding != Claim
-Claim != Decision
-current state != event history
-workspace section != fundamental object
-```
-
-ADS should complement VS Code rather than replace it, and generated project code should remain independently runnable and professionally maintainable.
-
-Key source:
-
-```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
 ---
@@ -215,7 +129,7 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The `MethodologicalHorizon` separates a large global knowledge universe from the bounded project-specific slice plausibly relevant to current reasoning. Reusable knowledge gained promoted representation around assets, components, narrative facets, relations, conditional rules, collections, and separate execution capabilities.
+The `MethodologicalHorizon` separates the large global methodological universe from the bounded project-specific slice plausibly relevant to current reasoning. Reusable methodological knowledge gained explicit assets, components, narrative facets, relations, conditional rules, collections, exact revisions, and provenance.
 
 Key sources:
 
@@ -226,7 +140,7 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 
 ---
 
-## 2026-08-20 to 2026-08-21: V1 local-first persistence, tooling, and governed interchange became operational
+## 2026-08-20 to 2026-08-22: V1 local-first persistence, tooling, interchange, and reasoning runtime became operational
 
 The project accepted:
 
@@ -234,274 +148,189 @@ The project accepted:
 D-028  SQLite-centered local-first operational architecture
 D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
-D-031  deterministic JSON + JSON Schema 2020-12 interchange with governance
+D-031  deterministic JSON + JSON Schema knowledge interchange with governance
+D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
 ```
 
-The governed knowledge round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18. Exact historical project-to-knowledge revision pinning was preserved.
+The governed reusable-knowledge round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18. Runtime-framework authority remained below ADS-owned domain/application boundaries.
 
-Key sources:
+---
+
+## 2026-08-22 to 2026-08-23: Retrieval, MethodologicalHorizon, and selective context were validated as bounded seams
+
+The bounded path progressed through lexical retrieval, dense complementarity, hybrid comparison, explained Horizon construction, selective exact-revision context, and real reasoning.
+
+Specification 014 observed equal measured reasoning quality between selective and full-Horizon conditions on its frozen benchmark while reducing provider input by 66.56%.
+
+This supports selective context economy. It does not select the final navigation strategy for a serious knowledge universe.
+
+Key route:
 
 ```text
-docs/specifications/001_v1_sqlite_technical_architecture.md
-docs/specifications/004_v1_reusable_knowledge_interchange.md
-docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postgresql.md
+Specification 009 / Checkpoint 135   lexical retrieval
+Specification 010 / Checkpoint 137   dense complementarity
+Specification 011 / Checkpoint 139   hybrid comparator
+Specification 012 / Checkpoint 141   explained MethodologicalHorizon
+Specification 013 / Checkpoint 143   selective exact-revision context
+Specification 014 / Checkpoint 146   real reasoning-context value
 ```
 
 ---
 
-## 2026-08-20 to 2026-08-21: Project Cockpit became the promoted primary active-work interaction model
+## 2026-08-23 to 2026-08-25: Recommendation/action experiments exposed bounded calibration and instrumentation failures
 
-Successive bounded frontend spikes and human review cycles evolved the Cockpit into a scalable spatial operating surface with 2D navigation, bounded zoom, native pinch, scalable Jump/search, floating composer/controls, compact fold-away chrome, fullscreen, and collision-safe surfaces.
-
-Specification 008 promoted the core interaction architecture. Final canvas/gesture libraries, semantic zoom/grouping, visual identity, and final frontend/chart choices remain open.
-
-Key sources:
+The downstream recommendation/action program produced a deliberately mixed evidence chain:
 
 ```text
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
-docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
+Specification 015  FAIL
+Specification 016  dependency-backed DEFER-vs-NOT_NOW construct supported
+Specification 017  INCOMPLETE
+Specification 019  FAIL after system-owned provenance repair
+Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED construct supported
+Specification 021  FAIL
 ```
 
----
-
-## 2026-08-20: Unexpected Session 02 boundary validated preservation but exposed routing drift
-
-Session 02 reached the platform conversation-length limit after substantive Cockpit work had been preserved but before final routing reconciliation. Session 03 reconstructed from repository authority and repaired stale current routing.
-
-The incident demonstrated that substantive preservation and current routing are separate requirements.
-
-Key source:
+A central architectural distinction emerged:
 
 ```text
-docs/checkpoints/120_unplanned_session_boundary_reconciliation_and_v1_continuity_restored.md
-```
-
----
-
-## 2026-08-22: Initial V1 reasoning runtime selected after executable bakeoff
-
-Specification 005 compared ADS-owned direct model calls, OpenAI Agents SDK, and LangGraph as ADS-shaped runtime paths.
-
-D-032 accepts:
-
-```text
-OpenAI Agents SDK
-    behind an ADS-owned ReasoningRuntime port
-```
-
-Direct model calls remain a fallback/reference path. No final LLM provider/model or multi-agent architecture is selected.
-
-Key sources:
-
-```text
-docs/DECISIONS.md, D-032
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
-```
-
----
-
-## 2026-08-22: Retrieval progressed from lexical baseline to explained MethodologicalHorizon
-
-The bounded retrieval/Horizon program established:
-
-```text
-Checkpoint 135   lexical retrieval baseline
-Checkpoint 137   dense complementary signal
-Checkpoint 139   hybrid comparator
-Checkpoint 141   explained Horizon with TRUE/FALSE/UNKNOWN applicability
-```
-
-The key executable semantic invariant became:
-
-```text
-unknown != false
-```
-
-The hybrid result remains complementarity evidence, not permanent selection of an embedding model, RRF, vector persistence, ANN, or reranking infrastructure.
-
----
-
-## 2026-08-22 to 2026-08-23: Selective MethodologicalContextPack validated the system/model context boundary
-
-Specification 013 promoted a bounded selector from a wider Horizon to exact selected revisions. Specification 014 then tested the real-model consequence:
-
-```text
-SELECTIVE quality       1.000000
-FULL_HORIZON quality    1.000000
-SELECTIVE/FULL input    0.334379
-input-token reduction   66.56%
-critical regressions    none
-```
-
-This was the first direct evidence that the post-V0 system/model context separation can preserve measured reasoning quality while materially reducing provider input burden.
-
-Key sources:
-
-```text
-docs/specifications/013_v1_horizon_relevance_and_selective_context.md
-docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
-docs/checkpoints/146_first_real_reasoning_context_value_gate_passed.md
-```
-
----
-
-## 2026-08-23: First recommendation/action-value gate failed
-
-Specification 015 moved downstream from context economy to recommendation/action quality. The full frozen design executed, but the exact-disposition gate failed around `DEFER` versus `NOT_NOW` and the experiment classified `FAIL`.
-
-The result did not justify promoting the recommendation/action seam and did not implicate selective context specifically. The failed implementation was not merged; its frozen design and negative evidence were preserved.
-
-Key sources:
-
-```text
-docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
-docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate.md
-experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
-```
-
----
-
-## 2026-08-23: Dependency-backed DEFER versus NOT_NOW construct passed
-
-Specification 016 prospectively isolated the failed sequencing construct. The live diagnostic observed 36/36 exact dispositions and exact dependency pointers, producing:
-
-```text
-DISPOSITION_BOUNDARY_SUPPORTED
-```
-
-The architectural consequence was bounded but important:
-
-```text
-DEFER-like sequencing
-    should carry a concrete represented activating dependency/trigger
-    when deterministic distinction from NOT_NOW is required
-```
-
-Specification 015 remains immutable `FAIL` evidence.
-
-Key sources:
-
-```text
-docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
-docs/checkpoints/155_disposition_semantics_live_gate_supported.md
-```
-
----
-
-## 2026-08-23: Relation-backed recommendation rerun exposed a provenance-instrumentation defect
-
-Specification 017 returned to the recommendation/action comparison but ended incomplete. The key durable lesson was:
-
-```text
-reasoning function / task profile
+supplied-action disposition calibration
     !=
-reusable knowledge stable-key provenance
+open-world methodological navigation / coverage
 ```
 
-The system already knew exact supplied revisions and context digests, so requiring duplicate model-authored provenance was an instrumentation mistake. Specification 017 remains permanently incomplete historical evidence.
-
-Key sources:
-
-```text
-docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
-docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
-```
+Failed/incomplete implementations were not promoted merely because they ran. Their contracts and evidence were preserved separately.
 
 ---
 
-## 2026-08-23: Governed autonomous live-experiment launcher supported and promoted
+## 2026-08-23: Governed autonomous live-experiment launcher was promoted
 
-Specification 018 established a bounded repository-governed control plane for explicitly authorized frozen experiments:
+Specification 018 established a bounded repository-governed launch path for explicitly authorized frozen experiments. The launcher owns mechanical authorization checks without receiving provider credentials or allowing issue text to define arbitrary executable configuration.
 
-```text
-owner request
-    -> repository authorization registry
-    -> exact owner/source/CI/duplicate checks
-    -> allowlisted workflow_dispatch
-    -> independently validating target workflow
-```
-
-The launcher receives no provider credential and issue text cannot define arbitrary executable configuration.
-
-Checkpoint 161 classified the bounded outcome as:
+Checkpoint 161 classified the bounded outcome:
 
 ```text
 GOVERNED_LAUNCHER_SUPPORTED
 ```
 
-Specification 018 was promoted to `v1-frontend-spike`.
+---
+
+## 2026-08-25: Specification 022 ended incomplete and shifted project emphasis to the serious methodological universe
+
+Specification 022 moved evaluation upstream to evolving project state and methodological path coverage. Its live workflow completed operationally but all 108 planned reasoner observations failed the frozen structured-output contract after allowed retries, so no judge comparison was scientifically reachable.
+
+Frozen classification:
+
+```text
+INCOMPLETE / EXECUTION INTEGRITY FAILED
+```
+
+No legitimate `GENERIC`, `ADS_HORIZON`, or `ORACLE_HORIZON` comparison exists from that run.
+
+Checkpoint 191 changed the immediate program from another small mechanism experiment to building the serious governed methodological substrate ADS ultimately requires.
+
+The incomplete experiment implementation was not promoted. Durable evidence was preserved through a preservation-only integration.
 
 ---
 
-## 2026-08-24: System-owned provenance repair completed the matched recommendation experiment, but recommendation value still failed
+## 2026-08-25: Serious methodological knowledge-universe construction framework was frozen
 
-Specification 019 moved exact supplied-context provenance from model-authored output to deterministic system ownership while leaving recommendation content model-owned.
+Research 033 and Checkpoint 193 established a broad coverage map, proposition-sensitive source policy, layered knowledge QA, explicit construction-depth ladder, and six heterogeneous deep pressure-test slices:
 
-The complete frozen matched design executed without provenance-induced schema failures or retries, validating the instrumentation repair. The recommendation-value advancement result still classified `FAIL`.
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
 
-The central recommendation-calibration problem was repeated over-blocking on RB-02. The failed implementation was not promoted; frozen contract, raw result, interpretation, and checkpoints were preserved.
+The knowledge representation is explicitly allowed to change if serious content exposes real deficiencies.
+
+---
+
+## 2026-08-25: Source Universe became a first-class ADS subsystem
+
+Bulk educational-source intake was paused when it became clear that ChatGPT Library or Project Sources should not become the long-term source architecture.
+
+Research 034 and the source/evidence foundation established:
+
+```text
+SOURCE UNIVERSE
+    !=
+METHODOLOGICAL KNOWLEDGE UNIVERSE
+```
+
+The source foundation was initially drafted as Foundation 021, but promotion reconciliation detected that Foundation 021 was already occupied by the professional product/interface foundation. The source foundation was therefore canonically renumbered Foundation 022 without semantic change.
+
+The accepted architecture separates logical source identity, exact artifact identity, collections and uncertain membership, locators, ingestion events, derived lineage, rights/access, and later fine-grained evidence provenance.
 
 Key sources:
 
 ```text
-docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
-docs/checkpoints/166_specification_019_live_result_failed.md
-experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
 ```
 
 ---
 
-## 2026-08-24: Dependency-backed RECOMMENDED versus BLOCKING_REQUIRED boundary supported
+## 2026-08-25: Specification 023 source substrate passed provider-free first-corpus acceptance
 
-Specification 020 prospectively isolated the recommendation-calibration construct exposed by Specification 019. It removed methodological-context treatments and tested one fixed reasoner on six deliberately unambiguous contrastive pairs where genuine blocking was represented by an exact unresolved requirement, an exact active defended downstream scope, an explicit `DEPENDS_ON` relation, and the candidate action that resolves the requirement.
-
-The governed live run completed the frozen 36-observation design with no retries:
+Specification 023 implemented:
 
 ```text
-reasoner outputs                     36 / 36
-provider attempts                    36 / 45
-aggregate exact disposition accuracy 1.000000
-all 12 variants                      3 / 3 correct
-all 6 contrastive pair sides         3 / 3 correct
-joint blocking-pointer accuracy      1.000000
-RECOMMENDED null-pointer correctness 1.000000
-outcome                              BLOCKING_BOUNDARY_SUPPORTED
+filesystem intake
+    -> exact SHA-256 + staging
+    -> immutable content-addressed SourceArtifactStore
+    -> relational Source Registry
+    -> deterministic PRIVATE_SNAPSHOT / PUBLIC_SAFE_CATALOG
+    -> integrity audit
+    -> verified backup
+    -> clean restore
 ```
 
-The bounded architectural lesson is:
+The implementation passed on Ubuntu and Windows and retained all inherited V1 regressions.
+
+The first controlled VU Amsterdam Machine Learning corpus produced:
 
 ```text
-blocking should not be represented by urgency or priority alone
-
-genuinely BLOCKING_REQUIRED work
-    -> exact unresolved requirement
-    -> exact active defended downstream scope
-    -> explicit scope DEPENDS_ON requirement relation
-    -> action resolves requirement
+20 / 20 prospective fingerprint matches
+20 NEW_ARTIFACT ingests
+14 EXACT_DUPLICATE real re-encounters
+20 logical sources
+20 exact artifacts
+20 stored objects
+34 ingestion events
+20 / 20 clean working-store audit
+20 / 20 clean restored audit
+SU-G01 through SU-G23 PASS
 ```
 
-This makes taxonomy inseparability and fixed-reasoner inability less likely explanations for Specification 019's RB-02 behavior, but it does not rescore Specification 019 and does not establish selective methodological-context recommendation value or production recommendation enums.
+Classification:
 
-The same stage-boundary review also confirmed recurring lag in mutable routing documents relative to already durable result/checkpoint evidence. That observed consistency problem is now sufficient to justify a small machine-checkable routing manifest and CI validator while retaining Git + Markdown as the substantive preservation architecture.
+```text
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+No source PDF, private observed path, private registry snapshot, or backup payload entered public Git.
+
+D-033 now accepts the ADS-owned source-substrate architecture and supersedes D-015 only in its original architectural-uncertainty scope.
+
+Important remaining boundary:
+
+```text
+accepted source-substrate architecture / implementation
+    !=
+permanent user-controlled source vault already instantiated
+```
+
+The next operational step is to deploy the accepted source store and registry on durable user-controlled storage, ingest the original local Machine Learning folder, establish an independent backup, and prove clean recovery before Course 2 is admitted.
 
 Key sources:
 
 ```text
-docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
-docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
-experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 ```
-
-## 2026-08-24: Specification 021 negative result preserved without architecture pivot
-
-Specification 021 completed a relation-backed supplied-action recommendation/disposition experiment with frozen outcome `FAIL`. The deterministic disposition and pointer layer was perfect across GENERIC, SELECTIVE, and FULL_HORIZON, but one preregistered SELECTIVE per-case semantic floor failed and no prospectively frozen SELECTIVE recommendation-value signal was observed.
-
-The failed recommendation implementation did not earn promotion. A preservation-only branch/PR carries the frozen contract, fixture, raw evidence, stable result, and historical checkpoints.
-
-A subsequent architecture review clarified that the benchmark had already supplied much of the decision space and therefore did not test the broader ADS capability of discovering and surfacing methodological pathways from project state. Research 030 and Checkpoint 183 preserve that distinction. The core methodological-navigation vision remains open for direct system-level evaluation rather than being rejected on the downstream disposition result.
-
-## 2026-08-24: Question A methodological-navigation coverage review
-
-Research 031 and Checkpoint 186 move the next evaluation boundary upstream from supplied-action recommendation calibration to state-driven methodological path discovery and coverage. The review distinguishes universe gaps, navigation gaps, and downstream reasoning/use gaps; recommends evolving project-state episodes with a hidden coverage oracle; preserves a strong generic control and open-world escape hatch; and identifies a project-state-to-methodological-horizon coverage diagnostic as the leading successor experiment class. Specification 022 remains not frozen.
