@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-25  
-**Current checkpoint:** 199  
+**Current checkpoint:** 200  
 **Active development branch:** `v1-multimodel-development-collaboration`  
 **Active PR:** #76  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`
@@ -19,8 +19,8 @@ docs/VISION.md                    high-level product/system direction
 docs/PRINCIPLES.md                accepted high-level design principles
 docs/DECISIONS.md                 accepted project-level decisions
 docs/OPEN_QUESTIONS.md            unresolved questions
-docs/DEVELOPMENT_METHOD.md        current accepted development/preservation method
-docs/CONTINUITY.md                current accepted continuity procedure
+docs/DEVELOPMENT_METHOD.md        current canonical development method
+docs/CONTINUITY.md                current canonical continuity procedure
 docs/MAJOR_CHANGES.md             selective structural history
 ```
 
@@ -28,138 +28,149 @@ Current branch relationship:
 
 ```text
 promoted integration             v1-frontend-spike @ 8215718db3e44f000cc6ed53d6a051522d429dbd
-paused deployment branch         v1-source-vault-bootstrap @ d9437a8ca07a444400a5eb44ac2c89e8108c91c2
-paused deployment PR             #75
-active collaboration branch      v1-multimodel-development-collaboration
-active collaboration PR          #76
-current checkpoint               199
+paused deployment branch         v1-source-vault-bootstrap / PR #75
+active collaboration branch      v1-multimodel-development-collaboration / PR #76
+current checkpoint               200
+latest specification             Specification 023
+latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
 
 ---
 
-# Current stage: multi-model development collaboration architecture review
+# Current stage: MC-0001 comparative review of multi-model development architecture
 
 Primary route:
 
 ```text
 docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
+docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
 docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
+docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
 ```
 
-Optional live transport:
+Live transport:
 
 ```text
 GitHub Issue #77
-MC-0001: ChatGPT-Claude collaboration architecture review exchange
 ```
 
-Important authority distinction:
+Authority separation:
 
 ```text
-Research 035
-    candidate architecture
+issue / PR comments
+    optional transport
 
 Model Collaboration Exchange
-    collaboration provenance / review channel
+    durable collaboration provenance
 
-Development Method / Continuity / checkpoint contract
-    still current accepted method until explicit promotion
+Research 035
+    candidate architecture only
+
+DEVELOPMENT_METHOD / CONTINUITY / accepted decisions
+    current canonical method until explicit promotion
 ```
 
-The project is deliberately not canonizing the ChatGPT-authored proposal before Claude has challenged the same problem independently.
+## MC-0001 Phase-A evidence
 
-## First cross-model trial: MC-0001
-
-Review mode:
-
-```text
-INDEPENDENT_THEN_COMPARATIVE
-```
-
-Phase A:
-
-```text
-Claude reads neutral BRIEF + accepted governing method
-Claude does not read Research 035 yet
-Claude records its own preferred architecture first
-```
-
-Preferred Phase-A path:
+Claude completed its first counter-design directly through repository access. The substantive artifact is:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
 ```
 
-Phase B:
+Claude did not read Research 035 or ChatGPT message 001 before freezing the artifact. However, the required reconstruction documents already summarized multiple candidate Research 035 ideas.
+
+Therefore:
 
 ```text
-Claude reads Research 035
-Claude compares the architectures
-Claude preserves convergence, disagreement, omissions,
-complexity concerns, must-change items, and change-of-mind evidence
+independent from full Research 035 proposal       YES
+independent from ChatGPT message 001              YES
+blind to all ChatGPT candidate architecture       NO
 ```
 
-Preferred Phase-B path:
+Checkpoint 200 preserves this review-integrity limitation. Convergence on already exposed ideas is not clean independent confirmation.
+
+Important Claude additions now awaiting Phase-B comparison include:
+
+```text
+machine-readable active-writer record
+soft writer lock plus ordinary Git stale-write protection
+HIGH-IMPACT / LOW-IMPACT collaboration trigger heuristic
+pointer-only issue transport
+mandatory calibrated-review fields
+disagreement routing defaults
+human authorization of thread/writer transitions
+provider-local conversation numbering
+explicit second-model-value criteria
+```
+
+None is accepted merely because Claude proposed it.
+
+## MC-0001 Phase B
+
+Claude may now read:
+
+```text
+docs/research/035_multi_model_development_collaboration_architecture.md
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
+```
+
+Expected next artifact:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
 ```
 
-Only after those are frozen should ChatGPT answer materially and the project decide whether a Development Method v0.5 is justified.
-
-## Candidate collaboration direction under review
+Then ChatGPT responds in:
 
 ```text
-repository remains project authority
-one bounded task owner
-serialized canonical writes
-explicit per-task roles
-reviewer does not silently become co-owner
-independent-first review for high-impact questions
-agreement and disagreement both require calibrated reasoning
-material disagreement remains explicit
-human remains project-intent/normative authority
-dedicated model collaboration exchange
-GitHub issues/PR comments optional as live transport
-API orchestration deferred until measured need/value
+docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
 ```
 
-No accepted multi-model project decision exists yet.
-
-## Real Level-2 pressure already exposed
-
-The current checkpoint contract requires ChatGPT-specific interaction provenance:
-
-```text
-Design session
-ChatGPT project
-Session title
-```
-
-The contract already says a different development environment should trigger deliberate revision rather than silent metadata drift.
-
-If MC-0001 succeeds, likely promotion targets include:
-
-```text
-DEVELOPMENT_METHOD.md v0.5
-CONTINUITY.md
-checkpoints/README.md
-checkpoint metadata validator
-docs/model_collaboration/README.md
-MAJOR_CHANGES.md
-```
-
-Exact provider-neutral provenance fields are intentionally not frozen before the trial.
+Only after the comparative review, response, disagreement resolution, and promotion audit should a Development Method revision or provider-neutral checkpoint contract be accepted.
 
 ---
 
-# Source Universe: accepted substrate, permanent deployment paused
+# Candidate interaction provenance and naming
 
-Primary accepted route:
+Current candidate design:
+
+```text
+ChatGPT project/workspace  Autonomous Data Science System
+ChatGPT sessions           provider-local numbered conversations, e.g. chatgpt-06
+
+Claude project/workspace   Autonomous Data Science System
+Claude sessions            provider-local numbered conversations, e.g. claude-01
+
+MC-NNNN                    globally unique collaboration-thread identity
+```
+
+Current live sessions participating in MC-0001:
+
+```text
+chatgpt-06
+06 - Methodological Knowledge Universe Construction
+
+claude-01
+01 - ADS Development Review & Collaboration
+```
+
+The exact provider-neutral provenance schema remains candidate-only until MC-0001 resolves.
+
+Historical ChatGPT-specific checkpoint metadata is not to be rewritten merely for future visual uniformity.
+
+---
+
+# Source Universe substrate and paused permanent deployment
+
+Accepted source route:
 
 ```text
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
@@ -168,42 +179,9 @@ docs/specifications/023_v1_source_universe_substrate.md
 docs/checkpoints/195_specification_023_source_substrate_contract_frozen.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
-```
-
-Foundation 022 is the canonical numbering of the source-universe foundation. The original draft was numbered Foundation 021 before a collision with the existing professional product/interface Foundation 021 was detected during promotion reconciliation. The renumbering changes no source-architecture semantics.
-
-Central separation:
-
-```text
-SOURCE UNIVERSE
-    !=
-METHODOLOGICAL KNOWLEDGE UNIVERSE
-```
-
-Accepted source identities and provenance concepts:
-
-```text
-SourceRecord
-SourceArtifact
-SourceCollection
-SourceCollectionMembership
-SourceLocator
-SourceIngestionEvent
-DerivedSourceArtifact
-```
-
-Accepted source path:
-
-```text
-filesystem input
-    -> exact SHA-256 + byte count
-    -> immutable content-addressed SourceArtifactStore
-    -> relational Source Registry
-    -> deterministic private/public-safe exports
-    -> integrity audit
-    -> verified backup
-    -> clean restore
 ```
 
 Specification 023 result:
@@ -213,80 +191,9 @@ SU-G01 through SU-G23   PASS
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-The accepted implementation is promoted into `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`.
+The accepted implementation is promoted in `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`.
 
-Important boundary:
-
-```text
-accepted + promoted implementation
-    !=
-permanent user-controlled vault already instantiated
-```
-
----
-
-## Paused permanent source-vault bootstrap route
-
-```text
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-branch  v1-source-vault-bootstrap
-PR      #75
-```
-
-Required private locations remain:
-
-```text
-ORIGINAL_SOURCE_ROOT
-SOURCE_REGISTRY_DATABASE
-SOURCE_VAULT_ROOT
-INDEPENDENT_BACKUP_ROOT
-CLEAN_RESTORE_ROOT
-```
-
-The project must not invent these paths or commit them to Git. The original course folder remains read-only input from ADS's perspective.
-
-No deployment operation is currently running.
-
-Course 2 remains blocked when this stage resumes until compare, reviewed ingestion, clean audit, independent verified backup, clean restore, and restored audit are complete.
-
----
-
-## First source-corpus route
-
-Diagnostic pre-substrate fingerprint snapshot:
-
-```text
-docs/source_universe/intake_snapshots/001_vu_machine_learning_chat_intake.md
-```
-
-Reviewed intake manifest:
-
-```text
-docs/source_universe/manifests/001_vu_machine_learning.json
-```
-
-Validation result:
-
-```text
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
-```
-
-Observed first-corpus evidence:
-
-```text
-20 / 20 files matched prospective fingerprints
-20 NEW_ARTIFACT initial ingests
-14 EXACT_DUPLICATE real re-encounters
-20 logical sources
-20 exact artifacts
-20 stored binary objects
-34 ingestion events
-20 / 20 clean pre-backup audit
-20 / 20 clean restored audit
-```
-
-The source binaries, private observed paths, private registry snapshots, and backup payload were not committed to Git.
+Draft PR #75 is paused, not abandoned. The permanent Source Registry, private Source Vault, independent backup, and clean restore still need to be instantiated on user-controlled storage before Course 2 is admitted.
 
 ---
 
@@ -312,9 +219,7 @@ C5  BEHAVIORALLY_TESTED
 C6  PROJECT_EXPOSED
 ```
 
-Coverage depth is not truth, maturity, source quality, freshness, or enforcement authority.
-
-The first six deep slices remain:
+First six deep slices:
 
 ```text
 Validation and Generalization Design
@@ -325,7 +230,7 @@ Class Imbalance / Metrics / Calibration / Thresholding
 Time-Series Methodology
 ```
 
-The collaboration architecture is a temporary Level-2 interruption. It does not change Research 033's target-system sequence.
+The source and collaboration work are Level-2 / substrate prerequisites for conducting this program professionally and durably.
 
 ---
 
@@ -355,18 +260,6 @@ exact revision identity
 provenance
 ```
 
-Important separations:
-
-```text
-global reusable knowledge != project-specific state
-asset != component != narrative facet
-static relation != conditional rule
-retrieval cue != applicability != required context != project relevance
-methodological knowledge != source artifact
-methodological knowledge != execution implementation
-coverage depth != epistemic maturity
-```
-
 ---
 
 # Product and project-object architecture
@@ -389,14 +282,6 @@ EVENTS
 VIEWS
 ```
 
-Project Cockpit route:
-
-```text
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-docs/checkpoints/126_seventh_cockpit_review_validated_and_interaction_architecture_promoted.md
-docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_passed.md
-```
-
 ---
 
 # Persistence, interchange, runtime, and source storage
@@ -411,8 +296,6 @@ D-031  governed deterministic JSON / JSON Schema knowledge interchange
 D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
 D-033  ADS-owned Source Universe substrate with private artifact store + relational registry
 ```
-
-The operational database, interchange representations, source artifact store, and rebuildable indexes remain different authority layers.
 
 No multi-model development decision has yet been promoted.
 
@@ -429,21 +312,13 @@ Specification 013 / Checkpoint 143   selective exact-revision context
 Specification 014 / Checkpoint 146   real reasoning-context value
 ```
 
-Key applicability invariant:
-
-```text
-known false -> INAPPLICABLE
-unknown required information -> MISSING_CONTEXT
-unknown != false
-```
-
-Specification 014 preserved equal measured quality on its bounded benchmark while reducing provider input by 66.56%. Navigation is not being tuned further until the methodological universe becomes materially larger.
+Specification 014 preserved equal measured quality on its bounded benchmark while reducing provider input by 66.56%.
 
 ---
 
-# Recommendation/action and methodological-navigation evidence
+# Later recommendation/action evidence
 
-The downstream diagnostic chain remains historically bounded:
+Historical downstream results remain bounded:
 
 ```text
 Specification 015  FAIL
@@ -455,21 +330,13 @@ Specification 021  FAIL
 Specification 022  INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
 
-Important interpretation:
-
-```text
-supplied-action disposition calibration
-    !=
-open-world methodological navigation / coverage
-```
-
-Specification 022 has no legitimate `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison because all planned reasoner observations failed the frozen structured-output contract before judge execution.
+Specification 022 contains no legitimate `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison.
 
 ---
 
 # Preservation and continuity
 
-Current accepted sources:
+Primary sources:
 
 ```text
 docs/DEVELOPMENT_METHOD.md
@@ -479,26 +346,21 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/MAJOR_CHANGES.md
 ```
 
-The multi-model architecture is explicitly challenging this layer, but no accepted method change has occurred yet.
-
-Repository artifacts, exact Git history, checkpoints, and canonical routing remain the continuation authority. Chat history and model-specific private context do not replace them.
+These remain canonical until MC-0001 completes and any multi-model changes are explicitly promoted.
 
 ---
 
 # Exact current continuation
 
 ```text
-A. Claude reconstructs the current development method from repository authority
-B. Claude reads MC-0001/BRIEF.md but not Research 035
-C. Claude preserves an independently derived collaboration architecture
-D. freeze that Phase-A result before cross-conditioning
-E. Claude reads Research 035 and records a comparative Phase-B review
-F. preserve genuine convergence, material disagreement, omissions, and change-of-mind conditions
-G. ChatGPT responds to the preserved Claude artifacts
-H. classify remaining disagreements by fact / interpretation / requirement / architecture / risk / evidence sufficiency / normative intent / scope
-I. route unresolved points to evidence, experiment, human decision, or deferral
-J. perform promotion audit for Development Method v0.5, Continuity, checkpoint provenance, validator changes, and MAJOR_CHANGES
-K. only after that decide the immediate return point for paused PR #75
-L. do not upload Course 2 while the permanent source-vault gate remains unresolved
-M. do not rerun or rescore Specifications 015-022 as part of this Level-2 collaboration transition
+A. Claude performs MC-0001 Phase B comparative review
+B. Claude preserves messages/003_claude_comparative_review.md
+C. Claude explicitly discounts Phase-A convergence already exposed by the reconstruction documents
+D. ChatGPT then produces messages/004_chatgpt_response_to_claude.md
+E. classify remaining disagreements by fact, interpretation, requirement, architecture, risk, evidence sufficiency, project intent, or scope
+F. route disagreements to evidence, experiment/prototype, human decision, or explicit deferral
+G. perform the promotion audit only after the cross-model exchange resolves
+H. do not promote Development Method v0.5, provider-neutral checkpoint provenance, writer locking, or API orchestration prematurely
+I. keep PR #75 paused until the user chooses to resume the source-vault bootstrap
+J. after source operationalization, continue the serious methodological knowledge-universe program
 ```
