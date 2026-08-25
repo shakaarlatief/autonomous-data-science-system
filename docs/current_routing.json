@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 199,
+  "current_checkpoint": 200,
   "active_development_branch": "v1-multimodel-development-collaboration",
   "active_pr": 76,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "8215718db3e44f000cc6ed53d6a051522d429dbd",
   "latest_specification": "023",
   "latest_experiment_outcome": "INCOMPLETE",
-  "current_boundary": "multi-model-development-collaboration-independent-cross-model-review-pr75-paused"
+  "current_boundary": "mc-0001-phase-b-comparative-review-pr75-paused"
 }
