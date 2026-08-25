@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-25  
-**Current checkpoint:** 197  
-**Active development branch:** `v1-source-universe-substrate`  
-**Active PR:** #74  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `02f4f1bd5b7081c0792cbe2d2e062cc6fb9fdc54`
+**Current checkpoint:** 198  
+**Active development branch:** `v1-source-vault-bootstrap`  
+**Active PR:** #75  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`
 
 ## Start here
 
@@ -27,15 +27,15 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current branch relationship:
 
 ```text
-promoted integration            v1-frontend-spike @ 02f4f1bd5b7081c0792cbe2d2e062cc6fb9fdc54
-active source-substrate branch  v1-source-universe-substrate
-active PR                       #74
-current promotion checkpoint    197
+promoted integration          v1-frontend-spike @ 8215718db3e44f000cc6ed53d6a051522d429dbd
+active deployment branch      v1-source-vault-bootstrap
+active PR                     #75
+current checkpoint            198
 ```
 
 ---
 
-# Current stage: accepted Source Universe substrate before permanent corpus intake
+# Current stage: permanent Source Universe deployment before Course 2
 
 Primary route:
 
@@ -46,6 +46,8 @@ docs/specifications/023_v1_source_universe_substrate.md
 docs/checkpoints/195_specification_023_source_substrate_contract_frozen.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 ```
 
@@ -91,17 +93,47 @@ SU-G01 through SU-G23   PASS
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-The accepted implementation is provider-free for source-integrity correctness.
+The accepted implementation is provider-free for source-integrity correctness and is now promoted into `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`.
 
 Important boundary:
 
 ```text
-accepted implementation
+accepted + promoted implementation
     !=
 permanent user-controlled vault already instantiated
 ```
 
-The next operational task is to instantiate the accepted substrate on durable user-controlled storage, ingest the original local VU Machine Learning folder, create an independent backup, and prove clean restoration before Course 2 is admitted.
+The active operational task is to instantiate the accepted substrate on durable user-controlled storage, ingest the original local VU Machine Learning folder, create an independent backup, and prove clean restoration before Course 2 is admitted.
+
+---
+
+## Permanent source-vault bootstrap route
+
+Operational checkpoint:
+
+```text
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+```
+
+Operational runbook:
+
+```text
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+```
+
+Required private locations:
+
+```text
+ORIGINAL_SOURCE_ROOT
+SOURCE_REGISTRY_DATABASE
+SOURCE_VAULT_ROOT
+INDEPENDENT_BACKUP_ROOT
+CLEAN_RESTORE_ROOT
+```
+
+The project must not invent these paths or commit them to Git. The original course folder remains read-only input from ADS's perspective.
+
+Course 2 remains blocked until the permanent deployment has completed compare, reviewed ingestion, clean audit, independent verified backup, clean restore, and restored audit.
 
 ---
 
@@ -346,16 +378,21 @@ Repository artifacts, exact Git history, checkpoints, and canonical routing rema
 # Exact current continuation
 
 ```text
-A. validate the fully reconciled Checkpoint 197 / PR #74 head
-B. merge PR #74 into v1-frontend-spike
-C. preserve the exact promoted integration SHA
-D. instantiate the accepted private source vault + registry on user-controlled durable storage
-E. ingest the original VU Amsterdam Machine Learning folder
-F. compare against prospective fingerprints and preserve every mismatch class
-G. audit, independently back up, clean-restore, and re-audit
-H. only then admit Course 2 and continue course-sized corpus intake
-I. map the resulting source universe against the coverage map
-J. resume the six deep methodological representation pressure tests
-K. revise knowledge representation only when content pressure warrants it
-L. do not rerun or rescore Specifications 015-022 as part of this source transition
+A. identify the original local VU Machine Learning folder
+B. choose permanent Source Registry and Source Vault locations outside public Git
+C. choose a genuinely independent backup destination
+D. choose a temporary clean-restore target
+E. verify capacity and location separation
+F. compare the original folder against the prospectively frozen manifest/fingerprints before ingestion
+G. preserve and review every MATCH / DIFFERENT_ARTIFACT / MISSING_LOCAL_SOURCE / ADDITIONAL_LOCAL_SOURCE result
+H. ingest the reviewed intended corpus
+I. run the working-store integrity audit
+J. create and verify the independent backup
+K. clean-restore and run the restored integrity audit
+L. preserve only safe deployment evidence and classify the bootstrap
+M. only then admit Course 2 and continue course-sized corpus intake
+N. map the resulting source universe against the coverage map
+O. resume the six deep methodological representation pressure tests
+P. revise knowledge representation only when content pressure warrants it
+Q. do not rerun or rescore Specifications 015-022 as part of this source transition
 ```

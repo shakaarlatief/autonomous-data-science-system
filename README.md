@@ -16,22 +16,22 @@ Explicit machinery must earn its complexity empirically.
 
 ## Current development stage
 
-**Prototype V0 is complete. Bounded V1 is now constructing the serious methodological knowledge universe, and its prerequisite Source Universe substrate has passed its first provider-free implementation and real-corpus acceptance boundary.**
+**Prototype V0 is complete. Bounded V1 is now constructing the serious methodological knowledge universe. Its prerequisite Source Universe substrate has been accepted and promoted, and the active stage is permanent deployment of that substrate on user-controlled durable storage.**
 
 ```text
-checkpoint            197
-active branch         v1-source-universe-substrate
-active PR             #74
-promoted V1 head      02f4f1bd5b7081c0792cbe2d2e062cc6fb9fdc54
+checkpoint            198
+active branch         v1-source-vault-bootstrap
+active PR             #75
+promoted V1 head      8215718db3e44f000cc6ed53d6a051522d429dbd
 latest specification  Specification 023
 source outcome         SOURCE_SUBSTRATE_ACCEPTED
 latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary       source-substrate promotion;
-                       permanent user-controlled vault bootstrap next
+current boundary       permanent user-controlled source-vault bootstrap;
+                       Course 2 blocked until recovery proof succeeds
 ```
 
-The current source-substrate route is:
+The current source route is:
 
 ```text
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
@@ -39,6 +39,8 @@ docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 ```
 
@@ -70,7 +72,7 @@ A PDF may support many knowledge propositions; one methodological proposition ma
 
 ## Accepted Source Universe substrate
 
-Specification 023 now provides a bounded accepted V1 path:
+Specification 023 provides the accepted bounded V1 path:
 
 ```text
 filesystem source input
@@ -137,6 +139,37 @@ SOURCE_SUBSTRATE_ACCEPTED
 ```
 
 This acceptance proves the architecture and implementation seam. It does **not** mean the permanent user-controlled source vault already exists. The first validation used disposable development storage and the exact uploaded bytes available to the active development runtime.
+
+PR #74 has now promoted that accepted implementation into `v1-frontend-spike` at:
+
+```text
+8215718db3e44f000cc6ed53d6a051522d429dbd
+```
+
+---
+
+## Permanent source-vault bootstrap
+
+The active operational stage is governed by:
+
+```text
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+```
+
+The deployment must resolve five private locations without committing them to Git:
+
+```text
+ORIGINAL_SOURCE_ROOT
+SOURCE_REGISTRY_DATABASE
+SOURCE_VAULT_ROOT
+INDEPENDENT_BACKUP_ROOT
+CLEAN_RESTORE_ROOT
+```
+
+The original VU Machine Learning folder remains read-only input from ADS's perspective. The permanent vault and independent backup must remain outside the public repository.
+
+Before Course 2 is admitted, the original folder must be compared against the prospective fingerprints, every mismatch class must be reviewed, the intended corpus must be ingested, the working store must audit cleanly, an independent backup must be created and verified, and a clean restore must reproduce the source corpus with a second clean audit.
 
 ---
 
@@ -212,7 +245,7 @@ KNOWN
 
 Foundation 020 provides the current reusable-knowledge representation direction around assets, components, narrative facets, relations, conditional rules, collections, exact revisions, and provenance.
 
-Foundation 021 governs the professional product/interface foundation. Foundation 022 now adds the separate source/evidence substrate beneath the governed knowledge universe.
+Foundation 021 governs the professional product/interface foundation. Foundation 022 adds the separate source/evidence substrate beneath the governed knowledge universe.
 
 ---
 
@@ -268,6 +301,9 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+
 docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
@@ -282,13 +318,18 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. validate the fully reconciled PR #74 head
-2. merge PR #74 into v1-frontend-spike
-3. preserve the exact promoted integration SHA
-4. instantiate the accepted source substrate on user-controlled durable storage
-5. ingest the original VU Amsterdam Machine Learning folder
-6. compare against the prospectively frozen fingerprints
-7. perform integrity audit + independent backup + clean restore
-8. only after that succeeds, admit the next educational course batch
-9. then map the wider source corpus and resume the six deep methodological pressure tests
+1. identify the original local VU Machine Learning folder
+2. choose the permanent Source Registry and Source Vault locations
+3. choose a genuinely independent backup destination
+4. choose a temporary clean-restore location
+5. verify storage capacity and separation from the public Git repository
+6. execute compare before any permanent ingestion
+7. review every mismatch / additional-source result
+8. ingest the reviewed corpus
+9. run a clean integrity audit
+10. create and verify the independent backup
+11. clean-restore and run the restored integrity audit
+12. preserve only safe deployment evidence in PR #75
+13. only after that gate succeeds, admit the next educational course batch
+14. then map the wider source corpus and resume the six deep methodological pressure tests
 ```
