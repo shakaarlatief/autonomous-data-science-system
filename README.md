@@ -16,35 +16,89 @@ Explicit machinery must earn its complexity empirically.
 
 ## Current development stage
 
-**Prototype V0 is complete. Bounded V1 is now constructing the serious methodological knowledge universe. Its prerequisite Source Universe substrate has been accepted and promoted, and the active stage is permanent deployment of that substrate on user-controlled durable storage.**
+**Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe. Its prerequisite Source Universe substrate has been accepted and promoted. The permanent source-vault deployment is preserved but temporarily paused while the project pressure-tests a major Level-2 change: governed multi-model development collaboration between ChatGPT, Claude, and the human project owner.**
 
 ```text
-checkpoint            198
-active branch         v1-source-vault-bootstrap
-active PR             #75
+checkpoint            199
+active branch         v1-multimodel-development-collaboration
+active PR             #76
 promoted V1 head      8215718db3e44f000cc6ed53d6a051522d429dbd
 latest specification  Specification 023
 source outcome         SOURCE_SUBSTRATE_ACCEPTED
 latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary       permanent user-controlled source-vault bootstrap;
-                       Course 2 blocked until recovery proof succeeds
+current boundary       independent Claude architecture + comparative review
+                       of the multi-model development method;
+                       PR #75 source-vault bootstrap paused
 ```
 
-The current source route is:
+The active collaboration route is:
 
 ```text
-docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
-docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
-docs/specifications/023_v1_source_universe_substrate.md
-docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
-docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/research/035_multi_model_development_collaboration_architecture.md
+docs/model_collaboration/README.md
+docs/model_collaboration/threads/MC-0001/BRIEF.md
+docs/model_collaboration/threads/MC-0001/THREAD.md
+docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
+docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
 ```
 
-Foundation 022 is the canonical renumbering of the source-universe foundation originally drafted as Foundation 021. The pre-existing professional product/interface foundation remains Foundation 021.
+GitHub Issue #77 is the optional live transport surface for `MC-0001`; the issue is collaboration transport, not canonical project authority.
+
+The permanent source-vault route remains preserved on draft PR #75 and is not abandoned.
+
+---
+
+## Why multi-model collaboration is a first-class Level-2 problem
+
+The existing repository already allows a new model or chat to reconstruct project state without depending on the previous conversation. That solves information continuity, but not coordination.
+
+A safe multi-model development process must also answer:
+
+```text
+who owns a bounded task
+who may mutate canonical state
+how another model reviews without silently becoming co-owner
+how independent judgment is preserved
+how material disagreement remains visible
+how the human arbitrates genuine project-intent conflicts
+how model-to-model communication avoids constant user copy-paste
+how collaboration provenance remains separate from authority
+when automated API orchestration would actually earn its cost/complexity
+```
+
+Research 035 is the first ChatGPT-authored candidate architecture. It is **not** yet Development Method v0.5.
+
+The first trial, `MC-0001`, intentionally uses an independent-then-comparative Claude review. Claude should first design its own architecture from the neutral brief without reading Research 035, preserve that proposal, and only then compare it with ChatGPT's design.
+
+The goal is neither consensus nor disagreement. The goal is calibrated cross-model reasoning.
+
+---
+
+## Dedicated Model Collaboration Exchange
+
+The candidate exchange lives at:
+
+```text
+docs/model_collaboration/
+```
+
+It separates:
+
+```text
+GitHub issue / PR comments
+    optional low-friction transport
+
+Model Collaboration Exchange
+    durable structured collaboration provenance
+
+normal accepted project artifacts
+    authority after existing review/promotion governance
+```
+
+The candidate method uses one bounded task owner, serialized canonical writes, explicit task roles, append-only substantive review messages, explicit disagreement classification, and provider-neutral collaboration identities rather than permanently assigning one model as architect and another as reviewer.
+
+No automated OpenAI/Anthropic API orchestrator is being built at this stage.
 
 ---
 
@@ -140,7 +194,7 @@ SOURCE_SUBSTRATE_ACCEPTED
 
 This acceptance proves the architecture and implementation seam. It does **not** mean the permanent user-controlled source vault already exists. The first validation used disposable development storage and the exact uploaded bytes available to the active development runtime.
 
-PR #74 has now promoted that accepted implementation into `v1-frontend-spike` at:
+PR #74 promoted that accepted implementation into `v1-frontend-spike` at:
 
 ```text
 8215718db3e44f000cc6ed53d6a051522d429dbd
@@ -148,16 +202,17 @@ PR #74 has now promoted that accepted implementation into `v1-frontend-spike` at
 
 ---
 
-## Permanent source-vault bootstrap
+## Permanent source-vault bootstrap is paused, not cancelled
 
-The active operational stage is governed by:
+The operational stage remains preserved by:
 
 ```text
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+PR #75
 ```
 
-The deployment must resolve five private locations without committing them to Git:
+The deployment still requires five private locations:
 
 ```text
 ORIGINAL_SOURCE_ROOT
@@ -167,9 +222,7 @@ INDEPENDENT_BACKUP_ROOT
 CLEAN_RESTORE_ROOT
 ```
 
-The original VU Machine Learning folder remains read-only input from ADS's perspective. The permanent vault and independent backup must remain outside the public repository.
-
-Before Course 2 is admitted, the original folder must be compared against the prospective fingerprints, every mismatch class must be reviewed, the intended corpus must be ingested, the working store must audit cleanly, an independent backup must be created and verified, and a clean restore must reproduce the source corpus with a second clean audit.
+No local source-vault operation is currently running. When the project returns to PR #75, Course 2 remains blocked until compare, reviewed ingestion, integrity audit, independent backup, clean restore, and restored audit succeed on user-controlled storage.
 
 ---
 
@@ -262,6 +315,8 @@ D-033  ADS-owned private Source Universe substrate and relational Source Registr
 
 The runtime database, knowledge interchange, source artifact store, and rebuildable retrieval indexes remain different authority layers.
 
+No multi-model development decision has yet been added to this accepted decision list.
+
 ---
 
 ## Retrieval and reasoning evidence
@@ -290,7 +345,7 @@ This repository is the project's durable development source of truth.
 
 > **The chat is where we think. The repository is where the system remembers.**
 
-Source binaries are a separate private evidence substrate. Stable architecture, schemas, code, public-safe metadata, decisions, checkpoints, validation evidence, and project history remain versioned here.
+The emerging multi-model architecture generalizes that principle: collaborators may reason in different products, but durable project state and collaboration provenance must be recoverable from shared project infrastructure.
 
 ---
 
@@ -301,12 +356,14 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
+docs/research/035_multi_model_development_collaboration_architecture.md
+docs/model_collaboration/README.md
+docs/model_collaboration/threads/MC-0001/BRIEF.md
+docs/model_collaboration/threads/MC-0001/THREAD.md
+
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-
-docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
-docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md
@@ -318,18 +375,12 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. identify the original local VU Machine Learning folder
-2. choose the permanent Source Registry and Source Vault locations
-3. choose a genuinely independent backup destination
-4. choose a temporary clean-restore location
-5. verify storage capacity and separation from the public Git repository
-6. execute compare before any permanent ingestion
-7. review every mismatch / additional-source result
-8. ingest the reviewed corpus
-9. run a clean integrity audit
-10. create and verify the independent backup
-11. clean-restore and run the restored integrity audit
-12. preserve only safe deployment evidence in PR #75
-13. only after that gate succeeds, admit the next educational course batch
-14. then map the wider source corpus and resume the six deep methodological pressure tests
+1. Claude performs MC-0001 Phase A from the neutral BRIEF without reading Research 035
+2. preserve Claude's independently derived architecture
+3. only then let Claude read Research 035 and perform Phase B comparative review
+4. preserve genuine convergence, disagreement, omissions, and change-of-mind conditions
+5. ChatGPT responds to the preserved Claude artifacts
+6. classify remaining disagreements and route them to evidence/test, human decision, or deferral
+7. only then decide whether Development Method v0.5 / provider-neutral checkpoint provenance is justified
+8. PR #75 remains paused until the user chooses to resume the permanent source-vault deployment
 ```
