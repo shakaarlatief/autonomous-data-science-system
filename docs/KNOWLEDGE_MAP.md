@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-24  
-**Current checkpoint:** 189  
+**Last reviewed:** 2026-08-25  
+**Current checkpoint:** 190  
 **Active development branch:** `v1-methodological-navigation-coverage-diagnostic`  
 **Active PR:** #68  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`
@@ -41,8 +41,8 @@ routing consistency PR         #54 merged
 Specification 021 impl PR      #55 closed without merge; failed implementation rejected
 Specification 021 preserve PR  #66 merged at ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
 Question A architecture PR     #67 merged at 0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-Question A diagnostic PR        #68 active draft; Specification 022 provider-free implementation green; live-capable source next
-main                           governed live-launch control plane; zero active Specification 021 authorization
+Question A diagnostic PR        #68 active draft; Specification 022 live-capable source frozen; separate authorization next
+main                           governed live-launch control plane; no active Specification 022 authorization
 ```
 
 ---
@@ -115,6 +115,9 @@ Specification 022 / Checkpoint 188 / PR #68
 
 Checkpoint 189 / PR #68
     provider-free Specification 022 contract/navigation/request/scoring/artifact machinery green cross-platform; scientific outcome remains unexecuted; no provider call authorized
+
+Checkpoint 190 / PR #68
+    exact live-capable source `cf5893d74fefa699296842b0a48326a9cb50161c` frozen at `v1-spec022-methodological-navigation-coverage-live-source`; separate authorization remains required before provider execution
 ```
 
 ---
@@ -403,15 +406,16 @@ Markdown remains the substantive source of truth. The manifest is not a replacem
 ## Current exact continuation
 
 ```text
-A. preserve Checkpoint 189 as the provider-free-green Specification 022 implementation boundary
-B. implement the exact frozen FastEmbed dense adapter and provider-facing reasoner/judge execution path without changing Specification 022 science
-C. validate that live-capable path provider-free/mocked and cross-platform, including blinding, retry accounting, and raw-before-interpretation
-D. freeze a dedicated exact live-capable source only after those checks pass
-E. require separate one-shot Specification-018 authorization and owner launch request before any provider execution
-F. do not modify or rescore Specifications 015-021
+A. preserve Checkpoint 190 as the exact live-capable Specification 022 source boundary
+B. keep `v1-spec022-methodological-navigation-coverage-live-source` fixed at `cf5893d74fefa699296842b0a48326a9cb50161c`
+C. validate one clean post-reconciliation Checkpoint 190 head across Specification 022 and inherited V1 regressions
+D. stop before creating a registry authorization at this boundary
+E. any later provider execution requires separate one-shot Specification-018 authorization plus an owner launch request
+F. preserve raw artifact bytes unchanged before live scientific interpretation
+G. do not modify or rescore Specifications 015-021
 ```
 
-The next engineering question is whether the exact frozen Specification 022 treatment can be made live-capable without changing the prospectively frozen benchmark or compromising evaluator separation. The next scientific question remains Specification 022 itself and is still unexecuted.
+The live-capable engineering question is closed at Checkpoint 190. The next scientific question remains Specification 022 itself, which is still unexecuted. Provider execution is a separate governed boundary rather than an automatic consequence of freezing the source.
 
 ---
 
@@ -448,6 +452,7 @@ The next engineering question is whether the exact frozen Specification 022 trea
 187  first project-state methodological coverage diagnostic design choices resolved
 188  Specification 022 exact scientific contract and fixtures frozen before implementation
 189  Specification 022 provider-free implementation gate passed cross-platform; no provider call authorized
+190  Specification 022 exact live-capable source frozen; no provider authorization or call
 ```
 
 ## Specification 021 preservation and interpretation route

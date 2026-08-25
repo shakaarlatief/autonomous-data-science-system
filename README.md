@@ -23,16 +23,16 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            189
+checkpoint            190
 active branch         v1-methodological-navigation-coverage-diagnostic
 active PR             #68
 promoted V1 head      0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-current boundary      Specification 022 provider-free implementation gate passed; live-capable source next
+current boundary      Specification 022 live-capable source frozen; separate authorization next
 latest specification  Specification 022
 latest experiment     Specification 021
 outcome               FAIL
-next                  implement and validate the exact frozen dense/runtime
-                      live-capable path; do not authorize provider execution yet
+next                  validate the clean Checkpoint 190 head and stop before
+                      any one-shot provider authorization at this boundary
 ```
 
 Current experimental progression:
@@ -56,6 +56,7 @@ Checkpoint 187     project-state methodological coverage diagnostic design choic
 Specification 022  project-state-to-methodological-horizon coverage diagnostic contract frozen
 Checkpoint 188     exact Specification 022 fixtures, runtime treatment, metrics, thresholds, seed, and gates frozen; no provider call authorized
 Checkpoint 189     Specification 022 provider-free implementation and integrity gate passed cross-platform; no provider call authorized
+Checkpoint 190     exact Specification 022 live-capable source frozen at `cf5893d74fefa699296842b0a48326a9cb50161c`; no provider call authorized
 ```
 
 For exact continuation, start with:
@@ -64,6 +65,7 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/190_specification_022_live_capable_source_frozen.md
 docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.md
 docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
 docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md

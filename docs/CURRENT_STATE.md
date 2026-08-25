@@ -1,13 +1,13 @@
 # Current State
 
-**Checkpoint:** 189  
-**Date:** 2026-08-24  
+**Checkpoint:** 190  
+**Date:** 2026-08-25  
 **Active development branch:** `v1-methodological-navigation-coverage-diagnostic`  
 **Active PR:** #68  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`  
-**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains the latest completed experiment and remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 moved the next evaluation upstream to state-driven methodological navigation and coverage. Research 032 / Checkpoint 187 resolved the principal design choices. Specification 022 / Checkpoint 188 froze the exact first project-state-to-methodological-horizon coverage diagnostic contract before implementation. Checkpoint 189 now records a cross-platform-green provider-free implementation and integrity boundary without changing the frozen scientific contract.  
+**Development stage:** Prototype V0 complete; bounded V1 has accepted project/object, persistence, methodological knowledge, retrieval/Horizon/selective-context, real-reasoning, dependency-backed sequencing, Project Cockpit, runtime, governed autonomous live-experiment launch, and machine-checkable current-routing consistency seams. Specification 021 remains the latest completed experiment and remains frozen `FAIL` evidence. Research 031 / Checkpoint 186 moved the next evaluation upstream to state-driven methodological navigation and coverage. Research 032 / Checkpoint 187 resolved the principal design choices. Specification 022 / Checkpoint 188 froze the exact first project-state-to-methodological-horizon coverage diagnostic contract. Checkpoint 189 closed its provider-free implementation gate. Checkpoint 190 now freezes the exact live-capable source `cf5893d74fefa699296842b0a48326a9cb50161c` at `v1-spec022-methodological-navigation-coverage-live-source`, still without provider authorization or execution.  
 **Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Immediate project priority:** implement and validate the exact frozen FastEmbed dense-retrieval adapter plus provider-facing reasoner/judge execution path, then freeze an exact live-capable source before any separate provider authorization.
+**Immediate project priority:** validate one clean post-reconciliation Checkpoint 190 head while keeping the frozen live-source ref fixed, then stop at the separate one-shot Specification-018 authorization boundary.
 
 ## Active ChatGPT development context
 
@@ -208,12 +208,12 @@ final frontend stack and Cockpit implementation details
 ## Exact continuation
 
 ```text
-1. preserve Checkpoint 189 as the provider-free-green Specification 022 implementation boundary
-2. implement the exact frozen FastEmbed 0.8.0 / BAAI/bge-small-en-v1.5 dense adapter and provider-facing reasoner/judge runner without changing the scientific contract
-3. add provider-free/mocked tests for the live-capable path, including role treatment, retry accounting, blinding, and raw-before-interpretation
-4. validate the exact live-capable candidate cross-platform together with all inherited V1 regressions
-5. only then freeze a dedicated exact live-capable source SHA
-6. do not authorize a provider-backed run until a separate one-shot Specification-018 authorization and owner launch request exist
+1. preserve Checkpoint 190 as the exact live-capable Specification 022 source boundary
+2. keep `v1-spec022-methodological-navigation-coverage-live-source` fixed at `cf5893d74fefa699296842b0a48326a9cb50161c`
+3. validate one clean post-reconciliation Checkpoint 190 head across Specification 022 and inherited V1 regressions
+4. stop before creating a registry authorization at this boundary
+5. any later provider-backed run requires a separate one-shot Specification-018 authorization and owner launch request
+6. preserve the complete raw live artifact unchanged before any scientific interpretation
 7. do not modify or rescore Specifications 015-021
 ```
 
@@ -224,6 +224,7 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/190_specification_022_live_capable_source_frozen.md
 docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.md
 docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
 docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
@@ -278,4 +279,4 @@ UNIVERSE COVERAGE
     -> MODEL-FACING CONTEXT VALUE
 ```
 
-The successor experiment now begins from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. Specification 022 / Checkpoint 188 freeze four evolving episode families, 12 scored snapshots, a 28-asset controlled benchmark universe, 33 hidden oracle items, two intentional catalog gaps, an evaluator-only representation map, GENERIC / ADS_HORIZON / ORACLE_HORIZON conditions, matched one-call reasoner treatment, blinded semantic matching, exact runtime settings, seed 2026082403, MN-G01 through MN-G15 gates, and MN-P01 through MN-P05 positive signals. Checkpoint 189 records that the provider-free contract, navigation composition, request construction, blinded-judge construction, scoring, outcome classification, retry accounting, and raw-before-interpretation safeguards are now cross-platform green at implementation head `af9ad9d39379e7e268920c307c22bf4b23780cee`. Specification 022 remains scientifically unexecuted and no provider call is authorized at this boundary.
+The successor experiment now begins from Foundation-018-aligned evolving project state without supplying the reasoner with oracle methodological keys, explicit requested reasoning functions, or a candidate action menu. Specification 022 / Checkpoint 188 freeze four evolving episode families, 12 scored snapshots, a 28-asset controlled benchmark universe, 33 hidden oracle items, two intentional catalog gaps, an evaluator-only representation map, GENERIC / ADS_HORIZON / ORACLE_HORIZON conditions, matched one-call reasoner treatment, blinded semantic matching, exact runtime settings, seed 2026082403, MN-G01 through MN-G15 gates, and MN-P01 through MN-P05 positive signals. Checkpoint 189 records the cross-platform-green provider-free implementation. Checkpoint 190 freezes the live-capable source `cf5893d74fefa699296842b0a48326a9cb50161c` at `v1-spec022-methodological-navigation-coverage-live-source`, including exact FastEmbed treatment, explicit two-stage blinded adjudication, full 216-call provider-free orchestration tests, and raw-before-interpretation execution safeguards. Specification 022 remains scientifically unexecuted, no registry authorization exists, and no provider call is authorized at this boundary.
