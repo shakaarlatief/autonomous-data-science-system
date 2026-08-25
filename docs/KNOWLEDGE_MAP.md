@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-25  
-**Current checkpoint:** 200  
+**Current checkpoint:** 201  
 **Active development branch:** `v1-multimodel-development-collaboration`  
 **Active PR:** #76  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`
@@ -30,19 +30,19 @@ Current branch relationship:
 promoted integration             v1-frontend-spike @ 8215718db3e44f000cc6ed53d6a051522d429dbd
 paused deployment branch         v1-source-vault-bootstrap / PR #75
 active collaboration branch      v1-multimodel-development-collaboration / PR #76
-current checkpoint               200
+current checkpoint               201
 latest specification             Specification 023
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
 
 ---
 
-# Current stage: MC-0001 comparative review of multi-model development architecture
+# Current stage: MC-0001 bounded Phase D challenge
 
 Primary route:
 
 ```text
-docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
+docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
 docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
@@ -51,6 +51,8 @@ docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
 docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
+docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
+docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
 ```
 
 Live transport:
@@ -75,9 +77,11 @@ DEVELOPMENT_METHOD / CONTINUITY / accepted decisions
     current canonical method until explicit promotion
 ```
 
-## MC-0001 Phase-A evidence
+## MC-0001 evidence accumulated so far
 
-Claude completed its first counter-design directly through repository access. The substantive artifact is:
+### Phase A
+
+Claude completed its first counter-design directly through repository access:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
@@ -95,46 +99,77 @@ blind to all ChatGPT candidate architecture       NO
 
 Checkpoint 200 preserves this review-integrity limitation. Convergence on already exposed ideas is not clean independent confirmation.
 
-Important Claude additions now awaiting Phase-B comparison include:
+### Phase B
 
-```text
-machine-readable active-writer record
-soft writer lock plus ordinary Git stale-write protection
-HIGH-IMPACT / LOW-IMPACT collaboration trigger heuristic
-pointer-only issue transport
-mandatory calibrated-review fields
-disagreement routing defaults
-human authorization of thread/writer transitions
-provider-local conversation numbering
-explicit second-model-value criteria
-```
-
-None is accepted merely because Claude proposed it.
-
-## MC-0001 Phase B
-
-Claude may now read:
-
-```text
-docs/research/035_multi_model_development_collaboration_architecture.md
-docs/model_collaboration/README.md
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
-docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
-```
-
-Expected next artifact:
+Claude completed:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
 ```
 
-Then ChatGPT responds in:
+The review identifies genuine Phase-B convergence, omissions on both sides, revised Claude positions, dangerous under-specification, must-change items, and remaining disagreements.
+
+Important Claude contributions include:
+
+```text
+machine-checkable collaboration state is missing
+blind-review contamination needs an explicit protocol
+HIGH / LOW impact triggers are useful working defaults
+Issue transport should be pointer-first with disclosed fallback
+routine human authorization should be reduced
+provider-local session numbering + environment-prefixed IDs is preferable
+role taxonomy / lifecycle vocabulary are useful but should stay proportional
+```
+
+The user reported that this Phase-B pass used Claude Sonnet 5 with `Extra` effort. That effort fact is preserved in Checkpoint 201 rather than rewriting Claude's frozen message.
+
+### Phase C
+
+ChatGPT completed:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
 ```
 
-Only after the comparative review, response, disagreement resolution, and promotion audit should a Development Method revision or provider-neutral checkpoint contract be accepted.
+Key ChatGPT dispositions:
+
+```text
+accept machine-readable collaboration-state support as a pre-routine requirement
+reject one global active-writer field as too coarse
+prefer scoped per-thread target-write ownership + allowed write surfaces
+classify JSON/validator as coherence guard, not true distributed lock
+strengthen blind review around accepted base refs + neutral problem packets
+accept HIGH / LOW as provisional, not universal
+route REQUIREMENT to canonical authority before human arbitration
+reject blanket "more risk-averse wins" routing
+reject blanket "narrow scope wins" routing
+accept ROLE != WRITE_SCOPE
+accept provider-local environment-prefixed session IDs
+```
+
+None of these are yet promoted into the canonical Development Method.
+
+## MC-0001 Phase D
+
+Expected next artifact:
+
+```text
+docs/model_collaboration/threads/MC-0001/messages/005_claude_phase_d_challenge.md
+```
+
+The challenge is deliberately bounded to:
+
+```text
+scoped collaboration state versus a single global active writer
+JSON as coherence guard versus true lock
+canonical requirement authority before human arbitration
+risk/scope routing defaults
+ROLE != WRITE_SCOPE
+accepted-base-ref + neutral-brief blind-review design
+provider-local session/provenance convergence
+```
+
+After message 005, unresolved items should be routed to design/prototype, evidence, human project-intent decision, or explicit deferral rather than continuing open-ended debate.
 
 ---
 
@@ -162,9 +197,42 @@ claude-01
 01 - ADS Development Review & Collaboration
 ```
 
+Likely substantive-message provenance includes author, role, interaction environment, project/workspace, interaction session, conversation title, repository head, thread/message identity, and in-reply-to. Model/configuration, interaction surface, effort/reasoning mode, timestamp, and artifacts read are candidate optional fields when known and material.
+
 The exact provider-neutral provenance schema remains candidate-only until MC-0001 resolves.
 
 Historical ChatGPT-specific checkpoint metadata is not to be rewritten merely for future visual uniformity.
+
+---
+
+# Candidate mechanical collaboration-state direction
+
+A machine-readable mechanism is now considered a must-address design problem before routine multi-model canonical development, but no exact schema is frozen.
+
+Likely design neighborhood:
+
+```text
+docs/model_collaboration/threads/MC-XXXX/STATE.json
+```
+
+Candidate concerns:
+
+```text
+thread identity
+review mode
+lifecycle state
+target branch
+task owner
+target write owner
+allowed collaborator/role write surfaces
+next expected actor
+last transition
+independence status where applicable
+```
+
+A validator could provide coherence checks. It would not automatically become a true distributed lock because current model connectors share the user's GitHub authority.
+
+Stronger branch-protection/server-side machinery remains deferred pending evidence.
 
 ---
 
@@ -353,14 +421,14 @@ These remain canonical until MC-0001 completes and any multi-model changes are e
 # Exact current continuation
 
 ```text
-A. Claude performs MC-0001 Phase B comparative review
-B. Claude preserves messages/003_claude_comparative_review.md
-C. Claude explicitly discounts Phase-A convergence already exposed by the reconstruction documents
-D. ChatGPT then produces messages/004_chatgpt_response_to_claude.md
-E. classify remaining disagreements by fact, interpretation, requirement, architecture, risk, evidence sufficiency, project intent, or scope
-F. route disagreements to evidence, experiment/prototype, human decision, or explicit deferral
-G. perform the promotion audit only after the cross-model exchange resolves
-H. do not promote Development Method v0.5, provider-neutral checkpoint provenance, writer locking, or API orchestration prematurely
+A. Claude reads messages/004_chatgpt_response_to_claude.md
+B. Claude performs one bounded Phase-D challenge
+C. preserve messages/005_claude_phase_d_challenge.md
+D. mark each unresolved item AGREE / DISAGREE / PARTIAL with strongest reason + change-of-mind evidence
+E. route remaining disagreement to bounded design/prototype, evidence, human decision, or explicit deferral
+F. perform the promotion audit only after the cross-model exchange resolves
+G. if mechanical collaboration-state support remains required, design and test it before routine multi-model canonical development is declared ready
+H. do not promote Development Method v0.5, provider-neutral checkpoint provenance, or API orchestration prematurely
 I. keep PR #75 paused until the user chooses to resume the source-vault bootstrap
 J. after source operationalization, continue the serious methodological knowledge-universe program
 ```
