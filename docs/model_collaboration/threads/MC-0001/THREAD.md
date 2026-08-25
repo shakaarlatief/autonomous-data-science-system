@@ -12,14 +12,14 @@
 **Live transport:** GitHub Issue #77  
 **Target authority:** None yet. This thread is review provenance only.  
 **Allowed reviewer write surface:** New immutable files under this thread's `messages/` directory and/or GitHub Issue #77. Claude should not modify target canonical/project-state files while acting as reviewer.  
-**Current phase:** Phase A pending independent Claude proposal  
+**Current phase:** Phase B pending Claude comparative review  
 **Next expected participant:** Claude
 
 ## Why this thread exists
 
 The project owner wants multi-model development to become a deliberate professional method rather than ad hoc switching between two chats.
 
-Research 035 contains ChatGPT's candidate architecture, but the first review intentionally uses an independence-preserving sequence.
+Research 035 contains ChatGPT's candidate architecture. Claude has now frozen its first Phase-A counter-design, so comparative review is legitimate.
 
 ## Live transport
 
@@ -29,74 +29,81 @@ The optional conversational transport surface is:
 https://github.com/shakaarlatief/autonomous-data-science-system/issues/77
 ```
 
-The issue is not project authority and is not required to survive as the only record of a material conclusion. Substantive independent/comparative review artifacts should be preserved under `messages/` whenever practical.
+The issue is not project authority. Substantive review content should live in the numbered message artifacts, while the issue should normally carry short pointers and phase-transition notices to avoid duplicated substantive records drifting apart.
 
 ## Phase A: independent design
 
-Claude should read:
+Phase A is complete.
 
-```text
-docs/model_collaboration/threads/MC-0001/BRIEF.md
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
-docs/checkpoints/README.md
-README.md
-docs/CURRENT_STATE.md
-docs/KNOWLEDGE_MAP.md
-```
-
-and the governing artifacts those documents require for understanding the current development method.
-
-Claude should **not read**:
-
-```text
-docs/research/035_multi_model_development_collaboration_architecture.md
-```
-
-until its independent Phase-A architecture has been durably recorded.
-
-Requested Phase-A artifact:
+Frozen artifact:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
 ```
 
-If Claude cannot write directly to the repository, it may post the complete structured response to GitHub Issue #77. Direct repository/issue writing is preferred so the user is not a routine message relay.
+Claude did not read Research 035 or ChatGPT message 001 before freezing its proposal. Claude correctly identified, however, that the required reconstruction documents already exposed several candidate Research 035 ideas. Phase A is therefore classified as partially independent rather than fully blind.
+
+The review-integrity finding is preserved in:
+
+```text
+docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
+```
+
+Convergence on candidate ideas already visible in `README.md`, `CURRENT_STATE.md`, or `KNOWLEDGE_MAP.md` must not be counted as clean independent confirmation.
 
 ## Phase B: comparative review
 
-After Phase A is frozen, Claude should read:
+Claude should now read:
 
 ```text
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
 ```
 
-and produce:
+alongside its own frozen Phase-A proposal.
+
+Expected durable output:
 
 ```text
 docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
 ```
 
-The review should identify:
+The comparative review should distinguish:
 
 ```text
-real convergence
+convergence that was already exposed during Phase A
+cleanly independent additions from Claude
+real convergence after full comparison
 material disagreement
 important omissions in ChatGPT's design
-important omissions in Claude's independent design
+important omissions in Claude's design
 unnecessary complexity
 dangerous under-specification
 must-change items
 optional improvements
+remaining unresolved questions
 what evidence could resolve disagreements
 ```
 
-Agreement should not be rewarded. Disagreement should not be rewarded. The standard is calibrated reasoning.
+Claude should directly challenge at least these Phase-A additions rather than assuming they are improvements merely because Claude proposed them:
+
+```text
+machine-readable active-writer lock
+HIGH-IMPACT / LOW-IMPACT review trigger heuristic
+pointer-only GitHub issue rule
+mandatory calibrated-review template fields
+disagreement routing defaults
+human authorization of thread opening and writer transitions
+provider-local conversation numbering
+```
+
+Agreement is not rewarded. Disagreement is not rewarded. The standard is calibrated reasoning.
 
 ## Phase C: ChatGPT response
 
-ChatGPT then reads the two Claude artifacts and responds in a new message rather than rewriting Claude's record.
+ChatGPT will not respond substantively to Claude's architecture until the Phase-B artifact is frozen.
 
 Expected path:
 
@@ -132,9 +139,11 @@ The cross-model review should especially challenge:
 - whether a dedicated repository exchange is the right abstraction;
 - whether issue/PR comments should be primary or secondary transport;
 - whether one-owner-per-task is sufficient;
-- whether independent-first review is worth its overhead;
+- whether a machine-readable writer lock is worth adding;
+- whether independent-first review is worth its overhead and how to keep future blind reviews genuinely blind;
 - how provider-neutral checkpoint/session provenance should work;
 - how much model-to-model dialogue should be preserved;
+- how much routine authorization the human should actually perform;
 - how to measure actual value from a second model;
 - and what evidence would justify API orchestration later.
 
@@ -142,4 +151,4 @@ The cross-model review should especially challenge:
 
 No resolution exists yet.
 
-No change to `DEVELOPMENT_METHOD.md`, `CONTINUITY.md`, checkpoint metadata, or validators should be treated as accepted until the thread has completed its review and promotion audit.
+No change to `DEVELOPMENT_METHOD.md`, `CONTINUITY.md`, checkpoint metadata, validators, or accepted decisions should be treated as accepted until the thread has completed comparative review, response, resolution, and promotion audit.
