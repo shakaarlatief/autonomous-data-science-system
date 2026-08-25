@@ -11,6 +11,7 @@ on:
       - tests/unit/test_methodological_navigation_coverage_dense_fastembed.py
       - tests/unit/test_methodological_navigation_coverage_runner.py
       - tests/unit/test_methodological_navigation_coverage_live_runner.py
+      - tests/unit/test_methodological_navigation_coverage_live_workflow.py
       - tests/integration/test_methodological_navigation_coverage_vertical_slice.py
       - src/ads_system/application/horizon.py
       - src/ads_system/application/horizon_models.py
@@ -25,6 +26,7 @@ on:
       - docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
       - docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.md
       - .github/workflows/v1-methodological-navigation-coverage.yml
+      - .github/workflows/v1-methodological-navigation-coverage-live.yml
   pull_request:
     branches: [v1-frontend-spike]
     paths:
@@ -34,6 +36,7 @@ on:
       - tests/unit/test_methodological_navigation_coverage_dense_fastembed.py
       - tests/unit/test_methodological_navigation_coverage_runner.py
       - tests/unit/test_methodological_navigation_coverage_live_runner.py
+      - tests/unit/test_methodological_navigation_coverage_live_workflow.py
       - tests/integration/test_methodological_navigation_coverage_vertical_slice.py
       - src/ads_system/application/horizon.py
       - src/ads_system/application/horizon_models.py
@@ -48,6 +51,7 @@ on:
       - docs/checkpoints/188_specification_022_project_state_methodological_coverage_contract_frozen.md
       - docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.md
       - .github/workflows/v1-methodological-navigation-coverage.yml
+      - .github/workflows/v1-methodological-navigation-coverage-live.yml
 
 permissions:
   contents: read
@@ -84,6 +88,7 @@ jobs:
           tests/unit/test_methodological_navigation_coverage_dense_fastembed.py
           tests/unit/test_methodological_navigation_coverage_runner.py
           tests/unit/test_methodological_navigation_coverage_live_runner.py
+          tests/unit/test_methodological_navigation_coverage_live_workflow.py
           tests/integration/test_methodological_navigation_coverage_vertical_slice.py
           -q
       - name: Run existing V1 Python regression suite
