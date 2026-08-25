@@ -19,7 +19,7 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe. Its prerequisite Source Universe substrate has been accepted and promoted. The permanent source-vault deployment is preserved but temporarily paused while the project pressure-tests a major Level-2 change: governed multi-model development collaboration between ChatGPT, Claude, and the human project owner.**
 
 ```text
-checkpoint            199
+checkpoint            200
 active branch         v1-multimodel-development-collaboration
 active PR             #76
 promoted V1 head      8215718db3e44f000cc6ed53d6a051522d429dbd
@@ -27,8 +27,7 @@ latest specification  Specification 023
 source outcome         SOURCE_SUBSTRATE_ACCEPTED
 latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary       independent Claude architecture + comparative review
-                       of the multi-model development method;
+current boundary       MC-0001 Phase B comparative Claude review;
                        PR #75 source-vault bootstrap paused
 ```
 
@@ -37,10 +36,13 @@ The active collaboration route is:
 ```text
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
 docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
+docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
 docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
+docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
 ```
 
 GitHub Issue #77 is the optional live transport surface for `MC-0001`; the issue is collaboration transport, not canonical project authority.
@@ -69,7 +71,9 @@ when automated API orchestration would actually earn its cost/complexity
 
 Research 035 is the first ChatGPT-authored candidate architecture. It is **not** yet Development Method v0.5.
 
-The first trial, `MC-0001`, intentionally uses an independent-then-comparative Claude review. Claude should first design its own architecture from the neutral brief without reading Research 035, preserve that proposal, and only then compare it with ChatGPT's design.
+The first trial, `MC-0001`, uses an independent-then-comparative Claude review. Claude has now frozen Phase A in `002_claude_independent_proposal.md`. That pass was independent from the full Research 035 memo and ChatGPT message 001, but Claude correctly identified that the required routing/current-state documents already exposed several candidate architecture ideas. Phase A is therefore partially independent rather than fully blind, and contaminated convergence must not be counted as clean independent confirmation.
+
+Phase B is now open. Claude may read the full candidate architecture and compare it against its frozen first proposal.
 
 The goal is neither consensus nor disagreement. The goal is calibrated cross-model reasoning.
 
@@ -356,11 +360,14 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
 docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
+docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
 
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
@@ -375,11 +382,11 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. Claude performs MC-0001 Phase A from the neutral BRIEF without reading Research 035
-2. preserve Claude's independently derived architecture
-3. only then let Claude read Research 035 and perform Phase B comparative review
-4. preserve genuine convergence, disagreement, omissions, and change-of-mind conditions
-5. ChatGPT responds to the preserved Claude artifacts
+1. Claude performs MC-0001 Phase B by reading Research 035 and the candidate collaboration/provenance artifacts
+2. Claude compares them against its frozen Phase-A proposal
+3. Claude explicitly discounts convergence already exposed during the partially contaminated Phase-A read
+4. preserve the comparative review as messages/003_claude_comparative_review.md
+5. only then does ChatGPT produce messages/004_chatgpt_response_to_claude.md
 6. classify remaining disagreements and route them to evidence/test, human decision, or deferral
 7. only then decide whether Development Method v0.5 / provider-neutral checkpoint provenance is justified
 8. PR #75 remains paused until the user chooses to resume the permanent source-vault deployment
