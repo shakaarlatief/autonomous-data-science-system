@@ -8,6 +8,8 @@ on:
     branches: [main]
     paths:
       - .github/_tmp_preserve_spec022_raw.trigger
+  issues:
+    types: [opened]
 
 permissions:
   actions: read
@@ -16,7 +18,7 @@ permissions:
 
 jobs:
   preserve:
-    if: github.event_name == 'push' || github.event.workflow_run.id == 32815726116
+    if: github.event_name == 'push' || github.event.workflow_run.id == 32815726116 || (github.event_name == 'issues' && github.event.issue.title == '[ADS PRESERVE] spec022-raw-32815726116')
     runs-on: ubuntu-latest
     env:
       TARGET_RUN_ID: '32815726116'
