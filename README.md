@@ -20,70 +20,108 @@ Explicit machinery must earn its complexity empirically.
 
 ## Current development stage
 
-**Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
+**Prototype V0 is complete. The project is now in the first serious methodological knowledge-universe construction stage of bounded V1.**
 
 ```text
-checkpoint            192
-active branch         v1-spec022-incomplete-preservation
-active PR             #72
-promoted V1 head      0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-current boundary      Specification 022 incomplete evidence preservation-only promotion
+checkpoint            193
+active branch         v1-methodological-knowledge-universe
+active PR             #73
+promoted V1 head      bb5d0640fff633e87a6a8c024b1a842fadd85a9d
+current boundary      knowledge-universe construction framework frozen;
+                      six-slice representation pressure test next
 latest specification  Specification 022
 latest experiment     Specification 022
 outcome               INCOMPLETE
-next                  validate and merge preservation-only PR #72,
-                      close implementation PR #68 without merge,
-                      then begin the methodological knowledge-universe stage
 ```
 
-Current experimental progression:
+The active construction sources are:
 
 ```text
-Prototype V0       strong falsification of original P0 design
-Specification 013  selective exact-revision context accepted
-Specification 014  equal frozen reasoning quality with 66.56% fewer SELECTIVE input tokens
-Specification 015  recommendation/action-value FAIL; implementation rejected
-Specification 016  dependency-backed DEFER-vs-NOT_NOW boundary supported
-Specification 017  relation-backed recommendation run incomplete; implementation rejected
-Specification 018  governed autonomous live-experiment launcher supported/promoted
-Specification 019  system-owned-provenance recommendation rerun completed; FAIL preserved
-Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
-Specification 021  complete supplied-action recommendation/disposition experiment FAIL; negative evidence preserved without implementation promotion
-Checkpoint 183     clarified that supplied-action disposition calibration does not test open-world methodological navigation / coverage
-Checkpoint 185     Specification 021 evidence preserved and failed implementation closed
-Checkpoint 186     methodological-navigation / coverage architecture and evaluation review completed
-Checkpoint 187     project-state methodological coverage diagnostic design choices resolved
-Specification 022  project-state-to-methodological-horizon coverage diagnostic contract frozen
-Checkpoint 188     exact Specification 022 fixtures, runtime treatment, metrics, thresholds, seed, and gates frozen
-Checkpoint 189     Specification 022 provider-free implementation and integrity gate passed cross-platform
-Checkpoint 190     exact Specification 022 live-capable source frozen at `cf5893d74fefa699296842b0a48326a9cb50161c`
-Checkpoint 191     live execution preserved as INCOMPLETE / EXECUTION INTEGRITY FAILED; knowledge-universe stage selected next
-Checkpoint 192     preservation-only promotion candidate for durable Specification 022 evidence/history
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
 ```
 
-For exact continuation, start with:
+The next step is not another small provider benchmark and not bulk generation of thousands of method summaries.
+
+It is:
 
 ```text
-docs/CURRENT_STATE.md
-docs/KNOWLEDGE_MAP.md
-docs/current_routing.json
-docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md
-docs/checkpoints/191_specification_022_live_execution_incomplete_knowledge_universe_next.md
-experiments/methodological_navigation_coverage/V1_METHODOLOGICAL_NAVIGATION_COVERAGE_RESULT.md
-experiments/methodological_navigation_coverage/results/spec022-live-20260825-run-32815726116/PRE_INTERPRETATION_ARTIFACT_COMMITMENT.md
-docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
-docs/research/032_project_state_to_methodological_horizon_coverage_diagnostic_design.md
-docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/foundations/008_knowledge_quality_generalization_and_evolution.md
+register source bundles
+    -> pressure-test the representation deeply across six heterogeneous areas
+    -> record representation defects
+    -> revise where warranted
+    -> then begin broader accepted-core construction
 ```
+
+The first six deep slices are:
+
+```text
+Validation
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+---
+
+## Why the project changed emphasis
+
+Earlier V1 work deliberately used small controlled knowledge universes to isolate retrieval, Horizon construction, selective context, reasoning, and recommendation seams.
+
+That produced important evidence, but the balance has now changed.
+
+The project has already established enough substrate around:
+
+```text
+project state
+reusable knowledge representation
+exact revisions and provenance
+governed persistence / interchange
+retrieval
+applicability / missing context
+MethodologicalHorizon construction
+selective context
+real reasoning
+```
+
+that keeping the methodological universe artificially tiny would now hide important architectural problems.
+
+The current strategy is therefore:
+
+```text
+current architecture
+    -> build serious source-backed knowledge
+    -> discover where the representation breaks or strains
+    -> refine it
+    -> continue construction
+    -> test on real projects
+    -> govern knowledge evolution
+```
+
+Checkpoint 191 established the chronological direction:
+
+```text
+1. serious governed methodological knowledge universe
+2. navigation / selection over that universe
+3. project-specific concern / question / option generation
+4. prioritization / disposition
+5. execution and project-state update
+6. real end-to-end project trials
+7. governed knowledge evolution
+```
+
+The arrows are intentionally reversible when later stages expose missing or badly represented knowledge.
 
 ---
 
 ## Durable post-V0 constraint
 
-Prototype V0 strongly falsified the original P0 design. The broader ADS vision survived, but the original orchestration machinery did not earn its complexity.
+Prototype V0 strongly falsified the original P0 implementation strategy.
+
+The broader ADS vision survived, but the original always-on orchestration machinery did not earn its cost.
 
 The strongest scaling lesson remains:
 
@@ -93,7 +131,7 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-Do not restore large always-on project/methodological context, narrow path-sensitive activation, generic recursive reopening, or full frontier machinery unchanged.
+The serious knowledge universe is therefore system memory and methodological structure. It must not become one giant prompt.
 
 Primary evidence:
 
@@ -104,11 +142,9 @@ prototype_v0/README.md
 
 ---
 
-## Current V1 architecture
+## Current architectural core
 
-### Project semantics
-
-Foundation 018 distinguishes:
+Foundation 018 separates:
 
 ```text
 OBJECTS
@@ -117,7 +153,7 @@ EVENTS
 VIEWS
 ```
 
-including:
+and preserves distinctions including:
 
 ```text
 Investigation != Run
@@ -126,12 +162,9 @@ Finding != Claim
 Claim != Decision
 current state != event history
 persisted object != derived recommendation
-workspace section != fundamental object
 ```
 
-### Methodological navigation
-
-Foundation 019 establishes:
+Foundation 019 defines the methodological-navigation progression:
 
 ```text
 KNOWN
@@ -141,252 +174,91 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-The bounded executable path currently reaches:
+Foundation 020 provides the current reusable-knowledge representation direction:
 
 ```text
-reusable methodological knowledge
-    -> retrieval
-    -> explained MethodologicalHorizon
-    -> applicability / missing context
-    -> selective exact-revision MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-    -> measured real reasoning
+KnowledgeAsset
+KnowledgeComponent
+NarrativeFacet
+KnowledgeRelation
+Conditional KnowledgeRule
+KnowledgeCollection
+exact revision identity
+provenance
 ```
 
-The production-facing recommendation/action layer remains unpromoted because no frozen experiment has yet shown that selective explicit methodological context improves recommendation/action quality beyond the strong generic control.
+Foundation 008 governs reuse, generalization, challenge, maturity, and enforcement.
 
-Primary foundations:
-
-```text
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-```
+The current representation is deliberately not treated as final. Serious content construction is expected to pressure-test it.
 
 ---
 
 ## Accepted infrastructure and interaction boundaries
+
+Accepted V1 decisions include:
 
 ```text
 D-028  SQLite-centered local-first operational architecture
 D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
 D-031  governed deterministic JSON / JSON Schema knowledge interchange
-D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime port
+D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
 ```
 
-The governed reusable-knowledge round-trip is closed across SQLite/Ubuntu, SQLite/Windows, and PostgreSQL 18 through Checkpoint 127.
+The governed reusable-knowledge round-trip is closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18.
 
-Specification 008 promotes the **Project Cockpit** as the V1 primary immersive active-work interaction model. It is the intended user-facing environment for chat, project navigation, analytical workspaces, evidence, recommendations, decisions, and project state. Final frontend/chart/canvas choices and production backend/API architecture remain open.
+Specification 008 promotes the Project Cockpit interaction architecture.
 
-Specification 018 promotes the first bounded governed live-experiment control plane:
+Specification 018 promotes the bounded governed live-experiment launcher.
 
-```text
-owner-created request
-    -> repository authorization registry
-    -> exact owner/source/green CI/duplicate checks
-    -> allowlisted workflow_dispatch
-    -> independently validating target workflow
-```
-
-The launcher itself receives no provider credential and does not authorize arbitrary commands, workflows, refs, prompts, models, or secrets from issue text.
+Candidate or benchmark knowledge cannot silently create accepted methodological authority through the accepted interchange boundary.
 
 ---
 
-## Accepted selective-context evidence
+## Retrieval and selective-context evidence
 
-Specification 013 accepted a bounded selector that reduces a deliberately wide ten-asset MethodologicalHorizon to 2-3 exact current revisions per task while retaining explicit omission evidence.
+The bounded accepted chain is:
 
-Specification 014 tested the downstream real-model consequence:
+```text
+lexical retrieval
+    -> dense complementarity
+    -> hybrid comparator
+    -> explained MethodologicalHorizon
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+    -> measured real reasoning
+```
+
+Specification 014 showed:
 
 ```text
 reasoner outputs        24 / 24
 judge outputs           24 / 24
-retries                 0
 SELECTIVE quality       1.000000
 FULL_HORIZON quality    1.000000
 SELECTIVE/FULL input    0.334379
 input-token reduction   66.56%
-critical regressions    none
 ```
 
-Supported conclusion:
-
-> Selective exact-revision methodological context preserved every frozen reasoning obligation while materially reducing real provider input burden on the bounded benchmark.
-
-This does not establish a universal context budget or final provider/model.
+This supports selective context economy on the bounded benchmark. It does not establish the final navigation strategy for a serious knowledge universe.
 
 ---
 
-## Recommendation/action evidence
+## Recommendation/action evidence remains bounded
 
-### Specification 015
-
-The first three-condition recommendation/action-value experiment classified `FAIL`. The failed implementation was not promoted. The main discrepancy was a preregistered `DEFER` versus `NOT_NOW` boundary.
-
-### Specification 016
-
-A prospective construct-validity diagnostic then showed that DEFER-like sequencing can be made reliably distinguishable when it is represented as an already-justified action waiting on one exact activating dependency:
+Later experiments produced several distinct results:
 
 ```text
-36 / 36 exact dispositions correct
-18 / 18 DEFER pointers exact
-18 / 18 NOT_NOW pointers null
-0 retries
-DISPOSITION_BOUNDARY_SUPPORTED
+Specification 015  FAIL
+Specification 016  dependency-backed DEFER-vs-NOT_NOW boundary supported
+Specification 017  INCOMPLETE
+Specification 019  FAIL after provenance repair
+Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported
+Specification 021  FAIL on supplied-action recommendation value
+Specification 022  INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
 
-The bounded lesson is structural, not a final production-enum decision.
-
-### Specification 017
-
-The relation-backed recommendation/action comparison ended incomplete because model-authored `methodological_basis` duplicated system-known provenance. The durable instrumentation distinction became:
-
-```text
-reasoning function / task profile
-    !=
-reusable knowledge stable-key provenance
-```
-
-### Specification 019
-
-Specification 019 prospectively repaired that boundary by keeping exact supplied-context provenance system-owned while leaving recommendation content model-owned.
-
-The governed live run completed the full frozen design:
-
-```text
-source                    6b5e6237b738250458550f95c9f3a6b0d51e86ec
-reasoner outputs          36 / 36
-judge outputs             36 / 36
-provider attempts         72 / 90
-retries                   0
-execution integrity       true
-```
-
-Frozen aggregate result:
-
-```text
-                         GENERIC        SELECTIVE       FULL_HORIZON
-exact accuracy           0.944444       0.916667        0.944444
-semantic score           0.950000       0.950000        0.950000
-blocking false positives 4              6               4
-```
-
-Frozen outcome:
-
-```text
-absolute gates           FAIL
-relative gates           FAIL
-expansion gates          FAIL
-positive value signals   0
-advancement outcome      FAIL
-```
-
-Specification 019 remains immutable historical `FAIL` evidence and its failed recommendation/action implementation is not promoted.
-
-### Specification 020
-
-Specification 020 prospectively isolated the remaining `RECOMMENDED` versus `BLOCKING_REQUIRED` calibration boundary using explicit requirement/scope relations and no methodological-context treatment.
-
-The governed live design completed exactly as frozen:
-
-```text
-frozen source            82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a
-reasoner outputs         36 / 36
-validated observations   36 / 36
-provider attempts        36 / 45
-failed attempts          0
-retries                   0
-aggregate exact accuracy 1.000000
-all hard gates           PASS
-outcome                  BLOCKING_BOUNDARY_SUPPORTED
-```
-
-All six contrastive pairs separated perfectly across all three repetitions per side. Every expected `BLOCKING_REQUIRED` output returned the exact unresolved requirement and exact blocked downstream scope. Every expected `RECOMMENDED` output returned both blocking pointers as null.
-
-Supported bounded conclusion:
-
-```text
-BLOCKING_REQUIRED-like work
-    should identify an exact unresolved requirement
-    + an exact active defended downstream scope
-    + an explicit scope DEPENDS_ON requirement relation
-    + the action that resolves that requirement
-```
-
-This makes taxonomy inseparability and fixed-reasoner inability less likely explanations for Specification 019's RB-02 behavior. Specification 019 is not rescored.
-
-Specification 020 does not establish production recommendation enums, final blocking policy, SELECTIVE recommendation value, ranking, open-world action generation, automatic execution, or final provider/model selection.
-
-The cleaned exact PR #44 head passed the Specification 020 Ubuntu/Windows diagnostic plus accepted V1 reasoning-context, disposition-semantics, launcher, and checkpoint-metadata regressions before merge into `v1-frontend-spike` at `a856983172f6436b73e3f7d0e609d208b55a443b`.
-
-Primary evidence:
-
-```text
-docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_supported.md
-experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
-experiments/blocking_calibration/results/spec020-live-20260824-run-32701999678/
-```
-
----
-
-## System-owned provenance boundary
-
-Specifications 017-020 established a useful separation:
-
-```text
-SYSTEM-OWNED PROVENANCE / IDENTITIES
-    exact supplied stable_key@revision_id
-    methodology payload digest and byte count
-    treatment identity
-    supplied action / requirement / downstream-scope identities
-
-MODEL-OWNED CONTENT
-    dispositions
-    dependency pointers among supplied identities
-    clarifications
-    rationales
-```
-
-The model should not be required to reproduce authoritative context provenance that the system already knows exactly.
-
----
-
-## Preservation and continuity hardening
-
-The Specification 020 stage-boundary review found no substantive preservation failure. It did confirm recurring lag in mutable routing/current-state documents relative to already durable checkpoint/result evidence.
-
-Checkpoint 172 records the first green hardening of that observed consistency seam:
-
-```text
-docs/current_routing.json
-    machine-readable routing metadata only
-
-scripts/check_current_routing.py
-    manifest contract + checkpoint existence + contradiction checks
-
-.github/workflows/current-routing-consistency.yml
-    Ubuntu/Windows validation for routing-sensitive changes
-```
-
-Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence.
-
-The unexpected Session-05 boundary again demonstrated:
-
-```text
-substantive preservation failure      NO
-routing/current-state reconciliation  INTERRUPTED
-```
-
-Checkpoint 191 and the stable Specification 022 result survived before the conversation ended. Checkpoint 192 and PR #72 now perform the preservation-only reconciliation without promoting the incomplete implementation.
-
----
-
-## Specification 021 interpretation boundary
-
-The complete Specification 021 result is `FAIL`, but its scope is deliberately narrow. Every condition was already supplied with the explicit reasoning function, candidate action menu, requirements, downstream scopes, dependency/resolver relations, defer triggers, and sequencing relations. The experiment therefore tested downstream disposition calibration over an already-constructed decision space, not whether ADS can discover and surface the methodological option space from raw evolving project state.
-
-Research 030 and Checkpoint 183 preserve the guardrail:
+The important guardrail from Research 030 remains:
 
 ```text
 methodological navigation / coverage
@@ -394,15 +266,15 @@ methodological navigation / coverage
 downstream disposition calibration over an already supplied action set
 ```
 
-GENERIC remains an essential experimental control, not an architectural replacement for the methodological-navigation brain described by Foundations 006, 017, 019, 020 and Research 028.
+The recent recommendation experiments therefore do not replace the need to build a real methodological option space.
 
 ---
 
-## Specification 022 incomplete execution boundary
+## Specification 022 boundary
 
-Specification 022 moved the evaluation upstream to evolving Foundation-018-aligned project state and prospectively separated methodological-universe gaps, navigation gaps, and downstream reasoning/use gaps.
+Specification 022 moved evaluation upstream from an already supplied action menu to evolving project state and a controlled methodological universe.
 
-The governed live run used exact frozen source:
+Its live run used exact source:
 
 ```text
 cf5893d74fefa699296842b0a48326a9cb50161c
@@ -421,7 +293,14 @@ execution_integrity               false
 advancement_outcome               none
 ```
 
-Every reasoner observation exhausted the initial attempt plus the one allowed retry because the live model repeatedly returned semantically natural concern-state labels outside the frozen `CURRENT | MISSING_CONTEXT` output enum. Pydantic therefore rejected every structured result before the judge stage.
+The frozen schema accepted only:
+
+```text
+CURRENT
+MISSING_CONTEXT
+```
+
+while the live model repeatedly returned semantically natural alternative state labels. Every structured result was rejected before judge execution.
 
 The preserved scientific classification is:
 
@@ -429,56 +308,99 @@ The preserved scientific classification is:
 INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
 
-No comparative conclusion about `GENERIC`, `ADS_HORIZON`, or `ORACLE_HORIZON` is legitimate. Invalid prose is not post-hoc normalized or rescored.
+There is no legitimate comparative conclusion for `GENERIC`, `ADS_HORIZON`, or `ORACLE_HORIZON`.
 
-The complete downloaded GitHub artifact was cryptographically committed before scientific interpretation at:
+The incomplete implementation was not promoted. Its durable evidence/history was preserved through Checkpoints 191-192 and PR #72.
 
-```text
-bfda6d9048d3380e2f557b0e7bb3d1585de5f3f9
-```
-
-The original GitHub Actions artifact remains the authoritative byte source. The automated byte-copy preservation transport failure is preserved as engineering/governance evidence rather than hidden.
+No immediate Specification 022 rerun is planned.
 
 ---
 
-## Strategic shift: serious methodological knowledge universe
+## Serious knowledge-universe construction framework
 
-Checkpoint 191 changes the next development emphasis from another immediate small mechanism rerun to construction of the first serious governed methodological knowledge universe:
+Research 033 establishes the first construction-cycle rules.
+
+### Coverage map is not authority
+
+`docs/methodological_knowledge/COVERAGE_MAP.md` is a planning and gap-visibility view, not a methodological truth store.
+
+### Coverage depth is not maturity
+
+The first construction-depth ladder is:
 
 ```text
-1. serious governed methodological knowledge universe
-        ->
-2. navigation / selection over that universe
-        ->
-3. project-specific concern / question / option generation
-        ->
-4. prioritization / disposition
-        ->
-5. execution and project-state update
-        ->
-6. real end-to-end project trials
-        ->
-7. governed knowledge evolution
+C0  MAPPED
+C1  SOURCED
+C2  DECOMPOSED
+C3  OPERATIONALIZED
+C4  CONNECTED
+C5  BEHAVIORALLY_TESTED
+C6  PROJECT_EXPOSED
 ```
 
-The knowledge-universe stage is not a plan to generate a shallow encyclopedia. It should pressure-test operational reasoning knowledge such as question templates, evidence requirements, decision principles, alternatives, failure modes, assumptions, claim constraints, dependencies, resolution/reopen criteria, provenance, maturity, limitations, and relations among methods and project states.
+These levels do not mean confidence, truth, freshness, or enforcement authority.
 
-Before bulk authoring, the construction framework must establish a broad coverage map, representation/package pressure tests, source and authority policy, provenance and lifecycle policy, duplicate/contradiction handling, knowledge QA/review workflow, breadth-versus-depth strategy, and deep heterogeneous vertical slices.
+### Knowledge target is operational
+
+Useful reusable knowledge may include:
+
+```text
+question templates
+evidence requirements
+hard invariants
+decision principles
+strategies and alternatives
+investigation templates
+assumptions
+failure modes and detection hooks
+diagnostics
+claim constraints
+human / authority hooks
+relations
+conditional rules
+resolution / reopen criteria
+limitations and counterexamples
+provenance
+revision / governance state
+```
+
+### Source authority is proposition-sensitive
+
+There is no universal source-ranking rule. Mathematical definitions, empirical methodology, software behavior, standards, and local project facts require different appropriate source classes.
+
+### LLMs assist, but do not self-authorize
+
+LLMs may extract, decompose, propose relations, find duplicate candidates, challenge scope, and draft behavioral cases. Model output alone is not independent support for accepted reusable knowledge.
+
+### Existing governance remains authoritative
+
+Candidate knowledge must pass through the accepted interchange/governance boundary rather than bypassing it through informal files or model output.
 
 ---
 
-## Exact continuation
+## First pressure-test program
+
+Before broad accepted-asset authoring, each of the six slices should produce a packet containing:
 
 ```text
-1. validate preservation-only PR #72 on its exact head
-2. merge PR #72 only if its evidence/history-only boundary remains clean and green
-3. close Specification 022 implementation PR #68 without merge
-4. reconcile v1-frontend-spike to the preserved Checkpoint 192 boundary
-5. create a dedicated methodological-knowledge-universe branch from that clean integration head
-6. freeze the knowledge-universe construction framework before bulk authoring
-7. do not immediately rerun the 216-call Specification 022 matrix
-8. do not modify or rescore Specifications 015-022
+slice boundary and purpose
+source bundle / source-register candidates
+coverage decomposition
+canonical concept candidates
+candidate asset/component boundaries
+question templates
+evidence requirements
+alternatives / strategies / methods
+failure modes and claim constraints
+relation candidates
+conditional-rule candidates
+provenance-granularity examples
+duplicate / contradiction examples
+behavioral cases
+representation problems discovered
 ```
+
+The point is to learn where the current representation succeeds and fails under real methodological depth.
 
 ---
 
@@ -488,4 +410,54 @@ This repository is the project's durable source of truth.
 
 > **The chat is where we think. The repository is where the system remembers.**
 
-The project continues to follow one empirical rule: build the smallest mechanism that can test the architectural hypothesis, preregister what success means where possible, preserve failures and incomplete runs as evidence, and promote only what earns its complexity.
+Stable project knowledge is separated across canonical documents, foundations, research memos, specifications, checkpoints, experiment evidence, routing indexes, and Git history.
+
+The project continues to follow the empirical rule that explicit mechanisms and promoted authority must earn their place through evidence.
+
+---
+
+## Start here
+
+For the current stage:
+
+```text
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/current_routing.json
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+```
+
+For the governing reusable-knowledge architecture:
+
+```text
+docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
+docs/foundations/008_knowledge_quality_generalization_and_evolution.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
+```
+
+For the transition out of Specification 022:
+
+```text
+docs/checkpoints/191_specification_022_live_execution_incomplete_knowledge_universe_next.md
+docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md
+experiments/methodological_navigation_coverage/V1_METHODOLOGICAL_NAVIGATION_COVERAGE_RESULT.md
+```
+
+## Exact next step
+
+```text
+1. validate the Checkpoint 193 / Research 033 / coverage-map framework head
+2. design the source-register and source-bundle candidate contract
+3. build one coordinated six-slice representation pressure-test packet
+4. use existing controlled source material only after source registration
+5. add stronger external/authoritative sources where proposition support requires them
+6. preserve every representation defect instead of forcing content into the current schema
+7. revise the representation only where content pressure warrants it
+8. then begin broader accepted-core knowledge construction
+9. resume navigation/selection evaluation against the serious universe
+10. begin real project trials before the universe is complete
+```
