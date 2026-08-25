@@ -2,9 +2,16 @@
 
 **Date:** 2026-08-25  
 **Status:** LIVE-CAPABLE SOURCE FROZEN; NO PROVIDER CALL AUTHORIZED  
+**Checkpoint class:** IMPLEMENTATION / LIVE-SOURCE FREEZE  
+**Project stage:** Post-V0 bounded V1 implementation and integration  
+**Scope:** Preserves the exact live-capable source, target workflow, provider-free executable validation, and immutable source ref for the already-frozen Specification 022 methodological-navigation coverage diagnostic.  
+**Authority:** Engineering/instrumentation and source-freeze checkpoint only. It does not assign a Specification 022 scientific outcome, create a live-experiment registry authorization, authorize provider execution, change the frozen scientific contract or fixtures, promote benchmark knowledge into accepted methodological authority, modify Specifications 015-021, or select a final production navigation policy.  
 **Design session:** 05  
 **ChatGPT project:** Autonomous Data Science System  
-**Session title:** 05 - Selective Context Promotion & Reasoning Vertical Slice
+**Session title:** 05 - Selective Context Promotion & Reasoning Vertical Slice  
+**Branch:** `v1-methodological-navigation-coverage-diagnostic`  
+**PR:** #68, draft  
+**Starting promoted integration head:** `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`
 
 ## Boundary
 
