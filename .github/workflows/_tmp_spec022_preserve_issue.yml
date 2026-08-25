@@ -1,0 +1,104 @@
+name: Temporary Specification 022 issue preservation
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  actions: read
+  contents: write
+  issues: write
+
+jobs:
+  preserve:
+    if: github.event.issue.title == '[ADS PRESERVE EXECUTE] spec022-raw-32815726116'
+    runs-on: ubuntu-latest
+    env:
+      TARGET_RUN_ID: '32815726116'
+      TARGET_SOURCE_SHA: 'cf5893d74fefa699296842b0a48326a9cb50161c'
+      TARGET_WORKFLOW_NAME: 'V1 methodological navigation coverage live'
+      EXPECTED_ARTIFACT_NAME: 'v1-methodological-navigation-coverage-cf5893d74fefa699296842b0a48326a9cb50161c-1'
+      PRESERVE_BRANCH: 'v1-methodological-navigation-coverage-diagnostic'
+      DESTINATION: 'experiments/methodological_navigation_coverage/results/spec022-live-20260825-run-32815726116'
+      AUDIT_ISSUE: '69'
+    steps:
+      - name: Checkout preservation branch
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ env.PRESERVE_BRANCH }}
+          fetch-depth: 0
+
+      - name: Verify target and artifact
+        id: artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run_json="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${TARGET_RUN_ID}")"
+          [ "$(printf '%s' "$run_json" | jq -r '.status')" = 'completed' ]
+          [ "$(printf '%s' "$run_json" | jq -r '.head_sha')" = "$TARGET_SOURCE_SHA" ]
+          [ "$(printf '%s' "$run_json" | jq -r '.name')" = "$TARGET_WORKFLOW_NAME" ]
+          [ "$(printf '%s' "$run_json" | jq -r '.run_attempt')" = '1' ]
+          artifacts="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${TARGET_RUN_ID}/artifacts")"
+          count="$(printf '%s' "$artifacts" | jq --arg n "$EXPECTED_ARTIFACT_NAME" '[.artifacts[] | select(.name == $n and .expired == false)] | length')"
+          [ "$count" = '1' ]
+          id="$(printf '%s' "$artifacts" | jq -r --arg n "$EXPECTED_ARTIFACT_NAME" '.artifacts[] | select(.name == $n and .expired == false) | .id')"
+          size="$(printf '%s' "$artifacts" | jq -r --arg n "$EXPECTED_ARTIFACT_NAME" '.artifacts[] | select(.name == $n and .expired == false) | .size_in_bytes')"
+          echo "id=$id" >> "$GITHUB_OUTPUT"
+          echo "size=$size" >> "$GITHUB_OUTPUT"
+
+      - name: Preserve opaque artifact before interpretation
+        id: preserve
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ steps.artifact.outputs.id }}
+          ARTIFACT_SIZE: ${{ steps.artifact.outputs.size }}
+        run: |
+          set -euo pipefail
+          [ ! -e "$DESTINATION" ] || { echo "Destination already exists"; exit 1; }
+          mkdir -p /tmp/spec022 "$DESTINATION"
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > /tmp/spec022/artifact.zip
+          zip_sha="$(sha256sum /tmp/spec022/artifact.zip | awk '{print $1}')"
+          unzip -q /tmp/spec022/artifact.zip -d "$DESTINATION"
+          {
+            echo '# Specification 022 Live Artifact Manifest'
+            echo
+            echo 'Preserved before scientific interpretation.'
+            echo
+            echo '```text'
+            echo "target_run_id          ${TARGET_RUN_ID}"
+            echo "target_source_sha      ${TARGET_SOURCE_SHA}"
+            echo "target_workflow        ${TARGET_WORKFLOW_NAME}"
+            echo 'target_run_attempt     1'
+            echo "artifact_id            ${ARTIFACT_ID}"
+            echo "artifact_name          ${EXPECTED_ARTIFACT_NAME}"
+            echo "artifact_size_bytes    ${ARTIFACT_SIZE}"
+            echo "artifact_zip_sha256    ${zip_sha}"
+            echo '```'
+            echo
+            echo '## Contained-file SHA-256'
+            echo
+            echo '```text'
+            find "$DESTINATION" -type f ! -name ARTIFACT_MANIFEST.md -print0 | sort -z | xargs -0 sha256sum
+            echo '```'
+          } > "$DESTINATION/ARTIFACT_MANIFEST.md"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$DESTINATION"
+          git commit -m 'Preserve raw Specification 022 live artifact'
+          git push origin "HEAD:${PRESERVE_BRANCH}"
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "zip_sha=$zip_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Record provenance
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PRESERVED_COMMIT: ${{ steps.preserve.outputs.commit }}
+          ZIP_SHA: ${{ steps.preserve.outputs.zip_sha }}
+          ARTIFACT_ID: ${{ steps.artifact.outputs.id }}
+        run: |
+          body="Spec022 raw artifact preserved before interpretation. target_run=\`${TARGET_RUN_ID}\`; artifact=\`${ARTIFACT_ID}\`; artifact_sha256=\`${ZIP_SHA}\`; preservation_commit=\`${PRESERVED_COMMIT}\`."
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/issues/${AUDIT_ISSUE}/comments" -f body="$body" >/dev/null
