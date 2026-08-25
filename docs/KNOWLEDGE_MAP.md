@@ -3,133 +3,106 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
 **Last reviewed:** 2026-08-25  
-**Current checkpoint:** 192  
-**Active development branch:** `v1-spec022-incomplete-preservation`  
-**Active PR:** #72  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e`
+**Current checkpoint:** 193  
+**Active development branch:** `v1-methodological-knowledge-universe`  
+**Active PR:** #73  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `bb5d0640fff633e87a6a8c024b1a842fadd85a9d`
 
 ## Start here
 
 ```text
-README.md                         project overview and current evidence boundary
-docs/CURRENT_STATE.md             present state and exact continuation
+README.md                         project overview and current stage
+docs/CURRENT_STATE.md             exact present state and continuation
 docs/KNOWLEDGE_MAP.md             routing/index layer
 docs/current_routing.json         machine-readable routing metadata only
-docs/VISION.md                    high-level system and product direction
+docs/VISION.md                    high-level system/product direction
 docs/PRINCIPLES.md                accepted high-level design principles
 docs/DECISIONS.md                 accepted project-level decisions
-docs/OPEN_QUESTIONS.md            unresolved design/evaluation questions
-docs/DEVELOPMENT_METHOD.md        checkpoint/promotion method
-docs/CONTINUITY.md                continuation procedure
+docs/OPEN_QUESTIONS.md            unresolved questions
+docs/DEVELOPMENT_METHOD.md        project development/preservation method
+docs/CONTINUITY.md                cross-session continuation procedure
 docs/MAJOR_CHANGES.md             selective structural history
 ```
 
 Current branch relationship:
 
 ```text
-promoted integration head       0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-active branch                   v1-spec022-incomplete-preservation
-active PR                       #72
-Specification 015 PR            #13 closed without merge; preservation #14 merged
-Specification 016 PR            #15 merged
-Specification 017 PR            #16 closed without merge; preservation #22 merged
-Specification 018 PR            #23 merged
-Specification 019 PR            #33 closed without merge; preservation #43 merged
-Specification 020 PR            #44 merged
-routing consistency PR          #54 merged
-Specification 021 impl PR       #55 closed without merge
-Specification 021 preserve PR   #66 merged
-Question A architecture PR      #67 merged at 0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
-Specification 022 impl PR       #68 open draft; must close without merge after preservation
-Specification 022 preserve PR   #72 active preservation-only candidate
+promoted integration head       bb5d0640fff633e87a6a8c024b1a842fadd85a9d
+active branch                   v1-methodological-knowledge-universe
+active PR                       #73
+Specification 022 impl PR       #68 closed without merge
+Specification 022 preserve PR   #72 merged at bb5d0640fff633e87a6a8c024b1a842fadd85a9d
 main                            governed live-launch control plane; no active Specification 022 authorization
 ```
 
----
-
-## Current V1 progression
-
-```text
-Foundations 018-020
-    project objects / methodological navigation / reusable knowledge
-
-D-028 through D-031 / Checkpoint 127
-    local-first persistence and governed knowledge interchange
-
-Specification 008 / Checkpoints 126, 130
-    promoted Project Cockpit interaction architecture
-
-D-032 / Checkpoint 133
-    OpenAI Agents SDK behind ADS-owned ReasoningRuntime
-
-Specifications 009-012 / Checkpoints 135-141
-    lexical -> dense complementarity -> hybrid comparator -> explained Horizon
-
-Specification 013 / Checkpoint 143
-    accepted selective exact-revision MethodologicalContextPack
-
-Specification 014 / Checkpoint 146
-    real-model selective-context gate PASS
-
-Specification 015 / Checkpoints 147-151
-    recommendation/action experiment FAIL; negative evidence preserved
-
-Specification 016 / Checkpoints 152-155
-    dependency-backed DEFER-vs-NOT_NOW diagnostic supported
-
-Specification 017 / Checkpoints 156-159
-    relation-backed recommendation experiment INCOMPLETE; implementation rejected
-
-Specification 018 / Checkpoints 160-162
-    governed autonomous live-experiment launcher supported and promoted
-
-Specification 019 / Checkpoints 163-166
-    system-owned provenance rerun completed; FAIL preserved
-
-Specification 020 / Checkpoints 167-171
-    RECOMMENDED-vs-BLOCKING_REQUIRED diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED promoted
-
-Checkpoint 172 / PR #54
-    machine-readable current routing pointers + lightweight contradiction validator promoted
-
-Specification 021 / Checkpoints 174-185
-    dependency-backed supplied-action recommendation experiment completed; FAIL preserved; failed implementation rejected
-
-Research 031 / Checkpoint 186 / PR #67
-    methodological-navigation / coverage architecture and evaluation review completed
-
-Research 032 / Checkpoint 187
-    first project-state methodological coverage diagnostic design choices resolved
-
-Specification 022 / Checkpoint 188
-    exact project-state-to-methodological-horizon coverage diagnostic contract frozen
-
-Checkpoint 189
-    provider-free Specification 022 implementation gate passed cross-platform
-
-Checkpoint 190
-    exact live-capable source `cf5893d74fefa699296842b0a48326a9cb50161c` frozen
-
-Checkpoint 191
-    governed live execution preserved as INCOMPLETE / EXECUTION INTEGRITY FAILED; no scientific advancement classification; knowledge-universe stage selected next
-
-Checkpoint 192 / PR #72
-    preservation-only promotion candidate carrying durable Specification 022 evidence/history while excluding the incomplete experiment implementation
-```
+Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; its incomplete implementation was not promoted.
 
 ---
 
-## Core architecture routes
+# Current stage: serious methodological knowledge universe
 
-Product/object/system:
+Primary active sources:
 
 ```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
 ```
 
-Methodological navigation and reusable knowledge:
+Current sequence:
+
+```text
+KU-0  broad coverage map                              ESTABLISHED
+KU-1  six deep representation pressure tests          NEXT
+KU-2  revise representation/source/lifecycle rules
+KU-3  build accepted supervised-data-science core
+KU-4  expand specialized domains and model families
+KU-5  real project trials against materially larger coverage
+KU-6  governed knowledge evolution from project gaps
+```
+
+First six deep slices:
+
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+The next design artifact should establish the source-register/source-bundle candidate contract and the coordinated six-slice pressure-test packet.
+
+---
+
+## Coverage-map route
+
+```text
+docs/methodological_knowledge/COVERAGE_MAP.md
+```
+
+The coverage map is a planning/gap-visibility layer, not methodological authority.
+
+Coverage depth:
+
+```text
+C0  MAPPED
+C1  SOURCED
+C2  DECOMPOSED
+C3  OPERATIONALIZED
+C4  CONNECTED
+C5  BEHAVIORALLY_TESTED
+C6  PROJECT_EXPOSED
+```
+
+Coverage depth must not be interpreted as truth, maturity, source authority, freshness, or enforcement authority.
+
+---
+
+## Reusable-knowledge architecture
+
+Primary conceptual sources:
 
 ```text
 docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
@@ -140,21 +113,110 @@ docs/foundations/020_reusable_methodological_knowledge_representation_architectu
 docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
 ```
 
-Key navigation sequence:
+Current durable representation direction:
 
 ```text
-KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED / BLOCKING
+KnowledgeAsset
+KnowledgeComponent
+NarrativeFacet
+KnowledgeRelation
+Conditional KnowledgeRule
+KnowledgeCollection
+exact revision identity
+provenance
 ```
 
-Key scaling rule:
+Important separations:
 
 ```text
-what the SYSTEM should remember
-    !=
-what the LLM should receive on every reasoning call
+global reusable knowledge != project-specific state
+knowledge identity != reasoning function
+asset != component != narrative facet
+static relation != conditional rule
+retrieval cue != applicability != required context != project relevance
+methodological knowledge != execution implementation
+coverage depth != epistemic maturity
 ```
 
-Research 028 is forward research rather than accepted production semantics. It establishes the broad construction direction: persistent project state is system-owned; methodological navigation determines what matters from that state; and the broad knowledge base should be a governed revisioned methodological universe rather than an undifferentiated RAG corpus.
+Research 033 deliberately allows serious content to challenge this representation before broad catalog scale makes changes expensive.
+
+---
+
+## Source, provenance, and knowledge governance
+
+Primary source:
+
+```text
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+```
+
+Governing earlier source:
+
+```text
+docs/foundations/008_knowledge_quality_generalization_and_evolution.md
+```
+
+Current construction direction:
+
+```text
+source authority is proposition-sensitive
+component-level provenance for consequential reusable claims
+LLM extraction/proposal != independent authority
+freshness sensitivity belongs to the proposition/source relation
+candidate knowledge must use accepted governance/interchange paths
+```
+
+The next step must resolve a practical source-register/source-bundle candidate representation through the six-slice pressure test.
+
+---
+
+## Knowledge QA route
+
+Research 033 requires eventual QA at multiple levels:
+
+```text
+structural
+source support
+semantic scope / claim strength
+cross-knowledge duplicate / contradiction / alias / cycle checks
+behavioral regression cases
+real-project coverage behavior
+```
+
+Foundation 008 provides the broader maturity, challenge, counterexample, minimum-generalization, and enforcement framework.
+
+---
+
+# Product and project-object architecture
+
+Primary sources:
+
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+Foundation 018 distinguishes:
+
+```text
+OBJECTS
+RELATIONS
+EVENTS
+VIEWS
+```
+
+including:
+
+```text
+Investigation != Run
+Evidence != Finding
+Finding != Claim
+Claim != Decision
+current state != event history
+persisted object != derived recommendation
+workspace section != fundamental object
+```
 
 Project Cockpit:
 
@@ -166,7 +228,7 @@ docs/checkpoints/130_post_promotion_cockpit_normal_window_and_pinch_polish_gate_
 
 ---
 
-## Persistence, interchange, and runtime
+# Persistence, interchange, and runtime
 
 Accepted decisions:
 
@@ -190,9 +252,21 @@ docs/checkpoints/127_governed_knowledge_roundtrip_closed_across_sqlite_and_postg
 docs/checkpoints/133_v1_reasoning_runtime_selected_and_bakeoff_closed.md
 ```
 
+Accepted authority distinction:
+
+```text
+operational database authority
+    !=
+interchange representation
+    !=
+derived retrieval indexes
+```
+
+Normal candidate/benchmark import cannot silently create accepted methodological authority.
+
 ---
 
-## Retrieval -> Horizon -> selective context -> reasoning
+# Retrieval -> Horizon -> selective context -> reasoning
 
 ```text
 Specification 009 / Checkpoint 135   lexical retrieval baseline
@@ -203,7 +277,7 @@ Specification 013 / Checkpoint 143   selective exact-revision context
 Specification 014 / Checkpoint 146   real reasoning-context value
 ```
 
-Key invariant:
+Key applicability invariant:
 
 ```text
 known false -> INAPPLICABLE
@@ -214,21 +288,19 @@ unknown != false
 Specification 014 result:
 
 ```text
-reasoner outputs        24 / 24
-judge outputs           24 / 24
 SELECTIVE quality       1.000000
 FULL_HORIZON quality    1.000000
-aggregate token ratio   0.334379
+SELECTIVE/FULL input    0.334379
 input-token reduction   66.56%
 ```
 
-This supports selective context economy on the bounded benchmark. It does not select a final embedding/reranking/vector stack or a universal context budget.
+The current stage does not tune retrieval further. Navigation should be revisited after the knowledge universe is materially larger.
 
 ---
 
-## Recommendation/action evidence
+# Recommendation/action evidence
 
-Specification 015:
+## Specification 015
 
 ```text
 docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
@@ -236,9 +308,9 @@ docs/checkpoints/150_specification_015_live_result_failed_exact_disposition_gate
 experiments/recommendation_action_value/V1_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
-Frozen result: `FAIL`. Implementation not promoted.
+Frozen result: `FAIL`.
 
-Specification 016:
+## Specification 016
 
 ```text
 docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
@@ -250,26 +322,27 @@ Supported bounded construct:
 
 ```text
 DEFER-like sequencing
-    -> concrete represented activating dependency/trigger
+    -> concrete represented activating dependency / trigger
 ```
 
-Specification 017:
+## Specification 017
 
 ```text
 docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
 docs/checkpoints/159_specification_017_live_execution_incomplete_provenance_contract.md
-experiments/relation_backed_recommendation_action_value/V1_RELATION_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
-Frozen result: `INCOMPLETE`. Instrumentation lesson:
+Frozen result: `INCOMPLETE`.
+
+Instrumentation lesson:
 
 ```text
 reasoning function / task profile
     !=
-reusable knowledge stable-key provenance
+reusable knowledge provenance
 ```
 
-Specification 019:
+## Specification 019
 
 ```text
 docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
@@ -277,9 +350,9 @@ docs/checkpoints/166_specification_019_live_result_failed.md
 experiments/system_owned_provenance_recommendation_action_value/V1_SYSTEM_OWNED_PROVENANCE_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
-Frozen result: `FAIL`. System-owned provenance repair succeeded but recommendation/action value did not.
+Frozen result: `FAIL` after provenance instrumentation was repaired.
 
-Specification 020:
+## Specification 020
 
 ```text
 docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
@@ -287,9 +360,9 @@ docs/checkpoints/171_recommended_vs_blocking_required_calibration_boundary_suppo
 experiments/blocking_calibration/V1_BLOCKING_CALIBRATION_RESULT.md
 ```
 
-Frozen result: `BLOCKING_BOUNDARY_SUPPORTED` for deliberately unambiguous dependency-backed microstates. This does not establish production recommendation enums or selective-context recommendation value.
+Frozen result: `BLOCKING_BOUNDARY_SUPPORTED` for deliberately unambiguous dependency-backed microstates.
 
-Specification 021:
+## Specification 021
 
 ```text
 docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
@@ -301,11 +374,19 @@ docs/checkpoints/185_specification_021_negative_result_preserved_and_architectur
 experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
 ```
 
-Frozen result: `FAIL`. The supplied-action benchmark tested downstream disposition calibration, not open-world methodological path discovery from evolving project state.
+Frozen result: `FAIL`.
+
+Important interpretation:
+
+```text
+supplied-action disposition calibration
+    !=
+open-world methodological navigation / coverage
+```
 
 ---
 
-## Specification 022 route
+# Specification 022 preserved route
 
 Design and frozen contract:
 
@@ -319,25 +400,16 @@ docs/checkpoints/189_specification_022_provider_free_implementation_gate_passed.
 docs/checkpoints/190_specification_022_live_capable_source_frozen.md
 ```
 
-Frozen benchmark evidence retained by preservation PR #72:
-
-```text
-tests/fixtures/methodological_navigation/spec022_contract_fixture_manifest_v1.json
-tests/fixtures/methodological_navigation/spec022_coverage_oracle_v1.json
-tests/fixtures/methodological_navigation/spec022_methodological_universe_v1.json
-tests/fixtures/methodological_navigation/spec022_oracle_representation_map_v1.json
-tests/fixtures/methodological_navigation/spec022_project_state_episodes_v1.json
-```
-
-Live result and raw-before-interpretation commitment:
+Incomplete live result and transition:
 
 ```text
 docs/checkpoints/191_specification_022_live_execution_incomplete_knowledge_universe_next.md
+docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md
 experiments/methodological_navigation_coverage/V1_METHODOLOGICAL_NAVIGATION_COVERAGE_RESULT.md
 experiments/methodological_navigation_coverage/results/spec022-live-20260825-run-32815726116/PRE_INTERPRETATION_ARTIFACT_COMMITMENT.md
 ```
 
-Scientific classification:
+Frozen classification:
 
 ```text
 INCOMPLETE / EXECUTION INTEGRITY FAILED
@@ -354,15 +426,13 @@ provider attempts                 216
 advancement outcome              none
 ```
 
-The frozen schema accepted only `CURRENT | MISSING_CONTEXT`; the live model repeatedly returned alternative state vocabularies and every result failed structured validation. No substantive comparison among `GENERIC`, `ADS_HORIZON`, and `ORACLE_HORIZON` is valid.
+No substantive `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison is valid.
 
-The failure is execution-contract evidence, not evidence for or against the methodological-navigation hypothesis.
-
-The experiment implementation remains historical on PR #68 and is intentionally excluded from preservation PR #72.
+The incomplete experiment implementation remained on PR #68 and was closed without merge after preservation-only PR #72 succeeded.
 
 ---
 
-## Governed autonomous live-launch route
+# Governed live-launch route
 
 ```text
 docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
@@ -373,21 +443,11 @@ scripts/ads_live_experiment_launcher.py
 .github/workflows/v1-autonomous-live-experiment-launcher.yml
 ```
 
-Accepted control-plane sequence:
-
-```text
-owner request transport
-    -> repository authorization registry
-    -> exact owner/source/CI/duplicate checks
-    -> allowlisted workflow_dispatch
-    -> independently validating target workflow
-```
-
-Specification 022 exercised this accepted path once. Its one-shot authorization has been retired, the registry is empty, and Issues #69-#71 are closed with audit history preserved.
+The Specification 022 one-shot authorization is retired. No new provider run is authorized by the knowledge-universe construction stage.
 
 ---
 
-## Preservation and continuity
+# Preservation and continuity
 
 Primary sources:
 
@@ -403,99 +463,45 @@ Current Level-2 lesson:
 
 ```text
 substantive preservation failure      NO
-routing/current-state drift           YES, observed again at the unexpected Session-05 boundary
+routing/current-state drift           repaired through Checkpoint 192
 ```
 
-Checkpoint 191 preserved the substantive result and strategic shift before the conversation ended. Checkpoint 192 and PR #72 perform the missing preservation-only routing reconciliation.
-
-Markdown remains the substantive source of truth. The routing manifest is not a replacement for canonical documents, foundations, specifications, checkpoints, results, or Git history.
+The current stage begins cleanly from the preserved integration head `bb5d0640fff633e87a6a8c024b1a842fadd85a9d`.
 
 ---
 
-## Methodological knowledge-universe construction route
+# Prototype V0
 
-Primary conceptual sources:
-
-```text
-docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
-docs/foundations/008_knowledge_quality_generalization_and_evolution.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
-docs/checkpoints/191_specification_022_live_execution_incomplete_knowledge_universe_next.md
-```
-
-The next chronological architecture is:
+Authoritative result:
 
 ```text
-1. serious governed methodological knowledge universe
-2. navigation / selection over that universe
-3. project-specific concern / question / option generation
-4. prioritization / disposition
-5. execution and project-state update
-6. real end-to-end project trials
-7. governed knowledge evolution
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+prototype_v0/README.md
 ```
 
-Before bulk authoring, the next branch should freeze a construction framework covering:
+Final classification:
 
 ```text
-broad data-science coverage map
-knowledge package/component pressure tests
-source and authority policy
-component-level provenance policy
-maturity/lifecycle policy
-duplicate and contradiction handling
-knowledge QA/review workflow
-breadth-versus-depth strategy
-deep heterogeneous vertical-slice priorities
+STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
 ```
 
-Initial deep slices should deliberately differ structurally. Current candidates include validation, missing data, feature selection, model families/tree ensembles, class imbalance/metrics/calibration, and time-series methodology.
+Do not restart or tune P0 against the completed benchmark.
 
 ---
 
-## Current exact continuation
+# Exact current continuation
 
 ```text
-A. validate preservation-only PR #72 on its exact head
-B. merge PR #72 only if the evidence/history-only boundary remains clean and green
-C. close Specification 022 implementation PR #68 without merge
-D. reconcile v1-frontend-spike to the preserved Checkpoint 192 boundary
-E. create a dedicated methodological-knowledge-universe branch from the clean integration head
-F. freeze the construction framework before bulk knowledge authoring
-G. do not immediately rerun the 216-call Specification 022 matrix
-H. do not modify or rescore Specifications 015-022
-```
-
----
-
-## Recent continuity checkpoints
-
-```text
-127  governed knowledge round-trip closed across SQLite/PostgreSQL
-133  initial V1 reasoning runtime selected
-135  lexical retrieval baseline passed
-137  dense semantic comparator preserved
-139  hybrid retrieval comparator passed
-141  first explained MethodologicalHorizon passed
-143  selective-context gate passed and promoted
-146  real reasoning-context gate passed
-150  first recommendation/action live gate failed
-151  failed evidence preserved without implementation promotion
-155  dependency-backed disposition live gate supported
-159  Specification 017 live execution incomplete; provenance boundary identified
-162  governed autonomous launcher promoted to V1 integration
-166  Specification 019 complete live result classified FAIL and preserved
-171  Specification 020 live diagnostic completed; BLOCKING_BOUNDARY_SUPPORTED
-172  machine-checkable current-routing consistency guard promoted
-183  supplied-action disposition calibration separated from open-world methodological navigation / coverage
-185  Specification 021 FAIL preserved and failed implementation closed
-186  Question A methodological-navigation architecture/evaluation review completed
-187  first project-state methodological coverage design choices resolved
-188  Specification 022 exact scientific contract and fixtures frozen
-189  Specification 022 provider-free implementation gate passed
-190  Specification 022 exact live-capable source frozen
-191  Specification 022 live execution INCOMPLETE; knowledge-universe stage next
-192  Specification 022 incomplete evidence preservation-only promotion candidate
+A. validate the reconciled Checkpoint 193 / Research 033 / coverage-map head
+B. design a source-register / source-bundle candidate contract
+C. construct one coordinated six-slice representation pressure-test packet
+D. register existing controlled source material before accepting extracted knowledge
+E. add external authoritative sources when proposition support requires them
+F. record representation defects instead of forcing content into the current schema
+G. revise representation only where observed content pressure warrants it
+H. after the six-slice review, begin broader accepted-core construction
+I. revisit navigation/selection against the serious universe
+J. begin real project trials before the knowledge universe is complete
+K. do not rerun Specification 022 as the immediate next step
+L. do not modify or rescore Specifications 015-022
 ```
