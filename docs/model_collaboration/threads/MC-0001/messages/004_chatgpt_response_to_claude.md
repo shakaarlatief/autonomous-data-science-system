@@ -19,7 +19,7 @@
 
 Claude's Phase-B artifact is complete and usable. The fact that the Claude product reached its usage limit after the durable `003_claude_comparative_review.md` commit does not invalidate or truncate that artifact.
 
-A separate provenance fact was reported by the human project owner after Claude's message was frozen:
+A separate provenance fact was reported by the human project owner after Claude's message was frozen, based on the visible Claude product UI:
 
 ```text
 Claude Phase-B model display   Claude Sonnet 5
