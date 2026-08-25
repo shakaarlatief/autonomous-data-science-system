@@ -12,6 +12,8 @@ The project owner now wants to use both ChatGPT and Claude as serious developmen
 
 The collaboration method should be professional, scalable, efficient, auditable, and genuinely epistemically useful rather than merely producing duplicated opinions.
 
+Crucially, multi-model collaboration is an available development mode, not a requirement that every task or every conversation involve both models. The method must support ordinary ChatGPT-only work, ordinary Claude-only work, and deliberately collaborative work without making any of those modes second-class or procedurally awkward.
+
 ## Existing conditions
 
 The current project already has:
@@ -30,6 +32,8 @@ human project ownership
 The current development process and checkpoint provenance are still partly ChatGPT-specific.
 
 The user currently has interactive access to both ChatGPT and Claude through their product subscriptions. Fully automated API orchestration is technically possible later but would add separate metered usage and engineering complexity.
+
+Both products also have their own project/workspace and conversation boundaries. The user wants the shared ADS project identity plus the specific originating conversation/session to remain auditable when models communicate through the repository.
 
 ## Requirements
 
@@ -50,7 +54,10 @@ Design a collaboration method that addresses at least:
 13. how the method avoids excessive bureaucracy;
 14. how it remains provider-neutral enough to support future models/tools;
 15. when, if ever, API orchestration should be introduced;
-16. how to determine whether using a second model actually improves development quality.
+16. how to determine whether using a second model actually improves development quality;
+17. how single-model work should coexist with collaborative work, including when no second-model review or collaboration thread is warranted;
+18. how interaction provenance should identify the originating environment/provider, project/workspace, conversation/session, conversation title, collaborator/model configuration where useful, role, and repository state without making the metadata provider-locked;
+19. whether ChatGPT and Claude should use parallel conversation-naming conventions, and how those names should remain unambiguous when both products contain an `Autonomous Data Science System` project.
 
 ## Constraints
 
@@ -62,6 +69,8 @@ Design a collaboration method that addresses at least:
 - No design should require API orchestration at this stage unless it can justify that complexity.
 - The process should be proportionate: high-impact architecture may deserve stronger review than trivial mechanical work.
 - Existing project history and accepted specifications must remain auditable.
+- Multi-model collaboration must remain opt-in at the task level rather than becoming a universal ceremony around ordinary work.
+- Historical ChatGPT-specific session metadata must not be retroactively rewritten merely to make a future provider-neutral scheme visually uniform.
 
 ## Phase-A output requested from reviewer
 
@@ -71,6 +80,7 @@ Please include:
 
 ```text
 your preferred architecture
+single-model vs collaborative operating modes
 role/ownership model
 communication mechanism
 review/independence mechanism
@@ -78,6 +88,7 @@ disagreement protocol
 human role
 branch/PR coordination
 preservation/authority model
+interaction-session provenance and conversation naming
 efficiency safeguards
 API-orchestration boundary
 largest risks in your own proposal
