@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 190,
+  "current_checkpoint": 191,
   "active_development_branch": "v1-methodological-navigation-coverage-diagnostic",
   "active_pr": 68,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e",
   "latest_specification": "022",
-  "latest_experiment_outcome": "FAIL",
-  "current_boundary": "spec022-live-capable-source-frozen-separate-authorization-next"
+  "latest_experiment_outcome": "INCOMPLETE",
+  "current_boundary": "spec022-incomplete-preservation-only-integration-then-knowledge-universe-stage"
 }
