@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository is the persistent home of the Autonomous Data Science System project.
+This repository is the persistent development home of the Autonomous Data Science System (ADS).
 
 The project investigates how to build a rigorous, adaptive, semi-autonomous environment for data-science projects in which a strong LLM is one flexible reasoning component inside a wider system that owns project memory, methodological navigation, provenance, execution coordination, deterministic guarantees where justified, and a professional human interaction surface.
 
@@ -16,111 +16,124 @@ Explicit machinery must earn its complexity empirically.
 
 ## Current development stage
 
-**Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe. Its prerequisite Source Universe substrate has been accepted and promoted. The permanent source-vault deployment is preserved but temporarily paused while the project pressure-tests a major Level-2 change: governed multi-model development collaboration between ChatGPT, Claude, and the human project owner.**
+Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe. Its Source Universe substrate is accepted and promoted. The permanent user-controlled source-vault bootstrap is preserved on draft PR #75 but remains paused while a major Level-2 development-method change, governed multi-model development, is pressure-tested.
 
 ```text
-checkpoint            201
+checkpoint            203
 active branch         v1-multimodel-development-collaboration
 active PR             #76
 promoted V1 head      8215718db3e44f000cc6ed53d6a051522d429dbd
-latest specification  Specification 023
+latest specification  Specification 024
 source outcome         SOURCE_SUBSTRATE_ACCEPTED
 latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary       MC-0001 bounded Phase D Claude challenge;
-                       PR #75 source-vault bootstrap paused
+current boundary       Specification 024 implementation is green and frozen
+                       for direct Claude review in MC-0002;
+                       PR #75 source-vault bootstrap remains paused
 ```
 
-The active collaboration route is:
+No scientific comparison may be inferred from Specification 022.
+
+---
+
+## Governed multi-model development
+
+The project owner requested a professional collaboration architecture for ChatGPT, Claude, and future collaborators rather than informal model switching.
+
+The first architecture thread, `MC-0001`, is now resolved. Its durable route is:
 
 ```text
-docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
 docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
 docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
+docs/model_collaboration/threads/MC-0001/messages/005_claude_phase_d_challenge.md
+docs/model_collaboration/threads/MC-0001/messages/006_chatgpt_phase_d_resolution.md
+docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
 ```
 
-GitHub Issue #77 is the optional live transport surface for `MC-0001`; the issue is collaboration transport, not canonical project authority.
+The resolved candidate direction is:
 
-The permanent source-vault route remains preserved on draft PR #75 and is not abandoned.
+```text
+repository remains project authority
+SOLO ChatGPT-only and Claude-only work remain first-class
+collaboration is selective and task-scoped
+one bounded task owner
+role and write scope are separate
+one collaborator owns target-state writes at a time
+reviewers may write only explicitly declared secondary surfaces
+GitHub issues/PR comments are transport, not authority
+numbered repository messages are durable collaboration provenance
+independent-first review is selective and must account for framing/contamination
+provider-local session IDs are self-describing, e.g. chatgpt-06 / claude-01
+human arbitration is reserved for genuine project-intent or consequential choices
+API orchestration remains deferred until evidence justifies its cost and complexity
+```
+
+MC-0001 also produced two important empirical findings. Claude detected candidate-content leakage through the supposedly neutral reconstruction set and the lack of any machine-checkable collaboration-state mechanism. ChatGPT in turn identified that Claude's first single-`active_writer` mechanism was too coarse and that role and write authority must remain distinct. Both models revised their own positions.
+
+The first trial was only partially independent because current routing documents already exposed candidate ideas. Future deliberately blind reviews should normally use an accepted pre-proposal base/ref plus a neutral problem packet and explicit exposure audit.
 
 ---
 
-## Why multi-model collaboration is a first-class Level-2 problem
+## Specification 024: collaboration-state coherence guard
 
-The existing repository already allows a new model or chat to reconstruct project state without depending on the previous conversation. That solves information continuity, but not coordination.
-
-A safe multi-model development process must also answer:
+The one load-bearing mechanical follow-up from MC-0001 is frozen in:
 
 ```text
-who owns a bounded task
-who may mutate canonical state
-how another model reviews without silently becoming co-owner
-how independent judgment is preserved
-how material disagreement remains visible
-how the human arbitrates genuine project-intent conflicts
-how model-to-model communication avoids constant user copy-paste
-how collaboration provenance remains separate from authority
-when automated API orchestration would actually earn its cost/complexity
+docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
 
-Research 035 is the first ChatGPT-authored candidate architecture. It is **not** yet Development Method v0.5.
+The implementation adds:
 
-The first trial, `MC-0001`, used an independent-then-comparative Claude review. Claude's Phase A was independent from the full Research 035 memo and ChatGPT message 001, but Claude correctly identified that the required routing/current-state documents already exposed several candidate architecture ideas. Phase A is therefore partially independent rather than fully blind, and contaminated convergence is not counted as clean independent confirmation.
+```text
+schemas/model_collaboration_thread_state_v1.schema.json
+scripts/check_model_collaboration_state.py
+tests/unit/test_model_collaboration_state.py
+.github/workflows/model-collaboration-state.yml
+docs/model_collaboration/threads/MC-0002/STATE.json
+```
 
-Claude then completed a full Phase-B comparative review. It materially improved the architecture by identifying a missing machine-checkable collaboration-state mechanism, strengthening contamination handling, operationalizing review intensity, refining transport/human-role choices, and challenging its own earlier defaults.
+The mechanism records task ownership, target-state write ownership, allowed secondary write surfaces, lifecycle/phase, next actor, independence status, and latest transition.
 
-ChatGPT has now completed Phase C in `004_chatgpt_response_to_claude.md`. It accepts several Claude additions while rejecting blanket `risk-averse wins` and `narrow-scope wins` routing, distinguishing role from write scope, and preferring scoped per-thread write ownership over one global active-writer field.
+It is deliberately a **coherence guard, not an authenticated distributed lock**. Current provider integrations share the project owner's GitHub authority, so repository metadata cannot cryptographically prove whether ChatGPT or Claude authored a mutation.
 
-The current next step is one bounded Claude Phase-D challenge on the remaining disagreements. The goal remains neither consensus nor disagreement. The goal is calibrated cross-model reasoning.
+The implementation initially exposed one test-fixture defect. The valid state and validator had passed, but one test attempted to create the same temporary directory twice. That fixture was corrected without relaxing Specification 024 or changing its frozen gates.
+
+Exact green pre-review implementation head:
+
+```text
+a9efc43d7c441c8283d2cd954cc6fa1abd021689
+```
+
+Dedicated workflow run `32902050014` passed on both Ubuntu and Windows, including 26 focused unit tests and the no-global-lock-field assertion for `current_routing.json`.
+
+MC-0002 now uses the mechanism itself and is waiting for one bounded direct Claude review:
+
+```text
+docs/model_collaboration/threads/MC-0002/BRIEF.md
+docs/model_collaboration/threads/MC-0002/THREAD.md
+docs/model_collaboration/threads/MC-0002/STATE.json
+docs/model_collaboration/threads/MC-0002/messages/001_chatgpt_implementation_review_request.md
+GitHub Issue #78
+```
+
+No Development Method v0.5 or accepted multi-model decision has been promoted yet. Specification 024 must first satisfy MC-G01 through MC-G16 and be classified.
 
 ---
 
-## Dedicated Model Collaboration Exchange
+## Source Universe substrate
 
-The candidate exchange lives at:
-
-```text
-docs/model_collaboration/
-```
-
-It separates:
-
-```text
-GitHub issue / PR comments
-    optional low-friction transport
-
-Model Collaboration Exchange
-    durable structured collaboration provenance
-
-normal accepted project artifacts
-    authority after existing review/promotion governance
-```
-
-The candidate method uses one bounded task owner, serialized target-state writes, explicit task roles, append-only substantive review messages, explicit disagreement classification, and provider-neutral collaboration identities rather than permanently assigning one model as architect and another as reviewer.
-
-A key new candidate requirement is machine-readable collaboration state before routine multi-model canonical development. The exact mechanism is not frozen. A single global active-writer field is currently considered too coarse; a per-thread model separating target-state ownership from allowed review-message surfaces is under discussion.
-
-No automated OpenAI/Anthropic API orchestrator is being built at this stage.
-
----
-
-## Why sources became a first-class subsystem
-
-The project is preparing to ingest a large educational and external source corpus spanning machine learning, econometrics, statistics, optimization, mathematics, AI, time series, and related areas.
-
-Those source artifacts are not themselves the methodological knowledge base.
-
-The durable separation is:
+The project is preparing to ingest a large educational and external source corpus. Source artifacts are evidence, not themselves the methodological knowledge base.
 
 ```text
 SOURCE UNIVERSE
-    exact evidence artifacts and provenance
+    exact evidence artifacts + provenance
 
         !=
 
@@ -128,115 +141,39 @@ METHODOLOGICAL KNOWLEDGE UNIVERSE
     governed reusable methodological reasoning
 ```
 
-A PDF may support many knowledge propositions; one methodological proposition may be supported by several sources. Source identity, exact bytes, rights/access, provenance, extraction lineage, and knowledge acceptance therefore require separate governance.
+The accepted source architecture is governed by Foundation 022, Research 034, and Specification 023. It separates immutable content-addressed source artifacts, a relational Source Registry, derived representations, deterministic exports, integrity audits, backup/restore, and public-safe Git metadata.
 
----
-
-## Accepted Source Universe substrate
-
-Specification 023 provides the accepted bounded V1 path:
+Specification 023 was validated on the first 20-file VU Amsterdam Machine Learning batch:
 
 ```text
-filesystem source input
-    -> exact SHA-256 + byte count
-    -> staging
-    -> immutable content-addressed SourceArtifactStore
-    -> relational Source Registry
-    -> collection / membership provenance
-    -> deterministic PRIVATE_SNAPSHOT / PUBLIC_SAFE_CATALOG
-    -> integrity audit
-    -> verified provider-neutral backup
-    -> clean restore
-    -> restored integrity audit
-```
-
-The implemented identities include:
-
-```text
-SourceRecord
-SourceArtifact
-SourceCollection
-SourceCollectionMembership
-SourceLocator
-SourceIngestionEvent
-DerivedSourceArtifact
-```
-
-Source binaries live outside the public Git repository. ChatGPT Library, Project Sources, and cloud drives may help with intake or access, but none becomes semantic source authority merely by containing the file.
-
-The physical backend is local-first behind an ADS-owned storage abstraction. A future object-store backend can therefore be introduced without redefining source identity.
-
----
-
-## First real-corpus validation
-
-The first controlled corpus was the 20-file VU Amsterdam Machine Learning batch supplied during Design Session 06.
-
-Before implementation, exact SHA-256 and byte-size fingerprints were frozen in:
-
-```text
-docs/source_universe/intake_snapshots/001_vu_machine_learning_chat_intake.md
-```
-
-After implementation:
-
-```text
-20 / 20 files matched prospective fingerprints
+20 / 20 prospective fingerprint matches
 20 NEW_ARTIFACT initial ingests
 14 EXACT_DUPLICATE real re-encounters
 20 logical sources
-20 SourceArtifact rows
+20 exact artifacts
 20 stored objects
-34 SourceIngestionEvent rows
-```
-
-The two PCA-book-like files remained byte-distinct. Uncertain `Lecture9-*` course membership remained `POSSIBLE` rather than being silently strengthened.
-
-The source store passed a clean audit, a verified backup, a clean restore, and a second full integrity audit. The prospectively frozen SU-G01 through SU-G23 gates all passed on the accumulated executable and first-corpus evidence.
-
-Classification:
-
-```text
+34 ingestion events
+20 / 20 clean working audit
+20 / 20 clean restored audit
+SU-G01 through SU-G23 PASS
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-This acceptance proves the architecture and implementation seam. It does **not** mean the permanent user-controlled source vault already exists. The first validation used disposable development storage and the exact uploaded bytes available to the active development runtime.
+Source binaries remain outside public Git.
 
-PR #74 promoted that accepted implementation into `v1-frontend-spike` at:
+The accepted implementation was promoted in `v1-frontend-spike` at:
 
 ```text
 8215718db3e44f000cc6ed53d6a051522d429dbd
 ```
 
----
-
-## Permanent source-vault bootstrap is paused, not cancelled
-
-The operational stage remains preserved by:
-
-```text
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-PR #75
-```
-
-The deployment still requires five private locations:
-
-```text
-ORIGINAL_SOURCE_ROOT
-SOURCE_REGISTRY_DATABASE
-SOURCE_VAULT_ROOT
-INDEPENDENT_BACKUP_ROOT
-CLEAN_RESTORE_ROOT
-```
-
-No local source-vault operation is currently running. When the project returns to PR #75, Course 2 remains blocked until compare, reviewed ingestion, integrity audit, independent backup, clean restore, and restored audit succeed on user-controlled storage.
+Permanent source-vault deployment remains preserved by Checkpoint 198, `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`, and draft PR #75. It is paused, not cancelled. Course 2 remains blocked until permanent user-controlled compare, reviewed ingestion, audit, independent backup, clean restore, and restored audit succeed.
 
 ---
 
 ## Serious methodological knowledge-universe construction
 
-The broader construction program remains governed by:
+The broader program remains governed by:
 
 ```text
 docs/research/033_methodological_knowledge_universe_construction_framework.md
@@ -244,7 +181,7 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
 ```
 
-The coverage-depth ladder is:
+Coverage depth:
 
 ```text
 C0  MAPPED
@@ -256,9 +193,7 @@ C5  BEHAVIORALLY_TESTED
 C6  PROJECT_EXPOSED
 ```
 
-Coverage depth is not truth, maturity, source quality, freshness, or enforcement authority.
-
-The first six deep pressure-test areas are:
+The first six deep pressure-test areas remain:
 
 ```text
 Validation and Generalization Design
@@ -269,13 +204,13 @@ Class Imbalance / Metrics / Calibration / Thresholding
 Time-Series Methodology
 ```
 
-The representation is allowed to change if serious source-backed content reveals a real deficiency.
+Coverage depth is not truth, maturity, source authority, freshness, or enforcement strength.
 
 ---
 
 ## Durable architectural core
 
-Prototype V0 strongly falsified the original P0 implementation strategy, while the broader ADS vision survived.
+Prototype V0 strongly falsified the original P0 implementation strategy while preserving the broader ADS vision.
 
 The strongest scaling lesson remains:
 
@@ -285,65 +220,17 @@ what the SYSTEM should remember
 what the LLM should receive on every reasoning call
 ```
 
-Foundation 018 separates:
+Important accepted directions include:
 
 ```text
-OBJECTS
-RELATIONS
-EVENTS
-VIEWS
+Foundation 018  OBJECTS / RELATIONS / EVENTS / VIEWS project architecture
+Foundation 019  KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED/BLOCKING
+Foundation 020  reusable methodological knowledge representation
+Foundation 021  professional product/interface foundation
+Foundation 022  source/evidence substrate
 ```
 
-Foundation 019 defines the methodological-navigation progression:
-
-```text
-KNOWN
-    -> APPLICABLE
-    -> RELEVANT
-    -> RECOMMENDED
-    -> REQUIRED / BLOCKING
-```
-
-Foundation 020 provides the current reusable-knowledge representation direction around assets, components, narrative facets, relations, conditional rules, collections, exact revisions, and provenance.
-
-Foundation 021 governs the professional product/interface foundation. Foundation 022 adds the separate source/evidence substrate beneath the governed knowledge universe.
-
----
-
-## Accepted V1 implementation decisions
-
-```text
-D-028  SQLite-centered local-first operational architecture
-D-029  SQLAlchemy Core 2.0 + Alembic 1.x
-D-030  pyproject.toml + uv + committed uv.lock + uv_build
-D-031  governed deterministic JSON / JSON Schema knowledge interchange
-D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
-D-033  ADS-owned private Source Universe substrate and relational Source Registry
-```
-
-The runtime database, knowledge interchange, source artifact store, and rebuildable retrieval indexes remain different authority layers.
-
-No multi-model development decision has yet been added to this accepted decision list.
-
----
-
-## Retrieval and reasoning evidence
-
-The bounded accepted chain remains:
-
-```text
-lexical retrieval
-    -> dense complementarity
-    -> hybrid comparator
-    -> explained MethodologicalHorizon
-    -> selective exact-revision MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-    -> measured real reasoning
-```
-
-Specification 014 preserved equal measured reasoning quality on its bounded benchmark while reducing provider input by 66.56%. That result supports selective context economy but does not select the final navigation strategy for a serious knowledge universe.
-
-Later recommendation/action experiments remain deliberately bounded evidence. In particular, Specification 022 ended `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no legitimate `GENERIC`, `ADS_HORIZON`, or `ORACLE_HORIZON` comparison exists from that run.
+Accepted implementation decisions currently remain D-028 through D-033, covering local-first persistence, SQLAlchemy/Alembic, uv packaging, deterministic knowledge interchange, ADS-owned reasoning runtime, and the Source Universe substrate. No multi-model decision has yet been promoted.
 
 ---
 
@@ -353,7 +240,7 @@ This repository is the project's durable development source of truth.
 
 > **The chat is where we think. The repository is where the system remembers.**
 
-The emerging multi-model architecture generalizes that principle: collaborators may reason in different products, but durable project state and collaboration provenance must be recoverable from shared project infrastructure.
+The multi-model extension keeps the same rule: collaborators may reason in different products, but durable project state, review provenance, and accepted conclusions must remain recoverable from shared project infrastructure.
 
 ---
 
@@ -364,22 +251,16 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
-docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
-docs/research/035_multi_model_development_collaboration_architecture.md
-docs/model_collaboration/README.md
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
-docs/model_collaboration/threads/MC-0001/BRIEF.md
-docs/model_collaboration/threads/MC-0001/THREAD.md
-docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
-docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
-docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
+docs/checkpoints/203_specification_024_implementation_green_pre_review_head_frozen.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/model_collaboration/threads/MC-0002/THREAD.md
+docs/model_collaboration/threads/MC-0002/STATE.json
+
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
 
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-
-docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
-docs/specifications/023_v1_source_universe_substrate.md
 
 docs/research/033_methodological_knowledge_universe_construction_framework.md
 docs/methodological_knowledge/COVERAGE_MAP.md
@@ -388,12 +269,11 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. Claude reads messages/004_chatgpt_response_to_claude.md
-2. Claude performs one bounded Phase-D challenge rather than reopening the whole architecture
-3. preserve messages/005_claude_phase_d_challenge.md
-4. Claude marks each unresolved item AGREE / DISAGREE / PARTIAL and gives the strongest reason + change-of-mind evidence
-5. route remaining disagreements to bounded design/prototype, evidence check, human project-intent decision, or explicit deferral
-6. only after resolution decide whether Development Method v0.5 / provider-neutral checkpoint provenance is justified
-7. if mechanical collaboration-state support remains required, design and test it before declaring routine multi-model canonical development ready
-8. PR #75 remains paused until the user chooses to resume the permanent source-vault deployment
+1. Claude performs one direct MC-0002 implementation review against Specification 024
+2. Claude writes messages/002_claude_implementation_review.md only
+3. ChatGPT applies only bounded required corrections, if any
+4. rerun all frozen gates after any correction
+5. classify Specification 024
+6. perform the canonical multi-model Development Method / Continuity / provenance / decision promotion audit only after classification
+7. keep PR #75 paused until the project returns to permanent source-vault deployment
 ```
