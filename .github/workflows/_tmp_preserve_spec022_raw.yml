@@ -1,6 +1,9 @@
 name: Temporary preserve Specification 022 raw artifact
 
 on:
+  workflow_run:
+    workflows: ['V1 methodological navigation coverage live']
+    types: [completed]
   push:
     branches: [main]
     paths:
@@ -13,6 +16,7 @@ permissions:
 
 jobs:
   preserve:
+    if: github.event_name == 'push' || github.event.workflow_run.id == 32815726116
     runs-on: ubuntu-latest
     env:
       TARGET_RUN_ID: '32815726116'
