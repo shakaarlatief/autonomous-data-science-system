@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0002",
   "review_mode": "REVIEWED",
-  "lifecycle_state": "ACTIVE",
-  "phase": "IMPLEMENTATION_ACTIVE",
+  "lifecycle_state": "WAITING",
+  "phase": "REVIEW_REQUESTED",
   "target": {
     "branch": "v1-multimodel-development-collaboration",
     "base_ref": "9da382d4011ff112b75dec9c456143d798336336",
@@ -49,7 +49,7 @@
       "paths": ["docs/model_collaboration/threads/MC-0002/messages/**"]
     }
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": null,
@@ -57,11 +57,11 @@
     "notes": "MC-0002 uses direct review under frozen Specification 024 rather than a blind counter-design pass."
   },
   "last_transition": {
-    "transition_id": "mc0002-implementation-open",
-    "from_state": "OPEN",
-    "to_state": "ACTIVE",
+    "transition_id": "mc0002-review-requested",
+    "from_state": "ACTIVE",
+    "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Begin implementation from the frozen Specification 024 contract.",
-    "repository_head": "9da382d4011ff112b75dec9c456143d798336336"
+    "reason": "Implementation and dedicated cross-platform validation are green; request bounded Claude implementation review for MC-G16.",
+    "repository_head": "a9efc43d7c441c8283d2cd954cc6fa1abd021689"
   }
 }
