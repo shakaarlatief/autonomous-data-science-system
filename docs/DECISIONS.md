@@ -145,9 +145,9 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, and initial reasoning runtime by D-032; still applicable to implementation subsystems not yet selected  
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, and source-universe substrate by D-033; still applicable to implementation subsystems not yet selected  
 **Date:** 2026-08-07  
-**Superseded in scope:** 2026-08-20 and 2026-08-22
+**Superseded in scope:** 2026-08-20, 2026-08-22, and 2026-08-25
 
 The project will not yet choose an agent framework, number of agents, LLM providers, orchestration framework, database, graph technology, rule engine, execution architecture, or other implementation stack.
 
@@ -200,14 +200,17 @@ This turns each project into both an analytical task and a source of system impr
 
 ## D-015. Keep the currently attached learning materials outside the repository for now
 
-**Status:** Accepted for the current stage  
-**Date:** 2026-08-07
+**Status:** Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained  
+**Date:** 2026-08-07  
+**Superseded in scope:** 2026-08-25
 
-The machine learning and time-series/econometrics source materials currently available in the ChatGPT project are not being copied into the GitHub repository yet.
+The machine learning and time-series/econometrics source materials currently available in the ChatGPT project were not copied into the GitHub repository while the project had no accepted external-source architecture.
 
 ### Rationale
 
-The project has not decided how external knowledge sources, course material, references, or derived knowledge modules should be stored permanently. Copying material now would prematurely define a source architecture.
+At the time of this decision, the project had not decided how external knowledge sources, course material, references, or derived knowledge modules should be stored permanently. Copying material then would have prematurely defined a source architecture.
+
+Foundation 021, Specification 023, Checkpoint 196, and D-033 now resolve that architectural uncertainty. The original conservative outcome remains: source binaries do not belong in the public Git repository merely because ADS uses them.
 
 ---
 
@@ -768,4 +771,67 @@ docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.
 experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
 experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
 experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
+```
+
+---
+
+## D-033. Use an ADS-owned private source universe substrate for external evidence artifacts
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-25
+
+V1 will preserve external evidence artifacts through an ADS-owned Source Universe substrate that is distinct from reusable methodological knowledge.
+
+The accepted initial architecture is:
+
+```text
+user-controlled private SourceArtifactStore
+    exact immutable source bytes
+    SHA-256 content addressing
+    no filename-based artifact identity
+
+relational Source Registry
+    logical Source identity
+    exact SourceArtifact identity
+    SourceCollection / membership
+    uncertainty-preserving association state
+    locators and ingestion events
+    rights / access metadata
+    bounded derived-artifact lineage
+
+provider-neutral backup / restore
+    deterministic PRIVATE_SNAPSHOT
+    verified exact object payload
+    clean-target restore
+    full integrity audit
+
+public Git repository
+    code, schemas, policies, manifests, safe validation evidence,
+    and explicitly public-safe metadata only
+```
+
+The first storage adapter is a local filesystem content-addressed store behind an ADS-owned `SourceArtifactStore` boundary. The physical vault root is configuration, not domain identity, and the architecture does not depend on that local adapter remaining the final backend.
+
+Source binaries, private observed paths, private registry snapshots, backup payloads, and material with unknown redistribution rights must not be placed in the public repository merely because ADS consumes them.
+
+ChatGPT Library, ChatGPT Project Sources, Google Drive, OneDrive, and similar services may be useful intake, synchronization, backup, or development surfaces. They are not the semantic source authority unless a future explicit architecture decision changes that boundary.
+
+The Source Universe does not itself create accepted methodological knowledge. Source evidence must pass through the separate knowledge extraction, provenance, review, and governance boundaries before reusable methodological authority is created.
+
+### Rationale
+
+Foundation 021 and Specification 023 distinguish logical sources from exact byte artifacts, collection membership from artifact identity, original evidence from rebuildable derived representations, and source support from accepted knowledge.
+
+The provider-free implementation passed the prospectively frozen SU-G01 through SU-G23 gate set on Ubuntu and Windows. The first 20-file VU Amsterdam Machine Learning corpus matched its prospectively recorded hashes, ingested as 20 exact artifacts, preserved fourteen real duplicate re-encounters as extra ingestion events without duplicate artifact rows or stored objects, retained uncertain course associations without strengthening them, passed clean integrity audit, and completed verified backup plus clean restore with exact semantic registry equality and 20/20 restored objects passing integrity verification.
+
+This evidence resolves the source-architecture uncertainty that motivated D-015 while retaining D-015's conservative outcome that educational source binaries do not belong in the public Git repository.
+
+See:
+
+```text
+docs/foundations/021_source_universe_artifact_integrity_and_evidence_provenance.md
+docs/research/034_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 ```
