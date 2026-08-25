@@ -1,44 +1,4 @@
 {
   "schema_version": 1,
-  "authorizations": [
-    {
-      "launch_id": "spec022-methodological-navigation-coverage-001",
-      "enabled": true,
-      "owner_login": "shakaarlatief",
-      "workflow_file": "v1-methodological-navigation-coverage-live.yml",
-      "ref": "v1-spec022-methodological-navigation-coverage-live-source",
-      "expected_source_sha": "cf5893d74fefa699296842b0a48326a9cb50161c",
-      "confirmation": "RUN_SPEC_022_FROZEN",
-      "required_ci_runs": [
-        {
-          "run_id": 32813574558,
-          "workflow_name": "V1 methodological navigation coverage"
-        },
-        {
-          "run_id": 32813574617,
-          "workflow_name": "Checkpoint metadata"
-        },
-        {
-          "run_id": 32813574588,
-          "workflow_name": "Current routing consistency"
-        },
-        {
-          "run_id": 32813574578,
-          "workflow_name": "V1 disposition semantics diagnostic"
-        },
-        {
-          "run_id": 32813574629,
-          "workflow_name": "V1 autonomous live experiment launcher CI"
-        },
-        {
-          "run_id": 32813574553,
-          "workflow_name": "V1 reasoning context value"
-        },
-        {
-          "run_id": 32813574555,
-          "workflow_name": "V1 blocking calibration diagnostic"
-        }
-      ]
-    }
-  ]
+  "authorizations": []
 }
