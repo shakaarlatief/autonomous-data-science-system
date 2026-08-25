@@ -23,15 +23,17 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. The project is in bounded V1 implementation and integration.**
 
 ```text
-checkpoint            186
-active branch         v1-methodological-navigation-coverage-review
-active PR             #67
-promoted V1 head      ef6b45a84f43a5dfe33cf5c13351cb1235e6e661
-current boundary      Question A architecture/evaluation review completed; Specification 022 not frozen
-latest experiment     Specification 021
-outcome               FAIL
-next                  align on Research 031 and Checkpoint 186;
-                      then design Specification 022 prospectively
+checkpoint            192
+active branch         v1-spec022-incomplete-preservation
+active PR             #72
+promoted V1 head      0b8ad9cdc3fbd4dab7fcc53dec596ba78946831e
+current boundary      Specification 022 incomplete evidence preservation-only promotion
+latest specification  Specification 022
+latest experiment     Specification 022
+outcome               INCOMPLETE
+next                  validate and merge preservation-only PR #72,
+                      close implementation PR #68 without merge,
+                      then begin the methodological knowledge-universe stage
 ```
 
 Current experimental progression:
@@ -48,9 +50,15 @@ Specification 019  system-owned-provenance recommendation rerun completed; FAIL 
 Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED boundary supported/promoted
 Specification 021  complete supplied-action recommendation/disposition experiment FAIL; negative evidence preserved without implementation promotion
 Checkpoint 183     clarified that supplied-action disposition calibration does not test open-world methodological navigation / coverage
-Checkpoint 184     preservation-only promotion candidate for Specification 021 evidence and interpretation
-Checkpoint 185     preservation merged, failed implementation closed, Question A architecture/evaluation review ready
-Checkpoint 186     methodological-navigation / coverage architecture and evaluation review completed; Specification 022 not frozen
+Checkpoint 185     Specification 021 evidence preserved and failed implementation closed
+Checkpoint 186     methodological-navigation / coverage architecture and evaluation review completed
+Checkpoint 187     project-state methodological coverage diagnostic design choices resolved
+Specification 022  project-state-to-methodological-horizon coverage diagnostic contract frozen
+Checkpoint 188     exact Specification 022 fixtures, runtime treatment, metrics, thresholds, seed, and gates frozen
+Checkpoint 189     Specification 022 provider-free implementation and integrity gate passed cross-platform
+Checkpoint 190     exact Specification 022 live-capable source frozen at `cf5893d74fefa699296842b0a48326a9cb50161c`
+Checkpoint 191     live execution preserved as INCOMPLETE / EXECUTION INTEGRITY FAILED; knowledge-universe stage selected next
+Checkpoint 192     preservation-only promotion candidate for durable Specification 022 evidence/history
 ```
 
 For exact continuation, start with:
@@ -59,11 +67,16 @@ For exact continuation, start with:
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
-docs/checkpoints/186_methodological_navigation_coverage_review_completed.md
-docs/research/031_methodological_navigation_coverage_architecture_and_evaluation_review.md
-docs/checkpoints/185_specification_021_negative_result_preserved_and_architecture_review_ready.md
-docs/research/030_methodological_navigation_vs_downstream_recommendation_calibration.md
-experiments/dependency_backed_recommendation_action_value/V1_DEPENDENCY_BACKED_RECOMMENDATION_ACTION_VALUE_RESULT.md
+docs/checkpoints/192_specification_022_incomplete_result_preservation_promotion_candidate.md
+docs/checkpoints/191_specification_022_live_execution_incomplete_knowledge_universe_next.md
+experiments/methodological_navigation_coverage/V1_METHODOLOGICAL_NAVIGATION_COVERAGE_RESULT.md
+experiments/methodological_navigation_coverage/results/spec022-live-20260825-run-32815726116/PRE_INTERPRETATION_ARTIFACT_COMMITMENT.md
+docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
+docs/research/032_project_state_to_methodological_horizon_coverage_diagnostic_design.md
+docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/foundations/008_knowledge_quality_generalization_and_evolution.md
 ```
 
 ---
@@ -356,38 +369,18 @@ scripts/check_current_routing.py
     Ubuntu/Windows validation for routing-sensitive changes
 ```
 
-Exact pre-checkpoint implementation head `5f5dfb81a97f089afc91f20d4632683714a43f60` passed the routing workflow and the accepted V1 blocking-calibration, reasoning-context, disposition-semantics, and autonomous-launcher regression seams.
+Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence.
 
-The final PR #54 head `44d92d73029ad56925bd2c49bb373be5bdef44ce` then passed checkpoint metadata, cross-platform routing consistency, and all applicable accepted V1 regression seams before merge into `v1-frontend-spike` at `a639cfc570290a2169425f43078bbb242fa398e9`.
-
-The integration reconciliation is deliberately routing-sensitive so the new push guard must validate the merged branch state itself, not only the pre-merge pull-request head.
-
-Markdown remains the substantive source of project knowledge. The manifest does not become a new repository for rationale, decisions, specifications, experiment interpretation, or historical evidence. Development Method remains v0.4 because its existing rule already permits narrow partial automation once repetitive or inconsistent maintenance is observed.
-
-This hardening is not a justification for graph/vector preservation storage or wholesale machine-generated documentation.
-
----
-
-## Exact continuation
+The unexpected Session-05 boundary again demonstrated:
 
 ```text
-1. validate the Checkpoint 186 review branch and canonical routing
-2. align on Research 031's state-to-methodological-horizon evaluation architecture
-3. resolve the still-open benchmark/oracle/condition/metric design questions recorded there
-4. only then prospectively freeze Specification 022
-5. do not rerun the supplied-action benchmark merely to seek a SELECTIVE win
-6. do not modify or rescore Specifications 015-021
+substantive preservation failure      NO
+routing/current-state reconciliation  INTERRUPTED
 ```
 
+Checkpoint 191 and the stable Specification 022 result survived before the conversation ended. Checkpoint 192 and PR #72 now perform the preservation-only reconciliation without promoting the incomplete implementation.
+
 ---
-
-## Repository role
-
-This repository is the project's durable source of truth.
-
-> **The chat is where we think. The repository is where the system remembers.**
-
-The project continues to follow one empirical rule: build the smallest mechanism that can test the architectural hypothesis, preregister what success means where possible, preserve failures and incomplete runs as evidence, and promote only what earns its complexity.
 
 ## Specification 021 interpretation boundary
 
@@ -403,19 +396,96 @@ downstream disposition calibration over an already supplied action set
 
 GENERIC remains an essential experimental control, not an architectural replacement for the methodological-navigation brain described by Foundations 006, 017, 019, 020 and Research 028.
 
-## Methodological navigation coverage review
+---
 
-Research 031 and Checkpoint 186 move the successor evaluation boundary upstream from supplied-action disposition calibration.
+## Specification 022 incomplete execution boundary
 
-The recommended decomposition is:
+Specification 022 moved the evaluation upstream to evolving Foundation-018-aligned project state and prospectively separated methodological-universe gaps, navigation gaps, and downstream reasoning/use gaps.
+
+The governed live run used exact frozen source:
 
 ```text
-UNIVERSE COVERAGE
-    -> NAVIGATION / PATH COVERAGE
-    -> APPLICABILITY / MISSING CONTEXT
-    -> CONCRETE OPTION GENERATION
-    -> PRIORITIZATION / DISPOSITION
-    -> MODEL-FACING CONTEXT VALUE
+cf5893d74fefa699296842b0a48326a9cb50161c
 ```
 
-A methodological-universe gap, a navigation gap, and a downstream reasoning/use gap are separate failure classes. The proposed first successor experiment class is a bounded project-state-to-methodological-horizon coverage diagnostic focused primarily on path discovery and applicability/missing-context handling. Specification 022 is not frozen.
+Observed execution:
+
+```text
+planned reasoner observations     108
+valid reasoner observations         0
+planned judge observations        108
+valid judge observations            0
+provider attempts                 216
+execution_complete                false
+execution_integrity               false
+advancement_outcome               none
+```
+
+Every reasoner observation exhausted the initial attempt plus the one allowed retry because the live model repeatedly returned semantically natural concern-state labels outside the frozen `CURRENT | MISSING_CONTEXT` output enum. Pydantic therefore rejected every structured result before the judge stage.
+
+The preserved scientific classification is:
+
+```text
+INCOMPLETE / EXECUTION INTEGRITY FAILED
+```
+
+No comparative conclusion about `GENERIC`, `ADS_HORIZON`, or `ORACLE_HORIZON` is legitimate. Invalid prose is not post-hoc normalized or rescored.
+
+The complete downloaded GitHub artifact was cryptographically committed before scientific interpretation at:
+
+```text
+bfda6d9048d3380e2f557b0e7bb3d1585de5f3f9
+```
+
+The original GitHub Actions artifact remains the authoritative byte source. The automated byte-copy preservation transport failure is preserved as engineering/governance evidence rather than hidden.
+
+---
+
+## Strategic shift: serious methodological knowledge universe
+
+Checkpoint 191 changes the next development emphasis from another immediate small mechanism rerun to construction of the first serious governed methodological knowledge universe:
+
+```text
+1. serious governed methodological knowledge universe
+        ->
+2. navigation / selection over that universe
+        ->
+3. project-specific concern / question / option generation
+        ->
+4. prioritization / disposition
+        ->
+5. execution and project-state update
+        ->
+6. real end-to-end project trials
+        ->
+7. governed knowledge evolution
+```
+
+The knowledge-universe stage is not a plan to generate a shallow encyclopedia. It should pressure-test operational reasoning knowledge such as question templates, evidence requirements, decision principles, alternatives, failure modes, assumptions, claim constraints, dependencies, resolution/reopen criteria, provenance, maturity, limitations, and relations among methods and project states.
+
+Before bulk authoring, the construction framework must establish a broad coverage map, representation/package pressure tests, source and authority policy, provenance and lifecycle policy, duplicate/contradiction handling, knowledge QA/review workflow, breadth-versus-depth strategy, and deep heterogeneous vertical slices.
+
+---
+
+## Exact continuation
+
+```text
+1. validate preservation-only PR #72 on its exact head
+2. merge PR #72 only if its evidence/history-only boundary remains clean and green
+3. close Specification 022 implementation PR #68 without merge
+4. reconcile v1-frontend-spike to the preserved Checkpoint 192 boundary
+5. create a dedicated methodological-knowledge-universe branch from that clean integration head
+6. freeze the knowledge-universe construction framework before bulk authoring
+7. do not immediately rerun the 216-call Specification 022 matrix
+8. do not modify or rescore Specifications 015-022
+```
+
+---
+
+## Repository role
+
+This repository is the project's durable source of truth.
+
+> **The chat is where we think. The repository is where the system remembers.**
+
+The project continues to follow one empirical rule: build the smallest mechanism that can test the architectural hypothesis, preregister what success means where possible, preserve failures and incomplete runs as evidence, and promote only what earns its complexity.
