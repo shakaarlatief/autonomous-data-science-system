@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0002",
+  "review_mode": "REVIEWED",
+  "lifecycle_state": "ACTIVE",
+  "phase": "IMPLEMENTATION_ACTIVE",
+  "target": {
+    "branch": "v1-multimodel-development-collaboration",
+    "base_ref": "9da382d4011ff112b75dec9c456143d798336336",
+    "description": "Implement and directly review Specification 024 model-collaboration state coherence guard.",
+    "write_paths": [
+      "schemas/model_collaboration_thread_state_v1.schema.json",
+      "scripts/check_model_collaboration_state.py",
+      "tests/unit/test_model_collaboration_state.py",
+      ".github/workflows/model-collaboration-state.yml",
+      "docs/model_collaboration/threads/MC-0002/STATE.json",
+      "docs/model_collaboration/threads/MC-0002/THREAD.md",
+      "docs/current_routing.json",
+      "README.md",
+      "docs/CURRENT_STATE.md",
+      "docs/KNOWLEDGE_MAP.md"
+    ]
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": "chatgpt",
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-06",
+      "roles": ["TASK_OWNER", "IMPLEMENTER"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-01",
+      "roles": ["REVIEWER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0002/messages/**"]
+    }
+  ],
+  "next_expected_actor": "chatgpt",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": null,
+    "known_exposures": [],
+    "notes": "MC-0002 uses direct review under frozen Specification 024 rather than a blind counter-design pass."
+  },
+  "last_transition": {
+    "transition_id": "mc0002-implementation-open",
+    "from_state": "OPEN",
+    "to_state": "ACTIVE",
+    "actor": "chatgpt",
+    "reason": "Begin implementation from the frozen Specification 024 contract.",
+    "repository_head": "9da382d4011ff112b75dec9c456143d798336336"
+  }
+}
