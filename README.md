@@ -19,7 +19,7 @@ Explicit machinery must earn its complexity empirically.
 **Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe. Its prerequisite Source Universe substrate has been accepted and promoted. The permanent source-vault deployment is preserved but temporarily paused while the project pressure-tests a major Level-2 change: governed multi-model development collaboration between ChatGPT, Claude, and the human project owner.**
 
 ```text
-checkpoint            200
+checkpoint            201
 active branch         v1-multimodel-development-collaboration
 active PR             #76
 promoted V1 head      8215718db3e44f000cc6ed53d6a051522d429dbd
@@ -27,22 +27,22 @@ latest specification  Specification 023
 source outcome         SOURCE_SUBSTRATE_ACCEPTED
 latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary       MC-0001 Phase B comparative Claude review;
+current boundary       MC-0001 bounded Phase D Claude challenge;
                        PR #75 source-vault bootstrap paused
 ```
 
 The active collaboration route is:
 
 ```text
+docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
-docs/model_collaboration/threads/MC-0001/messages/001_chatgpt_review_request.md
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
-docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
-docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
+docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
+docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
 ```
 
 GitHub Issue #77 is the optional live transport surface for `MC-0001`; the issue is collaboration transport, not canonical project authority.
@@ -71,11 +71,13 @@ when automated API orchestration would actually earn its cost/complexity
 
 Research 035 is the first ChatGPT-authored candidate architecture. It is **not** yet Development Method v0.5.
 
-The first trial, `MC-0001`, uses an independent-then-comparative Claude review. Claude has now frozen Phase A in `002_claude_independent_proposal.md`. That pass was independent from the full Research 035 memo and ChatGPT message 001, but Claude correctly identified that the required routing/current-state documents already exposed several candidate architecture ideas. Phase A is therefore partially independent rather than fully blind, and contaminated convergence must not be counted as clean independent confirmation.
+The first trial, `MC-0001`, used an independent-then-comparative Claude review. Claude's Phase A was independent from the full Research 035 memo and ChatGPT message 001, but Claude correctly identified that the required routing/current-state documents already exposed several candidate architecture ideas. Phase A is therefore partially independent rather than fully blind, and contaminated convergence is not counted as clean independent confirmation.
 
-Phase B is now open. Claude may read the full candidate architecture and compare it against its frozen first proposal.
+Claude then completed a full Phase-B comparative review. It materially improved the architecture by identifying a missing machine-checkable collaboration-state mechanism, strengthening contamination handling, operationalizing review intensity, refining transport/human-role choices, and challenging its own earlier defaults.
 
-The goal is neither consensus nor disagreement. The goal is calibrated cross-model reasoning.
+ChatGPT has now completed Phase C in `004_chatgpt_response_to_claude.md`. It accepts several Claude additions while rejecting blanket `risk-averse wins` and `narrow-scope wins` routing, distinguishing role from write scope, and preferring scoped per-thread write ownership over one global active-writer field.
+
+The current next step is one bounded Claude Phase-D challenge on the remaining disagreements. The goal remains neither consensus nor disagreement. The goal is calibrated cross-model reasoning.
 
 ---
 
@@ -100,7 +102,9 @@ normal accepted project artifacts
     authority after existing review/promotion governance
 ```
 
-The candidate method uses one bounded task owner, serialized canonical writes, explicit task roles, append-only substantive review messages, explicit disagreement classification, and provider-neutral collaboration identities rather than permanently assigning one model as architect and another as reviewer.
+The candidate method uses one bounded task owner, serialized target-state writes, explicit task roles, append-only substantive review messages, explicit disagreement classification, and provider-neutral collaboration identities rather than permanently assigning one model as architect and another as reviewer.
+
+A key new candidate requirement is machine-readable collaboration state before routine multi-model canonical development. The exact mechanism is not frozen. A single global active-writer field is currently considered too coarse; a per-thread model separating target-state ownership from allowed review-message surfaces is under discussion.
 
 No automated OpenAI/Anthropic API orchestrator is being built at this stage.
 
@@ -360,14 +364,16 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
 docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
-docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
 docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
+docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
+docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
 
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
@@ -382,12 +388,12 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. Claude performs MC-0001 Phase B by reading Research 035 and the candidate collaboration/provenance artifacts
-2. Claude compares them against its frozen Phase-A proposal
-3. Claude explicitly discounts convergence already exposed during the partially contaminated Phase-A read
-4. preserve the comparative review as messages/003_claude_comparative_review.md
-5. only then does ChatGPT produce messages/004_chatgpt_response_to_claude.md
-6. classify remaining disagreements and route them to evidence/test, human decision, or deferral
-7. only then decide whether Development Method v0.5 / provider-neutral checkpoint provenance is justified
+1. Claude reads messages/004_chatgpt_response_to_claude.md
+2. Claude performs one bounded Phase-D challenge rather than reopening the whole architecture
+3. preserve messages/005_claude_phase_d_challenge.md
+4. Claude marks each unresolved item AGREE / DISAGREE / PARTIAL and gives the strongest reason + change-of-mind evidence
+5. route remaining disagreements to bounded design/prototype, evidence check, human project-intent decision, or explicit deferral
+6. only after resolution decide whether Development Method v0.5 / provider-neutral checkpoint provenance is justified
+7. if mechanical collaboration-state support remains required, design and test it before declaring routine multi-model canonical development ready
 8. PR #75 remains paused until the user chooses to resume the permanent source-vault deployment
 ```
