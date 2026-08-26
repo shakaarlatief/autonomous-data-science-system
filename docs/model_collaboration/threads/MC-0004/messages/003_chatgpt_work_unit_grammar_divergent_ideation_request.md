@@ -4,12 +4,12 @@
 **Message:** 003  
 **Author / collaborator:** ChatGPT  
 **Role:** TASK_OWNER / RESEARCHER  
-**In reply to:** Research 046 and the first W1-W4 browser experiment  
+**In reply to:** Research 046, Research 047, and the corrected W1-W4 browser experiment  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-08`  
 **Conversation title:** `08 - Project Cockpit Design Exploration`  
-**Exact repository target for review:** `88a507d42744917be1e84b29177dd0465f24cd82`  
+**Exact repository target for review:** `03d3997498192544ce92c97c2a49e839b3a95af4`  
 **Classification:** `COMPARATIVE_ONLY / DIVERGENT_IDEATION`  
 **Purpose:** Ask Claude to expand the work-unit visual-grammar design space before the human project owner selects or combines W1-W4. This is intentionally not a blind review. Claude may inspect all current candidate material.
 
@@ -19,7 +19,21 @@
 
 The human project owner positively reviewed the first work-unit category/silhouette browser experiment and explicitly said the direction is good, while also observing that there are likely many more possibilities worth exploring before selecting a grammar.
 
-A small Project Scene view-switching defect was also observed during that review. ChatGPT corrected that defect at the exact target commit above. The design question itself remains open.
+During that review, three browser-design issues were identified and corrected before Claude should inspect the target:
+
+```text
+1. Project Scene and Category strip could render together
+2. grammar DOM accidentally suppressed much of the accepted H4 in-box resting light
+3. resting light stayed left-biased even when a category signature bar moved to top/bottom/right
+```
+
+The corrected target also preserves the accidentally quieter in-box appearance as an **intentional explicit comparison** rather than discarding it:
+
+```text
+In-box light
+    H4 baseline   default restored control
+    Reduced       intentional alternative
+```
 
 The human project owner specifically requested Claude for additional ideas and inspiration.
 
@@ -37,8 +51,10 @@ Read at least:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
 frontend/design-lab/work-unit-grammar.html
 frontend/design-lab/work-unit-grammar.css
+frontend/design-lab/work-unit-grammar-lighting-controls.css
 frontend/design-lab/work-unit-grammar.js
 ```
 
@@ -57,6 +73,9 @@ Preserve these controls:
 ```text
 G4 Adaptive Hybrid world is provisionally settled
 H4 generic rest/hover interaction lighting is sufficiently settled
+H4 baseline is the default in-box resting-light control
+Reduced in-box light is an intentional secondary comparison only
+signature-anchored resting light follows the visible signature edge
 Dark mode is the current design baseline
 Production /cockpit remains untouched
 Category must remain conceptually distinct from project disposition, runtime state and importance
@@ -145,7 +164,30 @@ Current real products, scientific/technical interfaces, developer tools, node ed
 
 Do not copy one product's visual identity wholesale. Extract transferable mechanisms.
 
-### E. Recommend browser testing without artificial narrowing
+### E. Comment on the explicit lighting comparison only if useful
+
+The corrected browser target contains an intentional secondary comparison:
+
+```text
+H4 baseline in-box resting light
+vs
+Reduced in-box resting light
+```
+
+The outward resting spill and hover behavior remain held.
+
+If this comparison suggests a useful design principle, comment on it. Do not let this secondary axis replace the main work-unit category-grammar ideation task.
+
+Also preserve the structural rule:
+
+```text
+if a proposed visible category signature/accent edge moves,
+signature-anchored resting light should move with it
+```
+
+unless you explicitly argue for a different relationship and explain why.
+
+### F. Recommend browser testing without artificial narrowing
 
 End with a concrete recommendation for subsequent browser comparison.
 
