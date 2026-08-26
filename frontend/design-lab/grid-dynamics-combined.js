@@ -258,7 +258,7 @@ function snapToGrid(value) {
 }
 
 function randomMajorGridCoordinate(size) {
-  const maximumIndex = Math.max(1, Math.floor((size - MAJOR_GRID_STEP) / MAJOR_GRID_STEP))
+  const maximumIndex = Math.max(1, Math.floor((size - 1) / MAJOR_GRID_STEP))
   const index = Math.floor(randomBetween(1, maximumIndex + 1))
   return index * MAJOR_GRID_STEP
 }
