@@ -8,116 +8,86 @@
 ## Current pending obligation
 
 ```text
+none
+```
+
+Claude completed the MC-0004 work-unit grammar divergent-ideation request.
+
+Completed response:
+
+```text
 thread                 MC-0004
 phase                  PHASE_C_BROWSER_DESIGN_EVALUATION
 kind                   COMPARATIVE_ONLY / DIVERGENT_IDEATION
-requested collaborator Claude
-active branch          v1-cockpit-design-exploration
-exact target           304db34d6482320b317db97277148bc129d07372
+collaborator            Claude
+reviewed target         304db34d6482320b317db97277148bc129d07372
 request                 docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
-expected output         docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
-priority                ordinary required before work-unit grammar convergence
+response                docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+response commit         faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 ```
 
-The human project owner positively reviewed the first W1-W4 work-unit grammar browser experiment but explicitly requested broader Claude ideas and inspiration before selecting or combining the current candidates.
-
-This is not a blind review. Claude may inspect all current candidate material.
-
-Before Claude was triggered, human review identified and ChatGPT corrected:
+ChatGPT synthesized the response in:
 
 ```text
-Project Scene view overlap
-accidental suppression of accepted H4 in-box resting light
-fixed-left resting light despite top/bottom/right category signature bars
-edge-centered resting light despite partial top/bottom signatures being left-biased
+docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
 ```
 
-The corrected browser target now exposes an intentional secondary comparison:
+and implemented the expanded browser experiment at:
 
 ```text
-In-box light
-    H4 baseline   restored default control
-    Reduced       intentional alternative
+frontend/design-lab/work-unit-grammar-expanded.html
+frontend/design-lab/work-unit-grammar-expanded.css
+frontend/design-lab/work-unit-grammar-expanded.js
 ```
 
-The outward resting spill and H4 hover behavior remain held.
-
-Signature-anchored resting light now follows both:
+Exact browser implementation head before routing-only documentation:
 
 ```text
-signature edge
-+
-signature position along that edge
+32883ada35506a713a7c780beca08f363ba29fab
 ```
 
-For example, W2/W4 top and bottom bars that occupy the left part of the edge now produce correspondingly left-biased top/bottom resting light rather than centered top/bottom light.
+Current next actor:
 
-Important human clarification:
+```text
+human project owner
+```
+
+Current review route:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar-expanded.html
+```
+
+Current candidate families:
+
+```text
+Batch A  Glyph strategy       G0-G3
+Batch B  Structural grammar   S0-S3
+Batch C  Material channel     M0-M1
+Batch D  Integrated hybrids   I0-I2
+```
+
+Total immediate executable variants:
+
+```text
+13
+```
+
+Important preserved rule:
 
 ```text
 NO artificial candidate-count cap
-NO requirement to narrow to 3-5 directions
-preserve all genuinely distinct and worthwhile candidates
-browser testing may use multiple batches if useful
+batching is presentation / causal organization only
 batching != rejection
-narrow only for redundancy, domination, boundary violation, or weak value
 ```
 
-Claude should write only under:
+Dependency-bound ideas remain preserved rather than rejected:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/**
+C4 Port Grammar             -> connector-semantics slice
+C5 Internal Layout Grammar  -> semantic zoom / information-density slice
 ```
 
-ChatGPT retains target-state write ownership.
+G4 world, accepted H4 hover behavior, H4 baseline-vs-Reduced comparison, and signature edge + along-edge position light coupling remain part of the current browser evidence.
 
-## Current design context
-
-```text
-G4 world                       provisionally settled
-H4 generic rest/hover lighting sufficiently settled
-H4 in-box baseline             restored as default control
-Reduced in-box light           explicit optional comparison
-signature light coupling       edge + along-edge position corrected
-active slice                   work-unit category / silhouette grammar
-current candidates             W1-W4, not a closed menu
-current checkpoint             220
-next expected actor            human verification, then Claude
-```
-
-Primary current evidence:
-
-```text
-docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
-docs/checkpoints/220_work_unit_grammar_h4_control_corrected_claude_ideation_ready.md
-```
-
-## Recently completed collaboration evidence
-
-```text
-MC-0004 Phase A
-    Claude proposal commit  cd2e12f2c79ee3b2f205457c5940eb2022b4631a
-    classification          BLIND_TO_CANDIDATE
-
-MC-0004 Phase B
-    Claude review commit    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
-    classification          COMPARATIVE_ONLY
-
-MC-0004 Phase C
-    G4 selected and provisionally settled
-    H4 selected and generic rest/hover lighting sufficiently settled
-    first W1-W4 work-unit grammar experiment implemented and preliminarily reviewed
-    H4 grammar-control drift corrected before Claude ideation
-    signature light refined from side-aware to exact edge-position-aware before Claude ideation
-```
-
-## Manual trigger
-
-After the project owner verifies the corrected browser rendering, use:
-
-```text
-Check v1-cockpit-design-exploration and docs/model_collaboration/REVIEW_INBOX.md, then proceed with the pending MC-0004 Claude task.
-```
-
-The repository carries the detailed contract. No transcript relay is required.
+No Claude action is currently pending.
