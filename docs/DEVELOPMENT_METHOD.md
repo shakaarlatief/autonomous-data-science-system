@@ -1,135 +1,147 @@
 # Development Method
 
 **Status:** Current canonical project-development method  
-**Current version:** 0.4  
-**Last reviewed:** 2026-08-20
+**Current version:** 0.5  
+**Last reviewed:** 2026-08-26
 
 ## Purpose
 
-This document defines the current method for designing, documenting, testing, and evolving the Autonomous Data Science System itself.
+This document defines the current method for designing, documenting, testing, reviewing, and evolving the Autonomous Data Science System itself.
 
-The method is intentionally provisional. The project is expected to improve not only the target system, but also the process used to build that system.
+The method is intentionally provisional. ADS evolves at two levels simultaneously:
+
+```text
+Level 1
+    the target Autonomous Data Science System
+
+Level 2
+    the method used to build, preserve, review, and evolve that system
+```
+
+Changes at either level should be evidence-driven and should preserve maturity, authority, provenance, and reversibility.
+
+---
 
 ## Two levels are evolving in parallel
 
-The project has two coupled design problems.
+### Level 1: target-system questions
 
-### Level 1: the target system
+Examples include:
 
-Questions include:
+- how a data project should be understood;
+- which analyses and investigations matter;
+- how reusable methodology should be activated;
+- how evidence, claims, decisions, and project state should be represented;
+- what execution and reasoning capabilities are useful;
+- when the human should be involved;
+- how project state should evolve;
+- and how completed projects should improve the system.
 
-- How should a data project be understood?
-- What analyses should be considered?
-- How should relevant investigations be activated?
-- How should evidence be gathered?
-- What roles or agents are useful?
-- How should decisions be reviewed?
-- When should the human be involved?
-- How should project state be represented?
-- How should the system learn from completed projects?
+### Level 2: development-method questions
 
-### Level 2: the method used to build the target system
+Examples include:
 
-Questions include:
-
-- How should design discussions be preserved?
-- What belongs in canonical documentation?
-- What deserves a long-form foundational memo?
-- How should speculative ideas be distinguished from accepted decisions?
-- How should open questions remain visible?
-- How should a new chat reconstruct the project?
-- How should documentation evolve without becoming burdensome?
-- How should important knowledge remain discoverable as the repository grows?
-- How should historical insights be promoted when their maturity changes?
-- How should duplicated or stale knowledge be detected?
-- Who should decide when repository preservation is needed?
+- how important reasoning should be preserved;
+- what belongs in canonical knowledge versus historical provenance;
+- when checkpointing and promotion are warranted;
+- how new sessions/models reconstruct project state;
+- how multiple AI collaborators may work without corrupting ownership or independence;
+- how reviews should be routed, deferred, and resolved;
+- how disagreement should remain visible;
+- how session/provenance metadata should remain provider-neutral;
+- and when additional automation has actually earned its complexity.
 
 Both levels are expected to change through use.
 
+---
+
 ## Core development loop
 
-The current method is:
+The current loop is:
 
 ```text
-free discussion
-    -> identify important insights
+free discussion / exploration
+    -> identify important insights or implementation boundaries
     -> challenge and refine them
-    -> AI design collaborator detects a natural checkpoint
+    -> active AI collaborator detects a natural checkpoint
     -> preserve the checkpoint
     -> perform a promotion audit
     -> update canonical/foundational/specification knowledge when warranted
-    -> update routing in KNOWLEDGE_MAP when warranted
+    -> update routing when warranted
     -> update current state
     -> continue exploration
 ```
 
-At meaningful stage boundaries, this local loop is supplemented by a broader knowledge reconciliation.
+At major stage boundaries, this local loop is supplemented by a broader knowledge reconciliation.
 
 The purpose is to combine conversational freedom with durable, discoverable, correctly classified project memory.
+
+---
 
 ## Discussion should remain fluid
 
 The project should not interrupt every useful discussion to update many files.
 
-Exploratory reasoning is allowed to be messy. Ideas can be incomplete, contradictory, or speculative during discussion.
+Exploratory reasoning may be incomplete, contradictory, or speculative while it is still developing.
 
-Documentation becomes more structured at checkpoints.
+Documentation becomes more structured at natural checkpoints.
 
-This prevents the preservation process from becoming so expensive that it interferes with actual thinking.
+The preservation process must not become so expensive that it interferes with the substantive work.
+
+---
 
 ## Proactive checkpoint responsibility
 
-Beginning with development-method version 0.2, the AI design collaborator is explicitly responsible for deciding when a checkpoint or repository update is warranted during an active design conversation.
+The active AI design collaborator is responsible for deciding when repository preservation or a checkpoint is warranted.
 
-The user should not need to remember to request preservation after every important discussion.
+The user should not need to request every update manually.
 
-The AI should continue the conversation when ideas are still developing fluidly and should initiate a checkpoint when preservation has become more valuable than additional uninterrupted exploration.
-
-This responsibility is about checkpoint detection, not unilateral canonization. The AI must still distinguish accepted decisions from strong hypotheses, open questions, provisional abstractions, and historical reasoning.
-
-If the status of an idea is unclear, it should be preserved at the weaker maturity level rather than silently promoted to a principle or decision.
-
-## Checkpoints
-
-A checkpoint should be created when one or more of the following occurs:
+A checkpoint is normally warranted when one or more of the following becomes material:
 
 - a major concept has been clarified;
-- an important design decision has been made;
-- a subject has been explored deeply enough that moving on would risk losing context;
-- a coherent cluster of strong design hypotheses has emerged and deserves preservation before a new topic;
-- the project is about to change direction;
-- the current chat is becoming long;
-- a new chat may soon be required;
+- an important decision has been made;
+- a coherent cluster of hypotheses deserves preservation;
 - implementation is about to begin after a conceptual phase;
-- a substantial real-project test has produced system-level lessons;
-- a major experiment milestone has been reached;
-- or the user explicitly requests a repository update.
-
-A checkpoint should normally capture:
-
-- current focus;
-- major ideas added or changed;
-- accepted decisions;
-- active design hypotheses;
-- unresolved questions;
-- important reasoning that deserves long-form preservation;
-- explicit non-decisions;
-- the promotion-audit result;
-- and the exact next continuation point.
+- a substantial implementation/result milestone has been reached;
+- the project is about to change direction;
+- a real project or experiment has produced system-level lessons;
+- the current interaction is becoming long or fragile;
+- another session/model may need to continue the work;
+- or the user explicitly requests preservation.
 
 A checkpoint should not be created merely because a fixed number of messages has passed.
 
+Checkpointing is preservation, not unilateral canonization. If maturity is unclear, preserve the weaker status rather than silently promoting the idea.
+
+---
+
+## Checkpoint contents
+
+A substantive checkpoint should normally preserve:
+
+```text
+current focus
+important changes since the prior checkpoint
+accepted decisions
+active hypotheses
+unresolved questions
+important detailed reasoning
+explicit non-decisions
+promotion-audit result
+exact next continuation point
+```
+
+Operational/experiment checkpoints may be narrower when the purpose is to preserve one specific execution or verification boundary.
+
 ### Checkpoint metadata contract
 
-Beginning with Development Method v0.4, checkpoint metadata is an explicit contract rather than a loose authoring convention.
-
-The current checkpoint-format specification is:
+Checkpoint metadata is governed by:
 
 ```text
 docs/checkpoints/README.md
 ```
 
-Every new checkpoint created under the current ChatGPT-based development process must contain the following historical/authority core immediately after the title:
+All checkpoints use a mandatory historical/authority core:
 
 ```text
 Date
@@ -140,7 +152,7 @@ Scope
 Authority
 ```
 
-and must also preserve the current interaction-session provenance:
+Historical checkpoints through Checkpoint 203 retain the earlier ChatGPT-specific interaction provenance:
 
 ```text
 Design session
@@ -148,39 +160,31 @@ ChatGPT project
 Session title
 ```
 
-The historical/authority core exists so a checkpoint can be interpreted without reconstructing its role from the filename or surrounding Git history. Session provenance exists so a future continuation can identify where the checkpoint was produced without depending on the old chat remaining available.
-
-Checkpoint classes may add type-specific metadata when useful. Experiment records, for example, may add condition, run, attempt, blinding, verification, or treatment-impact information. Heterogeneous checkpoint classes should not be forced to carry semantically meaningless fields merely for visual uniformity.
-
-The historical checkpoint body remains provenance. Metadata normalization may improve classification and discoverability, but it must not rewrite historical conclusions using later knowledge or silently promote old records into current authority.
-
-The legacy normalization is complete. On 2026-08-20, Checkpoints `000` through `099` were normalized conservatively by the repository migration workflow while preserving titles and substantive bodies. The successful normalization commit is:
+Beginning with Checkpoint 204, new checkpoints use provider-neutral interaction provenance:
 
 ```text
-bae5b8d00fa5da16029afee790c1a6762dc6c0fc
-Normalize legacy checkpoint metadata
+Interaction environment
+Project / workspace
+Interaction session
+Conversation title
+Primary collaborator
 ```
 
-Checkpoints `100` through `102`, which were created in Design Session 02 before session provenance had again become mandatory, were subsequently backfilled in:
+The migration is prospective. Historical checkpoint provenance is not rewritten merely for cosmetic uniformity.
 
-```text
-ce6b029af78a33bb64f85377f5ff753f088ba190
-Backfill Session 02 checkpoint provenance
-```
-
-The lightweight validator:
+The validator:
 
 ```text
 scripts/check_checkpoint_metadata.py
 ```
 
-now checks the current checkpoint contract, including the required session-provenance fields. The completed normalization should therefore be treated as closed historical repair, not as pending work.
+must enforce the appropriate contract according to checkpoint number.
 
-See Checkpoint 103 and `docs/checkpoints/README.md` for the detailed contract and migration record.
+---
 
 ## Promotion audit
 
-Beginning with version 0.3, every substantive checkpoint should explicitly ask whether newly stabilized material deserves promotion beyond the historical checkpoint layer.
+Every substantive checkpoint should explicitly ask whether newly stabilized material deserves promotion beyond the historical checkpoint layer.
 
 Candidate destinations include:
 
@@ -191,204 +195,392 @@ DECISIONS.md
 OPEN_QUESTIONS.md
 DEVELOPMENT_METHOD.md
 CONTINUITY.md
-a foundational design memo
-a current specification or frozen contract
+a foundational memo
+a research memo
+a current/frozen specification
 KNOWLEDGE_MAP.md
-an experiment-specific status document
+an experiment/status ledger
 MAJOR_CHANGES.md
 ```
 
-No promotion is a valid and common outcome.
+No promotion is a valid outcome.
 
-A checkpoint can therefore state:
+Promotion must respect maturity. Historical prominence, model confidence, or multi-model agreement does not by itself create authority.
 
-```text
-Promotion audit: none required.
-Reason: mechanical or historical record only.
-```
-
-The audit exists to prevent important knowledge from becoming dependent on someone remembering a historical checkpoint number.
-
-Promotion must respect maturity. Historical prominence is not evidence that an idea should become canonical.
+---
 
 ## Knowledge layers
-
-The project uses a layered preservation model.
 
 ### 1. Canonical documents
 
 Examples:
 
-- `VISION.md`
-- `PRINCIPLES.md`
-- `DECISIONS.md`
-- `OPEN_QUESTIONS.md`
-- `DEVELOPMENT_METHOD.md`
-- `CONTINUITY.md`
-- future specifications and requirements
+```text
+VISION.md
+PRINCIPLES.md
+DECISIONS.md
+OPEN_QUESTIONS.md
+DEVELOPMENT_METHOD.md
+CONTINUITY.md
+accepted specifications
+```
 
-These should be reasonably concise, current, and intentionally maintained.
-
-Their purpose is operational usability.
+These should remain reasonably concise, current, and operationally usable.
 
 ### 2. Foundational design memos
 
-These preserve rich reasoning that would be damaged by aggressive compression.
+Foundations preserve durable reasoning that would be damaged by aggressive compression: motivations, distinctions, examples, alternatives, failure scenarios, conceptual structure, and deeper rationale.
 
-They may include:
+A foundation is not automatically an implementation contract.
 
-- motivations;
-- examples;
-- arguments;
-- distinctions;
-- failure scenarios;
-- conceptual diagrams;
-- rejected alternatives;
-- domain stress tests;
-- and the reasoning behind important design hypotheses.
+### 3. Research and specifications
 
-They are not required to be short and are not automatically binding implementation contracts.
+Research preserves bounded candidate reasoning and evidence. Specifications define explicit contracts for their declared scope, with status/maturity determining whether they are candidate, frozen, accepted, failed, or superseded.
 
-### 3. Checkpoints and session records
+### 4. Checkpoints and session records
 
-These preserve what the project believed or was working on at a particular time.
+Checkpoints preserve what the project believed, observed, or did at a particular time. They are historical provenance rather than automatic current truth.
 
-They are historical snapshots rather than automatically current truth.
+### 5. Experiment/status ledgers
 
-Their mandatory historical/authority metadata, ChatGPT session provenance, and type-specific extension rules are governed by `docs/checkpoints/README.md`.
+Long-running or detailed operational evidence belongs in dedicated ledgers rather than bloating `CURRENT_STATE.md`.
 
-### 4. Experiment-specific status ledgers
+### 6. Collaboration provenance
 
-Long-running experiments may maintain detailed current ledgers separate from `CURRENT_STATE.md`.
+`docs/model_collaboration/` preserves cross-model briefs, machine-readable collaboration state, numbered review messages, deferred-review routing, and resolution records.
 
-For Prototype V0:
+These artifacts are provenance/coordination evidence. They do not become canonical project truth merely because multiple models participated.
 
-```text
-docs/experiments/prototype_v0/HELD_OUT_STATUS.md
-```
+### 7. Raw historical material
 
-The ledger contains detailed run-by-run mechanics. `CURRENT_STATE.md` should only summarize what is needed for project continuity.
+Raw conversations may be archived later where useful, but remain provenance rather than canonical authority.
 
-### 5. Raw historical material
-
-Raw conversations may later be archived when useful.
-
-If this layer is introduced, it should be treated as provenance rather than as canonical knowledge.
+---
 
 ## Routing layer: KNOWLEDGE_MAP
 
-Version 0.3 introduced:
+`docs/KNOWLEDGE_MAP.md` is a routing/index layer, not another owner of substantive truth.
 
-```text
-docs/KNOWLEDGE_MAP.md
-```
-
-The knowledge map is not another knowledge layer in the sense of owning the substantive truth. It is a routing/index layer.
-
-Its job is to answer:
+It should answer:
 
 ```text
 Where is the current canonical statement?
 Where is the deep rationale?
-Where is the frozen experiment contract?
+Where is the frozen/accepted contract?
 Where is the historical origin?
-Where is the current detailed experiment status?
+Where is the current detailed status?
 ```
 
-It should remain concise enough to navigate and should point to authoritative sources rather than duplicating them.
+It should point to authorities rather than duplicate them.
+
+---
 
 ## Authority and conflict resolution
 
-When documents conflict, the project should prefer the current accepted specification over historical material.
+The practical authority order remains:
 
-A practical hierarchy is:
-
-1. frozen current specifications/contracts for their declared scope;
+1. accepted/frozen current specifications/contracts within their declared scope;
 2. current explicit decisions and current canonical specifications;
-3. current principles, vision, and current-state records;
-4. foundational design memos for rationale and durable hypotheses;
-5. checkpoints and session records for historical state;
-6. raw conversation archives for provenance.
+3. current principles, vision, development method, continuity, and current-state records;
+4. foundational memos for rationale and durable hypotheses;
+5. research memos for bounded candidate reasoning;
+6. checkpoints and collaboration records for historical/review provenance;
+7. raw historical material.
 
-If a conflict is material and cannot be resolved from status metadata, it should become an explicit open question rather than being guessed away.
+If a material conflict cannot be resolved from status, scope, chronology, supersession, or accepted authority, preserve it as an explicit open question rather than guessing.
 
-## Document metadata
-
-Important documents should make their role and authority visible enough that a future reader does not need to infer it from folder location alone.
-
-For documents other than checkpoints, where useful, metadata may include some subset of:
-
-```text
-Status
-Maturity
-Authority or scope
-Date / last reviewed
-Origin or sources
-Supersedes
-Superseded by
-Change constraints
-```
-
-This remains a semantic convention rather than a rigid machine-readable schema for every repository document.
-
-Checkpoint records are the exception. Actual repository use showed that the earlier loose convention produced inconsistent checkpoint headers, so v0.4 gives checkpoints a mandatory historical/authority core, mandatory ChatGPT session provenance under the current development process, and type-specific extensions through `docs/checkpoints/README.md`.
-
-A future version may formalize metadata for additional document classes if observed inconsistency justifies doing so.
+---
 
 ## Knowledge maturity
 
-Not every statement should be treated as equally mature.
-
-The current conceptual maturity path is:
+A useful conceptual path is:
 
 ```text
 raw thought
   -> candidate idea
   -> active design hypothesis
-  -> tested on examples or projects
+  -> tested on examples/projects/implementation
   -> accepted principle or decision
   -> challenged
   -> revised, superseded, or rejected
 ```
 
-The distinction should be respected in writing, promotion, and routing.
+Different axes such as truth confidence, implementation status, source quality, coverage, enforcement strength, and freshness must not be collapsed into one maturity label.
 
-For example, "the system should preserve evidence and assumptions" behaves like a principle. "The epistemic core consists exactly of five invariants" remains a strong design hypothesis until broader evidence justifies stronger status.
+---
+
+# Governed multi-model development
+
+Development Method v0.5 introduces provider-neutral governed collaboration among ChatGPT, Claude, the human project owner, and future collaborators.
+
+The governing protocol is:
+
+```text
+docs/model_collaboration/README.md
+```
+
+The collaboration architecture was not accepted from one model proposal. It was pressure-tested through MC-0001, mechanically exercised by Specification 024/MC-0002, and extended through the real deferred-review pressure test in MC-0003.
+
+## Collaboration is selective
+
+Multi-model capability does not mean multi-model requirement.
+
+Normal modes include:
+
+```text
+SOLO
+REVIEWED
+INDEPENDENT_THEN_COMPARATIVE
+COORDINATED_HANDOFF
+ADVERSARIAL_REVIEW
+```
+
+ChatGPT-only and Claude-only development remain first-class. A second model should enter because its contribution is expected to add meaningful value, not because dual-model ceremony is mandatory.
+
+## One bounded task owner
+
+Every substantive collaborative bounded task has one task owner unless ownership is explicitly transferred.
+
+The owner is responsible for task scope, integration, preservation, and coherent target-state mutation.
+
+## Role and write scope are separate
+
+```text
+ROLE != WRITE_SCOPE
+```
+
+A reviewer, researcher, critic, verifier, or counter-designer may have permission to write an explicitly declared secondary surface without owning the target implementation or canonical state.
+
+One collaborator owns target-state writes at a time. Secondary writers must remain inside declared secondary surfaces.
+
+The accepted Specification 024 state guard makes this coordination state machine-checkable for guarded threads.
+
+The guard is a coherence mechanism, not authenticated model identity or a distributed mutex.
+
+## Collaboration transport and authority
+
+GitHub issues/PR comments may be used for low-friction notices, pointers, or discussion.
+
+Numbered repository message files preserve substantive collaboration provenance.
+
+Neither surface is automatically canonical authority. Accepted project changes still pass through normal checkpoint/promotion/decision mechanisms.
+
+## Genuine review
+
+Agreement is not rewarded. Disagreement is not rewarded.
+
+When agreeing, the reviewer should still identify the strongest plausible failure mode, strongest alternative considered, and evidence that would change its view.
+
+When disagreeing, the reviewer should identify the exact disputed choice, why it matters, preferred alternative, what would reverse its position, and the disagreement type.
+
+Material disagreement should not be averaged away for social smoothness.
+
+## Independent review integrity
+
+For consequential questions where independence matters, the default design is:
+
+```text
+accepted pre-proposal repository ref
++
+neutral problem brief
++
+constraints/success criteria
++
+explicit exposure audit
+```
+
+The reviewer freezes its independent position before seeing the detailed proposer solution.
+
+If current routing or other supposedly neutral material already leaks the candidate design, the review must be classified as partially independent rather than falsely labeled blind.
+
+## Disagreement routing
+
+Useful categories include:
+
+```text
+FACT
+INTERPRETATION
+REQUIREMENT
+ARCHITECTURE
+RISK
+EVIDENCE_SUFFICIENCY
+NORMATIVE_PROJECT_INTENT
+SCOPE
+```
+
+Typical routing:
+
+```text
+FACT
+    inspect repository/source/test evidence
+
+INTERPRETATION
+    expose shared evidence and seek discriminating evidence
+
+REQUIREMENT
+    inspect accepted requirement first; human decides when it must be chosen/changed
+
+ARCHITECTURE
+    compare against accepted requirements; prototype/falsify where useful
+
+RISK
+    reason proportionately about consequence, likelihood/uncertainty,
+    reversibility, blast radius, mitigation, and precaution cost
+
+EVIDENCE_SUFFICIENCY
+    define stronger evidence/gate or preserve unresolved status
+
+NORMATIVE_PROJECT_INTENT
+    human decision
+
+SCOPE
+    inspect task authority and obligations; no blanket narrow-scope-wins rule
+```
+
+There is no universal conservative-wins or narrow-scope-wins default.
+
+## Human role
+
+The human project owner is not a routine transport clerk or approval gate for every model transition.
+
+The human remains authoritative for:
+
+```text
+project intent
+normative choices
+desired requirement changes
+consequential risk acceptance
+resource commitments
+important technically underdetermined trade-offs
+```
+
+Routine thread opening, ordinary review, and uncontested ownership transfer may proceed under the governed method.
+
+---
+
+# Deferred asynchronous review and catch-up
+
+The canonical supplement is:
+
+```text
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+```
+
+Core rule:
+
+> **Collaborator unavailability does not globally block ADS unless a specific accepted gate requires that collaborator before the next relevant boundary.**
+
+Intended review must not silently become SOLO because the reviewer is unavailable.
+
+The process distinguishes:
+
+```text
+Is review REQUIRED or OPTIONAL?
+
+Before what boundary must it happen?
+```
+
+A required review must name a real gate. `NONE` is reserved for optional review.
+
+Exact immutable review targets are mandatory for deferred review. A review of ancestor commit X does not automatically cover descendant Y.
+
+One-by-one catch-up is the default. Related obligations may be batched in one model session only if each retains separate target identity, findings, corrections, and disposition.
+
+If later work materially depends on an unreviewed result, it should remain reversible/provisional or the review gate should move earlier. If a late review changes an upstream result, downstream impact must be inspected.
+
+Cross-thread dependency discovery is currently procedural rather than machine-readable. It is a future mechanization trigger, not a reason to create Specification 025 prematurely.
+
+`docs/model_collaboration/REVIEW_INBOX.md` is a convenience routing view for pending obligations. Per-thread state and exact repository evidence remain authoritative.
+
+---
+
+## Resource proportionality
+
+Collaboration quality must be considered together with time, context size, provider limits, and user burden.
+
+Use expensive independent/comparative review selectively for genuinely high-impact work. Routine implementation under a frozen contract normally deserves a bounded direct review. Mechanical checks may remain deterministic or SOLO.
+
+Model, effort level, and product surface are operational choices rather than permanent architecture. Collect evidence before institutionalizing model-specific defaults.
+
+The first Claude collaboration trial demonstrated that repository-heavy review can consume scarce product usage quickly. This is a real scheduling/resource constraint, but exact percentages or current provider limits are not frozen into the method.
+
+---
+
+## Scheduled execution and API orchestration
+
+Unattended scheduled model review is not part of the current method.
+
+It was considered and deferred because it does not create extra weekly subscription capacity and adds unattended write/concurrency, clarification, and budget-consumption risks at a stage where manual triggering is already lightweight.
+
+API orchestration is also deferred. It would add separately metered usage, repeated context transmission, credentials, retries/failure handling, and orchestration infrastructure.
+
+Revisit either mechanism only when observed manual coordination cost, backlog scale, or product capabilities justify the added machinery.
+
+---
+
+## Interaction provenance
+
+The accepted provider-neutral convention is defined in:
+
+```text
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+```
+
+Visible ChatGPT and Claude conversations use:
+
+```text
+NN - Main Topic / Stage
+```
+
+with provider-local repository session IDs such as:
+
+```text
+chatgpt-06
+claude-01
+```
+
+The common human-facing project/workspace name is:
+
+```text
+Autonomous Data Science System
+```
+
+Provider/model identity is provenance, not authority.
+
+---
 
 ## Knowledge reconciliation
 
-Version 0.3 adds periodic knowledge reconciliation at meaningful stage boundaries.
-
-Typical triggers include:
+Periodic reconciliation is required at meaningful stage boundaries such as:
 
 - completion of a conceptual design phase;
-- freezing a prototype architecture;
-- completion of a held-out experiment;
+- acceptance/failure of a major specification;
+- major experiment completion;
 - beginning a new prototype generation;
-- a major target-system architecture revision;
-- a major development-method revision;
-- or evidence that current documentation has become stale, repetitive, or inconsistent.
+- major target-system architecture change;
+- major development-method revision;
+- or observed documentation/routing inconsistency.
 
 A reconciliation should ask:
 
 ```text
-Were durable checkpoint insights promoted where appropriate?
-Are VISION, PRINCIPLES, and DECISIONS still current?
-Are OPEN_QUESTIONS actually open and accurately described?
-Are important foundations still correctly scoped?
-Does KNOWLEDGE_MAP route to the right current sources?
+Were durable insights promoted where appropriate?
+Are VISION, PRINCIPLES, DECISIONS, and OPEN_QUESTIONS current?
+Does KNOWLEDGE_MAP route to the right sources?
 Is CURRENT_STATE concise and present-tense?
-Are detailed experiment records stored outside CURRENT_STATE?
-Are checkpoint metadata and authority classifications consistent?
+Are experiment/status details stored in the right ledgers?
+Are checkpoint metadata and interaction provenance valid?
+Are collaboration threads correctly resolved/deferred?
+Are pending review obligations discoverable?
 Are there contradictions or duplicated canonical statements?
-Does MAJOR_CHANGES capture significant structural evolution?
+Does MAJOR_CHANGES capture the significant structural evolution?
 ```
 
 Reconciliation is periodic, not required after every checkpoint.
 
-## Unplanned session-boundary recovery
+---
 
-The normal development loop assumes the project has time to complete its checkpoint, promotion, routing, and current-state updates before a design session ends. A platform conversation limit or other abrupt interruption can prevent that final reconciliation even when substantive reasoning has already been preserved.
+## Unplanned session-boundary recovery
 
 The canonical recovery procedure lives in:
 
@@ -396,7 +588,7 @@ The canonical recovery procedure lives in:
 docs/CONTINUITY.md
 ```
 
-The Session 02 to Session 03 transition demonstrated the important distinction:
+Important distinction:
 
 ```text
 substantive preservation failure
@@ -404,216 +596,220 @@ substantive preservation failure
 routing/current-state reconciliation drift
 ```
 
-If research/specification/checkpoint artifacts already preserve the material reasoning, a new session should reconstruct from the active repository branch, identify the incomplete routing/canonical updates, and repair those conservatively rather than attempting to recreate an unavailable conversation from memory.
+If substantive artifacts already exist, the next session/model should reconstruct from repository authority, identify incomplete routing/canonical updates, and repair them conservatively rather than recreate missing conversation context from memory.
 
-Checkpoint 120 records the first real use of this recovery path.
-
-This clarification does not require Development Method v0.5. Version 0.4 already requires proactive preservation, promotion audits, current-state maintenance, routing, and stage-boundary reconciliation. `CONTINUITY.md` specifies how to finish those responsibilities after an unplanned boundary.
+---
 
 ## Major structural changes
 
-Version 0.3 introduced:
+`docs/MAJOR_CHANGES.md` is the selective conceptual history for changes that materially alter:
 
 ```text
-docs/MAJOR_CHANGES.md
+system-level vision
+target architecture
+prototype/evaluation architecture
+development methodology
+knowledge-preservation architecture
+collaboration architecture
+major experimental phase or frozen contract
+repository structure affecting future work
 ```
 
-This is a selective conceptual history, not a commit log.
+Routine commits and typo fixes do not belong there.
 
-It should record changes that materially alter:
-
-```text
-system-level vision;
-target architecture direction;
-prototype architecture;
-evaluation architecture;
-development methodology;
-knowledge-preservation architecture;
-major experimental phase or frozen contract;
-or repository structure in ways that affect future work.
-```
-
-Routine run records, typo fixes, and ordinary checkpoints do not belong there.
+---
 
 ## Real projects as system tests
 
-The system should be developed against heterogeneous data projects rather than only abstract discussion.
+ADS should be developed against heterogeneous real or realistic projects, not only abstract design.
 
-A project can test questions such as:
+Each project can test whether the system:
 
-- Did the system identify the important structural properties of the data?
-- Did it ask the right questions before modelling?
-- Did it select an appropriate validation design?
-- Did it identify leakage risks?
-- Did it investigate missingness appropriately?
-- Did it consider relevant model families without unnecessary breadth?
-- Did it recognize when a later finding invalidated an earlier choice?
-- Did it involve the human at useful points?
-- Did it waste effort on irrelevant analysis?
-- Did it preserve evidence and decisions correctly?
-- Did it generate reproducible outputs?
-- Did the emerging epistemic invariants explain the failures and safeguards encountered in practice?
+- understands the important data/project structure;
+- asks the right questions before modelling;
+- selects appropriate validation;
+- detects leakage and invalid assumptions;
+- activates relevant methodology;
+- avoids unnecessary analysis;
+- handles invalidation and repair;
+- involves the human at useful points;
+- preserves evidence and decisions;
+- and produces reproducible outputs.
 
-The goal is not merely to obtain a good model. The project also tests the quality of the process that produced the model.
+The project tests the quality of the process, not merely final model performance.
+
+---
 
 ## System gap extraction
 
-When a project reveals a weakness, the project should record the gap conceptually even if a formal gap registry has not yet been created.
-
-A useful analysis is:
+When work reveals a weakness, analyze:
 
 ```text
 observed failure
-    -> why did the current system miss it?
-    -> is the lesson project-specific or general?
+    -> why did the current system/method miss it?
+    -> project-specific or general?
     -> if general, what reusable capability should change?
     -> what future test can prevent regression?
 ```
 
-Possible reusable improvements include:
+Possible generalized improvements include new questions, rules, review triggers, evidence requirements, project-state features, validators, or method revisions.
 
-- a new question;
-- a new trigger;
-- a new decision branch;
-- a new hard constraint;
-- a new reviewer;
-- a new evidence requirement;
-- a new project-characterization feature;
-- or a revision to the development method itself.
+Important Level-2 examples already include:
 
-The Checkpoint 22 promotion gap is an example at Level 2: knowledge was durable but not sufficiently discoverable/promoted, so the project generalized the lesson into Development Method v0.3.
+```text
+Checkpoint 22
+    durable knowledge was insufficiently promoted/discoverable
+    -> Development Method v0.3
 
-The checkpoint-header drift discovered at Checkpoint 100 is another Level-2 example: a deliberately loose metadata convention became inconsistent under sustained operational use, so the lesson was generalized into the v0.4 checkpoint metadata contract and mechanical validation direction.
+Checkpoint 100
+    loose checkpoint metadata drifted
+    -> v0.4 explicit metadata contract
 
-The unexpected Session 02 boundary is a third Level-2 example: substantive knowledge survived because important research/specification/checkpoint material had already been preserved, but incomplete end-of-session routing still caused an incorrect initial reconstruction from `main`. The generalized recovery procedure now lives in `CONTINUITY.md` rather than requiring a new method version.
+MC-0001
+    prose-only collaboration ownership and supposed blind review were insufficient
+    -> Specification 024 + accepted multi-model governance
 
-## Avoiding premature completeness
+MC-0003
+    asynchronous review needed explicit gate/target/catch-up semantics
+    -> v0.5 deferred-review protocol
+```
 
-The project should not attempt to enumerate all possible data-science decisions before building or testing anything.
+---
 
-Instead:
+## Avoiding premature completeness and implementation
 
-1. establish a strong core;
-2. test it on different projects;
-3. observe where it fails or becomes inefficient;
-4. extract general lessons;
-5. expand coverage deliberately.
+The project should not enumerate every possible data-science decision, collaboration edge case, or infrastructure component in advance.
 
-This is similar in spirit to test-driven or case-driven development of the reasoning system.
+Use the pattern:
 
-## Avoiding premature implementation
+```text
+establish a strong core
+    -> use it
+    -> observe failure/inefficiency
+    -> generalize the lesson
+    -> add the smallest justified mechanism
+```
 
-Technology choices should follow from clarified requirements.
+Technology should follow clarified requirements rather than popularity or convenience.
 
-The project should not select tools merely because they are popular or because they make the current idea easy to prototype.
+---
 
-Before choosing an orchestration framework, database, agent SDK, graph engine, vector database, or other major technology, the project should understand what behavior the system actually requires.
+## Deferred preservation/collaboration infrastructure
 
-## Deferred preservation infrastructure
-
-The current preservation storage foundation remains:
+The repository-preservation foundation remains:
 
 ```text
 Git
 Markdown
 explicit repository structure
-manual or AI-assisted curation
+small deterministic validators where earned
+AI-assisted curation under normal governance
 ```
 
-Version 0.4 does not alter the decision to defer a graph database, vector database, ontology service, or automatic summarization pipeline for repository preservation.
-
-Potential future upgrades preserved in Foundation 014 include:
+Potential future upgrades remain deferred until observed need, including:
 
 ```text
-machine-readable metadata;
-generated indexes;
-semantic or hybrid retrieval;
-promotion queues;
-contradiction/staleness detection;
-dependency graphs;
-reconciliation assistants;
-provenance-aware raw conversation archives;
-stronger transactional knowledge storage when multiple contributors require it.
+machine-generated indexes
+semantic/hybrid repository retrieval
+promotion queues
+contradiction/staleness detection
+dependency graphs
+generated review inboxes
+cross-thread dependency discovery
+reconciliation assistants
+provenance-aware conversation archives
+stronger transactional/multi-writer collaboration controls
+API-based orchestration
 ```
 
-These are deferred rather than rejected. They should be introduced when an observed scale, retrieval, consistency, dependency, or automation problem justifies the added complexity.
+A small validator is not a rejection of minimalism when a repeatedly observed precise consistency requirement exists.
 
-A small checkpoint-metadata validator is not a reversal of that deferral. It is a narrow mechanical check introduced because a precise, repeatedly observed consistency requirement now exists.
-
-## Meta-decisions are part of the project
-
-Changes to the development method should themselves be preserved.
-
-Version 0.2 recorded proactive checkpoint detection. Version 0.3 recorded the move from durability-focused preservation toward an explicit lifecycle covering discoverability, promotion, authority, reconciliation, and selective structural history. Version 0.4 records the move from optional checkpoint metadata conventions to a mechanically validated checkpoint contract, including explicit session provenance under the current ChatGPT development process.
-
-The evolution of the methodology is itself useful knowledge.
+---
 
 ## Documentation should not become the project
 
-Preservation is important, but documentation overhead should remain proportionate.
+Documentation and governance overhead must remain proportionate.
 
-The project should prefer natural checkpoints over constant micro-updates.
+Prefer natural checkpoints over constant micro-updates.
 
-Promotion audits should be short when no promotion is required. Reconciliation should happen at stage boundaries, not continuously.
+Use collaboration threads only when collaboration is actually useful.
 
-Checkpoint metadata is intentionally a small mandatory historical/authority core plus mandatory session provenance and genuinely useful type-specific extensions. It should improve professional consistency without forcing every historical or operational record into a large universal template.
+Use expensive review modes only when the decision importance justifies them.
 
-If maintaining the knowledge map, current state, metadata, or reconciliation process becomes repetitive or inconsistent, that is evidence that partial automation may be justified. Version 0.4 applies that principle narrowly by adding mechanical validation for checkpoint headers.
+If maintaining routing, metadata, review inboxes, or collaboration state becomes repetitive or inconsistent, treat that as evidence for bounded automation rather than adding machinery speculatively.
+
+---
 
 ## Future automation of knowledge capture
 
-A mature version of the project may eventually automate parts of this process.
+A mature system may propose promotions, stale statements, contradictions, dependency impacts, or review obligations automatically.
 
-For example, a system could propose:
+Automatic extraction or detection must not imply automatic promotion into trusted authority.
+
+The current project still uses human/AI judgment around acceptance because this continues to expose what good governance actually requires.
+
+---
+
+# Version history
+
+## Version 0.5
+
+**Introduced:** Checkpoint 204, 2026-08-26
+
+Changes:
+
+- promoted governed provider-neutral multi-model development after MC-0001 through MC-0003;
+- retained SOLO work as a first-class mode and made collaboration selective/task-scoped;
+- separated role from write scope and accepted one target-state writer plus declared secondary surfaces;
+- accepted Specification 024's machine-readable collaboration-state coherence guard;
+- formalized independent-first review using accepted pre-proposal refs and explicit exposure/contamination handling;
+- formalized model-to-model repository messages and GitHub issue/PR transport without making either automatic authority;
+- added disagreement classification/routing and preserved human authority for genuine project-intent/consequential choices;
+- added deferred asynchronous review/catch-up with explicit review gates and exact immutable review targets;
+- adopted provider-local interaction session IDs and a prospective provider-neutral checkpoint-provenance contract from Checkpoint 204 onward;
+- explicitly deferred unattended scheduled model review and API orchestration;
+- preserved known future triggers instead of opening Specification 025 prematurely: downstream thread dependencies, inbox consistency generation, and secondary-vs-secondary overlap when real use justifies them.
+
+Detailed evidence:
 
 ```text
-Potential promotions detected:
-- 2 decisions
-- 3 design hypotheses
-- 4 open questions
-- 1 principle revision
-- 2 knowledge-map routing changes
+docs/research/035_multi_model_development_collaboration_architecture.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
+docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
 ```
 
-A reconciliation assistant could also detect candidate stale or contradictory statements.
-
-Automatic extraction must not imply automatic promotion into trusted reusable knowledge. Manual curation remains useful at the current stage because it continues to reveal what good preservation actually requires.
-
-## Version history
-
-### Version 0.4
+## Version 0.4
 
 **Introduced:** Checkpoint 100, 2026-08-19  
 **Contract strengthened and normalization closed:** Checkpoint 103, 2026-08-20
 
 Changes:
 
-- converted checkpoint metadata from a loose "some subset" convention into an explicit mandatory minimum contract;
+- converted checkpoint metadata from a loose convention into an explicit mandatory minimum contract;
 - introduced `docs/checkpoints/README.md` as the checkpoint-format specification;
-- required the historical/authority core `Date`, `Status`, `Checkpoint class`, `Project stage`, `Scope`, and `Authority` for every new checkpoint;
-- made `Design session`, `ChatGPT project`, and `Session title` mandatory checkpoint provenance under the current ChatGPT-based development process;
-- preserved type-specific metadata extensions rather than forcing heterogeneous checkpoint classes into one oversized header;
-- normalized Checkpoints 000-099 conservatively without rewriting their substantive historical content;
-- backfilled Session 02 provenance for Checkpoints 100-102;
-- added and strengthened `scripts/check_checkpoint_metadata.py` to detect metadata and session-provenance drift mechanically;
-- treated the observed checkpoint-header inconsistency as a real Level-2 development-method failure and generalized the lesson.
+- required a historical/authority metadata core;
+- required ChatGPT session provenance for the then-single-provider development process;
+- normalized legacy checkpoint metadata conservatively;
+- strengthened `scripts/check_checkpoint_metadata.py` to detect drift mechanically.
 
-The subsequent unplanned Session 02 boundary did not create version 0.5. Its recovery procedure is a continuity specialization of the existing v0.4 preservation/reconciliation responsibilities and is documented in `docs/CONTINUITY.md` and Checkpoint 120.
+The later multi-model migration is prospective and does not rewrite the historical v0.4 records.
 
-### Version 0.3
+## Version 0.3
 
 **Introduced:** Checkpoint 76, 2026-08-18
 
 Changes:
 
-- added an explicit promotion audit for substantive checkpoints;
-- introduced `docs/KNOWLEDGE_MAP.md` as a routing layer;
-- introduced periodic knowledge reconciliation at meaningful stage boundaries;
-- introduced lightweight authority/maturity/provenance metadata conventions;
-- introduced experiment-specific status ledgers so `CURRENT_STATE.md` can remain concise;
-- introduced `docs/MAJOR_CHANGES.md` as a selective structural history;
-- explicitly preserved but deferred more advanced knowledge infrastructure such as graph databases, vector retrieval, generated indexes, and automated reconciliation until observed needs justify them;
-- treated the Checkpoint 22 promotion issue as a real failure mode of the prior preservation process and generalized the lesson.
+- added explicit promotion audits;
+- introduced `KNOWLEDGE_MAP.md` routing;
+- introduced periodic knowledge reconciliation;
+- introduced lightweight authority/maturity/provenance metadata;
+- separated concise current state from experiment-specific ledgers;
+- introduced `MAJOR_CHANGES.md`;
+- preserved more advanced knowledge infrastructure as deferred until observed need.
 
 Detailed rationale:
 
@@ -621,19 +817,19 @@ Detailed rationale:
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 ```
 
-### Version 0.2
+## Version 0.2
 
 **Introduced:** Checkpoint 2, 2026-08-08
 
 Changes:
 
-- made proactive checkpoint detection an explicit responsibility of the AI design collaborator;
-- clarified that checkpoint timing should be based on conceptual progress and continuity value rather than message count;
-- clarified that proactive preservation does not imply automatic promotion of hypotheses into accepted decisions;
-- added the emerging epistemic-core hypothesis as an example of maturity-status discipline.
+- made proactive checkpoint detection an explicit AI collaborator responsibility;
+- based checkpoint timing on conceptual progress/continuity value rather than message count;
+- clarified that preservation does not imply automatic promotion;
+- made proactive design-chat rotation part of continuity management.
 
-### Version 0.1
+## Version 0.1
 
 **Introduced:** Checkpoint 0, 2026-08-07
 
-Initial development method establishing fluid discussion, layered knowledge preservation, checkpoints, maturity distinctions, real-project testing, and explicit methodological evolution.
+Initial method establishing fluid discussion, layered knowledge preservation, checkpoints, maturity distinctions, real-project testing, and explicit method evolution.
