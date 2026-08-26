@@ -1,7 +1,7 @@
 # MC-0004: Next-Generation Project Cockpit Design Exploration
 
 **Thread:** MC-0004  
-**Status:** ACTIVE / PHASE B COMPARATIVE REVIEW  
+**Status:** ACTIVE / PHASE C MOCKUP EVALUATION  
 **Review mode:** `INDEPENDENT_THEN_COMPARATIVE`  
 **Task owner:** ChatGPT  
 **Target-state write owner:** ChatGPT  
@@ -13,7 +13,7 @@
 
 Run a deliberately broad next-generation Project Cockpit design exploration while preserving the promoted Specification 008 interaction architecture unless new evidence justifies revising it.
 
-The task is research and design synthesis first. It does not authorize production frontend implementation or silently freeze a new visual identity.
+The task is research, design synthesis and realistic visual evaluation first. It does not authorize production frontend implementation or silently freeze a new visual identity.
 
 ## Independent Phase A
 
@@ -29,7 +29,7 @@ The exact immutable neutral-brief commit for Phase A is:
 bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
 ```
 
-Claude reasoned from that exact ref and the accepted pre-proposal repository material named by the brief. Phase A did not read Research 037 or later ChatGPT candidate-design material before Claude's independent proposal was durably recorded.
+Claude reasoned from that exact ref and accepted pre-proposal repository material before seeing Research 037 or later ChatGPT candidate-design material.
 
 Claude's frozen Phase-A proposal is:
 
@@ -49,30 +49,78 @@ The earlier manual catch-up attempt that landed on an older repository branch ex
 
 ## Comparative Phase B
 
-The independent gate is now satisfied.
+Phase B is complete.
 
-Claude may now read:
-
-```text
-docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
-```
-
-and compare it directly with its frozen Phase-A proposal.
-
-The Phase-B comparative review should preserve under `messages/`:
+Claude's comparative review is:
 
 ```text
-strongest convergence
-material disagreements
-ideas from Research 037 that improve Claude's original proposal
-ideas from Claude Phase A that Research 037 underweights or misses
-strongest alternative design direction after seeing both
-which mechanisms deserve realistic mockups first
-what should remain deliberately unresolved
-what evidence would change the comparative recommendation
+docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
+commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
 ```
 
-Phase B is intentionally comparative. It must not retrospectively describe Phase A as influenced by Research 037.
+Classification:
+
+```text
+COMPARATIVE_ONLY
+```
+
+A direct comparison against the preceding branch head confirms Claude changed only the declared collaboration-message file.
+
+The comparative review identified:
+
+```text
+strong independently reached convergence on the current implementation gaps
+semantic zoom as the highest-confidence first mechanism
+semantic connector type + direction + liveness
+scarce event-driven motion
+full Conversation Workspace
+Research 037 improvements: external research, lenses, multi-axis state separation, persistence caution
+Claude improvements: forensic code specificity, falsifiable motion cap, recommendation/reversal discipline
+one genuine unresolved disagreement: command architecture at scale
+scope-creep risk from broad technology prototyping
+```
+
+## ChatGPT comparative synthesis
+
+The synthesis is frozen as:
+
+```text
+docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
+```
+
+It narrows first-round visual evaluation to:
+
+```text
+M1  Living Precision Canvas          preferred anchor
+M2  Spatial Control Room             strongest alternative
+M3  Depth-Aware Analytical Workbench bounded high-upside alternative
+```
+
+This is a mockup recommendation, not promotion of a final visual identity.
+
+## Phase C
+
+Phase C is active.
+
+The next task is to create realistic, directly comparable visual compositions for M1, M2 and M3 using the same controlled project state.
+
+Required comparison states include:
+
+```text
+resting overview
+active investigation
+hard blocker
+completed versus unresolved branch
+selected work unit
+semantic zoom at multiple scales
+full long Conversation Workspace
+conversation + analytical work coexistence
+Execution or Review lens state
+light appearance
+dark appearance
+```
+
+The human project owner then reviews visual character, acceptable dynamism and product fit before one or two directions are selected for bounded technical spikes.
 
 ## Target-state scope
 
@@ -80,8 +128,10 @@ ChatGPT owns mutation of the bounded research/routing surfaces for this explorat
 
 ```text
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
+docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
 docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md
+docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
@@ -89,7 +139,7 @@ README.md
 this thread contract/state
 ```
 
-Claude may write only the declared secondary collaboration surface:
+Claude's declared secondary collaboration surface remains:
 
 ```text
 docs/model_collaboration/threads/MC-0004/messages/**
@@ -101,27 +151,29 @@ No frontend implementation file is part of the current target-state write scope.
 
 ```text
 PHASE A  COMPLETE
-    ChatGPT external/product research proceeded independently
-    Claude produced independent design proposal from neutral brief
+    Claude independent design proposal
+    BLIND_TO_CANDIDATE
 
-PHASE B  ACTIVE
-    both independent positions are frozen
-    candidate exposure is allowed
-    Claude performs direct comparative review
-    ChatGPT then performs synthesis from both preserved positions
+PHASE B  COMPLETE
+    Claude comparative review after candidate exposure was allowed
+    COMPARATIVE_ONLY
+    ChatGPT comparative synthesis preserved as Research 038
 
-PHASE C
-    human + collaborators choose which design directions deserve mockups/prototypes
+PHASE C  ACTIVE
+    realistic M1/M2/M3 mockup evaluation
+    human product review
+    selection of one or two directions for technical validation
 
 PHASE D
-    separate bounded implementation/prototype specification only after design evidence warrants it
+    bounded technical mechanism spikes
+    separate implementation/prototype specification only after design evidence warrants it
 ```
 
 ## Independence rule
 
-The preserved Phase-A independence classification applies only to the already-frozen message 001.
+The preserved Phase-A independence classification applies only to message 001.
 
-Phase B is `COMPARATIVE_ONLY` by design because Claude may now inspect Research 037 and later comparative material. Candidate exposure in Phase B is not contamination of the historical Phase-A result.
+Phase B and later are `COMPARATIVE_ONLY` because candidate exposure is intentionally allowed. This does not alter the historical Phase-A result.
 
 ## Authority rule
 
@@ -137,9 +189,41 @@ MC-0004 does not promote any visual concept merely because both models prefer it
 
 ## Human arbitration
 
-The human project owner should decide genuine product-intent questions such as desired visual character, acceptable level of visual dynamism, and preference among otherwise technically defensible design directions.
+The human project owner should decide genuine product-intent questions such as desired visual character, acceptable level of visual dynamism, conversation ergonomics and preference among otherwise technically defensible directions.
 
 Routine implementation details, source gathering, technical comparison and evidence synthesis should not be escalated merely because two models could make different stylistic choices.
+
+## Deliberately unresolved questions
+
+```text
+command architecture at scale
+conversation persistence/threading model
+exact visual identity
+exact work-unit silhouettes
+exact connector styling
+exact semantic-zoom thresholds
+lens names/count
+stage taxonomy/layout
+auto-layout approach
+final graph/canvas library
+final motion library
+production 2.5D use
+full 3D
+```
+
+## Technology boundary
+
+No broad technology bakeoff is authorized during first-round mockups.
+
+If later evidence earns technical comparison, current priority is:
+
+```text
+current DOM/CSS/SVG control baseline
+React Flow semantic topology/zoom/grouping comparator
+Motion for React focus/conversation transition comparator if needed
+```
+
+GPU layers and full 3D remain out of the next bounded step unless a specific problem requires them.
 
 ## Closure condition
 
@@ -147,11 +231,12 @@ MC-0004 can close when:
 
 ```text
 Claude independent design is preserved
-ChatGPT research/design exploration is preserved
-comparative synthesis is completed
+Claude comparative review is preserved
+ChatGPT comparative synthesis is preserved
 material disagreement is explicit
+realistic mockup directions are evaluated
 human product direction is recorded where needed
-next prototype/mockup boundary is clear
+next prototype/technical boundary is clear
 ```
 
 Closure does not require the final production Cockpit visual system to be frozen.
