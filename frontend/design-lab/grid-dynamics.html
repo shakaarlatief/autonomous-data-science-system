@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-scale="inspection" data-content="on" data-activity="on" data-ambient="on" data-semantic="on" data-reduced="off">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · G4 Ambient Dynamics</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./grid-dynamics.css" />
+  </head>
+  <body>
+    <header class="lab-header dynamics-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02</span>
+        <h1>G4 ambient grid dynamics</h1>
+        <p>
+          G4 Adaptive Hybrid is held constant. Only the low-salience decorative motion layer changes.
+          Semantic project activity remains a separate, stronger channel.
+        </p>
+      </div>
+
+      <div class="lab-controls" aria-label="Dynamics experiment controls">
+        <fieldset class="control-group compact-toggle-group dynamics-toggles">
+          <legend>Layers</legend>
+          <label class="toggle-row">
+            <input id="ambient-toggle" type="checkbox" checked />
+            <span>Ambient</span>
+          </label>
+          <label class="toggle-row">
+            <input id="semantic-toggle" type="checkbox" checked />
+            <span>Semantic</span>
+          </label>
+          <label class="toggle-row">
+            <input id="reduced-toggle" type="checkbox" />
+            <span>Reduced motion</span>
+          </label>
+        </fieldset>
+      </div>
+    </header>
+
+    <main class="lab-main dynamics-main">
+      <section class="comparison-intro" aria-labelledby="comparison-title">
+        <div>
+          <span class="section-kicker">Selected substrate</span>
+          <h2 id="comparison-title">G4 · Adaptive Hybrid</h2>
+        </div>
+        <dl class="fixture-key dynamics-key">
+          <div><dt>Ambient</dt><dd>neutral blue-white</dd></div>
+          <div><dt>Semantic</dt><dd>teal active relation</dd></div>
+          <div><dt>Blocking</dt><dd>amber unresolved question</dd></div>
+          <div><dt>Selected</dt><dd>blue validation work</dd></div>
+          <div><dt>Mode</dt><dd>dark-first evaluation</dd></div>
+        </dl>
+      </section>
+
+      <section id="variants" class="variant-grid dynamics-grid" aria-label="Ambient dynamics variants"></section>
+
+      <section class="review-prompt" aria-labelledby="review-title">
+        <span class="section-kicker">Human review</span>
+        <h2 id="review-title">Which kind of life belongs in the world?</h2>
+        <div class="review-questions dynamics-review">
+          <p>Which variant simply looks best while watching it live?</p>
+          <p>Does any ambient motion start to feel random or distracting?</p>
+          <p>Can the teal semantic activity still dominate when Ambient and Semantic are both enabled?</p>
+          <p>Would you combine mechanisms from different variants?</p>
+          <p>Should the surviving effect be more subtle, or is the current intensity appropriate?</p>
+        </div>
+      </section>
+    </main>
+
+    <template id="variant-template">
+      <article class="variant-card variant-g4 dynamics-card">
+        <header class="variant-header">
+          <div>
+            <span class="variant-code"></span>
+            <h2 class="variant-name"></h2>
+          </div>
+          <p class="variant-summary"></p>
+        </header>
+
+        <div class="world-shell">
+          <div class="world-surface dynamics-world">
+            <div class="ambient-layer" aria-hidden="true">
+              <div class="ambient-drift ambient-drift-a"></div>
+              <div class="ambient-drift ambient-drift-b"></div>
+
+              <span class="ambient-trace trace-h trace-h-a"></span>
+              <span class="ambient-trace trace-h trace-h-b"></span>
+              <span class="ambient-trace trace-v trace-v-a"></span>
+
+              <span class="ambient-glint glint-a"></span>
+              <span class="ambient-glint glint-b"></span>
+              <span class="ambient-glint glint-c"></span>
+              <span class="ambient-glint glint-d"></span>
+            </div>
+
+            <div class="activity-field activity-field-primary" aria-hidden="true"></div>
+            <div class="activity-field activity-field-secondary" aria-hidden="true"></div>
+
+            <div class="stage-ruler" aria-hidden="true">
+              <span>Framing</span>
+              <span>Data &amp; validation</span>
+              <span>Modeling</span>
+              <span>Evaluation</span>
+            </div>
+
+            <svg class="relation-layer" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="dynamics-arrow-muted" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" class="arrow-muted" />
+                </marker>
+                <marker id="dynamics-arrow-active" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" class="arrow-active" />
+                </marker>
+              </defs>
+              <path class="relation relation-blocking" d="M210 202 C290 202, 300 142, 385 142" />
+              <path class="relation relation-active" d="M545 142 C635 142, 625 235, 710 235" marker-end="url(#dynamics-arrow-active)" />
+              <path class="relation relation-muted" d="M545 142 C625 142, 615 355, 705 355" marker-end="url(#dynamics-arrow-muted)" />
+              <path class="relation relation-muted" d="M825 355 C900 355, 900 282, 940 282" marker-end="url(#dynamics-arrow-muted)" />
+            </svg>
+
+            <div class="work-unit unit-blocking" style="--x: 8%; --y: 32%;">
+              <span class="unit-kind">Question</span>
+              <strong>Prediction moment</strong>
+              <small>Eligibility boundary unresolved</small>
+            </div>
+            <div class="work-unit unit-active" style="--x: 36%; --y: 20%;">
+              <span class="unit-kind">Investigation</span>
+              <strong>Production missingness</strong>
+              <small>Investigating live data behavior</small>
+            </div>
+            <div class="work-unit unit-selected" style="--x: 68%; --y: 38%;">
+              <span class="unit-kind">Validation</span>
+              <strong>Chronological validation</strong>
+              <small>Selected work</small>
+            </div>
+            <div class="work-unit unit-complete" style="--x: 67%; --y: 66%;">
+              <span class="unit-kind">Model</span>
+              <strong>Baseline logistic model</strong>
+              <small>Settled</small>
+            </div>
+            <div class="work-unit unit-downstream" style="--x: 84%; --y: 51%;">
+              <span class="unit-kind">Evaluation</span>
+              <strong>Calibration &amp; thresholding</strong>
+              <small>Downstream</small>
+            </div>
+
+            <div class="live-packet packet-one" aria-hidden="true"></div>
+            <div class="live-packet packet-two" aria-hidden="true"></div>
+          </div>
+
+          <div class="world-footer">
+            <span>Inspection scale · G4 substrate</span>
+            <span class="world-note"></span>
+          </div>
+        </div>
+
+        <footer class="variant-footer">
+          <div class="tradeoff"></div>
+          <button class="focus-button" type="button">Focus variant</button>
+        </footer>
+      </article>
+    </template>
+
+    <script type="module" src="./grid-dynamics.js"></script>
+  </body>
+</html>
