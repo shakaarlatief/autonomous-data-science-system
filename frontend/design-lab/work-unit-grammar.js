@@ -72,20 +72,28 @@ function renderNodes() {
 
 function setupViewControls() {
   const buttons = [...document.querySelectorAll('[data-view]')]
+  const initialView = html.dataset.grammarView || 'strip'
+
+  applyView(initialView, buttons)
 
   for (const button of buttons) {
     button.addEventListener('click', () => {
-      const view = button.dataset.view
-      html.dataset.grammarView = view
-
-      for (const candidate of buttons) {
-        candidate.setAttribute('aria-pressed', String(candidate === button))
-      }
-
-      for (const panel of document.querySelectorAll('[data-panel]')) {
-        panel.hidden = panel.dataset.panel !== view
-      }
+      applyView(button.dataset.view, buttons)
     })
+  }
+}
+
+function applyView(view, buttons) {
+  html.dataset.grammarView = view
+
+  for (const candidate of buttons) {
+    candidate.setAttribute('aria-pressed', String(candidate.dataset.view === view))
+  }
+
+  for (const panel of document.querySelectorAll('[data-panel]')) {
+    const isVisible = panel.dataset.panel === view
+    panel.hidden = !isVisible
+    panel.style.display = isVisible ? '' : 'none'
   }
 }
 
