@@ -54,6 +54,15 @@ const defaults = {
   surface: 'material',
 }
 
+const relationGeometry = {
+  'q-i': { source: 'q', target: 'i', sourceSide: 'right', targetSide: 'left' },
+  'i-v': { source: 'i', target: 'v', sourceSide: 'right', targetSide: 'left' },
+  'v-m': { source: 'v', target: 'm', sourceSide: 'right', targetSide: 'left' },
+  'm-e': { source: 'm', target: 'e', sourceSide: 'bottom', targetSide: 'top' },
+}
+
+let relationFrame = 0
+
 renderNodes()
 restoreAppearance()
 setupViewControls()
@@ -64,8 +73,10 @@ setupReset()
 setupReducedMotion()
 setupInteractions()
 setupAmbientWorld()
+setupRelationGeometry()
 updateControlState()
 updateSummary()
+requestRelationUpdate()
 
 function renderNodes() {
   if (!strip || !scene) return
@@ -152,6 +163,8 @@ function applyView(view, buttons) {
     panel.hidden = !visible
     panel.style.display = visible ? '' : 'none'
   }
+
+  requestRelationUpdate()
 }
 
 function setupShapeControls() {
@@ -209,6 +222,7 @@ function applyAppearance({ shape, surface }, persist = true) {
 
   updateControlState()
   updateSummary()
+  requestRelationUpdate()
 }
 
 function updateControlState() {
@@ -277,6 +291,94 @@ function setupInteractions() {
       }
     })
   }
+}
+
+function setupRelationGeometry() {
+  window.addEventListener('resize', requestRelationUpdate, { passive: true })
+
+  if ('ResizeObserver' in window && scene) {
+    const observer = new ResizeObserver(requestRelationUpdate)
+    observer.observe(scene)
+  }
+}
+
+function requestRelationUpdate() {
+  if (relationFrame) cancelAnimationFrame(relationFrame)
+  relationFrame = requestAnimationFrame(() => {
+    relationFrame = 0
+    updateRelationPaths()
+  })
+}
+
+function updateRelationPaths() {
+  if (!scene || html.dataset.grammarView !== 'scene' || scene.hidden) return
+
+  const svg = scene.querySelector('.grammar-relations')
+  if (!svg) return
+
+  const sceneRect = scene.getBoundingClientRect()
+  const viewBox = svg.viewBox.baseVal
+  if (!sceneRect.width || !sceneRect.height || !viewBox.width || !viewBox.height) return
+
+  for (const path of svg.querySelectorAll('path[data-link]')) {
+    const key = path.dataset.link
+    const geometry = relationGeometry[key]
+    if (!geometry) continue
+
+    const sourceNode = scene.querySelector(`.custom-node[data-node="${geometry.source}"]`)
+    const targetNode = scene.querySelector(`.custom-node[data-node="${geometry.target}"]`)
+    if (!sourceNode || !targetNode) continue
+
+    const start = relationAnchor(sourceNode, geometry.sourceSide, sceneRect, viewBox)
+    const end = relationAnchor(targetNode, geometry.targetSide, sceneRect, viewBox)
+    path.setAttribute('d', relationPath(start, end, geometry.sourceSide, geometry.targetSide))
+  }
+}
+
+function relationAnchor(node, side, sceneRect, viewBox) {
+  const surface = node.querySelector('.node-surface') || node
+  const rect = surface.getBoundingClientRect()
+
+  let x = rect.left + rect.width / 2
+  let y = rect.top + rect.height / 2
+
+  if (side === 'left') x = rect.left
+  if (side === 'right') x = rect.right
+  if (side === 'top') y = rect.top
+  if (side === 'bottom') y = rect.bottom
+
+  // The subtle Investigation silhouette has a centered right-edge notch.
+  // Connect to the visible notch edge rather than to the rectangular wrapper.
+  if (side === 'right' && node.dataset.node === 'i' && html.dataset.shapeStyle === 'true') {
+    x = rect.right - rect.width * 0.07
+  }
+
+  return {
+    x: ((x - sceneRect.left) / sceneRect.width) * viewBox.width + viewBox.x,
+    y: ((y - sceneRect.top) / sceneRect.height) * viewBox.height + viewBox.y,
+  }
+}
+
+function relationPath(start, end, sourceSide, targetSide) {
+  const horizontal = (sourceSide === 'left' || sourceSide === 'right') && (targetSide === 'left' || targetSide === 'right')
+
+  if (horizontal) {
+    const direction = Math.sign(end.x - start.x) || 1
+    const bend = Math.max(36, Math.abs(end.x - start.x) * 0.42)
+    const c1x = start.x + direction * bend
+    const c2x = end.x - direction * bend
+    return `M${formatCoord(start.x)} ${formatCoord(start.y)} C${formatCoord(c1x)} ${formatCoord(start.y)}, ${formatCoord(c2x)} ${formatCoord(end.y)}, ${formatCoord(end.x)} ${formatCoord(end.y)}`
+  }
+
+  const direction = Math.sign(end.y - start.y) || 1
+  const bend = Math.max(30, Math.abs(end.y - start.y) * 0.44)
+  const c1y = start.y + direction * bend
+  const c2y = end.y - direction * bend
+  return `M${formatCoord(start.x)} ${formatCoord(start.y)} C${formatCoord(start.x)} ${formatCoord(c1y)}, ${formatCoord(end.x)} ${formatCoord(c2y)}, ${formatCoord(end.x)} ${formatCoord(end.y)}`
+}
+
+function formatCoord(value) {
+  return Number(value.toFixed(1))
 }
 
 function setupAmbientWorld() {
