@@ -7,47 +7,78 @@
 
 ## Current pending obligations
 
-### 1. MC-0004: independent next-generation Project Cockpit design
+### 1. MC-0004: comparative next-generation Project Cockpit design review
 
 ```text
 collaborator            Claude
 review mode             INDEPENDENT_THEN_COMPARATIVE
-current phase           PHASE_A_INDEPENDENT_DESIGN
-priority                ordinary required independent design before comparative synthesis
-exact review base       bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
-neutral brief           docs/model_collaboration/threads/MC-0004/BRIEF.md
+current phase           PHASE_B_COMPARATIVE_REVIEW
+priority                required comparative review before final ChatGPT synthesis
+active branch           v1-cockpit-design-exploration
+Phase-A review base     bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
+Phase-A frozen commit   cd2e12f2c79ee3b2f205457c5940eb2022b4631a
+Claude Phase-A message  docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
+ChatGPT research        docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 thread contract         docs/model_collaboration/threads/MC-0004/THREAD.md
 thread state            docs/model_collaboration/threads/MC-0004/STATE.json
 allowed write surface   docs/model_collaboration/threads/MC-0004/messages/**
 ```
 
-Required Phase-A boundary:
+Phase A is complete and remains historically classified:
 
 ```text
-read the neutral brief and its accepted pre-proposal governing material
-DO NOT read docs/research/037_* before freezing the independent proposal
-DO NOT read later ChatGPT candidate-design messages or comparative synthesis
-preserve the independent proposal under MC-0004/messages/
-disclose any accidental candidate exposure instead of claiming blind independence
+BLIND_TO_CANDIDATE
+known candidate exposures: none
+```
+
+Phase B now explicitly permits Claude to read Research 037.
+
+Required comparative output:
+
+```text
+compare the frozen Claude Phase-A proposal with Research 037
+identify strongest convergence and material disagreement
+identify ideas from each side that improve the other
+preserve the strongest alternative after comparison
+recommend which mechanisms/directions deserve realistic mockups first
+state what should remain unresolved
+state what evidence would change the recommendation
+preserve the comparative response under MC-0004/messages/
 ```
 
 Review gate:
 
 ```text
-Claude Phase-A proposal must be durably recorded
+Claude Phase-B comparative review durably recorded
 BEFORE
-MC-0004 enters comparative design synthesis
+ChatGPT performs the final MC-0004 comparative synthesis / Phase-C handoff
 ```
 
-The user can trigger this obligation in the existing Claude ADS workspace with the standardized catch-up prompt below. The exact thread state remains authoritative if this convenience summary drifts.
+---
+
+## Important routing lesson from MC-0004
+
+The first manual trigger for MC-0004 was too ambiguous:
+
+```text
+Check the repository and docs/model_collaboration/REVIEW_INBOX.md...
+```
+
+Claude remained oriented to an older branch whose inbox correctly said `NONE`, so it reconstructed stale collaboration state. No candidate Cockpit material was exposed and Phase-A independence was not compromised, but the event demonstrates that a cross-model handoff to work living only on an unpromoted branch must identify the target branch/ref explicitly.
+
+For the current obligation, use:
+
+```text
+Open shakaarlatief/autonomous-data-science-system on branch
+v1-cockpit-design-exploration, read docs/model_collaboration/REVIEW_INBOX.md
+on that branch, and proceed with the pending MC-0004 review.
+```
+
+This operational lesson should be considered for canonical method promotion when MC-0004 is resolved; the inbox itself remains a convenience view rather than authority.
 
 ---
 
 ## Recently completed obligations
-
-MC-0002 and MC-0003 were both completed by Claude in the inbox-defined order on 2026-08-26 and subsequently resolved by the task owner.
-
-Completed route:
 
 ```text
 MC-0002
@@ -59,6 +90,11 @@ MC-0003
     Claude review commit  e8e63faca8f2e181bdc389bf95a915f1d4cc42df
     outcome               deferred catch-up protocol accepted for current use
     resolution            docs/model_collaboration/threads/MC-0003/RESOLUTION.md
+
+MC-0004 Phase A
+    Claude proposal commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a
+    independence           BLIND_TO_CANDIDATE
+    candidate exposures    none
 ```
 
 ---
@@ -79,15 +115,17 @@ For each item, preserve the exact target head and separate disposition even if s
 
 ---
 
-## Standardized manual catch-up prompt
+## Manual catch-up prompt rule
 
-When this inbox contains pending Claude work, the current low-friction user prompt is:
+When the pending work exists only on an active/unpromoted branch, the manual trigger should name that branch explicitly rather than assuming the collaborator will discover it from a stale workspace state.
+
+Current MC-0004 trigger:
 
 ```text
-Check the repository and docs/model_collaboration/REVIEW_INBOX.md, then proceed with the pending Claude reviews in order.
+Open shakaarlatief/autonomous-data-science-system on branch
+v1-cockpit-design-exploration, read docs/model_collaboration/REVIEW_INBOX.md
+on that branch, and proceed with the pending MC-0004 review.
 ```
-
-The equivalent instruction may be used for another collaborator by naming the relevant pending work if the inbox contains mixed obligations.
 
 Scheduled unattended review execution is not part of the current method. Manual triggering remains sufficient at the present scale.
 
