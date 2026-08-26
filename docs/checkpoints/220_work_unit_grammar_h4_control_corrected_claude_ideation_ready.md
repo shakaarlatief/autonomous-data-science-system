@@ -117,28 +117,31 @@ http://localhost:5173/design-lab/work-unit-grammar.html
 
 The existing Project Scene explicit display suppression remains in place.
 
+A small follow-up hardening change scopes the in-box-light control query to the two buttons rather than the root `data-inbox-light` attribute. This does not change the intended visual behavior but removes an unnecessary root-element event listener before the Claude target is frozen.
+
 No production Cockpit file changed.
 
 ## 6. Corrected Claude review target
 
 Claude has not yet been triggered for Message 003.
 
-The earlier exact target is superseded because it contained the accidental H4 control drift.
+The earlier exact targets are superseded because they either contained the accidental H4 control drift or preceded the final control-query hardening.
 
 The corrected browser-design target is:
 
 ```text
-03d3997498192544ce92c97c2a49e839b3a95af4
+7843bdd6c7a7fcb2f6136b491846c11cec094cf0
 ```
 
-That commit contains:
+That commit contains the complete corrected browser state:
 
 ```text
 Project Scene fix
-restored H4 baseline in-box layer hook
+restored H4 baseline in-box layer
 explicit H4 baseline / Reduced control
 signature-side-aware light mapping
 lighting correction stylesheet
+scoped in-box-light button controller
 ```
 
 Later documentation/routing commits do not alter that exact browser target.
@@ -172,7 +175,7 @@ but should not allow those secondary questions to replace the main category-gram
 4. compare H4 baseline vs Reduced in-box light
 5. verify W2/W4 top/bottom/right signatures move their resting light accordingly
 6. if browser rendering is correct, trigger Claude using REVIEW_INBOX.md
-7. Claude reviews exact target 03d3997498192544ce92c97c2a49e839b3a95af4
+7. Claude reviews exact target 7843bdd6c7a7fcb2f6136b491846c11cec094cf0
 8. Claude writes only the next MC-0004 numbered message
 9. ChatGPT synthesizes all worthwhile candidates and builds as many browser variants as evidence justifies
 10. production /cockpit remains untouched
