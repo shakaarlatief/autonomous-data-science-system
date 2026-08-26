@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 208  
+**Current checkpoint:** 210  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -30,23 +30,25 @@ Current route:
 ```text
 active development branch        v1-cockpit-design-exploration
 active PR                        none
-current checkpoint               208
+current checkpoint               210
 latest specification             Specification 024
 Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
 promoted Cockpit baseline        Specification 008
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary                 MC-0004 Phase C realistic Cockpit mockup evaluation
+current boundary                 MC-0004 Phase C grid/world human review
 source-vault deployment          PAUSED, preserved, Course 2 gate unchanged
 ```
 
 ---
 
-# Current stage: next-generation Project Cockpit design exploration
+# Current stage: browser-rendered Project Cockpit design experiments
 
 Primary route:
 
 ```text
-docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md
+docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+docs/checkpoints/209_phase_c_browser_design_lab_grid_world_opened.md
+docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 
@@ -59,6 +61,11 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
 docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 docs/model_collaboration/REVIEW_INBOX.md
+
+frontend/design-lab/grid-world.html
+frontend/design-lab/grid-world.css
+frontend/design-lab/grid-world-overrides.css
+frontend/design-lab/grid-world.js
 ```
 
 Current sequence:
@@ -72,16 +79,138 @@ Claude comparative Phase B  COMPLETE / COMPARATIVE_ONLY
     ->
 ChatGPT Research 038 synthesis  COMPLETE
     ->
-M1 / M2 / M3 realistic mockup evaluation  ACTIVE
+Research 039 browser-experiment protocol  ACTIVE METHOD
     ->
-human product review
+G1-G4 grid/world design lab  BROWSER VERIFIED
     ->
-one or two bounded technical mechanism spikes
+human grid/world disposition  CURRENT GATE
     ->
-implementation specification only if earned
+next bounded design slice
+    ->
+progressively integrated Cockpit prototype
+    ->
+production implementation only if earned
 ```
 
-No frontend implementation is authorized by the current checkpoint.
+Generated-image UI concepts are not part of the preferred Cockpit design workflow.
+
+---
+
+# Phase C browser-design protocol
+
+Research 039 replaces generated-image mockups with a design-question-first loop:
+
+```text
+choose one design question
+inspect real external references where useful
+build two to four materially different browser variants
+hold representative content/state constant
+human compares
+record PREFER / REJECT / COMBINE / REFINE / UNRESOLVED
+refine if necessary
+move to the next design question
+```
+
+Current provisional slice order:
+
+```text
+Slice 1   grid / spatial world substrate             ACTIVE HUMAN REVIEW
+Slice 2   work-unit visual grammar                   NEXT EXPECTED SLICE
+Slice 3   connector semantics and static language
+Slice 4   semantic zoom / level of detail
+Slice 5   liveness / motion budget
+Slice 6   Conversation Workspace presentation
+Slice 7   selection, focus and bounded 2.5D depth
+Slice 8   information lenses and command/navigation treatment
+Slice 9   integrated Cockpit candidate
+Slice 10  medium / large project pressure test
+```
+
+The sequence is provisional. Related mechanisms may be combined when they cannot be evaluated independently.
+
+Isolated `frontend/design-lab/**` code is allowed for learning. It is not production Cockpit code.
+
+---
+
+# Grid / world substrate experiment
+
+Experiment route:
+
+```text
+frontend/design-lab/grid-world.html
+```
+
+Expected Vite URL:
+
+```text
+http://localhost:5173/design-lab/grid-world.html
+```
+
+Constant project scene:
+
+```text
+Prediction moment         unresolved / blocking
+Production missingness    active investigation
+Chronological validation  selected
+Baseline logistic model   completed / settled
+Evaluation                 downstream
+```
+
+Variants:
+
+```text
+G1  Precision Lines
+    fine minor Cartesian lines
+    stronger major divisions
+
+G2  Dot Matrix
+    low-noise dot field
+    sparse stronger anchor dots
+
+G3  Cross Lattice
+    sparse repeated cross/intersection rhythm
+
+G4  Adaptive Hybrid
+    major/minor hierarchy
+    scale-aware detail reduction
+    bounded local activity field
+```
+
+Controls:
+
+```text
+dark / light appearance
+project / work / inspection scale simulation
+content visible / grid-only state
+activity field on / off
+per-variant focus mode
+```
+
+Browser verification:
+
+```text
+Chromium load                 PASS
+JavaScript page errors        NONE
+four variant render           PASS
+appearance control            PASS
+scale control                 PASS
+browser screenshot render     PASS
+```
+
+The initial G3 implementation produced visually heavy repeated bands. Real browser inspection caught the defect and it was corrected to a sparse cross pattern before human review.
+
+Current human questions:
+
+```text
+Which substrate is most comfortable for long sessions?
+Which gives the clearest spatial orientation?
+Which interferes least with work-unit text and relation lines?
+Which feels professional and distinctive for ADS?
+Does the preference hold in both light and dark appearance?
+Does project scale become appropriately quieter?
+Does G4 local activity communicate real state or feel ornamental?
+Should mechanisms be combined across variants?
+```
 
 ---
 
@@ -104,125 +233,49 @@ classification  COMPARATIVE_ONLY
 message         docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 ```
 
-The Phase-B commit changed only the declared collaboration-message surface.
-
-Current thread phase:
+Current thread state:
 
 ```text
-phase                   PHASE_C_MOCKUP_EVALUATION
-next expected actor     ChatGPT
+phase                   PHASE_C_BROWSER_DESIGN_EVALUATION
+next expected actor     human
 pending Claude review   NONE
 ```
 
-The first generic cross-model trigger failed because Claude remained on an older branch whose inbox correctly said `NONE`. The failure did not expose candidate design material. Current operational routing therefore explicitly names the active branch/ref when work exists only on an unpromoted branch. Checkpoint 207 preserves this as an empirical collaboration-method finding pending promotion audit.
-
----
-
-# Research 038: comparative synthesis and mockup set
-
-Primary route:
+The strongest independently reinforced design findings remain:
 
 ```text
-docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
-```
-
-Strongest independently reinforced findings:
-
-```text
-semantic zoom is the highest-confidence first mechanism
+semantic zoom is a major remaining quality/scalability opportunity
 current work-unit grammar is too generic
-connectors should encode type + direction + liveness
+connectors should encode type + direction + state/liveness
 motion should be sparse and tied to real temporal project activity
 the resting world should remain calm
 full long-form conversation is first-class
 2.5D is preferred before full 3D
 ```
 
-Strongest asymmetric improvements from Research 037:
+Research 037 contributes especially strong external product evidence, information-density lenses, multi-axis state separation and appropriate caution around conversation persistence.
 
-```text
-external product/technology research
-information-density lenses
-multi-axis state separation
-appropriate caution on conversation persistence
-```
+Claude contributes especially strong code-level specificity, a falsifiable connector-motion hypothesis, decision-ready recommendation discipline and a valid scope-creep warning around excessive technology prototyping.
 
-Strongest asymmetric contributions from Claude:
+The strongest genuine unresolved disagreement remains command architecture at scale. Its resolution gate is medium/large project evidence, not model preference.
 
-```text
-forensic code specificity
-falsifiable one-to-three animated-connector hypothesis
-recommendation + reversal-condition discipline
-scope-creep warning for broad technology prototyping
-```
-
-First-round mockup directions:
-
-```text
-M1  Living Precision Canvas          preferred anchor
-M2  Spatial Control Room             strongest alternative
-M3  Depth-Aware Analytical Workbench bounded high-upside alternative
-```
-
-Genuine unresolved disagreement:
-
-```text
-command architecture at scale
-```
-
-Resolution gate:
-
-```text
-medium/large realistic project fixture
-not model preference
-```
+The first generic cross-model trigger failure remains preserved as empirical collaboration-method evidence: work on an unpromoted branch must explicitly identify repository + branch/ref + routing/thread surface when handed to another model.
 
 ---
 
-# Phase C mockup requirements
+# Research 038: integrated direction hypotheses
 
-All three directions use the same controlled Customer Churn Prediction scenario.
+Research 038 remains useful as the integrated synthesis of Research 037 and Claude's Phase-A/Phase-B contributions.
 
-Required visual states:
-
-```text
-resting overview
-active investigation
-hard blocker and downstream effect
-completed versus unresolved branch
-selected work unit
-project-scale semantic zoom
-work-scale semantic zoom
-full Conversation Workspace
-conversation + analytical work coexistence
-Execution or Review lens state
-light appearance
-dark appearance
-```
-
-The comparison should test:
+Its direction set remains:
 
 ```text
-five-second comprehension
-spatial continuity
-information-density control
-motion meaning
-conversation ergonomics
-professional long-session quality
-reduced-motion equivalence
+M1  Living Precision Canvas          preferred integrated anchor
+M2  Spatial Control Room             strongest integrated alternative
+M3  Depth-Aware Analytical Workbench bounded high-upside alternative
 ```
 
-No broad technology bakeoff is part of first-round mockups.
-
-If later earned, technical comparators are limited initially to:
-
-```text
-current DOM/CSS/SVG baseline
-React Flow semantic topology/zoom/grouping comparator
-Motion for React focus/conversation transition comparator if needed
-```
-
-PixiJS, Sigma.js, React Three Fiber and full 3D remain out of the next bounded step unless a later specific problem requires them.
+These labels are no longer the first thing being validated through static mockups. Their underlying mechanisms are instead being decomposed and tested through browser-rendered slices.
 
 ---
 
@@ -280,59 +333,11 @@ final route/persistence details
 canonical screenshot baseline
 ```
 
-Research 037 and Research 038 explore this open space. They do not replace Specification 008.
+No production Cockpit implementation file has been modified by Phase C.
 
 ---
 
-# Research 037: broad next-generation visual and interaction map
-
-Primary route:
-
-```text
-docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
-```
-
-Coverage:
-
-```text
-Spatial world / canvas
-Grid and ambient world
-Work-unit visual grammar
-Relation / connector semantics
-Semantic zoom and level of detail
-Stage / project orientation
-Focus transitions and workspace handoff
-Runtime / execution visualization
-Blocked / unresolved / approval / completed / deferred state
-Navigation, search and command surfaces
-Conversation system and full transcript workspace
-Inspectors / context / evidence surfaces
-Information-density lenses
-Depth / 2.5D / bounded 3D
-Motion language
-Large-project scalability
-Light/dark visual identity
-Accessibility and reduced motion
-Rendering / interaction technology
-Loading / empty / error / recovery behavior
-```
-
-Research 037's original direction set remains useful provenance:
-
-```text
-A. Precision Instrument
-B. Living Analytical Field
-C. Spatial Control Room
-D. Depth-Aware Workbench
-```
-
-Research 038 synthesizes these with Claude's independent proposal rather than selecting directly from labels.
-
----
-
-# Conversation Workspace is a first-class design axis
-
-The compact native composer remains part of the Cockpit, but ADS must also support long, revisitable project conversations.
+# Conversation Workspace remains a first-class design axis
 
 Current requirement:
 
