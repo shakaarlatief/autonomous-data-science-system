@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0004",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "ACTIVE",
+  "phase": "PHASE_A_INDEPENDENT_DESIGN",
+  "target": {
+    "branch": "v1-cockpit-design-exploration",
+    "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
+    "description": "Research and compare next-generation Project Cockpit visual, spatial, motion, conversation, and interaction design before any new implementation architecture is frozen.",
+    "write_paths": [
+      "docs/model_collaboration/threads/MC-0004/BRIEF.md",
+      "docs/model_collaboration/threads/MC-0004/THREAD.md",
+      "docs/model_collaboration/threads/MC-0004/STATE.json",
+      "docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md",
+      "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
+      "README.md",
+      "docs/CURRENT_STATE.md",
+      "docs/KNOWLEDGE_MAP.md",
+      "docs/current_routing.json"
+    ]
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": "chatgpt",
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-06",
+      "roles": ["TASK_OWNER", "RESEARCHER"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-01",
+      "roles": ["INDEPENDENT_REVIEWER", "COUNTER_DESIGNER", "RESEARCHER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0004/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
+    "known_exposures": [],
+    "notes": "Phase A is grounded in the neutral brief at the exact review base. Research 037 and later proposer-specific candidate material are excluded until Claude's independent proposal is durably recorded."
+  },
+  "last_transition": {
+    "transition_id": "mc0004-open-independent-phase-a",
+    "from_state": "OPEN",
+    "to_state": "ACTIVE",
+    "actor": "chatgpt",
+    "reason": "The human project owner deliberately paused permanent source-vault deployment and opened a broad next-generation Cockpit design exploration with independent Claude counter-design before comparative synthesis.",
+    "repository_head": "7ba8c543e3f209802660ca9a509a1398e14e641d"
+  }
+}
