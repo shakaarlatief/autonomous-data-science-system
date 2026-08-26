@@ -44,34 +44,40 @@ const categoryMeta = {
   },
 }
 
-const signatureSides = {
+/*
+ * Resting light follows both the signature edge and the signature's position
+ * along that edge. Expressions mirror the frame-signature geometry in CSS so
+ * the light remains attached when the same grammar is rendered at different
+ * node widths.
+ */
+const signatureLightAnchors = {
   w1: {
-    question: 'left',
-    investigation: 'left',
-    validation: 'left',
-    model: 'left',
-    evaluation: 'left',
+    question: { side: 'left', anchor: '50%' },
+    investigation: { side: 'left', anchor: '50%' },
+    validation: { side: 'left', anchor: '50%' },
+    model: { side: 'left', anchor: '50%' },
+    evaluation: { side: 'left', anchor: '50%' },
   },
   w2: {
-    question: 'left',
-    investigation: 'left',
-    validation: 'top',
-    model: 'bottom',
-    evaluation: 'right',
+    question: { side: 'left', anchor: '50%' },
+    investigation: { side: 'left', anchor: '50%' },
+    validation: { side: 'top', anchor: 'calc(14px + 23%)' },
+    model: { side: 'bottom', anchor: 'calc(14px + 25%)' },
+    evaluation: { side: 'right', anchor: '50%' },
   },
   w3: {
-    question: 'left',
-    investigation: 'left',
-    validation: 'left',
-    model: 'left',
-    evaluation: 'left',
+    question: { side: 'left', anchor: '50%' },
+    investigation: { side: 'left', anchor: '50%' },
+    validation: { side: 'left', anchor: '50%' },
+    model: { side: 'left', anchor: '50%' },
+    evaluation: { side: 'left', anchor: '50%' },
   },
   w4: {
-    question: 'left',
-    investigation: 'left',
-    validation: 'top',
-    model: 'bottom',
-    evaluation: 'right',
+    question: { side: 'left', anchor: '50%' },
+    investigation: { side: 'left', anchor: '50%' },
+    validation: { side: 'top', anchor: 'calc(12px + 21%)' },
+    model: { side: 'bottom', anchor: 'calc(12px + 23%)' },
+    evaluation: { side: 'right', anchor: '50%' },
   },
 }
 
@@ -91,6 +97,7 @@ function renderNodes() {
 
     const meta = categoryMeta[category]
     const variant = node.closest('.grammar-variant')?.dataset.variant || 'w1'
+    const lightAnchor = signatureLightAnchors[variant]?.[category] || { side: 'left', anchor: '50%' }
     const isScene = Boolean(node.closest('.project-scene'))
     const content = template.content.cloneNode(true)
 
@@ -99,7 +106,8 @@ function renderNodes() {
     content.querySelector('strong').textContent = isScene ? meta.sceneTitle : meta.stripTitle
     content.querySelector('small').textContent = isScene ? meta.sceneDetail : meta.stripDetail
 
-    node.dataset.lightSide = signatureSides[variant]?.[category] || 'left'
+    node.dataset.lightSide = lightAnchor.side
+    node.style.setProperty('--light-anchor', lightAnchor.anchor)
     node.replaceChildren(content)
   }
 }
