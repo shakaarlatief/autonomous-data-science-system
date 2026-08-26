@@ -1,10 +1,12 @@
 # Specification 024: V1 Model Collaboration State Coherence Guard
 
 **Date:** 2026-08-25  
-**Status:** Frozen prospective implementation contract  
+**Status:** Accepted V1 implementation contract  
+**Outcome:** `COLLABORATION_STATE_GUARD_ACCEPTED`  
+**Classified:** 2026-08-26  
 **Scope:** Provider-neutral machine-readable coordination state for governed multi-model development tasks  
-**Precondition:** MC-0001 architecture review resolved; exact mechanism not yet implemented at freeze time  
-**Authority:** Frozen implementation contract for the bounded V1 collaboration-state prototype
+**Precondition at freeze:** MC-0001 architecture review resolved; exact mechanism not yet implemented at freeze time  
+**Authority:** Accepted V1 implementation contract for the model-collaboration state coherence guard. The original MC-G01 through MC-G16 gates remain the frozen acceptance basis.
 
 ## 1. Purpose
 
@@ -37,7 +39,7 @@ freeze permanent model specializations
 
 ## 3. Physical contract
 
-The bounded implementation should add:
+The bounded implementation adds:
 
 ```text
 schemas/model_collaboration_thread_state_v1.schema.json
@@ -56,7 +58,7 @@ docs/model_collaboration/threads/MC-NNNN/STATE.json
 
 ## 4. V1 state shape
 
-The schema must contain these top-level fields:
+The schema contains these top-level fields:
 
 ```text
 schema_version
@@ -81,7 +83,7 @@ schema_version = 1
 thread_id       = MC-NNNN
 ```
 
-The validator must verify that the thread ID matches the directory containing `STATE.json`.
+The validator verifies that the thread ID matches the directory containing `STATE.json`.
 
 ### 4.2 Review mode
 
@@ -117,7 +119,7 @@ This avoids schema churn when future collaboration patterns add a new intermedia
 
 ### 4.4 Target
 
-`target` must contain:
+`target` contains:
 
 ```text
 branch
@@ -134,7 +136,7 @@ They may contain simple glob markers such as `*` and `**`, but must not contain 
 
 ### 4.5 Participants
 
-Each participant must contain:
+Each participant contains:
 
 ```text
 collaborator_id
@@ -163,9 +165,9 @@ Participant IDs must be unique.
 
 ### 4.6 Task owner and target write owner
 
-`task_owner` must reference one declared participant.
+`task_owner` references one declared participant.
 
-`target_write_owner` must reference one declared participant while target-state mutation is active. It may be null only when no participant currently owns target-state mutation, including a closed thread.
+`target_write_owner` references one declared participant while target-state mutation is active. It may be null only when no participant currently owns target-state mutation, including a closed thread.
 
 This is separate from role.
 
@@ -180,9 +182,11 @@ paths[]
 
 It declares repository surfaces a collaborator may mutate while another participant retains target-state write ownership.
 
-The validator must reject an allowed secondary surface that overlaps a declared target write path under the V1 conservative lexical overlap check.
+The validator rejects an allowed secondary surface that overlaps a declared target write path under the V1 conservative lexical overlap check.
 
 This is the key correction to a single global `active_writer` model.
+
+Known V1 scope limitation after direct review: the frozen contract does not check secondary-vs-secondary overlap between two simultaneous secondary writers. MC-0002 classified this as a real but non-blocking future extension because it was outside MC-G06 and is not currently exercised by the project.
 
 ### 4.8 Next expected actor
 
@@ -237,20 +241,20 @@ A complete event ledger is not required in V1. Git history plus the current tran
 
 ## 5. Validator semantics
 
-The validator must:
+The validator:
 
 ```text
-1. validate JSON against the V1 schema;
-2. validate thread ID vs directory name;
-3. reject undeclared task owners / write owners / next actors / transition actors;
-4. reject duplicate participant IDs;
-5. validate normalized repository-relative path declarations;
-6. reject conservative lexical overlap between target and secondary write surfaces;
-7. require an active target_write_owner for OPEN/ACTIVE/WAITING unless the task explicitly has no target write paths;
-8. require target_write_owner = null and next_expected_actor = null for CLOSED;
-9. require last_transition.to_state == lifecycle_state;
-10. require THREAD.md to exist beside a guarded STATE.json;
-11. produce deterministic human-readable errors and non-zero exit status on violation.
+1. validates JSON against the V1 schema;
+2. validates thread ID vs directory name;
+3. rejects undeclared task owners / write owners / next actors / transition actors;
+4. rejects duplicate participant IDs;
+5. validates normalized repository-relative path declarations;
+6. rejects conservative lexical overlap between target and secondary write surfaces;
+7. requires an active target_write_owner for OPEN/ACTIVE/WAITING unless the task explicitly has no target write paths;
+8. requires target_write_owner = null and next_expected_actor = null for CLOSED;
+9. requires last_transition.to_state == lifecycle_state;
+10. requires THREAD.md to exist beside a guarded STATE.json;
+11. produces deterministic human-readable errors and non-zero exit status on violation.
 ```
 
 The validator does not inspect Git author identity and does not claim semantic authorization beyond the declared contract.
@@ -259,7 +263,7 @@ The validator does not inspect Git author identity and does not claim semantic a
 
 MC-0002 is the first guarded thread.
 
-It will use:
+It used:
 
 ```text
 review mode            REVIEWED
@@ -269,9 +273,9 @@ Claude                 REVIEWER
 Claude write surface   MC-0002 numbered review messages only
 ```
 
-The state guard implementation itself is therefore exercised by the collaboration process it is intended to govern.
+The state guard implementation itself was therefore exercised by the collaboration process it is intended to govern.
 
-Claude's review is direct rather than another independent-then-comparative pass. This tests a lower-overhead collaboration pattern and avoids repeating the high subscription cost observed in MC-0001.
+Claude's review was direct rather than another independent-then-comparative pass. This tested a lower-overhead collaboration pattern and avoided repeating the high subscription cost observed in MC-0001.
 
 ## 7. Frozen validation gates
 
@@ -296,21 +300,32 @@ MC-G16  Claude directly reviews the concrete implementation and either accepts i
 
 ## 8. Outcome classification
 
-After implementation and direct review, classify exactly one:
+Final classification:
 
 ```text
 COLLABORATION_STATE_GUARD_ACCEPTED
-NEEDS_REVISION
-FAILED
 ```
 
-`COLLABORATION_STATE_GUARD_ACCEPTED` requires all MC-G01 through MC-G16 to pass.
+Evidence:
+
+```text
+pre-implementation freeze       9da382d4011ff112b75dec9c456143d798336336
+corrected green pre-review head a9efc43d7c441c8283d2cd954cc6fa1abd021689
+workflow run                    32902050014
+Ubuntu                          PASS
+Windows                         PASS
+focused unit tests              26 PASS per platform
+Claude direct review commit     9cf393f74e02e167d2f80c0381742ebd7e0c318e
+Claude review                   MC-G01 through MC-G16 satisfied
+```
+
+Claude directly inspected the schema, validator, tests, workflow, and live state rather than relying only on CI. It recommended `COLLABORATION_STATE_GUARD_ACCEPTED` and identified only the disclosed secondary-vs-secondary overlap limitation described above.
+
+No frozen gate was weakened after execution.
 
 ## 9. Promotion boundary
 
-Even a successful Specification 024 prototype does not automatically promote the full multi-model architecture.
-
-After the result is classified, perform the normal promotion audit for:
+The successful Specification 024 classification triggered the normal promotion audit for:
 
 ```text
 DEVELOPMENT_METHOD.md
@@ -322,4 +337,4 @@ DECISIONS.md
 MAJOR_CHANGES.md
 ```
 
-No API orchestration is part of this specification.
+The resulting governed multi-model method is promoted separately through the normal repository process. No API orchestration or unattended scheduled-review execution is accepted by this specification.
