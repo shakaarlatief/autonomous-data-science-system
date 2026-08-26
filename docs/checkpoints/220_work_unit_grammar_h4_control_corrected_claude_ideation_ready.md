@@ -4,7 +4,7 @@
 **Status:** Current product-design checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / COLLABORATION  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
-**Scope:** Records correction of accidental H4 in-box-light drift in the work-unit grammar browser experiment, signature-side-aware resting lighting, and an explicit H4-baseline versus reduced in-box-light comparison before Claude divergent ideation.  
+**Scope:** Records correction of accidental H4 in-box-light drift in the work-unit grammar browser experiment, signature-edge-and-position-aware resting lighting, and an explicit H4-baseline versus reduced in-box-light comparison before Claude divergent ideation.  
 **Authority:** Current Phase-C routing/evidence boundary only. Specification 008 remains the promoted Cockpit interaction architecture.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
@@ -25,6 +25,15 @@ The project owner correctly noted that the first issue was not an intentional ex
 
 The project owner also requested that the quieter in-box appearance be retained intentionally as an explicit comparison candidate rather than simply removed.
 
+After the first side-aware correction was reviewed positively, the project owner identified one more structural refinement before Claude should inspect the experiment:
+
+```text
+light must follow not only the signature edge
+but also the signature's position along that edge
+```
+
+For example, a top signature that occupies the left portion of the top edge should produce a top-left-biased resting light rather than a top-centered light.
+
 ## 2. H4 control correction
 
 Research 047 preserves the cause and correction.
@@ -42,7 +51,7 @@ The browser experiment now includes a dedicated surface-local resting-light laye
 
 ## 3. Intentional reduced in-box-light comparison
 
-The lab now exposes:
+The lab exposes:
 
 ```text
 In-box light
@@ -64,13 +73,18 @@ perimeter sweep
 hover timing
 ```
 
-Therefore the lower-light idea is now a real controlled candidate instead of accidental implementation drift.
+Therefore the lower-light idea is a real controlled candidate instead of accidental implementation drift.
 
-## 4. Signature-side-aware light
+## 4. Signature-edge-and-position-aware light
 
-For variants with an explicit category signature bar, resting light now follows that edge.
+For variants with an explicit category signature bar, resting light now follows both:
 
-Current mapping:
+```text
+1. which edge contains the signature
+2. where the signature is located along that edge
+```
+
+Current edge mapping remains:
 
 ```text
 W1
@@ -88,7 +102,20 @@ W3
     retain accepted left-biased H4 baseline
 ```
 
-The implementation mirrors or rotates:
+The refinement is especially visible for W2/W4 Validation and Model signatures. Their top/bottom bars are left-biased rather than centered, so the light anchor now uses the actual center of those authored bar geometries.
+
+Current exact anchor expressions are derived from the corresponding frame-signature CSS:
+
+```text
+W2 Validation   top     calc(14px + 23%)
+W2 Model        bottom  calc(14px + 25%)
+W4 Validation   top     calc(12px + 21%)
+W4 Model        bottom  calc(12px + 23%)
+```
+
+Full/centered left/right signatures retain a `50%` along-edge anchor.
+
+The implementation moves all three resting layers together:
 
 ```text
 in-box surface light
@@ -96,7 +123,7 @@ near-node rest light
 outward resting spill
 ```
 
-so the light remains structurally attached to the frame grammar.
+so the light remains structurally attached to the actual frame signature rather than only its broad side.
 
 ## 5. Browser implementation
 
@@ -117,7 +144,7 @@ http://localhost:5173/design-lab/work-unit-grammar.html
 
 The existing Project Scene explicit display suppression remains in place.
 
-After the corrected visual target was frozen, a small follow-up code-hygiene change scoped the in-box-light control query to the two buttons rather than also matching the root `data-inbox-light` attribute. This does not change the rendered design or intended interaction result, so it does not require moving Claude's visual-review target.
+The in-box-light control query remains scoped to the two control buttons.
 
 No production Cockpit file changed.
 
@@ -125,25 +152,22 @@ No production Cockpit file changed.
 
 Claude has not yet been triggered for Message 003.
 
-The earlier pre-lighting-correction target is superseded because it contained accidental H4 control drift.
+The previous corrected target is now superseded by the signature-position refinement because that refinement changes the rendered design Claude should inspect.
 
-The corrected visual browser-design target remains:
-
-```text
-03d3997498192544ce92c97c2a49e839b3a95af4
-```
-
-That commit contains the complete material visual correction:
+The current exact browser-design target is:
 
 ```text
-Project Scene fix
-restored H4 baseline in-box layer
-explicit H4 baseline / Reduced control
-signature-side-aware light mapping
-lighting correction stylesheet
+304db34d6482320b317db97277148bc129d07372
 ```
 
-A later button-query scoping cleanup is visually equivalent and does not alter the design evidence Claude is being asked to evaluate.
+Relative to the previous branch head `3228f7570c3c54d1d4348c7c77df0a9addc11c7a`, this refinement changed only:
+
+```text
+frontend/design-lab/work-unit-grammar.js
+frontend/design-lab/work-unit-grammar-lighting-controls.css
+```
+
+The two commits are 2 ahead / 0 behind and do not touch production Cockpit files.
 
 ## 7. Claude task remains divergent ideation
 
@@ -160,7 +184,7 @@ Claude may additionally comment on:
 
 ```text
 H4 baseline vs Reduced in-box resting light
-signature-edge / light-source coupling
+signature-edge-and-position / light-source coupling
 ```
 
 but should not allow those secondary questions to replace the main category-grammar ideation task.
@@ -172,10 +196,12 @@ but should not allow those secondary questions to replace the main category-gram
 2. refresh http://localhost:5173/design-lab/work-unit-grammar.html
 3. verify Project Scene still switches cleanly
 4. compare H4 baseline vs Reduced in-box light
-5. verify W2/W4 top/bottom/right signatures move their resting light accordingly
-6. if browser rendering is correct, trigger Claude using REVIEW_INBOX.md
-7. Claude reviews exact visual target 03d3997498192544ce92c97c2a49e839b3a95af4
-8. Claude writes only the next MC-0004 numbered message
-9. ChatGPT synthesizes all worthwhile candidates and builds as many browser variants as evidence justifies
-10. production /cockpit remains untouched
+5. inspect W2/W4 Validation and Model especially
+6. verify their top/bottom light is biased toward the actual left-biased signature bar rather than centered
+7. verify right/left signatures still behave correctly
+8. if browser rendering is correct, trigger Claude using REVIEW_INBOX.md
+9. Claude reviews exact visual target 304db34d6482320b317db97277148bc129d07372
+10. Claude writes only the next MC-0004 numbered message
+11. ChatGPT synthesizes all worthwhile candidates and builds as many browser variants as evidence justifies
+12. production /cockpit remains untouched
 ```
