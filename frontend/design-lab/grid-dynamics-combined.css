@@ -282,7 +282,7 @@ html[data-reduced="on"] .live-packet {
     opacity: 0;
   }
   9% {
-    opacity: calc(var(--peak) * 0.68);
+    opacity: 0.4;
   }
   24%, 70% {
     opacity: var(--peak);
@@ -299,7 +299,7 @@ html[data-reduced="on"] .live-packet {
     transform: scale(0.35);
   }
   34% {
-    opacity: calc(var(--peak) * 0.28);
+    opacity: 0.22;
     transform: scale(0.72);
   }
   52% {
@@ -307,7 +307,7 @@ html[data-reduced="on"] .live-packet {
     transform: scale(1.28);
   }
   72% {
-    opacity: calc(var(--peak) * 0.26);
+    opacity: 0.18;
     transform: scale(0.84);
   }
 }
@@ -317,12 +317,8 @@ html[data-reduced="on"] .live-packet {
     transform: translate3d(0, 0, 0) scale(0.92);
     opacity: 0;
   }
-  16% {
+  16%, 58% {
     opacity: var(--peak);
-  }
-  58% {
-    opacity: var(--peak);
-    transform: translate3d(calc(var(--dx) * 0.58), calc(var(--dy) * 0.58), 0) scale(1.06);
   }
   100% {
     transform: translate3d(var(--dx), var(--dy), 0) scale(0.97);
