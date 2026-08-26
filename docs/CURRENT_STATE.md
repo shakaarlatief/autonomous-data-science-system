@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 is provisionally settled. H4 generic rest/hover interaction lighting is sufficiently settled. The W1-W4 work-unit category/silhouette experiment remains open. Human review corrected Project Scene switching, accidental H4 in-box-light suppression, and fixed-left lighting despite moved signature bars. The browser now exposes an explicit H4-baseline versus Reduced in-box-light comparison. Human verification of this corrected target precedes Claude divergent ideation. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 is provisionally settled. H4 generic rest/hover interaction lighting is sufficiently settled. The W1-W4 work-unit category/silhouette experiment remains open. Human review corrected Project Scene switching, accidental H4 in-box-light suppression, fixed-left lighting despite moved signature bars, and then centered edge lighting despite partial top/bottom signatures being left-biased. The browser exposes an explicit H4-baseline versus Reduced in-box-light comparison. Human verification of this corrected target precedes Claude divergent ideation. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -51,7 +51,7 @@ http://localhost:5173/design-lab/work-unit-grammar.html
 Corrected exact browser-experiment target for Claude after human verification:
 
 ```text
-03d3997498192544ce92c97c2a49e839b3a95af4
+304db34d6482320b317db97277148bc129d07372
 ```
 
 ## Provisionally settled grid/world direction
@@ -173,15 +173,16 @@ The project owner judged the first implementation positively but did not select 
 
 The project owner also judged the current four candidates likely to cover too little of the plausible work-unit grammar design space and requested broader Claude ideas before convergence.
 
-Before Claude should inspect the design, human browser review exposed three control/implementation defects:
+Before Claude should inspect the design, human browser review exposed four control/implementation defects or refinements:
 
 ```text
 1. Project Scene could remain overlaid with Category strip
 2. accepted H4 in-box resting light was accidentally much weaker in the grammar DOM
 3. resting light/spill remained left-biased even when category signature bars moved to top/bottom/right
+4. after side-awareness was added, partial top/bottom signatures still produced edge-centered light instead of light aligned to the actual bar position
 ```
 
-All three are now corrected in the design lab.
+All four are now corrected in the design lab.
 
 ### Cause of the in-box-light drift
 
@@ -222,16 +223,18 @@ hover timing
 
 No H4-baseline-versus-Reduced preference exists yet.
 
-## Signature-side-aware resting light
+## Signature-edge-and-position-aware resting light
 
 The project owner established the rule:
 
 ```text
-if the visible category signature/accent edge moves,
-signature-anchored resting light moves with it
+if the visible category signature/accent moves,
+signature-anchored resting light follows both:
+    the edge
+    and the position along that edge
 ```
 
-Current mapping:
+Current edge mapping:
 
 ```text
 W1
@@ -249,7 +252,18 @@ W3
     retain accepted left-biased H4 baseline
 ```
 
-The in-box light, near-node rest light and outward spill mirror/rotate together.
+For W2/W4 Validation and Model, the signature bars occupy the left part of the top/bottom edge. The resting light is therefore left-biased on that horizontal edge rather than centered.
+
+Current authored anchor expressions mirror the frame-signature geometry:
+
+```text
+W2 Validation   top     calc(14px + 23%)
+W2 Model        bottom  calc(14px + 25%)
+W4 Validation   top     calc(12px + 21%)
+W4 Model        bottom  calc(12px + 23%)
+```
+
+The in-box surface light, near-node rest light and outward spill move together.
 
 ---
 
@@ -282,14 +296,14 @@ docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_d
 
 Claude may inspect all current candidate material. This is intentionally not a new blind-independent phase.
 
-The Claude request now explicitly preserves:
+The Claude request explicitly preserves:
 
 ```text
 no artificial candidate-count cap
 all genuinely distinct worthwhile candidates may be tested
 batching is allowed for clarity but does not imply rejection
 H4 baseline vs Reduced is a secondary explicit comparison
-signature-side-aware lighting is part of the corrected target
+signature-anchored lighting follows edge + along-edge position
 ```
 
 Claude's write scope remains only:
@@ -353,11 +367,12 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 3. refresh http://localhost:5173/design-lab/work-unit-grammar.html
 4. verify Project Scene still switches cleanly
 5. compare H4 baseline vs Reduced in-box resting light
-6. verify W2/W4 top/bottom/right signature bars move the resting light/spill accordingly
-7. verify hover still behaves like accepted H4
-8. if correct, trigger Claude using docs/model_collaboration/REVIEW_INBOX.md
-9. Claude reviews exact target 03d3997498192544ce92c97c2a49e839b3a95af4 and writes only Message 004
-10. ChatGPT synthesizes all genuinely worthwhile additional/combined candidates and builds as many browser variants as evidence justifies
-11. keep production Cockpit untouched
-12. keep source-vault deployment paused until explicitly resumed
+6. inspect W2/W4 Validation and Model especially
+7. verify their top/bottom resting light is biased toward the actual left-biased signature bar rather than centered on the edge
+8. verify left/right signature treatments and accepted H4 hover still behave correctly
+9. if correct, trigger Claude using docs/model_collaboration/REVIEW_INBOX.md
+10. Claude reviews exact target 304db34d6482320b317db97277148bc129d07372 and writes only Message 004
+11. ChatGPT synthesizes all genuinely worthwhile additional/combined candidates and builds as many browser variants as evidence justifies
+12. keep production Cockpit untouched
+13. keep source-vault deployment paused until explicitly resumed
 ```
