@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            214
+checkpoint            215
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C G4 major-grid glint / cadence human review
+current boundary      MC-0004 Phase C work-unit interaction-lighting human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -68,7 +68,7 @@ Generated-image UI concepts are not part of the preferred Cockpit design workflo
 
 ---
 
-## Grid/world result
+## Grid/world result: provisionally settled
 
 The first browser-rendered design slice compared:
 
@@ -85,111 +85,25 @@ Human review selected:
 G4 Adaptive Hybrid  SELECTED
 ```
 
-The selection was direct and strong. G4 was judged the best-looking world substrate, including its grid hierarchy and localized light treatment.
+The current grid/world layer is now provisionally settled for the design sequence. This is not an irreversible freeze.
 
-Current visual sequencing:
-
-```text
-DARK MODE
-    primary design baseline
-    optimize current visual experiments here
-
-LIGHT MODE
-    deferred
-    revisit as a dedicated later design pass after the core Cockpit visual system is substantially settled
-```
-
-This is sequencing, not permanent rejection of light mode.
-
----
-
-## Ambient dynamics result
-
-The project owner explicitly clarified that some visual behavior may exist simply because it looks polished and makes the world feel alive.
-
-The current motion model distinguishes:
+Current retained direction:
 
 ```text
-semantic motion
-    communicates real changing project/runtime state
-    higher salience
-
-ambient motion
-    decorative / atmospheric
-    lower semantic authority
+Dark mode                      current design baseline
+Light mode                     deferred
+Travelling currents            retained, randomized across the 20 px lattice
+Current cadence                Lively preferred
+Intersection glints            retained, 100 px major-grid intersections only
+Glint cadence                  approximately Quiet and independent
+Ambient drift                  retained
+Localized semantic activity    retained
+Fixed authored coordinates     rejected
 ```
 
-All tested ambient mechanisms are retained:
+The project owner explicitly allows later refinements or additional details if the integrated Cockpit reveals a need.
 
-```text
-travelling grid currents
-intersection glints
-slow ambient light drift
-localized semantic activity
-```
-
-The first D1-D4 dynamics round was judged too subtle. A combined experiment then exposed:
-
-```text
-Quiet
-Balanced
-Lively
-```
-
-Human review currently prefers `Lively` for the current / drift layer.
-
----
-
-## Current refinement: major-grid glints with independent quiet cadence
-
-The combined experiment now uses runtime-randomized currents and ambient drift rather than fixed authored coordinates.
-
-The latest human refinement distinguishes the grid scales and cadence roles:
-
-```text
-Currents
-    random horizontal / vertical orientation
-    random visible grid line
-    coordinates snapped to 20 px grid geometry
-    random start position
-    random direction
-    random distance
-    random length
-    random timing
-    Quiet / Balanced / Lively cadence remains selectable
-    Lively currently preferred
-
-Glints
-    random x and y coordinates
-    both snapped to 100 px MAJOR grid lines
-    therefore appear only at corners of the larger visible grid boxes
-    independent approximately-Quiet scheduler
-    at most two concurrent glints
-
-Ambient drift
-    random starting position
-    random size
-    random movement vector
-    random opacity within the selected cadence preset
-```
-
-The runtime stochastic scheduler is isolated design-lab code, not a production architecture decision.
-
-Current browser surface:
-
-```text
-frontend/design-lab/grid-dynamics-combined.html
-frontend/design-lab/grid-dynamics-combined.css
-frontend/design-lab/grid-dynamics-combined.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/grid-dynamics-combined.html
-```
-
-Current supporting evidence:
+Primary grid/world evidence:
 
 ```text
 docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
@@ -203,6 +117,82 @@ docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
 docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
 docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
 docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
+
+frontend/design-lab/grid-world.html
+frontend/design-lab/grid-dynamics.html
+frontend/design-lab/grid-dynamics-combined.html
+```
+
+---
+
+## Current slice: work-unit interaction lighting
+
+The project owner strongly liked the colored lighting around work units and requested richer node-specific hover response.
+
+Current hypothesis:
+
+```text
+REST
+    localized / asymmetric colored atmosphere
+
+HOVER
+    fuller node-specific colored response
+
+SELECTED
+    later persistent focus treatment
+
+ACTIVE / RUNNING
+    later semantic state-bearing light behavior
+```
+
+New browser lab:
+
+```text
+frontend/design-lab/work-unit-lighting.html
+frontend/design-lab/work-unit-lighting.css
+frontend/design-lab/work-unit-lighting.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-lighting.html
+```
+
+Four decomposable treatments are under review:
+
+```text
+H1 Full Halo
+    localized rest light
+    full colored perimeter on hover
+    small depth lift
+
+H2 Cursor Edge
+    H1
+    + pointer-following/specular hotspot
+
+H3 World Spill
+    full hover light
+    + faint nearby grid illumination in node color
+    + immediate connector emphasis
+
+H4 Integrated Response
+    localized rest light
+    full hover halo
+    pointer hotspot
+    local grid spill
+    connector emphasis
+    one restrained perimeter sweep on hover entry
+    small depth lift
+```
+
+The user may combine mechanisms rather than selecting H1-H4 literally.
+
+Research and checkpoint:
+
+```text
+docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
+docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
 ```
 
 ---
@@ -212,7 +202,8 @@ docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
 The next-generation design program still needs evidence on:
 
 ```text
-work-unit visual grammar
+work-unit category / silhouette visual grammar
+multi-axis status treatment
 semantic connector vocabulary and styling
 semantic zoom representations
 stage/orientation treatment
@@ -308,16 +299,13 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
+docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
+frontend/design-lab/work-unit-lighting.html
+
 docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
 docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
 frontend/design-lab/grid-dynamics-combined.html
-
-docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
-docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
-
-docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
-docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
@@ -334,12 +322,10 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. pull v1-cockpit-design-exploration locally
 2. keep the existing Vite dev server running
-3. refresh http://localhost:5173/design-lab/grid-dynamics-combined.html
-4. keep currents on Lively for the preferred comparison
-5. verify currents still appear across many grid rows and columns
-6. verify glints appear only on 100 px major-grid intersections / large-box corners
-7. verify glints are approximately Quiet and no longer accelerate with Lively currents
-8. provide human refine/accept feedback
-9. provisionally settle the grid/world layer when its behavior is satisfactory
-10. then open the next bounded Cockpit design slice
+3. open http://localhost:5173/design-lab/work-unit-lighting.html
+4. hover the same colored work units across H1-H4
+5. compare full halo, pointer light, world spill, connector response and one-time perimeter sweep
+6. provide human keep/reject/combine/refine feedback
+7. refine once if useful
+8. then continue into deeper work-unit visual grammar
 ```
