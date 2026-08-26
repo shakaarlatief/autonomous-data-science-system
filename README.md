@@ -169,12 +169,13 @@ http://localhost:5173/design-lab/work-unit-grammar.html
 
 The first implementation received a strongly positive preliminary human reaction, but no W1-W4 selection was made. The project owner judged that the current four variants likely cover too little of the plausible visual-design space and explicitly requested additional Claude ideas and inspiration before convergence.
 
-Human review also found three browser/control issues before Claude should inspect the experiment:
+Human review also found four browser/control issues or refinements before Claude should inspect the experiment:
 
 ```text
 Project Scene could remain overlaid with Category strip
 accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
 resting light stayed left-biased when category signature bars moved to top/bottom/right
+partial top/bottom signatures still produced edge-centered light after the first side-aware correction
 ```
 
 These are now corrected.
@@ -183,7 +184,7 @@ These are now corrected.
 
 The accidentally quieter in-box appearance is preserved intentionally as a comparison rather than silently discarded.
 
-The browser now exposes:
+The browser exposes:
 
 ```text
 In-box light
@@ -195,16 +196,18 @@ This comparison changes in-box resting-light intensity only. It does not intenti
 
 No preference exists yet between H4 baseline and Reduced.
 
-### Signature-side-aware lighting
+### Signature-edge-and-position-aware lighting
 
 The project owner established:
 
 ```text
-if the visible category signature/accent edge moves,
-signature-anchored resting light moves with it
+if the visible category signature/accent moves,
+signature-anchored resting light follows both:
+    its edge
+    and its position along that edge
 ```
 
-Current first-round mapping:
+Current first-round edge mapping:
 
 ```text
 W1
@@ -222,12 +225,14 @@ W3
     retain accepted left-biased H4 baseline
 ```
 
+For W2/W4 Validation and Model, the top/bottom bars occupy the left part of the edge, so the resting light is also left-biased along that edge rather than centered.
+
 The in-box light, near-node rest light and outward spill move together.
 
 Corrected exact browser target for Claude after human verification:
 
 ```text
-03d3997498192544ce92c97c2a49e839b3a95af4
+304db34d6482320b317db97277148bc129d07372
 ```
 
 ---
@@ -373,11 +378,12 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 3. refresh http://localhost:5173/design-lab/work-unit-grammar.html
 4. verify Project Scene switching remains clean
 5. compare H4 baseline vs Reduced in-box light
-6. verify W2/W4 top/bottom/right signature bars move their resting light/spill accordingly
-7. verify hover remains the accepted H4 behavior
-8. if correct, trigger Claude through REVIEW_INBOX.md
-9. Claude evaluates exact target 03d3997498192544ce92c97c2a49e839b3a95af4 and writes only Message 004
-10. ChatGPT synthesizes all genuinely worthwhile candidates and implements as many browser variants as evidence justifies
-11. return to human comparison before category-grammar selection
-12. keep production Cockpit untouched
+6. inspect W2/W4 Validation and Model especially
+7. verify their top/bottom resting light follows the actual left-biased signature position rather than centering on the edge
+8. verify left/right signatures and accepted H4 hover remain correct
+9. if correct, trigger Claude through REVIEW_INBOX.md
+10. Claude evaluates exact target 304db34d6482320b317db97277148bc129d07372 and writes only Message 004
+11. ChatGPT synthesizes all genuinely worthwhile candidates and implements as many browser variants as evidence justifies
+12. return to human comparison before category-grammar selection
+13. keep production Cockpit untouched
 ```
