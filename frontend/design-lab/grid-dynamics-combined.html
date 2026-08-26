@@ -13,7 +13,7 @@
       <div class="lab-title-block">
         <span class="lab-kicker">ADS Cockpit Design Lab · Slice 01C</span>
         <h1>G4 combined ambient dynamics</h1>
-        <p>All surviving ambient mechanisms are active together. This experiment tunes how often they appear, not whether they survive.</p>
+        <p>All surviving ambient mechanisms are active together. Currents, glints and ambient drift now re-seed across the grid instead of repeating at fixed coordinates.</p>
       </div>
 
       <div class="lab-controls" aria-label="Ambient dynamics controls">
@@ -40,34 +40,19 @@
         <div>
           <span class="section-kicker">Selected substrate</span>
           <h2>G4 · Adaptive Hybrid</h2>
-          <p>Dark-first baseline. Fine/major grid hierarchy, local project-state glow, travelling grid currents, sparse glints and slow ambient drift.</p>
+          <p>Dark-first baseline. Fine/major grid hierarchy, local project-state glow, grid-aligned travelling currents, intersection glints and slow ambient drift.</p>
         </div>
         <div class="surviving-effects" aria-label="Surviving ambient effects">
-          <span>Travelling grid currents</span>
-          <span>Intersection glints</span>
-          <span>Ambient light drift</span>
+          <span>Random grid currents</span>
+          <span>Grid-corner glints</span>
+          <span>Random ambient drift</span>
           <span>Localized semantic activity</span>
         </div>
       </section>
 
       <section class="combined-stage" aria-label="Combined G4 ambient dynamics experiment">
-        <div class="combined-world">
-          <div class="ambient-drift ambient-drift-a" aria-hidden="true"></div>
-          <div class="ambient-drift ambient-drift-b" aria-hidden="true"></div>
-          <div class="ambient-drift ambient-drift-c" aria-hidden="true"></div>
-
-          <span class="ambient-trace trace-h trace-h-a" aria-hidden="true"></span>
-          <span class="ambient-trace trace-h trace-h-b" aria-hidden="true"></span>
-          <span class="ambient-trace trace-h trace-h-c" aria-hidden="true"></span>
-          <span class="ambient-trace trace-v trace-v-a" aria-hidden="true"></span>
-          <span class="ambient-trace trace-v trace-v-b" aria-hidden="true"></span>
-
-          <span class="ambient-glint glint-a" aria-hidden="true"></span>
-          <span class="ambient-glint glint-b" aria-hidden="true"></span>
-          <span class="ambient-glint glint-c" aria-hidden="true"></span>
-          <span class="ambient-glint glint-d" aria-hidden="true"></span>
-          <span class="ambient-glint glint-e" aria-hidden="true"></span>
-          <span class="ambient-glint glint-f" aria-hidden="true"></span>
+        <div id="combined-world" class="combined-world">
+          <div id="ambient-runtime-layer" class="ambient-runtime-layer" aria-hidden="true"></div>
 
           <div class="activity-field activity-field-primary" aria-hidden="true"></div>
           <div class="activity-field activity-field-secondary" aria-hidden="true"></div>
@@ -111,20 +96,20 @@
         </div>
 
         <footer class="combined-footer">
-          <div><strong id="intensity-label">Balanced</strong><span id="intensity-description">More frequent than the first dynamics round while keeping quiet gaps.</span></div>
+          <div><strong id="intensity-label">Balanced</strong><span id="intensity-description">Randomized currents and corner glints appear across the full grid with moderate cadence.</span></div>
           <div class="legend"><span class="legend-dot ambient-dot"></span>ambient decoration <span class="legend-dot semantic-dot"></span>semantic activity</div>
         </footer>
       </section>
 
       <section class="review-prompt combined-review">
         <span class="section-kicker">Human review</span>
-        <h2>Choose the activity level, not the mechanism</h2>
+        <h2>Check distribution and cadence</h2>
         <div class="review-questions">
-          <p>Does Balanced now feel alive enough?</p>
-          <p>Is Lively still comfortable for long sessions?</p>
-          <p>Should currents be brighter, longer, or simply more frequent?</p>
-          <p>Are glints noticeable without becoming sparkle?</p>
-          <p>Does ambient drift add depth without fogging the content?</p>
+          <p>Do currents now feel capable of appearing anywhere?</p>
+          <p>Do glints consistently land on grid intersections?</p>
+          <p>Is Lively still your preferred cadence?</p>
+          <p>Should horizontal and vertical currents occur equally often?</p>
+          <p>Does the random drift remain subtle enough?</p>
         </div>
       </section>
     </main>
