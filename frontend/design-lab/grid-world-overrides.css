@@ -1,0 +1,31 @@
+.world-surface::before,
+.world-surface::after {
+  z-index: 1;
+}
+
+.relation-layer {
+  z-index: 2;
+}
+
+.activity-field {
+  z-index: 0;
+}
+
+.variant-g3 .world-surface {
+  background-image: none;
+}
+
+.variant-g3 .world-surface::before {
+  opacity: 0;
+}
+
+.variant-g3 .world-surface::after {
+  inset: -22px;
+  background-image:
+    radial-gradient(ellipse 3.8px 0.75px at center, var(--world-cross) 94%, transparent 100%),
+    radial-gradient(ellipse 0.75px 3.8px at center, var(--world-cross) 94%, transparent 100%);
+  background-size:
+    calc(44px * var(--world-scale)) calc(44px * var(--world-scale)),
+    calc(44px * var(--world-scale)) calc(44px * var(--world-scale));
+  opacity: calc(0.72 * var(--minor-opacity));
+}
