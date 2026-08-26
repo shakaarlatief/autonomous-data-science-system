@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            211
+checkpoint            213
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C G4 ambient-dynamics human review
+current boundary      MC-0004 Phase C G4 randomized ambient-distribution human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -52,7 +52,7 @@ docs/research/037_project_cockpit_next_generation_visual_interaction_design_expl
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 ```
 
-The current Phase-C protocol prefers:
+The Phase-C protocol prefers:
 
 ```text
 real external references where useful
@@ -87,19 +87,7 @@ G4 Adaptive Hybrid  SELECTED
 
 The selection was direct and strong. G4 was judged the best-looking world substrate, including its grid hierarchy and localized light treatment.
 
-Primary evidence:
-
-```text
-docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
-docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
-frontend/design-lab/grid-world.html
-```
-
----
-
-## Dark-first visual sequence
-
-The current Cockpit design exploration is now dark-first.
+Current visual sequencing:
 
 ```text
 DARK MODE
@@ -115,11 +103,11 @@ This is sequencing, not permanent rejection of light mode.
 
 ---
 
-## Ambient dynamics slice
+## Ambient dynamics result
 
 The project owner explicitly clarified that some visual behavior may exist simply because it looks polished and makes the world feel alive.
 
-The current motion model therefore distinguishes:
+The current motion model distinguishes:
 
 ```text
 semantic motion
@@ -128,48 +116,92 @@ semantic motion
 
 ambient motion
     decorative / atmospheric
-    lower salience
-    slow and sparse
+    lower semantic authority
 ```
 
-Research 040 and Checkpoint 211 open the current experiment:
+All tested ambient mechanisms are retained:
 
 ```text
-docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
+travelling grid currents
+intersection glints
+slow ambient light drift
+localized semantic activity
 ```
 
-Browser lab:
+The first D1-D4 dynamics round was judged too subtle. A combined experiment then exposed:
 
 ```text
-frontend/design-lab/grid-dynamics.html
-frontend/design-lab/grid-dynamics.css
-frontend/design-lab/grid-dynamics.js
+Quiet
+Balanced
+Lively
+```
+
+Human review currently prefers:
+
+```text
+Lively
+```
+
+---
+
+## Current refinement: randomized spatial distribution
+
+The combined experiment initially reused a small set of fixed current rows/columns and glint positions. Human review correctly noticed the repeated spatial pattern.
+
+The current refinement therefore preserves the mechanisms and cadence while changing their distribution:
+
+```text
+Currents
+    random horizontal / vertical orientation
+    random visible grid line
+    coordinates snapped to 20 px grid geometry
+    random start position
+    random direction
+    random distance
+    random length
+    random timing
+
+Glints
+    random x and y coordinates
+    both snapped to 20 px
+    therefore always centered on a real grid-line intersection / cell corner
+
+Ambient drift
+    random starting position
+    random size
+    random movement vector
+    random opacity within the selected cadence preset
+```
+
+The runtime stochastic scheduler is isolated design-lab code, not a production architecture decision.
+
+Current browser surface:
+
+```text
+frontend/design-lab/grid-dynamics-combined.html
+frontend/design-lab/grid-dynamics-combined.css
+frontend/design-lab/grid-dynamics-combined.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/grid-dynamics.html
+http://localhost:5173/design-lab/grid-dynamics-combined.html
 ```
 
-Variants:
+Current supporting evidence:
 
 ```text
-D1 Quiet Current
-    slow blue-white line segments travel occasionally along grid lines
+docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
+docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
+docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
+docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
 
-D2 Intersection Glints
-    rare grid intersections brighten and decay
-
-D3 Ambient Drift
-    broad low-opacity light fields drift slowly beneath the grid
-
-D4 Restrained Hybrid
-    reduced-intensity combination of trace + glint + drift
+docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
+docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
+docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
 ```
-
-Controls allow Ambient, Semantic, and Reduced-motion layers to be compared separately.
 
 ---
 
@@ -274,11 +306,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
-docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-frontend/design-lab/grid-dynamics.html
+docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
+docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
+frontend/design-lab/grid-dynamics-combined.html
 
-docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
+docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
 docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
@@ -296,10 +329,11 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. pull v1-cockpit-design-exploration locally
 2. keep the existing Vite dev server running
-3. open http://localhost:5173/design-lab/grid-dynamics.html
-4. compare D1-D4 live
-5. toggle Ambient and Semantic separately
-6. provide human prefer/reject/combine/refine feedback
-7. preserve the surviving ambient treatment
-8. then open the next bounded Cockpit design slice
+3. refresh http://localhost:5173/design-lab/grid-dynamics-combined.html
+4. inspect Quiet / Balanced / Lively, especially Lively
+5. verify currents appear across many grid rows and columns
+6. verify glints land on real grid intersections
+7. provide human refine/accept feedback
+8. provisionally settle the grid/world layer when its behavior is satisfactory
+9. then open the next bounded Cockpit design slice
 ```
