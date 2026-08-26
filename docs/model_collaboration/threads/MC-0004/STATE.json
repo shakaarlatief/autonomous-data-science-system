@@ -26,6 +26,7 @@
       "docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md",
       "docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md",
       "docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md",
+      "docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
       "docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md",
       "docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md",
@@ -43,6 +44,7 @@
       "docs/checkpoints/220_work_unit_grammar_h4_control_corrected_claude_ideation_ready.md",
       "docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md",
       "docs/checkpoints/222_focused_work_unit_grammar_convergence_review_opened.md",
+      "docs/checkpoints/223_scientific_markers_selected_material_and_validation_shape_refined.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -88,14 +90,16 @@
       "Research 047 H4 grammar-control correction, in-box-light comparison, and signature-position coupling",
       "Research 048 Claude work-unit grammar synthesis and expanded browser round",
       "Research 049 focused convergence and true-shape experiment",
-      "W1-W4 first-round candidates",
-      "expanded G0-G3, S0-S3, M0-M1, I0-I2 candidates",
+      "Research 050 scientific marker selection and material/shape refinement",
       "human rejection of letters, G2 and S3",
-      "human preference for scientific markers, M1 material, M1 Evaluation treatment and Reduced in-box light",
-      "human request to test genuinely different overall shapes",
+      "human selection of scientific markers for the current grammar direction",
+      "human selection of Reduced in-box light as preferred working control",
+      "human preference for M1 material and Evaluation-like micro character",
+      "human request to strengthen Investigation, Validation and Model micro-material visibility",
+      "human rejection of the aggressive Validation raised-tab shape and requirement for a right-only subtle top step",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Expanded human review has now produced evidence-driven convergence: bare letters, G2 and S3 are rejected; scientific markers, M1 material and the M1 Evaluation micro treatment are positive; Reduced in-box light is the preferred working control; G1 remains a secondary comparator. Research 049 and Checkpoint 222 open a focused browser round including a true-shape family that preserves the left reading edge while varying top/right/bottom geometry. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has now moved beyond glyph comparison: the scientific marker family is selected for the current work-unit grammar direction, G1 is retired from active focused presentation, Reduced remains the preferred working control, M1 material remains positive but its green/blue/red treatments were selectively strengthened, and the Validation true-shape treatment was revised to preserve the upper-left corner and use only a subtle right-side top step. Research 050 and Checkpoint 223 preserve this state. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -105,15 +109,16 @@
       "PHASE_C_WORK_UNIT_GRAMMAR_SIGNATURE_POSITION_CORRECTION",
       "PHASE_C_WORK_UNIT_GRAMMAR_CLAUDE_IDEATION_RECEIVED",
       "PHASE_C_WORK_UNIT_GRAMMAR_EXPANDED_BROWSER_REVIEW",
-      "PHASE_C_WORK_UNIT_GRAMMAR_FOCUSED_CONVERGENCE_REVIEW"
+      "PHASE_C_WORK_UNIT_GRAMMAR_FOCUSED_CONVERGENCE_REVIEW",
+      "PHASE_C_SCIENTIFIC_MARKER_SELECTED_MATERIAL_SHAPE_REFINED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-work-unit-grammar-focused-convergence-review-opened",
+    "transition_id": "mc0004-scientific-marker-selected-material-shape-refined",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "Human review of the expanded work-unit grammar round rejected letters, G2 and S3, preferred scientific markers, M1 micro-material and Reduced in-box light, highlighted the M1 Evaluation micro treatment, and requested exploration of genuinely different overall shapes. ChatGPT preserved this evidence, opened Research 049, and implemented a focused eight-variant convergence round including a true-shape family and integrated material/micro-lumen candidates.",
-    "repository_head": "4b98936999289f7d088c8321a6c9617c117badb5"
+    "reason": "Human review selected the scientific circle/square/triangle/diamond/plus marker vocabulary, kept Reduced as the preferred in-box light control, retained the M1 micro-material direction while requesting stronger Investigation/Validation/Model visibility, and required the Validation shape to preserve its upper-left corner and use only a subtle right-side top step. ChatGPT implemented those refinements at exact browser target 6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a. Human browser verification is now the active gate.",
+    "repository_head": "6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a"
   }
 }
