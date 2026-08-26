@@ -92,17 +92,18 @@ W4  Hybrid Semantic Instrument
 
 The first implementation received a strongly positive preliminary human reaction, but the human project owner judged the candidate space too narrow for convergence.
 
-Human browser review also exposed three implementation/control problems before Claude should inspect the design:
+Human browser review exposed control/implementation problems before Claude should inspect the design:
 
 ```text
 Project Scene and Category strip could render together
 accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
 resting light stayed left-biased even when signature bars moved to top/bottom/right
+partial top/bottom signatures still produced edge-centered light after the first side-aware correction
 ```
 
 These were corrected before the Claude task was triggered.
 
-The corrected browser experiment now exposes an intentional secondary comparison:
+The corrected browser experiment exposes an intentional secondary comparison:
 
 ```text
 In-box light
@@ -112,21 +113,20 @@ In-box light
 
 The outward resting spill and generic H4 hover response remain held.
 
-Signature-anchored resting light now follows the visible signature edge:
+Signature-anchored resting light now follows:
 
 ```text
-left -> left
-right -> right
-top -> top
-bottom -> bottom
+signature edge
++
+signature position along that edge
 ```
 
-W3 has no explicit signature bar and therefore retains the accepted left-biased H4 baseline for now.
+Thus a left-biased top signature produces top-left-biased resting light rather than top-centered light. W3 has no explicit signature bar and retains the accepted left-biased H4 baseline for now.
 
-Corrected exact experiment target:
+Current corrected exact experiment target:
 
 ```text
-03d3997498192544ce92c97c2a49e839b3a95af4
+304db34d6482320b317db97277148bc129d07372
 ```
 
 ## Current gate: human verification, then Claude divergent work-unit grammar ideation
@@ -138,6 +138,7 @@ Project Scene switches cleanly
 H4 baseline restores the intended in-box light
 Reduced is visibly quieter and intentional
 W2/W4 top/bottom/right signatures move their resting light accordingly
+partial top/bottom signature light aligns to the actual bar position rather than edge center
 hover remains the accepted H4 behavior
 ```
 
@@ -216,7 +217,7 @@ No production `/cockpit` replacement, new graph/canvas dependency, new motion li
 ```text
 1. human verifies the corrected browser experiment on v1-cockpit-design-exploration
 2. after verification, Claude reads Message 003
-3. Claude evaluates exact target 03d3997498192544ce92c97c2a49e839b3a95af4
+3. Claude evaluates exact target 304db34d6482320b317db97277148bc129d07372
 4. Claude writes only Message 004
 5. ChatGPT synthesizes all genuinely worthwhile new/combined ideas
 6. build as many browser variants as evidence justifies, organized into batches if useful
