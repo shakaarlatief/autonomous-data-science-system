@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            221
+checkpoint            222
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      expanded work-unit grammar human browser review
+current boundary      focused work-unit grammar convergence human browser review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -87,7 +87,7 @@ Decorative/ambient behavior is allowed when it improves polish and atmosphere wi
 
 ---
 
-## Work-unit interaction lighting: H4 sufficiently settled
+## Work-unit interaction lighting
 
 Human review selected:
 
@@ -99,7 +99,6 @@ Current retained generic interaction treatment:
 
 ```text
 REST
-    accepted clean localized/asymmetric in-box illumination
     accepted narrow asymmetric outward world spill through the accent side
     no broad circular resting halo
 
@@ -115,7 +114,7 @@ HOVER
 
 The revised hover timing was judged perfect. The final outward-only resting-spill correction was also judged good.
 
-The current grammar experiments preserve the later structural light rule:
+The current grammar experiments preserve the structural light rule:
 
 ```text
 signature edge
@@ -124,19 +123,18 @@ signature position along that edge
 -> resting-light origin
 ```
 
-The explicit secondary comparison remains:
+Human review of the expanded grammar round has now selected:
 
 ```text
-H4 baseline in-box light
-vs
 Reduced in-box light
+    PREFERRED WORKING CONTROL
 ```
 
-No preference between those two is frozen yet.
+So subsequent work-unit grammar experiments default to Reduced rather than treating H4 baseline and Reduced as equal choices. Historical H4-baseline evidence remains preserved.
 
 ---
 
-## Current work-unit visual-grammar program
+## Work-unit visual-grammar program
 
 The active category question is:
 
@@ -183,69 +181,97 @@ C9  Inner Instrument Architecture
 
 There is no artificial candidate-count cap.
 
-### Expanded browser round
+### Expanded browser evidence
+
+The 13-variant expanded round tested glyph, structural, material and integrated directions.
+
+Human review has now produced clear evidence.
+
+Rejected:
+
+```text
+bare Q / I / V / M / E category letters
+G2 Compact Marker Rail
+S3 Inner Instrument Architecture / symbol direction
+```
+
+Leading:
+
+```text
+G3 Scientific Marker Family
+    simple circle / square / triangle / diamond / plus geometry
+
+M1 Material Language Family
+    strong positive reaction
+
+M1 Evaluation micro treatment
+    especially positive reaction
+
+Reduced in-box light
+    preferred over H4 baseline
+```
+
+Secondary comparator:
+
+```text
+G1 Instrument Glyph Family
+    still visually positive
+    but less attractive than the scientific-marker family
+```
+
+### Focused convergence round
 
 Current route:
 
 ```text
-docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
-docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md
-frontend/design-lab/work-unit-grammar-expanded.html
-frontend/design-lab/work-unit-grammar-expanded.css
-frontend/design-lab/work-unit-grammar-expanded.js
+docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
+docs/checkpoints/222_focused_work_unit_grammar_convergence_review_opened.md
+frontend/design-lab/work-unit-grammar-focused.html
+frontend/design-lab/work-unit-grammar-focused.css
+frontend/design-lab/work-unit-grammar-focused.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-expanded.html
+http://localhost:5173/design-lab/work-unit-grammar-focused.html
 ```
 
-Current candidate matrix:
+Current focused candidate matrix:
 
 ```text
-Batch A · Glyph strategy
-    G0 Letter Control
-    G1 Instrument Glyph Family
-    G2 Compact Marker Rail
-    G3 Scientific Marker Family
-
-Batch B · Structural grammar
-    S0 Chamfer Control
-    S1 Structural Topology Family
-    S2 Aspect & Proportion Family
-    S3 Inner Instrument Architecture
-
-Batch C · Material channel
-    M0 Plain Surface Control
-    M1 Material Language Family
-
-Batch D · Integrated candidates
-    I0 Current W4 Hybrid Control
-    I1 W4 + Instrument Glyph
-    I2 W4 + Scientific Marker
+F0  Scientific Marker Control
+F1  Upper-right Cut Control
+F2  Scientific Marker + M1 Material
+F3  Scientific Marker + Micro-Lumen
+F4  True Shape Family
+F5  True Shape + M1 Material
+F6  True Shape + Micro-Lumen
+F7  Instrument Glyph Comparator
 ```
 
-Total immediate executable variants:
+The new shape question is explicit because the project owner asked whether genuinely different overall shapes should be explored.
+
+Direct human evidence:
 
 ```text
-13
+upper-right cut   liked
+upper-left cut    awkward
 ```
 
-The page includes:
+The true-shape experiment therefore preserves the complete left reading edge while varying top/right/bottom structure more strongly.
+
+Current true-shape family:
 
 ```text
-Category strip / Project scene
-H4 baseline / Reduced in-box light
-All / Glyph / Structure / Surface / Integrated presentation filters
-Reduced motion
+Question        upper-right diagonal cut
+Investigation   right-edge inward notch
+Validation      raised / tab-like top geometry
+Model           stepped bottom-right geometry
+Evaluation      right-side beveled termination
 ```
 
-Filtering is presentation only:
-
-```text
-hidden != rejected
-```
+The focused round also generalizes the especially positive Evaluation micro treatment into a controlled `Micro-Lumen` family. This is a category-level internal surface detail, not a return to stronger global H4 rest illumination.
 
 Dependency-bound ideas remain preserved rather than rejected:
 
@@ -261,8 +287,10 @@ C5 Internal Layout Grammar  -> semantic zoom / information-density slice
 The next-generation design program still needs evidence on:
 
 ```text
-H4 baseline vs Reduced in-box resting-light preference
 final work-unit category / silhouette / category-mark grammar
+whether true-shape differentiation survives human review
+whether M1 material or Micro-Lumen is the stronger secondary category channel
+whether G1 survives as a useful secondary mark language
 final work-unit taxonomy
 multi-axis status treatment
 semantic connector vocabulary and styling
@@ -333,6 +361,10 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/222_focused_work_unit_grammar_convergence_review_opened.md
+docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
+frontend/design-lab/work-unit-grammar-focused.html
+
 docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md
 docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
 frontend/design-lab/work-unit-grammar-expanded.html
@@ -359,15 +391,14 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. use v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-grammar-expanded.html
-4. start with All + Category strip + H4 baseline
-5. compare Batch A glyph strategies
-6. compare Batch B structural strategies
-7. compare Batch C material channel
-8. compare Batch D integrated W4 combinations
-9. switch to Project scene and check whether judgments survive realistic composition
-10. toggle Reduced to inspect category-mark contrast under the quieter in-box treatment
-11. human may prefer, reject, combine, refine, or request additional candidates
-12. preserve C4 and C5 for their dependency-aligned slices
-13. keep production Cockpit untouched
+3. open http://localhost:5173/design-lab/work-unit-grammar-focused.html
+4. begin with All + Category strip
+5. Reduced is already the held preferred light control
+6. compare F0 vs F7 for scientific markers vs remaining G1 comparator
+7. compare F2 vs F3 for M1 micro-material vs Evaluation-inspired Micro-Lumen
+8. compare F1 vs F4 for liked upper-right cut vs genuinely different category shapes
+9. compare F5 vs F6 for integrated shape + micro-detail directions
+10. switch to Project scene and verify preferences survive realistic composition
+11. preserve resulting prefer/reject/combine evidence before the next design slice
+12. keep production Cockpit untouched
 ```
