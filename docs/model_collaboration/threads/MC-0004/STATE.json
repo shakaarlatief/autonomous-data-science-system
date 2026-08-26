@@ -98,9 +98,10 @@
       "human approval of configurable appearance after browser review",
       "customizable-preview connector geometry defect and dynamic rendered-edge fix",
       "connector and Port Grammar candidates K0 through K4",
+      "connector layering correction: curves below work-unit bodies, endpoint markers above the rendered perimeter",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has now approved the configurable appearance model, leading to Foundation 023. The remaining customizable-preview connector defect was fixed at c1f996f6500672641de8e00780d5a4949c5dcb28 by deriving paths from rendered node geometry. The next active slice is connector and Port Grammar with K0-K4 implemented at e3394447eeae721eab9bd66d347d0d327dbe0485. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review approved the configurable appearance model, leading to Foundation 023. The customizable-preview connector geometry defect was fixed at c1f996f6500672641de8e00780d5a4949c5dcb28. The active K0-K4 connector experiment has now received a pre-judgment layering correction: relation curves remain below work-unit bodies while endpoint dots, sockets, hover ports and the target cue render in a synchronized overlay above the work-unit perimeter. Exact browser target is 08a33868b1c1d2cd90f11431e3f6b730603f28eb. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -114,15 +115,16 @@
       "PHASE_C_SCIENTIFIC_MARKER_SELECTED_MATERIAL_SHAPE_REFINED",
       "PHASE_C_USER_CONFIGURABLE_VISUAL_GRAMMAR_PROTOTYPE",
       "PHASE_C_USER_CONFIGURABLE_APPEARANCE_PROMOTED",
-      "PHASE_C_CONNECTOR_PORT_GRAMMAR_REVIEW"
+      "PHASE_C_CONNECTOR_PORT_GRAMMAR_REVIEW",
+      "PHASE_C_CONNECTOR_ENDPOINT_LAYERING_CORRECTED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-connector-port-grammar-review-opened",
+    "transition_id": "mc0004-connector-endpoint-layering-corrected",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
-    "actor": "chatgpt",
-    "reason": "Human review approved the configurable Cockpit appearance model and identified only a connector attachment defect. ChatGPT fixed connector geometry using rendered node bounds, promoted the semantic/presentation separation into Foundation 023, and opened the dependency-aligned connector and Port Grammar slice with K0-K4 browser candidates.",
-    "repository_head": "e3394447eeae721eab9bd66d347d0d327dbe0485"
+    "actor": "human",
+    "reason": "Before giving a final connector preference, the project owner identified that endpoint dots should sit visibly on the work-unit boundary rather than underneath the box. ChatGPT preserved the connector curve below the work-unit body and added a synchronized endpoint overlay above the rendered perimeter for K1, K2, K3 and K4.",
+    "repository_head": "08a33868b1c1d2cd90f11431e3f6b730603f28eb"
   }
 }
