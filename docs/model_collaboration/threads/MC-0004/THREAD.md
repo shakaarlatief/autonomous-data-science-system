@@ -1,7 +1,7 @@
 # MC-0004: Next-Generation Project Cockpit Design Exploration
 
 **Thread:** MC-0004  
-**Status:** OPEN  
+**Status:** ACTIVE / PHASE B COMPARATIVE REVIEW  
 **Review mode:** `INDEPENDENT_THEN_COMPARATIVE`  
 **Task owner:** ChatGPT  
 **Target-state write owner:** ChatGPT  
@@ -29,15 +29,50 @@ The exact immutable neutral-brief commit for Phase A is:
 bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
 ```
 
-Claude should reason from that exact ref and the accepted pre-proposal repository material named by the brief. Phase A must not read Research 037 or later ChatGPT candidate-design material before Claude's independent proposal is durably recorded.
+Claude reasoned from that exact ref and the accepted pre-proposal repository material named by the brief. Phase A did not read Research 037 or later ChatGPT candidate-design material before Claude's independent proposal was durably recorded.
 
-Claude's Phase-A proposal belongs only under:
+Claude's frozen Phase-A proposal is:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/
+docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
+commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a
 ```
 
-It is collaboration provenance, not canonical project authority.
+The preserved Phase-A classification is:
+
+```text
+BLIND_TO_CANDIDATE
+known candidate exposures: none
+```
+
+The earlier manual catch-up attempt that landed on an older repository branch exposed only stale collaboration/routing state, not Research 037 or other candidate design content, so the independent design evidence remains valid.
+
+## Comparative Phase B
+
+The independent gate is now satisfied.
+
+Claude may now read:
+
+```text
+docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
+```
+
+and compare it directly with its frozen Phase-A proposal.
+
+The Phase-B comparative review should preserve under `messages/`:
+
+```text
+strongest convergence
+material disagreements
+ideas from Research 037 that improve Claude's original proposal
+ideas from Claude Phase A that Research 037 underweights or misses
+strongest alternative design direction after seeing both
+which mechanisms deserve realistic mockups first
+what should remain deliberately unresolved
+what evidence would change the comparative recommendation
+```
+
+Phase B is intentionally comparative. It must not retrospectively describe Phase A as influenced by Research 037.
 
 ## Target-state scope
 
@@ -46,6 +81,7 @@ ChatGPT owns mutation of the bounded research/routing surfaces for this explorat
 ```text
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
+docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
@@ -53,19 +89,26 @@ README.md
 this thread contract/state
 ```
 
+Claude may write only the declared secondary collaboration surface:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/**
+```
+
 No frontend implementation file is part of the current target-state write scope.
 
 ## Collaboration phases
 
 ```text
-PHASE A
-    ChatGPT external/product research proceeds independently
-    Claude produces independent design proposal from neutral brief
+PHASE A  COMPLETE
+    ChatGPT external/product research proceeded independently
+    Claude produced independent design proposal from neutral brief
 
-PHASE B
+PHASE B  ACTIVE
     both independent positions are frozen
-    candidate exposure becomes allowed
-    comparative review identifies convergence, disagreement and strongest alternatives
+    candidate exposure is allowed
+    Claude performs direct comparative review
+    ChatGPT then performs synthesis from both preserved positions
 
 PHASE C
     human + collaborators choose which design directions deserve mockups/prototypes
@@ -76,7 +119,9 @@ PHASE D
 
 ## Independence rule
 
-If Claude encounters Research 037, later ChatGPT messages, a generated mockup, or another candidate-design summary before freezing Phase A, the exposure must be recorded. The review should then be classified `PARTIALLY_INDEPENDENT` or `COMPARATIVE_ONLY` as appropriate rather than presented as blind evidence.
+The preserved Phase-A independence classification applies only to the already-frozen message 001.
+
+Phase B is `COMPARATIVE_ONLY` by design because Claude may now inspect Research 037 and later comparative material. Candidate exposure in Phase B is not contamination of the historical Phase-A result.
 
 ## Authority rule
 
