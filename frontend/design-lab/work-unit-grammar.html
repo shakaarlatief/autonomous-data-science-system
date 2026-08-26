@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-grammar-view="strip">
+<html lang="en" data-reduced="off" data-grammar-view="strip" data-inbox-light="baseline">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
     <title>ADS Design Lab · Work-unit Visual Grammar</title>
     <link rel="stylesheet" href="./grid-world.css" />
     <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
   </head>
   <body>
     <header class="lab-header grammar-header">
@@ -21,6 +22,13 @@
           <div class="segmented" role="group" aria-label="Comparison view">
             <button type="button" data-view="strip" aria-pressed="true">Category strip</button>
             <button type="button" data-view="scene" aria-pressed="false">Project scene</button>
+          </div>
+        </fieldset>
+        <fieldset class="control-group">
+          <legend>In-box light</legend>
+          <div class="segmented" role="group" aria-label="In-box resting light comparison">
+            <button type="button" data-inbox-light="baseline" aria-pressed="true">H4 baseline</button>
+            <button type="button" data-inbox-light="reduced" aria-pressed="false">Reduced</button>
           </div>
         </fieldset>
         <fieldset class="control-group compact-toggle-group single-toggle">
@@ -40,7 +48,7 @@
         <div class="grammar-principles" aria-label="Design constraints">
           <span>Category ≠ status</span>
           <span>G4 world held</span>
-          <span>H4 lighting held</span>
+          <span>H4 baseline retained</span>
           <span>Dark-first</span>
           <span>Decoration allowed</span>
         </div>
@@ -154,14 +162,14 @@
           <p>Which variant simply looks best?</p>
           <p>Does any silhouette treatment feel arbitrary or gimmicky?</p>
           <p>Which still feels like one coherent ADS product language?</p>
-          <p>Does H4 lighting still look right across the category treatments?</p>
+          <p>Does the H4 baseline or intentionally reduced in-box light look better?</p>
         </div>
       </section>
     </main>
 
     <template id="node-template">
       <span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span>
-      <div class="node-surface"><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"></span><span class="unit-kind"></span></div><strong></strong><small></small></div>
+      <div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"></span><span class="unit-kind"></span></div><strong></strong><small></small></div>
     </template>
 
     <script type="module" src="./work-unit-grammar.js"></script>
