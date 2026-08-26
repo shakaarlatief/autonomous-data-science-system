@@ -1,41 +1,230 @@
 # Current State
 
-**Checkpoint:** 197  
-**Date:** 2026-08-25  
-**Active development branch:** `v1-source-universe-substrate`  
-**Active PR:** #74  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `02f4f1bd5b7081c0792cbe2d2e062cc6fb9fdc54`  
-**Development stage:** The serious methodological knowledge-universe construction program is active. Before bulk source intake, the project designed, implemented, and validated a first-class Source Universe substrate. Specification 023 is classified `SOURCE_SUBSTRATE_ACCEPTED`. The next boundary is operational deployment of that accepted substrate on user-controlled durable storage, followed by ingestion and independent backup of the original VU Amsterdam Machine Learning folder.  
-**Final V0 classification:** `STRONG FALSIFICATION OF THE CURRENT P0 DESIGN`  
+**Checkpoint:** 204  
+**Date:** 2026-08-26  
+**Active development branch:** `v1-multimodel-development-collaboration`  
+**Active PR:** #76  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`  
+**Development stage:** Governed provider-neutral multi-model development has passed its architecture, implementation, and deferred-catch-up pressure tests and is canonically promoted on the active branch through Development Method v0.5, D-034, accepted Specification 024, and Checkpoint 204. The remaining boundary is final PR #76 integration/audit. Permanent source-vault deployment remains preserved and paused.  
+**Latest specification:** Specification 024 is accepted with outcome `COLLABORATION_STATE_GUARD_ACCEPTED`.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
-## Active ChatGPT development context
+## Active interaction context
+
+The provider-neutral checkpoint provenance contract begins at Checkpoint 204.
+
+Current interaction:
 
 ```text
-Design session: 06
-ChatGPT project: Autonomous Data Science System
-Session title: 06 - Methodological Knowledge Universe Construction
+Interaction environment  ChatGPT
+Project / workspace      Autonomous Data Science System
+Interaction session      chatgpt-06
+Conversation title       06 - Methodological Knowledge Universe Construction
+Primary collaborator     ChatGPT
 ```
 
-Repository artifacts remain authoritative across chats.
+Current Claude collaboration session:
+
+```text
+Interaction environment  Claude
+Project / workspace      Autonomous Data Science System
+Interaction session      claude-01
+Conversation title       01 - ADS Development Review & Collaboration
+```
+
+Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current strategic sequence
+# Current active boundary: final PR #76 integration audit
 
-Checkpoint 191 changed the project emphasis to:
+Current route:
 
 ```text
-1. serious governed methodological knowledge universe
-2. navigation / selection over that universe
-3. project-specific concern / question / option generation
-4. prioritization / disposition
-5. execution and project-state update
-6. real end-to-end project trials
-7. governed knowledge evolution
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
 
-Checkpoint 193 then froze the first construction framework and broad coverage map. The first deep representation pressure test remains intentionally heterogeneous:
+Current model-collaboration status:
+
+```text
+MC-0001   RESOLVED / CLOSED
+MC-0002   RESOLVED / CLOSED
+MC-0003   RESOLVED / CLOSED
+review inbox pending obligations   NONE
+```
+
+No further Claude review is currently owed.
+
+---
+
+## Specification 024 accepted
+
+Prospective freeze:
+
+```text
+9da382d4011ff112b75dec9c456143d798336336
+```
+
+Exact corrected green pre-review implementation:
+
+```text
+a9efc43d7c441c8283d2cd954cc6fa1abd021689
+```
+
+Dedicated validation:
+
+```text
+workflow run 32902050014
+Ubuntu        PASS
+Windows       PASS
+26 focused tests per platform
+```
+
+Claude direct review:
+
+```text
+commit 9cf393f74e02e167d2f80c0381742ebd7e0c318e
+MC-G01 through MC-G16 satisfied
+```
+
+Final outcome:
+
+```text
+COLLABORATION_STATE_GUARD_ACCEPTED
+```
+
+Known non-blocking V1 limitation: target-vs-secondary write overlap is guarded, but secondary-vs-secondary overlap is not yet checked. Reopen only if real collaboration uses multiple simultaneous secondary writers.
+
+---
+
+## Governed multi-model Development Method v0.5
+
+Current accepted method:
+
+```text
+repository remains project authority
+SOLO development remains first-class
+collaboration is selective and task-scoped
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state writer at a time
+explicit secondary write surfaces
+machine-readable guarded collaboration state where warranted
+GitHub transport != project authority
+durable numbered collaboration messages
+independent-first review for consequential questions where anchoring matters
+known review contamination is disclosed
+provider-local interaction session identities
+disagreement classified and routed rather than averaged away
+human arbitration reserved for genuine project-intent / consequential choices
+```
+
+Canonical protocol:
+
+```text
+docs/model_collaboration/README.md
+```
+
+---
+
+## Deferred review/catch-up is accepted
+
+Core rule:
+
+```text
+collaborator unavailable
+    !=
+project globally blocked
+```
+
+unless the affected task's explicit review gate has been reached.
+
+MC-0003 pressure-tested this with two simultaneous Claude obligations. Claude later processed MC-0002 and MC-0003 in the inbox-defined order while preserving separate exact target heads and separate dispositions.
+
+Current rule:
+
+```text
+REQUIRED review -> must name a real gate
+OPTIONAL review -> may use NONE
+```
+
+The exact reviewed Git target is immutable. Review of ancestor X does not automatically cover descendant Y.
+
+Known future mechanization triggers:
+
+```text
+cross-thread dependency metadata / downstream impact discovery
+generated REVIEW_INBOX or inbox-state validation if drift occurs
+secondary-vs-secondary overlap if simultaneous secondary writers occur
+machine-readable review-obligation/gate fields if backlog scale warrants them
+```
+
+No Specification 025 is opened.
+
+---
+
+## Scheduled review and API orchestration remain deferred
+
+The user and Claude explored scheduled/unattended review. It is not part of the current accepted method.
+
+Reasons:
+
+```text
+no extra weekly subscription capacity
+unattended write/concurrency risk
+limited ability to clarify mid-run
+possible unsupervised usage consumption
+manual catch-up triggering is already low-friction
+```
+
+API orchestration also remains deferred because it introduces separate metered provider usage, context duplication, credentials, retries, and orchestration infrastructure without current evidence that repository-mediated collaboration is insufficient.
+
+---
+
+# Source Universe state remains accepted and operationally paused
+
+Specification 023 remains:
+
+```text
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+Promoted source implementation:
+
+```text
+v1-frontend-spike
+8215718db3e44f000cc6ed53d6a051522d429dbd
+```
+
+Permanent deployment remains preserved in:
+
+```text
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+```
+
+No permanent source-vault operation is running. Course 2 remains blocked until the user-controlled compare, reviewed ingestion, audit, independent backup, clean restore, and restored audit are completed.
+
+---
+
+# Methodological knowledge-universe program remains the larger objective
+
+Primary route:
+
+```text
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+```
+
+First six deep slices:
 
 ```text
 Validation and Generalization Design
@@ -46,202 +235,37 @@ Class Imbalance / Metrics / Calibration / Thresholding
 Time-Series Methodology
 ```
 
-The source substrate became a prerequisite because serious knowledge construction needs durable evidence identity, provenance, recovery, and rights/access boundaries before hundreds of educational and external sources are admitted.
+The source and collaboration work are supporting substrate/method requirements for carrying out that program professionally and durably.
 
 ---
 
-## Accepted source-universe architecture
+## Stable accepted architecture
 
-Primary authority:
-
-```text
-docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
-docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
-docs/specifications/023_v1_source_universe_substrate.md
-docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
-```
-
-Foundation 022 is a numbering-only reconciliation of the source-universe foundation originally drafted as Foundation 021. Foundation 021 was already occupied by the professional product/interface foundation. No source-architecture semantics changed in the renumbering.
-
-Central distinction:
+Accepted implementation decisions now include:
 
 ```text
-SOURCE UNIVERSE
-    !=
-METHODOLOGICAL KNOWLEDGE UNIVERSE
+D-028  SQLite-centered local-first operational architecture
+D-029  SQLAlchemy Core 2.0 + Alembic 1.x
+D-030  pyproject.toml + uv + committed uv.lock + uv_build
+D-031  governed deterministic JSON / JSON Schema knowledge interchange
+D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
+D-033  ADS-owned private Source Universe substrate + relational registry
+D-034  governed provider-neutral multi-model development collaboration
 ```
-
-The accepted bounded V1 source substrate separates:
-
-```text
-SourceRecord                  logical source identity
-SourceArtifact                exact byte identity
-SourceCollection              course / bundle identity
-SourceCollectionMembership    membership + explicit uncertainty
-SourceLocator                 public/private locators
-SourceIngestionEvent          encounter provenance
-DerivedSourceArtifact         rebuildable derived lineage
-```
-
-Exact source bytes are preserved through SHA-256 content addressing behind an ADS-owned `SourceArtifactStore`. Runtime source metadata lives in a relational Source Registry integrated with the accepted SQLAlchemy/Alembic persistence seam.
-
-ChatGPT Library, ChatGPT Project Sources, cloud drives, and Git are development/intake/backup/interchange surfaces. None is semantic source authority merely by containing a file.
-
-Real educational source binaries remain outside the public Git repository.
-
----
-
-## Specification 023 accepted result
-
-Provider-free implementation and validation covered:
-
-```text
-filesystem source input
-    -> staging + SHA-256 + byte count
-    -> immutable local content-addressed store
-    -> relational Source Registry
-    -> deterministic PRIVATE_SNAPSHOT / PUBLIC_SAFE_CATALOG
-    -> integrity audit
-    -> verified backup package
-    -> clean restore
-    -> restored integrity audit
-```
-
-Cross-platform source-substrate CI passed on Ubuntu and Windows. The Ubuntu matrix job recorded:
-
-```text
-124 passed
-2 skipped
-```
-
-The skips were the existing optional PostgreSQL integration tests without a configured PostgreSQL test URL.
-
-The prospectively frozen SU-G01 through SU-G23 gates all passed. No gate was weakened after observing the first corpus.
-
-Frozen classification:
-
-```text
-SOURCE_SUBSTRATE_ACCEPTED
-```
-
-Detailed evidence:
-
-```text
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
-```
-
----
-
-## First VU Machine Learning corpus evidence
-
-The 20-file ChatGPT-observed VU Amsterdam Machine Learning batch was fingerprinted before implementation and then exercised against the implemented source substrate.
-
-Comparison with the prospective fingerprint snapshot:
-
-```text
-MATCH                    20
-DIFFERENT_ARTIFACT         0
-MISSING_LOCAL_SOURCE       0
-ADDITIONAL_LOCAL_SOURCE    0
-```
-
-Initial ingestion:
-
-```text
-NEW_ARTIFACT  20
-```
-
-Fourteen earlier renamed-equivalent lecture uploads were then re-encountered:
-
-```text
-EXACT_DUPLICATE  14
-```
-
-Final relevant counts:
-
-```text
-logical sources            20
-SourceArtifact rows        20
-stored objects              20
-SourceIngestionEvent rows  34
-```
-
-The two PCA-book-like files remained byte-distinct artifacts. The three uncertain `Lecture9-*` memberships remained `POSSIBLE`; uncertainty was not silently strengthened.
-
-The validation store passed a clean 20/20 integrity audit, was backed up, restored into a clean target, and passed a second 20/20 integrity audit. Safe evidence digests are preserved in the validation result. Private snapshots, private paths, backup payloads, and source binaries were not committed.
-
-Important boundary:
-
-```text
-accepted source-substrate architecture / implementation
-    !=
-permanent user-controlled source vault already instantiated
-```
-
-The first exercise used disposable development storage and currently available uploaded bytes. It proves the mechanism, not permanent deployment.
-
----
-
-## Decision disposition
-
-D-033 accepts the V1 source-universe substrate architecture. Its original reference to the source foundation as Foundation 021 predates the numbering-collision reconciliation recorded by Checkpoint 197; the current canonical source foundation is Foundation 022.
-
-D-015 is superseded only in its original architectural-uncertainty scope. Its durable conservative outcome remains valid:
-
-```text
-ADS may use a source
-    !=
-source binary belongs in public Git
-```
-
-The current initial physical direction remains local-first and provider-neutral. No cloud/object-store or backup provider has been selected merely for appearance or future-proofing.
-
----
-
-## Methodological knowledge construction remains next after source operationalization
-
-Research 033 remains the governing construction framework. Coverage depth remains separate from truth, maturity, authority, freshness, or enforcement:
-
-```text
-C0  MAPPED
-C1  SOURCED
-C2  DECOMPOSED
-C3  OPERATIONALIZED
-C4  CONNECTED
-C5  BEHAVIORALLY_TESTED
-C6  PROJECT_EXPOSED
-```
-
-Knowledge may include concepts, questions, evidence requirements, assumptions, failure modes, diagnostics, alternatives, claim constraints, relations, conditional guidance, context requirements, resolution/reopen criteria, limitations, and component-level provenance.
-
-Candidate extraction may use LLM assistance, but model output is not independent evidence for itself and cannot silently create accepted methodological authority.
 
 ---
 
 ## Exact continuation
 
-Before admitting Course 2:
-
 ```text
-1. validate the fully reconciled PR #74 head
-2. merge PR #74 into v1-frontend-spike
-3. fetch and preserve the exact promoted integration SHA
-4. instantiate the accepted Source Registry and private SourceArtifactStore on user-controlled durable storage
-5. use the user's original VU Amsterdam Machine Learning folder as the first permanent intake source
-6. compare that folder against the 20-file prospective fingerprint snapshot
-7. ingest all locally intended files or account for every mismatch explicitly
-8. run a clean integrity audit
-9. create an independent recoverable backup
-10. perform a clean restore and verify exact-byte recovery
-11. only then admit the next educational course batch
-12. after broad corpus intake, resume the six-slice methodological representation pressure test
+1. complete final PR #76 structural/base audit
+2. ensure checkpoint metadata and collaboration-state workflows pass on the final head
+3. ensure inherited relevant V1 checks remain green
+4. integrate PR #76 into v1-frontend-spike
+5. create a post-merge routing checkpoint that records the exact promoted SHA
+6. keep the permanent source-vault deployment paused until that post-merge reconciliation is complete
+7. then resume the source-vault bootstrap before Course 2
 ```
-
-The permanent-vault step requires access to paths on the user's machine and therefore must not be claimed complete until it is actually executed there.
-
-No immediate Specification 022 rerun is planned. Specifications 015-022 remain immutable historical evidence.
-
----
 
 ## Minimum reading for continuation
 
@@ -251,19 +275,13 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
-docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
-
-docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
-docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
-docs/specifications/023_v1_source_universe_substrate.md
-
-docs/research/033_methodological_knowledge_universe_construction_framework.md
-docs/methodological_knowledge/COVERAGE_MAP.md
-docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
-
-docs/DECISIONS.md
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
+docs/DECISIONS.md
+docs/model_collaboration/README.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```

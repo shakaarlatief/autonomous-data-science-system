@@ -9,25 +9,40 @@ from pathlib import Path
 
 CHECKPOINT_NAME_RE = re.compile(r"^(?P<number>\d{3})_.*\.md$")
 FIELD_RE = re.compile(r"^\*\*(?P<name>[^*]+):\*\*\s*(?P<value>.*?)(?:\s{2})?$")
-REQUIRED_FIELDS = (
+
+HISTORICAL_AUTHORITY_FIELDS = (
     "Date",
     "Status",
     "Checkpoint class",
     "Project stage",
     "Scope",
     "Authority",
+)
+
+CHATGPT_PROVENANCE_FIELDS = (
     "Design session",
     "ChatGPT project",
     "Session title",
 )
+
+PROVIDER_NEUTRAL_PROVENANCE_FIELDS = (
+    "Interaction environment",
+    "Project / workspace",
+    "Interaction session",
+    "Conversation title",
+    "Primary collaborator",
+)
+
 CONTRACT_START_CHECKPOINT = 100
-HEADER_SCAN_LINES = 50
+PROVIDER_NEUTRAL_START_CHECKPOINT = 204
+HEADER_SCAN_LINES = 60
 
 
 @dataclass(frozen=True)
 class Finding:
     path: Path
     checkpoint_number: int
+    required_fields: tuple[str, ...]
     missing_fields: tuple[str, ...]
     empty_fields: tuple[str, ...]
 
@@ -40,8 +55,9 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Validate checkpoint metadata against docs/checkpoints/README.md. "
-            "The required contract includes historical/authority metadata and "
-            "ChatGPT project/session provenance. By default, pre-Checkpoint-100 "
+            "The historical/authority core is stable. Checkpoints before 204 use "
+            "the historical ChatGPT session-provenance contract; Checkpoint 204+ "
+            "uses provider-neutral interaction provenance. By default, pre-100 "
             "deficiencies are reported as legacy warnings while Checkpoint 100+ "
             "deficiencies fail validation."
         )
@@ -60,6 +76,15 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def required_fields_for_checkpoint(checkpoint_number: int) -> tuple[str, ...]:
+    provenance_fields = (
+        PROVIDER_NEUTRAL_PROVENANCE_FIELDS
+        if checkpoint_number >= PROVIDER_NEUTRAL_START_CHECKPOINT
+        else CHATGPT_PROVENANCE_FIELDS
+    )
+    return HISTORICAL_AUTHORITY_FIELDS + provenance_fields
+
+
 def read_header_fields(path: Path) -> dict[str, str]:
     lines = path.read_text(encoding="utf-8").splitlines()[:HEADER_SCAN_LINES]
     fields: dict[str, str] = {}
@@ -72,11 +97,15 @@ def read_header_fields(path: Path) -> dict[str, str]:
 
 def inspect_checkpoint(path: Path, checkpoint_number: int) -> Finding:
     fields = read_header_fields(path)
-    missing = tuple(field for field in REQUIRED_FIELDS if field not in fields)
-    empty = tuple(field for field in REQUIRED_FIELDS if field in fields and not fields[field])
+    required_fields = required_fields_for_checkpoint(checkpoint_number)
+    missing = tuple(field for field in required_fields if field not in fields)
+    empty = tuple(
+        field for field in required_fields if field in fields and not fields[field]
+    )
     return Finding(
         path=path,
         checkpoint_number=checkpoint_number,
+        required_fields=required_fields,
         missing_fields=missing,
         empty_fields=empty,
     )
@@ -131,20 +160,27 @@ def main() -> int:
     if legacy_warnings:
         print("Legacy checkpoint metadata still requiring normalization:")
         for finding in legacy_warnings:
-            print(f"  WARN {finding.path.relative_to(args.root)}: {format_problem(finding)}")
+            print(
+                f"  WARN {finding.path.relative_to(args.root)}: "
+                f"{format_problem(finding)}"
+            )
         print()
 
     if errors:
         print("Checkpoint metadata contract violations:")
         for finding in errors:
-            print(f"  ERROR {finding.path.relative_to(args.root)}: {format_problem(finding)}")
+            print(
+                f"  ERROR {finding.path.relative_to(args.root)}: "
+                f"{format_problem(finding)}"
+            )
         print()
 
     compliant_count = len(checkpoints) - len(legacy_warnings) - len(errors)
     print(
         "Checkpoint metadata summary: "
         f"total={len(checkpoints)}, compliant={compliant_count}, "
-        f"legacy_warnings={len(legacy_warnings)}, errors={len(errors)}"
+        f"legacy_warnings={len(legacy_warnings)}, errors={len(errors)}, "
+        f"provider_neutral_from={PROVIDER_NEUTRAL_START_CHECKPOINT}"
     )
 
     return 1 if errors else 0

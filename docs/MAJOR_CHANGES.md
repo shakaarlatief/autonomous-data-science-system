@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-25
+**Last reviewed:** 2026-08-26
 
 ## Purpose
 
@@ -333,4 +333,48 @@ Key sources:
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+```
+
+---
+
+## 2026-08-25 to 2026-08-26: Governed multi-model development became canonical
+
+The ADS development method expanded from one ChatGPT-centered interaction process into provider-neutral governed collaboration among ChatGPT, Claude, the human project owner, and future collaborators.
+
+The architecture was pressure-tested through three real threads rather than promoted from one model's proposal:
+
+```text
+MC-0001
+    independent/comparative architecture review
+    -> exposed candidate-content leakage and single-global-writer weakness
+
+Specification 024 / MC-0002
+    -> machine-readable per-thread coherence guard
+    -> direct Claude implementation review
+    -> COLLABORATION_STATE_GUARD_ACCEPTED
+
+Research 036 / MC-0003
+    -> explicit deferred review/catch-up
+    -> two pending Claude obligations coexisted
+    -> later processed in priority order with exact-target discipline
+```
+
+Development Method v0.5 now makes SOLO work first-class, collaboration selective, task ownership explicit, role separate from write scope, independent review contamination visible, disagreement routable, and provider-neutral interaction provenance mandatory for new checkpoints from Checkpoint 204 onward.
+
+The source-vault deployment remains paused rather than cancelled.
+
+Unattended scheduled model review and API orchestration remain deferred. Known future collaboration-mechanization triggers are preserved without opening Specification 025 prematurely.
+
+Key sources:
+
+```text
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/model_collaboration/README.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
 ```
