@@ -4,8 +4,13 @@
 **Status:** Current product-design checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / HUMAN_REVIEW  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
-**Interaction session:** `chatgpt-07`  
-**Conversation title:** `07 - Project Cockpit Design Exploration`
+**Scope:** Records the human preference for Lively combined G4 ambient motion, rejects fixed-coordinate repetition, refines currents/glints/drift into spatially re-seeded runtime behavior, and opens direct human review of the randomized distribution without authorizing production Cockpit mutation.  
+**Authority:** Current product-design routing/evidence boundary only. Specification 008 remains the promoted Cockpit interaction architecture.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-07  
+**Conversation title:** 07 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT
 
 ## 1. Current accepted direction inside Phase C
 
