@@ -153,7 +153,23 @@ body {
   overflow: visible;
 }
 
-.connector-link {
+/*
+ * Curves remain beneath work-unit bodies. Endpoint markers use a separate SVG
+ * overlay so they can sit visibly on the rendered perimeter without bringing
+ * the relation line above the node surface.
+ */
+.connector-port-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.connector-link,
+.connector-port-link {
   pointer-events: none;
 }
 
@@ -178,7 +194,7 @@ body {
   stroke: rgba(11, 17, 25, 0.94);
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
-  transition: opacity 160ms ease, fill 160ms ease, stroke 160ms ease;
+  transition: opacity 160ms ease, fill 160ms ease, stroke 160ms ease, filter 160ms ease;
 }
 
 .connector-socket {
@@ -213,7 +229,7 @@ html[data-connector-style="k3"] .connector-chevron {
   opacity: 0.88;
 }
 
-html[data-connector-style="k4"] .connector-link.is-related .connector-terminal {
+html[data-connector-style="k4"] .connector-port-link.is-related .connector-terminal {
   opacity: 1;
   fill: rgba(var(--related-rgb), 0.92);
   filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.44));
@@ -223,15 +239,15 @@ html[data-connector-style="k4"] .connector-link.is-related .connector-path {
   stroke-width: 1.65;
 }
 
-html[data-connector-style="k1"] .connector-link.is-related .connector-terminal,
-html[data-connector-style="k2"] .connector-link.is-related .connector-socket,
-html[data-connector-style="k3"] .connector-link.is-related .connector-chevron {
+html[data-connector-style="k1"] .connector-port-link.is-related .connector-terminal,
+html[data-connector-style="k2"] .connector-port-link.is-related .connector-socket,
+html[data-connector-style="k3"] .connector-port-link.is-related .connector-chevron {
   fill: rgba(var(--related-rgb), 0.94);
   stroke: rgba(var(--related-rgb), 0.94);
   filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.42));
 }
 
-html[data-connector-style="k2"] .connector-link.is-related .connector-socket {
+html[data-connector-style="k2"] .connector-port-link.is-related .connector-socket {
   fill: rgba(16, 23, 33, 0.98);
 }
 
