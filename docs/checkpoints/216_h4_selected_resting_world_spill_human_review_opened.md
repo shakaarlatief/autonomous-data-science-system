@@ -4,7 +4,7 @@
 **Status:** Current product-design checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / HUMAN_REVIEW  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
-**Scope:** Records selection of H4 Integrated Response as the preferred work-unit interaction-lighting direction and opens a narrower review of stronger resting node-colored illumination into the surrounding G4 grid while preserving the newer in-node light treatment.  
+**Scope:** Records selection of H4 Integrated Response as the preferred work-unit interaction-lighting direction and the subsequent resting-light refinement: preserve the clean localized H4 rest treatment, reject a broad circular resting halo, and add only a narrow soft node-colored spill into the surrounding G4 grid from the left/accent side.  
 **Authority:** Current Phase-C product-design routing/evidence boundary only. Specification 008 remains the promoted Cockpit interaction architecture.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
@@ -41,6 +41,7 @@ H4 currently combines:
 
 ```text
 localized/asymmetric rest light
+subtle left/accent-side resting spill into the grid
 full hover halo
 pointer-following hotspot
 local grid illumination on hover
@@ -49,25 +50,29 @@ single restrained perimeter sweep on hover entry
 small hover depth lift
 ```
 
-## 3. New human refinement
+## 3. Resting-light refinement and rejection evidence
 
-The project owner likes the newer H4 light inside the work-unit box but wants more of the same node-colored light visible in the surrounding grid in the normal resting state.
+The project owner liked the clean H4 light treatment inside and immediately around the work-unit box, but wanted a little more of that same node-colored light to continue into the surrounding grid in the normal resting state, especially around the left/accent side of the box.
 
-The earlier G4 treatment is the visual reference principle: the node should appear to illuminate the world around it rather than containing nearly all of its light inside the card.
+An initial implementation interpreted that request as a substantially broader radial resting glow around the node. Human review rejected that treatment because it created a conspicuous bright circular halo, made the result visually heavier, and lost the clean/subtle character of the preferred treatment.
 
-The requested result is therefore:
+The accepted refinement target is therefore:
 
 ```text
-keep the newer in-box H4 illumination
+keep the original clean localized resting light
 +
-restore/strengthen soft resting grid spill
+add only a narrow soft continuation into the grid
 +
-keep the spill asymmetric and restrained at rest
+concentrate that continuation around the left/accent side
 +
-retain richer full H4 response on hover
+do not create a broad circular resting halo
++
+retain the richer full H4 response on hover
 ```
 
-## 4. Browser experiment updated
+This is an important distinction between resting atmosphere and interaction lighting. Rest should remain precise and restrained. Hover may become substantially richer because it is transient and directly tied to user interaction.
+
+## 4. Browser experiment canonicalization
 
 Current review surface:
 
@@ -83,7 +88,9 @@ Expected local URL:
 http://localhost:5173/design-lab/work-unit-lighting.html
 ```
 
-Only H4 receives the new broader resting world-spill refinement. H1-H3 remain useful comparison evidence.
+H4 now inherits the same clean localized base resting light and adds a separate narrow left/accent-side grid spill. The rejected broad radial resting treatment is no longer the native H4 CSS behavior. The temporary JavaScript style injection that had been used to correct the visual treatment has been removed; the accepted behavior is represented directly in the stylesheet.
+
+H1-H3 remain useful comparison evidence. The richer H4 hover mechanisms remain unchanged.
 
 ## 5. Production boundary
 
@@ -107,9 +114,9 @@ focus transition architecture
 The next review should answer:
 
 ```text
-Does H4 now project enough colored light into the grid while at rest?
-Does the box itself still retain the newer cleaner internal illumination?
-Is the resting spill soft enough to avoid a neon-card look?
+Does H4 retain the clean subtle resting appearance that was preferred?
+Does the narrow left/accent-side light extend enough into the grid without becoming a visible circular halo?
+Does the box itself retain the newer cleaner internal illumination?
 Does hover still feel clearly richer than rest?
 ```
 
@@ -119,11 +126,13 @@ Does hover still feel clearly richer than rest?
 1. use v1-cockpit-design-exploration and Checkpoint 216
 2. preserve G4 as the provisionally settled grid/world direction
 3. preserve H4 as the selected interaction-lighting direction
-4. pull the latest branch locally
-5. refresh /design-lab/work-unit-lighting.html
-6. inspect H4 both at rest and on hover
-7. refine resting world spill only if needed
-8. once interaction lighting is sufficiently settled, proceed into deeper work-unit visual grammar
-9. keep production Cockpit implementation untouched until later integrated evidence warrants promotion
-10. keep source-vault deployment paused until explicitly resumed
+4. preserve the rejection of a broad circular resting halo
+5. preserve the narrow soft left/accent-side resting grid spill as the current refinement
+6. pull the latest branch locally
+7. refresh /design-lab/work-unit-lighting.html
+8. inspect H4 both at rest and on hover
+9. refine the narrow resting spill only if human review still finds it too strong or too weak
+10. once interaction lighting is sufficiently settled, proceed into deeper work-unit visual grammar
+11. keep production Cockpit implementation untouched until later integrated evidence warrants promotion
+12. keep source-vault deployment paused until explicitly resumed
 ```
