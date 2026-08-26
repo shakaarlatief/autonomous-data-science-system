@@ -21,6 +21,7 @@
       "docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md",
       "docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md",
       "docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md",
+      "docs/research/045_h4_resting_node_light_world_spill_refinement.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
       "docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md",
       "docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md",
@@ -31,6 +32,7 @@
       "docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md",
       "docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md",
       "docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md",
+      "docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -71,7 +73,7 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce and changed only message 002. Phase C uses browser-rendered design experiments. Human review provisionally settled the current G4 grid/world treatment after selecting dark-first G4, Lively randomized currents, major-grid-only Quiet glints, ambient drift and localized semantic activity. Research 044 and Checkpoint 215 now open a bounded work-unit interaction-lighting review while keeping deeper work-unit grammar unresolved.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce and changed only message 002. Phase C uses browser-rendered design experiments. Human review provisionally settled the G4 world, selected H4 Integrated Response for work-unit interaction lighting, and requested stronger node-colored world spill at rest while preserving the cleaner H4 in-node light treatment. Research 045 and Checkpoint 216 preserve the current review gate.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -79,11 +81,11 @@
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-grid-world-provisionally-settled-work-unit-lighting-review-open",
+    "transition_id": "mc0004-h4-selected-resting-world-spill-review-open",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner judged the current G4 grid/world behavior good enough to keep for now, explicitly preserving later refinement, and requested the next slice on work-unit lighting. The new browser lab compares localized rest light, full colored hover halos, pointer-responsive light, local grid spill, connector emphasis and a one-time perimeter sweep.",
-    "repository_head": "e2fa05df202ccda8f8071aedb8d5eee8a98df012"
+    "reason": "The project owner selected H4 Integrated Response and requested that its normal resting node-colored light extend farther into the surrounding grid, preserving the newer clean in-box illumination and keeping hover as the richer interaction state.",
+    "repository_head": "c7f3dc899d09a6bebf042ee282fc93ccde55124e"
   }
 }
