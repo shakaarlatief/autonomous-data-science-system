@@ -28,80 +28,85 @@ human project owner
 Current checkpoint:
 
 ```text
-224
+225
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-customizable.html
+http://localhost:5173/design-lab/connector-grammar.html
 ```
 
-Exact browser implementation target:
+Exact connector browser implementation target:
 
 ```text
-ac16df1bbcd456b63c042c28e52516679139bf32
+e3394447eeae721eab9bd66d347d0d327dbe0485
 ```
 
-## Current product direction
+## Configurable appearance result
 
-Selected semantic visual invariant:
+Human review approved the configurable Cockpit appearance concept. The semantic/presentation separation is now promoted in:
 
 ```text
-Question        circle
-Investigation   square
-Validation      triangle
-Model           diamond
-Evaluation      plus
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Held preferred baseline:
+Promoted principle:
 
 ```text
+ADS owns semantic meaning
+user controls approved non-semantic appearance dimensions
+```
+
+Current semantic marker mapping remains:
+
+```text
+Question / Blocker        circle
+Investigation             square
+Validation / Analysis     triangle
+Model Work                diamond
+Evaluation                plus
+```
+
+Current proven configurable dimensions:
+
+```text
+Box shape       Normal / Subtle shapes
+Micro design    None / Micro material / Micro light
+```
+
+The remaining customizable-preview connector defect was fixed at:
+
+```text
+c1f996f6500672641de8e00780d5a4949c5dcb28
+```
+
+Connector geometry now derives from rendered node surfaces instead of static path coordinates.
+
+## Active connector / Port Grammar review
+
+Current candidates:
+
+```text
+K0  Clean Curve
+K1  Micro Dots
+K2  Frame Sockets
+K3  Target Cue
+K4  Hover Ports
+```
+
+Current held controls:
+
+```text
+G4 world
+scientific category markers
 Reduced in-box light
+accepted H4 hover response
+Subtle shapes
+Micro material
+same project fixture and relation graph
 ```
 
-Positive visual mechanisms:
+C4 Port Grammar is now active at its intended dependency boundary.
 
-```text
-refined M1 micro-material
-subtle differentiated shapes
-Evaluation-inspired micro-light character
-```
-
-Latest product-owner decision:
-
-```text
-these compatible visual mechanisms may coexist
-as user-configurable Cockpit appearance choices
-rather than competing for one universal mandatory style
-```
-
-Current configurable browser proof:
-
-```text
-Box shape
-    Normal
-    Subtle shapes
-
-Micro design
-    None
-    Micro material
-    Micro light
-
-Presets
-    Clean
-    Structured
-    Rich
-```
-
-The appearance controls change presentation only. Category/state/runtime/importance semantics remain unchanged.
-
-Browser-local preference persistence is demonstration-only. Production settings storage remains unselected.
-
-Dependency-bound ideas remain preserved:
-
-```text
-C4 Port Grammar             -> connector-semantics slice
-C5 Internal Layout Grammar  -> semantic zoom / information-density slice
-```
+C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
