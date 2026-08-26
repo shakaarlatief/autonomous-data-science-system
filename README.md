@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            217
+checkpoint            218
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C work-unit category/silhouette visual grammar
+current boundary      MC-0004 Phase C work-unit visual-grammar human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -69,8 +69,6 @@ Human review selected:
 G4 Adaptive Hybrid  SELECTED
 ```
 
-The current grid/world layer is provisionally settled for the design sequence. This is not an irreversible freeze.
-
 Current retained direction:
 
 ```text
@@ -86,26 +84,6 @@ Fixed authored coordinates     rejected
 ```
 
 Decorative/ambient behavior is allowed when it improves polish and atmosphere without being mistaken for semantic project/runtime state.
-
-Primary grid/world evidence:
-
-```text
-docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
-docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
-docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
-docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
-
-docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
-docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
-docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
-docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
-docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
-
-frontend/design-lab/grid-world.html
-frontend/design-lab/grid-dynamics.html
-frontend/design-lab/grid-dynamics-combined.html
-```
 
 ---
 
@@ -139,34 +117,33 @@ The revised hover timing was judged perfect. After the final outward-only restin
 
 No further generic lighting-only variant is currently justified. Later selected/focused, runtime, blocked and approval states may use lighting when those semantic slices are tested.
 
-Completed lighting evidence:
+Primary completed lighting evidence:
 
 ```text
 docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
-docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
-docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
 docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
 frontend/design-lab/work-unit-lighting.html
 ```
 
 ---
 
-## Current work-unit visual-grammar slice
+## Current work-unit visual-grammar review
 
 Research 037/038 identified a current weakness: meaningful Cockpit work units still share too much of one generic rounded-card grammar.
 
-The active question is now:
+The active question is:
 
 > How should different kinds of meaningful project work become visually distinguishable while remaining one coherent professional product language and without confusing category with project disposition, runtime state, or importance?
 
-Active research:
+Active research and review:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
 ```
 
-First-round directions:
+First-round browser directions:
 
 ```text
 W1  Unified Precision Frame
@@ -175,7 +152,7 @@ W3  Structural Silhouette Family
 W4  Hybrid Semantic Instrument
 ```
 
-Expected next browser lab:
+Browser lab:
 
 ```text
 frontend/design-lab/work-unit-grammar.html
@@ -183,7 +160,15 @@ frontend/design-lab/work-unit-grammar.css
 frontend/design-lab/work-unit-grammar.js
 ```
 
-G4 and H4 remain control variables for this comparison.
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar.html
+```
+
+The lab exposes a neutral Category strip and a realistic Project scene so category identity can be judged both in isolation and inside G4/H4 composition.
+
+No W1-W4 preference exists yet. Human browser review is open.
 
 ---
 
@@ -208,34 +193,6 @@ final design system
 ```
 
 Specification 008 remains the promoted interaction baseline until later evidence and normal governance revise it.
-
----
-
-## MC-0004 evidence
-
-Claude Phase A:
-
-```text
-commit                  cd2e12f2c79ee3b2f205457c5940eb2022b4631a
-review base             bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
-historical independence BLIND_TO_CANDIDATE
-known candidate exposure none
-```
-
-Claude Phase B:
-
-```text
-commit          d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
-classification  COMPARATIVE_ONLY
-```
-
-Current phase:
-
-```text
-PHASE_C_BROWSER_DESIGN_EVALUATION
-```
-
-No pending Claude review obligation exists at the current boundary.
 
 ---
 
@@ -288,9 +245,11 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+frontend/design-lab/work-unit-grammar.html
 
+docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
 frontend/design-lab/work-unit-lighting.html
 
@@ -307,11 +266,12 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ## Exact next step
 
 ```text
-1. use Research 046 as the active design brief
-2. preserve G4 and H4 as controls
-3. build W1-W4 browser-rendered work-unit grammar variants
-4. expose a neutral category comparison plus one realistic project scene
-5. compare category recognition, coherence, visual quality and complexity
-6. record prefer/reject/combine/refine evidence
-7. keep production Cockpit untouched
+1. pull v1-cockpit-design-exploration locally
+2. keep the existing Vite dev server running
+3. open http://localhost:5173/design-lab/work-unit-grammar.html
+4. compare W1-W4 in Category strip view
+5. compare W1-W4 again in Project scene view
+6. hover representative nodes to confirm H4 still feels correct
+7. report prefer/reject/combine/refine evidence
+8. keep production Cockpit untouched
 ```
