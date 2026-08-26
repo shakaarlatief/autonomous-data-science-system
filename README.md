@@ -18,12 +18,12 @@ Explicit machinery must earn its complexity empirically.
 
 Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe and the professional substrate needed to use it safely.
 
-The Source Universe substrate and governed multi-model development method are accepted. The permanent user-controlled source-vault bootstrap is deliberately paused while the project conducts a broad next-generation Project Cockpit visual/product design exploration.
+The Source Universe substrate and governed multi-model development method are accepted. The permanent user-controlled source-vault bootstrap is deliberately paused while the project conducts a broad next-generation Project Cockpit product-design exploration.
 
 Current route:
 
 ```text
-checkpoint            208
+checkpoint            210
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,13 +33,13 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C realistic mockup evaluation
+current boundary      MC-0004 Phase C grid/world human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
 No scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inferred from Specification 022.
 
-No frontend implementation file has yet been changed for the new Cockpit design phase.
+No production Cockpit implementation file has been changed by the current design phase. Only isolated design-lab experiment files under `frontend/design-lab/**` have been added.
 
 ---
 
@@ -53,27 +53,25 @@ The first broad research map is:
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 ```
 
-The comparative synthesis after independent Claude review is:
+The independent/comparative synthesis is:
 
 ```text
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 ```
 
-Research 038 narrows first-round realistic visual evaluation to:
+The current Phase-C browser experiment protocol is:
 
 ```text
-M1  Living Precision Canvas          preferred anchor
-M2  Spatial Control Room             strongest alternative
-M3  Depth-Aware Analytical Workbench bounded high-upside alternative
+docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 ```
 
-The strongest shared mechanisms are:
+The strongest shared mechanisms remain:
 
 ```text
 semantic zoom
 category-level work-unit visual grammar
-semantic connector type + direction + liveness
-sparse state-bearing motion
+semantic connector type + direction + state/liveness
+sparse event-driven motion
 calm resting state
 full long-form Conversation Workspace
 conversation <-> structured project links
@@ -82,13 +80,110 @@ multi-axis project/runtime/importance state treatment
 2.5D before true 3D
 ```
 
-This is still design research. No final visual identity, graph library, motion library, stage taxonomy or 3D architecture is selected.
-
-Specification 008 remains the promoted V1 interaction baseline.
+Specification 008 remains the promoted V1 interaction baseline. The final visual identity, graph/canvas technology, semantic zoom/grouping, auto-layout, stage treatment, motion implementation and Conversation Workspace presentation remain deliberately unfrozen.
 
 ---
 
-## MC-0004: independent then comparative design review
+## Phase C now uses browser-rendered design experiments
+
+Generated-image UI concepts are no longer part of the preferred Cockpit evaluation workflow.
+
+The current evidence loop is:
+
+```text
+real external references where useful
+    +
+small browser-rendered design experiments
+    +
+continuous human comparison
+    ->
+progressively integrated Cockpit prototype
+    ->
+production implementation only after evidence and specification
+```
+
+A generated screenshot is not treated as a prototype.
+
+The design-lab code is intentionally isolated and disposable. It is allowed to optimize for learning without silently becoming the new production Cockpit.
+
+Research 039 currently proposes the following provisional sequence:
+
+```text
+Slice 1   grid / spatial world substrate
+Slice 2   work-unit visual grammar
+Slice 3   connector semantics and static relation language
+Slice 4   semantic zoom / level of detail
+Slice 5   liveness / motion budget
+Slice 6   Conversation Workspace presentation
+Slice 7   selection, focus and bounded 2.5D depth
+Slice 8   information lenses and command/navigation treatment
+Slice 9   integrated Cockpit candidate
+Slice 10  medium / large project pressure test
+```
+
+The sequence may change when mechanisms need to be evaluated together.
+
+---
+
+## First design-lab slice: grid / world substrate
+
+The first executable experiment is:
+
+```text
+frontend/design-lab/grid-world.html
+frontend/design-lab/grid-world.css
+frontend/design-lab/grid-world-overrides.css
+frontend/design-lab/grid-world.js
+```
+
+Expected Vite development URL:
+
+```text
+http://localhost:5173/design-lab/grid-world.html
+```
+
+The experiment holds representative Customer Churn project state constant while comparing:
+
+```text
+G1  Precision Lines
+G2  Dot Matrix
+G3  Cross Lattice
+G4  Adaptive Hybrid
+```
+
+Controls expose:
+
+```text
+dark / light appearance
+project / work / inspection scale simulation
+content visible / grid-only inspection
+activity field on / off
+per-variant focus mode
+```
+
+The artifact was rendered in Chromium. It loaded without JavaScript page errors, all four variants rendered, and the appearance/scale controls worked. Browser inspection also caught an initial G3 rendering defect in which the Cross Lattice became visually heavy bands; the defect was corrected before human review.
+
+Current review gate:
+
+```text
+PREFER
+REJECT
+COMBINE
+REFINE
+UNRESOLVED
+```
+
+The project owner may combine mechanisms across variants rather than choosing one whole treatment.
+
+Current checkpoint:
+
+```text
+docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+```
+
+---
+
+## MC-0004: independent then comparative design collaboration
 
 MC-0004 uses the accepted provider-neutral collaboration method in:
 
@@ -115,72 +210,19 @@ classification  COMPARATIVE_ONLY
 message         docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 ```
 
-The Phase-B commit changed only the declared collaboration-message surface.
+The strongest independently reinforced diagnosis remains that the representative Cockpit relies too heavily on generic work-unit cards, weakly semantic fixed connectors, geometric rather than semantic zoom, and fixed representative geometry that is not a long-term scale strategy.
 
-The strongest independently reinforced diagnosis is that the current representative Cockpit still relies on generic work-unit cards, weakly semantic fixed connectors, geometric rather than semantic zoom, and fixed representative geometry that does not constitute a large-project scale strategy.
-
-Claude's comparative review also strengthened Research 037 by identifying information-density lenses, multi-axis state separation and external product research as material improvements, while preserving Claude's own contributions such as code-level specificity, a falsifiable motion-budget hypothesis and explicit recommendation reversal conditions.
-
-The strongest genuine unresolved disagreement is command architecture at scale. It is intentionally deferred to medium/large project evidence.
+The strongest genuine unresolved disagreement is command architecture at scale. It remains deferred to medium/large project evidence.
 
 MC-0004 is now in:
 
 ```text
-PHASE_C_MOCKUP_EVALUATION
+PHASE_C_BROWSER_DESIGN_EVALUATION
 ```
 
-with ChatGPT as the next expected actor.
-
-Current route:
-
-```text
-docs/model_collaboration/threads/MC-0004/THREAD.md
-docs/model_collaboration/threads/MC-0004/STATE.json
-docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
-docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
-docs/model_collaboration/REVIEW_INBOX.md
-```
+with the human project owner as the next expected actor for the G1-G4 grid/world slice.
 
 There is currently no pending Claude review obligation.
-
----
-
-## Phase C mockup boundary
-
-The next step is realistic visual comparison, not frontend implementation.
-
-M1, M2 and M3 must use the same Customer Churn Prediction scenario and show more than a resting attractive map.
-
-Required first-round states include:
-
-```text
-resting overview
-active investigation
-hard blocker + downstream effect
-completed versus unresolved branch
-selected work unit
-project-scale semantic zoom
-work-scale semantic zoom
-full long Conversation Workspace
-conversation + analytical work coexistence
-Execution or Review lens state
-light appearance
-dark appearance
-```
-
-Human review should prioritize five-second comprehension, spatial continuity, useful information density, motion meaning, conversation ergonomics, reduced-motion equivalence and long-session professional quality.
-
-After one or two visual directions are preferred, only bounded technical uncertainty spikes should be run.
-
-First comparators, if later earned:
-
-```text
-current DOM/CSS/SVG control baseline
-React Flow for semantic topology / zoom / grouping
-Motion for React for focus/conversation transitions if needed
-```
-
-PixiJS, Sigma.js, React Three Fiber and full 3D remain outside the next bounded step unless later evidence creates a specific need.
 
 ---
 
@@ -197,7 +239,7 @@ cross-model work that exists only on an unpromoted branch
     -> explicitly identify repository + branch/ref + thread/routing surface
 ```
 
-Checkpoint 207 preserves this as empirical method evidence. Canonical promotion into Development Method v0.5 is deferred until the MC-0004 promotion audit.
+Checkpoint 207 preserves this as empirical method evidence. Canonical promotion into Development Method v0.5 remains deferred until the MC-0004 promotion audit.
 
 ---
 
@@ -301,7 +343,9 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md
+docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+docs/checkpoints/209_phase_c_browser_design_lab_grid_world_opened.md
+docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
@@ -311,20 +355,23 @@ docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 
+frontend/design-lab/grid-world.html
+frontend/design-lab/grid-world.css
+frontend/design-lab/grid-world-overrides.css
+frontend/design-lab/grid-world.js
+
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
 ## Exact next step
 
 ```text
-1. create realistic M1 / M2 / M3 visual mockups from the same project scenario
-2. explicitly include semantic zoom, semantic relations and the full Conversation Workspace
-3. compare resting, active, blocked, completed, runtime and waiting-for-human states
-4. include light and dark treatments
-5. obtain human visual/product review
-6. narrow to one or two preferred directions
-7. run only bounded technical spikes needed to resolve implementation uncertainty
-8. pressure-test medium/large projects and accessibility
-9. freeze implementation architecture only after evidence is sufficient
-10. keep source-vault deployment paused until the project owner chooses to resume it
+1. inspect the browser-verified G1 / G2 / G3 / G4 grid-world variants
+2. record human PREFER / REJECT / COMBINE / REFINE / UNRESOLVED disposition
+3. refine the grid/world substrate if needed
+4. then open the next bounded design slice, expected to be work-unit visual grammar
+5. progressively integrate only mechanisms that survive review
+6. later pressure-test medium/large projects and accessibility
+7. freeze production implementation architecture only after evidence is sufficient
+8. keep source-vault deployment paused until the project owner chooses to resume it
 ```
