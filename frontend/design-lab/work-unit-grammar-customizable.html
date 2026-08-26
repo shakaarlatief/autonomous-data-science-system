@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-grammar-view="scene" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Configurable Cockpit Appearance</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header customization-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02B · User-configurable visual grammar</span>
+        <h1>Design the Cockpit without changing what the project means</h1>
+        <p>The scientific category markers and semantic project model stay stable. Shape and micro-surface treatments become user-selectable presentation preferences, so clean, structured and richer visual styles can coexist instead of forcing one global visual answer.</p>
+      </div>
+      <div class="customization-status">
+        <span>Semantic grammar</span>
+        <strong>Scientific markers · Reduced light</strong>
+      </div>
+    </header>
+
+    <main class="grammar-main customization-main">
+      <section class="customization-panel" aria-label="Cockpit appearance controls">
+        <div class="customization-panel-intro">
+          <span class="section-kicker">Cockpit appearance</span>
+          <h2>Choose how your project world looks</h2>
+          <p>These controls change presentation only. Category identity, project state, runtime state, importance and analytical content remain unchanged.</p>
+        </div>
+
+        <fieldset class="control-group">
+          <legend>View</legend>
+          <div class="segmented" role="group" aria-label="Preview view">
+            <button type="button" data-view="scene" aria-pressed="true">Project scene</button>
+            <button type="button" data-view="strip" aria-pressed="false">Category strip</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Box shape</legend>
+          <div class="segmented" role="group" aria-label="Work-unit shape style">
+            <button type="button" data-shape-option="normal" aria-pressed="false">Normal</button>
+            <button type="button" data-shape-option="true" aria-pressed="true">Subtle shapes</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group surface-control">
+          <legend>Micro design</legend>
+          <div class="segmented" role="group" aria-label="Work-unit surface detail">
+            <button type="button" data-surface-option="none" aria-pressed="false">None</button>
+            <button type="button" data-surface-option="material" aria-pressed="true">Micro material</button>
+            <button type="button" data-surface-option="lumen" aria-pressed="false">Micro light</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Presets</legend>
+          <div class="segmented" role="group" aria-label="Appearance presets">
+            <button type="button" data-preset="clean">Clean</button>
+            <button type="button" data-preset="structured">Structured</button>
+            <button type="button" data-preset="rich">Rich</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group compact-toggle-group single-toggle">
+          <legend>Accessibility</legend>
+          <label class="toggle-row"><input id="reduced-toggle" type="checkbox" /><span>Reduced motion</span></label>
+        </fieldset>
+
+        <button class="appearance-reset" id="appearance-reset" type="button">Reset preview</button>
+      </section>
+
+      <section class="customization-principles" aria-label="Customization architecture principles">
+        <article><strong>Semantic invariant</strong><span>Circle, square, triangle, diamond and plus keep the same category mapping.</span></article>
+        <article><strong>Presentation choice</strong><span>Normal boxes and subtle category shapes may coexist as user preferences.</span></article>
+        <article><strong>Optional richness</strong><span>Micro material and micro light can be enabled or removed without changing project meaning.</span></article>
+        <article><strong>Safe default</strong><span>Reduced in-box illumination remains the held baseline beneath every appearance choice.</span></article>
+      </section>
+
+      <section class="customization-preview" aria-label="Live configurable Cockpit preview">
+        <div class="customization-preview-header">
+          <div>
+            <span class="section-kicker">Live preview</span>
+            <h2>Churn project · current visual preference</h2>
+          </div>
+          <span id="appearance-summary">Subtle shapes · Micro material</span>
+        </div>
+
+        <div class="grammar-world customization-world" id="customization-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <div class="category-strip customization-strip" data-panel="strip" hidden></div>
+          <div class="project-scene customization-scene" data-panel="scene">
+            <svg class="grammar-relations" viewBox="0 0 1000 430" preserveAspectRatio="none" aria-hidden="true">
+              <path data-link="q-i" d="M214 244 C310 244, 300 132, 392 132" />
+              <path data-link="i-v" d="M545 132 C625 132, 610 248, 700 248" />
+              <path data-link="v-m" d="M845 248 C900 248, 875 125, 940 125" />
+              <path data-link="m-e" d="M940 172 C930 302, 835 332, 775 354" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="customization-architecture-note">
+        <span class="section-kicker">Product architecture implication</span>
+        <h2>Customization belongs above the semantic project model</h2>
+        <p>A future production implementation can persist a user-level appearance profile, optionally overridden per project. The style layer may choose shape and surface treatments, while semantic category mappings, accessibility constraints and state meaning remain governed by ADS. This design-lab page uses browser-local persistence only as a prototype of that interaction contract.</p>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-grammar-customizable.js"></script>
+  </body>
+</html>
