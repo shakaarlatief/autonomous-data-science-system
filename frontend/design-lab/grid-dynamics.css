@@ -53,7 +53,7 @@ body {
 .ambient-layer {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
 }
@@ -237,11 +237,11 @@ html[data-reduced="on"] .ambient-drift {
     opacity: 0.7;
   }
   58% {
-    transform: translateX(calc(100vw * 0.46 + 620px));
+    transform: translateX(2200px);
     opacity: 0;
   }
   100% {
-    transform: translateX(calc(100vw * 0.46 + 620px));
+    transform: translateX(2200px);
     opacity: 0;
   }
 }
@@ -258,11 +258,11 @@ html[data-reduced="on"] .ambient-drift {
     opacity: 0.52;
   }
   66% {
-    transform: translateX(calc(100vw * 0.46 + 650px));
+    transform: translateX(2200px);
     opacity: 0;
   }
   100% {
-    transform: translateX(calc(100vw * 0.46 + 650px));
+    transform: translateX(2200px);
     opacity: 0;
   }
 }
@@ -279,11 +279,11 @@ html[data-reduced="on"] .ambient-drift {
     opacity: 0.56;
   }
   66% {
-    transform: translateY(560px);
+    transform: translateY(760px);
     opacity: 0;
   }
   100% {
-    transform: translateY(560px);
+    transform: translateY(760px);
     opacity: 0;
   }
 }
