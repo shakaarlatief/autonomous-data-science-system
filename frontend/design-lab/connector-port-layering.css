@@ -1,0 +1,16 @@
+/*
+ * Connector curves stay in the under-node relation SVG. Endpoint markers are
+ * mirrored into the dedicated overlay SVG so they sit visibly on the work-unit
+ * perimeter without lifting the full connector curve above the node surface.
+ */
+.connector-relations .connector-terminal,
+.connector-relations .connector-socket,
+.connector-relations .connector-chevron {
+  opacity: 0 !important;
+}
+
+.connector-port-overlay .connector-terminal,
+.connector-port-overlay .connector-socket,
+.connector-port-overlay .connector-chevron {
+  pointer-events: none;
+}
