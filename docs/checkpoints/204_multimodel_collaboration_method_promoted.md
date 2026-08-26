@@ -190,9 +190,9 @@ No OpenAI/Anthropic API orchestrator is introduced.
 
 The repository-mediated subscription workflow must first demonstrate friction large enough to justify separately metered API usage, repeated context transfer, credentials, retries, and orchestration infrastructure.
 
-## 9. Promotion audit
+## 9. Promotion audit completed
 
-Promoted:
+Promoted/reconciled in this stage:
 
 ```text
 docs/DEVELOPMENT_METHOD.md              -> v0.5
@@ -203,29 +203,35 @@ docs/model_collaboration/README.md      -> canonical protocol
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/DECISIONS.md                       -> D-034
+docs/OPEN_QUESTIONS.md                  -> Q-054 future mechanization boundary
+docs/MAJOR_CHANGES.md                   -> structural multi-model transition
+README.md
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/current_routing.json
 ```
 
-Still to reconcile in the same promotion stage:
+The reconciliation intentionally preserves:
 
 ```text
-DECISIONS.md
-OPEN_QUESTIONS.md
-MAJOR_CHANGES.md
-README.md
-CURRENT_STATE.md
-KNOWLEDGE_MAP.md
-current_routing.json
-PR #76 promotion/base relationship
+permanent source-vault deployment     paused, not cancelled
+Specification 025                     not opened
+scheduled unattended model review     deferred
+API orchestration                      deferred
 ```
+
+PR #76 has been retargeted directly to `v1-frontend-spike`. The source-vault planning artifacts from PR #75 remain in the branch as preservation-only state, while actual source-vault execution remains incomplete.
 
 ## 10. Exact continuation
 
 ```text
-1. complete canonical decision/open-question/major-change/routing reconciliation
-2. verify Checkpoint 204 under the new provider-neutral validator
-3. rerun collaboration-state validation with MC-0002/MC-0003 closed
-4. reconcile PR #76 so accepted collaboration work can promote independently of unfinished source-vault deployment
-5. merge only after final checks are green
-6. preserve the permanent source-vault bootstrap as paused, not cancelled
-7. then resume the legitimate next project boundary from the newly promoted integration head
+1. run the retargeted PR #76 validation suite on the final candidate head
+2. verify Checkpoint 204 under the provider-neutral validator
+3. verify closed MC-0002 and MC-0003 under the collaboration-state guard
+4. verify routing consistency and other applicable inherited checks
+5. merge PR #76 only if the final suite is green
+6. create a post-merge checkpoint/routing reconciliation recording the exact promoted SHA
+7. close PR #75 as superseded by the preserved planning state, without claiming deployment occurred
+8. resume permanent source-vault deployment from the new promoted integration head before Course 2
 ```
