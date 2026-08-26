@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 207  
+**Checkpoint:** 208  
 **Date:** 2026-08-26  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** The permanent user-controlled source-vault bootstrap remains deliberately paused. The active boundary is MC-0004 Phase B comparative review of next-generation Project Cockpit design after Claude's independent Phase-A proposal was frozen successfully.  
+**Development stage:** MC-0004 comparative design evidence is complete. The active boundary is Phase C realistic Project Cockpit mockup evaluation from Research 038. The permanent user-controlled source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted with outcome `COLLABORATION_STATE_GUARD_ACCEPTED`. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -20,7 +20,19 @@ Conversation title       07 - Project Cockpit Design Exploration
 Primary collaborator     ChatGPT
 ```
 
-The current Cockpit exploration is taking place in a new ChatGPT conversation. The preceding conversation remains `chatgpt-06 / 06 - Methodological Knowledge Universe Construction`; this conversation is `chatgpt-07 / 07 - Project Cockpit Design Exploration`.
+The preceding ChatGPT conversation remains:
+
+```text
+chatgpt-06
+06 - Methodological Knowledge Universe Construction
+```
+
+The current Cockpit exploration is:
+
+```text
+chatgpt-07
+07 - Project Cockpit Design Exploration
+```
 
 Current Claude collaboration session:
 
@@ -35,114 +47,208 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-# Current active boundary: MC-0004 Phase B comparative Cockpit design review
+# Current active boundary: Phase C realistic Cockpit mockup evaluation
 
 Primary route:
 
 ```text
-docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md
-docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
+docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md
+docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 
-docs/model_collaboration/threads/MC-0004/BRIEF.md
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
-docs/model_collaboration/REVIEW_INBOX.md
+docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 ```
 
-## MC-0004 Phase A is complete
+## MC-0004 Phase A is preserved as independent evidence
 
 Claude's independent proposal is frozen at:
 
 ```text
-cd2e12f2c79ee3b2f205457c5940eb2022b4631a
+commit                  cd2e12f2c79ee3b2f205457c5940eb2022b4631a
+review base             bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
+historical independence BLIND_TO_CANDIDATE
+known candidate exposure none
 ```
 
-with:
+The earlier stale-branch manual trigger did not expose Research 037 or later candidate design content, so this classification remains valid.
+
+## MC-0004 Phase B is complete
+
+Claude's comparative review is frozen at:
 
 ```text
-review base               bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
-historical independence   BLIND_TO_CANDIDATE
-known candidate exposure  none
+commit   d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
+message  docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
+mode     COMPARATIVE_ONLY
 ```
 
-A branch comparison confirms Claude changed only the declared collaboration-message surface.
+A direct comparison against the preceding branch head confirms Claude changed only that declared collaboration-message surface.
 
-Claude's independent proposal prefers a **Living Process Canvas** over an **Analytical Command Deck**, while treating the latter as a genuine fallback if spatial scaling/semantic zoom fails under realistic project size.
-
-Important independent recommendations include:
+The strongest comparative findings are:
 
 ```text
-category-level work-unit visual families
-semantic connector type + direction + liveness
-semantic zoom / progressive detail reduction
-content-aware stage sizing
-event-driven, scarce motion rather than ambient decoration
-Conversation Workspace using the validated Cockpit focus-transition model
-bidirectional message <-> structured project-object links
-2.5D before full 3D
-technology replacement only after measured evidence
-large-project + human browser review before adoption
+semantic zoom is the highest-confidence first mechanism
+current work-unit grammar is too generic
+connectors should encode type + direction + liveness
+motion should be sparse and tied to real temporal project activity
+the resting world should remain calm
+full long-form conversation is first-class
+2.5D is preferred before full 3D
+information-density lenses deserve mockup testing
+project disposition, runtime state and importance should not be one overloaded status
+```
+
+## Research 038 is the current synthesis
+
+Research 038 combines Research 037, Claude Phase A and Claude Phase B and narrows the first mockup round to:
+
+```text
+M1  Living Precision Canvas          preferred anchor
+M2  Spatial Control Room             strongest alternative
+M3  Depth-Aware Analytical Workbench bounded high-upside alternative
+```
+
+This ranking is a mockup recommendation only. It does not promote a final visual identity.
+
+### M1 Living Precision Canvas
+
+```text
+precision-instrument resting language
+semantic zoom
+semantic work-unit grammar
+meaningful relations
+scarce event-driven liveness
+completed work visually settles
+subtle depth for selection/focus
+first-class Conversation Workspace
+```
+
+### M2 Spatial Control Room
+
+```text
+spatial topology
+information-density lenses
+strong execution/review visibility
+more operational density
+restrained motion
+```
+
+### M3 Depth-Aware Analytical Workbench
+
+```text
+primarily 2D map
+selected work visibly lifts
+project recedes during focus
+conversation and analytical surfaces occupy clear depth planes
+strong spatial continuity during transitions
 ```
 
 ---
 
-## Phase B is now open
+# Genuine unresolved questions
 
-Current guarded state:
+The strongest unresolved disagreement is command architecture at scale.
 
-```text
-thread                  MC-0004
-lifecycle               ACTIVE
-phase                   PHASE_B_COMPARATIVE_REVIEW
-task owner              ChatGPT
-target-state writer     ChatGPT
-next expected actor     Claude
-Phase-A result          BLIND_TO_CANDIDATE
-Phase-B mode            COMPARATIVE_ONLY
-Claude write surface    docs/model_collaboration/threads/MC-0004/messages/**
-```
+Current Jump/search has real evidence on the small representative fixture. A context-aware command system is plausible for larger projects but has not earned replacement.
 
-Claude may now read Research 037 and compare it with its frozen independent proposal.
+The resolution gate is a medium/large project fixture, not model preference.
 
-The required comparative output should identify:
+Still deliberately open:
 
 ```text
-strongest convergence
-material disagreement
-what each design improves in the other
-strongest remaining alternative
-which mechanisms/directions deserve realistic mockups first
-what should remain deliberately unresolved
-what evidence would change the recommendation
+command architecture at scale
+conversation persistence/threading model
+exact visual identity
+exact work-unit silhouettes
+exact connector styling
+exact motion budget / easing
+exact semantic-zoom thresholds
+lens names/count
+stage taxonomy/layout
+auto-layout approach
+final graph/canvas library
+final motion library
+production 2.5D use
+full 3D
 ```
-
-Claude's comparative response must be preserved before ChatGPT performs the final MC-0004 synthesis / Phase-C handoff.
 
 ---
 
-## Routing failure discovered and contained
+# Phase C mockup requirements
 
-The first manual Claude trigger used the generic instruction to check the repository and `REVIEW_INBOX.md`. Claude remained oriented to an older branch whose inbox correctly said `NONE`, so it reconstructed stale collaboration state.
+All three directions must use the same scenario so visual comparison remains meaningful.
 
-The failure did not expose Research 037 or other candidate Cockpit material and therefore did not compromise Phase-A independence.
-
-Current operational lesson:
+Representative project:
 
 ```text
-cross-model handoff to work living only on an unpromoted branch
-    -> explicitly name repository + branch/ref + thread/routing surface
+Customer Churn Prediction
+prediction moment unresolved
+production missingness investigation active
+chronological validation selected
+baseline logistic model completed
+Random Forest benchmark deferred
+evaluation / calibration / thresholding downstream
+one active run
+one waiting-for-human state
+realistic long conversation history
 ```
 
-The current Review Inbox preserves a branch-qualified prompt for MC-0004. Canonical promotion of this lesson into the general collaboration method is deferred until the MC-0004 promotion audit.
+Each first-round direction should show:
+
+```text
+resting overview
+active investigation
+hard blocker + downstream effect
+completed versus unresolved branch
+selected work unit
+project-scale semantic zoom
+work-scale semantic zoom
+full Conversation Workspace
+conversation + analytical work coexistence
+Execution or Review lens state
+light appearance
+dark appearance
+```
+
+Human evaluation should prioritize:
+
+```text
+five-second comprehension
+spatial continuity
+information density
+motion meaning
+long-session professional quality
+conversation ergonomics
+reduced-motion equivalence
+```
 
 ---
 
-## Specification 008 remains the promoted interaction baseline
+# Technology scope remains narrow
+
+No technology is selected yet.
+
+Do not front-load a broad library bakeoff into the mockup phase.
+
+If visual direction later earns technical spikes, first comparators are limited to:
+
+```text
+current DOM/CSS/SVG control baseline
+React Flow for semantic topology / zoom / grouping comparator
+Motion for React for focus/conversation transition comparator if needed
+```
+
+PixiJS, Sigma.js, React Three Fiber and full 3D remain out of the next bounded step unless later evidence creates a specific need.
+
+---
+
+# Specification 008 remains the promoted interaction baseline
 
 Still accepted for V1 unless later evidence justifies revision:
 
@@ -185,7 +291,7 @@ No frontend implementation file has been changed by the new design phase.
 
 ---
 
-# Long-form conversation remains a first-class Cockpit design requirement
+# Long-form conversation remains a first-class requirement
 
 The compact native composer is useful but not sufficient as the complete conversation experience.
 
@@ -210,16 +316,13 @@ Consequential outcomes must still become structured project state. Conversation 
 source-vault bootstrap
     PAUSED
     not cancelled
+    not rejected
     not superseded
     accepted architecture/runbook unchanged
     no real permanent deployment yet
 ```
 
 Course 2 remains blocked until the permanent compare, reviewed ingestion, working-store audit, independent backup, clean restore, and restored audit succeed.
-
----
-
-## Stable accepted architecture
 
 Accepted implementation decisions remain D-028 through D-034. Development Method v0.5 remains accepted; MC-0004 has not yet promoted a general method revision.
 
@@ -230,18 +333,20 @@ The methodological knowledge-universe program remains the larger V1 objective an
 ## Exact continuation
 
 ```text
-1. use Checkpoint 207 and v1-cockpit-design-exploration as the current route
-2. keep source-vault deployment paused with Course 2 gate unchanged
-3. preserve Claude Phase-A commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a as independent evidence
-4. have Claude perform MC-0004 Phase B after reading Research 037
-5. preserve Claude's comparative response under MC-0004/messages/
-6. then perform ChatGPT comparative synthesis from both positions
-7. select strongest design mechanisms/directions for realistic mockups
-8. explicitly mock/prototype the full Conversation Workspace as well as the resting map
-9. pressure-test medium/large projects and active/blocked/completed/runtime states
-10. obtain human visual/product review
-11. freeze implementation/prototype architecture only after evidence is sufficient
-12. resume permanent source-vault bootstrap when the project owner chooses
+1. use Checkpoint 208 and v1-cockpit-design-exploration as the current route
+2. keep the source-vault deployment paused with the Course 2 gate unchanged
+3. preserve Claude Phase A and Phase B as distinct evidence classes
+4. use Research 038 as the current comparative design synthesis
+5. create realistic M1 / M2 / M3 visual mockups from the same scenario
+6. explicitly include semantic zoom, semantic relations and the full Conversation Workspace
+7. compare resting, active, blocked, completed, runtime and waiting-for-human states
+8. include light and dark treatments
+9. obtain human visual/product review
+10. narrow to one or two preferred directions
+11. run only the bounded technical spikes needed to resolve implementation uncertainty
+12. pressure-test medium/large projects and accessibility
+13. freeze implementation/prototype architecture only after the evidence is sufficient
+14. resume permanent source-vault bootstrap when the project owner chooses
 ```
 
 ## Minimum reading for continuation
@@ -252,7 +357,8 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md
+docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md
+docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
@@ -260,7 +366,7 @@ docs/foundations/021_professional_product_interface_and_frontend_design_foundati
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
-docs/model_collaboration/REVIEW_INBOX.md
+docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
