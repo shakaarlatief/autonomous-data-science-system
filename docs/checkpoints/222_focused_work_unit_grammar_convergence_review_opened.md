@@ -100,6 +100,14 @@ Governing evidence:
 docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
 ```
 
+Exact browser implementation head before preservation/routing-only documentation:
+
+```text
+4b98936999289f7d088c8321a6c9617c117badb5
+```
+
+Later commits through the current branch head change only documentation/routing state and do not alter the focused browser implementation.
+
 ## 5. Candidate matrix
 
 ```text
