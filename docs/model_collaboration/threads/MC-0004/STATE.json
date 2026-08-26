@@ -22,6 +22,7 @@
       "docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md",
       "docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md",
       "docs/research/045_h4_resting_node_light_world_spill_refinement.md",
+      "docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
       "docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md",
       "docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md",
@@ -33,6 +34,9 @@
       "docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md",
       "docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md",
       "docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md",
+      "docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md",
+      "docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md",
+      "docs/checkpoints/219_work_unit_grammar_preliminary_review_claude_ideation_requested.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -46,7 +50,7 @@
     {
       "collaborator_id": "chatgpt",
       "interaction_environment": "ChatGPT",
-      "interaction_session": "chatgpt-07",
+      "interaction_session": "chatgpt-08",
       "roles": ["TASK_OWNER", "RESEARCHER"]
     },
     {
@@ -68,24 +72,30 @@
       "paths": ["docs/model_collaboration/threads/MC-0004/messages/**"]
     }
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
-    "known_exposures": [],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce and changed only message 002. Phase C uses browser-rendered design experiments. Human review provisionally settled the G4 world, selected H4 Integrated Response for work-unit interaction lighting, and requested stronger node-colored world spill at rest while preserving the cleaner H4 in-node light treatment. Research 045 and Checkpoint 216 preserve the current review gate.",
+    "known_exposures": [
+      "Research 037 and 038 from completed Phase B comparative review",
+      "Research 046 work-unit grammar experiment",
+      "W1-W4 browser-rendered work-unit grammar candidates",
+      "human preliminary positive review and request for broader ideas"
+    ],
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Phase C uses browser-rendered design experiments and continuous human review. G4 is provisionally settled and H4 generic rest/hover interaction lighting is sufficiently settled. The first W1-W4 work-unit category/silhouette browser experiment received a positive preliminary human review, but the project owner requested broader design-space ideation from Claude before selection. Message 003 requests a COMPARATIVE_ONLY / DIVERGENT_IDEATION response against exact target 88a507d42744917be1e84b29177dd0465f24cd82.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
-      "PHASE_C_BROWSER_DESIGN_EVALUATION"
+      "PHASE_C_BROWSER_DESIGN_EVALUATION",
+      "PHASE_C_WORK_UNIT_GRAMMAR_DIVERGENT_IDEATION"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-h4-selected-resting-world-spill-review-open",
+    "transition_id": "mc0004-work-unit-grammar-claude-ideation-requested",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner selected H4 Integrated Response and requested that its normal resting node-colored light extend farther into the surrounding grid, preserving the newer clean in-box illumination and keeping hover as the richer interaction state.",
-    "repository_head": "c7f3dc899d09a6bebf042ee282fc93ccde55124e"
+    "reason": "After a positive preliminary review of W1-W4, the project owner judged the current set too narrow to justify convergence and explicitly requested Claude ideas and inspiration. The Project Scene display defect was corrected first, then Message 003 froze a bounded divergent-ideation request.",
+    "repository_head": "2e7ddcaa8b8469b0bdc3137f61b510703734d301"
   }
 }
