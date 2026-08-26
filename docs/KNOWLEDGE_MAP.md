@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 218  
+**Current checkpoint:** 219  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        218
+checkpoint                        219
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C work-unit visual-grammar human review
+current boundary                 MC-0004 Phase C work-unit grammar Claude divergent ideation
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -148,6 +148,7 @@ Primary route:
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
 docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
+docs/checkpoints/219_work_unit_grammar_preliminary_review_claude_ideation_requested.md
 frontend/design-lab/work-unit-grammar.html
 frontend/design-lab/work-unit-grammar.css
 frontend/design-lab/work-unit-grammar.js
@@ -201,13 +202,63 @@ Reduced motion
     secondary accessibility check
 ```
 
+## Preliminary human result and correction
+
+The first W1-W4 implementation received a strongly positive preliminary human review, but no variant was selected.
+
+The project owner judged that the current four candidates likely cover too little of the plausible work-unit grammar design space and explicitly requested additional Claude ideas and inspiration before convergence.
+
+The Project Scene view-switching defect observed during that review was corrected before the next model gate.
+
+Corrected exact browser target:
+
+```text
+88a507d42744917be1e84b29177dd0465f24cd82
+```
+
+---
+
+# Current MC-0004 Claude gate
+
+Request:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+```
+
+Expected output:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+```
+
+Classification:
+
+```text
+COMPARATIVE_ONLY / DIVERGENT_IDEATION
+```
+
+The desired contribution is design-space expansion, not a ceremonial ranking of W1-W4.
+
+Claude may inspect all current candidate material. Historical Phase-A independence remains preserved separately.
+
+Claude write scope:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/**
+```
+
+ChatGPT retains target-state write ownership.
+
 Current evidence state:
 
 ```text
-research brief          complete for first round
-browser implementation complete for first round
-human browser review   OPEN
-production promotion   not authorized
+first-round research brief       complete
+first-round browser experiment   complete
+preliminary human review         positive, no selection
+Project Scene defect             corrected
+Claude divergent ideation        PENDING
+production promotion             not authorized
 ```
 
 Still deliberately unresolved:
@@ -237,8 +288,9 @@ build bounded browser variants
 hold unrelated variables constant
 human compares
 record prefer/reject/combine/refine
+use another model selectively when divergent design value is expected
 iterate if needed
-move to next design question
+move to the next design question
 ```
 
 Generated-image UI concepts are not part of the preferred Cockpit evaluation workflow.
@@ -261,6 +313,7 @@ docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
 docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
@@ -268,9 +321,8 @@ docs/model_collaboration/REVIEW_INBOX.md
 Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
+Current  Claude work-unit grammar divergent ideation pending
 ```
-
-No pending Claude review obligation exists.
 
 ---
 
