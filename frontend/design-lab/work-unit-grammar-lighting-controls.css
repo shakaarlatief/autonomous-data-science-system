@@ -5,8 +5,8 @@
  * `.node-surface` layer. That accidentally suppressed much of the accepted H4
  * resting colour visible inside the work unit. This stylesheet restores a
  * surface-local equivalent as the default control, adds an intentional reduced
- * in-box-light comparison, and makes the resting light/spill follow the active
- * signature edge when the grammar moves that edge away from the left side.
+ * in-box-light comparison, and makes the resting light/spill follow both the
+ * active signature edge and the signature's position along that edge.
  */
 
 .surface-rest-light {
@@ -15,7 +15,7 @@
   z-index: 0;
   border-radius: inherit;
   background: radial-gradient(
-    ellipse at 0% 50%,
+    ellipse at 0% var(--light-anchor, 50%),
     rgba(var(--node-rgb), 0.125) 0%,
     rgba(var(--node-rgb), 0.052) 38%,
     rgba(var(--node-rgb), 0.018) 58%,
@@ -31,14 +31,14 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 }
 
 /*
- * Light direction is structural, not fixed. The visible signature side is
- * assigned by work-unit-grammar.js. W1 stays left. W2 and W4 follow their
- * category-specific signature bars. W3 has no signature bar, so it retains the
- * accepted left-biased H4 baseline rather than inventing a new semantic side.
+ * Light placement is structural, not fixed. work-unit-grammar.js assigns both
+ * the signature side and the exact anchor along that side. W2/W4 therefore
+ * preserve the left-biased position of their top/bottom bars instead of
+ * centering the light merely because the bar sits on a horizontal edge.
  */
 .grammar-node[data-light-side="left"] .surface-rest-light {
   background: radial-gradient(
-    ellipse at 0% 50%,
+    ellipse at 0% var(--light-anchor, 50%),
     rgba(var(--node-rgb), 0.125) 0%,
     rgba(var(--node-rgb), 0.052) 38%,
     rgba(var(--node-rgb), 0.018) 58%,
@@ -48,7 +48,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 
 .grammar-node[data-light-side="right"] .surface-rest-light {
   background: radial-gradient(
-    ellipse at 100% 50%,
+    ellipse at 100% var(--light-anchor, 50%),
     rgba(var(--node-rgb), 0.125) 0%,
     rgba(var(--node-rgb), 0.052) 38%,
     rgba(var(--node-rgb), 0.018) 58%,
@@ -58,7 +58,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 
 .grammar-node[data-light-side="top"] .surface-rest-light {
   background: radial-gradient(
-    ellipse at 50% 0%,
+    ellipse at var(--light-anchor, 50%) 0%,
     rgba(var(--node-rgb), 0.125) 0%,
     rgba(var(--node-rgb), 0.052) 38%,
     rgba(var(--node-rgb), 0.018) 58%,
@@ -68,7 +68,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 
 .grammar-node[data-light-side="bottom"] .surface-rest-light {
   background: radial-gradient(
-    ellipse at 50% 100%,
+    ellipse at var(--light-anchor, 50%) 100%,
     rgba(var(--node-rgb), 0.125) 0%,
     rgba(var(--node-rgb), 0.052) 38%,
     rgba(var(--node-rgb), 0.018) 58%,
@@ -76,11 +76,11 @@ html[data-inbox-light="reduced"] .surface-rest-light {
   );
 }
 
-/* Accepted H4 left-side near-node light, plus mirrored/rotated equivalents. */
+/* Accepted H4 near-node light, mirrored/rotated and translated to the signature anchor. */
 .grammar-node[data-light-side="left"] .rest-light {
   left: -30px;
   right: auto;
-  top: -24px;
+  top: calc(var(--light-anchor, 50%) - 50% - 24px);
   bottom: auto;
   width: 126px;
   height: calc(100% + 48px);
@@ -95,7 +95,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 .grammar-node[data-light-side="right"] .rest-light {
   left: auto;
   right: -30px;
-  top: -24px;
+  top: calc(var(--light-anchor, 50%) - 50% - 24px);
   bottom: auto;
   width: 126px;
   height: calc(100% + 48px);
@@ -108,7 +108,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 }
 
 .grammar-node[data-light-side="top"] .rest-light {
-  left: -24px;
+  left: calc(var(--light-anchor, 50%) - 50% - 24px);
   right: auto;
   top: -30px;
   bottom: auto;
@@ -123,7 +123,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 }
 
 .grammar-node[data-light-side="bottom"] .rest-light {
-  left: -24px;
+  left: calc(var(--light-anchor, 50%) - 50% - 24px);
   right: auto;
   top: auto;
   bottom: -30px;
@@ -137,11 +137,11 @@ html[data-inbox-light="reduced"] .surface-rest-light {
   );
 }
 
-/* Accepted outward H4 spill, mirrored/rotated with the signature side. */
+/* Accepted outward H4 spill, mirrored/rotated and centered on the signature anchor. */
 .grammar-node[data-light-side="left"] .rest-spill {
   left: -76px;
   right: auto;
-  top: 50%;
+  top: var(--light-anchor, 50%);
   bottom: auto;
   width: 112px;
   height: 116px;
@@ -158,7 +158,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 .grammar-node[data-light-side="right"] .rest-spill {
   left: auto;
   right: -76px;
-  top: 50%;
+  top: var(--light-anchor, 50%);
   bottom: auto;
   width: 112px;
   height: 116px;
@@ -173,7 +173,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 }
 
 .grammar-node[data-light-side="top"] .rest-spill {
-  left: 50%;
+  left: var(--light-anchor, 50%);
   right: auto;
   top: -76px;
   bottom: auto;
@@ -190,7 +190,7 @@ html[data-inbox-light="reduced"] .surface-rest-light {
 }
 
 .grammar-node[data-light-side="bottom"] .rest-spill {
-  left: 50%;
+  left: var(--light-anchor, 50%);
   right: auto;
   top: auto;
   bottom: -76px;
