@@ -27,6 +27,7 @@
       "docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md",
       "docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md",
       "docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md",
+      "docs/research/051_user_configurable_cockpit_visual_grammar_and_semantic_invariants.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
       "docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md",
       "docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md",
@@ -45,6 +46,7 @@
       "docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md",
       "docs/checkpoints/222_focused_work_unit_grammar_convergence_review_opened.md",
       "docs/checkpoints/223_scientific_markers_selected_material_and_validation_shape_refined.md",
+      "docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -85,21 +87,15 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 and 038 from completed Phase B comparative review",
-      "Research 046 work-unit grammar experiment",
-      "Research 047 H4 grammar-control correction, in-box-light comparison, and signature-position coupling",
-      "Research 048 Claude work-unit grammar synthesis and expanded browser round",
-      "Research 049 focused convergence and true-shape experiment",
-      "Research 050 scientific marker selection and material/shape refinement",
-      "human rejection of letters, G2 and S3",
-      "human selection of scientific markers for the current grammar direction",
-      "human selection of Reduced in-box light as preferred working control",
-      "human preference for M1 material and Evaluation-like micro character",
-      "human request to strengthen Investigation, Validation and Model micro-material visibility",
-      "human rejection of the aggressive Validation raised-tab shape and requirement for a right-only subtle top step",
+      "Research 037 through 051 Phase-C Cockpit design evidence",
+      "scientific marker vocabulary selected for current work-unit grammar direction",
+      "Reduced in-box light selected as preferred working control",
+      "refined M1 material family and subtle true-shape family",
+      "human product decision that safe visual mechanisms should coexist as user-configurable appearance choices",
+      "new configurable browser prototype with shape and micro-design controls",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has now moved beyond glyph comparison: the scientific marker family is selected for the current work-unit grammar direction, G1 is retired from active focused presentation, Reduced remains the preferred working control, M1 material remains positive but its green/blue/red treatments were selectively strengthened, and the Validation true-shape treatment was revised to preserve the upper-left corner and use only a subtle right-side top step. Research 050 and Checkpoint 223 preserve this state. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review selected scientific markers, Reduced light, refined micro-materials and subtle shapes. The latest product-owner decision reframes compatible visual mechanisms as a configurable presentation profile rather than mutually exclusive global winners. Research 051 and Checkpoint 224 preserve this distinction, and a live configurator at exact browser target ac16df1bbcd456b63c042c28e52516679139bf32 now awaits human review. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -110,15 +106,16 @@
       "PHASE_C_WORK_UNIT_GRAMMAR_CLAUDE_IDEATION_RECEIVED",
       "PHASE_C_WORK_UNIT_GRAMMAR_EXPANDED_BROWSER_REVIEW",
       "PHASE_C_WORK_UNIT_GRAMMAR_FOCUSED_CONVERGENCE_REVIEW",
-      "PHASE_C_SCIENTIFIC_MARKER_SELECTED_MATERIAL_SHAPE_REFINED"
+      "PHASE_C_SCIENTIFIC_MARKER_SELECTED_MATERIAL_SHAPE_REFINED",
+      "PHASE_C_USER_CONFIGURABLE_VISUAL_GRAMMAR_PROTOTYPE"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-scientific-marker-selected-material-shape-refined",
+    "transition_id": "mc0004-user-configurable-visual-grammar-prototype-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "Human review selected the scientific circle/square/triangle/diamond/plus marker vocabulary, kept Reduced as the preferred in-box light control, retained the M1 micro-material direction while requesting stronger Investigation/Validation/Model visibility, and required the Validation shape to preserve its upper-left corner and use only a subtle right-side top step. ChatGPT implemented those refinements at exact browser target 6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a. Human browser verification is now the active gate.",
-    "repository_head": "6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a"
+    "reason": "The project owner decided that positively reviewed Cockpit visual mechanisms should coexist as user-configurable appearance options. ChatGPT separated semantic invariants from presentation preferences, preserved the principle in Research 051, and implemented a live configurable browser proof supporting normal versus subtle shapes and none versus micro-material versus micro-light surface detail. Human browser review is now the active gate before any product-level promotion or production persistence design.",
+    "repository_head": "ac16df1bbcd456b63c042c28e52516679139bf32"
   }
 }
