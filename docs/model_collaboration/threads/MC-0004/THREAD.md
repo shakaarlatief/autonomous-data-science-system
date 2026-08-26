@@ -11,7 +11,7 @@
 
 ## Purpose
 
-Run a broad next-generation Project Cockpit design exploration while preserving Specification 008 unless new evidence justifies revision. Phase C uses browser-rendered experiments, selective external references, continuous human review and selective cross-model contributions before any production visual replacement is authorized.
+Run a broad next-generation Project Cockpit design exploration while preserving Specification 008 unless new evidence justifies revision. Phase C uses browser-rendered experiments, continuous human review, selective external references and selective cross-model contributions before production visual replacement is authorized.
 
 ## Collaboration history
 
@@ -37,19 +37,6 @@ Phase C divergent work-unit ideation
 
 No Claude action is currently pending.
 
-## Phase-C method
-
-```text
-bounded design question
--> browser variants
--> human comparison
--> preserve prefer/reject/combine evidence
--> selective refinement / external research / model contribution
--> integrate only mechanisms that survive
-```
-
-Generated-image UI concepts are not part of the preferred workflow.
-
 ## Held controls
 
 ```text
@@ -63,51 +50,21 @@ Reduced in-box resting light
     SELECTED preferred working baseline
 ```
 
-Scientific category-marker mapping is now selected for the current work-unit grammar direction:
+Current scientific category-marker mapping:
 
 ```text
-Question        circle
-Investigation   square
-Validation      triangle
-Model           diamond
-Evaluation      plus
+Question / Blocker        circle
+Investigation             square
+Validation / Analysis     triangle
+Model Work                diamond
+Evaluation                plus
 ```
 
-## Work-unit grammar evidence
+## Work-unit grammar result
 
-### First round
+The first W1-W4 round was useful but too narrow. Claude then proposed C1-C8 and Research 048 added C9. Expanded and focused browser rounds produced decisive human evidence.
 
-```text
-W1 Unified Precision Frame
-W2 Edge-Signature Grammar
-W3 Structural Silhouette Family
-W4 Hybrid Semantic Instrument
-```
-
-Useful but too narrow for convergence.
-
-### Claude expansion
-
-```text
-C1 Instrument Glyph Family
-C2 Structural Topology Family
-C3 Material Language Family
-C4 Port Grammar
-C5 Internal Layout Grammar
-C6 Aspect & Proportion Family
-C7 Compact Marker Rail
-C8 Scientific Marker Family
-```
-
-Research 048 added:
-
-```text
-C9 Inner Instrument Architecture
-```
-
-### Human eliminations / selections
-
-Rejected or retired from active review:
+Rejected or retired:
 
 ```text
 bare Q / I / V / M / E letters
@@ -116,62 +73,23 @@ S3 Inner Instrument Architecture
 G1 Instrument Glyph comparator after scientific-marker selection
 ```
 
-Positive visual mechanisms:
+Positive mechanisms:
 
 ```text
-scientific marker family
+scientific markers
 Reduced in-box light
 M1 micro-material family
-M1 Evaluation luminous treatment
+Evaluation-like micro-light character
 subtle true-shape family
 ```
 
-Refinements preserved in Research 050:
+Research 050 preserved selective M1 visibility strengthening and the refined right-only Validation top step.
 
-```text
-Investigation dots strengthened
-Validation lines strengthened
-Model grid strengthened
-Validation shape changed to a subtle right-only top step
-upper-left reading entry preserved
-```
+## Configurable appearance result
 
-## New product direction: visual mechanisms can coexist
+The project owner then identified that semantically compatible attractive mechanisms should coexist as user-selectable appearance dimensions.
 
-The project owner identified that attractive, semantically compatible visual mechanisms do not need to compete for one universal mandatory appearance.
-
-Product intent:
-
-```text
-user can personalize the Cockpit
-normal boxes and subtle shapes can coexist
-micro design can be enabled or disabled
-approved visual mechanisms can combine independently
-```
-
-Research 051 separates:
-
-```text
-SEMANTIC PROJECT MODEL
-    governed meaning
-
-PRESENTATION PROFILE
-    safe appearance preference
-```
-
-Semantic invariants in the current proof:
-
-```text
-scientific marker mapping fixed
-Reduced in-box baseline held
-category/status/runtime/importance meaning unchanged
-accessibility constraints authoritative
-appearance cannot masquerade as semantic state
-```
-
-## Current browser proof
-
-Route:
+Browser proof:
 
 ```text
 frontend/design-lab/work-unit-grammar-customizable.html
@@ -179,19 +97,31 @@ frontend/design-lab/work-unit-grammar-customizable.css
 frontend/design-lab/work-unit-grammar-customizable.js
 ```
 
-Local URL:
+Human review judged the configurator very good, with one remaining implementation defect in relation-line attachment.
+
+That defect was corrected at:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-customizable.html
+c1f996f6500672641de8e00780d5a4949c5dcb28
 ```
 
-Exact browser implementation target:
+Connector endpoints now derive from rendered `.node-surface` geometry and update when view, shape or scene geometry changes.
+
+The configurable appearance principle is promoted in:
 
 ```text
-ac16df1bbcd456b63c042c28e52516679139bf32
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Independent configuration axes:
+Promoted principle:
+
+```text
+ADS owns semantic meaning
++
+user controls approved non-semantic appearance dimensions
+```
+
+Current proven appearance dimensions:
 
 ```text
 Box shape
@@ -204,53 +134,87 @@ Micro design
     Micro light
 ```
 
-Convenience presets:
+Production preference persistence remains unfrozen.
+
+## Current Slice 02C: connector / Port Grammar
+
+The next dependency-aligned question is:
+
+> How should generic project relationships meet work units and remain legible without turning the Cockpit into graph noise?
+
+This activates Claude C4 Port Grammar at the intended dependency boundary.
+
+Research:
 
 ```text
-Clean        normal + none
-Structured   subtle shapes + none
-Rich         subtle shapes + micro material
+docs/research/053_connector_and_port_visual_grammar_experiment.md
 ```
 
-The design-lab prototype persists shape/surface preference through browser-local storage only. Production preference storage remains unselected.
-
-## Persistence architecture candidate
-
-A plausible later production hierarchy is:
+Browser route:
 
 ```text
-user appearance profile
-    global default
-
-optional project appearance override
-    project-specific preference
-
-semantic project state
-    independent
+frontend/design-lab/connector-grammar.html
+frontend/design-lab/connector-grammar.css
+frontend/design-lab/connector-grammar.js
 ```
 
-This is not yet promoted.
+Local URL:
 
-## Dependency-bound ideas preserved
+```text
+http://localhost:5173/design-lab/connector-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+e3394447eeae721eab9bd66d347d0d327dbe0485
+```
+
+Candidates:
+
+```text
+K0  Clean Curve
+K1  Micro Dots
+K2  Frame Sockets
+K3  Target Cue
+K4  Hover Ports
+```
+
+Held controls:
+
+```text
+G4 world
+scientific markers
+Reduced in-box light
+accepted H4 hover/world behavior
+Subtle shapes
+Micro material
+same node geometry and relation fixture
+```
+
+All K0-K4 candidates share dynamic rendered-edge connector geometry.
+
+The current slice deliberately does not assign final semantic relation classes yet.
+
+## Dependency-bound ideas
 
 ```text
 C4 Port Grammar
-    connector-semantics slice
+    ACTIVE now in connector slice
 
 C5 Internal Layout Grammar
-    semantic zoom / information-density slice
+    remains deferred to semantic zoom / information-density slice
 ```
 
 ## Current gate
 
 ```text
-human reviews the configurable appearance prototype
--> verify combinations remain coherent
--> verify semantic markers/meaning stay stable
--> if accepted, run promotion audit for a durable configurable-Cockpit principle
--> only then design production preference persistence
+human compares K0-K4
+-> prefer / reject / combine generic connector mechanisms
+-> preserve a generic connector baseline
+-> only then explore semantic relation classes
 ```
 
 ## Production boundary
 
-No production `/cockpit` replacement, settings persistence architecture, graph/canvas dependency, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final connector vocabulary, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
