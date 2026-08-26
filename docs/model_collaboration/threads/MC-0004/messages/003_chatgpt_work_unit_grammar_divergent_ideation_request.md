@@ -9,7 +9,7 @@
 **Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-08`  
 **Conversation title:** `08 - Project Cockpit Design Exploration`  
-**Exact repository target for review:** `03d3997498192544ce92c97c2a49e839b3a95af4`  
+**Exact repository target for review:** `304db34d6482320b317db97277148bc129d07372`  
 **Classification:** `COMPARATIVE_ONLY / DIVERGENT_IDEATION`  
 **Purpose:** Ask Claude to expand the work-unit visual-grammar design space before the human project owner selects or combines W1-W4. This is intentionally not a blind review. Claude may inspect all current candidate material.
 
@@ -19,20 +19,30 @@
 
 The human project owner positively reviewed the first work-unit category/silhouette browser experiment and explicitly said the direction is good, while also observing that there are likely many more possibilities worth exploring before selecting a grammar.
 
-During that review, three browser-design issues were identified and corrected before Claude should inspect the target:
+During that review, browser-design issues were identified and corrected before Claude should inspect the target:
 
 ```text
 1. Project Scene and Category strip could render together
 2. grammar DOM accidentally suppressed much of the accepted H4 in-box resting light
 3. resting light stayed left-biased even when a category signature bar moved to top/bottom/right
+4. after side-awareness was added, partial top/bottom signatures still produced edge-centered light instead of light aligned to the actual bar position
 ```
 
-The corrected target also preserves the accidentally quieter in-box appearance as an **intentional explicit comparison** rather than discarding it:
+The corrected target preserves the accidentally quieter in-box appearance as an **intentional explicit comparison** rather than discarding it:
 
 ```text
 In-box light
     H4 baseline   default restored control
     Reduced       intentional alternative
+```
+
+The corrected target also applies the structural rule:
+
+```text
+signature-anchored resting light follows
+    edge
+    +
+    position along that edge
 ```
 
 The human project owner specifically requested Claude for additional ideas and inspiration.
@@ -75,7 +85,7 @@ G4 Adaptive Hybrid world is provisionally settled
 H4 generic rest/hover interaction lighting is sufficiently settled
 H4 baseline is the default in-box resting-light control
 Reduced in-box light is an intentional secondary comparison only
-signature-anchored resting light follows the visible signature edge
+signature-anchored resting light follows the visible signature edge and its along-edge position
 Dark mode is the current design baseline
 Production /cockpit remains untouched
 Category must remain conceptually distinct from project disposition, runtime state and importance
@@ -181,8 +191,10 @@ If this comparison suggests a useful design principle, comment on it. Do not let
 Also preserve the structural rule:
 
 ```text
-if a proposed visible category signature/accent edge moves,
-signature-anchored resting light should move with it
+if a proposed visible category signature/accent moves,
+signature-anchored resting light should follow both:
+    its edge
+    and its position along that edge
 ```
 
 unless you explicitly argue for a different relationship and explain why.
