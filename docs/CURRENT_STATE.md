@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 204  
+**Checkpoint:** 205  
 **Date:** 2026-08-26  
-**Active development branch:** `v1-multimodel-development-collaboration`  
-**Active PR:** #76  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`  
-**Development stage:** Governed provider-neutral multi-model development has passed its architecture, implementation, and deferred-catch-up pressure tests and is canonically promoted on the active branch through Development Method v0.5, D-034, accepted Specification 024, and Checkpoint 204. The remaining boundary is final PR #76 integration/audit. Permanent source-vault deployment remains preserved and paused.  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
+**Development stage:** Governed provider-neutral multi-model development is accepted and promoted. The active development boundary has returned to permanent user-controlled Source Universe deployment before Course 2.  
 **Latest specification:** Specification 024 is accepted with outcome `COLLABORATION_STATE_GUARD_ACCEPTED`.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -23,7 +23,7 @@ Conversation title       06 - Methodological Knowledge Universe Construction
 Primary collaborator     ChatGPT
 ```
 
-Current Claude collaboration session:
+Current known Claude collaboration session:
 
 ```text
 Interaction environment  Claude
@@ -36,72 +36,68 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-# Current active boundary: final PR #76 integration audit
+# Current active boundary: permanent user-controlled source-vault bootstrap
 
-Current route:
+Primary route:
 
 ```text
-docs/checkpoints/204_multimodel_collaboration_method_promoted.md
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
-docs/DECISIONS.md, D-034
-docs/model_collaboration/README.md
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
-docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
-docs/model_collaboration/REVIEW_INBOX.md
-docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 ```
 
-Current model-collaboration status:
+Specification 023 remains:
+
+```text
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+No permanent source-vault operation has yet been executed on the user's real durable storage.
+
+Course 2 remains blocked until the permanent compare, reviewed ingestion, integrity audit, independent backup, clean restore, and restored audit all succeed.
+
+---
+
+## Exact promoted multi-model boundary
+
+PR #76 merged into `v1-frontend-spike` at:
+
+```text
+ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+```
+
+The final pre-merge candidate passed:
+
+```text
+Checkpoint metadata                    PASS
+Model collaboration state              PASS
+Current routing consistency             PASS
+V1 source universe substrate            PASS
+V1 reasoning context value              PASS
+V1 autonomous live experiment launcher  PASS
+V1 blocking calibration diagnostic      PASS
+V1 disposition semantics diagnostic     PASS
+```
+
+The multi-model method is now accepted infrastructure rather than the active development question.
+
+Current collaboration status:
 
 ```text
 MC-0001   RESOLVED / CLOSED
 MC-0002   RESOLVED / CLOSED
 MC-0003   RESOLVED / CLOSED
 review inbox pending obligations   NONE
+GitHub Issue #78                   CLOSED / completed
+GitHub Issue #79                   CLOSED / completed
 ```
 
 No further Claude review is currently owed.
-
----
-
-## Specification 024 accepted
-
-Prospective freeze:
-
-```text
-9da382d4011ff112b75dec9c456143d798336336
-```
-
-Exact corrected green pre-review implementation:
-
-```text
-a9efc43d7c441c8283d2cd954cc6fa1abd021689
-```
-
-Dedicated validation:
-
-```text
-workflow run 32902050014
-Ubuntu        PASS
-Windows       PASS
-26 focused tests per platform
-```
-
-Claude direct review:
-
-```text
-commit 9cf393f74e02e167d2f80c0381742ebd7e0c318e
-MC-G01 through MC-G16 satisfied
-```
-
-Final outcome:
-
-```text
-COLLABORATION_STATE_GUARD_ACCEPTED
-```
-
-Known non-blocking V1 limitation: target-vs-secondary write overlap is guarded, but secondary-vs-secondary overlap is not yet checked. Reopen only if real collaboration uses multiple simultaneous secondary writers.
 
 ---
 
@@ -125,93 +121,79 @@ known review contamination is disclosed
 provider-local interaction session identities
 disagreement classified and routed rather than averaged away
 human arbitration reserved for genuine project-intent / consequential choices
+deferred review preserves exact targets and explicit gates
 ```
 
-Canonical protocol:
+Canonical route:
 
 ```text
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
 docs/model_collaboration/README.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
+
+Unattended scheduled review and API orchestration remain deferred.
 
 ---
 
-## Deferred review/catch-up is accepted
+## PR #75 state does not mean deployment completed
 
-Core rule:
-
-```text
-collaborator unavailable
-    !=
-project globally blocked
-```
-
-unless the affected task's explicit review gate has been reached.
-
-MC-0003 pressure-tested this with two simultaneous Claude obligations. Claude later processed MC-0002 and MC-0003 in the inbox-defined order while preserving separate exact target heads and separate dispositions.
-
-Current rule:
+GitHub now reports PR #75 as closed/merged because its preserved planning commit:
 
 ```text
-REQUIRED review -> must name a real gate
-OPTIONAL review -> may use NONE
+d9437a8ca07a444400a5eb44ac2c89e8108c91c2
 ```
 
-The exact reviewed Git target is immutable. Review of ancestor X does not automatically cover descendant Y.
+is an ancestor of the promoted PR #76 merge.
 
-Known future mechanization triggers:
+This means the runbook and Checkpoint 198 were preserved in promoted history. It does **not** mean the real permanent source-vault sequence ran.
+
+Still unexecuted:
 
 ```text
-cross-thread dependency metadata / downstream impact discovery
-generated REVIEW_INBOX or inbox-state validation if drift occurs
-secondary-vs-secondary overlap if simultaneous secondary writers occur
-machine-readable review-obligation/gate fields if backlog scale warrants them
+choose/verify private permanent locations
+compare original VU Machine Learning folder to prospective fingerprints
+inspect every MATCH / DIFFERENT / MISSING / ADDITIONAL result
+adjust the reviewed manifest prospectively only if justified
+ingest into permanent registry/vault
+audit working store
+create independent verified backup
+perform clean restore
+audit restored store
+preserve public-safe evidence
 ```
 
-No Specification 025 is opened.
+No private path, source binary, private registry snapshot, or backup payload belongs in public Git.
 
 ---
 
-## Scheduled review and API orchestration remain deferred
+## Required private environment inputs
 
-The user and Claude explored scheduled/unattended review. It is not part of the current accepted method.
-
-Reasons:
+The permanent deployment requires real locations for:
 
 ```text
-no extra weekly subscription capacity
-unattended write/concurrency risk
-limited ability to clarify mid-run
-possible unsupervised usage consumption
-manual catch-up triggering is already low-friction
+ORIGINAL_SOURCE_ROOT
+SOURCE_REGISTRY_DATABASE
+SOURCE_VAULT_ROOT
+INDEPENDENT_BACKUP_ROOT
+CLEAN_RESTORE_ROOT
 ```
 
-API orchestration also remains deferred because it introduces separate metered provider usage, context duplication, credentials, retries, and orchestration infrastructure without current evidence that repository-mediated collaboration is insufficient.
-
----
-
-# Source Universe state remains accepted and operationally paused
-
-Specification 023 remains:
+The immediate user/environment input needed before execution is:
 
 ```text
-SOURCE_SUBSTRATE_ACCEPTED
+1. actual Windows path to the original VU Machine Learning source folder
+2. an actually independent backup storage location
 ```
 
-Promoted source implementation:
+ADS must not invent these paths.
 
-```text
-v1-frontend-spike
-8215718db3e44f000cc6ed53d6a051522d429dbd
-```
-
-Permanent deployment remains preserved in:
-
-```text
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-```
-
-No permanent source-vault operation is running. Course 2 remains blocked until the user-controlled compare, reviewed ingestion, audit, independent backup, clean restore, and restored audit are completed.
+Once those are known, the permanent registry/vault/restore layout can be selected and the runbook can proceed in frozen order.
 
 ---
 
@@ -258,13 +240,18 @@ D-034  governed provider-neutral multi-model development collaboration
 ## Exact continuation
 
 ```text
-1. complete final PR #76 structural/base audit
-2. ensure checkpoint metadata and collaboration-state workflows pass on the final head
-3. ensure inherited relevant V1 checks remain green
-4. integrate PR #76 into v1-frontend-spike
-5. create a post-merge routing checkpoint that records the exact promoted SHA
-6. keep the permanent source-vault deployment paused until that post-merge reconciliation is complete
-7. then resume the source-vault bootstrap before Course 2
+1. obtain/confirm ORIGINAL_SOURCE_ROOT
+2. obtain/confirm a genuinely independent backup location
+3. choose the private permanent registry/vault/clean-restore layout
+4. compare the original ML folder against preserved prospective fingerprints
+5. inspect every comparison class before any manifest adjustment
+6. execute reviewed ingestion
+7. audit working-store integrity
+8. create independent verified backup
+9. perform clean restore and restored audit
+10. preserve public-safe deployment evidence
+11. admit Course 2 only after recovery integrity is proven
+12. continue serious methodological knowledge-universe construction
 ```
 
 ## Minimum reading for continuation
@@ -275,13 +262,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
-docs/DECISIONS.md
 docs/model_collaboration/README.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
-
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```

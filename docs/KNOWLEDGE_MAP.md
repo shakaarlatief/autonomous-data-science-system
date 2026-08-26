@@ -3,10 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 204  
-**Active development branch:** `v1-multimodel-development-collaboration`  
-**Active PR:** #76  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`
+**Current checkpoint:** 205  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`
 
 ## Start here
 
@@ -24,26 +24,88 @@ docs/CONTINUITY.md                provider-neutral continuity procedure
 docs/MAJOR_CHANGES.md             selective structural history
 ```
 
-Current branch relationship:
+Current route:
 
 ```text
-promoted integration             v1-frontend-spike @ 8215718db3e44f000cc6ed53d6a051522d429dbd
-preserved paused source work     v1-source-vault-bootstrap / PR #75
-active promotion branch          v1-multimodel-development-collaboration / PR #76
-current checkpoint               204
+promoted integration             v1-frontend-spike @ ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+active development branch        v1-frontend-spike
+active PR                        none
+current checkpoint               205
 latest specification             Specification 024
 Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
+current operational boundary     permanent user-controlled source-vault bootstrap
 ```
 
 ---
 
-# Current stage: governed multi-model method final integration
+# Current stage: permanent Source Universe deployment before Course 2
+
+Primary route:
+
+```text
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+```
+
+Specification 023 result:
+
+```text
+SU-G01 through SU-G23   PASS
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+Still required on real user-controlled storage:
+
+```text
+choose/verify private locations
+compare original VU Machine Learning folder to prospective fingerprints
+review MATCH / DIFFERENT / MISSING / ADDITIONAL outcomes
+ingest reviewed corpus into permanent registry/vault
+audit working store
+create independent verified backup
+perform clean restore
+audit restored store
+preserve public-safe deployment evidence
+```
+
+Course 2 remains blocked until that sequence succeeds.
+
+Required environment inputs before execution:
+
+```text
+ORIGINAL_SOURCE_ROOT
+INDEPENDENT_BACKUP_ROOT
+```
+
+The permanent registry/vault/clean-restore layout can then be chosen without committing private paths.
+
+Important GitHub interpretation:
+
+```text
+PR #75 is shown closed/merged because its planning commit d9437a8ca07a444400a5eb44ac2c89e8108c91c2
+is an ancestor of the promoted PR #76 merge.
+
+That means the planning artifacts were promoted.
+It does not mean permanent source-vault deployment ran.
+```
+
+---
+
+# Governed multi-model development is accepted infrastructure
 
 Primary route:
 
 ```text
 docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 docs/DECISIONS.md, D-034
@@ -61,13 +123,11 @@ MC-0001   CLOSED
 MC-0002   CLOSED
 MC-0003   CLOSED
 pending review inbox   NONE
+GitHub Issue #78       CLOSED / completed
+GitHub Issue #79       CLOSED / completed
 ```
 
-No additional Claude review is owed before PR #76 integration.
-
----
-
-# D-034 / Development Method v0.5
+No additional Claude review is currently owed.
 
 Accepted collaboration principles:
 
@@ -81,8 +141,9 @@ one target-state writer at a time
 explicit secondary write surfaces
 machine-readable collaboration-state coherence guard
 transport != authority
-append-only relied-upon review provenance
+durable numbered collaboration provenance
 proportional independent/comparative review
+known contamination disclosure
 explicit disagreement classification/routing
 provider-local interaction session identities
 human project-intent authority without routine transport burden
@@ -119,6 +180,7 @@ Windows                         PASS
 focused tests                   26 PASS per platform
 Claude review commit            9cf393f74e02e167d2f80c0381742ebd7e0c318e
 final outcome                   COLLABORATION_STATE_GUARD_ACCEPTED
+promotion merge                 ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 ```
 
 The mechanism is a coherence guard, not authenticated model identity or a distributed mutex.
@@ -220,35 +282,6 @@ Checkpoint provenance:
 ```
 
 Optional model/configuration/effort/surface metadata is preserved only where materially useful and should not be guessed.
-
----
-
-# Source Universe substrate and paused permanent deployment
-
-Accepted route:
-
-```text
-docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
-docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
-docs/specifications/023_v1_source_universe_substrate.md
-docs/checkpoints/195_specification_023_source_substrate_contract_frozen.md
-docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
-docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
-```
-
-Specification 023 result:
-
-```text
-SU-G01 through SU-G23   PASS
-SOURCE_SUBSTRATE_ACCEPTED
-```
-
-The accepted source implementation is promoted at `8215718db3e44f000cc6ed53d6a051522d429dbd`.
-
-Permanent Source Registry, private Source Vault, independent backup, and clean restore still need to be instantiated on user-controlled storage before Course 2 is admitted.
 
 ---
 
@@ -376,11 +409,13 @@ docs/MAJOR_CHANGES.md
 # Exact current continuation
 
 ```text
-A. complete final PR #76 structural/base audit
-B. ensure all applicable workflows are green on the final head
-C. integrate accepted multi-model development into v1-frontend-spike
-D. create a post-merge routing checkpoint with the exact promoted SHA
-E. preserve permanent source-vault work as paused through that reconciliation
-F. resume permanent source-vault deployment before Course 2
-G. after source operationalization, continue serious methodological knowledge-universe construction
+A. obtain/confirm the actual ORIGINAL_SOURCE_ROOT
+B. obtain/confirm a genuinely independent backup location
+C. choose permanent private registry/vault/clean-restore locations
+D. compare the original ML folder against preserved prospective fingerprints
+E. inspect every comparison class before any manifest adjustment
+F. execute reviewed ingestion, audit, independent backup, clean restore, and restored audit
+G. preserve only public-safe deployment evidence in Git
+H. admit Course 2 only after permanent recovery integrity is proven
+I. continue serious methodological knowledge-universe construction
 ```

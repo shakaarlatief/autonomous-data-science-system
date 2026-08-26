@@ -16,33 +16,38 @@ Explicit machinery must earn its complexity empirically.
 
 ## Current development stage
 
-Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe and the supporting professional substrate needed to use it safely.
+Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe and the professional substrate needed to use it safely.
 
-The Source Universe substrate is accepted and promoted. The permanent user-controlled source-vault bootstrap is preserved but operationally paused.
-
-The major Level-2 collaboration-method work has now passed its review and promotion audit on draft PR #76:
+The governed multi-model development method is now promoted. PR #76 merged into `v1-frontend-spike` at:
 
 ```text
-checkpoint            204
-active branch         v1-multimodel-development-collaboration
-active PR             #76
-promoted V1 head      8215718db3e44f000cc6ed53d6a051522d429dbd
+ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+```
+
+Post-merge routing is reconciled at Checkpoint 205:
+
+```text
+checkpoint            205
+active branch         v1-frontend-spike
+active PR             none
+promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 specification outcome COLLABORATION_STATE_GUARD_ACCEPTED
 source outcome         SOURCE_SUBSTRATE_ACCEPTED
 latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary       final PR #76 integration audit;
-                       permanent source-vault deployment remains paused
+current boundary       permanent user-controlled source-vault bootstrap
 ```
 
 No scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inferred from Specification 022.
+
+The next operational task is no longer multi-model-method design. It is to instantiate the already accepted Source Universe substrate on durable user-controlled storage before Course 2 is admitted.
 
 ---
 
 ## Governed multi-model development
 
-Development Method v0.5 now accepts provider-neutral governed collaboration among ChatGPT, Claude, the human project owner, and future collaborators.
+Development Method v0.5 accepts provider-neutral governed collaboration among ChatGPT, Claude, the human project owner, and future collaborators.
 
 Canonical route:
 
@@ -55,6 +60,7 @@ docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 docs/model_collaboration/REVIEW_INBOX.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
 docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
 docs/DECISIONS.md, D-034
 ```
 
@@ -77,80 +83,9 @@ provider-local interaction sessions use IDs such as chatgpt-06 / claude-01
 human arbitration is reserved for genuine project-intent / consequential choices
 ```
 
-The architecture was pressure-tested rather than accepted from one model's proposal:
+The architecture was pressure-tested through MC-0001, MC-0002, and MC-0003. All three threads are closed and `docs/model_collaboration/REVIEW_INBOX.md` currently contains no pending obligations.
 
-```text
-MC-0001
-    architecture counter-design / comparative challenge
-    -> exposed candidate-content leakage and global-writer over-coarseness
-
-MC-0002
-    direct implementation review of Specification 024
-    -> MC-G01 through MC-G16 satisfied
-    -> COLLABORATION_STATE_GUARD_ACCEPTED
-
-MC-0003
-    deferred review/catch-up pressure test
-    -> two Claude obligations coexisted safely
-    -> Claude later processed both in priority order with separate exact targets
-```
-
----
-
-## Deferred review and catch-up
-
-A collaborator being temporarily unavailable does not globally block ADS unless a specific review gate has been reached.
-
-The accepted rule is:
-
-```text
-collaborator unavailable
-    !=
-project globally blocked
-```
-
-Intended review must not silently become SOLO work. Deferred review preserves an exact immutable target, an explicit review requirement, and the boundary before which the review must occur.
-
-Current convenience route:
-
-```text
-docs/model_collaboration/REVIEW_INBOX.md
-```
-
-When Claude has pending obligations, the intentionally small manual trigger is:
-
-```text
-Check the repository and docs/model_collaboration/REVIEW_INBOX.md, then proceed with the pending Claude reviews in order.
-```
-
-The inbox is not authority. Per-thread state, exact Git refs, review requests, and resolution artifacts govern.
-
-Unattended scheduled model review is deliberately deferred. API orchestration is also deferred. Neither is needed for the current repository-mediated workflow.
-
----
-
-## Interaction provenance
-
-Both ChatGPT and Claude use the human-facing project/workspace name:
-
-```text
-Autonomous Data Science System
-```
-
-Visible conversations use:
-
-```text
-NN - Main Topic / Stage
-```
-
-Each interaction environment has its own sequence, with repository session identities such as:
-
-```text
-chatgpt-06
-claude-01
-```
-
-Historical checkpoints through Checkpoint 203 retain their original ChatGPT-specific metadata. Checkpoint 204 begins the prospective provider-neutral checkpoint contract.
+Unattended scheduled model review and OpenAI/Anthropic API orchestration remain deliberately deferred.
 
 ---
 
@@ -188,14 +123,30 @@ SOURCE_SUBSTRATE_ACCEPTED
 
 Source binaries remain outside public Git.
 
-Permanent user-controlled deployment remains preserved by:
+Permanent user-controlled deployment is preserved by:
 
 ```text
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
-It is paused, not cancelled. Course 2 remains blocked until the permanent compare, reviewed ingestion, integrity audit, independent backup, clean restore, and restored audit are completed on user-controlled storage.
+GitHub now shows PR #75 as merged because its preserved planning commit is an ancestor of the promoted PR #76 merge. That repository state does **not** mean permanent deployment has run.
+
+The following still require real user-controlled private locations and real execution:
+
+```text
+original source folder comparison
+review of every mismatch class
+permanent registry/vault creation
+reviewed ingestion
+working integrity audit
+independent verified backup
+clean restore
+restored integrity audit
+safe deployment evidence
+```
+
+Course 2 remains blocked until that sequence succeeds.
 
 ---
 
@@ -279,7 +230,7 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 docs/model_collaboration/README.md
@@ -295,9 +246,13 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. finish the PR #76 integration audit and ensure all applicable checks are green
-2. promote the accepted multi-model method into v1-frontend-spike
-3. reconcile routing to the exact promoted commit
-4. preserve the source-vault bootstrap as paused
-5. resume permanent user-controlled source-vault deployment before Course 2
+1. obtain or confirm the actual ORIGINAL_SOURCE_ROOT for the VU Machine Learning corpus
+2. obtain or confirm a genuinely independent backup location
+3. choose the permanent private registry / vault / clean-restore layout
+4. compare the original corpus against the preserved prospective fingerprints
+5. review every MATCH / DIFFERENT / MISSING / ADDITIONAL result before any manifest change
+6. execute reviewed ingestion, audit, independent backup, clean restore, and restored audit
+7. preserve only public-safe deployment evidence in Git
+8. admit Course 2 only after permanent recovery integrity is proven
+9. continue serious methodological knowledge-universe construction
 ```

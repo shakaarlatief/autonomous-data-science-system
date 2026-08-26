@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 204,
-  "active_development_branch": "v1-multimodel-development-collaboration",
-  "active_pr": 76,
+  "current_checkpoint": 205,
+  "active_development_branch": "v1-frontend-spike",
+  "active_pr": null,
   "promoted_integration_branch": "v1-frontend-spike",
-  "promoted_integration_sha": "8215718db3e44f000cc6ed53d6a051522d429dbd",
+  "promoted_integration_sha": "ed5b60bdc882bed0799ce55228ce8187f9c55aa1",
   "latest_specification": "024",
   "latest_experiment_outcome": "INCOMPLETE",
-  "current_boundary": "multimodel-development-method-v0.5-promoted-on-pr76-final-audit-before-integration-source-vault-paused"
+  "current_boundary": "permanent-source-vault-bootstrap-resume-awaiting-user-controlled-private-locations-before-course2"
 }
