@@ -1,6 +1,6 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-08-26  
+**Date:** 2026-08-27  
 **Status:** Current human-readable routing view  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs, and resolution records remain authoritative.  
 **Purpose:** Let a returning collaborator discover pending review/catch-up obligations without relying on private chat memory.
@@ -37,10 +37,10 @@ Current browser route:
 http://localhost:5173/design-lab/connector-grammar.html
 ```
 
-Exact connector browser implementation target:
+Exact connector browser implementation target after endpoint-layer correction:
 
 ```text
-e3394447eeae721eab9bd66d347d0d327dbe0485
+08a33868b1c1d2cd90f11431e3f6b730603f28eb
 ```
 
 ## Configurable appearance result
@@ -106,6 +106,22 @@ Subtle shapes
 Micro material
 same project fixture and relation graph
 ```
+
+Latest layering correction:
+
+```text
+connector curves
+    remain behind work-unit bodies
+
+endpoint dots / sockets / hover ports
+    render above the work-unit perimeter
+    centered on the attachment edge
+
+K3 target cue
+    renders above the destination edge
+```
+
+Implementation uses a synchronized `connector-port-overlay` while the existing dynamic rendered-edge geometry remains authoritative.
 
 C4 Port Grammar is now active at its intended dependency boundary.
 
