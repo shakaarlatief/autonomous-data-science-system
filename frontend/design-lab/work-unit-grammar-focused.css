@@ -1,0 +1,346 @@
+body {
+  min-width: 1480px;
+}
+
+.focused-header {
+  grid-template-columns: minmax(760px, 1fr) auto;
+}
+
+.focused-controls {
+  align-items: end;
+}
+
+.focused-fixed-control {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(103, 218, 194, 0.28);
+  border-radius: 7px;
+  background: rgba(103, 218, 194, 0.07);
+  color: rgba(201, 236, 226, 0.84);
+  font-size: 8.6px;
+  font-weight: 760;
+  letter-spacing: 0.04em;
+}
+
+.focused-main {
+  padding-bottom: 62px;
+}
+
+.focused-intro {
+  margin-bottom: 14px;
+}
+
+.focused-decision-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.focused-decision-strip article {
+  display: grid;
+  gap: 5px;
+  min-height: 64px;
+  padding: 11px 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(12, 18, 27, 0.74);
+}
+
+.focused-decision-strip strong {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.focused-decision-strip span {
+  color: var(--text-soft);
+  font-size: 8.8px;
+  line-height: 1.45;
+}
+
+.decision-reject strong { color: rgba(233, 132, 122, 0.88); }
+.decision-prefer strong { color: rgba(103, 218, 194, 0.92); }
+.decision-secondary strong { color: rgba(173, 150, 255, 0.88); }
+.decision-open strong { color: rgba(142, 169, 255, 0.92); }
+
+.focused-family-controls {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.8fr) minmax(720px, 1.2fr);
+  gap: 24px;
+  align-items: end;
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: rgba(13, 19, 28, 0.78);
+}
+
+.focused-family-controls h2 {
+  margin: 4px 0 3px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.focused-family-controls p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.focused-family-segmented {
+  justify-self: end;
+}
+
+.focused-batch-legend {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.focused-batch-legend article {
+  display: grid;
+  gap: 4px;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  background: rgba(13, 19, 28, 0.67);
+}
+
+.focused-batch-legend strong {
+  color: rgba(232, 239, 249, 0.88);
+  font-size: 9.7px;
+  font-weight: 720;
+}
+
+.focused-batch-legend span {
+  color: var(--text-dim);
+  font-size: 8.5px;
+  line-height: 1.4;
+}
+
+.focused-grid {
+  align-items: start;
+}
+
+.focused-variant[data-filtered="true"] {
+  display: none;
+}
+
+.focused-variant .variant-header {
+  position: relative;
+}
+
+.focused-variant .variant-header::after {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  padding: 3px 6px;
+  border: 1px solid rgba(132, 151, 176, 0.23);
+  border-radius: 999px;
+  background: rgba(7, 11, 17, 0.34);
+  color: rgba(173, 188, 207, 0.62);
+  content: attr(data-batch-label);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.focused-variant .variant-header p {
+  max-width: 82%;
+}
+
+.focused-variant .category-glyph {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.focused-variant .category-glyph svg {
+  display: block;
+  width: 11px;
+  height: 11px;
+  overflow: visible;
+  color: rgb(var(--node-rgb));
+}
+
+.focused-variant .category-glyph svg * {
+  vector-effect: non-scaling-stroke;
+}
+
+.focused-scientific svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.45;
+}
+
+.focused-instrument svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.35;
+}
+
+.focused-material-layer,
+.focused-lumen-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* M1 material vocabulary, preserved because human review was strongly positive. */
+.has-material .focused-material-layer {
+  opacity: 0.18;
+}
+
+.has-material .category-question .focused-material-layer {
+  background: repeating-linear-gradient(135deg, rgba(var(--node-rgb), 0.20) 0 1px, transparent 1px 7px);
+}
+
+.has-material .category-investigation .focused-material-layer {
+  background-image: radial-gradient(circle, rgba(var(--node-rgb), 0.28) 0 0.7px, transparent 0.9px);
+  background-size: 7px 7px;
+}
+
+.has-material .category-validation .focused-material-layer {
+  background: repeating-linear-gradient(to bottom, rgba(var(--node-rgb), 0.16) 0 1px, transparent 1px 8px);
+}
+
+.has-material .category-model .focused-material-layer {
+  background-image:
+    linear-gradient(to right, rgba(var(--node-rgb), 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--node-rgb), 0.10) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.has-material .category-evaluation .focused-material-layer {
+  background: linear-gradient(110deg, transparent 0 32%, rgba(var(--node-rgb), 0.16) 45%, transparent 60% 100%);
+}
+
+/* Evaluation-inspired micro-lumen family: a small internal light event, not stronger global H4 rest light. */
+.has-lumen .focused-lumen-layer {
+  opacity: 0.58;
+  mix-blend-mode: screen;
+}
+
+.has-lumen .category-question .focused-lumen-layer {
+  background: linear-gradient(128deg, transparent 0 58%, rgba(var(--node-rgb), 0.09) 68%, transparent 78% 100%);
+}
+
+.has-lumen .category-investigation .focused-lumen-layer {
+  background:
+    radial-gradient(circle at 74% 34%, rgba(var(--node-rgb), 0.10), transparent 17%),
+    radial-gradient(circle at 84% 62%, rgba(var(--node-rgb), 0.055), transparent 14%);
+}
+
+.has-lumen .category-validation .focused-lumen-layer {
+  background: linear-gradient(to bottom, rgba(var(--node-rgb), 0.09), transparent 22% 100%);
+}
+
+.has-lumen .category-model .focused-lumen-layer {
+  background:
+    linear-gradient(to right, transparent 0 58%, rgba(var(--node-rgb), 0.055) 70%, transparent 84%),
+    linear-gradient(to bottom, transparent 0 62%, rgba(var(--node-rgb), 0.04) 72%, transparent 84%);
+}
+
+.has-lumen .category-evaluation .focused-lumen-layer {
+  background: linear-gradient(110deg, transparent 0 29%, rgba(var(--node-rgb), 0.14) 43%, rgba(var(--node-rgb), 0.055) 52%, transparent 63% 100%);
+}
+
+/* Attractive upper-right cut held constant across categories as a shape baseline. */
+.upper-right-control .node-surface {
+  clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 0 100%);
+  border-radius: 8px 10px 10px 8px;
+}
+
+/* True shape family. Every category keeps a complete, stable left reading edge. */
+.true-shape-family .category-question .node-surface {
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 0 100%);
+  border-radius: 8px 10px 10px 8px;
+}
+
+.true-shape-family .category-investigation .node-surface {
+  clip-path: polygon(0 0, 100% 0, 100% 34%, 93% 50%, 100% 66%, 100% 100%, 0 100%);
+  border-radius: 8px 6px 6px 8px;
+}
+
+.true-shape-family .category-validation .node-surface {
+  clip-path: polygon(0 8px, 24% 8px, 29% 0, 57% 0, 62% 8px, 100% 8px, 100% 100%, 0 100%);
+  border-radius: 7px 7px 9px 9px;
+}
+
+.true-shape-family .category-model .node-surface {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9px), 78% calc(100% - 9px), 73% 100%, 0 100%);
+  border-radius: 8px 8px 5px 8px;
+}
+
+.true-shape-family .category-evaluation .node-surface {
+  clip-path: polygon(0 0, 92% 0, 100% 12%, 100% 88%, 92% 100%, 0 100%);
+  border-radius: 8px 4px 4px 8px;
+}
+
+.true-shape-family .category-glyph,
+.upper-right-control .category-glyph {
+  border-radius: 3px;
+}
+
+/* Keep the preferred Reduced control visually dominant over any micro treatment. */
+html[data-inbox-light="reduced"] .focused-variant .surface-rest-light {
+  opacity: 0.16;
+}
+
+/* Integrated candidates get a slightly firmer marker container but remain restrained. */
+.focused-integrated .category-glyph {
+  border-color: rgba(var(--node-rgb), 0.55);
+  background: rgba(var(--node-rgb), 0.105);
+}
+
+.focused-shape-note {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: rgba(12, 18, 26, 0.70);
+}
+
+.focused-shape-note h2 {
+  margin: 5px 0 7px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.focused-shape-note p {
+  margin: 0;
+  max-width: 980px;
+  color: var(--text-soft);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.focused-review {
+  margin-top: 18px;
+}
+
+html[data-reduced="on"] .focused-lumen-layer,
+html[data-reduced="on"] .focused-material-layer {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focused-lumen-layer,
+  .focused-material-layer {
+    transition: none !important;
+  }
+}
