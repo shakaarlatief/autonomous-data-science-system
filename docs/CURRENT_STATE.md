@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 218  
+**Checkpoint:** 219  
 **Date:** 2026-08-26  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 is provisionally settled as the grid/world direction. H4 Integrated Response rest/hover interaction lighting is sufficiently settled after final human approval. The first W1-W4 work-unit category/silhouette visual-grammar browser experiment is now implemented and awaiting human review. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 is provisionally settled. H4 generic rest/hover interaction lighting is sufficiently settled. The first W1-W4 work-unit category/silhouette experiment received a positive preliminary human review, its Project Scene view-switching defect was corrected, and a bounded Claude divergent-ideation request is now pending before work-unit grammar convergence. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -32,7 +32,8 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
+docs/checkpoints/219_work_unit_grammar_preliminary_review_claude_ideation_requested.md
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
 frontend/design-lab/work-unit-grammar.html
 frontend/design-lab/work-unit-grammar.css
@@ -43,6 +44,12 @@ Expected local URL:
 
 ```text
 http://localhost:5173/design-lab/work-unit-grammar.html
+```
+
+Corrected exact browser-experiment target for Claude:
+
+```text
+88a507d42744917be1e84b29177dd0465f24cd82
 ```
 
 ## Provisionally settled grid/world direction
@@ -127,7 +134,7 @@ runtime state
 importance / methodological priority
 ```
 
-The first browser comparison is now implemented:
+The first browser comparison contains:
 
 ```text
 W1  Unified Precision Frame
@@ -158,16 +165,68 @@ Evaluation
 
 These are not a frozen production taxonomy.
 
-A Reduced motion control is included as a secondary accessibility check.
+## Preliminary human review
 
-Current evidence status:
+The project owner judged the first implementation positively but did not select W1-W4.
+
+The important new product judgment is:
 
 ```text
-research brief       complete for first round
-browser implementation complete for first round
-human browser review OPEN
-production promotion not authorized
+the current four candidates likely cover too little of the plausible work-unit grammar design space
 ```
+
+The project owner therefore requested Claude ideas and inspiration before convergence.
+
+This is not a request for Claude to merely rank W1-W4. The desired value is divergent design-space expansion and identification of additional mechanisms or combinations worth browser testing.
+
+## Project Scene defect correction
+
+Human review exposed that switching to `Project scene` left the Category strip visible, causing overlapping duplicate work units.
+
+The design-lab view controller was corrected so inactive panels are explicitly suppressed as well as marked hidden. The exact corrected experiment target is the SHA above.
+
+No production file changed.
+
+---
+
+# Current MC-0004 collaboration gate
+
+```text
+Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
+Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
+Phase C  browser-rendered design evaluation
+Current  Claude divergent work-unit grammar ideation requested
+```
+
+Pending Claude request:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+```
+
+Classification:
+
+```text
+COMPARATIVE_ONLY / DIVERGENT_IDEATION
+```
+
+Expected Claude response:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+```
+
+Claude may inspect all current candidate material. This is intentionally not a new blind-independent phase.
+
+Claude's write scope remains only:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/**
+```
+
+ChatGPT retains target-state write ownership.
+
+Generated-image UI concepts are not part of the preferred Cockpit evaluation workflow. Real browser-rendered experiments and real external references are preferred.
 
 ---
 
@@ -196,20 +255,6 @@ Only isolated `frontend/design-lab/**` artifacts are authorized for the current 
 
 ---
 
-# MC-0004 evidence
-
-```text
-Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
-Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
-Phase C  browser-rendered design evaluation; current actor human
-```
-
-Generated-image UI concepts are not part of the preferred Cockpit evaluation workflow. Real browser-rendered experiments and real external references are preferred.
-
-No pending Claude review obligation exists at the current boundary.
-
----
-
 # Source Universe deployment
 
 ```text
@@ -228,15 +273,14 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 218 and v1-cockpit-design-exploration
-2. pull the latest branch locally
-3. keep the existing Vite dev server running
-4. open http://localhost:5173/design-lab/work-unit-grammar.html
-5. compare W1-W4 first in Category strip view
-6. compare W1-W4 again in Project scene view
-7. hover representative nodes to confirm the accepted H4 treatment still works visually
-8. use Reduced motion only as a secondary accessibility check
-9. report prefer/reject/combine/refine judgment
-10. keep production Cockpit untouched until later integrated evidence warrants promotion
-11. keep source-vault deployment paused until explicitly resumed
+1. use Checkpoint 219 and v1-cockpit-design-exploration
+2. pull the latest branch locally when reviewing the Project Scene defect correction
+3. Claude reads Message 003 and exact target 88a507d42744917be1e84b29177dd0465f24cd82
+4. Claude writes only Message 004 with divergent work-unit grammar ideas
+5. ChatGPT reconstructs Claude's response from the repository
+6. synthesize the strongest additional/combined candidates against Research 046 and current browser evidence
+7. build a bounded second work-unit grammar browser round
+8. return to human comparison before selecting the category grammar
+9. keep production Cockpit untouched
+10. keep source-vault deployment paused until explicitly resumed
 ```
