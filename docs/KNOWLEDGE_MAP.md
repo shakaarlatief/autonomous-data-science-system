@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 217  
+**Current checkpoint:** 218  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        217
+checkpoint                        218
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C work-unit category/silhouette visual grammar
+current boundary                 MC-0004 Phase C work-unit visual-grammar human review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -81,7 +81,7 @@ frontend/design-lab/grid-dynamics-combined.html
 
 "Provisionally settled" means stop tuning continuously for now, not permanent freeze.
 
-Research 040 also preserves an important visual-design distinction:
+Research 040 preserves the visual-design distinction:
 
 ```text
 semantic motion
@@ -147,10 +147,13 @@ Primary route:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
+frontend/design-lab/work-unit-grammar.html
+frontend/design-lab/work-unit-grammar.css
+frontend/design-lab/work-unit-grammar.js
 ```
 
-Expected browser route after implementation:
+Local route:
 
 ```text
 http://localhost:5173/design-lab/work-unit-grammar.html
@@ -164,7 +167,7 @@ without collapsing category, project disposition, runtime state and importance
 into one overloaded visual treatment?
 ```
 
-First-round candidate directions:
+First-round browser directions:
 
 ```text
 W1  Unified Precision Frame
@@ -178,14 +181,34 @@ Representative fixture categories:
 ```text
 Question / Blocker
 Investigation
-Validation / Analysis work
-Model work
-Evaluation / Decision-relevant work
+Validation / Analysis
+Model Work
+Evaluation
 ```
 
 These are not a frozen production taxonomy.
 
-G4 and H4 are held as control variables for the comparison.
+The design lab exposes:
+
+```text
+Category strip
+    neutral category comparison
+
+Project scene
+    realistic G4/H4 context + connectors
+
+Reduced motion
+    secondary accessibility check
+```
+
+Current evidence state:
+
+```text
+research brief          complete for first round
+browser implementation complete for first round
+human browser review   OPEN
+production promotion   not authorized
+```
 
 Still deliberately unresolved:
 
