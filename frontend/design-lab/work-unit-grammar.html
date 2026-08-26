@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-grammar-view="strip">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-unit Visual Grammar</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02B</span>
+        <h1>Work-unit category / silhouette grammar</h1>
+        <p>G4 and the accepted H4 rest/hover response are held as controls. Compare how strongly category identity should affect the work-unit frame itself.</p>
+      </div>
+      <div class="lab-controls" aria-label="Work-unit grammar controls">
+        <fieldset class="control-group">
+          <legend>View</legend>
+          <div class="segmented" role="group" aria-label="Comparison view">
+            <button type="button" data-view="strip" aria-pressed="true">Category strip</button>
+            <button type="button" data-view="scene" aria-pressed="false">Project scene</button>
+          </div>
+        </fieldset>
+        <fieldset class="control-group compact-toggle-group single-toggle">
+          <legend>Review</legend>
+          <label class="toggle-row"><input id="reduced-toggle" type="checkbox" /><span>Reduced motion</span></label>
+        </fieldset>
+      </div>
+    </header>
+
+    <main class="grammar-main">
+      <section class="grammar-intro">
+        <div>
+          <span class="section-kicker">Active design question</span>
+          <h2>What is this work unit?</h2>
+          <p>This slice isolates category identity. Project disposition, runtime state and importance remain deliberately secondary so they do not contaminate the comparison.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Design constraints">
+          <span>Category ≠ status</span>
+          <span>G4 world held</span>
+          <span>H4 lighting held</span>
+          <span>Dark-first</span>
+          <span>Decoration allowed</span>
+        </div>
+      </section>
+
+      <section class="grammar-grid" aria-label="Work-unit visual grammar variants">
+        <article class="grammar-variant variant-w1" data-variant="w1">
+          <header class="variant-header">
+            <div><span class="variant-code">W1</span><h2>Unified Precision Frame</h2></div>
+            <p>One consistent rectangular instrument frame. Category is carried by glyph, color and a restrained signature rail.</p>
+          </header>
+          <div class="grammar-world">
+            <div class="major-grid" aria-hidden="true"></div>
+            <div class="ambient-drift" aria-hidden="true"></div>
+            <span class="ambient-current current-a" aria-hidden="true"></span><span class="ambient-current current-b" aria-hidden="true"></span>
+            <span class="ambient-glint glint-a" aria-hidden="true"></span><span class="ambient-glint glint-b" aria-hidden="true"></span>
+            <div class="category-strip" data-panel="strip">
+              <div class="grammar-node category-question" data-node="q" style="--node-rgb: 240, 178, 91;">__NODE_Q__</div>
+              <div class="grammar-node category-investigation" data-node="i" style="--node-rgb: 103, 218, 194;">__NODE_I__</div>
+              <div class="grammar-node category-validation" data-node="v" style="--node-rgb: 142, 169, 255;">__NODE_V__</div>
+              <div class="grammar-node category-model" data-node="m" style="--node-rgb: 233, 132, 122;">__NODE_M__</div>
+              <div class="grammar-node category-evaluation" data-node="e" style="--node-rgb: 173, 150, 255;">__NODE_E__</div>
+            </div>
+            <div class="project-scene" data-panel="scene" hidden>
+              <svg class="grammar-relations" viewBox="0 0 1000 390" preserveAspectRatio="none" aria-hidden="true">
+                <path data-link="q-i" d="M214 220 C310 220, 300 120, 392 120" />
+                <path data-link="i-v" d="M545 120 C625 120, 610 224, 700 224" />
+                <path data-link="v-m" d="M845 224 C900 224, 875 115, 940 115" />
+                <path data-link="m-e" d="M940 160 C930 270, 835 300, 775 318" />
+              </svg>
+              <div class="grammar-node category-question scene-q" data-node="q" style="--node-rgb: 240, 178, 91;">__SCENE_Q__</div>
+              <div class="grammar-node category-investigation scene-i" data-node="i" style="--node-rgb: 103, 218, 194;">__SCENE_I__</div>
+              <div class="grammar-node category-validation scene-v" data-node="v" style="--node-rgb: 142, 169, 255;">__SCENE_V__</div>
+              <div class="grammar-node category-model scene-m" data-node="m" style="--node-rgb: 233, 132, 122;">__SCENE_M__</div>
+              <div class="grammar-node category-evaluation scene-e" data-node="e" style="--node-rgb: 173, 150, 255;">__SCENE_E__</div>
+            </div>
+          </div>
+          <footer class="variant-footer"><span>Lowest structural differentiation</span><strong>Control baseline</strong></footer>
+        </article>
+
+        <article class="grammar-variant variant-w2" data-variant="w2">
+          <header class="variant-header">
+            <div><span class="variant-code">W2</span><h2>Edge-Signature Grammar</h2></div>
+            <p>Body geometry stays stable, while each category receives its own restrained edge rhythm or frame signature.</p>
+          </header>
+          <div class="grammar-world">
+            <div class="major-grid" aria-hidden="true"></div><div class="ambient-drift" aria-hidden="true"></div>
+            <span class="ambient-current current-a" aria-hidden="true"></span><span class="ambient-current current-b" aria-hidden="true"></span>
+            <span class="ambient-glint glint-a" aria-hidden="true"></span><span class="ambient-glint glint-b" aria-hidden="true"></span>
+            <div class="category-strip" data-panel="strip">
+              <div class="grammar-node category-question" data-node="q" style="--node-rgb: 240, 178, 91;">__NODE_Q__</div>
+              <div class="grammar-node category-investigation" data-node="i" style="--node-rgb: 103, 218, 194;">__NODE_I__</div>
+              <div class="grammar-node category-validation" data-node="v" style="--node-rgb: 142, 169, 255;">__NODE_V__</div>
+              <div class="grammar-node category-model" data-node="m" style="--node-rgb: 233, 132, 122;">__NODE_M__</div>
+              <div class="grammar-node category-evaluation" data-node="e" style="--node-rgb: 173, 150, 255;">__NODE_E__</div>
+            </div>
+            <div class="project-scene" data-panel="scene" hidden>
+              <svg class="grammar-relations" viewBox="0 0 1000 390" preserveAspectRatio="none" aria-hidden="true"><path data-link="q-i" d="M214 220 C310 220, 300 120, 392 120" /><path data-link="i-v" d="M545 120 C625 120, 610 224, 700 224" /><path data-link="v-m" d="M845 224 C900 224, 875 115, 940 115" /><path data-link="m-e" d="M940 160 C930 270, 835 300, 775 318" /></svg>
+              <div class="grammar-node category-question scene-q" data-node="q" style="--node-rgb: 240, 178, 91;">__SCENE_Q__</div><div class="grammar-node category-investigation scene-i" data-node="i" style="--node-rgb: 103, 218, 194;">__SCENE_I__</div><div class="grammar-node category-validation scene-v" data-node="v" style="--node-rgb: 142, 169, 255;">__SCENE_V__</div><div class="grammar-node category-model scene-m" data-node="m" style="--node-rgb: 233, 132, 122;">__SCENE_M__</div><div class="grammar-node category-evaluation scene-e" data-node="e" style="--node-rgb: 173, 150, 255;">__SCENE_E__</div>
+            </div>
+          </div>
+          <footer class="variant-footer"><span>Category through frame rhythm</span><strong>Restrained differentiation</strong></footer>
+        </article>
+
+        <article class="grammar-variant variant-w3" data-variant="w3">
+          <header class="variant-header">
+            <div><span class="variant-code">W3</span><h2>Structural Silhouette Family</h2></div>
+            <p>Categories use visibly different but related outer geometries while typography, spacing, material and H4 interaction remain common.</p>
+          </header>
+          <div class="grammar-world">
+            <div class="major-grid" aria-hidden="true"></div><div class="ambient-drift" aria-hidden="true"></div>
+            <span class="ambient-current current-a" aria-hidden="true"></span><span class="ambient-current current-b" aria-hidden="true"></span>
+            <span class="ambient-glint glint-a" aria-hidden="true"></span><span class="ambient-glint glint-b" aria-hidden="true"></span>
+            <div class="category-strip" data-panel="strip">
+              <div class="grammar-node category-question" data-node="q" style="--node-rgb: 240, 178, 91;">__NODE_Q__</div><div class="grammar-node category-investigation" data-node="i" style="--node-rgb: 103, 218, 194;">__NODE_I__</div><div class="grammar-node category-validation" data-node="v" style="--node-rgb: 142, 169, 255;">__NODE_V__</div><div class="grammar-node category-model" data-node="m" style="--node-rgb: 233, 132, 122;">__NODE_M__</div><div class="grammar-node category-evaluation" data-node="e" style="--node-rgb: 173, 150, 255;">__NODE_E__</div>
+            </div>
+            <div class="project-scene" data-panel="scene" hidden>
+              <svg class="grammar-relations" viewBox="0 0 1000 390" preserveAspectRatio="none" aria-hidden="true"><path data-link="q-i" d="M214 220 C310 220, 300 120, 392 120" /><path data-link="i-v" d="M545 120 C625 120, 610 224, 700 224" /><path data-link="v-m" d="M845 224 C900 224, 875 115, 940 115" /><path data-link="m-e" d="M940 160 C930 270, 835 300, 775 318" /></svg>
+              <div class="grammar-node category-question scene-q" data-node="q" style="--node-rgb: 240, 178, 91;">__SCENE_Q__</div><div class="grammar-node category-investigation scene-i" data-node="i" style="--node-rgb: 103, 218, 194;">__SCENE_I__</div><div class="grammar-node category-validation scene-v" data-node="v" style="--node-rgb: 142, 169, 255;">__SCENE_V__</div><div class="grammar-node category-model scene-m" data-node="m" style="--node-rgb: 233, 132, 122;">__SCENE_M__</div><div class="grammar-node category-evaluation scene-e" data-node="e" style="--node-rgb: 173, 150, 255;">__SCENE_E__</div>
+            </div>
+          </div>
+          <footer class="variant-footer"><span>Strongest category silhouette</span><strong>Most expressive</strong></footer>
+        </article>
+
+        <article class="grammar-variant variant-w4" data-variant="w4">
+          <header class="variant-header">
+            <div><span class="variant-code">W4</span><h2>Hybrid Semantic Instrument</h2></div>
+            <p>Mostly consistent instrument bodies combine a small silhouette cue, semantic glyph and category-specific signature frame.</p>
+          </header>
+          <div class="grammar-world">
+            <div class="major-grid" aria-hidden="true"></div><div class="ambient-drift" aria-hidden="true"></div>
+            <span class="ambient-current current-a" aria-hidden="true"></span><span class="ambient-current current-b" aria-hidden="true"></span>
+            <span class="ambient-glint glint-a" aria-hidden="true"></span><span class="ambient-glint glint-b" aria-hidden="true"></span>
+            <div class="category-strip" data-panel="strip">
+              <div class="grammar-node category-question" data-node="q" style="--node-rgb: 240, 178, 91;">__NODE_Q__</div><div class="grammar-node category-investigation" data-node="i" style="--node-rgb: 103, 218, 194;">__NODE_I__</div><div class="grammar-node category-validation" data-node="v" style="--node-rgb: 142, 169, 255;">__NODE_V__</div><div class="grammar-node category-model" data-node="m" style="--node-rgb: 233, 132, 122;">__NODE_M__</div><div class="grammar-node category-evaluation" data-node="e" style="--node-rgb: 173, 150, 255;">__NODE_E__</div>
+            </div>
+            <div class="project-scene" data-panel="scene" hidden>
+              <svg class="grammar-relations" viewBox="0 0 1000 390" preserveAspectRatio="none" aria-hidden="true"><path data-link="q-i" d="M214 220 C310 220, 300 120, 392 120" /><path data-link="i-v" d="M545 120 C625 120, 610 224, 700 224" /><path data-link="v-m" d="M845 224 C900 224, 875 115, 940 115" /><path data-link="m-e" d="M940 160 C930 270, 835 300, 775 318" /></svg>
+              <div class="grammar-node category-question scene-q" data-node="q" style="--node-rgb: 240, 178, 91;">__SCENE_Q__</div><div class="grammar-node category-investigation scene-i" data-node="i" style="--node-rgb: 103, 218, 194;">__SCENE_I__</div><div class="grammar-node category-validation scene-v" data-node="v" style="--node-rgb: 142, 169, 255;">__SCENE_V__</div><div class="grammar-node category-model scene-m" data-node="m" style="--node-rgb: 233, 132, 122;">__SCENE_M__</div><div class="grammar-node category-evaluation scene-e" data-node="e" style="--node-rgb: 173, 150, 255;">__SCENE_E__</div>
+            </div>
+          </div>
+          <footer class="variant-footer"><span>Several quiet cues combined</span><strong>Integrated candidate</strong></footer>
+        </article>
+      </section>
+
+      <section class="review-prompt grammar-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Compare recognition, coherence and visual quality</h2>
+        <div class="review-questions">
+          <p>Can you distinguish work-unit kinds before reading every title?</p>
+          <p>Which variant simply looks best?</p>
+          <p>Does any silhouette treatment feel arbitrary or gimmicky?</p>
+          <p>Which still feels like one coherent ADS product language?</p>
+          <p>Does H4 lighting still look right across the category treatments?</p>
+        </div>
+      </section>
+    </main>
+
+    <template id="node-template">
+      <span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span>
+      <div class="node-surface"><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"></span><span class="unit-kind"></span></div><strong></strong><small></small></div>
+    </template>
+
+    <script type="module" src="./work-unit-grammar.js"></script>
+  </body>
+</html>
