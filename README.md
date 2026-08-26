@@ -29,6 +29,8 @@ latest experiment      Specification 022
 experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
 current boundary       Specification 024 implementation is green and frozen
                        for direct Claude review in MC-0002;
+                       MC-0003 deferred catch-up architecture is also queued
+                       for later Claude review without blocking unrelated work;
                        PR #75 source-vault bootstrap remains paused
 ```
 
@@ -124,6 +126,56 @@ GitHub Issue #78
 ```
 
 No Development Method v0.5 or accepted multi-model decision has been promoted yet. Specification 024 must first satisfy MC-G01 through MC-G16 and be classified.
+
+---
+
+## Deferred asynchronous review and catch-up
+
+A later user-identified operational case is now preserved explicitly: one collaborator may be temporarily unavailable while another remains productive across several bounded tasks, and intended later review must not be forgotten or silently converted to SOLO work.
+
+The candidate rule is:
+
+```text
+collaborator unavailable
+    !=
+project globally blocked
+```
+
+unless a specific review gate for the affected task has been reached.
+
+The candidate architecture is preserved in:
+
+```text
+docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/model_collaboration/threads/MC-0003/BRIEF.md
+docs/model_collaboration/threads/MC-0003/THREAD.md
+docs/model_collaboration/threads/MC-0003/STATE.json
+docs/model_collaboration/threads/MC-0003/messages/001_chatgpt_deferred_catchup_review_request.md
+GitHub Issue #79
+```
+
+The proposal distinguishes review requirement from the boundary it gates, freezes exact review target heads, preserves downstream dependency risk, defines one-by-one versus justified batch catch-up, and treats the review inbox as convenience routing rather than authority.
+
+Exact MC-0003 review target:
+
+```text
+74fbf8f5dbf7b57bb5f3038b41122f20e09a4b53
+```
+
+MC-0003 is intentionally waiting for later Claude review while unrelated work remains allowed. The current Claude catch-up order is:
+
+```text
+1. MC-0002
+   required before Specification 024 classification
+
+2. MC-0003
+   required before final multi-model-method promotion,
+   but deferrable while unrelated bounded work continues
+```
+
+This is the first explicit pressure test of multiple pending review obligations without a global collaborator lock. Specification 024 remains frozen; any richer mechanical review-gate/backlog schema belongs in a later prospective contract only after review.
 
 ---
 
@@ -256,6 +308,12 @@ docs/specifications/024_v1_model_collaboration_state_guard.md
 docs/model_collaboration/threads/MC-0002/THREAD.md
 docs/model_collaboration/threads/MC-0002/STATE.json
 
+docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/model_collaboration/threads/MC-0003/THREAD.md
+docs/model_collaboration/threads/MC-0003/STATE.json
+
 docs/model_collaboration/threads/MC-0001/RESOLUTION.md
 docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
 
@@ -269,11 +327,12 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 ## Exact next step
 
 ```text
-1. Claude performs one direct MC-0002 implementation review against Specification 024
-2. Claude writes messages/002_claude_implementation_review.md only
-3. ChatGPT applies only bounded required corrections, if any
-4. rerun all frozen gates after any correction
-5. classify Specification 024
-6. perform the canonical multi-model Development Method / Continuity / provenance / decision promotion audit only after classification
-7. keep PR #75 paused until the project returns to permanent source-vault deployment
+1. Claude performs the required MC-0002 direct implementation review against Specification 024 when available
+2. Claude writes MC-0002/messages/002_claude_implementation_review.md only
+3. ChatGPT applies only bounded required corrections, if any, and reruns frozen gates
+4. classify Specification 024
+5. Claude then performs the queued MC-0003 deferred catch-up architecture review
+6. resolve MC-0003 findings before final multi-model-method promotion
+7. unrelated legitimate bounded work may continue before those gates when it does not depend unsafely on unreviewed results
+8. keep PR #75 paused until the project returns to permanent source-vault deployment
 ```
