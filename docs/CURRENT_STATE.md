@@ -1,12 +1,12 @@
 # Current State
 
 **Checkpoint:** 225  
-**Date:** 2026-08-26  
+**Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The configurable work-unit appearance principle is now promoted in Foundation 023 after positive human browser review. The remaining customizable-preview connector attachment defect has been fixed. The active design slice is now generic connector and port visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The configurable work-unit appearance principle is now promoted in Foundation 023 after positive human browser review. The customizable-preview connector attachment defect has been fixed. The active design slice is generic connector and port visual grammar, with connector curves held beneath work-unit bodies and endpoint dots/sockets/ports now rendered above the work-unit perimeter for final human comparison. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -36,6 +36,8 @@ docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariant
 frontend/design-lab/connector-grammar.html
 frontend/design-lab/connector-grammar.css
 frontend/design-lab/connector-grammar.js
+frontend/design-lab/connector-port-layering.css
+frontend/design-lab/connector-port-layering.js
 ```
 
 Current local URL:
@@ -44,10 +46,10 @@ Current local URL:
 http://localhost:5173/design-lab/connector-grammar.html
 ```
 
-Exact connector browser implementation target before documentation/routing commits:
+Exact connector browser implementation target after endpoint-layer correction:
 
 ```text
-e3394447eeae721eab9bd66d347d0d327dbe0485
+08a33868b1c1d2cd90f11431e3f6b730603f28eb
 ```
 
 ---
@@ -226,6 +228,38 @@ K4  Hover Ports
 
 All candidates use dynamic rendered-edge connector geometry rather than fixed path coordinates.
 
+## Connector/port layering invariant
+
+Human review identified that endpoint markers should not be buried underneath the work-unit surface.
+
+Current held hierarchy for this experiment:
+
+```text
+world / grid
+    ↓
+connector curve
+    ↓
+work-unit body
+    ↓
+endpoint dot / socket / port
+```
+
+Therefore:
+
+```text
+connector curves
+    remain behind work-unit bodies
+
+K1 dots / K2 sockets / K4 hover ports
+    render above the work-unit perimeter
+    centered directly on the attachment edge
+
+K3 target cue
+    also renders in the endpoint overlay at the destination edge
+```
+
+Implementation uses a dedicated `connector-port-overlay` synchronized to the existing dynamic geometry and hover relation state.
+
 Human browser review is the active gate.
 
 ---
@@ -291,12 +325,12 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 225 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. optionally refresh work-unit-grammar-customizable.html and confirm the connector attachment fix
-4. open http://localhost:5173/design-lab/connector-grammar.html
-5. compare K0 through K4 on the same project scene
-6. hover nodes and inspect connector emphasis / K4 hover ports
-7. judge resting noise, physical attachment, direction usefulness and large-project plausibility
-8. human may prefer, reject or combine connector mechanisms
+3. open http://localhost:5173/design-lab/connector-grammar.html
+4. verify K1/K2/K4 endpoint markers sit visibly on top of the work-unit perimeter while connector curves remain behind the boxes
+5. verify K3 target cue remains readable at the destination edge
+6. compare K0 through K4 on the same project scene
+7. hover nodes and inspect connector emphasis / K4 hover ports
+8. human gives the pending connector preference or combination judgment
 9. preserve a generic connector baseline before adding semantic relation classes
 10. keep production Cockpit untouched
 11. keep source-vault deployment paused until explicitly resumed
