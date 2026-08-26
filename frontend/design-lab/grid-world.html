@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-scale="work" data-content="on" data-activity="on">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>ADS Design Lab · Grid / World Substrate</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+  </head>
+  <body>
+    <header class="lab-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 01</span>
+        <h1>Grid / world substrate</h1>
+        <p>
+          Four executable substrate treatments under the same project state. Compare the world, not the content.
+        </p>
+      </div>
+
+      <div class="lab-controls" aria-label="Design experiment controls">
+        <fieldset class="control-group">
+          <legend>Appearance</legend>
+          <div class="segmented" data-control="theme">
+            <button type="button" data-value="dark" aria-pressed="true">Dark</button>
+            <button type="button" data-value="light" aria-pressed="false">Light</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Scale</legend>
+          <div class="segmented" data-control="scale">
+            <button type="button" data-value="project" aria-pressed="false">Project</button>
+            <button type="button" data-value="work" aria-pressed="true">Work</button>
+            <button type="button" data-value="inspection" aria-pressed="false">Inspection</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="control-group compact-toggle-group">
+          <legend>Scene</legend>
+          <label class="toggle-row">
+            <input id="content-toggle" type="checkbox" checked />
+            <span>Content</span>
+          </label>
+          <label class="toggle-row">
+            <input id="activity-toggle" type="checkbox" checked />
+            <span>Activity</span>
+          </label>
+        </fieldset>
+      </div>
+    </header>
+
+    <main class="lab-main">
+      <section class="comparison-intro" aria-labelledby="comparison-title">
+        <div>
+          <span class="section-kicker">Constant fixture</span>
+          <h2 id="comparison-title">Customer Churn Prediction</h2>
+        </div>
+        <dl class="fixture-key">
+          <div><dt>Blocking</dt><dd>Prediction moment</dd></div>
+          <div><dt>Active</dt><dd>Production missingness</dd></div>
+          <div><dt>Selected</dt><dd>Chronological validation</dd></div>
+          <div><dt>Settled</dt><dd>Baseline logistic model</dd></div>
+          <div><dt>Downstream</dt><dd>Evaluation</dd></div>
+        </dl>
+      </section>
+
+      <section id="variants" class="variant-grid" aria-label="Grid substrate variants"></section>
+
+      <section class="review-prompt" aria-labelledby="review-title">
+        <span class="section-kicker">Human review</span>
+        <h2 id="review-title">What should survive?</h2>
+        <div class="review-questions">
+          <p>Which substrate is easiest to look at for a long session?</p>
+          <p>Which keeps node text and relations most legible?</p>
+          <p>Which gives the strongest spatial orientation without feeling busy?</p>
+          <p>Does G4 activity response communicate real activity or feel ornamental?</p>
+          <p>Would you combine the hierarchy of one variant with the density of another?</p>
+        </div>
+      </section>
+    </main>
+
+    <template id="variant-template">
+      <article class="variant-card">
+        <header class="variant-header">
+          <div>
+            <span class="variant-code"></span>
+            <h2 class="variant-name"></h2>
+          </div>
+          <p class="variant-summary"></p>
+        </header>
+
+        <div class="world-shell">
+          <div class="world-surface">
+            <div class="activity-field activity-field-primary" aria-hidden="true"></div>
+            <div class="activity-field activity-field-secondary" aria-hidden="true"></div>
+            <div class="stage-ruler" aria-hidden="true">
+              <span>Framing</span>
+              <span>Data &amp; validation</span>
+              <span>Modeling</span>
+              <span>Evaluation</span>
+            </div>
+            <svg class="relation-layer" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="arrow-muted" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" class="arrow-muted" />
+                </marker>
+                <marker id="arrow-active" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" class="arrow-active" />
+                </marker>
+              </defs>
+              <path class="relation relation-blocking" d="M210 202 C290 202, 300 142, 385 142" />
+              <path class="relation relation-active" d="M545 142 C635 142, 625 235, 710 235" marker-end="url(#arrow-active)" />
+              <path class="relation relation-muted" d="M545 142 C625 142, 615 355, 705 355" marker-end="url(#arrow-muted)" />
+              <path class="relation relation-muted" d="M825 355 C900 355, 900 282, 940 282" marker-end="url(#arrow-muted)" />
+            </svg>
+            <div class="work-unit unit-blocking" style="--x: 8%; --y: 32%;">
+              <span class="unit-kind">Question</span>
+              <strong>Prediction moment</strong>
+              <small>Eligibility boundary unresolved</small>
+            </div>
+            <div class="work-unit unit-active" style="--x: 36%; --y: 20%;">
+              <span class="unit-kind">Investigation</span>
+              <strong>Production missingness</strong>
+              <small>Investigating live data behavior</small>
+            </div>
+            <div class="work-unit unit-selected" style="--x: 68%; --y: 38%;">
+              <span class="unit-kind">Validation</span>
+              <strong>Chronological validation</strong>
+              <small>Selected work</small>
+            </div>
+            <div class="work-unit unit-complete" style="--x: 67%; --y: 66%;">
+              <span class="unit-kind">Model</span>
+              <strong>Baseline logistic model</strong>
+              <small>Settled</small>
+            </div>
+            <div class="work-unit unit-downstream" style="--x: 84%; --y: 51%;">
+              <span class="unit-kind">Evaluation</span>
+              <strong>Calibration &amp; thresholding</strong>
+              <small>Downstream</small>
+            </div>
+            <div class="live-packet packet-one" aria-hidden="true"></div>
+            <div class="live-packet packet-two" aria-hidden="true"></div>
+          </div>
+          <div class="world-footer">
+            <span class="scale-readout">Work scale · 100%</span>
+            <span class="world-note"></span>
+          </div>
+        </div>
+
+        <footer class="variant-footer">
+          <div class="tradeoff"></div>
+          <button class="focus-button" type="button">Focus variant</button>
+        </footer>
+      </article>
+    </template>
+
+    <script type="module" src="./grid-world.js"></script>
+  </body>
+</html>
