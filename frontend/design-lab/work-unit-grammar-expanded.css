@@ -1,0 +1,509 @@
+body {
+  min-width: 1480px;
+}
+
+.expanded-header {
+  grid-template-columns: minmax(760px, 1fr) auto;
+}
+
+.expanded-controls {
+  align-items: end;
+}
+
+.expanded-main {
+  padding-bottom: 60px;
+}
+
+.expanded-intro {
+  margin-bottom: 16px;
+}
+
+.expanded-family-controls {
+  display: grid;
+  grid-template-columns: minmax(420px, 0.8fr) minmax(720px, 1.2fr);
+  gap: 24px;
+  align-items: end;
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  background: rgba(13, 19, 28, 0.78);
+}
+
+.expanded-family-controls h2 {
+  margin: 4px 0 3px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.expanded-family-controls p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.expanded-family-segmented {
+  justify-self: end;
+}
+
+.expanded-batch-legend {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.expanded-batch-legend article {
+  display: grid;
+  gap: 4px;
+  min-height: 60px;
+  padding: 10px 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  background: rgba(13, 19, 28, 0.67);
+}
+
+.expanded-batch-legend strong {
+  color: rgba(232, 239, 249, 0.88);
+  font-size: 9.7px;
+  font-weight: 720;
+}
+
+.expanded-batch-legend span {
+  color: var(--text-dim);
+  font-size: 8.5px;
+  line-height: 1.4;
+}
+
+.expanded-grid {
+  align-items: start;
+}
+
+.expanded-variant[data-filtered="true"] {
+  display: none;
+}
+
+.expanded-variant .variant-header {
+  position: relative;
+}
+
+.expanded-variant .variant-header::after {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  padding: 3px 6px;
+  border: 1px solid rgba(132, 151, 176, 0.23);
+  border-radius: 999px;
+  background: rgba(7, 11, 17, 0.34);
+  color: rgba(173, 188, 207, 0.62);
+  content: attr(data-batch-label);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.expanded-variant .variant-header p {
+  max-width: 82%;
+}
+
+.expanded-variant .category-glyph {
+  width: 18px;
+  height: 18px;
+}
+
+.expanded-variant .category-glyph svg {
+  display: block;
+  width: 11px;
+  height: 11px;
+  overflow: visible;
+}
+
+.expanded-variant .category-glyph svg * {
+  vector-effect: non-scaling-stroke;
+}
+
+.expanded-variant .category-glyph.instrument-glyph svg,
+.expanded-variant .category-glyph.scientific-glyph svg {
+  color: rgb(var(--node-rgb));
+}
+
+/* Batch A: glyph strategy. */
+.expanded-g0 .category-glyph {
+  font-size: 7px;
+}
+
+.instrument-glyph svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.35;
+}
+
+.scientific-glyph svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.45;
+}
+
+.marker-rail-glyph {
+  width: 21px !important;
+}
+
+.marker-rail {
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 11px;
+}
+
+.marker-rail::before,
+.marker-rail::after,
+.marker-rail span {
+  position: absolute;
+  display: block;
+  background: rgb(var(--node-rgb));
+  box-shadow: 0 0 5px rgba(var(--node-rgb), 0.28);
+  content: "";
+}
+
+.marker-rail.pattern-question::before {
+  left: 0;
+  top: 1px;
+  width: 8px;
+  height: 1px;
+}
+
+.marker-rail.pattern-question::after {
+  left: 7px;
+  top: 1px;
+  width: 1px;
+  height: 7px;
+}
+
+.marker-rail.pattern-question span {
+  left: 2px;
+  bottom: 1px;
+  width: 3px;
+  height: 1px;
+}
+
+.marker-rail.pattern-investigation::before {
+  left: 0;
+  top: 2px;
+  width: 5px;
+  height: 1px;
+}
+
+.marker-rail.pattern-investigation::after {
+  right: 0;
+  bottom: 2px;
+  width: 5px;
+  height: 1px;
+}
+
+.marker-rail.pattern-investigation span {
+  left: 6px;
+  top: 1px;
+  width: 1px;
+  height: 9px;
+}
+
+.marker-rail.pattern-validation::before,
+.marker-rail.pattern-validation::after {
+  left: 1px;
+  width: 11px;
+  height: 1px;
+}
+
+.marker-rail.pattern-validation::before { top: 3px; }
+.marker-rail.pattern-validation::after { top: 7px; }
+
+.marker-rail.pattern-validation span {
+  display: none;
+}
+
+.marker-rail.pattern-model::before {
+  left: 1px;
+  bottom: 1px;
+  width: 11px;
+  height: 1px;
+}
+
+.marker-rail.pattern-model::after {
+  left: 3px;
+  bottom: 4px;
+  width: 8px;
+  height: 1px;
+}
+
+.marker-rail.pattern-model span {
+  left: 5px;
+  bottom: 7px;
+  width: 5px;
+  height: 1px;
+}
+
+.marker-rail.pattern-evaluation::before {
+  left: 1px;
+  top: 1px;
+  width: 1px;
+  height: 9px;
+}
+
+.marker-rail.pattern-evaluation::after {
+  right: 1px;
+  top: 1px;
+  width: 1px;
+  height: 9px;
+}
+
+.marker-rail.pattern-evaluation span {
+  left: 4px;
+  top: 5px;
+  width: 5px;
+  height: 1px;
+}
+
+/* Batch B: structural grammar. */
+.structure-motif,
+.inner-architecture,
+.material-layer {
+  position: absolute;
+  pointer-events: none;
+}
+
+.structure-motif,
+.inner-architecture {
+  z-index: 3;
+}
+
+.expanded-s1 .category-question .node-surface {
+  clip-path: polygon(0 0, 29px 0, 35px 7px, 100% 7px, 100% 100%, 0 100%);
+  border-radius: 8px 9px 9px 8px;
+}
+
+.expanded-s1 .category-question .structure-motif {
+  left: 8px;
+  top: 0;
+  width: 20px;
+  height: 7px;
+  border-right: 1px solid rgba(var(--node-rgb), 0.58);
+  border-top: 1px solid rgba(var(--node-rgb), 0.58);
+}
+
+.expanded-s1 .category-investigation .frame-signature {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(var(--node-rgb)) 0 7px,
+    transparent 7px 11px
+  );
+}
+
+.expanded-s1 .category-investigation .node-surface {
+  border-left-style: dashed;
+  border-left-color: rgba(var(--node-rgb), 0.48);
+}
+
+.expanded-s1 .category-validation .structure-motif {
+  left: 12px;
+  right: 12px;
+  top: 5px;
+  height: 4px;
+  border-top: 1px solid rgba(var(--node-rgb), 0.54);
+  border-bottom: 1px solid rgba(var(--node-rgb), 0.26);
+}
+
+.expanded-s1 .category-model .node-surface {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), 77% calc(100% - 8px), 72% 100%, 0 100%);
+}
+
+.expanded-s1 .category-model .structure-motif {
+  left: 18px;
+  right: 18px;
+  bottom: 5px;
+  height: 5px;
+  border-top: 1px solid rgba(var(--node-rgb), 0.48);
+  box-shadow: 0 3px 0 rgba(var(--node-rgb), 0.18);
+}
+
+.expanded-s1 .category-evaluation .node-surface {
+  clip-path: polygon(0 0, calc(100% - 27px) 0, calc(100% - 27px) 8px, 100% 8px, 100% 100%, 0 100%);
+}
+
+.expanded-s1 .category-evaluation .structure-motif {
+  right: 7px;
+  top: 10px;
+  width: 18px;
+  height: 12px;
+  border: 1px solid rgba(var(--node-rgb), 0.42);
+  border-radius: 2px;
+  background: rgba(var(--node-rgb), 0.025);
+}
+
+/* Cautious proportion deltas. */
+.expanded-s2 .category-strip .category-question { max-width: 124px; height: 98px; }
+.expanded-s2 .category-strip .category-investigation { max-width: 128px; height: 95px; }
+.expanded-s2 .category-strip .category-validation { max-width: 132px; height: 92px; }
+.expanded-s2 .category-strip .category-model { max-width: 140px; height: 89px; }
+.expanded-s2 .category-strip .category-evaluation { max-width: 136px; height: 91px; }
+.expanded-s2 .project-scene .category-question { width: 166px; height: 98px; }
+.expanded-s2 .project-scene .category-investigation { width: 171px; height: 95px; }
+.expanded-s2 .project-scene .category-validation { width: 176px; height: 92px; }
+.expanded-s2 .project-scene .category-model { width: 186px; height: 89px; }
+.expanded-s2 .project-scene .category-evaluation { width: 181px; height: 91px; }
+
+/* ChatGPT addition: stable outer frame, category-specific inner instrument architecture. */
+.expanded-s3 .inner-architecture {
+  opacity: 0.66;
+}
+
+.expanded-s3 .category-question .inner-architecture {
+  right: 8px;
+  top: 8px;
+  width: 16px;
+  height: 11px;
+  border-right: 1px solid rgba(var(--node-rgb), 0.48);
+  border-top: 1px solid rgba(var(--node-rgb), 0.48);
+}
+
+.expanded-s3 .category-investigation .inner-architecture {
+  right: 10px;
+  top: 9px;
+  width: 15px;
+  height: 15px;
+  background:
+    linear-gradient(to right, transparent 46%, rgba(var(--node-rgb), 0.38) 46% 54%, transparent 54%),
+    linear-gradient(to bottom, transparent 46%, rgba(var(--node-rgb), 0.38) 46% 54%, transparent 54%);
+  border: 1px solid rgba(var(--node-rgb), 0.23);
+  border-radius: 50%;
+}
+
+.expanded-s3 .category-validation .inner-architecture {
+  left: 10px;
+  right: 10px;
+  bottom: 9px;
+  height: 4px;
+  border-top: 1px solid rgba(var(--node-rgb), 0.42);
+  border-bottom: 1px solid rgba(var(--node-rgb), 0.22);
+}
+
+.expanded-s3 .category-model .inner-architecture {
+  right: 9px;
+  bottom: 8px;
+  width: 20px;
+  height: 11px;
+  border-bottom: 1px solid rgba(var(--node-rgb), 0.42);
+  box-shadow:
+    0 -3px 0 rgba(var(--node-rgb), 0.24),
+    0 -6px 0 rgba(var(--node-rgb), 0.11);
+}
+
+.expanded-s3 .category-evaluation .inner-architecture {
+  right: 9px;
+  top: 10px;
+  width: 19px;
+  height: 15px;
+  border: 1px solid rgba(var(--node-rgb), 0.30);
+  background: linear-gradient(to right, transparent 48%, rgba(var(--node-rgb), 0.34) 48% 52%, transparent 52%);
+}
+
+/* Batch C: material language. */
+.material-layer {
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  opacity: 0.18;
+}
+
+.expanded-m1 .category-question .material-layer {
+  background: repeating-linear-gradient(135deg, rgba(var(--node-rgb), 0.20) 0 1px, transparent 1px 7px);
+}
+
+.expanded-m1 .category-investigation .material-layer {
+  background-image: radial-gradient(circle, rgba(var(--node-rgb), 0.28) 0 0.7px, transparent 0.9px);
+  background-size: 7px 7px;
+}
+
+.expanded-m1 .category-validation .material-layer {
+  background: repeating-linear-gradient(to bottom, rgba(var(--node-rgb), 0.16) 0 1px, transparent 1px 8px);
+}
+
+.expanded-m1 .category-model .material-layer {
+  background-image:
+    linear-gradient(to right, rgba(var(--node-rgb), 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--node-rgb), 0.10) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.expanded-m1 .category-evaluation .material-layer {
+  background: linear-gradient(110deg, transparent 0 32%, rgba(var(--node-rgb), 0.16) 45%, transparent 60% 100%);
+}
+
+/* Integrated W4 candidates get a slightly stronger glyph container so the mark can compete with frame cues. */
+.expanded-i1 .category-glyph,
+.expanded-i2 .category-glyph {
+  border-color: rgba(var(--node-rgb), 0.58);
+  background: rgba(var(--node-rgb), 0.12);
+}
+
+.expanded-deferred {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: rgba(12, 18, 26, 0.70);
+}
+
+.expanded-deferred h2 {
+  margin: 5px 0 11px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.expanded-deferred-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.expanded-deferred-grid article {
+  padding: 11px 12px;
+  border: 1px solid rgba(129, 149, 176, 0.17);
+  border-radius: 8px;
+  background: rgba(8, 13, 20, 0.42);
+}
+
+.expanded-deferred-grid strong {
+  color: rgba(227, 235, 246, 0.88);
+  font-size: 10px;
+}
+
+.expanded-deferred-grid p {
+  margin: 5px 0 0;
+  color: var(--text-dim);
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.expanded-review {
+  margin-top: 22px;
+}
+
+html[data-reduced="on"] .material-layer,
+html[data-reduced="on"] .structure-motif,
+html[data-reduced="on"] .inner-architecture {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-layer,
+  .structure-motif,
+  .inner-architecture {
+    transition: none !important;
+  }
+}
