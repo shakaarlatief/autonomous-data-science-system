@@ -132,7 +132,7 @@ function applyView(view, buttons) {
 }
 
 function setupInboxLightControls() {
-  const buttons = [...document.querySelectorAll('[data-inbox-light]')]
+  const buttons = [...document.querySelectorAll('button[data-inbox-light]')]
   const initialMode = html.dataset.inboxLight || 'baseline'
 
   applyInboxLight(initialMode, buttons)
