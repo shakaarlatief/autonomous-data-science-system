@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
-**Last reviewed:** 2026-08-25  
-**Current checkpoint:** 203  
+**Last reviewed:** 2026-08-26  
+**Current checkpoint:** 204  
 **Active development branch:** `v1-multimodel-development-collaboration`  
 **Active PR:** #76  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`
@@ -14,13 +14,13 @@
 README.md                         project overview and current stage
 docs/CURRENT_STATE.md             exact present state and continuation
 docs/KNOWLEDGE_MAP.md             routing/index layer
-docs/current_routing.json         machine-readable routing metadata only
+docs/current_routing.json         machine-readable project routing metadata
 docs/VISION.md                    high-level product/system direction
 docs/PRINCIPLES.md                accepted high-level design principles
 docs/DECISIONS.md                 accepted project-level decisions
 docs/OPEN_QUESTIONS.md            unresolved questions
-docs/DEVELOPMENT_METHOD.md        current canonical development method
-docs/CONTINUITY.md                current canonical continuity procedure
+docs/DEVELOPMENT_METHOD.md        current canonical development method v0.5
+docs/CONTINUITY.md                provider-neutral continuity procedure
 docs/MAJOR_CHANGES.md             selective structural history
 ```
 
@@ -28,72 +28,111 @@ Current branch relationship:
 
 ```text
 promoted integration             v1-frontend-spike @ 8215718db3e44f000cc6ed53d6a051522d429dbd
-paused deployment branch         v1-source-vault-bootstrap / PR #75
-active collaboration branch      v1-multimodel-development-collaboration / PR #76
-current checkpoint               203
+preserved paused source work     v1-source-vault-bootstrap / PR #75
+active promotion branch          v1-multimodel-development-collaboration / PR #76
+current checkpoint               204
 latest specification             Specification 024
+Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
 
 ---
 
-# Current stage: Specification 024 direct implementation review
+# Current stage: governed multi-model method final integration
 
 Primary route:
 
 ```text
-docs/checkpoints/203_specification_024_implementation_green_pre_review_head_frozen.md
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
-docs/model_collaboration/threads/MC-0002/BRIEF.md
-docs/model_collaboration/threads/MC-0002/THREAD.md
-docs/model_collaboration/threads/MC-0002/STATE.json
-docs/model_collaboration/threads/MC-0002/messages/001_chatgpt_implementation_review_request.md
+```
+
+Current collaboration status:
+
+```text
+MC-0001   CLOSED
+MC-0002   CLOSED
+MC-0003   CLOSED
+pending review inbox   NONE
+```
+
+No additional Claude review is owed before PR #76 integration.
+
+---
+
+# D-034 / Development Method v0.5
+
+Accepted collaboration principles:
+
+```text
+repository authority
+SOLO remains first-class
+selective task-scoped collaboration
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state writer at a time
+explicit secondary write surfaces
+machine-readable collaboration-state coherence guard
+transport != authority
+append-only relied-upon review provenance
+proportional independent/comparative review
+explicit disagreement classification/routing
+provider-local interaction session identities
+human project-intent authority without routine transport burden
+deferred review/catch-up with exact targets and explicit gates
+API orchestration deferred
+unattended scheduled model review deferred
+```
+
+Provider-neutral checkpoint provenance begins at Checkpoint 204.
+
+---
+
+# Specification 024: accepted collaboration-state guard
+
+Primary route:
+
+```text
+docs/specifications/024_v1_model_collaboration_state_guard.md
 schemas/model_collaboration_thread_state_v1.schema.json
 scripts/check_model_collaboration_state.py
 tests/unit/test_model_collaboration_state.py
 .github/workflows/model-collaboration-state.yml
-GitHub Issue #78
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
 ```
 
-Current machine-readable state:
+Evidence:
 
 ```text
-thread                  MC-0002
-review mode             REVIEWED
-lifecycle               WAITING
-phase                   REVIEW_REQUESTED
-task owner              chatgpt
-target write owner      chatgpt
-next actor              claude
-Claude secondary write  MC-0002/messages/**
-```
-
-Implementation contract and evidence:
-
-```text
-Specification 024 frozen at 9da382d4011ff112b75dec9c456143d798336336
-initial implementation          bf33aab15d9300836280f01ebd9b6db0951f3e9a
+pre-implementation freeze       9da382d4011ff112b75dec9c456143d798336336
 corrected green pre-review head a9efc43d7c441c8283d2cd954cc6fa1abd021689
-workflow run                     32902050014
-Ubuntu                           PASS
-Windows                          PASS
-focused unit tests               26 PASS on each platform
+workflow run                    32902050014
+Ubuntu                          PASS
+Windows                         PASS
+focused tests                   26 PASS per platform
+Claude review commit            9cf393f74e02e167d2f80c0381742ebd7e0c318e
+final outcome                   COLLABORATION_STATE_GUARD_ACCEPTED
 ```
 
-MC-G01 through MC-G15 have current implementation/CI support. MC-G16 is the pending direct Claude implementation review.
+The mechanism is a coherence guard, not authenticated model identity or a distributed mutex.
 
-The guard is explicitly a coherence mechanism, not an authenticated distributed lock.
+Known future trigger: secondary-vs-secondary write-surface overlap if a real thread introduces multiple simultaneous secondary writers.
 
 ---
 
-# Resolved MC-0001 collaboration architecture
+# MC-0001: architecture review history
 
 Primary route:
 
 ```text
 docs/research/035_multi_model_development_collaboration_architecture.md
-docs/model_collaboration/README.md
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/threads/MC-0001/BRIEF.md
 docs/model_collaboration/threads/MC-0001/THREAD.md
 docs/model_collaboration/threads/MC-0001/RESOLUTION.md
@@ -108,50 +147,79 @@ docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_op
 docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
 ```
 
-Resolved candidate principles:
+Important review-integrity finding: Phase A was only partially independent because current routing documents exposed candidate concepts. Future deliberately blind reviews should normally use an accepted pre-proposal ref plus a neutral brief and explicit exposure audit.
+
+---
+
+# MC-0003: deferred asynchronous catch-up
+
+Primary route:
 
 ```text
-repository authority
-selective collaboration with SOLO as first-class mode
-one bounded task owner
-ROLE != WRITE_SCOPE
-scoped target-state write ownership
-allowed secondary review/provenance surfaces
-machine-readable collaboration state before routine scale-up
-transport != authority
-append-only relied-upon review provenance
-proportional anti-anchoring review
-explicit disagreement classification/routing
-provider-local self-describing session identities
-human project-intent authority without routine transport burden
-API orchestration deferred
+docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
+docs/model_collaboration/threads/MC-0003/messages/002_claude_deferred_catchup_review.md
+docs/model_collaboration/threads/MC-0003/messages/003_chatgpt_review_disposition.md
 ```
 
-Phase A of MC-0001 was only partially independent because current routing files already exposed candidate architecture content. Future deliberately blind reviews should normally reconstruct from an accepted pre-proposal ref plus a neutral brief and exposure audit.
+Accepted rule:
 
-No multi-model Development Method revision or accepted decision has been promoted yet.
+```text
+collaborator unavailable
+    !=
+project globally blocked
+```
+
+unless the affected task's review gate has been reached.
+
+Current semantic constraint:
+
+```text
+REQUIRED review -> real gate required
+OPTIONAL review -> NONE allowed
+```
+
+Known future mechanization triggers:
+
+```text
+cross-thread dependency metadata / downstream impact discovery
+generated REVIEW_INBOX or inbox-state consistency validation
+explicit review-obligation and gate fields if backlog scale requires them
+stale/superseded obligation validation after repeated real use
+```
+
+No Specification 025 is currently justified.
 
 ---
 
 # Interaction provenance and naming
 
-Candidate convention exercised by the first threads:
+Current canonical convention:
 
 ```text
-ChatGPT project/workspace  Autonomous Data Science System
-ChatGPT session            chatgpt-06
-ChatGPT title              06 - Methodological Knowledge Universe Construction
-
-Claude project/workspace   Autonomous Data Science System
-Claude session             claude-01
-Claude title               01 - ADS Development Review & Collaboration
-
-collaboration thread       MC-NNNN
+shared project/workspace     Autonomous Data Science System
+visible title                NN - Main Topic / Stage
+ChatGPT session example      chatgpt-06
+Claude session example       claude-01
 ```
 
-Model/configuration and interaction surface are useful optional provenance. Effort/reasoning-mode values should preserve whether they were model-reported, human-reported, system-reported, or unknown instead of being guessed.
+Checkpoint provenance:
 
-The checkpoint metadata contract remains historically ChatGPT-specific until a prospective provider-neutral migration is explicitly promoted.
+```text
+000-203
+    historical ChatGPT-specific fields remain intact
+
+204+
+    Interaction environment
+    Project / workspace
+    Interaction session
+    Conversation title
+    Primary collaborator
+```
+
+Optional model/configuration/effort/surface metadata is preserved only where materially useful and should not be guessed.
 
 ---
 
@@ -178,13 +246,13 @@ SU-G01 through SU-G23   PASS
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-The accepted implementation is promoted at `8215718db3e44f000cc6ed53d6a051522d429dbd`.
+The accepted source implementation is promoted at `8215718db3e44f000cc6ed53d6a051522d429dbd`.
 
-PR #75 remains paused, not abandoned. Permanent Source Registry, private Source Vault, independent backup, and clean restore still need to be instantiated on user-controlled storage before Course 2 is admitted.
+Permanent Source Registry, private Source Vault, independent backup, and clean restore still need to be instantiated on user-controlled storage before Course 2 is admitted.
 
 ---
 
-# Methodological knowledge-universe construction
+# Serious methodological knowledge-universe construction
 
 Primary route:
 
@@ -216,6 +284,8 @@ Tree Models and Ensembles
 Class Imbalance / Metrics / Calibration / Thresholding
 Time-Series Methodology
 ```
+
+Coverage depth is separate from truth, maturity, source authority, freshness, confidence, and enforcement strength.
 
 ---
 
@@ -266,10 +336,9 @@ D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
 D-031  governed deterministic JSON / JSON Schema knowledge interchange
 D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
-D-033  ADS-owned Source Universe substrate with private artifact store + relational registry
+D-033  ADS-owned Source Universe substrate
+D-034  governed provider-neutral multi-model development collaboration
 ```
-
-No multi-model development decision has yet been promoted.
 
 ---
 
@@ -279,36 +348,39 @@ The accepted bounded chain includes lexical retrieval, dense complementarity, hy
 
 Specification 014 preserved equal measured quality on its bounded benchmark while reducing provider input by 66.56%.
 
-Later recommendation/action results remain deliberately bounded. Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; it contains no legitimate `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison.
+Later recommendation/action results remain deliberately bounded. Specification 022 remains:
+
+```text
+INCOMPLETE / EXECUTION INTEGRITY FAILED
+```
+
+It contains no legitimate `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison.
 
 ---
 
 # Preservation and continuity
 
-Canonical method remains:
+Canonical route:
 
 ```text
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
-docs/checkpoints/README.md
+docs/DEVELOPMENT_METHOD.md                version 0.5
+docs/CONTINUITY.md                        aligned version 0.5
+docs/checkpoints/README.md                provider-neutral from Checkpoint 204
+scripts/check_checkpoint_metadata.py       versioned provenance validation
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/MAJOR_CHANGES.md
 ```
-
-These remain authoritative until Specification 024 is classified and the collaboration-method promotion audit explicitly changes them.
 
 ---
 
 # Exact current continuation
 
 ```text
-A. Claude performs the bounded MC-0002 direct implementation review
-B. Claude writes messages/002_claude_implementation_review.md only
-C. ChatGPT integrates bounded required corrections, if any
-D. rerun frozen MC-G01 through MC-G15 after correction
-E. decide MC-G16 from durable review evidence
-F. classify Specification 024
-G. only then perform the canonical Development Method / Continuity / checkpoint-provenance / decision promotion audit
-H. keep PR #75 paused until permanent source-vault deployment resumes
-I. after source operationalization, continue the serious methodological knowledge-universe program
+A. complete final PR #76 structural/base audit
+B. ensure all applicable workflows are green on the final head
+C. integrate accepted multi-model development into v1-frontend-spike
+D. create a post-merge routing checkpoint with the exact promoted SHA
+E. preserve permanent source-vault work as paused through that reconciliation
+F. resume permanent source-vault deployment before Course 2
+G. after source operationalization, continue serious methodological knowledge-universe construction
 ```
