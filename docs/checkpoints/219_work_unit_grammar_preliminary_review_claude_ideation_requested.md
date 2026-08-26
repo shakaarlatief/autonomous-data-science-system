@@ -22,6 +22,19 @@ The project owner explicitly observed that the current four variants likely cove
 
 This creates a legitimate divergent-design gate rather than a routine second-opinion ceremony.
 
+A subsequent human clarification is binding:
+
+```text
+candidate breadth should be determined by genuine design value
+not by an arbitrary shortlist size
+
+if many materially distinct and worthwhile candidates exist
+    preserve and test them
+
+multiple browser rounds may be used for manageability
+    but batching does not imply rejection
+```
+
 ## 2. Browser defect found and corrected
 
 When switching to `Project scene`, both the category-strip nodes and project-scene nodes were visible simultaneously, producing the overlap seen in the human browser review.
@@ -102,9 +115,12 @@ audit which visual-design dimensions W1-W4 underexplore
 propose materially different concept families
 identify promising combinations
 use external design inspiration where useful
-recommend a small next browser round
+recommend all genuinely worthwhile browser-test candidates
+organize candidates into multiple rounds if useful
 state risks and reversal evidence
 ```
+
+There is deliberately no 3-5 or other candidate-count cap. Narrowing is appropriate only for material redundancy, clear domination, boundary violation, or insufficient value to justify implementation effort.
 
 This pass is explicitly classified:
 
@@ -152,7 +168,8 @@ The existing Research 046 experiment remains the governing browser-design protoc
 4. Claude reads Message 003 and reviews exact target 88a507d42744917be1e84b29177dd0465f24cd82
 5. Claude writes only a new MC-0004 numbered message with divergent work-unit grammar ideas
 6. ChatGPT inspects and synthesizes Claude's proposal against Research 046 and the existing browser evidence
-7. build only the strongest additional/combined browser variants that appear worth testing
-8. return to human visual comparison before selecting the work-unit category grammar
-9. keep production Cockpit untouched
+7. preserve every additional/combined candidate that remains genuinely distinct and worth testing
+8. use one or multiple browser rounds as useful for clear human comparison
+9. return to human visual comparison before selecting the work-unit category grammar
+10. keep production Cockpit untouched
 ```
