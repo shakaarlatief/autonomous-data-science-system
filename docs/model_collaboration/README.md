@@ -1,225 +1,158 @@
 # Model Collaboration Exchange
 
-**Status:** Candidate operational collaboration protocol under Research 035  
-**Date:** 2026-08-25  
-**Authority:** Collaboration provenance and working protocol only. This directory does not override accepted specifications, decisions, canonical current-state documents, promoted implementation, or the Development Method.  
-**Governing research:** `docs/research/035_multi_model_development_collaboration_architecture.md`
+**Status:** Current canonical model-collaboration protocol  
+**Date promoted:** 2026-08-26  
+**Authority:** Canonical operational supplement to Development Method v0.5 for collaborative ADS development. It does not override accepted project specifications or decisions outside its scope.  
+**Evidence base:** Research 035, MC-0001, Specification 024, MC-0002, Research 036, and MC-0003
 
 ## Purpose
 
-This directory provides a dedicated asynchronous communication surface for strong AI collaborators working on the Autonomous Data Science System itself.
+This directory is the provider-neutral asynchronous collaboration surface for AI collaborators working on ADS itself.
 
 It exists because:
 
 ```text
-repository as source of truth
+repository as project authority
     !=
-a place for model-to-model review dialogue
+model-to-model collaboration transport/provenance
 ```
 
-Without a dedicated exchange, review requests, critiques, counterarguments, and unresolved disagreements would either be trapped in private chats or mixed into canonical project documents where they do not belong.
+The exchange preserves review requests, independent proposals, critiques, responses, handoffs, deferred review obligations, and resolution records without turning raw model dialogue into project authority.
 
-The exchange should reduce user copy-paste while keeping raw collaboration clearly separate from project authority.
-
-The exchange is optional infrastructure for tasks that benefit from collaboration. It is not a requirement that every ADS task involve multiple models.
+Multi-model collaboration is selective. SOLO ChatGPT work and SOLO Claude work remain first-class development modes.
 
 ---
 
 ## Operating modes
 
-The collaboration architecture must support several legitimate development modes.
-
 ### SOLO
 
-One model works with the human and the repository without invoking another model for the bounded task.
+One collaborator owns a bounded task with the human and repository. No second-model obligation exists unless one is explicitly created.
 
-This should remain the default for work where a second-model contribution is unlikely to justify the coordination cost, for example ordinary mechanical edits, local clarifications, low-risk implementation work under an accepted contract, or routine continuation.
-
-A SOLO task does not need a model-collaboration thread merely to prove that collaboration was considered.
+Use when additional review is unlikely to justify coordination cost.
 
 ### REVIEWED
 
-One model owns the task and another model performs a bounded review, critique, verification, or research role.
-
-This is appropriate when independent pressure is useful but full joint design would be excessive.
+One collaborator owns the task and another performs a bounded review, critique, verification, or research role.
 
 ### INDEPENDENT_THEN_COMPARATIVE
 
-Two models first reason independently from a common neutral problem statement, then compare after both positions are frozen.
+For high-impact questions where anchoring matters, the reviewer first reasons from an accepted pre-proposal repository ref plus a neutral brief, freezes its own position, and only then sees the proposer solution for comparative review.
 
-This is appropriate for high-impact architecture, experiment design, governance, or other decisions where anchoring risk is material.
+Known contamination must be disclosed. Apparent convergence after leaked candidate content is not treated as fully independent evidence.
 
 ### COORDINATED_HANDOFF
 
-A bounded task or subtask is explicitly transferred from one collaborator to another with repository state, ownership scope, and outstanding obligations preserved.
+A bounded task/subtask is explicitly transferred with repository state, write scope, and outstanding obligations preserved. Handoff does not create simultaneous co-ownership.
 
-The handoff is not the same as simultaneous co-ownership.
+### ADVERSARIAL_REVIEW
 
-These modes are task-level choices. The project may move between ChatGPT-only, Claude-only, and collaborative work over time without changing its authority model.
+A reviewer is specifically tasked with searching for falsifiers, unsupported assumptions, leakage, failure modes, or weak gates without being rewarded merely for disagreement.
 
 ---
 
 ## Core rules
 
-1. The repository's normal authority hierarchy remains unchanged.
-2. A collaboration thread is provenance, not a decision merely because two models participated.
-3. Multi-model collaboration is selective, not universal. Single-model work remains first-class.
-4. Every substantive collaborative bounded task has one task owner unless ownership is explicitly transferred.
-5. Reviewers do not silently mutate the task owner's target state.
-6. Reviewer messages may be added in the thread's allowed review surface without granting canonical write ownership.
-7. High-impact reviews may use an independent-first phase before the reviewer sees the proposer's detailed solution.
-8. Agreement is not the goal; disagreement is not the goal. Calibrated judgment is the goal.
-9. Material unresolved disagreement must stay visible.
-10. The human project owner remains the project-intent and normative authority.
-11. API orchestration is not part of the current protocol.
-12. Collaboration provenance should identify the originating interaction context well enough that a future reader can trace which project/chat/session produced a substantive message.
+1. Repository authority remains unchanged by model participation.
+2. Collaboration is selective, not mandatory.
+3. Every substantive collaborative bounded task has one task owner unless ownership is explicitly transferred.
+4. `ROLE != WRITE_SCOPE`.
+5. One collaborator owns target-state mutation at a time.
+6. Secondary collaborators may write only explicitly declared secondary surfaces while another collaborator retains target-state ownership.
+7. `next_expected_actor` does not imply target-state write ownership.
+8. GitHub issues and PR comments are transport, not canonical authority.
+9. Numbered repository message files are durable collaboration provenance.
+10. Agreement and disagreement are not goals. Calibrated judgment is the goal.
+11. Material disagreement stays explicit until resolved, deferred, or routed elsewhere.
+12. Human arbitration is reserved for genuine project intent, desired requirement changes, consequential risk acceptance, resource commitments, and technically underdetermined normative choices.
+13. API orchestration and unattended scheduled model review are not part of the current method.
+14. Collaboration machinery must remain proportionate to task importance and observed need.
 
 ---
 
-## Directory structure
+## Machine-readable state
 
-Each collaboration has a stable thread ID:
+Collaborative threads may use:
+
+```text
+docs/model_collaboration/threads/MC-NNNN/STATE.json
+```
+
+under accepted Specification 024.
+
+The V1 state guard records:
+
+```text
+thread identity
+review mode
+lifecycle / phase
+target and write paths
+task owner
+target-state write owner
+participants / roles
+allowed secondary write surfaces
+next expected actor
+independence status / exposures
+latest transition
+```
+
+The validator is a **coherence guard, not an authenticated distributed lock**. Current provider integrations act through the project owner's GitHub authority, so repository state cannot cryptographically prove which model made a mutation.
+
+Known V1 limitation: target-vs-secondary path overlap is guarded, but simultaneous secondary-vs-secondary overlap is not yet checked. Revisit only if a real thread needs multiple concurrent secondary writers.
+
+---
+
+## Thread structure
+
+Stable collaboration identity uses:
 
 ```text
 MC-NNNN
 ```
 
-Candidate structure:
+Typical structure:
 
 ```text
 threads/
-    MC-0001/
+    MC-NNNN/
         BRIEF.md
         THREAD.md
+        STATE.json          # when guarded
         messages/
-            001_chatgpt_review_request.md
-            002_claude_independent_proposal.md
-            003_claude_comparative_review.md
-            004_chatgpt_response.md
+            001_...
+            002_...
             ...
-        RESOLUTION.md
+        RESOLUTION.md       # when resolved/terminal
 ```
 
-`RESOLUTION.md` should not exist until the thread actually reaches a durable resolution or explicit unresolved/deferred terminal state.
+`BRIEF.md` defines the bounded problem. `THREAD.md` is the human-readable collaboration contract. `STATE.json` is machine-checkable execution/coherence state. Numbered messages preserve substantive collaboration provenance. `RESOLUTION.md` records terminal disposition.
+
+A thread does not itself promote project knowledge. Normal checkpoint/promotion governance still controls canonization.
 
 ---
 
-## Thread metadata
+## Interaction provenance and naming
 
-`THREAD.md` should identify at least:
-
-```text
-Thread ID
-Topic
-Status
-Task owner
-Reviewer(s)
-Human decision authority
-Branch / PR
-Review mode
-Scope
-Allowed reviewer write surface
-Current phase
-Next expected participant/action
-```
-
-The thread should reference accepted repository artifacts rather than reproduce them.
-
----
-
-## Interaction-session identity
-
-Repository authority and interaction provenance are different concerns.
-
-A collaboration message should be traceable to the concrete conversation that produced it without making the repository depend on that conversation remaining accessible.
-
-The candidate provider-neutral provenance model separates:
+Both provider workspaces use the human-facing project/workspace name:
 
 ```text
-collaborator identity
-provider / interaction environment
-workspace or project name
-interaction-session identifier
-conversation title
-interaction surface, where useful
-model / configuration, where useful
-collaboration role
-collaboration thread
-repository head reviewed
+Autonomous Data Science System
 ```
 
-For example, the current ChatGPT work could conceptually record:
-
-```text
-Collaborator: ChatGPT
-Interaction environment: ChatGPT
-Project / workspace: Autonomous Data Science System
-Interaction session: chatgpt-06
-Conversation title: 06 - Methodological Knowledge Universe Construction
-Model / configuration: GPT-5.6 Sol
-Collaboration thread: MC-0001
-Role: TASK_OWNER / INITIAL_PROPOSER
-```
-
-A first Claude development chat could conceptually record:
-
-```text
-Collaborator: Claude
-Interaction environment: Claude
-Project / workspace: Autonomous Data Science System
-Interaction session: claude-01
-Conversation title: 01 - Multi-Model Development Collaboration Review
-Model / configuration: as displayed in the product, when useful
-Collaboration thread: MC-0001
-Role: INDEPENDENT_REVIEWER / COUNTER_DESIGNER
-```
-
-The exact field names are not yet canonical. This is a candidate shape to be pressure-tested in MC-0001 before changing the checkpoint contract.
-
-Historical ChatGPT-specific checkpoint metadata must remain intact. A future provider-neutral contract should extend or supersede prospectively rather than rewrite historical provenance.
-
----
-
-## Conversation naming
-
-The candidate naming rule is intentionally simple.
-
-Both ChatGPT and Claude should use the same visible title pattern inside the shared project name:
+Visible conversations use:
 
 ```text
 NN - Main Topic / Stage
 ```
 
-Each interaction environment maintains its own sequence because ChatGPT and Claude conversations can rotate independently.
-
-Repository provenance disambiguates them with an environment-qualified session identity such as:
+Each interaction environment maintains its own sequence. Repository provenance uses self-describing provider-local IDs such as:
 
 ```text
 chatgpt-06
 claude-01
 ```
 
-This avoids forcing both products into one artificial global chat counter while still making every exchange unambiguous.
-
-The first Claude conversation for MC-0001 is therefore a candidate for:
-
-```text
-01 - Multi-Model Development Collaboration Review
-```
-
-within the Claude project:
-
-```text
-Autonomous Data Science System
-```
-
-This naming proposal is not yet canonical and should be challenged by Claude during the independent review.
-
----
-
-## Message contract
-
-A substantive message should normally begin with a small provenance envelope. Candidate fields are:
+A substantive collaboration message should normally preserve:
 
 ```text
 Thread
@@ -235,165 +168,180 @@ Repository head reviewed
 Purpose
 ```
 
-Optional fields where they materially improve reproducibility or interpretation include:
+Model/configuration, effort/reasoning mode, interaction surface, timestamp, and artifacts read are optional when they materially improve interpretation or reproducibility. Values that a model cannot reliably introspect should preserve their source when known rather than be guessed.
 
-```text
-Model / configuration
-Interaction surface
-Artifacts read
-Position / findings
-Evidence / repository references
-Strongest objection or failure mode
-Alternative considered
-Uncertainty
-What would change my view
-Requested next action
-```
+Historical ChatGPT-specific checkpoint provenance remains historical. Checkpoint 204 introduces the prospective provider-neutral checkpoint contract.
 
-The provenance envelope should identify the originating chat, but the substantive message should still stand on its own if the chat later disappears.
-
-Messages should remain focused. A 100-page research artifact belongs in `docs/research/`, not inside a message file.
-
-After another participant has relied on a message, substantive correction should normally be a new message rather than historical rewriting.
+See `INTERACTION_PROVENANCE_AND_NAMING.md`.
 
 ---
 
-## Review modes
+## Genuine review requirements
 
-### DIRECT_REVIEW
-
-The reviewer reads the proposal and critiques it directly.
-
-Use for ordinary bounded work where anchoring risk is low relative to coordination cost.
-
-### INDEPENDENT_THEN_COMPARATIVE
-
-Phase A:
-
-```text
-reviewer reads neutral problem brief + governing accepted state
-reviewer records its own design/findings
-reviewer does not read proposer's detailed solution yet
-```
-
-Phase B:
-
-```text
-reviewer reads the proposal
-reviewer records comparison, convergence, disagreement, omissions,
-and what evidence could distinguish alternatives
-```
-
-Use for high-impact architecture, experiment design, governance, or other decisions where independent epistemic pressure is valuable.
-
-### ADVERSARIAL_REVIEW
-
-Reviewer is specifically tasked with finding falsifiers, hidden assumptions, leakage, failure modes, weak gates, or unsupported claims.
-
-This does not license performative disagreement.
-
----
-
-## Write authority
-
-The collaboration exchange introduces a narrow exception to one-task-owner branch ownership.
-
-The task owner owns target-state edits.
-
-A designated reviewer may add **new** message files under the active thread's `messages/` directory or use the linked GitHub review/issue surface.
-
-The reviewer should not edit canonical/current-state/target implementation files while remaining in reviewer role.
-
-If a reviewer is asked to implement a patch, ownership of that patch must be explicit or the patch should occur on a reviewer-owned branch for later integration.
-
-A SOLO task requires no second-model write coordination because only the active collaborator owns the bounded task.
-
----
-
-## Optional GitHub transport
-
-A thread may link a GitHub issue or PR discussion as a lower-friction asynchronous transport surface.
-
-Conceptually:
-
-```text
-GitHub issue / PR comments
-    live transport
-
-thread message artifacts
-    durable structured review provenance
-
-accepted project docs / code
-    authority after promotion
-```
-
-If a collaborator cannot write GitHub comments, repository message files remain sufficient.
-
-No future continuation should depend on an issue comment being the only place where a material conclusion was preserved.
-
----
-
-## Genuine-review requirements
-
-When substantially agreeing, a reviewer should still state:
+When substantially agreeing, a reviewer should still identify:
 
 ```text
 strongest plausible failure mode
 strongest alternative considered
 what would make support change
-remaining weak/provisional parts
+remaining provisional parts
 ```
 
-When materially disagreeing, a reviewer should state:
+When materially disagreeing, a reviewer should identify:
 
 ```text
 exact disputed choice
 why it matters
 preferred alternative
 what would make the reviewer accept the original
-whether the disagreement is factual, interpretive, architectural,
-risk-based, evidence-sufficiency based, scope-based, or normative
+disagreement type
 ```
 
-No participant should manufacture objections merely to appear independent.
-
----
-
-## Resolution
-
-A collaboration thread may end as:
+Useful disagreement classes include:
 
 ```text
-RESOLVED
-UNRESOLVED
-DEFERRED
-SUPERSEDED
-ABANDONED
+FACT
+INTERPRETATION
+REQUIREMENT
+ARCHITECTURE
+RISK
+EVIDENCE_SUFFICIENCY
+NORMATIVE_PROJECT_INTENT
+SCOPE
 ```
 
-The resolution should point to any promoted canonical artifact and preserve important residual disagreement.
-
-A thread does not itself promote knowledge.
-
-The normal project checkpoint/promotion method still governs acceptance.
+There is no blanket conservative-wins or narrow-scope-wins rule. Use evidence, accepted authority, reversibility, consequence, and project intent appropriate to the disagreement.
 
 ---
 
-## Current trial
+## Independent review integrity
 
-The first thread is:
+When a review is intended to be genuinely independent, the normal starting package is:
+
+```text
+accepted pre-proposal repository ref
++
+neutral problem brief
++
+constraints / success criteria
++
+explicit candidate-content exclusion/exposure audit
+```
+
+The reviewer should not reconstruct from candidate-branch routing documents that already summarize the proposal if the purpose is blind counter-design.
+
+MC-0001 demonstrated why this matters: Claude avoided the full proposal but still saw candidate concepts leaked through routing documents, so the first pass was correctly classified as only partially independent.
+
+---
+
+## Deferred review and catch-up
+
+The accepted cross-thread rule is:
+
+> **Collaborator unavailability does not globally block ADS unless a specific accepted gate requires that collaborator before the next relevant boundary.**
+
+An intended review must not silently become SOLO merely because the reviewer is temporarily unavailable.
+
+For deferred work, preserve:
+
+```text
+review requirement
+review gate
+exact immutable review target
+minimal governing read set
+expected output
+priority / downstream consequence
+```
+
+A required review must name a real gate. `NONE` is reserved for optional review.
+
+Exact target discipline is strict: review of ancestor commit X is not automatically review of descendant Y.
+
+When several obligations wait for the same collaborator, `REVIEW_INBOX.md` is the current convenience routing view. It is not authoritative; thread state and exact repository evidence control.
+
+One-by-one catch-up is the default. Related items may be batched in one model session only if each keeps a separate exact target, findings, corrections, and disposition.
+
+If a late review changes an upstream result, downstream reliance must be inspected. Cross-thread dependency discovery is currently procedural rather than machine-readable and is the highest-priority future mechanization trigger once real dependency chains justify it.
+
+See `DEFERRED_REVIEW_AND_CATCHUP.md`.
+
+---
+
+## Review inbox and standardized catch-up prompt
+
+Current pending work is routed in:
+
+```text
+docs/model_collaboration/REVIEW_INBOX.md
+```
+
+For Claude, when pending obligations exist, the standard user trigger is intentionally short:
+
+```text
+Check the repository and docs/model_collaboration/REVIEW_INBOX.md, then proceed with the pending Claude reviews in order.
+```
+
+The repository, not the relay prompt, should carry the detailed review contract.
+
+---
+
+## Transport
+
+Optional GitHub issue/PR discussion can provide low-friction asynchronous transport:
+
+```text
+GitHub issue / PR comment
+    -> notice / pointer / lightweight discussion
+
+numbered repository message
+    -> durable substantive collaboration provenance
+
+accepted project docs / code
+    -> authority after normal promotion
+```
+
+A complete issue comment may be used as a disclosed fallback if direct durable writing is temporarily unavailable, but no future continuation should depend on issue text as the only preserved material conclusion.
+
+---
+
+## Resource proportionality
+
+A second model should create marginal epistemic value, not merely more activity.
+
+Use expensive independent/comparative review selectively. Routine implementation under a frozen contract normally deserves a cheaper bounded direct review. Mechanical checks may remain SOLO or deterministic.
+
+Model, effort level, and product surface are operational choices rather than fixed architecture. The project may collect lightweight evidence about review value versus usage cost before institutionalizing model-specific defaults.
+
+Claude product usage was observed to be materially scarce during the first collaboration trial, which strengthened the case for deferred catch-up and bounded reading sets. Exact percentage usage is historical operational evidence, not a permanent architecture constant.
+
+---
+
+## Scheduled execution and API orchestration
+
+Unattended scheduled review execution is currently deferred. It does not create extra weekly subscription capacity and introduces unattended write/concurrency, clarification, and budget-consumption risks that are not justified at current backlog scale.
+
+API orchestration is also deferred. It would introduce separately metered provider usage, repeated context transmission, credentials, retry/failure handling, and orchestration infrastructure.
+
+Revisit either mechanism only when observed manual coordination cost or backlog scale outweighs those costs and risks.
+
+---
+
+## Evidence from the first three threads
 
 ```text
 MC-0001
-Multi-model development collaboration architecture
+    architecture design and independent/comparative challenge
+    exposed candidate-content leakage and global-writer over-coarseness
+
+MC-0002
+    direct implementation review of Specification 024
+    accepted all frozen gates
+    proved lower-overhead REVIEWED mode
+
+MC-0003
+    deferred catch-up architecture review
+    proved two waiting Claude obligations can coexist and later be processed
+    in priority order without a global collaborator lock
 ```
 
-It uses `INDEPENDENT_THEN_COMPARATIVE` review with:
-
-```text
-ChatGPT   initial proposer / task owner
-Claude    independent counter-designer + comparative reviewer
-Human     project-intent arbiter
-```
-
-The trial should be treated as evidence about this protocol itself. If the protocol creates unnecessary friction, anchoring, ambiguity, duplicated work, or excessive provenance burden, Research 035 should be revised rather than defended.
+The collaboration method should continue to evolve from observed failure rather than aesthetic completeness.
