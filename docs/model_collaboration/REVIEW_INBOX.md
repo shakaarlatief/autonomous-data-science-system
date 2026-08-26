@@ -1,89 +1,71 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-08-26  
-**Status:** Candidate human-readable routing view  
-**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen review requests, and exact Git refs remain authoritative.  
+**Status:** Current human-readable routing view  
+**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen review requests, exact Git refs, and resolution records remain authoritative.  
 **Purpose:** Let a returning collaborator discover pending review/catch-up obligations without relying on private chat memory.
 
-## Current pending Claude obligations
-
-### 1. MC-0002: Specification 024 implementation review
+## Current pending obligations
 
 ```text
-status                 PENDING
-requirement            REQUIRED
-gate                    BEFORE_SPECIFICATION_024_CLASSIFICATION
-priority                HIGHER
-target head             a9efc43d7c441c8283d2cd954cc6fa1abd021689
-thread                  docs/model_collaboration/threads/MC-0002/
-live transport          GitHub Issue #78
-expected output         messages/002_claude_implementation_review.md
+NONE
 ```
 
-Why first:
+MC-0002 and MC-0003 were both completed by Claude in the inbox-defined order on 2026-08-26 and subsequently resolved by the task owner.
 
-Specification 024 cannot be classified until MC-G16 direct review is completed. This is therefore the higher-priority catch-up item.
-
-### 2. MC-0003: deferred asynchronous review/catch-up architecture
+Completed route:
 
 ```text
-status                 PENDING
-requirement            REQUIRED
-gate                    BEFORE_MULTI_MODEL_METHOD_PROMOTION
-priority                NORMAL
-target head             74fbf8f5dbf7b57bb5f3038b41122f20e09a4b53
-thread                  docs/model_collaboration/threads/MC-0003/
-live transport          GitHub Issue #79
-expected output         messages/002_claude_deferred_catchup_review.md
+MC-0002
+    Claude review commit  9cf393f74e02e167d2f80c0381742ebd7e0c318e
+    outcome               COLLABORATION_STATE_GUARD_ACCEPTED
+    resolution            docs/model_collaboration/threads/MC-0002/RESOLUTION.md
+
+MC-0003
+    Claude review commit  e8e63faca8f2e181bdc389bf95a915f1d4cc42df
+    outcome               deferred catch-up protocol accepted for current use
+    resolution            docs/model_collaboration/threads/MC-0003/RESOLUTION.md
 ```
-
-Why deferrable:
-
-This architecture extension should receive Claude challenge before the collaboration method is promoted, but Claude's immediate availability is not required for ChatGPT to preserve the candidate design or continue unrelated bounded work.
 
 ---
 
 ## Catch-up rule
 
-When Claude returns, it should normally process:
+When pending obligations exist, a returning collaborator should normally process them by consequence and gate rather than simple creation time:
 
 ```text
-MC-0002 first
-    because it blocks Specification 024 classification
-
-then MC-0003
-    because it blocks final collaboration-method promotion,
-    not current unrelated bounded work
+1. review blocking target mutation / irreversible action
+2. review blocking thread resolution or promotion
+3. review with broad downstream dependency fan-out
+4. ordinary required review
+5. optional/advisory review
 ```
 
-If a new pending item has an earlier or more consequential gate, ordering may change and the reason should be recorded.
+For each item, preserve the exact target head and separate disposition even if several related reviews are handled in one product session.
 
 ---
 
-## Batch catch-up
+## Standardized manual catch-up prompt
 
-Claude may process several pending items in one product session when that is efficient, but each item remains a separate obligation.
-
-A batch must preserve:
+When this inbox contains pending Claude work, the current low-friction user prompt is:
 
 ```text
-exact target head per thread
-separate findings per thread
-separate required corrections
-separate disposition / closure
+Check the repository and docs/model_collaboration/REVIEW_INBOX.md, then proceed with the pending Claude reviews in order.
 ```
 
-MC-0002 and MC-0003 should normally be reviewed sequentially even if handled in one Claude session because MC-0002 findings may affect the collaboration-state assumptions used by MC-0003.
+The equivalent instruction may be used for another collaborator by naming the relevant pending work if the inbox contains mixed obligations.
+
+Scheduled unattended review execution is not part of the current method. Manual triggering remains sufficient at the present scale.
 
 ---
 
 ## Important limitation
 
-This inbox is currently maintained as a convenience view because Specification 024 does not yet encode explicit review-obligation/gate metadata.
+This inbox remains a convenience view because Specification 024 does not encode explicit review-obligation/gate metadata.
 
 It must never override a thread's authoritative state.
 
-Long-term candidate direction:
+Long-term candidate direction, only if observed need justifies it:
 
 ```text
 per-thread authoritative review obligation
@@ -92,7 +74,5 @@ deterministic backlog discovery
         ↓
 generated human-readable inbox
 ```
-
-rather than two independently editable sources of truth.
 
 If this inbox and a thread disagree, the thread and exact repository evidence control and the inbox should be repaired.
