@@ -25,6 +25,10 @@ The human project owner specifically requested Claude for additional ideas and i
 
 This is a good use of the existing `COUNTER_DESIGNER / RESEARCHER` role because the value sought is divergent design-space expansion, not ceremonial agreement with the current four variants.
 
+A subsequent human clarification is binding for this request:
+
+> Do not impose an artificial numerical cap on the candidate set. If many genuinely distinct and worthwhile candidates exist, preserve them and recommend testing them. Browser evaluation may be split into manageable batches for presentation or implementation convenience, but candidate quality should determine breadth rather than an arbitrary shortlist size.
+
 ---
 
 ## 2. Current design boundary
@@ -84,7 +88,7 @@ The user explicitly suspects the current set covers too little of the design spa
 
 ## 4. Requested Claude output
 
-Please produce a bounded but genuinely divergent design response in a new numbered collaboration message.
+Please produce a genuinely divergent design response in a new numbered collaboration message.
 
 ### A. Diagnose the current design-space coverage
 
@@ -114,7 +118,9 @@ Do not feel constrained to this list.
 
 ### B. Propose additional concept families
 
-Propose approximately 5-10 additional materially distinct concept families or mechanisms that could plausibly belong in a premium professional ADS Cockpit.
+Propose as many additional materially distinct concept families or mechanisms as you genuinely think are worth serious consideration for a premium professional ADS Cockpit.
+
+There is deliberately no target count. If only a few survive your quality threshold, present a few. If many genuinely different and plausible candidates survive, preserve all of them rather than compressing them into an arbitrary quota.
 
 For each, include:
 
@@ -131,7 +137,7 @@ Avoid superficial variants that are only different corner-radius values or arbit
 
 ### C. Identify promising combinations
 
-If the strongest direction is likely a synthesis, explain which mechanisms from W1-W4 and the new ideas should be combined rather than treated as mutually exclusive.
+If strong directions are likely to be syntheses, explain which mechanisms from W1-W4 and the new ideas should be combined rather than treated as mutually exclusive.
 
 ### D. Use external design inspiration if it adds value
 
@@ -139,17 +145,22 @@ Current real products, scientific/technical interfaces, developer tools, node ed
 
 Do not copy one product's visual identity wholesale. Extract transferable mechanisms.
 
-### E. Recommend a next browser round
+### E. Recommend browser testing without artificial narrowing
 
-End with a concrete recommendation for the next bounded browser comparison. Prefer a small number of genuinely distinct candidates rather than a huge catalog.
+End with a concrete recommendation for subsequent browser comparison.
+
+Do **not** narrow merely to keep the comparison count small. If many candidates remain genuinely distinct, plausible and informative, recommend testing them all. They may be organized into multiple browser rounds or families if that improves causal clarity or usability, but batching is not rejection.
+
+Narrow only when candidates are materially redundant, clearly dominated, outside the accepted design boundary, or too weak to justify implementation effort.
 
 State:
 
 ```text
-which 3-5 new/combined directions deserve implementation
+which new/combined directions deserve implementation
 what each direction is testing
 which current W1-W4 mechanisms should remain as controls
-what evidence would make you discard your preferred direction
+which candidates could be grouped into the same comparison round
+what evidence would make you discard any preferred direction
 ```
 
 ---
@@ -197,6 +208,7 @@ The desired contribution is:
 broaden the design space
 challenge premature convergence
 bring in different visual mechanisms
+preserve all genuinely worthwhile candidates
 identify combinations worth executable comparison
 ```
 
