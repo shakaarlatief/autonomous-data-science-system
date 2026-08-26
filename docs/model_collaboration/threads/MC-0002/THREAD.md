@@ -1,27 +1,26 @@
 # MC-0002: Collaboration-State Guard Implementation Review
 
-**Status:** OPEN  
+**Status:** RESOLVED / CLOSED  
 **Topic:** Implement and directly review Specification 024  
 **Task owner:** ChatGPT  
 **Implementer:** ChatGPT  
 **Reviewer:** Claude  
 **Human decision authority:** Project owner  
 **Review mode:** REVIEWED  
-**Active branch:** `v1-multimodel-development-collaboration`  
-**Active PR:** #76  
+**Active branch at resolution:** `v1-multimodel-development-collaboration`  
+**Active PR at resolution:** #76  
 **Live transport:** GitHub Issue #78  
 **Target authority:** `docs/specifications/024_v1_model_collaboration_state_guard.md`  
 **Machine-readable state:** `docs/model_collaboration/threads/MC-0002/STATE.json`  
-**Target-state write owner:** ChatGPT  
-**Allowed reviewer write surface:** new immutable files under `docs/model_collaboration/threads/MC-0002/messages/`  
-**Current phase:** REVIEW_REQUESTED  
-**Next expected participant:** Claude
+**Target-state write owner:** none, thread closed  
+**Current phase:** CLOSED_ACCEPTED  
+**Next expected participant:** none
 
-## Why this thread exists
+## Why this thread existed
 
 MC-0001 resolved the conceptual collaboration architecture and identified one load-bearing implementation follow-up: the scoped machine-readable state guard.
 
-MC-0002 is the self-hosting implementation/review thread for that mechanism.
+MC-0002 was the self-hosting implementation/review thread for that mechanism.
 
 ## Frozen contract
 
@@ -29,23 +28,17 @@ MC-0002 is the self-hosting implementation/review thread for that mechanism.
 docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
 
-Specification 024 was frozen at the pre-implementation boundary before the schema, validator, tests, workflow, or guarded state existed.
+Specification 024 was frozen at:
+
+```text
+9da382d4011ff112b75dec9c456143d798336336
+```
+
+before the schema, validator, tests, workflow, or guarded state existed.
 
 ## Implementation evidence
 
-Implementation files:
-
-```text
-schemas/model_collaboration_thread_state_v1.schema.json
-scripts/check_model_collaboration_state.py
-tests/unit/test_model_collaboration_state.py
-.github/workflows/model-collaboration-state.yml
-docs/model_collaboration/threads/MC-0002/STATE.json
-```
-
-The initial workflow exposed one test-fixture defect: a test called the temporary-case writer twice against the same temporary directory. The state validator itself had already passed. The fixture was corrected without changing Specification 024 or weakening any gate.
-
-Exact pre-review implementation head after that bounded correction:
+Exact corrected green pre-review implementation head:
 
 ```text
 a9efc43d7c441c8283d2cd954cc6fa1abd021689
@@ -57,57 +50,44 @@ Dedicated workflow run:
 32902050014
 ubuntu-latest   PASS
 windows-latest  PASS
+26 focused unit tests per platform
 ```
 
-The valid MC-0002 `STATE.json` itself is now consumed by the validator, so the mechanism is self-hosted before review.
+## Claude direct review
 
-## Review request
+Claude reviewed the exact frozen implementation rather than relying on the task owner's description.
 
-Claude should read:
-
-```text
-docs/specifications/024_v1_model_collaboration_state_guard.md
-docs/model_collaboration/threads/MC-0002/BRIEF.md
-docs/model_collaboration/threads/MC-0002/THREAD.md
-docs/model_collaboration/threads/MC-0002/STATE.json
-schemas/model_collaboration_thread_state_v1.schema.json
-scripts/check_model_collaboration_state.py
-tests/unit/test_model_collaboration_state.py
-.github/workflows/model-collaboration-state.yml
-```
-
-and preserve one direct review as:
+Durable review:
 
 ```text
 docs/model_collaboration/threads/MC-0002/messages/002_claude_implementation_review.md
+commit 9cf393f74e02e167d2f80c0381742ebd7e0c318e
 ```
 
-Claude should not edit the target implementation while remaining reviewer.
-
-## Review focus
+Claude found MC-G01 through MC-G16 satisfied and recommended:
 
 ```text
-Specification 024 MC-G01 through MC-G16
-schema fail-closed behavior
-actor-reference semantics
-normalized path semantics
-conservative target/secondary overlap semantics
-lifecycle/write-owner invariants
-self-hosting quality
-cross-platform behavior
-coherence guard vs distributed-lock claims
-unnecessary complexity
-missing failure modes
+COLLABORATION_STATE_GUARD_ACCEPTED
 ```
 
-The review should classify findings as required correction, optional improvement, or no change. It should not reopen the resolved MC-0001 architecture without concrete implementation evidence.
+No required correction was identified.
 
-## Sequence from here
+One real but non-blocking V1 scope limitation was preserved: the guard checks target-vs-secondary write-surface overlap, but not secondary-vs-secondary overlap between two simultaneous secondary writers. The current project does not exercise that case.
+
+## Final disposition
+
+ChatGPT as task owner accepted Claude's review and classified Specification 024:
 
 ```text
-Claude direct review
-    -> bounded correction if required
-    -> rerun frozen gates
-    -> Specification 024 classification
-    -> collaboration-method promotion audit
+COLLABORATION_STATE_GUARD_ACCEPTED
 ```
+
+Resolution route:
+
+```text
+messages/002_claude_implementation_review.md
+messages/003_chatgpt_review_disposition.md
+RESOLUTION.md
+```
+
+MC-0002 is closed. The accepted guard enters the canonical multi-model development promotion audit.
