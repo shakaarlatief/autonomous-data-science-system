@@ -432,3 +432,120 @@ html[data-reduced="on"] .perimeter-sweep {
     display: none;
   }
 }
+
+/* H4 human-review refinement: slightly farther rest spill and a gentler hover release. */
+.variant-h4 .lighting-node::after {
+  left: -68px;
+  width: 112px;
+  height: 122px;
+  background: radial-gradient(
+    ellipse at 76% 50%,
+    rgba(var(--node-rgb), 0.082) 0%,
+    rgba(var(--node-rgb), 0.041) 38%,
+    rgba(var(--node-rgb), 0.015) 60%,
+    transparent 78%
+  );
+  filter: blur(10px);
+  opacity: 0.72;
+  transition:
+    opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lighting-node {
+  transition:
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 360ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lighting-node::before {
+  transition:
+    box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rest-light {
+  transition:
+    opacity 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-light {
+  transition:
+    opacity 380ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pointer-light {
+  transition: opacity 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.world-spill {
+  transition:
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 430ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lighting-relations path {
+  transition:
+    stroke 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 340ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lighting-node:hover {
+  transition:
+    transform 180ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.lighting-node:hover::before {
+  transition: box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.variant-h4 .lighting-node:hover::after {
+  transition:
+    opacity 180ms ease,
+    transform 220ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.lighting-node:hover .rest-light {
+  transition: opacity 180ms ease, transform 200ms ease;
+}
+
+.lighting-node:hover .hover-light {
+  transition: opacity 160ms ease, transform 180ms ease;
+}
+
+.variant-h2 .lighting-node:hover .pointer-light,
+.variant-h4 .lighting-node:hover .pointer-light {
+  transition: opacity 140ms ease;
+}
+
+.variant-h3 .lighting-world.has-hover .world-spill,
+.variant-h4 .lighting-world.has-hover .world-spill {
+  transition:
+    opacity 190ms ease,
+    transform 240ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.lighting-relations path.is-related {
+  transition: stroke 160ms ease, filter 160ms ease, opacity 160ms ease;
+}
+
+.perimeter-sweep.sweep-active {
+  animation-duration: 860ms;
+  animation-timing-function: cubic-bezier(0.18, 0.72, 0.22, 1);
+}
+
+@keyframes perimeter-sweep {
+  0% { opacity: 0; transform: rotate(-45deg); }
+  14% { opacity: 0.88; }
+  64% { opacity: 0.76; }
+  82% { opacity: 0.42; }
+  100% { opacity: 0; transform: rotate(315deg); }
+}
