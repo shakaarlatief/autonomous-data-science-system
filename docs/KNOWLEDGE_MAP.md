@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 211  
+**Current checkpoint:** 213  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        211
+checkpoint                        213
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C G4 ambient-dynamics human review
+current boundary                 MC-0004 Phase C randomized G4 ambient-distribution human review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -45,70 +45,87 @@ source-vault deployment          PAUSED, Course 2 gate unchanged
 
 ```text
 G4 Adaptive Hybrid  SELECTED
-```
-
-Primary evidence:
-
-```text
-docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
-docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
-docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
-docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-frontend/design-lab/grid-world.html
-frontend/design-lab/grid-dynamics.html
+Dark mode           ACTIVE DESIGN BASELINE
+Light mode          DEFERRED
 ```
 
 G1 Precision Lines, G2 Dot Matrix and G3 Cross Lattice are no longer primary substrate candidates.
 
-## Current appearance sequencing
+Primary grid/world evidence:
 
 ```text
-DARK MODE
-    current visual-design baseline
-
-LIGHT MODE
-    deferred until the core Cockpit visual system is substantially settled
+docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
+docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+frontend/design-lab/grid-world.html
 ```
 
-Light mode remains a later design task rather than a current decision constraint.
+## Ambient dynamics decisions
 
-## Current ambient-dynamics slice
-
-The current experiment separates semantic and decorative motion.
+All tested ambient mechanisms survive:
 
 ```text
-SEMANTIC
-    real project/runtime activity
-    higher salience
-
-AMBIENT
-    decorative atmosphere
-    slow, sparse, subordinate
+travelling grid currents
+intersection glints
+ambient light drift
+localized semantic activity
 ```
 
-Variants:
+Human review also established:
 
 ```text
-D1 Quiet Current       travelling grid-light segments
-D2 Intersection Glints rare intersection pulses
-D3 Ambient Drift       diffuse slow sub-grid light movement
-D4 Restrained Hybrid   lower-intensity combination
+initial D1-D4 cadence      TOO SUBTLE
+combined preset preference LIVELY
+fixed ambient coordinates  REJECTED
+```
+
+Current supporting evidence:
+
+```text
+docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
+docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
+docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
+
+docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
+docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
+docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
+```
+
+Current browser lab:
+
+```text
+frontend/design-lab/grid-dynamics-combined.html
+frontend/design-lab/grid-dynamics-combined.css
+frontend/design-lab/grid-dynamics-combined.js
 ```
 
 Local route:
 
 ```text
-http://localhost:5173/design-lab/grid-dynamics.html
+http://localhost:5173/design-lab/grid-dynamics-combined.html
 ```
 
-Human review controls:
+## Current spatial-randomization rules
 
 ```text
-Ambient ON/OFF
-Semantic ON/OFF
-Reduced motion ON/OFF
-Focus variant
+CURRENTS
+    horizontal or vertical
+    random visible grid line
+    snapped to 20 px lattice
+    random start, direction, distance, length and timing
+
+GLINTS
+    x snapped to 20 px
+    y snapped to 20 px
+    always centered on an actual grid intersection / cell corner
+
+AMBIENT DRIFT
+    random start position
+    random size
+    random motion vector
+    random opacity within cadence preset
 ```
+
+The semantic activity layer remains separate and is not randomized as decoration.
 
 ---
 
@@ -119,7 +136,7 @@ The preferred workflow is:
 ```text
 choose one design question
 inspect real references if useful
-build 2-4 bounded browser variants
+build bounded browser variants
 hold project state constant
 human compares
 record prefer/reject/combine/refine
