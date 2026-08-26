@@ -13,284 +13,244 @@
 
 Run a broad next-generation Project Cockpit design exploration while preserving Specification 008 unless new evidence justifies revision. Phase C uses browser-rendered experiments, selective external references, continuous human review and selective cross-model contributions before any production visual replacement is authorized.
 
-## Preserved collaboration history
+## Collaboration history
 
 ```text
 Phase A
     Claude independent proposal
     message 001
     commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a
-    classification BLIND_TO_CANDIDATE
+    BLIND_TO_CANDIDATE
 
 Phase B
     Claude comparative review
     message 002
     commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
-    classification COMPARATIVE_ONLY
+    COMPARATIVE_ONLY
 
 Phase C divergent work-unit ideation
-    request message 003
+    ChatGPT request message 003
     Claude response message 004
-    response commit faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-    classification COMPARATIVE_ONLY / DIVERGENT_IDEATION
+    commit faf18ed9932d60a24dd80589b0ec0ba71c5940fd
+    COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
-Historical Phase-A independence remains valid. All later Claude work is comparative because candidate exposure is allowed.
+No Claude action is currently pending.
 
-## Phase C method
-
-Governing protocol:
-
-```text
-docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
-```
-
-Preferred loop:
+## Phase-C method
 
 ```text
 bounded design question
 -> browser variants
 -> human comparison
--> selective refinement / additional research / model contribution
--> integrate only surviving mechanisms
+-> preserve prefer/reject/combine evidence
+-> selective refinement / external research / model contribution
+-> integrate only mechanisms that survive
 ```
 
 Generated-image UI concepts are not part of the preferred workflow.
 
-## Settled / held controls
-
-### Grid/world
+## Held controls
 
 ```text
-G4 Adaptive Hybrid  SELECTED / provisionally settled
-```
+G4 Adaptive Hybrid
+    SELECTED / provisionally settled
 
-### Generic work-unit interaction lighting
+H4 generic hover/outward-world response
+    SELECTED / sufficiently settled
 
-```text
-H4 Integrated Response  SELECTED / sufficiently settled
-```
-
-Accepted hover/outward-world behavior remains held.
-
-Human review has now additionally selected:
-
-```text
 Reduced in-box resting light
-    PREFERRED WORKING CONTROL
+    SELECTED preferred working baseline
 ```
 
-So subsequent work-unit grammar rounds default to Reduced rather than treating H4 baseline and Reduced as equal alternatives.
-
-Signature-coupled resting light remains governed by:
+Scientific category-marker mapping is now selected for the current work-unit grammar direction:
 
 ```text
-signature edge
-+
-signature position along edge
--> light origin
+Question        circle
+Investigation   square
+Validation      triangle
+Model           diamond
+Evaluation      plus
 ```
 
-## Work-unit grammar history
+## Work-unit grammar evidence
 
 ### First round
 
 ```text
-W1  Unified Precision Frame
-W2  Edge-Signature Grammar
-W3  Structural Silhouette Family
-W4  Hybrid Semantic Instrument
+W1 Unified Precision Frame
+W2 Edge-Signature Grammar
+W3 Structural Silhouette Family
+W4 Hybrid Semantic Instrument
 ```
 
-Human review liked the implementation direction but judged the design space too narrow.
+Useful but too narrow for convergence.
 
-### Claude divergent ideation
-
-Claude proposed:
+### Claude expansion
 
 ```text
-C1  Instrument Glyph Family
-C2  Structural Topology Family
-C3  Material Language Family
-C4  Port Grammar
-C5  Internal Layout Grammar
-C6  Aspect & Proportion Family
-C7  Compact Marker Rail
-C8  Scientific Marker Family
+C1 Instrument Glyph Family
+C2 Structural Topology Family
+C3 Material Language Family
+C4 Port Grammar
+C5 Internal Layout Grammar
+C6 Aspect & Proportion Family
+C7 Compact Marker Rail
+C8 Scientific Marker Family
 ```
 
 Research 048 added:
 
 ```text
-C9  Inner Instrument Architecture
+C9 Inner Instrument Architecture
 ```
 
-Dependency-bound candidates remain preserved:
+### Human eliminations / selections
 
-```text
-C4 Port Grammar             -> connector-semantics slice
-C5 Internal Layout Grammar  -> semantic zoom / information-density slice
-```
-
-### Expanded browser round
-
-```text
-G0-G3  glyph strategies
-S0-S3  structural strategies
-M0-M1  material strategies
-I0-I2  integrated W4 combinations
-```
-
-Total immediate executable variants:
-
-```text
-13
-```
-
-No artificial cap was applied.
-
-## Human expanded-round result
-
-The project owner has now supplied decisive evidence.
-
-Rejected:
+Rejected or retired from active review:
 
 ```text
 bare Q / I / V / M / E letters
 G2 Compact Marker Rail
-S3 Inner Instrument Architecture / symbol direction
+S3 Inner Instrument Architecture
+G1 Instrument Glyph comparator after scientific-marker selection
 ```
 
-Leading:
+Positive visual mechanisms:
 
 ```text
-G3 Scientific Marker Family
-M1 Material Language Family
-M1 Evaluation micro treatment
+scientific marker family
 Reduced in-box light
+M1 micro-material family
+M1 Evaluation luminous treatment
+subtle true-shape family
 ```
 
-Secondary comparator:
+Refinements preserved in Research 050:
 
 ```text
-G1 Instrument Glyph Family
+Investigation dots strengthened
+Validation lines strengthened
+Model grid strengthened
+Validation shape changed to a subtle right-only top step
+upper-left reading entry preserved
 ```
 
-The project owner specifically prefers the simple scientific marker geometry over G1 while still finding G1 visually good.
+## New product direction: visual mechanisms can coexist
 
-## New true-shape question
+The project owner identified that attractive, semantically compatible visual mechanisms do not need to compete for one universal mandatory appearance.
 
-The project owner asked whether genuinely different overall work-unit shapes should be tested.
-
-Direct shape-orientation evidence:
+Product intent:
 
 ```text
-upper-right cut   liked
-upper-left cut    awkward
+user can personalize the Cockpit
+normal boxes and subtle shapes can coexist
+micro design can be enabled or disabled
+approved visual mechanisms can combine independently
 ```
 
-Research 049 therefore opens a true-shape hypothesis:
+Research 051 separates:
 
 ```text
-preserve full left reading edge
-allow stronger top / right / bottom silhouette variation
+SEMANTIC PROJECT MODEL
+    governed meaning
+
+PRESENTATION PROFILE
+    safe appearance preference
 ```
 
-Current true-shape family:
+Semantic invariants in the current proof:
 
 ```text
-Question        upper-right diagonal cut
-Investigation   right-edge inward notch
-Validation      raised / tab-like top geometry
-Model           stepped bottom-right geometry
-Evaluation      right-side beveled termination
+scientific marker mapping fixed
+Reduced in-box baseline held
+category/status/runtime/importance meaning unchanged
+accessibility constraints authoritative
+appearance cannot masquerade as semantic state
 ```
 
-## Current focused browser round
+## Current browser proof
 
-Governing research:
-
-```text
-docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
-```
-
-Browser route:
+Route:
 
 ```text
-frontend/design-lab/work-unit-grammar-focused.html
-frontend/design-lab/work-unit-grammar-focused.css
-frontend/design-lab/work-unit-grammar-focused.js
+frontend/design-lab/work-unit-grammar-customizable.html
+frontend/design-lab/work-unit-grammar-customizable.css
+frontend/design-lab/work-unit-grammar-customizable.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-focused.html
+http://localhost:5173/design-lab/work-unit-grammar-customizable.html
 ```
 
-Candidate matrix:
+Exact browser implementation target:
 
 ```text
-F0  Scientific Marker Control
-F1  Upper-right Cut Control
-F2  Scientific Marker + M1 Material
-F3  Scientific Marker + Micro-Lumen
-F4  True Shape Family
-F5  True Shape + M1 Material
-F6  True Shape + Micro-Lumen
-F7  Instrument Glyph Comparator
+ac16df1bbcd456b63c042c28e52516679139bf32
 ```
 
-The focused round defaults to Reduced in-box light.
-
-Micro-Lumen is a category-level surface-detail experiment inspired by the especially positive M1 Evaluation treatment. It is not a return to stronger global H4 resting illumination.
-
-## Scope discipline
-
-The active work-unit grammar question remains primarily:
+Independent configuration axes:
 
 ```text
-WHAT IS THIS WORK UNIT?
+Box shape
+    Normal
+    Subtle shapes
+
+Micro design
+    None
+    Micro material
+    Micro light
 ```
 
-Keep it distinct from:
+Convenience presets:
 
 ```text
-project disposition
-runtime state
-importance / recommendation strength
+Clean        normal + none
+Structured   subtle shapes + none
+Rich         subtle shapes + micro material
 ```
 
-Do not silently solve connector semantics or semantic zoom inside this slice.
+The design-lab prototype persists shape/surface preference through browser-local storage only. Production preference storage remains unselected.
 
-## Authority
+## Persistence architecture candidate
+
+A plausible later production hierarchy is:
 
 ```text
-accepted specifications / decisions
->
-current canonical project state
->
-this collaboration thread
->
-raw model proposals
+user appearance profile
+    global default
+
+optional project appearance override
+    project-specific preference
+
+semantic project state
+    independent
 ```
 
-Multi-model agreement does not itself promote a visual concept.
+This is not yet promoted.
+
+## Dependency-bound ideas preserved
+
+```text
+C4 Port Grammar
+    connector-semantics slice
+
+C5 Internal Layout Grammar
+    semantic zoom / information-density slice
+```
+
+## Current gate
+
+```text
+human reviews the configurable appearance prototype
+-> verify combinations remain coherent
+-> verify semantic markers/meaning stay stable
+-> if accepted, run promotion audit for a durable configurable-Cockpit principle
+-> only then design production preference persistence
+```
 
 ## Production boundary
 
-No production `/cockpit` replacement, new graph/canvas dependency, new motion library or final visual-system freeze is authorized by this thread.
-
-## Current continuation
-
-```text
-1. human reviews the focused F0-F7 browser round
-2. compare scientific markers against the remaining G1 comparator
-3. compare M1 micro-material against Micro-Lumen
-4. compare upper-right-cut control against the true-shape family
-5. compare integrated true-shape + micro-detail candidates
-6. switch to Project scene and test whether preferences survive realistic composition
-7. preserve prefer/reject/combine evidence before moving to another design slice
-```
-
-Machine-readable authoritative coordination state is in `STATE.json`; `docs/model_collaboration/REVIEW_INBOX.md` shows no pending model obligation.
+No production `/cockpit` replacement, settings persistence architecture, graph/canvas dependency, motion library or final visual-system freeze is authorized by this thread.
