@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 217  
+**Checkpoint:** 218  
 **Date:** 2026-08-26  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 is provisionally settled as the grid/world direction. H4 Integrated Response rest/hover interaction lighting is sufficiently settled after final human approval. The active design question is now work-unit category/silhouette visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 is provisionally settled as the grid/world direction. H4 Integrated Response rest/hover interaction lighting is sufficiently settled after final human approval. The first W1-W4 work-unit category/silhouette visual-grammar browser experiment is now implemented and awaiting human review. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -32,16 +32,17 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-```
-
-Expected next design-lab surface:
-
-```text
 frontend/design-lab/work-unit-grammar.html
 frontend/design-lab/work-unit-grammar.css
 frontend/design-lab/work-unit-grammar.js
+```
+
+Expected local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar.html
 ```
 
 ## Provisionally settled grid/world direction
@@ -105,23 +106,13 @@ No further generic lighting-only variant is currently justified.
 
 Later selected/focused, running/waiting, blocked/approval and other semantic states may reuse or modify lighting, but those belong to their own integrated design slices.
 
-Primary completed lighting evidence:
-
-```text
-docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
-docs/research/045_h4_resting_node_light_world_spill_refinement.md
-docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
-docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
-frontend/design-lab/work-unit-lighting.html
-```
-
 ---
 
 # Active slice: work-unit category / silhouette visual grammar
 
 Research 037 and Research 038 identified a shared current weakness: most meaningful work units still collapse into one generic rounded-card grammar, with category identity carried too heavily by text, icon and color.
 
-Research 046 now isolates:
+Research 046 isolates:
 
 ```text
 WHAT IS THIS?
@@ -136,7 +127,7 @@ runtime state
 importance / methodological priority
 ```
 
-First-round browser directions:
+The first browser comparison is now implemented:
 
 ```text
 W1  Unified Precision Frame
@@ -145,19 +136,38 @@ W3  Structural Silhouette Family
 W4  Hybrid Semantic Instrument
 ```
 
-The comparison should preserve G4 and H4 and use both a neutral category strip and a small realistic project scene.
+Two comparison modes are available:
+
+```text
+Category strip
+    isolates category recognition in a neutral comparison context
+
+Project scene
+    tests the same grammar inside realistic G4/H4 composition with connectors
+```
 
 Representative design-fixture categories:
 
 ```text
 Question / Blocker
 Investigation
-Validation / Analysis work
-Model work
-Evaluation / Decision-relevant work
+Validation / Analysis
+Model Work
+Evaluation
 ```
 
 These are not a frozen production taxonomy.
+
+A Reduced motion control is included as a secondary accessibility check.
+
+Current evidence status:
+
+```text
+research brief       complete for first round
+browser implementation complete for first round
+human browser review OPEN
+production promotion not authorized
+```
 
 ---
 
@@ -191,7 +201,7 @@ Only isolated `frontend/design-lab/**` artifacts are authorized for the current 
 ```text
 Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
-Phase C  browser-rendered design evaluation; current actor human/ChatGPT
+Phase C  browser-rendered design evaluation; current actor human
 ```
 
 Generated-image UI concepts are not part of the preferred Cockpit evaluation workflow. Real browser-rendered experiments and real external references are preferred.
@@ -218,15 +228,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 217 and v1-cockpit-design-exploration
-2. preserve G4 as the provisionally settled world substrate
-3. preserve H4 generic rest/hover interaction lighting as sufficiently settled
-4. use Research 046 as the active design brief
-5. build W1-W4 under frontend/design-lab/**
-6. keep category separate from project disposition, runtime state and importance
-7. expose a neutral category strip and one realistic project scene
-8. let the project owner compare the browser-rendered variants
-9. record prefer/reject/combine/refine evidence
+1. use Checkpoint 218 and v1-cockpit-design-exploration
+2. pull the latest branch locally
+3. keep the existing Vite dev server running
+4. open http://localhost:5173/design-lab/work-unit-grammar.html
+5. compare W1-W4 first in Category strip view
+6. compare W1-W4 again in Project scene view
+7. hover representative nodes to confirm the accepted H4 treatment still works visually
+8. use Reduced motion only as a secondary accessibility check
+9. report prefer/reject/combine/refine judgment
 10. keep production Cockpit untouched until later integrated evidence warrants promotion
 11. keep source-vault deployment paused until explicitly resumed
 ```
