@@ -35,45 +35,65 @@ http://localhost:5173/design-lab/work-unit-grammar-focused.html
 Current checkpoint:
 
 ```text
-222
+223
+```
+
+Exact refined browser target:
+
+```text
+6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a
 ```
 
 Current human evidence carried forward:
 
 ```text
-REJECT
+SELECTED FOR CURRENT GRAMMAR DIRECTION
+    scientific marker family
+        Question        circle
+        Investigation   square
+        Validation      triangle
+        Model           diamond
+        Evaluation      plus
+
+SELECTED PREFERRED WORKING CONTROL
+    Reduced in-box light
+
+KEEP / REFINE
+    M1 Material Language Family
+    Evaluation-like micro character
+    subtle true-shape family
+
+REJECT / RETIRE FROM ACTIVE FOCUSED REVIEW
     bare Q / I / V / M / E letters
     G2 Compact Marker Rail
     S3 Inner Instrument Architecture / symbol direction
-
-LEADING
-    G3 Scientific Marker Family
-    M1 Material Language Family
-    M1 Evaluation micro treatment
-    Reduced in-box light
-
-SECONDARY COMPARATOR
-    G1 Instrument Glyph Family
+    G1 Instrument Glyph Comparator
 ```
 
-Reduced in-box light is now the preferred working control rather than an equal open comparison against H4 baseline.
-
-New focused design question:
+Latest material refinement:
 
 ```text
-Can genuinely different overall work-unit silhouettes
-improve category recognition and product identity
-while remaining coherent and professional?
+Question / yellow diagonal treatment      retained
+Investigation / green dots                strengthened
+Validation / blue lines                   strengthened
+Model / red grid                          strengthened
+Evaluation / luminous diagonal treatment  retained
 ```
 
-Direct human shape evidence:
+Latest shape refinement:
 
 ```text
-upper-right cut   positive
-upper-left cut    awkward
+Validation original raised-tab shape
+    rejected as too aggressive
+    removed material from two top areas including upper-left
+
+Validation refined shape
+    upper-left preserved
+    full left reading edge preserved
+    subtle 7 px right-side top step only
 ```
 
-Focused executable matrix:
+Current visible focused matrix:
 
 ```text
 F0  Scientific Marker Control
@@ -83,8 +103,9 @@ F3  Scientific Marker + Micro-Lumen
 F4  True Shape Family
 F5  True Shape + M1 Material
 F6  True Shape + Micro-Lumen
-F7  Instrument Glyph Comparator
 ```
+
+F7 remains only as historical underlying experiment code and is hidden from active focused presentation.
 
 Dependency-bound ideas remain preserved rather than rejected:
 
