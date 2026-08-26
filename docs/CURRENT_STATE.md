@@ -1,175 +1,191 @@
 # Current State
 
-**Checkpoint:** 203  
-**Date:** 2026-08-25  
+**Checkpoint:** 204  
+**Date:** 2026-08-26  
 **Active development branch:** `v1-multimodel-development-collaboration`  
 **Active PR:** #76  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `8215718db3e44f000cc6ed53d6a051522d429dbd`  
-**Development stage:** Governed multi-model development is being pressure-tested as a Level-2 development-method change. MC-0001 has resolved the conceptual architecture. Specification 024 is now implemented, self-hosted on MC-0002, and green on Ubuntu and Windows. The exact pre-review implementation head is frozen and Claude is the next expected actor for one bounded direct implementation review. Draft PR #75 for permanent source-vault deployment remains paused.  
-**Latest specification:** Specification 024 is the current frozen implementation contract; its final outcome is pending MC-G16 direct Claude review.  
+**Development stage:** Governed provider-neutral multi-model development has passed its architecture, implementation, and deferred-catch-up pressure tests and is canonically promoted on the active branch through Development Method v0.5, D-034, accepted Specification 024, and Checkpoint 204. The remaining boundary is final PR #76 integration/audit. Permanent source-vault deployment remains preserved and paused.  
+**Latest specification:** Specification 024 is accepted with outcome `COLLABORATION_STATE_GUARD_ACCEPTED`.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
 ## Active interaction context
 
-The canonical checkpoint contract is still ChatGPT-specific until the post-Specification-024 promotion audit:
+The provider-neutral checkpoint provenance contract begins at Checkpoint 204.
+
+Current interaction:
 
 ```text
-Design session: 06
-ChatGPT project: Autonomous Data Science System
-Session title: 06 - Methodological Knowledge Universe Construction
+Interaction environment  ChatGPT
+Project / workspace      Autonomous Data Science System
+Interaction session      chatgpt-06
+Conversation title       06 - Methodological Knowledge Universe Construction
+Primary collaborator     ChatGPT
 ```
 
-Active collaboration sessions are preserved separately:
+Current Claude collaboration session:
 
 ```text
-ChatGPT interaction session  chatgpt-06
-Claude interaction session   claude-01
-Claude conversation title    01 - ADS Development Review & Collaboration
+Interaction environment  Claude
+Project / workspace      Autonomous Data Science System
+Interaction session      claude-01
+Conversation title       01 - ADS Development Review & Collaboration
 ```
-
-The user reported Claude Phase B used Sonnet 5 at Extra effort. That setting was preserved as human-reported provenance rather than retroactively inserted into Claude's frozen message.
 
 Repository artifacts remain authoritative across chats and models.
 
 ---
 
-# Current active boundary: MC-0002 direct implementation review
+# Current active boundary: final PR #76 integration audit
 
 Current route:
 
 ```text
-docs/checkpoints/203_specification_024_implementation_green_pre_review_head_frozen.md
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
-docs/model_collaboration/threads/MC-0002/BRIEF.md
-docs/model_collaboration/threads/MC-0002/THREAD.md
-docs/model_collaboration/threads/MC-0002/STATE.json
-docs/model_collaboration/threads/MC-0002/messages/001_chatgpt_implementation_review_request.md
-GitHub Issue #78
 ```
 
-Machine-readable state currently declares:
+Current model-collaboration status:
 
 ```text
-review_mode            REVIEWED
-lifecycle_state        WAITING
-phase                  REVIEW_REQUESTED
-task_owner             chatgpt
-target_write_owner     chatgpt
-next_expected_actor    claude
-Claude secondary path  docs/model_collaboration/threads/MC-0002/messages/**
+MC-0001   RESOLVED / CLOSED
+MC-0002   RESOLVED / CLOSED
+MC-0003   RESOLVED / CLOSED
+review inbox pending obligations   NONE
 ```
 
-The fact that Claude is next actor does not grant Claude target-state write ownership.
+No further Claude review is currently owed.
 
 ---
 
-## MC-0001 architecture resolution
+## Specification 024 accepted
 
-MC-0001 completed the first full ChatGPT-Claude architecture review cycle.
-
-Durable route:
-
-```text
-docs/research/035_multi_model_development_collaboration_architecture.md
-docs/model_collaboration/threads/MC-0001/RESOLUTION.md
-docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
-docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
-docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
-docs/model_collaboration/threads/MC-0001/messages/005_claude_phase_d_challenge.md
-docs/model_collaboration/threads/MC-0001/messages/006_chatgpt_phase_d_resolution.md
-docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
-```
-
-Resolved candidate architecture:
-
-```text
-repository remains project authority
-SOLO work remains first-class
-multi-model collaboration is selective
-one bounded task owner
-ROLE != WRITE_SCOPE
-one target-state write owner with declared secondary write surfaces
-machine-readable collaboration state before routine scale-up
-coherence guard, not authenticated distributed lock
-pointer-first issue transport with disclosed fallback
-accepted-base-ref + neutral problem packet for deliberately blind review
-known contamination is disclosed and classified
-provider-local interaction session IDs such as chatgpt-06 / claude-01
-human arbitration reserved for genuine project-intent / consequential choices
-API orchestration deferred until observed need
-```
-
-No architecture disagreement remains that requires human arbitration before the concrete guard is reviewed.
-
----
-
-## Specification 024 implementation evidence
-
-Frozen pre-implementation contract commit:
+Prospective freeze:
 
 ```text
 9da382d4011ff112b75dec9c456143d798336336
 ```
 
-Implementation added:
-
-```text
-schemas/model_collaboration_thread_state_v1.schema.json
-scripts/check_model_collaboration_state.py
-tests/unit/test_model_collaboration_state.py
-.github/workflows/model-collaboration-state.yml
-docs/model_collaboration/threads/MC-0002/STATE.json
-```
-
-Initial implementation head:
-
-```text
-bf33aab15d9300836280f01ebd9b6db0951f3e9a
-```
-
-The first workflow run found one test-fixture error: the CLOSED-state test created the same temporary directory twice. The validator and valid state had passed. The fixture was corrected without changing the frozen gate or validator semantics.
-
-Exact green pre-review head:
+Exact corrected green pre-review implementation:
 
 ```text
 a9efc43d7c441c8283d2cd954cc6fa1abd021689
 ```
 
-Dedicated workflow run:
+Dedicated validation:
 
 ```text
-32902050014
-ubuntu-latest   PASS
-windows-latest  PASS
+workflow run 32902050014
+Ubuntu        PASS
+Windows       PASS
+26 focused tests per platform
 ```
 
-Both platforms passed the guarded state check, all 26 focused unit tests, and the assertion that `docs/current_routing.json` contains no collaboration-lock fields.
+Claude direct review:
 
-MC-G01 through MC-G15 are supported by current implementation/CI evidence. MC-G16 remains pending the direct Claude review.
+```text
+commit 9cf393f74e02e167d2f80c0381742ebd7e0c318e
+MC-G01 through MC-G16 satisfied
+```
+
+Final outcome:
+
+```text
+COLLABORATION_STATE_GUARD_ACCEPTED
+```
+
+Known non-blocking V1 limitation: target-vs-secondary write overlap is guarded, but secondary-vs-secondary overlap is not yet checked. Reopen only if real collaboration uses multiple simultaneous secondary writers.
 
 ---
 
-## Review contract for Claude
+## Governed multi-model Development Method v0.5
 
-Claude should review the concrete implementation against the already frozen Specification 024 rather than redesigning the collaboration architecture.
-
-Expected output:
+Current accepted method:
 
 ```text
-docs/model_collaboration/threads/MC-0002/messages/002_claude_implementation_review.md
+repository remains project authority
+SOLO development remains first-class
+collaboration is selective and task-scoped
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state writer at a time
+explicit secondary write surfaces
+machine-readable guarded collaboration state where warranted
+GitHub transport != project authority
+durable numbered collaboration messages
+independent-first review for consequential questions where anchoring matters
+known review contamination is disclosed
+provider-local interaction session identities
+disagreement classified and routed rather than averaged away
+human arbitration reserved for genuine project-intent / consequential choices
 ```
 
-Claude's allowed write scope while reviewing is only the new numbered MC-0002 review message.
-
-Material findings should be classified as:
+Canonical protocol:
 
 ```text
-REQUIRED_CORRECTION
-OPTIONAL_IMPROVEMENT
-NO_CHANGE
+docs/model_collaboration/README.md
 ```
 
-If Claude finds a required correction, ChatGPT as task/target owner integrates it, reruns the frozen gates, and preserves the result. If no required correction remains and MC-G16 passes, Specification 024 may be classified.
+---
+
+## Deferred review/catch-up is accepted
+
+Core rule:
+
+```text
+collaborator unavailable
+    !=
+project globally blocked
+```
+
+unless the affected task's explicit review gate has been reached.
+
+MC-0003 pressure-tested this with two simultaneous Claude obligations. Claude later processed MC-0002 and MC-0003 in the inbox-defined order while preserving separate exact target heads and separate dispositions.
+
+Current rule:
+
+```text
+REQUIRED review -> must name a real gate
+OPTIONAL review -> may use NONE
+```
+
+The exact reviewed Git target is immutable. Review of ancestor X does not automatically cover descendant Y.
+
+Known future mechanization triggers:
+
+```text
+cross-thread dependency metadata / downstream impact discovery
+generated REVIEW_INBOX or inbox-state validation if drift occurs
+secondary-vs-secondary overlap if simultaneous secondary writers occur
+machine-readable review-obligation/gate fields if backlog scale warrants them
+```
+
+No Specification 025 is opened.
+
+---
+
+## Scheduled review and API orchestration remain deferred
+
+The user and Claude explored scheduled/unattended review. It is not part of the current accepted method.
+
+Reasons:
+
+```text
+no extra weekly subscription capacity
+unattended write/concurrency risk
+limited ability to clarify mid-run
+possible unsupervised usage consumption
+manual catch-up triggering is already low-friction
+```
+
+API orchestration also remains deferred because it introduces separate metered provider usage, context duplication, credentials, retries, and orchestration infrastructure without current evidence that repository-mediated collaboration is insufficient.
 
 ---
 
@@ -181,16 +197,21 @@ Specification 023 remains:
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-Promoted source implementation head:
+Promoted source implementation:
 
 ```text
 v1-frontend-spike
 8215718db3e44f000cc6ed53d6a051522d429dbd
 ```
 
-Permanent deployment remains preserved in Checkpoint 198, `docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md`, and draft PR #75.
+Permanent deployment remains preserved in:
 
-No permanent source-vault operation is running. Course 2 remains blocked until that separate user-controlled compare, ingestion, audit, backup, restore, and restored audit succeed when the work resumes.
+```text
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+```
+
+No permanent source-vault operation is running. Course 2 remains blocked until the user-controlled compare, reviewed ingestion, audit, independent backup, clean restore, and restored audit are completed.
 
 ---
 
@@ -214,11 +235,13 @@ Class Imbalance / Metrics / Calibration / Thresholding
 Time-Series Methodology
 ```
 
-The source and collaboration work are Level-2/substrate prerequisites for carrying out that program professionally and durably.
+The source and collaboration work are supporting substrate/method requirements for carrying out that program professionally and durably.
 
 ---
 
-## Stable accepted architecture still in force
+## Stable accepted architecture
+
+Accepted implementation decisions now include:
 
 ```text
 D-028  SQLite-centered local-first operational architecture
@@ -226,24 +249,22 @@ D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
 D-031  governed deterministic JSON / JSON Schema knowledge interchange
 D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
-D-033  ADS-owned private Source Universe substrate + relational Source Registry
+D-033  ADS-owned private Source Universe substrate + relational registry
+D-034  governed provider-neutral multi-model development collaboration
 ```
-
-No multi-model development decision has yet been promoted to the accepted decision layer.
 
 ---
 
 ## Exact continuation
 
 ```text
-1. Claude reads the MC-0002 review packet and frozen Specification 024
-2. Claude writes messages/002_claude_implementation_review.md only
-3. ChatGPT applies bounded required corrections, if any
-4. rerun MC-G01 through MC-G15 after any correction
-5. decide MC-G16 from the durable review
-6. classify Specification 024 as COLLABORATION_STATE_GUARD_ACCEPTED, NEEDS_REVISION, or FAILED
-7. only then perform the multi-model Development Method / Continuity / checkpoint-provenance / decision promotion audit
-8. PR #75 remains paused until permanent source-vault deployment is resumed
+1. complete final PR #76 structural/base audit
+2. ensure checkpoint metadata and collaboration-state workflows pass on the final head
+3. ensure inherited relevant V1 checks remain green
+4. integrate PR #76 into v1-frontend-spike
+5. create a post-merge routing checkpoint that records the exact promoted SHA
+6. keep the permanent source-vault deployment paused until that post-merge reconciliation is complete
+7. then resume the source-vault bootstrap before Course 2
 ```
 
 ## Minimum reading for continuation
@@ -254,16 +275,13 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/203_specification_024_implementation_green_pre_review_head_frozen.md
-docs/specifications/024_v1_model_collaboration_state_guard.md
-docs/model_collaboration/threads/MC-0002/THREAD.md
-docs/model_collaboration/threads/MC-0002/STATE.json
-docs/model_collaboration/threads/MC-0002/messages/001_chatgpt_implementation_review_request.md
-
-docs/model_collaboration/threads/MC-0001/RESOLUTION.md
-docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
-
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
-docs/checkpoints/README.md
+docs/DECISIONS.md
+docs/model_collaboration/README.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
