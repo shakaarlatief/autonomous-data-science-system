@@ -3,65 +3,61 @@ const world = document.querySelector('#combined-world')
 const runtimeLayer = document.querySelector('#ambient-runtime-layer')
 
 const GRID_STEP = 20
+const MAJOR_GRID_STEP = 100
 
 const intensityCopy = {
   quiet: {
     label: 'Quiet',
-    description: 'Randomized currents and corner glints remain present, but with long calm gaps.',
+    description: 'Randomized currents and ambient drift use a quiet cadence; major-grid glints remain rare.',
   },
   balanced: {
     label: 'Balanced',
-    description: 'Randomized currents and corner glints appear across the full grid with moderate cadence.',
+    description: 'Randomized currents and ambient drift use a moderate cadence; major-grid glints remain rare.',
   },
   lively: {
     label: 'Lively',
-    description: 'Frequent randomized currents, corner glints and drifting light keep the grid visibly alive.',
+    description: 'Currents and ambient drift stay lively across the full grid while major-grid glints remain a quiet accent.',
   },
 }
 
 const intensityConfig = {
   quiet: {
     currentGap: [4200, 7600],
-    glintGap: [2400, 4600],
     driftGap: [9000, 14000],
     currentDuration: [5200, 7600],
-    glintDuration: [1300, 2000],
     driftDuration: [19000, 28000],
     currentPeak: [0.46, 0.64],
-    glintPeak: [0.58, 0.78],
     driftOpacity: [0.10, 0.18],
     maxCurrents: 2,
-    maxGlints: 3,
     maxDrifts: 2,
   },
   balanced: {
     currentGap: [1900, 3600],
-    glintGap: [1100, 2300],
     driftGap: [6200, 9600],
     currentDuration: [4600, 6800],
-    glintDuration: [1100, 1750],
     driftDuration: [17000, 25000],
     currentPeak: [0.54, 0.72],
-    glintPeak: [0.66, 0.88],
     driftOpacity: [0.14, 0.24],
     maxCurrents: 3,
-    maxGlints: 5,
     maxDrifts: 3,
   },
   lively: {
     currentGap: [700, 1650],
-    glintGap: [450, 1100],
     driftGap: [3600, 6200],
     currentDuration: [4000, 6100],
-    glintDuration: [900, 1500],
     driftDuration: [15000, 22000],
     currentPeak: [0.60, 0.80],
-    glintPeak: [0.72, 0.96],
     driftOpacity: [0.18, 0.30],
     maxCurrents: 5,
-    maxGlints: 8,
     maxDrifts: 4,
   },
+}
+
+const glintConfig = {
+  gap: [3200, 6200],
+  duration: [1300, 2000],
+  peak: [0.58, 0.78],
+  maxConcurrent: 2,
 }
 
 const timers = {
@@ -146,11 +142,10 @@ function scheduleCurrent(immediate = false) {
 
 function scheduleGlint(immediate = false) {
   if (!ambientEnabled()) return
-  const config = currentConfig()
-  const delay = immediate ? randomBetween(250, 900) : randomBetween(...config.glintGap)
+  const delay = immediate ? randomBetween(900, 2200) : randomBetween(...glintConfig.gap)
   timers.glint = setTimeout(() => {
-    if (runtimeLayer.querySelectorAll('.runtime-glint').length < config.maxGlints) {
-      spawnGlint(config)
+    if (runtimeLayer.querySelectorAll('.runtime-glint').length < glintConfig.maxConcurrent) {
+      spawnGlint()
     }
     scheduleGlint()
   }, delay)
@@ -211,14 +206,14 @@ function spawnCurrent(config) {
   mountTransient(element)
 }
 
-function spawnGlint(config) {
+function spawnGlint() {
   const rect = world.getBoundingClientRect()
   const element = document.createElement('span')
-  const duration = randomBetween(...config.glintDuration)
-  const peak = randomBetween(...config.glintPeak)
+  const duration = randomBetween(...glintConfig.duration)
+  const peak = randomBetween(...glintConfig.peak)
 
-  const x = snapToGrid(randomBetween(GRID_STEP, rect.width - GRID_STEP))
-  const y = snapToGrid(randomBetween(GRID_STEP, rect.height - GRID_STEP))
+  const x = randomMajorGridCoordinate(rect.width)
+  const y = randomMajorGridCoordinate(rect.height)
 
   element.className = 'ambient-glint runtime-glint'
   element.style.left = `${x}px`
@@ -260,6 +255,12 @@ function mountTransient(element) {
 
 function snapToGrid(value) {
   return Math.round(value / GRID_STEP) * GRID_STEP
+}
+
+function randomMajorGridCoordinate(size) {
+  const maximumIndex = Math.max(1, Math.floor((size - MAJOR_GRID_STEP) / MAJOR_GRID_STEP))
+  const index = Math.floor(randomBetween(1, maximumIndex + 1))
+  return index * MAJOR_GRID_STEP
 }
 
 function randomBetween(min, max) {
