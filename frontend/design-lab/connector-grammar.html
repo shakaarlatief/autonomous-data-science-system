@@ -57,10 +57,10 @@
 
       <section class="connector-candidate-notes" aria-label="Connector candidate descriptions">
         <article data-candidate-note="k0"><strong>K0 · Clean curve</strong><span>Direct edge-to-edge curves with no visible ports. Lowest resting noise.</span></article>
-        <article data-candidate-note="k1"><strong>K1 · Micro dots</strong><span>Small endpoint dots make attachment points explicit while keeping the line light.</span></article>
-        <article data-candidate-note="k2"><strong>K2 · Frame sockets</strong><span>Small square sockets make connectors feel structurally integrated with the work-unit frame.</span></article>
-        <article data-candidate-note="k3"><strong>K3 · Target cue</strong><span>A restrained target terminal introduces direction without using a large generic arrowhead.</span></article>
-        <article data-candidate-note="k4"><strong>K4 · Hover ports</strong><span>Rest state stays clean; endpoint ports appear only when the relationship becomes relevant on hover.</span></article>
+        <article data-candidate-note="k1"><strong>K1 · Micro dots</strong><span>Small endpoint dots sit visibly on the work-unit perimeter while the connector curve itself remains behind the box.</span></article>
+        <article data-candidate-note="k2"><strong>K2 · Frame sockets</strong><span>Small square sockets sit on the perimeter and make connectors feel structurally integrated with the work-unit frame.</span></article>
+        <article data-candidate-note="k3"><strong>K3 · Target cue</strong><span>A restrained target terminal sits above the destination edge to introduce direction without using a large generic arrowhead.</span></article>
+        <article data-candidate-note="k4"><strong>K4 · Hover ports</strong><span>Rest state stays clean; perimeter ports appear above the box edge only when the relationship becomes relevant on hover.</span></article>
       </section>
 
       <section class="connector-preview" aria-label="Connector grammar live preview">
@@ -91,6 +91,12 @@
               <g class="connector-link" data-link="v-m"><path class="connector-path" /></g>
               <g class="connector-link" data-link="m-e"><path class="connector-path" /></g>
             </svg>
+            <svg class="connector-port-overlay" viewBox="0 0 1000 430" preserveAspectRatio="none" aria-hidden="true">
+              <g class="connector-port-link" data-link="q-i"></g>
+              <g class="connector-port-link" data-link="i-v"></g>
+              <g class="connector-port-link" data-link="v-m"></g>
+              <g class="connector-port-link" data-link="m-e"></g>
+            </svg>
           </div>
         </div>
       </section>
@@ -103,7 +109,7 @@
           <p>Should attachment points be visible at rest, only on hover, or not at all?</p>
           <p>Does the frame-socket treatment feel integrated or unnecessarily mechanical?</p>
           <p>Is the restrained target cue useful enough to justify always showing direction?</p>
-          <p>Do the lines feel correctly attached to the actual rendered silhouettes?</p>
+          <p>Do the lines disappear cleanly behind nodes while endpoint markers sit visibly on the rendered perimeter?</p>
           <p>Which candidate is most likely to scale to a larger project with many relationships?</p>
         </div>
       </section>
