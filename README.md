@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            218
+checkpoint            219
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C work-unit visual-grammar human review
+current boundary      MC-0004 Phase C work-unit grammar Claude divergent ideation
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -43,7 +43,7 @@ No scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inf
 
 ## Current Cockpit design direction
 
-MC-0004 has completed its independent and comparative model phases and is now in browser-rendered human design evaluation.
+MC-0004 has completed its independent and comparative model phases and is now in browser-rendered Phase-C design evaluation.
 
 The Phase-C protocol prefers:
 
@@ -128,19 +128,18 @@ frontend/design-lab/work-unit-lighting.html
 
 ---
 
-## Current work-unit visual-grammar review
+## Current work-unit visual-grammar program
 
 Research 037/038 identified a current weakness: meaningful Cockpit work units still share too much of one generic rounded-card grammar.
 
-The active question is:
+The active category question is:
 
 > How should different kinds of meaningful project work become visually distinguishable while remaining one coherent professional product language and without confusing category with project disposition, runtime state, or importance?
 
-Active research and review:
+Current governing research:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
 ```
 
 First-round browser directions:
@@ -166,9 +165,45 @@ Local URL:
 http://localhost:5173/design-lab/work-unit-grammar.html
 ```
 
-The lab exposes a neutral Category strip and a realistic Project scene so category identity can be judged both in isolation and inside G4/H4 composition.
+The first implementation received a strongly positive preliminary human reaction, but no W1-W4 selection was made. The project owner judged that the current four variants likely cover too little of the plausible visual-design space and explicitly requested additional Claude ideas and inspiration before convergence.
 
-No W1-W4 preference exists yet. Human browser review is open.
+The Project Scene view-switching defect observed during that review has been corrected. The exact corrected experiment target is:
+
+```text
+88a507d42744917be1e84b29177dd0465f24cd82
+```
+
+---
+
+## Current Claude divergent-ideation gate
+
+Pending request:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+```
+
+Classification:
+
+```text
+COMPARATIVE_ONLY / DIVERGENT_IDEATION
+```
+
+Claude is not being asked merely to rank W1-W4. The requested contribution is to broaden the design space, identify underexplored visual mechanisms, propose materially different concept families and recommend a small next browser round.
+
+Expected durable response:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+```
+
+Claude may inspect all current candidate material. This is intentionally not a new blind-independent phase.
+
+ChatGPT retains target-state write ownership. Claude's write boundary remains:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/**
+```
 
 ---
 
@@ -245,7 +280,8 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_opened.md
+docs/checkpoints/219_work_unit_grammar_preliminary_review_claude_ideation_requested.md
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
 frontend/design-lab/work-unit-grammar.html
 
@@ -257,8 +293,8 @@ docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_directi
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 
-docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
+docs/model_collaboration/REVIEW_INBOX.md
 
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
@@ -266,12 +302,12 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ## Exact next step
 
 ```text
-1. pull v1-cockpit-design-exploration locally
-2. keep the existing Vite dev server running
-3. open http://localhost:5173/design-lab/work-unit-grammar.html
-4. compare W1-W4 in Category strip view
-5. compare W1-W4 again in Project scene view
-6. hover representative nodes to confirm H4 still feels correct
-7. report prefer/reject/combine/refine evidence
+1. use v1-cockpit-design-exploration
+2. Claude reads REVIEW_INBOX.md and Message 003
+3. Claude evaluates exact target 88a507d42744917be1e84b29177dd0465f24cd82
+4. Claude writes only Message 004 with divergent work-unit grammar ideas
+5. ChatGPT synthesizes the response against Research 046 and current browser evidence
+6. implement only the strongest additional/combined candidates in a bounded second browser round
+7. return to human comparison before category-grammar selection
 8. keep production Cockpit untouched
 ```
