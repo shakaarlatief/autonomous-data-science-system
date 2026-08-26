@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 224  
+**Checkpoint:** 225  
 **Date:** 2026-08-26  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Scientific category markers are selected for the current work-unit grammar direction. Reduced in-box light is the preferred working baseline. Refined M1 micro-materials and subtle true-shape boxes remain positive. The newest product decision is that compatible visual treatments should coexist as user-configurable Cockpit appearance choices rather than being forced into one universal visual winner. A live configurator is open for human browser review. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The configurable work-unit appearance principle is now promoted in Foundation 023 after positive human browser review. The remaining customizable-preview connector attachment defect has been fixed. The active design slice is now generic connector and port visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,24 +29,25 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md
-docs/research/051_user_configurable_cockpit_visual_grammar_and_semantic_invariants.md
-docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md
-frontend/design-lab/work-unit-grammar-customizable.html
-frontend/design-lab/work-unit-grammar-customizable.css
-frontend/design-lab/work-unit-grammar-customizable.js
+docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md
+docs/research/053_connector_and_port_visual_grammar_experiment.md
+docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+frontend/design-lab/connector-grammar.html
+frontend/design-lab/connector-grammar.css
+frontend/design-lab/connector-grammar.js
 ```
 
-Local URL:
+Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-customizable.html
+http://localhost:5173/design-lab/connector-grammar.html
 ```
 
-Exact configurable browser implementation target before documentation/routing commits:
+Exact connector browser implementation target before documentation/routing commits:
 
 ```text
-ac16df1bbcd456b63c042c28e52516679139bf32
+e3394447eeae721eab9bd66d347d0d327dbe0485
 ```
 
 ---
@@ -72,98 +73,57 @@ Decorative ambient behavior remains legitimate only when it stays subordinate an
 
 ---
 
-# Work-unit interaction lighting
+# Work-unit interaction and semantic grammar
 
-Generic H4 hover/outward-spill behavior remains sufficiently settled.
+Generic H4 hover/outward-world behavior remains sufficiently settled.
 
-Current preferred resting-light baseline:
+Current work-unit rest/hover baseline:
 
 ```text
-Reduced in-box resting light  SELECTED PREFERRED WORKING CONTROL
+REST
+    Reduced in-box resting light
+    narrow asymmetric outward world spill
+    no broad circular resting halo
+
+HOVER
+    full node-colored halo
+    pointer-following hotspot
+    local grid/world illumination
+    immediate connector emphasis
+    one restrained perimeter sweep on hover entry
+    small depth lift
+    fast entry + smoother slower release
 ```
 
-Historical H4-baseline evidence remains preserved.
-
-Signature-coupled resting light remains governed by:
+Current semantic category marker mapping:
 
 ```text
-signature edge
+Question / Blocker        circle
+Investigation             square
+Validation / Analysis     triangle
+Model Work                diamond
+Evaluation                plus
+```
+
+---
+
+# Foundation 023: configurable appearance
+
+Human review of the configurator was strongly positive. The product direction is now promoted:
+
+```text
+ADS owns semantic meaning
 +
-signature position along that edge
--> resting-light origin
+user controls approved non-semantic appearance dimensions
 ```
 
----
-
-# Selected work-unit category-mark direction
+Promoted artifact:
 
 ```text
-Scientific marker family
-    Question        circle
-    Investigation   square
-    Validation      triangle
-    Model           diamond
-    Evaluation      plus
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Rejected/retired directions remain preserved historically:
-
-```text
-bare Q / I / V / M / E letters
-G2 Compact Marker Rail
-S3 Inner Instrument Architecture
-G1 Instrument Glyph Family retired from active focused comparison
-```
-
-The scientific marker mapping is now treated as a semantic visual invariant in the configurable prototype.
-
----
-
-# Positive optional visual mechanisms
-
-## Refined M1 micro-material
-
-```text
-Question / yellow diagonal       retained
-Investigation / green dots       strengthened
-Validation / blue lines          strengthened
-Model / red grid                 strengthened
-Evaluation / luminous diagonal   retained
-```
-
-## Subtle true-shape family
-
-```text
-Question        upper-right diagonal cut
-Investigation   right-edge inward notch
-Validation      subtle right-side top step
-Model           stepped bottom-right geometry
-Evaluation      right-side beveled termination
-```
-
-The full upper-left reading entry remains protected. The earlier aggressive Validation raised-tab form is rejected.
-
----
-
-# New product direction: configurable Cockpit appearance
-
-The project owner decided that the positive visual mechanisms do not need to compete for one mandatory global style.
-
-The new architecture distinguishes:
-
-```text
-SEMANTIC PROJECT MODEL
-    category
-    project disposition
-    runtime state
-    importance / recommendation strength
-    dependencies / evidence
-
-PRESENTATION PROFILE
-    safe user-selectable appearance preferences
-```
-
-Current configurable dimensions in the browser proof:
+Current proven configurable dimensions:
 
 ```text
 Box shape
@@ -176,56 +136,97 @@ Micro design
     Micro light
 ```
 
-Current convenience presets:
+Appearance choices must not redefine category, disposition, runtime, importance, evidence, provenance, or methodological meaning.
 
-```text
-Clean
-    normal + none
-
-Structured
-    subtle shapes + none
-
-Rich
-    subtle shapes + micro material
-```
-
-These settings change presentation only. They do not change project semantics.
-
-## Semantic invariants held beneath customization
-
-```text
-scientific category-marker mapping remains fixed
-Reduced in-box light remains the preferred baseline
-project category/state/runtime/importance data remain unchanged
-accessibility constraints remain authoritative
-appearance must not masquerade as semantic state
-```
-
-## Persistence proof
-
-The design-lab page uses browser-local persistence:
-
-```text
-localStorage
-    ads-design-lab-cockpit-appearance-v1
-```
-
-This is not a production storage decision.
-
-A plausible later production hierarchy is:
+Plausible future preference hierarchy:
 
 ```text
 user appearance profile
     global personal default
 
-optional project appearance override
-    per-project preference
+project appearance override
+    optional project-specific choice
 
 semantic project state
     independent from both
 ```
 
-Production persistence, synchronization and team/shared-project behavior remain open.
+Production settings persistence and collaboration behavior remain open.
+
+---
+
+# Customizable-preview connector defect: fixed
+
+Human review found one small defect: project-scene lines did not correctly attach to rendered work-unit boxes.
+
+Root cause:
+
+```text
+static authored SVG coordinates
+instead of rendered node geometry
+```
+
+The preview now derives connector endpoints from `.node-surface` bounding boxes and recalculates after initial render, view changes, shape changes, and browser/scene geometry changes.
+
+The Investigation right-edge notch receives a silhouette-aware inset anchor under Subtle shapes.
+
+Exact defect-fix commit:
+
+```text
+c1f996f6500672641de8e00780d5a4949c5dcb28
+```
+
+Configurator route remains:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar-customizable.html
+```
+
+---
+
+# Active Slice 02C: connector and port visual grammar
+
+The next bounded design question is:
+
+> How should generic project relationships visually meet work units and remain legible without turning the Cockpit into graph noise?
+
+This is the dependency-aligned point at which Claude concept C4 Port Grammar becomes active.
+
+Held controls:
+
+```text
+G4 world
+scientific category markers
+Reduced in-box light
+accepted H4 hover/world response
+Subtle shapes
+Micro material
+same churn-project fixture
+same four generic relationships
+```
+
+Current candidates:
+
+```text
+K0  Clean Curve
+    direct edge-to-edge line, no ports
+
+K1  Micro Dots
+    small source and target endpoint dots
+
+K2  Frame Sockets
+    small square structural sockets
+
+K3  Target Cue
+    restrained target-side directional chevron
+
+K4  Hover Ports
+    clean rest state, endpoint dots revealed on related-node hover
+```
+
+All candidates use dynamic rendered-edge connector geometry rather than fixed path coordinates.
+
+Human browser review is the active gate.
 
 ---
 
@@ -236,48 +237,37 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                              user-configurable appearance human review
+Current                              connector / port grammar human review
 ```
 
-No Claude action is pending.
-
-Dependency-bound candidates remain preserved:
-
-```text
-C4 Port Grammar
-    connector-semantics slice
-
-C5 Internal Layout Grammar
-    semantic zoom / information-density slice
-```
+There is no pending Claude obligation.
 
 ---
 
-# Promotion boundary
-
-The user-configurable appearance principle is now preserved as an active product direction with executable evidence, but it is not yet promoted into a new foundation/specification because the configurator itself still needs human browser review.
+# Important non-decisions
 
 Still unresolved:
 
 ```text
-production settings storage
-account synchronization
-per-project override precedence
-team/shared-project appearance behavior
-which additional dimensions become safely configurable
-whether category marker style itself should ever vary
-light/dark theme relation to appearance profiles
-settings import/export
 final work-unit taxonomy
-final semantic colors/status palette
-connector vocabulary
+final semantic connector vocabulary
+relation-type colors and line semantics
+dependency / evidence / lineage connector distinctions
+runtime-flow connector behavior
+selected/focused persistent treatment
+runtime / waiting / blocked / approval treatment
+final node dimensions and typography
 semantic zoom
-Conversation Workspace
-large-project layout/grouping
-final production design system
+Internal Layout Grammar
+2.5D focus/depth system
+production motion implementation/library
+Conversation Workspace composition
+large-project layout/grouping/command architecture
+production appearance persistence
+final design system
 ```
 
-Production `/cockpit` remains untouched.
+Only isolated `frontend/design-lab/**` artifacts are authorized for the current experiment. Production `/cockpit` remains the control baseline.
 
 ---
 
@@ -299,17 +289,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 224 and v1-cockpit-design-exploration
+1. use Checkpoint 225 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-grammar-customizable.html
-4. switch Normal <-> Subtle shapes
-5. switch None <-> Micro material <-> Micro light
-6. try Clean / Structured / Rich presets
-7. verify scientific markers and semantic meaning remain stable across appearance changes
-8. verify the combinations feel coherent rather than like unrelated themes
-9. verify Project scene and Category strip both remain readable
-10. if human review confirms the model, run promotion audit for a durable user-configurable Cockpit appearance principle
-11. only then design production persistence/settings ownership
-12. keep production Cockpit untouched
-13. keep source-vault deployment paused until explicitly resumed
+3. optionally refresh work-unit-grammar-customizable.html and confirm the connector attachment fix
+4. open http://localhost:5173/design-lab/connector-grammar.html
+5. compare K0 through K4 on the same project scene
+6. hover nodes and inspect connector emphasis / K4 hover ports
+7. judge resting noise, physical attachment, direction usefulness and large-project plausibility
+8. human may prefer, reject or combine connector mechanisms
+9. preserve a generic connector baseline before adding semantic relation classes
+10. keep production Cockpit untouched
+11. keep source-vault deployment paused until explicitly resumed
 ```
