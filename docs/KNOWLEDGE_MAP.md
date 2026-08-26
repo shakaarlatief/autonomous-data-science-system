@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 220  
+**Current checkpoint:** 221  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        220
+checkpoint                        221
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 corrected work-unit grammar human verification before Claude ideation
+current boundary                 expanded work-unit grammar human browser review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -49,7 +49,7 @@ Dark mode             ACTIVE DESIGN BASELINE
 Light mode            DEFERRED
 ```
 
-Current retained ambient behavior:
+Retained ambient behavior:
 
 ```text
 travelling currents       randomized across 20 px grid lines, Lively preferred
@@ -59,7 +59,7 @@ localized semantic glow    retained
 fixed authored positions   rejected
 ```
 
-Primary grid/world evidence:
+Primary evidence:
 
 ```text
 docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
@@ -79,9 +79,7 @@ frontend/design-lab/grid-dynamics.html
 frontend/design-lab/grid-dynamics-combined.html
 ```
 
-"Provisionally settled" means stop tuning continuously for now, not permanent freeze.
-
-Research 040 preserves the visual-design distinction:
+Research 040 preserves:
 
 ```text
 semantic motion
@@ -115,7 +113,7 @@ Human review selected:
 H4 Integrated Response  SELECTED
 ```
 
-Final generic H4 model:
+Retained generic model:
 
 ```text
 REST
@@ -133,17 +131,24 @@ HOVER
     fast entry + smoother slower release
 ```
 
-Final human review accepted both the outward-only resting spill and the hover timing.
+The current grammar work also preserves:
 
-No further generic hover/outward-spill variant is currently justified.
+```text
+signature edge + signature position along edge
+-> resting-light origin
+```
 
-Later selected/focused and runtime/blocked/approval states may use lighting when those semantic slices are tested.
+and keeps an explicit:
+
+```text
+H4 baseline vs Reduced in-box-light comparison
+```
 
 ---
 
-# Current Slice 02B: work-unit category / silhouette visual grammar
+# Current Slice 02B: expanded work-unit category grammar
 
-Primary route:
+First-round evidence:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
@@ -157,21 +162,7 @@ frontend/design-lab/work-unit-grammar-lighting-controls.css
 frontend/design-lab/work-unit-grammar.js
 ```
 
-Local route:
-
-```text
-http://localhost:5173/design-lab/work-unit-grammar.html
-```
-
-The active category question is:
-
-```text
-How should meaningful work-unit kinds become visually distinguishable
-without collapsing category, project disposition, runtime state and importance
-into one overloaded visual treatment?
-```
-
-First-round browser directions:
+First-round candidates:
 
 ```text
 W1  Unified Precision Frame
@@ -180,132 +171,15 @@ W3  Structural Silhouette Family
 W4  Hybrid Semantic Instrument
 ```
 
-Representative fixture categories:
+Human disposition:
 
 ```text
-Question / Blocker
-Investigation
-Validation / Analysis
-Model Work
-Evaluation
+implementation quality  positive
+selection               none
+candidate-space breadth too narrow for convergence
 ```
 
-These are not a frozen production taxonomy.
-
-The design lab exposes:
-
-```text
-Category strip
-    neutral category comparison
-
-Project scene
-    realistic G4/H4 context + connectors
-
-In-box light
-    H4 baseline
-    Reduced
-
-Reduced motion
-    secondary accessibility check
-```
-
-## Preliminary human result
-
-The first W1-W4 implementation received a strongly positive preliminary human review, but no variant was selected.
-
-The project owner judged that the current four candidates likely cover too little of the plausible work-unit grammar design space and explicitly requested additional Claude ideas and inspiration before convergence.
-
-There is no artificial candidate-count cap. Preserve all genuinely distinct and worthwhile candidates. Browser testing may use multiple batches for clarity, but batching is not rejection.
-
-## Browser/control corrections before Claude
-
-Human review exposed four issues or refinements:
-
-```text
-Project Scene could remain overlaid with Category strip
-accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
-resting light stayed left-biased when category signature bars moved to top/bottom/right
-partial top/bottom signatures still produced edge-centered light after the first side-aware correction
-```
-
-All are corrected.
-
-Research 047 records the H4 control integrity lesson:
-
-```text
-preserving accepted rendered behavior
-!=
-merely copying old CSS values into a different DOM stack
-```
-
-The current browser experiment restores the accepted H4 in-box appearance as the default and preserves the quieter appearance as an explicit optional comparison.
-
-### H4 baseline versus Reduced
-
-```text
-H4 baseline
-    default restored accepted in-box resting illumination
-
-Reduced
-    intentionally near-dark / low-colour in-box resting alternative
-```
-
-This comparison changes in-box resting-light intensity only.
-
-It does not intentionally reopen:
-
-```text
-outward resting spill
-hover halo
-pointer hotspot
-hover world light
-connector hover emphasis
-perimeter sweep
-hover timing
-```
-
-No preference exists yet.
-
-### Signature-edge-and-position-aware lighting
-
-The structural rule is:
-
-```text
-if a visible category signature/accent moves,
-signature-anchored resting light follows both:
-    its edge
-    and its position along that edge
-```
-
-Current edge mapping:
-
-```text
-W1
-    all left
-
-W2 / W4
-    Question        left
-    Investigation   left
-    Validation      top
-    Model           bottom
-    Evaluation      right
-
-W3
-    no explicit signature bar
-    retain accepted left-biased H4 baseline
-```
-
-For W2/W4 Validation and Model, the top/bottom signature bars sit on the left portion of the edge. Their in-box light, near-node rest light and outward spill therefore use the actual bar center as the along-edge anchor rather than the edge midpoint.
-
-Corrected exact browser target after human verification:
-
-```text
-304db34d6482320b317db97277148bc129d07372
-```
-
----
-
-# Current MC-0004 collaboration gate
+## Claude divergent ideation: completed
 
 Request:
 
@@ -313,76 +187,155 @@ Request:
 docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
 ```
 
-Expected output:
+Response:
 
 ```text
 docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
 ```
 
-Classification:
+Response commit:
 
 ```text
-COMPARATIVE_ONLY / DIVERGENT_IDEATION
+faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 ```
 
-Current sequencing:
+Claude concept families:
 
 ```text
-human verifies corrected browser target
--> Claude divergent ideation
--> ChatGPT synthesis / browser implementation
--> human comparison
+C1  Instrument Glyph Family
+C2  Structural Topology Family
+C3  Material Language Family
+C4  Port Grammar
+C5  Internal Layout Grammar
+C6  Aspect & Proportion Family
+C7  Compact Marker Rail
+C8  Scientific Marker Family
 ```
 
-Claude is asked to broaden the design space rather than merely rank W1-W4.
+No artificial candidate-count cap was applied.
 
-Claude may inspect all current candidate material. Historical Phase-A independence remains preserved separately.
+## Expanded executable round
 
-Claude may comment on the explicit H4-baseline-vs-Reduced in-box-light comparison if useful, but it remains secondary to category-grammar ideation.
-
-Claude write scope:
+Governing synthesis:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/**
+docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
 ```
 
-ChatGPT retains target-state write ownership.
+Current checkpoint:
+
+```text
+docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-grammar-expanded.html
+frontend/design-lab/work-unit-grammar-expanded.css
+frontend/design-lab/work-unit-grammar-expanded.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar-expanded.html
+```
+
+Exact browser implementation head before routing-only documentation:
+
+```text
+32883ada35506a713a7c780beca08f363ba29fab
+```
+
+Expanded matrix:
+
+```text
+Batch A · Glyph strategy
+    G0 Letter Control
+    G1 Instrument Glyph Family
+    G2 Compact Marker Rail
+    G3 Scientific Marker Family
+
+Batch B · Structural grammar
+    S0 Chamfer Control
+    S1 Structural Topology Family
+    S2 Aspect & Proportion Family
+    S3 Inner Instrument Architecture
+
+Batch C · Material channel
+    M0 Plain Surface Control
+    M1 Material Language Family
+
+Batch D · Integrated candidates
+    I0 Current W4 Hybrid Control
+    I1 W4 + Instrument Glyph
+    I2 W4 + Scientific Marker
+```
+
+`S3 Inner Instrument Architecture` is the ChatGPT synthesis addition covering the underexplored inner-frame channel without introducing live-looking content.
+
+Current controls:
+
+```text
+Category strip / Project scene
+H4 baseline / Reduced
+All / Glyph / Structure / Surface / Integrated presentation filters
+Reduced motion
+```
+
+Presentation filtering does not alter candidate status:
+
+```text
+hidden != rejected
+batching != rejection
+```
+
+Preserved deferred candidates:
+
+```text
+C4 Port Grammar             -> connector-semantics slice
+C5 Internal Layout Grammar  -> semantic zoom / information-density slice
+```
 
 Current evidence state:
 
 ```text
-first-round research brief       complete
-first-round browser experiment   complete
-preliminary human review         positive, no selection
-Project Scene defect             corrected
-H4 in-box control drift          corrected
-signature edge lighting          corrected
-signature along-edge position    corrected
-H4 baseline vs Reduced           explicit comparison OPEN
-Claude divergent ideation        PENDING after human verification
-production promotion             not authorized
-```
-
-Still deliberately unresolved:
-
-```text
-H4 baseline vs Reduced in-box preference
-final work-unit taxonomy
-final semantic category colors
-multi-axis status treatment
-selected-state treatment
-runtime/running/waiting treatment
-blocked/approval treatment
-final node sizing and typography
-final connector vocabulary
-production motion implementation
+Claude ideation             COMPLETE
+ChatGPT synthesis           COMPLETE
+expanded browser round      IMPLEMENTED
+human expanded review       OPEN
+production promotion        NOT AUTHORIZED
 ```
 
 ---
 
-# Phase-C design protocol
+# MC-0004 collaboration route
 
-Preferred workflow:
+```text
+docs/model_collaboration/threads/MC-0004/BRIEF.md
+docs/model_collaboration/threads/MC-0004/THREAD.md
+docs/model_collaboration/threads/MC-0004/STATE.json
+docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
+docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+docs/model_collaboration/REVIEW_INBOX.md
+```
+
+```text
+Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
+Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
+Phase C  browser-rendered design evaluation
+Latest   Claude divergent ideation    faf18ed9932d60a24dd80589b0ec0ba71c5940fd
+Current  expanded browser human review
+```
+
+No model-collaboration obligation is currently pending.
+
+---
+
+# Phase-C design protocol
 
 ```text
 choose one design question
@@ -408,27 +361,6 @@ The production `/cockpit` remains the control baseline until later integrated ev
 
 ---
 
-# MC-0004 evidence route
-
-```text
-docs/model_collaboration/threads/MC-0004/BRIEF.md
-docs/model_collaboration/threads/MC-0004/THREAD.md
-docs/model_collaboration/threads/MC-0004/STATE.json
-docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
-docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
-docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
-docs/model_collaboration/REVIEW_INBOX.md
-```
-
-```text
-Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
-Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
-Phase C  browser-rendered design evaluation
-Current  human corrected-target verification, then Claude divergent ideation
-```
-
----
-
 # Broad Cockpit research and synthesis
 
 ```text
@@ -436,26 +368,14 @@ docs/research/037_project_cockpit_next_generation_visual_interaction_design_expl
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 ```
 
-Strongly reinforced mechanisms still awaiting broader integration:
-
-```text
-semantic zoom
-category-level work-unit visual grammar
-semantic connector type + direction + state
-full Conversation Workspace
-conversation <-> structured project links
-information-density lenses
-multi-axis project/runtime/importance state treatment
-2.5D before true 3D
-large-project scalability
-```
-
-Remaining major slices after category/silhouette grammar include:
+Remaining major slices include:
 
 ```text
 multi-axis status treatment
 connector visual language
+Port Grammar
 semantic zoom
+Internal Layout Grammar
 stage/orientation system
 Conversation Workspace
 conversation + analytical coexistence
