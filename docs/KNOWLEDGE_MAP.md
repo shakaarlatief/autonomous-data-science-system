@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 214  
+**Current checkpoint:** 215  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        214
+checkpoint                        215
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C G4 major-grid glint / cadence human review
+current boundary                 MC-0004 Phase C work-unit interaction-lighting human review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -41,112 +41,129 @@ source-vault deployment          PAUSED, Course 2 gate unchanged
 
 # Active Cockpit design route
 
-## Human-selected grid/world baseline
+## Grid/world baseline: provisionally settled
 
 ```text
-G4 Adaptive Hybrid  SELECTED
-Dark mode           ACTIVE DESIGN BASELINE
-Light mode          DEFERRED
+G4 Adaptive Hybrid    SELECTED
+Dark mode             ACTIVE DESIGN BASELINE
+Light mode            DEFERRED
 ```
 
-G1 Precision Lines, G2 Dot Matrix and G3 Cross Lattice are no longer primary substrate candidates.
+Current retained ambient behavior:
+
+```text
+travelling currents       randomized across 20 px grid lines, Lively preferred
+major-grid glints          100 px intersections only, approximately Quiet
+ambient drift              retained
+localized semantic glow    retained
+fixed authored positions   rejected
+```
 
 Primary grid/world evidence:
 
 ```text
 docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
-docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
-frontend/design-lab/grid-world.html
-```
-
-## Ambient dynamics decisions
-
-All tested ambient mechanisms survive:
-
-```text
-travelling grid currents
-intersection glints
-ambient light drift
-localized semantic activity
-```
-
-Human review also established:
-
-```text
-initial D1-D4 cadence      TOO SUBTLE
-current / drift preference LIVELY
-fixed ambient coordinates  REJECTED
-glint lattice              100 px MAJOR GRID ONLY
-glint cadence              APPROXIMATELY QUIET / INDEPENDENT
-```
-
-Current supporting evidence:
-
-```text
 docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
 docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
 docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
 docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
 
+docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
 docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
 docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
 docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
 docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
+
+frontend/design-lab/grid-world.html
+frontend/design-lab/grid-dynamics.html
+frontend/design-lab/grid-dynamics-combined.html
 ```
 
-Current browser lab:
+"Provisionally settled" means stop tuning continuously for now, not permanent freeze.
+
+---
+
+# Current Slice 02A: work-unit interaction lighting
+
+Primary route:
 
 ```text
-frontend/design-lab/grid-dynamics-combined.html
-frontend/design-lab/grid-dynamics-combined.css
-frontend/design-lab/grid-dynamics-combined.js
+docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
+docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
+frontend/design-lab/work-unit-lighting.html
+frontend/design-lab/work-unit-lighting.css
+frontend/design-lab/work-unit-lighting.js
 ```
 
 Local route:
 
 ```text
-http://localhost:5173/design-lab/grid-dynamics-combined.html
+http://localhost:5173/design-lab/work-unit-lighting.html
 ```
 
-## Current ambient distribution rules
+Current interaction-lighting hypothesis:
 
 ```text
-CURRENTS
-    horizontal or vertical
-    random visible grid line
-    snapped to 20 px lattice
-    random start, direction, distance, length and timing
-    Quiet / Balanced / Lively cadence selectable
-    Lively currently preferred
-
-GLINTS
-    x snapped to 100 px major grid
-    y snapped to 100 px major grid
-    only on corners of the larger visible grid boxes
-    independently randomized major intersection
-    approximately Quiet cadence regardless of current preset
-    maximum two concurrent glints
-
-AMBIENT DRIFT
-    random start position
-    random size
-    random motion vector
-    random opacity within cadence preset
+REST       localized / asymmetric colored atmosphere
+HOVER      fuller node-specific colored response
+SELECTED   later persistent focus state
+RUNTIME    later semantic state-bearing light behavior
 ```
 
-The semantic activity layer remains separate and is not randomized as decoration.
+Browser treatments:
+
+```text
+H1 Full Halo
+    localized rest light
+    full colored hover perimeter
+    small depth lift
+
+H2 Cursor Edge
+    H1
+    + pointer-following/specular hotspot
+
+H3 World Spill
+    full hover light
+    + faint nearby grid illumination
+    + immediate connector emphasis
+
+H4 Integrated Response
+    localized rest light
+    full hover halo
+    pointer hotspot
+    local grid spill
+    connector emphasis
+    one-time perimeter sweep on hover entry
+    small depth lift
+```
+
+Human review may combine individual mechanisms rather than select one treatment literally.
+
+Still deliberately unresolved in this slice:
+
+```text
+final work-unit silhouette/category grammar
+final semantic category colors
+multi-axis status treatment
+selected-state treatment
+runtime/running/waiting treatment
+blocked-state treatment
+final node sizing and typography
+final connector vocabulary
+production motion implementation
+```
 
 ---
 
 # Phase-C design protocol
 
-The preferred workflow is:
+Preferred workflow:
 
 ```text
 choose one design question
 inspect real references if useful
 build bounded browser variants
-hold project state constant
+hold unrelated variables constant
 human compares
 record prefer/reject/combine/refine
 iterate if needed
@@ -211,7 +228,7 @@ docs/research/037_project_cockpit_next_generation_visual_interaction_design_expl
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 ```
 
-Strongly reinforced design mechanisms still awaiting broader integration:
+Strongly reinforced mechanisms still awaiting broader integration:
 
 ```text
 semantic zoom
@@ -225,10 +242,11 @@ multi-axis project/runtime/importance state treatment
 large-project scalability
 ```
 
-Remaining major slices after grid/world refinement:
+Remaining major slices after interaction lighting:
 
 ```text
-work-unit visual grammar
+work-unit category / silhouette grammar
+multi-axis status treatment
 connector visual language
 semantic zoom
 stage/orientation system
@@ -254,8 +272,6 @@ docs/foundations/021_professional_product_interface_and_frontend_design_foundati
 ```
 
 Specification 008 remains accepted and is not replaced by the current visual experiments.
-
-Still intentionally unfrozen include final visual identity, graph technology, semantic zoom/grouping details, auto-layout, minimap, stage taxonomy/ruler treatment, permanent tool-rail design, ambient treatment, route/persistence details and canonical screenshot baseline.
 
 ---
 
