@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            216
+checkpoint            217
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C H4 resting world-spill human review
+current boundary      MC-0004 Phase C work-unit category/silhouette visual grammar
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -85,6 +85,8 @@ Localized semantic activity    retained
 Fixed authored coordinates     rejected
 ```
 
+Decorative/ambient behavior is allowed when it improves polish and atmosphere without being mistaken for semantic project/runtime state.
+
 Primary grid/world evidence:
 
 ```text
@@ -107,7 +109,7 @@ frontend/design-lab/grid-dynamics-combined.html
 
 ---
 
-## Work-unit interaction lighting: H4 selected
+## Work-unit interaction lighting: H4 sufficiently settled
 
 Human review selected:
 
@@ -115,11 +117,13 @@ Human review selected:
 H4 Integrated Response  SELECTED
 ```
 
-Currently retained interaction mechanisms:
+Current retained interaction treatment:
 
 ```text
 REST
-    localized / asymmetric node-colored atmosphere
+    accepted clean localized/asymmetric in-box illumination
+    accepted narrow asymmetric outward world spill through the accent/left side
+    no broad circular resting halo
 
 HOVER
     full node-colored halo
@@ -128,48 +132,58 @@ HOVER
     immediate connector emphasis
     one restrained perimeter sweep on hover entry
     small depth lift
+    fast entry + smoother slower release
 ```
 
-Representative category colors remain provisional.
+The revised hover timing was judged perfect. After the final outward-only resting-spill correction, the resting result was also judged good.
 
-### Current H4 refinement
+No further generic lighting-only variant is currently justified. Later selected/focused, runtime, blocked and approval states may use lighting when those semantic slices are tested.
 
-The project owner likes the newer cleaner node-internal light treatment, but wants more of that node color visible in the surrounding grid during the normal resting state.
-
-The current synthesis is:
-
-```text
-clean newer in-node light
-+
-soft broader asymmetric world bleed at rest
-+
-richer H4 hover response
-```
-
-The design-lab H4 treatment therefore now adds a low-opacity broader colored field behind each node while preserving the near-node rest light. The resting spill remains strongest near the accent side so the node does not become a uniformly glowing neon rectangle.
-
-Current browser lab:
-
-```text
-frontend/design-lab/work-unit-lighting.html
-frontend/design-lab/work-unit-lighting.css
-frontend/design-lab/work-unit-lighting.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-lighting.html
-```
-
-Research and checkpoints:
+Completed lighting evidence:
 
 ```text
 docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
 docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
 docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
+docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+frontend/design-lab/work-unit-lighting.html
 ```
+
+---
+
+## Current work-unit visual-grammar slice
+
+Research 037/038 identified a current weakness: meaningful Cockpit work units still share too much of one generic rounded-card grammar.
+
+The active question is now:
+
+> How should different kinds of meaningful project work become visually distinguishable while remaining one coherent professional product language and without confusing category with project disposition, runtime state, or importance?
+
+Active research:
+
+```text
+docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+```
+
+First-round directions:
+
+```text
+W1  Unified Precision Frame
+W2  Edge-Signature Grammar
+W3  Structural Silhouette Family
+W4  Hybrid Semantic Instrument
+```
+
+Expected next browser lab:
+
+```text
+frontend/design-lab/work-unit-grammar.html
+frontend/design-lab/work-unit-grammar.css
+frontend/design-lab/work-unit-grammar.js
+```
+
+G4 and H4 remain control variables for this comparison.
 
 ---
 
@@ -178,7 +192,7 @@ docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
 The next-generation design program still needs evidence on:
 
 ```text
-work-unit category / silhouette visual grammar
+final work-unit category / silhouette visual grammar
 multi-axis status treatment
 semantic connector vocabulary and styling
 semantic zoom representations
@@ -219,7 +233,6 @@ Current phase:
 
 ```text
 PHASE_C_BROWSER_DESIGN_EVALUATION
-next expected actor  human
 ```
 
 No pending Claude review obligation exists at the current boundary.
@@ -275,16 +288,11 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
+docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
 frontend/design-lab/work-unit-lighting.html
-
-docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
-docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
-
-docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
-docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
-frontend/design-lab/grid-dynamics-combined.html
 
 docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
@@ -299,11 +307,11 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ## Exact next step
 
 ```text
-1. pull v1-cockpit-design-exploration locally
-2. keep the existing Vite dev server running
-3. refresh http://localhost:5173/design-lab/work-unit-lighting.html
-4. inspect H4 at rest and on hover
-5. judge the stronger resting world spill against the cleaner in-node illumination
-6. refine only if needed
-7. then continue into deeper work-unit visual grammar
+1. use Research 046 as the active design brief
+2. preserve G4 and H4 as controls
+3. build W1-W4 browser-rendered work-unit grammar variants
+4. expose a neutral category comparison plus one realistic project scene
+5. compare category recognition, coherence, visual quality and complexity
+6. record prefer/reject/combine/refine evidence
+7. keep production Cockpit untouched
 ```
