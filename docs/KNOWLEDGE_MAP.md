@@ -3,9 +3,10 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 205  
-**Active development branch:** `v1-frontend-spike`  
+**Current checkpoint:** 206  
+**Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
+**Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`
 
 ## Start here
@@ -27,19 +28,279 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-promoted integration             v1-frontend-spike @ ed5b60bdc882bed0799ce55228ce8187f9c55aa1
-active development branch        v1-frontend-spike
+active development branch        v1-cockpit-design-exploration
 active PR                        none
-current checkpoint               205
+current checkpoint               206
 latest specification             Specification 024
 Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
+promoted Cockpit baseline        Specification 008
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
-current operational boundary     permanent user-controlled source-vault bootstrap
+current boundary                 next-generation Cockpit design exploration
+MC-0004 phase                    Claude independent Phase A pending
+source-vault deployment          PAUSED, preserved, Course 2 gate unchanged
 ```
 
 ---
 
-# Current stage: permanent Source Universe deployment before Course 2
+# Current stage: next-generation Project Cockpit design exploration
+
+Primary route:
+
+```text
+docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
+docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
+
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+
+docs/model_collaboration/threads/MC-0004/BRIEF.md
+docs/model_collaboration/threads/MC-0004/THREAD.md
+docs/model_collaboration/threads/MC-0004/STATE.json
+docs/model_collaboration/REVIEW_INBOX.md
+```
+
+Current research sequence:
+
+```text
+broad external/product research
+    -> independent Claude counter-design
+    -> comparative synthesis
+    -> realistic visual mockups / bounded interaction prototypes
+    -> human product review
+    -> implementation specification only if earned
+```
+
+No frontend implementation is authorized by the current checkpoint.
+
+---
+
+# Promoted Cockpit interaction architecture remains Specification 008
+
+Primary route:
+
+```text
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+docs/research/002_primary_project_cockpit_interface_concept.md
+docs/research/003_unified_cockpit_workspace_and_spatial_focus_architecture.md
+docs/research/004_cockpit_spatial_scalability_immersive_chrome_and_fullscreen.md
+docs/research/005_cockpit_canvas_dominance_zoom_and_scalable_project_navigation.md
+docs/research/006_fourth_cockpit_human_review_balanced_spatial_world_and_visual_orientation.md
+docs/research/007_fifth_cockpit_human_review_continuous_grid_world_stage_ruler_and_vertical_tool_rail.md
+docs/research/008_sixth_cockpit_human_review_world_ambient_continuity_pinch_stability_and_collision_safety.md
+docs/research/009_seventh_cockpit_human_review_pinch_responsiveness_and_interaction_promotion.md
+docs/research/012_post_promotion_cockpit_normal_window_and_pinch_sensitivity_review.md
+frontend/README.md
+```
+
+Promoted interaction properties:
+
+```text
+Project Cockpit as primary immersive active-work environment
+living project-process projection
+meaningful work-unit semantics
+spatial focus into reusable specialist workspaces
+reachability != simultaneous mounting
+finite navigable world distinct from semantic project plane
+2D project navigation and recovery
+bounded geometric zoom / native pinch capability
+viewport-aware stage orientation
+scalable Jump/search
+compact/fold-away chrome
+collision-safe floating surfaces
+fullscreen with graceful fallback
+URL-addressable focus/deep-work state
+keyboard accessibility and reduced-motion support
+world-owned restrained ambient depth
+```
+
+Still intentionally unfrozen:
+
+```text
+final visual identity
+final graph/canvas technology
+semantic zoom/grouping
+project auto-layout
+minimap
+stage taxonomy / widths / ruler treatment
+permanent tool-rail design
+final ambient treatment
+final route/persistence details
+canonical screenshot baseline
+```
+
+Research 037 explores this open space. It does not replace Specification 008.
+
+---
+
+# Research 037: next-generation visual and interaction map
+
+Primary route:
+
+```text
+docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
+```
+
+Coverage:
+
+```text
+Spatial world / canvas
+Grid and ambient world
+Work-unit visual grammar
+Relation / connector semantics
+Semantic zoom and level of detail
+Stage / project orientation
+Focus transitions and workspace handoff
+Runtime / execution visualization
+Blocked / unresolved / approval / completed / deferred state
+Navigation, search and command surfaces
+Conversation system and full transcript workspace
+Inspectors / context / evidence surfaces
+Information-density lenses
+Depth / 2.5D / bounded 3D
+Motion language
+Large-project scalability
+Light/dark visual identity
+Accessibility and reduced motion
+Rendering / interaction technology
+Loading / empty / error / recovery behavior
+```
+
+External reference families include:
+
+```text
+React Flow
+Dagster
+Linear
+VS Code
+LangSmith Studio
+Motion for React
+Microsoft Semantic Zoom
+Mapbox
+Cytoscape.js
+Sigma.js
+PixiJS
+React Three Fiber
+Apache Airflow
+Prefect
+```
+
+Current high-value hypotheses, not decisions:
+
+```text
+semantic zoom should be pressure-tested as a major scale/quality improvement
+connectors may carry real dependency/activity semantics
+moving signals should correspond to real temporal activity
+completed work should visually settle
+information lenses/facets may control density
+context-aware commands may reduce permanent control clutter
+compact composer should expand into a first-class Conversation Workspace
+2.5D should be evaluated before full 3D
+React Flow now deserves a comparator prototype
+large project fixtures are required before visual architecture promotion
+```
+
+Candidate mockup directions:
+
+```text
+A. Precision Instrument
+B. Living Analytical Field
+C. Spatial Control Room
+D. Depth-Aware Workbench
+```
+
+No candidate is currently promoted.
+
+---
+
+# Conversation Workspace is a first-class design axis
+
+The compact native composer remains part of the Cockpit, but ADS must also support long, revisitable project conversations.
+
+Research route:
+
+```text
+docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
+docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
+docs/research/002_primary_project_cockpit_interface_concept.md
+```
+
+Product-level distinction under exploration:
+
+```text
+Composer
+Conversational response
+Conversation history
+Conversation Workspace
+```
+
+Candidate presentation modes:
+
+```text
+docked Conversation Lens
+Conversation Focus Workspace
+split analytical/conversation workbench
+canvas-anchored conversation expansion
+direct Conversation specialist view plus Cockpit entry
+```
+
+Important invariant:
+
+```text
+long conversational history remains available and navigable
+    while
+consequential project truth is represented in structured project state
+```
+
+Messages and project work should eventually be able to reference one another without making raw conversation the project database.
+
+The Conversation Workspace represents user-visible conversation, not hidden reasoning traces.
+
+---
+
+# MC-0004: independent Cockpit counter-design
+
+Primary route:
+
+```text
+docs/model_collaboration/threads/MC-0004/BRIEF.md
+docs/model_collaboration/threads/MC-0004/THREAD.md
+docs/model_collaboration/threads/MC-0004/STATE.json
+docs/model_collaboration/REVIEW_INBOX.md
+```
+
+Current state:
+
+```text
+mode                    INDEPENDENT_THEN_COMPARATIVE
+lifecycle               ACTIVE
+phase                   PHASE_A_INDEPENDENT_DESIGN
+task owner              ChatGPT
+target-state writer     ChatGPT
+next expected actor     Claude
+independence            BLIND_TO_CANDIDATE
+Claude secondary path   docs/model_collaboration/threads/MC-0004/messages/**
+```
+
+Exact neutral review base:
+
+```text
+bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
+```
+
+Phase-A rule:
+
+```text
+Claude reads neutral brief + accepted pre-proposal baseline
+Claude must not read Research 037 or later proposer candidate material
+Claude freezes independent proposal under MC-0004/messages/
+only then may comparative synthesis begin
+```
+
+If candidate exposure occurs accidentally, preserve the exposure and downgrade the independence classification rather than pretending the review remained blind.
+
+---
+
+# Permanent Source Universe deployment is preserved and paused
 
 Primary route:
 
@@ -62,40 +323,32 @@ SU-G01 through SU-G23   PASS
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-Still required on real user-controlled storage:
+Current boundary interpretation:
 
 ```text
-choose/verify private locations
-compare original VU Machine Learning folder to prospective fingerprints
-review MATCH / DIFFERENT / MISSING / ADDITIONAL outcomes
-ingest reviewed corpus into permanent registry/vault
-audit working store
-create independent verified backup
-perform clean restore
-audit restored store
-preserve public-safe deployment evidence
+permanent bootstrap   PAUSED
+substrate             ACCEPTED
+real deployment       NOT YET EXECUTED
+Course 2              BLOCKED UNTIL RECOVERY GATE PASSES
 ```
 
-Course 2 remains blocked until that sequence succeeds.
-
-Required environment inputs before execution:
+Still required when resumed:
 
 ```text
-ORIGINAL_SOURCE_ROOT
-INDEPENDENT_BACKUP_ROOT
+confirm private original source location
+confirm genuinely independent backup location
+choose permanent private registry/vault/restore layout
+compare original corpus to reviewed fingerprints
+review every MATCH / DIFFERENT / MISSING / ADDITIONAL outcome
+perform reviewed ingestion
+working integrity audit
+independent verified backup
+clean restore
+restored integrity audit
+public-safe deployment evidence
 ```
 
-The permanent registry/vault/clean-restore layout can then be chosen without committing private paths.
-
-Important GitHub interpretation:
-
-```text
-PR #75 is shown closed/merged because its planning commit d9437a8ca07a444400a5eb44ac2c89e8108c91c2
-is an ancestor of the promoted PR #76 merge.
-
-That means the planning artifacts were promoted.
-It does not mean permanent source-vault deployment ran.
-```
+The pause does not alter the source architecture or runbook.
 
 ---
 
@@ -122,12 +375,9 @@ Current collaboration status:
 MC-0001   CLOSED
 MC-0002   CLOSED
 MC-0003   CLOSED
-pending review inbox   NONE
-GitHub Issue #78       CLOSED / completed
-GitHub Issue #79       CLOSED / completed
+MC-0004   ACTIVE / Claude Phase A pending
+review inbox   MC-0004 pending
 ```
-
-No additional Claude review is currently owed.
 
 Accepted collaboration principles:
 
@@ -142,7 +392,7 @@ explicit secondary write surfaces
 machine-readable collaboration-state coherence guard
 transport != authority
 durable numbered collaboration provenance
-proportional independent/comparative review
+independent-first review where anchoring matters
 known contamination disclosure
 explicit disagreement classification/routing
 provider-local interaction session identities
@@ -166,122 +416,15 @@ schemas/model_collaboration_thread_state_v1.schema.json
 scripts/check_model_collaboration_state.py
 tests/unit/test_model_collaboration_state.py
 .github/workflows/model-collaboration-state.yml
-docs/model_collaboration/threads/MC-0002/RESOLUTION.md
 ```
 
-Evidence:
+Final outcome:
 
 ```text
-pre-implementation freeze       9da382d4011ff112b75dec9c456143d798336336
-corrected green pre-review head a9efc43d7c441c8283d2cd954cc6fa1abd021689
-workflow run                    32902050014
-Ubuntu                          PASS
-Windows                         PASS
-focused tests                   26 PASS per platform
-Claude review commit            9cf393f74e02e167d2f80c0381742ebd7e0c318e
-final outcome                   COLLABORATION_STATE_GUARD_ACCEPTED
-promotion merge                 ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+COLLABORATION_STATE_GUARD_ACCEPTED
 ```
 
 The mechanism is a coherence guard, not authenticated model identity or a distributed mutex.
-
-Known future trigger: secondary-vs-secondary write-surface overlap if a real thread introduces multiple simultaneous secondary writers.
-
----
-
-# MC-0001: architecture review history
-
-Primary route:
-
-```text
-docs/research/035_multi_model_development_collaboration_architecture.md
-docs/model_collaboration/threads/MC-0001/BRIEF.md
-docs/model_collaboration/threads/MC-0001/THREAD.md
-docs/model_collaboration/threads/MC-0001/RESOLUTION.md
-docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
-docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
-docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
-docs/model_collaboration/threads/MC-0001/messages/005_claude_phase_d_challenge.md
-docs/model_collaboration/threads/MC-0001/messages/006_chatgpt_phase_d_resolution.md
-docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
-docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
-docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
-docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
-```
-
-Important review-integrity finding: Phase A was only partially independent because current routing documents exposed candidate concepts. Future deliberately blind reviews should normally use an accepted pre-proposal ref plus a neutral brief and explicit exposure audit.
-
----
-
-# MC-0003: deferred asynchronous catch-up
-
-Primary route:
-
-```text
-docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
-docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
-docs/model_collaboration/REVIEW_INBOX.md
-docs/model_collaboration/threads/MC-0003/RESOLUTION.md
-docs/model_collaboration/threads/MC-0003/messages/002_claude_deferred_catchup_review.md
-docs/model_collaboration/threads/MC-0003/messages/003_chatgpt_review_disposition.md
-```
-
-Accepted rule:
-
-```text
-collaborator unavailable
-    !=
-project globally blocked
-```
-
-unless the affected task's review gate has been reached.
-
-Current semantic constraint:
-
-```text
-REQUIRED review -> real gate required
-OPTIONAL review -> NONE allowed
-```
-
-Known future mechanization triggers:
-
-```text
-cross-thread dependency metadata / downstream impact discovery
-generated REVIEW_INBOX or inbox-state consistency validation
-explicit review-obligation and gate fields if backlog scale requires them
-stale/superseded obligation validation after repeated real use
-```
-
-No Specification 025 is currently justified.
-
----
-
-# Interaction provenance and naming
-
-Current canonical convention:
-
-```text
-shared project/workspace     Autonomous Data Science System
-visible title                NN - Main Topic / Stage
-ChatGPT session example      chatgpt-06
-Claude session example       claude-01
-```
-
-Checkpoint provenance:
-
-```text
-000-203
-    historical ChatGPT-specific fields remain intact
-
-204+
-    Interaction environment
-    Project / workspace
-    Interaction session
-    Conversation title
-    Primary collaborator
-```
-
-Optional model/configuration/effort/surface metadata is preserved only where materially useful and should not be guessed.
 
 ---
 
@@ -318,104 +461,42 @@ Class Imbalance / Metrics / Calibration / Thresholding
 Time-Series Methodology
 ```
 
-Coverage depth is separate from truth, maturity, source authority, freshness, confidence, and enforcement strength.
+The Cockpit exploration is a deliberate product/frontend subtrack. The methodological knowledge-universe program remains the larger V1 objective.
 
 ---
 
-# Reusable methodological knowledge architecture
+# Stable accepted architecture
 
-Primary conceptual sources:
-
-```text
-docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
-docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
-docs/foundations/008_knowledge_quality_generalization_and_evolution.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
-```
-
-Current representation direction:
-
-```text
-KnowledgeAsset
-KnowledgeComponent
-NarrativeFacet
-KnowledgeRelation
-Conditional KnowledgeRule
-KnowledgeCollection
-exact revision identity
-provenance
-```
-
----
-
-# Product, persistence, runtime, and source storage
-
-Important primary sources:
-
-```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
-```
-
-Accepted V1 decisions:
+Current accepted implementation decisions include:
 
 ```text
 D-028  SQLite-centered local-first operational architecture
 D-029  SQLAlchemy Core 2.0 + Alembic 1.x
 D-030  pyproject.toml + uv + committed uv.lock + uv_build
-D-031  governed deterministic JSON / JSON Schema knowledge interchange
-D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
-D-033  ADS-owned Source Universe substrate
+D-031  governed deterministic JSON / JSON Schema interchange
+D-032  OpenAI Agents SDK behind ADS-owned ReasoningRuntime
+D-033  ADS-owned private Source Universe substrate + relational registry
 D-034  governed provider-neutral multi-model development collaboration
 ```
 
----
-
-# Retrieval and later experimental evidence
-
-The accepted bounded chain includes lexical retrieval, dense complementarity, hybrid comparison, explained MethodologicalHorizon, selective exact-revision context, and the ADS-owned ReasoningRuntime.
-
-Specification 014 preserved equal measured quality on its bounded benchmark while reducing provider input by 66.56%.
-
-Later recommendation/action results remain deliberately bounded. Specification 022 remains:
-
-```text
-INCOMPLETE / EXECUTION INTEGRITY FAILED
-```
-
-It contains no legitimate `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison.
+Research 037 promotes no new Level-2 architecture or technology choice.
 
 ---
 
-# Preservation and continuity
-
-Canonical route:
+# Exact continuation
 
 ```text
-docs/DEVELOPMENT_METHOD.md                version 0.5
-docs/CONTINUITY.md                        aligned version 0.5
-docs/checkpoints/README.md                provider-neutral from Checkpoint 204
-scripts/check_checkpoint_metadata.py       versioned provenance validation
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/MAJOR_CHANGES.md
-```
-
----
-
-# Exact current continuation
-
-```text
-A. obtain/confirm the actual ORIGINAL_SOURCE_ROOT
-B. obtain/confirm a genuinely independent backup location
-C. choose permanent private registry/vault/clean-restore locations
-D. compare the original ML folder against preserved prospective fingerprints
-E. inspect every comparison class before any manifest adjustment
-F. execute reviewed ingestion, audit, independent backup, clean restore, and restored audit
-G. preserve only public-safe deployment evidence in Git
-H. admit Course 2 only after permanent recovery integrity is proven
-I. continue serious methodological knowledge-universe construction
+1. reconstruct from Checkpoint 206
+2. use v1-cockpit-design-exploration as the active research/design branch
+3. keep Specification 008 as the promoted Cockpit interaction baseline
+4. keep permanent source-vault deployment paused with Course 2 gate unchanged
+5. complete Claude MC-0004 Phase A from exact neutral ref bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
+6. preserve Claude's independent proposal under MC-0004/messages/
+7. only then compare Claude's design with Research 037
+8. select the strongest 2-4 design directions/mechanisms for realistic mockups
+9. explicitly mock/prototype long-form Conversation Workspace behavior
+10. pressure-test medium/large project maps and active/blocked/completed/runtime states
+11. perform human visual/product review
+12. freeze implementation only after that evidence
+13. resume permanent source-vault deployment whenever the project owner chooses
 ```
