@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            215
+checkpoint            216
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C work-unit interaction-lighting human review
+current boundary      MC-0004 Phase C H4 resting world-spill human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -44,13 +44,6 @@ No scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inf
 ## Current Cockpit design direction
 
 MC-0004 has completed its independent and comparative model phases and is now in browser-rendered human design evaluation.
-
-The broad research and comparative synthesis are preserved in:
-
-```text
-docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
-docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
-```
 
 The Phase-C protocol prefers:
 
@@ -70,22 +63,13 @@ Generated-image UI concepts are not part of the preferred Cockpit design workflo
 
 ## Grid/world result: provisionally settled
 
-The first browser-rendered design slice compared:
-
-```text
-G1 Precision Lines
-G2 Dot Matrix
-G3 Cross Lattice
-G4 Adaptive Hybrid
-```
-
 Human review selected:
 
 ```text
 G4 Adaptive Hybrid  SELECTED
 ```
 
-The current grid/world layer is now provisionally settled for the design sequence. This is not an irreversible freeze.
+The current grid/world layer is provisionally settled for the design sequence. This is not an irreversible freeze.
 
 Current retained direction:
 
@@ -100,8 +84,6 @@ Ambient drift                  retained
 Localized semantic activity    retained
 Fixed authored coordinates     rejected
 ```
-
-The project owner explicitly allows later refinements or additional details if the integrated Cockpit reveals a need.
 
 Primary grid/world evidence:
 
@@ -125,27 +107,48 @@ frontend/design-lab/grid-dynamics-combined.html
 
 ---
 
-## Current slice: work-unit interaction lighting
+## Work-unit interaction lighting: H4 selected
 
-The project owner strongly liked the colored lighting around work units and requested richer node-specific hover response.
+Human review selected:
 
-Current hypothesis:
+```text
+H4 Integrated Response  SELECTED
+```
+
+Currently retained interaction mechanisms:
 
 ```text
 REST
-    localized / asymmetric colored atmosphere
+    localized / asymmetric node-colored atmosphere
 
 HOVER
-    fuller node-specific colored response
-
-SELECTED
-    later persistent focus treatment
-
-ACTIVE / RUNNING
-    later semantic state-bearing light behavior
+    full node-colored halo
+    pointer-following/specular hotspot
+    local grid/world illumination
+    immediate connector emphasis
+    one restrained perimeter sweep on hover entry
+    small depth lift
 ```
 
-New browser lab:
+Representative category colors remain provisional.
+
+### Current H4 refinement
+
+The project owner likes the newer cleaner node-internal light treatment, but wants more of that node color visible in the surrounding grid during the normal resting state.
+
+The current synthesis is:
+
+```text
+clean newer in-node light
++
+soft broader asymmetric world bleed at rest
++
+richer H4 hover response
+```
+
+The design-lab H4 treatment therefore now adds a low-opacity broader colored field behind each node while preserving the near-node rest light. The resting spill remains strongest near the accent side so the node does not become a uniformly glowing neon rectangle.
+
+Current browser lab:
 
 ```text
 frontend/design-lab/work-unit-lighting.html
@@ -159,40 +162,13 @@ Local URL:
 http://localhost:5173/design-lab/work-unit-lighting.html
 ```
 
-Four decomposable treatments are under review:
-
-```text
-H1 Full Halo
-    localized rest light
-    full colored perimeter on hover
-    small depth lift
-
-H2 Cursor Edge
-    H1
-    + pointer-following/specular hotspot
-
-H3 World Spill
-    full hover light
-    + faint nearby grid illumination in node color
-    + immediate connector emphasis
-
-H4 Integrated Response
-    localized rest light
-    full hover halo
-    pointer hotspot
-    local grid spill
-    connector emphasis
-    one restrained perimeter sweep on hover entry
-    small depth lift
-```
-
-The user may combine mechanisms rather than selecting H1-H4 literally.
-
-Research and checkpoint:
+Research and checkpoints:
 
 ```text
 docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
+docs/research/045_h4_resting_node_light_world_spill_refinement.md
 docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
+docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
 ```
 
 ---
@@ -299,9 +275,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
+docs/research/045_h4_resting_node_light_world_spill_refinement.md
+frontend/design-lab/work-unit-lighting.html
+
 docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
 docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
-frontend/design-lab/work-unit-lighting.html
 
 docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
 docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
@@ -322,10 +301,9 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. pull v1-cockpit-design-exploration locally
 2. keep the existing Vite dev server running
-3. open http://localhost:5173/design-lab/work-unit-lighting.html
-4. hover the same colored work units across H1-H4
-5. compare full halo, pointer light, world spill, connector response and one-time perimeter sweep
-6. provide human keep/reject/combine/refine feedback
-7. refine once if useful
-8. then continue into deeper work-unit visual grammar
+3. refresh http://localhost:5173/design-lab/work-unit-lighting.html
+4. inspect H4 at rest and on hover
+5. judge the stronger resting world spill against the cleaner in-node illumination
+6. refine only if needed
+7. then continue into deeper work-unit visual grammar
 ```
