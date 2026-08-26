@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 213  
+**Current checkpoint:** 214  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        213
+checkpoint                        214
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C randomized G4 ambient-distribution human review
+current boundary                 MC-0004 Phase C G4 major-grid glint / cadence human review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -74,8 +74,10 @@ Human review also established:
 
 ```text
 initial D1-D4 cadence      TOO SUBTLE
-combined preset preference LIVELY
+current / drift preference LIVELY
 fixed ambient coordinates  REJECTED
+glint lattice              100 px MAJOR GRID ONLY
+glint cadence              APPROXIMATELY QUIET / INDEPENDENT
 ```
 
 Current supporting evidence:
@@ -84,10 +86,12 @@ Current supporting evidence:
 docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
 docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
 docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
+docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
 
 docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
 docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
 docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
+docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
 ```
 
 Current browser lab:
@@ -104,7 +108,7 @@ Local route:
 http://localhost:5173/design-lab/grid-dynamics-combined.html
 ```
 
-## Current spatial-randomization rules
+## Current ambient distribution rules
 
 ```text
 CURRENTS
@@ -112,11 +116,16 @@ CURRENTS
     random visible grid line
     snapped to 20 px lattice
     random start, direction, distance, length and timing
+    Quiet / Balanced / Lively cadence selectable
+    Lively currently preferred
 
 GLINTS
-    x snapped to 20 px
-    y snapped to 20 px
-    always centered on an actual grid intersection / cell corner
+    x snapped to 100 px major grid
+    y snapped to 100 px major grid
+    only on corners of the larger visible grid boxes
+    independently randomized major intersection
+    approximately Quiet cadence regardless of current preset
+    maximum two concurrent glints
 
 AMBIENT DRIFT
     random start position
