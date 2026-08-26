@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            219
+checkpoint            220
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C work-unit grammar Claude divergent ideation
+current boundary      corrected work-unit grammar human verification before Claude ideation
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -95,12 +95,12 @@ Human review selected:
 H4 Integrated Response  SELECTED
 ```
 
-Current retained interaction treatment:
+Current retained generic interaction treatment:
 
 ```text
 REST
     accepted clean localized/asymmetric in-box illumination
-    accepted narrow asymmetric outward world spill through the accent/left side
+    accepted narrow asymmetric outward world spill through the accent side
     no broad circular resting halo
 
 HOVER
@@ -115,7 +115,7 @@ HOVER
 
 The revised hover timing was judged perfect. After the final outward-only resting-spill correction, the resting result was also judged good.
 
-No further generic lighting-only variant is currently justified. Later selected/focused, runtime, blocked and approval states may use lighting when those semantic slices are tested.
+No further generic hover/outward-spill tuning is currently justified. Later selected/focused, runtime, blocked and approval states may use lighting when those semantic slices are tested.
 
 Primary completed lighting evidence:
 
@@ -140,6 +140,7 @@ Current governing research:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
 ```
 
 First-round browser directions:
@@ -156,6 +157,7 @@ Browser lab:
 ```text
 frontend/design-lab/work-unit-grammar.html
 frontend/design-lab/work-unit-grammar.css
+frontend/design-lab/work-unit-grammar-lighting-controls.css
 frontend/design-lab/work-unit-grammar.js
 ```
 
@@ -167,10 +169,65 @@ http://localhost:5173/design-lab/work-unit-grammar.html
 
 The first implementation received a strongly positive preliminary human reaction, but no W1-W4 selection was made. The project owner judged that the current four variants likely cover too little of the plausible visual-design space and explicitly requested additional Claude ideas and inspiration before convergence.
 
-The Project Scene view-switching defect observed during that review has been corrected. The exact corrected experiment target is:
+Human review also found three browser/control issues before Claude should inspect the experiment:
 
 ```text
-88a507d42744917be1e84b29177dd0465f24cd82
+Project Scene could remain overlaid with Category strip
+accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
+resting light stayed left-biased when category signature bars moved to top/bottom/right
+```
+
+These are now corrected.
+
+### Explicit in-box-light comparison
+
+The accidentally quieter in-box appearance is preserved intentionally as a comparison rather than silently discarded.
+
+The browser now exposes:
+
+```text
+In-box light
+    H4 baseline   default restored accepted control
+    Reduced       intentional lower-light alternative
+```
+
+This comparison changes in-box resting-light intensity only. It does not intentionally reopen the accepted outward resting spill or generic H4 hover behavior.
+
+No preference exists yet between H4 baseline and Reduced.
+
+### Signature-side-aware lighting
+
+The project owner established:
+
+```text
+if the visible category signature/accent edge moves,
+signature-anchored resting light moves with it
+```
+
+Current first-round mapping:
+
+```text
+W1
+    all categories left
+
+W2 / W4
+    Question        left
+    Investigation   left
+    Validation      top
+    Model           bottom
+    Evaluation      right
+
+W3
+    no explicit signature bar
+    retain accepted left-biased H4 baseline
+```
+
+The in-box light, near-node rest light and outward spill move together.
+
+Corrected exact browser target for Claude after human verification:
+
+```text
+03d3997498192544ce92c97c2a49e839b3a95af4
 ```
 
 ---
@@ -189,7 +246,11 @@ Classification:
 COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
-Claude is not being asked merely to rank W1-W4. The requested contribution is to broaden the design space, identify underexplored visual mechanisms, propose materially different concept families and recommend a small next browser round.
+Claude is not being asked merely to rank W1-W4. The requested contribution is to broaden the design space, identify underexplored visual mechanisms, propose materially different concept families, and preserve all genuinely worthwhile candidates.
+
+There is no artificial candidate-count cap. If many candidates remain genuinely distinct and useful, they may all be implemented and tested, organized into multiple browser batches if that improves clarity. Batching does not imply rejection.
+
+Claude may also comment on the explicit H4-baseline versus Reduced in-box-light comparison if useful, but that is secondary to the category-grammar ideation task.
 
 Expected durable response:
 
@@ -205,6 +266,8 @@ ChatGPT retains target-state write ownership. Claude's write boundary remains:
 docs/model_collaboration/threads/MC-0004/messages/**
 ```
 
+Human browser verification of the corrected target comes before triggering Claude.
+
 ---
 
 ## Still-unresolved major Cockpit questions
@@ -212,6 +275,7 @@ docs/model_collaboration/threads/MC-0004/messages/**
 The next-generation design program still needs evidence on:
 
 ```text
+H4 baseline vs Reduced in-box resting-light preference
 final work-unit category / silhouette visual grammar
 multi-axis status treatment
 semantic connector vocabulary and styling
@@ -280,10 +344,15 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/219_work_unit_grammar_preliminary_review_claude_ideation_requested.md
-docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+docs/checkpoints/220_work_unit_grammar_h4_control_corrected_claude_ideation_ready.md
+docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
 frontend/design-lab/work-unit-grammar.html
+frontend/design-lab/work-unit-grammar-lighting-controls.css
+
+docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+docs/model_collaboration/threads/MC-0004/STATE.json
+docs/model_collaboration/REVIEW_INBOX.md
 
 docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
@@ -293,9 +362,6 @@ docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_directi
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 
-docs/model_collaboration/threads/MC-0004/STATE.json
-docs/model_collaboration/REVIEW_INBOX.md
-
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
@@ -303,11 +369,15 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ```text
 1. use v1-cockpit-design-exploration
-2. Claude reads REVIEW_INBOX.md and Message 003
-3. Claude evaluates exact target 88a507d42744917be1e84b29177dd0465f24cd82
-4. Claude writes only Message 004 with divergent work-unit grammar ideas
-5. ChatGPT synthesizes the response against Research 046 and current browser evidence
-6. implement only the strongest additional/combined candidates in a bounded second browser round
-7. return to human comparison before category-grammar selection
-8. keep production Cockpit untouched
+2. pull the latest branch locally
+3. refresh http://localhost:5173/design-lab/work-unit-grammar.html
+4. verify Project Scene switching remains clean
+5. compare H4 baseline vs Reduced in-box light
+6. verify W2/W4 top/bottom/right signature bars move their resting light/spill accordingly
+7. verify hover remains the accepted H4 behavior
+8. if correct, trigger Claude through REVIEW_INBOX.md
+9. Claude evaluates exact target 03d3997498192544ce92c97c2a49e839b3a95af4 and writes only Message 004
+10. ChatGPT synthesizes all genuinely worthwhile candidates and implements as many browser variants as evidence justifies
+11. return to human comparison before category-grammar selection
+12. keep production Cockpit untouched
 ```
