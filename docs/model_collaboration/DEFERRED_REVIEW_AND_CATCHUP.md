@@ -1,9 +1,10 @@
 # Deferred Review and Catch-Up Protocol
 
 **Date:** 2026-08-26  
-**Status:** Candidate operational protocol under Research 036  
-**Authority:** Collaboration working protocol only. It does not override frozen specifications, accepted decisions, project-current routing, or Development Method v0.4.  
-**Governing research:** `docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md`
+**Status:** Accepted operational collaboration protocol  
+**Authority:** Canonical collaboration-method supplement under Development Method v0.5. Frozen specifications and accepted project decisions remain stronger within their declared scopes.  
+**Governing research:** `docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md`  
+**Review evidence:** MC-0003, including exact-target Claude review at `74fbf8f5dbf7b57bb5f3038b41122f20e09a4b53`
 
 ## Purpose
 
@@ -19,9 +20,9 @@ This pattern is distinct from simply switching to SOLO mode. Intended review rem
 
 ## This is a cross-thread scheduling pattern
 
-Deferred catch-up is **not** currently a new `review_mode` enum under Specification 024.
+Deferred catch-up is **not** a `review_mode` enum under Specification 024.
 
-Existing thread modes continue to describe the kind of collaboration:
+Existing thread modes describe the kind of collaboration:
 
 ```text
 SOLO
@@ -47,14 +48,14 @@ Is review required?
 Before what boundary must it happen?
 ```
 
-Candidate requirement values:
+Current requirement values:
 
 ```text
 REQUIRED
 OPTIONAL
 ```
 
-Candidate gate boundaries:
+Current gate-boundary vocabulary:
 
 ```text
 BEFORE_TARGET_MUTATION
@@ -63,7 +64,16 @@ BEFORE_PROMOTION
 NONE
 ```
 
-These values are not yet part of the frozen Specification 024 schema. Until a later mechanical contract is accepted, they may be recorded explicitly in `THREAD.md`, review requests, and the convenience review inbox.
+Semantic constraint established by MC-0003 review:
+
+```text
+REQUIRED -> must use a real gate boundary
+OPTIONAL -> may use NONE
+```
+
+`REQUIRED + NONE` is not a valid current combination. If review is truly required, the process must name what project boundary waits for it.
+
+These values are not part of the frozen Specification 024 schema. Until a later prospective mechanical contract is justified, they may be recorded explicitly in `THREAD.md`, review requests, and the convenience review inbox.
 
 ---
 
@@ -106,6 +116,8 @@ or the pending review should be escalated to an earlier blocking boundary.
 
 If a late review causes a required correction, inspect downstream tasks that relied on the corrected result. Do not patch only the reviewed file and ignore later consequences.
 
+MC-0003 established that this is currently a procedural safety property, not yet a machine-readable dependency graph. If real cross-thread dependency chains become non-trivial, explicit thread-dependency metadata is the highest-priority candidate mechanical extension.
+
 ### Rule 6: no automatic review of SOLO work
 
 Work intentionally completed as SOLO creates no hidden obligation merely because another model exists.
@@ -129,7 +141,7 @@ exact repository target
 
 The inbox exists so a returning collaborator can quickly discover what awaits them without relying on chat memory.
 
-A later implementation should derive this view mechanically from per-thread state rather than depend on manual synchronization.
+MC-0003 confirmed that manual inbox/state consistency is a real future drift risk. The current project still defers a generated inbox or CI consistency guard until repeated backlog use or observed drift justifies the extra mechanism.
 
 ---
 
@@ -183,7 +195,9 @@ separate disposition per item
 separate required corrections
 ```
 
-A batch must not blur three reviews into one vague endorsement.
+A batch must not blur several reviews into one vague endorsement.
+
+MC-0002 and MC-0003 provided the first positive operational example: both were processed in one Claude session while retaining separate targets, review artifacts, findings, and dispositions.
 
 ---
 
@@ -217,37 +231,58 @@ For those cases, the gate should occur before the contaminating action. Reviewer
 
 ---
 
-## Current pressure test
+## Scheduled or unattended execution
 
-The repository currently exercises this pattern with at least two Claude obligations:
+The current method does not use unattended scheduled Claude/ChatGPT review execution.
+
+This was explicitly considered after the first real usage-limit pressure. It is deferred because:
+
+```text
+scheduled execution does not create extra weekly subscription capacity
+unattended repository writes add concurrency risk
+an unattended review cannot easily pause for clarification
+usage may be consumed before the human can intervene
+current manual triggering is already lightweight because the repository holds the backlog
+```
+
+This is not a permanent rejection. Revisit if product capabilities, isolated write surfaces, usage economics, or backlog scale materially change.
+
+---
+
+## Current evidence
+
+The first pressure test used two Claude obligations:
 
 ```text
 MC-0002
     Specification 024 direct implementation review
-    higher priority because Specification 024 classification depends on it
+    higher priority because Specification 024 classification depended on it
 
 MC-0003
     deferred-review/catch-up architecture review
-    deliberately deferrable while other legitimate work continues
+    lower immediate priority because it blocked method promotion, not unrelated work
 ```
 
-This is intentional evidence that multiple pending review threads can coexist without a global model lock.
+Both were simultaneously `WAITING` without a global model lock. Claude later processed MC-0002 first and MC-0003 second, exactly as the inbox specified.
+
+This is direct evidence that multiple pending reviewer obligations can coexist while unrelated legitimate work continues.
 
 ---
 
 ## Mechanical follow-up
 
-Specification 024 remains frozen and should not be retroactively expanded.
+Specification 024 remains accepted as frozen and is not retroactively expanded.
 
-After Specification 024 is classified and this protocol is reviewed, a later bounded contract may add:
+No Specification 025 is opened merely because future improvements are imaginable.
+
+Evidence-backed future candidates are:
 
 ```text
-explicit review-obligation metadata
-explicit gate-boundary metadata
-review-target snapshot semantics
-backlog discovery command
-generated review-inbox view
-stale/superseded obligation checks
+1. explicit cross-thread dependency metadata for downstream impact discovery
+2. deterministic review-inbox generation / consistency validation if drift appears
+3. secondary-vs-secondary write-surface overlap if simultaneous secondary writers appear
+4. explicit review-obligation / gate-boundary fields when backlog scale justifies schema support
+5. stale/superseded obligation checks when repeated use shows manual handling is unreliable
 ```
 
-The mechanism should be justified by real use rather than added merely for completeness.
+The mechanism should continue to earn complexity through actual use.
