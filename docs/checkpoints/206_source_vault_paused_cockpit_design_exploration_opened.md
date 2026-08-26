@@ -8,8 +8,8 @@
 **Authority:** Continuity and routing provenance. Specification 008 remains the accepted V1 Cockpit interaction architecture; Research 037 and MC-0004 are research/collaboration surfaces and do not by themselves promote a new visual system.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
-**Interaction session:** chatgpt-06  
-**Conversation title:** 06 - Project Cockpit Design Exploration  
+**Interaction session:** chatgpt-07  
+**Conversation title:** 07 - Project Cockpit Design Exploration  
 **Primary collaborator:** ChatGPT
 
 ## 1. The source-vault bootstrap is deliberately paused

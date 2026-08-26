@@ -4,37 +4,35 @@
 **Status:** Current collaboration/product-design checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / COLLABORATION  
 **Project stage:** V1 next-generation Project Cockpit visual and interaction exploration  
-**Scope:** Records Claude's independently frozen MC-0004 Phase-A design proposal, verifies that only the declared secondary write surface changed, preserves the stale-branch routing failure and its operational lesson, corrects the current ChatGPT conversation-title provenance for the Cockpit stage, and opens Phase B comparative review before final synthesis or mockup selection.  
+**Scope:** Records Claude's independently frozen MC-0004 Phase-A design proposal, verifies that only the declared secondary write surface changed, preserves the stale-branch routing failure and its operational lesson, reconciles the current ChatGPT interaction provenance for the Cockpit stage, and opens Phase B comparative review before final synthesis or mockup selection.  
 **Authority:** Historical collaboration/design provenance and current routing boundary. Specification 008 remains the promoted V1 Cockpit interaction architecture. Research 037 and MC-0004 remain research/review evidence rather than promoted visual specification.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
-**Interaction session:** chatgpt-06  
-**Conversation title:** 06 - Project Cockpit Design Exploration  
+**Interaction session:** chatgpt-07  
+**Conversation title:** 07 - Project Cockpit Design Exploration  
 **Primary collaborator:** ChatGPT
 
-## 1. Conversation-title provenance is corrected for the Cockpit stage
+## 1. Current ChatGPT interaction provenance is corrected
 
-The current ChatGPT interaction is still the same concrete conversation represented by:
+The methodological-knowledge work immediately preceding this Cockpit exploration occurred in a different ChatGPT conversation:
 
 ```text
 chatgpt-06
+06 - Methodological Knowledge Universe Construction
 ```
 
-The project focus changed materially inside that same conversation from methodological-knowledge-universe construction to next-generation Cockpit design exploration.
-
-The visible title for the current stage is therefore:
+The current Cockpit exploration began in a new ChatGPT conversation and is therefore:
 
 ```text
-06 - Project Cockpit Design Exploration
+chatgpt-07
+07 - Project Cockpit Design Exploration
 ```
 
-This does **not** create `chatgpt-07`, because no new ChatGPT conversation/session was opened. The provider-local interaction-session identity remains tied to the concrete conversation, while the visible title may be updated when the main topic/stage changes materially.
+Earlier Cockpit-stage repository records that incorrectly described this work as `chatgpt-06 / 06 - Project Cockpit Design Exploration` are provenance errors and are corrected accordingly.
 
-Checkpoint 206 and current routing/current-state provenance that had carried the previous title into the new Cockpit stage are corrected accordingly.
+Genuine historical artifacts produced in the preceding `chatgpt-06` conversation remain unchanged because that provenance is historically correct.
 
-Historical artifacts from the earlier methodological-knowledge stage are not rewritten merely because the same conversation was later retitled. Their title was truthful for the stage they recorded.
-
-The actual ChatGPT product UI title is a human-facing surface outside repository authority; repository provenance records the intended/current project title convention.
+This is a provenance correction only. It does not change the Cockpit design research, Claude Phase-A evidence, MC-0004 phase, accepted specifications, or project authority.
 
 ---
 
@@ -247,7 +245,7 @@ UPDATE / CREATE
     MC-0004 STATE / THREAD
     REVIEW_INBOX current Phase-B routing
     CURRENT_STATE / KNOWLEDGE_MAP / current_routing
-    Checkpoint 206 provenance title correction
+    Checkpoint 206 interaction-provenance correction
 
 NO CHANGE YET
     Specification 008

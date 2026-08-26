@@ -6,7 +6,7 @@
 **Authority:** Research only. Specification 008 remains the accepted V1 interaction architecture unless later evidence and normal promotion governance revise it.  
 **Primary interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
-**Interaction session:** chatgpt-06  
+**Interaction session:** chatgpt-07  
 **Companion collaboration thread:** MC-0004  
 **Independent Claude Phase-A base:** `bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88`
 
