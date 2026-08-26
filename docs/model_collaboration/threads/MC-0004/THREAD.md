@@ -28,8 +28,11 @@ Phase B
     commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
     classification COMPARATIVE_ONLY
 
-ChatGPT comparative synthesis
-    docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
+Phase C divergent work-unit ideation
+    request message 003
+    Claude response message 004
+    response commit faf18ed9932d60a24dd80589b0ec0ba71c5940fd
+    classification COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
 Historical Phase-A independence remains valid. All later Claude work is comparative because candidate exposure is allowed.
@@ -54,7 +57,7 @@ bounded design question
 
 Generated-image UI concepts are not part of the preferred workflow.
 
-## Phase C results so far
+## Settled / held controls
 
 ### Grid/world
 
@@ -62,26 +65,35 @@ Generated-image UI concepts are not part of the preferred workflow.
 G4 Adaptive Hybrid  SELECTED / provisionally settled
 ```
 
-Retained direction includes dark-first design, randomized grid currents, quiet major-grid glints, ambient drift and localized semantic activity. Decorative ambient behavior is allowed when it remains subordinate and cannot be mistaken for semantic state.
-
-### Generic work-unit rest/hover lighting
+### Generic work-unit interaction lighting
 
 ```text
 H4 Integrated Response  SELECTED / sufficiently settled
 ```
 
-Accepted treatment includes clean asymmetric resting illumination, narrow outward resting spill, full hover halo, pointer hotspot, local world illumination, connector emphasis, one restrained perimeter sweep, small lift, fast entry and smoother release. The broad circular resting halo was rejected.
+Accepted hover/outward-world behavior remains held.
 
-### First work-unit grammar round
-
-Research:
+Human review has now additionally selected:
 
 ```text
-docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
+Reduced in-box resting light
+    PREFERRED WORKING CONTROL
 ```
 
-Candidates:
+So subsequent work-unit grammar rounds default to Reduced rather than treating H4 baseline and Reduced as equal alternatives.
+
+Signature-coupled resting light remains governed by:
+
+```text
+signature edge
++
+signature position along edge
+-> light origin
+```
+
+## Work-unit grammar history
+
+### First round
 
 ```text
 W1  Unified Precision Frame
@@ -90,57 +102,11 @@ W3  Structural Silhouette Family
 W4  Hybrid Semantic Instrument
 ```
 
-Human review judged the first implementation positively but the design space too narrow for convergence.
+Human review liked the implementation direction but judged the design space too narrow.
 
-Before Claude was triggered, the browser target was corrected for:
+### Claude divergent ideation
 
-```text
-Project Scene overlap
-accidental H4 in-box-light suppression
-fixed-left lighting despite moved signature edges
-edge-centered lighting despite partial top/bottom bars being left-biased
-```
-
-The corrected control now preserves:
-
-```text
-H4 baseline vs Reduced in-box light
-signature edge + along-edge position -> resting-light origin
-```
-
-Corrected exact target reviewed by Claude:
-
-```text
-304db34d6482320b317db97277148bc129d07372
-```
-
-## Claude Phase-C divergent ideation: completed
-
-Request:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
-```
-
-Response:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
-```
-
-Claude response commit:
-
-```text
-faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-```
-
-Classification:
-
-```text
-COMPARATIVE_ONLY / DIVERGENT_IDEATION
-```
-
-Claude proposed eight materially distinct concept families:
+Claude proposed:
 
 ```text
 C1  Instrument Glyph Family
@@ -153,34 +119,11 @@ C7  Compact Marker Rail
 C8  Scientific Marker Family
 ```
 
-No artificial candidate-count cap was applied.
-
-Claude also diagnosed that the first W1-W4 round underexplored:
+Research 048 added:
 
 ```text
-true non-text category marks
-genuine topology change
-surface material
-inner layout
-connector ports
-richer signature vocabulary
+C9  Inner Instrument Architecture
 ```
-
-## ChatGPT synthesis and expanded round
-
-Synthesis:
-
-```text
-docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
-```
-
-ChatGPT preserved Claude's immediate candidates and added:
-
-```text
-C9 Inner Instrument Architecture
-```
-
-This isolates inner frame architecture without introducing live-looking category content.
 
 Dependency-bound candidates remain preserved:
 
@@ -189,89 +132,118 @@ C4 Port Grammar             -> connector-semantics slice
 C5 Internal Layout Grammar  -> semantic zoom / information-density slice
 ```
 
-New browser route:
+### Expanded browser round
 
 ```text
-frontend/design-lab/work-unit-grammar-expanded.html
-frontend/design-lab/work-unit-grammar-expanded.css
-frontend/design-lab/work-unit-grammar-expanded.js
+G0-G3  glyph strategies
+S0-S3  structural strategies
+M0-M1  material strategies
+I0-I2  integrated W4 combinations
 ```
 
-Exact implementation head before routing-only documentation:
-
-```text
-32883ada35506a713a7c780beca08f363ba29fab
-```
-
-Expanded candidate matrix:
-
-```text
-Batch A · Glyph strategy
-    G0 Letter Control
-    G1 Instrument Glyph Family
-    G2 Compact Marker Rail
-    G3 Scientific Marker Family
-
-Batch B · Structural grammar
-    S0 Chamfer Control
-    S1 Structural Topology Family
-    S2 Aspect & Proportion Family
-    S3 Inner Instrument Architecture
-
-Batch C · Material channel
-    M0 Plain Surface Control
-    M1 Material Language Family
-
-Batch D · Integrated candidates
-    I0 Current W4 Hybrid Control
-    I1 W4 + Instrument Glyph
-    I2 W4 + Scientific Marker
-```
-
-Total executable variants:
+Total immediate executable variants:
 
 ```text
 13
 ```
 
-Batching is presentation and causal organization only:
+No artificial cap was applied.
+
+## Human expanded-round result
+
+The project owner has now supplied decisive evidence.
+
+Rejected:
 
 ```text
-batching != rejection
+bare Q / I / V / M / E letters
+G2 Compact Marker Rail
+S3 Inner Instrument Architecture / symbol direction
 ```
 
-## Current gate: human expanded-browser review
-
-Current local route:
+Leading:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-expanded.html
+G3 Scientific Marker Family
+M1 Material Language Family
+M1 Evaluation micro treatment
+Reduced in-box light
 ```
 
-Current controls:
+Secondary comparator:
 
 ```text
-View
-    Category strip
-    Project scene
-
-In-box light
-    H4 baseline
-    Reduced
-
-Family filter
-    All
-    Glyph
-    Structure
-    Surface
-    Integrated
-
-Reduced motion
+G1 Instrument Glyph Family
 ```
 
-G4, accepted H4 hover behavior and position-aware resting light remain held.
+The project owner specifically prefers the simple scientific marker geometry over G1 while still finding G1 visually good.
 
-The family filter only changes presentation. Hidden candidates remain active.
+## New true-shape question
+
+The project owner asked whether genuinely different overall work-unit shapes should be tested.
+
+Direct shape-orientation evidence:
+
+```text
+upper-right cut   liked
+upper-left cut    awkward
+```
+
+Research 049 therefore opens a true-shape hypothesis:
+
+```text
+preserve full left reading edge
+allow stronger top / right / bottom silhouette variation
+```
+
+Current true-shape family:
+
+```text
+Question        upper-right diagonal cut
+Investigation   right-edge inward notch
+Validation      raised / tab-like top geometry
+Model           stepped bottom-right geometry
+Evaluation      right-side beveled termination
+```
+
+## Current focused browser round
+
+Governing research:
+
+```text
+docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-grammar-focused.html
+frontend/design-lab/work-unit-grammar-focused.css
+frontend/design-lab/work-unit-grammar-focused.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar-focused.html
+```
+
+Candidate matrix:
+
+```text
+F0  Scientific Marker Control
+F1  Upper-right Cut Control
+F2  Scientific Marker + M1 Material
+F3  Scientific Marker + Micro-Lumen
+F4  True Shape Family
+F5  True Shape + M1 Material
+F6  True Shape + Micro-Lumen
+F7  Instrument Glyph Comparator
+```
+
+The focused round defaults to Reduced in-box light.
+
+Micro-Lumen is a category-level surface-detail experiment inspired by the especially positive M1 Evaluation treatment. It is not a return to stronger global H4 resting illumination.
 
 ## Scope discipline
 
@@ -289,9 +261,7 @@ runtime state
 importance / recommendation strength
 ```
 
-The H4 baseline-vs-Reduced in-box-light control remains an explicit secondary comparison.
-
-Do not silently solve connector semantics or semantic zoom inside this slice. C4 and C5 are preserved specifically for those dependency-aligned slices.
+Do not silently solve connector semantics or semantic zoom inside this slice.
 
 ## Authority
 
@@ -314,11 +284,13 @@ No production `/cockpit` replacement, new graph/canvas dependency, new motion li
 ## Current continuation
 
 ```text
-1. human reviews the expanded 13-variant browser round
-2. human may prefer, reject, combine, refine or request additional candidates
-3. ChatGPT records the human evidence
-4. decide whether another work-unit grammar round is warranted
-5. only later promote a grammar if integrated evidence supports it
+1. human reviews the focused F0-F7 browser round
+2. compare scientific markers against the remaining G1 comparator
+3. compare M1 micro-material against Micro-Lumen
+4. compare upper-right-cut control against the true-shape family
+5. compare integrated true-shape + micro-detail candidates
+6. switch to Project scene and test whether preferences survive realistic composition
+7. preserve prefer/reject/combine evidence before moving to another design slice
 ```
 
-Machine-readable authoritative coordination state is in `STATE.json`; `docs/model_collaboration/REVIEW_INBOX.md` currently shows no pending model obligation.
+Machine-readable authoritative coordination state is in `STATE.json`; `docs/model_collaboration/REVIEW_INBOX.md` shows no pending model obligation.
