@@ -81,7 +81,57 @@ The Investigation notch receives a silhouette-aware right-edge anchor.
 
 This routing substrate is held across all connector-style candidates.
 
-## 5. Candidate family
+## 5. Layering invariant
+
+Human review identified an important distinction between the connector curve and the endpoint marker.
+
+Preferred visual hierarchy:
+
+```text
+world / grid
+    ↓
+connector curve
+    ↓
+work-unit body
+    ↓
+endpoint dot / socket / port
+```
+
+Interpretation:
+
+```text
+connector curve
+    remains behind the work-unit surface
+    terminates cleanly at the rendered perimeter
+
+endpoint marker
+    sits visibly above the work-unit perimeter
+    reads as a physical attachment point rather than a hidden decoration
+```
+
+This matters particularly for:
+
+```text
+K1 Micro Dots
+K2 Frame Sockets
+K4 Hover Ports
+```
+
+K3 Target Cue is also rendered in the endpoint overlay because it is a destination-side directional marker rather than part of the underlying curve.
+
+Implementation uses two coordinated SVG layers:
+
+```text
+connector-relations
+    under-node curve layer
+
+connector-port-overlay
+    above-node endpoint layer
+```
+
+The existing geometry engine remains authoritative. Endpoint geometry and hover state are mirrored into the overlay so resize-safe anchoring and relation emphasis remain synchronized.
+
+## 6. Candidate family
 
 ### K0 Clean Curve
 
@@ -102,6 +152,7 @@ Is the cleanest possible attachment already sufficient?
 ```text
 small source and target endpoint dots
 ports visible at rest
+markers centered on and above the work-unit perimeter
 ```
 
 Question:
@@ -115,6 +166,7 @@ Do explicit attachment points improve legibility enough to justify added visual 
 ```text
 small square endpoint sockets
 more structural / instrument-like integration
+sockets centered on and above the work-unit perimeter
 ```
 
 Question:
@@ -129,6 +181,7 @@ Should relationships feel physically docked into the work-unit frame?
 clean curve
 restrained target-side chevron
 source remains unmarked
+target cue rendered above the destination edge
 ```
 
 Question:
@@ -142,6 +195,7 @@ Is persistent direction useful without resorting to a large generic arrowhead?
 ```text
 clean rest state
 endpoint dots appear only when a connected work unit is hovered
+hover ports render above the work-unit perimeter
 ```
 
 Question:
@@ -150,14 +204,16 @@ Question:
 Can progressive disclosure preserve a calm world while still revealing attachment structure on demand?
 ```
 
-## 6. Browser implementation
+## 7. Browser implementation
 
-New route:
+Route:
 
 ```text
 frontend/design-lab/connector-grammar.html
 frontend/design-lab/connector-grammar.css
 frontend/design-lab/connector-grammar.js
+frontend/design-lab/connector-port-layering.css
+frontend/design-lab/connector-port-layering.js
 ```
 
 Local URL:
@@ -168,7 +224,15 @@ http://localhost:5173/design-lab/connector-grammar.html
 
 The page provides one stable project scene and lets the human switch K0-K4 directly so unrelated geometry does not change between comparisons.
 
-## 7. Evaluation questions
+Current endpoint-layer refinement target:
+
+```text
+08a33868b1c1d2cd90f11431e3f6b730603f28eb
+```
+
+This target includes the separate above-node endpoint overlay and keeps relation curves below the nodes.
+
+## 8. Evaluation questions
 
 Human review should judge:
 
@@ -181,11 +245,12 @@ whether ports feel useful or ornamental
 whether target direction should be persistent
 whether hover-only revelation is sufficient
 whether line attachment looks physically correct on all silhouettes
+whether ports read as attached to the frame rather than hidden behind it
 ```
 
 A candidate may also be combined later. For example, a clean K0 resting state could coexist with K4 hover ports and a later semantic direction cue only for relation classes that actually require direction.
 
-## 8. Non-decisions
+## 9. Non-decisions
 
 This experiment does not yet decide:
 
