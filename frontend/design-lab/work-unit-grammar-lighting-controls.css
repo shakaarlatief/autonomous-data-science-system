@@ -1,0 +1,228 @@
+/*
+ * Slice 02B lighting correction and explicit comparison axis.
+ *
+ * The grammar experiment changed the node DOM by introducing an opaque
+ * `.node-surface` layer. That accidentally suppressed much of the accepted H4
+ * resting colour visible inside the work unit. This stylesheet restores a
+ * surface-local equivalent as the default control, adds an intentional reduced
+ * in-box-light comparison, and makes the resting light/spill follow the active
+ * signature edge when the grammar moves that edge away from the left side.
+ */
+
+.surface-rest-light {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at 0% 50%,
+    rgba(var(--node-rgb), 0.125) 0%,
+    rgba(var(--node-rgb), 0.052) 38%,
+    rgba(var(--node-rgb), 0.018) 58%,
+    transparent 76%
+  );
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 220ms ease, background 220ms ease;
+}
+
+html[data-inbox-light="reduced"] .surface-rest-light {
+  opacity: 0.16;
+}
+
+/*
+ * Light direction is structural, not fixed. The visible signature side is
+ * assigned by work-unit-grammar.js. W1 stays left. W2 and W4 follow their
+ * category-specific signature bars. W3 has no signature bar, so it retains the
+ * accepted left-biased H4 baseline rather than inventing a new semantic side.
+ */
+.grammar-node[data-light-side="left"] .surface-rest-light {
+  background: radial-gradient(
+    ellipse at 0% 50%,
+    rgba(var(--node-rgb), 0.125) 0%,
+    rgba(var(--node-rgb), 0.052) 38%,
+    rgba(var(--node-rgb), 0.018) 58%,
+    transparent 76%
+  );
+}
+
+.grammar-node[data-light-side="right"] .surface-rest-light {
+  background: radial-gradient(
+    ellipse at 100% 50%,
+    rgba(var(--node-rgb), 0.125) 0%,
+    rgba(var(--node-rgb), 0.052) 38%,
+    rgba(var(--node-rgb), 0.018) 58%,
+    transparent 76%
+  );
+}
+
+.grammar-node[data-light-side="top"] .surface-rest-light {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(var(--node-rgb), 0.125) 0%,
+    rgba(var(--node-rgb), 0.052) 38%,
+    rgba(var(--node-rgb), 0.018) 58%,
+    transparent 76%
+  );
+}
+
+.grammar-node[data-light-side="bottom"] .surface-rest-light {
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(var(--node-rgb), 0.125) 0%,
+    rgba(var(--node-rgb), 0.052) 38%,
+    rgba(var(--node-rgb), 0.018) 58%,
+    transparent 76%
+  );
+}
+
+/* Accepted H4 left-side near-node light, plus mirrored/rotated equivalents. */
+.grammar-node[data-light-side="left"] .rest-light {
+  left: -30px;
+  right: auto;
+  top: -24px;
+  bottom: auto;
+  width: 126px;
+  height: calc(100% + 48px);
+  background: radial-gradient(
+    ellipse at 48% 50%,
+    rgba(var(--node-rgb), 0.20),
+    rgba(var(--node-rgb), 0.075) 42%,
+    transparent 73%
+  );
+}
+
+.grammar-node[data-light-side="right"] .rest-light {
+  left: auto;
+  right: -30px;
+  top: -24px;
+  bottom: auto;
+  width: 126px;
+  height: calc(100% + 48px);
+  background: radial-gradient(
+    ellipse at 52% 50%,
+    rgba(var(--node-rgb), 0.20),
+    rgba(var(--node-rgb), 0.075) 42%,
+    transparent 73%
+  );
+}
+
+.grammar-node[data-light-side="top"] .rest-light {
+  left: -24px;
+  right: auto;
+  top: -30px;
+  bottom: auto;
+  width: calc(100% + 48px);
+  height: 126px;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(var(--node-rgb), 0.20),
+    rgba(var(--node-rgb), 0.075) 42%,
+    transparent 73%
+  );
+}
+
+.grammar-node[data-light-side="bottom"] .rest-light {
+  left: -24px;
+  right: auto;
+  top: auto;
+  bottom: -30px;
+  width: calc(100% + 48px);
+  height: 126px;
+  background: radial-gradient(
+    ellipse at 50% 52%,
+    rgba(var(--node-rgb), 0.20),
+    rgba(var(--node-rgb), 0.075) 42%,
+    transparent 73%
+  );
+}
+
+/* Accepted outward H4 spill, mirrored/rotated with the signature side. */
+.grammar-node[data-light-side="left"] .rest-spill {
+  left: -76px;
+  right: auto;
+  top: 50%;
+  bottom: auto;
+  width: 112px;
+  height: 116px;
+  background: radial-gradient(
+    ellipse at 74% 50%,
+    rgba(var(--node-rgb), 0.075) 0%,
+    rgba(var(--node-rgb), 0.038) 38%,
+    rgba(var(--node-rgb), 0.014) 58%,
+    transparent 76%
+  );
+  transform: translateY(-50%);
+}
+
+.grammar-node[data-light-side="right"] .rest-spill {
+  left: auto;
+  right: -76px;
+  top: 50%;
+  bottom: auto;
+  width: 112px;
+  height: 116px;
+  background: radial-gradient(
+    ellipse at 26% 50%,
+    rgba(var(--node-rgb), 0.075) 0%,
+    rgba(var(--node-rgb), 0.038) 38%,
+    rgba(var(--node-rgb), 0.014) 58%,
+    transparent 76%
+  );
+  transform: translateY(-50%);
+}
+
+.grammar-node[data-light-side="top"] .rest-spill {
+  left: 50%;
+  right: auto;
+  top: -76px;
+  bottom: auto;
+  width: 116px;
+  height: 112px;
+  background: radial-gradient(
+    ellipse at 50% 74%,
+    rgba(var(--node-rgb), 0.075) 0%,
+    rgba(var(--node-rgb), 0.038) 38%,
+    rgba(var(--node-rgb), 0.014) 58%,
+    transparent 76%
+  );
+  transform: translateX(-50%);
+}
+
+.grammar-node[data-light-side="bottom"] .rest-spill {
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: -76px;
+  width: 116px;
+  height: 112px;
+  background: radial-gradient(
+    ellipse at 50% 26%,
+    rgba(var(--node-rgb), 0.075) 0%,
+    rgba(var(--node-rgb), 0.038) 38%,
+    rgba(var(--node-rgb), 0.014) 58%,
+    transparent 76%
+  );
+  transform: translateX(-50%);
+}
+
+.grammar-node[data-light-side="left"]:hover .rest-spill,
+.grammar-node[data-light-side="right"]:hover .rest-spill {
+  transform: translateY(-50%) scale(1.03);
+}
+
+.grammar-node[data-light-side="top"]:hover .rest-spill,
+.grammar-node[data-light-side="bottom"]:hover .rest-spill {
+  transform: translateX(-50%) scale(1.03);
+}
+
+/* Keep reduced motion behavior coherent with the added surface layer. */
+html[data-reduced="on"] .surface-rest-light {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surface-rest-light {
+    transition: none !important;
+  }
+}
