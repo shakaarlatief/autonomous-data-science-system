@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            220
+checkpoint            221
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      corrected work-unit grammar human verification before Claude ideation
+current boundary      expanded work-unit grammar human browser review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -43,14 +43,14 @@ No scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inf
 
 ## Current Cockpit design direction
 
-MC-0004 has completed its independent and comparative model phases and is now in browser-rendered Phase-C design evaluation.
+MC-0004 is in browser-rendered Phase-C design evaluation.
 
 The Phase-C protocol prefers:
 
 ```text
 real external references where useful
 +
-small real browser-rendered design experiments
+real browser-rendered design experiments
 +
 continuous human comparison
 ->
@@ -113,37 +113,36 @@ HOVER
     fast entry + smoother slower release
 ```
 
-The revised hover timing was judged perfect. After the final outward-only resting-spill correction, the resting result was also judged good.
+The revised hover timing was judged perfect. The final outward-only resting-spill correction was also judged good.
 
-No further generic hover/outward-spill tuning is currently justified. Later selected/focused, runtime, blocked and approval states may use lighting when those semantic slices are tested.
-
-Primary completed lighting evidence:
+The current grammar experiments preserve the later structural light rule:
 
 ```text
-docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
-docs/research/045_h4_resting_node_light_world_spill_refinement.md
-docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
-frontend/design-lab/work-unit-lighting.html
+signature edge
++
+signature position along that edge
+-> resting-light origin
 ```
+
+The explicit secondary comparison remains:
+
+```text
+H4 baseline in-box light
+vs
+Reduced in-box light
+```
+
+No preference between those two is frozen yet.
 
 ---
 
 ## Current work-unit visual-grammar program
 
-Research 037/038 identified a current weakness: meaningful Cockpit work units still share too much of one generic rounded-card grammar.
-
 The active category question is:
 
 > How should different kinds of meaningful project work become visually distinguishable while remaining one coherent professional product language and without confusing category with project disposition, runtime state, or importance?
 
-Current governing research:
-
-```text
-docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
-```
-
-First-round browser directions:
+First-round evidence:
 
 ```text
 W1  Unified Precision Frame
@@ -152,126 +151,108 @@ W3  Structural Silhouette Family
 W4  Hybrid Semantic Instrument
 ```
 
-Browser lab:
+The first implementation received a strongly positive preliminary human reaction, but no selection was made. The project owner judged the explored design space too narrow for convergence.
+
+Claude then completed a bounded divergent-ideation pass:
 
 ```text
-frontend/design-lab/work-unit-grammar.html
-frontend/design-lab/work-unit-grammar.css
-frontend/design-lab/work-unit-grammar-lighting-controls.css
-frontend/design-lab/work-unit-grammar.js
+request   docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+response  docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+commit    faf18ed9932d60a24dd80589b0ec0ba71c5940fd
+mode      COMPARATIVE_ONLY / DIVERGENT_IDEATION
+```
+
+Claude proposed:
+
+```text
+C1  Instrument Glyph Family
+C2  Structural Topology Family
+C3  Material Language Family
+C4  Port Grammar
+C5  Internal Layout Grammar
+C6  Aspect & Proportion Family
+C7  Compact Marker Rail
+C8  Scientific Marker Family
+```
+
+Research 048 synthesizes that contribution and adds:
+
+```text
+C9  Inner Instrument Architecture
+```
+
+There is no artificial candidate-count cap.
+
+### Expanded browser round
+
+Current route:
+
+```text
+docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
+docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md
+frontend/design-lab/work-unit-grammar-expanded.html
+frontend/design-lab/work-unit-grammar-expanded.css
+frontend/design-lab/work-unit-grammar-expanded.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar.html
+http://localhost:5173/design-lab/work-unit-grammar-expanded.html
 ```
 
-The first implementation received a strongly positive preliminary human reaction, but no W1-W4 selection was made. The project owner judged that the current four variants likely cover too little of the plausible visual-design space and explicitly requested additional Claude ideas and inspiration before convergence.
-
-Human review also found four browser/control issues or refinements before Claude should inspect the experiment:
+Current candidate matrix:
 
 ```text
-Project Scene could remain overlaid with Category strip
-accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
-resting light stayed left-biased when category signature bars moved to top/bottom/right
-partial top/bottom signatures still produced edge-centered light after the first side-aware correction
+Batch A · Glyph strategy
+    G0 Letter Control
+    G1 Instrument Glyph Family
+    G2 Compact Marker Rail
+    G3 Scientific Marker Family
+
+Batch B · Structural grammar
+    S0 Chamfer Control
+    S1 Structural Topology Family
+    S2 Aspect & Proportion Family
+    S3 Inner Instrument Architecture
+
+Batch C · Material channel
+    M0 Plain Surface Control
+    M1 Material Language Family
+
+Batch D · Integrated candidates
+    I0 Current W4 Hybrid Control
+    I1 W4 + Instrument Glyph
+    I2 W4 + Scientific Marker
 ```
 
-These are now corrected.
-
-### Explicit in-box-light comparison
-
-The accidentally quieter in-box appearance is preserved intentionally as a comparison rather than silently discarded.
-
-The browser exposes:
+Total immediate executable variants:
 
 ```text
-In-box light
-    H4 baseline   default restored accepted control
-    Reduced       intentional lower-light alternative
+13
 ```
 
-This comparison changes in-box resting-light intensity only. It does not intentionally reopen the accepted outward resting spill or generic H4 hover behavior.
-
-No preference exists yet between H4 baseline and Reduced.
-
-### Signature-edge-and-position-aware lighting
-
-The project owner established:
+The page includes:
 
 ```text
-if the visible category signature/accent moves,
-signature-anchored resting light follows both:
-    its edge
-    and its position along that edge
+Category strip / Project scene
+H4 baseline / Reduced in-box light
+All / Glyph / Structure / Surface / Integrated presentation filters
+Reduced motion
 ```
 
-Current first-round edge mapping:
+Filtering is presentation only:
 
 ```text
-W1
-    all categories left
-
-W2 / W4
-    Question        left
-    Investigation   left
-    Validation      top
-    Model           bottom
-    Evaluation      right
-
-W3
-    no explicit signature bar
-    retain accepted left-biased H4 baseline
+hidden != rejected
 ```
 
-For W2/W4 Validation and Model, the top/bottom bars occupy the left part of the edge, so the resting light is also left-biased along that edge rather than centered.
-
-The in-box light, near-node rest light and outward spill move together.
-
-Corrected exact browser target for Claude after human verification:
+Dependency-bound ideas remain preserved rather than rejected:
 
 ```text
-304db34d6482320b317db97277148bc129d07372
+C4 Port Grammar             -> connector-semantics slice
+C5 Internal Layout Grammar  -> semantic zoom / information-density slice
 ```
-
----
-
-## Current Claude divergent-ideation gate
-
-Pending request:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
-```
-
-Classification:
-
-```text
-COMPARATIVE_ONLY / DIVERGENT_IDEATION
-```
-
-Claude is not being asked merely to rank W1-W4. The requested contribution is to broaden the design space, identify underexplored visual mechanisms, propose materially different concept families, and preserve all genuinely worthwhile candidates.
-
-There is no artificial candidate-count cap. If many candidates remain genuinely distinct and useful, they may all be implemented and tested, organized into multiple browser batches if that improves clarity. Batching does not imply rejection.
-
-Claude may also comment on the explicit H4-baseline versus Reduced in-box-light comparison if useful, but that is secondary to the category-grammar ideation task.
-
-Expected durable response:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
-```
-
-Claude may inspect all current candidate material. This is intentionally not a new blind-independent phase.
-
-ChatGPT retains target-state write ownership. Claude's write boundary remains:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/**
-```
-
-Human browser verification of the corrected target comes before triggering Claude.
 
 ---
 
@@ -281,9 +262,12 @@ The next-generation design program still needs evidence on:
 
 ```text
 H4 baseline vs Reduced in-box resting-light preference
-final work-unit category / silhouette visual grammar
+final work-unit category / silhouette / category-mark grammar
+final work-unit taxonomy
 multi-axis status treatment
 semantic connector vocabulary and styling
+Port Grammar
+Internal Layout Grammar
 semantic zoom representations
 stage/orientation treatment
 Conversation Workspace composition
@@ -349,17 +333,17 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/220_work_unit_grammar_h4_control_corrected_claude_ideation_ready.md
-docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
-docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-frontend/design-lab/work-unit-grammar.html
-frontend/design-lab/work-unit-grammar-lighting-controls.css
+docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md
+docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
+frontend/design-lab/work-unit-grammar-expanded.html
 
-docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 
-docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
+frontend/design-lab/work-unit-grammar.html
+
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
 frontend/design-lab/work-unit-lighting.html
 
@@ -375,15 +359,15 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. use v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. refresh http://localhost:5173/design-lab/work-unit-grammar.html
-4. verify Project Scene switching remains clean
-5. compare H4 baseline vs Reduced in-box light
-6. inspect W2/W4 Validation and Model especially
-7. verify their top/bottom resting light follows the actual left-biased signature position rather than centering on the edge
-8. verify left/right signatures and accepted H4 hover remain correct
-9. if correct, trigger Claude through REVIEW_INBOX.md
-10. Claude evaluates exact target 304db34d6482320b317db97277148bc129d07372 and writes only Message 004
-11. ChatGPT synthesizes all genuinely worthwhile candidates and implements as many browser variants as evidence justifies
-12. return to human comparison before category-grammar selection
+3. open http://localhost:5173/design-lab/work-unit-grammar-expanded.html
+4. start with All + Category strip + H4 baseline
+5. compare Batch A glyph strategies
+6. compare Batch B structural strategies
+7. compare Batch C material channel
+8. compare Batch D integrated W4 combinations
+9. switch to Project scene and check whether judgments survive realistic composition
+10. toggle Reduced to inspect category-mark contrast under the quieter in-box treatment
+11. human may prefer, reject, combine, refine, or request additional candidates
+12. preserve C4 and C5 for their dependency-aligned slices
 13. keep production Cockpit untouched
 ```
