@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 207  
+**Current checkpoint:** 208  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -30,12 +30,12 @@ Current route:
 ```text
 active development branch        v1-cockpit-design-exploration
 active PR                        none
-current checkpoint               207
+current checkpoint               208
 latest specification             Specification 024
 Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
 promoted Cockpit baseline        Specification 008
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary                 MC-0004 Phase B comparative Cockpit design review
+current boundary                 MC-0004 Phase C realistic Cockpit mockup evaluation
 source-vault deployment          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -46,8 +46,8 @@ source-vault deployment          PAUSED, preserved, Course 2 gate unchanged
 Primary route:
 
 ```text
-docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md
-docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
+docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md
+docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
@@ -57,6 +57,7 @@ docs/model_collaboration/threads/MC-0004/BRIEF.md
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
+docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
@@ -65,15 +66,17 @@ Current sequence:
 ```text
 ChatGPT Research 037
     +
-Claude independent Phase A  COMPLETE
+Claude independent Phase A  COMPLETE / BLIND_TO_CANDIDATE
     ->
-Claude comparative Phase B  ACTIVE
+Claude comparative Phase B  COMPLETE / COMPARATIVE_ONLY
     ->
-ChatGPT comparative synthesis
+ChatGPT Research 038 synthesis  COMPLETE
     ->
-realistic mockups / bounded mechanism prototypes
+M1 / M2 / M3 realistic mockup evaluation  ACTIVE
     ->
 human product review
+    ->
+one or two bounded technical mechanism spikes
     ->
 implementation specification only if earned
 ```
@@ -93,20 +96,133 @@ historical independence BLIND_TO_CANDIDATE
 candidate exposures     none
 ```
 
-Claude changed only the declared collaboration-message surface.
-
-Phase B is now:
+Claude Phase B is frozen at:
 
 ```text
-phase                   PHASE_B_COMPARATIVE_REVIEW
-mode                    COMPARATIVE_ONLY
-next expected actor     Claude
-allowed Claude writes   docs/model_collaboration/threads/MC-0004/messages/**
+commit          d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
+classification  COMPARATIVE_ONLY
+message         docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
 ```
 
-Claude may now read Research 037 and compare it with the frozen Phase-A proposal. Its comparative response is required before final ChatGPT synthesis.
+The Phase-B commit changed only the declared collaboration-message surface.
+
+Current thread phase:
+
+```text
+phase                   PHASE_C_MOCKUP_EVALUATION
+next expected actor     ChatGPT
+pending Claude review   NONE
+```
 
 The first generic cross-model trigger failed because Claude remained on an older branch whose inbox correctly said `NONE`. The failure did not expose candidate design material. Current operational routing therefore explicitly names the active branch/ref when work exists only on an unpromoted branch. Checkpoint 207 preserves this as an empirical collaboration-method finding pending promotion audit.
+
+---
+
+# Research 038: comparative synthesis and mockup set
+
+Primary route:
+
+```text
+docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
+```
+
+Strongest independently reinforced findings:
+
+```text
+semantic zoom is the highest-confidence first mechanism
+current work-unit grammar is too generic
+connectors should encode type + direction + liveness
+motion should be sparse and tied to real temporal project activity
+the resting world should remain calm
+full long-form conversation is first-class
+2.5D is preferred before full 3D
+```
+
+Strongest asymmetric improvements from Research 037:
+
+```text
+external product/technology research
+information-density lenses
+multi-axis state separation
+appropriate caution on conversation persistence
+```
+
+Strongest asymmetric contributions from Claude:
+
+```text
+forensic code specificity
+falsifiable one-to-three animated-connector hypothesis
+recommendation + reversal-condition discipline
+scope-creep warning for broad technology prototyping
+```
+
+First-round mockup directions:
+
+```text
+M1  Living Precision Canvas          preferred anchor
+M2  Spatial Control Room             strongest alternative
+M3  Depth-Aware Analytical Workbench bounded high-upside alternative
+```
+
+Genuine unresolved disagreement:
+
+```text
+command architecture at scale
+```
+
+Resolution gate:
+
+```text
+medium/large realistic project fixture
+not model preference
+```
+
+---
+
+# Phase C mockup requirements
+
+All three directions use the same controlled Customer Churn Prediction scenario.
+
+Required visual states:
+
+```text
+resting overview
+active investigation
+hard blocker and downstream effect
+completed versus unresolved branch
+selected work unit
+project-scale semantic zoom
+work-scale semantic zoom
+full Conversation Workspace
+conversation + analytical work coexistence
+Execution or Review lens state
+light appearance
+dark appearance
+```
+
+The comparison should test:
+
+```text
+five-second comprehension
+spatial continuity
+information-density control
+motion meaning
+conversation ergonomics
+professional long-session quality
+reduced-motion equivalence
+```
+
+No broad technology bakeoff is part of first-round mockups.
+
+If later earned, technical comparators are limited initially to:
+
+```text
+current DOM/CSS/SVG baseline
+React Flow semantic topology/zoom/grouping comparator
+Motion for React focus/conversation transition comparator if needed
+```
+
+PixiJS, Sigma.js, React Three Fiber and full 3D remain out of the next bounded step unless a later specific problem requires them.
 
 ---
 
@@ -164,11 +280,11 @@ final route/persistence details
 canonical screenshot baseline
 ```
 
-Research 037 explores this open space. It does not replace Specification 008.
+Research 037 and Research 038 explore this open space. They do not replace Specification 008.
 
 ---
 
-# Research 037: next-generation visual and interaction map
+# Research 037: broad next-generation visual and interaction map
 
 Primary route:
 
@@ -201,7 +317,7 @@ Rendering / interaction technology
 Loading / empty / error / recovery behavior
 ```
 
-Current candidate directions remain provisional:
+Research 037's original direction set remains useful provenance:
 
 ```text
 A. Precision Instrument
@@ -210,14 +326,7 @@ C. Spatial Control Room
 D. Depth-Aware Workbench
 ```
 
-Claude's independent candidate set adds:
-
-```text
-1. Living Process Canvas      preferred by Claude Phase A
-2. Analytical Command Deck    strongest fallback
-```
-
-Comparative synthesis will decide which mechanisms, not merely which labels, deserve mockups.
+Research 038 synthesizes these with Claude's independent proposal rather than selecting directly from labels.
 
 ---
 
@@ -238,7 +347,7 @@ full Conversation Workspace / transcript experience
 
 Consequential outcomes must still map into structured project state rather than living only as prose history.
 
-Claude independently converged on using the validated Cockpit focus-transition model for the Conversation Workspace, with bidirectional links between consequential messages and structured project objects. Threading/persistence details remain provisional.
+The exact conversation persistence/threading model remains deliberately open.
 
 ---
 
