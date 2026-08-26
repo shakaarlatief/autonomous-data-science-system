@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            224
+checkpoint            225
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      user-configurable Cockpit appearance human review
+current boundary      connector / Port Grammar human browser review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -40,97 +40,55 @@ Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientif
 
 MC-0004 is in browser-rendered Phase-C product-design evaluation.
 
-The preferred design loop is:
+The preferred loop is:
 
 ```text
-real references where useful
-+
-browser-rendered design experiments
-+
-continuous human comparison
-->
-progressively integrated Cockpit product language
+bounded design question
+-> browser-rendered alternatives
+-> human comparison
+-> preserve prefer/reject/combine evidence
+-> progressively integrate surviving mechanisms
 ```
 
-Generated-image UI concepts are not the preferred evaluation workflow.
-
-### Provisionally settled world
+### Held world and interaction direction
 
 ```text
-G4 Adaptive Hybrid
-Dark mode baseline
-randomized travelling grid currents
-quiet major-grid glints
-ambient drift
-localized semantic activity
+G4 Adaptive Hybrid world                          SELECTED / provisionally settled
+H4 generic hover/outward-world response          SELECTED / sufficiently settled
+Reduced in-box resting light                      SELECTED preferred working baseline
 ```
 
-### Held interaction-lighting direction
+### Current scientific category-marker grammar
 
 ```text
-H4 generic hover/outward-world response  sufficiently settled
-Reduced in-box resting light              selected preferred working baseline
+Question / Blocker        circle
+Investigation             square
+Validation / Analysis     triangle
+Model Work                diamond
+Evaluation                plus
 ```
-
-### Selected category-marker direction
-
-```text
-Question        circle
-Investigation   square
-Validation      triangle
-Model           diamond
-Evaluation      plus
-```
-
-Scientific markers were selected over bare letters, compact marker rails and the richer instrument-glyph comparator.
-
-### Positive optional visual mechanisms
-
-```text
-refined M1 micro-material family
-subtle differentiated work-unit shapes
-Evaluation-inspired micro-light treatment
-```
-
-The refined subtle-shape family preserves the upper-left reading entry and uses restrained category-specific variation on the top/right/bottom structure.
 
 ---
 
-## New product direction: configurable Cockpit appearance
+## Foundation 023: user-configurable Cockpit appearance
 
-The latest human product decision is that compatible visual mechanisms do not need to compete for one universal mandatory style.
+Human browser review approved the principle that multiple high-quality, semantically compatible visual mechanisms may coexist as user-selectable appearance dimensions.
 
-Instead, ADS should separate:
-
-```text
-SEMANTIC PROJECT MODEL
-    governed meaning
-
-PRESENTATION PROFILE
-    safe user-selectable visual preference
-```
-
-Current browser proof:
+Promoted foundation:
 
 ```text
-frontend/design-lab/work-unit-grammar-customizable.html
-frontend/design-lab/work-unit-grammar-customizable.css
-frontend/design-lab/work-unit-grammar-customizable.js
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Local URL:
+Core principle:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-customizable.html
+ADS owns semantic meaning
++
+user controls approved non-semantic appearance dimensions
 ```
 
-Exact browser implementation target:
-
-```text
-ac16df1bbcd456b63c042c28e52516679139bf32
-```
-
-The prototype exposes independent controls for:
+Current proven appearance controls:
 
 ```text
 Box shape
@@ -143,50 +101,106 @@ Micro design
     Micro light
 ```
 
-Convenience presets:
+The scientific marker mapping, semantic project state and accessibility constraints remain independent from those appearance choices.
 
-```text
-Clean
-Structured
-Rich
-```
-
-The scientific marker mapping and Reduced in-box light remain stable beneath these appearance choices.
-
-The design-lab uses browser-local persistence only as a proof of preference continuity. Production settings storage is deliberately unselected.
-
-A plausible later hierarchy is:
+A plausible later hierarchy remains:
 
 ```text
 user appearance profile
     global personal default
 
-optional project appearance override
-    project-specific preference
+project appearance override
+    optional project-specific preference
 
 semantic project state
-    independent
+    independent from both
 ```
 
-This is not yet a production contract.
+Production settings persistence is not yet selected.
 
 ---
 
-## Current evidence route
+## Customizable-preview connector fix
+
+The configurable preview had one remaining implementation defect: relation lines used static coordinates and therefore did not reliably meet the rendered work-unit boxes.
+
+The fix now derives line endpoints from rendered `.node-surface` geometry and recalculates them when relevant geometry changes.
+
+Exact fix commit:
 
 ```text
-docs/research/051_user_configurable_cockpit_visual_grammar_and_semantic_invariants.md
-docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md
-docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md
-docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
-docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
+c1f996f6500672641de8e00780d5a4949c5dcb28
 ```
 
-Historical browser labs remain preserved under:
+Configurator route:
 
 ```text
-frontend/design-lab/**
+http://localhost:5173/design-lab/work-unit-grammar-customizable.html
 ```
+
+---
+
+## Active Slice 02C: connector and Port Grammar
+
+The next bounded visual question is:
+
+> How should generic project relationships meet work units and remain legible without turning the Cockpit into graph noise?
+
+This activates Claude concept C4 Port Grammar at the dependency boundary originally reserved for it.
+
+Current browser route:
+
+```text
+frontend/design-lab/connector-grammar.html
+frontend/design-lab/connector-grammar.css
+frontend/design-lab/connector-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/connector-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+e3394447eeae721eab9bd66d347d0d327dbe0485
+```
+
+Connector candidates:
+
+```text
+K0  Clean Curve
+    edge-to-edge curve, no visible ports
+
+K1  Micro Dots
+    small source/target endpoint dots
+
+K2  Frame Sockets
+    small square structural sockets
+
+K3  Target Cue
+    restrained target-side direction cue
+
+K4  Hover Ports
+    clean rest state, ports revealed on related-node hover
+```
+
+Held controls:
+
+```text
+G4 world
+scientific markers
+Reduced in-box light
+accepted H4 hover response
+Subtle shapes
+Micro material
+same project fixture
+same generic relationships
+```
+
+Final semantic connector types remain deliberately unfrozen.
 
 ---
 
@@ -200,14 +214,9 @@ faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 
 No model-collaboration obligation is currently pending.
 
-ChatGPT retains target-state write ownership.
+C4 Port Grammar is now active in the connector slice.
 
-Dependency-bound candidates remain preserved:
-
-```text
-C4 Port Grammar             connector-semantics slice
-C5 Internal Layout Grammar  semantic zoom / information-density slice
-```
+C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
 ---
 
@@ -221,9 +230,8 @@ Not yet authorized:
 
 ```text
 production Cockpit replacement
-production preference persistence
-account synchronization
-per-project settings precedence
+production appearance persistence
+final semantic connector vocabulary
 new graph/canvas dependency
 new motion-library adoption
 final visual-system freeze
@@ -260,8 +268,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md
-docs/research/051_user_configurable_cockpit_visual_grammar_and_semantic_invariants.md
+docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md
+docs/research/053_connector_and_port_visual_grammar_experiment.md
+frontend/design-lab/connector-grammar.html
+
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md
 frontend/design-lab/work-unit-grammar-customizable.html
 
 docs/model_collaboration/threads/MC-0004/THREAD.md
@@ -278,13 +290,12 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/work-unit-grammar-customizable.html
-3. compare Normal vs Subtle shapes
-4. compare None vs Micro material vs Micro light
-5. try Clean / Structured / Rich presets
-6. verify category meaning remains stable across appearance changes
-7. verify the combinations feel coherent as one product
-8. if accepted, run promotion audit for a durable configurable-Cockpit product principle
-9. only later design production settings persistence
-10. keep production Cockpit untouched
+2. optionally refresh work-unit-grammar-customizable.html and confirm the connector attachment fix
+3. open http://localhost:5173/design-lab/connector-grammar.html
+4. compare K0 through K4
+5. hover work units and inspect connector emphasis / K4 hover ports
+6. judge resting noise, attachment clarity, direction usefulness and scaling plausibility
+7. prefer, reject or combine connector mechanisms
+8. preserve a generic connector baseline before adding semantic relation classes
+9. keep production Cockpit untouched
 ```
