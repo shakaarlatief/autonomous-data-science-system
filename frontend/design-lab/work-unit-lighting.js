@@ -1,5 +1,47 @@
 const html = document.documentElement
 
+const h4RestingLightCorrection = document.createElement('style')
+h4RestingLightCorrection.textContent = `
+  .variant-h4 .rest-light {
+    left: -30px;
+    top: -24px;
+    width: 126px;
+    height: calc(100% + 48px);
+    background: radial-gradient(
+      ellipse at 48% 50%,
+      rgba(var(--node-rgb), 0.20),
+      rgba(var(--node-rgb), 0.075) 42%,
+      transparent 73%
+    );
+    filter: blur(12px);
+    opacity: 0.78;
+  }
+
+  .variant-h4 .lighting-node::after {
+    left: -56px;
+    top: 50%;
+    width: 92px;
+    height: 116px;
+    border-radius: 46%;
+    background: radial-gradient(
+      ellipse at 74% 50%,
+      rgba(var(--node-rgb), 0.075) 0%,
+      rgba(var(--node-rgb), 0.038) 38%,
+      rgba(var(--node-rgb), 0.014) 58%,
+      transparent 76%
+    );
+    filter: blur(9px);
+    opacity: 0.68;
+    transform: translateY(-50%);
+  }
+
+  .variant-h4 .lighting-node:hover::after {
+    opacity: 0.42;
+    transform: translateY(-50%) scale(1.03);
+  }
+`
+document.head.appendChild(h4RestingLightCorrection)
+
 const reducedToggle = document.querySelector('#reduced-toggle')
 if (reducedToggle) {
   reducedToggle.addEventListener('change', () => {
