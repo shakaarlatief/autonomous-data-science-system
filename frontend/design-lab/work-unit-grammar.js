@@ -44,8 +44,40 @@ const categoryMeta = {
   },
 }
 
+const signatureSides = {
+  w1: {
+    question: 'left',
+    investigation: 'left',
+    validation: 'left',
+    model: 'left',
+    evaluation: 'left',
+  },
+  w2: {
+    question: 'left',
+    investigation: 'left',
+    validation: 'top',
+    model: 'bottom',
+    evaluation: 'right',
+  },
+  w3: {
+    question: 'left',
+    investigation: 'left',
+    validation: 'left',
+    model: 'left',
+    evaluation: 'left',
+  },
+  w4: {
+    question: 'left',
+    investigation: 'left',
+    validation: 'top',
+    model: 'bottom',
+    evaluation: 'right',
+  },
+}
+
 renderNodes()
 setupViewControls()
+setupInboxLightControls()
 setupReducedMotion()
 setupInteractions()
 setupAmbientWorlds()
@@ -58,6 +90,7 @@ function renderNodes() {
     if (!category) continue
 
     const meta = categoryMeta[category]
+    const variant = node.closest('.grammar-variant')?.dataset.variant || 'w1'
     const isScene = Boolean(node.closest('.project-scene'))
     const content = template.content.cloneNode(true)
 
@@ -66,6 +99,7 @@ function renderNodes() {
     content.querySelector('strong').textContent = isScene ? meta.sceneTitle : meta.stripTitle
     content.querySelector('small').textContent = isScene ? meta.sceneDetail : meta.stripDetail
 
+    node.dataset.lightSide = signatureSides[variant]?.[category] || 'left'
     node.replaceChildren(content)
   }
 }
@@ -94,6 +128,27 @@ function applyView(view, buttons) {
     const isVisible = panel.dataset.panel === view
     panel.hidden = !isVisible
     panel.style.display = isVisible ? '' : 'none'
+  }
+}
+
+function setupInboxLightControls() {
+  const buttons = [...document.querySelectorAll('[data-inbox-light]')]
+  const initialMode = html.dataset.inboxLight || 'baseline'
+
+  applyInboxLight(initialMode, buttons)
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      applyInboxLight(button.dataset.inboxLight, buttons)
+    })
+  }
+}
+
+function applyInboxLight(mode, buttons) {
+  html.dataset.inboxLight = mode
+
+  for (const candidate of buttons) {
+    candidate.setAttribute('aria-pressed', String(candidate.dataset.inboxLight === mode))
   }
 }
 
