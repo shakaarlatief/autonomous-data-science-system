@@ -7,9 +7,43 @@
 
 ## Current pending obligations
 
+### 1. MC-0004: independent next-generation Project Cockpit design
+
 ```text
-NONE
+collaborator            Claude
+review mode             INDEPENDENT_THEN_COMPARATIVE
+current phase           PHASE_A_INDEPENDENT_DESIGN
+priority                ordinary required independent design before comparative synthesis
+exact review base       bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
+neutral brief           docs/model_collaboration/threads/MC-0004/BRIEF.md
+thread contract         docs/model_collaboration/threads/MC-0004/THREAD.md
+thread state            docs/model_collaboration/threads/MC-0004/STATE.json
+allowed write surface   docs/model_collaboration/threads/MC-0004/messages/**
 ```
+
+Required Phase-A boundary:
+
+```text
+read the neutral brief and its accepted pre-proposal governing material
+DO NOT read docs/research/037_* before freezing the independent proposal
+DO NOT read later ChatGPT candidate-design messages or comparative synthesis
+preserve the independent proposal under MC-0004/messages/
+disclose any accidental candidate exposure instead of claiming blind independence
+```
+
+Review gate:
+
+```text
+Claude Phase-A proposal must be durably recorded
+BEFORE
+MC-0004 enters comparative design synthesis
+```
+
+The user can trigger this obligation in the existing Claude ADS workspace with the standardized catch-up prompt below. The exact thread state remains authoritative if this convenience summary drifts.
+
+---
+
+## Recently completed obligations
 
 MC-0002 and MC-0003 were both completed by Claude in the inbox-defined order on 2026-08-26 and subsequently resolved by the task owner.
 
