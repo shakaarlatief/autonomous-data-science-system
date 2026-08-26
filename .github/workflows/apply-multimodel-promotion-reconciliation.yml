@@ -1,0 +1,35 @@
+name: Apply multi-model promotion reconciliation
+
+on:
+  push:
+    branches:
+      - v1-multimodel-development-collaboration
+    paths:
+      - .github/workflows/apply-multimodel-promotion-reconciliation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-multimodel-development-collaboration
+
+      - name: Apply deterministic canonical reconciliation
+        run: python scripts/apply_multimodel_promotion_reconciliation.py
+
+      - name: Remove one-shot helper files
+        run: |
+          git rm scripts/apply_multimodel_promotion_reconciliation.py
+          git rm .github/workflows/apply-multimodel-promotion-reconciliation.yml
+
+      - name: Commit and push reconciliation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/DECISIONS.md docs/OPEN_QUESTIONS.md docs/MAJOR_CHANGES.md
+          git commit -m "Reconcile canonical multi-model promotion records"
+          git push origin HEAD:v1-multimodel-development-collaboration
