@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 222  
+**Checkpoint:** 223  
 **Date:** 2026-08-26  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 remains provisionally settled. Generic H4 hover/outward-spill behavior remains sufficiently settled. Human review of the expanded work-unit grammar round has now produced clear eliminations and a preferred convergence cluster. A new focused browser round is open around scientific markers, Reduced in-box light, micro-material / micro-lumen treatment, and genuinely different overall shapes. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. G4 remains provisionally settled. Generic H4 hover/outward-spill behavior remains sufficiently settled. Human review has now selected the scientific marker vocabulary for the current work-unit grammar direction, retained Reduced in-box light as the preferred working control, retained/refined M1 micro-materials, and requested a subtler right-only Validation silhouette. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -30,10 +30,12 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/222_focused_work_unit_grammar_convergence_review_opened.md
+docs/checkpoints/223_scientific_markers_selected_material_and_validation_shape_refined.md
+docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md
 docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
 frontend/design-lab/work-unit-grammar-focused.html
 frontend/design-lab/work-unit-grammar-focused.css
+frontend/design-lab/work-unit-grammar-focused-refinement.css
 frontend/design-lab/work-unit-grammar-focused.js
 ```
 
@@ -41,6 +43,12 @@ Expected local URL:
 
 ```text
 http://localhost:5173/design-lab/work-unit-grammar-focused.html
+```
+
+Exact refined browser implementation target:
+
+```text
+6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a
 ```
 
 ---
@@ -68,7 +76,7 @@ Decorative ambient behavior remains legitimate only when it stays subordinate an
 
 # Work-unit interaction lighting
 
-Human review had previously selected H4 Integrated Response for generic rest/hover behavior.
+Human review previously selected H4 Integrated Response for generic rest/hover behavior.
 
 Current retained generic treatment:
 
@@ -87,16 +95,14 @@ HOVER
     fast entry + smoother slower release
 ```
 
-Important new human decision:
+Current human decision:
 
 ```text
 Reduced in-box resting light
-    PREFERRED WORKING CONTROL
+    SELECTED PREFERRED WORKING CONTROL
 ```
 
-Therefore later work-unit grammar experiments should default to Reduced rather than treating H4 baseline and Reduced as equal choices.
-
-Historical H4-baseline evidence remains preserved.
+Historical H4-baseline evidence remains preserved, but later work-unit grammar experiments should not treat it as an equal default comparator unless new evidence reopens the question.
 
 Signature-coupled resting light remains structurally governed by:
 
@@ -111,9 +117,22 @@ signature position along that edge
 
 # Active slice: focused work-unit category grammar
 
-The expanded 13-variant round has now produced clear human evidence.
+The expanded and focused rounds have now produced clear human evidence.
 
-## Rejected directions
+## Selected category-mark direction
+
+```text
+Scientific marker family
+    Question        circle
+    Investigation   square
+    Validation      triangle
+    Model           diamond
+    Evaluation      plus
+```
+
+The G1 instrument-glyph comparator is retired from active focused review. Historical G1 evidence remains preserved.
+
+Previously rejected directions remain:
 
 ```text
 bare Q / I / V / M / E category letters
@@ -121,67 +140,76 @@ G2 Compact Marker Rail
 S3 Inner Instrument Architecture / symbol direction
 ```
 
-## Leading directions
+## Leading secondary category channel
 
 ```text
-G3 Scientific Marker Family
-    simple circle / square / triangle / diamond / plus geometry
-
 M1 Material Language Family
-    strong positive reaction
+    KEEP / refine
 
 M1 Evaluation micro treatment
-    especially positive reaction
-
-Reduced in-box light
-    preferred over H4 baseline
+    especially positive
 ```
 
-## Secondary comparator
+Latest human visibility evidence:
 
 ```text
-G1 Instrument Glyph Family
-    still visually positive
-    but less attractive than the scientific-marker family
+Question / yellow diagonal treatment      good / clearly visible
+Investigation / green dots                previously too quiet -> strengthened
+Validation / blue lines                   previously too quiet -> strengthened
+Model / red grid                          previously too quiet -> strengthened
+Evaluation / luminous diagonal treatment  good / retained
 ```
+
+The refinement selectively strengthens only Investigation, Validation and Model so the already-good Question/Evaluation treatments are not made unnecessarily loud.
 
 ---
 
-# New true-shape question
+# True-shape refinement
 
-Human review explicitly asked whether genuinely different overall shapes should be explored.
+Human review continues to support subtle category-specific shape variation.
 
-Direct orientation evidence:
+Earlier orientation evidence remains:
 
 ```text
 upper-right cut   liked
 upper-left cut    feels awkward
 ```
 
-Research 049 therefore opens a true-shape experiment with the working hypothesis:
+Working rule:
 
 ```text
 preserve full left reading edge
-allow stronger top / right / bottom silhouette variation
+preserve upper-left entry corner
+allow subtle top / right / bottom silhouette variation
 ```
 
-This is a testable design hypothesis, not a final design law.
-
-The true-shape family currently uses:
+Current family:
 
 ```text
 Question        upper-right diagonal cut
 Investigation   right-edge inward notch
-Validation      raised / tab-like top geometry
+Validation      subtle right-side top step
 Model           stepped bottom-right geometry
 Evaluation      right-side beveled termination
 ```
+
+The previous Validation raised-tab silhouette is rejected as too aggressive because it removed material from both sides of the top edge, including the upper-left corner.
+
+The refined Validation geometry now:
+
+```text
+keeps top-left intact
+keeps a flat top through 72% width
+uses a small 7 px right-side top step only
+```
+
+This refined shape is open for human browser verification.
 
 ---
 
 # Focused browser round
 
-Current executable matrix:
+Current visible active variants:
 
 ```text
 F0  Scientific Marker Control
@@ -191,20 +219,19 @@ F3  Scientific Marker + Micro-Lumen
 F4  True Shape Family
 F5  True Shape + M1 Material
 F6  True Shape + Micro-Lumen
-F7  Instrument Glyph Comparator
 ```
+
+F7 Instrument Glyph Comparator remains preserved in underlying historical experiment code but is retired from active focused presentation.
 
 The page defaults to:
 
 ```text
 Category strip
 Reduced in-box light
-All candidate families visible
+All active candidate families visible
 ```
 
-Reduced is now a held preferred control, not an equal toggle against H4 baseline.
-
-The Evaluation-inspired Micro-Lumen family is distinct from generic H4 resting light:
+The Evaluation-inspired Micro-Lumen family remains distinct from generic H4 resting light:
 
 ```text
 Reduced H4
@@ -223,7 +250,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                              focused human browser review
+Current                              scientific-marker/material/shape human verification
 ```
 
 There is currently no pending Claude obligation.
@@ -248,10 +275,10 @@ Still unresolved:
 
 ```text
 final work-unit taxonomy
-final category / silhouette / marker grammar
-whether true-shape differentiation survives human review
+final production silhouette/material grammar
+whether refined M1 visibility is now balanced
+whether refined Validation shape is now correct
 whether M1 material or Micro-Lumen is the stronger secondary category channel
-whether G1 survives as a useful secondary mark language
 final semantic colors and status palette
 multi-axis project-disposition treatment
 selected/focused persistent treatment
@@ -290,18 +317,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 222 and v1-cockpit-design-exploration
+1. use Checkpoint 223 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-grammar-focused.html
-4. begin with All + Category strip
-5. Reduced is already the held preferred light control
-6. compare F0 vs F7 for scientific markers vs remaining G1 comparator
-7. compare F2 vs F3 for M1 micro-material vs Evaluation-inspired Micro-Lumen
-8. compare F1 vs F4 for liked upper-right cut vs genuinely different category shapes
-9. compare F5 vs F6 for integrated shape + micro-detail directions
-10. switch to Project scene and verify preferences survive realistic composition
-11. human may reject individual shapes while retaining the broader true-shape concept
-12. preserve resulting prefer/reject/combine evidence before the next design slice
-13. keep production Cockpit untouched
-14. keep source-vault deployment paused until explicitly resumed
+3. refresh http://localhost:5173/design-lab/work-unit-grammar-focused.html
+4. inspect F2 and F5 for the strengthened green / blue / red M1 treatments
+5. verify yellow Question and Evaluation material treatments remain appropriately restrained
+6. inspect F4 / F5 / F6 Validation for the new right-only top step
+7. compare Category strip and Project scene
+8. record whether material parity and Validation subtlety are now correct
+9. continue convergence only from surviving mechanisms
+10. keep production Cockpit untouched
+11. keep source-vault deployment paused until explicitly resumed
 ```
