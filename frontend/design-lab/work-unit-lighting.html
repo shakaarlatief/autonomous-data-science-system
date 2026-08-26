@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" data-reduced="off">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-unit Interaction Lighting</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-lighting.css" />
+  </head>
+  <body>
+    <header class="lab-header lighting-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02A</span>
+        <h1>Work-unit interaction lighting</h1>
+        <p>G4 is held constant. Compare how the work units respond to hover, pointer proximity and local world illumination.</p>
+      </div>
+      <div class="lab-controls" aria-label="Lighting controls">
+        <fieldset class="control-group compact-toggle-group">
+          <legend>Review</legend>
+          <label class="toggle-row"><input id="reduced-toggle" type="checkbox" /><span>Reduced motion</span></label>
+        </fieldset>
+      </div>
+    </header>
+
+    <main class="lighting-main">
+      <section class="lighting-intro">
+        <div>
+          <span class="section-kicker">Provisionally settled substrate</span>
+          <h2>G4 · Adaptive Hybrid</h2>
+          <p>The dark grid/world stays fixed for this slice. The node categories and colors are representative only; this experiment isolates interaction lighting.</p>
+        </div>
+        <div class="lighting-principle">
+          <span>Rest: localized / asymmetric</span>
+          <span>Hover: responsive / fuller</span>
+          <span>Selected: later persistent state</span>
+          <span>Semantic runtime: later state-bearing motion</span>
+        </div>
+      </section>
+
+      <section class="lighting-grid" aria-label="Work-unit lighting variants">
+        <article class="lighting-variant variant-h1" data-variant="h1">
+          <header class="variant-header">
+            <div><span class="variant-code">H1</span><h2>Full Halo</h2></div>
+            <p>Quiet asymmetric rest light becomes a full colored perimeter glow on hover, with a very small depth lift.</p>
+          </header>
+          <div class="lighting-world">
+            <div class="major-grid" aria-hidden="true"></div>
+            <svg class="lighting-relations" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+              <path data-link="q-i" d="M245 205 C330 205, 335 132, 420 132" />
+              <path data-link="i-v" d="M575 132 C655 132, 650 214, 735 214" />
+              <path data-link="v-e" d="M845 214 C905 214, 900 285, 955 285" />
+            </svg>
+            <div class="lighting-node node-question" data-node="q" style="--x: 8%; --y: 45%; --node-rgb: 240, 178, 91;">
+              <span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span>
+              <span class="unit-kind">Question</span><strong>Prediction moment</strong><small>Eligibility boundary unresolved</small>
+            </div>
+            <div class="lighting-node node-investigation" data-node="i" style="--x: 35%; --y: 20%; --node-rgb: 103, 218, 194;">
+              <span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span>
+              <span class="unit-kind">Investigation</span><strong>Production missingness</strong><small>Investigating live data behavior</small>
+            </div>
+            <div class="lighting-node node-validation" data-node="v" style="--x: 66%; --y: 47%; --node-rgb: 142, 169, 255;">
+              <span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span>
+              <span class="unit-kind">Validation</span><strong>Chronological validation</strong><small>Selected work</small>
+            </div>
+            <div class="lighting-node node-evaluation" data-node="e" style="--x: 82%; --y: 69%; --node-rgb: 173, 190, 255;">
+              <span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span>
+              <span class="unit-kind">Evaluation</span><strong>Calibration</strong><small>Downstream</small>
+            </div>
+          </div>
+          <footer class="variant-footer"><span>Test: hover each colored box</span><strong>Simple / controlled</strong></footer>
+        </article>
+
+        <article class="lighting-variant variant-h2" data-variant="h2">
+          <header class="variant-header">
+            <div><span class="variant-code">H2</span><h2>Cursor Edge</h2></div>
+            <p>Full hover halo plus a brighter specular hotspot that follows the pointer across the box surface and edge.</p>
+          </header>
+          <div class="lighting-world">
+            <div class="major-grid" aria-hidden="true"></div>
+            <svg class="lighting-relations" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+              <path data-link="q-i" d="M245 205 C330 205, 335 132, 420 132" />
+              <path data-link="i-v" d="M575 132 C655 132, 650 214, 735 214" />
+              <path data-link="v-e" d="M845 214 C905 214, 900 285, 955 285" />
+            </svg>
+            <div class="lighting-node node-question" data-node="q" style="--x: 8%; --y: 45%; --node-rgb: 240, 178, 91;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="unit-kind">Question</span><strong>Prediction moment</strong><small>Eligibility boundary unresolved</small></div>
+            <div class="lighting-node node-investigation" data-node="i" style="--x: 35%; --y: 20%; --node-rgb: 103, 218, 194;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="unit-kind">Investigation</span><strong>Production missingness</strong><small>Investigating live data behavior</small></div>
+            <div class="lighting-node node-validation" data-node="v" style="--x: 66%; --y: 47%; --node-rgb: 142, 169, 255;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="unit-kind">Validation</span><strong>Chronological validation</strong><small>Selected work</small></div>
+            <div class="lighting-node node-evaluation" data-node="e" style="--x: 82%; --y: 69%; --node-rgb: 173, 190, 255;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="unit-kind">Evaluation</span><strong>Calibration</strong><small>Downstream</small></div>
+          </div>
+          <footer class="variant-footer"><span>Test: move slowly across an edge</span><strong>Responsive / tactile</strong></footer>
+        </article>
+
+        <article class="lighting-variant variant-h3" data-variant="h3">
+          <header class="variant-header">
+            <div><span class="variant-code">H3</span><h2>World Spill</h2></div>
+            <p>Hover lights the whole node and softly illuminates the nearby G4 grid while immediate connected paths become easier to read.</p>
+          </header>
+          <div class="lighting-world">
+            <div class="major-grid" aria-hidden="true"></div>
+            <div class="world-spill" aria-hidden="true"></div>
+            <svg class="lighting-relations" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+              <path data-link="q-i" d="M245 205 C330 205, 335 132, 420 132" />
+              <path data-link="i-v" d="M575 132 C655 132, 650 214, 735 214" />
+              <path data-link="v-e" d="M845 214 C905 214, 900 285, 955 285" />
+            </svg>
+            <div class="lighting-node node-question" data-node="q" style="--x: 8%; --y: 45%; --node-rgb: 240, 178, 91;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="unit-kind">Question</span><strong>Prediction moment</strong><small>Eligibility boundary unresolved</small></div>
+            <div class="lighting-node node-investigation" data-node="i" style="--x: 35%; --y: 20%; --node-rgb: 103, 218, 194;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="unit-kind">Investigation</span><strong>Production missingness</strong><small>Investigating live data behavior</small></div>
+            <div class="lighting-node node-validation" data-node="v" style="--x: 66%; --y: 47%; --node-rgb: 142, 169, 255;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="unit-kind">Validation</span><strong>Chronological validation</strong><small>Selected work</small></div>
+            <div class="lighting-node node-evaluation" data-node="e" style="--x: 82%; --y: 69%; --node-rgb: 173, 190, 255;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="unit-kind">Evaluation</span><strong>Calibration</strong><small>Downstream</small></div>
+          </div>
+          <footer class="variant-footer"><span>Test: watch grid + relations around hover</span><strong>Integrated with world</strong></footer>
+        </article>
+
+        <article class="lighting-variant variant-h4" data-variant="h4">
+          <header class="variant-header">
+            <div><span class="variant-code">H4</span><h2>Integrated Response</h2></div>
+            <p>Combines the full halo, pointer hotspot, local grid spill and connector emphasis, plus one restrained perimeter sweep on hover entry.</p>
+          </header>
+          <div class="lighting-world">
+            <div class="major-grid" aria-hidden="true"></div>
+            <div class="world-spill" aria-hidden="true"></div>
+            <svg class="lighting-relations" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+              <path data-link="q-i" d="M245 205 C330 205, 335 132, 420 132" />
+              <path data-link="i-v" d="M575 132 C655 132, 650 214, 735 214" />
+              <path data-link="v-e" d="M845 214 C905 214, 900 285, 955 285" />
+            </svg>
+            <div class="lighting-node node-question" data-node="q" style="--x: 8%; --y: 45%; --node-rgb: 240, 178, 91;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="unit-kind">Question</span><strong>Prediction moment</strong><small>Eligibility boundary unresolved</small></div>
+            <div class="lighting-node node-investigation" data-node="i" style="--x: 35%; --y: 20%; --node-rgb: 103, 218, 194;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="unit-kind">Investigation</span><strong>Production missingness</strong><small>Investigating live data behavior</small></div>
+            <div class="lighting-node node-validation" data-node="v" style="--x: 66%; --y: 47%; --node-rgb: 142, 169, 255;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="unit-kind">Validation</span><strong>Chronological validation</strong><small>Selected work</small></div>
+            <div class="lighting-node node-evaluation" data-node="e" style="--x: 82%; --y: 69%; --node-rgb: 173, 190, 255;"><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="unit-kind">Evaluation</span><strong>Calibration</strong><small>Downstream</small></div>
+          </div>
+          <footer class="variant-footer"><span>Test: enter, move around, leave, repeat</span><strong>Richest candidate</strong></footer>
+        </article>
+      </section>
+
+      <section class="review-prompt lighting-review">
+        <span class="section-kicker">Human review</span>
+        <h2>We can combine rather than choose literally</h2>
+        <div class="review-questions">
+          <p>Should full-perimeter hover light survive?</p>
+          <p>Does cursor-following light feel premium or distracting?</p>
+          <p>Should the nearby grid inherit the node color?</p>
+          <p>Should immediate connectors react on hover?</p>
+          <p>Is the one-time perimeter sweep worth keeping?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-lighting.js"></script>
+  </body>
+</html>
