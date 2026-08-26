@@ -194,24 +194,24 @@ body {
 
 .variant-h4 .lighting-node::after {
   position: absolute;
-  left: -78px;
+  left: -56px;
   top: 50%;
   z-index: -3;
-  width: 184px;
-  height: 154px;
-  border-radius: 50%;
+  width: 92px;
+  height: 116px;
+  border-radius: 46%;
   background: radial-gradient(
-    ellipse at 64% 50%,
-    rgba(var(--node-rgb), 0.13) 0%,
-    rgba(var(--node-rgb), 0.072) 34%,
-    rgba(var(--node-rgb), 0.028) 56%,
+    ellipse at 74% 50%,
+    rgba(var(--node-rgb), 0.075) 0%,
+    rgba(var(--node-rgb), 0.038) 38%,
+    rgba(var(--node-rgb), 0.014) 58%,
     transparent 76%
   );
-  filter: blur(12px);
-  opacity: 0.86;
+  filter: blur(9px);
+  opacity: 0.68;
   content: "";
   pointer-events: none;
-  transform: translateY(-50%) scale(0.97);
+  transform: translateY(-50%);
   transition: opacity 200ms ease, transform 220ms cubic-bezier(0.2, 0.75, 0.25, 1);
 }
 
@@ -269,22 +269,6 @@ body {
   transition: opacity 200ms ease, transform 200ms ease;
 }
 
-.variant-h4 .rest-light {
-  left: -42px;
-  top: -31px;
-  width: 150px;
-  height: calc(100% + 62px);
-  background: radial-gradient(
-    ellipse at 52% 50%,
-    rgba(var(--node-rgb), 0.23) 0%,
-    rgba(var(--node-rgb), 0.11) 39%,
-    rgba(var(--node-rgb), 0.04) 59%,
-    transparent 78%
-  );
-  filter: blur(13px);
-  opacity: 0.88;
-}
-
 .hover-light {
   z-index: -1;
   inset: -8px;
@@ -327,8 +311,8 @@ body {
 }
 
 .variant-h4 .lighting-node:hover::after {
-  opacity: 0.58;
-  transform: translateY(-50%) scale(1.08);
+  opacity: 0.42;
+  transform: translateY(-50%) scale(1.03);
 }
 
 .lighting-node:hover .rest-light {
