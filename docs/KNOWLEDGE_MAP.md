@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 216  
+**Current checkpoint:** 217  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        216
+checkpoint                        217
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C H4 resting world-spill human review
+current boundary                 MC-0004 Phase C work-unit category/silhouette visual grammar
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -81,26 +81,32 @@ frontend/design-lab/grid-dynamics-combined.html
 
 "Provisionally settled" means stop tuning continuously for now, not permanent freeze.
 
+Research 040 also preserves an important visual-design distinction:
+
+```text
+semantic motion
+    communicates project/runtime meaning
+
+ambient/decorative motion
+    may exist purely for polish/atmosphere
+    must remain lower-salience and must not masquerade as semantic state
+```
+
 ---
 
-# Current Slice 02A: H4 interaction lighting
+# Completed Slice 02A: H4 interaction lighting
 
-Primary route:
+Primary evidence:
 
 ```text
 docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
 docs/research/045_h4_resting_node_light_world_spill_refinement.md
 docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
 docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
+docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
 frontend/design-lab/work-unit-lighting.html
 frontend/design-lab/work-unit-lighting.css
 frontend/design-lab/work-unit-lighting.js
-```
-
-Local route:
-
-```text
-http://localhost:5173/design-lab/work-unit-lighting.html
 ```
 
 Human review selected:
@@ -109,12 +115,13 @@ Human review selected:
 H4 Integrated Response  SELECTED
 ```
 
-Current H4 interaction-lighting model:
+Final current H4 model:
 
 ```text
 REST
-    localized / asymmetric node-colored atmosphere
-    broader low-opacity world bleed into the grid
+    clean localized/asymmetric in-box illumination
+    narrow asymmetric outward world spill
+    no broad circular resting halo
 
 HOVER
     full node-colored halo
@@ -123,25 +130,72 @@ HOVER
     immediate connector emphasis
     one restrained perimeter sweep on entry
     small depth lift
-
-SELECTED
-    later persistent focus state
-
-RUNTIME
-    later semantic state-bearing light behavior
+    fast entry + smoother slower release
 ```
 
-Current review specifically tests whether the resting world spill is strong enough while keeping the cleaner newer in-node illumination and preserving a clear difference between rest and hover.
+Final human review accepted both the outward-only resting spill and the hover timing.
+
+No further generic lighting-only variant is currently justified.
+
+Later selected/focused and runtime/blocked/approval states may use lighting when those semantic slices are tested.
+
+---
+
+# Current Slice 02B: work-unit category / silhouette visual grammar
+
+Primary route:
+
+```text
+docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+docs/checkpoints/217_h4_interaction_lighting_settled_work_unit_visual_grammar_opened.md
+```
+
+Expected browser route after implementation:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar.html
+```
+
+The active question is:
+
+```text
+How should meaningful work-unit kinds become visually distinguishable
+without collapsing category, project disposition, runtime state and importance
+into one overloaded visual treatment?
+```
+
+First-round candidate directions:
+
+```text
+W1  Unified Precision Frame
+W2  Edge-Signature Grammar
+W3  Structural Silhouette Family
+W4  Hybrid Semantic Instrument
+```
+
+Representative fixture categories:
+
+```text
+Question / Blocker
+Investigation
+Validation / Analysis work
+Model work
+Evaluation / Decision-relevant work
+```
+
+These are not a frozen production taxonomy.
+
+G4 and H4 are held as control variables for the comparison.
 
 Still deliberately unresolved:
 
 ```text
-final work-unit silhouette/category grammar
+final work-unit taxonomy
 final semantic category colors
 multi-axis status treatment
 selected-state treatment
 runtime/running/waiting treatment
-blocked-state treatment
+blocked/approval treatment
 final node sizing and typography
 final connector vocabulary
 production motion implementation
@@ -190,7 +244,7 @@ docs/model_collaboration/REVIEW_INBOX.md
 ```text
 Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
-Phase C  browser-rendered design evaluation; next expected actor human
+Phase C  browser-rendered design evaluation
 ```
 
 No pending Claude review obligation exists.
@@ -218,10 +272,9 @@ multi-axis project/runtime/importance state treatment
 large-project scalability
 ```
 
-Remaining major slices after interaction lighting:
+Remaining major slices after category/silhouette grammar include:
 
 ```text
-work-unit category / silhouette grammar
 multi-axis status treatment
 connector visual language
 semantic zoom
