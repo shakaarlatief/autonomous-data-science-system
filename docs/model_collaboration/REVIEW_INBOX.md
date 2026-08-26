@@ -11,7 +11,33 @@
 NONE
 ```
 
-MC-0004 no longer has a pending Claude review obligation. Phase A and Phase B are both durably preserved, and the thread has moved to Phase C realistic mockup evaluation with ChatGPT as the next expected actor.
+MC-0004 has no pending Claude review obligation. Phase A and Phase B are durably preserved. The thread is now in Phase C browser design evaluation and the first grid/world experiment is waiting for human product review, not model review.
+
+---
+
+## Current human-review gate
+
+```text
+thread                 MC-0004
+phase                  PHASE_C_BROWSER_DESIGN_EVALUATION
+active branch          v1-cockpit-design-exploration
+current checkpoint     210
+next expected actor    human project owner
+experiment             frontend/design-lab/grid-world.html
+protocol               docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
+checkpoint             docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
+```
+
+The current G1-G4 grid/world variants are:
+
+```text
+G1  Precision Lines
+G2  Dot Matrix
+G3  Cross Lattice
+G4  Adaptive Hybrid
+```
+
+The human disposition may use `PREFER`, `REJECT`, `COMBINE`, `REFINE`, or `UNRESOLVED`. No Claude action is required before that review.
 
 ---
 
@@ -41,7 +67,10 @@ MC-0004 Phase B
 
 MC-0004 synthesis
     artifact               docs/research/038_mc0004_comparative_cockpit_design_synthesis_and_mockup_direction_set.md
-    current phase          PHASE_C_MOCKUP_EVALUATION
+
+MC-0004 Phase-C protocol
+    artifact               docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
+    current method         browser-rendered design experiments; generated-image UI concepts retired from the preferred Cockpit workflow
 ```
 
 ---
