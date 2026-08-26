@@ -27,11 +27,11 @@ Specification 024 cannot be classified until MC-G16 direct review is completed. 
 ### 2. MC-0003: deferred asynchronous review/catch-up architecture
 
 ```text
-status                 PREPARING_REVIEW_TARGET
+status                 PENDING
 requirement            REQUIRED
 gate                    BEFORE_MULTI_MODEL_METHOD_PROMOTION
 priority                NORMAL
-target head             to be frozen after ChatGPT candidate design commit
+target head             74fbf8f5dbf7b57bb5f3038b41122f20e09a4b53
 thread                  docs/model_collaboration/threads/MC-0003/
 live transport          GitHub Issue #79
 expected output         messages/002_claude_deferred_catchup_review.md
@@ -60,6 +60,23 @@ If a new pending item has an earlier or more consequential gate, ordering may ch
 
 ---
 
+## Batch catch-up
+
+Claude may process several pending items in one product session when that is efficient, but each item remains a separate obligation.
+
+A batch must preserve:
+
+```text
+exact target head per thread
+separate findings per thread
+separate required corrections
+separate disposition / closure
+```
+
+MC-0002 and MC-0003 should normally be reviewed sequentially even if handled in one Claude session because MC-0002 findings may affect the collaboration-state assumptions used by MC-0003.
+
+---
+
 ## Important limitation
 
 This inbox is currently maintained as a convenience view because Specification 024 does not yet encode explicit review-obligation/gate metadata.
@@ -77,3 +94,5 @@ generated human-readable inbox
 ```
 
 rather than two independently editable sources of truth.
+
+If this inbox and a thread disagree, the thread and exact repository evidence control and the inbox should be repaired.
