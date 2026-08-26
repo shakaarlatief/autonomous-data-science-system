@@ -5,20 +5,19 @@
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs, and resolution records remain authoritative.  
 **Purpose:** Let a returning collaborator discover pending review/catch-up obligations without relying on private chat memory.
 
-## Current pending obligation
+## Current pending model obligation
 
 ```text
 none
 ```
 
-Claude completed the MC-0004 work-unit grammar divergent-ideation request at:
+Claude completed the MC-0004 divergent work-unit grammar contribution at:
 
 ```text
-response commit  faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-response file    docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
+faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 ```
 
-ChatGPT has already ingested that contribution.
+No Claude action is currently pending.
 
 ## Current next actor
 
@@ -26,92 +25,83 @@ ChatGPT has already ingested that contribution.
 human project owner
 ```
 
-Current browser route:
-
-```text
-http://localhost:5173/design-lab/work-unit-grammar-focused.html
-```
-
 Current checkpoint:
 
 ```text
-223
+224
 ```
 
-Exact refined browser target:
+Current browser route:
 
 ```text
-6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a
+http://localhost:5173/design-lab/work-unit-grammar-customizable.html
 ```
 
-Current human evidence carried forward:
+Exact browser implementation target:
 
 ```text
-SELECTED FOR CURRENT GRAMMAR DIRECTION
-    scientific marker family
-        Question        circle
-        Investigation   square
-        Validation      triangle
-        Model           diamond
-        Evaluation      plus
-
-SELECTED PREFERRED WORKING CONTROL
-    Reduced in-box light
-
-KEEP / REFINE
-    M1 Material Language Family
-    Evaluation-like micro character
-    subtle true-shape family
-
-REJECT / RETIRE FROM ACTIVE FOCUSED REVIEW
-    bare Q / I / V / M / E letters
-    G2 Compact Marker Rail
-    S3 Inner Instrument Architecture / symbol direction
-    G1 Instrument Glyph Comparator
+ac16df1bbcd456b63c042c28e52516679139bf32
 ```
 
-Latest material refinement:
+## Current product direction
+
+Selected semantic visual invariant:
 
 ```text
-Question / yellow diagonal treatment      retained
-Investigation / green dots                strengthened
-Validation / blue lines                   strengthened
-Model / red grid                          strengthened
-Evaluation / luminous diagonal treatment  retained
+Question        circle
+Investigation   square
+Validation      triangle
+Model           diamond
+Evaluation      plus
 ```
 
-Latest shape refinement:
+Held preferred baseline:
 
 ```text
-Validation original raised-tab shape
-    rejected as too aggressive
-    removed material from two top areas including upper-left
-
-Validation refined shape
-    upper-left preserved
-    full left reading edge preserved
-    subtle 7 px right-side top step only
+Reduced in-box light
 ```
 
-Current visible focused matrix:
+Positive visual mechanisms:
 
 ```text
-F0  Scientific Marker Control
-F1  Upper-right Cut Control
-F2  Scientific Marker + M1 Material
-F3  Scientific Marker + Micro-Lumen
-F4  True Shape Family
-F5  True Shape + M1 Material
-F6  True Shape + Micro-Lumen
+refined M1 micro-material
+subtle differentiated shapes
+Evaluation-inspired micro-light character
 ```
 
-F7 remains only as historical underlying experiment code and is hidden from active focused presentation.
+Latest product-owner decision:
 
-Dependency-bound ideas remain preserved rather than rejected:
+```text
+these compatible visual mechanisms may coexist
+as user-configurable Cockpit appearance choices
+rather than competing for one universal mandatory style
+```
+
+Current configurable browser proof:
+
+```text
+Box shape
+    Normal
+    Subtle shapes
+
+Micro design
+    None
+    Micro material
+    Micro light
+
+Presets
+    Clean
+    Structured
+    Rich
+```
+
+The appearance controls change presentation only. Category/state/runtime/importance semantics remain unchanged.
+
+Browser-local preference persistence is demonstration-only. Production settings storage remains unselected.
+
+Dependency-bound ideas remain preserved:
 
 ```text
 C4 Port Grammar             -> connector-semantics slice
 C5 Internal Layout Grammar  -> semantic zoom / information-density slice
 ```
-
-No Claude action is currently pending.
