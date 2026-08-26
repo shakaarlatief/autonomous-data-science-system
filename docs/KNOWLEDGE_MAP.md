@@ -219,12 +219,13 @@ There is no artificial candidate-count cap. Preserve all genuinely distinct and 
 
 ## Browser/control corrections before Claude
 
-Human review exposed three issues:
+Human review exposed four issues or refinements:
 
 ```text
 Project Scene could remain overlaid with Category strip
 accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
 resting light stayed left-biased when category signature bars moved to top/bottom/right
+partial top/bottom signatures still produced edge-centered light after the first side-aware correction
 ```
 
 All are corrected.
@@ -265,16 +266,18 @@ hover timing
 
 No preference exists yet.
 
-### Signature-side-aware lighting
+### Signature-edge-and-position-aware lighting
 
 The structural rule is:
 
 ```text
-if a visible category signature/accent edge moves,
-signature-anchored resting light moves with it
+if a visible category signature/accent moves,
+signature-anchored resting light follows both:
+    its edge
+    and its position along that edge
 ```
 
-Current mapping:
+Current edge mapping:
 
 ```text
 W1
@@ -292,12 +295,12 @@ W3
     retain accepted left-biased H4 baseline
 ```
 
-The in-box light, near-node rest light and outward spill rotate/mirror together.
+For W2/W4 Validation and Model, the top/bottom signature bars sit on the left portion of the edge. Their in-box light, near-node rest light and outward spill therefore use the actual bar center as the along-edge anchor rather than the edge midpoint.
 
 Corrected exact browser target after human verification:
 
 ```text
-03d3997498192544ce92c97c2a49e839b3a95af4
+304db34d6482320b317db97277148bc129d07372
 ```
 
 ---
@@ -353,7 +356,8 @@ first-round browser experiment   complete
 preliminary human review         positive, no selection
 Project Scene defect             corrected
 H4 in-box control drift          corrected
-signature-side lighting          corrected
+signature edge lighting          corrected
+signature along-edge position    corrected
 H4 baseline vs Reduced           explicit comparison OPEN
 Claude divergent ideation        PENDING after human verification
 production promotion             not authorized
