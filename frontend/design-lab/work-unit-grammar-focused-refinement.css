@@ -1,0 +1,67 @@
+/*
+ * Human-review refinement of the focused work-unit grammar round.
+ *
+ * Decisions carried forward:
+ * - scientific markers are the selected category-mark vocabulary for this slice;
+ * - Reduced remains the preferred in-box resting-light control;
+ * - the M1 micro-material family remains promising, but its Investigation,
+ *   Validation and Model treatments need stronger visual presence;
+ * - the Validation true-shape silhouette must keep its upper-left corner and
+ *   left reading edge intact, with only a subtle right-side top step.
+ */
+
+/* The instrument-glyph comparator is retired from the active focused review. */
+.focused-f7 {
+  display: none !important;
+}
+
+/*
+ * Preserve the already-successful Question and Evaluation treatments, while
+ * selectively strengthening the quieter green, blue and red micro-materials.
+ * This avoids globally increasing texture intensity and making the yellow
+ * diagonal treatment unnecessarily loud.
+ */
+.has-material .category-investigation .focused-material-layer {
+  opacity: 0.27;
+  background-image: radial-gradient(
+    circle,
+    rgba(var(--node-rgb), 0.36) 0 0.85px,
+    transparent 1.05px
+  );
+  background-size: 6px 6px;
+}
+
+.has-material .category-validation .focused-material-layer {
+  opacity: 0.27;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(var(--node-rgb), 0.28) 0 1px,
+    transparent 1px 7px
+  );
+}
+
+.has-material .category-model .focused-material-layer {
+  opacity: 0.26;
+  background-image:
+    linear-gradient(to right, rgba(var(--node-rgb), 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(var(--node-rgb), 0.18) 1px, transparent 1px);
+  background-size: 11px 11px;
+}
+
+/*
+ * Validation previously removed material from both sides of the upper edge.
+ * Keep the entire left/top reading entry intact and move the structural cue to
+ * the right side only. The 7px step is intentionally restrained so Validation
+ * remains in the same subtle family as the other silhouettes.
+ */
+.true-shape-family .category-validation .node-surface {
+  clip-path: polygon(
+    0 0,
+    72% 0,
+    77% 7px,
+    100% 7px,
+    100% 100%,
+    0 100%
+  );
+  border-radius: 8px 7px 9px 8px;
+}
