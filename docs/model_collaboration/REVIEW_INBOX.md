@@ -13,7 +13,7 @@ phase                  PHASE_C_BROWSER_DESIGN_EVALUATION
 kind                   COMPARATIVE_ONLY / DIVERGENT_IDEATION
 requested collaborator Claude
 active branch          v1-cockpit-design-exploration
-exact target           03d3997498192544ce92c97c2a49e839b3a95af4
+exact target           304db34d6482320b317db97277148bc129d07372
 request                 docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
 expected output         docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
 priority                ordinary required before work-unit grammar convergence
@@ -23,12 +23,13 @@ The human project owner positively reviewed the first W1-W4 work-unit grammar br
 
 This is not a blind review. Claude may inspect all current candidate material.
 
-The exact target above supersedes the earlier pre-lighting-correction target. Before Claude was triggered, human review identified and ChatGPT corrected:
+Before Claude was triggered, human review identified and ChatGPT corrected:
 
 ```text
 Project Scene view overlap
 accidental suppression of accepted H4 in-box resting light
 fixed-left resting light despite top/bottom/right category signature bars
+edge-centered resting light despite partial top/bottom signatures being left-biased
 ```
 
 The corrected browser target now exposes an intentional secondary comparison:
@@ -39,7 +40,17 @@ In-box light
     Reduced       intentional alternative
 ```
 
-The outward resting spill and H4 hover behavior remain held. Signature-anchored resting light now follows the visible signature edge.
+The outward resting spill and H4 hover behavior remain held.
+
+Signature-anchored resting light now follows both:
+
+```text
+signature edge
++
+signature position along that edge
+```
+
+For example, W2/W4 top and bottom bars that occupy the left part of the edge now produce correspondingly left-biased top/bottom resting light rather than centered top/bottom light.
 
 Important human clarification:
 
@@ -67,7 +78,7 @@ G4 world                       provisionally settled
 H4 generic rest/hover lighting sufficiently settled
 H4 in-box baseline             restored as default control
 Reduced in-box light           explicit optional comparison
-signature-side lighting        corrected
+signature light coupling       edge + along-edge position corrected
 active slice                   work-unit category / silhouette grammar
 current candidates             W1-W4, not a closed menu
 current checkpoint             220
@@ -98,6 +109,7 @@ MC-0004 Phase C
     H4 selected and generic rest/hover lighting sufficiently settled
     first W1-W4 work-unit grammar experiment implemented and preliminarily reviewed
     H4 grammar-control drift corrected before Claude ideation
+    signature light refined from side-aware to exact edge-position-aware before Claude ideation
 ```
 
 ## Manual trigger
