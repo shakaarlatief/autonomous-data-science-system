@@ -152,6 +152,8 @@ Browser route:
 frontend/design-lab/connector-grammar.html
 frontend/design-lab/connector-grammar.css
 frontend/design-lab/connector-grammar.js
+frontend/design-lab/connector-port-layering.css
+frontend/design-lab/connector-port-layering.js
 ```
 
 Local URL:
@@ -185,7 +187,45 @@ same relation fixture
 
 The experiment isolates only connector/port treatment.
 
-## 8. Production boundary
+## 8. Endpoint layering refinement before final connector judgment
+
+Before giving a connector preference, the project owner noticed that endpoint dots/sockets were visually underneath the work-unit boxes and asked whether they should instead sit over the box edge.
+
+The preferred hierarchy is now:
+
+```text
+world/grid
+    ↓
+connector curves
+    ↓
+work-unit body
+    ↓
+endpoint dot / socket / port
+```
+
+Therefore:
+
+```text
+curve
+    remains beneath the node
+    ends at the rendered perimeter
+
+endpoint marker
+    sits above the node edge
+    centered on the perimeter
+```
+
+This is implemented with a separate endpoint overlay SVG synchronized to the existing dynamic connector geometry and hover state.
+
+Exact endpoint-layer implementation target:
+
+```text
+08a33868b1c1d2cd90f11431e3f6b730603f28eb
+```
+
+Research 053 records the resulting layering invariant.
+
+## 9. Production boundary
 
 No production `/cockpit` file changes.
 
@@ -193,16 +233,16 @@ No graph/canvas dependency is selected.
 
 No final connector semantic vocabulary is frozen.
 
-## 9. Exact continuation
+## 10. Exact continuation
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. optionally refresh http://localhost:5173/design-lab/work-unit-grammar-customizable.html to verify the connector attachment fix
-3. open http://localhost:5173/design-lab/connector-grammar.html
-4. compare K0 through K4
-5. hover each work unit and inspect relation emphasis / hover-port behavior
-6. judge resting noise, attachment clarity, direction usefulness and scale plausibility
-7. human may prefer, reject or combine connector mechanisms
+2. refresh http://localhost:5173/design-lab/connector-grammar.html
+3. verify K1/K2/K4 endpoint markers now sit visibly on top of the work-unit perimeter while connector curves remain below the boxes
+4. verify K3 target cue remains readable at the destination edge
+5. compare K0 through K4
+6. hover each work unit and inspect relation emphasis / hover-port behavior
+7. give the pending human connector preference or combination judgment
 8. preserve the generic connector baseline before adding semantic relation classes
 9. keep production Cockpit untouched
 ```
