@@ -78,6 +78,7 @@ Governing research:
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
+docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
 ```
 
 First browser candidates:
@@ -89,17 +90,58 @@ W3  Structural Silhouette Family
 W4  Hybrid Semantic Instrument
 ```
 
-The first implementation received a strongly positive preliminary human reaction, but the human project owner judged the candidate space too narrow for convergence. A Project Scene view-switching defect found during that review was corrected.
+The first implementation received a strongly positive preliminary human reaction, but the human project owner judged the candidate space too narrow for convergence.
+
+Human browser review also exposed three implementation/control problems before Claude should inspect the design:
+
+```text
+Project Scene and Category strip could render together
+accepted H4 in-box resting light was accidentally suppressed by the grammar DOM
+resting light stayed left-biased even when signature bars moved to top/bottom/right
+```
+
+These were corrected before the Claude task was triggered.
+
+The corrected browser experiment now exposes an intentional secondary comparison:
+
+```text
+In-box light
+    H4 baseline   default restored control
+    Reduced       intentional lower-light alternative
+```
+
+The outward resting spill and generic H4 hover response remain held.
+
+Signature-anchored resting light now follows the visible signature edge:
+
+```text
+left -> left
+right -> right
+top -> top
+bottom -> bottom
+```
+
+W3 has no explicit signature bar and therefore retains the accepted left-biased H4 baseline for now.
 
 Corrected exact experiment target:
 
 ```text
-88a507d42744917be1e84b29177dd0465f24cd82
+03d3997498192544ce92c97c2a49e839b3a95af4
 ```
 
-## Current gate: Claude divergent work-unit grammar ideation
+## Current gate: human verification, then Claude divergent work-unit grammar ideation
 
-Human request: obtain additional Claude ideas and inspiration before selecting or combining the current W1-W4 directions.
+Before Claude is triggered, the human project owner should verify the corrected browser rendering:
+
+```text
+Project Scene switches cleanly
+H4 baseline restores the intended in-box light
+Reduced is visibly quieter and intentional
+W2/W4 top/bottom/right signatures move their resting light accordingly
+hover remains the accepted H4 behavior
+```
+
+After that verification, the human request is to obtain additional Claude ideas and inspiration before selecting or combining the current W1-W4 directions.
 
 Detailed request:
 
@@ -120,6 +162,8 @@ docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_d
 ```
 
 Claude is asked to broaden the design space rather than merely rank W1-W4.
+
+There is no artificial candidate-count cap. Preserve all genuinely distinct and worthwhile candidates. Browser testing may be organized into multiple batches if needed, but batching is not rejection.
 
 Claude write scope remains:
 
@@ -145,6 +189,8 @@ runtime state
 importance / recommendation strength
 ```
 
+The H4 baseline-vs-Reduced in-box-light control is an explicit secondary comparison, not a redefinition of category semantics.
+
 Do not silently solve connector semantics, semantic zoom or the whole Cockpit in this slice.
 
 ## Authority
@@ -168,12 +214,13 @@ No production `/cockpit` replacement, new graph/canvas dependency, new motion li
 ## Current continuation
 
 ```text
-1. Claude reads Message 003 on v1-cockpit-design-exploration
-2. Claude evaluates exact target 88a507d42744917be1e84b29177dd0465f24cd82
-3. Claude writes only Message 004
-4. ChatGPT synthesizes the strongest new/combined ideas
-5. build a bounded second work-unit grammar browser round
-6. return to human comparison before selection
+1. human verifies the corrected browser experiment on v1-cockpit-design-exploration
+2. after verification, Claude reads Message 003
+3. Claude evaluates exact target 03d3997498192544ce92c97c2a49e839b3a95af4
+4. Claude writes only Message 004
+5. ChatGPT synthesizes all genuinely worthwhile new/combined ideas
+6. build as many browser variants as evidence justifies, organized into batches if useful
+7. return to human comparison before selection
 ```
 
 Machine-readable authoritative coordination state is in `STATE.json`; pending routing is also visible in `docs/model_collaboration/REVIEW_INBOX.md`.
