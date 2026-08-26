@@ -23,6 +23,17 @@ The human project owner positively reviewed the first W1-W4 work-unit grammar br
 
 This is not a blind review. Claude may inspect all current candidate material.
 
+Important human clarification:
+
+```text
+NO artificial candidate-count cap
+NO requirement to narrow to 3-5 directions
+preserve all genuinely distinct and worthwhile candidates
+browser testing may use multiple batches if useful
+batching != rejection
+narrow only for redundancy, domination, boundary violation, or weak value
+```
+
 Claude should write only under:
 
 ```text
