@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 215  
+**Current checkpoint:** 216  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        215
+checkpoint                        216
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 MC-0004 Phase C work-unit interaction-lighting human review
+current boundary                 MC-0004 Phase C H4 resting world-spill human review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -83,13 +83,15 @@ frontend/design-lab/grid-dynamics-combined.html
 
 ---
 
-# Current Slice 02A: work-unit interaction lighting
+# Current Slice 02A: H4 interaction lighting
 
 Primary route:
 
 ```text
 docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
+docs/research/045_h4_resting_node_light_world_spill_refinement.md
 docs/checkpoints/215_grid_world_provisionally_settled_work_unit_lighting_review_opened.md
+docs/checkpoints/216_h4_selected_resting_world_spill_human_review_opened.md
 frontend/design-lab/work-unit-lighting.html
 frontend/design-lab/work-unit-lighting.css
 frontend/design-lab/work-unit-lighting.js
@@ -101,45 +103,37 @@ Local route:
 http://localhost:5173/design-lab/work-unit-lighting.html
 ```
 
-Current interaction-lighting hypothesis:
+Human review selected:
 
 ```text
-REST       localized / asymmetric colored atmosphere
-HOVER      fuller node-specific colored response
-SELECTED   later persistent focus state
-RUNTIME    later semantic state-bearing light behavior
+H4 Integrated Response  SELECTED
 ```
 
-Browser treatments:
+Current H4 interaction-lighting model:
 
 ```text
-H1 Full Halo
-    localized rest light
-    full colored hover perimeter
+REST
+    localized / asymmetric node-colored atmosphere
+    broader low-opacity world bleed into the grid
+
+HOVER
+    full node-colored halo
+    pointer-following/specular hotspot
+    stronger local grid/world illumination
+    immediate connector emphasis
+    one restrained perimeter sweep on entry
     small depth lift
 
-H2 Cursor Edge
-    H1
-    + pointer-following/specular hotspot
+SELECTED
+    later persistent focus state
 
-H3 World Spill
-    full hover light
-    + faint nearby grid illumination
-    + immediate connector emphasis
-
-H4 Integrated Response
-    localized rest light
-    full hover halo
-    pointer hotspot
-    local grid spill
-    connector emphasis
-    one-time perimeter sweep on hover entry
-    small depth lift
+RUNTIME
+    later semantic state-bearing light behavior
 ```
 
-Human review may combine individual mechanisms rather than select one treatment literally.
+Current review specifically tests whether the resting world spill is strong enough while keeping the cleaner newer in-node illumination and preserving a clear difference between rest and hover.
 
-Still deliberately unresolved in this slice:
+Still deliberately unresolved:
 
 ```text
 final work-unit silhouette/category grammar
@@ -193,28 +187,10 @@ docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-Phase A:
-
 ```text
-Claude independent proposal
-commit                  cd2e12f2c79ee3b2f205457c5940eb2022b4631a
-review base             bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
-historical independence BLIND_TO_CANDIDATE
-```
-
-Phase B:
-
-```text
-Claude comparative review
-commit          d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce
-classification  COMPARATIVE_ONLY
-```
-
-Phase C:
-
-```text
-PHASE_C_BROWSER_DESIGN_EVALUATION
-next expected actor  human
+Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
+Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
+Phase C  browser-rendered design evaluation; next expected actor human
 ```
 
 No pending Claude review obligation exists.
@@ -263,8 +239,6 @@ final design system
 ---
 
 # Promoted Cockpit interaction architecture
-
-Primary route:
 
 ```text
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
