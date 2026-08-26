@@ -4,9 +4,13 @@
 **Status:** Current product-design checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / HUMAN_REVIEW  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
+**Scope:** Records the human decision to retain all tested G4 ambient mechanisms, establishes combined ambient-intensity tuning as the next bounded design question, and opens Quiet/Balanced/Lively live-browser review without authorizing production Cockpit changes.  
+**Authority:** Current product-design routing/evidence boundary only. Specification 008 remains the promoted Cockpit interaction architecture.  
 **Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
 **Interaction session:** chatgpt-07  
-**Conversation title:** 07 - Project Cockpit Design Exploration
+**Conversation title:** 07 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT
 
 ## 1. Grid/world mechanism selection has narrowed further
 
