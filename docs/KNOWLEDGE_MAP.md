@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 206  
+**Current checkpoint:** 207  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -30,13 +30,12 @@ Current route:
 ```text
 active development branch        v1-cockpit-design-exploration
 active PR                        none
-current checkpoint               206
+current checkpoint               207
 latest specification             Specification 024
 Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
 promoted Cockpit baseline        Specification 008
 latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary                 next-generation Cockpit design exploration
-MC-0004 phase                    Claude independent Phase A pending
+current boundary                 MC-0004 Phase B comparative Cockpit design review
 source-vault deployment          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -47,6 +46,7 @@ source-vault deployment          PAUSED, preserved, Course 2 gate unchanged
 Primary route:
 
 ```text
+docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md
 docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
 docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
 
@@ -56,21 +56,57 @@ docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 docs/model_collaboration/threads/MC-0004/BRIEF.md
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
+docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-Current research sequence:
+Current sequence:
 
 ```text
-broad external/product research
-    -> independent Claude counter-design
-    -> comparative synthesis
-    -> realistic visual mockups / bounded interaction prototypes
-    -> human product review
-    -> implementation specification only if earned
+ChatGPT Research 037
+    +
+Claude independent Phase A  COMPLETE
+    ->
+Claude comparative Phase B  ACTIVE
+    ->
+ChatGPT comparative synthesis
+    ->
+realistic mockups / bounded mechanism prototypes
+    ->
+human product review
+    ->
+implementation specification only if earned
 ```
 
 No frontend implementation is authorized by the current checkpoint.
+
+---
+
+# MC-0004 status
+
+Claude Phase A is frozen at:
+
+```text
+commit                  cd2e12f2c79ee3b2f205457c5940eb2022b4631a
+review base             bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
+historical independence BLIND_TO_CANDIDATE
+candidate exposures     none
+```
+
+Claude changed only the declared collaboration-message surface.
+
+Phase B is now:
+
+```text
+phase                   PHASE_B_COMPARATIVE_REVIEW
+mode                    COMPARATIVE_ONLY
+next expected actor     Claude
+allowed Claude writes   docs/model_collaboration/threads/MC-0004/messages/**
+```
+
+Claude may now read Research 037 and compare it with the frozen Phase-A proposal. Its comparative response is required before final ChatGPT synthesis.
+
+The first generic cross-model trigger failed because Claude remained on an older branch whose inbox correctly said `NONE`. The failure did not expose candidate design material. Current operational routing therefore explicitly names the active branch/ref when work exists only on an unpromoted branch. Checkpoint 207 preserves this as an empirical collaboration-method finding pending promotion audit.
 
 ---
 
@@ -165,41 +201,7 @@ Rendering / interaction technology
 Loading / empty / error / recovery behavior
 ```
 
-External reference families include:
-
-```text
-React Flow
-Dagster
-Linear
-VS Code
-LangSmith Studio
-Motion for React
-Microsoft Semantic Zoom
-Mapbox
-Cytoscape.js
-Sigma.js
-PixiJS
-React Three Fiber
-Apache Airflow
-Prefect
-```
-
-Current high-value hypotheses, not decisions:
-
-```text
-semantic zoom should be pressure-tested as a major scale/quality improvement
-connectors may carry real dependency/activity semantics
-moving signals should correspond to real temporal activity
-completed work should visually settle
-information lenses/facets may control density
-context-aware commands may reduce permanent control clutter
-compact composer should expand into a first-class Conversation Workspace
-2.5D should be evaluated before full 3D
-React Flow now deserves a comparator prototype
-large project fixtures are required before visual architecture promotion
-```
-
-Candidate mockup directions:
+Current candidate directions remain provisional:
 
 ```text
 A. Precision Instrument
@@ -208,7 +210,14 @@ C. Spatial Control Room
 D. Depth-Aware Workbench
 ```
 
-No candidate is currently promoted.
+Claude's independent candidate set adds:
+
+```text
+1. Living Process Canvas      preferred by Claude Phase A
+2. Analytical Command Deck    strongest fallback
+```
+
+Comparative synthesis will decide which mechanisms, not merely which labels, deserve mockups.
 
 ---
 
@@ -216,149 +225,28 @@ No candidate is currently promoted.
 
 The compact native composer remains part of the Cockpit, but ADS must also support long, revisitable project conversations.
 
-Research route:
+Current requirement:
 
 ```text
-docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md
-docs/research/037_project_cockpit_next_generation_visual_interaction_design_exploration_map.md
-docs/research/002_primary_project_cockpit_interface_concept.md
+long multi-turn project dialogue
+visible previous user/system messages
+re-entry into earlier discussion
+conversation search/navigation
+contextual discussion of visible project work
+full Conversation Workspace / transcript experience
 ```
 
-Product-level distinction under exploration:
+Consequential outcomes must still map into structured project state rather than living only as prose history.
 
-```text
-Composer
-Conversational response
-Conversation history
-Conversation Workspace
-```
-
-Candidate presentation modes:
-
-```text
-docked Conversation Lens
-Conversation Focus Workspace
-split analytical/conversation workbench
-canvas-anchored conversation expansion
-direct Conversation specialist view plus Cockpit entry
-```
-
-Important invariant:
-
-```text
-long conversational history remains available and navigable
-    while
-consequential project truth is represented in structured project state
-```
-
-Messages and project work should eventually be able to reference one another without making raw conversation the project database.
-
-The Conversation Workspace represents user-visible conversation, not hidden reasoning traces.
+Claude independently converged on using the validated Cockpit focus-transition model for the Conversation Workspace, with bidirectional links between consequential messages and structured project objects. Threading/persistence details remain provisional.
 
 ---
 
-# MC-0004: independent Cockpit counter-design
+# Governed multi-model development
 
-Primary route:
-
-```text
-docs/model_collaboration/threads/MC-0004/BRIEF.md
-docs/model_collaboration/threads/MC-0004/THREAD.md
-docs/model_collaboration/threads/MC-0004/STATE.json
-docs/model_collaboration/REVIEW_INBOX.md
-```
-
-Current state:
+Canonical route:
 
 ```text
-mode                    INDEPENDENT_THEN_COMPARATIVE
-lifecycle               ACTIVE
-phase                   PHASE_A_INDEPENDENT_DESIGN
-task owner              ChatGPT
-target-state writer     ChatGPT
-next expected actor     Claude
-independence            BLIND_TO_CANDIDATE
-Claude secondary path   docs/model_collaboration/threads/MC-0004/messages/**
-```
-
-Exact neutral review base:
-
-```text
-bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
-```
-
-Phase-A rule:
-
-```text
-Claude reads neutral brief + accepted pre-proposal baseline
-Claude must not read Research 037 or later proposer candidate material
-Claude freezes independent proposal under MC-0004/messages/
-only then may comparative synthesis begin
-```
-
-If candidate exposure occurs accidentally, preserve the exposure and downgrade the independence classification rather than pretending the review remained blind.
-
----
-
-# Permanent Source Universe deployment is preserved and paused
-
-Primary route:
-
-```text
-docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
-docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-
-docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
-docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
-docs/specifications/023_v1_source_universe_substrate.md
-docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
-docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
-```
-
-Specification 023 result:
-
-```text
-SU-G01 through SU-G23   PASS
-SOURCE_SUBSTRATE_ACCEPTED
-```
-
-Current boundary interpretation:
-
-```text
-permanent bootstrap   PAUSED
-substrate             ACCEPTED
-real deployment       NOT YET EXECUTED
-Course 2              BLOCKED UNTIL RECOVERY GATE PASSES
-```
-
-Still required when resumed:
-
-```text
-confirm private original source location
-confirm genuinely independent backup location
-choose permanent private registry/vault/restore layout
-compare original corpus to reviewed fingerprints
-review every MATCH / DIFFERENT / MISSING / ADDITIONAL outcome
-perform reviewed ingestion
-working integrity audit
-independent verified backup
-clean restore
-restored integrity audit
-public-safe deployment evidence
-```
-
-The pause does not alter the source architecture or runbook.
-
----
-
-# Governed multi-model development is accepted infrastructure
-
-Primary route:
-
-```text
-docs/checkpoints/204_multimodel_collaboration_method_promoted.md
-docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 docs/DECISIONS.md, D-034
@@ -369,66 +257,37 @@ docs/model_collaboration/REVIEW_INBOX.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
 
-Current collaboration status:
+Accepted rules remain repository authority, selective task-scoped collaboration, one bounded task owner, `ROLE != WRITE_SCOPE`, one target-state writer at a time, explicit secondary surfaces, independent-first review where valuable, explicit contamination disclosure, durable numbered messages, and human arbitration only for genuine intent/consequence choices.
 
-```text
-MC-0001   CLOSED
-MC-0002   CLOSED
-MC-0003   CLOSED
-MC-0004   ACTIVE / Claude Phase A pending
-review inbox   MC-0004 pending
-```
-
-Accepted collaboration principles:
-
-```text
-repository authority
-SOLO remains first-class
-selective task-scoped collaboration
-one bounded task owner
-ROLE != WRITE_SCOPE
-one target-state writer at a time
-explicit secondary write surfaces
-machine-readable collaboration-state coherence guard
-transport != authority
-durable numbered collaboration provenance
-independent-first review where anchoring matters
-known contamination disclosure
-explicit disagreement classification/routing
-provider-local interaction session identities
-human project-intent authority without routine transport burden
-deferred review/catch-up with exact targets and explicit gates
-API orchestration deferred
-unattended scheduled model review deferred
-```
-
-Provider-neutral checkpoint provenance begins at Checkpoint 204.
+The branch-qualified handoff lesson from MC-0004 is not yet promoted into the canonical method.
 
 ---
 
-# Specification 024: accepted collaboration-state guard
+# Source Universe deployment remains paused
 
 Primary route:
 
 ```text
-docs/specifications/024_v1_model_collaboration_state_guard.md
-schemas/model_collaboration_thread_state_v1.schema.json
-scripts/check_model_collaboration_state.py
-tests/unit/test_model_collaboration_state.py
-.github/workflows/model-collaboration-state.yml
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 ```
 
-Final outcome:
+Current interpretation:
 
 ```text
-COLLABORATION_STATE_GUARD_ACCEPTED
+SOURCE_SUBSTRATE_ACCEPTED
+permanent deployment PAUSED
+not cancelled or superseded
+Course 2 gate unchanged
 ```
-
-The mechanism is a coherence guard, not authenticated model identity or a distributed mutex.
 
 ---
 
-# Serious methodological knowledge-universe construction
+# Methodological knowledge-universe program remains the larger V1 objective
 
 Primary route:
 
@@ -438,65 +297,6 @@ docs/methodological_knowledge/COVERAGE_MAP.md
 docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
 ```
 
-Coverage depth:
+Initial deep slices remain Validation and Generalization Design, Missing Data, Feature Selection, Tree Models and Ensembles, Class Imbalance / Metrics / Calibration / Thresholding, and Time-Series Methodology.
 
-```text
-C0  MAPPED
-C1  SOURCED
-C2  DECOMPOSED
-C3  OPERATIONALIZED
-C4  CONNECTED
-C5  BEHAVIORALLY_TESTED
-C6  PROJECT_EXPOSED
-```
-
-First six deep slices:
-
-```text
-Validation and Generalization Design
-Missing Data
-Feature Selection
-Tree Models and Ensembles
-Class Imbalance / Metrics / Calibration / Thresholding
-Time-Series Methodology
-```
-
-The Cockpit exploration is a deliberate product/frontend subtrack. The methodological knowledge-universe program remains the larger V1 objective.
-
----
-
-# Stable accepted architecture
-
-Current accepted implementation decisions include:
-
-```text
-D-028  SQLite-centered local-first operational architecture
-D-029  SQLAlchemy Core 2.0 + Alembic 1.x
-D-030  pyproject.toml + uv + committed uv.lock + uv_build
-D-031  governed deterministic JSON / JSON Schema interchange
-D-032  OpenAI Agents SDK behind ADS-owned ReasoningRuntime
-D-033  ADS-owned private Source Universe substrate + relational registry
-D-034  governed provider-neutral multi-model development collaboration
-```
-
-Research 037 promotes no new Level-2 architecture or technology choice.
-
----
-
-# Exact continuation
-
-```text
-1. reconstruct from Checkpoint 206
-2. use v1-cockpit-design-exploration as the active research/design branch
-3. keep Specification 008 as the promoted Cockpit interaction baseline
-4. keep permanent source-vault deployment paused with Course 2 gate unchanged
-5. complete Claude MC-0004 Phase A from exact neutral ref bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88
-6. preserve Claude's independent proposal under MC-0004/messages/
-7. only then compare Claude's design with Research 037
-8. select the strongest 2-4 design directions/mechanisms for realistic mockups
-9. explicitly mock/prototype long-form Conversation Workspace behavior
-10. pressure-test medium/large project maps and active/blocked/completed/runtime states
-11. perform human visual/product review
-12. freeze implementation only after that evidence
-13. resume permanent source-vault deployment whenever the project owner chooses
-```
+The current Cockpit work is a deliberate frontend/product subtrack, not a replacement for the larger methodological program.
