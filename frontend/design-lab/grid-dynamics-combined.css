@@ -92,70 +92,71 @@ body {
   opacity: 0.86;
 }
 
-.ambient-drift,
-.ambient-trace,
-.ambient-glint {
+.ambient-runtime-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.ambient-drift {
+.ambient-drift,
+.ambient-trace,
+.ambient-glint {
   position: absolute;
-  z-index: -2;
-  width: 380px;
-  height: 380px;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.ambient-drift {
+  z-index: 0;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(155, 194, 255, 0.14) 0%, rgba(113, 160, 232, 0.055) 40%, transparent 72%);
   filter: blur(24px);
+  opacity: 0;
 }
 
-.ambient-drift-a { left: 7%; top: 3%; }
-.ambient-drift-b { right: 1%; bottom: -22%; }
-.ambient-drift-c { left: 42%; top: 42%; width: 320px; height: 320px; }
+.runtime-drift {
+  animation: ambient-drift-flight var(--duration) ease-in-out forwards;
+}
 
 .ambient-trace {
-  position: absolute;
-  z-index: 0;
+  z-index: 1;
   display: block;
   opacity: 0;
   filter: drop-shadow(0 0 6px rgba(177, 210, 255, 0.48));
 }
 
 .trace-h {
-  width: 190px;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(164, 199, 249, 0.10) 14%, rgba(218, 234, 255, 0.78) 52%, rgba(164, 199, 249, 0.12) 86%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(164, 199, 249, 0.10) 14%, rgba(218, 234, 255, 0.82) 52%, rgba(164, 199, 249, 0.12) 86%, transparent 100%);
 }
 
 .trace-v {
   width: 1px;
-  height: 165px;
-  background: linear-gradient(180deg, transparent 0%, rgba(164, 199, 249, 0.10) 14%, rgba(218, 234, 255, 0.72) 52%, rgba(164, 199, 249, 0.12) 86%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(164, 199, 249, 0.10) 14%, rgba(218, 234, 255, 0.78) 52%, rgba(164, 199, 249, 0.12) 86%, transparent 100%);
 }
 
-.trace-h-a { top: 100px; left: -220px; }
-.trace-h-b { top: 300px; left: -260px; }
-.trace-h-c { top: 500px; left: -240px; }
-.trace-v-a { left: calc(100% - 100px); top: -190px; }
-.trace-v-b { left: 400px; top: -200px; }
+.runtime-current {
+  animation: ambient-current-flight var(--duration) linear forwards;
+}
 
 .ambient-glint {
-  position: absolute;
-  z-index: 0;
+  z-index: 2;
   width: 4px;
   height: 4px;
   margin: -2px 0 0 -2px;
   border-radius: 50%;
-  background: rgba(222, 236, 255, 0.94);
-  box-shadow: 0 0 5px rgba(194, 218, 255, 0.72), 0 0 13px rgba(135, 184, 255, 0.28);
+  background: rgba(229, 240, 255, 0.98);
+  box-shadow:
+    0 0 5px rgba(200, 222, 255, 0.78),
+    0 0 13px rgba(140, 188, 255, 0.32);
   opacity: 0;
 }
 
-.glint-a { left: 20%; top: 100px; }
-.glint-b { left: 40%; top: 200px; }
-.glint-c { left: 60%; top: 300px; }
-.glint-d { left: 80%; top: 400px; }
-.glint-e { left: 30%; top: 500px; }
-.glint-f { left: 70%; top: 100px; }
+.runtime-glint {
+  animation: ambient-glint-bloom var(--duration) ease-in-out forwards;
+}
 
 .combined-world .activity-field {
   z-index: -1;
@@ -169,6 +170,14 @@ body {
 .combined-world .activity-field-secondary {
   left: 61%;
   top: 28%;
+}
+
+html[data-semantic="on"] .combined-world .activity-field {
+  opacity: 0.18;
+}
+
+html[data-semantic="on"] .combined-world .live-packet {
+  opacity: 0.75;
 }
 
 .combined-world .stage-ruler {
@@ -249,82 +258,7 @@ body {
   margin-top: 20px;
 }
 
-/* Shared ambient mechanisms. Frequency is controlled by the intensity preset. */
-.ambient-drift-a { animation: drift-a var(--drift-a-duration) ease-in-out infinite alternate; }
-.ambient-drift-b { animation: drift-b var(--drift-b-duration) ease-in-out 2s infinite alternate; }
-.ambient-drift-c { animation: drift-c var(--drift-c-duration) ease-in-out 5s infinite alternate; }
-
-.trace-h-a { animation: current-horizontal var(--trace-a-duration) linear 0s infinite; }
-.trace-h-b { animation: current-horizontal var(--trace-b-duration) linear 4s infinite; }
-.trace-h-c { animation: current-horizontal var(--trace-c-duration) linear 8s infinite; }
-.trace-v-a { animation: current-vertical var(--trace-v-a-duration) linear 2s infinite; }
-.trace-v-b { animation: current-vertical var(--trace-v-b-duration) linear 7s infinite; }
-
-.glint-a { animation: glint-pulse var(--glint-a-duration) ease-in-out 0s infinite; }
-.glint-b { animation: glint-pulse var(--glint-b-duration) ease-in-out 2s infinite; }
-.glint-c { animation: glint-pulse var(--glint-c-duration) ease-in-out 4s infinite; }
-.glint-d { animation: glint-pulse var(--glint-d-duration) ease-in-out 6s infinite; }
-.glint-e { animation: glint-pulse var(--glint-e-duration) ease-in-out 8s infinite; }
-.glint-f { animation: glint-pulse var(--glint-f-duration) ease-in-out 10s infinite; }
-
-html[data-intensity="quiet"] {
-  --trace-a-duration: 20s;
-  --trace-b-duration: 26s;
-  --trace-c-duration: 30s;
-  --trace-v-a-duration: 25s;
-  --trace-v-b-duration: 31s;
-  --glint-a-duration: 14s;
-  --glint-b-duration: 16s;
-  --glint-c-duration: 18s;
-  --glint-d-duration: 15s;
-  --glint-e-duration: 19s;
-  --glint-f-duration: 17s;
-  --drift-a-duration: 34s;
-  --drift-b-duration: 40s;
-  --drift-c-duration: 37s;
-}
-
-html[data-intensity="balanced"] {
-  --trace-a-duration: 13s;
-  --trace-b-duration: 16s;
-  --trace-c-duration: 19s;
-  --trace-v-a-duration: 17s;
-  --trace-v-b-duration: 21s;
-  --glint-a-duration: 9s;
-  --glint-b-duration: 10s;
-  --glint-c-duration: 11s;
-  --glint-d-duration: 9.5s;
-  --glint-e-duration: 12s;
-  --glint-f-duration: 10.5s;
-  --drift-a-duration: 27s;
-  --drift-b-duration: 31s;
-  --drift-c-duration: 29s;
-}
-
-html[data-intensity="lively"] {
-  --trace-a-duration: 9s;
-  --trace-b-duration: 11s;
-  --trace-c-duration: 13s;
-  --trace-v-a-duration: 12s;
-  --trace-v-b-duration: 14s;
-  --glint-a-duration: 6.8s;
-  --glint-b-duration: 7.5s;
-  --glint-c-duration: 8s;
-  --glint-d-duration: 7s;
-  --glint-e-duration: 8.5s;
-  --glint-f-duration: 7.8s;
-  --drift-a-duration: 21s;
-  --drift-b-duration: 24s;
-  --drift-c-duration: 22s;
-}
-
-html[data-intensity="quiet"] .ambient-drift { opacity: 0.18; }
-html[data-intensity="balanced"] .ambient-drift { opacity: 0.30; }
-html[data-intensity="lively"] .ambient-drift { opacity: 0.38; }
-
-html[data-ambient="off"] .ambient-drift,
-html[data-ambient="off"] .ambient-trace,
-html[data-ambient="off"] .ambient-glint {
+html[data-ambient="off"] .ambient-runtime-layer {
   display: none;
 }
 
@@ -333,70 +267,74 @@ html[data-semantic="off"] .live-packet {
   display: none;
 }
 
-html[data-reduced="on"] .ambient-drift,
-html[data-reduced="on"] .ambient-trace,
-html[data-reduced="on"] .ambient-glint,
+html[data-reduced="on"] .ambient-runtime-layer {
+  display: none;
+}
+
 html[data-reduced="on"] .activity-field,
 html[data-reduced="on"] .live-packet {
   animation: none !important;
 }
 
-html[data-reduced="on"] .ambient-trace,
-html[data-reduced="on"] .ambient-glint {
-  opacity: 0 !important;
+@keyframes ambient-current-flight {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  9% {
+    opacity: calc(var(--peak) * 0.68);
+  }
+  24%, 70% {
+    opacity: var(--peak);
+  }
+  91%, 100% {
+    transform: translate3d(var(--dx), var(--dy), 0);
+    opacity: 0;
+  }
 }
 
-html[data-reduced="on"] .ambient-drift {
-  opacity: 0.12 !important;
-  transform: none !important;
+@keyframes ambient-glint-bloom {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  34% {
+    opacity: calc(var(--peak) * 0.28);
+    transform: scale(0.72);
+  }
+  52% {
+    opacity: var(--peak);
+    transform: scale(1.28);
+  }
+  72% {
+    opacity: calc(var(--peak) * 0.26);
+    transform: scale(0.84);
+  }
 }
 
-@keyframes current-horizontal {
-  0%, 6% { transform: translateX(0); opacity: 0; }
-  10% { opacity: 0.56; }
-  47% { opacity: 0.72; }
-  62% { transform: translateX(calc(100vw + 520px)); opacity: 0; }
-  100% { transform: translateX(calc(100vw + 520px)); opacity: 0; }
-}
-
-@keyframes current-vertical {
-  0%, 7% { transform: translateY(0); opacity: 0; }
-  12% { opacity: 0.50; }
-  48% { opacity: 0.68; }
-  64% { transform: translateY(880px); opacity: 0; }
-  100% { transform: translateY(880px); opacity: 0; }
-}
-
-@keyframes glint-pulse {
-  0%, 67%, 100% { opacity: 0; transform: scale(0.4); }
-  73% { opacity: 0.18; transform: scale(0.7); }
-  78% { opacity: 0.82; transform: scale(1.22); }
-  84% { opacity: 0.20; transform: scale(0.88); }
-  89% { opacity: 0; transform: scale(0.5); }
-}
-
-@keyframes drift-a {
-  0% { transform: translate3d(-32px, -18px, 0) scale(0.94); }
-  50% { transform: translate3d(112px, 62px, 0) scale(1.06); }
-  100% { transform: translate3d(210px, -4px, 0) scale(0.98); }
-}
-
-@keyframes drift-b {
-  0% { transform: translate3d(20px, 38px, 0) scale(0.92); }
-  55% { transform: translate3d(-120px, -58px, 0) scale(1.08); }
-  100% { transform: translate3d(-190px, 14px, 0) scale(0.96); }
-}
-
-@keyframes drift-c {
-  0% { transform: translate3d(-70px, 45px, 0) scale(0.92); }
-  50% { transform: translate3d(80px, -38px, 0) scale(1.05); }
-  100% { transform: translate3d(150px, 55px, 0) scale(0.97); }
+@keyframes ambient-drift-flight {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.92);
+    opacity: 0;
+  }
+  16% {
+    opacity: var(--peak);
+  }
+  58% {
+    opacity: var(--peak);
+    transform: translate3d(calc(var(--dx) * 0.58), calc(var(--dy) * 0.58), 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(var(--dx), var(--dy), 0) scale(0.97);
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ambient-drift,
-  .ambient-trace,
-  .ambient-glint,
+  .ambient-runtime-layer {
+    display: none;
+  }
+
   .activity-field,
   .live-packet {
     animation-duration: 1ms !important;
