@@ -1,7 +1,7 @@
 # Open Questions
 
 **Status:** Current canonical unresolved-question register  
-**Last reconciled:** 2026-08-24  
+**Last reconciled:** 2026-08-26  
 **Reconciliation context:** Prototype V0 is complete. Bounded V1 has established the project/object foundations, Project Cockpit, governed persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and the governed autonomous live-experiment launcher. Specification 019 completed its matched system-owned-provenance recommendation/action comparison and remained `FAIL`. Specification 020 then prospectively isolated the `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED` construct and completed 36/36 exact observations with every frozen hard gate passing. The bounded outcome is `BLOCKING_BOUNDARY_SUPPORTED`. Production blocking policy and methodological-context recommendation value remain open.
 
 This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
@@ -437,3 +437,42 @@ model-facing context value
 ```
 
 A methodological-universe gap, a navigation gap, and a downstream reasoning/use gap are distinct failure classes. The leading successor experiment class is a project-state-to-methodological-horizon coverage diagnostic using evolving Foundation-018-aligned state and withholding explicit reasoning-function/action menus from the main reasoner. Exact Specification 022 cases, universe size, oracle, conditions, semantic matching, metrics, thresholds, and advancement outcomes remain open.
+
+---
+
+## Multi-model development and collaboration
+
+### Q-054. How far should governed multi-model collaboration be mechanized?
+
+**Status:** Core collaboration method accepted; further mechanization deliberately open
+
+Development Method v0.5, D-034, Specification 024, and MC-0001 through MC-0003 establish the current human-supervised provider-neutral collaboration method.
+
+Current accepted boundary:
+
+```text
+repository-mediated collaboration
+selective SOLO / REVIEWED / independent-comparative modes
+one task owner + scoped write ownership
+machine-readable per-thread coherence guard
+manual or issue-assisted asynchronous transport
+deferred review with exact immutable targets and explicit gates
+human arbitration for genuine project-intent/consequential choices
+```
+
+The following remain open and should be implemented only when real use justifies them:
+
+```text
+cross-thread dependency metadata and downstream impact discovery
+generated REVIEW_INBOX / inbox-state consistency validation
+secondary-vs-secondary write-surface overlap protection
+machine-readable review-obligation and gate-boundary fields
+stale/superseded deferred-obligation validation
+whether recurring backlog scale eventually justifies stronger orchestration
+```
+
+Unattended scheduled model review is currently deferred rather than accepted. It does not create additional weekly subscription capacity and currently adds unattended write/concurrency, clarification, and budget-consumption risk.
+
+Programmatic OpenAI/Anthropic API orchestration is also deferred. Reopen only when measured manual coordination burden or automated-review value justifies separately metered usage, credentials, context duplication, retries, and orchestration infrastructure.
+
+No Specification 025 is justified yet.

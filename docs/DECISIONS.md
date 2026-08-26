@@ -835,3 +835,90 @@ docs/specifications/023_v1_source_universe_substrate.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 ```
+
+---
+
+## D-034. Adopt governed provider-neutral multi-model development collaboration
+
+**Status:** Accepted  
+**Date:** 2026-08-26
+
+ADS development may use multiple strong AI collaborators under one provider-neutral repository-governed method rather than informal model switching.
+
+The accepted architecture is:
+
+```text
+repository remains project authority
+SOLO work remains first-class
+collaboration is selective and task-scoped
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state write owner at a time
+explicit secondary write surfaces
+machine-readable collaboration-state coherence guard
+GitHub issue / PR transport != authority
+numbered repository messages preserve durable collaboration provenance
+independent-first review uses accepted pre-proposal refs when independence matters
+known contamination is disclosed rather than erased
+deferred review preserves exact targets and named gate boundaries
+human arbitration is reserved for genuine project-intent / consequential choices
+provider-local interaction session IDs such as chatgpt-06 / claude-01
+```
+
+Specification 024 is accepted with final classification:
+
+```text
+COLLABORATION_STATE_GUARD_ACCEPTED
+```
+
+The guard is a coherence mechanism, not authenticated model identity or a distributed lock.
+
+Review/collaboration modes include SOLO, REVIEWED, INDEPENDENT_THEN_COMPARATIVE, COORDINATED_HANDOFF, and ADVERSARIAL_REVIEW. Expensive independent/comparative review is selective rather than mandatory.
+
+When one collaborator is temporarily unavailable, intended review may be deferred only until its explicit gate. The affected review target must be frozen to an exact immutable Git ref. Unrelated bounded work may continue. Review of ancestor X does not imply review of descendant Y.
+
+Unattended scheduled model review and API orchestration are explicitly **not** part of the current accepted method. Both remain deferred until measured coordination burden, write isolation, product capabilities, or economics justify the extra machinery.
+
+### Rationale
+
+The decision was pressure-tested rather than accepted from a single proposal.
+
+```text
+MC-0001
+    ChatGPT proposal + Claude independent/comparative challenge
+    exposed candidate-content leakage and single-global-writer over-coarseness
+
+MC-0002
+    direct Claude implementation review of Specification 024
+    all MC-G01 through MC-G16 satisfied
+
+MC-0003
+    real deferred-review backlog with two simultaneous Claude obligations
+    processed later in priority order with separate exact targets/dispositions
+```
+
+The method produced real marginal value: each model identified substantive weaknesses in the other's initial design, both revised positions, and the first asynchronous catch-up workflow worked without user transcript relay.
+
+Known future mechanization triggers are preserved without premature implementation:
+
+```text
+cross-thread dependency metadata / downstream impact discovery
+review-inbox generation or consistency checking if real drift appears
+secondary-vs-secondary write-surface overlap if simultaneous secondary writers appear
+explicit review-obligation/gate fields if backlog scale justifies schema support
+```
+
+See:
+
+```text
+docs/DEVELOPMENT_METHOD.md version 0.5
+docs/CONTINUITY.md
+docs/model_collaboration/README.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+```
