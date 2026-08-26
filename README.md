@@ -23,7 +23,7 @@ The Source Universe substrate and governed multi-model development method are ac
 Current route:
 
 ```text
-checkpoint            213
+checkpoint            214
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
@@ -33,7 +33,7 @@ Cockpit baseline      Specification 008
 source outcome        SOURCE_SUBSTRATE_ACCEPTED
 latest experiment     Specification 022
 experiment outcome    INCOMPLETE / EXECUTION INTEGRITY FAILED
-current boundary      MC-0004 Phase C G4 randomized ambient-distribution human review
+current boundary      MC-0004 Phase C G4 major-grid glint / cadence human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -136,19 +136,15 @@ Balanced
 Lively
 ```
 
-Human review currently prefers:
-
-```text
-Lively
-```
+Human review currently prefers `Lively` for the current / drift layer.
 
 ---
 
-## Current refinement: randomized spatial distribution
+## Current refinement: major-grid glints with independent quiet cadence
 
-The combined experiment initially reused a small set of fixed current rows/columns and glint positions. Human review correctly noticed the repeated spatial pattern.
+The combined experiment now uses runtime-randomized currents and ambient drift rather than fixed authored coordinates.
 
-The current refinement therefore preserves the mechanisms and cadence while changing their distribution:
+The latest human refinement distinguishes the grid scales and cadence roles:
 
 ```text
 Currents
@@ -160,11 +156,15 @@ Currents
     random distance
     random length
     random timing
+    Quiet / Balanced / Lively cadence remains selectable
+    Lively currently preferred
 
 Glints
     random x and y coordinates
-    both snapped to 20 px
-    therefore always centered on a real grid-line intersection / cell corner
+    both snapped to 100 px MAJOR grid lines
+    therefore appear only at corners of the larger visible grid boxes
+    independent approximately-Quiet scheduler
+    at most two concurrent glints
 
 Ambient drift
     random starting position
@@ -196,11 +196,13 @@ docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_w
 docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
 docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
 docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
+docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
 
 docs/checkpoints/210_grid_world_design_lab_browser_verified_human_review_opened.md
 docs/checkpoints/211_g4_selected_dark_first_ambient_dynamics_review_opened.md
 docs/checkpoints/212_combined_g4_ambient_intensity_human_review_opened.md
 docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
+docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
 ```
 
 ---
@@ -306,9 +308,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/214_g4_major_grid_glints_quiet_cadence_human_review_opened.md
+docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
+frontend/design-lab/grid-dynamics-combined.html
+
 docs/checkpoints/213_g4_randomized_ambient_distribution_human_review_opened.md
 docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
-frontend/design-lab/grid-dynamics-combined.html
 
 docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
 docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
@@ -330,10 +335,11 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 1. pull v1-cockpit-design-exploration locally
 2. keep the existing Vite dev server running
 3. refresh http://localhost:5173/design-lab/grid-dynamics-combined.html
-4. inspect Quiet / Balanced / Lively, especially Lively
-5. verify currents appear across many grid rows and columns
-6. verify glints land on real grid intersections
-7. provide human refine/accept feedback
-8. provisionally settle the grid/world layer when its behavior is satisfactory
-9. then open the next bounded Cockpit design slice
+4. keep currents on Lively for the preferred comparison
+5. verify currents still appear across many grid rows and columns
+6. verify glints appear only on 100 px major-grid intersections / large-box corners
+7. verify glints are approximately Quiet and no longer accelerate with Lively currents
+8. provide human refine/accept feedback
+9. provisionally settle the grid/world layer when its behavior is satisfactory
+10. then open the next bounded Cockpit design slice
 ```
