@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-26  
-**Current checkpoint:** 221  
+**Current checkpoint:** 222  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration base:** `v1-frontend-spike` Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -28,12 +28,12 @@ docs/MAJOR_CHANGES.md             selective structural history
 Current route:
 
 ```text
-checkpoint                        221
+checkpoint                        222
 active development branch        v1-cockpit-design-exploration
 active PR                        none
 latest specification             Specification 024
 promoted Cockpit baseline        Specification 008
-current boundary                 expanded work-unit grammar human browser review
+current boundary                 focused work-unit grammar convergence human browser review
 source-vault deployment          PAUSED, Course 2 gate unchanged
 ```
 
@@ -117,7 +117,6 @@ Retained generic model:
 
 ```text
 REST
-    clean localized/asymmetric in-box illumination
     narrow asymmetric outward world spill
     no broad circular resting halo
 
@@ -131,24 +130,27 @@ HOVER
     fast entry + smoother slower release
 ```
 
-The current grammar work also preserves:
+Current grammar work preserves:
 
 ```text
 signature edge + signature position along edge
 -> resting-light origin
 ```
 
-and keeps an explicit:
+Human review has now additionally selected:
 
 ```text
-H4 baseline vs Reduced in-box-light comparison
+Reduced in-box light
+    PREFERRED WORKING CONTROL
 ```
+
+Historical H4-baseline evidence remains preserved, but focused grammar experiments should default to Reduced.
 
 ---
 
-# Current Slice 02B: expanded work-unit category grammar
+# Current Slice 02B: focused work-unit category grammar
 
-First-round evidence:
+## First-round route
 
 ```text
 docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
@@ -157,9 +159,6 @@ docs/checkpoints/218_work_unit_visual_grammar_browser_experiment_human_review_op
 docs/checkpoints/219_work_unit_grammar_preliminary_review_claude_ideation_requested.md
 docs/checkpoints/220_work_unit_grammar_h4_control_corrected_claude_ideation_ready.md
 frontend/design-lab/work-unit-grammar.html
-frontend/design-lab/work-unit-grammar.css
-frontend/design-lab/work-unit-grammar-lighting-controls.css
-frontend/design-lab/work-unit-grammar.js
 ```
 
 First-round candidates:
@@ -212,6 +211,12 @@ C7  Compact Marker Rail
 C8  Scientific Marker Family
 ```
 
+Research 048 added:
+
+```text
+C9 Inner Instrument Architecture
+```
+
 No artificial candidate-count cap was applied.
 
 ## Expanded executable round
@@ -222,7 +227,7 @@ Governing synthesis:
 docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
 ```
 
-Current checkpoint:
+Checkpoint:
 
 ```text
 docs/checkpoints/221_claude_work_unit_ideation_ingested_expanded_browser_review_opened.md
@@ -234,18 +239,6 @@ Browser route:
 frontend/design-lab/work-unit-grammar-expanded.html
 frontend/design-lab/work-unit-grammar-expanded.css
 frontend/design-lab/work-unit-grammar-expanded.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-grammar-expanded.html
-```
-
-Exact browser implementation head before routing-only documentation:
-
-```text
-32883ada35506a713a7c780beca08f363ba29fab
 ```
 
 Expanded matrix:
@@ -273,23 +266,97 @@ Batch D · Integrated candidates
     I2 W4 + Scientific Marker
 ```
 
-`S3 Inner Instrument Architecture` is the ChatGPT synthesis addition covering the underexplored inner-frame channel without introducing live-looking content.
+## Human expanded-round evidence
 
-Current controls:
-
-```text
-Category strip / Project scene
-H4 baseline / Reduced
-All / Glyph / Structure / Surface / Integrated presentation filters
-Reduced motion
-```
-
-Presentation filtering does not alter candidate status:
+Rejected:
 
 ```text
-hidden != rejected
-batching != rejection
+bare Q / I / V / M / E letters
+G2 Compact Marker Rail
+S3 Inner Instrument Architecture / symbol direction
 ```
+
+Leading:
+
+```text
+G3 Scientific Marker Family
+M1 Material Language Family
+M1 Evaluation micro treatment
+Reduced in-box light
+```
+
+Secondary comparator:
+
+```text
+G1 Instrument Glyph Family
+```
+
+Direct human shape evidence:
+
+```text
+upper-right cut   positive
+upper-left cut    awkward
+```
+
+## Focused convergence round
+
+Governing research:
+
+```text
+docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
+```
+
+Current checkpoint:
+
+```text
+docs/checkpoints/222_focused_work_unit_grammar_convergence_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-grammar-focused.html
+frontend/design-lab/work-unit-grammar-focused.css
+frontend/design-lab/work-unit-grammar-focused.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-grammar-focused.html
+```
+
+Focused matrix:
+
+```text
+F0  Scientific Marker Control
+F1  Upper-right Cut Control
+F2  Scientific Marker + M1 Material
+F3  Scientific Marker + Micro-Lumen
+F4  True Shape Family
+F5  True Shape + M1 Material
+F6  True Shape + Micro-Lumen
+F7  Instrument Glyph Comparator
+```
+
+Current true-shape family:
+
+```text
+Question        upper-right diagonal cut
+Investigation   right-edge inward notch
+Validation      raised / tab-like top geometry
+Model           stepped bottom-right geometry
+Evaluation      right-side beveled termination
+```
+
+Working shape rule under test:
+
+```text
+preserve complete left reading edge
+allow stronger top / right / bottom silhouette variation
+```
+
+Micro-Lumen generalizes the especially positive M1 Evaluation internal light-like treatment while keeping global H4 rest light Reduced.
 
 Preserved deferred candidates:
 
@@ -302,9 +369,9 @@ Current evidence state:
 
 ```text
 Claude ideation             COMPLETE
-ChatGPT synthesis           COMPLETE
-expanded browser round      IMPLEMENTED
-human expanded review       OPEN
+expanded browser review     PARTIALLY RESOLVED
+focused convergence round   IMPLEMENTED
+human focused review        OPEN
 production promotion        NOT AUTHORIZED
 ```
 
@@ -328,7 +395,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest   Claude divergent ideation    faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current  expanded browser human review
+Current  focused F0-F7 human review
 ```
 
 No model-collaboration obligation is currently pending.
@@ -340,7 +407,7 @@ No model-collaboration obligation is currently pending.
 ```text
 choose one design question
 inspect real references if useful
-build bounded browser variants
+build browser variants
 hold unrelated variables constant
 human compares
 record prefer/reject/combine/refine
