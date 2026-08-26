@@ -1,386 +1,757 @@
 # Vision
 
+**Status:** Current canonical system vision  
+**Last reviewed:** 2026-08-23  
+**Authority:** Canonical high-level product/system direction. Detailed rationale and narrower design contracts live in the referenced foundations, decisions, research memos, specifications, checkpoints, and current-state documents.
+
 ## Purpose
 
-The Autonomous Data Science System project aims to design a more rigorous way to conduct data science with large language models than a single end-to-end conversational workflow.
+The Autonomous Data Science System project aims to build a more rigorous, adaptive, reusable, and professionally navigable way to conduct data science with large language models than a single end-to-end conversational workflow.
 
-Modern LLMs can already perform substantial portions of a data project: inspect a dataset, write code, run analyses, perform exploratory data analysis, preprocess data, choose baseline models, fit multiple model classes, validate and compare models, evaluate results, generate predictions, and write reports.
+Modern LLMs can already perform substantial parts of a data-science project. They can inspect data, write and execute code, propose analyses, fit models, interpret results, compare alternatives, and produce reports.
 
-That capability is powerful, but it does not imply that giving one LLM a broad task such as "complete this data project from A to Z" produces the best possible scientific or engineering process.
+That capability is the starting point, not the problem statement.
 
-The project begins from the observation that data science contains many interacting decisions. A model can make a choice that is technically defensible but poorly suited to the project, overlook a relevant alternative, accept an assumption too quickly, interpret a pattern incorrectly, use an evaluation design that does not match deployment, fail to revisit earlier work after a later discovery, or generate a polished answer without enough empirical support.
+The higher-level question is:
 
-The goal is therefore to improve the **structure of the reasoning process itself**.
+> **Which parts of high-quality data-science process navigation should remain flexible LLM reasoning, which should become explicit system-managed memory or deterministic guarantees, which should be reusable across projects, and where should human judgment remain authoritative?**
 
-## Working vision
+The system exists to make the process itself more reliable, inspectable, reusable, and easier to navigate across substantial projects without building unnecessary machinery around tasks a strong simpler workflow already handles well.
 
-The intended system is a rigorous, adaptive, semi-autonomous environment that can manage a data science project as a scientific process rather than as one long sequence of LLM responses.
+---
 
-A mature version should be able to:
+## Working purpose
 
-- understand the project objective and intended use of predictions;
-- characterize the dataset and the data-generating or collection process;
-- identify relevant risks, assumptions, and unanswered questions;
-- determine which analytical investigations are relevant to the specific project;
-- plan and execute code-based experiments;
-- compare reasonable alternatives rather than prematurely selecting one approach;
-- distinguish claims supported by evidence from hypotheses or judgment;
-- challenge important conclusions through review or independent analysis;
-- revisit earlier stages when new findings change the interpretation of the problem;
-- involve the human when goals, semantics, trade-offs, or other consequential judgments require human input;
-- preserve decisions, assumptions, evidence, rejected alternatives, and unresolved questions;
-- control the depth and cost of analysis according to the needs of the project;
-- produce reproducible code, experiments, reports, and final artifacts;
-- and learn from completed projects by extracting generalizable improvements into the system itself.
+The current working purpose is:
 
-## Primary purpose: the best process for the particular project
+> **Create the best defensible data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, risk, and desired human involvement, while maintaining non-negotiable methodological integrity.**
 
-The project adopts the following working purpose:
+The system therefore does not optimize one universal objective such as maximum predictive performance, maximum automation, maximum analytical breadth, minimum cost, or minimum completion time.
 
-> **The system should create the best data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, and desired level of human involvement.**
+Different projects may legitimately prioritize different combinations of:
 
-This rejects the idea that every project should optimize the same universal objective.
+```text
+predictive or inferential quality
+reliability
+interpretability
+learning value
+speed
+cost
+reproducibility
+production readiness
+reporting depth
+human control
+analytical breadth
+```
 
-Maximum predictive performance, maximum automation, maximum analytical depth, minimum cost, and maximum speed can all be valuable, but none is automatically the highest-level objective for every project.
+Project-relative optimization occurs inside validity, admissibility, and assurance boundaries. User preference may change how much work is performed or how it is presented, but it should not silently make invalid methodology acceptable.
 
-A portfolio project may prioritize learning value, technical breadth, and detailed reporting. A production project may prioritize reliability, maintainability, latency, and deployment readiness. A rapid exploratory project may prioritize speed. A research-oriented project may prioritize robustness, uncertainty analysis, and methodological depth.
+---
 
-The system should therefore adapt the process to project intent rather than forcing every project through the same notion of success.
+## The LLM is a component of the system, not the whole system
 
-Configurability should operate inside non-negotiable boundaries. Project priorities may change the amount and type of work, but should not make invalid or impermissible methodology acceptable.
+The current system-level abstraction is:
 
-## Project intent as a structured concept
+```text
+PROJECT INTENT
+      |
+      v
+ADS-OWNED PROJECT STATE
+      |
+      +----------------------+----------------------+
+      |                      |                      |
+      v                      v                      v
+methodological          deterministic          provenance /
+knowledge               controls               governance
+      |                      |                      |
+      +----------------------+----------------------+
+                             |
+                             v
+                  bounded methodological horizon
+                             |
+                             v
+                    selective context
+                             |
+                             v
+                      LLM reasoning
+                             |
+                             v
+                    tools / execution
+                             |
+                             v
+                         evidence
+                             |
+                             v
+                    updated project state
+                             |
+                             v
+                  continue / stop / ask human
+```
 
-A promising conceptual direction is to distinguish several kinds of project instructions rather than compressing them into one vague mode.
+The LLM should remain the flexible reasoning engine where interpretation, synthesis, planning, hypothesis generation, semantic understanding, trade-offs, and open-ended judgment matter.
 
-Possible categories include:
+The surrounding system may own responsibilities that benefit from explicit persistence, provenance, reproducibility, deterministic enforcement, bounded retrieval, selective context construction, or durable project semantics.
 
-- **objectives**, describing what the project should prioritize;
-- **constraints**, describing limits the project must operate under;
-- **deliverables**, describing the outputs that must be produced;
-- **human-control preferences**, describing how and when the system should involve the user.
+The useful boundary must be discovered empirically rather than assumed.
 
-Named modes such as `QUICK`, `STANDARD`, or `RESEARCH` may later be useful as presets, but they should probably map to a richer project-intent profile rather than define the underlying architecture.
+Primary source:
 
-The project has also identified a potentially important distinction between project-level objectives, model-level objectives, and operational objectives. These can conflict, so a mature system should avoid reducing all project success to a single model metric.
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+```
 
-These ideas are currently strong design hypotheses, not finalized schemas or implementation commitments.
+---
 
-## Emerging project constitution
+## The strongest empirical constraint from Prototype V0
 
-The project has moved beyond the idea of one flat methodological quality floor.
+Prototype V0 directly tested one explicit architecture against strong simpler controls and produced a strong falsification signal against the tested P0 design.
 
-A stronger current hypothesis is that each project operates inside a broader constitution with conceptually distinct layers:
+The most important architectural lesson is:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Persistent project memory and reusable methodological knowledge remain central hypotheses.
+
+What should not be carried forward unchanged is P0's expensive pattern of repeatedly serializing large structured state, broad relation/frontier context, path-sensitive activation machinery, and generic recursive reopening logic into the reasoning loop when a strong simpler baseline achieved nearly the same semantic result at far lower cost.
+
+The system should therefore prefer selective context assembly and mechanism-specific evidence over large always-on orchestration machinery.
+
+Authoritative V0 evidence:
+
+```text
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+prototype_v0/README.md
+```
+
+---
+
+## Target product experience
+
+The intended product is a **professional interactive data-science operating environment** rather than a one-shot analysis generator or a prettier chat interface.
+
+A user should be able to provide project material such as:
+
+```text
+project brief
+README / documentation
+datasets
+existing notebooks or code
+business/domain material
+other relevant artifacts
+```
+
+and enter a persistent project environment in which the system helps maintain:
+
+```text
+project intent and definitions
+questions and unresolved ambiguity
+methodological options
+recommendations and required concerns
+investigations and runs
+evidence and findings
+claims and decisions
+provenance and history
+artifacts and deliverables
+living report content
+```
+
+Conversation remains important, but consequential project meaning should not exist only inside a transcript.
+
+The product should expose data-science objects and methodological state directly so the user can inspect, challenge, approve, reject, redirect, and deepen the work.
+
+Primary sources:
+
+```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+```
+
+---
+
+## Project Cockpit as the current primary active-work direction
+
+The current product direction uses the **Project Cockpit** as the promoted V1 primary immersive active-work model.
+
+The Cockpit combines:
+
+```text
+living project-process map
++
+native system interaction
++
+spatial focus into real analytical workspaces
+```
+
+The user should be able to move from the project map into Data, EDA, Validation, Features, Modeling, Evaluation, evidence, decisions, and other deep work while retaining the feeling of one continuous project environment.
+
+Direct specialist views remain useful as alternative inspection, entry, and record paths. They should reuse the same substantive analytical modules rather than becoming separate implementations.
+
+The Cockpit is a derived project-process projection. It should not collapse all of these into one graph:
+
+```text
+project process / reasoning map
+data and artifact lineage
+methodological knowledge relations
+event history
+```
+
+Specification 008 is the promoted interaction contract. It includes bounded 2D navigation, geometric zoom and recovery, native laptop pinch capability, viewport-aware orientation, scalable Jump/search, compact immersive chrome, collision-safe floating surfaces, true fullscreen, URL-addressable focus state, keyboard accessibility, reduced-motion support, and restrained world-owned ambient depth.
+
+Checkpoint 130 records later bounded normal-window/pinch polish that is accepted as good enough to continue. Final visual identity, canvas/gesture libraries, auto-layout, semantic zoom, minimap, final stage taxonomy, final URL contract, production project-search backend, final frontend stack, and final chart library remain intentionally open.
+
+Primary source:
+
+```text
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+```
+
+---
+
+## The project should be organized around scientific meaning, not a rigid pipeline
+
+Conventional areas such as:
+
+```text
+Data
+EDA
+Validation
+Features
+Models
+Experiments
+Evaluation
+Report
+```
+
+remain useful user-facing workspaces and orientation structures.
+
+They should not define one mandatory one-way project pipeline.
+
+The underlying process is expected to be iterative:
+
+```text
+Question
+    -> Investigation
+    -> Run
+    -> Evidence
+    -> Finding
+    -> Claim / Decision
+    -> changed project state
+    -> new or reopened Questions when warranted
+```
+
+A later discovery may invalidate or weaken earlier evidence, alter project semantics, or make a previously irrelevant methodological concern important.
+
+The project model therefore distinguishes Objects, Relations, Events, and Views rather than treating stages as independent backend silos.
+
+Primary source:
+
+```text
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+---
+
+## Methodological navigation is the central intelligence problem
+
+The hardest long-term problem is not mechanically computing a histogram, fitting a Random Forest, or running a statistical test.
+
+It is deciding, given the current project state:
+
+```text
+what questions matter?
+what methods or investigations exist?
+which are applicable?
+which are relevant?
+which should be recommended now?
+which are required for validity?
+which are redundant or low value?
+what context is still missing?
+what should be deferred?
+what evidence is sufficient?
+what changed enough to require re-evaluation?
+when should the system stop?
+when should the human be involved?
+```
+
+The current relevance architecture is:
+
+```text
+KNOWN
+    -> APPLICABLE
+    -> RELEVANT
+    -> RECOMMENDED
+    -> REQUIRED / BLOCKING
+```
+
+A large global methodological knowledge universe should be narrowed into a bounded project-specific **MethodologicalHorizon** before detailed prioritization and reasoning context are assembled.
+
+The user should be able to distinguish at least:
+
+```text
+what the system knows
+what is applicable
+what is unresolved because context is missing
+what is task-relevant
+what is recommended
+what is required
+what was omitted or deferred and why
+```
+
+Primary source:
+
+```text
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+```
+
+---
+
+## Reusable methodological knowledge should be explicit but not rigid
+
+The long-term intellectual asset may be an explicit, governed representation of reusable data-science reasoning rather than any particular LLM provider, agent framework, or database.
+
+Current promoted concepts include:
+
+```text
+KnowledgeAsset
+KnowledgeComponent
+NarrativeFacet
+KnowledgeRelation
+Conditional KnowledgeRule
+KnowledgeCollection
+ExecutionCapability
+```
+
+Important separations include:
+
+```text
+intrinsic knowledge kind != reasoning function
+asset != component != narrative facet
+static semantic relation != conditional methodological rule
+retrieval cue != applicability predicate != required context != project relevance
+methodological meaning != software implementation
+global knowledge != project-specific state
+internal representation != human-facing workflow/tree
+```
+
+The system should be structured where structure improves reliability, provenance, governance, retrieval, or deterministic behavior, and retain narrative/flexible reasoning where formalization would be brittle or artificial.
+
+Primary source:
+
+```text
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+```
+
+---
+
+## Retrieval, horizon construction, and selective context are separate responsibilities
+
+Current V1 evidence supports an explicit staged boundary rather than one monolithic knowledge call:
+
+```text
+accepted global methodological knowledge
+    -> retrieval candidates
+    -> explained MethodologicalHorizon
+    -> applicability / missing-context handling
+    -> task-specific relevance selection
+    -> exact MethodologicalContextPack
+```
+
+The first production lexical channel passed its frozen lexical benchmark. An exact dense comparator demonstrated complementary semantic signal rather than replacement of lexical retrieval. A bounded RRF comparator preserved both measured semantic signals. The first MethodologicalHorizon then validated accepted-current one-hop relation expansion and three-valued applicability with the executable invariant:
+
+```text
+unknown != false
+```
+
+The first RH-C selector subsequently demonstrated that, on a deliberately wide ten-asset Horizon, explicit task reasoning functions plus bounded `REQUIRES_CONCEPT` support could preserve all frozen required exact revisions while reducing canonical model-facing context by approximately 65% to 84%.
+
+The important architecture is:
+
+```text
+SYSTEM
+    may retain wider project/methodological state
+    may retain omission and audit evidence
+
+MODEL-FACING CONTEXT
+    receives only selected exact methodological revisions
+```
+
+Specification 013 v1.0 accepts this bounded seam.
+
+This does **not** establish that reasoning functions solve general relevance or that the benchmark budget is universal. Specification 014 now provides the first bounded downstream evidence that selective exact-revision context can preserve measured real-model reasoning obligations while materially reducing provider input-token burden; broader generalization remains open.
+
+Primary evidence:
+
+```text
+docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
+experiments/retrieval/V1_SELECTIVE_CONTEXT_RESULT.md
+```
+
+---
+
+## First downstream evidence for selective model-facing context
+
+The first frozen real-model comparison now supports the selective-context direction beyond mechanical serialization size.
+
+Specification 014 / Checkpoint 146 observed:
+
+```text
+SELECTIVE aggregate quality      1.000000
+FULL_HORIZON aggregate quality   1.000000
+SELECTIVE/FULL input-token ratio 0.334379
+aggregate input-token reduction  66.56%
+critical-obligation regressions  none
+```
+
+The result is consistent with the post-V0 design rule that broader methodological/project state may belong in the system without belonging in every model prompt. It also observed more unexpected methodological-basis expansion under FULL_HORIZON, but no measured quality loss on the frozen rubric. Harder recommendation/action tasks are therefore required before claiming that additional context is generally distracting or harmful.
+
+Accepted continuation is:
+
+```text
+explained MethodologicalHorizon
+    -> selective exact-revision MethodologicalContextPack
+    -> ADS-owned ReasoningRuntime
+```
+
+Open questions move downstream toward recommendation strength, REQUIRED/BLOCKING transitions, task-profile derivation, broader semantic relevance, and project-level action consequences.
+
+---
+
+## Evidence requirements and methods are different things
+
+A recurring design conclusion is:
+
+```text
+what must become known or demonstrated
+    !=
+which method can produce that evidence
+```
+
+For example, the project may need to understand a variable's empirical distribution without requiring a histogram specifically. A project may need deployment-representative evaluation evidence without prescribing one universal validation algorithm.
+
+This separation allows the system to reason about alternatives and avoid turning methodological requirements into rigid recipes.
+
+---
+
+## Deterministic software and agent reasoning should be used selectively
+
+The system should not turn every responsibility into an LLM or agent task.
+
+Prefer deterministic software where the requirement can be expressed reliably as:
+
+```text
+typed application logic
+database integrity
+explicit rule evaluation
+reproducible execution
+permission/control logic
+mechanical validation
+exact revision validation
+canonical serialization
+```
+
+Use LLM/agent reasoning where genuine ambiguity, interpretation, synthesis, prioritization, or open-ended judgment makes it valuable.
+
+This principle also applies to agent architecture itself. Begin with one capable reasoner plus bounded context and well-defined tools. Add specialist agents only when evaluation demonstrates that the simpler design is insufficient.
+
+Agent frameworks, MCP, AG-UI, A2A, and runtime checkpointing are infrastructure/interoperability mechanisms. They must not become the authority for ADS project objects or methodological semantics.
+
+Current runtime decision:
+
+```text
+OpenAI Agents SDK
+    behind an ADS-owned ReasoningRuntime port
+```
+
+Direct model calls remain the fallback/reference path. LangGraph remains a future stronger-durability escalation path. No final LLM provider/model or multi-agent architecture is selected.
+
+Primary sources:
+
+```text
+docs/PRINCIPLES.md, P-027 through P-029
+docs/DECISIONS.md, D-032
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+```
+
+---
+
+## Human involvement should be selective and valuable
+
+The goal is not complete human removal.
+
+Human involvement should depend on factors such as:
+
+```text
+project intent
+semantic ambiguity
+risk and consequence
+admissibility
+authority
+uncertainty
+reversibility
+cost
+user preference
+```
+
+The system should automate routine, well-defined work where appropriate while preserving strong human control over goals, definitions, consequential trade-offs, domain clarification, approvals, critique, and intervention.
+
+Guided, semi-autonomous, and more autonomous interaction remain useful product concepts, but the final autonomy/escalation policy is still open.
+
+---
+
+## Project memory, LLM context, and historical provenance are distinct
+
+A mature project may contain large amounts of durable information:
+
+```text
+facts
+Definitions
+Questions
+Assumptions
+Investigations
+Runs
+Evidence
+Findings
+Claims
+Decisions
+artifacts
+knowledge revision references
+history
+```
+
+That information may be necessary for project reconstruction without being relevant to every reasoning call.
+
+The system should therefore support:
+
+```text
+large persistent memory
+    +
+bounded project-specific retrieval
+    +
+explained methodological horizon
+    +
+selective task-specific context assembly
+```
+
+Consequential reasoning should preserve enough provenance to identify which project state and methodological knowledge revisions influenced it.
+
+The RH-C gate established the mechanical context boundary, and Specification 014 / Checkpoint 146 now provide the first real-model downstream evidence: the selective condition preserved every frozen obligation while reducing aggregate provider input tokens by 66.56% relative to the compact full-Horizon control. This remains bounded evidence rather than a universal context-budget or provider/model conclusion.
+
+---
+
+## Professional developer workflow should remain first-class
+
+ADS should complement, not replace, the professional developer workbench.
+
+Current conceptual responsibility split:
+
+```text
+Autonomous Data Science System
+    project/process control and reasoning environment
+
+VS Code
+    developer workbench
+
+Python / containers / local or remote compute
+    execution plane
+
+Git + GitHub
+    source versioning, collaboration, and code provenance
+```
+
+Generated project code should remain ordinary, readable, reproducible, independently runnable code.
+
+System-triggered execution and manual execution should preferentially share the same reproducible run contract.
+
+If the ADS interface disappeared, the resulting project repository should still be a credible professional data-science project.
+
+Primary source:
+
+```text
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+```
+
+---
+
+## Admissibility, epistemic integrity, and risk-sensitive assurance remain part of the long-term constitution
+
+The project continues to distinguish conceptually:
 
 ```text
 Admissibility
     -> Epistemic integrity
     -> Risk-sensitive assurance
-    -> Project optimization
+    -> Project-relative optimization
 ```
 
-Hard external project constraints may cut across these layers.
-
-### Admissibility
-
-Admissibility concerns whether a data use, action, analysis, deployment, or intended application is permitted or acceptable under relevant legal, ethical, privacy, policy, safety, organizational, and explicit user constraints.
-
-This is distinct from methodological validity. An analysis can be statistically and computationally excellent while still being impermissible.
-
-The exact scope and decision authority of this layer remain open.
-
-### Epistemic integrity
-
-A strong current design hypothesis is that the methodological core may be organized around five invariants:
-
-1. **Semantic validity** - the analysis must answer the right project question.
-2. **Information legitimacy** - each analytical step may use only information legitimately available to it under the represented conditions.
-3. **Evidence validity** - the procedure, assumptions, execution, and uncertainty treatment must validly generate evidence about the question.
-4. **Claim validity** - the content, strength, scope, and certainty of conclusions must not exceed what the evidence and assumptions justify.
-5. **Traceability and dependency integrity** - consequential results and claims must be reconstructable and connected to the upstream assumptions, data, procedures, and decisions on which they depend.
-
-These five invariants have been conceptually stress-tested across several project types but are not yet a finalized specification.
-
-### Risk-sensitive assurance
-
-Risk may determine how much verification is required before a conclusion is trusted or an action is taken.
-
-A low-risk exploratory analysis and a consequential production system may obey the same epistemic principles while requiring very different levels of review, replication, robustness testing, subgroup analysis, human approval, monitoring, documentation, or fallback planning.
-
-The exact risk and assurance model remains open.
-
-### Project optimization
-
-Only within the admissible and methodologically defensible region should the system optimize project-relative priorities such as predictive quality, learning value, speed, interpretability, report depth, simplicity, compute cost, human effort, production readiness, and exploration breadth.
-
-A candidate principle is that when hard validity requirements conflict with project objectives, the system should reduce the scope or strength of the deliverable rather than silently lower integrity.
-
-This candidate principle still requires testing before formal promotion.
-
-## Not simply a collection of agents
-
-The project is not based on the assumption that adding more agents automatically produces better data science.
-
-A weak multi-agent system could simply generate several opinions and then ask another LLM to summarize them. That would reproduce many of the same weaknesses as a single-LLM workflow while adding cost and complexity.
-
-The intended value should come from the combination of:
-
-- explicit responsibilities;
-- structured project state;
-- reusable data science knowledge;
-- empirical execution;
-- deterministic or rule-based safeguards where appropriate;
-- review and disagreement mechanisms;
-- evidence requirements;
-- provenance;
-- and carefully chosen human decision points.
-
-The LLMs are components of the system, not the system itself.
-
-## A scientific-process perspective
-
-A useful conceptual framing is:
-
-> **An AI-managed scientific process for data projects.**
-
-The system should repeatedly move through a pattern such as:
+The current epistemic core is organized around strong hypotheses concerning:
 
 ```text
-question
-  -> investigation
-  -> execution
-  -> evidence
-  -> interpretation
-  -> review
-  -> decision
-  -> updated project state
-  -> new questions when necessary
+semantic validity
+information legitimacy
+evidence validity
+claim validity
+traceability and dependency integrity
 ```
 
-This is intentionally different from a rigid sequence such as:
+The exact admissibility model, assurance model, uncertainty representation, review policy, and system-wide completion criteria remain open and should be developed through later evidence rather than prematurely frozen.
+
+These unresolved areas remain visible in:
 
 ```text
-EDA -> preprocessing -> modelling -> evaluation -> report
+docs/OPEN_QUESTIONS.md
 ```
 
-Those conventional stages remain useful organizational concepts, but they should not constrain the reasoning process. A finding during error analysis may require new EDA. A validation failure may require redefining the split strategy. A newly discovered repeated-entity structure may require group-aware validation. A production assumption may change the correct missing-data strategy. The system therefore needs to support iteration and backward movement.
+---
 
-## Questions and claims as possible primary orchestration objects
+## Evaluation must test both scientific behavior and system value
 
-The project now has a strong hypothesis that analytical questions and claims may be more fundamental than models or pipeline stages.
+The project should not evaluate success only through final predictive performance.
 
-Conceptually:
+Relevant system qualities include:
 
 ```text
-project
-  -> important questions
-  -> candidate investigations
-  -> evidence
-  -> claims and decisions
-  -> new questions
+methodological coverage
+critical omissions
+unnecessary work
+claim/evidence integrity
+reproducibility
+repair after changing evidence
+human reminders/interventions required
+resource use
+context cost
+recommendation quality
+project navigation quality
+professional usability
+accessibility
 ```
 
-This perspective could allow the system to distinguish project-defining questions, validity questions, and optional value-improving questions, and to track whether important questions are open, assumed, supported, disputed, inconclusive, blocked, invalidated, or closed.
-
-The exact question representation and state model remain undecided.
-
-## Project diversity as a central design problem
-
-Different data science projects require different questions, assumptions, methods, and validation structures.
-
-Examples include:
-
-- ordinary IID tabular classification;
-- regression;
-- highly imbalanced classification;
-- grouped or repeated-entity data;
-- temporal prediction and forecasting;
-- panel data;
-- sequence modelling;
-- recommender systems;
-- causal analysis;
-- image or text modelling;
-- probabilistic modelling;
-- and many other specialized settings.
-
-Even apparently small topics can contain many conditional branches. Missing data is an early example: the appropriate action depends on whether features or labels are missing, whether missingness occurs in production, whether clean validation data can be obtained, whether deleting rows changes the effective population, the type of the variable, the amount and pattern of missingness, and the consequences for downstream evaluation.
-
-The system therefore cannot simply encode one universal project pipeline.
-
-## Working hypothesis: adaptive knowledge and reasoning
-
-A promising direction is a hybrid system in which reusable knowledge structures encode recurring data science considerations, while open-ended reasoning remains available for novel or poorly structured situations.
-
-A possible conceptual cycle is:
+Evaluation should combine methods appropriate to the question:
 
 ```text
-observation
-    -> project fact
-    -> trigger
-    -> relevant investigation or knowledge module
-    -> evidence
-    -> decision
-    -> new project facts
-    -> new triggers
+deterministic assertions
+controlled experiments
+behavioral trajectory analysis
+blinded semantic review
+retrieval/recommendation benchmarks
+cross-platform technical gates
+human product review
+project replay
+real-project regression cases
 ```
 
-This could allow the system to maintain a large universe of possible considerations without executing all of them for every project.
+A mechanism should be removed or simplified when evidence does not justify its complexity.
 
-For example, discovery of a timestamp may activate temporal checks. Repeated entity identifiers may activate grouped validation checks. Missing values may activate a missing-data investigation. Unexpected performance decay over time may activate drift analysis and potentially force reconsideration of the validation design.
+The immediate next experiment should directly test whether selective methodological context earns value at the model-reasoning layer rather than assuming that mechanical compression is sufficient.
 
-This is currently a **design hypothesis**, not a selected implementation architecture.
+---
 
-## Three broad forms of reasoning
+## Current V1 implementation boundary
 
-The initial design discussion suggests that a mature system may need to combine three broad forms of knowledge or reasoning.
+The project has moved beyond purely conceptual design, but V1 remains deliberately bounded.
 
-### 1. Hard constraints
+Accepted V1 boundaries currently include:
 
-Some practices should not depend on LLM creativity once their conditions are known.
+```text
+D-028
+    SQLite-centered local-first operational persistence
 
-Examples include preventing test-set information from leaking into training preprocessing, preserving temporal ordering where future information would otherwise leak backward, and avoiding repeated model selection on a final test set.
+D-029
+    SQLAlchemy Core + Alembic
 
-### 2. Explicit decision frameworks
+D-030
+    pyproject.toml + uv + committed uv.lock + uv_build
 
-Many questions do not have one universal answer, but the relevant considerations are known.
+D-031
+    JSON + JSON Schema + semantic validation
+    + deterministic knowledge interchange
 
-Missing-data handling is a good example. The system can explicitly represent the questions that should be asked, evidence that should be collected, reasonable strategies, and conditions under which different strategies become appropriate.
+D-032
+    OpenAI Agents SDK behind ADS-owned ReasoningRuntime
 
-### 3. Open-ended reasoning
+Specification 008
+    promoted Project Cockpit interaction architecture
 
-Some project questions cannot realistically be enumerated in advance.
+Specification 012 v1.0
+    accepted first explained MethodologicalHorizon seam
 
-Examples include understanding unusual domain-specific patterns, generating hypotheses for unexplained subgroup behaviour, interpreting surprising relationships, identifying hidden business-process semantics, or determining whether an external event could explain a structural change.
+Specification 013 v1.0
+    accepted first deterministic selective MethodologicalContextPack seam
+```
 
-These situations require flexible reasoning, research, experimentation, and sometimes human input.
+Still deliberately unselected or under evaluation are major areas such as:
 
-The long-term system will probably need all three.
+```text
+final LLM provider/model
+natural-language task -> reasoning-function mapping
+final semantic relevance mechanism
+recommendation / REQUIRED-BLOCKING policy
+final Horizon and context budgets
+production semantic retrieval/fusion stack
+embedding/reranking infrastructure
+final frontend stack promotion
+chart system
+Cockpit canvas/gesture implementation dependencies
+complete project schema
+execution backend at production scale
+artifact storage and job infrastructure
+multi-agent architecture
+```
 
-## Human role
+Current accepted decisions are recorded in:
 
-The objective is not to eliminate the human from the process.
+```text
+docs/DECISIONS.md
+```
 
-A stronger objective is:
+Current implementation and product priorities are recorded in:
 
-> **Use human attention where human judgment creates the most value.**
+```text
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+```
 
-The system should be able to continue autonomously through routine or well-defined work while escalating questions that materially affect the meaning, validity, admissibility, or consequences of the project.
-
-Possible human gates include:
-
-- ambiguous prediction objectives;
-- unclear production conditions;
-- uncertain feature semantics;
-- choices involving business or scientific trade-offs;
-- decisions about acceptable false-positive and false-negative costs;
-- ethical, privacy, legal, or policy considerations;
-- choices among materially different modelling objectives;
-- and situations where evidence remains genuinely inconclusive.
-
-The exact boundary between autonomous and human-controlled decisions remains an open design question.
-
-## Evidence over rhetorical agreement
-
-An important ambition of the system is to reduce the tendency to settle analytical questions through persuasive language alone.
-
-If one reasoning component proposes removing a feature and another component objects, the system should prefer an empirical comparison when the question can be tested. If two preprocessing strategies are plausible, the system should compare them under an appropriate validation design when feasible. If a model appears better, the system should examine whether the improvement is stable, meaningful, and obtained without leakage.
-
-LLM reasoning is useful for proposing hypotheses, identifying risks, interpreting results, and planning experiments. It should not automatically be treated as the final evidence for empirical claims.
-
-## Review and independent criticism
-
-The system should make important conclusions challengeable.
-
-Possible mechanisms include:
-
-- a separate reviewer that inspects methodology rather than merely the final metric;
-- specialized reviews for leakage, validation, statistics, admissibility, or deployment assumptions;
-- proposer-reviewer separation;
-- independent re-analysis that does not receive the original conclusion;
-- and automatic invalidation or rerunning of experiments when methodological flaws are discovered.
-
-The correct amount of review should depend on risk, project depth, and resource budget.
-
-## Persistent project state
-
-A mature system should not depend on remembering a long conversational transcript.
-
-A project state may eventually track concepts such as:
-
-- objective and deployment setting;
-- dataset and data version;
-- assumptions;
-- analytical questions and their status;
-- decisions and rationale;
-- rejected alternatives;
-- experiments and results;
-- validation design;
-- unresolved questions;
-- evidence supporting important claims;
-- claim status and uncertainty;
-- human approvals;
-- invalidated experiments;
-- provenance and dependencies;
-- and current next actions.
-
-The exact storage representation has not been selected.
-
-## Configurable depth and efficiency
-
-A sophisticated system should not equate quality with executing every imaginable analysis.
-
-The system should eventually be able to vary depth according to project needs. A quick exploratory project may need basic checks and a few baselines. A serious research or production project may justify broad ablation studies, independent review, robustness analysis, calibration, subgroup evaluation, and more extensive documentation.
-
-The current direction is that depth should emerge from project intent, resource constraints, risk, uncertainty, and expected analytical value rather than from one rigid universal workflow.
-
-An important related hypothesis is that additional effort should be allocated where it is most likely to improve validity, reduce consequential uncertainty, or change downstream decisions. The system should not spend resources merely because more analysis is possible.
-
-The specific prioritization mechanism remains open.
-
-## Learning from projects
-
-Real projects should play two roles:
-
-1. produce useful project outputs; and
-2. test the current data science system.
-
-When a project reveals that the system missed an important issue, performed unnecessary work, asked the wrong question, or lacked an appropriate reasoning branch, the lesson should be examined for generality.
-
-If generalizable, it should become a reusable improvement such as:
-
-- a new knowledge module;
-- a new trigger;
-- a new review rule;
-- a new test case;
-- a new system constraint;
-- or a revision to an existing decision framework.
-
-This makes system development cumulative rather than project-specific.
-
-## Long-term intellectual asset
-
-The most valuable result may not be a particular orchestration framework or collection of agents.
-
-Models and software frameworks will change. The durable asset could instead be an explicit and executable representation of data science reasoning:
-
-- which questions matter;
-- under which conditions they matter;
-- what evidence is needed;
-- what alternatives should be considered;
-- what common mistakes should be prevented;
-- when one finding should trigger another investigation;
-- how uncertainty should be represented;
-- how claims depend on evidence and assumptions;
-- what actions are admissible;
-- how much assurance risk requires;
-- and when human judgment is required.
-
-This repository is intended to gradually develop that asset.
+---
 
 ## Current boundary of the vision
 
-This document describes the direction of the project, not a final specification.
+The long-term ambition remains broad: a professional autonomous or semi-autonomous data-science system that can navigate heterogeneous projects while preserving methodological integrity, evidence, provenance, human control, and reusable learning.
 
-The next design task is to define the first rigorous conceptual boundary of the **admissibility layer**, including how ethics, privacy, law, safety, organizational policy, explicit user constraints, and external requirements should interact with system reasoning and human escalation.
+The development strategy remains deliberately incremental:
 
-The epistemic-core hypothesis, project-intent model, risk-sensitive assurance model, success criteria, and other system requirements will continue to be tested and refined before a concrete implementation architecture is selected.
+```text
+clarify product/system responsibility
+    -> derive requirements
+    -> compare alternatives
+    -> implement the smallest justified slice
+    -> falsify/test it
+    -> preserve evidence
+    -> promote only what survives
+    -> repeat on harder and broader project situations
+```
+
+The immediate methodological boundary is now a real reasoning vertical slice. It should hold the project/task evidence and model configuration constant while comparing the accepted selective `MethodologicalContextPack` against a strong full-Horizon/simple control. That experiment should measure reasoning quality, exact supplied knowledge revisions, exact model/provider tokens, latency/cost where observable, and whether context omission or context overload creates real failures.
+
+The vision should continue to evolve when experiments, real projects, product testing, or improved model capability show that a responsibility belongs somewhere else.
+
+## Primary durable sources
+
+```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+
+docs/PRINCIPLES.md
+docs/DECISIONS.md
+docs/OPEN_QUESTIONS.md
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+```

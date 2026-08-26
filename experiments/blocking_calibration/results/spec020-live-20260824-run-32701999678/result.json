@@ -1,0 +1,101 @@
+{
+  "advancement_outcome": "BLOCKING_BOUNDARY_SUPPORTED",
+  "benchmark_id": "v1-blocking-calibration-diagnostic-v0.1",
+  "complete_scored_design": true,
+  "counts": {
+    "attempt_records": 36,
+    "failed_attempt_records": 0,
+    "planned_reasoner_outputs": 36,
+    "successful_reasoner_outputs": 36,
+    "validated_observations": 36
+  },
+  "environment": {
+    "execution_mode": "live",
+    "max_output_tokens": 2000,
+    "provider_free_implementation_boundary": false,
+    "python_version": "3.13.15",
+    "reasoning_effort": "medium",
+    "requested_model": "gpt-5.6-sol",
+    "verbosity": "low"
+  },
+  "finished_at_utc": "2026-08-24T07:34:51.565681+00:00",
+  "gate_evaluation": {
+    "aggregate_accuracy_passed": true,
+    "aggregate_exact_disposition_accuracy": 1.0,
+    "all_hard_gates_passed": true,
+    "blocking_joint_pointer_passed": true,
+    "completed": true,
+    "correct_repetitions_by_variant": {
+      "BC-01-BLOCKING": 3,
+      "BC-01-RECOMMENDED": 3,
+      "BC-02-BLOCKING": 3,
+      "BC-02-RECOMMENDED": 3,
+      "BC-03-BLOCKING": 3,
+      "BC-03-RECOMMENDED": 3,
+      "BC-04-BLOCKING": 3,
+      "BC-04-RECOMMENDED": 3,
+      "BC-05-BLOCKING": 3,
+      "BC-05-RECOMMENDED": 3,
+      "BC-06-BLOCKING": 3,
+      "BC-06-RECOMMENDED": 3
+    },
+    "expected_blocked_scope_pointer_accuracy": 1.0,
+    "expected_blocking_joint_pointer_accuracy": 1.0,
+    "expected_blocking_requirement_pointer_accuracy": 1.0,
+    "expected_recommended_null_pointer_correctness": 1.0,
+    "outcome": "BLOCKING_BOUNDARY_SUPPORTED",
+    "pair_polarity_passed": true,
+    "pair_side_correct_repetitions": {
+      "BC-01": {
+        "BLOCKING_REQUIRED": 3,
+        "RECOMMENDED": 3
+      },
+      "BC-02": {
+        "BLOCKING_REQUIRED": 3,
+        "RECOMMENDED": 3
+      },
+      "BC-03": {
+        "BLOCKING_REQUIRED": 3,
+        "RECOMMENDED": 3
+      },
+      "BC-04": {
+        "BLOCKING_REQUIRED": 3,
+        "RECOMMENDED": 3
+      },
+      "BC-05": {
+        "BLOCKING_REQUIRED": 3,
+        "RECOMMENDED": 3
+      },
+      "BC-06": {
+        "BLOCKING_REQUIRED": 3,
+        "RECOMMENDED": 3
+      }
+    },
+    "recommended_null_pointer_passed": true,
+    "structured_validity_passed": true,
+    "variant_majority_passed": true
+  },
+  "overall_frozen_gate_passed": true,
+  "provider_attempts": {
+    "exhausted": false,
+    "maximum": 45,
+    "used": 36
+  },
+  "reasoning_plan_sha256": "b454adc1cb3d57637406f9436eb022019db85827818a0cdfe75eed4258cd2c43",
+  "source_head": "82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a",
+  "specification": "020-v0.1",
+  "started_at_utc": "2026-08-24T07:33:19.776651+00:00",
+  "starting_integration_sha": "b9c9c3a38935983075a9ca88632177980bb20ede",
+  "technical_invariants": {
+    "BC-INV-01_fixture_structurally_valid": true,
+    "BC-INV-02_exact_36_call_plan": true,
+    "BC-INV-03_unique_run_ids": true,
+    "BC-INV-04_unique_nonces": true,
+    "BC-INV-05_no_methodological_context": true,
+    "BC-INV-06_truth_blinded_inputs": true,
+    "BC-INV-07_structured_output_type": true,
+    "BC-INV-08_no_tools_or_cross_call_state": true,
+    "BC-INV-09_application_runtime_import_isolated": true,
+    "BC-INV-10_no_live_runtime_default": true
+  }
+}

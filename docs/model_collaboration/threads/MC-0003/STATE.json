@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0003",
+  "review_mode": "REVIEWED",
+  "lifecycle_state": "CLOSED",
+  "phase": "CLOSED_ACCEPTED",
+  "target": {
+    "branch": "v1-multimodel-development-collaboration",
+    "base_ref": "40e1d317788f976ea2015cdd4a0aeef0cc0a8472",
+    "description": "Design and later review deferred asynchronous review/catch-up semantics without modifying frozen Specification 024.",
+    "write_paths": [
+      "docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md",
+      "docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md",
+      "docs/model_collaboration/REVIEW_INBOX.md",
+      "docs/model_collaboration/threads/MC-0003/BRIEF.md",
+      "docs/model_collaboration/threads/MC-0003/THREAD.md",
+      "docs/model_collaboration/threads/MC-0003/STATE.json"
+    ]
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-06",
+      "roles": ["TASK_OWNER", "RESEARCHER"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-01",
+      "roles": ["REVIEWER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0003/messages/**"]
+    }
+  ],
+  "next_expected_actor": null,
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": null,
+    "known_exposures": [],
+    "notes": "MC-0003 used direct review of the exact frozen ChatGPT candidate target; it was intentionally deferrable and not a blind independent counter-design."
+  },
+  "last_transition": {
+    "transition_id": "mc0003-closed-accepted",
+    "from_state": "WAITING",
+    "to_state": "CLOSED",
+    "actor": "chatgpt",
+    "reason": "Claude completed the deferred catch-up review at commit e8e63faca8f2e181bdc389bf95a915f1d4cc42df. The task owner accepts the protocol, applies the bounded REQUIRED+NONE clarification, preserves F2/F3 as future mechanization triggers, and closes the thread.",
+    "repository_head": "e8e63faca8f2e181bdc389bf95a915f1d4cc42df"
+  }
+}

@@ -30,16 +30,19 @@ A project of this scope cannot safely depend on long chat histories or model mem
 
 ---
 
-## D-003. Keep the repository private for now
+## D-003. Keep the repository private during the early design stage
 
-**Status:** Accepted  
-**Date:** 2026-08-07
+**Status:** Superseded in current repository state; the repository is now public  
+**Date:** 2026-08-07  
+**Superseded in scope:** By 2026-08-20; the exact visibility-change decision/date is not preserved in this decision record
 
-The repository is private during the early design stage.
+The repository was kept private during the early design stage. The current GitHub repository is public, so this early-stage visibility decision no longer describes present repository state.
 
 ### Rationale
 
-The project is highly exploratory and many ideas are intentionally provisional. Public presentation can be reconsidered once the structure and goals are more mature.
+The project was highly exploratory and many ideas were intentionally provisional. Public presentation was explicitly left open for reconsideration once the structure and goals became more mature.
+
+This reconciliation records the observable current visibility without inventing an unpreserved rationale or exact transition date for the later change.
 
 ---
 
@@ -142,9 +145,9 @@ The project is expected to discover better ways to organize knowledge through ac
 
 ## D-011. Do not select the implementation architecture yet
 
-**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, and Python project/dependency tooling by D-030; still applicable to implementation subsystems not yet selected  
+**Status:** Superseded for the V1 persistence/retrieval architecture by D-028, persistence tooling by D-029, Python project/dependency tooling by D-030, reusable-knowledge interchange by D-031, initial reasoning runtime by D-032, and source-universe substrate by D-033; still applicable to implementation subsystems not yet selected  
 **Date:** 2026-08-07  
-**Superseded in scope:** 2026-08-20
+**Superseded in scope:** 2026-08-20, 2026-08-22, and 2026-08-25
 
 The project will not yet choose an agent framework, number of agents, LLM providers, orchestration framework, database, graph technology, rule engine, execution architecture, or other implementation stack.
 
@@ -197,14 +200,17 @@ This turns each project into both an analytical task and a source of system impr
 
 ## D-015. Keep the currently attached learning materials outside the repository for now
 
-**Status:** Accepted for the current stage  
-**Date:** 2026-08-07
+**Status:** Superseded in architectural-uncertainty scope by D-033; durable public-Git exclusion outcome retained  
+**Date:** 2026-08-07  
+**Superseded in scope:** 2026-08-25
 
-The machine learning and time-series/econometrics source materials currently available in the ChatGPT project are not being copied into the GitHub repository yet.
+The machine learning and time-series/econometrics source materials currently available in the ChatGPT project were not copied into the GitHub repository while the project had no accepted external-source architecture.
 
 ### Rationale
 
-The project has not decided how external knowledge sources, course material, references, or derived knowledge modules should be stored permanently. Copying material now would prematurely define a source architecture.
+At the time of this decision, the project had not decided how external knowledge sources, course material, references, or derived knowledge modules should be stored permanently. Copying material then would have prematurely defined a source architecture.
+
+Foundation 021, Specification 023, Checkpoint 196, and D-033 now resolve that architectural uncertainty. The original conservative outcome remains: source binaries do not belong in the public Git repository merely because ADS uses them.
 
 ---
 
@@ -653,4 +659,266 @@ docs/specifications/004_v1_reusable_knowledge_interchange.md
 docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
 experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
 schemas/reusable_knowledge_bundle_v1.schema.json
+```
+
+---
+
+## D-032. Use OpenAI Agents SDK behind an ADS-owned runtime port for the initial V1 reasoning runtime
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-22
+
+The initial V1 reasoning runtime will use **OpenAI Agents SDK** behind an ADS-owned runtime/application boundary.
+
+The validated starting package is:
+
+```text
+openai-agents==0.19.4
+```
+
+The package version is a validated baseline, not a permanent freeze. Upgrades must preserve the runtime contract and receive targeted compatibility validation before replacing the known-good baseline.
+
+The intended boundary is:
+
+```text
+ADS domain / application / methodological services
+        |
+        v
+ADS-owned ReasoningRuntime port
+        |
+        v
+OpenAI Agents adapter
+        |
+        v
+Agent / Runner / RunState / MCP runtime infrastructure
+```
+
+Framework-specific types remain below the adapter boundary. In particular:
+
+```text
+Agent != Project
+RunState != project memory
+SDK session/thread/runtime state != ADS project identity
+SDK tracing != authoritative provenance
+SDK tool definition != the only definition of an ADS ExecutionCapability
+```
+
+ADS continues to own:
+
+```text
+Project and methodological semantics
+MethodologicalContextPack construction
+exact context-pack digest and knowledge revision references
+stale authoritative-context rejection
+human-control and approval policy
+application cancellation policy
+authoritative side-effect idempotency and domain-event persistence
+stable normalized RuntimeTrace / provenance
+runtime-state persistence policy and compatibility checks
+```
+
+The first production runtime remains **single-principal-reasoner first**. This decision does not select a multi-agent architecture.
+
+MCP remains an external tool/resource interoperability boundary. It does not become project memory or ADS's internal application bus.
+
+### Rationale
+
+Specification 005 was executed against three meaningful points in the runtime design space:
+
+```text
+ADS-owned direct model calls
+OpenAI Agents SDK 0.19.4
+LangGraph 1.2.10
+```
+
+The direct-call control proved that ADS can remain framework-independent, but it also exposed the amount of generic orchestration machinery ADS would need to maintain itself: model/tool iteration, approval state, resume serialization, retry/cancellation policy, trace normalization, timeout handling, and related runtime mechanics.
+
+OpenAI Agents SDK 0.19.4 passed all mandatory AR-01 through AR-12 gates on Ubuntu and Windows. It removed meaningful generic plumbing around tool iteration/schema dispatch, approval interruption, serializable/restorable `RunState`, structured output, local stdio MCP, tool timeout, and lifecycle hooks while leaving ADS project, methodological, governance, provenance, and side-effect authority outside the framework.
+
+LangGraph 1.2.10 also passed the complete comparator and demonstrated stronger explicit persisted workflow/checkpoint machinery. However, the current V1 runtime does not yet require a general durable workflow engine strongly enough to justify the additional checkpoint-store lifecycle, workflow topology, adapter dependencies, and explicit interrupt-node replay semantics. ADS still requires an application-level idempotency boundary under LangGraph replay, so the stronger durability does not remove the central domain-side exactly-once rule.
+
+The bakeoff therefore selects the **smallest complete framework candidate that removes meaningful generic runtime burden without taking semantic authority**.
+
+The no-framework direct-call path is retained as an architectural control, fallback, and future escape hatch. LangGraph remains a documented future escalation path if ADS later requires materially stronger long-running workflow durability, checkpoint history/time travel, or independently durable workflow stages.
+
+Microsoft Agent Framework and Google ADK 2.0 are not implemented in the current bakeoff because Research 015 found no current differentiator likely to overturn the selection. This is a stop-rule decision, not a permanent rejection. Reopen those candidates if provider portability, distributed workflow durability, multi-agent collaboration, or another future requirement becomes first-order and is poorly served by the selected runtime.
+
+This decision does **not** select:
+
+```text
+final LLM provider/model
+number of agents beyond single-principal-reasoner first
+multi-agent collaboration architecture
+production durable runtime-state storage schema
+production MCP server catalog
+A2A
+AG-UI final role
+```
+
+See:
+
+```text
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+
+docs/checkpoints/129_direct_model_call_runtime_control_cross_platform_gate_passed.md
+docs/checkpoints/131_openai_agents_complete_runtime_candidate_cross_platform_gate_passed.md
+docs/checkpoints/132_langgraph_durability_comparator_cross_platform_gate_passed.md
+
+experiments/runtime_bakeoff/DIRECT_CALL_CONTROL_RESULT.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
+```
+
+---
+
+## D-033. Use an ADS-owned private source universe substrate for external evidence artifacts
+
+**Status:** Accepted for V1  
+**Date:** 2026-08-25
+
+V1 will preserve external evidence artifacts through an ADS-owned Source Universe substrate that is distinct from reusable methodological knowledge.
+
+The accepted initial architecture is:
+
+```text
+user-controlled private SourceArtifactStore
+    exact immutable source bytes
+    SHA-256 content addressing
+    no filename-based artifact identity
+
+relational Source Registry
+    logical Source identity
+    exact SourceArtifact identity
+    SourceCollection / membership
+    uncertainty-preserving association state
+    locators and ingestion events
+    rights / access metadata
+    bounded derived-artifact lineage
+
+provider-neutral backup / restore
+    deterministic PRIVATE_SNAPSHOT
+    verified exact object payload
+    clean-target restore
+    full integrity audit
+
+public Git repository
+    code, schemas, policies, manifests, safe validation evidence,
+    and explicitly public-safe metadata only
+```
+
+The first storage adapter is a local filesystem content-addressed store behind an ADS-owned `SourceArtifactStore` boundary. The physical vault root is configuration, not domain identity, and the architecture does not depend on that local adapter remaining the final backend.
+
+Source binaries, private observed paths, private registry snapshots, backup payloads, and material with unknown redistribution rights must not be placed in the public repository merely because ADS consumes them.
+
+ChatGPT Library, ChatGPT Project Sources, Google Drive, OneDrive, and similar services may be useful intake, synchronization, backup, or development surfaces. They are not the semantic source authority unless a future explicit architecture decision changes that boundary.
+
+The Source Universe does not itself create accepted methodological knowledge. Source evidence must pass through the separate knowledge extraction, provenance, review, and governance boundaries before reusable methodological authority is created.
+
+### Rationale
+
+Foundation 021 and Specification 023 distinguish logical sources from exact byte artifacts, collection membership from artifact identity, original evidence from rebuildable derived representations, and source support from accepted knowledge.
+
+The provider-free implementation passed the prospectively frozen SU-G01 through SU-G23 gate set on Ubuntu and Windows. The first 20-file VU Amsterdam Machine Learning corpus matched its prospectively recorded hashes, ingested as 20 exact artifacts, preserved fourteen real duplicate re-encounters as extra ingestion events without duplicate artifact rows or stored objects, retained uncertain course associations without strengthening them, passed clean integrity audit, and completed verified backup plus clean restore with exact semantic registry equality and 20/20 restored objects passing integrity verification.
+
+This evidence resolves the source-architecture uncertainty that motivated D-015 while retaining D-015's conservative outcome that educational source binaries do not belong in the public Git repository.
+
+See:
+
+```text
+docs/foundations/021_source_universe_artifact_integrity_and_evidence_provenance.md
+docs/research/034_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+```
+
+---
+
+## D-034. Adopt governed provider-neutral multi-model development collaboration
+
+**Status:** Accepted  
+**Date:** 2026-08-26
+
+ADS development may use multiple strong AI collaborators under one provider-neutral repository-governed method rather than informal model switching.
+
+The accepted architecture is:
+
+```text
+repository remains project authority
+SOLO work remains first-class
+collaboration is selective and task-scoped
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state write owner at a time
+explicit secondary write surfaces
+machine-readable collaboration-state coherence guard
+GitHub issue / PR transport != authority
+numbered repository messages preserve durable collaboration provenance
+independent-first review uses accepted pre-proposal refs when independence matters
+known contamination is disclosed rather than erased
+deferred review preserves exact targets and named gate boundaries
+human arbitration is reserved for genuine project-intent / consequential choices
+provider-local interaction session IDs such as chatgpt-06 / claude-01
+```
+
+Specification 024 is accepted with final classification:
+
+```text
+COLLABORATION_STATE_GUARD_ACCEPTED
+```
+
+The guard is a coherence mechanism, not authenticated model identity or a distributed lock.
+
+Review/collaboration modes include SOLO, REVIEWED, INDEPENDENT_THEN_COMPARATIVE, COORDINATED_HANDOFF, and ADVERSARIAL_REVIEW. Expensive independent/comparative review is selective rather than mandatory.
+
+When one collaborator is temporarily unavailable, intended review may be deferred only until its explicit gate. The affected review target must be frozen to an exact immutable Git ref. Unrelated bounded work may continue. Review of ancestor X does not imply review of descendant Y.
+
+Unattended scheduled model review and API orchestration are explicitly **not** part of the current accepted method. Both remain deferred until measured coordination burden, write isolation, product capabilities, or economics justify the extra machinery.
+
+### Rationale
+
+The decision was pressure-tested rather than accepted from a single proposal.
+
+```text
+MC-0001
+    ChatGPT proposal + Claude independent/comparative challenge
+    exposed candidate-content leakage and single-global-writer over-coarseness
+
+MC-0002
+    direct Claude implementation review of Specification 024
+    all MC-G01 through MC-G16 satisfied
+
+MC-0003
+    real deferred-review backlog with two simultaneous Claude obligations
+    processed later in priority order with separate exact targets/dispositions
+```
+
+The method produced real marginal value: each model identified substantive weaknesses in the other's initial design, both revised positions, and the first asynchronous catch-up workflow worked without user transcript relay.
+
+Known future mechanization triggers are preserved without premature implementation:
+
+```text
+cross-thread dependency metadata / downstream impact discovery
+review-inbox generation or consistency checking if real drift appears
+secondary-vs-secondary write-surface overlap if simultaneous secondary writers appear
+explicit review-obligation/gate fields if backlog scale justifies schema support
+```
+
+See:
+
+```text
+docs/DEVELOPMENT_METHOD.md version 0.5
+docs/CONTINUITY.md
+docs/model_collaboration/README.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 ```

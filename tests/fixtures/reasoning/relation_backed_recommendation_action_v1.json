@@ -1,0 +1,683 @@
+{
+  "benchmark_id": "v1-relation-backed-recommendation-action-value-v0.1",
+  "starting_merge_sha": "6bda0c1efcf078476859b2c2c64fb0586964899d",
+  "specification": "docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md",
+  "research": "docs/research/024_relation_backed_recommendation_action_value_design.md",
+  "knowledge_fixture": "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+  "selective_context_fixture": "tests/fixtures/retrieval/selective_context_v1.json",
+  "randomization_seed": 2026082303,
+  "reasoner_repetitions_per_condition": 3,
+  "conditions": [
+    "GENERIC",
+    "SELECTIVE",
+    "FULL_HORIZON"
+  ],
+  "dispositions": [
+    "BLOCKING_REQUIRED",
+    "RECOMMENDED",
+    "DEFER",
+    "NOT_NOW"
+  ],
+  "reasoner": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "medium",
+    "text_verbosity": "low",
+    "max_output_tokens": 4000,
+    "tools_enabled": false,
+    "previous_response_state": false,
+    "request_fast_or_priority_processing": false,
+    "store": false
+  },
+  "judge": {
+    "provider": "openai",
+    "runtime": "openai-agents",
+    "runtime_version": "0.19.4",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "high",
+    "text_verbosity": "low",
+    "max_output_tokens": 4000,
+    "tools_enabled": false,
+    "condition_blinded": true,
+    "one_judge_call_per_reasoner_output": true
+  },
+  "call_plan": {
+    "planned_reasoner_calls": 36,
+    "planned_judge_calls": 36,
+    "planned_successful_calls": 72,
+    "max_total_provider_attempts": 90,
+    "max_retries_per_planned_call": 1,
+    "retry_only_for": [
+      "TRANSPORT_FAILURE",
+      "PROVIDER_FAILURE",
+      "INCOMPLETE_RESPONSE",
+      "INVALID_STRUCTURED_RESPONSE"
+    ],
+    "preserve_failed_attempts": true,
+    "unique_condition_neutral_nonce_per_request": true,
+    "independently_randomized_judge_order": true
+  },
+  "absolute_gate": {
+    "selective_max_critical_action_omissions": 0,
+    "selective_max_blocking_scope_false_negatives": 0,
+    "selective_max_unsupported_basis_failures": 0,
+    "selective_max_defer_pointer_errors": 0,
+    "selective_max_required_clarification_false_negatives": 0,
+    "selective_min_aggregate_exact_disposition_accuracy": 0.9,
+    "selective_min_per_case_exact_disposition_accuracy": 0.85,
+    "selective_min_aggregate_semantic_score": 0.9,
+    "selective_min_per_case_semantic_score": 0.85
+  },
+  "relative_gate": {
+    "selective_minus_generic_aggregate_exact_accuracy_floor": -0.05,
+    "selective_minus_generic_per_case_exact_accuracy_floor": -0.1,
+    "selective_minus_full_aggregate_exact_accuracy_floor": -0.05,
+    "selective_minus_full_per_case_exact_accuracy_floor": -0.1,
+    "selective_minus_generic_aggregate_semantic_floor": -0.05,
+    "selective_minus_generic_per_case_semantic_floor": -0.1,
+    "selective_minus_full_aggregate_semantic_floor": -0.05,
+    "selective_minus_full_per_case_semantic_floor": -0.1,
+    "selective_critical_omissions_must_not_exceed_generic": true,
+    "selective_blocking_scope_false_negatives_must_not_exceed_generic": true,
+    "selective_under_recommendations_must_not_exceed_generic": true,
+    "selective_required_clarification_false_negatives_must_not_exceed_generic": true,
+    "selective_defer_pointer_errors_must_not_exceed_generic": true
+  },
+  "expansion_gate": {
+    "selective_unnecessary_recommended_cost_must_not_exceed_full": true,
+    "selective_over_recommendations_must_not_exceed_full": true,
+    "selective_blocking_scope_false_positives_must_not_exceed_full": true,
+    "selective_required_clarification_false_positives_must_not_exceed_full": true
+  },
+  "promotion_value_signals": {
+    "minimum_required_signals": 1,
+    "signals": [
+      "SELECTIVE_AGGREGATE_EXACT_ACCURACY_AT_LEAST_0_05_ABOVE_GENERIC",
+      "SELECTIVE_AGGREGATE_SEMANTIC_SCORE_AT_LEAST_0_05_ABOVE_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_CRITICAL_OMISSIONS_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_BLOCKING_SCOPE_FALSE_NEGATIVES_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_UNDER_RECOMMENDATIONS_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_REQUIRED_CLARIFICATION_FALSE_NEGATIVES_THAN_GENERIC",
+      "SELECTIVE_FEWER_TOTAL_DEFER_POINTER_ERRORS_THAN_GENERIC",
+      "SELECTIVE_LOWER_TOTAL_UNNECESSARY_RECOMMENDED_COST_THAN_FULL_HORIZON",
+      "SELECTIVE_FEWER_TOTAL_OVER_RECOMMENDATIONS_THAN_FULL_HORIZON",
+      "SELECTIVE_FEWER_TOTAL_BLOCKING_SCOPE_FALSE_POSITIVES_THAN_FULL_HORIZON"
+    ]
+  },
+  "advancement_outcomes": [
+    "PROMOTE_RELATION_BACKED_RECOMMENDATION_SEAM",
+    "SAFE_BUT_NOT_DIFFERENTIATED",
+    "FAIL"
+  ],
+  "disposition_definitions": {
+    "BLOCKING_REQUIRED": "A current required action. Use only when at least one supplied named downstream scope cannot yet be defended without resolving this action. It is not merely a stronger recommendation. defer_until_id must be null.",
+    "RECOMMENDED": "A currently justified and useful action that is not a required blocker for a supplied downstream scope. defer_until_id must be null.",
+    "DEFER": "The action is already justified or planned, an exact supplied unresolved trigger must occur first, and satisfying that trigger makes the action current next work. defer_until_id must be that exact supplied trigger ID.",
+    "NOT_NOW": "The current objective/state does not materially justify the action and no represented supplied activating trigger establishes that satisfying one current dependency makes it current next work. defer_until_id must be null. Mere possible future usefulness is not DEFER."
+  },
+  "common_reasoner_instruction": "Use only the supplied project evidence, candidate action menu, blocked-scope menu, clarification menu, defer-trigger menu, and any supplied methodological context for project-specific claims. General reasoning is allowed, but do not invent hidden project facts or trigger relations. Treat unknown project context as unknown rather than false. Classify every candidate action exactly once using BLOCKING_REQUIRED, RECOMMENDED, DEFER, or NOT_NOW. BLOCKING_REQUIRED is a current required action whose absence blocks a supplied named downstream scope; it is not merely a stronger recommendation. RECOMMENDED is currently justified and useful but not blocking. DEFER is allowed only when the action is already justified/planned, an exact supplied unresolved trigger must occur first, and satisfying that trigger makes the action current next work; return that exact trigger in defer_until_id. NOT_NOW means the current objective/state does not materially justify the action and no represented supplied trigger activates it as current next work; defer_until_id must be null. BLOCKING_REQUIRED and RECOMMENDED also require null defer_until_id. The possibility that an action could become useful later is not enough for DEFER. Return only blocked scopes, clarification IDs, and defer trigger IDs from the supplied menus. In methodological_basis, list only supplied stable keys that materially support the result; for GENERIC, methodological_basis must be empty. Do not infer recommendation strength solely from selection_reason metadata.",
+  "reasoner_output_schema": {
+    "summary": "string",
+    "action_decisions": "list[{action_id:string, disposition:enum, defer_until_id:string|null, rationale:string}]",
+    "blocked_scopes": "list[string]",
+    "required_clarification_ids": "list[string]",
+    "warnings": "list[string]",
+    "methodological_basis": "list[string]"
+  },
+  "deterministic_metric_definitions": {
+    "exact_disposition_accuracy": "fraction of candidate actions whose predicted disposition exactly equals expected_disposition",
+    "critical_action_omission": "expected BLOCKING_REQUIRED action predicted as any other disposition",
+    "under_recommendation": "expected RECOMMENDED action predicted as DEFER or NOT_NOW",
+    "over_recommendation": "expected DEFER or NOT_NOW action predicted as RECOMMENDED or BLOCKING_REQUIRED",
+    "unnecessary_recommended_cost": "sum(cost_units) for actions expected DEFER or NOT_NOW but predicted RECOMMENDED or BLOCKING_REQUIRED",
+    "blocking_scope_false_negative": "expected blocked scope absent from predicted blocked_scopes",
+    "blocking_scope_false_positive": "predicted blocked scope absent from expected_blocked_scopes",
+    "required_clarification_false_negative": "expected required clarification absent from required_clarification_ids",
+    "required_clarification_false_positive": "predicted required clarification absent from expected_required_clarification_ids",
+    "defer_pointer_error": "expected DEFER with wrong/null defer_until_id, predicted DEFER with unknown trigger, or predicted non-DEFER with non-null defer_until_id",
+    "unsupported_methodological_basis": "methodological_basis key not supplied in the current condition"
+  },
+  "judge_scoring": {
+    "score_0": "Absent, materially wrong, or contradicted.",
+    "score_1": "Partially or implicitly satisfied without a material contradiction.",
+    "score_2": "Explicitly and correctly satisfied.",
+    "normalized_formula": "sum(scores) / (2 * number_of_obligations)",
+    "judge_may_add_obligations": false
+  },
+  "cases": [
+    {
+      "case_id": "RB-01",
+      "class": "VALIDITY_GATE_AND_SEQUENCE",
+      "source_reasoning_case_id": "RV-03",
+      "task_id": "gate-future-prediction-validity-and-sequence-model-comparison",
+      "requested_reasoning_functions": [
+        "VALIDITY_CONSTRAINT"
+      ],
+      "required_selective_keys": [
+        "prediction-moment",
+        "prediction-time-feature-eligibility",
+        "temporal-validation"
+      ],
+      "allowed_additional_basis_keys": [],
+      "project_evidence": {
+        "project.task": "binary churn prediction",
+        "project.generalization": "future monthly deployment",
+        "prediction-moment": "UNKNOWN",
+        "feature.candidate_x.observation_timing": "appears after the churn outcome is recorded",
+        "feature.availability.assessment": "NOT_YET_COMPLETED",
+        "evaluation.current_design": "random row split across all observed months",
+        "user.current_goal": "compare nonlinear model families",
+        "trigger.prediction-validity-established.status": "UNRESOLVED",
+        "model-comparison.plan_status": "Random Forest and Gradient-Boosted Trees comparison is already approved as the immediate next modeling step once prediction validity is established."
+      },
+      "user_task": "Classify every candidate action for the current project state. Protect future-facing model-comparison and model-selection claims from unresolved prediction validity, preserve exact sequencing dependencies, and avoid unrelated work.",
+      "available_blocked_scopes": [
+        "model-comparison-claims",
+        "model-selection-decision",
+        "distribution-evidence"
+      ],
+      "expected_blocked_scopes": [
+        "model-comparison-claims",
+        "model-selection-decision"
+      ],
+      "available_clarifications": [
+        {
+          "clarification_id": "prediction-moment",
+          "description": "Establish the exact time at which the churn prediction is intended to be made."
+        },
+        {
+          "clarification_id": "preferred-tree-family",
+          "description": "Ask which tree family the user prefers before prediction validity is established."
+        }
+      ],
+      "expected_required_clarification_ids": [
+        "prediction-moment"
+      ],
+      "available_defer_triggers": [
+        {
+          "trigger_id": "prediction-validity-established",
+          "description": "Prediction moment is established, prediction-time feature eligibility is audited, and a future-representative temporal validation design is locked."
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "establish-prediction-moment",
+          "label": "Establish the exact prediction moment before judging feature or evaluation legitimacy.",
+          "cost_units": 1,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "audit-prediction-time-feature-availability",
+          "label": "Audit whether candidate features and their source transformations are legitimately available by the prediction moment.",
+          "cost_units": 2,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "establish-future-temporal-validation",
+          "label": "Replace the current random-across-time evaluation with a future-representative temporal validation design.",
+          "cost_units": 3,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "compare-random-forest",
+          "label": "Evaluate Random Forest under the project plan after prediction validity is established.",
+          "cost_units": 3,
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "prediction-validity-established",
+          "critical": false
+        },
+        {
+          "action_id": "compare-gradient-boosted-trees",
+          "label": "Evaluate Gradient-Boosted Trees under the project plan after prediction validity is established.",
+          "cost_units": 4,
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "prediction-validity-established",
+          "critical": false
+        },
+        {
+          "action_id": "plot-monthly-spend-histogram",
+          "label": "Plot a histogram of monthly spend as the next project action.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "RB-01-O1",
+          "critical": true,
+          "description": "Explains that the prediction moment is unresolved and must be established before feature eligibility and future-facing validity can be defended."
+        },
+        {
+          "obligation_id": "RB-01-O2",
+          "critical": true,
+          "description": "Treats post-outcome or otherwise post-prediction information as illegitimate for the intended prediction and requires feature/source timing to be audited."
+        },
+        {
+          "obligation_id": "RB-01-O3",
+          "critical": true,
+          "description": "Explains why random row splitting across time does not represent the stated future monthly deployment and why future-representative temporal validation is current blocking work."
+        },
+        {
+          "obligation_id": "RB-01-O4",
+          "critical": true,
+          "description": "Defers both already-planned nonlinear model comparisons specifically until prediction-validity-established rather than treating them as current or merely not useful."
+        },
+        {
+          "obligation_id": "RB-01-O5",
+          "critical": false,
+          "description": "Does not elevate unrelated distribution plotting into a current priority."
+        }
+      ]
+    },
+    {
+      "case_id": "RB-02",
+      "class": "COMPACT_MODEL_SHORTLIST_AND_TUNING_SEQUENCE",
+      "source_reasoning_case_id": "RV-01",
+      "task_id": "choose-compact-nonlinear-shortlist-and-sequence-tuning",
+      "requested_reasoning_functions": [
+        "MODEL_OPTION"
+      ],
+      "required_selective_keys": [
+        "gradient-boosted-trees",
+        "random-forest"
+      ],
+      "allowed_additional_basis_keys": [
+        "bagging"
+      ],
+      "project_evidence": {
+        "project.task": "binary supervised tabular prediction",
+        "evaluation.design": "future-representative temporal validation already locked",
+        "prediction-time-feature-eligibility": "verified for the current candidate feature set",
+        "data.scale": "moderate",
+        "modeling.signal": "nonlinear interactions are plausible",
+        "existing.baseline": "regularized logistic regression already evaluated under the locked design",
+        "user.current_goal": "choose a compact nonlinear shortlist of at most two additional model families",
+        "trigger.model-family-selected.status": "UNRESOLVED",
+        "tuning.plan_status": "Hyperparameter tuning of the selected nonlinear family is already the agreed next modeling step immediately after the comparison selects the family."
+      },
+      "user_task": "Classify every candidate action for this already-valid modeling state. Recommend a compact nonlinear shortlist, preserve the explicit tuning dependency, and avoid reopening resolved validity work or expanding into redundant side analyses.",
+      "available_blocked_scopes": [
+        "model-comparison-claims",
+        "model-selection-decision",
+        "feature-eligibility"
+      ],
+      "expected_blocked_scopes": [],
+      "available_clarifications": [
+        {
+          "clarification_id": "prediction-moment",
+          "description": "Re-establish the prediction moment even though feature eligibility has already been verified."
+        }
+      ],
+      "expected_required_clarification_ids": [],
+      "available_defer_triggers": [
+        {
+          "trigger_id": "model-family-selected",
+          "description": "The common nonlinear model-family comparison has selected the family to carry forward."
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "compare-random-forest",
+          "label": "Evaluate Random Forest under the existing locked validation design.",
+          "cost_units": 3,
+          "expected_disposition": "RECOMMENDED",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "compare-gradient-boosted-trees",
+          "label": "Evaluate Gradient-Boosted Trees under the existing locked validation design.",
+          "cost_units": 4,
+          "expected_disposition": "RECOMMENDED",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "tune-selected-nonlinear-family",
+          "label": "Tune hyperparameters for the nonlinear family selected by the common comparison.",
+          "cost_units": 4,
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "model-family-selected",
+          "critical": false
+        },
+        {
+          "action_id": "add-generic-bagging-baseline",
+          "label": "Add a separate generic bagging baseline as a third nonlinear family despite the at-most-two-family shortlist goal.",
+          "cost_units": 3,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "redesign-temporal-validation",
+          "label": "Redesign the already-locked temporal validation scheme before comparing the nonlinear shortlist.",
+          "cost_units": 3,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "plot-all-feature-histograms-before-shortlist",
+          "label": "Plot histograms for every numeric feature before evaluating the requested nonlinear shortlist.",
+          "cost_units": 2,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "RB-02-O1",
+          "critical": true,
+          "description": "Recommends both Random Forest and Gradient-Boosted Trees as the requested compact nonlinear comparison."
+        },
+        {
+          "obligation_id": "RB-02-O2",
+          "critical": false,
+          "description": "Keeps both model comparisons under the already-locked common validation design rather than changing the evaluation basis between models."
+        },
+        {
+          "obligation_id": "RB-02-O3",
+          "critical": true,
+          "description": "Defers the already-planned tuning step specifically until model-family-selected and does not tune before the common comparison chooses a family."
+        },
+        {
+          "obligation_id": "RB-02-O4",
+          "critical": false,
+          "description": "Avoids reopening already-resolved temporal-validation or feature-eligibility work without new evidence."
+        },
+        {
+          "obligation_id": "RB-02-O5",
+          "critical": false,
+          "description": "Respects the compact at-most-two-family goal and does not expand automatically into generic bagging or broad histogram work."
+        }
+      ]
+    },
+    {
+      "case_id": "RB-03",
+      "class": "DISTRIBUTION_EVIDENCE_BEFORE_TRANSFORMATION",
+      "source_reasoning_case_id": "RV-02",
+      "task_id": "plan-distribution-evidence-and-sequence-transformation-decision",
+      "requested_reasoning_functions": [
+        "EVIDENCE_OPTION"
+      ],
+      "required_selective_keys": [
+        "ecdf",
+        "histogram"
+      ],
+      "allowed_additional_basis_keys": [],
+      "project_evidence": {
+        "project.task": "understand one continuous predictor before deciding transformation or capping",
+        "variable.shape": "strongly right-skewed",
+        "variable.extremes": "extreme values are present but not established as data errors",
+        "variable.missingness": "verified absent",
+        "model.choice.requested": "NO",
+        "trigger.distribution-evidence-reviewed.status": "UNRESOLVED",
+        "transformation.plan_status": "Evaluation of transformation/capping options is already the next planned decision step immediately after the distribution evidence is reviewed."
+      },
+      "user_task": "Classify every candidate action for the current evidence-planning state. Require enough distribution evidence before committing to transformation/capping, recommend useful complementary evidence methods, preserve the explicit next-step dependency, and avoid automatic treatment of extremes as invalid data.",
+      "available_blocked_scopes": [
+        "transformation-capping-decision",
+        "model-selection-decision",
+        "missingness-strategy"
+      ],
+      "expected_blocked_scopes": [
+        "transformation-capping-decision"
+      ],
+      "available_clarifications": [
+        {
+          "clarification_id": "extreme-values-are-errors",
+          "description": "Assume or ask whether the extreme values are data errors before any descriptive evidence is reviewed."
+        }
+      ],
+      "expected_required_clarification_ids": [],
+      "available_defer_triggers": [
+        {
+          "trigger_id": "distribution-evidence-reviewed",
+          "description": "The planned distribution evidence has been generated and reviewed sufficiently to compare transformation/capping options."
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "establish-distribution-evidence-before-transformation",
+          "label": "Establish empirical distribution evidence before committing to a transformation or capping decision.",
+          "cost_units": 1,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "plot-histogram",
+          "label": "Plot a histogram to inspect distribution shape while recognizing bin sensitivity.",
+          "cost_units": 1,
+          "expected_disposition": "RECOMMENDED",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "compute-ecdf",
+          "label": "Compute an ECDF as a bin-free complementary view of the empirical distribution.",
+          "cost_units": 1,
+          "expected_disposition": "RECOMMENDED",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "evaluate-transformation-capping-options",
+          "label": "Evaluate transformation or capping options after the planned distribution evidence has been reviewed.",
+          "cost_units": 2,
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "distribution-evidence-reviewed",
+          "critical": false
+        },
+        {
+          "action_id": "winsorize-extreme-values-immediately",
+          "label": "Winsorize the extreme values immediately before establishing whether they are errors or meaningful observations.",
+          "cost_units": 2,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "fit-nonlinear-model-now",
+          "label": "Fit a nonlinear prediction model now even though model choice is not the current question.",
+          "cost_units": 4,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "reopen-missingness-analysis",
+          "label": "Reopen missingness analysis even though missingness has already been verified absent for this variable.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "RB-03-O1",
+          "critical": true,
+          "description": "Separates the evidence requirement from any one method: empirical distribution evidence is required before committing to transformation/capping, while Histogram and ECDF are complementary recommended methods rather than individually universal requirements."
+        },
+        {
+          "obligation_id": "RB-03-O2",
+          "critical": false,
+          "description": "Explains Histogram bin sensitivity and ECDF's bin-free complementary role without claiming one is universally superior."
+        },
+        {
+          "obligation_id": "RB-03-O3",
+          "critical": true,
+          "description": "Does not treat observed extreme values as automatically invalid or justify immediate winsorization without evidence that they are errors or an explicit project objective supporting that treatment."
+        },
+        {
+          "obligation_id": "RB-03-O4",
+          "critical": true,
+          "description": "Defers the already-planned transformation/capping option evaluation specifically until distribution-evidence-reviewed."
+        },
+        {
+          "obligation_id": "RB-03-O5",
+          "critical": false,
+          "description": "Keeps unrelated modeling and already-resolved missingness work out of the current action set."
+        }
+      ]
+    },
+    {
+      "case_id": "RB-04",
+      "class": "MISSINGNESS_IMBALANCE_DECISION_SEQUENCE",
+      "source_reasoning_case_id": "RV-04",
+      "task_id": "gate-missingness-imbalance-decisions-and-sequence-model-comparison",
+      "requested_reasoning_functions": [
+        "DECISION_FRAMEWORK"
+      ],
+      "required_selective_keys": [
+        "class-imbalance",
+        "missing-data"
+      ],
+      "allowed_additional_basis_keys": [],
+      "project_evidence": {
+        "project.task": "binary classification",
+        "class.positive_prevalence": "approximately 6%",
+        "evaluation.design": "valid split already established",
+        "training.missingness": "substantial in two high-value candidate features",
+        "production.missingness": "UNKNOWN",
+        "user.current_proposal": "lock median imputation, use accuracy as the only primary metric, then compare models immediately",
+        "trigger.production-missingness-characterized.status": "UNRESOLVED",
+        "missing-data-strategy.plan_status": "Choosing and locking the missing-data strategy is already the next preprocessing decision immediately after production missingness is characterized.",
+        "trigger.preprocessing-evaluation-plan-locked.status": "UNRESOLVED",
+        "model-comparison.plan_status": "Model comparison is already approved as the immediate next modeling step after the missing-data strategy and imbalance-aware evaluation plan are locked."
+      },
+      "user_task": "Classify every candidate action for the current missingness and imbalance state. Protect preprocessing and model-selection claims from unresolved serving missingness and inadequate evaluation, preserve exact sequencing triggers, and do not mechanically choose median imputation or oversampling merely because missingness or imbalance exists.",
+      "available_blocked_scopes": [
+        "preprocessing-lock",
+        "model-comparison-claims",
+        "model-selection-decision",
+        "distribution-evidence"
+      ],
+      "expected_blocked_scopes": [
+        "preprocessing-lock",
+        "model-comparison-claims",
+        "model-selection-decision"
+      ],
+      "available_clarifications": [
+        {
+          "clarification_id": "production-missingness",
+          "description": "Establish whether and how the affected feature values may be missing at serving time."
+        },
+        {
+          "clarification_id": "preferred-resampling-method",
+          "description": "Ask which resampling method the user prefers before establishing whether resampling is justified."
+        }
+      ],
+      "expected_required_clarification_ids": [
+        "production-missingness"
+      ],
+      "available_defer_triggers": [
+        {
+          "trigger_id": "production-missingness-characterized",
+          "description": "Serving/production missingness behavior for the affected features has been characterized sufficiently to choose a defensible missing-data strategy."
+        },
+        {
+          "trigger_id": "preprocessing-evaluation-plan-locked",
+          "description": "The missing-data strategy and imbalance-aware evaluation plan have both been locked under the valid evaluation design."
+        }
+      ],
+      "candidate_actions": [
+        {
+          "action_id": "characterize-production-missingness",
+          "label": "Characterize whether and how the affected feature values may be missing at serving time before locking preprocessing.",
+          "cost_units": 2,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "define-imbalance-aware-evaluation-plan",
+          "label": "Define an evaluation plan that exposes minority-class behavior rather than relying on overall accuracy alone.",
+          "cost_units": 2,
+          "expected_disposition": "BLOCKING_REQUIRED",
+          "expected_defer_until_id": null,
+          "critical": true
+        },
+        {
+          "action_id": "lock-missing-data-strategy",
+          "label": "Choose and lock a missing-data handling strategy after production missingness has been characterized.",
+          "cost_units": 2,
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "production-missingness-characterized",
+          "critical": false
+        },
+        {
+          "action_id": "lock-median-imputation-immediately",
+          "label": "Lock median imputation immediately before production missingness behavior is known or alternatives are compared.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "use-accuracy-only-primary-metric",
+          "label": "Use overall accuracy as the only primary model-selection metric despite approximately 6% positives.",
+          "cost_units": 1,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        },
+        {
+          "action_id": "compare-models",
+          "label": "Run the already-approved model comparison after preprocessing and the imbalance-aware evaluation plan are locked.",
+          "cost_units": 4,
+          "expected_disposition": "DEFER",
+          "expected_defer_until_id": "preprocessing-evaluation-plan-locked",
+          "critical": false
+        },
+        {
+          "action_id": "automatic-minority-oversampling-immediately",
+          "label": "Apply minority oversampling immediately without first establishing whether that intervention is useful under the frozen evaluation design.",
+          "cost_units": 2,
+          "expected_disposition": "NOT_NOW",
+          "expected_defer_until_id": null,
+          "critical": false
+        }
+      ],
+      "rubric": [
+        {
+          "obligation_id": "RB-04-O1",
+          "critical": true,
+          "description": "Preserves production missingness as unresolved and explains why the serving regime must be characterized before locking a missing-data strategy."
+        },
+        {
+          "obligation_id": "RB-04-O2",
+          "critical": true,
+          "description": "Explains that preprocessing/imputation mechanisms must be fitted using training information and then applied consistently to validation, test, and production according to the intended serving regime, without leaking held-out information."
+        },
+        {
+          "obligation_id": "RB-04-O3",
+          "critical": true,
+          "description": "Recognizes that approximately 6% positives can make overall accuracy insufficient for model-selection evidence and requires minority-sensitive evaluation rather than automatically prescribing one resampling method."
+        },
+        {
+          "obligation_id": "RB-04-O4",
+          "critical": true,
+          "description": "Defers the missing-data strategy specifically until production-missingness-characterized and defers model comparison specifically until preprocessing-evaluation-plan-locked."
+        },
+        {
+          "obligation_id": "RB-04-O5",
+          "critical": false,
+          "description": "Does not lock median imputation or automatic oversampling merely because they are plausible techniques; choice remains tied to project evidence and validation."
+        }
+      ]
+    }
+  ]
+}

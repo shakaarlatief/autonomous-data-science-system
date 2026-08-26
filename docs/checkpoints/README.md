@@ -2,20 +2,21 @@
 
 **Status:** Current checkpoint-format contract  
 **Authority:** Governs metadata and interpretation of files in `docs/checkpoints/`  
-**Effective from:** Checkpoint 100  
-**Last reviewed:** 2026-08-20
+**Initial contract effective from:** Checkpoint 100  
+**Provider-neutral provenance effective from:** Checkpoint 204  
+**Last reviewed:** 2026-08-26
 
 ## Purpose
 
-Checkpoint files preserve historical project state, experiment milestones, design transitions, verification records, and continuity boundaries. They are provenance records rather than automatic current authority.
+Checkpoint files preserve historical project state, experiment milestones, design transitions, verification records, collaboration boundaries, and continuity state. They are provenance records rather than automatic current authority.
 
-The checkpoint body may legitimately differ by checkpoint type, but the metadata at the top of every checkpoint should be consistent enough that a future reader can determine what the record is, where it belongs in the project lifecycle, which ChatGPT project/session produced it, and how much authority it has without inferring those facts from the filename or surrounding Git history.
+The body may differ by checkpoint class, but the header must identify enough historical, authority, and interaction context that a future collaborator can interpret the checkpoint without inferring those facts from filenames, chat memory, or surrounding Git history.
 
-This contract was introduced after a repository audit found that early design checkpoints often contained rich contextual metadata while later operational checkpoints sometimes contained only a date. The content itself remained preserved, but the metadata drift reduced consistency, discoverability, continuity, and professional robustness.
+---
 
-## Mandatory metadata core
+## Mandatory historical/authority core
 
-Every checkpoint must begin immediately after its H1 title with the following fields:
+Every checkpoint must begin immediately after its H1 title with:
 
 ```text
 **Date:** YYYY-MM-DD
@@ -26,30 +27,19 @@ Every checkpoint must begin immediately after its H1 title with the following fi
 **Authority:** ...
 ```
 
-These six fields form the methodological/historical metadata core.
+These six fields apply across all current checkpoint eras.
 
 ### Date
 
-The date on which the checkpoint was created or the recorded milestone was formally preserved.
+The date on which the checkpoint was created or the represented milestone was formally preserved.
 
 ### Status
 
-The lifecycle role of the record. Typical values include:
-
-```text
-Historical design checkpoint
-Historical experiment record
-Historical verification record
-Historical infrastructure record
-Historical preservation-method record
-Historical continuity boundary
-```
-
-A checkpoint may use a more specific status where that is genuinely useful.
+The lifecycle role of the record, for example historical design checkpoint, experiment record, verification record, infrastructure record, preservation-method record, or continuity boundary.
 
 ### Checkpoint class
 
-The kind of event or reasoning being preserved. Typical classes include:
+Typical values include:
 
 ```text
 DESIGN
@@ -61,45 +51,38 @@ CONTINUITY
 MIXED
 ```
 
-This is classification metadata, not a claim that all checkpoint bodies must share one schema.
+This classifies the record without forcing every checkpoint body into one schema.
 
 ### Project stage
 
-The stage of the Autonomous Data Science System project at the time represented by the checkpoint, for example:
-
-```text
-Initial conceptual design
-Conceptual research and system definition
-Prototype V0 development calibration
-Prototype V0 held-out execution
-Post-V0 product and architecture design
-Post-V0 methodological-navigation and reusable-knowledge design
-```
-
-The field describes historical context. It should not be retroactively rewritten to the current project stage.
+The historical ADS stage represented by the checkpoint. It must not be rewritten later merely because the project advanced.
 
 ### Scope
 
-A concise statement of what the checkpoint actually records. This prevents a narrow operational record from appearing to make broader project-level claims than it does.
+A concise statement of what the checkpoint actually records.
 
 ### Authority
 
-A concise statement of how the checkpoint should be interpreted relative to current documents.
+A concise statement describing how the record should be interpreted relative to current canonical documents/specifications.
 
-The normal default is conceptually:
+The ordinary default remains conceptually:
 
 ```text
-Historical provenance. Current canonical documents, frozen contracts,
-and final experiment reports govern their declared scopes.
+Historical provenance. Current canonical documents, accepted/frozen contracts,
+and final result reports govern their declared scopes.
 ```
 
-A checkpoint that records a frozen contract, experiment boundary, or other stronger scope may state that explicitly, but historical prominence alone does not make a checkpoint canonical.
+---
 
-## Mandatory ChatGPT session provenance
+# Interaction provenance contracts
 
-The current repository-development process is conducted inside a ChatGPT Project. Session identity is therefore part of checkpoint provenance and must not depend on author style.
+The repository has two prospective interaction-provenance eras.
 
-Every checkpoint created under this development process must also record:
+## Era A: ChatGPT-specific provenance through Checkpoint 203
+
+Checkpoints 100 through 203 were created while the project-development process was formally ChatGPT-specific.
+
+They retain:
 
 ```text
 **Design session:** ...
@@ -107,42 +90,109 @@ Every checkpoint created under this development process must also record:
 **Session title:** ...
 ```
 
-For the current session:
+Earlier Checkpoints 000 through 099 were conservatively normalized with the same known historical ChatGPT provenance during the v0.4 migration.
+
+Those fields remain historically correct and must not be rewritten merely because the project later adopted multi-model development.
+
+## Era B: provider-neutral provenance from Checkpoint 204 onward
+
+Beginning with Checkpoint 204, every new checkpoint must also record:
 
 ```text
-Design session: 02
-ChatGPT project: Autonomous Data Science System
-Session title: 02 - Methodological Brain & Knowledge Units
+**Interaction environment:** ...
+**Project / workspace:** ...
+**Interaction session:** ...
+**Conversation title:** ...
+**Primary collaborator:** ...
 ```
 
-The previous session was:
+### Interaction environment
+
+The product/runtime in which the checkpoint-producing interaction occurred, for example:
 
 ```text
-Design session: 01
-ChatGPT project: Autonomous Data Science System
-Session title: 01 - Foundations & Checkpoint 0
+ChatGPT
+Claude
+Claude Code
+Human
+another future environment
 ```
 
-These fields are provenance, not methodological authority. They allow a future session to reconstruct where a checkpoint was produced and make proactive session rotation auditable.
+### Project / workspace
 
-If project development later moves outside ChatGPT or adopts a different interaction environment, this contract and its validator should be deliberately revised to represent the new provenance model. The fields should not simply disappear through metadata drift.
+The human-facing project/workspace context where applicable. The current shared name is:
+
+```text
+Autonomous Data Science System
+```
+
+If an environment does not expose a formal workspace, record a truthful non-empty descriptor rather than inventing one.
+
+### Interaction session
+
+Stable repository-facing interaction identity such as:
+
+```text
+chatgpt-06
+claude-01
+```
+
+Interaction environments maintain their own sequence. A provider-local ID is intentionally preferred over one artificial global conversation counter.
+
+### Conversation title
+
+The visible conversation/session title when available. If the environment has no titled conversation, record a truthful non-empty session descriptor rather than leaving the field empty.
+
+### Primary collaborator
+
+The collaborator principally responsible for preserving the checkpoint, for example:
+
+```text
+ChatGPT
+Claude
+Human
+```
+
+Provider/model identity is provenance rather than methodological authority.
+
+---
+
+## Optional interaction/collaboration extensions
+
+Where materially useful, checkpoints may additionally include:
+
+```text
+**Collaboration thread:** MC-NNNN
+**Collaboration role:** ...
+**Model / configuration:** ...
+**Effort / reasoning mode:** ...
+**Interaction surface:** ...
+```
+
+Do not add fields merely because the UI exposes them.
+
+A value that the model cannot reliably introspect should not be guessed. Human-reported or product-displayed values may be preserved with their source clear in the body when consequential.
+
+SOLO work does not need a collaboration-thread field.
+
+---
 
 ## Type-specific metadata extensions
 
-The common and session-provenance fields should be extended when additional metadata is genuinely useful for the checkpoint type.
+The common metadata should be extended where useful for the checkpoint class.
 
-### Design and continuity checkpoints
+### Design and continuity
 
-Possible additional fields include:
+Possible fields:
 
 ```text
 **Implementation status:** ...
 **Origin:** ...
 ```
 
-### Experiment-execution checkpoints
+### Experiment execution
 
-Possible fields include:
+Possible fields:
 
 ```text
 **Experiment:** ...
@@ -153,9 +203,9 @@ Possible fields include:
 **Blinding status:** ...
 ```
 
-### Verification or infrastructure checkpoints
+### Verification or infrastructure
 
-Possible fields include:
+Possible fields:
 
 ```text
 **Artifact / component:** ...
@@ -164,9 +214,9 @@ Possible fields include:
 **Change constraint:** ...
 ```
 
-### Promotion or supersession metadata
+### Promotion/supersession
 
-Where relevant:
+Possible fields:
 
 ```text
 **Promoted to:** ...
@@ -174,48 +224,53 @@ Where relevant:
 **Superseded by:** ...
 ```
 
-## Why the contract uses a common core plus extensions
+---
 
-A design checkpoint and a held-out treatment terminal record are not the same kind of artifact. Requiring every checkpoint to carry the exact same long list of type-specific fields would create meaningless or misleading metadata.
+## Why the contract is versioned prospectively
 
-The professional requirement is therefore:
+A checkpoint's interaction provenance should describe the environment that actually produced it.
+
+Therefore:
 
 ```text
-small mandatory historical/authority core
-    +
-mandatory interaction-session provenance
-    +
-type-specific metadata where useful
+historical ChatGPT checkpoint
+    keeps historical ChatGPT fields
+
+new multi-model-era checkpoint
+    uses provider-neutral fields
 ```
 
-This mirrors the broader project principle that heterogeneous objects should not be forced into one oversized universal schema merely for superficial uniformity.
+The project does not rewrite old records simply to make every header look the same.
 
-## Historical normalization status and policy
+This follows the broader rule that historical metadata repair may improve classification/discoverability but must not rewrite historical substantive conclusions or invent unavailable provenance.
 
-Checkpoints `000` through `099` predate the explicit checkpoint contract and originally contained several metadata styles.
+---
 
-On 2026-08-20 they were normalized mechanically and conservatively by the repository migration workflow. The normalization added the mandatory metadata core and the now-confirmed Session 01 provenance while preserving titles and substantive bodies. The successful workflow commit is:
+## Historical normalization status
+
+Checkpoints 000 through 099 were normalized mechanically and conservatively on 2026-08-20 while preserving titles and substantive bodies.
+
+Successful normalization commit:
 
 ```text
 bae5b8d00fa5da16029afee790c1a6762dc6c0fc
 Normalize legacy checkpoint metadata
 ```
 
-Historical metadata repair follows these rules:
+Checkpoints 100 through 102 received confirmed Session 02 provenance in:
 
-1. preserve the checkpoint title and substantive body;
-2. preserve the historical date and historical meaning;
-3. add mandatory metadata using information already supported by the checkpoint, repository stage, frozen experiment records, repository history, or explicitly confirmed session provenance;
-4. do not invent unavailable session information;
-5. do not retroactively promote a historical checkpoint into current authority;
-6. do not rewrite old conclusions merely because later evidence changed the project;
-7. use type-specific fields only when they materially improve interpretation.
+```text
+ce6b029af78a33bb64f85377f5ff753f088ba190
+Backfill Session 02 checkpoint provenance
+```
 
-Metadata repair is therefore allowed even though checkpoint bodies are historical provenance. The repair changes discoverability and classification, not the historical substantive record.
+That historical repair is closed. The v0.5 provider-neutral migration begins prospectively at Checkpoint 204.
 
-## Required header template
+---
 
-A new checkpoint in the current ChatGPT session should normally begin like this:
+## Required templates
+
+### Checkpoint 204+ template
 
 ```markdown
 # Checkpoint NNN: Descriptive title
@@ -223,25 +278,51 @@ A new checkpoint in the current ChatGPT session should normally begin like this:
 **Date:** YYYY-MM-DD  
 **Status:** Historical design checkpoint  
 **Checkpoint class:** DESIGN  
-**Project stage:** Post-V0 methodological-navigation and reusable-knowledge design  
+**Project stage:** ...  
 **Scope:** Records ...  
 **Authority:** Historical provenance; current promoted sources govern current interpretation.  
-**Design session:** 02  
-**ChatGPT project:** Autonomous Data Science System  
-**Session title:** 02 - Methodological Brain & Knowledge Units
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-06  
+**Conversation title:** 06 - Methodological Knowledge Universe Construction  
+**Primary collaborator:** ChatGPT
 ```
 
-Then add type-specific metadata only where useful.
+Add collaboration/model fields only when useful.
+
+### Historical ChatGPT-era template
+
+The earlier required shape remains valid for Checkpoints through 203:
+
+```text
+Design session
+ChatGPT project
+Session title
+```
+
+No historical backfill to the new provider-neutral names is required.
+
+---
 
 ## Checkpoint body expectations
 
-Checkpoint bodies remain purpose-specific. A substantive design checkpoint should normally preserve the current focus, important reasoning, accepted conclusions, active hypotheses, unresolved questions, explicit non-decisions, promotion-audit result, and exact continuation point.
+A substantive design checkpoint should normally preserve current focus, important reasoning, accepted conclusions, hypotheses, unresolved questions, explicit non-decisions, promotion-audit result, and exact continuation point.
 
-A narrow experiment terminal record may instead focus on the operational evidence needed to establish the experiment milestone. Consistent metadata does not require artificial narrative padding.
+A narrow execution/verification checkpoint may focus on the evidence required to establish that milestone.
 
-## Relationship to current project authority
+Consistent metadata does not require artificial narrative padding.
 
-The general repository authority hierarchy still applies. Checkpoints preserve what the project believed, observed, or did at a particular time. They do not silently override current canonical documents, later promoted foundations, frozen contracts within their declared scope, or final experiment reports.
+---
+
+## Relationship to project authority
+
+The normal repository authority hierarchy still applies.
+
+Checkpoints preserve historical state and human/model-review evidence. They do not silently override current canonical documents, accepted/frozen specifications within scope, accepted decisions, or final experiment reports.
+
+Multi-model consensus inside a checkpoint also does not create automatic authority.
+
+---
 
 ## Enforcement
 
@@ -251,4 +332,6 @@ Checkpoint metadata is mechanically validated by:
 scripts/check_checkpoint_metadata.py
 ```
 
-The validator checks both the historical/authority core and the session-provenance fields. Metadata drift should be corrected mechanically rather than tolerated as a stylistic variation.
+The validator applies the ChatGPT-specific contract to checkpoints before 204 and the provider-neutral contract to Checkpoint 204 onward.
+
+This versioned validation is deliberate. Metadata should evolve prospectively rather than drift silently.

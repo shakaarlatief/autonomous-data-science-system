@@ -1,0 +1,98 @@
+name: Preserve V1 reasoning context live result
+
+on:
+  push:
+    branches: [v1-reasoning-context-value]
+    paths:
+      - .github/workflows/v1-reasoning-context-value-preserve.yml
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  preserve-frozen-live-result:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: v1-reasoning-context-value
+          fetch-depth: 0
+
+      - name: Download exact frozen live artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: v1-reasoning-context-value-3592cc3bd91e0aae7e5c667fa0c762ae4acd5395-2
+          path: /tmp/spec014-live-result
+          github-token: ${{ github.token }}
+          run-id: 32635061634
+
+      - name: Verify extracted artifact files
+        shell: bash
+        working-directory: /tmp/spec014-live-result
+        run: |
+          cat > /tmp/spec014-sha256.txt <<'EOF'
+          1ad50b0f48616a4196900ddfcc33956364147df79a7c328770f393f6eda1e988  RESULT.md
+          4a6d89ba5ab4a82ae1be1e18d635e1f1c406701ffebef6973c80099401ccfebc  judge_attempts.jsonl
+          b4c362d830d82db8f9f3becc63d2adf473df387f9293a3e2462d7279de2efb10  judge_plan.json
+          1b29b31528523593d96abbcf4a27b654788ce4ca981915a7e2390d4eaa5436bb  reasoner_attempts.jsonl
+          41b5b99da1de980de451c0a392cfc50e503cd026639a3bad05e47a3e653adee5  reasoning_context_value.sqlite3
+          025ccc11268ef5b915f90aeaf32d28ee18d5f32a7834a32930a6cbeceaedb5e2  reasoning_plan.json
+          84bebdecc9694062cec48ffe5b0cd0d399667b6dfcb17ea79989d3f67927df03  result.json
+          EOF
+          sha256sum -c /tmp/spec014-sha256.txt
+
+      - name: Preserve exact result bundle on experiment branch
+        shell: bash
+        run: |
+          target="experiments/reasoning_context_value/results/spec014-live-20260823-run-32635061634"
+          mkdir -p "${target}"
+          cp /tmp/spec014-live-result/RESULT.md "${target}/RESULT.generated.md"
+          cp /tmp/spec014-live-result/judge_attempts.jsonl "${target}/judge_attempts.jsonl"
+          cp /tmp/spec014-live-result/judge_plan.json "${target}/judge_plan.json"
+          cp /tmp/spec014-live-result/reasoner_attempts.jsonl "${target}/reasoner_attempts.jsonl"
+          cp /tmp/spec014-live-result/reasoning_context_value.sqlite3 "${target}/reasoning_context_value.sqlite3"
+          cp /tmp/spec014-live-result/reasoning_plan.json "${target}/reasoning_plan.json"
+          cp /tmp/spec014-live-result/result.json "${target}/result.json"
+
+          cat > "${target}/MANIFEST.md" <<'EOF'
+          # Specification 014 frozen live result manifest
+
+          This directory is the durable repository copy of the complete artifact produced by the frozen live run.
+
+          ```text
+          GitHub Actions workflow: V1 reasoning context value live
+          workflow run:           32635061634
+          successful run attempt: 2
+          source head:            3592cc3bd91e0aae7e5c667fa0c762ae4acd5395
+          artifact id:            9492191878
+          artifact name:          v1-reasoning-context-value-3592cc3bd91e0aae7e5c667fa0c762ae4acd5395-2
+          artifact ZIP SHA-256:   e2fa6b70915b96b2978c4b2c78c5d16207b09cf7bd1e0bb79a2ea027bba5a30a
+          ```
+
+          The first workflow attempt stopped before provider calls because the repository secret was absent. Attempt 2 passed the credential boundary and executed the unchanged frozen experiment. No treatment, rubric, threshold, repetition, or retry-policy change occurred between the preregistration and the successful live execution.
+
+          File SHA-256 values were checked before this preservation commit:
+
+          ```text
+          RESULT.generated.md                 1ad50b0f48616a4196900ddfcc33956364147df79a7c328770f393f6eda1e988
+          judge_attempts.jsonl                4a6d89ba5ab4a82ae1be1e18d635e1f1c406701ffebef6973c80099401ccfebc
+          judge_plan.json                     b4c362d830d82db8f9f3becc63d2adf473df387f9293a3e2462d7279de2efb10
+          reasoner_attempts.jsonl             1b29b31528523593d96abbcf4a27b654788ce4ca981915a7e2390d4eaa5436bb
+          reasoning_context_value.sqlite3     41b5b99da1de980de451c0a392cfc50e503cd026639a3bad05e47a3e653adee5
+          reasoning_plan.json                 025ccc11268ef5b915f90aeaf32d28ee18d5f32a7834a32930a6cbeceaedb5e2
+          result.json                         84bebdecc9694062cec48ffe5b0cd0d399667b6dfcb17ea79989d3f67927df03
+          ```
+
+          The JSON/JSONL files and generated report preserve the reasoning and judge outputs, exact context identities, provider usage, timing, model/runtime identity, plan hashes, and frozen gate evaluation. The SQLite file is the isolated experiment database captured by the runner and is not authoritative reusable-knowledge or project state.
+          EOF
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "${target}"
+          if git diff --cached --quiet; then
+            echo "Frozen result is already preserved."
+            exit 0
+          fi
+          git commit -m "Preserve frozen Specification 014 live result bundle"
+          git push origin HEAD:v1-reasoning-context-value

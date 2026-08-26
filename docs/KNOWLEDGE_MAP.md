@@ -1,158 +1,341 @@
 # Knowledge Map
 
 **Status:** Current routing index  
-**Authority:** Navigation only. This file points to authoritative or explanatory sources but does not replace them.  
-**Last reviewed:** 2026-08-20
+**Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
+**Last reviewed:** 2026-08-26  
+**Current checkpoint:** 205  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`
 
 ## Start here
 
-For a new session or quick reconstruction:
+```text
+README.md                         project overview and current stage
+docs/CURRENT_STATE.md             exact present state and continuation
+docs/KNOWLEDGE_MAP.md             routing/index layer
+docs/current_routing.json         machine-readable project routing metadata
+docs/VISION.md                    high-level product/system direction
+docs/PRINCIPLES.md                accepted high-level design principles
+docs/DECISIONS.md                 accepted project-level decisions
+docs/OPEN_QUESTIONS.md            unresolved questions
+docs/DEVELOPMENT_METHOD.md        current canonical development method v0.5
+docs/CONTINUITY.md                provider-neutral continuity procedure
+docs/MAJOR_CHANGES.md             selective structural history
+```
+
+Current route:
 
 ```text
-README.md
-    project-level overview
+promoted integration             v1-frontend-spike @ ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+active development branch        v1-frontend-spike
+active PR                        none
+current checkpoint               205
+latest specification             Specification 024
+Specification 024 outcome        COLLABORATION_STATE_GUARD_ACCEPTED
+latest scientific outcome        INCOMPLETE / EXECUTION INTEGRITY FAILED
+current operational boundary     permanent user-controlled source-vault bootstrap
+```
 
-docs/CURRENT_STATE.md
-    present state and exact active priority
+---
 
-docs/KNOWLEDGE_MAP.md
-    routing layer
+# Current stage: permanent Source Universe deployment before Course 2
 
-docs/VISION.md
-    system purpose and vision
+Primary route:
 
-docs/PRINCIPLES.md
-    current principles
+```text
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
-docs/DECISIONS.md
-    accepted project-level decisions
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+```
 
-docs/OPEN_QUESTIONS.md
-    unresolved canonical questions
+Specification 023 result:
 
+```text
+SU-G01 through SU-G23   PASS
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+Still required on real user-controlled storage:
+
+```text
+choose/verify private locations
+compare original VU Machine Learning folder to prospective fingerprints
+review MATCH / DIFFERENT / MISSING / ADDITIONAL outcomes
+ingest reviewed corpus into permanent registry/vault
+audit working store
+create independent verified backup
+perform clean restore
+audit restored store
+preserve public-safe deployment evidence
+```
+
+Course 2 remains blocked until that sequence succeeds.
+
+Required environment inputs before execution:
+
+```text
+ORIGINAL_SOURCE_ROOT
+INDEPENDENT_BACKUP_ROOT
+```
+
+The permanent registry/vault/clean-restore layout can then be chosen without committing private paths.
+
+Important GitHub interpretation:
+
+```text
+PR #75 is shown closed/merged because its planning commit d9437a8ca07a444400a5eb44ac2c89e8108c91c2
+is an ancestor of the promoted PR #76 merge.
+
+That means the planning artifacts were promoted.
+It does not mean permanent source-vault deployment ran.
+```
+
+---
+
+# Governed multi-model development is accepted infrastructure
+
+Primary route:
+
+```text
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
 docs/DEVELOPMENT_METHOD.md
-    development/preservation method
-
 docs/CONTINUITY.md
-    cross-session continuation procedure
-
-docs/MAJOR_CHANGES.md
-    selective structural history
+docs/DECISIONS.md, D-034
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
 
-Prototype V0 is complete and its final classification is **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN**. The project is now implementing bounded V1 product slices across methodological knowledge, governed persistence, agent/runtime infrastructure, and the professional frontend.
+Current collaboration status:
+
+```text
+MC-0001   CLOSED
+MC-0002   CLOSED
+MC-0003   CLOSED
+pending review inbox   NONE
+GitHub Issue #78       CLOSED / completed
+GitHub Issue #79       CLOSED / completed
+```
+
+No additional Claude review is currently owed.
+
+Accepted collaboration principles:
+
+```text
+repository authority
+SOLO remains first-class
+selective task-scoped collaboration
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state writer at a time
+explicit secondary write surfaces
+machine-readable collaboration-state coherence guard
+transport != authority
+durable numbered collaboration provenance
+proportional independent/comparative review
+known contamination disclosure
+explicit disagreement classification/routing
+provider-local interaction session identities
+human project-intent authority without routine transport burden
+deferred review/catch-up with exact targets and explicit gates
+API orchestration deferred
+unattended scheduled model review deferred
+```
+
+Provider-neutral checkpoint provenance begins at Checkpoint 204.
 
 ---
 
-## System purpose and long-term product vision
+# Specification 024: accepted collaboration-state guard
 
-Primary sources:
-
-```text
-docs/VISION.md
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
-```
-
-Historical origin:
+Primary route:
 
 ```text
-docs/foundations/001_initial_vision_and_reasoning.md
-docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+schemas/model_collaboration_thread_state_v1.schema.json
+scripts/check_model_collaboration_state.py
+tests/unit/test_model_collaboration_state.py
+.github/workflows/model-collaboration-state.yml
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
 ```
 
-Foundation 013 explains the LLM/system/human boundary. Foundation 017 makes the target product concrete as an interactive data-science workspace. Foundation 021 strengthens the interface requirement into a first-class modern, polished, visually excellent professional analytical product rather than an end-stage dashboard or chat shell.
+Evidence:
+
+```text
+pre-implementation freeze       9da382d4011ff112b75dec9c456143d798336336
+corrected green pre-review head a9efc43d7c441c8283d2cd954cc6fa1abd021689
+workflow run                    32902050014
+Ubuntu                          PASS
+Windows                         PASS
+focused tests                   26 PASS per platform
+Claude review commit            9cf393f74e02e167d2f80c0381742ebd7e0c318e
+final outcome                   COLLABORATION_STATE_GUARD_ACCEPTED
+promotion merge                 ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+```
+
+The mechanism is a coherence guard, not authenticated model identity or a distributed mutex.
+
+Known future trigger: secondary-vs-secondary write-surface overlap if a real thread introduces multiple simultaneous secondary writers.
 
 ---
 
-## Project object model and professional developer workflow
+# MC-0001: architecture review history
 
-Primary source:
-
-```text
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-```
-
-Important distinctions:
+Primary route:
 
 ```text
-Investigation != Run
-Evidence != Finding
-Finding != Claim
-Claim != Decision
-current state != event history
-persisted object != derived recommendation
-workspace section != fundamental object
+docs/research/035_multi_model_development_collaboration_architecture.md
+docs/model_collaboration/threads/MC-0001/BRIEF.md
+docs/model_collaboration/threads/MC-0001/THREAD.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/model_collaboration/threads/MC-0001/messages/002_claude_independent_proposal.md
+docs/model_collaboration/threads/MC-0001/messages/003_claude_comparative_review.md
+docs/model_collaboration/threads/MC-0001/messages/004_chatgpt_response_to_claude.md
+docs/model_collaboration/threads/MC-0001/messages/005_claude_phase_d_challenge.md
+docs/model_collaboration/threads/MC-0001/messages/006_chatgpt_phase_d_resolution.md
+docs/checkpoints/199_multi_model_collaboration_architecture_candidate_frozen_for_independent_review.md
+docs/checkpoints/200_mc_0001_phase_a_recorded_partial_independence_contamination_phase_b_opened.md
+docs/checkpoints/201_mc_0001_phase_b_and_c_recorded_bounded_phase_d_challenge_opened.md
+docs/checkpoints/202_mc_0001_resolved_specification_024_frozen_mc_0002_opened.md
 ```
 
-The current design does not add a universal project `Assessment` object. Subject-specific criterion verdicts use the existing Question -> Evidence -> Finding -> Claim/Decision chain, with a structured criterion-Finding form where useful.
-
-Professional-workflow principles:
-
-```text
-docs/PRINCIPLES.md, P-023 and P-024
-```
-
-Responsibility split:
-
-```text
-Autonomous Data Science System
-    project/process control plane
-
-VS Code
-    developer workbench
-
-Python / Docker / local or remote compute
-    execution plane
-
-Git + GitHub
-    source versioning, collaboration, provenance
-```
+Important review-integrity finding: Phase A was only partially independent because current routing documents exposed candidate concepts. Future deliberately blind reviews should normally use an accepted pre-proposal ref plus a neutral brief and explicit exposure audit.
 
 ---
 
-## Methodological-navigation brain and relevance architecture
+# MC-0003: deferred asynchronous catch-up
 
-Primary source:
+Primary route:
 
 ```text
+docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
+docs/model_collaboration/threads/MC-0003/messages/002_claude_deferred_catchup_review.md
+docs/model_collaboration/threads/MC-0003/messages/003_chatgpt_review_disposition.md
+```
+
+Accepted rule:
+
+```text
+collaborator unavailable
+    !=
+project globally blocked
+```
+
+unless the affected task's review gate has been reached.
+
+Current semantic constraint:
+
+```text
+REQUIRED review -> real gate required
+OPTIONAL review -> NONE allowed
+```
+
+Known future mechanization triggers:
+
+```text
+cross-thread dependency metadata / downstream impact discovery
+generated REVIEW_INBOX or inbox-state consistency validation
+explicit review-obligation and gate fields if backlog scale requires them
+stale/superseded obligation validation after repeated real use
+```
+
+No Specification 025 is currently justified.
+
+---
+
+# Interaction provenance and naming
+
+Current canonical convention:
+
+```text
+shared project/workspace     Autonomous Data Science System
+visible title                NN - Main Topic / Stage
+ChatGPT session example      chatgpt-06
+Claude session example       claude-01
+```
+
+Checkpoint provenance:
+
+```text
+000-203
+    historical ChatGPT-specific fields remain intact
+
+204+
+    Interaction environment
+    Project / workspace
+    Interaction session
+    Conversation title
+    Primary collaborator
+```
+
+Optional model/configuration/effort/surface metadata is preserved only where materially useful and should not be guessed.
+
+---
+
+# Serious methodological knowledge-universe construction
+
+Primary route:
+
+```text
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
+```
+
+Coverage depth:
+
+```text
+C0  MAPPED
+C1  SOURCED
+C2  DECOMPOSED
+C3  OPERATIONALIZED
+C4  CONNECTED
+C5  BEHAVIORALLY_TESTED
+C6  PROJECT_EXPOSED
+```
+
+First six deep slices:
+
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+Coverage depth is separate from truth, maturity, source authority, freshness, confidence, and enforcement strength.
+
+---
+
+# Reusable methodological knowledge architecture
+
+Primary conceptual sources:
+
+```text
+docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
+docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
+docs/foundations/008_knowledge_quality_generalization_and_evolution.md
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-```
-
-Current relevance progression:
-
-```text
-KNOWN
-    -> APPLICABLE
-    -> RELEVANT
-    -> RECOMMENDED
-    -> REQUIRED / BLOCKING
-```
-
-Core scaling concept:
-
-```text
-large global knowledge universe
-    -> project-specific retrieval/filtering
-    -> bounded methodological horizon
-    -> explicit checks + flexible reasoning
-    -> inspectable recommendation/requiredness
-```
-
-The full knowledge catalog should not be sent to the LLM on every reasoning call.
-
----
-
-## Reusable methodological-knowledge representation
-
-Primary source:
-
-```text
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
 ```
 
-Promoted representation:
+Current representation direction:
 
 ```text
 KnowledgeAsset
@@ -161,555 +344,78 @@ NarrativeFacet
 KnowledgeRelation
 Conditional KnowledgeRule
 KnowledgeCollection
-project objects referencing/influenced by exact knowledge revisions
-criterion Finding
-ExecutionCapability
-derived Views
-```
-
-Durable distinctions:
-
-```text
-intrinsic knowledge kind != reasoning function
-asset != component != narrative facet
-static semantic relation != conditional methodological rule
-retrieval cue != applicability predicate != required context != project relevance
-methodological knowledge != execution implementation
-global knowledge != project-specific state
-internal representation != human-facing tree/workflow
-```
-
-Promoted principles:
-
-```text
-docs/PRINCIPLES.md, P-025 and P-026
-```
-
-Important design history:
-
-```text
-docs/checkpoints/101_five_example_reusable_knowledge_stress_test_completed.md
-docs/checkpoints/102_candidate_conceptual_knowledge_representation_contract.md
-docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
-docs/checkpoints/105_refined_representation_second_stress_test.md
+exact revision identity
+provenance
 ```
 
 ---
 
-## V1 implementation requirements
+# Product, persistence, runtime, and source storage
 
-Primary source:
-
-```text
-docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
-```
-
-Checkpoint 107 derives 59 technology-neutral capabilities before architecture selection, including stable revisions, provenance, typed relations, tri-valued rules, semantic retrieval, project-state lookup, methodological-horizon construction, selective LLM context assembly, governance, integrity, backup, and portability.
-
----
-
-## Accepted V1 persistence/retrieval architecture
-
-Accepted decision and comparison:
+Important primary sources:
 
 ```text
-docs/DECISIONS.md, D-028
-docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
-docs/specifications/001_v1_sqlite_technical_architecture.md
-```
-
-Accepted architecture family:
-
-```text
-SQLite-centered local-first operational architecture
-```
-
-Direction:
-
-```text
-SQLite
-    reusable knowledge identities/revisions/components
-    typed relations and conditional rules
-    provenance/governance
-    project epistemic and decision state
-    exact project -> knowledge revision references
-    execution-capability metadata
-
-FTS5
-    rebuildable lexical index
-
-rebuildable embeddings
-    initial in-process exact semantic search
-
-application rule evaluator
-    predicate / ALL / ANY / NOT / TRUE / FALSE / UNKNOWN
-
-selective context assembler
-
-filesystem / Git / artifact storage
-    source code and large artifacts outside SQLite
-```
-
-Explicit V1 non-selections unless evidence changes the requirement envelope:
-
-```text
-dedicated graph database
-dedicated vector database/service
-external generic rules engine
-PostgreSQL server by default
-ANN index
-```
-
-PostgreSQL + pgvector remains the preferred first migration family if later concurrency/shared-server/vector-scale needs exceed the SQLite envelope.
-
-Architecture evidence:
-
-```text
-experiments/architecture_spikes/sqlite_v1_viability.py
-experiments/architecture_spikes/V1_ARCHITECTURE_GATE_RESULT.md
-docs/checkpoints/111_v1_technical_architecture_gate_passed_and_specification_001_promoted.md
-```
-
-FT-05 validates the retrieval architecture seam only. It does not validate production retrieval quality or embedding choice.
-
----
-
-## Accepted implementation and Python tooling
-
-Persistence:
-
-```text
-docs/DECISIONS.md, D-029
-docs/specifications/002_v1_persistence_tooling_standard.md
-```
-
-Accepted:
-
-```text
-SQLAlchemy Core 2.0 stable series
-Alembic 1.x
-SQLAlchemy ORM not primary domain/persistence model
-raw DBAPI only for narrow backend-specific behavior
-```
-
-Python project:
-
-```text
-docs/DECISIONS.md, D-030
-docs/specifications/003_v1_python_project_and_dependency_tooling.md
-```
-
-Accepted:
-
-```text
-pyproject.toml
-uv 0.12.5
-committed cross-platform uv.lock
-uv_build
-src/ads_system
-Python >=3.12
-```
-
-Evidence:
-
-```text
-docs/checkpoints/112_v1_persistence_tooling_selected_and_validated.md
-docs/checkpoints/113_v1_python_project_tooling_validated.md
-experiments/architecture_spikes/V1_PERSISTENCE_TOOLING_RESULT.md
-experiments/architecture_spikes/V1_PYTHON_PROJECT_TOOLING_RESULT.md
-```
-
----
-
-## First production V1 persistence vertical slice
-
-Primary milestone:
-
-```text
-docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
-experiments/architecture_spikes/V1_PRODUCTION_PERSISTENCE_SLICE_RESULT.md
-```
-
-Production package:
-
-```text
-src/ads_system/domain/
-src/ads_system/application/
-src/ads_system/infrastructure/persistence/
-migrations/
-tests/integration/
-```
-
-The same application/repository scenario passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18. It proves a project Finding pinned to Random Forest R1 remains pinned to R1 after R2 becomes current.
-
----
-
-## Accepted reusable-knowledge interchange
-
-Primary sources:
-
-```text
-docs/DECISIONS.md, D-031
-docs/specifications/004_v1_reusable_knowledge_interchange.md
-docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
-```
-
-Accepted V1 interchange:
-
-```text
-JSON
-+ JSON Schema Draft 2020-12
-+ application semantic validation
-+ deterministic normalization / serialization
-```
-
-Key authority rule:
-
-```text
-operational database authority
-    !=
-interchange representation
-    !=
-derived retrieval indexes
-```
-
-Normal candidate/benchmark import cannot silently create accepted methodological authority.
-
----
-
-## Governed knowledge round-trip status
-
-The current production bridge includes candidate import, explicit acceptance, accepted snapshot export, provenance, relation governance, collections, migration 0002, and historical project-revision pinning.
-
-Current confirmed gate status at Checkpoint 116:
-
-```text
-SQLite
-    PASS
-
-first PostgreSQL 18 attempt
-    FAIL
-```
-
-The PostgreSQL defect was not conceptual. One manually named migration constraint exceeded PostgreSQL's 63-character identifier limit.
-
-Fix:
-
-```text
-ba6a92f83aac3a63ebfb7f97a4378c93fa28547b
-Shorten interchange migration identifiers for PostgreSQL
-```
-
-Traceability improvement:
-
-```text
-a69b8859696fbd3b45124c257d085989d692a207
-Make roundtrip gate status traceable to source commit
-```
-
-Do not treat this governed round-trip as closed until a corrected PostgreSQL PASS is persisted and confirmed.
-
-Historical transition:
-
-```text
-docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
-```
-
----
-
-## 2026 agentic ecosystem and runtime boundary
-
-Primary research source:
-
-```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-```
-
-Current architecture conclusion:
-
-```text
-ADS domain/project/methodological semantics
-    owned by ADS
-
-agent runtimes / MCP / A2A / AG-UI / runtime checkpoints
-    replaceable infrastructure/interoperability
-```
-
-Promoted principles:
-
-```text
-docs/PRINCIPLES.md, P-027 through P-029
-```
-
-Important current directions:
-
-```text
-MCP
-    strong candidate external tool/resource integration boundary
-    not internal project memory/application bus
-
-A2A
-    defer until independently deployed remote agents are required
-
-AG-UI
-    evaluate as frontend-agent transport adapter
-    do not make it ADS domain event model
-
-multi-agent
-    do not adopt by default
-    start with one principal reasoner + tools
-```
-
-Current 2026 MCP notes in the research memo include the new stateless core and deprecation of Roots, Sampling, and Logging, so older MCP assumptions should not be copied into V1.
-
----
-
-## Agent-runtime bakeoff
-
-Candidate evaluation contract:
-
-```text
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-```
-
-First-round candidates:
-
-```text
-OpenAI Agents SDK
-LangGraph
-Microsoft Agent Framework
-Google ADK 2.0
-```
-
-Pydantic AI/Pydantic Graph remains a watchlist candidate.
-
-The bakeoff tests actual ADS-shaped requirements rather than generic features:
-
-```text
-domain isolation
-single-agent tools
-MCP
-human approval
-durable resume
-external ADS project-state authority
-bounded context transparency
-cancellation/timeouts
-failure/retry
-structured outputs
-observability
-test/provider substitution
-```
-
-A valid result is still to use simpler direct model calls if no framework earns its complexity.
-
----
-
-## Professional frontend and product interface
-
-Primary foundation:
-
-```text
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 ```
 
-Candidate implementation/visual gate:
+Accepted V1 decisions:
 
 ```text
-docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
-```
-
-Current leading hypothesis, not yet accepted:
-
-```text
-React
-TypeScript
-Vite
-TanStack Router
-TanStack Query
-TanStack Table v9
-shadcn/ui source-distributed components
-ADS-owned design system
-Playwright
-Vitest
-```
-
-Current product requirement:
-
-```text
-modern
-premium/professional
-visually excellent
-compact but calm analytical density
-strong typography
-high-quality light/dark modes
-accessible
-responsive at professional laptop/desktop widths
-polished loading/empty/error/offline states
-high-quality analytical visualizations
-```
-
-The frontend begins before backend completion using deterministic typed ADS mock state behind a replaceable data-source boundary.
-
-Chart strategy remains under test:
-
-```text
-ECharts
-vs
-Plotly
-```
-
-Tauri is a later desktop-packaging candidate, not part of the first web shell.
-
----
-
-## Earlier reusable-knowledge theory
-
-Read for deeper design history:
-
-```text
-docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
-docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
-docs/foundations/008_knowledge_quality_generalization_and_evolution.md
-```
-
-Foundations 019 and 020 govern the current post-V0 interpretation.
-
----
-
-## Project state, dependencies, and orchestration history
-
-Broad theory:
-
-```text
-docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
-```
-
-Prototype V0 evidence:
-
-```text
-prototype_v0/src/ads_v0/p0.py
-prototype_v0/src/ads_v0/p0_controller.py
-prototype_v0/src/ads_v0/p0_schema.py
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-Interpretation:
-
-```text
-broad dependency/state theory remains useful
-    !=
-P0's always-on representation is justified
+D-028  SQLite-centered local-first operational architecture
+D-029  SQLAlchemy Core 2.0 + Alembic 1.x
+D-030  pyproject.toml + uv + committed uv.lock + uv_build
+D-031  governed deterministic JSON / JSON Schema knowledge interchange
+D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
+D-033  ADS-owned Source Universe substrate
+D-034  governed provider-neutral multi-model development collaboration
 ```
 
 ---
 
-## Epistemic integrity, admissibility, risk, and project constitution
+# Retrieval and later experimental evidence
 
-Read:
+The accepted bounded chain includes lexical retrieval, dense complementarity, hybrid comparison, explained MethodologicalHorizon, selective exact-revision context, and the ADS-owned ReasoningRuntime.
+
+Specification 014 preserved equal measured quality on its bounded benchmark while reducing provider input by 66.56%.
+
+Later recommendation/action results remain deliberately bounded. Specification 022 remains:
 
 ```text
-docs/foundations/002_epistemic_integrity_and_project_constitution.md
-docs/foundations/003_admissibility_risk_and_assurance.md
-docs/VISION.md
-docs/PRINCIPLES.md
+INCOMPLETE / EXECUTION INTEGRITY FAILED
 ```
+
+It contains no legitimate `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison.
 
 ---
 
-## Execution and observability separation
+# Preservation and continuity
 
-Read:
-
-```text
-docs/PRINCIPLES.md, P-022
-docs/foundations/016_execution_observability_separation.md
-```
-
-Agent/runtime tracing should remain supplementary to ADS-owned project provenance and operational event semantics.
-
----
-
-## Prototype V0 final result
-
-Authoritative report:
+Canonical route:
 
 ```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
-Final classification:
-
-```text
-STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
-```
-
-Do not restart or tune P0 against the completed benchmark.
-
----
-
-## Knowledge preservation and session continuity
-
-Read:
-
-```text
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
+docs/DEVELOPMENT_METHOD.md                version 0.5
+docs/CONTINUITY.md                        aligned version 0.5
+docs/checkpoints/README.md                provider-neutral from Checkpoint 204
+scripts/check_checkpoint_metadata.py       versioned provenance validation
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/checkpoints/README.md
-```
-
-Current design session:
-
-```text
-02 - Methodological Brain & Knowledge Units
+docs/MAJOR_CHANGES.md
 ```
 
 ---
 
-## Repository authority model
-
-Default order when documents disagree:
+# Exact current continuation
 
 ```text
-1. frozen/current specifications or contracts for their declared scope
-2. current accepted decisions and canonical specifications
-3. current vision/principles/current-state material
-4. final experiment reports for their declared experiment scope
-5. foundational design memos
-6. checkpoints
-7. raw historical material
+A. obtain/confirm the actual ORIGINAL_SOURCE_ROOT
+B. obtain/confirm a genuinely independent backup location
+C. choose permanent private registry/vault/clean-restore locations
+D. compare the original ML folder against preserved prospective fingerprints
+E. inspect every comparison class before any manifest adjustment
+F. execute reviewed ingestion, audit, independent backup, clean restore, and restored audit
+G. preserve only public-safe deployment evidence in Git
+H. admit Course 2 only after permanent recovery integrity is proven
+I. continue serious methodological knowledge-universe construction
 ```
-
----
-
-## Exact next step
-
-The active bounded sequence is now:
-
-```text
-1. close corrected governed PostgreSQL round-trip honestly
-   -> confirm PASS or fix remaining portability defect
-   -> remove temporary diagnostics
-   -> checkpoint closure only after evidence
-
-2. implement Specification 005 agent-runtime bakeoff
-   -> one principal reasoner first
-   -> compare existing runtime infrastructure against ADS workload
-   -> no multi-agent architecture by default
-
-3. implement Specification 006 frontend product spike
-   -> real design system
-   -> Overview / Data / EDA / Decisions-History
-   -> methodological state UI
-   -> approval/run interaction
-   -> accessibility and visual regression
-   -> ECharts vs Plotly comparison
-   -> AG-UI mapping feasibility
-
-4. resume retrieval-quality benchmark and lexical retrieval
-   -> required hits / optional hits / critical omissions
-   -> semantic retrieval comparison only after measurable baseline
-```
-
-The goal is now to build the smallest professional end-to-end product architecture in which each new layer has earned its complexity.

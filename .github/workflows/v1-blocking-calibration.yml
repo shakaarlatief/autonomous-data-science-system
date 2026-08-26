@@ -1,0 +1,91 @@
+name: V1 blocking calibration diagnostic
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [v1-blocking-calibration-diagnostic]
+    paths:
+      - src/ads_system/application/reasoning.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/runtime/**
+      - experiments/blocking_calibration/**
+      - tests/fixtures/reasoning/blocking_calibration_v1.json
+      - tests/unit/test_reasoning.py
+      - tests/unit/test_blocking_calibration_harness.py
+      - tests/unit/test_blocking_calibration_runner.py
+      - tests/unit/test_blocking_calibration_live_runner.py
+      - tests/integration/test_blocking_calibration_vertical_slice.py
+      - docs/research/027_recommended_vs_blocking_required_calibration_design.md
+      - docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+      - docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+      - docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
+      - docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
+      - docs/checkpoints/170_recommended_vs_blocking_required_calibration_live_source_frozen.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+      - .github/workflows/v1-blocking-calibration.yml
+      - .github/workflows/v1-blocking-calibration-live.yml
+  pull_request:
+    branches: [v1-frontend-spike]
+    paths:
+      - src/ads_system/application/reasoning.py
+      - src/ads_system/application/ports.py
+      - src/ads_system/infrastructure/runtime/**
+      - experiments/blocking_calibration/**
+      - tests/fixtures/reasoning/blocking_calibration_v1.json
+      - tests/unit/test_reasoning.py
+      - tests/unit/test_blocking_calibration_harness.py
+      - tests/unit/test_blocking_calibration_runner.py
+      - tests/unit/test_blocking_calibration_live_runner.py
+      - tests/integration/test_blocking_calibration_vertical_slice.py
+      - docs/research/027_recommended_vs_blocking_required_calibration_design.md
+      - docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+      - docs/checkpoints/167_recommended_vs_blocking_required_calibration_contract_frozen.md
+      - docs/checkpoints/168_recommended_vs_blocking_required_calibration_implementation_gate_cross_platform_passed.md
+      - docs/checkpoints/169_recommended_vs_blocking_required_calibration_pre_live_boundary_frozen.md
+      - docs/checkpoints/170_recommended_vs_blocking_required_calibration_live_source_frozen.md
+      - docs/CURRENT_STATE.md
+      - docs/KNOWLEDGE_MAP.md
+      - docs/OPEN_QUESTIONS.md
+      - README.md
+      - .github/workflows/v1-blocking-calibration.yml
+      - .github/workflows/v1-blocking-calibration-live.yml
+
+permissions:
+  contents: read
+
+jobs:
+  provider-free-diagnostic:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Verify live provider credential is absent
+        shell: bash
+        run: |
+          if [ -n "${OPENAI_API_KEY:-}" ]; then
+            echo "Ordinary blocking-calibration CI must not receive OPENAI_API_KEY."
+            exit 1
+          fi
+      - name: Run frozen provider-free blocking calibration gates
+        run: >-
+          uv run --python 3.13 --locked python -m pytest
+          tests/unit/test_reasoning.py
+          tests/unit/test_blocking_calibration_harness.py
+          tests/unit/test_blocking_calibration_runner.py
+          tests/unit/test_blocking_calibration_live_runner.py
+          tests/integration/test_blocking_calibration_vertical_slice.py
+          -q
+      - name: Run existing V1 Python regression suite
+        if: always()
+        run: uv run --python 3.13 --locked python -m pytest -q

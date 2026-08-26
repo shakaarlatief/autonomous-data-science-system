@@ -1,493 +1,258 @@
 # Current State
 
-**Checkpoint:** 116  
-**Date:** 2026-08-20  
-**Development stage:** Prototype V0 complete; post-V0 product/object/methodological-knowledge architecture accepted; V1 persistence foundation and reusable-knowledge interchange implemented to their tested scopes; agent-runtime selection and professional frontend product shell are now explicit parallel evaluation tracks while the governed PostgreSQL round-trip remains open pending corrected confirmation  
-**Final V0 classification:** STRONG FALSIFICATION OF THE CURRENT P0 DESIGN  
-**Execution mode:** Build bounded professional product slices and falsification gates. Prefer standards/existing infrastructure for agent/runtime/interoperability responsibilities, but keep ADS domain/project semantics independent and authoritative.
+**Checkpoint:** 205  
+**Date:** 2026-08-26  
+**Active development branch:** `v1-frontend-spike`  
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
+**Development stage:** Governed provider-neutral multi-model development is accepted and promoted. The active development boundary has returned to permanent user-controlled Source Universe deployment before Course 2.  
+**Latest specification:** Specification 024 is accepted with outcome `COLLABORATION_STATE_GUARD_ACCEPTED`.  
+**Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
-## Active ChatGPT development context
+## Active interaction context
+
+The provider-neutral checkpoint provenance contract begins at Checkpoint 204.
+
+Current interaction:
 
 ```text
-Design session: 02
-ChatGPT project: Autonomous Data Science System
-Session title: 02 - Methodological Brain & Knowledge Units
+Interaction environment  ChatGPT
+Project / workspace      Autonomous Data Science System
+Interaction session      chatgpt-06
+Conversation title       06 - Methodological Knowledge Universe Construction
+Primary collaborator     ChatGPT
 ```
 
-Repository artifacts remain authoritative across chats.
+Current known Claude collaboration session:
+
+```text
+Interaction environment  Claude
+Project / workspace      Autonomous Data Science System
+Interaction session      claude-01
+Conversation title       01 - ADS Development Review & Collaboration
+```
+
+Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current product goal
+# Current active boundary: permanent user-controlled source-vault bootstrap
 
-The Autonomous Data Science System should become a professional interactive data-science operating environment that carries much of the methodological memory, project memory, option generation, process navigation, execution discipline, provenance, and reporting burden while preserving strong human inspection, discussion, override, editing, execution, and guidance.
-
-The frontend is part of that product architecture rather than a cosmetic layer. The target is now explicitly a modern, visually excellent, premium professional analytical application with strong typography, information hierarchy, dark/light themes, accessibility, responsive professional desktop layouts, polished loading/error/empty states, and high-quality analytical visualization.
-
-Primary product sources:
+Primary route:
 
 ```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+```
+
+Specification 023 remains:
+
+```text
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+No permanent source-vault operation has yet been executed on the user's real durable storage.
+
+Course 2 remains blocked until the permanent compare, reviewed ingestion, integrity audit, independent backup, clean restore, and restored audit all succeed.
+
+---
+
+## Exact promoted multi-model boundary
+
+PR #76 merged into `v1-frontend-spike` at:
+
+```text
+ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+```
+
+The final pre-merge candidate passed:
+
+```text
+Checkpoint metadata                    PASS
+Model collaboration state              PASS
+Current routing consistency             PASS
+V1 source universe substrate            PASS
+V1 reasoning context value              PASS
+V1 autonomous live experiment launcher  PASS
+V1 blocking calibration diagnostic      PASS
+V1 disposition semantics diagnostic     PASS
+```
+
+The multi-model method is now accepted infrastructure rather than the active development question.
+
+Current collaboration status:
+
+```text
+MC-0001   RESOLVED / CLOSED
+MC-0002   RESOLVED / CLOSED
+MC-0003   RESOLVED / CLOSED
+review inbox pending obligations   NONE
+GitHub Issue #78                   CLOSED / completed
+GitHub Issue #79                   CLOSED / completed
+```
+
+No further Claude review is currently owed.
+
+---
+
+## Governed multi-model Development Method v0.5
+
+Current accepted method:
+
+```text
+repository remains project authority
+SOLO development remains first-class
+collaboration is selective and task-scoped
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state writer at a time
+explicit secondary write surfaces
+machine-readable guarded collaboration state where warranted
+GitHub transport != project authority
+durable numbered collaboration messages
+independent-first review for consequential questions where anchoring matters
+known review contamination is disclosed
+provider-local interaction session identities
+disagreement classified and routed rather than averaged away
+human arbitration reserved for genuine project-intent / consequential choices
+deferred review preserves exact targets and explicit gates
+```
+
+Canonical route:
+
+```text
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
+docs/model_collaboration/README.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+```
+
+Unattended scheduled review and API orchestration remain deferred.
+
+---
+
+## PR #75 state does not mean deployment completed
+
+GitHub now reports PR #75 as closed/merged because its preserved planning commit:
+
+```text
+d9437a8ca07a444400a5eb44ac2c89e8108c91c2
+```
+
+is an ancestor of the promoted PR #76 merge.
+
+This means the runbook and Checkpoint 198 were preserved in promoted history. It does **not** mean the real permanent source-vault sequence ran.
+
+Still unexecuted:
+
+```text
+choose/verify private permanent locations
+compare original VU Machine Learning folder to prospective fingerprints
+inspect every MATCH / DIFFERENT / MISSING / ADDITIONAL result
+adjust the reviewed manifest prospectively only if justified
+ingest into permanent registry/vault
+audit working store
+create independent verified backup
+perform clean restore
+audit restored store
+preserve public-safe evidence
+```
+
+No private path, source binary, private registry snapshot, or backup payload belongs in public Git.
+
+---
+
+## Required private environment inputs
+
+The permanent deployment requires real locations for:
+
+```text
+ORIGINAL_SOURCE_ROOT
+SOURCE_REGISTRY_DATABASE
+SOURCE_VAULT_ROOT
+INDEPENDENT_BACKUP_ROOT
+CLEAN_RESTORE_ROOT
+```
+
+The immediate user/environment input needed before execution is:
+
+```text
+1. actual Windows path to the original VU Machine Learning source folder
+2. an actually independent backup storage location
+```
+
+ADS must not invent these paths.
+
+Once those are known, the permanent registry/vault/restore layout can be selected and the runbook can proceed in frozen order.
+
+---
+
+# Methodological knowledge-universe program remains the larger objective
+
+Primary route:
+
+```text
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+```
+
+First six deep slices:
+
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+The source and collaboration work are supporting substrate/method requirements for carrying out that program professionally and durably.
+
+---
+
+## Stable accepted architecture
+
+Accepted implementation decisions now include:
+
+```text
+D-028  SQLite-centered local-first operational architecture
+D-029  SQLAlchemy Core 2.0 + Alembic 1.x
+D-030  pyproject.toml + uv + committed uv.lock + uv_build
+D-031  governed deterministic JSON / JSON Schema knowledge interchange
+D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
+D-033  ADS-owned private Source Universe substrate + relational registry
+D-034  governed provider-neutral multi-model development collaboration
 ```
 
 ---
 
-## Prototype V0 constraint
-
-Prototype V0 strongly falsified the then-current P0 implementation strategy.
+## Exact continuation
 
 ```text
-B1 targeted mean: 1.73
-P0 targeted mean: 1.78
-incremental gain: +0.05
-
-B1 completed within budget: 10/10
-P0 completed within budget: 3/10
-
-P0/B1 median token ratio: 2.160
+1. obtain/confirm ORIGINAL_SOURCE_ROOT
+2. obtain/confirm a genuinely independent backup location
+3. choose the private permanent registry/vault/clean-restore layout
+4. compare the original ML folder against preserved prospective fingerprints
+5. inspect every comparison class before any manifest adjustment
+6. execute reviewed ingestion
+7. audit working-store integrity
+8. create independent verified backup
+9. perform clean restore and restored audit
+10. preserve public-safe deployment evidence
+11. admit Course 2 only after recovery integrity is proven
+12. continue serious methodological knowledge-universe construction
 ```
-
-The strongest scaling lesson remains:
-
-```text
-what the SYSTEM should remember
-    !=
-what the LLM should receive on every reasoning call
-```
-
-Do not restore P0's large always-on state/context, path-sensitive activation, generic recursive reopening, or full frontier representation unchanged.
-
-Authoritative evidence:
-
-```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-```
-
----
-
-## Project object model and methodological brain
-
-Foundation 018 separates:
-
-```text
-OBJECTS
-RELATIONS
-EVENTS
-VIEWS
-```
-
-and preserves distinctions including:
-
-```text
-Investigation != Run
-Evidence != Finding
-Finding != Claim
-Claim != Decision
-current state != event history
-persisted object != derived recommendation
-```
-
-The design does not add a universal top-level `Assessment` object. Subject-specific criterion verdicts use:
-
-```text
-Question -> Evidence -> Finding -> Claim/Decision
-```
-
-with a structured criterion-Finding form where useful.
-
-Foundation 019 governs the methodological horizon:
-
-```text
-KNOWN
-    -> APPLICABLE
-    -> RELEVANT
-    -> RECOMMENDED
-    -> REQUIRED / BLOCKING
-```
-
-Conceptually:
-
-```text
-large global knowledge base
-    -> high-recall project-specific retrieval/filtering
-    -> bounded methodological horizon
-    -> explicit checks + flexible reasoning
-    -> selective task-specific LLM context
-```
-
-Foundation 020 promotes:
-
-```text
-KnowledgeAsset
-KnowledgeComponent
-NarrativeFacet
-KnowledgeRelation
-Conditional KnowledgeRule
-KnowledgeCollection
-Project objects referencing exact knowledge revisions
-Criterion Finding
-ExecutionCapability
-Derived Views
-```
-
-Promoted methodological representation principles:
-
-```text
-P-025  knowledge identity/granularity != reasoning function
-P-026  static relationships != conditional guidance rules
-```
-
----
-
-## Accepted V1 persistence architecture and tooling
-
-Accepted decisions/specifications:
-
-```text
-D-028 + Specification 001
-    SQLite-centered local-first operational architecture
-    FTS5 rebuildable lexical index
-    rebuildable embeddings / initial exact semantic retrieval
-    app-level rule evaluator
-    selective context assembly
-    filesystem/Git/artifact storage outside DB
-
-D-029 + Specification 002
-    SQLAlchemy Core 2.0 stable series
-    Alembic 1.x migrations
-
-D-030 + Specification 003
-    pyproject.toml
-    uv 0.12.5 + committed uv.lock
-    uv_build
-    src/ads_system
-    Python >=3.12
-```
-
-PostgreSQL + pgvector remains the preferred first persistence/semantic migration family if real requirements exceed the SQLite envelope.
-
-The first production persistence vertical slice in Checkpoint 114 passed on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 and proves exact historical knowledge-revision pinning for project Findings.
-
----
-
-## Accepted reusable-knowledge interchange
-
-Checkpoint 115 validated the heterogeneous reusable-knowledge bundle under KI-01 through KI-10.
-
-The previously pending promotion is now complete:
-
-```text
-D-031
-Specification 004 v1.0
-```
-
-Accepted interchange:
-
-```text
-standard JSON
-+ JSON Schema Draft 2020-12
-+ application-level semantic validation
-+ deterministic normalization/serialization
-```
-
-Authority model:
-
-```text
-operational database
-    authoritative runtime state
-
-interchange JSON
-    human-reviewable / storage-neutral representation
-
-FTS / embeddings / caches
-    rebuildable derived state
-```
-
-Governance requirement:
-
-```text
-CANDIDATE_SET / BENCHMARK_FIXTURE
-    cannot silently create accepted methodological authority
-
-ACCEPTED_SNAPSHOT
-    trusted restore/bootstrap/migration path
-```
-
-Sources:
-
-```text
-docs/DECISIONS.md, D-031
-docs/specifications/004_v1_reusable_knowledge_interchange.md
-docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-experiments/architecture_spikes/V1_KNOWLEDGE_INTERCHANGE_RESULT.md
-```
-
----
-
-## Governed persistence round-trip status
-
-A richer governed knowledge round-trip path is implemented, including:
-
-```text
-candidate import
-explicit acceptance
-accepted-current pointers
-accepted snapshot export
-provenance
-relation governance
-collections
-migration 0002
-historical project revision pinning
-```
-
-Current confirmed gate state:
-
-```text
-SQLite roundtrip
-    PASS
-
-first PostgreSQL 18 roundtrip
-    FAIL
-```
-
-The PostgreSQL failure is understood and localized. Migration 0002 used a manually named foreign-key constraint longer than PostgreSQL's 63-character identifier limit.
-
-Fix committed:
-
-```text
-ba6a92f83aac3a63ebfb7f97a4378c93fa28547b
-Shorten interchange migration identifiers for PostgreSQL
-```
-
-Status tracing improvement:
-
-```text
-a69b8859696fbd3b45124c257d085989d692a207
-Make roundtrip gate status traceable to source commit
-```
-
-At Checkpoint 116, a corrected PostgreSQL PASS has not yet been persisted and confirmed. Do not call the governed round-trip complete until that happens.
-
-Temporary diagnostic artifacts/workflow should be removed after final resolution.
-
----
-
-## 2026 agentic ecosystem architecture audit
-
-A current external-ecosystem audit has now been completed:
-
-```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-```
-
-Main conclusion:
-
-```text
-ADS project/domain/methodological semantics
-    are durable product architecture
-
-agent frameworks / MCP / A2A / AG-UI / runtime checkpointing
-    are infrastructure and interoperability mechanisms
-```
-
-These should not be conflated.
-
-New principles:
-
-```text
-P-027
-Agent frameworks and interoperability protocols are infrastructure,
-not ADS domain authority.
-
-P-028
-Prefer deterministic software for explicit work and agent reasoning
-for genuine ambiguity.
-
-P-029
-The product interface is a first-class reasoning, control, and
-quality surface.
-```
-
-### MCP
-
-Treat MCP as a first-class candidate external tool/resource integration boundary, not as project memory or an internal application bus. Current 2026 MCP architecture has changed materially and new code should not depend on deprecated Roots, Sampling, or Logging behavior.
-
-### A2A
-
-Deferred until ADS actually needs independently deployed remote agent systems.
-
-### AG-UI
-
-Evaluate in the frontend spike as an adapter around ADS-owned interaction/run events. Do not make it the domain event model.
-
----
-
-## Agent-runtime evaluation track
-
-No agent framework, LLM provider, or multi-agent architecture is accepted yet.
-
-Candidate evaluation contract:
-
-```text
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-```
-
-First-round candidates:
-
-```text
-OpenAI Agents SDK
-LangGraph
-Microsoft Agent Framework
-Google ADK 2.0
-```
-
-Pydantic AI / Pydantic Graph remains a watchlist candidate.
-
-Mandatory bakeoff areas include:
-
-```text
-domain isolation
-single-agent tool loop
-current MCP integration
-human approval interruption
-durable resume after process boundary
-external ADS project-state authority
-context transparency
-cancellation/timeouts
-failure/retry semantics
-structured output
-observability
-provider/test substitution
-```
-
-Start with one principal reasoner. Multi-agent complexity must earn its place through evidence.
-
-A valid result remains using simpler direct model calls if no framework provides enough incremental value.
-
----
-
-## Professional frontend track
-
-Foundation 021 makes the frontend an active parallel V1 track.
-
-Candidate technical/visual evaluation contract:
-
-```text
-docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
-```
-
-Leading hypothesis:
-
-```text
-React
-TypeScript
-Vite
-TanStack Router
-TanStack Query
-TanStack Table v9
-shadcn/ui source-distributed components
-ADS-owned design tokens / visual language
-Playwright
-Vitest
-```
-
-This is not yet accepted as the final frontend stack.
-
-Current evidence favors Vite over Next.js for the V1 shell because ADS is local-first, Python-backed, highly interactive, and has no demonstrated SEO/server-rendering requirement. The spike may reopen that decision if it exposes a missing capability.
-
-Chart strategy remains open:
-
-```text
-ECharts
-vs
-Plotly
-```
-
-They will be compared on the same ADS analytical examples.
-
-Tauri 2 remains a later desktop-packaging candidate after the normal browser shell and Python service boundary are stable.
-
-The first frontend should be visually serious rather than a disposable dashboard. It should test Overview, Data, EDA, Decisions/History, methodological statuses, Question/Finding/Decision representations, run/activity state, one approval interaction, light/dark themes, loading/error/offline states, accessibility, responsive widths, and controlled visual regression screenshots.
-
----
-
-## Retrieval/horizon track remains active
-
-The agent/frontend audit changes sequencing but does not remove retrieval from the methodological brain.
-
-Still required:
-
-```text
-retrieval-quality fixtures
-production lexical retrieval
-semantic retrieval candidate evaluation
-lexical/semantic fusion if justified
-first real MethodologicalHorizon construction
-selective LLM context assembly
-```
-
-Do not choose an embedding model, reranker, ANN service, or vector database from intuition.
-
-The representative reusable-knowledge corpus should become a retrieval benchmark only after the governed persistence/interchange seam is stable enough that fixture changes are not competing with migration debugging.
-
----
-
-## Still intentionally unselected or incomplete
-
-```text
-agent runtime
-number of agents
-LLM provider/model
-MCP server catalog
-A2A
-AG-UI
-frontend final stack
-chart library
-Tauri desktop packaging
-backend HTTP/API framework
-production FTS implementation
-embedding model/provider
-lexical/semantic fusion
-reranker
-complete Foundation 018 production schema
-artifact-storage backend
-job queue/cloud deployment
-```
-
-These are now attached to explicit requirements or planned spikes rather than being open-ended technology questions.
-
----
-
-## Near-term execution order
-
-Three active bounded tracks:
-
-```text
-A. GOVERNED ROUNDTRIP CLOSURE
-   confirm corrected PostgreSQL 18 gate
-   fix any remaining portability defect honestly
-   remove temporary diagnostics
-   close with dedicated checkpoint only on confirmed PASS
-
-B. AGENT RUNTIME BAKEOFF
-   implement Specification 005 representative workload
-   begin single-agent first
-   compare surviving runtimes against actual ADS requirements
-
-C. FRONTEND PRODUCT SPIKE
-   implement Specification 006 shell from typed deterministic mock state
-   establish real design system and professional visual character
-   test accessibility/visual states
-   compare chart systems
-   evaluate AG-UI mapping without domain coupling
-```
-
-Retrieval benchmark work follows in parallel once the knowledge seam is stable.
-
----
 
 ## Minimum reading for continuation
 
@@ -495,33 +260,14 @@ Retrieval benchmark work follows in parallel once the knowledge seam is stable.
 README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
-docs/DECISIONS.md
-docs/PRINCIPLES.md
+docs/current_routing.json
 
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-
-docs/specifications/001_v1_sqlite_technical_architecture.md
-docs/specifications/002_v1_persistence_tooling_standard.md
-docs/specifications/003_v1_python_project_and_dependency_tooling.md
-docs/specifications/004_v1_reusable_knowledge_interchange.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
-
-docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
-docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
-
-docs/experiments/prototype_v0/FINAL_RESULTS.md
+docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
+docs/model_collaboration/README.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
-
-## Current priority
-
-**Close the corrected governed PostgreSQL round-trip honestly, then begin the Specification 005 agent-runtime bakeoff and Specification 006 professional frontend visual/technical spike as parallel bounded V1 tracks. Keep retrieval-quality work evidence-driven and do not introduce multi-agent, vector, or orchestration complexity before it earns its place.**

@@ -1,0 +1,139 @@
+{
+  "benchmark_id": "v1-system-owned-provenance-recommendation-action-value-v0.1",
+  "overlay_schema_version": 1,
+  "base_fixture": "tests/fixtures/reasoning/relation_backed_recommendation_action_v1.json",
+  "base_fixture_git_blob_sha": "eac949c47a01878dcc47dcca1116493a02ba9805",
+  "specification": "docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md",
+  "research": "docs/research/026_system_owned_provenance_recommendation_action_value_design.md",
+  "starting_integration_head": "ecf37585f576a3c4fd84a884dee4650b52ab1519",
+  "randomization_seed_override": 2026082304,
+  "inherit_without_change": [
+    "cases",
+    "conditions",
+    "dispositions",
+    "reasoner",
+    "judge",
+    "call_plan_except_randomization_seed",
+    "disposition_definitions",
+    "deterministic_metric_definitions_except_unsupported_methodological_basis",
+    "judge_scoring",
+    "relative_gate",
+    "expansion_gate",
+    "promotion_value_signals"
+  ],
+  "scientific_truth_lock": {
+    "case_project_evidence_unchanged": true,
+    "candidate_action_menus_unchanged": true,
+    "expected_dispositions_unchanged": true,
+    "expected_defer_pointers_unchanged": true,
+    "blocked_scope_truth_unchanged": true,
+    "clarification_truth_unchanged": true,
+    "cost_units_unchanged": true,
+    "judge_obligations_unchanged": true,
+    "selective_key_sets_unchanged": true,
+    "full_horizon_construction_unchanged": true,
+    "partial_spec017_scores_may_not_tune_overlay": true
+  },
+  "model_output_contract": {
+    "schema_name": "SystemProvenanceRecommendationActionResult",
+    "fields": {
+      "summary": "string",
+      "action_decisions": "list[{action_id:string, disposition:enum, defer_until_id:string|null, rationale:string}]",
+      "blocked_scopes": "list[string]",
+      "required_clarification_ids": "list[string]",
+      "warnings": "list[string]"
+    },
+    "forbidden_fields": [
+      "methodological_basis"
+    ],
+    "every_candidate_action_exactly_once": true,
+    "menu_subset_validation": true,
+    "defer_pointer_validation": true
+  },
+  "system_owned_provenance_contract": {
+    "record_name": "SystemContextProvenance",
+    "fields": [
+      "condition",
+      "supplied_revisions",
+      "methodology_payload_sha256",
+      "methodology_payload_bytes"
+    ],
+    "revision_pointer_fields": [
+      "stable_key",
+      "revision_id"
+    ],
+    "generated_before_provider_call": true,
+    "derived_only_from_actual_supplied_methodology_payload": true,
+    "model_output_cannot_modify_provenance": true,
+    "generic_supplied_revisions_must_be_empty": true,
+    "selective_revision_set_must_match_effective_case_selective_keys": true,
+    "full_horizon_revision_count_must_equal": 10,
+    "sha256_must_recompute_exactly": true,
+    "preserve_per_planned_reasoner_output": true
+  },
+  "common_reasoner_instruction_delta": {
+    "remove": "In methodological_basis, list only supplied stable keys that materially support the result; for GENERIC, methodological_basis must be empty.",
+    "add": "Do not self-report or invent methodological provenance. The system records supplied context provenance separately. Return recommendation content only in the frozen structured result."
+  },
+  "deterministic_metric_delta": {
+    "remove": [
+      "unsupported_methodological_basis"
+    ],
+    "retain": [
+      "exact_disposition_accuracy",
+      "critical_action_omission",
+      "under_recommendation",
+      "over_recommendation",
+      "unnecessary_recommended_cost",
+      "blocking_scope_false_negative",
+      "blocking_scope_false_positive",
+      "required_clarification_false_negative",
+      "required_clarification_false_positive",
+      "defer_pointer_error"
+    ]
+  },
+  "absolute_gate": {
+    "selective_max_critical_action_omissions": 0,
+    "selective_max_blocking_scope_false_negatives": 0,
+    "selective_max_defer_pointer_errors": 0,
+    "selective_max_required_clarification_false_negatives": 0,
+    "selective_min_aggregate_exact_disposition_accuracy": 0.9,
+    "selective_min_per_case_exact_disposition_accuracy": 0.85,
+    "selective_min_aggregate_semantic_score": 0.9,
+    "selective_min_per_case_semantic_score": 0.85
+  },
+  "completion_requirement": {
+    "planned_reasoner_outputs": 36,
+    "planned_judge_outputs": 36,
+    "all_reasoner_outputs_must_be_successful": true,
+    "all_judge_outputs_must_be_successful": true,
+    "incomplete_design_has_no_advancement_classification": true
+  },
+  "advancement_outcomes": [
+    "PROMOTE_SYSTEM_PROVENANCE_RECOMMENDATION_SEAM",
+    "SAFE_BUT_NOT_DIFFERENTIATED",
+    "FAIL"
+  ],
+  "technical_invariants": [
+    "SPRA-INV-01 base fixture Git blob SHA matches exactly",
+    "SPRA-INV-02 effective four-case scientific truth equals the frozen Specification 017 fixture",
+    "SPRA-INV-03 exact 36-call reasoner plan is deterministic under seed 2026082304",
+    "SPRA-INV-04 judge plan is deterministic, independently shuffled, and condition blinded",
+    "SPRA-INV-05 GENERIC supplies zero methodological revisions and records empty system provenance revisions",
+    "SPRA-INV-06 SELECTIVE exact stable-key sets equal the inherited Specification 017 sets",
+    "SPRA-INV-07 FULL_HORIZON supplies all ten exact accepted-current revisions",
+    "SPRA-INV-08 every system provenance record is generated before its provider call from the actual methodology payload",
+    "SPRA-INV-09 every methodology payload SHA-256 recomputes exactly and payload byte count is exact",
+    "SPRA-INV-10 model result schema has no methodological_basis field",
+    "SPRA-INV-11 model output cannot mutate or substitute system provenance",
+    "SPRA-INV-12 matched conditions share identical task/project/action/trigger evidence",
+    "SPRA-INV-13 relation-backed output validation enforces candidate/action/menu/defer-pointer rules",
+    "SPRA-INV-14 judge payload contains no condition, methodology context, provenance, digest, usage, or paired output",
+    "SPRA-INV-15 retry accounting obeys the inherited 90-attempt ceiling and semantic disagreement is non-retryable",
+    "SPRA-INV-16 complete fake-runtime design evaluates 36 reasoner outputs and 36 judge outputs",
+    "SPRA-INV-17 ordinary CI contains no live provider credential",
+    "SPRA-INV-18 application/domain layers remain free of provider SDK imports",
+    "SPRA-INV-19 authoritative project state is not mutated by the experiment",
+    "SPRA-INV-20 live launch is unauthorized until exact provider-free source head and required CI runs are frozen in a checkpoint"
+  ]
+}

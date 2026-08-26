@@ -2,74 +2,37 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-20
+**Last reviewed:** 2026-08-26
 
 ## Purpose
 
-This file records only changes that materially alter how the project is understood, built, evaluated, preserved, or continued.
-
-It is not a commit changelog.
+This file records only changes that materially alter how the project is understood, built, evaluated, preserved, or continued. It is not a commit changelog.
 
 ---
 
-## 2026-08-07: Dedicated project and layered repository preservation established
+## 2026-08-07 to 2026-08-08: Dedicated project and durable preservation method established
 
-The Autonomous Data Science System became a dedicated repository separate from individual data projects.
+The Autonomous Data Science System became a dedicated repository separate from individual data projects. Chat remained the design workspace while Git became the durable source of truth. The project introduced layered preservation, foundations, checkpoints, explicit decisions, proactive checkpointing, and a continuity procedure for new chats.
 
-The initial preservation model distinguished:
-
-```text
-chat as exploratory workspace
-repository as durable source of truth
-canonical documents
-foundational design memos
-checkpoints
-historical provenance
-```
-
-This established the maxim:
+Core maxim:
 
 > The chat is where we think. The repository is where the system remembers.
 
 Key sources:
 
 ```text
-docs/foundations/001_initial_vision_and_reasoning.md
-docs/DECISIONS.md, D-001 through D-010
-```
-
----
-
-## 2026-08-08: Checkpointing and chat rotation became proactive AI responsibilities
-
-Development Method v0.2 made the AI design collaborator responsible for detecting natural checkpoints, preserving important uncheckpointed reasoning, and recommending session rotation when continuity risk becomes material.
-
-Key sources:
-
-```text
-docs/DECISIONS.md, D-018 and D-020
+docs/DECISIONS.md, D-001 through D-020
 docs/DEVELOPMENT_METHOD.md
 docs/CONTINUITY.md
 ```
 
 ---
 
-## 2026-08-08 to 2026-08-09: Core system theory expanded into dedicated foundations
+## 2026-08-08 to 2026-08-09: Core system theory became explicit foundations
 
-The project moved from a broad vision to explicit theories for:
+The project developed dedicated foundations for epistemic integrity, admissibility/risk, project state, initialization, knowledge activation, reusable knowledge, knowledge quality/evolution, and behavioral system evaluation.
 
-```text
-epistemic integrity
-admissibility and risk-sensitive assurance
-project state and dependency-aware revision
-project initialization
-knowledge activation
-reusable knowledge representation
-knowledge quality and evolution
-behavioral system evaluation
-```
-
-Key sources:
+Key route:
 
 ```text
 docs/foundations/002_epistemic_integrity_and_project_constitution.md
@@ -84,188 +47,23 @@ docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
 
 ---
 
-## 2026-08-09: Prototype V0 became a falsification experiment
+## 2026-08-09 to 2026-08-19: Prototype V0 became a preregistered falsification program and then strongly failed
 
-The project deliberately chose to test a small explicit semantic architecture against strong simpler controls rather than building a large autonomous platform first.
-
-```text
-B0: strong LLM + strong generic workflow
-B1: B0 + the same methodological knowledge supplied statically
-P0: same model + typed state + activation + safeguards + dependency repair
-    + state-driven action selection
-```
-
-The experiment was explicitly designed so P0 could lose and be simplified.
-
-Key sources:
-
-```text
-docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
-docs/foundations/011_prototype_v0_technical_specification.md
-```
-
----
-
-## 2026-08-09: Held-out evaluation was preregistered before P0 implementation
-
-The H1/H2 bundles, 30-run order, common model/provider configuration, budgets, replacement policy, semantic rubric, blinded judging procedure, and continuation/falsification criteria were frozen before P0 implementation.
-
-Key source:
-
-```text
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
-```
-
----
-
-## 2026-08-09 to 2026-08-18: The system-level LLM/system/human boundary became explicit and durable
-
-The project distinguished:
-
-```text
-human-executed data science
-human + interactive LLM data science
-system-mediated data science
-```
-
-The key implication is that the LLM is one reasoning component inside the system, while every explicit mechanism must still justify its complexity empirically.
-
-The idea originated in Checkpoint 22 and was later promoted to Foundation 013 after the project recognized that historically preserved knowledge can still become conceptually buried.
-
-Key sources:
-
-```text
-docs/checkpoints/022_system_level_abstraction_and_reusable_reasoning_vision.md
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
-```
-
----
-
-## 2026-08-18: Development Method v0.3 introduced an explicit knowledge-preservation architecture
-
-Actual project growth exposed risks in discoverability, implicit promotion, and canonical duplication/drift.
-
-Version 0.3 introduced:
-
-```text
-checkpoint promotion audits
-KNOWLEDGE_MAP routing
-periodic stage-boundary reconciliation
-lightweight authority/maturity conventions
-MAJOR_CHANGES structural history
-separation of CURRENT_STATE from detailed experiment ledgers
-explicit deferral criteria for more advanced knowledge infrastructure
-```
-
-Git + Markdown remains the current preservation substrate until demonstrated retrieval, dependency, consistency, concurrency, or automation problems justify more complex infrastructure.
-
-Key sources:
-
-```text
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-docs/DEVELOPMENT_METHOD.md
-docs/KNOWLEDGE_MAP.md
-```
-
----
-
-## 2026-08-18: Prototype V0 gained validated external supervision and mechanical verification
-
-After early held-out execution showed that manual transport/bookkeeping no longer added scientific value, the project introduced a condition-neutral external layer:
-
-```text
-heldout_runner.py
-    frozen one-attempt executor
-
-heldout_verifier.py
-    read-only mechanical verification
-
-heldout_supervisor.py
-    bounded sequential orchestration
-```
-
-The verifier was retrospectively validated against all existing attempts before prospective use. This automated repetitive experiment operations without changing treatment semantics.
-
-Key sources:
-
-```text
-docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
-docs/checkpoints/082_held_out_supervisor_retroactively_validated_and_frozen_for_live_use.md
-```
-
----
-
-## 2026-08-19: Execution and observability were separated as a system-level principle
-
-Running long treatment and semantic-evaluation processes exposed a reusable design principle:
-
-```text
-execution / reasoning
-    -> persisted structured state or events
-    -> read-only observability
-    -> human interface
-```
-
-Detailed timestamps, heartbeats, elapsed time, progress rendering, and future dashboards belong preferentially in a sidecar observer rather than the trusted execution path.
-
-Key sources:
-
-```text
-docs/PRINCIPLES.md, P-022
-docs/foundations/016_execution_observability_separation.md
-docs/checkpoints/091_execution_observability_separation_promoted_and_semantic_monitor_added.md
-```
-
----
-
-## 2026-08-19: Prototype V0 completed and strongly falsified the current P0 design
-
-All treatment and semantic evidence completed under the preregistered protocol:
-
-```text
-30 / 30 treatment slots resolved
-34 / 34 persisted attempts mechanically verified PASS
-60 / 60 blinded semantic judge passes completed
-0 manual semantic adjudications
-blinded evidence frozen before condition decoding
-```
-
-The final pooled comparison was:
-
-```text
-                         B0          B1          P0
-Targeted mean           1.47        1.73        1.78
-Strong targeted pass    0/10        0/10        0/10
-Critical failure runs   0/10        0/10        0/10
-Completed in budget    10/10       10/10        3/10
-Budget exhausted        0/10        0/10        7/10
-Median total tokens  122,544.5   120,564.5   260,370.0
-```
-
-P0's targeted semantic gain over B1 was only `+0.05`, far below the preregistered material-reliability threshold. B1 and P0 had identical critical-failure and strong-targeted-pass counts, while P0 used `2.160x` B1's median tokens.
-
-Post-unblinding P0 diagnostics found no false action blocks, no critical over-invalidation, and no held-out-specific hard coding. P0 dependency repair was precise, but the same repair behavior was already near ceiling in B1. The current activation mechanism also showed path sensitivity, and generic support-reassessment produced avoidable internal state churn.
-
-Foundation 012's reliability-cost strong-falsification clause is therefore met.
+The project tested an explicit semantic/orchestration architecture against strong simpler controls before building a large platform. The benchmark and falsification criteria were frozen prospectively.
 
 Final classification:
 
-> **STRONG FALSIFICATION OF THE CURRENT P0 DESIGN.**
-
-The architectural consequence is simplification, not abandonment of the broader system vision.
-
-Do not continue unchanged:
-
 ```text
-full typed state resent every reasoning cycle
-large always-on state/relation context
-generic support-reassessment propagation
-path-sensitive tag-trigger activation
-universal dependency reopening machinery
-full P0 frontier representation
+STRONG FALSIFICATION OF THE CURRENT P0 DESIGN
 ```
 
-The next design stage starts from the strong B1 baseline and asks what smallest low-overhead mechanism can improve reliability on harder, longer, changing project trajectories.
+The broader ADS vision survived, but the original always-on orchestration machinery did not earn its complexity. The strongest scaling lesson became:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
 
 Key sources:
 
@@ -277,46 +75,25 @@ docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_di
 
 ---
 
-## 2026-08-19: Post-V0 product vision became a professional interactive data-science workspace
+## 2026-08-18: Preservation gained routing, promotion audits, and reconciliation
 
-After closing V0, the project deliberately returned to the broader product goal before choosing another backend architecture.
-
-The target experience was made concrete as a professional interactive project workspace in which the system itself carries much of the methodological-navigation burden while the user can inspect, discuss, select, override, and guide the work.
-
-Important product ideas include:
-
-```text
-recommended analyses
-relevant option space
-full methodological knowledge catalog
-living project memory
-living reports
-project replay evaluation
-configurable human involvement
-```
-
-A central distinction is:
-
-```text
-what the system remembers
-    !=
-what the LLM receives on every reasoning call
-```
+Development Method v0.3 added explicit promotion audits, `KNOWLEDGE_MAP`, periodic reconciliation, a selective `MAJOR_CHANGES` ledger, and clearer separation between concise current state and detailed historical evidence.
 
 Key sources:
 
 ```text
-docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
-docs/checkpoints/097_post_v0_product_vision_concretized_as_interactive_methodological_workspace.md
+docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
+docs/DEVELOPMENT_METHOD.md
+docs/KNOWLEDGE_MAP.md
 ```
 
 ---
 
-## 2026-08-19: Product object model and professional developer-workflow integration were concretized
+## 2026-08-19 to 2026-08-21: ADS product/object model and Project Cockpit became concrete
 
-The project next derived a candidate object model from the desired user experience rather than from a storage technology or state-machine implementation.
+The target became a professional interactive data-science operating environment in which ADS carries much of the project-memory and methodological-navigation burden while the human can inspect, discuss, select, override, guide, and approve work.
 
-The conceptual separation is now:
+The project object model adopted:
 
 ```text
 OBJECTS
@@ -325,76 +102,24 @@ EVENTS
 VIEWS
 ```
 
-Candidate project objects include:
+with durable distinctions such as `Investigation != Run`, `Evidence != Finding`, `Finding != Claim`, and `Claim != Decision`.
 
-```text
-Project / IntentItem
-Artifact / Dataset / Variable
-Question / Assumption / Finding / Claim
-Method
-Proposal / Investigation / Run / Evidence / Decision
-Report / ReportSection
-Event / Relation
-```
-
-The design also established two new professional-workflow principles:
-
-```text
-P-023
-The system should complement the professional developer workbench rather than replace it.
-
-P-024
-Generated project code should remain independently runnable and professionally maintainable.
-```
-
-The current conceptual responsibility split is:
-
-```text
-Autonomous Data Science System
-    project/process control plane
-
-VS Code
-    developer workbench
-
-Python / Docker / local or remote compute
-    execution plane
-
-Git + GitHub
-    source versioning, collaboration, and code provenance
-```
-
-System-triggered and manually triggered executions should preferentially share the same reproducible run contract. Git/GitHub should be deeply integrated without becoming the storage substrate for every large artifact.
-
-Local-first execution is a strong current hypothesis for typical projects, but remains deliberately uncommitted as a universal architecture because future remote/cloud/cluster execution should remain possible.
+Repeated bounded frontend/human-review cycles promoted the Project Cockpit interaction architecture.
 
 Key sources:
 
 ```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
 docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
-docs/checkpoints/098_project_object_model_and_professional_developer_workflow_concretized.md
-docs/PRINCIPLES.md, P-023 and P-024
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 ```
 
 ---
 
-## 2026-08-19: Methodological-navigation brain became a concrete relevance architecture
+## 2026-08-19 to 2026-08-20: Methodological navigation became a bounded-horizon architecture
 
-The project moved from the broad idea of a reusable method catalog to a more explicit candidate architecture for methodological navigation.
-
-The brain is now understood as potentially containing multiple reusable knowledge types:
-
-```text
-methods
-question templates
-decision frameworks
-invariants / hard rules
-failure modes
-investigation patterns
-interpretation knowledge
-follow-up / dependency knowledge
-```
-
-A staged relevance model was introduced:
+The methodological brain adopted:
 
 ```text
 KNOWN
@@ -404,222 +129,252 @@ KNOWN
     -> REQUIRED / BLOCKING
 ```
 
-A new concept, the **methodological horizon**, separates a potentially large global knowledge base from the small project-specific slice that should be evaluated and surfaced at a particular moment.
-
-The current candidate flow combines explicit filtering where prerequisites or hard rules are reliable with flexible reasoning for semantic applicability, relevance, tradeoffs, and prioritization.
-
-Recommendation rationale should be inspectable, and reusable knowledge should eventually retain scope, provenance, maturity, counterexamples, and challenge history. Methodological meaning should remain separate from concrete execution templates.
-
-The brain should also remain open-world: flexible reasoning may identify important concerns absent from the explicit catalog, creating candidate knowledge gaps for later review and promotion.
+The `MethodologicalHorizon` separates the large global methodological universe from the bounded project-specific slice plausibly relevant to current reasoning. Reusable methodological knowledge gained explicit assets, components, narrative facets, relations, conditional rules, collections, exact revisions, and provenance.
 
 Key sources:
 
 ```text
 docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
-docs/checkpoints/099_methodological_navigation_brain_promoted_and_session_rotation_recommended.md
-```
-
----
-
-## 2026-08-20: Reusable methodological knowledge gained a promoted representation architecture
-
-The methodological-navigation design moved from a general relevance architecture to a concrete reusable-knowledge representation that survived two explicit stress-test rounds.
-
-The promoted representation distinguishes:
-
-```text
-KnowledgeAsset
-KnowledgeComponent
-NarrativeFacet
-KnowledgeRelation
-Conditional KnowledgeRule
-KnowledgeCollection
-project object references/influence
-criterion Findings
-ExecutionCapability
-Views
-```
-
-Promoted principles:
-
-```text
-P-025
-Reusable knowledge identity/granularity should remain separate from reasoning function.
-
-P-026
-Static methodological relationships should remain separate from conditional guidance rules.
-```
-
-Key sources:
-
-```text
 docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
-docs/checkpoints/104_adversarial_review_of_candidate_knowledge_representation.md
-docs/checkpoints/105_refined_representation_second_stress_test.md
 ```
 
 ---
 
-## 2026-08-20: V1 implementation requirements were derived before technology selection
+## 2026-08-20 to 2026-08-22: V1 local-first persistence, tooling, interchange, and reasoning runtime became operational
 
-The project derived 59 technology-neutral requirements before comparing databases or retrieval architectures.
-
-This changed architecture selection from technology preference into a concrete workload decision.
-
-Key source:
+The project accepted:
 
 ```text
-docs/checkpoints/107_implementation_requirements_for_methodological_knowledge_subsystem.md
+D-028  SQLite-centered local-first operational architecture
+D-029  SQLAlchemy Core 2.0 + Alembic 1.x
+D-030  pyproject.toml + uv + committed uv.lock + uv_build
+D-031  deterministic JSON + JSON Schema knowledge interchange with governance
+D-032  OpenAI Agents SDK behind an ADS-owned ReasoningRuntime
+```
+
+The governed reusable-knowledge round-trip closed across SQLite/Linux, SQLite/Windows, and PostgreSQL 18. Runtime-framework authority remained below ADS-owned domain/application boundaries.
+
+---
+
+## 2026-08-22 to 2026-08-23: Retrieval, MethodologicalHorizon, and selective context were validated as bounded seams
+
+The bounded path progressed through lexical retrieval, dense complementarity, hybrid comparison, explained Horizon construction, selective exact-revision context, and real reasoning.
+
+Specification 014 observed equal measured reasoning quality between selective and full-Horizon conditions on its frozen benchmark while reducing provider input by 66.56%.
+
+This supports selective context economy. It does not select the final navigation strategy for a serious knowledge universe.
+
+Key route:
+
+```text
+Specification 009 / Checkpoint 135   lexical retrieval
+Specification 010 / Checkpoint 137   dense complementarity
+Specification 011 / Checkpoint 139   hybrid comparator
+Specification 012 / Checkpoint 141   explained MethodologicalHorizon
+Specification 013 / Checkpoint 143   selective exact-revision context
+Specification 014 / Checkpoint 146   real reasoning-context value
 ```
 
 ---
 
-## 2026-08-20: SQLite-centered local-first V1 persistence/retrieval architecture selected
+## 2026-08-23 to 2026-08-25: Recommendation/action experiments exposed bounded calibration and instrumentation failures
 
-After explicit requirements and architecture comparison, D-028 selected:
+The downstream recommendation/action program produced a deliberately mixed evidence chain:
 
 ```text
-SQLite operational store
-FTS5 rebuildable lexical index
-rebuildable embeddings with initial exact search
-application-level conditional-rule evaluator
-selective bounded LLM context assembly
-filesystem/Git/artifact storage for large/code artifacts
+Specification 015  FAIL
+Specification 016  dependency-backed DEFER-vs-NOT_NOW construct supported
+Specification 017  INCOMPLETE
+Specification 019  FAIL after system-owned provenance repair
+Specification 020  dependency-backed RECOMMENDED-vs-BLOCKING_REQUIRED construct supported
+Specification 021  FAIL
 ```
 
-Dedicated graph/vector services, external rules engines, PostgreSQL by default, ANN infrastructure, and multi-store architecture remain deferred until measured requirements justify them.
+A central architectural distinction emerged:
 
-PostgreSQL + pgvector remains the preferred first migration family if the SQLite envelope is exceeded.
+```text
+supplied-action disposition calibration
+    !=
+open-world methodological navigation / coverage
+```
+
+Failed/incomplete implementations were not promoted merely because they ran. Their contracts and evidence were preserved separately.
+
+---
+
+## 2026-08-23: Governed autonomous live-experiment launcher was promoted
+
+Specification 018 established a bounded repository-governed launch path for explicitly authorized frozen experiments. The launcher owns mechanical authorization checks without receiving provider credentials or allowing issue text to define arbitrary executable configuration.
+
+Checkpoint 161 classified the bounded outcome:
+
+```text
+GOVERNED_LAUNCHER_SUPPORTED
+```
+
+---
+
+## 2026-08-25: Specification 022 ended incomplete and shifted project emphasis to the serious methodological universe
+
+Specification 022 moved evaluation upstream to evolving project state and methodological path coverage. Its live workflow completed operationally but all 108 planned reasoner observations failed the frozen structured-output contract after allowed retries, so no judge comparison was scientifically reachable.
+
+Frozen classification:
+
+```text
+INCOMPLETE / EXECUTION INTEGRITY FAILED
+```
+
+No legitimate `GENERIC`, `ADS_HORIZON`, or `ORACLE_HORIZON` comparison exists from that run.
+
+Checkpoint 191 changed the immediate program from another small mechanism experiment to building the serious governed methodological substrate ADS ultimately requires.
+
+The incomplete experiment implementation was not promoted. Durable evidence was preserved through a preservation-only integration.
+
+---
+
+## 2026-08-25: Serious methodological knowledge-universe construction framework was frozen
+
+Research 033 and Checkpoint 193 established a broad coverage map, proposition-sensitive source policy, layered knowledge QA, explicit construction-depth ladder, and six heterogeneous deep pressure-test slices:
+
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+The knowledge representation is explicitly allowed to change if serious content exposes real deficiencies.
+
+---
+
+## 2026-08-25: Source Universe became a first-class ADS subsystem
+
+Bulk educational-source intake was paused when it became clear that ChatGPT Library or Project Sources should not become the long-term source architecture.
+
+Research 034 and the source/evidence foundation established:
+
+```text
+SOURCE UNIVERSE
+    !=
+METHODOLOGICAL KNOWLEDGE UNIVERSE
+```
+
+The source foundation was initially drafted as Foundation 021, but promotion reconciliation detected that Foundation 021 was already occupied by the professional product/interface foundation. The source foundation was therefore canonically renumbered Foundation 022 without semantic change.
+
+The accepted architecture separates logical source identity, exact artifact identity, collections and uncertain membership, locators, ingestion events, derived lineage, rights/access, and later fine-grained evidence provenance.
 
 Key sources:
 
 ```text
-docs/DECISIONS.md, D-028
-docs/checkpoints/108_v1_architecture_comparison_and_sqlite_centered_selection.md
-experiments/architecture_spikes/sqlite_v1_viability.py
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
 ```
 
 ---
 
-## 2026-08-20: V1 persistence moved from architecture into production code
+## 2026-08-25: Specification 023 source substrate passed provider-free first-corpus acceptance
 
-The project selected SQLAlchemy Core + Alembic, established standards-based Python/uv tooling, and then implemented the first real V1 persistence vertical slice.
+Specification 023 implemented:
 
-The production slice demonstrated on SQLite/Linux, SQLite/Windows, and PostgreSQL 18 that exact historical project-to-knowledge references survive later knowledge revision changes.
+```text
+filesystem intake
+    -> exact SHA-256 + staging
+    -> immutable content-addressed SourceArtifactStore
+    -> relational Source Registry
+    -> deterministic PRIVATE_SNAPSHOT / PUBLIC_SAFE_CATALOG
+    -> integrity audit
+    -> verified backup
+    -> clean restore
+```
+
+The implementation passed on Ubuntu and Windows and retained all inherited V1 regressions.
+
+The first controlled VU Amsterdam Machine Learning corpus produced:
+
+```text
+20 / 20 prospective fingerprint matches
+20 NEW_ARTIFACT ingests
+14 EXACT_DUPLICATE real re-encounters
+20 logical sources
+20 exact artifacts
+20 stored objects
+34 ingestion events
+20 / 20 clean working-store audit
+20 / 20 clean restored audit
+SU-G01 through SU-G23 PASS
+```
+
+Classification:
+
+```text
+SOURCE_SUBSTRATE_ACCEPTED
+```
+
+No source PDF, private observed path, private registry snapshot, or backup payload entered public Git.
+
+D-033 now accepts the ADS-owned source-substrate architecture and supersedes D-015 only in its original architectural-uncertainty scope.
+
+Important remaining boundary:
+
+```text
+accepted source-substrate architecture / implementation
+    !=
+permanent user-controlled source vault already instantiated
+```
+
+The next operational step is to deploy the accepted source store and registry on durable user-controlled storage, ingest the original local Machine Learning folder, establish an independent backup, and prove clean recovery before Course 2 is admitted.
 
 Key sources:
 
 ```text
-docs/DECISIONS.md, D-029 and D-030
-docs/specifications/001_v1_sqlite_technical_architecture.md
-docs/specifications/002_v1_persistence_tooling_standard.md
-docs/specifications/003_v1_python_project_and_dependency_tooling.md
-docs/checkpoints/114_first_production_v1_persistence_vertical_slice_passed.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 ```
 
 ---
 
-## 2026-08-20: Reusable knowledge gained an accepted deterministic interchange contract
+## 2026-08-25 to 2026-08-26: Governed multi-model development became canonical
 
-D-031 and Specification 004 now define the accepted V1 interchange as:
+The ADS development method expanded from one ChatGPT-centered interaction process into provider-neutral governed collaboration among ChatGPT, Claude, the human project owner, and future collaborators.
+
+The architecture was pressure-tested through three real threads rather than promoted from one model's proposal:
 
 ```text
-JSON
-+ JSON Schema Draft 2020-12
-+ application semantic validation
-+ deterministic serialization
+MC-0001
+    independent/comparative architecture review
+    -> exposed candidate-content leakage and single-global-writer weakness
+
+Specification 024 / MC-0002
+    -> machine-readable per-thread coherence guard
+    -> direct Claude implementation review
+    -> COLLABORATION_STATE_GUARD_ACCEPTED
+
+Research 036 / MC-0003
+    -> explicit deferred review/catch-up
+    -> two pending Claude obligations coexisted
+    -> later processed in priority order with exact-target discipline
 ```
 
-The heterogeneous benchmark corpus passed KI-01 through KI-10 across Linux/Windows and Python 3.12-3.14.
+Development Method v0.5 now makes SOLO work first-class, collaboration selective, task ownership explicit, role separate from write scope, independent review contamination visible, disagreement routable, and provider-neutral interaction provenance mandatory for new checkpoints from Checkpoint 204 onward.
 
-Normal candidate/benchmark import cannot silently create accepted methodological authority.
+The source-vault deployment remains paused rather than cancelled.
 
-The separate governed database round-trip is still being validated. Its first PostgreSQL attempt exposed a real portability defect in one overlong physical constraint name. The defect was localized and corrected; final corrected PostgreSQL confirmation remains pending at Checkpoint 116.
+Unattended scheduled model review and API orchestration remain deferred. Known future collaboration-mechanization triggers are preserved without opening Specification 025 prematurely.
 
 Key sources:
 
 ```text
-docs/DECISIONS.md, D-031
-docs/specifications/004_v1_reusable_knowledge_interchange.md
-docs/checkpoints/115_reusable_knowledge_interchange_contract_validated.md
-docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
-```
-
----
-
-## 2026-08-20: Agentic ecosystem audit separated ADS semantics from runtime/protocol infrastructure
-
-A current 2026 ecosystem audit examined MCP, OpenAI Agents SDK, LangGraph, Microsoft Agent Framework, Google ADK, A2A, AG-UI, and observability patterns.
-
-The durable conclusion is:
-
-```text
-ADS owns
-    project semantics
-    methodological semantics
-    governance
-    provenance
-    Findings / Questions / Decisions
-    methodological horizon semantics
-
-ADS should preferentially adopt/test
-    agent runtime
-    durable workflow/checkpoint machinery
-    MCP interoperability
-    AG-UI transport if useful
-    A2A only when remote agents are real
-    standard operational observability
-```
-
-This produced:
-
-```text
-P-027
-Agent frameworks and interoperability protocols are infrastructure,
-not domain authority.
-
-P-028
-Prefer deterministic software for explicit work and agent reasoning
-for genuine ambiguity.
-```
-
-No agent framework or multi-agent architecture was selected. Specification 005 defines an ADS-shaped bakeoff in which even a no-framework result remains valid.
-
-Key sources:
-
-```text
-docs/research/001_2026_agentic_ecosystem_and_integration_architecture_audit.md
-docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
-docs/PRINCIPLES.md, P-027 and P-028
-```
-
----
-
-## 2026-08-20: Professional frontend became an early parallel V1 product track
-
-The product-interface requirement was strengthened from "professional workspace" into a first-class visual/product quality commitment.
-
-Foundation 021 now requires a modern, visually excellent, premium professional analytical interface with strong typography, carefully controlled density, accessibility, responsive professional desktop layouts, coherent light/dark modes, high-quality analytical visualization, and deliberately designed loading/empty/error/offline/approval states.
-
-P-029 makes the interface a reasoning/control/quality surface, not an end-stage presentation layer.
-
-Specification 006 defines the first visual/technical spike. The leading but not yet accepted hypothesis is:
-
-```text
-React + TypeScript + Vite
-TanStack Router / Query / Table
-shadcn/ui source-distributed components
-ADS-owned design system
-Playwright + Vitest
-```
-
-ECharts versus Plotly remains an empirical comparison. AG-UI will be tested as an adapter rather than a domain protocol. Tauri is deferred until the browser shell and Python service boundary are stable.
-
-Key sources:
-
-```text
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
-docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
-docs/PRINCIPLES.md, P-029
-docs/checkpoints/116_agentic_ecosystem_audit_and_frontend_track_started.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/DECISIONS.md, D-034
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/model_collaboration/README.md
+docs/model_collaboration/threads/MC-0001/RESOLUTION.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/model_collaboration/threads/MC-0002/RESOLUTION.md
+docs/model_collaboration/threads/MC-0003/RESOLUTION.md
 ```

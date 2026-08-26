@@ -1,10 +1,17 @@
-"""Application-facing persistence contracts for the first V1 vertical slices."""
+"""Application-facing contracts for the first V1 vertical slices."""
 
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from typing import Any, Protocol, Self
 
+from ads_system.application.context_models import ContextKnowledgeAsset
+from ads_system.application.horizon_models import (
+    NavigableKnowledgeAsset,
+    RelatedKnowledgeAsset,
+)
+from ads_system.application.reasoning import ReasoningOutcome, ReasoningRequest
+from ads_system.application.retrieval import KnowledgeRetrievalHit
 from ads_system.domain.models import (
     Finding,
     KnowledgeAssetRevision,
@@ -62,6 +69,34 @@ class KnowledgeRepository(Protocol):
         unknown_behavior: str,
         rationale: str | None = None,
     ) -> str: ...
+
+
+class KnowledgeRetrievalPort(Protocol):
+    """Storage-neutral high-recall retrieval over governed reusable knowledge."""
+
+    def search(self, query: str, *, limit: int = 10) -> tuple[KnowledgeRetrievalHit, ...]: ...
+
+
+class KnowledgeNavigationRepository(Protocol):
+    """Targeted accepted-current reads for Horizon and context construction."""
+
+    def get_current_asset(self, stable_key: str) -> NavigableKnowledgeAsset | None: ...
+
+    def get_outbound_related_assets(
+        self, stable_key: str
+    ) -> tuple[RelatedKnowledgeAsset, ...]: ...
+
+    def get_context_asset(
+        self, stable_key: str, revision_id: str
+    ) -> ContextKnowledgeAsset | None:
+        """Return compact reasoning content only for the exact current revision."""
+        ...
+
+
+class ReasoningRuntime(Protocol):
+    """Provider-neutral runtime for one stateless ADS reasoning request."""
+
+    async def run(self, request: ReasoningRequest) -> ReasoningOutcome: ...
 
 
 class KnowledgeInterchangeRepository(Protocol):
@@ -139,6 +174,7 @@ class ProjectRepository(Protocol):
 
 class UnitOfWork(Protocol):
     knowledge: KnowledgeRepository
+    navigation: KnowledgeNavigationRepository
     interchange: KnowledgeInterchangeRepository
     projects: ProjectRepository
 

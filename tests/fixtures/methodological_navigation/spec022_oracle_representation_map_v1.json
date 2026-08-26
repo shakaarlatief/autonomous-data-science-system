@@ -1,0 +1,201 @@
+{
+  "benchmark_id": "spec022-oracle-representation-map-v1",
+  "mappings": [
+    {
+      "oracle_id": "E1-C01",
+      "stable_keys": [
+        "prediction-moment"
+      ]
+    },
+    {
+      "oracle_id": "E1-C02",
+      "stable_keys": [
+        "prediction-time-feature-eligibility"
+      ]
+    },
+    {
+      "oracle_id": "E1-C03",
+      "stable_keys": [
+        "temporal-validation"
+      ]
+    },
+    {
+      "oracle_id": "E1-C04",
+      "stable_keys": [
+        "repeated-entity-generalization"
+      ]
+    },
+    {
+      "oracle_id": "E1-C05",
+      "stable_keys": [
+        "group-aware-validation"
+      ]
+    },
+    {
+      "oracle_id": "E1-C06",
+      "stable_keys": [
+        "class-imbalance"
+      ]
+    },
+    {
+      "oracle_id": "E1-C07",
+      "stable_keys": [
+        "minority-sensitive-metrics"
+      ]
+    },
+    {
+      "oracle_id": "E1-C08",
+      "stable_keys": [
+        "temporal-leakage",
+        "data-leakage"
+      ]
+    },
+    {
+      "oracle_id": "E1-C09",
+      "stable_keys": []
+    },
+    {
+      "oracle_id": "E2-C01",
+      "stable_keys": [
+        "train-validation-test-separation"
+      ]
+    },
+    {
+      "oracle_id": "E2-C02",
+      "stable_keys": [
+        "final-test-protection"
+      ]
+    },
+    {
+      "oracle_id": "E2-C03",
+      "stable_keys": [
+        "preprocessing-fit-isolation"
+      ]
+    },
+    {
+      "oracle_id": "E2-C04",
+      "stable_keys": [
+        "feature-selection-isolation"
+      ]
+    },
+    {
+      "oracle_id": "E2-C05",
+      "stable_keys": [
+        "data-leakage"
+      ]
+    },
+    {
+      "oracle_id": "E2-C06",
+      "stable_keys": [
+        "linear-logistic-baseline"
+      ]
+    },
+    {
+      "oracle_id": "E2-C07",
+      "stable_keys": [
+        "nonlinear-model-comparison"
+      ]
+    },
+    {
+      "oracle_id": "E2-C08",
+      "stable_keys": [
+        "selection-evaluation-separation"
+      ]
+    },
+    {
+      "oracle_id": "E3-C01",
+      "stable_keys": [
+        "probability-calibration"
+      ]
+    },
+    {
+      "oracle_id": "E3-C02",
+      "stable_keys": [
+        "proper-scoring-rules"
+      ]
+    },
+    {
+      "oracle_id": "E3-C03",
+      "stable_keys": [
+        "class-imbalance"
+      ]
+    },
+    {
+      "oracle_id": "E3-C04",
+      "stable_keys": [
+        "minority-sensitive-metrics"
+      ]
+    },
+    {
+      "oracle_id": "E3-C05",
+      "stable_keys": [
+        "asymmetric-error-costs"
+      ]
+    },
+    {
+      "oracle_id": "E3-C06",
+      "stable_keys": [
+        "threshold-selection"
+      ]
+    },
+    {
+      "oracle_id": "E3-C07",
+      "stable_keys": [
+        "selection-evaluation-separation"
+      ]
+    },
+    {
+      "oracle_id": "E3-C08",
+      "stable_keys": [
+        "final-test-protection"
+      ]
+    },
+    {
+      "oracle_id": "E3-C09",
+      "stable_keys": [
+        "temporal-validation"
+      ]
+    },
+    {
+      "oracle_id": "E3-C10",
+      "stable_keys": []
+    },
+    {
+      "oracle_id": "E4-C01",
+      "stable_keys": [
+        "missing-data"
+      ]
+    },
+    {
+      "oracle_id": "E4-C02",
+      "stable_keys": [
+        "production-missingness-alignment"
+      ]
+    },
+    {
+      "oracle_id": "E4-C03",
+      "stable_keys": [
+        "subgroup-robustness"
+      ]
+    },
+    {
+      "oracle_id": "E4-C04",
+      "stable_keys": [
+        "measurement-regime-change"
+      ]
+    },
+    {
+      "oracle_id": "E4-C05",
+      "stable_keys": [
+        "distribution-shift"
+      ]
+    },
+    {
+      "oracle_id": "E4-C06",
+      "stable_keys": [
+        "revalidation-after-data-change"
+      ]
+    }
+  ],
+  "schema_version": 1
+}

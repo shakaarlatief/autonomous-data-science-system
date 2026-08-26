@@ -1,0 +1,1003 @@
+{
+  "benchmark_id": "spec022-coverage-oracle-v1",
+  "default_unspecified_state": "INACTIVE",
+  "importance_weights": {
+    "CRITICAL_VALIDITY": 4,
+    "HIGH_VALUE": 2,
+    "OPTIONAL": 0,
+    "USEFUL": 1
+  },
+  "inactive_controls_by_snapshot": {
+    "E1-S0": [
+      "probability-calibration",
+      "threshold-selection",
+      "measurement-regime-change"
+    ],
+    "E1-S1": [
+      "probability-calibration",
+      "threshold-selection",
+      "measurement-regime-change"
+    ],
+    "E1-S2": [
+      "probability-calibration",
+      "threshold-selection",
+      "measurement-regime-change"
+    ],
+    "E2-S0": [
+      "temporal-validation",
+      "temporal-leakage",
+      "repeated-entity-generalization",
+      "group-aware-validation"
+    ],
+    "E2-S1": [
+      "temporal-validation",
+      "temporal-leakage",
+      "repeated-entity-generalization",
+      "group-aware-validation"
+    ],
+    "E2-S2": [
+      "temporal-validation",
+      "temporal-leakage",
+      "repeated-entity-generalization",
+      "group-aware-validation"
+    ],
+    "E3-S0": [
+      "measurement-regime-change",
+      "distribution-shift",
+      "subgroup-robustness"
+    ],
+    "E3-S1": [
+      "measurement-regime-change",
+      "distribution-shift",
+      "subgroup-robustness"
+    ],
+    "E3-S2": [
+      "measurement-regime-change",
+      "distribution-shift",
+      "subgroup-robustness"
+    ],
+    "E4-S0": [
+      "probability-calibration",
+      "threshold-selection",
+      "temporal-validation"
+    ],
+    "E4-S1": [
+      "probability-calibration",
+      "threshold-selection",
+      "temporal-validation"
+    ],
+    "E4-S2": [
+      "probability-calibration",
+      "threshold-selection",
+      "temporal-validation"
+    ]
+  },
+  "items": [
+    {
+      "acceptable_aliases": [
+        "define the scoring cutoff",
+        "fix the prediction cutoff"
+      ],
+      "canonical_concern": "define the operational prediction moment",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O1",
+          "E1-O3"
+        ],
+        "E1-S1": [
+          "E1-O4"
+        ],
+        "E1-S2": [
+          "E1-O4"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E1-C01",
+      "rationale": "Future-facing scoring cannot be evaluated or feature-timed rigorously until the operational cutoff is explicit.",
+      "state_by_snapshot": {
+        "E1-S0": "ACTIVE",
+        "E1-S1": "RESOLVED",
+        "E1-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "audit feature availability at scoring time",
+        "check whether predictors exist before scoring"
+      ],
+      "canonical_concern": "verify prediction-time feature eligibility",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O3"
+        ],
+        "E1-S1": [
+          "E1-O4",
+          "E1-O6"
+        ],
+        "E1-S2": [
+          "E1-O4",
+          "E1-O7"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": "What exact scoring cutoff determines whether each candidate feature is available for prediction?",
+      "oracle_id": "E1-C02",
+      "rationale": "Features unavailable by the scoring cutoff invalidate deployment-facing model evidence.",
+      "state_by_snapshot": {
+        "E1-S0": "MISSING_CONTEXT",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "chronological validation",
+        "past-to-future validation"
+      ],
+      "canonical_concern": "use temporal validation aligned with future deployment",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O1",
+          "E1-O3"
+        ],
+        "E1-S1": [
+          "E1-O1",
+          "E1-O4"
+        ],
+        "E1-S2": [
+          "E1-O1",
+          "E1-O4"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": "What exact prediction cutoff and deployment cadence should the validation splits reproduce?",
+      "oracle_id": "E1-C03",
+      "rationale": "A future deployment claim requires validation that respects the temporal information boundary.",
+      "state_by_snapshot": {
+        "E1-S0": "MISSING_CONTEXT",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "repeated-entity generalization",
+        "customer-level generalization"
+      ],
+      "canonical_concern": "account for repeated-customer generalization",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O2"
+        ],
+        "E1-S1": [
+          "E1-O2"
+        ],
+        "E1-S2": [
+          "E1-O2"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E1-C04",
+      "rationale": "Repeated customer-month rows create a generalization choice that must match the intended deployment claim.",
+      "state_by_snapshot": {
+        "E1-S0": "ACTIVE",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "group-aware validation",
+        "customer-group split"
+      ],
+      "canonical_concern": "use entity-aware splitting when repeated customers would cross folds",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O2"
+        ],
+        "E1-S1": [
+          "E1-O2"
+        ],
+        "E1-S2": [
+          "E1-O2"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E1-C05",
+      "rationale": "Repeated entities can make ordinary random row splits optimistic when entity independence is required.",
+      "state_by_snapshot": {
+        "E1-S0": "ACTIVE",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "inspect positive prevalence",
+        "class-prevalence imbalance"
+      ],
+      "canonical_concern": "measure and account for class imbalance",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O1"
+        ],
+        "E1-S1": [
+          "E1-O5"
+        ],
+        "E1-S2": [
+          "E1-O5"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": "What is the positive-class prevalence overall and across recent deployment-relevant periods?",
+      "oracle_id": "E1-C06",
+      "rationale": "The evaluation regime depends on whether the positive class is materially rare.",
+      "state_by_snapshot": {
+        "E1-S0": "MISSING_CONTEXT",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "precision recall metrics",
+        "minority-class evaluation"
+      ],
+      "canonical_concern": "use minority-sensitive classification metrics",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O1"
+        ],
+        "E1-S1": [
+          "E1-O5"
+        ],
+        "E1-S2": [
+          "E1-O5"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": "What is the positive-class prevalence and which minority errors matter operationally?",
+      "oracle_id": "E1-C07",
+      "rationale": "A four-percent positive class makes accuracy alone insufficient for judging useful performance.",
+      "state_by_snapshot": {
+        "E1-S0": "MISSING_CONTEXT",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "temporal leakage",
+        "look-ahead leakage"
+      ],
+      "canonical_concern": "prevent future or post-cutoff information leakage",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S0": [
+          "E1-O3"
+        ],
+        "E1-S1": [
+          "E1-O4",
+          "E1-O6"
+        ],
+        "E1-S2": [
+          "E1-O7"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": "What information boundary separates facts known at scoring from facts observed afterward?",
+      "oracle_id": "E1-C08",
+      "rationale": "Future-facing evidence is invalid if post-cutoff information reaches training features or evaluation.",
+      "state_by_snapshot": {
+        "E1-S0": "MISSING_CONTEXT",
+        "E1-S1": "ACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "label maturity",
+        "complete follow-up window",
+        "target censoring window"
+      ],
+      "canonical_concern": "ensure every training label has a complete outcome-observation window",
+      "episode_id": "E1",
+      "grounding_project_object_ids_by_snapshot": {
+        "E1-S2": [
+          "E1-O8"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E1-C09",
+      "rationale": "Recent rows without the full sixty-day label window can create systematically immature or censored targets.",
+      "state_by_snapshot": {
+        "E1-S0": "INACTIVE",
+        "E1-S1": "INACTIVE",
+        "E1-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "three-way split",
+        "train validation test separation"
+      ],
+      "canonical_concern": "separate train validation and final test roles",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S0": [
+          "E2-O4"
+        ],
+        "E2-S1": [
+          "E2-O4",
+          "E2-O5",
+          "E2-O6"
+        ],
+        "E2-S2": [
+          "E2-O7"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C01",
+      "rationale": "Adaptive model development requires distinct fitting, selection, and final-evaluation data roles.",
+      "state_by_snapshot": {
+        "E2-S0": "ACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "lock the test set",
+        "final-test protection"
+      ],
+      "canonical_concern": "protect the final test set from iterative selection",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S0": [
+          "E2-O4"
+        ],
+        "E2-S1": [
+          "E2-O4"
+        ],
+        "E2-S2": [
+          "E2-O7"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C02",
+      "rationale": "The final test must remain untouched until adaptive modelling choices are complete.",
+      "state_by_snapshot": {
+        "E2-S0": "ACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "preprocessing fit isolation",
+        "fit imputation and scaling on training folds"
+      ],
+      "canonical_concern": "fit learned preprocessing only inside training data",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S0": [
+          "E2-O4"
+        ],
+        "E2-S1": [
+          "E2-O5"
+        ],
+        "E2-S2": [
+          "E2-O7"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C03",
+      "rationale": "Full-data preprocessing leaks validation and test distribution information into the fitted pipeline.",
+      "state_by_snapshot": {
+        "E2-S0": "ACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "feature selection isolation",
+        "nested feature selection"
+      ],
+      "canonical_concern": "perform feature selection inside the evaluation procedure",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S1": [
+          "E2-O6"
+        ],
+        "E2-S2": [
+          "E2-O7"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C04",
+      "rationale": "Target-informed feature selection before splitting leaks outcome information into evaluation.",
+      "state_by_snapshot": {
+        "E2-S0": "INACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "data leakage",
+        "full-data leakage"
+      ],
+      "canonical_concern": "eliminate data leakage from the modelling workflow",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S1": [
+          "E2-O5",
+          "E2-O6"
+        ],
+        "E2-S2": [
+          "E2-O7"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C05",
+      "rationale": "The discovered preprocessing and feature-selection workflow contaminates evaluation.",
+      "state_by_snapshot": {
+        "E2-S0": "INACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "linear logistic baseline",
+        "simple classification baseline"
+      ],
+      "canonical_concern": "establish a transparent logistic-regression baseline",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S0": [
+          "E2-O1"
+        ],
+        "E2-S1": [
+          "E2-O1"
+        ],
+        "E2-S2": [
+          "E2-O8"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C06",
+      "rationale": "A transparent baseline anchors the value of additional model complexity.",
+      "state_by_snapshot": {
+        "E2-S0": "ACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "nonlinear model comparison",
+        "compare flexible tabular models"
+      ],
+      "canonical_concern": "compare a compact nonlinear model family after the baseline",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S2": [
+          "E2-O8",
+          "E2-O9"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C07",
+      "rationale": "Observed validation error structure now gives a project-specific reason to test nonlinear alternatives.",
+      "state_by_snapshot": {
+        "E2-S0": "INACTIVE",
+        "E2-S1": "INACTIVE",
+        "E2-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "selection evaluation separation",
+        "choose on validation and evaluate on test"
+      ],
+      "canonical_concern": "separate adaptive selection from final evaluation",
+      "episode_id": "E2",
+      "grounding_project_object_ids_by_snapshot": {
+        "E2-S0": [
+          "E2-O4"
+        ],
+        "E2-S1": [
+          "E2-O4"
+        ],
+        "E2-S2": [
+          "E2-O7",
+          "E2-O9"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E2-C08",
+      "rationale": "Model and workflow choices must be made with validation evidence rather than final-test feedback.",
+      "state_by_snapshot": {
+        "E2-S0": "ACTIVE",
+        "E2-S1": "ACTIVE",
+        "E2-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "calibration",
+        "reliability of predicted probabilities"
+      ],
+      "canonical_concern": "assess probability calibration",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O1",
+          "E3-O4"
+        ],
+        "E3-S1": [
+          "E3-O1",
+          "E3-O4"
+        ],
+        "E3-S2": [
+          "E3-O1",
+          "E3-O4"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C01",
+      "rationale": "Operational use of numerical risk requires probability estimates that correspond to observed frequencies.",
+      "state_by_snapshot": {
+        "E3-S0": "ACTIVE",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "log loss or Brier score",
+        "proper probability scoring"
+      ],
+      "canonical_concern": "evaluate probabilities with proper scoring rules",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O4"
+        ],
+        "E3-S1": [
+          "E3-O4"
+        ],
+        "E3-S2": [
+          "E3-O4"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C02",
+      "rationale": "Ranking metrics alone do not evaluate the quality of full probability forecasts.",
+      "state_by_snapshot": {
+        "E3-S0": "ACTIVE",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "rare-event prevalence",
+        "class imbalance"
+      ],
+      "canonical_concern": "account for class imbalance",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O2"
+        ],
+        "E3-S1": [
+          "E3-O2"
+        ],
+        "E3-S2": [
+          "E3-O2"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C03",
+      "rationale": "An eight-percent event rate affects interpretation of classification evidence.",
+      "state_by_snapshot": {
+        "E3-S0": "ACTIVE",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "precision recall evaluation",
+        "minority-sensitive metrics"
+      ],
+      "canonical_concern": "use minority-sensitive classification metrics",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O2"
+        ],
+        "E3-S1": [
+          "E3-O2"
+        ],
+        "E3-S2": [
+          "E3-O2"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C04",
+      "rationale": "Rare failures require evidence that exposes positive-class errors in addition to probability quality.",
+      "state_by_snapshot": {
+        "E3-S0": "ACTIVE",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "asymmetric error costs",
+        "false-negative cost"
+      ],
+      "canonical_concern": "represent asymmetric false-positive and false-negative costs",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O1"
+        ],
+        "E3-S1": [
+          "E3-O5"
+        ],
+        "E3-S2": [
+          "E3-O5"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": "What are the operational costs or utilities of false positives and false negatives?",
+      "oracle_id": "E3-C05",
+      "rationale": "The operational decision rule depends on the relative consequences of intervention and missed failure.",
+      "state_by_snapshot": {
+        "E3-S0": "MISSING_CONTEXT",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "threshold selection",
+        "choose the operating cutoff"
+      ],
+      "canonical_concern": "select the operational decision threshold from validation evidence",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O1"
+        ],
+        "E3-S1": [
+          "E3-O6"
+        ],
+        "E3-S2": [
+          "E3-O6",
+          "E3-O9"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": "Will operations use a hard decision cutoff, ranking policy, or another constrained action rule?",
+      "oracle_id": "E3-C06",
+      "rationale": "A hard decision cutoff should follow the operational objective rather than default to 0.5.",
+      "state_by_snapshot": {
+        "E3-S0": "MISSING_CONTEXT",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "selection evaluation separation",
+        "choose calibration and threshold on validation"
+      ],
+      "canonical_concern": "keep policy selection separate from final evaluation",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O4"
+        ],
+        "E3-S1": [
+          "E3-O6"
+        ],
+        "E3-S2": [
+          "E3-O7",
+          "E3-O8"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C07",
+      "rationale": "Calibration and decision-policy choices are adaptive and must be frozen before final testing.",
+      "state_by_snapshot": {
+        "E3-S0": "ACTIVE",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "final-test protection",
+        "keep test locked"
+      ],
+      "canonical_concern": "protect the final test set",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O4"
+        ],
+        "E3-S1": [
+          "E3-O6"
+        ],
+        "E3-S2": [
+          "E3-O8"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C08",
+      "rationale": "The final test must not be used to tune calibration or the action policy.",
+      "state_by_snapshot": {
+        "E3-S0": "ACTIVE",
+        "E3-S1": "ACTIVE",
+        "E3-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "temporal validation",
+        "future-aligned validation"
+      ],
+      "canonical_concern": "temporal validation for future deployment",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S0": [
+          "E3-O3"
+        ],
+        "E3-S1": [
+          "E3-O3"
+        ],
+        "E3-S2": [
+          "E3-O3"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C09",
+      "rationale": "Temporal validation remains methodologically relevant but is already resolved and should not persist as current work.",
+      "state_by_snapshot": {
+        "E3-S0": "RESOLVED",
+        "E3-S1": "RESOLVED",
+        "E3-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "capacity-constrained decision policy",
+        "top-k policy under fixed capacity"
+      ],
+      "canonical_concern": "choose an action policy that respects the hard daily intervention capacity",
+      "episode_id": "E3",
+      "grounding_project_object_ids_by_snapshot": {
+        "E3-S2": [
+          "E3-O9"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E3-C10",
+      "rationale": "A fixed service capacity can make a simple unconstrained threshold an incomplete operational policy.",
+      "state_by_snapshot": {
+        "E3-S0": "INACTIVE",
+        "E3-S1": "INACTIVE",
+        "E3-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "missingness characterization",
+        "missing-data profile"
+      ],
+      "canonical_concern": "characterize missingness in the current data",
+      "episode_id": "E4",
+      "grounding_project_object_ids_by_snapshot": {
+        "E4-S0": [
+          "E4-O2",
+          "E4-O3"
+        ],
+        "E4-S1": [
+          "E4-O2",
+          "E4-O6"
+        ],
+        "E4-S2": [
+          "E4-O8"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E4-C01",
+      "rationale": "Missingness is itself part of the changed data-generating and measurement process.",
+      "state_by_snapshot": {
+        "E4-S0": "ACTIVE",
+        "E4-S1": "ACTIVE",
+        "E4-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "production missingness alignment",
+        "missingness shift"
+      ],
+      "canonical_concern": "compare production missingness with development missingness",
+      "episode_id": "E4",
+      "grounding_project_object_ids_by_snapshot": {
+        "E4-S0": [
+          "E4-O2",
+          "E4-O3"
+        ],
+        "E4-S1": [
+          "E4-O2",
+          "E4-O6"
+        ],
+        "E4-S2": [
+          "E4-O8"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": "What are the post-migration missingness rates overall and by site for the variables used by the model?",
+      "oracle_id": "E4-C02",
+      "rationale": "Deployment validity depends on whether missingness patterns changed after migration.",
+      "state_by_snapshot": {
+        "E4-S0": "MISSING_CONTEXT",
+        "E4-S1": "ACTIVE",
+        "E4-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "site-level robustness",
+        "subgroup performance"
+      ],
+      "canonical_concern": "evaluate subgroup robustness by site",
+      "episode_id": "E4",
+      "grounding_project_object_ids_by_snapshot": {
+        "E4-S0": [
+          "E4-O4"
+        ],
+        "E4-S1": [
+          "E4-O4",
+          "E4-O6"
+        ],
+        "E4-S2": [
+          "E4-O4",
+          "E4-O9"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E4-C03",
+      "rationale": "Aggregate performance can hide a deployment failure isolated to one required site subgroup.",
+      "state_by_snapshot": {
+        "E4-S0": "ACTIVE",
+        "E4-S1": "ACTIVE",
+        "E4-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "measurement-regime change",
+        "sensor unit change"
+      ],
+      "canonical_concern": "reassess comparability after the measurement-regime change",
+      "episode_id": "E4",
+      "grounding_project_object_ids_by_snapshot": {
+        "E4-S1": [
+          "E4-O5",
+          "E4-O7"
+        ],
+        "E4-S2": [
+          "E4-O8"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E4-C04",
+      "rationale": "Changed collection systems and units can invalidate the meaning and scale of model inputs.",
+      "state_by_snapshot": {
+        "E4-S0": "INACTIVE",
+        "E4-S1": "ACTIVE",
+        "E4-S2": "RESOLVED"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "distribution shift",
+        "data drift after migration"
+      ],
+      "canonical_concern": "assess distribution shift after the collection migration",
+      "episode_id": "E4",
+      "grounding_project_object_ids_by_snapshot": {
+        "E4-S0": [
+          "E4-O1",
+          "E4-O3"
+        ],
+        "E4-S1": [
+          "E4-O5",
+          "E4-O6",
+          "E4-O7"
+        ],
+        "E4-S2": [
+          "E4-O9"
+        ]
+      },
+      "importance_class": "HIGH_VALUE",
+      "missing_context_question_semantics": "What post-migration feature distributions are observed overall and by site relative to the development data?",
+      "oracle_id": "E4-C05",
+      "rationale": "Post-migration data may differ materially from the development distribution even after obvious pipeline defects are repaired.",
+      "state_by_snapshot": {
+        "E4-S0": "MISSING_CONTEXT",
+        "E4-S1": "ACTIVE",
+        "E4-S2": "ACTIVE"
+      }
+    },
+    {
+      "acceptable_aliases": [
+        "model revalidation",
+        "revalidate after data change"
+      ],
+      "canonical_concern": "revalidate the model after material data changes",
+      "episode_id": "E4",
+      "grounding_project_object_ids_by_snapshot": {
+        "E4-S1": [
+          "E4-O5",
+          "E4-O6",
+          "E4-O7"
+        ],
+        "E4-S2": [
+          "E4-O9",
+          "E4-O10"
+        ]
+      },
+      "importance_class": "CRITICAL_VALIDITY",
+      "missing_context_question_semantics": null,
+      "oracle_id": "E4-C06",
+      "rationale": "Material measurement and distribution changes can invalidate prior model evidence and require fresh validation.",
+      "state_by_snapshot": {
+        "E4-S0": "INACTIVE",
+        "E4-S1": "ACTIVE",
+        "E4-S2": "ACTIVE"
+      }
+    }
+  ],
+  "schema_version": 1
+}

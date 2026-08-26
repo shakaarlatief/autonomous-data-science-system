@@ -1,6 +1,6 @@
 """Add reusable-knowledge interchange persistence support.
 
-Revision ID: 0002_reusable_knowledge_interchange
+Revision ID: 0002_knowledge_interchange
 Revises: 0001_v1_persistence_core
 Create Date: 2026-08-20
 """
@@ -15,7 +15,7 @@ from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
-revision = "0002_reusable_knowledge_interchange"
+revision = "0002_knowledge_interchange"
 down_revision = "0001_v1_persistence_core"
 branch_labels = None
 depends_on = None

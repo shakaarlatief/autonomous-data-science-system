@@ -2,271 +2,257 @@
 
 ## Overview
 
-This repository is the persistent home of the Autonomous Data Science System project.
+This repository is the persistent development home of the Autonomous Data Science System (ADS).
 
-The project explores how to build a rigorous, adaptive, semi-autonomous system for carrying out data-science projects from problem understanding through analysis, experimentation, modelling, evaluation, reporting, and delivery.
+ADS is being developed as a rigorous, adaptive, semi-autonomous environment for data-science projects in which a strong LLM is one flexible reasoning component inside a wider system that owns project memory, methodological navigation, provenance, execution coordination, deterministic guarantees where justified, and a professional human interaction surface.
 
-Modern LLMs can already perform substantial portions of a data project. That does not imply that one long end-to-end conversation reliably produces the best possible process for every project.
+The working purpose is:
 
-The project therefore studies a higher-level question:
+> **Create the best defensible data-science process for the particular project, where what "best" means depends on the project's goals, constraints, required outputs, risk, and desired human involvement, while maintaining non-negotiable methodological integrity.**
 
-> How much of the process navigation, methodological memory, state maintenance, evidence discipline, repair, and selective human involvement that currently lives in a skilled human-LLM workflow should be made explicit and reusable in a wider system?
+Explicit machinery must earn its complexity empirically.
 
-The LLM is treated as a powerful reasoning component inside that wider system, not as the system itself.
+---
 
-The opposite risk matters just as much: explicit architecture is not automatically valuable. Every mechanism should earn its complexity through evidence.
+## Current development stage
 
-## Working purpose
+Prototype V0 is complete. Bounded V1 is constructing the serious methodological knowledge universe and the professional substrate needed to use it safely.
 
-The current working purpose is:
-
-> **Create the best data-science process for the particular project, where what "best" means is configurable according to the project's goals, constraints, required outputs, and desired human involvement, while maintaining non-negotiable methodological integrity.**
-
-The project therefore does not define maximum automation, maximum predictive performance, maximum analytical depth, minimum cost, or maximum speed as the universal objective.
-
-## Current stage
-
-**Prototype V0 is complete.**
-
-V0 was the first preregistered falsification experiment. It compared:
+The governed multi-model development method is now promoted. PR #76 merged into `v1-frontend-spike` at:
 
 ```text
-B0 = strong LLM + Python + project artifacts + strong generic data-science instructions
-
-B1 = B0 + four methodological concepts supplied statically
-
-P0 = same strong LLM + typed project state + structured knowledge activation
-     + prospective safeguards + state-derived action selection
-     + dependency-aware repair
+ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 ```
 
-The experiment asked whether the extra P0 architecture materially improves reliability beyond B1 at acceptable cost.
-
-### V0 result
-
-**The current P0 design received a strong falsification signal.**
+Post-merge routing is reconciled at Checkpoint 205:
 
 ```text
-                         B0          B1          P0
-Targeted mean           1.47        1.73        1.78
-Strong targeted pass    0/10        0/10        0/10
-Critical failure runs   0/10        0/10        0/10
-Completed in budget    10/10       10/10        3/10
-Budget exhausted        0/10        0/10        7/10
-Median total tokens  122,544.5   120,564.5   260,370.0
+checkpoint            205
+active branch         v1-frontend-spike
+active PR             none
+promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
+latest specification  Specification 024
+specification outcome COLLABORATION_STATE_GUARD_ACCEPTED
+source outcome         SOURCE_SUBSTRATE_ACCEPTED
+latest experiment      Specification 022
+experiment outcome     INCOMPLETE / EXECUTION INTEGRITY FAILED
+current boundary       permanent user-controlled source-vault bootstrap
 ```
 
-P0 improved the targeted semantic score over B1 by only `+0.05`. The preregistered material-reliability threshold required `+0.30` together with at least two additional strong-targeted passes, or at least two fewer critical failures.
+No scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inferred from Specification 022.
 
-P0 and B1 had identical critical-failure and strong-pass counts, while P0 used `2.160x` B1's median tokens and completed only `3/10` runs within budget.
+The next operational task is no longer multi-model-method design. It is to instantiate the already accepted Source Universe substrate on durable user-controlled storage before Course 2 is admitted.
 
-Most of the semantic gain over the generic baseline came from the simpler B1 intervention: make the relevant methodological knowledge explicitly available to the strong LLM.
+---
 
-Detailed result:
+## Governed multi-model development
+
+Development Method v0.5 accepts provider-neutral governed collaboration among ChatGPT, Claude, the human project owner, and future collaborators.
+
+Canonical route:
 
 ```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/checkpoints/204_multimodel_collaboration_method_promoted.md
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
+docs/DECISIONS.md, D-034
 ```
 
-Quick V0 overview:
+Core accepted rules:
 
 ```text
-prototype_v0/README.md
+repository remains project authority
+SOLO work remains first-class
+collaboration is selective and task-scoped
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state write owner at a time
+reviewers may write only declared secondary surfaces
+machine-readable thread state is a coherence guard, not an authenticated lock
+GitHub issue / PR discussion is transport, not authority
+numbered repository messages preserve durable collaboration provenance
+independent-first review uses accepted pre-proposal refs where independence matters
+known review contamination is disclosed rather than erased
+provider-local interaction sessions use IDs such as chatgpt-06 / claude-01
+human arbitration is reserved for genuine project-intent / consequential choices
 ```
 
-The next stage is not to tune P0 until it passes the completed benchmark. The project is now reconciling what V0 taught and designing the smallest lower-overhead successor architecture that can be tested against B1 on a harder problem.
+The architecture was pressure-tested through MC-0001, MC-0002, and MC-0003. All three threads are closed and `docs/model_collaboration/REVIEW_INBOX.md` currently contains no pending obligations.
 
-## What V0 changed
+Unattended scheduled model review and OpenAI/Anthropic API orchestration remain deliberately deferred.
 
-The V0 result does **not** falsify the broader Autonomous Data Science System vision.
+---
 
-It does falsify the assumption that more explicit state and orchestration machinery should be preserved merely because it looks systematic.
+## Source Universe substrate
 
-The current evidence favors keeping:
+External source artifacts are evidence, not the methodological knowledge base itself:
 
 ```text
-one strong LLM reasoner
-compact explicit methodological guidance
-instrumented execution and traceability
-precise deterministic boundaries where justified
-append-only experiment provenance
-external mechanical verification
-read-only observability separated from execution
+SOURCE UNIVERSE
+    exact evidence artifacts + provenance
+
+        !=
+
+METHODOLOGICAL KNOWLEDGE UNIVERSE
+    governed reusable methodological reasoning
 ```
 
-The current P0 mechanisms should not be carried forward unchanged:
+The accepted Source Universe architecture is governed by Foundation 022, Research 034, Specification 023, and D-033. It separates exact immutable source artifacts, logical source identity, collections/membership, locators, ingestion events, rights/access metadata, derived lineage, deterministic exports, integrity audits, backup, and clean restore.
+
+First controlled VU Machine Learning corpus evidence:
 
 ```text
-full typed project state resent every reasoning cycle
-large always-on object/relation context
-generic support-reassessment propagation
-path-sensitive tag-trigger knowledge activation
-universal dependency reopening machinery
-full state-derived frontier representation
+20 / 20 prospective fingerprint matches
+20 NEW_ARTIFACT initial ingests
+14 EXACT_DUPLICATE re-encounters
+20 logical sources
+20 exact artifacts
+20 stored objects
+34 ingestion events
+20 / 20 working integrity audit
+20 / 20 restored integrity audit
+SU-G01 through SU-G23 PASS
+SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-Potential successors such as compact question/claim memory, incremental state deltas, selective retrieval, event-driven repair, and lightweight blocker/frontier representations remain hypotheses for the next design stage.
+Source binaries remain outside public Git.
 
-## System-level vision versus Prototype V0
-
-Prototype V0 tested a narrow local architecture. It does not define the final system.
-
-The broader system-level distinction remains:
+Permanent user-controlled deployment is preserved by:
 
 ```text
-1. human-executed data-science project
-2. human + interactive LLM project
-3. system-mediated data-science project
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
-The long-term question is whether a system can make high-quality project navigation, methodological coverage, state maintenance, repair, and knowledge reuse less dependent on the human remembering and supplying the right reasoning at the right time.
+GitHub now shows PR #75 as merged because its preserved planning commit is an ancestor of the promoted PR #76 merge. That repository state does **not** mean permanent deployment has run.
 
-The best current synthesis is:
+The following still require real user-controlled private locations and real execution:
 
 ```text
-docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
+original source folder comparison
+review of every mismatch class
+permanent registry/vault creation
+reviewed ingestion
+working integrity audit
+independent verified backup
+clean restore
+restored integrity audit
+safe deployment evidence
 ```
+
+Course 2 remains blocked until that sequence succeeds.
+
+---
+
+## Serious methodological knowledge-universe construction
+
+The larger V1 program remains governed by:
+
+```text
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
+```
+
+Coverage depth:
+
+```text
+C0  MAPPED
+C1  SOURCED
+C2  DECOMPOSED
+C3  OPERATIONALIZED
+C4  CONNECTED
+C5  BEHAVIORALLY_TESTED
+C6  PROJECT_EXPOSED
+```
+
+Initial deep pressure-test slices:
+
+```text
+Validation and Generalization Design
+Missing Data
+Feature Selection
+Tree Models and Ensembles
+Class Imbalance / Metrics / Calibration / Thresholding
+Time-Series Methodology
+```
+
+Coverage depth remains separate from truth, maturity, source authority, freshness, and enforcement strength.
+
+---
+
+## Durable architectural core
+
+Prototype V0 strongly falsified its original P0 implementation strategy while preserving the broader ADS vision.
+
+The strongest scaling lesson remains:
+
+```text
+what the SYSTEM should remember
+    !=
+what the LLM should receive on every reasoning call
+```
+
+Important accepted foundations include:
+
+```text
+Foundation 018  OBJECTS / RELATIONS / EVENTS / VIEWS project architecture
+Foundation 019  KNOWN -> APPLICABLE -> RELEVANT -> RECOMMENDED -> REQUIRED/BLOCKING
+Foundation 020  reusable methodological knowledge representation
+Foundation 021  professional product/interface architecture
+Foundation 022  source/evidence substrate
+```
+
+Accepted implementation decisions now include D-028 through D-034.
+
+---
 
 ## Repository role
 
-This repository is the project's durable source of truth.
-
-Chat conversations are used for exploration, reasoning, criticism, and design work. Stable knowledge is extracted into repository artifacts so the project does not depend on conversational memory or any single chat remaining available.
-
-The preservation architecture distinguishes:
-
-```text
-canonical current documents
-foundational design memos
-checkpoints and historical provenance
-experiment-specific ledgers
-routing/index knowledge
-Git history
-```
-
-The core maxim remains:
+This repository is the durable development source of truth.
 
 > **The chat is where we think. The repository is where the system remembers.**
 
-Preservation includes not only durability, but also discoverability, promotion, authority, and reconciliation.
+The multi-model extension preserves the same principle. Collaborators may reason in different products, but accepted project state, review provenance, and continuation must remain reconstructable from shared repository infrastructure.
+
+---
 
 ## Start here
 
 ```text
 docs/CURRENT_STATE.md
-    Concise current state, exact priority, and next step.
-
 docs/KNOWLEDGE_MAP.md
-    Routing layer showing where important knowledge lives.
+docs/current_routing.json
 
-docs/VISION.md
-    Current system vision and purpose.
-
-docs/PRINCIPLES.md
-    Current high-level design principles.
-
-docs/DECISIONS.md
-    Accepted project-level decisions.
-
-docs/OPEN_QUESTIONS.md
-    Important unresolved questions.
-
+docs/checkpoints/205_multimodel_promotion_postmerge_routing_reconciled.md
 docs/DEVELOPMENT_METHOD.md
-    Method for developing and preserving the project.
-
 docs/CONTINUITY.md
-    Procedure for reliable continuation across chats and models.
+docs/model_collaboration/README.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
 
-docs/MAJOR_CHANGES.md
-    Selective history of major architectural and methodological changes.
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
-docs/foundations/
-    Detailed durable reasoning and specifications.
-
-docs/checkpoints/
-    Historical snapshots and milestone records.
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/methodological_knowledge/COVERAGE_MAP.md
 ```
 
-For the completed V0 experiment specifically:
+## Exact next step
 
 ```text
-docs/experiments/prototype_v0/FINAL_RESULTS.md
-prototype_v0/README.md
-docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+1. obtain or confirm the actual ORIGINAL_SOURCE_ROOT for the VU Machine Learning corpus
+2. obtain or confirm a genuinely independent backup location
+3. choose the permanent private registry / vault / clean-restore layout
+4. compare the original corpus against the preserved prospective fingerprints
+5. review every MATCH / DIFFERENT / MISSING / ADDITIONAL result before any manifest change
+6. execute reviewed ingestion, audit, independent backup, clean restore, and restored audit
+7. preserve only public-safe deployment evidence in Git
+8. admit Course 2 only after permanent recovery integrity is proven
+9. continue serious methodological knowledge-universe construction
 ```
-
-## Knowledge preservation architecture
-
-Development Method v0.3 uses the lifecycle:
-
-```text
-discussion
-    -> checkpoint
-    -> promotion audit
-    -> canonical/foundational/specification update when warranted
-    -> knowledge-map routing update when warranted
-    -> periodic knowledge reconciliation
-```
-
-Detailed rationale:
-
-```text
-docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
-```
-
-The current preservation substrate remains Git + Markdown. More advanced infrastructure is deferred until observed retrieval, dependency, consistency, concurrency, or automation problems justify it.
-
-## Execution and observability
-
-A system-level lesson discovered while running V0 is that execution and human-facing observability should be separated:
-
-```text
-execution / reasoning
-    -> persisted structured state or events
-    -> read-only observability
-    -> human interface
-```
-
-This allows monitors, dashboards, timestamps, heartbeats, and progress displays to evolve without modifying the trusted execution path.
-
-Deep rationale:
-
-```text
-docs/foundations/016_execution_observability_separation.md
-```
-
-## Relationship to individual data projects
-
-This repository is intentionally separate from repositories containing individual data-science projects.
-
-Individual projects can serve as coverage tests and development environments for the system.
-
-```text
-Autonomous Data Science System
-        |
-        | designs, guides, reviews, and learns from
-        v
-Individual Data Projects
-```
-
-When a project reveals a generalizable weakness, the lesson should become reusable system knowledge, a decision framework, a behavioral regression test, or an architectural revision rather than remaining a local patch.
-
-## Development philosophy
-
-The project deliberately resists two opposite mistakes:
-
-```text
-Mistake 1:
-Assume that because a strong LLM can already do impressive data-science reasoning,
-there is no value in system-level process machinery.
-
-Mistake 2:
-Assume that because the long-term vision is broader than one LLM conversation,
-every piece of orchestration machinery is automatically justified.
-```
-
-The current stance is empirical:
-
-> **Build only the system mechanisms that demonstrably improve the reliability, coverage, efficiency, reuse, or human-navigation burden of real data-science work beyond what strong simpler workflows already achieve.**
-
-Prototype V0 is the first concrete example of that philosophy: a more elaborate treatment was allowed to lose, and the result is now an architectural constraint for what comes next.

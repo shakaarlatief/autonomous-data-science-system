@@ -1,0 +1,1581 @@
+{
+  "assets": [
+    {
+      "applicability": null,
+      "asset_id": "535106fe-277d-5f01-acb5-c219845ca97d",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Define exactly what outcome is predicted or estimated and at what semantic horizon.",
+      "reasoning_functions": [
+        "QUESTION_TEMPLATE",
+        "VALIDITY_CONSTRAINT"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "target definition",
+          "outcome definition",
+          "label definition"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "clarify the exact outcome and label semantics before modelling"
+        ]
+      },
+      "revision_id": "df6e995f-0a25-50dd-b6e1-dcb012b20d28",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "target-definition",
+      "title": "Target Definition"
+    },
+    {
+      "applicability": null,
+      "asset_id": "3049ee14-1916-56c2-acb8-2c9422fc77e9",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Establish what one row or observation represents and how observations relate to entities and time.",
+      "reasoning_functions": [
+        "QUESTION_TEMPLATE",
+        "DATA_STRUCTURE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "unit of observation",
+          "one row",
+          "row represents"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "identify the observational unit and entity structure of the dataset"
+        ]
+      },
+      "revision_id": "2c9985cc-d5b9-5e08-a5eb-5f2e8e207cf9",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "unit-of-observation",
+      "title": "Unit of Observation"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "project.use.requires_pre_outcome_prediction"
+      },
+      "asset_id": "dc40c343-de2a-5b13-ac7e-4295c17ee0fe",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "CONCEPT",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Define the exact operational time at which a prediction must be produced.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "prediction moment",
+          "scoring cutoff",
+          "prediction cutoff",
+          "scoring time"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "define when the prediction is made relative to available information"
+        ]
+      },
+      "revision_id": "7143ec3f-ac68-51e7-ae4b-5b906cfc76e2",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "prediction-moment",
+      "title": "Prediction Moment"
+    },
+    {
+      "applicability": {
+        "all": [
+          {
+            "arguments": {},
+            "predicate": "project.use.requires_pre_outcome_prediction"
+          },
+          {
+            "arguments": {},
+            "predicate": "prediction.moment.is_defined"
+          }
+        ]
+      },
+      "asset_id": "85ad130e-931c-51b3-80c6-f40c1556f05e",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Require every predictor to be available by the operational prediction moment.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "QUESTION_TEMPLATE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "feature availability",
+          "available at scoring",
+          "known before prediction",
+          "feature timing"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "audit whether every candidate predictor exists before the scoring event"
+        ]
+      },
+      "revision_id": "5100b3e8-4c50-5507-8a1c-dece7d683b56",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "prediction-time-feature-eligibility",
+      "title": "Prediction-Time Feature Eligibility"
+    },
+    {
+      "applicability": null,
+      "asset_id": "73693cc6-8be0-5753-a937-894194b39f30",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Detect information entering training or evaluation that would not be legitimately available under the intended generalization regime.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "FAILURE_MODE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "data leakage",
+          "label leakage",
+          "train test leakage",
+          "information leakage"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "prevent unavailable or held-out information from contaminating modelling or evaluation"
+        ]
+      },
+      "revision_id": "7cc220df-e000-54c2-beda-d6cf75dcbf29",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "data-leakage",
+      "title": "Data Leakage"
+    },
+    {
+      "applicability": {
+        "all": [
+          {
+            "arguments": {},
+            "predicate": "project.generalization.is_future_facing"
+          },
+          {
+            "arguments": {},
+            "predicate": "prediction.moment.is_defined"
+          }
+        ]
+      },
+      "asset_id": "503b0ce8-176a-523b-ab26-7814dda3329c",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Prevent future information from influencing earlier predictions, preprocessing, feature construction, or evaluation.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "FAILURE_MODE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "temporal leakage",
+          "future information",
+          "look ahead",
+          "future data"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "ensure future observations cannot influence earlier prediction or validation decisions"
+        ]
+      },
+      "revision_id": "794ab120-5d40-5c9c-9aec-67f6374fcf79",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "temporal-leakage",
+      "title": "Temporal Leakage"
+    },
+    {
+      "applicability": null,
+      "asset_id": "e50949df-b3e2-5d5c-a5ab-7dd3b04e9972",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Keep model fitting, model selection, and final evaluation on properly separated data roles.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "DECISION_FRAMEWORK"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "train validation test",
+          "data split",
+          "holdout",
+          "validation split"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "separate fitting selection and final evaluation data"
+        ]
+      },
+      "revision_id": "3215f7b6-cd7c-528a-9777-48a274d1fcc3",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "train-validation-test-separation",
+      "title": "Train Validation Test Separation"
+    },
+    {
+      "applicability": {
+        "all": [
+          {
+            "arguments": {},
+            "predicate": "project.generalization.is_future_facing"
+          },
+          {
+            "arguments": {},
+            "predicate": "prediction.moment.is_defined"
+          }
+        ]
+      },
+      "asset_id": "ee7a9d9b-3be2-5b97-b5fe-3d9fde2a59c8",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Align validation ordering and cutoffs with a future-facing deployment claim.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "EVALUATION_DESIGN"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "temporal validation",
+          "chronological validation",
+          "time split",
+          "rolling validation"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "evaluate future deployment using past-to-future validation rather than random temporal mixing"
+        ]
+      },
+      "revision_id": "026d777c-d2a6-5b5d-b254-af4808efd6a3",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "temporal-validation",
+      "title": "Temporal Validation"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "data.entities.repeat_across_rows"
+      },
+      "asset_id": "df0e9b49-c694-5cca-be1e-ac02d4831d1d",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Clarify whether repeated observations from the same entity may appear across fitting and evaluation and whether that matches the intended generalization target.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "DATA_STRUCTURE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "repeated entities",
+          "same customer",
+          "same patient",
+          "entity generalization"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "reason about repeated entities and whether evaluation should generalize to new periods or new entities"
+        ]
+      },
+      "revision_id": "15d1c4b2-c0f6-501f-9eb3-e9658682d92c",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "repeated-entity-generalization",
+      "title": "Repeated-Entity Generalization"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "data.entities.repeat_across_rows"
+      },
+      "asset_id": "267f17a1-0c91-534b-beb1-55de59143577",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "METHOD",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Keep related observations together when evaluation requires independence across entity groups.",
+      "reasoning_functions": [
+        "EVALUATION_DESIGN"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "group validation",
+          "group split",
+          "group k fold",
+          "entity split"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "split evaluation by entity or group when repeated records would otherwise cross folds"
+        ]
+      },
+      "revision_id": "c4dd7814-caa8-5df3-8292-10d16c72f04e",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "group-aware-validation",
+      "title": "Group-Aware Validation"
+    },
+    {
+      "applicability": null,
+      "asset_id": "2fa051ab-f6c4-51d1-99dd-01992bb30c55",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Fit learned preprocessing only on the fitting portion of each evaluation split.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "FAILURE_MODE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "preprocessing leakage",
+          "fit imputer on train",
+          "fit scaler on train",
+          "pipeline leakage"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "prevent imputation scaling encoding or other learned preprocessing from seeing validation or test data"
+        ]
+      },
+      "revision_id": "cc1bf0ff-2bff-579f-b25d-693ccfb4a3f1",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "preprocessing-fit-isolation",
+      "title": "Preprocessing Fit Isolation"
+    },
+    {
+      "applicability": null,
+      "asset_id": "3f0fded0-389b-5c3f-890a-8ef3cc45d827",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Perform supervised or data-adaptive feature selection inside the training and validation procedure rather than before it.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "FAILURE_MODE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "feature selection leakage",
+          "select features on train",
+          "feature selection inside cross validation"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "keep feature selection from using validation test or full-label information"
+        ]
+      },
+      "revision_id": "d562878a-a7df-5f62-904f-1b52bf9052d6",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "feature-selection-isolation",
+      "title": "Feature Selection Isolation"
+    },
+    {
+      "applicability": null,
+      "asset_id": "5b34a3b3-5627-580c-a582-b0629a914778",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Characterize missingness patterns, mechanisms, affected variables, and modelling implications.",
+      "reasoning_functions": [
+        "DECISION_FRAMEWORK",
+        "EVIDENCE_OPTION"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "missing data",
+          "missing values",
+          "null values",
+          "missingness"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "inspect where data are missing and whether missingness carries process or measurement information"
+        ]
+      },
+      "revision_id": "838c4d2d-3d88-5860-b0ca-e3938dae9069",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "missing-data",
+      "title": "Missing Data"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "data.production_missingness_profile.is_known"
+      },
+      "asset_id": "3e69e1dd-f377-5aff-84f2-413b484f4602",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Compare development missingness patterns with the missingness expected or observed at deployment.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "MONITORING"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "production missingness",
+          "deployment missingness",
+          "missingness shift",
+          "missing data in production"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "check whether missing-value patterns at deployment match the development data"
+        ]
+      },
+      "revision_id": "08b4c8cd-2a3a-5fcc-9ed0-2d1635509fcf",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "production-missingness-alignment",
+      "title": "Production Missingness Alignment"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "target.class_prevalence.is_materially_imbalanced"
+      },
+      "asset_id": "dddddb11-e594-5e48-baa5-82e853d50158",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Account for materially unequal class prevalence when interpreting evaluation and model behaviour.",
+      "reasoning_functions": [
+        "DECISION_FRAMEWORK",
+        "INTERPRETATION_GUIDANCE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "class imbalance",
+          "rare positive",
+          "minority class",
+          "class prevalence"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "reason about unequal class prevalence and its consequences for modelling and evaluation"
+        ]
+      },
+      "revision_id": "b4f8d1f5-546b-5e26-8276-c2baf2217add",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "class-imbalance",
+      "title": "Class Imbalance"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "target.class_prevalence.is_materially_imbalanced"
+      },
+      "asset_id": "11cb5a1f-cdd4-544b-9aca-a56cfc30c357",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Use metrics that expose minority-class errors when accuracy or aggregate error can hide them.",
+      "reasoning_functions": [
+        "EVALUATION_DESIGN",
+        "INTERPRETATION_GUIDANCE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "precision recall",
+          "recall",
+          "f1",
+          "pr auc",
+          "minority metrics"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "evaluate rare positive outcomes with metrics that expose minority performance"
+        ]
+      },
+      "revision_id": "ee479702-bb81-54be-b002-57a3abdfdea7",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "minority-sensitive-metrics",
+      "title": "Minority-Sensitive Classification Metrics"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "project.task.is_supervised_classification"
+      },
+      "asset_id": "7757acb5-374b-5ae2-a636-f6bb5c923db5",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "METHOD",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Establish a transparent regularized or unregularized logistic-regression baseline for binary tabular prediction.",
+      "reasoning_functions": [
+        "MODEL_OPTION"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "logistic regression baseline",
+          "linear baseline",
+          "simple classifier"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "compare more flexible models against a transparent linear classification baseline"
+        ]
+      },
+      "revision_id": "cd581915-2e03-5cfc-bfd8-4f05d4f41f7f",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "linear-logistic-baseline",
+      "title": "Linear Logistic Baseline"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "project.task.is_supervised_classification"
+      },
+      "asset_id": "99716d8a-0392-5c1b-96da-da5cd6d74719",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Compare justified nonlinear model families against the baseline when evidence suggests nonlinear structure may matter.",
+      "reasoning_functions": [
+        "MODEL_OPTION",
+        "DECISION_FRAMEWORK"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "nonlinear model",
+          "tree model",
+          "model comparison",
+          "nonlinear classifier"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "compare flexible nonlinear model families when a linear baseline may miss structure"
+        ]
+      },
+      "revision_id": "d42e4ce3-0df9-5e50-8a1d-5a8be0d7b10b",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "nonlinear-model-comparison",
+      "title": "Nonlinear Model-Family Comparison"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "output.probability_used_as_probability"
+      },
+      "asset_id": "beecd2eb-505f-5265-9fde-437e9e661c84",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Assess whether predicted probabilities correspond to observed event frequencies when probabilities are used as probabilities.",
+      "reasoning_functions": [
+        "EVALUATION_DESIGN",
+        "INTERPRETATION_GUIDANCE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "probability calibration",
+          "calibration curve",
+          "reliability diagram",
+          "calibrated probabilities"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "verify that predicted risks are numerically meaningful probabilities for decisions"
+        ]
+      },
+      "revision_id": "1ee28046-5bb1-5707-b27b-8cbfa2b2f28f",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "probability-calibration",
+      "title": "Probability Calibration"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "output.probability_used_as_probability"
+      },
+      "asset_id": "3d656a5a-2cb6-5091-aa8e-a898390db818",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Evaluate probabilistic predictions with proper scoring rules such as log loss or Brier score when probability quality matters.",
+      "reasoning_functions": [
+        "EVALUATION_DESIGN"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "log loss",
+          "brier score",
+          "proper scoring rule",
+          "probability score"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "evaluate the quality of full probability predictions rather than only ranking or hard labels"
+        ]
+      },
+      "revision_id": "84f332a0-276d-5465-8575-6f1064305be2",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "proper-scoring-rules",
+      "title": "Proper Probability Scoring Rules"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "decision.threshold_required"
+      },
+      "asset_id": "8846cc4b-2315-5958-a08d-fdd5f3e77c97",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Select a classification threshold from validation evidence and the operational decision objective rather than defaulting mechanically to 0.5.",
+      "reasoning_functions": [
+        "DECISION_FRAMEWORK"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "decision threshold",
+          "classification threshold",
+          "operating point",
+          "cutoff"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "choose the action threshold using validation data and operational consequences"
+        ]
+      },
+      "revision_id": "c7c77977-5876-5f46-b18a-89a10bca3016",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "threshold-selection",
+      "title": "Decision Threshold Selection"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "decision.costs_are_asymmetric"
+      },
+      "asset_id": "7efff70a-b5b4-5232-a982-324298067a1a",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Represent unequal costs or utilities of false positives and false negatives when selecting a decision rule.",
+      "reasoning_functions": [
+        "DECISION_FRAMEWORK",
+        "INTERPRETATION_GUIDANCE"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "false negative cost",
+          "false positive cost",
+          "asymmetric cost",
+          "decision cost"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "account for unequal error consequences in model and threshold decisions"
+        ]
+      },
+      "revision_id": "e5472fb5-82ad-538d-b009-6bdbee26e614",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "asymmetric-error-costs",
+      "title": "Asymmetric Error Costs"
+    },
+    {
+      "applicability": null,
+      "asset_id": "f65c1efd-b5e6-51f7-b7f5-8ee4e026c11b",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Keep the final test set untouched until all modelling and decision-selection choices are frozen.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "final test",
+          "locked test set",
+          "untouched test",
+          "test set protection"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "preserve a final unbiased evaluation by preventing iterative selection on the test set"
+        ]
+      },
+      "revision_id": "e7c17e12-ab0a-50ca-8b4a-de77347d2a5b",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "final-test-protection",
+      "title": "Final Test Protection"
+    },
+    {
+      "applicability": null,
+      "asset_id": "56cd7dac-56ad-5043-87a2-09f6f0a87421",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Use validation evidence for model and policy selection and reserve final evaluation for the already-selected procedure.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "DECISION_FRAMEWORK"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "model selection validation",
+          "selection evaluation",
+          "choose on validation",
+          "evaluate once"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "separate adaptive choice from final performance estimation"
+        ]
+      },
+      "revision_id": "1a8fc57f-a94d-5d6c-b3bb-ed01060d64c1",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "selection-evaluation-separation",
+      "title": "Selection and Evaluation Separation"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "data.distribution_shift.suspected_or_observed"
+      },
+      "asset_id": "5505d70b-a4c5-5918-aa1d-226555d6c1d2",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Assess whether deployment or new-regime data differ materially from development data in ways that can affect validity.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "MONITORING"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "distribution shift",
+          "data drift",
+          "covariate shift",
+          "deployment shift"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "compare development and new-regime distributions when the data-generating process may have changed"
+        ]
+      },
+      "revision_id": "4cd92514-5381-5aa5-b2e0-35ba1d248d9f",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "distribution-shift",
+      "title": "Distribution Shift"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "data.measurement_regime.changed"
+      },
+      "asset_id": "b69fa7d0-897b-5f08-8492-0f1a4fc62040",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Reassess feature meaning, scale, missingness, and comparability after a collection or measurement-system change.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "DATA_QUALITY"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "measurement change",
+          "collection system change",
+          "sensor units changed",
+          "data collection change"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "verify measurement comparability after a new instrument pipeline or collection regime is introduced"
+        ]
+      },
+      "revision_id": "bcf62824-3afa-504d-9ec9-46290bace1e2",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "measurement-regime-change",
+      "title": "Measurement Regime Change"
+    },
+    {
+      "applicability": {
+        "arguments": {},
+        "predicate": "deployment.subgroup_reliability_required"
+      },
+      "asset_id": "febe79af-af1b-5631-a654-591b11691014",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "FRAMEWORK",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Check performance and data quality across materially relevant subgroups when deployment requires reliable behaviour across them.",
+      "reasoning_functions": [
+        "EVALUATION_DESIGN",
+        "ROBUSTNESS"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "subgroup performance",
+          "site performance",
+          "group robustness",
+          "slice analysis"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "inspect whether model validity and data quality differ across deployment subgroups"
+        ]
+      },
+      "revision_id": "4f2d2893-4b57-59d0-8f9c-33934ff165fe",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "subgroup-robustness",
+      "title": "Subgroup Robustness"
+    },
+    {
+      "applicability": {
+        "any": [
+          {
+            "arguments": {},
+            "predicate": "data.distribution_shift.suspected_or_observed"
+          },
+          {
+            "arguments": {},
+            "predicate": "data.measurement_regime.changed"
+          }
+        ]
+      },
+      "asset_id": "4b05ff7f-8662-593d-abe7-1a58b244a097",
+      "components": [],
+      "context_requirements": [],
+      "governance_status": "CANDIDATE",
+      "intrinsic_kind": "RULE",
+      "limitations": [],
+      "narrative_facets": [],
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "purpose": "Re-run appropriate validation when a material collection, measurement, or distribution change can invalidate earlier evidence.",
+      "reasoning_functions": [
+        "VALIDITY_CONSTRAINT",
+        "MONITORING"
+      ],
+      "retrieval_profile": {
+        "aliases": [],
+        "lexical_terms": [
+          "revalidation",
+          "validate after data change",
+          "retest model",
+          "model revalidation"
+        ],
+        "negative_cues": [],
+        "semantic_cues": [
+          "repeat validation after material data or measurement changes rather than relying on stale evidence"
+        ]
+      },
+      "revision_id": "6b1d358f-8b11-5147-9aaa-7abd099a5b7a",
+      "revision_no": 1,
+      "rules": [],
+      "scope": null,
+      "semantic_checks": [],
+      "stable_key": "revalidation-after-data-change",
+      "title": "Revalidation After Data Change"
+    }
+  ],
+  "bundle_kind": "BENCHMARK_FIXTURE",
+  "collections": [
+    {
+      "collection_key": "spec022-methodological-universe",
+      "members": [
+        {
+          "ref": {
+            "asset_key": "target-definition"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "unit-of-observation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "prediction-moment"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "prediction-time-feature-eligibility"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "data-leakage"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "temporal-leakage"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "train-validation-test-separation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "temporal-validation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "repeated-entity-generalization"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "group-aware-validation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "preprocessing-fit-isolation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "feature-selection-isolation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "missing-data"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "production-missingness-alignment"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "class-imbalance"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "minority-sensitive-metrics"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "linear-logistic-baseline"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "nonlinear-model-comparison"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "probability-calibration"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "proper-scoring-rules"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "threshold-selection"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "asymmetric-error-costs"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "final-test-protection"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "selection-evaluation-separation"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "distribution-shift"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "measurement-regime-change"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "subgroup-robustness"
+          }
+        },
+        {
+          "ref": {
+            "asset_key": "revalidation-after-data-change"
+          }
+        }
+      ],
+      "title": "Specification 022 controlled methodological universe"
+    }
+  ],
+  "format": "ads-reusable-knowledge-bundle",
+  "provenance_sources": [
+    {
+      "locator": "docs/research/032_project_state_to_methodological_horizon_coverage_diagnostic_design.md",
+      "notes": "Prospective benchmark-only synthesis. Not accepted methodological authority.",
+      "source_id": "spec022-design-synthesis",
+      "source_type": "PROJECT_DESIGN_SYNTHESIS",
+      "title": "Specification 022 controlled-universe design synthesis",
+      "version_or_fingerprint": null
+    }
+  ],
+  "relations": [
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Feature eligibility is defined relative to the prediction moment.",
+      "relation_id": "5124b41e-17db-5ae8-bf79-213313a92b35",
+      "relation_revision_id": "b440fc5d-7a7a-5ed1-b012-42bb56164e9a",
+      "relation_type": "REQUIRES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "prediction-time-feature-eligibility"
+      },
+      "target_ref": {
+        "asset_key": "prediction-moment"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Temporal leakage is judged relative to the prediction cutoff.",
+      "relation_id": "08a4de03-62fb-5364-a90e-80a2cbc1a298",
+      "relation_revision_id": "51c4d194-c842-5b9a-a384-d2c7c37fb1d4",
+      "relation_type": "REQUIRES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "temporal-leakage"
+      },
+      "target_ref": {
+        "asset_key": "prediction-moment"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Temporal validation requires a defined prediction cutoff.",
+      "relation_id": "7832eb9e-1ae8-5e08-bbfa-a8858747cf7e",
+      "relation_revision_id": "eb347b88-fdec-511f-a75c-0b03d4cbdc6f",
+      "relation_type": "REQUIRES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "temporal-validation"
+      },
+      "target_ref": {
+        "asset_key": "prediction-moment"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Group-aware splitting operationalizes an entity-generalization requirement.",
+      "relation_id": "815330d2-c0be-52c7-a702-d1b51675d9fa",
+      "relation_revision_id": "1e08f83e-b466-58f7-9736-0454e80314e0",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "group-aware-validation"
+      },
+      "target_ref": {
+        "asset_key": "repeated-entity-generalization"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Feature selection is one learned preprocessing step that must respect split isolation.",
+      "relation_id": "ab4c5a08-b632-59d4-b709-f383577c23ef",
+      "relation_revision_id": "f5e3d2e4-c594-54b0-b1fc-9989feab0e06",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "feature-selection-isolation"
+      },
+      "target_ref": {
+        "asset_key": "preprocessing-fit-isolation"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Production missingness alignment builds on missingness characterization.",
+      "relation_id": "54367798-6629-5c48-9027-657128377104",
+      "relation_revision_id": "a944e948-0f27-5b5b-87ac-60452d5b05f5",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "production-missingness-alignment"
+      },
+      "target_ref": {
+        "asset_key": "missing-data"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Minority-sensitive metrics are activated by materially unequal prevalence.",
+      "relation_id": "95bb8ea3-5d38-5072-943c-c8834c47f73b",
+      "relation_revision_id": "0de91fd6-0ee6-5e3e-9404-793b0b2606de",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "minority-sensitive-metrics"
+      },
+      "target_ref": {
+        "asset_key": "class-imbalance"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Nonlinear model families should be compared against a transparent linear baseline.",
+      "relation_id": "21f95c86-5ddf-5e59-ab6f-cf53ed1dfb37",
+      "relation_revision_id": "717fe0cd-9e87-5204-90fb-d716e847c498",
+      "relation_type": "ALTERNATIVE_TO",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "nonlinear-model-comparison"
+      },
+      "target_ref": {
+        "asset_key": "linear-logistic-baseline"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Calibration should be evaluated alongside proper probability scoring.",
+      "relation_id": "41af18f3-f861-5fec-a890-2db006d47060",
+      "relation_revision_id": "09fe2ac2-23da-5dfa-90fb-864b05c2b89d",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "probability-calibration"
+      },
+      "target_ref": {
+        "asset_key": "proper-scoring-rules"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Decision thresholds should reflect the operational error-cost structure when it is asymmetric.",
+      "relation_id": "09015c48-89ae-5442-8222-cfceb7591a5f",
+      "relation_revision_id": "5e1578b0-18f0-5e91-b552-698b67f7ce8f",
+      "relation_type": "REQUIRES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "threshold-selection"
+      },
+      "target_ref": {
+        "asset_key": "asymmetric-error-costs"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Final-test protection enforces separation between adaptive selection and final evaluation.",
+      "relation_id": "078688a6-f397-557f-a22e-cdc07b703dd3",
+      "relation_revision_id": "88c9de32-63f2-5dd3-b6d0-d7dc9ed47b91",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "final-test-protection"
+      },
+      "target_ref": {
+        "asset_key": "selection-evaluation-separation"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Measurement changes can create distribution shifts that require explicit assessment.",
+      "relation_id": "f2cd0dc5-e7de-50c1-9591-dd52df50b31f",
+      "relation_revision_id": "3791d4d5-cd08-525d-ac69-b9739d15086a",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "measurement-regime-change"
+      },
+      "target_ref": {
+        "asset_key": "distribution-shift"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Observed distribution change can invalidate prior validation evidence.",
+      "relation_id": "7cf3e145-3996-5fb2-a9c0-1c52473e8dfc",
+      "relation_revision_id": "41908f33-08d0-5a9e-83e1-c004680fb20d",
+      "relation_type": "REQUIRES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "revalidation-after-data-change"
+      },
+      "target_ref": {
+        "asset_key": "distribution-shift"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "A material measurement-regime change can require revalidation.",
+      "relation_id": "3bb15922-1a3b-5db8-a35e-018b59a34dc1",
+      "relation_revision_id": "a8c36d82-9410-5aba-b0ed-bdfca77e8772",
+      "relation_type": "REQUIRES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "revalidation-after-data-change"
+      },
+      "target_ref": {
+        "asset_key": "measurement-regime-change"
+      }
+    },
+    {
+      "governance_status": "CANDIDATE",
+      "provenance_source_ids": [
+        "spec022-design-synthesis"
+      ],
+      "rationale": "Aggregate shift can mask subgroup-specific degradation.",
+      "relation_id": "22d760af-999e-5e82-9dc9-ede8698f1a00",
+      "relation_revision_id": "fd643bcf-54a7-5d63-8b4b-51d7f3df7b57",
+      "relation_type": "USES_CONCEPT",
+      "revision_no": 1,
+      "scope": null,
+      "source_ref": {
+        "asset_key": "subgroup-robustness"
+      },
+      "target_ref": {
+        "asset_key": "distribution-shift"
+      }
+    }
+  ],
+  "schema_version": 1
+}

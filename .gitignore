@@ -29,6 +29,14 @@ service_account*.json
 .DS_Store
 Thumbs.db
 
+# Frontend dependencies, caches, build outputs, and local test artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+
 # Generated experiment artifacts and runtime outputs
 **/generated/
 **/results/

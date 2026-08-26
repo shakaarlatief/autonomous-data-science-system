@@ -1,0 +1,139 @@
+{
+  "benchmark_id": "v1-methodological-horizon-lexical-v0.1",
+  "specification": "docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md",
+  "knowledge_fixture": "tests/fixtures/knowledge/reusable_knowledge_stress_v1.json",
+  "lexical_cases": [
+    {
+      "case_id": "RH-L01",
+      "query": "missing values imputation missing labels",
+      "required_keys": ["missing-data"]
+    },
+    {
+      "case_id": "RH-L02",
+      "query": "minority class rare event class prevalence",
+      "required_keys": ["class-imbalance"]
+    },
+    {
+      "case_id": "RH-L03",
+      "query": "rolling origin chronological split temporal validation",
+      "required_keys": ["temporal-validation"]
+    },
+    {
+      "case_id": "RH-L04",
+      "query": "feature leakage prediction time feature eligibility",
+      "required_keys": ["prediction-time-feature-eligibility"]
+    },
+    {
+      "case_id": "RH-L05",
+      "query": "empirical cumulative distribution ECDF without bins",
+      "required_keys": ["ecdf"]
+    },
+    {
+      "case_id": "RH-L06",
+      "query": "histogram bins quantitative distribution",
+      "required_keys": ["histogram"]
+    },
+    {
+      "case_id": "RH-L07",
+      "query": "random forest randomized tree ensemble",
+      "required_keys": ["random-forest"]
+    },
+    {
+      "case_id": "RH-L08",
+      "query": "gradient boosting boosted trees sequential",
+      "required_keys": ["gradient-boosted-trees"]
+    },
+    {
+      "case_id": "RH-L09",
+      "query": "bootstrap aggregation bagging learners",
+      "required_keys": ["bagging"]
+    },
+    {
+      "case_id": "RH-L10",
+      "query": "scoring time prediction moment cutoff",
+      "required_keys": ["prediction-moment"]
+    }
+  ],
+  "semantic_diagnostic_cases": [
+    {
+      "case_id": "RH-S01",
+      "query": "positive cases are scarce and overall correctness hides failures on them",
+      "target_keys": ["class-imbalance"]
+    },
+    {
+      "case_id": "RH-S02",
+      "query": "the value is unavailable until after the score has already been produced",
+      "target_keys": ["prediction-time-feature-eligibility"]
+    },
+    {
+      "case_id": "RH-S03",
+      "query": "evaluate a model as if each forecast were made using only earlier observations",
+      "target_keys": ["temporal-validation"]
+    },
+    {
+      "case_id": "RH-S04",
+      "query": "show how a numeric variable accumulates across its range without choosing buckets",
+      "target_keys": ["ecdf"]
+    }
+  ],
+  "relational_horizon_cases": [
+    {
+      "case_id": "RH-R01",
+      "seed_key": "random-forest",
+      "expected_related_keys": ["bagging", "gradient-boosted-trees"]
+    },
+    {
+      "case_id": "RH-R02",
+      "seed_key": "temporal-validation",
+      "expected_related_keys": ["prediction-moment"]
+    },
+    {
+      "case_id": "RH-R03",
+      "seed_key": "prediction-time-feature-eligibility",
+      "expected_related_keys": ["prediction-moment"]
+    },
+    {
+      "case_id": "RH-R04",
+      "seed_key": "histogram",
+      "expected_related_keys": ["ecdf"]
+    }
+  ],
+  "applicability_cases": [
+    {
+      "case_id": "RH-A01",
+      "asset_key": "random-forest",
+      "known_context": {
+        "project.task.is_supervised": true,
+        "data.representation.is_supported_tabular": true
+      },
+      "expected_state": "POSSIBLY_APPLICABLE"
+    },
+    {
+      "case_id": "RH-A02",
+      "asset_key": "random-forest",
+      "known_context": {
+        "project.task.is_supervised": false,
+        "data.representation.is_supported_tabular": true
+      },
+      "expected_state": "INAPPLICABLE"
+    },
+    {
+      "case_id": "RH-A03",
+      "asset_key": "class-imbalance",
+      "known_context": {},
+      "expected_state": "MISSING_CONTEXT"
+    },
+    {
+      "case_id": "RH-A04",
+      "asset_key": "temporal-validation",
+      "known_context": {},
+      "expected_state": "MISSING_CONTEXT"
+    },
+    {
+      "case_id": "RH-A05",
+      "asset_key": "prediction-time-feature-eligibility",
+      "known_context": {},
+      "expected_state": "MISSING_CONTEXT"
+    }
+  ]
+}

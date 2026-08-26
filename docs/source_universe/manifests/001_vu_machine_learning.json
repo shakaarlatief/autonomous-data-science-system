@@ -1,0 +1,233 @@
+{
+  "collection": {
+    "canonical_locator": "https://mlvu.github.io/",
+    "collection_type": "COURSE",
+    "metadata": {
+      "institution": "Vrije Universiteit Amsterdam",
+      "intake_context": "Design Session 06, first source-substrate validation corpus"
+    },
+    "stable_key": "vu-amsterdam.machine-learning",
+    "title": "Machine Learning, Vrije Universiteit Amsterdam"
+  },
+  "entries": [
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 40775434,
+      "expected_sha256": "101b8fa2f38dbfbf014cdb420843e2606f9b8dfdbe8646a1eb44fe08df81dc00",
+      "membership_role": "LECTURE",
+      "observed_name": "00.Preliminaries.annotated.pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.preliminaries",
+      "title": "Preliminaries"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 58443253,
+      "expected_sha256": "c428482f40cd6f70e76a7bdb7e3322d6371d41ce47e1298c50ae1081fcf05062",
+      "local_name_aliases": ["11.Introduction.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "11.Introduction.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.introduction",
+      "title": "Introduction"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 11611714,
+      "expected_sha256": "5ea103271a06bfb4a7cd60994026641438007e23ef7d82eeb8ac83ac6ba414d5",
+      "local_name_aliases": ["12.LinearModels1.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "12.LinearModels1.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.linear-models-1",
+      "title": "Linear Models 1"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 32162504,
+      "expected_sha256": "f193bd0ded530129ce12f7b524785262733e3901e81280cfb57ceab9e49736ea",
+      "local_name_aliases": ["21.Methodology1.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "21.Methodology1.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.methodology-1",
+      "title": "Methodology 1"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 12797065,
+      "expected_sha256": "c095b78dcdb5d006112f0e16ee22a89883a0df92dbc09e018c015164b2d82c58",
+      "local_name_aliases": ["22.Methodology2.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "22.Methodology2.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.methodology-2",
+      "title": "Methodology 2"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 6954298,
+      "expected_sha256": "c16a8f5aa92db5af2d82d44f90cb14fcc1c5a46d1deb5575d6472b7c6e2c6da0",
+      "local_name_aliases": ["31.ProbabilisticModels1.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "31.ProbabilisticModels1.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.probabilistic-models-1",
+      "title": "Probabilistic Models 1"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 8715014,
+      "expected_sha256": "9b4bb8efa6f1adfc27f1cacbfc7b77e1c4335d1629962235f64121ad2768f3e9",
+      "local_name_aliases": ["32.LinearModels2.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "32.LinearModels2.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.linear-models-2",
+      "title": "Linear Models 2"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 30148932,
+      "expected_sha256": "477db561cd7e9befe6fc0f9ce27caba9c49e037de4ab55d097f30f61d502b1a1",
+      "local_name_aliases": ["41.DeepLearning1.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "41.DeepLearning1.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.deep-learning-1",
+      "title": "Deep Learning 1"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 78874939,
+      "expected_sha256": "3872d5b3957d4313ab154a8405222d47098dda50657b660330ea0eecdce24110",
+      "local_name_aliases": ["51.Deep Learning2.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "51.Deep Learning2.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.deep-learning-2",
+      "title": "Deep Learning 2"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 4435890,
+      "expected_sha256": "6a489b8bb451183fa9f204718d02495fc63d6d1edcf3767df93fc4f01ce50ad1",
+      "local_name_aliases": ["52.Trees.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "52.Trees.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.trees",
+      "title": "Trees and Ensembles"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 11142975,
+      "expected_sha256": "e5223a47a8c043a30822fbee8d27659d3f3035387fab3f5b31bfb05bc23b002a",
+      "local_name_aliases": ["61.SequentialModels.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "61.SequentialModels.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.sequential-models",
+      "title": "Sequential Models"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 19822400,
+      "expected_sha256": "413762ed6ad9f4d028f979e3e9eb2ca8d2a217a82e280f64a348ac3a71fb7762",
+      "local_name_aliases": ["62.Matrices.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "62.Matrices.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.matrices",
+      "title": "Matrices"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 34862777,
+      "expected_sha256": "29bdf5ef38322197a7bb71874c5972885f4b45a784f6199d9374de0e92588356",
+      "local_name_aliases": ["71.Reinforcement Learning.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "71.Reinforcement Learning.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.reinforcement-learning",
+      "title": "Reinforcement Learning"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 17080579,
+      "expected_sha256": "09ab5728dc2fb3bc828840ac542317b41edf4927307019c6bd3ffdc93bc2e11b",
+      "local_name_aliases": ["72.Review.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "72.Review.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.review",
+      "title": "Review"
+    },
+    {
+      "association_status": "CONFIRMED",
+      "expected_byte_size": 40254527,
+      "expected_sha256": "9d7f5e60d5af2f059da8ab1edc0ea8488dc51499bfa680961d2c1a2cfe3c1ebf",
+      "local_name_aliases": ["Transformers.annotated.pdf"],
+      "membership_role": "LECTURE",
+      "observed_name": "Transformers.annotated(1).pdf",
+      "source_type": "LECTURE_MATERIAL",
+      "stable_key": "vu.ml.transformers",
+      "title": "Transformers"
+    },
+    {
+      "association_status": "UNVERIFIED",
+      "expected_byte_size": 33385812,
+      "expected_sha256": "597d9bbf3115e565af9e61263d83f8778098259d274a0933c28eeedfb5a38342",
+      "membership_role": "REFERENCE",
+      "observed_name": "book-v1.2.0-cropped.pdf",
+      "source_type": "BOOK",
+      "stable_key": "peter-bloem.unraveling-pca.book-v1.2.0-cropped",
+      "title": "Unraveling Principal Component Analysis (book-v1.2.0-cropped)"
+    },
+    {
+      "association_status": "POSSIBLE",
+      "expected_byte_size": 539761,
+      "expected_sha256": "331961622a2f6588c48a34ecddc6a3d052ffe8fcfba333f233d5f27b2da5565d",
+      "membership_note": "Course association uncertain per user; preserved as POSSIBLE pending source review.",
+      "membership_role": "PAPER",
+      "observed_name": "Lecture9-GANs.pdf",
+      "source_type": "PAPER",
+      "stable_key": "goodfellow-et-al.generative-adversarial-nets",
+      "title": "Generative Adversarial Nets"
+    },
+    {
+      "association_status": "POSSIBLE",
+      "expected_byte_size": 762628,
+      "expected_sha256": "fcad76b95b2a7732de7a211070134ddce03c635850603bd3798c14347185508d",
+      "membership_note": "Course association uncertain per user; preserved as POSSIBLE pending source review.",
+      "membership_role": "PAPER",
+      "observed_name": "Lecture9-Medical-Example2.pdf",
+      "source_type": "PAPER",
+      "stable_key": "den-hengst-et-al.guideline-informed-rl-mechanical-ventilation",
+      "title": "Guideline-informed reinforcement learning for mechanical ventilation in critical care"
+    },
+    {
+      "association_status": "POSSIBLE",
+      "expected_byte_size": 627927,
+      "expected_sha256": "14d1380126bda2beef12dee2c8e76293300f04d9c5e2c9a77ba7949be63d6c46",
+      "membership_note": "Course association uncertain per user; preserved as POSSIBLE pending source review.",
+      "membership_role": "PAPER",
+      "observed_name": "Lecture9-Medical-Problem.pdf",
+      "source_type": "PAPER",
+      "stable_key": "kop-et-al.predictive-modeling-colorectal-cancer-preprocessing",
+      "title": "Predictive modeling of colorectal cancer using a dedicated pre-processing pipeline on routine electronic medical records"
+    },
+    {
+      "association_status": "UNVERIFIED",
+      "expected_byte_size": 46684862,
+      "expected_sha256": "d7fb21184810126a92835d3ab42bbedaf3e51cf0fb5a4ba912c25e9e9a6eafb4",
+      "membership_role": "REFERENCE",
+      "observed_name": "unraveling-pca.pdf",
+      "source_type": "BOOK",
+      "stable_key": "peter-bloem.unraveling-pca.variant",
+      "title": "Unraveling Principal Component Analysis (unraveling-pca)"
+    }
+  ],
+  "format": "ADS_SOURCE_INTAKE_MANIFEST",
+  "schema_version": 1
+}
