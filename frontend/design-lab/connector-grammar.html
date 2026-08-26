@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-connector-style="k0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Connector Grammar</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./connector-grammar.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header connector-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02C · Connector / Port Grammar</span>
+        <h1>How should project relationships meet the work units?</h1>
+        <p>Scientific markers, Reduced in-box light, G4 world behavior and the current subtle-shape + micro-material appearance are held. This slice isolates connector routing, endpoint treatment and directional cues without assigning final semantic relation types yet.</p>
+      </div>
+      <div class="connector-held-state">
+        <span>Held visual control</span>
+        <strong>Subtle shapes · Micro material · Reduced</strong>
+      </div>
+    </header>
+
+    <main class="grammar-main connector-main">
+      <section class="grammar-intro connector-intro">
+        <div>
+          <span class="section-kicker">Design question</span>
+          <h2>Connection should be legible without becoming graph noise</h2>
+          <p>The current fixture uses one generic project-relationship class. The experiment asks how lines should attach and communicate structure at rest and on hover. Final dependency/evidence/runtime semantics remain separate future decisions.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Connector constraints">
+          <span>Rendered-edge anchoring</span>
+          <span>Category ≠ relation meaning</span>
+          <span>No runtime semantics yet</span>
+          <span>Hover relation emphasis held</span>
+          <span>Dynamic resize-safe geometry</span>
+        </div>
+      </section>
+
+      <section class="connector-style-panel" aria-label="Connector style controls">
+        <div>
+          <span class="section-kicker">Connector candidate</span>
+          <h2>Switch connection treatment</h2>
+          <p>Every candidate uses the same project nodes and relationships. Only connector presentation changes.</p>
+        </div>
+        <div class="segmented connector-style-segmented" role="group" aria-label="Connector style">
+          <button type="button" data-connector-option="k0" aria-pressed="true">K0 Clean curve</button>
+          <button type="button" data-connector-option="k1" aria-pressed="false">K1 Micro dots</button>
+          <button type="button" data-connector-option="k2" aria-pressed="false">K2 Frame sockets</button>
+          <button type="button" data-connector-option="k3" aria-pressed="false">K3 Target cue</button>
+          <button type="button" data-connector-option="k4" aria-pressed="false">K4 Hover ports</button>
+        </div>
+      </section>
+
+      <section class="connector-candidate-notes" aria-label="Connector candidate descriptions">
+        <article data-candidate-note="k0"><strong>K0 · Clean curve</strong><span>Direct edge-to-edge curves with no visible ports. Lowest resting noise.</span></article>
+        <article data-candidate-note="k1"><strong>K1 · Micro dots</strong><span>Small endpoint dots make attachment points explicit while keeping the line light.</span></article>
+        <article data-candidate-note="k2"><strong>K2 · Frame sockets</strong><span>Small square sockets make connectors feel structurally integrated with the work-unit frame.</span></article>
+        <article data-candidate-note="k3"><strong>K3 · Target cue</strong><span>A restrained target terminal introduces direction without using a large generic arrowhead.</span></article>
+        <article data-candidate-note="k4"><strong>K4 · Hover ports</strong><span>Rest state stays clean; endpoint ports appear only when the relationship becomes relevant on hover.</span></article>
+      </section>
+
+      <section class="connector-preview" aria-label="Connector grammar live preview">
+        <div class="connector-preview-header">
+          <div>
+            <span class="section-kicker">Live project scene</span>
+            <h2>Churn project · relationship treatment</h2>
+          </div>
+          <span id="connector-summary">K0 · Clean curve</span>
+        </div>
+
+        <div class="grammar-world connector-world" id="connector-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <div class="project-scene connector-scene" id="connector-scene">
+            <svg class="grammar-relations connector-relations" viewBox="0 0 1000 430" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="connector-target-cue" viewBox="0 0 8 8" refX="6.4" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                  <path d="M1.2 1.4 L6.2 4 L1.2 6.6" fill="none" stroke="context-stroke" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                </marker>
+              </defs>
+              <g class="connector-link" data-link="q-i"><path class="connector-path" /></g>
+              <g class="connector-link" data-link="i-v"><path class="connector-path" /></g>
+              <g class="connector-link" data-link="v-m"><path class="connector-path" /></g>
+              <g class="connector-link" data-link="m-e"><path class="connector-path" /></g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review connector-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Choose what should become the generic connector baseline</h2>
+        <div class="review-questions">
+          <p>Which treatment feels clearest at a glance without cluttering the project world?</p>
+          <p>Should attachment points be visible at rest, only on hover, or not at all?</p>
+          <p>Does the frame-socket treatment feel integrated or unnecessarily mechanical?</p>
+          <p>Is the restrained target cue useful enough to justify always showing direction?</p>
+          <p>Do the lines feel correctly attached to the actual rendered silhouettes?</p>
+          <p>Which candidate is most likely to scale to a larger project with many relationships?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./connector-grammar.js"></script>
+  </body>
+</html>
