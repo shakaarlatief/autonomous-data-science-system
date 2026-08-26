@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 216,
+  "current_checkpoint": 217,
   "active_development_branch": "v1-cockpit-design-exploration",
   "active_pr": null,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "ed5b60bdc882bed0799ce55228ce8187f9c55aa1",
   "latest_specification": "024",
   "latest_experiment_outcome": "INCOMPLETE",
-  "current_boundary": "next-generation-project-cockpit-design-exploration-mc0004-phase-c-h4-resting-world-spill-human-review"
+  "current_boundary": "next-generation-project-cockpit-design-exploration-mc0004-phase-c-work-unit-category-silhouette-visual-grammar"
 }
