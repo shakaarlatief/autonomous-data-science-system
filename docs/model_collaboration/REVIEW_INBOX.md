@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-27  
 **Status:** Current human-readable routing view  
-**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.
+**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, exact Git refs and research/checkpoint records remain authoritative.
 
 ## Pending model obligation
 
@@ -10,19 +10,14 @@
 none
 ```
 
-Claude responded to MC-0004 Message 005 with:
+Claude's latest deep-focus contribution remains Message 006:
 
 ```text
 docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
-```
-
-Claude response commit:
-
-```text
 204664ae1e732dd504174bbc62545e9a93adc85f
 ```
 
-ChatGPT synthesized Message 006 into Research 076 and an executable factorized transition browser.
+Research 076 preserves the Claude-informed factorized comparison. The project owner has now refined the active question further.
 
 ## Next actor
 
@@ -36,86 +31,84 @@ Current checkpoint:
 243
 ```
 
-Current browser route:
+## Active browser route
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
-Exact current browser implementation target:
+Exact current visual implementation target:
 
 ```text
-0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+b375eb253990ce3c20f34dd9d5b735bd532789f2
 ```
 
 Research:
 
 ```text
-docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
 ```
 
-## Most recent accepted / working results
+## Held deep-focus end-state hypothesis
+
+The project owner expressed a strong preference that the deepest specialist workspace should no longer look like another card floating over the project map.
+
+Current controlled assumption for this browser:
 
 ```text
-A3  Signal Bars                       accepted attention-priority treatment
-SEL2 Corner Brackets                 accepted persistent-selection treatment
-X5 balanced two-axis expansion       accepted contextual-detail geometry
-NO context recession                 accepted contextual-detail behavior
-L0 Flat Fields                       provisional working default only
+specialist workspace
+    owns the full active Cockpit stage
+
+project map / grid
+    disappears completely after entry
+
+compact topology compass
+    retained as the orientation / return detail
 ```
 
-L1-L8 internal-layout alternatives remain preserved for later review and are not rejected.
+This is a strong current preference under review, not yet a final production promotion.
 
-## Claude-informed transition decomposition
-
-The active transition question is now factorized into:
+## Spatial transition candidates
 
 ```text
-object continuity
-context retention / relevance
-entry choreography
-orientation aid
-return choreography
+Z0  Direct Replace Control
+Z1  Card Zoom-In
+Z2  World Falls Away
+Z3  Camera Dive
+Z4  Workspace Aperture
+Z5  Depth Parallax
+Z6  Perspective Corridor
+Z7  Pull-Back Then Dive
 ```
 
-Current browser batches:
+All candidates begin from the same off-center SEL2-selected X5 work unit and end in the same fullscreen workspace with the same compact compass. The comparison therefore isolates spatial transition choreography rather than workspace composition or map-retention amount.
+
+## Preserved predecessor evidence
 
 ```text
-Batch A · Object continuity
-    A0  F2 Anchored Morph Control
-    A1  Anchored Center Stage
-    A2  Anchored Context Rail
-    A3  Camera Push-Through
+Research 075
+    original F0-F8 deep-focus architectures
 
-Batch B · Context relevance
-    B0  F6 Fixed Rail Control
-    B1  Neighbor-Aware Context
-    B2  Neighbor-Aware + Anchor
+Research 076
+    Claude-informed factorization
+    object continuity / context relevance / staging / orientation / return timing
 
-Batch C · Staging and orientation
-    C0  Hard Replace Control
-    C1  Staged Two-Step Entry
-    C2  Compass + Soft World
-    C3  Hard Replace + Compass
-
-Large interaction studio
-    Symmetric return
-    Fast return
+Research 077
+    fullscreen end-state hypothesis
+    spatial zoom / through-space choreography
 ```
-
-The new fixture restores the accepted four-corner SEL2 treatment. The selected X5 card is deliberately off-center and anchored variants measure its real rendered rectangle rather than assuming a centered origin.
-
-T6 Adaptive Retention by Workspace Type remains preserved but deferred until multiple meaningful specialist-workspace types exist.
 
 ## Current human gate
 
 ```text
-review Batch A for source-object continuity
-review Batch B for useful versus arbitrary retained context
-review Batch C for staging and minimal orientation
-compare symmetric versus fast return
-prefer mechanisms independently
-combine mechanisms later if useful
+compare Z0-Z7
+judge which feels like entering the selected work unit
+judge whether zoom / depth movement feels coherent or disorienting
+judge whether portal / aperture continuity helps
+judge whether pull-back then dive adds useful anticipation
+judge repeated-use comfort
+judge whether the compact compass is enough orientation once the map disappears
+prefer / reject / combine / refine
 ```
 
-Production `/cockpit` remains untouched. Specialist-workspace internals, exact motion, URL state, semantic zoom, neighbor-selection semantics and production implementation remain unfrozen.
+Production `/cockpit` remains untouched. Specialist-workspace internals, final fullscreen meaning, exact compass design, motion timing, return choreography, URL state and production implementation remain unfrozen.
