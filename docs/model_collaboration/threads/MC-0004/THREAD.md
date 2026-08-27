@@ -54,144 +54,107 @@ X5 balanced two-axis contextual expansion without context recession
 Important exact accepted/reviewed targets:
 
 ```text
-directionality
-    07d573b6569b9f09a3b7e00936f3eadecee721b3
-
-relation class E5
-    497e81f06ba1f9901511449237d1bb9f96b2d108
-
-P7 disposition
-    fac1db37af4225927d6c799e37418a3ad9c42c13
-
-editable focus
-    da115b74de526fca05ed6f468bef39bdb801355c
-
-T7 Soft Shade
-    08534f94c2f272f969159087de2797a23e36b330
-
-switchable runtime
-    fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
-
-BLOCKED/status carrier
-    88fd3c3cfe7a1eff4664afde06341b7b654c97f4
-
-attention priority browser where A3 was selected
-    767c66f76974d3c0a851de0dfa17c502817a4b12
-
-repaired persistent-selection browser where SEL2 was selected
-    e7304fe834d86166d843fda7e1df0f4ddb1f793a
-
-refined X5 two-axis expansion without context recession
-    94bc1100b7388cc56497cafc03051ce326424a80
+directionality                         07d573b6569b9f09a3b7e00936f3eadecee721b3
+relation class E5                      497e81f06ba1f9901511449237d1bb9f96b2d108
+P7 disposition                         fac1db37af4225927d6c799e37418a3ad9c42c13
+editable focus                         da115b74de526fca05ed6f468bef39bdb801355c
+T7 Soft Shade                          08534f94c2f272f969159087de2797a23e36b330
+switchable runtime                     fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
+BLOCKED/status carrier                 88fd3c3cfe7a1eff4664afde06341b7b654c97f4
+A3 attention priority                  767c66f76974d3c0a851de0dfa17c502817a4b12
+SEL2 persistent selection              e7304fe834d86166d843fda7e1df0f4ddb1f793a
+X5 expansion without recession         94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
-## Contextual-detail geometry result
+## Internal layout disposition
 
-The interaction hierarchy remains:
+Research 074 compared L0-L8 inside the accepted X5 outer geometry.
+
+The project owner explicitly deprioritized that question for now and directed:
+
+```text
+L0 Flat Fields
+    keep using as provisional working default
+    sufficient to continue
+    not a final C5 / information-architecture selection
+
+L1-L8
+    preserve for later review
+    not rejected
+```
+
+## Current Slice 02N: deep-focus transition
+
+The working interaction ladder is:
 
 ```text
 compact map work unit
-    -> selected compact work unit
-    -> expanded contextual/detail layer
-    -> full specialist workspace / deep focus
+    -> SEL2 persistent selection
+    -> X5 contextual expansion
+    -> L0 working-default internal layout
+    -> specialist workspace / deep focus
 ```
 
-The Slice 02L comparison evaluated X0-X8. The final human comparison narrowed to X4 versus X5. The project owner then explicitly separated the X5 shape from its surrounding-context recession behavior and selected:
+Specification 008 already promotes the product-level sequence:
 
 ```text
-X5 balanced two-axis expansion
-WITHOUT context recession
+project map
+    -> select meaningful work unit
+    -> map recedes / focus transition
+    -> full-resolution specialist workspace mounts
+    -> perform real analytical work
+    -> return to project context
 ```
 
-Accepted contextual-detail geometry:
+The active browser isolates how project context should be retained during that deep-focus transition.
+
+Candidate architectures:
 
 ```text
-390 x 210
-one integrated work-unit object
-balanced width + height growth
-surrounding project map remains at normal salience
+F0  Hard Replace
+F1  Center Stage
+F2  Anchored Morph
+F3  World Recede
+F4  Context Ribbon
+F5  Map Frame
+F6  Side Context Rail
+F7  Portal Lift
+F8  Layered Stage
 ```
-
-The original X5 context-recession behavior remains preserved as historical evidence but is not part of the accepted contextual-expansion treatment.
-
-## Current Slice 02M: expanded work-unit internal layout
-
-The active question is now:
-
-```text
-Inside the accepted X5 expanded work unit,
-how should contextual information be organized
-for fast scanning without turning the card into a miniature workspace?
-```
-
-Held outer geometry:
-
-```text
-390 x 210
-X5 balanced two-axis expansion
-no surrounding-context recession
-```
-
-Candidate internal layouts:
-
-```text
-L0  Flat Fields
-L1  Structured Grid
-L2  Narrative Stack
-L3  Summary + Rail
-L4  Action First
-L5  Dependency Path
-L6  Evidence Center
-L7  Module Cards
-L8  Balanced Instrument
-```
-
-Every candidate uses the same provisional payload:
-
-```text
-Purpose
-Constraint
-Evidence
-Next action
-Blocking cause
-Recent activity
-```
-
-The payload is an information-density fixture only and does not freeze the final work-unit schema or C5 semantics.
 
 Browser:
 
 ```text
-http://localhost:5173/design-lab/work-unit-internal-layout.html
+http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
 ```
 
-Exact initial browser target:
+Initial browser target:
 
 ```text
-871075bcda8ff812e1a96b18b442c803d5da7faf
+31abc2b3a23de29358978e19bd88fda1e9166f6b
 ```
 
 Research and checkpoint:
 
 ```text
-docs/research/074_work_unit_internal_layout_grammar_experiment.md
-docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
+docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
+docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
 ```
 
 ## Current gate
 
 ```text
-human compares L0-L8 with the same accepted outer geometry
-human judges scan path, hierarchy and density
-human rejects layouts that feel like miniature dashboards
-human inspects robustness to longer text
-human inspects future room for provenance/evidence and commands
+human compares F0-F8
+human clicks candidates to enter / return
+human judges object continuity from selected X5 work unit to specialist workspace
+human judges retained map context versus distraction
+human judges return-to-project clarity
 -> prefer / reject / combine / refine
--> do not freeze final semantic work-unit schema yet
+-> keep specialist-workspace internals schematic
 ```
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final information schema, provenance/evidence representation, selected-node command surface, multiple-expanded-node semantics, collision avoidance, semantic zoom, expansion persistence, transition to specialist workspace, final URL/deep-link state and final production visual system.
+Still unfrozen includes final internal work-unit schema, C5 Internal Layout Grammar, provenance/evidence representation, selected-node command surface, collision avoidance, semantic zoom, final deep-focus transition, specialist-workspace composition, URL/deep-link state and final production visual system.
