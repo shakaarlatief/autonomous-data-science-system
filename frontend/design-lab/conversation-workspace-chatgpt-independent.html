@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en" data-visual="quiet-graphite" data-density="comfortable">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Independent Conversation Workspace</title>
+    <link rel="stylesheet" href="./conversation-workspace-chatgpt-independent.css" />
+  </head>
+  <body>
+    <div class="design-lab-shell">
+      <header class="lab-header">
+        <div>
+          <span class="eyebrow">ADS COCKPIT DESIGN LAB · INDEPENDENT CHATGPT WORKSTREAM</span>
+          <h1>Conversation Workspace visual-system study</h1>
+          <p>This redesign is intentionally isolated from Claude's independent round. The workspace architecture is held while the complete chat visual language changes.</p>
+        </div>
+        <div class="lab-controls">
+          <label>
+            <span>Visual system</span>
+            <select id="visual-select" aria-label="Visual system"></select>
+          </label>
+          <label>
+            <span>Density</span>
+            <select id="density-select" aria-label="Density">
+              <option value="comfortable">Comfortable</option>
+              <option value="compact">Compact</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <section class="system-strip" id="system-strip"></section>
+
+      <main class="conversation-stage">
+        <aside class="thread-rail" aria-label="Conversation navigation">
+          <div class="rail-brand">
+            <span class="brand-mark">A</span>
+            <div>
+              <strong>Autonomous Data Science</strong>
+              <small>Telco churn project</small>
+            </div>
+          </div>
+
+          <button class="search-box" type="button">
+            <span>⌕</span>
+            <span>Search conversations</span>
+            <kbd>⌘ K</kbd>
+          </button>
+
+          <div class="rail-section">
+            <div class="rail-heading"><span>Current</span><button type="button">+</button></div>
+            <button class="thread-item is-active" type="button">
+              <i></i>
+              <span>
+                <strong>Model selection strategy</strong>
+                <small>12 min ago · 43 messages</small>
+              </span>
+            </button>
+            <button class="thread-item" type="button">
+              <i></i>
+              <span>
+                <strong>Production missingness</strong>
+                <small>Yesterday · linked to Investigation</small>
+              </span>
+            </button>
+            <button class="thread-item" type="button">
+              <i></i>
+              <span>
+                <strong>Threshold policy</strong>
+                <small>Aug 25 · 18 messages</small>
+              </span>
+            </button>
+          </div>
+
+          <div class="rail-section rail-muted">
+            <div class="rail-heading"><span>Archived</span><span>3</span></div>
+            <button class="thread-item" type="button"><i></i><span><strong>EDA interpretation</strong><small>Aug 18</small></span></button>
+            <button class="thread-item" type="button"><i></i><span><strong>Baseline review</strong><small>Aug 15</small></span></button>
+          </div>
+
+          <div class="rail-footer">
+            <span class="sync-dot"></span>
+            <span>Project state synchronized</span>
+          </div>
+        </aside>
+
+        <section class="conversation-workspace" aria-label="Conversation Workspace">
+          <header class="conversation-header">
+            <div class="conversation-title">
+              <button class="back-button" type="button" aria-label="Return to project">←</button>
+              <div>
+                <div class="title-row">
+                  <h2>Model selection strategy</h2>
+                  <span class="scope-pill">PROJECT</span>
+                </div>
+                <p>Discussing model comparison, calibration and the next validation decision.</p>
+              </div>
+            </div>
+            <div class="conversation-actions">
+              <button type="button">Find</button>
+              <button type="button">Outline</button>
+              <button type="button" id="context-toggle">Context</button>
+              <button type="button" class="icon-button" aria-label="More actions">•••</button>
+            </div>
+          </header>
+
+          <div class="transcript-scroll" id="transcript-scroll">
+            <div class="transcript-column">
+              <div class="date-divider"><span>Today · 21:46</span></div>
+
+              <article class="turn turn-user">
+                <div class="turn-anchor">U</div>
+                <div class="turn-body">
+                  <div class="turn-meta"><strong>You</strong><span>21:46</span></div>
+                  <div class="user-message">
+                    I want the comparison to stay broad. We are using all these models partly because this project should become a reusable classification reference, not only because we need one winner.
+                  </div>
+                  <div class="turn-tools"><button type="button">Copy</button><button type="button">Link</button></div>
+                </div>
+              </article>
+
+              <article class="turn turn-ads">
+                <div class="turn-anchor ads-anchor">A</div>
+                <div class="turn-body">
+                  <div class="turn-meta"><strong>ADS</strong><span>21:47</span><span class="model-label">Reasoning</span></div>
+                  <div class="ads-message">
+                    <p>That changes the evaluation objective in an important way. The project should distinguish <strong>selection for deployment</strong> from <strong>selection for learning coverage</strong>.</p>
+                    <p>I would preserve a broad benchmark set, but make the final comparison disciplined enough that the extra breadth does not weaken the conclusions.</p>
+
+                    <div class="reference-row">
+                      <button class="project-ref ref-model" type="button"><span class="ref-shape">◆</span><span><small>MODEL WORK</small><strong>Boosted candidate</strong></span></button>
+                      <button class="project-ref ref-validation" type="button"><span class="ref-shape">△</span><span><small>VALIDATION</small><strong>Chronological validation</strong></span></button>
+                    </div>
+
+                    <h3>Recommended comparison structure</h3>
+                    <ol>
+                      <li>Keep the reusable model family benchmark.</li>
+                      <li>Use one frozen validation protocol for fair comparison.</li>
+                      <li>Separate ranking metrics from calibration and threshold decisions.</li>
+                    </ol>
+                  </div>
+                  <div class="turn-tools"><button type="button">Copy</button><button type="button">Discuss selection</button><button type="button">•••</button></div>
+                </div>
+              </article>
+
+              <section class="project-change" aria-label="Structured project change">
+                <span class="change-icon">↳</span>
+                <div>
+                  <small>PROJECT STATE UPDATED</small>
+                  <strong>Evaluation plan now preserves broad benchmark coverage</strong>
+                  <p>Structured decision recorded outside the transcript.</p>
+                </div>
+                <button type="button">Open decision</button>
+              </section>
+
+              <article class="turn turn-user">
+                <div class="turn-anchor">U</div>
+                <div class="turn-body">
+                  <div class="turn-meta"><strong>You</strong><span>21:51</span></div>
+                  <div class="user-message">How would you handle calibration without turning this into another huge branch of work?</div>
+                  <div class="turn-tools"><button type="button">Copy</button><button type="button">Link</button></div>
+                </div>
+              </article>
+
+              <article class="turn turn-ads">
+                <div class="turn-anchor ads-anchor">A</div>
+                <div class="turn-body">
+                  <div class="turn-meta"><strong>ADS</strong><span>21:52</span></div>
+                  <div class="ads-message">
+                    <p>I would treat calibration as a <strong>bounded diagnostic layer</strong>, not as another independent modelling tournament.</p>
+
+                    <div class="artifact-card">
+                      <div class="artifact-head">
+                        <div><small>ANALYTICAL PREVIEW</small><strong>Calibration snapshot</strong></div>
+                        <button type="button">Open artifact ↗</button>
+                      </div>
+                      <div class="artifact-body">
+                        <div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><span></span></div>
+                        <div class="artifact-stats">
+                          <div><small>Brier</small><strong>0.142</strong></div>
+                          <div><small>ECE</small><strong>0.031</strong></div>
+                          <div><small>Status</small><strong>Review</strong></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p>The useful question is whether calibration changes the practical choice between the leading candidates. If it does not, we record the evidence and move on.</p>
+                  </div>
+
+                  <details class="activity-row">
+                    <summary><span class="activity-dot"></span><span>2 analysis actions completed</span><span>View details</span></summary>
+                    <div><span>Read calibration artifact</span><span>Compared validation summaries</span></div>
+                  </details>
+
+                  <div class="turn-tools"><button type="button">Copy</button><button type="button">Create work unit</button><button type="button">•••</button></div>
+                </div>
+              </article>
+
+              <div class="new-message-marker"><span></span><strong>New since last visit</strong><span></span></div>
+
+              <article class="turn turn-user">
+                <div class="turn-anchor">U</div>
+                <div class="turn-body">
+                  <div class="turn-meta"><strong>You</strong><span>22:02</span></div>
+                  <div class="user-message">Good. Keep it bounded and make the decision easy to recover later.</div>
+                </div>
+              </article>
+
+              <div class="transcript-end-spacer"></div>
+            </div>
+          </div>
+
+          <footer class="composer-zone">
+            <div class="composer-context">
+              <span>Context</span>
+              <button type="button"><span class="tiny-shape">◆</span> Model selection strategy <b>×</b></button>
+              <button type="button"><span class="tiny-shape validation">△</span> Validation <b>×</b></button>
+            </div>
+            <div class="composer-shell">
+              <textarea rows="2" placeholder="Ask about this project, compare evidence, create work, or continue the discussion…"></textarea>
+              <div class="composer-actions">
+                <div>
+                  <button type="button" aria-label="Attach">＋</button>
+                  <button type="button">Commands</button>
+                </div>
+                <div>
+                  <span class="composer-status"><i></i> Project-aware</span>
+                  <button class="send-button" type="button" aria-label="Send">↑</button>
+                </div>
+              </div>
+            </div>
+            <div class="composer-hint"><span>Enter to send · Shift+Enter for line break</span><span>Structured changes require explicit project updates</span></div>
+          </footer>
+        </section>
+
+        <aside class="context-rail" id="context-rail" aria-label="Project context">
+          <div class="context-head">
+            <div><small>PROJECT CONTEXT</small><strong>Linked to this conversation</strong></div>
+            <button type="button" id="context-close">×</button>
+          </div>
+
+          <section class="context-section">
+            <div class="context-label"><span>Selected work</span><button type="button">Open</button></div>
+            <article class="work-unit-card">
+              <div class="work-unit-top"><span class="category-dot"></span><small>MODEL WORK · CURRENT</small><span class="attention-bars"><i></i><i></i><i></i></span></div>
+              <strong>Model selection strategy</strong>
+              <p>Compare candidate families under one frozen validation protocol.</p>
+              <div class="work-status"><span>RUN</span><span>3 linked decisions</span></div>
+            </article>
+          </section>
+
+          <section class="context-section">
+            <div class="context-label"><span>Referenced in thread</span><span>4</span></div>
+            <button class="context-reference" type="button"><span class="ref-shape">△</span><div><small>VALIDATION</small><strong>Chronological validation</strong></div><span>8 refs</span></button>
+            <button class="context-reference" type="button"><span class="ref-shape model">◆</span><div><small>MODEL WORK</small><strong>Boosted candidate</strong></div><span>5 refs</span></button>
+            <button class="context-reference" type="button"><span class="ref-shape eval">＋</span><div><small>EVALUATION</small><strong>Calibration review</strong></div><span>3 refs</span></button>
+          </section>
+
+          <section class="context-section">
+            <div class="context-label"><span>Recent project changes</span><button type="button">History</button></div>
+            <div class="change-list">
+              <article><i></i><div><strong>Benchmark coverage preserved</strong><small>Decision · 11 min ago</small></div></article>
+              <article><i></i><div><strong>Calibration kept bounded</strong><small>Working rule · just now</small></div></article>
+            </div>
+          </section>
+
+          <section class="context-section context-note">
+            <small>CONVERSATION PRINCIPLE</small>
+            <p>Discussion explains and navigates project work. Consequential truth is written into structured project state.</p>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="./conversation-workspace-chatgpt-independent.js"></script>
+  </body>
+</html>

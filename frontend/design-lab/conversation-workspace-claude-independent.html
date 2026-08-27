@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-system="technical-manuscript" data-typeface="sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Claude Independent Conversation Workspace</title>
+    <link rel="stylesheet" href="./conversation-workspace-claude-independent.css" />
+  </head>
+  <body>
+    <header class="lab-header">
+      <div>
+        <span class="eyebrow">ADS COCKPIT DESIGN LAB · CLAUDE INDEPENDENT BLIND ROUND</span>
+        <h1>Conversation Workspace visual-system study</h1>
+        <p>Browser translation of Claude Message 008. Compare the complete systems first. Typeface is intentionally separable inside Technical Manuscript.</p>
+      </div>
+      <div class="controls">
+        <label><span>System</span><select id="system-select"></select></label>
+        <label id="typeface-control"><span>Body face</span><select id="typeface-select"><option value="sans">Humanist sans</option><option value="serif">Humanist serif</option></select></label>
+      </div>
+    </header>
+
+    <nav class="system-nav" id="system-nav" aria-label="Visual systems"></nav>
+
+    <main class="workspace-shell">
+      <section class="conversation-workspace">
+        <header class="conversation-header">
+          <button class="return-button" type="button" aria-label="Return to project">←</button>
+          <div class="conversation-heading">
+            <span class="conversation-kicker">PROJECT CONVERSATION</span>
+            <div class="title-row"><h2>Model selection strategy</h2><span class="scope-pill">PROJECT</span></div>
+            <p>Broad model comparison, calibration and the next validation decision.</p>
+          </div>
+          <div class="header-actions"><button type="button">Find</button><button type="button">Outline</button><button type="button">•••</button></div>
+        </header>
+
+        <div class="workspace-body">
+          <aside class="state-rail" aria-label="Conversation state rail">
+            <div class="rail-head"><small>STATE RAIL</small><strong>Touched project objects</strong></div>
+            <button class="rail-object active" type="button"><span class="shape model">◆</span><span><small>MODEL WORK</small><strong>Model selection strategy</strong></span><b>12</b></button>
+            <button class="rail-object" type="button"><span class="shape validation">△</span><span><small>VALIDATION</small><strong>Chronological validation</strong></span><b>8</b></button>
+            <button class="rail-object" type="button"><span class="shape evaluation">＋</span><span><small>EVALUATION</small><strong>Calibration review</strong></span><b>3</b></button>
+            <div class="rail-divider"></div>
+            <div class="rail-status"><span></span><div><small>CURRENT FOCUS</small><strong>Calibration remains bounded</strong></div></div>
+          </aside>
+
+          <div class="transcript-scroll" id="transcript-scroll">
+            <div class="transcript-column">
+              <div class="date-rule"><span>Today · 21:46</span></div>
+
+              <article class="turn user-turn" tabindex="0">
+                <div class="voice-mark"><span>YOU</span><time>21:46</time></div>
+                <div class="message-content user-content">
+                  I want the comparison to stay broad. We are using all these models partly because this project should become a reusable classification reference, not only because we need one winner.
+                </div>
+                <div class="turn-actions"><button>Copy</button><button>Link</button></div>
+              </article>
+
+              <article class="turn ads-turn" tabindex="0">
+                <div class="voice-mark"><span>ADS</span><time>21:47</time></div>
+                <div class="message-content ads-content">
+                  <p>That changes the evaluation objective in an important way. The project should distinguish <strong>selection for deployment</strong> from <strong>selection for learning coverage</strong>.</p>
+                  <p>I would preserve a broad benchmark set, but make the final comparison disciplined enough that the extra breadth does not weaken the conclusions.</p>
+
+                  <div class="reference-line">
+                    <button class="object-ref" type="button"><span class="shape model">◆</span><span><small>MODEL WORK</small><strong>Boosted candidate</strong></span></button>
+                    <button class="object-ref" type="button"><span class="shape validation">△</span><span><small>VALIDATION</small><strong>Chronological validation</strong></span></button>
+                  </div>
+
+                  <h3>Recommended comparison structure</h3>
+                  <ol><li>Keep the reusable model-family benchmark.</li><li>Use one frozen validation protocol for fair comparison.</li><li>Separate ranking metrics from calibration and threshold decisions.</li></ol>
+                </div>
+                <div class="turn-actions"><button>Copy</button><button>Quote</button><button>•••</button></div>
+              </article>
+
+              <section class="project-change">
+                <span class="change-glyph">↳</span>
+                <div><small>PROJECT STATE UPDATED</small><strong>Evaluation plan now preserves broad benchmark coverage</strong><p>Structured decision recorded outside the transcript.</p></div>
+                <button type="button">Open decision</button>
+              </section>
+
+              <article class="turn user-turn" tabindex="0">
+                <div class="voice-mark"><span>YOU</span><time>21:51</time></div>
+                <div class="message-content user-content">How would you handle calibration without turning this into another huge branch of work?</div>
+                <div class="turn-actions"><button>Copy</button><button>Link</button></div>
+              </article>
+
+              <article class="turn ads-turn" tabindex="0">
+                <div class="voice-mark"><span>ADS</span><time>21:52</time></div>
+                <div class="message-content ads-content">
+                  <p>I would treat calibration as a <strong>bounded diagnostic layer</strong>, not as another independent modelling tournament.</p>
+                  <div class="artifact">
+                    <div class="artifact-head"><div><small>ANALYTICAL PREVIEW</small><strong>Calibration snapshot</strong></div><button>Open artifact ↗</button></div>
+                    <div class="artifact-body"><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i><span></span></div><div class="stats"><div><small>Brier</small><strong>0.142</strong></div><div><small>ECE</small><strong>0.031</strong></div><div><small>Status</small><strong>Review</strong></div></div></div>
+                  </div>
+                  <p>The useful question is whether calibration changes the practical choice between the leading candidates. If it does not, we record the evidence and move on.</p>
+                </div>
+                <details class="activity"><summary><span class="activity-dot"></span>2 analysis actions completed <b>View receipt</b></summary><div>Read calibration artifact · Compared validation summaries</div></details>
+                <div class="turn-actions"><button>Copy</button><button>Create work unit</button><button>•••</button></div>
+              </article>
+
+              <div class="new-marker"><span></span><strong>New since you left</strong><span></span></div>
+
+              <article class="turn user-turn" tabindex="0">
+                <div class="voice-mark"><span>YOU</span><time>22:02</time></div>
+                <div class="message-content user-content">Good. Keep it bounded and make the decision easy to recover later.</div>
+              </article>
+              <div class="end-space"></div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="composer-zone">
+          <div class="composer-context"><span>IN SCOPE</span><button><span class="shape model">◆</span> Model selection strategy ×</button><button><span class="shape validation">△</span> Validation ×</button></div>
+          <div class="composer"><textarea rows="2" placeholder="Continue the project conversation…"></textarea><div class="composer-row"><div><button>＋</button><button>Commands</button></div><div><span class="project-aware"><i></i> Project-aware</span><button class="send">↑</button></div></div></div>
+          <div class="composer-hint"><span>Enter to send · Shift+Enter for line break</span><span>Structured changes are written to project state</span></div>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="./conversation-workspace-claude-independent.js"></script>
+  </body>
+</html>
