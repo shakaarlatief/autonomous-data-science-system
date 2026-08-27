@@ -118,7 +118,8 @@
       "human refinement removing rhythm from P6",
       "P6 Hue + Colored Tag + Tone and P7 Colored Tag + Tone convergence candidates",
       "mixed-category practical comparison across Question, Investigation, Validation, Model and Evaluation",
-      "refined disposition browser target 2056bb31d7cb90766e112bc26aaf7339fb568242",
+      "geometry-aware practical connectors that select horizontal or vertical attachment from rendered card separation",
+      "refined disposition browser target 87927bef327be0a0cc9ccf9fb153aa0c7b226e92",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
     "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review removed state rhythm from the integrated P6 disposition candidate, requested a new P7 colored-tag + tone candidate without disposition perimeter hue, and requested side-by-side practical mixed-category scenes to test category/disposition confusion. No Claude action is pending.",
@@ -157,7 +158,7 @@
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner removed state rhythm from P6, requested a new colored-tag + tone candidate without disposition perimeter hue, and requested a practical mixed-category comparison for both candidates. ChatGPT implemented P6 Hue + Colored Tag + Tone and P7 Colored Tag + Tone, added side-by-side mixed-category project scenes, and kept the final disposition ontology unfrozen.",
-    "repository_head": "2056bb31d7cb90766e112bc26aaf7339fb568242"
+    "reason": "The project owner removed state rhythm from P6, requested a new colored-tag + tone candidate without disposition perimeter hue, and requested a practical mixed-category comparison for both candidates. ChatGPT implemented P6 Hue + Colored Tag + Tone and P7 Colored Tag + Tone, added side-by-side mixed-category project scenes, made their neutral connectors follow rendered geometry, and kept the final disposition ontology unfrozen.",
+    "repository_head": "87927bef327be0a0cc9ccf9fb153aa0c7b226e92"
   }
 }
