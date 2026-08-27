@@ -54,6 +54,8 @@ const relationGeometry = {
 
 const svgNamespace = 'http://www.w3.org/2000/svg'
 let relationFrame = 0
+let relationMotionFrame = 0
+let relationMotionUntil = 0
 
 renderNodes()
 prepareConnectorTerminals()
@@ -199,6 +201,7 @@ function setupInteractions() {
         if (related) group.style.setProperty('--related-rgb', rgb)
       }
 
+      syncRelationGeometryDuringNodeMotion(230)
       if (html.dataset.reduced !== 'on') triggerPerimeterSweep(node)
     })
 
@@ -217,6 +220,8 @@ function setupInteractions() {
         group.classList.remove('is-related')
         group.style.removeProperty('--related-rgb')
       }
+
+      syncRelationGeometryDuringNodeMotion(380)
     })
   }
 }
@@ -236,6 +241,30 @@ function requestRelationUpdate() {
     relationFrame = 0
     updateRelationGeometry()
   })
+}
+
+function syncRelationGeometryDuringNodeMotion(durationMs) {
+  if (html.dataset.reduced === 'on') {
+    requestRelationUpdate()
+    return
+  }
+
+  relationMotionUntil = Math.max(relationMotionUntil, performance.now() + durationMs)
+  if (relationMotionFrame) return
+
+  const syncFrame = () => {
+    updateRelationGeometry()
+
+    if (performance.now() < relationMotionUntil) {
+      relationMotionFrame = requestAnimationFrame(syncFrame)
+      return
+    }
+
+    relationMotionFrame = 0
+    updateRelationGeometry()
+  }
+
+  relationMotionFrame = requestAnimationFrame(syncFrame)
 }
 
 function updateRelationGeometry() {
