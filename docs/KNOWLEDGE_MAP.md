@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 233  
+**Current checkpoint:** 234  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        233
+checkpoint                        234
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  current-process focus-lens human review
+current boundary                  user-curated current-process focus-set human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -134,7 +134,7 @@ HOVER
     disposition tag reveals state-specific hue
 ```
 
-Latest accepted P7 implementation before opening the next slice:
+Latest accepted P7 implementation before opening the focus-lens slice:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
@@ -146,18 +146,19 @@ The final project-disposition ontology remains unfrozen.
 
 ---
 
-# Current Slice 02G: current-process focus lens
+# Current Slice 02G: current-process focus lens and editable focus set
 
 Primary evidence:
 
 ```text
 docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
+docs/research/063_user_curated_current_process_focus_membership.md
 ```
 
 Current checkpoint:
 
 ```text
-docs/checkpoints/233_p7_disposition_accepted_current_process_focus_lens_review_opened.md
+docs/checkpoints/234_user_curated_current_process_focus_set_review_opened.md
 ```
 
 Browser route:
@@ -177,15 +178,16 @@ http://localhost:5173/design-lab/work-unit-process-focus.html
 Exact implementation target:
 
 ```text
-b311796f86ff577354a2bfe14b850bd6a49a9c06
+da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
 Semantic separation:
 
 ```text
-project disposition          semantic state of the work unit
-current-process membership   whether it belongs to the currently emphasized process
-view emphasis                how strongly contextual work is suppressed
+work-unit existence         whether the work unit exists in the project
+project disposition         semantic state of the work unit
+current-focus membership    whether it belongs to the emphasized process set
+view emphasis               how strongly work outside the focus is suppressed
 ```
 
 Lens modes:
@@ -195,15 +197,31 @@ Context visible
     accepted P7 treatment remains readable
 
 Focus current process
-    current-process nodes remain full salience
-    context nodes are strongly suppressed
-    context connector segments recede
-    context nodes partially recover on hover
+    in-focus nodes remain full salience
+    outside-focus nodes are strongly suppressed
+    contextual connector segments recede
+    suppressed nodes partially recover on hover
 ```
 
-Current-process membership is explicit fixture metadata in this experiment and is not inferred from disposition.
+Editable membership:
 
-The final membership semantics and production persistence of the lens remain open.
+```text
+Edit focus set
+    reveal per-node membership controls
+
++ FOCUS
+    add node to current focus
+
+- FOCUS
+    remove node from current focus
+
+Reset example
+    restore the example fixture
+```
+
+Membership changes immediately update node suppression, membership counts and connector current/context classification.
+
+Browser `localStorage` is used only as prototype convenience. Final focus-set ownership, persistence, automatic suggestions and multiple named lenses remain open.
 
 ---
 
