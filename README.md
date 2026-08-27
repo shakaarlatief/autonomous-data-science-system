@@ -18,7 +18,7 @@ exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation Workspace human review
+current boundary      Conversation Workspace independent browser comparison
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -72,42 +72,66 @@ Semantic zoom is deliberately deferred. S0 remains the working behavior; S1-S8 r
 
 ## Active Slice 02P: Conversation Workspace
 
-The compact native composer remains part of the resting Cockpit, but the project also requires a serious persistent long-form conversation surface.
+The project owner rejected the initial Conversation Workspace visual design as unattractive and requested a clean independent redesign round from Claude and ChatGPT covering the entire chat experience, including visual identity, colors, transcript geometry, message treatment, references, composer, navigation and micro-details.
 
-Current browser:
+That blindness gate is now complete.
 
-```text
-http://localhost:5173/design-lab/conversation-workspace-architecture.html
-```
-
-Initial browser target:
+Claude response:
 
 ```text
-42cfe87a0531206187741488f35785fc87f10f1e
+docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
+cab2e464d81b48edadd1b6ae51bb7dd620d7e892
 ```
 
-Candidates:
+ChatGPT isolated independent evidence:
 
 ```text
-CV0  Focus Workspace
-CV1  Right Dock
-CV2  Split Workbench
-CV3  Canvas Lens
-CV4  Bottom Workbench
-CV5  Focus + Context Rail
-CV6  Conversation + Inspector
-CV7  Progressive Recent-to-Full
-CV8  Tabbed Stage
+branch  chatgpt-conversation-workspace-independent-design
+head    c66f72a74e681f89fd52ba591a1387ea50f0e959
 ```
 
-The experiment changes only presentation architecture. Conversation persistence/session ontology, transcript schema and storage remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
-
-Research and checkpoint:
+Research 081 preserves the comparison:
 
 ```text
-docs/research/079_conversation_workspace_presentation_architecture_experiment.md
-docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+docs/research/081_independent_conversation_workspace_dual_design_comparison.md
 ```
+
+Strong independent convergence:
+
+```text
+transcript-first long-form surface
+ADS responses primarily document-like
+avoid generic symmetric chat bubbles
+semantic project-object references
+structured project changes separate from ordinary prose
+collapsed secondary tool/provenance detail
+project-aware composer context
+dark restrained professional visual language
+```
+
+Material differences remain intentionally open for browser review.
+
+Claude independent browser:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
+```
+
+ChatGPT independent browser:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+```
+
+Exact active-branch implementation target containing both browser families:
+
+```text
+348c1d8a746041d4fa3ca41316ac34f9d79bc745
+```
+
+The initial CV0-CV8 browser and Research 079 remain historical evidence. They are not the current visual direction.
+
+Conversation persistence/session ontology, transcript schema, storage and final presentation architecture remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
 
 ## Repository preservation
 
@@ -132,6 +156,13 @@ docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
 docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+frontend/design-lab/conversation-workspace-claude-independent.html
+frontend/design-lab/conversation-workspace-chatgpt-independent.html
+
+docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md
+docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
+
 docs/research/079_conversation_workspace_presentation_architecture_experiment.md
 frontend/design-lab/conversation-workspace-architecture.html
 
@@ -150,14 +181,15 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/conversation-workspace-architecture.html
-3. compare CV0-CV8
-4. click each scene to open / close the same conversation
-5. judge long-form reading quality
-6. judge how much project context should remain visible
-7. judge whether recent-context expansion earns an intermediate layer
-8. prefer / reject / combine / refine
-9. keep S0 zoom behavior provisional
-10. keep Z7 deep focus held
-11. keep production Cockpit untouched
+2. open conversation-workspace-claude-independent.html
+3. compare Technical Manuscript, Studio Console and Hybrid
+4. test sans versus serif inside Technical Manuscript
+5. open conversation-workspace-chatgpt-independent.html
+6. compare Quiet Graphite, Deep Navy, Warm Slate, Monochrome Signal, Violet Ink and Editorial Dark
+7. identify attractive and unattractive whole-system qualities
+8. identify transferable mechanisms rather than forcing one whole-system winner
+9. build synthesis candidates only after this human review
+10. keep S0 zoom behavior provisional
+11. keep Z7 deep focus held
+12. keep production Cockpit untouched
 ```
