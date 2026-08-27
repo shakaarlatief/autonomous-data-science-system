@@ -251,6 +251,16 @@ html[data-connector-style="k2"] .connector-port-link.is-related .connector-socke
   fill: rgba(16, 23, 33, 0.98);
 }
 
+/*
+ * K2 sockets intentionally remain in the under-node relation layer. When a
+ * relation is emphasized, their frame outline follows the same semantic color
+ * as the highlighted connector while the socket interior stays dark.
+ */
+html[data-connector-style="k2"] .connector-link.is-related .connector-socket {
+  stroke: rgba(var(--related-rgb), 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.42));
+}
+
 .connector-review {
   margin-top: 18px;
 }
