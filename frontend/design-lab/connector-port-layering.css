@@ -1,16 +1,39 @@
 /*
- * Connector curves stay in the under-node relation SVG. Endpoint markers are
- * mirrored into the dedicated overlay SVG so they sit visibly on the work-unit
- * perimeter without lifting the full connector curve above the node surface.
+ * Connector curves remain in the under-node relation SVG. Micro-dot / hover
+ * terminals and directional cues are mirrored into a dedicated overlay SVG so
+ * they can sit visibly on the work-unit perimeter without lifting the curve
+ * itself above the node surface.
+ *
+ * Frame sockets are intentionally different: human review preferred their
+ * earlier structural treatment, so K2 sockets remain in the under-node relation
+ * layer where they read as frame-integrated docking points rather than floating
+ * markers painted above the box.
+ */
+.connector-port-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/*
+ * The under-node copies of dots / chevrons are suppressed so only the overlay
+ * versions render. Sockets are deliberately not suppressed here.
  */
 .connector-relations .connector-terminal,
-.connector-relations .connector-socket,
 .connector-relations .connector-chevron {
   opacity: 0 !important;
 }
 
 .connector-port-overlay .connector-terminal,
-.connector-port-overlay .connector-socket,
 .connector-port-overlay .connector-chevron {
   pointer-events: none;
+}
+
+/* Defensive guard: K2 must use the original under-node frame sockets only. */
+.connector-port-overlay .connector-socket {
+  opacity: 0 !important;
 }
