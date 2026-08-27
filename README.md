@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            226
+checkpoint            227
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      connector directionality human browser review
+current boundary      simplified arrow directionality human browser review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -105,40 +105,44 @@ Production settings persistence is not yet selected.
 
 ---
 
-## Connector presentation is also configurable
+## Connector treatment and hover behavior
 
-The K0-K4 connector browser no longer needs one universal visual winner.
+Human review retained the useful connector mechanisms but clarified that they should not be stacked without a semantic reason.
 
-Human review decided the useful mechanisms should coexist as connector-presentation choices.
-
-Current compositional interpretation:
+Current connector treatments:
 
 ```text
-Rest attachment
-    Clean
-    Micro dots
-    Frame sockets
-
-Hover attachment emphasis
-    Off
-    On
+Clean
+Micro dots
+Frame sockets
+Direction arrows
 ```
+
+Current interaction rule:
+
+```text
+one terminal treatment normally active at a time
++
+hover / focus is a separate reveal or emphasis mechanism
+```
+
+So hover is not a fifth terminal symbol. It may reveal or intensify the selected treatment.
 
 Important retained refinements:
 
 ```text
 42ec63d17095753dc4ab97628cd859473cbdf5e8
-    K1/K4 dots sit mostly outside the work-unit perimeter
+    Micro-dot / hover-port circles sit mostly outside the work-unit perimeter
 
 183264bdd07783eaa2354894592f2cf4a076b6ec
-    K2 sockets adopt active relation color / restrained glow when highlighted
+    Frame sockets adopt active relation color / restrained glow when highlighted
 ```
 
 ---
 
-## Foundation 024: connector presentation vs semantic directionality
+## Foundation 024: connector treatment vs semantic directionality
 
-Promoted foundation:
+Refined foundation:
 
 ```text
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
@@ -147,20 +151,35 @@ docs/foundations/024_composable_connector_presentation_and_semantic_directionali
 Core principle:
 
 ```text
-ADS owns relation meaning and directionality
-+
-user controls approved non-semantic connector presentation dimensions
+semantic relation state
+    system-owned
+
+connector treatment
+    configurable within approved bounds
+    normally one active terminal treatment at a time
+
+hover behavior
+    orthogonal interaction mechanism
 ```
 
-Therefore a user may change how connectors look, but appearance preferences may not remove, reverse or invent semantic direction.
+Direction remains semantic:
+
+```text
+undirected
+A -> B
+A <- B
+A <-> B
+```
+
+If arrows are used, their placement follows the relation direction exactly.
 
 ---
 
-## Active Slice 02D: connector directionality
+## Active Slice 02D: simplified arrow directionality
 
-The next bounded question is:
+The first directionality browser mixed arrows with dots / sockets as compatibility controls. Human review simplified the question.
 
-> How should a relationship communicate no direction, one-way direction in either orientation, or bidirectional direction while remaining visually restrained and compatible with configurable connector presentation?
+The current browser now isolates the earlier preferred K3-style edge-connected arrow only.
 
 Browser route:
 
@@ -179,29 +198,30 @@ http://localhost:5173/design-lab/connector-directionality.html
 Exact browser implementation target:
 
 ```text
-41bbdb75f338388f02a34fdf7dbac3ea90f86300
+07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
 Current direction states:
 
 ```text
-D0  Undirected      A — B
+D0  Undirected      A - B
+    no arrow
+
 D1  Forward         A -> B
+    arrow docked directly to B
+
 D2  Reverse         A <- B
+    exact same arrow docked directly to A
+
 D3  Bidirectional   A <-> B
+    same arrow at both endpoints
 ```
 
-The page also exposes already-approved presentation controls for compatibility checking:
+No dots or sockets are mixed into the directionality comparison.
 
-```text
-Rest attachment             Clean / Micro dots / Frame sockets
-Hover attachment emphasis   On / Off
-Reduced motion              On / Off
-```
+The arrow tip touches the exact rendered work-unit perimeter and follows H4 hover lift / release through the existing dynamic geometry system.
 
-Those controls do not alter semantic direction.
-
-Final semantic relation classes such as chronology, causality, dependency, evidence, lineage and runtime flow remain deliberately unfrozen.
+If human review accepts this simple arrow grammar, the next slice is semantic relation classes such as chronology, causality, dependency, evidence and lineage.
 
 ---
 
@@ -267,8 +287,8 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md
-docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
+docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
 frontend/design-lab/connector-directionality.html
 
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
@@ -292,11 +312,10 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. pull v1-cockpit-design-exploration
 2. open http://localhost:5173/design-lab/connector-directionality.html
-3. compare D0 through D3
-4. optionally switch Clean / Micro dots / Frame sockets
-5. toggle Hover attachment emphasis
-6. verify direction remains readable in every presentation
-7. judge whether the restrained direction cue should be kept, refined or replaced
-8. then open semantic relation-class exploration
-9. keep production Cockpit untouched
+3. verify D0 through D3 use only the simple edge-connected arrow grammar
+4. verify forward / reverse / bidirectional arrows touch the correct work-unit edge
+5. verify no dots or sockets are mixed into arrow directionality
+6. if accepted, preserve directionality as sufficiently settled
+7. then open semantic relation-class exploration
+8. keep production Cockpit untouched
 ```
