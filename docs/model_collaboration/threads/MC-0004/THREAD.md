@@ -106,7 +106,7 @@ Stroke rhythm remains preserved for a different future line-level semantic dimen
 
 ## Current Slice 02F: work-unit project disposition
 
-The current semantic separation remains:
+The semantic separation remains:
 
 ```text
 WHAT IS THIS?
@@ -122,24 +122,6 @@ HOW IMPORTANT IS IT NOW?
     priority / relevance, held out
 ```
 
-Initial disposition research:
-
-```text
-docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
-```
-
-The first browser exposed:
-
-```text
-P0  Neutral Control
-P1  Disposition Hue
-P2  Explicit Tag
-P3  Tonal Hierarchy
-P4  State Rhythm
-P5  Hue + Tag
-P6  Restrained Hybrid
-```
-
 Representative visual-test dispositions remain provisional:
 
 ```text
@@ -151,53 +133,55 @@ S4  Blocked
 S5  Future / Not yet active
 ```
 
-## Human refinement after first disposition review
+Initial P0-P6 families and the mixed-category P6/P7 comparison remain preserved in Research 059 and 060.
 
-The project owner requested:
+## Latest human convergence evidence
+
+The project owner reviewed the practical mixed-category scenes and found both persistent-color candidates somewhat confusing once category hue and disposition hue coexisted.
+
+Human conclusion:
 
 ```text
-P6
-    remove state rhythm
+best direction
+    tag + tone
 
-new candidate
-    colored disposition tag + tone
-    no disposition-colored perimeter
+resting tag
+    neutral / uncolored
 
-practical check
-    show both candidates with multiple work-unit categories
-    judge whether category and disposition become confusing together
+hover
+    tag reveals disposition color
 ```
 
-The active convergence candidates are therefore:
+The active convergence candidate is therefore:
 
 ```text
-P6  Hue + Colored Tag + Tone
-    disposition perimeter hue
-    colored tag
-    selective tone
-    no rhythm
+P7  Neutral Tag + Tone
 
-P7  Colored Tag + Tone
+REST
+    category hue remains the dominant persistent color
+    explicit disposition tag remains neutral
+    selective tonal recession retained for Completed / Deferred / Future
     no disposition perimeter hue
-    colored tag
-    same selective tone
     no rhythm
+
+HOVER
+    tag border/text reveal the state-specific hue
 ```
 
-P4 State Rhythm remains preserved as standalone experiment evidence.
+P4 State Rhythm and P6 Hue + Colored Tag + Tone remain preserved as experiment/history evidence.
 
-## Practical mixed-category comparison
+## Current browser verification
 
 Research:
 
 ```text
-docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
+docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
 ```
 
 Checkpoint:
 
 ```text
-docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
 ```
 
 Browser route:
@@ -217,31 +201,10 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-87927bef327be0a0cc9ccf9fb153aa0c7b226e92
+fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-The browser renders the same practical project fixture twice, once with P6 and once with P7, using multiple category identities:
-
-```text
-Question / Blocker
-Investigation
-Validation / Analysis
-Model Work
-Evaluation
-```
-
-and representative dispositions:
-
-```text
-Blocked
-Active
-Recommended
-Completed
-Deferred
-Future
-```
-
-Neutral connectors are dynamically attached to rendered work-unit geometry. The connector geometry chooses horizontal or vertical attachment from actual card separation and follows H4 hover lift, preventing connector defects from contaminating the disposition comparison.
+The page opens directly in P7. The practical P7 scene keeps category color dominant at rest and reveals state hue only in the tag on hover.
 
 ## Dependency-bound ideas
 
@@ -256,13 +219,12 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human compares P6 vs P7 in controlled rows
-+
-human compares P6 vs P7 in practical mixed-category scenes
--> determine whether disposition perimeter hue adds clarity or category-color confusion
--> determine whether colored tag + tone alone is sufficiently clear
--> prefer / reject / combine / refine
--> do not freeze the final disposition ontology
+human verifies P7 neutral tag at rest
+human verifies state hue appears only on hover
+human verifies mixed-category scene is less confusing
+human judges tonal recession separately from importance
+-> if accepted, project-disposition visual carrier is sufficiently converged for current Phase C
+-> final disposition ontology remains unfrozen
 ```
 
 Runtime-state and priority/importance visual grammars remain separate future slices.
