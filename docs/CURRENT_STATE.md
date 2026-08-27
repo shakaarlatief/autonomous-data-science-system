@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 239  
+**Checkpoint:** 240  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Runtime carrier architecture, blocker-to-blocked relationship semantics, the shared operational-status presentation slot and the final BLOCKED/FAIL compact-ring swap are accepted current Phase-C directions. The active gate has moved to a distinct node-level semantic/visual question: how elevated attention priority should be presented without conflicting with category, project disposition, operational status or current-process focus membership.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars are now the accepted current Phase-C visual treatment for elevated attention priority. The active gate has moved to persistent work-unit selection as a distinct interaction state that must remain separate from transient hover, keyboard focus, current-process focus membership, attention priority and deep-focus workspace entry.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,38 +29,31 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/239_shared_blocked_carrier_accepted_attention_priority_review_opened.md
-docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
-frontend/design-lab/work-unit-attention-priority.html
-frontend/design-lab/work-unit-attention-priority.css
-frontend/design-lab/work-unit-attention-priority.js
+docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
+docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
+frontend/design-lab/work-unit-selection-state.html
+frontend/design-lab/work-unit-selection-state.css
+frontend/design-lab/work-unit-selection-state.js
 ```
 
 Current local URL:
 
 ```text
+http://localhost:5173/design-lab/work-unit-selection-state.html
+```
+
+Exact current selection-browser implementation target:
+
+```text
+3bac1fea4ca820c89a7bc4516497a4c33164ec5d
+```
+
+The attention-priority browser in which A3 was reviewed and selected remains preserved at:
+
+```text
 http://localhost:5173/design-lab/work-unit-attention-priority.html
-```
 
-Exact current browser implementation target:
-
-```text
 767c66f76974d3c0a851de0dfa17c502817a4b12
-```
-
-Predecessor BLOCKED evidence remains preserved at:
-
-```text
-docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
-docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
-docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
-frontend/design-lab/work-unit-blocked-carrier.html
-```
-
-Exact accepted BLOCKED/status browser visual target:
-
-```text
-88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
 Production `/cockpit` remains untouched.
@@ -89,7 +82,7 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     SUCCESS
 ```
 
-Checkpoint 239 is warranted because the BLOCKED review gate received explicit positive human closure and the active semantic/review boundary changed to attention priority.
+Checkpoint 240 is warranted because the attention-priority review gate received explicit human closure and the active interaction/review boundary changed to persistent selection.
 
 ---
 
@@ -102,24 +95,14 @@ H4 generic hover/world response     SELECTED / sufficiently settled
 Reduced in-box resting light        SELECTED preferred working baseline
 ```
 
-Current category markers:
+Current category markers and colors:
 
 ```text
-Question / Blocker        circle
-Investigation             square
-Validation / Analysis     triangle
-Model Work                diamond
-Evaluation                plus
-```
-
-Current category colors:
-
-```text
-Question / Blocker        yellow
-Investigation             green
-Validation / Analysis     blue
-Model Work                red
-Evaluation                purple
+Question / Blocker        circle     yellow
+Investigation             square     green
+Validation / Analysis     triangle   blue
+Model Work                diamond    red
+Evaluation                plus       purple
 ```
 
 Foundation 023 preserves:
@@ -161,19 +144,19 @@ E5  Hue + Tag
     SELECTED / sufficiently settled for current Phase C
 ```
 
-Latest accepted relation-class implementation:
+Latest accepted relation-class target:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-Stroke rhythm remains reserved for another future line-level semantic dimension and has no assigned meaning.
+Stroke rhythm remains reserved for a different future line-level semantic dimension and has no assigned meaning.
 
 ---
 
 # Project disposition and current-process focus
 
-Human-selected project-disposition direction:
+Accepted project-disposition direction:
 
 ```text
 P7  Neutral Tag + Tone
@@ -193,7 +176,7 @@ Exact accepted P7 target:
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-Current-process focus direction:
+Accepted current-process focus direction:
 
 ```text
 Context visible
@@ -202,7 +185,9 @@ Edit focus set
 Reset example
 ```
 
-Users can add/remove work units from the current focus set without deleting work or changing disposition. Exact accepted editable-focus target:
+Users can add/remove work units from the current focus set without deleting work or changing project disposition.
+
+Exact accepted editable-focus target:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
@@ -212,20 +197,9 @@ Final focus-set ownership, persistence, automatic suggestions and multiple named
 
 ---
 
-# Runtime result from Slice 02H
+# Runtime and operational-status result
 
 Runtime remains conditional / episode-scoped:
-
-```text
-PROJECT DISPOSITION
-    where does this work stand in the project?
-
-RUNTIME
-    if a meaningful current execution/work episode exists,
-    what is happening in that episode?
-```
-
-Critical distinction:
 
 ```text
 No runtime
@@ -235,7 +209,7 @@ Idle runtime
     an execution episode exists but is doing nothing
 ```
 
-Working runtime fixtures:
+Working runtime fixtures remain:
 
 ```text
 NONE    No runtime
@@ -246,10 +220,10 @@ HUMAN   Waiting for Human
 FAIL    Failed current attempt
 ```
 
-Human-accepted current Phase-C carrier architecture:
+Accepted runtime-carrier architecture:
 
 ```text
-exactly one runtime carrier per live-runtime work unit
+exactly one carrier per live-runtime work unit
 
 Dot + dynamic ring
 or
@@ -262,211 +236,170 @@ GLOBAL
 LOCAL
     click visible carrier
     switch only that work unit
-
-No runtime
-    no runtime carrier
 ```
 
-The T7 tag keeps geometry, text and border mask stationary while a broad soft shade field flows through the perimeter.
-
-Exact accepted targets:
+Accepted T7 target:
 
 ```text
-T7 motion browser
-    08534f94c2f272f969159087de2797a23e36b330
-
-switchable runtime browser with T7 integrated
-    fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
+08534f94c2f272f969159087de2797a23e36b330
 ```
 
-Final runtime ontology, production default carrier, preference persistence and exact pacing remain unfrozen.
-
----
-
-# BLOCKED result from Slice 02I
-
-The current semantic distinction is:
+Accepted switchable-runtime browser with T7 integrated:
 
 ```text
-BLOCKER
-    cause / unresolved work or dependency preventing progress
-
-BLOCKS
-    relationship from blocker cause to affected work
-
-BLOCKED
-    resulting current progress constraint on affected work
-
-FAIL
-    failed current execution attempt
+fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
-The shared operational-status presentation rule is accepted for the current Phase-C round:
+BLOCKED remains semantically distinct from runtime while reusing the operational-status presentation slot.
 
 ```text
-one bottom-right operational-status slot
-
-may visually present
-    live runtime state
-    or
-    BLOCKED progress constraint
-
-shared visual carrier
-    !=
-merged ontology
+BLOCKER  = cause
+BLOCKS   = relation
+BLOCKED  = affected work cannot proceed
+FAIL     = failed current execution attempt
 ```
 
-Accepted compact red mapping after the final human-requested swap:
+Accepted compact red mapping:
 
 ```text
 BLOCKED
-    red core dot
     sharper non-circular dynamic ring
 
 FAIL
-    red core dot
     smoother circular dynamic ring
 ```
 
-Tag mode remains:
-
-```text
-BLOCKED
-    red T7 Soft Shade tag
-    text = BLOCKED
-
-FAIL
-    red T7 Soft Shade tag
-    text = FAIL
-```
-
-The practical model preserves visible cause/effect:
-
-```text
-[Question / Blocker cause]
-        BLOCKS
-           ↓
-[affected work unit + BLOCKED]
-```
-
-One blocker may eventually block several work units, and one work unit may have multiple blocker causes. The final relation ontology and state-transition rules remain unfrozen.
-
-Exact accepted visual target:
+Exact accepted BLOCKED/status target:
 
 ```text
 88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
+Final runtime ontology, progress-constraint ontology, transition rules and production persistence remain unfrozen.
+
 ---
 
-# Active Slice 02J: attention priority visual grammar
+# Attention priority result from Slice 02J
 
-The active bounded concept is:
+The bounded concept remains:
 
 ```text
 ATTENTION PRIORITY
     among visible work, which work deserves more attention now?
 ```
 
-This is intentionally separated from:
+The project owner selected:
 
 ```text
-CATEGORY
-    what is this?
-
-PROJECT DISPOSITION
-    where does it stand?
-
-PROGRESS CONSTRAINT
-    can it proceed?
-
-RUNTIME / OPERATIONAL STATUS
-    what is happening now?
-
-CURRENT-FOCUS MEMBERSHIP
-    is it in the emphasized process set?
+A3  Signal Bars
 ```
 
-The slice does not freeze `importance / priority / relevance` as one semantic axis. In particular:
+Current accepted Phase-C treatment:
 
 ```text
-priority != relevance
-priority != scheduling order
-priority != current-focus membership
-priority != operational urgency
+HIGH attention
+    three ascending micro-bars
+    near the upper-right frame
+    spatially separated from top-right disposition and bottom-right operational status
 ```
 
-unless later evidence justifies specific relationships.
+Exact reviewed browser target:
 
-## Controlled fixture
+```text
+767c66f76974d3c0a851de0dfa17c502817a4b12
+```
+
+This does not freeze whether priority is binary, ordinal or scored, nor its ownership, persistence, relationship to relevance or relationship to scheduling.
+
+---
+
+# Active Slice 02K: persistent work-unit selection
+
+The active bounded concept is:
+
+```text
+SELECTION
+    which work unit has the user explicitly chosen for inspection or action?
+```
+
+Selection is deliberately separate from:
+
+```text
+HOVER
+    transient pointer encounter
+
+KEYBOARD FOCUS
+    accessibility / input navigation
+
+CURRENT-PROCESS FOCUS MEMBERSHIP
+    membership in the emphasized process set
+
+ATTENTION PRIORITY
+    elevated attention using A3 Signal Bars
+
+DEEP FOCUS / SPECIALIST WORKSPACE
+    higher interaction depth entered from the map
+```
+
+## Candidate visual treatments
+
+```text
+SEL0  Neutral Control
+SEL1  Outer Keyline
+SEL2  Corner Brackets
+SEL3  Inner Frame
+SEL4  Edge Ticks
+SEL5  Selection Plate
+SEL6  Soft Contour
+SEL7  Double Corner
+SEL8  Keyline + Corners
+```
+
+Controlled fixture:
 
 ```text
 category       Investigation
 disposition    Current
 status         RUN
-priority       HIGH
+priority       HIGH / A3 Signal Bars
+selection      SELECTED
 ```
 
-`HIGH` is a provisional binary test fixture only.
-
-## Current visual candidates
+Practical interaction proof:
 
 ```text
-A0  Neutral Control
-A1  Twin Tick
-A2  Top Rail
-A3  Signal Bars
-A4  Side Bracket
-A5  HIGH Tag
-A6  Beacon
-A7  Luminance Lift
-A8  Rail + Tag
+click node
+    -> transfer persistent selection
+
+Enter / Space on keyboard-focused node
+    -> select it
+
+Clear selection
+    -> remove selected state
+
+pointer hover
+    -> H4 remains transient and independent
 ```
-
-The priority tone is provisional champagne so geometry can be compared while category color remains category-owned.
-
-## Practical coexistence fixture
-
-```text
-Question / Blocker    CURRENT + HUMAN      HIGH
-Investigation         CURRENT + BLOCKED    HIGH
-Validation            NEXT + NONE          normal
-Model Work            CURRENT + FAIL       HIGH
-Investigation         CURRENT + RUN        normal
-Evaluation            DEFER + NONE         normal
-```
-
-The yellow Question / Blocker example deliberately tests whether a warm priority cue can remain distinct from category color.
 
 Current human gate:
 
 ```text
-1. compare A1-A8 against A0
-2. judge structural cues versus explicit HIGH text
-3. reject any treatment that resembles status, connector ports, focus or hover
-4. inspect mixed categories, especially yellow Question / Blocker
-5. prefer / reject / combine / refine
-6. do not freeze final priority/relevance ontology from this visual gate alone
+1. compare SEL1-SEL8 against SEL0
+2. verify selection remains visible after pointer exit
+3. verify H4 hover remains transient and distinct
+4. verify A3 attention bars remain independent
+5. inspect BLOCKED / FAIL / RUN coexistence
+6. move selection between nodes by click
+7. use Tab plus Enter / Space
+8. reject treatments resembling connector ports, priority, hover or project-focus suppression
+9. prefer / reject / combine / refine
 ```
 
 ---
 
-# Work-unit click / expansion interaction
+# Preserved work-unit expansion idea
 
-The project owner proposed a future interaction in which clicking a compact work-unit box can expand it elegantly to show more information.
-
-The broader need is compatible with promoted Specification 008:
-
-```text
-project map
-    -> select meaningful work unit
-    -> map recedes / focus transition
-    -> full-resolution specialist workspace mounts
-    -> perform real analytical work
-    -> return to project context
-```
-
-The exact intermediate in-map expansion remains unfrozen. Future candidate hierarchy:
+The future hierarchy remains preserved:
 
 ```text
 compact map work unit
@@ -474,7 +407,7 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
-The expanded-card level remains deferred to semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
+The current selection slice deliberately does not expand nodes. The expanded-card level remains deferred until the persistent selected-state treatment is sufficiently understood, then should be explored with semantic zoom, C5 Internal Layout Grammar, information-density lenses and work-unit detail/provenance presentation.
 
 ---
 
@@ -485,7 +418,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               attention priority semantic/visual grammar human review
+Current                               persistent work-unit selection human review
 ```
 
 There is no pending Claude obligation.
@@ -501,25 +434,25 @@ final runtime / execution-state ontology
 production runtime/status-carrier default and persistence
 final project-disposition ontology
 final progress-constraint ontology
-whether BLOCKED is binary or multi-class
-exact compatibility rules between progress constraint and runtime
 multiple simultaneous blockers
-blocker cause object taxonomy
 final BLOCKS relation semantics
 historical execution-attempt presentation
-historical blocked-state provenance
 runtime-flow connector behavior
 final current-focus membership semantics
 final attention-priority ontology
+priority ownership / provenance / persistence
 relationship between priority, relevance and scheduling
-priority provenance / override / persistence
-production priority carrier
+production priority carrier details
+final selection visual treatment
+single versus multi-selection
+selection persistence / ownership
+relationship between selection and inline expansion
+selected-node command / inspector behavior
 semantic assignment of connector stroke rhythm
-selected/focused persistent treatment
-work-unit inline expansion behavior
 semantic zoom
 C5 Internal Layout Grammar
 information-density lenses
+expanded contextual/detail card
 2.5D focus/depth system
 Conversation Workspace composition
 large-project layout/grouping/command architecture
@@ -547,16 +480,16 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 239 and v1-cockpit-design-exploration
+1. use Checkpoint 240 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-attention-priority.html
-4. compare A1-A8 against A0
-5. inspect structural priority cues versus explicit HIGH text
-6. inspect coexistence with BLOCKED, FAIL, RUN, HUMAN and disposition
-7. inspect the yellow Question / Blocker example carefully
-8. prefer / reject / combine / refine
-9. keep work-unit expansion deferred to its own later interaction-density slice
-10. do not freeze final priority/relevance ontology merely from this first visual slice
+3. open http://localhost:5173/design-lab/work-unit-selection-state.html
+4. compare SEL1-SEL8 against SEL0
+5. move selection between practical-scene nodes
+6. verify selected state persists after pointer exit
+7. verify H4 hover, keyboard focus and A3 attention priority remain distinct
+8. inspect BLOCKED / FAIL / RUN coexistence
+9. prefer / reject / combine / refine
+10. keep inline work-unit expansion deferred until this selection gate converges
 11. keep production Cockpit untouched
 12. keep source-vault deployment paused until explicitly resumed
 ```
