@@ -310,10 +310,42 @@ function updatePracticalGeometry() {
       const path = paths[index]
       if (!source || !target || !path) return
 
-      const start = practicalAnchor(source, 'right', worldRect, viewBox)
-      const end = practicalAnchor(target, 'left', worldRect, viewBox)
-      path.setAttribute('d', practicalPath(start, end))
+      const edge = practicalEdgeAnchors(source, target, worldRect, viewBox)
+      path.setAttribute('d', practicalPath(edge.start, edge.end, edge.orientation))
     })
+  }
+}
+
+function practicalEdgeAnchors(source, target, worldRect, viewBox) {
+  const sourceSurface = source.querySelector('.node-surface') || source
+  const targetSurface = target.querySelector('.node-surface') || target
+  const sourceRect = sourceSurface.getBoundingClientRect()
+  const targetRect = targetSurface.getBoundingClientRect()
+
+  if (targetRect.left > sourceRect.right + 4) {
+    return {
+      start: practicalAnchor(source, 'right', worldRect, viewBox),
+      end: practicalAnchor(target, 'left', worldRect, viewBox),
+      orientation: 'horizontal',
+    }
+  }
+
+  if (sourceRect.left > targetRect.right + 4) {
+    return {
+      start: practicalAnchor(source, 'left', worldRect, viewBox),
+      end: practicalAnchor(target, 'right', worldRect, viewBox),
+      orientation: 'horizontal',
+    }
+  }
+
+  const sourceCenterY = sourceRect.top + sourceRect.height / 2
+  const targetCenterY = targetRect.top + targetRect.height / 2
+  const downward = targetCenterY >= sourceCenterY
+
+  return {
+    start: practicalAnchor(source, downward ? 'bottom' : 'top', worldRect, viewBox),
+    end: practicalAnchor(target, downward ? 'top' : 'bottom', worldRect, viewBox),
+    orientation: 'vertical',
   }
 }
 
@@ -325,6 +357,8 @@ function practicalAnchor(node, side, worldRect, viewBox) {
 
   if (side === 'left') x = rect.left
   if (side === 'right') x = rect.right
+  if (side === 'top') y = rect.top
+  if (side === 'bottom') y = rect.bottom
 
   if (side === 'right' && node.classList.contains('category-investigation')) {
     x = rect.right - rect.width * 0.07
@@ -336,7 +370,15 @@ function practicalAnchor(node, side, worldRect, viewBox) {
   }
 }
 
-function practicalPath(start, end) {
+function practicalPath(start, end, orientation) {
+  if (orientation === 'vertical') {
+    const direction = Math.sign(end.y - start.y) || 1
+    const bend = Math.max(30, Math.abs(end.y - start.y) * 0.42)
+    const c1y = start.y + direction * bend
+    const c2y = end.y - direction * bend
+    return `M${formatCoord(start.x)} ${formatCoord(start.y)} C${formatCoord(start.x)} ${formatCoord(c1y)}, ${formatCoord(end.x)} ${formatCoord(c2y)}, ${formatCoord(end.x)} ${formatCoord(end.y)}`
+  }
+
   const direction = Math.sign(end.x - start.x) || 1
   const bend = Math.max(34, Math.abs(end.x - start.x) * 0.36)
   const c1x = start.x + direction * bend
