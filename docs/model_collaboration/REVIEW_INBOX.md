@@ -27,94 +27,111 @@ human project owner
 Current checkpoint:
 
 ```text
-234
+235
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-process-focus.html
+http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 ```
 
-Exact editable-focus browser implementation target:
+Exact runtime browser implementation target:
+
+```text
+099e516bf9a7351a756bee00037edbcc731a2738
+```
+
+## Preserved accepted design results
+
+Project disposition:
+
+```text
+P7  Neutral Tag + Tone
+    neutral disposition tag at rest
+    state hue revealed on hover
+    selective tonal recession
+```
+
+Current-process focus:
+
+```text
+Context visible
+Focus current process
+Edit focus set
+Reset example
+```
+
+The project owner accepted the editable focus-set interaction. Focus membership can be changed per work unit without deleting work or changing project disposition.
+
+Exact accepted editable-focus target:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
-## Preserved disposition result
+## Preservation-method audit
 
-The project owner accepted:
+Rapid Phase-C iteration exposed checkpoint metadata drift in Checkpoints 223-234. The historical bodies were preserved and the required metadata/provenance was repaired.
 
-```text
-P7  Neutral Tag + Tone
-
-REST
-    category color dominant
-    neutral disposition tag
-    selective tonal recession
-
-HOVER
-    disposition tag reveals state hue
-```
-
-The final project-disposition ontology remains unfrozen.
-
-## Preserved focus-lens result
-
-The project owner also accepted the stronger current-process focus lens:
+Verified metadata-validation repair point:
 
 ```text
-Context visible
-    all project context remains readable
-
-Focus current process
-    current-focus work stays dominant
-    outside-focus work is strongly suppressed
-    suppressed context remains hover-recoverable
-    contextual connector segments also recede
+d2541418a68b9bfd244ec89e4e951e630b3bb61b
+    validate  SUCCESS
 ```
 
-## Active editable focus-set review
+Checkpoint granularity and validation-closure guidance were strengthened in `docs/checkpoints/README.md`, and current-routing consistency now runs on all pushes that touch the guarded routing surfaces.
 
-The focus set is now user-curatable.
+Audit evidence:
 
 ```text
-Edit focus set
-    reveal per-node membership controls
-
-+ FOCUS
-    add a work unit to current focus
-
-- FOCUS
-    remove a work unit from current focus
-
-Reset example
-    restore the example membership
+docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
-This changes focus membership only. It does not delete a work unit or change its disposition.
+## Active runtime-state review
 
-Membership changes immediately update:
+The current slice isolates:
 
 ```text
-node suppression
-focus membership count
-connector current/context classification
+WHAT IS HAPPENING NOW?
+    runtime / execution state
 ```
 
-Browser `localStorage` is prototype-only convenience and does not freeze production persistence.
+from category, project disposition, priority/relevance and current-focus membership.
+
+Provisional runtime fixtures:
+
+```text
+Idle
+Queued
+Running
+Waiting
+Waiting for Human
+Failed
+```
+
+Browser families:
+
+```text
+R0  Neutral Control
+R1  Status Lamp
+R2  Activity Rail
+R3  Runtime Tag
+R4  Instrument Cell
+R5  Motion Signal
+R6  Restrained Hybrid
+```
 
 Current human gate:
 
 ```text
-verify Edit focus set is clear and unobtrusive
-verify + FOCUS / - FOCUS do not imply deletion
-verify focused hierarchy changes immediately
-verify connector suppression follows edited membership
-verify edit-mode recovery keeps outside-focus nodes operable
-verify refresh persistence and Reset example behavior
-prefer / reject / refine
+compare R0-R6 in controlled rows
+inspect the mixed-category scene
+compare normal vs Reduced motion
+judge runtime clarity and category/disposition competition
+judge whether semantic motion helps without becoming decorative noise
+prefer / reject / combine / refine
 ```
 
-Runtime state, importance and C5 Internal Layout Grammar remain separate future slices.
+The final runtime ontology, priority grammar and C5 Internal Layout Grammar remain separate future work.
