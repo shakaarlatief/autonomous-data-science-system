@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 241  
+**Checkpoint:** 242  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars are accepted for elevated attention priority, SEL2 Corner Brackets are accepted for persistent compact-node selection after repair of the clipping defect, and the active gate now evaluates the intermediate contextual-detail layer between selected compact work units and the full specialist workspace.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars remain accepted for elevated attention priority, SEL2 Corner Brackets remain accepted for persistent selection, and X5 has now been accepted as a balanced two-axis contextual expansion without surrounding-context recession. The active gate evaluates internal information layout inside that expanded work unit.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,37 +29,29 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/241_selection_sel2_accepted_contextual_detail_expansion_review_opened.md
-docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
-frontend/design-lab/work-unit-detail-expansion.html
-frontend/design-lab/work-unit-detail-expansion.css
-frontend/design-lab/work-unit-detail-expansion.js
+docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
+docs/research/074_work_unit_internal_layout_grammar_experiment.md
+frontend/design-lab/work-unit-internal-layout.html
+frontend/design-lab/work-unit-internal-layout.css
+frontend/design-lab/work-unit-internal-layout.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-detail-expansion.html
+http://localhost:5173/design-lab/work-unit-internal-layout.html
 ```
 
 Exact initial browser implementation target:
 
 ```text
-0457a27d8e80863738ce3f75aeb11bd4f5c1155d
+871075bcda8ff812e1a96b18b442c803d5da7faf
 ```
 
-Predecessor selection evidence remains preserved at:
+Accepted predecessor contextual-expansion target:
 
 ```text
-docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
-docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
-frontend/design-lab/work-unit-selection-state.html
-```
-
-Exact repaired selection-browser target:
-
-```text
-e7304fe834d86166d843fda7e1df0f4ddb1f793a
+94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
 Production `/cockpit` remains untouched.
@@ -149,14 +141,6 @@ Human-selected project-disposition direction:
 
 ```text
 P7  Neutral Tag + Tone
-
-REST
-    category color remains dominant
-    disposition tag remains neutral
-    Completed / Deferred / Future retain selective tonal recession
-
-HOVER
-    disposition tag reveals its state-specific color
 ```
 
 Exact accepted P7 target:
@@ -174,8 +158,6 @@ Edit focus set
 Reset example
 ```
 
-Users can add/remove work units from the current focus set without deleting work or changing disposition.
-
 Exact accepted editable-focus target:
 
 ```text
@@ -188,18 +170,7 @@ Final focus-set ownership, persistence, automatic suggestions and multiple named
 
 # Runtime and BLOCKED result
 
-Runtime remains conditional / episode-scoped:
-
-```text
-PROJECT DISPOSITION
-    where does this work stand in the project?
-
-RUNTIME
-    if a meaningful current execution/work episode exists,
-    what is happening in that episode?
-```
-
-Critical distinction:
+Runtime remains conditional / episode-scoped.
 
 ```text
 No runtime
@@ -257,7 +228,7 @@ Exact accepted shared BLOCKED/status target:
 
 ---
 
-# Attention priority result from Slice 02J
+# Attention priority result
 
 The project owner selected:
 
@@ -284,11 +255,9 @@ The final priority ontology, scale, ownership, persistence and relationship to r
 
 ---
 
-# Persistent selection result from Slice 02K
+# Persistent selection result
 
-The first selection implementation was not valid evidence for external selection carriers because the decorations were mounted inside `.node-surface` and clipped by its `overflow: hidden` boundary.
-
-The repair moved selection geometry to the `.grammar-node` layer while preserving surface clipping for internal card effects.
+The first selection implementation was invalid evidence for outside-the-frame carriers because `.node-surface` clipping hid them. The repair moved selection geometry to the `.grammar-node` layer.
 
 Exact repaired selection-browser target:
 
@@ -296,7 +265,7 @@ Exact repaired selection-browser target:
 e7304fe834d86166d843fda7e1df0f4ddb1f793a
 ```
 
-After reviewing the repaired browser, the project owner selected:
+The project owner selected:
 
 ```text
 SEL2  Corner Brackets
@@ -311,23 +280,13 @@ SELECTED
     persistent after pointer exit
 ```
 
-Selection remains distinct from:
-
-```text
-transient H4 hover
-keyboard focus
-current-process focus membership
-attention priority
-deep-focus / specialist-workspace state
-```
-
-Final selection cardinality, persistence across navigation and ownership in URL/session/project state remain open.
+Selection remains distinct from hover, keyboard focus, current-process focus membership, attention priority and deep-focus / specialist-workspace state.
 
 ---
 
-# Active Slice 02L: contextual work-unit detail expansion
+# Contextual expansion result from Slice 02L
 
-The active interaction hierarchy is:
+Interaction hierarchy:
 
 ```text
 compact map work unit
@@ -336,95 +295,87 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
+After comparing X0-X8, the final human comparison narrowed to X4 versus X5. The project owner selected:
+
+```text
+X5 WITHOUT context recession
+```
+
+Accepted contextual-detail geometry:
+
+```text
+390 x 210
+balanced two-axis growth
+one integrated expanded work-unit object
+surrounding project map remains at normal salience
+```
+
+Exact refined X5 target:
+
+```text
+94bc1100b7388cc56497cafc03051ce326424a80
+```
+
+The original context-recession behavior remains historical design evidence but is not part of the accepted contextual-expansion treatment.
+
+---
+
+# Active Slice 02M: expanded work-unit internal layout
+
 The active bounded question is:
 
 ```text
-CONTEXTUAL DETAIL EXPANSION
-    after a compact work unit is selected,
-    how should it reveal additional project context
-    without immediately becoming the full specialist workspace?
+INTERNAL LAYOUT GRAMMAR
+    inside the accepted X5 expanded work unit,
+    how should contextual information be organized
+    for fast scanning without turning the card into a miniature workspace?
 ```
 
-The following semantic and interaction distinctions remain held:
+Held outer geometry:
 
 ```text
-HOVER
-    transient pointer interaction
-
-SELECTION
-    persistent chosen work unit
-
-ATTENTION PRIORITY
-    elevated attention signal
-
-OPERATIONAL STATUS
-    live runtime state or BLOCKED presentation
-
-CONTEXTUAL DETAIL
-    temporary richer information while remaining in the project map
-
-DEEP FOCUS / SPECIALIST WORKSPACE
-    full-resolution task environment at a deeper interaction layer
+390 x 210
+X5 two-axis expansion
+NO surrounding-context recession
 ```
 
-## Candidate expansion architectures
+Candidate internal layouts:
 
 ```text
-X0  Compact Control
-X1  Vertical Drawer
-X2  Right Sidecar
-X3  Attached Sheet
-X4  Wide Split Card
-X5  Context Lens
-X6  Layered Reveal
-X7  Peek Rail
-X8  Inspector Dock
+L0  Flat Fields
+L1  Structured Grid
+L2  Narrative Stack
+L3  Summary + Rail
+L4  Action First
+L5  Dependency Path
+L6  Evidence Center
+L7  Module Cards
+L8  Balanced Instrument
 ```
 
-Every candidate exposes the same provisional contextual fields:
+Every candidate uses the same provisional payload:
 
 ```text
 Purpose
-Constraint / state
+Constraint
 Evidence
 Next action
+Blocking cause
+Recent activity
 ```
 
-These are density fixtures only. They do not freeze the work-unit internal schema or C5 Internal Layout Grammar.
+These are density fixtures only. They do not freeze the final work-unit schema, required fields, provenance structure or C5 semantics.
 
-## Practical interaction proof
-
-```text
-click unselected node
-    -> select with SEL2
-    -> remain compact
-
-click selected compact node
-    -> expand contextual detail
-
-click selected expanded node
-    -> collapse
-
-Enter / Space
-    -> keyboard equivalent
-
-switch X0-X8
-    -> change expansion architecture only
-```
-
-## Current human gate
+Current human gate:
 
 ```text
-1. compare X1-X8 against X0
-2. judge which treatment best preserves spatial orientation
-3. judge whether attached panels remain obviously owned by the selected node
-4. identify variants that consume too much project-map space
-5. judge whether X5 behaves too much like deep focus
-6. judge whether X7 provides enough information to justify an intermediate layer
-7. compare inline expansion against X8 Inspector Dock
-8. verify SEL2, A3, disposition and operational status remain independently readable
-9. prefer / reject / combine / refine
-10. keep final internal work-unit information architecture unfrozen
+1. compare L0-L8 with outer geometry held constant
+2. judge scan path, hierarchy and density
+3. reject layouts that feel like miniature dashboards
+4. inspect robustness to longer text
+5. inspect future room for provenance/evidence and commands
+6. prefer / reject / combine / refine
+7. keep final semantic work-unit schema unfrozen
 ```
 
 ---
@@ -436,7 +387,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               contextual work-unit detail expansion human review
+Current                               expanded work-unit internal-layout human review
 ```
 
 There is no pending Claude obligation.
@@ -459,13 +410,14 @@ final current-focus membership semantics
 final attention-priority ontology and ownership
 priority / relevance / scheduling relationship
 final selection cardinality and persistence
-final contextual-detail expansion architecture
-multiple simultaneous expanded work units
-large-project expansion collision handling
-final work-unit internal information architecture
+final work-unit internal information schema
 C5 Internal Layout Grammar
 provenance/evidence detail presentation
+blocking-cause detail representation
+recent activity/history representation
 selected-node command surface
+multiple simultaneous expanded work units
+large-project expansion collision handling
 semantic zoom
 transition from contextual detail to specialist workspace
 URL representation for selected / expanded / deep-focus state
@@ -495,16 +447,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 241 and v1-cockpit-design-exploration
+1. use Checkpoint 242 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-detail-expansion.html
-4. compare X1-X8 against X0
-5. inspect attachment and preservation of project-map spatial orientation
-6. inspect whether X5 crosses prematurely into deep focus
-7. compare inline expansion against X8 Inspector Dock
-8. verify SEL2, A3, disposition and operational status remain distinct
-9. prefer / reject / combine / refine
-10. keep final internal work-unit information architecture unfrozen
-11. keep production Cockpit untouched
-12. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-internal-layout.html
+4. compare L0-L8
+5. inspect scan path, hierarchy and density
+6. reject miniature-dashboard behavior
+7. inspect robustness to longer content and future provenance/evidence
+8. prefer / reject / combine / refine
+9. keep final semantic field schema unfrozen
+10. keep production Cockpit untouched
+11. keep source-vault deployment paused until explicitly resumed
 ```
