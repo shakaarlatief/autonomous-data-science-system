@@ -35,11 +35,16 @@
  * softer inner concentration, so the result should read as a moving shade or
  * illuminated atmosphere travelling through the perimeter rather than as one
  * identifiable line making a lap around the box.
+ *
+ * The animated angle is defined on the runtime-tag element and intentionally
+ * inherited by its masked pseudo-elements. Without inheritance the pseudo-
+ * elements retain the registered property's initial angle and the shade appears
+ * static even though the parent is animating.
  */
 
 @property --t7-shade-angle {
   syntax: "<angle>";
-  inherits: false;
+  inherits: true;
   initial-value: 0deg;
 }
 
