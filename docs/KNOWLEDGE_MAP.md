@@ -29,7 +29,7 @@ checkpoint                        245
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  Conversation Workspace human review
+current boundary                  Conversation Workspace independent browser comparison
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -44,6 +44,7 @@ scripts/check_checkpoint_metadata.py
 scripts/check_current_routing.py
 .github/workflows/current-routing-consistency.yml
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
+docs/research/080_explicit_coordination_branch_claude_trigger_hardening.md
 ```
 
 Current audit result:
@@ -54,6 +55,7 @@ metadata/provenance repair    PRESERVED
 micro-checkpointing rule      HARDENED
 checkpoint validation gate    HARDENED
 routing push validation       HARDENED
+Claude branch routing         EXPLICIT
 new knowledge subsystem       NOT JUSTIFIED
 ```
 
@@ -154,45 +156,100 @@ semantic zoom
 
 ---
 
-# Current Slice 02P: Conversation Workspace
+# Current Slice 02P: Conversation Workspace independent comparison
 
-Primary evidence:
+Checkpoint:
 
 ```text
 docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+```
+
+Initial rejected visual/presentation evidence remains preserved:
+
+```text
 docs/research/079_conversation_workspace_presentation_architecture_experiment.md
 frontend/design-lab/conversation-workspace-architecture.html
-frontend/design-lab/conversation-workspace-architecture.css
-frontend/design-lab/conversation-workspace-architecture.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/conversation-workspace-architecture.html
-```
-
-Initial browser target:
-
-```text
 42cfe87a0531206187741488f35785fc87f10f1e
 ```
 
-Candidate presentation architectures:
+The project owner then required an independent redesign of the entire chat visual and interaction system.
+
+Blind request and Claude response:
 
 ```text
-CV0  Focus Workspace
-CV1  Right Dock
-CV2  Split Workbench
-CV3  Canvas Lens
-CV4  Bottom Workbench
-CV5  Focus + Context Rail
-CV6  Conversation + Inspector
-CV7  Progressive Recent-to-Full
-CV8  Tabbed Stage
+docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md
+docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
+
+request base    c190420c6d77d3191ca9efb9ffc1e401bbb7fda8
+Claude response cab2e464d81b48edadd1b6ae51bb7dd620d7e892
 ```
 
-The browser holds conversation content constant and tests where the full persistent transcript should live relative to the project map.
+ChatGPT independent evidence:
+
+```text
+branch  chatgpt-conversation-workspace-independent-design
+head    c66f72a74e681f89fd52ba591a1387ea50f0e959
+```
+
+Dual-design synthesis evidence:
+
+```text
+docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+```
+
+Current browser URLs:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
+http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+```
+
+Exact active browser target:
+
+```text
+348c1d8a746041d4fa3ca41316ac34f9d79bc745
+```
+
+Strong independent convergence:
+
+```text
+transcript-first long-form technical surface
+ADS responses primarily document-like
+avoid generic symmetric chat bubbles
+semantic project-object references
+structured project changes separate from prose
+collapsed secondary execution/provenance detail
+project-aware composer context
+dark restrained professional visual language
+```
+
+Claude systems:
+
+```text
+Technical Manuscript
+Studio Console
+Hybrid
+```
+
+ChatGPT systems:
+
+```text
+Quiet Graphite
+Deep Navy
+Warm Slate
+Monochrome Signal
+Violet Ink
+Editorial Dark
+```
+
+Current gate:
+
+```text
+human compares both independent families
+human identifies whole-system likes/dislikes
+human identifies transferable mechanisms
+synthesis candidates are built afterward
+```
 
 ---
 
