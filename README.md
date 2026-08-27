@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            235
+checkpoint            236
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      work-unit runtime-state visual-grammar human review
+current boundary      conditional runtime-state human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -99,7 +99,7 @@ Final production focus-set ownership, persistence and automatic suggestion logic
 
 ## Repository preservation audit
 
-A rapid-iteration preservation audit was completed before opening the next design slice.
+A rapid-iteration preservation audit was completed before opening the runtime slice.
 
 Result:
 
@@ -122,10 +122,6 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     validate  SUCCESS
 ```
 
-The checkpoint contract now explicitly says that micro-refinements inside an already-open gate normally remain in Git plus the active research record, and that a checkpoint-producing change is not operationally closed until its metadata validation passes.
-
-The current-routing consistency workflow now runs on all pushes that touch guarded routing surfaces.
-
 Audit evidence:
 
 ```text
@@ -134,29 +130,51 @@ docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_h
 
 ---
 
-## Active Slice 02H: work-unit runtime state
+## Active Slice 02H: conditional work-unit runtime state
 
-The next semantic question is:
+Human review of the first runtime fixture exposed an important semantic correction.
 
-```text
-WHAT IS HAPPENING NOW?
-    runtime / execution state
-```
-
-This remains separate from category, project disposition, priority/relevance and current-focus membership.
-
-Provisional runtime fixtures:
+The current model is:
 
 ```text
-Idle
-Queued
-Running
-Waiting
-Waiting for Human
-Failed
+PROJECT DISPOSITION
+    where does this work stand in the project?
+
+RUNTIME
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
 ```
 
-Browser carrier families:
+Runtime is therefore conditional rather than universally present.
+
+The key distinction is:
+
+```text
+No runtime
+    no current execution/work episode exists
+
+Idle runtime
+    an execution episode exists but is doing nothing
+```
+
+The current browser uses `No runtime`, not `Idle`, as the absence control. Deferred, Future and Completed work normally has no current runtime carrier. Current work may have no runtime or a live state. Recommended/Next work normally has no runtime but may be Queued if it has already been scheduled.
+
+`Current` is preferred over `Active` for project disposition so project-state language does not imply execution.
+
+`Blocked` is explicitly unresolved. It may ultimately be an orthogonal progress constraint that can coexist with Current or Next rather than a peer lifecycle/disposition value.
+
+Controlled runtime fixtures:
+
+```text
+NONE    No runtime
+QUEUE   Queued
+RUN     Running
+WAIT    Waiting
+HUMAN   Waiting for Human
+FAIL    Failed current attempt
+```
+
+Browser carrier families remain:
 
 ```text
 R0  Neutral Control
@@ -168,28 +186,40 @@ R5  Motion Signal
 R6  Restrained Hybrid
 ```
 
+For `NONE`, R1-R6 intentionally render no runtime instrumentation.
+
+The mixed-category practical scene now includes:
+
+```text
+Question        CURRENT + HUMAN
+Investigation   CURRENT + RUN
+Validation      NEXT + QUEUE
+Model Work      CURRENT + FAIL
+Evaluation      DEFER + NONE
+Investigation   FUTURE + NONE
+```
+
 Browser:
 
 ```text
 http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 ```
 
-Exact browser implementation target:
+Exact corrected browser implementation target:
 
 ```text
-099e516bf9a7351a756bee00037edbcc731a2738
+dfcb89c94e6d8ce46dd2997591f41e6f9a394c18
 ```
 
 Research and checkpoint:
 
 ```text
 docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
-docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 ```
 
-The page includes controlled same-category rows, a practical mixed-category project scene and a Reduced motion comparison.
-
-The final runtime ontology remains unfrozen.
+Current runtime state is distinct from historical execution provenance. The final runtime ontology, final project-disposition ontology, Blocked semantics and runtime-flow connector grammar remain unfrozen.
 
 ---
 
@@ -219,12 +249,14 @@ Not yet authorized:
 production Cockpit replacement
 final runtime / execution-state ontology
 final runtime visual carrier
+final project-disposition ontology
+final Blocked / progress-constraint semantics
+execution-history presentation
 runtime-flow connector semantics
 final current-focus membership semantics
 automatic focus-selection logic
 production focus-set ownership / persistence
 multiple named focus lenses
-final project-disposition ontology
 priority / relevance visual grammar
 final semantic relation taxonomy
 production relation colors / codes
@@ -261,7 +293,8 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
+docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
 docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
 frontend/design-lab/work-unit-runtime-grammar.html
 
@@ -284,10 +317,12 @@ docs/model_collaboration/REVIEW_INBOX.md
 ```text
 1. pull v1-cockpit-design-exploration
 2. open http://localhost:5173/design-lab/work-unit-runtime-grammar.html
-3. compare R0 through R6 in the controlled rows
-4. inspect the mixed-category project scene
-5. toggle Reduced motion and confirm runtime meaning remains legible
-6. judge clarity, clutter, category/disposition competition and professional feel
-7. record prefer / reject / combine / refine evidence
-8. keep production Cockpit untouched
+3. verify NONE shows no runtime instrumentation under R1-R6
+4. compare R1-R6 on QUEUE / RUN / WAIT / HUMAN / FAIL
+5. inspect DEFER + NONE and FUTURE + NONE in the practical scene
+6. toggle Reduced motion and confirm live runtime meaning remains legible
+7. judge clarity, clutter, category/disposition competition and professional feel
+8. prefer / reject / combine / refine runtime carriers
+9. do not freeze the final runtime/disposition/Blocked ontology from this visual gate alone
+10. keep production Cockpit untouched
 ```
