@@ -27,7 +27,7 @@ human project owner
 Current checkpoint:
 
 ```text
-231
+232
 ```
 
 Current browser route:
@@ -39,34 +39,37 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-87927bef327be0a0cc9ccf9fb153aa0c7b226e92
+fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-## Active disposition review
+## Active disposition verification
 
-The current convergence comparison is:
+Mixed-category human review found the persistent-color P6 and previous P7 treatments somewhat confusing alongside category color.
+
+Current convergence candidate:
 
 ```text
-P6  Hue + Colored Tag + Tone
-    no rhythm
+P7  Neutral Tag + Tone
 
-P7  Colored Tag + Tone
-    no disposition-colored perimeter
-    no rhythm
+REST
+    category color remains dominant
+    disposition tag remains neutral
+    selective tone retained
+
+HOVER
+    disposition tag reveals state hue
 ```
 
-P4 State Rhythm remains preserved as standalone experiment evidence.
-
-The browser includes side-by-side practical mixed-category scenes so P6 and P7 can be judged with Question, Investigation, Validation, Model and Evaluation work units together. Practical connector geometry follows rendered cards and selects horizontal or vertical attachment according to actual separation.
+P4 State Rhythm and P6 colored hybrid remain preserved as historical comparison evidence.
 
 Current human gate:
 
 ```text
-compare P6 vs P7 in controlled rows
-compare P6 vs P7 in practical mixed-category scenes
-judge whether disposition perimeter hue competes with category hue
-judge whether colored tag + tone alone is sufficiently clear
-prefer / reject / combine / refine
+verify neutral tag at rest
+verify state hue appears in tag on hover
+verify mixed-category scene is less confusing
+verify tonal recession does not imply low importance / disabled state
+-> if accepted, close project-disposition carrier for current Phase C
 ```
 
 Runtime state and importance remain separate future slices.
