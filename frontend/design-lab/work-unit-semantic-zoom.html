@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-semantic-style="s7" data-scale="work">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-Unit Semantic Zoom</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-semantic-zoom.css" />
+  </head>
+  <body>
+    <header class="semantic-header">
+      <div>
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02O · Semantic zoom</span>
+        <h1>As the project world zooms out and in, what information should survive, aggregate, disappear, or become richer?</h1>
+        <p>Z7 Pull-Back Then Dive now governs the current deep-focus entry direction. This slice returns to the project world itself and keeps ordinary geometric zoom separate from semantic level-of-detail.</p>
+      </div>
+      <div class="held-state">
+        <span>Held interaction ladder</span>
+        <strong>project world → selected/X5 → Z7 deep focus → fullscreen specialist workspace</strong>
+        <small>This slice changes only project-map information density across scale. Deep-focus behavior is held.</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-row">
+        <div>
+          <span class="section-kicker">Bounded scale question</span>
+          <h2>Compare semantic level-of-detail systems, not simple CSS scaling</h2>
+          <p>Each candidate shows the same project at Overview, Work and Inspection scales. The map geometry is held conceptually constant while information architecture changes.</p>
+        </div>
+        <div class="principles">
+          <span>Topology survives</span>
+          <span>Meaning before decoration</span>
+          <span>Focus stays recoverable</span>
+          <span>Large-project density aware</span>
+          <span>Deep focus unchanged</span>
+        </div>
+      </section>
+
+      <section class="comparison">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Nine semantic-zoom strategies across three map scales</h2>
+            <p>Read each row left to right: Overview → Work → Inspection.</p>
+          </div>
+          <span>Judge what information earns persistence at each scale</span>
+        </div>
+        <div class="semantic-grid" id="semantic-grid"></div>
+      </section>
+
+      <section class="practical">
+        <div class="section-head practical-head">
+          <div>
+            <span class="section-kicker">Large interaction studio</span>
+            <h2>Switch semantic strategy and scale independently</h2>
+            <p>This larger scene helps judge whether the system remains understandable when the same map transitions between overview, ordinary work and close inspection.</p>
+          </div>
+          <span id="semantic-summary">S7 · Hybrid Contextual</span>
+        </div>
+        <div class="studio-tools">
+          <div class="controls" id="semantic-controls"></div>
+          <div class="scale-controls" aria-label="Semantic zoom scale">
+            <span>Scale</span>
+            <button type="button" data-scale-mode="overview" aria-pressed="false">Overview</button>
+            <button type="button" data-scale-mode="work" aria-pressed="true">Work</button>
+            <button type="button" data-scale-mode="inspection" aria-pressed="false">Inspection</button>
+          </div>
+        </div>
+        <div class="practical-stage" id="practical-stage"></div>
+      </section>
+
+      <section class="review-prompt semantic-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge semantic zoom as an information system</h2>
+        <div class="review-questions">
+          <p>At Overview scale, what should remain immediately legible: stages, categories, status, labels, relations, or selected/current work?</p>
+          <p>Which treatment reduces clutter without making the world feel anonymous?</p>
+          <p>Should non-current context simplify earlier than selected/current-process work?</p>
+          <p>Do clusters help at distance, or hide too much project structure?</p>
+          <p>Does relation-first topology help orientation, or does it make work-unit identity too weak?</p>
+          <p>Which system feels most scalable while still preserving the Cockpit's visual identity?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-semantic-zoom.js"></script>
+  </body>
+</html>
