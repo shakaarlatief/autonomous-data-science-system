@@ -27,7 +27,7 @@ human project owner
 Current checkpoint:
 
 ```text
-235
+236
 ```
 
 Current browser route:
@@ -36,10 +36,10 @@ Current browser route:
 http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 ```
 
-Exact runtime browser implementation target:
+Exact corrected runtime browser implementation target:
 
 ```text
-099e516bf9a7351a756bee00037edbcc731a2738
+dfcb89c94e6d8ce46dd2997591f41e6f9a394c18
 ```
 
 ## Preserved accepted design results
@@ -72,16 +72,11 @@ da115b74de526fca05ed6f468bef39bdb801355c
 
 ## Preservation-method audit
 
-Rapid Phase-C iteration exposed checkpoint metadata drift in Checkpoints 223-234. The historical bodies were preserved and the required metadata/provenance was repaired.
-
-Verified metadata-validation repair point:
+The Phase-C preservation audit remains closed with the repository architecture judged sound. Checkpoints 223-234 metadata/provenance drift was repaired and global checkpoint metadata validation succeeded at:
 
 ```text
 d2541418a68b9bfd244ec89e4e951e630b3bb61b
-    validate  SUCCESS
 ```
-
-Checkpoint granularity and validation-closure guidance were strengthened in `docs/checkpoints/README.md`, and current-routing consistency now runs on all pushes that touch the guarded routing surfaces.
 
 Audit evidence:
 
@@ -89,29 +84,60 @@ Audit evidence:
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
-## Active runtime-state review
+## Active conditional runtime-state review
 
-The current slice isolates:
+Human semantic review corrected the runtime model before visual selection.
 
-```text
-WHAT IS HAPPENING NOW?
-    runtime / execution state
-```
-
-from category, project disposition, priority/relevance and current-focus membership.
-
-Provisional runtime fixtures:
+Current distinction:
 
 ```text
-Idle
-Queued
-Running
-Waiting
-Waiting for Human
-Failed
+PROJECT DISPOSITION
+    where does this work stand in the project?
+
+RUNTIME
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
 ```
 
-Browser families:
+Runtime is conditional rather than universally present.
+
+```text
+No runtime
+    no current execution/work episode exists
+
+Idle runtime
+    a runtime episode exists but is doing nothing
+```
+
+The active browser uses No runtime as the absence control and renders no runtime carrier for it.
+
+Controlled fixtures:
+
+```text
+NONE    No runtime
+QUEUE   Queued
+RUN     Running
+WAIT    Waiting
+HUMAN   Waiting for Human
+FAIL    Failed current attempt
+```
+
+Practical coexistence fixture:
+
+```text
+Question        CURRENT + HUMAN
+Investigation   CURRENT + RUN
+Validation      NEXT + QUEUE
+Model Work      CURRENT + FAIL
+Evaluation      DEFER + NONE
+Investigation   FUTURE + NONE
+```
+
+`Current` is preferred over `Active` for project disposition so execution meaning remains available to `Running`.
+
+`Blocked` is explicitly unresolved as a possible orthogonal progress constraint rather than a peer lifecycle/disposition value.
+
+Browser families remain:
 
 ```text
 R0  Neutral Control
@@ -126,12 +152,13 @@ R6  Restrained Hybrid
 Current human gate:
 
 ```text
-compare R0-R6 in controlled rows
+verify NONE has no runtime instrumentation under R1-R6
+compare R1-R6 on QUEUE / RUN / WAIT / HUMAN / FAIL
 inspect the mixed-category scene
+inspect DEFER + NONE and FUTURE + NONE specifically
 compare normal vs Reduced motion
 judge runtime clarity and category/disposition competition
-judge whether semantic motion helps without becoming decorative noise
 prefer / reject / combine / refine
 ```
 
-The final runtime ontology, priority grammar and C5 Internal Layout Grammar remain separate future work.
+The final runtime ontology, project-disposition ontology, Blocked semantics, priority grammar and C5 Internal Layout Grammar remain separate future work.
