@@ -230,7 +230,7 @@ Idle runtime
     a runtime episode exists but is currently doing nothing
 ```
 
-The browser now uses `NONE / No runtime` as its absence control. `Idle` is no longer used to mean absence.
+The browser uses `NONE / No runtime` as its absence control. `Idle` is no longer used to mean absence.
 
 Working interpretation:
 
@@ -312,7 +312,7 @@ Exact corrected browser implementation target:
 dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
 ```
 
-Controlled rows now hold Current Investigation constant and vary:
+Controlled rows hold Current Investigation constant and vary:
 
 ```text
 NONE    No runtime
@@ -340,6 +340,114 @@ This tests optional runtime against category and P7 disposition rather than pret
 
 Reduced-motion mode removes runtime animation while preserving static state identity. NONE never animates.
 
+## Checkpoint 237 runtime-carrier convergence
+
+Human review of the corrected R0-R6 browser produced two new pieces of evidence.
+
+First, the project owner observed that:
+
+```text
+R1 Status Lamp
+R5 Motion Signal
+```
+
+looked effectively the same for Queued, Running, Waiting and Waiting for Human, with Failed showing the distinction more clearly.
+
+Direct implementation inspection verified:
+
+```text
+R1
+    status lamp only
+
+R5
+    same status lamp
+    + motion ring
+```
+
+Therefore the two families were not literally identical in code. However, the ring was too subtle and too spatially coincident with the lamp for R5 to read as a genuinely different family at working scale. Failed was more visibly different because the ring changed to a sharper rotated shape.
+
+This is accepted as negative design evidence:
+
+```text
+technical difference exists
+perceptual differentiation is insufficient
+```
+
+Second, the project owner rejected the simultaneous dot-plus-runtime-tag composition as the active direction and proposed exactly one switchable runtime carrier per live-runtime work unit.
+
+Current convergence candidates:
+
+```text
+Dot + dynamic ring
+Animated runtime tag
+```
+
+The dot carrier uses a stronger state-colored outer ring with state-sensitive motion pacing so it no longer collapses into a static lamp.
+
+The tag carrier uses explicit runtime text plus a state-colored perimeter with a circulating bright trace. It intentionally does not use the dot's expanding/breathing motion.
+
+Switching operates at two scopes:
+
+```text
+GLOBAL
+    change every live-runtime work unit together
+    clear local per-box overrides
+
+LOCAL
+    click the visible runtime carrier
+    switch only that work unit
+```
+
+Clicking the replacement carrier switches that box back. A node matching the global carrier is no longer considered a local override.
+
+No-runtime work units render:
+
+```text
+no dot
+no ring
+no runtime tag
+no carrier-switch target
+```
+
+Current browser:
+
+```text
+http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
+```
+
+Exact browser implementation target:
+
+```text
+3a862c659e60e53832eaa5940ddb60d05734cd7d
+```
+
+Research:
+
+```text
+docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+```
+
+Checkpoint:
+
+```text
+docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
+```
+
+The practical scene retains:
+
+```text
+Question        CURRENT + HUMAN
+Investigation   CURRENT + RUN
+Validation      NEXT + QUEUE
+Model Work      CURRENT + FAIL
+Evaluation      DEFER + NONE
+Investigation   FUTURE + NONE
+```
+
+so the human can test global switching, local overrides and mixed carrier coexistence while preserving conditional runtime.
+
+Reduced motion freezes both carrier animations while preserving static runtime identity.
+
 ## Dependency-bound ideas
 
 ```text
@@ -353,12 +461,14 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human verifies NONE carries no runtime instrumentation
-human compares R1-R6 for QUEUE / RUN / WAIT / HUMAN / FAIL
-human inspects DEFER + NONE and FUTURE + NONE in the practical scene
+human compares Dot + dynamic ring with Animated runtime tag
+human verifies the strengthened ring is visibly dynamic
+human verifies the animated tag perimeter is clean and distinct
+human uses the global switch in both directions
+human creates and removes local per-box overrides
+human inspects a mixed practical scene
+human verifies NONE / DEFER + NONE / FUTURE + NONE have no runtime carrier
 human compares normal vs Reduced motion
-human judges runtime clarity, clutter and semantic competition
-human judges whether motion reads as semantic rather than decorative
 -> prefer / reject / combine / refine
 -> do not freeze the final runtime/disposition/Blocked ontology yet
 ```
@@ -367,4 +477,4 @@ Priority/importance visual grammar remains a separate future slice.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, final project-disposition ontology, final Blocked/progress-constraint semantics, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, final runtime carrier, production runtime-carrier default/persistence model, final project-disposition ontology, final Blocked/progress-constraint semantics, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
