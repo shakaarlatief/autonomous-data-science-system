@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 228  
+**Checkpoint:** 229  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified edge-connected arrow directionality grammar has now passed human review. The active slice is semantic relation-class visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified arrow directionality grammar has passed human review. E5 Hue + Tag is now selected as the relation-class visual carrier, with stroke rhythm preserved as a future semantic resource. The active gate is narrow human verification of the refined tag proportions. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,9 +29,9 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
+docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
 docs/research/057_semantic_relation_class_visual_grammar_experiment.md
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 frontend/design-lab/relation-class-grammar.html
 frontend/design-lab/relation-class-grammar.css
 frontend/design-lab/relation-class-grammar.js
@@ -46,7 +46,7 @@ http://localhost:5173/design-lab/relation-class-grammar.html
 Exact current browser implementation target:
 
 ```text
-9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+b3d23b10be611f41a4e55fc40a28ba83089b7196
 ```
 
 ---
@@ -178,52 +178,39 @@ D2  Reverse         A <- B      exact same arrow at A
 D3  Bidirectional   A <-> B     same arrow at both endpoints
 ```
 
-Direction-arrow geometry:
-
-```text
-arrow tip
-    exact rendered work-unit perimeter
-
-arrow arms
-    outside the work-unit body
-
-curve
-    terminates at the same rendered edge
-```
-
-The exact implementation accepted by the human is:
+The accepted directionality implementation is:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Foundation 024 remains the durable boundary:
-
-```text
-semantic relation model
-    system-owned
-
-connector treatment
-    configurable within approved bounds
-
-hover behavior
-    orthogonal interaction mechanism
-
-directionality
-    semantic and system-owned
-```
+Foundation 024 remains the durable boundary between system-owned relation semantics, configurable connector treatment and orthogonal hover behavior.
 
 ---
 
-# Active Slice 02E: semantic relation-class visual grammar
+# Relation-class visual grammar result
 
-Bounded question:
+The broad E0-E6 browser comparison is now converged enough to select a working baseline.
 
-> How should different relationship meanings remain distinguishable on the Project Cockpit without turning the project map into graph noise?
+Human selection:
 
-Direction is held constant as `A -> B` so semantic relation class is isolated from directionality.
+```text
+E5  Hue + Tag
+    SELECTED
+    very clean
+```
 
-Representative relation fixtures:
+Current relation-class visual carrier:
+
+```text
+restrained relation-class hue
++
+compact explicit semantic tag
++
+existing direction arrow when direction requires it
+```
+
+The current representative relation fixtures remain provisional:
 
 ```text
 R0  Chronology / Sequence
@@ -233,45 +220,31 @@ R3  Evidence / Support
 R4  Lineage / Derivation
 ```
 
-These are visual-test fixtures only. They do not freeze the ADS relation ontology.
+They do not freeze the ADS relation ontology.
 
-Runtime-flow relationships remain outside this first semantic-class comparison.
-
-Current encoding families:
+Stroke rhythm from E2/E4/E6 remains deliberately preserved:
 
 ```text
-E0  Neutral Control
-E1  Semantic Hue
-E2  Stroke Rhythm
-E3  Explicit Tag
-E4  Hue + Stroke
-E5  Hue + Tag
-E6  Restrained Hybrid
+stroke rhythm
+    promising visual channel
+    NOT rejected
+    NOT currently relation-class meaning
+    reserved for another future line-level semantic dimension if later evidence justifies it
 ```
 
-Held controls:
+No meaning has yet been assigned to stroke rhythm.
+
+Small tag-proportion refinement now under human verification:
 
 ```text
-G4 world
-Reduced in-box light
-accepted H4 hover response
-scientific work-unit category markers
-Subtle work-unit shapes
-Micro-material treatment
-same Investigation -> Validation pair
-same A -> B arrow grammar
-same rendered-edge connector geometry
+tag height       17 -> 20 SVG units
+corner radius    5 -> 6
+text size        7.0 -> 7.5 px
+letter spacing   0.08em -> 0.05em
+width            unchanged
 ```
 
-Current human review questions:
-
-```text
-Does hue help or compete with node-category color?
-Are stroke rhythms readable and professional?
-Do midpoint tags add certainty or excessive text density?
-Does redundancy improve accessibility enough to justify its noise?
-Which mechanisms remain plausible at large-project scale?
-```
+The page opens directly in E5 while retaining E0-E6 as historical comparison controls.
 
 ---
 
@@ -282,7 +255,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               semantic relation-class human review
+Current                               relation-class Hue + Tag selected; tag refinement verification
 ```
 
 There is no pending Claude obligation.
@@ -299,10 +272,12 @@ Still unresolved:
 
 ```text
 final semantic relation taxonomy
-final relation-class visual encoding
-chronology / causality / dependency / evidence / lineage ontology boundaries
+final relation-class codes / labels
+production relation colors
+semantic zoom behavior for relation tags
+large-project label-density management
+semantic assignment of stroke rhythm
 runtime-flow connector behavior
-relation color / dash / tag production vocabulary
 production connector preference persistence
 selected/focused persistent treatment
 runtime / waiting / blocked / approval treatment
@@ -337,14 +312,14 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 228 and v1-cockpit-design-exploration
+1. use Checkpoint 229 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. open http://localhost:5173/design-lab/relation-class-grammar.html
-4. compare E0-E6 across R0-R4
-5. inspect hover emphasis without changing semantic class
-6. record prefer / reject / combine / refine evidence
-7. do not treat R0-R4 as a frozen taxonomy
-8. preserve the winning semantic-class visual mechanisms before runtime-flow work
+4. verify E5 Hue + Tag opens by default
+5. verify the slightly taller tags and adjusted text proportions look more natural
+6. keep stroke rhythm preserved for a later separate semantic question
+7. if accepted, treat relation-class visual encoding as sufficiently converged
+8. then open the next bounded Cockpit design question
 9. keep production Cockpit untouched
 10. keep source-vault deployment paused until explicitly resumed
 ```
