@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 239  
+**Current checkpoint:** 240  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        239
+checkpoint                        240
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  attention priority semantic/visual grammar human review
+current boundary                  persistent work-unit selection human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -37,17 +37,12 @@ source-vault deployment           PAUSED, Course 2 gate unchanged
 
 # Repository preservation / development-method route
 
-Checkpoint-format authority:
-
 ```text
 docs/checkpoints/README.md
 scripts/check_checkpoint_metadata.py
 .github/workflows/checkpoint-metadata.yml
-```
-
-Rapid-iteration audit:
-
-```text
+scripts/check_current_routing.py
+.github/workflows/current-routing-consistency.yml
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
@@ -67,13 +62,6 @@ Verified metadata-validation repair point:
 
 ```text
 d2541418a68b9bfd244ec89e4e951e630b3bb61b
-```
-
-Current-routing guard:
-
-```text
-scripts/check_current_routing.py
-.github/workflows/current-routing-consistency.yml
 ```
 
 ---
@@ -97,30 +85,16 @@ Model Work                diamond / red
 Evaluation                plus / purple
 ```
 
-Foundation 023:
+Durable visual foundations:
 
 ```text
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-```
-
-Foundation 024:
-
-```text
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
 ---
 
-# Connector treatment and relation semantics
-
-Current connector treatments:
-
-```text
-Clean
-Micro dots
-Frame sockets
-Direction arrows
-```
+# Connector and relation results
 
 Accepted direction grammar:
 
@@ -131,7 +105,7 @@ Reverse         same arrow at A
 Bidirectional   same arrow at both endpoints
 ```
 
-Exact accepted directionality implementation:
+Exact accepted directionality target:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -144,7 +118,7 @@ E5  Hue + Tag
     SELECTED / sufficiently settled for current Phase C
 ```
 
-Latest accepted relation-class implementation:
+Latest accepted relation-class target:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
@@ -154,9 +128,9 @@ Stroke rhythm remains preserved for another future line-level semantic dimension
 
 ---
 
-# Project-disposition result
+# Project disposition and current-process focus
 
-Primary evidence:
+Primary disposition evidence:
 
 ```text
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
@@ -165,33 +139,19 @@ docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
 frontend/design-lab/work-unit-disposition-grammar.html
 ```
 
-Human-selected current Phase-C direction:
+Accepted current Phase-C disposition direction:
 
 ```text
 P7  Neutral Tag + Tone
-
-REST
-    category color remains dominant
-    disposition tag remains neutral
-    Completed / Deferred / Future use selective tonal recession
-
-HOVER
-    disposition tag reveals state-specific hue
 ```
 
-Latest accepted P7 implementation:
+Exact accepted P7 target:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-Use `Current` for project disposition and reserve `Running` for runtime. The final project-disposition ontology remains unfrozen.
-
----
-
-# Current-process focus result
-
-Primary evidence:
+Current-process focus evidence:
 
 ```text
 docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
@@ -199,7 +159,7 @@ docs/research/063_user_curated_current_process_focus_membership.md
 frontend/design-lab/work-unit-process-focus.html
 ```
 
-Human-accepted current direction:
+Accepted direction:
 
 ```text
 Context visible
@@ -208,70 +168,38 @@ Edit focus set
 Reset example
 ```
 
-The user can add/remove work units from the current focus without deleting work or changing disposition. Outside-focus nodes and connector segments recede strongly in focus mode and remain recoverable for inspection/editing.
-
-Exact accepted editable-focus implementation:
+Exact accepted editable-focus target:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
-Final focus-set ownership/persistence, automatic suggestions, multiple named lenses and exact membership semantics remain open.
-
 ---
 
-# Slice 02H result: conditional runtime carrier
+# Runtime and operational-status route
 
-Semantic-correction evidence:
+Runtime evidence:
 
 ```text
 docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
 docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
-docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
-```
-
-Convergence evidence:
-
-```text
 docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
 docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
 ```
 
-Runtime remains conditional.
+Runtime remains conditional / episode-scoped.
+
+Accepted current Phase-C carrier architecture:
 
 ```text
-No runtime
-    no current execution/work episode exists
-
-Idle runtime
-    an execution episode exists but is doing nothing
-```
-
-Working runtime fixtures:
-
-```text
-NONE    No runtime
-QUEUE   Queued
-RUN     Running
-WAIT    Waiting
-HUMAN   Waiting for Human
-FAIL    Failed current attempt
-```
-
-Human-accepted current Phase-C carrier architecture:
-
-```text
-exactly one carrier per live-runtime work unit
-
 Dot + dynamic ring
 or
 T7 Soft Shade runtime tag
 ```
 
-Global selection changes every live-runtime node and clears local overrides. Clicking one node's visible carrier switches only that node. No-runtime nodes show no carrier.
-
-Exact accepted T7 motion-browser target:
+Exact accepted T7 target:
 
 ```text
 08534f94c2f272f969159087de2797a23e36b330
@@ -283,11 +211,7 @@ Exact switchable-runtime browser with T7 integrated:
 fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
----
-
-# Slice 02I result: BLOCKED carrier and blocker relationship
-
-Primary evidence:
+BLOCKED evidence:
 
 ```text
 docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
@@ -296,33 +220,13 @@ docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review
 frontend/design-lab/work-unit-blocked-carrier.html
 ```
 
-Accepted current Phase-C semantic distinction:
+Current semantic distinction:
 
 ```text
-BLOCKER
-    cause / unresolved work or dependency preventing progress
-
-BLOCKS
-    relation from cause to affected work
-
-BLOCKED
-    resulting current progress constraint
-
-FAIL
-    failed current execution attempt
-```
-
-Accepted shared presentation rule:
-
-```text
-one bottom-right operational-status slot
-
-may show
-    live runtime state
-    or
-    BLOCKED
-
-shared carrier != merged ontology
+BLOCKER  cause
+BLOCKS   relation
+BLOCKED  affected work cannot proceed
+FAIL     failed current execution attempt
 ```
 
 Accepted compact red mapping:
@@ -332,19 +236,15 @@ BLOCKED    sharper non-circular dynamic ring
 FAIL       smoother circular dynamic ring
 ```
 
-Tag mode uses the accepted T7 Soft Shade treatment with explicit `BLOCKED` or `FAIL` text.
-
-Exact accepted visual target:
+Exact accepted BLOCKED/status target:
 
 ```text
 88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
-The final progress-constraint ontology, blocker taxonomy, many-to-many representation and state-transition rules remain open.
-
 ---
 
-# Current Slice 02J: attention priority visual grammar
+# Slice 02J result: attention priority
 
 Primary evidence:
 
@@ -352,86 +252,90 @@ Primary evidence:
 docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
 docs/checkpoints/239_shared_blocked_carrier_accepted_attention_priority_review_opened.md
 frontend/design-lab/work-unit-attention-priority.html
-frontend/design-lab/work-unit-attention-priority.css
-frontend/design-lab/work-unit-attention-priority.js
 ```
 
-Local URL:
+Human-selected current Phase-C direction:
 
 ```text
-http://localhost:5173/design-lab/work-unit-attention-priority.html
+A3  Signal Bars
+
+HIGH attention
+    three ascending micro-bars
+    near the upper-right work-unit frame
 ```
 
-Exact browser implementation target:
+Exact reviewed browser target:
 
 ```text
 767c66f76974d3c0a851de0dfa17c502817a4b12
 ```
 
-Working bounded semantic concept:
+The final priority ontology, scale, ownership, persistence and relationship to relevance/scheduling remain unfrozen.
+
+---
+
+# Current Slice 02K: persistent work-unit selection
+
+Primary evidence:
 
 ```text
-ATTENTION PRIORITY
-    among visible work, which work deserves more attention now?
+docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
+docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
+frontend/design-lab/work-unit-selection-state.html
+frontend/design-lab/work-unit-selection-state.css
+frontend/design-lab/work-unit-selection-state.js
 ```
 
-This is kept separate from:
+Local URL:
 
 ```text
-category
-project disposition
-progress constraint
-runtime / operational status
-current-focus membership
+http://localhost:5173/design-lab/work-unit-selection-state.html
 ```
 
-The slice does not assume priority equals relevance, scheduling order or operational urgency.
-
-Controlled fixture:
+Exact browser implementation target:
 
 ```text
-Investigation
-CURRENT
-RUN
-HIGH attention
+3bac1fea4ca820c89a7bc4516497a4c33164ec5d
 ```
 
-`HIGH` is provisional only.
-
-Current visual candidates:
+Bounded concept:
 
 ```text
-A0  Neutral Control
-A1  Twin Tick
-A2  Top Rail
-A3  Signal Bars
-A4  Side Bracket
-A5  HIGH Tag
-A6  Beacon
-A7  Luminance Lift
-A8  Rail + Tag
+SELECTION
+    which work unit has the user explicitly chosen for inspection or action?
 ```
 
-Practical fixture:
+Selection remains separate from:
 
 ```text
-Question / Blocker    CURRENT + HUMAN      HIGH
-Investigation         CURRENT + BLOCKED    HIGH
-Validation            NEXT + NONE          normal
-Model Work            CURRENT + FAIL       HIGH
-Investigation         CURRENT + RUN        normal
-Evaluation            DEFER + NONE         normal
+hover
+keyboard focus
+current-process focus membership
+attention priority
+deep-focus / specialist-workspace entry
 ```
 
-The yellow Question / Blocker node is a deliberate conflict test for the provisional warm attention tone.
+Candidate treatments:
 
-The final priority ontology, relationship to relevance/scheduling, provenance, ownership, override rules, persistence and production carrier remain unfrozen.
+```text
+SEL0  Neutral Control
+SEL1  Outer Keyline
+SEL2  Corner Brackets
+SEL3  Inner Frame
+SEL4  Edge Ticks
+SEL5  Selection Plate
+SEL6  Soft Contour
+SEL7  Double Corner
+SEL8  Keyline + Corners
+```
+
+The practical scene supports click selection, keyboard selection through Enter / Space, and Clear selection while keeping H4 hover transient.
 
 ---
 
 # Work-unit expansion route
 
-The project owner proposed:
+The preserved future hierarchy remains:
 
 ```text
 compact map work unit
@@ -439,7 +343,7 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
-The promoted Specification 008 already covers selection into full specialist/deep-work content. The intermediate expanded-card layer remains unfrozen and intentionally deferred to semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
+The intermediate expanded-card level remains unfrozen and is intentionally deferred until persistent selection converges. It should later be tested with semantic zoom, C5 Internal Layout Grammar, information-density and work-unit detail/provenance presentation.
 
 ---
 
@@ -454,8 +358,6 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 No model-collaboration obligation is currently pending.
 
-C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
-
 ---
 
 # Promoted Cockpit architecture
@@ -467,7 +369,7 @@ docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariant
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
-Specification 008 remains accepted and is not replaced by the current visual experiments.
+Specification 008 remains accepted and is not replaced by current Phase-C visual experiments.
 
 ---
 
