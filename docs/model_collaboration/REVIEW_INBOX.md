@@ -28,7 +28,7 @@ human project owner
 Current checkpoint:
 
 ```text
-228
+229
 ```
 
 Current browser route:
@@ -37,10 +37,10 @@ Current browser route:
 http://localhost:5173/design-lab/relation-class-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+b3d23b10be611f41a4e55fc40a28ba83089b7196
 ```
 
 ## Promoted configurable-appearance foundations
@@ -55,22 +55,6 @@ Connector treatment / hover behavior / semantic directionality:
 
 ```text
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-```
-
-Current connector model:
-
-```text
-connector treatment
-    Clean
-    Micro dots
-    Frame sockets
-    Direction arrows
-
-hover / focus
-    separate reveal / emphasis mechanism
-
-semantic direction
-    system-owned
 ```
 
 ## Directionality result
@@ -92,41 +76,35 @@ Exact accepted directionality target:
 
 Directionality is sufficiently settled for the current Phase-C design work.
 
-## Active semantic relation-class review
+## Relation-class encoding result
 
-Representative visual-test fixtures:
-
-```text
-R0  Chronology / Sequence
-R1  Dependency / Prerequisite
-R2  Causal / Influence
-R3  Evidence / Support
-R4  Lineage / Derivation
-```
-
-These are not a frozen ADS relation taxonomy.
-
-Encoding families:
+Human review selected:
 
 ```text
-E0  Neutral Control
-E1  Semantic Hue
-E2  Stroke Rhythm
-E3  Explicit Tag
-E4  Hue + Stroke
 E5  Hue + Tag
-E6  Restrained Hybrid
+    SELECTED
+    very clean
 ```
 
-Direction is held constant as `A -> B` so class encoding is isolated.
+Stroke rhythm from E2/E4/E6 remains preserved:
+
+```text
+visually promising
+not rejected
+not currently assigned to relation class
+candidate for another future line-level semantic dimension
+```
+
+Representative R0-R4 classes remain provisional fixtures and are not a frozen ADS relation taxonomy.
+
+The selected E5 page now opens by default and uses slightly taller tags with more normally proportioned text.
 
 Current human gate:
 
 ```text
-compare semantic distinction / legibility / graph noise across E0-E6
--> prefer / reject / combine / refine
--> preserve promising relation-class visual mechanisms
--> do not freeze the relation ontology yet
+verify refined E5 tag proportions
+-> if accepted, treat relation-class visual encoding as sufficiently converged
+-> then open the next bounded Cockpit design question
 ```
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
