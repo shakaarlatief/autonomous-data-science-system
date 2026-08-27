@@ -100,7 +100,7 @@ const encodingLabels = {
   p4: 'State rhythm',
   p5: 'Hue + tag',
   p6: 'Hue + colored tag + tone',
-  p7: 'Colored tag + tone',
+  p7: 'Neutral tag + tone',
 }
 
 let practicalMotionFrame = 0
