@@ -31,6 +31,12 @@ body {
   font-weight: 760;
 }
 
+.runtime-held-state small {
+  color: rgba(165, 178, 199, 0.72);
+  font-size: 7.6px;
+  font-weight: 650;
+}
+
 .runtime-main {
   padding-bottom: 60px;
 }
@@ -395,17 +401,18 @@ html[data-runtime-encoding="r6"] .runtime-lamp {
   height: 6px;
 }
 
+/* No runtime is an absence condition, not a quiet runtime state. */
+[data-runtime="none"] .runtime-lamp,
+[data-runtime="none"] .runtime-strip,
+[data-runtime="none"] .runtime-badge,
+[data-runtime="none"] .runtime-cell,
+[data-runtime="none"] .runtime-motion-ring {
+  opacity: 0 !important;
+  visibility: hidden;
+  animation: none !important;
+}
+
 /* Runtime-specific state treatment. */
-[data-runtime="idle"] .runtime-lamp,
-[data-runtime="idle"] .runtime-motion-ring {
-  opacity: 0.58;
-  box-shadow: none;
-}
-
-[data-runtime="idle"] .runtime-strip {
-  opacity: 0.52;
-}
-
 [data-runtime="queued"] .runtime-strip {
   background: repeating-linear-gradient(to right, rgba(var(--runtime-rgb), 0.76) 0 7px, transparent 7px 11px);
   background-size: 22px 2px;
