@@ -27,19 +27,19 @@ human project owner
 Current checkpoint:
 
 ```text
-241
+242
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-detail-expansion.html
+http://localhost:5173/design-lab/work-unit-internal-layout.html
 ```
 
 Exact current browser implementation target:
 
 ```text
-0457a27d8e80863738ce3f75aeb11bd4f5c1155d
+871075bcda8ff812e1a96b18b442c803d5da7faf
 ```
 
 ## Most recent accepted results
@@ -56,60 +56,67 @@ Persistent compact-node selection:
 SEL2  Corner Brackets
 ```
 
-The first persistent-selection implementation had a clipping defect for outside-the-frame geometry. The repaired implementation moved selection decorations to the `.grammar-node` layer. Exact repaired browser target:
+Contextual-detail expansion:
 
 ```text
-e7304fe834d86166d843fda7e1df0f4ddb1f793a
+X5 balanced two-axis expansion
+WITHOUT surrounding-context recession
 ```
 
-The project owner selected SEL2 after reviewing that repaired browser.
-
-## Active contextual-detail expansion review
-
-Interaction hierarchy:
+Exact refined X5 target:
 
 ```text
-compact map work unit
-    -> selected compact work unit
-    -> expanded contextual/detail layer
-    -> full specialist workspace / deep focus
+94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
-Candidate architectures:
+The accepted X5 contextual layer keeps the surrounding project map at normal salience. The original context-recession behavior remains historical design evidence only.
+
+## Active expanded-work-unit internal-layout review
+
+Held outer geometry:
 
 ```text
-X0  Compact Control
-X1  Vertical Drawer
-X2  Right Sidecar
-X3  Attached Sheet
-X4  Wide Split Card
-X5  Context Lens
-X6  Layered Reveal
-X7  Peek Rail
-X8  Inspector Dock
+390 x 210
+X5 balanced two-axis expansion
+no context recession
 ```
 
-Controlled placeholder fields:
+Candidate layouts:
+
+```text
+L0  Flat Fields
+L1  Structured Grid
+L2  Narrative Stack
+L3  Summary + Rail
+L4  Action First
+L5  Dependency Path
+L6  Evidence Center
+L7  Module Cards
+L8  Balanced Instrument
+```
+
+Controlled provisional payload:
 
 ```text
 Purpose
-Constraint / state
+Constraint
 Evidence
 Next action
+Blocking cause
+Recent activity
 ```
 
-These fields are interaction-density fixtures only and do not freeze the work-unit schema.
+These fields are information-density fixtures only and do not freeze the work-unit schema.
 
 Current human gate:
 
 ```text
-compare X1-X8 against X0
-judge spatial orientation and attachment
-identify variants that consume too much map context
-judge whether X5 crosses prematurely into deep focus
-compare inline expansion against X8 Inspector Dock
-verify SEL2, A3, disposition and operational status remain independent
+compare L0-L8 with outer geometry held constant
+judge scan path, hierarchy and density
+reject layouts that feel like miniature dashboards
+inspect robustness to longer content
+inspect future room for provenance/evidence and commands
 prefer / reject / combine / refine
 ```
 
-Production `/cockpit` remains untouched. Final selection persistence, contextual-detail architecture, semantic zoom, C5 Internal Layout Grammar, collision handling and deep-focus transition remain future work.
+Production `/cockpit` remains untouched. Final information schema, provenance presentation, selected-node commands, semantic zoom, collision handling and deep-focus transition remain future work.
