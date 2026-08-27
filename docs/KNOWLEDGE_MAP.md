@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 227  
+**Current checkpoint:** 228  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        227
+checkpoint                        228
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  simplified arrow directionality human review
+current boundary                  semantic relation-class visual grammar human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -63,14 +63,6 @@ H4 generic hover/outward response  sufficiently settled
 Reduced in-box resting light       selected preferred working baseline
 ```
 
-Primary evidence:
-
-```text
-docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md
-docs/research/045_h4_resting_node_light_world_spill_refinement.md
-docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md
-```
-
 ## Work-unit category markers
 
 ```text
@@ -79,15 +71,6 @@ Investigation             square
 Validation / Analysis     triangle
 Model Work                diamond
 Evaluation                plus
-```
-
-Primary convergence evidence:
-
-```text
-docs/research/046_work_unit_category_and_silhouette_visual_grammar_experiment.md
-docs/research/048_claude_work_unit_grammar_synthesis_and_expanded_browser_round.md
-docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md
-docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md
 ```
 
 ---
@@ -100,16 +83,6 @@ Promoted foundation:
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Core principle:
-
-```text
-semantic project model
-    governed by ADS
-
-presentation profile
-    approved user-configurable appearance
-```
-
 Current proven work-unit appearance axes:
 
 ```text
@@ -119,14 +92,16 @@ Micro design    None / Micro material / Micro light
 
 ---
 
-# Connector treatment result
+# Connector treatment and directionality result
 
-Primary generic-connector evidence:
+Primary connector evidence:
 
 ```text
 docs/research/053_connector_and_port_visual_grammar_experiment.md
 docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
+docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
 frontend/design-lab/connector-grammar.html
+frontend/design-lab/connector-directionality.html
 ```
 
 Current connector treatments:
@@ -138,117 +113,98 @@ Frame sockets
 Direction arrows
 ```
 
-Human clarification:
+Current architecture:
 
 ```text
 one terminal treatment normally active at a time
 hover / focus is a separate reveal / emphasis mechanism
+directionality is system-owned semantics
 ```
 
-Therefore unnecessary mixed terminal stacks are not the default design direction.
-
-Retained refinement commits:
+Accepted direction grammar:
 
 ```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
-    Micro-dot / hover-port circles mostly outside the work-unit perimeter
-
-183264bdd07783eaa2354894592f2cf4a076b6ec
-    Frame-socket active outline / glow follows relation color
+Undirected      A - B       no arrow
+Forward         A -> B      arrow at B
+Reverse         A <- B      same arrow at A
+Bidirectional   A <-> B     same arrow at both endpoints
 ```
 
----
-
-# Foundation 024: connector treatment + semantic directionality
-
-Refined foundation:
-
-```text
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-```
-
-Current architecture:
-
-```text
-semantic relation model
-    meaning and directionality governed by ADS / project state
-
-connector treatment
-    approved configurable terminal treatment
-    normally one active treatment at a time
-
-hover behavior
-    orthogonal reveal / emphasis mechanism
-```
-
-Direction states:
-
-```text
-undirected
-A -> B
-A <- B
-A <-> B
-```
-
-If arrows are used, their placement follows semantic direction exactly.
-
----
-
-# Current Slice 02D: simplified arrow directionality
-
-Governing research:
-
-```text
-docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
-```
-
-Current checkpoint:
-
-```text
-docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
-```
-
-Browser route:
-
-```text
-frontend/design-lab/connector-directionality.html
-frontend/design-lab/connector-directionality.css
-frontend/design-lab/connector-directionality.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/connector-directionality.html
-```
-
-Exact browser implementation target:
+Exact accepted directionality implementation:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Controlled comparison:
+Promoted foundation:
 
 ```text
-D0  Undirected      A - B
-    no arrow
-
-D1  Forward         A -> B
-    K3-style arrow docked directly to B
-
-D2  Reverse         A <- B
-    same arrow docked directly to A
-
-D3  Bidirectional   A <-> B
-    same arrow at both endpoints
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
-No dots or sockets are mixed into the directionality browser.
+---
 
-The arrow tip touches the exact rendered work-unit perimeter and follows H4 hover lift / release through the rendered-edge geometry system.
+# Current Slice 02E: semantic relation-class visual grammar
 
-If human review accepts this grammar, directionality is sufficiently converged and the next slice is semantic relation classes.
+Governing research:
+
+```text
+docs/research/057_semantic_relation_class_visual_grammar_experiment.md
+```
+
+Current checkpoint:
+
+```text
+docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/relation-class-grammar.html
+frontend/design-lab/relation-class-grammar.css
+frontend/design-lab/relation-class-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/relation-class-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+```
+
+Representative visual-test relation classes:
+
+```text
+R0  Chronology / Sequence
+R1  Dependency / Prerequisite
+R2  Causal / Influence
+R3  Evidence / Support
+R4  Lineage / Derivation
+```
+
+These are provisional fixtures, not a frozen ADS ontology.
+
+Encoding families:
+
+```text
+E0  Neutral Control
+E1  Semantic Hue
+E2  Stroke Rhythm
+E3  Explicit Tag
+E4  Hue + Stroke
+E5  Hue + Tag
+E6  Restrained Hybrid
+```
+
+Direction is held constant as `A -> B` to isolate semantic relation class.
+
+Runtime-flow relations remain outside this first semantic-class slice.
 
 ---
 
