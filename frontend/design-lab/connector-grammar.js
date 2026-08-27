@@ -53,6 +53,7 @@ const relationGeometry = {
 }
 
 const svgNamespace = 'http://www.w3.org/2000/svg'
+const terminalOutset = 2
 let relationFrame = 0
 let relationMotionFrame = 0
 let relationMotionUntil = 0
@@ -288,12 +289,14 @@ function updateRelationGeometry() {
 
     const start = relationAnchor(sourceNode, geometry.sourceSide, sceneRect, viewBox)
     const end = relationAnchor(targetNode, geometry.targetSide, sceneRect, viewBox)
+    const sourceTerminal = terminalAnchor(start, geometry.sourceSide)
+    const targetTerminal = terminalAnchor(end, geometry.targetSide)
 
     const path = group.querySelector('.connector-path')
     path?.setAttribute('d', relationPath(start, end, geometry.sourceSide, geometry.targetSide))
 
-    positionCircle(group.querySelector('.connector-source-terminal'), start)
-    positionCircle(group.querySelector('.connector-target-terminal'), end)
+    positionCircle(group.querySelector('.connector-source-terminal'), sourceTerminal)
+    positionCircle(group.querySelector('.connector-target-terminal'), targetTerminal)
     positionSocket(group.querySelector('.connector-source-socket'), start)
     positionSocket(group.querySelector('.connector-target-socket'), end)
     positionChevron(group.querySelector('.connector-chevron'), end, geometry.targetSide)
@@ -320,6 +323,13 @@ function relationAnchor(node, side, sceneRect, viewBox) {
     x: ((x - sceneRect.left) / sceneRect.width) * viewBox.width + viewBox.x,
     y: ((y - sceneRect.top) / sceneRect.height) * viewBox.height + viewBox.y,
   }
+}
+
+function terminalAnchor(point, side) {
+  if (side === 'left') return { x: point.x - terminalOutset, y: point.y }
+  if (side === 'right') return { x: point.x + terminalOutset, y: point.y }
+  if (side === 'top') return { x: point.x, y: point.y - terminalOutset }
+  return { x: point.x, y: point.y + terminalOutset }
 }
 
 function relationPath(start, end, sourceSide, targetSide) {
