@@ -37,15 +37,15 @@ Current browser route:
 http://localhost:5173/design-lab/connector-grammar.html
 ```
 
-Exact connector browser implementation target after endpoint-layer correction:
+Current exact connector browser implementation target:
 
 ```text
-08a33868b1c1d2cd90f11431e3f6b730603f28eb
+ae2951e2325e6e6e624131097dcc1edc732e1844
 ```
 
 ## Configurable appearance result
 
-Human review approved the configurable Cockpit appearance concept. The semantic/presentation separation is now promoted in:
+Human review approved the configurable Cockpit appearance concept. The semantic/presentation separation is promoted in:
 
 ```text
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
@@ -75,14 +75,6 @@ Box shape       Normal / Subtle shapes
 Micro design    None / Micro material / Micro light
 ```
 
-The remaining customizable-preview connector defect was fixed at:
-
-```text
-c1f996f6500672641de8e00780d5a4949c5dcb28
-```
-
-Connector geometry now derives from rendered node surfaces instead of static path coordinates.
-
 ## Active connector / Port Grammar review
 
 Current candidates:
@@ -107,22 +99,30 @@ Micro material
 same project fixture and relation graph
 ```
 
-Latest layering correction:
+Current layering / geometry invariants:
 
 ```text
 connector curves
     remain behind work-unit bodies
 
-endpoint dots / sockets / hover ports
+K1 dots / K3 directional cue / K4 hover ports
     render above the work-unit perimeter
-    centered on the attachment edge
 
-K3 target cue
-    renders above the destination edge
+K2 frame sockets
+    deliberately retain the earlier under-node structural docking treatment
+
+hover lift / release
+    connector geometry follows the transformed rendered perimeter continuously
 ```
 
-Implementation uses a synchronized `connector-port-overlay` while the existing dynamic rendered-edge geometry remains authoritative.
+The hover-lift geometry correction is:
 
-C4 Port Grammar is now active at its intended dependency boundary.
+```text
+ae2951e2325e6e6e624131097dcc1edc732e1844
+```
+
+Preliminary human evidence suggests the eventual connector grammar should be compositional rather than choosing one universal K0-K4 winner. Directionality may be none, one-way in either direction, or bidirectional; Hover Ports should remain available; and the initial non-directional endpoint treatment is likely to use either Micro Dots or Frame Sockets. Final composition remains pending human review.
+
+C4 Port Grammar is active at its intended dependency boundary.
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
