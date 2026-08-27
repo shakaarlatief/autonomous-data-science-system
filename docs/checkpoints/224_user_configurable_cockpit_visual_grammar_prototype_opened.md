@@ -5,7 +5,12 @@
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
 **Scope:** Records the product-owner decision that positively reviewed Cockpit visual treatments should coexist as user-configurable appearance choices, preserves the semantic/presentation boundary, and opens a live browser configurator for human review.  
-**Authority:** Current Phase-C routing/evidence boundary only. No production settings storage or final visual-system contract is promoted. Specification 008 remains the promoted Cockpit interaction architecture.
+**Authority:** Current Phase-C routing/evidence boundary only. No production settings storage or final visual-system contract is promoted. Specification 008 remains the promoted Cockpit interaction architecture.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT
 
 ## 1. Product-owner decision
 
