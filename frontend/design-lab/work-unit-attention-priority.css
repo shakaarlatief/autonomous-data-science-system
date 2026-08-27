@@ -1,0 +1,463 @@
+body {
+  min-width: 1440px;
+}
+
+.priority-header {
+  grid-template-columns: minmax(900px, 1fr) auto;
+}
+
+.priority-held-state,
+.priority-control-copy,
+.priority-segmented,
+.priority-summary {
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.72);
+}
+
+.priority-held-state {
+  display: grid;
+  min-width: 430px;
+  gap: 4px;
+  padding: 11px 13px;
+  border-color: rgba(247, 218, 142, 0.18);
+}
+
+.priority-held-state span,
+.priority-summary span {
+  color: var(--text-dim);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.priority-held-state strong,
+.priority-summary strong {
+  color: rgba(229, 235, 245, 0.92);
+  font-size: 8.8px;
+  font-weight: 760;
+}
+
+.priority-held-state small,
+.priority-summary small {
+  color: rgba(165, 178, 199, 0.72);
+  font-size: 7.5px;
+  font-weight: 650;
+}
+
+.priority-main {
+  padding-bottom: 60px;
+}
+
+.priority-intro {
+  margin-bottom: 14px;
+}
+
+.priority-controls {
+  display: grid;
+  grid-template-columns: minmax(370px, 0.78fr) minmax(900px, 1.85fr) minmax(250px, 0.48fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+
+.priority-control-copy,
+.priority-segmented,
+.priority-summary {
+  min-height: 106px;
+  padding: 10px 11px;
+}
+
+.priority-control-copy,
+.priority-summary {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+}
+
+.priority-control-copy h2 {
+  margin: 1px 0;
+  color: rgba(232, 237, 246, 0.92);
+  font-size: 12px;
+}
+
+.priority-control-copy p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 8px;
+  line-height: 1.43;
+}
+
+.priority-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: center;
+  gap: 5px;
+}
+
+.priority-segmented button {
+  min-height: 29px;
+  font-size: 7.2px;
+}
+
+.priority-preview,
+.priority-practical {
+  overflow: hidden;
+  border: 1px solid var(--panel-border-strong);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.22);
+}
+
+.priority-section-header {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.priority-section-header h2 {
+  margin: 4px 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.priority-section-header p {
+  margin: 0;
+  max-width: 1000px;
+  color: var(--text-soft);
+  font-size: 8.8px;
+  line-height: 1.45;
+}
+
+.priority-section-header > span {
+  padding: 5px 8px;
+  border: 1px solid rgba(247, 218, 142, 0.20);
+  border-radius: 999px;
+  background: rgba(247, 218, 142, 0.035);
+  color: rgba(235, 224, 193, 0.78);
+  font-size: 7.8px;
+  font-weight: 740;
+}
+
+.priority-world {
+  height: 1110px;
+}
+
+.priority-rows {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  padding: 18px 20px;
+}
+
+.priority-row {
+  position: relative;
+  min-height: 0;
+  border-bottom: 1px solid rgba(156, 177, 206, 0.075);
+}
+
+.priority-row:last-child {
+  border-bottom: 0;
+}
+
+.priority-label {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  display: grid;
+  width: 330px;
+  gap: 3px;
+  transform: translateY(-50%);
+}
+
+.priority-label span {
+  color: rgba(247, 218, 142, 0.90);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.10em;
+}
+
+.priority-label strong {
+  color: rgba(231, 236, 245, 0.92);
+  font-size: 10px;
+  font-weight: 760;
+}
+
+.priority-label small {
+  max-width: 320px;
+  color: rgba(168, 181, 201, 0.68);
+  font-size: 7.8px;
+  line-height: 1.35;
+}
+
+.priority-node {
+  position: absolute;
+  left: 43%;
+  top: 50%;
+  width: 244px;
+  height: 102px;
+  transform: translate3d(0, -50%, 0);
+}
+
+.priority-node:hover {
+  transform: translate3d(0, calc(-50% - 2px), 0);
+}
+
+.priority-practical {
+  margin-top: 18px;
+}
+
+.priority-practical-header {
+  align-items: flex-start;
+}
+
+.priority-practical-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+  max-width: 560px;
+}
+
+.priority-practical-legend span {
+  padding: 6px 9px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: rgba(13, 19, 28, 0.68);
+  color: var(--text-dim);
+  font-size: 7.7px;
+  font-weight: 730;
+}
+
+.priority-practical-world {
+  height: 620px;
+}
+
+.priority-practical-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.priority-practical-node {
+  position: absolute;
+  width: 244px;
+  height: 102px;
+  transform: translate3d(0, 0, 0);
+}
+
+.priority-practical-node:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.priority-practical-node.scene-q { left: 7%; top: 11%; }
+.priority-practical-node.scene-i { left: 35%; top: 21%; }
+.priority-practical-node.scene-v { left: 66%; top: 10%; }
+.priority-practical-node.scene-m { left: 67%; top: 56%; }
+.priority-practical-node.scene-r { left: 36%; top: 58%; }
+.priority-practical-node.scene-e { left: 8%; top: 64%; }
+
+.priority-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.priority-relations path {
+  fill: none;
+  stroke: rgba(142, 169, 255, 0.18);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
+.priority-node .disposition-state-badge,
+.priority-practical-node .disposition-state-badge {
+  opacity: 1;
+}
+
+.priority-node.is-hovered .disposition-state-badge,
+.priority-practical-node.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05), 0 0 9px rgba(var(--state-rgb), 0.08);
+}
+
+/* Priority is intentionally category-neutral. The champagne tone is provisional
+ * and exists only to make the carrier family visible during comparison.
+ */
+.priority-twin-tick,
+.priority-top-rail,
+.priority-signal-bars,
+.priority-side-bracket,
+.priority-tag,
+.priority-beacon {
+  position: absolute;
+  z-index: 16;
+  opacity: 0;
+  pointer-events: none;
+  color: rgba(247, 218, 142, 0.96);
+}
+
+.priority-twin-tick {
+  left: 50%;
+  top: -4px;
+  display: flex;
+  gap: 4px;
+  transform: translateX(-50%);
+}
+
+.priority-twin-tick::before,
+.priority-twin-tick::after {
+  content: "";
+  width: 2px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(247, 218, 142, 0.88);
+  box-shadow: 0 0 5px rgba(247, 218, 142, 0.10);
+}
+
+.priority-top-rail {
+  left: 50%;
+  top: -1px;
+  width: 42px;
+  height: 2px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(247,218,142,0.08), rgba(247,218,142,0.90) 35%, rgba(247,218,142,0.90) 65%, rgba(247,218,142,0.08));
+  box-shadow: 0 0 6px rgba(247, 218, 142, 0.10);
+}
+
+.priority-signal-bars {
+  right: 66px;
+  top: -7px;
+  display: flex;
+  height: 10px;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.priority-signal-bars i {
+  display: block;
+  width: 2px;
+  border-radius: 999px;
+  background: rgba(247, 218, 142, 0.88);
+  box-shadow: 0 0 4px rgba(247, 218, 142, 0.08);
+}
+
+.priority-signal-bars i:nth-child(1) { height: 4px; opacity: 0.62; }
+.priority-signal-bars i:nth-child(2) { height: 7px; opacity: 0.78; }
+.priority-signal-bars i:nth-child(3) { height: 10px; }
+
+.priority-side-bracket {
+  right: -4px;
+  top: 50%;
+  width: 7px;
+  height: 28px;
+  transform: translateY(-50%);
+  border-right: 1.5px solid rgba(247, 218, 142, 0.88);
+}
+
+.priority-side-bracket::before,
+.priority-side-bracket::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 7px;
+  height: 1.5px;
+  border-radius: 999px;
+  background: rgba(247, 218, 142, 0.88);
+}
+
+.priority-side-bracket::before { top: 0; }
+.priority-side-bracket::after { bottom: 0; }
+
+.priority-tag {
+  left: 11px;
+  bottom: 8px;
+  display: inline-flex;
+  height: 17px;
+  align-items: center;
+  padding: 0 6px;
+  border: 1px solid rgba(247, 218, 142, 0.38);
+  border-radius: 5px;
+  background: rgba(24, 21, 13, 0.90);
+  color: rgba(247, 226, 169, 0.94);
+  font-size: 5.8px;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+}
+
+.priority-beacon {
+  left: 50%;
+  top: -7px;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-50%) rotate(45deg);
+  border: 1px solid rgba(247, 218, 142, 0.78);
+  border-radius: 2px;
+  background: rgba(13, 19, 28, 0.96);
+  box-shadow: 0 0 6px rgba(247, 218, 142, 0.10);
+}
+
+[data-priority="high"][data-priority-style="a1"] .priority-twin-tick,
+[data-priority="high"][data-priority-style="a2"] .priority-top-rail,
+[data-priority="high"][data-priority-style="a3"] .priority-signal-bars,
+[data-priority="high"][data-priority-style="a4"] .priority-side-bracket,
+[data-priority="high"][data-priority-style="a5"] .priority-tag,
+[data-priority="high"][data-priority-style="a6"] .priority-beacon,
+[data-priority="high"][data-priority-style="a8"] .priority-top-rail,
+[data-priority="high"][data-priority-style="a8"] .priority-tag {
+  opacity: 1;
+}
+
+[data-priority="high"][data-priority-style="a7"] .node-surface {
+  border-color: rgba(247, 218, 142, 0.23);
+  box-shadow:
+    inset 0 0 22px rgba(247, 218, 142, 0.025),
+    0 0 0 1px rgba(247, 218, 142, 0.035),
+    0 10px 28px rgba(0, 0, 0, 0.20);
+  filter: brightness(1.055);
+}
+
+[data-priority="high"] .priority-top-rail,
+[data-priority="high"] .priority-twin-tick,
+[data-priority="high"] .priority-signal-bars,
+[data-priority="high"] .priority-side-bracket,
+[data-priority="high"] .priority-beacon {
+  transition: opacity 160ms ease, filter 160ms ease;
+}
+
+[data-priority="high"].is-hovered .priority-top-rail,
+[data-priority="high"].is-hovered .priority-twin-tick,
+[data-priority="high"].is-hovered .priority-signal-bars,
+[data-priority="high"].is-hovered .priority-side-bracket,
+[data-priority="high"].is-hovered .priority-beacon {
+  filter: brightness(1.10) drop-shadow(0 0 4px rgba(247, 218, 142, 0.08));
+}
+
+/* The operational status carrier is held to compact dot mode in this slice. */
+.priority-node .status-dot-carrier,
+.priority-practical-node .status-dot-carrier {
+  cursor: default;
+}
+
+.priority-node .status-tag-carrier,
+.priority-practical-node .status-tag-carrier {
+  display: none !important;
+}
+
+.priority-review {
+  margin-top: 18px;
+}
