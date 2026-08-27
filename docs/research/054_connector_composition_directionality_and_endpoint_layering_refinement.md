@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-27  
 **Status:** Active Phase-C product-design evidence  
-**Scope:** Preserves the next human review of the connector/Port Grammar slice, fixes endpoint-layering and hover-lift attachment defects, restores the earlier frame-socket treatment, and records a preliminary shift from winner-take-all connector selection toward a compositional connector grammar.  
+**Scope:** Preserves the next human review of the connector/Port Grammar slice, fixes endpoint-layering, hover-lift attachment and dot-overlap defects, restores the earlier frame-socket treatment, and records a preliminary shift from winner-take-all connector selection toward a compositional connector grammar.  
 **Authority:** Research/design evidence only. No final connector semantic vocabulary is promoted.
 
 ## 1. Human visual defect reports
@@ -10,6 +10,8 @@
 After the first endpoint-overlay correction, the project owner visually verified the browser and found that K4 hover-port dots still appeared to sit underneath the box surface rather than clearly above the rendered perimeter.
 
 That stacking defect was corrected, but the next browser review exposed a second issue: when a work-unit node enters its accepted H4 hover state, the node lifts upward by 2 px while the connector geometry remained at its pre-hover coordinates. The endpoint marker therefore again appeared to slip underneath the lifted box even though its z-layer was correct.
+
+After that motion defect was fixed, the project owner identified a third refinement: the micro-dot / hover-port circles were still centered directly on the work-unit edge, so roughly half of each circle intruded into the card. On the left side this visibly painted over the category color rail.
 
 The intended hierarchy remains:
 
@@ -20,12 +22,17 @@ world / grid
     -> micro-dot / hover-port / directional endpoint above node perimeter
 ```
 
-And the intended geometry invariant is now explicit:
+And the intended geometry invariants are now explicit:
 
 ```text
 connector endpoint position
     follows the rendered node perimeter continuously
     including temporary hover-lift transforms
+
+micro-dot / hover-port marker
+    belongs visually to the connector
+    sits mostly outside the work-unit surface
+    retains only a very small overlap with the perimeter
 ```
 
 ## 2. Endpoint-layer correction
@@ -80,7 +87,7 @@ This is intentional behavior:
 ```text
 node may lift
 connector remains physically attached to the lifted node
-endpoint marker remains centered on the visible perimeter
+endpoint marker remains aligned with the visible perimeter
 ```
 
 Exact hover-lift attachment fix:
@@ -89,7 +96,45 @@ Exact hover-lift attachment fix:
 ae2951e2325e6e6e624131097dcc1edc732e1844
 ```
 
-## 4. Frame sockets restored to the earlier treatment
+## 4. Micro-dot / hover-port outward offset
+
+Human review then showed that a center-on-edge circle still looked too embedded in the work-unit body, especially where a left-side dot overlapped the category color rail.
+
+The curve anchor remains unchanged at the exact rendered edge. Only the circular terminal marker receives a small outward offset along the attachment side.
+
+Current rule:
+
+```text
+curve endpoint
+    exact rendered edge
+
+K1 Micro Dot / K4 Hover Port center
+    2 SVG user units outward from the edge anchor
+
+result
+    dot sits mostly outside the card
+    only a small fraction overlaps the border
+    left-side dots no longer sit over the category color rail
+```
+
+The side-aware offset is:
+
+```text
+left      x - 2
+right     x + 2
+top       y - 2
+bottom    y + 2
+```
+
+K2 Frame Sockets are not changed by this refinement. K3 directional cues are also left on their existing target-edge treatment pending the later directionality/composition experiment.
+
+Exact outward-dot refinement:
+
+```text
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+```
+
+## 5. Frame sockets restored to the earlier treatment
 
 The project owner explicitly said the frame sockets were good before the endpoint-overlay change and asked to restore them.
 
@@ -104,7 +149,7 @@ K2 Frame Sockets
 
 This preserves their more structural, instrument-like character.
 
-## 5. Implementation sequence
+## 6. Implementation sequence
 
 ```text
 b8953973dda9b57bfa2071726ec0aadac0f7c028
@@ -121,15 +166,18 @@ ed27290d6f060f13a86d863a2faa7eede3c91a7e
 
 ae2951e2325e6e6e624131097dcc1edc732e1844
     relation geometry follows node hover-lift and release motion
+
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+    circular terminals moved mostly outside the work-unit perimeter
 ```
 
 Current exact browser implementation target:
 
 ```text
-ae2951e2325e6e6e624131097dcc1edc732e1844
+42ec63d17095753dc4ab97628cd859473cbdf5e8
 ```
 
-## 6. Preliminary connector-composition insight
+## 7. Preliminary connector-composition insight
 
 The project owner supplied an important conceptual observation, but explicitly asked to fix the current visual mistakes before making the final connector choice.
 
@@ -172,7 +220,7 @@ may remain possible.
 
 Final preference between dots and sockets is deliberately pending further human review.
 
-## 7. Emerging architecture hypothesis
+## 8. Emerging architecture hypothesis
 
 The connector system may need to separate orthogonal dimensions such as:
 
@@ -197,14 +245,15 @@ This is a hypothesis to test next, not a promoted contract.
 
 It is consistent with the earlier Cockpit principle that presentation mechanisms should not be mistaken for semantic meaning.
 
-## 8. Current gate
+## 9. Current gate
 
 The project owner asked to resolve the visual corrections before giving the fuller connector decision.
 
 Therefore the active gate is:
 
 ```text
-human verifies K1/K4 endpoint markers stay attached above the perimeter during hover lift
+human verifies K1/K4 dots now touch the work-unit perimeter from mostly outside
+human verifies they remain attached during hover lift/release
 human verifies K2 restored frame-socket treatment
 -> human gives connector-composition preference
 -> only then implement the next combined-directionality experiment
