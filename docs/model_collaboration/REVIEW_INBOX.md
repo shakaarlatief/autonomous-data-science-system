@@ -28,19 +28,19 @@ human project owner
 Current checkpoint:
 
 ```text
-229
+230
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/relation-class-grammar.html
+http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
-Exact refined browser implementation target:
+Exact browser implementation target:
 
 ```text
-b3d23b10be611f41a4e55fc40a28ba83089b7196
+565fdeabc1ebaa29f993699a4c0673b29e972be3
 ```
 
 ## Promoted configurable-appearance foundations
@@ -78,12 +78,17 @@ Directionality is sufficiently settled for the current Phase-C design work.
 
 ## Relation-class encoding result
 
-Human review selected:
+Human review selected and accepted:
 
 ```text
 E5  Hue + Tag
-    SELECTED
-    very clean
+    SELECTED / sufficiently settled for current Phase C
+```
+
+Latest accepted relation-class browser target:
+
+```text
+497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
 Stroke rhythm from E2/E4/E6 remains preserved:
@@ -95,16 +100,50 @@ not currently assigned to relation class
 candidate for another future line-level semantic dimension
 ```
 
-Representative R0-R4 classes remain provisional fixtures and are not a frozen ADS relation taxonomy.
+Representative relation classes remain provisional fixtures and are not a frozen ADS relation taxonomy.
 
-The selected E5 page now opens by default and uses slightly taller tags with more normally proportioned text.
+## Active project-disposition review
+
+The current bounded question separates:
+
+```text
+category               what the work unit is
+project disposition    current slice
+runtime state          held out
+importance / priority  held out
+```
+
+Representative visual-test states:
+
+```text
+S0  Active / Current
+S1  Recommended / Next
+S2  Deferred
+S3  Completed
+S4  Blocked
+S5  Future / Not yet active
+```
+
+Encoding families:
+
+```text
+P0  Neutral Control
+P1  Disposition Hue
+P2  Explicit Tag
+P3  Tonal Hierarchy
+P4  State Rhythm
+P5  Hue + Tag
+P6  Restrained Hybrid
+```
 
 Current human gate:
 
 ```text
-verify refined E5 tag proportions
--> if accepted, treat relation-class visual encoding as sufficiently converged
--> then open the next bounded Cockpit design question
+compare P0-P6 across S0-S5
+-> prefer / reject / combine / refine
+-> preserve project-disposition visual evidence
+-> do not freeze the state ontology
+-> keep runtime and importance separate
 ```
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
