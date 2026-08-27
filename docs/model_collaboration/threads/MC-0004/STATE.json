@@ -25,6 +25,7 @@
       "docs/research/074_work_unit_internal_layout_grammar_experiment.md",
       "docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md",
       "docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md",
+      "docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
       "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md",
@@ -73,7 +74,7 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 076 Phase-C Cockpit design evidence",
+      "Research 037 through 077 Phase-C Cockpit design evidence",
       "scientific marker work-unit category grammar",
       "Reduced in-box resting light",
       "Foundation 023 configurable work-unit appearance and semantic invariants",
@@ -93,11 +94,14 @@
       "X5 balanced two-axis expansion selected without surrounding-context recession",
       "accepted refined X5 target 94bc1100b7388cc56497cafc03051ce326424a80",
       "L0 Flat Fields retained only as provisional working default; L1-L8 preserved for later",
-      "original deep-focus transition browser exact latest implementation target afd15f52897a295788dc3a1d04b2d1b31ef707f9",
       "Claude Message 006 deep-focus divergent ideation commit 204664ae1e732dd504174bbc62545e9a93adc85f",
-      "factorized deep-focus browser exact implementation target 0390d8fef9d6647ae17ecd7c948159d0a5b603e5"
+      "factorized deep-focus browser latest target fddb344c2b18221d326c9ba5bde98e84edf98f56",
+      "human preference that deepest specialist workspace should fully replace project grid/map",
+      "human positive preference for compact topology compass as deep-focus orientation aid",
+      "human request for advanced spatial zoom / moving-through-space entry concepts",
+      "spatial zoom browser exact target b375eb253990ce3c20f34dd9d5b735bd532789f2"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude's latest completed contribution is Message 006 at commit 204664ae1e732dd504174bbc62545e9a93adc85f. ChatGPT synthesized that response into Research 076 and a factorized browser separating object continuity, context relevance, staging/orientation and return timing. The active gate remains Checkpoint 243 deep-focus transition review. No Claude action is pending; the next actor is the human project owner.",
+    "notes": "Claude Phase A and B remain frozen historical collaboration evidence. Claude's latest completed contribution is Message 006 at commit 204664ae1e732dd504174bbc62545e9a93adc85f. Research 076 factorized deep-focus transition dimensions. The project owner then strongly preferred a fullscreen specialist-workspace end state with no project grid/map visible, liked the compact topology compass, and requested more advanced spatial zoom / through-space transition concepts. Research 077 and the Z0-Z7 spatial browser now form the active human review surface. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -125,15 +129,16 @@
       "PHASE_C_DEEP_FOCUS_TRANSITION_REVIEW",
       "PHASE_C_DEEP_FOCUS_TRANSITION_CLAUDE_DIVERGENT_IDEATION_REQUESTED",
       "PHASE_C_DEEP_FOCUS_TRANSITION_CLAUDE_RESPONSE_RECEIVED",
-      "PHASE_C_DEEP_FOCUS_TRANSITION_FACTORIZED_BROWSER_REVIEW"
+      "PHASE_C_DEEP_FOCUS_TRANSITION_FACTORIZED_BROWSER_REVIEW",
+      "PHASE_C_DEEP_FOCUS_FULLSCREEN_SPATIAL_ZOOM_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-claude-deep-focus-response-synthesized-factorized-browser-opened",
+    "transition_id": "mc0004-deep-focus-fullscreen-spatial-zoom-review-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
-    "actor": "chatgpt",
-    "reason": "Claude answered Message 005 with seven transition concepts and a structural diagnosis that object continuity, context retention, staging/orientation and return behavior should be tested as separable dimensions. ChatGPT synthesized that response into Research 076 and an eleven-candidate factorized browser with T4 asymmetric return exposed as a modifier rather than another monolithic tile.",
-    "repository_head": "0390d8fef9d6647ae17ecd7c948159d0a5b603e5"
+    "actor": "human",
+    "reason": "The project owner judged that the deepest specialist workspace should fully replace the project map/grid, strongly liked the compact topology compass, and requested more advanced zoom and moving-through-space transition concepts. ChatGPT therefore held the fullscreen end state constant and opened a Z0-Z7 spatial transition browser under Research 077.",
+    "repository_head": "b375eb253990ce3c20f34dd9d5b735bd532789f2"
   }
 }
