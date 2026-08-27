@@ -16,10 +16,6 @@ Explicit machinery must earn its complexity empirically.
 
 ## Current development stage
 
-Prototype V0 is complete. Bounded V1 is constructing the methodological knowledge universe and the professional substrate needed to use it safely.
-
-Current route:
-
 ```text
 checkpoint            243
 active branch         v1-cockpit-design-exploration
@@ -73,18 +69,18 @@ SEL2 selection                e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
-The expanded-card internal-layout alternatives L0-L8 remain preserved in Research 074. The project owner explicitly deprioritized that question for now and directed L0 Flat Fields to remain the provisional working default. L0 is not a final C5 or semantic-schema promotion.
+L0 Flat Fields remains only the provisional expanded-card internal-layout default. L1-L8 are preserved for later review.
 
 ---
 
-## Active Slice 02N: factorized deep-focus transition
+## Active Slice 02N: fullscreen spatial deep-focus transition
 
-Specification 008 already promotes the interaction ladder:
+Specification 008 still governs the product-level ladder:
 
 ```text
 project map
     -> select meaningful work unit
-    -> map recedes / focus transition
+    -> focus transition
     -> full-resolution specialist workspace mounts
     -> perform real analytical work
     -> return to project context
@@ -100,73 +96,67 @@ compact map work unit
     -> specialist workspace / deep focus
 ```
 
-The first F0-F8 browser remains preserved at exact repaired target:
+Evidence progression:
 
 ```text
-afd15f52897a295788dc3a1d04b2d1b31ef707f9
+Research 075
+    initial F0-F8 transition architectures
+
+Research 076
+    Claude-informed factorization of continuity, context, staging, orientation and return
+
+Research 077
+    fullscreen specialist-workspace end-state hypothesis
+    + advanced spatial zoom / moving-through-space transition comparison
 ```
 
-Claude then responded to MC-0004 Message 005 with a structural diagnosis: object continuity, context retention, context relevance, entry choreography, orientation aids and return choreography should be tested as separable transition dimensions rather than bundled into monolithic variants.
+The project owner now strongly prefers the deepest specialist workspace to own the whole active stage instead of remaining framed over the map, and strongly likes the compact topology compass as an orientation detail.
 
-Claude response:
+Current controlled end-state assumption:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
-204664ae1e732dd504174bbc62545e9a93adc85f
+specialist workspace
+    fullscreen in active Cockpit stage
+
+project map / grid
+    fully absent after entry
+
+compact topology compass
+    retained
 ```
 
-Current factorized browser:
+This is a strong current preference under review, not yet a final production promotion.
+
+Current browser:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
 Exact implementation target:
 
 ```text
-0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+b375eb253990ce3c20f34dd9d5b735bd532789f2
 ```
 
-Current batches:
+Candidates:
 
 ```text
-Batch A · Object continuity
-    A0  F2 Anchored Morph Control
-    A1  Anchored Center Stage
-    A2  Anchored Context Rail
-    A3  Camera Push-Through
-
-Batch B · Context relevance
-    B0  F6 Fixed Rail Control
-    B1  Neighbor-Aware Context
-    B2  Neighbor-Aware + Anchor
-
-Batch C · Staging and orientation
-    C0  Hard Replace Control
-    C1  Staged Two-Step Entry
-    C2  Compass + Soft World
-    C3  Hard Replace + Compass
-
-Large interaction studio
-    Symmetric return
-    Fast return
+Z0  Direct Replace Control
+Z1  Card Zoom-In
+Z2  World Falls Away
+Z3  Camera Dive
+Z4  Workspace Aperture
+Z5  Depth Parallax
+Z6  Perspective Corridor
+Z7  Pull-Back Then Dive
 ```
 
-Research and checkpoint:
-
-```text
-docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
-docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
-docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
-```
-
-The selected X5 fixture is intentionally off-center so anchored variants derive their source from the rendered object rather than a hardcoded viewport center. The new browser also restores all four accepted SEL2 corner brackets. Workspace internals remain schematic.
+All candidates begin from the same off-center selected X5 work unit and end in the same fullscreen workspace with the same compact compass. Only the spatial transition choreography changes.
 
 ---
 
 ## Repository preservation
-
-The rapid-iteration preservation audit remains closed with the repository architecture judged sound.
 
 ```text
 repository architecture        SOUND
@@ -185,7 +175,7 @@ Historical checkpoints and research records remain the durable evidence layer. C
 
 Current design work remains isolated under `frontend/design-lab/**`. Production `/cockpit` remains untouched.
 
-Specification 023 remains `SOURCE_SUBSTRATE_ACCEPTED`. Permanent source-vault deployment remains:
+Permanent source-vault deployment remains:
 
 ```text
 PAUSED
@@ -200,8 +190,6 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 
 ## Repository role
 
-This repository is the durable development source of truth.
-
 > **The chat is where we think. The repository is where the system remembers.**
 
 ## Start here
@@ -212,37 +200,27 @@ docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
+docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
+frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
+
 docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
 frontend/design-lab/work-unit-deep-focus-factorized.html
 
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
 frontend/design-lab/work-unit-deep-focus-transition.html
-
-docs/research/074_work_unit_internal_layout_grammar_experiment.md
-frontend/design-lab/work-unit-internal-layout.html
-
-docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
-frontend/design-lab/work-unit-detail-expansion.html
-
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-
-docs/model_collaboration/threads/MC-0004/THREAD.md
-docs/model_collaboration/threads/MC-0004/STATE.json
-docs/model_collaboration/REVIEW_INBOX.md
 ```
 
 ## Exact next step
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
-3. review Batch A for object continuity
-4. review Batch B for useful versus arbitrary retained context
-5. review Batch C for staging and minimal orientation
-6. use the large interaction studio to compare symmetric versus fast return
-7. choose mechanisms independently; do not force one winner across all tiles
-8. keep T6 Adaptive Retention by Workspace Type deferred
+2. open http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
+3. compare Z0-Z7
+4. judge which transition most feels like entering the selected work unit
+5. judge spatial depth versus disorientation
+6. judge repeated-use comfort
+7. judge whether the compact compass is enough orientation after the map disappears
+8. prefer / reject / combine / refine
 9. keep specialist-workspace internals schematic
 10. keep production Cockpit untouched
 ```
