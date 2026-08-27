@@ -27,24 +27,18 @@ Phase C divergent work-unit ideation
     faf18ed9932d60a24dd80589b0ec0ba71c5940fd
     COMPARATIVE_ONLY / DIVERGENT_IDEATION
 
-Phase C deep-focus transition ideation
+Phase C divergent deep-focus ideation
     ChatGPT request
     Message 005
+    30b294ce7f71a435bc56042f3cf3cdb8ce07e1ac
+
+    Claude response
+    Message 006
+    204664ae1e732dd504174bbc62545e9a93adc85f
     COMPARATIVE_ONLY / DIVERGENT_IDEATION
-    Claude response pending
 ```
 
-Current pending Claude request:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md
-```
-
-Expected response:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
-```
+No Claude action is currently pending.
 
 ## Preserved accepted Phase-C results
 
@@ -86,22 +80,20 @@ X5 expansion without recession         94bc1100b7388cc56497cafc03051ce326424a80
 
 Research 074 compared L0-L8 inside the accepted X5 outer geometry.
 
-The project owner explicitly deprioritized that question for now and directed:
-
 ```text
 L0 Flat Fields
-    keep using as provisional working default
+    provisional working default
     sufficient to continue
     not a final C5 / information-architecture selection
 
 L1-L8
-    preserve for later review
+    preserved for later review
     not rejected
 ```
 
 ## Current Slice 02N: deep-focus transition
 
-The working interaction ladder is:
+Working interaction ladder:
 
 ```text
 compact map work unit
@@ -111,7 +103,7 @@ compact map work unit
     -> specialist workspace / deep focus
 ```
 
-Specification 008 already promotes the product-level sequence:
+Specification 008 promotes the product-level sequence:
 
 ```text
 project map
@@ -122,81 +114,107 @@ project map
     -> return to project context
 ```
 
-The current browser isolates how project context should be retained during that deep-focus transition.
-
-Existing candidate architectures:
-
-```text
-F0  Hard Replace
-F1  Center Stage
-F2  Anchored Morph
-F3  World Recede
-F4  Context Ribbon
-F5  Map Frame
-F6  Side Context Rail
-F7  Portal Lift
-F8  Layered Stage
-```
-
-Browser:
+### Original F0-F8 browser
 
 ```text
 http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
 ```
 
-Exact latest browser target after interaction repairs:
+Exact repaired browser target:
 
 ```text
 afd15f52897a295788dc3a1d04b2d1b31ef707f9
 ```
 
-Known fixture imperfection:
+### Claude Message 006 synthesis
+
+Claude's strongest contribution was a decomposition of the transition problem into independent dimensions rather than another preferred monolithic architecture:
 
 ```text
-accepted SEL2
-    four outside corner brackets
-
-current deep-focus fixture
-    only two diagonal corner brackets
+object continuity
+context retention
+context relevance
+entry choreography
+orientation aid
+return choreography
 ```
 
-This is a known mockup-fidelity regression only. It does not reopen SEL2 and should not influence transition judgments.
-
-Research and checkpoint:
+Claude proposed:
 
 ```text
-docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
-docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
+T1  Generalized Anchored Entry
+T2  Neighbor-Aware Context Retention
+T3  Staged Two-Step Entry
+T4  Asymmetric Return
+T5  Camera Push-Through
+T6  Adaptive Retention by Workspace Type
+T7  Compass / Minimap Return Anchor
 ```
 
-## Current collaboration gate
+T6 remains deferred because multiple real specialist-workspace types do not yet exist. T1/T2/T3/T5/T7 are now executable comparisons. T4 is exposed as a cross-cutting return-timing modifier.
 
-The human project owner explicitly requested Claude's ideas and inspiration before convergence and authorized unrestricted exploration breadth:
+Research synthesis:
 
 ```text
-for this transition idea thing,
-I want also Claude its ideas and inspiration.
-we can test whatever and how much we want.
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
 ```
 
-Message 005 therefore asks Claude to:
+### Current factorized browser
 
 ```text
-audit what F0-F8 cover and miss
-propose any materially distinct transition mechanisms worth serious testing
-identify orthogonal mechanisms and strong combinations
-use external professional/spatial-interface inspiration where useful
-evaluate entry and return as one system
-include reduced-motion/static equivalents
-recommend executable browser testing without an artificial candidate-count limit
+http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
 ```
 
-No fixed shortlist is requested. If many genuinely distinct candidates survive Claude's quality threshold, they should all be preserved and may be tested in multiple browser rounds.
+Exact implementation target:
 
-ChatGPT retains target-state write ownership and will synthesize/implement after Claude Message 006 and subsequent human review.
+```text
+0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+```
+
+Comparison batches:
+
+```text
+Batch A · Object continuity
+    A0  F2 Anchored Morph Control
+    A1  Anchored Center Stage
+    A2  Anchored Context Rail
+    A3  Camera Push-Through
+
+Batch B · Context relevance
+    B0  F6 Fixed Rail Control
+    B1  Neighbor-Aware Context
+    B2  Neighbor-Aware + Anchor
+
+Batch C · Staging and orientation
+    C0  Hard Replace Control
+    C1  Staged Two-Step Entry
+    C2  Compass + Soft World
+    C3  Hard Replace + Compass
+
+Large interaction studio
+    Symmetric return
+    Fast return
+```
+
+The selected X5 card is intentionally off-center. Anchored variants measure its actual rendered rectangle so object continuity is tested from a dynamic source location rather than a hardcoded center coordinate.
+
+The new fixture also restores the accepted four-corner SEL2 presentation. This does not reopen selection design.
+
+## Current gate
+
+```text
+human reviews Batch A as an object-continuity comparison
+human reviews Batch B as a context-relevance comparison
+human reviews Batch C as staging/orientation comparison
+human tests symmetric versus faster return in the large interaction studio
+human may choose mechanisms from different batches and combine them later
+-> keep specialist-workspace internals schematic
+-> keep T6 deferred
+-> do not force one winner across all eleven tiles
+```
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final internal work-unit schema, C5 Internal Layout Grammar, provenance/evidence representation, selected-node command surface, collision avoidance, semantic zoom, final deep-focus transition, specialist-workspace composition, URL/deep-link state and final production visual system.
+Still unfrozen includes final internal work-unit schema, C5 Internal Layout Grammar, provenance/evidence representation, selected-node command surface, collision avoidance, semantic zoom, final deep-focus transition composition, neighbor-selection semantics, minimap/compass existence, specialist-workspace composition, URL/deep-link state, return timing and final production visual system.
