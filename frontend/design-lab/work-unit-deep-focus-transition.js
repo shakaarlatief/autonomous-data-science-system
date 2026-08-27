@@ -7,7 +7,7 @@ const variants = [
   { id: 'f5', code: 'F5', label: 'Map Frame', description: 'A visible project-map frame remains around the specialist workspace so spatial context never disappears completely.' },
   { id: 'f6', code: 'F6', label: 'Side Context Rail', description: 'A narrow live strip of project context remains beside the specialist workspace during deep work.' },
   { id: 'f7', code: 'F7', label: 'Portal Lift', description: 'The workspace lifts out of the selected work unit as a distinct rounded layer while the world remains softly behind it.' },
-  { id: 'f8', code: 'F8', label: 'Layered Stage', description: 'The workspace becomes the front layer while the map remains visibly displaced behind it as a persistent spatial stage.' },
+  { id: 'f8', code: 'F8', label: 'Layered Stage', description: 'The workspace becomes the front layer while the project map remains visibly displaced behind it as a persistent spatial stage.' },
 ]
 
 const grid = document.querySelector('#focus-grid')
@@ -18,6 +18,7 @@ let practicalFocused = false
 
 renderGrid()
 renderControls()
+setupPracticalInteraction()
 renderPractical('f2')
 
 function renderGrid() {
@@ -59,19 +60,20 @@ function renderControls() {
   }
 }
 
+function setupPracticalInteraction() {
+  if (!practical || practical.dataset.focusInteractionReady === 'true') return
+  practical.dataset.focusInteractionReady = 'true'
+  practical.addEventListener('click', () => {
+    practicalFocused = !practicalFocused
+    practical.classList.toggle('is-focused', practicalFocused)
+  })
+}
+
 function renderPractical(style) {
   if (!practical) return
   practical.innerHTML = stageInner(style, true)
   practical.dataset.style = style
   practical.classList.toggle('is-focused', practicalFocused)
-  practical.addEventListener('click', handlePracticalClick, { once: true })
-}
-
-function handlePracticalClick(event) {
-  if (event.target.closest('.workspace-bar button')) return
-  practicalFocused = !practicalFocused
-  practical.classList.toggle('is-focused', practicalFocused)
-  practical.addEventListener('click', handlePracticalClick, { once: true })
 }
 
 function stageMarkup(style, focused) {
