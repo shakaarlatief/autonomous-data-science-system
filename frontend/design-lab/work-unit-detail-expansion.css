@@ -1,0 +1,677 @@
+body {
+  min-width: 1440px;
+}
+
+.expansion-header {
+  grid-template-columns: minmax(900px, 1fr) auto;
+}
+
+.expansion-held-state,
+.expansion-segmented,
+.expansion-actions,
+.expansion-summary {
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.72);
+}
+
+.expansion-held-state {
+  display: grid;
+  min-width: 470px;
+  gap: 4px;
+  padding: 11px 13px;
+  border-color: rgba(185, 206, 240, 0.20);
+}
+
+.expansion-held-state span,
+.expansion-summary span {
+  color: var(--text-dim);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.expansion-held-state strong,
+.expansion-summary strong {
+  color: rgba(229, 235, 245, 0.92);
+  font-size: 8.8px;
+  font-weight: 760;
+}
+
+.expansion-held-state small,
+.expansion-summary small {
+  color: rgba(165, 178, 199, 0.72);
+  font-size: 7.5px;
+  font-weight: 650;
+}
+
+.expansion-main {
+  padding-bottom: 60px;
+}
+
+.expansion-intro {
+  margin-bottom: 18px;
+}
+
+.expansion-preview,
+.expansion-practical {
+  overflow: hidden;
+  border: 1px solid var(--panel-border-strong);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.22);
+}
+
+.expansion-section-header {
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.expansion-section-header h2 {
+  margin: 4px 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.expansion-section-header p {
+  margin: 0;
+  max-width: 1000px;
+  color: var(--text-soft);
+  font-size: 8.8px;
+  line-height: 1.45;
+}
+
+.expansion-section-header > span {
+  padding: 5px 8px;
+  border: 1px solid rgba(185, 206, 240, 0.20);
+  border-radius: 999px;
+  background: rgba(185, 206, 240, 0.035);
+  color: rgba(210, 222, 241, 0.78);
+  font-size: 7.8px;
+  font-weight: 740;
+}
+
+.expansion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(149, 170, 198, 0.08);
+}
+
+.expansion-tile {
+  min-width: 0;
+  background: #0b1017;
+}
+
+.expansion-tile-copy {
+  min-height: 86px;
+  padding: 13px 15px 11px;
+  border-bottom: 1px solid rgba(149, 170, 198, 0.08);
+  background: rgba(12, 18, 26, 0.86);
+}
+
+.expansion-tile-copy span {
+  color: rgba(185, 206, 240, 0.92);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.10em;
+}
+
+.expansion-tile-copy strong {
+  display: block;
+  margin-top: 4px;
+  color: rgba(233, 238, 246, 0.94);
+  font-size: 11px;
+}
+
+.expansion-tile-copy small {
+  display: block;
+  margin-top: 4px;
+  max-width: 440px;
+  color: rgba(166, 179, 198, 0.70);
+  font-size: 7.8px;
+  line-height: 1.38;
+}
+
+.expansion-demo {
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #0b1017;
+  background-image:
+    linear-gradient(to right, rgba(152, 175, 207, 0.085) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(152, 175, 207, 0.085) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.expansion-demo::before,
+.expansion-practical-world::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  background-image:
+    linear-gradient(to right, rgba(185, 204, 229, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 204, 229, 0.14) 1px, transparent 1px);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+.expansion-demo-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 244px;
+  height: 102px;
+  transform: translate(-50%, -50%);
+}
+
+.expansion-demo-node:hover {
+  transform: translate(-50%, calc(-50% - 2px));
+}
+
+.expansion-practical {
+  margin-top: 18px;
+}
+
+.expansion-practical-header {
+  align-items: flex-start;
+}
+
+.expansion-practical-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+  max-width: 620px;
+}
+
+.expansion-practical-legend span {
+  padding: 6px 9px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: rgba(13, 19, 28, 0.68);
+  color: var(--text-dim);
+  font-size: 7.7px;
+  font-weight: 730;
+}
+
+.expansion-controls {
+  display: grid;
+  grid-template-columns: minmax(900px, 1.75fr) minmax(430px, 0.75fr);
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(10, 15, 22, 0.92);
+}
+
+.expansion-segmented,
+.expansion-actions {
+  min-height: 112px;
+  padding: 10px;
+}
+
+.expansion-segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: center;
+  gap: 5px;
+}
+
+.expansion-segmented button {
+  min-height: 29px;
+  font-size: 7.2px;
+}
+
+.expansion-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.expansion-actions > button {
+  min-height: 30px;
+}
+
+.expansion-summary {
+  grid-column: 1 / -1;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  padding: 8px 9px;
+}
+
+.expansion-practical-world {
+  position: relative;
+  height: 760px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.expansion-practical-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.expansion-practical-node {
+  position: absolute;
+  width: 244px;
+  height: 102px;
+  cursor: pointer;
+  transform: translate3d(0, 0, 0);
+}
+
+.expansion-practical-node:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.expansion-practical-node.scene-q { left: 6%; top: 12%; }
+.expansion-practical-node.scene-i { left: 36%; top: 22%; }
+.expansion-practical-node.scene-v { left: 70%; top: 11%; }
+.expansion-practical-node.scene-m { left: 69%; top: 61%; }
+.expansion-practical-node.scene-r { left: 38%; top: 64%; }
+.expansion-practical-node.scene-e { left: 7%; top: 68%; }
+
+.expansion-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.expansion-relations path {
+  fill: none;
+  stroke: rgba(142, 169, 255, 0.18);
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+}
+
+.expansion-practical-node .disposition-state-badge,
+.expansion-demo-node .disposition-state-badge {
+  opacity: 1;
+}
+
+.expansion-practical-node.is-hovered .disposition-state-badge,
+.expansion-demo-node.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05), 0 0 9px rgba(var(--state-rgb), 0.08);
+}
+
+/* SEL2 is the held persistent-selection carrier in this slice. */
+.expansion-demo-node[data-selected="true"] .selection-corners,
+.expansion-practical-node[data-selected="true"] .selection-corners {
+  opacity: 1;
+}
+
+.expansion-demo-node .selection-keyline,
+.expansion-demo-node .selection-inner-frame,
+.expansion-demo-node .selection-edge-ticks,
+.expansion-demo-node .selection-soft-contour,
+.expansion-demo-node .selection-double-corner,
+.expansion-practical-node .selection-keyline,
+.expansion-practical-node .selection-inner-frame,
+.expansion-practical-node .selection-edge-ticks,
+.expansion-practical-node .selection-soft-contour,
+.expansion-practical-node .selection-double-corner {
+  display: none;
+}
+
+.expansion-demo-node[data-priority="high"] .priority-signal-bars,
+.expansion-practical-node[data-priority="high"] .priority-signal-bars {
+  opacity: 1;
+}
+
+.expansion-demo-node .status-tag-carrier,
+.expansion-practical-node .status-tag-carrier {
+  display: none !important;
+}
+
+.detail-inline,
+.detail-panel,
+.detail-sheet,
+.detail-layer,
+.detail-rail,
+.inspector-dock,
+.demo-dock {
+  color: rgba(211, 220, 234, 0.88);
+}
+
+.detail-inline,
+.detail-panel,
+.detail-sheet,
+.detail-layer,
+.detail-rail {
+  pointer-events: none;
+}
+
+.detail-inline {
+  display: none;
+  position: absolute;
+  z-index: 6;
+}
+
+.detail-panel,
+.detail-sheet,
+.detail-layer,
+.detail-rail {
+  position: absolute;
+  z-index: 17;
+  display: none;
+  border: 1px solid rgba(185, 206, 240, 0.18);
+  border-radius: 9px;
+  background: linear-gradient(145deg, rgba(18, 25, 35, 0.985), rgba(11, 17, 25, 0.985));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+
+.detail-kicker {
+  color: rgba(185, 206, 240, 0.72);
+  font-size: 6.1px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.detail-title {
+  margin-top: 3px;
+  color: rgba(239, 243, 249, 0.95);
+  font-size: 9px;
+  font-weight: 760;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.detail-cell {
+  min-width: 0;
+  padding-top: 6px;
+  border-top: 1px solid rgba(173, 193, 222, 0.10);
+}
+
+.detail-cell span {
+  display: block;
+  color: rgba(137, 152, 174, 0.68);
+  font-size: 5.7px;
+  font-weight: 820;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.detail-cell strong {
+  display: block;
+  margin-top: 3px;
+  overflow: visible;
+  color: rgba(210, 221, 236, 0.86);
+  font-size: 7px;
+  font-weight: 670;
+  line-height: 1.28;
+  white-space: normal;
+}
+
+/* X0: no expansion. */
+[data-expanded="true"][data-expansion-style="x0"] .detail-inline,
+[data-expanded="true"][data-expansion-style="x0"] .detail-panel,
+[data-expanded="true"][data-expansion-style="x0"] .detail-sheet,
+[data-expanded="true"][data-expansion-style="x0"] .detail-layer,
+[data-expanded="true"][data-expansion-style="x0"] .detail-rail {
+  display: none;
+}
+
+/* X1: the selected card grows downward while its top edge and width remain stable. */
+[data-expanded="true"][data-expansion-style="x1"] {
+  height: 226px;
+}
+
+[data-expanded="true"][data-expansion-style="x1"] .node-surface {
+  height: 226px;
+}
+
+[data-expanded="true"][data-expansion-style="x1"] .detail-inline {
+  left: 14px;
+  right: 14px;
+  top: 100px;
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid rgba(180, 200, 229, 0.12);
+}
+
+/* X2: source card remains compact; contextual detail is an attached right wing. */
+[data-expanded="true"][data-expansion-style="x2"] .detail-panel {
+  left: calc(100% + 9px);
+  top: -18px;
+  display: block;
+  width: 238px;
+  min-height: 156px;
+  padding: 12px;
+}
+
+[data-expanded="true"][data-expansion-style="x2"] .detail-panel::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 52px;
+  width: 10px;
+  height: 1px;
+  background: rgba(185, 206, 240, 0.38);
+}
+
+/* X3: a separate sheet stays directly below the compact selected card. */
+[data-expanded="true"][data-expansion-style="x3"] .detail-sheet {
+  left: 8px;
+  top: calc(100% + 9px);
+  display: block;
+  width: calc(100% - 16px);
+  min-height: 142px;
+  padding: 11px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+[data-expanded="true"][data-expansion-style="x3"] .detail-sheet::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: -10px;
+  width: 1px;
+  height: 10px;
+  background: rgba(185, 206, 240, 0.38);
+}
+
+/* X4: the card widens into one two-column object. */
+[data-expanded="true"][data-expansion-style="x4"] {
+  width: 470px;
+  height: 164px;
+}
+
+[data-expanded="true"][data-expansion-style="x4"] .node-surface {
+  height: 164px;
+  padding-right: 244px;
+}
+
+[data-expanded="true"][data-expansion-style="x4"] .detail-inline {
+  right: 14px;
+  top: 13px;
+  bottom: 13px;
+  display: block;
+  width: 216px;
+  padding-left: 13px;
+  border-left: 1px solid rgba(180, 200, 229, 0.12);
+}
+
+/* X5: moderate two-axis growth plus local context recession. */
+[data-expanded="true"][data-expansion-style="x5"] {
+  width: 390px;
+  height: 210px;
+  z-index: 30;
+}
+
+[data-expanded="true"][data-expansion-style="x5"] .node-surface {
+  height: 210px;
+  border-color: rgba(185, 206, 240, 0.24);
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.40), 0 0 22px rgba(185, 206, 240, 0.05);
+}
+
+[data-expanded="true"][data-expansion-style="x5"] .detail-inline {
+  left: 14px;
+  right: 14px;
+  top: 100px;
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid rgba(180, 200, 229, 0.12);
+}
+
+html[data-expansion-style="x5"][data-scene-expanded="true"] .expansion-practical-node:not([data-expanded="true"]),
+html[data-expansion-style="x5"][data-scene-expanded="true"] .expansion-relations {
+  opacity: 0.30;
+  filter: saturate(0.55);
+}
+
+/* X6: compact source remains stable while a slightly offset lower layer reveals detail. */
+[data-expanded="true"][data-expansion-style="x6"] .detail-layer {
+  left: 18px;
+  top: 25px;
+  z-index: 0;
+  display: block;
+  width: 292px;
+  min-height: 190px;
+  padding: 96px 13px 12px;
+  border-color: rgba(185, 206, 240, 0.16);
+  background: linear-gradient(145deg, rgba(16, 23, 32, 0.96), rgba(9, 14, 21, 0.98));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+}
+
+/* X7: only a compact information rail is exposed. */
+[data-expanded="true"][data-expansion-style="x7"] {
+  height: 148px;
+}
+
+[data-expanded="true"][data-expansion-style="x7"] .node-surface {
+  height: 148px;
+}
+
+[data-expanded="true"][data-expansion-style="x7"] .detail-rail {
+  left: 12px;
+  right: 12px;
+  bottom: 10px;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 10px;
+  min-height: 35px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: rgba(13, 19, 28, 0.82);
+  box-shadow: none;
+}
+
+.detail-rail span {
+  color: rgba(137, 152, 174, 0.70);
+  font-size: 5.5px;
+  font-weight: 820;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.detail-rail strong {
+  display: block;
+  margin-top: 2px;
+  color: rgba(217, 226, 239, 0.88);
+  font-size: 6.7px;
+  font-weight: 690;
+}
+
+/* X8: selected card remains compact and details move to a stable scene-level inspector. */
+.inspector-dock,
+.demo-dock {
+  display: none;
+  border: 1px solid rgba(185, 206, 240, 0.17);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(17, 24, 34, 0.97), rgba(10, 16, 24, 0.98));
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.30);
+}
+
+.demo-dock {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 14px;
+  z-index: 18;
+  min-height: 92px;
+  padding: 10px 12px;
+}
+
+.expansion-tile[data-variant="x8"] .demo-dock {
+  display: block;
+}
+
+.inspector-dock {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 22;
+  width: min(760px, calc(100% - 80px));
+  min-height: 112px;
+  padding: 12px 14px;
+  transform: translateX(-50%);
+}
+
+html[data-expansion-style="x8"][data-scene-expanded="true"] .inspector-dock {
+  display: block;
+}
+
+.inspector-dock .detail-grid,
+.demo-dock .detail-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.expansion-practical-node,
+.expansion-practical-node .node-surface,
+.expansion-demo-node,
+.expansion-demo-node .node-surface {
+  transition:
+    width 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    height 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 240ms ease,
+    filter 240ms ease,
+    transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 280ms ease,
+    box-shadow 320ms ease;
+}
+
+.expansion-practical-node:focus-visible {
+  outline: 2px solid rgba(232, 238, 249, 0.90);
+  outline-offset: 7px;
+}
+
+.expansion-practical-node:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.expansion-review {
+  margin-top: 18px;
+}
+
+html[data-reduced="on"] .expansion-practical-node,
+html[data-reduced="on"] .expansion-practical-node .node-surface,
+html[data-reduced="on"] .expansion-demo-node,
+html[data-reduced="on"] .expansion-demo-node .node-surface,
+html[data-reduced="on"] .expansion-relations {
+  transition: none !important;
+}
