@@ -207,6 +207,7 @@ Files:
 ```text
 frontend/design-lab/work-unit-detail-expansion.html
 frontend/design-lab/work-unit-detail-expansion.css
+frontend/design-lab/work-unit-detail-expansion-scroll.css
 frontend/design-lab/work-unit-detail-expansion.js
 ```
 
@@ -215,6 +216,26 @@ Exact initial browser implementation target:
 ```text
 0457a27d8e80863738ce3f75aeb11bd4f5c1155d
 ```
+
+### Review-ergonomics adjustment
+
+During the first human inspection, the project owner asked that the large explanatory page header scroll out of the viewport instead of remaining sticky, because the sticky header consumed substantial vertical space while comparing the lower expansion candidates.
+
+The shared design-lab header remains sticky elsewhere. This browser overrides that behavior only for `.expansion-header`:
+
+```text
+position: static
+```
+
+No expansion candidate, semantic treatment, layout geometry or interaction behavior changed.
+
+Exact browser target with the non-sticky review header:
+
+```text
+7e6861188e1e7e7eaeee599ca901108ca434753d
+```
+
+This is a review-usability refinement inside the existing Checkpoint 241 gate, not a new checkpoint or product-level header decision.
 
 Production `/cockpit` remains untouched.
 
