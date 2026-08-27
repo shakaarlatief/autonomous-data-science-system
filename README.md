@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            229
+checkpoint            230
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      relation-class Hue + Tag selected; tag refinement human verification
+current boundary      work-unit project-disposition visual grammar human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -129,11 +129,11 @@ Exact accepted directionality implementation:
 
 ## Relation-class visual grammar result
 
-Human review selected:
+Human review selected and accepted:
 
 ```text
 E5  Hue + Tag
-    SELECTED relation-class baseline
+    SELECTED / sufficiently settled for current Phase C
 ```
 
 Current relation-class visual carrier:
@@ -146,17 +146,7 @@ compact explicit semantic tag
 existing direction arrow when direction requires it
 ```
 
-Representative relation fixtures remain provisional:
-
-```text
-R0  Chronology / Sequence
-R1  Dependency / Prerequisite
-R2  Causal / Influence
-R3  Evidence / Support
-R4  Lineage / Derivation
-```
-
-They do not freeze the ADS relation ontology.
+Representative relation fixtures remain provisional and do not freeze the ADS relation ontology.
 
 Stroke rhythm from E2/E4/E6 is explicitly preserved as a future semantic resource rather than used redundantly for relation class:
 
@@ -168,29 +158,77 @@ stroke rhythm
     candidate for another future line-level meaning if later evidence justifies it
 ```
 
-The selected E5 page now uses a slightly taller tag with more normal text proportions.
+Latest accepted relation-class browser implementation:
+
+```text
+497e81f06ba1f9901511449237d1bb9f96b2d108
+```
+
+That accepted target includes the taller relation tag, restored gap above the connector line and taller lettering.
+
+---
+
+## Active Slice 02F: work-unit project disposition
+
+The current bounded question is:
+
+> How should a work unit communicate where it stands in the project without confusing category, runtime activity or importance?
+
+The semantic axes are deliberately separated:
+
+```text
+WHAT IS THIS?                  category
+WHAT IS ITS DISPOSITION?       current slice
+WHAT IS HAPPENING NOW?         runtime, held out
+HOW IMPORTANT IS IT NOW?       priority / relevance, held out
+```
+
+Representative disposition fixtures:
+
+```text
+S0  Active / Current
+S1  Recommended / Next
+S2  Deferred
+S3  Completed
+S4  Blocked
+S5  Future / Not yet active
+```
+
+These are visual-test fixtures, not a frozen project-state ontology.
+
+Encoding families:
+
+```text
+P0  Neutral Control
+P1  Disposition Hue
+P2  Explicit Tag
+P3  Tonal Hierarchy
+P4  State Rhythm
+P5  Hue + Tag
+P6  Restrained Hybrid
+```
 
 Browser route:
 
 ```text
-frontend/design-lab/relation-class-grammar.html
-frontend/design-lab/relation-class-grammar.css
-frontend/design-lab/relation-class-grammar.js
+frontend/design-lab/work-unit-disposition-grammar.html
+frontend/design-lab/work-unit-disposition-grammar.css
+frontend/design-lab/work-unit-disposition-grammar.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/relation-class-grammar.html
+http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
-Exact refined browser implementation target:
+Exact browser implementation target:
 
 ```text
-b3d23b10be611f41a4e55fc40a28ba83089b7196
+565fdeabc1ebaa29f993699a4c0673b29e972be3
 ```
 
-The page opens directly in E5. Historical E0-E6 controls remain inspectable as experiment evidence.
+Held controls include the Investigation scientific marker, Subtle shape, M1 material, Reduced in-box light and accepted H4 hover behavior.
 
 ---
 
@@ -219,10 +257,13 @@ Not yet authorized:
 ```text
 production Cockpit replacement
 production appearance persistence
+final project-disposition ontology
+final project-disposition visual grammar
 final semantic relation taxonomy
 production relation colors / codes
-semantic assignment of stroke rhythm
+semantic assignment of connector stroke rhythm
 runtime-flow connector grammar
+runtime-state / importance visual grammar
 new graph/canvas dependency
 new motion-library adoption
 final visual-system freeze
@@ -259,9 +300,11 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
+docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
+frontend/design-lab/work-unit-disposition-grammar.html
+
 docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
-docs/research/057_semantic_relation_class_visual_grammar_experiment.md
 frontend/design-lab/relation-class-grammar.html
 
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
@@ -279,11 +322,11 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/relation-class-grammar.html
-3. verify E5 Hue + Tag opens by default
-4. verify the slightly taller tag and adjusted text proportions look better
-5. keep stroke rhythm preserved for a later separate semantic question
-6. if accepted, treat relation-class visual encoding as sufficiently converged
-7. then open the next bounded Cockpit design question
+2. open http://localhost:5173/design-lab/work-unit-disposition-grammar.html
+3. compare P0 through P6 across S0 through S5
+4. inspect H4 hover without changing disposition meaning
+5. prefer / reject / combine / refine disposition mechanisms
+6. keep runtime and importance separate from this slice
+7. do not freeze the final project-state ontology yet
 8. keep production Cockpit untouched
 ```
