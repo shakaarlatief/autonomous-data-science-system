@@ -145,6 +145,7 @@ function nodeMarkup({ key, category, disposition, status, priority, selected, se
       <span class="hover-light" aria-hidden="true"></span>
       <span class="hover-world-light" aria-hidden="true"></span>
       <span class="disposition-state-outline" aria-hidden="true"></span>
+      ${selectionMarkup()}
       <div class="node-surface">
         <span class="surface-rest-light" aria-hidden="true"></span>
         <span class="custom-material-layer" aria-hidden="true"></span>
@@ -156,7 +157,6 @@ function nodeMarkup({ key, category, disposition, status, priority, selected, se
         <span class="disposition-state-badge" aria-hidden="true">${projectState.code}</span>
         ${statusMarkup(statusState)}
         ${priorityMarkup(priority)}
-        ${selectionMarkup()}
         <div class="node-heading">
           <span class="category-glyph" aria-hidden="true">${meta.glyph}</span>
           <span class="unit-kind">${meta.kind}</span>
