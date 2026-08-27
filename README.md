@@ -77,7 +77,7 @@ The expanded-card internal-layout alternatives L0-L8 remain preserved in Researc
 
 ---
 
-## Active Slice 02N: deep-focus transition
+## Active Slice 02N: factorized deep-focus transition
 
 Specification 008 already promotes the interaction ladder:
 
@@ -100,42 +100,67 @@ compact map work unit
     -> specialist workspace / deep focus
 ```
 
-The active question is how the expanded work unit and project map should transition into the specialist workspace while preserving enough orientation for an effortless return.
-
-Current browser:
+The first F0-F8 browser remains preserved at exact repaired target:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+afd15f52897a295788dc3a1d04b2d1b31ef707f9
 ```
 
-Candidate architectures:
+Claude then responded to MC-0004 Message 005 with a structural diagnosis: object continuity, context retention, context relevance, entry choreography, orientation aids and return choreography should be tested as separable transition dimensions rather than bundled into monolithic variants.
+
+Claude response:
 
 ```text
-F0  Hard Replace
-F1  Center Stage
-F2  Anchored Morph
-F3  World Recede
-F4  Context Ribbon
-F5  Map Frame
-F6  Side Context Rail
-F7  Portal Lift
-F8  Layered Stage
+docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
+204664ae1e732dd504174bbc62545e9a93adc85f
 ```
 
-Initial browser target:
+Current factorized browser:
 
 ```text
-31abc2b3a23de29358978e19bd88fda1e9166f6b
+http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+```
+
+Exact implementation target:
+
+```text
+0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+```
+
+Current batches:
+
+```text
+Batch A · Object continuity
+    A0  F2 Anchored Morph Control
+    A1  Anchored Center Stage
+    A2  Anchored Context Rail
+    A3  Camera Push-Through
+
+Batch B · Context relevance
+    B0  F6 Fixed Rail Control
+    B1  Neighbor-Aware Context
+    B2  Neighbor-Aware + Anchor
+
+Batch C · Staging and orientation
+    C0  Hard Replace Control
+    C1  Staged Two-Step Entry
+    C2  Compass + Soft World
+    C3  Hard Replace + Compass
+
+Large interaction studio
+    Symmetric return
+    Fast return
 ```
 
 Research and checkpoint:
 
 ```text
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
 ```
 
-Workspace internals are schematic in this slice. The experiment tests transition/context-retention architecture only.
+The selected X5 fixture is intentionally off-center so anchored variants derive their source from the rendered object rather than a hardcoded viewport center. The new browser also restores all four accepted SEL2 corner brackets. Workspace internals remain schematic.
 
 ---
 
@@ -187,6 +212,9 @@ docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+frontend/design-lab/work-unit-deep-focus-factorized.html
+
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
 frontend/design-lab/work-unit-deep-focus-transition.html
 
@@ -208,14 +236,13 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
-3. compare F0-F8
-4. click each tile to enter / return
-5. judge object continuity from X5 to specialist workspace
-6. judge retained map context versus distraction
-7. judge return-to-project clarity
-8. prefer / reject / combine / refine
+2. open http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+3. review Batch A for object continuity
+4. review Batch B for useful versus arbitrary retained context
+5. review Batch C for staging and minimal orientation
+6. use the large interaction studio to compare symmetric versus fast return
+7. choose mechanisms independently; do not force one winner across all tiles
+8. keep T6 Adaptive Retention by Workspace Type deferred
 9. keep specialist-workspace internals schematic
-10. keep L0 internal layout as a provisional working default only
-11. keep production Cockpit untouched
+10. keep production Cockpit untouched
 ```
