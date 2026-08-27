@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-disposition-encoding="p0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-Unit Disposition Grammar</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header disposition-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02F · Project Disposition</span>
+        <h1>How should a work unit communicate its project disposition without confusing category, runtime or importance?</h1>
+        <p>The same Investigation work unit is repeated across six provisional project dispositions. Category marker, micro material, subtle shape, Reduced light and H4 hover are held constant.</p>
+      </div>
+      <div class="disposition-held-state">
+        <span>Held semantic separation</span>
+        <strong>Category ≠ disposition ≠ runtime ≠ priority</strong>
+      </div>
+    </header>
+
+    <main class="grammar-main disposition-main">
+      <section class="grammar-intro disposition-intro">
+        <div>
+          <span class="section-kicker">Bounded design question</span>
+          <h2>Which visual channel should carry project disposition?</h2>
+          <p>This slice is about where the work unit stands in the project, not what it is and not what a runtime process is doing right now.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Disposition constraints">
+          <span>Same category in every row</span>
+          <span>Runtime state held idle</span>
+          <span>Importance held constant</span>
+          <span>Readable without color alone</span>
+          <span>Low map noise</span>
+        </div>
+      </section>
+
+      <section class="disposition-controls" aria-label="Disposition encoding controls">
+        <div class="disposition-control-copy">
+          <span class="section-kicker">Encoding family</span>
+          <h2>Switch one disposition strategy at a time</h2>
+          <p>The state fixtures remain fixed while hue, explicit tags, tonal hierarchy, state rhythm and restrained combinations are compared.</p>
+        </div>
+        <div class="segmented disposition-segmented" role="group" aria-label="Project disposition encoding family">
+          <button type="button" data-encoding="p0" aria-pressed="true">P0 Neutral</button>
+          <button type="button" data-encoding="p1" aria-pressed="false">P1 Hue</button>
+          <button type="button" data-encoding="p2" aria-pressed="false">P2 Tag</button>
+          <button type="button" data-encoding="p3" aria-pressed="false">P3 Tone</button>
+          <button type="button" data-encoding="p4" aria-pressed="false">P4 Rhythm</button>
+          <button type="button" data-encoding="p5" aria-pressed="false">P5 Hue + Tag</button>
+          <button type="button" data-encoding="p6" aria-pressed="false">P6 Hybrid</button>
+        </div>
+        <label class="toggle-row disposition-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Disable ambient and hover transition motion while preserving disposition cues.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+        <div class="disposition-summary">
+          <span>Current encoding</span>
+          <strong id="encoding-summary">Neutral control</strong>
+        </div>
+      </section>
+
+      <section class="disposition-preview" aria-label="Project disposition comparison">
+        <div class="disposition-preview-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same work-unit category · six provisional project dispositions</h2>
+          </div>
+          <span>Hover any node to verify state cues survive H4 interaction</span>
+        </div>
+
+        <div class="grammar-world disposition-world" id="disposition-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <div class="disposition-rows" id="disposition-rows"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review disposition-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge state clarity, category preservation and visual calm</h2>
+        <div class="review-questions">
+          <p>Which treatments make Active, Recommended, Deferred, Completed, Blocked and Future distinguishable before reading the row labels?</p>
+          <p>Does status hue compete too much with the teal Investigation category color?</p>
+          <p>Do explicit disposition tags add useful certainty or make every node too label-heavy?</p>
+          <p>Does tonal hierarchy help, or does dimming incorrectly imply lower importance?</p>
+          <p>Can state rhythm remain legible at map scale without becoming engineering-diagram noise?</p>
+          <p>These six states are visual-test fixtures. This experiment does not freeze the final ADS project-disposition ontology.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-disposition-grammar.js"></script>
+  </body>
+</html>
