@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The configurable work-unit appearance principle is now promoted in Foundation 023 after positive human browser review. The customizable-preview connector attachment defect has been fixed. The active design slice is generic connector and port visual grammar, with connector curves held beneath work-unit bodies and endpoint dots/sockets/ports now rendered above the work-unit perimeter for final human comparison. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Foundation 023 promotes user-configurable non-semantic Cockpit appearance. The active slice is connector / Port Grammar. K1/K3/K4 endpoint markers are layered above nodes, K2 frame sockets retain their earlier structural treatment, and connector geometry now follows the accepted H4 node hover lift/release so visible endpoints remain physically attached to the rendered perimeter. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -30,8 +30,8 @@ Primary route:
 
 ```text
 docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md
+docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
 docs/research/053_connector_and_port_visual_grammar_experiment.md
-docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 frontend/design-lab/connector-grammar.html
 frontend/design-lab/connector-grammar.css
@@ -46,38 +46,29 @@ Current local URL:
 http://localhost:5173/design-lab/connector-grammar.html
 ```
 
-Exact connector browser implementation target after endpoint-layer correction:
+Current exact browser implementation target:
 
 ```text
-08a33868b1c1d2cd90f11431e3f6b730603f28eb
+ae2951e2325e6e6e624131097dcc1edc732e1844
 ```
 
 ---
 
-# Provisionally settled grid/world direction
+# Provisionally settled world / interaction controls
 
 ```text
-G4 Adaptive Hybrid                  SELECTED
+G4 Adaptive Hybrid                  SELECTED / provisionally settled
 Dark mode                           CURRENT design baseline
-Light mode                          DEFERRED
 Travelling grid currents            KEEP
 Current distribution                RANDOMIZED across visible 20 px grid lines
 Current cadence                     LIVELY preferred
-Intersection glints                 KEEP
-Glint location                      100 px MAJOR-GRID INTERSECTIONS ONLY
-Glint cadence                       APPROXIMATELY QUIET / INDEPENDENT
+Intersection glints                 KEEP at 100 px major-grid intersections
+Glint cadence                       approximately Quiet / independent
 Slow ambient light drift            KEEP
 Localized semantic activity         KEEP
-Fixed authored ambient coordinates  REJECTED
 ```
 
-Decorative ambient behavior remains legitimate only when it stays subordinate and cannot be mistaken for semantic project/runtime state.
-
----
-
-# Work-unit interaction and semantic grammar
-
-Generic H4 hover/outward-world behavior remains sufficiently settled.
+Generic H4 hover/world behavior remains sufficiently settled.
 
 Current work-unit rest/hover baseline:
 
@@ -92,10 +83,14 @@ HOVER
     pointer-following hotspot
     local grid/world illumination
     immediate connector emphasis
-    one restrained perimeter sweep on hover entry
-    small depth lift
+    one restrained perimeter sweep
+    2 px depth lift
     fast entry + smoother slower release
 ```
+
+---
+
+# Work-unit semantic grammar
 
 Current semantic category marker mapping:
 
@@ -107,22 +102,25 @@ Model Work                diamond
 Evaluation                plus
 ```
 
+Rejected/retired historical directions remain preserved:
+
+```text
+bare Q / I / V / M / E letters
+G2 Compact Marker Rail
+S3 Inner Instrument Architecture
+G1 Instrument Glyph Family retired from active focused comparison
+```
+
 ---
 
 # Foundation 023: configurable appearance
 
-Human review of the configurator was strongly positive. The product direction is now promoted:
+Promoted product principle:
 
 ```text
 ADS owns semantic meaning
 +
 user controls approved non-semantic appearance dimensions
-```
-
-Promoted artifact:
-
-```text
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
 Current proven configurable dimensions:
@@ -140,7 +138,7 @@ Micro design
 
 Appearance choices must not redefine category, disposition, runtime, importance, evidence, provenance, or methodological meaning.
 
-Plausible future preference hierarchy:
+Production persistence remains unresolved. A plausible later hierarchy remains:
 
 ```text
 user appearance profile
@@ -153,46 +151,13 @@ semantic project state
     independent from both
 ```
 
-Production settings persistence and collaboration behavior remain open.
-
 ---
 
-# Customizable-preview connector defect: fixed
+# Active Slice 02C: connector and Port Grammar
 
-Human review found one small defect: project-scene lines did not correctly attach to rendered work-unit boxes.
-
-Root cause:
-
-```text
-static authored SVG coordinates
-instead of rendered node geometry
-```
-
-The preview now derives connector endpoints from `.node-surface` bounding boxes and recalculates after initial render, view changes, shape changes, and browser/scene geometry changes.
-
-The Investigation right-edge notch receives a silhouette-aware inset anchor under Subtle shapes.
-
-Exact defect-fix commit:
-
-```text
-c1f996f6500672641de8e00780d5a4949c5dcb28
-```
-
-Configurator route remains:
-
-```text
-http://localhost:5173/design-lab/work-unit-grammar-customizable.html
-```
-
----
-
-# Active Slice 02C: connector and port visual grammar
-
-The next bounded design question is:
+Bounded design question:
 
 > How should generic project relationships visually meet work units and remain legible without turning the Cockpit into graph noise?
-
-This is the dependency-aligned point at which Claude concept C4 Port Grammar becomes active.
 
 Held controls:
 
@@ -214,53 +179,89 @@ K0  Clean Curve
     direct edge-to-edge line, no ports
 
 K1  Micro Dots
-    small source and target endpoint dots
+    small source/target endpoint dots
 
 K2  Frame Sockets
     small square structural sockets
 
 K3  Target Cue
-    restrained target-side directional chevron
+    restrained target-side directional cue
 
 K4  Hover Ports
     clean rest state, endpoint dots revealed on related-node hover
 ```
 
-All candidates use dynamic rendered-edge connector geometry rather than fixed path coordinates.
-
-## Connector/port layering invariant
-
-Human review identified that endpoint markers should not be buried underneath the work-unit surface.
-
-Current held hierarchy for this experiment:
+## Connector layering invariant
 
 ```text
 world / grid
-    ↓
-connector curve
-    ↓
-work-unit body
-    ↓
-endpoint dot / socket / port
+    -> connector curves below nodes
+    -> work-unit body
+    -> micro dots / hover ports / directional endpoint cues above node perimeter
 ```
 
-Therefore:
+K2 Frame Sockets are intentionally exempt from the above-node overlay because human review preferred the earlier under-node structural docking treatment.
+
+## Hover-lift geometry invariant
+
+The accepted H4 hover state lifts a node by 2 px. Connector geometry must follow the rendered perimeter during that motion rather than remain at pre-hover coordinates.
+
+Current behavior:
 
 ```text
-connector curves
-    remain behind work-unit bodies
+hover entry
+    geometry synchronized through the fast node lift
 
-K1 dots / K2 sockets / K4 hover ports
-    render above the work-unit perimeter
-    centered directly on the attachment edge
+hover release
+    geometry synchronized through the slower return
 
-K3 target cue
-    also renders in the endpoint overlay at the destination edge
+Reduced motion
+    one immediate geometry refresh
 ```
 
-Implementation uses a dedicated `connector-port-overlay` synchronized to the existing dynamic geometry and hover relation state.
+This keeps both the curve endpoint and above-node marker attached to the moving box throughout the transition.
 
-Human browser review is the active gate.
+Exact hover-lift attachment fix:
+
+```text
+ae2951e2325e6e6e624131097dcc1edc732e1844
+```
+
+---
+
+# Preliminary connector-composition hypothesis
+
+Human review has already supplied a likely architectural direction, but final connector composition is intentionally pending one more visual verification.
+
+Current hypothesis:
+
+```text
+connector grammar should be compositional
+not one universal K0-K4 winner
+```
+
+Potential orthogonal dimensions:
+
+```text
+RELATION SEMANTICS
+    what the relation means
+
+DIRECTIONALITY
+    none
+    A -> B
+    B -> A
+    bidirectional
+
+BASE PRESENTATION
+    curve + optional non-directional attachment treatment
+
+PROGRESSIVE DISCLOSURE
+    hover ports / relation emphasis
+```
+
+Examples mentioned by the project owner include chronological and causal relations, but no final relation vocabulary is frozen.
+
+Hover Ports should remain available. For a non-directional baseline, Micro Dots versus Frame Sockets remains an open human preference. A later user-configurable choice may also remain possible.
 
 ---
 
@@ -271,7 +272,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                              connector / port grammar human review
+Current                              connector composition human review
 ```
 
 There is no pending Claude obligation.
@@ -283,22 +284,23 @@ There is no pending Claude obligation.
 Still unresolved:
 
 ```text
-final work-unit taxonomy
-final semantic connector vocabulary
-relation-type colors and line semantics
+final connector composition
+Micro Dots vs Frame Sockets as initial non-directional endpoint treatment
+final semantic relation vocabulary
+relation colors / dashed-solid semantics
 dependency / evidence / lineage connector distinctions
 runtime-flow connector behavior
 selected/focused persistent treatment
 runtime / waiting / blocked / approval treatment
+final work-unit taxonomy
 final node dimensions and typography
 semantic zoom
-Internal Layout Grammar
+C5 Internal Layout Grammar
 2.5D focus/depth system
-production motion implementation/library
 Conversation Workspace composition
 large-project layout/grouping/command architecture
 production appearance persistence
-final design system
+final production design system
 ```
 
 Only isolated `frontend/design-lab/**` artifacts are authorized for the current experiment. Production `/cockpit` remains the control baseline.
@@ -313,7 +315,6 @@ source-vault bootstrap
     not cancelled
     not rejected
     not superseded
-    accepted architecture/runbook unchanged
 ```
 
 Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
@@ -325,13 +326,11 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 225 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/connector-grammar.html
-4. verify K1/K2/K4 endpoint markers sit visibly on top of the work-unit perimeter while connector curves remain behind the boxes
-5. verify K3 target cue remains readable at the destination edge
-6. compare K0 through K4 on the same project scene
-7. hover nodes and inspect connector emphasis / K4 hover ports
-8. human gives the pending connector preference or combination judgment
-9. preserve a generic connector baseline before adding semantic relation classes
-10. keep production Cockpit untouched
-11. keep source-vault deployment paused until explicitly resumed
+3. refresh http://localhost:5173/design-lab/connector-grammar.html
+4. verify K1/K4 markers stay attached to the visible box perimeter while the hovered node lifts and returns
+5. verify K2 retains the earlier frame-socket treatment
+6. human gives the fuller connector-composition preference
+7. only then implement the combined directionality/composition experiment
+8. keep production Cockpit untouched
+9. keep source-vault deployment paused until explicitly resumed
 ```
