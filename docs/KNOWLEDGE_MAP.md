@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 229  
+**Current checkpoint:** 230  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        229
+checkpoint                        230
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  relation-class Hue + Tag selected; tag refinement human verification
+current boundary                  work-unit project-disposition visual grammar human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -151,39 +151,14 @@ Primary evidence:
 ```text
 docs/research/057_semantic_relation_class_visual_grammar_experiment.md
 docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
-```
-
-Current checkpoint:
-
-```text
-docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
-```
-
-Browser route:
-
-```text
 frontend/design-lab/relation-class-grammar.html
-frontend/design-lab/relation-class-grammar.css
-frontend/design-lab/relation-class-grammar.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/relation-class-grammar.html
-```
-
-Exact refined browser implementation target:
-
-```text
-b3d23b10be611f41a4e55fc40a28ba83089b7196
 ```
 
 Human-selected relation-class carrier:
 
 ```text
 E5  Hue + Tag
-    SELECTED
+    SELECTED / sufficiently settled for current Phase C
 ```
 
 Current rule:
@@ -198,19 +173,83 @@ stroke rhythm
     not currently assigned to relation class
 ```
 
-Representative relation fixtures remain provisional:
+Latest accepted relation-class browser implementation:
 
 ```text
-R0  Chronology / Sequence
-R1  Dependency / Prerequisite
-R2  Causal / Influence
-R3  Evidence / Support
-R4  Lineage / Derivation
+497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-They are not a frozen ADS ontology.
+Representative relation fixtures remain provisional and are not a frozen ADS ontology.
 
-Current narrow gate is human verification of the slightly taller tag and adjusted text proportions.
+---
+
+# Current Slice 02F: work-unit project disposition
+
+Governing research:
+
+```text
+docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
+```
+
+Current checkpoint:
+
+```text
+docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-disposition-grammar.html
+frontend/design-lab/work-unit-disposition-grammar.css
+frontend/design-lab/work-unit-disposition-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-disposition-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+565fdeabc1ebaa29f993699a4c0673b29e972be3
+```
+
+Semantic separation:
+
+```text
+category               WHAT IS THIS?
+project disposition    current slice
+runtime state          held out
+importance / priority  held out
+```
+
+Representative visual-test states:
+
+```text
+S0  Active / Current
+S1  Recommended / Next
+S2  Deferred
+S3  Completed
+S4  Blocked
+S5  Future / Not yet active
+```
+
+Encoding families:
+
+```text
+P0  Neutral Control
+P1  Disposition Hue
+P2  Explicit Tag
+P3  Tonal Hierarchy
+P4  State Rhythm
+P5  Hue + Tag
+P6  Restrained Hybrid
+```
+
+These state fixtures are not a frozen ADS project-state ontology.
 
 ---
 
