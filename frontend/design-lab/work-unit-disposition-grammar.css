@@ -1,0 +1,424 @@
+body {
+  min-width: 1440px;
+}
+
+.disposition-header {
+  grid-template-columns: minmax(780px, 1fr) auto;
+}
+
+.disposition-held-state {
+  display: grid;
+  gap: 4px;
+  min-width: 290px;
+  padding: 11px 13px;
+  border: 1px solid rgba(142, 169, 255, 0.22);
+  border-radius: 9px;
+  background: rgba(12, 17, 27, 0.72);
+}
+
+.disposition-held-state span,
+.disposition-summary span {
+  color: var(--text-dim);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.disposition-held-state strong {
+  color: rgba(222, 230, 244, 0.92);
+  font-size: 9px;
+  font-weight: 760;
+}
+
+.disposition-main {
+  padding-bottom: 60px;
+}
+
+.disposition-intro {
+  margin-bottom: 14px;
+}
+
+.disposition-controls {
+  display: grid;
+  grid-template-columns: minmax(390px, 0.9fr) minmax(700px, 1.5fr) minmax(250px, 0.55fr) minmax(210px, 0.45fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.disposition-control-copy,
+.disposition-segmented,
+.disposition-toggle,
+.disposition-summary {
+  min-height: 82px;
+  padding: 10px 11px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.70);
+}
+
+.disposition-control-copy {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+}
+
+.disposition-control-copy h2 {
+  margin: 2px 0 1px;
+  color: rgba(232, 237, 246, 0.92);
+  font-size: 12px;
+}
+
+.disposition-control-copy p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 8.2px;
+  line-height: 1.45;
+}
+
+.disposition-segmented {
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.disposition-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.disposition-toggle > span {
+  display: grid;
+  gap: 3px;
+}
+
+.disposition-toggle strong {
+  color: rgba(226, 233, 245, 0.88);
+  font-size: 8.7px;
+}
+
+.disposition-toggle small {
+  color: var(--text-dim);
+  font-size: 7.7px;
+  line-height: 1.35;
+}
+
+.disposition-toggle input {
+  width: 15px;
+  height: 15px;
+  accent-color: rgb(142, 169, 255);
+}
+
+.disposition-summary {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+}
+
+.disposition-summary strong {
+  color: rgba(217, 227, 244, 0.90);
+  font-size: 8.8px;
+  font-weight: 760;
+}
+
+.disposition-preview {
+  overflow: hidden;
+  border: 1px solid var(--panel-border-strong);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.22);
+}
+
+.disposition-preview-header {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.disposition-preview-header h2 {
+  margin: 4px 0 5px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.disposition-preview-header > span {
+  padding: 5px 8px;
+  border: 1px solid rgba(142, 169, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(142, 169, 255, 0.05);
+  color: rgba(207, 219, 242, 0.82);
+  font-size: 8px;
+  font-weight: 750;
+}
+
+.disposition-world {
+  height: 790px;
+}
+
+.disposition-rows {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  padding: 18px 20px;
+}
+
+.disposition-row {
+  position: relative;
+  min-height: 0;
+  border-bottom: 1px solid rgba(156, 177, 206, 0.08);
+  --state-rgb: 142, 169, 255;
+}
+
+.disposition-row:last-child {
+  border-bottom: 0;
+}
+
+.disposition-label {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  display: grid;
+  width: 260px;
+  gap: 3px;
+  transform: translateY(-50%);
+}
+
+.disposition-label span {
+  color: rgba(var(--state-rgb), 0.80);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.10em;
+}
+
+.disposition-label strong {
+  color: rgba(231, 236, 245, 0.92);
+  font-size: 10px;
+  font-weight: 760;
+}
+
+.disposition-label small {
+  max-width: 250px;
+  color: rgba(168, 181, 201, 0.68);
+  font-size: 7.8px;
+  line-height: 1.35;
+}
+
+.disposition-node {
+  position: absolute;
+  left: 43%;
+  top: 50%;
+  width: 236px;
+  transform: translate3d(0, -50%, 0);
+}
+
+.disposition-node:hover {
+  transform: translate3d(0, calc(-50% - 2px), 0);
+}
+
+.disposition-state-outline,
+.disposition-state-rhythm {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.disposition-state-outline {
+  z-index: 3;
+  inset: -4px;
+  border: 1px solid rgba(var(--state-rgb), 0.55);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(var(--state-rgb), 0.10);
+}
+
+.disposition-state-rhythm {
+  z-index: 6;
+  right: 16px;
+  top: -1px;
+  width: 42px;
+  height: 2px;
+  border-radius: 3px;
+  background: rgba(194, 207, 225, 0.66);
+}
+
+.disposition-state-badge {
+  position: absolute;
+  z-index: 8;
+  right: 11px;
+  top: 9px;
+  display: inline-flex;
+  min-width: 45px;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border: 1px solid rgba(167, 181, 202, 0.28);
+  border-radius: 6px;
+  background: rgba(10, 15, 23, 0.90);
+  color: rgba(211, 220, 234, 0.84);
+  font-size: 6.6px;
+  font-weight: 820;
+  letter-spacing: 0.055em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 170ms ease, color 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+}
+
+/* P0: intentionally no disposition encoding. */
+
+/* P1: status hue carried by a restrained outer perimeter. */
+html[data-disposition-encoding="p1"] .disposition-state-outline {
+  opacity: 1;
+}
+
+/* P2: explicit text tag only, deliberately neutral to isolate the label channel. */
+html[data-disposition-encoding="p2"] .disposition-state-badge {
+  opacity: 1;
+}
+
+/* P3: tonal hierarchy only. This deliberately tests whether luminance is useful or misleading. */
+html[data-disposition-encoding="p3"] .disposition-row[data-state="active"] .node-surface,
+html[data-disposition-encoding="p3"] .disposition-row[data-state="blocked"] .node-surface {
+  opacity: 1;
+  filter: saturate(1);
+}
+
+html[data-disposition-encoding="p3"] .disposition-row[data-state="recommended"] .node-surface {
+  opacity: 0.94;
+  filter: saturate(0.96);
+}
+
+html[data-disposition-encoding="p3"] .disposition-row[data-state="completed"] .node-surface {
+  opacity: 0.78;
+  filter: saturate(0.76) brightness(0.94);
+}
+
+html[data-disposition-encoding="p3"] .disposition-row[data-state="deferred"] .node-surface {
+  opacity: 0.68;
+  filter: saturate(0.62) brightness(0.90);
+}
+
+html[data-disposition-encoding="p3"] .disposition-row[data-state="future"] .node-surface {
+  opacity: 0.52;
+  filter: saturate(0.52) brightness(0.88);
+}
+
+/* P4: neutral rhythm family. */
+html[data-disposition-encoding="p4"] .disposition-state-rhythm {
+  opacity: 1;
+}
+
+.disposition-row[data-state="active"] .disposition-state-rhythm {
+  background: rgba(202, 214, 231, 0.74);
+}
+
+.disposition-row[data-state="recommended"] .disposition-state-rhythm {
+  background: repeating-linear-gradient(to right, rgba(202, 214, 231, 0.74) 0 7px, transparent 7px 10px);
+}
+
+.disposition-row[data-state="deferred"] .disposition-state-rhythm {
+  background: repeating-linear-gradient(to right, rgba(202, 214, 231, 0.68) 0 3px, transparent 3px 7px);
+}
+
+.disposition-row[data-state="completed"] .disposition-state-rhythm {
+  height: 3px;
+  background:
+    linear-gradient(to bottom, rgba(202, 214, 231, 0.68) 0 1px, transparent 1px 2px, rgba(202, 214, 231, 0.52) 2px 3px);
+}
+
+.disposition-row[data-state="blocked"] .disposition-state-rhythm {
+  background: repeating-linear-gradient(to right, rgba(202, 214, 231, 0.76) 0 6px, transparent 6px 8px, rgba(202, 214, 231, 0.76) 8px 10px, transparent 10px 14px);
+}
+
+.disposition-row[data-state="future"] .disposition-state-rhythm {
+  height: 3px;
+  background-image: radial-gradient(circle, rgba(202, 214, 231, 0.68) 0 1px, transparent 1.2px);
+  background-size: 6px 3px;
+}
+
+/* P5: hue plus explicit tag. */
+html[data-disposition-encoding="p5"] .disposition-state-outline,
+html[data-disposition-encoding="p5"] .disposition-state-badge {
+  opacity: 1;
+}
+
+html[data-disposition-encoding="p5"] .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.48);
+  color: rgba(var(--state-rgb), 0.94);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05);
+}
+
+/* P6: intentionally stronger integrated candidate. */
+html[data-disposition-encoding="p6"] .disposition-state-outline,
+html[data-disposition-encoding="p6"] .disposition-state-badge,
+html[data-disposition-encoding="p6"] .disposition-state-rhythm {
+  opacity: 1;
+}
+
+html[data-disposition-encoding="p6"] .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.48);
+  color: rgba(var(--state-rgb), 0.94);
+}
+
+html[data-disposition-encoding="p6"] .disposition-row[data-state="completed"] .node-surface {
+  opacity: 0.86;
+  filter: saturate(0.82);
+}
+
+html[data-disposition-encoding="p6"] .disposition-row[data-state="deferred"] .node-surface {
+  opacity: 0.78;
+  filter: saturate(0.72);
+}
+
+html[data-disposition-encoding="p6"] .disposition-row[data-state="future"] .node-surface {
+  opacity: 0.66;
+  filter: saturate(0.62);
+}
+
+.disposition-row.is-hovered .disposition-state-outline {
+  border-color: rgba(var(--state-rgb), 0.86);
+  box-shadow: 0 0 14px rgba(var(--state-rgb), 0.20);
+}
+
+.disposition-row.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+}
+
+.disposition-review {
+  margin-top: 18px;
+}
+
+html[data-reduced="on"] .ambient-current,
+html[data-reduced="on"] .ambient-glint,
+html[data-reduced="on"] .ambient-drift {
+  animation: none !important;
+}
+
+html[data-reduced="on"] .disposition-node,
+html[data-reduced="on"] .disposition-state-outline,
+html[data-reduced="on"] .disposition-state-badge,
+html[data-reduced="on"] .disposition-state-rhythm,
+html[data-reduced="on"] .node-surface {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disposition-node,
+  .disposition-state-outline,
+  .disposition-state-badge,
+  .disposition-state-rhythm,
+  .node-surface {
+    transition: none !important;
+  }
+}
