@@ -117,14 +117,12 @@ REST
     category hue remains the dominant persistent color
     explicit disposition tag remains neutral
     selective tonal recession remains for Completed / Deferred / Future
-    no disposition perimeter hue
-    no rhythm
 
 HOVER
     tag border/text reveal the state-specific hue
 ```
 
-Latest accepted P7 implementation before the next slice:
+Latest accepted P7 implementation:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
@@ -132,140 +130,159 @@ fac1db37af4225927d6c799e37418a3ad9c42c13
 
 The final disposition ontology remains unfrozen.
 
-P4 State Rhythm and the earlier colored alternatives remain preserved as experiment/history evidence.
+## Current-process focus result
 
-## Current-process focus-lens result
+Research 062 separated project disposition, current-process membership and view emphasis.
 
-After accepting P7, the project owner requested a stronger suppression mode for work that should remain in the Cockpit as context but is not currently part of the active process.
-
-Research 062 separated:
-
-```text
-PROJECT DISPOSITION
-    semantic state of the work unit
-
-CURRENT-PROCESS MEMBERSHIP
-    whether it belongs to the emphasized process set
-
-VIEW EMPHASIS
-    how strongly work outside that set is suppressed
-```
-
-The browser exposed:
+The browser introduced:
 
 ```text
 Context visible
-    accepted P7 presentation remains readable
+    wider project remains readable
 
 Focus current process
-    current-process work remains full salience
-    contextual work is strongly suppressed
+    current-focus work remains full salience
+    outside-focus work is strongly suppressed
     contextual connector segments recede
     contextual nodes partially recover on hover
 ```
 
-The project owner reviewed this result and said:
+The project owner accepted this mechanism and then requested direct user control over membership.
+
+Research 063 added:
 
 ```text
-Perfect. This is exactly what I meant.
+Edit focus set
+Reset example
++ FOCUS
+- FOCUS
 ```
 
-The focus-lens mechanism is therefore accepted in principle for the current design round, while final current-process membership semantics remain open.
+Changing focus membership does not delete work and does not change project disposition. Membership changes immediately update node suppression and connector classification.
 
-## New human requirement: user-curated focus membership
-
-The project owner immediately added that the focus mode should be flexible:
+The project owner reviewed the editable result and concluded:
 
 ```text
-user can add work units to the current focus
-user can remove work units from the current focus
+It is perfect.
 ```
 
-This is interpreted as editing a focus set, not deleting work units or rewriting disposition.
-
-Binding separation is now:
-
-```text
-WORK-UNIT EXISTENCE
-    whether the work unit exists in the project
-
-PROJECT DISPOSITION
-    where the work unit stands in the project
-
-CURRENT-FOCUS MEMBERSHIP
-    whether the work unit belongs to the emphasized process set
-
-VIEW EMPHASIS
-    how strongly outside-focus work is suppressed
-```
-
-## Active Slice 02G refinement: editable focus set
-
-Research:
-
-```text
-docs/research/063_user_curated_current_process_focus_membership.md
-```
-
-Checkpoint:
-
-```text
-docs/checkpoints/234_user_curated_current_process_focus_set_review_opened.md
-```
-
-Browser route:
-
-```text
-frontend/design-lab/work-unit-process-focus.html
-frontend/design-lab/work-unit-process-focus.css
-frontend/design-lab/work-unit-process-focus.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-process-focus.html
-```
-
-Exact browser implementation target:
+Exact accepted editable-focus target:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
-The browser now exposes:
+Final production ownership/persistence, automatic focus suggestions, multiple named lenses and exact membership semantics remain open.
+
+## Preservation-method audit during Phase C
+
+After accepting editable focus membership, the project owner asked for an explicit audit of whether the repository-preservation architecture remained healthy under many rapid small changes.
+
+Research:
 
 ```text
-Context visible
-Focus current process
-Edit focus set
-Reset example
+docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
-When edit mode is active, each work unit exposes:
+The architecture was judged sound, but the audit found Checkpoints 223-234 had drifted from the provider-neutral metadata contract.
+
+Repair:
 
 ```text
-+ FOCUS
-    add work unit to current focus
-
-- FOCUS
-    remove work unit from current focus
+required metadata/provenance backfilled
+substantive historical bodies preserved
 ```
 
-Membership changes immediately update:
+Verified global metadata validation after repair:
 
 ```text
-node data-process-scope
-membership summary count
-strong focus suppression
-connector current/context classification
+d2541418a68b9bfd244ec89e4e951e630b3bb61b
+    validate  SUCCESS
 ```
 
-A connector is contextual whenever either endpoint lies outside the current focus.
+The checkpoint contract now makes two operating rules explicit:
 
-While editing, strongly suppressed context is temporarily raised to a more operable salience. Leaving edit mode restores the full suppression hierarchy.
+```text
+micro-refinements inside an already-open gate normally remain in Git + research evidence
++
+a checkpoint is not operationally closed until its metadata validation succeeds
+```
 
-The browser stores the edited focus set in `localStorage` only as design-lab convenience. This does not select production ownership or persistence semantics.
+Current-routing consistency was also widened to all pushes that touch guarded routing surfaces.
+
+This is bounded method hardening based on observed failure, not a new preservation architecture.
+
+## Active Slice 02H: work-unit runtime state
+
+The next semantic axis is:
+
+```text
+WHAT IS HAPPENING NOW?
+    runtime / execution state
+```
+
+It remains separate from category, project disposition, priority/relevance and current-focus membership.
+
+Research:
+
+```text
+docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
+```
+
+Checkpoint:
+
+```text
+docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-runtime-grammar.html
+frontend/design-lab/work-unit-runtime-grammar.css
+frontend/design-lab/work-unit-runtime-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-runtime-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+099e516bf9a7351a756bee00037edbcc731a2738
+```
+
+Provisional runtime fixtures:
+
+```text
+Idle
+Queued
+Running
+Waiting
+Waiting for Human
+Failed
+```
+
+Encoding families:
+
+```text
+R0  Neutral Control
+R1  Status Lamp
+R2  Activity Rail
+R3  Runtime Tag
+R4  Instrument Cell
+R5  Motion Signal
+R6  Restrained Hybrid
+```
+
+The browser contains controlled same-category rows plus a mixed-category practical scene with P7 neutral disposition tags retained.
+
+Reduced-motion mode removes runtime animation while preserving static runtime-state identity.
+
+The saved connector stroke-rhythm channel remains unassigned and available for a future line-level semantic slice.
 
 ## Dependency-bound ideas
 
@@ -280,19 +297,17 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human verifies Edit focus set is clear and unobtrusive
-human verifies + FOCUS / - FOCUS do not imply project deletion
-human adds and removes several nodes
-human verifies Focus current process updates immediately
-human verifies connector suppression follows edited membership
-human verifies edit-mode recovery keeps outside-focus nodes operable
-human verifies refresh persistence and Reset example behavior
--> refine / accept / reject editable focus membership
--> do not freeze production focus ownership or persistence yet
+human compares R0-R6
+human inspects controlled rows and mixed-category scene
+human compares normal vs Reduced motion
+human judges runtime clarity, clutter and semantic competition
+human judges whether motion reads as semantic rather than decorative
+-> prefer / reject / combine / refine
+-> do not freeze the final runtime ontology yet
 ```
 
-Runtime-state and priority/importance visual grammars remain separate future slices.
+Priority/importance visual grammar remains a separate future slice.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, automatic focus-selection algorithm, final focus-set ownership/persistence model, final project-disposition ontology, runtime-state grammar, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, final project-disposition ontology, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
