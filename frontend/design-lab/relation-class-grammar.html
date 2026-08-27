@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-relation-encoding="e0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Relation Class Grammar</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./relation-class-grammar.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header relation-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02E · Semantic Relation Classes</span>
+        <h1>How should different relationship meanings remain distinguishable on the project map?</h1>
+        <p>Directionality is held constant as A → B so this slice can isolate relation meaning. The relation classes below are representative fixtures, not a frozen ADS ontology.</p>
+      </div>
+      <div class="relation-held-state">
+        <span>Held direction grammar</span>
+        <strong>Same edge-connected arrow at B</strong>
+      </div>
+    </header>
+
+    <main class="grammar-main relation-main">
+      <section class="grammar-intro relation-intro">
+        <div>
+          <span class="section-kicker">Bounded design question</span>
+          <h2>Which visual channel should carry relation class?</h2>
+          <p>Five representative meanings are compared under several encoding families. Node categories, world treatment, arrow geometry and hover interaction stay fixed.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Relation-class constraints">
+          <span>Meaning ≠ direction</span>
+          <span>Readable at map scale</span>
+          <span>No color-only dependency</span>
+          <span>Low graph noise</span>
+          <span>Taxonomy remains provisional</span>
+        </div>
+      </section>
+
+      <section class="relation-controls" aria-label="Relation encoding controls">
+        <div class="relation-control-copy">
+          <span class="section-kicker">Encoding family</span>
+          <h2>Switch one semantic-channel strategy at a time</h2>
+          <p>The same five relations are redrawn immediately so hue, stroke rhythm and explicit tags can be judged independently and in restrained combinations.</p>
+        </div>
+        <div class="segmented relation-segmented" role="group" aria-label="Relation encoding family">
+          <button type="button" data-encoding="e0" aria-pressed="true">E0 Neutral</button>
+          <button type="button" data-encoding="e1" aria-pressed="false">E1 Hue</button>
+          <button type="button" data-encoding="e2" aria-pressed="false">E2 Stroke</button>
+          <button type="button" data-encoding="e3" aria-pressed="false">E3 Tag</button>
+          <button type="button" data-encoding="e4" aria-pressed="false">E4 Hue + Stroke</button>
+          <button type="button" data-encoding="e5" aria-pressed="false">E5 Hue + Tag</button>
+          <button type="button" data-encoding="e6" aria-pressed="false">E6 Hybrid</button>
+        </div>
+        <label class="toggle-row relation-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Disable ambient and transition motion while retaining relation meaning.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+        <div class="relation-summary">
+          <span>Current encoding</span>
+          <strong id="encoding-summary">Neutral control</strong>
+        </div>
+      </section>
+
+      <section class="relation-preview" aria-label="Semantic relation-class comparison">
+        <div class="relation-preview-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same A → B geometry · five provisional relation meanings</h2>
+          </div>
+          <span>Hover either node to inspect active-relation emphasis</span>
+        </div>
+
+        <div class="grammar-world relation-world" id="relation-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <div class="relation-lanes" id="relation-lanes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review relation-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge semantic distinction, legibility and noise</h2>
+        <div class="review-questions">
+          <p>Does hue provide useful rapid grouping, or does it compete too much with node-category color?</p>
+          <p>Are the stroke rhythms distinct enough at normal map scale without feeling like diagram notation?</p>
+          <p>Do explicit midpoint tags add useful certainty, or do they make the project map too text-heavy?</p>
+          <p>Does a combined strategy provide valuable redundancy, or merely duplicate information?</p>
+          <p>Which classes are naturally distinguishable, and which would need stronger or different treatment?</p>
+          <p>The final ADS relation taxonomy is not being selected here. This experiment first asks what visual grammar is capable of carrying semantic class safely.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./relation-class-grammar.js"></script>
+  </body>
+</html>
