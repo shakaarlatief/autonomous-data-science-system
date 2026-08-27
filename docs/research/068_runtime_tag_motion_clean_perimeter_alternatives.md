@@ -23,7 +23,7 @@ Per-box override
 
 The remaining concern is specifically the runtime-tag animation.
 
-Four observations now matter.
+Five observations now matter.
 
 ### Original rotating conic-gradient treatment
 
@@ -90,7 +90,38 @@ if the animation is still a moving dash footprint
     it still reads as a moving line / band
 ```
 
-The bounded question is therefore:
+### Second T7 implementation defect
+
+The second T7 replaced the travelling dash with a masked conic shade field, but human review found that the rendered result was completely static.
+
+Direct inspection identified the implementation defect:
+
+```text
+--t7-shade-angle
+    was registered with inherits: false
+
+animation
+    ran on .motion-runtime-tag
+
+paint field
+    lived on ::before and ::after pseudo-elements
+```
+
+Because the registered custom property did not inherit, the pseudo-elements kept the property's initial `0deg` value even while the parent animated. The animation was therefore real on the parent but invisible in the painted pseudo-elements.
+
+The correction changes the property to:
+
+```css
+@property --t7-shade-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+```
+
+This is an implementation repair, not a new visual hypothesis. The intended T7 design remains the same soft masked shade-flow mechanism.
+
+The bounded question remains:
 
 > What runtime-tag motion feels alive, premium and clearly dynamic while keeping the tag itself completely stationary and making the moving element read as a soft perimeter shade rather than a travelling line or band?
 
@@ -128,6 +159,12 @@ frontend/design-lab/work-unit-runtime-tag-motion.js
 ```
 
 Exact latest browser implementation target:
+
+```text
+08534f94c2f272f969159087de2797a23e36b330
+```
+
+Static second-T7 target remains preserved at:
 
 ```text
 6ee5b434e44f3276c5e799ae11958783b50bedef
@@ -216,13 +253,9 @@ whole perimeter gently brightens and relaxes
 
 This tests whether a premium dynamic tag needs directional circulation at all.
 
-### T7 Soft Shade Flow, second implementation
+### T7 Soft Shade Flow, masked-paint implementation
 
-T7 has now been reimplemented rather than merely retuned.
-
-The first T7 used synchronized dash footprints and therefore remained structurally too close to T5.
-
-The new T7 deliberately removes the travelling dash mechanism entirely.
+T7 is structurally different from T5 and the first T7 attempt.
 
 ```text
 tag geometry        fixed
@@ -251,18 +284,7 @@ inner layer
     less blur
 ```
 
-The gradient angle changes while the element itself remains stationary. This is the critical implementation distinction from the original rotating-gradient prototype:
-
-```text
-original
-    rotating geometry / pseudo-element
-    clipping became visually apparent
-
-new T7
-    fixed geometry
-    only the paint field changes orientation
-    rounded-rectangle mask remains fixed
-```
+The gradient angle changes while the element itself remains stationary. The custom angle property is inherited into the pseudo-elements so the moving paint field is actually visible.
 
 The intended perceptual result is:
 
@@ -323,7 +345,7 @@ This is important because an effect that looks attractive on one isolated tag ma
 
 The runtime state continues to influence motion cadence rather than changing the carrier architecture.
 
-For the new T7, the entire paint field remains coherent while only its circulation speed changes by runtime state.
+For T7, the entire paint field remains coherent while only its circulation speed changes by runtime state.
 
 T8 keeps its layered motion but scales the three layer speeds by runtime state so `Running` remains more energetic than `Waiting`, for example.
 
@@ -344,14 +366,14 @@ For T7, the moving masked paint layers disappear under Reduced motion. For T8, t
 ## 8. Current review questions
 
 ```text
-1. Does the second T7 finally stop reading like T5 Long Glide?
-2. Does T7 now read as a soft shade / illumination field moving through the border rather than as a line or band travelling around it?
-3. Does the fixed mask eliminate the rotating-box / clipping artifact while retaining the continuous movement quality of the original reference?
-4. Does T8 still offer anything preferable, or does its multi-stroke character now feel more technical than T7?
-5. Which treatment looks cleanest and most premium at actual runtime-tag scale?
-6. Which variants remain calm when several runtime tags coexist in the practical scene?
-7. Does Reduced motion preserve a clean static runtime tag?
-8. Should more than one tag-motion appearance survive as a user option, or should this converge to one preferred tag motion?
+1. Is repaired T7 visibly moving now?
+2. Does T7 stop reading like T5 Long Glide?
+3. Does T7 read as a soft shade / illumination field moving through the border rather than as a line or band travelling around it?
+4. Does the fixed mask eliminate the rotating-box / clipping artifact while retaining continuous movement?
+5. Does T8 still offer anything preferable, or does its multi-stroke character feel more technical than T7?
+6. Which treatment looks cleanest and most premium at actual runtime-tag scale?
+7. Which variants remain calm when several runtime tags coexist in the practical scene?
+8. Does Reduced motion preserve a clean static runtime tag?
 ```
 
 ## 9. Checkpoint hygiene
@@ -363,7 +385,7 @@ Reason:
 ```text
 Checkpoint 237 already owns the switchable runtime-carrier convergence gate
 +
-this experiment changes only the visual motion mechanism inside the runtime-tag carrier
+this change repairs and refines only the visual motion mechanism inside the runtime-tag carrier
 +
 no semantic ontology, promotion status, routing boundary or production authorization changes
 ```
