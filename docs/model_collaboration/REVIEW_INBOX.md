@@ -7,28 +7,27 @@
 ## Pending model obligation
 
 ```text
-MC-0004 Message 005
-Claude divergent deep-focus transition ideation
+none
 ```
 
-Request:
+Claude responded to MC-0004 Message 005 with:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
 ```
 
-Claude is asked to inspect the current F0-F8 transition browser, broaden the design space, propose materially distinct new mechanisms and combinations, use external inspiration where valuable, and recommend as much executable browser testing as the design space warrants. There is deliberately no artificial candidate-count limit.
+Claude response commit:
+
+```text
+204664ae1e732dd504174bbc62545e9a93adc85f
+```
+
+ChatGPT synthesized Message 006 into Research 076 and an executable factorized transition browser.
 
 ## Next actor
 
 ```text
-Claude
-```
-
-Expected response:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
+human project owner
 ```
 
 Current checkpoint:
@@ -40,19 +39,19 @@ Current checkpoint:
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
 ```
 
-Exact latest browser implementation target:
+Exact current browser implementation target:
 
 ```text
-afd15f52897a295788dc3a1d04b2d1b31ef707f9
+0390d8fef9d6647ae17ecd7c948159d0a5b603e5
 ```
 
-Current branch context when Message 005 was opened:
+Research:
 
 ```text
-065e6d7f71a0d3c21acb828963398a3dcabe0928
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
 ```
 
 ## Most recent accepted / working results
@@ -67,44 +66,56 @@ L0 Flat Fields                       provisional working default only
 
 L1-L8 internal-layout alternatives remain preserved for later review and are not rejected.
 
-Known fixture imperfection in the current deep-focus browser:
+## Claude-informed transition decomposition
+
+The active transition question is now factorized into:
 
 ```text
-accepted SEL2
-    four outside corner brackets
-
-current deep-focus fixture
-    two diagonal brackets only
+object continuity
+context retention / relevance
+entry choreography
+orientation aid
+return choreography
 ```
 
-This is explicitly not a semantic/design change and should be ignored by Claude when judging transition architecture.
-
-## Active deep-focus transition review
-
-Governing hierarchy:
+Current browser batches:
 
 ```text
-compact map work unit
-    -> SEL2 selected
-    -> X5 expanded
-    -> L0 working-default internal layout
-    -> specialist workspace / deep focus
+Batch A · Object continuity
+    A0  F2 Anchored Morph Control
+    A1  Anchored Center Stage
+    A2  Anchored Context Rail
+    A3  Camera Push-Through
+
+Batch B · Context relevance
+    B0  F6 Fixed Rail Control
+    B1  Neighbor-Aware Context
+    B2  Neighbor-Aware + Anchor
+
+Batch C · Staging and orientation
+    C0  Hard Replace Control
+    C1  Staged Two-Step Entry
+    C2  Compass + Soft World
+    C3  Hard Replace + Compass
+
+Large interaction studio
+    Symmetric return
+    Fast return
 ```
 
-Existing candidate architectures:
+The new fixture restores the accepted four-corner SEL2 treatment. The selected X5 card is deliberately off-center and anchored variants measure its real rendered rectangle rather than assuming a centered origin.
+
+T6 Adaptive Retention by Workspace Type remains preserved but deferred until multiple meaningful specialist-workspace types exist.
+
+## Current human gate
 
 ```text
-F0  Hard Replace
-F1  Center Stage
-F2  Anchored Morph
-F3  World Recede
-F4  Context Ribbon
-F5  Map Frame
-F6  Side Context Rail
-F7  Portal Lift
-F8  Layered Stage
+review Batch A for source-object continuity
+review Batch B for useful versus arbitrary retained context
+review Batch C for staging and minimal orientation
+compare symmetric versus fast return
+prefer mechanisms independently
+combine mechanisms later if useful
 ```
 
-The current human review is paused for Claude design-space expansion. After Message 006, ChatGPT will synthesize the ideas into browser-testable candidates rather than prematurely narrowing to F0-F8.
-
-Production `/cockpit` remains untouched. Specialist-workspace internals, exact motion, URL state, semantic zoom and production implementation remain unfrozen.
+Production `/cockpit` remains untouched. Specialist-workspace internals, exact motion, URL state, semantic zoom, neighbor-selection semantics and production implementation remain unfrozen.
