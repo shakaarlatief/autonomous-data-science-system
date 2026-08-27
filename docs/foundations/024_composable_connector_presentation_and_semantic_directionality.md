@@ -2,8 +2,8 @@
 
 **Date:** 2026-08-27  
 **Status:** Foundational product-interface direction  
-**Scope:** Durable separation between relationship semantics and user-configurable connector presentation in the Project Cockpit. Does not freeze the final semantic relation taxonomy, final arrow/cue vocabulary, production preference persistence, or graph implementation.  
-**Primary evidence:** Research 053 through Research 055, Checkpoints 225 through 226, and repeated human browser review in MC-0004 Phase C.  
+**Scope:** Durable separation between relationship semantics, connector treatment, and hover behavior in the Project Cockpit. Does not freeze the final semantic relation taxonomy, production preference persistence, or graph implementation.  
+**Primary evidence:** Research 053 through Research 056, Checkpoints 225 through 227, and repeated human browser review in MC-0004 Phase C.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
 **Interaction session:** chatgpt-08  
@@ -11,15 +11,15 @@
 
 ## Purpose
 
-Browser evaluation of connector treatments showed that several high-quality mechanisms are useful for different users and working styles. Clean curves, micro dots, frame sockets and hover attachment emphasis do not need to compete for one universal visual winner.
+Browser evaluation showed that clean curves, micro dots, frame sockets, direction arrows, and hover-based reveal/emphasis are all useful, but they do not belong in one visually stacked connector treatment.
 
 The durable connector principle is:
 
-> **ADS owns relationship meaning and directionality; the user may personalize approved connector-presentation dimensions that do not alter that meaning.**
+> **ADS owns relationship meaning and directionality; connector treatment and hover behavior are separate presentation mechanisms.**
 
-This extends Foundation 023 from work-unit appearance into relationship presentation.
+This extends Foundation 023 from work-unit appearance into relationship presentation while preserving semantic safety.
 
-## 1. Semantic relation state and connector presentation are separate layers
+## 1. Semantic relation state and presentation are separate layers
 
 The architecture should preserve:
 
@@ -32,11 +32,17 @@ semantic relation model
     provenance / evidence where applicable
     runtime or methodological semantics where applicable
 
-connector presentation profile
-    rest attachment treatment
-    hover attachment emphasis
-    approved line / cue styling
-    other future non-semantic visual preferences
+connector treatment
+    clean line
+    micro dots
+    frame sockets
+    direction arrows when semantically appropriate
+    other future approved terminal treatments
+
+hover behavior
+    persistent at rest
+    reveal on hover / focus
+    intensify on hover / focus
 ```
 
 Changing presentation must never mutate the semantic relation model.
@@ -56,44 +62,89 @@ The exact future data model remains unfrozen, but the principle is fixed:
 
 ```text
 user appearance preference
-    may change HOW direction is drawn
+    may change approved presentation behavior
 
 user appearance preference
     may not change WHETHER the relation is directed
     may not reverse source and target
-    may not hide required direction so completely that meaning is lost
+    may not invent direction on an undirected relation
 ```
 
-A directed relation must remain recognizably directed in every approved appearance profile.
-
-## 3. Connector presentation is compositional
-
-Human review rejected the need for one universal K0-K4 winner.
-
-The useful mechanisms are better interpreted as orthogonal presentation dimensions:
+When direction arrows are used, arrow placement follows the semantic relation exactly:
 
 ```text
-Rest attachment
+undirected       no arrow
+A -> B           arrow at B
+A <- B           arrow at A
+A <-> B          arrows at both ends
+```
+
+## 3. One terminal treatment at a time
+
+Human review clarified that useful connector mechanisms should not be visually stacked without a reason.
+
+The preferred model is:
+
+```text
+connector treatment
+    choose one active terminal treatment for the relation
+
+examples
     Clean
     Micro dots
     Frame sockets
-
-Hover attachment emphasis
-    Off
-    On
-
-Direction cue presentation
-    semantically required when the relation is directed
-    visual style may become configurable later if all approved styles preserve meaning
+    Direction arrows
 ```
 
-This means K0, K1, K2 and K4 can coexist as user-facing appearance choices rather than mutually exclusive product directions.
+This explicitly rejects unnecessary combinations such as:
 
-K3 contributes the direction-cue mechanism, but its semantic presence is not merely an appearance toggle.
+```text
+arrow + dot
+arrow + socket
+socket + dot
+```
 
-## 4. Proven connector behavior
+unless a future semantic requirement gives such a combination a clear purpose and later evidence validates it.
 
-Current browser evidence supports these interaction invariants:
+The connector line itself remains common across treatments.
+
+## 4. Hover is an orthogonal interaction mechanism
+
+Hover is not a fifth terminal symbol.
+
+It is an interaction behavior that may operate on whichever connector treatment is active:
+
+```text
+selected treatment
+    Clean
+    Micro dots
+    Frame sockets
+    Direction arrows
+
+hover / focus behavior
+    reveal selected treatment
+    or intensify selected treatment
+    or leave it persistent and only emphasize the relation
+```
+
+Therefore:
+
+```text
+hover + dots
+    means dots can reveal / intensify on hover
+
+hover + sockets
+    means sockets can reveal / intensify on hover
+
+hover + arrows
+    means arrows can reveal / intensify on hover if semantic-safety and accessibility requirements are satisfied
+```
+
+The product must preserve non-visual and focus-accessible access to semantic direction even when visual progressive disclosure is used.
+
+## 5. Proven connector geometry and interaction behavior
+
+Current browser evidence supports these invariants:
 
 ```text
 connector curve
@@ -101,7 +152,7 @@ connector curve
     anchors to actual rendered node geometry
     follows temporary H4 hover lift / release
 
-Micro dots / Hover ports
+Micro dots
     render above the work-unit perimeter
     sit mostly outside the card with only a small overlap
 
@@ -110,14 +161,20 @@ Frame sockets
     use a neutral outline at rest
     adopt the active relation color and restrained glow when highlighted
 
+Direction arrows
+    reuse the restrained K3-style chevron
+    arrow tip docks directly to the relevant work-unit edge
+    reverse direction uses the exact same mechanism at the opposite endpoint
+    bidirectional relations use the same arrow at both endpoints
+
 Hover relation emphasis
-    may reveal or intensify attachment points
-    must remain subordinate to semantic direction cues
+    is separate from terminal type
+    may reveal or intensify the selected treatment
 ```
 
-These are product-design evidence, not yet production component contracts.
+These remain product-design evidence rather than final production component contracts.
 
-## 5. Strong defaults and curated choice
+## 6. Strong defaults and curated choice
 
 Configurability does not mean an unlimited connector-style editor.
 
@@ -125,25 +182,25 @@ ADS should provide:
 
 ```text
 a strong default
-small numbers of validated presentation choices
+small numbers of validated treatment choices
 useful presets
 clear reset behavior
 accessible combinations
 semantic-safety validation
 ```
 
-A likely clean default can remain visually restrained while advanced users choose richer attachment treatments.
+Some connector treatments may be constrained by relation semantics. For example, a direction-arrow treatment cannot invent direction for an undirected relation.
 
-## 6. Preference hierarchy
+## 7. Preference hierarchy
 
-Foundation 023's preference hierarchy extends naturally to connectors:
+Foundation 023's preference hierarchy extends naturally to connector presentation:
 
 ```text
 user appearance profile
-    default connector presentation across projects
+    default connector treatment / hover behavior
 
 project appearance override
-    optional project-specific connector presentation
+    optional project-specific preference
 
 semantic relation state
     independent from both
@@ -151,38 +208,39 @@ semantic relation state
 
 Production persistence, synchronization, collaboration behavior and migration/versioning remain open.
 
-## 7. Accessibility and semantic safety override preference
+## 8. Accessibility and semantic safety override preference
 
 ADS may constrain or adapt a requested connector appearance when necessary for:
 
 ```text
 contrast / readability
 reduced motion
-focus visibility
+keyboard / focus visibility
 semantic direction distinguishability
 large-project density
 performance
 screen-reader / non-visual representation
 ```
 
-A user-configurable style must never make direction, relation state or methodological meaning materially ambiguous.
+A presentation preference must never change the underlying relation semantics.
 
-## 8. Current evidence boundary
+## 9. Current evidence boundary
 
 This foundation promotes:
 
 ```text
-connector presentation is user-configurable within approved bounds
+connector presentation is configurable within approved bounds
 semantic relation meaning remains system-owned
 directionality remains system-owned
-presentation dimensions should be compositional rather than monolithic themes
+terminal treatment and hover behavior are separate mechanisms
+only one terminal treatment should normally be active at a time
+arrow placement follows semantic direction exactly
 ```
 
 It does not promote:
 
 ```text
 final relation taxonomy
-final direction-cue shape
 final line-color semantics
 final dashed / solid semantics
 final dependency / evidence / lineage vocabulary
