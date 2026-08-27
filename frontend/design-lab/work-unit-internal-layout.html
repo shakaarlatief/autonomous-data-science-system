@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-layout-style="l0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Expanded Work-Unit Internal Layout</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-internal-layout.css" />
+  </head>
+  <body>
+    <header class="lab-header internal-layout-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02M · Expanded Work-Unit Internal Layout</span>
+        <h1>Inside the accepted X5 two-axis expansion, how should contextual information be organized?</h1>
+        <p>The expansion geometry is now held constant: one balanced 390 × 210 work-unit object, with no surrounding-context recession. This slice varies only the internal information layout. The semantic field set remains provisional.</p>
+      </div>
+      <div class="held-card">
+        <span>Held geometry</span>
+        <strong>X5 two-axis expansion · no context recession</strong>
+        <small>SEL2 selection, A3 attention, category, disposition and operational status remain independent.</small>
+      </div>
+    </header>
+
+    <main class="layout-main">
+      <section class="layout-intro">
+        <div>
+          <span class="section-kicker">Bounded information-design question</span>
+          <h2>Compare information hierarchy, not final work-unit schema</h2>
+          <p>Every variant uses the same six provisional pieces of information. The goal is to learn which internal composition makes an expanded work unit easiest to scan while still feeling like a map object rather than a miniature workspace.</p>
+        </div>
+        <div class="principle-grid">
+          <span>Purpose</span><span>Constraint</span><span>Evidence</span><span>Next action</span><span>Blocking cause</span><span>Recent activity</span>
+        </div>
+      </section>
+
+      <section class="layout-preview">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same selected Current Investigation + BLOCKED + HIGH attention · nine internal layouts</h2>
+            <p>Outer geometry, colors, selection brackets, priority bars and operational status are held constant.</p>
+          </div>
+          <span>Judge scan path, hierarchy and density</span>
+        </div>
+        <div class="layout-grid" id="layout-grid"></div>
+      </section>
+
+      <section class="layout-practical">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Interactive comparison</span>
+            <h2>Switch only the internal layout inside the same expanded work unit</h2>
+            <p>The surrounding map remains visible and unchanged so the expanded card stays clearly below specialist-workspace depth.</p>
+          </div>
+          <span id="layout-summary">L0 · Flat Fields</span>
+        </div>
+        <div class="layout-controls" id="layout-controls"></div>
+        <div class="practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <svg class="practical-relations" viewBox="0 0 1400 560" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 260 145 C 420 145, 445 250, 535 250" />
+            <path d="M 865 250 C 970 250, 990 145, 1135 145" />
+            <path d="M 700 360 C 700 430, 880 455, 1010 455" />
+          </svg>
+          <div class="context-node q"><span>QUESTION / BLOCKER</span><strong>Resolve target definition</strong><small>CURRENT · HUMAN</small></div>
+          <div class="context-node v"><span>VALIDATION / ANALYSIS</span><strong>Chronological validation</strong><small>NEXT</small></div>
+          <div class="context-node m"><span>MODEL WORK</span><strong>Boosted candidate</strong><small>CURRENT · FAIL</small></div>
+          <div id="practical-expanded"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt layout-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Choose the information composition, not the final information ontology</h2>
+        <div class="review-questions">
+          <p>Which layout lets you understand purpose, obstruction, evidence and next action fastest?</p>
+          <p>Which feels like an expanded work unit rather than a small dashboard?</p>
+          <p>Which still leaves obvious room for provenance and richer evidence later?</p>
+          <p>Which scan path remains robust if text becomes longer?</p>
+          <p>Prefer, reject, combine or refine.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-internal-layout.js"></script>
+  </body>
+</html>
