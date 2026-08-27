@@ -50,6 +50,8 @@ across representative Blocked, Active, Recommended, Completed, Deferred and Futu
 
 The goal is to determine whether P6 becomes semantically or visually confusing when category hue and disposition hue coexist, and whether P7 is cleaner without losing enough disposition clarity to matter.
 
+Practical connectors use rendered geometry and automatically choose horizontal or vertical attachment when card placement requires it.
+
 ## Browser route
 
 ```text
@@ -59,7 +61,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
 Research:
