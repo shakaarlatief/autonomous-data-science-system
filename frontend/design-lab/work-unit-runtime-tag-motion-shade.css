@@ -1,0 +1,125 @@
+/* Reference-inspired runtime tag shade-flow refinements.
+ *
+ * These candidates keep the tag geometry and text completely stationary.
+ * Motion is carried by broad, soft perimeter illumination rather than by a
+ * rotating internal box or a single crisp tracer segment.
+ */
+
+.tag-motion-segmented {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.tag-motion-segmented button:last-child {
+  grid-column: auto;
+}
+
+.tag-motion-world {
+  height: 1140px;
+}
+
+.tag-motion-rows {
+  grid-template-rows: repeat(9, 1fr);
+}
+
+/* T7: Soft Shade Flow.
+ * Three co-located strokes form one broad moving light wash. The widest layer
+ * is very soft, the middle layer provides body, and the narrowest layer keeps
+ * enough definition for the runtime color to remain legible. All three travel
+ * together, so the effect reads as one shade rather than as separate tracers.
+ */
+[data-tag-motion="t7"] .tag-flow-a,
+[data-tag-motion="t7"] .tag-flow-b,
+[data-tag-motion="t7"] .tag-flow-c {
+  stroke-linecap: round;
+  stroke-dasharray: 42 58;
+  animation-name: tag-flow-travel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+[data-tag-motion="t7"] .tag-flow-a {
+  opacity: 0.13;
+  stroke-width: 5.2;
+  filter: blur(1.4px) drop-shadow(0 0 4px rgba(var(--runtime-rgb), 0.16));
+}
+
+[data-tag-motion="t7"] .tag-flow-b {
+  opacity: 0.24;
+  stroke-width: 3.2;
+  filter: blur(0.75px) drop-shadow(0 0 3px rgba(var(--runtime-rgb), 0.18));
+}
+
+[data-tag-motion="t7"] .tag-flow-c {
+  opacity: 0.58;
+  stroke-width: 1.45;
+  filter: blur(0.28px) drop-shadow(0 0 2.5px rgba(var(--runtime-rgb), 0.28));
+}
+
+/* T8: Layered Wash.
+ * A long diffuse wash and a shorter brighter concentration move at slightly
+ * different rates. The overlap changes continuously, giving the border a more
+ * organic, fluid illuminated region without rotating any rectangular geometry.
+ */
+[data-tag-motion="t8"] .tag-flow-a {
+  opacity: 0.11;
+  stroke-width: 5.4;
+  stroke-linecap: round;
+  stroke-dasharray: 66 34;
+  filter: blur(1.55px) drop-shadow(0 0 4px rgba(var(--runtime-rgb), 0.15));
+  animation: tag-flow-travel 3.8s linear infinite;
+}
+
+[data-tag-motion="t8"] .tag-flow-b {
+  opacity: 0.23;
+  stroke-width: 3.1;
+  stroke-linecap: round;
+  stroke-dasharray: 44 56;
+  filter: blur(0.8px) drop-shadow(0 0 3px rgba(var(--runtime-rgb), 0.18));
+  animation: tag-flow-travel 3.25s linear infinite reverse;
+}
+
+[data-tag-motion="t8"] .tag-flow-c {
+  opacity: 0.48;
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-dasharray: 24 76;
+  filter: blur(0.35px) drop-shadow(0 0 2.5px rgba(var(--runtime-rgb), 0.24));
+  animation: tag-flow-travel 2.85s linear infinite;
+}
+
+/* Preserve runtime-sensitive pacing for the single-flow T7 candidate. */
+[data-runtime="queued"][data-tag-motion="t7"] .tag-flow { animation-duration: 3.1s; }
+[data-runtime="running"][data-tag-motion="t7"] .tag-flow { animation-duration: 1.9s; }
+[data-runtime="waiting"][data-tag-motion="t7"] .tag-flow { animation-duration: 3.7s; }
+[data-runtime="human"][data-tag-motion="t7"] .tag-flow { animation-duration: 2.7s; }
+[data-runtime="failed"][data-tag-motion="t7"] .tag-flow { animation-duration: 2.15s; }
+
+/* T8 remains intentionally more fluid, but its overall cadence still tracks
+ * runtime urgency by scaling all three layers together per state.
+ */
+[data-runtime="queued"][data-tag-motion="t8"] .tag-flow-a { animation-duration: 4.3s; }
+[data-runtime="queued"][data-tag-motion="t8"] .tag-flow-b { animation-duration: 3.7s; }
+[data-runtime="queued"][data-tag-motion="t8"] .tag-flow-c { animation-duration: 3.3s; }
+
+[data-runtime="running"][data-tag-motion="t8"] .tag-flow-a { animation-duration: 3.0s; }
+[data-runtime="running"][data-tag-motion="t8"] .tag-flow-b { animation-duration: 2.55s; }
+[data-runtime="running"][data-tag-motion="t8"] .tag-flow-c { animation-duration: 2.25s; }
+
+[data-runtime="waiting"][data-tag-motion="t8"] .tag-flow-a { animation-duration: 4.9s; }
+[data-runtime="waiting"][data-tag-motion="t8"] .tag-flow-b { animation-duration: 4.2s; }
+[data-runtime="waiting"][data-tag-motion="t8"] .tag-flow-c { animation-duration: 3.7s; }
+
+[data-runtime="human"][data-tag-motion="t8"] .tag-flow-a { animation-duration: 3.8s; }
+[data-runtime="human"][data-tag-motion="t8"] .tag-flow-b { animation-duration: 3.2s; }
+[data-runtime="human"][data-tag-motion="t8"] .tag-flow-c { animation-duration: 2.8s; }
+
+[data-runtime="failed"][data-tag-motion="t8"] .tag-flow-a { animation-duration: 3.15s; }
+[data-runtime="failed"][data-tag-motion="t8"] .tag-flow-b { animation-duration: 2.65s; }
+[data-runtime="failed"][data-tag-motion="t8"] .tag-flow-c { animation-duration: 2.3s; }
+
+/* Reduced motion remains a semantic fallback, not a separate visual state. */
+html[data-reduced="on"] [data-tag-motion="t7"] .tag-flow,
+html[data-reduced="on"] [data-tag-motion="t8"] .tag-flow {
+  animation: none !important;
+  opacity: 0 !important;
+}

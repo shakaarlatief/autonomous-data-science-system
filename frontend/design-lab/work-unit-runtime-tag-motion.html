@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-tag-motion="t2">
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-tag-motion="t7">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
     <link rel="stylesheet" href="./work-unit-runtime-carrier-switch.css" />
     <link rel="stylesheet" href="./work-unit-runtime-tag-motion.css" />
+    <link rel="stylesheet" href="./work-unit-runtime-tag-motion-shade.css" />
   </head>
   <body>
     <header class="lab-header grammar-header tag-motion-header">
       <div class="lab-title-block">
         <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02H · Runtime Tag Motion Refinement</span>
         <h1>What is the cleanest way to make a runtime tag feel alive without rotating or clipping a second box inside it?</h1>
-        <p>The switchable runtime-carrier architecture remains held. This page isolates only the tag-motion question. Every candidate keeps the tag geometry and text stationary and changes only how energy moves through the existing perimeter.</p>
+        <p>The switchable runtime-carrier architecture remains held. This page isolates only the tag-motion question. Every candidate keeps the tag geometry and text stationary. The latest reference-inspired candidates make a broad soft shade flow around the real perimeter instead of sending a clearly defined small line around it.</p>
       </div>
       <div class="tag-motion-held-state">
         <span>Held runtime-carrier architecture</span>
@@ -32,13 +33,13 @@
         <div>
           <span class="section-kicker">Bounded visual question</span>
           <h2>Compare clean perimeter-motion families at real tag scale</h2>
-          <p>The previous rotating conic-gradient treatment looked lively but exposed clipped geometry. The first replacement fixed that by moving one small tracer. This round keeps both as evidence and explores several stronger but still clean line-motion mechanisms.</p>
+          <p>The earlier rotating treatment felt lively but exposed clipped rotating geometry. The first fixed-perimeter replacement became too literal as a small travelling line. T7 and T8 now test a softer reference-inspired idea: moving illumination and shade along the border, with no moving box and no crisp tracer as the dominant read.</p>
         </div>
         <div class="grammar-principles" aria-label="Tag motion constraints">
           <span>Tag never rotates</span>
           <span>Text never moves</span>
-          <span>Geometry stays inside border</span>
-          <span>Motion belongs to perimeter</span>
+          <span>Geometry stays on real border</span>
+          <span>Shade can flow softly</span>
           <span>Reduced motion stays readable</span>
           <span>No runtime stays empty</span>
         </div>
@@ -53,11 +54,13 @@
         <div class="segmented tag-motion-segmented" role="group" aria-label="Practical runtime tag motion family">
           <button type="button" data-tag-motion="t0" aria-pressed="false">T0 Static</button>
           <button type="button" data-tag-motion="t1" aria-pressed="false">T1 Tracer</button>
-          <button type="button" data-tag-motion="t2" aria-pressed="true">T2 Comet Flow</button>
+          <button type="button" data-tag-motion="t2" aria-pressed="false">T2 Comet Flow</button>
           <button type="button" data-tag-motion="t3" aria-pressed="false">T3 Perimeter Current</button>
           <button type="button" data-tag-motion="t4" aria-pressed="false">T4 Twin Orbit</button>
           <button type="button" data-tag-motion="t5" aria-pressed="false">T5 Long Glide</button>
           <button type="button" data-tag-motion="t6" aria-pressed="false">T6 Soft Pulse</button>
+          <button type="button" data-tag-motion="t7" aria-pressed="true">T7 Soft Shade Flow</button>
+          <button type="button" data-tag-motion="t8" aria-pressed="false">T8 Layered Wash</button>
         </div>
         <label class="toggle-row tag-motion-toggle">
           <span>
@@ -68,7 +71,7 @@
         </label>
         <div class="tag-motion-summary">
           <span>Practical scene</span>
-          <strong id="tag-motion-summary">T2 · Comet Flow</strong>
+          <strong id="tag-motion-summary">T7 · Soft Shade Flow</strong>
           <small>Only the runtime-tag motion changes.</small>
         </div>
       </section>
@@ -77,7 +80,7 @@
         <div class="tag-motion-preview-header">
           <div>
             <span class="section-kicker">Controlled comparison</span>
-            <h2>Same Current Investigation + RUN · seven perimeter-motion treatments</h2>
+            <h2>Same Current Investigation + RUN · nine perimeter-motion treatments</h2>
           </div>
           <span>Everything except tag motion held constant</span>
         </div>
@@ -106,7 +109,7 @@
             <span>Top-right = disposition</span>
             <span>Bottom-right = runtime tag</span>
             <span>Motion only on live runtime</span>
-            <span>Selected T0-T6 applies globally here</span>
+            <span>Selected T0-T8 applies globally here</span>
           </div>
         </div>
 
@@ -135,12 +138,12 @@
         <h2>Choose the motion language, not the final runtime ontology</h2>
         <div class="review-questions">
           <p>Which motion feels cleanest and most premium at actual tag scale?</p>
-          <p>Does T2 Comet Flow feel more intentional than the very small T1 tracer?</p>
-          <p>Does T3 Perimeter Current look like the border itself is flowing, or does it become too technical?</p>
-          <p>Does T4 Twin Orbit create useful rhythm or unnecessary busyness?</p>
-          <p>Does T5 Long Glide give enough movement without resembling a loading bar?</p>
+          <p>Does T7 Soft Shade Flow capture the reference-like moving color shade without reading as a small travelling line?</p>
+          <p>Does T8 Layered Wash feel more organic and fluid than T7, or does the extra layered movement become unnecessarily busy?</p>
+          <p>Do T2 Comet Flow, T3 Perimeter Current or T5 Long Glide still offer anything preferable after seeing the softer shade-based treatments?</p>
           <p>Is T6 Soft Pulse calmer and nicer, or too weak because it has no directional travel?</p>
           <p>In the practical scene, do multiple animated tags remain calm enough to coexist?</p>
+          <p>Does Reduced motion preserve a clean static runtime tag without relying on animation for meaning?</p>
         </div>
       </section>
     </main>

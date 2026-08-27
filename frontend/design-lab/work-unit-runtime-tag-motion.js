@@ -46,6 +46,18 @@ const motionVariants = [
     label: 'Soft Pulse',
     description: 'The full border gently energizes and relaxes without directional travel.',
   },
+  {
+    id: 't7',
+    code: 'T7',
+    label: 'Soft Shade Flow',
+    description: 'A broad blurred illumination band moves around the perimeter so motion reads as shade flowing through the border, not as a small travelling line.',
+  },
+  {
+    id: 't8',
+    code: 'T8',
+    label: 'Layered Wash',
+    description: 'Several soft perimeter washes drift at slightly different phases, creating a more organic moving concentration of light without rotating any geometry.',
+  },
 ]
 
 const runtimeStates = {
@@ -166,7 +178,7 @@ function renderRows() {
 function renderPracticalScene() {
   if (!practicalHost) return
 
-  const motion = html.dataset.practicalTagMotion || 't2'
+  const motion = html.dataset.practicalTagMotion || 't7'
   practicalHost.innerHTML = practicalFixture.map((item) => nodeMarkup({
     category: item.category,
     disposition: item.disposition,
@@ -247,12 +259,12 @@ function setupControls() {
 }
 
 function updateControls() {
-  const motion = html.dataset.practicalTagMotion || 't2'
+  const motion = html.dataset.practicalTagMotion || 't7'
   for (const button of document.querySelectorAll('button[data-tag-motion]')) {
     button.setAttribute('aria-pressed', String(button.dataset.tagMotion === motion))
   }
 
-  const variant = motionVariants.find((item) => item.id === motion) || motionVariants[2]
+  const variant = motionVariants.find((item) => item.id === motion) || motionVariants[7]
   if (summary) summary.textContent = `${variant.code} · ${variant.label}`
 
   const reducedToggle = document.querySelector('#reduced-toggle')
