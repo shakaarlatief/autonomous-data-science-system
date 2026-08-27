@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 240  
+**Checkpoint:** 241  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars are now the accepted current Phase-C visual treatment for elevated attention priority. The active gate has moved to persistent work-unit selection as a distinct interaction state that must remain separate from transient hover, keyboard focus, current-process focus membership, attention priority and deep-focus workspace entry.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars are accepted for elevated attention priority, SEL2 Corner Brackets are accepted for persistent compact-node selection after repair of the clipping defect, and the active gate now evaluates the intermediate contextual-detail layer between selected compact work units and the full specialist workspace.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,31 +29,37 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
-docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
-frontend/design-lab/work-unit-selection-state.html
-frontend/design-lab/work-unit-selection-state.css
-frontend/design-lab/work-unit-selection-state.js
+docs/checkpoints/241_selection_sel2_accepted_contextual_detail_expansion_review_opened.md
+docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
+frontend/design-lab/work-unit-detail-expansion.html
+frontend/design-lab/work-unit-detail-expansion.css
+frontend/design-lab/work-unit-detail-expansion.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-selection-state.html
+http://localhost:5173/design-lab/work-unit-detail-expansion.html
 ```
 
-Exact current selection-browser implementation target:
+Exact initial browser implementation target:
 
 ```text
-3bac1fea4ca820c89a7bc4516497a4c33164ec5d
+0457a27d8e80863738ce3f75aeb11bd4f5c1155d
 ```
 
-The attention-priority browser in which A3 was reviewed and selected remains preserved at:
+Predecessor selection evidence remains preserved at:
 
 ```text
-http://localhost:5173/design-lab/work-unit-attention-priority.html
+docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
+docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
+frontend/design-lab/work-unit-selection-state.html
+```
 
-767c66f76974d3c0a851de0dfa17c502817a4b12
+Exact repaired selection-browser target:
+
+```text
+e7304fe834d86166d843fda7e1df0f4ddb1f793a
 ```
 
 Production `/cockpit` remains untouched.
@@ -68,21 +74,12 @@ The rapid-iteration preservation audit remains closed.
 repository preservation architecture   SOUND
 structural overhaul                     NOT WARRANTED
 new knowledge subsystem                 NOT JUSTIFIED
-checkpoint metadata drift               FOUND AND REPAIRED
 checkpoint granularity                  HARDENED
 checkpoint validation closure           HARDENED
 active-branch routing validation        HARDENED
 ```
 
-Checkpoints 223-234 were repaired to the provider-neutral metadata contract without rewriting substantive history. Verified global checkpoint metadata validation after repair:
-
-```text
-d2541418a68b9bfd244ec89e4e951e630b3bb61b
-    Checkpoint metadata / validate
-    SUCCESS
-```
-
-Checkpoint 240 is warranted because the attention-priority review gate received explicit human closure and the active interaction/review boundary changed to persistent selection.
+Historical research and checkpoint records remain the durable evidence layer. Current routing documents summarize the active boundary and do not replace that history.
 
 ---
 
@@ -98,11 +95,11 @@ Reduced in-box resting light        SELECTED preferred working baseline
 Current category markers and colors:
 
 ```text
-Question / Blocker        circle     yellow
-Investigation             square     green
-Validation / Analysis     triangle   blue
-Model Work                diamond    red
-Evaluation                plus       purple
+Question / Blocker        circle / yellow
+Investigation             square / green
+Validation / Analysis     triangle / blue
+Model Work                diamond / red
+Evaluation                plus / purple
 ```
 
 Foundation 023 preserves:
@@ -111,13 +108,6 @@ Foundation 023 preserves:
 ADS owns semantic meaning
 +
 user controls approved non-semantic appearance dimensions
-```
-
-Current proven appearance dimensions:
-
-```text
-Box shape       Normal / Subtle shapes
-Micro design    None / Micro material / Micro light
 ```
 
 Foundation 024 preserves connector treatment, hover/focus and semantic directionality as separate dimensions.
@@ -141,22 +131,21 @@ Relation-class visual carrier:
 
 ```text
 E5  Hue + Tag
-    SELECTED / sufficiently settled for current Phase C
 ```
 
-Latest accepted relation-class target:
+Latest accepted relation-class implementation:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-Stroke rhythm remains reserved for a different future line-level semantic dimension and has no assigned meaning.
+Stroke rhythm remains reserved for another future line-level semantic dimension and has no assigned meaning.
 
 ---
 
 # Project disposition and current-process focus
 
-Accepted project-disposition direction:
+Human-selected project-disposition direction:
 
 ```text
 P7  Neutral Tag + Tone
@@ -176,7 +165,7 @@ Exact accepted P7 target:
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-Accepted current-process focus direction:
+Current-process focus direction:
 
 ```text
 Context visible
@@ -185,7 +174,7 @@ Edit focus set
 Reset example
 ```
 
-Users can add/remove work units from the current focus set without deleting work or changing project disposition.
+Users can add/remove work units from the current focus set without deleting work or changing disposition.
 
 Exact accepted editable-focus target:
 
@@ -197,9 +186,20 @@ Final focus-set ownership, persistence, automatic suggestions and multiple named
 
 ---
 
-# Runtime and operational-status result
+# Runtime and BLOCKED result
 
 Runtime remains conditional / episode-scoped:
+
+```text
+PROJECT DISPOSITION
+    where does this work stand in the project?
+
+RUNTIME
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
+```
+
+Critical distinction:
 
 ```text
 No runtime
@@ -209,84 +209,55 @@ Idle runtime
     an execution episode exists but is doing nothing
 ```
 
-Working runtime fixtures remain:
+Current Phase-C carrier architecture:
 
 ```text
-NONE    No runtime
-QUEUE   Queued
-RUN     Running
-WAIT    Waiting
-HUMAN   Waiting for Human
-FAIL    Failed current attempt
-```
-
-Accepted runtime-carrier architecture:
-
-```text
-exactly one carrier per live-runtime work unit
+exactly one operational runtime carrier per live-runtime work unit
 
 Dot + dynamic ring
 or
-T7 Soft Shade runtime tag
-
-GLOBAL
-    switch every live-runtime work unit
-    clear local overrides
-
-LOCAL
-    click visible carrier
-    switch only that work unit
+T7 Soft Shade tag
 ```
 
-Accepted T7 target:
+The blocker model remains:
 
 ```text
-08534f94c2f272f969159087de2797a23e36b330
+BLOCKER
+    cause / unresolved work or dependency preventing progress
+
+BLOCKS
+    relationship from cause to affected work
+
+BLOCKED
+    resulting current progress constraint on affected work
+
+FAIL
+    failed current execution attempt
 ```
 
-Accepted switchable-runtime browser with T7 integrated:
-
-```text
-fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
-```
-
-BLOCKED remains semantically distinct from runtime while reusing the operational-status presentation slot.
-
-```text
-BLOCKER  = cause
-BLOCKS   = relation
-BLOCKED  = affected work cannot proceed
-FAIL     = failed current execution attempt
-```
+One bottom-right operational-status presentation slot may show a live runtime state or BLOCKED without merging their underlying semantics.
 
 Accepted compact red mapping:
 
 ```text
 BLOCKED
+    red core dot
     sharper non-circular dynamic ring
 
 FAIL
+    red core dot
     smoother circular dynamic ring
 ```
 
-Exact accepted BLOCKED/status target:
+Exact accepted shared BLOCKED/status target:
 
 ```text
 88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
-Final runtime ontology, progress-constraint ontology, transition rules and production persistence remain unfrozen.
-
 ---
 
 # Attention priority result from Slice 02J
-
-The bounded concept remains:
-
-```text
-ATTENTION PRIORITY
-    among visible work, which work deserves more attention now?
-```
 
 The project owner selected:
 
@@ -294,120 +265,167 @@ The project owner selected:
 A3  Signal Bars
 ```
 
-Current accepted Phase-C treatment:
+Current Phase-C direction:
 
 ```text
 HIGH attention
     three ascending micro-bars
     near the upper-right frame
-    spatially separated from top-right disposition and bottom-right operational status
+    independent of category, disposition, status and current-process focus
 ```
 
-Exact reviewed browser target:
+Exact browser target in which A3 was reviewed and selected:
 
 ```text
 767c66f76974d3c0a851de0dfa17c502817a4b12
 ```
 
-This does not freeze whether priority is binary, ordinal or scored, nor its ownership, persistence, relationship to relevance or relationship to scheduling.
+The final priority ontology, scale, ownership, persistence and relationship to relevance/scheduling remain unfrozen.
 
 ---
 
-# Active Slice 02K: persistent work-unit selection
+# Persistent selection result from Slice 02K
 
-The active bounded concept is:
+The first selection implementation was not valid evidence for external selection carriers because the decorations were mounted inside `.node-surface` and clipped by its `overflow: hidden` boundary.
+
+The repair moved selection geometry to the `.grammar-node` layer while preserving surface clipping for internal card effects.
+
+Exact repaired selection-browser target:
 
 ```text
-SELECTION
-    which work unit has the user explicitly chosen for inspection or action?
+e7304fe834d86166d843fda7e1df0f4ddb1f793a
 ```
 
-Selection is deliberately separate from:
+After reviewing the repaired browser, the project owner selected:
 
 ```text
-HOVER
-    transient pointer encounter
-
-KEYBOARD FOCUS
-    accessibility / input navigation
-
-CURRENT-PROCESS FOCUS MEMBERSHIP
-    membership in the emphasized process set
-
-ATTENTION PRIORITY
-    elevated attention using A3 Signal Bars
-
-DEEP FOCUS / SPECIALIST WORKSPACE
-    higher interaction depth entered from the map
-```
-
-## Candidate visual treatments
-
-```text
-SEL0  Neutral Control
-SEL1  Outer Keyline
 SEL2  Corner Brackets
-SEL3  Inner Frame
-SEL4  Edge Ticks
-SEL5  Selection Plate
-SEL6  Soft Contour
-SEL7  Double Corner
-SEL8  Keyline + Corners
 ```
 
-Controlled fixture:
+Current Phase-C selection direction:
 
 ```text
-category       Investigation
-disposition    Current
-status         RUN
-priority       HIGH / A3 Signal Bars
-selection      SELECTED
+SELECTED
+    four compact neutral-cool corner brackets
+    outside the rendered work-unit frame
+    persistent after pointer exit
 ```
 
-Practical interaction proof:
+Selection remains distinct from:
 
 ```text
-click node
-    -> transfer persistent selection
-
-Enter / Space on keyboard-focused node
-    -> select it
-
-Clear selection
-    -> remove selected state
-
-pointer hover
-    -> H4 remains transient and independent
+transient H4 hover
+keyboard focus
+current-process focus membership
+attention priority
+deep-focus / specialist-workspace state
 ```
 
-Current human gate:
-
-```text
-1. compare SEL1-SEL8 against SEL0
-2. verify selection remains visible after pointer exit
-3. verify H4 hover remains transient and distinct
-4. verify A3 attention bars remain independent
-5. inspect BLOCKED / FAIL / RUN coexistence
-6. move selection between nodes by click
-7. use Tab plus Enter / Space
-8. reject treatments resembling connector ports, priority, hover or project-focus suppression
-9. prefer / reject / combine / refine
-```
+Final selection cardinality, persistence across navigation and ownership in URL/session/project state remain open.
 
 ---
 
-# Preserved work-unit expansion idea
+# Active Slice 02L: contextual work-unit detail expansion
 
-The future hierarchy remains preserved:
+The active interaction hierarchy is:
 
 ```text
 compact map work unit
-    -> expanded contextual/detail card
+    -> selected compact work unit
+    -> expanded contextual/detail layer
     -> full specialist workspace / deep focus
 ```
 
-The current selection slice deliberately does not expand nodes. The expanded-card level remains deferred until the persistent selected-state treatment is sufficiently understood, then should be explored with semantic zoom, C5 Internal Layout Grammar, information-density lenses and work-unit detail/provenance presentation.
+The active bounded question is:
+
+```text
+CONTEXTUAL DETAIL EXPANSION
+    after a compact work unit is selected,
+    how should it reveal additional project context
+    without immediately becoming the full specialist workspace?
+```
+
+The following semantic and interaction distinctions remain held:
+
+```text
+HOVER
+    transient pointer interaction
+
+SELECTION
+    persistent chosen work unit
+
+ATTENTION PRIORITY
+    elevated attention signal
+
+OPERATIONAL STATUS
+    live runtime state or BLOCKED presentation
+
+CONTEXTUAL DETAIL
+    temporary richer information while remaining in the project map
+
+DEEP FOCUS / SPECIALIST WORKSPACE
+    full-resolution task environment at a deeper interaction layer
+```
+
+## Candidate expansion architectures
+
+```text
+X0  Compact Control
+X1  Vertical Drawer
+X2  Right Sidecar
+X3  Attached Sheet
+X4  Wide Split Card
+X5  Context Lens
+X6  Layered Reveal
+X7  Peek Rail
+X8  Inspector Dock
+```
+
+Every candidate exposes the same provisional contextual fields:
+
+```text
+Purpose
+Constraint / state
+Evidence
+Next action
+```
+
+These are density fixtures only. They do not freeze the work-unit internal schema or C5 Internal Layout Grammar.
+
+## Practical interaction proof
+
+```text
+click unselected node
+    -> select with SEL2
+    -> remain compact
+
+click selected compact node
+    -> expand contextual detail
+
+click selected expanded node
+    -> collapse
+
+Enter / Space
+    -> keyboard equivalent
+
+switch X0-X8
+    -> change expansion architecture only
+```
+
+## Current human gate
+
+```text
+1. compare X1-X8 against X0
+2. judge which treatment best preserves spatial orientation
+3. judge whether attached panels remain obviously owned by the selected node
+4. identify variants that consume too much project-map space
+5. judge whether X5 behaves too much like deep focus
+6. judge whether X7 provides enough information to justify an intermediate layer
+7. compare inline expansion against X8 Inspector Dock
+8. verify SEL2, A3, disposition and operational status remain independently readable
+9. prefer / reject / combine / refine
+10. keep final internal work-unit information architecture unfrozen
+```
 
 ---
 
@@ -418,7 +436,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               persistent work-unit selection human review
+Current                               contextual work-unit detail expansion human review
 ```
 
 There is no pending Claude obligation.
@@ -434,26 +452,23 @@ final runtime / execution-state ontology
 production runtime/status-carrier default and persistence
 final project-disposition ontology
 final progress-constraint ontology
-multiple simultaneous blockers
 final BLOCKS relation semantics
 historical execution-attempt presentation
 runtime-flow connector behavior
 final current-focus membership semantics
-final attention-priority ontology
-priority ownership / provenance / persistence
-relationship between priority, relevance and scheduling
-production priority carrier details
-final selection visual treatment
-single versus multi-selection
-selection persistence / ownership
-relationship between selection and inline expansion
-selected-node command / inspector behavior
-semantic assignment of connector stroke rhythm
-semantic zoom
+final attention-priority ontology and ownership
+priority / relevance / scheduling relationship
+final selection cardinality and persistence
+final contextual-detail expansion architecture
+multiple simultaneous expanded work units
+large-project expansion collision handling
+final work-unit internal information architecture
 C5 Internal Layout Grammar
-information-density lenses
-expanded contextual/detail card
-2.5D focus/depth system
+provenance/evidence detail presentation
+selected-node command surface
+semantic zoom
+transition from contextual detail to specialist workspace
+URL representation for selected / expanded / deep-focus state
 Conversation Workspace composition
 large-project layout/grouping/command architecture
 final production design system
@@ -480,16 +495,16 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 240 and v1-cockpit-design-exploration
+1. use Checkpoint 241 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-selection-state.html
-4. compare SEL1-SEL8 against SEL0
-5. move selection between practical-scene nodes
-6. verify selected state persists after pointer exit
-7. verify H4 hover, keyboard focus and A3 attention priority remain distinct
-8. inspect BLOCKED / FAIL / RUN coexistence
+3. open http://localhost:5173/design-lab/work-unit-detail-expansion.html
+4. compare X1-X8 against X0
+5. inspect attachment and preservation of project-map spatial orientation
+6. inspect whether X5 crosses prematurely into deep focus
+7. compare inline expansion against X8 Inspector Dock
+8. verify SEL2, A3, disposition and operational status remain distinct
 9. prefer / reject / combine / refine
-10. keep inline work-unit expansion deferred until this selection gate converges
+10. keep final internal work-unit information architecture unfrozen
 11. keep production Cockpit untouched
 12. keep source-vault deployment paused until explicitly resumed
 ```
