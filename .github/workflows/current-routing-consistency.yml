@@ -2,9 +2,6 @@ name: Current routing consistency
 
 on:
   push:
-    branches:
-      - v1-routing-consistency-guard
-      - v1-frontend-spike
     paths:
       - docs/current_routing.json
       - README.md
