@@ -48,6 +48,7 @@ BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for elevated attention priority
 SEL2 Corner Brackets for persistent selection
+X5 balanced two-axis contextual expansion without context recession
 ```
 
 Important exact accepted/reviewed targets:
@@ -79,37 +80,14 @@ attention priority browser where A3 was selected
 
 repaired persistent-selection browser where SEL2 was selected
     e7304fe834d86166d843fda7e1df0f4ddb1f793a
+
+refined X5 two-axis expansion without context recession
+    94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
-## Persistent-selection repair and selection
+## Contextual-detail geometry result
 
-The first Slice 02K implementation was invalid for external selection carriers because the candidate geometry was mounted inside `.node-surface`, which clips overflow.
-
-The repair moved selection decorations to the `.grammar-node` layer while preserving surface clipping for internal effects.
-
-After reviewing the repaired browser, the project owner selected:
-
-```text
-SEL2  Corner Brackets
-```
-
-Current selection meaning:
-
-```text
-SELECTION
-    persistent chosen work unit
-
-SEL2 appearance
-    four compact neutral-cool brackets
-    outside the rendered frame
-    remains after pointer exit
-```
-
-Selection remains separate from hover, keyboard focus, current-process focus membership, attention priority and deep focus.
-
-## Current Slice 02L: contextual work-unit detail expansion
-
-The preserved interaction hierarchy is now under direct browser review:
+The interaction hierarchy remains:
 
 ```text
 compact map work unit
@@ -118,74 +96,102 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
-The active question is:
+The Slice 02L comparison evaluated X0-X8. The final human comparison narrowed to X4 versus X5. The project owner then explicitly separated the X5 shape from its surrounding-context recession behavior and selected:
 
 ```text
-After a compact work unit is selected,
-how should it reveal additional project context
-without immediately becoming the full specialist workspace?
+X5 balanced two-axis expansion
+WITHOUT context recession
 ```
 
-Candidate architectures:
+Accepted contextual-detail geometry:
 
 ```text
-X0  Compact Control
-X1  Vertical Drawer
-X2  Right Sidecar
-X3  Attached Sheet
-X4  Wide Split Card
-X5  Context Lens
-X6  Layered Reveal
-X7  Peek Rail
-X8  Inspector Dock
+390 x 210
+one integrated work-unit object
+balanced width + height growth
+surrounding project map remains at normal salience
 ```
 
-Every candidate uses the same provisional detail payload:
+The original X5 context-recession behavior remains preserved as historical evidence but is not part of the accepted contextual-expansion treatment.
+
+## Current Slice 02M: expanded work-unit internal layout
+
+The active question is now:
+
+```text
+Inside the accepted X5 expanded work unit,
+how should contextual information be organized
+for fast scanning without turning the card into a miniature workspace?
+```
+
+Held outer geometry:
+
+```text
+390 x 210
+X5 balanced two-axis expansion
+no surrounding-context recession
+```
+
+Candidate internal layouts:
+
+```text
+L0  Flat Fields
+L1  Structured Grid
+L2  Narrative Stack
+L3  Summary + Rail
+L4  Action First
+L5  Dependency Path
+L6  Evidence Center
+L7  Module Cards
+L8  Balanced Instrument
+```
+
+Every candidate uses the same provisional payload:
 
 ```text
 Purpose
-Constraint / state
+Constraint
 Evidence
 Next action
+Blocking cause
+Recent activity
 ```
 
-The payload is an interaction-density fixture only and does not freeze C5 Internal Layout Grammar or the final work-unit schema.
+The payload is an information-density fixture only and does not freeze the final work-unit schema or C5 semantics.
 
 Browser:
 
 ```text
-http://localhost:5173/design-lab/work-unit-detail-expansion.html
+http://localhost:5173/design-lab/work-unit-internal-layout.html
 ```
 
 Exact initial browser target:
 
 ```text
-0457a27d8e80863738ce3f75aeb11bd4f5c1155d
+871075bcda8ff812e1a96b18b442c803d5da7faf
 ```
 
 Research and checkpoint:
 
 ```text
-docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
-docs/checkpoints/241_selection_sel2_accepted_contextual_detail_expansion_review_opened.md
+docs/research/074_work_unit_internal_layout_grammar_experiment.md
+docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
 ```
 
 ## Current gate
 
 ```text
-human compares X1-X8 against X0
-human judges preservation of project-map spatial orientation
-human judges whether attached detail remains clearly owned by the selected node
-human identifies variants that consume excessive map context
-human tests whether X5 behaves too much like deep focus
-human compares inline expansion against X8 Inspector Dock
-human verifies SEL2, A3, disposition and operational status remain distinct
+human compares L0-L8 with the same accepted outer geometry
+human judges scan path, hierarchy and density
+human rejects layouts that feel like miniature dashboards
+human inspects robustness to longer text
+human inspects future room for provenance/evidence and commands
 -> prefer / reject / combine / refine
--> do not freeze final internal work-unit information architecture yet
+-> do not freeze final semantic work-unit schema yet
 ```
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final selection persistence, contextual-detail architecture, multiple-expanded-node semantics, collision avoidance, semantic zoom, C5 Internal Layout Grammar, selected-node command surfaces, work-unit provenance/evidence layout, transition to specialist workspace, final URL/deep-link state and final production visual system.
+Still unfrozen includes final information schema, provenance/evidence representation, selected-node command surface, multiple-expanded-node semantics, collision avoidance, semantic zoom, expansion persistence, transition to specialist workspace, final URL/deep-link state and final production visual system.
