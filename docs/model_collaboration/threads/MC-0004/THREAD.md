@@ -62,56 +62,9 @@ Evaluation                plus
 
 ## Work-unit grammar result
 
-Rejected or retired:
-
-```text
-bare Q / I / V / M / E letters
-G2 Compact Marker Rail
-S3 Inner Instrument Architecture
-G1 Instrument Glyph comparator after scientific-marker selection
-```
-
-Positive mechanisms:
-
-```text
-scientific markers
-Reduced in-box light
-M1 micro-material family
-Evaluation-like micro-light character
-subtle true-shape family
-```
-
 Foundation 023 promotes the durable split between semantic work-unit meaning and approved user-configurable appearance.
 
-## Connector / Port Grammar history
-
-The generic connector browser tested:
-
-```text
-K0  Clean Curve
-K1  Micro Dots
-K2  Frame Sockets
-K3  Target Cue
-K4  Hover Ports
-```
-
-Important refinements:
-
-```text
-rendered-edge relation geometry
-curve under node / endpoint overlay above node where appropriate
-K2 sockets restored to frame-integrated treatment
-hover geometry follows H4 node lift / release
-K1/K4 dots moved mostly outside the perimeter
-K2 active socket outline / glow adopts relation color
-```
-
-Exact retained refinement commits:
-
-```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
-183264bdd07783eaa2354894592f2cf4a076b6ec
-```
+Current positive mechanisms include scientific markers, Reduced in-box light, M1 micro-material treatment, Evaluation-like micro-light character and subtle true-shape variants.
 
 ## Connector treatment and hover architecture
 
@@ -132,13 +85,9 @@ one terminal treatment normally active at a time
 hover / focus is an orthogonal reveal or emphasis mechanism
 ```
 
-Unnecessary mixed terminal stacks are not the default product direction.
-
 Foundation 024 records this architecture while preserving system-owned relation semantics.
 
 ## Directionality result
-
-The simplified directionality browser isolates the restrained edge-connected K3-style arrow.
 
 Exact accepted browser target:
 
@@ -152,7 +101,7 @@ Human review result:
 Yes, perfect. We can proceed.
 ```
 
-Directionality is therefore sufficiently settled for the current Phase-C design work:
+Directionality is sufficiently settled for the current Phase-C design work:
 
 ```text
 D0  Undirected      no arrow
@@ -161,45 +110,23 @@ D2  Reverse         same arrow at A
 D3  Bidirectional   same arrow at both endpoints
 ```
 
-## Current Slice 02E: semantic relation-class visual grammar
+## Relation-class grammar comparison
 
-Next bounded question:
+Research 057 opened a bounded E0-E6 comparison across provisional relation fixtures R0-R4.
 
-> How should different relationship meanings remain distinguishable on the Cockpit map while remaining professional, learnable and scalable?
-
-Research:
-
-```text
-docs/research/057_semantic_relation_class_visual_grammar_experiment.md
-```
-
-Checkpoint:
-
-```text
-docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
-```
-
-Browser route:
+Browser:
 
 ```text
 frontend/design-lab/relation-class-grammar.html
-frontend/design-lab/relation-class-grammar.css
-frontend/design-lab/relation-class-grammar.js
 ```
 
-Local URL:
-
-```text
-http://localhost:5173/design-lab/relation-class-grammar.html
-```
-
-Exact browser implementation target:
+Initial implementation target:
 
 ```text
 9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
 ```
 
-Representative visual-test relation fixtures:
+Representative fixtures remain provisional:
 
 ```text
 R0  Chronology / Sequence
@@ -209,25 +136,61 @@ R3  Evidence / Support
 R4  Lineage / Derivation
 ```
 
-These are not a frozen ADS ontology.
+## Relation-class convergence result
 
-Direction is held constant as `A -> B` across all rows.
-
-Encoding families:
+Human review selected:
 
 ```text
-E0  Neutral Control
-E1  Semantic Hue
-E2  Stroke Rhythm
-E3  Explicit Tag
-E4  Hue + Stroke
 E5  Hue + Tag
-E6  Restrained Hybrid
+    SELECTED
+    clean
 ```
 
-The current human gate is to compare semantic distinction, map-scale legibility, competition with node-category color, stroke-pattern clarity, tag density, accessibility redundancy and large-project noise risk.
+Human review also positively identified E6 stroke rhythm as a useful visual resource, but explicitly did not want it redundantly encoding the same relation-class meaning.
 
-Runtime-flow relations remain outside this first semantic-class slice.
+Current interpretation:
+
+```text
+RELATION CLASS
+    restrained semantic hue
+    + compact explicit tag
+
+STROKE RHYTHM
+    preserved
+    not rejected
+    no semantic meaning assigned yet
+    reserved for a different future line-level semantic dimension if later evidence warrants it
+```
+
+Research:
+
+```text
+docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
+```
+
+Checkpoint:
+
+```text
+docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
+```
+
+The selected E5 page now opens by default.
+
+Small human-requested tag refinement:
+
+```text
+tag height       17 -> 20 SVG units
+corner radius    5 -> 6
+text size        7.0 -> 7.5 px
+letter spacing   0.08em -> 0.05em
+width            unchanged
+```
+
+Exact refined browser target:
+
+```text
+b3d23b10be611f41a4e55fc40a28ba83089b7196
+```
 
 ## Dependency-bound ideas
 
@@ -242,11 +205,12 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human compares E0-E6 across R0-R4
--> prefer / reject / combine / refine relation-class encoding mechanisms
--> preserve promising semantic-class grammar
--> do not freeze the relation ontology yet
+human verifies refined E5 tag proportions
+-> if accepted, treat relation-class visual encoding as sufficiently converged
+-> then open the next bounded Cockpit design question
 ```
+
+The final ADS relation taxonomy, final relation codes/colors, semantic zoom behavior for tags, stroke-rhythm meaning, and runtime-flow connector semantics remain open.
 
 ## Production boundary
 
