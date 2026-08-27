@@ -32,6 +32,7 @@
       "docs/research/053_connector_and_port_visual_grammar_experiment.md",
       "docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md",
       "docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md",
+      "docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
       "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
@@ -55,6 +56,7 @@
       "docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md",
       "docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md",
       "docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md",
+      "docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -95,20 +97,21 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 055 Phase-C Cockpit design evidence",
+      "Research 037 through 056 Phase-C Cockpit design evidence",
       "scientific marker vocabulary selected for current work-unit grammar direction",
       "Reduced in-box light selected as preferred working control",
       "Foundation 023 configurable work-unit appearance and semantic invariants",
-      "human approval of configurable work-unit appearance after browser review",
-      "connector and Port Grammar candidates K0 through K4 and their refinement history",
+      "connector and Port Grammar K0-K4 refinement history",
       "K1/K4 circular terminals offset mostly outside the work-unit perimeter",
       "K2 sockets retain frame-integrated treatment and adopt highlighted relation color / glow",
-      "human decision that approved connector presentation mechanisms should coexist as user-configurable dimensions",
-      "Foundation 024 composable connector presentation and semantic directionality",
-      "directionality states D0-D3 and browser target 41bbdb75f338388f02a34fdf7dbac3ea90f86300",
+      "Foundation 024 connector presentation and semantic directionality",
+      "human clarification that connector terminal treatment and hover behavior are separate mechanisms",
+      "current connector treatments: Clean, Micro dots, Frame sockets, Direction arrows",
+      "default rule that only one terminal treatment is active at a time",
+      "simplified D0-D3 arrow browser target 07d573b6569b9f09a3b7e00936f3eadecee721b3",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has now closed the generic connector-style winner question: Clean, Micro dots, Frame sockets and Hover attachment emphasis are retained as configurable presentation dimensions, while semantic relation meaning and directionality remain system-owned. Foundation 024 records that boundary. The active browser target is connector directionality at 41bbdb75f338388f02a34fdf7dbac3ea90f86300. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review clarified that Clean, Micro dots, Frame sockets and Direction arrows are connector treatments while hover is a separate reveal/emphasis mechanism. The directionality browser now tests only the original restrained edge-connected arrow treatment across D0-D3, with no mixed dots or sockets. Exact browser implementation target is 07d573b6569b9f09a3b7e00936f3eadecee721b3. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -128,15 +131,16 @@
       "PHASE_C_CONNECTOR_CIRCULAR_TERMINALS_OUTWARD",
       "PHASE_C_CONNECTOR_SOCKET_ACTIVE_COLOR_REFINED",
       "PHASE_C_CONNECTOR_PRESENTATION_CONFIGURABLE",
-      "PHASE_C_CONNECTOR_DIRECTIONALITY_REVIEW"
+      "PHASE_C_CONNECTOR_DIRECTIONALITY_REVIEW",
+      "PHASE_C_CONNECTOR_DIRECTIONALITY_ARROW_SIMPLIFIED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-connector-presentation-configurable-directionality-opened",
+    "transition_id": "mc0004-directionality-arrow-simplified",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner decided to retain the useful connector presentation mechanisms as user-adjustable choices rather than selecting one K0-K4 winner. ChatGPT preserved the semantic boundary that relation meaning and directionality remain system-owned, promoted Foundation 024, and opened a D0-D3 directionality browser slice with configurable attachment presentation retained only as a compatibility control.",
-    "repository_head": "41bbdb75f338388f02a34fdf7dbac3ea90f86300"
+    "reason": "The project owner clarified that sockets, dots and arrows are alternative connector treatments while hover is an orthogonal reveal/emphasis mechanism. ChatGPT removed mixed terminal controls from the directionality experiment and reused the earlier K3-style edge-connected arrow for forward, reverse and bidirectional states.",
+    "repository_head": "07d573b6569b9f09a3b7e00936f3eadecee721b3"
   }
 }
