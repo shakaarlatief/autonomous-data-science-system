@@ -1,6 +1,16 @@
 # Checkpoint 230: Relation-Class Encoding Settled, Project-Disposition Grammar Review Opened
 
 **Date:** 2026-08-27  
+**Status:** Current product-design checkpoint  
+**Checkpoint class:** CONTINUITY / PRODUCT_DESIGN  
+**Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
+**Scope:** Closes the accepted E5 Hue + Tag relation-class refinement gate and opens the next bounded work-unit project-disposition visual-grammar experiment.  
+**Authority:** Current Phase-C routing/evidence boundary. E5 Hue + Tag is sufficiently settled for this design phase, but the final relation taxonomy and final project-disposition ontology remain unfrozen. Production `/cockpit` remains untouched.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT  
 **Active branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Thread:** MC-0004  
