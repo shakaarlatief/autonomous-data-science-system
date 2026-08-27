@@ -2,16 +2,15 @@
 
 **Date:** 2026-08-27  
 **Status:** Current human-readable routing view  
-**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs, and resolution records remain authoritative.  
-**Purpose:** Let a returning collaborator discover pending review/catch-up obligations without relying on private chat memory.
+**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs, and resolution records remain authoritative.
 
-## Current pending model obligation
+## Pending model obligation
 
 ```text
 none
 ```
 
-Claude completed the MC-0004 divergent work-unit grammar contribution at:
+Claude's latest MC-0004 contribution remains:
 
 ```text
 faf18ed9932d60a24dd80589b0ec0ba71c5940fd
@@ -19,7 +18,7 @@ faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 
 No Claude action is currently pending.
 
-## Current next actor
+## Next actor
 
 ```text
 human project owner
@@ -28,7 +27,7 @@ human project owner
 Current checkpoint:
 
 ```text
-230
+231
 ```
 
 Current browser route:
@@ -37,113 +36,39 @@ Current browser route:
 http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-565fdeabc1ebaa29f993699a4c0673b29e972be3
+2056bb31d7cb90766e112bc26aaf7339fb568242
 ```
 
-## Promoted configurable-appearance foundations
+## Active disposition review
 
-Work-unit appearance:
+The current convergence comparison is:
 
 ```text
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+P6  Hue + Colored Tag + Tone
+    no rhythm
+
+P7  Colored Tag + Tone
+    no disposition-colored perimeter
+    no rhythm
 ```
 
-Connector treatment / hover behavior / semantic directionality:
+P4 State Rhythm remains preserved as standalone experiment evidence.
 
-```text
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-```
-
-## Directionality result
-
-Human review accepted the simplified arrow grammar:
-
-```text
-D0  Undirected      no arrow
-D1  Forward         arrow at B
-D2  Reverse         same arrow at A
-D3  Bidirectional   same arrow at both endpoints
-```
-
-Exact accepted directionality target:
-
-```text
-07d573b6569b9f09a3b7e00936f3eadecee721b3
-```
-
-Directionality is sufficiently settled for the current Phase-C design work.
-
-## Relation-class encoding result
-
-Human review selected and accepted:
-
-```text
-E5  Hue + Tag
-    SELECTED / sufficiently settled for current Phase C
-```
-
-Latest accepted relation-class browser target:
-
-```text
-497e81f06ba1f9901511449237d1bb9f96b2d108
-```
-
-Stroke rhythm from E2/E4/E6 remains preserved:
-
-```text
-visually promising
-not rejected
-not currently assigned to relation class
-candidate for another future line-level semantic dimension
-```
-
-Representative relation classes remain provisional fixtures and are not a frozen ADS relation taxonomy.
-
-## Active project-disposition review
-
-The current bounded question separates:
-
-```text
-category               what the work unit is
-project disposition    current slice
-runtime state          held out
-importance / priority  held out
-```
-
-Representative visual-test states:
-
-```text
-S0  Active / Current
-S1  Recommended / Next
-S2  Deferred
-S3  Completed
-S4  Blocked
-S5  Future / Not yet active
-```
-
-Encoding families:
-
-```text
-P0  Neutral Control
-P1  Disposition Hue
-P2  Explicit Tag
-P3  Tonal Hierarchy
-P4  State Rhythm
-P5  Hue + Tag
-P6  Restrained Hybrid
-```
+The browser includes side-by-side practical mixed-category scenes so P6 and P7 can be judged with Question, Investigation, Validation, Model and Evaluation work units together.
 
 Current human gate:
 
 ```text
-compare P0-P6 across S0-S5
--> prefer / reject / combine / refine
--> preserve project-disposition visual evidence
--> do not freeze the state ontology
--> keep runtime and importance separate
+compare P6 vs P7 in controlled rows
+compare P6 vs P7 in practical mixed-category scenes
+judge whether disposition perimeter hue competes with category hue
+judge whether colored tag + tone alone is sufficiently clear
+prefer / reject / combine / refine
 ```
+
+Runtime state and importance remain separate future slices.
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
