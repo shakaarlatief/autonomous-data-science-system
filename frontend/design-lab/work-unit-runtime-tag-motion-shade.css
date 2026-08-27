@@ -1,8 +1,8 @@
 /* Reference-inspired runtime tag shade-flow refinements.
  *
  * These candidates keep the tag geometry and text completely stationary.
- * Motion is carried by broad, soft perimeter illumination rather than by a
- * rotating internal box or a single crisp tracer segment.
+ * Motion is carried by soft perimeter illumination rather than by a rotating
+ * internal box or a crisp tracer segment.
  */
 
 .tag-motion-segmented {
@@ -21,44 +21,119 @@
   grid-template-rows: repeat(9, 1fr);
 }
 
-/* T7: Soft Shade Flow.
- * Three co-located strokes form one broad moving light wash. The widest layer
- * is very soft, the middle layer provides body, and the narrowest layer keeps
- * enough definition for the runtime color to remain legible. All three travel
- * together, so the effect reads as one shade rather than as separate tracers.
+/*
+ * T7: Soft Shade Flow, second implementation.
+ *
+ * The first T7 attempt still used synchronized SVG dash segments, which made
+ * the result read too similarly to T5 Long Glide. This version deliberately
+ * stops using a travelling dash altogether.
+ *
+ * Instead, the runtime tag owns a stationary rounded-rectangle border mask.
+ * A broad conic color field changes its paint angle underneath that fixed mask.
+ * Only the border paint changes. The tag element itself never rotates, moves,
+ * or leaves its bounds. Two masked layers create a diffuse shoulder plus a
+ * softer inner concentration, so the result should read as a moving shade or
+ * illuminated atmosphere travelling through the perimeter rather than as one
+ * identifiable line making a lap around the box.
  */
-[data-tag-motion="t7"] .tag-flow-a,
-[data-tag-motion="t7"] .tag-flow-b,
-[data-tag-motion="t7"] .tag-flow-c {
-  stroke-linecap: round;
-  stroke-dasharray: 42 58;
-  animation-name: tag-flow-travel;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+
+@property --t7-shade-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
 }
 
-[data-tag-motion="t7"] .tag-flow-a {
-  opacity: 0.13;
-  stroke-width: 5.2;
-  filter: blur(1.4px) drop-shadow(0 0 4px rgba(var(--runtime-rgb), 0.16));
+[data-tag-motion="t7"] .tag-flow {
+  opacity: 0 !important;
+  animation: none !important;
 }
 
-[data-tag-motion="t7"] .tag-flow-b {
-  opacity: 0.24;
-  stroke-width: 3.2;
-  filter: blur(0.75px) drop-shadow(0 0 3px rgba(var(--runtime-rgb), 0.18));
+[data-tag-motion="t7"] .motion-runtime-tag {
+  --t7-shade-angle: 0deg;
+  animation: t7-shade-orbit 3.2s linear infinite;
 }
 
-[data-tag-motion="t7"] .tag-flow-c {
-  opacity: 0.58;
-  stroke-width: 1.45;
-  filter: blur(0.28px) drop-shadow(0 0 2.5px rgba(var(--runtime-rgb), 0.28));
+[data-tag-motion="t7"] .motion-runtime-tag::before,
+[data-tag-motion="t7"] .motion-runtime-tag::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
-/* T8: Layered Wash.
- * A long diffuse wash and a shorter brighter concentration move at slightly
- * different rates. The overlap changes continuously, giving the border a more
- * organic, fluid illuminated region without rotating any rectangular geometry.
+/* Broad diffuse shade shoulder. */
+[data-tag-motion="t7"] .motion-runtime-tag::before {
+  inset: -1.5px;
+  padding: 2.1px;
+  opacity: 0.92;
+  background: conic-gradient(
+    from var(--t7-shade-angle),
+    rgba(var(--runtime-rgb), 0.015) 0deg,
+    rgba(var(--runtime-rgb), 0.025) 24deg,
+    rgba(var(--runtime-rgb), 0.055) 58deg,
+    rgba(var(--runtime-rgb), 0.13) 92deg,
+    rgba(var(--runtime-rgb), 0.28) 126deg,
+    rgba(var(--runtime-rgb), 0.44) 156deg,
+    rgba(var(--runtime-rgb), 0.52) 180deg,
+    rgba(var(--runtime-rgb), 0.40) 205deg,
+    rgba(var(--runtime-rgb), 0.24) 236deg,
+    rgba(var(--runtime-rgb), 0.11) 272deg,
+    rgba(var(--runtime-rgb), 0.045) 310deg,
+    rgba(var(--runtime-rgb), 0.018) 342deg,
+    rgba(var(--runtime-rgb), 0.015) 360deg
+  );
+  filter:
+    blur(1.35px)
+    drop-shadow(0 0 4.5px rgba(var(--runtime-rgb), 0.17));
+}
+
+/* Softer inner concentration. It is intentionally broad and headless. */
+[data-tag-motion="t7"] .motion-runtime-tag::after {
+  inset: -0.4px;
+  padding: 1.25px;
+  opacity: 0.78;
+  background: conic-gradient(
+    from calc(var(--t7-shade-angle) + 12deg),
+    rgba(var(--runtime-rgb), 0.01) 0deg,
+    rgba(var(--runtime-rgb), 0.025) 42deg,
+    rgba(var(--runtime-rgb), 0.08) 82deg,
+    rgba(var(--runtime-rgb), 0.22) 118deg,
+    rgba(var(--runtime-rgb), 0.50) 150deg,
+    rgba(var(--runtime-rgb), 0.72) 177deg,
+    rgba(var(--runtime-rgb), 0.58) 204deg,
+    rgba(var(--runtime-rgb), 0.31) 236deg,
+    rgba(var(--runtime-rgb), 0.12) 274deg,
+    rgba(var(--runtime-rgb), 0.04) 318deg,
+    rgba(var(--runtime-rgb), 0.01) 360deg
+  );
+  filter:
+    blur(0.42px)
+    drop-shadow(0 0 2.8px rgba(var(--runtime-rgb), 0.20));
+}
+
+@keyframes t7-shade-orbit {
+  from { --t7-shade-angle: 0deg; }
+  to { --t7-shade-angle: 360deg; }
+}
+
+/* Runtime-sensitive pacing for the paint flow. */
+[data-runtime="queued"][data-tag-motion="t7"] .motion-runtime-tag { animation-duration: 4.0s; }
+[data-runtime="running"][data-tag-motion="t7"] .motion-runtime-tag { animation-duration: 2.55s; }
+[data-runtime="waiting"][data-tag-motion="t7"] .motion-runtime-tag { animation-duration: 4.7s; }
+[data-runtime="human"][data-tag-motion="t7"] .motion-runtime-tag { animation-duration: 3.45s; }
+[data-runtime="failed"][data-tag-motion="t7"] .motion-runtime-tag { animation-duration: 2.8s; }
+
+/*
+ * T8: Layered Wash.
+ *
+ * This preserves the previous multi-stroke experiment as a deliberately more
+ * organic comparator. A long diffuse wash and shorter concentrations move at
+ * slightly different rates, allowing their overlap to evolve over time.
  */
 [data-tag-motion="t8"] .tag-flow-a {
   opacity: 0.11;
@@ -87,13 +162,6 @@
   animation: tag-flow-travel 2.85s linear infinite;
 }
 
-/* Preserve runtime-sensitive pacing for the single-flow T7 candidate. */
-[data-runtime="queued"][data-tag-motion="t7"] .tag-flow { animation-duration: 3.1s; }
-[data-runtime="running"][data-tag-motion="t7"] .tag-flow { animation-duration: 1.9s; }
-[data-runtime="waiting"][data-tag-motion="t7"] .tag-flow { animation-duration: 3.7s; }
-[data-runtime="human"][data-tag-motion="t7"] .tag-flow { animation-duration: 2.7s; }
-[data-runtime="failed"][data-tag-motion="t7"] .tag-flow { animation-duration: 2.15s; }
-
 /* T8 remains intentionally more fluid, but its overall cadence still tracks
  * runtime urgency by scaling all three layers together per state.
  */
@@ -118,8 +186,14 @@
 [data-runtime="failed"][data-tag-motion="t8"] .tag-flow-c { animation-duration: 2.3s; }
 
 /* Reduced motion remains a semantic fallback, not a separate visual state. */
-html[data-reduced="on"] [data-tag-motion="t7"] .tag-flow,
+html[data-reduced="on"] [data-tag-motion="t7"] .motion-runtime-tag {
+  animation: none !important;
+}
+
+html[data-reduced="on"] [data-tag-motion="t7"] .motion-runtime-tag::before,
+html[data-reduced="on"] [data-tag-motion="t7"] .motion-runtime-tag::after,
 html[data-reduced="on"] [data-tag-motion="t8"] .tag-flow {
+  display: none;
   animation: none !important;
   opacity: 0 !important;
 }
