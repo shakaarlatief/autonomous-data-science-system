@@ -113,7 +113,31 @@ A3 Signal Bars for HIGH attention
 
 Selection uses a provisional neutral cool highlight so category hue and attention priority remain independently readable.
 
-## 5. Controlled fixture
+## 5. Browser implementation
+
+Local route:
+
+```text
+http://localhost:5173/design-lab/work-unit-selection-state.html
+```
+
+Files:
+
+```text
+frontend/design-lab/work-unit-selection-state.html
+frontend/design-lab/work-unit-selection-state.css
+frontend/design-lab/work-unit-selection-state.js
+```
+
+Exact browser implementation target:
+
+```text
+3bac1fea4ca820c89a7bc4516497a4c33164ec5d
+```
+
+Production `/cockpit` remains untouched.
+
+## 6. Controlled fixture
 
 Every controlled row uses the same work unit:
 
@@ -127,7 +151,7 @@ selection      SELECTED
 
 Only the persistent selection treatment changes.
 
-## 6. Candidate selection treatments
+## 7. Candidate selection treatments
 
 ```text
 SEL0  Neutral Control
@@ -168,7 +192,7 @@ Only the upper-left and lower-right corners receive stronger selection brackets,
 ### SEL8 Keyline + Corners
 Combines SEL1 and SEL2 to test whether restrained redundant geometry improves persistent recognition or merely adds clutter.
 
-## 7. Practical interaction scene
+## 8. Practical interaction scene
 
 The practical scene contains mixed category, disposition, operational-status and priority combinations. Exactly one work unit is selected in the initial fixture.
 
@@ -190,13 +214,13 @@ pointer hover
 
 This is a browser interaction proof only. Final single-selection versus multi-selection semantics remain open.
 
-## 8. Accessibility boundary
+## 9. Accessibility boundary
 
 Keyboard focus remains conceptually separate from selection.
 
 A keyboard-focused node may be selected or unselected. The browser keeps an explicit `:focus-visible` outline so the selection treatment is never asked to perform accessibility focus duty.
 
-## 9. Human review gate
+## 10. Human review gate
 
 Review:
 
@@ -212,7 +236,7 @@ Review:
 9. prefer / reject / combine / refine
 ```
 
-## 10. Still unfrozen
+## 11. Still unfrozen
 
 ```text
 final selection visual treatment
@@ -228,5 +252,3 @@ C5 Internal Layout Grammar
 expanded contextual/detail card
 selected/focused persistent treatment in production
 ```
-
-Production `/cockpit` remains untouched.
