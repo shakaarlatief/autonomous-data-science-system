@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-expansion-style="x1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-Unit Detail Expansion</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-blocked-carrier.css" />
+    <link rel="stylesheet" href="./work-unit-blocked-carrier-ring-swap.css" />
+    <link rel="stylesheet" href="./work-unit-attention-priority.css" />
+    <link rel="stylesheet" href="./work-unit-selection-state.css" />
+    <link rel="stylesheet" href="./work-unit-detail-expansion.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header expansion-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02L · Work-Unit Detail Expansion</span>
+        <h1>After a work unit is selected, how should it reveal more context without immediately becoming the full specialist workspace?</h1>
+        <p>SEL2 Corner Brackets remain the persistent selection treatment. This slice tests the intermediate interaction layer between a compact map node and Specification 008 deep work. It compares expansion geometries only and does not freeze the final internal information architecture.</p>
+      </div>
+      <div class="expansion-held-state">
+        <span>Held interaction hierarchy</span>
+        <strong>compact → selected → contextual detail → specialist workspace</strong>
+        <small>Selection, hover, attention priority and operational status remain independent while the selected work unit gains temporary detail.</small>
+      </div>
+    </header>
+
+    <main class="grammar-main expansion-main">
+      <section class="grammar-intro expansion-intro">
+        <div>
+          <span class="section-kicker">Bounded interaction question</span>
+          <h2>The detail layer should preserve spatial orientation and remain clearly shallower than deep focus</h2>
+          <p>Every candidate reveals the same provisional detail payload. Only geometry, attachment and surrounding-context treatment change. The detail content is placeholder structure for judging interaction depth, not a frozen work-unit schema.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Detail expansion constraints">
+          <span>SEL2 remains persistent selection</span>
+          <span>A3 priority remains independent</span>
+          <span>Status remains bottom-right</span>
+          <span>Map context should remain recoverable</span>
+          <span>Full workspace remains a deeper layer</span>
+          <span>Information architecture is not frozen</span>
+        </div>
+      </section>
+
+      <section class="expansion-preview" aria-label="Controlled work-unit detail expansion comparison">
+        <div class="expansion-section-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same selected Current Investigation + BLOCKED + HIGH attention · nine expansion architectures</h2>
+            <p>All variants use SEL2 Corner Brackets, A3 Signal Bars, the accepted operational-status carrier and the same detail payload.</p>
+          </div>
+          <span>Judge geometry and interaction depth, not final content</span>
+        </div>
+        <div class="expansion-grid" id="expansion-grid"></div>
+      </section>
+
+      <section class="expansion-practical" aria-label="Interactive project-scene detail expansion">
+        <div class="expansion-section-header expansion-practical-header">
+          <div>
+            <span class="section-kicker">Interactive coexistence check</span>
+            <h2>Select a work unit, then expand it while keeping the surrounding project map understandable</h2>
+            <p>Clicking an unselected node selects it. Clicking the selected node toggles its contextual detail. The controls switch the expansion architecture without changing semantic state.</p>
+          </div>
+          <div class="expansion-practical-legend">
+            <span>Click unselected = select</span>
+            <span>Click selected = expand / collapse</span>
+            <span>Enter / Space = same keyboard action</span>
+            <span>SEL2 = persistent selection</span>
+          </div>
+        </div>
+
+        <div class="expansion-controls" aria-label="Expansion architecture controls">
+          <div class="segmented expansion-segmented" role="group" aria-label="Expansion architecture">
+            <button type="button" data-expansion-style="x0" aria-pressed="false">X0 Compact</button>
+            <button type="button" data-expansion-style="x1" aria-pressed="true">X1 Vertical Drawer</button>
+            <button type="button" data-expansion-style="x2" aria-pressed="false">X2 Right Sidecar</button>
+            <button type="button" data-expansion-style="x3" aria-pressed="false">X3 Attached Sheet</button>
+            <button type="button" data-expansion-style="x4" aria-pressed="false">X4 Wide Split</button>
+            <button type="button" data-expansion-style="x5" aria-pressed="false">X5 Context Lens</button>
+            <button type="button" data-expansion-style="x6" aria-pressed="false">X6 Layered Reveal</button>
+            <button type="button" data-expansion-style="x7" aria-pressed="false">X7 Peek Rail</button>
+            <button type="button" data-expansion-style="x8" aria-pressed="false">X8 Inspector Dock</button>
+          </div>
+          <div class="expansion-actions">
+            <button type="button" id="toggle-expansion">Expand selected</button>
+            <button type="button" id="collapse-expansion">Collapse</button>
+            <div class="expansion-summary">
+              <span>Practical scene</span>
+              <strong id="expansion-summary">X1 · Vertical Drawer</strong>
+              <small id="expansion-node-summary">Selected: Production missingness · compact</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="grammar-world expansion-practical-world" id="expansion-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <svg class="expansion-relations" viewBox="0 0 1400 760" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 270 160 C 390 160, 390 245, 525 245" />
+            <path d="M 675 245 C 815 245, 820 155, 955 155" />
+            <path d="M 615 355 C 665 455, 805 475, 930 475" />
+            <path d="M 300 560 C 430 560, 465 500, 575 500" />
+          </svg>
+          <div class="expansion-practical-nodes" id="expansion-practical-nodes"></div>
+          <aside class="inspector-dock" id="inspector-dock" aria-live="polite"></aside>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review expansion-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge the intermediate detail layer, not the final specialist workspace</h2>
+        <div class="review-questions">
+          <p>Which expansion keeps the relationship between the selected node and the project map easiest to understand?</p>
+          <p>Does X1 preserve orientation better than the wider X2/X4 treatments, or does it consume too much vertical map space?</p>
+          <p>Do X2 and X3 feel clearly attached to the selected node rather than like unrelated floating panels?</p>
+          <p>Does X5 Context Lens help inspection or prematurely behave like deep focus?</p>
+          <p>Does X6 Layered Reveal feel elegant or visually artificial?</p>
+          <p>Is X7 Peek Rail too shallow to count as useful contextual detail?</p>
+          <p>Does X8 Inspector Dock outperform inline expansion despite breaking the original expand-the-box idea?</p>
+          <p>Can SEL2 selection, A3 priority and operational status remain legible while expanded?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-detail-expansion.js"></script>
+  </body>
+</html>
