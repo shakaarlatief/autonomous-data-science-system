@@ -5,10 +5,10 @@ const runtimeSummary = document.querySelector('#runtime-summary')
 
 const runtimeStates = [
   {
-    id: 'idle',
-    code: 'IDLE',
-    label: 'Idle',
-    description: 'No execution is currently active for this work unit.',
+    id: 'none',
+    code: 'NONE',
+    label: 'No runtime',
+    description: 'No current execution or work episode exists. This is absence of runtime, not an idle runtime state.',
     rgb: '145, 158, 179',
     symbol: '·',
   },
@@ -16,7 +16,7 @@ const runtimeStates = [
     id: 'queued',
     code: 'QUEUE',
     label: 'Queued',
-    description: 'Execution is ready but waiting for its turn to start.',
+    description: 'A current execution episode exists and is waiting for its turn to start.',
     rgb: '142, 169, 255',
     symbol: '≡',
   },
@@ -24,7 +24,7 @@ const runtimeStates = [
     id: 'running',
     code: 'RUN',
     label: 'Running',
-    description: 'Execution is actively progressing now.',
+    description: 'The current execution episode is actively progressing now.',
     rgb: '103, 218, 194',
     symbol: '▶',
   },
@@ -32,7 +32,7 @@ const runtimeStates = [
     id: 'waiting',
     code: 'WAIT',
     label: 'Waiting',
-    description: 'Execution has paused for an external condition or dependency.',
+    description: 'The current execution episode has paused for an external condition or dependency.',
     rgb: '240, 178, 91',
     symbol: 'Ⅱ',
   },
@@ -40,7 +40,7 @@ const runtimeStates = [
     id: 'human',
     code: 'HUMAN',
     label: 'Waiting for Human',
-    description: 'Progress currently requires explicit human input or approval.',
+    description: 'The current work episode requires explicit human input or approval.',
     rgb: '173, 150, 255',
     symbol: 'H',
   },
@@ -55,7 +55,7 @@ const runtimeStates = [
 ]
 
 const dispositions = {
-  active: { code: 'ACTIVE', rgb: '102, 181, 255' },
+  current: { code: 'CURRENT', rgb: '102, 181, 255' },
   recommended: { code: 'NEXT', rgb: '177, 151, 255' },
   deferred: { code: 'DEFER', rgb: '145, 158, 179' },
   completed: { code: 'DONE', rgb: '103, 205, 151' },
@@ -95,18 +95,18 @@ const practicalFixture = [
   {
     key: 'q',
     category: 'question',
-    disposition: 'blocked',
+    disposition: 'current',
     runtime: 'human',
     title: 'Approve target definition',
-    subtitle: 'Human decision required before continuation',
+    subtitle: 'Current work needs an explicit human decision',
   },
   {
     key: 'i',
     category: 'investigation',
-    disposition: 'active',
+    disposition: 'current',
     runtime: 'running',
     title: 'Production missingness',
-    subtitle: 'Live data profile is executing now',
+    subtitle: 'Current investigation is executing now',
   },
   {
     key: 'v',
@@ -114,31 +114,31 @@ const practicalFixture = [
     disposition: 'recommended',
     runtime: 'queued',
     title: 'Chronological validation',
-    subtitle: 'Ready to run after current investigation',
+    subtitle: 'Recommended next check has already been queued',
   },
   {
     key: 'm',
     category: 'model',
-    disposition: 'active',
+    disposition: 'current',
     runtime: 'failed',
     title: 'Boosted candidate',
-    subtitle: 'Latest training attempt failed',
+    subtitle: 'Current training attempt failed',
   },
   {
     key: 'e',
     category: 'evaluation',
     disposition: 'deferred',
-    runtime: 'waiting',
+    runtime: 'none',
     title: 'Calibration review',
-    subtitle: 'Paused until prediction export exists',
+    subtitle: 'Deferred work has no current runtime episode',
   },
   {
     key: 'f',
     category: 'investigation',
     disposition: 'future',
-    runtime: 'idle',
+    runtime: 'none',
     title: 'Drift investigation',
-    subtitle: 'Known later-horizon work, not executing',
+    subtitle: 'Future work has no current runtime episode',
   },
 ]
 
@@ -184,10 +184,10 @@ function renderRows() {
       </div>
       ${nodeMarkup({
         category: 'investigation',
-        disposition: 'active',
+        disposition: 'current',
         runtime: runtime.id,
         title: 'Production missingness',
-        subtitle: 'Investigating live data behavior',
+        subtitle: runtime.id === 'none' ? 'Current project work, no execution episode active' : 'Current project work with a live execution episode',
         extraClass: 'runtime-node',
       })}
     </article>
