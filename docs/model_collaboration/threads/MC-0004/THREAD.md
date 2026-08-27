@@ -13,6 +13,8 @@
 
 Run a broad next-generation Project Cockpit design exploration while preserving Specification 008 unless new evidence justifies revision. Phase C uses browser-rendered experiments, continuous human review, selective external references and selective cross-model contributions before production visual replacement is authorized.
 
+Detailed experiment evidence remains in the numbered research records and checkpoints. This thread preserves collaboration history, accepted/rejected design boundaries, exact refs and the current human gate.
+
 ## Collaboration history
 
 ```text
@@ -50,19 +52,17 @@ Reduced in-box resting light
     SELECTED preferred working baseline
 ```
 
-Current scientific category-marker mapping:
+Current scientific category mapping:
 
 ```text
-Question / Blocker        circle
-Investigation             square
-Validation / Analysis     triangle
-Model Work                diamond
-Evaluation                plus
+Question / Blocker        circle / yellow
+Investigation             square / green
+Validation / Analysis     triangle / blue
+Model Work                diamond / red
+Evaluation                plus / purple
 ```
 
-Foundation 023 promotes the durable split between semantic work-unit meaning and approved user-configurable appearance.
-
-Foundation 024 preserves connector treatment, hover/focus and semantic directionality as separate dimensions.
+Foundation 023 preserves semantic meaning separately from approved user-configurable non-semantic appearance. Foundation 024 preserves connector treatment, hover/focus and semantic directionality as separate dimensions.
 
 ## Connector and relation results
 
@@ -145,9 +145,7 @@ Reset example
 - FOCUS
 ```
 
-Changing focus membership does not delete work and does not change project disposition. Membership changes immediately update node suppression and connector classification.
-
-Exact accepted editable-focus target:
+Changing focus membership does not delete work and does not change project disposition. Exact accepted editable-focus target:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
@@ -158,8 +156,6 @@ Final production ownership/persistence, automatic focus suggestions, multiple na
 ## Preservation-method audit during Phase C
 
 Research 064 audited repository-preservation health under rapid small visual iterations.
-
-Result:
 
 ```text
 repository architecture        SOUND
@@ -230,17 +226,11 @@ Recommended / Next
     normally no runtime
     may be Queued if explicitly scheduled
 
-Deferred
-    normally no current runtime
-
-Completed
-    normally no current runtime
-
-Future
+Deferred / Completed / Future
     normally no current runtime
 ```
 
-This remains a working interpretation rather than a frozen compatibility matrix. Historical execution evidence is separate from current runtime.
+Historical execution evidence remains separate from current runtime.
 
 Exact corrected runtime-browser target:
 
@@ -250,7 +240,7 @@ dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
 
 ## Checkpoint 237: runtime-carrier convergence
 
-Human review found that R1 Status Lamp and R5 Motion Signal looked effectively the same for the live non-failure states.
+Human review found R1 Status Lamp and R5 Motion Signal perceptually too similar for live non-failure states.
 
 Implementation verification established:
 
@@ -263,11 +253,11 @@ R5
     + low-salience motion ring
 ```
 
-The difference existed technically but not strongly enough perceptually. This remains negative design evidence.
+The technical difference was retained as negative design evidence because the perceptual differentiation was insufficient.
 
-The project owner also rejected simultaneous dot-plus-runtime-tag composition and proposed exactly one switchable runtime carrier per live-runtime node.
+The project owner rejected simultaneous dot-plus-runtime-tag composition and proposed exactly one switchable runtime carrier per live-runtime node.
 
-Accepted carrier architecture:
+Accepted architecture:
 
 ```text
 Dot + dynamic ring
@@ -294,35 +284,29 @@ Initial switchable-carrier browser target:
 
 ## Research 068: runtime-tag motion convergence
 
-The runtime-tag carrier then underwent a focused motion refinement.
-
-Evidence sequence:
+The runtime-tag carrier underwent a focused motion refinement.
 
 ```text
 rotating conic-gradient
-    lively but visually exposed rotating/clipped inner geometry
+    lively but exposed rotating/clipped inner geometry
 
 short perimeter tracer
-    geometrically clean but too literal / sparse
+    clean but too literal / sparse
 
 first T7
     thicker blurred dash
     still looked effectively like T5 Long Glide
 
 second T7
-    replaced travelling dash with fixed-mask conic shade field
-    initially rendered static because the animated typed custom property did not inherit into pseudo-elements
+    fixed-mask conic shade field
+    initially static because typed custom property did not inherit
 
 repaired T7
     inherits: true
-    broad shade field becomes visibly dynamic
+    broad shade field visibly moves through stationary perimeter
 ```
 
-After the repair, the project owner responded:
-
-```text
-Perfect. Proceed.
-```
+The project owner accepted the repaired result.
 
 Accepted runtime-tag mechanism:
 
@@ -348,20 +332,13 @@ Exact switchable-runtime browser with T7 integrated:
 fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
-Research:
+Checkpoint 237 is closed as the current visual-carrier gate. Final runtime ontology, production default carrier, preference persistence and exact pacing remain unfrozen.
 
-```text
-docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
-docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
-```
+## Checkpoint 238: BLOCKED semantics and carrier refinement
 
-Checkpoint 237 is therefore closed as the current visual-carrier gate. The final runtime ontology, production default carrier, preference persistence and exact pacing remain unfrozen.
+The runtime correction exposed that `Blocked` may be orthogonal to project disposition.
 
-## Checkpoint 238: BLOCKED as progress constraint
-
-The runtime semantic correction exposed that `Blocked` may be orthogonal to project disposition rather than a peer of Current / Next / Deferred / Completed / Future.
-
-Working hypothesis:
+Working separation:
 
 ```text
 PROJECT DISPOSITION
@@ -375,30 +352,7 @@ RUNTIME
     what is happening in that episode?
 ```
 
-This allows:
-
-```text
-Current + Blocked
-Next + Blocked
-```
-
-without replacing the disposition value.
-
-Two semantic contrasts are deliberately under direct review.
-
-### Blocked versus WAIT runtime
-
-```text
-Blocked
-    work cannot proceed until a constraint is resolved
-    no live runtime episode is required
-
-WAIT runtime
-    a live work/execution episode exists
-    that episode is presently waiting
-```
-
-The browser therefore includes:
+The first browser compared dedicated BLOCKED treatments C0-C6 and deliberately contrasted:
 
 ```text
 Current + Blocked + NONE
@@ -406,37 +360,15 @@ vs
 Current + WAIT + unblocked
 ```
 
-### Question / Blocker category versus Blocked constraint
+and:
 
 ```text
-Question / Blocker
-    work-unit category / kind
-
-Blocked
-    progress constraint on an affected work unit
+Question / Blocker category
+vs
+Blocked progress constraint
 ```
 
-A Question / Blocker work unit may itself be unblocked while resolving the condition that blocks another node.
-
-Current visual candidates:
-
-```text
-C0  Neutral Control
-C1  Explicit Tag
-C2  Edge Clamp
-C3  Stop Rail
-C4  Barrier Seal
-C5  Constraint Veil
-C6  Tag + Clamp
-```
-
-Browser:
-
-```text
-http://localhost:5173/design-lab/work-unit-progress-constraint.html
-```
-
-Exact progress-constraint browser target:
+Exact first progress-constraint browser target:
 
 ```text
 efd0d36ee4ccf4c5494220df54eb3e7f50995658
@@ -448,23 +380,182 @@ Research:
 docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
 ```
 
+## Research 070: blocker cause, blocked effect and shared operational-status carrier
+
+Human review then refined the model:
+
+```text
+BLOCKER
+    cause / unresolved work or dependency preventing progress
+
+BLOCKS
+    relationship from blocker cause to affected work
+
+BLOCKED
+    current progress constraint on affected work
+
+FAIL
+    failed current execution attempt
+```
+
+A visible Question / Blocker can therefore be the cause-resolution work without itself being Blocked.
+
+Example:
+
+```text
+[Resolve data contract]
+Question / Blocker
+CURRENT + HUMAN
+
+        BLOCKS
+           ↓
+
+[Production missingness]
+Investigation
+CURRENT + BLOCKED
+```
+
+The visual carrier was simplified to one bottom-right operational-status presentation slot:
+
+```text
+live runtime state
+or
+BLOCKED progress constraint
+
+shared visual carrier
+    !=
+merged ontology
+```
+
+Tag mode reuses T7 Soft Shade with explicit state text.
+
+The final compact red mapping was explicitly selected by the project owner:
+
+```text
+BLOCKED
+    red core dot
+    sharper non-circular dynamic ring
+
+FAIL
+    red core dot
+    smoother circular dynamic ring
+```
+
+Exact accepted shared BLOCKED/status visual target:
+
+```text
+88fd3c3cfe7a1eff4664afde06341b7b654c97f4
+```
+
+The project owner then responded:
+
+```text
+Perfect. Proceed.
+```
+
+Checkpoint 238 is therefore closed as the current BLOCKED visual gate. Final progress-constraint ontology, blocker taxonomy, many-to-many representation and state-transition rules remain unfrozen.
+
+## Work-unit detail expansion idea preserved
+
+During the same review the project owner proposed:
+
+```text
+compact map work unit
+    -> expanded contextual/detail card
+    -> full specialist workspace / deep focus
+```
+
+Specification 008 already promotes selection into full specialist/deep-work content. The intermediate expanded-card level remains deliberately deferred to semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
+
+## Checkpoint 239: attention priority review
+
+The next bounded node-level question is:
+
+```text
+ATTENTION PRIORITY
+    among visible work, which work deserves more attention now?
+```
+
+This is explicitly separated from:
+
+```text
+category
+project disposition
+progress constraint
+runtime / operational status
+current-process focus membership
+```
+
+The experiment does not assume:
+
+```text
+priority == relevance
+priority == scheduling order
+priority == current-focus membership
+priority == operational urgency
+```
+
+Controlled fixture:
+
+```text
+Investigation
+CURRENT
+RUN
+HIGH attention
+```
+
+`HIGH` is a provisional binary test fixture rather than a frozen priority scale.
+
+Candidate visual treatments:
+
+```text
+A0  Neutral Control
+A1  Twin Tick
+A2  Top Rail
+A3  Signal Bars
+A4  Side Bracket
+A5  HIGH Tag
+A6  Beacon
+A7  Luminance Lift
+A8  Rail + Tag
+```
+
+Browser:
+
+```text
+http://localhost:5173/design-lab/work-unit-attention-priority.html
+```
+
+Exact browser implementation target:
+
+```text
+767c66f76974d3c0a851de0dfa17c502817a4b12
+```
+
+Research:
+
+```text
+docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
+```
+
 Checkpoint:
 
 ```text
-docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
+docs/checkpoints/239_shared_blocked_carrier_accepted_attention_priority_review_opened.md
 ```
 
 Practical fixture:
 
 ```text
-Question / Blocker    CURRENT + HUMAN     unblocked
-Investigation         CURRENT + BLOCKED   NONE
-Validation            NEXT + BLOCKED      NONE
-Model Work            CURRENT + RUN       unblocked
-Investigation         CURRENT + WAIT      unblocked
-Evaluation            DEFER + NONE        unblocked
-Investigation         FUTURE + NONE       unblocked
+Question / Blocker    CURRENT + HUMAN      HIGH
+Investigation         CURRENT + BLOCKED    HIGH
+Validation            NEXT + NONE          normal
+Model Work            CURRENT + FAIL       HIGH
+Investigation         CURRENT + RUN        normal
+Evaluation            DEFER + NONE         normal
 ```
+
+The yellow Question / Blocker node deliberately tests whether the provisional warm attention tone remains distinct from category color.
 
 ## Dependency-bound ideas
 
@@ -479,18 +570,14 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human judges whether Blocked belongs on an orthogonal progress-constraint axis
-human verifies Question / Blocker category remains distinct from Blocked state
-human verifies Current + Blocked + NONE remains distinct from Current + WAIT
-human compares C1-C6 against C0
-human judges explicit tag vs structural cue vs hybrid
-human identifies treatments that resemble focus suppression / priority
--> prefer / reject / combine / refine
--> do not freeze final disposition / constraint / runtime ontology yet
+human compares A1-A8 against A0
+human judges structural priority cues versus explicit HIGH text
+human rejects treatments that resemble status, connector ports, focus or hover
+human inspects mixed categories and especially yellow Question / Blocker
+human prefers / rejects / combines / refines
+-> do not freeze final priority / relevance / scheduling ontology yet
 ```
-
-Priority/importance visual grammar remains a separate future slice.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, production runtime-carrier default/persistence model, final project-disposition ontology, final progress-constraint ontology, final Blocked treatment, disposition/constraint/runtime compatibility matrix, blocker-cause navigation, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, production runtime/status-carrier default/persistence model, final project-disposition ontology, final progress-constraint ontology, final BLOCKS relation semantics, final attention-priority ontology, priority/relevance/scheduling relationship, priority provenance/override/persistence model, production priority carrier, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, work-unit inline expansion behavior, semantic zoom, C5 Internal Layout Grammar, motion library or final visual-system freeze is authorized by this thread.
