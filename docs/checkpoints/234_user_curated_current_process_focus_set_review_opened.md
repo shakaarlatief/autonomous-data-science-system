@@ -1,8 +1,17 @@
 # Checkpoint 234: User-Curated Current-Process Focus Set Review Opened
 
 **Date:** 2026-08-27  
-**Branch:** `v1-cockpit-design-exploration`  
-**Status:** Phase-C human browser review open
+**Status:** Phase-C human browser review open  
+**Checkpoint class:** CONTINUITY / PRODUCT_DESIGN  
+**Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
+**Scope:** Preserves acceptance of the stronger current-process focus lens, adds explicit user editing of focus-set membership, and opens human verification of add/remove focus interactions without deleting work or changing disposition.  
+**Authority:** Current Phase-C routing/evidence boundary. User-curated focus membership is an accepted design direction under review, while final ownership, automatic membership logic and production persistence remain unfrozen. Production `/cockpit` remains untouched.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT  
+**Branch:** `v1-cockpit-design-exploration`
 
 ## Preserved human result
 
