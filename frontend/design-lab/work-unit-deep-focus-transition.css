@@ -274,8 +274,25 @@ main { padding: 22px 30px 64px; }
 /* F4 Context Ribbon */
 [data-style="f4"].is-focused .map-layer { opacity:0; }
 [data-style="f4"].is-focused .workspace-layer { opacity:1; }
-[data-style="f4"] .workspace-shell { inset:24px 10px 10px; }
-[data-style="f4"] .workspace-shell::before { content:"PROJECT MAP  /  Investigation  /  Production missingness"; position:absolute; left:12px; top:-18px; color:#91a5bf; font-size:6px; letter-spacing:.06em; }
+[data-style="f4"] .workspace-shell { inset:10px; padding-top:18px; }
+[data-style="f4"] .workspace-shell::before {
+  content:"PROJECT MAP  /  Investigation  /  Production missingness";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  z-index:4;
+  height:18px;
+  display:flex;
+  align-items:center;
+  padding:0 12px;
+  border-bottom:1px solid rgba(185,206,240,.09);
+  background:rgba(12,18,27,.98);
+  color:#91a5bf;
+  font-size:6px;
+  letter-spacing:.06em;
+}
+[data-style="f4"] .workspace-content { height:calc(100% - 62px); }
 
 /* F5 Map Frame */
 [data-style="f5"].is-focused .map-layer { opacity:.42; filter:saturate(.62); transform:scale(1.02); }
