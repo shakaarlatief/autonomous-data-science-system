@@ -42,6 +42,9 @@ body {
 .focus-controls {
   display: grid;
   grid-template-columns: minmax(430px, 0.95fr) minmax(430px, 0.85fr) minmax(280px, 0.55fr) minmax(220px, 0.45fr);
+  grid-template-areas:
+    "copy segment toggle summary"
+    "membership membership membership membership";
   gap: 10px;
   align-items: stretch;
   margin-bottom: 16px;
@@ -49,6 +52,7 @@ body {
 
 .focus-control-copy,
 .focus-segmented,
+.focus-membership-controls,
 .focus-toggle,
 .focus-summary {
   min-height: 82px;
@@ -59,6 +63,7 @@ body {
 }
 
 .focus-control-copy {
+  grid-area: copy;
   display: grid;
   align-content: center;
   gap: 3px;
@@ -78,13 +83,79 @@ body {
 }
 
 .focus-segmented {
+  grid-area: segment;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
 }
 
+.focus-membership-controls {
+  grid-area: membership;
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.focus-membership-controls > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.focus-membership-controls strong {
+  color: rgba(226, 233, 245, 0.90);
+  font-size: 9px;
+  font-weight: 780;
+}
+
+.focus-membership-controls small {
+  color: var(--text-dim);
+  font-size: 7.8px;
+  line-height: 1.35;
+}
+
+.focus-membership-actions {
+  display: flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.focus-membership-actions button {
+  min-height: 30px;
+  padding: 0 11px;
+  border: 1px solid rgba(142, 169, 255, 0.24);
+  border-radius: 7px;
+  background: rgba(15, 22, 33, 0.82);
+  color: rgba(211, 222, 241, 0.84);
+  font: inherit;
+  font-size: 7.7px;
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.focus-membership-actions button:hover {
+  border-color: rgba(142, 169, 255, 0.46);
+  color: rgba(231, 237, 247, 0.96);
+}
+
+#focus-edit-toggle[aria-pressed="true"] {
+  border-color: rgba(142, 169, 255, 0.62);
+  background: rgba(142, 169, 255, 0.10);
+  color: rgba(218, 229, 248, 0.98);
+  box-shadow: inset 0 0 10px rgba(142, 169, 255, 0.05), 0 0 12px rgba(142, 169, 255, 0.06);
+}
+
+#focus-reset {
+  border-color: rgba(157, 172, 195, 0.18);
+  color: rgba(181, 193, 211, 0.72);
+}
+
 .focus-toggle {
+  grid-area: toggle;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,15 +185,21 @@ body {
 }
 
 .focus-summary {
+  grid-area: summary;
   display: grid;
   align-content: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .focus-summary strong {
   color: rgba(217, 227, 244, 0.90);
   font-size: 8.8px;
   font-weight: 760;
+}
+
+.focus-summary small {
+  color: rgba(162, 177, 198, 0.66);
+  font-size: 7.5px;
 }
 
 .focus-preview {
@@ -233,6 +310,77 @@ body {
   opacity: 0;
 }
 
+.focus-membership-toggle {
+  position: absolute;
+  z-index: 12;
+  right: 9px;
+  bottom: 8px;
+  min-width: 48px;
+  height: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border: 1px solid rgba(142, 169, 255, 0.26);
+  border-radius: 6px;
+  background: rgba(8, 13, 20, 0.94);
+  color: rgba(195, 207, 225, 0.82);
+  font: inherit;
+  font-size: 6.2px;
+  font-weight: 850;
+  letter-spacing: 0.045em;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  cursor: pointer;
+  transform: translateY(2px);
+  transition: opacity 150ms ease, visibility 150ms ease, transform 150ms ease, border-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+html[data-focus-edit="on"] .focus-membership-toggle {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.focus-node[data-process-scope="current"] .focus-membership-toggle {
+  border-color: rgba(142, 169, 255, 0.48);
+  color: rgba(205, 220, 246, 0.94);
+  box-shadow: inset 0 0 8px rgba(142, 169, 255, 0.05);
+}
+
+.focus-node[data-process-scope="context"] .focus-membership-toggle {
+  border-color: rgba(157, 172, 195, 0.25);
+  color: rgba(174, 189, 210, 0.74);
+}
+
+.focus-membership-toggle:hover,
+.focus-membership-toggle:focus-visible {
+  border-color: rgba(142, 169, 255, 0.72) !important;
+  color: rgba(231, 237, 248, 0.98) !important;
+  outline: none;
+  box-shadow: inset 0 0 8px rgba(142, 169, 255, 0.06), 0 0 10px rgba(142, 169, 255, 0.10) !important;
+}
+
+html[data-focus-edit="on"] .focus-node {
+  cursor: default;
+}
+
+html[data-focus-edit="on"] .focus-node::after {
+  content: "";
+  position: absolute;
+  z-index: 11;
+  inset: -3px;
+  border: 1px dashed rgba(154, 173, 201, 0.14);
+  border-radius: 11px;
+  pointer-events: none;
+}
+
+html[data-focus-edit="on"] .focus-node[data-process-scope="current"]::after {
+  border-color: rgba(142, 169, 255, 0.30);
+}
+
 /* Held P7 neutral tag + tone treatment. */
 .focus-node[data-state="completed"] .node-surface {
   opacity: 0.86;
@@ -284,6 +432,17 @@ html[data-process-focus="focused"] .focus-node[data-process-scope="context"].is-
   opacity: 0.34 !important;
 }
 
+/* Editing temporarily raises contextual nodes enough to make membership controls comfortably operable. */
+html[data-process-focus="focused"][data-focus-edit="on"] .focus-node[data-process-scope="context"] {
+  opacity: 0.58;
+  filter: saturate(0.60) brightness(0.88);
+}
+
+html[data-process-focus="focused"][data-focus-edit="on"] .focus-node[data-process-scope="context"].is-hovered {
+  opacity: 0.82;
+  filter: saturate(0.78) brightness(0.96);
+}
+
 html[data-process-focus="focused"] .focus-relations path.is-context-edge {
   opacity: 0.16;
 }
@@ -312,6 +471,7 @@ html[data-reduced="on"] .ambient-drift {
 
 html[data-reduced="on"] .focus-node,
 html[data-reduced="on"] .focus-relations path,
+html[data-reduced="on"] .focus-membership-toggle,
 html[data-reduced="on"] .disposition-state-badge,
 html[data-reduced="on"] .node-surface {
   transition: none !important;
@@ -320,6 +480,7 @@ html[data-reduced="on"] .node-surface {
 @media (prefers-reduced-motion: reduce) {
   .focus-node,
   .focus-relations path,
+  .focus-membership-toggle,
   .disposition-state-badge,
   .node-surface {
     transition: none !important;
