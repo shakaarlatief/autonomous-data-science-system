@@ -1,15 +1,13 @@
 # Research 071: Work-Unit Attention Priority Visual Grammar Experiment
 
 **Date:** 2026-08-27  
-**Status:** Active Phase-C semantic/visual experiment  
-**Scope:** Opens a bounded visual grammar experiment for elevated attention priority after the shared operational-status carrier and blocker-to-blocked relationship model received positive human review.  
-**Authority:** Research evidence only. This memo does not freeze a priority ontology, relevance score, scheduling policy, ranking algorithm, production carrier, or final Cockpit design system.
+**Status:** Human-selected current Phase-C direction  
+**Scope:** Bounded visual grammar experiment for elevated attention priority after the shared operational-status carrier and blocker-to-blocked relationship model received positive human review.  
+**Authority:** Research evidence only. A3 Signal Bars are selected as the current Phase-C visual treatment, but this memo does not freeze a priority ontology, relevance score, scheduling policy, ranking algorithm, ownership model, persistence model or final production carrier.
 
 ## 1. Boundary transition from BLOCKED
 
-Checkpoint 238 explored whether `Blocked` should be a separate progress-constraint concept and how it should coexist with runtime and project disposition.
-
-Human review converged on the following current Phase-C interpretation:
+Checkpoint 238 converged the BLOCKED/progress-constraint presentation to:
 
 ```text
 BLOCKER
@@ -19,96 +17,60 @@ BLOCKS
     relationship from blocker cause to affected work
 
 BLOCKED
-    current progress constraint on the affected work unit
+    current progress constraint on affected work
 
 FAIL
     failed current execution attempt
 ```
 
-The visual presentation was simplified to one bottom-right operational-status slot that may present either a live runtime state or BLOCKED without claiming those concepts are the same model field.
+The visual presentation uses one bottom-right operational-status slot that may present either live runtime or BLOCKED without merging the underlying semantics.
 
-Accepted appearance direction:
-
-```text
-Dot mode
-    compact status dot + dynamic ring
-
-Tag mode
-    T7 Soft Shade explicit status tag
-
-BLOCKED dot
-    sharper red non-circular constraint ring
-
-FAIL dot
-    smoother circular red operational ring
-```
-
-The project owner explicitly accepted the final ring swap and responded:
+Accepted compact red mapping:
 
 ```text
-Perfect. Proceed.
+BLOCKED    sharper non-circular dynamic ring
+FAIL       smoother circular dynamic ring
 ```
 
-Exact accepted BLOCKED/status browser visual target:
+Exact accepted BLOCKED/status target:
 
 ```text
 88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
-Research evidence:
+## 2. Bounded attention-priority concept
 
-```text
-docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
-docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
-```
-
-The final progress-constraint ontology and state-transition rules remain unfrozen.
-
-## 2. Why attention priority is the next bounded question
-
-Several node-level semantic channels are now sufficiently separated to expose the remaining problem:
-
-```text
-CATEGORY
-    what is this work unit?
-
-PROJECT DISPOSITION
-    where does it stand in the project?
-
-PROGRESS CONSTRAINT
-    can it proceed?
-
-RUNTIME
-    if a meaningful current episode exists, what is happening?
-
-CURRENT-FOCUS MEMBERSHIP
-    is it in the emphasized process set?
-```
-
-A different question remains:
+The experiment isolated:
 
 ```text
 ATTENTION PRIORITY
     among visible work, which work deserves more attention now?
 ```
 
-This is deliberately narrower than the earlier shorthand `importance / priority / relevance`.
+This was deliberately separated from:
 
-The current slice does **not** assume that:
+```text
+category
+project disposition
+progress constraint
+runtime / operational status
+current-process focus membership
+```
+
+The experiment did not assume:
 
 ```text
 priority == relevance
 priority == scheduling order
 priority == current-focus membership
-priority == project disposition
-priority == runtime urgency
+priority == operational urgency
 ```
 
-Those relationships require later semantic evidence.
+Those relationships remain future semantic questions.
 
-## 3. Controlled semantic fixture
+## 3. Controlled fixture
 
-The controlled rows hold constant:
+Every controlled row held:
 
 ```text
 category       Investigation
@@ -117,26 +79,9 @@ status         RUN
 priority       HIGH
 ```
 
-Only the priority carrier changes.
-
-`HIGH` is a provisional binary test fixture, not a frozen priority scale.
-
-The experiment intentionally avoids committing to values such as:
-
-```text
-low
-medium
-high
-critical
-P0/P1/P2
-numeric score
-```
-
-until a visual carrier and product meaning have earned further work.
+`HIGH` was a provisional binary test fixture only.
 
 ## 4. Held controls
-
-The experiment preserves:
 
 ```text
 G4 Adaptive Hybrid world
@@ -150,9 +95,7 @@ FAIL smoother circular ring
 category hue remains category-owned
 ```
 
-The accepted soft-shade status-tag alternative remains preserved, but the practical priority scene holds operational status to compact dot mode so the priority comparison changes one major visual variable at a time.
-
-## 5. Browser
+## 5. Browser evidence
 
 Local route:
 
@@ -168,100 +111,56 @@ frontend/design-lab/work-unit-attention-priority.css
 frontend/design-lab/work-unit-attention-priority.js
 ```
 
-Exact browser implementation target:
+Exact browser implementation reviewed by the project owner:
 
 ```text
 767c66f76974d3c0a851de0dfa17c502817a4b12
 ```
 
-Production `/cockpit` remains untouched.
+Production `/cockpit` remained untouched.
 
 ## 6. Candidate priority carriers
 
-Every candidate uses the same provisional champagne attention color so geometry/presentation can be compared without simultaneously changing hue.
+```text
+A0  Neutral Control
+A1  Twin Tick
+A2  Top Rail
+A3  Signal Bars
+A4  Side Bracket
+A5  HIGH Tag
+A6  Beacon
+A7  Luminance Lift
+A8  Rail + Tag
+```
 
 ### A0 Neutral Control
-
-```text
-no priority-specific cue
-```
-
-Purpose: baseline.
+No priority-specific cue. Baseline.
 
 ### A1 Twin Tick
-
-```text
-two tiny vertical ticks
-centered just above the upper frame
-```
-
-Tests a compact learned structural marker.
+Two tiny vertical ticks centered above the upper frame.
 
 ### A2 Top Rail
-
-```text
-short restrained highlight rail
-centered on the upper frame
-```
-
-Tests a clean structural emphasis channel spatially separated from disposition and operational status.
+Short restrained highlight rail centered on the upper frame.
 
 ### A3 Signal Bars
-
-```text
-three ascending micro-bars
-near the upper-right frame but separated from the disposition badge
-```
-
-Tests an instrument-like attention signal. The ascending geometry has possible future ordinal potential, but no priority scale is implied or frozen here.
+Three ascending micro-bars near the upper-right frame but separated from the disposition badge. The ascending geometry has possible future ordinal potential, but no scale is implied or frozen.
 
 ### A4 Side Bracket
-
-```text
-slim bracket gripping the right-middle edge
-```
-
-Tests structural emphasis without text or broad recoloring.
+Slim bracket gripping the right-middle edge.
 
 ### A5 HIGH Tag
-
-```text
-small explicit HIGH tag
-bottom-left
-```
-
-Tests maximum semantic explicitness while deliberately increasing label density.
+Small explicit HIGH tag at bottom-left, maximizing explicitness while increasing label density.
 
 ### A6 Beacon
-
-```text
-small hollow diamond above the frame
-```
-
-Tests a compact beacon. It may fail if it resembles a connector port or endpoint.
+Small hollow diamond above the frame, deliberately testing possible confusion with connector ports.
 
 ### A7 Luminance Lift
-
-```text
-slightly brighter surface / outline
-no dedicated marker
-```
-
-This is an intentional falsification candidate because it may collapse into hover, focus, selection or resting-light language.
+Slightly brighter surface / outline with no dedicated marker, deliberately testing possible collapse into hover/focus/resting-light language.
 
 ### A8 Rail + Tag
-
-```text
-A2 structural rail
-+
-A5 explicit HIGH tag
-```
-
-Tests whether restrained redundancy helps or simply duplicates meaning.
+A2 structural rail plus A5 explicit HIGH tag, testing restrained redundancy.
 
 ## 7. Practical coexistence fixture
-
-The mixed scene contains:
 
 ```text
 Question / Blocker    CURRENT + HUMAN      HIGH
@@ -272,63 +171,51 @@ Investigation         CURRENT + RUN        normal
 Evaluation            DEFER + NONE         normal
 ```
 
-This tests whether priority remains readable beside:
+The yellow Question / Blocker category deliberately tested whether the provisional warm attention tone could remain distinguishable from category color through geometry and placement.
+
+## 8. Human selection
+
+The project owner reviewed the candidates and responded:
 
 ```text
-category color
-disposition tags
-BLOCKED
-FAIL
-RUN
-HUMAN
-ordinary non-priority work
+I choose A3. Perfect. Proceed.
 ```
 
-The yellow Question / Blocker category is particularly important because the provisional priority tone is warm. A good carrier must remain distinguishable by geometry and placement rather than relying on hue alone.
-
-## 8. Priority versus current-focus membership
-
-The accepted current-process focus lens answers:
+Selected current Phase-C visual direction:
 
 ```text
-Is this work in the process set I am emphasizing?
+A3  Signal Bars
+
+HIGH attention
+    three ascending micro-bars
+    near the upper-right frame
+    structural rather than textual
+    spatially separated from disposition and bottom-right operational status
 ```
 
-Attention priority instead asks:
+This closes the visual carrier comparison for the current Phase-C round.
+
+It does **not** establish that the final product should use a binary HIGH/normal model or that the number/height of bars should encode an ordinal scale. Those remain hypotheses requiring separate evidence.
+
+## 9. Why A3 is useful evidence
+
+The selection supports several design observations:
 
 ```text
-Among work I can see, which work deserves more attention now?
+structural micro-signals can carry persistent node-level meaning without another textual badge
+
+attention priority can remain visually independent from category hue
+
+upper-frame geometry can coexist with top-right disposition and bottom-right operational status
+
+selection should not rely on broad luminance or suppression because those channels already have other jobs
 ```
 
-Therefore a node can plausibly be:
-
-```text
-in current focus + normal priority
-in current focus + high priority
-outside current focus + high priority
-```
-
-The last combination may or may not be useful in the final product, but this experiment does not silently forbid it.
-
-Priority should not be encoded by broad suppression because suppression already belongs to the current-process focus lens.
-
-## 9. Current human gate
-
-Review:
-
-```text
-1. compare A1-A8 against A0
-2. judge which carrier makes HIGH attention visible without overpowering category/status
-3. compare structural-only cues against explicit HIGH text
-4. reject any treatment that resembles connector ports, hover, focus or status
-5. inspect the yellow Question / Blocker example carefully
-6. judge whether A8 redundancy is useful or cluttered
-7. prefer / reject / combine / refine
-```
+The final production tone, exact dimensions and semantic scale remain unfrozen.
 
 ## 10. Work-unit detail expansion remains deferred
 
-The previously proposed interaction remains preserved:
+The preserved interaction hierarchy remains:
 
 ```text
 compact map work unit
@@ -336,9 +223,7 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
-It is not mixed into this priority slice because that would change information density, node geometry and interaction depth simultaneously.
-
-It remains grouped with future semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
+The next slice first tests persistent selection, because the Cockpit needs a stable selected-object state before an expanded detail interaction can be designed cleanly.
 
 ## 11. Still unfrozen
 
@@ -350,12 +235,8 @@ relationship between priority and scheduling
 who owns priority: ADS, human, or both
 priority provenance and override rules
 priority persistence
-production priority carrier
 production attention color
 semantic zoom behavior for priority
 large-project priority density
 final current-focus interaction with priority
-final operational-status ontology
-final progress-constraint ontology
-final work-unit inline expansion behavior
 ```
