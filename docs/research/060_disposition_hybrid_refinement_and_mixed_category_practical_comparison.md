@@ -105,6 +105,8 @@ The only deliberate difference between the two practical scenes is whether dispo
 
 The practical scenes use dynamically calculated connector geometry rather than fixed visual paths.
 
+The connector code also chooses horizontal versus vertical attachment from the actual rendered rectangle separation. This avoids forcing a right-to-left connector when two practical nodes overlap horizontally but are separated vertically.
+
 This preserves the already-established Cockpit rule:
 
 ```text
@@ -134,7 +136,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
 ## 7. Human review gate
