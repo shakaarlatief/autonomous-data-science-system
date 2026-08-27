@@ -1,0 +1,327 @@
+body {
+  min-width: 1440px;
+}
+
+.focus-header {
+  grid-template-columns: minmax(820px, 1fr) auto;
+}
+
+.focus-held-state {
+  display: grid;
+  min-width: 330px;
+  gap: 4px;
+  padding: 11px 13px;
+  border: 1px solid rgba(142, 169, 255, 0.22);
+  border-radius: 9px;
+  background: rgba(12, 17, 27, 0.72);
+}
+
+.focus-held-state span,
+.focus-summary span {
+  color: var(--text-dim);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.focus-held-state strong {
+  color: rgba(222, 230, 244, 0.92);
+  font-size: 9px;
+  font-weight: 760;
+}
+
+.focus-main {
+  padding-bottom: 60px;
+}
+
+.focus-intro {
+  margin-bottom: 14px;
+}
+
+.focus-controls {
+  display: grid;
+  grid-template-columns: minmax(430px, 0.95fr) minmax(430px, 0.85fr) minmax(280px, 0.55fr) minmax(220px, 0.45fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.focus-control-copy,
+.focus-segmented,
+.focus-toggle,
+.focus-summary {
+  min-height: 82px;
+  padding: 10px 11px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.70);
+}
+
+.focus-control-copy {
+  display: grid;
+  align-content: center;
+  gap: 3px;
+}
+
+.focus-control-copy h2 {
+  margin: 2px 0 1px;
+  color: rgba(232, 237, 246, 0.92);
+  font-size: 12px;
+}
+
+.focus-control-copy p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 8.2px;
+  line-height: 1.45;
+}
+
+.focus-segmented {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.focus-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.focus-toggle > span {
+  display: grid;
+  gap: 3px;
+}
+
+.focus-toggle strong {
+  color: rgba(226, 233, 245, 0.88);
+  font-size: 8.7px;
+}
+
+.focus-toggle small {
+  color: var(--text-dim);
+  font-size: 7.7px;
+  line-height: 1.35;
+}
+
+.focus-toggle input {
+  width: 15px;
+  height: 15px;
+  accent-color: rgb(142, 169, 255);
+}
+
+.focus-summary {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+}
+
+.focus-summary strong {
+  color: rgba(217, 227, 244, 0.90);
+  font-size: 8.8px;
+  font-weight: 760;
+}
+
+.focus-preview {
+  overflow: hidden;
+  border: 1px solid var(--panel-border-strong);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.22);
+}
+
+.focus-preview-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.focus-preview-header h2 {
+  margin: 4px 0 4px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.focus-preview-header p {
+  margin: 0;
+  max-width: 850px;
+  color: var(--text-soft);
+  font-size: 8.8px;
+}
+
+.focus-legend {
+  display: flex;
+  gap: 7px;
+  flex: 0 0 auto;
+}
+
+.focus-legend span {
+  padding: 6px 9px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: rgba(13, 19, 28, 0.68);
+  color: var(--text-dim);
+  font-size: 7.8px;
+  font-weight: 760;
+}
+
+.focus-legend .is-current {
+  border-color: rgba(142, 169, 255, 0.28);
+  color: rgba(213, 224, 244, 0.90);
+}
+
+.focus-legend .is-context {
+  opacity: 0.68;
+}
+
+.focus-world {
+  height: 560px;
+}
+
+.focus-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.focus-relations path {
+  fill: none;
+  stroke: rgba(143, 160, 184, 0.28);
+  stroke-width: 1.35;
+  vector-effect: non-scaling-stroke;
+  opacity: 1;
+  transition: opacity 220ms ease, stroke 220ms ease;
+}
+
+.focus-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.focus-node {
+  position: absolute;
+  width: 190px;
+  height: 96px;
+  --state-rgb: 142, 169, 255;
+  opacity: 1;
+  filter: saturate(1) brightness(1);
+  transition: opacity 260ms ease, filter 260ms ease, transform 170ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.focus-node:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.focus-node .disposition-state-badge {
+  opacity: 1;
+}
+
+.focus-node .disposition-state-outline,
+.focus-node .disposition-state-rhythm {
+  opacity: 0;
+}
+
+/* Held P7 neutral tag + tone treatment. */
+.focus-node[data-state="completed"] .node-surface {
+  opacity: 0.86;
+  filter: saturate(0.82);
+}
+
+.focus-node[data-state="deferred"] .node-surface {
+  opacity: 0.78;
+  filter: saturate(0.72);
+}
+
+.focus-node[data-state="future"] .node-surface {
+  opacity: 0.66;
+  filter: saturate(0.62);
+}
+
+.focus-node.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05), 0 0 9px rgba(var(--state-rgb), 0.08);
+}
+
+/* Stronger view lens. This is presentation only, not a disposition mutation. */
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"] {
+  opacity: 0.27;
+  filter: saturate(0.38) brightness(0.74);
+}
+
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"] .rest-spill,
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"] .rest-light,
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"] .surface-rest-light,
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"] .custom-lumen-layer {
+  opacity: 0.08 !important;
+}
+
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"].is-hovered {
+  opacity: 0.72;
+  filter: saturate(0.72) brightness(0.94);
+}
+
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"].is-hovered .node-surface {
+  opacity: 0.90;
+  filter: saturate(0.82) brightness(0.97);
+}
+
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"].is-hovered .rest-spill,
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"].is-hovered .rest-light,
+html[data-process-focus="focused"] .focus-node[data-process-scope="context"].is-hovered .surface-rest-light {
+  opacity: 0.34 !important;
+}
+
+html[data-process-focus="focused"] .focus-relations path.is-context-edge {
+  opacity: 0.16;
+}
+
+html[data-process-focus="focused"] .focus-relations path.is-current-edge {
+  opacity: 1;
+  stroke: rgba(160, 177, 201, 0.34);
+}
+
+.focus-node.scene-q { left: 5%; top: 42%; }
+.focus-node.scene-i { left: 29%; top: 11%; }
+.focus-node.scene-v { left: 52%; top: 39%; }
+.focus-node.scene-m { left: 76%; top: 9%; }
+.focus-node.scene-e { left: 38%; top: 70%; }
+.focus-node.scene-f { left: 70%; top: 70%; }
+
+.focus-review {
+  margin-top: 18px;
+}
+
+html[data-reduced="on"] .ambient-current,
+html[data-reduced="on"] .ambient-glint,
+html[data-reduced="on"] .ambient-drift {
+  animation: none !important;
+}
+
+html[data-reduced="on"] .focus-node,
+html[data-reduced="on"] .focus-relations path,
+html[data-reduced="on"] .disposition-state-badge,
+html[data-reduced="on"] .node-surface {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-node,
+  .focus-relations path,
+  .disposition-state-badge,
+  .node-surface {
+    transition: none !important;
+  }
+}
