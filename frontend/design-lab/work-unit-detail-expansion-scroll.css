@@ -1,0 +1,8 @@
+/* This experiment is intentionally review-dense. Unlike the shared design-lab
+ * header, its large explanatory header should scroll out of the viewport so
+ * the comparison grid can use the full vertical review area.
+ */
+.expansion-header {
+  position: static;
+  top: auto;
+}
