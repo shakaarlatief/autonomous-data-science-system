@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 230  
+**Current checkpoint:** 231  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        230
+checkpoint                        231
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  work-unit project-disposition visual grammar human review
+current boundary                  refined P6 vs P7 project-disposition mixed-category human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -35,35 +35,14 @@ source-vault deployment           PAUSED, Course 2 gate unchanged
 
 # Held Cockpit visual controls
 
-## Grid/world
-
 ```text
-G4 Adaptive Hybrid
+G4 Adaptive Hybrid world
 Dark mode baseline
-randomized travelling grid currents
-quiet 100 px major-grid glints
-ambient drift
-localized semantic activity
+H4 generic hover/outward response
+Reduced in-box resting light
 ```
 
-Primary evidence:
-
-```text
-docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
-docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
-docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
-docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
-```
-
-## Work-unit interaction lighting
-
-```text
-H4 generic hover/outward response  sufficiently settled
-Reduced in-box resting light       selected preferred working baseline
-```
-
-## Work-unit category markers
+Current work-unit category markers:
 
 ```text
 Question / Blocker        circle
@@ -73,11 +52,7 @@ Model Work                diamond
 Evaluation                plus
 ```
 
----
-
-# Foundation 023: configurable Cockpit appearance
-
-Promoted foundation:
+Foundation 023:
 
 ```text
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
@@ -92,9 +67,9 @@ Micro design    None / Micro material / Micro light
 
 ---
 
-# Connector treatment and directionality result
+# Connector treatment and relation semantics
 
-Primary connector evidence:
+Primary evidence:
 
 ```text
 docs/research/053_connector_and_port_visual_grammar_experiment.md
@@ -113,21 +88,13 @@ Frame sockets
 Direction arrows
 ```
 
-Current architecture:
-
-```text
-one terminal treatment normally active at a time
-hover / focus is a separate reveal / emphasis mechanism
-directionality is system-owned semantics
-```
-
 Accepted direction grammar:
 
 ```text
-Undirected      A - B       no arrow
-Forward         A -> B      arrow at B
-Reverse         A <- B      same arrow at A
-Bidirectional   A <-> B     same arrow at both endpoints
+Undirected      no arrow
+Forward         arrow at B
+Reverse         same arrow at A
+Bidirectional   same arrow at both endpoints
 ```
 
 Exact accepted directionality implementation:
@@ -136,65 +103,42 @@ Exact accepted directionality implementation:
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Promoted foundation:
+Foundation 024:
 
 ```text
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
----
-
-# Relation-class visual grammar result
-
-Primary evidence:
-
-```text
-docs/research/057_semantic_relation_class_visual_grammar_experiment.md
-docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
-frontend/design-lab/relation-class-grammar.html
-```
-
-Human-selected relation-class carrier:
+Relation-class result:
 
 ```text
 E5  Hue + Tag
     SELECTED / sufficiently settled for current Phase C
 ```
 
-Current rule:
-
-```text
-relation-class meaning
-    restrained semantic hue
-    + compact explicit tag
-
-stroke rhythm
-    preserved as a future semantic resource
-    not currently assigned to relation class
-```
-
-Latest accepted relation-class browser implementation:
+Latest accepted relation-class implementation:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-Representative relation fixtures remain provisional and are not a frozen ADS ontology.
+Stroke rhythm remains preserved for another future line-level semantic dimension and currently has no semantic assignment.
 
 ---
 
 # Current Slice 02F: work-unit project disposition
 
-Governing research:
+Primary evidence:
 
 ```text
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
+docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
 ```
 
 Current checkpoint:
 
 ```text
-docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
 ```
 
 Browser route:
@@ -211,10 +155,10 @@ Local URL:
 http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-565fdeabc1ebaa29f993699a4c0673b29e972be3
+2056bb31d7cb90766e112bc26aaf7339fb568242
 ```
 
 Semantic separation:
@@ -226,30 +170,33 @@ runtime state          held out
 importance / priority  held out
 ```
 
-Representative visual-test states:
+Representative visual-test dispositions:
 
 ```text
-S0  Active / Current
-S1  Recommended / Next
-S2  Deferred
-S3  Completed
-S4  Blocked
-S5  Future / Not yet active
+Active / Current
+Recommended / Next
+Deferred
+Completed
+Blocked
+Future / Not yet active
 ```
 
-Encoding families:
+Initial P0-P5 families remain inspectable. Human refinement now focuses on:
 
 ```text
-P0  Neutral Control
-P1  Disposition Hue
-P2  Explicit Tag
-P3  Tonal Hierarchy
-P4  State Rhythm
-P5  Hue + Tag
-P6  Restrained Hybrid
+P6  Hue + Colored Tag + Tone
+    perimeter hue + colored tag + selective tone
+    no rhythm
+
+P7  Colored Tag + Tone
+    colored tag + same selective tone
+    no disposition perimeter hue
+    no rhythm
 ```
 
-These state fixtures are not a frozen ADS project-state ontology.
+P4 State Rhythm remains preserved as standalone experiment evidence.
+
+The page includes a side-by-side practical project fixture where P6 and P7 are rendered across Question, Investigation, Validation, Model and Evaluation categories. This is the current test for category/disposition color conflict.
 
 ---
 
@@ -259,10 +206,6 @@ These state fixtures are not a frozen ADS project-state ontology.
 docs/model_collaboration/threads/MC-0004/BRIEF.md
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
-docs/model_collaboration/threads/MC-0004/messages/001_claude_independent_phase_a_proposal.md
-docs/model_collaboration/threads/MC-0004/messages/002_claude_comparative_review.md
-docs/model_collaboration/threads/MC-0004/messages/003_chatgpt_work_unit_grammar_divergent_ideation_request.md
-docs/model_collaboration/threads/MC-0004/messages/004_claude_work_unit_grammar_divergent_ideation.md
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
