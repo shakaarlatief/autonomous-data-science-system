@@ -1,8 +1,17 @@
 # Checkpoint 232: Disposition Neutral-Tag + Tone Refinement Review Opened
 
 **Date:** 2026-08-27  
-**Branch:** `v1-cockpit-design-exploration`  
-**Status:** Phase-C human browser verification open
+**Status:** Phase-C human browser verification open  
+**Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / CONVERGENCE  
+**Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
+**Scope:** Preserves the mixed-category finding that persistent disposition color competes with category identity and opens verification of P7 Neutral Tag + Tone, with state color revealed only on hover.  
+**Authority:** Current Phase-C routing/evidence boundary only. P7 is the current convergence candidate, not a frozen final disposition ontology or production contract. Production `/cockpit` remains untouched.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT  
+**Branch:** `v1-cockpit-design-exploration`
 
 ## Preserved human evidence
 
