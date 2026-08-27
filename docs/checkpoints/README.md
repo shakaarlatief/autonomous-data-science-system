@@ -4,7 +4,7 @@
 **Authority:** Governs metadata and interpretation of files in `docs/checkpoints/`  
 **Initial contract effective from:** Checkpoint 100  
 **Provider-neutral provenance effective from:** Checkpoint 204  
-**Last reviewed:** 2026-08-26
+**Last reviewed:** 2026-08-27
 
 ## Purpose
 
@@ -314,6 +314,35 @@ Consistent metadata does not require artificial narrative padding.
 
 ---
 
+## Granularity during rapid iterative work
+
+A checkpoint represents a meaningful continuity or evidence boundary, not every repository commit.
+
+Within an already-open browser/design/implementation gate, small corrections should normally remain in ordinary Git history and the active research record when they do not materially change project interpretation. Examples include:
+
+```text
+pixel-level visual tuning
+small geometry corrections
+copy/label refinements
+implementation defects that do not alter the tested hypothesis
+exact-target refreshes within the same human review gate
+```
+
+Create a new checkpoint when the refinement materially changes one or more of:
+
+```text
+the human review question
+the accepted/rejected design evidence
+the semantic interpretation
+the promotion status
+the active repository route
+the next continuation boundary
+```
+
+This keeps checkpoint history informative as the project grows while preserving fine-grained implementation provenance in Git.
+
+---
+
 ## Relationship to project authority
 
 The normal repository authority hierarchy still applies.
@@ -335,3 +364,18 @@ scripts/check_checkpoint_metadata.py
 The validator applies the ChatGPT-specific contract to checkpoints before 204 and the provider-neutral contract to Checkpoint 204 onward.
 
 This versioned validation is deliberate. Metadata should evolve prospectively rather than drift silently.
+
+### Operational acceptance gate
+
+A checkpoint-producing repository change is not considered operationally closed until the checkpoint metadata validation for that change has completed successfully.
+
+The active collaborator should therefore:
+
+```text
+write checkpoint
+-> inspect the Checkpoint metadata check result
+-> if failed, repair the checkpoint before treating the gate as closed
+-> only then rely on the checkpoint as a clean continuation boundary
+```
+
+A failed metadata check does not invalidate the substantive historical evidence in the checkpoint body, but it is a repository-integrity defect and should not be ignored while continuing to accumulate later checkpoints.
