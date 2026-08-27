@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars remain accepted for elevated attention, SEL2 Corner Brackets remain accepted for persistent selection, and X5 balanced two-axis contextual expansion without surrounding-context recession remains accepted. Expanded-card internal layout is deliberately deferred with L0 Flat Fields as a provisional working default. Claude has now broadened the deep-focus transition design space, and the active human gate uses a factorized browser that separates object continuity, context relevance, staging/orientation and return timing.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The active gate remains deep-focus transition design. The project owner now strongly prefers the deepest specialist workspace to fully replace the project map/grid, strongly likes the compact topology compass, and requested advanced spatial zoom / moving-through-space transition concepts.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -30,63 +30,38 @@ Primary route:
 
 ```text
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
-docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
-frontend/design-lab/work-unit-deep-focus-factorized.html
-frontend/design-lab/work-unit-deep-focus-factorized.css
-frontend/design-lab/work-unit-deep-focus-factorized-refinement.css
-frontend/design-lab/work-unit-deep-focus-factorized.js
+docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
+frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
+frontend/design-lab/work-unit-deep-focus-spatial-zoom.css
+frontend/design-lab/work-unit-deep-focus-spatial-zoom-refinement.css
+frontend/design-lab/work-unit-deep-focus-spatial-zoom.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
-Exact current browser implementation target:
+Exact current visual target:
 
 ```text
-0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+b375eb253990ce3c20f34dd9d5b735bd532789f2
 ```
 
-Original F0-F8 browser remains preserved at:
+Preserved predecessor evidence:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
-afd15f52897a295788dc3a1d04b2d1b31ef707f9
+Research 075
+    original F0-F8 deep-focus architectures
+    repaired target afd15f52897a295788dc3a1d04b2d1b31ef707f9
+
+Research 076
+    Claude-informed factorized deep-focus experiment
+    latest target fddb344c2b18221d326c9ba5bde98e84edf98f56
 ```
-
-Accepted predecessor contextual-expansion target:
-
-```text
-94bc1100b7388cc56497cafc03051ce326424a80
-```
-
-Internal-layout comparison remains preserved at:
-
-```text
-docs/research/074_work_unit_internal_layout_grammar_experiment.md
-frontend/design-lab/work-unit-internal-layout.html
-```
-
-L0 Flat Fields is the current working default only. L1-L8 remain preserved and are not rejected.
 
 Production `/cockpit` remains untouched.
-
----
-
-# Repository preservation health
-
-```text
-repository preservation architecture   SOUND
-structural overhaul                     NOT WARRANTED
-new knowledge subsystem                 NOT JUSTIFIED
-checkpoint granularity                  HARDENED
-checkpoint validation closure           HARDENED
-active-branch routing validation        HARDENED
-```
-
-Historical research and checkpoint records remain the durable evidence layer. Current routing documents summarize the active boundary and do not replace that history.
 
 ---
 
@@ -129,100 +104,83 @@ SEL2 selection                e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
-Foundation 023 preserves system-owned semantics versus approved user-configurable appearance. Foundation 024 preserves connector treatment, hover/focus behavior and semantic directionality as separate dimensions.
-
 ---
 
-# Active Slice 02N: factorized deep-focus transition
+# Active Slice 02N: fullscreen spatial deep-focus transition
 
-Specification 008 already promotes:
-
-```text
-project map
-    -> select meaningful work unit
-    -> map recedes / focus transition
-    -> full-resolution specialist workspace mounts
-    -> perform real analytical work
-    -> return to project context
-```
-
-Claude Message 006 identified the key decomposition:
+Working ladder:
 
 ```text
-object continuity
-context retention
-context relevance
-entry choreography
-orientation aid
-return choreography
+compact map work unit
+    -> SEL2 selected
+    -> X5 expanded
+    -> L0 working-default internal layout
+    -> specialist workspace / deep focus
 ```
 
-Claude proposed:
+Current controlled end-state assumption:
 
 ```text
-T1  Generalized Anchored Entry
-T2  Neighbor-Aware Context Retention
-T3  Staged Two-Step Entry
-T4  Asymmetric Return
-T5  Camera Push-Through
-T6  Adaptive Retention by Workspace Type
-T7  Compass / Minimap Return Anchor
+specialist workspace
+    owns the full active Cockpit stage
+
+project map / grid
+    fully absent after transition completes
+
+compact topology compass
+    retained as orientation / return detail
 ```
 
-Message 006:
+This is a strong current preference under review, not a final production promotion.
+
+Spatial candidates:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
-204664ae1e732dd504174bbc62545e9a93adc85f
+Z0  Direct Replace Control
+Z1  Card Zoom-In
+Z2  World Falls Away
+Z3  Camera Dive
+Z4  Workspace Aperture
+Z5  Depth Parallax
+Z6  Perspective Corridor
+Z7  Pull-Back Then Dive
 ```
 
-T6 remains deferred until multiple meaningful specialist-workspace types exist.
-
-Current factorized browser batches:
-
-```text
-Batch A · Object continuity
-    A0  F2 Anchored Morph Control
-    A1  Anchored Center Stage
-    A2  Anchored Context Rail
-    A3  Camera Push-Through
-
-Batch B · Context relevance
-    B0  F6 Fixed Rail Control
-    B1  Neighbor-Aware Context
-    B2  Neighbor-Aware + Anchor
-
-Batch C · Staging and orientation
-    C0  Hard Replace Control
-    C1  Staged Two-Step Entry
-    C2  Compass + Soft World
-    C3  Hard Replace + Compass
-
-Large interaction studio
-    Symmetric return
-    Fast return
-```
-
-The X5 source card is deliberately off-center. Anchored variants measure its actual rendered geometry, so object-continuity evidence no longer depends on a hardcoded centered fixture. The new browser restores all four accepted SEL2 corner brackets.
+All candidates share the same source and final state. Only spatial transition choreography changes.
 
 Current human gate:
 
 ```text
-1. review Batch A for source-object continuity
-2. review Batch B for relevant versus arbitrary retained context
-3. review Batch C for staging and minimal orientation
-4. compare symmetric versus fast return in the large interaction studio
-5. select mechanisms independently
-6. combine mechanisms later where useful
-7. keep specialist-workspace internal composition unfrozen
-8. keep L0 as a working default only
+compare Z0-Z7
+judge which feels like entering the selected work unit
+judge spatial depth versus disorientation
+judge repeated-use comfort
+judge aperture / portal continuity
+judge whether pull-back before dive helps
+judge whether compass alone preserves enough orientation
+prefer / reject / combine / refine
 ```
+
+---
+
+# Repository preservation health
+
+```text
+repository preservation architecture   SOUND
+structural overhaul                     NOT WARRANTED
+new knowledge subsystem                 NOT JUSTIFIED
+checkpoint granularity                  HARDENED
+checkpoint validation closure           HARDENED
+active-branch routing validation        HARDENED
+```
+
+Historical research and checkpoint records remain the durable evidence layer. Current routing documents summarize the active boundary and do not replace that history.
 
 ---
 
 # Important non-decisions
 
-Still unresolved:
+Still unresolved includes:
 
 ```text
 final runtime / execution-state ontology
@@ -243,13 +201,11 @@ selected-node command surface
 multiple simultaneous expanded work units
 large-project expansion collision handling
 semantic zoom
-final deep-focus transition composition
-universal versus optional anchored entry
-neighbor-selection / graph-query semantics
-production compass/minimap existence
-entry interruption/cancellation
-return timing
+final deep-focus transition architecture
+exact fullscreen meaning
 specialist-workspace internal composition
+compass/minimap production design
+return choreography
 URL representation for selected / expanded / deep-focus state
 Conversation Workspace composition
 large-project layout/grouping/command architecture
@@ -261,14 +217,12 @@ final production design system
 # MC-0004 collaboration state
 
 ```text
-Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
-Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
-Phase C  browser-rendered design evaluation
-Latest Claude contribution            204664ae1e732dd504174bbc62545e9a93adc85f
-Current                               factorized deep-focus transition human review
+Claude latest deep-focus response    Message 006
+Claude response commit               204664ae1e732dd504174bbc62545e9a93adc85f
+Current synthesis                    Research 077 spatial deep-focus review
+Pending Claude obligation            none
+Next actor                           human project owner
 ```
-
-There is no pending Claude obligation.
 
 ---
 
@@ -291,15 +245,13 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 243 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
-4. review Batch A for object continuity
-5. review Batch B for context relevance
-6. review Batch C for staging and orientation
-7. compare symmetric versus fast return in the large interaction studio
-8. prefer mechanisms independently and combine later if useful
-9. keep T6 deferred
-10. keep specialist-workspace internals schematic
-11. keep L0 internal layout provisional
-12. keep production Cockpit untouched
-13. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
+4. compare Z0-Z7
+5. inspect the spatial feeling of entry and return
+6. judge repeated-use comfort and clarity
+7. judge whether the compact compass is sufficient after the map disappears
+8. prefer / reject / combine / refine
+9. keep specialist-workspace internals schematic
+10. keep production Cockpit untouched
+11. keep source-vault deployment paused until explicitly resumed
 ```
