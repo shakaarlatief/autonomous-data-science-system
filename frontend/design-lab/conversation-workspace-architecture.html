@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-conversation-style="cv0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Conversation Workspace Architecture</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./conversation-workspace-architecture.css" />
+  </head>
+  <body>
+    <header class="conversation-header">
+      <div>
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02P · Conversation Workspace</span>
+        <h1>How should a serious persistent project conversation open from the compact Cockpit composer?</h1>
+        <p>The compact composer remains native to the project world. This slice compares where the full user-visible transcript should live when the user wants to read, search and continue a long project discussion. Conversation content and project state stay conceptually linked, but consequential truth remains in structured project state.</p>
+      </div>
+      <div class="held-state">
+        <span>Held controls</span>
+        <strong>S0 geometric zoom working default · Z7 deep focus · compact composer</strong>
+        <small>Conversation persistence model, message schema and final specialist-workspace internals remain unfrozen.</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-row">
+        <div>
+          <span class="section-kicker">Bounded design question</span>
+          <h2>Compare presentation architecture, not transcript content</h2>
+          <p>Every candidate shows the same project context, same conversation, same selected work-unit reference and same composer. Judge how much project context should remain visible and how naturally a short Cockpit interaction can become serious long-form dialogue.</p>
+        </div>
+        <div class="principles">
+          <span>Persistent transcript</span>
+          <span>Same conversation</span>
+          <span>Project-linked</span>
+          <span>Long-form readable</span>
+          <span>Easy return</span>
+        </div>
+      </section>
+
+      <section class="comparison">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Nine ways to expose the full Conversation Workspace</h2>
+            <p>Click each scene to open or close its conversation surface.</p>
+          </div>
+          <span>Header scrolls away for review space</span>
+        </div>
+        <div class="conversation-grid" id="conversation-grid"></div>
+      </section>
+
+      <section class="practical">
+        <div class="section-head practical-head">
+          <div>
+            <span class="section-kicker">Large interaction studio</span>
+            <h2>Compare any architecture at working scale</h2>
+            <p>Use the controls to switch architecture, then click the scene or the compact composer to open / close the same persistent conversation.</p>
+          </div>
+          <span id="conversation-summary">CV0 · Focus Workspace</span>
+        </div>
+        <div class="controls" id="conversation-controls"></div>
+        <div class="practical-stage" id="practical-stage"></div>
+      </section>
+
+      <section class="review-prompt conversation-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge whether conversation feels first-class without taking over the Cockpit</h2>
+        <div class="review-questions">
+          <p>Which architecture is best for reading a genuinely long project discussion?</p>
+          <p>When should the project map remain simultaneously visible?</p>
+          <p>Does a dock feel useful or like a permanent giant chat sidebar?</p>
+          <p>Does a full Conversation Workspace fit the same depth metaphor as specialist analytical work?</p>
+          <p>Is a project-context rail enough orientation when conversation owns most of the stage?</p>
+          <p>Should recent-turn expansion be a distinct intermediate layer before the full workspace?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./conversation-workspace-architecture.js"></script>
+  </body>
+</html>
