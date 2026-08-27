@@ -73,7 +73,7 @@ function rowMarkup(state, index) {
   return `
     <article class="disposition-row" data-state="${state.id}" style="--state-rgb:${state.rgb};">
       <div class="disposition-label">
-        <span>P${index}</span>
+        <span>S${index}</span>
         <strong>${state.label}</strong>
         <small>${state.description}</small>
       </div>
