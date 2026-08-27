@@ -41,7 +41,7 @@ body {
 
 .disposition-controls {
   display: grid;
-  grid-template-columns: minmax(390px, 0.9fr) minmax(700px, 1.5fr) minmax(250px, 0.55fr) minmax(210px, 0.45fr);
+  grid-template-columns: minmax(390px, 0.9fr) minmax(760px, 1.6fr) minmax(250px, 0.55fr) minmax(210px, 0.45fr);
   gap: 10px;
   align-items: stretch;
   margin-bottom: 16px;
@@ -125,7 +125,8 @@ body {
   font-weight: 760;
 }
 
-.disposition-preview {
+.disposition-preview,
+.practical-card {
   overflow: hidden;
   border: 1px solid var(--panel-border-strong);
   border-radius: 14px;
@@ -277,16 +278,16 @@ body {
 /* P0: intentionally no disposition encoding. */
 
 /* P1: status hue carried by a restrained outer perimeter. */
-html[data-disposition-encoding="p1"] .disposition-state-outline {
+html[data-disposition-encoding="p1"] .disposition-row .disposition-state-outline {
   opacity: 1;
 }
 
 /* P2: explicit text tag only, deliberately neutral to isolate the label channel. */
-html[data-disposition-encoding="p2"] .disposition-state-badge {
+html[data-disposition-encoding="p2"] .disposition-row .disposition-state-badge {
   opacity: 1;
 }
 
-/* P3: tonal hierarchy only. This deliberately tests whether luminance is useful or misleading. */
+/* P3: tonal hierarchy only. */
 html[data-disposition-encoding="p3"] .disposition-row[data-state="active"] .node-surface,
 html[data-disposition-encoding="p3"] .disposition-row[data-state="blocked"] .node-surface {
   opacity: 1;
@@ -313,87 +314,259 @@ html[data-disposition-encoding="p3"] .disposition-row[data-state="future"] .node
   filter: saturate(0.52) brightness(0.88);
 }
 
-/* P4: neutral rhythm family. */
-html[data-disposition-encoding="p4"] .disposition-state-rhythm {
+/* P4: neutral rhythm family, retained as isolated experiment evidence. */
+html[data-disposition-encoding="p4"] .disposition-row .disposition-state-rhythm {
   opacity: 1;
 }
 
-.disposition-row[data-state="active"] .disposition-state-rhythm {
+.disposition-row[data-state="active"] .disposition-state-rhythm,
+.practical-node[data-state="active"] .disposition-state-rhythm {
   background: rgba(202, 214, 231, 0.74);
 }
 
-.disposition-row[data-state="recommended"] .disposition-state-rhythm {
+.disposition-row[data-state="recommended"] .disposition-state-rhythm,
+.practical-node[data-state="recommended"] .disposition-state-rhythm {
   background: repeating-linear-gradient(to right, rgba(202, 214, 231, 0.74) 0 7px, transparent 7px 10px);
 }
 
-.disposition-row[data-state="deferred"] .disposition-state-rhythm {
+.disposition-row[data-state="deferred"] .disposition-state-rhythm,
+.practical-node[data-state="deferred"] .disposition-state-rhythm {
   background: repeating-linear-gradient(to right, rgba(202, 214, 231, 0.68) 0 3px, transparent 3px 7px);
 }
 
-.disposition-row[data-state="completed"] .disposition-state-rhythm {
+.disposition-row[data-state="completed"] .disposition-state-rhythm,
+.practical-node[data-state="completed"] .disposition-state-rhythm {
   height: 3px;
   background:
     linear-gradient(to bottom, rgba(202, 214, 231, 0.68) 0 1px, transparent 1px 2px, rgba(202, 214, 231, 0.52) 2px 3px);
 }
 
-.disposition-row[data-state="blocked"] .disposition-state-rhythm {
+.disposition-row[data-state="blocked"] .disposition-state-rhythm,
+.practical-node[data-state="blocked"] .disposition-state-rhythm {
   background: repeating-linear-gradient(to right, rgba(202, 214, 231, 0.76) 0 6px, transparent 6px 8px, rgba(202, 214, 231, 0.76) 8px 10px, transparent 10px 14px);
 }
 
-.disposition-row[data-state="future"] .disposition-state-rhythm {
+.disposition-row[data-state="future"] .disposition-state-rhythm,
+.practical-node[data-state="future"] .disposition-state-rhythm {
   height: 3px;
   background-image: radial-gradient(circle, rgba(202, 214, 231, 0.68) 0 1px, transparent 1.2px);
   background-size: 6px 3px;
 }
 
 /* P5: hue plus explicit tag. */
-html[data-disposition-encoding="p5"] .disposition-state-outline,
-html[data-disposition-encoding="p5"] .disposition-state-badge {
+html[data-disposition-encoding="p5"] .disposition-row .disposition-state-outline,
+html[data-disposition-encoding="p5"] .disposition-row .disposition-state-badge {
   opacity: 1;
 }
 
-html[data-disposition-encoding="p5"] .disposition-state-badge {
+html[data-disposition-encoding="p5"] .disposition-row .disposition-state-badge {
   border-color: rgba(var(--state-rgb), 0.48);
   color: rgba(var(--state-rgb), 0.94);
   box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05);
 }
 
-/* P6: intentionally stronger integrated candidate. */
-html[data-disposition-encoding="p6"] .disposition-state-outline,
-html[data-disposition-encoding="p6"] .disposition-state-badge,
-html[data-disposition-encoding="p6"] .disposition-state-rhythm {
+/* P6: human-refined hybrid = hue + colored tag + selective tone. Rhythm intentionally removed. */
+html[data-disposition-encoding="p6"] .disposition-row .disposition-state-outline,
+html[data-disposition-encoding="p6"] .disposition-row .disposition-state-badge {
   opacity: 1;
 }
 
-html[data-disposition-encoding="p6"] .disposition-state-badge {
+html[data-disposition-encoding="p6"] .disposition-row .disposition-state-badge,
+.practical-card[data-practical-encoding="p6"] .disposition-state-badge {
   border-color: rgba(var(--state-rgb), 0.48);
   color: rgba(var(--state-rgb), 0.94);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05);
 }
 
-html[data-disposition-encoding="p6"] .disposition-row[data-state="completed"] .node-surface {
+/* P7: colored tag + selective tone, no disposition-colored perimeter. */
+html[data-disposition-encoding="p7"] .disposition-row .disposition-state-badge {
+  opacity: 1;
+  border-color: rgba(var(--state-rgb), 0.48);
+  color: rgba(var(--state-rgb), 0.94);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05);
+}
+
+html[data-disposition-encoding="p6"] .disposition-row[data-state="completed"] .node-surface,
+html[data-disposition-encoding="p7"] .disposition-row[data-state="completed"] .node-surface,
+.practical-node[data-state="completed"] .node-surface {
   opacity: 0.86;
   filter: saturate(0.82);
 }
 
-html[data-disposition-encoding="p6"] .disposition-row[data-state="deferred"] .node-surface {
+html[data-disposition-encoding="p6"] .disposition-row[data-state="deferred"] .node-surface,
+html[data-disposition-encoding="p7"] .disposition-row[data-state="deferred"] .node-surface,
+.practical-node[data-state="deferred"] .node-surface {
   opacity: 0.78;
   filter: saturate(0.72);
 }
 
-html[data-disposition-encoding="p6"] .disposition-row[data-state="future"] .node-surface {
+html[data-disposition-encoding="p6"] .disposition-row[data-state="future"] .node-surface,
+html[data-disposition-encoding="p7"] .disposition-row[data-state="future"] .node-surface,
+.practical-node[data-state="future"] .node-surface {
   opacity: 0.66;
   filter: saturate(0.62);
 }
 
-.disposition-row.is-hovered .disposition-state-outline {
+.disposition-row.is-hovered .disposition-state-outline,
+.practical-node.is-hovered .disposition-state-outline {
   border-color: rgba(var(--state-rgb), 0.86);
   box-shadow: 0 0 14px rgba(var(--state-rgb), 0.20);
 }
 
-.disposition-row.is-hovered .disposition-state-badge {
+.disposition-row.is-hovered .disposition-state-badge,
+.practical-node.is-hovered .disposition-state-badge {
   border-color: rgba(var(--state-rgb), 0.72);
   color: rgba(var(--state-rgb), 1);
 }
+
+/* Practical P6 vs P7 mixed-category comparison. */
+.practical-comparison {
+  margin-top: 18px;
+}
+
+.practical-comparison-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 12px;
+  padding: 0 2px;
+}
+
+.practical-comparison-header h2 {
+  margin: 4px 0 4px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.practical-comparison-header p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 9px;
+}
+
+.practical-legend {
+  display: flex;
+  gap: 7px;
+}
+
+.practical-legend span {
+  padding: 6px 9px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: rgba(13, 19, 28, 0.68);
+  color: var(--text-dim);
+  font-size: 7.8px;
+}
+
+.practical-legend strong {
+  color: rgba(226, 233, 245, 0.92);
+}
+
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.practical-card > header {
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-content: center;
+  column-gap: 8px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.practical-card > header > span {
+  grid-row: 1 / 3;
+  align-self: center;
+  padding: 5px 7px;
+  border: 1px solid rgba(142, 169, 255, 0.28);
+  border-radius: 6px;
+  color: rgba(202, 216, 239, 0.86);
+  font-size: 7.5px;
+  font-weight: 850;
+}
+
+.practical-card > header strong {
+  color: rgba(231, 236, 245, 0.94);
+  font-size: 10.5px;
+}
+
+.practical-card > header small {
+  color: var(--text-dim);
+  font-size: 7.7px;
+  line-height: 1.35;
+}
+
+.practical-world {
+  height: 430px;
+}
+
+.practical-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.practical-relations path {
+  fill: none;
+  stroke: rgba(143, 160, 184, 0.24);
+  stroke-width: 1.3;
+  vector-effect: non-scaling-stroke;
+}
+
+.practical-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.practical-node {
+  position: absolute;
+  width: 174px;
+  height: 92px;
+  --state-rgb: 142, 169, 255;
+}
+
+.practical-node:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.practical-node .disposition-state-outline {
+  opacity: 0;
+}
+
+.practical-card[data-practical-encoding="p6"] .practical-node .disposition-state-outline,
+.practical-card[data-practical-encoding="p6"] .practical-node .disposition-state-badge,
+.practical-card[data-practical-encoding="p7"] .practical-node .disposition-state-badge {
+  opacity: 1;
+}
+
+.practical-card[data-practical-encoding="p7"] .practical-node .disposition-state-outline {
+  opacity: 0;
+}
+
+.practical-card[data-practical-encoding="p6"] .practical-node .disposition-state-badge,
+.practical-card[data-practical-encoding="p7"] .practical-node .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.48);
+  color: rgba(var(--state-rgb), 0.94);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05);
+}
+
+.practical-node.scene-q { left: 3%; top: 38%; }
+.practical-node.scene-i { left: 28%; top: 10%; }
+.practical-node.scene-v { left: 54%; top: 37%; }
+.practical-node.scene-m { left: 75%; top: 8%; }
+.practical-node.scene-e { left: 41%; top: 68%; }
+.practical-node.scene-f { left: 70%; top: 69%; }
 
 .disposition-review {
   margin-top: 18px;
@@ -406,6 +579,7 @@ html[data-reduced="on"] .ambient-drift {
 }
 
 html[data-reduced="on"] .disposition-node,
+html[data-reduced="on"] .practical-node,
 html[data-reduced="on"] .disposition-state-outline,
 html[data-reduced="on"] .disposition-state-badge,
 html[data-reduced="on"] .disposition-state-rhythm,
@@ -415,6 +589,7 @@ html[data-reduced="on"] .node-surface {
 
 @media (prefers-reduced-motion: reduce) {
   .disposition-node,
+  .practical-node,
   .disposition-state-outline,
   .disposition-state-badge,
   .disposition-state-rhythm,
