@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 228  
+**Current checkpoint:** 229  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        228
+checkpoint                        229
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  semantic relation-class visual grammar human review
+current boundary                  relation-class Hue + Tag selected; tag refinement human verification
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -51,7 +51,7 @@ Primary evidence:
 ```text
 docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-docs/research/041_combined_g4_ambient_intensity_tuning.md
+docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
 docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
 docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
 ```
@@ -144,18 +144,19 @@ docs/foundations/024_composable_connector_presentation_and_semantic_directionali
 
 ---
 
-# Current Slice 02E: semantic relation-class visual grammar
+# Relation-class visual grammar result
 
-Governing research:
+Primary evidence:
 
 ```text
 docs/research/057_semantic_relation_class_visual_grammar_experiment.md
+docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
 ```
 
 Current checkpoint:
 
 ```text
-docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
 ```
 
 Browser route:
@@ -172,13 +173,32 @@ Local URL:
 http://localhost:5173/design-lab/relation-class-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+b3d23b10be611f41a4e55fc40a28ba83089b7196
 ```
 
-Representative visual-test relation classes:
+Human-selected relation-class carrier:
+
+```text
+E5  Hue + Tag
+    SELECTED
+```
+
+Current rule:
+
+```text
+relation-class meaning
+    restrained semantic hue
+    + compact explicit tag
+
+stroke rhythm
+    preserved as a future semantic resource
+    not currently assigned to relation class
+```
+
+Representative relation fixtures remain provisional:
 
 ```text
 R0  Chronology / Sequence
@@ -188,23 +208,9 @@ R3  Evidence / Support
 R4  Lineage / Derivation
 ```
 
-These are provisional fixtures, not a frozen ADS ontology.
+They are not a frozen ADS ontology.
 
-Encoding families:
-
-```text
-E0  Neutral Control
-E1  Semantic Hue
-E2  Stroke Rhythm
-E3  Explicit Tag
-E4  Hue + Stroke
-E5  Hue + Tag
-E6  Restrained Hybrid
-```
-
-Direction is held constant as `A -> B` to isolate semantic relation class.
-
-Runtime-flow relations remain outside this first semantic-class slice.
+Current narrow gate is human verification of the slightly taller tag and adjusted text proportions.
 
 ---
 
