@@ -129,7 +129,7 @@ frontend/design-lab/work-unit-selection-state.css
 frontend/design-lab/work-unit-selection-state.js
 ```
 
-Exact browser implementation target:
+Initial browser implementation target:
 
 ```text
 3bac1fea4ca820c89a7bc4516497a4c33164ec5d
@@ -137,7 +137,58 @@ Exact browser implementation target:
 
 Production `/cockpit` remains untouched.
 
-## 6. Controlled fixture
+## 6. Human-detected selection-layer clipping defect and repair
+
+The project owner inspected the initial browser and reported that SEL0, SEL1 and SEL2 appeared effectively identical.
+
+Implementation inspection confirmed a real rendering defect rather than merely insufficient visual contrast.
+
+The selection decorations were generated inside `.node-surface`, while `.node-surface` intentionally uses:
+
+```css
+overflow: hidden;
+```
+
+Several candidate geometries deliberately extend outside the rendered work-unit surface:
+
+```text
+SEL1  Outer Keyline       inset -4px
+SEL2  Corner Brackets     inset -5px
+SEL4  Edge Ticks          inset -5px
+SEL6  Soft Contour        inset -5px
+SEL7  Double Corner       inset -6px
+SEL8  Keyline + Corners   includes the same outer geometry
+```
+
+Therefore the selection ornaments were clipped by the surface that was supposed to contain only the work-unit's internally clipped material and lighting layers.
+
+The repair preserves the surface clipping contract and instead changes layer ownership:
+
+```text
+BEFORE
+    grammar-node
+        node-surface        overflow hidden
+            selection geometry
+                -> outer portions clipped
+
+AFTER
+    grammar-node
+        selection geometry  overflow-visible sibling layer
+        node-surface        overflow hidden remains intact
+            internal material / light / text / status / priority
+```
+
+No candidate definition, semantic meaning, hover behavior, priority signal or operational-status behavior was intentionally changed by this repair.
+
+Exact repaired visual implementation target:
+
+```text
+e7304fe834d86166d843fda7e1df0f4ddb1f793a
+```
+
+This remains inside Checkpoint 240's existing selection-state human-review gate and therefore does not warrant a new checkpoint.
+
+## 7. Controlled fixture
 
 Every controlled row uses the same work unit:
 
@@ -151,7 +202,7 @@ selection      SELECTED
 
 Only the persistent selection treatment changes.
 
-## 7. Candidate selection treatments
+## 8. Candidate selection treatments
 
 ```text
 SEL0  Neutral Control
@@ -192,7 +243,7 @@ Only the upper-left and lower-right corners receive stronger selection brackets,
 ### SEL8 Keyline + Corners
 Combines SEL1 and SEL2 to test whether restrained redundant geometry improves persistent recognition or merely adds clutter.
 
-## 8. Practical interaction scene
+## 9. Practical interaction scene
 
 The practical scene contains mixed category, disposition, operational-status and priority combinations. Exactly one work unit is selected in the initial fixture.
 
@@ -214,29 +265,30 @@ pointer hover
 
 This is a browser interaction proof only. Final single-selection versus multi-selection semantics remain open.
 
-## 9. Accessibility boundary
+## 10. Accessibility boundary
 
 Keyboard focus remains conceptually separate from selection.
 
 A keyboard-focused node may be selected or unselected. The browser keeps an explicit `:focus-visible` outline so the selection treatment is never asked to perform accessibility focus duty.
 
-## 10. Human review gate
+## 11. Human review gate
 
-Review:
+Review the repaired browser rather than the original clipped target:
 
 ```text
-1. compare SEL1-SEL8 against SEL0
-2. verify the selected state remains visible after pointer exit
-3. verify hover still reads as transient and stronger/localized rather than persistent selection
-4. verify A3 HIGH-attention signal bars remain independent
-5. inspect BLOCKED / FAIL / RUN coexistence
-6. click between work units in the practical scene
-7. use keyboard focus and Enter / Space selection
-8. reject treatments that resemble connector ports, priority, hover or project-focus suppression
-9. prefer / reject / combine / refine
+1. compare SEL1-SEL8 against SEL0 after the layering repair
+2. verify SEL1 / SEL2 / SEL4 / SEL6 / SEL7 / SEL8 are now visibly distinct
+3. verify the selected state remains visible after pointer exit
+4. verify hover still reads as transient and stronger/localized rather than persistent selection
+5. verify A3 HIGH-attention signal bars remain independent
+6. inspect BLOCKED / FAIL / RUN coexistence
+7. click between work units in the practical scene
+8. use keyboard focus and Enter / Space selection
+9. reject treatments that resemble connector ports, priority, hover or project-focus suppression
+10. prefer / reject / combine / refine
 ```
 
-## 11. Still unfrozen
+## 12. Still unfrozen
 
 ```text
 final selection visual treatment
