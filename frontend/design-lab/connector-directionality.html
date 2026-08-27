@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-attachment-style="none" data-hover-ports="on">
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,12 +15,12 @@
     <header class="lab-header grammar-header directionality-header">
       <div class="lab-title-block">
         <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02D · Connector Directionality</span>
-        <h1>How should a relationship communicate no direction, one-way direction, or two-way direction?</h1>
-        <p>Connector appearance is no longer a winner-take-all question: approved attachment treatments remain configurable. This slice isolates semantic directionality. A user's visual preferences may change how a relation is presented, but they must never change whether the underlying relation is directed.</p>
+        <h1>Use the same restrained arrow treatment for every direction state.</h1>
+        <p>Dots, frame sockets and arrows are separate connector treatments. Hover is a separate interaction mechanism that may reveal or emphasize whichever treatment is active. This page therefore isolates arrows only: no dot-plus-arrow or socket-plus-arrow combinations.</p>
       </div>
       <div class="directionality-held-state">
-        <span>Semantic invariant</span>
-        <strong>Direction belongs to the relation, not the theme</strong>
+        <span>Current direction</span>
+        <strong>One connector treatment at a time</strong>
       </div>
     </header>
 
@@ -28,66 +28,47 @@
       <section class="grammar-intro directionality-intro">
         <div>
           <span class="section-kicker">Design question</span>
-          <h2>Direction should remain obvious without turning every connector into a large arrow</h2>
-          <p>The four lanes use the same nodes, line geometry and interaction behavior. Only the relation's direction state changes. Chronological, causal, dependency, evidence and other relation meanings remain a later semantic-vocabulary question.</p>
+          <h2>Can the original edge-connected arrow treatment cleanly express all relation directions?</h2>
+          <p>The four lanes use the same nodes, curve geometry and arrow shape. Only the semantic direction state changes. The arrow tip docks directly to the relevant work-unit edge, using the same treatment that was already preferred in the earlier connector slice.</p>
         </div>
         <div class="grammar-principles" aria-label="Directionality constraints">
-          <span>Undirected remains valid</span>
-          <span>A → B supported</span>
-          <span>A ← B supported</span>
-          <span>A ↔ B supported</span>
-          <span>User styling ≠ semantic direction</span>
+          <span>Undirected: no arrow</span>
+          <span>A → B: right destination</span>
+          <span>A ← B: left destination</span>
+          <span>A ↔ B: both ends</span>
+          <span>No mixed terminal symbols</span>
         </div>
       </section>
 
-      <section class="directionality-decision-note" aria-label="Connector configurability decision">
+      <section class="directionality-decision-note" aria-label="Connector model clarification">
         <div>
-          <span class="section-kicker">Carried-forward product decision</span>
-          <h2>Connector presentation is compositional and user-configurable</h2>
-          <p>Clean attachment, micro dots, frame sockets and hover attachment emphasis are retained as approved presentation mechanisms rather than forced into one universal winner. The controls below are included so directionality can be checked against those presentations without reopening the connector-style decision.</p>
+          <span class="section-kicker">Human clarification</span>
+          <h2>Connector treatment and hover behavior are orthogonal</h2>
+          <p>Clean lines, micro dots, frame sockets and direction arrows remain useful connector treatments. Hover is not another terminal that must be combined with them. It is a behavior that can later reveal or emphasize the selected treatment. This directionality experiment therefore shows arrows by themselves.</p>
         </div>
         <div class="directionality-safety-note">
-          <strong>Semantic safety</strong>
-          <span>A directed relation must still communicate its direction. Appearance controls may not silently convert a directed relation into an undirected one.</span>
+          <strong>Semantic rule</strong>
+          <span>The relation model determines no direction, forward, reverse or bidirectional. If arrows are used to present that relation, their placement follows that semantic state exactly.</span>
         </div>
       </section>
 
-      <section class="directionality-controls" aria-label="Presentation controls">
-        <div class="control-group">
-          <span class="section-kicker">Rest attachment</span>
-          <div class="segmented directionality-segmented" role="group" aria-label="Rest attachment style">
-            <button type="button" data-attachment-option="none" aria-pressed="true">Clean</button>
-            <button type="button" data-attachment-option="dots" aria-pressed="false">Micro dots</button>
-            <button type="button" data-attachment-option="sockets" aria-pressed="false">Frame sockets</button>
-          </div>
-        </div>
-        <label class="toggle-row directionality-toggle">
-          <span>
-            <strong>Hover attachment emphasis</strong>
-            <small>Reveal or intensify attachment points when either connected work unit is hovered.</small>
-          </span>
-          <input id="hover-port-toggle" type="checkbox" checked />
-        </label>
+      <section class="directionality-controls" aria-label="Motion control">
         <label class="toggle-row directionality-toggle">
           <span>
             <strong>Reduced motion</strong>
-            <small>Disable ambient and transition motion while preserving the relation state.</small>
+            <small>Disable ambient and transition motion while preserving arrow direction.</small>
           </span>
           <input id="reduced-toggle" type="checkbox" />
         </label>
-        <div class="presentation-summary">
-          <span>Current presentation</span>
-          <strong id="presentation-summary">Clean · Hover emphasis on</strong>
-        </div>
       </section>
 
       <section class="directionality-preview" aria-label="Directionality comparison">
         <div class="directionality-preview-header">
           <div>
             <span class="section-kicker">Controlled comparison</span>
-            <h2>Same relationship geometry · four direction states</h2>
+            <h2>Same restrained edge-connected arrow · four direction states</h2>
           </div>
-          <span>Direction cues remain persistent at rest</span>
+          <span>No mixed dots / sockets / arrows</span>
         </div>
 
         <div class="grammar-world directionality-world" id="directionality-world">
@@ -97,67 +78,19 @@
           <span class="ambient-current current-b" aria-hidden="true"></span>
           <span class="ambient-glint glint-a" aria-hidden="true"></span>
           <span class="ambient-glint glint-b" aria-hidden="true"></span>
-
-          <div class="direction-lanes">
-            <article class="direction-lane" data-direction="none">
-              <div class="direction-label">
-                <span>D0</span>
-                <strong>Undirected</strong>
-                <small>A — B</small>
-              </div>
-              <svg class="direction-relations" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
-                <g class="direction-relation"><path class="direction-path" /><rect class="direction-socket source-socket" width="5.2" height="5.2" rx="1.1" /><rect class="direction-socket target-socket" width="5.2" height="5.2" rx="1.1" /></g>
-              </svg>
-              <svg class="direction-overlay" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
-                <g class="direction-overlay-group"><circle class="hover-port source-port" r="2.6" /><circle class="hover-port target-port" r="2.6" /><path class="direction-cue source-cue" /><path class="direction-cue target-cue" /></g>
-              </svg>
-              <div class="grammar-node custom-node category-investigation direction-node source-node" data-node="a" data-light-side="left" style="--node-rgb: 103, 218, 194; --light-anchor: 50%;">
-                <span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span>
-                <div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" rx="0.7"/></svg></span><span class="unit-kind">Investigation</span></div><strong>Work A</strong><small>First work unit</small></div>
-              </div>
-              <div class="grammar-node custom-node category-validation direction-node target-node" data-node="b" data-light-side="top" style="--node-rgb: 142, 169, 255; --light-anchor: calc(12px + 21%);">
-                <span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span>
-                <div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3.3 12.6 12H3.4z"/></svg></span><span class="unit-kind">Validation / Analysis</span></div><strong>Work B</strong><small>Second work unit</small></div>
-              </div>
-            </article>
-
-            <article class="direction-lane" data-direction="forward">
-              <div class="direction-label"><span>D1</span><strong>Forward</strong><small>A → B</small></div>
-              <svg class="direction-relations" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><g class="direction-relation"><path class="direction-path" /><rect class="direction-socket source-socket" width="5.2" height="5.2" rx="1.1" /><rect class="direction-socket target-socket" width="5.2" height="5.2" rx="1.1" /></g></svg>
-              <svg class="direction-overlay" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><g class="direction-overlay-group"><circle class="hover-port source-port" r="2.6" /><circle class="hover-port target-port" r="2.6" /><path class="direction-cue source-cue" /><path class="direction-cue target-cue" /></g></svg>
-              <div class="grammar-node custom-node category-investigation direction-node source-node" data-node="a" data-light-side="left" style="--node-rgb: 103, 218, 194; --light-anchor: 50%;"><span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span><div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" rx="0.7"/></svg></span><span class="unit-kind">Investigation</span></div><strong>Work A</strong><small>First work unit</small></div></div>
-              <div class="grammar-node custom-node category-validation direction-node target-node" data-node="b" data-light-side="top" style="--node-rgb: 142, 169, 255; --light-anchor: calc(12px + 21%);"><span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span><div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3.3 12.6 12H3.4z"/></svg></span><span class="unit-kind">Validation / Analysis</span></div><strong>Work B</strong><small>Second work unit</small></div></div>
-            </article>
-
-            <article class="direction-lane" data-direction="reverse">
-              <div class="direction-label"><span>D2</span><strong>Reverse</strong><small>A ← B</small></div>
-              <svg class="direction-relations" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><g class="direction-relation"><path class="direction-path" /><rect class="direction-socket source-socket" width="5.2" height="5.2" rx="1.1" /><rect class="direction-socket target-socket" width="5.2" height="5.2" rx="1.1" /></g></svg>
-              <svg class="direction-overlay" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><g class="direction-overlay-group"><circle class="hover-port source-port" r="2.6" /><circle class="hover-port target-port" r="2.6" /><path class="direction-cue source-cue" /><path class="direction-cue target-cue" /></g></svg>
-              <div class="grammar-node custom-node category-investigation direction-node source-node" data-node="a" data-light-side="left" style="--node-rgb: 103, 218, 194; --light-anchor: 50%;"><span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span><div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" rx="0.7"/></svg></span><span class="unit-kind">Investigation</span></div><strong>Work A</strong><small>First work unit</small></div></div>
-              <div class="grammar-node custom-node category-validation direction-node target-node" data-node="b" data-light-side="top" style="--node-rgb: 142, 169, 255; --light-anchor: calc(12px + 21%);"><span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span><div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3.3 12.6 12H3.4z"/></svg></span><span class="unit-kind">Validation / Analysis</span></div><strong>Work B</strong><small>Second work unit</small></div></div>
-            </article>
-
-            <article class="direction-lane" data-direction="both">
-              <div class="direction-label"><span>D3</span><strong>Bidirectional</strong><small>A ↔ B</small></div>
-              <svg class="direction-relations" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><g class="direction-relation"><path class="direction-path" /><rect class="direction-socket source-socket" width="5.2" height="5.2" rx="1.1" /><rect class="direction-socket target-socket" width="5.2" height="5.2" rx="1.1" /></g></svg>
-              <svg class="direction-overlay" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true"><g class="direction-overlay-group"><circle class="hover-port source-port" r="2.6" /><circle class="hover-port target-port" r="2.6" /><path class="direction-cue source-cue" /><path class="direction-cue target-cue" /></g></svg>
-              <div class="grammar-node custom-node category-investigation direction-node source-node" data-node="a" data-light-side="left" style="--node-rgb: 103, 218, 194; --light-anchor: 50%;"><span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span><div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><rect x="4" y="4" width="8" height="8" rx="0.7"/></svg></span><span class="unit-kind">Investigation</span></div><strong>Work A</strong><small>First work unit</small></div></div>
-              <div class="grammar-node custom-node category-validation direction-node target-node" data-node="b" data-light-side="top" style="--node-rgb: 142, 169, 255; --light-anchor: calc(12px + 21%);"><span class="rest-spill" aria-hidden="true"></span><span class="rest-light" aria-hidden="true"></span><span class="hover-light" aria-hidden="true"></span><span class="hover-world-light" aria-hidden="true"></span><div class="node-surface"><span class="surface-rest-light" aria-hidden="true"></span><span class="custom-material-layer" aria-hidden="true"></span><span class="pointer-light" aria-hidden="true"></span><span class="perimeter-sweep" aria-hidden="true"></span><span class="frame-signature" aria-hidden="true"></span><div class="node-heading"><span class="category-glyph" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3.3 12.6 12H3.4z"/></svg></span><span class="unit-kind">Validation / Analysis</span></div><strong>Work B</strong><small>Second work unit</small></div></div>
-            </article>
-          </div>
+          <div class="direction-lanes" id="direction-lanes"></div>
         </div>
       </section>
 
       <section class="review-prompt grammar-review directionality-review">
         <span class="section-kicker">Human review</span>
-        <h2>Judge the direction grammar, not the attachment-style winner</h2>
+        <h2>Verify the simple arrow grammar</h2>
         <div class="review-questions">
-          <p>Is the forward cue immediately readable as A → B without needing a large arrowhead?</p>
-          <p>Does reverse direction remain equally obvious when the cue moves to the opposite endpoint?</p>
-          <p>Does the bidirectional treatment read as A ↔ B rather than visual duplication or noise?</p>
-          <p>Do Micro dots and Frame sockets coexist cleanly with persistent direction cues when selected?</p>
-          <p>Should direction remain visible at rest while hover is reserved for attachment emphasis and relation highlighting?</p>
-          <p>If this grammar works, the next slice can test what relation classes such as chronology, causality, dependency, evidence or lineage should mean and how they should differ.</p>
+          <p>Does D1 read naturally as A → B with the arrow docked directly to B?</p>
+          <p>Does D2 look like the exact same mechanism reversed, rather than a different design?</p>
+          <p>Does D3 read cleanly as two-way direction with the same arrow at both ends?</p>
+          <p>Does D0 remain clean and clearly undirected with no arrow terminal?</p>
+          <p>If this is visually correct, directionality itself can be considered sufficiently settled and we can move to relation meaning such as chronology, causality, dependency, evidence and lineage.</p>
         </div>
       </section>
     </main>
