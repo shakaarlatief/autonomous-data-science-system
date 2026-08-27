@@ -301,7 +301,7 @@ function positionTag(group, start, end) {
   if (!group) return
 
   const x = (start.x + end.x) / 2
-  const y = (start.y + end.y) / 2 - 13
+  const y = (start.y + end.y) / 2 - 15
   const rect = group.querySelector('rect')
   const text = group.querySelector('text')
 
