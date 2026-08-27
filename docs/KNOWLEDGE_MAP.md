@@ -158,7 +158,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
 Semantic separation:
@@ -196,7 +196,7 @@ P7  Colored Tag + Tone
 
 P4 State Rhythm remains preserved as standalone experiment evidence.
 
-The page includes a side-by-side practical project fixture where P6 and P7 are rendered across Question, Investigation, Validation, Model and Evaluation categories. This is the current test for category/disposition color conflict.
+The page includes a side-by-side practical project fixture where P6 and P7 are rendered across Question, Investigation, Validation, Model and Evaluation categories. Practical connectors use rendered geometry and select horizontal or vertical attachment from actual card separation.
 
 ---
 
