@@ -156,7 +156,7 @@ http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 Exact corrected browser implementation target:
 
 ```text
-dfcb89c94e6d8ce46dd2997591f41e6f9a394c18
+dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
 ```
 
 Research:
