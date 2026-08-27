@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Foundation 023 promotes user-configurable non-semantic Cockpit appearance. The active slice is connector / Port Grammar. K1/K4 circular endpoint markers are now layered above nodes, follow the accepted H4 hover lift/release, and are offset mostly outside the rendered work-unit perimeter so they read as connector attachments rather than card content. K2 frame sockets retain their earlier structural treatment. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Foundation 023 promotes user-configurable non-semantic Cockpit appearance. The active slice is connector / Port Grammar. K1/K4 circular endpoint markers are layered above nodes, follow the accepted H4 hover lift/release, and sit mostly outside the rendered work-unit perimeter. K2 frame sockets retain their earlier structural docking treatment, but their outline now adopts the highlighted relation color when a connector becomes active. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -49,7 +49,7 @@ http://localhost:5173/design-lab/connector-grammar.html
 Current exact browser implementation target:
 
 ```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
+183264bdd07783eaa2354894592f2cf4a076b6ec
 ```
 
 ---
@@ -240,12 +240,29 @@ visual result
     left-side dots no longer sit across the category color rail
 ```
 
-K2 sockets remain unchanged and frame-integrated. K3 direction cues remain unchanged pending the combined directionality/composition experiment.
+K3 direction cues remain unchanged pending the combined directionality/composition experiment.
 
-Exact outward-dot refinement:
+## K2 frame-socket highlight invariant
+
+K2 retains the earlier structural docking geometry. Its resting state remains neutral, but an emphasized relation should not produce a colored line attached to a permanently grey socket.
+
+Current behavior:
 
 ```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
+rest
+    dark socket interior
+    neutral grey outline
+
+related / highlighted
+    dark socket interior retained
+    socket outline adopts --related-rgb
+    restrained same-color glow
+```
+
+Exact K2 relation-color refinement:
+
+```text
+183264bdd07783eaa2354894592f2cf4a076b6ec
 ```
 
 ---
@@ -348,9 +365,9 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 1. use Checkpoint 225 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. refresh http://localhost:5173/design-lab/connector-grammar.html
-4. verify K1/K4 circular markers now touch the perimeter from mostly outside rather than sitting across the card/color rail
-5. verify they stay attached during hover lift and release
-6. verify K2 retains the earlier frame-socket treatment
+4. verify K1/K4 circular markers touch the perimeter from mostly outside and stay attached through hover motion
+5. verify K2 retains the preferred frame-socket geometry
+6. verify K2 socket outlines change to the same highlighted relation color as the connector line
 7. human gives the fuller connector-composition preference
 8. only then implement the combined directionality/composition experiment
 9. keep production Cockpit untouched
