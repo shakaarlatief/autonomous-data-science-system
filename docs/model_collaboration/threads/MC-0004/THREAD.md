@@ -26,9 +26,25 @@ Phase C divergent work-unit ideation
     Claude response
     faf18ed9932d60a24dd80589b0ec0ba71c5940fd
     COMPARATIVE_ONLY / DIVERGENT_IDEATION
+
+Phase C deep-focus transition ideation
+    ChatGPT request
+    Message 005
+    COMPARATIVE_ONLY / DIVERGENT_IDEATION
+    Claude response pending
 ```
 
-No Claude action is currently pending.
+Current pending Claude request:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md
+```
+
+Expected response:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
+```
 
 ## Preserved accepted Phase-C results
 
@@ -106,9 +122,9 @@ project map
     -> return to project context
 ```
 
-The active browser isolates how project context should be retained during that deep-focus transition.
+The current browser isolates how project context should be retained during that deep-focus transition.
 
-Candidate architectures:
+Existing candidate architectures:
 
 ```text
 F0  Hard Replace
@@ -128,11 +144,23 @@ Browser:
 http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
 ```
 
-Initial browser target:
+Exact latest browser target after interaction repairs:
 
 ```text
-31abc2b3a23de29358978e19bd88fda1e9166f6b
+afd15f52897a295788dc3a1d04b2d1b31ef707f9
 ```
+
+Known fixture imperfection:
+
+```text
+accepted SEL2
+    four outside corner brackets
+
+current deep-focus fixture
+    only two diagonal corner brackets
+```
+
+This is a known mockup-fidelity regression only. It does not reopen SEL2 and should not influence transition judgments.
 
 Research and checkpoint:
 
@@ -141,17 +169,31 @@ docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
 ```
 
-## Current gate
+## Current collaboration gate
+
+The human project owner explicitly requested Claude's ideas and inspiration before convergence and authorized unrestricted exploration breadth:
 
 ```text
-human compares F0-F8
-human clicks candidates to enter / return
-human judges object continuity from selected X5 work unit to specialist workspace
-human judges retained map context versus distraction
-human judges return-to-project clarity
--> prefer / reject / combine / refine
--> keep specialist-workspace internals schematic
+for this transition idea thing,
+I want also Claude its ideas and inspiration.
+we can test whatever and how much we want.
 ```
+
+Message 005 therefore asks Claude to:
+
+```text
+audit what F0-F8 cover and miss
+propose any materially distinct transition mechanisms worth serious testing
+identify orthogonal mechanisms and strong combinations
+use external professional/spatial-interface inspiration where useful
+evaluate entry and return as one system
+include reduced-motion/static equivalents
+recommend executable browser testing without an artificial candidate-count limit
+```
+
+No fixed shortlist is requested. If many genuinely distinct candidates survive Claude's quality threshold, they should all be preserved and may be tested in multiple browser rounds.
+
+ChatGPT retains target-state write ownership and will synthesize/implement after Claude Message 006 and subsequent human review.
 
 ## Production boundary
 
