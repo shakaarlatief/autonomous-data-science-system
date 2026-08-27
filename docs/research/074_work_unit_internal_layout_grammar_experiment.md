@@ -1,8 +1,8 @@
 # Research 074: Expanded Work-Unit Internal Layout Grammar Experiment
 
 **Date:** 2026-08-27  
-**Status:** Active Phase-C information-design experiment  
-**Scope:** Closes the contextual-detail expansion geometry question after explicit human selection of X5 without context recession, then opens a bounded comparison of internal information layouts inside the accepted balanced two-axis expanded work unit.  
+**Status:** Deferred after provisional working-default choice  
+**Scope:** Closes the contextual-detail expansion geometry question after explicit human selection of X5 without context recession, then compares internal information layouts inside the accepted balanced two-axis expanded work unit. The project owner has now chosen L0 Flat Fields only as a provisional working default and explicitly deferred deeper internal-layout optimization for later.  
 **Authority:** Research evidence only. This memo does not freeze the final work-unit semantic schema, provenance model, evidence representation, command surface, deep-focus transition or production component architecture.
 
 ## 1. Human acceptance closing the geometry question
@@ -64,9 +64,9 @@ Exact refined X5 implementation target:
 
 Production `/cockpit` remains untouched.
 
-## 2. Why internal layout is now the next bounded question
+## 2. Why internal layout became the next bounded question
 
-The interaction hierarchy is now comparatively mature through the contextual-detail geometry layer:
+The interaction hierarchy became comparatively mature through the contextual-detail geometry layer:
 
 ```text
 compact map work unit
@@ -75,7 +75,7 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
-The next unresolved question is no longer primarily the outside shape. It is:
+The next unresolved question was:
 
 ```text
 INTERNAL LAYOUT GRAMMAR
@@ -84,7 +84,7 @@ INTERNAL LAYOUT GRAMMAR
     so the work unit remains quickly scannable and still feels like a map object?
 ```
 
-This is deliberately separated from the final semantic schema.
+This was deliberately separated from the final semantic schema.
 
 ## 3. Held controls
 
@@ -215,7 +215,7 @@ surrounding map
 
 Buttons L0-L8 switch only the internal layout.
 
-## 8. Human review gate
+## 8. Original human review gate
 
 Review:
 
@@ -230,7 +230,35 @@ Review:
 8. keep the final semantic field schema unfrozen
 ```
 
-## 9. Still unfrozen
+## 9. Human disposition and deferment
+
+The project owner explicitly decided that this question is not important enough to optimize further at the present Phase-C boundary:
+
+```text
+This is not that important for now.
+Keep using L0, but you can save this to look at later.
+For now assume L0 is the one I choose.
+Proceed.
+```
+
+The durable interpretation is:
+
+```text
+L0 Flat Fields
+    current provisional working default
+    use in subsequent browser experiments
+    not a final information-architecture selection
+    not a promotion of the provisional six-field payload
+
+L1-L8
+    preserved as viable comparison evidence
+    not rejected
+    review may resume when C5 / final work-unit information architecture becomes decision-critical
+```
+
+The next active boundary moved to Research 075 / Checkpoint 243: deep-focus transition architecture.
+
+## 10. Still unfrozen
 
 ```text
 final internal work-unit information schema
@@ -243,6 +271,7 @@ multiple expanded work units
 large-project collision avoidance
 semantic zoom interaction
 expansion persistence
+final internal layout grammar
 transition from contextual detail to specialist workspace
 URL state for selected / expanded / deep focus
 production component architecture
