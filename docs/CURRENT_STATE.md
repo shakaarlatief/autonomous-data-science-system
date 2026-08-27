@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 230  
+**Checkpoint:** 231  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified arrow directionality grammar has passed human review. E5 Hue + Tag is selected and now accepted as the relation-class visual carrier, with stroke rhythm preserved as a future semantic resource. The active gate is human review of a new work-unit project-disposition visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Relation-class Hue + Tag is sufficiently settled. The active gate is a refined project-disposition comparison between P6 Hue + Colored Tag + Tone and P7 Colored Tag + Tone, including a practical mixed-category project scene.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,7 +29,8 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 frontend/design-lab/work-unit-disposition-grammar.html
 frontend/design-lab/work-unit-disposition-grammar.css
@@ -45,48 +46,21 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact current browser implementation target:
 
 ```text
-565fdeabc1ebaa29f993699a4c0673b29e972be3
+2056bb31d7cb90766e112bc26aaf7339fb568242
 ```
 
 ---
 
-# Provisionally settled world / interaction controls
+# Held Cockpit controls
 
 ```text
 G4 Adaptive Hybrid                  SELECTED / provisionally settled
 Dark mode                           CURRENT design baseline
-Travelling grid currents            KEEP
-Randomized visible-grid currents    KEEP
-100 px major-grid glints            KEEP
-Slow ambient light drift            KEEP
-Localized semantic activity         KEEP
+H4 generic hover/world response     SELECTED / sufficiently settled
+Reduced in-box resting light        SELECTED preferred working baseline
 ```
 
-Generic H4 hover/world behavior remains sufficiently settled.
-
-Current work-unit rest/hover baseline:
-
-```text
-REST
-    Reduced in-box resting light
-    narrow asymmetric outward world spill
-    no broad circular resting halo
-
-HOVER
-    full node-colored halo
-    pointer-following hotspot
-    local grid/world illumination
-    immediate connector emphasis
-    one restrained perimeter sweep
-    2 px depth lift
-    fast entry + smoother slower release
-```
-
----
-
-# Work-unit category grammar
-
-Current semantic category-marker mapping:
+Current work-unit category marker mapping:
 
 ```text
 Question / Blocker        circle
@@ -96,7 +70,7 @@ Model Work                diamond
 Evaluation                plus
 ```
 
-Foundation 023 preserves:
+Foundation 023 preserves the boundary:
 
 ```text
 ADS owns semantic meaning
@@ -104,7 +78,7 @@ ADS owns semantic meaning
 user controls approved non-semantic work-unit appearance dimensions
 ```
 
-Current proven work-unit appearance dimensions:
+Current proven appearance dimensions:
 
 ```text
 Box shape       Normal / Subtle shapes
@@ -113,9 +87,11 @@ Micro design    None / Micro material / Micro light
 
 ---
 
-# Connector presentation and interaction result
+# Connector and relation results
 
-Current connector-treatment vocabulary:
+Foundation 024 preserves one connector terminal treatment at a time, with hover/focus as an orthogonal reveal or emphasis mechanism.
+
+Current connector treatments:
 
 ```text
 Clean
@@ -124,57 +100,13 @@ Frame sockets
 Direction arrows
 ```
 
-Current interaction model:
+Accepted direction grammar:
 
 ```text
-connector treatment
-    one active terminal treatment at a time
-
-hover / focus
-    separate interaction mechanism
-    may reveal or intensify whichever treatment is active
-```
-
-Rejected as a default presentation pattern:
-
-```text
-arrow + dot
-arrow + socket
-socket + dot
-other unnecessary terminal stacks
-```
-
-Latest retained refinements:
-
-```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
-    Micro-dot / hover-port circles moved mostly outside the work-unit perimeter
-
-183264bdd07783eaa2354894592f2cf4a076b6ec
-    Frame sockets keep dark interiors and adopt active relation color / restrained glow when highlighted
-```
-
-Held geometry/interaction invariants:
-
-```text
-curve remains below work-unit bodies
-rendered-edge geometry is authoritative
-connector follows H4 hover lift / release
-Micro dots sit mostly outside the card
-Frame sockets remain frame-integrated
-```
-
----
-
-# Directionality result
-
-Human review accepted the simplified arrow grammar as sufficiently settled for the current phase:
-
-```text
-D0  Undirected      A - B       no arrow
-D1  Forward         A -> B      restrained arrow at B
-D2  Reverse         A <- B      exact same arrow at A
-D3  Bidirectional   A <-> B     same arrow at both endpoints
+D0  Undirected      no arrow
+D1  Forward         arrow at B
+D2  Reverse         same arrow at A
+D3  Bidirectional   same arrow at both endpoints
 ```
 
 Accepted directionality implementation:
@@ -183,64 +115,26 @@ Accepted directionality implementation:
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Foundation 024 remains the durable boundary between system-owned relation semantics, configurable connector treatment and orthogonal hover behavior.
-
----
-
-# Relation-class visual grammar result
-
-Human review selected and then accepted:
+Relation-class visual carrier:
 
 ```text
 E5  Hue + Tag
     SELECTED / sufficiently settled for current Phase C
 ```
 
-Current relation-class visual carrier:
-
-```text
-restrained relation-class hue
-+
-compact explicit semantic tag
-+
-existing direction arrow when direction requires it
-```
-
-The representative relation fixtures remain provisional:
-
-```text
-Chronology / Sequence
-Dependency / Prerequisite
-Causal / Influence
-Evidence / Support
-Lineage / Derivation
-```
-
-They do not freeze the ADS relation ontology.
-
-Stroke rhythm from E2/E4/E6 remains deliberately preserved:
-
-```text
-stroke rhythm
-    promising visual channel
-    NOT rejected
-    NOT currently relation-class meaning
-    reserved for another future line-level semantic dimension if later evidence justifies it
-```
-
-Latest accepted relation-class browser implementation:
+Latest accepted relation-class implementation:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-Accepted tag treatment includes the taller body, restored gap above the connector line and taller lettering.
+Stroke rhythm from the relation-class experiment remains preserved for a different future line-level semantic dimension. No semantic meaning is assigned to it yet.
 
 ---
 
-# Active Slice 02F: project-disposition visual grammar
+# Active Slice 02F: project disposition
 
-The next work-unit question explicitly separates four semantic axes:
+Semantic separation remains binding:
 
 ```text
 WHAT IS THIS?
@@ -256,7 +150,7 @@ HOW IMPORTANT IS IT NOW?
     priority / relevance, held out
 ```
 
-Representative disposition fixtures:
+Representative disposition fixtures remain provisional:
 
 ```text
 S0  Active / Current
@@ -267,9 +161,7 @@ S4  Blocked
 S5  Future / Not yet active
 ```
 
-These are visual-test fixtures only and do not freeze the final ADS project-state ontology.
-
-Encoding families:
+Initial browser families remain inspectable:
 
 ```text
 P0  Neutral Control
@@ -278,32 +170,61 @@ P2  Explicit Tag
 P3  Tonal Hierarchy
 P4  State Rhythm
 P5  Hue + Tag
-P6  Restrained Hybrid
 ```
 
-Held controls:
+Human refinement changed the integrated comparison to:
 
 ```text
-same Investigation category in every row
-scientific square category marker
-Subtle work-unit shape
-M1 micro-material treatment
-Reduced in-box resting light
-accepted H4 hover response
-same node text
-runtime state held idle / not encoded
-importance held constant / not encoded
+P6  Hue + Colored Tag + Tone
+    disposition-colored outer perimeter
+    colored disposition tag
+    selective tonal reduction for Completed / Deferred / Future
+    NO rhythm
+
+P7  Colored Tag + Tone
+    category perimeter remains visually dominant
+    colored disposition tag
+    same selective tonal reduction
+    NO disposition-colored outer perimeter
+    NO rhythm
 ```
 
-Current human review questions:
+P4 State Rhythm remains preserved as standalone experiment evidence.
+
+## Practical mixed-category comparison
+
+The browser now renders P6 and P7 side by side using the same small project fixture with multiple category identities:
 
 ```text
-Which treatments make project disposition immediately legible?
-Does disposition hue compete with category hue?
-Do node-level state tags add clarity or excessive status-card density?
-Does tonal fading imply disposition or incorrectly imply low importance?
-Are state rhythms useful or better reserved for another semantic channel?
-Does the integrated hybrid provide useful redundancy or too much noise?
+Question / Blocker
+Investigation
+Validation / Analysis
+Model Work
+Evaluation
+```
+
+and representative dispositions:
+
+```text
+Blocked
+Active
+Recommended
+Completed
+Deferred
+Future
+```
+
+The practical scenes use dynamically calculated neutral connector geometry so the comparison tests disposition treatment rather than connector semantics.
+
+Current human gate:
+
+```text
+compare P6 vs P7 in controlled rows
++
+compare P6 vs P7 in practical mixed-category scenes
+-> determine whether disposition perimeter hue helps or competes with category hue
+-> judge whether colored tag + tone alone is sufficiently clear
+-> refine or select without freezing the final disposition ontology
 ```
 
 ---
@@ -315,12 +236,10 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               work-unit project-disposition visual grammar human review
+Current                               P6 vs P7 project-disposition mixed-category human review
 ```
 
 There is no pending Claude obligation.
-
-C4 Port Grammar has matured into connector-treatment, hover and directionality architecture.
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
@@ -333,17 +252,16 @@ Still unresolved:
 ```text
 final project-disposition ontology
 final project-disposition visual carrier
+runtime / queued / waiting / failed / waiting-for-human visual grammar
+importance / priority / relevance visual grammar
 final semantic relation taxonomy
-final relation-class codes / labels
-production relation colors
+production relation colors / labels
 semantic zoom behavior for relation tags
 large-project label-density management
 semantic assignment of connector stroke rhythm
 runtime-flow connector behavior
-runtime / queued / waiting / failed / waiting-for-human visual grammar
 selected/focused persistent treatment
-importance / priority / relevance visual grammar
-production connector preference persistence
+production appearance persistence
 final work-unit taxonomy
 final node dimensions and typography
 semantic zoom
@@ -375,14 +293,14 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 230 and v1-cockpit-design-exploration
+1. use Checkpoint 231 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. open http://localhost:5173/design-lab/work-unit-disposition-grammar.html
-4. compare P0-P6 across S0-S5
-5. inspect H4 hover without changing project disposition
-6. record prefer / reject / combine / refine evidence
-7. do not treat S0-S5 as a frozen project-state ontology
-8. keep runtime state and importance separate from this slice
-9. keep production Cockpit untouched
-10. keep source-vault deployment paused until explicitly resumed
+4. inspect controlled P6 and P7 rows
+5. inspect the practical side-by-side P6 and P7 mixed-category scenes
+6. judge whether disposition hue competes with category hue
+7. judge whether colored tag + tone is sufficient without a second perimeter hue
+8. record prefer / reject / combine / refine evidence
+9. keep runtime state and importance separate
+10. keep production Cockpit untouched
 ```
