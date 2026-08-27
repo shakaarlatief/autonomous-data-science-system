@@ -1,0 +1,6 @@
+/* Keep Z4's source state visually identical to the other candidates.
+   The workspace becomes visible only after entry begins, while its clip-path
+   still originates from the selected X5 card and expands to fullscreen. */
+[data-style="z4"]:not(.is-focused) .workspace-layer {
+  opacity: 0;
+}
