@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-tag-motion="t2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Runtime Tag Motion</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-runtime-carrier-switch.css" />
+    <link rel="stylesheet" href="./work-unit-runtime-tag-motion.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header tag-motion-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02H · Runtime Tag Motion Refinement</span>
+        <h1>What is the cleanest way to make a runtime tag feel alive without rotating or clipping a second box inside it?</h1>
+        <p>The switchable runtime-carrier architecture remains held. This page isolates only the tag-motion question. Every candidate keeps the tag geometry and text stationary and changes only how energy moves through the existing perimeter.</p>
+      </div>
+      <div class="tag-motion-held-state">
+        <span>Held runtime-carrier architecture</span>
+        <strong>Dot + ring ↔ runtime tag</strong>
+        <small>Exactly one runtime carrier per live work unit.</small>
+      </div>
+    </header>
+
+    <main class="grammar-main tag-motion-main">
+      <section class="grammar-intro tag-motion-intro">
+        <div>
+          <span class="section-kicker">Bounded visual question</span>
+          <h2>Compare clean perimeter-motion families at real tag scale</h2>
+          <p>The previous rotating conic-gradient treatment looked lively but exposed clipped geometry. The first replacement fixed that by moving one small tracer. This round keeps both as evidence and explores several stronger but still clean line-motion mechanisms.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Tag motion constraints">
+          <span>Tag never rotates</span>
+          <span>Text never moves</span>
+          <span>Geometry stays inside border</span>
+          <span>Motion belongs to perimeter</span>
+          <span>Reduced motion stays readable</span>
+          <span>No runtime stays empty</span>
+        </div>
+      </section>
+
+      <section class="tag-motion-controls" aria-label="Runtime tag motion controls">
+        <div class="tag-motion-control-copy">
+          <span class="section-kicker">Practical preview</span>
+          <h2>Apply one motion family to the realistic scene</h2>
+          <p>The controlled comparison below shows all candidates simultaneously. These buttons apply one candidate to the mixed-category scene so density and coexistence can be judged.</p>
+        </div>
+        <div class="segmented tag-motion-segmented" role="group" aria-label="Practical runtime tag motion family">
+          <button type="button" data-tag-motion="t0" aria-pressed="false">T0 Static</button>
+          <button type="button" data-tag-motion="t1" aria-pressed="false">T1 Tracer</button>
+          <button type="button" data-tag-motion="t2" aria-pressed="true">T2 Comet Flow</button>
+          <button type="button" data-tag-motion="t3" aria-pressed="false">T3 Perimeter Current</button>
+          <button type="button" data-tag-motion="t4" aria-pressed="false">T4 Twin Orbit</button>
+          <button type="button" data-tag-motion="t5" aria-pressed="false">T5 Long Glide</button>
+          <button type="button" data-tag-motion="t6" aria-pressed="false">T6 Soft Pulse</button>
+        </div>
+        <label class="toggle-row tag-motion-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Stop semantic animation while retaining the static runtime tag.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+        <div class="tag-motion-summary">
+          <span>Practical scene</span>
+          <strong id="tag-motion-summary">T2 · Comet Flow</strong>
+          <small>Only the runtime-tag motion changes.</small>
+        </div>
+      </section>
+
+      <section class="tag-motion-preview" aria-label="Runtime tag motion controlled comparison">
+        <div class="tag-motion-preview-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same Current Investigation + RUN · seven perimeter-motion treatments</h2>
+          </div>
+          <span>Everything except tag motion held constant</span>
+        </div>
+
+        <div class="grammar-world tag-motion-world" id="tag-motion-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <div class="tag-motion-rows" id="tag-motion-rows"></div>
+        </div>
+      </section>
+
+      <section class="tag-motion-practical" aria-label="Runtime tag motion mixed-category practical scene">
+        <div class="tag-motion-practical-header">
+          <div>
+            <span class="section-kicker">Practical coexistence check</span>
+            <h2>Does the motion still look premium when several runtime tags coexist?</h2>
+            <p>The scene keeps category color, P7 project disposition and conditional runtime intact. Deferred and Future nodes intentionally carry no runtime tag.</p>
+          </div>
+          <div class="tag-motion-practical-legend">
+            <span>Top-right = disposition</span>
+            <span>Bottom-right = runtime tag</span>
+            <span>Motion only on live runtime</span>
+            <span>Selected T0-T6 applies globally here</span>
+          </div>
+        </div>
+
+        <div class="grammar-world tag-motion-practical-world" id="tag-motion-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <svg class="tag-motion-relations" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+            <path />
+            <path />
+            <path />
+            <path />
+            <path />
+          </svg>
+          <div class="tag-motion-practical-nodes" id="tag-motion-practical-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review tag-motion-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Choose the motion language, not the final runtime ontology</h2>
+        <div class="review-questions">
+          <p>Which motion feels cleanest and most premium at actual tag scale?</p>
+          <p>Does T2 Comet Flow feel more intentional than the very small T1 tracer?</p>
+          <p>Does T3 Perimeter Current look like the border itself is flowing, or does it become too technical?</p>
+          <p>Does T4 Twin Orbit create useful rhythm or unnecessary busyness?</p>
+          <p>Does T5 Long Glide give enough movement without resembling a loading bar?</p>
+          <p>Is T6 Soft Pulse calmer and nicer, or too weak because it has no directional travel?</p>
+          <p>In the practical scene, do multiple animated tags remain calm enough to coexist?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-runtime-tag-motion.js"></script>
+  </body>
+</html>

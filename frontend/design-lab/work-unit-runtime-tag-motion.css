@@ -1,0 +1,484 @@
+body {
+  min-width: 1440px;
+}
+
+.tag-motion-header {
+  grid-template-columns: minmax(900px, 1fr) auto;
+}
+
+.tag-motion-held-state {
+  display: grid;
+  min-width: 360px;
+  gap: 4px;
+  padding: 11px 13px;
+  border: 1px solid rgba(142, 169, 255, 0.22);
+  border-radius: 9px;
+  background: rgba(12, 17, 27, 0.72);
+}
+
+.tag-motion-held-state span,
+.tag-motion-summary span {
+  color: var(--text-dim);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.tag-motion-held-state strong,
+.tag-motion-summary strong {
+  color: rgba(222, 230, 244, 0.92);
+  font-size: 8.7px;
+  font-weight: 760;
+}
+
+.tag-motion-held-state small,
+.tag-motion-summary small {
+  color: rgba(165, 178, 199, 0.72);
+  font-size: 7.5px;
+  font-weight: 650;
+}
+
+.tag-motion-main {
+  padding-bottom: 60px;
+}
+
+.tag-motion-intro {
+  margin-bottom: 14px;
+}
+
+.tag-motion-controls {
+  display: grid;
+  grid-template-columns: minmax(390px, 0.78fr) minmax(760px, 1.6fr) minmax(280px, 0.56fr) minmax(250px, 0.48fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.tag-motion-control-copy,
+.tag-motion-segmented,
+.tag-motion-toggle,
+.tag-motion-summary {
+  min-height: 96px;
+  padding: 10px 11px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.70);
+}
+
+.tag-motion-control-copy,
+.tag-motion-summary {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+}
+
+.tag-motion-control-copy h2 {
+  margin: 1px 0;
+  color: rgba(232, 237, 246, 0.92);
+  font-size: 12px;
+}
+
+.tag-motion-control-copy p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 8px;
+  line-height: 1.43;
+}
+
+.tag-motion-segmented {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-content: center;
+  gap: 5px;
+}
+
+.tag-motion-segmented button {
+  min-height: 34px;
+}
+
+.tag-motion-segmented button:last-child {
+  grid-column: span 2;
+}
+
+.tag-motion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.tag-motion-toggle > span {
+  display: grid;
+  gap: 3px;
+}
+
+.tag-motion-toggle strong {
+  color: rgba(226, 233, 245, 0.88);
+  font-size: 8.7px;
+}
+
+.tag-motion-toggle small {
+  color: var(--text-dim);
+  font-size: 7.6px;
+  line-height: 1.35;
+}
+
+.tag-motion-toggle input {
+  width: 15px;
+  height: 15px;
+  accent-color: rgb(142, 169, 255);
+}
+
+.tag-motion-preview,
+.tag-motion-practical {
+  overflow: hidden;
+  border: 1px solid var(--panel-border-strong);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.22);
+}
+
+.tag-motion-preview-header,
+.tag-motion-practical-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.tag-motion-preview-header h2,
+.tag-motion-practical-header h2 {
+  margin: 4px 0 4px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.tag-motion-preview-header > span {
+  padding: 5px 8px;
+  border: 1px solid rgba(142, 169, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(142, 169, 255, 0.05);
+  color: rgba(207, 219, 242, 0.82);
+  font-size: 8px;
+  font-weight: 750;
+}
+
+.tag-motion-practical {
+  margin-top: 18px;
+}
+
+.tag-motion-practical-header p {
+  margin: 0;
+  max-width: 850px;
+  color: var(--text-soft);
+  font-size: 8.8px;
+}
+
+.tag-motion-practical-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+  max-width: 520px;
+}
+
+.tag-motion-practical-legend span {
+  padding: 6px 9px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: rgba(13, 19, 28, 0.68);
+  color: var(--text-dim);
+  font-size: 7.7px;
+  font-weight: 730;
+}
+
+.tag-motion-world {
+  height: 900px;
+}
+
+.tag-motion-rows {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  padding: 18px 20px;
+}
+
+.tag-motion-row {
+  position: relative;
+  min-height: 0;
+  border-bottom: 1px solid rgba(156, 177, 206, 0.08);
+  --runtime-rgb: 103, 218, 194;
+}
+
+.tag-motion-row:last-child {
+  border-bottom: 0;
+}
+
+.tag-motion-label {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  display: grid;
+  width: 335px;
+  gap: 3px;
+  transform: translateY(-50%);
+}
+
+.tag-motion-label span {
+  color: rgba(var(--runtime-rgb), 0.88);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.10em;
+}
+
+.tag-motion-label strong {
+  color: rgba(231, 236, 245, 0.92);
+  font-size: 10px;
+  font-weight: 760;
+}
+
+.tag-motion-label small {
+  max-width: 325px;
+  color: rgba(168, 181, 201, 0.68);
+  font-size: 7.8px;
+  line-height: 1.35;
+}
+
+.tag-motion-node {
+  position: absolute;
+  left: 43%;
+  top: 50%;
+  width: 244px;
+  height: 102px;
+  transform: translate3d(0, -50%, 0);
+}
+
+.tag-motion-node:hover {
+  transform: translate3d(0, calc(-50% - 2px), 0);
+}
+
+.tag-motion-node .disposition-state-badge,
+.tag-motion-practical-node .disposition-state-badge {
+  opacity: 1;
+}
+
+.tag-motion-node.is-hovered .disposition-state-badge,
+.tag-motion-practical-node.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05), 0 0 9px rgba(var(--state-rgb), 0.08);
+}
+
+.motion-runtime-tag {
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  z-index: 12;
+  display: inline-grid;
+  min-width: 48px;
+  height: 19px;
+  place-items: center;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(9, 14, 22, 0.95);
+  color: rgba(var(--runtime-rgb), 0.98);
+  font-size: 6.1px;
+  font-weight: 850;
+  letter-spacing: 0.045em;
+  box-shadow: inset 0 0 7px rgba(var(--runtime-rgb), 0.045);
+  overflow: visible;
+}
+
+.motion-runtime-tag svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.motion-runtime-tag rect {
+  vector-effect: non-scaling-stroke;
+  fill: none;
+}
+
+.motion-runtime-tag .tag-base {
+  stroke: rgba(var(--runtime-rgb), 0.30);
+  stroke-width: 1;
+}
+
+.motion-runtime-tag .tag-flow {
+  opacity: 0;
+  stroke: rgba(var(--runtime-rgb), 0.98);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 2px rgba(var(--runtime-rgb), 0.42));
+}
+
+.motion-runtime-tag > span {
+  position: relative;
+  z-index: 2;
+}
+
+/* T0: static control. */
+[data-tag-motion="t0"] .tag-flow {
+  animation: none;
+}
+
+/* T1: current small travelling tracer. */
+[data-tag-motion="t1"] .tag-flow-a {
+  opacity: 1;
+  stroke-dasharray: 10 90;
+  animation: tag-flow-travel 2.2s linear infinite;
+}
+
+/* T2: comet. A bright head rides inside a longer low-opacity wake. */
+[data-tag-motion="t2"] .tag-flow-a {
+  opacity: 0.24;
+  stroke-width: 1.25;
+  stroke-dasharray: 32 68;
+  animation: tag-flow-travel 2.3s linear infinite;
+}
+
+[data-tag-motion="t2"] .tag-flow-b {
+  opacity: 0.52;
+  stroke-width: 1.2;
+  stroke-dasharray: 19 81;
+  animation: tag-flow-travel 2.3s linear infinite;
+}
+
+[data-tag-motion="t2"] .tag-flow-c {
+  opacity: 1;
+  stroke-width: 1.15;
+  stroke-dasharray: 8 92;
+  animation: tag-flow-travel 2.3s linear infinite;
+}
+
+/* T3: the perimeter itself becomes a moving current. */
+[data-tag-motion="t3"] .tag-flow-a {
+  opacity: 0.66;
+  stroke-width: 1;
+  stroke-dasharray: 5 6;
+  animation: tag-flow-travel 2.8s linear infinite;
+}
+
+/* T4: two restrained accents orbit opposite one another. */
+[data-tag-motion="t4"] .tag-flow-a {
+  opacity: 0.92;
+  stroke-width: 1.1;
+  stroke-dasharray: 10 40 10 40;
+  animation: tag-flow-travel 2.45s linear infinite;
+}
+
+/* T5: one long, calm band glides around the perimeter. */
+[data-tag-motion="t5"] .tag-flow-a {
+  opacity: 0.74;
+  stroke-width: 1.05;
+  stroke-dasharray: 27 73;
+  animation: tag-flow-travel 3s linear infinite;
+}
+
+/* T6: no directional travel, only a soft full-perimeter energy pulse. */
+[data-tag-motion="t6"] .tag-base {
+  animation: tag-border-breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes tag-flow-travel {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+
+@keyframes tag-border-breathe {
+  0%, 100% {
+    stroke: rgba(var(--runtime-rgb), 0.25);
+    filter: drop-shadow(0 0 0 rgba(var(--runtime-rgb), 0));
+  }
+  50% {
+    stroke: rgba(var(--runtime-rgb), 0.74);
+    filter: drop-shadow(0 0 2.5px rgba(var(--runtime-rgb), 0.22));
+  }
+}
+
+/* Runtime-specific pacing remains semantic. */
+[data-runtime="queued"] .tag-flow { animation-duration: 2.7s; }
+[data-runtime="running"] .tag-flow { animation-duration: 1.65s; }
+[data-runtime="waiting"] .tag-flow { animation-duration: 3.2s; }
+[data-runtime="human"] .tag-flow { animation-duration: 2.35s; }
+[data-runtime="failed"] .tag-flow { animation-duration: 1.9s; }
+
+[data-runtime="queued"][data-tag-motion="t6"] .tag-base { animation-duration: 2.8s; }
+[data-runtime="running"][data-tag-motion="t6"] .tag-base { animation-duration: 1.65s; }
+[data-runtime="waiting"][data-tag-motion="t6"] .tag-base { animation-duration: 3.2s; }
+[data-runtime="human"][data-tag-motion="t6"] .tag-base { animation-duration: 2.35s; }
+[data-runtime="failed"][data-tag-motion="t6"] .tag-base { animation-duration: 1.85s; }
+
+html[data-reduced="on"] .tag-flow,
+html[data-reduced="on"] .tag-base {
+  animation: none !important;
+}
+
+html[data-reduced="on"] .tag-flow {
+  opacity: 0 !important;
+}
+
+html[data-reduced="on"] .tag-base {
+  stroke: rgba(var(--runtime-rgb), 0.48);
+  filter: none;
+}
+
+.tag-motion-practical-world {
+  height: 520px;
+}
+
+.tag-motion-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.tag-motion-relations path {
+  fill: none;
+  stroke: rgba(153, 174, 205, 0.24);
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+.tag-motion-practical-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.tag-motion-practical-node {
+  position: absolute;
+  width: 214px;
+  height: 112px;
+}
+
+.tag-motion-practical-node.scene-q { left: 7%; top: 34%; }
+.tag-motion-practical-node.scene-i { left: 25%; top: 12%; }
+.tag-motion-practical-node.scene-v { left: 48%; top: 33%; }
+.tag-motion-practical-node.scene-m { left: 73%; top: 10%; }
+.tag-motion-practical-node.scene-e { left: 42%; top: 69%; }
+.tag-motion-practical-node.scene-f { left: 69%; top: 69%; }
+
+.tag-motion-practical-node[data-runtime="none"] .motion-runtime-tag {
+  display: none;
+}
+
+.tag-motion-review {
+  margin-top: 18px;
+}
