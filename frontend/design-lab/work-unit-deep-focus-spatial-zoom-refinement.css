@@ -4,3 +4,16 @@
 [data-style="z4"]:not(.is-focused) .workspace-layer {
   opacity: 0;
 }
+
+/* The compass is an orientation instrument, not another workspace panel.
+   Reserve clear space beneath it so a schematic work-panel border cannot
+   read as a second overlapping compass box. */
+.is-focused .work-side {
+  padding-top: 84px;
+  box-sizing: border-box;
+}
+
+.is-focused .topology-compass {
+  background: #080d13;
+  box-shadow: 0 10px 28px rgba(0,0,0,.34);
+}
