@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Deep-focus entry remains provisionally settled around Z7 Pull-Back Then Dive into a fullscreen specialist workspace with a compact topology compass. Semantic zoom has been deliberately deferred, with S0 Geometric Control retained as the working default and S1-S8 preserved for later. The active gate now evaluates how the compact native Cockpit composer should open into a serious persistent Conversation Workspace for long-form project dialogue.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Deep-focus entry remains provisionally settled around Z7 Pull-Back Then Dive into a fullscreen specialist workspace with a compact topology compass. Semantic zoom remains deferred with S0 Geometric Control as the working behavior. The Conversation Workspace blind dual-design round is complete and the active gate is now human comparison of the independently produced Claude and ChatGPT visual systems before synthesis.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -30,36 +30,41 @@ Primary route:
 
 ```text
 docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+frontend/design-lab/conversation-workspace-claude-independent.html
+frontend/design-lab/conversation-workspace-chatgpt-independent.html
+```
+
+Current local URLs:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
+http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+```
+
+Exact active-branch browser implementation target containing both independent families:
+
+```text
+348c1d8a746041d4fa3ca41316ac34f9d79bc745
+```
+
+Independent provenance:
+
+```text
+Claude Message 008
+    cab2e464d81b48edadd1b6ae51bb7dd620d7e892
+
+ChatGPT isolated independent branch
+    chatgpt-conversation-workspace-independent-design
+    c66f72a74e681f89fd52ba591a1387ea50f0e959
+```
+
+The initial Conversation Workspace architecture browser remains historical evidence:
+
+```text
 docs/research/079_conversation_workspace_presentation_architecture_experiment.md
 frontend/design-lab/conversation-workspace-architecture.html
-frontend/design-lab/conversation-workspace-architecture.css
-frontend/design-lab/conversation-workspace-architecture.js
-```
-
-Current local URL:
-
-```text
-http://localhost:5173/design-lab/conversation-workspace-architecture.html
-```
-
-Initial Conversation Workspace browser target:
-
-```text
 42cfe87a0531206187741488f35785fc87f10f1e
-```
-
-Semantic-zoom evidence remains preserved at:
-
-```text
-docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
-frontend/design-lab/work-unit-semantic-zoom.html
-65ac02326a75b1c9f056676819d2d1b7b23b74c5
-```
-
-Selected predecessor deep-focus target:
-
-```text
-04616a52df5cceff6c59223bbd6f07448d027510
 ```
 
 Production `/cockpit` remains untouched.
@@ -155,48 +160,101 @@ Reopen when real large-project density, navigation or performance evidence makes
 
 ---
 
-# Active Slice 02P: Conversation Workspace
+# Active Slice 02P: Conversation Workspace independent comparison
 
-Required product distinction:
+The initial visual browser was rejected by the project owner as unattractive. The problem was broadened beyond placement architecture to the complete conversation visual and interaction system.
+
+The owner required a blind dual-design process:
 
 ```text
-Composer
-    lightweight native Cockpit entry
+Claude designs independently
+ChatGPT redesigns independently
+neither sees the other first
+```
 
+That blind gate is complete.
+
+Strong independent convergence:
+
+```text
 Conversation Workspace
-    persistent full transcript
-    long-form reading
-    search / navigation eventually
-    continuing project dialogue
+    transcript-first long-form technical reading surface
+    not a generic messaging app
+
+ADS responses
+    primarily document-like
+
+project references
+    semantic objects reusing project grammar
+
+structured project changes
+    separate from ordinary prose
+
+execution / provenance
+    secondary and collapsed by default
+
+composer
+    explicit project context / in-scope objects
+
+visual identity
+    dark
+    calm
+    restrained
+    professional
 ```
 
-The current browser tests presentation architecture only:
+Claude browser candidates:
 
 ```text
-CV0  Focus Workspace
-CV1  Right Dock
-CV2  Split Workbench
-CV3  Canvas Lens
-CV4  Bottom Workbench
-CV5  Focus + Context Rail
-CV6  Conversation + Inspector
-CV7  Progressive Recent-to-Full
-CV8  Tabbed Stage
+Technical Manuscript
+    reading-room atmosphere
+    ruled two-voice no-bubble transcript
+    comfortable density
+    serif / humanist-sans toggle
+
+Studio Console
+    same-console continuity
+    compact persistent state rail
+    flat bordered message blocks
+
+Hybrid
+    Manuscript reading grammar
+    + compact state rail
 ```
 
-Every candidate uses the same conceptual conversation and same project reference. Consequential project outcomes remain structured project state, not conversation-only truth.
+ChatGPT browser candidates:
+
+```text
+Quiet Graphite
+Deep Navy
+Warm Slate
+Monochrome Signal
+Violet Ink
+Editorial Dark
+```
+
+ChatGPT held a slim thread rail, transcript-first center and optional project-context rail while changing the complete visual system.
+
+Material differences to judge before synthesis:
+
+```text
+ruled/no-bubble user turns vs bounded prompt vs console block
+no persistent rail vs state rail vs thread/context rails
+warm reading-room separation vs same-console continuity
+serif vs humanist sans
+comfortable vs compact density
+resting -> peek -> full conversation depth
+```
 
 Current human gate:
 
 ```text
-1. compare CV0-CV8
-2. open / close each candidate
-3. judge long-form reading quality
-4. judge simultaneous project-context value versus distraction
-5. judge dock/split versus focused workspace
-6. judge context rail / inspector value
-7. judge whether recent-context expansion earns an intermediate layer
-8. prefer / reject / combine / refine
+1. inspect Claude independent browser family
+2. inspect ChatGPT independent browser family
+3. identify attractive / unattractive whole-system qualities
+4. identify transferable mechanisms
+5. do not average prematurely
+6. build synthesis candidates after human review
 ```
 
 ---
@@ -206,7 +264,12 @@ Current human gate:
 Still unresolved:
 
 ```text
-Conversation Workspace final presentation architecture
+Conversation Workspace final visual system
+final message grammar
+final palette / typography / density
+workspace rail architecture
+resting -> peek -> full depth model
+final presentation architecture
 one conversation versus multiple project conversations
 conversation lifecycle: fork / archive / resume / search
 message-to-project linking semantics
@@ -234,8 +297,9 @@ final production design system
 Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
-Latest Claude contribution            204664ae1e732dd504174bbc62545e9a93adc85f
-Current                               Conversation Workspace human review
+Claude Message 008                    cab2e464d81b48edadd1b6ae51bb7dd620d7e892
+Current                               independent Conversation Workspace browser comparison
+Next actor                            human project owner
 ```
 
 There is no pending Claude obligation.
@@ -261,13 +325,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 245 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/conversation-workspace-architecture.html
-4. compare CV0-CV8
-5. click each candidate to open / close the same persistent conversation
-6. judge long-form reading and project-context retention
-7. prefer / reject / combine / refine
-8. keep S0 zoom behavior provisional
-9. keep Z7 deep focus held
-10. keep production Cockpit untouched
-11. keep source-vault deployment paused until explicitly resumed
+3. open conversation-workspace-claude-independent.html
+4. compare Technical Manuscript, Studio Console and Hybrid
+5. test serif versus humanist sans in Technical Manuscript
+6. open conversation-workspace-chatgpt-independent.html
+7. compare Quiet Graphite, Deep Navy, Warm Slate, Monochrome Signal, Violet Ink and Editorial Dark
+8. identify whole-system likes/dislikes and transferable mechanisms
+9. build synthesis candidates only after human review
+10. keep S0 semantic zoom as a provisional working default
+11. keep Z7 deep focus held
+12. keep production Cockpit untouched
+13. keep source-vault deployment paused until explicitly resumed
 ```
