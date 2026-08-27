@@ -28,19 +28,19 @@ human project owner
 Current checkpoint:
 
 ```text
-227
+228
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/connector-directionality.html
+http://localhost:5173/design-lab/relation-class-grammar.html
 ```
 
 Exact browser implementation target:
 
 ```text
-07d573b6569b9f09a3b7e00936f3eadecee721b3
+9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
 ```
 
 ## Promoted configurable-appearance foundations
@@ -73,46 +73,60 @@ semantic direction
     system-owned
 ```
 
-Only one terminal treatment should normally be active at a time. Hover may reveal or intensify that selected treatment rather than adding a second terminal symbol.
+## Directionality result
 
-## Latest retained connector refinements
-
-```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
-    Micro-dot / hover-port circles mostly outside the work-unit perimeter
-
-183264bdd07783eaa2354894592f2cf4a076b6ec
-    Frame-socket outline / glow follows active relation color
-```
-
-## Active simplified directionality review
-
-The first D0-D3 browser mixed arrows with attachment-style compatibility controls. Human review simplified the experiment.
-
-Current comparison:
+Human review accepted the simplified arrow grammar:
 
 ```text
-D0  Undirected      A - B
-    no arrow
-
-D1  Forward         A -> B
-    K3-style arrow docked directly to B
-
-D2  Reverse         A <- B
-    exact same arrow docked directly to A
-
-D3  Bidirectional   A <-> B
-    same arrow at both endpoints
+D0  Undirected      no arrow
+D1  Forward         arrow at B
+D2  Reverse         same arrow at A
+D3  Bidirectional   same arrow at both endpoints
 ```
 
-No dots or sockets are mixed into this directionality comparison.
+Exact accepted directionality target:
+
+```text
+07d573b6569b9f09a3b7e00936f3eadecee721b3
+```
+
+Directionality is sufficiently settled for the current Phase-C design work.
+
+## Active semantic relation-class review
+
+Representative visual-test fixtures:
+
+```text
+R0  Chronology / Sequence
+R1  Dependency / Prerequisite
+R2  Causal / Influence
+R3  Evidence / Support
+R4  Lineage / Derivation
+```
+
+These are not a frozen ADS relation taxonomy.
+
+Encoding families:
+
+```text
+E0  Neutral Control
+E1  Semantic Hue
+E2  Stroke Rhythm
+E3  Explicit Tag
+E4  Hue + Stroke
+E5  Hue + Tag
+E6  Restrained Hybrid
+```
+
+Direction is held constant as `A -> B` so class encoding is isolated.
 
 Current human gate:
 
 ```text
-verify simple edge-connected arrow grammar
--> if accepted, treat directionality as sufficiently converged
--> then open semantic relation-class exploration
+compare semantic distinction / legibility / graph noise across E0-E6
+-> prefer / reject / combine / refine
+-> preserve promising relation-class visual mechanisms
+-> do not freeze the relation ontology yet
 ```
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
