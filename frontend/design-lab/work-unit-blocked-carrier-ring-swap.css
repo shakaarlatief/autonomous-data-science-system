@@ -1,0 +1,24 @@
+/* Human-selected compact red carrier shape swap.
+ *
+ * BLOCKED now uses the sharper constraint ring previously shown for FAIL.
+ * FAIL now uses the smoother circular ring previously shown for BLOCKED.
+ * Colors, status semantics, tag mode, global/local switching, and blocker
+ * relationship behavior remain unchanged.
+ */
+
+[data-status-code="BLOCKED"] .status-dot-ring {
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  border-color: rgba(var(--status-rgb), 0.84);
+  animation: blocked-fail-ring 1.8s ease-in-out infinite;
+}
+
+[data-status-code="FAIL"] .status-dot-ring {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border-color: rgba(var(--status-rgb), 0.62);
+  box-shadow: 0 0 8px rgba(var(--status-rgb), 0.08);
+  animation: blocked-status-ring 2.1s ease-in-out infinite;
+}
