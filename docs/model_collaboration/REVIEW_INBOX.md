@@ -28,7 +28,7 @@ human project owner
 Current checkpoint:
 
 ```text
-226
+227
 ```
 
 Current browser route:
@@ -40,7 +40,7 @@ http://localhost:5173/design-lab/connector-directionality.html
 Exact browser implementation target:
 
 ```text
-41bbdb75f338388f02a34fdf7dbac3ea90f86300
+07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
 ## Promoted configurable-appearance foundations
@@ -51,71 +51,67 @@ Work-unit appearance:
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Connector presentation / semantic directionality:
+Connector treatment / hover behavior / semantic directionality:
 
 ```text
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
-Core combined principle:
+Current connector model:
 
 ```text
-ADS owns semantic meaning
-user controls approved non-semantic presentation dimensions
-```
-
-For connectors specifically:
-
-```text
-user may configure connector presentation
-user may not remove / reverse / invent semantic direction
-```
-
-## Connector presentation result
-
-The previous K0-K4 winner question is closed.
-
-Current configurable interpretation:
-
-```text
-Rest attachment
+connector treatment
     Clean
     Micro dots
     Frame sockets
+    Direction arrows
 
-Hover attachment emphasis
-    Off
-    On
+hover / focus
+    separate reveal / emphasis mechanism
+
+semantic direction
+    system-owned
 ```
 
-Latest retained implementation evidence:
+Only one terminal treatment should normally be active at a time. Hover may reveal or intensify that selected treatment rather than adding a second terminal symbol.
+
+## Latest retained connector refinements
 
 ```text
 42ec63d17095753dc4ab97628cd859473cbdf5e8
-    K1/K4 circular markers mostly outside the work-unit perimeter
+    Micro-dot / hover-port circles mostly outside the work-unit perimeter
 
 183264bdd07783eaa2354894592f2cf4a076b6ec
-    K2 active socket outline / glow follows relation color
+    Frame-socket outline / glow follows active relation color
 ```
 
-## Active directionality review
+## Active simplified directionality review
 
-Current comparison states:
+The first D0-D3 browser mixed arrows with attachment-style compatibility controls. Human review simplified the experiment.
+
+Current comparison:
 
 ```text
-D0  Undirected      A — B
+D0  Undirected      A - B
+    no arrow
+
 D1  Forward         A -> B
+    K3-style arrow docked directly to B
+
 D2  Reverse         A <- B
+    exact same arrow docked directly to A
+
 D3  Bidirectional   A <-> B
+    same arrow at both endpoints
 ```
 
-The browser also exposes the already-approved connector presentation dimensions to check compatibility, but those controls do not alter semantic direction.
+No dots or sockets are mixed into this directionality comparison.
 
 Current human gate:
 
 ```text
-review direction-cue clarity
--> keep / refine / replace cue
+verify simple edge-connected arrow grammar
+-> if accepted, treat directionality as sufficiently converged
 -> then open semantic relation-class exploration
 ```
 
