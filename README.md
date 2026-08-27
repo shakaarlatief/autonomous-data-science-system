@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            227
+checkpoint            228
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      simplified arrow directionality human browser review
+current boundary      semantic relation-class visual grammar human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -70,17 +70,9 @@ Evaluation                plus
 
 ---
 
-## Foundation 023: user-configurable Cockpit appearance
+## Foundation 023: user-configurable work-unit appearance
 
-Human browser review approved the principle that multiple high-quality, semantically compatible work-unit mechanisms may coexist as user-selectable appearance dimensions.
-
-Promoted foundation:
-
-```text
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-```
-
-Core principle:
+Promoted principle:
 
 ```text
 ADS owns semantic meaning
@@ -91,23 +83,15 @@ user controls approved non-semantic appearance dimensions
 Current proven work-unit appearance controls:
 
 ```text
-Box shape
-    Normal
-    Subtle shapes
-
-Micro design
-    None
-    Micro material
-    Micro light
+Box shape       Normal / Subtle shapes
+Micro design    None / Micro material / Micro light
 ```
 
 Production settings persistence is not yet selected.
 
 ---
 
-## Connector treatment and hover behavior
-
-Human review retained the useful connector mechanisms but clarified that they should not be stacked without a semantic reason.
+## Foundation 024: connector treatment, hover and semantic direction
 
 Current connector treatments:
 
@@ -126,102 +110,78 @@ one terminal treatment normally active at a time
 hover / focus is a separate reveal or emphasis mechanism
 ```
 
-So hover is not a fifth terminal symbol. It may reveal or intensify the selected treatment.
+Direction remains semantic and system-owned.
 
-Important retained refinements:
-
-```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
-    Micro-dot / hover-port circles sit mostly outside the work-unit perimeter
-
-183264bdd07783eaa2354894592f2cf4a076b6ec
-    Frame sockets adopt active relation color / restrained glow when highlighted
-```
-
----
-
-## Foundation 024: connector treatment vs semantic directionality
-
-Refined foundation:
+Accepted direction grammar:
 
 ```text
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+Undirected      A - B       no arrow
+Forward         A -> B      restrained edge-connected arrow at B
+Reverse         A <- B      exact same arrow at A
+Bidirectional   A <-> B     same arrow at both endpoints
 ```
 
-Core principle:
-
-```text
-semantic relation state
-    system-owned
-
-connector treatment
-    configurable within approved bounds
-    normally one active terminal treatment at a time
-
-hover behavior
-    orthogonal interaction mechanism
-```
-
-Direction remains semantic:
-
-```text
-undirected
-A -> B
-A <- B
-A <-> B
-```
-
-If arrows are used, their placement follows the relation direction exactly.
-
----
-
-## Active Slice 02D: simplified arrow directionality
-
-The first directionality browser mixed arrows with dots / sockets as compatibility controls. Human review simplified the question.
-
-The current browser now isolates the earlier preferred K3-style edge-connected arrow only.
-
-Browser route:
-
-```text
-frontend/design-lab/connector-directionality.html
-frontend/design-lab/connector-directionality.css
-frontend/design-lab/connector-directionality.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/connector-directionality.html
-```
-
-Exact browser implementation target:
+Human review accepted the simplified browser result. Exact accepted directionality implementation:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Current direction states:
+---
+
+## Active Slice 02E: semantic relation-class visual grammar
+
+The next bounded question is:
+
+> How should different relationship meanings remain distinguishable on the Cockpit map without turning the project map into graph noise?
+
+Direction is held constant as `A -> B` so relation meaning is isolated from directionality.
+
+Representative visual-test fixtures:
 
 ```text
-D0  Undirected      A - B
-    no arrow
-
-D1  Forward         A -> B
-    arrow docked directly to B
-
-D2  Reverse         A <- B
-    exact same arrow docked directly to A
-
-D3  Bidirectional   A <-> B
-    same arrow at both endpoints
+R0  Chronology / Sequence
+R1  Dependency / Prerequisite
+R2  Causal / Influence
+R3  Evidence / Support
+R4  Lineage / Derivation
 ```
 
-No dots or sockets are mixed into the directionality comparison.
+These are not a frozen ADS relation ontology.
 
-The arrow tip touches the exact rendered work-unit perimeter and follows H4 hover lift / release through the existing dynamic geometry system.
+Browser route:
 
-If human review accepts this simple arrow grammar, the next slice is semantic relation classes such as chronology, causality, dependency, evidence and lineage.
+```text
+frontend/design-lab/relation-class-grammar.html
+frontend/design-lab/relation-class-grammar.css
+frontend/design-lab/relation-class-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/relation-class-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+```
+
+Encoding families:
+
+```text
+E0  Neutral Control
+E1  Semantic Hue
+E2  Stroke Rhythm
+E3  Explicit Tag
+E4  Hue + Stroke
+E5  Hue + Tag
+E6  Restrained Hybrid
+```
+
+The current human gate is to compare semantic distinction, map-scale legibility, competition with node-category color, stroke-pattern clarity, tag density, accessibility redundancy and large-project noise risk.
 
 ---
 
@@ -250,7 +210,8 @@ Not yet authorized:
 ```text
 production Cockpit replacement
 production appearance persistence
-final semantic connector vocabulary
+final semantic relation taxonomy
+final relation-color / stroke / tag grammar
 new graph/canvas dependency
 new motion-library adoption
 final visual-system freeze
@@ -287,23 +248,22 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
+docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+docs/research/057_semantic_relation_class_visual_grammar_experiment.md
+frontend/design-lab/relation-class-grammar.html
+
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
 frontend/design-lab/connector-directionality.html
 
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-
-docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
-frontend/design-lab/connector-grammar.html
+frontend/design-lab/work-unit-grammar-customizable.html
 
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
-
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
@@ -311,11 +271,10 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/connector-directionality.html
-3. verify D0 through D3 use only the simple edge-connected arrow grammar
-4. verify forward / reverse / bidirectional arrows touch the correct work-unit edge
-5. verify no dots or sockets are mixed into arrow directionality
-6. if accepted, preserve directionality as sufficiently settled
-7. then open semantic relation-class exploration
-8. keep production Cockpit untouched
+2. open http://localhost:5173/design-lab/relation-class-grammar.html
+3. compare E0 through E6 across R0 through R4
+4. inspect hover emphasis without changing semantic meaning
+5. prefer / reject / combine / refine relation-class encoding mechanisms
+6. do not treat R0-R4 as a frozen taxonomy
+7. keep production Cockpit untouched
 ```
