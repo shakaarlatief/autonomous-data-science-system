@@ -1,9 +1,9 @@
 # Research 077: Fullscreen Specialist Workspace and Spatial Zoom Transition Experiment
 
 **Date:** 2026-08-27  
-**Status:** Active Phase-C interaction-design evidence  
+**Status:** Phase-C interaction-design evidence, human selection recorded  
 **Scope:** Narrows the deep-focus transition question after the project owner expressed a strong preference that the deepest specialist workspace fully replace the project map, while retaining the compact topology compass, and requested more advanced spatial zoom / through-space transition concepts.  
-**Authority:** Research evidence only. The fullscreen end state and compass are strong current preferences for this slice, but final production deep-focus architecture, transition choreography, motion timing, return behavior and workspace composition remain unfrozen.
+**Authority:** Research evidence supporting the current Phase-C direction. Production implementation, exact timing/easing, return choreography, compass semantics and specialist-workspace composition remain unfrozen.
 
 ## 1. Human trigger
 
@@ -33,11 +33,11 @@ or the background zooming out or in
 moving through the space
 ```
 
-This is interpreted as a request to test spatial depth and camera-like movement rather than another set of map-retention amounts.
+This was interpreted as a request to test spatial depth and camera-like movement rather than another set of map-retention amounts.
 
 ## 2. Revised factorization
 
-Research 076 separated transition dimensions. This follow-up now holds the end state constant:
+Research 076 separated transition dimensions. This follow-up holds the end state constant:
 
 ```text
 DEEPEST SPECIALIST WORKSPACE END STATE
@@ -58,7 +58,7 @@ workspace internals
     schematic and unfrozen
 ```
 
-This lets the new browser vary only:
+The browser varies only:
 
 ```text
 SPATIAL TRANSITION CHOREOGRAPHY
@@ -67,9 +67,9 @@ SPATIAL TRANSITION CHOREOGRAPHY
     into the specialist-workspace depth layer?
 ```
 
-The current hypothesis is that a stronger spatial metaphor may better match the Cockpit's already-promoted geometric zoom and navigable-world architecture than a simple modal-like expansion.
+The governing hypothesis is that a stronger spatial metaphor better matches the Cockpit's already-promoted geometric zoom and navigable-world architecture than a modal-like expansion.
 
-## 3. New browser
+## 3. Browser
 
 Local route:
 
@@ -86,11 +86,13 @@ frontend/design-lab/work-unit-deep-focus-spatial-zoom-refinement.css
 frontend/design-lab/work-unit-deep-focus-spatial-zoom.js
 ```
 
-Exact latest implementation target:
+Exact selected/fixed implementation target:
 
 ```text
-b375eb253990ce3c20f34dd9d5b735bd532789f2
+04616a52df5cceff6c59223bbd6f07448d027510
 ```
+
+At this target the large interaction studio defaults to Z7 and the compass no longer visually overlaps the schematic top-right workspace panel.
 
 Production `/cockpit` remains untouched.
 
@@ -132,9 +134,52 @@ Z7  Pull-Back Then Dive
     then camera accelerates through the selected work unit
 ```
 
-Z0 is retained as the simplest control. Z1-Z7 are deliberately more spatial and cinematic, but still restrained enough to test in a professional technical interface.
+## 5. Human selection
 
-## 5. Dynamic source origin
+The project owner explicitly identified three strong candidates:
+
+```text
+Z2  liked
+Z6  liked
+Z7  liked
+```
+
+The specific human evidence was:
+
+```text
+Z6
+    gives a bit of the 3D / 2.5D feeling
+
+Z7
+    nice and sharp
+```
+
+The project owner hesitated between Z6 and Z7, then selected:
+
+```text
+Z7  Pull-Back Then Dive
+    SELECTED current Phase-C deep-focus entry direction
+```
+
+Interpretation:
+
+```text
+entry
+    short controlled pull-back
+    establishes depth / spatial anticipation
+    then accelerates toward and through selected work
+
+end state
+    fullscreen specialist workspace
+    no project grid / surrounding work units
+    compact topology compass retained
+```
+
+Z6 is not treated as a failed direction. Its perspective-corridor / 2.5D quality is positive design evidence that may be useful later for project-world depth or semantic-zoom work, but Z7 is the selected deep-focus transition.
+
+Z2 is likewise preserved as positive evidence for the value of explicit world-depth separation.
+
+## 6. Dynamic source origin
 
 The selected X5 card is deliberately off-center.
 
@@ -151,11 +196,9 @@ into CSS custom properties for each scene.
 
 This means source-relative transitions are not special-cased to the center of the viewport.
 
-Z4 uses the measured card rectangle as the initial clip-path aperture, then expands it to the full stage.
+## 7. Compass treatment and fixture correction
 
-## 6. Compass treatment
-
-The topology compass is now held constant across every deep-focus end state in this browser.
+The topology compass is held constant across every deep-focus end state.
 
 The intended distinction is:
 
@@ -169,15 +212,28 @@ compact topology compass
     survives in deep focus
 ```
 
-This is not yet a final production minimap specification. Exact size, placement, topology abstraction, interaction and semantic detail remain unfrozen.
+During human review, the compass appeared to contain or overlap another rounded box. Inspection showed that the compass was positioned above the schematic top-right workspace panel, whose border remained visible behind it and could read as a second compass container.
 
-## 7. Fullscreen meaning
+The refinement now reserves clear vertical space in the right workspace column beneath the compass and gives the compass an opaque isolated surface. This is a fixture/layout repair, not a new compass semantic decision.
 
-"Fullscreen" in this research means the specialist workspace owns the entire active Cockpit stage rather than remaining a framed card above the project map.
+The project owner likes the compass as a small orientation detail, but final production compass semantics remain unfrozen:
 
-It does not yet decide whether production deep focus uses browser Fullscreen API, hides every application-level chrome surface, or changes URL / browser-history semantics. Those remain separate production questions.
+```text
+exact topology abstraction
+selected-position meaning
+interactive versus passive behavior
+size and placement
+relationship to Return-to-project
+semantic detail density
+```
 
-## 8. Reduced motion
+## 8. Fullscreen meaning
+
+"Fullscreen" here means the specialist workspace owns the entire active Cockpit stage rather than remaining a framed card above the project map.
+
+It does not yet decide whether production deep focus uses the browser Fullscreen API, hides every application-level chrome surface, or changes URL / browser-history semantics. Those remain separate production questions.
+
+## 9. Reduced motion
 
 All spatial movement is presentation-only.
 
@@ -190,37 +246,36 @@ prefers-reduced-motion
 
 No semantic meaning depends on motion.
 
-## 9. Human review gate
-
-The new review should judge:
+## 10. Current accepted Phase-C direction from this slice
 
 ```text
-which spatial mechanism most feels like entering the selected work unit?
-which makes the transition feel like moving through a navigable project world?
-which remains controlled rather than theatrical?
-which remains comfortable when repeated many times?
-which preserves clear object continuity from X5 into deep focus?
-is the compact compass enough orientation once the full map disappears?
+DEEPEST WORK-UNIT INTERACTION
+
+compact map work unit
+    -> SEL2 selected
+    -> X5 balanced contextual expansion
+    -> Z7 Pull-Back Then Dive
+    -> fullscreen specialist workspace
+
+fullscreen specialist workspace
+    no project grid
+    no surrounding project boxes
+    compact topology compass retained
 ```
 
-The project owner may prefer, reject, combine or refine mechanisms. Exact timing and easing remain deliberately unfrozen.
+This is strong enough to close the Checkpoint 243 deep-focus transition review and route the next design question through a new checkpoint.
 
-## 10. Checkpoint disposition
-
-No new checkpoint is created.
-
-This is a broadened and narrowed executable comparison inside the existing Checkpoint 243 deep-focus-transition review gate:
+## 11. Still unfrozen
 
 ```text
-Research 075
-    initial F0-F8 architectures
-
-Research 076
-    Claude-informed factorization
-
-Research 077
-    fullscreen end-state hypothesis
-    + spatial zoom / through-space transition comparison
+exact Z7 duration / easing
+entry interruption / cancellation
+return-transition choreography
+production compass semantics and interaction
+browser Fullscreen API behavior
+application chrome visibility in deep focus
+workspace mounting mechanics
+URL / browser-history state
+specialist-workspace composition
+performance implementation
 ```
-
-A new checkpoint becomes warranted when the human review actually settles a materially new deep-focus architecture or otherwise changes the current product-design boundary.
