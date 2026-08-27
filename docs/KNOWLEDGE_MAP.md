@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 236  
+**Current checkpoint:** 237  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        236
+checkpoint                        237
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  conditional runtime-state human review
+current boundary                  switchable runtime-carrier convergence human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -185,7 +185,7 @@ Latest accepted P7 implementation:
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-Checkpoint 236 adds an interpretation correction: use `Current` for project disposition and reserve `Running` for runtime. The final project-disposition ontology remains unfrozen.
+Use `Current` for project disposition and reserve `Running` for runtime. The final project-disposition ontology remains unfrozen.
 
 ---
 
@@ -220,9 +220,9 @@ Final focus-set ownership/persistence, automatic suggestions, multiple named len
 
 ---
 
-# Current Slice 02H: conditional work-unit runtime state
+# Current Slice 02H: conditional runtime carrier convergence
 
-Primary evidence:
+Semantic-correction evidence:
 
 ```text
 docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
@@ -230,24 +230,31 @@ docs/research/066_conditional_runtime_state_and_project_disposition_semantic_cor
 docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 ```
 
-Browser route:
+Current convergence evidence:
 
 ```text
-frontend/design-lab/work-unit-runtime-grammar.html
-frontend/design-lab/work-unit-runtime-grammar.css
-frontend/design-lab/work-unit-runtime-grammar.js
+docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
+```
+
+Current browser route:
+
+```text
+frontend/design-lab/work-unit-runtime-carrier-switch.html
+frontend/design-lab/work-unit-runtime-carrier-switch.css
+frontend/design-lab/work-unit-runtime-carrier-switch.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-runtime-grammar.html
+http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
 ```
 
-Exact corrected browser implementation target:
+Exact current browser implementation target:
 
 ```text
-dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
+3a862c659e60e53832eaa5940ddb60d05734cd7d
 ```
 
 Current semantic separation:
@@ -260,7 +267,7 @@ priority / relevance       how important is it now?
 current-focus membership   is it in the emphasized process set?
 ```
 
-Runtime is conditional.
+Runtime remains conditional.
 
 Critical distinction:
 
@@ -271,8 +278,6 @@ No runtime
 Idle runtime
     an execution episode exists but is doing nothing
 ```
-
-The current browser uses No runtime as the absence control and does not assign runtime instrumentation to it.
 
 Controlled fixtures:
 
@@ -295,21 +300,45 @@ Completed               normally NONE
 Future                  normally NONE
 ```
 
-Current runtime is separate from historical execution provenance.
+Current runtime remains separate from historical execution provenance.
 
-`Blocked` is now explicitly unresolved as a possible orthogonal progress constraint rather than automatically treated as a peer lifecycle/disposition value.
+`Blocked` remains explicitly unresolved as a possible orthogonal progress constraint rather than automatically treated as a peer lifecycle/disposition value.
 
-Browser families remain:
+## R1/R5 verification
+
+Direct implementation inspection established:
 
 ```text
-R0  Neutral Control
-R1  Status Lamp
-R2  Activity Rail
-R3  Runtime Tag
-R4  Instrument Cell
-R5  Motion Signal
-R6  Restrained Hybrid
+R1 = status lamp
+R5 = same status lamp + motion ring
 ```
+
+The two encodings were therefore not literally identical, but the extra ring was too subtle at working scale to make R5 read as a genuinely distinct family except most clearly for Failed. This is retained as negative design evidence.
+
+## Active runtime-carrier convergence
+
+Exactly one carrier is active per live-runtime work unit:
+
+```text
+Dot + dynamic ring
+Animated runtime tag
+```
+
+The dot uses a stronger visible outer ring with state-sensitive motion pacing. The tag uses explicit state text plus a circulating perimeter trace.
+
+Switching operates at two scopes:
+
+```text
+GLOBAL
+    change every live-runtime node
+    clear local overrides
+
+LOCAL
+    click the visible runtime carrier
+    switch only that node
+```
+
+No-runtime nodes show no carrier and expose no carrier-switch target.
 
 Practical scene:
 
@@ -322,7 +351,9 @@ Evaluation      DEFER + NONE
 Investigation   FUTURE + NONE
 ```
 
-The final ADS runtime ontology, project-disposition ontology, Blocked semantics, historical execution presentation and runtime-flow connector semantics remain unfrozen.
+Reduced motion removes animation while preserving static runtime identity.
+
+The final ADS runtime ontology, final carrier, production default/persistence, project-disposition ontology, Blocked semantics, historical execution presentation and runtime-flow connector semantics remain unfrozen.
 
 ---
 
