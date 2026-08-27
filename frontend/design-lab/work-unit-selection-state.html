@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-selection="sel2">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-Unit Selection State</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-blocked-carrier.css" />
+    <link rel="stylesheet" href="./work-unit-blocked-carrier-ring-swap.css" />
+    <link rel="stylesheet" href="./work-unit-attention-priority.css" />
+    <link rel="stylesheet" href="./work-unit-selection-state.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header selection-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02K · Persistent Work-Unit Selection</span>
+        <h1>How should a work unit remain visibly selected after the pointer leaves, without looking like hover, priority, runtime or project-focus membership?</h1>
+        <p>Selection is the persistent interaction state of the work unit the user has explicitly chosen. This slice stops before inline expansion or specialist-workspace entry and isolates only the selected-state visual grammar.</p>
+      </div>
+      <div class="selection-held-state">
+        <span>Held separation</span>
+        <strong>hover ≠ selection ≠ keyboard focus ≠ current-process focus</strong>
+        <small>A3 Signal Bars remain the accepted Phase-C treatment for HIGH attention and are held constant here.</small>
+      </div>
+    </header>
+
+    <main class="grammar-main selection-main">
+      <section class="grammar-intro selection-intro">
+        <div>
+          <span class="section-kicker">Bounded interaction question</span>
+          <h2>Selection should persist as a chosen-object state while H4 hover remains transient</h2>
+          <p>A selected work unit may also be high attention, blocked, running, failed, Current or Next. Keyboard focus remains independently visible for accessibility. Clicking a node in the practical scene transfers selection without expanding the node yet.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Selection constraints">
+          <span>Category hue remains category-owned</span>
+          <span>A3 priority bars remain independent</span>
+          <span>Status remains bottom-right</span>
+          <span>Disposition remains top-right</span>
+          <span>Keyboard focus stays explicit</span>
+          <span>Inline expansion remains deferred</span>
+        </div>
+      </section>
+
+      <section class="selection-controls" aria-label="Selection treatment controls">
+        <div class="selection-control-copy">
+          <span class="section-kicker">Practical preview</span>
+          <h2>Apply one persistent selection treatment</h2>
+          <p>These controls change only the selected-state treatment. Click any work unit in the practical scene to move selection.</p>
+        </div>
+        <div class="segmented selection-segmented" role="group" aria-label="Selection treatment">
+          <button type="button" data-selection-style="sel0" aria-pressed="false">SEL0 Neutral</button>
+          <button type="button" data-selection-style="sel1" aria-pressed="false">SEL1 Outer Keyline</button>
+          <button type="button" data-selection-style="sel2" aria-pressed="true">SEL2 Corner Brackets</button>
+          <button type="button" data-selection-style="sel3" aria-pressed="false">SEL3 Inner Frame</button>
+          <button type="button" data-selection-style="sel4" aria-pressed="false">SEL4 Edge Ticks</button>
+          <button type="button" data-selection-style="sel5" aria-pressed="false">SEL5 Selection Plate</button>
+          <button type="button" data-selection-style="sel6" aria-pressed="false">SEL6 Soft Contour</button>
+          <button type="button" data-selection-style="sel7" aria-pressed="false">SEL7 Double Corner</button>
+          <button type="button" data-selection-style="sel8" aria-pressed="false">SEL8 Keyline + Corners</button>
+        </div>
+        <div class="selection-actions">
+          <button type="button" id="clear-selection">Clear selection</button>
+          <div class="selection-summary">
+            <span>Practical scene</span>
+            <strong id="selection-summary">SEL2 · Corner Brackets</strong>
+            <small id="selection-node-summary">Selected: Production missingness</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="selection-preview" aria-label="Controlled selection comparison">
+        <div class="selection-section-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same Current Investigation + RUN + HIGH attention + SELECTED · nine treatments</h2>
+            <p>Category, disposition, A3 Signal Bars, operational status, card geometry, material, H4 hover and resting light are held constant.</p>
+          </div>
+          <span>Selection color is provisional neutral-cool</span>
+        </div>
+        <div class="grammar-world selection-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <div class="selection-rows" id="selection-rows"></div>
+        </div>
+      </section>
+
+      <section class="selection-practical" aria-label="Interactive mixed work-unit selection scene">
+        <div class="selection-section-header selection-practical-header">
+          <div>
+            <span class="section-kicker">Interaction coexistence check</span>
+            <h2>Click between work units and judge whether selection survives pointer exit without stealing another semantic channel</h2>
+            <p>The scene deliberately mixes A3 HIGH attention, BLOCKED, FAIL, RUN, HUMAN, Current, Next and Deferred. Selection is independent of all of them.</p>
+          </div>
+          <div class="selection-practical-legend">
+            <span>Click = select</span>
+            <span>Enter / Space = select focused node</span>
+            <span>Tab = keyboard focus</span>
+            <span>Pointer = transient H4 hover</span>
+          </div>
+        </div>
+        <div class="grammar-world selection-practical-world" id="selection-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <svg class="selection-relations" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 250 150 C 360 150, 330 220, 455 220" />
+            <path d="M 620 220 C 760 220, 720 145, 850 145" />
+            <path d="M 520 310 C 560 390, 720 420, 805 420" />
+            <path d="M 300 465 C 410 465, 430 390, 540 390" />
+          </svg>
+          <div class="selection-practical-nodes" id="selection-practical-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review selection-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge persistent selection, not inline expansion yet</h2>
+        <div class="review-questions">
+          <p>Which treatment remains obvious after pointer exit while still feeling quieter than H4 hover?</p>
+          <p>Can A3 Signal Bars remain clearly HIGH-attention rather than looking like part of the selection treatment?</p>
+          <p>Do SEL4 Edge Ticks or SEL2 Corner Brackets resemble connector ports or endpoint grammar?</p>
+          <p>Does SEL5 Selection Plate collapse into hover lift?</p>
+          <p>Does SEL6 Soft Contour collapse into H4 hover/world illumination?</p>
+          <p>Does SEL8 Keyline + Corners improve recognition or simply duplicate selection meaning?</p>
+          <p>Is keyboard focus visibly independent from selected state?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-selection-state.js"></script>
+  </body>
+</html>
