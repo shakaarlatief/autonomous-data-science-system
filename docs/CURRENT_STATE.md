@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Foundation 023 promotes user-configurable non-semantic Cockpit appearance. The active slice is connector / Port Grammar. K1/K3/K4 endpoint markers are layered above nodes, K2 frame sockets retain their earlier structural treatment, and connector geometry now follows the accepted H4 node hover lift/release so visible endpoints remain physically attached to the rendered perimeter. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Foundation 023 promotes user-configurable non-semantic Cockpit appearance. The active slice is connector / Port Grammar. K1/K4 circular endpoint markers are now layered above nodes, follow the accepted H4 hover lift/release, and are offset mostly outside the rendered work-unit perimeter so they read as connector attachments rather than card content. K2 frame sockets retain their earlier structural treatment. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -49,7 +49,7 @@ http://localhost:5173/design-lab/connector-grammar.html
 Current exact browser implementation target:
 
 ```text
-ae2951e2325e6e6e624131097dcc1edc732e1844
+42ec63d17095753dc4ab97628cd859473cbdf5e8
 ```
 
 ---
@@ -221,10 +221,31 @@ Reduced motion
 
 This keeps both the curve endpoint and above-node marker attached to the moving box throughout the transition.
 
-Exact hover-lift attachment fix:
+## Circular terminal placement invariant
+
+K1 Micro Dots and K4 Hover Ports should read as connector-owned attachment points, not as card content.
+
+Current behavior:
 
 ```text
-ae2951e2325e6e6e624131097dcc1edc732e1844
+curve anchor
+    remains exactly on the rendered work-unit edge
+
+circular terminal center
+    offset 2 SVG user units outward along the attachment side
+
+visual result
+    marker sits mostly outside the card
+    only a small overlap remains with the perimeter
+    left-side dots no longer sit across the category color rail
+```
+
+K2 sockets remain unchanged and frame-integrated. K3 direction cues remain unchanged pending the combined directionality/composition experiment.
+
+Exact outward-dot refinement:
+
+```text
+42ec63d17095753dc4ab97628cd859473cbdf5e8
 ```
 
 ---
@@ -327,10 +348,11 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 1. use Checkpoint 225 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. refresh http://localhost:5173/design-lab/connector-grammar.html
-4. verify K1/K4 markers stay attached to the visible box perimeter while the hovered node lifts and returns
-5. verify K2 retains the earlier frame-socket treatment
-6. human gives the fuller connector-composition preference
-7. only then implement the combined directionality/composition experiment
-8. keep production Cockpit untouched
-9. keep source-vault deployment paused until explicitly resumed
+4. verify K1/K4 circular markers now touch the perimeter from mostly outside rather than sitting across the card/color rail
+5. verify they stay attached during hover lift and release
+6. verify K2 retains the earlier frame-socket treatment
+7. human gives the fuller connector-composition preference
+8. only then implement the combined directionality/composition experiment
+9. keep production Cockpit untouched
+10. keep source-vault deployment paused until explicitly resumed
 ```
