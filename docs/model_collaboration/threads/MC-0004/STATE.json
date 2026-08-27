@@ -44,6 +44,8 @@
       "docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md",
       "docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md",
       "docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md",
+      "docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md",
+      "docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
       "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
@@ -78,6 +80,7 @@
       "docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md",
       "docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md",
       "docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md",
+      "docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -118,7 +121,7 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 067 Phase-C Cockpit design evidence",
+      "Research 037 through 069 Phase-C Cockpit design evidence",
       "scientific marker vocabulary selected for current work-unit category grammar",
       "Reduced in-box light selected as preferred working control",
       "Foundation 023 configurable work-unit appearance and semantic invariants",
@@ -140,17 +143,20 @@
       "Current preferred over Active for project disposition so Running remains an unambiguous runtime state",
       "Deferred, Completed and Future normally carry no current runtime; Next may be Queued only when explicitly scheduled",
       "historical execution evidence separated from current runtime presentation",
-      "Blocked explicitly preserved as a possible orthogonal progress constraint rather than frozen as a peer lifecycle value",
-      "corrected conditional-runtime browser target dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95",
-      "human observation that R1 Status Lamp and R5 Motion Signal were perceptually collapsing together except most clearly for Failed",
-      "implementation verification that R1 is a lamp while R5 is the same lamp plus a motion ring, making them technically different but insufficiently differentiated at working scale",
-      "human rejection of simultaneous dot-plus-runtime-tag composition as the active runtime presentation",
-      "switchable runtime-carrier convergence hypothesis: exactly one of Dot + dynamic ring or Animated runtime tag per live work unit",
+      "R1 Status Lamp and R5 Motion Signal verified technically different but perceptually insufficiently differentiated at working scale",
+      "human rejection of simultaneous dot-plus-runtime-tag composition",
+      "human acceptance of exactly one switchable runtime carrier per live work unit",
+      "accepted runtime carriers: Dot + dynamic ring or T7 Soft Shade runtime tag",
       "global runtime-carrier switching plus per-work-unit local overrides",
-      "switchable runtime-carrier browser target 3a862c659e60e53832eaa5940ddb60d05734cd7d",
+      "accepted repaired T7 motion target 08534f94c2f272f969159087de2797a23e36b330",
+      "switchable runtime browser with T7 integrated at fb847bd65ff6e5e4203a89ee2d4f74b7187c8359",
+      "Blocked now under direct review as a possible orthogonal progress constraint rather than a peer lifecycle/disposition value",
+      "Question / Blocker category explicitly distinguished from Blocked progress constraint",
+      "Current + Blocked + NONE explicitly contrasted with Current + WAIT + unblocked",
+      "progress-constraint browser target efd0d36ee4ccf4c5494220df54eb3e7f50995658",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review accepted P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership. Runtime was corrected to optional episode-scoped state. The latest human review then found R1 and R5 perceptually insufficiently differentiated and rejected simultaneous dot-plus-tag runtime composition. The active gate now evaluates exactly one switchable runtime carrier per live work unit: Dot + dynamic ring or Animated runtime tag, with global and per-box switching. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review accepted P7 Neutral Tag + Tone, the stronger current-process focus lens, user-curated focus membership, conditional runtime semantics, the switchable one-carrier runtime architecture, and repaired T7 Soft Shade runtime-tag motion. The active gate now evaluates Blocked as a possible orthogonal progress constraint and compares C0-C6 blocked-node treatments. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -188,15 +194,18 @@
       "PHASE_C_PRESERVATION_AUDIT_CLOSED",
       "PHASE_C_WORK_UNIT_RUNTIME_STATE_GRAMMAR_REVIEW",
       "PHASE_C_RUNTIME_CONDITIONAL_SEMANTIC_REFINEMENT",
-      "PHASE_C_SWITCHABLE_RUNTIME_CARRIER_CONVERGENCE_REVIEW"
+      "PHASE_C_SWITCHABLE_RUNTIME_CARRIER_CONVERGENCE_REVIEW",
+      "PHASE_C_RUNTIME_TAG_SOFT_SHADE_REFINEMENT",
+      "PHASE_C_RUNTIME_CARRIER_ACCEPTED",
+      "PHASE_C_BLOCKED_PROGRESS_CONSTRAINT_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-switchable-runtime-carrier-convergence-opened",
+    "transition_id": "mc0004-runtime-carrier-accepted-blocked-progress-constraint-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner observed that R1 Status Lamp and R5 Motion Signal looked effectively identical for live non-failure states, rejected the simultaneous dot-plus-runtime-tag composition, and proposed two exclusive runtime carriers with both global and per-work-unit switching. ChatGPT verified R1 versus R5 in the implementation, preserved the perceptual-collapse finding as negative evidence, and opened a bounded switchable-carrier browser with Dot + dynamic ring versus Animated runtime tag.",
-    "repository_head": "3a862c659e60e53832eaa5940ddb60d05734cd7d"
+    "reason": "The project owner accepted the repaired T7 Soft Shade runtime-tag motion and asked to proceed. ChatGPT integrated T7 into the switchable runtime-carrier browser, closed the Checkpoint 237 visual gate, and opened a distinct semantic/visual experiment for Blocked as a possible orthogonal progress constraint with explicit comparison against WAIT runtime and the Question / Blocker work-unit category.",
+    "repository_head": "2bd106a7a842f170e968ad4b4a6cdf2ddb070dc6"
   }
 }

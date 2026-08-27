@@ -128,15 +128,13 @@ Latest accepted P7 implementation:
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-The final disposition ontology remains unfrozen.
-
-Checkpoint 236 refines wording: `Current` is the project-disposition concept; `Running` is reserved for runtime. The earlier `Active / Current` shorthand should not be treated as a final ontology label.
+The final disposition ontology remains unfrozen. `Current` is the project-disposition concept; `Running` is reserved for runtime.
 
 ## Current-process focus result
 
 Research 062 separated project disposition, current-process membership and view emphasis.
 
-The project owner accepted both the stronger focus lens and direct focus-set editing:
+The project owner accepted:
 
 ```text
 Context visible
@@ -159,15 +157,21 @@ Final production ownership/persistence, automatic focus suggestions, multiple na
 
 ## Preservation-method audit during Phase C
 
-After accepting editable focus membership, the project owner requested an audit of repository-preservation health under many rapid small changes.
+Research 064 audited repository-preservation health under rapid small visual iterations.
 
-Research:
+Result:
 
 ```text
-docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
+repository architecture        SOUND
+structural overhaul            NOT WARRANTED
+new knowledge subsystem        NOT JUSTIFIED
+checkpoint metadata drift      FOUND AND REPAIRED
+checkpoint granularity         HARDENED
+validation closure             HARDENED
+active-branch routing guard    HARDENED
 ```
 
-The architecture was judged sound. Checkpoints 223-234 had drifted from the provider-neutral metadata contract, so required metadata/provenance was repaired without rewriting substantive historical conclusions.
+Checkpoints 223-234 were repaired to the provider-neutral metadata contract without rewriting substantive historical conclusions.
 
 Verified global metadata validation after repair:
 
@@ -176,18 +180,11 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     validate  SUCCESS
 ```
 
-The checkpoint contract now explicitly keeps micro-refinements inside an already-open gate in Git plus active research evidence, while requiring checkpoint validation before operational closure.
+Micro-refinements inside one review gate remain in Git plus active research evidence. A new checkpoint is warranted when the semantic/review/routing boundary changes.
 
-## Slice 02H initial runtime experiment
+## Slice 02H: runtime semantic correction
 
-Research 065 opened a visual-carrier comparison for:
-
-```text
-WHAT IS HAPPENING NOW?
-    runtime / execution state
-```
-
-Initial carrier families:
+Research 065 initially compared:
 
 ```text
 R0  Neutral Control
@@ -199,15 +196,9 @@ R5  Motion Signal
 R6  Restrained Hybrid
 ```
 
-The first fixture implicitly treated runtime as though every work unit always had one of several states. Human review challenged that assumption before visual convergence.
+Human review challenged the assumption that every project work unit always has a runtime state.
 
-## Checkpoint 236 semantic correction: runtime is conditional
-
-The project owner asked why Deferred, Future or otherwise non-current work would have runtime/status at all.
-
-That exposed a genuine semantic conflation.
-
-The corrected model is:
+Checkpoint 236 corrected the model to:
 
 ```text
 PROJECT DISPOSITION
@@ -218,9 +209,7 @@ RUNTIME
     what is happening in that episode?
 ```
 
-Runtime is therefore optional / episode-scoped.
-
-The key distinction is:
+Runtime is optional / episode-scoped.
 
 ```text
 No runtime
@@ -229,8 +218,6 @@ No runtime
 Idle runtime
     a runtime episode exists but is currently doing nothing
 ```
-
-The browser uses `NONE / No runtime` as its absence control. `Idle` is no longer used to mean absence.
 
 Working interpretation:
 
@@ -253,107 +240,19 @@ Future
     normally no current runtime
 ```
 
-This is not a frozen compatibility matrix.
+This remains a working interpretation rather than a frozen compatibility matrix. Historical execution evidence is separate from current runtime.
 
-Historical execution evidence remains separate from current runtime. A Deferred, Completed or Future node may retain previous attempt records without showing those old attempts as its current runtime.
-
-## Blocked remains explicitly unresolved
-
-The same semantic review exposed that `Blocked` may be orthogonal to lifecycle/disposition.
-
-Potentially coherent examples:
-
-```text
-Current + Blocked
-Next + Blocked
-```
-
-A later model may distinguish:
-
-```text
-project disposition
-progress constraint
-runtime
-```
-
-but no such final ontology is frozen at this checkpoint.
-
-## Corrected conditional-runtime browser
-
-Research:
-
-```text
-docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
-```
-
-Checkpoint:
-
-```text
-docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
-```
-
-Browser route:
-
-```text
-frontend/design-lab/work-unit-runtime-grammar.html
-frontend/design-lab/work-unit-runtime-grammar.css
-frontend/design-lab/work-unit-runtime-grammar.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-runtime-grammar.html
-```
-
-Exact corrected browser implementation target:
+Exact corrected runtime-browser target:
 
 ```text
 dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
 ```
 
-Controlled rows hold Current Investigation constant and vary:
+## Checkpoint 237: runtime-carrier convergence
 
-```text
-NONE    No runtime
-QUEUE   Queued
-RUN     Running
-WAIT    Waiting
-HUMAN   Waiting for Human
-FAIL    Failed current attempt
-```
+Human review found that R1 Status Lamp and R5 Motion Signal looked effectively the same for the live non-failure states.
 
-For NONE, all R1-R6 runtime instrumentation is intentionally absent.
-
-Practical scene:
-
-```text
-Question        CURRENT + HUMAN
-Investigation   CURRENT + RUN
-Validation      NEXT + QUEUE
-Model Work      CURRENT + FAIL
-Evaluation      DEFER + NONE
-Investigation   FUTURE + NONE
-```
-
-This tests optional runtime against category and P7 disposition rather than pretending every project box has a dormant runtime process.
-
-Reduced-motion mode removes runtime animation while preserving static state identity. NONE never animates.
-
-## Checkpoint 237 runtime-carrier convergence
-
-Human review of the corrected R0-R6 browser produced two new pieces of evidence.
-
-First, the project owner observed that:
-
-```text
-R1 Status Lamp
-R5 Motion Signal
-```
-
-looked effectively the same for Queued, Running, Waiting and Waiting for Human, with Failed showing the distinction more clearly.
-
-Direct implementation inspection verified:
+Implementation verification established:
 
 ```text
 R1
@@ -361,92 +260,211 @@ R1
 
 R5
     same status lamp
-    + motion ring
+    + low-salience motion ring
 ```
 
-Therefore the two families were not literally identical in code. However, the ring was too subtle and too spatially coincident with the lamp for R5 to read as a genuinely different family at working scale. Failed was more visibly different because the ring changed to a sharper rotated shape.
+The difference existed technically but not strongly enough perceptually. This remains negative design evidence.
 
-This is accepted as negative design evidence:
+The project owner also rejected simultaneous dot-plus-runtime-tag composition and proposed exactly one switchable runtime carrier per live-runtime node.
 
-```text
-technical difference exists
-perceptual differentiation is insufficient
-```
-
-Second, the project owner rejected the simultaneous dot-plus-runtime-tag composition as the active direction and proposed exactly one switchable runtime carrier per live-runtime work unit.
-
-Current convergence candidates:
+Accepted carrier architecture:
 
 ```text
 Dot + dynamic ring
-Animated runtime tag
-```
+or
+Runtime tag
 
-The dot carrier uses a stronger state-colored outer ring with state-sensitive motion pacing so it no longer collapses into a static lamp.
-
-The tag carrier uses explicit runtime text plus a state-colored perimeter with a circulating bright trace. It intentionally does not use the dot's expanding/breathing motion.
-
-Switching operates at two scopes:
-
-```text
 GLOBAL
     change every live-runtime work unit together
-    clear local per-box overrides
+    clear local overrides
 
 LOCAL
     click the visible runtime carrier
     switch only that work unit
+
+No runtime
+    no runtime carrier
 ```
 
-Clicking the replacement carrier switches that box back. A node matching the global carrier is no longer considered a local override.
-
-No-runtime work units render:
-
-```text
-no dot
-no ring
-no runtime tag
-no carrier-switch target
-```
-
-Current browser:
-
-```text
-http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
-```
-
-Exact browser implementation target:
+Initial switchable-carrier browser target:
 
 ```text
 3a862c659e60e53832eaa5940ddb60d05734cd7d
+```
+
+## Research 068: runtime-tag motion convergence
+
+The runtime-tag carrier then underwent a focused motion refinement.
+
+Evidence sequence:
+
+```text
+rotating conic-gradient
+    lively but visually exposed rotating/clipped inner geometry
+
+short perimeter tracer
+    geometrically clean but too literal / sparse
+
+first T7
+    thicker blurred dash
+    still looked effectively like T5 Long Glide
+
+second T7
+    replaced travelling dash with fixed-mask conic shade field
+    initially rendered static because the animated typed custom property did not inherit into pseudo-elements
+
+repaired T7
+    inherits: true
+    broad shade field becomes visibly dynamic
+```
+
+After the repair, the project owner responded:
+
+```text
+Perfect. Proceed.
+```
+
+Accepted runtime-tag mechanism:
+
+```text
+T7 Soft Shade Flow
+    stationary tag geometry
+    stationary text
+    stationary border mask
+    broad soft shade field flows through perimeter
+    no travelling dash as dominant read
+    no rotating inner rectangle
+```
+
+Exact accepted T7 motion-browser target:
+
+```text
+08534f94c2f272f969159087de2797a23e36b330
+```
+
+Exact switchable-runtime browser with T7 integrated:
+
+```text
+fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
 Research:
 
 ```text
 docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
+```
+
+Checkpoint 237 is therefore closed as the current visual-carrier gate. The final runtime ontology, production default carrier, preference persistence and exact pacing remain unfrozen.
+
+## Checkpoint 238: BLOCKED as progress constraint
+
+The runtime semantic correction exposed that `Blocked` may be orthogonal to project disposition rather than a peer of Current / Next / Deferred / Completed / Future.
+
+Working hypothesis:
+
+```text
+PROJECT DISPOSITION
+    where does this work stand in the project?
+
+PROGRESS CONSTRAINT
+    can this work proceed?
+
+RUNTIME
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
+```
+
+This allows:
+
+```text
+Current + Blocked
+Next + Blocked
+```
+
+without replacing the disposition value.
+
+Two semantic contrasts are deliberately under direct review.
+
+### Blocked versus WAIT runtime
+
+```text
+Blocked
+    work cannot proceed until a constraint is resolved
+    no live runtime episode is required
+
+WAIT runtime
+    a live work/execution episode exists
+    that episode is presently waiting
+```
+
+The browser therefore includes:
+
+```text
+Current + Blocked + NONE
+vs
+Current + WAIT + unblocked
+```
+
+### Question / Blocker category versus Blocked constraint
+
+```text
+Question / Blocker
+    work-unit category / kind
+
+Blocked
+    progress constraint on an affected work unit
+```
+
+A Question / Blocker work unit may itself be unblocked while resolving the condition that blocks another node.
+
+Current visual candidates:
+
+```text
+C0  Neutral Control
+C1  Explicit Tag
+C2  Edge Clamp
+C3  Stop Rail
+C4  Barrier Seal
+C5  Constraint Veil
+C6  Tag + Clamp
+```
+
+Browser:
+
+```text
+http://localhost:5173/design-lab/work-unit-progress-constraint.html
+```
+
+Exact progress-constraint browser target:
+
+```text
+efd0d36ee4ccf4c5494220df54eb3e7f50995658
+```
+
+Research:
+
+```text
+docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
 ```
 
 Checkpoint:
 
 ```text
-docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
+docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
 ```
 
-The practical scene retains:
+Practical fixture:
 
 ```text
-Question        CURRENT + HUMAN
-Investigation   CURRENT + RUN
-Validation      NEXT + QUEUE
-Model Work      CURRENT + FAIL
-Evaluation      DEFER + NONE
-Investigation   FUTURE + NONE
+Question / Blocker    CURRENT + HUMAN     unblocked
+Investigation         CURRENT + BLOCKED   NONE
+Validation            NEXT + BLOCKED      NONE
+Model Work            CURRENT + RUN       unblocked
+Investigation         CURRENT + WAIT      unblocked
+Evaluation            DEFER + NONE        unblocked
+Investigation         FUTURE + NONE       unblocked
 ```
-
-so the human can test global switching, local overrides and mixed carrier coexistence while preserving conditional runtime.
-
-Reduced motion freezes both carrier animations while preserving static runtime identity.
 
 ## Dependency-bound ideas
 
@@ -461,20 +479,18 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human compares Dot + dynamic ring with Animated runtime tag
-human verifies the strengthened ring is visibly dynamic
-human verifies the animated tag perimeter is clean and distinct
-human uses the global switch in both directions
-human creates and removes local per-box overrides
-human inspects a mixed practical scene
-human verifies NONE / DEFER + NONE / FUTURE + NONE have no runtime carrier
-human compares normal vs Reduced motion
+human judges whether Blocked belongs on an orthogonal progress-constraint axis
+human verifies Question / Blocker category remains distinct from Blocked state
+human verifies Current + Blocked + NONE remains distinct from Current + WAIT
+human compares C1-C6 against C0
+human judges explicit tag vs structural cue vs hybrid
+human identifies treatments that resemble focus suppression / priority
 -> prefer / reject / combine / refine
--> do not freeze the final runtime/disposition/Blocked ontology yet
+-> do not freeze final disposition / constraint / runtime ontology yet
 ```
 
 Priority/importance visual grammar remains a separate future slice.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, final runtime carrier, production runtime-carrier default/persistence model, final project-disposition ontology, final Blocked/progress-constraint semantics, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, production runtime-carrier default/persistence model, final project-disposition ontology, final progress-constraint ontology, final Blocked treatment, disposition/constraint/runtime compatibility matrix, blocker-cause navigation, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
