@@ -1,0 +1,51 @@
+/* Runtime-tag motion refinement.
+ *
+ * The runtime tag itself remains stationary. A short luminous segment travels
+ * along the existing rounded-rectangle perimeter, so the border reads as a
+ * line carrying motion rather than as a rotating box/gradient inside the tag.
+ */
+
+.runtime-tag-carrier::before {
+  inset: auto;
+  left: 0;
+  top: 0;
+  width: 11px;
+  height: 1.5px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(var(--runtime-rgb), 1);
+  box-shadow:
+    0 0 4px rgba(var(--runtime-rgb), 0.72),
+    0 0 8px rgba(var(--runtime-rgb), 0.22);
+  -webkit-mask: none;
+  -webkit-mask-composite: initial;
+  mask: none;
+  mask-composite: initial;
+  transform: none;
+  transform-origin: center;
+  offset-path: inset(1px round 5px);
+  offset-distance: 0%;
+  offset-rotate: auto;
+  animation-name: carrier-tag-perimeter-travel;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.runtime-tag-carrier::after {
+  border-color: rgba(var(--runtime-rgb), 0.30);
+  box-shadow: inset 0 0 6px rgba(var(--runtime-rgb), 0.035);
+}
+
+@keyframes carrier-tag-perimeter-travel {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+html[data-reduced="on"] .runtime-tag-carrier::before {
+  display: none;
+  animation: none !important;
+}
