@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership remain accepted current design directions. Runtime remains conditional on a meaningful current execution/work episode. The switchable one-carrier runtime architecture and the repaired T7 Soft Shade runtime-tag motion have now received explicit positive human review. The active product-design gate has moved to a distinct semantic/visual question: whether `Blocked` should be modeled and presented as an orthogonal progress constraint rather than a peer project-disposition or runtime value.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The runtime carrier architecture is accepted for the current Phase-C round. The active gate remains BLOCKED/progress-constraint semantics, but human review has refined the visual hypothesis from dedicated C0-C6 blocked ornaments to a shared operational-status carrier plus explicit blocker-to-blocked cause relationships.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -31,50 +31,39 @@ Primary route:
 ```text
 docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
 docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
-frontend/design-lab/work-unit-progress-constraint.html
-frontend/design-lab/work-unit-progress-constraint.css
-frontend/design-lab/work-unit-progress-constraint.js
+docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
+frontend/design-lab/work-unit-blocked-carrier.html
+frontend/design-lab/work-unit-blocked-carrier.css
+frontend/design-lab/work-unit-blocked-carrier.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-progress-constraint.html
+http://localhost:5173/design-lab/work-unit-blocked-carrier.html
 ```
 
-Exact current progress-constraint browser implementation target:
+Exact current browser implementation target:
 
 ```text
+b65df18f8d04c149979854c0aee695abb9a9036e
+```
+
+The predecessor C0-C6 progress-constraint browser remains preserved as evidence at:
+
+```text
+http://localhost:5173/design-lab/work-unit-progress-constraint.html
+
 efd0d36ee4ccf4c5494220df54eb3e7f50995658
 ```
 
-Accepted runtime evidence remains preserved at:
-
-```text
-docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
-docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
-docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
-frontend/design-lab/work-unit-runtime-carrier-switch.html
-frontend/design-lab/work-unit-runtime-tag-motion.html
-```
-
-Exact accepted runtime targets:
-
-```text
-T7 motion browser
-    08534f94c2f272f969159087de2797a23e36b330
-
-switchable runtime browser with T7 integrated
-    fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
-```
+Production `/cockpit` remains untouched.
 
 ---
 
 # Repository preservation health
 
 The rapid-iteration preservation audit remains closed.
-
-Result:
 
 ```text
 repository preservation architecture   SOUND
@@ -86,15 +75,7 @@ checkpoint validation closure           HARDENED
 active-branch routing validation        HARDENED
 ```
 
-Concrete repair:
-
-```text
-Checkpoints 223-234
-    mandatory metadata / provider-neutral provenance repaired
-    substantive historical bodies unchanged
-```
-
-Verified global checkpoint-metadata validation after repair:
+Checkpoints 223-234 were repaired to the provider-neutral metadata contract without rewriting substantive history. Verified global checkpoint metadata validation after repair:
 
 ```text
 d2541418a68b9bfd244ec89e4e951e630b3bb61b
@@ -102,11 +83,11 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     SUCCESS
 ```
 
-The current checkpoint contract keeps micro-refinements inside an already-open gate in Git plus the active research record, while requiring a new checkpoint when the semantic/review/routing boundary changes. Checkpoint 238 is warranted because the runtime review is now closed and the active semantic question has changed to progress constraints.
+Checkpoint 238 continues to own the BLOCKED review boundary. Research 070 is a substantive refinement inside that same gate, so a new checkpoint is not created yet. A new checkpoint should be created when this gate is accepted/rejected and routing moves to a genuinely distinct question.
 
 ---
 
-# Held Cockpit controls
+# Held Cockpit controls and accepted visual results
 
 ```text
 G4 Adaptive Hybrid                  SELECTED / provisionally settled
@@ -115,7 +96,7 @@ H4 generic hover/world response     SELECTED / sufficiently settled
 Reduced in-box resting light        SELECTED preferred working baseline
 ```
 
-Current work-unit category marker mapping:
+Current category markers:
 
 ```text
 Question / Blocker        circle
@@ -130,7 +111,7 @@ Foundation 023 preserves:
 ```text
 ADS owns semantic meaning
 +
-user controls approved non-semantic work-unit appearance dimensions
+user controls approved non-semantic appearance dimensions
 ```
 
 Current proven appearance dimensions:
@@ -140,16 +121,7 @@ Box shape       Normal / Subtle shapes
 Micro design    None / Micro material / Micro light
 ```
 
-Foundation 024 preserves connector treatment, hover/focus behavior and semantic directionality as separate dimensions.
-
-Current connector treatments:
-
-```text
-Clean
-Micro dots
-Frame sockets
-Direction arrows
-```
+Foundation 024 preserves connector treatment, hover/focus and semantic directionality as separate dimensions.
 
 Accepted direction grammar:
 
@@ -160,13 +132,13 @@ D2  Reverse         same arrow at A
 D3  Bidirectional   same arrow at both endpoints
 ```
 
-Accepted directionality implementation:
+Exact accepted directionality target:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Relation-class visual carrier remains:
+Relation-class visual carrier:
 
 ```text
 E5  Hue + Tag
@@ -179,105 +151,63 @@ Latest accepted relation-class implementation:
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-Stroke rhythm remains preserved for a different future line-level semantic dimension and has no semantic assignment yet.
+Stroke rhythm remains reserved for another future line-level semantic dimension and has no assigned meaning.
 
 ---
 
-# Project-disposition result
+# Project disposition and current-process focus
 
-Human-selected current Phase-C direction:
+Human-selected project-disposition direction:
 
 ```text
 P7  Neutral Tag + Tone
 
 REST
     category color remains dominant
-    disposition tag visible but neutral
+    disposition tag remains neutral
     Completed / Deferred / Future retain selective tonal recession
 
 HOVER
     disposition tag reveals its state-specific color
-    normal H4 hover behavior remains
 ```
 
-Latest accepted P7 implementation:
+Exact accepted P7 target:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-The final project-disposition ontology remains unfrozen.
-
-Current interpretation:
-
-```text
-Current
-    project disposition / present working frontier
-
-Running
-    runtime / current execution episode
-```
-
-The earlier shorthand `Active / Current` should not be used because `Active` can imply execution.
-
----
-
-# Current-process focus result
-
-The project owner accepted both the stronger focus lens and direct user editing of the focus set.
-
-Accepted current direction:
+Current-process focus direction:
 
 ```text
 Context visible
-    wider project remains readable
-
 Focus current process
-    current-focus work remains full salience
-    work outside current focus is strongly suppressed
-    contextual connector segments recede
-    contextual nodes remain hover-recoverable
-
 Edit focus set
-    user can add a work unit to focus
-    user can remove a work unit from focus
-    changing focus membership does not delete the work unit
-    changing focus membership does not change project disposition
+Reset example
 ```
 
-Exact accepted editable-focus implementation target:
+Users can add/remove work units from the current focus set without deleting work or changing disposition. Exact accepted editable-focus target:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
-Browser-local persistence remains prototype convenience only. Final production ownership, persistence, automatic focus suggestions and multiple named lenses remain open.
+Final focus-set ownership, persistence, automatic suggestions and multiple named lenses remain open.
 
 ---
 
 # Runtime result from Slice 02H
 
-The binding semantic separation remains:
+Runtime remains conditional / episode-scoped:
 
 ```text
-CATEGORY
-    what is this work unit?
-
 PROJECT DISPOSITION
-    where does it stand in the project?
+    where does this work stand in the project?
 
 RUNTIME
     if a meaningful current execution/work episode exists,
     what is happening in that episode?
-
-PRIORITY / RELEVANCE
-    how important is it now?
-
-CURRENT-FOCUS MEMBERSHIP
-    is it in the emphasized process set?
 ```
-
-Runtime is conditional.
 
 Critical distinction:
 
@@ -300,33 +230,7 @@ HUMAN   Waiting for Human
 FAIL    Failed current attempt
 ```
 
-Working compatibility interpretation remains:
-
-```text
-Current
-    may have NONE / QUEUE / RUN / WAIT / HUMAN / FAIL
-
-Recommended / Next
-    normally NONE
-    may be QUEUE if explicitly scheduled
-
-Deferred
-    normally NONE
-
-Completed
-    normally NONE
-
-Future
-    normally NONE
-```
-
-This is not a frozen state matrix.
-
-Current runtime remains separate from historical execution provenance.
-
-## Accepted runtime-carrier architecture
-
-Human review accepted:
+Human-accepted current Phase-C carrier architecture:
 
 ```text
 exactly one runtime carrier per live-runtime work unit
@@ -334,35 +238,20 @@ exactly one runtime carrier per live-runtime work unit
 Dot + dynamic ring
 or
 T7 Soft Shade runtime tag
-```
 
-Switching operates at two scopes:
-
-```text
 GLOBAL
-    change every live-runtime work unit
+    switch every live-runtime work unit
     clear local overrides
 
 LOCAL
-    click visible dot/ring
-        -> switch only that work unit to runtime tag
+    click visible carrier
+    switch only that work unit
 
-    click visible runtime tag
-        -> switch only that work unit to dot/ring
+No runtime
+    no runtime carrier
 ```
 
-No-runtime nodes expose no runtime carrier and no switch target.
-
-The T7 runtime tag keeps:
-
-```text
-tag geometry     stationary
-text             stationary
-border mask      stationary
-moving content   broad soft shade field through perimeter
-```
-
-The second T7 implementation initially rendered static because its typed angle custom property did not inherit into the pseudo-elements. Changing `inherits: false` to `inherits: true` repaired the motion. The repaired result received explicit human acceptance.
+The T7 tag keeps geometry, text and border mask stationary while a broad soft shade field flows through the perimeter.
 
 Exact accepted targets:
 
@@ -374,17 +263,13 @@ switchable runtime browser with T7 integrated
     fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
-Reduced motion removes runtime animation while preserving static state identity. NONE never animates.
-
-The final runtime ontology, final production default carrier, carrier persistence and exact runtime-sensitive pacing remain unfrozen.
+Final runtime ontology, production default carrier, preference persistence and exact pacing remain unfrozen.
 
 ---
 
-# Active Slice 02I: BLOCKED as orthogonal progress constraint
+# Active Slice 02I: BLOCKED carrier and blocker relationship
 
-The runtime semantic correction exposed that `Blocked` may be orthogonal to lifecycle/disposition.
-
-Working semantic hypothesis:
+The working semantic model remains:
 
 ```text
 PROJECT DISPOSITION
@@ -398,86 +283,147 @@ RUNTIME
     what is happening in that episode?
 ```
 
-This makes the following coherent:
+Human clarification now distinguishes:
 
 ```text
-Current + Blocked
-Next + Blocked
+BLOCKER
+    cause / unresolved work or dependency preventing progress
+
+BLOCKS
+    relationship from blocker cause to affected work
+
+BLOCKED
+    resulting current progress constraint on the affected work unit
+
+FAIL
+    failed current execution attempt
 ```
 
-without requiring Blocked to replace Current or Next.
-
-## Blocked versus WAIT runtime
+This allows a visible cause/effect structure:
 
 ```text
-Blocked
-    work cannot proceed until a constraint is resolved
-    a live runtime episode need not exist
-
-WAIT runtime
-    a live execution/work episode exists
-    that episode is presently waiting for an external condition
-```
-
-The current browser therefore deliberately compares:
-
-```text
-Current + Blocked + NONE
-vs
-Current + WAIT + unblocked
-```
-
-## Question / Blocker category versus Blocked constraint
-
-```text
+[Resolve data contract]
 Question / Blocker
-    category / kind of work unit
+CURRENT + HUMAN
 
+        BLOCKS
+           ↓
+
+[Production missingness]
+Investigation
+CURRENT + BLOCKED
+```
+
+The blocker work unit is not automatically Blocked itself.
+
+## Shared operational-status carrier hypothesis
+
+The active visual hypothesis no longer requires a separate family of blocked-only edge clamps, rails, seals or veils.
+
+Instead:
+
+```text
+one bottom-right operational-status presentation slot
+```
+
+may visually present either:
+
+```text
+live runtime state
+or
+BLOCKED progress constraint
+```
+
+without claiming those concepts are one semantic field.
+
+BLOCKED carrier:
+
+```text
+Dot mode
+    red core dot
+    circular dynamic ring
+
+Tag mode
+    T7 Soft Shade status tag
+    explicit text = BLOCKED
+```
+
+FAIL remains distinct:
+
+```text
+Dot mode
+    same red family
+    sharper non-circular failure ring
+
+Tag mode
+    same T7 Soft Shade family
+    explicit text = FAIL
+```
+
+The practical browser generalizes the accepted global/local appearance switching across runtime and BLOCKED carriers.
+
+Working interpretation:
+
+```text
 Blocked
-    progress constraint on an affected work unit
+    normally no live runtime episode shown
+    status slot presents BLOCKED
+
+Failed attempt but work remains retryable
+    status slot presents FAIL
+
+Failed attempt creates unresolved blocker
+    current presentation may become BLOCKED
+    failed attempt remains in execution history/provenance
 ```
 
-A Question / Blocker node can be unblocked itself while resolving the condition that blocks another node.
+These transition rules are not frozen.
 
-## Current visual candidates
+## Blocker relationship evidence
+
+The new practical scene explicitly draws `BLOCKS` relations from a Question / Blocker source to affected work units.
+
+One blocker may eventually block multiple work units, and one work unit may have multiple blocker causes. The final relation ontology, blocker taxonomy and many-to-many representation remain open.
+
+Current review questions:
 
 ```text
-C0  Neutral Control
-C1  Explicit Tag
-C2  Edge Clamp
-C3  Stop Rail
-C4  Barrier Seal
-C5  Constraint Veil
-C6  Tag + Clamp
+1. does BLOCKED feel natural in the accepted dot/ring and T7 tag carrier family?
+2. is circular BLOCKED distinct enough from sharper FAIL in dot mode?
+3. does explicit BLOCKED vs FAIL remain clean in tag mode?
+4. does the BLOCKS relation make blocker cause -> blocked effect intuitive?
+5. does one shared operational-status slot reduce clutter without collapsing semantics?
+6. does global + local carrier switching remain useful when runtime and constraints coexist?
 ```
 
-C5 is intentionally a falsification candidate because broad red tonal treatment may be confused with focus suppression, lower importance or Deferred/Future recession.
+---
 
-## Practical coexistence fixture
+# Work-unit click / expansion interaction
+
+The project owner also proposed a future interaction in which clicking a compact work-unit box can expand it elegantly to show more information.
+
+This is **not** being implemented in the current BLOCKED slice because it changes information density, node geometry and navigation at the same time.
+
+The broader need is already compatible with promoted Specification 008, which requires:
 
 ```text
-Question / Blocker    CURRENT + HUMAN     unblocked
-Investigation         CURRENT + BLOCKED   NONE
-Validation            NEXT + BLOCKED      NONE
-Model Work            CURRENT + RUN       unblocked
-Investigation         CURRENT + WAIT      unblocked
-Evaluation            DEFER + NONE        unblocked
-Investigation         FUTURE + NONE       unblocked
+project map
+    -> select meaningful work unit
+    -> map recedes / focus transition
+    -> full-resolution specialist workspace mounts
+    -> perform real analytical work
+    -> return to project context
 ```
 
-Current human gate:
+The exact intermediate in-map expansion remains unfrozen. A future candidate hierarchy is:
 
 ```text
-judge whether Blocked belongs on an orthogonal progress-constraint axis
-verify Question / Blocker category remains distinct from Blocked state
-verify Current + Blocked + NONE remains distinct from Current + WAIT
-compare C1-C6 against C0
-judge explicit label vs structural cue vs hybrid
-identify treatments that resemble suppression / priority
-prefer / reject / combine / refine
+compact map work unit
+    -> expanded contextual/detail card
+    -> full specialist workspace / deep focus
 ```
 
-No final progress-constraint ontology, binary/multi-class constraint model, blocker-cause navigation design or compatibility matrix is frozen yet.
+The expanded-card level should be tested later with semantic zoom, C5 Internal Layout Grammar, information-density work and persistent selected/focused treatment. The idea is now preserved so it will not be lost.
 
 ---
 
@@ -488,12 +434,10 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               blocked progress-constraint semantic/visual grammar human review
+Current                               shared BLOCKED carrier + blocker relationship human review
 ```
 
 There is no pending Claude obligation.
-
-C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
 ---
 
@@ -503,28 +447,23 @@ Still unresolved:
 
 ```text
 final runtime / execution-state ontology
-production runtime-carrier default / persistence
+production runtime/status-carrier default and persistence
 final project-disposition ontology
 final progress-constraint ontology
-whether Blocked is binary or has multiple constraint classes
-final compatibility matrix between disposition / constraint / runtime
-blocking-cause navigation and dependency presentation
+whether BLOCKED is binary or multi-class
+exact compatibility rules between progress constraint and runtime
+multiple simultaneous blockers
+blocker cause object taxonomy
+final BLOCKS relation semantics
 historical execution-attempt presentation
+historical blocked-state provenance
 runtime-flow connector behavior
 final current-focus membership semantics
-whether system reasoning can suggest focus membership and how human overrides interact
-whether multiple named focus sets / lenses exist
-production ownership and persistence of focus sets
 importance / priority / relevance visual grammar
 final semantic relation taxonomy
-production relation colors / labels
-semantic zoom behavior for relation tags
-large-project label-density management
 semantic assignment of connector stroke rhythm
 selected/focused persistent treatment
-production appearance persistence
-final work-unit taxonomy
-final node dimensions and typography
+work-unit inline expansion behavior
 semantic zoom
 C5 Internal Layout Grammar
 2.5D focus/depth system
@@ -533,7 +472,7 @@ large-project layout/grouping/command architecture
 final production design system
 ```
 
-Only isolated `frontend/design-lab/**` artifacts are authorized for the current experiment. Production `/cockpit` remains the control baseline.
+Only isolated `frontend/design-lab/**` artifacts are authorized for current experimentation.
 
 ---
 
@@ -556,13 +495,16 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 238 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-progress-constraint.html
-4. judge the semantic split: disposition vs progress constraint vs runtime
-5. compare C1-C6 against C0
-6. inspect Question / Blocker category vs Blocked constraint
-7. inspect Current + Blocked + NONE vs Current + WAIT
-8. prefer / reject / combine / refine the blocked visual treatment
-9. do not freeze final ontology merely from this first visual slice
-10. keep production Cockpit untouched
-11. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-blocked-carrier.html
+4. compare BLOCKED dot/ring against BLOCKED soft-shade tag
+5. compare BLOCKED against FAIL in both carrier modes
+6. inspect BLOCKS relations from the Question / Blocker cause to affected work units
+7. use the global carrier switch
+8. click individual carriers to create/remove local overrides
+9. toggle Reduced motion
+10. accept / reject / refine the shared operational-status carrier hypothesis
+11. keep work-unit expansion deferred to its own future interaction-density slice
+12. do not freeze final ontology merely from this visual gate
+13. keep production Cockpit untouched
+14. keep source-vault deployment paused until explicitly resumed
 ```
