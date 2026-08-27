@@ -1,13 +1,13 @@
 # Research 078: Project-World Semantic Zoom Level-of-Detail Experiment
 
 **Date:** 2026-08-27  
-**Status:** Active Phase-C interaction-design evidence  
-**Scope:** Opens the next project-world design question after the project owner selected Z7 Pull-Back Then Dive for deep-focus entry: how work-unit information should simplify, persist, aggregate or become richer as the navigable project world changes scale.  
-**Authority:** Research evidence only. No final semantic-zoom thresholds, clustering semantics, large-project rendering strategy, information schema or production implementation is frozen by this memo.
+**Status:** Phase-C interaction-design evidence, deferred with S0 working default  
+**Scope:** Explored how work-unit information could simplify, persist, aggregate or become richer as the navigable project world changes scale.  
+**Authority:** Research evidence only. The project owner has explicitly deferred semantic-zoom information changes and directed S0 Geometric Control to remain the current working behavior. This is not a final rejection of semantic zoom.
 
 ## 1. Predecessor closure
 
-Research 077 now records the selected deep-focus direction:
+Research 077 records:
 
 ```text
 Z7 Pull-Back Then Dive
@@ -19,41 +19,17 @@ end state
     compact topology compass retained
 ```
 
-Positive but non-selected evidence remains:
-
-```text
-Z2 World Falls Away
-    useful explicit depth separation
-
-Z6 Perspective Corridor
-    useful 3D / 2.5D spatial quality
-```
-
-The selected/fixed spatial-browser implementation target is:
+Selected/fixed spatial-browser target:
 
 ```text
 04616a52df5cceff6c59223bbd6f07448d027510
 ```
 
-The compass-overlap fixture defect is repaired at that target.
+## 2. Question explored
 
-## 2. Why semantic zoom is next
+Specification 008 promotes bounded geometric zoom and a finite navigable project world, while Research 037 identified semantic-scale information architecture as unresolved.
 
-Specification 008 already promotes bounded geometric zoom and a finite navigable project world, while Research 037 explicitly identified the absence of a deliberate semantic-scale information architecture as a current limitation.
-
-The problem is not merely how large cards become on screen.
-
-The bounded question is:
-
-```text
-As the project world zooms out and in,
-what information should survive,
-what should aggregate,
-what should disappear,
-and what should become richer?
-```
-
-This separates:
+The experiment separated:
 
 ```text
 GEOMETRIC ZOOM
@@ -63,7 +39,17 @@ SEMANTIC ZOOM
     information architecture at that scale
 ```
 
-## 3. New browser
+and asked:
+
+```text
+As the project world zooms out and in,
+what information should survive,
+aggregate,
+disappear,
+or become richer?
+```
+
+## 3. Browser
 
 Local route:
 
@@ -79,7 +65,7 @@ frontend/design-lab/work-unit-semantic-zoom.css
 frontend/design-lab/work-unit-semantic-zoom.js
 ```
 
-Exact initial implementation target:
+Exact implementation target:
 
 ```text
 65ac02326a75b1c9f056676819d2d1b7b23b74c5
@@ -87,117 +73,64 @@ Exact initial implementation target:
 
 Production `/cockpit` remains untouched.
 
-## 4. Controlled scales
-
-Every candidate is viewed at three conceptual levels:
-
-```text
-OVERVIEW
-    distant project-scale orientation
-
-WORK
-    ordinary active Cockpit operation
-
-INSPECTION
-    close map-level inspection before X5 expansion / deep focus
-```
-
-These are provisional test levels, not a frozen production threshold system.
-
-## 5. Candidate semantic-zoom systems
+## 4. Controlled candidates
 
 ```text
 S0  Geometric Control
     same information largely survives at every scale
-    establishes clutter / legibility floor
 
 S1  Progressive Detail
-    identity at overview
-    operational metadata at work scale
-    richer rationale at inspection
-
 S2  Stage Clusters
-    overview aggregates individual units into stage-level objects
-    units resolve as scale increases
-
 S3  Topology First
-    overview privileges relation structure and category markers
-    labels/detail strengthen on approach
-
 S4  Focus Preserving
-    selected/current work remains richer across distance
-    non-current context simplifies earlier
-
 S5  Status First
-    overview prioritizes project/runtime state signals
-    descriptive identity becomes secondary
-
 S6  Glyph Field
-    distant units collapse almost entirely into scientific/category glyphs
-    topology carries much of the overview structure
-
 S7  Hybrid Contextual
-    selected/current work retains identity and state
-    context compresses
-    labels and topology remain sufficient for orientation
-
 S8  Local Detail Lens
-    global overview stays highly compressed
-    selected object remains locally rich even at distant scale
 ```
 
-S7 is the browser working default only. It is not selected before human review.
+Every candidate was shown at provisional Overview, Work and Inspection levels.
 
-## 6. Held controls
+## 5. Human disposition
 
-The comparison should preserve the current Phase-C semantic direction as much as practical:
+The project owner explicitly deprioritized semantic information changes by zoom for now:
 
 ```text
-scientific work-unit category grammar
-A3 HIGH-attention signal bars
-SEL2 selection concept
-project disposition tags
-operational status cues
-project connectors
-current versus contextual work distinction
+For now, lets not change information etc dependent on the zoom,
+so I think that is S0.
+We will save this for later.
+Proceed.
 ```
 
-The fixture is schematic and does not attempt exact pixel fidelity to every accepted predecessor browser.
-
-## 7. Human review gate
-
-Review semantic zoom as an information system rather than a decorative animation:
+Current interpretation:
 
 ```text
-At Overview scale:
-    what must remain readable immediately?
+S0 Geometric Control
+    provisional working default
+    keep information behavior stable across zoom for now
+    sufficient to continue Phase C
 
-Across scale:
-    does detail appear in an intuitive order?
+S1-S8
+    preserved for later
+    not rejected
 
-Large projects:
-    which strategy prevents clutter without making the world anonymous?
-
-Current-process focus:
-    should selected/current work retain more detail than context?
-
-Aggregation:
-    do stage clusters help or obscure too much structure?
-
-Topology:
-    can relation structure carry orientation at distance?
+semantic zoom as a capability
+    DEFERRED
+    not cancelled
+    not rejected
+    not superseded
 ```
 
-Human review may prefer, reject, combine or refine mechanisms.
+This is intentionally analogous to the earlier L0 internal-layout disposition: use the simplest stable behavior while the project explores more important unresolved Cockpit questions.
 
-## 8. Important non-decisions
+## 6. Why this is not a final semantic-zoom rejection
 
-Still unfrozen:
+Large-project operation may eventually create stronger evidence for semantic-level adaptation. The following remain open and preserved:
 
 ```text
 exact zoom thresholds
 continuous versus discrete semantic transitions
-cluster construction and cluster interaction
+cluster construction and interaction
 stage taxonomy / grouping semantics
 label collision strategy
 large-project virtualization
@@ -210,6 +143,18 @@ production graph/canvas library
 performance implementation
 ```
 
-## 9. Checkpoint disposition
+The project should reopen semantic zoom when real large-project density, rendering, navigation or comprehension evidence makes the complexity earn its place.
 
-Z7 materially closes the deep-focus transition question at the current Phase-C level, so a new checkpoint is warranted to preserve that accepted boundary and route the project into semantic-zoom review.
+## 7. Checkpoint disposition
+
+The human choice is strong enough to close the active semantic-zoom review without promoting a semantic-scale system.
+
+A new checkpoint should preserve:
+
+```text
+S0 working default
+semantic zoom deferred for later
+S1-S8 preserved
+```
+
+and route Phase C to the next first-class unresolved product problem.
