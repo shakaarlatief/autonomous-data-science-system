@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 242  
+**Current checkpoint:** 243  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        242
+checkpoint                        243
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  expanded work-unit internal layout human review
+current boundary                  deep-focus transition human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -59,23 +59,25 @@ new knowledge subsystem       NOT JUSTIFIED
 
 ---
 
-# Held Cockpit visual controls
+# Held Cockpit visual and semantic controls
 
 ```text
 G4 Adaptive Hybrid world
 Dark mode baseline
-H4 generic hover/outward response
+H4 hover/outward response
 Reduced in-box resting light
-```
-
-Current work-unit category markers:
-
-```text
-Question / Blocker        circle / yellow
-Investigation             square / green
-Validation / Analysis     triangle / blue
-Model Work                diamond / red
-Evaluation                plus / purple
+scientific category-marker grammar
+E5 Hue + Tag relation-class carrier
+P7 Neutral Tag + Tone disposition
+editable current-process focus set
+conditional runtime semantics
+switchable runtime carrier with T7 Soft Shade
+BLOCKER -> BLOCKS -> BLOCKED cause/effect model
+BLOCKED sharper compact ring
+FAIL smoother circular compact ring
+A3 Signal Bars for HIGH attention
+SEL2 Corner Brackets for persistent selection
+X5 balanced two-axis contextual expansion without context recession
 ```
 
 Foundations:
@@ -85,264 +87,24 @@ docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariant
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
----
-
-# Connector treatment and relation semantics
-
-Current connector treatments:
+Important accepted targets:
 
 ```text
-Clean
-Micro dots
-Frame sockets
-Direction arrows
-```
-
-Accepted direction grammar:
-
-```text
-Undirected      no arrow
-Forward         arrow at B
-Reverse         same arrow at A
-Bidirectional   same arrow at both endpoints
-```
-
-Exact accepted directionality implementation:
-
-```text
-07d573b6569b9f09a3b7e00936f3eadecee721b3
-```
-
-Relation-class result:
-
-```text
-E5  Hue + Tag
-```
-
-Latest accepted relation-class implementation:
-
-```text
-497e81f06ba1f9901511449237d1bb9f96b2d108
-```
-
-Stroke rhythm remains reserved for a future orthogonal line-level semantic dimension.
-
----
-
-# Project disposition and current-process focus
-
-Primary disposition evidence:
-
-```text
-docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
-docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
-docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
-```
-
-Human-selected current Phase-C direction:
-
-```text
-P7  Neutral Tag + Tone
-```
-
-Latest accepted P7 implementation:
-
-```text
-fac1db37af4225927d6c799e37418a3ad9c42c13
-```
-
-Current-process focus evidence:
-
-```text
-docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
-docs/research/063_user_curated_current_process_focus_membership.md
-frontend/design-lab/work-unit-process-focus.html
-```
-
-Human-accepted current direction:
-
-```text
-Context visible
-Focus current process
-Edit focus set
-Reset example
-```
-
-Exact accepted editable-focus implementation:
-
-```text
-da115b74de526fca05ed6f468bef39bdb801355c
+directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
+relation class E5             497e81f06ba1f9901511449237d1bb9f96b2d108
+P7 disposition                fac1db37af4225927d6c799e37418a3ad9c42c13
+editable current focus        da115b74de526fca05ed6f468bef39bdb801355c
+T7 Soft Shade                 08534f94c2f272f969159087de2797a23e36b330
+switchable runtime            fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
+BLOCKED/status carrier        88fd3c3cfe7a1eff4664afde06341b7b654c97f4
+A3 attention priority         767c66f76974d3c0a851de0dfa17c502817a4b12
+SEL2 persistent selection     e7304fe834d86166d843fda7e1df0f4ddb1f793a
+X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 ```
 
 ---
 
-# Slice 02H: conditional runtime carrier
-
-Evidence:
-
-```text
-docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
-docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
-docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
-docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
-```
-
-Runtime remains conditional.
-
-```text
-No runtime
-    no current execution/work episode exists
-
-Idle runtime
-    an execution episode exists but is doing nothing
-```
-
-Accepted current Phase-C carrier architecture:
-
-```text
-Dot + dynamic ring
-or
-T7 Soft Shade tag
-```
-
-Exact accepted T7 motion-browser target:
-
-```text
-08534f94c2f272f969159087de2797a23e36b330
-```
-
-Exact switchable-runtime browser with T7 integrated:
-
-```text
-fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
-```
-
----
-
-# Slice 02I: BLOCKED carrier and blocker relationship
-
-Primary evidence:
-
-```text
-docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
-docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
-frontend/design-lab/work-unit-blocked-carrier.html
-```
-
-Accepted current Phase-C semantic distinction:
-
-```text
-BLOCKER    cause / unresolved work or dependency
-BLOCKS     relation from cause to affected work
-BLOCKED    resulting current progress constraint
-FAIL       failed current execution attempt
-```
-
-Accepted compact red mapping:
-
-```text
-BLOCKED    sharper non-circular dynamic ring
-FAIL       smoother circular dynamic ring
-```
-
-Exact accepted visual target:
-
-```text
-88fd3c3cfe7a1eff4664afde06341b7b654c97f4
-```
-
----
-
-# Slice 02J: attention priority result
-
-Primary evidence:
-
-```text
-docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
-frontend/design-lab/work-unit-attention-priority.html
-```
-
-Human-selected current Phase-C direction:
-
-```text
-A3  Signal Bars
-```
-
-Exact browser target in which A3 was selected:
-
-```text
-767c66f76974d3c0a851de0dfa17c502817a4b12
-```
-
-The final priority ontology, ownership and relationship to relevance/scheduling remain open.
-
----
-
-# Slice 02K: persistent selection result
-
-Primary evidence:
-
-```text
-docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
-docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
-frontend/design-lab/work-unit-selection-state.html
-```
-
-The first browser had a clipping defect for external selection geometry. The repaired implementation moved the selection carrier outside `.node-surface` while preserving surface clipping for internal effects.
-
-Exact repaired visual target:
-
-```text
-e7304fe834d86166d843fda7e1df0f4ddb1f793a
-```
-
-Human-selected current Phase-C direction:
-
-```text
-SEL2  Corner Brackets
-```
-
----
-
-# Slice 02L: contextual work-unit detail expansion result
-
-Primary evidence:
-
-```text
-docs/checkpoints/241_selection_sel2_accepted_contextual_detail_expansion_review_opened.md
-docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
-frontend/design-lab/work-unit-detail-expansion.html
-frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
-frontend/design-lab/work-unit-detail-expansion-x5-accepted.js
-```
-
-Human-selected current Phase-C direction:
-
-```text
-X5 balanced two-axis expansion
-WITHOUT surrounding-context recession
-```
-
-Accepted geometry:
-
-```text
-390 x 210
-one integrated work-unit object
-balanced width + height growth
-surrounding map remains at normal salience
-```
-
-Exact refined X5 implementation target:
-
-```text
-94bc1100b7388cc56497cafc03051ce326424a80
-```
-
-The original X5 context-recession mechanism remains historical evidence only.
-
----
-
-# Current Slice 02M: expanded work-unit internal layout
+# Slice 02M: internal layout, deferred
 
 Primary evidence:
 
@@ -350,31 +112,9 @@ Primary evidence:
 docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
 docs/research/074_work_unit_internal_layout_grammar_experiment.md
 frontend/design-lab/work-unit-internal-layout.html
-frontend/design-lab/work-unit-internal-layout.css
-frontend/design-lab/work-unit-internal-layout.js
 ```
 
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-internal-layout.html
-```
-
-Exact initial browser implementation target:
-
-```text
-871075bcda8ff812e1a96b18b442c803d5da7faf
-```
-
-Held outer geometry:
-
-```text
-X5 two-axis expansion
-390 x 210
-NO surrounding-context recession
-```
-
-Candidate internal layouts:
+Candidates remain preserved:
 
 ```text
 L0  Flat Fields
@@ -388,28 +128,92 @@ L7  Module Cards
 L8  Balanced Instrument
 ```
 
-Controlled placeholder payload:
+Current disposition:
 
 ```text
-Purpose
-Constraint
-Evidence
-Next action
-Blocking cause
-Recent activity
+L0 Flat Fields
+    provisional working default
+    sufficient to continue Phase C
+    NOT a final C5 or work-unit-schema decision
+
+L1-L8
+    preserved for later review
+    not rejected
 ```
 
-The payload is not a frozen work-unit schema.
+---
+
+# Current Slice 02N: deep-focus transition
+
+Primary evidence:
+
+```text
+docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
+docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
+frontend/design-lab/work-unit-deep-focus-transition.html
+frontend/design-lab/work-unit-deep-focus-transition.css
+frontend/design-lab/work-unit-deep-focus-transition.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+```
+
+Initial browser target:
+
+```text
+31abc2b3a23de29358978e19bd88fda1e9166f6b
+```
+
+Governing promoted interaction from Specification 008:
+
+```text
+project map
+    -> select meaningful work unit
+    -> map recedes / focus transition
+    -> full-resolution specialist workspace mounts
+    -> perform real analytical work
+    -> return to project context
+```
+
+Candidate transition architectures:
+
+```text
+F0  Hard Replace
+F1  Center Stage
+F2  Anchored Morph
+F3  World Recede
+F4  Context Ribbon
+F5  Map Frame
+F6  Side Context Rail
+F7  Portal Lift
+F8  Layered Stage
+```
 
 Current human gate:
 
 ```text
-compare L0-L8 with outer geometry held constant
-judge scan path, hierarchy and density
-reject miniature-dashboard behavior
-inspect robustness to longer content
-inspect future room for provenance/evidence and commands
+compare F0-F8
+click each candidate to enter / return
+judge continuity from selected X5 work unit to specialist workspace
+judge retained map context versus distraction
+judge return-to-project clarity
 prefer / reject / combine / refine
+keep specialist-workspace internals schematic
+```
+
+---
+
+# Earlier Phase-C evidence routes
+
+```text
+docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
+docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
+docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
+docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
+docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
 ```
 
 ---
