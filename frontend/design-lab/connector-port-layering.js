@@ -2,11 +2,15 @@ const scene = document.querySelector('#connector-scene')
 const relationLayer = scene?.querySelector('.connector-relations')
 const portLayer = scene?.querySelector('.connector-port-overlay')
 
+/*
+ * Only markers that should visually sit above the work-unit perimeter are
+ * mirrored into the overlay. K2 frame sockets intentionally remain in the
+ * original under-node relation layer because human review preferred that
+ * structural, frame-integrated treatment.
+ */
 const markerSelectors = [
   '.connector-source-terminal',
   '.connector-target-terminal',
-  '.connector-source-socket',
-  '.connector-target-socket',
   '.connector-chevron',
 ]
 
@@ -89,8 +93,6 @@ function syncOverlayGroup(relationGroup) {
 
     copyAttribute(sourceMarker, overlayMarker, 'cx')
     copyAttribute(sourceMarker, overlayMarker, 'cy')
-    copyAttribute(sourceMarker, overlayMarker, 'x')
-    copyAttribute(sourceMarker, overlayMarker, 'y')
     copyAttribute(sourceMarker, overlayMarker, 'd')
   }
 }
