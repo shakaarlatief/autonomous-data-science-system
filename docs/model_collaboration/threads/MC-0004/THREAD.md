@@ -90,7 +90,7 @@ Exact accepted directionality target:
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Relation-class visual encoding is sufficiently settled for the current Phase-C design phase:
+Relation-class visual encoding remains sufficiently settled:
 
 ```text
 E5  Hue + Tag
@@ -104,55 +104,11 @@ Latest accepted relation-class target:
 
 Stroke rhythm remains preserved for a different future line-level semantic dimension and currently has no assigned meaning.
 
-## Current Slice 02F: work-unit project disposition
+## Project-disposition result
 
-The semantic separation remains:
+Research 059 through 061 explored disposition hue, tags, tone, rhythm and mixed-category interaction.
 
-```text
-WHAT IS THIS?
-    category / kind
-
-WHAT IS ITS PROJECT DISPOSITION?
-    current slice
-
-WHAT IS HAPPENING NOW?
-    runtime state, held out
-
-HOW IMPORTANT IS IT NOW?
-    priority / relevance, held out
-```
-
-Representative visual-test dispositions remain provisional:
-
-```text
-S0  Active / Current
-S1  Recommended / Next
-S2  Deferred
-S3  Completed
-S4  Blocked
-S5  Future / Not yet active
-```
-
-Initial P0-P6 families and the mixed-category P6/P7 comparison remain preserved in Research 059 and 060.
-
-## Latest human convergence evidence
-
-The project owner reviewed the practical mixed-category scenes and found both persistent-color candidates somewhat confusing once category hue and disposition hue coexisted.
-
-Human conclusion:
-
-```text
-best direction
-    tag + tone
-
-resting tag
-    neutral / uncolored
-
-hover
-    tag reveals disposition color
-```
-
-The active convergence candidate is therefore:
+The project owner accepted the practical convergence direction:
 
 ```text
 P7  Neutral Tag + Tone
@@ -160,7 +116,7 @@ P7  Neutral Tag + Tone
 REST
     category hue remains the dominant persistent color
     explicit disposition tag remains neutral
-    selective tonal recession retained for Completed / Deferred / Future
+    selective tonal recession remains for Completed / Deferred / Future
     no disposition perimeter hue
     no rhythm
 
@@ -168,43 +124,91 @@ HOVER
     tag border/text reveal the state-specific hue
 ```
 
-P4 State Rhythm and P6 Hue + Colored Tag + Tone remain preserved as experiment/history evidence.
-
-## Current browser verification
-
-Research:
-
-```text
-docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
-```
-
-Checkpoint:
-
-```text
-docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
-```
-
-Browser route:
-
-```text
-frontend/design-lab/work-unit-disposition-grammar.html
-frontend/design-lab/work-unit-disposition-grammar.css
-frontend/design-lab/work-unit-disposition-grammar.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-disposition-grammar.html
-```
-
-Exact refined browser implementation target:
+Latest accepted P7 implementation before the next slice:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-The page opens directly in P7. The practical P7 scene keeps category color dominant at rest and reveals state hue only in the tag on hover.
+The final disposition ontology remains unfrozen.
+
+P4 State Rhythm and the earlier colored alternatives remain preserved as experiment/history evidence.
+
+## New human requirement: stronger contextual suppression
+
+After accepting P7, the project owner identified a separate map-level need:
+
+```text
+keep future / contextual boxes in the Cockpit
++
+provide a more dramatic suppression mode
++
+make the actual current process remain visually dominant
+```
+
+This is not represented as another project-disposition state.
+
+## Active Slice 02G: current-process focus lens
+
+Binding separation:
+
+```text
+PROJECT DISPOSITION
+    semantic state of the work unit
+
+CURRENT-PROCESS MEMBERSHIP
+    whether it belongs to the currently emphasized process path / horizon
+
+VIEW EMPHASIS
+    how strongly contextual work is visually suppressed in the current lens
+```
+
+Research:
+
+```text
+docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
+```
+
+Checkpoint:
+
+```text
+docs/checkpoints/233_p7_disposition_accepted_current_process_focus_lens_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-process-focus.html
+frontend/design-lab/work-unit-process-focus.css
+frontend/design-lab/work-unit-process-focus.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-process-focus.html
+```
+
+Exact browser implementation target:
+
+```text
+b311796f86ff577354a2bfe14b850bd6a49a9c06
+```
+
+The browser exposes:
+
+```text
+Context visible
+    accepted P7 presentation remains readable
+
+Focus current process
+    current-process fixtures remain full salience
+    contextual fixtures are strongly suppressed
+    contextual connector segments recede
+    contextual nodes partially recover on hover for inspection
+```
+
+Current-process membership is explicit fixture metadata and is not inferred from disposition.
 
 ## Dependency-bound ideas
 
@@ -219,16 +223,16 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human verifies P7 neutral tag at rest
-human verifies state hue appears only on hover
-human verifies mixed-category scene is less confusing
-human judges tonal recession separately from importance
--> if accepted, project-disposition visual carrier is sufficiently converged for current Phase C
--> final disposition ontology remains unfrozen
+human compares Context visible vs Focus current process
+-> judge strength and aesthetics of contextual suppression
+-> judge partial hover recovery
+-> judge contextual connector suppression
+-> refine / accept / reject the focus lens
+-> do not freeze final current-process-membership semantics
 ```
 
 Runtime-state and priority/importance visual grammars remain separate future slices.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final project-disposition ontology, runtime-state grammar, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final current-process-membership semantics, final project-disposition ontology, runtime-state grammar, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
