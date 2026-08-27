@@ -40,7 +40,7 @@ http://localhost:5173/design-lab/connector-grammar.html
 Current exact connector browser implementation target:
 
 ```text
-ae2951e2325e6e6e624131097dcc1edc732e1844
+42ec63d17095753dc4ab97628cd859473cbdf5e8
 ```
 
 ## Configurable appearance result
@@ -108,6 +108,11 @@ connector curves
 K1 dots / K3 directional cue / K4 hover ports
     render above the work-unit perimeter
 
+K1 / K4 circular markers
+    are offset mostly outside the perimeter
+    with only a small overlap at the attachment edge
+    so left-side markers do not sit across the category color rail
+
 K2 frame sockets
     deliberately retain the earlier under-node structural docking treatment
 
@@ -115,10 +120,10 @@ hover lift / release
     connector geometry follows the transformed rendered perimeter continuously
 ```
 
-The hover-lift geometry correction is:
+Latest circular-terminal refinement:
 
 ```text
-ae2951e2325e6e6e624131097dcc1edc732e1844
+42ec63d17095753dc4ab97628cd859473cbdf5e8
 ```
 
 Preliminary human evidence suggests the eventual connector grammar should be compositional rather than choosing one universal K0-K4 winner. Directionality may be none, one-way in either direction, or bidirectional; Hover Ports should remain available; and the initial non-directional endpoint treatment is likely to use either Micro Dots or Frame Sockets. Final composition remains pending human review.
