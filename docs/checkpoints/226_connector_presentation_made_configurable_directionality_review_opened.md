@@ -5,7 +5,12 @@
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / PROMOTION  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
 **Scope:** Closes the K0-K4 winner-selection gate, preserves the human decision to retain approved connector treatments as user-configurable presentation dimensions, promotes connector semantic/presentation separation into Foundation 024, and opens the next directionality browser slice.  
-**Authority:** Current Phase-C routing boundary. Foundation 024 is promoted as durable product-interface direction. Final semantic relation taxonomy, final direction-cue vocabulary and production persistence remain unfrozen.
+**Authority:** Current Phase-C routing boundary. Foundation 024 is promoted as durable product-interface direction. Final semantic relation taxonomy, final direction-cue vocabulary and production persistence remain unfrozen.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT
 
 ## 1. Human connector decision
 
