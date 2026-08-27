@@ -3,7 +3,7 @@
 **Status:** Current canonical model-collaboration protocol  
 **Date promoted:** 2026-08-26  
 **Authority:** Canonical operational supplement to Development Method v0.5 for collaborative ADS development. It does not override accepted project specifications or decisions outside its scope.  
-**Evidence base:** Research 035, MC-0001, Specification 024, MC-0002, Research 036, and MC-0003
+**Evidence base:** Research 035, MC-0001, Specification 024, MC-0002, Research 036, MC-0003, and Research 080
 
 ## Purpose
 
@@ -67,6 +67,7 @@ A reviewer is specifically tasked with searching for falsifiers, unsupported ass
 12. Human arbitration is reserved for genuine project intent, desired requirement changes, consequential risk acceptance, resource commitments, and technically underdetermined normative choices.
 13. API orchestration and unattended scheduled model review are not part of the current method.
 14. Collaboration machinery must remain proportionate to task importance and observed need.
+15. Human-to-model relay prompts must explicitly name the repository and coordination branch; branch inference is not an accepted routing mechanism.
 
 ---
 
@@ -267,7 +268,7 @@ See `DEFERRED_REVIEW_AND_CATCHUP.md`.
 
 ---
 
-## Review inbox and standardized catch-up prompt
+## Review inbox and standardized Claude trigger
 
 Current pending work is routed in:
 
@@ -275,13 +276,46 @@ Current pending work is routed in:
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-For Claude, when pending obligations exist, the standard user trigger is intentionally short:
+The repository, not the relay prompt, should carry the detailed collaboration contract. However, the relay prompt must still deterministically locate that contract.
+
+Research 080 records a real failure mode where Claude received a short trigger without a branch name and had to infer the active branch from repository evidence. That inference happened to succeed, but branch inference is no longer accepted as part of the normal protocol.
+
+Every standardized Claude trigger must explicitly name:
 
 ```text
-Check the repository and docs/model_collaboration/REVIEW_INBOX.md, then proceed with the pending Claude reviews in order.
+repository
+coordination branch
 ```
 
-The repository, not the relay prompt, should carry the detailed review contract.
+The **coordination branch** is where Claude reads current routing, the review inbox, thread state, and the current request. It is distinct from an exact immutable review/design target that a request may later name.
+
+Standard trigger template:
+
+```text
+Work in repository `<OWNER/REPO>`.
+Coordination branch: `<EXPLICIT_BRANCH>`.
+
+Read `docs/current_routing.json` and `docs/model_collaboration/REVIEW_INBOX.md`
+from that exact branch, then follow the referenced thread/request files and
+proceed with the pending Claude obligation(s) in order.
+
+Do not infer or switch the coordination branch. If the named branch is missing,
+or authoritative routing on that branch contradicts this prompt, stop and report
+the mismatch instead of choosing another branch.
+```
+
+Operational requirements:
+
+```text
+placeholders must be resolved before the human sends the prompt
+never rely on default/main to discover the active branch
+never infer the branch from newest commits or missing files
+never search unrelated branches to resolve ambiguity
+use "obligation(s)", not only "reviews", because Claude tasks may be review,
+counter-design, research, verification, or another explicitly routed contribution
+```
+
+For independence-sensitive work, the no-branch-inference rule is also an information-control safeguard because unrelated branch discovery can expose candidate content.
 
 ---
 
@@ -342,6 +376,10 @@ MC-0003
     deferred catch-up architecture review
     proved two waiting Claude obligations can coexist and later be processed
     in priority order without a global collaborator lock
+
+MC-0004
+    exposed branch-ambiguous short-trigger routing during active branch-based design work
+    motivated explicit repository + coordination-branch relay discipline
 ```
 
 The collaboration method should continue to evolve from observed failure rather than aesthetic completeness.
