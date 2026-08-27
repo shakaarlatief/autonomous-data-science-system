@@ -130,28 +130,17 @@ fac1db37af4225927d6c799e37418a3ad9c42c13
 
 The final disposition ontology remains unfrozen.
 
+Checkpoint 236 refines wording: `Current` is the project-disposition concept; `Running` is reserved for runtime. The earlier `Active / Current` shorthand should not be treated as a final ontology label.
+
 ## Current-process focus result
 
 Research 062 separated project disposition, current-process membership and view emphasis.
 
-The browser introduced:
+The project owner accepted both the stronger focus lens and direct focus-set editing:
 
 ```text
 Context visible
-    wider project remains readable
-
 Focus current process
-    current-focus work remains full salience
-    outside-focus work is strongly suppressed
-    contextual connector segments recede
-    contextual nodes partially recover on hover
-```
-
-The project owner accepted this mechanism and then requested direct user control over membership.
-
-Research 063 added:
-
-```text
 Edit focus set
 Reset example
 + FOCUS
@@ -159,12 +148,6 @@ Reset example
 ```
 
 Changing focus membership does not delete work and does not change project disposition. Membership changes immediately update node suppression and connector classification.
-
-The project owner reviewed the editable result and concluded:
-
-```text
-It is perfect.
-```
 
 Exact accepted editable-focus target:
 
@@ -176,7 +159,7 @@ Final production ownership/persistence, automatic focus suggestions, multiple na
 
 ## Preservation-method audit during Phase C
 
-After accepting editable focus membership, the project owner asked for an explicit audit of whether the repository-preservation architecture remained healthy under many rapid small changes.
+After accepting editable focus membership, the project owner requested an audit of repository-preservation health under many rapid small changes.
 
 Research:
 
@@ -184,14 +167,7 @@ Research:
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
-The architecture was judged sound, but the audit found Checkpoints 223-234 had drifted from the provider-neutral metadata contract.
-
-Repair:
-
-```text
-required metadata/provenance backfilled
-substantive historical bodies preserved
-```
+The architecture was judged sound. Checkpoints 223-234 had drifted from the provider-neutral metadata contract, so required metadata/provenance was repaired without rewriting substantive historical conclusions.
 
 Verified global metadata validation after repair:
 
@@ -200,39 +176,120 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     validate  SUCCESS
 ```
 
-The checkpoint contract now makes two operating rules explicit:
+The checkpoint contract now explicitly keeps micro-refinements inside an already-open gate in Git plus active research evidence, while requiring checkpoint validation before operational closure.
 
-```text
-micro-refinements inside an already-open gate normally remain in Git + research evidence
-+
-a checkpoint is not operationally closed until its metadata validation succeeds
-```
+## Slice 02H initial runtime experiment
 
-Current-routing consistency was also widened to all pushes that touch guarded routing surfaces.
-
-This is bounded method hardening based on observed failure, not a new preservation architecture.
-
-## Active Slice 02H: work-unit runtime state
-
-The next semantic axis is:
+Research 065 opened a visual-carrier comparison for:
 
 ```text
 WHAT IS HAPPENING NOW?
     runtime / execution state
 ```
 
-It remains separate from category, project disposition, priority/relevance and current-focus membership.
+Initial carrier families:
+
+```text
+R0  Neutral Control
+R1  Status Lamp
+R2  Activity Rail
+R3  Runtime Tag
+R4  Instrument Cell
+R5  Motion Signal
+R6  Restrained Hybrid
+```
+
+The first fixture implicitly treated runtime as though every work unit always had one of several states. Human review challenged that assumption before visual convergence.
+
+## Checkpoint 236 semantic correction: runtime is conditional
+
+The project owner asked why Deferred, Future or otherwise non-current work would have runtime/status at all.
+
+That exposed a genuine semantic conflation.
+
+The corrected model is:
+
+```text
+PROJECT DISPOSITION
+    where does this work stand in the project?
+
+RUNTIME
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
+```
+
+Runtime is therefore optional / episode-scoped.
+
+The key distinction is:
+
+```text
+No runtime
+    no current execution/work episode exists
+
+Idle runtime
+    a runtime episode exists but is currently doing nothing
+```
+
+The browser now uses `NONE / No runtime` as its absence control. `Idle` is no longer used to mean absence.
+
+Working interpretation:
+
+```text
+Current
+    may have no runtime
+    may be Queued / Running / Waiting / Waiting for Human / Failed current attempt
+
+Recommended / Next
+    normally no runtime
+    may be Queued if explicitly scheduled
+
+Deferred
+    normally no current runtime
+
+Completed
+    normally no current runtime
+
+Future
+    normally no current runtime
+```
+
+This is not a frozen compatibility matrix.
+
+Historical execution evidence remains separate from current runtime. A Deferred, Completed or Future node may retain previous attempt records without showing those old attempts as its current runtime.
+
+## Blocked remains explicitly unresolved
+
+The same semantic review exposed that `Blocked` may be orthogonal to lifecycle/disposition.
+
+Potentially coherent examples:
+
+```text
+Current + Blocked
+Next + Blocked
+```
+
+A later model may distinguish:
+
+```text
+project disposition
+progress constraint
+runtime
+```
+
+but no such final ontology is frozen at this checkpoint.
+
+## Corrected conditional-runtime browser
 
 Research:
 
 ```text
-docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
+docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
 ```
 
 Checkpoint:
 
 ```text
-docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 ```
 
 Browser route:
@@ -249,40 +306,39 @@ Local URL:
 http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 ```
 
-Exact browser implementation target:
+Exact corrected browser implementation target:
 
 ```text
-099e516bf9a7351a756bee00037edbcc731a2738
+dfcb89c94e6d8ce46dd2997591f41e6f9a394c18
 ```
 
-Provisional runtime fixtures:
+Controlled rows now hold Current Investigation constant and vary:
 
 ```text
-Idle
-Queued
-Running
-Waiting
-Waiting for Human
-Failed
+NONE    No runtime
+QUEUE   Queued
+RUN     Running
+WAIT    Waiting
+HUMAN   Waiting for Human
+FAIL    Failed current attempt
 ```
 
-Encoding families:
+For NONE, all R1-R6 runtime instrumentation is intentionally absent.
+
+Practical scene:
 
 ```text
-R0  Neutral Control
-R1  Status Lamp
-R2  Activity Rail
-R3  Runtime Tag
-R4  Instrument Cell
-R5  Motion Signal
-R6  Restrained Hybrid
+Question        CURRENT + HUMAN
+Investigation   CURRENT + RUN
+Validation      NEXT + QUEUE
+Model Work      CURRENT + FAIL
+Evaluation      DEFER + NONE
+Investigation   FUTURE + NONE
 ```
 
-The browser contains controlled same-category rows plus a mixed-category practical scene with P7 neutral disposition tags retained.
+This tests optional runtime against category and P7 disposition rather than pretending every project box has a dormant runtime process.
 
-Reduced-motion mode removes runtime animation while preserving static runtime-state identity.
-
-The saved connector stroke-rhythm channel remains unassigned and available for a future line-level semantic slice.
+Reduced-motion mode removes runtime animation while preserving static state identity. NONE never animates.
 
 ## Dependency-bound ideas
 
@@ -297,17 +353,18 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human compares R0-R6
-human inspects controlled rows and mixed-category scene
+human verifies NONE carries no runtime instrumentation
+human compares R1-R6 for QUEUE / RUN / WAIT / HUMAN / FAIL
+human inspects DEFER + NONE and FUTURE + NONE in the practical scene
 human compares normal vs Reduced motion
 human judges runtime clarity, clutter and semantic competition
 human judges whether motion reads as semantic rather than decorative
 -> prefer / reject / combine / refine
--> do not freeze the final runtime ontology yet
+-> do not freeze the final runtime/disposition/Blocked ontology yet
 ```
 
 Priority/importance visual grammar remains a separate future slice.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, final project-disposition ontology, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final runtime-state ontology, final project-disposition ontology, final Blocked/progress-constraint semantics, execution-history interface, runtime-flow connector grammar, automatic focus-selection algorithm, final focus-set ownership/persistence model, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
