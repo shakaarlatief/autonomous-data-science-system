@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 237  
+**Current checkpoint:** 238  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        237
+checkpoint                        238
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  switchable runtime-carrier convergence human review
+current boundary                  blocked progress-constraint semantic/visual grammar human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -220,7 +220,7 @@ Final focus-set ownership/persistence, automatic suggestions, multiple named len
 
 ---
 
-# Current Slice 02H: conditional runtime carrier convergence
+# Slice 02H result: conditional runtime carrier
 
 Semantic-correction evidence:
 
@@ -230,46 +230,22 @@ docs/research/066_conditional_runtime_state_and_project_disposition_semantic_cor
 docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 ```
 
-Current convergence evidence:
+Convergence evidence:
 
 ```text
 docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
 docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
 ```
 
-Current browser route:
+Runtime semantic separation:
 
 ```text
-frontend/design-lab/work-unit-runtime-carrier-switch.html
-frontend/design-lab/work-unit-runtime-carrier-switch.css
-frontend/design-lab/work-unit-runtime-carrier-switch.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
-```
-
-Exact current browser implementation target:
-
-```text
-3a862c659e60e53832eaa5940ddb60d05734cd7d
-```
-
-Current semantic separation:
-
-```text
-category                  what is this?
 project disposition       where does it stand in the project?
-runtime                    if a current execution/work episode exists, what is happening in it?
-priority / relevance       how important is it now?
-current-focus membership   is it in the emphasized process set?
+runtime                   if a current execution/work episode exists, what is happening in it?
 ```
 
 Runtime remains conditional.
-
-Critical distinction:
 
 ```text
 No runtime
@@ -279,7 +255,7 @@ Idle runtime
     an execution episode exists but is doing nothing
 ```
 
-Controlled fixtures:
+Working runtime fixtures:
 
 ```text
 NONE    No runtime
@@ -290,70 +266,126 @@ HUMAN   Waiting for Human
 FAIL    Failed current attempt
 ```
 
-Working compatibility interpretation:
+Human-accepted current Phase-C carrier architecture:
 
 ```text
-Current                 may have NONE or a live runtime state
-Recommended / Next      normally NONE; may be QUEUE if explicitly scheduled
-Deferred                normally NONE
-Completed               normally NONE
-Future                  normally NONE
-```
+exactly one carrier per live-runtime work unit
 
-Current runtime remains separate from historical execution provenance.
-
-`Blocked` remains explicitly unresolved as a possible orthogonal progress constraint rather than automatically treated as a peer lifecycle/disposition value.
-
-## R1/R5 verification
-
-Direct implementation inspection established:
-
-```text
-R1 = status lamp
-R5 = same status lamp + motion ring
-```
-
-The two encodings were therefore not literally identical, but the extra ring was too subtle at working scale to make R5 read as a genuinely distinct family except most clearly for Failed. This is retained as negative design evidence.
-
-## Active runtime-carrier convergence
-
-Exactly one carrier is active per live-runtime work unit:
-
-```text
 Dot + dynamic ring
-Animated runtime tag
+or
+T7 Soft Shade runtime tag
 ```
 
-The dot uses a stronger visible outer ring with state-sensitive motion pacing. The tag uses explicit state text plus a circulating perimeter trace.
-
-Switching operates at two scopes:
-
-```text
-GLOBAL
-    change every live-runtime node
-    clear local overrides
-
-LOCAL
-    click the visible runtime carrier
-    switch only that node
-```
+Global selection changes every live-runtime node and clears local overrides. Clicking one node's visible carrier switches only that node.
 
 No-runtime nodes show no carrier and expose no carrier-switch target.
 
-Practical scene:
+T7 selected runtime-tag motion:
 
 ```text
-Question        CURRENT + HUMAN
-Investigation   CURRENT + RUN
-Validation      NEXT + QUEUE
-Model Work      CURRENT + FAIL
-Evaluation      DEFER + NONE
-Investigation   FUTURE + NONE
+stationary tag geometry
+stationary text
+stationary border mask
+broad soft shade field flows through perimeter
 ```
 
-Reduced motion removes animation while preserving static runtime identity.
+Exact accepted T7 motion-browser target:
 
-The final ADS runtime ontology, final carrier, production default/persistence, project-disposition ontology, Blocked semantics, historical execution presentation and runtime-flow connector semantics remain unfrozen.
+```text
+08534f94c2f272f969159087de2797a23e36b330
+```
+
+Exact switchable-runtime browser with T7 integrated:
+
+```text
+fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
+```
+
+The final runtime ontology, production default carrier, preference persistence, historical execution presentation and runtime-flow connector semantics remain unfrozen.
+
+---
+
+# Current Slice 02I: BLOCKED as progress constraint
+
+Primary evidence:
+
+```text
+docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
+docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
+frontend/design-lab/work-unit-progress-constraint.html
+frontend/design-lab/work-unit-progress-constraint.css
+frontend/design-lab/work-unit-progress-constraint.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-progress-constraint.html
+```
+
+Exact browser implementation target:
+
+```text
+efd0d36ee4ccf4c5494220df54eb3e7f50995658
+```
+
+Working semantic hypothesis:
+
+```text
+PROJECT DISPOSITION
+    where does this work stand in the project?
+
+PROGRESS CONSTRAINT
+    can this work proceed?
+
+RUNTIME
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
+```
+
+Important contrasts:
+
+```text
+Current + Blocked + NONE
+vs
+Current + WAIT + unblocked
+```
+
+and:
+
+```text
+Question / Blocker category
+    kind of work unit
+
+Blocked constraint
+    inability of an affected work unit to proceed
+```
+
+Current visual candidates:
+
+```text
+C0  Neutral Control
+C1  Explicit Tag
+C2  Edge Clamp
+C3  Stop Rail
+C4  Barrier Seal
+C5  Constraint Veil
+C6  Tag + Clamp
+```
+
+Practical fixture:
+
+```text
+Question / Blocker    CURRENT + HUMAN     unblocked
+Investigation         CURRENT + BLOCKED   NONE
+Validation            NEXT + BLOCKED      NONE
+Model Work            CURRENT + RUN       unblocked
+Investigation         CURRENT + WAIT      unblocked
+Evaluation            DEFER + NONE        unblocked
+Investigation         FUTURE + NONE       unblocked
+```
+
+The final project-disposition ontology, progress-constraint ontology, binary/multi-class blocked model, compatibility matrix, blocker-cause navigation and production treatment remain unfrozen.
 
 ---
 
