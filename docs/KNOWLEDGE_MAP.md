@@ -106,35 +106,15 @@ X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 
 # Slice 02M: internal layout, deferred
 
-Primary evidence:
-
 ```text
 docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
 docs/research/074_work_unit_internal_layout_grammar_experiment.md
 frontend/design-lab/work-unit-internal-layout.html
 ```
 
-Candidates remain preserved:
-
-```text
-L0  Flat Fields
-L1  Structured Grid
-L2  Narrative Stack
-L3  Summary + Rail
-L4  Action First
-L5  Dependency Path
-L6  Evidence Center
-L7  Module Cards
-L8  Balanced Instrument
-```
-
-Current disposition:
-
 ```text
 L0 Flat Fields
     provisional working default
-    sufficient to continue Phase C
-    NOT a final C5 or work-unit-schema decision
 
 L1-L8
     preserved for later review
@@ -143,7 +123,7 @@ L1-L8
 
 ---
 
-# Current Slice 02N: factorized deep-focus transition
+# Current Slice 02N: fullscreen spatial deep-focus transition
 
 Checkpoint:
 
@@ -151,12 +131,23 @@ Checkpoint:
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
 ```
 
-Original transition evidence:
+Evidence progression:
 
 ```text
-docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
-frontend/design-lab/work-unit-deep-focus-transition.html
-exact repaired target  afd15f52897a295788dc3a1d04b2d1b31ef707f9
+Research 075
+    docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
+    frontend/design-lab/work-unit-deep-focus-transition.html
+    repaired target afd15f52897a295788dc3a1d04b2d1b31ef707f9
+
+Research 076
+    docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+    frontend/design-lab/work-unit-deep-focus-factorized.html
+    latest target fddb344c2b18221d326c9ba5bde98e84edf98f56
+
+Research 077
+    docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
+    frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
+    exact target b375eb253990ce3c20f34dd9d5b735bd532789f2
 ```
 
 Claude collaboration evidence:
@@ -167,7 +158,7 @@ docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transiti
 Claude response commit  204664ae1e732dd504174bbc62545e9a93adc85f
 ```
 
-Claude's main decomposition:
+Claude's decomposition remains useful:
 
 ```text
 object continuity
@@ -178,65 +169,60 @@ orientation aid
 return choreography
 ```
 
-Current synthesis evidence:
+Latest human refinement:
 
 ```text
-docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
-frontend/design-lab/work-unit-deep-focus-factorized.html
-frontend/design-lab/work-unit-deep-focus-factorized.css
-frontend/design-lab/work-unit-deep-focus-factorized-refinement.css
-frontend/design-lab/work-unit-deep-focus-factorized.js
+deepest specialist workspace
+    should own the full active stage
+
+project map / grid
+    should disappear fully after entry
+
+compact topology compass
+    strongly liked as a small orientation detail
+
+transition
+    should explore stronger spatial zoom / moving-through-space behavior
 ```
 
-Local URL:
+Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
-Exact current browser target:
+Current candidates:
 
 ```text
-0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+Z0  Direct Replace Control
+Z1  Card Zoom-In
+Z2  World Falls Away
+Z3  Camera Dive
+Z4  Workspace Aperture
+Z5  Depth Parallax
+Z6  Perspective Corridor
+Z7  Pull-Back Then Dive
 ```
 
-Current comparisons:
+All candidates hold the final deep-focus end state constant:
 
 ```text
-Batch A · Object continuity
-    A0  F2 Anchored Morph Control
-    A1  Anchored Center Stage
-    A2  Anchored Context Rail
-    A3  Camera Push-Through
-
-Batch B · Context relevance
-    B0  F6 Fixed Rail Control
-    B1  Neighbor-Aware Context
-    B2  Neighbor-Aware + Anchor
-
-Batch C · Staging and orientation
-    C0  Hard Replace Control
-    C1  Staged Two-Step Entry
-    C2  Compass + Soft World
-    C3  Hard Replace + Compass
-
-Large interaction studio
-    Symmetric return
-    Fast return
+fullscreen specialist workspace
+no visible project grid / map
+compact topology compass retained
 ```
-
-T6 Adaptive Retention by Workspace Type remains preserved but deferred.
 
 Current human gate:
 
 ```text
-review Batch A for source-object continuity
-review Batch B for relevant versus arbitrary retained context
-review Batch C for staging and minimal orientation
-compare symmetric versus fast return
-select mechanisms independently
-combine later where useful
-keep specialist-workspace internals schematic
+compare Z0-Z7
+judge which feels like entering the selected work unit
+judge spatial depth versus disorientation
+judge repeated-use comfort
+judge aperture / portal continuity
+judge whether pull-back before dive helps
+judge whether the compact compass is sufficient after the map disappears
+prefer / reject / combine / refine
 ```
 
 ---
@@ -287,8 +273,6 @@ docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_
 docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md
 ```
-
-Current interpretation:
 
 ```text
 SOURCE_SUBSTRATE_ACCEPTED
