@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-disposition-encoding="p0">
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-disposition-encoding="p7">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,17 +44,17 @@
         <div class="disposition-control-copy">
           <span class="section-kicker">Encoding family</span>
           <h2>Switch one disposition strategy at a time</h2>
-          <p>P6 now removes rhythm. P7 isolates the new colored-tag + tone combination without a disposition-colored outer perimeter.</p>
+          <p>P7 now tests the cleaner convergence candidate: neutral disposition tag + tone at rest, with state color revealed only on hover.</p>
         </div>
         <div class="segmented disposition-segmented" role="group" aria-label="Project disposition encoding family">
-          <button type="button" data-encoding="p0" aria-pressed="true">P0 Neutral</button>
+          <button type="button" data-encoding="p0" aria-pressed="false">P0 Neutral</button>
           <button type="button" data-encoding="p1" aria-pressed="false">P1 Hue</button>
           <button type="button" data-encoding="p2" aria-pressed="false">P2 Tag</button>
           <button type="button" data-encoding="p3" aria-pressed="false">P3 Tone</button>
           <button type="button" data-encoding="p4" aria-pressed="false">P4 Rhythm</button>
           <button type="button" data-encoding="p5" aria-pressed="false">P5 Hue + Tag</button>
           <button type="button" data-encoding="p6" aria-pressed="false">P6 Hue + Tag + Tone</button>
-          <button type="button" data-encoding="p7" aria-pressed="false">P7 Tag + Tone</button>
+          <button type="button" data-encoding="p7" aria-pressed="true">P7 Neutral Tag + Tone</button>
         </div>
         <label class="toggle-row disposition-toggle">
           <span>
@@ -65,7 +65,7 @@
         </label>
         <div class="disposition-summary">
           <span>Current encoding</span>
-          <strong id="encoding-summary">Neutral control</strong>
+          <strong id="encoding-summary">Neutral tag + tone</strong>
         </div>
       </section>
 
@@ -75,7 +75,7 @@
             <span class="section-kicker">Controlled comparison</span>
             <h2>Same work-unit category · six provisional project dispositions</h2>
           </div>
-          <span>Hover any node to verify state cues survive H4 interaction</span>
+          <span>Hover any node to see the neutral tag reveal its state color</span>
         </div>
 
         <div class="grammar-world disposition-world" id="disposition-world">
@@ -95,12 +95,12 @@
         <div class="practical-comparison-header">
           <div>
             <span class="section-kicker">Practical mixed-category check</span>
-            <h2>Does disposition remain clear once category colors and silhouettes vary?</h2>
-            <p>Both scenes use the same small project fixture. Only the disposition treatment changes.</p>
+            <h2>Does a neutral resting tag remove the category/disposition color conflict?</h2>
+            <p>Both scenes use the same small project fixture. The right scene keeps disposition color out of the resting work-unit frame and tag.</p>
           </div>
           <div class="practical-legend">
             <span><strong>P6</strong> colored perimeter + colored tag + tone</span>
-            <span><strong>P7</strong> colored tag + tone only</span>
+            <span><strong>P7</strong> neutral tag + tone; tag colors on hover</span>
           </div>
         </div>
 
@@ -109,7 +109,7 @@
             <header>
               <span>P6</span>
               <strong>Hue + Tag + Tone</strong>
-              <small>Tests whether disposition perimeter hue competes with category identity.</small>
+              <small>Previous colored hybrid retained as a comparison control.</small>
             </header>
             <div class="grammar-world practical-world" id="practical-p6">
               <div class="major-grid" aria-hidden="true"></div>
@@ -128,8 +128,8 @@
           <article class="practical-card" data-practical-encoding="p7">
             <header>
               <span>P7</span>
-              <strong>Tag + Tone</strong>
-              <small>Preserves category perimeter color and moves disposition identity into the tag plus tonal hierarchy.</small>
+              <strong>Neutral Tag + Tone</strong>
+              <small>Category color stays dominant. The disposition tag is neutral at rest and becomes state-colored only on hover.</small>
             </header>
             <div class="grammar-world practical-world" id="practical-p7">
               <div class="major-grid" aria-hidden="true"></div>
@@ -149,13 +149,13 @@
 
       <section class="review-prompt grammar-review disposition-review">
         <span class="section-kicker">Human review</span>
-        <h2>Judge P6 against P7 in both isolation and a mixed project scene</h2>
+        <h2>Verify the neutral-tag + tone convergence candidate</h2>
         <div class="review-questions">
-          <p>In the controlled rows, does P6's disposition-colored perimeter improve recognition enough to justify adding a second hue around a category-colored work unit?</p>
-          <p>Does P7 keep category identity cleaner while the colored tag still makes disposition sufficiently explicit?</p>
-          <p>In the practical scenes, which treatment remains easier to parse once Question, Investigation, Validation, Model and Evaluation categories coexist?</p>
+          <p>At rest, does P7 preserve category identity more cleanly than the colored P6 treatment?</p>
+          <p>When hovering a P7 work unit, does revealing the tag's state hue provide enough extra disposition emphasis without adding persistent color noise?</p>
+          <p>In the practical scene, can the neutral disposition text plus tonal hierarchy still be understood quickly across mixed categories?</p>
           <p>Does the tone applied to Completed, Deferred and Future communicate project position without making those work units look unimportant or disabled?</p>
-          <p>P4 rhythm remains preserved as experiment evidence, but rhythm is no longer part of P6.</p>
+          <p>P4 rhythm remains preserved as experiment evidence, but rhythm is not part of the convergence candidate.</p>
           <p>These states remain visual-test fixtures. This experiment does not freeze the final ADS project-disposition ontology.</p>
         </div>
       </section>
