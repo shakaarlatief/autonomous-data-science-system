@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-runtime-encoding="r0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Work-Unit Runtime Grammar</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-runtime-grammar.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header runtime-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02H · Runtime State</span>
+        <h1>How should a work unit communicate what is happening now without confusing category, disposition, priority or focus membership?</h1>
+        <p>The accepted work-unit category grammar, P7 Neutral Tag + Tone disposition treatment and current-process focus architecture are held conceptually separate. This slice isolates runtime state.</p>
+      </div>
+      <div class="runtime-held-state">
+        <span>Held semantic separation</span>
+        <strong>Category ≠ disposition ≠ runtime ≠ priority ≠ focus membership</strong>
+      </div>
+    </header>
+
+    <main class="grammar-main runtime-main">
+      <section class="grammar-intro runtime-intro">
+        <div>
+          <span class="section-kicker">Bounded design question</span>
+          <h2>Give live execution state its own visual channel</h2>
+          <p>Runtime state answers “what is happening now?”. It must not silently rewrite whether a work unit is Active, Deferred, Completed, Blocked or in the current focus set.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Runtime constraints">
+          <span>Category remains dominant</span>
+          <span>P7 disposition tag retained</span>
+          <span>Motion is semantic only</span>
+          <span>Reduced-motion fallback required</span>
+          <span>Readable without motion alone</span>
+        </div>
+      </section>
+
+      <section class="runtime-controls" aria-label="Runtime encoding controls">
+        <div class="runtime-control-copy">
+          <span class="section-kicker">Encoding family</span>
+          <h2>Switch one runtime carrier at a time</h2>
+          <p>R0 is the control. R1-R6 test progressively different channels while the underlying runtime states stay identical.</p>
+        </div>
+        <div class="segmented runtime-segmented" role="group" aria-label="Runtime encoding family">
+          <button type="button" data-runtime-encoding="r0" aria-pressed="true">R0 Neutral</button>
+          <button type="button" data-runtime-encoding="r1" aria-pressed="false">R1 Lamp</button>
+          <button type="button" data-runtime-encoding="r2" aria-pressed="false">R2 Activity Rail</button>
+          <button type="button" data-runtime-encoding="r3" aria-pressed="false">R3 Runtime Tag</button>
+          <button type="button" data-runtime-encoding="r4" aria-pressed="false">R4 Instrument Cell</button>
+          <button type="button" data-runtime-encoding="r5" aria-pressed="false">R5 Motion Signal</button>
+          <button type="button" data-runtime-encoding="r6" aria-pressed="false">R6 Restrained Hybrid</button>
+        </div>
+        <label class="toggle-row runtime-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Remove runtime animation while preserving static state identity.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+        <div class="runtime-summary">
+          <span>Current encoding</span>
+          <strong id="runtime-summary">Neutral control</strong>
+        </div>
+      </section>
+
+      <section class="runtime-preview" aria-label="Runtime controlled comparison">
+        <div class="runtime-preview-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same Investigation work unit · six provisional runtime states</h2>
+          </div>
+          <span>Disposition held ACTIVE · focus membership held current</span>
+        </div>
+
+        <div class="grammar-world runtime-world" id="runtime-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <div class="runtime-rows" id="runtime-rows"></div>
+        </div>
+      </section>
+
+      <section class="runtime-practical" aria-label="Runtime mixed-category practical scene">
+        <div class="runtime-practical-header">
+          <div>
+            <span class="section-kicker">Practical coexistence check</span>
+            <h2>Does runtime remain legible when category and disposition are already present?</h2>
+            <p>The same encoding is rendered across several categories and neutral P7 disposition tags. This is where clutter or semantic competition should become obvious.</p>
+          </div>
+          <div class="runtime-practical-legend">
+            <span>Category color = kind</span>
+            <span>Top-right neutral tag = disposition</span>
+            <span>Runtime carrier = current experiment</span>
+          </div>
+        </div>
+
+        <div class="grammar-world runtime-practical-world" id="runtime-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <svg class="runtime-relations" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+            <path />
+            <path />
+            <path />
+            <path />
+            <path />
+          </svg>
+          <div class="runtime-practical-nodes" id="runtime-practical-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review runtime-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge runtime as a distinct semantic layer</h2>
+        <div class="review-questions">
+          <p>Which carrier makes Running, Queued, Waiting, Waiting for Human and Failed understandable without stealing category identity?</p>
+          <p>Does a second text tag become too busy next to the neutral disposition tag?</p>
+          <p>Do the lamp, rail or instrument-cell approaches feel professional and learnable rather than decorative?</p>
+          <p>Does semantic motion help Running/Queued/Waiting, and does reduced motion preserve the same meaning?</p>
+          <p>In the mixed-category scene, is runtime still readable without making the Cockpit look like a monitoring dashboard?</p>
+          <p>The runtime fixtures are provisional. This experiment does not freeze the final ADS execution-state ontology.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-runtime-grammar.js"></script>
+  </body>
+</html>
