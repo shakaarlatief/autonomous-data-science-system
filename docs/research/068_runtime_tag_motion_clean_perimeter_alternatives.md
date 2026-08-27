@@ -1,9 +1,9 @@
 # Research 068: Runtime Tag Motion Clean Perimeter Alternatives
 
 **Date:** 2026-08-27  
-**Status:** Active Phase-C visual refinement evidence inside Checkpoint 237  
-**Scope:** Explores cleaner runtime-tag motion mechanisms after the project owner accepted the switchable runtime-carrier architecture but found the original rotating-gradient tag, the fixed-perimeter tracer, and several line-led alternatives visually imperfect. The latest refinement incorporates a user-supplied motion reference whose useful property is a broad, soft color/shade concentration flowing around a border rather than a crisp small line travelling around it.  
-**Authority:** Design evidence only. This memo does not freeze the final runtime carrier, final animation treatment, runtime ontology, project-disposition ontology, or production preference-persistence architecture.
+**Status:** Closed Phase-C visual refinement evidence inside Checkpoint 237; T7 Soft Shade Flow accepted for the runtime-tag carrier  
+**Scope:** Explores cleaner runtime-tag motion mechanisms after the project owner accepted the switchable runtime-carrier architecture but found the original rotating-gradient tag, the fixed-perimeter tracer, and several line-led alternatives visually imperfect. The final refinement incorporates a user-supplied motion reference whose useful property is a broad, soft color/shade concentration flowing around a border rather than a crisp small line travelling around it.  
+**Authority:** Accepted Phase-C design evidence for the runtime-tag motion mechanism. This memo does not freeze the final runtime ontology, production default carrier, project-disposition ontology, or production preference-persistence architecture.
 
 ## 1. Human evidence leading to this refinement
 
@@ -21,9 +21,9 @@ Global switch
 Per-box override
 ```
 
-The remaining concern is specifically the runtime-tag animation.
+The remaining concern was specifically the runtime-tag animation.
 
-Five observations now matter.
+Five observations mattered.
 
 ### Original rotating conic-gradient treatment
 
@@ -63,7 +63,7 @@ conceptually correct, but too sparse / literal to feel maximally polished
 
 ### User-supplied motion reference
 
-The project owner supplied a short visual reference and clarified that the desired quality is not necessarily its color palette. The useful motion characteristic is:
+The project owner supplied a short visual reference and clarified that the desired quality was not necessarily its color palette. The useful motion characteristic was:
 
 ```text
 not one crisp straight tracer
@@ -109,7 +109,7 @@ paint field
 
 Because the registered custom property did not inherit, the pseudo-elements kept the property's initial `0deg` value even while the parent animated. The animation was therefore real on the parent but invisible in the painted pseudo-elements.
 
-The correction changes the property to:
+The correction changed the property to:
 
 ```css
 @property --t7-shade-angle {
@@ -119,15 +119,11 @@ The correction changes the property to:
 }
 ```
 
-This is an implementation repair, not a new visual hypothesis. The intended T7 design remains the same soft masked shade-flow mechanism.
-
-The bounded question remains:
-
-> What runtime-tag motion feels alive, premium and clearly dynamic while keeping the tag itself completely stationary and making the moving element read as a soft perimeter shade rather than a travelling line or band?
+This was an implementation repair, not a new visual hypothesis.
 
 ## 2. Held constraints
 
-The following are held:
+The following remained held throughout:
 
 ```text
 runtime remains conditional
@@ -141,7 +137,7 @@ motion is semantic and must degrade under Reduced motion
 category and P7 disposition remain separate semantic channels
 ```
 
-## 3. Browser
+## 3. Browser evidence
 
 Local route:
 
@@ -158,7 +154,7 @@ frontend/design-lab/work-unit-runtime-tag-motion-shade.css
 frontend/design-lab/work-unit-runtime-tag-motion.js
 ```
 
-Exact latest browser implementation target:
+Exact accepted T7 browser implementation target:
 
 ```text
 08534f94c2f272f969159087de2797a23e36b330
@@ -182,11 +178,11 @@ Previous seven-candidate target remains preserved at:
 6be6eddefc5bd54914d64199ef59911c3d0aec9b
 ```
 
-Production `/cockpit` remains untouched.
+Production `/cockpit` remained untouched.
 
 ## 4. Candidate motion families
 
-The browser continues to compare nine treatments while holding the same `Current + RUN` Investigation work unit constant.
+The browser compared nine treatments while holding the same `Current + RUN` Investigation work unit constant.
 
 ### T0 Static Control
 
@@ -194,16 +190,12 @@ The browser continues to compare nine treatments while holding the same `Current
 no runtime-tag animation
 ```
 
-Purpose: test whether motion improves the tag enough to justify itself.
-
 ### T1 Short Tracer
 
 ```text
 one small luminous segment
 travels around the real rounded-rectangle perimeter
 ```
-
-This preserves the first fixed-perimeter refinement as a control rather than silently replacing it.
 
 ### T2 Comet Flow
 
@@ -215,16 +207,12 @@ longer lower-opacity wake
 continuous perimeter travel
 ```
 
-The intention is to keep the geometric cleanliness of the real SVG perimeter while giving the motion more visual body than the short tracer.
-
 ### T3 Perimeter Current
 
 ```text
 restrained repeated dash pattern
 moves through the full outline
 ```
-
-This tests the intuitive description that the line itself could appear to move around itself. Rather than one object travelling around a static border, the whole perimeter reads as carrying current.
 
 ### T4 Twin Orbit
 
@@ -233,16 +221,12 @@ two opposite luminous accents
 circulate together
 ```
 
-This reduces the long empty interval produced by a single tracer while keeping the treatment symmetric and bounded.
-
 ### T5 Long Glide
 
 ```text
 one longer highlighted band
 moves calmly around the perimeter
 ```
-
-This is intentionally quieter than T3 and fuller than T1.
 
 ### T6 Soft Pulse
 
@@ -251,8 +235,6 @@ no directional travel
 whole perimeter gently brightens and relaxes
 ```
 
-This tests whether a premium dynamic tag needs directional circulation at all.
-
 ### T7 Soft Shade Flow, masked-paint implementation
 
 T7 is structurally different from T5 and the first T7 attempt.
@@ -260,7 +242,7 @@ T7 is structurally different from T5 and the first T7 attempt.
 ```text
 tag geometry        fixed
 text                fixed
-SVG base border     fixed
+base border mask    fixed
 
 moving mechanism
     broad conic paint field
@@ -286,7 +268,7 @@ inner layer
 
 The gradient angle changes while the element itself remains stationary. The custom angle property is inherited into the pseudo-elements so the moving paint field is actually visible.
 
-The intended perceptual result is:
+The perceptual target is:
 
 ```text
 not a line doing a lap
@@ -298,11 +280,9 @@ instead
     shifting continuously through the border
 ```
 
-T7 remains the default practical-scene candidate for review.
-
 ### T8 Layered Wash
 
-T8 preserves the prior more organic multi-stroke interpretation as a comparator.
+T8 preserved the more organic multi-stroke interpretation as a comparator:
 
 ```text
 long diffuse perimeter wash
@@ -314,13 +294,9 @@ shorter brighter concentration
 slightly different travel rates / direction
 ```
 
-The overlap changes continuously, so the brightest region evolves while everything remains constrained to the real rounded-rectangle perimeter.
-
-The purpose is to test whether a more fluid, less mechanically uniform shade looks premium or instead becomes unnecessarily busy at Cockpit scale.
-
 ## 5. Practical coexistence check
 
-The page includes the same mixed-category runtime fixture used in the switchable-carrier work:
+The page used the same mixed-category runtime fixture as the switchable-carrier work:
 
 ```text
 Question        CURRENT + HUMAN
@@ -331,29 +307,17 @@ Evaluation      DEFER + NONE
 Investigation   FUTURE + NONE
 ```
 
-A segmented control applies T0-T8 to all live runtime tags in this scene.
-
-The practical scene opens on:
-
-```text
-T7 Soft Shade Flow
-```
-
-This is important because an effect that looks attractive on one isolated tag may become noisy when four different runtime states animate simultaneously.
+The practical scene opened on T7 Soft Shade Flow so the selected mechanism could be judged with multiple live runtime states present at once.
 
 ## 6. Runtime-sensitive pacing
 
-The runtime state continues to influence motion cadence rather than changing the carrier architecture.
+Runtime state continues to influence motion cadence rather than carrier architecture.
 
-For T7, the entire paint field remains coherent while only its circulation speed changes by runtime state.
-
-T8 keeps its layered motion but scales the three layer speeds by runtime state so `Running` remains more energetic than `Waiting`, for example.
-
-These timings remain provisional visual evidence rather than a frozen semantic mapping.
+For T7, the entire paint field remains coherent while only circulation speed changes by runtime state. These timings remain provisional visual evidence rather than a frozen semantic mapping.
 
 ## 7. Reduced motion
 
-Reduced motion disables all semantic animation while preserving:
+Reduced motion disables semantic animation while preserving:
 
 ```text
 runtime code
@@ -361,46 +325,76 @@ runtime state color
 static rounded-rectangle perimeter
 ```
 
-For T7, the moving masked paint layers disappear under Reduced motion. For T8, the moving wash strokes disappear. No runtime meaning depends on motion alone.
+For T7, the moving masked paint layers disappear under Reduced motion. No runtime meaning depends on motion alone.
 
-## 8. Current review questions
+## 8. Final human review and accepted result
+
+After the inheritance repair, the project owner reviewed T7 again and responded:
 
 ```text
-1. Is repaired T7 visibly moving now?
-2. Does T7 stop reading like T5 Long Glide?
-3. Does T7 read as a soft shade / illumination field moving through the border rather than as a line or band travelling around it?
-4. Does the fixed mask eliminate the rotating-box / clipping artifact while retaining continuous movement?
-5. Does T8 still offer anything preferable, or does its multi-stroke character feel more technical than T7?
-6. Which treatment looks cleanest and most premium at actual runtime-tag scale?
-7. Which variants remain calm when several runtime tags coexist in the practical scene?
-8. Does Reduced motion preserve a clean static runtime tag?
+Perfect. Proceed.
+```
+
+That closes the runtime-tag motion refinement for the current Phase-C round.
+
+Accepted visual result:
+
+```text
+T7 Soft Shade Flow
+    SELECTED for the Animated runtime tag carrier
+
+stationary tag geometry
+stationary text
+stationary border mask
+broad soft shade field flows through the perimeter
+no travelling dash as the dominant read
+no rotating inner rectangle
+no clipping artifact from rotating geometry
+```
+
+The switchable-carrier browser was then updated so the main runtime-tag carrier uses the accepted T7 mechanism rather than the temporary perimeter tracer.
+
+Exact integrated switchable-runtime browser target:
+
+```text
+fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
+```
+
+The broader runtime presentation direction retained for Phase C is therefore:
+
+```text
+runtime is conditional / episode-scoped
++
+exactly one live-runtime carrier per work unit
++
+Dot + dynamic ring
+or
+T7 Soft Shade runtime tag
++
+global carrier switching
++
+per-work-unit local overrides
++
+No runtime -> no carrier
++
+Reduced motion preserves static identity
 ```
 
 ## 9. Checkpoint hygiene
 
-No new checkpoint is created for this refinement.
+No additional checkpoint was created for the intermediate T7 refinements because Checkpoint 237 already owned the runtime-carrier convergence gate and the changes were visual/implementation refinements inside that same gate.
 
-Reason:
-
-```text
-Checkpoint 237 already owns the switchable runtime-carrier convergence gate
-+
-this change repairs and refines only the visual motion mechanism inside the runtime-tag carrier
-+
-no semantic ontology, promotion status, routing boundary or production authorization changes
-```
-
-The refinement is therefore preserved in Git plus this active research record, consistent with the rapid-iteration checkpoint-hygiene rule established in Research 064.
+A new checkpoint becomes warranted only now that human acceptance closes the runtime-carrier review boundary and the project proceeds to a distinct semantic/design question.
 
 ## 10. Still unfrozen
 
 ```text
-preferred runtime-tag motion
-whether multiple runtime-tag motion styles survive
-final runtime carrier default
-production runtime-carrier persistence scope
 final runtime ontology
-final Blocked semantics
+whether both carriers survive unchanged to production
+production default runtime carrier
+production runtime-carrier persistence scope
+final runtime-sensitive motion pacing
 final project-disposition ontology
 runtime-flow connector semantics
+historical execution-attempt presentation
 ```
