@@ -1,0 +1,34 @@
+/*
+ * Keep anchored workspace geometry numerically interpolable.
+ * The base comparison stylesheet intentionally expresses final geometry in
+ * familiar inset terms. These overrides use explicit width/height calculations
+ * so browser transitions can interpolate from the measured X5 card rectangle
+ * instead of snapping when width/height would otherwise change to `auto`.
+ */
+[data-style="a0"].is-focused .workspace-shell {
+  right:auto;
+  bottom:auto;
+  width:calc(100% - 36px);
+  height:calc(100% - 36px);
+}
+
+[data-style="a1"].is-focused .workspace-shell {
+  right:auto;
+  bottom:auto;
+  width:calc(100% - 56px);
+  height:calc(100% - 56px);
+}
+
+[data-style="a2"].is-focused .workspace-shell {
+  right:auto;
+  bottom:auto;
+  width:calc(78% - 10px);
+  height:calc(100% - 20px);
+}
+
+[data-style="b2"].is-focused .workspace-shell {
+  right:auto;
+  bottom:auto;
+  width:calc(100% - 160px);
+  height:calc(100% - 24px);
+}
