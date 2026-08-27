@@ -27,7 +27,7 @@ human project owner
 Current checkpoint:
 
 ```text
-233
+234
 ```
 
 Current browser route:
@@ -36,10 +36,10 @@ Current browser route:
 http://localhost:5173/design-lab/work-unit-process-focus.html
 ```
 
-Exact browser implementation target:
+Exact editable-focus browser implementation target:
 
 ```text
-b311796f86ff577354a2bfe14b850bd6a49a9c06
+da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
 ## Preserved disposition result
@@ -60,39 +60,61 @@ HOVER
 
 The final project-disposition ontology remains unfrozen.
 
-## Active current-process focus review
+## Preserved focus-lens result
 
-The new slice separates:
-
-```text
-project disposition
-current-process membership
-view emphasis
-```
-
-Browser modes:
+The project owner also accepted the stronger current-process focus lens:
 
 ```text
 Context visible
-    accepted P7 treatment remains readable
+    all project context remains readable
 
 Focus current process
-    current-process fixtures retain full salience
-    contextual fixtures are strongly suppressed
-    contextual connector segments recede
-    contextual nodes partially recover on hover
+    current-focus work stays dominant
+    outside-focus work is strongly suppressed
+    suppressed context remains hover-recoverable
+    contextual connector segments also recede
 ```
 
-Current-process membership is explicit fixture metadata and is not inferred from disposition.
+## Active editable focus-set review
+
+The focus set is now user-curatable.
+
+```text
+Edit focus set
+    reveal per-node membership controls
+
++ FOCUS
+    add a work unit to current focus
+
+- FOCUS
+    remove a work unit from current focus
+
+Reset example
+    restore the example membership
+```
+
+This changes focus membership only. It does not delete a work unit or change its disposition.
+
+Membership changes immediately update:
+
+```text
+node suppression
+focus membership count
+connector current/context classification
+```
+
+Browser `localStorage` is prototype-only convenience and does not freeze production persistence.
 
 Current human gate:
 
 ```text
-compare Context visible vs Focus current process
-verify stronger suppression makes the actual process dominant
-verify hover recovery remains useful but subordinate
-verify contextual connector suppression
-prefer / reject / refine the focus lens
+verify Edit focus set is clear and unobtrusive
+verify + FOCUS / - FOCUS do not imply deletion
+verify focused hierarchy changes immediately
+verify connector suppression follows edited membership
+verify edit-mode recovery keeps outside-focus nodes operable
+verify refresh persistence and Reset example behavior
+prefer / reject / refine
 ```
 
 Runtime state, importance and C5 Internal Layout Grammar remain separate future slices.
