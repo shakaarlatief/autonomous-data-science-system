@@ -60,13 +60,11 @@ Model Work                diamond
 Evaluation                plus
 ```
 
-## Work-unit grammar result
-
 Foundation 023 promotes the durable split between semantic work-unit meaning and approved user-configurable appearance.
 
-Current positive mechanisms include scientific markers, Reduced in-box light, M1 micro-material treatment, Evaluation-like micro-light character and subtle true-shape variants.
+Foundation 024 preserves connector treatment, hover/focus and semantic directionality as separate dimensions.
 
-## Connector treatment and hover architecture
+## Connector and relation results
 
 Current connector treatments:
 
@@ -77,31 +75,7 @@ Frame sockets
 Direction arrows
 ```
 
-Current interaction rule:
-
-```text
-one terminal treatment normally active at a time
-+
-hover / focus is an orthogonal reveal or emphasis mechanism
-```
-
-Foundation 024 records this architecture while preserving system-owned relation semantics.
-
-## Directionality result
-
-Exact accepted browser target:
-
-```text
-07d573b6569b9f09a3b7e00936f3eadecee721b3
-```
-
-Human review result:
-
-```text
-Yes, perfect. We can proceed.
-```
-
-Directionality is sufficiently settled for the current Phase-C design work:
+Accepted directionality:
 
 ```text
 D0  Undirected      no arrow
@@ -110,50 +84,29 @@ D2  Reverse         same arrow at A
 D3  Bidirectional   same arrow at both endpoints
 ```
 
-## Relation-class grammar result
-
-Research 057 opened E0-E6 across provisional relation fixtures. Human review selected E5 Hue + Tag and preserved stroke rhythm for a different future line-level semantic dimension.
-
-Current relation-class rule:
+Exact accepted directionality target:
 
 ```text
-RELATION CLASS
-    restrained semantic hue
-    + compact explicit tag
-
-STROKE RHYTHM
-    preserved
-    not rejected
-    no semantic meaning assigned yet
+07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-The final tag treatment was refined through several small human corrections:
+Relation-class visual encoding is sufficiently settled for the current Phase-C design phase:
 
 ```text
-height          22 SVG units
-corner radius   7
-text size       8.2 px
-tracking        0.05em
-tag position    clearly above the connector line with restored gap
+E5  Hue + Tag
 ```
 
-Latest accepted relation-class browser target:
+Latest accepted relation-class target:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-Final human result:
-
-```text
-Perfect. Let's proceed.
-```
-
-Relation-class visual encoding is therefore sufficiently settled for the current Phase-C design phase. The relation ontology itself remains unfrozen.
+Stroke rhythm remains preserved for a different future line-level semantic dimension and currently has no assigned meaning.
 
 ## Current Slice 02F: work-unit project disposition
 
-The next bounded work-unit question isolates project disposition from three other semantic axes:
+The current semantic separation remains:
 
 ```text
 WHAT IS THIS?
@@ -169,16 +122,82 @@ HOW IMPORTANT IS IT NOW?
     priority / relevance, held out
 ```
 
-Research:
+Initial disposition research:
 
 ```text
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 ```
 
+The first browser exposed:
+
+```text
+P0  Neutral Control
+P1  Disposition Hue
+P2  Explicit Tag
+P3  Tonal Hierarchy
+P4  State Rhythm
+P5  Hue + Tag
+P6  Restrained Hybrid
+```
+
+Representative visual-test dispositions remain provisional:
+
+```text
+S0  Active / Current
+S1  Recommended / Next
+S2  Deferred
+S3  Completed
+S4  Blocked
+S5  Future / Not yet active
+```
+
+## Human refinement after first disposition review
+
+The project owner requested:
+
+```text
+P6
+    remove state rhythm
+
+new candidate
+    colored disposition tag + tone
+    no disposition-colored perimeter
+
+practical check
+    show both candidates with multiple work-unit categories
+    judge whether category and disposition become confusing together
+```
+
+The active convergence candidates are therefore:
+
+```text
+P6  Hue + Colored Tag + Tone
+    disposition perimeter hue
+    colored tag
+    selective tone
+    no rhythm
+
+P7  Colored Tag + Tone
+    no disposition perimeter hue
+    colored tag
+    same selective tone
+    no rhythm
+```
+
+P4 State Rhythm remains preserved as standalone experiment evidence.
+
+## Practical mixed-category comparison
+
+Research:
+
+```text
+docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
+```
+
 Checkpoint:
 
 ```text
-docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
 ```
 
 Browser route:
@@ -195,40 +214,34 @@ Local URL:
 http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-565fdeabc1ebaa29f993699a4c0673b29e972be3
+2056bb31d7cb90766e112bc26aaf7339fb568242
 ```
 
-Representative visual-test states:
+The browser now renders the same practical project fixture twice, once with P6 and once with P7, using multiple category identities:
 
 ```text
-S0  Active / Current
-S1  Recommended / Next
-S2  Deferred
-S3  Completed
-S4  Blocked
-S5  Future / Not yet active
+Question / Blocker
+Investigation
+Validation / Analysis
+Model Work
+Evaluation
 ```
 
-These are not a frozen ADS project-state ontology.
-
-Encoding families:
+and representative dispositions:
 
 ```text
-P0  Neutral Control
-P1  Disposition Hue
-P2  Explicit Tag
-P3  Tonal Hierarchy
-P4  State Rhythm
-P5  Hue + Tag
-P6  Restrained Hybrid
+Blocked
+Active
+Recommended
+Completed
+Deferred
+Future
 ```
 
-Held controls include the same Investigation category, scientific square marker, Subtle shape, M1 material, Reduced light and H4 hover behavior.
-
-Runtime state and importance are intentionally absent from this experiment.
+Neutral connectors are dynamically attached to rendered work-unit geometry so connector defects do not contaminate the disposition comparison.
 
 ## Dependency-bound ideas
 
@@ -243,12 +256,16 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human compares P0-P6 across S0-S5
--> prefer / reject / combine / refine disposition mechanisms
--> preserve winning project-disposition evidence
--> do not freeze the state ontology
--> keep runtime state and importance separate
+human compares P6 vs P7 in controlled rows
++
+human compares P6 vs P7 in practical mixed-category scenes
+-> determine whether disposition perimeter hue adds clarity or category-color confusion
+-> determine whether colored tag + tone alone is sufficiently clear
+-> prefer / reject / combine / refine
+-> do not freeze the final disposition ontology
 ```
+
+Runtime-state and priority/importance visual grammars remain separate future slices.
 
 ## Production boundary
 
