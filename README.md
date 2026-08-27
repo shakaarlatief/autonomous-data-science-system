@@ -152,7 +152,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
 Research and checkpoint:
