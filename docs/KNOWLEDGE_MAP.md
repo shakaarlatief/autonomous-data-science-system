@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 234  
+**Current checkpoint:** 235  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,13 +23,58 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        234
+checkpoint                        235
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  user-curated current-process focus-set human review
+current boundary                  work-unit runtime-state visual-grammar human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
+
+---
+
+# Repository preservation / development-method route
+
+Checkpoint-format authority:
+
+```text
+docs/checkpoints/README.md
+scripts/check_checkpoint_metadata.py
+.github/workflows/checkpoint-metadata.yml
+```
+
+Rapid-iteration audit:
+
+```text
+docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
+```
+
+Current audit result:
+
+```text
+architecture                  SOUND
+Checkpoints 223-234           metadata/provenance repaired
+metadata validator            PASS after repair
+micro-checkpointing rule      HARDENED
+checkpoint validation gate    HARDENED
+routing push validation       HARDENED
+new knowledge subsystem       NOT JUSTIFIED
+```
+
+Verified metadata-validation repair point:
+
+```text
+d2541418a68b9bfd244ec89e4e951e630b3bb61b
+```
+
+Current-routing guard:
+
+```text
+scripts/check_current_routing.py
+.github/workflows/current-routing-consistency.yml
+```
+
+The workflow now validates guarded routing surfaces on all pushes that touch them.
 
 ---
 
@@ -134,94 +179,112 @@ HOVER
     disposition tag reveals state-specific hue
 ```
 
-Latest accepted P7 implementation before opening the focus-lens slice:
+Latest accepted P7 implementation:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-P4 State Rhythm and earlier colored alternatives remain preserved as experiment/history evidence.
-
 The final project-disposition ontology remains unfrozen.
 
 ---
 
-# Current Slice 02G: current-process focus lens and editable focus set
+# Current-process focus result
 
 Primary evidence:
 
 ```text
 docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
 docs/research/063_user_curated_current_process_focus_membership.md
-```
-
-Current checkpoint:
-
-```text
-docs/checkpoints/234_user_curated_current_process_focus_set_review_opened.md
-```
-
-Browser route:
-
-```text
 frontend/design-lab/work-unit-process-focus.html
-frontend/design-lab/work-unit-process-focus.css
-frontend/design-lab/work-unit-process-focus.js
 ```
 
-Local URL:
+Human-accepted current direction:
 
 ```text
-http://localhost:5173/design-lab/work-unit-process-focus.html
+Context visible
+Focus current process
+Edit focus set
+Reset example
 ```
 
-Exact implementation target:
+The user can add/remove work units from the current focus without deleting work or changing disposition. Outside-focus nodes and connector segments recede strongly in focus mode and remain recoverable for inspection/editing.
+
+Exact accepted editable-focus implementation:
 
 ```text
 da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
+Final focus-set ownership/persistence, automatic suggestions, multiple named lenses and exact membership semantics remain open.
+
+---
+
+# Current Slice 02H: work-unit runtime state
+
+Primary evidence:
+
+```text
+docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
+docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-runtime-grammar.html
+frontend/design-lab/work-unit-runtime-grammar.css
+frontend/design-lab/work-unit-runtime-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-runtime-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+099e516bf9a7351a756bee00037edbcc731a2738
+```
+
 Semantic separation:
 
 ```text
-work-unit existence         whether the work unit exists in the project
-project disposition         semantic state of the work unit
-current-focus membership    whether it belongs to the emphasized process set
-view emphasis               how strongly work outside the focus is suppressed
+category                  what is this?
+project disposition       where does it stand in the project?
+runtime                    what is happening now?
+priority / relevance       how important is it now?
+current-focus membership   is it in the emphasized process set?
 ```
 
-Lens modes:
+Provisional runtime fixtures:
 
 ```text
-Context visible
-    accepted P7 treatment remains readable
-
-Focus current process
-    in-focus nodes remain full salience
-    outside-focus nodes are strongly suppressed
-    contextual connector segments recede
-    suppressed nodes partially recover on hover
+Idle
+Queued
+Running
+Waiting
+Waiting for Human
+Failed
 ```
 
-Editable membership:
+Browser families:
 
 ```text
-Edit focus set
-    reveal per-node membership controls
-
-+ FOCUS
-    add node to current focus
-
-- FOCUS
-    remove node from current focus
-
-Reset example
-    restore the example fixture
+R0  Neutral Control
+R1  Status Lamp
+R2  Activity Rail
+R3  Runtime Tag
+R4  Instrument Cell
+R5  Motion Signal
+R6  Restrained Hybrid
 ```
 
-Membership changes immediately update node suppression, membership counts and connector current/context classification.
+The page contains controlled same-category rows, a mixed-category project scene and a Reduced motion comparison.
 
-Browser `localStorage` is used only as prototype convenience. Final focus-set ownership, persistence, automatic suggestions and multiple named lenses remain open.
+The final ADS runtime ontology and runtime-flow connector semantics remain unfrozen.
 
 ---
 
