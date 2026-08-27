@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            231
+checkpoint            232
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      refined P6 vs P7 project-disposition mixed-category human review
+current boundary      P7 Neutral Tag + Tone disposition human verification
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -56,34 +56,7 @@ Model Work                diamond
 Evaluation                plus
 ```
 
-Foundation 023 preserves user-configurable non-semantic work-unit appearance while ADS owns semantic meaning.
-
-Current proven appearance dimensions:
-
-```text
-Box shape       Normal / Subtle shapes
-Micro design    None / Micro material / Micro light
-```
-
-Foundation 024 preserves configurable connector treatment, orthogonal hover/focus behavior and system-owned relation directionality.
-
-Current connector treatments:
-
-```text
-Clean
-Micro dots
-Frame sockets
-Direction arrows
-```
-
-Accepted direction grammar:
-
-```text
-Undirected      no arrow
-Forward         arrow at B
-Reverse         same arrow at A
-Bidirectional   same arrow at both endpoints
-```
+Foundation 023 preserves user-configurable non-semantic work-unit appearance while ADS owns semantic meaning. Foundation 024 preserves configurable connector treatment, orthogonal hover/focus behavior and system-owned relation directionality.
 
 Relation-class visual grammar is sufficiently settled for the current phase:
 
@@ -112,7 +85,7 @@ WHAT IS HAPPENING NOW?         runtime, held out
 HOW IMPORTANT IS IT NOW?       priority / relevance, held out
 ```
 
-Representative visual-test dispositions:
+Representative visual-test dispositions remain provisional:
 
 ```text
 Active / Current
@@ -123,25 +96,21 @@ Blocked
 Future / Not yet active
 ```
 
-After first human review, the convergence comparison is now:
+Mixed-category review showed that persistent disposition color competes with category identity. The current convergence candidate is therefore:
 
 ```text
-P6  Hue + Colored Tag + Tone
-    disposition-colored outer perimeter
-    colored tag
-    selective tone
-    no rhythm
+P7  Neutral Tag + Tone
 
-P7  Colored Tag + Tone
-    no disposition-colored outer perimeter
-    colored tag
-    same selective tone
-    no rhythm
+REST
+    category color remains dominant
+    disposition tag remains neutral
+    Completed / Deferred / Future retain selective tonal recession
+
+HOVER
+    disposition tag reveals the state-specific hue
 ```
 
-P4 State Rhythm remains preserved as standalone experiment evidence.
-
-The browser now includes a side-by-side practical project fixture where P6 and P7 are rendered with Question, Investigation, Validation, Model and Evaluation categories together. This specifically tests whether disposition perimeter hue competes with category hue.
+P4 State Rhythm, P6 Hue + Colored Tag + Tone and the earlier colored P7 remain preserved as experiment/history evidence.
 
 Browser:
 
@@ -152,14 +121,14 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-87927bef327be0a0cc9ccf9fb153aa0c7b226e92
+fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
 Research and checkpoint:
 
 ```text
-docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
-docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
+docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
 ```
 
 ---
@@ -190,7 +159,6 @@ Not yet authorized:
 production Cockpit replacement
 production appearance persistence
 final project-disposition ontology
-final project-disposition visual grammar
 runtime-state / priority visual grammar
 final semantic relation taxonomy
 production relation colors / codes
@@ -227,9 +195,8 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
-docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
-docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
+docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
+docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
 frontend/design-lab/work-unit-disposition-grammar.html
 
 docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
@@ -248,11 +215,11 @@ docs/model_collaboration/REVIEW_INBOX.md
 ```text
 1. pull v1-cockpit-design-exploration
 2. open http://localhost:5173/design-lab/work-unit-disposition-grammar.html
-3. compare controlled P6 and P7
-4. compare the side-by-side practical P6 and P7 mixed-category scenes
-5. judge whether disposition perimeter hue adds clarity or semantic/color confusion
-6. judge whether colored tag + tone alone is sufficient
-7. refine or select without freezing the final project-disposition ontology
-8. keep runtime and priority separate
+3. verify P7 opens by default
+4. verify the disposition tag is neutral at rest
+5. hover P7 nodes and verify the tag reveals state color
+6. inspect the mixed-category P7 scene for reduced category/disposition confusion
+7. judge tonal recession separately from importance
+8. if accepted, close the disposition carrier for current Phase C
 9. keep production Cockpit untouched
 ```
