@@ -24,6 +24,7 @@
       "docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md",
       "docs/research/074_work_unit_internal_layout_grammar_experiment.md",
       "docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md",
+      "docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
       "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md",
@@ -67,12 +68,12 @@
       "paths": ["docs/model_collaboration/threads/MC-0004/messages/**"]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 075 Phase-C Cockpit design evidence",
+      "Research 037 through 076 Phase-C Cockpit design evidence",
       "scientific marker work-unit category grammar",
       "Reduced in-box resting light",
       "Foundation 023 configurable work-unit appearance and semantic invariants",
@@ -92,12 +93,11 @@
       "X5 balanced two-axis expansion selected without surrounding-context recession",
       "accepted refined X5 target 94bc1100b7388cc56497cafc03051ce326424a80",
       "L0 Flat Fields retained only as provisional working default; L1-L8 preserved for later",
-      "deep-focus transition browser exact latest implementation target afd15f52897a295788dc3a1d04b2d1b31ef707f9",
-      "known deep-focus fixture imperfection: only two SEL2 brackets rendered although accepted SEL2 uses four",
-      "Message 005 asks Claude for unrestricted divergent deep-focus transition ideation",
-      "Claude Message 004 divergent work-unit grammar ideation"
+      "original deep-focus transition browser exact latest implementation target afd15f52897a295788dc3a1d04b2d1b31ef707f9",
+      "Claude Message 006 deep-focus divergent ideation commit 204664ae1e732dd504174bbc62545e9a93adc85f",
+      "factorized deep-focus browser exact implementation target 0390d8fef9d6647ae17ecd7c948159d0a5b603e5"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude's latest completed Phase-C contribution remains faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has accepted the current disposition, current-process focus, conditional runtime carrier, T7 motion, blocker/BLOCKED model, shared operational-status presentation, BLOCKED/FAIL ring mapping, A3 Signal Bars, SEL2 Corner Brackets, and X5 balanced two-axis contextual expansion without surrounding-context recession. Internal layout is deferred with L0 as working default. The active gate remains deep-focus transition/context-retention architecture. Message 005 now requests Claude to broaden F0-F8 without an artificial candidate-count limit and to recommend as much executable browser testing as the design space warrants.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude's latest completed contribution is Message 006 at commit 204664ae1e732dd504174bbc62545e9a93adc85f. ChatGPT synthesized that response into Research 076 and a factorized browser separating object continuity, context relevance, staging/orientation and return timing. The active gate remains Checkpoint 243 deep-focus transition review. No Claude action is pending; the next actor is the human project owner.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -123,15 +123,17 @@
       "PHASE_C_EXPANDED_WORK_UNIT_INTERNAL_LAYOUT_REVIEW",
       "PHASE_C_INTERNAL_LAYOUT_DEFERRED_L0_WORKING_DEFAULT",
       "PHASE_C_DEEP_FOCUS_TRANSITION_REVIEW",
-      "PHASE_C_DEEP_FOCUS_TRANSITION_CLAUDE_DIVERGENT_IDEATION_REQUESTED"
+      "PHASE_C_DEEP_FOCUS_TRANSITION_CLAUDE_DIVERGENT_IDEATION_REQUESTED",
+      "PHASE_C_DEEP_FOCUS_TRANSITION_CLAUDE_RESPONSE_RECEIVED",
+      "PHASE_C_DEEP_FOCUS_TRANSITION_FACTORIZED_BROWSER_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-deep-focus-transition-claude-divergent-ideation-requested",
+    "transition_id": "mc0004-claude-deep-focus-response-synthesized-factorized-browser-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
-    "actor": "human",
-    "reason": "The project owner explicitly requested Claude's ideas and inspiration for the deep-focus transition and authorized unrestricted exploration breadth. ChatGPT created Message 005 asking Claude to audit F0-F8, propose any materially distinct new mechanisms or combinations worth testing, and avoid artificial candidate-count narrowing.",
-    "repository_head": "77aa85833729c7c3e6cdd6cb4c6074814def85ee"
+    "actor": "chatgpt",
+    "reason": "Claude answered Message 005 with seven transition concepts and a structural diagnosis that object continuity, context retention, staging/orientation and return behavior should be tested as separable dimensions. ChatGPT synthesized that response into Research 076 and an eleven-candidate factorized browser with T4 asymmetric return exposed as a modifier rather than another monolithic tile.",
+    "repository_head": "0390d8fef9d6647ae17ecd7c948159d0a5b603e5"
   }
 }
