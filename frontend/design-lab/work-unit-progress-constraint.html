@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-constraint="c6">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Progress Constraint</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-progress-constraint.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header constraint-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02I · Progress Constraint</span>
+        <h1>How should a work unit show that it cannot proceed without turning BLOCKED into another disposition or runtime state?</h1>
+        <p>The runtime slice is now held as conditional and switchable. This next browser isolates a different question: whether BLOCKED belongs to an orthogonal progress-constraint axis, and how that constraint can remain visually distinct from category, project disposition and runtime.</p>
+      </div>
+      <div class="constraint-held-state">
+        <span>Held semantic separation</span>
+        <strong>Disposition ≠ constraint ≠ runtime</strong>
+        <small>A blocker work-unit category is also distinct from a blocked work unit.</small>
+      </div>
+    </header>
+
+    <main class="grammar-main constraint-main">
+      <section class="grammar-intro constraint-intro">
+        <div>
+          <span class="section-kicker">Semantic correction under test</span>
+          <h2>Blocked describes inability to proceed, not where the work sits in the project lifecycle</h2>
+          <p>A Current or Next work unit can plausibly be Blocked. A live runtime episode can be Waiting without the work unit being Blocked. Conversely, a Blocked work unit may have no live runtime episode at all. The visual experiment below keeps those concepts separate.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Progress-constraint constraints">
+          <span>Current + Blocked is valid</span>
+          <span>Next + Blocked is valid</span>
+          <span>WAIT runtime ≠ Blocked</span>
+          <span>Question / Blocker kind ≠ Blocked state</span>
+          <span>No runtime may coexist with Blocked</span>
+          <span>Production ontology remains unfrozen</span>
+        </div>
+      </section>
+
+      <section class="constraint-controls" aria-label="Progress constraint controls">
+        <div class="constraint-control-copy">
+          <span class="section-kicker">Practical preview</span>
+          <h2>Apply one BLOCKED treatment to the realistic scene</h2>
+          <p>The controlled rows show every candidate simultaneously. These buttons apply one candidate to every blocked node in the practical scene while leaving category, disposition and runtime untouched.</p>
+        </div>
+        <div class="segmented constraint-segmented" role="group" aria-label="Blocked visual treatment">
+          <button type="button" data-constraint-style="c0" aria-pressed="false">C0 Neutral</button>
+          <button type="button" data-constraint-style="c1" aria-pressed="false">C1 Explicit Tag</button>
+          <button type="button" data-constraint-style="c2" aria-pressed="false">C2 Edge Clamp</button>
+          <button type="button" data-constraint-style="c3" aria-pressed="false">C3 Stop Rail</button>
+          <button type="button" data-constraint-style="c4" aria-pressed="false">C4 Barrier Seal</button>
+          <button type="button" data-constraint-style="c5" aria-pressed="false">C5 Constraint Veil</button>
+          <button type="button" data-constraint-style="c6" aria-pressed="true">C6 Tag + Clamp</button>
+        </div>
+        <div class="constraint-summary">
+          <span>Practical scene</span>
+          <strong id="constraint-summary">C6 · Tag + Clamp</strong>
+          <small>Only blocked-node presentation changes.</small>
+        </div>
+      </section>
+
+      <section class="constraint-preview" aria-label="Controlled blocked visual comparison">
+        <div class="constraint-preview-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same Current Investigation + BLOCKED + no runtime · seven treatments</h2>
+          </div>
+          <span>Everything except progress-constraint treatment held constant</span>
+        </div>
+
+        <div class="grammar-world constraint-world" id="constraint-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <div class="constraint-rows" id="constraint-rows"></div>
+        </div>
+      </section>
+
+      <section class="constraint-practical" aria-label="Progress-constraint practical scene">
+        <div class="constraint-practical-header">
+          <div>
+            <span class="section-kicker">Semantic coexistence check</span>
+            <h2>Can BLOCKED remain obvious without being confused with WAIT, HUMAN, Current, Next or the Question / Blocker category?</h2>
+            <p>The practical scene deliberately includes a Question / Blocker work unit that is not itself blocked, two blocked work units with no runtime, and unblocked work units carrying RUN, WAIT and HUMAN runtime states.</p>
+          </div>
+          <div class="constraint-practical-legend">
+            <span>Top-right = disposition</span>
+            <span>Bottom-right = runtime when present</span>
+            <span>Red cue = progress constraint only</span>
+            <span>Question / Blocker = category, not state</span>
+          </div>
+        </div>
+
+        <div class="grammar-world constraint-practical-world" id="constraint-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <svg class="constraint-relations" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
+            <path /><path /><path /><path /><path /><path />
+          </svg>
+          <div class="constraint-practical-nodes" id="constraint-practical-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review constraint-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge both the semantic split and the BLOCKED carrier</h2>
+        <div class="review-questions">
+          <p>Does BLOCKED make more sense as an orthogonal progress constraint than as a peer of Current / Next / Deferred / Completed / Future?</p>
+          <p>Does the Question / Blocker category remain clearly different from a work unit that is itself Blocked?</p>
+          <p>Can you immediately distinguish Current + BLOCKED + no runtime from Current + WAIT runtime?</p>
+          <p>Which C1-C6 treatment is clearest without fighting category color or the disposition/runtime tags?</p>
+          <p>Is an explicit BLOCKED label necessary, or can a compact structural cue such as C2-C4 carry the meaning once learned?</p>
+          <p>Does C5 Constraint Veil communicate inability to proceed, or does it wrongly resemble focus suppression / low importance?</p>
+          <p>Does C6 Tag + Clamp add useful urgency or simply duplicate the same meaning twice?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-progress-constraint.js"></script>
+  </body>
+</html>

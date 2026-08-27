@@ -1,0 +1,445 @@
+body {
+  min-width: 1440px;
+}
+
+.constraint-header {
+  grid-template-columns: minmax(900px, 1fr) auto;
+}
+
+.constraint-held-state {
+  display: grid;
+  min-width: 360px;
+  gap: 4px;
+  padding: 11px 13px;
+  border: 1px solid rgba(142, 169, 255, 0.22);
+  border-radius: 9px;
+  background: rgba(12, 17, 27, 0.72);
+}
+
+.constraint-held-state span,
+.constraint-summary span {
+  color: var(--text-dim);
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.constraint-held-state strong,
+.constraint-summary strong {
+  color: rgba(222, 230, 244, 0.92);
+  font-size: 8.8px;
+  font-weight: 760;
+}
+
+.constraint-held-state small,
+.constraint-summary small {
+  color: rgba(165, 178, 199, 0.72);
+  font-size: 7.5px;
+  font-weight: 650;
+}
+
+.constraint-main {
+  padding-bottom: 60px;
+}
+
+.constraint-intro {
+  margin-bottom: 14px;
+}
+
+.constraint-controls {
+  display: grid;
+  grid-template-columns: minmax(390px, 0.82fr) minmax(900px, 1.8fr) minmax(250px, 0.50fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 16px;
+}
+
+.constraint-control-copy,
+.constraint-segmented,
+.constraint-summary {
+  min-height: 96px;
+  padding: 10px 11px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.70);
+}
+
+.constraint-control-copy,
+.constraint-summary {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+}
+
+.constraint-control-copy h2 {
+  margin: 1px 0;
+  color: rgba(232, 237, 246, 0.92);
+  font-size: 12px;
+}
+
+.constraint-control-copy p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 8px;
+  line-height: 1.43;
+}
+
+.constraint-segmented {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-content: center;
+  gap: 5px;
+}
+
+.constraint-segmented button {
+  min-height: 34px;
+}
+
+.constraint-preview,
+.constraint-practical {
+  overflow: hidden;
+  border: 1px solid var(--panel-border-strong);
+  border-radius: 14px;
+  background: var(--panel-bg);
+  box-shadow: 0 20px 58px rgba(0, 0, 0, 0.22);
+}
+
+.constraint-preview-header,
+.constraint-practical-header {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--panel-border);
+  background: rgba(14, 20, 29, 0.92);
+}
+
+.constraint-preview-header h2,
+.constraint-practical-header h2 {
+  margin: 4px 0 4px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.constraint-preview-header > span {
+  padding: 5px 8px;
+  border: 1px solid rgba(142, 169, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(142, 169, 255, 0.05);
+  color: rgba(207, 219, 242, 0.82);
+  font-size: 8px;
+  font-weight: 750;
+}
+
+.constraint-practical {
+  margin-top: 18px;
+}
+
+.constraint-practical-header p {
+  margin: 0;
+  max-width: 920px;
+  color: var(--text-soft);
+  font-size: 8.8px;
+}
+
+.constraint-practical-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+  max-width: 560px;
+}
+
+.constraint-practical-legend span {
+  padding: 6px 9px;
+  border: 1px solid var(--panel-border);
+  border-radius: 7px;
+  background: rgba(13, 19, 28, 0.68);
+  color: var(--text-dim);
+  font-size: 7.7px;
+  font-weight: 730;
+}
+
+.constraint-world {
+  height: 900px;
+}
+
+.constraint-rows {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  padding: 18px 20px;
+}
+
+.constraint-row {
+  position: relative;
+  min-height: 0;
+  border-bottom: 1px solid rgba(156, 177, 206, 0.08);
+}
+
+.constraint-row:last-child {
+  border-bottom: 0;
+}
+
+.constraint-label {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  display: grid;
+  width: 340px;
+  gap: 3px;
+  transform: translateY(-50%);
+}
+
+.constraint-label span {
+  color: rgba(237, 112, 105, 0.90);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.10em;
+}
+
+.constraint-label strong {
+  color: rgba(231, 236, 245, 0.92);
+  font-size: 10px;
+  font-weight: 760;
+}
+
+.constraint-label small {
+  max-width: 330px;
+  color: rgba(168, 181, 201, 0.68);
+  font-size: 7.8px;
+  line-height: 1.35;
+}
+
+.constraint-node {
+  position: absolute;
+  left: 43%;
+  top: 50%;
+  width: 244px;
+  height: 102px;
+  transform: translate3d(0, -50%, 0);
+}
+
+.constraint-node:hover {
+  transform: translate3d(0, calc(-50% - 2px), 0);
+}
+
+.constraint-node .disposition-state-badge,
+.constraint-practical-node .disposition-state-badge {
+  opacity: 1;
+}
+
+.constraint-node.is-hovered .disposition-state-badge,
+.constraint-practical-node.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05), 0 0 9px rgba(var(--state-rgb), 0.08);
+}
+
+.constraint-runtime-tag {
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  z-index: 12;
+  display: inline-flex;
+  min-width: 46px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border: 1px solid rgba(var(--runtime-rgb), 0.34);
+  border-radius: 6px;
+  background: rgba(9, 14, 22, 0.95);
+  color: rgba(var(--runtime-rgb), 0.96);
+  font-size: 6.1px;
+  font-weight: 850;
+  letter-spacing: 0.045em;
+  box-shadow: inset 0 0 7px rgba(var(--runtime-rgb), 0.04), 0 0 7px rgba(var(--runtime-rgb), 0.04);
+}
+
+.constraint-tag,
+.constraint-clamp,
+.constraint-stop-rail,
+.constraint-seal,
+.constraint-veil {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.constraint-tag {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+  z-index: 14;
+  display: inline-flex;
+  min-width: 53px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border: 1px solid rgba(237, 112, 105, 0.62);
+  border-radius: 6px;
+  background: rgba(26, 11, 14, 0.92);
+  color: rgba(246, 151, 144, 0.98);
+  font-size: 6px;
+  font-weight: 860;
+  letter-spacing: 0.05em;
+  box-shadow: inset 0 0 8px rgba(237, 112, 105, 0.045), 0 0 8px rgba(237, 112, 105, 0.07);
+}
+
+.constraint-clamp {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  z-index: 15;
+  width: 10px;
+  height: 34px;
+  transform: translateY(-50%);
+  border-right: 2px solid rgba(237, 112, 105, 0.90);
+  filter: drop-shadow(0 0 4px rgba(237, 112, 105, 0.16));
+}
+
+.constraint-clamp::before,
+.constraint-clamp::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  width: 9px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(237, 112, 105, 0.92);
+}
+
+.constraint-clamp::before { top: 0; }
+.constraint-clamp::after { bottom: 0; }
+
+.constraint-stop-rail {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  z-index: 15;
+  width: 42px;
+  height: 3px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(237,112,105,0.18), rgba(237,112,105,0.95) 38%, rgba(237,112,105,0.95) 62%, rgba(237,112,105,0.18));
+  box-shadow: 0 0 7px rgba(237, 112, 105, 0.12);
+}
+
+.constraint-stop-rail::before,
+.constraint-stop-rail::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(237, 112, 105, 0.74);
+}
+
+.constraint-stop-rail::before { left: 12px; }
+.constraint-stop-rail::after { right: 12px; }
+
+.constraint-seal {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  z-index: 15;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%) rotate(45deg);
+  border: 1px solid rgba(237, 112, 105, 0.74);
+  border-radius: 5px;
+  background: rgba(22, 10, 13, 0.96);
+  box-shadow: inset 0 0 8px rgba(237,112,105,0.05), 0 0 8px rgba(237,112,105,0.10);
+}
+
+.constraint-seal::before,
+.constraint-seal::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(237, 112, 105, 0.92);
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.constraint-seal::before { top: 1px; }
+.constraint-seal::after { bottom: 1px; }
+
+.constraint-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  border-radius: inherit;
+  background:
+    linear-gradient(135deg, transparent 0 54%, rgba(237,112,105,0.025) 54% 65%, rgba(237,112,105,0.07) 65% 76%, rgba(237,112,105,0.02) 76% 100%),
+    repeating-linear-gradient(135deg, rgba(237,112,105,0.035) 0 1px, transparent 1px 9px);
+  box-shadow: inset -18px -12px 32px rgba(237, 112, 105, 0.055);
+}
+
+[data-blocked="true"][data-constraint-style="c1"] .constraint-tag,
+[data-blocked="true"][data-constraint-style="c2"] .constraint-clamp,
+[data-blocked="true"][data-constraint-style="c3"] .constraint-stop-rail,
+[data-blocked="true"][data-constraint-style="c4"] .constraint-seal,
+[data-blocked="true"][data-constraint-style="c5"] .constraint-veil,
+[data-blocked="true"][data-constraint-style="c6"] .constraint-tag,
+[data-blocked="true"][data-constraint-style="c6"] .constraint-clamp {
+  opacity: 1;
+}
+
+[data-blocked="true"][data-constraint-style="c5"] .node-surface {
+  box-shadow: inset 0 0 0 1px rgba(237,112,105,0.14);
+}
+
+.constraint-practical-world {
+  height: 620px;
+}
+
+.constraint-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.constraint-relations path {
+  fill: none;
+  stroke: rgba(153, 174, 205, 0.24);
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+.constraint-practical-nodes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.constraint-practical-node {
+  position: absolute;
+  width: 214px;
+  height: 112px;
+}
+
+.constraint-practical-node.scene-q { left: 5%; top: 11%; }
+.constraint-practical-node.scene-i { left: 28%; top: 11%; }
+.constraint-practical-node.scene-v { left: 52%; top: 11%; }
+.constraint-practical-node.scene-m { left: 76%; top: 11%; }
+.constraint-practical-node.scene-w { left: 27%; top: 58%; }
+.constraint-practical-node.scene-e { left: 53%; top: 58%; }
+.constraint-practical-node.scene-f { left: 78%; top: 58%; }
+
+.constraint-review {
+  margin-top: 18px;
+}
