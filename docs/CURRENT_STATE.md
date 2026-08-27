@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 235  
+**Checkpoint:** 236  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1` (feature-promotion head)  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership are accepted current design directions. A repository-preservation audit repaired recent checkpoint metadata drift and hardened checkpoint/routing validation hygiene. The active product-design gate is now work-unit runtime-state visual grammar.  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership remain accepted current design directions. Human review of the first runtime-state fixture exposed a semantic correction: runtime is conditional on a meaningful current execution/work episode rather than universally populated on every work unit. The active product-design gate now reviews R1-R6 against that corrected model.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,13 +29,12 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
+docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
 docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
 frontend/design-lab/work-unit-runtime-grammar.html
 frontend/design-lab/work-unit-runtime-grammar.css
 frontend/design-lab/work-unit-runtime-grammar.js
-
-docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
 Current local URL:
@@ -47,14 +46,14 @@ http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 Exact current browser implementation target:
 
 ```text
-099e516bf9a7351a756bee00037edbcc731a2738
+dfcb89c94e6d8ce46dd2997591f41e6f9a394c18
 ```
 
 ---
 
 # Repository preservation health
 
-The rapid-iteration preservation audit is closed.
+The rapid-iteration preservation audit remains closed.
 
 Result:
 
@@ -84,17 +83,7 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     SUCCESS
 ```
 
-Because the validator scans the enforced numbered checkpoint range globally, this establishes that the mandatory metadata contract is clean again for Checkpoint 100+.
-
-`docs/checkpoints/README.md` now explicitly requires:
-
-```text
-meaningful checkpoint boundaries rather than micro-checkpointing
-+
-checkpoint metadata validation success before a checkpoint is treated as operationally closed
-```
-
-The `Current routing consistency` workflow now runs on every push that touches guarded routing surfaces rather than only on selected named development branches.
+The current checkpoint contract keeps micro-refinements inside an already-open gate in Git plus the active research record, while requiring a new checkpoint when the semantic/review/routing boundary changes. A checkpoint-producing change is not operationally closed until metadata validation succeeds.
 
 ---
 
@@ -192,13 +181,25 @@ HOVER
     normal H4 hover behavior remains
 ```
 
-Latest accepted P7 implementation before the focus-lens slice:
+Latest accepted P7 implementation:
 
 ```text
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
 The final project-disposition ontology remains unfrozen.
+
+A semantic correction from Checkpoint 236 now applies to interpretation:
+
+```text
+Current
+    project disposition / present working frontier
+
+Running
+    runtime / current execution episode
+```
+
+The earlier shorthand `Active / Current` should not be used in this runtime slice because `Active` can imply execution.
 
 ---
 
@@ -233,17 +234,9 @@ da115b74de526fca05ed6f468bef39bdb801355c
 
 Browser-local persistence remains prototype convenience only. Final production ownership, persistence, automatic focus suggestions and multiple named lenses remain open.
 
-Primary evidence:
-
-```text
-docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
-docs/research/063_user_curated_current_process_focus_membership.md
-frontend/design-lab/work-unit-process-focus.html
-```
-
 ---
 
-# Active Slice 02H: work-unit runtime state
+# Active Slice 02H: conditional work-unit runtime state
 
 The binding semantic separation is now:
 
@@ -255,7 +248,8 @@ PROJECT DISPOSITION
     where does it stand in the project?
 
 RUNTIME
-    what is happening now?
+    if a meaningful current execution/work episode exists,
+    what is happening in that episode?
 
 PRIORITY / RELEVANCE
     how important is it now?
@@ -264,22 +258,70 @@ CURRENT-FOCUS MEMBERSHIP
     is it in the emphasized process set?
 ```
 
-The current slice isolates only runtime.
+Runtime is conditional.
 
-Provisional visual-test states:
+A work unit may exist and have a project disposition while having no current runtime at all.
+
+Critical distinction:
 
 ```text
-Idle
-Queued
-Running
-Waiting
-Waiting for Human
-Failed
+No runtime
+    no current execution/work episode exists
+
+Idle runtime
+    an execution episode exists but is currently doing nothing
 ```
 
-These do not freeze the final ADS execution-state ontology.
+The current browser no longer uses Idle as the absence control. It uses:
 
-Browser candidate families:
+```text
+NONE    No runtime
+QUEUE   Queued
+RUN     Running
+WAIT    Waiting
+HUMAN   Waiting for Human
+FAIL    Failed current attempt
+```
+
+Working compatibility interpretation:
+
+```text
+Current
+    may have NONE / QUEUE / RUN / WAIT / HUMAN / FAIL
+
+Recommended / Next
+    normally NONE
+    may be QUEUE if explicitly scheduled
+
+Deferred
+    normally NONE
+
+Completed
+    normally NONE
+
+Future
+    normally NONE
+```
+
+This is not a frozen state matrix.
+
+Current runtime must also remain separate from historical execution provenance. A Deferred or Completed work unit may have prior failed/successful attempts without carrying that historical state as current runtime.
+
+## Blocked remains unresolved
+
+Checkpoint 236 also preserves a new ontology warning:
+
+```text
+Blocked
+    may be an orthogonal progress constraint
+    rather than a peer of Current / Next / Deferred / Completed / Future
+```
+
+Combinations such as `Current + Blocked` and `Next + Blocked` appear coherent. No final progress-constraint axis is promoted yet.
+
+## Browser carrier families
+
+The visual mechanisms remain:
 
 ```text
 R0  Neutral Control
@@ -291,28 +333,32 @@ R5  Motion Signal
 R6  Restrained Hybrid
 ```
 
-Held controls include G4, Reduced in-box light, H4 hover response, scientific category markers, Subtle shapes, Micro material and the P7 neutral disposition tag.
+The NONE row intentionally renders no runtime lamp, strip, badge, cell or motion ring under every R1-R6 encoding.
 
-The browser includes:
+## Practical coexistence fixture
 
 ```text
-controlled same-category rows
-+
-mixed-category practical project scene
-+
-Reduced motion toggle
+Question        CURRENT + HUMAN
+Investigation   CURRENT + RUN
+Validation      NEXT + QUEUE
+Model Work      CURRENT + FAIL
+Evaluation      DEFER + NONE
+Investigation   FUTURE + NONE
 ```
 
-Semantic runtime motion must degrade to a static but still interpretable cue under Reduced motion.
+This tests optional runtime against real category/disposition coexistence instead of pretending that every box carries an execution process.
+
+Semantic runtime motion must degrade to a static but still interpretable cue under Reduced motion. NONE must never animate.
 
 The saved connector stroke-rhythm channel from Research 058 remains reserved for a future line-level semantic question and is not assigned by this node-level runtime experiment.
 
 Current human gate:
 
 ```text
-compare R0-R6
-inspect controlled rows
+verify NONE looks like no runtime rather than an idle execution
+compare R1-R6 on QUEUE / RUN / WAIT / HUMAN / FAIL
 inspect mixed-category scene
+inspect DEFER + NONE and FUTURE + NONE specifically
 compare normal vs Reduced motion
 judge runtime clarity
 judge category/disposition competition
@@ -330,7 +376,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               work-unit runtime-state visual-grammar human review
+Current                               conditional runtime-state visual-carrier human review
 ```
 
 There is no pending Claude obligation.
@@ -346,13 +392,15 @@ Still unresolved:
 ```text
 final runtime / execution-state ontology
 final runtime visual carrier
+final project-disposition ontology
+final Blocked / progress-constraint semantics
+final compatibility matrix between disposition / constraints / runtime
+historical execution-attempt presentation
 runtime-flow connector behavior
 final current-focus membership semantics
 whether system reasoning can suggest focus membership and how human overrides interact
 whether multiple named focus sets / lenses exist
 production ownership and persistence of focus sets
-whether focus suppression supports more than the current binary lens
-final project-disposition ontology
 importance / priority / relevance visual grammar
 final semantic relation taxonomy
 production relation colors / labels
@@ -392,14 +440,16 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 235 and v1-cockpit-design-exploration
+1. use Checkpoint 236 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. open http://localhost:5173/design-lab/work-unit-runtime-grammar.html
-4. compare R0 through R6 in the controlled rows
-5. inspect the mixed-category practical scene
-6. toggle Reduced motion and confirm runtime meaning remains legible
-7. record prefer / reject / combine / refine evidence
-8. do not freeze the final runtime ontology merely from this visual slice
-9. keep production Cockpit untouched
-10. keep source-vault deployment paused until explicitly resumed
+4. verify NONE has no runtime instrumentation under R1-R6
+5. compare R1-R6 on the five live runtime states
+6. inspect the mixed-category practical scene
+7. inspect DEFER + NONE and FUTURE + NONE specifically
+8. toggle Reduced motion and confirm runtime meaning remains legible
+9. record prefer / reject / combine / refine evidence
+10. do not freeze the final runtime/disposition/Blocked ontology merely from this visual slice
+11. keep production Cockpit untouched
+12. keep source-vault deployment paused until explicitly resumed
 ```
