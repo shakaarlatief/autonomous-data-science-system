@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-global-status-carrier="dot">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Blocked Status Carrier</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-blocked-carrier.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header blocked-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02I · BLOCKED Carrier Convergence</span>
+        <h1>Can BLOCKED reuse the accepted live-status carrier language while blocker cause, blocked effect and failed execution remain semantically distinct?</h1>
+        <p>The visual slot is shared, not the ontology. A work unit that cannot proceed can use the same compact dot/ring or explicit soft-shade tag language as live runtime. The underlying model still distinguishes a blocker cause, a blocked progress constraint and a failed execution attempt.</p>
+      </div>
+      <div class="blocked-held-state">
+        <span>Held distinction</span>
+        <strong>blocker = cause · BLOCKED = constraint · FAIL = execution attempt</strong>
+        <small>A shared visual carrier does not require these concepts to become one semantic axis.</small>
+      </div>
+    </header>
+
+    <main class="grammar-main blocked-main">
+      <section class="grammar-intro blocked-intro">
+        <div>
+          <span class="section-kicker">Refined product hypothesis</span>
+          <h2>One operational-status slot can present either a live runtime state or a blocking constraint</h2>
+          <p>When a work unit is blocked, it normally has no live runtime episode, so the same bottom-right status slot can communicate BLOCKED instead. If an execution merely fails but the work can still be retried, the slot communicates FAIL. If that failure creates an unresolved constraint, the current presentation may move to BLOCKED while the failed attempt remains in history/provenance.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Blocked carrier principles">
+          <span>BLOCKED may reuse red status carrier</span>
+          <span>FAIL remains runtime history/current-attempt meaning</span>
+          <span>Dot mode stays compact</span>
+          <span>Tag mode says BLOCKED explicitly</span>
+          <span>Blocker cause is connected explicitly</span>
+          <span>Shared carrier ≠ merged ontology</span>
+        </div>
+      </section>
+
+      <section class="blocked-controls" aria-label="Operational status carrier controls">
+        <div class="blocked-control-copy">
+          <span class="section-kicker">Global status carrier</span>
+          <h2>Switch all visible status carriers together</h2>
+          <p>The same appearance preference applies to runtime states and BLOCKED. Click any visible carrier afterward to override only that work unit.</p>
+        </div>
+        <div class="segmented blocked-segmented" role="group" aria-label="Global operational status carrier">
+          <button type="button" data-global-status-carrier="dot" aria-pressed="true">
+            <span class="blocked-preview-dot" aria-hidden="true"><i></i><b></b></span>
+            Dot + dynamic ring
+          </button>
+          <button type="button" data-global-status-carrier="tag" aria-pressed="false">
+            <span class="blocked-preview-tag" aria-hidden="true">BLOCKED</span>
+            Soft-shade status tag
+          </button>
+        </div>
+        <label class="toggle-row blocked-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Stop semantic animation while keeping the current state readable.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+        <div class="blocked-summary">
+          <span>Current presentation</span>
+          <strong id="status-summary">Dot + dynamic ring · global</strong>
+          <small id="status-override-summary">0 local overrides</small>
+        </div>
+      </section>
+
+      <section class="blocked-contrast" aria-label="Blocked versus failed controlled comparison">
+        <div class="blocked-section-header">
+          <div>
+            <span class="section-kicker">Controlled semantic contrast</span>
+            <h2>BLOCKED and FAIL can share a red family without becoming the same state</h2>
+            <p>The dot carrier keeps BLOCKED circular while FAIL retains the sharper failure ring. The tag carrier uses the same accepted soft-shade motion but explicit text removes ambiguity.</p>
+          </div>
+        </div>
+        <div class="grammar-world blocked-contrast-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <div class="blocked-contrast-grid" id="blocked-contrast-grid"></div>
+        </div>
+      </section>
+
+      <section class="blocked-practical" aria-label="Blocker relationship and mixed status practical scene">
+        <div class="blocked-section-header blocked-practical-header">
+          <div>
+            <span class="section-kicker">Cause / effect coexistence check</span>
+            <h2>Can the Cockpit show what is blocked, why it is blocked, and still distinguish runtime failure?</h2>
+            <p>The Question / Blocker work unit is the visible cause-resolution work. Its red BLOCKS relationships point to affected work units. Those targets carry BLOCKED as their current constraint. A separate Model Work box carries FAIL because its current execution attempt failed but is not presently blocked.</p>
+          </div>
+          <div class="blocked-practical-legend">
+            <span>Top-right = project disposition</span>
+            <span>Bottom-right = one operational status carrier</span>
+            <span>BLOCKS edge = cause → affected work</span>
+            <span>Click carrier = local appearance override</span>
+          </div>
+        </div>
+        <div class="grammar-world blocked-practical-world" id="blocked-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <svg class="blocked-relations" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <marker id="blocked-arrow-red" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" />
+              </marker>
+              <marker id="blocked-arrow-neutral" viewBox="0 0 10 10" refX="8.3" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" />
+              </marker>
+            </defs>
+            <path data-edge="q-i" class="edge-blocks" marker-end="url(#blocked-arrow-red)" />
+            <path data-edge="q-v" class="edge-blocks" marker-end="url(#blocked-arrow-red)" />
+            <path data-edge="i-r" class="edge-neutral" marker-end="url(#blocked-arrow-neutral)" />
+            <path data-edge="r-e" class="edge-neutral" marker-end="url(#blocked-arrow-neutral)" />
+          </svg>
+          <div class="blocked-edge-tags" id="blocked-edge-tags" aria-hidden="true"></div>
+          <div class="blocked-practical-nodes" id="blocked-practical-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review blocked-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge the shared-carrier idea, not a new ontology</h2>
+        <div class="review-questions">
+          <p>Does BLOCKED feel natural when rendered through the same dot/ring or soft-shade tag language as runtime?</p>
+          <p>In dot mode, is the circular BLOCKED ring sufficiently distinct from the sharper FAIL ring?</p>
+          <p>In tag mode, does explicit BLOCKED versus FAIL remove the remaining ambiguity cleanly?</p>
+          <p>Does the BLOCKS relationship make the cause/effect model immediately understandable?</p>
+          <p>Does the Question / Blocker source box remain conceptually different from the BLOCKED target state?</p>
+          <p>Does global switching plus per-box override still feel coherent when both runtime and constraint statuses coexist?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-blocked-carrier.js"></script>
+  </body>
+</html>
