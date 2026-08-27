@@ -23,6 +23,7 @@
       "docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md",
       "docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md",
       "docs/research/074_work_unit_internal_layout_grammar_experiment.md",
+      "docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
       "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md",
@@ -30,6 +31,7 @@
       "docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md",
       "docs/checkpoints/241_selection_sel2_accepted_contextual_detail_expansion_review_opened.md",
       "docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md",
+      "docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -70,7 +72,7 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 074 Phase-C Cockpit design evidence",
+      "Research 037 through 075 Phase-C Cockpit design evidence",
       "scientific marker work-unit category grammar",
       "Reduced in-box resting light",
       "Foundation 023 configurable work-unit appearance and semantic invariants",
@@ -87,13 +89,13 @@
       "A3 Signal Bars selected for elevated attention priority from browser target 767c66f76974d3c0a851de0dfa17c502817a4b12",
       "repaired persistent-selection browser target e7304fe834d86166d843fda7e1df0f4ddb1f793a",
       "SEL2 Corner Brackets selected for persistent compact-node selection",
-      "contextual-detail hierarchy is compact -> selected -> contextual detail -> specialist workspace",
       "X5 balanced two-axis expansion selected without surrounding-context recession",
       "accepted refined X5 target 94bc1100b7388cc56497cafc03051ce326424a80",
-      "expanded work-unit internal-layout browser target 871075bcda8ff812e1a96b18b442c803d5da7faf",
+      "L0 Flat Fields retained only as provisional working default; L1-L8 preserved for later",
+      "deep-focus transition browser initial target 31abc2b3a23de29358978e19bd88fda1e9166f6b",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude's latest Phase-C contribution remains faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has accepted the current disposition, current-process focus, conditional runtime carrier, T7 motion, blocker/BLOCKED model, shared operational-status presentation, BLOCKED/FAIL ring mapping, A3 Signal Bars, SEL2 Corner Brackets, and X5 balanced two-axis contextual expansion without surrounding-context recession. The active gate now evaluates internal information layout inside the accepted expanded work unit. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude's latest Phase-C contribution remains faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has accepted the current disposition, current-process focus, conditional runtime carrier, T7 motion, blocker/BLOCKED model, shared operational-status presentation, BLOCKED/FAIL ring mapping, A3 Signal Bars, SEL2 Corner Brackets, and X5 balanced two-axis contextual expansion without surrounding-context recession. Internal layout is deferred with L0 as working default. The active gate now evaluates deep-focus transition/context-retention architecture. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -116,15 +118,17 @@
       "PHASE_C_PERSISTENT_SELECTION_SEL2_ACCEPTED",
       "PHASE_C_CONTEXTUAL_DETAIL_EXPANSION_REVIEW",
       "PHASE_C_X5_TWO_AXIS_EXPANSION_ACCEPTED",
-      "PHASE_C_EXPANDED_WORK_UNIT_INTERNAL_LAYOUT_REVIEW"
+      "PHASE_C_EXPANDED_WORK_UNIT_INTERNAL_LAYOUT_REVIEW",
+      "PHASE_C_INTERNAL_LAYOUT_DEFERRED_L0_WORKING_DEFAULT",
+      "PHASE_C_DEEP_FOCUS_TRANSITION_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-x5-two-axis-expansion-accepted-internal-layout-opened",
+    "transition_id": "mc0004-internal-layout-deferred-l0-working-default-deep-focus-transition-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner selected X5 specifically for its balanced two-axis expanded-card shape while rejecting its surrounding-context recession behavior, then asked to proceed. ChatGPT preserved the refined X5 treatment and opened a separate internal-layout grammar experiment with the outer geometry held constant.",
-    "repository_head": "871075bcda8ff812e1a96b18b442c803d5da7faf"
+    "reason": "The project owner judged expanded-card internal layout lower priority, directed L0 Flat Fields to remain as a provisional working default while preserving the alternatives for later, and asked to proceed. ChatGPT therefore moved to the next interaction layer: transition from the accepted X5 expanded work unit into the full specialist workspace.",
+    "repository_head": "31abc2b3a23de29358978e19bd88fda1e9166f6b"
   }
 }
