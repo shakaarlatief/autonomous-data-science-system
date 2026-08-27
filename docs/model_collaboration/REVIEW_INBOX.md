@@ -2,7 +2,23 @@
 
 **Date:** 2026-08-27  
 **Status:** Current human-readable routing view  
-**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.
+**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
+**Repository:** `shakaarlatief/autonomous-data-science-system`  
+**Coordination branch:** `v1-cockpit-design-exploration`
+
+## Routing discipline
+
+The repository and coordination branch above must also be named explicitly in the human-to-Claude trigger prompt.
+
+```text
+coordination branch
+    where Claude reads current routing, this inbox, thread state and request files
+
+exact target ref / SHA
+    immutable evidence or artifact a specific request may direct Claude to inspect
+```
+
+Claude should not infer or switch the coordination branch from default-branch contents, newest commits, missing files or unrelated branch discovery. If the trigger names a different branch than this authoritative current routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
 
 ## Pending model obligation
 
