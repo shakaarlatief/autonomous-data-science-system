@@ -5,7 +5,12 @@
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / PROMOTION  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
 **Scope:** Closes the user-configurable appearance prototype gate after positive human review, fixes the remaining scene-connector attachment defect, promotes the semantic/presentation separation into Foundation 023, and opens the next connector/port visual-grammar browser experiment.  
-**Authority:** Current Phase-C routing boundary. Foundation 023 is promoted as durable product-interface direction. Final production settings persistence and connector semantics remain unfrozen. Specification 008 remains the promoted Cockpit interaction architecture.
+**Authority:** Current Phase-C routing boundary. Foundation 023 is promoted as durable product-interface direction. Final production settings persistence and connector semantics remain unfrozen. Specification 008 remains the promoted Cockpit interaction architecture.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT
 
 ## 1. Human configurator review
 
