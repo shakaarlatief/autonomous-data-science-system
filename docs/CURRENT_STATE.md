@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 227  
+**Checkpoint:** 228  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in refined Foundation 024. The active gate is human verification of the simplified edge-connected arrow directionality grammar. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified edge-connected arrow directionality grammar has now passed human review. The active slice is semantic relation-class visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,24 +29,24 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
-docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
+docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+docs/research/057_semantic_relation_class_visual_grammar_experiment.md
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-frontend/design-lab/connector-directionality.html
-frontend/design-lab/connector-directionality.css
-frontend/design-lab/connector-directionality.js
+frontend/design-lab/relation-class-grammar.html
+frontend/design-lab/relation-class-grammar.css
+frontend/design-lab/relation-class-grammar.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/connector-directionality.html
+http://localhost:5173/design-lab/relation-class-grammar.html
 ```
 
 Exact current browser implementation target:
 
 ```text
-07d573b6569b9f09a3b7e00936f3eadecee721b3
+9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
 ```
 
 ---
@@ -114,9 +114,7 @@ Micro design    None / Micro material / Micro light
 
 ---
 
-# Connector presentation result
-
-The useful connector mechanisms remain available, but human review clarified that they should not be unnecessarily stacked.
+# Connector presentation and interaction result
 
 Current connector-treatment vocabulary:
 
@@ -134,7 +132,7 @@ connector treatment
     one active terminal treatment at a time
 
 hover / focus
-    separate mechanism
+    separate interaction mechanism
     may reveal or intensify whichever treatment is active
 ```
 
@@ -169,9 +167,37 @@ Frame sockets remain frame-integrated
 
 ---
 
-# Foundation 024: connector treatment, hover behavior and semantic directionality
+# Directionality result
 
-Refined durable principle:
+Human review has accepted the simplified arrow grammar as sufficiently settled for the current phase:
+
+```text
+D0  Undirected      A - B       no arrow
+D1  Forward         A -> B      restrained arrow at B
+D2  Reverse         A <- B      exact same arrow at A
+D3  Bidirectional   A <-> B     same arrow at both endpoints
+```
+
+Direction-arrow geometry:
+
+```text
+arrow tip
+    exact rendered work-unit perimeter
+
+arrow arms
+    outside the work-unit body
+
+curve
+    terminates at the same rendered edge
+```
+
+The exact implementation accepted by the human is:
+
+```text
+07d573b6569b9f09a3b7e00936f3eadecee721b3
+```
+
+Foundation 024 remains the durable boundary:
 
 ```text
 semantic relation model
@@ -179,64 +205,73 @@ semantic relation model
 
 connector treatment
     configurable within approved bounds
-    normally one active terminal treatment at a time
 
 hover behavior
     orthogonal interaction mechanism
-```
 
-Direction remains semantic:
-
-```text
-undirected
-A -> B
-A <- B
-A <-> B
-```
-
-If direction arrows are used, endpoint placement follows semantic direction exactly:
-
-```text
-undirected       no arrow
-A -> B           arrow at B
-A <- B           arrow at A
-A <-> B          arrows at both ends
+directionality
+    semantic and system-owned
 ```
 
 ---
 
-# Active Slice 02D: simplified arrow directionality
+# Active Slice 02E: semantic relation-class visual grammar
 
-Human review of the first directionality page concluded that dots, sockets and arrows did not need to be shown together merely to test direction.
+Bounded question:
 
-The refined browser therefore isolates the already-liked K3-style arrow:
+> How should different relationship meanings remain distinguishable on the Project Cockpit without turning the project map into graph noise?
 
-```text
-D0  Undirected      A - B
-    no arrow
+Direction is held constant as `A -> B` so semantic relation class is isolated from directionality.
 
-D1  Forward         A -> B
-    arrow tip docked directly to B
-
-D2  Reverse         A <- B
-    exact same arrow tip docked directly to A
-
-D3  Bidirectional   A <-> B
-    same arrow at both endpoints
-```
-
-The arrow tip is placed on the exact rendered work-unit perimeter, with the arrow arms outside the card. The relation curve uses the same rendered-edge geometry and remains synchronized through H4 hover lift / release.
-
-Current human verification questions:
+Representative relation fixtures:
 
 ```text
-Does D1 look like the earlier preferred arrow treatment?
-Does D2 look like the exact mirrored mechanism?
-Does D3 read cleanly as bidirectional rather than duplicated noise?
-Does D0 remain clearly undirected?
+R0  Chronology / Sequence
+R1  Dependency / Prerequisite
+R2  Causal / Influence
+R3  Evidence / Support
+R4  Lineage / Derivation
 ```
 
-If accepted, directionality is sufficiently converged to proceed to semantic relation classes.
+These are visual-test fixtures only. They do not freeze the ADS relation ontology.
+
+Runtime-flow relationships remain outside this first semantic-class comparison.
+
+Current encoding families:
+
+```text
+E0  Neutral Control
+E1  Semantic Hue
+E2  Stroke Rhythm
+E3  Explicit Tag
+E4  Hue + Stroke
+E5  Hue + Tag
+E6  Restrained Hybrid
+```
+
+Held controls:
+
+```text
+G4 world
+Reduced in-box light
+accepted H4 hover response
+scientific work-unit category markers
+Subtle work-unit shapes
+Micro-material treatment
+same Investigation -> Validation pair
+same A -> B arrow grammar
+same rendered-edge connector geometry
+```
+
+Current human review questions:
+
+```text
+Does hue help or compete with node-category color?
+Are stroke rhythms readable and professional?
+Do midpoint tags add certainty or excessive text density?
+Does redundancy improve accessibility enough to justify its noise?
+Which mechanisms remain plausible at large-project scale?
+```
 
 ---
 
@@ -247,12 +282,12 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               simplified arrow directionality human review
+Current                               semantic relation-class human review
 ```
 
 There is no pending Claude obligation.
 
-C4 Port Grammar has matured into connector-treatment and directionality architecture.
+C4 Port Grammar has matured into connector-treatment, hover and directionality architecture.
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
@@ -264,9 +299,10 @@ Still unresolved:
 
 ```text
 final semantic relation taxonomy
-chronology / causality / dependency / evidence / lineage connector semantics
-relation colors / dashed-solid semantics
+final relation-class visual encoding
+chronology / causality / dependency / evidence / lineage ontology boundaries
 runtime-flow connector behavior
+relation color / dash / tag production vocabulary
 production connector preference persistence
 selected/focused persistent treatment
 runtime / waiting / blocked / approval treatment
@@ -301,14 +337,14 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 227 and v1-cockpit-design-exploration
+1. use Checkpoint 228 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/connector-directionality.html
-4. verify D0-D3 use only the simple edge-connected arrow grammar
-5. verify forward, reverse and bidirectional arrows touch the correct work-unit edge
-6. verify no dots / sockets are mixed into arrow directionality
-7. if accepted, preserve directionality as sufficiently settled
-8. open semantic relation-class exploration next
+3. open http://localhost:5173/design-lab/relation-class-grammar.html
+4. compare E0-E6 across R0-R4
+5. inspect hover emphasis without changing semantic class
+6. record prefer / reject / combine / refine evidence
+7. do not treat R0-R4 as a frozen taxonomy
+8. preserve the winning semantic-class visual mechanisms before runtime-flow work
 9. keep production Cockpit untouched
 10. keep source-vault deployment paused until explicitly resumed
 ```
