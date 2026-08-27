@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 232  
+**Current checkpoint:** 233  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        232
+checkpoint                        233
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  P7 Neutral Tag + Tone disposition human verification
+current boundary                  current-process focus-lens human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -109,7 +109,7 @@ Stroke rhythm remains preserved for another future line-level semantic dimension
 
 ---
 
-# Current Slice 02F: work-unit project disposition
+# Project-disposition result
 
 Primary evidence:
 
@@ -117,60 +117,93 @@ Primary evidence:
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
 docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
-```
-
-Current checkpoint:
-
-```text
-docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
-```
-
-Browser route:
-
-```text
 frontend/design-lab/work-unit-disposition-grammar.html
-frontend/design-lab/work-unit-disposition-grammar.css
-frontend/design-lab/work-unit-disposition-grammar.js
 ```
 
-Local URL:
-
-```text
-http://localhost:5173/design-lab/work-unit-disposition-grammar.html
-```
-
-Exact refined browser implementation target:
-
-```text
-fac1db37af4225927d6c799e37418a3ad9c42c13
-```
-
-Semantic separation:
-
-```text
-category               WHAT IS THIS?
-project disposition    current slice
-runtime state          held out
-importance / priority  held out
-```
-
-Mixed-category human review found persistent disposition hue and persistent colored disposition tags somewhat confusing alongside category color.
-
-Current convergence candidate:
+Human-selected current Phase-C direction:
 
 ```text
 P7  Neutral Tag + Tone
 
 REST
     category color remains dominant
-    disposition tag is explicit but neutral
+    disposition tag remains neutral
     Completed / Deferred / Future use selective tonal recession
 
 HOVER
-    tag reveals the state-specific hue
+    disposition tag reveals state-specific hue
 ```
 
-P4 State Rhythm and P6 colored hybrid remain preserved as experiment/history evidence.
+Latest accepted P7 implementation before opening the next slice:
+
+```text
+fac1db37af4225927d6c799e37418a3ad9c42c13
+```
+
+P4 State Rhythm and earlier colored alternatives remain preserved as experiment/history evidence.
+
+The final project-disposition ontology remains unfrozen.
+
+---
+
+# Current Slice 02G: current-process focus lens
+
+Primary evidence:
+
+```text
+docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
+```
+
+Current checkpoint:
+
+```text
+docs/checkpoints/233_p7_disposition_accepted_current_process_focus_lens_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/work-unit-process-focus.html
+frontend/design-lab/work-unit-process-focus.css
+frontend/design-lab/work-unit-process-focus.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/work-unit-process-focus.html
+```
+
+Exact implementation target:
+
+```text
+b311796f86ff577354a2bfe14b850bd6a49a9c06
+```
+
+Semantic separation:
+
+```text
+project disposition          semantic state of the work unit
+current-process membership   whether it belongs to the currently emphasized process
+view emphasis                how strongly contextual work is suppressed
+```
+
+Lens modes:
+
+```text
+Context visible
+    accepted P7 treatment remains readable
+
+Focus current process
+    current-process nodes remain full salience
+    context nodes are strongly suppressed
+    context connector segments recede
+    context nodes partially recover on hover
+```
+
+Current-process membership is explicit fixture metadata in this experiment and is not inferred from disposition.
+
+The final membership semantics and production persistence of the lens remain open.
 
 ---
 
