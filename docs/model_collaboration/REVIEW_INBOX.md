@@ -28,109 +28,95 @@ human project owner
 Current checkpoint:
 
 ```text
-225
+226
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/connector-grammar.html
+http://localhost:5173/design-lab/connector-directionality.html
 ```
 
-Current exact connector browser implementation target:
+Exact browser implementation target:
 
 ```text
-183264bdd07783eaa2354894592f2cf4a076b6ec
+41bbdb75f338388f02a34fdf7dbac3ea90f86300
 ```
 
-## Configurable appearance result
+## Promoted configurable-appearance foundations
 
-Human review approved the configurable Cockpit appearance concept. The semantic/presentation separation is promoted in:
+Work-unit appearance:
 
 ```text
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Promoted principle:
+Connector presentation / semantic directionality:
+
+```text
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+```
+
+Core combined principle:
 
 ```text
 ADS owns semantic meaning
-user controls approved non-semantic appearance dimensions
+user controls approved non-semantic presentation dimensions
 ```
 
-Current semantic marker mapping remains:
+For connectors specifically:
 
 ```text
-Question / Blocker        circle
-Investigation             square
-Validation / Analysis     triangle
-Model Work                diamond
-Evaluation                plus
+user may configure connector presentation
+user may not remove / reverse / invent semantic direction
 ```
 
-Current proven configurable dimensions:
+## Connector presentation result
+
+The previous K0-K4 winner question is closed.
+
+Current configurable interpretation:
 
 ```text
-Box shape       Normal / Subtle shapes
-Micro design    None / Micro material / Micro light
+Rest attachment
+    Clean
+    Micro dots
+    Frame sockets
+
+Hover attachment emphasis
+    Off
+    On
 ```
 
-## Active connector / Port Grammar review
-
-Current candidates:
+Latest retained implementation evidence:
 
 ```text
-K0  Clean Curve
-K1  Micro Dots
-K2  Frame Sockets
-K3  Target Cue
-K4  Hover Ports
-```
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+    K1/K4 circular markers mostly outside the work-unit perimeter
 
-Current held controls:
-
-```text
-G4 world
-scientific category markers
-Reduced in-box light
-accepted H4 hover response
-Subtle shapes
-Micro material
-same project fixture and relation graph
-```
-
-Current layering / geometry invariants:
-
-```text
-connector curves
-    remain behind work-unit bodies
-
-K1 dots / K3 directional cue / K4 hover ports
-    render above the work-unit perimeter
-
-K1 / K4 circular markers
-    are offset mostly outside the perimeter
-    with only a small overlap at the attachment edge
-    so left-side markers do not sit across the category color rail
-
-K2 frame sockets
-    deliberately retain the earlier under-node structural docking treatment
-    keep a dark interior
-    use a neutral outline at rest
-    adopt the highlighted relation color and restrained glow when related
-
-hover lift / release
-    connector geometry follows the transformed rendered perimeter continuously
-```
-
-Latest connector refinement:
-
-```text
 183264bdd07783eaa2354894592f2cf4a076b6ec
+    K2 active socket outline / glow follows relation color
 ```
 
-Preliminary human evidence suggests the eventual connector grammar should be compositional rather than choosing one universal K0-K4 winner. Directionality may be none, one-way in either direction, or bidirectional; Hover Ports should remain available; and the initial non-directional endpoint treatment is likely to use either Micro Dots or Frame Sockets. Final composition remains pending human review.
+## Active directionality review
 
-C4 Port Grammar is active at its intended dependency boundary.
+Current comparison states:
+
+```text
+D0  Undirected      A — B
+D1  Forward         A -> B
+D2  Reverse         A <- B
+D3  Bidirectional   A <-> B
+```
+
+The browser also exposes the already-approved connector presentation dimensions to check compatibility, but those controls do not alter semantic direction.
+
+Current human gate:
+
+```text
+review direction-cue clarity
+-> keep / refine / replace cue
+-> then open semantic relation-class exploration
+```
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.

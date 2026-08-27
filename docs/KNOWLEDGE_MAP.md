@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
-**Last reviewed:** 2026-08-26  
-**Current checkpoint:** 225  
+**Last reviewed:** 2026-08-27  
+**Current checkpoint:** 226  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        225
+checkpoint                        226
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  connector / Port Grammar human review
+current boundary                  connector directionality human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -51,7 +51,7 @@ Primary evidence:
 ```text
 docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_world_slice.md
 docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md
-docs/research/041_combined_g4_ambient_motion_intensity_tuning.md
+docs/research/041_combined_g4_ambient_intensity_tuning.md
 docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md
 docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md
 ```
@@ -110,7 +110,7 @@ presentation profile
     approved user-configurable appearance
 ```
 
-Current proven appearance axes:
+Current proven work-unit appearance axes:
 
 ```text
 Box shape       Normal / Subtle shapes
@@ -128,79 +128,143 @@ frontend/design-lab/work-unit-grammar-customizable.css
 frontend/design-lab/work-unit-grammar-customizable.js
 ```
 
-Human review approved the model. The remaining relation-line attachment defect was corrected at:
-
-```text
-c1f996f6500672641de8e00780d5a4949c5dcb28
-```
-
 Production appearance persistence remains unresolved.
 
 ---
 
-# Current Slice 02C: connector and Port Grammar
+# Connector presentation result
 
-Governing research:
-
-```text
-docs/research/053_connector_and_port_visual_grammar_experiment.md
-```
-
-Current checkpoint:
-
-```text
-docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md
-```
-
-Browser route:
+Previous generic connector browser:
 
 ```text
 frontend/design-lab/connector-grammar.html
 frontend/design-lab/connector-grammar.css
 frontend/design-lab/connector-grammar.js
+frontend/design-lab/connector-port-layering.css
+frontend/design-lab/connector-port-layering.js
+```
+
+Primary evidence:
+
+```text
+docs/research/053_connector_and_port_visual_grammar_experiment.md
+docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
+```
+
+Human conclusion:
+
+```text
+no single K0-K4 winner is required
+approved connector treatments should coexist as user-configurable presentation dimensions
+```
+
+Current interpretation:
+
+```text
+Rest attachment
+    Clean
+    Micro dots
+    Frame sockets
+
+Hover attachment emphasis
+    Off
+    On
+```
+
+Latest connector refinements:
+
+```text
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+    K1/K4 circular markers mostly outside the work-unit perimeter
+
+183264bdd07783eaa2354894592f2cf4a076b6ec
+    K2 active socket outline / glow follows relation color
+```
+
+---
+
+# Foundation 024: composable connector presentation + semantic directionality
+
+Promoted foundation:
+
+```text
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+```
+
+Core principle:
+
+```text
+semantic relation model
+    meaning and directionality governed by ADS / project state
+
+connector presentation profile
+    approved user-configurable visual choices
+```
+
+Critical invariant:
+
+```text
+appearance may change HOW direction is drawn
+appearance may not change WHETHER a relation is directed
+appearance may not reverse source and target
+```
+
+---
+
+# Current Slice 02D: connector directionality
+
+Governing research:
+
+```text
+docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+```
+
+Current checkpoint:
+
+```text
+docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/connector-directionality.html
+frontend/design-lab/connector-directionality.css
+frontend/design-lab/connector-directionality.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/connector-grammar.html
+http://localhost:5173/design-lab/connector-directionality.html
 ```
 
 Exact browser implementation target:
 
 ```text
-e3394447eeae721eab9bd66d347d0d327dbe0485
+41bbdb75f338388f02a34fdf7dbac3ea90f86300
 ```
 
-Current candidates:
+Direction states:
 
 ```text
-K0  Clean Curve
-K1  Micro Dots
-K2  Frame Sockets
-K3  Target Cue
-K4  Hover Ports
+D0  Undirected      A — B
+D1  Forward         A -> B
+D2  Reverse         A <- B
+D3  Bidirectional   A <-> B
 ```
 
-All candidates share dynamic rendered-edge relation geometry.
-
-Held controls:
+Presentation compatibility controls:
 
 ```text
-G4 world
-scientific markers
-Reduced in-box light
-accepted H4 hover response
-Subtle shapes
-Micro material
-same five-node project fixture
+Rest attachment             Clean / Micro dots / Frame sockets
+Hover attachment emphasis   On / Off
+Reduced motion              On / Off
 ```
 
-The current question is generic attachment/port treatment only. Final semantic relation vocabulary remains open.
+The controls do not change semantic direction.
 
-Claude C4 Port Grammar is now active at its intended dependency boundary.
-
-Claude C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
+Final semantic relation classes remain open.
 
 ---
 
@@ -219,6 +283,8 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 No model-collaboration obligation is currently pending.
 
+C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
+
 ---
 
 # Promoted Cockpit architecture
@@ -227,6 +293,7 @@ No model-collaboration obligation is currently pending.
 docs/specifications/008_v1_project_cockpit_interaction_architecture.md
 docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
 Specification 008 remains accepted and is not replaced by the current visual experiments.

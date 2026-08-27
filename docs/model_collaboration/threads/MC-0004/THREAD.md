@@ -62,8 +62,6 @@ Evaluation                plus
 
 ## Work-unit grammar result
 
-The first W1-W4 round was useful but too narrow. Claude then proposed C1-C8 and Research 048 added C9. Expanded and focused browser rounds produced decisive human evidence.
-
 Rejected or retired:
 
 ```text
@@ -83,11 +81,11 @@ Evaluation-like micro-light character
 subtle true-shape family
 ```
 
-Research 050 preserved selective M1 visibility strengthening and the refined right-only Validation top step.
+Research 050 preserves selective M1 visibility strengthening and the refined right-only Validation top step.
 
-## Configurable appearance result
+## Configurable work-unit appearance result
 
-The project owner then identified that semantically compatible attractive mechanisms should coexist as user-selectable appearance dimensions.
+The project owner identified that semantically compatible attractive mechanisms should coexist as user-selectable appearance dimensions.
 
 Browser proof:
 
@@ -97,28 +95,12 @@ frontend/design-lab/work-unit-grammar-customizable.css
 frontend/design-lab/work-unit-grammar-customizable.js
 ```
 
-Human review judged the configurator very good, with one remaining implementation defect in relation-line attachment.
+Human review approved the model.
 
-That defect was corrected at:
-
-```text
-c1f996f6500672641de8e00780d5a4949c5dcb28
-```
-
-Connector endpoints now derive from rendered `.node-surface` geometry and update when view, shape or scene geometry changes.
-
-The configurable appearance principle is promoted in:
+Promoted foundation:
 
 ```text
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-```
-
-Promoted principle:
-
-```text
-ADS owns semantic meaning
-+
-user controls approved non-semantic appearance dimensions
 ```
 
 Current proven appearance dimensions:
@@ -134,43 +116,9 @@ Micro design
     Micro light
 ```
 
-Production preference persistence remains unfrozen.
+## Connector / Port Grammar history
 
-## Current Slice 02C: connector / Port Grammar
-
-The next dependency-aligned question is:
-
-> How should generic project relationships meet work units and remain legible without turning the Cockpit into graph noise?
-
-This activates Claude C4 Port Grammar at the intended dependency boundary.
-
-Research:
-
-```text
-docs/research/053_connector_and_port_visual_grammar_experiment.md
-```
-
-Browser route:
-
-```text
-frontend/design-lab/connector-grammar.html
-frontend/design-lab/connector-grammar.css
-frontend/design-lab/connector-grammar.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/connector-grammar.html
-```
-
-Exact browser implementation target:
-
-```text
-e3394447eeae721eab9bd66d347d0d327dbe0485
-```
-
-Candidates:
+The connector browser tested:
 
 ```text
 K0  Clean Curve
@@ -180,27 +128,113 @@ K3  Target Cue
 K4  Hover Ports
 ```
 
-Held controls:
+Primary browser:
 
 ```text
-G4 world
-scientific markers
-Reduced in-box light
-accepted H4 hover/world behavior
-Subtle shapes
-Micro material
-same node geometry and relation fixture
+frontend/design-lab/connector-grammar.html
 ```
 
-All K0-K4 candidates share dynamic rendered-edge connector geometry.
+Important refinements:
 
-The current slice deliberately does not assign final semantic relation classes yet.
+```text
+rendered-edge relation geometry
+curve under node / endpoint overlay above node where appropriate
+K2 sockets restored to frame-integrated treatment
+hover geometry follows H4 node lift / release
+K1/K4 dots moved mostly outside the perimeter
+K2 active socket outline / glow adopts relation color
+```
+
+Exact refinement commits:
+
+```text
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+183264bdd07783eaa2354894592f2cf4a076b6ec
+```
+
+## Connector presentation configurability result
+
+The project owner explicitly decided that the useful connector mechanisms should coexist as user-adjustable presentation choices rather than forcing one generic winner.
+
+Current compositional interpretation:
+
+```text
+Rest attachment
+    Clean
+    Micro dots
+    Frame sockets
+
+Hover attachment emphasis
+    Off
+    On
+```
+
+The semantic boundary is critical:
+
+```text
+user controls
+    HOW the connector is presented
+
+ADS / project relation model controls
+    WHAT the relation means
+    WHETHER it is directed
+    WHICH way it points
+```
+
+Promoted foundation:
+
+```text
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+```
+
+## Current Slice 02D: connector directionality
+
+The next bounded question is:
+
+> How should a relationship communicate no direction, one-way direction in either orientation, or bidirectional direction while remaining visually restrained and compatible with configurable attachment presentation?
+
+Research:
+
+```text
+docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/connector-directionality.html
+frontend/design-lab/connector-directionality.css
+frontend/design-lab/connector-directionality.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/connector-directionality.html
+```
+
+Exact browser implementation target:
+
+```text
+41bbdb75f338388f02a34fdf7dbac3ea90f86300
+```
+
+Direction states:
+
+```text
+D0  Undirected      A — B
+D1  Forward         A -> B
+D2  Reverse         A <- B
+D3  Bidirectional   A <-> B
+```
+
+The page exposes Clean / Micro dots / Frame sockets and Hover emphasis On/Off only to test compatibility. Those controls do not alter direction semantics.
 
 ## Dependency-bound ideas
 
 ```text
 C4 Port Grammar
-    ACTIVE now in connector slice
+    matured into configurable connector presentation + directionality work
 
 C5 Internal Layout Grammar
     remains deferred to semantic zoom / information-density slice
@@ -209,12 +243,12 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human compares K0-K4
--> prefer / reject / combine generic connector mechanisms
--> preserve a generic connector baseline
--> only then explore semantic relation classes
+human reviews D0-D3
+-> keep / refine / replace direction-cue mechanism
+-> preserve directionality grammar
+-> then explore semantic relation classes
 ```
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final connector vocabulary, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final semantic relation vocabulary, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.

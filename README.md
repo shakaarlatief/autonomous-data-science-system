@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            225
+checkpoint            226
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      connector / Port Grammar human browser review
+current boundary      connector directionality human browser review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -40,17 +40,17 @@ Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientif
 
 MC-0004 is in browser-rendered Phase-C product-design evaluation.
 
-The preferred loop is:
+Preferred loop:
 
 ```text
 bounded design question
 -> browser-rendered alternatives
 -> human comparison
--> preserve prefer/reject/combine evidence
+-> preserve prefer / reject / combine evidence
 -> progressively integrate surviving mechanisms
 ```
 
-### Held world and interaction direction
+Held visual direction:
 
 ```text
 G4 Adaptive Hybrid world                          SELECTED / provisionally settled
@@ -58,7 +58,7 @@ H4 generic hover/outward-world response          SELECTED / sufficiently settled
 Reduced in-box resting light                      SELECTED preferred working baseline
 ```
 
-### Current scientific category-marker grammar
+Current scientific category-marker grammar:
 
 ```text
 Question / Blocker        circle
@@ -72,7 +72,7 @@ Evaluation                plus
 
 ## Foundation 023: user-configurable Cockpit appearance
 
-Human browser review approved the principle that multiple high-quality, semantically compatible visual mechanisms may coexist as user-selectable appearance dimensions.
+Human browser review approved the principle that multiple high-quality, semantically compatible work-unit mechanisms may coexist as user-selectable appearance dimensions.
 
 Promoted foundation:
 
@@ -88,7 +88,7 @@ ADS owns semantic meaning
 user controls approved non-semantic appearance dimensions
 ```
 
-Current proven appearance controls:
+Current proven work-unit appearance controls:
 
 ```text
 Box shape
@@ -101,106 +101,107 @@ Micro design
     Micro light
 ```
 
-The scientific marker mapping, semantic project state and accessibility constraints remain independent from those appearance choices.
-
-A plausible later hierarchy remains:
-
-```text
-user appearance profile
-    global personal default
-
-project appearance override
-    optional project-specific preference
-
-semantic project state
-    independent from both
-```
-
 Production settings persistence is not yet selected.
 
 ---
 
-## Customizable-preview connector fix
+## Connector presentation is also configurable
 
-The configurable preview had one remaining implementation defect: relation lines used static coordinates and therefore did not reliably meet the rendered work-unit boxes.
+The K0-K4 connector browser no longer needs one universal visual winner.
 
-The fix now derives line endpoints from rendered `.node-surface` geometry and recalculates them when relevant geometry changes.
+Human review decided the useful mechanisms should coexist as connector-presentation choices.
 
-Exact fix commit:
+Current compositional interpretation:
 
 ```text
-c1f996f6500672641de8e00780d5a4949c5dcb28
+Rest attachment
+    Clean
+    Micro dots
+    Frame sockets
+
+Hover attachment emphasis
+    Off
+    On
 ```
 
-Configurator route:
+Important retained refinements:
 
 ```text
-http://localhost:5173/design-lab/work-unit-grammar-customizable.html
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+    K1/K4 dots sit mostly outside the work-unit perimeter
+
+183264bdd07783eaa2354894592f2cf4a076b6ec
+    K2 sockets adopt active relation color / restrained glow when highlighted
 ```
 
 ---
 
-## Active Slice 02C: connector and Port Grammar
+## Foundation 024: connector presentation vs semantic directionality
 
-The next bounded visual question is:
-
-> How should generic project relationships meet work units and remain legible without turning the Cockpit into graph noise?
-
-This activates Claude concept C4 Port Grammar at the dependency boundary originally reserved for it.
-
-Current browser route:
+Promoted foundation:
 
 ```text
-frontend/design-lab/connector-grammar.html
-frontend/design-lab/connector-grammar.css
-frontend/design-lab/connector-grammar.js
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+```
+
+Core principle:
+
+```text
+ADS owns relation meaning and directionality
++
+user controls approved non-semantic connector presentation dimensions
+```
+
+Therefore a user may change how connectors look, but appearance preferences may not remove, reverse or invent semantic direction.
+
+---
+
+## Active Slice 02D: connector directionality
+
+The next bounded question is:
+
+> How should a relationship communicate no direction, one-way direction in either orientation, or bidirectional direction while remaining visually restrained and compatible with configurable connector presentation?
+
+Browser route:
+
+```text
+frontend/design-lab/connector-directionality.html
+frontend/design-lab/connector-directionality.css
+frontend/design-lab/connector-directionality.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/connector-grammar.html
+http://localhost:5173/design-lab/connector-directionality.html
 ```
 
 Exact browser implementation target:
 
 ```text
-e3394447eeae721eab9bd66d347d0d327dbe0485
+41bbdb75f338388f02a34fdf7dbac3ea90f86300
 ```
 
-Connector candidates:
+Current direction states:
 
 ```text
-K0  Clean Curve
-    edge-to-edge curve, no visible ports
-
-K1  Micro Dots
-    small source/target endpoint dots
-
-K2  Frame Sockets
-    small square structural sockets
-
-K3  Target Cue
-    restrained target-side direction cue
-
-K4  Hover Ports
-    clean rest state, ports revealed on related-node hover
+D0  Undirected      A — B
+D1  Forward         A -> B
+D2  Reverse         A <- B
+D3  Bidirectional   A <-> B
 ```
 
-Held controls:
+The page also exposes already-approved presentation controls for compatibility checking:
 
 ```text
-G4 world
-scientific markers
-Reduced in-box light
-accepted H4 hover response
-Subtle shapes
-Micro material
-same project fixture
-same generic relationships
+Rest attachment             Clean / Micro dots / Frame sockets
+Hover attachment emphasis   On / Off
+Reduced motion              On / Off
 ```
 
-Final semantic connector types remain deliberately unfrozen.
+Those controls do not alter semantic direction.
+
+Final semantic relation classes such as chronology, causality, dependency, evidence, lineage and runtime flow remain deliberately unfrozen.
 
 ---
 
@@ -213,8 +214,6 @@ faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 ```
 
 No model-collaboration obligation is currently pending.
-
-C4 Port Grammar is now active in the connector slice.
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
@@ -268,13 +267,15 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md
-docs/research/053_connector_and_port_visual_grammar_experiment.md
-frontend/design-lab/connector-grammar.html
+docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md
+docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+frontend/design-lab/connector-directionality.html
 
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md
-frontend/design-lab/work-unit-grammar-customizable.html
+
+docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
+frontend/design-lab/connector-grammar.html
 
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
@@ -290,12 +291,12 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. optionally refresh work-unit-grammar-customizable.html and confirm the connector attachment fix
-3. open http://localhost:5173/design-lab/connector-grammar.html
-4. compare K0 through K4
-5. hover work units and inspect connector emphasis / K4 hover ports
-6. judge resting noise, attachment clarity, direction usefulness and scaling plausibility
-7. prefer, reject or combine connector mechanisms
-8. preserve a generic connector baseline before adding semantic relation classes
+2. open http://localhost:5173/design-lab/connector-directionality.html
+3. compare D0 through D3
+4. optionally switch Clean / Micro dots / Frame sockets
+5. toggle Hover attachment emphasis
+6. verify direction remains readable in every presentation
+7. judge whether the restrained direction cue should be kept, refined or replaced
+8. then open semantic relation-class exploration
 9. keep production Cockpit untouched
 ```

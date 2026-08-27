@@ -31,7 +31,9 @@
       "docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md",
       "docs/research/053_connector_and_port_visual_grammar_experiment.md",
       "docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md",
+      "docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+      "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
       "docs/checkpoints/207_mc0004_phase_a_frozen_comparative_design_opened.md",
       "docs/checkpoints/208_mc0004_comparative_synthesis_phase_c_mockups_opened.md",
@@ -52,6 +54,7 @@
       "docs/checkpoints/223_scientific_markers_selected_material_and_validation_shape_refined.md",
       "docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md",
       "docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md",
+      "docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -92,20 +95,20 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 054 Phase-C Cockpit design evidence",
+      "Research 037 through 055 Phase-C Cockpit design evidence",
       "scientific marker vocabulary selected for current work-unit grammar direction",
       "Reduced in-box light selected as preferred working control",
-      "Foundation 023 configurable appearance and semantic invariants",
-      "human approval of configurable appearance after browser review",
-      "connector and Port Grammar candidates K0 through K4",
-      "K1/K3/K4 endpoint overlay above work-unit bodies",
-      "K2 restored under-node frame-socket docking treatment",
-      "connector geometry synchronized with accepted H4 hover lift and release",
-      "K1/K4 circular terminals offset mostly outside the work-unit perimeter while curve anchors remain on the exact rendered edge",
-      "preliminary human hypothesis that connector grammar should be compositional with independent directionality and hover-port mechanisms",
+      "Foundation 023 configurable work-unit appearance and semantic invariants",
+      "human approval of configurable work-unit appearance after browser review",
+      "connector and Port Grammar candidates K0 through K4 and their refinement history",
+      "K1/K4 circular terminals offset mostly outside the work-unit perimeter",
+      "K2 sockets retain frame-integrated treatment and adopt highlighted relation color / glow",
+      "human decision that approved connector presentation mechanisms should coexist as user-configurable dimensions",
+      "Foundation 024 composable connector presentation and semantic directionality",
+      "directionality states D0-D3 and browser target 41bbdb75f338388f02a34fdf7dbac3ea90f86300",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review approved the configurable appearance model, leading to Foundation 023. The active connector experiment has corrected endpoint stacking, hover-motion geometry, and circular-terminal placement: K1/K4 dots now sit mostly outside the rendered work-unit perimeter with only a small overlap, preventing left-side terminals from painting over the category color rail; K2 retains the earlier structural socket treatment. Exact browser target is 42ec63d17095753dc4ab97628cd859473cbdf5e8. The fuller connector composition decision remains with the human project owner. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review has now closed the generic connector-style winner question: Clean, Micro dots, Frame sockets and Hover attachment emphasis are retained as configurable presentation dimensions, while semantic relation meaning and directionality remain system-owned. Foundation 024 records that boundary. The active browser target is connector directionality at 41bbdb75f338388f02a34fdf7dbac3ea90f86300. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -122,15 +125,18 @@
       "PHASE_C_CONNECTOR_PORT_GRAMMAR_REVIEW",
       "PHASE_C_CONNECTOR_ENDPOINT_LAYERING_CORRECTED",
       "PHASE_C_CONNECTOR_HOVER_GEOMETRY_SYNCHRONIZED",
-      "PHASE_C_CONNECTOR_CIRCULAR_TERMINALS_OUTWARD"
+      "PHASE_C_CONNECTOR_CIRCULAR_TERMINALS_OUTWARD",
+      "PHASE_C_CONNECTOR_SOCKET_ACTIVE_COLOR_REFINED",
+      "PHASE_C_CONNECTOR_PRESENTATION_CONFIGURABLE",
+      "PHASE_C_CONNECTOR_DIRECTIONALITY_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-connector-circular-terminals-outward",
+    "transition_id": "mc0004-connector-presentation-configurable-directionality-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner observed that center-on-edge dots still intruded too far into work-unit bodies and visibly crossed the left category color rail. ChatGPT kept connector curve anchors on the exact rendered edge but offset K1/K4 circular terminal centers outward by 2 SVG user units so they read as connector-owned attachments with only a small perimeter overlap.",
-    "repository_head": "42ec63d17095753dc4ab97628cd859473cbdf5e8"
+    "reason": "The project owner decided to retain the useful connector presentation mechanisms as user-adjustable choices rather than selecting one K0-K4 winner. ChatGPT preserved the semantic boundary that relation meaning and directionality remain system-owned, promoted Foundation 024, and opened a D0-D3 directionality browser slice with configurable attachment presentation retained only as a compatibility control.",
+    "repository_head": "41bbdb75f338388f02a34fdf7dbac3ea90f86300"
   }
 }

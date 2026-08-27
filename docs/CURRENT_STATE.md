@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 225  
+**Checkpoint:** 226  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Foundation 023 promotes user-configurable non-semantic Cockpit appearance. The active slice is connector / Port Grammar. K1/K4 circular endpoint markers are layered above nodes, follow the accepted H4 hover lift/release, and sit mostly outside the rendered work-unit perimeter. K2 frame sockets retain their earlier structural docking treatment, but their outline now adopts the highlighted relation color when a connector becomes active. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector presentation configurability plus semantic directionality separation is promoted in Foundation 024. The active slice is connector directionality review. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,27 +29,24 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/225_configurable_appearance_promoted_connector_grammar_review_opened.md
-docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
-docs/research/053_connector_and_port_visual_grammar_experiment.md
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-frontend/design-lab/connector-grammar.html
-frontend/design-lab/connector-grammar.css
-frontend/design-lab/connector-grammar.js
-frontend/design-lab/connector-port-layering.css
-frontend/design-lab/connector-port-layering.js
+docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md
+docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+frontend/design-lab/connector-directionality.html
+frontend/design-lab/connector-directionality.css
+frontend/design-lab/connector-directionality.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/connector-grammar.html
+http://localhost:5173/design-lab/connector-directionality.html
 ```
 
-Current exact browser implementation target:
+Exact current browser implementation target:
 
 ```text
-183264bdd07783eaa2354894592f2cf4a076b6ec
+41bbdb75f338388f02a34fdf7dbac3ea90f86300
 ```
 
 ---
@@ -92,7 +89,7 @@ HOVER
 
 # Work-unit semantic grammar
 
-Current semantic category marker mapping:
+Current semantic category-marker mapping:
 
 ```text
 Question / Blocker        circle
@@ -113,9 +110,9 @@ G1 Instrument Glyph Family retired from active focused comparison
 
 ---
 
-# Foundation 023: configurable appearance
+# Foundation 023: configurable work-unit appearance
 
-Promoted product principle:
+Promoted principle:
 
 ```text
 ADS owns semantic meaning
@@ -123,7 +120,7 @@ ADS owns semantic meaning
 user controls approved non-semantic appearance dimensions
 ```
 
-Current proven configurable dimensions:
+Current proven work-unit appearance dimensions:
 
 ```text
 Box shape
@@ -136,170 +133,127 @@ Micro design
     Micro light
 ```
 
-Appearance choices must not redefine category, disposition, runtime, importance, evidence, provenance, or methodological meaning.
+Production persistence remains unresolved.
 
-Production persistence remains unresolved. A plausible later hierarchy remains:
+---
+
+# Connector visual-grammar result
+
+The K0-K4 connector review no longer requires a single winner.
+
+Human review decided the useful connector presentation mechanisms should coexist as user-adjustable choices.
+
+Current compositional interpretation:
 
 ```text
-user appearance profile
-    global personal default
+REST ATTACHMENT PRESENTATION
+    Clean
+    Micro dots
+    Frame sockets
 
-project appearance override
-    optional project-specific choice
+HOVER ATTACHMENT EMPHASIS
+    Off
+    On
+```
 
-semantic project state
-    independent from both
+Latest accepted refinements:
+
+```text
+42ec63d17095753dc4ab97628cd859473cbdf5e8
+    K1/K4 circular markers moved mostly outside the work-unit perimeter
+
+183264bdd07783eaa2354894592f2cf4a076b6ec
+    K2 frame sockets keep dark interiors but adopt active relation color / restrained glow when highlighted
+```
+
+Held connector interaction/geometry invariants:
+
+```text
+curve remains below work-unit bodies
+rendered-edge geometry is authoritative
+connector follows H4 hover lift / release
+Micro dots / Hover ports render above the perimeter and sit mostly outside the card
+Frame sockets remain frame-integrated
 ```
 
 ---
 
-# Active Slice 02C: connector and Port Grammar
+# Foundation 024: configurable connector presentation + semantic directionality
 
-Bounded design question:
-
-> How should generic project relationships visually meet work units and remain legible without turning the Cockpit into graph noise?
-
-Held controls:
+Promoted product principle:
 
 ```text
-G4 world
-scientific category markers
-Reduced in-box light
-accepted H4 hover/world response
-Subtle shapes
-Micro material
-same churn-project fixture
-same four generic relationships
+ADS owns relation meaning and directionality
++
+user controls approved non-semantic connector presentation dimensions
 ```
 
-Current candidates:
+This means:
 
 ```text
-K0  Clean Curve
-    direct edge-to-edge line, no ports
+user may change
+    HOW the connector looks
 
-K1  Micro Dots
-    small source/target endpoint dots
-
-K2  Frame Sockets
-    small square structural sockets
-
-K3  Target Cue
-    restrained target-side directional cue
-
-K4  Hover Ports
-    clean rest state, endpoint dots revealed on related-node hover
+user may not change by appearance preference
+    whether the relation exists
+    whether it is directed
+    source / target orientation
+    what the relation means
 ```
 
-## Connector layering invariant
+A directed relation must remain recognizably directed in every approved appearance profile.
+
+Promoted artifact:
 
 ```text
-world / grid
-    -> connector curves below nodes
-    -> work-unit body
-    -> micro dots / hover ports / directional endpoint cues above node perimeter
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
-K2 Frame Sockets are intentionally exempt from the above-node overlay because human review preferred the earlier under-node structural docking treatment.
+---
 
-## Hover-lift geometry invariant
+# Active Slice 02D: connector directionality
 
-The accepted H4 hover state lifts a node by 2 px. Connector geometry must follow the rendered perimeter during that motion rather than remain at pre-hover coordinates.
+Bounded question:
 
-Current behavior:
+> How should a relationship communicate no direction, one-way direction in either orientation, or bidirectional direction while remaining visually restrained and compatible with configurable attachment presentation?
+
+Current comparison states:
 
 ```text
-hover entry
-    geometry synchronized through the fast node lift
+D0  Undirected      A — B
+D1  Forward         A -> B
+D2  Reverse         A <- B
+D3  Bidirectional   A <-> B
+```
 
-hover release
-    geometry synchronized through the slower return
+Browser controls are presentation compatibility checks only:
+
+```text
+Rest attachment
+    Clean
+    Micro dots
+    Frame sockets
+
+Hover attachment emphasis
+    On / Off
 
 Reduced motion
-    one immediate geometry refresh
+    On / Off
 ```
 
-This keeps both the curve endpoint and above-node marker attached to the moving box throughout the transition.
+Those controls do not alter direction semantics.
 
-## Circular terminal placement invariant
+The direction cue is intentionally persistent at rest because direction carries meaning.
 
-K1 Micro Dots and K4 Hover Ports should read as connector-owned attachment points, not as card content.
-
-Current behavior:
+Current review questions:
 
 ```text
-curve anchor
-    remains exactly on the rendered work-unit edge
-
-circular terminal center
-    offset 2 SVG user units outward along the attachment side
-
-visual result
-    marker sits mostly outside the card
-    only a small overlap remains with the perimeter
-    left-side dots no longer sit across the category color rail
+Is A -> B immediately readable?
+Is A <- B equally readable?
+Does A <-> B read clearly as bidirectional?
+Are the restrained endpoint chevrons sufficient?
+Do direction cues coexist cleanly with dots / sockets?
 ```
-
-K3 direction cues remain unchanged pending the combined directionality/composition experiment.
-
-## K2 frame-socket highlight invariant
-
-K2 retains the earlier structural docking geometry. Its resting state remains neutral, but an emphasized relation should not produce a colored line attached to a permanently grey socket.
-
-Current behavior:
-
-```text
-rest
-    dark socket interior
-    neutral grey outline
-
-related / highlighted
-    dark socket interior retained
-    socket outline adopts --related-rgb
-    restrained same-color glow
-```
-
-Exact K2 relation-color refinement:
-
-```text
-183264bdd07783eaa2354894592f2cf4a076b6ec
-```
-
----
-
-# Preliminary connector-composition hypothesis
-
-Human review has already supplied a likely architectural direction, but final connector composition is intentionally pending one more visual verification.
-
-Current hypothesis:
-
-```text
-connector grammar should be compositional
-not one universal K0-K4 winner
-```
-
-Potential orthogonal dimensions:
-
-```text
-RELATION SEMANTICS
-    what the relation means
-
-DIRECTIONALITY
-    none
-    A -> B
-    B -> A
-    bidirectional
-
-BASE PRESENTATION
-    curve + optional non-directional attachment treatment
-
-PROGRESSIVE DISCLOSURE
-    hover ports / relation emphasis
-```
-
-Examples mentioned by the project owner include chronological and causal relations, but no final relation vocabulary is frozen.
-
-Hover Ports should remain available. For a non-directional baseline, Micro Dots versus Frame Sockets remains an open human preference. A later user-configurable choice may also remain possible.
 
 ---
 
@@ -310,10 +264,14 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                              connector composition human review
+Current                               connector directionality human review
 ```
 
 There is no pending Claude obligation.
+
+C4 Port Grammar has now matured into connector presentation configurability plus directionality work.
+
+C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
 ---
 
@@ -322,11 +280,10 @@ There is no pending Claude obligation.
 Still unresolved:
 
 ```text
-final connector composition
-Micro Dots vs Frame Sockets as initial non-directional endpoint treatment
-final semantic relation vocabulary
+final direction-cue shape
+final semantic relation taxonomy
+chronology / causality / dependency / evidence / lineage connector semantics
 relation colors / dashed-solid semantics
-dependency / evidence / lineage connector distinctions
 runtime-flow connector behavior
 selected/focused persistent treatment
 runtime / waiting / blocked / approval treatment
@@ -362,14 +319,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 225 and v1-cockpit-design-exploration
+1. use Checkpoint 226 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. refresh http://localhost:5173/design-lab/connector-grammar.html
-4. verify K1/K4 circular markers touch the perimeter from mostly outside and stay attached through hover motion
-5. verify K2 retains the preferred frame-socket geometry
-6. verify K2 socket outlines change to the same highlighted relation color as the connector line
-7. human gives the fuller connector-composition preference
-8. only then implement the combined directionality/composition experiment
-9. keep production Cockpit untouched
-10. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/connector-directionality.html
+4. compare D0-D3
+5. optionally switch Clean / Micro dots / Frame sockets
+6. toggle Hover attachment emphasis and verify direction remains semantically visible
+7. judge forward, reverse and bidirectional cue clarity
+8. preserve keep / refine / replace direction-cue evidence
+9. then open semantic relation-class exploration
+10. keep production Cockpit untouched
+11. keep source-vault deployment paused until explicitly resumed
 ```
