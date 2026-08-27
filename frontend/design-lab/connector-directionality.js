@@ -1,66 +1,95 @@
 const html = document.documentElement
 const world = document.querySelector('#directionality-world')
-const lanes = [...document.querySelectorAll('.direction-lane')]
-const presentationSummary = document.querySelector('#presentation-summary')
+const lanesRoot = document.querySelector('#direction-lanes')
+
+const directionStates = [
+  { id: 'none', code: 'D0', label: 'Undirected', notation: 'A — B' },
+  { id: 'forward', code: 'D1', label: 'Forward', notation: 'A → B' },
+  { id: 'reverse', code: 'D2', label: 'Reverse', notation: 'A ← B' },
+  { id: 'both', code: 'D3', label: 'Bidirectional', notation: 'A ↔ B' },
+]
 
 let relationFrame = 0
 let relationMotionFrame = 0
 let relationMotionUntil = 0
 
-setupPresentationControls()
+renderDirectionLanes()
+setupReducedMotion()
 setupInteractions()
 setupRelationGeometry()
 setupAmbientWorld()
-updatePresentationControls()
 requestRelationUpdate()
 
-function setupPresentationControls() {
-  for (const button of document.querySelectorAll('button[data-attachment-option]')) {
-    button.addEventListener('click', () => {
-      html.dataset.attachmentStyle = button.dataset.attachmentOption
-      updatePresentationControls()
-    })
+function renderDirectionLanes() {
+  if (!lanesRoot) return
+
+  for (const state of directionStates) {
+    const lane = document.createElement('article')
+    lane.className = 'direction-lane'
+    lane.dataset.direction = state.id
+    lane.innerHTML = `
+      <div class="direction-label">
+        <span>${state.code}</span>
+        <strong>${state.label}</strong>
+        <small>${state.notation}</small>
+      </div>
+      <svg class="direction-relations" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
+        <path class="direction-path"></path>
+      </svg>
+      <svg class="direction-overlay" viewBox="0 0 1000 150" preserveAspectRatio="none" aria-hidden="true">
+        <path class="direction-arrow source-arrow"></path>
+        <path class="direction-arrow target-arrow"></path>
+      </svg>
+      ${nodeMarkup('source')}
+      ${nodeMarkup('target')}
+    `
+    lanesRoot.appendChild(lane)
   }
+}
 
-  const hoverToggle = document.querySelector('#hover-port-toggle')
-  hoverToggle?.addEventListener('change', () => {
-    html.dataset.hoverPorts = hoverToggle.checked ? 'on' : 'off'
-    updatePresentationControls()
-  })
+function nodeMarkup(role) {
+  const source = role === 'source'
+  const category = source ? 'investigation' : 'validation'
+  const rgb = source ? '103, 218, 194' : '142, 169, 255'
+  const kind = source ? 'Investigation' : 'Validation / Analysis'
+  const title = source ? 'Work A' : 'Work B'
+  const detail = source ? 'First work unit' : 'Second work unit'
+  const glyph = source
+    ? '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="8" rx="0.7"/></svg>'
+    : '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.3 12.6 12H3.4z"/></svg>'
+  const lightSide = source ? 'left' : 'top'
+  const lightAnchor = source ? '50%' : 'calc(12px + 21%)'
 
-  const reducedToggle = document.querySelector('#reduced-toggle')
-  reducedToggle?.addEventListener('change', () => {
-    html.dataset.reduced = reducedToggle.checked ? 'on' : 'off'
+  return `
+    <div class="grammar-node custom-node category-${category} direction-node ${role}-node" data-node="${source ? 'a' : 'b'}" data-light-side="${lightSide}" style="--node-rgb: ${rgb}; --light-anchor: ${lightAnchor};">
+      <span class="rest-spill" aria-hidden="true"></span>
+      <span class="rest-light" aria-hidden="true"></span>
+      <span class="hover-light" aria-hidden="true"></span>
+      <span class="hover-world-light" aria-hidden="true"></span>
+      <div class="node-surface">
+        <span class="surface-rest-light" aria-hidden="true"></span>
+        <span class="custom-material-layer" aria-hidden="true"></span>
+        <span class="pointer-light" aria-hidden="true"></span>
+        <span class="perimeter-sweep" aria-hidden="true"></span>
+        <span class="frame-signature" aria-hidden="true"></span>
+        <div class="node-heading"><span class="category-glyph" aria-hidden="true">${glyph}</span><span class="unit-kind">${kind}</span></div>
+        <strong>${title}</strong><small>${detail}</small>
+      </div>
+    </div>
+  `
+}
+
+function setupReducedMotion() {
+  const toggle = document.querySelector('#reduced-toggle')
+  toggle?.addEventListener('change', () => {
+    html.dataset.reduced = toggle.checked ? 'on' : 'off'
     requestRelationUpdate()
   })
 }
 
-function updatePresentationControls() {
-  for (const button of document.querySelectorAll('button[data-attachment-option]')) {
-    button.setAttribute('aria-pressed', String(button.dataset.attachmentOption === html.dataset.attachmentStyle))
-  }
-
-  const hoverToggle = document.querySelector('#hover-port-toggle')
-  if (hoverToggle) hoverToggle.checked = html.dataset.hoverPorts === 'on'
-
-  if (!presentationSummary) return
-
-  const attachmentLabels = {
-    none: 'Clean',
-    dots: 'Micro dots',
-    sockets: 'Frame sockets',
-  }
-
-  const attachment = attachmentLabels[html.dataset.attachmentStyle] || attachmentLabels.none
-  const hover = html.dataset.hoverPorts === 'on' ? 'Hover emphasis on' : 'Hover emphasis off'
-  presentationSummary.textContent = `${attachment} · ${hover}`
-}
-
 function setupInteractions() {
-  for (const lane of lanes) {
-    const nodes = [...lane.querySelectorAll('.direction-node')]
-
-    for (const node of nodes) {
+  for (const lane of document.querySelectorAll('.direction-lane')) {
+    for (const node of lane.querySelectorAll('.direction-node')) {
       node.addEventListener('pointerenter', () => {
         lane.classList.add('is-related')
         lane.style.setProperty('--related-rgb', readNodeRgb(node))
@@ -132,13 +161,12 @@ function syncRelationGeometryDuringNodeMotion(durationMs) {
 }
 
 function updateRelationGeometry() {
-  for (const lane of lanes) {
+  for (const lane of document.querySelectorAll('.direction-lane')) {
     const relationSvg = lane.querySelector('.direction-relations')
-    const overlaySvg = lane.querySelector('.direction-overlay')
     const sourceNode = lane.querySelector('.source-node')
     const targetNode = lane.querySelector('.target-node')
 
-    if (!relationSvg || !overlaySvg || !sourceNode || !targetNode) continue
+    if (!relationSvg || !sourceNode || !targetNode) continue
 
     const laneRect = lane.getBoundingClientRect()
     const viewBox = relationSvg.viewBox.baseVal
@@ -149,14 +177,8 @@ function updateRelationGeometry() {
 
     lane.querySelector('.direction-path')?.setAttribute('d', relationPath(start, end))
 
-    positionSocket(lane.querySelector('.source-socket'), start)
-    positionSocket(lane.querySelector('.target-socket'), end)
-
-    positionCircle(lane.querySelector('.source-port'), offsetPoint(start, 'right', 2))
-    positionCircle(lane.querySelector('.target-port'), offsetPoint(end, 'left', 2))
-
-    positionCue(lane.querySelector('.source-cue'), start, 'right')
-    positionCue(lane.querySelector('.target-cue'), end, 'left')
+    positionArrow(lane.querySelector('.source-arrow'), start, 'right')
+    positionArrow(lane.querySelector('.target-arrow'), end, 'left')
   }
 }
 
@@ -191,40 +213,21 @@ function relationPath(start, end) {
   return `M${formatCoord(start.x)} ${formatCoord(start.y)} C${formatCoord(c1x)} ${formatCoord(start.y)}, ${formatCoord(c2x)} ${formatCoord(end.y)}, ${formatCoord(end.x)} ${formatCoord(end.y)}`
 }
 
-function offsetPoint(point, side, distance) {
-  const offset = { x: point.x, y: point.y }
-
-  if (side === 'left') offset.x -= distance
-  if (side === 'right') offset.x += distance
-  if (side === 'top') offset.y -= distance
-  if (side === 'bottom') offset.y += distance
-
-  return offset
-}
-
-function positionCircle(element, point) {
-  if (!element) return
-  element.setAttribute('cx', formatCoord(point.x))
-  element.setAttribute('cy', formatCoord(point.y))
-}
-
-function positionSocket(element, point) {
-  if (!element) return
-  element.setAttribute('x', formatCoord(point.x - 2.6))
-  element.setAttribute('y', formatCoord(point.y - 2.6))
-}
-
-function positionCue(element, edgePoint, side) {
+function positionArrow(element, point, side) {
   if (!element) return
 
-  const tip = offsetPoint(edgePoint, side, 8)
-  const armCenter = offsetPoint(edgePoint, side, 13)
+  const x = point.x
+  const y = point.y
   let d = ''
 
-  if (side === 'left' || side === 'right') {
-    d = `M${formatCoord(armCenter.x)} ${formatCoord(tip.y - 3.7)} L${formatCoord(tip.x)} ${formatCoord(tip.y)} L${formatCoord(armCenter.x)} ${formatCoord(tip.y + 3.7)}`
+  if (side === 'left') {
+    d = `M${formatCoord(x - 5)} ${formatCoord(y - 3.5)} L${formatCoord(x)} ${formatCoord(y)} L${formatCoord(x - 5)} ${formatCoord(y + 3.5)}`
+  } else if (side === 'right') {
+    d = `M${formatCoord(x + 5)} ${formatCoord(y - 3.5)} L${formatCoord(x)} ${formatCoord(y)} L${formatCoord(x + 5)} ${formatCoord(y + 3.5)}`
+  } else if (side === 'top') {
+    d = `M${formatCoord(x - 3.5)} ${formatCoord(y - 5)} L${formatCoord(x)} ${formatCoord(y)} L${formatCoord(x + 3.5)} ${formatCoord(y - 5)}`
   } else {
-    d = `M${formatCoord(tip.x - 3.7)} ${formatCoord(armCenter.y)} L${formatCoord(tip.x)} ${formatCoord(tip.y)} L${formatCoord(tip.x + 3.7)} ${formatCoord(armCenter.y)}`
+    d = `M${formatCoord(x - 3.5)} ${formatCoord(y + 5)} L${formatCoord(x)} ${formatCoord(y)} L${formatCoord(x + 3.5)} ${formatCoord(y + 5)}`
   }
 
   element.setAttribute('d', d)
