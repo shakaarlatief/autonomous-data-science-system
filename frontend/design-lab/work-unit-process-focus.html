@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-process-focus="context">
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-process-focus="context" data-focus-edit="off">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +17,11 @@
       <div class="lab-title-block">
         <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02G · Current Process Focus</span>
         <h1>How should the Cockpit keep future and contextual work visible without letting it compete with the current process?</h1>
-        <p>The accepted neutral-tag + tone disposition treatment is held constant. This slice adds a separate view lens that can more strongly suppress work that is present for context but not currently part of the active process.</p>
+        <p>The accepted neutral-tag + tone disposition treatment is held constant. This slice adds a separate focus lens whose membership can be curated by the user without deleting or changing the underlying work units.</p>
       </div>
       <div class="focus-held-state">
         <span>Semantic boundary</span>
-        <strong>Disposition ≠ current-process membership ≠ view emphasis</strong>
+        <strong>Disposition ≠ focus membership ≠ view emphasis</strong>
       </div>
     </header>
 
@@ -30,13 +30,13 @@
         <div>
           <span class="section-kicker">Bounded design question</span>
           <h2>Keep context available, but let the actual process dominate</h2>
-          <p>Current-process membership is explicit fixture metadata in this experiment. The focus lens changes presentation only and does not rewrite the underlying work-unit disposition.</p>
+          <p>The focus set is explicit and user-adjustable in this experiment. Adding or removing a work unit from the focus set changes only the current-process lens, not its category, disposition, runtime state or existence in the project.</p>
         </div>
         <div class="grammar-principles" aria-label="Focus constraints">
           <span>P7 Neutral Tag + Tone held</span>
           <span>Category identity held</span>
+          <span>User-curated focus set</span>
           <span>Context remains hover-recoverable</span>
-          <span>Connector geometry held</span>
           <span>No semantic deletion</span>
         </div>
       </section>
@@ -44,12 +44,22 @@
       <section class="focus-controls" aria-label="Current process focus controls">
         <div class="focus-control-copy">
           <span class="section-kicker">Process visibility lens</span>
-          <h2>Switch between contextual and focused views</h2>
-          <p>The same project state remains underneath both modes.</p>
+          <h2>Switch the view, then curate what belongs in focus</h2>
+          <p>The project state stays underneath both modes. Focus membership can be changed independently.</p>
         </div>
         <div class="segmented focus-segmented" role="group" aria-label="Current process focus mode">
           <button type="button" data-focus-mode="context" aria-pressed="true">Context visible</button>
           <button type="button" data-focus-mode="focused" aria-pressed="false">Focus current process</button>
+        </div>
+        <div class="focus-membership-controls" aria-label="Focus membership controls">
+          <div>
+            <strong>Edit focus set</strong>
+            <small>Reveal a control on each work unit to add or remove it from the current focus.</small>
+          </div>
+          <div class="focus-membership-actions">
+            <button id="focus-edit-toggle" type="button" aria-pressed="false">Edit focus set</button>
+            <button id="focus-reset" type="button">Reset example</button>
+          </div>
         </div>
         <label class="toggle-row focus-toggle">
           <span>
@@ -61,6 +71,7 @@
         <div class="focus-summary">
           <span>Current lens</span>
           <strong id="focus-summary">Context visible</strong>
+          <small id="focus-membership-summary">3 in focus · 3 context</small>
         </div>
       </section>
 
@@ -68,12 +79,12 @@
         <div class="focus-preview-header">
           <div>
             <span class="section-kicker">Practical project scene</span>
-            <h2>Current process remains clear while contextual work stays available</h2>
-            <p>Blocked, Active and Recommended nodes are marked as current-process fixtures. Completed, Deferred and Future nodes are contextual fixtures for this visual test only.</p>
+            <h2>The current process can be curated without removing the wider project context</h2>
+            <p>Turn on Edit focus set and use the small membership control on any work unit. In Focus current process mode, the visual hierarchy updates immediately.</p>
           </div>
           <div class="focus-legend" aria-label="Process membership legend">
-            <span class="is-current">Current process</span>
-            <span class="is-context">Context / not current</span>
+            <span class="is-current">In current focus</span>
+            <span class="is-context">Context / outside focus</span>
           </div>
         </div>
 
@@ -99,13 +110,13 @@
 
       <section class="review-prompt grammar-review focus-review">
         <span class="section-kicker">Human review</span>
-        <h2>Judge whether the stronger lens preserves useful context without weakening the active process</h2>
+        <h2>Judge the focus lens and the user-curated focus set together</h2>
         <div class="review-questions">
-          <p>In Context visible mode, the existing P7 fading should remain the calm default when all work should still be readable.</p>
-          <p>In Focus current process mode, do contextual nodes recede enough that the current process becomes immediately dominant?</p>
-          <p>When hovering a suppressed contextual node, does partial recovery make it inspectable without making it equal in salience to the active process?</p>
-          <p>Do contextual connector segments recede appropriately together with the contextual work units?</p>
-          <p>This lens is presentation-only. The final definition of current-process membership and the final project-disposition ontology remain unfrozen.</p>
+          <p>Does Edit focus set make it obvious how to add or remove individual work units from the current focus without implying that the work unit itself is deleted?</p>
+          <p>When membership changes, does Focus current process update immediately and preserve the right visual hierarchy?</p>
+          <p>Do connectors recede appropriately whenever either endpoint lies outside the current focus?</p>
+          <p>Should user-curated membership later be project-specific, view-specific, system-suggested with human overrides, or some combination?</p>
+          <p>This experiment uses local browser persistence only as a prototype convenience. Production ownership and persistence semantics remain unfrozen.</p>
         </div>
       </section>
     </main>
