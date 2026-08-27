@@ -7,21 +7,28 @@
 ## Pending model obligation
 
 ```text
-none
+MC-0004 Message 005
+Claude divergent deep-focus transition ideation
 ```
 
-Claude's latest MC-0004 contribution remains:
+Request:
 
 ```text
-faf18ed9932d60a24dd80589b0ec0ba71c5940fd
+docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md
 ```
 
-No Claude action is currently pending.
+Claude is asked to inspect the current F0-F8 transition browser, broaden the design space, propose materially distinct new mechanisms and combinations, use external inspiration where valuable, and recommend as much executable browser testing as the design space warrants. There is deliberately no artificial candidate-count limit.
 
 ## Next actor
 
 ```text
-human project owner
+Claude
+```
+
+Expected response:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
 ```
 
 Current checkpoint:
@@ -36,10 +43,16 @@ Current browser route:
 http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
 ```
 
-Initial browser implementation target:
+Exact latest browser implementation target:
 
 ```text
-31abc2b3a23de29358978e19bd88fda1e9166f6b
+afd15f52897a295788dc3a1d04b2d1b31ef707f9
+```
+
+Current branch context when Message 005 was opened:
+
+```text
+065e6d7f71a0d3c21acb828963398a3dcabe0928
 ```
 
 ## Most recent accepted / working results
@@ -54,6 +67,18 @@ L0 Flat Fields                       provisional working default only
 
 L1-L8 internal-layout alternatives remain preserved for later review and are not rejected.
 
+Known fixture imperfection in the current deep-focus browser:
+
+```text
+accepted SEL2
+    four outside corner brackets
+
+current deep-focus fixture
+    two diagonal brackets only
+```
+
+This is explicitly not a semantic/design change and should be ignored by Claude when judging transition architecture.
+
 ## Active deep-focus transition review
 
 Governing hierarchy:
@@ -66,7 +91,7 @@ compact map work unit
     -> specialist workspace / deep focus
 ```
 
-Candidate architectures:
+Existing candidate architectures:
 
 ```text
 F0  Hard Replace
@@ -80,15 +105,6 @@ F7  Portal Lift
 F8  Layered Stage
 ```
 
-Current human gate:
-
-```text
-compare F0-F8
-click candidates to enter / return
-judge object continuity from X5 to specialist workspace
-judge retained map context versus distraction
-judge return-to-project clarity
-prefer / reject / combine / refine
-```
+The current human review is paused for Claude design-space expansion. After Message 006, ChatGPT will synthesize the ideas into browser-testable candidates rather than prematurely narrowing to F0-F8.
 
 Production `/cockpit` remains untouched. Specialist-workspace internals, exact motion, URL state, semantic zoom and production implementation remain unfrozen.
