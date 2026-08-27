@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership remain accepted current design directions. Runtime remains conditional on a meaningful current execution/work episode. Human review of the corrected R0-R6 runtime browser found that R1 Status Lamp and R5 Motion Signal were technically different but perceptually insufficiently differentiated, and rejected simultaneous dot-plus-runtime-tag composition. The active product-design gate now compares exactly one switchable runtime carrier per live work unit: Dot + dynamic ring versus Animated runtime tag, with both global and per-box switching.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership remain accepted current design directions. Runtime remains conditional on a meaningful current execution/work episode. Human review of the corrected R0-R6 runtime browser found that R1 Status Lamp and R5 Motion Signal were technically different but perceptually insufficiently differentiated, and rejected simultaneous dot-plus-runtime-tag composition. The switchable one-carrier architecture received explicit positive human review. The active product-design gate now verifies a small motion refinement to the Animated runtime tag: the tag and its border remain stationary while only a short luminous section travels around that border.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -34,6 +34,8 @@ docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.
 frontend/design-lab/work-unit-runtime-carrier-switch.html
 frontend/design-lab/work-unit-runtime-carrier-switch.css
 frontend/design-lab/work-unit-runtime-carrier-switch.js
+frontend/design-lab/work-unit-runtime-carrier-switch-trace.css
+frontend/design-lab/work-unit-runtime-carrier-switch-trace.js
 ```
 
 Current local URL:
@@ -42,10 +44,16 @@ Current local URL:
 http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
 ```
 
-Exact current browser implementation target:
+Initial switchable-carrier implementation target:
 
 ```text
 3a862c659e60e53832eaa5940ddb60d05734cd7d
+```
+
+Exact current refined browser implementation target:
+
+```text
+0f1ea8ec4346c8f66a3a37d74f1b70a605a7d7c9
 ```
 
 Previous corrected conditional-runtime evidence remains preserved at:
@@ -353,6 +361,8 @@ Animated runtime tag
 
 The earlier simultaneous dot-plus-tag runtime composition is not carried forward.
 
+The project owner reviewed this switchable architecture and stated that it was "absolutely perfect". The architecture therefore remains the held convergence direction while the tag's motion mechanism is refined.
+
 ### Dot + dynamic ring
 
 ```text
@@ -369,11 +379,24 @@ The ring has intentionally higher visual salience than the previous R5 ring.
 ```text
 explicit runtime code
 state-colored text
-state-colored perimeter
-circulating bright perimeter trace
+stationary state-colored perimeter
+short luminous segment travelling along that exact perimeter
 ```
 
 The tag does not copy the expanding/breathing dot motion.
+
+The first switchable-carrier implementation used a rotating conic-gradient pseudo-element. Although geometrically bounded to the tag, it visually read as a rotating inner box/gradient. The refined implementation removes that rotation entirely. An SVG rounded rectangle now follows the real tag perimeter, and `stroke-dashoffset` moves only a short bright section along the stationary outline.
+
+Conceptually:
+
+```text
+tag box              stationary
+tag border           stationary
+runtime text         stationary
+bright border segment travels around the perimeter
+```
+
+This is the requested analogy to a highlighted section travelling around a circular outline, applied to the rounded rectangular tag.
 
 ## Switching interaction
 
@@ -418,22 +441,23 @@ Investigation   FUTURE + NONE
 
 The practical scene allows a mixed carrier view through local overrides while preserving P7 disposition and category identity.
 
-Reduced motion removes ring/tag animation while preserving static state identity. NONE never animates.
+Reduced motion removes ring/tag animation while preserving static state identity. NONE never animates. For the refined tag, Reduced motion removes the travelling highlight segment while retaining the ordinary static colored tag perimeter.
 
 The saved connector stroke-rhythm channel from Research 058 remains reserved for a future line-level semantic question and is not assigned by this node-level runtime experiment.
 
 Current human gate:
 
 ```text
-compare Dot + dynamic ring with Animated runtime tag
-verify the dot ring is visibly dynamic
-verify the tag perimeter trace feels clean and distinct
+verify the refined tag remains completely stationary
+verify only a short section of its border travels around the perimeter
+confirm the result matches the intended line-going-around-itself motion
+compare Dot + dynamic ring with the refined Animated runtime tag
 use the global switch in both directions
 create and remove local per-box overrides
 inspect a mixed practical scene
 verify NONE / DEFER + NONE / FUTURE + NONE remain free of runtime instrumentation
 compare normal vs Reduced motion
-prefer / reject / combine / refine
+prefer / reject / refine
 ```
 
 ---
@@ -515,14 +539,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 1. use Checkpoint 237 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. open http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
-4. compare Dot + dynamic ring against Animated runtime tag
-5. use the global switch in both directions
-6. click individual live-runtime carriers to create and remove local overrides
-7. inspect a mixed practical scene with both carrier types present
-8. verify NONE / DEFER + NONE / FUTURE + NONE have no runtime carrier
-9. toggle Reduced motion and confirm runtime meaning remains legible
-10. record prefer / reject / combine / refine evidence
-11. do not freeze the final runtime/disposition/Blocked ontology merely from this visual slice
-12. keep production Cockpit untouched
-13. keep source-vault deployment paused until explicitly resumed
+4. switch globally to Animated runtime tag
+5. verify the tag box itself does not rotate or morph
+6. verify only the luminous border segment travels around the stationary rounded rectangle
+7. compare the refined tag against Dot + dynamic ring
+8. click individual live-runtime carriers to create and remove local overrides
+9. verify NONE / DEFER + NONE / FUTURE + NONE have no runtime carrier
+10. toggle Reduced motion and confirm runtime meaning remains legible
+11. record accept / reject / refine evidence
+12. do not freeze the final runtime/disposition/Blocked ontology merely from this visual slice
+13. keep production Cockpit untouched
+14. keep source-vault deployment paused until explicitly resumed
 ```
