@@ -5,7 +5,12 @@
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN  
 **Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
 **Scope:** Records selection of the scientific marker vocabulary, retention/refinement of the M1 micro-material direction, refinement of the Validation true-shape silhouette, and opening of the next human verification gate.  
-**Authority:** Current Phase-C routing/evidence boundary only. No production work-unit grammar is promoted. Specification 008 remains the promoted Cockpit interaction architecture.
+**Authority:** Current Phase-C routing/evidence boundary only. No production work-unit grammar is promoted. Specification 008 remains the promoted Cockpit interaction architecture.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT
 
 ## Human review
 
