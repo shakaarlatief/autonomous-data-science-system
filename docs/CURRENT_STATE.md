@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 236  
+**Checkpoint:** 237  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership remain accepted current design directions. Human review of the first runtime-state fixture exposed a semantic correction: runtime is conditional on a meaningful current execution/work episode rather than universally populated on every work unit. The active product-design gate now reviews R1-R6 against that corrected model.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. P7 Neutral Tag + Tone, the stronger current-process focus lens and user-curated focus membership remain accepted current design directions. Runtime remains conditional on a meaningful current execution/work episode. Human review of the corrected R0-R6 runtime browser found that R1 Status Lamp and R5 Motion Signal were technically different but perceptually insufficiently differentiated, and rejected simultaneous dot-plus-runtime-tag composition. The active product-design gate now compares exactly one switchable runtime carrier per live work unit: Dot + dynamic ring versus Animated runtime tag, with both global and per-box switching.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,24 +29,31 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
-docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
-docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
-frontend/design-lab/work-unit-runtime-grammar.html
-frontend/design-lab/work-unit-runtime-grammar.css
-frontend/design-lab/work-unit-runtime-grammar.js
+docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
+docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+frontend/design-lab/work-unit-runtime-carrier-switch.html
+frontend/design-lab/work-unit-runtime-carrier-switch.css
+frontend/design-lab/work-unit-runtime-carrier-switch.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-runtime-grammar.html
+http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
 ```
 
 Exact current browser implementation target:
 
 ```text
-dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
+3a862c659e60e53832eaa5940ddb60d05734cd7d
+```
+
+Previous corrected conditional-runtime evidence remains preserved at:
+
+```text
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
+docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
+frontend/design-lab/work-unit-runtime-grammar.html
 ```
 
 ---
@@ -189,7 +196,7 @@ fac1db37af4225927d6c799e37418a3ad9c42c13
 
 The final project-disposition ontology remains unfrozen.
 
-A semantic correction from Checkpoint 236 now applies to interpretation:
+Current interpretation:
 
 ```text
 Current
@@ -199,7 +206,7 @@ Running
     runtime / current execution episode
 ```
 
-The earlier shorthand `Active / Current` should not be used in this runtime slice because `Active` can imply execution.
+The earlier shorthand `Active / Current` should not be used in the runtime slice because `Active` can imply execution.
 
 ---
 
@@ -236,9 +243,9 @@ Browser-local persistence remains prototype convenience only. Final production o
 
 ---
 
-# Active Slice 02H: conditional work-unit runtime state
+# Active Slice 02H: conditional runtime carrier convergence
 
-The binding semantic separation is now:
+The binding semantic separation remains:
 
 ```text
 CATEGORY
@@ -260,8 +267,6 @@ CURRENT-FOCUS MEMBERSHIP
 
 Runtime is conditional.
 
-A work unit may exist and have a project disposition while having no current runtime at all.
-
 Critical distinction:
 
 ```text
@@ -272,7 +277,7 @@ Idle runtime
     an execution episode exists but is currently doing nothing
 ```
 
-The current browser no longer uses Idle as the absence control. It uses:
+The active browser uses:
 
 ```text
 NONE    No runtime
@@ -283,7 +288,7 @@ HUMAN   Waiting for Human
 FAIL    Failed current attempt
 ```
 
-Working compatibility interpretation:
+Working compatibility interpretation remains:
 
 ```text
 Current
@@ -305,11 +310,9 @@ Future
 
 This is not a frozen state matrix.
 
-Current runtime must also remain separate from historical execution provenance. A Deferred or Completed work unit may have prior failed/successful attempts without carrying that historical state as current runtime.
+Current runtime remains separate from historical execution provenance.
 
 ## Blocked remains unresolved
-
-Checkpoint 236 also preserves a new ontology warning:
 
 ```text
 Blocked
@@ -317,23 +320,90 @@ Blocked
     rather than a peer of Current / Next / Deferred / Completed / Future
 ```
 
-Combinations such as `Current + Blocked` and `Next + Blocked` appear coherent. No final progress-constraint axis is promoted yet.
+Combinations such as `Current + Blocked` and `Next + Blocked` remain plausible. No final progress-constraint axis is promoted yet.
 
-## Browser carrier families
+## R1/R5 verification result
 
-The visual mechanisms remain:
+Direct implementation inspection of the previous browser confirmed:
 
 ```text
-R0  Neutral Control
-R1  Status Lamp
-R2  Activity Rail
-R3  Runtime Tag
-R4  Instrument Cell
-R5  Motion Signal
-R6  Restrained Hybrid
+R1 Status Lamp
+    runtime lamp only
+
+R5 Motion Signal
+    same runtime lamp
+    + runtime motion ring
 ```
 
-The NONE row intentionally renders no runtime lamp, strip, badge, cell or motion ring under every R1-R6 encoding.
+Therefore they were not literally identical in implementation.
+
+However, the additional R5 ring was low-salience, nearly spatially coincident with the lamp, and only Failed changed its shape strongly enough to stand out. The human observation that R1 and R5 looked effectively the same at working scale is accepted as valid negative design evidence.
+
+The earlier R1-R6 matrix remains preserved historically but is no longer the active convergence gate.
+
+## Current convergence candidates
+
+Exactly one runtime carrier is shown per live-runtime work unit:
+
+```text
+Dot + dynamic ring
+or
+Animated runtime tag
+```
+
+The earlier simultaneous dot-plus-tag runtime composition is not carried forward.
+
+### Dot + dynamic ring
+
+```text
+state-colored core dot
+stronger state-colored outer ring
+state-sensitive motion pacing
+Failed uses a sharper non-circular ring treatment
+```
+
+The ring has intentionally higher visual salience than the previous R5 ring.
+
+### Animated runtime tag
+
+```text
+explicit runtime code
+state-colored text
+state-colored perimeter
+circulating bright perimeter trace
+```
+
+The tag does not copy the expanding/breathing dot motion.
+
+## Switching interaction
+
+Global control:
+
+```text
+Dot + dynamic ring
+Animated runtime tag
+```
+
+Selecting a global carrier:
+
+```text
+changes every live-runtime work unit
+clears local overrides
+```
+
+Per-box interaction:
+
+```text
+click visible dot/ring
+    -> switch only that work unit to animated tag
+
+click visible animated tag
+    -> switch only that work unit to dot/ring
+```
+
+If a node differs from the current global carrier, it is a local override. Switching it back to the global carrier removes the override.
+
+No-runtime nodes expose no runtime carrier and no switch target.
 
 ## Practical coexistence fixture
 
@@ -346,24 +416,23 @@ Evaluation      DEFER + NONE
 Investigation   FUTURE + NONE
 ```
 
-This tests optional runtime against real category/disposition coexistence instead of pretending that every box carries an execution process.
+The practical scene allows a mixed carrier view through local overrides while preserving P7 disposition and category identity.
 
-Semantic runtime motion must degrade to a static but still interpretable cue under Reduced motion. NONE must never animate.
+Reduced motion removes ring/tag animation while preserving static state identity. NONE never animates.
 
 The saved connector stroke-rhythm channel from Research 058 remains reserved for a future line-level semantic question and is not assigned by this node-level runtime experiment.
 
 Current human gate:
 
 ```text
-verify NONE looks like no runtime rather than an idle execution
-compare R1-R6 on QUEUE / RUN / WAIT / HUMAN / FAIL
-inspect mixed-category scene
-inspect DEFER + NONE and FUTURE + NONE specifically
+compare Dot + dynamic ring with Animated runtime tag
+verify the dot ring is visibly dynamic
+verify the tag perimeter trace feels clean and distinct
+use the global switch in both directions
+create and remove local per-box overrides
+inspect a mixed practical scene
+verify NONE / DEFER + NONE / FUTURE + NONE remain free of runtime instrumentation
 compare normal vs Reduced motion
-judge runtime clarity
-judge category/disposition competition
-judge tag density
-judge whether motion feels semantic rather than decorative
 prefer / reject / combine / refine
 ```
 
@@ -376,7 +445,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               conditional runtime-state visual-carrier human review
+Current                               switchable runtime-carrier convergence human review
 ```
 
 There is no pending Claude obligation.
@@ -392,6 +461,9 @@ Still unresolved:
 ```text
 final runtime / execution-state ontology
 final runtime visual carrier
+whether both runtime carriers survive to production
+production default runtime carrier
+production runtime-carrier persistence / preference scope
 final project-disposition ontology
 final Blocked / progress-constraint semantics
 final compatibility matrix between disposition / constraints / runtime
@@ -440,16 +512,17 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 236 and v1-cockpit-design-exploration
+1. use Checkpoint 237 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-runtime-grammar.html
-4. verify NONE has no runtime instrumentation under R1-R6
-5. compare R1-R6 on the five live runtime states
-6. inspect the mixed-category practical scene
-7. inspect DEFER + NONE and FUTURE + NONE specifically
-8. toggle Reduced motion and confirm runtime meaning remains legible
-9. record prefer / reject / combine / refine evidence
-10. do not freeze the final runtime/disposition/Blocked ontology merely from this visual slice
-11. keep production Cockpit untouched
-12. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
+4. compare Dot + dynamic ring against Animated runtime tag
+5. use the global switch in both directions
+6. click individual live-runtime carriers to create and remove local overrides
+7. inspect a mixed practical scene with both carrier types present
+8. verify NONE / DEFER + NONE / FUTURE + NONE have no runtime carrier
+9. toggle Reduced motion and confirm runtime meaning remains legible
+10. record prefer / reject / combine / refine evidence
+11. do not freeze the final runtime/disposition/Blocked ontology merely from this visual slice
+12. keep production Cockpit untouched
+13. keep source-vault deployment paused until explicitly resumed
 ```
