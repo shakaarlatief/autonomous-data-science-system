@@ -1,73 +1,131 @@
-/* Runtime-tag motion refinement.
+/* Accepted runtime-tag motion refinement.
  *
- * The tag itself stays completely stationary. A short luminous section of the
- * tag's own rounded-rectangle border travels along that border via SVG
- * stroke-dashoffset. Nothing rotates inside the tag and no inner box spins.
+ * The tag geometry, text and border mask stay stationary. A broad soft shade
+ * field changes orientation underneath that fixed rounded-rectangle border.
+ * This is the reference-inspired T7 Soft Shade Flow selected after human review.
+ * No travelling dash and no rotating rectangular pseudo-element remain.
  */
 
-/* Retire the earlier rotating conic-gradient pseudo-element. */
-.runtime-tag-carrier::before {
-  display: none !important;
-  animation: none !important;
+@property --runtime-tag-shade-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
 }
 
-/* Keep the ordinary tag perimeter present underneath the moving segment. */
+/* Retire the earlier rotating gradient and the temporary SVG tracer. */
+.runtime-tag-carrier::before {
+  display: block !important;
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  z-index: 1;
+  padding: 2.1px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.92;
+  background: conic-gradient(
+    from var(--runtime-tag-shade-angle),
+    rgba(var(--runtime-rgb), 0.015) 0deg,
+    rgba(var(--runtime-rgb), 0.025) 24deg,
+    rgba(var(--runtime-rgb), 0.055) 58deg,
+    rgba(var(--runtime-rgb), 0.13) 92deg,
+    rgba(var(--runtime-rgb), 0.28) 126deg,
+    rgba(var(--runtime-rgb), 0.44) 156deg,
+    rgba(var(--runtime-rgb), 0.52) 180deg,
+    rgba(var(--runtime-rgb), 0.40) 205deg,
+    rgba(var(--runtime-rgb), 0.24) 236deg,
+    rgba(var(--runtime-rgb), 0.11) 272deg,
+    rgba(var(--runtime-rgb), 0.045) 310deg,
+    rgba(var(--runtime-rgb), 0.018) 342deg,
+    rgba(var(--runtime-rgb), 0.015) 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: blur(1.2px) drop-shadow(0 0 4px rgba(var(--runtime-rgb), 0.17));
+  animation: runtime-tag-shade-orbit 3.2s linear infinite;
+}
+
 .runtime-tag-carrier::after {
-  border-color: rgba(var(--runtime-rgb), 0.30);
-  box-shadow: inset 0 0 6px rgba(var(--runtime-rgb), 0.035);
+  content: "";
+  position: absolute;
+  inset: -0.4px;
+  z-index: 1;
+  padding: 1.25px;
+  border: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.78;
+  background: conic-gradient(
+    from calc(var(--runtime-tag-shade-angle) + 12deg),
+    rgba(var(--runtime-rgb), 0.01) 0deg,
+    rgba(var(--runtime-rgb), 0.025) 42deg,
+    rgba(var(--runtime-rgb), 0.08) 82deg,
+    rgba(var(--runtime-rgb), 0.22) 118deg,
+    rgba(var(--runtime-rgb), 0.50) 150deg,
+    rgba(var(--runtime-rgb), 0.72) 177deg,
+    rgba(var(--runtime-rgb), 0.58) 204deg,
+    rgba(var(--runtime-rgb), 0.31) 236deg,
+    rgba(var(--runtime-rgb), 0.12) 274deg,
+    rgba(var(--runtime-rgb), 0.04) 318deg,
+    rgba(var(--runtime-rgb), 0.01) 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: blur(0.42px) drop-shadow(0 0 2.8px rgba(var(--runtime-rgb), 0.20));
+  animation: runtime-tag-shade-orbit 3.2s linear infinite;
+}
+
+.runtime-tag-carrier {
+  --runtime-tag-shade-angle: 0deg;
+}
+
+.runtime-tag-carrier > :not(.runtime-tag-trace) {
+  position: relative;
+  z-index: 2;
 }
 
 .runtime-tag-trace {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
+  display: none !important;
 }
 
-.runtime-tag-trace-runner {
-  fill: none;
-  stroke: rgba(var(--runtime-rgb), 1);
-  stroke-width: 2.2;
-  stroke-linecap: round;
-  stroke-dasharray: 15 85;
-  stroke-dashoffset: 0;
-  filter: drop-shadow(0 0 2px rgba(var(--runtime-rgb), 0.72));
-  animation: carrier-tag-perimeter-travel 2.25s linear infinite;
+@keyframes runtime-tag-shade-orbit {
+  from { --runtime-tag-shade-angle: 0deg; }
+  to { --runtime-tag-shade-angle: 360deg; }
 }
 
-[data-runtime="queued"] .runtime-tag-trace-runner {
-  animation-duration: 2.6s;
+[data-runtime="queued"] .runtime-tag-carrier::before,
+[data-runtime="queued"] .runtime-tag-carrier::after {
+  animation-duration: 4s;
 }
 
-[data-runtime="running"] .runtime-tag-trace-runner {
-  animation-duration: 1.35s;
+[data-runtime="running"] .runtime-tag-carrier::before,
+[data-runtime="running"] .runtime-tag-carrier::after {
+  animation-duration: 2.55s;
 }
 
-[data-runtime="waiting"] .runtime-tag-trace-runner {
-  animation-duration: 3s;
+[data-runtime="waiting"] .runtime-tag-carrier::before,
+[data-runtime="waiting"] .runtime-tag-carrier::after {
+  animation-duration: 4.7s;
 }
 
-[data-runtime="human"] .runtime-tag-trace-runner {
-  animation-duration: 2.15s;
+[data-runtime="human"] .runtime-tag-carrier::before,
+[data-runtime="human"] .runtime-tag-carrier::after {
+  animation-duration: 3.45s;
 }
 
-[data-runtime="failed"] .runtime-tag-trace-runner {
-  animation-duration: 1.7s;
+[data-runtime="failed"] .runtime-tag-carrier::before,
+[data-runtime="failed"] .runtime-tag-carrier::after {
+  animation-duration: 2.8s;
 }
 
-@keyframes carrier-tag-perimeter-travel {
-  from {
-    stroke-dashoffset: 0;
-  }
-  to {
-    stroke-dashoffset: -100;
-  }
-}
-
-html[data-reduced="on"] .runtime-tag-trace-runner {
-  display: none;
+html[data-reduced="on"] .runtime-tag-carrier::before,
+html[data-reduced="on"] .runtime-tag-carrier::after {
+  display: none !important;
   animation: none !important;
 }
