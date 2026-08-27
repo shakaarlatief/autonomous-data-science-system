@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-27  
 **Status:** Active Phase-C runtime-carrier convergence evidence  
-**Scope:** Verifies the project owner's observation that the earlier R1 Status Lamp and R5 Motion Signal were visually collapsing together, then opens a narrower two-carrier runtime presentation experiment with global and per-work-unit switching.  
+**Scope:** Verifies the project owner's observation that the earlier R1 Status Lamp and R5 Motion Signal were visually collapsing together, then opens and refines a narrower two-carrier runtime presentation experiment with global and per-work-unit switching.  
 **Authority:** Research evidence for the current Project Cockpit runtime slice. This memo does not freeze the final ADS runtime ontology, runtime carrier, project-disposition ontology, or production preference-persistence architecture.
 
 ## 1. Human observation
@@ -106,7 +106,7 @@ state-colored perimeter
 circulating perimeter trace
 ```
 
-The tag does **not** copy the expanding/breathing behavior of the dot carrier. Instead, a bright perimeter segment circulates around the tag outline. This provides semantic motion while keeping the two carrier families visually distinct.
+The tag does **not** copy the expanding/breathing behavior of the dot carrier.
 
 ## 4. Exactly one runtime carrier per box
 
@@ -217,7 +217,7 @@ No state depends on motion alone.
 
 ## 9. Browser implementation
 
-New bounded browser:
+Bounded browser:
 
 ```text
 http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
@@ -229,12 +229,20 @@ Files:
 frontend/design-lab/work-unit-runtime-carrier-switch.html
 frontend/design-lab/work-unit-runtime-carrier-switch.css
 frontend/design-lab/work-unit-runtime-carrier-switch.js
+frontend/design-lab/work-unit-runtime-carrier-switch-trace.css
+frontend/design-lab/work-unit-runtime-carrier-switch-trace.js
 ```
 
-Exact browser implementation target:
+Initial switchable-carrier target:
 
 ```text
 3a862c659e60e53832eaa5940ddb60d05734cd7d
+```
+
+Latest refined browser implementation target:
+
+```text
+0f1ea8ec4346c8f66a3a37d74f1b70a605a7d7c9
 ```
 
 Production `/cockpit` remains untouched.
@@ -254,11 +262,55 @@ Investigation   FUTURE + NONE
 
 The user can globally switch all four live-runtime boxes or locally mix dot and tag carriers in the same scene.
 
-## 11. Current review questions
+## 11. Human acceptance and tag-motion refinement
+
+The project owner reviewed the switchable-carrier browser and stated:
+
+> Yes, this is absolutely perfect.
+
+The remaining requested refinement concerned only the animated tag motion.
+
+The initial tag implementation used a rotating conic-gradient border treatment. Although intended to suggest a circulating perimeter trace, it visually read as though a separate box or gradient inside the tag itself was rotating.
+
+The requested motion is more specific:
 
 ```text
-1. Is the strengthened dot ring now visibly dynamic rather than effectively identical to a static lamp?
-2. Does the circulating tag perimeter feel clean and intentional?
+tag geometry stays completely stationary
+static perimeter stays completely stationary
+only a bright section of that perimeter travels around the rounded rectangle
+```
+
+The refined implementation therefore retires the rotating conic-gradient pseudo-element and uses an SVG rounded-rectangle stroke with:
+
+```text
+static underlying tag border
++
+short luminous stroke segment
++
+stroke-dashoffset animation around the exact rounded-rectangle path
+```
+
+Nothing rotates. The line segment advances along the perimeter itself, analogous to a highlighted section travelling around a circular outline.
+
+Runtime-specific pacing remains:
+
+```text
+QUEUE   slower travel
+RUN     faster travel
+WAIT    slow travel
+HUMAN   moderate travel
+FAIL    relatively fast travel
+```
+
+Reduced motion removes the travelling segment while retaining the static colored tag and perimeter.
+
+This is a micro-refinement inside the already-open Checkpoint 237 review gate, so no additional checkpoint is created solely for this motion correction.
+
+## 12. Current review questions
+
+```text
+1. Does the strengthened dot ring remain clearly dynamic rather than effectively identical to a static lamp?
+2. Does the refined tag now read as a stationary box whose border highlight travels around its own perimeter?
 3. Which carrier is preferable as a default, if either?
 4. Is supporting both as user-selectable appearance useful rather than unnecessary complexity?
 5. Does global switching feel natural?
@@ -268,7 +320,7 @@ The user can globally switch all four live-runtime boxes or locally mix dot and 
 9. Does Reduced motion preserve interpretability?
 ```
 
-## 12. Promotion audit
+## 13. Promotion audit
 
 Strong active evidence:
 
@@ -276,7 +328,9 @@ Strong active evidence:
 R1 and R5 were technically different but perceptually insufficiently differentiated
 stacking dot and runtime tag is not the preferred composition
 one runtime carrier at a time is the current convergence hypothesis
-global and per-work-unit carrier switching are worth direct human evaluation
+global and per-work-unit carrier switching are useful enough to continue evaluating
+the switchable-carrier architecture received explicit positive human review
+tag motion should travel along a stationary perimeter rather than rotate an inner border treatment
 ```
 
 Still unfrozen:
