@@ -46,7 +46,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact current browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
 ---
@@ -214,7 +214,7 @@ Deferred
 Future
 ```
 
-The practical scenes use dynamically calculated neutral connector geometry so the comparison tests disposition treatment rather than connector semantics.
+The practical scenes use dynamically calculated neutral connector geometry. Connector attachment chooses horizontal or vertical edges from the actual rendered card separation and follows H4 hover lift, so connector defects do not contaminate the disposition comparison.
 
 Current human gate:
 
