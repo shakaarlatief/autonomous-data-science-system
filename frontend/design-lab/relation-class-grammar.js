@@ -90,7 +90,7 @@ function laneMarkup(relation, index) {
       <svg class="relation-overlay" viewBox="0 0 1000 140" preserveAspectRatio="none" aria-hidden="true">
         <path class="semantic-arrow" />
         <g class="semantic-tag">
-          <rect class="semantic-tag-bg" width="48" height="17" rx="5" />
+          <rect class="semantic-tag-bg" width="48" height="20" rx="6" />
           <text class="semantic-tag-text">${relation.code}</text>
         </g>
       </svg>
@@ -155,7 +155,7 @@ function updateControls() {
   if (reducedToggle) reducedToggle.checked = html.dataset.reduced === 'on'
 
   if (encodingSummary) {
-    encodingSummary.textContent = encodingLabels[html.dataset.relationEncoding] || encodingLabels.e0
+    encodingSummary.textContent = encodingLabels[html.dataset.relationEncoding] || encodingLabels.e5
   }
 }
 
@@ -306,7 +306,7 @@ function positionTag(group, start, end) {
   const text = group.querySelector('text')
 
   rect?.setAttribute('x', formatCoord(x - 24))
-  rect?.setAttribute('y', formatCoord(y - 8.5))
+  rect?.setAttribute('y', formatCoord(y - 10))
   text?.setAttribute('x', formatCoord(x))
   text?.setAttribute('y', formatCoord(y + 0.5))
 }
