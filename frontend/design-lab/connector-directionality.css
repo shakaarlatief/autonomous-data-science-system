@@ -17,7 +17,6 @@ body {
 }
 
 .directionality-held-state span,
-.presentation-summary span,
 .directionality-safety-note strong {
   color: var(--text-dim);
   font-size: 7.5px;
@@ -83,38 +82,22 @@ body {
 }
 
 .directionality-controls {
-  display: grid;
-  grid-template-columns: minmax(420px, 1.2fr) minmax(330px, 0.9fr) minmax(300px, 0.8fr) minmax(220px, 0.55fr);
-  gap: 10px;
-  align-items: stretch;
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 16px;
-}
-
-.control-group,
-.directionality-toggle,
-.presentation-summary {
-  min-height: 74px;
-  padding: 10px 11px;
-  border: 1px solid var(--panel-border);
-  border-radius: 9px;
-  background: rgba(13, 19, 28, 0.70);
-}
-
-.control-group {
-  display: grid;
-  align-content: center;
-  gap: 7px;
-}
-
-.directionality-segmented {
-  justify-content: flex-start;
 }
 
 .directionality-toggle {
   display: flex;
+  min-width: 340px;
+  min-height: 64px;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  padding: 10px 11px;
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(13, 19, 28, 0.70);
 }
 
 .directionality-toggle > span {
@@ -138,18 +121,6 @@ body {
   width: 15px;
   height: 15px;
   accent-color: rgb(142, 169, 255);
-}
-
-.presentation-summary {
-  display: grid;
-  align-content: center;
-  gap: 5px;
-}
-
-.presentation-summary strong {
-  color: rgba(217, 227, 244, 0.90);
-  font-size: 8.8px;
-  font-weight: 760;
 }
 
 .directionality-preview {
@@ -190,7 +161,7 @@ body {
   z-index: 2;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
-  padding: 18px 20px 18px;
+  padding: 18px 20px;
 }
 
 .direction-lane {
@@ -286,49 +257,7 @@ body {
   filter: drop-shadow(0 0 4px rgba(var(--related-rgb), 0.38));
 }
 
-.hover-port {
-  opacity: 0;
-  fill: rgba(150, 166, 188, 0.76);
-  stroke: rgba(11, 17, 25, 0.94);
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
-  transition: opacity 160ms ease, fill 160ms ease, stroke 160ms ease, filter 160ms ease;
-}
-
-.direction-socket {
-  opacity: 0;
-  fill: rgba(16, 23, 33, 0.98);
-  stroke: rgba(153, 170, 193, 0.72);
-  stroke-width: 1.1;
-  vector-effect: non-scaling-stroke;
-  transition: opacity 160ms ease, stroke 160ms ease, filter 160ms ease;
-}
-
-html[data-attachment-style="dots"] .hover-port {
-  opacity: 0.84;
-}
-
-html[data-attachment-style="sockets"] .direction-socket {
-  opacity: 0.92;
-}
-
-html[data-hover-ports="on"][data-attachment-style="none"] .direction-lane.is-related .hover-port {
-  opacity: 1;
-}
-
-html[data-hover-ports="on"] .direction-lane.is-related .hover-port,
-html[data-attachment-style="dots"] .direction-lane.is-related .hover-port {
-  fill: rgba(var(--related-rgb), 0.94);
-  stroke: rgba(11, 17, 25, 0.94);
-  filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.44));
-}
-
-html[data-attachment-style="sockets"] .direction-lane.is-related .direction-socket {
-  stroke: rgba(var(--related-rgb), 0.94);
-  filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.42));
-}
-
-.direction-cue {
+.direction-arrow {
   opacity: 0;
   fill: none;
   stroke: rgba(198, 210, 228, 0.82);
@@ -339,14 +268,14 @@ html[data-attachment-style="sockets"] .direction-lane.is-related .direction-sock
   transition: opacity 160ms ease, stroke 160ms ease, filter 160ms ease;
 }
 
-.direction-lane[data-direction="forward"] .target-cue,
-.direction-lane[data-direction="reverse"] .source-cue,
-.direction-lane[data-direction="both"] .source-cue,
-.direction-lane[data-direction="both"] .target-cue {
-  opacity: 0.92;
+.direction-lane[data-direction="forward"] .target-arrow,
+.direction-lane[data-direction="reverse"] .source-arrow,
+.direction-lane[data-direction="both"] .source-arrow,
+.direction-lane[data-direction="both"] .target-arrow {
+  opacity: 0.94;
 }
 
-.direction-lane.is-related .direction-cue {
+.direction-lane.is-related .direction-arrow {
   stroke: rgba(var(--related-rgb), 0.96);
   filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.42));
 }
@@ -362,18 +291,14 @@ html[data-reduced="on"] .ambient-drift {
 }
 
 html[data-reduced="on"] .direction-path,
-html[data-reduced="on"] .hover-port,
-html[data-reduced="on"] .direction-socket,
-html[data-reduced="on"] .direction-cue,
+html[data-reduced="on"] .direction-arrow,
 html[data-reduced="on"] .direction-node {
   transition: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .direction-path,
-  .hover-port,
-  .direction-socket,
-  .direction-cue,
+  .direction-arrow,
   .direction-node {
     transition: none !important;
   }
