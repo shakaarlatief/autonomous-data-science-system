@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 229  
+**Checkpoint:** 230  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified arrow directionality grammar has passed human review. E5 Hue + Tag is selected as the relation-class visual carrier, with stroke rhythm preserved as a future semantic resource. The active gate is narrow human verification of the latest tag spacing and lettering refinement. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified arrow directionality grammar has passed human review. E5 Hue + Tag is selected and now accepted as the relation-class visual carrier, with stroke rhythm preserved as a future semantic resource. The active gate is human review of a new work-unit project-disposition visual grammar. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,24 +29,23 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
-docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
-docs/research/057_semantic_relation_class_visual_grammar_experiment.md
-frontend/design-lab/relation-class-grammar.html
-frontend/design-lab/relation-class-grammar.css
-frontend/design-lab/relation-class-grammar.js
+docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
+frontend/design-lab/work-unit-disposition-grammar.html
+frontend/design-lab/work-unit-disposition-grammar.css
+frontend/design-lab/work-unit-disposition-grammar.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/relation-class-grammar.html
+http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
 Exact current browser implementation target:
 
 ```text
-497e81f06ba1f9901511449237d1bb9f96b2d108
+565fdeabc1ebaa29f993699a4c0673b29e972be3
 ```
 
 ---
@@ -85,7 +84,7 @@ HOVER
 
 ---
 
-# Work-unit semantic grammar
+# Work-unit category grammar
 
 Current semantic category-marker mapping:
 
@@ -169,7 +168,7 @@ Frame sockets remain frame-integrated
 
 # Directionality result
 
-Human review has accepted the simplified arrow grammar as sufficiently settled for the current phase:
+Human review accepted the simplified arrow grammar as sufficiently settled for the current phase:
 
 ```text
 D0  Undirected      A - B       no arrow
@@ -178,7 +177,7 @@ D2  Reverse         A <- B      exact same arrow at A
 D3  Bidirectional   A <-> B     same arrow at both endpoints
 ```
 
-The accepted directionality implementation is:
+Accepted directionality implementation:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -190,14 +189,11 @@ Foundation 024 remains the durable boundary between system-owned relation semant
 
 # Relation-class visual grammar result
 
-The broad E0-E6 browser comparison has converged enough to select a working baseline.
-
-Human selection:
+Human review selected and then accepted:
 
 ```text
 E5  Hue + Tag
-    SELECTED
-    very clean
+    SELECTED / sufficiently settled for current Phase C
 ```
 
 Current relation-class visual carrier:
@@ -210,14 +206,14 @@ compact explicit semantic tag
 existing direction arrow when direction requires it
 ```
 
-The current representative relation fixtures remain provisional:
+The representative relation fixtures remain provisional:
 
 ```text
-R0  Chronology / Sequence
-R1  Dependency / Prerequisite
-R2  Causal / Influence
-R3  Evidence / Support
-R4  Lineage / Derivation
+Chronology / Sequence
+Dependency / Prerequisite
+Causal / Influence
+Evidence / Support
+Lineage / Derivation
 ```
 
 They do not freeze the ADS relation ontology.
@@ -232,20 +228,83 @@ stroke rhythm
     reserved for another future line-level semantic dimension if later evidence justifies it
 ```
 
-No meaning has yet been assigned to stroke rhythm.
-
-Latest tag refinement under human verification:
+Latest accepted relation-class browser implementation:
 
 ```text
-tag width        48 SVG units, unchanged
-tag height       22 SVG units
-corner radius    7
-text size        8.2 px
-letter spacing   0.05em
-vertical offset  raised farther above the connector line to restore the original clean gap
+497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-The page opens directly in E5 while retaining E0-E6 as historical comparison controls.
+Accepted tag treatment includes the taller body, restored gap above the connector line and taller lettering.
+
+---
+
+# Active Slice 02F: project-disposition visual grammar
+
+The next work-unit question explicitly separates four semantic axes:
+
+```text
+WHAT IS THIS?
+    category / work-unit kind
+
+WHAT IS ITS PROJECT DISPOSITION?
+    current slice
+
+WHAT IS HAPPENING NOW?
+    runtime state, held out
+
+HOW IMPORTANT IS IT NOW?
+    priority / relevance, held out
+```
+
+Representative disposition fixtures:
+
+```text
+S0  Active / Current
+S1  Recommended / Next
+S2  Deferred
+S3  Completed
+S4  Blocked
+S5  Future / Not yet active
+```
+
+These are visual-test fixtures only and do not freeze the final ADS project-state ontology.
+
+Encoding families:
+
+```text
+P0  Neutral Control
+P1  Disposition Hue
+P2  Explicit Tag
+P3  Tonal Hierarchy
+P4  State Rhythm
+P5  Hue + Tag
+P6  Restrained Hybrid
+```
+
+Held controls:
+
+```text
+same Investigation category in every row
+scientific square category marker
+Subtle work-unit shape
+M1 micro-material treatment
+Reduced in-box resting light
+accepted H4 hover response
+same node text
+runtime state held idle / not encoded
+importance held constant / not encoded
+```
+
+Current human review questions:
+
+```text
+Which treatments make project disposition immediately legible?
+Does disposition hue compete with category hue?
+Do node-level state tags add clarity or excessive status-card density?
+Does tonal fading imply disposition or incorrectly imply low importance?
+Are state rhythms useful or better reserved for another semantic channel?
+Does the integrated hybrid provide useful redundancy or too much noise?
+```
 
 ---
 
@@ -256,7 +315,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               relation-class Hue + Tag selected; final tag-spacing verification
+Current                               work-unit project-disposition visual grammar human review
 ```
 
 There is no pending Claude obligation.
@@ -272,16 +331,19 @@ C5 Internal Layout Grammar remains deferred to semantic zoom / information-densi
 Still unresolved:
 
 ```text
+final project-disposition ontology
+final project-disposition visual carrier
 final semantic relation taxonomy
 final relation-class codes / labels
 production relation colors
 semantic zoom behavior for relation tags
 large-project label-density management
-semantic assignment of stroke rhythm
+semantic assignment of connector stroke rhythm
 runtime-flow connector behavior
-production connector preference persistence
+runtime / queued / waiting / failed / waiting-for-human visual grammar
 selected/focused persistent treatment
-runtime / waiting / blocked / approval treatment
+importance / priority / relevance visual grammar
+production connector preference persistence
 final work-unit taxonomy
 final node dimensions and typography
 semantic zoom
@@ -313,14 +375,14 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 229 and v1-cockpit-design-exploration
+1. use Checkpoint 230 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/relation-class-grammar.html
-4. verify E5 Hue + Tag opens by default
-5. verify the 22-unit tags sit clearly above the connector line with the original-style gap
-6. verify the 8.2 px lettering feels taller and more natural
-7. keep stroke rhythm preserved for a later separate semantic question
-8. if accepted, treat relation-class visual encoding as sufficiently converged
-9. then open the next bounded Cockpit design question
-10. keep production Cockpit untouched and source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-disposition-grammar.html
+4. compare P0-P6 across S0-S5
+5. inspect H4 hover without changing project disposition
+6. record prefer / reject / combine / refine evidence
+7. do not treat S0-S5 as a frozen project-state ontology
+8. keep runtime state and importance separate from this slice
+9. keep production Cockpit untouched
+10. keep source-vault deployment paused until explicitly resumed
 ```
