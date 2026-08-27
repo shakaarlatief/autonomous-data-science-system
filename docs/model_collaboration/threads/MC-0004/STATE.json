@@ -39,6 +39,7 @@
       "docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md",
       "docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md",
       "docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md",
+      "docs/research/063_user_curated_current_process_focus_membership.md",
       "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
       "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
       "docs/checkpoints/206_source_vault_paused_cockpit_design_exploration_opened.md",
@@ -69,6 +70,7 @@
       "docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md",
       "docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md",
       "docs/checkpoints/233_p7_disposition_accepted_current_process_focus_lens_review_opened.md",
+      "docs/checkpoints/234_user_curated_current_process_focus_set_review_opened.md",
       "frontend/design-lab/**",
       "README.md",
       "docs/CURRENT_STATE.md",
@@ -109,7 +111,7 @@
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "bedbd23f5aa5f35c79892ae633ccbc6da6ef7d88",
     "known_exposures": [
-      "Research 037 through 062 Phase-C Cockpit design evidence",
+      "Research 037 through 063 Phase-C Cockpit design evidence",
       "scientific marker vocabulary selected for current work-unit category grammar",
       "Reduced in-box light selected as preferred working control",
       "Foundation 023 configurable work-unit appearance and semantic invariants",
@@ -120,11 +122,15 @@
       "stroke rhythm preserved for a different future line-level semantic dimension with no meaning assigned yet",
       "human acceptance of P7 Neutral Tag + Tone for current project-disposition presentation",
       "latest accepted P7 disposition implementation fac1db37af4225927d6c799e37418a3ad9c42c13",
-      "explicit separation of project disposition, current-process membership and view emphasis",
-      "current-process focus lens browser target b311796f86ff577354a2bfe14b850bd6a49a9c06",
+      "human acceptance of the stronger current-process focus lens concept",
+      "explicit separation of work-unit existence, project disposition, current-focus membership and view emphasis",
+      "user-curated focus membership through Edit focus set and per-node + FOCUS / - FOCUS controls",
+      "edited focus membership immediately updates node and connector suppression",
+      "design-lab localStorage persistence classified as prototype convenience only",
+      "editable focus-set browser target da115b74de526fca05ed6f468bef39bdb801355c",
       "Claude Message 004 divergent work-unit grammar ideation"
     ],
-    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review accepted P7 Neutral Tag + Tone, then requested a separate stronger suppression mode for work retained as context but not currently part of the active process. The active gate now tests Context visible versus Focus current process without inferring process membership from disposition. No Claude action is pending.",
+    "notes": "Claude Phase A remains frozen BLIND_TO_CANDIDATE at commit cd2e12f2c79ee3b2f205457c5940eb2022b4631a. Claude Phase B remains frozen COMPARATIVE_ONLY at commit d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce. Claude completed the Phase C divergent work-unit request at faf18ed9932d60a24dd80589b0ec0ba71c5940fd. Human review accepted P7 Neutral Tag + Tone and then accepted the stronger current-process focus-lens concept. The active gate now tests direct user curation of the focus set without deleting work units or mutating disposition. No Claude action is pending.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -155,15 +161,17 @@
       "PHASE_C_DISPOSITION_P6_P7_MIXED_CATEGORY_REVIEW",
       "PHASE_C_DISPOSITION_NEUTRAL_TAG_TONE_VERIFICATION",
       "PHASE_C_DISPOSITION_NEUTRAL_TAG_TONE_ACCEPTED",
-      "PHASE_C_CURRENT_PROCESS_FOCUS_LENS_REVIEW"
+      "PHASE_C_CURRENT_PROCESS_FOCUS_LENS_REVIEW",
+      "PHASE_C_CURRENT_PROCESS_FOCUS_LENS_ACCEPTED",
+      "PHASE_C_USER_CURATED_FOCUS_SET_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-p7-accepted-current-process-focus-opened",
+    "transition_id": "mc0004-user-curated-focus-set-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner accepted the practical P7 Neutral Tag + Tone result and requested a more dramatic, switchable suppression mode for work that should remain in the Cockpit as context but is not currently part of the active process. ChatGPT opened a separate current-process focus-lens slice so this presentation emphasis does not become conflated with project disposition semantics.",
-    "repository_head": "b311796f86ff577354a2bfe14b850bd6a49a9c06"
+    "reason": "The project owner accepted the stronger current-process focus lens and required it to remain flexible so the user can add or remove individual work units from the current focus. ChatGPT implemented an explicit Edit focus set interaction with per-node membership controls, immediate connector reclassification and prototype-local persistence while preserving work-unit existence and disposition semantics.",
+    "repository_head": "da115b74de526fca05ed6f468bef39bdb801355c"
   }
 }
