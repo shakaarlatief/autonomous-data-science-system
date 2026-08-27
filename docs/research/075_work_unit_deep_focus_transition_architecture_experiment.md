@@ -164,6 +164,35 @@ Initial implementation target after browser creation:
 31abc2b3a23de29358978e19bd88fda1e9166f6b
 ```
 
+Two implementation defects were corrected before human review:
+
+```text
+1. the practical-scene click listener used a one-shot listener,
+   so clicking the visible Return to project button could consume the listener
+   without actually restoring the map;
+
+2. F4 Context Ribbon originally positioned its breadcrumb above an
+   overflow-hidden workspace shell, which clipped the ribbon entirely.
+```
+
+Corrections:
+
+```text
+practical interaction
+    persistent stage listener
+    scene click and visible Return to project both toggle entry / return reliably
+
+F4 Context Ribbon
+    breadcrumb moved inside a dedicated visible top strip
+    workspace content height adjusted accordingly
+```
+
+Exact latest browser implementation target after both repairs:
+
+```text
+afd15f52897a295788dc3a1d04b2d1b31ef707f9
+```
+
 Production `/cockpit` remains untouched.
 
 ## 8. Workspace content is schematic
