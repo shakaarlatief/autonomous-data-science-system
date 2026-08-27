@@ -1,6 +1,12 @@
 const html = document.documentElement
 const nodesHost = document.querySelector('#focus-nodes')
 const focusSummary = document.querySelector('#focus-summary')
+const membershipSummary = document.querySelector('#focus-membership-summary')
+const focusEditToggle = document.querySelector('#focus-edit-toggle')
+const focusReset = document.querySelector('#focus-reset')
+
+const STORAGE_KEY = 'ads-design-lab-current-process-focus-v1'
+const defaultFocusKeys = new Set(['q', 'i', 'v'])
 
 const dispositions = {
   active: { code: 'ACTIVE', rgb: '102, 181, 255' },
@@ -101,6 +107,7 @@ const edges = [
 let motionFrame = 0
 let motionUntil = 0
 
+restoreFocusMembership()
 renderScene()
 setupControls()
 setupInteractions()
@@ -112,25 +119,13 @@ requestGeometry()
 function renderScene() {
   if (!nodesHost) return
   nodesHost.innerHTML = fixture.map(nodeMarkup).join('')
-
-  const paths = [...document.querySelectorAll('.focus-relations path')]
-  edges.forEach(([fromKey, toKey], index) => {
-    const path = paths[index]
-    if (!path) return
-
-    const from = fixtureByKey(fromKey)
-    const to = fixtureByKey(toKey)
-    const contextEdge = from?.scope === 'context' || to?.scope === 'context'
-    path.classList.toggle('is-context-edge', contextEdge)
-    path.classList.toggle('is-current-edge', !contextEdge)
-    path.dataset.from = fromKey
-    path.dataset.to = toKey
-  })
+  classifyEdges()
 }
 
 function nodeMarkup(item) {
   const meta = categoryMeta[item.category]
   const state = dispositions[item.state]
+  const inFocus = item.scope === 'current'
 
   return `
     <div class="grammar-node custom-node category-${item.category} focus-node scene-${item.key}"
@@ -153,6 +148,14 @@ function nodeMarkup(item) {
         <span class="frame-signature" aria-hidden="true"></span>
         <span class="disposition-state-rhythm" aria-hidden="true"></span>
         <span class="disposition-state-badge" aria-hidden="true">${state.code}</span>
+        <button
+          class="focus-membership-toggle"
+          type="button"
+          data-membership-toggle="${item.key}"
+          aria-label="${inFocus ? 'Remove' : 'Add'} ${item.title} ${inFocus ? 'from' : 'to'} current focus"
+          title="${inFocus ? 'Remove from current focus' : 'Add to current focus'}">
+          ${inFocus ? '− FOCUS' : '+ FOCUS'}
+        </button>
         <div class="node-heading">
           <span class="category-glyph" aria-hidden="true">${meta.glyph}</span>
           <span class="unit-kind">${meta.kind}</span>
@@ -176,6 +179,15 @@ function setupControls() {
     })
   }
 
+  focusEditToggle?.addEventListener('click', () => {
+    html.dataset.focusEdit = html.dataset.focusEdit === 'on' ? 'off' : 'on'
+    updateControls()
+  })
+
+  focusReset?.addEventListener('click', () => {
+    resetFocusMembership()
+  })
+
   const reducedToggle = document.querySelector('#reduced-toggle')
   reducedToggle?.addEventListener('change', () => {
     html.dataset.reduced = reducedToggle.checked ? 'on' : 'off'
@@ -192,6 +204,14 @@ function updateControls() {
       ? 'Focus current process'
       : 'Context visible'
   }
+
+  if (focusEditToggle) {
+    const editing = html.dataset.focusEdit === 'on'
+    focusEditToggle.setAttribute('aria-pressed', String(editing))
+    focusEditToggle.textContent = editing ? 'Done editing' : 'Edit focus set'
+  }
+
+  updateMembershipSummary()
 
   const reducedToggle = document.querySelector('#reduced-toggle')
   if (reducedToggle) reducedToggle.checked = html.dataset.reduced === 'on'
@@ -221,6 +241,119 @@ function setupInteractions() {
       syncGeometryDuringNodeMotion(390)
     })
   }
+
+  for (const button of document.querySelectorAll('[data-membership-toggle]')) {
+    button.addEventListener('pointerdown', (event) => event.stopPropagation())
+    button.addEventListener('click', (event) => {
+      event.stopPropagation()
+      toggleFocusMembership(button.dataset.membershipToggle)
+    })
+  }
+}
+
+function toggleFocusMembership(key) {
+  const item = fixtureByKey(key)
+  if (!item) return
+
+  item.scope = item.scope === 'current' ? 'context' : 'current'
+  applyMembershipToNode(key)
+  classifyEdges()
+  persistFocusMembership()
+  updateMembershipSummary()
+  requestGeometry()
+}
+
+function applyMembershipToNode(key) {
+  const item = fixtureByKey(key)
+  const node = document.querySelector(`[data-node-key="${key}"]`)
+  if (!item || !node) return
+
+  node.dataset.processScope = item.scope
+
+  const button = node.querySelector('[data-membership-toggle]')
+  if (!button) return
+
+  const inFocus = item.scope === 'current'
+  button.textContent = inFocus ? '− FOCUS' : '+ FOCUS'
+  button.setAttribute('aria-label', `${inFocus ? 'Remove' : 'Add'} ${item.title} ${inFocus ? 'from' : 'to'} current focus`)
+  button.title = inFocus ? 'Remove from current focus' : 'Add to current focus'
+}
+
+function classifyEdges() {
+  const paths = [...document.querySelectorAll('.focus-relations path')]
+
+  edges.forEach(([fromKey, toKey], index) => {
+    const path = paths[index]
+    if (!path) return
+
+    const from = fixtureByKey(fromKey)
+    const to = fixtureByKey(toKey)
+    const contextEdge = from?.scope === 'context' || to?.scope === 'context'
+
+    path.classList.toggle('is-context-edge', contextEdge)
+    path.classList.toggle('is-current-edge', !contextEdge)
+    path.dataset.from = fromKey
+    path.dataset.to = toKey
+  })
+}
+
+function updateMembershipSummary() {
+  if (!membershipSummary) return
+  const currentCount = fixture.filter((item) => item.scope === 'current').length
+  const contextCount = fixture.length - currentCount
+  membershipSummary.textContent = `${currentCount} in focus · ${contextCount} context`
+}
+
+function restoreFocusMembership() {
+  const storedKeys = readStoredFocusKeys()
+  const focusKeys = storedKeys ?? defaultFocusKeys
+
+  fixture.forEach((item) => {
+    item.scope = focusKeys.has(item.key) ? 'current' : 'context'
+  })
+}
+
+function readStoredFocusKeys() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY)
+    if (!raw) return null
+
+    const parsed = JSON.parse(raw)
+    if (!Array.isArray(parsed)) return null
+
+    const validKeys = new Set(fixture.map((item) => item.key))
+    return new Set(parsed.filter((key) => validKeys.has(key)))
+  } catch {
+    return null
+  }
+}
+
+function persistFocusMembership() {
+  try {
+    const currentKeys = fixture
+      .filter((item) => item.scope === 'current')
+      .map((item) => item.key)
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(currentKeys))
+  } catch {
+    // Local persistence is a prototype convenience only. The interaction remains functional without it.
+  }
+}
+
+function resetFocusMembership() {
+  fixture.forEach((item) => {
+    item.scope = defaultFocusKeys.has(item.key) ? 'current' : 'context'
+    applyMembershipToNode(item.key)
+  })
+
+  try {
+    window.localStorage.removeItem(STORAGE_KEY)
+  } catch {
+    // Reset still applies to the live browser state if storage is unavailable.
+  }
+
+  classifyEdges()
+  updateMembershipSummary()
+  requestGeometry()
 }
 
 function setupGeometry() {
