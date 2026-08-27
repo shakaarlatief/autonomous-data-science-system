@@ -33,17 +33,20 @@
   "allowed_secondary_write_surfaces": [
     {"collaborator_id":"claude","paths":["docs/model_collaboration/threads/MC-0004/messages/**"]}
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": "human",
   "independence": {
-    "status": "BLIND_TO_CHATGPT_CONVERSATION_DESIGN",
+    "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8",
     "known_exposures": [
       "ADS product-level context through Specification 008 and Foundation 021",
       "accepted Phase-C interaction controls through Checkpoint 245",
       "human requirement for a persistent full Conversation Workspace",
-      "MC-0004 Message 007 blind Conversation Workspace and chat visual-design request"
+      "MC-0004 Message 007 blind Conversation Workspace and chat visual-design request",
+      "Claude Message 008 independent Conversation Workspace design at cab2e464d81b48edadd1b6ae51bb7dd620d7e892",
+      "ChatGPT independent Conversation Workspace browser frozen separately at c66f72a74e681f89fd52ba591a1387ea50f0e959",
+      "Research 081 dual-design comparison and both browser translations now exist on the coordination branch"
     ],
-    "notes": "Claude Message 008 must be independently designed from Message 007 and whitelisted higher-level product sources. Claude must not inspect the existing ChatGPT Conversation Workspace browser, Research 079, later ChatGPT Conversation Workspace redesign artifacts, or unrelated branches. ChatGPT is developing its own independent redesign on branch chatgpt-conversation-workspace-independent-design from the same frozen request base. The two designs are to be compared only after both independent outputs exist.",
+    "notes": "The blind dual-design gate is complete. Claude Message 008 explicitly states that it did not inspect the prohibited ChatGPT Conversation Workspace artifacts or the independent ChatGPT branch. ChatGPT's independent browser was already frozen on its isolated branch before Message 008 arrived. Both proposals are now intentionally exposed for human comparative review; future work is comparative rather than blind.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -66,15 +69,17 @@
       "PHASE_C_SEMANTIC_ZOOM_REVIEW",
       "PHASE_C_SEMANTIC_ZOOM_DEFERRED_S0_WORKING_DEFAULT",
       "PHASE_C_CONVERSATION_WORKSPACE_REVIEW",
-      "PHASE_C_CONVERSATION_WORKSPACE_BLIND_DUAL_DESIGN"
+      "PHASE_C_CONVERSATION_WORKSPACE_BLIND_DUAL_DESIGN",
+      "PHASE_C_CONVERSATION_WORKSPACE_BLIND_DUAL_DESIGN_COMPLETE",
+      "PHASE_C_CONVERSATION_WORKSPACE_INDEPENDENT_BROWSER_COMPARISON"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-conversation-workspace-blind-dual-design-opened",
+    "transition_id": "mc0004-conversation-workspace-blind-dual-design-complete",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
-    "actor": "human",
-    "reason": "The project owner rejected the current ChatGPT Conversation Workspace visual design as unattractive, broadened the question to the entire chat visual system including colors and micro-details, requested an independent Claude design, and explicitly required Claude not to see ChatGPT's redesign. Message 007 freezes that blind brief while ChatGPT works independently on a separate branch.",
-    "repository_head": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8"
+    "actor": "claude",
+    "reason": "Claude completed Message 008 as an explicitly blind independent Conversation Workspace and chat visual-system design. ChatGPT's separate independent browser was already frozen. Research 081 now preserves the independent convergence and differences, and both browser families are available on the coordination branch for human review before synthesis.",
+    "repository_head": "cab2e464d81b48edadd1b6ae51bb7dd620d7e892"
   }
 }
