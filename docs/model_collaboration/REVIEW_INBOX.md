@@ -7,94 +7,75 @@
 ## Pending model obligation
 
 ```text
-none
+MC-0004 Message 008
+Claude blind Conversation Workspace + chat visual-design response
 ```
 
-Claude's latest completed contribution remains MC-0004 Message 006, which broadened the deep-focus transition design space and led to Research 076.
+Request:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md
+```
+
+Frozen blind request base:
+
+```text
+c190420c6d77d3191ca9efb9ffc1e401bbb7fda8
+```
 
 ## Next actor
 
 ```text
-human project owner
+Claude
 ```
 
-Current checkpoint:
+Current checkpoint remains:
 
 ```text
 245
 ```
 
-Current browser route:
+## Independence rule
+
+Claude must design independently from the product requirements in Message 007.
+
+Claude must not inspect:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-architecture.html
-```
-
-Initial browser target:
-
-```text
-42cfe87a0531206187741488f35785fc87f10f1e
-```
-
-Research:
-
-```text
+frontend/design-lab/conversation-workspace-architecture.*
 docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+later ChatGPT Conversation Workspace redesign artifacts
+unrelated branches
 ```
 
-## Most recent accepted / working results
+ChatGPT is independently redesigning the same problem on:
 
 ```text
-A3 Signal Bars                       accepted attention-priority treatment
-SEL2 Corner Brackets                 accepted persistent-selection treatment
-X5 balanced two-axis expansion       accepted contextual-detail geometry
-NO context recession                 accepted contextual-detail behavior
-L0 Flat Fields                       provisional working default only
-Z7 Pull-Back Then Dive               accepted current deep-focus entry direction
-fullscreen specialist workspace      accepted current deep-focus end-state direction
-compact topology compass             retained current orientation aid
-S0 Geometric Control                 provisional zoom working default
+chatgpt-conversation-workspace-independent-design
 ```
 
-Semantic zoom is deferred. S1-S8 remain preserved and are not rejected.
+Claude must not inspect that branch. The two outputs are compared only after both independent designs exist.
 
-## Active Conversation Workspace review
+## Scope of Claude response
 
-The current question is:
+The request is deliberately broader than split/dock/fullscreen architecture. Claude should independently design the entire Conversation Workspace visual and interaction system, including:
 
 ```text
-How should the compact native Cockpit composer
-open into a serious persistent long-form Conversation Workspace
-without permanently turning the Cockpit into a giant chat sidebar?
+workspace composition
+chat visual identity
+colors / surfaces
+typography
+user and ADS message geometry
+project-object references
+structured project-change moments
+tool / provenance summaries
+composer
+navigation / search
+conversation lifecycle ideas
+motion / micro-interactions
+density
+accessibility
+browser-test plan
 ```
 
-Candidates:
-
-```text
-CV0  Focus Workspace
-CV1  Right Dock
-CV2  Split Workbench
-CV3  Canvas Lens
-CV4  Bottom Workbench
-CV5  Focus + Context Rail
-CV6  Conversation + Inspector
-CV7  Progressive Recent-to-Full
-CV8  Tabbed Stage
-```
-
-All candidates use the same conceptual conversation and project references. The experiment tests presentation architecture only.
-
-## Current human gate
-
-```text
-compare CV0-CV8
-open / close each candidate
-judge long-form transcript readability
-judge simultaneous project-context value versus distraction
-judge focused workspace versus dock / split
-judge context rail / inspector value
-judge whether recent-context expansion earns an intermediate layer
-prefer / reject / combine / refine
-```
-
-Production `/cockpit` remains untouched. Conversation persistence model, session ontology, search, archive/fork behavior, transcript schema and production implementation remain unfrozen.
+Production `/cockpit` remains untouched. S0 Geometric Control remains the provisional zoom working default; semantic zoom remains deferred.
