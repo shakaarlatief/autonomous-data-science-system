@@ -1,51 +1,73 @@
 /* Runtime-tag motion refinement.
  *
- * The runtime tag itself remains stationary. A short luminous segment travels
- * along the existing rounded-rectangle perimeter, so the border reads as a
- * line carrying motion rather than as a rotating box/gradient inside the tag.
+ * The tag itself stays completely stationary. A short luminous section of the
+ * tag's own rounded-rectangle border travels along that border via SVG
+ * stroke-dashoffset. Nothing rotates inside the tag and no inner box spins.
  */
 
+/* Retire the earlier rotating conic-gradient pseudo-element. */
 .runtime-tag-carrier::before {
-  inset: auto;
-  left: 0;
-  top: 0;
-  width: 11px;
-  height: 1.5px;
-  padding: 0;
-  border-radius: 999px;
-  background: rgba(var(--runtime-rgb), 1);
-  box-shadow:
-    0 0 4px rgba(var(--runtime-rgb), 0.72),
-    0 0 8px rgba(var(--runtime-rgb), 0.22);
-  -webkit-mask: none;
-  -webkit-mask-composite: initial;
-  mask: none;
-  mask-composite: initial;
-  transform: none;
-  transform-origin: center;
-  offset-path: inset(1px round 5px);
-  offset-distance: 0%;
-  offset-rotate: auto;
-  animation-name: carrier-tag-perimeter-travel;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  display: none !important;
+  animation: none !important;
 }
 
+/* Keep the ordinary tag perimeter present underneath the moving segment. */
 .runtime-tag-carrier::after {
   border-color: rgba(var(--runtime-rgb), 0.30);
   box-shadow: inset 0 0 6px rgba(var(--runtime-rgb), 0.035);
 }
 
+.runtime-tag-trace {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.runtime-tag-trace-runner {
+  fill: none;
+  stroke: rgba(var(--runtime-rgb), 1);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 15 85;
+  stroke-dashoffset: 0;
+  filter: drop-shadow(0 0 2px rgba(var(--runtime-rgb), 0.72));
+  animation: carrier-tag-perimeter-travel 2.25s linear infinite;
+}
+
+[data-runtime="queued"] .runtime-tag-trace-runner {
+  animation-duration: 2.6s;
+}
+
+[data-runtime="running"] .runtime-tag-trace-runner {
+  animation-duration: 1.35s;
+}
+
+[data-runtime="waiting"] .runtime-tag-trace-runner {
+  animation-duration: 3s;
+}
+
+[data-runtime="human"] .runtime-tag-trace-runner {
+  animation-duration: 2.15s;
+}
+
+[data-runtime="failed"] .runtime-tag-trace-runner {
+  animation-duration: 1.7s;
+}
+
 @keyframes carrier-tag-perimeter-travel {
   from {
-    offset-distance: 0%;
+    stroke-dashoffset: 0;
   }
   to {
-    offset-distance: 100%;
+    stroke-dashoffset: -100;
   }
 }
 
-html[data-reduced="on"] .runtime-tag-carrier::before {
+html[data-reduced="on"] .runtime-tag-trace-runner {
   display: none;
   animation: none !important;
 }
