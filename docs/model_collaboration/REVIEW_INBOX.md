@@ -27,109 +27,89 @@ human project owner
 Current checkpoint:
 
 ```text
-240
+241
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-selection-state.html
+http://localhost:5173/design-lab/work-unit-detail-expansion.html
 ```
 
-Exact current selection-browser implementation target:
+Exact current browser implementation target:
 
 ```text
-3bac1fea4ca820c89a7bc4516497a4c33164ec5d
+0457a27d8e80863738ce3f75aeb11bd4f5c1155d
 ```
 
-## Latest accepted node-level result
+## Most recent accepted results
 
 Attention priority:
 
 ```text
 A3  Signal Bars
-
-HIGH attention
-    three ascending micro-bars
-    near the upper-right work-unit frame
 ```
 
-Exact reviewed attention-priority target:
+Persistent compact-node selection:
 
 ```text
-767c66f76974d3c0a851de0dfa17c502817a4b12
-```
-
-## Preserved earlier results
-
-```text
-P7 Neutral Tag + Tone disposition
-editable current-process focus set
-conditional runtime semantics
-Dot + dynamic ring / T7 Soft Shade runtime carriers
-BLOCKER -> BLOCKS -> BLOCKED cause/effect model
-BLOCKED sharper compact ring
-FAIL smoother circular compact ring
-```
-
-Exact accepted BLOCKED/status target:
-
-```text
-88fd3c3cfe7a1eff4664afde06341b7b654c97f4
-```
-
-## Active persistent-selection review
-
-Bounded concept:
-
-```text
-SELECTION
-    which work unit has the user explicitly chosen for inspection or action?
-```
-
-Selection remains separate from:
-
-```text
-hover
-keyboard focus
-current-process focus membership
-attention priority
-deep-focus / specialist-workspace entry
-```
-
-Candidates:
-
-```text
-SEL0  Neutral Control
-SEL1  Outer Keyline
 SEL2  Corner Brackets
-SEL3  Inner Frame
-SEL4  Edge Ticks
-SEL5  Selection Plate
-SEL6  Soft Contour
-SEL7  Double Corner
-SEL8  Keyline + Corners
 ```
+
+The first persistent-selection implementation had a clipping defect for outside-the-frame geometry. The repaired implementation moved selection decorations to the `.grammar-node` layer. Exact repaired browser target:
+
+```text
+e7304fe834d86166d843fda7e1df0f4ddb1f793a
+```
+
+The project owner selected SEL2 after reviewing that repaired browser.
+
+## Active contextual-detail expansion review
+
+Interaction hierarchy:
+
+```text
+compact map work unit
+    -> selected compact work unit
+    -> expanded contextual/detail layer
+    -> full specialist workspace / deep focus
+```
+
+Candidate architectures:
+
+```text
+X0  Compact Control
+X1  Vertical Drawer
+X2  Right Sidecar
+X3  Attached Sheet
+X4  Wide Split Card
+X5  Context Lens
+X6  Layered Reveal
+X7  Peek Rail
+X8  Inspector Dock
+```
+
+Controlled placeholder fields:
+
+```text
+Purpose
+Constraint / state
+Evidence
+Next action
+```
+
+These fields are interaction-density fixtures only and do not freeze the work-unit schema.
 
 Current human gate:
 
 ```text
-compare SEL1-SEL8 against SEL0
-move persistent selection by click
-verify selection survives pointer exit
-verify H4 hover remains transient
-verify keyboard focus remains distinct
-verify A3 Signal Bars remain independent
-inspect BLOCKED / FAIL / RUN coexistence
+compare X1-X8 against X0
+judge spatial orientation and attachment
+identify variants that consume too much map context
+judge whether X5 crosses prematurely into deep focus
+compare inline expansion against X8 Inspector Dock
+verify SEL2, A3, disposition and operational status remain independent
 prefer / reject / combine / refine
 ```
 
-The future expanded-work-unit hierarchy remains preserved but deferred:
-
-```text
-compact work unit
-    -> expanded contextual/detail card
-    -> full specialist workspace / deep focus
-```
-
-Production `/cockpit` remains untouched.
+Production `/cockpit` remains untouched. Final selection persistence, contextual-detail architecture, semantic zoom, C5 Internal Layout Grammar, collision handling and deep-focus transition remain future work.
