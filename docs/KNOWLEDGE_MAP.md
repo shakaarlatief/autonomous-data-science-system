@@ -143,64 +143,99 @@ L1-L8
 
 ---
 
-# Current Slice 02N: deep-focus transition
+# Current Slice 02N: factorized deep-focus transition
 
-Primary evidence:
+Checkpoint:
 
 ```text
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
+```
+
+Original transition evidence:
+
+```text
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
 frontend/design-lab/work-unit-deep-focus-transition.html
-frontend/design-lab/work-unit-deep-focus-transition.css
-frontend/design-lab/work-unit-deep-focus-transition.js
+exact repaired target  afd15f52897a295788dc3a1d04b2d1b31ef707f9
+```
+
+Claude collaboration evidence:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
+Claude response commit  204664ae1e732dd504174bbc62545e9a93adc85f
+```
+
+Claude's main decomposition:
+
+```text
+object continuity
+context retention
+context relevance
+entry choreography
+orientation aid
+return choreography
+```
+
+Current synthesis evidence:
+
+```text
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+frontend/design-lab/work-unit-deep-focus-factorized.html
+frontend/design-lab/work-unit-deep-focus-factorized.css
+frontend/design-lab/work-unit-deep-focus-factorized-refinement.css
+frontend/design-lab/work-unit-deep-focus-factorized.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
 ```
 
-Initial browser target:
+Exact current browser target:
 
 ```text
-31abc2b3a23de29358978e19bd88fda1e9166f6b
+0390d8fef9d6647ae17ecd7c948159d0a5b603e5
 ```
 
-Governing promoted interaction from Specification 008:
+Current comparisons:
 
 ```text
-project map
-    -> select meaningful work unit
-    -> map recedes / focus transition
-    -> full-resolution specialist workspace mounts
-    -> perform real analytical work
-    -> return to project context
+Batch A · Object continuity
+    A0  F2 Anchored Morph Control
+    A1  Anchored Center Stage
+    A2  Anchored Context Rail
+    A3  Camera Push-Through
+
+Batch B · Context relevance
+    B0  F6 Fixed Rail Control
+    B1  Neighbor-Aware Context
+    B2  Neighbor-Aware + Anchor
+
+Batch C · Staging and orientation
+    C0  Hard Replace Control
+    C1  Staged Two-Step Entry
+    C2  Compass + Soft World
+    C3  Hard Replace + Compass
+
+Large interaction studio
+    Symmetric return
+    Fast return
 ```
 
-Candidate transition architectures:
-
-```text
-F0  Hard Replace
-F1  Center Stage
-F2  Anchored Morph
-F3  World Recede
-F4  Context Ribbon
-F5  Map Frame
-F6  Side Context Rail
-F7  Portal Lift
-F8  Layered Stage
-```
+T6 Adaptive Retention by Workspace Type remains preserved but deferred.
 
 Current human gate:
 
 ```text
-compare F0-F8
-click each candidate to enter / return
-judge continuity from selected X5 work unit to specialist workspace
-judge retained map context versus distraction
-judge return-to-project clarity
-prefer / reject / combine / refine
+review Batch A for source-object continuity
+review Batch B for relevant versus arbitrary retained context
+review Batch C for staging and minimal orientation
+compare symmetric versus fast return
+select mechanisms independently
+combine later where useful
 keep specialist-workspace internals schematic
 ```
 
