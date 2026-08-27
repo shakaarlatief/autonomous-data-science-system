@@ -25,7 +25,6 @@ Phase B
 Phase C divergent work-unit ideation
     Claude response
     faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-    COMPARATIVE_ONLY / DIVERGENT_IDEATION
 
 Phase C divergent deep-focus ideation
     ChatGPT request
@@ -78,13 +77,9 @@ X5 expansion without recession         94bc1100b7388cc56497cafc03051ce326424a80
 
 ## Internal layout disposition
 
-Research 074 compared L0-L8 inside the accepted X5 outer geometry.
-
 ```text
 L0 Flat Fields
     provisional working default
-    sufficient to continue
-    not a final C5 / information-architecture selection
 
 L1-L8
     preserved for later review
@@ -103,32 +98,34 @@ compact map work unit
     -> specialist workspace / deep focus
 ```
 
-Specification 008 promotes the product-level sequence:
+Specification 008 still governs the product-level requirement:
 
 ```text
 project map
     -> select meaningful work unit
-    -> map recedes / focus transition
+    -> focus transition
     -> full-resolution specialist workspace mounts
     -> perform real analytical work
     -> return to project context
 ```
 
-### Original F0-F8 browser
+### Evidence sequence
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+Research 075
+    F0-F8 initial deep-focus architectures
+    repaired exact target afd15f52897a295788dc3a1d04b2d1b31ef707f9
+
+Research 076
+    Claude-informed factorization
+    exact factorized target fddb344c2b18221d326c9ba5bde98e84edf98f56
+
+Research 077
+    fullscreen specialist-workspace end-state hypothesis
+    + advanced spatial zoom / through-space transition comparison
 ```
 
-Exact repaired browser target:
-
-```text
-afd15f52897a295788dc3a1d04b2d1b31ef707f9
-```
-
-### Claude Message 006 synthesis
-
-Claude's strongest contribution was a decomposition of the transition problem into independent dimensions rather than another preferred monolithic architecture:
+Claude's Message 006 remains important because it separated:
 
 ```text
 object continuity
@@ -139,82 +136,79 @@ orientation aid
 return choreography
 ```
 
-Claude proposed:
+The project owner then provided new human evidence:
 
 ```text
-T1  Generalized Anchored Entry
-T2  Neighbor-Aware Context Retention
-T3  Staged Two-Step Entry
-T4  Asymmetric Return
-T5  Camera Push-Through
-T6  Adaptive Retention by Workspace Type
-T7  Compass / Minimap Return Anchor
+deepest specialist workspace
+    should own the whole active stage
+    project grid / map should not remain visible
+
+compact topology compass
+    strongly liked as a small orientation detail
+
+transition
+    should explore more advanced spatial movement
+    such as zooming into the box,
+    background zooming in or out,
+    or otherwise moving through the project space
 ```
 
-T6 remains deferred because multiple real specialist-workspace types do not yet exist. T1/T2/T3/T5/T7 are now executable comparisons. T4 is exposed as a cross-cutting return-timing modifier.
+This does not yet freeze final production deep focus. It defines the controlled assumption for the next browser.
 
-Research synthesis:
+## Current spatial browser
 
 ```text
-docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
-### Current factorized browser
+Exact current visual implementation target:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+b375eb253990ce3c20f34dd9d5b735bd532789f2
 ```
 
-Exact implementation target:
+Candidates:
 
 ```text
-0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+Z0  Direct Replace Control
+Z1  Card Zoom-In
+Z2  World Falls Away
+Z3  Camera Dive
+Z4  Workspace Aperture
+Z5  Depth Parallax
+Z6  Perspective Corridor
+Z7  Pull-Back Then Dive
 ```
 
-Comparison batches:
+All candidates:
 
 ```text
-Batch A · Object continuity
-    A0  F2 Anchored Morph Control
-    A1  Anchored Center Stage
-    A2  Anchored Context Rail
-    A3  Camera Push-Through
+begin
+    same off-center SEL2-selected X5 work unit
 
-Batch B · Context relevance
-    B0  F6 Fixed Rail Control
-    B1  Neighbor-Aware Context
-    B2  Neighbor-Aware + Anchor
-
-Batch C · Staging and orientation
-    C0  Hard Replace Control
-    C1  Staged Two-Step Entry
-    C2  Compass + Soft World
-    C3  Hard Replace + Compass
-
-Large interaction studio
-    Symmetric return
-    Fast return
+end
+    same fullscreen specialist workspace
+    no project map / grid visible
+    same compact topology compass retained
 ```
 
-The selected X5 card is intentionally off-center. Anchored variants measure its actual rendered rectangle so object continuity is tested from a dynamic source location rather than a hardcoded center coordinate.
-
-The new fixture also restores the accepted four-corner SEL2 presentation. This does not reopen selection design.
+Therefore this browser isolates spatial transition choreography rather than comparing different end-state layouts.
 
 ## Current gate
 
 ```text
-human reviews Batch A as an object-continuity comparison
-human reviews Batch B as a context-relevance comparison
-human reviews Batch C as staging/orientation comparison
-human tests symmetric versus faster return in the large interaction studio
-human may choose mechanisms from different batches and combine them later
--> keep specialist-workspace internals schematic
--> keep T6 deferred
--> do not force one winner across all eleven tiles
+human compares Z0-Z7
+human judges whether the transition feels like entering the selected work unit
+human judges spatial depth versus disorientation
+human judges repeated-use comfort
+human judges portal / aperture continuity
+human judges whether brief pull-back adds useful anticipation
+human judges whether compass alone gives enough deep-focus orientation
+-> prefer / reject / combine / refine
 ```
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final internal work-unit schema, C5 Internal Layout Grammar, provenance/evidence representation, selected-node command surface, collision avoidance, semantic zoom, final deep-focus transition composition, neighbor-selection semantics, minimap/compass existence, specialist-workspace composition, URL/deep-link state, return timing and final production visual system.
+Still unfrozen includes final deep-focus architecture, exact fullscreen meaning, specialist-workspace composition, compass/minimap production design, motion timing/easing, return choreography, interruptibility, URL/deep-link state and production implementation.
