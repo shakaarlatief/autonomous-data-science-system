@@ -110,45 +110,11 @@ D2  Reverse         same arrow at A
 D3  Bidirectional   same arrow at both endpoints
 ```
 
-## Relation-class grammar comparison
+## Relation-class grammar result
 
-Research 057 opened a bounded E0-E6 comparison across provisional relation fixtures R0-R4.
+Research 057 opened E0-E6 across provisional relation fixtures. Human review selected E5 Hue + Tag and preserved stroke rhythm for a different future line-level semantic dimension.
 
-Browser:
-
-```text
-frontend/design-lab/relation-class-grammar.html
-```
-
-Initial implementation target:
-
-```text
-9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
-```
-
-Representative fixtures remain provisional:
-
-```text
-R0  Chronology / Sequence
-R1  Dependency / Prerequisite
-R2  Causal / Influence
-R3  Evidence / Support
-R4  Lineage / Derivation
-```
-
-## Relation-class convergence result
-
-Human review selected:
-
-```text
-E5  Hue + Tag
-    SELECTED
-    clean
-```
-
-Human review also positively identified E6 stroke rhythm as a useful visual resource, but explicitly did not want it redundantly encoding the same relation-class meaning.
-
-Current interpretation:
+Current relation-class rule:
 
 ```text
 RELATION CLASS
@@ -159,38 +125,110 @@ STROKE RHYTHM
     preserved
     not rejected
     no semantic meaning assigned yet
-    reserved for a different future line-level semantic dimension if later evidence warrants it
+```
+
+The final tag treatment was refined through several small human corrections:
+
+```text
+height          22 SVG units
+corner radius   7
+text size       8.2 px
+tracking        0.05em
+tag position    clearly above the connector line with restored gap
+```
+
+Latest accepted relation-class browser target:
+
+```text
+497e81f06ba1f9901511449237d1bb9f96b2d108
+```
+
+Final human result:
+
+```text
+Perfect. Let's proceed.
+```
+
+Relation-class visual encoding is therefore sufficiently settled for the current Phase-C design phase. The relation ontology itself remains unfrozen.
+
+## Current Slice 02F: work-unit project disposition
+
+The next bounded work-unit question isolates project disposition from three other semantic axes:
+
+```text
+WHAT IS THIS?
+    category / kind
+
+WHAT IS ITS PROJECT DISPOSITION?
+    current slice
+
+WHAT IS HAPPENING NOW?
+    runtime state, held out
+
+HOW IMPORTANT IS IT NOW?
+    priority / relevance, held out
 ```
 
 Research:
 
 ```text
-docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
+docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 ```
 
 Checkpoint:
 
 ```text
-docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
+docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
 ```
 
-The selected E5 page now opens by default.
-
-Small human-requested tag refinement:
+Browser route:
 
 ```text
-tag height       17 -> 20 SVG units
-corner radius    5 -> 6
-text size        7.0 -> 7.5 px
-letter spacing   0.08em -> 0.05em
-width            unchanged
+frontend/design-lab/work-unit-disposition-grammar.html
+frontend/design-lab/work-unit-disposition-grammar.css
+frontend/design-lab/work-unit-disposition-grammar.js
 ```
 
-Exact refined browser target:
+Local URL:
 
 ```text
-b3d23b10be611f41a4e55fc40a28ba83089b7196
+http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
+
+Exact browser implementation target:
+
+```text
+565fdeabc1ebaa29f993699a4c0673b29e972be3
+```
+
+Representative visual-test states:
+
+```text
+S0  Active / Current
+S1  Recommended / Next
+S2  Deferred
+S3  Completed
+S4  Blocked
+S5  Future / Not yet active
+```
+
+These are not a frozen ADS project-state ontology.
+
+Encoding families:
+
+```text
+P0  Neutral Control
+P1  Disposition Hue
+P2  Explicit Tag
+P3  Tonal Hierarchy
+P4  State Rhythm
+P5  Hue + Tag
+P6  Restrained Hybrid
+```
+
+Held controls include the same Investigation category, scientific square marker, Subtle shape, M1 material, Reduced light and H4 hover behavior.
+
+Runtime state and importance are intentionally absent from this experiment.
 
 ## Dependency-bound ideas
 
@@ -205,13 +243,13 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human verifies refined E5 tag proportions
--> if accepted, treat relation-class visual encoding as sufficiently converged
--> then open the next bounded Cockpit design question
+human compares P0-P6 across S0-S5
+-> prefer / reject / combine / refine disposition mechanisms
+-> preserve winning project-disposition evidence
+-> do not freeze the state ontology
+-> keep runtime state and importance separate
 ```
-
-The final ADS relation taxonomy, final relation codes/colors, semantic zoom behavior for tags, stroke-rhythm meaning, and runtime-flow connector semantics remain open.
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final semantic relation taxonomy, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final project-disposition ontology, runtime-state grammar, importance grammar, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
