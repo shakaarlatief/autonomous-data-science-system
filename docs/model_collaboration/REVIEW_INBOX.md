@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-27  
 **Status:** Current human-readable routing view  
-**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, exact Git refs and research/checkpoint records remain authoritative.
+**Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.
 
 ## Pending model obligation
 
@@ -10,14 +10,7 @@
 none
 ```
 
-Claude's latest deep-focus contribution remains Message 006:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
-204664ae1e732dd504174bbc62545e9a93adc85f
-```
-
-Research 076 preserves the Claude-informed factorized comparison. The project owner has now refined the active question further.
+Claude's latest completed contribution remains MC-0004 Message 006, which broadened the deep-focus transition design space and led to Research 076.
 
 ## Next actor
 
@@ -28,87 +21,92 @@ human project owner
 Current checkpoint:
 
 ```text
-243
+244
 ```
 
-## Active browser route
+Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
+http://localhost:5173/design-lab/work-unit-semantic-zoom.html
 ```
 
-Exact current visual implementation target:
+Initial browser target:
 
 ```text
-b375eb253990ce3c20f34dd9d5b735bd532789f2
+65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
 
 Research:
 
 ```text
-docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
+docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
 ```
 
-## Held deep-focus end-state hypothesis
-
-The project owner expressed a strong preference that the deepest specialist workspace should no longer look like another card floating over the project map.
-
-Current controlled assumption for this browser:
+## Most recent accepted / working results
 
 ```text
-specialist workspace
-    owns the full active Cockpit stage
-
-project map / grid
-    disappears completely after entry
-
-compact topology compass
-    retained as the orientation / return detail
+A3 Signal Bars                       accepted attention-priority treatment
+SEL2 Corner Brackets                 accepted persistent-selection treatment
+X5 balanced two-axis expansion       accepted contextual-detail geometry
+NO context recession                 accepted contextual-detail behavior
+L0 Flat Fields                       provisional working default only
+Z7 Pull-Back Then Dive               accepted current deep-focus entry direction
+fullscreen specialist workspace      accepted current deep-focus end-state direction
+compact topology compass             retained current orientation aid
 ```
 
-This is a strong current preference under review, not yet a final production promotion.
-
-## Spatial transition candidates
+Positive predecessor evidence remains:
 
 ```text
-Z0  Direct Replace Control
-Z1  Card Zoom-In
-Z2  World Falls Away
-Z3  Camera Dive
-Z4  Workspace Aperture
-Z5  Depth Parallax
-Z6  Perspective Corridor
-Z7  Pull-Back Then Dive
+Z2 World Falls Away
+Z6 Perspective Corridor, especially its 3D / 2.5D quality
 ```
 
-All candidates begin from the same off-center SEL2-selected X5 work unit and end in the same fullscreen workspace with the same compact compass. The comparison therefore isolates spatial transition choreography rather than workspace composition or map-retention amount.
+## Active semantic-zoom review
 
-## Preserved predecessor evidence
+The new question separates geometric scale from semantic level-of-detail:
 
 ```text
-Research 075
-    original F0-F8 deep-focus architectures
+GEOMETRIC ZOOM
+    camera / physical scale
 
-Research 076
-    Claude-informed factorization
-    object continuity / context relevance / staging / orientation / return timing
-
-Research 077
-    fullscreen end-state hypothesis
-    spatial zoom / through-space choreography
+SEMANTIC ZOOM
+    what information survives, aggregates, disappears or becomes richer by scale?
 ```
+
+Provisional scale levels:
+
+```text
+Overview
+Work
+Inspection
+```
+
+Candidates:
+
+```text
+S0  Geometric Control
+S1  Progressive Detail
+S2  Stage Clusters
+S3  Topology First
+S4  Focus Preserving
+S5  Status First
+S6  Glyph Field
+S7  Hybrid Contextual
+S8  Local Detail Lens
+```
+
+S7 is only the browser default, not a selected result.
 
 ## Current human gate
 
 ```text
-compare Z0-Z7
-judge which feels like entering the selected work unit
-judge whether zoom / depth movement feels coherent or disorienting
-judge whether portal / aperture continuity helps
-judge whether pull-back then dive adds useful anticipation
-judge repeated-use comfort
-judge whether the compact compass is enough orientation once the map disappears
+compare S0-S8 across all three scales
+judge what must remain legible at distance
+judge focus-preserving versus globally uniform simplification
+judge clusters versus topology-first orientation
+judge glyph-level compression versus named work-unit identity
 prefer / reject / combine / refine
 ```
 
-Production `/cockpit` remains untouched. Specialist-workspace internals, final fullscreen meaning, exact compass design, motion timing, return choreography, URL state and production implementation remain unfrozen.
+Production `/cockpit` remains untouched. Exact semantic-zoom thresholds, grouping semantics, large-project virtualization and production implementation remain unfrozen.

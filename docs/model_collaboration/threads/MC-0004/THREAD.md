@@ -27,14 +27,9 @@ Phase C divergent work-unit ideation
     faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 
 Phase C divergent deep-focus ideation
-    ChatGPT request
-    Message 005
-    30b294ce7f71a435bc56042f3cf3cdb8ce07e1ac
-
-    Claude response
-    Message 006
+    ChatGPT Message 005
+    Claude Message 006
     204664ae1e732dd504174bbc62545e9a93adc85f
-    COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
 No Claude action is currently pending.
@@ -52,15 +47,18 @@ conditional runtime semantics
 one switchable runtime carrier
 T7 Soft Shade runtime tag
 BLOCKER -> BLOCKS -> BLOCKED cause/effect model
-shared bottom-right operational-status presentation slot
 BLOCKED sharper compact ring
 FAIL smoother circular compact ring
-A3 Signal Bars for elevated attention priority
+A3 Signal Bars for elevated attention
 SEL2 Corner Brackets for persistent selection
-X5 balanced two-axis contextual expansion without context recession
+X5 balanced contextual expansion without context recession
+L0 Flat Fields provisional working default
+Z7 Pull-Back Then Dive deep-focus entry
+fullscreen specialist-workspace end state
+compact topology compass retained
 ```
 
-Important exact accepted/reviewed targets:
+Important targets:
 
 ```text
 directionality                         07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -73,142 +71,78 @@ BLOCKED/status carrier                 88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 A3 attention priority                  767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 persistent selection              e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 expansion without recession         94bc1100b7388cc56497cafc03051ce326424a80
+Z7 spatial deep focus                  04616a52df5cceff6c59223bbd6f07448d027510
 ```
 
-## Internal layout disposition
+## Deep-focus closure
+
+Research 075-077 explored initial transition architectures, Claude-informed factorization and spatial zoom. The human project owner selected:
 
 ```text
-L0 Flat Fields
-    provisional working default
-
-L1-L8
-    preserved for later review
-    not rejected
+Z7 Pull-Back Then Dive
 ```
 
-## Current Slice 02N: deep-focus transition
-
-Working interaction ladder:
+Current deep-focus end state:
 
 ```text
-compact map work unit
-    -> SEL2 persistent selection
-    -> X5 contextual expansion
-    -> L0 working-default internal layout
-    -> specialist workspace / deep focus
+specialist workspace owns active Cockpit stage
+project grid and surrounding boxes disappear
+compact topology compass remains
 ```
 
-Specification 008 still governs the product-level requirement:
+Z2 and Z6 remain positive evidence. Z6's restrained 3D/2.5D quality is preserved for possible project-world depth work.
+
+## Current Slice 02O: semantic zoom
+
+Checkpoint:
 
 ```text
-project map
-    -> select meaningful work unit
-    -> focus transition
-    -> full-resolution specialist workspace mounts
-    -> perform real analytical work
-    -> return to project context
+244
 ```
 
-### Evidence sequence
+Research/browser:
 
 ```text
-Research 075
-    F0-F8 initial deep-focus architectures
-    repaired exact target afd15f52897a295788dc3a1d04b2d1b31ef707f9
-
-Research 076
-    Claude-informed factorization
-    exact factorized target fddb344c2b18221d326c9ba5bde98e84edf98f56
-
-Research 077
-    fullscreen specialist-workspace end-state hypothesis
-    + advanced spatial zoom / through-space transition comparison
+docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
+http://localhost:5173/design-lab/work-unit-semantic-zoom.html
 ```
 
-Claude's Message 006 remains important because it separated:
+Initial target:
 
 ```text
-object continuity
-context retention
-context relevance
-entry choreography
-orientation aid
-return choreography
-```
-
-The project owner then provided new human evidence:
-
-```text
-deepest specialist workspace
-    should own the whole active stage
-    project grid / map should not remain visible
-
-compact topology compass
-    strongly liked as a small orientation detail
-
-transition
-    should explore more advanced spatial movement
-    such as zooming into the box,
-    background zooming in or out,
-    or otherwise moving through the project space
-```
-
-This does not yet freeze final production deep focus. It defines the controlled assumption for the next browser.
-
-## Current spatial browser
-
-```text
-http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
-```
-
-Exact current visual implementation target:
-
-```text
-b375eb253990ce3c20f34dd9d5b735bd532789f2
+65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
 
 Candidates:
 
 ```text
-Z0  Direct Replace Control
-Z1  Card Zoom-In
-Z2  World Falls Away
-Z3  Camera Dive
-Z4  Workspace Aperture
-Z5  Depth Parallax
-Z6  Perspective Corridor
-Z7  Pull-Back Then Dive
+S0 Geometric Control
+S1 Progressive Detail
+S2 Stage Clusters
+S3 Topology First
+S4 Focus Preserving
+S5 Status First
+S6 Glyph Field
+S7 Hybrid Contextual
+S8 Local Detail Lens
 ```
 
-All candidates:
-
-```text
-begin
-    same off-center SEL2-selected X5 work unit
-
-end
-    same fullscreen specialist workspace
-    no project map / grid visible
-    same compact topology compass retained
-```
-
-Therefore this browser isolates spatial transition choreography rather than comparing different end-state layouts.
+Each is shown at Overview, Work and Inspection scales. S7 is a working browser default only.
 
 ## Current gate
 
 ```text
-human compares Z0-Z7
-human judges whether the transition feels like entering the selected work unit
-human judges spatial depth versus disorientation
-human judges repeated-use comfort
-human judges portal / aperture continuity
-human judges whether brief pull-back adds useful anticipation
-human judges whether compass alone gives enough deep-focus orientation
--> prefer / reject / combine / refine
+human reviews S0-S8 across all three scales
+human judges which information deserves persistence at distance
+human judges global versus focus-aware simplification
+human judges clustering, topology-first and glyph-field approaches
+human may combine mechanisms later
+-> keep Z7 deep-focus direction held
+-> keep production Cockpit untouched
 ```
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final deep-focus architecture, exact fullscreen meaning, specialist-workspace composition, compass/minimap production design, motion timing/easing, return choreography, interruptibility, URL/deep-link state and production implementation.
+Still unfrozen includes semantic-zoom thresholds, clustering semantics, label collision strategy, large-project virtualization, relation simplification, focus-set behavior by scale, deep-focus return choreography, compass semantics, specialist-workspace composition, URL/deep-link state, Conversation Workspace composition and final production visual system.

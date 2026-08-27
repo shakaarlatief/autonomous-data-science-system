@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 243  
+**Checkpoint:** 244  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The active gate remains deep-focus transition design. The project owner now strongly prefers the deepest specialist workspace to fully replace the project map/grid, strongly likes the compact topology compass, and requested advanced spatial zoom / moving-through-space transition concepts.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Deep-focus transition is now provisionally settled around Z7 Pull-Back Then Dive into a fullscreen specialist workspace with no project grid and a compact topology compass. The active gate has moved back to the project world to evaluate semantic zoom / level-of-detail behavior across Overview, Work and Inspection scales.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,39 +29,47 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
-docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
-frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
-frontend/design-lab/work-unit-deep-focus-spatial-zoom.css
-frontend/design-lab/work-unit-deep-focus-spatial-zoom-refinement.css
-frontend/design-lab/work-unit-deep-focus-spatial-zoom.js
+docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
+docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
+frontend/design-lab/work-unit-semantic-zoom.html
+frontend/design-lab/work-unit-semantic-zoom.css
+frontend/design-lab/work-unit-semantic-zoom.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
+http://localhost:5173/design-lab/work-unit-semantic-zoom.html
 ```
 
-Exact current visual target:
+Initial semantic-zoom browser target:
 
 ```text
-b375eb253990ce3c20f34dd9d5b735bd532789f2
+65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
 
-Preserved predecessor evidence:
+Selected predecessor deep-focus target:
 
 ```text
-Research 075
-    original F0-F8 deep-focus architectures
-    repaired target afd15f52897a295788dc3a1d04b2d1b31ef707f9
-
-Research 076
-    Claude-informed factorized deep-focus experiment
-    latest target fddb344c2b18221d326c9ba5bde98e84edf98f56
+04616a52df5cceff6c59223bbd6f07448d027510
 ```
 
 Production `/cockpit` remains untouched.
+
+---
+
+# Repository preservation health
+
+```text
+repository preservation architecture   SOUND
+structural overhaul                     NOT WARRANTED
+new knowledge subsystem                 NOT JUSTIFIED
+checkpoint granularity                  HARDENED
+checkpoint validation closure           HARDENED
+active-branch routing validation        HARDENED
+```
+
+Historical research and checkpoint records remain the durable evidence layer. Current routing documents summarize the active boundary and do not replace that history.
 
 ---
 
@@ -84,12 +92,14 @@ BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for HIGH attention
 SEL2 Corner Brackets for persistent selection
-X5 balanced 390 x 210 contextual expansion
-NO surrounding-context recession for contextual expansion
+X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional working internal-layout default
+Z7 Pull-Back Then Dive deep-focus entry
+fullscreen specialist-workspace end state
+compact topology compass retained
 ```
 
-Important accepted targets:
+Important targets:
 
 ```text
 directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -102,111 +112,100 @@ BLOCKED/status carrier        88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 A3 attention priority         767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 selection                e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
+Z7 spatial deep focus         04616a52df5cceff6c59223bbd6f07448d027510
+```
+
+Positive predecessor evidence:
+
+```text
+Z2 World Falls Away
+    explicit depth separation attractive
+
+Z6 Perspective Corridor
+    3D / 2.5D quality attractive
+    preserve for later project-world depth exploration
 ```
 
 ---
 
-# Active Slice 02N: fullscreen spatial deep-focus transition
+# Active Slice 02O: semantic zoom
 
-Working ladder:
-
-```text
-compact map work unit
-    -> SEL2 selected
-    -> X5 expanded
-    -> L0 working-default internal layout
-    -> specialist workspace / deep focus
-```
-
-Current controlled end-state assumption:
+The active bounded question is:
 
 ```text
-specialist workspace
-    owns the full active Cockpit stage
-
-project map / grid
-    fully absent after transition completes
-
-compact topology compass
-    retained as orientation / return detail
+As the project world zooms out and in,
+what information should survive,
+aggregate,
+disappear,
+or become richer?
 ```
 
-This is a strong current preference under review, not a final production promotion.
-
-Spatial candidates:
+Distinction:
 
 ```text
-Z0  Direct Replace Control
-Z1  Card Zoom-In
-Z2  World Falls Away
-Z3  Camera Dive
-Z4  Workspace Aperture
-Z5  Depth Parallax
-Z6  Perspective Corridor
-Z7  Pull-Back Then Dive
+GEOMETRIC ZOOM
+    physical / camera scale
+
+SEMANTIC ZOOM
+    information architecture at that scale
 ```
 
-All candidates share the same source and final state. Only spatial transition choreography changes.
+Provisional scale levels:
+
+```text
+Overview
+Work
+Inspection
+```
+
+Candidates:
+
+```text
+S0  Geometric Control
+S1  Progressive Detail
+S2  Stage Clusters
+S3  Topology First
+S4  Focus Preserving
+S5  Status First
+S6  Glyph Field
+S7  Hybrid Contextual
+S8  Local Detail Lens
+```
+
+S7 is only the browser default. No semantic-zoom candidate is selected yet.
 
 Current human gate:
 
 ```text
-compare Z0-Z7
-judge which feels like entering the selected work unit
-judge spatial depth versus disorientation
-judge repeated-use comfort
-judge aperture / portal continuity
-judge whether pull-back before dive helps
-judge whether compass alone preserves enough orientation
-prefer / reject / combine / refine
+1. compare S0-S8 across Overview / Work / Inspection
+2. judge what must remain legible at distance
+3. judge whether selected/current work should retain richer detail than context
+4. judge clusters versus explicit topology
+5. judge glyph-level compression versus named work-unit identity
+6. prefer / reject / combine / refine
+7. keep Z7 deep focus and fullscreen end state held
 ```
-
----
-
-# Repository preservation health
-
-```text
-repository preservation architecture   SOUND
-structural overhaul                     NOT WARRANTED
-new knowledge subsystem                 NOT JUSTIFIED
-checkpoint granularity                  HARDENED
-checkpoint validation closure           HARDENED
-active-branch routing validation        HARDENED
-```
-
-Historical research and checkpoint records remain the durable evidence layer. Current routing documents summarize the active boundary and do not replace that history.
 
 ---
 
 # Important non-decisions
 
-Still unresolved includes:
+Still unresolved:
 
 ```text
-final runtime / execution-state ontology
-production runtime/status-carrier default and persistence
-final project-disposition ontology
-final progress-constraint ontology
-final BLOCKS relation semantics
-historical execution-attempt presentation
-runtime-flow connector behavior
-final current-focus membership semantics
-final attention-priority ontology and ownership
-priority / relevance / scheduling relationship
-final selection cardinality and persistence
-final work-unit internal information schema
-C5 Internal Layout Grammar
-provenance/evidence detail presentation
-selected-node command surface
-multiple simultaneous expanded work units
-large-project expansion collision handling
-semantic zoom
-final deep-focus transition architecture
-exact fullscreen meaning
-specialist-workspace internal composition
-compass/minimap production design
-return choreography
-URL representation for selected / expanded / deep-focus state
+exact semantic-zoom thresholds
+continuous versus discrete semantic transitions
+cluster semantics and interaction
+large-project label collision / bundling / virtualization
+focus-set behavior across scale
+relation simplification by scale
+priority/status visibility by scale
+final runtime / disposition ontologies
+production status-carrier persistence
+deep-focus return choreography
+production compass semantics
+specialist-workspace composition
+URL / browser-history semantics
 Conversation Workspace composition
 large-project layout/grouping/command architecture
 final production design system
@@ -217,12 +216,14 @@ final production design system
 # MC-0004 collaboration state
 
 ```text
-Claude latest deep-focus response    Message 006
-Claude response commit               204664ae1e732dd504174bbc62545e9a93adc85f
-Current synthesis                    Research 077 spatial deep-focus review
-Pending Claude obligation            none
-Next actor                           human project owner
+Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
+Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
+Phase C  browser-rendered design evaluation
+Latest Claude contribution            204664ae1e732dd504174bbc62545e9a93adc85f
+Current                               semantic zoom human review
 ```
+
+There is no pending Claude obligation.
 
 ---
 
@@ -243,15 +244,13 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 243 and v1-cockpit-design-exploration
+1. use Checkpoint 244 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
-4. compare Z0-Z7
-5. inspect the spatial feeling of entry and return
-6. judge repeated-use comfort and clarity
-7. judge whether the compact compass is sufficient after the map disappears
-8. prefer / reject / combine / refine
-9. keep specialist-workspace internals schematic
-10. keep production Cockpit untouched
-11. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-semantic-zoom.html
+4. compare S0-S8 across the three scale levels
+5. identify which information should persist at distance
+6. prefer / reject / combine / refine semantic-zoom mechanisms
+7. keep Z7 deep focus and fullscreen end state held
+8. keep production Cockpit untouched
+9. keep source-vault deployment paused until explicitly resumed
 ```

@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 243  
+**Current checkpoint:** 244  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -12,24 +12,24 @@
 ## Start here
 
 ```text
-README.md                         project overview and current stage
-docs/CURRENT_STATE.md             exact present state and continuation
-docs/KNOWLEDGE_MAP.md             routing/index layer
-docs/current_routing.json         machine-readable routing metadata
-docs/VISION.md                    high-level system direction
-docs/PRINCIPLES.md                accepted high-level principles
-docs/DEVELOPMENT_METHOD.md        canonical development method
-docs/CONTINUITY.md                provider-neutral continuation procedure
+README.md
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+docs/current_routing.json
+docs/VISION.md
+docs/PRINCIPLES.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
 ```
 
 Current route:
 
 ```text
-checkpoint                        243
+checkpoint                        244
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  deep-focus transition human review
+current boundary                  semantic zoom human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -77,17 +77,14 @@ BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for HIGH attention
 SEL2 Corner Brackets for persistent selection
-X5 balanced two-axis contextual expansion without context recession
+X5 balanced contextual expansion without context recession
+L0 Flat Fields provisional working default
+Z7 Pull-Back Then Dive deep-focus entry
+fullscreen specialist-workspace end state
+compact topology compass retained
 ```
 
-Foundations:
-
-```text
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-```
-
-Important accepted targets:
+Important targets:
 
 ```text
 directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -100,130 +97,106 @@ BLOCKED/status carrier        88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 A3 attention priority         767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 persistent selection     e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
+Z7 spatial deep focus         04616a52df5cceff6c59223bbd6f07448d027510
+```
+
+Foundations:
+
+```text
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
 ---
 
-# Slice 02M: internal layout, deferred
+# Slice 02N: deep focus, current Phase-C direction settled
 
-```text
-docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
-docs/research/074_work_unit_internal_layout_grammar_experiment.md
-frontend/design-lab/work-unit-internal-layout.html
-```
-
-```text
-L0 Flat Fields
-    provisional working default
-
-L1-L8
-    preserved for later review
-    not rejected
-```
-
----
-
-# Current Slice 02N: fullscreen spatial deep-focus transition
-
-Checkpoint:
+Primary evidence:
 
 ```text
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
+docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
+frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
-Evidence progression:
+Current result:
 
 ```text
-Research 075
-    docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
-    frontend/design-lab/work-unit-deep-focus-transition.html
-    repaired target afd15f52897a295788dc3a1d04b2d1b31ef707f9
+Z7 Pull-Back Then Dive
+    selected
 
-Research 076
-    docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
-    frontend/design-lab/work-unit-deep-focus-factorized.html
-    latest target fddb344c2b18221d326c9ba5bde98e84edf98f56
+fullscreen specialist workspace
+    selected current end-state direction
 
-Research 077
-    docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
-    frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
-    exact target b375eb253990ce3c20f34dd9d5b735bd532789f2
-```
-
-Claude collaboration evidence:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/005_chatgpt_deep_focus_transition_divergent_ideation_request.md
-docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
-Claude response commit  204664ae1e732dd504174bbc62545e9a93adc85f
-```
-
-Claude's decomposition remains useful:
-
-```text
-object continuity
-context retention
-context relevance
-entry choreography
-orientation aid
-return choreography
-```
-
-Latest human refinement:
-
-```text
-deepest specialist workspace
-    should own the full active stage
-
-project map / grid
-    should disappear fully after entry
+project grid / surrounding boxes
+    absent in deep focus
 
 compact topology compass
-    strongly liked as a small orientation detail
-
-transition
-    should explore stronger spatial zoom / moving-through-space behavior
+    retained
 ```
 
-Current local URL:
+Positive non-selected evidence:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-spatial-zoom.html
+Z2 World Falls Away
+Z6 Perspective Corridor, especially 3D / 2.5D quality
 ```
 
-Current candidates:
+---
+
+# Current Slice 02O: semantic zoom
+
+Primary evidence:
 
 ```text
-Z0  Direct Replace Control
-Z1  Card Zoom-In
-Z2  World Falls Away
-Z3  Camera Dive
-Z4  Workspace Aperture
-Z5  Depth Parallax
-Z6  Perspective Corridor
-Z7  Pull-Back Then Dive
+docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
+docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
+frontend/design-lab/work-unit-semantic-zoom.html
+frontend/design-lab/work-unit-semantic-zoom.css
+frontend/design-lab/work-unit-semantic-zoom.js
 ```
 
-All candidates hold the final deep-focus end state constant:
+Local URL:
 
 ```text
-fullscreen specialist workspace
-no visible project grid / map
-compact topology compass retained
+http://localhost:5173/design-lab/work-unit-semantic-zoom.html
 ```
 
-Current human gate:
+Initial browser target:
 
 ```text
-compare Z0-Z7
-judge which feels like entering the selected work unit
-judge spatial depth versus disorientation
-judge repeated-use comfort
-judge aperture / portal continuity
-judge whether pull-back before dive helps
-judge whether the compact compass is sufficient after the map disappears
-prefer / reject / combine / refine
+65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
+
+Question:
+
+```text
+GEOMETRIC ZOOM
+    physical / camera scale
+
+SEMANTIC ZOOM
+    what information survives, aggregates, disappears or becomes richer by scale?
+```
+
+Candidates:
+
+```text
+S0  Geometric Control
+S1  Progressive Detail
+S2  Stage Clusters
+S3  Topology First
+S4  Focus Preserving
+S5  Status First
+S6  Glyph Field
+S7  Hybrid Contextual
+S8  Local Detail Lens
+```
+
+Each is shown at provisional Overview, Work and Inspection scales.
+
+S7 is only a browser default. No semantic-zoom candidate has been selected.
 
 ---
 
@@ -235,6 +208,7 @@ docs/research/070_shared_operational_status_carrier_blocker_relationship_and_wor
 docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
 docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
 docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
+docs/research/074_work_unit_internal_layout_grammar_experiment.md
 ```
 
 ---
@@ -273,6 +247,8 @@ docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_
 docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md
 ```
+
+Current interpretation:
 
 ```text
 SOURCE_SUBSTRATE_ACCEPTED
