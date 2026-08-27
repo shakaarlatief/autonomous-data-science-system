@@ -23,7 +23,7 @@ Per-box override
 
 The remaining concern is specifically the runtime-tag animation.
 
-Three observations now matter.
+Four observations now matter.
 
 ### Original rotating conic-gradient treatment
 
@@ -76,11 +76,23 @@ instead
     so the border feels like it carries flowing light / color
 ```
 
-This is now the most important visual cue for the next refinement.
+### First T7 review
+
+The first T7 Soft Shade Flow implementation still used synchronized SVG dash segments. Human review found that it looked effectively like T5 Long Glide rather than like the supplied reference.
+
+That is important negative evidence:
+
+```text
+making a dash thicker + blurrier
+    does not fundamentally change the read
+
+if the animation is still a moving dash footprint
+    it still reads as a moving line / band
+```
 
 The bounded question is therefore:
 
-> What runtime-tag motion feels alive, premium and clearly dynamic while keeping the tag itself completely stationary and making the moving element read as a soft perimeter shade rather than a small travelling line?
+> What runtime-tag motion feels alive, premium and clearly dynamic while keeping the tag itself completely stationary and making the moving element read as a soft perimeter shade rather than a travelling line or band?
 
 ## 2. Held constraints
 
@@ -118,6 +130,12 @@ frontend/design-lab/work-unit-runtime-tag-motion.js
 Exact latest browser implementation target:
 
 ```text
+6ee5b434e44f3276c5e799ae11958783b50bedef
+```
+
+Earlier reference-inspired target remains preserved at:
+
+```text
 9a6ffa9b4adefa9d39e9eb97b65283a2a620392c
 ```
 
@@ -131,7 +149,7 @@ Production `/cockpit` remains untouched.
 
 ## 4. Candidate motion families
 
-The browser now compares nine treatments while holding the same `Current + RUN` Investigation work unit constant.
+The browser continues to compare nine treatments while holding the same `Current + RUN` Investigation work unit constant.
 
 ### T0 Static Control
 
@@ -198,37 +216,71 @@ whole perimeter gently brightens and relaxes
 
 This tests whether a premium dynamic tag needs directional circulation at all.
 
-### T7 Soft Shade Flow
+### T7 Soft Shade Flow, second implementation
 
-This is the first direct implementation of the new reference-inspired idea.
+T7 has now been reimplemented rather than merely retuned.
 
-```text
-one broad perimeter region
-+
-multiple co-located translucent stroke layers
-+
-soft blur / glow shoulders
-+
-no crisp tracer as the dominant read
-+
-all layers travel together
-```
+The first T7 used synchronized dash footprints and therefore remained structurally too close to T5.
 
-The three layers share the same perimeter phase and dash footprint:
+The new T7 deliberately removes the travelling dash mechanism entirely.
 
 ```text
-wide faint layer       creates diffuse shade
-medium layer           gives the shade visible body
-narrower soft core     keeps runtime hue legible
+tag geometry        fixed
+text                fixed
+SVG base border     fixed
+
+moving mechanism
+    broad conic paint field
+    clipped through the fixed rounded-rectangle border mask
+    animated by changing gradient angle
+    no moving rectangular element
+    no stroke dash travelling around the path
 ```
 
-Because the layers move together, the result should read as one moving illuminated shade rather than as three separate lines.
+Two stationary masked paint layers are used:
 
-This is now the default practical-scene candidate for review.
+```text
+outer layer
+    very broad diffuse shade shoulder
+    low opacity
+    stronger blur / glow
+
+inner layer
+    broad softer concentration
+    no crisp head
+    less blur
+```
+
+The gradient angle changes while the element itself remains stationary. This is the critical implementation distinction from the original rotating-gradient prototype:
+
+```text
+original
+    rotating geometry / pseudo-element
+    clipping became visually apparent
+
+new T7
+    fixed geometry
+    only the paint field changes orientation
+    rounded-rectangle mask remains fixed
+```
+
+The intended perceptual result is:
+
+```text
+not a line doing a lap
+not a long dash doing a lap
+not a second box rotating
+
+instead
+    a soft illuminated atmosphere
+    shifting continuously through the border
+```
+
+T7 remains the default practical-scene candidate for review.
 
 ### T8 Layered Wash
 
-This explores a more organic interpretation of the same reference.
+T8 preserves the prior more organic multi-stroke interpretation as a comparator.
 
 ```text
 long diffuse perimeter wash
@@ -259,7 +311,7 @@ Investigation   FUTURE + NONE
 
 A segmented control applies T0-T8 to all live runtime tags in this scene.
 
-The practical scene now opens on:
+The practical scene opens on:
 
 ```text
 T7 Soft Shade Flow
@@ -271,7 +323,7 @@ This is important because an effect that looks attractive on one isolated tag ma
 
 The runtime state continues to influence motion cadence rather than changing the carrier architecture.
 
-For T7, all layers stay synchronized while the overall shade speed changes by runtime state.
+For the new T7, the entire paint field remains coherent while only its circulation speed changes by runtime state.
 
 T8 keeps its layered motion but scales the three layer speeds by runtime state so `Running` remains more energetic than `Waiting`, for example.
 
@@ -287,15 +339,15 @@ runtime state color
 static rounded-rectangle perimeter
 ```
 
-For T7 and T8 the moving shade layers disappear under Reduced motion, leaving the normal static runtime tag. No runtime meaning depends on motion alone.
+For T7, the moving masked paint layers disappear under Reduced motion. For T8, the moving wash strokes disappear. No runtime meaning depends on motion alone.
 
 ## 8. Current review questions
 
 ```text
-1. Does T7 Soft Shade Flow capture the reference-like moving color shade without reading as a small travelling line?
-2. Does T8 Layered Wash feel more organic and fluid than T7, or does the extra layered movement become unnecessarily busy?
-3. Do T2 Comet Flow, T3 Perimeter Current or T5 Long Glide still offer anything preferable after seeing the shade-led alternatives?
-4. Does the moving illumination stay visually attached to the real perimeter with no rotating-box / clipping artifact?
+1. Does the second T7 finally stop reading like T5 Long Glide?
+2. Does T7 now read as a soft shade / illumination field moving through the border rather than as a line or band travelling around it?
+3. Does the fixed mask eliminate the rotating-box / clipping artifact while retaining the continuous movement quality of the original reference?
+4. Does T8 still offer anything preferable, or does its multi-stroke character now feel more technical than T7?
 5. Which treatment looks cleanest and most premium at actual runtime-tag scale?
 6. Which variants remain calm when several runtime tags coexist in the practical scene?
 7. Does Reduced motion preserve a clean static runtime tag?
