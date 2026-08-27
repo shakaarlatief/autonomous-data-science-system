@@ -11,14 +11,14 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            244
+checkpoint            245
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      semantic zoom human review
+current boundary      Conversation Workspace human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -43,14 +43,15 @@ BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for HIGH attention
 SEL2 Corner Brackets for persistent selection
-X5 balanced two-axis contextual expansion, no context recession
-L0 Flat Fields as provisional expanded-card working default
-Z7 Pull-Back Then Dive for deep-focus entry
+X5 balanced contextual expansion without context recession
+L0 Flat Fields provisional expanded-card working default
+Z7 Pull-Back Then Dive deep-focus entry
 fullscreen specialist-workspace end state
 compact topology compass retained in deep focus
+S0 Geometric Control provisional zoom working default
 ```
 
-Important accepted/reviewed targets:
+Important targets:
 
 ```text
 directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -64,57 +65,48 @@ A3 attention priority         767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 selection                e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 Z7 spatial deep focus         04616a52df5cceff6c59223bbd6f07448d027510
+semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
 
-Z2 World Falls Away and Z6 Perspective Corridor remain positive predecessor evidence. Z6's restrained 3D/2.5D quality may be useful in later world-depth work.
+Semantic zoom is deliberately deferred. S0 remains the working behavior; S1-S8 remain preserved and are not rejected.
 
-## Active Slice 02O: semantic zoom
+## Active Slice 02P: Conversation Workspace
 
-Specification 008 already promotes bounded geometric zoom, while semantic zoom/grouping remains deliberately unfrozen. Research 037 identified the lack of a deliberate semantic-scale information architecture as a current limitation.
-
-The active question is:
-
-```text
-As the project world zooms out and in,
-what information should survive,
-aggregate,
-disappear,
-or become richer?
-```
+The compact native composer remains part of the resting Cockpit, but the project also requires a serious persistent long-form conversation surface.
 
 Current browser:
 
 ```text
-http://localhost:5173/design-lab/work-unit-semantic-zoom.html
+http://localhost:5173/design-lab/conversation-workspace-architecture.html
 ```
 
 Initial browser target:
 
 ```text
-65ac02326a75b1c9f056676819d2d1b7b23b74c5
+42cfe87a0531206187741488f35785fc87f10f1e
 ```
 
 Candidates:
 
 ```text
-S0  Geometric Control
-S1  Progressive Detail
-S2  Stage Clusters
-S3  Topology First
-S4  Focus Preserving
-S5  Status First
-S6  Glyph Field
-S7  Hybrid Contextual
-S8  Local Detail Lens
+CV0  Focus Workspace
+CV1  Right Dock
+CV2  Split Workbench
+CV3  Canvas Lens
+CV4  Bottom Workbench
+CV5  Focus + Context Rail
+CV6  Conversation + Inspector
+CV7  Progressive Recent-to-Full
+CV8  Tabbed Stage
 ```
 
-Each is shown at provisional Overview, Work and Inspection scales. S7 is only the browser default, not a selected result.
+The experiment changes only presentation architecture. Conversation persistence/session ontology, transcript schema and storage remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
 
 Research and checkpoint:
 
 ```text
-docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
-docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
 ```
 
 ## Repository preservation
@@ -139,7 +131,10 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
+docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+frontend/design-lab/conversation-workspace-architecture.html
+
 docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
 frontend/design-lab/work-unit-semantic-zoom.html
 
@@ -155,12 +150,14 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/work-unit-semantic-zoom.html
-3. compare S0-S8 across Overview / Work / Inspection
-4. judge what must remain legible at distance
-5. judge focus-preserving versus globally uniform simplification
-6. judge clusters, topology-first and glyph-level compression
-7. prefer / reject / combine / refine
-8. keep Z7 deep focus and fullscreen end state held
-9. keep production Cockpit untouched
+2. open http://localhost:5173/design-lab/conversation-workspace-architecture.html
+3. compare CV0-CV8
+4. click each scene to open / close the same conversation
+5. judge long-form reading quality
+6. judge how much project context should remain visible
+7. judge whether recent-context expansion earns an intermediate layer
+8. prefer / reject / combine / refine
+9. keep S0 zoom behavior provisional
+10. keep Z7 deep focus held
+11. keep production Cockpit untouched
 ```

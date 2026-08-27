@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 244  
+**Current checkpoint:** 245  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md
 Current route:
 
 ```text
-checkpoint                        244
+checkpoint                        245
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  semantic zoom human review
+current boundary                  Conversation Workspace human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -82,6 +82,7 @@ L0 Flat Fields provisional working default
 Z7 Pull-Back Then Dive deep-focus entry
 fullscreen specialist-workspace end state
 compact topology compass retained
+S0 Geometric Control provisional zoom working default
 ```
 
 Important targets:
@@ -98,23 +99,16 @@ A3 attention priority         767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 persistent selection     e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 Z7 spatial deep focus         04616a52df5cceff6c59223bbd6f07448d027510
-```
-
-Foundations:
-
-```text
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
 
 ---
 
-# Slice 02N: deep focus, current Phase-C direction settled
+# Slice 02N: deep focus, current direction settled
 
 Primary evidence:
 
 ```text
-docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
 docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
 docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md
@@ -124,29 +118,17 @@ frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
 Current result:
 
 ```text
-Z7 Pull-Back Then Dive
-    selected
-
-fullscreen specialist workspace
-    selected current end-state direction
-
-project grid / surrounding boxes
-    absent in deep focus
-
-compact topology compass
-    retained
+Z7 Pull-Back Then Dive selected
+fullscreen specialist workspace selected current end-state direction
+project grid / surrounding boxes absent in deep focus
+compact topology compass retained
 ```
 
-Positive non-selected evidence:
-
-```text
-Z2 World Falls Away
-Z6 Perspective Corridor, especially 3D / 2.5D quality
-```
+Z2 and Z6 remain positive non-selected depth evidence.
 
 ---
 
-# Current Slice 02O: semantic zoom
+# Slice 02O: semantic zoom, deferred
 
 Primary evidence:
 
@@ -154,49 +136,63 @@ Primary evidence:
 docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
 docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
 frontend/design-lab/work-unit-semantic-zoom.html
-frontend/design-lab/work-unit-semantic-zoom.css
-frontend/design-lab/work-unit-semantic-zoom.js
+```
+
+Disposition:
+
+```text
+S0 Geometric Control
+    provisional working default
+
+S1-S8
+    preserved for later
+    not rejected
+
+semantic zoom
+    DEFERRED
+```
+
+---
+
+# Current Slice 02P: Conversation Workspace
+
+Primary evidence:
+
+```text
+docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+frontend/design-lab/conversation-workspace-architecture.html
+frontend/design-lab/conversation-workspace-architecture.css
+frontend/design-lab/conversation-workspace-architecture.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-semantic-zoom.html
+http://localhost:5173/design-lab/conversation-workspace-architecture.html
 ```
 
 Initial browser target:
 
 ```text
-65ac02326a75b1c9f056676819d2d1b7b23b74c5
+42cfe87a0531206187741488f35785fc87f10f1e
 ```
 
-Question:
+Candidate presentation architectures:
 
 ```text
-GEOMETRIC ZOOM
-    physical / camera scale
-
-SEMANTIC ZOOM
-    what information survives, aggregates, disappears or becomes richer by scale?
+CV0  Focus Workspace
+CV1  Right Dock
+CV2  Split Workbench
+CV3  Canvas Lens
+CV4  Bottom Workbench
+CV5  Focus + Context Rail
+CV6  Conversation + Inspector
+CV7  Progressive Recent-to-Full
+CV8  Tabbed Stage
 ```
 
-Candidates:
-
-```text
-S0  Geometric Control
-S1  Progressive Detail
-S2  Stage Clusters
-S3  Topology First
-S4  Focus Preserving
-S5  Status First
-S6  Glyph Field
-S7  Hybrid Contextual
-S8  Local Detail Lens
-```
-
-Each is shown at provisional Overview, Work and Inspection scales.
-
-S7 is only a browser default. No semantic-zoom candidate has been selected.
+The browser holds conversation content constant and tests where the full persistent transcript should live relative to the project map.
 
 ---
 

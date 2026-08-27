@@ -21,25 +21,25 @@ human project owner
 Current checkpoint:
 
 ```text
-244
+245
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-semantic-zoom.html
+http://localhost:5173/design-lab/conversation-workspace-architecture.html
 ```
 
 Initial browser target:
 
 ```text
-65ac02326a75b1c9f056676819d2d1b7b23b74c5
+42cfe87a0531206187741488f35785fc87f10f1e
 ```
 
 Research:
 
 ```text
-docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
 ```
 
 ## Most recent accepted / working results
@@ -53,60 +53,48 @@ L0 Flat Fields                       provisional working default only
 Z7 Pull-Back Then Dive               accepted current deep-focus entry direction
 fullscreen specialist workspace      accepted current deep-focus end-state direction
 compact topology compass             retained current orientation aid
+S0 Geometric Control                 provisional zoom working default
 ```
 
-Positive predecessor evidence remains:
+Semantic zoom is deferred. S1-S8 remain preserved and are not rejected.
+
+## Active Conversation Workspace review
+
+The current question is:
 
 ```text
-Z2 World Falls Away
-Z6 Perspective Corridor, especially its 3D / 2.5D quality
-```
-
-## Active semantic-zoom review
-
-The new question separates geometric scale from semantic level-of-detail:
-
-```text
-GEOMETRIC ZOOM
-    camera / physical scale
-
-SEMANTIC ZOOM
-    what information survives, aggregates, disappears or becomes richer by scale?
-```
-
-Provisional scale levels:
-
-```text
-Overview
-Work
-Inspection
+How should the compact native Cockpit composer
+open into a serious persistent long-form Conversation Workspace
+without permanently turning the Cockpit into a giant chat sidebar?
 ```
 
 Candidates:
 
 ```text
-S0  Geometric Control
-S1  Progressive Detail
-S2  Stage Clusters
-S3  Topology First
-S4  Focus Preserving
-S5  Status First
-S6  Glyph Field
-S7  Hybrid Contextual
-S8  Local Detail Lens
+CV0  Focus Workspace
+CV1  Right Dock
+CV2  Split Workbench
+CV3  Canvas Lens
+CV4  Bottom Workbench
+CV5  Focus + Context Rail
+CV6  Conversation + Inspector
+CV7  Progressive Recent-to-Full
+CV8  Tabbed Stage
 ```
 
-S7 is only the browser default, not a selected result.
+All candidates use the same conceptual conversation and project references. The experiment tests presentation architecture only.
 
 ## Current human gate
 
 ```text
-compare S0-S8 across all three scales
-judge what must remain legible at distance
-judge focus-preserving versus globally uniform simplification
-judge clusters versus topology-first orientation
-judge glyph-level compression versus named work-unit identity
+compare CV0-CV8
+open / close each candidate
+judge long-form transcript readability
+judge simultaneous project-context value versus distraction
+judge focused workspace versus dock / split
+judge context rail / inspector value
+judge whether recent-context expansion earns an intermediate layer
 prefer / reject / combine / refine
 ```
 
-Production `/cockpit` remains untouched. Exact semantic-zoom thresholds, grouping semantics, large-project virtualization and production implementation remain unfrozen.
+Production `/cockpit` remains untouched. Conversation persistence model, session ontology, search, archive/fork behavior, transcript schema and production implementation remain unfrozen.

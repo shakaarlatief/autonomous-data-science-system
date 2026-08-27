@@ -34,7 +34,7 @@ Phase C divergent deep-focus ideation
 
 No Claude action is currently pending.
 
-## Preserved accepted Phase-C results
+## Preserved accepted / working Phase-C results
 
 ```text
 G4 Adaptive Hybrid world
@@ -56,6 +56,7 @@ L0 Flat Fields provisional working default
 Z7 Pull-Back Then Dive deep-focus entry
 fullscreen specialist-workspace end state
 compact topology compass retained
+S0 Geometric Control provisional zoom working default
 ```
 
 Important targets:
@@ -72,71 +73,90 @@ A3 attention priority                  767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 persistent selection              e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 expansion without recession         94bc1100b7388cc56497cafc03051ce326424a80
 Z7 spatial deep focus                  04616a52df5cceff6c59223bbd6f07448d027510
+semantic zoom browser                  65ac02326a75b1c9f056676819d2d1b7b23b74c5
 ```
 
-## Deep-focus closure
+## Semantic zoom disposition
 
-Research 075-077 explored initial transition architectures, Claude-informed factorization and spatial zoom. The human project owner selected:
+Checkpoint 244 opened S0-S8 semantic-zoom review. The human project owner then directed:
 
 ```text
-Z7 Pull-Back Then Dive
+S0 Geometric Control
+    provisional working default
+
+S1-S8
+    preserved for later
+    not rejected
+
+semantic zoom
+    deferred
 ```
 
-Current deep-focus end state:
+Research:
 
 ```text
-specialist workspace owns active Cockpit stage
-project grid and surrounding boxes disappear
-compact topology compass remains
+docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
 ```
 
-Z2 and Z6 remain positive evidence. Z6's restrained 3D/2.5D quality is preserved for possible project-world depth work.
-
-## Current Slice 02O: semantic zoom
+## Current Slice 02P: Conversation Workspace
 
 Checkpoint:
 
 ```text
-244
+245
 ```
 
 Research/browser:
 
 ```text
-docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
-http://localhost:5173/design-lab/work-unit-semantic-zoom.html
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+http://localhost:5173/design-lab/conversation-workspace-architecture.html
 ```
 
 Initial target:
 
 ```text
-65ac02326a75b1c9f056676819d2d1b7b23b74c5
+42cfe87a0531206187741488f35785fc87f10f1e
+```
+
+The product-level distinction under review is:
+
+```text
+compact native composer
+    lightweight interaction entry
+
+Conversation Workspace
+    persistent full user-visible transcript
+    long-form project dialogue
 ```
 
 Candidates:
 
 ```text
-S0 Geometric Control
-S1 Progressive Detail
-S2 Stage Clusters
-S3 Topology First
-S4 Focus Preserving
-S5 Status First
-S6 Glyph Field
-S7 Hybrid Contextual
-S8 Local Detail Lens
+CV0 Focus Workspace
+CV1 Right Dock
+CV2 Split Workbench
+CV3 Canvas Lens
+CV4 Bottom Workbench
+CV5 Focus + Context Rail
+CV6 Conversation + Inspector
+CV7 Progressive Recent-to-Full
+CV8 Tabbed Stage
 ```
 
-Each is shown at Overview, Work and Inspection scales. S7 is a working browser default only.
+Every candidate uses the same conceptual project state and conversation payload. Consequential project truth remains structured project state, not conversation prose alone.
 
 ## Current gate
 
 ```text
-human reviews S0-S8 across all three scales
-human judges which information deserves persistence at distance
-human judges global versus focus-aware simplification
-human judges clustering, topology-first and glyph-field approaches
+human compares CV0-CV8
+human judges long-form transcript quality
+human judges how much project context should remain simultaneously visible
+human judges focused workspace versus dock/split architectures
+human judges context rail / selected-work inspector value
+human judges whether recent-context expansion earns an intermediate layer
 human may combine mechanisms later
+-> keep S0 zoom behavior provisional
 -> keep Z7 deep-focus direction held
 -> keep production Cockpit untouched
 ```
@@ -145,4 +165,4 @@ human may combine mechanisms later
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes semantic-zoom thresholds, clustering semantics, label collision strategy, large-project virtualization, relation simplification, focus-set behavior by scale, deep-focus return choreography, compass semantics, specialist-workspace composition, URL/deep-link state, Conversation Workspace composition and final production visual system.
+Still unfrozen includes final Conversation Workspace presentation, conversation/session persistence model, transcript schema, search/archive/fork lifecycle, project-message linking semantics, conversation URL state, semantic zoom, large-project virtualization, deep-focus return choreography, compass semantics, specialist-workspace composition and final production visual system.
