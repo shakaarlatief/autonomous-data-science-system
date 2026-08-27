@@ -1,0 +1,9 @@
+/* Accepted X5 refinement: preserve the balanced two-axis card expansion,
+ * but remove the original context-recession behavior. The surrounding map
+ * remains at normal salience while the selected work unit expands.
+ */
+html[data-expansion-style="x5"][data-scene-expanded="true"] .expansion-practical-node:not([data-expanded="true"]),
+html[data-expansion-style="x5"][data-scene-expanded="true"] .expansion-relations {
+  opacity: 1;
+  filter: none;
+}
