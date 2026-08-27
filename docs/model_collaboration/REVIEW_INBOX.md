@@ -27,19 +27,19 @@ human project owner
 Current checkpoint:
 
 ```text
-238
+239
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-progress-constraint.html
+http://localhost:5173/design-lab/work-unit-attention-priority.html
 ```
 
-Exact current progress-constraint browser implementation target:
+Exact current browser implementation target:
 
 ```text
-efd0d36ee4ccf4c5494220df54eb3e7f50995658
+767c66f76974d3c0a851de0dfa17c502817a4b12
 ```
 
 ## Preserved accepted design results
@@ -62,8 +62,6 @@ Edit focus set
 Reset example
 ```
 
-The project owner accepted the editable focus-set interaction. Focus membership can be changed per work unit without deleting work or changing project disposition.
-
 Exact accepted editable-focus target:
 
 ```text
@@ -78,47 +76,19 @@ The Phase-C preservation audit remains closed with the repository architecture j
 d2541418a68b9bfd244ec89e4e951e630b3bb61b
 ```
 
-Audit evidence:
-
-```text
-docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
-```
-
 ## Runtime result accepted for current Phase C
 
-Current semantic distinction:
-
-```text
-PROJECT DISPOSITION
-    where does this work stand in the project?
-
-RUNTIME
-    if a meaningful current execution/work episode exists,
-    what is happening in that episode?
-```
-
-Runtime is conditional rather than universally present.
+Runtime remains conditional / episode-scoped.
 
 ```text
 No runtime
     no current execution/work episode exists
 
 Idle runtime
-    a runtime episode exists but is doing nothing
+    an execution episode exists but is doing nothing
 ```
 
-Working fixtures:
-
-```text
-NONE    No runtime
-QUEUE   Queued
-RUN     Running
-WAIT    Waiting
-HUMAN   Waiting for Human
-FAIL    Failed current attempt
-```
-
-Human-accepted carrier architecture:
+Accepted visual carrier architecture:
 
 ```text
 exactly one runtime carrier per live-runtime work unit
@@ -126,29 +96,6 @@ exactly one runtime carrier per live-runtime work unit
 Dot + dynamic ring
 or
 T7 Soft Shade runtime tag
-```
-
-Switching scopes:
-
-```text
-GLOBAL
-    switch every live-runtime work unit together
-    clear local overrides
-
-LOCAL
-    click the visible runtime carrier
-    switch only that work unit
-```
-
-No-runtime work units show no runtime carrier and expose no switching target.
-
-Accepted T7 runtime-tag motion:
-
-```text
-stationary tag geometry
-stationary text
-stationary border mask
-broad soft shade field flows through the perimeter
 ```
 
 Exact accepted T7 motion-browser target:
@@ -163,85 +110,121 @@ Exact switchable-runtime browser with T7 integrated:
 fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
-The final runtime ontology, final production default carrier, runtime-sensitive pacing and preference/persistence remain future work.
+## BLOCKED result accepted for current Phase C
 
-## Active BLOCKED progress-constraint review
-
-The active hypothesis is now:
+Current semantic distinction:
 
 ```text
-PROJECT DISPOSITION
-    where does this work stand in the project?
+BLOCKER
+    cause / unresolved work or dependency preventing progress
 
-PROGRESS CONSTRAINT
-    can this work proceed?
+BLOCKS
+    relationship from cause to affected work
 
-RUNTIME
-    if a meaningful current execution/work episode exists,
-    what is happening in that episode?
+BLOCKED
+    resulting current progress constraint
+
+FAIL
+    failed current execution attempt
 ```
 
-This allows:
+The current accepted presentation reuses one bottom-right operational-status slot for live runtime states or BLOCKED without merging the underlying model fields.
+
+Final compact red mapping after human-requested swap:
 
 ```text
-Current + Blocked
-Next + Blocked
+BLOCKED
+    sharper non-circular dynamic ring
+
+FAIL
+    smoother circular dynamic ring
 ```
 
-without replacing the project disposition.
+Tag mode retains explicit `BLOCKED` / `FAIL` text with T7 Soft Shade motion.
 
-Important semantic contrasts:
+Exact accepted BLOCKED/status visual target:
 
 ```text
-Current + Blocked + NONE
-vs
-Current + WAIT + unblocked
+88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
-and:
+The blocker cause -> `BLOCKS` -> blocked effect relationship remains part of the accepted current Phase-C direction.
+
+## Active attention-priority review
+
+The new bounded concept is:
 
 ```text
-Question / Blocker category
-    kind of work unit
-
-Blocked constraint
-    inability of an affected work unit to proceed
+ATTENTION PRIORITY
+    among visible work, which work deserves more attention now?
 ```
+
+It remains separate from:
+
+```text
+category
+project disposition
+progress constraint
+runtime / operational status
+current-focus membership
+```
+
+No assumption is made that priority equals relevance, scheduling order or operational urgency.
+
+Controlled fixture:
+
+```text
+Investigation
+CURRENT
+RUN
+HIGH attention
+```
+
+`HIGH` is provisional only.
 
 Current visual candidates:
 
 ```text
-C0  Neutral Control
-C1  Explicit Tag
-C2  Edge Clamp
-C3  Stop Rail
-C4  Barrier Seal
-C5  Constraint Veil
-C6  Tag + Clamp
+A0  Neutral Control
+A1  Twin Tick
+A2  Top Rail
+A3  Signal Bars
+A4  Side Bracket
+A5  HIGH Tag
+A6  Beacon
+A7  Luminance Lift
+A8  Rail + Tag
 ```
 
 Practical scene:
 
 ```text
-Question / Blocker    CURRENT + HUMAN     unblocked
-Investigation         CURRENT + BLOCKED   NONE
-Validation            NEXT + BLOCKED      NONE
-Model Work            CURRENT + RUN       unblocked
-Investigation         CURRENT + WAIT      unblocked
-Evaluation            DEFER + NONE        unblocked
-Investigation         FUTURE + NONE       unblocked
+Question / Blocker    CURRENT + HUMAN      HIGH
+Investigation         CURRENT + BLOCKED    HIGH
+Validation            NEXT + NONE          normal
+Model Work            CURRENT + FAIL       HIGH
+Investigation         CURRENT + RUN        normal
+Evaluation            DEFER + NONE         normal
 ```
 
 Current human gate:
 
 ```text
-judge whether Blocked belongs on an orthogonal progress-constraint axis
-verify Question / Blocker category remains distinct from Blocked state
-verify Current + Blocked + NONE remains distinct from Current + WAIT
-compare C1-C6 against C0
-judge explicit tag vs structural cue vs hybrid
-identify treatments that resemble suppression / priority
+compare A1-A8 against A0
+judge structural cues versus explicit HIGH text
+reject treatments that resemble status, connector ports, focus or hover
+inspect mixed categories and especially the yellow Question / Blocker node
 prefer / reject / combine / refine
 ```
 
-The final runtime ontology, project-disposition ontology, progress-constraint ontology, compatibility matrix, production blocked treatment, priority grammar and C5 Internal Layout Grammar remain separate future work.
+The final attention-priority ontology, relationship to relevance/scheduling, ownership, provenance, override rules, persistence and production carrier remain future work.
+
+## Preserved future work-unit detail idea
+
+```text
+compact map work unit
+    -> expanded contextual/detail card
+    -> full specialist workspace / deep focus
+```
+
+The intermediate expanded-card layer remains deferred to semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
