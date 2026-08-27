@@ -39,7 +39,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
 ## Active disposition review
@@ -57,7 +57,7 @@ P7  Colored Tag + Tone
 
 P4 State Rhythm remains preserved as standalone experiment evidence.
 
-The browser includes side-by-side practical mixed-category scenes so P6 and P7 can be judged with Question, Investigation, Validation, Model and Evaluation work units together.
+The browser includes side-by-side practical mixed-category scenes so P6 and P7 can be judged with Question, Investigation, Validation, Model and Evaluation work units together. Practical connector geometry follows rendered cards and selects horizontal or vertical attachment according to actual separation.
 
 Current human gate:
 
