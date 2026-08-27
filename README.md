@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            230
+checkpoint            231
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      work-unit project-disposition visual grammar human review
+current boundary      refined P6 vs P7 project-disposition mixed-category human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -38,19 +38,7 @@ Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientif
 
 ## Current Cockpit design direction
 
-MC-0004 is in browser-rendered Phase-C product-design evaluation.
-
-Preferred loop:
-
-```text
-bounded design question
--> browser-rendered alternatives
--> human comparison
--> preserve prefer / reject / combine evidence
--> progressively integrate surviving mechanisms
-```
-
-Held visual direction:
+Held controls:
 
 ```text
 G4 Adaptive Hybrid world                          SELECTED / provisionally settled
@@ -68,30 +56,16 @@ Model Work                diamond
 Evaluation                plus
 ```
 
----
+Foundation 023 preserves user-configurable non-semantic work-unit appearance while ADS owns semantic meaning.
 
-## Foundation 023: user-configurable work-unit appearance
-
-Promoted principle:
-
-```text
-ADS owns semantic meaning
-+
-user controls approved non-semantic appearance dimensions
-```
-
-Current proven work-unit appearance controls:
+Current proven appearance dimensions:
 
 ```text
 Box shape       Normal / Subtle shapes
 Micro design    None / Micro material / Micro light
 ```
 
-Production settings persistence is not yet selected.
-
----
-
-## Foundation 024: connector treatment, hover and semantic direction
+Foundation 024 preserves configurable connector treatment, orthogonal hover/focus behavior and system-owned relation directionality.
 
 Current connector treatments:
 
@@ -102,79 +76,34 @@ Frame sockets
 Direction arrows
 ```
 
-Current interaction rule:
-
-```text
-one terminal treatment normally active at a time
-+
-hover / focus is a separate reveal or emphasis mechanism
-```
-
 Accepted direction grammar:
 
 ```text
-Undirected      A - B       no arrow
-Forward         A -> B      restrained edge-connected arrow at B
-Reverse         A <- B      exact same arrow at A
-Bidirectional   A <-> B     same arrow at both endpoints
+Undirected      no arrow
+Forward         arrow at B
+Reverse         same arrow at A
+Bidirectional   same arrow at both endpoints
 ```
 
-Exact accepted directionality implementation:
-
-```text
-07d573b6569b9f09a3b7e00936f3eadecee721b3
-```
-
----
-
-## Relation-class visual grammar result
-
-Human review selected and accepted:
+Relation-class visual grammar is sufficiently settled for the current phase:
 
 ```text
 E5  Hue + Tag
-    SELECTED / sufficiently settled for current Phase C
 ```
 
-Current relation-class visual carrier:
-
-```text
-restrained relation-specific hue
-+
-compact explicit semantic tag
-+
-existing direction arrow when direction requires it
-```
-
-Representative relation fixtures remain provisional and do not freeze the ADS relation ontology.
-
-Stroke rhythm from E2/E4/E6 is explicitly preserved as a future semantic resource rather than used redundantly for relation class:
-
-```text
-stroke rhythm
-    visually promising
-    not rejected
-    no semantic assignment yet
-    candidate for another future line-level meaning if later evidence justifies it
-```
-
-Latest accepted relation-class browser implementation:
+Latest accepted relation-class implementation:
 
 ```text
 497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
-That accepted target includes the taller relation tag, restored gap above the connector line and taller lettering.
+Stroke rhythm remains preserved for a different future line-level semantic dimension and has no assigned meaning yet.
 
 ---
 
 ## Active Slice 02F: work-unit project disposition
 
-The current bounded question is:
-
-> How should a work unit communicate where it stands in the project without confusing category, runtime activity or importance?
-
-The semantic axes are deliberately separated:
+The current question remains separate from category, runtime and priority:
 
 ```text
 WHAT IS THIS?                  category
@@ -183,64 +112,67 @@ WHAT IS HAPPENING NOW?         runtime, held out
 HOW IMPORTANT IS IT NOW?       priority / relevance, held out
 ```
 
-Representative disposition fixtures:
+Representative visual-test dispositions:
 
 ```text
-S0  Active / Current
-S1  Recommended / Next
-S2  Deferred
-S3  Completed
-S4  Blocked
-S5  Future / Not yet active
+Active / Current
+Recommended / Next
+Deferred
+Completed
+Blocked
+Future / Not yet active
 ```
 
-These are visual-test fixtures, not a frozen project-state ontology.
-
-Encoding families:
+After first human review, the convergence comparison is now:
 
 ```text
-P0  Neutral Control
-P1  Disposition Hue
-P2  Explicit Tag
-P3  Tonal Hierarchy
-P4  State Rhythm
-P5  Hue + Tag
-P6  Restrained Hybrid
+P6  Hue + Colored Tag + Tone
+    disposition-colored outer perimeter
+    colored tag
+    selective tone
+    no rhythm
+
+P7  Colored Tag + Tone
+    no disposition-colored outer perimeter
+    colored tag
+    same selective tone
+    no rhythm
 ```
 
-Browser route:
+P4 State Rhythm remains preserved as standalone experiment evidence.
 
-```text
-frontend/design-lab/work-unit-disposition-grammar.html
-frontend/design-lab/work-unit-disposition-grammar.css
-frontend/design-lab/work-unit-disposition-grammar.js
-```
+The browser now includes a side-by-side practical project fixture where P6 and P7 are rendered with Question, Investigation, Validation, Model and Evaluation categories together. This specifically tests whether disposition perimeter hue competes with category hue.
 
-Local URL:
+Browser:
 
 ```text
 http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-565fdeabc1ebaa29f993699a4c0673b29e972be3
+2056bb31d7cb90766e112bc26aaf7339fb568242
 ```
 
-Held controls include the Investigation scientific marker, Subtle shape, M1 material, Reduced in-box light and accepted H4 hover behavior.
+Research and checkpoint:
+
+```text
+docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
+docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+```
 
 ---
 
 ## Collaboration state
 
-Claude's Phase-C divergent work-unit contribution is complete at:
+Claude's latest Phase-C contribution remains:
 
 ```text
 faf18ed9932d60a24dd80589b0ec0ba71c5940fd
 ```
 
-No model-collaboration obligation is currently pending.
+No model-collaboration obligation is pending.
 
 C5 Internal Layout Grammar remains deferred to semantic zoom / information-density work.
 
@@ -248,7 +180,7 @@ C5 Internal Layout Grammar remains deferred to semantic zoom / information-densi
 
 ## Production boundary
 
-The current work remains isolated under `frontend/design-lab/**`.
+Current design work remains isolated under `frontend/design-lab/**`.
 
 Production `/cockpit` remains the control baseline.
 
@@ -259,11 +191,10 @@ production Cockpit replacement
 production appearance persistence
 final project-disposition ontology
 final project-disposition visual grammar
+runtime-state / priority visual grammar
 final semantic relation taxonomy
 production relation colors / codes
 semantic assignment of connector stroke rhythm
-runtime-flow connector grammar
-runtime-state / importance visual grammar
 new graph/canvas dependency
 new motion-library adoption
 final visual-system freeze
@@ -275,11 +206,7 @@ Specification 008 remains the promoted interaction architecture.
 
 ## Source Universe substrate
 
-Specification 023 remains:
-
-```text
-SOURCE_SUBSTRATE_ACCEPTED
-```
+Specification 023 remains `SOURCE_SUBSTRATE_ACCEPTED`.
 
 Permanent deployment remains preserved but paused. Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 
@@ -300,7 +227,8 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/230_relation_class_settled_project_disposition_grammar_review_opened.md
+docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 frontend/design-lab/work-unit-disposition-grammar.html
 
@@ -313,9 +241,6 @@ docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariant
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
-
-docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
 ## Exact next step
@@ -323,10 +248,11 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. pull v1-cockpit-design-exploration
 2. open http://localhost:5173/design-lab/work-unit-disposition-grammar.html
-3. compare P0 through P6 across S0 through S5
-4. inspect H4 hover without changing disposition meaning
-5. prefer / reject / combine / refine disposition mechanisms
-6. keep runtime and importance separate from this slice
-7. do not freeze the final project-state ontology yet
-8. keep production Cockpit untouched
+3. compare controlled P6 and P7
+4. compare the side-by-side practical P6 and P7 mixed-category scenes
+5. judge whether disposition perimeter hue adds clarity or semantic/color confusion
+6. judge whether colored tag + tone alone is sufficient
+7. refine or select without freezing the final project-disposition ontology
+8. keep runtime and priority separate
+9. keep production Cockpit untouched
 ```
