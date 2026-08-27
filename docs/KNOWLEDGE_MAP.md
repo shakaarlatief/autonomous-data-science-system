@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 238  
+**Current checkpoint:** 239  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        238
+checkpoint                        239
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  blocked progress-constraint semantic/visual grammar human review
+current boundary                  attention priority semantic/visual grammar human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -90,11 +90,11 @@ Reduced in-box resting light
 Current work-unit category markers:
 
 ```text
-Question / Blocker        circle
-Investigation             square
-Validation / Analysis     triangle
-Model Work                diamond
-Evaluation                plus
+Question / Blocker        circle / yellow
+Investigation             square / green
+Validation / Analysis     triangle / blue
+Model Work                diamond / red
+Evaluation                plus / purple
 ```
 
 Foundation 023:
@@ -238,13 +238,6 @@ docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
 docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
 ```
 
-Runtime semantic separation:
-
-```text
-project disposition       where does it stand in the project?
-runtime                   if a current execution/work episode exists, what is happening in it?
-```
-
 Runtime remains conditional.
 
 ```text
@@ -276,18 +269,7 @@ or
 T7 Soft Shade runtime tag
 ```
 
-Global selection changes every live-runtime node and clears local overrides. Clicking one node's visible carrier switches only that node.
-
-No-runtime nodes show no carrier and expose no carrier-switch target.
-
-T7 selected runtime-tag motion:
-
-```text
-stationary tag geometry
-stationary text
-stationary border mask
-broad soft shade field flows through perimeter
-```
+Global selection changes every live-runtime node and clears local overrides. Clicking one node's visible carrier switches only that node. No-runtime nodes show no carrier.
 
 Exact accepted T7 motion-browser target:
 
@@ -301,91 +283,163 @@ Exact switchable-runtime browser with T7 integrated:
 fb847bd65ff6e5e4203a89ee2d4f74b7187c8359
 ```
 
-The final runtime ontology, production default carrier, preference persistence, historical execution presentation and runtime-flow connector semantics remain unfrozen.
-
 ---
 
-# Current Slice 02I: BLOCKED as progress constraint
+# Slice 02I result: BLOCKED carrier and blocker relationship
 
 Primary evidence:
 
 ```text
 docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
+docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
 docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
-frontend/design-lab/work-unit-progress-constraint.html
-frontend/design-lab/work-unit-progress-constraint.css
-frontend/design-lab/work-unit-progress-constraint.js
+frontend/design-lab/work-unit-blocked-carrier.html
+```
+
+Accepted current Phase-C semantic distinction:
+
+```text
+BLOCKER
+    cause / unresolved work or dependency preventing progress
+
+BLOCKS
+    relation from cause to affected work
+
+BLOCKED
+    resulting current progress constraint
+
+FAIL
+    failed current execution attempt
+```
+
+Accepted shared presentation rule:
+
+```text
+one bottom-right operational-status slot
+
+may show
+    live runtime state
+    or
+    BLOCKED
+
+shared carrier != merged ontology
+```
+
+Accepted compact red mapping:
+
+```text
+BLOCKED    sharper non-circular dynamic ring
+FAIL       smoother circular dynamic ring
+```
+
+Tag mode uses the accepted T7 Soft Shade treatment with explicit `BLOCKED` or `FAIL` text.
+
+Exact accepted visual target:
+
+```text
+88fd3c3cfe7a1eff4664afde06341b7b654c97f4
+```
+
+The final progress-constraint ontology, blocker taxonomy, many-to-many representation and state-transition rules remain open.
+
+---
+
+# Current Slice 02J: attention priority visual grammar
+
+Primary evidence:
+
+```text
+docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
+docs/checkpoints/239_shared_blocked_carrier_accepted_attention_priority_review_opened.md
+frontend/design-lab/work-unit-attention-priority.html
+frontend/design-lab/work-unit-attention-priority.css
+frontend/design-lab/work-unit-attention-priority.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-progress-constraint.html
+http://localhost:5173/design-lab/work-unit-attention-priority.html
 ```
 
 Exact browser implementation target:
 
 ```text
-efd0d36ee4ccf4c5494220df54eb3e7f50995658
+767c66f76974d3c0a851de0dfa17c502817a4b12
 ```
 
-Working semantic hypothesis:
+Working bounded semantic concept:
 
 ```text
-PROJECT DISPOSITION
-    where does this work stand in the project?
-
-PROGRESS CONSTRAINT
-    can this work proceed?
-
-RUNTIME
-    if a meaningful current execution/work episode exists,
-    what is happening in that episode?
+ATTENTION PRIORITY
+    among visible work, which work deserves more attention now?
 ```
 
-Important contrasts:
+This is kept separate from:
 
 ```text
-Current + Blocked + NONE
-vs
-Current + WAIT + unblocked
+category
+project disposition
+progress constraint
+runtime / operational status
+current-focus membership
 ```
 
-and:
+The slice does not assume priority equals relevance, scheduling order or operational urgency.
+
+Controlled fixture:
 
 ```text
-Question / Blocker category
-    kind of work unit
-
-Blocked constraint
-    inability of an affected work unit to proceed
+Investigation
+CURRENT
+RUN
+HIGH attention
 ```
+
+`HIGH` is provisional only.
 
 Current visual candidates:
 
 ```text
-C0  Neutral Control
-C1  Explicit Tag
-C2  Edge Clamp
-C3  Stop Rail
-C4  Barrier Seal
-C5  Constraint Veil
-C6  Tag + Clamp
+A0  Neutral Control
+A1  Twin Tick
+A2  Top Rail
+A3  Signal Bars
+A4  Side Bracket
+A5  HIGH Tag
+A6  Beacon
+A7  Luminance Lift
+A8  Rail + Tag
 ```
 
 Practical fixture:
 
 ```text
-Question / Blocker    CURRENT + HUMAN     unblocked
-Investigation         CURRENT + BLOCKED   NONE
-Validation            NEXT + BLOCKED      NONE
-Model Work            CURRENT + RUN       unblocked
-Investigation         CURRENT + WAIT      unblocked
-Evaluation            DEFER + NONE        unblocked
-Investigation         FUTURE + NONE       unblocked
+Question / Blocker    CURRENT + HUMAN      HIGH
+Investigation         CURRENT + BLOCKED    HIGH
+Validation            NEXT + NONE          normal
+Model Work            CURRENT + FAIL       HIGH
+Investigation         CURRENT + RUN        normal
+Evaluation            DEFER + NONE         normal
 ```
 
-The final project-disposition ontology, progress-constraint ontology, binary/multi-class blocked model, compatibility matrix, blocker-cause navigation and production treatment remain unfrozen.
+The yellow Question / Blocker node is a deliberate conflict test for the provisional warm attention tone.
+
+The final priority ontology, relationship to relevance/scheduling, provenance, ownership, override rules, persistence and production carrier remain unfrozen.
+
+---
+
+# Work-unit expansion route
+
+The project owner proposed:
+
+```text
+compact map work unit
+    -> expanded contextual/detail card
+    -> full specialist workspace / deep focus
+```
+
+The promoted Specification 008 already covers selection into full specialist/deep-work content. The intermediate expanded-card layer remains unfrozen and intentionally deferred to semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
 
 ---
 

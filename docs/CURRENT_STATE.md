@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 238  
+**Checkpoint:** 239  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The runtime carrier architecture is accepted for the current Phase-C round. The active gate remains BLOCKED/progress-constraint semantics, but human review has refined the visual hypothesis from dedicated C0-C6 blocked ornaments to a shared operational-status carrier plus explicit blocker-to-blocked cause relationships.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Runtime carrier architecture, blocker-to-blocked relationship semantics, the shared operational-status presentation slot and the final BLOCKED/FAIL compact-ring swap are accepted current Phase-C directions. The active gate has moved to a distinct node-level semantic/visual question: how elevated attention priority should be presented without conflicting with category, project disposition, operational status or current-process focus membership.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,32 +29,38 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
-docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
-docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
-frontend/design-lab/work-unit-blocked-carrier.html
-frontend/design-lab/work-unit-blocked-carrier.css
-frontend/design-lab/work-unit-blocked-carrier.js
+docs/checkpoints/239_shared_blocked_carrier_accepted_attention_priority_review_opened.md
+docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
+frontend/design-lab/work-unit-attention-priority.html
+frontend/design-lab/work-unit-attention-priority.css
+frontend/design-lab/work-unit-attention-priority.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-blocked-carrier.html
+http://localhost:5173/design-lab/work-unit-attention-priority.html
 ```
 
 Exact current browser implementation target:
 
 ```text
-b65df18f8d04c149979854c0aee695abb9a9036e
+767c66f76974d3c0a851de0dfa17c502817a4b12
 ```
 
-The predecessor C0-C6 progress-constraint browser remains preserved as evidence at:
+Predecessor BLOCKED evidence remains preserved at:
 
 ```text
-http://localhost:5173/design-lab/work-unit-progress-constraint.html
+docs/checkpoints/238_runtime_carrier_accepted_blocked_progress_constraint_review_opened.md
+docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md
+docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
+frontend/design-lab/work-unit-blocked-carrier.html
+```
 
-efd0d36ee4ccf4c5494220df54eb3e7f50995658
+Exact accepted BLOCKED/status browser visual target:
+
+```text
+88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
 Production `/cockpit` remains untouched.
@@ -83,7 +89,7 @@ d2541418a68b9bfd244ec89e4e951e630b3bb61b
     SUCCESS
 ```
 
-Checkpoint 238 continues to own the BLOCKED review boundary. Research 070 is a substantive refinement inside that same gate, so a new checkpoint is not created yet. A new checkpoint should be created when this gate is accepted/rejected and routing moves to a genuinely distinct question.
+Checkpoint 239 is warranted because the BLOCKED review gate received explicit positive human closure and the active semantic/review boundary changed to attention priority.
 
 ---
 
@@ -104,6 +110,16 @@ Investigation             square
 Validation / Analysis     triangle
 Model Work                diamond
 Evaluation                plus
+```
+
+Current category colors:
+
+```text
+Question / Blocker        yellow
+Investigation             green
+Validation / Analysis     blue
+Model Work                red
+Evaluation                purple
 ```
 
 Foundation 023 preserves:
@@ -216,7 +232,7 @@ No runtime
     no current execution/work episode exists
 
 Idle runtime
-    an execution episode exists but is currently doing nothing
+    an execution episode exists but is doing nothing
 ```
 
 Working runtime fixtures:
@@ -267,23 +283,9 @@ Final runtime ontology, production default carrier, preference persistence and e
 
 ---
 
-# Active Slice 02I: BLOCKED carrier and blocker relationship
+# BLOCKED result from Slice 02I
 
-The working semantic model remains:
-
-```text
-PROJECT DISPOSITION
-    where does this work stand in the project?
-
-PROGRESS CONSTRAINT
-    can this work proceed?
-
-RUNTIME
-    if a meaningful current execution/work episode exists,
-    what is happening in that episode?
-```
-
-Human clarification now distinguishes:
+The current semantic distinction is:
 
 ```text
 BLOCKER
@@ -293,118 +295,167 @@ BLOCKS
     relationship from blocker cause to affected work
 
 BLOCKED
-    resulting current progress constraint on the affected work unit
+    resulting current progress constraint on affected work
 
 FAIL
     failed current execution attempt
 ```
 
-This allows a visible cause/effect structure:
+The shared operational-status presentation rule is accepted for the current Phase-C round:
 
 ```text
-[Resolve data contract]
-Question / Blocker
-CURRENT + HUMAN
+one bottom-right operational-status slot
 
+may visually present
+    live runtime state
+    or
+    BLOCKED progress constraint
+
+shared visual carrier
+    !=
+merged ontology
+```
+
+Accepted compact red mapping after the final human-requested swap:
+
+```text
+BLOCKED
+    red core dot
+    sharper non-circular dynamic ring
+
+FAIL
+    red core dot
+    smoother circular dynamic ring
+```
+
+Tag mode remains:
+
+```text
+BLOCKED
+    red T7 Soft Shade tag
+    text = BLOCKED
+
+FAIL
+    red T7 Soft Shade tag
+    text = FAIL
+```
+
+The practical model preserves visible cause/effect:
+
+```text
+[Question / Blocker cause]
         BLOCKS
            ↓
-
-[Production missingness]
-Investigation
-CURRENT + BLOCKED
+[affected work unit + BLOCKED]
 ```
 
-The blocker work unit is not automatically Blocked itself.
+One blocker may eventually block several work units, and one work unit may have multiple blocker causes. The final relation ontology and state-transition rules remain unfrozen.
 
-## Shared operational-status carrier hypothesis
-
-The active visual hypothesis no longer requires a separate family of blocked-only edge clamps, rails, seals or veils.
-
-Instead:
+Exact accepted visual target:
 
 ```text
-one bottom-right operational-status presentation slot
+88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
-may visually present either:
+---
+
+# Active Slice 02J: attention priority visual grammar
+
+The active bounded concept is:
 
 ```text
-live runtime state
-or
-BLOCKED progress constraint
+ATTENTION PRIORITY
+    among visible work, which work deserves more attention now?
 ```
 
-without claiming those concepts are one semantic field.
-
-BLOCKED carrier:
+This is intentionally separated from:
 
 ```text
-Dot mode
-    red core dot
-    circular dynamic ring
+CATEGORY
+    what is this?
 
-Tag mode
-    T7 Soft Shade status tag
-    explicit text = BLOCKED
+PROJECT DISPOSITION
+    where does it stand?
+
+PROGRESS CONSTRAINT
+    can it proceed?
+
+RUNTIME / OPERATIONAL STATUS
+    what is happening now?
+
+CURRENT-FOCUS MEMBERSHIP
+    is it in the emphasized process set?
 ```
 
-FAIL remains distinct:
+The slice does not freeze `importance / priority / relevance` as one semantic axis. In particular:
 
 ```text
-Dot mode
-    same red family
-    sharper non-circular failure ring
-
-Tag mode
-    same T7 Soft Shade family
-    explicit text = FAIL
+priority != relevance
+priority != scheduling order
+priority != current-focus membership
+priority != operational urgency
 ```
 
-The practical browser generalizes the accepted global/local appearance switching across runtime and BLOCKED carriers.
+unless later evidence justifies specific relationships.
 
-Working interpretation:
+## Controlled fixture
 
 ```text
-Blocked
-    normally no live runtime episode shown
-    status slot presents BLOCKED
-
-Failed attempt but work remains retryable
-    status slot presents FAIL
-
-Failed attempt creates unresolved blocker
-    current presentation may become BLOCKED
-    failed attempt remains in execution history/provenance
+category       Investigation
+disposition    Current
+status         RUN
+priority       HIGH
 ```
 
-These transition rules are not frozen.
+`HIGH` is a provisional binary test fixture only.
 
-## Blocker relationship evidence
-
-The new practical scene explicitly draws `BLOCKS` relations from a Question / Blocker source to affected work units.
-
-One blocker may eventually block multiple work units, and one work unit may have multiple blocker causes. The final relation ontology, blocker taxonomy and many-to-many representation remain open.
-
-Current review questions:
+## Current visual candidates
 
 ```text
-1. does BLOCKED feel natural in the accepted dot/ring and T7 tag carrier family?
-2. is circular BLOCKED distinct enough from sharper FAIL in dot mode?
-3. does explicit BLOCKED vs FAIL remain clean in tag mode?
-4. does the BLOCKS relation make blocker cause -> blocked effect intuitive?
-5. does one shared operational-status slot reduce clutter without collapsing semantics?
-6. does global + local carrier switching remain useful when runtime and constraints coexist?
+A0  Neutral Control
+A1  Twin Tick
+A2  Top Rail
+A3  Signal Bars
+A4  Side Bracket
+A5  HIGH Tag
+A6  Beacon
+A7  Luminance Lift
+A8  Rail + Tag
+```
+
+The priority tone is provisional champagne so geometry can be compared while category color remains category-owned.
+
+## Practical coexistence fixture
+
+```text
+Question / Blocker    CURRENT + HUMAN      HIGH
+Investigation         CURRENT + BLOCKED    HIGH
+Validation            NEXT + NONE          normal
+Model Work            CURRENT + FAIL       HIGH
+Investigation         CURRENT + RUN        normal
+Evaluation            DEFER + NONE         normal
+```
+
+The yellow Question / Blocker example deliberately tests whether a warm priority cue can remain distinct from category color.
+
+Current human gate:
+
+```text
+1. compare A1-A8 against A0
+2. judge structural cues versus explicit HIGH text
+3. reject any treatment that resembles status, connector ports, focus or hover
+4. inspect mixed categories, especially yellow Question / Blocker
+5. prefer / reject / combine / refine
+6. do not freeze final priority/relevance ontology from this visual gate alone
 ```
 
 ---
 
 # Work-unit click / expansion interaction
 
-The project owner also proposed a future interaction in which clicking a compact work-unit box can expand it elegantly to show more information.
+The project owner proposed a future interaction in which clicking a compact work-unit box can expand it elegantly to show more information.
 
-This is **not** being implemented in the current BLOCKED slice because it changes information density, node geometry and navigation at the same time.
-
-The broader need is already compatible with promoted Specification 008, which requires:
+The broader need is compatible with promoted Specification 008:
 
 ```text
 project map
@@ -415,7 +466,7 @@ project map
     -> return to project context
 ```
 
-The exact intermediate in-map expansion remains unfrozen. A future candidate hierarchy is:
+The exact intermediate in-map expansion remains unfrozen. Future candidate hierarchy:
 
 ```text
 compact map work unit
@@ -423,7 +474,7 @@ compact map work unit
     -> full specialist workspace / deep focus
 ```
 
-The expanded-card level should be tested later with semantic zoom, C5 Internal Layout Grammar, information-density work and persistent selected/focused treatment. The idea is now preserved so it will not be lost.
+The expanded-card level remains deferred to semantic zoom, C5 Internal Layout Grammar, information-density and selected/focused-treatment work.
 
 ---
 
@@ -434,7 +485,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               shared BLOCKED carrier + blocker relationship human review
+Current                               attention priority semantic/visual grammar human review
 ```
 
 There is no pending Claude obligation.
@@ -459,13 +510,16 @@ historical execution-attempt presentation
 historical blocked-state provenance
 runtime-flow connector behavior
 final current-focus membership semantics
-importance / priority / relevance visual grammar
-final semantic relation taxonomy
+final attention-priority ontology
+relationship between priority, relevance and scheduling
+priority provenance / override / persistence
+production priority carrier
 semantic assignment of connector stroke rhythm
 selected/focused persistent treatment
 work-unit inline expansion behavior
 semantic zoom
 C5 Internal Layout Grammar
+information-density lenses
 2.5D focus/depth system
 Conversation Workspace composition
 large-project layout/grouping/command architecture
@@ -493,18 +547,16 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 238 and v1-cockpit-design-exploration
+1. use Checkpoint 239 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-blocked-carrier.html
-4. compare BLOCKED dot/ring against BLOCKED soft-shade tag
-5. compare BLOCKED against FAIL in both carrier modes
-6. inspect BLOCKS relations from the Question / Blocker cause to affected work units
-7. use the global carrier switch
-8. click individual carriers to create/remove local overrides
-9. toggle Reduced motion
-10. accept / reject / refine the shared operational-status carrier hypothesis
-11. keep work-unit expansion deferred to its own future interaction-density slice
-12. do not freeze final ontology merely from this visual gate
-13. keep production Cockpit untouched
-14. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-attention-priority.html
+4. compare A1-A8 against A0
+5. inspect structural priority cues versus explicit HIGH text
+6. inspect coexistence with BLOCKED, FAIL, RUN, HUMAN and disposition
+7. inspect the yellow Question / Blocker example carefully
+8. prefer / reject / combine / refine
+9. keep work-unit expansion deferred to its own later interaction-density slice
+10. do not freeze final priority/relevance ontology merely from this first visual slice
+11. keep production Cockpit untouched
+12. keep source-vault deployment paused until explicitly resumed
 ```
