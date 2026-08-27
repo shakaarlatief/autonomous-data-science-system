@@ -115,8 +115,6 @@ Exact retained refinement commits:
 
 ## Connector treatment and hover architecture
 
-Human review first rejected the need for one universal connector-style winner, then clarified the composition model further.
-
 Current connector treatments:
 
 ```text
@@ -134,85 +132,102 @@ one terminal treatment normally active at a time
 hover / focus is an orthogonal reveal or emphasis mechanism
 ```
 
-Therefore hover is not another connector terminal that must be combined with dots, sockets or arrows.
+Unnecessary mixed terminal stacks are not the default product direction.
 
-Unnecessary mixed terminal stacks are not the default product direction:
+Foundation 024 records this architecture while preserving system-owned relation semantics.
 
-```text
-arrow + dot
-arrow + socket
-socket + dot
-```
+## Directionality result
 
-Foundation 024 now records this refined architecture while preserving system-owned relation semantics.
+The simplified directionality browser isolates the restrained edge-connected K3-style arrow.
 
-## Current Slice 02D: simplified connector directionality
-
-The first directionality browser exposed Clean / Micro dots / Frame sockets alongside persistent direction cues as compatibility controls.
-
-The project owner then clarified that this made the directionality question more complicated than necessary.
-
-The browser now isolates the original preferred edge-connected K3-style arrow only.
-
-Research:
-
-```text
-docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
-```
-
-Checkpoint:
-
-```text
-docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
-```
-
-Browser route:
-
-```text
-frontend/design-lab/connector-directionality.html
-frontend/design-lab/connector-directionality.css
-frontend/design-lab/connector-directionality.js
-```
-
-Local URL:
-
-```text
-http://localhost:5173/design-lab/connector-directionality.html
-```
-
-Exact browser implementation target:
+Exact accepted browser target:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Direction states:
+Human review result:
 
 ```text
-D0  Undirected      A - B
-    no arrow
-
-D1  Forward         A -> B
-    arrow tip docked directly to B
-
-D2  Reverse         A <- B
-    exact same arrow tip docked directly to A
-
-D3  Bidirectional   A <-> B
-    same arrow at both endpoints
+Yes, perfect. We can proceed.
 ```
 
-Arrow geometry intentionally reuses the earlier K3 treatment:
+Directionality is therefore sufficiently settled for the current Phase-C design work:
 
 ```text
-arrow tip
-    exact rendered work-unit edge
-
-arrow arms
-    outside the box
+D0  Undirected      no arrow
+D1  Forward         arrow at B
+D2  Reverse         same arrow at A
+D3  Bidirectional   same arrow at both endpoints
 ```
 
-The connector curve remains beneath work-unit bodies and follows H4 hover lift / release through rendered-edge geometry updates.
+## Current Slice 02E: semantic relation-class visual grammar
+
+Next bounded question:
+
+> How should different relationship meanings remain distinguishable on the Cockpit map while remaining professional, learnable and scalable?
+
+Research:
+
+```text
+docs/research/057_semantic_relation_class_visual_grammar_experiment.md
+```
+
+Checkpoint:
+
+```text
+docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+```
+
+Browser route:
+
+```text
+frontend/design-lab/relation-class-grammar.html
+frontend/design-lab/relation-class-grammar.css
+frontend/design-lab/relation-class-grammar.js
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/relation-class-grammar.html
+```
+
+Exact browser implementation target:
+
+```text
+9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+```
+
+Representative visual-test relation fixtures:
+
+```text
+R0  Chronology / Sequence
+R1  Dependency / Prerequisite
+R2  Causal / Influence
+R3  Evidence / Support
+R4  Lineage / Derivation
+```
+
+These are not a frozen ADS ontology.
+
+Direction is held constant as `A -> B` across all rows.
+
+Encoding families:
+
+```text
+E0  Neutral Control
+E1  Semantic Hue
+E2  Stroke Rhythm
+E3  Explicit Tag
+E4  Hue + Stroke
+E5  Hue + Tag
+E6  Restrained Hybrid
+```
+
+The current human gate is to compare semantic distinction, map-scale legibility, competition with node-category color, stroke-pattern clarity, tag density, accessibility redundancy and large-project noise risk.
+
+Runtime-flow relations remain outside this first semantic-class slice.
 
 ## Dependency-bound ideas
 
@@ -227,9 +242,10 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human verifies D0-D3 simplified arrow grammar
--> if accepted, treat directionality as sufficiently converged
--> then explore semantic relation classes
+human compares E0-E6 across R0-R4
+-> prefer / reject / combine / refine relation-class encoding mechanisms
+-> preserve promising semantic-class grammar
+-> do not freeze the relation ontology yet
 ```
 
 ## Production boundary
