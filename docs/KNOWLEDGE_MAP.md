@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 241  
+**Current checkpoint:** 242  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        241
+checkpoint                        242
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  contextual work-unit detail expansion human review
+current boundary                  expanded work-unit internal layout human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -268,14 +268,6 @@ Human-selected current Phase-C direction:
 A3  Signal Bars
 ```
 
-Meaning under current test:
-
-```text
-HIGH attention
-    three ascending micro-bars
-    near upper-right frame
-```
-
 Exact browser target in which A3 was selected:
 
 ```text
@@ -294,8 +286,6 @@ Primary evidence:
 docs/checkpoints/240_attention_priority_a3_accepted_selection_state_review_opened.md
 docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
 frontend/design-lab/work-unit-selection-state.html
-frontend/design-lab/work-unit-selection-state.css
-frontend/design-lab/work-unit-selection-state.js
 ```
 
 The first browser had a clipping defect for external selection geometry. The repaired implementation moved the selection carrier outside `.node-surface` while preserving surface clipping for internal effects.
@@ -310,18 +300,11 @@ Human-selected current Phase-C direction:
 
 ```text
 SEL2  Corner Brackets
-
-SELECTED
-    four compact neutral-cool corner brackets
-    outside the rendered work-unit frame
-    persistent after pointer exit
 ```
-
-Selection remains separate from hover, keyboard focus, current-process focus membership, attention priority and deep focus.
 
 ---
 
-# Current Slice 02L: contextual work-unit detail expansion
+# Slice 02L: contextual work-unit detail expansion result
 
 Primary evidence:
 
@@ -329,52 +312,91 @@ Primary evidence:
 docs/checkpoints/241_selection_sel2_accepted_contextual_detail_expansion_review_opened.md
 docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
 frontend/design-lab/work-unit-detail-expansion.html
-frontend/design-lab/work-unit-detail-expansion.css
-frontend/design-lab/work-unit-detail-expansion.js
+frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
+frontend/design-lab/work-unit-detail-expansion-x5-accepted.js
+```
+
+Human-selected current Phase-C direction:
+
+```text
+X5 balanced two-axis expansion
+WITHOUT surrounding-context recession
+```
+
+Accepted geometry:
+
+```text
+390 x 210
+one integrated work-unit object
+balanced width + height growth
+surrounding map remains at normal salience
+```
+
+Exact refined X5 implementation target:
+
+```text
+94bc1100b7388cc56497cafc03051ce326424a80
+```
+
+The original X5 context-recession mechanism remains historical evidence only.
+
+---
+
+# Current Slice 02M: expanded work-unit internal layout
+
+Primary evidence:
+
+```text
+docs/checkpoints/242_x5_two_axis_expansion_accepted_internal_layout_review_opened.md
+docs/research/074_work_unit_internal_layout_grammar_experiment.md
+frontend/design-lab/work-unit-internal-layout.html
+frontend/design-lab/work-unit-internal-layout.css
+frontend/design-lab/work-unit-internal-layout.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-detail-expansion.html
+http://localhost:5173/design-lab/work-unit-internal-layout.html
 ```
 
 Exact initial browser implementation target:
 
 ```text
-0457a27d8e80863738ce3f75aeb11bd4f5c1155d
+871075bcda8ff812e1a96b18b442c803d5da7faf
 ```
 
-Interaction hierarchy under review:
+Held outer geometry:
 
 ```text
-compact map work unit
-    -> selected compact work unit
-    -> expanded contextual/detail layer
-    -> full specialist workspace / deep focus
+X5 two-axis expansion
+390 x 210
+NO surrounding-context recession
 ```
 
-Candidate expansion architectures:
+Candidate internal layouts:
 
 ```text
-X0  Compact Control
-X1  Vertical Drawer
-X2  Right Sidecar
-X3  Attached Sheet
-X4  Wide Split Card
-X5  Context Lens
-X6  Layered Reveal
-X7  Peek Rail
-X8  Inspector Dock
+L0  Flat Fields
+L1  Structured Grid
+L2  Narrative Stack
+L3  Summary + Rail
+L4  Action First
+L5  Dependency Path
+L6  Evidence Center
+L7  Module Cards
+L8  Balanced Instrument
 ```
 
-Controlled placeholder detail payload:
+Controlled placeholder payload:
 
 ```text
 Purpose
-Constraint / state
+Constraint
 Evidence
 Next action
+Blocking cause
+Recent activity
 ```
 
 The payload is not a frozen work-unit schema.
@@ -382,12 +404,11 @@ The payload is not a frozen work-unit schema.
 Current human gate:
 
 ```text
-compare X1-X8 against X0
-judge spatial orientation and attachment
-identify variants that consume too much map context
-judge whether X5 crosses prematurely into deep focus
-compare inline expansion against X8 Inspector Dock
-verify SEL2, A3 and status remain independent
+compare L0-L8 with outer geometry held constant
+judge scan path, hierarchy and density
+reject miniature-dashboard behavior
+inspect robustness to longer content
+inspect future room for provenance/evidence and commands
 prefer / reject / combine / refine
 ```
 
