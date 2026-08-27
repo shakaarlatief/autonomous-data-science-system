@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            233
+checkpoint            234
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      current-process focus-lens human review
+current boundary      user-curated current-process focus-set human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -64,7 +64,7 @@ Relation-class visual grammar remains sufficiently settled:
 E5  Hue + Tag
 ```
 
-Project-disposition visual direction is now accepted for the current Phase-C round:
+Project-disposition visual direction is accepted for the current Phase-C round:
 
 ```text
 P7  Neutral Tag + Tone
@@ -78,40 +78,35 @@ HOVER
     disposition tag reveals its state-specific hue
 ```
 
-Latest accepted P7 implementation before the new slice:
-
-```text
-fac1db37af4225927d6c799e37418a3ad9c42c13
-```
-
 The final project-disposition ontology remains unfrozen.
 
 ---
 
-## Active Slice 02G: current-process focus lens
+## Active Slice 02G: current-process focus lens and editable focus set
 
-The current question is not another disposition state. It separates:
+The current focus architecture separates:
 
 ```text
+work-unit existence
 project disposition
-current-process membership
+current-focus membership
 view emphasis
 ```
 
-The new browser tests two views over the same project state:
+The browser supports:
 
 ```text
 Context visible
-    accepted P7 treatment remains readable
-
 Focus current process
-    current-process work remains full salience
-    contextual work is much more strongly suppressed
-    contextual connector segments also recede
-    contextual work partially recovers on hover for inspection
+Edit focus set
+Reset example
 ```
 
-The browser uses explicit current/context fixture membership for visual testing rather than inferring membership from disposition.
+`Focus current process` strongly suppresses work outside the current focus set while keeping it hover-recoverable. `Edit focus set` lets the user explicitly add or remove individual work units from that set with `+ FOCUS` / `- FOCUS` controls. This does not delete the work unit or change its disposition.
+
+Connector suppression updates with focus membership: if either endpoint lies outside the current focus, the connector is treated as contextual for the focus lens.
+
+The design-lab browser preserves the edited focus set in browser `localStorage` only as prototype convenience. Production ownership and persistence semantics remain open.
 
 Browser:
 
@@ -122,14 +117,15 @@ http://localhost:5173/design-lab/work-unit-process-focus.html
 Exact implementation target:
 
 ```text
-b311796f86ff577354a2bfe14b850bd6a49a9c06
+da115b74de526fca05ed6f468bef39bdb801355c
 ```
 
 Research and checkpoint:
 
 ```text
+docs/research/063_user_curated_current_process_focus_membership.md
 docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
-docs/checkpoints/233_p7_disposition_accepted_current_process_focus_lens_review_opened.md
+docs/checkpoints/234_user_curated_current_process_focus_set_review_opened.md
 ```
 
 ---
@@ -158,9 +154,10 @@ Not yet authorized:
 
 ```text
 production Cockpit replacement
-production appearance persistence
-final current-process-membership semantics
-production persistence of focus-lens preference
+final current-focus membership semantics
+automatic focus-selection logic
+production focus-set ownership / persistence
+multiple named focus lenses
 final project-disposition ontology
 runtime-state / priority visual grammar
 final semantic relation taxonomy
@@ -198,15 +195,13 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/233_p7_disposition_accepted_current_process_focus_lens_review_opened.md
+docs/checkpoints/234_user_curated_current_process_focus_set_review_opened.md
+docs/research/063_user_curated_current_process_focus_membership.md
 docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md
 frontend/design-lab/work-unit-process-focus.html
 
 docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
 frontend/design-lab/work-unit-disposition-grammar.html
-
-docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
-frontend/design-lab/relation-class-grammar.html
 
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
@@ -221,10 +216,12 @@ docs/model_collaboration/REVIEW_INBOX.md
 ```text
 1. pull v1-cockpit-design-exploration
 2. open http://localhost:5173/design-lab/work-unit-process-focus.html
-3. compare Context visible against Focus current process
-4. hover suppressed context nodes and inspect partial recovery
-5. inspect whether context connector segments recede appropriately
-6. refine / accept / reject the focus lens
-7. do not infer current-process membership from disposition
-8. keep production Cockpit untouched
+3. turn Edit focus set on
+4. add and remove several work units with + FOCUS / - FOCUS
+5. switch between Context visible and Focus current process
+6. inspect node and connector suppression after each membership change
+7. verify editing outside-focus nodes remains comfortable
+8. verify browser refresh preserves the prototype set and Reset example restores the fixture
+9. refine / accept / reject the editable focus-set interaction
+10. keep production Cockpit untouched
 ```
