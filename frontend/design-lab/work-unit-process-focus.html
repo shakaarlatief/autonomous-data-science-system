@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-process-focus="context">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Current Process Focus</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-process-focus.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header focus-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02G · Current Process Focus</span>
+        <h1>How should the Cockpit keep future and contextual work visible without letting it compete with the current process?</h1>
+        <p>The accepted neutral-tag + tone disposition treatment is held constant. This slice adds a separate view lens that can more strongly suppress work that is present for context but not currently part of the active process.</p>
+      </div>
+      <div class="focus-held-state">
+        <span>Semantic boundary</span>
+        <strong>Disposition ≠ current-process membership ≠ view emphasis</strong>
+      </div>
+    </header>
+
+    <main class="grammar-main focus-main">
+      <section class="grammar-intro focus-intro">
+        <div>
+          <span class="section-kicker">Bounded design question</span>
+          <h2>Keep context available, but let the actual process dominate</h2>
+          <p>Current-process membership is explicit fixture metadata in this experiment. The focus lens changes presentation only and does not rewrite the underlying work-unit disposition.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Focus constraints">
+          <span>P7 Neutral Tag + Tone held</span>
+          <span>Category identity held</span>
+          <span>Context remains hover-recoverable</span>
+          <span>Connector geometry held</span>
+          <span>No semantic deletion</span>
+        </div>
+      </section>
+
+      <section class="focus-controls" aria-label="Current process focus controls">
+        <div class="focus-control-copy">
+          <span class="section-kicker">Process visibility lens</span>
+          <h2>Switch between contextual and focused views</h2>
+          <p>The same project state remains underneath both modes.</p>
+        </div>
+        <div class="segmented focus-segmented" role="group" aria-label="Current process focus mode">
+          <button type="button" data-focus-mode="context" aria-pressed="true">Context visible</button>
+          <button type="button" data-focus-mode="focused" aria-pressed="false">Focus current process</button>
+        </div>
+        <label class="toggle-row focus-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Disable ambient and hover transition motion without changing the focus lens.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+        <div class="focus-summary">
+          <span>Current lens</span>
+          <strong id="focus-summary">Context visible</strong>
+        </div>
+      </section>
+
+      <section class="focus-preview" aria-label="Current process focus practical scene">
+        <div class="focus-preview-header">
+          <div>
+            <span class="section-kicker">Practical project scene</span>
+            <h2>Current process remains clear while contextual work stays available</h2>
+            <p>Blocked, Active and Recommended nodes are marked as current-process fixtures. Completed, Deferred and Future nodes are contextual fixtures for this visual test only.</p>
+          </div>
+          <div class="focus-legend" aria-label="Process membership legend">
+            <span class="is-current">Current process</span>
+            <span class="is-context">Context / not current</span>
+          </div>
+        </div>
+
+        <div class="grammar-world focus-world" id="focus-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <svg class="focus-relations" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true">
+            <path />
+            <path />
+            <path />
+            <path />
+            <path />
+          </svg>
+          <div class="focus-nodes" id="focus-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review focus-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge whether the stronger lens preserves useful context without weakening the active process</h2>
+        <div class="review-questions">
+          <p>In Context visible mode, the existing P7 fading should remain the calm default when all work should still be readable.</p>
+          <p>In Focus current process mode, do contextual nodes recede enough that the current process becomes immediately dominant?</p>
+          <p>When hovering a suppressed contextual node, does partial recovery make it inspectable without making it equal in salience to the active process?</p>
+          <p>Do contextual connector segments recede appropriately together with the contextual work units?</p>
+          <p>This lens is presentation-only. The final definition of current-process membership and the final project-disposition ontology remain unfrozen.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-process-focus.js"></script>
+  </body>
+</html>
