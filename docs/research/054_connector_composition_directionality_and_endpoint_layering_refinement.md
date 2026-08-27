@@ -2,7 +2,7 @@
 
 **Date:** 2026-08-27  
 **Status:** Active Phase-C product-design evidence  
-**Scope:** Preserves the next human review of the connector/Port Grammar slice, fixes endpoint-layering, hover-lift attachment and dot-overlap defects, restores the earlier frame-socket treatment, and records a preliminary shift from winner-take-all connector selection toward a compositional connector grammar.  
+**Scope:** Preserves the next human review of the connector/Port Grammar slice, fixes endpoint-layering, hover-lift attachment and dot-overlap defects, restores the earlier frame-socket treatment, refines K2 socket highlight behavior, and records a preliminary shift from winner-take-all connector selection toward a compositional connector grammar.  
 **Authority:** Research/design evidence only. No final connector semantic vocabulary is promoted.
 
 ## 1. Human visual defect reports
@@ -134,7 +134,7 @@ Exact outward-dot refinement:
 42ec63d17095753dc4ab97628cd859473cbdf5e8
 ```
 
-## 5. Frame sockets restored to the earlier treatment
+## 5. Frame sockets restored and color-synchronized
 
 The project owner explicitly said the frame sockets were good before the endpoint-overlay change and asked to restore them.
 
@@ -148,6 +148,29 @@ K2 Frame Sockets
 ```
 
 This preserves their more structural, instrument-like character.
+
+The next human review identified one remaining coherence issue: when a relation becomes highlighted, the curve changes to the hovered work-unit color while the K2 socket outline remained grey.
+
+That is now corrected:
+
+```text
+K2 rest state
+    dark socket interior
+    neutral grey socket outline
+
+K2 highlighted relation
+    dark socket interior retained
+    socket outline adopts --related-rgb
+    restrained same-color socket glow
+```
+
+The socket therefore stays structural rather than becoming a bright filled marker, while its active relation state now visually matches the connector line.
+
+Exact K2 relation-color refinement:
+
+```text
+183264bdd07783eaa2354894592f2cf4a076b6ec
+```
 
 ## 6. Implementation sequence
 
@@ -169,12 +192,15 @@ ae2951e2325e6e6e624131097dcc1edc732e1844
 
 42ec63d17095753dc4ab97628cd859473cbdf5e8
     circular terminals moved mostly outside the work-unit perimeter
+
+183264bdd07783eaa2354894592f2cf4a076b6ec
+    K2 socket outline follows highlighted relation color
 ```
 
 Current exact browser implementation target:
 
 ```text
-42ec63d17095753dc4ab97628cd859473cbdf5e8
+183264bdd07783eaa2354894592f2cf4a076b6ec
 ```
 
 ## 7. Preliminary connector-composition insight
@@ -254,7 +280,8 @@ Therefore the active gate is:
 ```text
 human verifies K1/K4 dots now touch the work-unit perimeter from mostly outside
 human verifies they remain attached during hover lift/release
-human verifies K2 restored frame-socket treatment
+human verifies K2 retains the preferred structural frame-socket treatment
+human verifies K2 socket outline follows the highlighted connector color
 -> human gives connector-composition preference
 -> only then implement the next combined-directionality experiment
 ```
