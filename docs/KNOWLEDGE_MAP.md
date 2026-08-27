@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 231  
+**Current checkpoint:** 232  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        231
+checkpoint                        232
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  refined P6 vs P7 project-disposition mixed-category human review
+current boundary                  P7 Neutral Tag + Tone disposition human verification
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -58,26 +58,15 @@ Foundation 023:
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
 ```
 
-Current proven work-unit appearance axes:
+Foundation 024:
 
 ```text
-Box shape       Normal / Subtle shapes
-Micro design    None / Micro material / Micro light
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
 ---
 
 # Connector treatment and relation semantics
-
-Primary evidence:
-
-```text
-docs/research/053_connector_and_port_visual_grammar_experiment.md
-docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
-docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
-frontend/design-lab/connector-grammar.html
-frontend/design-lab/connector-directionality.html
-```
 
 Current connector treatments:
 
@@ -101,12 +90,6 @@ Exact accepted directionality implementation:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
-```
-
-Foundation 024:
-
-```text
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
 Relation-class result:
@@ -133,12 +116,13 @@ Primary evidence:
 ```text
 docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
+docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
 ```
 
 Current checkpoint:
 
 ```text
-docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
 ```
 
 Browser route:
@@ -158,7 +142,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-87927bef327be0a0cc9ccf9fb153aa0c7b226e92
+fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
 Semantic separation:
@@ -170,33 +154,23 @@ runtime state          held out
 importance / priority  held out
 ```
 
-Representative visual-test dispositions:
+Mixed-category human review found persistent disposition hue and persistent colored disposition tags somewhat confusing alongside category color.
+
+Current convergence candidate:
 
 ```text
-Active / Current
-Recommended / Next
-Deferred
-Completed
-Blocked
-Future / Not yet active
+P7  Neutral Tag + Tone
+
+REST
+    category color remains dominant
+    disposition tag is explicit but neutral
+    Completed / Deferred / Future use selective tonal recession
+
+HOVER
+    tag reveals the state-specific hue
 ```
 
-Initial P0-P5 families remain inspectable. Human refinement now focuses on:
-
-```text
-P6  Hue + Colored Tag + Tone
-    perimeter hue + colored tag + selective tone
-    no rhythm
-
-P7  Colored Tag + Tone
-    colored tag + same selective tone
-    no disposition perimeter hue
-    no rhythm
-```
-
-P4 State Rhythm remains preserved as standalone experiment evidence.
-
-The page includes a side-by-side practical project fixture where P6 and P7 are rendered across Question, Investigation, Validation, Model and Evaluation categories. Practical connectors use rendered geometry and select horizontal or vertical attachment from actual card separation.
+P4 State Rhythm and P6 colored hybrid remain preserved as experiment/history evidence.
 
 ---
 
