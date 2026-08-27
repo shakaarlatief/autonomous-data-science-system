@@ -124,8 +124,10 @@ frontend/design-lab/work-unit-deep-focus-factorized.js
 Exact latest implementation target:
 
 ```text
-0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+fddb344c2b18221d326c9ba5bde98e84edf98f56
 ```
+
+The project owner requested the same review-usability behavior used in the earlier contextual-expansion browser: the large top explanatory block should not remain sticky while scrolling through the comparison. The factorized browser therefore overrides the shared `grid-world.css` sticky `.lab-header` behavior locally with `position: static`, allowing the full header to scroll out of view and leaving more vertical room for the A/B/C comparisons. No transition candidate, interaction behavior, or semantic decision changed.
 
 Production `/cockpit` remains untouched.
 
