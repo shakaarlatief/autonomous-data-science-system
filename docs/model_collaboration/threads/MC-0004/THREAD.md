@@ -217,10 +217,10 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact refined browser implementation target:
 
 ```text
-2056bb31d7cb90766e112bc26aaf7339fb568242
+87927bef327be0a0cc9ccf9fb153aa0c7b226e92
 ```
 
-The browser now renders the same practical project fixture twice, once with P6 and once with P7, using multiple category identities:
+The browser renders the same practical project fixture twice, once with P6 and once with P7, using multiple category identities:
 
 ```text
 Question / Blocker
@@ -241,7 +241,7 @@ Deferred
 Future
 ```
 
-Neutral connectors are dynamically attached to rendered work-unit geometry so connector defects do not contaminate the disposition comparison.
+Neutral connectors are dynamically attached to rendered work-unit geometry. The connector geometry chooses horizontal or vertical attachment from actual card separation and follows H4 hover lift, preventing connector defects from contaminating the disposition comparison.
 
 ## Dependency-bound ideas
 
