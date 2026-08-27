@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 235  
+**Current checkpoint:** 236  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        235
+checkpoint                        236
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  work-unit runtime-state visual-grammar human review
+current boundary                  conditional runtime-state human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -75,8 +75,6 @@ Current-routing guard:
 scripts/check_current_routing.py
 .github/workflows/current-routing-consistency.yml
 ```
-
-The workflow now validates guarded routing surfaces on all pushes that touch them.
 
 ---
 
@@ -187,7 +185,7 @@ Latest accepted P7 implementation:
 fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
-The final project-disposition ontology remains unfrozen.
+Checkpoint 236 adds an interpretation correction: use `Current` for project disposition and reserve `Running` for runtime. The final project-disposition ontology remains unfrozen.
 
 ---
 
@@ -222,13 +220,14 @@ Final focus-set ownership/persistence, automatic suggestions, multiple named len
 
 ---
 
-# Current Slice 02H: work-unit runtime state
+# Current Slice 02H: conditional work-unit runtime state
 
 Primary evidence:
 
 ```text
 docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
-docs/checkpoints/235_editable_focus_accepted_preservation_audit_closed_runtime_review_opened.md
+docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
+docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 ```
 
 Browser route:
@@ -245,34 +244,62 @@ Local URL:
 http://localhost:5173/design-lab/work-unit-runtime-grammar.html
 ```
 
-Exact browser implementation target:
+Exact corrected browser implementation target:
 
 ```text
-099e516bf9a7351a756bee00037edbcc731a2738
+dfcb89c94e6d8ce46dd2997591f41e6f9a394c18
 ```
 
-Semantic separation:
+Current semantic separation:
 
 ```text
 category                  what is this?
 project disposition       where does it stand in the project?
-runtime                    what is happening now?
+runtime                    if a current execution/work episode exists, what is happening in it?
 priority / relevance       how important is it now?
 current-focus membership   is it in the emphasized process set?
 ```
 
-Provisional runtime fixtures:
+Runtime is conditional.
+
+Critical distinction:
 
 ```text
-Idle
-Queued
-Running
-Waiting
-Waiting for Human
-Failed
+No runtime
+    no current execution/work episode exists
+
+Idle runtime
+    an execution episode exists but is doing nothing
 ```
 
-Browser families:
+The current browser uses No runtime as the absence control and does not assign runtime instrumentation to it.
+
+Controlled fixtures:
+
+```text
+NONE    No runtime
+QUEUE   Queued
+RUN     Running
+WAIT    Waiting
+HUMAN   Waiting for Human
+FAIL    Failed current attempt
+```
+
+Working compatibility interpretation:
+
+```text
+Current                 may have NONE or a live runtime state
+Recommended / Next      normally NONE; may be QUEUE if explicitly scheduled
+Deferred                normally NONE
+Completed               normally NONE
+Future                  normally NONE
+```
+
+Current runtime is separate from historical execution provenance.
+
+`Blocked` is now explicitly unresolved as a possible orthogonal progress constraint rather than automatically treated as a peer lifecycle/disposition value.
+
+Browser families remain:
 
 ```text
 R0  Neutral Control
@@ -284,9 +311,18 @@ R5  Motion Signal
 R6  Restrained Hybrid
 ```
 
-The page contains controlled same-category rows, a mixed-category project scene and a Reduced motion comparison.
+Practical scene:
 
-The final ADS runtime ontology and runtime-flow connector semantics remain unfrozen.
+```text
+Question        CURRENT + HUMAN
+Investigation   CURRENT + RUN
+Validation      NEXT + QUEUE
+Model Work      CURRENT + FAIL
+Evaluation      DEFER + NONE
+Investigation   FUTURE + NONE
+```
+
+The final ADS runtime ontology, project-disposition ontology, Blocked semantics, historical execution presentation and runtime-flow connector semantics remain unfrozen.
 
 ---
 
