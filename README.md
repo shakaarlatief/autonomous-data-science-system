@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            236
+checkpoint            237
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      conditional runtime-state human review
+current boundary      switchable runtime-carrier convergence human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -64,7 +64,7 @@ Relation-class visual grammar remains sufficiently settled:
 E5  Hue + Tag
 ```
 
-Project-disposition visual direction is accepted for the current Phase-C round:
+Project-disposition visual direction remains accepted for the current Phase-C round:
 
 ```text
 P7  Neutral Tag + Tone
@@ -130,11 +130,9 @@ docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_h
 
 ---
 
-## Active Slice 02H: conditional work-unit runtime state
+## Active Slice 02H: conditional runtime carrier convergence
 
-Human review of the first runtime fixture exposed an important semantic correction.
-
-The current model is:
+Checkpoint 236 established the semantic correction:
 
 ```text
 PROJECT DISPOSITION
@@ -145,9 +143,9 @@ RUNTIME
     what is happening in that episode?
 ```
 
-Runtime is therefore conditional rather than universally present.
+Runtime is conditional rather than universally present.
 
-The key distinction is:
+The key distinction remains:
 
 ```text
 No runtime
@@ -157,13 +155,7 @@ Idle runtime
     an execution episode exists but is doing nothing
 ```
 
-The current browser uses `No runtime`, not `Idle`, as the absence control. Deferred, Future and Completed work normally has no current runtime carrier. Current work may have no runtime or a live state. Recommended/Next work normally has no runtime but may be Queued if it has already been scheduled.
-
-`Current` is preferred over `Active` for project disposition so project-state language does not imply execution.
-
-`Blocked` is explicitly unresolved. It may ultimately be an orthogonal progress constraint that can coexist with Current or Next rather than a peer lifecycle/disposition value.
-
-Controlled runtime fixtures:
+The current fixture therefore uses:
 
 ```text
 NONE    No runtime
@@ -174,21 +166,57 @@ HUMAN   Waiting for Human
 FAIL    Failed current attempt
 ```
 
-Browser carrier families remain:
+`Current` is preferred over `Active` for project disposition. `Blocked` remains explicitly unresolved as a possible orthogonal progress constraint rather than a peer lifecycle value.
+
+### R1/R5 verification
+
+Human review observed that the earlier R1 Status Lamp and R5 Motion Signal appeared effectively identical except that Failed showed a clearer difference.
+
+Direct implementation inspection confirmed:
 
 ```text
-R0  Neutral Control
-R1  Status Lamp
-R2  Activity Rail
-R3  Runtime Tag
-R4  Instrument Cell
-R5  Motion Signal
-R6  Restrained Hybrid
+R1
+    status lamp
+
+R5
+    same status lamp
+    + motion ring
 ```
 
-For `NONE`, R1-R6 intentionally render no runtime instrumentation.
+So they were not literally identical in code, but the extra R5 ring was too subtle and spatially coincident with the lamp to read as a meaningfully different carrier at working scale. This is preserved as negative design evidence.
 
-The mixed-category practical scene now includes:
+### Current two-carrier convergence hypothesis
+
+Exactly one runtime carrier is shown per live-runtime work unit:
+
+```text
+Dot + dynamic ring
+or
+Animated runtime tag
+```
+
+The earlier dot-plus-tag runtime hybrid is not carried forward as the active composition.
+
+The dot carrier uses a stronger state-colored outer ring so its semantic motion is clearly visible. The tag carrier uses explicit state text plus a circulating state-colored perimeter trace, deliberately different from the dot's breathing/expanding ring.
+
+Switching is available at two scopes:
+
+```text
+GLOBAL
+    switch every live-runtime box together
+    clear local overrides
+
+LOCAL
+    click a work unit's visible runtime carrier
+    switch only that box
+    click the replacement carrier to switch it back
+```
+
+No-runtime work units render no runtime carrier and no runtime switch target.
+
+Reduced motion removes animation while preserving static state identity.
+
+Practical scene:
 
 ```text
 Question        CURRENT + HUMAN
@@ -202,24 +230,25 @@ Investigation   FUTURE + NONE
 Browser:
 
 ```text
-http://localhost:5173/design-lab/work-unit-runtime-grammar.html
+http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
 ```
 
-Exact corrected browser implementation target:
+Exact browser implementation target:
 
 ```text
-dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
+3a862c659e60e53832eaa5940ddb60d05734cd7d
 ```
 
 Research and checkpoint:
 
 ```text
-docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
-docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
-docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
+docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
 ```
 
-Current runtime state is distinct from historical execution provenance. The final runtime ontology, final project-disposition ontology, Blocked semantics and runtime-flow connector grammar remain unfrozen.
+The previous R0-R6 browser and Research 065-066 remain preserved as evidence, but the active human gate is now the narrower switchable-carrier comparison.
+
+The final runtime carrier, final runtime ontology, production default/persistence model, final project-disposition ontology, Blocked semantics and runtime-flow connector grammar remain unfrozen.
 
 ---
 
@@ -249,6 +278,7 @@ Not yet authorized:
 production Cockpit replacement
 final runtime / execution-state ontology
 final runtime visual carrier
+production runtime-carrier default / persistence
 final project-disposition ontology
 final Blocked / progress-constraint semantics
 execution-history presentation
@@ -293,9 +323,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/237_switchable_runtime_carrier_convergence_review_opened.md
+docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md
+frontend/design-lab/work-unit-runtime-carrier-switch.html
+
 docs/checkpoints/236_runtime_state_made_conditional_human_review_reopened.md
 docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md
-docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md
 frontend/design-lab/work-unit-runtime-grammar.html
 
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
@@ -316,13 +349,14 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open http://localhost:5173/design-lab/work-unit-runtime-grammar.html
-3. verify NONE shows no runtime instrumentation under R1-R6
-4. compare R1-R6 on QUEUE / RUN / WAIT / HUMAN / FAIL
-5. inspect DEFER + NONE and FUTURE + NONE in the practical scene
-6. toggle Reduced motion and confirm live runtime meaning remains legible
-7. judge clarity, clutter, category/disposition competition and professional feel
-8. prefer / reject / combine / refine runtime carriers
-9. do not freeze the final runtime/disposition/Blocked ontology from this visual gate alone
-10. keep production Cockpit untouched
+2. open http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
+3. compare Dot + dynamic ring against Animated runtime tag
+4. use the global switch in both directions
+5. click individual live-runtime carriers to create and remove local overrides
+6. inspect a mixed practical scene with both carrier types present
+7. verify NONE / DEFER + NONE / FUTURE + NONE remain free of runtime instrumentation
+8. toggle Reduced motion and confirm state meaning remains legible
+9. prefer / reject / combine / refine
+10. do not freeze the final runtime/disposition/Blocked ontology from this visual gate alone
+11. keep production Cockpit untouched
 ```
