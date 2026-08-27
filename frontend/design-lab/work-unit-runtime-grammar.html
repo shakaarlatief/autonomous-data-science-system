@@ -15,13 +15,14 @@
   <body>
     <header class="lab-header grammar-header runtime-header">
       <div class="lab-title-block">
-        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02H · Runtime State</span>
-        <h1>How should a work unit communicate what is happening now without confusing category, disposition, priority or focus membership?</h1>
-        <p>The accepted work-unit category grammar, P7 Neutral Tag + Tone disposition treatment and current-process focus architecture are held conceptually separate. This slice isolates runtime state.</p>
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02H · Conditional Runtime State</span>
+        <h1>How should a work unit communicate a live execution episode without implying that every project-state box is executing?</h1>
+        <p>The accepted work-unit category grammar, P7 Neutral Tag + Tone disposition treatment and current-process focus architecture remain conceptually separate. Runtime is now explicitly conditional: a work unit carries runtime state only when a meaningful current execution/work episode exists.</p>
       </div>
       <div class="runtime-held-state">
         <span>Held semantic separation</span>
         <strong>Category ≠ disposition ≠ runtime ≠ priority ≠ focus membership</strong>
+        <small>Runtime may be absent.</small>
       </div>
     </header>
 
@@ -29,14 +30,15 @@
       <section class="grammar-intro runtime-intro">
         <div>
           <span class="section-kicker">Bounded design question</span>
-          <h2>Give live execution state its own visual channel</h2>
-          <p>Runtime state answers “what is happening now?”. It must not silently rewrite whether a work unit is Active, Deferred, Completed, Blocked or in the current focus set.</p>
+          <h2>Give live execution state its own optional visual channel</h2>
+          <p>Runtime answers “what is happening in the current execution/work episode?”. Deferred, Future and Completed work normally has no live runtime carrier. Current work may have no runtime or may be Queued, Running, Waiting, Waiting for Human or Failed.</p>
         </div>
         <div class="grammar-principles" aria-label="Runtime constraints">
+          <span>Runtime is conditional</span>
+          <span>No runtime ≠ Idle runtime</span>
           <span>Category remains dominant</span>
           <span>P7 disposition tag retained</span>
           <span>Motion is semantic only</span>
-          <span>Reduced-motion fallback required</span>
           <span>Readable without motion alone</span>
         </div>
       </section>
@@ -45,7 +47,7 @@
         <div class="runtime-control-copy">
           <span class="section-kicker">Encoding family</span>
           <h2>Switch one runtime carrier at a time</h2>
-          <p>R0 is the control. R1-R6 test progressively different channels while the underlying runtime states stay identical.</p>
+          <p>R0 is the control. R1-R6 test different optional runtime channels. The NONE row intentionally remains visually free of runtime signaling in every encoding.</p>
         </div>
         <div class="segmented runtime-segmented" role="group" aria-label="Runtime encoding family">
           <button type="button" data-runtime-encoding="r0" aria-pressed="true">R0 Neutral</button>
@@ -73,9 +75,9 @@
         <div class="runtime-preview-header">
           <div>
             <span class="section-kicker">Controlled comparison</span>
-            <h2>Same Investigation work unit · six provisional runtime states</h2>
+            <h2>Same Current Investigation · absence plus five provisional live runtime states</h2>
           </div>
-          <span>Disposition held ACTIVE · focus membership held current</span>
+          <span>Disposition held CURRENT · focus membership held current</span>
         </div>
 
         <div class="grammar-world runtime-world" id="runtime-world">
@@ -95,13 +97,14 @@
         <div class="runtime-practical-header">
           <div>
             <span class="section-kicker">Practical coexistence check</span>
-            <h2>Does runtime remain legible when category and disposition are already present?</h2>
-            <p>The same encoding is rendered across several categories and neutral P7 disposition tags. This is where clutter or semantic competition should become obvious.</p>
+            <h2>Does optional runtime remain legible when category and disposition are already present?</h2>
+            <p>The scene deliberately mixes Current live work, a queued Next step, and Deferred/Future work with no runtime carrier. This tests whether absence remains clean while live execution remains legible.</p>
           </div>
           <div class="runtime-practical-legend">
             <span>Category color = kind</span>
             <span>Top-right neutral tag = disposition</span>
-            <span>Runtime carrier = current experiment</span>
+            <span>Runtime carrier = only when an episode exists</span>
+            <span>Deferred / Future = no runtime here</span>
           </div>
         </div>
 
@@ -127,14 +130,15 @@
 
       <section class="review-prompt grammar-review runtime-review">
         <span class="section-kicker">Human review</span>
-        <h2>Judge runtime as a distinct semantic layer</h2>
+        <h2>Judge runtime as a conditional semantic layer</h2>
         <div class="review-questions">
+          <p>Does the NONE example correctly look like an ordinary Current work unit with no runtime instrumentation rather than like an “idle execution”?</p>
           <p>Which carrier makes Running, Queued, Waiting, Waiting for Human and Failed understandable without stealing category identity?</p>
           <p>Does a second text tag become too busy next to the neutral disposition tag?</p>
           <p>Do the lamp, rail or instrument-cell approaches feel professional and learnable rather than decorative?</p>
-          <p>Does semantic motion help Running/Queued/Waiting, and does reduced motion preserve the same meaning?</p>
-          <p>In the mixed-category scene, is runtime still readable without making the Cockpit look like a monitoring dashboard?</p>
-          <p>The runtime fixtures are provisional. This experiment does not freeze the final ADS execution-state ontology.</p>
+          <p>Does semantic motion help the dynamic states, and does reduced motion preserve the same meaning?</p>
+          <p>In the practical scene, do Deferred and Future remain appropriately quiet while Current/Next runtime is still obvious?</p>
+          <p>Blocked remains deliberately unresolved: it may prove to be a separate progress constraint rather than a peer of Current/Next/Deferred/Future.</p>
         </div>
       </section>
     </main>
