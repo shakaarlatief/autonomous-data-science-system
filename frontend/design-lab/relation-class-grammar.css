@@ -285,9 +285,9 @@ body {
 
 .semantic-tag-text {
   fill: rgba(214, 222, 236, 0.84);
-  font-size: 7px;
+  font-size: 7.5px;
   font-weight: 780;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-anchor: middle;
   dominant-baseline: middle;
 }
@@ -304,7 +304,7 @@ html[data-relation-encoding="e1"] .semantic-arrow {
   stroke: rgba(var(--class-rgb), 0.74);
 }
 
-/* Stroke rhythm only. */
+/* Stroke rhythm only. Preserved as a future semantic channel. */
 html[data-relation-encoding="e2"] .semantic-path {
   stroke: rgba(174, 188, 208, 0.50);
   stroke-dasharray: var(--class-dash);
@@ -325,7 +325,7 @@ html[data-relation-encoding="e4"] .semantic-path {
   stroke-dasharray: var(--class-dash);
 }
 
-/* Hue + explicit tag. */
+/* Selected relation-class baseline: hue + explicit tag. */
 html[data-relation-encoding="e5"] .semantic-path,
 html[data-relation-encoding="e5"] .semantic-arrow {
   stroke: rgba(var(--class-rgb), 0.70);
@@ -343,7 +343,7 @@ html[data-relation-encoding="e5"] .semantic-tag-text {
   fill: rgba(var(--class-rgb), 0.94);
 }
 
-/* Restrained hybrid: hue + stroke + compact tag. */
+/* Restrained hybrid: retained as evidence because stroke rhythm may encode a different future semantic dimension. */
 html[data-relation-encoding="e6"] .semantic-path,
 html[data-relation-encoding="e6"] .semantic-arrow {
   stroke: rgba(var(--class-rgb), 0.72);
