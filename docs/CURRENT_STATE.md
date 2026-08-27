@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified arrow directionality grammar has passed human review. E5 Hue + Tag is now selected as the relation-class visual carrier, with stroke rhythm preserved as a future semantic resource. The active gate is narrow human verification of the refined tag proportions. The permanent source-vault bootstrap remains deliberately paused.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Work-unit appearance configurability is promoted in Foundation 023. Connector treatment / hover separation and semantic directionality are promoted in Foundation 024. The simplified arrow directionality grammar has passed human review. E5 Hue + Tag is selected as the relation-class visual carrier, with stroke rhythm preserved as a future semantic resource. The active gate is narrow human verification of the latest tag spacing and lettering refinement. The permanent source-vault bootstrap remains deliberately paused.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -46,7 +46,7 @@ http://localhost:5173/design-lab/relation-class-grammar.html
 Exact current browser implementation target:
 
 ```text
-b3d23b10be611f41a4e55fc40a28ba83089b7196
+497e81f06ba1f9901511449237d1bb9f96b2d108
 ```
 
 ---
@@ -190,7 +190,7 @@ Foundation 024 remains the durable boundary between system-owned relation semant
 
 # Relation-class visual grammar result
 
-The broad E0-E6 browser comparison is now converged enough to select a working baseline.
+The broad E0-E6 browser comparison has converged enough to select a working baseline.
 
 Human selection:
 
@@ -234,14 +234,15 @@ stroke rhythm
 
 No meaning has yet been assigned to stroke rhythm.
 
-Small tag-proportion refinement now under human verification:
+Latest tag refinement under human verification:
 
 ```text
-tag height       17 -> 20 SVG units
-corner radius    5 -> 6
-text size        7.0 -> 7.5 px
-letter spacing   0.08em -> 0.05em
-width            unchanged
+tag width        48 SVG units, unchanged
+tag height       22 SVG units
+corner radius    7
+text size        8.2 px
+letter spacing   0.05em
+vertical offset  raised farther above the connector line to restore the original clean gap
 ```
 
 The page opens directly in E5 while retaining E0-E6 as historical comparison controls.
@@ -255,7 +256,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               relation-class Hue + Tag selected; tag refinement verification
+Current                               relation-class Hue + Tag selected; final tag-spacing verification
 ```
 
 There is no pending Claude obligation.
@@ -316,10 +317,10 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 2. pull the latest branch locally
 3. open http://localhost:5173/design-lab/relation-class-grammar.html
 4. verify E5 Hue + Tag opens by default
-5. verify the slightly taller tags and adjusted text proportions look more natural
-6. keep stroke rhythm preserved for a later separate semantic question
-7. if accepted, treat relation-class visual encoding as sufficiently converged
-8. then open the next bounded Cockpit design question
-9. keep production Cockpit untouched
-10. keep source-vault deployment paused until explicitly resumed
+5. verify the 22-unit tags sit clearly above the connector line with the original-style gap
+6. verify the 8.2 px lettering feels taller and more natural
+7. keep stroke rhythm preserved for a later separate semantic question
+8. if accepted, treat relation-class visual encoding as sufficiently converged
+9. then open the next bounded Cockpit design question
+10. keep production Cockpit untouched and source-vault deployment paused until explicitly resumed
 ```
