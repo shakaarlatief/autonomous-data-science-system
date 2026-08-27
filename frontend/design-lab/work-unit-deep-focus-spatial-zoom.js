@@ -13,7 +13,7 @@ const grid = document.querySelector('#zoom-grid')
 const controls = document.querySelector('#zoom-controls')
 const practical = document.querySelector('#practical-stage')
 const summary = document.querySelector('#zoom-summary')
-let currentStyle = 'z3'
+let currentStyle = 'z7'
 let practicalFocused = false
 
 renderGrid()
@@ -46,7 +46,7 @@ function renderControls() {
 
   for (const button of controls.querySelectorAll('button[data-zoom-style]')) {
     button.addEventListener('click', () => {
-      currentStyle = button.dataset.zoomStyle || 'z3'
+      currentStyle = button.dataset.zoomStyle || 'z7'
       practicalFocused = false
       renderPractical(currentStyle)
       for (const candidate of controls.querySelectorAll('button[data-zoom-style]')) {
