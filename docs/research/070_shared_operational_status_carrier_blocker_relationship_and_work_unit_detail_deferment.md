@@ -80,6 +80,8 @@ Both may use the red status family, but they retain different meanings.
 
 ### Dot / ring mode
 
+Initial shared-carrier implementation:
+
 ```text
 BLOCKED
     red center dot
@@ -87,10 +89,26 @@ BLOCKED
 
 FAIL
     red center dot
-    sharper non-circular / rotated failure ring
+    sharper non-circular failure ring
 ```
 
-This retains a compact learned distinction even when explicit text is not shown.
+Human review then explicitly preferred swapping those compact shapes.
+
+Current selected compact mapping:
+
+```text
+BLOCKED
+    red center dot
+    sharper non-circular constraint ring
+
+FAIL
+    red center dot
+    smoother circular dynamic ring
+```
+
+Rationale: the sharper geometry reads more naturally as an obstruction / inability-to-proceed cue, while failure remains an operational attempt outcome and can use the smoother circular runtime-family ring.
+
+Only the compact ring geometry is swapped. Color family, semantic meaning, tag mode, global/local switching and blocker relationship logic remain unchanged.
 
 ### Tag mode
 
@@ -108,7 +126,7 @@ Explicit text makes the semantic difference direct.
 
 ## 4. Operational-status presentation slot
 
-The new browser tests a presentation abstraction:
+The browser tests a presentation abstraction:
 
 ```text
 one bottom-right operational-status slot
@@ -141,7 +159,7 @@ if a failed attempt creates a new unresolved blocker
 
 The exact state-transition rules remain unfrozen.
 
-## 5. New browser
+## 5. Browser
 
 Local route:
 
@@ -154,13 +172,20 @@ Files:
 ```text
 frontend/design-lab/work-unit-blocked-carrier.html
 frontend/design-lab/work-unit-blocked-carrier.css
+frontend/design-lab/work-unit-blocked-carrier-ring-swap.css
 frontend/design-lab/work-unit-blocked-carrier.js
 ```
 
-Exact browser implementation target:
+Initial shared-carrier browser target:
 
 ```text
 b65df18f8d04c149979854c0aee695abb9a9036e
+```
+
+Exact latest browser implementation target after the BLOCKED / FAIL compact-ring swap:
+
+```text
+88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 ```
 
 The browser preserves the earlier C0-C6 experiment as predecessor evidence rather than deleting it.
@@ -256,7 +281,7 @@ This idea is preserved now so it is not lost, but implementation is deliberately
 
 ```text
 1. Does BLOCKED look natural in the same carrier family as runtime?
-2. In compact dot mode, is circular BLOCKED sufficiently distinct from sharper FAIL?
+2. In compact dot mode, does the sharper BLOCKED ring read more naturally as an obstruction than the smoother circular FAIL ring?
 3. In tag mode, do BLOCKED and FAIL remain immediately explicit?
 4. Does the BLOCKS relation make the blocker cause/effect model intuitive?
 5. Does the Question / Blocker source remain conceptually different from a BLOCKED target?
@@ -266,17 +291,21 @@ This idea is preserved now so it is not lost, but implementation is deliberately
 
 ## 10. Checkpoint hygiene
 
-No new checkpoint is created yet.
+No new checkpoint is created for the compact-ring swap.
 
 Reason:
 
 ```text
 Checkpoint 238 already owns the BLOCKED semantic/visual review boundary
 +
-this refinement changes the active visual hypothesis and adds cause/effect evidence
+the shared-carrier hypothesis is unchanged
 +
-but the overarching question remains how BLOCKED should coexist with disposition, runtime and blocker causes
+only the compact geometry assigned to BLOCKED versus FAIL is swapped
++
+no routing, ontology or production authorization changes
 ```
+
+This therefore remains Git + active research evidence inside Checkpoint 238, consistent with Research 064 checkpoint hygiene.
 
 If human review accepts this shared-carrier + BLOCKS relationship model and we move to a distinct next semantic slice, that transition should create the next checkpoint.
 
