@@ -27,96 +27,68 @@ human project owner
 Current checkpoint:
 
 ```text
-242
+243
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-internal-layout.html
+http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
 ```
 
-Exact current browser implementation target:
+Initial browser implementation target:
 
 ```text
-871075bcda8ff812e1a96b18b442c803d5da7faf
+31abc2b3a23de29358978e19bd88fda1e9166f6b
 ```
 
-## Most recent accepted results
-
-Attention priority:
+## Most recent accepted / working results
 
 ```text
-A3  Signal Bars
+A3  Signal Bars                       accepted attention-priority treatment
+SEL2 Corner Brackets                 accepted persistent-selection treatment
+X5 balanced two-axis expansion       accepted contextual-detail geometry
+NO context recession                 accepted contextual-detail behavior
+L0 Flat Fields                       provisional working default only
 ```
 
-Persistent compact-node selection:
+L1-L8 internal-layout alternatives remain preserved for later review and are not rejected.
+
+## Active deep-focus transition review
+
+Governing hierarchy:
 
 ```text
-SEL2  Corner Brackets
+compact map work unit
+    -> SEL2 selected
+    -> X5 expanded
+    -> L0 working-default internal layout
+    -> specialist workspace / deep focus
 ```
 
-Contextual-detail expansion:
+Candidate architectures:
 
 ```text
-X5 balanced two-axis expansion
-WITHOUT surrounding-context recession
+F0  Hard Replace
+F1  Center Stage
+F2  Anchored Morph
+F3  World Recede
+F4  Context Ribbon
+F5  Map Frame
+F6  Side Context Rail
+F7  Portal Lift
+F8  Layered Stage
 ```
-
-Exact refined X5 target:
-
-```text
-94bc1100b7388cc56497cafc03051ce326424a80
-```
-
-The accepted X5 contextual layer keeps the surrounding project map at normal salience. The original context-recession behavior remains historical design evidence only.
-
-## Active expanded-work-unit internal-layout review
-
-Held outer geometry:
-
-```text
-390 x 210
-X5 balanced two-axis expansion
-no context recession
-```
-
-Candidate layouts:
-
-```text
-L0  Flat Fields
-L1  Structured Grid
-L2  Narrative Stack
-L3  Summary + Rail
-L4  Action First
-L5  Dependency Path
-L6  Evidence Center
-L7  Module Cards
-L8  Balanced Instrument
-```
-
-Controlled provisional payload:
-
-```text
-Purpose
-Constraint
-Evidence
-Next action
-Blocking cause
-Recent activity
-```
-
-These fields are information-density fixtures only and do not freeze the work-unit schema.
 
 Current human gate:
 
 ```text
-compare L0-L8 with outer geometry held constant
-judge scan path, hierarchy and density
-reject layouts that feel like miniature dashboards
-inspect robustness to longer content
-inspect future room for provenance/evidence and commands
+compare F0-F8
+click candidates to enter / return
+judge object continuity from X5 to specialist workspace
+judge retained map context versus distraction
+judge return-to-project clarity
 prefer / reject / combine / refine
 ```
 
-Production `/cockpit` remains untouched. Final information schema, provenance presentation, selected-node commands, semantic zoom, collision handling and deep-focus transition remain future work.
+Production `/cockpit` remains untouched. Specialist-workspace internals, exact motion, URL state, semantic zoom and production implementation remain unfrozen.
