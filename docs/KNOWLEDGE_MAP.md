@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-27  
-**Current checkpoint:** 226  
+**Current checkpoint:** 227  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none
 
@@ -23,11 +23,11 @@ docs/CONTINUITY.md                provider-neutral continuation procedure
 Current route:
 
 ```text
-checkpoint                        226
+checkpoint                        227
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  connector directionality human review
+current boundary                  simplified arrow directionality human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -117,112 +117,95 @@ Box shape       Normal / Subtle shapes
 Micro design    None / Micro material / Micro light
 ```
 
-Supporting evidence and prototype:
-
-```text
-docs/research/051_user_configurable_cockpit_visual_grammar_and_semantic_invariants.md
-docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md
-docs/checkpoints/224_user_configurable_cockpit_visual_grammar_prototype_opened.md
-frontend/design-lab/work-unit-grammar-customizable.html
-frontend/design-lab/work-unit-grammar-customizable.css
-frontend/design-lab/work-unit-grammar-customizable.js
-```
-
-Production appearance persistence remains unresolved.
-
 ---
 
-# Connector presentation result
+# Connector treatment result
 
-Previous generic connector browser:
-
-```text
-frontend/design-lab/connector-grammar.html
-frontend/design-lab/connector-grammar.css
-frontend/design-lab/connector-grammar.js
-frontend/design-lab/connector-port-layering.css
-frontend/design-lab/connector-port-layering.js
-```
-
-Primary evidence:
+Primary generic-connector evidence:
 
 ```text
 docs/research/053_connector_and_port_visual_grammar_experiment.md
 docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md
+frontend/design-lab/connector-grammar.html
 ```
 
-Human conclusion:
+Current connector treatments:
 
 ```text
-no single K0-K4 winner is required
-approved connector treatments should coexist as user-configurable presentation dimensions
+Clean
+Micro dots
+Frame sockets
+Direction arrows
 ```
 
-Current interpretation:
+Human clarification:
 
 ```text
-Rest attachment
-    Clean
-    Micro dots
-    Frame sockets
-
-Hover attachment emphasis
-    Off
-    On
+one terminal treatment normally active at a time
+hover / focus is a separate reveal / emphasis mechanism
 ```
 
-Latest connector refinements:
+Therefore unnecessary mixed terminal stacks are not the default design direction.
+
+Retained refinement commits:
 
 ```text
 42ec63d17095753dc4ab97628cd859473cbdf5e8
-    K1/K4 circular markers mostly outside the work-unit perimeter
+    Micro-dot / hover-port circles mostly outside the work-unit perimeter
 
 183264bdd07783eaa2354894592f2cf4a076b6ec
-    K2 active socket outline / glow follows relation color
+    Frame-socket active outline / glow follows relation color
 ```
 
 ---
 
-# Foundation 024: composable connector presentation + semantic directionality
+# Foundation 024: connector treatment + semantic directionality
 
-Promoted foundation:
+Refined foundation:
 
 ```text
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
 ```
 
-Core principle:
+Current architecture:
 
 ```text
 semantic relation model
     meaning and directionality governed by ADS / project state
 
-connector presentation profile
-    approved user-configurable visual choices
+connector treatment
+    approved configurable terminal treatment
+    normally one active treatment at a time
+
+hover behavior
+    orthogonal reveal / emphasis mechanism
 ```
 
-Critical invariant:
+Direction states:
 
 ```text
-appearance may change HOW direction is drawn
-appearance may not change WHETHER a relation is directed
-appearance may not reverse source and target
+undirected
+A -> B
+A <- B
+A <-> B
 ```
+
+If arrows are used, their placement follows semantic direction exactly.
 
 ---
 
-# Current Slice 02D: connector directionality
+# Current Slice 02D: simplified arrow directionality
 
 Governing research:
 
 ```text
-docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
 ```
 
 Current checkpoint:
 
 ```text
-docs/checkpoints/226_connector_presentation_made_configurable_directionality_review_opened.md
+docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
 ```
 
 Browser route:
@@ -242,29 +225,30 @@ http://localhost:5173/design-lab/connector-directionality.html
 Exact browser implementation target:
 
 ```text
-41bbdb75f338388f02a34fdf7dbac3ea90f86300
+07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
-Direction states:
+Controlled comparison:
 
 ```text
-D0  Undirected      A — B
+D0  Undirected      A - B
+    no arrow
+
 D1  Forward         A -> B
+    K3-style arrow docked directly to B
+
 D2  Reverse         A <- B
+    same arrow docked directly to A
+
 D3  Bidirectional   A <-> B
+    same arrow at both endpoints
 ```
 
-Presentation compatibility controls:
+No dots or sockets are mixed into the directionality browser.
 
-```text
-Rest attachment             Clean / Micro dots / Frame sockets
-Hover attachment emphasis   On / Off
-Reduced motion              On / Off
-```
+The arrow tip touches the exact rendered work-unit perimeter and follows H4 hover lift / release through the rendered-edge geometry system.
 
-The controls do not change semantic direction.
-
-Final semantic relation classes remain open.
+If human review accepts this grammar, directionality is sufficiently converged and the next slice is semantic relation classes.
 
 ---
 
