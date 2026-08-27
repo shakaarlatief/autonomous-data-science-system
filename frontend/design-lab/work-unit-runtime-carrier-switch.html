@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-global-runtime-carrier="dot">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Switchable Runtime Carrier</title>
+    <link rel="stylesheet" href="./grid-world.css" />
+    <link rel="stylesheet" href="./work-unit-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-lighting-controls.css" />
+    <link rel="stylesheet" href="./work-unit-grammar-customizable.css" />
+    <link rel="stylesheet" href="./work-unit-disposition-grammar.css" />
+    <link rel="stylesheet" href="./work-unit-runtime-carrier-switch.css" />
+  </head>
+  <body>
+    <header class="lab-header grammar-header carrier-header">
+      <div class="lab-title-block">
+        <span class="lab-kicker">ADS Cockpit Design Lab · Slice 02H · Runtime Carrier Convergence</span>
+        <h1>Can live runtime use one switchable carrier per work unit instead of stacking multiple runtime signals?</h1>
+        <p>Runtime remains conditional and separate from category, project disposition and current-focus membership. This refinement compares two deliberately exclusive live-runtime carriers: a dot with a dynamic ring, or an explicit runtime tag with a circulating perimeter trace.</p>
+      </div>
+      <div class="carrier-held-state">
+        <span>Held semantic rule</span>
+        <strong>One runtime carrier per live work unit</strong>
+        <small>No runtime episode means no runtime carrier.</small>
+      </div>
+    </header>
+
+    <main class="grammar-main carrier-main">
+      <section class="grammar-intro carrier-intro">
+        <div>
+          <span class="section-kicker">Convergence hypothesis</span>
+          <h2>Choose a compact instrumental carrier or an explicit textual carrier</h2>
+          <p>The two carriers are alternatives, not a hybrid. A global switch changes every live-runtime box together. Clicking the visible runtime carrier on one box flips only that box, creating a local override. Clicking its replacement flips it back.</p>
+        </div>
+        <div class="grammar-principles" aria-label="Runtime carrier constraints">
+          <span>Dot + dynamic ring</span>
+          <span>Animated runtime tag</span>
+          <span>Global switch</span>
+          <span>Per-box override</span>
+          <span>No runtime stays empty</span>
+          <span>Reduced motion stays interpretable</span>
+        </div>
+      </section>
+
+      <section class="carrier-controls" aria-label="Runtime carrier controls">
+        <div class="carrier-control-copy">
+          <span class="section-kicker">Global runtime carrier</span>
+          <h2>Switch every live-runtime box at once</h2>
+          <p>Using a global choice clears per-box overrides. Afterward, click any visible runtime carrier to switch only that work unit.</p>
+        </div>
+
+        <div class="segmented carrier-segmented" role="group" aria-label="Global runtime carrier">
+          <button type="button" data-global-carrier="dot" aria-pressed="true">
+            <span class="control-preview control-preview-dot" aria-hidden="true"><i></i><b></b></span>
+            Dot + dynamic ring
+          </button>
+          <button type="button" data-global-carrier="tag" aria-pressed="false">
+            <span class="control-preview control-preview-tag" aria-hidden="true">RUN</span>
+            Animated runtime tag
+          </button>
+        </div>
+
+        <label class="toggle-row carrier-toggle">
+          <span>
+            <strong>Reduced motion</strong>
+            <small>Stop runtime animation while retaining static state identity.</small>
+          </span>
+          <input id="reduced-toggle" type="checkbox" />
+        </label>
+
+        <div class="carrier-summary">
+          <span>Current carrier policy</span>
+          <strong id="carrier-summary">Dot + dynamic ring · global</strong>
+          <small id="override-summary">0 local overrides</small>
+        </div>
+      </section>
+
+      <section class="carrier-preview" aria-label="Controlled runtime carrier comparison">
+        <div class="carrier-preview-header">
+          <div>
+            <span class="section-kicker">Controlled comparison</span>
+            <h2>Same Current Investigation · no runtime plus five live runtime states</h2>
+          </div>
+          <span>Click a live runtime carrier to switch only that box</span>
+        </div>
+
+        <div class="grammar-world carrier-world" id="carrier-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <div class="carrier-rows" id="carrier-rows"></div>
+        </div>
+      </section>
+
+      <section class="carrier-practical" aria-label="Mixed-category practical runtime carrier scene">
+        <div class="carrier-practical-header">
+          <div>
+            <span class="section-kicker">Practical coexistence check</span>
+            <h2>Does global-plus-local switching stay clear in a realistic project scene?</h2>
+            <p>Category, P7 disposition and conditional runtime coexist. Deferred and Future examples intentionally have no current runtime episode, so neither carrier is rendered on those boxes.</p>
+          </div>
+          <div class="carrier-practical-legend">
+            <span>Category color = kind</span>
+            <span>Top-right neutral tag = disposition</span>
+            <span>Bottom-right = one runtime carrier</span>
+            <span>Click carrier = local switch</span>
+          </div>
+        </div>
+
+        <div class="grammar-world carrier-practical-world" id="carrier-practical-world">
+          <div class="major-grid" aria-hidden="true"></div>
+          <div class="ambient-drift" aria-hidden="true"></div>
+          <span class="ambient-current current-a" aria-hidden="true"></span>
+          <span class="ambient-current current-b" aria-hidden="true"></span>
+          <span class="ambient-current current-c" aria-hidden="true"></span>
+          <span class="ambient-glint glint-a" aria-hidden="true"></span>
+          <span class="ambient-glint glint-b" aria-hidden="true"></span>
+          <span class="ambient-glint glint-c" aria-hidden="true"></span>
+          <svg class="carrier-relations" viewBox="0 0 1200 520" preserveAspectRatio="none" aria-hidden="true">
+            <path />
+            <path />
+            <path />
+            <path />
+            <path />
+          </svg>
+          <div class="carrier-practical-nodes" id="carrier-practical-nodes"></div>
+        </div>
+      </section>
+
+      <section class="review-prompt grammar-review carrier-review">
+        <span class="section-kicker">Human review</span>
+        <h2>Judge the two-carrier architecture and the switching interaction</h2>
+        <div class="review-questions">
+          <p>Does the dot plus dynamic ring feel compact and cockpit-like while remaining visibly dynamic?</p>
+          <p>Does the runtime tag perimeter trace feel alive without behaving like the expanding dot ring?</p>
+          <p>Is it cleaner to show exactly one runtime carrier per box?</p>
+          <p>Does the global switch feel useful for changing the entire Cockpit presentation at once?</p>
+          <p>Does clicking one box's runtime carrier feel like a natural local override?</p>
+          <p>Do No runtime, Deferred and Future remain free of misleading runtime instrumentation?</p>
+          <p>Does Reduced motion preserve the same semantic state without animation?</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./work-unit-runtime-carrier-switch.js"></script>
+  </body>
+</html>
