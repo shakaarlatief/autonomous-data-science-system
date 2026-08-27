@@ -8,7 +8,7 @@
 
 ## Routing discipline
 
-The repository and coordination branch above must also be named explicitly in the human-to-Claude trigger prompt.
+The repository and coordination branch above must also be named explicitly in any human-to-Claude trigger prompt.
 
 ```text
 coordination branch
@@ -18,31 +18,39 @@ exact target ref / SHA
     immutable evidence or artifact a specific request may direct Claude to inspect
 ```
 
-Claude should not infer or switch the coordination branch from default-branch contents, newest commits, missing files or unrelated branch discovery. If the trigger names a different branch than this authoritative current routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
+Claude should not infer or switch the coordination branch from default-branch contents, newest commits, missing files or unrelated branch discovery. If a trigger names a different branch than this authoritative current routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
 
 ## Pending model obligation
 
 ```text
+none
+```
+
+Claude completed:
+
+```text
 MC-0004 Message 008
-Claude blind Conversation Workspace + chat visual-design response
+Claude independent blind Conversation Workspace + chat visual-system design
 ```
 
-Request:
+Response:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md
+docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
 ```
 
-Frozen blind request base:
+Response commit:
 
 ```text
-c190420c6d77d3191ca9efb9ffc1e401bbb7fda8
+cab2e464d81b48edadd1b6ae51bb7dd620d7e892
 ```
+
+The blind-design requirement is satisfied. Claude explicitly recorded that the prohibited ChatGPT Conversation Workspace artifacts and isolated independent branch were not inspected.
 
 ## Next actor
 
 ```text
-Claude
+human project owner
 ```
 
 Current checkpoint remains:
@@ -51,47 +59,58 @@ Current checkpoint remains:
 245
 ```
 
-## Independence rule
+## Current browser review
 
-Claude must design independently from the product requirements in Message 007.
-
-Claude must not inspect:
+Research:
 
 ```text
-frontend/design-lab/conversation-workspace-architecture.*
-docs/research/079_conversation_workspace_presentation_architecture_experiment.md
-later ChatGPT Conversation Workspace redesign artifacts
-unrelated branches
+docs/research/081_independent_conversation_workspace_dual_design_comparison.md
 ```
 
-ChatGPT is independently redesigning the same problem on:
+Exact browser implementation target containing both independent browser families:
 
 ```text
-chatgpt-conversation-workspace-independent-design
+348c1d8a746041d4fa3ca41316ac34f9d79bc745
 ```
 
-Claude must not inspect that branch. The two outputs are compared only after both independent designs exist.
-
-## Scope of Claude response
-
-The request is deliberately broader than split/dock/fullscreen architecture. Claude should independently design the entire Conversation Workspace visual and interaction system, including:
+Claude independent browser:
 
 ```text
-workspace composition
-chat visual identity
-colors / surfaces
-typography
-user and ADS message geometry
-project-object references
-structured project-change moments
-tool / provenance summaries
-composer
-navigation / search
-conversation lifecycle ideas
-motion / micro-interactions
-density
-accessibility
-browser-test plan
+http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
 ```
 
-Production `/cockpit` remains untouched. S0 Geometric Control remains the provisional zoom working default; semantic zoom remains deferred.
+ChatGPT independent browser:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+```
+
+## Strong independent convergence now under human review
+
+Both blind workstreams independently converged on:
+
+```text
+transcript-first long-form surface
+ADS responses primarily document-like
+avoid generic symmetric chat bubbles
+semantic project-object references
+structured project changes separate from prose
+collapsed secondary tool / provenance detail
+project-aware composer context
+dark restrained professional visual language
+```
+
+Material differences remain intentionally visible for review:
+
+```text
+ruled/no-bubble versus bounded user prompt versus console block
+no persistent rail versus compact state rail versus thread/context rails
+warm reading-room atmosphere versus cool console continuity
+serif versus humanist sans
+comfortable versus compact density
+resting -> peek -> full conversation depth
+```
+
+The current gate is to judge the independent browser families before building synthesis candidates.
+
+Production `/cockpit` remains untouched. S0 Geometric Control remains the provisional zoom working behavior; semantic zoom remains deferred. Z7 deep-focus remains held.
