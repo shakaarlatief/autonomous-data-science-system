@@ -81,44 +81,11 @@ Evaluation-like micro-light character
 subtle true-shape family
 ```
 
-Research 050 preserves selective M1 visibility strengthening and the refined right-only Validation top step.
-
-## Configurable work-unit appearance result
-
-The project owner identified that semantically compatible attractive mechanisms should coexist as user-selectable appearance dimensions.
-
-Browser proof:
-
-```text
-frontend/design-lab/work-unit-grammar-customizable.html
-frontend/design-lab/work-unit-grammar-customizable.css
-frontend/design-lab/work-unit-grammar-customizable.js
-```
-
-Human review approved the model.
-
-Promoted foundation:
-
-```text
-docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-```
-
-Current proven appearance dimensions:
-
-```text
-Box shape
-    Normal
-    Subtle shapes
-
-Micro design
-    None
-    Micro material
-    Micro light
-```
+Foundation 023 promotes the durable split between semantic work-unit meaning and approved user-configurable appearance.
 
 ## Connector / Port Grammar history
 
-The connector browser tested:
+The generic connector browser tested:
 
 ```text
 K0  Clean Curve
@@ -126,12 +93,6 @@ K1  Micro Dots
 K2  Frame Sockets
 K3  Target Cue
 K4  Hover Ports
-```
-
-Primary browser:
-
-```text
-frontend/design-lab/connector-grammar.html
 ```
 
 Important refinements:
@@ -145,58 +106,64 @@ K1/K4 dots moved mostly outside the perimeter
 K2 active socket outline / glow adopts relation color
 ```
 
-Exact refinement commits:
+Exact retained refinement commits:
 
 ```text
 42ec63d17095753dc4ab97628cd859473cbdf5e8
 183264bdd07783eaa2354894592f2cf4a076b6ec
 ```
 
-## Connector presentation configurability result
+## Connector treatment and hover architecture
 
-The project owner explicitly decided that the useful connector mechanisms should coexist as user-adjustable presentation choices rather than forcing one generic winner.
+Human review first rejected the need for one universal connector-style winner, then clarified the composition model further.
 
-Current compositional interpretation:
-
-```text
-Rest attachment
-    Clean
-    Micro dots
-    Frame sockets
-
-Hover attachment emphasis
-    Off
-    On
-```
-
-The semantic boundary is critical:
+Current connector treatments:
 
 ```text
-user controls
-    HOW the connector is presented
-
-ADS / project relation model controls
-    WHAT the relation means
-    WHETHER it is directed
-    WHICH way it points
+Clean
+Micro dots
+Frame sockets
+Direction arrows
 ```
 
-Promoted foundation:
+Current interaction rule:
 
 ```text
-docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+one terminal treatment normally active at a time
++
+hover / focus is an orthogonal reveal or emphasis mechanism
 ```
 
-## Current Slice 02D: connector directionality
+Therefore hover is not another connector terminal that must be combined with dots, sockets or arrows.
 
-The next bounded question is:
+Unnecessary mixed terminal stacks are not the default product direction:
 
-> How should a relationship communicate no direction, one-way direction in either orientation, or bidirectional direction while remaining visually restrained and compatible with configurable attachment presentation?
+```text
+arrow + dot
+arrow + socket
+socket + dot
+```
+
+Foundation 024 now records this refined architecture while preserving system-owned relation semantics.
+
+## Current Slice 02D: simplified connector directionality
+
+The first directionality browser exposed Clean / Micro dots / Frame sockets alongside persistent direction cues as compatibility controls.
+
+The project owner then clarified that this made the directionality question more complicated than necessary.
+
+The browser now isolates the original preferred edge-connected K3-style arrow only.
 
 Research:
 
 ```text
-docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md
+docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
+```
+
+Checkpoint:
+
+```text
+docs/checkpoints/227_directionality_arrow_grammar_simplified_human_review_opened.md
 ```
 
 Browser route:
@@ -216,25 +183,42 @@ http://localhost:5173/design-lab/connector-directionality.html
 Exact browser implementation target:
 
 ```text
-41bbdb75f338388f02a34fdf7dbac3ea90f86300
+07d573b6569b9f09a3b7e00936f3eadecee721b3
 ```
 
 Direction states:
 
 ```text
-D0  Undirected      A — B
+D0  Undirected      A - B
+    no arrow
+
 D1  Forward         A -> B
+    arrow tip docked directly to B
+
 D2  Reverse         A <- B
+    exact same arrow tip docked directly to A
+
 D3  Bidirectional   A <-> B
+    same arrow at both endpoints
 ```
 
-The page exposes Clean / Micro dots / Frame sockets and Hover emphasis On/Off only to test compatibility. Those controls do not alter direction semantics.
+Arrow geometry intentionally reuses the earlier K3 treatment:
+
+```text
+arrow tip
+    exact rendered work-unit edge
+
+arrow arms
+    outside the box
+```
+
+The connector curve remains beneath work-unit bodies and follows H4 hover lift / release through rendered-edge geometry updates.
 
 ## Dependency-bound ideas
 
 ```text
 C4 Port Grammar
-    matured into configurable connector presentation + directionality work
+    matured into connector-treatment / hover / directionality architecture
 
 C5 Internal Layout Grammar
     remains deferred to semantic zoom / information-density slice
@@ -243,12 +227,11 @@ C5 Internal Layout Grammar
 ## Current gate
 
 ```text
-human reviews D0-D3
--> keep / refine / replace direction-cue mechanism
--> preserve directionality grammar
+human verifies D0-D3 simplified arrow grammar
+-> if accepted, treat directionality as sufficiently converged
 -> then explore semantic relation classes
 ```
 
 ## Production boundary
 
-Production `/cockpit` remains untouched. No graph/canvas dependency, final semantic relation vocabulary, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
+Production `/cockpit` remains untouched. No graph/canvas dependency, final semantic relation taxonomy, production appearance persistence, motion library or final visual-system freeze is authorized by this thread.
