@@ -37,3 +37,15 @@
 .connector-port-overlay .connector-socket {
   opacity: 0 !important;
 }
+
+/*
+ * K4's base stylesheet targets relation-layer groups. The overlay mirrors the
+ * related state onto connector-port-link, so reproduce the hover-port reveal
+ * here explicitly for the above-node layer.
+ */
+html[data-connector-style="k4"] .connector-port-link.is-related .connector-terminal {
+  opacity: 1;
+  fill: rgba(var(--related-rgb), 0.92);
+  stroke: rgba(11, 17, 25, 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--related-rgb), 0.44));
+}
