@@ -1,8 +1,17 @@
 # Checkpoint 231: Disposition Hybrid Refined, Mixed-Category Comparison Opened
 
 **Date:** 2026-08-27  
-**Branch:** `v1-cockpit-design-exploration`  
-**Status:** Phase-C human browser review open
+**Status:** Phase-C human browser review open  
+**Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / CONVERGENCE  
+**Project stage:** V1 next-generation Project Cockpit browser-rendered design exploration  
+**Scope:** Preserves the human refinement that removes rhythm from P6, adds a colored-tag + tone candidate without disposition perimeter hue, and opens a practical mixed-category P6/P7 comparison.  
+**Authority:** Current Phase-C routing/evidence boundary only. The final project-disposition ontology and final production visual carrier remain unfrozen. Production `/cockpit` remains untouched.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** chatgpt-08  
+**Conversation title:** 08 - Project Cockpit Design Exploration  
+**Primary collaborator:** ChatGPT  
+**Branch:** `v1-cockpit-design-exploration`
 
 ## Preserved human decision
 
