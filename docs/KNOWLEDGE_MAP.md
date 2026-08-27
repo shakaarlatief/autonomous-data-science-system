@@ -5,7 +5,9 @@
 **Last reviewed:** 2026-08-27  
 **Current checkpoint:** 235  
 **Active development branch:** `v1-cockpit-design-exploration`  
-**Active PR:** none
+**Active PR:** none  
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
+**Latest scientific experiment outcome:** `INCOMPLETE / EXECUTION INTEGRITY FAILED`
 
 ## Start here
 
