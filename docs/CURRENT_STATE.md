@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 231  
+**Checkpoint:** 232  
 **Date:** 2026-08-27  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at feature-promotion head `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Relation-class Hue + Tag is sufficiently settled. The active gate is a refined project-disposition comparison between P6 Hue + Colored Tag + Tone and P7 Colored Tag + Tone, including a practical mixed-category project scene.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Relation-class Hue + Tag is sufficiently settled. Mixed-category review showed that persistent disposition color competes with category identity, so the current project-disposition convergence candidate is P7 Neutral Tag + Tone with disposition color revealed only on hover.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,9 +29,9 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/231_disposition_hybrid_refined_mixed_category_comparison_opened.md
+docs/checkpoints/232_disposition_neutral_tag_tone_refinement_review_opened.md
+docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md
 docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md
-docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md
 frontend/design-lab/work-unit-disposition-grammar.html
 frontend/design-lab/work-unit-disposition-grammar.css
 frontend/design-lab/work-unit-disposition-grammar.js
@@ -46,7 +46,7 @@ http://localhost:5173/design-lab/work-unit-disposition-grammar.html
 Exact current browser implementation target:
 
 ```text
-87927bef327be0a0cc9ccf9fb153aa0c7b226e92
+fac1db37af4225927d6c799e37418a3ad9c42c13
 ```
 
 ---
@@ -161,7 +161,7 @@ S4  Blocked
 S5  Future / Not yet active
 ```
 
-Initial browser families remain inspectable:
+Earlier browser families remain inspectable as evidence:
 
 ```text
 P0  Neutral Control
@@ -170,61 +170,45 @@ P2  Explicit Tag
 P3  Tonal Hierarchy
 P4  State Rhythm
 P5  Hue + Tag
-```
-
-Human refinement changed the integrated comparison to:
-
-```text
 P6  Hue + Colored Tag + Tone
-    disposition-colored outer perimeter
-    colored disposition tag
-    selective tonal reduction for Completed / Deferred / Future
-    NO rhythm
-
-P7  Colored Tag + Tone
-    category perimeter remains visually dominant
-    colored disposition tag
-    same selective tonal reduction
-    NO disposition-colored outer perimeter
-    NO rhythm
 ```
 
-P4 State Rhythm remains preserved as standalone experiment evidence.
-
-## Practical mixed-category comparison
-
-The browser now renders P6 and P7 side by side using the same small project fixture with multiple category identities:
+Human review of the mixed-category P6/P7 scenes found both persistent-color treatments somewhat confusing. The convergence candidate is therefore now:
 
 ```text
-Question / Blocker
-Investigation
-Validation / Analysis
-Model Work
-Evaluation
+P7  Neutral Tag + Tone
+
+REST
+    category color remains the dominant persistent color
+    disposition tag remains neutral
+    Completed / Deferred / Future retain selective tonal recession
+    no disposition-colored outer perimeter
+    no state rhythm
+
+HOVER
+    disposition tag border/text reveal the state-specific hue
+    H4 node hover remains otherwise unchanged
 ```
 
-and representative dispositions:
+The page now opens directly in P7.
 
-```text
-Blocked
-Active
-Recommended
-Completed
-Deferred
-Future
-```
+P4 rhythm and the previous colored P6/P7 variants remain preserved in browser controls / repository history rather than being silently discarded.
 
-The practical scenes use dynamically calculated neutral connector geometry. Connector attachment chooses horizontal or vertical edges from the actual rendered card separation and follows H4 hover lift, so connector defects do not contaminate the disposition comparison.
+## Practical mixed-category verification
+
+The practical scene still contains Question, Investigation, Validation, Model and Evaluation work units across Blocked, Active, Recommended, Completed, Deferred and Future fixtures.
+
+The right P7 scene now tests whether keeping the resting tag neutral materially reduces category/disposition color competition while still providing explicit text and tonal hierarchy. Hovering a P7 node reveals the state hue only in the tag.
 
 Current human gate:
 
 ```text
-compare P6 vs P7 in controlled rows
-+
-compare P6 vs P7 in practical mixed-category scenes
--> determine whether disposition perimeter hue helps or competes with category hue
--> judge whether colored tag + tone alone is sufficiently clear
--> refine or select without freezing the final disposition ontology
+verify P7 resting tag is neutral
+verify hover reveals the correct state hue
+verify category identity remains visually dominant at rest
+verify tonal recession does not imply low importance / disabled state
+verify mixed-category scene is materially less confusing
+-> if accepted, treat project-disposition visual carrier as sufficiently converged for current Phase C
 ```
 
 ---
@@ -236,7 +220,7 @@ Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
 Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               P6 vs P7 project-disposition mixed-category human review
+Current                               P7 Neutral Tag + Tone human verification
 ```
 
 There is no pending Claude obligation.
@@ -251,7 +235,6 @@ Still unresolved:
 
 ```text
 final project-disposition ontology
-final project-disposition visual carrier
 runtime / queued / waiting / failed / waiting-for-human visual grammar
 importance / priority / relevance visual grammar
 final semantic relation taxonomy
@@ -293,14 +276,14 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ## Exact continuation
 
 ```text
-1. use Checkpoint 231 and v1-cockpit-design-exploration
+1. use Checkpoint 232 and v1-cockpit-design-exploration
 2. pull the latest branch locally
 3. open http://localhost:5173/design-lab/work-unit-disposition-grammar.html
-4. inspect controlled P6 and P7 rows
-5. inspect the practical side-by-side P6 and P7 mixed-category scenes
-6. judge whether disposition hue competes with category hue
-7. judge whether colored tag + tone is sufficient without a second perimeter hue
-8. record prefer / reject / combine / refine evidence
-9. keep runtime state and importance separate
+4. verify P7 opens by default
+5. verify P7 tags are neutral at rest
+6. hover P7 nodes and verify tag state hue appears only on hover
+7. inspect mixed-category P7 scene for reduced semantic/color confusion
+8. judge tonal recession separately from importance
+9. if accepted, close disposition carrier for current Phase C and move to the next bounded Cockpit question
 10. keep production Cockpit untouched
 ```
