@@ -27,19 +27,19 @@ human project owner
 Current checkpoint:
 
 ```text
-236
+237
 ```
 
 Current browser route:
 
 ```text
-http://localhost:5173/design-lab/work-unit-runtime-grammar.html
+http://localhost:5173/design-lab/work-unit-runtime-carrier-switch.html
 ```
 
-Exact corrected runtime browser implementation target:
+Exact current runtime-carrier browser implementation target:
 
 ```text
-dfcb89c15a23486d3fb9b4947b6a1d7cf3ac8b95
+3a862c659e60e53832eaa5940ddb60d05734cd7d
 ```
 
 ## Preserved accepted design results
@@ -84,9 +84,7 @@ Audit evidence:
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 ```
 
-## Active conditional runtime-state review
-
-Human semantic review corrected the runtime model before visual selection.
+## Runtime semantic correction retained
 
 Current distinction:
 
@@ -109,9 +107,7 @@ Idle runtime
     a runtime episode exists but is doing nothing
 ```
 
-The active browser uses No runtime as the absence control and renders no runtime carrier for it.
-
-Controlled fixtures:
+Controlled fixtures remain:
 
 ```text
 NONE    No runtime
@@ -121,6 +117,64 @@ WAIT    Waiting
 HUMAN   Waiting for Human
 FAIL    Failed current attempt
 ```
+
+`Current` remains preferred over `Active` for project disposition so execution meaning remains available to `Running`.
+
+`Blocked` remains explicitly unresolved as a possible orthogonal progress constraint rather than a peer lifecycle/disposition value.
+
+## R1/R5 verification result
+
+Human review observed that R1 Status Lamp and R5 Motion Signal looked effectively the same for the live non-failure states.
+
+Direct implementation inspection confirmed:
+
+```text
+R1
+    status lamp
+
+R5
+    same status lamp
+    + motion ring
+```
+
+They were therefore not literally identical in code, but the R5 ring was too subtle and too spatially coincident with the lamp to read as a genuinely different carrier at working scale. Failed made the distinction clearer because its ring shape changed.
+
+This is preserved as negative design evidence rather than argued away as an implementation distinction.
+
+## Active switchable runtime-carrier convergence
+
+Current hypothesis:
+
+```text
+exactly one runtime carrier per live-runtime work unit
+```
+
+Candidates:
+
+```text
+Dot + dynamic ring
+Animated runtime tag
+```
+
+The dot uses a stronger visible outer ring with state-sensitive motion pacing.
+
+The runtime tag uses explicit state text plus a circulating state-colored perimeter trace. It intentionally does not use the dot's expanding/breathing motion.
+
+Switching scopes:
+
+```text
+GLOBAL
+    switch every live-runtime work unit together
+    clear local overrides
+
+LOCAL
+    click the visible runtime carrier
+    switch only that work unit
+```
+
+Clicking the replacement carrier switches the box back. A node matching the global carrier is no longer treated as a local override.
+
+No-runtime work units show no runtime carrier and expose no switching target.
 
 Practical coexistence fixture:
 
@@ -133,32 +187,18 @@ Evaluation      DEFER + NONE
 Investigation   FUTURE + NONE
 ```
 
-`Current` is preferred over `Active` for project disposition so execution meaning remains available to `Running`.
-
-`Blocked` is explicitly unresolved as a possible orthogonal progress constraint rather than a peer lifecycle/disposition value.
-
-Browser families remain:
-
-```text
-R0  Neutral Control
-R1  Status Lamp
-R2  Activity Rail
-R3  Runtime Tag
-R4  Instrument Cell
-R5  Motion Signal
-R6  Restrained Hybrid
-```
-
 Current human gate:
 
 ```text
-verify NONE has no runtime instrumentation under R1-R6
-compare R1-R6 on QUEUE / RUN / WAIT / HUMAN / FAIL
-inspect the mixed-category scene
-inspect DEFER + NONE and FUTURE + NONE specifically
-compare normal vs Reduced motion
-judge runtime clarity and category/disposition competition
+compare Dot + dynamic ring with Animated runtime tag
+verify the strengthened ring is visibly dynamic
+verify the animated tag perimeter feels clean and distinct
+use the global switch in both directions
+create and remove local per-box overrides
+inspect the mixed practical scene
+verify NONE / DEFER + NONE / FUTURE + NONE remain free of runtime signaling
+toggle Reduced motion
 prefer / reject / combine / refine
 ```
 
-The final runtime ontology, project-disposition ontology, Blocked semantics, priority grammar and C5 Internal Layout Grammar remain separate future work.
+The final runtime carrier, runtime ontology, project-disposition ontology, Blocked semantics, production runtime-carrier preference/persistence, priority grammar and C5 Internal Layout Grammar remain separate future work.
