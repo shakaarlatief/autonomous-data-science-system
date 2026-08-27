@@ -21,14 +21,14 @@ Prototype V0 is complete. Bounded V1 is constructing the methodological knowledg
 Current route:
 
 ```text
-checkpoint            228
+checkpoint            229
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      semantic relation-class visual grammar human review
+current boundary      relation-class Hue + Tag selected; tag refinement human verification
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -110,8 +110,6 @@ one terminal treatment normally active at a time
 hover / focus is a separate reveal or emphasis mechanism
 ```
 
-Direction remains semantic and system-owned.
-
 Accepted direction grammar:
 
 ```text
@@ -121,7 +119,7 @@ Reverse         A <- B      exact same arrow at A
 Bidirectional   A <-> B     same arrow at both endpoints
 ```
 
-Human review accepted the simplified browser result. Exact accepted directionality implementation:
+Exact accepted directionality implementation:
 
 ```text
 07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -129,15 +127,26 @@ Human review accepted the simplified browser result. Exact accepted directionali
 
 ---
 
-## Active Slice 02E: semantic relation-class visual grammar
+## Relation-class visual grammar result
 
-The next bounded question is:
+Human review selected:
 
-> How should different relationship meanings remain distinguishable on the Cockpit map without turning the project map into graph noise?
+```text
+E5  Hue + Tag
+    SELECTED relation-class baseline
+```
 
-Direction is held constant as `A -> B` so relation meaning is isolated from directionality.
+Current relation-class visual carrier:
 
-Representative visual-test fixtures:
+```text
+restrained relation-specific hue
++
+compact explicit semantic tag
++
+existing direction arrow when direction requires it
+```
+
+Representative relation fixtures remain provisional:
 
 ```text
 R0  Chronology / Sequence
@@ -147,7 +156,19 @@ R3  Evidence / Support
 R4  Lineage / Derivation
 ```
 
-These are not a frozen ADS relation ontology.
+They do not freeze the ADS relation ontology.
+
+Stroke rhythm from E2/E4/E6 is explicitly preserved as a future semantic resource rather than used redundantly for relation class:
+
+```text
+stroke rhythm
+    visually promising
+    not rejected
+    no semantic assignment yet
+    candidate for another future line-level meaning if later evidence justifies it
+```
+
+The selected E5 page now uses a slightly taller tag with more normal text proportions.
 
 Browser route:
 
@@ -163,25 +184,13 @@ Local URL:
 http://localhost:5173/design-lab/relation-class-grammar.html
 ```
 
-Exact browser implementation target:
+Exact refined browser implementation target:
 
 ```text
-9ac3a0a0f51c024d0deec2fe54f11735f4cdd0fb
+b3d23b10be611f41a4e55fc40a28ba83089b7196
 ```
 
-Encoding families:
-
-```text
-E0  Neutral Control
-E1  Semantic Hue
-E2  Stroke Rhythm
-E3  Explicit Tag
-E4  Hue + Stroke
-E5  Hue + Tag
-E6  Restrained Hybrid
-```
-
-The current human gate is to compare semantic distinction, map-scale legibility, competition with node-category color, stroke-pattern clarity, tag density, accessibility redundancy and large-project noise risk.
+The page opens directly in E5. Historical E0-E6 controls remain inspectable as experiment evidence.
 
 ---
 
@@ -211,7 +220,9 @@ Not yet authorized:
 production Cockpit replacement
 production appearance persistence
 final semantic relation taxonomy
-final relation-color / stroke / tag grammar
+production relation colors / codes
+semantic assignment of stroke rhythm
+runtime-flow connector grammar
 new graph/canvas dependency
 new motion-library adoption
 final visual-system freeze
@@ -248,16 +259,13 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/228_directionality_settled_relation_class_grammar_review_opened.md
+docs/checkpoints/229_relation_class_hue_tag_selected_tag_refinement_review_opened.md
+docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md
 docs/research/057_semantic_relation_class_visual_grammar_experiment.md
 frontend/design-lab/relation-class-grammar.html
 
 docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md
-frontend/design-lab/connector-directionality.html
-
 docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-frontend/design-lab/work-unit-grammar-customizable.html
 
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
@@ -272,9 +280,10 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```text
 1. pull v1-cockpit-design-exploration
 2. open http://localhost:5173/design-lab/relation-class-grammar.html
-3. compare E0 through E6 across R0 through R4
-4. inspect hover emphasis without changing semantic meaning
-5. prefer / reject / combine / refine relation-class encoding mechanisms
-6. do not treat R0-R4 as a frozen taxonomy
-7. keep production Cockpit untouched
+3. verify E5 Hue + Tag opens by default
+4. verify the slightly taller tag and adjusted text proportions look better
+5. keep stroke rhythm preserved for a later separate semantic question
+6. if accepted, treat relation-class visual encoding as sufficiently converged
+7. then open the next bounded Cockpit design question
+8. keep production Cockpit untouched
 ```
