@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The accepted work-unit interaction stack now includes A3 Signal Bars for elevated attention, SEL2 Corner Brackets for persistent selection, and X5 balanced two-axis contextual expansion without surrounding-context recession. Expanded-card internal-layout optimization is deliberately deferred, with L0 Flat Fields used only as a provisional working default. The active gate evaluates the transition from expanded work unit to full specialist workspace / deep focus.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. A3 Signal Bars remain accepted for elevated attention, SEL2 Corner Brackets remain accepted for persistent selection, and X5 balanced two-axis contextual expansion without surrounding-context recession remains accepted. Expanded-card internal layout is deliberately deferred with L0 Flat Fields as a provisional working default. Claude has now broadened the deep-focus transition design space, and the active human gate uses a factorized browser that separates object continuity, context relevance, staging/orientation and return timing.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -30,22 +30,30 @@ Primary route:
 
 ```text
 docs/checkpoints/243_l0_working_default_deep_focus_transition_review_opened.md
-docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
-frontend/design-lab/work-unit-deep-focus-transition.html
-frontend/design-lab/work-unit-deep-focus-transition.css
-frontend/design-lab/work-unit-deep-focus-transition.js
+docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md
+frontend/design-lab/work-unit-deep-focus-factorized.html
+frontend/design-lab/work-unit-deep-focus-factorized.css
+frontend/design-lab/work-unit-deep-focus-factorized-refinement.css
+frontend/design-lab/work-unit-deep-focus-factorized.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
 ```
 
-Initial browser implementation target:
+Exact current browser implementation target:
 
 ```text
-31abc2b3a23de29358978e19bd88fda1e9166f6b
+0390d8fef9d6647ae17ecd7c948159d0a5b603e5
+```
+
+Original F0-F8 browser remains preserved at:
+
+```text
+http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
+afd15f52897a295788dc3a1d04b2d1b31ef707f9
 ```
 
 Accepted predecessor contextual-expansion target:
@@ -125,7 +133,7 @@ Foundation 023 preserves system-owned semantics versus approved user-configurabl
 
 ---
 
-# Active Slice 02N: deep-focus transition
+# Active Slice 02N: factorized deep-focus transition
 
 Specification 008 already promotes:
 
@@ -138,41 +146,74 @@ project map
     -> return to project context
 ```
 
-The active bounded question is:
+Claude Message 006 identified the key decomposition:
 
 ```text
-DEEP-FOCUS TRANSITION
-    when the user moves from an expanded X5 work unit
-    into its full specialist workspace,
-    how much project context should remain visible
-    and how should spatial continuity be communicated?
+object continuity
+context retention
+context relevance
+entry choreography
+orientation aid
+return choreography
 ```
 
-Candidate architectures:
+Claude proposed:
 
 ```text
-F0  Hard Replace
-F1  Center Stage
-F2  Anchored Morph
-F3  World Recede
-F4  Context Ribbon
-F5  Map Frame
-F6  Side Context Rail
-F7  Portal Lift
-F8  Layered Stage
+T1  Generalized Anchored Entry
+T2  Neighbor-Aware Context Retention
+T3  Staged Two-Step Entry
+T4  Asymmetric Return
+T5  Camera Push-Through
+T6  Adaptive Retention by Workspace Type
+T7  Compass / Minimap Return Anchor
 ```
 
-Workspace internals are deliberately schematic. This slice tests transition/context-retention architecture only.
+Message 006:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/006_claude_deep_focus_transition_divergent_ideation.md
+204664ae1e732dd504174bbc62545e9a93adc85f
+```
+
+T6 remains deferred until multiple meaningful specialist-workspace types exist.
+
+Current factorized browser batches:
+
+```text
+Batch A · Object continuity
+    A0  F2 Anchored Morph Control
+    A1  Anchored Center Stage
+    A2  Anchored Context Rail
+    A3  Camera Push-Through
+
+Batch B · Context relevance
+    B0  F6 Fixed Rail Control
+    B1  Neighbor-Aware Context
+    B2  Neighbor-Aware + Anchor
+
+Batch C · Staging and orientation
+    C0  Hard Replace Control
+    C1  Staged Two-Step Entry
+    C2  Compass + Soft World
+    C3  Hard Replace + Compass
+
+Large interaction studio
+    Symmetric return
+    Fast return
+```
+
+The X5 source card is deliberately off-center. Anchored variants measure its actual rendered geometry, so object-continuity evidence no longer depends on a hardcoded centered fixture. The new browser restores all four accepted SEL2 corner brackets.
 
 Current human gate:
 
 ```text
-1. compare F0-F8
-2. click each candidate to enter / return
-3. judge continuity from selected X5 work unit to specialist workspace
-4. judge retained map context versus distraction
-5. judge return-to-project clarity
-6. prefer / reject / combine / refine
+1. review Batch A for source-object continuity
+2. review Batch B for relevant versus arbitrary retained context
+3. review Batch C for staging and minimal orientation
+4. compare symmetric versus fast return in the large interaction studio
+5. select mechanisms independently
+6. combine mechanisms later where useful
 7. keep specialist-workspace internal composition unfrozen
 8. keep L0 as a working default only
 ```
@@ -202,7 +243,12 @@ selected-node command surface
 multiple simultaneous expanded work units
 large-project expansion collision handling
 semantic zoom
-final deep-focus transition architecture
+final deep-focus transition composition
+universal versus optional anchored entry
+neighbor-selection / graph-query semantics
+production compass/minimap existence
+entry interruption/cancellation
+return timing
 specialist-workspace internal composition
 URL representation for selected / expanded / deep-focus state
 Conversation Workspace composition
@@ -218,8 +264,8 @@ final production design system
 Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
 Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
 Phase C  browser-rendered design evaluation
-Latest Claude contribution            faf18ed9932d60a24dd80589b0ec0ba71c5940fd
-Current                               deep-focus transition human review
+Latest Claude contribution            204664ae1e732dd504174bbc62545e9a93adc85f
+Current                               factorized deep-focus transition human review
 ```
 
 There is no pending Claude obligation.
@@ -245,14 +291,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 243 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open http://localhost:5173/design-lab/work-unit-deep-focus-transition.html
-4. compare F0-F8
-5. click each tile to enter / return
-6. inspect spatial continuity and retained map context
-7. inspect return-to-project clarity
-8. prefer / reject / combine / refine
-9. keep specialist-workspace internals schematic
-10. keep L0 internal layout provisional
-11. keep production Cockpit untouched
-12. keep source-vault deployment paused until explicitly resumed
+3. open http://localhost:5173/design-lab/work-unit-deep-focus-factorized.html
+4. review Batch A for object continuity
+5. review Batch B for context relevance
+6. review Batch C for staging and orientation
+7. compare symmetric versus fast return in the large interaction studio
+8. prefer mechanisms independently and combine later if useful
+9. keep T6 deferred
+10. keep specialist-workspace internals schematic
+11. keep L0 internal layout provisional
+12. keep production Cockpit untouched
+13. keep source-vault deployment paused until explicitly resumed
 ```
