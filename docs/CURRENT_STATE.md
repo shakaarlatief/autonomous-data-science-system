@@ -1,12 +1,11 @@
 # Current State
 
-**Checkpoint:** 249  
+**Checkpoint:** 250  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
-**Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C has moved from default isolated component browsers to holistic integration. The current primary review surface is one executable Cockpit reconstruction containing the accepted/held interaction and visual mechanisms accumulated throughout the current Cockpit design phase.  
+**Development stage:** MC-0004 Phase C integration fidelity recovery. The first holistic Cockpit reconstruction failed human fidelity review because accepted browser-rendered components were reimplemented from textual summaries rather than faithfully reused/ported from their exact source targets. No further visual design or holistic rebuild should proceed until exact implementation provenance is bound to the held decisions.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -26,55 +25,56 @@ Repository artifacts remain authoritative across chats and models.
 
 # Current active boundary
 
-Primary route:
-
 ```text
-docs/checkpoints/249_holistic_integrated_cockpit_baseline_review_opened.md
-docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
-frontend/design-lab/cockpit-integrated-baseline.html
-frontend/design-lab/cockpit-integrated-baseline.css
-frontend/design-lab/cockpit-integrated-baseline.js
+docs/checkpoints/250_integrated_cockpit_fidelity_failure_recovery_audit_opened.md
+docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
 ```
 
-Current local URL:
+Current task:
 
 ```text
-http://localhost:5173/design-lab/cockpit-integrated-baseline.html
-```
-
-Exact initial holistic frontend target:
-
-```text
-8e554d847bb3b6318db432abcb5dff742f0fa523
+construct accepted-implementation manifest
+bind exact target SHA -> exact source artifacts
+record invariant vs allowed adaptation boundary
+record known fixture caveats
+define fidelity verification gate
+only then rebuild holistic Cockpit by reuse/porting
 ```
 
 Production `/cockpit` remains untouched.
 
 ---
 
-# Process mode
+# Failed integration disposition
+
+The first holistic browser:
 
 ```text
-Integrated Cockpit
-    PRIMARY PRODUCT REVIEW SURFACE
-
-Bounded component browsers
-    preserved as historical/controlled evidence
-    created again only when a newly exposed question benefits from factorization
+frontend/design-lab/cockpit-integrated-baseline.html
+exact target 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-The purpose of the integrated baseline is to expose cross-component inconsistencies and whole-product geometry questions that isolated browsers cannot answer.
+is classified as:
+
+```text
+FAILED INTEGRATION ATTEMPT
+NOT an accepted baseline
+NOT a production target
+NOT a basis for new visual decisions
+PRESERVED as diagnostic evidence
+```
+
+Source-level audit found concrete divergence from accepted source artifacts, including WorkUnit geometry, H4 lighting implementation, G4 ambient behavior and Quiet Graphite visual tokens.
 
 ---
 
-# Held Cockpit controls and accepted / working Phase-C results
+# Accepted / held Phase-C decisions remain intact
 
 ```text
 G4 Adaptive Hybrid world
-Dark-mode baseline
 H4 hover/world response
 Reduced in-box resting light
-scientific category marker grammar
+scientific category-marker grammar
 Foundation 023 non-semantic appearance configurability
 E5 Hue + Tag relation-class carrier
 D0-D3 semantic directionality
@@ -104,7 +104,7 @@ conversation available from Grid and Deep Dive
 full-focus + co-present conversation capability
 source work-state preservation across conversation open/close
 compact native Cockpit composer
-Jump/search, zoom/recovery and fullscreen capabilities
+Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
 Important accepted targets:
@@ -122,76 +122,35 @@ SEL2 selection                e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
+Quiet Graphite source         c66f72a74e681f89fd52ba591a1387ea50f0e959
 A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
-integrated Cockpit baseline   8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
-
-Research 087 contains the explicit accepted-invariants audit used to reconstruct the holistic browser.
 
 ---
 
-# Work and conversation architecture now integrated
+# Repository-preservation diagnosis
+
+Current evidence:
 
 ```text
-PROJECT GRID
-    neutral
-    selected work unit
-    X5 expanded work unit
-
-        -> Z7
-
-SPECIALIST DEEP DIVE
-    full-stage specialist workspace
-    compact topology compass
-
-x
-
-CONVERSATION PRESENTATION
-    compact Cockpit composer
-    full-focus Conversation Workspace
-    co-present work + Conversation
-
-x
-
-CONVERSATION SCOPE
-    project-general
-    work-unit-scoped
+semantic decisions              preserved
+exact target SHAs               preserved
+executable historical artifacts preserved
+holistic integration protocol   insufficient
 ```
 
-Required access in the integrated baseline:
+The missing safeguard is explicit implementation provenance and fidelity validation. A future integrator must not be able to read labels such as `G4`, `H4`, `SEL2` or `Quiet Graphite` and then recreate them approximately.
+
+Required durable model:
 
 ```text
-Global Conversations from Grid
-Chat from selected work unit
-Open conversation from X5
-Global Conversations from Deep Dive
-Chat about this work unit from Deep Dive
-Full chat focus
-Co-present work + chat
-Return to preserved source work state
+semantic decision
+    + exact implementation target
+    + exact source files
+    + allowed adaptation boundary
+    + known fixture caveats
+    + fidelity verification
 ```
-
-The Conversation Workspace remains Quiet Graphite with Boxes/Text navigation and A6. It contains no redundant floating work-unit box.
-
----
-
-# Provisional holistic shell values
-
-These exist to make the whole product reviewable and are NOT frozen:
-
-```text
-HUD height                       54px
-finite world fixture             2400 x 1500
-project-plane fixture            2200 x 1320
-map tools                        compact right rail
-compact composer                 bottom-center surface
-current HUD composition          provisional
-specialist internal modules      schematic only
-co-present conversation width    46% provisional
-thread rail in co-present        collapsed provisionally
-```
-
-Whole-product review should now determine whether these integration-level choices are appropriate.
 
 ---
 
@@ -208,22 +167,6 @@ S1-S8
 semantic zoom
     DEFERRED
 ```
-
----
-
-# Repository preservation health
-
-```text
-repository preservation architecture   SOUND
-structural overhaul                     NOT WARRANTED
-new knowledge subsystem                 NOT JUSTIFIED
-checkpoint granularity                  HARDENED
-checkpoint validation closure           HARDENED
-active-branch routing validation        HARDENED
-Claude coordination branch routing      EXPLICIT
-```
-
-Historical research/checkpoints remain the durable evidence layer. Current routing documents are intentionally compact navigation surfaces.
 
 ---
 
