@@ -49,7 +49,7 @@ root.dataset.relationPresentation = root.dataset.relationPresentation || 'class-
 root.dataset.connectorTerminal = root.dataset.connectorTerminal || 'arrows'
 root.dataset.internalLayout = 'l0'
 
-removeRejectedPointPackets()
+hideRejectedPointPackets()
 repairH4PerimeterSweep()
 restoreP7ToneBinding()
 restoreBlocksRelationSemantics()
@@ -63,18 +63,28 @@ installSpecialistCategoryIdentity()
 syncCompletionControls()
 
 /* -------------------------------------------------------------------------- */
-/* G4: remove the two isolated green point packets rejected in holistic review */
+/* G4: suppress the two isolated green point packets rejected in review       */
 /* -------------------------------------------------------------------------- */
 
-function removeRejectedPointPackets() {
+function hideRejectedPointPackets() {
   if (!world) return
-  world.querySelectorAll('.live-packet').forEach((element) => element.remove())
 
-  /* Prevent a later fixture-level re-mount from bringing them back. */
-  if ('MutationObserver' in window) {
-    const observer = new MutationObserver(() => {
-      world.querySelectorAll('.live-packet').forEach((element) => element.remove())
+  /*
+   * The packet elements belong to the historical fixture structure, not to the
+   * accepted G4 world contract. Keep them inert for source compatibility but
+   * make their exclusion explicit. The accepted activity fields and stochastic
+   * scheduler remain mounted independently.
+   */
+  const suppress = () => {
+    world.querySelectorAll('.live-packet').forEach((element) => {
+      element.dataset.integrationSuppressed = 'true'
+      element.setAttribute('aria-hidden', 'true')
     })
+  }
+  suppress()
+
+  if ('MutationObserver' in window) {
+    const observer = new MutationObserver(suppress)
     observer.observe(world, { childList: true, subtree: false })
   }
 }
@@ -181,19 +191,10 @@ function applyAppearancePreset(preset) {
     rich: { shape: 'true', surface: 'material' },
   }[preset] || { shape: 'true', surface: 'material' }
 
-  root.dataset.shapeStyle = values.shape
-  root.dataset.surfaceStyle = values.surface
-  syncNativeAppearanceButtons()
+  /* Reuse the already-integrated controls so their geometry hooks also run. */
+  document.querySelector(`[data-shape-option="${values.shape}"]`)?.click()
+  document.querySelector(`[data-surface-option="${values.surface}"]`)?.click()
   syncAppearancePresetControl()
-}
-
-function syncNativeAppearanceButtons() {
-  document.querySelectorAll('[data-shape-option]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.shapeOption === root.dataset.shapeStyle))
-  })
-  document.querySelectorAll('[data-surface-option]').forEach((button) => {
-    button.setAttribute('aria-pressed', String(button.dataset.surfaceOption === root.dataset.surfaceStyle))
-  })
 }
 
 function syncAppearancePresetControl() {
@@ -407,8 +408,8 @@ function restoreConversationRailContainment() {
     if (item.querySelector('.reintegration-thread-box')) item.classList.add('is-workunit-thread')
   })
 
-  const search = document.querySelector('.reintegration-conversation-search > span')
-  if (search) search.textContent = 'Search conversations…'
+  const searchLabel = document.querySelector('.reintegration-conversation-search > span:nth-child(2)')
+  if (searchLabel) searchLabel.textContent = 'Search conversations…'
 }
 
 /* -------------------------------------------------------------------------- */
