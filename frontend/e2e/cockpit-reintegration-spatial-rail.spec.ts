@@ -116,7 +116,8 @@ test.describe('advanced spatial edge-rail studies', () => {
     await expect(page.locator('html')).toHaveAttribute('data-product-search-open', 'true')
     const search = await page.locator('.reintegration-search').boundingBox()
     expect(search).not.toBeNull()
-    expect((search?.right ?? ((search?.x ?? 0) + (search?.width ?? 0)))).toBeLessThanOrEqual((moved?.x ?? 0) + 6)
+    const searchRight = (search?.x ?? 0) + (search?.width ?? 0)
+    expect(searchRight).toBeLessThanOrEqual((moved?.x ?? 0) + 6)
     await page.keyboard.press('Escape')
 
     /* Move the floating object back into the right-edge snap zone. */
