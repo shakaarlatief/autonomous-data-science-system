@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 247  
+**Checkpoint:** 248  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The Conversation Scope + Work-Unit Anchor composition gate is settled at its current working level: Quiet Graphite, Boxes/Text rail, and A6 Adaptive Anchor remain held, with the redundant floating A6 work-unit card removed. The active boundary is now X5-to-Conversation-Workspace entry and return choreography.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The work-unit depth ladder and current Conversation Workspace look remain held. Checkpoint 247's X5-to-full-chat entry-only framing was too narrow. The active boundary is now conversation access from every major work state and full-focus versus simultaneous work+conversation composition.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,29 +29,17 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/247_a6_refined_conversation_entry_transition_review_opened.md
-docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
-frontend/design-lab/conversation-workspace-entry-transition.html
-frontend/design-lab/conversation-workspace-entry-transition.css
-frontend/design-lab/conversation-workspace-entry-transition.js
+docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+frontend/design-lab/conversation-workspace-access-coexistence.html
+frontend/design-lab/conversation-workspace-access-coexistence.css
+frontend/design-lab/conversation-workspace-access-coexistence.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
-```
-
-Exact initial implementation target:
-
-```text
-43ee0ae0ffc63eba6e99a42e9157568c53cc8806
-```
-
-A6 no-floating-box refinement:
-
-```text
-606e027f281b35c2dfc93d059a1681df23bc2b73
+http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
 ```
 
 Production `/cockpit` remains untouched.
@@ -105,58 +93,93 @@ X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
-conversation transition       43ee0ae0ffc63eba6e99a42e9157568c53cc8806
 ```
 
 ---
 
-# Conversation Workspace held direction
+# Conversation architecture
 
-The current work-unit-scoped Conversation Workspace should communicate home identity through only the surfaces that already have useful jobs:
+The corrected architecture is factorized:
 
 ```text
-sidebar active box
-    immediate object recognition
+WORK CONTEXT
+    Project Grid
+        neutral
+        selected box
+        X5 expanded
 
-header
-    conversation title
-    WORK UNIT scope
-    Expand box
+    Deep Dive specialist workspace
 
-transcript
-    clean long-form reading field
-    no floating duplicate box
+x
 
-Expand box
-    richer work-unit context on demand
+CONVERSATION PRESENTATION
+    compact / work only
+    full chat focus
+    co-present work + chat
+
+x
+
+CONVERSATION SCOPE
+    project-general
+    work-unit-scoped
 ```
 
-The project owner explicitly judged the additional Claude-informed B1-B4 composition alternatives irrelevant to this chosen look. Research 084 remains preserved as historical evidence, including potentially useful later ideas about pinned context, historical state and large-thread density.
+Required behavior:
 
-Project-general conversations remain legitimate and do not require a work-unit home.
+```text
+Global Conversations action
+    available from every Grid state
+
+Open conversation from work unit/X5
+    targets corresponding work-unit conversation
+
+Deep Dive
+    has global conversation access
+    has direct current-work-unit chat access
+
+Full chat focus
+    valid presentation mode
+    preserves underlying work context
+
+Co-present chat
+    valid presentation mode
+    Grid or Deep Dive remains visible/usable
+
+Switch conversation thread
+    does not mutate underlying work context
+
+Close/collapse conversation
+    restores the same Grid selection/X5/Deep Dive state
+```
+
+Research 079's CV1/CV2/CV5/CV6 mechanisms are recovered as co-presence evidence. They were not rejected by the later Conversation Workspace visual decisions.
 
 ---
 
-# Active transition review
-
-Controlled destination is held constant. Only motion changes.
+# Current browser factorization
 
 ```text
-E0 Direct Replace
-E1 Anchored Grow
-E2 World Recede
-E3 Pull-Back Then Dive
-E4 X5 Aperture
+UNDERLYING WORK SURFACE
+    Grid neutral
+    Grid selected
+    Grid X5 expanded
+    Deep Dive
+
+CONVERSATION
+    Project general
+    Current work-unit chat
+
+PRESENTATION
+    P0 Work only / compact chat
+    P1 Full chat focus
+    P2 Right dock
+    P3 Balanced split
+    P4 Chat dominant + work context
 ```
 
-Return behavior:
+P3 is the initial browser default only. No co-present composition has been selected.
 
-```text
-Fast direct return
-Symmetric return
-```
-
-E3 is the browser default only. No transition has been selected yet.
+Checkpoint 247's E0-E4 remain preserved only as potential full-chat-focus motion evidence. No transition winner was selected.
 
 ---
 
