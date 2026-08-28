@@ -13,7 +13,7 @@ async function selectedSnapshot(page: Page) {
   }))
 }
 
-test.describe('Conversation integration and Z7 rendering performance', () => {
+test.describe('Conversation integration and source-faithful Z7 rendering', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1600, height: 1000 })
     await page.goto(route)
@@ -153,15 +153,17 @@ test.describe('Conversation integration and Z7 rendering performance', () => {
     expect(await selectedSnapshot(page)).toEqual(before)
   })
 
-  test('Z7 uses a prewarmed transform-opacity compositor path and suppresses decorative world work during the dive', async ({ page }) => {
+  test('Z7 preserves the selected Pull-Back Then Dive choreography while suppressing decorative world work', async ({ page }) => {
     const source = page.locator(`${nodeSelector}[data-node-key="i"]`)
     await page.locator('#toggle-detail').click()
     await expect(source).toHaveAttribute('data-expanded', 'true')
 
     /*
      * Capture the rendering contract at the exact mutation boundary instead of
-     * sampling a transient 780 ms state from the test runner. This avoids a CI
-     * scheduling race while still verifying the actual animated frame state.
+     * sampling a transient 780 ms state from the test runner. In addition to
+     * state-machine behavior, this deliberately inspects the live animation
+     * objects so a later performance adapter cannot silently replace the
+     * accepted Z7 visual choreography again.
      */
     await page.evaluate(() => {
       const root = document.documentElement
@@ -169,22 +171,50 @@ test.describe('Conversation integration and Z7 rendering performance', () => {
         const observer = new MutationObserver(() => {
           if (root.dataset.deepFocus !== 'entering') return
 
-          const worldTransition = document.querySelector('#reintegration-world-transition-layer')
-          const specialist = document.querySelector('#reintegration-specialist-layer')
+          const worldTransition = document.querySelector('#reintegration-world-transition-layer') as HTMLElement | null
+          const specialist = document.querySelector('#reintegration-specialist-layer') as HTMLElement | null
           const ambient = document.querySelector('#reintegration-ambient-runtime-layer')
           const activity = document.querySelector('.activity-field')
+          const selected = document.querySelector(`${nodeSelector}[data-selected="true"]`) as HTMLElement | null
+          const stage = document.querySelector('.cockpit-stage') as HTMLElement | null
           const worldStyle = worldTransition ? getComputedStyle(worldTransition) : null
           const specialistStyle = specialist ? getComputedStyle(specialist) : null
+          const rootStyle = getComputedStyle(root)
+          const worldAnimation = worldTransition?.getAnimations()[0]
+          const specialistAnimation = specialist?.getAnimations()[0]
+          const worldKeyframes = (worldAnimation?.effect as KeyframeEffect | null)?.getKeyframes() ?? []
+          const specialistKeyframes = (specialistAnimation?.effect as KeyframeEffect | null)?.getKeyframes() ?? []
+          const nodeRect = selected?.getBoundingClientRect()
+          const stageRect = stage?.getBoundingClientRect()
+          const expectedOriginX = nodeRect && stageRect ? nodeRect.left - stageRect.left + nodeRect.width / 2 : null
+          const expectedOriginY = nodeRect && stageRect ? nodeRect.top - stageRect.top + nodeRect.height / 2 : null
 
           observer.disconnect()
           resolve({
             state: root.dataset.deepFocus || null,
             z7Rendering: root.dataset.z7Rendering || null,
-            worldFilter: worldStyle?.filter ?? null,
             worldAnimation: worldStyle?.animationName ?? null,
+            worldDuration: worldStyle?.animationDuration ?? null,
+            worldTiming: worldStyle?.animationTimingFunction ?? null,
             worldWillChange: worldStyle?.willChange ?? null,
-            specialistFilter: specialistStyle?.filter ?? null,
+            worldKeyframes: JSON.stringify(worldKeyframes.map((frame) => ({
+              offset: frame.offset,
+              opacity: frame.opacity,
+              transform: frame.transform,
+              filter: frame.filter,
+            }))),
             specialistAnimation: specialistStyle?.animationName ?? null,
+            specialistDuration: specialistStyle?.animationDuration ?? null,
+            specialistTiming: specialistStyle?.animationTimingFunction ?? null,
+            specialistKeyframes: JSON.stringify(specialistKeyframes.map((frame) => ({
+              offset: frame.offset,
+              opacity: frame.opacity,
+              transform: frame.transform,
+            }))),
+            originX: rootStyle.getPropertyValue('--deep-origin-x').trim() || null,
+            originY: rootStyle.getPropertyValue('--deep-origin-y').trim() || null,
+            expectedOriginX: expectedOriginX === null ? null : String(expectedOriginX),
+            expectedOriginY: expectedOriginY === null ? null : String(expectedOriginY),
             ambientDisplay: ambient ? getComputedStyle(ambient).display : null,
             activityDisplay: activity ? getComputedStyle(activity).display : null,
           })
@@ -204,11 +234,30 @@ test.describe('Conversation integration and Z7 rendering performance', () => {
 
     expect(rendering.state).toBe('entering')
     expect(rendering.z7Rendering).toBe('active')
-    expect(rendering.worldFilter).toBe('none')
-    expect(rendering.specialistFilter).toBe('none')
-    expect(rendering.worldAnimation).toBe('reintegration-z7-world-dive-smooth')
-    expect(rendering.specialistAnimation).toBe('reintegration-z7-workspace-arrive-smooth')
+    expect(rendering.worldAnimation).toBe('reintegration-z7-world-dive')
+    expect(rendering.specialistAnimation).toBe('reintegration-z7-workspace-arrive')
+    expect(rendering.worldDuration).toBe('0.78s')
+    expect(rendering.specialistDuration).toBe('0.78s')
+    expect(rendering.worldTiming).toBe('cubic-bezier(0.16, 1, 0.3, 1)')
+    expect(rendering.specialistTiming).toBe('cubic-bezier(0.16, 1, 0.3, 1)')
     expect(rendering.worldWillChange).toContain('transform')
+    expect(rendering.worldWillChange).toContain('filter')
+
+    const worldKeyframes = JSON.parse(rendering.worldKeyframes || '[]') as Array<Record<string, string | number | null>>
+    expect(worldKeyframes).toHaveLength(3)
+    expect(worldKeyframes.map((frame) => frame.offset)).toEqual([0, 0.24, 1])
+    expect(worldKeyframes.map((frame) => frame.filter)).toEqual(['none', 'saturate(0.78)', 'blur(1.4px)'])
+    expect(worldKeyframes.map((frame) => frame.transform)).toEqual(['scale(1)', 'scale(0.86)', 'scale(5.3)'])
+    expect(worldKeyframes.map((frame) => frame.opacity)).toEqual(['1', '1', '0'])
+
+    const specialistKeyframes = JSON.parse(rendering.specialistKeyframes || '[]') as Array<Record<string, string | number | null>>
+    expect(specialistKeyframes).toHaveLength(3)
+    expect(specialistKeyframes.map((frame) => frame.offset)).toEqual([0, 0.3, 1])
+    expect(specialistKeyframes.map((frame) => frame.transform)).toEqual(['scale(0.62)', 'scale(0.62)', 'scale(1)'])
+    expect(specialistKeyframes.map((frame) => frame.opacity)).toEqual(['0', '0', '1'])
+
+    expect(Math.abs(parseFloat(rendering.originX || 'NaN') - parseFloat(rendering.expectedOriginX || 'NaN'))).toBeLessThanOrEqual(1)
+    expect(Math.abs(parseFloat(rendering.originY || 'NaN') - parseFloat(rendering.expectedOriginY || 'NaN'))).toBeLessThanOrEqual(1)
     expect(rendering.ambientDisplay).toBe('none')
     expect(rendering.activityDisplay).toBe('none')
 
