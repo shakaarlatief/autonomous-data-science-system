@@ -191,7 +191,7 @@ test.describe('Phase-C holistic fidelity completion', () => {
     expect(await semanticSnapshot(page)).toEqual(before)
   })
 
-  test('Conversation Boxes rail uses accepted compact canonical WorkUnit containment and bounded search typography', async ({ page }) => {
+  test('Conversation Boxes rail keeps accepted canonical WorkUnit containment with readable search typography', async ({ page }) => {
     await page.locator('#conversation-expand').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
 
@@ -204,8 +204,9 @@ test.describe('Phase-C holistic fidelity completion', () => {
       fontSize: parseFloat(getComputedStyle(element).fontSize),
       whiteSpace: getComputedStyle(element).whiteSpace,
     }))
-    expect(searchMetrics.fontSize).toBeLessThanOrEqual(9)
-    expect(searchMetrics.height).toBeLessThan(14)
+    expect(searchMetrics.fontSize).toBeGreaterThanOrEqual(11)
+    expect(searchMetrics.fontSize).toBeLessThanOrEqual(13)
+    expect(searchMetrics.height).toBeGreaterThanOrEqual(13)
     expect(searchMetrics.whiteSpace).toBe('nowrap')
 
     const workRows = page.locator('.reintegration-thread-item.is-workunit-thread')
