@@ -16,8 +16,14 @@
 /* Conversation rail: deliberate separation between canonical boxes           */
 /* -------------------------------------------------------------------------- */
 
+/*
+ * The separation is intentionally larger than the WorkUnit's peripheral light
+ * treatment so the cards read as distinct conversation objects at both the
+ * wide reference viewport and the narrower responsive rail size.
+ */
 html[data-conversation-rail="boxes"] .reintegration-thread-list {
-  gap: 10px;
+  row-gap: 16px;
+  column-gap: 0;
   align-content: start;
 }
 

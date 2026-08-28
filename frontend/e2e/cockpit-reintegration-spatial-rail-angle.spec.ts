@@ -2,8 +2,8 @@ import { expect, test, type Page } from '@playwright/test'
 
 const route = '/design-lab/cockpit-reintegration.html?edge=angled'
 
-async function openStudy(page: Page) {
-  await page.setViewportSize({ width: 1600, height: 1000 })
+async function openStudy(page: Page, width = 1600, height = 1000) {
+  await page.setViewportSize({ width, height })
   await page.goto(route)
   await expect(page.locator('html')).toHaveAttribute('data-spatial-rail-angle', 'angled')
   await expect(page.locator('html')).toHaveAttribute('data-human-review255', 'true')
@@ -80,8 +80,8 @@ test.describe('Checkpoint 255 whole-Cockpit human-review corrections', () => {
     await expect(page.locator('.cockpit-angled-rail-rig')).toBeHidden()
   })
 
-  test('Conversation Boxes mode separates every WorkUnit with deliberate vertical breathing room', async ({ page }) => {
-    await openStudy(page)
+  test('Conversation Boxes mode keeps clearly visible separation between every WorkUnit at narrow review width', async ({ page }) => {
+    await openStudy(page, 760, 1000)
     await page.locator('#conversation-expand').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
 
@@ -89,20 +89,30 @@ test.describe('Checkpoint 255 whole-Cockpit human-review corrections', () => {
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
 
     const rowGap = await page.locator('.reintegration-thread-list').evaluate((element) => getComputedStyle(element).rowGap)
-    expect(Number.parseFloat(rowGap)).toBeGreaterThanOrEqual(10)
+    expect(Number.parseFloat(rowGap)).toBeGreaterThanOrEqual(16)
 
     const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
     const workSurfaces = page.locator('.reintegration-thread-item[data-thread-scope="work"] .conversation-canonical-node .node-surface')
-    const first = await workSurfaces.nth(0).boundingBox()
-    const second = await workSurfaces.nth(1).boundingBox()
+    const count = await workSurfaces.count()
     expect(project).not.toBeNull()
-    expect(first).not.toBeNull()
-    expect(second).not.toBeNull()
+    expect(count).toBeGreaterThan(1)
 
-    const projectGap = (first?.y ?? 0) - ((project?.y ?? 0) + (project?.height ?? 0))
-    const workGap = (second?.y ?? 0) - ((first?.y ?? 0) + (first?.height ?? 0))
-    expect(projectGap).toBeGreaterThan(7)
-    expect(workGap).toBeGreaterThan(7)
+    const surfaces = []
+    for (let index = 0; index < count; index += 1) {
+      const box = await workSurfaces.nth(index).boundingBox()
+      expect(box).not.toBeNull()
+      if (box) surfaces.push(box)
+    }
+
+    const projectGap = surfaces[0].y - ((project?.y ?? 0) + (project?.height ?? 0))
+    expect(projectGap).toBeGreaterThanOrEqual(14)
+
+    for (let index = 1; index < surfaces.length; index += 1) {
+      const previous = surfaces[index - 1]
+      const current = surfaces[index]
+      const visibleGap = current.y - (previous.y + previous.height)
+      expect(visibleGap).toBeGreaterThanOrEqual(14)
+    }
   })
 
   test('the Z7 compass is one clean live topology instrument tied to the actual selected WorkUnit', async ({ page }) => {
