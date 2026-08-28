@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-composition="a6" data-sidebar-view="boxes" data-home="model" data-depth="arrival">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>ADS Design Lab · Conversation Anchor Synthesis</title>
+  <link rel="stylesheet" href="./conversation-workspace-anchor-synthesis.css" />
+</head>
+<body>
+  <div class="synth-shell">
+    <header class="synth-lab-header">
+      <div>
+        <span class="kicker">ADS COCKPIT DESIGN LAB · CHECKPOINT 246 · CLAUDE-INFORMED SYNTHESIS</span>
+        <h1>How should a work-unit conversation stay visibly attached to its home object?</h1>
+        <p>Quiet Graphite, Boxes/Text sidebar choice, and A6 as the current working default are held. This round tests Claude's materially different composition ideas without restoring the project grid.</p>
+      </div>
+      <div class="controls">
+        <label><span>Composition</span><select id="composition-select">
+          <option value="a6">A6 Refined adaptive anchor</option>
+          <option value="breadcrumb">B1 Breadcrumb thread</option>
+          <option value="responsive">B2 Scroll-responsive presence</option>
+          <option value="gutter">B3 Object-anchored gutter</option>
+          <option value="wrapped">B4 Wrapped around object</option>
+        </select></label>
+        <label><span>Reading depth</span><select id="depth-select">
+          <option value="arrival">Arrival</option>
+          <option value="deep">Deep in transcript</option>
+        </select></label>
+      </div>
+    </header>
+
+    <nav class="candidate-strip" aria-label="Composition candidates">
+      <button data-composition="a6" aria-pressed="true"><strong>A6</strong><span>Refined adaptive</span></button>
+      <button data-composition="breadcrumb"><strong>B1</strong><span>Breadcrumb</span></button>
+      <button data-composition="responsive"><strong>B2</strong><span>Scroll-responsive</span></button>
+      <button data-composition="gutter"><strong>B3</strong><span>Object gutter</span></button>
+      <button data-composition="wrapped"><strong>B4</strong><span>Wrapped object</span></button>
+    </nav>
+
+    <main class="workspace-stage">
+      <aside class="thread-rail">
+        <div class="brand"><span class="brand-mark">A</span><div><strong>Autonomous Data Science</strong><small>Telco churn project</small></div></div>
+        <button class="search" type="button">⌕ <span>Search conversations</span><kbd>⌘ K</kbd></button>
+        <div class="view-switch" role="group" aria-label="Sidebar view">
+          <button data-sidebar="boxes" aria-pressed="true">Boxes</button>
+          <button data-sidebar="text" aria-pressed="false">Text</button>
+        </div>
+
+        <div class="rail-heading"><span>PROJECT CONVERSATIONS</span><button type="button">+</button></div>
+        <div id="thread-list"></div>
+
+        <div class="rail-heading archived-heading"><span>ARCHIVED</span><span>2</span></div>
+        <div id="archive-list"></div>
+        <div class="rail-footer"><i></i> Project state synchronized</div>
+      </aside>
+
+      <section class="conversation-frame" id="conversation-frame">
+        <div class="wrapped-label" id="wrapped-label"></div>
+        <header class="conversation-header">
+          <div class="title-area">
+            <button class="back" type="button">←</button>
+            <div><div class="title-line"><h2 id="conversation-title">Model selection strategy</h2><span id="scope-pill">WORK UNIT</span></div><p id="conversation-subtitle"></p></div>
+          </div>
+          <div class="header-actions"><button>Find</button><button>Outline</button><button id="expand-home">Expand box</button><button>•••</button></div>
+        </header>
+
+        <div class="breadcrumb-anchor" id="breadcrumb-anchor"></div>
+        <div class="arrival-shelf" id="arrival-shelf"></div>
+
+        <div class="conversation-body">
+          <div class="object-gutter" id="object-gutter"><button id="gutter-button" type="button"></button></div>
+          <div class="floating-home" id="floating-home"></div>
+
+          <div class="transcript-scroll">
+            <div class="transcript">
+              <div class="date-divider">TODAY · 07:18</div>
+              <article class="turn user-turn"><div class="avatar">U</div><div><div class="meta">YOU <span>07:18</span></div><div class="user-message">I want the comparison to stay broad, but I also want the final selection logic to remain disciplined and recoverable later.</div></div></article>
+              <article class="turn ads-turn"><div class="avatar ads">A</div><div><div class="meta">ADS <span>07:19</span></div><div class="ads-message"><p id="scope-copy"></p><p>The conversation's <strong>home</strong> remains separate from objects temporarily referenced in a particular turn.</p><div class="refs"><button>△ Chronological validation</button><button>＋ Calibration review</button></div><h3>Current design question</h3><p>How much of the home work unit should remain present while the transcript stays excellent for long reading?</p></div></div></article>
+              <section class="project-change"><span>↳</span><div><small>PROJECT STATE UPDATED</small><strong>Selection policy recorded structurally</strong><p>The decision remains outside conversation prose.</p></div><button>Open decision</button></section>
+              <article class="turn user-turn"><div class="avatar">U</div><div><div class="meta">YOU <span>07:24</span></div><div class="user-message">Can I inspect the work unit without leaving this discussion?</div></div></article>
+              <article class="turn ads-turn"><div class="avatar ads">A</div><div><div class="meta">ADS <span>07:24</span></div><div class="ads-message"><p>A6 now opens a richer X5-derived contextual panel rather than merely revealing the old A5 inspector. The other candidates test lighter or structurally different ways to preserve object continuity.</p></div></div></article>
+              <article class="turn ads-turn filler"><div class="avatar ads">A</div><div><div class="meta">ADS <span>07:31</span></div><div class="ads-message"><h3>Long-reading behavior</h3><p>This extra content exists so the scroll-responsive candidate can be judged after moving deeper into the transcript. At deep reading depth, orientation should remain available without consuming the same amount of space as on arrival.</p><p>Project references, structured state changes, and tool details remain subordinate to the primary dialogue.</p></div></div></article>
+              <div class="end-space"></div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="composer-zone">
+          <div class="context-row"><span>HOME</span><button id="home-chip"></button><span class="pin-label">PINNED · EXPERIMENTAL</span><button>△ Threshold policy</button></div>
+          <div class="composer"><textarea rows="2" placeholder="Continue this discussion…"></textarea><div><button>＋</button><button>Commands</button><span>Project-aware</span><button class="send">↑</button></div></div>
+        </footer>
+      </section>
+
+      <aside class="x5-panel" id="x5-panel">
+        <div class="x5-head"><div><small>HOME WORK UNIT · X5 CONTEXT</small><strong id="x5-title"></strong></div><button id="close-x5">×</button></div>
+        <div id="x5-box"></div>
+        <dl class="x5-fields">
+          <div><dt>PURPOSE</dt><dd id="x5-purpose"></dd></div>
+          <div><dt>CONSTRAINT</dt><dd id="x5-constraint"></dd></div>
+          <div><dt>EVIDENCE</dt><dd>Frozen validation protocol · 3 linked decisions</dd></div>
+          <div><dt>NEXT ACTION</dt><dd id="x5-next"></dd></div>
+          <div><dt>RECENT ACTIVITY</dt><dd>Conversation updated 12 min ago</dd></div>
+        </dl>
+        <div class="x5-actions"><button>Open work unit</button><button>Locate in project</button></div>
+      </aside>
+    </main>
+  </div>
+  <script type="module" src="./conversation-workspace-anchor-synthesis.js"></script>
+</body>
+</html>
