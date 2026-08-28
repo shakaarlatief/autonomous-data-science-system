@@ -10,14 +10,6 @@
 
 The repository and coordination branch above must also be named explicitly in any human-to-Claude trigger prompt.
 
-```text
-coordination branch
-    where Claude reads current routing, this inbox, thread state and request files
-
-exact target ref / SHA
-    immutable evidence or artifact a specific request may direct Claude to inspect
-```
-
 Claude should not infer or switch the coordination branch. If a trigger names a different branch than this authoritative routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
 
 ## Pending model obligation
@@ -26,20 +18,7 @@ Claude should not infer or switch the coordination branch. If a trigger names a 
 none
 ```
 
-Claude completed:
-
-```text
-MC-0004 Message 010
-Conversation Scope + Work-Unit Anchor comparative/divergent ideation
-```
-
-Response:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
-```
-
-Response commit:
+Claude Message 010 is complete at:
 
 ```text
 8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
@@ -51,83 +30,70 @@ Response commit:
 human project owner
 ```
 
-Current checkpoint remains:
+Current checkpoint:
 
 ```text
-246
+247
 ```
 
-## Held human direction
+## Held Conversation Workspace direction
 
 ```text
 Quiet Graphite
-    current Conversation Workspace visual baseline
+    current visual baseline
 
 Conversation sidebar
     user-switchable Boxes / Text
 
 Boxes mode
-    canonical work-unit identity
+    canonical WorkUnit visual component scaled for navigation
 
 A6 Adaptive Anchor
-    current human-selected working composition
+    current opened-box composition
+
+A6 resting state
+    NO redundant floating work-unit box
 ```
 
-## Claude response synthesis
+The project owner explicitly judged the additional B1-B4 Claude-informed composition mechanisms irrelevant to the already chosen Conversation Workspace look. Research 084 remains preserved as research history and for later ontology/density ideas.
+
+## Current active review
 
 Research:
 
 ```text
-docs/research/084_claude_informed_conversation_anchor_synthesis.md
+docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
 ```
 
-Current browser:
+Browser:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
+http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
 ```
 
-Exact clean implementation target:
+Initial implementation target:
 
 ```text
-93dba4688a0e78f5b1d60277761c59c65e79c98d
+43ee0ae0ffc63eba6e99a42e9157568c53cc8806
 ```
 
-The browser compares:
+The destination is held constant. Human review compares only:
 
 ```text
-A6  Refined Adaptive Anchor
-    current working control
-    expands to a materially richer X5-derived panel
-
-B1  Breadcrumb Thread
-B2  Scroll-Responsive Presence
-B3  Object-Anchored Gutter
-B4  Wrapped Around Object
+E0 Direct Replace
+E1 Anchored Grow
+E2 World Recede
+E3 Pull-Back Then Dive
+E4 X5 Aperture
 ```
 
-It also repairs a prior study limitation by making these home states genuinely selectable:
+Return modifier:
 
 ```text
-Project general
-CURRENT + RUN + HIGH
-CURRENT + BLOCKED
-DEFER + NONE
+Fast direct return
+Symmetric return
 ```
 
-Boxes/Text remains independent of composition choice.
+E3 is a browser default only, not a selected result.
 
-## Claude ideas preserved but not promoted
-
-```text
-home / pinned context / per-turn context three-tier model
-generalized conversation home beyond WorkUnit
-historical-state rendering for old/archived home objects
-Signature Rail for extreme thread density
-anchored X5 -> Conversation entry
-asymmetric faster return
-```
-
-The current gate is human browser review. No further Claude obligation is pending.
-
-Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 deep-focus remains held.
+Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 specialist deep focus remains held.
