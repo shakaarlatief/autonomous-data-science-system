@@ -11,14 +11,14 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            247
+checkpoint            248
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation Workspace entry / return transition review
+current boundary      Conversation access + coexistence architecture review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -53,77 +53,80 @@ A6 Adaptive Anchor opened-box composition
 A6 resting state has no redundant floating work-unit box
 ```
 
-Important exact targets remain indexed in `docs/CURRENT_STATE.md` and `docs/KNOWLEDGE_MAP.md`.
-
 Semantic zoom remains deliberately deferred. S0 is the working behavior; S1-S8 remain preserved and not rejected.
 
-## Conversation Workspace decision carried forward
+## Conversation architecture correction
 
-Current work-unit-scoped Conversation Workspace identity is intentionally simple:
+The current product model now treats conversation as orthogonal to work depth.
 
 ```text
-sidebar
-    active canonical work-unit box
+WORK CONTEXT
+    Project Grid
+        neutral
+        selected work unit
+        X5 expanded work unit
 
-header
-    conversation title
-    WORK UNIT scope
-    Expand box
+    Deep Dive specialist workspace
 
-reading field
-    clean transcript
-    no extra floating home-object card
+x
+
+CONVERSATION PRESENTATION
+    compact Cockpit composer / work only
+    full Conversation Workspace focus
+    co-present Conversation Workspace
+
+x
+
+CONVERSATION SCOPE
+    project-general
+    work-unit-scoped
 ```
 
-Project-general conversations remain valid and have no work-unit home. Consequential project truth remains in structured project state rather than conversation prose alone.
+A global conversation action must be available regardless of Grid state. A work unit/X5 can open its corresponding conversation directly. Deep Dive must also expose conversation, both as full chat focus and as a simultaneous work+chat composition.
 
-The Claude-informed alternative composition mechanisms from Research 084 remain preserved as research history, but they are not active alternatives after explicit human review.
+Opening conversation must not destructively reset the underlying Grid selection/X5 or Deep Dive state. Closing or collapsing conversation should restore the same work context.
 
-## Active Slice: Conversation Workspace entry / return
+Research 079's earlier dock/split/context-rail ideas remain relevant as co-presence mechanisms rather than mutually exclusive whole-product architectures.
+
+## Active Slice: Conversation access + coexistence
 
 Primary browser:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
+http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
 ```
 
 Research and checkpoint:
 
 ```text
-docs/checkpoints/247_a6_refined_conversation_entry_transition_review_opened.md
-docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
+docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
 ```
 
-Controlled transition candidates:
+The browser factorizes:
 
 ```text
-E0 Direct Replace
-E1 Anchored Grow
-E2 World Recede
-E3 Pull-Back Then Dive
-E4 X5 Aperture
+UNDERLYING WORK SURFACE
+    Grid neutral
+    Grid selected
+    Grid X5 expanded
+    Deep Dive
+
+CONVERSATION
+    Project general
+    Current work-unit chat
+
+PRESENTATION
+    P0 Work only / compact chat
+    P1 Full chat focus
+    P2 Right dock
+    P3 Balanced split
+    P4 Chat dominant + work context
 ```
 
-Return modifier:
+P3 is the initial browser default only and is not selected.
 
-```text
-Fast direct return
-Symmetric return
-```
-
-E3 is the browser default only and is not selected.
-
-Exact initial browser target:
-
-```text
-43ee0ae0ffc63eba6e99a42e9157568c53cc8806
-```
-
-The A6 floating-box removal itself is frozen in the design-lab fixture at:
-
-```text
-606e027f281b35c2dfc93d059a1681df23bc2b73
-```
+Checkpoint 247's E0-E4 transition candidates remain preserved as possible **full-chat-focus** motion evidence, but no winner was selected because the entry-only framing was too narrow.
 
 Production `/cockpit` remains untouched.
 
@@ -148,15 +151,16 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/247_a6_refined_conversation_entry_transition_review_opened.md
+docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+frontend/design-lab/conversation-workspace-access-coexistence.html
+
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
 docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
 frontend/design-lab/conversation-workspace-entry-transition.html
 
 frontend/design-lab/conversation-workspace-work-unit-anchor.html
 docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
-
-docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
-docs/research/084_claude_informed_conversation_anchor_synthesis.md
 
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
