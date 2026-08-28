@@ -46,10 +46,15 @@
       "Quiet Graphite selected by the project owner as the current Conversation Workspace visual baseline",
       "previously rendered alternative ChatGPT and Claude Conversation Workspace visual systems rejected by the project owner",
       "Research 082 conversation-home versus per-turn-context hypothesis",
-      "conversation-workspace-work-unit-anchor browser initial target 56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e",
-      "MC-0004 Message 009 comparative/divergent conversation scope and work-unit anchor request"
+      "Research 083 A6 Adaptive Anchor and canonical box sidebar refinement",
+      "A6 Adaptive Anchor selected by the project owner as the working opened-box composition for now",
+      "conversation rail user preference narrowed to canonical Boxes versus ordinary Text",
+      "canonical Boxes mode reuses the accepted WorkUnit component rather than a separate mini-card design",
+      "conversation-workspace-work-unit-anchor canonical sidebar implementation at c0fad7428d76c11397c706f36a00448b05d2abe2 and 1c25b982c4da0d64b18a483057102adc468d9c35",
+      "MC-0004 Message 009 comparative/divergent conversation scope and work-unit anchor request",
+      "MC-0004 Message 009A human refinement addendum"
     ],
-    "notes": "The blind dual-design gate is complete. Current work is intentionally comparative. Quiet Graphite is held as the visual baseline while Claude is asked to challenge and broaden the conversation-home model, work-unit identity artifact, opened-box plus conversation composition, project-general treatment, and X5-to-conversation transition. Claude may inspect the current browser and ChatGPT proposal. Production /cockpit remains untouched.",
+    "notes": "The blind dual-design gate is complete and current work is comparative. Quiet Graphite remains held. A6 Adaptive Anchor is the human working default, while Claude may still challenge it. Work-unit conversation navigation should reuse the canonical WorkUnit component at smaller geometry rather than create a second mini-card grammar, and users should be able to switch between Boxes and Text rail modes. Claude Message 010 remains pending and should read both Message 009 and Message 009A. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -77,15 +82,17 @@
       "PHASE_C_CONVERSATION_WORKSPACE_INDEPENDENT_BROWSER_COMPARISON",
       "PHASE_C_QUIET_GRAPHITE_BASELINE_SELECTED",
       "PHASE_C_CONVERSATION_SCOPE_WORK_UNIT_ANCHOR_REVIEW",
-      "PHASE_C_CONVERSATION_SCOPE_WORK_UNIT_ANCHOR_CLAUDE_IDEATION_REQUESTED"
+      "PHASE_C_CONVERSATION_SCOPE_WORK_UNIT_ANCHOR_CLAUDE_IDEATION_REQUESTED",
+      "PHASE_C_A6_WORKING_DEFAULT_SELECTED",
+      "PHASE_C_CANONICAL_BOX_TEXT_SIDEBAR_MODES_SELECTED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-conversation-scope-work-unit-anchor-claude-ideation-requested",
+    "transition_id": "mc0004-conversation-anchor-a6-canonical-sidebar-human-refinement",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner selected Quiet Graphite as the current Conversation Workspace baseline, rejected the other rendered visual systems, required both project-general and work-unit-scoped conversations, proposed preserving recognizable box identity in conversation navigation, and requested broader composition ideas including Claude input. Research 082 and Checkpoint 246 open the new factorized scope/anchor browser, and Message 009 routes a comparative divergent follow-up to Claude.",
-    "repository_head": "c6bd7882e75ae5d9a689e149c20029ac27145633"
+    "reason": "The project owner selected A6 Adaptive Anchor as the working composition for now, clarified that work-unit conversations in the rail should reuse the already accepted WorkUnit box component at smaller geometry rather than a new mini-card design, and requested a user-switchable Boxes/Text sidebar. Research 083 and Message 009A preserve the refinement while Claude Message 010 remains pending.",
+    "repository_head": "1b648fa0a8c555e8b199487f9c8d2d68c9154616"
   }
 }
