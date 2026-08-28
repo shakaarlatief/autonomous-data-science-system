@@ -1,0 +1,378 @@
+/*
+ * Checkpoint 251 source-faithful reintegration glue.
+ *
+ * This stylesheet does not redefine the accepted G4/H4 WorkUnit visual
+ * grammar. It provides only whole-stage placement, navigable-world geometry,
+ * provisional HUD/composer surfaces, and the minimum relation-overlay layer
+ * needed to compose accepted source artifacts into one review surface.
+ */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-width: 1180px;
+  background: #090d13;
+}
+
+.reintegration-shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #090d13;
+}
+
+.reintegration-hud {
+  position: absolute;
+  z-index: 80;
+  left: 18px;
+  right: 18px;
+  top: 16px;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(360px, 1.05fr) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 58px;
+  padding: 8px 10px 8px 13px;
+  border: 1px solid rgba(185, 204, 229, 0.16);
+  border-radius: 10px;
+  background: rgba(11, 16, 23, 0.91);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.reintegration-identity {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.reintegration-kicker,
+.reintegration-search > label,
+.reintegration-map-status > span,
+.reintegration-zoom-rail > span,
+.reintegration-provisional-note > span,
+.reintegration-composer span {
+  color: rgba(157, 184, 255, 0.78);
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.reintegration-identity strong {
+  overflow: hidden;
+  color: rgba(238, 243, 248, 0.94);
+  font-size: 10.5px;
+  font-weight: 720;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reintegration-identity small {
+  color: rgba(155, 169, 188, 0.62);
+  font-size: 7.4px;
+}
+
+.reintegration-search {
+  display: grid;
+  gap: 4px;
+}
+
+.reintegration-search > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 5px;
+}
+
+.reintegration-search input,
+.reintegration-composer input {
+  min-width: 0;
+  border: 1px solid rgba(185, 204, 229, 0.14);
+  border-radius: 7px;
+  outline: none;
+  background: rgba(18, 25, 35, 0.82);
+  color: rgba(235, 240, 247, 0.94);
+}
+
+.reintegration-search input {
+  height: 29px;
+  padding: 0 9px;
+  font-size: 8.5px;
+}
+
+.reintegration-search input:focus,
+.reintegration-composer input:focus {
+  border-color: rgba(157, 184, 255, 0.46);
+  box-shadow: 0 0 0 2px rgba(157, 184, 255, 0.05);
+}
+
+.reintegration-hud button,
+.reintegration-composer button {
+  border: 1px solid rgba(185, 204, 229, 0.16);
+  border-radius: 7px;
+  background: rgba(18, 25, 35, 0.86);
+  color: rgba(215, 224, 237, 0.82);
+  cursor: pointer;
+}
+
+.reintegration-hud button:hover,
+.reintegration-composer button:hover {
+  border-color: rgba(185, 204, 229, 0.28);
+  color: #f2f5f9;
+  background: rgba(24, 32, 44, 0.94);
+}
+
+.reintegration-search button {
+  min-width: 50px;
+  font-size: 7.8px;
+}
+
+.reintegration-tools {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reintegration-tools button {
+  min-width: 31px;
+  height: 29px;
+  padding: 0 8px;
+  font-size: 7.7px;
+}
+
+.reintegration-tools button:nth-of-type(1),
+.reintegration-tools button:nth-of-type(2) {
+  min-width: 29px;
+  padding: 0;
+  font-size: 13px;
+}
+
+#zoom-readout {
+  min-width: 39px;
+  color: rgba(183, 198, 219, 0.72);
+  font-size: 7.5px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.reintegration-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #090d13;
+  cursor: grab;
+  touch-action: none;
+}
+
+.reintegration-stage.is-dragging {
+  cursor: grabbing;
+}
+
+.reintegration-world-plane {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1440px;
+  height: 760px;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.reintegration-world {
+  width: 1440px;
+  height: 760px;
+  overflow: hidden;
+  border: 1px solid rgba(185, 204, 229, 0.09);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.42),
+    0 30px 100px rgba(0, 0, 0, 0.24);
+}
+
+/*
+ * The SEL2 comparison fixture enlarged its cards to 244 x 102 px. The
+ * integrated Project Grid must instead honor M03's canonical project-scene
+ * geometry of 176 x 92 px. Only the outer fixture scale is corrected here;
+ * every accepted internal WorkUnit layer/class remains unchanged.
+ */
+.reintegration-world .selection-practical-node {
+  width: 176px;
+  height: 92px;
+}
+
+.reintegration-world .selection-practical-node.scene-q { left: 7%; top: 14%; }
+.reintegration-world .selection-practical-node.scene-i { left: 34%; top: 24%; }
+.reintegration-world .selection-practical-node.scene-v { left: 68%; top: 14%; }
+.reintegration-world .selection-practical-node.scene-m { left: 69%; top: 60%; }
+.reintegration-world .selection-practical-node.scene-r { left: 36%; top: 63%; }
+.reintegration-world .selection-practical-node.scene-e { left: 8%; top: 67%; }
+
+.reintegration-relations {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.reintegration-relation {
+  --class-rgb: 142, 169, 255;
+}
+
+.reintegration-relation .semantic-path,
+.reintegration-relation .semantic-arrow {
+  opacity: 0.82;
+}
+
+.reintegration-relation.is-related .semantic-path {
+  stroke-width: 1.62;
+  filter: drop-shadow(0 0 4px rgba(var(--class-rgb), 0.38));
+}
+
+.reintegration-relation.is-related .semantic-arrow {
+  stroke: rgba(var(--class-rgb), 0.98);
+  filter: drop-shadow(0 0 3px rgba(var(--class-rgb), 0.42));
+}
+
+.reintegration-relation.is-related .semantic-tag {
+  filter: drop-shadow(0 0 4px rgba(var(--class-rgb), 0.26));
+}
+
+.reintegration-map-status,
+.reintegration-zoom-rail,
+.reintegration-provisional-note {
+  position: absolute;
+  z-index: 70;
+  display: grid;
+  gap: 3px;
+  border: 1px solid rgba(185, 204, 229, 0.13);
+  border-radius: 8px;
+  background: rgba(11, 16, 23, 0.87);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+.reintegration-map-status {
+  left: 18px;
+  bottom: 76px;
+  min-width: 250px;
+  padding: 9px 11px;
+}
+
+.reintegration-map-status strong,
+.reintegration-provisional-note strong {
+  color: rgba(228, 234, 243, 0.88);
+  font-size: 8.4px;
+  font-weight: 700;
+}
+
+.reintegration-map-status small,
+.reintegration-provisional-note small,
+.reintegration-zoom-rail small {
+  color: rgba(151, 166, 186, 0.64);
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+.reintegration-zoom-rail {
+  right: 18px;
+  top: 90px;
+  width: 112px;
+  padding: 8px 9px;
+}
+
+.reintegration-zoom-track {
+  position: relative;
+  height: 3px;
+  margin: 3px 0 2px;
+  border-radius: 999px;
+  background: rgba(164, 181, 204, 0.13);
+}
+
+.reintegration-zoom-track i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(190, 211, 244, 0.58);
+  border-radius: 50%;
+  background: #111923;
+  transform: translate(-50%, -50%);
+}
+
+.reintegration-provisional-note {
+  right: 18px;
+  bottom: 76px;
+  width: 286px;
+  padding: 9px 11px;
+}
+
+.reintegration-composer {
+  position: absolute;
+  z-index: 85;
+  left: 50%;
+  bottom: 15px;
+  display: grid;
+  grid-template-columns: auto minmax(340px, 550px) auto;
+  gap: 6px;
+  width: min(720px, calc(100vw - 420px));
+  min-width: 520px;
+  padding: 6px;
+  border: 1px solid rgba(185, 204, 229, 0.16);
+  border-radius: 10px;
+  background: rgba(11, 16, 23, 0.94);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+  backdrop-filter: blur(14px);
+}
+
+.reintegration-composer > div {
+  display: grid;
+  gap: 2px;
+}
+
+.reintegration-composer input {
+  height: 28px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  font-size: 8.8px;
+}
+
+.reintegration-composer button {
+  min-width: 40px;
+  padding: 0 9px;
+  font-size: 8px;
+}
+
+#conversation-expand {
+  min-width: 34px;
+  font-size: 12px;
+}
+
+html[data-reduced="on"] .reintegration-world-plane {
+  transition: none !important;
+}
+
+@media (max-width: 1280px) {
+  .reintegration-hud {
+    grid-template-columns: 240px minmax(280px, 1fr) auto;
+  }
+
+  .reintegration-provisional-note {
+    display: none;
+  }
+
+  .reintegration-composer {
+    width: min(650px, calc(100vw - 340px));
+  }
+}
