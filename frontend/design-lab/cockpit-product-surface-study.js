@@ -31,6 +31,7 @@ installJumpPalette()
 installContinuousGridSync()
 installSurfaceOwnershipSync()
 installOptionalSpatialRailStudy()
+installOptionalCockpitEdgeStudy()
 
 function mountSpatialToolRail() {
   if (!stage || !tools || tools.dataset.productRailMounted === 'true') return
@@ -245,7 +246,7 @@ function installSurfaceOwnershipSync() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Optional advanced edge-rail study                                          */
+/* Optional advanced edge-rail studies                                        */
 /* -------------------------------------------------------------------------- */
 
 function installOptionalSpatialRailStudy() {
@@ -260,5 +261,20 @@ function installOptionalSpatialRailStudy() {
 
   import('./cockpit-spatial-rail-study.js').catch((error) => {
     console.error('Spatial rail study failed to load', error)
+  })
+}
+
+function installOptionalCockpitEdgeStudy() {
+  const edge = new URLSearchParams(window.location.search).get('edge')
+  if (!['hinge', 'stack', 'console'].includes(edge || '')) return
+
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = './cockpit-spatial-rail-study-gen2.css'
+  link.dataset.spatialRailGen2Asset = 'true'
+  document.head.appendChild(link)
+
+  import('./cockpit-spatial-rail-study-gen2.js').catch((error) => {
+    console.error('Second-generation Cockpit edge study failed to load', error)
   })
 }
