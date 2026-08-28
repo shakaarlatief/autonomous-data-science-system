@@ -1,12 +1,12 @@
 # Current State
 
-**Checkpoint:** 248  
+**Checkpoint:** 249  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. The work-unit depth ladder and current Conversation Workspace look remain held. Checkpoint 247's X5-to-full-chat entry-only framing was too narrow. The active boundary is now conversation access from every major work state and full-focus versus simultaneous work+conversation composition.  
+**Development stage:** MC-0004 Phase C has moved from default isolated component browsers to holistic integration. The current primary review surface is one executable Cockpit reconstruction containing the accepted/held interaction and visual mechanisms accumulated throughout the current Cockpit design phase.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -29,20 +29,41 @@ Repository artifacts remain authoritative across chats and models.
 Primary route:
 
 ```text
-docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
-docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
-frontend/design-lab/conversation-workspace-access-coexistence.html
-frontend/design-lab/conversation-workspace-access-coexistence.css
-frontend/design-lab/conversation-workspace-access-coexistence.js
+docs/checkpoints/249_holistic_integrated_cockpit_baseline_review_opened.md
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
+frontend/design-lab/cockpit-integrated-baseline.html
+frontend/design-lab/cockpit-integrated-baseline.css
+frontend/design-lab/cockpit-integrated-baseline.js
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
+http://localhost:5173/design-lab/cockpit-integrated-baseline.html
+```
+
+Exact initial holistic frontend target:
+
+```text
+8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
 Production `/cockpit` remains untouched.
+
+---
+
+# Process mode
+
+```text
+Integrated Cockpit
+    PRIMARY PRODUCT REVIEW SURFACE
+
+Bounded component browsers
+    preserved as historical/controlled evidence
+    created again only when a newly exposed question benefits from factorization
+```
+
+The purpose of the integrated baseline is to expose cross-component inconsistencies and whole-product geometry questions that isolated browsers cannot answer.
 
 ---
 
@@ -54,7 +75,10 @@ Dark-mode baseline
 H4 hover/world response
 Reduced in-box resting light
 scientific category marker grammar
+Foundation 023 non-semantic appearance configurability
 E5 Hue + Tag relation-class carrier
+D0-D3 semantic directionality
+single active connector terminal treatment
 P7 Neutral Tag + Tone disposition
 editable current-process focus set
 conditional runtime semantics
@@ -64,20 +88,26 @@ BLOCKER -> BLOCKS -> BLOCKED cause/effect model
 BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for HIGH attention
-SEL2 Corner Brackets for persistent selection
+SEL2 four outside corner brackets
 X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional working internal-layout default
 Z7 Pull-Back Then Dive specialist-workspace entry
-fullscreen specialist-workspace end state
+full-stage specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite Conversation Workspace baseline
+project-general + work-unit-scoped conversation distinction
 Boxes/Text user-switchable conversation rail
-A6 Adaptive Anchor opened-box composition
+A6 Adaptive Anchor work-unit context expansion
 A6 resting state without redundant floating home-object card
+conversation available from Grid and Deep Dive
+full-focus + co-present conversation capability
+source work-state preservation across conversation open/close
+compact native Cockpit composer
+Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-Important targets:
+Important accepted targets:
 
 ```text
 directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -93,29 +123,33 @@ X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
+integrated Cockpit baseline   8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
+
+Research 087 contains the explicit accepted-invariants audit used to reconstruct the holistic browser.
 
 ---
 
-# Conversation architecture
-
-The corrected architecture is factorized:
+# Work and conversation architecture now integrated
 
 ```text
-WORK CONTEXT
-    Project Grid
-        neutral
-        selected box
-        X5 expanded
+PROJECT GRID
+    neutral
+    selected work unit
+    X5 expanded work unit
 
-    Deep Dive specialist workspace
+        -> Z7
+
+SPECIALIST DEEP DIVE
+    full-stage specialist workspace
+    compact topology compass
 
 x
 
 CONVERSATION PRESENTATION
-    compact / work only
-    full chat focus
-    co-present work + chat
+    compact Cockpit composer
+    full-focus Conversation Workspace
+    co-present work + Conversation
 
 x
 
@@ -124,62 +158,40 @@ CONVERSATION SCOPE
     work-unit-scoped
 ```
 
-Required behavior:
+Required access in the integrated baseline:
 
 ```text
-Global Conversations action
-    available from every Grid state
-
-Open conversation from work unit/X5
-    targets corresponding work-unit conversation
-
-Deep Dive
-    has global conversation access
-    has direct current-work-unit chat access
-
+Global Conversations from Grid
+Chat from selected work unit
+Open conversation from X5
+Global Conversations from Deep Dive
+Chat about this work unit from Deep Dive
 Full chat focus
-    valid presentation mode
-    preserves underlying work context
-
-Co-present chat
-    valid presentation mode
-    Grid or Deep Dive remains visible/usable
-
-Switch conversation thread
-    does not mutate underlying work context
-
-Close/collapse conversation
-    restores the same Grid selection/X5/Deep Dive state
+Co-present work + chat
+Return to preserved source work state
 ```
 
-Research 079's CV1/CV2/CV5/CV6 mechanisms are recovered as co-presence evidence. They were not rejected by the later Conversation Workspace visual decisions.
+The Conversation Workspace remains Quiet Graphite with Boxes/Text navigation and A6. It contains no redundant floating work-unit box.
 
 ---
 
-# Current browser factorization
+# Provisional holistic shell values
+
+These exist to make the whole product reviewable and are NOT frozen:
 
 ```text
-UNDERLYING WORK SURFACE
-    Grid neutral
-    Grid selected
-    Grid X5 expanded
-    Deep Dive
-
-CONVERSATION
-    Project general
-    Current work-unit chat
-
-PRESENTATION
-    P0 Work only / compact chat
-    P1 Full chat focus
-    P2 Right dock
-    P3 Balanced split
-    P4 Chat dominant + work context
+HUD height                       54px
+finite world fixture             2400 x 1500
+project-plane fixture            2200 x 1320
+map tools                        compact right rail
+compact composer                 bottom-center surface
+current HUD composition          provisional
+specialist internal modules      schematic only
+co-present conversation width    46% provisional
+thread rail in co-present        collapsed provisionally
 ```
 
-P3 is the initial browser default only. No co-present composition has been selected.
-
-Checkpoint 247's E0-E4 remain preserved only as potential full-chat-focus motion evidence. No transition winner was selected.
+Whole-product review should now determine whether these integration-level choices are appropriate.
 
 ---
 
