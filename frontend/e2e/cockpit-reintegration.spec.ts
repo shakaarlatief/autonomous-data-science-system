@@ -372,6 +372,7 @@ test.describe('source-faithful Cockpit reintegration', () => {
       await expect(path).not.toHaveAttribute('d', '')
     }
   })
+
   test('opens the real source-faithful Conversation Workspace without reviving rejected visual systems', async ({ page }) => {
     await page.locator('#conversation-expand').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
