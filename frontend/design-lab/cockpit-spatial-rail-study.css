@@ -1,0 +1,579 @@
+/*
+ * Spatial edge-rail interaction studies.
+ *
+ * These styles are activated only when cockpit-spatial-rail-study.js sets
+ * `data-spatial-rail-study`. They deliberately sit on top of Product Surface
+ * Study A so the real integrated Cockpit remains the evaluation substrate.
+ *
+ * The study does not redefine WorkUnit, relation, navigation, Conversation,
+ * focus or runtime semantics. It explores the still-provisional presentation
+ * and manipulation of the right-side Cockpit tool surface.
+ *
+ * Variants:
+ *   blade  - an edge-attached extruded control blade that widens as it is pulled
+ *   deck   - a layered control deck whose functional groups fan into the world
+ *   float  - a lifted rail that can detach, move over the world and redock
+ */
+
+html[data-spatial-rail-study] {
+  --spatial-rail-pull: 0;
+  --spatial-rail-x: 0px;
+  --spatial-rail-y: 0px;
+  --spatial-rail-accent: 105, 217, 194;
+  --spatial-rail-blue: 128, 163, 232;
+  --spatial-rail-surface: rgba(11, 17, 25, 0.94);
+  --spatial-rail-surface-strong: rgba(15, 23, 34, 0.985);
+  --spatial-rail-edge: rgba(195, 213, 237, 0.16);
+  --spatial-rail-edge-strong: rgba(205, 224, 248, 0.27);
+  --spatial-rail-text: rgba(232, 240, 249, 0.95);
+  --spatial-rail-muted: rgba(162, 179, 201, 0.75);
+}
+
+html[data-spatial-rail-study] .spatial-rail-rig {
+  position: absolute;
+  z-index: 126;
+  top: 68px;
+  right: 10px;
+  width: 58px;
+  height: min(704px, calc(100vh - 150px));
+  transform-style: preserve-3d;
+  perspective: 1050px;
+  pointer-events: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-rig[data-dragging="true"] {
+  z-index: 175;
+}
+
+html[data-spatial-rail-study] .spatial-rail-shell,
+html[data-spatial-rail-study] .spatial-rail-depth-plane,
+html[data-spatial-rail-study] .spatial-rail-tether {
+  position: absolute;
+  inset: 0;
+}
+
+html[data-spatial-rail-study] .spatial-rail-shell {
+  transform-style: preserve-3d;
+  pointer-events: auto;
+}
+
+html[data-spatial-rail-study] .spatial-rail-depth-plane {
+  border: 1px solid rgba(188, 211, 239, 0.09);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(24, 35, 50, 0.44), rgba(9, 14, 21, 0.34));
+  opacity: 0;
+  pointer-events: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-depth-plane[data-depth="1"] {
+  transform: translate3d(6px, 4px, -18px);
+}
+
+html[data-spatial-rail-study] .spatial-rail-depth-plane[data-depth="2"] {
+  transform: translate3d(11px, 8px, -34px);
+}
+
+html[data-spatial-rail-study] .spatial-rail-tether {
+  right: -10px;
+  left: auto;
+  top: 50%;
+  width: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(var(--spatial-rail-blue), 0.48), transparent);
+  transform-origin: right center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  left: -10px;
+  width: 16px;
+  height: 72px;
+  margin-top: -36px;
+  padding: 0;
+  border: 1px solid rgba(191, 213, 241, 0.18);
+  border-right: 0;
+  border-radius: 9px 0 0 9px;
+  background:
+    linear-gradient(90deg, rgba(31, 44, 61, 0.98), rgba(15, 23, 34, 0.96));
+  box-shadow: -8px 0 22px rgba(0, 0, 0, 0.24);
+  color: rgba(194, 211, 231, 0.68);
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip::before,
+html[data-spatial-rail-study] .spatial-rail-grip::after {
+  position: absolute;
+  left: 6px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 8px 0 currentColor, 0 -8px 0 currentColor;
+  content: "";
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip::before {
+  top: 34px;
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip::after {
+  display: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip:hover,
+html[data-spatial-rail-study] .spatial-rail-grip:focus-visible,
+html[data-spatial-rail-study] .spatial-rail-rig[data-dragging="true"] .spatial-rail-grip {
+  border-color: rgba(var(--spatial-rail-accent), 0.34);
+  color: rgba(var(--spatial-rail-accent), 0.92);
+  outline: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip-label {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 9px);
+  width: max-content;
+  padding: 5px 7px;
+  border: 1px solid var(--spatial-rail-edge);
+  border-radius: 7px;
+  background: rgba(9, 14, 21, 0.96);
+  color: rgba(215, 226, 240, 0.86);
+  font-size: 10.5px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(4px, -50%);
+  transition: opacity 120ms ease, transform 120ms ease;
+  white-space: nowrap;
+}
+
+html[data-spatial-rail-study] .spatial-rail-grip:hover .spatial-rail-grip-label,
+html[data-spatial-rail-study] .spatial-rail-grip:focus-visible .spatial-rail-grip-label {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+/* The study replaces the click-to-fold affordance with direct manipulation. */
+html[data-spatial-rail-study] #map-tools-fold {
+  display: none !important;
+}
+
+html[data-spatial-rail-study] .reintegration-tools {
+  position: relative;
+  z-index: 5;
+  top: auto;
+  right: auto;
+  max-height: none;
+  margin: 0;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+
+html[data-spatial-rail-study] .spatial-rail-layer {
+  position: relative;
+}
+
+html[data-spatial-rail-study] .spatial-rail-layer-label {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Study switcher                                                             */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-study] .spatial-rail-study-switcher {
+  position: absolute;
+  z-index: 210;
+  top: 12px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid rgba(190, 208, 232, 0.13);
+  border-radius: 11px;
+  background: rgba(9, 14, 21, 0.88);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+  transform: translateX(-50%);
+  backdrop-filter: blur(16px);
+}
+
+html[data-spatial-rail-study] .spatial-rail-study-switcher > span {
+  padding: 0 7px;
+  color: rgba(151, 171, 197, 0.64);
+  font-size: 8.5px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+html[data-spatial-rail-study] .spatial-rail-study-switcher button {
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: rgba(174, 191, 212, 0.76);
+  cursor: pointer;
+  font-size: 10.5px;
+  font-weight: 650;
+}
+
+html[data-spatial-rail-study] .spatial-rail-study-switcher button:hover,
+html[data-spatial-rail-study] .spatial-rail-study-switcher button:focus-visible,
+html[data-spatial-rail-study] .spatial-rail-study-switcher button[aria-pressed="true"] {
+  border-color: rgba(194, 215, 242, 0.17);
+  background: rgba(25, 35, 49, 0.9);
+  color: rgba(234, 241, 249, 0.95);
+  outline: none;
+}
+
+html[data-spatial-rail-study] .spatial-rail-study-note {
+  position: absolute;
+  z-index: 205;
+  top: 55px;
+  left: 50%;
+  padding: 5px 8px;
+  border: 1px solid rgba(189, 210, 236, 0.1);
+  border-radius: 8px;
+  background: rgba(9, 14, 21, 0.74);
+  color: rgba(157, 177, 202, 0.7);
+  font-size: 9.5px;
+  transform: translateX(-50%);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* A. Extruded Blade                                                          */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-study="blade"] .spatial-rail-rig {
+  width: 58px;
+  transform: translate3d(calc(-1 * var(--spatial-rail-pull) * 154px), 0, 0);
+}
+
+html[data-spatial-rail-study="blade"] .spatial-rail-shell {
+  width: calc(58px + var(--spatial-rail-pull) * 154px);
+  transform-origin: right center;
+  transform:
+    rotateY(calc(-8deg + var(--spatial-rail-pull) * 8deg))
+    translateZ(calc(var(--spatial-rail-pull) * 15px));
+}
+
+html[data-spatial-rail-study="blade"] .spatial-rail-depth-plane {
+  width: calc(58px + var(--spatial-rail-pull) * 154px);
+  opacity: calc(0.12 + var(--spatial-rail-pull) * 0.5);
+}
+
+html[data-spatial-rail-study="blade"] .spatial-rail-tether {
+  width: calc(12px + var(--spatial-rail-pull) * 154px);
+  opacity: calc(var(--spatial-rail-pull) * 0.72);
+  transform: translateX(calc(var(--spatial-rail-pull) * 154px));
+}
+
+html[data-spatial-rail-study="blade"] .reintegration-tools {
+  width: calc(48px + var(--spatial-rail-pull) * 154px);
+  border-color: rgba(195, 214, 239, calc(0.14 + var(--spatial-rail-pull) * 0.08));
+  border-radius: 13px;
+  background:
+    linear-gradient(90deg, rgba(12, 18, 27, 0.99), rgba(15, 23, 34, 0.96));
+  box-shadow:
+    calc(-8px - var(--spatial-rail-pull) * 12px) 15px calc(32px + var(--spatial-rail-pull) * 26px) rgba(0, 0, 0, 0.28),
+    inset -1px 0 0 rgba(221, 232, 246, 0.04);
+}
+
+html[data-spatial-rail-study="blade"] .reintegration-tools::after {
+  position: absolute;
+  top: 8px;
+  right: -5px;
+  bottom: 8px;
+  width: 5px;
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(180deg, rgba(124, 153, 194, 0.22), rgba(23, 32, 46, 0.56));
+  box-shadow: 4px 0 14px rgba(0, 0, 0, 0.28);
+  content: "";
+  opacity: calc(0.5 + var(--spatial-rail-pull) * 0.5);
+}
+
+html[data-spatial-rail-study="blade"] .spatial-rail-layer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+html[data-spatial-rail-study="blade"] .spatial-rail-layer + .spatial-rail-layer {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(193, 213, 239, 0.1);
+}
+
+html[data-spatial-rail-study="blade"] .spatial-rail-layer-label {
+  display: block;
+  height: calc(var(--spatial-rail-pull) * 19px);
+  padding: 0 9px;
+  overflow: hidden;
+  color: rgba(144, 166, 195, 0.58);
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  line-height: 19px;
+  opacity: var(--spatial-rail-pull);
+  text-transform: uppercase;
+}
+
+html[data-spatial-rail-study="blade"] .reintegration-tools button,
+html[data-spatial-rail-study="blade"] #zoom-readout {
+  width: 100%;
+}
+
+html[data-spatial-rail-study="blade"] .reintegration-tools button {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: center;
+  justify-items: start;
+  padding: 0 8px 0 0;
+  overflow: hidden;
+}
+
+html[data-spatial-rail-study="blade"] .reintegration-tools button::before {
+  grid-column: 1;
+  grid-row: 1;
+  width: 36px;
+}
+
+html[data-spatial-rail-study="blade"] .reintegration-tools button[data-tooltip]::after {
+  position: static;
+  grid-column: 2;
+  grid-row: 1;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(213, 225, 240, 0.83);
+  content: attr(data-tooltip);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: var(--spatial-rail-pull);
+  pointer-events: none;
+  transform: translateX(calc((1 - var(--spatial-rail-pull)) * 10px));
+  transition: none;
+  white-space: nowrap;
+}
+
+html[data-spatial-rail-study="blade"] #zoom-readout {
+  padding-left: calc(var(--spatial-rail-pull) * 40px);
+  text-align: left;
+}
+
+/* -------------------------------------------------------------------------- */
+/* B. Layered Deck                                                            */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-study="deck"] .spatial-rail-rig {
+  width: 58px;
+  transform: translate3d(calc(-1 * var(--spatial-rail-pull) * 22px), 0, 0);
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-shell {
+  transform: translateZ(calc(var(--spatial-rail-pull) * 12px));
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-depth-plane {
+  opacity: calc(var(--spatial-rail-pull) * 0.42);
+}
+
+html[data-spatial-rail-study="deck"] .reintegration-tools {
+  width: 48px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 48px;
+  padding: 5px;
+  border: 1px solid rgba(193, 214, 241, 0.15);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(13, 20, 30, 0.985), rgba(10, 15, 23, 0.96));
+  box-shadow: -10px 15px 34px rgba(0, 0, 0, 0.24);
+  transform-origin: right center;
+  transition: opacity 120ms linear;
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-layer[data-layer="navigation"] {
+  z-index: 5;
+  transform:
+    translate3d(calc(-1 * var(--spatial-rail-pull) * 0px), 0, 8px)
+    rotateY(calc(-5deg + var(--spatial-rail-pull) * 5deg));
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-layer[data-layer="work"] {
+  z-index: 4;
+  opacity: calc(0.08 + var(--spatial-rail-pull) * 0.92);
+  transform:
+    translate3d(calc(-1 * var(--spatial-rail-pull) * 64px), 18px, -5px)
+    rotateY(calc(-8deg + var(--spatial-rail-pull) * 11deg));
+  pointer-events: none;
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-layer[data-layer="system"] {
+  z-index: 3;
+  opacity: calc(0.04 + var(--spatial-rail-pull) * 0.96);
+  transform:
+    translate3d(calc(-1 * var(--spatial-rail-pull) * 128px), 36px, -16px)
+    rotateY(calc(-10deg + var(--spatial-rail-pull) * 16deg));
+  pointer-events: none;
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-rig[data-open="true"] .spatial-rail-layer[data-layer="work"],
+html[data-spatial-rail-study="deck"] .spatial-rail-rig[data-open="true"] .spatial-rail-layer[data-layer="system"] {
+  pointer-events: auto;
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-layer::before {
+  position: absolute;
+  top: 8px;
+  right: calc(100% + 6px);
+  width: max-content;
+  padding: 4px 5px;
+  border: 1px solid rgba(190, 211, 238, 0.1);
+  border-radius: 6px;
+  background: rgba(9, 14, 21, 0.88);
+  color: rgba(149, 169, 195, 0.66);
+  content: attr(data-layer-label);
+  font-size: 7.5px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  opacity: var(--spatial-rail-pull);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-tether {
+  width: calc(10px + var(--spatial-rail-pull) * 150px);
+  opacity: calc(var(--spatial-rail-pull) * 0.45);
+  transform: translateX(calc(var(--spatial-rail-pull) * 22px));
+}
+
+html[data-spatial-rail-study="deck"] .spatial-rail-grip {
+  left: -9px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* C. Dock and Float                                                          */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-study="float"] .spatial-rail-rig {
+  right: 10px;
+  transform: translate3d(var(--spatial-rail-x), var(--spatial-rail-y), 0);
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-shell {
+  transform-origin: right center;
+  transform:
+    translateZ(calc(var(--spatial-rail-pull) * 34px))
+    rotateY(calc(-6deg + var(--spatial-rail-pull) * 8deg))
+    rotateZ(calc(var(--spatial-rail-pull) * -0.7deg));
+}
+
+html[data-spatial-rail-study="float"] .reintegration-tools {
+  border-color: rgba(196, 216, 242, calc(0.14 + var(--spatial-rail-pull) * 0.13));
+  background: rgba(10, 16, 24, calc(0.93 + var(--spatial-rail-pull) * 0.05));
+  box-shadow:
+    calc(-8px - var(--spatial-rail-pull) * 18px)
+    calc(13px + var(--spatial-rail-pull) * 8px)
+    calc(32px + var(--spatial-rail-pull) * 38px)
+    rgba(0, 0, 0, calc(0.23 + var(--spatial-rail-pull) * 0.17));
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-depth-plane {
+  opacity: calc(var(--spatial-rail-pull) * 0.6);
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-tether {
+  width: calc(12px + var(--spatial-rail-pull) * 180px);
+  opacity: calc((1 - var(--spatial-rail-pull)) * 0.4 + 0.16);
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-rig[data-state="floating"] .spatial-rail-tether {
+  opacity: 0;
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-rig[data-state="floating"] .spatial-rail-grip {
+  cursor: grab;
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-rig[data-state="floating"][data-dragging="true"] .spatial-rail-grip {
+  cursor: grabbing;
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-rig[data-state="floating"]::after {
+  position: absolute;
+  right: 58px;
+  top: 2px;
+  width: max-content;
+  padding: 4px 6px;
+  border: 1px solid rgba(var(--spatial-rail-accent), 0.15);
+  border-radius: 6px;
+  background: rgba(9, 14, 21, 0.82);
+  color: rgba(var(--spatial-rail-accent), 0.68);
+  content: "FLOATING TOOLS";
+  font-size: 7.5px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+html[data-spatial-rail-study="float"] .spatial-rail-rig[data-snap-zone="true"]::before {
+  position: fixed;
+  z-index: -1;
+  top: 64px;
+  right: 4px;
+  bottom: 92px;
+  width: 68px;
+  border: 1px solid rgba(var(--spatial-rail-accent), 0.22);
+  border-radius: 14px;
+  background: linear-gradient(90deg, transparent, rgba(var(--spatial-rail-accent), 0.055));
+  box-shadow: inset -8px 0 24px rgba(var(--spatial-rail-accent), 0.05);
+  content: "";
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Full-focus and reduced-motion boundaries                                   */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-study][data-conversation-open="true"][data-conversation-presentation="full"] .spatial-rail-rig,
+html[data-spatial-rail-study]:not([data-deep-focus="false"]) .spatial-rail-rig,
+html[data-spatial-rail-study][data-conversation-open="true"][data-conversation-presentation="full"] .spatial-rail-study-switcher,
+html[data-spatial-rail-study]:not([data-deep-focus="false"]) .spatial-rail-study-switcher,
+html[data-spatial-rail-study][data-conversation-open="true"][data-conversation-presentation="full"] .spatial-rail-study-note,
+html[data-spatial-rail-study]:not([data-deep-focus="false"]) .spatial-rail-study-note {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html[data-spatial-rail-study][data-reduced="on"] .spatial-rail-grip-label,
+html[data-spatial-rail-study][data-reduced="on"] .spatial-rail-layer,
+html[data-spatial-rail-study][data-reduced="on"] .spatial-rail-study-switcher button {
+  transition: none !important;
+}
