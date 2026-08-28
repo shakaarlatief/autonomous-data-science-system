@@ -5,7 +5,7 @@ on:
     branches:
       - v1-cockpit-design-exploration
     paths:
-      - frontend/design-lab/cockpit-reintegration.*
+      - frontend/design-lab/cockpit-reintegration*
       - frontend/e2e/cockpit-reintegration.spec.ts
       - frontend/design-lab/grid-world.css
       - frontend/design-lab/work-unit-grammar.css
@@ -16,14 +16,21 @@ on:
       - frontend/design-lab/work-unit-blocked-carrier-ring-swap.css
       - frontend/design-lab/work-unit-attention-priority.css
       - frontend/design-lab/work-unit-selection-state.css
-      - frontend/design-lab/work-unit-selection-state.js
+      - frontend/design-lab/work-unit-detail-expansion.css
+      - frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
+      - frontend/design-lab/work-unit-detail-expansion.js
+      - frontend/design-lab/work-unit-detail-expansion-x5-accepted.js
       - frontend/design-lab/work-unit-grammar.js
       - frontend/design-lab/relation-class-grammar.css
       - .github/workflows/cockpit-reintegration-fidelity.yml
   pull_request:
     paths:
-      - frontend/design-lab/cockpit-reintegration.*
+      - frontend/design-lab/cockpit-reintegration*
       - frontend/e2e/cockpit-reintegration.spec.ts
+      - frontend/design-lab/work-unit-detail-expansion.css
+      - frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
+      - frontend/design-lab/work-unit-detail-expansion.js
+      - frontend/design-lab/work-unit-detail-expansion-x5-accepted.js
       - .github/workflows/cockpit-reintegration-fidelity.yml
   workflow_dispatch:
 
