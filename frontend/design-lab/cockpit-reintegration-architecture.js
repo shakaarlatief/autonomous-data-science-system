@@ -5,21 +5,25 @@
  *   docs/specifications/008_v1_project_cockpit_interaction_architecture.md
  *   accepted integration source ed5b60bdc882bed0799ce55228ce8187f9c55aa1
  *
- * This file restores promoted interaction capabilities that were not yet
- * carried by the Phase-C design-lab reintegration: viewport-owned stage
- * orientation, fold-away chrome, fullscreen state synchronization and
- * URL-reconstructable important focus/deep-work state.
+ * This file restores promoted interaction capabilities that can be composed
+ * faithfully into the current Phase-C fixture: fold-away chrome, fullscreen
+ * state synchronization and URL-reconstructable important focus/deep-work
+ * state.
  *
- * Exact shell geometry, labels and URL parameter names remain provisional as
+ * Viewport-owned semantic stage orientation is deliberately NOT synthesized
+ * here. Specification 008 promotes the capability, but the current Phase-C
+ * fixture is not a horizontally ordered semantic stage plane. Inventing stage
+ * labels/geometry in this fidelity pass would turn integration into redesign.
+ * The capability remains a production/semantic-plane obligation.
+ *
+ * Exact shell geometry and URL parameter names remain provisional because
  * Specification 008 explicitly leaves those presentation/contracts unfrozen.
  */
 
 const root = document.documentElement
 const shell = document.querySelector('#reintegration-shell')
-const stage = document.querySelector('#reintegration-stage')
 const hud = document.querySelector('.reintegration-hud')
 const tools = document.querySelector('.reintegration-tools')
-const plane = document.querySelector('#reintegration-world-plane')
 const fullscreenButton = document.querySelector('#fullscreen-world')
 const appearancePanel = document.querySelector('#reintegration-appearance-panel')
 const appearanceToggle = document.querySelector('#appearance-controls-toggle')
@@ -28,23 +32,12 @@ const NODE_SELECTOR = '.expansion-practical-node'
 const ADDRESSABLE_KEYS = new Set(['q', 'i', 'v', 'm', 'r', 'e'])
 const X5_SETTLE_MS = 380
 
-const stageDefinitions = [
-  { label: 'Framing', key: 'q' },
-  { label: 'Investigation', key: 'i' },
-  { label: 'Validation', key: 'v' },
-  { label: 'Modeling', key: 'm' },
-  { label: 'Evaluation', key: 'e' },
-]
-
-let rulerFrame = 0
 let urlFrame = 0
 let suppressUrlWrite = false
 let lastAddressableSignature = ''
 
 installStylesheet()
 mountChromeControls()
-mountStageRuler()
-installStageRulerSynchronization()
 installFullscreenSynchronization()
 installFloatingSurfaceSafety()
 installAddressableState()
@@ -107,7 +100,6 @@ function setMapToolsFolded(folded) {
     button.setAttribute('aria-pressed', String(folded))
     button.setAttribute('aria-label', folded ? 'Restore map controls' : 'Fold map controls')
   }
-  scheduleRulerSync()
 }
 
 function setHudVisible(visible) {
@@ -118,91 +110,6 @@ function setHudVisible(visible) {
   if (restore) restore.hidden = visible
 
   if (!visible) closeFloatingPanels()
-  scheduleRulerSync()
-}
-
-function mountStageRuler() {
-  if (!stage || document.querySelector('#reintegration-stage-ruler')) return
-
-  const ruler = document.createElement('aside')
-  ruler.id = 'reintegration-stage-ruler'
-  ruler.className = 'reintegration-stage-ruler'
-  ruler.setAttribute('aria-label', 'Project stage orientation')
-  ruler.innerHTML = `
-    <span class="reintegration-stage-ruler-title">PROJECT ORIENTATION</span>
-    <div class="reintegration-stage-ruler-track" id="reintegration-stage-ruler-track">
-      ${stageDefinitions.map((item) => `<span class="reintegration-stage-marker" data-stage-key="${item.key}">${item.label}</span>`).join('')}
-    </div>
-  `
-  stage.appendChild(ruler)
-  scheduleRulerSync()
-}
-
-function installStageRulerSynchronization() {
-  if (!stage) return
-
-  const schedule = () => scheduleRulerSync()
-  stage.addEventListener('wheel', schedule, { passive: true })
-  stage.addEventListener('pointermove', schedule, { passive: true })
-  stage.addEventListener('keydown', schedule)
-  stage.addEventListener('click', schedule)
-  window.addEventListener('resize', schedule, { passive: true })
-
-  if ('ResizeObserver' in window) {
-    const observer = new ResizeObserver(schedule)
-    observer.observe(stage)
-    const world = document.querySelector('#reintegration-world')
-    if (world) observer.observe(world)
-  }
-
-  if ('MutationObserver' in window) {
-    const observer = new MutationObserver(schedule)
-    if (plane) observer.observe(plane, { attributes: true, attributeFilter: ['style'] })
-    const host = document.querySelector('#expansion-practical-nodes')
-    if (host) observer.observe(host, {
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['data-expanded', 'data-selected', 'style'],
-    })
-  }
-}
-
-function scheduleRulerSync() {
-  if (rulerFrame) cancelAnimationFrame(rulerFrame)
-  rulerFrame = requestAnimationFrame(() => {
-    rulerFrame = requestAnimationFrame(() => {
-      rulerFrame = 0
-      syncStageRuler()
-    })
-  })
-}
-
-function syncStageRuler() {
-  const track = document.querySelector('#reintegration-stage-ruler-track')
-  if (!stage || !track) return
-
-  const stageRect = stage.getBoundingClientRect()
-  const first = document.querySelector(`${NODE_SELECTOR}[data-node-key="q"] .node-surface`)
-  const last = document.querySelector(`${NODE_SELECTOR}[data-node-key="e"] .node-surface`)
-  if (!first || !last) return
-
-  const firstRect = first.getBoundingClientRect()
-  const lastRect = last.getBoundingClientRect()
-  const semanticLeft = firstRect.left - stageRect.left
-  const semanticRight = lastRect.right - stageRect.left
-  const semanticWidth = Math.max(1, semanticRight - semanticLeft)
-
-  track.style.left = `${semanticLeft}px`
-  track.style.width = `${semanticWidth}px`
-
-  for (const item of stageDefinitions) {
-    const node = document.querySelector(`${NODE_SELECTOR}[data-node-key="${item.key}"] .node-surface`)
-    const marker = track.querySelector(`[data-stage-key="${item.key}"]`)
-    if (!node || !marker) continue
-    const rect = node.getBoundingClientRect()
-    const center = rect.left - stageRect.left + rect.width / 2
-    marker.style.left = `${center - semanticLeft}px`
-  }
 }
 
 function installFullscreenSynchronization() {
@@ -213,7 +120,6 @@ function installFullscreenSynchronization() {
       fullscreenButton.textContent = active ? 'Exit fullscreen' : 'Fullscreen'
       fullscreenButton.setAttribute('aria-pressed', String(active))
     }
-    scheduleRulerSync()
   }
 
   document.addEventListener('fullscreenchange', sync)
@@ -235,7 +141,6 @@ function installFloatingSurfaceSafety() {
       if (root.dataset.deepFocus !== 'false' || root.dataset.conversationOpen === 'true') {
         closeFloatingPanels()
       }
-      scheduleRulerSync()
     })
     observer.observe(root, {
       attributes: true,
@@ -270,10 +175,7 @@ function installAddressableState() {
 
     const host = document.querySelector('#expansion-practical-nodes')
     if (host) {
-      const nodeObserver = new MutationObserver(() => {
-        scheduleAddressableWrite()
-        scheduleRulerSync()
-      })
+      const nodeObserver = new MutationObserver(() => scheduleAddressableWrite())
       nodeObserver.observe(host, {
         subtree: true,
         attributes: true,
@@ -333,7 +235,8 @@ async function restoreAddressableState() {
   suppressUrlWrite = true
   try {
     const params = new URLSearchParams(window.location.search)
-    const desiredWork = ADDRESSABLE_KEYS.has(params.get('work') || '') ? params.get('work') : 'i'
+    const requestedWork = params.get('work') || ''
+    const desiredWork = ADDRESSABLE_KEYS.has(requestedWork) ? requestedWork : 'i'
     const desiredDepth = params.get('depth') === 'deep'
       ? 'deep'
       : params.get('depth') === 'x5'
@@ -369,7 +272,6 @@ async function restoreAddressableState() {
     }
 
     lastAddressableSignature = addressableState().signature
-    scheduleRulerSync()
   } finally {
     suppressUrlWrite = false
   }
