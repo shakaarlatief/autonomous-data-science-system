@@ -30,6 +30,7 @@ mountSpatialToolRail()
 installJumpPalette()
 installContinuousGridSync()
 installSurfaceOwnershipSync()
+installOptionalSpatialRailStudy()
 
 function mountSpatialToolRail() {
   if (!stage || !tools || tools.dataset.productRailMounted === 'true') return
@@ -240,5 +241,24 @@ function installSurfaceOwnershipSync() {
   observer.observe(root, {
     attributes: true,
     attributeFilter: ['data-deep-focus', 'data-conversation-open', 'data-conversation-presentation'],
+  })
+}
+
+/* -------------------------------------------------------------------------- */
+/* Optional advanced edge-rail study                                          */
+/* -------------------------------------------------------------------------- */
+
+function installOptionalSpatialRailStudy() {
+  const rail = new URLSearchParams(window.location.search).get('rail')
+  if (!['blade', 'deck', 'float'].includes(rail || '')) return
+
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = './cockpit-spatial-rail-study.css'
+  link.dataset.spatialRailStudyAsset = 'true'
+  document.head.appendChild(link)
+
+  import('./cockpit-spatial-rail-study.js').catch((error) => {
+    console.error('Spatial rail study failed to load', error)
   })
 }
