@@ -54,6 +54,13 @@ Phase C Conversation Workspace entry / return transition
     Checkpoint 247
     Research 085
     transition browser target 43ee0ae0ffc63eba6e99a42e9157568c53cc8806
+    no transition selected
+    later determined to be too narrowly framed around X5 -> full-chat replacement
+
+Phase C Conversation access + coexistence
+    Checkpoint 248
+    Research 086
+    conversation access/coexistence browser target db31970d6885ce785609f9c3300f22123130d821
 ```
 
 ## Preserved accepted / working Phase-C results
@@ -159,65 +166,11 @@ Exact A6 floating-box removal:
 
 ## Claude Message 010 disposition
 
-Claude inspected the actual browser source and identified four meaningful implementation/design gaps:
+Claude's code-grounded findings and later ontology/density ideas remain preserved. Its B1-B4 additional composition treatments were explicitly judged irrelevant to the already chosen Conversation Workspace look and remain historical evidence rather than active alternatives.
 
-```text
-BLOCKED / DEFER home fixtures were visible but not selectable
-A6 expanded to the same content as A5 rather than richer context
-compact canonical variants lost too much grammar at small scale
-archived threads fell back to text even in Boxes mode
-```
+## Checkpoint 247 disposition
 
-Claude also proposed a promising future distinction:
-
-```text
-HOME
-PINNED CONTEXT
-PER-TURN CONTEXT
-```
-
-and recommended generalizing future conversation homes beyond WorkUnit to any addressable project object.
-
-Those ideas remain preserved for later ontology/persistence work.
-
-Claude's additional composition proposals from Research 084:
-
-```text
-B1 Breadcrumb Thread
-B2 Scroll-Responsive Presence
-B3 Object-Anchored Gutter
-B4 Wrapped Around Object
-```
-
-were explicitly judged irrelevant to the already chosen Conversation Workspace look by the project owner. They remain historical research evidence rather than active design candidates.
-
-## Current Slice 02R: Conversation Workspace entry / return transition
-
-Checkpoint:
-
-```text
-247
-```
-
-Research:
-
-```text
-docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
-```
-
-Browser:
-
-```text
-http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
-```
-
-Initial implementation target:
-
-```text
-43ee0ae0ffc63eba6e99a42e9157568c53cc8806
-```
-
-The destination composition is held constant. Only spatial entry and return change.
+Research 085 and E0-E4 remain useful **full-chat-focus transition choreography** evidence only.
 
 ```text
 E0 Direct Replace
@@ -227,20 +180,89 @@ E3 Pull-Back Then Dive
 E4 X5 Aperture
 ```
 
-Return modifier:
+No winner was selected because the project owner clarified that the architecture must first support conversation across every work state and simultaneous work+chat compositions.
+
+## Current Slice: Conversation access + coexistence
+
+Checkpoint:
 
 ```text
-Fast direct return
-Symmetric return
+248
 ```
 
-E3 is the initial browser default only and is not selected.
+Research:
+
+```text
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+```
+
+Browser:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
+```
+
+Factorized product model:
+
+```text
+WORK CONTEXT
+    Grid neutral
+    Grid selected
+    Grid X5 expanded
+    Deep Dive
+
+x
+
+CONVERSATION PRESENTATION
+    compact / work only
+    full chat focus
+    co-present work + chat
+
+x
+
+CONVERSATION SCOPE
+    project-general
+    work-unit-scoped
+```
+
+Required access paths:
+
+```text
+Global Conversations from any Grid state
+Open this conversation from work unit/X5
+Global Conversations from Deep Dive
+Chat about this work unit from Deep Dive
+thread switching without mutating work context
+close/collapse chat restores underlying work context
+```
+
+Research 079 is recovered as co-presence evidence:
+
+```text
+CV0 Focus Workspace        -> full chat focus baseline
+CV1 Right Dock             -> work-primary co-present candidate
+CV2 Split Workbench        -> balanced co-present candidate
+CV5 Focus + Context Rail   -> chat-dominant co-present candidate
+CV6 Conversation + Inspector -> focused-context evidence
+```
+
+Current browser presentation modes:
+
+```text
+P0 Work only / compact chat
+P1 Full chat focus
+P2 Right dock
+P3 Balanced split
+P4 Chat dominant + work context
+```
+
+P3 is only the initial browser default. No co-present composition is selected.
 
 ## Current collaboration gate
 
 ```text
 next actor: human project owner
-mode: transition browser review
+mode: conversation access + coexistence browser review
 pending Claude obligation: none
 ```
 
@@ -248,4 +270,4 @@ pending Claude obligation: none
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final Conversation Workspace entry/return choreography, pinned-context promotion, historical-state semantics, conversation persistence/session model, home/anchor schema, non-work-unit homes, search/archive/fork lifecycle, message-to-project linking semantics, conversation URL state, exact sidebar preference scope, semantic zoom, large-project virtualization, compass semantics, specialist-workspace composition and final production visual system.
+Still unfrozen includes final co-present Conversation Workspace composition, split proportions/resizing, thread-rail behavior under constrained widths, full-chat-focus transition choreography, conversation URL/session state, persistence/lifecycle, pinned context promotion, historical-state semantics, semantic zoom, large-project virtualization, compass semantics, specialist-workspace composition and final production visual system.
