@@ -130,11 +130,33 @@ frontend/design-lab/conversation-workspace-work-unit-anchor.css
 frontend/design-lab/conversation-workspace-work-unit-anchor.js
 ```
 
-Exact initial implementation target:
+Initial implementation target:
 
 ```text
 56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
 ```
+
+Current repaired browser implementation target:
+
+```text
+9a5443f3fb248d38768c4fedf48a025a6eda6016
+```
+
+The later commit `145e96a502b23c513e14ca3520412d7acf0aa625` only removes an unused, unreferenced CSS override file and does not change rendered browser behavior.
+
+Two semantic/interaction repairs were made after the initial target:
+
+```text
+thread active state
+    only the actual active conversation is highlighted
+    not every work-unit-scoped conversation simultaneously
+
+conversation home artifact
+    does NOT reuse SEL2 corner brackets
+    because home/ownership != persistent selection
+```
+
+That second correction is important. A conversation being owned by a work unit must not visually imply that the same work unit is currently selected on the project map.
 
 Production `/cockpit` remains untouched.
 
@@ -285,7 +307,19 @@ Should the work-unit artifact expand back toward X5 contextual detail on demand?
 
 The independent round is complete, so the next Claude contribution does not need to remain blind.
 
-Claude should be asked to inspect the new requirement and browser, challenge the proposed semantic distinction and anchor mechanisms, and add any materially different ideas for:
+Claude request:
+
+```text
+docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
+```
+
+Expected output:
+
+```text
+MC-0004 Message 010
+```
+
+Claude is asked to inspect the new requirement and browser, challenge the proposed semantic distinction and anchor mechanisms, and add any materially different ideas for:
 
 ```text
 conversation ownership / home semantics
@@ -299,7 +333,7 @@ No artificial candidate-count limit applies.
 
 ## 11. Checkpoint disposition
 
-The prior whole-system visual comparison has materially changed state:
+The prior whole-system visual comparison materially changed state:
 
 ```text
 Quiet Graphite selected as current baseline
@@ -307,4 +341,4 @@ other rendered visual systems rejected
 new active question = conversation scope + work-unit anchoring
 ```
 
-A new checkpoint is therefore warranted.
+Checkpoint 246 therefore opens the current product-design boundary.
