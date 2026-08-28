@@ -1,0 +1,34 @@
+/*
+ * X5 integration adapter.
+ *
+ * work-unit-detail-expansion.css uses 244 x 102 px compact cards because its
+ * comparison fixture was intentionally enlarged. The holistic Project Grid
+ * instead carries M03's canonical 176 x 92 px compact geometry, while the
+ * accepted X5 expanded geometry remains exactly 390 x 210 px.
+ *
+ * Only compact fixture placement is adapted here. X5 expansion geometry,
+ * detail structure, transition and the no-context-recession refinement remain
+ * owned by the exact accepted source stylesheets.
+ */
+
+.reintegration-world .expansion-practical-node:not([data-expanded="true"]) {
+  width: 176px;
+  height: 92px;
+}
+
+.reintegration-world .expansion-practical-node.scene-q { left: 7%; top: 14%; }
+.reintegration-world .expansion-practical-node.scene-i { left: 34%; top: 24%; }
+.reintegration-world .expansion-practical-node.scene-v { left: 68%; top: 14%; }
+.reintegration-world .expansion-practical-node.scene-m { left: 69%; top: 60%; }
+.reintegration-world .expansion-practical-node.scene-r { left: 36%; top: 63%; }
+.reintegration-world .expansion-practical-node.scene-e { left: 8%; top: 67%; }
+
+/* Preserve the exact accepted X5 dimensions against compact adapter rules. */
+.reintegration-world .expansion-practical-node[data-expanded="true"][data-expansion-style="x5"] {
+  width: 390px;
+  height: 210px;
+}
+
+.reintegration-world .expansion-practical-node[data-expanded="true"][data-expansion-style="x5"] .node-surface {
+  height: 210px;
+}
