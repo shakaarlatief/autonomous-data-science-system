@@ -1,16 +1,17 @@
 import { expect, test } from '@playwright/test'
 
 const route = '/design-lab/cockpit-reintegration.html'
+const nodeSelector = '.expansion-practical-node'
 
 test.describe('source-faithful Cockpit reintegration', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1600, height: 1000 })
     await page.goto(route)
-    await expect(page.locator('.selection-practical-node')).toHaveCount(6)
+    await expect(page.locator(nodeSelector)).toHaveCount(6)
   })
 
-  test('mounts canonical WorkUnit geometry and accepted semantic carriers', async ({ page }) => {
-    const nodes = page.locator('.selection-practical-node')
+  test('mounts canonical compact WorkUnit geometry and accepted semantic carriers', async ({ page }) => {
+    const nodes = page.locator(nodeSelector)
 
     for (let index = 0; index < 6; index += 1) {
       const box = await nodes.nth(index).boundingBox()
@@ -19,7 +20,7 @@ test.describe('source-faithful Cockpit reintegration', () => {
       expect(box?.height).toBeCloseTo(92, 0)
     }
 
-    const selected = page.locator('.selection-practical-node[data-node-key="i"]')
+    const selected = page.locator(`${nodeSelector}[data-node-key="i"]`)
     await expect(selected).toHaveAttribute('data-selected', 'true')
     await expect(selected).toHaveAttribute('data-selection-style', 'sel2')
 
@@ -78,7 +79,43 @@ test.describe('source-faithful Cockpit reintegration', () => {
     }
   })
 
-  test('supports Specification 008 map recovery primitives without mutating WorkUnit state', async ({ page }) => {
+  test('reuses accepted X5 two-axis expansion without context recession', async ({ page }) => {
+    const html = page.locator('html')
+    const selected = page.locator(`${nodeSelector}[data-node-key="i"]`)
+    const contextNode = page.locator(`${nodeSelector}[data-node-key="v"]`)
+
+    await expect(html).toHaveAttribute('data-expansion-style', 'x5')
+    await expect(selected).toHaveAttribute('data-expanded', 'false')
+    await expect(page.locator('#toggle-detail')).toHaveText('Expand')
+
+    await page.locator('#toggle-detail').click()
+    await expect(selected).toHaveAttribute('data-expanded', 'true')
+    await expect(html).toHaveAttribute('data-scene-expanded', 'true')
+    await expect(page.locator('#toggle-detail')).toHaveText('Collapse')
+    await expect(page.locator('#detail-state-label')).toContainText('X5 expanded')
+
+    await page.waitForTimeout(380)
+    const expandedBox = await selected.boundingBox()
+    expect(expandedBox).not.toBeNull()
+    expect(expandedBox?.width).toBeCloseTo(390, 0)
+    expect(expandedBox?.height).toBeCloseTo(210, 0)
+
+    /* Accepted X5 refinement explicitly removed surrounding context recession. */
+    await expect(contextNode).toHaveCSS('opacity', '1')
+    await expect(contextNode).toHaveCSS('filter', 'none')
+    await expect(page.locator('#reintegration-relations')).toHaveCSS('opacity', '1')
+
+    await page.locator('#toggle-detail').click()
+    await expect(selected).toHaveAttribute('data-expanded', 'false')
+    await expect(html).toHaveAttribute('data-scene-expanded', 'false')
+    await page.waitForTimeout(380)
+
+    const compactBox = await selected.boundingBox()
+    expect(compactBox?.width).toBeCloseTo(176, 0)
+    expect(compactBox?.height).toBeCloseTo(92, 0)
+  })
+
+  test('supports Specification 008 map recovery primitives without mutating WorkUnit semantics', async ({ page }) => {
     const initialTransform = await page.locator('#reintegration-world-plane').evaluate((element: HTMLElement) => element.style.transform)
 
     await page.locator('#zoom-in').click()
@@ -92,11 +129,12 @@ test.describe('source-faithful Cockpit reintegration', () => {
 
     await page.locator('#jump-input').fill('Boosted candidate')
     await page.locator('#jump-button').click()
-    await expect(page.locator('.selection-practical-node[data-node-key="m"]')).toHaveAttribute('data-selected', 'true')
+    await expect(page.locator(`${nodeSelector}[data-node-key="m"]`)).toHaveAttribute('data-selected', 'true')
+    await expect(page.locator(`${nodeSelector}[data-node-key="m"]`)).toHaveAttribute('data-expanded', 'false')
     await expect(page.locator('#selected-work-label')).toContainText('Boosted candidate')
 
-    await expect(page.locator('.selection-practical-node[data-node-key="m"]')).toHaveAttribute('data-status-code', 'FAIL')
-    await expect(page.locator('.selection-practical-node[data-node-key="m"]')).toHaveAttribute('data-priority', 'high')
+    await expect(page.locator(`${nodeSelector}[data-node-key="m"]`)).toHaveAttribute('data-status-code', 'FAIL')
+    await expect(page.locator(`${nodeSelector}[data-node-key="m"]`)).toHaveAttribute('data-priority', 'high')
   })
 
   test('does not silently substitute a fake Conversation Workspace', async ({ page }) => {
