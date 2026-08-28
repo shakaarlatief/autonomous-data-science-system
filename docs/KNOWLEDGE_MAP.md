@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-28  
-**Current checkpoint:** 250  
+**Current checkpoint:** 251  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -18,23 +18,56 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/250_integrated_cockpit_fidelity_failure_recovery_audit_opened.md
-docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
+docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+
+docs/cockpit/README.md
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/cockpit/accepted_implementation_manifest.json
 ```
 
 Current route:
 
 ```text
-checkpoint                250
+checkpoint                251
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          integrated Cockpit fidelity recovery audit
+current boundary          source-faithful holistic Cockpit reintegration
 ```
 
 ---
 
-# Critical recovery finding
+# Provenance recovery status
+
+The implementation-provenance recovery opened after the failed holistic browser is now complete at the source-binding layer.
+
+Durable gate:
+
+```text
+scripts/check_cockpit_implementation_manifest.py
+.github/workflows/cockpit-implementation-provenance.yml
+```
+
+First full-history verification:
+
+```text
+workflow run  33156357834
+commit        2127563c0ed980f7bf6fad36e36b11e76500c59b
+
+Cockpit implementation manifest: PASS
+entries=23 required=19 non_promotable=4
+exact historical source verification: PASS
+```
+
+Therefore every current manifest source binding resolves at its declared exact historical target.
+
+This closes the **provenance gate**, not the integrated visual/interaction fidelity gate.
+
+---
+
+# Failed integration remains excluded
 
 The holistic browser frozen at:
 
@@ -44,9 +77,9 @@ The holistic browser frozen at:
 
 failed fidelity review and is **not an accepted Cockpit baseline**.
 
-Research 088 found that the repository still preserves exact target SHAs and executable accepted artifacts, but the failed integration manually reimplemented the design from semantic summaries.
+Research 088 found that the repository preserved exact target SHAs and executable accepted artifacts, but the failed integration manually reimplemented the design from semantic summaries.
 
-Observed divergences include:
+Observed divergences included:
 
 ```text
 canonical WorkUnit geometry/surface grammar
@@ -63,13 +96,43 @@ docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_a
 frontend/design-lab/cockpit-integrated-baseline.html
 ```
 
-Do not use that browser as a visual source of truth.
+Do not use that browser as a visual source of truth or as the parent implementation of the replacement browser.
 
 ---
 
-# Accepted implementation provenance that must be recovered exactly
+# Cockpit source-of-truth architecture
 
-Current exact targets include:
+Use three layers together:
+
+```text
+SEMANTIC / PRODUCT AUTHORITY
+    accepted specifications
+    foundations
+    explicit human-reviewed research selections
+
+DESIGN DISPOSITION
+    docs/cockpit/PHASE_C_DECISION_LEDGER.md
+    selected / provisional / deferred / rejected / diagnostic
+
+IMPLEMENTATION PROVENANCE
+    docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+    docs/cockpit/accepted_implementation_manifest.json
+    exact integration SHA + source files + invariants + adaptation boundary
+```
+
+A future integrator must not infer implementation details from labels such as G4, H4, SEL2, X5, Quiet Graphite or A6.
+
+---
+
+# Accepted implementation provenance
+
+The complete exact target/source graph is machine-readable in:
+
+```text
+docs/cockpit/accepted_implementation_manifest.json
+```
+
+High-value navigation targets include:
 
 ```text
 directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -86,9 +149,10 @@ Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 Quiet Graphite source         c66f72a74e681f89fd52ba591a1387ea50f0e959
 A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
+Conversation coexistence      db31970d6885ce785609f9c3300f22123130d821
 ```
 
-These targets are not merely historical references. The recovery task must bind them to exact source files and allowed integration adaptations before any new holistic build.
+The short list is navigation only. The manifest is authoritative for exact source paths and maturity.
 
 ---
 
@@ -126,40 +190,35 @@ conversation access from Grid + Deep Dive
 full-focus + co-present Conversation capability
 source work-state preservation
 compact native Cockpit composer
+Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
 None of these are revoked by the failed integration.
 
 ---
 
-# Recovery protocol
-
-Before another integrated Cockpit:
+# Current integration protocol
 
 ```text
-accepted implementation manifest
-    semantic decision
-    exact target SHA
-    exact HTML/CSS/JS source files
-    invariant visual/behavioral properties
-    allowed integration adaptations
-    known fixture caveats
-    fidelity verification method
+accepted implementation exists
+    reuse or port exact source implementation
+    preserve declared invariants
+    adapt only inside the manifest boundary
 
-then
+provisional working default exists
+    carry only as provisional
 
-holistic rebuild
-    reuse/port exact accepted implementations
-    invent only genuinely unresolved shell glue
-    label that glue provisional
+candidate is deferred/rejected/evidence-only
+    preserve history
+    do not select through implementation accident
 
-then
-
-fidelity gate
-    compare integrated result against exact accepted targets
+whole-product answer does not yet exist
+    introduce minimum glue
+    mark it provisional
+    record it separately
 ```
 
-Only after this gate should holistic human product review resume.
+Then run the integrated fidelity gate against M01-M23 before holistic human review resumes.
 
 ---
 
@@ -212,7 +271,7 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-No Claude obligation is currently pending. Human review of the failure diagnosis is the current gate.
+No Claude obligation is currently pending. ChatGPT owns the current source-faithful reintegration work. Human holistic review resumes only after the replacement implementation clears the integrated fidelity gate.
 
 ---
 
