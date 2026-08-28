@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-28  
-**Current checkpoint:** 247  
+**Current checkpoint:** 248  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md
 Current route:
 
 ```text
-checkpoint                        247
+checkpoint                        248
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  Conversation Workspace entry / return transition review
+current boundary                  Conversation access + coexistence architecture review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -107,12 +107,13 @@ X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
 Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
-conversation transition       43ee0ae0ffc63eba6e99a42e9157568c53cc8806
 ```
 
 ---
 
-# Slice 02N: specialist deep focus
+# Specialist deep focus
+
+Primary evidence:
 
 ```text
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
@@ -132,7 +133,7 @@ compact topology compass retained
 
 ---
 
-# Slice 02O: semantic zoom
+# Semantic zoom
 
 ```text
 docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
@@ -156,16 +157,17 @@ semantic zoom
 
 ---
 
-# Slice 02P: Conversation Workspace visual baseline
+# Conversation Workspace visual and scope decisions
+
+Independent visual evidence:
 
 ```text
-docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
 docs/research/081_independent_conversation_workspace_dual_design_comparison.md
 frontend/design-lab/conversation-workspace-claude-independent.html
 frontend/design-lab/conversation-workspace-chatgpt-independent.html
 ```
 
-Result:
+Held result:
 
 ```text
 Quiet Graphite
@@ -175,24 +177,7 @@ previous rendered ChatGPT / Claude alternatives
     rejected as currently rendered systems
 ```
 
-Strong independent convergence remains useful evidence:
-
-```text
-transcript-first long-form technical surface
-ADS responses primarily document-like
-avoid generic symmetric chat bubbles
-semantic project-object references
-structured project changes separate from prose
-collapsed secondary execution/provenance detail
-project-aware composer context
-dark restrained professional visual language
-```
-
----
-
-# Slice 02Q: Conversation scope + work-unit anchor
-
-Evidence:
+Scope/anchor evidence:
 
 ```text
 docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
@@ -201,7 +186,7 @@ docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
 frontend/design-lab/conversation-workspace-work-unit-anchor.html
 ```
 
-Current held result:
+Held scope model:
 
 ```text
 PROJECT-GENERAL CONVERSATION
@@ -216,59 +201,93 @@ PER-TURN CONTEXT
 Conversation rail
     Boxes / Text user switch
 
-Boxes
-    canonical WorkUnit visual component scaled for rail use
-
 A6 Adaptive Anchor
     selected opened-box composition
     no redundant floating work-unit box at rest
 ```
 
-Claude Message 010 and Research 084 remain preserved. Its extra B1-B4 composition mechanisms are historical research rather than active alternatives after explicit human review.
+---
+
+# Earlier Conversation Workspace composition evidence recovered
+
+Research 079 remains important:
+
+```text
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+frontend/design-lab/conversation-workspace-architecture.html
+```
+
+The earlier candidates are now interpreted as presentation/co-presence mechanisms rather than mutually exclusive product architectures:
+
+```text
+CV0 Focus Workspace        -> full chat focus baseline
+CV1 Right Dock             -> work-primary co-present candidate
+CV2 Split Workbench        -> balanced co-present candidate
+CV5 Focus + Context Rail   -> chat-dominant co-present candidate
+CV6 Conversation + Inspector -> focused-context evidence
+```
 
 ---
 
-# Current Slice 02R: Conversation Workspace entry / return transition
+# Current Slice: Conversation access + coexistence
 
 Checkpoint:
 
 ```text
-docs/checkpoints/247_a6_refined_conversation_entry_transition_review_opened.md
+docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
 ```
 
 Research/browser:
 
 ```text
-docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
-frontend/design-lab/conversation-workspace-entry-transition.html
-frontend/design-lab/conversation-workspace-entry-transition.css
-frontend/design-lab/conversation-workspace-entry-transition.js
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+frontend/design-lab/conversation-workspace-access-coexistence.html
+frontend/design-lab/conversation-workspace-access-coexistence.css
+frontend/design-lab/conversation-workspace-access-coexistence.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
+http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
 ```
 
-Candidate set:
+Current product model:
 
 ```text
-E0 Direct Replace
-E1 Anchored Grow
-E2 World Recede
-E3 Pull-Back Then Dive
-E4 X5 Aperture
+WORK CONTEXT
+    Grid neutral
+    Grid selected
+    Grid X5 expanded
+    Deep Dive
+
+x
+
+CONVERSATION PRESENTATION
+    compact / work only
+    full chat focus
+    co-present work + chat
+
+x
+
+CONVERSATION SCOPE
+    project-general
+    work-unit-scoped
 ```
 
-Return modifier:
+Browser presentation candidates:
 
 ```text
-Fast direct return
-Symmetric return
+P0 Work only / compact chat
+P1 Full chat focus
+P2 Right dock
+P3 Balanced split
+P4 Chat dominant + work context
 ```
 
-E3 is only the initial browser default. No transition decision is frozen yet.
+P3 is only the initial browser default. No co-present mode is frozen.
+
+Checkpoint 247's E0-E4 entry transitions remain preserved as possible full-focus transition motion evidence. No winner was selected.
 
 ---
 
@@ -281,7 +300,7 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-Claude Message 010 is complete. Current next actor is the human project owner reviewing the transition browser.
+Claude Message 010 is complete. Current next actor is the human project owner reviewing the conversation access/coexistence architecture.
 
 ---
 
