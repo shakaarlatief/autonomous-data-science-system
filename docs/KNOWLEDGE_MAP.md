@@ -6,7 +6,9 @@
 **Current checkpoint:** 250  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
-**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`
+**Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
+**Latest specification:** Specification 024  
+**Latest scientific experiment outcome:** `INCOMPLETE / EXECUTION INTEGRITY FAILED`
 
 ## Start here
 
