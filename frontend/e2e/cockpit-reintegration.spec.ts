@@ -66,10 +66,13 @@ test.describe('source-faithful Cockpit reintegration', () => {
     expect(pageErrors).toEqual([])
     await expect(page.locator('link[href="./cockpit-reintegration-z7.css"]')).toHaveCount(1)
     await expect(page.locator('link[href="./cockpit-reintegration-review-controls.css"]')).toHaveCount(1)
+    await expect(page.locator('link[href="./cockpit-reintegration-conversation.css"]')).toHaveCount(1)
+    await expect(page.locator('link[href="./cockpit-reintegration-deep-performance.css"]')).toHaveCount(1)
   })
 
   test('mounts canonical compact WorkUnit geometry and accepted semantic carriers', async ({ page }) => {
     const nodes = page.locator(nodeSelector)
+    const world = page.locator('#reintegration-world')
 
     for (let index = 0; index < 6; index += 1) {
       const box = await nodes.nth(index).boundingBox()
@@ -83,18 +86,19 @@ test.describe('source-faithful Cockpit reintegration', () => {
     await expect(selected).toHaveAttribute('data-selection-style', 'sel2')
     await expect(selected.locator('.selection-corners')).toHaveCSS('opacity', '1')
 
-    await expect(page.locator('.priority-signal-bars')).toHaveCount(3)
-    await expect(page.locator('[data-status-code="BLOCKED"]')).toHaveCount(1)
-    await expect(page.locator('[data-status-code="FAIL"]')).toHaveCount(1)
-    await expect(page.locator('[data-status-code="RUN"]')).toHaveCount(1)
+    await expect(world.locator('.priority-signal-bars')).toHaveCount(3)
+    await expect(world.locator('[data-status-code="BLOCKED"]')).toHaveCount(1)
+    await expect(world.locator('[data-status-code="FAIL"]')).toHaveCount(1)
+    await expect(world.locator('[data-status-code="RUN"]')).toHaveCount(1)
   })
 
-  test('retains exact scientific marker categories', async ({ page }) => {
-    await expect(page.locator('.category-question .category-glyph circle')).toHaveCount(1)
-    await expect(page.locator('.category-investigation .category-glyph rect')).toHaveCount(2)
-    await expect(page.locator('.category-validation .category-glyph path')).toHaveCount(1)
-    await expect(page.locator('.category-model .category-glyph path')).toHaveCount(1)
-    await expect(page.locator('.category-evaluation .category-glyph path')).toHaveCount(1)
+  test('retains exact scientific marker categories in the Project Grid', async ({ page }) => {
+    const world = page.locator('#reintegration-world')
+    await expect(world.locator('.category-question .category-glyph circle')).toHaveCount(1)
+    await expect(world.locator('.category-investigation .category-glyph rect')).toHaveCount(2)
+    await expect(world.locator('.category-validation .category-glyph path')).toHaveCount(1)
+    await expect(world.locator('.category-model .category-glyph path')).toHaveCount(1)
+    await expect(world.locator('.category-evaluation .category-glyph path')).toHaveCount(1)
   })
 
   test('mounts E5 Hue plus Tag relations with persistent D1 target direction', async ({ page }) => {
@@ -369,9 +373,11 @@ test.describe('source-faithful Cockpit reintegration', () => {
     }
   })
 
-  test('does not silently substitute a fake Conversation Workspace', async ({ page }) => {
+  test('opens the real source-faithful Conversation Workspace without reviving rejected visual systems', async ({ page }) => {
     await page.locator('#conversation-expand').click()
-    await expect(page.locator('.reintegration-provisional-note')).toContainText('next exact-source reintegration layer')
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
+    await expect(page.locator('#reintegration-conversation-layer')).toHaveAttribute('aria-hidden', 'false')
+    await expect(page.locator('#reintegration-conversation-title')).toHaveText('General project discussion')
     await expect(page.locator('body')).not.toContainText('Deep Navy')
     await expect(page.locator('#reintegration-appearance-panel')).toContainText('Conversation rail Boxes / Text')
   })
