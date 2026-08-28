@@ -1,0 +1,5 @@
+/* Home/ownership is not persistent selection. Do not reuse SEL2 corner brackets here. */
+.canonical-unit-artifact::before,
+.canonical-unit-artifact::after {
+  display: none !important;
+}
