@@ -1,13 +1,12 @@
 # Current State
 
-**Checkpoint:** 254  
+**Checkpoint:** 255  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C advanced whole-product Cockpit design exploration on the source-faithful integrated substrate. Implementation-provenance recovery is complete; the accepted Phase-C mechanism set has been reintegrated with deterministic browser protection; Product Surface Study A acts as the complete-Cockpit design surface; and Checkpoint 254 opens one clarified resting angled rail for human review after the project owner separated spatial identity from optional clarity expansion.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
-**Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
+**Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no GENERIC / ADS_HORIZON / ORACLE_HORIZON comparison may be inferred from that run.
 
 ## Active interaction context
 
@@ -26,42 +25,165 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
-docs/checkpoints/254_resting_angled_cockpit_rail_human_review_opened.md
-docs/research/094_resting_angled_rail_spatial_identity_and_clarity_only_expansion.md
+docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
+docs/research/095_conversation_spacing_flat_project_rail_and_live_topology_compass.md
 ```
 
-Current task:
+Current human-review task:
 
 ```text
-human-review one resting angled right-side Cockpit rail
-
-primary question:
-    does the compact rail itself create the intended spatial / 3D feeling?
-
-judge:
-    resting angle
-    perspective
-    visible chassis thickness
-    right-edge attachment
-    calmness
-    material quality
-    control readability
-    visual weight
-    project-world occlusion
-
-then optionally open the clarity state
-only to judge labels / comprehension / width
+1. inspect Conversation Boxes-mode spacing
+2. inspect the current right-side Project Grid rail as a normal flat 2D surface
+3. inspect the Deep Dive project-position compass as a live topology instrument
 ```
 
-There is no current drag comparison and no need to inspect intermediate pull states. The angled rail is unselected. Production `/cockpit` remains untouched.
+The prior resting 3D / angled rail direction is no longer active. The current route still uses `?edge=angled` only as historical implementation plumbing.
+
+Production `/cockpit` remains untouched.
 
 ---
 
-# Source-faithful reintegration status
+# Current whole-product browser
 
-The implementation-provenance recovery opened by Checkpoint 250 is complete.
+Primary browser:
 
-Durable recovery architecture:
+```text
+frontend/design-lab/cockpit-reintegration.html
+```
+
+Current review route:
+
+```text
+http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
+```
+
+The source-faithful integrated Cockpit remains the protected whole-product design substrate. New shell decisions are evaluated on this complete browser rather than in disconnected fixtures.
+
+---
+
+# Checkpoint 255 corrections
+
+## Conversation rail
+
+Boxes mode now gives canonical WorkUnit conversation objects deliberate vertical breathing room.
+
+Current authored review value:
+
+```text
+thread-list gap  10px
+```
+
+The exact pixel value remains tunable. The intended design requirement is that the WorkUnit boxes read as distinct objects and do not visually run into one another.
+
+Held Conversation semantics remain unchanged:
+
+```text
+Quiet Graphite baseline
+project-general + work-unit-scoped conversation
+Boxes / Text user-switchable rail
+A6 Adaptive Anchor
+no redundant A6 floating home card
+full-focus + co-present Conversation
+Grid + Deep Dive access
+source work-state preservation
+```
+
+## Right-side Project Grid rail
+
+The project owner explicitly requested that the current rail keep its compact structure but become normal 2D.
+
+Current state:
+
+```text
+flat 2D surface
+no perspective
+no 3D transform
+no rear depth plate
+no 3D spine
+no angled clip-path
+real existing Cockpit controls retained
+clarity-only label expansion retained
+```
+
+The current flat rail is a review candidate, not a promoted production baseline.
+
+Historical 3D rail studies remain preserved in Research 092, 093 and 094 but are inactive for the current design axis.
+
+## Deep Dive topology compass
+
+M17 still requires a compact topology compass. The historical Z7 fixture used static hard-coded dots and therefore did not truthfully report the integrated six-WorkUnit project topology.
+
+The integrated compass is now live:
+
+```text
+one dot per actual mounted WorkUnit
+real current relation links rendered
+actual selected WorkUnit highlighted
+related WorkUnits receive quieter context emphasis
+selection changes update the compass
+compass reads project state but never owns or mutates selection
+```
+
+The container was also corrected to one coherent instrument hierarchy:
+
+```text
+one outer border
+inner topology field without a second border
+clear vertical separation from specialist side panels
+```
+
+Current review geometry:
+
+```text
+outer width        132px
+minimum height      96px
+inner topology      62px
+side-panel reserve 114px
+```
+
+These dimensions remain visually tunable.
+
+---
+
+# Deterministic fidelity status
+
+Implementation target:
+
+```text
+10cf3cfd26553d95c3b786df6d3a14137a29767a
+```
+
+Latest complete Cockpit fidelity workflow:
+
+```text
+workflow run  33207377429
+job           98971755372
+result        SUCCESS
+browser tests 65 / 65 passing
+```
+
+The newest tests verify:
+
+```text
+flat rail geometry and no remaining perspective transform
+clarity expansion without project-state mutation
+real rail controls remain functional
+Conversation WorkUnit vertical separation
+live compass node count equals actual project WorkUnit count
+live compass relation count equals mounted relation count
+exactly one current WorkUnit is highlighted
+compass follows changed selection across Deep Dive entry
+single-border compass hierarchy
+compass does not collide with specialist panels
+```
+
+A green deterministic gate protects mechanism integrity. It does not decide whether the current visual tuning is aesthetically accepted.
+
+---
+
+# Implementation-provenance recovery remains complete
+
+The recovery architecture established after the failed holistic integration remains authoritative:
 
 ```text
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
@@ -71,241 +193,27 @@ scripts/check_cockpit_implementation_manifest.py
 .github/workflows/cockpit-implementation-provenance.yml
 ```
 
-Manifest coverage:
+Manifest coverage remains:
 
 ```text
 23 total entries
-19 required
-    MUST_PORT / MUST_PRESERVE
-
-4 non-promotable
-    PROVISIONAL_ONLY
-    DO_NOT_SELECT_DURING_INTEGRATION
-    EXCLUDED_SOURCE
+19 required MUST_PORT / MUST_PRESERVE
+4 deliberately non-promotable records
 ```
 
-First exact-history provenance proof:
+First exact-history provenance proof remains:
 
 ```text
-workflow run  33156357834
-commit        2127563c0ed980f7bf6fad36e36b11e76500c59b
-
+workflow run 33156357834
 Cockpit implementation manifest: PASS
-entries=23 required=19 non_promotable=4
 exact historical source verification: PASS
 ```
 
-The replacement holistic Cockpit was then built through source reuse / exact mechanism porting plus separately identified whole-product glue.
+The failed holistic browser at `8e554d847bb3b6318db432abcb5dff742f0fa523` remains diagnostic evidence only and must never be used as an accepted visual source or parent implementation.
 
 ---
 
-# Fidelity and human-review model
-
-The project distinguishes three different gates:
-
-```text
-PROVENANCE GATE
-    exact decision/source recovery
-    exact historical source resolution
-    PASS
-
-DETERMINISTIC INTEGRATION GATE
-    accepted mechanism invariants
-    cross-mechanism interaction integrity
-    whole-product study regressions
-    PASS for the current covered implementation
-
-HUMAN PRODUCT-DESIGN GATE
-    whether provisional shell choices are actually good
-    whether new candidates should be selected
-    OPEN
-```
-
-Latest complete browser gate:
-
-```text
-implementation target  67c3105ff26601a2f259e44007b23ce638b23838
-workflow run           33202773778
-job                    98956116141
-result                 SUCCESS
-browser tests          64 / 64 passing
-```
-
-The four newest checks specifically prove that the compact angled rail already has perspective and rear depth, no drag grip/slider exists, clarity expansion leaves the 3D transform and project state unchanged, and real Cockpit controls plus full-stage ownership remain intact.
-
-A green automated gate does **not** promote Product Surface Study A or the angled rail into the accepted Cockpit design. Human selection remains required for provisional presentation decisions.
-
----
-
-# Product Surface Study A
-
-The source-faithful integrated browser is the advanced whole-product design substrate.
-
-Current provisional Product Surface Study A explores:
-
-```text
-continuous viewport-owned project grid
-compact project identity HUD
-right-side spatial tool surface
-invoked bounded Jump/search
-normal readable Conversation typography
-compact full Conversation composer
-removal of reintegration-only diagnostic chrome from ordinary review
-```
-
-These shell choices are deliberately evaluated on the complete Cockpit so new design decisions can be judged in interaction with the accepted WorkUnits, relations, Conversation, X5, Z7 and project world.
-
-Primary browser:
-
-```text
-frontend/design-lab/cockpit-reintegration.html
-```
-
-The accepted lower-layer mechanisms remain protected by the same holistic test suite while shell candidates change around them.
-
----
-
-# Current resting angled rail study
-
-Live route:
-
-```text
-http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
-```
-
-The compact state is the primary state under review.
-
-Current hypothesis:
-
-```text
-right-side rail
-    remains compact
-    is permanently angled inward toward the project world
-    exposes visible rear construction / thickness
-    reads as an architectural Cockpit surface at rest
-```
-
-Current authored study geometry:
-
-```text
-compact width              72px
-perspective                 1050px
-Y orientation               -24deg
-X orientation               0.8deg
-screen-plane rotation       -0.8deg
-front-face Z translation    20px
-rear construction offset    +10px x / +7px y / -28px z
-```
-
-Those exact values are provisional. The human-review question is whether the resting rail geometry produces the intended spatial feeling.
-
-## Clarity state
-
-```text
-compact
-    icons only
-    spatial geometry already present
-
-clarity expanded
-    width 220px
-    labels visible
-    identical authored 3D transform
-```
-
-Expansion is a readability aid only. It does not hinge, telescope, detach, fan into layers or create the 3D effect.
-
-No drag grip exists. No slider role exists. No partial deployment states exist.
-
-The study reuses the real existing Cockpit controls and preserves selection, camera state, relation semantics, Conversation ownership and Deep Dive ownership.
-
----
-
-# Previous spatial-rail studies
-
-Research 092 and Research 093 remain preserved as design history and interaction evidence.
-
-```text
-Research 092
-    A · Extruded Blade
-    B · Layered Deck
-    C · Dock and Float
-
-Research 093
-    A · Hinged Instrument Panel
-    B · Telescoping Layer Stack
-    C · Spatial Command Console
-```
-
-Current disposition:
-
-```text
-historical / inactive current design axis
-not a comparison the human must complete before proceeding
-not required to create the intended resting 3D rail feeling
-```
-
-Direct manipulation is not universally rejected. It would need a separate future functional justification instead of being used merely to make the rail look spatial.
-
----
-
-# Whole-product study implementation and CI coverage
-
-Current angled-rail artifacts:
-
-```text
-frontend/design-lab/cockpit-spatial-rail-study-angle.css
-frontend/design-lab/cockpit-spatial-rail-study-angle.js
-frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
-```
-
-Product Surface A artifacts include:
-
-```text
-frontend/design-lab/cockpit-product-surface-study.css
-frontend/design-lab/cockpit-product-surface-study-readability.css
-frontend/design-lab/cockpit-product-surface-study.js
-```
-
-Historical rail-study artifacts remain preserved under the `cockpit-spatial-rail-study*` family.
-
-The Cockpit fidelity workflow watches:
-
-```text
-frontend/design-lab/cockpit-reintegration*
-frontend/design-lab/cockpit-product-surface-study*
-frontend/design-lab/cockpit-spatial-rail-study*
-frontend/e2e/cockpit-reintegration*.spec.ts
-```
-
-The current 64-test green run includes all accepted/source-faithful reintegration coverage plus Product Surface A, Research 092, Research 093 and the clarified resting-angle study.
-
----
-
-# Failed integration remains excluded
-
-The first holistic browser:
-
-```text
-frontend/design-lab/cockpit-integrated-baseline.html
-exact target 8e554d847bb3b6318db432abcb5dff742f0fa523
-```
-
-remains classified as:
-
-```text
-FAILED INTEGRATION ATTEMPT
-NOT an accepted baseline
-NOT a production target
-NOT a basis for new visual decisions
-EXCLUDED from the implementation source graph
-PRESERVED as diagnostic evidence
-```
-
-It must not be reused as the parent implementation for current whole-product exploration.
-
----
-
-# Accepted / held Phase-C decisions remain intact
+# Held Phase-C decisions remain intact
 
 ```text
 G4 Adaptive Hybrid world
@@ -329,22 +237,23 @@ SEL2 four outside corner brackets
 X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional working internal-layout default
 Z7 Pull-Back Then Dive specialist-workspace entry
-full-stage specialist-workspace end state
+full-stage specialist workspace
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
-Quiet Graphite Conversation Workspace baseline
-project-general + work-unit-scoped conversation distinction
-Boxes/Text user-switchable conversation rail
-A6 Adaptive Anchor work-unit context expansion
-A6 resting state without redundant floating home-object card
-conversation available from Grid and Deep Dive
+Quiet Graphite Conversation Workspace
+project-general + work-unit-scoped conversations
+Boxes / Text conversation rail
+A6 Adaptive Anchor
+conversation from Grid + Deep Dive
 full-focus + co-present conversation capability
-source work-state preservation across conversation open/close
+source work-state preservation
 compact native Cockpit composer
 Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-Important accepted targets:
+Checkpoint 255 changes shell presentation and compass implementation fidelity only. It does not revoke these held semantics.
+
+Important accepted targets remain:
 
 ```text
 directionality                07d573b6569b9f09a3b7e00936f3eadecee721b3
@@ -364,59 +273,36 @@ A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
 Conversation coexistence      db31970d6885ce785609f9c3300f22123130d821
 ```
 
-The complete exact source graph remains in `docs/cockpit/accepted_implementation_manifest.json`.
-
 ---
 
-# Semantic zoom disposition
+# Deferred / paused work remains unchanged
 
 ```text
-S0 Geometric Control
-    provisional working default
-
-S1-S8
-    preserved for later
-    not rejected
-
 semantic zoom
     DEFERRED
-```
+    S0 geometric control remains the provisional working default
 
----
-
-# Source Universe deployment
-
-```text
 source-vault bootstrap
     PAUSED
-    not cancelled
-    not rejected
-    not superseded
-```
+    not cancelled or rejected
 
-Course 2 remains gated.
+Course 2 source-universe gate
+    unchanged
+```
 
 ---
 
 # Exact next step
 
 ```text
-Human opens:
+Human visually reviews the three Checkpoint 255 corrections in the live browser.
 
-http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
+If spacing, flat rail and compass are visually good:
+    preserve explicit acceptance / tuning values
+    continue whole-product Cockpit design from this corrected substrate
 
-First judge the compact bar itself:
-    angle
-    perspective
-    thickness
-    attachment
-    calmness
-    readability
-    visual weight
-
-Then, only if useful, click the clarity control to inspect labels.
-
-Preserve concrete reactions before refining the resting rail geometry.
+If any visual detail is wrong:
+    tune that exact surface only
+    do not reopen accepted Phase-C mechanisms
+    do not revive 3D rail exploration unless explicitly requested
 ```
-
-Do not return to A/B/C drag comparison unless a future functional question independently justifies direct manipulation. Do not move the angled rail into production before explicit human evidence.
