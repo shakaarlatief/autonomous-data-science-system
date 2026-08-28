@@ -76,6 +76,7 @@ html[data-thread-identity="artifact"] .scope-thread:not(.compact-archived) .thre
 }
 
 .rail-canonical-node {
+  display: block;
   width: 290px;
   height: 92px;
   pointer-events: none;
@@ -84,6 +85,7 @@ html[data-thread-identity="artifact"] .scope-thread:not(.compact-archived) .thre
 }
 
 .rail-canonical-node .node-surface {
+  display: block;
   box-shadow: 0 8px 23px rgba(0, 0, 0, .18);
 }
 
