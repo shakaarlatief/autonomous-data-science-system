@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-transition="z7" data-return="fast" data-view="project">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>ADS Design Lab · Conversation Workspace Entry Transition</title>
+  <link rel="stylesheet" href="./conversation-workspace-entry-transition.css" />
+</head>
+<body>
+  <div class="lab-shell">
+    <header class="lab-header">
+      <div>
+        <span class="kicker">ADS COCKPIT DESIGN LAB · CONVERSATION ENTRY / RETURN</span>
+        <h1>How should an opened work unit become its full Conversation Workspace?</h1>
+        <p>The destination is held: Quiet Graphite, Boxes/Text rail, A6 without the redundant floating box. Only spatial entry and return choreography changes.</p>
+      </div>
+      <div class="controls">
+        <label><span>Entry</span><select id="transition-select">
+          <option value="direct">E0 Direct replace</option>
+          <option value="anchored">E1 Anchored grow</option>
+          <option value="recede">E2 World recede</option>
+          <option value="z7" selected>E3 Pull-back then dive</option>
+          <option value="aperture">E4 X5 aperture</option>
+        </select></label>
+        <label><span>Return</span><select id="return-select">
+          <option value="fast">Fast direct return</option>
+          <option value="symmetric">Symmetric return</option>
+        </select></label>
+      </div>
+    </header>
+
+    <nav class="variant-strip" aria-label="Transition candidates">
+      <button data-transition="direct"><strong>E0</strong><span>Direct</span></button>
+      <button data-transition="anchored"><strong>E1</strong><span>Anchored grow</span></button>
+      <button data-transition="recede"><strong>E2</strong><span>World recede</span></button>
+      <button data-transition="z7" aria-pressed="true"><strong>E3</strong><span>Pull-back + dive</span></button>
+      <button data-transition="aperture"><strong>E4</strong><span>X5 aperture</span></button>
+    </nav>
+
+    <main class="stage" id="stage">
+      <section class="project-world" id="project-world" aria-label="Project world">
+        <div class="grid"></div>
+        <svg class="relations" viewBox="0 0 1400 760" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M210 210 C370 210 380 330 520 330" />
+          <path d="M720 330 C860 330 880 220 1040 220" />
+          <path d="M650 410 C760 520 900 535 1030 535" />
+        </svg>
+        <article class="node investigation n1"><small>INVESTIGATION · CURRENT</small><strong>Production missingness</strong><span>BLOCKED</span></article>
+        <article class="node validation n2"><small>VALIDATION · DEFERRED</small><strong>Threshold policy</strong></article>
+        <article class="node evaluation n3"><small>EVALUATION · CURRENT</small><strong>Calibration review</strong></article>
+
+        <article class="x5-card" id="x5-card">
+          <div class="x5-top"><span class="diamond"></span><small>MODEL WORK · CURRENT</small><span class="bars"><i></i><i></i><i></i></span></div>
+          <h2>Model selection strategy</h2>
+          <div class="x5-grid">
+            <div><small>PURPOSE</small><p>Compare candidate model families under one frozen validation protocol.</p></div>
+            <div><small>CONSTRAINT</small><p>Keep learning breadth separate from final deployment selection.</p></div>
+            <div><small>EVIDENCE</small><p>Frozen validation protocol · linked model results</p></div>
+            <div><small>NEXT ACTION</small><p>Complete comparable evaluation and record selection logic.</p></div>
+          </div>
+          <div class="x5-actions"><button type="button">Open workspace</button><button id="enter-conversation" type="button">Open conversation</button></div>
+        </article>
+      </section>
+
+      <section class="conversation" id="conversation" aria-label="Conversation Workspace">
+        <aside class="thread-rail">
+          <div class="brand"><span>A</span><div><strong>Autonomous Data Science</strong><small>Telco churn project</small></div></div>
+          <button class="search" type="button">⌕ Search conversations <kbd>⌘ K</kbd></button>
+          <div class="switch"><button class="active">Boxes</button><button>Text</button></div>
+          <div class="rail-heading">PROJECT CONVERSATIONS</div>
+          <button class="thread project"><span class="project-mark">P</span><div><small>PROJECT</small><strong>General project discussion</strong></div></button>
+          <button class="thread work active-thread"><div class="rail-box"><div><span class="diamond"></span><small>MODEL WORK · CURRENT</small><span class="bars"><i></i><i></i><i></i></span></div><strong>Model selection strategy</strong><span class="run">RUN</span></div></button>
+          <button class="thread work"><div class="rail-box investigation-box"><div><span class="square"></span><small>INVESTIGATION · CURRENT</small></div><strong>Production missingness</strong><span class="blocked">BLOCKED</span></div></button>
+          <button class="thread work"><div class="rail-box validation-box"><div><span class="triangle">△</span><small>VALIDATION · DEFERRED</small></div><strong>Threshold policy</strong></div></button>
+        </aside>
+
+        <section class="conversation-main">
+          <header class="conversation-header"><div><button id="return-project" class="back">←</button><div><div class="title-row"><h2>Model selection strategy</h2><span>WORK UNIT</span></div><p>Conversation anchored to one project work unit. Other objects can still be referenced without changing its home.</p></div></div><div class="header-actions"><button>Find</button><button>Outline</button><button id="expand-box">Expand box</button><button>•••</button></div></header>
+          <div class="conversation-body">
+            <div class="transcript">
+              <div class="date-divider">TODAY · 08:38</div>
+              <article class="turn user"><div class="avatar">U</div><div><div class="meta">YOU <span>08:38</span></div><div class="bubble">Keep this conversation connected to the model-selection work unit, but do not clutter the reading surface with repeated box identity.</div></div></article>
+              <article class="turn ads"><div class="avatar">A</div><div><div class="meta">ADS <span>08:38</span></div><div class="answer"><p>The work-unit relationship is already visible through the active box in the sidebar, the conversation title, and the explicit <strong>Expand box</strong> action.</p><p>The main reading field therefore stays clean. The work unit can be inspected when needed without a redundant floating identity object.</p></div></div></article>
+            </div>
+          </div>
+          <footer class="composer"><div class="context">HOME <button>◆ Model selection strategy</button></div><textarea rows="2" placeholder="Continue this discussion…"></textarea><div class="composer-bottom"><button>＋</button><button>Commands</button><span>Project-aware</span><button class="send">↑</button></div></footer>
+        </section>
+
+        <aside class="box-panel" id="box-panel"><div class="panel-head"><div><small>HOME WORK UNIT</small><strong>Model selection strategy</strong></div><button id="close-box">×</button></div><div class="panel-box"><div><span class="diamond"></span><small>MODEL WORK · CURRENT</small></div><strong>Model selection strategy</strong><span class="run">RUN</span></div><dl><div><dt>PURPOSE</dt><dd>Compare candidate model families under one frozen validation protocol.</dd></div><div><dt>CONSTRAINT</dt><dd>Keep learning breadth separate from deployment choice.</dd></div><div><dt>EVIDENCE</dt><dd>Frozen validation protocol · linked model results</dd></div><div><dt>NEXT ACTION</dt><dd>Complete comparable evaluation.</dd></div></dl></aside>
+      </section>
+
+      <div class="transition-mask" id="transition-mask" aria-hidden="true"></div>
+    </main>
+  </div>
+  <script type="module" src="./conversation-workspace-entry-transition.js"></script>
+</body>
+</html>
