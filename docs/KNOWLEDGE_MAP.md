@@ -29,7 +29,7 @@ checkpoint                        246
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  Conversation scope + work-unit anchor; Claude ideation pending
+current boundary                  Conversation anchor synthesis human review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -86,6 +86,8 @@ fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite current Conversation Workspace visual baseline
+A6 Adaptive Anchor current Conversation Workspace opened-box working default
+canonical WorkUnit Boxes / Text conversation rail
 ```
 
 Important targets:
@@ -168,35 +170,15 @@ frontend/design-lab/conversation-workspace-claude-independent.html
 frontend/design-lab/conversation-workspace-chatgpt-independent.html
 ```
 
-Independent provenance:
-
-```text
-Claude Message 008
-    cab2e464d81b48edadd1b6ae51bb7dd620d7e892
-
-ChatGPT isolated independent branch
-    chatgpt-conversation-workspace-independent-design
-    c66f72a74e681f89fd52ba591a1387ea50f0e959
-```
-
 Result:
 
 ```text
 Quiet Graphite
     selected current visual baseline
 
-Deep Navy
-Warm Slate
-Monochrome Signal
-Violet Ink
-Editorial Dark
-Claude Technical Manuscript
-Claude Studio Console
-Claude Hybrid
-    rejected as currently rendered visual systems
+previously rendered alternative systems
+    rejected
 ```
-
-Future palette exploration may introduce genuinely new systems.
 
 Strong independent convergence remains useful evidence:
 
@@ -221,28 +203,15 @@ Checkpoint:
 docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
 ```
 
-Research/browser:
+Held evidence before Claude synthesis:
 
 ```text
 docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
 frontend/design-lab/conversation-workspace-work-unit-anchor.html
-frontend/design-lab/conversation-workspace-work-unit-anchor.css
-frontend/design-lab/conversation-workspace-work-unit-anchor.js
 ```
 
-Local URL:
-
-```text
-http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
-```
-
-Initial implementation target:
-
-```text
-56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
-```
-
-Current product distinction:
+Held product direction:
 
 ```text
 PROJECT-GENERAL CONVERSATION
@@ -255,51 +224,73 @@ WORK-UNIT-SCOPED CONVERSATION
 PER-TURN CONTEXT
     temporary referenced project objects
     separate from conversation home
+
+conversation rail
+    user-switchable Boxes / Text
+
+A6 Adaptive Anchor
+    current opened-box working default
 ```
 
-Current factorized browser controls:
+Claude follow-up completed:
 
 ```text
-conversation scope
-    Work-unit scoped / Project general
-
-thread identity
-    Text / Marker + title / Mini work-unit artifact
-
-opened-box presence
-    A0 Chat-only control
-    A1 Header specimen
-    A2 Context shelf
-    A3 Inner sidecar
-    A4 Floating instrument
-    A5 Box inspector
-    A6 Adaptive anchor
+docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
+8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
 ```
 
-The project grid remains absent. The box is represented as a compact canonical work-unit artifact.
-
-Current conceptual hypothesis, not frozen schema:
+Claude introduced the promising, still-unfrozen interface hierarchy:
 
 ```text
-Conversation.home_scope
-    PROJECT_GENERAL
-    WORK_UNIT
-
-Conversation.home_object_id
-    null or one work-unit id
-
-Message.contextual_object_ids
-    zero or more project objects
+HOME
+PINNED CONTEXT
+PER-TURN CONTEXT
 ```
 
-Open edge cases include re-homing, multi-work-unit conversations, non-work-unit homes, archived/completed home work units and forks.
+and identified prior browser asymmetries around non-selectable BLOCKED/DEFER homes, A6/A5 content equivalence, compact canonical grammar loss, and archived thread representation.
 
-Claude follow-up:
+Current synthesis evidence:
 
 ```text
-request   docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
-expected  MC-0004 Message 010
-mode      COMPARATIVE_ONLY / DIVERGENT_IDEATION
+docs/research/084_claude_informed_conversation_anchor_synthesis.md
+frontend/design-lab/conversation-workspace-anchor-synthesis.html
+```
+
+Local URL:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
+```
+
+Exact clean implementation target:
+
+```text
+93dba4688a0e78f5b1d60277761c59c65e79c98d
+```
+
+Composition review:
+
+```text
+A6  Refined Adaptive Anchor
+    current human working control
+
+B1  Breadcrumb Thread
+B2  Scroll-Responsive Presence
+B3  Object-Anchored Gutter
+B4  Wrapped Around Object
+```
+
+The browser makes project-general, RUN, BLOCKED and DEFER homes selectable, keeps Boxes/Text independent of composition, and gives archived Boxes-mode conversations a subdued historical representation for review.
+
+Preserved but not promoted:
+
+```text
+Signature Rail for extreme thread density
+generalized non-WorkUnit conversation homes
+explicit Adopt / Detach / Re-home operations
+anchored X5 -> Conversation entry
+asymmetric faster return
+final historical-state grammar
 ```
 
 ---
@@ -326,10 +317,12 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-Current pending obligation:
+Current collaboration state:
 
 ```text
-Claude -> MC-0004 Message 010
+Claude Message 010 complete
+no pending model obligation
+next actor human project owner
 ```
 
 ---
