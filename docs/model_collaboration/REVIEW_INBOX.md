@@ -33,84 +33,46 @@ human project owner
 Current checkpoint:
 
 ```text
-249
+250
 ```
 
-## Current process mode
+## Critical current state
 
-The project owner explicitly paused default component-by-component browser exploration and requested a holistic reconstruction of the accepted/held Cockpit decisions.
-
-```text
-Integrated Cockpit
-    PRIMARY REVIEW SURFACE
-
-Bounded design-lab experiments
-    preserved evidence / supporting tools
-    reopen only when a specific question benefits from isolation
-```
-
-## Primary browser
-
-```text
-http://localhost:5173/design-lab/cockpit-integrated-baseline.html
-```
-
-Exact initial holistic frontend target:
+The first holistic integrated Cockpit at:
 
 ```text
 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-Checkpoint / audit:
+failed fidelity review and is not an accepted baseline.
+
+Source-level audit found that major accepted decisions and executable artifacts remain preserved, but the holistic browser was manually reimplemented from textual summaries rather than faithfully reused/ported from exact accepted targets.
+
+Primary recovery evidence:
 
 ```text
-docs/checkpoints/249_holistic_integrated_cockpit_baseline_review_opened.md
-docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
+docs/checkpoints/250_integrated_cockpit_fidelity_failure_recovery_audit_opened.md
+docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
 ```
 
-## Held directions reconstructed in the baseline
+## Current gate
+
+Do not perform further visual design or another holistic rebuild yet.
 
 ```text
-G4 world + H4 hover/resting response
-scientific work-unit category grammar
-E5 relation class + D0-D3 directionality
-P7 disposition
-current-process focus
-conditional runtime + switchable Dot/T7 carrier
-BLOCKER/BLOCKS/BLOCKED + BLOCKED/FAIL ring distinction
-A3 attention
-SEL2 four-corner selection
-X5 balanced expansion + L0 provisional internal layout
-Z7 specialist entry
-full-stage Deep Dive + clean compass
-S0 geometric zoom
-Quiet Graphite Conversation Workspace
-project-general + work-unit conversations
-Boxes/Text rail
-A6 context expansion with no floating duplicate box
-conversation availability from Grid and Deep Dive
-full-focus + co-present conversation capability
-source work-state preservation
-compact composer, Jump/search, zoom/recovery, fullscreen
+construct accepted-implementation manifest
+    -> exact target SHA
+    -> exact source files
+    -> invariant properties
+    -> allowed integration adaptations
+    -> known fixture caveats
+    -> fidelity verification
+
+then rebuild by reuse/porting
+then validate against exact accepted targets
+then resume holistic human review
 ```
 
-Research 087 contains the accepted-invariants audit and exact accepted target SHAs.
+The failed browser remains diagnostic evidence only. Earlier Phase-C decisions remain held at their established level.
 
-## Provisional integration glue
-
-The following are deliberately NOT frozen merely because the integrated browser needs concrete geometry:
-
-```text
-HUD height / layout
-world and project-plane fixture dimensions
-map-tool rail layout
-compact-composer geometry
-specialist internal modules
-co-present chat proportion
-co-present rail-collapse behavior
-final Conversation transition choreography
-```
-
-The current gate is whole-product human review of the integrated Cockpit.
-
-Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 specialist Deep Dive remains held.
+Production `/cockpit` remains untouched.
