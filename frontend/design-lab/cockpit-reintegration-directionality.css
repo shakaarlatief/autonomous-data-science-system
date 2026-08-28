@@ -1,9 +1,21 @@
 /*
  * M06 D0-D3 visibility adapter.
  *
- * Both endpoint arrows use the same accepted restrained semantic-arrow visual.
+ * The historical .semantic-arrow remains the accepted target-side D1 arrow.
+ * The additional source-side arrow needed by reverse/bidirectional states uses
+ * its own class but the same restrained visual grammar.
  * data-direction is system semantic state; appearance controls never alter it.
  */
+
+.reintegration-relation .semantic-arrow-start {
+  fill: none;
+  stroke: rgba(198, 210, 228, 0.84);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  transition: stroke 180ms ease, filter 180ms ease, opacity 180ms ease;
+}
 
 .reintegration-relation .semantic-arrow-start,
 .reintegration-relation .semantic-arrow-end {
