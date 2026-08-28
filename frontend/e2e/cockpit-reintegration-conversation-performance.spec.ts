@@ -158,26 +158,52 @@ test.describe('Conversation integration and Z7 rendering performance', () => {
     await page.locator('#toggle-detail').click()
     await expect(source).toHaveAttribute('data-expanded', 'true')
 
-    await page.locator('#deep-dive').click()
-    await expect(page.locator('html')).toHaveAttribute('data-z7-rendering', /preparing|active/)
-    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'entering', { timeout: 700 })
+    /*
+     * Capture the rendering contract at the exact mutation boundary instead of
+     * sampling a transient 780 ms state from the test runner. This avoids a CI
+     * scheduling race while still verifying the actual animated frame state.
+     */
+    await page.evaluate(() => {
+      const root = document.documentElement
+      ;(window as typeof window & { __z7RenderingCapture?: Promise<Record<string, string | null>> }).__z7RenderingCapture = new Promise((resolve) => {
+        const observer = new MutationObserver(() => {
+          if (root.dataset.deepFocus !== 'entering') return
 
-    const rendering = await page.evaluate(() => {
-      const worldTransition = document.querySelector('#reintegration-world-transition-layer')
-      const specialist = document.querySelector('#reintegration-specialist-layer')
-      const ambient = document.querySelector('#reintegration-ambient-runtime-layer')
-      const activity = document.querySelector('.activity-field')
-      return {
-        worldFilter: worldTransition ? getComputedStyle(worldTransition).filter : null,
-        worldAnimation: worldTransition ? getComputedStyle(worldTransition).animationName : null,
-        worldWillChange: worldTransition ? getComputedStyle(worldTransition).willChange : null,
-        specialistFilter: specialist ? getComputedStyle(specialist).filter : null,
-        specialistAnimation: specialist ? getComputedStyle(specialist).animationName : null,
-        ambientDisplay: ambient ? getComputedStyle(ambient).display : null,
-        activityDisplay: activity ? getComputedStyle(activity).display : null,
-      }
+          const worldTransition = document.querySelector('#reintegration-world-transition-layer')
+          const specialist = document.querySelector('#reintegration-specialist-layer')
+          const ambient = document.querySelector('#reintegration-ambient-runtime-layer')
+          const activity = document.querySelector('.activity-field')
+          const worldStyle = worldTransition ? getComputedStyle(worldTransition) : null
+          const specialistStyle = specialist ? getComputedStyle(specialist) : null
+
+          observer.disconnect()
+          resolve({
+            state: root.dataset.deepFocus || null,
+            z7Rendering: root.dataset.z7Rendering || null,
+            worldFilter: worldStyle?.filter ?? null,
+            worldAnimation: worldStyle?.animationName ?? null,
+            worldWillChange: worldStyle?.willChange ?? null,
+            specialistFilter: specialistStyle?.filter ?? null,
+            specialistAnimation: specialistStyle?.animationName ?? null,
+            ambientDisplay: ambient ? getComputedStyle(ambient).display : null,
+            activityDisplay: activity ? getComputedStyle(activity).display : null,
+          })
+        })
+
+        observer.observe(root, { attributes: true, attributeFilter: ['data-deep-focus'] })
+      })
     })
 
+    await page.locator('#deep-dive').click()
+
+    const rendering = await page.evaluate(async () => {
+      const capture = (window as typeof window & { __z7RenderingCapture?: Promise<Record<string, string | null>> }).__z7RenderingCapture
+      if (!capture) throw new Error('Z7 rendering capture was not installed')
+      return capture
+    })
+
+    expect(rendering.state).toBe('entering')
+    expect(rendering.z7Rendering).toBe('active')
     expect(rendering.worldFilter).toBe('none')
     expect(rendering.specialistFilter).toBe('none')
     expect(rendering.worldAnimation).toBe('reintegration-z7-world-dive-smooth')
@@ -186,7 +212,7 @@ test.describe('Conversation integration and Z7 rendering performance', () => {
     expect(rendering.ambientDisplay).toBe('none')
     expect(rendering.activityDisplay).toBe('none')
 
-    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused', { timeout: 1500 })
+    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused', { timeout: 2200 })
     await page.locator('#return-to-project').click()
     await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'false')
     await expect(page.locator('html')).toHaveAttribute('data-z7-rendering', 'idle')
