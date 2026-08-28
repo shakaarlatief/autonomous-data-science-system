@@ -47,6 +47,13 @@ Phase C Conversation Scope + Work-Unit Anchor
     ChatGPT Message 009A human refinement addendum
     Claude Message 010 completed at 8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
     Research 084 synthesis browser opened
+    project owner reaffirmed prior design and rejected B1-B4 as irrelevant to chosen look
+    redundant A6 floating work-unit card removed
+
+Phase C Conversation Workspace entry / return transition
+    Checkpoint 247
+    Research 085
+    transition browser target 43ee0ae0ffc63eba6e99a42e9157568c53cc8806
 ```
 
 ## Preserved accepted / working Phase-C results
@@ -68,13 +75,14 @@ A3 Signal Bars for elevated attention
 SEL2 Corner Brackets for persistent selection
 X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional working default
-Z7 Pull-Back Then Dive deep-focus entry
+Z7 Pull-Back Then Dive specialist-workspace entry
 fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite current Conversation Workspace visual baseline
-A6 Adaptive Anchor current Conversation Workspace opened-box working default
+A6 Adaptive Anchor current Conversation Workspace opened-box composition
 canonical WorkUnit box / Text user-switchable conversation rail
+A6 resting state without redundant floating home-object card
 ```
 
 Semantic zoom S1-S8 remains preserved and deferred, not rejected.
@@ -105,15 +113,9 @@ Claude Hybrid
 
 Future visual exploration may introduce genuinely new candidates. Rejected systems should not be silently revived as active options.
 
-## Current Slice 02Q: Conversation Scope + Work-Unit Anchor
+## Conversation Scope + Work-Unit Anchor result
 
-Checkpoint:
-
-```text
-246
-```
-
-Held human direction:
+Held product model:
 
 ```text
 PROJECT-GENERAL CONVERSATION
@@ -124,20 +126,38 @@ WORK-UNIT-SCOPED CONVERSATION
     belongs to one work unit
     remains immediately recognizable as belonging to that box
 
+PER-TURN CONTEXT
+    separate temporary project context
+```
+
+Held presentation:
+
+```text
 conversation rail
     user-switchable Boxes / Text
 
 Boxes mode
-    canonical work-unit identity
+    canonical work-unit visual identity
 
 opened-box composition
     A6 Adaptive Anchor
-    current working default
+
+A6 rest-state identity
+    active box in sidebar
+    title + WORK UNIT scope in header
+    Expand box action
+    no extra floating box in transcript
 ```
 
 Conversation ownership does not imply project-map selection, so SEL2 is not added merely because a chat belongs to a work unit.
 
-## Claude Message 010 result
+Exact A6 floating-box removal:
+
+```text
+606e027f281b35c2dfc93d059a1681df23bc2b73
+```
+
+## Claude Message 010 disposition
 
 Claude inspected the actual browser source and identified four meaningful implementation/design gaps:
 
@@ -148,88 +168,84 @@ compact canonical variants lost too much grammar at small scale
 archived threads fell back to text even in Boxes mode
 ```
 
-Claude also proposed:
+Claude also proposed a promising future distinction:
 
 ```text
 HOME
-    zero or one owning project object
-
 PINNED CONTEXT
-    persistent whole-conversation context without ownership
-
 PER-TURN CONTEXT
-    temporary message-level context
 ```
 
-and recommended generalizing future conversation homes beyond WorkUnit to any addressable project object. This is preserved as a promising interface mental model, not a frozen schema.
+and recommended generalizing future conversation homes beyond WorkUnit to any addressable project object.
 
-Additional ideas preserved from Message 010:
+Those ideas remain preserved for later ontology/persistence work.
+
+Claude's additional composition proposals from Research 084:
 
 ```text
-Signature Rail for very high thread counts
-historical-state rendering
-explicit Adopt as home / Detach / re-home events
-anchored X5 -> Conversation entry
-asymmetric faster return
-project identity for project-general conversations
+B1 Breadcrumb Thread
+B2 Scroll-Responsive Presence
+B3 Object-Anchored Gutter
+B4 Wrapped Around Object
 ```
 
-## Current synthesis browser
+were explicitly judged irrelevant to the already chosen Conversation Workspace look by the project owner. They remain historical research evidence rather than active design candidates.
+
+## Current Slice 02R: Conversation Workspace entry / return transition
+
+Checkpoint:
+
+```text
+247
+```
 
 Research:
 
 ```text
-docs/research/084_claude_informed_conversation_anchor_synthesis.md
+docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
 ```
 
 Browser:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
+http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
 ```
 
-Exact clean implementation target:
+Initial implementation target:
 
 ```text
-93dba4688a0e78f5b1d60277761c59c65e79c98d
+43ee0ae0ffc63eba6e99a42e9157568c53cc8806
 ```
 
-Composition candidates:
+The destination composition is held constant. Only spatial entry and return change.
 
 ```text
-A6  Refined Adaptive Anchor
-    current human-selected working control
-    expands to richer X5-derived contextual panel
-
-B1  Breadcrumb Thread
-B2  Scroll-Responsive Presence
-B3  Object-Anchored Gutter
-B4  Wrapped Around Object
+E0 Direct Replace
+E1 Anchored Grow
+E2 World Recede
+E3 Pull-Back Then Dive
+E4 X5 Aperture
 ```
 
-The browser also makes these home states genuinely selectable:
+Return modifier:
 
 ```text
-Project general
-CURRENT + RUN + HIGH
-CURRENT + BLOCKED
-DEFER + NONE
+Fast direct return
+Symmetric return
 ```
 
-and gives archived Boxes-mode entries a subdued historical treatment.
+E3 is the initial browser default only and is not selected.
 
 ## Current collaboration gate
 
 ```text
 next actor: human project owner
-mode: browser synthesis review
+mode: transition browser review
 pending Claude obligation: none
 ```
-
-Review A6 against B1-B4 while holding Quiet Graphite and Boxes/Text constant. Claude's transition modifiers and deeper persistence ideas remain deferred until the composition question is sufficiently settled.
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final Conversation Workspace composition, pinned-context promotion, historical-state semantics, conversation persistence/session model, home/anchor schema, non-work-unit homes, search/archive/fork lifecycle, message-to-project linking semantics, conversation URL state, exact sidebar preference scope, semantic zoom, large-project virtualization, deep-focus return choreography, compass semantics, specialist-workspace composition and final production visual system.
+Still unfrozen includes final Conversation Workspace entry/return choreography, pinned-context promotion, historical-state semantics, conversation persistence/session model, home/anchor schema, non-work-unit homes, search/archive/fork lifecycle, message-to-project linking semantics, conversation URL state, exact sidebar preference scope, semantic zoom, large-project virtualization, compass semantics, specialist-workspace composition and final production visual system.
