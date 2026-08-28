@@ -3,11 +3,11 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_BROWSER_DESIGN_EVALUATION",
+  "phase": "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUDIT",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
-    "description": "Research, compare and evaluate next-generation Project Cockpit design through browser-rendered experiments before production implementation architecture is frozen.",
+    "description": "Research, compare and evaluate the next-generation Project Cockpit through browser-rendered experiments, then recover and bind all held Phase-C decisions to exact implementation provenance before holistic integration resumes.",
     "write_paths": [
       "docs/model_collaboration/threads/MC-0004/BRIEF.md",
       "docs/model_collaboration/threads/MC-0004/THREAD.md",
@@ -16,24 +16,28 @@
       "docs/research/**",
       "docs/foundations/**",
       "docs/checkpoints/**",
+      "docs/cockpit/**",
       "frontend/design-lab/**",
+      "scripts/check_cockpit_implementation_manifest.py",
       "README.md",
       "docs/CURRENT_STATE.md",
       "docs/KNOWLEDGE_MAP.md",
-      "docs/current_routing.json"
+      "docs/current_routing.json",
+      "docs/DEVELOPMENT_METHOD.md",
+      "docs/CONTINUITY.md"
     ]
   },
   "task_owner": "chatgpt",
   "target_write_owner": "chatgpt",
   "participants": [
-    {"collaborator_id":"chatgpt","interaction_environment":"ChatGPT","interaction_session":"chatgpt-08","roles":["TASK_OWNER","RESEARCHER"]},
+    {"collaborator_id":"chatgpt","interaction_environment":"ChatGPT","interaction_session":"chatgpt-09","roles":["TASK_OWNER","RESEARCHER"]},
     {"collaborator_id":"claude","interaction_environment":"Claude","interaction_session":"claude-01","roles":["INDEPENDENT_REVIEWER","COUNTER_DESIGNER","RESEARCHER"]},
     {"collaborator_id":"human","interaction_environment":"Human","interaction_session":"project-owner","roles":["HUMAN_DECIDER"]}
   ],
   "allowed_secondary_write_surfaces": [
     {"collaborator_id":"claude","paths":["docs/model_collaboration/threads/MC-0004/messages/**"]}
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "chatgpt",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8",
@@ -60,9 +64,10 @@
       "holistic integrated Cockpit browser target 8e554d847bb3b6318db432abcb5dff742f0fa523",
       "project owner rejected the holistic integrated browser as fundamentally inconsistent with the planned Cockpit",
       "Research 088 source-level audit found the browser manually reimplemented accepted designs from summaries instead of faithfully reusing/porting exact source artifacts",
-      "Checkpoint 250 suspends holistic rebuild until exact implementation provenance and fidelity validation are established"
+      "Checkpoint 250 suspends holistic rebuild until exact implementation provenance and fidelity validation are established",
+      "project owner reviewed the Checkpoint 250 diagnosis in chatgpt-09 and explicitly authorized proceeding with exhaustive Phase-C decision recovery and repository hardening before the next holistic implementation"
     ],
-    "notes": "No Claude obligation is pending. The current gate is human review of the integrated-Cockpit fidelity-failure diagnosis. The failed browser at 8e554d847bb3b6318db432abcb5dff742f0fa523 is diagnostic evidence only, not an accepted baseline. Earlier Phase-C decisions remain held. Before another integrated build, ChatGPT must construct an accepted-implementation manifest binding each decision to exact target SHAs/source files, allowed adaptation boundaries, known fixture caveats and fidelity checks. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. Human review of the fidelity-failure diagnosis is complete and the project owner has authorized the implementation-provenance recovery. ChatGPT must exhaustively recover Phase-C decisions, distinguish selected/provisional/deferred/rejected evidence, bind held implementation mechanisms to exact source artifacts and target SHAs, record allowed adaptation boundaries and fixture caveats, and establish a fidelity gate before another integrated Cockpit is built. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -100,15 +105,16 @@
       "PHASE_C_CONVERSATION_ACCESS_AND_COEXISTENCE_REVIEW",
       "PHASE_C_HOLISTIC_INTEGRATED_COCKPIT_BASELINE_REVIEW",
       "PHASE_C_INTEGRATED_COCKPIT_FIDELITY_FAILURE_CONFIRMED",
-      "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUDIT"
+      "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUDIT",
+      "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUTHORIZED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-integrated-cockpit-fidelity-failure-recovery",
+    "transition_id": "mc0004-implementation-provenance-recovery-authorized",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner rejected the first holistic integrated Cockpit as fundamentally inconsistent with the previously designed product. Source-level audit confirmed that exact accepted artifacts remain in repository history but were manually reimplemented from summaries. Checkpoint 250 suspends redesign until exact implementation provenance and a fidelity gate are established.",
-    "repository_head": "fbf972524d6c93962f06384320c048a194454fc1"
+    "reason": "After repository-only reconstruction in the new ChatGPT session, the project owner explicitly approved the Checkpoint 250 diagnosis and authorized exhaustive recovery of every Phase-C decision, implementation source and fidelity boundary before holistic Cockpit integration resumes.",
+    "repository_head": "e2674c1a190004b9a9e533c25bcc9ca4972ff291"
   }
 }
