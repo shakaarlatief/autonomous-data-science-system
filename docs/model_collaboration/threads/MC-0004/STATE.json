@@ -3,11 +3,11 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_SOURCE_FAITHFUL_HOLISTIC_REINTEGRATION",
+  "phase": "PHASE_C_ADVANCED_WHOLE_PRODUCT_SPATIAL_RAIL_REVIEW",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
-    "description": "Research, compare and evaluate the next-generation Project Cockpit through browser-rendered experiments, preserve the full decision history and exact implementation provenance, and perform source-faithful holistic reintegration under deterministic provenance and fidelity gates.",
+    "description": "Research, compare and evaluate the next-generation Project Cockpit through browser-rendered experiments, preserve the full decision history and exact implementation provenance, perform source-faithful holistic reintegration under deterministic gates, and evaluate unresolved whole-product interaction/presentation on the complete integrated Cockpit.",
     "write_paths": [
       "docs/model_collaboration/threads/MC-0004/BRIEF.md",
       "docs/model_collaboration/threads/MC-0004/THREAD.md",
@@ -20,6 +20,7 @@
       "frontend/design-lab/**",
       "scripts/check_cockpit_implementation_manifest.py",
       ".github/workflows/cockpit-implementation-provenance.yml",
+      ".github/workflows/cockpit-reintegration-fidelity.yml",
       "README.md",
       "docs/CURRENT_STATE.md",
       "docs/KNOWLEDGE_MAP.md",
@@ -38,7 +39,7 @@
   "allowed_secondary_write_surfaces": [
     {"collaborator_id":"claude","paths":["docs/model_collaboration/threads/MC-0004/messages/**"]}
   ],
-  "next_expected_actor": "chatgpt",
+  "next_expected_actor": "human",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8",
@@ -70,9 +71,17 @@
       "Phase-C Decision Ledger now exhaustively disposes Research 037-088 as selected, foundational, provisional, deferred, rejected, historical/diagnostic or process evidence",
       "accepted implementation manifest now contains 23 entries with 19 required and 4 deliberately non-promotable records",
       "full-history GitHub Actions provenance gate at run 33156357834 passed exact historical source verification for every declared manifest path",
-      "Research 089 closes implementation-provenance recovery and Checkpoint 251 opens source-faithful holistic reintegration"
+      "Research 089 closes implementation-provenance recovery and Checkpoint 251 opens source-faithful holistic reintegration",
+      "Research 091 records the first source-faithful reintegration interaction-integrity gate",
+      "the complete integrated Cockpit is now used as the advanced whole-product design substrate rather than returning to disconnected visual fixtures",
+      "Product Surface Study A introduces a continuous viewport grid, compact project HUD, invoked Jump/search, readable Conversation typography and compact composer as provisional whole-product candidates",
+      "the project owner requested a spatial 2.5D/3D right-side control object that can be pulled into the Cockpit to reveal capability/layers and put away through direct manipulation instead of relying on the fold-arrow button",
+      "Research 092 preserves three unselected candidates: A Extruded Blade, B Layered Deck and C Dock and Float",
+      "workflow run 33197594115 passed the complete 56-test source-faithful holistic browser suite including all three spatial-rail candidates",
+      "the Cockpit fidelity workflow now watches cockpit-product-surface-study* and cockpit-spatial-rail-study* so whole-product study changes cannot bypass the deterministic gate",
+      "Checkpoint 252 opens human comparison of A/B/C without selecting a winner or hybrid"
     ],
-    "notes": "No Claude obligation is pending. The implementation-provenance recovery is complete and the exact-history gate has passed. ChatGPT now owns source-faithful holistic reintegration. Every MUST_PORT/MUST_PRESERVE mechanism must be reused or ported from the manifest's exact historical source and may change only within its recorded adaptation boundary. Provisional/deferred/rejected/evidence-only entries must not be promoted through integration. Any unresolved whole-product glue must be minimal, explicitly provisional and recorded. The replacement browser must pass the integrated fidelity gate before human holistic review resumes. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. Source-faithful reintegration is now the protected whole-product evaluation substrate. The current gate is human review of three unselected spatial edge-rail direct-manipulation candidates: A Extruded Blade, B Layered Deck and C Dock and Float. All candidates reuse the real Cockpit controls and must preserve accepted WorkUnit, relation, navigation, Conversation and focus semantics. The complete browser gate passed 56/56 at implementation target 30f92a55537a9b0a2ec14695ed2982ded4ec9c0e. Human review should determine what to retain, reject or refine before any rail design or hybrid is promoted. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -113,15 +122,17 @@
       "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUDIT",
       "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUTHORIZED",
       "PHASE_C_IMPLEMENTATION_PROVENANCE_GATE_PASSED",
-      "PHASE_C_SOURCE_FAITHFUL_HOLISTIC_REINTEGRATION"
+      "PHASE_C_SOURCE_FAITHFUL_HOLISTIC_REINTEGRATION",
+      "PHASE_C_PRODUCT_SURFACE_STUDY_A",
+      "PHASE_C_SPATIAL_EDGE_RAIL_DIRECT_MANIPULATION_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-source-faithful-holistic-reintegration-opened",
+    "transition_id": "mc0004-spatial-edge-rail-human-review-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The exhaustive Phase-C decision ledger, 23-entry accepted implementation manifest, deterministic validator and full-history CI provenance gate are now in place. GitHub Actions run 33156357834 passed exact historical source verification for every declared manifest binding, satisfying the Checkpoint 250 provenance-recovery gate and opening controlled source-faithful holistic reintegration under Checkpoint 251.",
-    "repository_head": "3aa0f052aceeb2b0605ec93c8a6f7a388815aef7"
+    "reason": "The source-faithful integrated Cockpit is now protected by a 56-test holistic browser gate and is being used as the whole-product design substrate. Research 092 implements three unselected spatial edge-rail direct-manipulation candidates requested by the project owner, and Checkpoint 252 opens human A/B/C review without promoting a winner.",
+    "repository_head": "62c2afa7af81f723d542aaf342dfe5d8983d6a4b"
   }
 }
