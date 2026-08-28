@@ -113,7 +113,7 @@ test.describe('source-faithful Cockpit reintegration', () => {
       await expect(relations.nth(index).locator('.semantic-tag')).toHaveCSS('opacity', '1')
     }
 
-    await expect(page.locator('.semantic-tag-text')).toHaveText(['DEP', 'EVID', 'LINE', 'CAUSE'])
+    await expect(page.locator('.semantic-tag-text')).toHaveText(['BLOCKS', 'EVID', 'LINE', 'CAUSE'])
   })
 
   test('mounts the latest stochastic G4 scheduler instead of the superseded fixed ambient fixture', async ({ page }) => {
@@ -372,7 +372,6 @@ test.describe('source-faithful Cockpit reintegration', () => {
       await expect(path).not.toHaveAttribute('d', '')
     }
   })
-
   test('opens the real source-faithful Conversation Workspace without reviving rejected visual systems', async ({ page }) => {
     await page.locator('#conversation-expand').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
