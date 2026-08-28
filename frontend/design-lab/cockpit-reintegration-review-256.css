@@ -15,13 +15,13 @@
 /* -------------------------------------------------------------------------- */
 
 /*
- * Give the list a modest inter-row gap, then reserve breathing room inside
- * every WorkUnit row as real layout space. This means the transformed canonical
- * node can no longer visually fill the separation while its parent row still
- * reports a passing gap.
+ * Keep the previously reviewed 16 px inter-row gap and additionally reserve
+ * breathing room inside every WorkUnit row as real layout space. The transformed
+ * canonical node can therefore no longer visually consume the separation while
+ * its parent row still reports a passing gap.
  */
 html[data-conversation-rail="boxes"] .reintegration-thread-list {
-  row-gap: 12px !important;
+  row-gap: 16px !important;
   column-gap: 0 !important;
   align-content: start;
 }
