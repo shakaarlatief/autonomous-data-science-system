@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-selection="sel2" data-relation-encoding="e5" data-expansion-style="x5" data-scene-expanded="false">
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-selection="sel2" data-relation-encoding="e5" data-expansion-style="x5" data-scene-expanded="false" data-deep-focus="false">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,9 +28,10 @@
     <!-- New code below is integration glue, not a replacement visual source. -->
     <link rel="stylesheet" href="./cockpit-reintegration.css" />
     <link rel="stylesheet" href="./cockpit-reintegration-x5.css" />
+    <link rel="stylesheet" href="./cockpit-reintegration-z7.css" />
   </head>
   <body>
-    <main class="reintegration-shell" aria-label="Source-faithful Project Cockpit reintegration">
+    <main class="reintegration-shell" id="reintegration-shell" aria-label="Source-faithful Project Cockpit reintegration">
       <header class="reintegration-hud" aria-label="Provisional integration HUD">
         <div class="reintegration-identity">
           <span class="reintegration-kicker">ADS · PROJECT COCKPIT</span>
@@ -61,33 +62,41 @@
           <button type="button" id="fit-world">Fit</button>
           <button type="button" id="reset-world">Reset</button>
           <button type="button" id="toggle-detail">Expand</button>
+          <button type="button" id="deep-dive">Deep Dive</button>
           <button type="button" id="fullscreen-world">Fullscreen</button>
         </div>
       </header>
 
       <section class="reintegration-stage" id="reintegration-stage" aria-label="Navigable project world">
-        <div class="reintegration-world-plane" id="reintegration-world-plane">
-          <!--
-            This is the accepted G4/H4 + disposition/status/attention/selection
-            grammar mounted as the project substrate. Node DOM is produced by
-            the exact accepted work-unit-detail-expansion.js module, which
-            carries SEL2 and the X5 contextual-detail interaction.
-          -->
-          <div class="grammar-world expansion-practical-world reintegration-world" id="reintegration-world">
-            <div class="major-grid" aria-hidden="true"></div>
-            <div class="ambient-drift" aria-hidden="true"></div>
-            <span class="ambient-current current-a" aria-hidden="true"></span>
-            <span class="ambient-current current-b" aria-hidden="true"></span>
-            <span class="ambient-current current-c" aria-hidden="true"></span>
-            <span class="ambient-current current-d" aria-hidden="true"></span>
-            <span class="ambient-glint glint-a" aria-hidden="true"></span>
-            <span class="ambient-glint glint-b" aria-hidden="true"></span>
-            <span class="ambient-glint glint-c" aria-hidden="true"></span>
+        <!--
+          Z7 adapter animates this whole project-world layer from the actual
+          selected X5 origin. The keyframe values are an exact port from the
+          accepted Z7 source at 04616a52df5cceff6c59223bbd6f07448d027510.
+        -->
+        <div class="reintegration-world-transition-layer" id="reintegration-world-transition-layer">
+          <div class="reintegration-world-plane" id="reintegration-world-plane">
+            <!--
+              This is the accepted G4/H4 + disposition/status/attention/selection
+              grammar mounted as the project substrate. Node DOM is produced by
+              the exact accepted work-unit-detail-expansion.js module, which
+              carries SEL2 and the X5 contextual-detail interaction.
+            -->
+            <div class="grammar-world expansion-practical-world reintegration-world" id="reintegration-world">
+              <div class="major-grid" aria-hidden="true"></div>
+              <div class="ambient-drift" aria-hidden="true"></div>
+              <span class="ambient-current current-a" aria-hidden="true"></span>
+              <span class="ambient-current current-b" aria-hidden="true"></span>
+              <span class="ambient-current current-c" aria-hidden="true"></span>
+              <span class="ambient-current current-d" aria-hidden="true"></span>
+              <span class="ambient-glint glint-a" aria-hidden="true"></span>
+              <span class="ambient-glint glint-b" aria-hidden="true"></span>
+              <span class="ambient-glint glint-c" aria-hidden="true"></span>
 
-            <!-- E5 Hue + Tag relation presentation. Geometry is measured from the rendered accepted WorkUnit surfaces. -->
-            <svg class="reintegration-relations" id="reintegration-relations" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <!-- E5 Hue + Tag relation presentation. Geometry is measured from the rendered accepted WorkUnit surfaces. -->
+              <svg class="reintegration-relations" id="reintegration-relations" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true"></svg>
 
-            <div class="expansion-practical-nodes" id="expansion-practical-nodes"></div>
+              <div class="expansion-practical-nodes" id="expansion-practical-nodes"></div>
+            </div>
           </div>
         </div>
 
@@ -106,8 +115,55 @@
         <div class="reintegration-provisional-note" aria-label="Integration status">
           <span>INTEGRATION GLUE</span>
           <strong>Shell geometry is provisional</strong>
-          <small>Accepted WorkUnit/world/X5/relation sources are reused directly. The HUD and stage placement are not design selections.</small>
+          <small>Accepted WorkUnit/world/X5/Z7/relation sources are reused or exactly ported. The HUD and stage placement are not design selections.</small>
         </div>
+      </section>
+
+      <!--
+        Specialist workspace internals are intentionally schematic because
+        Research 077 leaves their final composition unfrozen. The end-state
+        ownership, Z7 entry and compact topology compass are the held design.
+      -->
+      <section class="reintegration-specialist-layer" id="reintegration-specialist-layer" aria-hidden="true" aria-label="Production missingness specialist workspace">
+        <header class="reintegration-specialist-bar">
+          <div>
+            <span>SPECIALIST WORKSPACE</span>
+            <strong id="specialist-title">Production missingness</strong>
+          </div>
+          <button type="button" id="return-to-project">Return to project</button>
+        </header>
+
+        <div class="reintegration-specialist-content">
+          <section class="reintegration-specialist-main">
+            <article class="reintegration-specialist-panel primary-panel">
+              <span>PRIMARY ANALYTICAL SURFACE</span>
+              <strong>Full-resolution investigation tools mount here</strong>
+              <p>This internal composition remains schematic and unfrozen. The current fidelity target is the full-stage specialist end state, not these placeholder modules.</p>
+            </article>
+            <article class="reintegration-specialist-panel">
+              <span>EVIDENCE / OUTPUTS</span>
+              <strong>Artifacts, plots, tables and execution results</strong>
+            </article>
+          </section>
+          <aside class="reintegration-specialist-side">
+            <article class="reintegration-specialist-panel">
+              <span>WORK-UNIT CONTEXT</span>
+              <strong>Objective, constraints and current state</strong>
+            </article>
+            <article class="reintegration-specialist-panel">
+              <span>COMMANDS / NOTES</span>
+              <strong>Specialist actions without loading unrelated project work</strong>
+            </article>
+          </aside>
+        </div>
+
+        <!-- Exact accepted compact topology-compass structure. -->
+        <aside class="reintegration-topology-compass" aria-label="Project position">
+          <span>Project position</span>
+          <div class="reintegration-mini-map" aria-hidden="true">
+            <i class="mini-dot a"></i><i class="mini-dot b"></i><i class="mini-dot c"></i><i class="mini-dot d"></i><i class="mini-dot s"></i>
+          </div>
+        </aside>
       </section>
 
       <section class="reintegration-composer" aria-label="Compact native Cockpit composer">
@@ -131,7 +187,7 @@
     <script type="module" src="./work-unit-detail-expansion.js"></script>
     <script type="module" src="./work-unit-detail-expansion-x5-accepted.js"></script>
 
-    <!-- Thin whole-product orchestration and E5 geometry only. -->
+    <!-- Thin whole-product orchestration, E5 geometry and exact Z7 choreography port only. -->
     <script type="module" src="./cockpit-reintegration.js"></script>
   </body>
 </html>
