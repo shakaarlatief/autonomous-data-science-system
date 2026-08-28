@@ -18,8 +18,11 @@
 /* G4 semantic activity: reject the two isolated point packets in integration */
 /* -------------------------------------------------------------------------- */
 
-.reintegration-world .live-packet {
+.reintegration-world .live-packet,
+.reintegration-world .live-packet[data-integration-suppressed="true"] {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -71,6 +74,7 @@ html[data-relation-presentation="class-tag"] .reintegration-relation .semantic-t
 }
 
 html[data-relation-presentation="class-tag"] .reintegration-relation .semantic-arrow,
+html[data-relation-presentation="class-tag"] .reintegration-relation .semantic-arrow-start,
 html[data-relation-presentation="class-tag"] .reintegration-relation .reintegration-terminal-dot,
 html[data-relation-presentation="class-tag"] .reintegration-relation .reintegration-terminal-socket {
   stroke: rgba(var(--class-rgb), 0.90);
@@ -98,6 +102,7 @@ html[data-relation-presentation="neutral-hover"] .reintegration-relation .semant
 }
 
 html[data-relation-presentation="neutral-hover"] .reintegration-relation .semantic-arrow,
+html[data-relation-presentation="neutral-hover"] .reintegration-relation .semantic-arrow-start,
 html[data-relation-presentation="neutral-hover"] .reintegration-relation .reintegration-terminal-socket {
   stroke: rgba(153, 170, 193, 0.72);
   filter: none;
@@ -116,6 +121,7 @@ html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-rela
 }
 
 html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .semantic-arrow,
+html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .semantic-arrow-start,
 html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .reintegration-terminal-socket {
   stroke: rgba(var(--hover-rgb), 0.94);
   filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
@@ -154,34 +160,34 @@ html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-rela
 /* Clean means no endpoint ornament. */
 html[data-connector-terminal="clean"] .reintegration-relation .semantic-arrow-start,
 html[data-connector-terminal="clean"] .reintegration-relation .semantic-arrow-end,
-html[data-connector-terminal="clean"] .reintegration-terminal-dot,
-html[data-connector-terminal="clean"] .reintegration-terminal-socket {
+html[data-connector-terminal="clean"] .reintegration-relation .reintegration-terminal-dot,
+html[data-connector-terminal="clean"] .reintegration-relation .reintegration-terminal-socket {
   visibility: hidden !important;
   opacity: 0 !important;
 }
 
 html[data-connector-terminal="dots"] .reintegration-relation .semantic-arrow-start,
 html[data-connector-terminal="dots"] .reintegration-relation .semantic-arrow-end,
-html[data-connector-terminal="dots"] .reintegration-terminal-socket {
+html[data-connector-terminal="dots"] .reintegration-relation .reintegration-terminal-socket {
   visibility: hidden !important;
   opacity: 0 !important;
 }
 
-html[data-connector-terminal="dots"] .reintegration-terminal-dot {
-  visibility: visible;
-  opacity: 0.88;
+html[data-connector-terminal="dots"] .reintegration-relation .reintegration-terminal-dot {
+  visibility: visible !important;
+  opacity: 0.88 !important;
 }
 
 html[data-connector-terminal="sockets"] .reintegration-relation .semantic-arrow-start,
 html[data-connector-terminal="sockets"] .reintegration-relation .semantic-arrow-end,
-html[data-connector-terminal="sockets"] .reintegration-terminal-dot {
+html[data-connector-terminal="sockets"] .reintegration-relation .reintegration-terminal-dot {
   visibility: hidden !important;
   opacity: 0 !important;
 }
 
-html[data-connector-terminal="sockets"] .reintegration-terminal-socket {
-  visibility: visible;
-  opacity: 0.92;
+html[data-connector-terminal="sockets"] .reintegration-relation .reintegration-terminal-socket {
+  visibility: visible !important;
+  opacity: 0.92 !important;
 }
 
 html:not([data-connector-terminal="arrows"]) .reintegration-relation .semantic-arrow-start,
@@ -195,6 +201,7 @@ html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="n
 html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="forward"] .semantic-arrow-start,
 html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="reverse"] .semantic-arrow-end {
   visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="forward"] .semantic-arrow-end,
@@ -202,6 +209,7 @@ html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="r
 html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="both"] .semantic-arrow-start,
 html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="both"] .semantic-arrow-end {
   visibility: visible !important;
+  opacity: 0.82 !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -264,8 +272,17 @@ html[data-internal-layout="l0"] .reintegration-world .expansion-practical-node[d
   white-space: nowrap;
 }
 
-.reintegration-conversation-layer .reintegration-conversation-search > span:first-child:not(:last-child) {
+.reintegration-conversation-layer .reintegration-conversation-search > span:first-child {
+  overflow: visible;
+  color: var(--cq-muted);
   font-family: var(--cq-font-sans);
+  font-size: 10px !important;
+  text-overflow: clip;
+}
+
+.reintegration-conversation-layer .reintegration-conversation-search > span:nth-child(2) {
+  font-size: 8px !important;
+  line-height: 1 !important;
 }
 
 .reintegration-conversation-layer .reintegration-conversation-search kbd {
@@ -335,7 +352,7 @@ html[data-internal-layout="l0"] .reintegration-world .expansion-practical-node[d
 }
 
 /* Text rail remains independent from Boxes rail. */
-html[data-conversation-rail-view="text"] .reintegration-thread-item.is-workunit-thread {
+html[data-conversation-rail="text"] .reintegration-thread-item.is-workunit-thread {
   height: auto;
   min-height: 0;
   padding: 7px;
@@ -348,6 +365,7 @@ html[data-conversation-rail-view="text"] .reintegration-thread-item.is-workunit-
 html[data-reduced="on"] .reintegration-terminal-dot,
 html[data-reduced="on"] .reintegration-terminal-socket,
 html[data-reduced="on"] .reintegration-relation .semantic-path,
-html[data-reduced="on"] .reintegration-relation .semantic-arrow {
+html[data-reduced="on"] .reintegration-relation .semantic-arrow,
+html[data-reduced="on"] .reintegration-relation .semantic-arrow-start {
   transition: none !important;
 }
