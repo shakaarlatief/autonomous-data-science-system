@@ -18,6 +18,16 @@
   transform-style: flat;
 }
 
+/*
+ * The specialist header's base adapter gives every direct div a grid layout.
+ * Conversation actions are a separate control cluster and must remain a row.
+ */
+.reintegration-specialist-bar > .reintegration-deep-conversation-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 html[data-z7-rendering="preparing"] .reintegration-world-transition-layer,
 html[data-z7-rendering="preparing"] .reintegration-specialist-layer,
 html[data-deep-focus="entering"] .reintegration-world-transition-layer,
