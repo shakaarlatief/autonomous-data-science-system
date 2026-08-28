@@ -55,10 +55,9 @@ test.describe('Cockpit accepted-implementation manifest closure', () => {
     await page.locator('[data-process-focus-mode="focused"]').click()
     await expect(page.locator('html')).toHaveAttribute('data-process-focus', 'focused')
 
-    const restingOpacity = Number(await context.evaluate((element) => getComputedStyle(element).opacity))
-    const currentOpacity = Number(await current.evaluate((element) => getComputedStyle(element).opacity))
-    expect(restingOpacity).toBeLessThan(0.4)
-    expect(currentOpacity).toBeGreaterThan(0.9)
+    /* Preserve the accepted recession transition and wait for its settled state. */
+    await expect.poll(async () => Number(await context.evaluate((element) => getComputedStyle(element).opacity))).toBeLessThan(0.4)
+    await expect.poll(async () => Number(await current.evaluate((element) => getComputedStyle(element).opacity))).toBeGreaterThan(0.9)
 
     await context.hover()
     await expect(context).toHaveClass(/is-hovered/)
