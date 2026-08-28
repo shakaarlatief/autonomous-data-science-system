@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-28  
-**Current checkpoint:** 252  
+**Current checkpoint:** 254  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,12 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/254_resting_angled_cockpit_rail_human_review_opened.md
+docs/research/094_resting_angled_rail_spatial_identity_and_clarity_only_expansion.md
+
+docs/checkpoints/253_architectural_cockpit_edge_gen2_human_review_opened.md
+docs/research/093_architectural_cockpit_edge_instrument_surface_depth_study.md
 
 docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
 docs/research/092_spatial_edge_rail_depth_direct_manipulation_and_docking_study.md
@@ -34,18 +40,18 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                252
+checkpoint                254
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          advanced whole-product spatial rail human review
+current boundary          resting angled right-side rail human review
 ```
 
 ---
 
 # Current whole-product design route
 
-The source-faithful integrated Cockpit is now the active whole-product design substrate.
+The source-faithful integrated Cockpit is the active whole-product design substrate.
 
 Primary browser:
 
@@ -72,38 +78,95 @@ frontend/design-lab/cockpit-product-surface-study-readability.css
 frontend/design-lab/cockpit-product-surface-study.js
 ```
 
-The current rail comparison is:
+## Current rail study
+
+The project owner's latest clarification separates spatial identity from readability expansion.
 
 ```text
-A · Extruded Blade
-    ?focus=map&work=v&rail=blade
+3D / spatial identity
+    belongs to the compact rail itself at rest
 
-B · Layered Deck
-    ?focus=map&work=v&rail=deck
+clarity expansion
+    may widen the same rail and reveal labels
+    does not create or intensify its 3D identity
 
-C · Dock and Float
-    ?focus=map&work=v&rail=float
+direct manipulation
+    is not required for the current visual goal
 ```
 
-Study implementation:
+Current live route:
 
 ```text
-frontend/design-lab/cockpit-spatial-rail-study.css
-frontend/design-lab/cockpit-spatial-rail-study.js
-frontend/e2e/cockpit-reintegration-spatial-rail.spec.ts
+Resting Angled Rail
+    ?edge=angled
 ```
 
-No rail candidate is selected.
-
-Latest complete deterministic browser evidence before Checkpoint 252 preservation:
+Current implementation:
 
 ```text
-implementation target  30f92a55537a9b0a2ec14695ed2982ded4ec9c0e
-workflow run           33197594115
-job                    98938593583
+frontend/design-lab/cockpit-spatial-rail-study-angle.css
+frontend/design-lab/cockpit-spatial-rail-study-angle.js
+frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
+```
+
+Current authored study geometry is provisional:
+
+```text
+compact width              72px
+clarity width              220px
+perspective                 1050px
+Y orientation               -24deg
+X orientation               0.8deg
+screen-plane rotation       -0.8deg
+front-face Z translation    20px
+rear construction offset    +10px x / +7px y / -28px z
+```
+
+The important current hypothesis is not those exact numbers. It is that a compact right-edge rail can feel like a physical Cockpit instrument surface through permanent angle, perspective, thickness and attachment.
+
+No drag grip, slider role or intermediate deployment states exist in the current candidate.
+
+Latest complete deterministic browser evidence:
+
+```text
+implementation target  67c3105ff26601a2f259e44007b23ce638b23838
+workflow run           33202773778
+job                    98956116141
 result                 SUCCESS
-browser tests          56 / 56 passing
+browser tests          64 / 64 passing
 ```
+
+The four newest checks prove that:
+
+```text
+compact resting rail already has perspective and rear depth
+no drag grip or slider exists
+clarity expansion leaves the rail transform and project state unchanged
+real controls remain functional
+Conversation and Deep Dive retain stage ownership
+```
+
+No rail visual treatment is selected yet.
+
+## Historical rail studies
+
+Research 092 and Research 093 remain preserved as design history and interaction evidence:
+
+```text
+Research 092
+    A · Extruded Blade
+    B · Layered Deck
+    C · Dock and Float
+
+Research 093
+    A · Hinged Instrument Panel
+    B · Telescoping Layer Stack
+    C · Spatial Command Console
+```
+
+These drag/deployment variants are now **historical / inactive for the current rail design axis**. Human review does not need to compare them before proceeding with the resting-angle question.
+
+Direct manipulation is not globally rejected. It may be revisited later if a separate functional requirement justifies it.
 
 ---
 
@@ -144,7 +207,7 @@ HUMAN PRODUCT-DESIGN GATE
 
 A green browser suite protects accepted mechanisms and cross-mechanism behavior. It does not promote provisional whole-product design candidates.
 
-The holistic fidelity workflow now watches:
+The holistic fidelity workflow watches:
 
 ```text
 frontend/design-lab/cockpit-reintegration*
@@ -357,7 +420,7 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-No Claude obligation is currently pending. The current next actor is the human reviewer for the A/B/C rail study.
+No Claude obligation is currently pending. The current next actor is the human reviewer for the single resting angled rail candidate.
 
 ---
 
