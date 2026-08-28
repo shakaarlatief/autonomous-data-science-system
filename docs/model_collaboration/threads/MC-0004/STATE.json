@@ -39,7 +39,7 @@
     "review_base_ref": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8",
     "known_exposures": [
       "ADS product-level context through Specification 008 and Foundation 021",
-      "accepted Phase-C interaction controls through Checkpoint 247",
+      "accepted Phase-C interaction controls through Checkpoint 248",
       "Claude Message 008 independent Conversation Workspace design at cab2e464d81b48edadd1b6ae51bb7dd620d7e892",
       "ChatGPT independent Conversation Workspace browser frozen separately at c66f72a74e681f89fd52ba591a1387ea50f0e959",
       "Research 081 independent dual-design comparison",
@@ -52,10 +52,12 @@
       "Research 084 Claude-informed Conversation Anchor synthesis preserved as research history",
       "project owner judged B1-B4 synthesis composition candidates irrelevant to the already chosen Conversation Workspace look",
       "A6 redundant floating home-object card removed at 606e027f281b35c2dfc93d059a1681df23bc2b73",
-      "Research 085 Conversation Workspace A6 refinement and entry transition",
-      "conversation-workspace-entry-transition browser target 43ee0ae0ffc63eba6e99a42e9157568c53cc8806"
+      "Research 085 entry-transition experiment preserved as possible full-chat-focus motion evidence without a selected winner",
+      "project owner clarified conversation must be reachable from Grid neutral/selected/X5 and Deep Dive, with both full-focus and co-present modes",
+      "Research 086 Conversation Workspace orthogonal access and coexistence architecture",
+      "conversation-workspace-access-coexistence factorized browser at db31970d6885ce785609f9c3300f22123130d821"
     ],
-    "notes": "Claude Message 010 is complete and no Claude obligation is pending. The project owner reaffirmed the previously chosen Quiet Graphite + Boxes/Text + A6 Conversation Workspace direction, rejected the additional B1-B4 composition mechanisms as irrelevant to the chosen look, and removed A6's redundant floating home-object card. The current gate is human review of X5-to-Conversation-Workspace entry and return choreography. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The current gate is human review of conversation as an orthogonal capability across Grid and Deep Dive work contexts. Quiet Graphite, Boxes/Text, A6 without the floating duplicate, X5, Z7 Deep Dive, and the compact Cockpit composer remain held. Research 079 split/dock/context-rail mechanisms are recovered as co-presence evidence. Checkpoint 247's E0-E4 remain only possible full-chat-focus motion evidence because the entry-only framing was too narrow. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -89,15 +91,16 @@
       "PHASE_C_CONVERSATION_SCOPE_WORK_UNIT_ANCHOR_CLAUDE_RESPONSE_RECEIVED",
       "PHASE_C_CONVERSATION_ANCHOR_SYNTHESIS_BROWSER_REVIEW",
       "PHASE_C_A6_REDUNDANT_FLOATING_BOX_REMOVED",
-      "PHASE_C_CONVERSATION_ENTRY_TRANSITION_REVIEW"
+      "PHASE_C_CONVERSATION_ENTRY_TRANSITION_REVIEW",
+      "PHASE_C_CONVERSATION_ACCESS_AND_COEXISTENCE_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-a6-refined-conversation-entry-transition-review",
+    "transition_id": "mc0004-conversation-access-coexistence-architecture-review",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner reaffirmed the prior Conversation Workspace decisions, judged the new Claude-informed composition alternatives irrelevant to that chosen look, removed A6's redundant floating work-unit card, and authorized proceeding. Checkpoint 247 opens a focused X5-to-Conversation-Workspace entry and return transition review.",
-    "repository_head": "43ee0ae0ffc63eba6e99a42e9157568c53cc8806"
+    "reason": "The project owner clarified that Conversation Workspace availability is orthogonal to Grid/Deep Dive work depth. Chat must be openable from every Grid state and from Deep Dive, either as full focus or as a co-present work+conversation surface. Checkpoint 248 and Research 086 replace the narrower entry-only review boundary while preserving its motion evidence.",
+    "repository_head": "db31970d6885ce785609f9c3300f22123130d821"
   }
 }
