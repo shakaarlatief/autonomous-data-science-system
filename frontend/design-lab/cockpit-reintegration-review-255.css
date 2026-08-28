@@ -1,0 +1,133 @@
+/*
+ * Checkpoint 255 human-review corrections.
+ *
+ * These are deliberately narrow presentation/integrity fixes on top of the
+ * source-faithful Cockpit substrate:
+ *   - give Conversation WorkUnit boxes the same deliberate breathing room as
+ *     the project-general artifact;
+ *   - flatten the current compact right-side rail to a normal 2D surface while
+ *     preserving its size, control grouping and clarity-only label expansion;
+ *   - make the retained Z7 topology compass one coherent instrument surface
+ *     rather than a nested-box composition, with enough reserved layout space
+ *     that it cannot collide with specialist panels.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Conversation rail: deliberate separation between canonical boxes           */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-rail="boxes"] .reintegration-thread-list {
+  gap: 10px;
+  align-content: start;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Right-side project rail: preserve composition, remove 2.5D/3D treatment    */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig {
+  perspective: none !important;
+  transform-style: flat !important;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-back,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-spine {
+  display: none !important;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell {
+  transform: none !important;
+  transform-style: flat !important;
+  clip-path: none !important;
+  border-radius: 12px !important;
+  border-right-color: var(--angled-rail-line-strong) !important;
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.24),
+    inset 1px 0 rgba(232, 241, 252, 0.035) !important;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell:focus-within {
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.27),
+    inset 1px 0 rgba(232, 241, 252, 0.045) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Z7 project-position compass: one clean container + live topology surface   */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-topology-compass {
+  width: 132px !important;
+  height: auto !important;
+  min-height: 96px;
+  padding: 10px !important;
+  box-sizing: border-box;
+  border: 1px solid rgba(185, 206, 240, 0.15);
+  border-radius: 9px;
+  background: #080d13;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.34);
+}
+
+.reintegration-topology-compass > span {
+  display: block;
+  color: #7d8ba0 !important;
+  font-size: 6px !important;
+  line-height: 1.2;
+}
+
+.reintegration-specialist-side {
+  padding-top: 114px !important;
+}
+
+.reintegration-mini-map {
+  position: relative;
+  height: 62px !important;
+  margin-top: 7px !important;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 6px !important;
+  background-color: rgba(11, 17, 25, 0.72);
+  background-image:
+    linear-gradient(to right, rgba(185, 206, 240, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 206, 240, 0.055) 1px, transparent 1px) !important;
+  background-size: 12px 12px !important;
+  box-shadow: inset 0 0 0 1px rgba(185, 206, 240, 0.055);
+}
+
+.reintegration-mini-map-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.reintegration-mini-map-links line {
+  stroke: rgba(145, 165, 191, 0.24);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.reintegration-mini-map .mini-dot {
+  position: absolute;
+  width: 5px !important;
+  height: 5px !important;
+  margin: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #596779 !important;
+  box-shadow: none !important;
+  transform: translate(-50%, -50%);
+}
+
+.reintegration-mini-map .mini-dot.is-current {
+  width: 8px !important;
+  height: 8px !important;
+  background: #67dac2 !important;
+  box-shadow: 0 0 9px rgba(103, 218, 194, 0.62) !important;
+}
+
+.reintegration-mini-map .mini-dot.is-related {
+  background: #7e91aa !important;
+}

@@ -21,6 +21,7 @@ const NODE_SELECTOR = '.expansion-practical-node'
 
 repairProjectGeneralArtifact()
 restoreMicroDotPortOverlay()
+mountCheckpoint255ReviewLayer()
 
 /* -------------------------------------------------------------------------- */
 /* Project-general conversation identity                                      */
@@ -233,4 +234,24 @@ function positionCircle(element, point) {
 
 function format(value) {
   return Number(value.toFixed(2)).toString()
+}
+
+/* -------------------------------------------------------------------------- */
+/* Checkpoint 255 narrow human-review layer                                   */
+/* -------------------------------------------------------------------------- */
+
+function mountCheckpoint255ReviewLayer() {
+  root.dataset.humanReview255 = 'true'
+
+  if (!document.querySelector('link[data-human-review-255]')) {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = './cockpit-reintegration-review-255.css'
+    link.dataset.humanReview255 = 'true'
+    document.head.appendChild(link)
+  }
+
+  import('./cockpit-reintegration-topology-compass.js').catch((error) => {
+    console.error('Live topology compass failed to load', error)
+  })
 }

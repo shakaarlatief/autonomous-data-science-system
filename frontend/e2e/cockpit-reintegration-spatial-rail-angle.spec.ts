@@ -6,6 +6,7 @@ async function openStudy(page: Page) {
   await page.setViewportSize({ width: 1600, height: 1000 })
   await page.goto(route)
   await expect(page.locator('html')).toHaveAttribute('data-spatial-rail-angle', 'angled')
+  await expect(page.locator('html')).toHaveAttribute('data-human-review255', 'true')
   await expect(page.locator('.cockpit-angled-rail-rig')).toBeVisible()
   await expect(page.locator('.cockpit-angled-rail-rig')).toHaveAttribute('data-clarity', 'compact')
   await expect(page.locator('#map-tools-fold')).toBeHidden()
@@ -15,30 +16,29 @@ async function selectedWorkKey(page: Page) {
   return page.locator('.expansion-practical-node[data-selected="true"]').getAttribute('data-node-key')
 }
 
-test.describe('resting-angle Cockpit rail study', () => {
-  test('the compact resting rail already carries perspective and visible depth without any drag state', async ({ page }) => {
+test.describe('Checkpoint 255 whole-Cockpit human-review corrections', () => {
+  test('the current compact right-side rail keeps its composition but is normal 2D', async ({ page }) => {
     await openStudy(page)
 
+    const rig = page.locator('.cockpit-angled-rail-rig')
     const shell = page.locator('.cockpit-angled-rail-shell')
-    const back = page.locator('.cockpit-angled-rail-back')
     const compactWidth = await shell.evaluate((element) => element.getBoundingClientRect().width)
-    const shellTransform = await shell.evaluate((element) => getComputedStyle(element).transform)
-    const backTransform = await back.evaluate((element) => getComputedStyle(element).transform)
 
+    await expect.poll(() => rig.evaluate((element) => getComputedStyle(element).perspective)).toBe('none')
+    await expect.poll(() => shell.evaluate((element) => getComputedStyle(element).transform)).toBe('none')
+    await expect(page.locator('.cockpit-angled-rail-back')).toBeHidden()
+    await expect(page.locator('.cockpit-angled-rail-spine')).toBeHidden()
     expect(compactWidth).toBeLessThan(100)
-    expect(shellTransform).not.toBe('none')
-    expect(backTransform).not.toBe('none')
     await expect(page.locator('.cockpit-edge-grip')).toHaveCount(0)
     await expect(page.locator('.cockpit-angled-rail-rig [role="slider"]')).toHaveCount(0)
   })
 
-  test('clarity expansion reveals labels without changing the rail perspective or project state', async ({ page }) => {
+  test('clarity expansion reveals labels without changing the flat rail or project state', async ({ page }) => {
     await openStudy(page)
 
     const shell = page.locator('.cockpit-angled-rail-shell')
     const selectedBefore = await selectedWorkKey(page)
     const cameraBefore = await page.locator('#reintegration-world-plane').evaluate((element) => element.style.transform)
-    const transformBefore = await shell.evaluate((element) => getComputedStyle(element).transform)
 
     await page.locator('.cockpit-angled-rail-clarity').click()
     await expect(page.locator('.cockpit-angled-rail-rig')).toHaveAttribute('data-clarity', 'expanded')
@@ -51,42 +51,103 @@ test.describe('resting-angle Cockpit rail study', () => {
     const cameraAfter = await page.locator('#reintegration-world-plane').evaluate((element) => element.style.transform)
 
     expect(expandedWidth).toBeGreaterThan(180)
-    expect(transformAfter).toBe(transformBefore)
+    expect(transformAfter).toBe('none')
     expect(Number(labelOpacity)).toBeGreaterThan(0.9)
     expect(cameraAfter).toBe(cameraBefore)
     expect(await selectedWorkKey(page)).toBe(selectedBefore)
   })
 
-  test('the angled shell reuses the real Cockpit controls', async ({ page }) => {
+  test('the flat rail still reuses the real Cockpit controls and yields full-stage ownership', async ({ page }) => {
     await openStudy(page)
 
     await page.locator('#product-jump-toggle').click()
     await expect(page.locator('html')).toHaveAttribute('data-product-search-open', 'true')
     await expect(page.locator('#jump-input')).toBeFocused()
-
     await page.keyboard.press('Escape')
-    await expect(page.locator('html')).toHaveAttribute('data-product-search-open', 'false')
 
     await page.locator('#appearance-controls-toggle').click()
     await expect(page.locator('#reintegration-appearance-panel')).toBeVisible()
-  })
-
-  test('the angled rail yields stage ownership to full Conversation and Deep Dive', async ({ page }) => {
-    await openStudy(page)
+    await page.keyboard.press('Escape')
 
     await page.locator('#conversation-expand').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
-    await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'full')
     await expect(page.locator('.cockpit-angled-rail-rig')).toBeHidden()
-
     await page.keyboard.press('Escape')
-    await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'false')
     await expect(page.locator('.cockpit-angled-rail-rig')).toBeVisible()
 
-    const selected = page.locator('.expansion-practical-node[data-selected="true"]')
-    if (await selected.getAttribute('data-expanded') !== 'true') await selected.click()
     await page.locator('#deep-dive').click()
     await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused', { timeout: 2500 })
     await expect(page.locator('.cockpit-angled-rail-rig')).toBeHidden()
+  })
+
+  test('Conversation Boxes mode separates every WorkUnit with deliberate vertical breathing room', async ({ page }) => {
+    await openStudy(page)
+    await page.locator('#conversation-expand').click()
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
+
+    await page.locator('[data-conversation-rail-option="boxes"]').click()
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
+
+    const rowGap = await page.locator('.reintegration-thread-list').evaluate((element) => getComputedStyle(element).rowGap)
+    expect(Number.parseFloat(rowGap)).toBeGreaterThanOrEqual(10)
+
+    const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
+    const workSurfaces = page.locator('.reintegration-thread-item[data-thread-scope="work"] .conversation-canonical-node .node-surface')
+    const first = await workSurfaces.nth(0).boundingBox()
+    const second = await workSurfaces.nth(1).boundingBox()
+    expect(project).not.toBeNull()
+    expect(first).not.toBeNull()
+    expect(second).not.toBeNull()
+
+    const projectGap = (first?.y ?? 0) - ((project?.y ?? 0) + (project?.height ?? 0))
+    const workGap = (second?.y ?? 0) - ((first?.y ?? 0) + (first?.height ?? 0))
+    expect(projectGap).toBeGreaterThan(7)
+    expect(workGap).toBeGreaterThan(7)
+  })
+
+  test('the Z7 compass is one clean live topology instrument tied to the actual selected WorkUnit', async ({ page }) => {
+    await openStudy(page)
+    const selectedBefore = await selectedWorkKey(page)
+    expect(selectedBefore).not.toBeNull()
+
+    await page.locator('#deep-dive').click()
+    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused', { timeout: 2500 })
+    await expect(page.locator('html')).toHaveAttribute('data-topology-compass', 'live')
+
+    const compass = page.locator('.reintegration-topology-compass')
+    const miniMap = page.locator('.reintegration-mini-map')
+    await expect(compass).toBeVisible()
+    await expect(compass).toHaveAttribute('data-current-work', selectedBefore || '')
+
+    const projectNodeCount = await page.locator('.expansion-practical-node').count()
+    await expect(miniMap.locator('.mini-dot')).toHaveCount(projectNodeCount)
+    await expect(miniMap.locator('.mini-dot.is-current')).toHaveCount(1)
+    await expect(miniMap.locator('.mini-dot.is-current')).toHaveAttribute('data-node-key', selectedBefore || '')
+
+    const relationCount = await page.locator('#reintegration-relations .reintegration-relation').count()
+    await expect(miniMap.locator('.reintegration-mini-map-links line')).toHaveCount(relationCount)
+
+    const compassBorder = await compass.evaluate((element) => getComputedStyle(element).borderTopWidth)
+    const miniMapBorder = await miniMap.evaluate((element) => getComputedStyle(element).borderTopWidth)
+    expect(Number.parseFloat(compassBorder)).toBeGreaterThan(0)
+    expect(Number.parseFloat(miniMapBorder)).toBe(0)
+
+    const compassBox = await compass.boundingBox()
+    const firstSidePanel = await page.locator('.reintegration-specialist-side .reintegration-specialist-panel').first().boundingBox()
+    expect(compassBox).not.toBeNull()
+    expect(firstSidePanel).not.toBeNull()
+    expect((firstSidePanel?.y ?? 0) - ((compassBox?.y ?? 0) + (compassBox?.height ?? 0))).toBeGreaterThan(8)
+
+    await page.locator('#return-to-project').click()
+    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'false')
+
+    const alternateKey = selectedBefore === 'q' ? 'r' : 'q'
+    const alternate = page.locator(`.expansion-practical-node[data-node-key="${alternateKey}"]`)
+    await alternate.click()
+    await expect(alternate).toHaveAttribute('data-selected', 'true')
+    await page.locator('#deep-dive').click()
+    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused', { timeout: 2500 })
+    await expect(compass).toHaveAttribute('data-current-work', alternateKey)
+    await expect(miniMap.locator('.mini-dot.is-current')).toHaveAttribute('data-node-key', alternateKey)
   })
 })
