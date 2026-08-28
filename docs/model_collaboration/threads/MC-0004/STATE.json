@@ -3,7 +3,7 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_ADVANCED_WHOLE_PRODUCT_SPATIAL_RAIL_REVIEW",
+  "phase": "PHASE_C_RESTING_ANGLED_RAIL_REVIEW",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
@@ -79,9 +79,18 @@
       "Research 092 preserves three unselected candidates: A Extruded Blade, B Layered Deck and C Dock and Float",
       "workflow run 33197594115 passed the complete 56-test source-faithful holistic browser suite including all three spatial-rail candidates",
       "the Cockpit fidelity workflow now watches cockpit-product-surface-study* and cockpit-spatial-rail-study* so whole-product study changes cannot bypass the deterministic gate",
-      "Checkpoint 252 opens human comparison of A/B/C without selecting a winner or hybrid"
+      "Checkpoint 252 opened human comparison of A/B/C without selecting a winner or hybrid",
+      "Research 093 explored a second-generation architectural edge interpretation with Hinge, Stack and Console variants after the supplied Cockpit/FUI reference",
+      "the Gen 2 implementation reached 60/60 browser tests at implementation target c29b19932bc10a2d3aa1e3d507010a4f3211aa4a",
+      "Checkpoint 253 opened Gen 2 review but still coupled the spatial feeling too strongly to pull/deployment behavior",
+      "the project owner then explicitly clarified that the intended 3D feeling belongs to the bar itself at rest; expansion exists only to clarify what controls mean and separate drag designs are not needed for this visual goal",
+      "Research 094 records the corrected decomposition: permanent resting spatial identity, optional clarity-only expansion, and no current dependency on direct manipulation",
+      "the single current rail route is cockpit-reintegration.html?edge=angled; the compact bar has permanent perspective, thickness and right-edge attachment while the expanded state changes width/labels only",
+      "workflow run 33202773778 passed the complete 64-test source-faithful Cockpit suite at implementation target 67c3105ff26601a2f259e44007b23ce638b23838, including four checks that protect the resting-angle versus clarity-expansion distinction",
+      "Research 092 and Research 093 drag/deployment candidates remain preserved as historical interaction evidence but are inactive for the current rail design axis",
+      "Checkpoint 254 opens human review of the single resting angled rail; the compact rail must be judged first and the optional expanded state only for label clarity"
     ],
-    "notes": "No Claude obligation is pending. Source-faithful reintegration is now the protected whole-product evaluation substrate. The current gate is human review of three unselected spatial edge-rail direct-manipulation candidates: A Extruded Blade, B Layered Deck and C Dock and Float. All candidates reuse the real Cockpit controls and must preserve accepted WorkUnit, relation, navigation, Conversation and focus semantics. The complete browser gate passed 56/56 at implementation target 30f92a55537a9b0a2ec14695ed2982ded4ec9c0e. Human review should determine what to retain, reject or refine before any rail design or hybrid is promoted. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. Source-faithful reintegration remains the protected whole-product evaluation substrate. The current gate is human review of one unselected resting angled right-side rail at ?edge=angled. The rail's spatial identity must be present in the compact resting state through angle, perspective, visible thickness and Cockpit-edge attachment. Optional expansion exists only to reveal labels and must not create or intensify the 3D identity. Research 092 and Research 093 drag variants remain historical evidence and are not an active comparison requirement. The complete browser gate passed 64/64 at implementation target 67c3105ff26601a2f259e44007b23ce638b23838. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -124,15 +133,17 @@
       "PHASE_C_IMPLEMENTATION_PROVENANCE_GATE_PASSED",
       "PHASE_C_SOURCE_FAITHFUL_HOLISTIC_REINTEGRATION",
       "PHASE_C_PRODUCT_SURFACE_STUDY_A",
-      "PHASE_C_SPATIAL_EDGE_RAIL_DIRECT_MANIPULATION_REVIEW"
+      "PHASE_C_SPATIAL_EDGE_RAIL_DIRECT_MANIPULATION_REVIEW",
+      "PHASE_C_ARCHITECTURAL_EDGE_GEN2_REVIEW",
+      "PHASE_C_RESTING_ANGLED_RAIL_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-spatial-edge-rail-human-review-opened",
+    "transition_id": "mc0004-resting-angled-rail-human-review-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The source-faithful integrated Cockpit is now protected by a 56-test holistic browser gate and is being used as the whole-product design substrate. Research 092 implements three unselected spatial edge-rail direct-manipulation candidates requested by the project owner, and Checkpoint 252 opens human A/B/C review without promoting a winner.",
-    "repository_head": "62c2afa7af81f723d542aaf342dfe5d8983d6a4b"
+    "reason": "The project owner clarified that the desired spatial / 3D quality belongs to the right-side bar itself at rest rather than to pull/deployment behavior. Research 094 and Checkpoint 254 replace the active A/B/C drag comparison with one resting angled rail whose optional expansion is only for label clarity. The complete Cockpit gate passed 64/64 while preserving all accepted mechanisms.",
+    "repository_head": "2db498ea2fc5d11e2b9e7f11bcaecb25e7224e2c"
   }
 }
