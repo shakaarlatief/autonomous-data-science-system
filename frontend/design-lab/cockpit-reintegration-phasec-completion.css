@@ -1,0 +1,353 @@
+/*
+ * Phase-C reintegration completion layer.
+ *
+ * This stylesheet restores held presentation invariants that were present in
+ * accepted Phase-C sources but were incomplete in the holistic reintegration.
+ * It does not redefine semantic ownership. Source families:
+ *   H4/SEL2          e7304fe834d86166d843fda7e1df0f4ddb1f793a
+ *   appearance       c1f996f6500672641de8e00780d5a4949c5dcb28
+ *   connector ports 183264bdd07783eaa2354894592f2cf4a076b6ec
+ *   P7 disposition   fac1db37af4225927d6c799e37418a3ad9c42c13
+ *   BLOCKS model     88fd3c3cfe7a1eff4664afde06341b7b654c97f4
+ *   L0 layout        871075bcda8ff812e1a96b18b442c803d5da7faf
+ *   Z7 destination   04616a52df5cceff6c59223bbd6f07448d027510
+ *   A6 sidebar       606e027f281b35c2dfc93d059a1681df23bc2b73
+ */
+
+/* -------------------------------------------------------------------------- */
+/* G4 semantic activity: reject the two isolated point packets in integration */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-world .live-packet {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* P7 Neutral Tag + Tone                                                      */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-world .expansion-practical-node[data-state="completed"] .node-surface {
+  opacity: 0.86;
+  filter: saturate(0.82);
+}
+
+.reintegration-world .expansion-practical-node[data-state="deferred"] .node-surface {
+  opacity: 0.78;
+  filter: saturate(0.72);
+}
+
+.reintegration-world .expansion-practical-node[data-state="future"] .node-surface {
+  opacity: 0.66;
+  filter: saturate(0.62);
+}
+
+.reintegration-world .expansion-practical-node.is-hovered .disposition-state-outline {
+  border-color: rgba(var(--state-rgb), 0.86);
+  box-shadow: 0 0 14px rgba(var(--state-rgb), 0.20);
+}
+
+.reintegration-world .expansion-practical-node.is-hovered .disposition-state-badge {
+  border-color: rgba(var(--state-rgb), 0.72);
+  color: rgba(var(--state-rgb), 1);
+  box-shadow: inset 0 0 8px rgba(var(--state-rgb), 0.05), 0 0 9px rgba(var(--state-rgb), 0.08);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Relationship presentation: semantic class carrier is user-switchable      */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-relation {
+  --hover-rgb: 153, 170, 193;
+}
+
+/* E5 Hue + Tag remains the selected semantic-class presentation. */
+html[data-relation-presentation="class-tag"] .reintegration-relation .semantic-path {
+  stroke: rgba(var(--class-rgb), 0.68);
+}
+
+html[data-relation-presentation="class-tag"] .reintegration-relation .semantic-tag {
+  opacity: 1;
+  visibility: visible;
+}
+
+html[data-relation-presentation="class-tag"] .reintegration-relation .semantic-arrow,
+html[data-relation-presentation="class-tag"] .reintegration-relation .reintegration-terminal-dot,
+html[data-relation-presentation="class-tag"] .reintegration-relation .reintegration-terminal-socket {
+  stroke: rgba(var(--class-rgb), 0.90);
+}
+
+html[data-relation-presentation="class-tag"] .reintegration-relation .reintegration-terminal-dot {
+  fill: rgba(var(--class-rgb), 0.78);
+}
+
+/*
+ * Owner-selected alternate presentation: neutral relationship lines with no
+ * class hue and no semantic class tag at rest. Hovering a WorkUnit temporarily
+ * colors only its related relationships with that WorkUnit's category color.
+ * Relation class and direction data remain unchanged underneath.
+ */
+html[data-relation-presentation="neutral-hover"] .reintegration-relation .semantic-path {
+  stroke: rgba(153, 170, 193, 0.31);
+  stroke-width: 1.25;
+  filter: none;
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-relation .semantic-tag {
+  opacity: 0;
+  visibility: hidden;
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-relation .semantic-arrow,
+html[data-relation-presentation="neutral-hover"] .reintegration-relation .reintegration-terminal-socket {
+  stroke: rgba(153, 170, 193, 0.72);
+  filter: none;
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-relation .reintegration-terminal-dot {
+  fill: rgba(153, 170, 193, 0.72);
+  stroke: rgba(11, 17, 25, 0.94);
+  filter: none;
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .semantic-path {
+  stroke: rgba(var(--hover-rgb), 0.78);
+  stroke-width: 1.55;
+  filter: drop-shadow(0 0 4px rgba(var(--hover-rgb), 0.38));
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .semantic-arrow,
+html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .reintegration-terminal-socket {
+  stroke: rgba(var(--hover-rgb), 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-relation.is-related .reintegration-terminal-dot {
+  fill: rgba(var(--hover-rgb), 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
+}
+
+/* -------------------------------------------------------------------------- */
+/* One connector terminal treatment at a time                                */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-terminal-dot,
+.reintegration-terminal-socket {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 160ms ease, fill 160ms ease, stroke 160ms ease, filter 160ms ease;
+}
+
+.reintegration-terminal-dot {
+  fill: rgba(153, 170, 193, 0.72);
+  stroke: rgba(11, 17, 25, 0.94);
+  stroke-width: 1;
+}
+
+.reintegration-terminal-socket {
+  fill: rgba(16, 23, 33, 0.98);
+  stroke: rgba(153, 170, 193, 0.72);
+  stroke-width: 1.1;
+}
+
+/* Clean means no endpoint ornament. */
+html[data-connector-terminal="clean"] .reintegration-relation .semantic-arrow-start,
+html[data-connector-terminal="clean"] .reintegration-relation .semantic-arrow-end,
+html[data-connector-terminal="clean"] .reintegration-terminal-dot,
+html[data-connector-terminal="clean"] .reintegration-terminal-socket {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+html[data-connector-terminal="dots"] .reintegration-relation .semantic-arrow-start,
+html[data-connector-terminal="dots"] .reintegration-relation .semantic-arrow-end,
+html[data-connector-terminal="dots"] .reintegration-terminal-socket {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+html[data-connector-terminal="dots"] .reintegration-terminal-dot {
+  visibility: visible;
+  opacity: 0.88;
+}
+
+html[data-connector-terminal="sockets"] .reintegration-relation .semantic-arrow-start,
+html[data-connector-terminal="sockets"] .reintegration-relation .semantic-arrow-end,
+html[data-connector-terminal="sockets"] .reintegration-terminal-dot {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+html[data-connector-terminal="sockets"] .reintegration-terminal-socket {
+  visibility: visible;
+  opacity: 0.92;
+}
+
+html:not([data-connector-terminal="arrows"]) .reintegration-relation .semantic-arrow-start,
+html:not([data-connector-terminal="arrows"]) .reintegration-relation .semantic-arrow-end {
+  visibility: hidden !important;
+}
+
+/* Directionality remains system semantic state when arrows are the treatment. */
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="none"] .semantic-arrow-start,
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="none"] .semantic-arrow-end,
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="forward"] .semantic-arrow-start,
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="reverse"] .semantic-arrow-end {
+  visibility: hidden !important;
+}
+
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="forward"] .semantic-arrow-end,
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="reverse"] .semantic-arrow-start,
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="both"] .semantic-arrow-start,
+html[data-connector-terminal="arrows"] .reintegration-relation[data-direction="both"] .semantic-arrow-end {
+  visibility: visible !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* L0 provisional working internal layout                                     */
+/* -------------------------------------------------------------------------- */
+
+html[data-internal-layout="l0"] .reintegration-world .expansion-practical-node[data-expanded="true"][data-expansion-style="x5"] .detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
+  column-gap: 9px;
+  row-gap: 6px;
+}
+
+html[data-internal-layout="l0"] .reintegration-world .expansion-practical-node[data-expanded="true"][data-expansion-style="x5"] .detail-cell {
+  min-height: 0;
+  padding-top: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Z7 end state retains selected WorkUnit category identity                   */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-specialist-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  color: rgba(var(--specialist-category-rgb, 142, 169, 255), 0.88);
+  font-size: 6.5px;
+  font-weight: 850;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.reintegration-specialist-category .category-glyph {
+  width: 15px;
+  height: 15px;
+  border-color: rgba(var(--specialist-category-rgb, 142, 169, 255), 0.40);
+  background: rgba(var(--specialist-category-rgb, 142, 169, 255), 0.08);
+  color: rgba(var(--specialist-category-rgb, 142, 169, 255), 0.94);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Quiet Graphite + accepted canonical Boxes rail containment                 */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-conversation-layer .reintegration-conversation-search {
+  min-height: 33px;
+  line-height: 1;
+}
+
+.reintegration-conversation-layer .reintegration-conversation-search > span {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--cq-muted);
+  font-size: 8px !important;
+  font-weight: 500;
+  line-height: 1 !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reintegration-conversation-layer .reintegration-conversation-search > span:first-child:not(:last-child) {
+  font-family: var(--cq-font-sans);
+}
+
+.reintegration-conversation-layer .reintegration-conversation-search kbd {
+  flex: 0 0 auto;
+  font-size: 7px !important;
+  line-height: 1 !important;
+  white-space: nowrap;
+}
+
+.reintegration-thread-item.is-workunit-thread {
+  height: 92px;
+  min-height: 92px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
+  position: relative;
+  width: 100%;
+  height: 92px;
+  overflow: hidden;
+}
+
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node {
+  display: block;
+  width: 176px !important;
+  height: 92px !important;
+  transform: scale(0.68) !important;
+  transform-origin: left top !important;
+  pointer-events: none;
+}
+
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .node-surface {
+  width: 176px !important;
+  height: 92px !important;
+}
+
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .status-dot-carrier,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .status-tag-carrier,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .focus-membership-toggle,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .reintegration-focus-membership-toggle {
+  pointer-events: none !important;
+}
+
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-corners,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .detail-layer,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .detail-panel,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .detail-sheet,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .detail-inline,
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .detail-rail {
+  display: none !important;
+}
+
+/* Status semantics stay visible, but compactly inside the canonical box. */
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .status-tag-carrier {
+  min-width: 46px;
+  height: 18px;
+  padding: 0 7px;
+  font-size: 6.1px !important;
+  line-height: 1 !important;
+}
+
+.reintegration-thread-item.is-workunit-thread .conversation-canonical-node .status-tag-label {
+  font-size: inherit !important;
+  line-height: 1 !important;
+  white-space: nowrap;
+}
+
+/* Text rail remains independent from Boxes rail. */
+html[data-conversation-rail-view="text"] .reintegration-thread-item.is-workunit-thread {
+  height: auto;
+  min-height: 0;
+  padding: 7px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reduced motion                                                             */
+/* -------------------------------------------------------------------------- */
+
+html[data-reduced="on"] .reintegration-terminal-dot,
+html[data-reduced="on"] .reintegration-terminal-socket,
+html[data-reduced="on"] .reintegration-relation .semantic-path,
+html[data-reduced="on"] .reintegration-relation .semantic-arrow {
+  transition: none !important;
+}
