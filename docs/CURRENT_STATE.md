@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 255  
+**Checkpoint:** 256  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -25,19 +25,20 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
-docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
-docs/research/095_conversation_spacing_flat_project_rail_and_live_topology_compass.md
+docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
+docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
 ```
 
 Current human-review task:
 
 ```text
-1. inspect Conversation Boxes-mode spacing
-2. inspect the current right-side Project Grid rail as a normal flat 2D surface
-3. inspect the Deep Dive project-position compass as a live topology instrument
+1. inspect Conversation Boxes-mode spacing at the actual local viewport
+2. inspect the current flat right-side Project Grid rail control set
 ```
 
-The prior resting 3D / angled rail direction is no longer active. The current route still uses `?edge=angled` only as historical implementation plumbing.
+Current-process Focus is explicitly outside this correction boundary because the project owner confirmed that it is working correctly.
+
+The Checkpoint 255 live topology compass remains carried forward unchanged.
 
 Production `/cockpit` remains untouched.
 
@@ -57,23 +58,37 @@ Current review route:
 http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
 ```
 
+The `edge=angled` query is historical implementation plumbing. The visible rail is normal flat 2D.
+
 The source-faithful integrated Cockpit remains the protected whole-product design substrate. New shell decisions are evaluated on this complete browser rather than in disconnected fixtures.
 
 ---
 
-# Checkpoint 255 corrections
+# Checkpoint 256 corrections
 
 ## Conversation rail
 
-Boxes mode now gives canonical WorkUnit conversation objects deliberate vertical breathing room.
+The prior row-gap-only correction was insufficient. Canonical Conversation WorkUnits are scaled/transformed inside rail slots, so visual content could consume the apparent separation even while the parent list reported a valid CSS gap.
 
-Current authored review value:
+The current layout reserves real row geometry:
 
 ```text
-thread-list gap  10px
+thread-list row gap       16px
+WorkUnit row padding       6px top + 6px bottom
+canonical WorkUnit size    unchanged
+accepted rail footprint    unchanged
 ```
 
-The exact pixel value remains tunable. The intended design requirement is that the WorkUnit boxes read as distinct objects and do not visually run into one another.
+The deterministic gate now measures the actual rendered WorkUnit `.node-surface` rectangles.
+
+Required visible spacing:
+
+```text
+project-general -> first WorkUnit  >= 16px
+WorkUnit -> next WorkUnit          >= 20px
+```
+
+Both requirements are checked at 1600px and 760px viewport widths.
 
 Held Conversation semantics remain unchanged:
 
@@ -90,30 +105,54 @@ source work-state preservation
 
 ## Right-side Project Grid rail
 
-The project owner explicitly requested that the current rail keep its compact structure but become normal 2D.
+The current rail remains the compact normal flat 2D candidate from Checkpoint 255.
 
-Current state:
+Current visible control set:
 
 ```text
-flat 2D surface
-no perspective
-no 3D transform
-no rear depth plate
-no 3D spine
-no angled clip-path
-real existing Cockpit controls retained
-clarity-only label expansion retained
+Jump / search
+Zoom out
+zoom readout
+Zoom in
+Fit project
+Reset view
+Deep Dive
+Current process focus
+Conversations
+Appearance
+Fullscreen
+Tool-label clarity control
 ```
 
-The current flat rail is a review candidate, not a promoted production baseline.
+Explicitly removed from this current rail composition:
 
-Historical 3D rail studies remain preserved in Research 092, 093 and 094 but are inactive for the current design axis.
+```text
+Expand selected WorkUnit
+Hide project HUD
+```
 
-## Deep Dive topology compass
+These are shell-composition changes only. X5 remains an accepted mechanism and Specification 008 immersive/fold-away chrome capability remains part of the promoted architecture.
 
-M17 still requires a compact topology compass. The historical Z7 fixture used static hard-coded dots and therefore did not truthfully report the integrated six-WorkUnit project topology.
+The current flat rail remains a review candidate, not a promoted production baseline.
 
-The integrated compass is now live:
+## Current-process Focus
+
+The project owner explicitly confirmed that Focus is working correctly and asked that the previous Focus correction request be ignored.
+
+Therefore:
+
+```text
+M09 focus behavior unchanged
+focus membership editing unchanged
+context recession unchanged
+focus UI unchanged
+```
+
+No Focus implementation was changed in Checkpoint 256.
+
+## Deep Dive topology compass carried forward
+
+The Checkpoint 255 live topology compass remains active and unchanged:
 
 ```text
 one dot per actual mounted WorkUnit
@@ -121,27 +160,8 @@ real current relation links rendered
 actual selected WorkUnit highlighted
 related WorkUnits receive quieter context emphasis
 selection changes update the compass
-compass reads project state but never owns or mutates selection
+compass reads state but never owns or mutates selection
 ```
-
-The container was also corrected to one coherent instrument hierarchy:
-
-```text
-one outer border
-inner topology field without a second border
-clear vertical separation from specialist side panels
-```
-
-Current review geometry:
-
-```text
-outer width        132px
-minimum height      96px
-inner topology      62px
-side-panel reserve 114px
-```
-
-These dimensions remain visually tunable.
 
 ---
 
@@ -150,34 +170,31 @@ These dimensions remain visually tunable.
 Implementation target:
 
 ```text
-10cf3cfd26553d95c3b786df6d3a14137a29767a
+e2768a807b2a80f438248a25f7d41e53be561d51
 ```
 
 Latest complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33207377429
-job           98971755372
+workflow run  33211613408
+job           98985900484
 result        SUCCESS
-browser tests 65 / 65 passing
+browser tests 68 / 68 passing
 ```
 
 The newest tests verify:
 
 ```text
-flat rail geometry and no remaining perspective transform
-clarity expansion without project-state mutation
-real rail controls remain functional
-Conversation WorkUnit vertical separation
-live compass node count equals actual project WorkUnit count
-live compass relation count equals mounted relation count
-exactly one current WorkUnit is highlighted
-compass follows changed selection across Deep Dive entry
-single-border compass hierarchy
-compass does not collide with specialist panels
+actual visible Conversation WorkUnit spacing at desktop width
+actual visible Conversation WorkUnit spacing at narrow width
+Fullscreen visible in current flat rail
+Expand selected WorkUnit absent from current flat rail
+Hide project HUD absent from current flat rail
+same control set retained after clarity expansion
+all prior source-faithful Cockpit regression checks remain green
 ```
 
-A green deterministic gate protects mechanism integrity. It does not decide whether the current visual tuning is aesthetically accepted.
+A green deterministic gate protects mechanism integrity and concrete geometry contracts. It does not decide whether the current visual tuning is aesthetically accepted.
 
 ---
 
@@ -251,7 +268,7 @@ compact native Cockpit composer
 Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-Checkpoint 255 changes shell presentation and compass implementation fidelity only. It does not revoke these held semantics.
+Checkpoint 256 changes Conversation row geometry and the visible flat-rail control set only. It does not revoke these held semantics.
 
 Important accepted targets remain:
 
@@ -295,14 +312,14 @@ Course 2 source-universe gate
 # Exact next step
 
 ```text
-Human visually reviews the three Checkpoint 255 corrections in the live browser.
+Human visually reviews the two Checkpoint 256 corrections in the live browser.
 
-If spacing, flat rail and compass are visually good:
+If Conversation spacing and the rail control set are visually good:
     preserve explicit acceptance / tuning values
     continue whole-product Cockpit design from this corrected substrate
 
-If any visual detail is wrong:
+If either visual detail is wrong:
     tune that exact surface only
     do not reopen accepted Phase-C mechanisms
-    do not revive 3D rail exploration unless explicitly requested
+    do not modify current-process Focus unless explicitly reopened
 ```
