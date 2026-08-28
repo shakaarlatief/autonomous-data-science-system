@@ -112,28 +112,26 @@ test.describe('source-faithful Cockpit reintegration', () => {
     await expect(page.locator('.semantic-tag-text')).toHaveText(['DEP', 'EVID', 'LINE', 'CAUSE'])
   })
 
-  test('initializes G4 ambient grid behavior from the accepted source module', async ({ page }) => {
-    const currents = page.locator('.ambient-current')
-    await expect(currents).toHaveCount(4)
+  test('mounts the latest stochastic G4 scheduler instead of the superseded fixed ambient fixture', async ({ page }) => {
+    const world = page.locator('#reintegration-world')
+    const runtimeLayer = page.locator('#reintegration-ambient-runtime-layer')
 
-    for (let index = 0; index < 4; index += 1) {
-      await expect(currents.nth(index)).toHaveAttribute('data-orientation', /horizontal|vertical/)
-      const position = await currents.nth(index).evaluate((element) =>
-        getComputedStyle(element).getPropertyValue('--ambient-position').trim(),
-      )
-      expect(position).toMatch(/^\d+px$/)
-    }
+    await expect(page.locator('html')).toHaveAttribute('data-ambient-cadence', 'lively')
+    await expect(world).toHaveClass(/variant-g4/)
+    await expect(runtimeLayer).toHaveCount(1)
 
-    const glints = page.locator('.ambient-glint')
-    await expect(glints).toHaveCount(3)
-    for (let index = 0; index < 3; index += 1) {
-      const position = await glints.nth(index).evaluate((element: HTMLElement) => ({
-        left: element.style.left,
-        top: element.style.top,
-      }))
-      expect(Number.parseInt(position.left, 10) % 100).toBe(0)
-      expect(Number.parseInt(position.top, 10) % 100).toBe(0)
-    }
+    await expect(world.locator(':scope > .ambient-current')).toHaveCount(0)
+    await expect(world.locator(':scope > .ambient-glint')).toHaveCount(0)
+    await expect(world.locator(':scope > .ambient-drift')).toHaveCount(0)
+
+    await expect.poll(async () => runtimeLayer.locator('.runtime-current').count(), { timeout: 1800 }).toBeGreaterThanOrEqual(1)
+    const current = runtimeLayer.locator('.runtime-current').first()
+    await expect(current).toHaveAttribute('data-orientation', /horizontal|vertical/)
+    const coordinate = Number(await current.getAttribute('data-grid-coordinate'))
+    expect(coordinate % 20).toBe(0)
+
+    await expect(world.locator('.activity-field')).toHaveCount(2)
+    await expect(world.locator('.live-packet')).toHaveCount(2)
   })
 
   test('reuses accepted X5 two-axis expansion without context recession', async ({ page }) => {
