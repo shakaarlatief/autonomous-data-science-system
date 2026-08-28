@@ -11,124 +11,145 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            248
+checkpoint            249
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation access + coexistence architecture review
+current boundary      holistic integrated Cockpit baseline review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
 Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inferred from that run.
 
-## Held Cockpit design direction
+## Phase-C process change
+
+The project has moved from default component-by-component design-lab exploration to a holistic integrated Cockpit baseline.
+
+```text
+before
+    isolate one question
+    build separate browser variants
+    select / preserve mechanism
+    repeat
+
+now
+    reconstruct accepted / held mechanisms
+        into one actual Cockpit
+
+    review the whole product
+
+    refine the integrated Cockpit directly
+        where possible
+
+    reopen a bounded comparison browser
+        only when a newly exposed question genuinely benefits from isolation
+```
+
+The earlier controlled browsers remain authoritative evidence. They are not discarded.
+
+## Current integrated Cockpit
+
+Primary browser:
+
+```text
+http://localhost:5173/design-lab/cockpit-integrated-baseline.html
+```
+
+Exact initial holistic frontend target:
+
+```text
+8e554d847bb3b6318db432abcb5dff742f0fa523
+```
+
+Research and checkpoint:
+
+```text
+docs/checkpoints/249_holistic_integrated_cockpit_baseline_review_opened.md
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
+```
+
+Production `/cockpit` remains untouched.
+
+## Held Cockpit design direction reconstructed into the baseline
 
 ```text
 G4 Adaptive Hybrid world
 H4 hover/world response
 Reduced in-box resting light
 scientific category-marker grammar
+Foundation 023 non-semantic appearance configurability
 E5 Hue + Tag relation-class carrier
+D0-D3 semantic directionality
+single active connector terminal treatment
 P7 Neutral Tag + Tone disposition
-editable current-process focus set
+current-process focus lens
 conditional runtime semantics
 switchable runtime carrier with T7 Soft Shade tag
 BLOCKER -> BLOCKS -> BLOCKED cause/effect model
 BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for HIGH attention
-SEL2 Corner Brackets for persistent selection
+SEL2 four-corner persistent selection
 X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional expanded-card default
 Z7 Pull-Back Then Dive specialist-workspace entry
-fullscreen specialist-workspace end state
+full-stage specialist workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite Conversation Workspace baseline
+project-general + work-unit-scoped conversation distinction
 Boxes / Text user-switchable conversation rail
-A6 Adaptive Anchor opened-box composition
-A6 resting state has no redundant floating work-unit box
+A6 work-unit context expansion
+A6 resting state without redundant floating work-unit box
+conversation available from Grid and Deep Dive
+full-focus + co-present conversation capability
+source work-state preservation across conversation open/close
+compact native Cockpit composer
+Jump/search, map recovery and fullscreen capabilities
 ```
 
 Semantic zoom remains deliberately deferred. S0 is the working behavior; S1-S8 remain preserved and not rejected.
 
-## Conversation architecture correction
+## Important provisional integration glue
 
-The current product model now treats conversation as orthogonal to work depth.
-
-```text
-WORK CONTEXT
-    Project Grid
-        neutral
-        selected work unit
-        X5 expanded work unit
-
-    Deep Dive specialist workspace
-
-x
-
-CONVERSATION PRESENTATION
-    compact Cockpit composer / work only
-    full Conversation Workspace focus
-    co-present Conversation Workspace
-
-x
-
-CONVERSATION SCOPE
-    project-general
-    work-unit-scoped
-```
-
-A global conversation action must be available regardless of Grid state. A work unit/X5 can open its corresponding conversation directly. Deep Dive must also expose conversation, both as full chat focus and as a simultaneous work+chat composition.
-
-Opening conversation must not destructively reset the underlying Grid selection/X5 or Deep Dive state. Closing or collapsing conversation should restore the same work context.
-
-Research 079's earlier dock/split/context-rail ideas remain relevant as co-presence mechanisms rather than mutually exclusive whole-product architectures.
-
-## Active Slice: Conversation access + coexistence
-
-Primary browser:
+The integrated browser must make whole-product geometry concrete, but the following are not frozen:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
+54px HUD
+2400 x 1500 finite-world fixture
+2200 x 1320 project-plane fixture
+current HUD action ordering
+current map-tool rail geometry
+current compact-composer dimensions
+current specialist-workspace internal modules
+46% co-present Conversation region
+collapsed thread rail while co-present
 ```
 
-Research and checkpoint:
+These are visible now precisely so they can be judged in the actual Cockpit.
+
+## Current interaction loop
 
 ```text
-docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
-docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+Project Grid
+    select work unit
+    expand X5
+    enter Deep Dive
+
+Conversation
+    global project conversation from Grid
+    work-unit conversation from selected work / X5
+    project-general conversation from Deep Dive
+    work-unit conversation from Deep Dive
+    full-focus Conversation Workspace
+    co-present work + Conversation
+    return without destroying source work state
 ```
 
-The browser factorizes:
-
-```text
-UNDERLYING WORK SURFACE
-    Grid neutral
-    Grid selected
-    Grid X5 expanded
-    Deep Dive
-
-CONVERSATION
-    Project general
-    Current work-unit chat
-
-PRESENTATION
-    P0 Work only / compact chat
-    P1 Full chat focus
-    P2 Right dock
-    P3 Balanced split
-    P4 Chat dominant + work context
-```
-
-P3 is the initial browser default only and is not selected.
-
-Checkpoint 247's E0-E4 transition candidates remain preserved as possible **full-chat-focus** motion evidence, but no winner was selected because the entry-only framing was too narrow.
-
-Production `/cockpit` remains untouched.
+The full Conversation Workspace keeps Quiet Graphite, Boxes/Text navigation and A6. It does not reintroduce the redundant floating work-unit card.
 
 ## Repository preservation
 
@@ -151,17 +172,15 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/249_holistic_integrated_cockpit_baseline_review_opened.md
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
+frontend/design-lab/cockpit-integrated-baseline.html
+
+# immediately preceding architectural correction
 docs/checkpoints/248_conversation_access_and_coexistence_architecture_review_opened.md
 docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
-frontend/design-lab/conversation-workspace-access-coexistence.html
 
-docs/research/079_conversation_workspace_presentation_architecture_experiment.md
-docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
-frontend/design-lab/conversation-workspace-entry-transition.html
-
-frontend/design-lab/conversation-workspace-work-unit-anchor.html
-docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
-
+# preserved collaboration state
 docs/model_collaboration/threads/MC-0004/THREAD.md
 docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
