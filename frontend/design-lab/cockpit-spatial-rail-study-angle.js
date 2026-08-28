@@ -14,7 +14,19 @@ const search = document.querySelector('.reintegration-search')
 const appearancePanel = document.querySelector('#reintegration-appearance-panel')
 const focusPanel = document.querySelector('#reintegration-process-focus-panel')
 
+installReview256Layer()
+
 if (stage && tools) mountAngledRail()
+
+function installReview256Layer() {
+  if (document.querySelector('link[data-human-review-256]')) return
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = './cockpit-reintegration-review-256.css'
+  link.dataset.humanReview256 = 'true'
+  document.head.appendChild(link)
+  root.dataset.humanReview256 = 'true'
+}
 
 function mountAngledRail() {
   root.dataset.spatialRailAngle = 'angled'
@@ -51,6 +63,8 @@ function mountAngledRail() {
   rig.append(back, spine, shell)
   shell.append(mark, tools, clarity)
 
+  applyCurrentRailControlSet()
+
   clarity.addEventListener('click', () => {
     setClarity(rig.dataset.clarity !== 'expanded')
   })
@@ -63,6 +77,27 @@ function mountAngledRail() {
     clarity.setAttribute('aria-expanded', String(expanded))
     clarity.setAttribute('aria-label', expanded ? 'Hide tool labels' : 'Show tool labels')
     syncAttachedPanels(expanded)
+  }
+}
+
+function applyCurrentRailControlSet() {
+  const expand = document.querySelector('#toggle-detail')
+  const hideHud = document.querySelector('#hud-hide')
+  const fullscreen = document.querySelector('#fullscreen-world')
+
+  for (const control of [expand, hideHud]) {
+    if (!control) continue
+    control.hidden = true
+    control.setAttribute('aria-hidden', 'true')
+  }
+
+  if (fullscreen) {
+    fullscreen.hidden = false
+    fullscreen.removeAttribute('aria-hidden')
+    fullscreen.dataset.productGlyph = fullscreen.dataset.productGlyph || '⛶'
+    fullscreen.dataset.tooltip = 'Fullscreen'
+    fullscreen.title = 'Fullscreen'
+    if (!fullscreen.getAttribute('aria-label')) fullscreen.setAttribute('aria-label', 'Fullscreen')
   }
 }
 
