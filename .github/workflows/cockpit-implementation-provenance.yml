@@ -1,0 +1,37 @@
+name: Cockpit implementation provenance
+
+on:
+  push:
+    branches:
+      - v1-cockpit-design-exploration
+    paths:
+      - docs/cockpit/**
+      - scripts/check_cockpit_implementation_manifest.py
+      - .github/workflows/cockpit-implementation-provenance.yml
+  pull_request:
+    paths:
+      - docs/cockpit/**
+      - scripts/check_cockpit_implementation_manifest.py
+      - .github/workflows/cockpit-implementation-provenance.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate Cockpit implementation manifest and exact historical sources
+        run: python scripts/check_cockpit_implementation_manifest.py --verify-git-history
