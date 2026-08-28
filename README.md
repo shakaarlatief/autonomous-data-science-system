@@ -18,7 +18,7 @@ exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation scope + work-unit anchor; Claude ideation pending
+current boundary      Conversation anchor synthesis human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -50,6 +50,8 @@ fullscreen specialist-workspace end state
 compact topology compass retained in deep focus
 S0 Geometric Control provisional zoom working default
 Quiet Graphite current Conversation Workspace visual baseline
+A6 Adaptive Anchor current Conversation Workspace opened-box working default
+canonical WorkUnit Boxes / Text user-switchable conversation rail
 ```
 
 Important targets:
@@ -73,24 +75,9 @@ Semantic zoom is deliberately deferred. S0 remains the working behavior; S1-S8 r
 
 ## Active Slice 02Q: Conversation Scope + Work-Unit Anchor
 
-The independent Conversation Workspace round is complete and preserved in Research 081. The project owner selected **Quiet Graphite** as the current visual baseline.
+The independent Conversation Workspace round is complete and preserved in Research 081. The project owner selected **Quiet Graphite** as the current visual baseline. The previously rendered alternative systems remain rejected; future palette work must introduce genuinely new candidates rather than silently reopening them.
 
-The other currently rendered visual systems are rejected:
-
-```text
-Deep Navy
-Warm Slate
-Monochrome Signal
-Violet Ink
-Editorial Dark
-Claude Technical Manuscript
-Claude Studio Console
-Claude Hybrid
-```
-
-Future palette work may introduce genuinely new systems, but these rejected variants should not be silently reopened.
-
-The new product distinction is:
+Held product distinction:
 
 ```text
 PROJECT-GENERAL CONVERSATION
@@ -99,64 +86,81 @@ PROJECT-GENERAL CONVERSATION
 
 WORK-UNIT-SCOPED CONVERSATION
     belongs to one work unit
-    should remain immediately recognizable as belonging to that box
+    remains visually recognizable as belonging to that box
 
 PER-TURN CONTEXT
     temporary referenced project objects
     separate from conversation home
 ```
 
-Current browser:
+Held navigation/composition direction:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
+conversation rail
+    Boxes / Text user switch
+
+Boxes
+    canonical work-unit identity
+
+A6 Adaptive Anchor
+    current opened-box working default
 ```
 
-Initial browser target:
+Claude completed the requested comparative/divergent follow-up in Message 010:
 
 ```text
-56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
+docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
+8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
 ```
 
-Research and checkpoint:
+Claude's code-grounded findings included the prior inability to open BLOCKED/DEFER fixtures, A6 revealing the same content as A5, compact canonical representations losing too much grammar, and archived Boxes-mode threads falling back to text.
+
+Claude also proposed a promising context hierarchy:
 
 ```text
-docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
-docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
+HOME
+PINNED CONTEXT
+PER-TURN CONTEXT
 ```
 
-The browser factorizes:
+This remains an interface hypothesis, not a frozen persistence schema.
+
+Current synthesis browser:
 
 ```text
-conversation scope
-    Work-unit scoped / Project general
-
-thread identity
-    Text / Marker + title / Mini work-unit artifact
-
-opened-box presence
-    A0 Chat-only control
-    A1 Header specimen
-    A2 Context shelf
-    A3 Inner sidecar
-    A4 Floating instrument
-    A5 Box inspector
-    A6 Adaptive anchor
+http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
 ```
 
-The project grid is intentionally absent. Work-unit identity survives as a compact canonical artifact instead of recreating the map.
-
-Claude follow-up is pending:
+Exact clean implementation target:
 
 ```text
-request   MC-0004 Message 009
-expected  MC-0004 Message 010
-mode      COMPARATIVE_ONLY / DIVERGENT_IDEATION
+93dba4688a0e78f5b1d60277761c59c65e79c98d
 ```
 
-Claude is asked to challenge and broaden the conversation-home model, work-unit identity treatments, project-general identity, opened-box + conversation composition, and X5-to-conversation transition/return behavior.
+Research:
 
-Conversation persistence/session ontology, final home/anchor schema, multi-object semantics, transcript storage and production implementation remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
+```text
+docs/research/084_claude_informed_conversation_anchor_synthesis.md
+```
+
+Current composition candidates:
+
+```text
+A6  Refined Adaptive Anchor
+    current human-selected working control
+    expands into richer X5-derived context
+
+B1  Breadcrumb Thread
+B2  Scroll-Responsive Presence
+B3  Object-Anchored Gutter
+B4  Wrapped Around Object
+```
+
+The synthesis browser also allows genuine selection of project-general, CURRENT + RUN + HIGH, CURRENT + BLOCKED, and DEFER + NONE conversation homes, keeps Boxes/Text independent of composition, and gives archived Boxes-mode conversations a subdued historical treatment for evaluation.
+
+Claude's Signature Rail, generalized non-WorkUnit homes, explicit re-home actions, anchored X5-to-conversation entry, and asymmetric faster return are preserved for later testing rather than mixed prematurely into the composition decision.
+
+Conversation persistence/session ontology, final home/anchor schema, pinned-context promotion, historical-state semantics, transcript storage and production implementation remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
 
 ## Repository preservation
 
@@ -181,10 +185,13 @@ docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
 docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
-docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
-frontend/design-lab/conversation-workspace-work-unit-anchor.html
+docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
+docs/research/084_claude_informed_conversation_anchor_synthesis.md
+frontend/design-lab/conversation-workspace-anchor-synthesis.html
 
 docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/009a_chatgpt_conversation_scope_anchor_human_refinement_addendum.md
+docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
 
 docs/research/081_independent_conversation_workspace_dual_design_comparison.md
 frontend/design-lab/conversation-workspace-chatgpt-independent.html
@@ -205,14 +212,14 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open conversation-workspace-work-unit-anchor.html
-3. compare Work-unit scoped versus Project general
-4. compare Text / Marker + title / Mini work-unit artifact in the left rail
-5. compare A0-A6 opened-box presence mechanisms
-6. judge whether work-unit identity is immediately recognizable without restoring the grid
-7. wait for / inspect Claude Message 010 before converging
-8. preserve Quiet Graphite as current visual baseline
-9. keep S0 zoom behavior provisional
-10. keep Z7 deep focus held
+2. open conversation-workspace-anchor-synthesis.html
+3. compare A6 against B1-B4 on Model selection strategy
+4. click Production missingness and inspect BLOCKED identity
+5. click Threshold policy and inspect DEFER identity
+6. click General project discussion and verify no fake work-unit home remains
+7. switch Boxes / Text independently of composition
+8. for B2 compare Arrival versus Deep in transcript
+9. for A6 expand/collapse the X5-derived panel
+10. preserve Quiet Graphite, S0 and Z7 held boundaries
 11. keep production Cockpit untouched
 ```
