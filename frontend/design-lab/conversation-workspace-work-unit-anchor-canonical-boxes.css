@@ -1,0 +1,132 @@
+@import url('./grid-world.css') layer(canonical-work-unit);
+@import url('./work-unit-grammar.css') layer(canonical-work-unit);
+@import url('./work-unit-grammar-lighting-controls.css') layer(canonical-work-unit);
+@import url('./work-unit-grammar-customizable.css') layer(canonical-work-unit);
+@import url('./work-unit-disposition-grammar.css') layer(canonical-work-unit);
+@import url('./work-unit-blocked-carrier.css') layer(canonical-work-unit);
+@import url('./work-unit-blocked-carrier-ring-swap.css') layer(canonical-work-unit);
+@import url('./work-unit-attention-priority.css') layer(canonical-work-unit);
+
+/*
+  The sidebar box view deliberately reuses the accepted work-unit component.
+  These rules only scale and place that component inside conversation navigation;
+  they do not introduce a second visual grammar for work units.
+*/
+
+.sidebar-view-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 7px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--stage) 82%, transparent);
+}
+
+.sidebar-view-switch button {
+  min-height: 25px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--faint);
+  font-size: 7.5px;
+  cursor: pointer;
+}
+
+.sidebar-view-switch button:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--panel-2) 72%, transparent);
+}
+
+.sidebar-view-switch button[aria-pressed="true"] {
+  border-color: var(--line-strong);
+  background: var(--panel-2);
+  color: var(--text);
+  box-shadow: inset 0 -1px color-mix(in srgb, var(--accent) 62%, transparent);
+}
+
+html[data-thread-identity="artifact"] .scope-thread:not(.compact-archived) {
+  padding: 4px;
+}
+
+html[data-thread-identity="artifact"] .scope-thread:not(.compact-archived) .thread-artifact {
+  display: block;
+}
+
+.thread-artifact.work-artifact {
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.scope-thread.is-active .thread-artifact.work-artifact {
+  border: 0;
+  box-shadow: none;
+}
+
+.rail-node-scale {
+  display: block;
+  width: 232px;
+  height: 74px;
+  overflow: visible;
+}
+
+.rail-canonical-node {
+  width: 290px;
+  height: 92px;
+  pointer-events: none;
+  transform: scale(.80);
+  transform-origin: left top;
+}
+
+.rail-canonical-node .node-surface {
+  box-shadow: 0 8px 23px rgba(0, 0, 0, .18);
+}
+
+/* Conversation ownership is not project-map selection. */
+.rail-canonical-node .selection-keyline,
+.rail-canonical-node .selection-corners,
+.rail-canonical-node .selection-inner-frame,
+.rail-canonical-node .selection-edge-ticks,
+.rail-canonical-node .selection-soft-contour,
+.rail-canonical-node .selection-double-corner,
+.canonical-unit-artifact::before,
+.canonical-unit-artifact::after {
+  display: none !important;
+}
+
+/* Keep the canonical node's outward rest light contained to the rail item. */
+.scope-thread .rail-node-scale {
+  isolation: isolate;
+}
+
+.scope-thread.is-active .rail-canonical-node .node-surface {
+  border-color: color-mix(in srgb, var(--accent) 31%, rgba(119, 137, 160, .31));
+  box-shadow:
+    0 8px 23px rgba(0, 0, 0, .18),
+    0 0 0 1px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.scope-thread.is-active .rail-canonical-node .rest-spill {
+  opacity: .78;
+}
+
+html[data-thread-identity="text"] .sidebar-view-switch button[data-sidebar-view="text"],
+html[data-thread-identity="artifact"] .sidebar-view-switch button[data-sidebar-view="artifact"] {
+  color: var(--text);
+}
+
+@media (max-width: 1450px) {
+  .rail-node-scale {
+    width: 214px;
+    height: 69px;
+  }
+
+  .rail-canonical-node {
+    transform: scale(.74);
+  }
+}
