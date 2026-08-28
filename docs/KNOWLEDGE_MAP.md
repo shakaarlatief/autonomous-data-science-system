@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-28  
-**Current checkpoint:** 255  
+**Current checkpoint:** 256  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,9 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
+docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
 
 docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
 docs/research/095_conversation_spacing_flat_project_rail_and_live_topology_compass.md
@@ -43,11 +46,11 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                255
+checkpoint                256
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          flat rail + Conversation spacing + live topology compass human review
+current boundary          structural Conversation spacing + current flat-rail control-set human review
 ```
 
 ---
@@ -66,15 +69,22 @@ Current review route:
 http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
 ```
 
-The query name is historical. Checkpoint 255 deliberately flattens that rail to normal 2D.
+The query name is historical. The current rail is normal flat 2D.
 
 Current review implementation:
+
+```text
+frontend/design-lab/cockpit-reintegration-review-256.css
+frontend/design-lab/cockpit-spatial-rail-study-angle.js
+frontend/e2e/cockpit-reintegration-review-256.spec.ts
+```
+
+Carried-forward Checkpoint 255 implementation:
 
 ```text
 frontend/design-lab/cockpit-reintegration-review-255.css
 frontend/design-lab/cockpit-reintegration-topology-compass.js
 frontend/design-lab/cockpit-reintegration-review-fixes.js
-frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
 ```
 
 Current product-surface substrate:
@@ -87,7 +97,7 @@ frontend/design-lab/cockpit-product-surface-study.js
 
 ---
 
-# Checkpoint 255 review targets
+# Checkpoint 256 review targets
 
 ## Conversation Boxes rail
 
@@ -95,35 +105,56 @@ frontend/design-lab/cockpit-product-surface-study.js
 canonical accepted WorkUnit footprint retained
 project-general artifact retained
 Boxes/Text semantics retained
-10px vertical list gap currently under visual review
+16px list row gap
+6px top + bottom structural padding on each WorkUnit thread row
+actual rendered surface separation verified at 1600px and 760px widths
 ```
+
+The structural padding is important because transformed canonical WorkUnits can visually overflow their nominal layout slots. Row-gap values alone are no longer accepted as sufficient evidence of visible separation.
 
 ## Project Grid right rail
 
 ```text
 compact right-side rail retained
 normal flat 2D presentation
-perspective / rotations / rear depth construction removed
-real Cockpit controls retained
 clarity-only label expansion retained
+Fullscreen visible
+Expand selected WorkUnit removed from current rail candidate
+Hide project HUD removed from current rail candidate
 ```
 
-The former resting-angle hypothesis is rejected for the current rail direction. Research 092-094 remain historical evidence only.
+Current visible controls:
+
+```text
+Jump / search
+Zoom out
+zoom readout
+Zoom in
+Fit project
+Reset view
+Deep Dive
+Current process focus
+Conversations
+Appearance
+Fullscreen
+Tool labels
+```
+
+Current-process Focus is explicitly unchanged. The project owner confirmed that it is working correctly.
 
 ## Deep Dive project-position compass
+
+The live Checkpoint 255 compass is carried forward unchanged:
 
 ```text
 compact M17 compass retained
 single coherent outer instrument container
-inner topology field has no second border
 one live dot per actual mounted WorkUnit
 current mounted relation links shown
 actual selected WorkUnit highlighted
 selection changes synchronize into the compass
 compass reads state but never owns selection
 ```
-
-The old static five-dot fixture is superseded in the integrated Cockpit.
 
 ---
 
@@ -132,19 +163,19 @@ The old static five-dot fixture is superseded in the integrated Cockpit.
 Implementation target:
 
 ```text
-10cf3cfd26553d95c3b786df6d3a14137a29767a
+e2768a807b2a80f438248a25f7d41e53be561d51
 ```
 
 Complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33207377429
-job           98971755372
+workflow run  33211613408
+job           98985900484
 result        SUCCESS
-browser tests 65 / 65 passing
+browser tests 68 / 68 passing
 ```
 
-The new test set protects the flat rail, Conversation spacing, live compass topology, selected-position synchronization, single-border compass hierarchy and collision clearance while all prior source-faithful integration checks remain green.
+The newest tests protect actual rendered Conversation spacing at desktop and narrow widths plus the current requested rail control set while all prior source-faithful integration checks remain green.
 
 ---
 
@@ -204,7 +235,7 @@ DETERMINISTIC INTEGRATION GATE
     PASS for current covered implementation
 
 HUMAN PRODUCT-DESIGN GATE
-    OPEN at Checkpoint 255
+    OPEN at Checkpoint 256
 ```
 
 ---
@@ -268,7 +299,7 @@ compact native Cockpit composer
 Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-Checkpoint 255 does not revoke any of these.
+Checkpoint 256 does not revoke any of these.
 
 Important accepted targets:
 
@@ -307,10 +338,14 @@ Research 093
 
 Research 094
     resting angled rail
-    spatial-identity hypothesis now rejected for current rail direction
+    spatial-identity hypothesis rejected for current rail direction
 
 Research 095
-    flat rail + Conversation spacing + live compass
+    flat rail + initial Conversation spacing + live compass
+    superseded spacing implementation, compass carried forward
+
+Research 096
+    structural Conversation spacing + current flat rail control set
     current review evidence
 ```
 
@@ -351,9 +386,8 @@ No Claude obligation is pending. The next actor remains the human reviewer.
 # Exact next step
 
 ```text
-Review Conversation box spacing,
-then the flat 2D right rail,
-then the live Deep Dive topology compass.
+Review the actual visible spacing in Conversation Boxes mode.
+Review the current flat rail control set.
 
-Preserve concrete visual reactions before further tuning.
+If both are visually correct, preserve acceptance and continue whole-product Cockpit design.
 ```
