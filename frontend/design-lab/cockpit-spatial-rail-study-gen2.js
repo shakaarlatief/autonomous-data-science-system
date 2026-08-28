@@ -192,6 +192,25 @@ function installDirectPull(rig, grip) {
     syncAttachedPanels(progress, maxPull)
   }
 
+  const onMove = (event) => {
+    if (event.pointerId !== pointerId) return
+    const delta = startX - event.clientX
+    if (Math.abs(delta) > 3) moved = true
+    apply(startProgress + delta / maxPull, true)
+    event.preventDefault()
+  }
+
+  const finish = (event) => {
+    if (event.pointerId !== pointerId) return
+    pointerId = null
+    window.removeEventListener('pointermove', onMove, true)
+    window.removeEventListener('pointerup', finish, true)
+    window.removeEventListener('pointercancel', finish, true)
+
+    if (!moved) apply(progress < 0.5 ? 1 : 0)
+    else apply(nearestSnap(progress, snaps))
+  }
+
   grip.setAttribute('role', 'slider')
   grip.setAttribute('aria-valuemin', '0')
   grip.setAttribute('aria-valuemax', '100')
@@ -204,29 +223,12 @@ function installDirectPull(rig, grip) {
     startX = event.clientX
     startProgress = progress
     moved = false
-    grip.setPointerCapture(pointerId)
     rig.dataset.dragging = 'true'
+    window.addEventListener('pointermove', onMove, true)
+    window.addEventListener('pointerup', finish, true)
+    window.addEventListener('pointercancel', finish, true)
     event.preventDefault()
   })
-
-  grip.addEventListener('pointermove', (event) => {
-    if (event.pointerId !== pointerId) return
-    const delta = startX - event.clientX
-    if (Math.abs(delta) > 3) moved = true
-    apply(startProgress + delta / maxPull, true)
-  })
-
-  const finish = (event) => {
-    if (event.pointerId !== pointerId) return
-    if (grip.hasPointerCapture(pointerId)) grip.releasePointerCapture(pointerId)
-    pointerId = null
-
-    if (!moved) apply(progress < 0.5 ? 1 : 0)
-    else apply(nearestSnap(progress, snaps))
-  }
-
-  grip.addEventListener('pointerup', finish)
-  grip.addEventListener('pointercancel', finish)
 
   grip.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
