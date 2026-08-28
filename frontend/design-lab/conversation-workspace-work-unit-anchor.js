@@ -53,16 +53,17 @@ function setThreadIdentity(mode) {
 }
 
 function setActiveThread(scope) {
-  scopeThreads.forEach((thread) => {
-    const shouldActivate = thread.dataset.threadScope === scope;
-    thread.classList.toggle('is-active', shouldActivate);
-  });
+  scopeThreads.forEach((thread) => thread.classList.remove('is-active'));
+
+  const selector = scope === 'project' ? '.thread-project' : '.thread-model';
+  document.querySelector(selector)?.classList.add('is-active');
 }
 
 function setScope(scope) {
   root.dataset.scope = scope;
   scopeSelect.value = scope;
   root.dataset.anchorExpanded = 'false';
+  anchorExpandButton.textContent = 'Expand box';
   setActiveThread(scope);
 
   if (scope === 'project') {
@@ -95,17 +96,8 @@ studyChips.forEach((chip) => {
   });
 });
 
-scopeThreads.forEach((thread) => {
-  thread.addEventListener('click', () => {
-    const scope = thread.dataset.threadScope;
-    if (scope === 'project') {
-      setScope('project');
-      return;
-    }
-
-    setScope('work-unit');
-  });
-});
+document.querySelector('.thread-project')?.addEventListener('click', () => setScope('project'));
+document.querySelector('.thread-model')?.addEventListener('click', () => setScope('work-unit'));
 
 anchorExpandButton.addEventListener('click', () => {
   if (root.dataset.anchorMode !== 'adaptive' || root.dataset.scope !== 'work-unit') return;
