@@ -6,7 +6,7 @@ on:
       - v1-cockpit-design-exploration
     paths:
       - frontend/design-lab/cockpit-reintegration*
-      - frontend/e2e/cockpit-reintegration.spec.ts
+      - frontend/e2e/cockpit-reintegration*.spec.ts
       - frontend/design-lab/grid-world.css
       - frontend/design-lab/work-unit-grammar.css
       - frontend/design-lab/work-unit-grammar-lighting-controls.css
@@ -26,7 +26,7 @@ on:
   pull_request:
     paths:
       - frontend/design-lab/cockpit-reintegration*
-      - frontend/e2e/cockpit-reintegration.spec.ts
+      - frontend/e2e/cockpit-reintegration*.spec.ts
       - frontend/design-lab/work-unit-detail-expansion.css
       - frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
       - frontend/design-lab/work-unit-detail-expansion.js
@@ -63,7 +63,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run source-faithful reintegration browser checks
-        run: npx playwright test e2e/cockpit-reintegration.spec.ts
+        run: npx playwright test e2e/cockpit-reintegration.spec.ts e2e/cockpit-reintegration-fidelity-recovery.spec.ts
 
       - name: Upload diagnostics
         if: ${{ always() }}
