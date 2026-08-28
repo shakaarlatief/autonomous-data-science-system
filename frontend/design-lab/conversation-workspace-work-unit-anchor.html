@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en" data-visual="quiet-graphite" data-density="comfortable" data-thread-identity="artifact" data-anchor-mode="adaptive" data-scope="work-unit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>ADS Design Lab · Conversation Scope and Work-Unit Anchor</title>
+    <link rel="stylesheet" href="./conversation-workspace-chatgpt-independent.css" />
+    <link rel="stylesheet" href="./conversation-workspace-work-unit-anchor.css" />
+  </head>
+  <body>
+    <div class="design-lab-shell anchor-study-shell">
+      <header class="lab-header">
+        <div>
+          <span class="eyebrow">ADS COCKPIT DESIGN LAB · CONVERSATION SCOPE + WORK-UNIT ANCHOR</span>
+          <h1>Keep chat visually connected to the project object it belongs to</h1>
+          <p>Quiet Graphite is held. This study separates conversation ownership from temporary context, and tests how a work-unit-scoped conversation can remain recognizably attached to its box without keeping the project grid visible.</p>
+        </div>
+        <div class="lab-controls anchor-controls">
+          <label>
+            <span>Conversation scope</span>
+            <select id="scope-select" aria-label="Conversation scope">
+              <option value="work-unit">Work-unit scoped</option>
+              <option value="project">Project general</option>
+            </select>
+          </label>
+          <label>
+            <span>Thread identity</span>
+            <select id="thread-identity-select" aria-label="Thread identity">
+              <option value="artifact">Mini work-unit artifact</option>
+              <option value="marker">Marker + title</option>
+              <option value="text">Text control</option>
+            </select>
+          </label>
+          <label>
+            <span>Opened-box presence</span>
+            <select id="anchor-mode-select" aria-label="Opened box presence">
+              <option value="adaptive">A6 Adaptive anchor</option>
+              <option value="header">A1 Header specimen</option>
+              <option value="shelf">A2 Context shelf</option>
+              <option value="sidecar">A3 Inner sidecar</option>
+              <option value="compass">A4 Floating instrument</option>
+              <option value="inspector">A5 Box inspector</option>
+              <option value="none">A0 Chat-only control</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <section class="study-strip">
+        <button class="study-chip" data-anchor="none" type="button"><strong>A0</strong><span>Chat-only control</span></button>
+        <button class="study-chip" data-anchor="header" type="button"><strong>A1</strong><span>Header specimen</span></button>
+        <button class="study-chip" data-anchor="shelf" type="button"><strong>A2</strong><span>Context shelf</span></button>
+        <button class="study-chip" data-anchor="sidecar" type="button"><strong>A3</strong><span>Inner sidecar</span></button>
+        <button class="study-chip" data-anchor="compass" type="button"><strong>A4</strong><span>Floating instrument</span></button>
+        <button class="study-chip" data-anchor="inspector" type="button"><strong>A5</strong><span>Box inspector</span></button>
+        <button class="study-chip" data-anchor="adaptive" type="button"><strong>A6</strong><span>Adaptive anchor</span></button>
+      </section>
+
+      <main class="conversation-stage anchor-stage" id="conversation-stage">
+        <aside class="thread-rail" aria-label="Conversation navigation">
+          <div class="rail-brand">
+            <span class="brand-mark">A</span>
+            <div>
+              <strong>Autonomous Data Science</strong>
+              <small>Telco churn project</small>
+            </div>
+          </div>
+
+          <button class="search-box" type="button">
+            <span>⌕</span>
+            <span>Search conversations</span>
+            <kbd>⌘ K</kbd>
+          </button>
+
+          <div class="rail-section">
+            <div class="rail-heading"><span>Project conversations</span><button type="button">+</button></div>
+
+            <button class="scope-thread thread-project" data-thread-scope="project" type="button">
+              <span class="thread-text-dot"></span>
+              <span class="thread-marker project-marker">P</span>
+              <span class="thread-artifact project-artifact">
+                <span class="artifact-project-glyph">P</span>
+                <span><small>PROJECT</small><strong>General project discussion</strong></span>
+              </span>
+              <span class="thread-copy"><strong>General project discussion</strong><small>6 min ago · 27 messages</small></span>
+            </button>
+
+            <button class="scope-thread thread-model is-active" data-thread-scope="work-unit" type="button">
+              <span class="thread-text-dot model-dot"></span>
+              <span class="thread-marker model-marker">◆</span>
+              <span class="thread-artifact work-artifact model-artifact">
+                <span class="artifact-topline"><span class="mini-shape diamond"></span><small>MODEL WORK · CURRENT</small></span>
+                <strong>Model selection strategy</strong>
+                <span class="artifact-footer"><span class="mini-state">RUN</span><span class="attention-mini"><i></i><i></i><i></i></span></span>
+              </span>
+              <span class="thread-copy"><strong>Model selection strategy</strong><small>12 min ago · 43 messages</small></span>
+            </button>
+
+            <button class="scope-thread thread-investigation" data-thread-scope="work-unit" type="button">
+              <span class="thread-text-dot investigation-dot"></span>
+              <span class="thread-marker investigation-marker">■</span>
+              <span class="thread-artifact work-artifact investigation-artifact">
+                <span class="artifact-topline"><span class="mini-shape square"></span><small>INVESTIGATION · CURRENT</small></span>
+                <strong>Production missingness</strong>
+                <span class="artifact-footer"><span class="mini-state blocked">BLOCKED</span><span class="micro-ring blocked-ring"></span></span>
+              </span>
+              <span class="thread-copy"><strong>Production missingness</strong><small>Yesterday · 31 messages</small></span>
+            </button>
+
+            <button class="scope-thread thread-validation" data-thread-scope="work-unit" type="button">
+              <span class="thread-text-dot validation-dot"></span>
+              <span class="thread-marker validation-marker">△</span>
+              <span class="thread-artifact work-artifact validation-artifact">
+                <span class="artifact-topline"><span class="mini-shape triangle">△</span><small>VALIDATION · DEFERRED</small></span>
+                <strong>Threshold policy</strong>
+                <span class="artifact-footer"><span class="mini-state">NONE</span></span>
+              </span>
+              <span class="thread-copy"><strong>Threshold policy</strong><small>Aug 25 · 18 messages</small></span>
+            </button>
+          </div>
+
+          <div class="rail-section rail-muted">
+            <div class="rail-heading"><span>Archived</span><span>2</span></div>
+            <button class="scope-thread compact-archived" type="button"><span class="thread-text-dot"></span><span class="thread-marker">P</span><span class="thread-copy"><strong>EDA interpretation</strong><small>Aug 18</small></span></button>
+            <button class="scope-thread compact-archived" type="button"><span class="thread-text-dot"></span><span class="thread-marker">P</span><span class="thread-copy"><strong>Baseline review</strong><small>Aug 15</small></span></button>
+          </div>
+
+          <div class="rail-footer">
+            <span class="sync-dot"></span>
+            <span>Project state synchronized</span>
+          </div>
+        </aside>
+
+        <section class="conversation-workspace anchor-workspace" aria-label="Conversation Workspace">
+          <header class="conversation-header anchor-header">
+            <div class="conversation-title">
+              <button class="back-button" type="button" aria-label="Return to project">←</button>
+              <div class="header-anchor-slot" id="header-anchor-slot" aria-hidden="true"></div>
+              <div>
+                <div class="title-row">
+                  <h2 id="conversation-title">Model selection strategy</h2>
+                  <span class="scope-pill" id="scope-pill">WORK UNIT</span>
+                </div>
+                <p id="conversation-subtitle">Conversation anchored to one project work unit. Other objects can still be referenced without changing its home.</p>
+              </div>
+            </div>
+            <div class="conversation-actions">
+              <button type="button">Find</button>
+              <button type="button">Outline</button>
+              <button type="button" id="anchor-expand-button">Expand box</button>
+              <button type="button" class="icon-button" aria-label="More actions">•••</button>
+            </div>
+          </header>
+
+          <div class="anchor-shelf" id="anchor-shelf" aria-hidden="true"></div>
+
+          <div class="workspace-flow">
+            <aside class="inner-anchor-sidecar" id="inner-anchor-sidecar" aria-label="Work-unit anchor"></aside>
+
+            <div class="transcript-scroll" id="transcript-scroll">
+              <div class="floating-anchor" id="floating-anchor" aria-label="Work-unit identity instrument"></div>
+
+              <div class="transcript-column">
+                <div class="date-divider"><span>Today · 07:18</span></div>
+
+                <article class="turn turn-user">
+                  <div class="turn-anchor">U</div>
+                  <div class="turn-body">
+                    <div class="turn-meta"><strong>You</strong><span>07:18</span></div>
+                    <div class="user-message" id="first-user-message">I want the model comparison to stay broad, but I also want the final selection logic to be disciplined and easy to recover later.</div>
+                    <div class="turn-tools"><button type="button">Copy</button><button type="button">Link</button></div>
+                  </div>
+                </article>
+
+                <article class="turn turn-ads">
+                  <div class="turn-anchor ads-anchor">A</div>
+                  <div class="turn-body">
+                    <div class="turn-meta"><strong>ADS</strong><span>07:19</span><span class="model-label">Reasoning</span></div>
+                    <div class="ads-message">
+                      <p id="scope-explanation">Because this conversation has a work-unit home, the transcript can stay explicitly connected to <strong>Model selection strategy</strong> while still bringing in evidence from other parts of the project.</p>
+                      <p>The important separation is between the conversation's <strong>home anchor</strong> and the objects temporarily brought into context for a particular turn.</p>
+
+                      <div class="reference-row">
+                        <button class="project-ref ref-validation" type="button"><span class="ref-shape">△</span><span><small>VALIDATION</small><strong>Chronological validation</strong></span></button>
+                        <button class="project-ref ref-model" type="button"><span class="ref-shape">◆</span><span><small>MODEL WORK</small><strong>Boosted candidate</strong></span></button>
+                      </div>
+
+                      <h3>Why that distinction matters</h3>
+                      <ol>
+                        <li>A general project conversation can reference boxes without becoming owned by one.</li>
+                        <li>A work-unit conversation remains recognizably attached to its home box even when discussing neighboring work.</li>
+                        <li>The same work-unit visual grammar can survive outside the project grid as a compact identity artifact.</li>
+                      </ol>
+                    </div>
+                    <div class="turn-tools"><button type="button">Copy</button><button type="button">Discuss selection</button><button type="button">•••</button></div>
+                  </div>
+                </article>
+
+                <section class="project-change" aria-label="Structured project change">
+                  <span class="change-icon">↳</span>
+                  <div>
+                    <small>PROJECT STATE UPDATED</small>
+                    <strong>Comparison remains broad; deployment selection stays separately governed</strong>
+                    <p>Structured decision recorded outside the transcript.</p>
+                  </div>
+                  <button type="button">Open decision</button>
+                </section>
+
+                <article class="turn turn-user">
+                  <div class="turn-anchor">U</div>
+                  <div class="turn-body">
+                    <div class="turn-meta"><strong>You</strong><span>07:24</span></div>
+                    <div class="user-message">Can we inspect the work unit itself without leaving this discussion?</div>
+                  </div>
+                </article>
+
+                <article class="turn turn-ads">
+                  <div class="turn-anchor ads-anchor">A</div>
+                  <div class="turn-body">
+                    <div class="turn-meta"><strong>ADS</strong><span>07:24</span></div>
+                    <div class="ads-message">
+                      <p>That is what the anchor treatments above are testing. The work unit can remain a recognizable object inside Conversation Workspace without restoring the entire project map or grid.</p>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="transcript-end-spacer"></div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="composer-zone">
+            <div class="composer-context">
+              <span>Context</span>
+              <button class="home-context-chip" id="home-context-chip" type="button"><span class="tiny-shape">◆</span> Home: Model selection strategy</button>
+              <button type="button"><span class="tiny-shape validation">△</span> Validation <b>×</b></button>
+            </div>
+            <div class="composer-shell">
+              <textarea rows="2" placeholder="Continue this discussion, bring in evidence, or change project state…"></textarea>
+              <div class="composer-actions">
+                <div><button type="button" aria-label="Attach">＋</button><button type="button">Commands</button></div>
+                <div><span class="composer-status"><i></i> Project-aware</span><button class="send-button" type="button" aria-label="Send">↑</button></div>
+              </div>
+            </div>
+            <div class="composer-hint"><span>Conversation home and per-turn context are separate</span><span>Structured changes require explicit project updates</span></div>
+          </footer>
+        </section>
+
+        <aside class="context-rail anchor-inspector" id="anchor-inspector" aria-label="Work-unit inspector">
+          <div class="context-head">
+            <div><small>HOME WORK UNIT</small><strong>Conversation anchor</strong></div>
+            <button type="button" id="inspector-close">×</button>
+          </div>
+          <div id="inspector-artifact"></div>
+          <section class="context-section">
+            <div class="context-label"><span>Why this matters</span><span>HOME</span></div>
+            <p class="inspector-copy">This conversation belongs to this work unit. Referencing another object does not silently re-home the conversation.</p>
+          </section>
+          <section class="context-section">
+            <div class="context-label"><span>Related project context</span><span>3</span></div>
+            <button class="context-reference" type="button"><span class="ref-shape">△</span><div><small>VALIDATION</small><strong>Chronological validation</strong></div><span>8 refs</span></button>
+            <button class="context-reference" type="button"><span class="ref-shape eval">＋</span><div><small>EVALUATION</small><strong>Calibration review</strong></div><span>3 refs</span></button>
+          </section>
+        </aside>
+      </main>
+
+      <template id="work-unit-template">
+        <article class="canonical-unit-artifact">
+          <div class="canonical-unit-top">
+            <span class="canonical-shape diamond"></span>
+            <small>MODEL WORK · CURRENT</small>
+            <span class="canonical-attention"><i></i><i></i><i></i></span>
+          </div>
+          <strong>Model selection strategy</strong>
+          <p>Compare candidate families under one frozen validation protocol.</p>
+          <div class="canonical-unit-bottom">
+            <span class="canonical-status"><i></i>RUN</span>
+            <span>3 linked decisions</span>
+          </div>
+        </article>
+      </template>
+
+      <template id="project-template">
+        <article class="project-home-artifact">
+          <span class="project-home-glyph">P</span>
+          <div><small>PROJECT GENERAL</small><strong>General project discussion</strong><p>Not owned by a specific work unit.</p></div>
+        </article>
+      </template>
+    </div>
+
+    <script type="module" src="./conversation-workspace-work-unit-anchor.js"></script>
+  </body>
+</html>
