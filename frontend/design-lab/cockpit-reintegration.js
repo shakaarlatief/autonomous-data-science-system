@@ -1,10 +1,10 @@
 /*
  * Checkpoint 251 source-faithful reintegration controller.
  *
- * This module is intentionally thin. WorkUnit rendering and local interaction
- * are owned by the exact accepted modules loaded before this file. This code
- * supplies only whole-world navigation, E5 relation composition between the
- * rendered accepted WorkUnits, and provisional shell orchestration for
+ * This module is intentionally thin. WorkUnit rendering, selection and X5
+ * contextual expansion are owned by exact accepted modules loaded before this
+ * file. This code supplies only whole-world navigation, E5 relation composition
+ * between rendered accepted WorkUnits, and provisional shell orchestration for
  * Specification 008 capabilities.
  */
 
@@ -15,11 +15,14 @@ const plane = document.querySelector('#reintegration-world-plane')
 const relationSvg = document.querySelector('#reintegration-relations')
 const jumpInput = document.querySelector('#jump-input')
 const selectedLabel = document.querySelector('#selected-work-label')
+const detailStateLabel = document.querySelector('#detail-state-label')
+const detailToggle = document.querySelector('#toggle-detail')
 const zoomReadout = document.querySelector('#zoom-readout')
 const viewportStatus = document.querySelector('#viewport-status')
 const zoomIndicator = document.querySelector('#zoom-track-indicator')
 const provisionalNote = document.querySelector('.reintegration-provisional-note')
 
+const NODE_SELECTOR = '.expansion-practical-node'
 const WORLD_WIDTH = 1440
 const WORLD_HEIGHT = 760
 const MIN_ZOOM = 0.52
@@ -34,8 +37,8 @@ const relationClasses = {
 }
 
 /*
- * Relation taxonomy is still provisional. These links are fixture semantics
- * used to exercise the already selected E5 carrier and D1 directionality.
+ * Relation taxonomy remains provisional. These fixture links exercise the
+ * selected E5 carrier and D1 directionality without freezing final ontology.
  */
 const relations = [
   { id: 'q-i', source: 'q', target: 'i', className: 'dependency' },
@@ -46,7 +49,7 @@ const relations = [
 
 let zoom = DEFAULT_ZOOM
 let panX = -WORLD_WIDTH / 2
-let panY = -WORLD_HEIGHT / 2
+let panY = -WORLD_HEIGHT / 2 + 8
 let dragState = null
 let relationFrame = 0
 let relationMotionFrame = 0
@@ -58,6 +61,7 @@ installNodeIntegration()
 installShellActions()
 installGeometryObservers()
 applyTransform()
+syncIntegratedState()
 requestRelationUpdate()
 
 function renderRelations() {
@@ -116,7 +120,7 @@ function installNavigation() {
 
   stage?.addEventListener('pointerdown', (event) => {
     if (event.button !== 0) return
-    if (event.target.closest('.selection-practical-node, button, input')) return
+    if (event.target.closest(`${NODE_SELECTOR}, button, input`)) return
 
     dragState = {
       pointerId: event.pointerId,
@@ -155,23 +159,26 @@ function installNavigation() {
 }
 
 function installNodeIntegration() {
-  for (const node of document.querySelectorAll('.selection-practical-node')) {
+  for (const node of document.querySelectorAll(NODE_SELECTOR)) {
     const key = node.dataset.nodeKey
     if (!key) continue
 
     node.addEventListener('click', () => {
-      updateSelectedLabel(node)
-      requestRelationUpdate()
+      syncIntegratedState()
+      syncRelationGeometryDuringNodeMotion(430)
     })
 
     node.addEventListener('keydown', (event) => {
       if (event.key !== 'Enter' && event.key !== ' ') return
-      window.setTimeout(() => updateSelectedLabel(node), 0)
+      window.setTimeout(() => {
+        syncIntegratedState()
+        syncRelationGeometryDuringNodeMotion(430)
+      }, 0)
     })
 
     node.addEventListener('pointerenter', () => {
       setRelatedState(key, true)
-      syncRelationGeometryDuringNodeMotion(240)
+      syncRelationGeometryDuringNodeMotion(250)
     })
 
     node.addEventListener('pointerleave', () => {
@@ -182,6 +189,14 @@ function installNodeIntegration() {
 }
 
 function installShellActions() {
+  detailToggle?.addEventListener('click', () => {
+    const selected = currentSelectedNode()
+    if (!selected) return
+    selected.click()
+    syncIntegratedState()
+    syncRelationGeometryDuringNodeMotion(430)
+  })
+
   document.querySelector('#fullscreen-world')?.addEventListener('click', async () => {
     try {
       if (!document.fullscreenElement) {
@@ -213,13 +228,27 @@ function installGeometryObservers() {
     const observer = new ResizeObserver(requestRelationUpdate)
     observer.observe(world)
   }
+
+  const host = document.querySelector('#expansion-practical-nodes')
+  if ('MutationObserver' in window && host) {
+    const observer = new MutationObserver((mutations) => {
+      if (!mutations.some((mutation) => mutation.type === 'attributes')) return
+      syncIntegratedState()
+      syncRelationGeometryDuringNodeMotion(430)
+    })
+    observer.observe(host, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['data-selected', 'data-expanded', 'data-expansion-style'],
+    })
+  }
 }
 
 function jumpToSearch() {
   const query = jumpInput?.value.trim().toLowerCase()
   if (!query) return
 
-  const nodes = [...document.querySelectorAll('.selection-practical-node')]
+  const nodes = [...document.querySelectorAll(NODE_SELECTOR)]
   const node = nodes.find((candidate) => {
     const title = candidate.querySelector('.node-surface strong')?.textContent?.trim().toLowerCase() || ''
     const kind = candidate.querySelector('.unit-kind')?.textContent?.trim().toLowerCase() || ''
@@ -231,7 +260,12 @@ function jumpToSearch() {
     return
   }
 
-  node.click()
+  /*
+   * Exact X5 behavior toggles expansion when an already-selected node is
+   * clicked. Jump/search must select without accidentally changing depth.
+   */
+  if (node.dataset.selected !== 'true') node.click()
+  syncIntegratedState()
   centerNode(node)
   node.focus({ preventScroll: true })
 }
@@ -241,7 +275,6 @@ function centerNode(node) {
   const nodeRect = node.getBoundingClientRect()
   if (!worldRect || !nodeRect || !stage) return
 
-  /* Recover the node center in untransformed world coordinates. */
   const worldX = (nodeRect.left + nodeRect.width / 2 - worldRect.left) / zoom
   const worldY = (nodeRect.top + nodeRect.height / 2 - worldRect.top) / zoom
 
@@ -307,9 +340,20 @@ function updateViewportStatus() {
   }
 }
 
-function updateSelectedLabel(node) {
-  const title = node.querySelector('.node-surface strong')?.textContent?.trim() || node.dataset.nodeKey || 'unknown'
+function currentSelectedNode() {
+  return document.querySelector(`${NODE_SELECTOR}[data-selected="true"]`)
+}
+
+function syncIntegratedState() {
+  const selected = currentSelectedNode()
+  if (!selected) return
+
+  const title = selected.querySelector('.node-surface strong')?.textContent?.trim() || selected.dataset.nodeKey || 'unknown'
+  const expanded = selected.dataset.expanded === 'true'
+
   if (selectedLabel) selectedLabel.textContent = `Selected: ${title}`
+  if (detailStateLabel) detailStateLabel.textContent = `SEL2 selected · X5 ${expanded ? 'expanded' : 'compact'} · E5 relations`
+  if (detailToggle) detailToggle.textContent = expanded ? 'Collapse' : 'Expand'
 
   const composerContext = document.querySelector('#composer-context')
   if (composerContext) composerContext.textContent = title
@@ -353,8 +397,8 @@ function updateRelationGeometry() {
 
   for (const relation of relations) {
     const group = relationSvg.querySelector(`[data-relation-id="${relation.id}"]`)
-    const source = world.querySelector(`.selection-practical-node[data-node-key="${relation.source}"]`)
-    const target = world.querySelector(`.selection-practical-node[data-node-key="${relation.target}"]`)
+    const source = world.querySelector(`${NODE_SELECTOR}[data-node-key="${relation.source}"]`)
+    const target = world.querySelector(`${NODE_SELECTOR}[data-node-key="${relation.target}"]`)
     if (!group || !source || !target) continue
 
     const start = relationAnchor(source, chooseSourceSide(source, target), worldRect, viewBox)
@@ -378,7 +422,6 @@ function relationAnchor(node, side, worldRect, viewBox) {
   if (side === 'top') y = rect.top
   if (side === 'bottom') y = rect.bottom
 
-  /* Exact accepted geometry correction for the Investigation right notch. */
   if (side === 'right' && node.classList.contains('category-investigation') && html.dataset.shapeStyle === 'true') {
     x = rect.right - rect.width * 0.07
   }
