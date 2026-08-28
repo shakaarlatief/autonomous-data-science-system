@@ -1,0 +1,70 @@
+name: Cockpit reintegration fidelity
+
+on:
+  push:
+    branches:
+      - v1-cockpit-design-exploration
+    paths:
+      - frontend/design-lab/cockpit-reintegration.*
+      - frontend/e2e/cockpit-reintegration.spec.ts
+      - frontend/design-lab/grid-world.css
+      - frontend/design-lab/work-unit-grammar.css
+      - frontend/design-lab/work-unit-grammar-lighting-controls.css
+      - frontend/design-lab/work-unit-grammar-customizable.css
+      - frontend/design-lab/work-unit-disposition-grammar.css
+      - frontend/design-lab/work-unit-blocked-carrier.css
+      - frontend/design-lab/work-unit-blocked-carrier-ring-swap.css
+      - frontend/design-lab/work-unit-attention-priority.css
+      - frontend/design-lab/work-unit-selection-state.css
+      - frontend/design-lab/work-unit-selection-state.js
+      - frontend/design-lab/work-unit-grammar.js
+      - frontend/design-lab/relation-class-grammar.css
+      - .github/workflows/cockpit-reintegration-fidelity.yml
+  pull_request:
+    paths:
+      - frontend/design-lab/cockpit-reintegration.*
+      - frontend/e2e/cockpit-reintegration.spec.ts
+      - .github/workflows/cockpit-reintegration-fidelity.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-browser-fidelity:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run source-faithful reintegration browser checks
+        run: npx playwright test e2e/cockpit-reintegration.spec.ts
+
+      - name: Upload diagnostics
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: cockpit-reintegration-diagnostics
+          if-no-files-found: ignore
+          retention-days: 7
+          path: |
+            frontend/playwright-report
+            frontend/test-results
