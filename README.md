@@ -11,13 +11,13 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            255
+checkpoint            256
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      flat rail + Conversation spacing + live topology compass human review
+current boundary      structural Conversation spacing + flat rail control-set human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -25,7 +25,7 @@ Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientif
 
 ## Current Cockpit status
 
-The source-faithful integrated Cockpit is now the protected whole-product design substrate.
+The source-faithful integrated Cockpit is the protected whole-product design substrate.
 
 Primary browser:
 
@@ -39,34 +39,41 @@ Current human-review route:
 http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
 ```
 
-The `edge=angled` query is historical implementation plumbing. Checkpoint 255 deliberately presents that right-side rail as a normal flat 2D surface.
+The `edge=angled` query is historical implementation plumbing. The current right-side rail is normal flat 2D.
 
 Current review targets are:
 
 ```text
 Conversation Boxes rail
-    canonical WorkUnit boxes with deliberate vertical separation
+    16px list row gap
+    6px top + bottom structural WorkUnit-row padding
+    actual rendered surfaces must read as distinct objects
 
 Project Grid right rail
     compact flat 2D surface
-    real Cockpit controls retained
+    Fullscreen restored
+    Expand selected WorkUnit removed from current rail candidate
+    Hide project HUD removed from current rail candidate
     clarity-only label expansion retained
 
+Current-process Focus
+    explicitly unchanged
+    project owner confirmed it is working correctly
+
 Deep Dive project-position compass
-    one coherent compact instrument container
-    live topology from the actual mounted Project Grid
-    actual current WorkUnit highlighted
-    real relation links represented
+    live Checkpoint 255 implementation carried forward unchanged
 ```
 
-The latest complete Cockpit fidelity workflow passed:
+Latest complete Cockpit fidelity workflow:
 
 ```text
-implementation target  10cf3cfd26553d95c3b786df6d3a14137a29767a
-workflow run           33207377429
-job                    98971755372
-browser tests          65 / 65 passing
+implementation target  e2768a807b2a80f438248a25f7d41e53be561d51
+workflow run           33211613408
+job                    98985900484
+browser tests          68 / 68 passing
 ```
+
+The current gate measures actual rendered Conversation WorkUnit separation at both desktop and narrow widths, rather than relying only on CSS gap values.
 
 Production `/cockpit` remains untouched.
 
@@ -81,15 +88,6 @@ The first holistic integrated Cockpit browser at:
 is **not an accepted Cockpit baseline**.
 
 Human review exposed major fidelity failures against previously accepted Phase-C designs. Source-level audit found that the repository preserved exact accepted target SHAs and executable artifacts, but that integration manually reimplemented the design from textual summaries instead of faithfully reusing or porting those exact artifacts.
-
-Concrete mismatches included:
-
-```text
-canonical WorkUnit geometry and surface grammar changed
-H4 rest/hover layers were simplified or reinterpreted
-G4 ambient behavior was reauthored with fixed authored positions
-Quiet Graphite was approximated with a new global palette/font system
-```
 
 The failed browser remains only as diagnostic evidence and is explicitly excluded from the replacement implementation source graph.
 
@@ -124,19 +122,17 @@ entries=23 required=19 non_promotable=4
 exact historical source verification: PASS
 ```
 
-The replacement holistic browser was then constructed through exact-source reuse and narrowly identified integration glue. Current whole-product changes remain covered by the deterministic Cockpit fidelity suite.
-
 ## Accepted Phase-C decisions remain intact
 
 The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D0-D3, P7, current-process focus, runtime/T7, BLOCKED/FAIL, A3, SEL2, X5, Z7, S0, Quiet Graphite, Boxes/Text, A6 and Conversation access across Grid and Deep Dive.
 
-Checkpoint 255 changes shell presentation and topology-compass implementation fidelity only. It does not revoke those held semantics.
+Checkpoint 256 changes Conversation row geometry and the current flat-rail control composition only. It does not revoke those held semantics.
 
 The complete disposition history is in `docs/cockpit/PHASE_C_DECISION_LEDGER.md`. The exact implementation source graph is in `docs/cockpit/accepted_implementation_manifest.json`.
 
 ## Repository preservation model
 
-The repository-memory architecture now combines:
+The repository-memory architecture combines:
 
 ```text
 semantic decision record
@@ -153,6 +149,9 @@ semantic decision record
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
+docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
 
 docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
 docs/research/095_conversation_spacing_flat_project_rail_and_live_topology_compass.md
