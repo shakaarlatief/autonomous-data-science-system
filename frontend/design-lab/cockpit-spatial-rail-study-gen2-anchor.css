@@ -1,0 +1,29 @@
+/*
+ * Gen 2 deployment correction.
+ *
+ * The Cockpit edge is the stable physical anchor. Hinge and Console surfaces
+ * widen leftward from that anchor rather than translating the entire rig while
+ * the user is dragging it. This keeps direct manipulation stable and better
+ * matches the architectural-cockpit model under review.
+ */
+
+html[data-spatial-rail-gen2="hinge"] .cockpit-edge-rig,
+html[data-spatial-rail-gen2="console"] .cockpit-edge-rig {
+  transform: none !important;
+}
+
+html[data-spatial-rail-gen2="hinge"] .cockpit-edge-shell,
+html[data-spatial-rail-gen2="hinge"] .cockpit-edge-mid-frame,
+html[data-spatial-rail-gen2="hinge"] .cockpit-edge-rear-frame,
+html[data-spatial-rail-gen2="console"] .cockpit-edge-shell,
+html[data-spatial-rail-gen2="console"] .cockpit-edge-mid-frame,
+html[data-spatial-rail-gen2="console"] .cockpit-edge-rear-frame {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* The real drag handle is reparented to the fixed rig by the companion module. */
+html[data-spatial-rail-gen2] .cockpit-edge-rig > .cockpit-edge-grip {
+  left: -15px;
+  right: auto;
+}
