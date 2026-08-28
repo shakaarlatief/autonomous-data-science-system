@@ -27,10 +27,11 @@ MC-0004 Message 010
 Claude comparative/divergent Conversation Scope + Work-Unit Anchor ideation
 ```
 
-Request:
+Read both request records:
 
 ```text
 docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/009a_chatgpt_conversation_scope_anchor_human_refinement_addendum.md
 ```
 
 Current checkpoint:
@@ -45,20 +46,32 @@ Current checkpoint:
 Claude
 ```
 
-## Current visual baseline
-
-The project owner selected:
+## Current held / working human direction
 
 ```text
 Quiet Graphite
-    current Conversation Workspace baseline
+    current Conversation Workspace visual baseline
+
+A6 Adaptive Anchor
+    selected working opened-box composition for now
+
+Conversation sidebar
+    user-switchable Boxes / Text
+
+Boxes mode
+    reuse the canonical accepted WorkUnit component
+    scale it geometrically for the rail
+    do not invent a separate mini-card semantic design
+
+Text mode
+    ordinary compact conversation list
 ```
 
-The currently rendered alternatives from the previous independent round are rejected. Future palette exploration requires genuinely new candidates rather than reviving those variants.
+The currently rendered visual-system alternatives from the previous independent round remain rejected. Future palette exploration requires genuinely new candidates rather than reviving those variants.
 
-## Active product question
+## Active product model under review
 
-The Conversation Workspace must distinguish:
+The Conversation Workspace distinguishes:
 
 ```text
 PROJECT-GENERAL CONVERSATION
@@ -79,48 +92,37 @@ Current browser:
 http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
 ```
 
-Initial implementation target:
+Latest browser refinement commits:
 
 ```text
-56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
+c0fad7428d76c11397c706f36a00448b05d2abe2
+    canonical work-unit boxes + Boxes/Text user switch
+
+1c25b982c4da0d64b18a483057102adc468d9c35
+    canonical scaled-node layout hardening
 ```
 
-Research:
+Current research:
 
 ```text
 docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
-```
-
-The browser factorizes:
-
-```text
-conversation scope
-    Work-unit scoped / Project general
-
-thread identity
-    Text / Marker + title / Mini work-unit artifact
-
-opened-box presence
-    A0 Chat-only control
-    A1 Header specimen
-    A2 Context shelf
-    A3 Inner sidecar
-    A4 Floating instrument
-    A5 Box inspector
-    A6 Adaptive anchor
+docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
 ```
 
 ## Claude requested contribution
 
-Claude should inspect Message 009 and broaden/challenge:
+Claude should inspect Message 009 and Message 009A and challenge/broaden:
 
 ```text
 conversation-home versus per-turn-context mental model
-work-unit identity in the conversation rail
+A6 Adaptive Anchor and materially better alternatives if any
+canonical WorkUnit reuse in conversation navigation
+Boxes/Text dual-mode sidebar policy
 project-general conversation identity
-conversation + opened-box composition
 X5 -> work-unit conversation entry and return
-edge cases such as re-homing, multi-object discussions and completed/deferred work units
+re-homing / multi-object / completed-or-deferred-home edge cases
+live versus historical state in old conversation navigation
+large-thread-count behavior and accessibility
 ```
 
 This follow-up is intentionally comparative rather than blind. Claude may inspect the current browser and proposal.
