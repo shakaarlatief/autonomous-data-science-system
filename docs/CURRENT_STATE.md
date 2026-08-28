@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 250  
+**Checkpoint:** 251  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C integration fidelity recovery. The first holistic Cockpit reconstruction failed human fidelity review because accepted browser-rendered components were reimplemented from textual summaries rather than faithfully reused/ported from their exact source targets. No further visual design or holistic rebuild should proceed until exact implementation provenance is bound to the held decisions.  
+**Development stage:** MC-0004 Phase C source-faithful holistic reintegration. The implementation-provenance recovery opened by Checkpoint 250 is complete: the full Phase-C decision ledger exists, the 23-entry implementation manifest is structurally valid, and every declared historical source path resolves at its exact integration target under a full-history CI gate. The replacement holistic Cockpit may now be built only by exact source reuse/porting plus explicitly provisional whole-product glue.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -14,8 +14,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-08
-Conversation title       08 - Project Cockpit Design Exploration
+Interaction session      chatgpt-09
+Conversation title       09 - Project Cockpit Design Exploration
 Primary collaborator     ChatGPT
 ```
 
@@ -26,22 +26,84 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
-docs/checkpoints/250_integrated_cockpit_fidelity_failure_recovery_audit_opened.md
-docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
+docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
 ```
 
 Current task:
 
 ```text
-construct accepted-implementation manifest
-bind exact target SHA -> exact source artifacts
-record invariant vs allowed adaptation boundary
-record known fixture caveats
-define fidelity verification gate
-only then rebuild holistic Cockpit by reuse/porting
+build replacement holistic Cockpit by source-faithful composition/porting
+preserve every MUST_PORT / MUST_PRESERVE manifest item
+carry provisional items only as provisional
+keep deferred/rejected/evidence-only candidates unselected
+introduce only minimum unresolved whole-product glue and label it provisional
+run deterministic provenance validation continuously
+add integrated fidelity checks against exact accepted targets
+only then resume holistic human product review
 ```
 
 Production `/cockpit` remains untouched.
+
+---
+
+# Implementation-provenance recovery status
+
+Durable recovery architecture:
+
+```text
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/cockpit/accepted_implementation_manifest.json
+scripts/check_cockpit_implementation_manifest.py
+.github/workflows/cockpit-implementation-provenance.yml
+```
+
+Current manifest coverage:
+
+```text
+23 total entries
+19 required
+    MUST_PORT / MUST_PRESERVE
+
+4 non-promotable
+    PROVISIONAL_ONLY
+    DO_NOT_SELECT_DURING_INTEGRATION
+    EXCLUDED_SOURCE
+```
+
+First full-history provenance run:
+
+```text
+workflow run  33156357834
+commit        2127563c0ed980f7bf6fad36e36b11e76500c59b
+
+Cockpit implementation manifest: PASS
+entries=23 required=19 non_promotable=4
+exact historical source verification: PASS
+```
+
+This closes the provenance gate. It does **not** yet close the integrated fidelity gate.
+
+---
+
+# Two-gate integration model
+
+```text
+PROVENANCE GATE
+    exact decision/source recovery
+    exact historical source resolution
+    PASS
+
+INTEGRATED FIDELITY GATE
+    replacement browser preserves declared geometry/behavior/visual hierarchy
+    replacement browser preserves semantic-channel separation
+    provisional glue remains identified
+    failed/deferred/rejected sources remain unselected
+    OPEN / NOT YET PASSED
+```
+
+A replacement browser may not be called the accepted holistic baseline merely because it renders or because the provenance validator passes.
 
 ---
 
@@ -54,13 +116,14 @@ frontend/design-lab/cockpit-integrated-baseline.html
 exact target 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-is classified as:
+remains classified as:
 
 ```text
 FAILED INTEGRATION ATTEMPT
 NOT an accepted baseline
 NOT a production target
 NOT a basis for new visual decisions
+EXCLUDED from the implementation source graph
 PRESERVED as diagnostic evidence
 ```
 
@@ -124,7 +187,10 @@ Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 Quiet Graphite source         c66f72a74e681f89fd52ba591a1387ea50f0e959
 A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
+Conversation coexistence      db31970d6885ce785609f9c3300f22123130d821
 ```
+
+The complete exact source graph is in `docs/cockpit/accepted_implementation_manifest.json`; the short list above is navigation only.
 
 ---
 
@@ -134,22 +200,25 @@ Current evidence:
 
 ```text
 semantic decisions              preserved
+complete Phase-C disposition    preserved
 exact target SHAs               preserved
 executable historical artifacts preserved
-holistic integration protocol   insufficient
+implementation source bindings  preserved
+exact-history CI verification   active
+holistic integrated fidelity    not yet proven
 ```
 
-The missing safeguard is explicit implementation provenance and fidelity validation. A future integrator must not be able to read labels such as `G4`, `H4`, `SEL2` or `Quiet Graphite` and then recreate them approximately.
-
-Required durable model:
+The durable integration model is now:
 
 ```text
 semantic decision
+    + complete disposition history
     + exact implementation target
     + exact source files
     + allowed adaptation boundary
     + known fixture caveats
-    + fidelity verification
+    + deterministic provenance gate
+    + integrated fidelity gate
 ```
 
 ---
