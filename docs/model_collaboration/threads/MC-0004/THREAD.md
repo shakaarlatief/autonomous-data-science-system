@@ -43,6 +43,8 @@ Phase C Conversation Scope + Work-Unit Anchor
     Checkpoint 246
     Research 082
     ChatGPT Message 009
+    Research 083
+    ChatGPT Message 009A human refinement addendum
     Claude Message 010 pending
 ```
 
@@ -70,6 +72,8 @@ fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite current Conversation Workspace visual baseline
+A6 Adaptive Anchor current Conversation Workspace opened-box working default
+canonical WorkUnit box / Text user-switchable conversation rail
 ```
 
 Semantic zoom S1-S8 remains preserved and deferred, not rejected.
@@ -112,13 +116,8 @@ Research/browser:
 
 ```text
 docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
 http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
-```
-
-Initial implementation target:
-
-```text
-56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
 ```
 
 The current human requirement is:
@@ -137,26 +136,43 @@ PER-TURN CONTEXT
     separate from conversation home
 ```
 
-The new browser tests three orthogonal dimensions:
+Current human working choices:
 
 ```text
-conversation scope
-    Work-unit scoped / Project general
+opened-box composition
+    A6 Adaptive Anchor
+    selected for now
 
-thread identity
-    Text / Marker + title / Mini work-unit artifact
+conversation rail
+    user-switchable Boxes / Text
 
-opened-box presence
-    A0 Chat-only control
-    A1 Header specimen
-    A2 Context shelf
-    A3 Inner sidecar
-    A4 Floating instrument
-    A5 Box inspector
-    A6 Adaptive anchor
+Boxes mode
+    use the same canonical accepted WorkUnit component
+    geometrically scaled to fit
+    no separate mini-card grammar
+
+Text mode
+    compact ordinary conversation list
 ```
 
-The project grid is deliberately absent. Work-unit identity is represented as a compact canonical artifact instead of restoring the map.
+The canonical rail box reuses the already accepted project work-unit channels rather than approximating them with a second design:
+
+```text
+category shape / hue
+P7 disposition
+runtime or BLOCKED carrier where applicable
+A3 attention bars where applicable
+accepted box surface/material/light grammar
+```
+
+Conversation ownership does not imply project-map selection, so SEL2 is not added merely because a chat belongs to a work unit.
+
+Latest browser implementation refinement:
+
+```text
+c0fad7428d76c11397c706f36a00448b05d2abe2
+1c25b982c4da0d64b18a483057102adc468d9c35
+```
 
 ## Current conceptual hypothesis
 
@@ -184,22 +200,36 @@ This is not a frozen persistence schema. Multi-home, re-homing, non-work-unit an
 
 ## Current collaboration gate
 
-Message 009 asks Claude to inspect and broaden the new question.
+Claude should read both:
 
 ```text
-next actor: Claude
-expected output: MC-0004 Message 010
-mode: COMPARATIVE_ONLY / DIVERGENT_IDEATION
+docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
+docs/model_collaboration/threads/MC-0004/messages/009a_chatgpt_conversation_scope_anchor_human_refinement_addendum.md
+```
+
+Expected response:
+
+```text
+MC-0004 Message 010
+```
+
+Mode:
+
+```text
+COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
 Claude is asked to challenge and expand:
 
 ```text
 conversation-home mental model
-work-unit identity in the thread rail
+A6 and materially better alternatives if any
+canonical WorkUnit reuse in the conversation rail
+Boxes/Text user preference
 project-general conversation identity
-conversation + opened-box composition
 X5 -> work-unit conversation entry / return
+live versus historical work-unit state in old threads
+large-thread-count and accessibility behavior
 edge cases such as re-homing and multi-object discussion
 ```
 
@@ -209,4 +239,4 @@ Claude may inspect the current browser. Blindness is no longer required because 
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final Conversation Workspace composition, conversation persistence/session model, home/anchor schema, multi-object semantics, search/archive/fork lifecycle, message-to-project linking semantics, conversation URL state, semantic zoom, large-project virtualization, deep-focus return choreography, compass semantics, specialist-workspace composition and final production visual system.
+Still unfrozen includes final Conversation Workspace composition, conversation persistence/session model, home/anchor schema, multi-object semantics, search/archive/fork lifecycle, message-to-project linking semantics, conversation URL state, exact sidebar preference scope, semantic zoom, large-project virtualization, deep-focus return choreography, compass semantics, specialist-workspace composition and final production visual system.
