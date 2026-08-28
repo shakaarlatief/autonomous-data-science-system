@@ -33,20 +33,23 @@
   "allowed_secondary_write_surfaces": [
     {"collaborator_id":"claude","paths":["docs/model_collaboration/threads/MC-0004/messages/**"]}
   ],
-  "next_expected_actor": "human",
+  "next_expected_actor": "claude",
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8",
     "known_exposures": [
       "ADS product-level context through Specification 008 and Foundation 021",
-      "accepted Phase-C interaction controls through Checkpoint 245",
-      "human requirement for a persistent full Conversation Workspace",
-      "MC-0004 Message 007 blind Conversation Workspace and chat visual-design request",
+      "accepted Phase-C interaction controls through Checkpoint 246",
       "Claude Message 008 independent Conversation Workspace design at cab2e464d81b48edadd1b6ae51bb7dd620d7e892",
       "ChatGPT independent Conversation Workspace browser frozen separately at c66f72a74e681f89fd52ba591a1387ea50f0e959",
-      "Research 081 dual-design comparison and both browser translations now exist on the coordination branch"
+      "Research 081 independent dual-design comparison",
+      "Quiet Graphite selected by the project owner as the current Conversation Workspace visual baseline",
+      "previously rendered alternative ChatGPT and Claude Conversation Workspace visual systems rejected by the project owner",
+      "Research 082 conversation-home versus per-turn-context hypothesis",
+      "conversation-workspace-work-unit-anchor browser initial target 56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e",
+      "MC-0004 Message 009 comparative/divergent conversation scope and work-unit anchor request"
     ],
-    "notes": "The blind dual-design gate is complete. Claude Message 008 explicitly states that it did not inspect the prohibited ChatGPT Conversation Workspace artifacts or the independent ChatGPT branch. ChatGPT's independent browser was already frozen on its isolated branch before Message 008 arrived. Both proposals are now intentionally exposed for human comparative review; future work is comparative rather than blind.",
+    "notes": "The blind dual-design gate is complete. Current work is intentionally comparative. Quiet Graphite is held as the visual baseline while Claude is asked to challenge and broaden the conversation-home model, work-unit identity artifact, opened-box plus conversation composition, project-general treatment, and X5-to-conversation transition. Claude may inspect the current browser and ChatGPT proposal. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -71,15 +74,18 @@
       "PHASE_C_CONVERSATION_WORKSPACE_REVIEW",
       "PHASE_C_CONVERSATION_WORKSPACE_BLIND_DUAL_DESIGN",
       "PHASE_C_CONVERSATION_WORKSPACE_BLIND_DUAL_DESIGN_COMPLETE",
-      "PHASE_C_CONVERSATION_WORKSPACE_INDEPENDENT_BROWSER_COMPARISON"
+      "PHASE_C_CONVERSATION_WORKSPACE_INDEPENDENT_BROWSER_COMPARISON",
+      "PHASE_C_QUIET_GRAPHITE_BASELINE_SELECTED",
+      "PHASE_C_CONVERSATION_SCOPE_WORK_UNIT_ANCHOR_REVIEW",
+      "PHASE_C_CONVERSATION_SCOPE_WORK_UNIT_ANCHOR_CLAUDE_IDEATION_REQUESTED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-conversation-workspace-blind-dual-design-complete",
+    "transition_id": "mc0004-conversation-scope-work-unit-anchor-claude-ideation-requested",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
-    "actor": "claude",
-    "reason": "Claude completed Message 008 as an explicitly blind independent Conversation Workspace and chat visual-system design. ChatGPT's separate independent browser was already frozen. Research 081 now preserves the independent convergence and differences, and both browser families are available on the coordination branch for human review before synthesis.",
-    "repository_head": "cab2e464d81b48edadd1b6ae51bb7dd620d7e892"
+    "actor": "human",
+    "reason": "The project owner selected Quiet Graphite as the current Conversation Workspace baseline, rejected the other rendered visual systems, required both project-general and work-unit-scoped conversations, proposed preserving recognizable box identity in conversation navigation, and requested broader composition ideas including Claude input. Research 082 and Checkpoint 246 open the new factorized scope/anchor browser, and Message 009 routes a comparative divergent follow-up to Claude.",
+    "repository_head": "c6bd7882e75ae5d9a689e149c20029ac27145633"
   }
 }
