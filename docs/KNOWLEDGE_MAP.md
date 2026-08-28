@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-28  
-**Current checkpoint:** 246  
+**Current checkpoint:** 247  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md
 Current route:
 
 ```text
-checkpoint                        246
+checkpoint                        247
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  Conversation anchor synthesis human review
+current boundary                  Conversation Workspace entry / return transition review
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -81,13 +81,14 @@ A3 Signal Bars for HIGH attention
 SEL2 Corner Brackets for persistent selection
 X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional working default
-Z7 Pull-Back Then Dive deep-focus entry
+Z7 Pull-Back Then Dive specialist-workspace entry
 fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
-Quiet Graphite current Conversation Workspace visual baseline
-A6 Adaptive Anchor current Conversation Workspace opened-box working default
-canonical WorkUnit Boxes / Text conversation rail
+Quiet Graphite Conversation Workspace baseline
+Boxes/Text user-switchable conversation rail
+A6 Adaptive Anchor opened-box composition
+A6 resting state without redundant floating box
 ```
 
 Important targets:
@@ -103,15 +104,15 @@ BLOCKED/status carrier        88fd3c3cfe7a1eff4664afde06341b7b654c97f4
 A3 attention priority         767c66f76974d3c0a851de0dfa17c502817a4b12
 SEL2 persistent selection     e7304fe834d86166d843fda7e1df0f4ddb1f793a
 X5 contextual expansion       94bc1100b7388cc56497cafc03051ce326424a80
-Z7 spatial deep focus         04616a52df5cceff6c59223bbd6f07448d027510
+Z7 specialist deep focus      04616a52df5cceff6c59223bbd6f07448d027510
 semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
+A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
+conversation transition       43ee0ae0ffc63eba6e99a42e9157568c53cc8806
 ```
 
 ---
 
-# Slice 02N: deep focus, current direction settled
-
-Primary evidence:
+# Slice 02N: specialist deep focus
 
 ```text
 docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md
@@ -120,7 +121,7 @@ docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_ex
 frontend/design-lab/work-unit-deep-focus-spatial-zoom.html
 ```
 
-Current result:
+Result:
 
 ```text
 Z7 Pull-Back Then Dive selected
@@ -129,13 +130,9 @@ project grid / surrounding boxes absent in deep focus
 compact topology compass retained
 ```
 
-Z2 and Z6 remain positive non-selected depth evidence.
-
 ---
 
-# Slice 02O: semantic zoom, deferred
-
-Primary evidence:
+# Slice 02O: semantic zoom
 
 ```text
 docs/checkpoints/244_z7_deep_focus_accepted_semantic_zoom_review_opened.md
@@ -159,9 +156,7 @@ semantic zoom
 
 ---
 
-# Slice 02P: Conversation Workspace independent dual-design round, closed as comparison gate
-
-Primary evidence:
+# Slice 02P: Conversation Workspace visual baseline
 
 ```text
 docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
@@ -176,8 +171,8 @@ Result:
 Quiet Graphite
     selected current visual baseline
 
-previously rendered alternative systems
-    rejected
+previous rendered ChatGPT / Claude alternatives
+    rejected as currently rendered systems
 ```
 
 Strong independent convergence remains useful evidence:
@@ -195,116 +190,85 @@ dark restrained professional visual language
 
 ---
 
-# Current Slice 02Q: Conversation Scope + Work-Unit Anchor
+# Slice 02Q: Conversation scope + work-unit anchor
 
-Checkpoint:
+Evidence:
 
 ```text
 docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
-```
-
-Held evidence before Claude synthesis:
-
-```text
 docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
 docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
 frontend/design-lab/conversation-workspace-work-unit-anchor.html
 ```
 
-Held product direction:
+Current held result:
 
 ```text
 PROJECT-GENERAL CONVERSATION
     no work-unit home
 
 WORK-UNIT-SCOPED CONVERSATION
-    one work-unit home
-    visibly recognizable as belonging to that box
+    explicit work-unit home
 
 PER-TURN CONTEXT
-    temporary referenced project objects
-    separate from conversation home
+    separate temporary context
 
-conversation rail
-    user-switchable Boxes / Text
+Conversation rail
+    Boxes / Text user switch
+
+Boxes
+    canonical WorkUnit visual component scaled for rail use
 
 A6 Adaptive Anchor
-    current opened-box working default
+    selected opened-box composition
+    no redundant floating work-unit box at rest
 ```
 
-Claude follow-up completed:
+Claude Message 010 and Research 084 remain preserved. Its extra B1-B4 composition mechanisms are historical research rather than active alternatives after explicit human review.
+
+---
+
+# Current Slice 02R: Conversation Workspace entry / return transition
+
+Checkpoint:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
-8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
+docs/checkpoints/247_a6_refined_conversation_entry_transition_review_opened.md
 ```
 
-Claude introduced the promising, still-unfrozen interface hierarchy:
+Research/browser:
 
 ```text
-HOME
-PINNED CONTEXT
-PER-TURN CONTEXT
-```
-
-and identified prior browser asymmetries around non-selectable BLOCKED/DEFER homes, A6/A5 content equivalence, compact canonical grammar loss, and archived thread representation.
-
-Current synthesis evidence:
-
-```text
-docs/research/084_claude_informed_conversation_anchor_synthesis.md
-frontend/design-lab/conversation-workspace-anchor-synthesis.html
+docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
+frontend/design-lab/conversation-workspace-entry-transition.html
+frontend/design-lab/conversation-workspace-entry-transition.css
+frontend/design-lab/conversation-workspace-entry-transition.js
 ```
 
 Local URL:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
+http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
 ```
 
-Exact clean implementation target:
+Candidate set:
 
 ```text
-93dba4688a0e78f5b1d60277761c59c65e79c98d
+E0 Direct Replace
+E1 Anchored Grow
+E2 World Recede
+E3 Pull-Back Then Dive
+E4 X5 Aperture
 ```
 
-Composition review:
+Return modifier:
 
 ```text
-A6  Refined Adaptive Anchor
-    current human working control
-
-B1  Breadcrumb Thread
-B2  Scroll-Responsive Presence
-B3  Object-Anchored Gutter
-B4  Wrapped Around Object
+Fast direct return
+Symmetric return
 ```
 
-The browser makes project-general, RUN, BLOCKED and DEFER homes selectable, keeps Boxes/Text independent of composition, and gives archived Boxes-mode conversations a subdued historical representation for review.
-
-Preserved but not promoted:
-
-```text
-Signature Rail for extreme thread density
-generalized non-WorkUnit conversation homes
-explicit Adopt / Detach / Re-home operations
-anchored X5 -> Conversation entry
-asymmetric faster return
-final historical-state grammar
-```
-
----
-
-# Earlier Phase-C evidence routes
-
-```text
-docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md
-docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md
-docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md
-docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md
-docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md
-docs/research/074_work_unit_internal_layout_grammar_experiment.md
-```
+E3 is only the initial browser default. No transition decision is frozen yet.
 
 ---
 
@@ -317,13 +281,7 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-Current collaboration state:
-
-```text
-Claude Message 010 complete
-no pending model obligation
-next actor human project owner
-```
+Claude Message 010 is complete. Current next actor is the human project owner reviewing the transition browser.
 
 ---
 
