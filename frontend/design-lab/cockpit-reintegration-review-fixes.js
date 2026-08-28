@@ -3,7 +3,13 @@
  *
  * No new semantic or visual choice is introduced here. This adapter repairs:
  *   - the project-general rail artifact against M20 / 606e027f281b35c2dfc93d059a1681df23bc2b73
- *   - connector endpoint layering against 183264bdd07783eaa2354894592f2cf4a076b6ec
+ *   - K1 Micro-dot placement against 42ec63d17095753dc4ab97628cd859473cbdf5e8
+ *   - K1/K2 layer separation against 183264bdd07783eaa2354894592f2cf4a076b6ec
+ *
+ * Accepted connector distinction:
+ *   Micro dots: above-node overlay, 2 px outward along the known endpoint side.
+ *   Frame sockets: original under-node relation layer, centered on the relation
+ *   anchor so the node surface visually integrates the socket into its frame.
  */
 
 const root = document.documentElement
@@ -11,9 +17,10 @@ const world = document.querySelector('#reintegration-world')
 const relationSvg = document.querySelector('#reintegration-relations')
 const SVG_NS = 'http://www.w3.org/2000/svg'
 const TERMINAL_OUTSET = 2
+const NODE_SELECTOR = '.expansion-practical-node'
 
 repairProjectGeneralArtifact()
-restoreConnectorPortOverlay()
+restoreMicroDotPortOverlay()
 
 /* -------------------------------------------------------------------------- */
 /* Project-general conversation identity                                      */
@@ -52,10 +59,10 @@ function projectCopy() {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Accepted connector-port overlay                                            */
+/* Accepted K1 Micro-dot overlay                                              */
 /* -------------------------------------------------------------------------- */
 
-function restoreConnectorPortOverlay() {
+function restoreMicroDotPortOverlay() {
   if (!world || !relationSvg) return
 
   let overlay = world.querySelector('#reintegration-port-overlay')
@@ -130,8 +137,6 @@ function syncOverlayRelation(sourceGroup, overlay) {
     portGroup.append(
       makeCircle('reintegration-port-dot reintegration-port-source-dot', 2.6),
       makeCircle('reintegration-port-dot reintegration-port-target-dot', 2.6),
-      makeSocket('reintegration-port-socket reintegration-port-source-socket'),
-      makeSocket('reintegration-port-socket reintegration-port-target-socket'),
     )
     overlay.appendChild(portGroup)
   }
@@ -151,15 +156,6 @@ function makeCircle(classNames, radius) {
   return circle
 }
 
-function makeSocket(classNames) {
-  const socket = document.createElementNS(SVG_NS, 'rect')
-  socket.setAttribute('class', `reintegration-port-terminal ${classNames}`)
-  socket.setAttribute('width', '5.2')
-  socket.setAttribute('height', '5.2')
-  socket.setAttribute('rx', '1.1')
-  return socket
-}
-
 function copyCustomProperty(source, target, property) {
   const value = source.style.getPropertyValue(property).trim()
   if (value) target.style.setProperty(property, value)
@@ -168,7 +164,9 @@ function copyCustomProperty(source, target, property) {
 
 function syncTerminalGeometry(sourceGroup, portGroup) {
   const path = sourceGroup.querySelector('.semantic-path')
-  if (!path) return
+  const sourceNode = nodeByKey(sourceGroup.dataset.source)
+  const targetNode = nodeByKey(sourceGroup.dataset.target)
+  if (!path || !sourceNode || !targetNode) return
 
   let length = 0
   try {
@@ -179,43 +177,58 @@ function syncTerminalGeometry(sourceGroup, portGroup) {
   if (!Number.isFinite(length) || length <= 0) return
 
   const start = path.getPointAtLength(0)
-  const startTangent = path.getPointAtLength(Math.min(8, length))
   const end = path.getPointAtLength(length)
-  const endTangent = path.getPointAtLength(Math.max(0, length - Math.min(8, length)))
+  const sourceSide = chooseSourceSide(sourceNode, targetNode)
+  const targetSide = oppositeSide(sourceSide)
 
-  const sourceVector = normalize(start.x - startTangent.x, start.y - startTangent.y)
-  const targetVector = normalize(end.x - endTangent.x, end.y - endTangent.y)
+  positionCircle(
+    portGroup.querySelector('.reintegration-port-source-dot'),
+    terminalAnchor(start, sourceSide),
+  )
+  positionCircle(
+    portGroup.querySelector('.reintegration-port-target-dot'),
+    terminalAnchor(end, targetSide),
+  )
+}
 
-  const sourceDot = {
-    x: start.x + sourceVector.x * TERMINAL_OUTSET,
-    y: start.y + sourceVector.y * TERMINAL_OUTSET,
-  }
-  const targetDot = {
-    x: end.x + targetVector.x * TERMINAL_OUTSET,
-    y: end.y + targetVector.y * TERMINAL_OUTSET,
-  }
+/*
+ * Exact mechanism restored from 42ec63d: the dot moves outward along the
+ * connector's known attachment side. A path-tangent vector is not equivalent
+ * and was the reintegration regression that pushed dots back over the frame.
+ */
+function terminalAnchor(point, side) {
+  if (side === 'left') return { x: point.x - TERMINAL_OUTSET, y: point.y }
+  if (side === 'right') return { x: point.x + TERMINAL_OUTSET, y: point.y }
+  if (side === 'top') return { x: point.x, y: point.y - TERMINAL_OUTSET }
+  return { x: point.x, y: point.y + TERMINAL_OUTSET }
+}
 
-  positionCircle(portGroup.querySelector('.reintegration-port-source-dot'), sourceDot)
-  positionCircle(portGroup.querySelector('.reintegration-port-target-dot'), targetDot)
-  positionSocket(portGroup.querySelector('.reintegration-port-source-socket'), start)
-  positionSocket(portGroup.querySelector('.reintegration-port-target-socket'), end)
+function chooseSourceSide(source, target) {
+  const sourceRect = source.getBoundingClientRect()
+  const targetRect = target.getBoundingClientRect()
+  const dx = targetRect.left + targetRect.width / 2 - (sourceRect.left + sourceRect.width / 2)
+  const dy = targetRect.top + targetRect.height / 2 - (sourceRect.top + sourceRect.height / 2)
+  return Math.abs(dx) >= Math.abs(dy)
+    ? (dx >= 0 ? 'right' : 'left')
+    : (dy >= 0 ? 'bottom' : 'top')
+}
+
+function oppositeSide(side) {
+  if (side === 'left') return 'right'
+  if (side === 'right') return 'left'
+  if (side === 'top') return 'bottom'
+  return 'top'
+}
+
+function nodeByKey(key) {
+  if (!key) return null
+  return world?.querySelector(`${NODE_SELECTOR}[data-node-key="${CSS.escape(key)}"]`) || null
 }
 
 function positionCircle(element, point) {
   if (!element) return
   element.setAttribute('cx', format(point.x))
   element.setAttribute('cy', format(point.y))
-}
-
-function positionSocket(element, point) {
-  if (!element) return
-  element.setAttribute('x', format(point.x - 2.6))
-  element.setAttribute('y', format(point.y - 2.6))
-}
-
-function normalize(x, y) {
-  const magnitude = Math.hypot(x, y) || 1
-  return { x: x / magnitude, y: y / magnitude }
 }
 
 function format(value) {
