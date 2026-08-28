@@ -1,13 +1,15 @@
 # MC-0004: Next-Generation Project Cockpit Design Exploration
 
 **Thread:** MC-0004  
-**Status:** ACTIVE / PHASE C HOLISTIC INTEGRATION REVIEW  
+**Status:** ACTIVE / PHASE C IMPLEMENTATION-PROVENANCE RECOVERY  
 **Review mode:** `INDEPENDENT_THEN_COMPARATIVE`  
 **Task owner:** ChatGPT  
 **Target-state write owner:** ChatGPT  
 **Claude role:** independent reviewer / counter-designer / researcher  
 **Human project owner:** final arbiter of product-intent choices  
-**Opened:** 2026-08-26
+**Opened:** 2026-08-26  
+**Current ChatGPT interaction session:** `chatgpt-09`  
+**Current ChatGPT conversation title:** `09 - Project Cockpit Design Exploration`
 
 ## Collaboration history
 
@@ -62,12 +64,48 @@ Phase C Conversation access + coexistence
     Research 086
     factorized access/coexistence browser target db31970d6885ce785609f9c3300f22123130d821
 
-Phase C holistic integrated Cockpit
+Phase C holistic integrated Cockpit attempt
     Checkpoint 249
     Research 087
-    accepted-invariants reconstruction audit
-    integrated Cockpit frontend target 8e554d847bb3b6318db432abcb5dff742f0fa523
+    integrated frontend target 8e554d847bb3b6318db432abcb5dff742f0fa523
+    FAILED FIDELITY REVIEW
+
+Phase C implementation-provenance recovery
+    Research 088
+    Checkpoint 250
+    source-level failure diagnosis
+    project owner review completed in chatgpt-09
+    exhaustive decision/source recovery explicitly authorized
 ```
+
+## Failed holistic integration disposition
+
+The browser frozen at:
+
+```text
+8e554d847bb3b6318db432abcb5dff742f0fa523
+```
+
+is classified as:
+
+```text
+FAILED INTEGRATION ATTEMPT
+NOT an accepted Cockpit baseline
+NOT a production target
+NOT a basis for new visual decisions
+PRESERVED only as diagnostic evidence
+```
+
+The failure mode is now established at source level:
+
+```text
+accepted browser-rendered implementation existed
+    -> semantic summary was read
+    -> a new visually similar implementation was manually authored
+    -> implementation fidelity was not mechanically or visually gated
+```
+
+This is prohibited for the recovery build.
 
 ## Preserved accepted / working Phase-C results
 
@@ -105,10 +143,95 @@ conversation available from Grid and Deep Dive
 full-focus + co-present conversation capability
 source work-state preservation across conversation open/close
 compact native Cockpit composer
-Jump/search, map recovery and fullscreen capability
+Specification 008 Jump/search, map recovery and fullscreen capability
 ```
 
-Semantic zoom S1-S8 remains preserved and deferred, not rejected.
+Important status distinctions remain binding:
+
+```text
+L0 Flat Fields
+    PROVISIONAL WORKING DEFAULT
+    not a final accepted internal-layout design
+
+S0 Geometric Control
+    PROVISIONAL WORKING DEFAULT
+    semantic zoom remains deferred
+
+S1-S8 semantic zoom candidates
+    DEFERRED / PRESERVED
+    not rejected
+
+Research 085 E0-E4 Conversation transition candidates
+    EVIDENCE ONLY
+    no winner selected
+
+Research 084 B1-B4 Conversation synthesis candidates
+    HISTORICAL / NOT ADOPTED
+    must not replace the selected Quiet Graphite + A6 direction
+```
+
+## Current recovery contract
+
+Before another holistic Cockpit implementation is started, ChatGPT must build and validate a durable recovery substrate that covers the complete new-Cockpit Phase-C corpus rather than only the short accepted-target list.
+
+Required durable artifacts:
+
+```text
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+    exhaustive disposition of Phase-C design evidence
+    distinguishes selected, held, provisional, deferred, rejected and diagnostic material
+
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+    human-readable implementation provenance and integration contract
+
+docs/cockpit/accepted_implementation_manifest.json
+    machine-readable implementation manifest
+
+scripts/check_cockpit_implementation_manifest.py
+    deterministic structural validator
+```
+
+For every mechanism that belongs in the integrated product, the manifest must bind:
+
+```text
+semantic decision
+status / maturity
+origin evidence
+exact implementation target SHA
+exact source file(s)
+visual / behavioral invariants
+allowed integration adaptations
+known fixture caveats
+fidelity verification method
+```
+
+The manifest must also record decisions that intentionally do **not** authorize implementation, including rejected variants, deferred questions and provisional working defaults. This prevents "everything we explored" from being misread as "everything should be combined."
+
+## Integration rule after recovery
+
+```text
+accepted implementation exists
+    -> reuse or port that exact implementation
+    -> preserve its verified geometry, behavior and visual grammar
+    -> adapt only inside the explicitly recorded integration boundary
+
+accepted interaction exists
+    -> reuse or port the exact behavior
+    -> do not substitute a similar animation or approximate visual treatment
+
+provisional working default exists
+    -> carry it only as provisional
+    -> do not promote it through integration by accident
+
+deferred / rejected / evidence-only candidate exists
+    -> preserve its history
+    -> do not implement it as accepted product behavior
+
+whole-product answer genuinely does not exist
+    -> introduce the minimum integration glue
+    -> label it provisional
+    -> keep it visually subordinate to held source implementations
+```
 
 ## Conversation Workspace visual disposition
 
@@ -134,7 +257,7 @@ Claude Studio Console
 Claude Hybrid
 ```
 
-Future visual exploration may introduce genuinely new candidates. Rejected systems should not be silently revived as active options.
+Future visual exploration may introduce genuinely new candidates. Rejected systems must not be silently revived as active options.
 
 ## Conversation Scope + Work-Unit Anchor result
 
@@ -180,11 +303,9 @@ Exact A6 floating-box removal:
 606e027f281b35c2dfc93d059a1681df23bc2b73
 ```
 
-## Checkpoint 247 / 248 disposition
+## Conversation access / coexistence result
 
-Research 085 E0-E4 remains possible full-chat-focus transition choreography evidence. No winner was selected.
-
-Research 086 established the more important factorization:
+Research 086 established the factorization:
 
 ```text
 WORK CONTEXT
@@ -207,106 +328,26 @@ CONVERSATION SCOPE
     work-unit-scoped
 ```
 
-This architecture is carried forward into the integrated Cockpit.
-
-## Current Slice: Holistic integrated Cockpit baseline
-
-Checkpoint:
+Exact factorized browser target:
 
 ```text
-249
+db31970d6885ce785609f9c3300f22123130d821
 ```
 
-Research:
-
-```text
-docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
-```
-
-Browser:
-
-```text
-http://localhost:5173/design-lab/cockpit-integrated-baseline.html
-```
-
-Exact initial holistic frontend target:
-
-```text
-8e554d847bb3b6318db432abcb5dff742f0fa523
-```
-
-The integrated browser is reconstructed from accepted invariants rather than copied from the latest isolated fixture.
-
-It provides one interaction loop for:
-
-```text
-Project Grid
-    select
-    X5 expand
-    Z7 Deep Dive
-
-Conversation
-    compact composer
-    global project conversation
-    work-unit conversation
-    full focus
-    co-present mode
-    Boxes / Text
-    A6 Expand box
-    return to preserved source state
-
-Navigation / product shell
-    Jump/search
-    geometric zoom
-    fit/reset
-    Focus current
-    appearance controls
-    fullscreen
-```
-
-## Provisional integration glue
-
-The integrated browser necessarily introduces concrete whole-product geometry that has not previously been selected.
-
-Current values are provisional only:
-
-```text
-54px HUD
-2400 x 1500 finite-world fixture
-2200 x 1320 project-plane fixture
-current HUD action layout
-current map-tool rail
-bottom-center compact composer geometry
-schematic specialist internal modules
-46% co-present Conversation width
-collapsed Conversation rail in co-present mode
-```
-
-These must not be treated as accepted merely because they are present in the baseline.
-
-## Process rule from Checkpoint 249
-
-```text
-Integrated Cockpit
-    primary product review surface
-
-Bounded design-lab experiments
-    supporting evidence tool
-    create only when a newly exposed question benefits from controlled isolation
-```
-
-The previous controlled browser evidence remains preserved and may be reopened when needed.
+Conversation open/close must preserve and restore the source work state.
 
 ## Current collaboration gate
 
 ```text
-next actor: human project owner
-mode: holistic integrated Cockpit review
+next actor: ChatGPT
+mode: exhaustive implementation-provenance recovery
 pending Claude obligation: none
+human fidelity-failure diagnosis review: COMPLETE
+holistic rebuild authorization: NOT YET, pending manifest/fidelity gate completion
 ```
 
 ## Production boundary
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final Cockpit shell geometry, HUD structure, finite-world dimensions, stage taxonomy, map-tool rail treatment, compact-composer geometry, specialist-workspace composition, topology-compass semantics/details, Conversation co-present layout and split resizing, full-chat transition choreography, conversation persistence/session model, conversation URL state, historical-state semantics, pinned context, non-work-unit conversation homes, semantic zoom, large-project virtualization and final production frontend component architecture.
+Still unfrozen includes final Cockpit shell geometry, HUD structure, finite-world dimensions, stage taxonomy, map-tool rail treatment, compact-composer geometry, specialist-workspace internal composition, topology-compass semantics/details, Conversation co-present layout and split resizing, full-chat transition choreography, conversation persistence/session model, conversation URL state, historical-state semantics, pinned context, non-work-unit conversation homes, semantic zoom, large-project virtualization and final production frontend component architecture.
