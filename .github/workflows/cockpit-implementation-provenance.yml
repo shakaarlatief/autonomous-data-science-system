@@ -7,11 +7,13 @@ on:
     paths:
       - docs/cockpit/**
       - scripts/check_cockpit_implementation_manifest.py
+      - scripts/check_cockpit_g4_dynamic_binding.py
       - .github/workflows/cockpit-implementation-provenance.yml
   pull_request:
     paths:
       - docs/cockpit/**
       - scripts/check_cockpit_implementation_manifest.py
+      - scripts/check_cockpit_g4_dynamic_binding.py
       - .github/workflows/cockpit-implementation-provenance.yml
   workflow_dispatch:
 
@@ -35,3 +37,6 @@ jobs:
 
       - name: Validate Cockpit implementation manifest and exact historical sources
         run: python scripts/check_cockpit_implementation_manifest.py --verify-git-history
+
+      - name: Validate supplemental G4 stochastic scheduler binding
+        run: python scripts/check_cockpit_g4_dynamic_binding.py
