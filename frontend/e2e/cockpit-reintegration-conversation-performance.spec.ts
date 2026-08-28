@@ -175,7 +175,7 @@ test.describe('Conversation integration and source-faithful Z7 rendering', () =>
           const specialist = document.querySelector('#reintegration-specialist-layer') as HTMLElement | null
           const ambient = document.querySelector('#reintegration-ambient-runtime-layer')
           const activity = document.querySelector('.activity-field')
-          const selected = document.querySelector(`${nodeSelector}[data-selected="true"]`) as HTMLElement | null
+          const selected = document.querySelector('.expansion-practical-node[data-selected="true"]') as HTMLElement | null
           const stage = document.querySelector('#reintegration-stage') as HTMLElement | null
           const worldStyle = worldTransition ? getComputedStyle(worldTransition) : null
           const specialistStyle = specialist ? getComputedStyle(specialist) : null
