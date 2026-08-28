@@ -1,0 +1,58 @@
+/*
+ * Checkpoint 256 human-review corrections.
+ *
+ * This layer addresses two concrete review findings without touching Focus:
+ *   1. Conversation WorkUnit separation must come from real row geometry, not
+ *      only grid row-gap, because transformed canonical nodes can visually
+ *      consume that gap.
+ *   2. The current flat project-tool rail should expose Fullscreen while
+ *      omitting the redundant Expand selected WorkUnit and Hide project HUD
+ *      controls from this product-surface candidate.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Conversation Boxes: structural visible separation                          */
+/* -------------------------------------------------------------------------- */
+
+/*
+ * Give the list a modest inter-row gap, then reserve breathing room inside
+ * every WorkUnit row as real layout space. This means the transformed canonical
+ * node can no longer visually fill the separation while its parent row still
+ * reports a passing gap.
+ */
+html[data-conversation-rail="boxes"] .reintegration-thread-list {
+  row-gap: 12px !important;
+  column-gap: 0 !important;
+  align-content: start;
+}
+
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread {
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 6px 4px !important;
+  overflow: visible !important;
+}
+
+/*
+ * Preserve the accepted canonical rail footprints. The extra vertical space is
+ * owned by the thread row, not by resizing or distorting the WorkUnit itself.
+ */
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
+  margin: 0 !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Flat project-tool rail: current human-review control set                    */
+/* -------------------------------------------------------------------------- */
+
+html[data-spatial-rail-angle="angled"] #toggle-detail,
+html[data-spatial-rail-angle="angled"] #hud-hide {
+  display: none !important;
+}
+
+/* Fullscreen is explicitly part of the current rail again. */
+html[data-spatial-rail-angle="angled"] #fullscreen-world {
+  display: grid !important;
+}
