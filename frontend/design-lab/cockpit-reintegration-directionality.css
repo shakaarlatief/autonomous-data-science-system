@@ -1,0 +1,23 @@
+/*
+ * M06 D0-D3 visibility adapter.
+ *
+ * Both endpoint arrows use the same accepted restrained semantic-arrow visual.
+ * data-direction is system semantic state; appearance controls never alter it.
+ */
+
+.reintegration-relation .semantic-arrow-start,
+.reintegration-relation .semantic-arrow-end {
+  visibility: hidden;
+}
+
+.reintegration-relation[data-direction="forward"] .semantic-arrow-end,
+.reintegration-relation[data-direction="reverse"] .semantic-arrow-start,
+.reintegration-relation[data-direction="both"] .semantic-arrow-start,
+.reintegration-relation[data-direction="both"] .semantic-arrow-end {
+  visibility: visible;
+}
+
+.reintegration-relation[data-direction="none"] .semantic-arrow-start,
+.reintegration-relation[data-direction="none"] .semantic-arrow-end {
+  visibility: hidden;
+}
