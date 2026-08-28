@@ -99,6 +99,17 @@ function installJumpPalette() {
   if (!search) return
 
   jumpButton?.addEventListener('click', () => window.setTimeout(() => setSearchOpen(false), 0))
+
+  /*
+   * Direct accessibility/automation input into the existing search field should
+   * reveal the invoked surface rather than leave an invisible active control.
+   * This also keeps the previously promoted Jump capability usable through its
+   * existing DOM contract while the visible shell changes around it.
+   */
+  jumpInput?.addEventListener('input', () => {
+    if (root.dataset.productSearchOpen !== 'true') setSearchOpen(true)
+  })
+
   jumpInput?.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       event.preventDefault()
