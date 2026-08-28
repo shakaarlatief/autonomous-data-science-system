@@ -28,6 +28,19 @@ async function relationSemanticSnapshot(relation: Locator) {
   }))
 }
 
+async function terminalVisibility(relation: Locator) {
+  return relation.evaluate((element) => {
+    const visible = (selector: string) => [...element.querySelectorAll(selector)]
+      .filter((candidate) => getComputedStyle(candidate).visibility !== 'hidden' && Number(getComputedStyle(candidate).opacity) > 0)
+      .length
+    return {
+      dots: visible('.reintegration-terminal-dot'),
+      sockets: visible('.reintegration-terminal-socket'),
+      arrows: visible('.semantic-arrow-start, .semantic-arrow-end'),
+    }
+  })
+}
+
 test.describe('Phase-C holistic fidelity completion', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1600, height: 1000 })
@@ -50,10 +63,17 @@ test.describe('Phase-C holistic fidelity completion', () => {
     await expect(node.locator('.pointer-light')).toHaveCSS('opacity', '1')
   })
 
-  test('G4 retains fields and stochastic world activity without the rejected isolated green packets', async ({ page }) => {
+  test('G4 retains fields and stochastic world activity without visible isolated green packets', async ({ page }) => {
     const world = page.locator('#reintegration-world')
     await expect(world.locator('.activity-field')).toHaveCount(2)
-    await expect(world.locator('.live-packet')).toHaveCount(0)
+
+    const packets = world.locator('.live-packet')
+    await expect(packets).toHaveCount(2)
+    for (const packet of await packets.all()) {
+      await expect(packet).toBeHidden()
+      await expect(packet).toHaveAttribute('data-integration-suppressed', 'true')
+    }
+
     await expect(page.locator('#reintegration-ambient-runtime-layer')).toHaveCount(1)
     await expect.poll(async () => page.locator('#reintegration-ambient-runtime-layer .runtime-current').count(), { timeout: 1800 }).toBeGreaterThanOrEqual(1)
   })
@@ -67,9 +87,7 @@ test.describe('Phase-C holistic fidelity completion', () => {
     await page.locator('[data-relation-presentation-option="neutral-hover"]').click()
     await expect(page.locator('html')).toHaveAttribute('data-relation-presentation', 'neutral-hover')
     await expect(relation.locator('.semantic-tag')).toHaveCSS('visibility', 'hidden')
-
-    const restingStroke = await relation.locator('.semantic-path').evaluate((element) => getComputedStyle(element).stroke)
-    expect(restingStroke).toBe('rgba(153, 170, 193, 0.31)')
+    await expect.poll(async () => relation.locator('.semantic-path').evaluate((element) => getComputedStyle(element).stroke)).toBe('rgba(153, 170, 193, 0.31)')
 
     const nodeRgb = await node.evaluate((element) => getComputedStyle(element).getPropertyValue('--node-rgb').trim())
     await node.hover()
@@ -78,8 +96,9 @@ test.describe('Phase-C holistic fidelity completion', () => {
     expect(hoverRgb).toBe(nodeRgb)
     expect(await relationSemanticSnapshot(relation)).toEqual(before)
 
-    await page.locator('#appearance-controls-toggle').click()
+    /* The Appearance panel is still open; do not accidentally close it. */
     await page.locator('[data-relation-presentation-option="class-tag"]').click()
+    await expect(page.locator('html')).toHaveAttribute('data-relation-presentation', 'class-tag')
     await expect(relation.locator('.semantic-tag')).toHaveCSS('visibility', 'visible')
     expect(await relationSemanticSnapshot(relation)).toEqual(before)
   })
@@ -89,25 +108,17 @@ test.describe('Phase-C holistic fidelity completion', () => {
     const before = await relationSemanticSnapshot(relation)
     await page.locator('#appearance-controls-toggle').click()
 
-    for (const mode of ['clean', 'dots', 'sockets', 'arrows']) {
+    const expected = {
+      clean: { dots: 0, sockets: 0, arrows: 0 },
+      dots: { dots: 2, sockets: 0, arrows: 0 },
+      sockets: { dots: 0, sockets: 2, arrows: 0 },
+      arrows: { dots: 0, sockets: 0, arrows: 1 },
+    }
+
+    for (const mode of ['clean', 'dots', 'sockets', 'arrows'] as const) {
       await page.locator(`[data-connector-terminal-option="${mode}"]`).click()
       await expect(page.locator('html')).toHaveAttribute('data-connector-terminal', mode)
-
-      const visibility = await relation.evaluate((element) => {
-        const visible = (selector: string) => [...element.querySelectorAll(selector)]
-          .filter((candidate) => getComputedStyle(candidate).visibility !== 'hidden' && Number(getComputedStyle(candidate).opacity) > 0)
-          .length
-        return {
-          dots: visible('.reintegration-terminal-dot'),
-          sockets: visible('.reintegration-terminal-socket'),
-          arrows: visible('.semantic-arrow-start, .semantic-arrow-end'),
-        }
-      })
-
-      if (mode === 'clean') expect(visibility).toEqual({ dots: 0, sockets: 0, arrows: 0 })
-      if (mode === 'dots') expect(visibility).toEqual({ dots: 2, sockets: 0, arrows: 0 })
-      if (mode === 'sockets') expect(visibility).toEqual({ dots: 0, sockets: 2, arrows: 0 })
-      if (mode === 'arrows') expect(visibility).toEqual({ dots: 0, sockets: 0, arrows: 1 })
+      await expect.poll(() => terminalVisibility(relation)).toEqual(expected[mode])
       expect(await relationSemanticSnapshot(relation)).toEqual(before)
     }
   })
@@ -184,7 +195,9 @@ test.describe('Phase-C holistic fidelity completion', () => {
     await page.locator('#conversation-expand').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
 
-    const search = page.locator('.reintegration-conversation-search > span')
+    const searchIcon = page.locator('.reintegration-conversation-search > span:first-child')
+    const search = page.locator('.reintegration-conversation-search > span:nth-child(2)')
+    await expect(searchIcon).toHaveText('⌕')
     await expect(search).toHaveText('Search conversations…')
     const searchMetrics = await search.evaluate((element) => ({
       height: element.getBoundingClientRect().height,
