@@ -242,6 +242,8 @@ test.describe('Cockpit accepted-implementation manifest closure', () => {
     await page.locator('#appearance-controls-toggle').click()
     await expect(page.locator('#reintegration-process-focus-panel')).toBeHidden()
     await expect(page.locator('#reintegration-appearance-panel')).toBeVisible()
+    await page.locator('#product-jump-toggle').click()
+    await expect(page.locator('#reintegration-appearance-panel')).toBeHidden()
     await expect(page.locator('#jump-input')).toBeVisible()
     await expect(page.locator('#composer-input')).toBeVisible()
   })
