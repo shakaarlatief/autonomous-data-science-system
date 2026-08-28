@@ -3,11 +3,11 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUDIT",
+  "phase": "PHASE_C_SOURCE_FAITHFUL_HOLISTIC_REINTEGRATION",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
-    "description": "Research, compare and evaluate the next-generation Project Cockpit through browser-rendered experiments, then recover and bind all held Phase-C decisions to exact implementation provenance before holistic integration resumes.",
+    "description": "Research, compare and evaluate the next-generation Project Cockpit through browser-rendered experiments, preserve the full decision history and exact implementation provenance, and perform source-faithful holistic reintegration under deterministic provenance and fidelity gates.",
     "write_paths": [
       "docs/model_collaboration/threads/MC-0004/BRIEF.md",
       "docs/model_collaboration/threads/MC-0004/THREAD.md",
@@ -19,6 +19,7 @@
       "docs/cockpit/**",
       "frontend/design-lab/**",
       "scripts/check_cockpit_implementation_manifest.py",
+      ".github/workflows/cockpit-implementation-provenance.yml",
       "README.md",
       "docs/CURRENT_STATE.md",
       "docs/KNOWLEDGE_MAP.md",
@@ -64,10 +65,14 @@
       "holistic integrated Cockpit browser target 8e554d847bb3b6318db432abcb5dff742f0fa523",
       "project owner rejected the holistic integrated browser as fundamentally inconsistent with the planned Cockpit",
       "Research 088 source-level audit found the browser manually reimplemented accepted designs from summaries instead of faithfully reusing/porting exact source artifacts",
-      "Checkpoint 250 suspends holistic rebuild until exact implementation provenance and fidelity validation are established",
-      "project owner reviewed the Checkpoint 250 diagnosis in chatgpt-09 and explicitly authorized proceeding with exhaustive Phase-C decision recovery and repository hardening before the next holistic implementation"
+      "Checkpoint 250 suspended holistic rebuild until exact implementation provenance and fidelity validation were established",
+      "project owner reviewed the Checkpoint 250 diagnosis in chatgpt-09 and explicitly authorized proceeding with exhaustive Phase-C decision recovery and repository hardening before the next holistic implementation",
+      "Phase-C Decision Ledger now exhaustively disposes Research 037-088 as selected, foundational, provisional, deferred, rejected, historical/diagnostic or process evidence",
+      "accepted implementation manifest now contains 23 entries with 19 required and 4 deliberately non-promotable records",
+      "full-history GitHub Actions provenance gate at run 33156357834 passed exact historical source verification for every declared manifest path",
+      "Research 089 closes implementation-provenance recovery and Checkpoint 251 opens source-faithful holistic reintegration"
     ],
-    "notes": "No Claude obligation is pending. Human review of the fidelity-failure diagnosis is complete and the project owner has authorized the implementation-provenance recovery. ChatGPT must exhaustively recover Phase-C decisions, distinguish selected/provisional/deferred/rejected evidence, bind held implementation mechanisms to exact source artifacts and target SHAs, record allowed adaptation boundaries and fixture caveats, and establish a fidelity gate before another integrated Cockpit is built. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The implementation-provenance recovery is complete and the exact-history gate has passed. ChatGPT now owns source-faithful holistic reintegration. Every MUST_PORT/MUST_PRESERVE mechanism must be reused or ported from the manifest's exact historical source and may change only within its recorded adaptation boundary. Provisional/deferred/rejected/evidence-only entries must not be promoted through integration. Any unresolved whole-product glue must be minimal, explicitly provisional and recorded. The replacement browser must pass the integrated fidelity gate before human holistic review resumes. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -106,15 +111,17 @@
       "PHASE_C_HOLISTIC_INTEGRATED_COCKPIT_BASELINE_REVIEW",
       "PHASE_C_INTEGRATED_COCKPIT_FIDELITY_FAILURE_CONFIRMED",
       "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUDIT",
-      "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUTHORIZED"
+      "PHASE_C_IMPLEMENTATION_PROVENANCE_RECOVERY_AUTHORIZED",
+      "PHASE_C_IMPLEMENTATION_PROVENANCE_GATE_PASSED",
+      "PHASE_C_SOURCE_FAITHFUL_HOLISTIC_REINTEGRATION"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-implementation-provenance-recovery-authorized",
+    "transition_id": "mc0004-source-faithful-holistic-reintegration-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
-    "actor": "human",
-    "reason": "After repository-only reconstruction in the new ChatGPT session, the project owner explicitly approved the Checkpoint 250 diagnosis and authorized exhaustive recovery of every Phase-C decision, implementation source and fidelity boundary before holistic Cockpit integration resumes.",
-    "repository_head": "e2674c1a190004b9a9e533c25bcc9ca4972ff291"
+    "actor": "chatgpt",
+    "reason": "The exhaustive Phase-C decision ledger, 23-entry accepted implementation manifest, deterministic validator and full-history CI provenance gate are now in place. GitHub Actions run 33156357834 passed exact historical source verification for every declared manifest binding, satisfying the Checkpoint 250 provenance-recovery gate and opening controlled source-faithful holistic reintegration under Checkpoint 251.",
+    "repository_head": "3aa0f052aceeb2b0605ec93c8a6f7a388815aef7"
   }
 }
