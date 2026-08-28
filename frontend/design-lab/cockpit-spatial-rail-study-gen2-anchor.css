@@ -22,8 +22,14 @@ html[data-spatial-rail-gen2="console"] .cockpit-edge-rear-frame {
   right: 0 !important;
 }
 
-/* The real drag handle is reparented to the fixed rig by the companion module. */
+/*
+ * The real drag handle is reparented to the fixed rig by the companion module.
+ * The rig intentionally ignores pointer input so it never steals navigation
+ * gestures from the world. The grip must explicitly opt back into pointer input
+ * after leaving the interactive shell subtree.
+ */
 html[data-spatial-rail-gen2] .cockpit-edge-rig > .cockpit-edge-grip {
   left: -15px;
   right: auto;
+  pointer-events: auto;
 }
