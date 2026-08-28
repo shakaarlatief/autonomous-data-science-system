@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "supplements_manifest": "docs/cockpit/accepted_implementation_manifest.json",
+  "supplements_entry": "M02",
+  "name": "G4 stochastic ambient scheduler refinement",
+  "maturity": "MUST_PORT",
+  "decision_sources": [
+    "docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md",
+    "docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md"
+  ],
+  "integration_source_sha": "3ec15a99b0d8103949c673eaf1dd16c3c9d00042",
+  "source_files": [
+    {
+      "path": "frontend/design-lab/grid-dynamics-combined.html",
+      "blob_sha": "39eb149d1d4d8d7c11d41152b3bd1674761167c0"
+    },
+    {
+      "path": "frontend/design-lab/grid-dynamics-combined.css",
+      "blob_sha": "f1cdca643ba02df7f3a8c139d8bec0bd10901b26"
+    },
+    {
+      "path": "frontend/design-lab/grid-dynamics-combined.js",
+      "blob_sha": "39006a361e3ae15242b13f1b6048c3ba4a845b21"
+    }
+  ],
+  "invariants": [
+    "Lively current cadence is the selected default direction",
+    "travelling currents are distributed across the full visible world rather than repeating at fixed authored positions",
+    "current lanes snap to the 20px grid",
+    "current orientation, start, direction, distance, segment length and timing vary",
+    "major-grid glints occur only on 100px intersections",
+    "glints use an independent quiet scheduler and do not accelerate with Lively current cadence",
+    "at most two glints are concurrent",
+    "ambient drift varies in start position, size, vector and opacity",
+    "localized semantic activity remains separate from decorative ambient motion",
+    "reduced motion disables decorative ambient animation"
+  ],
+  "allowed_adaptations": [
+    "world dimensions may change",
+    "ambient counts may scale with world dimensions while preserving salience hierarchy",
+    "scheduler and visual classes may be namespaced or componentized during integration",
+    "logical world dimensions rather than transformed screen bounds may drive grid-coherent spawning"
+  ],
+  "fixture_caveats": [
+    "Quiet/Balanced/Lively controls are design-lab comparison controls; Lively is the human-preferred integrated cadence",
+    "fixture semantic-activity positions are not a frozen project-layout decision"
+  ],
+  "verification": [
+    "exact historical blob verification for all three combined-dynamics source files",
+    "current-branch blob equality against the exact historical refinement",
+    "20px current-lane grid-coherence test",
+    "100px major-grid glint intersection test",
+    "independent glint concurrency/cadence test",
+    "reduced-motion test",
+    "live human visual comparison"
+  ],
+  "reason_for_supplement": "The original M02 manifest entry preserved the correct Research 042-043 invariants but bound only the later SEL2-compatible WorkUnit grammar snapshot. Human integrated review exposed that the actual stochastic scheduler source was omitted from the machine-readable implementation graph. This supplement makes the later accepted scheduler an explicit required M02 source without weakening the existing SEL2-compatible substrate binding."
+}
