@@ -1,0 +1,125 @@
+/*
+ * Product-surface study A readability refinement.
+ *
+ * The accepted Quiet Graphite structure remains unchanged. This stylesheet
+ * deliberately tests normal application/chat typography after human review
+ * rejected the historical design-lab micro-type scale. ChatGPT's current chat
+ * page is used only as a legibility reference, not as a visual system to copy.
+ */
+
+html[data-product-surface-study="a"] .reintegration-conversation-brand strong {
+  font-size: 13.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-brand small {
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-search {
+  font-size: 12.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-search kbd {
+  font-size: 10.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-view-switch button {
+  font-size: 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-rail-heading {
+  font-size: 10.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-thread-text strong,
+html[data-product-surface-study="a"] .reintegration-project-thread-copy strong {
+  font-size: 12.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-thread-text small {
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-thread-copy small {
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-rail-footer {
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-title-row h2 {
+  font-size: 18px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-scope-pill {
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-subtitle {
+  font-size: 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-actions button {
+  min-height: 33px;
+  padding: 6px 10px;
+  font-size: 12.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-date-divider {
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-anchor {
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-meta {
+  font-size: 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-meta strong {
+  font-size: 13px;
+}
+
+html[data-product-surface-study="a"] .reintegration-user-message,
+html[data-product-surface-study="a"] .reintegration-ads-message {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+html[data-product-surface-study="a"] .reintegration-ads-message h3 {
+  font-size: 17px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-ref small,
+html[data-product-surface-study="a"] .reintegration-project-change small {
+  font-size: 9.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-ref strong,
+html[data-product-surface-study="a"] .reintegration-project-change strong {
+  font-size: 12.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-tools button,
+html[data-product-surface-study="a"] .reintegration-project-change p,
+html[data-product-surface-study="a"] .reintegration-activity-row {
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-context button {
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer textarea {
+  font-size: 15.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-actions button {
+  font-size: 12.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-status {
+  font-size: 11.5px;
+}
