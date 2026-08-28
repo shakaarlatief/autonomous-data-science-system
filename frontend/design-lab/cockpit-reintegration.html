@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="./cockpit-reintegration.css" />
     <link rel="stylesheet" href="./cockpit-reintegration-x5.css" />
     <link rel="stylesheet" href="./cockpit-reintegration-z7.css" />
+    <link rel="stylesheet" href="./cockpit-reintegration-review-controls.css" />
   </head>
   <body>
     <main class="reintegration-shell" id="reintegration-shell" aria-label="Source-faithful Project Cockpit reintegration">
@@ -63,6 +64,7 @@
           <button type="button" id="reset-world">Reset</button>
           <button type="button" id="toggle-detail">Expand</button>
           <button type="button" id="deep-dive">Deep Dive</button>
+          <button type="button" id="appearance-controls-toggle" aria-expanded="false" aria-controls="reintegration-appearance-panel">Appearance</button>
           <button type="button" id="fullscreen-world">Fullscreen</button>
         </div>
       </header>
@@ -100,6 +102,15 @@
           </div>
         </div>
 
+        <!--
+          Gesture behavior is promoted architecture, but this explanatory chip
+          is design-lab-only provisional chrome and is not an accepted shell.
+        -->
+        <div class="reintegration-input-contract" aria-hidden="true">
+          <strong>Navigate</strong>
+          <span>Two-finger scroll = move · pinch/spread = zoom · drag = alternate pan</span>
+        </div>
+
         <aside class="reintegration-map-status" aria-label="Project map status">
           <span>PROJECT GRID</span>
           <strong id="selected-work-label">Selected: Production missingness</strong>
@@ -115,8 +126,64 @@
         <div class="reintegration-provisional-note" aria-label="Integration status">
           <span>INTEGRATION GLUE</span>
           <strong>Shell geometry is provisional</strong>
-          <small>Accepted WorkUnit/world/X5/Z7/relation sources are reused or exactly ported. The HUD and stage placement are not design selections.</small>
+          <small>Accepted WorkUnit/world/X5/Z7/relation sources are reused or exactly ported. HUD, stage size, controls and placement are not design selections.</small>
         </div>
+
+        <!--
+          The capability to personalize semantically safe appearance is held by
+          Foundation 023. This particular panel, its placement and grouping are
+          provisional integration scaffolding and must not be treated as a
+          selected settings design.
+        -->
+        <aside class="reintegration-appearance-panel" id="reintegration-appearance-panel" hidden aria-label="Approved appearance dimensions">
+          <div class="reintegration-appearance-head">
+            <div>
+              <span>PROVISIONAL SETTINGS UI</span>
+              <strong>Approved appearance dimensions</strong>
+            </div>
+            <button type="button" id="appearance-controls-close" aria-label="Close appearance controls">×</button>
+          </div>
+          <p class="reintegration-appearance-copy">These controls exercise accepted non-semantic personalization inside the integrated Cockpit. The panel design and persistence model remain unfrozen.</p>
+
+          <fieldset class="reintegration-setting">
+            <legend>WorkUnit shape</legend>
+            <div class="reintegration-setting-options two">
+              <button type="button" data-shape-option="normal" aria-pressed="false">Normal</button>
+              <button type="button" data-shape-option="true" aria-pressed="true">Subtle category shape</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="reintegration-setting">
+            <legend>Micro design</legend>
+            <div class="reintegration-setting-options">
+              <button type="button" data-surface-option="none" aria-pressed="false">None</button>
+              <button type="button" data-surface-option="material" aria-pressed="true">Material</button>
+              <button type="button" data-surface-option="lumen" aria-pressed="false">Lumen</button>
+            </div>
+          </fieldset>
+
+          <label class="reintegration-toggle-setting">
+            <span>
+              <strong>Reduced motion</strong>
+              <small>Preserves meaning while disabling ambient and transition motion.</small>
+            </span>
+            <input id="reduced-motion-toggle" type="checkbox" />
+          </label>
+
+          <div class="reintegration-pending-setting">
+            <span>Accepted capability · not omitted</span>
+            <strong>Connector presentation choices</strong>
+            <small>Clean, Micro dots, Frame sockets and direction-safe presentation remain approved. Their exact integrated adapter is intentionally pending rather than approximated here.</small>
+          </div>
+
+          <div class="reintegration-pending-setting">
+            <span>Accepted capability · mounts with Conversation Workspace</span>
+            <strong>Conversation rail Boxes / Text</strong>
+            <small>The user-switchable rail choice remains held and will be ported with Quiet Graphite + A6 instead of being faked in the Grid shell.</small>
+          </div>
+
+          <button type="button" id="appearance-reset">Reset approved appearance</button>
+        </aside>
       </section>
 
       <!--
@@ -157,7 +224,6 @@
           </aside>
         </div>
 
-        <!-- Exact accepted compact topology-compass structure. -->
         <aside class="reintegration-topology-compass" aria-label="Project position">
           <span>Project position</span>
           <div class="reintegration-mini-map" aria-hidden="true">

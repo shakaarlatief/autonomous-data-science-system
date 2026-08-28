@@ -1,11 +1,10 @@
 /*
  * Checkpoint 251 source-faithful reintegration controller.
  *
- * This module is intentionally thin. WorkUnit rendering, selection and X5
- * contextual expansion are owned by exact accepted modules loaded before this
- * file. This code supplies only whole-world navigation, E5 relation composition
- * between rendered accepted WorkUnits, and provisional shell orchestration for
- * Specification 008 capabilities.
+ * WorkUnit rendering, selection and X5 contextual expansion are owned by exact
+ * accepted modules loaded before this file. This module composes those sources
+ * with whole-world navigation, E5 relation geometry, exact Z7 entry timing and
+ * explicitly provisional shell/settings orchestration.
  */
 
 const html = document.documentElement
@@ -17,10 +16,19 @@ const jumpInput = document.querySelector('#jump-input')
 const selectedLabel = document.querySelector('#selected-work-label')
 const detailStateLabel = document.querySelector('#detail-state-label')
 const detailToggle = document.querySelector('#toggle-detail')
+const deepDiveButton = document.querySelector('#deep-dive')
+const specialistLayer = document.querySelector('#reintegration-specialist-layer')
+const specialistTitle = document.querySelector('#specialist-title')
+const returnToProject = document.querySelector('#return-to-project')
 const zoomReadout = document.querySelector('#zoom-readout')
 const viewportStatus = document.querySelector('#viewport-status')
 const zoomIndicator = document.querySelector('#zoom-track-indicator')
 const provisionalNote = document.querySelector('.reintegration-provisional-note')
+const appearanceToggle = document.querySelector('#appearance-controls-toggle')
+const appearancePanel = document.querySelector('#reintegration-appearance-panel')
+const appearanceClose = document.querySelector('#appearance-controls-close')
+const appearanceReset = document.querySelector('#appearance-reset')
+const reducedMotionToggle = document.querySelector('#reduced-motion-toggle')
 
 const NODE_SELECTOR = '.expansion-practical-node'
 const WORLD_WIDTH = 1440
@@ -28,6 +36,11 @@ const WORLD_HEIGHT = 760
 const MIN_ZOOM = 0.52
 const MAX_ZOOM = 1.42
 const DEFAULT_ZOOM = 1
+const PINCH_SENSITIVITY = 0.0024
+const MAX_PINCH_DELTA_PER_FRAME = 64
+const X5_TRANSITION_MS = 340
+const Z7_TRANSITION_MS = 780
+const NAVIGATION_SETTLE_MS = 140
 
 const relationClasses = {
   dependency: { code: 'DEP', rgb: '236, 187, 92' },
@@ -54,14 +67,25 @@ let dragState = null
 let relationFrame = 0
 let relationMotionFrame = 0
 let relationMotionUntil = 0
+let panFrame = 0
+let panDeltaX = 0
+let panDeltaY = 0
+let pinchFrame = 0
+let pinchDelta = 0
+let pinchAnchor = { x: 0, y: 0 }
+let navigationSettleTimer = 0
+let deepFocusTimer = 0
 
 renderRelations()
 installNavigation()
 installNodeIntegration()
 installShellActions()
+installAppearanceControls()
 installGeometryObservers()
+installGlobalRecovery()
 applyTransform()
 syncIntegratedState()
+syncAppearanceControls()
 requestRelationUpdate()
 
 function renderRelations() {
@@ -74,11 +98,13 @@ function renderRelations() {
     group.dataset.relationId = relation.id
     group.dataset.source = relation.source
     group.dataset.target = relation.target
+    group.dataset.direction = 'forward'
     group.style.setProperty('--class-rgb', semantic.rgb)
 
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
     path.classList.add('semantic-path')
 
+    /* D1 target arrow remains semantic and is never toggled by appearance. */
     const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'path')
     arrow.classList.add('semantic-arrow')
 
@@ -102,25 +128,89 @@ function renderRelations() {
 }
 
 function installNavigation() {
-  document.querySelector('#zoom-in')?.addEventListener('click', () => zoomAtStageCenter(zoom * 1.12))
-  document.querySelector('#zoom-out')?.addEventListener('click', () => zoomAtStageCenter(zoom / 1.12))
-  document.querySelector('#fit-world')?.addEventListener('click', fitWorld)
-  document.querySelector('#reset-world')?.addEventListener('click', resetWorld)
+  document.querySelector('#zoom-in')?.addEventListener('click', () => {
+    markNavigating()
+    zoomAtStageCenter(zoom * 1.12)
+  })
+  document.querySelector('#zoom-out')?.addEventListener('click', () => {
+    markNavigating()
+    zoomAtStageCenter(zoom / 1.12)
+  })
+  document.querySelector('#fit-world')?.addEventListener('click', () => {
+    markNavigating()
+    fitWorld()
+  })
+  document.querySelector('#reset-world')?.addEventListener('click', () => {
+    markNavigating()
+    resetWorld()
+  })
 
   stage?.addEventListener('wheel', (event) => {
-    event.preventDefault()
+    if (html.dataset.deepFocus !== 'false') return
+    if (event.target.closest('.reintegration-appearance-panel')) return
     if (!stage) return
 
-    const rect = stage.getBoundingClientRect()
-    const pointerX = event.clientX - rect.left
-    const pointerY = event.clientY - rect.top
-    const factor = Math.exp(-event.deltaY * 0.0012)
-    zoomAround(pointerX, pointerY, zoom * factor)
+    const deltaModeScale = wheelDeltaModeScale(event)
+
+    /*
+     * Chromium exposes native trackpad pinch as ctrl+wheel. This mirrors the
+     * already promoted V1 pinch architecture: frame-coalesced deltas, bounded
+     * per-frame travel and pointer-anchor preservation.
+     */
+    if (event.ctrlKey) {
+      event.preventDefault()
+      const rect = stage.getBoundingClientRect()
+      pinchDelta += event.deltaY * deltaModeScale
+      pinchAnchor = {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top,
+      }
+      markNavigating()
+
+      if (pinchFrame) return
+      pinchFrame = requestAnimationFrame(() => {
+        pinchFrame = 0
+        const delta = clamp(pinchDelta, -MAX_PINCH_DELTA_PER_FRAME, MAX_PINCH_DELTA_PER_FRAME)
+        pinchDelta = 0
+        if (Math.abs(delta) < 0.01) return
+        const factor = Math.exp(-delta * PINCH_SENSITIVITY)
+        zoomAround(pinchAnchor.x, pinchAnchor.y, zoom * factor)
+      })
+      return
+    }
+
+    /*
+     * Ordinary two-finger scrolling is spatial movement, not zoom. This is the
+     * promoted Project Cockpit navigation contract and matches native scroll
+     * direction: positive wheel delta moves the world up/left in the viewport.
+     */
+    event.preventDefault()
+    let deltaX = event.deltaX * deltaModeScale
+    let deltaY = event.deltaY * deltaModeScale
+    if (event.shiftKey && Math.abs(deltaX) < Math.abs(deltaY)) {
+      deltaX = deltaY
+      deltaY = 0
+    }
+
+    panDeltaX += deltaX
+    panDeltaY += deltaY
+    markNavigating()
+    if (panFrame) return
+
+    panFrame = requestAnimationFrame(() => {
+      panFrame = 0
+      panX -= panDeltaX
+      panY -= panDeltaY
+      panDeltaX = 0
+      panDeltaY = 0
+      applyTransform()
+    })
   }, { passive: false })
 
   stage?.addEventListener('pointerdown', (event) => {
+    if (html.dataset.deepFocus !== 'false') return
     if (event.button !== 0) return
-    if (event.target.closest(`${NODE_SELECTOR}, button, input`)) return
+    if (event.target.closest(`${NODE_SELECTOR}, button, input, textarea, select, .reintegration-appearance-panel`)) return
 
     dragState = {
       pointerId: event.pointerId,
@@ -131,12 +221,14 @@ function installNavigation() {
     }
     stage.setPointerCapture(event.pointerId)
     stage.classList.add('is-dragging')
+    markNavigating()
   })
 
   stage?.addEventListener('pointermove', (event) => {
     if (!dragState || event.pointerId !== dragState.pointerId) return
     panX = dragState.startPanX + event.clientX - dragState.startX
     panY = dragState.startPanY + event.clientY - dragState.startY
+    markNavigating()
     applyTransform()
   })
 
@@ -145,10 +237,45 @@ function installNavigation() {
     if (stage?.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId)
     dragState = null
     stage?.classList.remove('is-dragging')
+    scheduleNavigationSettle()
   }
 
   stage?.addEventListener('pointerup', endDrag)
   stage?.addEventListener('pointercancel', endDrag)
+
+  stage?.addEventListener('keydown', (event) => {
+    if (html.dataset.deepFocus !== 'false' || event.target !== stage) return
+    const step = event.shiftKey ? 320 : 150
+    const movement = {
+      ArrowLeft: [step, 0],
+      ArrowRight: [-step, 0],
+      ArrowUp: [0, step],
+      ArrowDown: [0, -step],
+    }[event.key]
+
+    if (movement) {
+      event.preventDefault()
+      panX += movement[0]
+      panY += movement[1]
+      markNavigating()
+      applyTransform()
+      return
+    }
+
+    if (event.key === '+' || event.key === '=') {
+      event.preventDefault()
+      markNavigating()
+      zoomAtStageCenter(zoom * 1.12)
+    } else if (event.key === '-') {
+      event.preventDefault()
+      markNavigating()
+      zoomAtStageCenter(zoom / 1.12)
+    } else if (event.key === '0') {
+      event.preventDefault()
+      markNavigating()
+      resetWorld()
+    }
+  })
 
   document.querySelector('#jump-button')?.addEventListener('click', jumpToSearch)
   jumpInput?.addEventListener('keydown', (event) => {
@@ -190,12 +317,16 @@ function installNodeIntegration() {
 
 function installShellActions() {
   detailToggle?.addEventListener('click', () => {
+    if (html.dataset.deepFocus !== 'false') return
     const selected = currentSelectedNode()
     if (!selected) return
     selected.click()
     syncIntegratedState()
     syncRelationGeometryDuringNodeMotion(430)
   })
+
+  deepDiveButton?.addEventListener('click', () => enterDeepFocus())
+  returnToProject?.addEventListener('click', () => leaveDeepFocus())
 
   document.querySelector('#fullscreen-world')?.addEventListener('click', async () => {
     try {
@@ -215,6 +346,40 @@ function installShellActions() {
 
   document.querySelector('#composer-send')?.addEventListener('click', () => {
     showProvisionalMessage('Live conversation execution is outside this design-lab reintegration slice. The compact composer is preserved as an interaction affordance only.')
+  })
+}
+
+function installAppearanceControls() {
+  appearanceToggle?.addEventListener('click', () => setAppearancePanelOpen(Boolean(appearancePanel?.hidden)))
+  appearanceClose?.addEventListener('click', () => setAppearancePanelOpen(false))
+
+  for (const button of document.querySelectorAll('[data-shape-option]')) {
+    button.addEventListener('click', () => {
+      html.dataset.shapeStyle = button.dataset.shapeOption || 'true'
+      syncAppearanceControls()
+      syncRelationGeometryDuringNodeMotion(120)
+    })
+  }
+
+  for (const button of document.querySelectorAll('[data-surface-option]')) {
+    button.addEventListener('click', () => {
+      html.dataset.surfaceStyle = button.dataset.surfaceOption || 'material'
+      syncAppearanceControls()
+    })
+  }
+
+  reducedMotionToggle?.addEventListener('change', () => {
+    html.dataset.reduced = reducedMotionToggle.checked ? 'on' : 'off'
+    syncAppearanceControls()
+    requestRelationUpdate()
+  })
+
+  appearanceReset?.addEventListener('click', () => {
+    html.dataset.shapeStyle = 'true'
+    html.dataset.surfaceStyle = 'material'
+    html.dataset.reduced = 'off'
+    syncAppearanceControls()
+    syncRelationGeometryDuringNodeMotion(120)
   })
 }
 
@@ -244,7 +409,24 @@ function installGeometryObservers() {
   }
 }
 
+function installGlobalRecovery() {
+  window.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return
+    if (html.dataset.deepFocus !== 'false') {
+      event.preventDefault()
+      leaveDeepFocus()
+      return
+    }
+    if (appearancePanel && !appearancePanel.hidden) {
+      event.preventDefault()
+      setAppearancePanelOpen(false)
+      appearanceToggle?.focus({ preventScroll: true })
+    }
+  })
+}
+
 function jumpToSearch() {
+  if (html.dataset.deepFocus !== 'false') return
   const query = jumpInput?.value.trim().toLowerCase()
   if (!query) return
 
@@ -262,7 +444,7 @@ function jumpToSearch() {
 
   /*
    * Exact X5 behavior toggles expansion when an already-selected node is
-   * clicked. Jump/search must select without accidentally changing depth.
+   * clicked. Jump/search selects without accidentally changing depth.
    */
   if (node.dataset.selected !== 'true') node.click()
   syncIntegratedState()
@@ -280,6 +462,7 @@ function centerNode(node) {
 
   panX = -worldX * zoom
   panY = -worldY * zoom
+  markNavigating()
   applyTransform()
 }
 
@@ -303,6 +486,7 @@ function zoomAround(pointerX, pointerY, requestedZoom) {
   panX = pointerX - centerX - worldX * nextZoom
   panY = pointerY - centerY - worldY * nextZoom
   zoom = nextZoom
+  markNavigating()
   applyTransform()
 }
 
@@ -326,8 +510,121 @@ function resetWorld() {
 
 function applyTransform() {
   if (!plane) return
-  plane.style.transform = `translate3d(${panX}px, ${panY}px, 0) scale(${zoom})`
+  const renderPanX = snapToDevicePixel(panX)
+  const renderPanY = snapToDevicePixel(panY)
+  plane.style.transform = `translate3d(${renderPanX}px, ${renderPanY}px, 0) scale(${zoom})`
   updateViewportStatus()
+}
+
+function markNavigating() {
+  stage?.classList.add('is-navigating')
+  scheduleNavigationSettle()
+}
+
+function scheduleNavigationSettle() {
+  if (navigationSettleTimer) window.clearTimeout(navigationSettleTimer)
+  navigationSettleTimer = window.setTimeout(() => {
+    navigationSettleTimer = 0
+    stage?.classList.remove('is-navigating')
+    /* Reapply a device-pixel-aligned transform after compositing is released. */
+    applyTransform()
+  }, NAVIGATION_SETTLE_MS)
+}
+
+function wheelDeltaModeScale(event) {
+  if (event.deltaMode === 1) return 16
+  if (event.deltaMode === 2) return stage?.clientHeight || window.innerHeight
+  return 1
+}
+
+function snapToDevicePixel(value) {
+  const ratio = window.devicePixelRatio || 1
+  return Math.round(value * ratio) / ratio
+}
+
+async function enterDeepFocus() {
+  if (html.dataset.deepFocus !== 'false') return
+  setAppearancePanelOpen(false)
+
+  let selected = currentSelectedNode()
+  if (!selected) return
+
+  /* Z7 begins from the actual selected X5 object, not a recreated source card. */
+  if (selected.dataset.expanded !== 'true') {
+    selected.click()
+    syncIntegratedState()
+    syncRelationGeometryDuringNodeMotion(430)
+    await wait(html.dataset.reduced === 'on' ? 0 : X5_TRANSITION_MS)
+    selected = currentSelectedNode()
+  }
+
+  if (!selected || selected.dataset.expanded !== 'true') {
+    showProvisionalMessage('Deep focus requires the selected work unit to reach the accepted X5 expanded state first.')
+    return
+  }
+
+  syncDeepFocusOrigin(selected)
+  const title = selected.querySelector('.node-surface strong')?.textContent?.trim() || selected.dataset.nodeKey || 'Selected work unit'
+  if (specialistTitle) specialistTitle.textContent = title
+
+  specialistLayer?.setAttribute('aria-hidden', 'false')
+  html.dataset.deepFocus = 'entering'
+
+  if (deepFocusTimer) window.clearTimeout(deepFocusTimer)
+  deepFocusTimer = window.setTimeout(() => {
+    deepFocusTimer = 0
+    html.dataset.deepFocus = 'focused'
+    stage?.setAttribute('aria-hidden', 'true')
+    returnToProject?.focus({ preventScroll: true })
+  }, html.dataset.reduced === 'on' ? 20 : Z7_TRANSITION_MS + 20)
+}
+
+function leaveDeepFocus() {
+  if (html.dataset.deepFocus === 'false') return
+  if (deepFocusTimer) {
+    window.clearTimeout(deepFocusTimer)
+    deepFocusTimer = 0
+  }
+
+  /* Return choreography is intentionally direct because no reverse motion was frozen. */
+  html.dataset.deepFocus = 'false'
+  stage?.setAttribute('aria-hidden', 'false')
+  specialistLayer?.setAttribute('aria-hidden', 'true')
+  requestAnimationFrame(() => {
+    const selected = currentSelectedNode()
+    selected?.focus({ preventScroll: true })
+    syncIntegratedState()
+    requestRelationUpdate()
+  })
+}
+
+function syncDeepFocusOrigin(node) {
+  if (!stage) return
+  const stageRect = stage.getBoundingClientRect()
+  const nodeRect = node.getBoundingClientRect()
+  const x = nodeRect.left - stageRect.left + nodeRect.width / 2
+  const y = nodeRect.top - stageRect.top + nodeRect.height / 2
+  html.style.setProperty('--deep-origin-x', `${snapToDevicePixel(x)}px`)
+  html.style.setProperty('--deep-origin-y', `${snapToDevicePixel(y)}px`)
+}
+
+function setAppearancePanelOpen(open) {
+  if (!appearancePanel || !appearanceToggle) return
+  appearancePanel.hidden = !open
+  appearanceToggle.setAttribute('aria-expanded', String(open))
+}
+
+function syncAppearanceControls() {
+  const shape = html.dataset.shapeStyle || 'true'
+  const surface = html.dataset.surfaceStyle || 'material'
+
+  for (const button of document.querySelectorAll('[data-shape-option]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.shapeOption === shape))
+  }
+  for (const button of document.querySelectorAll('[data-surface-option]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.surfaceOption === surface))
+  }
+  if (reducedMotionToggle) reducedMotionToggle.checked = html.dataset.reduced === 'on'
 }
 
 function updateViewportStatus() {
@@ -354,6 +651,7 @@ function syncIntegratedState() {
   if (selectedLabel) selectedLabel.textContent = `Selected: ${title}`
   if (detailStateLabel) detailStateLabel.textContent = `SEL2 selected · X5 ${expanded ? 'expanded' : 'compact'} · E5 relations`
   if (detailToggle) detailToggle.textContent = expanded ? 'Collapse' : 'Expand'
+  if (specialistTitle) specialistTitle.textContent = title
 
   const composerContext = document.querySelector('#composer-context')
   if (composerContext) composerContext.textContent = title
@@ -514,6 +812,10 @@ function showProvisionalMessage(message) {
   const small = provisionalNote.querySelector('small')
   if (strong) strong.textContent = 'Integration boundary'
   if (small) small.textContent = message
+}
+
+function wait(milliseconds) {
+  return new Promise((resolve) => window.setTimeout(resolve, milliseconds))
 }
 
 function formatCoord(value) {
