@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" data-work="x5" data-thread="work" data-presentation="split">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>ADS Design Lab · Conversation Access + Coexistence</title>
+  <link rel="stylesheet" href="./conversation-workspace-access-coexistence.css" />
+</head>
+<body>
+  <div class="lab-shell">
+    <header class="lab-header">
+      <div class="header-copy">
+        <span class="kicker">ADS COCKPIT DESIGN LAB · CHECKPOINT 248 · CONVERSATION ACCESS + COEXISTENCE</span>
+        <h1>Conversation should be available from every work depth, not replace the work model.</h1>
+        <p>Quiet Graphite, canonical Boxes/Text conversation navigation, X5, Z7 Deep Dive and the compact Cockpit composer are held. This browser factorizes the underlying work surface, active conversation and how full conversation is presented.</p>
+      </div>
+      <div class="controls">
+        <label><span>Underlying work surface</span><select id="work-select">
+          <option value="grid">Grid · neutral</option>
+          <option value="selected">Grid · selected box</option>
+          <option value="x5" selected>Grid · X5 expanded</option>
+          <option value="deep">Deep Dive specialist workspace</option>
+        </select></label>
+        <label><span>Conversation</span><select id="thread-select">
+          <option value="project">Project general</option>
+          <option value="work" selected>Current work-unit chat</option>
+        </select></label>
+        <label><span>Presentation</span><select id="presentation-select">
+          <option value="work">Work only / compact chat</option>
+          <option value="full">Full chat focus</option>
+          <option value="dock">Right dock</option>
+          <option value="split" selected>Balanced split</option>
+          <option value="chat-dominant">Chat dominant + work context</option>
+        </select></label>
+      </div>
+    </header>
+
+    <nav class="presentation-strip" aria-label="Conversation presentation modes">
+      <button data-presentation="work"><strong>P0</strong><span>Work only</span></button>
+      <button data-presentation="full"><strong>P1</strong><span>Full chat focus</span></button>
+      <button data-presentation="dock"><strong>P2</strong><span>Right dock</span></button>
+      <button data-presentation="split" aria-pressed="true"><strong>P3</strong><span>Balanced split</span></button>
+      <button data-presentation="chat-dominant"><strong>P4</strong><span>Chat dominant</span></button>
+    </nav>
+
+    <main class="app-stage" id="app-stage">
+      <section class="work-pane" id="work-pane" aria-label="Current work surface">
+        <section class="project-grid" id="project-grid">
+          <div class="grid-lines" aria-hidden="true"></div>
+          <div class="project-toolbar">
+            <div class="project-label"><span>PROJECT GRID</span><strong>Autonomous Data Science</strong></div>
+            <div class="project-actions"><button id="global-chat-grid">Conversations</button><button>Jump</button><button>Fit</button></div>
+          </div>
+
+          <svg class="relations" viewBox="0 0 1200 720" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M180 180 C330 180 330 320 470 320" />
+            <path d="M680 320 C800 320 830 190 1010 190" />
+            <path d="M665 390 C790 520 900 520 1030 520" />
+          </svg>
+
+          <article class="work-node investigation node-missing">
+            <div class="node-top"><span class="shape square"></span><small>INVESTIGATION · CURRENT</small></div>
+            <strong>Production missingness</strong><span class="blocked">BLOCKED</span>
+          </article>
+
+          <article class="work-node validation node-threshold">
+            <div class="node-top"><span class="shape triangle">△</span><small>VALIDATION · DEFERRED</small></div>
+            <strong>Threshold policy</strong>
+          </article>
+
+          <article class="work-node evaluation node-calibration">
+            <div class="node-top"><span class="shape plus">＋</span><small>EVALUATION · CURRENT</small></div>
+            <strong>Calibration review</strong>
+          </article>
+
+          <article class="work-node model node-model" id="model-node">
+            <span class="selection-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <div class="node-top"><span class="shape diamond"></span><small>MODEL WORK · CURRENT</small><span class="bars"><i></i><i></i><i></i></span></div>
+            <strong>Model selection strategy</strong>
+            <span class="run">RUN</span>
+            <div class="node-actions"><button id="node-chat">Chat</button><button id="node-expand">Expand</button></div>
+          </article>
+
+          <article class="x5-card" id="x5-card">
+            <div class="x5-head"><div><span class="shape diamond"></span><small>MODEL WORK · CURRENT</small></div><span class="bars"><i></i><i></i><i></i></span></div>
+            <h2>Model selection strategy</h2>
+            <div class="x5-fields">
+              <div><small>PURPOSE</small><p>Compare candidate model families under one frozen validation protocol.</p></div>
+              <div><small>CONSTRAINT</small><p>Keep learning breadth separate from final deployment selection.</p></div>
+              <div><small>EVIDENCE</small><p>Frozen validation protocol · linked model results</p></div>
+              <div><small>NEXT ACTION</small><p>Complete comparable evaluation and record selection logic.</p></div>
+            </div>
+            <div class="x5-actions"><button id="x5-chat">Open this conversation</button><button id="x5-deep">Deep Dive</button></div>
+          </article>
+
+          <div class="compact-composer">
+            <div class="compact-context"><span>ADS</span><span id="compact-context-label">Project-aware</span></div>
+            <div class="compact-input"><span>Ask ADS about the project…</span><button id="composer-expand">↗</button><button>↑</button></div>
+          </div>
+        </section>
+
+        <section class="deep-workspace" id="deep-workspace">
+          <header class="deep-header">
+            <div><span class="kicker">SPECIALIST WORKSPACE · MODEL WORK</span><h2>Model selection strategy</h2><p>Full-resolution analytical work surface. Project grid is not mounted as the active stage.</p></div>
+            <div class="deep-actions"><button id="deep-chat">Conversations</button><button id="deep-work-chat">Chat about this work unit</button><button>Return to project</button></div>
+          </header>
+          <div class="deep-body">
+            <section class="analysis-surface"><div class="panel-heading">PRIMARY ANALYTICAL SURFACE</div><div class="chart-placeholder"><div class="chart-line a"></div><div class="chart-line b"></div><div class="chart-line c"></div><span>Comparable validation results</span></div></section>
+            <aside class="deep-side"><section><div class="panel-heading">EVIDENCE</div><strong>Validation protocol</strong><p>Frozen split discipline and comparable metrics.</p></section><section><div class="panel-heading">WORK UNIT CONTEXT</div><strong>Current · RUN</strong><p>High attention. No blocking condition.</p></section><section><div class="panel-heading">NEXT</div><strong>Selection logic</strong><p>Record the reasoning and preserve alternative families.</p></section></aside>
+          </div>
+          <div class="topology-compass"><small>PROJECT POSITION</small><div class="mini-grid"><i></i><i></i><i class="current"></i><i></i><i></i></div></div>
+        </section>
+      </section>
+
+      <section class="conversation-pane" id="conversation-pane" aria-label="Conversation Workspace">
+        <aside class="thread-rail">
+          <div class="brand"><span class="brand-mark">A</span><div><strong>Autonomous Data Science</strong><small>Telco churn project</small></div></div>
+          <button class="search">⌕ <span>Search conversations</span><kbd>⌘ K</kbd></button>
+          <div class="view-switch"><button class="active">Boxes</button><button>Text</button></div>
+          <div class="rail-heading"><span>PROJECT CONVERSATIONS</span><button>+</button></div>
+          <button class="thread project-thread" data-thread-target="project"><span class="project-symbol">P</span><span><small>PROJECT</small><strong>General project discussion</strong></span></button>
+          <button class="thread work-thread" data-thread-target="work"><span class="rail-box model"><span class="rail-top"><span class="shape diamond"></span><small>MODEL WORK · CURRENT</small><span class="bars"><i></i><i></i><i></i></span></span><strong>Model selection strategy</strong><span class="run">RUN</span></span></button>
+          <button class="thread"><span class="rail-box investigation"><span class="rail-top"><span class="shape square"></span><small>INVESTIGATION · CURRENT</small></span><strong>Production missingness</strong><span class="blocked">BLOCKED</span></span></button>
+          <button class="thread"><span class="rail-box validation"><span class="rail-top"><span class="shape triangle">△</span><small>VALIDATION · DEFERRED</small></span><strong>Threshold policy</strong></span></button>
+        </aside>
+
+        <section class="conversation-main">
+          <header class="conversation-header">
+            <div class="conversation-title"><button id="close-chat">←</button><div><div class="title-line"><h2 id="chat-title">Model selection strategy</h2><span id="scope-pill">WORK UNIT</span></div><p id="chat-subtitle">Conversation anchored to the current model-work unit.</p></div></div>
+            <div class="conversation-actions"><button>Find</button><button>Outline</button><button id="expand-box-chat">Expand box</button><button>•••</button></div>
+          </header>
+          <div class="transcript-scroll">
+            <div class="transcript">
+              <div class="date-divider">TODAY · 08:51</div>
+              <article class="turn user"><div class="avatar">U</div><div><div class="meta">YOU <span>08:51</span></div><div class="user-message" id="user-message">Can we discuss this model-selection work while I keep the current work surface open?</div></div></article>
+              <article class="turn ads"><div class="avatar ads-avatar">A</div><div><div class="meta">ADS <span>08:51</span></div><div class="ads-message"><p id="ads-copy">Yes. Conversation presentation is separate from the underlying work surface. The same work-unit chat can take full focus or coexist beside the Grid or Deep Dive.</p><h3>State continuity</h3><p>Closing or collapsing conversation should restore the same work context rather than resetting selection, X5 or Deep Dive state.</p><div class="refs"><button>◇ Model selection strategy</button><button>△ Validation protocol</button></div></div></div></article>
+              <section class="project-change"><span>↳</span><div><small>PROJECT STATE</small><strong>Underlying work context preserved</strong><p>Conversation presentation does not mutate work-unit ownership or project state.</p></div></section>
+              <article class="turn user"><div class="avatar">U</div><div><div class="meta">YOU <span>08:55</span></div><div class="user-message">And I can still switch to the general project conversation?</div></div></article>
+              <article class="turn ads"><div class="avatar ads-avatar">A</div><div><div class="meta">ADS <span>08:55</span></div><div class="ads-message"><p>Yes. Invocation origin and conversation scope are separate. Opening chat from a box can target its home conversation, while the conversation list remains available for switching threads.</p></div></div></article>
+            </div>
+          </div>
+          <footer class="full-composer"><div class="context-row"><span>HOME</span><button id="home-chip">◇ Model selection strategy</button><span>WORK CONTEXT PRESERVED</span></div><textarea rows="2" placeholder="Continue this discussion…"></textarea><div class="composer-bottom"><button>＋</button><button>Commands</button><span>Project-aware</span><button class="send">↑</button></div></footer>
+        </section>
+
+        <aside class="chat-box-panel" id="chat-box-panel"><div class="panel-head"><div><small>HOME WORK UNIT</small><strong>Model selection strategy</strong></div><button id="close-box-panel">×</button></div><div class="panel-box"><span class="rail-top"><span class="shape diamond"></span><small>MODEL WORK · CURRENT</small></span><strong>Model selection strategy</strong><span class="run">RUN</span></div><dl><div><dt>PURPOSE</dt><dd>Compare candidate families under one protocol.</dd></div><div><dt>CONSTRAINT</dt><dd>Separate learning breadth from deployment selection.</dd></div><div><dt>NEXT</dt><dd>Complete comparable evaluation.</dd></div></dl></aside>
+      </section>
+    </main>
+
+    <footer class="state-footer"><span>WORK CONTEXT</span><strong id="state-work">GRID · X5 EXPANDED</strong><span>CONVERSATION</span><strong id="state-chat">WORK UNIT · BALANCED SPLIT</strong><span class="state-note">Changing conversation presentation does not reset the work context.</span></footer>
+  </div>
+  <script type="module" src="./conversation-workspace-access-coexistence.js"></script>
+</body>
+</html>
