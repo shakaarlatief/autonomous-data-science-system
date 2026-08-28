@@ -1,5 +1,14 @@
 const root = document.documentElement;
 
+const ownershipStyle = document.createElement('style');
+ownershipStyle.textContent = `
+  .canonical-unit-artifact::before,
+  .canonical-unit-artifact::after {
+    display: none !important;
+  }
+`;
+document.head.append(ownershipStyle);
+
 const scopeSelect = document.querySelector('#scope-select');
 const threadIdentitySelect = document.querySelector('#thread-identity-select');
 const anchorModeSelect = document.querySelector('#anchor-mode-select');
