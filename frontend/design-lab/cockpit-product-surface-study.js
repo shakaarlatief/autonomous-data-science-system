@@ -15,6 +15,7 @@ const hud = document.querySelector('.reintegration-hud')
 const tools = document.querySelector('.reintegration-tools')
 const search = document.querySelector('.reintegration-search')
 const plane = document.querySelector('#reintegration-world-plane')
+const world = document.querySelector('#reintegration-world')
 const jumpInput = document.querySelector('#jump-input')
 const jumpButton = document.querySelector('#jump-button')
 const appearancePanel = document.querySelector('#reintegration-appearance-panel')
@@ -154,18 +155,29 @@ function setSearchOpen(open) {
 /* -------------------------------------------------------------------------- */
 
 function installContinuousGridSync() {
-  if (!stage || !plane) return
+  if (!stage || !plane || !world) return
 
   const sync = () => {
     const transform = plane.style.transform || getComputedStyle(plane).transform
     const camera = readCameraTransform(transform)
     if (!camera) return
 
+    /*
+     * The sharpness adapter transfers geometric scale from the plane transform
+     * into CSS `zoom` on the world so Chromium can rerasterize text and 1px
+     * lines. Translation therefore comes from the camera transform, while the
+     * authoritative settled scale comes from the world layout zoom whenever it
+     * is present. This keeps the viewport-owned grid spatially aligned with the
+     * accepted sharpness strategy instead of creating a second zoom model.
+     */
+    const layoutScale = Number.parseFloat(world.style.zoom || '')
+    const scale = Number.isFinite(layoutScale) && layoutScale > 0 ? layoutScale : camera.scale
+
     const rect = stage.getBoundingClientRect()
     const originX = rect.width / 2 + camera.x
     const originY = rect.height / 2 + camera.y
-    const minor = Math.max(4, 20 * camera.scale)
-    const major = Math.max(20, 100 * camera.scale)
+    const minor = Math.max(4, 20 * scale)
+    const major = Math.max(20, 100 * scale)
 
     stage.style.setProperty('--product-grid-minor', `${minor}px`)
     stage.style.setProperty('--product-grid-major', `${major}px`)
@@ -177,17 +189,24 @@ function installContinuousGridSync() {
   window.addEventListener('resize', sync, { passive: true })
 
   if ('MutationObserver' in window) {
-    const observer = new MutationObserver(sync)
-    observer.observe(plane, { attributes: true, attributeFilter: ['style'] })
+    const planeObserver = new MutationObserver(sync)
+    planeObserver.observe(plane, { attributes: true, attributeFilter: ['style'] })
+
+    const worldObserver = new MutationObserver(sync)
+    worldObserver.observe(world, { attributes: true, attributeFilter: ['style'] })
   }
 }
 
 function readCameraTransform(transform) {
   if (!transform || transform === 'none') return null
 
-  const authored = transform.match(/translate3d\(([-\d.]+)px,\s*([-\d.]+)px,\s*0(?:px)?\)\s*scale\(([-\d.]+)\)/)
+  const authored = transform.match(/translate3d\(([-\d.]+)px,\s*([-\d.]+)px,\s*0(?:px)?\)(?:\s*scale\(([-\d.]+)\))?/)
   if (authored) {
-    return { x: Number(authored[1]), y: Number(authored[2]), scale: Number(authored[3]) }
+    return {
+      x: Number(authored[1]),
+      y: Number(authored[2]),
+      scale: authored[3] ? Number(authored[3]) : 1,
+    }
   }
 
   const matrix = transform.match(/^matrix\(([-\d.e]+),\s*[-\d.e]+,\s*[-\d.e]+,\s*([-\d.e]+),\s*([-\d.e]+),\s*([-\d.e]+)\)$/)
