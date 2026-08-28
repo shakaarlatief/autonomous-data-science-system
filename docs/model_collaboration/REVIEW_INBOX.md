@@ -18,7 +18,7 @@ Claude should not infer or switch the coordination branch. If a trigger names a 
 none
 ```
 
-Claude Message 010 is complete at:
+Claude Message 010 remains complete at:
 
 ```text
 8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
@@ -33,94 +33,84 @@ human project owner
 Current checkpoint:
 
 ```text
-248
+249
 ```
 
-## Held Conversation Workspace direction
+## Current process mode
+
+The project owner explicitly paused default component-by-component browser exploration and requested a holistic reconstruction of the accepted/held Cockpit decisions.
 
 ```text
-Quiet Graphite
-    current visual baseline
+Integrated Cockpit
+    PRIMARY REVIEW SURFACE
 
-Conversation sidebar
-    user-switchable Boxes / Text
-
-Boxes mode
-    canonical WorkUnit visual component scaled for navigation
-
-A6 Adaptive Anchor
-    current opened-box composition
-
-A6 resting state
-    no redundant floating work-unit box
+Bounded design-lab experiments
+    preserved evidence / supporting tools
+    reopen only when a specific question benefits from isolation
 ```
 
-## Architecture correction from project owner
-
-Conversation must be reachable from every major work depth and may either take full focus or coexist with the active work surface.
+## Primary browser
 
 ```text
-WORK CONTEXT
-    Grid neutral
-    Grid selected
-    Grid X5 expanded
-    Deep Dive
-
-x
-
-CONVERSATION PRESENTATION
-    compact / work only
-    full chat focus
-    co-present work + chat
-
-x
-
-CONVERSATION SCOPE
-    project-general
-    work-unit-scoped
+http://localhost:5173/design-lab/cockpit-integrated-baseline.html
 ```
 
-A global conversation action must be available regardless of Grid state. Work units/X5 and Deep Dive must also support direct opening of the corresponding work-unit conversation. Closing chat should preserve and restore the same underlying work context.
-
-Research 079's earlier split/dock/context-rail ideas are recovered as co-presence evidence. They were not rejected by later Conversation Workspace visual decisions.
-
-## Current active review
-
-Research:
+Exact initial holistic frontend target:
 
 ```text
-docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-Browser:
+Checkpoint / audit:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
+docs/checkpoints/249_holistic_integrated_cockpit_baseline_review_opened.md
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
 ```
 
-The browser factorizes:
+## Held directions reconstructed in the baseline
 
 ```text
-UNDERLYING WORK SURFACE
-    Grid neutral
-    Grid selected
-    Grid X5 expanded
-    Deep Dive
-
-CONVERSATION
-    Project general
-    Current work-unit chat
-
-PRESENTATION
-    P0 Work only / compact chat
-    P1 Full chat focus
-    P2 Right dock
-    P3 Balanced split
-    P4 Chat dominant + work context
+G4 world + H4 hover/resting response
+scientific work-unit category grammar
+E5 relation class + D0-D3 directionality
+P7 disposition
+current-process focus
+conditional runtime + switchable Dot/T7 carrier
+BLOCKER/BLOCKS/BLOCKED + BLOCKED/FAIL ring distinction
+A3 attention
+SEL2 four-corner selection
+X5 balanced expansion + L0 provisional internal layout
+Z7 specialist entry
+full-stage Deep Dive + clean compass
+S0 geometric zoom
+Quiet Graphite Conversation Workspace
+project-general + work-unit conversations
+Boxes/Text rail
+A6 context expansion with no floating duplicate box
+conversation availability from Grid and Deep Dive
+full-focus + co-present conversation capability
+source work-state preservation
+compact composer, Jump/search, zoom/recovery, fullscreen
 ```
 
-P3 is the initial browser default only, not a selected result.
+Research 087 contains the accepted-invariants audit and exact accepted target SHAs.
 
-Checkpoint 247's E0-E4 transition candidates remain preserved as possible full-chat-focus motion evidence. No winner was selected because the entry-only framing was incomplete.
+## Provisional integration glue
 
-Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 specialist deep focus remains held.
+The following are deliberately NOT frozen merely because the integrated browser needs concrete geometry:
+
+```text
+HUD height / layout
+world and project-plane fixture dimensions
+map-tool rail layout
+compact-composer geometry
+specialist internal modules
+co-present chat proportion
+co-present rail-collapse behavior
+final Conversation transition choreography
+```
+
+The current gate is whole-product human review of the integrated Cockpit.
+
+Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 specialist Deep Dive remains held.
