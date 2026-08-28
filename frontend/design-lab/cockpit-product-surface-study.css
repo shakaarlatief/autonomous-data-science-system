@@ -133,18 +133,23 @@ html[data-product-surface-study="a"] .reintegration-search {
   top: 12px;
   right: 72px;
   width: min(370px, calc(100vw - 104px));
-  display: none;
+  display: grid;
   gap: 6px;
   padding: 9px;
   border: 1px solid var(--product-chrome-line-strong);
   border-radius: 12px;
   background: rgba(10, 15, 22, 0.97);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.34);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px) scale(0.985);
   backdrop-filter: blur(18px);
 }
 
 html[data-product-surface-study="a"][data-product-search-open="true"] .reintegration-search {
-  display: grid;
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
 }
 
 html[data-product-surface-study="a"] .reintegration-search > label {
