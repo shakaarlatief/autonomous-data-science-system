@@ -9,6 +9,17 @@
  * accepted 20 px / 100 px lattice and accepted grid colors remain unchanged.
  */
 
+/*
+ * The X1-X6 comparison fixture intentionally hid status tags because status
+ * switching was outside that experiment. In the integrated Cockpit this
+ * fixture-only suppression must not override the later accepted shared
+ * operational-status carrier. This selector is deliberately narrower and
+ * later in the cascade than work-unit-detail-expansion.css.
+ */
+.expansion-practical-node[data-status-carrier="tag"] .status-tag-carrier {
+  display: inline-flex !important;
+}
+
 .reintegration-ambient-runtime-layer {
   position: absolute;
   inset: 0;
