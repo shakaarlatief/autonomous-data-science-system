@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-selection="sel2" data-relation-encoding="e5">
+<html lang="en" data-reduced="off" data-inbox-light="reduced" data-shape-style="true" data-surface-style="material" data-practical-selection="sel2" data-relation-encoding="e5" data-expansion-style="x5" data-scene-expanded="false">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="./work-unit-blocked-carrier-ring-swap.css" />
     <link rel="stylesheet" href="./work-unit-attention-priority.css" />
     <link rel="stylesheet" href="./work-unit-selection-state.css" />
+    <link rel="stylesheet" href="./work-unit-detail-expansion.css" />
+    <link rel="stylesheet" href="./work-unit-detail-expansion-x5-accepted.css" />
     <link rel="stylesheet" href="./relation-class-grammar.css" />
 
     <!-- New code below is integration glue, not a replacement visual source. -->
@@ -57,6 +59,7 @@
           <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
           <button type="button" id="fit-world">Fit</button>
           <button type="button" id="reset-world">Reset</button>
+          <button type="button" id="toggle-detail">Expand</button>
           <button type="button" id="fullscreen-world">Fullscreen</button>
         </div>
       </header>
@@ -66,9 +69,10 @@
           <!--
             This is the accepted G4/H4 + disposition/status/attention/selection
             grammar mounted as the project substrate. Node DOM is produced by
-            the exact accepted work-unit-selection-state.js module.
+            the exact accepted work-unit-detail-expansion.js module, which
+            carries SEL2 and the X5 contextual-detail interaction.
           -->
-          <div class="grammar-world selection-practical-world reintegration-world" id="reintegration-world">
+          <div class="grammar-world expansion-practical-world reintegration-world" id="reintegration-world">
             <div class="major-grid" aria-hidden="true"></div>
             <div class="ambient-drift" aria-hidden="true"></div>
             <span class="ambient-current current-a" aria-hidden="true"></span>
@@ -82,14 +86,14 @@
             <!-- E5 Hue + Tag relation presentation. Geometry is measured from the rendered accepted WorkUnit surfaces. -->
             <svg class="reintegration-relations" id="reintegration-relations" viewBox="0 0 1440 760" preserveAspectRatio="none" aria-hidden="true"></svg>
 
-            <div class="selection-practical-nodes" id="selection-practical-nodes"></div>
+            <div class="expansion-practical-nodes" id="expansion-practical-nodes"></div>
           </div>
         </div>
 
         <aside class="reintegration-map-status" aria-label="Project map status">
           <span>PROJECT GRID</span>
           <strong id="selected-work-label">Selected: Production missingness</strong>
-          <small>SEL2 selection · E5 relations · G4/H4 substrate</small>
+          <small id="detail-state-label">SEL2 selected · X5 compact · E5 relations</small>
         </aside>
 
         <div class="reintegration-zoom-rail" aria-label="Zoom status">
@@ -101,14 +105,14 @@
         <div class="reintegration-provisional-note" aria-label="Integration status">
           <span>INTEGRATION GLUE</span>
           <strong>Shell geometry is provisional</strong>
-          <small>Accepted WorkUnit/world/relation sources are reused directly. The HUD and stage placement are not design selections.</small>
+          <small>Accepted WorkUnit/world/X5/relation sources are reused directly. The HUD and stage placement are not design selections.</small>
         </div>
       </section>
 
       <section class="reintegration-composer" aria-label="Compact native Cockpit composer">
         <button type="button" id="conversation-expand" aria-label="Open Conversation Workspace">⌘</button>
         <div>
-          <span id="composer-context">Project-aware</span>
+          <span id="composer-context">Production missingness</span>
           <input id="composer-input" type="text" placeholder="Ask ADS about this project…" />
         </div>
         <button type="button" id="composer-send">Send</button>
@@ -116,12 +120,15 @@
     </main>
 
     <!--
-      Exact accepted scripts. work-unit-grammar.js supplies G4 ambient setup;
-      work-unit-selection-state.js supplies canonical semantic WorkUnit layers,
-      scientific markers, P7 fixture disposition, operational status, A3 and SEL2.
+      Exact accepted scripts. work-unit-grammar.js supplies G4 ambient setup.
+      work-unit-detail-expansion.js supplies canonical semantic WorkUnit layers,
+      scientific markers, P7 fixture disposition, operational status, A3,
+      SEL2 and X5 interaction. The accepted X5 refinement removes context
+      recession while retaining the 390 x 210 two-axis expanded object.
     -->
     <script type="module" src="./work-unit-grammar.js"></script>
-    <script type="module" src="./work-unit-selection-state.js"></script>
+    <script type="module" src="./work-unit-detail-expansion.js"></script>
+    <script type="module" src="./work-unit-detail-expansion-x5-accepted.js"></script>
 
     <!-- Thin whole-product orchestration and E5 geometry only. -->
     <script type="module" src="./cockpit-reintegration.js"></script>
