@@ -1,0 +1,369 @@
+/*
+ * Resting-angle Cockpit rail study.
+ *
+ * Human clarification after the Gen 2 deployment study:
+ * the spatial / 3D quality belongs to the rail itself in its normal resting
+ * state. Expansion exists only to make control meaning easier to read. It does
+ * not create, increase or explain the rail's depth.
+ *
+ * This remains presentation-only. Existing Cockpit controls are moved into the
+ * rail without changing their listeners or semantic ownership.
+ */
+
+html[data-spatial-rail-angle="angled"] {
+  --angled-rail-width: 72px;
+  --angled-rail-height: min(610px, calc(100vh - 168px));
+  --angled-rail-y: -24deg;
+  --angled-rail-x: 0.8deg;
+  --angled-rail-z: -0.8deg;
+  --angled-rail-accent: 105, 217, 194;
+  --angled-rail-blue: 132, 166, 221;
+  --angled-rail-line: rgba(188, 210, 239, 0.18);
+  --angled-rail-line-strong: rgba(203, 223, 247, 0.28);
+  --angled-rail-face: rgba(12, 18, 27, 0.985);
+  --angled-rail-face-high: rgba(18, 27, 39, 0.985);
+  --angled-rail-muted: rgba(164, 184, 210, 0.74);
+  --angled-rail-text: rgba(232, 240, 249, 0.95);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig {
+  position: absolute;
+  z-index: 132;
+  top: 76px;
+  right: 8px;
+  width: 86px;
+  height: var(--angled-rail-height);
+  perspective: 1050px;
+  perspective-origin: 100% 48%;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[hidden] {
+  display: none !important;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-back,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-spine {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--angled-rail-width);
+  height: 100%;
+  transform-origin: right center;
+  transform-style: preserve-3d;
+  transition: width 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/*
+ * Both compact and clarity-expanded states use the same perspective angles.
+ * Width can change for readability, but the spatial identity never depends on
+ * expansion.
+ */
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-back {
+  z-index: 0;
+  border: 1px solid rgba(172, 199, 231, 0.10);
+  border-radius: 15px 10px 11px 16px;
+  background:
+    linear-gradient(180deg, rgba(26, 39, 56, 0.68), rgba(8, 13, 20, 0.78));
+  box-shadow: 17px 22px 52px rgba(0, 0, 0, 0.32);
+  opacity: 0.86;
+  transform:
+    rotateY(var(--angled-rail-y))
+    rotateX(var(--angled-rail-x))
+    rotateZ(var(--angled-rail-z))
+    translate3d(10px, 7px, -28px);
+  pointer-events: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-spine {
+  z-index: 1;
+  right: -5px;
+  width: 12px;
+  border: 1px solid rgba(175, 200, 231, 0.12);
+  border-left-color: rgba(213, 228, 247, 0.18);
+  border-radius: 0 10px 10px 0;
+  background:
+    linear-gradient(180deg, rgba(31, 44, 61, 0.95), rgba(8, 13, 20, 0.98));
+  box-shadow:
+    inset 1px 0 rgba(226, 237, 250, 0.04),
+    8px 12px 24px rgba(0, 0, 0, 0.20);
+  transform:
+    rotateY(var(--angled-rail-y))
+    rotateX(var(--angled-rail-x))
+    rotateZ(var(--angled-rail-z))
+    translateZ(-7px);
+  pointer-events: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell {
+  z-index: 2;
+  display: grid;
+  grid-template-rows: 31px minmax(0, 1fr) 34px;
+  gap: 4px;
+  padding: 8px 7px 7px;
+  border: 1px solid var(--angled-rail-line-strong);
+  border-right-color: rgba(216, 231, 248, 0.20);
+  border-radius: 15px 9px 10px 16px;
+  clip-path: polygon(7% 1%, 100% 0, 100% 100%, 6% 99%, 0 93%, 0 7%);
+  background:
+    linear-gradient(105deg, rgba(255, 255, 255, 0.025), transparent 20%),
+    linear-gradient(180deg, var(--angled-rail-face-high), var(--angled-rail-face));
+  box-shadow:
+    -16px 22px 56px rgba(0, 0, 0, 0.30),
+    inset 1px 0 rgba(232, 241, 252, 0.045),
+    inset -6px 0 18px rgba(72, 105, 148, 0.09);
+  transform:
+    rotateY(var(--angled-rail-y))
+    rotateX(var(--angled-rail-x))
+    rotateZ(var(--angled-rail-z))
+    translateZ(20px);
+  pointer-events: auto;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell::before {
+  position: absolute;
+  top: 8%;
+  bottom: 8%;
+  left: 0;
+  width: 2px;
+  border-radius: 3px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(var(--angled-rail-blue), 0.38) 22%,
+    rgba(var(--angled-rail-accent), 0.48) 52%,
+    rgba(var(--angled-rail-blue), 0.24) 78%,
+    transparent
+  );
+  box-shadow: 0 0 16px rgba(var(--angled-rail-accent), 0.08);
+  content: "";
+  pointer-events: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell::after {
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  left: 11px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(var(--angled-rail-accent), 0.36), rgba(var(--angled-rail-blue), 0.16), transparent);
+  content: "";
+  pointer-events: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-mark {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0 8px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(183, 205, 233, 0.08);
+  color: rgba(var(--angled-rail-accent), 0.77);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-mark strong {
+  flex: 0 0 auto;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-mark span {
+  margin-left: 7px;
+  color: rgba(162, 183, 210, 0.56);
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity 130ms ease, transform 130ms ease;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools {
+  position: relative;
+  z-index: 4;
+  top: auto;
+  right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-height: none;
+  gap: 3px;
+  padding: 2px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  transform: none;
+  scrollbar-width: none;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools::-webkit-scrollbar {
+  display: none;
+}
+
+html[data-spatial-rail-angle="angled"] #map-tools-fold {
+  display: none !important;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button,
+html[data-spatial-rail-angle="angled"] #product-jump-toggle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  justify-items: start;
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 8px 0 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button::before {
+  grid-column: 1;
+  grid-row: 1;
+  width: 40px;
+  height: 100%;
+}
+
+/*
+ * Compact mode intentionally does not use floating tooltip bubbles. The user
+ * can request the clarity state when control labels are needed.
+ */
+html[data-spatial-rail-angle="angled"] .reintegration-tools button[data-tooltip]::after {
+  position: static;
+  grid-column: 2;
+  grid-row: 1;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(218, 229, 243, 0.88);
+  content: attr(data-tooltip);
+  font-size: 10.5px;
+  font-weight: 620;
+  line-height: 1.1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(6px);
+  transition: opacity 130ms ease, transform 130ms ease;
+  white-space: nowrap;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button[data-tooltip]:hover::after,
+html[data-spatial-rail-angle="angled"] .reintegration-tools button[data-tooltip]:focus-visible::after {
+  opacity: 0;
+  transform: translateX(6px);
+}
+
+html[data-spatial-rail-angle="angled"] #zoom-readout {
+  width: 40px;
+  min-width: 40px;
+  padding: 3px 0;
+  color: rgba(163, 184, 210, 0.66);
+  font-size: 8.5px;
+  text-align: center;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+  padding: 0 8px 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(185, 207, 235, 0.10);
+  border-radius: 8px;
+  background: rgba(21, 30, 43, 0.58);
+  color: rgba(173, 194, 220, 0.73);
+  cursor: pointer;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity:hover,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity:focus-visible {
+  border-color: rgba(var(--angled-rail-accent), 0.28);
+  background: rgba(26, 37, 52, 0.82);
+  color: rgba(var(--angled-rail-accent), 0.92);
+  outline: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity-glyph {
+  display: grid;
+  grid-column: 1;
+  place-items: center;
+  width: 40px;
+  height: 100%;
+  font-size: 15px;
+  line-height: 1;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity-label {
+  grid-column: 2;
+  color: rgba(214, 225, 239, 0.82);
+  font-size: 10px;
+  font-weight: 650;
+  opacity: 0;
+  transform: translateX(5px);
+  transition: opacity 130ms ease, transform 130ms ease;
+  white-space: nowrap;
+}
+
+/* Clarity expansion changes only width and label visibility. */
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] {
+  --angled-rail-width: 220px;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-mark span,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .reintegration-tools button[data-tooltip]::after,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-clarity-label {
+  opacity: 1;
+  transform: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .reintegration-tools button[data-tooltip]:hover::after,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .reintegration-tools button[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-clarity-glyph {
+  transform: rotate(180deg);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell:focus-within {
+  border-color: rgba(var(--angled-rail-accent), 0.26);
+  box-shadow:
+    -18px 24px 60px rgba(0, 0, 0, 0.32),
+    inset 1px 0 rgba(232, 241, 252, 0.05),
+    inset -6px 0 18px rgba(72, 105, 148, 0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-back,
+  html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell,
+  html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-spine,
+  html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-mark span,
+  html[data-spatial-rail-angle="angled"] .reintegration-tools button[data-tooltip]::after,
+  html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity-label {
+    transition: none;
+  }
+}
