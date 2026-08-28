@@ -23,108 +23,111 @@ Claude should not infer or switch the coordination branch. If a trigger names a 
 ## Pending model obligation
 
 ```text
+none
+```
+
+Claude completed:
+
+```text
 MC-0004 Message 010
-Claude comparative/divergent Conversation Scope + Work-Unit Anchor ideation
+Conversation Scope + Work-Unit Anchor comparative/divergent ideation
 ```
 
-Read both request records:
+Response:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
-docs/model_collaboration/threads/MC-0004/messages/009a_chatgpt_conversation_scope_anchor_human_refinement_addendum.md
+docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
 ```
 
-Current checkpoint:
+Response commit:
 
 ```text
-246
+8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
 ```
 
 ## Next actor
 
 ```text
-Claude
+human project owner
 ```
 
-## Current held / working human direction
+Current checkpoint remains:
+
+```text
+246
+```
+
+## Held human direction
 
 ```text
 Quiet Graphite
     current Conversation Workspace visual baseline
 
-A6 Adaptive Anchor
-    selected working opened-box composition for now
-
 Conversation sidebar
     user-switchable Boxes / Text
 
 Boxes mode
-    reuse the canonical accepted WorkUnit component
-    scale it geometrically for the rail
-    do not invent a separate mini-card semantic design
+    canonical work-unit identity
 
-Text mode
-    ordinary compact conversation list
+A6 Adaptive Anchor
+    current human-selected working composition
 ```
 
-The currently rendered visual-system alternatives from the previous independent round remain rejected. Future palette exploration requires genuinely new candidates rather than reviving those variants.
+## Claude response synthesis
 
-## Active product model under review
-
-The Conversation Workspace distinguishes:
+Research:
 
 ```text
-PROJECT-GENERAL CONVERSATION
-    not owned by one work unit
-
-WORK-UNIT-SCOPED CONVERSATION
-    belongs to one work unit
-    remains visually recognizable as belonging to that box
-
-PER-TURN CONTEXT
-    temporary referenced project objects
-    separate from conversation home
+docs/research/084_claude_informed_conversation_anchor_synthesis.md
 ```
 
 Current browser:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
+http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
 ```
 
-Latest browser refinement commits:
+Exact clean implementation target:
 
 ```text
-c0fad7428d76c11397c706f36a00448b05d2abe2
-    canonical work-unit boxes + Boxes/Text user switch
-
-1c25b982c4da0d64b18a483057102adc468d9c35
-    canonical scaled-node layout hardening
+93dba4688a0e78f5b1d60277761c59c65e79c98d
 ```
 
-Current research:
+The browser compares:
 
 ```text
-docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
-docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
+A6  Refined Adaptive Anchor
+    current working control
+    expands to a materially richer X5-derived panel
+
+B1  Breadcrumb Thread
+B2  Scroll-Responsive Presence
+B3  Object-Anchored Gutter
+B4  Wrapped Around Object
 ```
 
-## Claude requested contribution
-
-Claude should inspect Message 009 and Message 009A and challenge/broaden:
+It also repairs a prior study limitation by making these home states genuinely selectable:
 
 ```text
-conversation-home versus per-turn-context mental model
-A6 Adaptive Anchor and materially better alternatives if any
-canonical WorkUnit reuse in conversation navigation
-Boxes/Text dual-mode sidebar policy
-project-general conversation identity
-X5 -> work-unit conversation entry and return
-re-homing / multi-object / completed-or-deferred-home edge cases
-live versus historical state in old conversation navigation
-large-thread-count behavior and accessibility
+Project general
+CURRENT + RUN + HIGH
+CURRENT + BLOCKED
+DEFER + NONE
 ```
 
-This follow-up is intentionally comparative rather than blind. Claude may inspect the current browser and proposal.
+Boxes/Text remains independent of composition choice.
+
+## Claude ideas preserved but not promoted
+
+```text
+home / pinned context / per-turn context three-tier model
+generalized conversation home beyond WorkUnit
+historical-state rendering for old/archived home objects
+Signature Rail for extreme thread density
+anchored X5 -> Conversation entry
+asymmetric faster return
+```
+
+The current gate is human browser review. No further Claude obligation is pending.
 
 Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 deep-focus remains held.
