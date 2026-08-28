@@ -1,14 +1,82 @@
 /*
  * Human-review fidelity corrections for the source-faithful Cockpit reintegration.
  *
- * This layer does not introduce new visual choices. It repairs two integration
- * regressions against already accepted sources:
- *   - project-general conversation identity: M20 / 606e027f281b35c2dfc93d059a1681df23bc2b73
- *   - connector endpoint overlay: 183264bdd07783eaa2354894592f2cf4a076b6ec
+ * This layer does not introduce new visual choices. It repairs regressions
+ * against already accepted historical sources:
+ *   - project-general identity and canonical sidebar boxes:
+ *       c0fad7428d76c11397c706f36a00448b05d2abe2
+ *       1c25b982c4da0d64b18a483057102adc468d9c35
+ *       606e027f281b35c2dfc93d059a1681df23bc2b73
+ *   - Micro-dot outward placement:
+ *       42ec63d17095753dc4ab97628cd859473cbdf5e8
+ *   - Micro-dot / Frame-socket layer separation:
+ *       183264bdd07783eaa2354894592f2cf4a076b6ec
  */
 
 /* -------------------------------------------------------------------------- */
-/* Project-general conversation: restore the accepted neutral project artifact */
+/* Conversation rail: restore accepted canonical-box footprint                */
+/* -------------------------------------------------------------------------- */
+
+/* M20 source used a 270 px Conversation rail. */
+.reintegration-conversation-layer {
+  grid-template-columns: 270px minmax(0, 1fr) 0;
+}
+
+html[data-conversation-a6-expanded="true"] .reintegration-conversation-layer {
+  grid-template-columns: 270px minmax(0, 1fr) 270px;
+}
+
+/* Accepted artifact-mode thread padding from the canonical-box refinement. */
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-project-thread,
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread {
+  height: auto;
+  min-height: 0;
+  padding: 4px;
+  overflow: visible;
+}
+
+/*
+ * Exact accepted sidebar footprint: a 290 x 92 canonical WorkUnit rendered at
+ * 0.80 inside a 232 x 74 rail slot. The previous integration's 176 x 92 at
+ * 0.68 was not the accepted Conversation representation and made the WorkUnits
+ * visibly narrower than the project-general artifact.
+ */
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
+  display: block;
+  position: relative;
+  width: 232px;
+  height: 74px;
+  overflow: visible;
+  isolation: isolate;
+}
+
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node {
+  display: block;
+  width: 290px !important;
+  height: 92px !important;
+  transform: scale(0.80) !important;
+  transform-origin: left top !important;
+  pointer-events: none;
+}
+
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .node-surface {
+  display: block;
+  width: 290px !important;
+  height: 92px !important;
+}
+
+/* Conversation ownership is not project-map selection. */
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-keyline,
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-corners,
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-inner-frame,
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-edge-ticks,
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-soft-contour,
+html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node .selection-double-corner {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Project-general conversation: accepted neutral project artifact            */
 /* -------------------------------------------------------------------------- */
 
 .reintegration-project-thread-artifact {
@@ -25,11 +93,6 @@
   );
 }
 
-/*
- * The earlier integration selector targeted every direct span and therefore
- * also turned the text wrapper into a 27 px glyph box. The accepted source has
- * a dedicated project glyph and an ordinary text column.
- */
 .reintegration-project-thread-artifact > .reintegration-project-thread-glyph {
   display: grid;
   place-items: center;
@@ -78,9 +141,10 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* Connector endpoints: restore the accepted above-node SVG overlay strategy  */
+/* Connector endpoints: restore accepted K1/K2 layer separation               */
 /* -------------------------------------------------------------------------- */
 
+/* K1 Micro dots are the only current endpoint preference mirrored here. */
 .reintegration-port-overlay {
   position: absolute;
   inset: 0;
@@ -92,12 +156,11 @@
 }
 
 /*
- * Phase-C completion initially mounted the same endpoint geometry directly in
- * the relation SVG. Keep those compatibility nodes inert once the dedicated
- * accepted overlay is present so there is exactly one rendered endpoint layer.
+ * Suppress only the under-node dot copies. K2 Frame sockets deliberately stay
+ * in #reintegration-relations, below the WorkUnits, so the node surface masks
+ * their inner portion and they read as frame-integrated docking points.
  */
-html[data-port-overlay-recovered="true"] #reintegration-relations .reintegration-terminal-dot,
-html[data-port-overlay-recovered="true"] #reintegration-relations .reintegration-terminal-socket {
+html[data-port-overlay-recovered="true"] #reintegration-relations .reintegration-terminal-dot {
   display: none !important;
 }
 
@@ -115,18 +178,8 @@ html[data-port-overlay-recovered="true"] #reintegration-relations .reintegration
   stroke-width: 1;
 }
 
-.reintegration-port-socket {
-  fill: rgba(16, 23, 33, 0.98);
-  stroke: rgba(153, 170, 193, 0.72);
-  stroke-width: 1.1;
-}
-
 html[data-relation-presentation="class-tag"] .reintegration-port-group .reintegration-port-dot {
   fill: rgba(var(--class-rgb), 0.78);
-  stroke: rgba(var(--class-rgb), 0.90);
-}
-
-html[data-relation-presentation="class-tag"] .reintegration-port-group .reintegration-port-socket {
   stroke: rgba(var(--class-rgb), 0.90);
 }
 
@@ -135,17 +188,8 @@ html[data-relation-presentation="neutral-hover"] .reintegration-port-group .rein
   stroke: rgba(11, 17, 25, 0.94);
 }
 
-html[data-relation-presentation="neutral-hover"] .reintegration-port-group .reintegration-port-socket {
-  stroke: rgba(153, 170, 193, 0.72);
-}
-
 html[data-relation-presentation="neutral-hover"] .reintegration-port-group.is-related .reintegration-port-dot {
   fill: rgba(var(--hover-rgb), 0.94);
-  filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
-}
-
-html[data-relation-presentation="neutral-hover"] .reintegration-port-group.is-related .reintegration-port-socket {
-  stroke: rgba(var(--hover-rgb), 0.94);
   filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
 }
 
@@ -154,13 +198,39 @@ html[data-connector-terminal="dots"] .reintegration-port-overlay .reintegration-
   opacity: 0.88;
 }
 
-html[data-connector-terminal="sockets"] .reintegration-port-overlay .reintegration-port-socket {
-  visibility: visible;
-  opacity: 0.92;
-}
-
 html[data-connector-terminal="clean"] .reintegration-port-overlay .reintegration-port-terminal,
+html[data-connector-terminal="sockets"] .reintegration-port-overlay .reintegration-port-terminal,
 html[data-connector-terminal="arrows"] .reintegration-port-overlay .reintegration-port-terminal {
   visibility: hidden;
   opacity: 0;
+}
+
+/*
+ * K2 under-node sockets retain the accepted dark interior and semantic outline.
+ * The completion layer owns their visibility and mutually-exclusive selection.
+ */
+html[data-relation-presentation="class-tag"][data-connector-terminal="sockets"] #reintegration-relations .reintegration-terminal-socket {
+  fill: rgba(16, 23, 33, 0.98);
+  stroke: rgba(var(--class-rgb), 0.90);
+}
+
+html[data-relation-presentation="neutral-hover"][data-connector-terminal="sockets"] #reintegration-relations .reintegration-terminal-socket {
+  fill: rgba(16, 23, 33, 0.98);
+  stroke: rgba(153, 170, 193, 0.72);
+}
+
+html[data-relation-presentation="neutral-hover"][data-connector-terminal="sockets"] #reintegration-relations .reintegration-relation.is-related .reintegration-terminal-socket {
+  stroke: rgba(var(--hover-rgb), 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
+}
+
+@media (max-width: 1450px) {
+  html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
+    width: 214px;
+    height: 69px;
+  }
+
+  html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .conversation-canonical-node {
+    transform: scale(0.74) !important;
+  }
 }
