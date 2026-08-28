@@ -419,8 +419,7 @@ html[data-anchor-mode="sidecar"][data-scope="work-unit"] .inner-anchor-sidecar {
   display: none;
 }
 
-html[data-anchor-mode="compass"][data-scope="work-unit"] .floating-anchor,
-html[data-anchor-mode="adaptive"][data-scope="work-unit"] .floating-anchor {
+html[data-anchor-mode="compass"][data-scope="work-unit"] .floating-anchor {
   display: block;
 }
 
