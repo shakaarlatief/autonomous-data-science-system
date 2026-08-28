@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-28  
-**Current checkpoint:** 251  
+**Current checkpoint:** 252  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -18,8 +18,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
+docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
+docs/research/092_spatial_edge_rail_depth_direct_manipulation_and_docking_study.md
+
 docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
 docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+docs/research/091_source_faithful_reintegration_interaction_integrity_gate.md
 
 docs/cockpit/README.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
@@ -30,20 +34,84 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                251
+checkpoint                252
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          source-faithful holistic Cockpit reintegration
+current boundary          advanced whole-product spatial rail human review
 ```
 
 ---
 
-# Provenance recovery status
+# Current whole-product design route
 
-The implementation-provenance recovery opened after the failed holistic browser is now complete at the source-binding layer.
+The source-faithful integrated Cockpit is now the active whole-product design substrate.
 
-Durable gate:
+Primary browser:
+
+```text
+frontend/design-lab/cockpit-reintegration.html
+```
+
+Product Surface Study A currently explores provisional shell presentation including:
+
+```text
+continuous viewport-owned grid
+compact project identity HUD
+right-side spatial tool surface
+invoked Jump/search
+normal Conversation typography
+compact full Conversation composer
+```
+
+Primary study modules:
+
+```text
+frontend/design-lab/cockpit-product-surface-study.css
+frontend/design-lab/cockpit-product-surface-study-readability.css
+frontend/design-lab/cockpit-product-surface-study.js
+```
+
+The current rail comparison is:
+
+```text
+A · Extruded Blade
+    ?focus=map&work=v&rail=blade
+
+B · Layered Deck
+    ?focus=map&work=v&rail=deck
+
+C · Dock and Float
+    ?focus=map&work=v&rail=float
+```
+
+Study implementation:
+
+```text
+frontend/design-lab/cockpit-spatial-rail-study.css
+frontend/design-lab/cockpit-spatial-rail-study.js
+frontend/e2e/cockpit-reintegration-spatial-rail.spec.ts
+```
+
+No rail candidate is selected.
+
+Latest complete deterministic browser evidence before Checkpoint 252 preservation:
+
+```text
+implementation target  30f92a55537a9b0a2ec14695ed2982ded4ec9c0e
+workflow run           33197594115
+job                    98938593583
+result                 SUCCESS
+browser tests          56 / 56 passing
+```
+
+---
+
+# Provenance and integration gate status
+
+Implementation-provenance recovery is complete at the source-binding layer.
+
+Durable provenance gate:
 
 ```text
 scripts/check_cockpit_implementation_manifest.py
@@ -61,9 +129,29 @@ entries=23 required=19 non_promotable=4
 exact historical source verification: PASS
 ```
 
-Therefore every current manifest source binding resolves at its declared exact historical target.
+Current gate model:
 
-This closes the **provenance gate**, not the integrated visual/interaction fidelity gate.
+```text
+PROVENANCE GATE
+    PASS
+
+DETERMINISTIC INTEGRATION GATE
+    PASS for current covered implementation
+
+HUMAN PRODUCT-DESIGN GATE
+    OPEN
+```
+
+A green browser suite protects accepted mechanisms and cross-mechanism behavior. It does not promote provisional whole-product design candidates.
+
+The holistic fidelity workflow now watches:
+
+```text
+frontend/design-lab/cockpit-reintegration*
+frontend/design-lab/cockpit-product-surface-study*
+frontend/design-lab/cockpit-spatial-rail-study*
+frontend/e2e/cockpit-reintegration*.spec.ts
+```
 
 ---
 
@@ -193,11 +281,11 @@ compact native Cockpit composer
 Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-None of these are revoked by the failed integration.
+None of these are revoked by current shell experimentation.
 
 ---
 
-# Current integration protocol
+# Current integration / design protocol
 
 ```text
 accepted implementation exists
@@ -212,13 +300,11 @@ candidate is deferred/rejected/evidence-only
     preserve history
     do not select through implementation accident
 
-whole-product answer does not yet exist
-    introduce minimum glue
-    mark it provisional
-    record it separately
+whole-product presentation is open
+    test it on the integrated Cockpit
+    preserve each candidate and disposition
+    do not promote until explicit human evidence
 ```
-
-Then run the integrated fidelity gate against M01-M23 before holistic human review resumes.
 
 ---
 
@@ -271,7 +357,7 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-No Claude obligation is currently pending. ChatGPT owns the current source-faithful reintegration work. Human holistic review resumes only after the replacement implementation clears the integrated fidelity gate.
+No Claude obligation is currently pending. The current next actor is the human reviewer for the A/B/C rail study.
 
 ---
 
