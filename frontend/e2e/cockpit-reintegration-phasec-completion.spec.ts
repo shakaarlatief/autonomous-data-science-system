@@ -212,11 +212,19 @@ test.describe('Phase-C holistic fidelity completion', () => {
     await expect(workRows).toHaveCount(6)
 
     for (const row of await workRows.all()) {
+      const slot = row.locator('.reintegration-thread-box')
       const node = row.locator('.conversation-canonical-node')
       const transform = await node.evaluate((element) => getComputedStyle(element).transform)
       expect(transform).not.toBe('none')
-      const rowBox = await row.boundingBox()
-      expect(rowBox?.height).toBeCloseTo(92, 0)
+
+      const slotBox = await slot.boundingBox()
+      const nodeBox = await node.boundingBox()
+      expect(slotBox).not.toBeNull()
+      expect(nodeBox).not.toBeNull()
+      expect(slotBox?.width).toBeCloseTo(232, 0)
+      expect(slotBox?.height).toBeCloseTo(74, 0)
+      expect(nodeBox?.width).toBeCloseTo(232, 0)
+      expect(nodeBox?.height).toBeCloseTo(73.6, 0)
 
       const visibleStatus = row.locator('.status-tag-carrier:visible, .status-dot-carrier:visible')
       if (await visibleStatus.count()) {
