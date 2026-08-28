@@ -53,7 +53,7 @@ test.describe('source-faithful Cockpit reintegration', () => {
 
     page.on('response', (response) => {
       const pathname = new URL(response.url()).pathname
-      if (pathname.includes('/design-lab/') && !response.ok()) {
+      if (pathname.includes('/design-lab/') && response.status() >= 400) {
         failedResponses.push(`${response.status()} ${pathname}`)
       }
     })
@@ -142,12 +142,8 @@ test.describe('source-faithful Cockpit reintegration', () => {
 
     await page.locator('#toggle-detail').click()
     await expect(selected).toHaveAttribute('data-expanded', 'true')
-
-    const dimensions = await selected.evaluate((element) => {
-      const style = getComputedStyle(element)
-      return { width: style.width, height: style.height }
-    })
-    expect(dimensions).toEqual({ width: '390px', height: '210px' })
+    await expect(selected).toHaveCSS('width', '390px')
+    await expect(selected).toHaveCSS('height', '210px')
 
     await expect(page.locator(`${nodeSelector}[data-node-key="q"]`)).toHaveCSS('opacity', '1')
     await expect(page.locator('.reintegration-relations')).toHaveCSS('opacity', '1')
@@ -182,6 +178,31 @@ test.describe('source-faithful Cockpit reintegration', () => {
     const afterY = (after?.y ?? 0) + (after?.height ?? 0) / 2
     expect(Math.abs(afterX - anchorX)).toBeLessThan(2)
     expect(Math.abs(afterY - anchorY)).toBeLessThan(2)
+  })
+
+  test('pointer drag remains an alternate pan and keyboard recovery can move and reset the world', async ({ page }) => {
+    const plane = page.locator('#reintegration-world-plane')
+    const stage = page.locator('#reintegration-stage')
+    const initialTransform = await plane.evaluate((element: HTMLElement) => element.style.transform)
+
+    await page.mouse.move(300, 500)
+    await page.mouse.down()
+    await page.mouse.move(380, 565, { steps: 5 })
+    await page.mouse.up()
+    const draggedTransform = await plane.evaluate((element: HTMLElement) => element.style.transform)
+    expect(draggedTransform).not.toBe(initialTransform)
+
+    await stage.focus()
+    await expect(stage).toBeFocused()
+    await page.keyboard.press('ArrowRight')
+    await page.waitForTimeout(50)
+    const keyboardTransform = await plane.evaluate((element: HTMLElement) => element.style.transform)
+    expect(keyboardTransform).not.toBe(draggedTransform)
+
+    await page.keyboard.press('0')
+    await page.waitForTimeout(50)
+    await expect(page.locator('#zoom-readout')).toHaveText('100%')
+    expect(await plane.evaluate((element: HTMLElement) => element.style.transform)).toBe(initialTransform)
   })
 
   test('releases navigation compositing after gestures and keeps rendered translation device-pixel aligned', async ({ page }) => {
