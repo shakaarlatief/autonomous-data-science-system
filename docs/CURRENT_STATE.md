@@ -6,7 +6,7 @@
 **Active PR:** none  
 **Exploration branch base:** `v1-frontend-spike` at Checkpoint 205 head `2480109fadeee1e480ef03b82e335aacdf9adf91`  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Z7 Pull-Back Then Dive remains the held deep-focus entry direction into a fullscreen specialist workspace with compact topology compass. Semantic zoom remains deferred with S0 Geometric Control as the working behavior. The Conversation Workspace independent dual-design round is complete; Quiet Graphite is now the current visual baseline, and the active boundary is conversation ownership, work-unit identity, and combining an opened work unit with long-form conversation. Claude Message 010 is pending as a comparative/divergent follow-up.  
+**Development stage:** MC-0004 Phase C browser-rendered Project Cockpit design evaluation. Z7 Pull-Back Then Dive remains the held deep-focus entry direction into a fullscreen specialist workspace with compact topology compass. Semantic zoom remains deferred with S0 Geometric Control as the working behavior. Quiet Graphite remains the current Conversation Workspace visual baseline. Claude Message 010 is complete, and the active boundary is now human review of the Claude-informed conversation-anchor synthesis browser.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -30,34 +30,28 @@ Primary route:
 
 ```text
 docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
-docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
-frontend/design-lab/conversation-workspace-work-unit-anchor.html
-frontend/design-lab/conversation-workspace-work-unit-anchor.css
-frontend/design-lab/conversation-workspace-work-unit-anchor.js
+docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
+docs/research/084_claude_informed_conversation_anchor_synthesis.md
+frontend/design-lab/conversation-workspace-anchor-synthesis.html
 ```
 
 Current local URL:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
+http://localhost:5173/design-lab/conversation-workspace-anchor-synthesis.html
 ```
 
-Initial implementation target:
+Exact clean implementation target:
 
 ```text
-56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
+93dba4688a0e78f5b1d60277761c59c65e79c98d
 ```
 
-Claude follow-up request:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
-```
-
-Expected response:
+Claude response:
 
 ```text
 docs/model_collaboration/threads/MC-0004/messages/010_claude_conversation_scope_work_unit_anchor_ideation.md
+8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
 ```
 
 Production `/cockpit` remains untouched.
@@ -105,6 +99,8 @@ fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite current Conversation Workspace visual baseline
+A6 Adaptive Anchor current Conversation Workspace opened-box working default
+canonical WorkUnit Boxes / Text user-switchable conversation rail
 ```
 
 Important targets:
@@ -150,41 +146,21 @@ semantic zoom
     not superseded
 ```
 
-Reopen when real large-project density, navigation or performance evidence makes semantic-scale adaptation worth the complexity.
-
 ---
 
 # Conversation Workspace visual disposition
 
-The blind independent Claude/ChatGPT round is complete and preserved in:
+The blind independent Claude/ChatGPT round is complete and preserved in Research 081.
 
-```text
-docs/research/081_independent_conversation_workspace_dual_design_comparison.md
-```
-
-The project owner selected:
+Current visual baseline:
 
 ```text
 Quiet Graphite
-    current visual baseline
 ```
 
-Currently rendered alternatives are rejected:
+Previously rendered alternatives remain rejected. Future palette exploration must introduce genuinely new candidates rather than silently reviving them.
 
-```text
-Deep Navy
-Warm Slate
-Monochrome Signal
-Violet Ink
-Editorial Dark
-Claude Technical Manuscript
-Claude Studio Console
-Claude Hybrid
-```
-
-Future palette exploration is still possible through genuinely new proposals.
-
-Held Conversation Workspace grammar for the current scope/anchor experiment:
+Held Conversation Workspace grammar:
 
 ```text
 transcript-first long-form surface
@@ -201,9 +177,7 @@ Quiet Graphite dark restrained technical identity
 
 # Active Slice 02Q: Conversation Scope + Work-Unit Anchor
 
-The project owner clarified that conversation ownership and temporary message context must not be conflated.
-
-Current mental model under review:
+Held human product distinction:
 
 ```text
 PROJECT-GENERAL CONVERSATION
@@ -218,110 +192,85 @@ PER-TURN CONTEXT
     temporary project objects referenced or brought into scope
 ```
 
-Important implications:
+Held rail direction:
 
 ```text
-project-general conversation
-    may reference work units
-    without becoming owned by one
+Boxes
+    canonical work-unit visual identity
 
-work-unit conversation
-    may reference neighboring project objects
-    without silently changing its home
+Text
+    compact conventional conversation list
+
+user can switch between them
 ```
 
-The user specifically wants work-unit-scoped conversations to be recognizable by a compact visual representation of their associated box, not only by remembering titles.
-
-The intended visual direction is:
+Held composition working default:
 
 ```text
-canonical work-unit identity
-    survives inside Conversation Workspace
-    as a compact artifact / specimen / instrument
-
-not
-    full project grid
-    giant permanent map card
+A6 Adaptive Anchor
 ```
 
-Browser controls:
+## Claude Message 010 findings
+
+Claude inspected the actual browser source and identified four concrete limitations:
 
 ```text
-CONVERSATION SCOPE
-    Work-unit scoped
-    Project general
-
-THREAD IDENTITY
-    Text control
-    Marker + title
-    Mini work-unit artifact
-
-OPENED-BOX PRESENCE
-    A0 Chat-only control
-    A1 Header specimen
-    A2 Context shelf
-    A3 Inner sidecar
-    A4 Floating instrument
-    A5 Box inspector
-    A6 Adaptive anchor
+prior BLOCKED / DEFER home fixtures were not actually selectable
+A6 expanded into the same A5 content rather than richer context
+compact canonical representations lost too much grammar at small scale
+archived threads fell back to text even in Boxes mode
 ```
 
-A6 currently tests compact identity at rest plus explicit expansion into a richer inspector.
-
-Conceptual schema hypothesis only:
+Claude also proposed a promising three-tier context mental model:
 
 ```text
-Conversation.home_scope
-    PROJECT_GENERAL
-    WORK_UNIT
-
-Conversation.home_object_id
-    null or one work-unit id
-
-Message.contextual_object_ids
-    zero or more project objects
+HOME
+PINNED CONTEXT
+PER-TURN CONTEXT
 ```
 
-This is not a frozen persistence schema.
+and suggested that future `home_object_id` semantics should eventually allow addressable project objects beyond WorkUnit. This remains a hypothesis rather than frozen schema.
 
-Open edge cases include:
+## Current synthesis browser
+
+The new browser compares:
 
 ```text
-re-homing a conversation
-multi-work-unit conversations
-non-work-unit home objects
-completed / deferred / superseded home units
-forked conversations
-conversation scope over project lifetime
+A6  Refined Adaptive Anchor
+    current human-selected working control
+    expands into richer X5-derived context
+
+B1  Breadcrumb Thread
+B2  Scroll-Responsive Presence
+B3  Object-Anchored Gutter
+B4  Wrapped Around Object
 ```
+
+It also makes all of these home cases selectable:
+
+```text
+Project general
+CURRENT + RUN + HIGH
+CURRENT + BLOCKED
+DEFER + NONE
+```
+
+and gives archived Boxes-mode conversations a subdued historical treatment for evaluation.
+
+Claude's Signature Rail idea is preserved for possible future high-thread-count testing but is not added as a third product rail mode because Boxes/Text is the current chosen balance and no real density evidence yet requires more complexity.
+
+Anchored X5-to-conversation entry and asymmetric faster return are preserved as transition modifiers to test after composition is sufficiently settled.
 
 ---
 
 # MC-0004 collaboration state
 
 ```text
-Phase A  Claude independent proposal  cd2e12f2c79ee3b2f205457c5940eb2022b4631a  BLIND_TO_CANDIDATE
-Phase B  Claude comparative review    d94d696214a41d2a3904aa9ce2a42bdab5f2f3ce  COMPARATIVE_ONLY
-Phase C  browser-rendered design evaluation
-Claude Message 008                    cab2e464d81b48edadd1b6ae51bb7dd620d7e892
-ChatGPT Message 009                   conversation scope / anchor ideation request
-Current                               scope + work-unit anchor browser review
-Next actor                            Claude
-Expected output                       MC-0004 Message 010
+Claude Message 010     COMPLETE
+Current                 conversation-anchor synthesis browser review
+Next actor              human project owner
+Pending model work      none
 ```
-
-Claude is specifically asked to broaden/challenge:
-
-```text
-conversation-home versus per-turn-context model
-work-unit identity mechanisms in conversation navigation
-project-general conversation identity
-conversation + opened-box composition
-X5 -> work-unit-scoped conversation entry / return
-re-homing and multi-object edge cases
-```
-
-This follow-up is comparative rather than blind.
 
 ---
 
@@ -330,22 +279,20 @@ This follow-up is comparative rather than blind.
 Still unresolved:
 
 ```text
-final Conversation Workspace composition
-final conversation-home / anchor ontology
-one versus multiple project conversations
-multi-home / re-home semantics
-conversation lifecycle: fork / archive / resume / search
-message-to-project linking semantics
-conversation compaction / summary UX
+whether A6 remains winner after B1-B4 review
+whether pinned context is promoted
+historical-state visual grammar
+live-state versus historical-state conversation identity
+very large thread-count behavior
+conversation home for non-work-unit objects
+re-home / detach / adopt interactions
 conversation persistence/data model
 conversation URL state
-conversation relation to analytical specialist workspaces
-final palette beyond current Quiet Graphite baseline
+final palette beyond Quiet Graphite baseline
 final typography / density
 S0 geometric zoom finality
 semantic zoom thresholds / clustering / bundling
 large-project virtualization and label collision
-focus-set behavior across scale
 final runtime / disposition ontologies
 production status-carrier persistence
 deep-focus return choreography
@@ -375,16 +322,15 @@ Course 2 remains blocked until the permanent recovery-integrity gate succeeds.
 ```text
 1. use Checkpoint 246 and v1-cockpit-design-exploration
 2. pull the latest branch locally
-3. open conversation-workspace-work-unit-anchor.html
-4. compare Work-unit scoped versus Project general
-5. compare Text / Marker + title / Mini work-unit artifact
-6. compare A0-A6 opened-box presence mechanisms
-7. judge immediate visual recognition versus rail clutter
-8. inspect Claude Message 010 when it arrives
-9. broaden the browser if Claude adds materially different candidates
-10. keep Quiet Graphite as current visual baseline
-11. keep S0 semantic zoom provisional and deferred
-12. keep Z7 deep focus held
-13. keep production Cockpit untouched
-14. keep source-vault deployment paused until explicitly resumed
+3. open conversation-workspace-anchor-synthesis.html
+4. compare A6 against B1-B4 on Model selection strategy
+5. click Production missingness and inspect BLOCKED identity
+6. click Threshold policy and inspect DEFER identity
+7. click General project discussion and verify no fake work-unit home remains
+8. switch Boxes / Text independently of composition
+9. for B2 compare Arrival versus Deep in transcript
+10. for A6 expand/collapse the X5-derived panel
+11. preserve Quiet Graphite, S0 and Z7 held boundaries
+12. keep production Cockpit untouched
+13. keep source-vault deployment paused until explicitly resumed
 ```
