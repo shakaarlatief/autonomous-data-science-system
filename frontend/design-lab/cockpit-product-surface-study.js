@@ -266,6 +266,20 @@ function installOptionalSpatialRailStudy() {
 
 function installOptionalCockpitEdgeStudy() {
   const edge = new URLSearchParams(window.location.search).get('edge')
+
+  if (edge === 'angled') {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = './cockpit-spatial-rail-study-angle.css'
+    link.dataset.spatialRailAngleAsset = 'true'
+    document.head.appendChild(link)
+
+    import('./cockpit-spatial-rail-study-angle.js').catch((error) => {
+      console.error('Resting-angle Cockpit rail study failed to load', error)
+    })
+    return
+  }
+
   if (!['hinge', 'stack', 'console'].includes(edge || '')) return
 
   const link = document.createElement('link')
