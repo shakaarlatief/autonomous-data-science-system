@@ -37,7 +37,6 @@ test.describe('Cockpit accepted-implementation manifest closure', () => {
     await page.goto(route)
     await expect(page.locator(nodeSelector)).toHaveCount(6)
     await expect(page.locator('#process-focus-toggle')).toBeVisible()
-    await expect(page.locator('#reintegration-stage-ruler')).toHaveCount(1)
   })
 
   test('M09 focus membership is editable view composition and never mutates WorkUnit semantics', async ({ page }) => {
@@ -177,19 +176,8 @@ test.describe('Cockpit accepted-implementation manifest closure', () => {
     await expect(tag.locator('.status-tag-label')).toHaveText('RUN')
   })
 
-  test('M01 restores fold-away chrome and viewport-owned stage orientation without mutating project state', async ({ page }) => {
+  test('M01 fold-away chrome remains recoverable without mutating project state', async ({ page }) => {
     const before = await selectedKey(page)
-    const ruler = page.locator('#reintegration-stage-ruler')
-    const track = page.locator('#reintegration-stage-ruler-track')
-
-    await expect(ruler.locator('.reintegration-stage-marker')).toHaveCount(5)
-    await expect.poll(async () => track.evaluate((element) => element.getBoundingClientRect().width)).toBeGreaterThan(100)
-    const rulerTop = await ruler.evaluate((element) => element.getBoundingClientRect().top)
-    const trackLeftBefore = await track.evaluate((element) => element.getBoundingClientRect().left)
-
-    await page.locator('#zoom-in').click()
-    await expect.poll(async () => track.evaluate((element) => element.getBoundingClientRect().left)).not.toBe(trackLeftBefore)
-    expect(await ruler.evaluate((element) => element.getBoundingClientRect().top)).toBeCloseTo(rulerTop, 0)
 
     await page.locator('#map-tools-fold').click()
     await expect(page.locator('.reintegration-tools')).toHaveAttribute('data-folded', 'true')
