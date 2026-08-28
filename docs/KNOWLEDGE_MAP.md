@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
-**Last reviewed:** 2026-08-27  
-**Current checkpoint:** 245  
+**Last reviewed:** 2026-08-28  
+**Current checkpoint:** 246  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,11 +25,11 @@ docs/CONTINUITY.md
 Current route:
 
 ```text
-checkpoint                        245
+checkpoint                        246
 active branch                     v1-cockpit-design-exploration
 latest specification              Specification 024
 promoted Cockpit baseline         Specification 008
-current boundary                  Conversation Workspace independent browser comparison
+current boundary                  Conversation scope + work-unit anchor; Claude ideation pending
 source-vault deployment           PAUSED, Course 2 gate unchanged
 ```
 
@@ -85,6 +85,7 @@ Z7 Pull-Back Then Dive deep-focus entry
 fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
+Quiet Graphite current Conversation Workspace visual baseline
 ```
 
 Important targets:
@@ -156,61 +157,48 @@ semantic zoom
 
 ---
 
-# Current Slice 02P: Conversation Workspace independent comparison
+# Slice 02P: Conversation Workspace independent dual-design round, closed as comparison gate
 
-Checkpoint:
+Primary evidence:
 
 ```text
 docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
-```
-
-Initial rejected visual/presentation evidence remains preserved:
-
-```text
-docs/research/079_conversation_workspace_presentation_architecture_experiment.md
-frontend/design-lab/conversation-workspace-architecture.html
-42cfe87a0531206187741488f35785fc87f10f1e
-```
-
-The project owner then required an independent redesign of the entire chat visual and interaction system.
-
-Blind request and Claude response:
-
-```text
-docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md
-docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
-
-request base    c190420c6d77d3191ca9efb9ffc1e401bbb7fda8
-Claude response cab2e464d81b48edadd1b6ae51bb7dd620d7e892
-```
-
-ChatGPT independent evidence:
-
-```text
-branch  chatgpt-conversation-workspace-independent-design
-head    c66f72a74e681f89fd52ba591a1387ea50f0e959
-```
-
-Dual-design synthesis evidence:
-
-```text
 docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+frontend/design-lab/conversation-workspace-claude-independent.html
+frontend/design-lab/conversation-workspace-chatgpt-independent.html
 ```
 
-Current browser URLs:
+Independent provenance:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
-http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+Claude Message 008
+    cab2e464d81b48edadd1b6ae51bb7dd620d7e892
+
+ChatGPT isolated independent branch
+    chatgpt-conversation-workspace-independent-design
+    c66f72a74e681f89fd52ba591a1387ea50f0e959
 ```
 
-Exact active browser target:
+Result:
 
 ```text
-348c1d8a746041d4fa3ca41316ac34f9d79bc745
+Quiet Graphite
+    selected current visual baseline
+
+Deep Navy
+Warm Slate
+Monochrome Signal
+Violet Ink
+Editorial Dark
+Claude Technical Manuscript
+Claude Studio Console
+Claude Hybrid
+    rejected as currently rendered visual systems
 ```
 
-Strong independent convergence:
+Future palette exploration may introduce genuinely new systems.
+
+Strong independent convergence remains useful evidence:
 
 ```text
 transcript-first long-form technical surface
@@ -223,32 +211,95 @@ project-aware composer context
 dark restrained professional visual language
 ```
 
-Claude systems:
+---
+
+# Current Slice 02Q: Conversation Scope + Work-Unit Anchor
+
+Checkpoint:
 
 ```text
-Technical Manuscript
-Studio Console
-Hybrid
+docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
 ```
 
-ChatGPT systems:
+Research/browser:
 
 ```text
-Quiet Graphite
-Deep Navy
-Warm Slate
-Monochrome Signal
-Violet Ink
-Editorial Dark
+docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+frontend/design-lab/conversation-workspace-work-unit-anchor.html
+frontend/design-lab/conversation-workspace-work-unit-anchor.css
+frontend/design-lab/conversation-workspace-work-unit-anchor.js
 ```
 
-Current gate:
+Local URL:
 
 ```text
-human compares both independent families
-human identifies whole-system likes/dislikes
-human identifies transferable mechanisms
-synthesis candidates are built afterward
+http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
+```
+
+Initial implementation target:
+
+```text
+56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
+```
+
+Current product distinction:
+
+```text
+PROJECT-GENERAL CONVERSATION
+    no work-unit home
+
+WORK-UNIT-SCOPED CONVERSATION
+    one work-unit home
+    visibly recognizable as belonging to that box
+
+PER-TURN CONTEXT
+    temporary referenced project objects
+    separate from conversation home
+```
+
+Current factorized browser controls:
+
+```text
+conversation scope
+    Work-unit scoped / Project general
+
+thread identity
+    Text / Marker + title / Mini work-unit artifact
+
+opened-box presence
+    A0 Chat-only control
+    A1 Header specimen
+    A2 Context shelf
+    A3 Inner sidecar
+    A4 Floating instrument
+    A5 Box inspector
+    A6 Adaptive anchor
+```
+
+The project grid remains absent. The box is represented as a compact canonical work-unit artifact.
+
+Current conceptual hypothesis, not frozen schema:
+
+```text
+Conversation.home_scope
+    PROJECT_GENERAL
+    WORK_UNIT
+
+Conversation.home_object_id
+    null or one work-unit id
+
+Message.contextual_object_ids
+    zero or more project objects
+```
+
+Open edge cases include re-homing, multi-work-unit conversations, non-work-unit homes, archived/completed home work units and forks.
+
+Claude follow-up:
+
+```text
+request   docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
+expected  MC-0004 Message 010
+mode      COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
 ---
@@ -275,7 +326,11 @@ docs/model_collaboration/threads/MC-0004/STATE.json
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-No model-collaboration obligation is currently pending.
+Current pending obligation:
+
+```text
+Claude -> MC-0004 Message 010
+```
 
 ---
 
