@@ -1,0 +1,599 @@
+/*
+ * Advanced whole-Cockpit product-surface study A.
+ *
+ * This layer begins the next design phase on top of the source-faithful Phase-C
+ * composition. It does NOT redefine accepted WorkUnit, connector, X5, Z7 or
+ * Conversation semantics. It only explores whole-product presentation that was
+ * explicitly still provisional:
+ *
+ *   - continuous grid-world dominance rather than a visible project rectangle;
+ *   - compact project HUD + fold-away right-side map tool rail;
+ *   - Jump/search as an invoked bounded surface rather than a permanent bar;
+ *   - readable Conversation typography and a compact chat composer;
+ *   - removal of reintegration-only diagnostic cards from ordinary review.
+ *
+ * Prior evidence:
+ *   Research 007  continuous finite grid world + right vertical tool rail
+ *   Research 008  world-owned spatial atmosphere + collision-safe Jump/search
+ *   Research 009  promoted compact/fold-away Cockpit interaction architecture
+ *
+ * Human review of this integrated product study is required before any visual
+ * choice in this file can be promoted.
+ */
+
+html[data-product-surface-study="a"] {
+  --product-chrome-bg: rgba(10, 15, 22, 0.92);
+  --product-chrome-line: rgba(190, 207, 230, 0.15);
+  --product-chrome-line-strong: rgba(190, 207, 230, 0.25);
+  --product-chrome-text: rgba(236, 242, 249, 0.94);
+  --product-chrome-muted: rgba(164, 180, 201, 0.72);
+  --product-chrome-faint: rgba(143, 159, 181, 0.54);
+  --product-grid-minor: 20px;
+  --product-grid-major: 100px;
+  --product-grid-x: 0px;
+  --product-grid-y: 0px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Continuous spatial world                                                   */
+/* -------------------------------------------------------------------------- */
+
+html[data-product-surface-study="a"] .reintegration-stage {
+  background-color: #0b1017;
+  background-image:
+    linear-gradient(to right, rgba(152, 175, 207, 0.085) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(152, 175, 207, 0.085) 1px, transparent 1px),
+    linear-gradient(to right, rgba(185, 204, 229, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(185, 204, 229, 0.15) 1px, transparent 1px),
+    radial-gradient(circle at 24% 18%, rgba(70, 114, 174, 0.055), transparent 30%),
+    radial-gradient(circle at 78% 68%, rgba(79, 130, 178, 0.045), transparent 32%);
+  background-size:
+    var(--product-grid-minor) var(--product-grid-minor),
+    var(--product-grid-minor) var(--product-grid-minor),
+    var(--product-grid-major) var(--product-grid-major),
+    var(--product-grid-major) var(--product-grid-major),
+    auto,
+    auto;
+  background-position:
+    var(--product-grid-x) var(--product-grid-y),
+    var(--product-grid-x) var(--product-grid-y),
+    var(--product-grid-x) var(--product-grid-y),
+    var(--product-grid-x) var(--product-grid-y),
+    center,
+    center;
+}
+
+/*
+ * The semantic project plane remains the authoritative geometry for nodes and
+ * relations, but it must not read as a smaller card inside the world.
+ */
+html[data-product-surface-study="a"] .reintegration-world {
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+}
+
+html[data-product-surface-study="a"] .reintegration-world > .major-grid {
+  opacity: 0;
+}
+
+/* Reintegration diagnostics are evidence tools, not ordinary product chrome. */
+html[data-product-surface-study="a"] .reintegration-input-contract,
+html[data-product-surface-study="a"] .reintegration-map-status,
+html[data-product-surface-study="a"] .reintegration-zoom-rail,
+html[data-product-surface-study="a"] .reintegration-provisional-note {
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Compact immersive Cockpit chrome                                           */
+/* -------------------------------------------------------------------------- */
+
+html[data-product-surface-study="a"] .reintegration-hud {
+  left: 14px;
+  right: auto;
+  top: 12px;
+  display: block;
+  width: 224px;
+  min-height: 0;
+  padding: 9px 11px;
+  border-color: var(--product-chrome-line);
+  border-radius: 12px;
+  background: var(--product-chrome-bg);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+html[data-product-surface-study="a"] .reintegration-identity {
+  gap: 1px;
+}
+
+html[data-product-surface-study="a"] .reintegration-kicker {
+  color: rgba(157, 184, 255, 0.72);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+html[data-product-surface-study="a"] .reintegration-identity strong {
+  color: var(--product-chrome-text);
+  font-size: 12.5px;
+  line-height: 1.25;
+}
+
+/* Checkpoint prose is integration provenance, not persistent product identity. */
+html[data-product-surface-study="a"] .reintegration-identity small {
+  display: none;
+}
+
+/* The former permanent search field becomes a bounded invoked palette. */
+html[data-product-surface-study="a"] .reintegration-search {
+  position: absolute;
+  z-index: 112;
+  top: 12px;
+  right: 72px;
+  width: min(370px, calc(100vw - 104px));
+  display: none;
+  gap: 6px;
+  padding: 9px;
+  border: 1px solid var(--product-chrome-line-strong);
+  border-radius: 12px;
+  background: rgba(10, 15, 22, 0.97);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+html[data-product-surface-study="a"][data-product-search-open="true"] .reintegration-search {
+  display: grid;
+}
+
+html[data-product-surface-study="a"] .reintegration-search > label {
+  display: none;
+}
+
+html[data-product-surface-study="a"] .reintegration-search > div {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px;
+}
+
+html[data-product-surface-study="a"] .reintegration-search input {
+  height: 36px;
+  padding: 0 11px;
+  border-color: var(--product-chrome-line);
+  border-radius: 8px;
+  background: rgba(17, 24, 34, 0.96);
+  color: var(--product-chrome-text);
+  font-size: 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-search button {
+  min-width: 56px;
+  height: 36px;
+  border-color: var(--product-chrome-line);
+  font-size: 11px;
+}
+
+/* Promoted review direction: fold-away map controls live on the right edge. */
+html[data-product-surface-study="a"] .reintegration-tools {
+  position: absolute;
+  z-index: 108;
+  top: 68px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 48px;
+  max-height: calc(100vh - 150px);
+  gap: 4px;
+  padding: 5px;
+  overflow: visible;
+  border: 1px solid var(--product-chrome-line);
+  border-radius: 12px;
+  background: var(--product-chrome-bg);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(16px);
+}
+
+html[data-product-surface-study="a"] .reintegration-tools button,
+html[data-product-surface-study="a"] #product-jump-toggle {
+  position: relative;
+  width: 36px;
+  min-width: 36px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--product-chrome-muted);
+  font-size: 0;
+}
+
+html[data-product-surface-study="a"] .reintegration-tools button::before {
+  content: attr(data-product-glyph);
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1;
+}
+
+html[data-product-surface-study="a"] .reintegration-tools button:hover,
+html[data-product-surface-study="a"] .reintegration-tools button:focus-visible,
+html[data-product-surface-study="a"] .reintegration-tools button[aria-expanded="true"],
+html[data-product-surface-study="a"] .reintegration-tools button[aria-pressed="true"] {
+  border-color: var(--product-chrome-line-strong);
+  background: rgba(24, 33, 46, 0.94);
+  color: var(--product-chrome-text);
+  outline: none;
+}
+
+html[data-product-surface-study="a"] #zoom-readout {
+  width: 36px;
+  min-width: 36px;
+  padding: 4px 0;
+  color: var(--product-chrome-muted);
+  font-size: 9px;
+  text-align: center;
+}
+
+html[data-product-surface-study="a"] #fit-world,
+html[data-product-surface-study="a"] #toggle-detail,
+html[data-product-surface-study="a"] #process-focus-toggle,
+html[data-product-surface-study="a"] #appearance-controls-toggle {
+  margin-top: 3px;
+  border-top-color: var(--product-chrome-line);
+}
+
+html[data-product-surface-study="a"] .reintegration-tools button[data-tooltip]::after {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 10px);
+  z-index: 160;
+  width: max-content;
+  max-width: 210px;
+  padding: 6px 8px;
+  border: 1px solid var(--product-chrome-line-strong);
+  border-radius: 7px;
+  background: rgba(10, 15, 22, 0.98);
+  color: rgba(220, 229, 241, 0.92);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  content: attr(data-tooltip);
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(3px);
+  transition: opacity 100ms ease, transform 100ms ease;
+  white-space: nowrap;
+}
+
+html[data-product-surface-study="a"] .reintegration-tools button[data-tooltip]:hover::after,
+html[data-product-surface-study="a"] .reintegration-tools button[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Keep accepted settings behavior, but place the provisional panel beside rail. */
+html[data-product-surface-study="a"] .reintegration-appearance-panel,
+html[data-product-surface-study="a"] .reintegration-process-focus-panel {
+  right: 70px;
+  top: 68px;
+  width: min(380px, calc(100vw - 100px));
+  max-height: calc(100vh - 150px);
+}
+
+html[data-product-surface-study="a"] .reintegration-hud-restore {
+  left: 14px;
+  top: 12px;
+  min-height: 34px;
+  border-radius: 9px;
+  font-size: 10.5px;
+}
+
+/* Compact native composer remains a Cockpit affordance, not a giant panel. */
+html[data-product-surface-study="a"] .reintegration-composer {
+  bottom: 14px;
+  width: min(690px, calc(100vw - 180px));
+  min-width: 440px;
+  grid-template-columns: 38px minmax(260px, 1fr) 56px;
+  padding: 5px;
+  border-radius: 14px;
+  background: rgba(10, 15, 22, 0.94);
+}
+
+html[data-product-surface-study="a"] .reintegration-composer span {
+  font-size: 8.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-composer input {
+  height: 30px;
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-composer button {
+  min-width: 36px;
+  font-size: 10px;
+}
+
+/* The right-side rail and compact composer must not intrude into full focus. */
+html[data-product-surface-study="a"][data-conversation-open="true"][data-conversation-presentation="full"] .reintegration-tools,
+html[data-product-surface-study="a"][data-conversation-open="true"][data-conversation-presentation="full"] .reintegration-search,
+html[data-product-surface-study="a"]:not([data-deep-focus="false"]) .reintegration-tools,
+html[data-product-surface-study="a"]:not([data-deep-focus="false"]) .reintegration-search {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Conversation readability study                                             */
+/* -------------------------------------------------------------------------- */
+
+html[data-product-surface-study="a"] .reintegration-conversation-layer {
+  --cq-transcript-width: 860px;
+  --cq-message-gap: 26px;
+  --cq-message-pad: 12px 15px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-brand strong {
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-brand small {
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-search {
+  min-height: 36px;
+  padding: 8px 9px;
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-search kbd {
+  font-size: 9.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-view-switch button {
+  min-height: 30px;
+  font-size: 10.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-rail-heading {
+  margin-top: 16px;
+  font-size: 9.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-thread-text strong {
+  font-size: 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-thread-text small {
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-thread-copy small {
+  font-size: 9px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-thread-copy strong {
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-rail-footer {
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-header {
+  min-height: 68px;
+  padding: 11px 20px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-title-row h2 {
+  font-size: 17px;
+  font-weight: 680;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-scope-pill {
+  padding: 4px 6px;
+  font-size: 9px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-subtitle {
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-actions {
+  gap: 5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-actions button {
+  min-height: 31px;
+  padding: 6px 9px;
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-transcript {
+  width: min(var(--cq-transcript-width), calc(100% - 48px));
+  padding: 28px 0 20px;
+}
+
+html[data-product-surface-study="a"] .reintegration-date-divider {
+  margin-bottom: 24px;
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-turn {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 14px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-anchor {
+  width: 28px;
+  height: 28px;
+  font-size: 9px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-meta {
+  margin-bottom: 7px;
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-meta strong {
+  font-size: 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-user-message,
+html[data-product-surface-study="a"] .reintegration-ads-message {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+html[data-product-surface-study="a"] .reintegration-ads-message h3 {
+  margin: 20px 0 10px;
+  font-size: 16px;
+}
+
+html[data-product-surface-study="a"] .reintegration-ads-message li + li {
+  margin-top: 7px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-ref {
+  grid-template-columns: 25px minmax(0, 1fr);
+  padding: 8px 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-ref small {
+  font-size: 8.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-ref strong {
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-tools {
+  margin-top: 8px;
+  opacity: 0.68;
+}
+
+html[data-product-surface-study="a"] .reintegration-turn-tools button {
+  padding: 4px 6px;
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-change {
+  margin-left: 44px;
+  padding: 11px 12px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-change small {
+  font-size: 8.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-change strong {
+  font-size: 11.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-project-change p,
+html[data-product-surface-study="a"] .reintegration-activity-row {
+  font-size: 10.5px;
+}
+
+/*
+ * Empty-state composer is intentionally much closer to a normal chat composer:
+ * context remains available, but tiny provenance labels no longer consume a
+ * separate visual row and the textarea does not reserve unnecessary height.
+ */
+html[data-product-surface-study="a"] .reintegration-full-composer {
+  padding: 6px 20px 9px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-context {
+  min-height: 18px;
+  margin-bottom: 3px;
+  font-size: 10px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-context > span {
+  display: none;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-context button {
+  padding: 2px 4px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 10.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-shell {
+  border-radius: 16px;
+  padding: 7px 9px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer textarea {
+  min-height: 30px;
+  max-height: 110px;
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-actions {
+  margin-top: 3px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-actions button {
+  min-height: 28px;
+  padding: 5px 8px;
+  font-size: 11px;
+}
+
+html[data-product-surface-study="a"] .reintegration-full-composer-status {
+  font-size: 10.5px;
+}
+
+html[data-product-surface-study="a"] .reintegration-conversation-send {
+  width: 31px;
+  height: 31px;
+}
+
+/* A6 remains available without shrinking the main reading field typography. */
+html[data-product-surface-study="a"][data-conversation-a6-expanded="true"] .reintegration-conversation-layer {
+  grid-template-columns: 270px minmax(0, 1fr) 300px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Laptop boundary                                                            */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 1180px) {
+  html[data-product-surface-study="a"] .reintegration-hud {
+    left: 10px;
+    top: 10px;
+    width: 204px;
+  }
+
+  html[data-product-surface-study="a"] .reintegration-tools {
+    top: 64px;
+    right: 8px;
+  }
+
+  html[data-product-surface-study="a"] .reintegration-search {
+    top: 10px;
+    right: 64px;
+  }
+
+  html[data-product-surface-study="a"] .reintegration-composer {
+    width: min(620px, calc(100vw - 120px));
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-product-surface-study="a"] .reintegration-tools button[data-tooltip]::after {
+    transition: none;
+  }
+}
