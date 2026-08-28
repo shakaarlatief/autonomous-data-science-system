@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 251  
+**Checkpoint:** 252  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C source-faithful holistic reintegration. The implementation-provenance recovery opened by Checkpoint 250 is complete: the full Phase-C decision ledger exists, the 23-entry implementation manifest is structurally valid, and every declared historical source path resolves at its exact integration target under a full-history CI gate. The replacement holistic Cockpit may now be built only by exact source reuse/porting plus explicitly provisional whole-product glue.  
+**Development stage:** MC-0004 Phase C advanced whole-product Cockpit design exploration on the source-faithful integrated substrate. Implementation-provenance recovery is complete; the accepted Phase-C mechanism set has been reintegrated with deterministic browser protection; Product Surface Study A now acts as the complete-Cockpit design surface; and Checkpoint 252 opens an unselected three-way spatial edge-rail direct-manipulation study for human review.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -26,28 +26,33 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
-docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
-docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
+docs/research/092_spatial_edge_rail_depth_direct_manipulation_and_docking_study.md
 ```
 
 Current task:
 
 ```text
-build replacement holistic Cockpit by source-faithful composition/porting
-preserve every MUST_PORT / MUST_PRESERVE manifest item
-carry provisional items only as provisional
-keep deferred/rejected/evidence-only candidates unselected
-introduce only minimum unresolved whole-product glue and label it provisional
-run deterministic provenance validation continuously
-add integrated fidelity checks against exact accepted targets
-only then resume holistic human product review
+human-review the three spatial edge-rail candidates in the complete Cockpit
+
+A · Extruded Blade
+B · Layered Deck
+C · Dock and Float
+
+judge direct manipulation, depth, calmness, discoverability, occlusion,
+functional grouping, recovery/stowing and future extensibility
+
+preserve concrete reactions
+then refine / reject / combine only on evidence
 ```
 
-Production `/cockpit` remains untouched.
+No rail variant is selected. Production `/cockpit` remains untouched.
 
 ---
 
-# Implementation-provenance recovery status
+# Source-faithful reintegration status
+
+The implementation-provenance recovery opened by Checkpoint 250 is complete.
 
 Durable recovery architecture:
 
@@ -59,7 +64,7 @@ scripts/check_cockpit_implementation_manifest.py
 .github/workflows/cockpit-implementation-provenance.yml
 ```
 
-Current manifest coverage:
+Manifest coverage:
 
 ```text
 23 total entries
@@ -72,7 +77,7 @@ Current manifest coverage:
     EXCLUDED_SOURCE
 ```
 
-First full-history provenance run:
+First exact-history provenance proof:
 
 ```text
 workflow run  33156357834
@@ -83,11 +88,13 @@ entries=23 required=19 non_promotable=4
 exact historical source verification: PASS
 ```
 
-This closes the provenance gate. It does **not** yet close the integrated fidelity gate.
+The replacement holistic Cockpit was then built through source reuse / exact mechanism porting plus separately identified whole-product glue.
 
 ---
 
-# Two-gate integration model
+# Fidelity and human-review model
+
+The project now distinguishes three different gates:
 
 ```text
 PROVENANCE GATE
@@ -95,19 +102,147 @@ PROVENANCE GATE
     exact historical source resolution
     PASS
 
-INTEGRATED FIDELITY GATE
-    replacement browser preserves declared geometry/behavior/visual hierarchy
-    replacement browser preserves semantic-channel separation
-    provisional glue remains identified
-    failed/deferred/rejected sources remain unselected
-    OPEN / NOT YET PASSED
+DETERMINISTIC INTEGRATION GATE
+    accepted mechanism invariants
+    cross-mechanism interaction integrity
+    whole-product study regressions
+    PASS for the current covered implementation
+
+HUMAN PRODUCT-DESIGN GATE
+    whether provisional shell choices are actually good
+    whether new candidates should be selected
+    OPEN
 ```
 
-A replacement browser may not be called the accepted holistic baseline merely because it renders or because the provenance validator passes.
+Latest complete browser gate before Checkpoint 252 preservation:
+
+```text
+implementation target  30f92a55537a9b0a2ec14695ed2982ded4ec9c0e
+workflow run           33197594115
+job                    98938593583
+result                 SUCCESS
+browser tests          56 / 56 passing
+```
+
+A green automated gate does **not** promote Product Surface Study A or any rail candidate into the accepted Cockpit design. Human selection remains required for provisional presentation decisions.
 
 ---
 
-# Failed integration disposition
+# Product Surface Study A
+
+The source-faithful integrated browser is now also the advanced whole-product design substrate.
+
+Current provisional Product Surface Study A explores:
+
+```text
+continuous viewport-owned project grid
+compact project identity HUD
+right-side spatial tool surface
+invoked bounded Jump/search
+normal readable Conversation typography
+compact full Conversation composer
+removal of reintegration-only diagnostic chrome from ordinary review
+```
+
+These shell choices are deliberately evaluated on the complete Cockpit so new design decisions can be judged in interaction with the accepted WorkUnits, relations, Conversation, X5, Z7 and project world.
+
+Primary route:
+
+```text
+frontend/design-lab/cockpit-reintegration.html
+```
+
+The accepted lower-layer mechanisms remain protected by the same holistic test suite while shell candidates change around them.
+
+---
+
+# Current spatial edge-rail study
+
+Checkpoint 252 opens three live candidates.
+
+## A · Extruded Blade
+
+```text
+?focus=map&work=v&rail=blade
+
+compact edge blade
+-> direct pull left
+-> progressive widening
+-> labels and functional grouping appear
+-> docked / partial / open states
+-> drag right to stow
+```
+
+## B · Layered Deck
+
+```text
+?focus=map&work=v&rail=deck
+
+stacked edge surface
+-> direct pull left
+-> Navigation / Work / System fan into separate spatial planes
+-> secondary planes become usable
+-> drag right to restack
+```
+
+## C · Dock and Float
+
+```text
+?focus=map&work=v&rail=float
+
+edge-docked rail
+-> pull beyond detach threshold
+-> bounded floating object in project space
+-> open related surfaces beside current rail position
+-> return to right-edge snap zone
+-> redock
+```
+
+Shared study boundary:
+
+```text
+real existing controls are reused
+legacy fold arrow is hidden only inside these study candidates
+drag/direct manipulation is the primary interaction under evaluation
+selected WorkUnit and semantic state do not mutate
+full-focus Conversation and specialist deep focus retain stage ownership
+reduced-motion and keyboard recovery remain available
+```
+
+No candidate and no hybrid is selected yet.
+
+---
+
+# Whole-product study implementation and CI coverage
+
+Primary new study artifacts:
+
+```text
+frontend/design-lab/cockpit-spatial-rail-study.css
+frontend/design-lab/cockpit-spatial-rail-study.js
+frontend/e2e/cockpit-reintegration-spatial-rail.spec.ts
+```
+
+Current Product Surface A artifacts include:
+
+```text
+frontend/design-lab/cockpit-product-surface-study.css
+frontend/design-lab/cockpit-product-surface-study-readability.css
+frontend/design-lab/cockpit-product-surface-study.js
+```
+
+The Cockpit fidelity workflow now watches both whole-product study families:
+
+```text
+frontend/design-lab/cockpit-product-surface-study*
+frontend/design-lab/cockpit-spatial-rail-study*
+```
+
+This closes the path-filter gap that previously allowed those newer study files to change without automatically triggering the holistic browser gate.
+
+---
+
+# Failed integration remains excluded
 
 The first holistic browser:
 
@@ -127,7 +262,7 @@ EXCLUDED from the implementation source graph
 PRESERVED as diagnostic evidence
 ```
 
-Source-level audit found concrete divergence from accepted source artifacts, including WorkUnit geometry, H4 lighting implementation, G4 ambient behavior and Quiet Graphite visual tokens.
+It must not be reused as the parent implementation for current whole-product exploration.
 
 ---
 
@@ -190,36 +325,7 @@ A6 no-floating-box refinement 606e027f281b35c2dfc93d059a1681df23bc2b73
 Conversation coexistence      db31970d6885ce785609f9c3300f22123130d821
 ```
 
-The complete exact source graph is in `docs/cockpit/accepted_implementation_manifest.json`; the short list above is navigation only.
-
----
-
-# Repository-preservation diagnosis
-
-Current evidence:
-
-```text
-semantic decisions              preserved
-complete Phase-C disposition    preserved
-exact target SHAs               preserved
-executable historical artifacts preserved
-implementation source bindings  preserved
-exact-history CI verification   active
-holistic integrated fidelity    not yet proven
-```
-
-The durable integration model is now:
-
-```text
-semantic decision
-    + complete disposition history
-    + exact implementation target
-    + exact source files
-    + allowed adaptation boundary
-    + known fixture caveats
-    + deterministic provenance gate
-    + integrated fidelity gate
-```
+The complete exact source graph remains in `docs/cockpit/accepted_implementation_manifest.json`.
 
 ---
 
@@ -250,3 +356,21 @@ source-vault bootstrap
 ```
 
 Course 2 remains gated.
+
+---
+
+# Exact next step
+
+```text
+Human opens and drags A / Blade, B / Layered Deck and C / Dock and Float.
+
+For each candidate record:
+    what feels useful
+    what feels visually wrong
+    what feels intuitive or unclear
+    what should be retained or rejected
+
+Then preserve those observations before further rail refinement.
+```
+
+Do not select a candidate, invent a hybrid, or move any study into production before explicit human evidence.
