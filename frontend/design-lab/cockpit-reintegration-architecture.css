@@ -49,80 +49,7 @@ html[data-hud-visibility="hidden"] .reintegration-hud {
   min-width: 48px;
 }
 
-.reintegration-stage-ruler {
-  position: absolute;
-  z-index: 24;
-  left: 0;
-  right: 0;
-  top: 84px;
-  height: 34px;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: 0.72;
-  transition: top 150ms ease, opacity 150ms ease;
-}
-
-html[data-hud-visibility="hidden"] .reintegration-stage-ruler {
-  top: 10px;
-}
-
-html:not([data-deep-focus="false"]) .reintegration-stage-ruler,
-html[data-conversation-open="true"] .reintegration-stage-ruler {
-  opacity: 0;
-}
-
-.reintegration-stage-ruler-title {
-  position: absolute;
-  left: 14px;
-  top: 0;
-  color: rgba(150, 169, 194, 0.56);
-  font-size: 6.1px;
-  font-weight: 850;
-  letter-spacing: 0.08em;
-}
-
-.reintegration-stage-ruler-track {
-  position: absolute;
-  top: 17px;
-  height: 1px;
-  min-width: 1px;
-  background: rgba(160, 180, 207, 0.16);
-}
-
-.reintegration-stage-ruler-track::before,
-.reintegration-stage-ruler-track::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  width: 1px;
-  height: 7px;
-  background: rgba(160, 180, 207, 0.34);
-}
-
-.reintegration-stage-ruler-track::before { left: 0; }
-.reintegration-stage-ruler-track::after { right: 0; }
-
-.reintegration-stage-marker {
-  position: absolute;
-  top: -4px;
-  display: grid;
-  transform: translateX(-50%);
-  color: rgba(178, 195, 218, 0.64);
-  font-size: 6.2px;
-  font-weight: 760;
-  white-space: nowrap;
-}
-
-.reintegration-stage-marker::after {
-  content: "";
-  width: 1px;
-  height: 6px;
-  margin: 3px auto 0;
-  background: rgba(160, 180, 207, 0.28);
-}
-
-html[data-reduced="on"] .reintegration-hud,
-html[data-reduced="on"] .reintegration-stage-ruler {
+html[data-reduced="on"] .reintegration-hud {
   transition: none !important;
 }
 
@@ -153,14 +80,6 @@ html[data-reduced="on"] .reintegration-stage-ruler {
   .reintegration-tools {
     grid-column: 1 / -1;
     justify-content: flex-end;
-  }
-
-  .reintegration-stage-ruler {
-    top: 126px;
-  }
-
-  html[data-hud-visibility="hidden"] .reintegration-stage-ruler {
-    top: 10px;
   }
 
   .reintegration-input-contract {
