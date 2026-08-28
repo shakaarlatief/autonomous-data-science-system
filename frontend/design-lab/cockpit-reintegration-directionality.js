@@ -51,11 +51,26 @@ function upgradeDirectionality() {
   if ('MutationObserver' in window) {
     const observer = new MutationObserver((mutations) => {
       const groups = new Set()
+
       for (const mutation of mutations) {
-        const group = mutation.target.closest?.('.reintegration-relation')
-          || mutation.target.parentElement?.closest?.('.reintegration-relation')
-        if (group) groups.add(group)
+        if (!(mutation.target instanceof Element)) continue
+
+        /*
+         * Only the semantic curve owns start-arrow geometry. Ignore the
+         * adapter's own start-arrow d mutations so this observer cannot trigger
+         * itself recursively.
+         */
+        if (mutation.attributeName === 'd' && mutation.target.matches('.semantic-path')) {
+          const group = mutation.target.closest('.reintegration-relation')
+          if (group) groups.add(group)
+          continue
+        }
+
+        if (mutation.attributeName === 'data-direction' && mutation.target.matches('.reintegration-relation')) {
+          groups.add(mutation.target)
+        }
       }
+
       for (const group of groups) syncStartArrow(group)
     })
 
