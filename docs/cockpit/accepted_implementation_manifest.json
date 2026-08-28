@@ -1,0 +1,884 @@
+{
+  "schema_version": 1,
+  "project": "Autonomous Data Science System",
+  "surface": "Project Cockpit",
+  "phase": "Phase C",
+  "status": "IMPLEMENTATION_PROVENANCE_RECOVERY",
+  "failed_integration_sha": "8e554d847bb3b6318db432abcb5dff742f0fa523",
+  "required_maturities": [
+    "MUST_PRESERVE",
+    "MUST_PORT"
+  ],
+  "non_promotable_maturities": [
+    "PROVISIONAL_ONLY",
+    "DO_NOT_SELECT_DURING_INTEGRATION",
+    "EXCLUDED_SOURCE"
+  ],
+  "entries": [
+    {
+      "id": "M01",
+      "name": "Promoted V1 Cockpit interaction architecture",
+      "maturity": "MUST_PRESERVE",
+      "decision_sources": [
+        "docs/specifications/008_v1_project_cockpit_interaction_architecture.md"
+      ],
+      "decision_target_sha": "2c3b522e2416d73c015ce5ec2a4560a227524dd9",
+      "integration_source_sha": "ed5b60bdc882bed0799ce55228ce8187f9c55aa1",
+      "source_files": [
+        "frontend/src/components/CockpitProjectMap.tsx",
+        "frontend/src/cockpit.css",
+        "frontend/src/components/AppShell.tsx",
+        "frontend/src/components/MissingnessWorkspace.tsx"
+      ],
+      "invariants": [
+        "finite navigable world distinct from semantic project plane",
+        "2D movement and recovery",
+        "bounded geometric zoom and fit/reset",
+        "Jump/search",
+        "selective specialist mounting",
+        "compact/fold-away chrome",
+        "collision-safe floating surfaces",
+        "true fullscreen with graceful fallback",
+        "URL-addressable important focus/deep-work state",
+        "keyboard accessibility",
+        "reduced-motion support"
+      ],
+      "allowed_adaptations": [
+        "Phase-C accepted visual identity may replace earlier visual styling",
+        "fixture project content may change",
+        "component architecture may be refactored if capabilities remain"
+      ],
+      "fixture_caveats": [
+        "Specification 008 does not freeze final visual identity or final graph/canvas technology"
+      ],
+      "verification": [
+        "capability checklist against Specification 008",
+        "browser interaction tests for zoom, fit/reset, Jump/search and fullscreen",
+        "keyboard and reduced-motion review"
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "G4 Adaptive Hybrid world and ambient behavior",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/040_grid_world_g4_selection_dark_first_and_ambient_dynamics_exploration.md",
+        "docs/research/041_combined_g4_ambient_motion_intensity_tuning.md",
+        "docs/research/042_g4_randomized_ambient_distribution_and_grid_intersection_glints.md",
+        "docs/research/043_g4_major_grid_glints_and_decoupled_ambient_cadence.md"
+      ],
+      "decision_target_sha": null,
+      "integration_source_sha": "e7304fe834d86166d843fda7e1df0f4ddb1f793a",
+      "source_files": [
+        "frontend/design-lab/grid-world.css",
+        "frontend/design-lab/work-unit-grammar.html",
+        "frontend/design-lab/work-unit-grammar.css",
+        "frontend/design-lab/work-unit-grammar.js"
+      ],
+      "invariants": [
+        "dark-first active baseline",
+        "20px minor grid and 100px major grid",
+        "travelling currents use grid-coherent distributed positions and timing",
+        "Lively current cadence",
+        "major-grid glints only on 100px intersections",
+        "glints remain quieter and independently scheduled",
+        "ambient drift retained",
+        "ambient motion remains lower salience than semantic activity",
+        "reduced-motion degradation"
+      ],
+      "allowed_adaptations": [
+        "world dimensions may change",
+        "ambient element counts may scale with world size",
+        "implementation may be componentized"
+      ],
+      "fixture_caveats": [
+        "G4 selection predates the SEL2 target; SEL2 is the later human-reviewed executable snapshot preserving G4/H4 compatibility"
+      ],
+      "verification": [
+        "compare scheduler behavior against exact integration source",
+        "major-grid glint coordinate test",
+        "inspect for fixed authored repeating current focal positions",
+        "reduced-motion check",
+        "live visual comparison against exact integration source"
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "Canonical WorkUnit surface and H4 lighting/hover response",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/044_work_unit_interaction_lighting_hover_response_exploration.md",
+        "docs/research/045_h4_resting_node_light_world_spill_refinement.md",
+        "docs/research/047_work_unit_grammar_h4_control_correction_and_inbox_light_comparison.md"
+      ],
+      "decision_target_sha": "bdf021d90b9a849cd2c9f992e0e18e1cc6deb80a",
+      "integration_source_sha": "e7304fe834d86166d843fda7e1df0f4ddb1f793a",
+      "source_files": [
+        "frontend/design-lab/work-unit-grammar.html",
+        "frontend/design-lab/work-unit-grammar.css",
+        "frontend/design-lab/work-unit-grammar.js",
+        "frontend/design-lab/work-unit-grammar-lighting-controls.css"
+      ],
+      "invariants": [
+        "project-scene geometry 176x92px at design-lab reference scale",
+        "9px surface radius",
+        "padding 11px 11px 10px 14px",
+        "rest-spill",
+        "rest-light",
+        "hover-light",
+        "hover-world-light",
+        "pointer-light",
+        "perimeter-sweep",
+        "frame-signature",
+        "localized asymmetric rest light",
+        "narrow outward semantic-edge spill",
+        "broad circular resting halo rejected",
+        "richer hover world response",
+        "small lift",
+        "connector emphasis"
+      ],
+      "allowed_adaptations": [
+        "component API and DOM wrappers may change",
+        "content strings and world position may change"
+      ],
+      "fixture_caveats": [
+        "reference dimensions are fidelity anchors for the accepted design-lab scale, not a claim that responsive production CSS can never scale"
+      ],
+      "verification": [
+        "computed reference geometry comparison",
+        "required-layer presence assertions",
+        "rest/hover visual comparison",
+        "pointer-light interaction test"
+      ]
+    },
+    {
+      "id": "M04",
+      "name": "Scientific category marker grammar",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/049_focused_work_unit_grammar_convergence_and_true_shape_experiment.md",
+        "docs/research/050_scientific_marker_selection_and_micro_material_shape_refinement.md"
+      ],
+      "decision_target_sha": "6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a",
+      "integration_source_sha": "6f27ae22dd47c3a395c6c8462ba325e1ebb19a2a",
+      "source_files": [
+        "frontend/design-lab/work-unit-grammar-focused.html",
+        "frontend/design-lab/work-unit-grammar-focused.css",
+        "frontend/design-lab/work-unit-grammar-focused-refinement.css",
+        "frontend/design-lab/work-unit-grammar-focused.js"
+      ],
+      "invariants": [
+        "Question/Blocker circle",
+        "Investigation square",
+        "Validation/Analysis triangle",
+        "Model Work diamond",
+        "Evaluation plus",
+        "marker remains category redundancy rather than status/runtime/priority carrier",
+        "stable left reading edge",
+        "aggressive upper-left Validation cut rejected"
+      ],
+      "allowed_adaptations": [
+        "future category taxonomy may evolve only through a separate decision",
+        "approved Normal/Subtle shape choice may coexist"
+      ],
+      "fixture_caveats": [
+        "current category inventory is the active design mapping but future taxonomy remains evolvable"
+      ],
+      "verification": [
+        "marker mapping assertion",
+        "non-color-only recognition review",
+        "visual comparison against exact target"
+      ]
+    },
+    {
+      "id": "M05",
+      "name": "User-configurable non-semantic WorkUnit appearance",
+      "maturity": "MUST_PRESERVE",
+      "decision_sources": [
+        "docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md",
+        "docs/research/051_user_configurable_cockpit_visual_grammar_and_semantic_invariants.md",
+        "docs/research/052_configurable_cockpit_review_connector_geometry_fix_and_foundation_promotion.md"
+      ],
+      "decision_target_sha": "c1f996f6500672641de8e00780d5a4949c5dcb28",
+      "integration_source_sha": "c1f996f6500672641de8e00780d5a4949c5dcb28",
+      "source_files": [
+        "frontend/design-lab/work-unit-grammar-customizable.html",
+        "frontend/design-lab/work-unit-grammar-customizable.css",
+        "frontend/design-lab/work-unit-grammar-customizable.js"
+      ],
+      "invariants": [
+        "appearance choice never mutates semantic state",
+        "Box shape supports approved Normal/Subtle dimension",
+        "Micro design supports approved None/Micro material/Micro light dimension",
+        "scientific marker mapping remains stable",
+        "Reduced in-box resting light baseline",
+        "connector endpoints derive from rendered geometry"
+      ],
+      "allowed_adaptations": [
+        "production persistence mechanism remains open",
+        "preset labels/composition may evolve if semantics remain safe"
+      ],
+      "fixture_caveats": [
+        "localStorage is proof-of-concept only"
+      ],
+      "verification": [
+        "semantic-state invariance across appearance switches",
+        "connector endpoint geometry under shape changes",
+        "default/reset behavior review"
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "Connector directionality and endpoint grammar",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md",
+        "docs/research/054_connector_composition_directionality_and_endpoint_layering_refinement.md",
+        "docs/research/055_connector_presentation_configurability_and_directionality_browser_slice.md",
+        "docs/research/056_directionality_arrow_grammar_and_hover_separation_refinement.md"
+      ],
+      "decision_target_sha": "07d573b6569b9f09a3b7e00936f3eadecee721b3",
+      "integration_source_sha": "07d573b6569b9f09a3b7e00936f3eadecee721b3",
+      "source_files": [
+        "frontend/design-lab/connector-directionality.html",
+        "frontend/design-lab/connector-directionality.css",
+        "frontend/design-lab/connector-directionality.js"
+      ],
+      "invariants": [
+        "D0 undirected no arrow",
+        "D1 A->B arrow at B",
+        "D2 A<-B arrow at A",
+        "D3 A<->B arrows at both",
+        "one terminal treatment at a time",
+        "hover/focus orthogonal to terminal type",
+        "arrow tip docks to rendered edge",
+        "connector curve below WorkUnit",
+        "endpoint overlays track lift/release",
+        "appearance cannot change semantic direction"
+      ],
+      "allowed_adaptations": [
+        "approved terminal treatment may be user-configurable",
+        "implementation may be componentized"
+      ],
+      "fixture_caveats": [
+        "final production relation taxonomy is separate from directionality"
+      ],
+      "verification": [
+        "D0-D3 deterministic endpoint test",
+        "rendered-edge geometry test",
+        "hover-lift endpoint tracking test",
+        "z-layer inspection"
+      ]
+    },
+    {
+      "id": "M07",
+      "name": "Relation-class E5 Hue + Tag",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/057_semantic_relation_class_visual_grammar_experiment.md",
+        "docs/research/058_relation_class_hue_tag_selection_and_stroke_channel_reservation.md"
+      ],
+      "decision_target_sha": "497e81f06ba1f9901511449237d1bb9f96b2d108",
+      "integration_source_sha": "497e81f06ba1f9901511449237d1bb9f96b2d108",
+      "source_files": [
+        "frontend/design-lab/relation-class-grammar.html",
+        "frontend/design-lab/relation-class-grammar.css",
+        "frontend/design-lab/relation-class-grammar.js"
+      ],
+      "invariants": [
+        "relation class uses restrained hue plus explicit compact tag",
+        "meaning distinct from directionality",
+        "stroke rhythm remains unassigned future semantic channel",
+        "final relation taxonomy remains unfrozen"
+      ],
+      "allowed_adaptations": [
+        "relation labels/classes may evolve only with semantic model changes",
+        "tag placement may adapt to geometry if visual hierarchy survives"
+      ],
+      "fixture_caveats": [
+        "Chronology/Dependency/Causal/Evidence/Lineage fixture taxonomy is provisional"
+      ],
+      "verification": [
+        "E5 active-state assertion",
+        "visual comparison against target",
+        "ensure stroke rhythm is not silently repurposed"
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "P7 Neutral Tag + Tone disposition",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/059_work_unit_project_disposition_visual_grammar_experiment.md",
+        "docs/research/060_disposition_hybrid_refinement_and_mixed_category_practical_comparison.md",
+        "docs/research/061_project_disposition_neutral_tag_tone_convergence_refinement.md"
+      ],
+      "decision_target_sha": "fac1db37af4225927d6c799e37418a3ad9c42c13",
+      "integration_source_sha": "fac1db37af4225927d6c799e37418a3ad9c42c13",
+      "source_files": [
+        "frontend/design-lab/work-unit-disposition-grammar.html",
+        "frontend/design-lab/work-unit-disposition-grammar.css",
+        "frontend/design-lab/work-unit-disposition-grammar.js"
+      ],
+      "invariants": [
+        "neutral disposition tag",
+        "category perimeter remains dominant",
+        "no disposition-colored perimeter",
+        "no disposition rhythm",
+        "Active normal",
+        "Recommended mild emphasis",
+        "Deferred softened",
+        "Completed clearly muted",
+        "Blocked mildly suppressed",
+        "Future strongly de-emphasized"
+      ],
+      "allowed_adaptations": [
+        "final disposition ontology may evolve separately"
+      ],
+      "fixture_caveats": [
+        "fixture disposition vocabulary is not frozen production ontology"
+      ],
+      "verification": [
+        "category marker/perimeter unchanged across disposition changes",
+        "visual comparison against exact target"
+      ]
+    },
+    {
+      "id": "M09",
+      "name": "Editable current-process focus lens",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/062_current_process_focus_lens_and_context_suppression_experiment.md",
+        "docs/research/063_user_curated_current_process_focus_membership.md"
+      ],
+      "decision_target_sha": "da115b74de526fca05ed6f468bef39bdb801355c",
+      "integration_source_sha": "da115b74de526fca05ed6f468bef39bdb801355c",
+      "source_files": [
+        "frontend/design-lab/work-unit-process-focus.html",
+        "frontend/design-lab/work-unit-process-focus.css",
+        "frontend/design-lab/work-unit-process-focus.js"
+      ],
+      "invariants": [
+        "focus is view composition not semantic object state",
+        "focus membership user-editable",
+        "fixture membership not project truth",
+        "H4 remains functional",
+        "focus context recession does not redefine semantics",
+        "X5 final behavior must remain no-context-recession"
+      ],
+      "allowed_adaptations": [
+        "focus set persistence mechanism remains open",
+        "exact degree of contextual recession may be tuned without hiding context"
+      ],
+      "fixture_caveats": [
+        "focus lens context recession is distinct from X5 contextual expansion"
+      ],
+      "verification": [
+        "semantic data unchanged by focus edits",
+        "membership edit/restore test",
+        "H4 interaction in focused/context nodes"
+      ]
+    },
+    {
+      "id": "M10",
+      "name": "Conditional runtime semantics and switchable carrier",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/065_work_unit_runtime_state_visual_grammar_experiment.md",
+        "docs/research/066_conditional_runtime_state_and_project_disposition_semantic_correction.md",
+        "docs/research/067_switchable_runtime_carrier_convergence_and_r1_r5_verification.md"
+      ],
+      "decision_target_sha": "fb847bd65ff6e5e4203a89ee2d4f74b7187c8359",
+      "integration_source_sha": "fb847bd65ff6e5e4203a89ee2d4f74b7187c8359",
+      "source_files": [
+        "frontend/design-lab/work-unit-runtime-carrier-switch.html",
+        "frontend/design-lab/work-unit-runtime-carrier-switch.css",
+        "frontend/design-lab/work-unit-runtime-carrier-switch.js",
+        "frontend/design-lab/work-unit-runtime-carrier-switch-trace.css",
+        "frontend/design-lab/work-unit-runtime-carrier-switch-trace.js"
+      ],
+      "invariants": [
+        "runtime orthogonal to category/disposition/focus",
+        "runtime ornament only while operation exists/is active",
+        "terminal project meaning does not leave false live-runtime ornament",
+        "R1 Identity Accent + Ring and R5 Soft Shade Tag remain switchable presentation carriers"
+      ],
+      "allowed_adaptations": [
+        "production runtime state model may map onto these carriers if semantics remain exact"
+      ],
+      "fixture_caveats": [
+        "carrier switch is a presentation option, not two different runtime states"
+      ],
+      "verification": [
+        "runtime presence/absence state test",
+        "carrier semantic-equivalence test",
+        "terminal ornament removal test"
+      ]
+    },
+    {
+      "id": "M11",
+      "name": "T7 Soft Shade runtime tag",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/068_runtime_tag_motion_clean_perimeter_alternatives.md"
+      ],
+      "decision_target_sha": "08534f94c2f272f969159087de2797a23e36b330",
+      "integration_source_sha": "08534f94c2f272f969159087de2797a23e36b330",
+      "source_files": [
+        "frontend/design-lab/work-unit-runtime-tag-motion.html",
+        "frontend/design-lab/work-unit-runtime-tag-motion.css",
+        "frontend/design-lab/work-unit-runtime-tag-motion-shade.css",
+        "frontend/design-lab/work-unit-runtime-tag-motion.js"
+      ],
+      "invariants": [
+        "state label dominant",
+        "subtle internal shade",
+        "minimal/no glow",
+        "not spinner",
+        "not fake determinate progress",
+        "reduced-motion understandable"
+      ],
+      "allowed_adaptations": [
+        "timing may be tuned for production performance/reduced motion"
+      ],
+      "fixture_caveats": [
+        "motion is state-presence texture, not measured progress"
+      ],
+      "verification": [
+        "visual comparison against T7 target",
+        "reduced-motion check",
+        "no progress-semantic assertion"
+      ]
+    },
+    {
+      "id": "M12",
+      "name": "BLOCKER/BLOCKS/BLOCKED and operational ring distinction",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/069_blocked_as_orthogonal_progress_constraint_visual_grammar_experiment.md",
+        "docs/research/070_shared_operational_status_carrier_blocker_relationship_and_work_unit_detail_deferment.md"
+      ],
+      "decision_target_sha": "88fd3c3cfe7a1eff4664afde06341b7b654c97f4",
+      "integration_source_sha": "88fd3c3cfe7a1eff4664afde06341b7b654c97f4",
+      "source_files": [
+        "frontend/design-lab/work-unit-blocked-carrier.html",
+        "frontend/design-lab/work-unit-blocked-carrier.css",
+        "frontend/design-lab/work-unit-blocked-carrier.js",
+        "frontend/design-lab/work-unit-blocked-carrier-ring-swap.css",
+        "frontend/design-lab/work-unit-progress-constraint.html",
+        "frontend/design-lab/work-unit-progress-constraint.css",
+        "frontend/design-lab/work-unit-progress-constraint.js"
+      ],
+      "invariants": [
+        "BLOCKER WorkUnit -> BLOCKS relation -> BLOCKED target WorkUnit",
+        "BLOCKED distinct from runtime",
+        "BLOCKER source role distinct from BLOCKED target condition",
+        "BLOCKED sharper compact ring",
+        "FAIL smoother circular compact ring",
+        "shared carrier family does not collapse semantics"
+      ],
+      "allowed_adaptations": [
+        "production object/relation schema may evolve if this causal distinction remains"
+      ],
+      "fixture_caveats": [
+        "shared visual family is not evidence that blocked and failed are same semantic type"
+      ],
+      "verification": [
+        "semantic fixture relation test",
+        "BLOCKED/FAIL shape comparison",
+        "coexistence with category/disposition channels"
+      ]
+    },
+    {
+      "id": "M13",
+      "name": "A3 HIGH-attention Signal Bars",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/071_work_unit_attention_priority_visual_grammar_experiment.md"
+      ],
+      "decision_target_sha": "767c66f76974d3c0a851de0dfa17c502817a4b12",
+      "integration_source_sha": "767c66f76974d3c0a851de0dfa17c502817a4b12",
+      "source_files": [
+        "frontend/design-lab/work-unit-attention-priority.html",
+        "frontend/design-lab/work-unit-attention-priority.css",
+        "frontend/design-lab/work-unit-attention-priority.js"
+      ],
+      "invariants": [
+        "Signal Bars only for HIGH attention",
+        "far right edge",
+        "short/restrained geometry",
+        "attention orthogonal to category/disposition/runtime/blocked"
+      ],
+      "allowed_adaptations": [
+        "attention ontology beyond HIGH may evolve separately"
+      ],
+      "fixture_caveats": [
+        "absence of bars for non-HIGH is intentional"
+      ],
+      "verification": [
+        "HIGH-only visibility assertion",
+        "coexistence with BLOCKED/category",
+        "geometry comparison"
+      ]
+    },
+    {
+      "id": "M14",
+      "name": "SEL2 persistent selection",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/072_work_unit_selection_persistent_state_visual_grammar_experiment.md"
+      ],
+      "decision_target_sha": "e7304fe834d86166d843fda7e1df0f4ddb1f793a",
+      "integration_source_sha": "e7304fe834d86166d843fda7e1df0f4ddb1f793a",
+      "source_files": [
+        "frontend/design-lab/work-unit-selection-state.html",
+        "frontend/design-lab/work-unit-selection-state.css",
+        "frontend/design-lab/work-unit-selection-state.js",
+        "frontend/design-lab/work-unit-grammar.css",
+        "frontend/design-lab/work-unit-grammar.js"
+      ],
+      "invariants": [
+        "four outside right-angle corner brackets",
+        "neutral cool-white/blue",
+        "restrained glow",
+        "persistent at rest",
+        "H4 layers on hover",
+        "selection is UI state not semantic project state",
+        "conversation ownership does not imply SEL2"
+      ],
+      "allowed_adaptations": [
+        "selection state management may move into application state"
+      ],
+      "fixture_caveats": [
+        "WorkUnit base files are included because SEL2 was reviewed in the canonical WorkUnit/H4 context"
+      ],
+      "verification": [
+        "four-bracket geometry assertion",
+        "rest/hover comparison",
+        "semantic-state non-mutation test"
+      ]
+    },
+    {
+      "id": "M15",
+      "name": "X5 balanced contextual expansion without context recession",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/073_work_unit_contextual_detail_expansion_architecture_experiment.md",
+        "docs/research/074_work_unit_internal_layout_grammar_experiment.md"
+      ],
+      "decision_target_sha": "94bc1100b7388cc56497cafc03051ce326424a80",
+      "integration_source_sha": "94bc1100b7388cc56497cafc03051ce326424a80",
+      "source_files": [
+        "frontend/design-lab/work-unit-detail-expansion.html",
+        "frontend/design-lab/work-unit-detail-expansion.css",
+        "frontend/design-lab/work-unit-detail-expansion.js",
+        "frontend/design-lab/work-unit-detail-expansion-x5-accepted.css",
+        "frontend/design-lab/work-unit-detail-expansion-x5-accepted.js",
+        "frontend/design-lab/work-unit-detail-expansion-scroll.css"
+      ],
+      "invariants": [
+        "balanced two-axis expansion",
+        "390x210px design-lab reference geometry",
+        "one integrated WorkUnit object",
+        "surrounding map remains normal salience",
+        "no X5-specific context recession",
+        "bounded internal scrolling"
+      ],
+      "allowed_adaptations": [
+        "responsive production dimensions may scale while preserving balanced two-axis character",
+        "final internal field schema remains open"
+      ],
+      "fixture_caveats": [
+        "390x210 is the accepted design-lab reference, not a universal fixed production pixel contract",
+        "six-field layout payload is not semantic schema"
+      ],
+      "verification": [
+        "reference geometry comparison",
+        "surrounding-context salience assertion",
+        "scroll behavior test",
+        "selection/state preservation test"
+      ]
+    },
+    {
+      "id": "M16",
+      "name": "L0 Flat Fields expanded WorkUnit internal layout",
+      "maturity": "PROVISIONAL_ONLY",
+      "decision_sources": [
+        "docs/research/074_work_unit_internal_layout_grammar_experiment.md"
+      ],
+      "decision_target_sha": "871075bcda8ff812e1a96b18b442c803d5da7faf",
+      "integration_source_sha": "871075bcda8ff812e1a96b18b442c803d5da7faf",
+      "source_files": [
+        "frontend/design-lab/work-unit-internal-layout.html",
+        "frontend/design-lab/work-unit-internal-layout.css",
+        "frontend/design-lab/work-unit-internal-layout.js"
+      ],
+      "invariants": [
+        "L0 may be used only as provisional working default",
+        "L0 is not final information architecture",
+        "six fixture fields are not frozen schema",
+        "L1-L8 remain preserved/not rejected"
+      ],
+      "allowed_adaptations": [
+        "minimum composition changes allowed while remaining explicitly provisional"
+      ],
+      "fixture_caveats": [
+        "final internal layout and semantic payload remain deferred"
+      ],
+      "verification": [
+        "integration labels L0 provisional",
+        "no production schema inferred from fixture fields"
+      ]
+    },
+    {
+      "id": "M17",
+      "name": "Z7 Pull-Back Then Dive and full-stage specialist workspace",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/075_work_unit_deep_focus_transition_architecture_experiment.md",
+        "docs/research/076_claude_informed_factorized_deep_focus_transition_experiment.md",
+        "docs/research/077_fullscreen_specialist_workspace_and_spatial_zoom_transition_experiment.md"
+      ],
+      "decision_target_sha": "04616a52df5cceff6c59223bbd6f07448d027510",
+      "integration_source_sha": "04616a52df5cceff6c59223bbd6f07448d027510",
+      "source_files": [
+        "frontend/design-lab/work-unit-deep-focus-spatial-zoom.html",
+        "frontend/design-lab/work-unit-deep-focus-spatial-zoom.css",
+        "frontend/design-lab/work-unit-deep-focus-spatial-zoom.js",
+        "frontend/design-lab/work-unit-deep-focus-spatial-zoom-refinement.css",
+        "frontend/design-lab/work-unit-deep-focus-spatial-zoom-refinement.js"
+      ],
+      "invariants": [
+        "world pulls back first",
+        "selected WorkUnit remains anchored/highlighted",
+        "then dive toward selected work",
+        "specialist workspace uses full available stage",
+        "no giant framed panel with large leftover margins",
+        "selected category treatment remains represented",
+        "compact topology compass retained",
+        "return preserves coherent project context"
+      ],
+      "allowed_adaptations": [
+        "specialist analytical module internals remain open",
+        "motion timing may be tuned if spatial causality survives"
+      ],
+      "fixture_caveats": [
+        "specialist fixture contents are schematic and not final analytical module composition"
+      ],
+      "verification": [
+        "transition recording comparison",
+        "stage-occupancy comparison",
+        "return-state restoration test",
+        "reduced-motion alternative review"
+      ]
+    },
+    {
+      "id": "M18",
+      "name": "S0 Geometric Control while semantic zoom remains deferred",
+      "maturity": "PROVISIONAL_ONLY",
+      "decision_sources": [
+        "docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md"
+      ],
+      "decision_target_sha": "65ac02326a75b1c9f056676819d2d1b7b23b74c5",
+      "integration_source_sha": "65ac02326a75b1c9f056676819d2d1b7b23b74c5",
+      "source_files": [
+        "frontend/design-lab/work-unit-semantic-zoom.html",
+        "frontend/design-lab/work-unit-semantic-zoom.css",
+        "frontend/design-lab/work-unit-semantic-zoom.js"
+      ],
+      "invariants": [
+        "S0 geometric control only",
+        "semantic zoom deferred",
+        "S1-S8 preserved not rejected",
+        "no semantic abstraction/grouping policy selected during integration"
+      ],
+      "allowed_adaptations": [
+        "geometric zoom tuning may follow Specification 008 capability bounds"
+      ],
+      "fixture_caveats": [
+        "the semantic-zoom experiment contains candidates that are evidence only"
+      ],
+      "verification": [
+        "assert only geometric zoom active absent later explicit decision"
+      ]
+    },
+    {
+      "id": "M19",
+      "name": "Quiet Graphite Conversation Workspace",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/081_independent_conversation_workspace_dual_design_comparison.md",
+        "docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md"
+      ],
+      "decision_target_sha": "c66f72a74e681f89fd52ba591a1387ea50f0e959",
+      "integration_source_sha": "c66f72a74e681f89fd52ba591a1387ea50f0e959",
+      "source_files": [
+        "frontend/design-lab/conversation-workspace-chatgpt-independent.html",
+        "frontend/design-lab/conversation-workspace-chatgpt-independent.css",
+        "frontend/design-lab/conversation-workspace-chatgpt-independent.js"
+      ],
+      "invariants": [
+        "first-class Conversation workspace not generic side chat",
+        "thread rail",
+        "broad readable transcript",
+        "structured project references/events",
+        "compact native composer",
+        "bounded context surface",
+        "Quiet Graphite palette/spacing/hierarchy",
+        "reference transcript width 850px",
+        "reference message gap 30px",
+        "reference message pad 14px 16px"
+      ],
+      "allowed_adaptations": [
+        "project/thread content may change",
+        "componentization may change",
+        "responsive production dimensions may adapt while preserving hierarchy"
+      ],
+      "fixture_caveats": [
+        "other visual systems rendered in the comparison are rejected as current baselines"
+      ],
+      "verification": [
+        "visual token/geometry comparison",
+        "transcript width/spacing reference check",
+        "structural region checklist"
+      ]
+    },
+    {
+      "id": "M20",
+      "name": "Conversation scope, Boxes/Text rail and A6 Adaptive Anchor",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md",
+        "docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md",
+        "docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md"
+      ],
+      "decision_target_sha": "606e027f281b35c2dfc93d059a1681df23bc2b73",
+      "integration_source_sha": "606e027f281b35c2dfc93d059a1681df23bc2b73",
+      "source_files": [
+        "frontend/design-lab/conversation-workspace-work-unit-anchor.html",
+        "frontend/design-lab/conversation-workspace-work-unit-anchor.css",
+        "frontend/design-lab/conversation-workspace-work-unit-anchor.js",
+        "frontend/design-lab/conversation-workspace-work-unit-anchor-canonical-boxes.css"
+      ],
+      "invariants": [
+        "project-general conversation",
+        "work-unit-scoped conversation",
+        "per-turn context separate from ownership",
+        "A6 source WorkUnit expands/becomes part of Conversation context",
+        "Boxes mode canonical WorkUnit identity",
+        "Text mode ordinary text navigation",
+        "no redundant floating A6 home-object card",
+        "conversation ownership does not imply SEL2"
+      ],
+      "allowed_adaptations": [
+        "production conversation persistence/session model remains open",
+        "rail implementation may componentize"
+      ],
+      "fixture_caveats": [
+        "A6 no-floating-card refinement is later than initial A6 selection and must be included"
+      ],
+      "verification": [
+        "A6 adaptive-mode floating-card absence assertion",
+        "Boxes/Text switch comparison",
+        "scope identity test",
+        "Quiet Graphite base-style comparison"
+      ]
+    },
+    {
+      "id": "M21",
+      "name": "Conversation access and coexistence",
+      "maturity": "MUST_PORT",
+      "decision_sources": [
+        "docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md"
+      ],
+      "decision_target_sha": "db31970d6885ce785609f9c3300f22123130d821",
+      "integration_source_sha": "db31970d6885ce785609f9c3300f22123130d821",
+      "source_files": [
+        "frontend/design-lab/conversation-workspace-access-coexistence.html",
+        "frontend/design-lab/conversation-workspace-access-coexistence.css",
+        "frontend/design-lab/conversation-workspace-access-coexistence.js"
+      ],
+      "invariants": [
+        "Conversation reachable from Grid neutral",
+        "Conversation reachable from Grid selected",
+        "Conversation reachable from X5 expanded",
+        "Conversation reachable from Deep Dive specialist",
+        "full Conversation focus",
+        "co-present work + Conversation",
+        "project-general and work-unit scope both available",
+        "opening Conversation preserves source work state",
+        "closing Conversation restores/preserves source work state"
+      ],
+      "allowed_adaptations": [
+        "final co-present width/split resizing open",
+        "full-chat transition choreography open",
+        "conversation URL/persistence contracts open"
+      ],
+      "fixture_caveats": [
+        "browser fixture factorizes access/presentation/scope; it does not freeze final split geometry"
+      ],
+      "verification": [
+        "state matrix test across work-context x conversation-presentation",
+        "open/close restoration assertion",
+        "scope preservation assertion"
+      ]
+    },
+    {
+      "id": "M22",
+      "name": "Conversation entry-transition candidates E0-E4",
+      "maturity": "DO_NOT_SELECT_DURING_INTEGRATION",
+      "decision_sources": [
+        "docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md"
+      ],
+      "decision_target_sha": "43ee0ae0ffc63eba6e99a42e9157568c53cc8806",
+      "integration_source_sha": "43ee0ae0ffc63eba6e99a42e9157568c53cc8806",
+      "source_files": [
+        "frontend/design-lab/conversation-workspace-entry-transition.html",
+        "frontend/design-lab/conversation-workspace-entry-transition.css",
+        "frontend/design-lab/conversation-workspace-entry-transition.js"
+      ],
+      "invariants": [
+        "no transition winner selected",
+        "E0-E4 preserved only as choreography evidence"
+      ],
+      "allowed_adaptations": [
+        "minimum neutral transition glue may be introduced and explicitly labeled provisional"
+      ],
+      "fixture_caveats": [
+        "none of E0-E4 is accepted"
+      ],
+      "verification": [
+        "no integrated documentation/code labels an E0-E4 candidate accepted without a later decision"
+      ]
+    },
+    {
+      "id": "M23",
+      "name": "Failed holistic browser exclusion",
+      "maturity": "EXCLUDED_SOURCE",
+      "decision_sources": [
+        "docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md",
+        "docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md",
+        "docs/checkpoints/250_integrated_cockpit_fidelity_failure_recovery_audit_opened.md"
+      ],
+      "decision_target_sha": "8e554d847bb3b6318db432abcb5dff742f0fa523",
+      "integration_source_sha": null,
+      "source_files": [
+        "frontend/design-lab/cockpit-integrated-baseline.html",
+        "frontend/design-lab/cockpit-integrated-baseline.css",
+        "frontend/design-lab/cockpit-integrated-baseline.js"
+      ],
+      "invariants": [
+        "failed browser is diagnostic evidence only",
+        "must not supply new visual decisions",
+        "must not become parent baseline/source for replacement build"
+      ],
+      "allowed_adaptations": [],
+      "fixture_caveats": [
+        "source files are deliberately listed so tooling/review can detect accidental reuse"
+      ],
+      "verification": [
+        "replacement integration source graph does not import/copy the failed baseline as authoritative source"
+      ]
+    }
+  ]
+}
