@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en" data-runtime-carrier="ring" data-rail-mode="boxes" data-focus-current="false" data-micro-design="light" data-box-shape="subtle" data-connector-terminal="arrows">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>ADS · Integrated Project Cockpit Baseline</title>
+  <link rel="stylesheet" href="./cockpit-integrated-baseline.css" />
+</head>
+<body>
+  <main class="cockpit" id="cockpit">
+    <header class="cockpit-hud" id="cockpit-hud">
+      <div class="hud-left">
+        <button class="project-mark" type="button" aria-label="Project details">A</button>
+        <div class="project-copy">
+          <strong>Autonomous Data Science</strong>
+          <span>Telco churn project</span>
+        </div>
+        <span class="hud-divider"></span>
+        <div class="surface-crumb" id="surface-crumb">
+          <span>PROJECT COCKPIT</span>
+          <strong>Project map</strong>
+        </div>
+      </div>
+
+      <div class="hud-center" aria-label="Current process">
+        <span class="sync-dot"></span>
+        <span id="hud-status">Project state synchronized</span>
+      </div>
+
+      <div class="hud-actions">
+        <button id="focus-current" class="hud-button" type="button">Focus current</button>
+        <button id="jump-button" class="hud-button" type="button">Jump</button>
+        <button id="global-conversations" class="hud-button primary" type="button">Conversations</button>
+        <button id="settings-button" class="icon-button" type="button" aria-label="Cockpit appearance settings">⌘</button>
+        <button id="fullscreen-button" class="icon-button" type="button" aria-label="Enter fullscreen">⛶</button>
+      </div>
+    </header>
+
+    <section class="settings-popover" id="settings-popover" hidden>
+      <div class="popover-head"><strong>Cockpit appearance</strong><button id="settings-close" type="button">×</button></div>
+      <label><span>Box shape</span><select id="box-shape-select"><option value="normal">Normal</option><option value="subtle" selected>Subtle shapes</option></select></label>
+      <label><span>Micro design</span><select id="micro-design-select"><option value="none">None</option><option value="material">Micro material</option><option value="light" selected>Micro light</option></select></label>
+      <label><span>Connector terminal</span><select id="connector-terminal-select"><option value="clean">Clean</option><option value="dots">Micro dots</option><option value="sockets">Frame sockets</option><option value="arrows" selected>Direction arrows</option></select></label>
+      <label><span>Runtime carrier</span><select id="runtime-select"><option value="ring" selected>Dot + dynamic ring</option><option value="tag">T7 Soft Shade tag</option></select></label>
+      <p>Appearance controls never change project semantics.</p>
+    </section>
+
+    <section class="jump-popover" id="jump-popover" hidden>
+      <div class="popover-head"><strong>Jump to project work</strong><button id="jump-close" type="button">×</button></div>
+      <input id="jump-search" type="search" placeholder="Search work units…" />
+      <button data-jump="model-selection" type="button"><span class="mini-shape diamond"></span><span><strong>Model selection strategy</strong><small>Model Work · Current</small></span></button>
+      <button data-jump="missingness" type="button"><span class="mini-shape square"></span><span><strong>Production missingness</strong><small>Investigation · Current · Blocked</small></span></button>
+      <button data-jump="threshold" type="button"><span class="mini-shape triangle">△</span><span><strong>Threshold policy</strong><small>Validation · Deferred</small></span></button>
+      <button data-jump="evaluation" type="button"><span class="mini-shape plus">+</span><span><strong>Final evaluation</strong><small>Evaluation · Future</small></span></button>
+    </section>
+
+    <section class="map-viewport" id="map-viewport" aria-label="Project map viewport">
+      <div class="world" id="world">
+        <div class="world-grid" aria-hidden="true"></div>
+        <div class="ambient-current current-a" aria-hidden="true"></div>
+        <div class="ambient-current current-b" aria-hidden="true"></div>
+        <div class="major-glints" aria-hidden="true"></div>
+
+        <div class="project-plane" id="project-plane">
+          <svg class="connectors" id="connectors" viewBox="0 0 2200 1320" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <marker id="arrow-neutral" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" /></marker>
+              <marker id="arrow-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" /></marker>
+              <marker id="arrow-blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" /></marker>
+              <marker id="arrow-purple" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 Z" /></marker>
+            </defs>
+            <g class="edge edge-data">
+              <path d="M425 310 C540 310 545 430 665 430" marker-end="url(#arrow-green)" />
+              <g class="relation-tag" transform="translate(522 345)"><rect width="66" height="20" rx="7"></rect><text x="33" y="13">INFORMS</text></g>
+            </g>
+            <g class="edge edge-model">
+              <path d="M895 430 C1020 430 1015 320 1145 320" marker-end="url(#arrow-blue)" />
+              <g class="relation-tag" transform="translate(1003 357)"><rect width="76" height="20" rx="7"></rect><text x="38" y="13">VALIDATES</text></g>
+            </g>
+            <g class="edge edge-blocks">
+              <path d="M805 555 C930 650 1040 650 1150 555" marker-end="url(#arrow-neutral)" />
+              <g class="relation-tag blocks-tag" transform="translate(948 618)"><rect width="58" height="20" rx="7"></rect><text x="29" y="13">BLOCKS</text></g>
+            </g>
+            <g class="edge edge-eval">
+              <path d="M1375 320 C1510 320 1510 450 1648 450" marker-end="url(#arrow-purple)" />
+              <g class="relation-tag" transform="translate(1480 359)"><rect width="72" height="20" rx="7"></rect><text x="36" y="13">FEEDS</text></g>
+            </g>
+          </svg>
+
+          <article class="work-unit question current" id="data-question" data-unit="data-question" style="left:220px; top:245px;">
+            <span class="selection-corners"><i></i><i></i><i></i><i></i></span>
+            <div class="node-surface">
+              <div class="node-light"></div>
+              <header><span class="category-marker circle"></span><small>QUESTION / BLOCKER</small><span class="disposition-tag">CURRENT</span></header>
+              <h2>Data quality scope</h2>
+              <p>What missingness patterns require explicit treatment before modelling?</p>
+              <footer><span class="relation-hint">Framing</span><span class="status-slot none">NO RUNTIME</span></footer>
+            </div>
+          </article>
+
+          <article class="work-unit investigation current blocked" id="missingness" data-unit="missingness" style="left:665px; top:365px;">
+            <span class="selection-corners"><i></i><i></i><i></i><i></i></span>
+            <div class="node-surface">
+              <div class="node-light"></div>
+              <header><span class="category-marker square"></span><small>INVESTIGATION</small><span class="disposition-tag">CURRENT</span></header>
+              <h2>Production missingness</h2>
+              <p>Determine whether unresolved upstream data gaps block deployment-grade evaluation.</p>
+              <footer><span class="relation-hint">Investigation</span><span class="status-slot blocked-status"><i class="status-dot"></i><i class="status-ring sharp"></i><span class="t7-label">BLOCKED</span></span></footer>
+            </div>
+          </article>
+
+          <article class="work-unit model current high" id="model-selection" data-unit="model-selection" style="left:1145px; top:255px;">
+            <span class="selection-corners"><i></i><i></i><i></i><i></i></span>
+            <div class="node-surface">
+              <div class="node-light"></div>
+              <header><span class="category-marker diamond"></span><small>MODEL WORK</small><span class="disposition-tag">CURRENT</span></header>
+              <span class="attention-bars" aria-label="High attention"><i></i><i></i><i></i></span>
+              <h2>Model selection strategy</h2>
+              <p>Compare candidate families under one frozen validation protocol.</p>
+              <footer><span class="relation-hint">Model Work</span><span class="status-slot live-status"><i class="status-dot"></i><i class="status-ring smooth"></i><span class="t7-label">RUN</span></span></footer>
+            </div>
+          </article>
+
+          <article class="work-unit validation deferred" id="threshold" data-unit="threshold" style="left:1150px; top:490px;">
+            <span class="selection-corners"><i></i><i></i><i></i><i></i></span>
+            <div class="node-surface">
+              <div class="node-light"></div>
+              <header><span class="category-marker triangle"></span><small>VALIDATION / ANALYSIS</small><span class="disposition-tag">DEFERRED</span></header>
+              <h2>Threshold policy</h2>
+              <p>Define deployment threshold only after comparative evaluation is stable.</p>
+              <footer><span class="relation-hint">Validation</span><span class="status-slot none">NO RUNTIME</span></footer>
+            </div>
+          </article>
+
+          <article class="work-unit evaluation future" id="evaluation" data-unit="evaluation" style="left:1648px; top:385px;">
+            <span class="selection-corners"><i></i><i></i><i></i><i></i></span>
+            <div class="node-surface">
+              <div class="node-light"></div>
+              <header><span class="category-marker plus">+</span><small>EVALUATION</small><span class="disposition-tag">FUTURE</span></header>
+              <h2>Final evaluation</h2>
+              <p>Compare final candidate under deployment-relevant metrics and calibration checks.</p>
+              <footer><span class="relation-hint">Evaluation</span><span class="status-slot none">NO RUNTIME</span></footer>
+            </div>
+          </article>
+
+          <article class="work-unit validation completed" id="chronological" data-unit="chronological" style="left:700px; top:770px;">
+            <span class="selection-corners"><i></i><i></i><i></i><i></i></span>
+            <div class="node-surface">
+              <div class="node-light"></div>
+              <header><span class="category-marker triangle"></span><small>VALIDATION / ANALYSIS</small><span class="disposition-tag">COMPLETED</span></header>
+              <h2>Chronological validation</h2>
+              <p>Frozen holdout protocol for comparable model assessment.</p>
+              <footer><span class="relation-hint">Evidence</span><span class="status-slot none">NO RUNTIME</span></footer>
+            </div>
+          </article>
+
+          <section class="x5-panel" id="x5-panel" aria-label="Expanded work unit" hidden>
+            <div class="x5-heading">
+              <div><span class="category-marker diamond"></span><small>MODEL WORK · CURRENT</small></div>
+              <span class="attention-bars"><i></i><i></i><i></i></span>
+            </div>
+            <h2>Model selection strategy</h2>
+            <div class="x5-fields">
+              <div><small>PURPOSE</small><p>Compare candidate model families under one frozen validation protocol.</p></div>
+              <div><small>CONSTRAINT</small><p>Keep learning breadth separate from final deployment selection.</p></div>
+              <div><small>EVIDENCE</small><p>Chronological validation · linked model results.</p></div>
+              <div><small>NEXT ACTION</small><p>Complete comparable evaluation and document selection logic.</p></div>
+            </div>
+            <div class="x5-actions">
+              <button id="x5-collapse" type="button">Collapse</button>
+              <button id="x5-chat" type="button">Open conversation</button>
+              <button id="x5-deep" class="primary" type="button">Deep dive</button>
+            </div>
+          </section>
+
+          <div class="selection-actions" id="selection-actions" hidden>
+            <strong id="selection-title">Selected work</strong>
+            <button id="selection-expand" type="button">Expand</button>
+            <button id="selection-chat" type="button">Chat</button>
+            <button id="selection-deep" type="button">Deep dive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="map-tools" id="map-tools" aria-label="Map controls">
+      <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+      <button id="zoom-label" class="zoom-label" type="button">100%</button>
+      <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+      <span></span>
+      <button id="fit-project" type="button" aria-label="Fit project">⌗</button>
+      <button id="reset-view" type="button" aria-label="Reset view">◎</button>
+    </aside>
+
+    <section class="compact-composer" id="compact-composer" aria-label="ADS composer">
+      <div class="composer-context"><span class="sync-dot"></span><span id="composer-context-label">Project-aware</span></div>
+      <textarea id="compact-input" rows="1" placeholder="Ask ADS about this project…"></textarea>
+      <button id="composer-open-chat" type="button">Open chat</button>
+      <button class="composer-send" type="button">↑</button>
+    </section>
+
+    <section class="specialist" id="specialist" aria-label="Specialist workspace" hidden>
+      <header class="specialist-header">
+        <div><button id="specialist-back" type="button">← Project</button><div><small>MODEL WORK · DEEP DIVE</small><h1>Model selection strategy</h1></div></div>
+        <div class="specialist-actions"><button id="specialist-conversations" type="button">Conversations</button><button id="specialist-work-chat" type="button">Chat about this work unit</button></div>
+      </header>
+      <div class="specialist-body">
+        <section class="analysis-surface"><div class="module-head"><small>PRIMARY ANALYTICAL SURFACE</small><span>Candidate comparison</span></div><div class="chart-placeholder"><span>Model comparison workspace</span><div class="chart-bars"><i style="height:42%"></i><i style="height:66%"></i><i style="height:53%"></i><i style="height:78%"></i><i style="height:70%"></i></div></div></section>
+        <aside class="evidence-panel"><div class="module-head"><small>EVIDENCE / OUTPUTS</small><span>4 linked</span></div><article><strong>Chronological validation</strong><small>Frozen protocol</small></article><article><strong>Calibration review</strong><small>Pending comparison</small></article><article><strong>Selection notes</strong><small>Draft</small></article></aside>
+        <section class="notes-panel"><div class="module-head"><small>WORK UNIT CONTEXT</small><span>Current</span></div><p>Compare candidate model families under the same validation evidence. Keep learning breadth separate from the final deployment decision.</p></section>
+      </div>
+      <aside class="topology-compass" aria-label="Project position compass"><small>PROJECT POSITION</small><div class="compass-grid"><i class="c1"></i><i class="c2"></i><i class="c3 active"></i><i class="c4"></i><i class="c5"></i></div></aside>
+    </section>
+
+    <section class="conversation-workspace" id="conversation-workspace" aria-label="Conversation Workspace" hidden>
+      <aside class="thread-rail" id="thread-rail">
+        <div class="conversation-brand"><span>A</span><div><strong>Autonomous Data Science</strong><small>Telco churn project</small></div></div>
+        <button class="conversation-search" type="button">⌕ Search conversations <kbd>⌘ K</kbd></button>
+        <div class="rail-switch"><button id="rail-boxes" class="active" type="button">Boxes</button><button id="rail-text" type="button">Text</button></div>
+        <div class="rail-heading">PROJECT CONVERSATIONS <button type="button">+</button></div>
+        <button class="conversation-thread project-thread" data-thread="general" type="button"><span class="project-glyph">P</span><div><small>PROJECT</small><strong>General project discussion</strong></div></button>
+        <button class="conversation-thread work-thread active" data-thread="model-selection" type="button">
+          <div class="thread-box model-thread-box"><div><span class="category-marker diamond"></span><small>MODEL WORK · CURRENT</small><span class="attention-bars"><i></i><i></i><i></i></span></div><strong>Model selection strategy</strong><span class="thread-status run">RUN</span></div>
+          <div class="thread-text"><span class="text-dot model-dot"></span><div><strong>Model selection strategy</strong><small>Current · 43 messages</small></div></div>
+        </button>
+        <button class="conversation-thread work-thread" data-thread="missingness" type="button">
+          <div class="thread-box investigation-thread-box"><div><span class="category-marker square"></span><small>INVESTIGATION · CURRENT</small></div><strong>Production missingness</strong><span class="thread-status blocked-label">BLOCKED</span></div>
+          <div class="thread-text"><span class="text-dot investigation-dot"></span><div><strong>Production missingness</strong><small>Yesterday · linked to Investigation</small></div></div>
+        </button>
+        <button class="conversation-thread work-thread" data-thread="threshold" type="button">
+          <div class="thread-box validation-thread-box"><div><span class="category-marker triangle"></span><small>VALIDATION · DEFERRED</small></div><strong>Threshold policy</strong></div>
+          <div class="thread-text"><span class="text-dot validation-dot"></span><div><strong>Threshold policy</strong><small>Aug 25 · 18 messages</small></div></div>
+        </button>
+        <div class="rail-heading archived-heading">ARCHIVED <span>2</span></div>
+        <button class="archived-thread" type="button"><span></span><div><strong>EDA interpretation</strong><small>Aug 18</small></div></button>
+        <button class="archived-thread" type="button"><span></span><div><strong>Baseline review</strong><small>Aug 15</small></div></button>
+        <div class="rail-sync"><span class="sync-dot"></span>Project state synchronized</div>
+      </aside>
+
+      <section class="conversation-main">
+        <header class="conversation-header">
+          <div class="conversation-title-group"><button id="conversation-close" type="button">←</button><div><div class="conversation-title-row"><h1 id="conversation-title">Model selection strategy</h1><span id="conversation-scope">WORK UNIT</span></div><p id="conversation-subtitle">Conversation anchored to one project work unit.</p></div></div>
+          <div class="conversation-actions"><button type="button">Find</button><button type="button">Outline</button><button id="conversation-expand-box" type="button">Expand box</button><button id="conversation-split" type="button">Co-present</button><button type="button">•••</button></div>
+        </header>
+        <div class="transcript-scroll">
+          <div class="transcript">
+            <div class="date-divider">TODAY · 08:38</div>
+            <article class="turn user-turn"><div class="avatar">U</div><div><div class="turn-meta">YOU <span>08:38</span></div><div class="user-message">I want the model comparison to stay broad, but I also want the final selection logic to be disciplined and easy to recover later.</div><div class="turn-tools">Copy <span>Link</span></div></div></article>
+            <article class="turn ads-turn"><div class="avatar">A</div><div><div class="turn-meta">ADS <span>08:39</span><span>Reasoning</span></div><div class="ads-answer"><p>The comparison can stay broad while the final decision remains disciplined. I would separate <strong>learning breadth</strong> from <strong>deployment selection</strong>.</p><p>The current work unit already links to the frozen chronological validation protocol, so every candidate can be compared under the same evidence rather than changing the evaluation frame model by model.</p><div class="semantic-reference-row"><button><span class="category-marker triangle"></span><span><small>VALIDATION</small><strong>Chronological validation</strong></span></button><button><span class="category-marker diamond"></span><span><small>MODEL WORK</small><strong>Boosted candidate</strong></span></button></div><div class="project-change"><span class="sync-dot"></span><div><small>PROJECT STATE</small><strong>Selection criteria linked to frozen validation evidence</strong></div></div></div></div></article>
+            <article class="turn user-turn"><div class="avatar">U</div><div><div class="turn-meta">YOU <span>08:42</span></div><div class="user-message">Good. Keep that connected to the work unit rather than only leaving it in the conversation.</div></div></article>
+          </div>
+        </div>
+        <footer class="full-composer"><div class="full-context" id="full-context"><span>HOME</span><button>◆ Model selection strategy</button></div><textarea rows="2" placeholder="Continue this discussion, bring in evidence, or change project state…"></textarea><div><button type="button">＋</button><button type="button">Commands</button><span><i class="sync-dot"></i> Project-aware</span><button class="composer-send" type="button">↑</button></div></footer>
+      </section>
+
+      <aside class="conversation-box-panel" id="conversation-box-panel" hidden>
+        <div class="box-panel-head"><div><small>HOME WORK UNIT</small><strong>Model selection strategy</strong></div><button id="conversation-box-close" type="button">×</button></div>
+        <div class="expanded-home-box"><div><span class="category-marker diamond"></span><small>MODEL WORK · CURRENT</small><span class="attention-bars"><i></i><i></i><i></i></span></div><h2>Model selection strategy</h2><span class="thread-status run">RUN</span></div>
+        <dl><div><dt>PURPOSE</dt><dd>Compare candidate model families under one frozen validation protocol.</dd></div><div><dt>CONSTRAINT</dt><dd>Keep learning breadth separate from deployment choice.</dd></div><div><dt>EVIDENCE</dt><dd>Chronological validation · linked model results.</dd></div><div><dt>NEXT ACTION</dt><dd>Complete comparable evaluation.</dd></div></dl>
+      </aside>
+    </section>
+
+    <div class="transition-layer" id="transition-layer" aria-hidden="true"></div>
+  </main>
+  <script type="module" src="./cockpit-integrated-baseline.js"></script>
+</body>
+</html>
