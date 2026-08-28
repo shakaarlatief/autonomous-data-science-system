@@ -1,7 +1,7 @@
 # MC-0004: Next-Generation Project Cockpit Design Exploration
 
 **Thread:** MC-0004  
-**Status:** ACTIVE / PHASE C IMPLEMENTATION-PROVENANCE RECOVERY  
+**Status:** ACTIVE / PHASE C SOURCE-FAITHFUL HOLISTIC REINTEGRATION  
 **Review mode:** `INDEPENDENT_THEN_COMPARATIVE`  
 **Task owner:** ChatGPT  
 **Target-state write owner:** ChatGPT  
@@ -76,6 +76,17 @@ Phase C implementation-provenance recovery
     source-level failure diagnosis
     project owner review completed in chatgpt-09
     exhaustive decision/source recovery explicitly authorized
+
+Phase C provenance recovery completion
+    Phase-C Decision Ledger frozen
+    23-entry accepted implementation manifest frozen
+    deterministic validator added
+    full-history CI gate added
+    workflow run 33156357834 PASS
+    exact historical source verification PASS
+    Research 089
+    Checkpoint 251
+    source-faithful holistic reintegration opened
 ```
 
 ## Failed holistic integration disposition
@@ -93,10 +104,11 @@ FAILED INTEGRATION ATTEMPT
 NOT an accepted Cockpit baseline
 NOT a production target
 NOT a basis for new visual decisions
+EXCLUDED from the replacement implementation source graph
 PRESERVED only as diagnostic evidence
 ```
 
-The failure mode is now established at source level:
+The failure mode is established at source level:
 
 ```text
 accepted browser-rendered implementation existed
@@ -105,7 +117,7 @@ accepted browser-rendered implementation existed
     -> implementation fidelity was not mechanically or visually gated
 ```
 
-This is prohibited for the recovery build.
+That process is prohibited for the replacement integration.
 
 ## Preserved accepted / working Phase-C results
 
@@ -170,28 +182,28 @@ Research 084 B1-B4 Conversation synthesis candidates
     must not replace the selected Quiet Graphite + A6 direction
 ```
 
-## Current recovery contract
+## Completed recovery contract
 
-Before another holistic Cockpit implementation is started, ChatGPT must build and validate a durable recovery substrate that covers the complete new-Cockpit Phase-C corpus rather than only the short accepted-target list.
-
-Required durable artifacts:
+The repository now contains the durable recovery substrate required before another holistic integration:
 
 ```text
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
-    exhaustive disposition of Phase-C design evidence
-    distinguishes selected, held, provisional, deferred, rejected and diagnostic material
+    exhaustive Research 037-088 disposition ledger
 
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
-    human-readable implementation provenance and integration contract
+    human-readable exact source/invariant/adaptation contract
 
 docs/cockpit/accepted_implementation_manifest.json
-    machine-readable implementation manifest
+    machine-readable 23-entry manifest
 
 scripts/check_cockpit_implementation_manifest.py
-    deterministic structural validator
+    deterministic structural + exact-history validator
+
+.github/workflows/cockpit-implementation-provenance.yml
+    full-history CI gate
 ```
 
-For every mechanism that belongs in the integrated product, the manifest must bind:
+For every mechanism that belongs in the integrated product, the manifest binds:
 
 ```text
 semantic decision
@@ -205,7 +217,24 @@ known fixture caveats
 fidelity verification method
 ```
 
-The manifest must also record decisions that intentionally do **not** authorize implementation, including rejected variants, deferred questions and provisional working defaults. This prevents "everything we explored" from being misread as "everything should be combined."
+The manifest also records decisions that intentionally do **not** authorize implementation, including provisional defaults, unselected candidates and the failed integrated browser.
+
+## Provenance gate result
+
+First full-history run:
+
+```text
+workflow run 33156357834
+commit 2127563c0ed980f7bf6fad36e36b11e76500c59b
+
+Cockpit implementation manifest: PASS
+entries=23 required=19 non_promotable=4
+exact historical source verification: PASS
+```
+
+The implementation-provenance recovery is therefore closed.
+
+This does not mean the replacement integrated browser has passed visual/interaction fidelity. That is the next gate.
 
 ## Integration rule after recovery
 
@@ -340,10 +369,12 @@ Conversation open/close must preserve and restore the source work state.
 
 ```text
 next actor: ChatGPT
-mode: exhaustive implementation-provenance recovery
+mode: source-faithful holistic reintegration
 pending Claude obligation: none
 human fidelity-failure diagnosis review: COMPLETE
-holistic rebuild authorization: NOT YET, pending manifest/fidelity gate completion
+implementation provenance gate: PASS
+integrated fidelity gate: OPEN
+holistic human review: WAITING FOR INTEGRATED FIDELITY PASS
 ```
 
 ## Production boundary
