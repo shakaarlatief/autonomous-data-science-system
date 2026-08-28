@@ -1,0 +1,166 @@
+/*
+ * Human-review fidelity corrections for the source-faithful Cockpit reintegration.
+ *
+ * This layer does not introduce new visual choices. It repairs two integration
+ * regressions against already accepted sources:
+ *   - project-general conversation identity: M20 / 606e027f281b35c2dfc93d059a1681df23bc2b73
+ *   - connector endpoint overlay: 183264bdd07783eaa2354894592f2cf4a076b6ec
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Project-general conversation: restore the accepted neutral project artifact */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-project-thread-artifact {
+  grid-template-columns: 28px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+  border-radius: 8px;
+  padding: 8px 9px;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--cq-panel-2) 92%, transparent),
+    var(--cq-stage)
+  );
+}
+
+/*
+ * The earlier integration selector targeted every direct span and therefore
+ * also turned the text wrapper into a 27 px glyph box. The accepted source has
+ * a dedicated project glyph and an ordinary text column.
+ */
+.reintegration-project-thread-artifact > .reintegration-project-thread-glyph {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid color-mix(in srgb, var(--cq-accent) 38%, var(--cq-line));
+  border-radius: 7px;
+  background: var(--cq-accent-soft);
+  color: var(--cq-accent);
+  font: 700 8px/1 var(--cq-font-mono);
+}
+
+.reintegration-project-thread-artifact > .reintegration-project-thread-copy {
+  display: block;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.reintegration-project-thread-copy small,
+.reintegration-project-thread-copy strong {
+  display: block;
+}
+
+.reintegration-project-thread-copy small {
+  color: var(--cq-faint);
+  font: 600 6px/1.2 var(--cq-font-mono);
+  letter-spacing: 0.07em;
+}
+
+.reintegration-project-thread-copy strong {
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--cq-text);
+  font-size: 8.5px;
+  font-weight: 650;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Connector endpoints: restore the accepted above-node SVG overlay strategy  */
+/* -------------------------------------------------------------------------- */
+
+.reintegration-port-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/*
+ * Phase-C completion initially mounted the same endpoint geometry directly in
+ * the relation SVG. Keep those compatibility nodes inert once the dedicated
+ * accepted overlay is present so there is exactly one rendered endpoint layer.
+ */
+html[data-port-overlay-recovered="true"] #reintegration-relations .reintegration-terminal-dot,
+html[data-port-overlay-recovered="true"] #reintegration-relations .reintegration-terminal-socket {
+  display: none !important;
+}
+
+.reintegration-port-terminal {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 160ms ease, fill 160ms ease, stroke 160ms ease, filter 160ms ease;
+}
+
+.reintegration-port-dot {
+  fill: rgba(153, 170, 193, 0.72);
+  stroke: rgba(11, 17, 25, 0.94);
+  stroke-width: 1;
+}
+
+.reintegration-port-socket {
+  fill: rgba(16, 23, 33, 0.98);
+  stroke: rgba(153, 170, 193, 0.72);
+  stroke-width: 1.1;
+}
+
+html[data-relation-presentation="class-tag"] .reintegration-port-group .reintegration-port-dot {
+  fill: rgba(var(--class-rgb), 0.78);
+  stroke: rgba(var(--class-rgb), 0.90);
+}
+
+html[data-relation-presentation="class-tag"] .reintegration-port-group .reintegration-port-socket {
+  stroke: rgba(var(--class-rgb), 0.90);
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-port-group .reintegration-port-dot {
+  fill: rgba(153, 170, 193, 0.72);
+  stroke: rgba(11, 17, 25, 0.94);
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-port-group .reintegration-port-socket {
+  stroke: rgba(153, 170, 193, 0.72);
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-port-group.is-related .reintegration-port-dot {
+  fill: rgba(var(--hover-rgb), 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
+}
+
+html[data-relation-presentation="neutral-hover"] .reintegration-port-group.is-related .reintegration-port-socket {
+  stroke: rgba(var(--hover-rgb), 0.94);
+  filter: drop-shadow(0 0 3px rgba(var(--hover-rgb), 0.40));
+}
+
+html[data-connector-terminal="dots"] .reintegration-port-overlay .reintegration-port-dot {
+  visibility: visible;
+  opacity: 0.88;
+}
+
+html[data-connector-terminal="sockets"] .reintegration-port-overlay .reintegration-port-socket {
+  visibility: visible;
+  opacity: 0.92;
+}
+
+html[data-connector-terminal="clean"] .reintegration-port-overlay .reintegration-port-terminal,
+html[data-connector-terminal="arrows"] .reintegration-port-overlay .reintegration-port-terminal {
+  visibility: hidden;
+  opacity: 0;
+}
