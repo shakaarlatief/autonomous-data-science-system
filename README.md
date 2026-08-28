@@ -11,14 +11,14 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            245
+checkpoint            246
 active branch         v1-cockpit-design-exploration
 active PR             none
 exploration base      2480109fadeee1e480ef03b82e335aacdf9adf91
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation Workspace independent browser comparison
+current boundary      Conversation scope + work-unit anchor; Claude ideation pending
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -49,6 +49,7 @@ Z7 Pull-Back Then Dive deep-focus entry
 fullscreen specialist-workspace end state
 compact topology compass retained in deep focus
 S0 Geometric Control provisional zoom working default
+Quiet Graphite current Conversation Workspace visual baseline
 ```
 
 Important targets:
@@ -70,68 +71,92 @@ semantic zoom browser         65ac02326a75b1c9f056676819d2d1b7b23b74c5
 
 Semantic zoom is deliberately deferred. S0 remains the working behavior; S1-S8 remain preserved and are not rejected.
 
-## Active Slice 02P: Conversation Workspace
+## Active Slice 02Q: Conversation Scope + Work-Unit Anchor
 
-The project owner rejected the initial Conversation Workspace visual design as unattractive and requested a clean independent redesign round from Claude and ChatGPT covering the entire chat experience, including visual identity, colors, transcript geometry, message treatment, references, composer, navigation and micro-details.
+The independent Conversation Workspace round is complete and preserved in Research 081. The project owner selected **Quiet Graphite** as the current visual baseline.
 
-That blindness gate is now complete.
-
-Claude response:
+The other currently rendered visual systems are rejected:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
-cab2e464d81b48edadd1b6ae51bb7dd620d7e892
+Deep Navy
+Warm Slate
+Monochrome Signal
+Violet Ink
+Editorial Dark
+Claude Technical Manuscript
+Claude Studio Console
+Claude Hybrid
 ```
 
-ChatGPT isolated independent evidence:
+Future palette work may introduce genuinely new systems, but these rejected variants should not be silently reopened.
+
+The new product distinction is:
 
 ```text
-branch  chatgpt-conversation-workspace-independent-design
-head    c66f72a74e681f89fd52ba591a1387ea50f0e959
+PROJECT-GENERAL CONVERSATION
+    belongs to the project broadly
+    not to one work unit
+
+WORK-UNIT-SCOPED CONVERSATION
+    belongs to one work unit
+    should remain immediately recognizable as belonging to that box
+
+PER-TURN CONTEXT
+    temporary referenced project objects
+    separate from conversation home
 ```
 
-Research 081 preserves the comparison:
+Current browser:
 
 ```text
-docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
 ```
 
-Strong independent convergence:
+Initial browser target:
 
 ```text
-transcript-first long-form surface
-ADS responses primarily document-like
-avoid generic symmetric chat bubbles
-semantic project-object references
-structured project changes separate from ordinary prose
-collapsed secondary tool/provenance detail
-project-aware composer context
-dark restrained professional visual language
+56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
 ```
 
-Material differences remain intentionally open for browser review.
-
-Claude independent browser:
+Research and checkpoint:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
+docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
 ```
 
-ChatGPT independent browser:
+The browser factorizes:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+conversation scope
+    Work-unit scoped / Project general
+
+thread identity
+    Text / Marker + title / Mini work-unit artifact
+
+opened-box presence
+    A0 Chat-only control
+    A1 Header specimen
+    A2 Context shelf
+    A3 Inner sidecar
+    A4 Floating instrument
+    A5 Box inspector
+    A6 Adaptive anchor
 ```
 
-Exact active-branch implementation target containing both browser families:
+The project grid is intentionally absent. Work-unit identity survives as a compact canonical artifact instead of recreating the map.
+
+Claude follow-up is pending:
 
 ```text
-348c1d8a746041d4fa3ca41316ac34f9d79bc745
+request   MC-0004 Message 009
+expected  MC-0004 Message 010
+mode      COMPARATIVE_ONLY / DIVERGENT_IDEATION
 ```
 
-The initial CV0-CV8 browser and Research 079 remain historical evidence. They are not the current visual direction.
+Claude is asked to challenge and broaden the conversation-home model, work-unit identity treatments, project-general identity, opened-box + conversation composition, and X5-to-conversation transition/return behavior.
 
-Conversation persistence/session ontology, transcript schema, storage and final presentation architecture remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
+Conversation persistence/session ontology, final home/anchor schema, multi-object semantics, transcript storage and production implementation remain unfrozen. Consequential project truth remains in structured project state rather than conversation prose alone.
 
 ## Repository preservation
 
@@ -155,16 +180,15 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/245_s0_semantic_zoom_deferred_conversation_workspace_review_opened.md
+docs/checkpoints/246_quiet_graphite_baseline_conversation_scope_anchor_review_opened.md
+docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+frontend/design-lab/conversation-workspace-work-unit-anchor.html
+
+docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
+
 docs/research/081_independent_conversation_workspace_dual_design_comparison.md
-frontend/design-lab/conversation-workspace-claude-independent.html
 frontend/design-lab/conversation-workspace-chatgpt-independent.html
-
-docs/model_collaboration/threads/MC-0004/messages/007_chatgpt_conversation_workspace_blind_design_request.md
-docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
-
-docs/research/079_conversation_workspace_presentation_architecture_experiment.md
-frontend/design-lab/conversation-workspace-architecture.html
+frontend/design-lab/conversation-workspace-claude-independent.html
 
 docs/research/078_project_world_semantic_zoom_level_of_detail_experiment.md
 frontend/design-lab/work-unit-semantic-zoom.html
@@ -181,15 +205,14 @@ docs/model_collaboration/REVIEW_INBOX.md
 
 ```text
 1. pull v1-cockpit-design-exploration
-2. open conversation-workspace-claude-independent.html
-3. compare Technical Manuscript, Studio Console and Hybrid
-4. test sans versus serif inside Technical Manuscript
-5. open conversation-workspace-chatgpt-independent.html
-6. compare Quiet Graphite, Deep Navy, Warm Slate, Monochrome Signal, Violet Ink and Editorial Dark
-7. identify attractive and unattractive whole-system qualities
-8. identify transferable mechanisms rather than forcing one whole-system winner
-9. build synthesis candidates only after this human review
-10. keep S0 zoom behavior provisional
-11. keep Z7 deep focus held
-12. keep production Cockpit untouched
+2. open conversation-workspace-work-unit-anchor.html
+3. compare Work-unit scoped versus Project general
+4. compare Text / Marker + title / Mini work-unit artifact in the left rail
+5. compare A0-A6 opened-box presence mechanisms
+6. judge whether work-unit identity is immediately recognizable without restoring the grid
+7. wait for / inspect Claude Message 010 before converging
+8. preserve Quiet Graphite as current visual baseline
+9. keep S0 zoom behavior provisional
+10. keep Z7 deep focus held
+11. keep production Cockpit untouched
 ```
