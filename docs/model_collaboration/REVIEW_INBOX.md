@@ -33,7 +33,7 @@ human project owner
 Current checkpoint:
 
 ```text
-247
+248
 ```
 
 ## Held Conversation Workspace direction
@@ -52,48 +52,75 @@ A6 Adaptive Anchor
     current opened-box composition
 
 A6 resting state
-    NO redundant floating work-unit box
+    no redundant floating work-unit box
 ```
 
-The project owner explicitly judged the additional B1-B4 Claude-informed composition mechanisms irrelevant to the already chosen Conversation Workspace look. Research 084 remains preserved as research history and for later ontology/density ideas.
+## Architecture correction from project owner
+
+Conversation must be reachable from every major work depth and may either take full focus or coexist with the active work surface.
+
+```text
+WORK CONTEXT
+    Grid neutral
+    Grid selected
+    Grid X5 expanded
+    Deep Dive
+
+x
+
+CONVERSATION PRESENTATION
+    compact / work only
+    full chat focus
+    co-present work + chat
+
+x
+
+CONVERSATION SCOPE
+    project-general
+    work-unit-scoped
+```
+
+A global conversation action must be available regardless of Grid state. Work units/X5 and Deep Dive must also support direct opening of the corresponding work-unit conversation. Closing chat should preserve and restore the same underlying work context.
+
+Research 079's earlier split/dock/context-rail ideas are recovered as co-presence evidence. They were not rejected by later Conversation Workspace visual decisions.
 
 ## Current active review
 
 Research:
 
 ```text
-docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
 ```
 
 Browser:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-entry-transition.html
+http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
 ```
 
-Initial implementation target:
+The browser factorizes:
 
 ```text
-43ee0ae0ffc63eba6e99a42e9157568c53cc8806
+UNDERLYING WORK SURFACE
+    Grid neutral
+    Grid selected
+    Grid X5 expanded
+    Deep Dive
+
+CONVERSATION
+    Project general
+    Current work-unit chat
+
+PRESENTATION
+    P0 Work only / compact chat
+    P1 Full chat focus
+    P2 Right dock
+    P3 Balanced split
+    P4 Chat dominant + work context
 ```
 
-The destination is held constant. Human review compares only:
+P3 is the initial browser default only, not a selected result.
 
-```text
-E0 Direct Replace
-E1 Anchored Grow
-E2 World Recede
-E3 Pull-Back Then Dive
-E4 X5 Aperture
-```
-
-Return modifier:
-
-```text
-Fast direct return
-Symmetric return
-```
-
-E3 is a browser default only, not a selected result.
+Checkpoint 247's E0-E4 transition candidates remain preserved as possible full-chat-focus motion evidence. No winner was selected because the entry-only framing was incomplete.
 
 Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 specialist deep focus remains held.
