@@ -27,13 +27,13 @@ Claude Message 010 remains complete at:
 ## Next actor
 
 ```text
-human project owner
+ChatGPT
 ```
 
 Current checkpoint:
 
 ```text
-250
+251
 ```
 
 ## Critical current state
@@ -44,35 +44,49 @@ The first holistic integrated Cockpit at:
 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-failed fidelity review and is not an accepted baseline.
+failed fidelity review and remains an excluded implementation source.
 
-Source-level audit found that major accepted decisions and executable artifacts remain preserved, but the holistic browser was manually reimplemented from textual summaries rather than faithfully reused/ported from exact accepted targets.
+The Checkpoint 250 implementation-provenance recovery is now complete. The repository contains an exhaustive Phase-C decision ledger, a 23-entry implementation manifest, a deterministic validator and a full-history GitHub Actions gate.
 
-Primary recovery evidence:
+Exact-history verification has passed:
 
 ```text
-docs/checkpoints/250_integrated_cockpit_fidelity_failure_recovery_audit_opened.md
-docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
+workflow run 33156357834
+Cockpit implementation manifest: PASS
+entries=23 required=19 non_promotable=4
+exact historical source verification: PASS
+```
+
+Primary current evidence:
+
+```text
+docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
 ```
 
 ## Current gate
 
-Do not perform further visual design or another holistic rebuild yet.
+The provenance gate is closed. The integrated fidelity gate is open.
 
 ```text
-construct accepted-implementation manifest
-    -> exact target SHA
-    -> exact source files
-    -> invariant properties
-    -> allowed integration adaptations
-    -> known fixture caveats
-    -> fidelity verification
+replacement holistic integration
+    -> source-faithful reuse/porting
+    -> preserve all MUST_PORT / MUST_PRESERVE items
+    -> retain provisional items as provisional
+    -> do not select deferred/rejected/evidence-only candidates
+    -> minimum unresolved shell glue only, explicitly provisional
 
-then rebuild by reuse/porting
-then validate against exact accepted targets
-then resume holistic human review
+then
+
+integrated fidelity validation against exact accepted targets
+
+then
+
+human holistic product review
 ```
 
-The failed browser remains diagnostic evidence only. Earlier Phase-C decisions remain held at their established level.
+No Claude review is currently required. ChatGPT is the current actor for controlled reintegration.
 
 Production `/cockpit` remains untouched.
