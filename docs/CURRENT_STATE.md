@@ -1,11 +1,11 @@
 # Current State
 
-**Checkpoint:** 252  
+**Checkpoint:** 254  
 **Date:** 2026-08-28  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
-**Development stage:** MC-0004 Phase C advanced whole-product Cockpit design exploration on the source-faithful integrated substrate. Implementation-provenance recovery is complete; the accepted Phase-C mechanism set has been reintegrated with deterministic browser protection; Product Surface Study A now acts as the complete-Cockpit design surface; and Checkpoint 252 opens an unselected three-way spatial edge-rail direct-manipulation study for human review.  
+**Development stage:** MC-0004 Phase C advanced whole-product Cockpit design exploration on the source-faithful integrated substrate. Implementation-provenance recovery is complete; the accepted Phase-C mechanism set has been reintegrated with deterministic browser protection; Product Surface Study A acts as the complete-Cockpit design surface; and Checkpoint 254 opens one clarified resting angled rail for human review after the project owner separated spatial identity from optional clarity expansion.  
 **Latest specification:** Specification 024 remains accepted. Specification 008 remains the promoted V1 Project Cockpit interaction architecture.  
 **Latest scientific experiment:** Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific comparison may be inferred from that run.
 
@@ -26,27 +26,34 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
-docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
-docs/research/092_spatial_edge_rail_depth_direct_manipulation_and_docking_study.md
+docs/checkpoints/254_resting_angled_cockpit_rail_human_review_opened.md
+docs/research/094_resting_angled_rail_spatial_identity_and_clarity_only_expansion.md
 ```
 
 Current task:
 
 ```text
-human-review the three spatial edge-rail candidates in the complete Cockpit
+human-review one resting angled right-side Cockpit rail
 
-A · Extruded Blade
-B · Layered Deck
-C · Dock and Float
+primary question:
+    does the compact rail itself create the intended spatial / 3D feeling?
 
-judge direct manipulation, depth, calmness, discoverability, occlusion,
-functional grouping, recovery/stowing and future extensibility
+judge:
+    resting angle
+    perspective
+    visible chassis thickness
+    right-edge attachment
+    calmness
+    material quality
+    control readability
+    visual weight
+    project-world occlusion
 
-preserve concrete reactions
-then refine / reject / combine only on evidence
+then optionally open the clarity state
+only to judge labels / comprehension / width
 ```
 
-No rail variant is selected. Production `/cockpit` remains untouched.
+There is no current drag comparison and no need to inspect intermediate pull states. The angled rail is unselected. Production `/cockpit` remains untouched.
 
 ---
 
@@ -94,7 +101,7 @@ The replacement holistic Cockpit was then built through source reuse / exact mec
 
 # Fidelity and human-review model
 
-The project now distinguishes three different gates:
+The project distinguishes three different gates:
 
 ```text
 PROVENANCE GATE
@@ -114,23 +121,25 @@ HUMAN PRODUCT-DESIGN GATE
     OPEN
 ```
 
-Latest complete browser gate before Checkpoint 252 preservation:
+Latest complete browser gate:
 
 ```text
-implementation target  30f92a55537a9b0a2ec14695ed2982ded4ec9c0e
-workflow run           33197594115
-job                    98938593583
+implementation target  67c3105ff26601a2f259e44007b23ce638b23838
+workflow run           33202773778
+job                    98956116141
 result                 SUCCESS
-browser tests          56 / 56 passing
+browser tests          64 / 64 passing
 ```
 
-A green automated gate does **not** promote Product Surface Study A or any rail candidate into the accepted Cockpit design. Human selection remains required for provisional presentation decisions.
+The four newest checks specifically prove that the compact angled rail already has perspective and rear depth, no drag grip/slider exists, clarity expansion leaves the 3D transform and project state unchanged, and real Cockpit controls plus full-stage ownership remain intact.
+
+A green automated gate does **not** promote Product Surface Study A or the angled rail into the accepted Cockpit design. Human selection remains required for provisional presentation decisions.
 
 ---
 
 # Product Surface Study A
 
-The source-faithful integrated browser is now also the advanced whole-product design substrate.
+The source-faithful integrated browser is the advanced whole-product design substrate.
 
 Current provisional Product Surface Study A explores:
 
@@ -146,7 +155,7 @@ removal of reintegration-only diagnostic chrome from ordinary review
 
 These shell choices are deliberately evaluated on the complete Cockpit so new design decisions can be judged in interaction with the accepted WorkUnits, relations, Conversation, X5, Z7 and project world.
 
-Primary route:
+Primary browser:
 
 ```text
 frontend/design-lab/cockpit-reintegration.html
@@ -156,74 +165,100 @@ The accepted lower-layer mechanisms remain protected by the same holistic test s
 
 ---
 
-# Current spatial edge-rail study
+# Current resting angled rail study
 
-Checkpoint 252 opens three live candidates.
-
-## A · Extruded Blade
+Live route:
 
 ```text
-?focus=map&work=v&rail=blade
-
-compact edge blade
--> direct pull left
--> progressive widening
--> labels and functional grouping appear
--> docked / partial / open states
--> drag right to stow
+http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
 ```
 
-## B · Layered Deck
+The compact state is the primary state under review.
+
+Current hypothesis:
 
 ```text
-?focus=map&work=v&rail=deck
-
-stacked edge surface
--> direct pull left
--> Navigation / Work / System fan into separate spatial planes
--> secondary planes become usable
--> drag right to restack
+right-side rail
+    remains compact
+    is permanently angled inward toward the project world
+    exposes visible rear construction / thickness
+    reads as an architectural Cockpit surface at rest
 ```
 
-## C · Dock and Float
+Current authored study geometry:
 
 ```text
-?focus=map&work=v&rail=float
-
-edge-docked rail
--> pull beyond detach threshold
--> bounded floating object in project space
--> open related surfaces beside current rail position
--> return to right-edge snap zone
--> redock
+compact width              72px
+perspective                 1050px
+Y orientation               -24deg
+X orientation               0.8deg
+screen-plane rotation       -0.8deg
+front-face Z translation    20px
+rear construction offset    +10px x / +7px y / -28px z
 ```
 
-Shared study boundary:
+Those exact values are provisional. The human-review question is whether the resting rail geometry produces the intended spatial feeling.
+
+## Clarity state
 
 ```text
-real existing controls are reused
-legacy fold arrow is hidden only inside these study candidates
-drag/direct manipulation is the primary interaction under evaluation
-selected WorkUnit and semantic state do not mutate
-full-focus Conversation and specialist deep focus retain stage ownership
-reduced-motion and keyboard recovery remain available
+compact
+    icons only
+    spatial geometry already present
+
+clarity expanded
+    width 220px
+    labels visible
+    identical authored 3D transform
 ```
 
-No candidate and no hybrid is selected yet.
+Expansion is a readability aid only. It does not hinge, telescope, detach, fan into layers or create the 3D effect.
+
+No drag grip exists. No slider role exists. No partial deployment states exist.
+
+The study reuses the real existing Cockpit controls and preserves selection, camera state, relation semantics, Conversation ownership and Deep Dive ownership.
+
+---
+
+# Previous spatial-rail studies
+
+Research 092 and Research 093 remain preserved as design history and interaction evidence.
+
+```text
+Research 092
+    A · Extruded Blade
+    B · Layered Deck
+    C · Dock and Float
+
+Research 093
+    A · Hinged Instrument Panel
+    B · Telescoping Layer Stack
+    C · Spatial Command Console
+```
+
+Current disposition:
+
+```text
+historical / inactive current design axis
+not a comparison the human must complete before proceeding
+not required to create the intended resting 3D rail feeling
+```
+
+Direct manipulation is not universally rejected. It would need a separate future functional justification instead of being used merely to make the rail look spatial.
 
 ---
 
 # Whole-product study implementation and CI coverage
 
-Primary new study artifacts:
+Current angled-rail artifacts:
 
 ```text
-frontend/design-lab/cockpit-spatial-rail-study.css
-frontend/design-lab/cockpit-spatial-rail-study.js
-frontend/e2e/cockpit-reintegration-spatial-rail.spec.ts
+frontend/design-lab/cockpit-spatial-rail-study-angle.css
+frontend/design-lab/cockpit-spatial-rail-study-angle.js
+frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
 ```
 
-Current Product Surface A artifacts include:
+Product Surface A artifacts include:
 
 ```text
 frontend/design-lab/cockpit-product-surface-study.css
@@ -231,14 +266,18 @@ frontend/design-lab/cockpit-product-surface-study-readability.css
 frontend/design-lab/cockpit-product-surface-study.js
 ```
 
-The Cockpit fidelity workflow now watches both whole-product study families:
+Historical rail-study artifacts remain preserved under the `cockpit-spatial-rail-study*` family.
+
+The Cockpit fidelity workflow watches:
 
 ```text
+frontend/design-lab/cockpit-reintegration*
 frontend/design-lab/cockpit-product-surface-study*
 frontend/design-lab/cockpit-spatial-rail-study*
+frontend/e2e/cockpit-reintegration*.spec.ts
 ```
 
-This closes the path-filter gap that previously allowed those newer study files to change without automatically triggering the holistic browser gate.
+The current 64-test green run includes all accepted/source-faithful reintegration coverage plus Product Surface A, Research 092, Research 093 and the clarified resting-angle study.
 
 ---
 
@@ -362,15 +401,22 @@ Course 2 remains gated.
 # Exact next step
 
 ```text
-Human opens and drags A / Blade, B / Layered Deck and C / Dock and Float.
+Human opens:
 
-For each candidate record:
-    what feels useful
-    what feels visually wrong
-    what feels intuitive or unclear
-    what should be retained or rejected
+http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
 
-Then preserve those observations before further rail refinement.
+First judge the compact bar itself:
+    angle
+    perspective
+    thickness
+    attachment
+    calmness
+    readability
+    visual weight
+
+Then, only if useful, click the clarity control to inspect labels.
+
+Preserve concrete reactions before refining the resting rail geometry.
 ```
 
-Do not select a candidate, invent a hybrid, or move any study into production before explicit human evidence.
+Do not return to A/B/C drag comparison unless a future functional question independently justifies direct manipulation. Do not move the angled rail into production before explicit human evidence.
