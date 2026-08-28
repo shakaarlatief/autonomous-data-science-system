@@ -1,7 +1,7 @@
 # MC-0004: Next-Generation Project Cockpit Design Exploration
 
 **Thread:** MC-0004  
-**Status:** ACTIVE / PHASE C BROWSER DESIGN EVALUATION  
+**Status:** ACTIVE / PHASE C HOLISTIC INTEGRATION REVIEW  
 **Review mode:** `INDEPENDENT_THEN_COMPARATIVE`  
 **Task owner:** ChatGPT  
 **Target-state write owner:** ChatGPT  
@@ -55,12 +55,18 @@ Phase C Conversation Workspace entry / return transition
     Research 085
     transition browser target 43ee0ae0ffc63eba6e99a42e9157568c53cc8806
     no transition selected
-    later determined to be too narrowly framed around X5 -> full-chat replacement
+    later determined too narrow as a primary architecture frame
 
 Phase C Conversation access + coexistence
     Checkpoint 248
     Research 086
-    conversation access/coexistence browser target db31970d6885ce785609f9c3300f22123130d821
+    factorized access/coexistence browser target db31970d6885ce785609f9c3300f22123130d821
+
+Phase C holistic integrated Cockpit
+    Checkpoint 249
+    Research 087
+    accepted-invariants reconstruction audit
+    integrated Cockpit frontend target 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
 ## Preserved accepted / working Phase-C results
@@ -70,6 +76,10 @@ G4 Adaptive Hybrid world
 H4 hover/world response
 Reduced in-box resting light
 scientific marker category grammar
+Foundation 023 non-semantic appearance configurability
+E5 Hue + Tag relation class
+D0-D3 directionality
+single active connector terminal treatment
 P7 Neutral Tag + Tone disposition
 editable current-process focus set
 conditional runtime semantics
@@ -79,17 +89,23 @@ BLOCKER -> BLOCKS -> BLOCKED cause/effect model
 BLOCKED sharper compact ring
 FAIL smoother circular compact ring
 A3 Signal Bars for elevated attention
-SEL2 Corner Brackets for persistent selection
+SEL2 four outside corner brackets
 X5 balanced contextual expansion without context recession
 L0 Flat Fields provisional working default
 Z7 Pull-Back Then Dive specialist-workspace entry
-fullscreen specialist-workspace end state
+full-stage specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
 Quiet Graphite current Conversation Workspace visual baseline
-A6 Adaptive Anchor current Conversation Workspace opened-box composition
+project-general + work-unit-scoped conversation distinction
+A6 Adaptive Anchor work-unit context expansion
 canonical WorkUnit box / Text user-switchable conversation rail
 A6 resting state without redundant floating home-object card
+conversation available from Grid and Deep Dive
+full-focus + co-present conversation capability
+source work-state preservation across conversation open/close
+compact native Cockpit composer
+Jump/search, map recovery and fullscreen capability
 ```
 
 Semantic zoom S1-S8 remains preserved and deferred, not rejected.
@@ -164,45 +180,11 @@ Exact A6 floating-box removal:
 606e027f281b35c2dfc93d059a1681df23bc2b73
 ```
 
-## Claude Message 010 disposition
+## Checkpoint 247 / 248 disposition
 
-Claude's code-grounded findings and later ontology/density ideas remain preserved. Its B1-B4 additional composition treatments were explicitly judged irrelevant to the already chosen Conversation Workspace look and remain historical evidence rather than active alternatives.
+Research 085 E0-E4 remains possible full-chat-focus transition choreography evidence. No winner was selected.
 
-## Checkpoint 247 disposition
-
-Research 085 and E0-E4 remain useful **full-chat-focus transition choreography** evidence only.
-
-```text
-E0 Direct Replace
-E1 Anchored Grow
-E2 World Recede
-E3 Pull-Back Then Dive
-E4 X5 Aperture
-```
-
-No winner was selected because the project owner clarified that the architecture must first support conversation across every work state and simultaneous work+chat compositions.
-
-## Current Slice: Conversation access + coexistence
-
-Checkpoint:
-
-```text
-248
-```
-
-Research:
-
-```text
-docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
-```
-
-Browser:
-
-```text
-http://localhost:5173/design-lab/conversation-workspace-access-coexistence.html
-```
-
-Factorized product model:
+Research 086 established the more important factorization:
 
 ```text
 WORK CONTEXT
@@ -225,44 +207,101 @@ CONVERSATION SCOPE
     work-unit-scoped
 ```
 
-Required access paths:
+This architecture is carried forward into the integrated Cockpit.
+
+## Current Slice: Holistic integrated Cockpit baseline
+
+Checkpoint:
 
 ```text
-Global Conversations from any Grid state
-Open this conversation from work unit/X5
-Global Conversations from Deep Dive
-Chat about this work unit from Deep Dive
-thread switching without mutating work context
-close/collapse chat restores underlying work context
+249
 ```
 
-Research 079 is recovered as co-presence evidence:
+Research:
 
 ```text
-CV0 Focus Workspace        -> full chat focus baseline
-CV1 Right Dock             -> work-primary co-present candidate
-CV2 Split Workbench        -> balanced co-present candidate
-CV5 Focus + Context Rail   -> chat-dominant co-present candidate
-CV6 Conversation + Inspector -> focused-context evidence
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
 ```
 
-Current browser presentation modes:
+Browser:
 
 ```text
-P0 Work only / compact chat
-P1 Full chat focus
-P2 Right dock
-P3 Balanced split
-P4 Chat dominant + work context
+http://localhost:5173/design-lab/cockpit-integrated-baseline.html
 ```
 
-P3 is only the initial browser default. No co-present composition is selected.
+Exact initial holistic frontend target:
+
+```text
+8e554d847bb3b6318db432abcb5dff742f0fa523
+```
+
+The integrated browser is reconstructed from accepted invariants rather than copied from the latest isolated fixture.
+
+It provides one interaction loop for:
+
+```text
+Project Grid
+    select
+    X5 expand
+    Z7 Deep Dive
+
+Conversation
+    compact composer
+    global project conversation
+    work-unit conversation
+    full focus
+    co-present mode
+    Boxes / Text
+    A6 Expand box
+    return to preserved source state
+
+Navigation / product shell
+    Jump/search
+    geometric zoom
+    fit/reset
+    Focus current
+    appearance controls
+    fullscreen
+```
+
+## Provisional integration glue
+
+The integrated browser necessarily introduces concrete whole-product geometry that has not previously been selected.
+
+Current values are provisional only:
+
+```text
+54px HUD
+2400 x 1500 finite-world fixture
+2200 x 1320 project-plane fixture
+current HUD action layout
+current map-tool rail
+bottom-center compact composer geometry
+schematic specialist internal modules
+46% co-present Conversation width
+collapsed Conversation rail in co-present mode
+```
+
+These must not be treated as accepted merely because they are present in the baseline.
+
+## Process rule from Checkpoint 249
+
+```text
+Integrated Cockpit
+    primary product review surface
+
+Bounded design-lab experiments
+    supporting evidence tool
+    create only when a newly exposed question benefits from controlled isolation
+```
+
+The previous controlled browser evidence remains preserved and may be reopened when needed.
 
 ## Current collaboration gate
 
 ```text
 next actor: human project owner
-mode: conversation access + coexistence browser review
+mode: holistic integrated Cockpit review
 pending Claude obligation: none
 ```
 
@@ -270,4 +309,4 @@ pending Claude obligation: none
 
 Production `/cockpit` remains untouched.
 
-Still unfrozen includes final co-present Conversation Workspace composition, split proportions/resizing, thread-rail behavior under constrained widths, full-chat-focus transition choreography, conversation URL/session state, persistence/lifecycle, pinned context promotion, historical-state semantics, semantic zoom, large-project virtualization, compass semantics, specialist-workspace composition and final production visual system.
+Still unfrozen includes final Cockpit shell geometry, HUD structure, finite-world dimensions, stage taxonomy, map-tool rail treatment, compact-composer geometry, specialist-workspace composition, topology-compass semantics/details, Conversation co-present layout and split resizing, full-chat transition choreography, conversation persistence/session model, conversation URL state, historical-state semantics, pinned context, non-work-unit conversation homes, semantic zoom, large-project virtualization and final production frontend component architecture.
