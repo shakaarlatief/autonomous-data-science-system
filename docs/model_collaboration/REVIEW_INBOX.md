@@ -1,6 +1,6 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-08-27  
+**Date:** 2026-08-28  
 **Status:** Current human-readable routing view  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
@@ -18,99 +18,111 @@ exact target ref / SHA
     immutable evidence or artifact a specific request may direct Claude to inspect
 ```
 
-Claude should not infer or switch the coordination branch from default-branch contents, newest commits, missing files or unrelated branch discovery. If a trigger names a different branch than this authoritative current routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
+Claude should not infer or switch the coordination branch. If a trigger names a different branch than this authoritative routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
 
 ## Pending model obligation
 
 ```text
-none
+MC-0004 Message 010
+Claude comparative/divergent Conversation Scope + Work-Unit Anchor ideation
 ```
 
-Claude completed:
+Request:
 
 ```text
-MC-0004 Message 008
-Claude independent blind Conversation Workspace + chat visual-system design
+docs/model_collaboration/threads/MC-0004/messages/009_chatgpt_conversation_scope_work_unit_anchor_ideation_request.md
 ```
 
-Response:
+Current checkpoint:
 
 ```text
-docs/model_collaboration/threads/MC-0004/messages/008_claude_conversation_workspace_blind_design.md
+246
 ```
-
-Response commit:
-
-```text
-cab2e464d81b48edadd1b6ae51bb7dd620d7e892
-```
-
-The blind-design requirement is satisfied. Claude explicitly recorded that the prohibited ChatGPT Conversation Workspace artifacts and isolated independent branch were not inspected.
 
 ## Next actor
 
 ```text
-human project owner
+Claude
 ```
 
-Current checkpoint remains:
+## Current visual baseline
+
+The project owner selected:
 
 ```text
-245
+Quiet Graphite
+    current Conversation Workspace baseline
 ```
 
-## Current browser review
+The currently rendered alternatives from the previous independent round are rejected. Future palette exploration requires genuinely new candidates rather than reviving those variants.
+
+## Active product question
+
+The Conversation Workspace must distinguish:
+
+```text
+PROJECT-GENERAL CONVERSATION
+    not owned by one work unit
+
+WORK-UNIT-SCOPED CONVERSATION
+    belongs to one work unit
+    remains visually recognizable as belonging to that box
+
+PER-TURN CONTEXT
+    temporary referenced project objects
+    separate from conversation home
+```
+
+Current browser:
+
+```text
+http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
+```
+
+Initial implementation target:
+
+```text
+56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
+```
 
 Research:
 
 ```text
-docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
 ```
 
-Exact browser implementation target containing both independent browser families:
+The browser factorizes:
 
 ```text
-348c1d8a746041d4fa3ca41316ac34f9d79bc745
+conversation scope
+    Work-unit scoped / Project general
+
+thread identity
+    Text / Marker + title / Mini work-unit artifact
+
+opened-box presence
+    A0 Chat-only control
+    A1 Header specimen
+    A2 Context shelf
+    A3 Inner sidecar
+    A4 Floating instrument
+    A5 Box inspector
+    A6 Adaptive anchor
 ```
 
-Claude independent browser:
+## Claude requested contribution
+
+Claude should inspect Message 009 and broaden/challenge:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
+conversation-home versus per-turn-context mental model
+work-unit identity in the conversation rail
+project-general conversation identity
+conversation + opened-box composition
+X5 -> work-unit conversation entry and return
+edge cases such as re-homing, multi-object discussions and completed/deferred work units
 ```
 
-ChatGPT independent browser:
+This follow-up is intentionally comparative rather than blind. Claude may inspect the current browser and proposal.
 
-```text
-http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
-```
-
-## Strong independent convergence now under human review
-
-Both blind workstreams independently converged on:
-
-```text
-transcript-first long-form surface
-ADS responses primarily document-like
-avoid generic symmetric chat bubbles
-semantic project-object references
-structured project changes separate from prose
-collapsed secondary tool / provenance detail
-project-aware composer context
-dark restrained professional visual language
-```
-
-Material differences remain intentionally visible for review:
-
-```text
-ruled/no-bubble versus bounded user prompt versus console block
-no persistent rail versus compact state rail versus thread/context rails
-warm reading-room atmosphere versus cool console continuity
-serif versus humanist sans
-comfortable versus compact density
-resting -> peek -> full conversation depth
-```
-
-The current gate is to judge the independent browser families before building synthesis candidates.
-
-Production `/cockpit` remains untouched. S0 Geometric Control remains the provisional zoom working behavior; semantic zoom remains deferred. Z7 deep-focus remains held.
+Production `/cockpit` remains untouched. Semantic zoom remains deferred with S0 as provisional working behavior. Z7 deep-focus remains held.
