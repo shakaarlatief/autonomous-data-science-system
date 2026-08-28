@@ -31,12 +31,19 @@ function upgradeDirectionality() {
   if (!relationSvg) return
 
   for (const group of relationSvg.querySelectorAll('.reintegration-relation')) {
+    /* The original E5/D1 target arrow remains the canonical .semantic-arrow. */
     const endArrow = group.querySelector('.semantic-arrow')
     if (endArrow) endArrow.classList.add('semantic-arrow-end')
 
+    /*
+     * D2/D3 require a source-side arrow as an additional semantic terminal.
+     * Keep it separately named rather than pretending that the historical D1
+     * target-arrow element was duplicated. CSS gives both arrows the same held
+     * visual grammar.
+     */
     if (!group.querySelector('.semantic-arrow-start')) {
       const startArrow = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-      startArrow.classList.add('semantic-arrow', 'semantic-arrow-start')
+      startArrow.classList.add('semantic-arrow-start')
       const tag = group.querySelector('.semantic-tag')
       group.insertBefore(startArrow, tag || null)
     }
