@@ -39,7 +39,7 @@
     "review_base_ref": "c190420c6d77d3191ca9efb9ffc1e401bbb7fda8",
     "known_exposures": [
       "ADS product-level context through Specification 008 and Foundation 021",
-      "accepted Phase-C interaction controls through Checkpoint 248",
+      "accepted Phase-C interaction controls through Checkpoint 249",
       "Claude Message 008 independent Conversation Workspace design at cab2e464d81b48edadd1b6ae51bb7dd620d7e892",
       "ChatGPT independent Conversation Workspace browser frozen separately at c66f72a74e681f89fd52ba591a1387ea50f0e959",
       "Research 081 independent dual-design comparison",
@@ -55,9 +55,12 @@
       "Research 085 entry-transition experiment preserved as possible full-chat-focus motion evidence without a selected winner",
       "project owner clarified conversation must be reachable from Grid neutral/selected/X5 and Deep Dive, with both full-focus and co-present modes",
       "Research 086 Conversation Workspace orthogonal access and coexistence architecture",
-      "conversation-workspace-access-coexistence factorized browser at db31970d6885ce785609f9c3300f22123130d821"
+      "conversation-workspace-access-coexistence factorized browser at db31970d6885ce785609f9c3300f22123130d821",
+      "project owner paused default isolated component exploration and requested one integrated Cockpit reconstruction",
+      "Research 087 accepted-invariants integration audit",
+      "holistic integrated Cockpit browser target 8e554d847bb3b6318db432abcb5dff742f0fa523"
     ],
-    "notes": "No Claude obligation is pending. The current gate is human review of conversation as an orthogonal capability across Grid and Deep Dive work contexts. Quiet Graphite, Boxes/Text, A6 without the floating duplicate, X5, Z7 Deep Dive, and the compact Cockpit composer remain held. Research 079 split/dock/context-rail mechanisms are recovered as co-presence evidence. Checkpoint 247's E0-E4 remain only possible full-chat-focus motion evidence because the entry-only framing was too narrow. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The current gate is human holistic review of the integrated Cockpit baseline. The browser reconstructs the held G4/H4 work-unit grammar, E5/P7 semantics, runtime/BLOCKED carriers, A3/SEL2, X5/L0, Z7 Deep Dive, S0 geometric zoom, Quiet Graphite Conversation Workspace, Boxes/Text, A6, conversation access across Grid and Deep Dive, compact composer, Jump/search, map recovery and fullscreen. Whole-Cockpit shell geometry and integration glue remain provisional. Bounded design-lab experiments are now supporting evidence rather than the default primary review surface. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -92,15 +95,16 @@
       "PHASE_C_CONVERSATION_ANCHOR_SYNTHESIS_BROWSER_REVIEW",
       "PHASE_C_A6_REDUNDANT_FLOATING_BOX_REMOVED",
       "PHASE_C_CONVERSATION_ENTRY_TRANSITION_REVIEW",
-      "PHASE_C_CONVERSATION_ACCESS_AND_COEXISTENCE_REVIEW"
+      "PHASE_C_CONVERSATION_ACCESS_AND_COEXISTENCE_REVIEW",
+      "PHASE_C_HOLISTIC_INTEGRATED_COCKPIT_BASELINE_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-conversation-access-coexistence-architecture-review",
+    "transition_id": "mc0004-holistic-integrated-cockpit-baseline-review",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "human",
-    "reason": "The project owner clarified that Conversation Workspace availability is orthogonal to Grid/Deep Dive work depth. Chat must be openable from every Grid state and from Deep Dive, either as full focus or as a co-present work+conversation surface. Checkpoint 248 and Research 086 replace the narrower entry-only review boundary while preserving its motion evidence.",
-    "repository_head": "db31970d6885ce785609f9c3300f22123130d821"
+    "reason": "The project owner paused default isolated component-by-component exploration and requested reconstruction of the accepted/held Cockpit decisions into one actual integrated Cockpit. Checkpoint 249 and Research 087 make that holistic browser the primary product-review surface while keeping unresolved shell geometry and integration glue provisional.",
+    "repository_head": "8e554d847bb3b6318db432abcb5dff742f0fa523"
   }
 }
