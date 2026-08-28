@@ -37,6 +37,13 @@ Phase C Conversation Workspace independent dual design
     ChatGPT isolated browser frozen at c66f72a74e681f89fd52ba591a1387ea50f0e959
     Claude Message 008 completed at cab2e464d81b48edadd1b6ae51bb7dd620d7e892
     blind gate COMPLETE
+
+Phase C Conversation Scope + Work-Unit Anchor
+    Quiet Graphite selected current baseline
+    Checkpoint 246
+    Research 082
+    ChatGPT Message 009
+    Claude Message 010 pending
 ```
 
 ## Preserved accepted / working Phase-C results
@@ -62,139 +69,144 @@ Z7 Pull-Back Then Dive deep-focus entry
 fullscreen specialist-workspace end state
 compact topology compass retained
 S0 Geometric Control provisional zoom working default
+Quiet Graphite current Conversation Workspace visual baseline
 ```
 
 Semantic zoom S1-S8 remains preserved and deferred, not rejected.
 
-## Current Slice 02P: Conversation Workspace
+## Conversation Workspace visual disposition
 
-Checkpoint 245 opened the first Conversation Workspace review. The project owner then broadened the question after rejecting ChatGPT's initial visual design as unattractive.
+The independent dual-design round is complete and preserved in Research 081.
 
-The design question now includes the complete conversation experience:
-
-```text
-workspace composition
-chat visual identity and palette
-transcript geometry
-user-message treatment
-ADS-message treatment
-project-object references
-structured project-change moments
-tool / provenance summaries
-composer design
-navigation / search
-conversation lifecycle
-motion and micro-interactions
-density and accessibility
-```
-
-The initial ChatGPT browser and Research 079 remain preserved as historical evidence but are not treated as the current visual direction.
-
-## Blind dual-design result
-
-The project owner explicitly required Claude not to see ChatGPT's redesign. Message 007 froze that contract.
-
-Claude Message 008 records compliance with the blind protocol and proposes:
-
-```text
-Technical Manuscript
-    reading-room atmosphere
-    centered bounded transcript
-    no bubbles
-    ruled two-voice document grammar
-    comfortable reading density
-    serif versus humanist-sans as an explicit test
-
-Studio Console
-    same-console continuity
-    compact persistent state rail
-    dense flat message blocks
-
-Hybrid
-    Manuscript reading grammar
-    + compact state rail
-```
-
-ChatGPT's independent isolated browser proposed:
+The project owner selected:
 
 ```text
 Quiet Graphite
+    current baseline
+```
+
+Currently rendered alternatives are rejected:
+
+```text
 Deep Navy
 Warm Slate
 Monochrome Signal
 Violet Ink
 Editorial Dark
+Claude Technical Manuscript
+Claude Studio Console
+Claude Hybrid
 ```
 
-with a held transcript-first architecture:
+Future visual exploration may introduce genuinely new candidates. Rejected systems should not be silently revived as active options.
+
+## Current Slice 02Q: Conversation Scope + Work-Unit Anchor
+
+Checkpoint:
 
 ```text
-slim thread rail
-+
-document-like ADS transcript
-+
-compact bounded user prompts
-+
-optional project-context rail
+246
 ```
 
-## Strong independent convergence
-
-Both blind workstreams independently converged on:
+Research/browser:
 
 ```text
-Conversation Workspace is a long-form technical reading surface,
-not a generic symmetric messaging app.
-
-ADS responses should be primarily document-like.
-Project references should be semantic objects reusing project grammar.
-Structured project changes should be separate from prose.
-Tool/provenance detail should be secondary and collapsed by default.
-The composer should carry explicit project context.
-The visual language should remain dark, calm, restrained and professional.
+docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+http://localhost:5173/design-lab/conversation-workspace-work-unit-anchor.html
 ```
 
-This is meaningful independent evidence but is not yet a promoted final design.
-
-## Current browser review
-
-Research:
+Initial implementation target:
 
 ```text
-docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+56e32bc0a682bdb0a5bf54d5d9db7b3b987fdb7e
 ```
 
-Claude browser:
+The current human requirement is:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-claude-independent.html
+PROJECT-GENERAL CONVERSATION
+    legitimate project-level conversation
+    no single box owns it
+
+WORK-UNIT-SCOPED CONVERSATION
+    belongs to one work unit
+    should remain immediately recognizable as belonging to that box
+
+PER-TURN CONTEXT
+    temporary referenced project objects
+    separate from conversation home
 ```
 
-ChatGPT browser:
+The new browser tests three orthogonal dimensions:
 
 ```text
-http://localhost:5173/design-lab/conversation-workspace-chatgpt-independent.html
+conversation scope
+    Work-unit scoped / Project general
+
+thread identity
+    Text / Marker + title / Mini work-unit artifact
+
+opened-box presence
+    A0 Chat-only control
+    A1 Header specimen
+    A2 Context shelf
+    A3 Inner sidecar
+    A4 Floating instrument
+    A5 Box inspector
+    A6 Adaptive anchor
 ```
 
-Exact active-branch browser implementation target:
+The project grid is deliberately absent. Work-unit identity is represented as a compact canonical artifact instead of restoring the map.
+
+## Current conceptual hypothesis
 
 ```text
-348c1d8a746041d4fa3ca41316ac34f9d79bc745
+conversation home
+    !=
+per-turn context
 ```
 
-## Current gate
+Possible interface-level representation:
 
 ```text
-next actor: human project owner
-mode: comparative human browser review
+Conversation.home_scope
+    PROJECT_GENERAL
+    WORK_UNIT
 
-1. inspect Claude independent systems
-2. inspect ChatGPT independent systems
-3. identify attractive and unattractive whole-system qualities
-4. identify specific transferable mechanisms
-5. do not average the proposals prematurely
-6. build synthesis candidates only after that review
-7. production /cockpit remains untouched
+Conversation.home_object_id
+    null or one work-unit id
+
+Message.contextual_object_ids
+    zero or more project objects
 ```
 
-No Claude obligation is currently pending.
+This is not a frozen persistence schema. Multi-home, re-homing, non-work-unit anchors and conversation branching remain open.
+
+## Current collaboration gate
+
+Message 009 asks Claude to inspect and broaden the new question.
+
+```text
+next actor: Claude
+expected output: MC-0004 Message 010
+mode: COMPARATIVE_ONLY / DIVERGENT_IDEATION
+```
+
+Claude is asked to challenge and expand:
+
+```text
+conversation-home mental model
+work-unit identity in the thread rail
+project-general conversation identity
+conversation + opened-box composition
+X5 -> work-unit conversation entry / return
+edge cases such as re-homing and multi-object discussion
+```
+
+Claude may inspect the current browser. Blindness is no longer required because both independent visual proposals are already frozen.
+
+## Production boundary
+
+Production `/cockpit` remains untouched.
+
+Still unfrozen includes final Conversation Workspace composition, conversation persistence/session model, home/anchor schema, multi-object semantics, search/archive/fork lifecycle, message-to-project linking semantics, conversation URL state, semantic zoom, large-project virtualization, deep-focus return choreography, compass semantics, specialist-workspace composition and final production visual system.
