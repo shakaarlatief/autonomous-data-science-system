@@ -13,8 +13,8 @@ async function openStudy(page: Page, width: number, height = 1000) {
   await expect.poll(() => reviewStylesheet.evaluate((element: HTMLLinkElement) => Boolean(element.sheet))).toBe(true)
 }
 
-async function expectVisibleWorkUnitSpacing(page: Page, width: number) {
-  await openStudy(page, width)
+async function expectVisibleWorkUnitSpacing(page: Page, width: number, height = 1000) {
+  await openStudy(page, width, height)
   await page.locator('#conversation-expand').click()
   await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
   await page.locator('[data-conversation-rail-option="boxes"]').click()
