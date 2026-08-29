@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 263  
+**Checkpoint:** 264  
 **Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -26,6 +26,9 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
+docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
+docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
+
 docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
 docs/research/101_project_general_thread_short_viewport_containment_recovery.md
 
@@ -33,29 +36,35 @@ docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.
 docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
 ```
 
-Checkpoint 263 is the active product gate.
+Checkpoint 264 is the active product gate.
 
-The Checkpoint 262 human retest is now partially closed with positive human evidence:
+The latest human screenshots now establish:
 
 ```text
 Conversation WorkUnit spacing
+    correct
+
+General project discussion containment
     correct
 
 current-process Focus
     working as far as tested
 ```
 
-The same human screenshot exposed one narrower remaining defect:
+The remaining Conversation rail issue is deliberately narrow:
 
 ```text
-General project discussion
-    not contained as a distinct first conversation artifact
-    first WorkUnit visibly invades / overlaps that row
+General project discussion visible footprint
+    should match WorkUnit box footprint
+
+Boxes selected-state frame
+    should surround the visible selected object itself
+    should not create a larger generic outer-row rectangle
 ```
 
-Research 101 protects the project-general row at short desktop heights without changing the accepted WorkUnit spacing geometry from Research 100.
+Research 102 implements that alignment without changing the already accepted WorkUnit spacing, WorkUnit geometry, Focus behavior or Conversation semantics.
 
-Adaptive Conversation Dock product judgment remains paused only until this final underlying Conversation rail containment issue is visually confirmed.
+Adaptive Conversation Dock product judgment remains paused only until this final small Boxes visual-consistency recheck is confirmed.
 
 Production `/cockpit` remains untouched.
 
@@ -86,11 +95,11 @@ Route roles:
 ```text
 plain route
     source-faithful whole-product substrate
-    current Checkpoint 263 project-general containment human-recheck surface
+    current Checkpoint 264 project-general footprint/selection-frame human-recheck surface
 
 ?conversation=adaptive-dock
     opt-in professional co-present Conversation candidate
-    product-design review resumes after Checkpoint 263 confirmation
+    product-design review resumes after Checkpoint 264 confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -103,9 +112,9 @@ explicit ?edge=... / ?rail=...
 
 # Research 100 WorkUnit spacing recovery is human-confirmed
 
-The project owner's Checkpoint 262 retest confirmed that the WorkUnit-to-WorkUnit spacing now looks correct.
+The project owner has explicitly confirmed that the WorkUnit-to-WorkUnit spacing is now correct.
 
-The accepted Research 100 contract therefore remains:
+The accepted Research 100 contract remains:
 
 ```text
 thread-list row-gap          16px
@@ -127,116 +136,136 @@ margin-owned spacing
     producing ~1.9px visible separation despite 16px computed margins
 ```
 
-The current grid-track model separates responsibilities correctly:
-
-```text
-minimum WorkUnit row height
-    contains transformed canonical footprint
-
-grid row-gap
-    owns visible inter-object breathing room
-```
-
-Do not reopen the WorkUnit spacing model without new contradictory human evidence.
+Do not reopen the WorkUnit spacing architecture without new contradictory human evidence.
 
 ---
 
-# Checkpoint 263 project-general containment recovery
+# Research 101 project-general containment is human-confirmed
+
+Checkpoint 263 added an explicit structural project row after the first WorkUnit had previously invaded the project-general row at short desktop heights.
+
+The latest screenshots confirm that General project discussion is now a clean standalone first object and is no longer overlapped by WorkUnit 1.
+
+Research 101 therefore remains accepted as the containment mechanism underneath the current finer visual-alignment pass.
+
+---
+
+# Checkpoint 264 project-general footprint and selection alignment
 
 ## Human evidence
 
-The successful WorkUnit spacing screenshot still showed the project-general first conversation object being visually invaded by the first WorkUnit.
-
-This exposed a separate first-row containment gap rather than another WorkUnit spacing failure.
-
-## Residual implementation gap
-
-Research 100 gave WorkUnit rows explicit minimum heights but left the project-general row dependent on generic grid sizing.
-
-The project artifact itself is not transformed, but at a short desktop content height its row still needs a minimum footprint large enough for:
+The latest screenshots show two closely related visual inconsistencies after the larger containment defects were fixed:
 
 ```text
-existing project artifact  58px
-existing row padding        7px top / 7px bottom
-row border budget
+General project discussion
+    visible box smaller than the WorkUnit box slots
+
+selected state
+    General received a larger generic thread-row frame
+    WorkUnits visually carried selection on the canonical node surface
 ```
 
-Current project row contract:
+The issue is not semantic selection state. It is presentation ownership and geometry.
+
+## Exact footprint alignment
+
+The accepted Conversation WorkUnit slot remains unchanged:
 
 ```text
-project row box-sizing       border-box
-project row height           auto
-project row min-height       74px
-project row margin            0px
-project row padding           7px top / 7px bottom
-project artifact min-height  58px
-thread-list row-gap          16px
+normal rail          232 x 74 px
+responsive <=1450    214 x 69 px
 ```
 
-The visual design of the project-general artifact is unchanged.
-
-Implementation artifacts:
+The project-general artifact now matches that footprint exactly:
 
 ```text
-frontend/design-lab/cockpit-reintegration-presentation-integrity.css
-frontend/design-lab/cockpit-reintegration-review-256.css
+normal project artifact       232 x 74 px
+responsive project artifact   214 x 69 px
 ```
 
-## Short-height regression
+The WorkUnit is not resized to fit the project artifact. The project artifact is aligned to the accepted WorkUnit rail footprint.
 
-A new browser regression uses:
+## Selected-state ownership
+
+In Boxes / artifact-compatible mode:
 
 ```text
-1776 x 766
+outer .reintegration-thread-item
+    structural only
+    transparent even while active
+
+project-general selected surface
+    .reintegration-project-thread-artifact
+
+WorkUnit selected surface
+    .conversation-canonical-node .node-surface
 ```
 
-which approximates the actual visible page region in the supplied wide desktop screenshot after browser chrome is excluded.
+The final integrity layer applies the selected border/shadow to the actual visible object surfaces.
 
-It requires:
+In Text mode the generic row selection treatment remains available because the row itself is the visible navigation object.
+
+## Spacing remains unchanged
+
+The list still owns a structural 16px CSS Grid row gap.
+
+After enlarging the project artifact to the WorkUnit footprint, the short-height painted edge-to-edge project-to-first-WorkUnit distance is 15px because the two visible 1px borders consume one pixel of the nominal track separation measurement. The structural gap remains 16px, and the human-approved WorkUnit spacing is not retuned.
+
+Deterministic contract:
 
 ```text
-project row height >=73.5px
-project row padding >=7px top/bottom
-first WorkUnit visible surface begins >=16px after project artifact bottom
-WorkUnit-to-WorkUnit visible gaps remain >=20px
+CSS Grid row-gap                     >=16px
+project -> first WorkUnit dark gap   >=15px
+WorkUnit -> WorkUnit visible gap     >=20px
 ```
-
-This explicitly protects the previously untested wide-but-short browser shape.
 
 ---
 
 # Deterministic fidelity status
 
-Implementation/test target:
+Final implementation/test target:
 
 ```text
-5913467cfffd535215da7ab2cb70bdeb2be9f2e9
+9881efe313b8cf04d9521c0464050b30b29944c1
+```
+
+The visual implementation is present in its ancestry through:
+
+```text
+524d4fcba3df835de3ecc5757ed4a97dafdd656e
 ```
 
 Latest complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33247621778
-job           99087735314
+workflow run  33251166351
+job           99096968925
 result        SUCCESS
-browser tests 77 / 77 passing
+browser tests 78 / 78 passing
 ```
 
-The 77-test gate includes all previous source-faithful Cockpit coverage plus the new short-height project-general containment regression.
-
-The new test passed under the exact current implementation:
+The new regression explicitly verifies:
 
 ```text
-General project discussion remains a distinct first artifact at a short desktop viewport
+project artifact and WorkUnit slot have equal visible width/height
+project outer structural row remains transparent while selected
+WorkUnit outer structural row remains transparent while selected
+project selected surface receives a visible border/shadow
+WorkUnit selected surface receives a visible border/shadow
+selection transfer removes the project selected shadow
+short-height containment remains intact
+all earlier source-faithful mechanisms remain green
 ```
 
-A green deterministic gate still does not substitute for the current human visual recheck because this residual defect was identified directly in the project owner's real browser.
+An intermediate test compared serialized CSS color strings and was rejected as a brittle assertion because Chromium may represent equivalent/layered colors through different CSS color spaces. The durable test asserts the actual geometry and selected-surface responsibility seen by the human reviewer.
+
+A green deterministic gate still does not substitute for the current human visual recheck.
 
 ---
 
 # Current-process Focus
 
-No Focus code was changed for Checkpoint 263.
+No Focus code was changed for Checkpoints 262, 263 or 264.
 
 Research 098's recovery remains current:
 
@@ -274,7 +303,9 @@ co-present
     A6 available as invoked inspector sheet
 ```
 
-Checkpoint 263 does not accept, reject or retune this candidate. It repairs the final observed base-rail containment issue needed to judge it reliably.
+Checkpoints 259-264 are integrity/refinement interruptions underneath that still-open product-design review. They do not accept, reject or retune the Adaptive Dock direction.
+
+Once Checkpoint 264 is visually confirmed, resume the Adaptive Conversation Dock review immediately rather than opening another unrelated design branch.
 
 ---
 
@@ -305,6 +336,8 @@ source work-state preservation
 Conversation ownership separate from SEL2 selection
 compact native Cockpit composer
 ```
+
+Checkpoint 264 changes none of these semantics.
 
 ---
 
@@ -376,19 +409,25 @@ Human pulls the latest v1-cockpit-design-exploration branch and hard-refreshes.
 Inspect Boxes on:
     http://localhost:4173/design-lab/cockpit-reintegration.html
 
+Switch between:
+    General project discussion
+    Resolve target definition
+    other WorkUnit threads
+
 Required visible result:
-    General project discussion is one complete standalone first artifact
-    no WorkUnit overlaps it
-    clear dark separation follows it
-    WorkUnit spacing remains correct
-    Focus continues working
+    General project discussion matches the WorkUnit box footprint
+    selecting General frames only the General project box
+    selecting a WorkUnit frames only that WorkUnit surface
+    no oversized outer-row selection rectangle appears
+    existing spacing remains correct
+    Focus remains stable
 
 If correct:
-    close Checkpoint 263
+    close Checkpoint 264
     close the Conversation presentation-integrity interruption
     resume Checkpoint 258 Adaptive Conversation Dock visual review immediately
 
 If still wrong:
     preserve screenshot and exact viewport/route
-    continue only project-general rail geometry debugging
+    continue only the footprint/selection-frame boundary
 ```
