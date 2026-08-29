@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 262  
+**Checkpoint:** 263  
 **Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -26,29 +26,36 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
+docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
+docs/research/101_project_general_thread_short_viewport_containment_recovery.md
+
 docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
 docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
-
-docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
 ```
 
-Checkpoint 262 is the active product gate.
+Checkpoint 263 is the active product gate.
 
-The previous Checkpoint 260 row-owned-margin spacing implementation failed human review even though the intended declarations were loaded. Live Chrome geometry supplied by the project owner then identified the exact layout failure rather than another inferred cause.
-
-Current human evidence remains:
+The Checkpoint 262 human retest is now partially closed with positive human evidence:
 
 ```text
+Conversation WorkUnit spacing
+    correct
+
 current-process Focus
     working as far as tested
-
-Conversation Boxes before Checkpoint 262 recovery
-    visually joined
-    computed 16px margins present
-    visible surface gap only about 1.9px
 ```
 
-Adaptive Conversation Dock product judgment remains paused only until this underlying Boxes presentation is visually confirmed again.
+The same human screenshot exposed one narrower remaining defect:
+
+```text
+General project discussion
+    not contained as a distinct first conversation artifact
+    first WorkUnit visibly invades / overlaps that row
+```
+
+Research 101 protects the project-general row at short desktop heights without changing the accepted WorkUnit spacing geometry from Research 100.
+
+Adaptive Conversation Dock product judgment remains paused only until this final underlying Conversation rail containment issue is visually confirmed.
 
 Production `/cockpit` remains untouched.
 
@@ -79,12 +86,11 @@ Route roles:
 ```text
 plain route
     source-faithful whole-product substrate
-    current Checkpoint 262 Boxes spacing human-recheck surface
+    current Checkpoint 263 project-general containment human-recheck surface
 
 ?conversation=adaptive-dock
     opt-in professional co-present Conversation candidate
-    same spacing integrity must hold here
-    product-design review resumes after Checkpoint 262 confirmation
+    product-design review resumes after Checkpoint 263 confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -95,78 +101,79 @@ explicit ?edge=... / ?rail=...
 
 ---
 
-# Checkpoint 262 Conversation Boxes recovery
+# Research 100 WorkUnit spacing recovery is human-confirmed
 
-## Live-browser diagnosis
+The project owner's Checkpoint 262 retest confirmed that the WorkUnit-to-WorkUnit spacing now looks correct.
 
-The project owner's first diagnostic proved that the intended Checkpoint 260 CSS was really active:
-
-```text
-rail state                    boxes
-integrity stylesheet loaded   true
-WorkUnit margin-bottom        16px
-WorkUnit padding-top           6px
-WorkUnit padding-bottom        6px
-```
-
-Therefore stale Git state, stale Vite output and browser cache were not the cause.
-
-The second diagnostic measured the actual rendered grid and WorkUnit geometry. Representative values were:
-
-```text
-thread list display           grid
-row-gap                       0px
-WorkUnit row height           54.0px
-computed margin-bottom        16px
-row-to-row distance           16.0px
-painted surface bottom        ~20.8px below row bottom
-visible surface gap           ~1.9px
-```
-
-This numerically matches the user's screenshot.
-
-## Exact root cause
-
-The Checkpoint 260 margin-owned model was incompatible with this transformed-grid composition.
-
-CSS Grid included the WorkUnit margin in auto-track sizing and shrank the stretched item border box. The source-faithful Conversation WorkUnit is a transformed child with visible overflow, so its painted node surface continued beyond that shrunken row.
-
-Thus:
-
-```text
-computed margin = 16px
-    did not imply
-visible WorkUnit surface separation = 16px
-```
-
-Research 100 records the complete reasoning and measurements.
-
-## Current spacing contract
-
-The visual target from Checkpoint 256 remains unchanged. The canonical WorkUnit is not resized or redesigned.
-
-Current implementation:
+The accepted Research 100 contract therefore remains:
 
 ```text
 thread-list row-gap          16px
-project row margin            0px
 WorkUnit row margin           0px
 WorkUnit padding              6px top / 6px bottom
 wide WorkUnit min-height     78px
 responsive <=1450 min-height 73px
+actual visible WorkUnit gap  >=20px deterministic contract
 ```
 
-The two responsibilities are now separated:
+The canonical WorkUnit is not resized or redesigned.
+
+Research 100's root cause remains preserved:
 
 ```text
-minimum row height
-    contains the transformed canonical WorkUnit footprint
-
-grid track gap
-    owns the visible breathing room between objects
+margin-owned spacing
+    was absorbed into CSS Grid auto-track sizing
+    while transformed WorkUnit children painted beyond shrunken rows
+    producing ~1.9px visible separation despite 16px computed margins
 ```
 
-The non-Text compatibility selector remains, so both current `boxes` and historical-compatible `artifact` rail states receive the same spacing contract.
+The current grid-track model separates responsibilities correctly:
+
+```text
+minimum WorkUnit row height
+    contains transformed canonical footprint
+
+grid row-gap
+    owns visible inter-object breathing room
+```
+
+Do not reopen the WorkUnit spacing model without new contradictory human evidence.
+
+---
+
+# Checkpoint 263 project-general containment recovery
+
+## Human evidence
+
+The successful WorkUnit spacing screenshot still showed the project-general first conversation object being visually invaded by the first WorkUnit.
+
+This exposed a separate first-row containment gap rather than another WorkUnit spacing failure.
+
+## Residual implementation gap
+
+Research 100 gave WorkUnit rows explicit minimum heights but left the project-general row dependent on generic grid sizing.
+
+The project artifact itself is not transformed, but at a short desktop content height its row still needs a minimum footprint large enough for:
+
+```text
+existing project artifact  58px
+existing row padding        7px top / 7px bottom
+row border budget
+```
+
+Current project row contract:
+
+```text
+project row box-sizing       border-box
+project row height           auto
+project row min-height       74px
+project row margin            0px
+project row padding           7px top / 7px bottom
+project artifact min-height  58px
+thread-list row-gap          16px
+```
+
+The visual design of the project-general artifact is unchanged.
 
 Implementation artifacts:
 
@@ -175,6 +182,27 @@ frontend/design-lab/cockpit-reintegration-presentation-integrity.css
 frontend/design-lab/cockpit-reintegration-review-256.css
 ```
 
+## Short-height regression
+
+A new browser regression uses:
+
+```text
+1776 x 766
+```
+
+which approximates the actual visible page region in the supplied wide desktop screenshot after browser chrome is excluded.
+
+It requires:
+
+```text
+project row height >=73.5px
+project row padding >=7px top/bottom
+first WorkUnit visible surface begins >=16px after project artifact bottom
+WorkUnit-to-WorkUnit visible gaps remain >=20px
+```
+
+This explicitly protects the previously untested wide-but-short browser shape.
+
 ---
 
 # Deterministic fidelity status
@@ -182,40 +210,33 @@ frontend/design-lab/cockpit-reintegration-review-256.css
 Implementation/test target:
 
 ```text
-b8a2d095214c3417f95180ca519c7b6224739181
+5913467cfffd535215da7ab2cb70bdeb2be9f2e9
 ```
 
 Latest complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33247046868
-job           99086212488
+workflow run  33247621778
+job           99087735314
 result        SUCCESS
-browser tests 76 / 76 passing
+browser tests 77 / 77 passing
 ```
 
-The strengthened gate now includes:
+The 77-test gate includes all previous source-faithful Cockpit coverage plus the new short-height project-general containment regression.
+
+The new test passed under the exact current implementation:
 
 ```text
-1600px desktop spacing
-1100px responsive spacing
-760px narrow spacing
-legacy artifact state under responsive and wide layouts
-actual WorkUnit surface-to-surface gap >=20px
-Adaptive Dock full-focus / co-present / Threads-drawer spacing lifecycle
-current-process Focus lifecycle/remount synchronization
-all previous source-faithful Cockpit mechanisms
+General project discussion remains a distinct first artifact at a short desktop viewport
 ```
 
-An immediately preceding run failed because two historical test files still encoded old test plumbing/old margin-contract expectations. Those assertions were corrected; the final 76/76 workflow is the authoritative deterministic result.
-
-A green deterministic gate still does not substitute for the current human visual recheck because the defect itself was discovered through real-browser visual evidence.
+A green deterministic gate still does not substitute for the current human visual recheck because this residual defect was identified directly in the project owner's real browser.
 
 ---
 
 # Current-process Focus
 
-No Focus code was changed for Checkpoint 262.
+No Focus code was changed for Checkpoint 263.
 
 Research 098's recovery remains current:
 
@@ -253,7 +274,7 @@ co-present
     A6 available as invoked inspector sheet
 ```
 
-Checkpoint 262 does not accept, reject or retune this candidate. It repairs the Boxes rail substrate needed to judge it reliably.
+Checkpoint 263 does not accept, reject or retune this candidate. It repairs the final observed base-rail containment issue needed to judge it reliably.
 
 ---
 
@@ -352,24 +373,22 @@ Course 2 source-universe gate
 ```text
 Human pulls the latest v1-cockpit-design-exploration branch and hard-refreshes.
 
-Inspect Boxes first on:
+Inspect Boxes on:
     http://localhost:4173/design-lab/cockpit-reintegration.html
 
-Then optionally confirm the same spacing on:
-    ?conversation=adaptive-dock
-
 Required visible result:
-    clear dark separation after project-general artifact
-    clear dark separation between every WorkUnit
-    canonical WorkUnit footprint unchanged
+    General project discussion is one complete standalone first artifact
+    no WorkUnit overlaps it
+    clear dark separation follows it
+    WorkUnit spacing remains correct
     Focus continues working
 
 If correct:
-    close Checkpoint 262
+    close Checkpoint 263
+    close the Conversation presentation-integrity interruption
     resume Checkpoint 258 Adaptive Conversation Dock visual review immediately
 
 If still wrong:
-    preserve screenshot and exact route/state
-    keep Adaptive Dock product judgment paused
-    continue only Conversation presentation-integrity debugging using live rendered geometry
+    preserve screenshot and exact viewport/route
+    continue only project-general rail geometry debugging
 ```
