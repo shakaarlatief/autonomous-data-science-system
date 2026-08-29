@@ -3,7 +3,7 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_CANONICAL_ROUTE_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW",
+  "phase": "PHASE_C_ADAPTIVE_CONVERSATION_DOCK_REVIEW",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
@@ -71,16 +71,19 @@
       "Research 092 and Research 093 preserve earlier direct-manipulation and architectural 3D rail candidates as historical evidence.",
       "Research 094 tested a permanent resting angled rail and that treatment was later rejected for the current rail direction.",
       "Checkpoint 255 flattened the current right rail and replaced the static Deep Dive compass with a live Project-Grid-derived topology instrument.",
-      "The project owner reported that the Checkpoint 255 Conversation row-gap correction still did not create visible spacing after pulling the latest branch.",
-      "Research 096 identified the layout-level blind spot: scaled/transformed canonical WorkUnits can visually consume nominal grid-row gaps.",
-      "Checkpoint 256 therefore combines a 16px list row gap with 6px top/bottom real WorkUnit-row padding and validates actual rendered node-surface separation at both 1600px and 760px widths.",
-      "The project owner requested Fullscreen restored to the current flat rail and requested Expand selected WorkUnit and Hide project HUD removed from that rail candidate.",
-      "The project owner explicitly confirmed that current-process Focus is working correctly and instructed that Focus be left unchanged.",
-      "The project owner then requested that the current Checkpoint 256 Cockpit be available on the normal no-query link rather than through historical ?edge=angled plumbing.",
-      "Checkpoint 257 makes the plain cockpit-reintegration.html route canonical, isolates explicit edge/rail historical study routes, and uses ?edge=none only as an internal earlier-shell regression substrate.",
-      "Workflow run 33236756483 passed the complete 68-test source-faithful Cockpit suite at implementation target 59e5d19b310c4cc89fefc46fb4d116d67bdeefd5, including direct tests of the plain canonical route."
+      "Research 096 identified the Conversation layout-level blind spot and Checkpoint 256 corrected visible WorkUnit separation with 16px list gap plus 6px top/bottom structural row padding.",
+      "Checkpoint 256 restored Fullscreen to the current flat rail, removed Expand selected WorkUnit and Hide project HUD from that rail candidate, and explicitly left current-process Focus unchanged because the project owner confirmed it was working correctly.",
+      "Checkpoint 257 made the plain cockpit-reintegration.html route canonical, isolated explicit edge/rail historical study routes, and used ?edge=none only as an internal earlier-shell regression substrate.",
+      "Workflow run 33236756483 passed the complete 68-test source-faithful Cockpit suite for the Checkpoint 257 canonical substrate.",
+      "The project owner then explicitly accepted the Checkpoint 256/257 corrected Cockpit for continuation.",
+      "Human review of the integrated co-present Conversation screenshot identified a new whole-product hierarchy problem: the wide Conversation surface plus permanent thread rail reads as a second complete application beside the Cockpit.",
+      "Research 079 and 081-086 preserve the prior Conversation architecture evidence; Research 086 explicitly leaves co-present split geometry, resizing and pane-collapse behavior open while holding Conversation semantics.",
+      "Research 097 introduces an opt-in Adaptive Conversation Dock candidate: full-focus retains the source-faithful persistent rail, while co-present uses a compact resizable right dock and invokes the same Boxes/Text rail through a Threads drawer.",
+      "Official VS Code and Notion product references were used only as external workbench-composition evidence, not as semantic authority for ADS.",
+      "The adaptive study is isolated behind ?conversation=adaptive-dock; the plain canonical Cockpit remains unchanged until human acceptance.",
+      "Workflow run 33238181528 passed the complete 71-test source-faithful Cockpit suite at implementation target 00957b684cbc57dad11561f7ed262faf1bba4383, including three new adaptive-dock isolation and state-preservation tests."
     ],
-    "notes": "No Claude obligation is pending. The current gate is human review of two narrow Checkpoint 256 corrections on the canonical no-query Cockpit route: actual visible Conversation Boxes spacing and the current flat right-side rail control set. Focus is explicitly unchanged and working. The Checkpoint 255 live topology compass is carried forward unchanged. Checkpoint 257 changes route plumbing only. The complete browser gate passed 68/68 at implementation target 59e5d19b310c4cc89fefc46fb4d116d67bdeefd5. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The Checkpoint 256/257 visual gate is closed by explicit project-owner acceptance for continuation. The current gate is human whole-product review of the opt-in Adaptive Conversation Dock at ?conversation=adaptive-dock. The plain no-query Cockpit remains the accepted continuation substrate and is intentionally unchanged by the new candidate. Quiet Graphite, Boxes/Text, A6, Conversation scope/access/state-restoration semantics, current-process Focus and the live topology compass remain held. The complete browser gate passes 71/71 at implementation target 00957b684cbc57dad11561f7ed262faf1bba4383. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -116,15 +119,16 @@
       "PHASE_C_RESTING_ANGLED_RAIL_REVIEW",
       "PHASE_C_FLAT_RAIL_LIVE_COMPASS_REVIEW",
       "PHASE_C_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW",
-      "PHASE_C_CANONICAL_REVIEW_ROUTE_NORMALIZED"
+      "PHASE_C_CANONICAL_REVIEW_ROUTE_NORMALIZED",
+      "PHASE_C_ADAPTIVE_CONVERSATION_DOCK_REVIEW"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-checkpoint-257-canonical-review-route-normalized",
+    "transition_id": "mc0004-checkpoint-258-adaptive-conversation-dock-review-opened",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The project owner requested that the current Checkpoint 256 Cockpit become available on the normal link. Checkpoint 257 makes the no-query route canonical, isolates historical edge/rail studies and earlier-shell regression coverage, and preserves the same human-review boundary under a complete 68/68 deterministic gate.",
-    "repository_head": "59e5d19b310c4cc89fefc46fb4d116d67bdeefd5"
+    "reason": "The project owner accepted the Checkpoint 256/257 corrected Cockpit for continuation and identified the next whole-product problem: current co-present Conversation reads as a second full application beside the Cockpit. Research 097 introduces an isolated Adaptive Conversation Dock candidate that preserves held Conversation semantics while changing only co-present hierarchy/navigation persistence under a complete 71/71 deterministic gate.",
+    "repository_head": "00957b684cbc57dad11561f7ed262faf1bba4383"
   }
 }

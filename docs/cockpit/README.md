@@ -3,7 +3,8 @@
 **Status:** Current Phase-C implementation-fidelity governance surface  
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
 **Current branch:** `v1-cockpit-design-exploration`  
-**Current checkpoint:** 251
+**Current checkpoint:** 258  
+**Last reconciled:** 2026-08-29
 
 ## Purpose
 
@@ -36,15 +37,24 @@ A future integrator must not infer an implementation merely from labels such as 
 8. docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
 9. docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
 10. docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+11. docs/CURRENT_STATE.md
+12. latest routed checkpoint + research record
+```
+
+For the current boundary, the latest routed pair is:
+
+```text
+docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
+docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
 ```
 
 ## Artifact roles
 
 ### `PHASE_C_DECISION_LEDGER.md`
 
-Exhaustive disposition ledger for the new-Cockpit Phase-C design sequence.
+The disposition ledger is exhaustive for its declared Research 037-088 design sequence.
 
-It records not only selections, but also:
+It distinguishes:
 
 ```text
 SELECTED / HELD
@@ -54,7 +64,7 @@ REJECTED
 HISTORICAL / DIAGNOSTIC EVIDENCE
 ```
 
-This distinction is essential. "We explored it" does not mean "implement it."
+Later source-recovery and whole-product studies, Research 089 onward, are preserved through their own research records, checkpoints and current routing. Do not silently reinterpret the ledger as covering later research numbers it does not claim to cover.
 
 ### `ACCEPTED_IMPLEMENTATION_MANIFEST.md`
 
@@ -88,23 +98,38 @@ Current coverage:
 
 ### `scripts/check_cockpit_implementation_manifest.py`
 
-Structural and historical validator for the machine-readable manifest. It guards against missing required integration items, invalid target identities, missing source paths, accidental promotion of deferred/provisional material, and incomplete verification metadata.
+Structural and historical validator for the machine-readable manifest. It guards against missing required integration items, invalid target identities, missing source paths, accidental promotion of deferred/provisional material and incomplete verification metadata.
 
 ### `.github/workflows/cockpit-implementation-provenance.yml`
 
-Durable CI gate. It checks out full repository history and runs:
+Durable exact-history gate:
 
 ```text
 python scripts/check_cockpit_implementation_manifest.py --verify-git-history
 ```
 
-The first exact-history run passed:
+First exact-history run:
 
 ```text
 workflow run 33156357834
 entries=23 required=19 non_promotable=4
-exact historical source verification: PASS
+exact historical source verification PASS
 ```
+
+### `.github/workflows/cockpit-reintegration-fidelity.yml`
+
+Whole-product browser gate for the source-faithful integrated Cockpit.
+
+Current complete result:
+
+```text
+implementation target  00957b684cbc57dad11561f7ed262faf1bba4383
+workflow run           33238181528
+job                    99062775945
+browser tests          71 / 71 passing
+```
+
+This includes all prior source-faithful mechanism coverage plus the current opt-in Adaptive Conversation Dock isolation and state-preservation tests.
 
 ## Integration policy
 
@@ -137,11 +162,14 @@ DO NOT implement it as accepted product behavior
 ```text
 introduce minimum integration glue only
 label the glue provisional
-keep it visually subordinate to accepted components
+keep it subordinate to accepted components
 record it before it can become a new baseline
+isolate it behind an explicit review route when practical
 ```
 
-## Two fidelity gates
+The current `?conversation=adaptive-dock` study follows this policy: it changes co-present composition only, remains opt-in and leaves the accepted no-query Cockpit unchanged until human review.
+
+## Fidelity gates
 
 ### Provenance gate
 
@@ -164,25 +192,26 @@ PASS
 
 ### Integrated fidelity gate
 
-After the replacement browser is composed, establish:
+Establishes:
 
 ```text
-required mechanism is present
+required mechanisms are present
 geometry/visual invariants survive
 interaction behavior survives
 semantic meaning is unchanged
-known fixture defects were not reintroduced
-provisional glue is separately identified
-rejected/deferred candidates were not accidentally revived
+known fixture defects are not reintroduced
+provisional glue remains separately identifiable
+rejected/deferred candidates are not accidentally revived
 ```
 
 Current status:
 
 ```text
-OPEN / NOT YET PASSED
+PASS for the current covered implementation
+71 / 71 browser tests at 00957b684cbc57dad11561f7ed262faf1bba4383
 ```
 
-Visual comparison must use the exact accepted target as the reference, not prose alone.
+A deterministic pass is not a human aesthetic/product-design approval. Checkpoint 258's Adaptive Conversation Dock remains under human visual review.
 
 ## Failed integration
 
@@ -194,4 +223,18 @@ The browser at:
 
 is diagnostic evidence only and must never be used as a visual source of truth or as the parent source of the replacement browser.
 
-Production `/cockpit` remains untouched during the current source-faithful reintegration phase.
+## Current review isolation
+
+Accepted current whole-product substrate:
+
+```text
+http://localhost:4173/design-lab/cockpit-reintegration.html
+```
+
+Current opt-in candidate:
+
+```text
+http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
+```
+
+Production `/cockpit` remains untouched during the current whole-product design exploration.

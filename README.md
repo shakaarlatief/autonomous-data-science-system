@@ -11,13 +11,13 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            257
+checkpoint            258
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      canonical-route structural Conversation spacing + flat rail control-set human review
+current boundary      Adaptive Conversation Dock whole-product human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -33,47 +33,53 @@ Primary browser:
 frontend/design-lab/cockpit-reintegration.html
 ```
 
-Current human-review route:
+Accepted current no-query substrate:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-The current Cockpit no longer requires the historical `?edge=angled` suffix. Explicit `edge=` and `rail=` query routes are retained only for historical design studies and regression evidence. `?edge=none` is an internal regression substrate, not a product route.
-
-Current review targets are:
+Checkpoint 258 records human acceptance-for-continuation of the Checkpoint 256 / 257 corrections:
 
 ```text
-Conversation Boxes rail
+Conversation Boxes spacing
     16px list row gap
     6px top + bottom structural WorkUnit-row padding
-    actual rendered surfaces must read as distinct objects
 
-Project Grid right rail
-    compact flat 2D surface
-    Fullscreen restored
-    Expand selected WorkUnit removed from current rail candidate
-    Hide project HUD removed from current rail candidate
-    clarity-only label expansion retained
+current flat Project Grid rail
+    Fullscreen retained
+    Expand selected WorkUnit absent
+    Hide project HUD absent
 
-Current-process Focus
-    explicitly unchanged
-    project owner confirmed it is working correctly
+current-process Focus
+    explicitly unchanged / working
 
-Deep Dive project-position compass
-    live Checkpoint 255 implementation carried forward unchanged
+Deep Dive topology compass
+    Checkpoint 255 live implementation carried forward
 ```
+
+The next whole-product question is the professional composition of Conversation with active Cockpit work.
+
+Current opt-in review candidate:
+
+```text
+http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
+```
+
+The **Adaptive Conversation Dock** keeps full-focus Quiet Graphite Conversation source-faithful while making co-present Conversation a compact resizable secondary dock. Its thread navigation is invoked through a `Threads` drawer in co-present mode rather than permanently nesting a full thread rail beside the transcript.
+
+The ordinary no-query Cockpit intentionally remains unchanged until this candidate earns human acceptance.
 
 Latest complete Cockpit fidelity workflow:
 
 ```text
-implementation target  59e5d19b310c4cc89fefc46fb4d116d67bdeefd5
-workflow run           33236756483
-job                    99058967008
-browser tests          68 / 68 passing
+implementation target  00957b684cbc57dad11561f7ed262faf1bba4383
+workflow run           33238181528
+job                    99062775945
+browser tests          71 / 71 passing
 ```
 
-The current gate verifies the plain canonical route directly while preserving historical mechanism and rail-study coverage on isolated explicit query routes.
+The 71-test gate contains all previous 68 source-faithful Cockpit tests plus three adaptive-dock isolation/state-preservation tests.
 
 Production `/cockpit` remains untouched.
 
@@ -87,13 +93,13 @@ The first holistic integrated Cockpit browser at:
 
 is **not an accepted Cockpit baseline**.
 
-Human review exposed major fidelity failures against previously accepted Phase-C designs. Source-level audit found that the repository preserved exact accepted target SHAs and executable artifacts, but that integration manually reimplemented the design from textual summaries instead of faithfully reusing or porting those exact artifacts.
+Human review exposed major fidelity failures against previously accepted Phase-C designs. The repository had preserved exact accepted target SHAs and executable artifacts, but integration manually reimplemented them from textual summaries instead of faithfully reusing or porting those exact artifacts.
 
-The failed browser remains only as diagnostic evidence and is explicitly excluded from the replacement implementation source graph.
+The failed browser remains diagnostic evidence only and is excluded from the replacement source graph.
 
-## Implementation-provenance recovery: complete
+## Implementation-provenance recovery
 
-The repository has a dedicated Cockpit provenance layer:
+The Cockpit provenance layer remains authoritative:
 
 ```text
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
@@ -103,7 +109,7 @@ scripts/check_cockpit_implementation_manifest.py
 .github/workflows/cockpit-implementation-provenance.yml
 ```
 
-The manifest contains:
+Manifest coverage:
 
 ```text
 23 total entries
@@ -111,36 +117,44 @@ The manifest contains:
 4 deliberately non-promotable entries
 ```
 
-A full-history GitHub Actions gate verified every declared exact source binding:
+First exact-history proof:
 
 ```text
 workflow run 33156357834
-commit 2127563c0ed980f7bf6fad36e36b11e76500c59b
-
-Cockpit implementation manifest: PASS
-entries=23 required=19 non_promotable=4
-exact historical source verification: PASS
+commit       2127563c0ed980f7bf6fad36e36b11e76500c59b
+result       PASS
 ```
 
-## Accepted Phase-C decisions remain intact
+The rule remains:
 
-The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D0-D3, P7, current-process focus, runtime/T7, BLOCKED/FAIL, A3, SEL2, X5, Z7, S0, Quiet Graphite, Boxes/Text, A6 and Conversation access across Grid and Deep Dive.
+```text
+accepted implementation exists
+    -> reuse or port exact implementation
+    -> preserve accepted geometry / behavior / hierarchy
+    -> adapt only inside the recorded boundary
+    -> verify against exact source evidence
+```
 
-Checkpoint 256 changed Conversation row geometry and the current flat-rail control composition only. Checkpoint 257 normalizes the current review route only. Neither checkpoint revokes held semantics.
+## Held Phase-C decisions remain intact
 
-The complete disposition history is in `docs/cockpit/PHASE_C_DECISION_LEDGER.md`. The exact implementation source graph is in `docs/cockpit/accepted_implementation_manifest.json`.
+The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D0-D3, P7, current-process focus, runtime/T7, BLOCKED/FAIL, A3, SEL2, X5, Z7, Quiet Graphite, Boxes/Text, A6 and Conversation access across Grid and Deep Dive.
+
+L0 remains provisional. Semantic zoom remains deferred with S0 as the geometric working default.
+
+Checkpoint 258 reopens only **co-present Conversation composition geometry and navigation persistence**. It does not revoke the held Conversation semantics or visual baseline.
+
+`docs/cockpit/PHASE_C_DECISION_LEDGER.md` remains the exhaustive disposition ledger for Research 037-088. Later source-recovery and whole-product studies are routed through Research 089 onward, checkpoints and current-state records rather than silently extending that historical ledger's declared scope.
 
 ## Repository preservation model
 
-The repository-memory architecture combines:
-
 ```text
-semantic decision record
-    + complete disposition history
+semantic/product authority
+    + design disposition
     + exact implementation provenance
     + deterministic historical-source verification
     + integrated implementation-fidelity verification
     + explicit current routing
+    + human product-design gates
 ```
 
 ## Start here
@@ -150,13 +164,12 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
 
-docs/checkpoints/257_canonical_cockpit_review_route_normalized.md
+docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
+docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
 
+docs/checkpoints/257_canonical_cockpit_review_route_normalized.md
 docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
 docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
-
-docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
-docs/research/095_conversation_spacing_flat_project_rail_and_live_topology_compass.md
 
 docs/cockpit/README.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
