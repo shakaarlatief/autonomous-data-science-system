@@ -4,9 +4,14 @@
 **Status:** Current human-review checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / WHOLE_PRODUCT_CORRECTION  
 **Project stage:** V1 next-generation Project Cockpit advanced whole-product design exploration on the source-faithful integrated substrate  
+**Scope:** Records the Checkpoint 256 correction candidate for structural Conversation WorkUnit separation and the visible control set of the current compact flat Project Grid rail.  
+**Authority:** Historical design provenance. Later checkpoints and current routing govern active state; this checkpoint does not alter held Phase-C semantics and records the review boundary as understood at that time.  
 **Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-09`  
-**Conversation title:** `09 - Project Cockpit Design Exploration`
+**Conversation title:** `09 - Project Cockpit Design Exploration`  
+**Primary collaborator:** ChatGPT  
+**Collaboration thread:** `MC-0004`
 
 ## 1. Boundary transition
 

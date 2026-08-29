@@ -4,9 +4,14 @@
 **Status:** Current human-review checkpoint  
 **Checkpoint class:** CONTINUITY / ROUTING / WHOLE_PRODUCT_INTEGRATION  
 **Project stage:** V1 next-generation Project Cockpit advanced whole-product design exploration on the source-faithful integrated substrate  
+**Scope:** Records normalization of the Checkpoint 256 current Cockpit onto the canonical no-query review route while preserving explicit historical edge/rail study routes and the `?edge=none` regression substrate.  
+**Authority:** Historical routing/integration provenance. Later checkpoints and current routing govern active state; this checkpoint introduces no new visual or semantic design decision.  
 **Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-09`  
-**Conversation title:** `09 - Project Cockpit Design Exploration`
+**Conversation title:** `09 - Project Cockpit Design Exploration`  
+**Primary collaborator:** ChatGPT  
+**Collaboration thread:** `MC-0004`
 
 ## 1. Boundary transition
 

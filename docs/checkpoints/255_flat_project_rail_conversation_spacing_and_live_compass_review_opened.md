@@ -4,9 +4,14 @@
 **Status:** Current human-review checkpoint  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / WHOLE_PRODUCT_CORRECTION  
 **Project stage:** V1 next-generation Project Cockpit advanced whole-product design exploration on the source-faithful integrated substrate  
+**Scope:** Records the Checkpoint 255 whole-product correction candidate covering Conversation WorkUnit spacing, the flat 2D Project Grid rail direction and the live Deep Dive topology compass.  
+**Authority:** Historical design provenance. Later checkpoints and current routing govern the active Cockpit boundary; held Phase-C semantics remain governed by their accepted specifications, foundations and implementation provenance.  
 **Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-09`  
-**Conversation title:** `09 - Project Cockpit Design Exploration`
+**Conversation title:** `09 - Project Cockpit Design Exploration`  
+**Primary collaborator:** ChatGPT  
+**Collaboration thread:** `MC-0004`
 
 ## 1. Boundary transition
 
