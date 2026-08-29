@@ -220,3 +220,236 @@ html[data-reduced="on"][data-conversation-integration="adaptive-dock"] .reintegr
     transition: none !important;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Co-present Project tools: edge utility strip instead of a floating card.    */
+/* -------------------------------------------------------------------------- */
+
+/*
+ * The standalone Project Grid rail remains unchanged. When Conversation is
+ * co-present, however, the prior rounded floating rail created a third visual
+ * panel beside Grid + Conversation. The adaptive candidate therefore treats
+ * the same controls as a flush application-edge utility strip. Nothing about
+ * control ownership, ordering, or semantics changes.
+ */
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] {
+  --adaptive-project-rail-reserve: 56px !important;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"]:has(.cockpit-angled-rail-rig[data-clarity="expanded"]) {
+  --adaptive-project-rail-reserve: 196px !important;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+  border-right: 0;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig {
+  top: 0 !important;
+  right: 0 !important;
+  width: var(--adaptive-project-rail-reserve) !important;
+  height: 100vh !important;
+  perspective: none !important;
+  transform-style: flat !important;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-back,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-spine {
+  display: none !important;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-shell {
+  top: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  grid-template-rows: 44px minmax(0, 1fr) 44px;
+  gap: 0;
+  padding: 8px 7px;
+  border: 0 !important;
+  border-left: 1px solid rgba(190, 207, 230, 0.14) !important;
+  border-radius: 0 !important;
+  clip-path: none !important;
+  background:
+    linear-gradient(180deg, rgba(12, 18, 27, 0.985), rgba(8, 13, 20, 0.99)) !important;
+  box-shadow:
+    -14px 0 34px rgba(0, 0, 0, 0.16),
+    inset 1px 0 rgba(232, 241, 252, 0.025) !important;
+  transform: none !important;
+  transform-style: flat !important;
+  backdrop-filter: blur(18px);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-shell::before {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  border-radius: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 2%,
+    rgba(132, 166, 221, 0.20) 24%,
+    rgba(105, 217, 194, 0.28) 52%,
+    rgba(132, 166, 221, 0.16) 78%,
+    transparent 98%
+  );
+  box-shadow: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-shell::after {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-mark {
+  justify-content: center;
+  min-height: 36px;
+  padding: 0;
+  border-bottom-color: rgba(190, 207, 230, 0.08);
+  color: rgba(105, 217, 194, 0.70);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 9px;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-mark span {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools {
+  gap: 2px;
+  padding: 7px 0;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools button,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] #product-jump-toggle {
+  grid-template-columns: 40px minmax(0, 1fr);
+  height: 38px;
+  min-height: 38px;
+  padding: 0 6px 0 0;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: rgba(169, 187, 210, 0.72);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools button::before {
+  width: 40px;
+  font-size: 14px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools button:hover,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools button:focus-visible {
+  border-color: rgba(190, 207, 230, 0.10);
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(236, 242, 249, 0.95);
+  outline: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools button[aria-expanded="true"],
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-tools button[aria-pressed="true"] {
+  border-color: rgba(105, 217, 194, 0.18);
+  background: rgba(105, 217, 194, 0.075);
+  color: rgba(183, 235, 224, 0.94);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] #zoom-readout {
+  width: 40px;
+  min-width: 40px;
+  padding: 4px 0;
+  color: rgba(155, 174, 199, 0.62);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 9px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-clarity {
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-self: end;
+  height: 36px;
+  padding: 0 6px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(190, 207, 230, 0.08);
+  border-radius: 0;
+  background: transparent;
+  color: rgba(161, 180, 204, 0.68);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-clarity:hover,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-clarity:focus-visible {
+  border-color: rgba(190, 207, 230, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(236, 242, 249, 0.92);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-clarity-glyph {
+  width: 40px;
+  font-size: 16px;
+}
+
+/* Compact mode uses restrained hover labels instead of a permanent mini-panel. */
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="compact"] .reintegration-tools button[data-tooltip]::after {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 8px);
+  z-index: 170;
+  grid-column: auto;
+  grid-row: auto;
+  width: max-content;
+  max-width: 220px;
+  padding: 6px 8px;
+  border: 1px solid rgba(190, 207, 230, 0.16);
+  border-radius: 6px;
+  background: rgba(8, 13, 20, 0.98);
+  color: rgba(226, 234, 244, 0.92);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(-50%) translateX(3px);
+  white-space: nowrap;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="compact"] .reintegration-tools button[data-tooltip]:hover::after,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="compact"] .reintegration-tools button[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Expanded mode becomes a slim labelled tool strip rather than a floating card. */
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-mark {
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-mark span {
+  display: inline;
+  margin: 0;
+  color: rgba(180, 197, 218, 0.70);
+  font-size: 10px;
+  font-weight: 620;
+  letter-spacing: 0.02em;
+  opacity: 1;
+  transform: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="expanded"] .reintegration-tools button[data-tooltip]::after,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-clarity-label {
+  color: rgba(219, 228, 240, 0.86);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11.5px;
+  font-weight: 590;
+  letter-spacing: 0;
+  opacity: 1;
+  transform: none;
+}
+
+/* Invoked project panels stay attached to the same edge tool owner. */
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-search,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-appearance-panel,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-process-focus-panel {
+  right: calc(var(--adaptive-project-rail-reserve) + 10px) !important;
+}
