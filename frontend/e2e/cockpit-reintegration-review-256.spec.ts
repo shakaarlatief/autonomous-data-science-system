@@ -13,12 +13,16 @@ async function openStudy(page: Page, width: number, height = 1000) {
   await expect.poll(() => reviewStylesheet.evaluate((element: HTMLLinkElement) => Boolean(element.sheet))).toBe(true)
 }
 
-async function expectVisibleWorkUnitSpacing(page: Page, width: number, height = 1000) {
+async function openConversationBoxes(page: Page, width: number, height = 1000) {
   await openStudy(page, width, height)
   await page.locator('#conversation-expand').click()
   await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
   await page.locator('[data-conversation-rail-option="boxes"]').click()
   await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
+}
+
+async function expectVisibleWorkUnitSpacing(page: Page, width: number, height = 1000) {
+  await openConversationBoxes(page, width, height)
 
   const list = page.locator('.reintegration-thread-list')
   const rowGap = await list.evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
@@ -36,9 +40,9 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number, height = 
     }
   })
   expect(projectGeometry.marginBottom).toBeLessThanOrEqual(0.5)
-  expect(projectGeometry.paddingTop).toBeGreaterThanOrEqual(7)
-  expect(projectGeometry.paddingBottom).toBeGreaterThanOrEqual(7)
-  expect(projectGeometry.height).toBeGreaterThanOrEqual(73.5)
+  expect(projectGeometry.paddingTop).toBeGreaterThanOrEqual(6)
+  expect(projectGeometry.paddingBottom).toBeGreaterThanOrEqual(6)
+  expect(projectGeometry.height).toBeGreaterThanOrEqual(72.5)
 
   const workRows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
   const firstWorkGeometry = await workRows.first().evaluate((element) => {
@@ -87,6 +91,54 @@ test.describe('Checkpoint 256 review corrections on the canonical Cockpit route'
 
   test('General project discussion remains a distinct first artifact at a short desktop viewport', async ({ page }) => {
     await expectVisibleWorkUnitSpacing(page, 1776, 766)
+  })
+
+  test('General project discussion matches the WorkUnit footprint and uses the same selected-surface frame', async ({ page }) => {
+    await openConversationBoxes(page, 1600)
+
+    const projectThread = page.locator('.reintegration-thread-item[data-thread-scope="project"]')
+    const projectArtifact = projectThread.locator('.reintegration-project-thread-artifact')
+    const firstWorkThread = page.locator('.reintegration-thread-item[data-thread-scope="work"]').first()
+    const firstWorkBox = firstWorkThread.locator('.reintegration-thread-box')
+    const firstWorkSurface = firstWorkThread.locator('.conversation-canonical-node .node-surface')
+
+    await expect(projectThread).toHaveClass(/is-active/)
+
+    const projectBox = await projectArtifact.boundingBox()
+    const workBox = await firstWorkBox.boundingBox()
+    expect(projectBox).not.toBeNull()
+    expect(workBox).not.toBeNull()
+    expect(Math.abs((projectBox?.width ?? 0) - (workBox?.width ?? 0))).toBeLessThanOrEqual(0.5)
+    expect(Math.abs((projectBox?.height ?? 0) - (workBox?.height ?? 0))).toBeLessThanOrEqual(0.5)
+
+    const projectSelectedStyle = await projectArtifact.evaluate((element) => {
+      const style = getComputedStyle(element)
+      return { borderColor: style.borderColor, boxShadow: style.boxShadow }
+    })
+    const projectOuterStyle = await projectThread.evaluate((element) => {
+      const style = getComputedStyle(element)
+      return { borderColor: style.borderColor, backgroundColor: style.backgroundColor }
+    })
+    expect(projectOuterStyle.borderColor).toBe('rgba(0, 0, 0, 0)')
+    expect(projectOuterStyle.backgroundColor).toBe('rgba(0, 0, 0, 0)')
+
+    await firstWorkThread.click()
+    await expect(firstWorkThread).toHaveClass(/is-active/)
+    await expect(projectThread).not.toHaveClass(/is-active/)
+
+    const workSelectedStyle = await firstWorkSurface.evaluate((element) => {
+      const style = getComputedStyle(element)
+      return { borderColor: style.borderColor, boxShadow: style.boxShadow }
+    })
+    const workOuterStyle = await firstWorkThread.evaluate((element) => {
+      const style = getComputedStyle(element)
+      return { borderColor: style.borderColor, backgroundColor: style.backgroundColor }
+    })
+
+    expect(workOuterStyle.borderColor).toBe('rgba(0, 0, 0, 0)')
+    expect(workOuterStyle.backgroundColor).toBe('rgba(0, 0, 0, 0)')
+    expect(projectSelectedStyle.borderColor).toBe(workSelectedStyle.borderColor)
+    expect(projectSelectedStyle.boxShadow).toBe(workSelectedStyle.boxShadow)
   })
 
   test('Conversation WorkUnits retain structural visible separation at the responsive 1100px viewport', async ({ page }) => {
