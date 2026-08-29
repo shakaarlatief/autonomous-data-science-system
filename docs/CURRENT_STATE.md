@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 261  
+**Checkpoint:** 262  
 **Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -26,34 +26,29 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
+docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
+docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
+
 docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
-
-docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
-docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
 ```
 
-Checkpoint 261 is a continuity/provenance reconciliation only. The previous ChatGPT conversation reached its length limit and work continued in a new conversation, but the interaction-session identity was not rotated. The current conversation is now canonically:
+Checkpoint 262 is the active product gate.
 
-```text
-chatgpt-10
-10 - Project Cockpit Design Exploration
-```
+The previous Checkpoint 260 row-owned-margin spacing implementation failed human review even though the intended declarations were loaded. Live Chrome geometry supplied by the project owner then identified the exact layout failure rather than another inferred cause.
 
-Post-boundary artifacts from Research 097 / Checkpoint 258 onward that incorrectly carried `chatgpt-09` were corrected. Pre-boundary ChatGPT-09 provenance remains unchanged.
-
-The product boundary itself is still Checkpoint 260. Its human confirmation produced:
+Current human evidence remains:
 
 ```text
 current-process Focus
     working as far as tested
 
-Conversation Boxes
-    still visibly missing the original spacing
+Conversation Boxes before Checkpoint 262 recovery
+    visually joined
+    computed 16px margins present
+    visible surface gap only about 1.9px
 ```
 
-The project owner's screenshots show the canonical Conversation WorkUnit artifacts still stacking as visually joined objects. That direct visual evidence overrides the previous assumption that a green 73/73 browser gate had closed the Conversation spacing defect.
-
-The active product gate is narrow: verify the new row-owned Conversation spacing locally. Adaptive Conversation Dock product judgment remains paused only until this underlying rail presentation is trustworthy again.
+Adaptive Conversation Dock product judgment remains paused only until this underlying Boxes presentation is visually confirmed again.
 
 Production `/cockpit` remains untouched.
 
@@ -79,17 +74,17 @@ Adaptive Conversation Dock candidate:
 http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
 ```
 
-Route roles remain:
+Route roles:
 
 ```text
 plain route
-    current source-faithful whole-product substrate
-    current Boxes spacing human recheck surface
+    source-faithful whole-product substrate
+    current Checkpoint 262 Boxes spacing human-recheck surface
 
 ?conversation=adaptive-dock
     opt-in professional co-present Conversation candidate
-    Boxes spacing must also remain correct here
-    product-design review resumes after Checkpoint 260 confirmation
+    same spacing integrity must hold here
+    product-design review resumes after Checkpoint 262 confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -100,72 +95,78 @@ explicit ?edge=... / ?rail=...
 
 ---
 
-# Checkpoint 260 Conversation Boxes recovery
+# Checkpoint 262 Conversation Boxes recovery
 
-## Human evidence
+## Live-browser diagnosis
 
-After pulling the Checkpoint 259 recovery, the project owner reported:
-
-```text
-Focus is working as far as tested.
-Boxes still do not have the spaces we originally had between them.
-```
-
-The screenshots visibly corroborate the Boxes finding.
-
-This means the Conversation branch of Checkpoint 259 failed its human confirmation, while the Focus branch currently passes human retest.
-
-## Correction to the Research 098 Conversation diagnosis
-
-Research 098's stale-selector finding was real but incomplete.
-
-The current renderer emits:
+The project owner's first diagnostic proved that the intended Checkpoint 260 CSS was really active:
 
 ```text
-data-thread-scope="work"
+rail state                    boxes
+integrity stylesheet loaded   true
+WorkUnit margin-bottom        16px
+WorkUnit padding-top           6px
+WorkUnit padding-bottom        6px
 ```
 
-and some older styles referenced:
+Therefore stale Git state, stale Vite output and browser cache were not the cause.
+
+The second diagnostic measured the actual rendered grid and WorkUnit geometry. Representative values were:
 
 ```text
-.is-workunit-thread
+thread list display           grid
+row-gap                       0px
+WorkUnit row height           54.0px
+computed margin-bottom        16px
+row-to-row distance           16.0px
+painted surface bottom        ~20.8px below row bottom
+visible surface gap           ~1.9px
 ```
 
-but the integrated Phase-C completion adapter also restores `.is-workunit-thread` for canonical WorkUnit rows. Therefore selector identity alone cannot explain the continued visual failure.
+This numerically matches the user's screenshot.
 
-The stronger implementation weakness was that accepted visible separation still depended on surrounding layout state:
+## Exact root cause
+
+The Checkpoint 260 margin-owned model was incompatible with this transformed-grid composition.
+
+CSS Grid included the WorkUnit margin in auto-track sizing and shrank the stretched item border box. The source-faithful Conversation WorkUnit is a transformed child with visible overflow, so its painted node surface continued beyond that shrunken row.
+
+Thus:
 
 ```text
-parent grid row-gap
-exact data-conversation-rail="boxes" selector
-transformed canonical WorkUnit children
-late whole-product style composition
+computed margin = 16px
+    did not imply
+visible WorkUnit surface separation = 16px
 ```
 
-The current Conversation UI resolves every non-Text state as Boxes/artifact. Historical persistence also used `artifact`. The user's screenshot does not prove that exact legacy state was active, so Research 099 does not overclaim it as the sole root cause. It is nevertheless a concrete state that the current UI resolves as Boxes and that the previous CSS contract did not explicitly protect.
+Research 100 records the complete reasoning and measurements.
 
-## Row-owned geometry
+## Current spacing contract
 
-The intended visual target remains the Checkpoint 256 spacing. The canonical WorkUnit footprint is unchanged.
+The visual target from Checkpoint 256 remains unchanged. The canonical WorkUnit is not resized or redesigned.
 
-Spacing is now owned by actual conversation rows:
+Current implementation:
 
 ```text
-parent list row-gap             0px
-project-general bottom margin  16px
-WorkUnit top padding             6px
-WorkUnit bottom padding          6px
-WorkUnit bottom margin          16px
-last WorkUnit bottom margin      0px
+thread-list row-gap          16px
+project row margin            0px
+WorkUnit row margin           0px
+WorkUnit padding              6px top / 6px bottom
+wide WorkUnit min-height     78px
+responsive <=1450 min-height 73px
 ```
 
-The presentation selector is now:
+The two responsibilities are now separated:
 
 ```text
-html:not([data-conversation-rail="text"])
+minimum row height
+    contains the transformed canonical WorkUnit footprint
+
+grid track gap
+    owns the visible breathing room between objects
 ```
 
-so both current `boxes` and historical/compatible `artifact` states receive the same structural separation.
+The non-Text compatibility selector remains, so both current `boxes` and historical-compatible `artifact` rail states receive the same spacing contract.
 
 Implementation artifacts:
 
@@ -174,35 +175,47 @@ frontend/design-lab/cockpit-reintegration-presentation-integrity.css
 frontend/design-lab/cockpit-reintegration-review-256.css
 ```
 
-## Deterministic test correction
+---
 
-The previous tests explicitly expected parent `row-gap` to carry the separation. That encoded the old implementation rather than the user-visible contract.
+# Deterministic fidelity status
 
-The updated gates instead assert:
-
-```text
-parent row-gap is not the spacing carrier
-project row owns >=16px following space
-WorkUnit rows own >=16px following space
-WorkUnit rows keep >=6px top/bottom structural padding
-actual rendered project-to-WorkUnit separation remains visible
-actual rendered WorkUnit-to-WorkUnit separation remains visible
-```
-
-A new regression uses:
+Implementation/test target:
 
 ```text
-viewport                       1536 x 864
-forced legacy rail state       artifact
-current Boxes UI               still selected
-visible row-owned separation   required
+b8a2d095214c3417f95180ca519c7b6224739181
 ```
+
+Latest complete Cockpit fidelity workflow:
+
+```text
+workflow run  33247046868
+job           99086212488
+result        SUCCESS
+browser tests 76 / 76 passing
+```
+
+The strengthened gate now includes:
+
+```text
+1600px desktop spacing
+1100px responsive spacing
+760px narrow spacing
+legacy artifact state under responsive and wide layouts
+actual WorkUnit surface-to-surface gap >=20px
+Adaptive Dock full-focus / co-present / Threads-drawer spacing lifecycle
+current-process Focus lifecycle/remount synchronization
+all previous source-faithful Cockpit mechanisms
+```
+
+An immediately preceding run failed because two historical test files still encoded old test plumbing/old margin-contract expectations. Those assertions were corrected; the final 76/76 workflow is the authoritative deterministic result.
+
+A green deterministic gate still does not substitute for the current human visual recheck because the defect itself was discovered through real-browser visual evidence.
 
 ---
 
 # Current-process Focus
 
-No Focus code was changed for Checkpoint 260.
+No Focus code was changed for Checkpoint 262.
 
 Research 098's recovery remains current:
 
@@ -219,29 +232,6 @@ accepted opacity/filter contract protected from later style precedence
 Current human evidence is positive: Focus is working as far as tested.
 
 Do not reopen Focus without another concrete reproduction.
-
----
-
-# Deterministic fidelity status
-
-Implementation target:
-
-```text
-29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
-```
-
-Latest complete Cockpit fidelity workflow:
-
-```text
-workflow run  33241369935
-job           99071179670
-result        SUCCESS
-browser tests 74 / 74 passing
-```
-
-The 74-test gate includes all previous source-faithful Cockpit coverage plus the new user-like-viewport legacy-artifact spacing regression.
-
-A green gate still does not substitute for the current human recheck because the previous green gate did not prevent the locally visible defect.
 
 ---
 
@@ -263,7 +253,20 @@ co-present
     A6 available as invoked inspector sheet
 ```
 
-Checkpoint 260 does not accept, reject or retune this candidate. It repairs and revalidates the Boxes rail substrate needed to judge it reliably.
+Checkpoint 262 does not accept, reject or retune this candidate. It repairs the Boxes rail substrate needed to judge it reliably.
+
+---
+
+# Interaction continuity
+
+Checkpoint 261 remains the provenance boundary for the current conversation:
+
+```text
+interaction session  chatgpt-10
+conversation title   10 - Project Cockpit Design Exploration
+```
+
+Post-boundary Research 097 / Checkpoint 258 onward provenance was reconciled without rewriting pre-boundary ChatGPT-09 history.
 
 ---
 
@@ -349,22 +352,24 @@ Course 2 source-universe gate
 ```text
 Human pulls the latest v1-cockpit-design-exploration branch and hard-refreshes.
 
-Inspect Boxes on:
-    normal cockpit-reintegration.html route
-    ?conversation=adaptive-dock route
+Inspect Boxes first on:
+    http://localhost:4173/design-lab/cockpit-reintegration.html
+
+Then optionally confirm the same spacing on:
+    ?conversation=adaptive-dock
 
 Required visible result:
-    project-general artifact separated from first WorkUnit
-    every WorkUnit separated from the next WorkUnit
+    clear dark separation after project-general artifact
+    clear dark separation between every WorkUnit
     canonical WorkUnit footprint unchanged
     Focus continues working
 
 If correct:
-    close Checkpoint 260
+    close Checkpoint 262
     resume Checkpoint 258 Adaptive Conversation Dock visual review immediately
 
 If still wrong:
-    preserve the screenshot and exact route/state
+    preserve screenshot and exact route/state
     keep Adaptive Dock product judgment paused
-    continue only Conversation rail presentation-integrity debugging
+    continue only Conversation presentation-integrity debugging using live rendered geometry
 ```
