@@ -4,7 +4,7 @@
 **Status:** IMPLEMENTED / DETERMINISTICALLY VERIFIED / AWAITING HUMAN CONFIRMATION  
 **Scope:** Root-cause analysis and recovery of two intermittent integrated-Cockpit presentation failures reported during Adaptive Conversation Dock review: disappearing Conversation WorkUnit spacing and desynchronized current-process Focus recession.  
 **Interaction environment:** ChatGPT  
-**Interaction session:** `chatgpt-09`  
+**Interaction session:** `chatgpt-10`  
 **Branch:** `v1-cockpit-design-exploration`
 
 ## 1. Trigger
