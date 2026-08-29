@@ -12,29 +12,44 @@
 /* Conversation Boxes: accepted structural separation                         */
 /* -------------------------------------------------------------------------- */
 
-html[data-conversation-rail="boxes"] .reintegration-thread-list {
-  row-gap: 16px !important;
+/*
+ * Boxes is the resolved presentation for every non-Text rail state. Historical
+ * Conversation implementations persisted the same mode under the value
+ * "artifact", while the current controller exposes it as "boxes". The visual
+ * contract therefore must not disappear merely because a restored browser
+ * state still carries that legacy value.
+ *
+ * Separation is owned by each actual thread row rather than only by the parent
+ * grid gap. This keeps the visible space stable even when a transformed
+ * canonical WorkUnit, responsive rail geometry, browser-restored state or a
+ * late-mounted study stylesheet changes the surrounding list composition.
+ */
+html:not([data-conversation-rail="text"]) .reintegration-thread-list {
+  row-gap: 0 !important;
   column-gap: 0 !important;
   align-content: start;
 }
 
-/*
- * Current Conversation rows identify WorkUnit scope through data-thread-scope.
- * The former .is-workunit-thread selector survives in historical fixtures, so
- * both identities are supported. Real row padding keeps transformed canonical
- * WorkUnits from visually consuming the inter-row gap.
- */
-html[data-conversation-rail="boxes"] .reintegration-thread-item[data-thread-scope="work"],
-html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread {
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
+  margin: 0 0 16px !important;
+}
+
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
+html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread {
   box-sizing: border-box;
   height: auto !important;
   min-height: 0 !important;
-  margin: 0 !important;
+  margin: 0 0 16px !important;
   padding: 6px 4px !important;
   overflow: visible !important;
 }
 
-html[data-conversation-rail="boxes"] .reintegration-thread-item[data-thread-scope="work"] .reintegration-thread-box,
-html[data-conversation-rail="boxes"] .reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"]:last-child,
+html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread:last-child {
+  margin-bottom: 0 !important;
+}
+
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"] .reintegration-thread-box,
+html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
   margin: 0 !important;
 }

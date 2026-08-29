@@ -12,20 +12,36 @@ async function expectWorkUnitRailSpacing(page: Page) {
   const list = page.locator('.reintegration-thread-list')
   await expect(list).toBeVisible()
 
+  /*
+   * The visible separation is row-owned. The parent grid deliberately carries
+   * no vertical gap so restored/legacy rail mode values cannot make the space
+   * disappear while the UI still resolves that mode as Boxes.
+   */
   const rowGap = await list.evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
-  expect(rowGap).toBeGreaterThanOrEqual(16)
+  expect(rowGap).toBeLessThanOrEqual(0.5)
+
+  const projectThread = page.locator('.reintegration-thread-item[data-thread-scope="project"]')
+  const projectMargin = await projectThread.evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
+  expect(projectMargin).toBeGreaterThanOrEqual(16)
 
   const rows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
-  expect(await rows.count()).toBeGreaterThan(1)
-  const padding = await rows.first().evaluate((element) => {
+  const rowCount = await rows.count()
+  expect(rowCount).toBeGreaterThan(1)
+
+  const firstGeometry = await rows.first().evaluate((element) => {
     const style = getComputedStyle(element)
     return {
       top: Number.parseFloat(style.paddingTop),
       bottom: Number.parseFloat(style.paddingBottom),
+      marginBottom: Number.parseFloat(style.marginBottom),
     }
   })
-  expect(padding.top).toBeGreaterThanOrEqual(6)
-  expect(padding.bottom).toBeGreaterThanOrEqual(6)
+  expect(firstGeometry.top).toBeGreaterThanOrEqual(6)
+  expect(firstGeometry.bottom).toBeGreaterThanOrEqual(6)
+  expect(firstGeometry.marginBottom).toBeGreaterThanOrEqual(16)
+
+  const lastMargin = await rows.last().evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
+  expect(lastMargin).toBeLessThanOrEqual(0.5)
 
   const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
   expect(project).not.toBeNull()
@@ -82,6 +98,25 @@ test.describe('Cockpit presentation-state integrity recovery', () => {
     await page.locator('.adaptive-conversation-drawer-close').click()
     await page.locator('#reintegration-conversation-presentation-toggle').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'full')
+    await expectWorkUnitRailSpacing(page)
+  })
+
+  test('Boxes separation survives the legacy artifact rail state at a user-like viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 1536, height: 864 })
+    await page.goto(canonicalRoute)
+    await expect(page.locator(nodeSelector)).toHaveCount(6)
+    await page.locator('#global-conversations').click()
+    await page.locator('[data-conversation-rail-option="boxes"]').click()
+
+    /*
+     * Historical Conversation code used "artifact" for the same rail mode.
+     * The current UI resolves every non-Text value as Boxes, so the spacing
+     * contract must remain active under this restored state as well.
+     */
+    await page.evaluate(() => {
+      document.documentElement.dataset.conversationRail = 'artifact'
+    })
+    await expect(page.locator('[data-conversation-rail-option="boxes"]')).toHaveAttribute('aria-pressed', 'true')
     await expectWorkUnitRailSpacing(page)
   })
 
