@@ -3,7 +3,7 @@
 **Status:** Current Phase-C implementation-fidelity governance surface  
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
 **Current branch:** `v1-cockpit-design-exploration`  
-**Current checkpoint:** 263  
+**Current checkpoint:** 264  
 **Last reconciled:** 2026-08-29
 
 ## Purpose
@@ -44,6 +44,9 @@ A future integrator must not infer an implementation merely from labels such as 
 For the current boundary:
 
 ```text
+docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
+docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
+
 docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
 docs/research/101_project_general_thread_short_viewport_containment_recovery.md
 
@@ -53,7 +56,7 @@ docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry
 docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
 ```
 
-Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath the temporary Checkpoint 263 integrity recheck.
+Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath the temporary Checkpoint 264 integrity recheck.
 
 ## Artifact roles
 
@@ -110,45 +113,47 @@ exact historical source verification PASS
 Current complete result:
 
 ```text
-implementation/test target  5913467cfffd535215da7ab2cb70bdeb2be9f2e9
-workflow run                33247621778
-job                         99087735314
-browser tests               77 / 77 passing
+implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
+workflow run                33251166351
+job                         99096968925
+browser tests               78 / 78 passing
 ```
 
-The gate contains all prior source-faithful mechanism coverage plus Adaptive Conversation Dock isolation/state-preservation, Focus lifecycle/remount synchronization, human-confirmed WorkUnit spacing protection and a new short-height project-general containment regression.
+The gate contains all prior source-faithful mechanism coverage plus Adaptive Conversation Dock isolation/state-preservation, Focus lifecycle/remount synchronization, human-confirmed WorkUnit spacing protection, project-general short-height containment and the new project-general footprint/selected-surface alignment regression.
 
 ## Human evidence governs visible fidelity
 
-Checkpoint 262 confirms an important governance lesson from Checkpoints 259-260.
+The recent Conversation rail sequence records why deterministic tests and direct visual evidence must work together.
 
-The project owner's browser had the current spacing stylesheet and intended computed values, yet the WorkUnits still looked joined. Live geometry established why:
+Research 100 established the exact reason WorkUnit margins could compute as 16px while the visible boxes still nearly touched: CSS Grid auto-track sizing shrank the structural row while transformed overflow-visible WorkUnits painted beyond it. Explicit grid-track spacing plus sufficient WorkUnit row height fixed that defect, and the project owner has now visually confirmed the WorkUnit spacing is correct.
 
-```text
-WorkUnit grid row             54px
-computed bottom margin        16px
-painted WorkUnit overflow     ~20.8px
-actual visible surface gap    ~1.9px
-```
+Research 101 then added only project-general row containment after the first WorkUnit invaded General project discussion at a short desktop viewport. The latest screenshot confirms that containment is also correct.
 
-CSS Grid auto-track sizing was shrinking the margin-bearing grid item while the transformed, overflow-visible canonical WorkUnit continued painting outside it.
-
-The failed row-owned-margin implementation was replaced by explicit 16px grid row-gap, zero WorkUnit row margins, 6px WorkUnit top/bottom padding and minimum row heights that contain the transformed canonical artifacts.
-
-The project owner has now visually confirmed that WorkUnit spacing is correct.
-
-The same screenshot exposed one remaining first-row issue: General project discussion could be invaded by the first WorkUnit at a wide but vertically short browser viewport. Research 101 therefore adds only project-row containment:
+Research 102 addresses the remaining small visual inconsistency:
 
 ```text
-project row min-height       74px
-project row padding           7px top / 7px bottom
-project artifact min-height  58px
-existing grid row-gap        16px
+accepted WorkUnit rail slot
+    232 x 74 px normal
+    214 x 69 px responsive <=1450
+
+project-general artifact
+    now matches those exact visible dimensions
+
+Boxes active row
+    structural wrapper stays transparent
+
+project selected surface
+    visible project artifact
+
+WorkUnit selected surface
+    visible canonical WorkUnit node surface
 ```
 
-The project artifact is not redesigned. A `1776 x 766` regression requires it to remain a distinct first object before WorkUnit 1 while preserving the already-correct WorkUnit spacing.
+Text mode retains its generic row selection because the row is the visible navigation object there.
 
-Human visual confirmation remains required before the presentation-integrity interruption is closed.
+The existing 16px grid spacing is not enlarged. At the short viewport, equal visible project/WorkUnit sizing produces a 15px painted project-to-first-WorkUnit gap while the structural row-gap remains 16px. WorkUnit-to-WorkUnit visible gaps remain protected at >=20px.
+
+Checkpoint 264 requires one final human visual confirmation of this footprint and selected-frame alignment.
 
 ## Interaction provenance continuity
 
@@ -217,10 +222,10 @@ Current status:
 
 ```text
 PASS for the current covered implementation
-77 / 77 browser tests at 5913467cfffd535215da7ab2cb70bdeb2be9f2e9
+78 / 78 browser tests at 9881efe313b8cf04d9521c0464050b30b29944c1
 ```
 
-A deterministic pass is not human aesthetic/product-design approval and does not overrule direct local visual evidence. Checkpoint 263 remains under human project-general containment recheck. Checkpoint 258's Adaptive Conversation Dock remains under human product review once that recheck closes.
+A deterministic pass is not human aesthetic/product-design approval and does not overrule direct local visual evidence. Checkpoint 264 remains under human footprint/selection-frame recheck. Checkpoint 258's Adaptive Conversation Dock remains under human product review once that recheck closes.
 
 ## Failed integration
 
