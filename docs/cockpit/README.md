@@ -1,16 +1,92 @@
 # Project Cockpit Implementation Provenance
 
-**Status:** Current Phase-C implementation-fidelity governance surface  
+**Status:** PAUSED / safely resumable next-generation Cockpit design and fidelity surface  
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
-**Current branch:** `v1-cockpit-design-exploration`  
-**Current checkpoint:** 264  
+**Frozen design branch:** `v1-cockpit-design-exploration`  
+**Frozen frontend head:** `04f2a907094b8023ac7377c399a6eef1a6e1da99`  
+**Current routing checkpoint:** 267  
 **Last reconciled:** 2026-08-29
 
-## Purpose
+## Current pause boundary
+
+The project owner explicitly paused the frontend Cockpit session at Checkpoint 267 and resumed the permanent Source Vault bootstrap.
+
+The Cockpit is therefore:
+
+```text
+PAUSED
+not rejected
+not deleted
+not production-promoted
+exact implementation and verification state preserved
+```
+
+Production `/cockpit` remains untouched.
+
+The exact future resume anchor is:
+
+```text
+branch   v1-cockpit-design-exploration
+head     04f2a907094b8023ac7377c399a6eef1a6e1da99
+workflow 33268350178
+job      99142293330
+gate     V3 full
+browser  84 / 84 PASS
+```
+
+Do not advance the frozen Cockpit branch merely to record unrelated Source Universe work. The active continuation now lives on `v1-source-vault-bootstrap-resume`.
+
+## Human-confirmed state at pause
+
+The frontend session progressed beyond the older Checkpoint 264 recheck before it was paused.
+
+Current preserved product state includes:
+
+```text
+Conversation WorkUnit spacing
+    human-confirmed correct
+
+General project discussion containment
+    human-confirmed correct
+
+General project footprint + selected-surface frame
+    human-confirmed correct
+
+Adaptive Conversation Dock
+    resizable split-pane direction accepted for continuation
+    direct co-present entry preferred
+    Threads remains invoked in compact co-presence
+    Project tools remain usable beside Conversation
+
+Deep Dive + Conversation
+    true split-workspace composition
+    direct Deep Dive action from expanded WorkUnit
+    Deep Dive typography moved away from micro-label fixture styling
+
+keyboard contract
+    Escape = application Back
+    F = browser fullscreen toggle
+    Shift+C = Conversation full-focus/co-present toggle
+    T = Threads in co-present Conversation
+
+Project tool rail beside Conversation
+    56px flush full-height application-edge utility strip
+    quieter graphite visual language
+    196px labelled clarity expansion
+
+normal Cockpit Project tool rail
+    same 56px/quieter visual language adopted
+    remains bounded and inset rather than full-height
+    human response: positive / accepted for continuation
+```
+
+These refinements remain design-lab candidate behavior until separately promoted.
+
+## Purpose of this directory
 
 The next-generation Project Cockpit was designed through many bounded browser-rendered experiments. The first holistic reconstruction failed because semantic summaries were used as permission to redraw already accepted implementations.
 
-This directory closes that gap.
+This directory prevents that failure mode.
 
 The governing rule is:
 
@@ -24,45 +100,33 @@ semantic decision
 
 A future integrator must not infer an implementation merely from labels such as `G4`, `H4`, `SEL2`, `X5`, `Quiet Graphite` or `A6`.
 
-## Required reading order for Cockpit integration
+## Required reading order when Cockpit work resumes
 
 ```text
-1. docs/specifications/008_v1_project_cockpit_interaction_architecture.md
-2. docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
-3. docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
-4. docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
-5. docs/cockpit/PHASE_C_DECISION_LEDGER.md
-6. docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
-7. docs/cockpit/accepted_implementation_manifest.json
-8. docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
-9. docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
-10. docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
-11. docs/CURRENT_STATE.md
-12. latest routed checkpoint + research record
+1. docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
+2. docs/CURRENT_STATE.md
+3. docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+4. docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+5. docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+6. docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+7. docs/cockpit/PHASE_C_DECISION_LEDGER.md
+8. docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+9. docs/cockpit/accepted_implementation_manifest.json
+10. docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
+11. docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+12. docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
+13. docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
+14. docs/research/101_project_general_thread_short_viewport_containment_recovery.md
+15. docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
 ```
 
-For the current boundary:
-
-```text
-docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
-docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
-
-docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
-docs/research/101_project_general_thread_short_viewport_containment_recovery.md
-
-docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
-docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
-
-docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
-```
-
-Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath the temporary Checkpoint 264 integrity recheck.
+Then inspect the frozen browser candidate directly from the exact branch head.
 
 ## Artifact roles
 
 ### `PHASE_C_DECISION_LEDGER.md`
 
-The disposition ledger is exhaustive for its declared Research 037-088 design sequence.
+Exhaustive disposition ledger for its declared Research 037-088 design sequence.
 
 It distinguishes:
 
@@ -74,104 +138,85 @@ REJECTED
 HISTORICAL / DIAGNOSTIC EVIDENCE
 ```
 
-Later source-recovery and whole-product studies, Research 089 onward, are preserved through their own research records, checkpoints and current routing.
+Research 089 onward is preserved through its own research records, checkpoints and current routing rather than retroactively rewriting the original ledger scope.
 
 ### `ACCEPTED_IMPLEMENTATION_MANIFEST.md`
 
 Human-readable integration contract for mechanisms that must survive holistic composition.
 
-For each item it records semantic decision, maturity, origin evidence, exact target SHA, exact implementation source files, invariants, allowed integration adaptations, fixture caveats and verification method.
+For each entry it records semantic decision, maturity, origin evidence, exact target SHA, implementation source files, invariants, allowed integration adaptations, fixture caveats and verification method.
 
 ### `accepted_implementation_manifest.json`
 
 Machine-readable counterpart used by deterministic checks and future integration tooling.
 
-Current coverage:
+The manifest remains the implementation source-of-truth layer for accepted/held mechanisms. Later candidate presentation refinements do not silently rewrite manifest-bound history.
 
-```text
-23 total entries
-19 MUST_PORT / MUST_PRESERVE
-4 non-promotable entries
-```
-
-### Provenance gate
+## Provenance gate
 
 ```text
 python scripts/check_cockpit_implementation_manifest.py --verify-git-history
 ```
 
-First exact-history run:
+The exact-history gate establishes that required historical commits/source paths resolve and that rejected/non-promotable material is not silently elevated.
+
+## Integrated fidelity gate
+
+Latest complete frozen result:
 
 ```text
-workflow run 33156357834
-entries=23 required=19 non_promotable=4
-exact historical source verification PASS
+implementation/test target  04f2a907094b8023ac7377c399a6eef1a6e1da99
+workflow run                33268350178
+job                         99142293330
+verification tier           V3 full
+browser tests               84 / 84 PASS
 ```
 
-## Current whole-product fidelity gate
+A deterministic pass is not aesthetic approval. Human browser evidence remains authoritative for visible product fidelity and usability.
 
-Current complete result:
+## Important recovered fidelity history
+
+Research 100 established why Conversation WorkUnit margins could compute correctly while boxes still visually touched: CSS Grid auto-track sizing shrank structural rows while transformed overflow-visible WorkUnits painted beyond them. Explicit grid-track spacing plus sufficient row height repaired the actual rendered gap.
+
+Research 101 added project-general containment after the first WorkUnit invaded the General project discussion row at a short desktop viewport.
+
+Research 102 aligned the project-general visible artifact and selected-surface frame with canonical WorkUnit navigation geometry.
+
+The project owner subsequently confirmed those presentation-integrity repairs before the Adaptive Dock practical-workbench review continued.
+
+## Current adaptive-workbench direction
+
+The opt-in route remains:
 
 ```text
-implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
-workflow run                33251166351
-job                         99096968925
-browser tests               78 / 78 passing
+http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
 ```
 
-The gate contains all prior source-faithful mechanism coverage plus Adaptive Conversation Dock isolation/state-preservation, Focus lifecycle/remount synchronization, human-confirmed WorkUnit spacing protection, project-general short-height containment and the new project-general footprint/selected-surface alignment regression.
-
-## Human evidence governs visible fidelity
-
-The recent Conversation rail sequence records why deterministic tests and direct visual evidence must work together.
-
-Research 100 established the exact reason WorkUnit margins could compute as 16px while the visible boxes still nearly touched: CSS Grid auto-track sizing shrank the structural row while transformed overflow-visible WorkUnits painted beyond it. Explicit grid-track spacing plus sufficient WorkUnit row height fixed that defect, and the project owner has now visually confirmed the WorkUnit spacing is correct.
-
-Research 101 then added only project-general row containment after the first WorkUnit invaded General project discussion at a short desktop viewport. The latest screenshot confirms that containment is also correct.
-
-Research 102 addresses the remaining small visual inconsistency:
+Normal integrated substrate:
 
 ```text
-accepted WorkUnit rail slot
-    232 x 74 px normal
-    214 x 69 px responsive <=1450
-
-project-general artifact
-    now matches those exact visible dimensions
-
-Boxes active row
-    structural wrapper stays transparent
-
-project selected surface
-    visible project artifact
-
-WorkUnit selected surface
-    visible canonical WorkUnit node surface
+http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-Text mode retains its generic row selection because the row is the visible navigation object there.
-
-The existing 16px grid spacing is not enlarged. At the short viewport, equal visible project/WorkUnit sizing produces a 15px painted project-to-first-WorkUnit gap while the structural row-gap remains 16px. WorkUnit-to-WorkUnit visible gaps remain protected at >=20px.
-
-Checkpoint 264 requires one final human visual confirmation of this footprint and selected-frame alignment.
-
-## Interaction provenance continuity
-
-Checkpoint 261 records the current ChatGPT interaction as:
+The adaptive candidate currently explores:
 
 ```text
-interaction session  chatgpt-10
-conversation title   10 - Project Cockpit Design Exploration
+resizable Conversation secondary dock
+direct co-present entry
+invoked Threads navigation
+Conversation + Deep Dive split workspace
+layered Back/fullscreen keyboard contract
+shared professional Project-tool visual language across normal and co-present states
 ```
 
-It corrects only post-boundary metadata after an unplanned conversation rotation. Pre-boundary ChatGPT-09 history remains unchanged.
+The candidate remains unpromoted while paused.
 
 ## Integration policy
 
 ### Accepted implementation exists
 
 ```text
-reuse or port the exact source implementation
+reuse or port exact source implementation
 preserve accepted geometry and behavior
 adapt only inside the manifest's allowed boundary
 verify against the exact target before human review
@@ -198,36 +243,11 @@ DO NOT implement it as accepted product behavior
 introduce minimum integration glue only
 label the glue provisional
 keep it subordinate to accepted components
-record it before it can become a new baseline
-isolate it behind an explicit review route when practical
+record it before it becomes a baseline
+isolate it behind explicit review routes where practical
 ```
 
-The current `?conversation=adaptive-dock` study follows this policy: it changes co-present composition only, remains opt-in and leaves the accepted no-query Cockpit unchanged until human review.
-
-## Fidelity gates
-
-### Provenance gate
-
-Current status:
-
-```text
-PASS
-```
-
-It establishes that manifest structure is valid, required mechanism records exist, exact historical commits and source paths resolve, non-promotable entries remain non-promotable and the failed holistic source remains excluded.
-
-### Integrated fidelity gate
-
-Current status:
-
-```text
-PASS for the current covered implementation
-78 / 78 browser tests at 9881efe313b8cf04d9521c0464050b30b29944c1
-```
-
-A deterministic pass is not human aesthetic/product-design approval and does not overrule direct local visual evidence. Checkpoint 264 remains under human footprint/selection-frame recheck. Checkpoint 258's Adaptive Conversation Dock remains under human product review once that recheck closes.
-
-## Failed integration
+## Failed integration that must not become a source
 
 The browser at:
 
@@ -235,20 +255,18 @@ The browser at:
 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-is diagnostic evidence only and must never be used as a visual source of truth or as the parent source of the replacement browser.
+remains diagnostic evidence only and must never be used as a visual source of truth or parent implementation source.
 
-## Current review isolation
+## Resume rule
 
-Normal current whole-product substrate:
-
-```text
-http://localhost:4173/design-lab/cockpit-reintegration.html
-```
-
-Adaptive Conversation candidate:
+When the project owner chooses to return to frontend work:
 
 ```text
-http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
+1. switch back to v1-cockpit-design-exploration
+2. verify exact frozen head 04f2a907094b8023ac7377c399a6eef1a6e1da99 or explicitly create a continuation from it
+3. read Checkpoint 267 + Research 097 + this README
+4. inspect the current normal and adaptive routes in-browser
+5. continue practical whole-product review from the preserved candidate
+6. do not reopen already human-confirmed spacing/containment/selection fixes without new contrary evidence
+7. keep production /cockpit untouched until a separate promotion boundary is earned
 ```
-
-Production `/cockpit` remains untouched during the current whole-product design exploration.

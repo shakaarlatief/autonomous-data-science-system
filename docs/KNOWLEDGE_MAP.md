@@ -236,12 +236,13 @@ docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/methodological_knowledge/COVERAGE_MAP.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 ```
 
 ### Source Universe, evidence substrate and permanent vault
 <!-- KM-TOPIC: source-universe -->
 
-Use for durable source storage, artifact integrity, evidence provenance, source-substrate validation and paused permanent-vault deployment.
+Use for durable source storage, artifact integrity, evidence provenance, source-substrate validation and permanent-vault deployment/resumption.
 
 ```text
 docs/DECISIONS.md
@@ -251,6 +252,8 @@ docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
+docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 ```
 
 Current substrate status is routed from `CURRENT_STATE.md`; this subject section preserves the durable architecture and evidence chain rather than copying live status.
@@ -281,6 +284,7 @@ docs/model_collaboration/REVIEW_INBOX.md
 docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 docs/checkpoints/265_development_method_v06_knowledge_routing_and_verification_reconciliation.md
 docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 ```
 
 ### Project Cockpit product architecture and professional interaction model
@@ -305,6 +309,7 @@ docs/research/039_phase_c_browser_rendered_design_experiment_protocol_and_grid_w
 docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 ```
 
 ### Cockpit world, canvas, grid, ambient dynamics and spatial navigation
@@ -441,6 +446,7 @@ docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
 docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
 docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
 docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
 ```
@@ -463,6 +469,7 @@ docs/research/091_source_faithful_reintegration_interaction_integrity_gate.md
 docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
 docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/cockpit/README.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
@@ -489,6 +496,7 @@ docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_
 docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
 docs/checkpoints/255_flat_project_rail_conversation_spacing_and_live_compass_review_opened.md
 docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
 ```
 
@@ -514,6 +522,7 @@ docs/cockpit/PHASE_C_DECISION_LEDGER.md
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/model_collaboration/REVIEW_INBOX.md
+docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 ```
 
 ## Historical checkpoint topic routing
@@ -542,6 +551,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 253-257 shell-rail conversation-workspace -->
 <!-- KM-CHECKPOINT-RANGE: 258-264 conversation-workspace cockpit-provenance -->
 <!-- KM-CHECKPOINT-RANGE: 265-266 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 267-267 source-universe development-governance cockpit-core conversation-workspace shell-rail -->
 
 Important checkpoints are linked directly in the subject sections above. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

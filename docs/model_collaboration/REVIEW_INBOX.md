@@ -4,7 +4,7 @@
 **Status:** Current human-readable routing view  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
-**Coordination branch:** `v1-cockpit-design-exploration`
+**Coordination branch:** `v1-source-vault-bootstrap-resume`
 
 ## Routing discipline
 
@@ -26,6 +26,19 @@ This inbox intentionally does not duplicate that state except where needed to ex
 None.
 
 No model trigger should be sent from this inbox until a new explicit obligation is added with an exact thread/request and coordination branch.
+
+## Deferred product collaboration
+
+### MC-0004: next-generation Project Cockpit design exploration
+
+```text
+status        DEFERRED by project-owner routing decision at Checkpoint 267
+target branch v1-cockpit-design-exploration
+frozen head   04f2a907094b8023ac7377c399a6eef1a6e1da99
+resume        only when the project owner explicitly returns to frontend work
+```
+
+There is no pending Claude obligation inside MC-0004. The thread is preserved as the future Cockpit collaboration/recovery surface, not as an active blocker on the resumed Source Vault bootstrap.
 
 ## Most recently completed obligation
 
@@ -52,4 +65,4 @@ The review supported the v0.7 architecture, identified one cheap Subject-index-v
 
 ## Completed prior obligations
 
-MC-0001 through MC-0004 remain preserved in their thread records and are not repeated here.
+MC-0001 through MC-0003 remain preserved in their thread records and are not repeated here. MC-0004 is currently deferred rather than completed.
