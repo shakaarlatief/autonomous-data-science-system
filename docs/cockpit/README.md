@@ -3,7 +3,7 @@
 **Status:** Current Phase-C implementation-fidelity governance surface  
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
 **Current branch:** `v1-cockpit-design-exploration`  
-**Current checkpoint:** 260  
+**Current checkpoint:** 261  
 **Last reconciled:** 2026-08-29
 
 ## Purpose
@@ -41,14 +41,16 @@ A future integrator must not infer an implementation merely from labels such as 
 12. latest routed checkpoint + research record
 ```
 
-For the current boundary, the latest routed pair is:
+For the current boundary, read the interaction-provenance reconciliation first, then the still-open product gate:
 
 ```text
+docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
+
 docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
 docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
 ```
 
-Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath this temporary integrity recheck.
+Checkpoint 261 changes metadata only. Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath the temporary Checkpoint 260 integrity recheck.
 
 ## Artifact roles
 
@@ -144,6 +146,17 @@ The correct response was to strengthen the implementation and the test contract 
 Current Conversation spacing implementation now owns the accepted separation at the thread rows rather than at the parent grid, and it applies to every non-Text Boxes/artifact state.
 
 The current 74/74 result proves the encoded row-owned contract. Human recheck is still required before the visual issue is closed.
+
+## Interaction provenance continuity
+
+Checkpoint 261 records the current ChatGPT interaction as:
+
+```text
+interaction session  chatgpt-10
+conversation title   10 - Project Cockpit Design Exploration
+```
+
+It corrects only post-boundary metadata after an unplanned conversation rotation. It does not change implementation provenance, product decisions or deterministic evidence.
 
 ## Integration policy
 
