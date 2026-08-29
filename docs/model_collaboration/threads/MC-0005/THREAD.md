@@ -1,6 +1,6 @@
 # MC-0005: Development Method v0.7 Repository Information Architecture Review
 
-**Status:** WAITING FOR CLAUDE  
+**Status:** CLOSED / ACCEPTED WITH NON-BLOCKING IMPROVEMENTS  
 **Topic:** Adversarial second-model audit of the finalized repository information architecture and global canonical knowledge surfaces  
 **Task owner:** ChatGPT  
 **Reviewer:** Claude  
@@ -10,8 +10,8 @@
 **Exact frozen review target:** `c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad`  
 **Target-state mutation during review:** none  
 **Claude write surface:** `docs/model_collaboration/threads/MC-0005/messages/**`  
-**Current phase:** `WAITING_FOR_CLAUDE_ARCHITECTURE_REVIEW`  
-**Next expected participant:** Claude
+**Current phase:** `CLOSED_ACCEPTED`  
+**Next expected participant:** none
 
 ## Purpose
 
@@ -19,21 +19,21 @@ Checkpoint 266 completed the Development Method v0.7 repository information-arch
 
 The project owner then explicitly requested a second-model opinion on whether the architecture, including the global canonical files and Knowledge Map, is genuinely good for a repository with a large and growing body of preserved knowledge.
 
-This thread turns that request into one bounded exact-target review rather than informal model agreement.
+This thread turned that request into one bounded exact-target review rather than informal model agreement.
 
 ## Review target
 
-Claude must review exactly:
+Claude reviewed exactly:
 
 ```text
 c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
 ```
 
-The coordination branch may move after the review request is created. That does not change the frozen architecture target.
+The later coordination-branch movement did not change the frozen architecture target.
 
 ## Review write discipline
 
-This waiting review is read-only with respect to the frozen target architecture.
+The review was read-only with respect to the frozen target architecture.
 
 ```text
 target write paths       none
@@ -41,13 +41,19 @@ target-state write owner none
 Claude durable output    MC-0005/messages/** only
 ```
 
-ChatGPT remains task owner for later disposition, but does not hold a simultaneous target-state mutation lease merely because it owns the review task. If Claude later identifies a change worth making, that change should be opened and governed as a separate follow-up mutation boundary.
+Git comparison confirmed that Claude's review commit added only:
+
+```text
+docs/model_collaboration/threads/MC-0005/messages/001_claude_v07_information_architecture_review.md
+```
+
+No target architecture file was mutated during review.
 
 ## Review character
 
-This is not a blind independent counter-design. Claude is intentionally shown the implemented v0.7 architecture and asked to challenge it directly.
+This was not a blind independent counter-design. Claude was intentionally shown the implemented v0.7 architecture and asked to challenge it directly.
 
-The review should be adversarial in the methodological sense:
+The review was adversarial in the methodological sense:
 
 ```text
 search for hidden duplication
@@ -58,47 +64,48 @@ search for retrieval/discoverability failure modes
 search for simpler credible alternatives
 ```
 
-It should not manufacture disagreement for its own sake.
+It was not intended to manufacture disagreement for its own sake.
 
-## Non-blocking relationship to product work
+## Review result
 
-MC-0005 is a Level-2 architecture review obligation.
-
-It does not block:
+Claude returned:
 
 ```text
-Checkpoint 264 Cockpit human visual recheck
-Adaptive Conversation Dock review after Checkpoint 264 passes
-```
-
-If Claude identifies a serious architecture defect, ChatGPT and the project owner can disposition that finding through the ordinary development method. Until then, Checkpoint 266 remains complete and the frozen candidate remains the current architecture.
-
-## Expected output
-
-Claude should create:
-
-```text
-docs/model_collaboration/threads/MC-0005/messages/001_claude_v07_information_architecture_review.md
-```
-
-The message should preserve its exact reviewed SHA and include a clear disposition such as:
-
-```text
-SUPPORT
 SUPPORT_WITH_NONBLOCKING_IMPROVEMENTS
-CHANGES_RECOMMENDED
-MATERIAL_ARCHITECTURE_CONCERN
 ```
 
-along with concrete findings and alternatives.
+with no must-fix finding.
 
-## After Claude responds
+The review independently re-checked two important claims rather than merely accepting the architecture prose:
 
-ChatGPT should:
+```text
+all KM-CHECKPOINT-RANGE records provide gapless 000-266 coverage
+scripts/check_knowledge_map.py genuinely enforces the documented exhaustive-routing guarantees
+```
 
-1. verify the message reviews the exact frozen target;
-2. classify each finding as accepted, rejected, deferred or requiring human choice;
-3. separate factual/structural defects from preference-level alternatives;
-4. open a separate target-mutation boundary only if an accepted finding genuinely warrants a change;
-5. preserve a resolution record and close MC-0005;
-6. avoid opening another method checkpoint unless the review causes a material architecture/state transition.
+The strongest finding was a narrow structural gap: the human-readable numbered Subject index in `KNOWLEDGE_MAP.md` was not mechanically checked against the machine-validated `KM-TOPIC` sections. Claude correctly identified this as the same general convenience-index-versus-authoritative-structure drift pattern previously observed elsewhere in the repository.
+
+## Disposition
+
+ChatGPT verified the exact target, verified the message-only write discipline, and classified the findings in:
+
+```text
+docs/model_collaboration/threads/MC-0005/RESOLUTION.md
+```
+
+The accepted architecture remains Development Method v0.7. The review does not reopen Checkpoint 266 and does not justify a new method checkpoint.
+
+One cheap structural hardening and one documentation clarification are accepted for a separate immediate SOLO follow-up mutation boundary:
+
+```text
+validate Subject-index alignment with KM-TOPIC headings
+make explicit that exhaustive routing coverage is not semantic-routing correctness
+```
+
+Other findings remain watchpoints or deferred alternatives rather than reasons to redesign the repository.
+
+## Product relationship
+
+MC-0005 remained non-blocking for product work throughout.
+
+The active Cockpit product boundary remains the already-open Checkpoint 264 human visual recheck. Adaptive Conversation Dock review may resume after that product gate passes, independent of this closed Level-2 review.
