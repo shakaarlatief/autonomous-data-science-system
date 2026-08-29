@@ -11,17 +11,30 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            260
+checkpoint            261
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation Boxes row-owned spacing human recheck
+current boundary      chatgpt-10 provenance reconciled; Conversation Boxes spacing human recheck remains open
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
 Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; no scientific `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` comparison may be inferred from that run.
+
+## Current interaction continuity
+
+The active ChatGPT interaction is now canonically:
+
+```text
+interaction session  chatgpt-10
+conversation title   10 - Project Cockpit Design Exploration
+```
+
+Checkpoint 261 repairs a missed session rotation after the preceding ChatGPT conversation reached its length limit. Post-boundary artifacts from Research 097 / Checkpoint 258 onward that had been incorrectly stamped as `chatgpt-09` were corrected. Pre-boundary ChatGPT-09 history remains unchanged.
+
+This is a provenance-only correction. The active Cockpit product gate remains Checkpoint 260.
 
 ## Current Cockpit status
 
@@ -159,7 +172,7 @@ The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D
 
 L0 remains provisional. Semantic zoom remains deferred with S0 as the geometric working default.
 
-Checkpoint 260 changes only implementation ownership of accepted Conversation spacing. It does not reopen the spacing target, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
+Checkpoint 260 changes only implementation ownership of accepted Conversation spacing. Checkpoint 261 changes only interaction-session provenance. Neither reopens the spacing target, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
 
 `docs/cockpit/PHASE_C_DECISION_LEDGER.md` remains the exhaustive disposition ledger for Research 037-088. Later source-recovery and whole-product studies are routed through Research 089 onward, checkpoints and current-state records.
 
@@ -181,6 +194,8 @@ semantic/product authority
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
 
 docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
 docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
