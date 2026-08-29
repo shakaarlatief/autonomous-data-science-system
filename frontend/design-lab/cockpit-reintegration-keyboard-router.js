@@ -17,8 +17,9 @@ const adaptiveDock = params.get('conversation') === 'adaptive-dock'
 const fullscreenButton = document.querySelector('#fullscreen-world')
 
 if (adaptiveDock && fullscreenButton instanceof HTMLButtonElement) {
-  fullscreenButton.title = 'Fullscreen (F)'
-  fullscreenButton.setAttribute('aria-keyshortcuts', 'F')
+  syncFullscreenShortcutHint()
+  window.addEventListener('load', syncFullscreenShortcutHint, { once: true })
+  window.setTimeout(syncFullscreenShortcutHint, 120)
 }
 
 window.addEventListener('keydown', (event) => {
@@ -46,6 +47,14 @@ window.addEventListener('keydown', (event) => {
   event.stopImmediatePropagation()
   document.querySelector('#reintegration-conversation-close')?.click()
 }, true)
+
+function syncFullscreenShortcutHint() {
+  if (!(fullscreenButton instanceof HTMLButtonElement)) return
+  fullscreenButton.title = 'Fullscreen (F)'
+  fullscreenButton.dataset.tooltip = 'Fullscreen (F)'
+  fullscreenButton.setAttribute('aria-label', 'Toggle fullscreen')
+  fullscreenButton.setAttribute('aria-keyshortcuts', 'F')
+}
 
 function shortcutTargetIsEditable(target) {
   if (!(target instanceof Element)) return false
