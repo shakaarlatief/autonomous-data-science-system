@@ -38,7 +38,7 @@ test.describe('Professional Conversation co-presence study', () => {
     await expect(page.locator('.adaptive-deep-dive-action')).toHaveCount(0)
   })
 
-  test('opens directly into co-present, preserves the Project Grid rail, and keeps Threads invoked', async ({ page }) => {
+  test('opens directly into co-present, preserves the Project Grid edge strip, and keeps Threads invoked', async ({ page }) => {
     await page.goto(adaptiveRoute)
     await expect(page.locator(nodeSelector)).toHaveCount(6)
     await expect(page.locator('html')).toHaveAttribute('data-conversation-integration', 'adaptive-dock')
@@ -58,7 +58,7 @@ test.describe('Professional Conversation co-presence study', () => {
       return dock && rail ? { dockRight: dock.right, railLeft: rail.left, dockWidth: dock.width } : null
     })
     expect(geometry).not.toBeNull()
-    expect(geometry!.dockRight).toBeLessThanOrEqual(geometry!.railLeft - 4)
+    expect(Math.abs(geometry!.dockRight - geometry!.railLeft)).toBeLessThanOrEqual(2)
     expect(geometry!.dockWidth).toBeGreaterThanOrEqual(500)
 
     await page.locator('.cockpit-angled-rail-clarity').click()
@@ -66,8 +66,8 @@ test.describe('Professional Conversation co-presence study', () => {
     await expect.poll(async () => page.evaluate(() => {
       const dock = document.querySelector('#reintegration-conversation-layer')?.getBoundingClientRect()
       const rail = document.querySelector('.cockpit-angled-rail-shell')?.getBoundingClientRect()
-      return dock && rail ? rail.left - dock.right : -1
-    })).toBeGreaterThanOrEqual(4)
+      return dock && rail ? Math.abs(rail.left - dock.right) : 999
+    })).toBeLessThanOrEqual(2)
 
     await page.locator('#adaptive-conversation-threads').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail-drawer', 'open')
