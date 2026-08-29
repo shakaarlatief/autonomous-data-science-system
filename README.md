@@ -11,13 +11,13 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            263
+checkpoint            264
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      project-general thread containment human recheck
+current boundary      project-general footprint and selected-surface frame human recheck
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -58,29 +58,49 @@ http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptiv
 
 ### Conversation Boxes integrity
 
-Research 100's CSS Grid track-gap recovery is now human-confirmed for the WorkUnit spacing defect. The project owner's latest screenshot shows the dark breathing room between WorkUnits correctly restored.
-
-The same screenshot exposed one narrower remaining issue: the General project discussion artifact could still be visually invaded by the first WorkUnit at a wide but vertically short browser viewport.
-
-Research 101 preserves the accepted WorkUnit spacing contract and adds explicit containment for the project-general first row:
+The larger Conversation rail defects are now human-confirmed closed at the substrate level:
 
 ```text
-thread-list row-gap          16px
-project row min-height       74px
-project row padding           7px top / 7px bottom
-project artifact min-height  58px
-WorkUnit row margin           0px
-WorkUnit padding              6px top / 6px bottom
-wide WorkUnit min-height     78px
-responsive <=1450 min-height 73px
-canonical artifacts          unchanged
+WorkUnit-to-WorkUnit spacing       correct
+General project containment        correct
 ```
 
-The project artifact is not redesigned. The row that owns it now reserves enough track height before the existing 16px grid gap begins.
+Research 100 remains the accepted CSS Grid spacing recovery and Research 101 remains the project-general short-height containment recovery.
+
+Checkpoint 264 addresses the remaining fine visual-consistency issue identified in the latest human screenshots.
+
+The accepted WorkUnit rail footprint remains unchanged:
+
+```text
+normal rail          232 x 74 px
+responsive <=1450    214 x 69 px
+```
+
+General project discussion now matches that visible footprint exactly.
+
+Boxes selection ownership is also normalized:
+
+```text
+outer thread row
+    structural only
+    transparent while selected
+
+General project discussion
+    selected frame on visible project artifact
+
+WorkUnit conversation
+    selected frame on canonical WorkUnit surface
+```
+
+Text mode retains its row-based selection treatment.
+
+This removes the previously visible larger outer selection wrapper around General project discussion and makes project-general and WorkUnit conversations read as one coherent Boxes navigation system.
+
+The human-approved 16px Grid spacing geometry is not increased. WorkUnit-to-WorkUnit visible separation remains protected at >=20px. At the short viewport, equalizing the project artifact to the WorkUnit footprint yields 15px painted project-to-first-WorkUnit separation while the structural Grid row-gap remains 16px.
 
 ### Current-process Focus integrity
 
-No Focus implementation changed in Checkpoint 263.
+No Focus implementation changed in Checkpoint 264.
 
 Research 098's DOM-independent membership and remount synchronization recovery remains current, and the project owner's latest retest reports Focus working as far as tested.
 
@@ -89,15 +109,15 @@ Focus should not be reopened without a new concrete reproduction.
 Latest complete Cockpit fidelity workflow:
 
 ```text
-implementation/test target  5913467cfffd535215da7ab2cb70bdeb2be9f2e9
-workflow run                33247621778
-job                         99087735314
-browser tests               77 / 77 passing
+implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
+workflow run                33251166351
+job                         99096968925
+browser tests               78 / 78 passing
 ```
 
-The new regression explicitly exercises a `1776 x 766` short desktop viewport and requires General project discussion to remain a complete first artifact with at least 16px visible separation before the first WorkUnit. All previous spacing, Adaptive Dock, Focus and source-faithful mechanism coverage remains green.
+The new regression explicitly verifies equal project/WorkUnit visible dimensions, transparent structural active rows, selected-state border/shadow on the visible surfaces and correct transfer of selection. All prior spacing, Adaptive Dock, Focus and source-faithful mechanism coverage remains green.
 
-The Adaptive Conversation Dock remains an opt-in product-design candidate. Its design judgment resumes after the project owner visually confirms this final base-rail containment correction.
+The Adaptive Conversation Dock remains an opt-in product-design candidate. Its design judgment resumes after the project owner visually confirms this final small base-rail alignment refinement.
 
 Production `/cockpit` remains untouched.
 
@@ -159,7 +179,7 @@ The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D
 
 L0 remains provisional. Semantic zoom remains deferred with S0 as the geometric working default.
 
-Checkpoint 263 changes only the containment geometry of the project-general Conversation row at short viewports. It does not reopen the accepted WorkUnit spacing target, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
+Checkpoint 264 changes only project-general visible footprint and Boxes-mode selection-frame ownership. It does not reopen the accepted WorkUnit spacing target, WorkUnit geometry, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
 
 `docs/cockpit/PHASE_C_DECISION_LEDGER.md` remains the exhaustive disposition ledger for Research 037-088. Later source-recovery and whole-product studies are routed through Research 089 onward, checkpoints and current-state records.
 
@@ -181,6 +201,9 @@ semantic/product authority
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
+docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
 
 docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
 docs/research/101_project_general_thread_short_viewport_containment_recovery.md
