@@ -7,6 +7,10 @@ async function openStudy(page: Page, width: number, height = 1000) {
   await page.goto(route)
   await expect(page.locator('html')).toHaveAttribute('data-human-review256', 'true')
   await expect(page.locator('.cockpit-angled-rail-rig')).toBeVisible()
+
+  const reviewStylesheet = page.locator('link[data-human-review-256]')
+  await expect(reviewStylesheet).toHaveCount(1)
+  await expect.poll(() => reviewStylesheet.evaluate((element: HTMLLinkElement) => Boolean(element.sheet))).toBe(true)
 }
 
 async function expectVisibleWorkUnitSpacing(page: Page, width: number) {
@@ -18,15 +22,27 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number) {
 
   const list = page.locator('.reintegration-thread-list')
   const rowGap = await list.evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
-  expect(rowGap).toBeLessThanOrEqual(0.5)
+  expect(rowGap).toBeGreaterThanOrEqual(16)
 
   const projectThread = page.locator('.reintegration-thread-item[data-thread-scope="project"]')
   const projectMargin = await projectThread.evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
-  expect(projectMargin).toBeGreaterThanOrEqual(16)
+  expect(projectMargin).toBeLessThanOrEqual(0.5)
 
   const workRows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
-  const firstWorkMargin = await workRows.first().evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
-  expect(firstWorkMargin).toBeGreaterThanOrEqual(16)
+  const firstWorkGeometry = await workRows.first().evaluate((element) => {
+    const style = getComputedStyle(element)
+    const rect = element.getBoundingClientRect()
+    return {
+      marginBottom: Number.parseFloat(style.marginBottom),
+      paddingTop: Number.parseFloat(style.paddingTop),
+      paddingBottom: Number.parseFloat(style.paddingBottom),
+      height: rect.height,
+    }
+  })
+  expect(firstWorkGeometry.marginBottom).toBeLessThanOrEqual(0.5)
+  expect(firstWorkGeometry.paddingTop).toBeGreaterThanOrEqual(6)
+  expect(firstWorkGeometry.paddingBottom).toBeGreaterThanOrEqual(6)
+  expect(firstWorkGeometry.height).toBeGreaterThanOrEqual(72.5)
 
   const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
   const surfaces = page.locator('.reintegration-thread-item[data-thread-scope="work"] .conversation-canonical-node .node-surface')
@@ -55,6 +71,10 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number) {
 test.describe('Checkpoint 256 review corrections on the canonical Cockpit route', () => {
   test('Conversation WorkUnits have structural visible separation at the normal desktop viewport', async ({ page }) => {
     await expectVisibleWorkUnitSpacing(page, 1600)
+  })
+
+  test('Conversation WorkUnits retain structural visible separation at the responsive 1100px viewport', async ({ page }) => {
+    await expectVisibleWorkUnitSpacing(page, 1100, 900)
   })
 
   test('Conversation WorkUnits retain structural visible separation at the narrow review viewport', async ({ page }) => {
