@@ -88,8 +88,15 @@ test.describe('Checkpoint 255 whole-Cockpit human-review corrections', () => {
     await page.locator('[data-conversation-rail-option="boxes"]').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
 
-    const rowGap = await page.locator('.reintegration-thread-list').evaluate((element) => getComputedStyle(element).rowGap)
-    expect(Number.parseFloat(rowGap)).toBeGreaterThanOrEqual(16)
+    const listGap = await page.locator('.reintegration-thread-list').evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
+    expect(listGap).toBeLessThanOrEqual(0.5)
+
+    const projectMargin = await page.locator('.reintegration-thread-item[data-thread-scope="project"]').evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
+    expect(projectMargin).toBeGreaterThanOrEqual(16)
+
+    const workRows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
+    const firstWorkMargin = await workRows.first().evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
+    expect(firstWorkMargin).toBeGreaterThanOrEqual(16)
 
     const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
     const workSurfaces = page.locator('.reintegration-thread-item[data-thread-scope="work"] .conversation-canonical-node .node-surface')

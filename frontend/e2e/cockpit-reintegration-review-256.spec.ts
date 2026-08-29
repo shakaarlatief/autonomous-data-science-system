@@ -18,7 +18,15 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number) {
 
   const list = page.locator('.reintegration-thread-list')
   const rowGap = await list.evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
-  expect(rowGap).toBeGreaterThanOrEqual(12)
+  expect(rowGap).toBeLessThanOrEqual(0.5)
+
+  const projectThread = page.locator('.reintegration-thread-item[data-thread-scope="project"]')
+  const projectMargin = await projectThread.evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
+  expect(projectMargin).toBeGreaterThanOrEqual(16)
+
+  const workRows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
+  const firstWorkMargin = await workRows.first().evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
+  expect(firstWorkMargin).toBeGreaterThanOrEqual(16)
 
   const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
   const surfaces = page.locator('.reintegration-thread-item[data-thread-scope="work"] .conversation-canonical-node .node-surface')
