@@ -2,8 +2,8 @@
 
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
-**Last reviewed:** 2026-08-28  
-**Current checkpoint:** 256  
+**Last reviewed:** 2026-08-29  
+**Current checkpoint:** 257  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,8 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/257_canonical_cockpit_review_route_normalized.md
 
 docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
 docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
@@ -46,11 +48,11 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                256
+checkpoint                257
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          structural Conversation spacing + current flat-rail control-set human review
+current boundary          canonical-route structural Conversation spacing + current flat-rail control-set human review
 ```
 
 ---
@@ -63,19 +65,35 @@ Primary browser:
 frontend/design-lab/cockpit-reintegration.html
 ```
 
-Current review route:
+Canonical current review route:
 
 ```text
-http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
+http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-The query name is historical. The current rail is normal flat 2D.
+No query suffix is required for the current human-review Cockpit.
+
+Route roles are explicit:
+
+```text
+plain route
+    current Checkpoint 256 human-review Cockpit
+
+?edge=none
+    internal regression-only earlier-shell substrate
+    not a product route or design candidate
+
+explicit ?edge=... / ?rail=...
+    historical rail-study routes
+    isolated from the current default rail
+```
 
 Current review implementation:
 
 ```text
 frontend/design-lab/cockpit-reintegration-review-256.css
 frontend/design-lab/cockpit-spatial-rail-study-angle.js
+frontend/design-lab/cockpit-spatial-rail-study-gen2-anchor.js
 frontend/e2e/cockpit-reintegration-review-256.spec.ts
 ```
 
@@ -94,6 +112,16 @@ frontend/design-lab/cockpit-product-surface-study.css
 frontend/design-lab/cockpit-product-surface-study-readability.css
 frontend/design-lab/cockpit-product-surface-study.js
 ```
+
+---
+
+# Checkpoint 257 route normalization
+
+Checkpoint 257 introduces no new design selection. It makes the already-current Checkpoint 256 surface the default no-query Cockpit route.
+
+The current flat rail still reuses the historical angle-study implementation as source plumbing, but late mounting now makes it available on the canonical route. Explicit `edge=` and `rail=` routes suppress that default mounting so historical studies remain isolated.
+
+Older mechanism tests that intentionally require the previous shell controls use `?edge=none`. This preserves source-mechanism regression coverage without forcing removed controls back into the current rail.
 
 ---
 
@@ -163,19 +191,19 @@ compass reads state but never owns selection
 Implementation target:
 
 ```text
-e2768a807b2a80f438248a25f7d41e53be561d51
+59e5d19b310c4cc89fefc46fb4d116d67bdeefd5
 ```
 
 Complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33211613408
-job           98985900484
+workflow run  33236756483
+job           99058967008
 result        SUCCESS
 browser tests 68 / 68 passing
 ```
 
-The newest tests protect actual rendered Conversation spacing at desktop and narrow widths plus the current requested rail control set while all prior source-faithful integration checks remain green.
+The current tests protect the plain canonical route, actual rendered Conversation spacing at desktop and narrow widths, the requested current rail control set, isolated historical study routes and the complete prior source-faithful mechanism suite.
 
 ---
 
@@ -235,7 +263,7 @@ DETERMINISTIC INTEGRATION GATE
     PASS for current covered implementation
 
 HUMAN PRODUCT-DESIGN GATE
-    OPEN at Checkpoint 256
+    OPEN at Checkpoint 257
 ```
 
 ---
@@ -299,7 +327,7 @@ compact native Cockpit composer
 Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-Checkpoint 256 does not revoke any of these.
+Checkpoint 256 does not revoke any of these. Checkpoint 257 changes route plumbing only.
 
 Important accepted targets:
 
@@ -386,8 +414,8 @@ No Claude obligation is pending. The next actor remains the human reviewer.
 # Exact next step
 
 ```text
-Review the actual visible spacing in Conversation Boxes mode.
-Review the current flat rail control set.
+Review the actual visible spacing in Conversation Boxes mode on the canonical no-query route.
+Review the current flat rail control set on the same route.
 
 If both are visually correct, preserve acceptance and continue whole-product Cockpit design.
 ```
