@@ -12,6 +12,10 @@ async function selectedSnapshot(page: Page) {
   }))
 }
 
+async function dockWidth(page: Page) {
+  return page.locator('#reintegration-conversation-layer').evaluate((element: HTMLElement) => element.getBoundingClientRect().width)
+}
+
 test.describe('Professional Conversation co-presence study', () => {
   test.beforeEach(async ({ page }) => {
     await page.setViewportSize({ width: 1600, height: 1000 })
@@ -45,12 +49,12 @@ test.describe('Professional Conversation co-presence study', () => {
     await expect(page.locator('#adaptive-conversation-resize-handle')).toBeVisible()
     await expect(page.locator('.reintegration-conversation-rail')).toBeHidden()
 
+    await expect.poll(() => dockWidth(page)).toBeLessThanOrEqual(660)
     const geometry = await page.locator('#reintegration-conversation-layer').evaluate((element: HTMLElement) => {
       const rect = element.getBoundingClientRect()
       return { width: rect.width, right: window.innerWidth - rect.right, viewport: window.innerWidth }
     })
     expect(geometry.width).toBeGreaterThanOrEqual(500)
-    expect(geometry.width).toBeLessThanOrEqual(660)
     expect(geometry.width / geometry.viewport).toBeLessThanOrEqual(0.42)
     expect(Math.abs(geometry.right)).toBeLessThanOrEqual(1)
 
@@ -78,14 +82,14 @@ test.describe('Professional Conversation co-presence study', () => {
     await page.locator('#reintegration-conversation-presentation-toggle').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'copresent')
 
-    const layer = page.locator('#reintegration-conversation-layer')
     const handle = page.locator('#adaptive-conversation-resize-handle')
-    const initialWidth = await layer.evaluate((element: HTMLElement) => element.getBoundingClientRect().width)
+    await expect.poll(() => dockWidth(page)).toBeLessThanOrEqual(660)
+    const initialWidth = await dockWidth(page)
 
     await handle.focus()
     await handle.press('ArrowLeft')
-    const wider = await layer.evaluate((element: HTMLElement) => element.getBoundingClientRect().width)
-    expect(wider).toBeGreaterThan(initialWidth + 20)
+    await expect.poll(() => dockWidth(page)).toBeGreaterThan(initialWidth + 20)
+    const wider = await dockWidth(page)
     expect(wider).toBeLessThanOrEqual(760.5)
     expect(await selectedSnapshot(page)).toEqual(before)
 
