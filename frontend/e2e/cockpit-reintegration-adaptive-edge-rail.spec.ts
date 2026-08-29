@@ -16,9 +16,8 @@ async function projectRailGeometry(page: Page) {
     const rig = document.querySelector('.cockpit-angled-rail-rig')?.getBoundingClientRect()
     const shell = document.querySelector('.cockpit-angled-rail-shell')?.getBoundingClientRect()
     const dock = document.querySelector('#reintegration-conversation-layer')?.getBoundingClientRect()
-    const shellStyle = document.querySelector('.cockpit-angled-rail-shell')
-      ? getComputedStyle(document.querySelector('.cockpit-angled-rail-shell')!)
-      : null
+    const shellElement = document.querySelector('.cockpit-angled-rail-shell')
+    const shellStyle = shellElement ? getComputedStyle(shellElement) : null
 
     if (!rig || !shell || !dock || !shellStyle) return null
 
@@ -67,7 +66,7 @@ test.describe('Adaptive Conversation project-tool edge integration', () => {
     expect(geometry!.borderRadius).toBe('0px')
     expect(geometry!.borderLeftWidth).toBeGreaterThanOrEqual(1)
 
-    const toolButton = page.locator('.cockpit-angled-rail-shell .reintegration-tools button').filter({ visible: true }).first()
+    const toolButton = page.locator('.cockpit-angled-rail-shell .reintegration-tools button:visible').first()
     const buttonHeight = await toolButton.evaluate((element) => element.getBoundingClientRect().height)
     expect(buttonHeight).toBeGreaterThanOrEqual(37)
   })
