@@ -59,6 +59,14 @@ def is_cockpit_test(path: str) -> bool:
     return path.startswith("frontend/e2e/cockpit-reintegration") and path.endswith(".spec.ts")
 
 
+def is_conversation_implementation(path: str) -> bool:
+    return (
+        path.startswith("frontend/design-lab/cockpit-conversation-")
+        or path.startswith("frontend/design-lab/cockpit-reintegration-conversation-")
+        or path.startswith("frontend/design-lab/cockpit-practical-workspace-study")
+    )
+
+
 def classify(event: str, message: str, changed_files: list[str]) -> Selection:
     files = ordered_unique(tuple(path.strip() for path in changed_files if path.strip()))
 
@@ -98,11 +106,7 @@ def classify(event: str, message: str, changed_files: list[str]) -> Selection:
             "localized Conversation presentation-integrity change",
         )
 
-    if implementation_files and all(
-        path.startswith("frontend/design-lab/cockpit-conversation-")
-        or path.startswith("frontend/design-lab/cockpit-reintegration-conversation-")
-        for path in implementation_files
-    ):
+    if implementation_files and all(is_conversation_implementation(path) for path in implementation_files):
         extras = [path.removeprefix("frontend/") for path in test_files]
         return Selection(
             "subsystem",
@@ -164,6 +168,20 @@ def self_test() -> int:
                 [
                     "frontend/design-lab/cockpit-reintegration-presentation-integrity.css",
                     "docs/checkpoints/264_example.md",
+                ],
+            ),
+            ("subsystem", "V2"),
+        ),
+        ("adaptive conversation js", classify("push", "dock", ["frontend/design-lab/cockpit-conversation-integration-study.js"]), ("subsystem", "V2")),
+        ("practical workspace css", classify("push", "dock", ["frontend/design-lab/cockpit-practical-workspace-study.css"]), ("subsystem", "V2")),
+        (
+            "adaptive conversation pair",
+            classify(
+                "push",
+                "dock",
+                [
+                    "frontend/design-lab/cockpit-conversation-integration-study.js",
+                    "frontend/design-lab/cockpit-practical-workspace-study.css",
                 ],
             ),
             ("subsystem", "V2"),

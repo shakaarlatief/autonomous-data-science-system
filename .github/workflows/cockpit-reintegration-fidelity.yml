@@ -8,6 +8,8 @@ on:
       - frontend/design-lab/cockpit-reintegration*
       - frontend/design-lab/cockpit-product-surface-study*
       - frontend/design-lab/cockpit-spatial-rail-study*
+      - frontend/design-lab/cockpit-conversation-integration-study*
+      - frontend/design-lab/cockpit-practical-workspace-study*
       - frontend/e2e/cockpit-reintegration*.spec.ts
       - frontend/design-lab/grid-world.css
       - frontend/design-lab/work-unit-grammar.css
@@ -32,6 +34,8 @@ on:
       - frontend/design-lab/cockpit-reintegration*
       - frontend/design-lab/cockpit-product-surface-study*
       - frontend/design-lab/cockpit-spatial-rail-study*
+      - frontend/design-lab/cockpit-conversation-integration-study*
+      - frontend/design-lab/cockpit-practical-workspace-study*
       - frontend/e2e/cockpit-reintegration*.spec.ts
       - frontend/design-lab/work-unit-detail-expansion.css
       - frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
