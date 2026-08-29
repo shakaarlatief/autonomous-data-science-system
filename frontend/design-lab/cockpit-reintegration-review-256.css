@@ -3,8 +3,8 @@
  *
  * This layer addresses two concrete review findings without touching Focus:
  *   1. Conversation WorkUnit separation must come from real row geometry, not
- *      only grid row-gap, because transformed canonical nodes can visually
- *      consume that gap.
+ *      only from computed margins on grid items whose transformed children can
+ *      paint outside the row;
  *   2. The current flat project-tool rail should expose Fullscreen while
  *      omitting the redundant Expand selected WorkUnit and Hide project HUD
  *      controls from this product-surface candidate.
@@ -15,44 +15,49 @@
 /* -------------------------------------------------------------------------- */
 
 /*
- * The original Checkpoint 256 implementation combined a 16 px parent grid gap
- * with real WorkUnit-row padding. A later local human retest showed that the
- * parent-level gap could still disappear in a restored/legacy Boxes runtime
- * state even though the Boxes control remained visually selected.
+ * Checkpoint 262 live-browser geometry proved that the later margin-owned
+ * spacing experiment was incorrect. CSS Grid included the 16 px bottom margin
+ * in each auto track and shrank the stretched WorkUnit item, while the scaled
+ * canonical node continued painting beyond that shrunken item. The browser
+ * therefore reported a 16 px row-to-row margin but only ~1.9 px between the
+ * visible WorkUnit surfaces.
  *
- * Preserve the same deliberate separation as row-owned geometry instead. Every
- * non-Text rail state is the Boxes/artifact presentation, including the legacy
- * persisted "artifact" value. The parent grid contributes no spacing; each
- * actual thread row reserves the 16 px separation directly.
+ * Restore explicit inter-track separation and reserve enough row height for the
+ * accepted transformed WorkUnit footprint. This preserves the canonical box
+ * itself while preventing grid-track shrinkage from consuming the breathing
+ * room.
  */
 html:not([data-conversation-rail="text"]) .reintegration-thread-list {
-  row-gap: 0 !important;
+  row-gap: 16px !important;
   column-gap: 0 !important;
   align-content: start;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
-  margin: 0 0 16px !important;
+  margin: 0 !important;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
 html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread {
   box-sizing: border-box;
   height: auto !important;
-  min-height: 0 !important;
-  margin: 0 0 16px !important;
+  min-height: 78px !important;
+  margin: 0 !important;
   padding: 6px 4px !important;
   overflow: visible !important;
 }
 
-html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"]:last-child,
-html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread:last-child {
-  margin-bottom: 0 !important;
+@media (max-width: 1450px) {
+  html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
+  html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread {
+    min-height: 73px !important;
+  }
 }
 
 /*
  * Preserve the accepted canonical rail footprints. The extra vertical space is
- * owned by the thread row, not by resizing or distorting the WorkUnit itself.
+ * owned by the grid track and WorkUnit row, not by resizing or distorting the
+ * WorkUnit itself.
  */
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"] .reintegration-thread-box,
 html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread .reintegration-thread-box {
