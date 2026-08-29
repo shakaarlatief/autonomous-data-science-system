@@ -163,14 +163,16 @@ The strongest finding was a narrow real drift seam: the human-readable numbered 
 
 Claude also correctly distinguished exhaustive routing coverage from semantic routing correctness. Development Method v0.7 now states explicitly that green structural validation is a floor, not proof that every artifact was assigned to the best topic, and periodic reconciliation includes a lightweight routing-quality spot-check.
 
-The other findings are preserved without premature redesign:
+The remaining findings were dispositioned proportionately:
 
 ```text
 large checkpoint ranges
     accepted scaling watchpoint; no change without observed recovery difficulty
 
 README vs docs/README stable pointer overlap
-    acknowledged; no change because it is low-cost stable navigation, not volatile duplication
+    small maintenance redundancy removed; root README now delegates the full
+    canonical routing catalog to docs/README while retaining only a few
+    purpose-specific entry shortcuts
 
 frontmatter-driven generated routing
     preserved as the leading scale-up alternative if central-map read/maintenance cost
@@ -203,6 +205,15 @@ Accepted semantic-routing hardening:
 implementation commit  7f3148998839eee44f9e7206711bcd91e1238c39
 workflow               33260542682
 job                    99121611764
+result                 SUCCESS
+```
+
+Final minor navigation cleanup:
+
+```text
+implementation commit  3cf18c6f98bd8865e4ae3301f95ec93b26d6d8b8
+workflow               33261500505
+job                    99124125899
 result                 SUCCESS
 ```
 
