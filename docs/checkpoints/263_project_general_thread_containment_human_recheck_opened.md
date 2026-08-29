@@ -2,8 +2,16 @@
 
 **Date:** 2026-08-29  
 **Status:** HUMAN_RECHECK_OPEN  
-**Branch:** `v1-cockpit-design-exploration`  
-**Interaction session:** `chatgpt-10`
+**Checkpoint class:** COCKPIT_PRESENTATION / HUMAN_RECHECK  
+**Project stage:** V1 next-generation Project Cockpit design exploration  
+**Scope:** Project-General thread containment in Conversation Boxes mode after the WorkUnit spacing recovery.  
+**Authority:** Historical human-review boundary. Substantive spacing/containment conclusions are preserved here; later checkpoints govern later refinements and current product state.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** `chatgpt-10`  
+**Conversation title:** `10 - Project Cockpit Design Exploration`  
+**Primary collaborator:** ChatGPT  
+**Branch:** `v1-cockpit-design-exploration`
 
 ## Human result from Checkpoint 262
 

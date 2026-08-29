@@ -1,7 +1,7 @@
 # Continuity
 
 **Status:** Current canonical continuity procedure  
-**Aligned development-method version:** 0.6  
+**Aligned development-method version:** 0.7  
 **Last reviewed:** 2026-08-29
 
 ## Purpose
@@ -18,13 +18,27 @@ The repository remains the durable source of truth whether the active collaborat
 
 Conversation history may help, but must not override repository state. If repository artifacts disagree, resolve through status, scope, chronology, supersession and accepted authority. If material ambiguity remains, surface it explicitly rather than guessing.
 
-## Interaction/session naming
+## Separation of continuity concerns
 
-Shared project/workspace:
+Continuity should reconstruct state from dedicated owners rather than duplicating volatile information inside this procedure:
 
 ```text
-Autonomous Data Science System
+docs/README.md
+    what repository/document families exist and what each is for
+
+docs/current_routing.json
+    compact machine-readable current pointer
+
+docs/CURRENT_STATE.md
+    current human-readable state and exact next step
+
+docs/KNOWLEDGE_MAP.md
+    evergreen subject library for broader/older knowledge
 ```
+
+This file explains **how to use those surfaces**. It should not carry a copied current checkpoint, branch, review gate or latest test run.
+
+## Interaction/session naming
 
 Visible conversations use:
 
@@ -32,34 +46,20 @@ Visible conversations use:
 NN - Main Topic / Stage
 ```
 
-Provider-local repository session IDs allow independent rotation:
+Provider-local repository session IDs may use forms such as:
 
 ```text
-ChatGPT  chatgpt-10  10 - Project Cockpit Design Exploration
-Claude   claude-01   01 - ADS Development Review & Collaboration
+chatgpt-10
+claude-01
 ```
 
-Canonical naming/provenance rules:
+Canonical naming/provenance rules live in:
 
 ```text
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 ```
 
 Session identity is provenance/navigation metadata, not project authority.
-
-## Proactive rotation
-
-Rotate a conversation before context quality becomes fragile. Typical signals include very long design sequences, repeated reconstruction difficulty, context-window warnings, or a natural stage boundary.
-
-Before planned rotation:
-
-1. preserve any meaningful checkpoint/open review state;
-2. update current routing if the boundary changed;
-3. ensure new durable knowledge is routed in the Knowledge Map when warranted;
-4. preserve exact branch/commit/test/review state needed for continuation;
-5. start the next conversation with the standardized reconstruction prompt.
-
-If the boundary is unexpected, reconstruct from the repository first and repair stale routing/provenance only after determining what actually survived.
 
 ## Required new-session reconstruction
 
@@ -68,47 +68,45 @@ A new session should not begin by reading arbitrary recent files or trusting pri
 Read in this order:
 
 1. `README.md`
-2. `docs/CURRENT_STATE.md`
-3. `docs/KNOWLEDGE_MAP.md`
-4. `docs/current_routing.json`
-5. governing canonical documents/specifications pointed to by the current route
-6. the current checkpoint/research boundary
-7. specialized ledgers/manifests for the active topic
+2. `docs/README.md`
+3. `docs/current_routing.json`
+4. `docs/CURRENT_STATE.md`
+5. `docs/KNOWLEDGE_MAP.md`
+6. governing canonical documents/specifications routed by the current state
+7. the current checkpoint/research boundary
+8. specialized ledgers/manifests for the active topic
 
-Then use the **Evergreen topic library** in `docs/KNOWLEDGE_MAP.md` to retrieve any broader knowledge relevant to the task without needing to remember document numbers.
+Then use the subject library in `docs/KNOWLEDGE_MAP.md` to retrieve broader knowledge relevant to the task without needing to remember document numbers.
 
-This is important because current-state routing and historical/domain discovery are different jobs.
-
-## Knowledge Map continuity contract
-
-`docs/KNOWLEDGE_MAP.md` must always retain:
+Structural reconstruction and semantic retrieval are deliberately separate jobs:
 
 ```text
-Current continuation route
-    exact active state and next reading
-
-Evergreen topic library
-    topic -> canonical/deep/evidence/specialized sources across the project
+docs/README.md       structure -> artifact role
+CURRENT_STATE        live state -> next action
+KNOWLEDGE_MAP        subject -> relevant knowledge
 ```
-
-Current-stage work may update the continuation route, but must not replace the evergreen library.
-
-Structural integrity is checked by:
-
-```text
-scripts/check_knowledge_map.py
-.github/workflows/knowledge-map-integrity.yml
-```
-
-The map is navigation, not an authority database. A session still reasons from document status, scope, chronology and accepted contracts.
 
 ## Standard continuation prompt
 
-The normal new-session prompt remains intentionally provider-neutral and stable:
+A provider-neutral continuation prompt may use:
 
-> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/CURRENT_STATE.md, docs/KNOWLEDGE_MAP.md, and the governing documents they point to for the active stage. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Follow the project's development/preservation method. Do not make changes yet; first align with me on the current state.
+> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Follow the project's development/preservation method. Do not make changes yet; first align with me on the current state.
 
-The collaborator should then use the evergreen topic library to expand beyond the immediate boundary when the task touches older or adjacent knowledge.
+The collaborator should expand through the Knowledge Map whenever the task touches older or adjacent knowledge.
+
+## Proactive conversation rotation
+
+Rotate a conversation before context quality becomes fragile. Typical signals include very long design sequences, repeated reconstruction difficulty, context-window warnings, or a natural stage boundary.
+
+Before planned rotation:
+
+1. preserve any meaningful checkpoint/open review state;
+2. update `current_routing.json` and `CURRENT_STATE.md` if the live boundary changed;
+3. ensure new durable knowledge is routed in the Knowledge Map when warranted;
+4. preserve exact branch/commit/test/review state needed for continuation in the live state or governing evidence;
+5. start the next conversation with repository-first reconstruction.
+
+If the boundary is unexpected, reconstruct from the repository first and repair stale routing/provenance only after determining what actually survived.
 
 ## Continuity across branches
 
@@ -121,14 +119,7 @@ main/default branch
 historical experiment branches
 ```
 
-The current branch and promoted integration SHA are recorded in:
-
-```text
-docs/current_routing.json
-README.md
-docs/CURRENT_STATE.md
-docs/KNOWLEDGE_MAP.md
-```
+The live branch/promotion pointer belongs in `docs/current_routing.json` and is explained in `docs/CURRENT_STATE.md`. Do not copy it into stable navigation documents unless a historical record specifically needs that exact context.
 
 A new collaborator must not silently switch branches based on model memory.
 
@@ -136,12 +127,12 @@ A new collaborator must not silently switch branches based on model memory.
 
 Checkpoints preserve meaningful project-state boundaries, not every commit.
 
-Under Development Method v0.6, micro-iterations within one open review question are normally aggregated. Git preserves the exact implementation sequence; the checkpoint preserves the meaningful state transition.
+Under Development Method v0.7, micro-iterations within one open review question are normally aggregated. Git preserves the exact implementation sequence; the checkpoint preserves the meaningful state transition.
 
 When continuing an open checkpoint, distinguish:
 
 ```text
-still same review question
+still the same review question
     bounded update/iteration may remain inside that checkpoint boundary
 
 review interpretation/status/continuation changed materially
@@ -149,6 +140,33 @@ review interpretation/status/continuation changed materially
 ```
 
 Historical closed checkpoints remain immutable except for explicit provenance/metadata repair that does not rewrite substantive history.
+
+Checkpoint roles and metadata are defined by `docs/checkpoints/README.md`.
+
+## Knowledge continuity
+
+The global Knowledge Map is an evergreen semantic library, not a second current-state file.
+
+Its continuity contract is:
+
+```text
+every numbered Foundation      routed to >=1 subject
+every numbered Specification   routed to >=1 subject
+every numbered Research record routed to >=1 subject
+every numbered checkpoint      covered by >=1 semantic checkpoint range
+important specialized indexes  remain globally reachable
+```
+
+A source may belong to multiple subjects. This is desirable when it improves retrieval.
+
+Structural integrity is checked by:
+
+```text
+scripts/check_knowledge_map.py
+.github/workflows/knowledge-map-integrity.yml
+```
+
+The map is navigation, not an authority database. A session still reasons from document status, scope, chronology and accepted contracts.
 
 ## Verification continuity
 
@@ -164,7 +182,7 @@ human-review status
 whether a broader gate is still required before acceptance/promotion
 ```
 
-Never describe a V1 targeted or V2 subsystem pass as a complete V3 Cockpit pass.
+Never describe a V1 targeted or V2 subsystem pass as a complete V3 integrated pass.
 
 Risk-scaled verification is governed by `docs/DEVELOPMENT_METHOD.md`.
 
@@ -200,14 +218,16 @@ docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 
 When a chat ends unexpectedly:
 
-1. identify the active repository/branch;
-2. read current routing and the latest checkpoint rather than assuming the final chat message committed successfully;
-3. inspect recent Git chronology when needed;
-4. separate implementation state from documentation/provenance state;
-5. detect stale routing/session metadata;
-6. preserve the exact surviving product/experiment boundary;
-7. repair continuity metadata conservatively;
-8. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
+1. identify the repository and likely active branch;
+2. read the structural guide, current routing and current state;
+3. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
+4. inspect recent Git chronology when needed;
+5. separate implementation state from documentation/provenance state;
+6. detect stale routing/session metadata;
+7. use the Knowledge Map to reconstruct older governing knowledge by subject;
+8. preserve the exact surviving product/experiment boundary;
+9. repair continuity metadata conservatively;
+10. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
 
 Important distinction:
 
@@ -216,67 +236,43 @@ substantive preservation failure
     knowledge/implementation actually missing
 
 routing/provenance drift
-    knowledge exists but current pointers/session metadata are stale
+    knowledge exists but discovery or current pointers are stale
 ```
 
 The second should be repaired, not treated as lost knowledge.
 
 ## Periodic reconciliation
 
-At meaningful stage boundaries, verify:
+At meaningful stage boundaries, verify separately:
 
 ```text
-README / CURRENT_STATE / current_routing agree
-KNOWLEDGE_MAP current route is accurate
-KNOWLEDGE_MAP evergreen topic coverage is still broad
-important new research/specifications are discoverable by topic
+CURRENT_STATE / current_routing agree
+root README remains stable and non-duplicative
+docs/README still describes the actual repository artifact families
+KNOWLEDGE_MAP retains exhaustive subject coverage
+important new research/specifications/foundations are topic-routed
+checkpoint ranges cover newly created checkpoint numbers
 canonical docs have not become stale
 specialized ledgers remain linked
-interaction session metadata is current
+interaction provenance is coherent
 checkpoint metadata passes
 collaboration obligations are discoverable
 verification tier/status is represented accurately
 ```
 
-Do not run this whole reconciliation after every small implementation commit.
-
-## Current exact continuation
-
-Current repository context:
-
-```text
-branch               v1-cockpit-design-exploration
-checkpoint           265
-interaction session  chatgpt-10
-conversation title   10 - Project Cockpit Design Exploration
-latest specification Specification 024
-```
-
-Checkpoint 265 changes the development method and knowledge-routing architecture. It does not change the active Cockpit product decision.
-
-The current product human-review gate remains Checkpoint 264:
-
-```text
-General project discussion
-    same visible footprint as WorkUnit boxes
-    selected frame on visible project box only
-
-WorkUnit conversations
-    selected frame on visible WorkUnit surface only
-```
-
-After that is confirmed, resume Checkpoint 258 / Research 097 Adaptive Conversation Dock review.
+Do not run the whole reconciliation after every small implementation commit.
 
 ## Version relationship
 
-Development Method v0.6 strengthens continuity by:
+Development Method v0.7 strengthens continuity by giving each navigation surface one primary responsibility:
 
-- restoring an evergreen global topic library;
-- making that library part of standard reconstruction;
-- preserving verification-tier semantics across sessions;
-- aggregating micro-iterations within meaningful review boundaries;
-- correcting current provider-neutral interaction identity;
-- retaining repository-first reconstruction after unexpected chat boundaries.
+```text
+structure     docs/README.md
+live state    CURRENT_STATE.md + current_routing.json
+subject map   KNOWLEDGE_MAP.md
+procedure     CONTINUITY.md
+method        DEVELOPMENT_METHOD.md
+```
 
 Deep preservation rationale remains in:
 
@@ -284,4 +280,5 @@ Deep preservation rationale remains in:
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
+docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
 ```

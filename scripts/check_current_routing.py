@@ -45,8 +45,8 @@ class ManifestError(ValueError):
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Validate the small machine-readable current-routing manifest and "
-            "ensure current human-facing routing documents do not contradict it."
+            "Validate the machine-readable current-routing manifest and ensure the "
+            "sole human-readable current-state owner agrees with it."
         )
     )
     parser.add_argument(
@@ -144,54 +144,33 @@ def expected_pr_text(active_pr: int | None) -> str:
     return "none" if active_pr is None else f"#{active_pr}"
 
 
-def required_fragments(state: RoutingState) -> dict[Path, tuple[str, ...]]:
+def required_current_state_fragments(state: RoutingState) -> tuple[str, ...]:
     pr_text = expected_pr_text(state.active_pr)
-    return {
-        Path("README.md"): (
-            f"checkpoint            {state.current_checkpoint}",
-            f"active branch         {state.active_development_branch}",
-            f"active PR             {pr_text}",
-            f"promoted V1 head      {state.promoted_integration_sha}",
-            f"Specification {state.latest_specification}",
-            state.latest_experiment_outcome,
+    return (
+        f"**Checkpoint:** {state.current_checkpoint}",
+        f"**Active development branch:** `{state.active_development_branch}`",
+        f"**Active PR:** {pr_text}",
+        (
+            f"**Promoted V1 integration branch:** `{state.promoted_integration_branch}` "
+            f"at `{state.promoted_integration_sha}`"
         ),
-        Path("docs/CURRENT_STATE.md"): (
-            f"**Checkpoint:** {state.current_checkpoint}",
-            f"**Active development branch:** `{state.active_development_branch}`",
-            f"**Active PR:** {pr_text}",
-            (
-                f"**Promoted V1 integration branch:** `{state.promoted_integration_branch}` "
-                f"at `{state.promoted_integration_sha}`"
-            ),
-            f"Specification {state.latest_specification}",
-            state.latest_experiment_outcome,
-        ),
-        Path("docs/KNOWLEDGE_MAP.md"): (
-            f"**Current checkpoint:** {state.current_checkpoint}",
-            f"**Active development branch:** `{state.active_development_branch}`",
-            f"**Active PR:** {pr_text}",
-            (
-                f"**Promoted V1 integration branch:** `{state.promoted_integration_branch}` "
-                f"at `{state.promoted_integration_sha}`"
-            ),
-            f"Specification {state.latest_specification}",
-            state.latest_experiment_outcome,
-        ),
-    }
+        f"Specification {state.latest_specification}",
+        state.latest_experiment_outcome,
+    )
 
 
-def validate_document_fragments(root: Path, state: RoutingState) -> list[str]:
+def validate_current_state(root: Path, state: RoutingState) -> list[str]:
+    relative_path = Path("docs/CURRENT_STATE.md")
+    path = root / relative_path
+    try:
+        text = path.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        return [f"{relative_path}: file missing"]
+
     errors: list[str] = []
-    for relative_path, fragments in required_fragments(state).items():
-        path = root / relative_path
-        try:
-            text = path.read_text(encoding="utf-8")
-        except FileNotFoundError:
-            errors.append(f"{relative_path}: file missing")
-            continue
-        for fragment in fragments:
-            if fragment not in text:
-                errors.append(f"{relative_path}: missing routing fragment {fragment!r}")
+    for fragment in required_current_state_fragments(state):
+        if fragment not in text:
+            errors.append(f"{relative_path}: missing routing fragment {fragment!r}")
     return errors
 
 
@@ -219,7 +198,7 @@ def main() -> int:
         return 2
 
     errors = validate_checkpoint_exists(root, state.current_checkpoint)
-    errors.extend(validate_document_fragments(root, state))
+    errors.extend(validate_current_state(root, state))
 
     if errors:
         print("Current routing consistency violations:")

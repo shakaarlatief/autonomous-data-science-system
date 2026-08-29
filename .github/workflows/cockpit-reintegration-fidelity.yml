@@ -115,8 +115,13 @@ jobs:
         if: steps.select.outputs.mode != 'skip'
         run: npx playwright install --with-deps chromium
 
-      - name: Run selected Cockpit browser verification
-        if: steps.select.outputs.mode != 'skip'
+      - name: Run full Cockpit browser verification
+        if: steps.select.outputs.mode == 'full'
+        shell: bash
+        run: npx playwright test e2e/cockpit-reintegration*.spec.ts
+
+      - name: Run narrowed Cockpit browser verification
+        if: steps.select.outputs.mode != 'skip' && steps.select.outputs.mode != 'full'
         shell: bash
         run: npx playwright test ${{ steps.select.outputs.specs }}
 

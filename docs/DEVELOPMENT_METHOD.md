@@ -1,12 +1,12 @@
 # Development Method
 
 **Status:** Current canonical project-development method  
-**Current version:** 0.6  
+**Current version:** 0.7  
 **Last reviewed:** 2026-08-29
 
 ## Purpose
 
-This document defines how the Autonomous Data Science System itself is designed, implemented, tested, reviewed, preserved, and evolved.
+This document defines how the Autonomous Data Science System itself is designed, implemented, tested, reviewed, preserved and evolved.
 
 ADS evolves at two levels:
 
@@ -15,7 +15,7 @@ Level 1  target ADS product/system
 Level 2  method used to build, preserve, verify and evolve ADS
 ```
 
-Both levels should be evidence-driven. The development method must preserve authority, maturity, provenance, reversibility and proportionality of effort.
+Both levels should be evidence-driven. The development method must preserve authority, maturity, provenance, reversibility, discoverability and proportionality of effort.
 
 Deep historical rationale remains in foundations, research, specifications, checkpoints, collaboration records, ledgers and Git history. This document is the operational method.
 
@@ -33,7 +33,86 @@ explore / discuss
 -> continue
 ```
 
-The preservation and verification process must not become so expensive that it interferes with substantive work.
+The preservation and verification process must be strong enough for a large long-lived project without becoming so expensive that it interferes with substantive work.
+
+## Repository information architecture
+
+Development Method v0.7 gives each global navigation/state surface one primary responsibility:
+
+```text
+README.md
+    stable repository landing page
+
+docs/README.md
+    structural repository/documentation guide
+    artifact family -> role / authority / lifecycle
+
+docs/CURRENT_STATE.md
+    sole human-readable live project state
+    current boundary / verification / exact next step
+
+docs/current_routing.json
+    sole compact machine-readable live routing pointer
+
+docs/KNOWLEDGE_MAP.md
+    evergreen semantic subject library
+    subject -> relevant durable knowledge
+
+docs/CONTINUITY.md
+    reconstruction / rotation / recovery procedure
+
+docs/DEVELOPMENT_METHOD.md
+    method used to build, verify, preserve and evolve ADS
+
+docs/MAJOR_CHANGES.md
+    selective structural history
+```
+
+Cross-linking is expected. Volatile checkpoint/branch/test state should not be copied into stable navigation files merely for convenience.
+
+### Why the separation matters
+
+As the repository grows, three different retrieval questions must not collapse into one document:
+
+```text
+Where am I now?               -> CURRENT_STATE / current_routing
+What kind of artifact is this? -> docs/README
+What do we know about X?       -> KNOWLEDGE_MAP
+```
+
+A document that tries to answer all three will become noisy, stale and difficult to maintain.
+
+## Knowledge layers and authority
+
+Repository roles remain intentionally separate:
+
+```text
+canonical docs                 current operational/cross-project truth
+foundations                    deep durable rationale
+research                       bounded evidence/candidates/investigations
+specifications                 explicit scoped contracts
+checkpoints                    historical/continuity state
+specialized indexes/ledgers    domain-specific navigation/provenance
+model-collaboration records    coordination/review provenance
+code/tests                     exact executable mechanisms and regressions
+Git history                    exact implementation/document evolution
+```
+
+The detailed structural guide is `docs/README.md`.
+
+Practical authority order within the relevant scope:
+
+1. accepted/frozen current specifications/contracts;
+2. explicit current decisions/canonical documents;
+3. current principles, vision, development method and continuity;
+4. foundations for rationale;
+5. research for bounded evidence;
+6. checkpoints/collaboration records for provenance;
+7. raw history.
+
+`CURRENT_STATE.md` is authoritative for **what boundary is active now**, but should route to stronger evidence for the underlying product/scientific claim.
+
+Unresolvable conflicts become explicit open questions rather than guesses.
 
 ## Checkpoint granularity
 
@@ -57,7 +136,9 @@ Several small refinements may be preserved together when that review boundary cl
 
 Closed historical checkpoints are not rewritten to make later events appear contemporaneous. An explicitly open review checkpoint may receive a bounded update while the exact same question remains open, provided chronology remains clear in Git.
 
-Checkpoint metadata is governed by `docs/checkpoints/README.md` and mechanically validated.
+Metadata-only repair is permitted when it restores the checkpoint metadata contract without altering substantive historical claims.
+
+Checkpoint metadata and role are governed by `docs/checkpoints/README.md` and mechanically validated.
 
 ## Promotion audit
 
@@ -70,6 +151,7 @@ DECISIONS.md
 OPEN_QUESTIONS.md
 DEVELOPMENT_METHOD.md
 CONTINUITY.md
+docs/README.md
 foundation / research / specification
 KNOWLEDGE_MAP.md
 experiment/status ledger
@@ -78,49 +160,33 @@ MAJOR_CHANGES.md
 
 No promotion is a valid outcome. Recentness, prominence or multi-model agreement does not itself confer authority.
 
-## Knowledge layers and authority
-
-Repository roles remain intentionally separate:
-
-```text
-canonical docs                 current operational truth
-foundations                    deep durable rationale
-research                       bounded evidence/candidates
-specifications                 explicit scoped contracts
-checkpoints                    historical/continuity state
-experiment/status ledgers      detailed operational evidence
-model-collaboration records    coordination/review provenance
-Git history                    exact implementation/document evolution
-```
-
-Practical authority order:
-
-1. accepted/frozen current specifications/contracts within scope;
-2. explicit current decisions/canonical specifications;
-3. current principles, vision, development method, continuity and current state;
-4. foundations for rationale;
-5. research for bounded evidence;
-6. checkpoints/collaboration records for provenance;
-7. raw history.
-
-Unresolvable conflicts become explicit open questions rather than guesses.
-
 ## Knowledge routing and discoverability
 
-`docs/KNOWLEDGE_MAP.md` is the primary global navigation layer and has two durable responsibilities:
+`docs/KNOWLEDGE_MAP.md` is the global **semantic** navigation layer. It has one durable responsibility:
 
 ```text
-CURRENT CONTINUATION ROUTE
-    what is active now and what to read next
-
-EVERGREEN TOPIC LIBRARY
-    major topic -> canonical sources + deep rationale + evidence/history
+EVERGREEN SUBJECT LIBRARY
+    subject -> canonical sources + deep rationale + bounded evidence/history
     + specialized indexes/ledgers
 ```
 
-Current-stage work must not crowd out or replace the evergreen library.
+It does not carry live current checkpoint, branch, CI or next-step state. Those belong to `CURRENT_STATE.md` and `current_routing.json`.
 
-The map routes to sources rather than duplicating their contents. At meaningful stage boundaries, reconcile topic coverage so important new foundations/specifications/research remain discoverable and specialized indexes remain linked.
+### Exhaustive durable-family routing
+
+The Knowledge Map must explicitly route every numbered artifact in:
+
+```text
+docs/foundations/
+docs/specifications/
+docs/research/
+```
+
+A source may be routed to multiple subjects. Multiple membership is a feature when it improves retrieval.
+
+Numbered checkpoints are assigned through compact semantic range records so every historical checkpoint belongs to one or more topics without reproducing the entire checkpoint directory as visible prose. Important checkpoints may additionally be linked directly.
+
+Specialized indexes remain first-class retrieval surfaces and should be linked rather than copied into the global map.
 
 Structural protection:
 
@@ -129,11 +195,22 @@ scripts/check_knowledge_map.py
 .github/workflows/knowledge-map-integrity.yml
 ```
 
-The validator protects topic presence and route/path integrity. It does not infer semantic authority automatically.
+The validator protects:
+
+```text
+topic identity and non-empty routing
+path integrity
+exhaustive Foundation / Specification / Research coverage
+checkpoint-range coverage
+specialized-index reachability
+absence of live-state sections in the Knowledge Map
+```
+
+It does not infer semantic authority automatically.
 
 ## Risk-scaled verification
 
-Development Method v0.6 separates **development verification** from **acceptance verification**.
+Development Method v0.7 retains the v0.6 separation between **development verification** and **acceptance verification**.
 
 ```text
 V0  documentation / provenance
@@ -163,6 +240,12 @@ explicit [full-cockpit] commit marker -> force full Cockpit V3
 V1/V2 must never be reported as a complete integrated pass
 unexpected dependency/failure -> reclassify and broaden verification
 ```
+
+### Verification-command integrity
+
+The verification tier is determined by **what tests actually executed**, not by the workflow label or intended selector output.
+
+A full-suite command must be constructed so patterns are expanded/interpreted by the test runner correctly. If quoting, interpolation or shell behavior accidentally narrows a requested V3 run, that run is not accepted as V3 evidence even if the workflow is green.
 
 ### Human visual review ordering
 
@@ -218,7 +301,8 @@ Checkpoint 22 / v0.3   promotion/discoverability architecture
 Checkpoint 100 / v0.4  checkpoint metadata contract
 MC-0001..0003 / v0.5   governed multi-model collaboration
 Research 064           checkpoint hygiene during rapid iteration
-Research 103 / v0.6    evergreen topic routing + risk-scaled verification
+Research 103 / v0.6    evergreen routing recovery + risk-scaled verification
+Research 104 / v0.7    single-responsibility information architecture + exhaustive routing
 ```
 
 ## Governed multi-model development
@@ -245,14 +329,16 @@ Visible conversations use `NN - Main Topic / Stage` with provider-local IDs such
 
 Perform broader reconciliation at meaningful stage boundaries, major method revisions, observed routing drift, major experiment/specification closure, prototype generation changes, or contradiction/staleness events.
 
-Ask:
+Ask the questions separately:
 
 ```text
-Are durable insights promoted correctly?
+Is CURRENT_STATE concise, present-tense and accurate?
+Does current_routing agree with CURRENT_STATE?
+Does docs/README describe the repository roles that actually exist?
+Does KNOWLEDGE_MAP exhaustively route durable numbered knowledge by subject?
+Are specialized indexes still globally reachable?
 Are VISION/PRINCIPLES/DECISIONS/OPEN_QUESTIONS current?
-Does KNOWLEDGE_MAP retain both current routing and evergreen topic coverage?
-Are foundations/specifications/research discoverable by topic?
-Is CURRENT_STATE concise and present-tense?
+Are foundations/specifications/research discoverable by subject?
 Are detailed runs in the right ledgers?
 Are checkpoint/session/collaboration metadata coherent?
 Are pending reviews discoverable?
@@ -281,32 +367,36 @@ AI-assisted curation under normal governance
 
 Semantic/vector repository retrieval, generated semantic catalogs, contradiction engines, generalized dependency graphs and heavier orchestration remain deferred until observed need justifies them.
 
-Development Method v0.6 does **not** introduce a knowledge database because the diagnosed failure was routing discipline, not missing storage.
+Development Method v0.7 does **not** introduce a vector/semantic knowledge database because the diagnosed failure remains information architecture and routing discipline, not inability to store or retrieve repository artifacts with the current scale and tooling.
 
 ## Version history
 
-### Version 0.6
+### Version 0.7
 
-**Introduced:** Checkpoint 265, 2026-08-29
+**Introduced:** Checkpoint 266, 2026-08-29
 
-- V0-V4 risk-scaled verification and escalation rules;
-- development verification separated from acceptance verification;
-- targeted/subsystem checks before human review for small visual work;
-- full integrated/promotion gates retained at meaningful boundaries;
-- conservative Cockpit test selection with unknown-path fallback to full;
-- `[full-cockpit]` explicit full-gate request;
-- CI concurrency cancellation for obsolete iterative runs;
-- coherent multi-file batching where appropriate;
-- stronger micro-iteration checkpoint aggregation;
-- `KNOWLEDGE_MAP.md` restored as current route + evergreen topic library;
-- lightweight knowledge-map structural validator.
+- separated stable landing, structural guide, live state, machine routing, semantic subject library and continuity procedure;
+- added `docs/README.md` as the repository/documentation artifact-role map;
+- made `CURRENT_STATE.md` the sole human-readable owner of volatile current state;
+- made `current_routing.json` the sole compact machine-readable current pointer;
+- made `KNOWLEDGE_MAP.md` evergreen subject routing only;
+- required exhaustive topic routing for every numbered Foundation, Specification and Research record;
+- added validated semantic checkpoint-range coverage for all numbered checkpoints;
+- preserved multiple topic membership where useful;
+- strengthened Knowledge Map CI to detect unassigned durable knowledge and live-state leakage;
+- retained v0.6 checkpoint aggregation and V0-V4 risk-scaled verification;
+- added verification-command integrity after the first v0.6 forced-full workflow executed only a narrowed subset because of quoting.
 
 Evidence:
 
 ```text
-docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
-docs/checkpoints/265_development_method_v06_knowledge_routing_and_verification_reconciliation.md
+docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
+docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
 ```
+
+### Version 0.6
+
+Checkpoint 265, 2026-08-29: restored broad topic routing after discoverability drift; introduced V0-V4 risk-scaled verification, Cockpit selector/concurrency cancellation and stronger micro-checkpoint aggregation. Its two-layer Knowledge Map was an intermediate repair and is refined by v0.7.
 
 ### Version 0.5
 
@@ -318,7 +408,7 @@ Checkpoint 100/103, 2026-08-19/20: explicit checkpoint metadata contract and mec
 
 ### Version 0.3
 
-Checkpoint 76, 2026-08-18: promotion audits, `KNOWLEDGE_MAP.md`, periodic reconciliation, lightweight authority/provenance metadata, `MAJOR_CHANGES.md`.
+Checkpoint 76, 2026-08-18: promotion audits, `KNOWLEDGE_MAP.md`, periodic reconciliation, lightweight authority/provenance metadata and `MAJOR_CHANGES.md`.
 
 Deep rationale: `docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`.
 

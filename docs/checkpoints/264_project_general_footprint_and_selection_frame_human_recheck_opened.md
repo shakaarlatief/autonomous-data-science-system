@@ -2,8 +2,16 @@
 
 **Date:** 2026-08-29  
 **Status:** HUMAN_RECHECK_OPEN  
-**Branch:** `v1-cockpit-design-exploration`  
-**Interaction session:** `chatgpt-10`
+**Checkpoint class:** COCKPIT_PRESENTATION / HUMAN_RECHECK  
+**Project stage:** V1 next-generation Project Cockpit design exploration  
+**Scope:** Aligns the General project discussion footprint with WorkUnit boxes and moves selected-state framing to the actual visible selected surface.  
+**Authority:** Current Cockpit product human-review boundary until explicitly accepted, rejected, superseded or closed by a later product checkpoint.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** `chatgpt-10`  
+**Conversation title:** `10 - Project Cockpit Design Exploration`  
+**Primary collaborator:** ChatGPT  
+**Branch:** `v1-cockpit-design-exploration`
 
 ## Human result from Checkpoint 263
 

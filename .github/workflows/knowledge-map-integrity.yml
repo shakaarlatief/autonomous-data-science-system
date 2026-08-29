@@ -3,7 +3,11 @@ name: Knowledge map integrity
 on:
   push:
     paths:
+      - README.md
+      - docs/README.md
       - docs/KNOWLEDGE_MAP.md
+      - docs/CONTINUITY.md
+      - docs/DEVELOPMENT_METHOD.md
       - docs/research/**
       - docs/foundations/**
       - docs/specifications/**
@@ -16,7 +20,11 @@ on:
       - .github/workflows/knowledge-map-integrity.yml
   pull_request:
     paths:
+      - README.md
+      - docs/README.md
       - docs/KNOWLEDGE_MAP.md
+      - docs/CONTINUITY.md
+      - docs/DEVELOPMENT_METHOD.md
       - docs/research/**
       - docs/foundations/**
       - docs/specifications/**
@@ -41,5 +49,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate evergreen topic routing
+      - name: Validate exhaustive evergreen subject routing
         run: python scripts/check_knowledge_map.py

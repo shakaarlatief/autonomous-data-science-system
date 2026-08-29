@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 265  
+**Checkpoint:** 266  
 **Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -23,31 +23,29 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current Level-2 boundary
 
-Checkpoint 265 is a development-method and knowledge-routing reconciliation, not a Cockpit product decision.
+Checkpoint 266 refines the repository information architecture after the broader preservation audit at Research 103 / Checkpoint 265.
 
-Research 103 found:
+The substantive project knowledge remains preserved. The scaling problem was **discoverability and ownership of navigation responsibilities**, not missing storage.
+
+Development Method v0.7 now separates six concerns explicitly:
 
 ```text
-substantive knowledge durability
-    strong
-    no major evidence of lost ADS knowledge
-
-global discoverability
-    degraded
-    KNOWLEDGE_MAP had become current-Cockpit-heavy and no longer served
-    its original broad topic-library role reliably
-
-checkpoint granularity
-    governing policy was sound
-    recent frontend practice became too checkpoint-heavy
-
-Cockpit verification
-    complete 78-test gate was being run too often during tiny iterations
+README.md              stable repository landing page
+docs/README.md         repository/documentation structure and artifact roles
+CURRENT_STATE.md       sole human-readable live project state
+current_routing.json   sole machine-readable live routing pointer
+KNOWLEDGE_MAP.md       evergreen subject -> knowledge library
+CONTINUITY.md          reconstruction/recovery procedure
+DEVELOPMENT_METHOD.md  method used to build, verify and preserve ADS
 ```
 
-The response is Development Method v0.6.
+The Knowledge Map no longer duplicates current checkpoint, branch, CI or next-step state. It is an evergreen semantic library with exhaustive routing for every numbered Foundation, Specification and Research record. Every numbered checkpoint is also assigned to one or more subjects through validated semantic checkpoint ranges, while important checkpoints remain directly linked.
 
-### Development Method v0.6
+`docs/README.md` is now the answer to “what kinds of files do we have and what is each one for?”
+
+### Development Method v0.7 verification model
+
+The v0.6 risk-scaled verification ladder remains:
 
 ```text
 V0  documentation / provenance validators
@@ -57,47 +55,37 @@ V3  full integrated gate
 V4  promotion / release gate
 ```
 
-Rules:
+Unknown/shared blast radius still escalates to V3. Micro-iterations inside one open review question still aggregate rather than creating a checkpoint per tiny commit.
+
+Checkpoint 266 additionally corrects the v0.6 full-Cockpit workflow invocation so a requested full gate actually expands and runs the complete Cockpit test family rather than a quoted literal glob.
+
+## Checkpoint 266 validation status
+
+This information-architecture transition changes validation/routing machinery, so final validation is open until the following evidence is green:
 
 ```text
-unknown/shared blast radius -> V3
-small isolated iteration -> V1/V2
-low-risk visual tuning -> narrow deterministic check, then human review
-meaningful acceptance closure -> broader/full gate required by the boundary
-promotion/release -> V4
-V1/V2 evidence must never be described as a complete Cockpit pass
+Knowledge map integrity
+    exhaustive Foundation / Specification / Research routing
+    checkpoint semantic-range coverage
+    path integrity
+    no live-state leakage back into KNOWLEDGE_MAP
+
+Current routing consistency
+    current_routing.json agrees with CURRENT_STATE.md
+
+Checkpoint metadata
+    Checkpoints 263 and 264 metadata-only repair accepted
+    current Checkpoint 266 contract valid
+
+Cockpit reintegration fidelity
+    one genuine full V3 run after correcting the full-suite invocation
 ```
 
-Small implementation refinements within the same open human-review question should normally be aggregated inside that boundary rather than creating a new numbered checkpoint per commit.
-
-### Knowledge routing
-
-`docs/KNOWLEDGE_MAP.md` now has two explicit layers:
-
-```text
-Current continuation route
-Evergreen topic library
-```
-
-The evergreen library restores project-wide topic discovery across canonical docs, foundations, research, specifications, checkpoints and specialized indexes.
-
-Structural protection:
-
-```text
-scripts/check_knowledge_map.py
-.github/workflows/knowledge-map-integrity.yml
-```
-
-Cockpit verification selection:
-
-```text
-scripts/select_cockpit_verification.py
-.github/workflows/cockpit-reintegration-fidelity.yml
-```
-
-The selector narrows only high-confidence local changes and falls back to full V3 for mixed/shared/unknown changes. Obsolete same-branch runs are cancelled through CI concurrency control.
+The previously reported v0.6 run that executed only 16 tests is not accepted as a V3 pass.
 
 ## Current Cockpit product boundary remains Checkpoint 264
+
+Checkpoint 266 is a Level-2 repository/development-method change. It does not reopen or change the Cockpit product design.
 
 Latest human-confirmed state:
 
@@ -123,14 +111,14 @@ Boxes selected-state frame
     no oversized structural row frame
 ```
 
-Governing evidence:
+Governing product evidence:
 
 ```text
 docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
 docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
 ```
 
-Normal route:
+Normal review route:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html
@@ -149,31 +137,9 @@ Adaptive route:
 http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
 ```
 
-## Verification status
+## Held product/scientific decisions
 
-Last complete Cockpit gate before the v0.6 workflow change:
-
-```text
-implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
-workflow run                33251166351
-job                         99096968925
-browser tests               78 / 78 passing
-```
-
-Checkpoint 265 changes the verification workflow itself, so one fresh full V3 Cockpit run is required before the method checkpoint closes. The commit introducing v0.6 explicitly requests that gate with `[full-cockpit]`.
-
-Required repository validators for closure:
-
-```text
-Knowledge map integrity
-Current routing consistency
-Checkpoint metadata
-full Cockpit V3 reintegration fidelity
-```
-
-## Held product decisions
-
-No Cockpit semantic/product decision is reopened by Checkpoint 265. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
+No Cockpit semantic/product decision is reopened by this repository architecture work. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
 
 Implementation provenance remains governed by:
 
@@ -190,9 +156,9 @@ Production `/cockpit` remains untouched.
 
 ## Exact next step
 
-First close Checkpoint 265's method validation gates.
+First close Checkpoint 266's validation gates.
 
-Then the next product actor is still the human reviewer:
+Then the next product actor remains the human reviewer:
 
 ```text
 pull latest v1-cockpit-design-exploration

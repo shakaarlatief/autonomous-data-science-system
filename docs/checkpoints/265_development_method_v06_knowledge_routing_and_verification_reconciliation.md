@@ -1,11 +1,11 @@
 # Checkpoint 265: Development Method v0.6 Knowledge Routing and Verification Reconciliation
 
 **Date:** 2026-08-29  
-**Status:** IMPLEMENTED / FINAL VALIDATION OPEN  
+**Status:** SUPERSEDED / VALIDATION ROLLED FORWARD TO CHECKPOINT 266  
 **Checkpoint class:** DEVELOPMENT_METHOD / KNOWLEDGE_ARCHITECTURE / VERIFICATION  
 **Project stage:** V1 next-generation Project Cockpit design exploration with repository-scale preservation-method reconciliation  
 **Scope:** Promotes Development Method v0.6, restores the project-wide evergreen Knowledge Map, introduces structural map validation and risk-scaled Cockpit verification, and reduces micro-checkpoint/CI churn without changing the active Cockpit product decision.  
-**Authority:** Governing development-method checkpoint. Product semantics remain governed by their existing accepted specifications/foundations and the still-open Checkpoint 264 human review.  
+**Authority:** Historical governing development-method checkpoint, refined by Checkpoint 266 / Development Method v0.7 before final validation closure. Product semantics remain governed by their existing accepted specifications/foundations and the still-open Checkpoint 264 human review.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-10`  
@@ -30,7 +30,7 @@ A third process drift was also confirmed: recent frontend micro-adjustments were
 
 ## 2. Development Method v0.6
 
-`docs/DEVELOPMENT_METHOD.md` is promoted to v0.6.
+`docs/DEVELOPMENT_METHOD.md` was promoted to v0.6 at this boundary.
 
 New governing additions:
 
@@ -46,20 +46,22 @@ coherent multi-file state transitions where practical
 evergreen topic-library obligation for KNOWLEDGE_MAP
 ```
 
-No existing fidelity/provenance guarantee is removed.
+No existing fidelity/provenance guarantee was removed.
 
 ## 3. Knowledge Map restoration
 
-`docs/KNOWLEDGE_MAP.md` again has two separate layers:
+At this checkpoint, `docs/KNOWLEDGE_MAP.md` was restored with two layers:
 
 ```text
 Current continuation route
 Evergreen topic library
 ```
 
-The evergreen library covers seventeen stable topic families across the entire ADS project and routes each topic to relevant canonical, foundational, specification, research, checkpoint and specialized-index evidence.
+The evergreen library restored project-wide topic discovery across canonical docs, foundations, research, specifications, checkpoints and specialized indexes.
 
-This restores the library behavior remembered by the project owner while retaining a small current continuation route at the top.
+This was a successful intermediate correction to the previous Cockpit-heavy drift.
+
+Checkpoint 266 subsequently refined the information architecture further by moving the live continuation responsibility entirely to `CURRENT_STATE.md` / `current_routing.json` and making `KNOWLEDGE_MAP.md` semantic-only.
 
 ## 4. Structural map guard
 
@@ -70,7 +72,9 @@ scripts/check_knowledge_map.py
 .github/workflows/knowledge-map-integrity.yml
 ```
 
-The validator protects the existence and path integrity of the topic library without pretending to automate semantic authority resolution.
+The initial validator protected topic existence and path integrity without pretending to automate semantic authority resolution.
+
+Checkpoint 266 strengthens this validator to enforce exhaustive durable-family routing and checkpoint-range coverage.
 
 ## 5. Adaptive Cockpit verification
 
@@ -90,7 +94,7 @@ The selector uses safe path-based narrowing for high-confidence local surfaces a
 
 The workflow also cancels obsolete in-progress runs for the same branch/ref.
 
-This method change itself explicitly forces one complete Cockpit run through the `[full-cockpit]` commit marker because the verification architecture is being changed.
+This method change explicitly forced one complete Cockpit run through the `[full-cockpit]` commit marker because the verification architecture itself changed.
 
 ## 6. Checkpoint aggregation rule
 
@@ -111,14 +115,9 @@ Git remains the exact low-level implementation history.
 
 ## 7. Continuity alignment
 
-`docs/CONTINUITY.md` is aligned to the current provider-neutral interaction identity:
+`docs/CONTINUITY.md` was aligned to the provider-neutral interaction identity and new-session reconstruction began using the restored topic library.
 
-```text
-chatgpt-10
-10 - Project Cockpit Design Exploration
-```
-
-New-session reconstruction now explicitly uses the evergreen topic library after reading current routing, so future sessions can discover related knowledge by topic rather than by remembered document number.
+Checkpoint 266 further removes duplicated live state from the continuity procedure itself.
 
 ## 8. Product boundary unchanged
 
@@ -137,14 +136,14 @@ Production `/cockpit` remains untouched.
 
 ## 9. Promotion audit
 
-Promoted:
+Promoted at this boundary:
 
 ```text
 docs/DEVELOPMENT_METHOD.md            -> v0.6
 docs/CONTINUITY.md                    -> v0.6-aligned reconstruction
 docs/KNOWLEDGE_MAP.md                 -> current route + evergreen library
 Research 103                          -> durable audit/rationale
-Checkpoint 265                        -> current method transition
+Checkpoint 265                        -> method transition
 adaptive Cockpit selector/workflow    -> operational verification implementation
 knowledge-map validator/workflow      -> operational discoverability guard
 ```
@@ -152,17 +151,17 @@ knowledge-map validator/workflow      -> operational discoverability guard
 Not promoted:
 
 ```text
-new Foundation                         not required; Foundation 014 remains valid
+new Foundation                         not required; Foundation 014 remained valid
 new product Specification              not a product contract change
 semantic/vector knowledge database     not justified
 per-micro-change checkpointing         explicitly not selected
 ```
 
-## 10. Final validation gate
+## 10. Original final validation gate
 
-Because the verification architecture itself changed, this method transition requires one full V3 Cockpit gate plus the relevant lightweight repository validators.
+Because the verification architecture itself changed, this method transition originally required one full V3 Cockpit gate plus relevant lightweight repository validators.
 
-Expected final evidence:
+Expected evidence was:
 
 ```text
 Cockpit reintegration fidelity    full V3 pass
@@ -171,4 +170,21 @@ Current routing consistency       pass
 Checkpoint metadata               pass
 ```
 
-After those gates pass, Checkpoint 265 may be marked COMPLETE without another full Cockpit run.
+Inspection of the first forced-full workflow later showed that its command executed only 16 tests because a quoted glob was passed literally. Therefore that run was not accepted as V3 evidence.
+
+## 11. Supersession and validation roll-forward
+
+Before Checkpoint 265 closed, the repository owner requested a deeper information-architecture audit. Research 104 found that the v0.6 two-layer Knowledge Map still duplicated current-state ownership and that durable topic routing should be mechanically exhaustive.
+
+Checkpoint 266 / Development Method v0.7 therefore supersedes the unfinished v0.6 closure boundary and absorbs its remaining validation obligation.
+
+This does not invalidate the useful v0.6 contributions:
+
+```text
+risk-scaled V0-V4 verification        retained
+checkpoint aggregation                retained
+broad topic routing restoration       retained and strengthened
+CI concurrency cancellation           retained
+```
+
+It means only that the more complete v0.7 architecture is validated once, rather than paying separate full closure gates for two consecutive Level-2 information-architecture states.
