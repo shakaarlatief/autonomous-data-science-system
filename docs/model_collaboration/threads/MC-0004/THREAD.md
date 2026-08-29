@@ -8,8 +8,8 @@
 **Claude role:** independent reviewer / counter-designer / researcher  
 **Human project owner:** final arbiter of product-intent choices  
 **Opened:** 2026-08-26  
-**Current ChatGPT interaction session:** `chatgpt-09`  
-**Current ChatGPT conversation title:** `09 - Project Cockpit Design Exploration`
+**Current ChatGPT interaction session:** `chatgpt-10`  
+**Current ChatGPT conversation title:** `10 - Project Cockpit Design Exploration`
 
 ## Collaboration history
 
@@ -87,6 +87,49 @@ Phase C provenance recovery completion
     Research 089
     Checkpoint 251
     source-faithful holistic reintegration opened
+
+Phase C source-faithful holistic reintegration and whole-product review
+    Checkpoints 252-257
+    exact accepted implementations ported/reused under fidelity gates
+    plain cockpit-reintegration.html route made canonical
+    current right-side rail flattened after human review
+    current Conversation visible-separation target established
+
+Phase C Adaptive Conversation Dock review
+    Research 097
+    Checkpoint 258
+    opt-in ?conversation=adaptive-dock candidate opened
+    product review remains open, not promoted
+
+Phase C presentation-integrity interruption
+    Research 098 / Checkpoint 259
+        Focus lifecycle/remount synchronization repaired
+        human later reports Focus working as far as tested
+
+    Research 099 / Checkpoint 260
+        row-owned Conversation margin attempt
+        deterministic gate green but human screenshot still wrong
+
+    Checkpoint 261
+        unplanned ChatGPT conversation rotation reconciled
+        chatgpt-10 / 10 - Project Cockpit Design Exploration established
+        pre-boundary chatgpt-09 history preserved
+
+    Research 100 / Checkpoint 262
+        live Chrome geometry proves CSS Grid track absorption
+        explicit row-gap + sufficient WorkUnit row height recovery
+        WorkUnit spacing later human-confirmed correct
+
+    Research 101 / Checkpoint 263
+        project-general short-height containment recovery
+        project owner later confirms containment correct
+
+    Research 102 / Checkpoint 264
+        project-general artifact aligned to accepted WorkUnit rail footprint
+        Boxes selection moved from generic structural wrapper to visible selected surface
+        workflow run 33251166351 PASS
+        78 / 78 browser tests passing
+        final narrow human visual recheck OPEN
 ```
 
 ## Failed holistic integration disposition
@@ -184,7 +227,7 @@ Research 084 B1-B4 Conversation synthesis candidates
 
 ## Completed recovery contract
 
-The repository now contains the durable recovery substrate required before another holistic integration:
+The repository contains the durable recovery substrate required for holistic integration:
 
 ```text
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
@@ -232,9 +275,7 @@ entries=23 required=19 non_promotable=4
 exact historical source verification: PASS
 ```
 
-The implementation-provenance recovery is therefore closed.
-
-This does not mean the replacement integrated browser has passed visual/interaction fidelity. That is the next gate.
+The implementation-provenance recovery is closed. Current integration changes remain subject to both deterministic fidelity checks and human product review.
 
 ## Integration rule after recovery
 
@@ -365,17 +406,60 @@ db31970d6885ce785609f9c3300f22123130d821
 
 Conversation open/close must preserve and restore the source work state.
 
+## Current Conversation rail integrity result
+
+Human-confirmed substrate:
+
+```text
+WorkUnit spacing
+    correct
+
+General project discussion containment
+    correct
+
+Focus
+    working as far as tested
+```
+
+Checkpoint 264 current candidate:
+
+```text
+General project discussion visible footprint
+    232 x 74 normal
+    214 x 69 responsive <=1450
+    matches accepted WorkUnit rail slot
+
+Boxes selected-state ownership
+    outer structural thread row transparent
+    selected frame on visible project artifact or visible WorkUnit surface
+
+Text selected-state ownership
+    generic visible row treatment retained
+```
+
+Deterministic gate:
+
+```text
+implementation/test target 9881efe313b8cf04d9521c0464050b30b29944c1
+workflow run 33251166351
+78 / 78 PASS
+```
+
 ## Current collaboration gate
 
 ```text
-next actor: ChatGPT
-mode: source-faithful holistic reintegration
+next actor: human
+mode: Checkpoint 264 project-general footprint / selection-frame visual recheck
 pending Claude obligation: none
-human fidelity-failure diagnosis review: COMPLETE
 implementation provenance gate: PASS
-integrated fidelity gate: OPEN
-holistic human review: WAITING FOR INTEGRATED FIDELITY PASS
+integrated fidelity gate: PASS, 78/78
+WorkUnit spacing human gate: PASSED
+project-general containment human gate: PASSED
+project-general footprint / selected-frame human gate: OPEN
+Adaptive Conversation Dock product review: PAUSED ONLY UNTIL CURRENT RECHECK CLOSES
 ```
+
+If Checkpoint 264 is confirmed, the next legitimate step is to resume the still-open Adaptive Conversation Dock product review from Checkpoint 258 / Research 097.
 
 ## Production boundary
 
