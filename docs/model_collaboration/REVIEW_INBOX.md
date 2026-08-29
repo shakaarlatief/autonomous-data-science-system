@@ -1,6 +1,6 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-08-28  
+**Date:** 2026-08-29  
 **Status:** Current human-readable routing view  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
@@ -24,69 +24,91 @@ Claude Message 010 remains complete at:
 8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
 ```
 
+No new Claude review is required for the current narrow visual-integrity recheck.
+
 ## Next actor
 
 ```text
-ChatGPT
+human
 ```
 
 Current checkpoint:
 
 ```text
-251
+264
+```
+
+Active ChatGPT interaction:
+
+```text
+chatgpt-10
+10 - Project Cockpit Design Exploration
 ```
 
 ## Critical current state
 
-The first holistic integrated Cockpit at:
+The source-faithful integrated Cockpit remains the protected whole-product design substrate. The failed first holistic integration at `8e554d847bb3b6318db432abcb5dff742f0fa523` remains excluded as an implementation source.
+
+Implementation provenance remains complete and passing through the 23-entry manifest and exact-history gate.
+
+The latest Conversation rail integrity sequence is:
 
 ```text
-8e554d847bb3b6318db432abcb5dff742f0fa523
+Research 100 / Checkpoint 262
+    exact CSS Grid track-absorption diagnosis
+    explicit grid row-gap + sufficient WorkUnit row height recovery
+    WorkUnit spacing human-confirmed correct
+
+Research 101 / Checkpoint 263
+    project-general short-height containment recovery
+    containment human-confirmed correct
+
+Research 102 / Checkpoint 264
+    project-general visible artifact aligned to accepted WorkUnit rail footprint
+    Boxes active frame moved from structural outer row to visible selected surface
+    human visual confirmation OPEN
 ```
 
-failed fidelity review and remains an excluded implementation source.
-
-The Checkpoint 250 implementation-provenance recovery is now complete. The repository contains an exhaustive Phase-C decision ledger, a 23-entry implementation manifest, a deterministic validator and a full-history GitHub Actions gate.
-
-Exact-history verification has passed:
+Current deterministic evidence:
 
 ```text
-workflow run 33156357834
-Cockpit implementation manifest: PASS
-entries=23 required=19 non_promotable=4
-exact historical source verification: PASS
+implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
+workflow run                33251166351
+job                         99096968925
+browser tests               78 / 78 PASS
 ```
 
-Primary current evidence:
-
-```text
-docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
-docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
-docs/cockpit/PHASE_C_DECISION_LEDGER.md
-docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
-```
+Current-process Focus remains working as far as tested and is not under active repair.
 
 ## Current gate
 
-The provenance gate is closed. The integrated fidelity gate is open.
-
 ```text
-replacement holistic integration
-    -> source-faithful reuse/porting
-    -> preserve all MUST_PORT / MUST_PRESERVE items
-    -> retain provisional items as provisional
-    -> do not select deferred/rejected/evidence-only candidates
-    -> minimum unresolved shell glue only, explicitly provisional
+WorkUnit spacing human gate
+    PASSED
 
-then
+General project containment human gate
+    PASSED
 
-integrated fidelity validation against exact accepted targets
+General project footprint / selected-frame human gate
+    OPEN at Checkpoint 264
 
-then
-
-human holistic product review
+Adaptive Conversation Dock product review
+    still OPEN underneath this interruption
+    resume immediately if Checkpoint 264 passes
 ```
 
-No Claude review is currently required. ChatGPT is the current actor for controlled reintegration.
+The project owner should pull and hard-refresh the normal Cockpit route, open Conversation in Boxes mode and switch between General project discussion and WorkUnit threads.
+
+Required visible result:
+
+```text
+General project discussion matches the WorkUnit box footprint
+General selection frames only the visible project box
+WorkUnit selection frames only the visible WorkUnit
+no oversized structural wrapper appears
+existing spacing remains correct
+```
+
+If confirmed, close the Conversation rail integrity interruption and resume Checkpoint 258 / Research 097 Adaptive Conversation Dock product review.
 
 Production `/cockpit` remains untouched.
