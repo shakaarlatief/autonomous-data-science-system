@@ -17,7 +17,7 @@ Interaction session      chatgpt-10
 Conversation title       10 - Project Cockpit Design Exploration
 Primary collaborator     ChatGPT
 Product collaboration    MC-0004
-Pending model review     MC-0005
+Latest model review      MC-0005 CLOSED
 ```
 
 Repository artifacts remain authoritative across chats and models.
@@ -39,7 +39,7 @@ DEVELOPMENT_METHOD.md  method used to build, verify and preserve ADS
 MAJOR_CHANGES.md       selective structural history
 ```
 
-The semantic Knowledge Map is exhaustively guarded for numbered Foundations, Specifications and Research records, with semantic checkpoint-range coverage and specialized-index reachability.
+The semantic Knowledge Map is exhaustively guarded for numbered Foundations, Specifications and Research records, with semantic checkpoint-range coverage, specialized-index reachability, and human-readable Subject-index alignment with the machine-checked `KM-TOPIC` subject headings.
 
 The canonical global-document reconciliation also completed:
 
@@ -137,35 +137,76 @@ result    SUCCESS / browser execution skipped
 
 The earlier v0.6 run that executed only 16 tests is not accepted as V3 evidence.
 
-## Non-blocking second-model architecture review
+## Completed second-model architecture review
 
-The finalized v0.7 architecture is frozen for a direct Claude adversarial review at:
+Claude completed the exact-target MC-0005 adversarial review against:
 
 ```text
 c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
 ```
 
-Collaboration thread:
+Claude's durable result is:
 
 ```text
-MC-0005
+SUPPORT_WITH_NONBLOCKING_IMPROVEMENTS
+must-fix findings: none
 ```
 
-Purpose:
+Claude independently verified rather than merely repeated two important architectural claims:
 
 ```text
-challenge global-file role separation
-challenge semantic Knowledge Map design and exhaustive routing
-challenge checkpoint-range routing
-challenge authority/supersession clarity
-challenge validator maintenance cost
-challenge order-of-magnitude scaling behavior
-propose the strongest simpler alternative if one exists
+all KM-CHECKPOINT-RANGE records provide gapless 000-266 coverage
+scripts/check_knowledge_map.py genuinely implements the documented exhaustive-routing guarantees
 ```
 
-This review is optional/non-blocking for product continuation. Checkpoint 266 remains complete unless a later Claude finding is substantively accepted and warrants revision.
+The strongest finding was a narrow real drift seam: the human-readable numbered Subject index was not mechanically cross-checked against the `KM-TOPIC` subject sections. ChatGPT accepted that finding and separately implemented a lightweight guard that now checks contiguous Subject-index numbering, subject count, and exact display-name/order alignment with the machine-routed topic headings.
 
-MC-0005 is read-only with respect to the frozen target. It has no target write paths and no target-state write owner. Claude may write only to the declared MC-0005 message surface; ChatGPT remains task owner for later disposition.
+Claude also correctly distinguished exhaustive routing coverage from semantic routing correctness. Development Method v0.7 now states explicitly that green structural validation is a floor, not proof that every artifact was assigned to the best topic, and periodic reconciliation includes a lightweight routing-quality spot-check.
+
+The other findings are preserved without premature redesign:
+
+```text
+large checkpoint ranges
+    accepted scaling watchpoint; no change without observed recovery difficulty
+
+README vs docs/README stable pointer overlap
+    acknowledged; no change because it is low-cost stable navigation, not volatile duplication
+
+frontmatter-driven generated routing
+    preserved as the leading scale-up alternative if central-map read/maintenance cost
+    or repeated routing drift becomes an observed problem
+```
+
+MC-0005 resolution:
+
+```text
+docs/model_collaboration/threads/MC-0005/RESOLUTION.md
+```
+
+Thread closure commit:
+
+```text
+86a39f6b838611c44278b97f452d6d1dbf84f452
+```
+
+Collaboration-state validation on that closure:
+
+```text
+workflow     33260449760
+Windows job  99121365202   SUCCESS
+Ubuntu job   99121365283   SUCCESS
+```
+
+Accepted semantic-routing hardening:
+
+```text
+implementation commit  7f3148998839eee44f9e7206711bcd91e1238c39
+workflow               33260542682
+job                    99121611764
+result                 SUCCESS
+```
+
+The review and follow-up do not reopen Checkpoint 266 and do not justify Checkpoint 267. Development Method remains v0.7.
 
 ### Collaboration-state validation reconciliation
 
@@ -181,7 +222,7 @@ Windows job  99113865887   SUCCESS
 Ubuntu job   99113866011   SUCCESS
 ```
 
-Final MC-0005 read-only-scope validation:
+Final MC-0005 read-only-scope validation before review execution:
 
 ```text
 workflow     33257669671
@@ -193,7 +234,7 @@ Both runs include guarded-state validation, collaboration-state unit tests and t
 
 ## Current Cockpit product boundary remains Checkpoint 264
 
-The repository/development-method reconciliation did not reopen or change the Cockpit product design.
+The repository/development-method reconciliation and MC-0005 review did not reopen or change the Cockpit product design.
 
 Latest human-confirmed state:
 
@@ -247,7 +288,7 @@ http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptiv
 
 ## Held product/scientific decisions
 
-No Cockpit semantic/product decision is reopened by Checkpoint 266 or by the pending MC-0005 review. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
+No Cockpit semantic/product decision is reopened by Checkpoint 266 or the completed MC-0005 review. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
 
 Implementation provenance remains governed by:
 
@@ -262,18 +303,13 @@ Source-vault bootstrap remains PAUSED, not cancelled. The Course 2 source-univer
 
 Production `/cockpit` remains untouched.
 
-## Exact next steps
+## Exact next step
 
-Two independent continuations are legitimate:
+The Level-2 architecture review is closed. The active continuation is again the product gate already open before MC-0005:
 
 ```text
 PRODUCT
-    human performs the already-open Checkpoint 264 visual recheck
-    if correct, resume Adaptive Conversation Dock review
-
-LEVEL-2 REVIEW
-    Claude reviews frozen v0.7 target c834d829...
-    review is non-blocking and may be processed when convenient
+    human performs the Checkpoint 264 visual recheck
+    if correct, close the Conversation presentation-integrity interruption
+    then resume Adaptive Conversation Dock review
 ```
-
-The product continuation does not need to wait for Claude.
