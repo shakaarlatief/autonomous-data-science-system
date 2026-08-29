@@ -3,8 +3,6 @@ name: Model collaboration state
 on:
   workflow_dispatch:
   push:
-    branches:
-      - v1-multimodel-development-collaboration
     paths:
       - schemas/model_collaboration_thread_state_v1.schema.json
       - scripts/check_model_collaboration_state.py
