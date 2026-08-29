@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 
-const route = '/design-lab/cockpit-reintegration.html?edge=angled'
+const route = '/design-lab/cockpit-reintegration.html'
 
 async function openStudy(page: Page, width: number, height = 1000) {
   await page.setViewportSize({ width, height })
@@ -44,7 +44,7 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number) {
   }
 }
 
-test.describe('Checkpoint 256 review corrections', () => {
+test.describe('Checkpoint 256 review corrections on the canonical Cockpit route', () => {
   test('Conversation WorkUnits have structural visible separation at the normal desktop viewport', async ({ page }) => {
     await expectVisibleWorkUnitSpacing(page, 1600)
   })
