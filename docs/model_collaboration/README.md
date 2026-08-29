@@ -2,8 +2,8 @@
 
 **Status:** Current canonical model-collaboration protocol  
 **Date promoted:** 2026-08-26  
-**Authority:** Canonical operational supplement to Development Method v0.5 for collaborative ADS development. It does not override accepted project specifications or decisions outside its scope.  
-**Evidence base:** Research 035, MC-0001, Specification 024, MC-0002, Research 036, MC-0003, and Research 080
+**Authority:** Canonical operational collaboration protocol, initially promoted with Development Method v0.5 and retained by the current Development Method v0.7. It does not override accepted project specifications or decisions outside its scope.  
+**Evidence base:** Research 035, MC-0001, Specification 024, MC-0002, Research 036, MC-0003, Research 080, and subsequent collaboration use
 
 ## Purpose
 
@@ -248,7 +248,7 @@ For deferred work, preserve:
 ```text
 review requirement
 review gate
-exact immutable review target
+exact frozen review target
 minimal governing read set
 expected output
 priority / downstream consequence
@@ -360,7 +360,7 @@ Revisit either mechanism only when observed manual coordination cost or backlog 
 
 ---
 
-## Evidence from the first three threads
+## Evidence from collaboration trials
 
 ```text
 MC-0001
