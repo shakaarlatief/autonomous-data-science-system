@@ -8,7 +8,7 @@ async function openStudy(page: Page, width: number, height = 1000) {
   await expect(page.locator('html')).toHaveAttribute('data-human-review256', 'true')
   await expect(page.locator('.cockpit-angled-rail-rig')).toBeVisible()
 
-  const reviewStylesheet = page.locator('link[data-human-review-256]')
+  const reviewStylesheet = page.locator('link[data-human-review256]')
   await expect(reviewStylesheet).toHaveCount(1)
   await expect.poll(() => reviewStylesheet.evaluate((element: HTMLLinkElement) => Boolean(element.sheet))).toBe(true)
 }
