@@ -8,107 +8,68 @@
 
 ## Routing discipline
 
-The repository and coordination branch above must also be named explicitly in any human-to-Claude trigger prompt.
+The repository and coordination branch above must be named explicitly in any human-to-Claude trigger prompt.
 
-Claude should not infer or switch the coordination branch. If a trigger names a different branch than this authoritative routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
+Claude should not infer or switch the coordination branch. If a trigger names a different branch than this routing state, Claude should stop and report the mismatch rather than choose a branch heuristically.
+
+Live ADS product/checkpoint state belongs in:
+
+```text
+docs/CURRENT_STATE.md
+docs/current_routing.json
+```
+
+This inbox intentionally does not duplicate that state except where needed to explain whether a collaboration obligation blocks it.
 
 ## Pending model obligation
 
-```text
-none
-```
-
-Claude Message 010 remains complete at:
+### MC-0005: Development Method v0.7 repository information architecture review
 
 ```text
-8c2c95aec8bf9d53e17500f4a38f9311d19a1e8b
+reviewer            Claude
+review mode         ADVERSARIAL_REVIEW
+coordination branch v1-cockpit-design-exploration
+exact review target c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
+priority            normal
+review gate         NONE / non-blocking
+next actor          Claude
 ```
 
-No new Claude review is required for the current narrow visual-integrity recheck.
-
-## Next actor
+Read:
 
 ```text
-human
+docs/model_collaboration/threads/MC-0005/BRIEF.md
+docs/model_collaboration/threads/MC-0005/THREAD.md
+docs/model_collaboration/threads/MC-0005/STATE.json
 ```
 
-Current checkpoint:
+Expected durable Claude output:
 
 ```text
-264
+docs/model_collaboration/threads/MC-0005/messages/001_claude_v07_information_architecture_review.md
 ```
 
-Active ChatGPT interaction:
+The review asks Claude to challenge the responsibility split among the global canonical files, the semantic-only Knowledge Map, exhaustive topic routing, checkpoint semantic ranges, specialized indexes, authority/supersession rules, validators and scaling behavior.
+
+It is intentionally non-blocking. Checkpoint 266 remains complete unless the eventual review produces a substantive finding that is later accepted through normal governance.
+
+## Standard Claude trigger
+
+Send exactly this short routing prompt from the Claude project/workspace:
 
 ```text
-chatgpt-10
-10 - Project Cockpit Design Exploration
+Work in repository `shakaarlatief/autonomous-data-science-system`.
+Coordination branch: `v1-cockpit-design-exploration`.
+
+Read `docs/current_routing.json` and `docs/model_collaboration/REVIEW_INBOX.md`
+from that exact branch, then follow the referenced MC-0005 thread/request files and
+proceed with the pending Claude obligation.
+
+Do not infer or switch the coordination branch. If the named branch is missing,
+or authoritative routing on that branch contradicts this prompt, stop and report
+the mismatch instead of choosing another branch.
 ```
 
-## Critical current state
+## Completed prior obligations
 
-The source-faithful integrated Cockpit remains the protected whole-product design substrate. The failed first holistic integration at `8e554d847bb3b6318db432abcb5dff742f0fa523` remains excluded as an implementation source.
-
-Implementation provenance remains complete and passing through the 23-entry manifest and exact-history gate.
-
-The latest Conversation rail integrity sequence is:
-
-```text
-Research 100 / Checkpoint 262
-    exact CSS Grid track-absorption diagnosis
-    explicit grid row-gap + sufficient WorkUnit row height recovery
-    WorkUnit spacing human-confirmed correct
-
-Research 101 / Checkpoint 263
-    project-general short-height containment recovery
-    containment human-confirmed correct
-
-Research 102 / Checkpoint 264
-    project-general visible artifact aligned to accepted WorkUnit rail footprint
-    Boxes active frame moved from structural outer row to visible selected surface
-    human visual confirmation OPEN
-```
-
-Current deterministic evidence:
-
-```text
-implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
-workflow run                33251166351
-job                         99096968925
-browser tests               78 / 78 PASS
-```
-
-Current-process Focus remains working as far as tested and is not under active repair.
-
-## Current gate
-
-```text
-WorkUnit spacing human gate
-    PASSED
-
-General project containment human gate
-    PASSED
-
-General project footprint / selected-frame human gate
-    OPEN at Checkpoint 264
-
-Adaptive Conversation Dock product review
-    still OPEN underneath this interruption
-    resume immediately if Checkpoint 264 passes
-```
-
-The project owner should pull and hard-refresh the normal Cockpit route, open Conversation in Boxes mode and switch between General project discussion and WorkUnit threads.
-
-Required visible result:
-
-```text
-General project discussion matches the WorkUnit box footprint
-General selection frames only the visible project box
-WorkUnit selection frames only the visible WorkUnit
-no oversized structural wrapper appears
-existing spacing remains correct
-```
-
-If confirmed, close the Conversation rail integrity interruption and resume Checkpoint 258 / Research 097 Adaptive Conversation Dock product review.
-
-Production `/cockpit` remains untouched.
+Previous Claude obligations in MC-0001 through MC-0004 remain preserved in their thread records and are not repeated here.

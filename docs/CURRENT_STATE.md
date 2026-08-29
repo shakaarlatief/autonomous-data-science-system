@@ -16,7 +16,8 @@ Project / workspace      Autonomous Data Science System
 Interaction session      chatgpt-10
 Conversation title       10 - Project Cockpit Design Exploration
 Primary collaborator     ChatGPT
-Collaboration thread     MC-0004
+Product collaboration    MC-0004
+Pending model review     MC-0005
 ```
 
 Repository artifacts remain authoritative across chats and models.
@@ -25,7 +26,7 @@ Repository artifacts remain authoritative across chats and models.
 
 Checkpoint 266 is `COMPLETE / VALIDATED`.
 
-Development Method v0.7 now gives the global repository surfaces distinct owners:
+Development Method v0.7 gives the global repository surfaces distinct owners:
 
 ```text
 README.md              stable repository landing page
@@ -69,6 +70,8 @@ No monolithic documentation file or heavier semantic repository database was jus
 
 ### Knowledge Map integrity
 
+Initial parser-fix evidence:
+
 ```text
 fix commit   0791eb1d0569a85aed37fdcb218b0c49835db2e9
 workflow     33256989165
@@ -76,21 +79,34 @@ job          99112350334
 result       SUCCESS
 ```
 
+Final closure commit revalidation:
+
+```text
+closure commit  c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
+workflow        33257341284
+job             99113261829
+result          SUCCESS
+```
+
 The initial failure was a Markdown inline-code parser defect, not missing semantic routing.
 
 ### Current routing consistency
 
+Final closure revalidation:
+
 ```text
-workflow     33256097893
-Windows job  99109955121   SUCCESS
-Ubuntu job   99109955151   SUCCESS
+workflow     33257341243
+Ubuntu job   99113261741   SUCCESS
+Windows job  99113261861   SUCCESS
 ```
 
 ### Checkpoint metadata
 
+Final closure revalidation:
+
 ```text
-workflow     33256097922
-job          99109955176
+workflow     33257341238
+job          99113261672
 result       SUCCESS
 ```
 
@@ -111,7 +127,45 @@ npx playwright test e2e/cockpit-reintegration*.spec.ts
 
 and the logs explicitly report `Running 78 tests` and `78 passed`.
 
+The later Checkpoint 266 closure commit was correctly classified as documentation-only by the Cockpit selector:
+
+```text
+workflow  33257341234
+job       99113261838
+result    SUCCESS / browser execution skipped
+```
+
 The earlier v0.6 run that executed only 16 tests is not accepted as V3 evidence.
+
+## Non-blocking second-model architecture review
+
+The finalized v0.7 architecture is now frozen for a direct Claude adversarial review at:
+
+```text
+c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
+```
+
+Collaboration thread:
+
+```text
+MC-0005
+```
+
+Purpose:
+
+```text
+challenge global-file role separation
+challenge semantic Knowledge Map design and exhaustive routing
+challenge checkpoint-range routing
+challenge authority/supersession clarity
+challenge validator maintenance cost
+challenge order-of-magnitude scaling behavior
+propose the strongest simpler alternative if one exists
+```
+
+This review is optional/non-blocking for product continuation. Checkpoint 266 remains complete unless a later Claude finding is substantively accepted and warrants revision.
+
+Claude can only write to the declared MC-0005 message surface. ChatGPT remains task owner for later disposition.
 
 ## Current Cockpit product boundary remains Checkpoint 264
 
@@ -169,7 +223,7 @@ http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptiv
 
 ## Held product/scientific decisions
 
-No Cockpit semantic/product decision is reopened by Checkpoint 266. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
+No Cockpit semantic/product decision is reopened by Checkpoint 266 or by the pending MC-0005 review. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
 
 Implementation provenance remains governed by:
 
@@ -184,20 +238,18 @@ Source-vault bootstrap remains PAUSED, not cancelled. The Course 2 source-univer
 
 Production `/cockpit` remains untouched.
 
-## Exact next step
+## Exact next steps
 
-The Level-2 repository information-architecture work is complete.
-
-The next product actor is the human reviewer:
+Two independent continuations are now legitimate:
 
 ```text
-pull latest v1-cockpit-design-exploration
-hard-refresh
-open http://localhost:4173/design-lab/cockpit-reintegration.html
-switch between General project discussion and WorkUnit conversations
-confirm equal visible footprint and correct selected-surface frame
+PRODUCT
+    human performs the already-open Checkpoint 264 visual recheck
+    if correct, resume Adaptive Conversation Dock review
+
+LEVEL-2 REVIEW
+    Claude reviews frozen v0.7 target c834d829...
+    review is non-blocking and may be processed when convenient
 ```
 
-If correct, resume the Adaptive Conversation Dock review immediately.
-
-A non-blocking Claude review of the finalized repository information architecture may run in parallel against an exact frozen commit. It must not be treated as current authority unless its findings are later dispositioned through normal repository governance.
+The product continuation does not need to wait for Claude.

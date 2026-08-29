@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0005",
+  "review_mode": "ADVERSARIAL_REVIEW",
+  "lifecycle_state": "WAITING",
+  "phase": "WAITING_FOR_CLAUDE_ARCHITECTURE_REVIEW",
+  "target": {
+    "branch": "v1-cockpit-design-exploration",
+    "base_ref": "c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad",
+    "description": "Adversarial second-model review of the finalized Development Method v0.7 repository information architecture and global canonical knowledge surfaces.",
+    "write_paths": [
+      "README.md",
+      "docs/README.md",
+      "docs/CURRENT_STATE.md",
+      "docs/current_routing.json",
+      "docs/KNOWLEDGE_MAP.md",
+      "docs/DEVELOPMENT_METHOD.md",
+      "docs/CONTINUITY.md",
+      "docs/VISION.md",
+      "docs/PRINCIPLES.md",
+      "docs/DECISIONS.md",
+      "docs/OPEN_QUESTIONS.md",
+      "docs/MAJOR_CHANGES.md",
+      "docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md",
+      "docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md",
+      "docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md"
+    ]
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": "chatgpt",
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-10",
+      "roles": ["TASK_OWNER"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-01",
+      "roles": ["REVIEWER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0005/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": null,
+    "known_exposures": [
+      "Claude is intentionally reviewing the implemented v0.7 candidate rather than performing blind counter-design."
+    ],
+    "notes": "This is a direct adversarial review of one exact frozen candidate. No independence claim is made."
+  },
+  "last_transition": {
+    "transition_id": "mc0005-opened-waiting-for-claude",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "The project owner requested a second-model opinion on the finalized repository information architecture. The exact v0.7 closure target is frozen and Claude is assigned a non-blocking adversarial review on a secondary message-only write surface.",
+    "repository_head": "c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad"
+  }
+}
