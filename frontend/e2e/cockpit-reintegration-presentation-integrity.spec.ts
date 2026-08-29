@@ -13,16 +13,17 @@ async function expectWorkUnitRailSpacing(page: Page) {
   await expect(list).toBeVisible()
 
   /*
-   * The visible separation is row-owned. The parent grid deliberately carries
-   * no vertical gap so restored/legacy rail mode values cannot make the space
-   * disappear while the UI still resolves that mode as Boxes.
+   * The visible separation is carried by an explicit grid track gap. Live
+   * browser geometry at Checkpoint 262 proved that a margin on a stretched grid
+   * item can be absorbed by the auto track while a transformed canonical node
+   * keeps painting outside the shrunken item.
    */
   const rowGap = await list.evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
-  expect(rowGap).toBeLessThanOrEqual(0.5)
+  expect(rowGap).toBeGreaterThanOrEqual(16)
 
   const projectThread = page.locator('.reintegration-thread-item[data-thread-scope="project"]')
   const projectMargin = await projectThread.evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
-  expect(projectMargin).toBeGreaterThanOrEqual(16)
+  expect(projectMargin).toBeLessThanOrEqual(0.5)
 
   const rows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
   const rowCount = await rows.count()
@@ -30,15 +31,18 @@ async function expectWorkUnitRailSpacing(page: Page) {
 
   const firstGeometry = await rows.first().evaluate((element) => {
     const style = getComputedStyle(element)
+    const rect = element.getBoundingClientRect()
     return {
       top: Number.parseFloat(style.paddingTop),
       bottom: Number.parseFloat(style.paddingBottom),
       marginBottom: Number.parseFloat(style.marginBottom),
+      height: rect.height,
     }
   })
   expect(firstGeometry.top).toBeGreaterThanOrEqual(6)
   expect(firstGeometry.bottom).toBeGreaterThanOrEqual(6)
-  expect(firstGeometry.marginBottom).toBeGreaterThanOrEqual(16)
+  expect(firstGeometry.marginBottom).toBeLessThanOrEqual(0.5)
+  expect(firstGeometry.height).toBeGreaterThanOrEqual(72.5)
 
   const lastMargin = await rows.last().evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
   expect(lastMargin).toBeLessThanOrEqual(0.5)
@@ -101,8 +105,8 @@ test.describe('Cockpit presentation-state integrity recovery', () => {
     await expectWorkUnitRailSpacing(page)
   })
 
-  test('Boxes separation survives the legacy artifact rail state at a user-like viewport', async ({ page }) => {
-    await page.setViewportSize({ width: 1536, height: 864 })
+  test('Boxes separation survives the legacy artifact rail state at a responsive 1100px viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 1100, height: 900 })
     await page.goto(canonicalRoute)
     await expect(page.locator(nodeSelector)).toHaveCount(6)
     await page.locator('#global-conversations').click()
@@ -110,9 +114,23 @@ test.describe('Cockpit presentation-state integrity recovery', () => {
 
     /*
      * Historical Conversation code used "artifact" for the same rail mode.
-     * The current UI resolves every non-Text value as Boxes, so the spacing
-     * contract must remain active under this restored state as well.
+     * The current UI resolves every non-Text value as Boxes. This viewport also
+     * enters the <=1450px responsive canonical-WorkUnit scale that reproduced
+     * the project owner's live browser failure while DevTools was docked.
      */
+    await page.evaluate(() => {
+      document.documentElement.dataset.conversationRail = 'artifact'
+    })
+    await expect(page.locator('[data-conversation-rail-option="boxes"]')).toHaveAttribute('aria-pressed', 'true')
+    await expectWorkUnitRailSpacing(page)
+  })
+
+  test('Boxes separation survives the legacy artifact rail state at a wide desktop viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 1600, height: 1000 })
+    await page.goto(canonicalRoute)
+    await expect(page.locator(nodeSelector)).toHaveCount(6)
+    await page.locator('#global-conversations').click()
+    await page.locator('[data-conversation-rail-option="boxes"]').click()
     await page.evaluate(() => {
       document.documentElement.dataset.conversationRail = 'artifact'
     })
