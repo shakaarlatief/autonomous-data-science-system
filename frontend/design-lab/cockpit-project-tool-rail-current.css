@@ -1,0 +1,182 @@
+/*
+ * Current standalone Project-tool rail visual refinement.
+ *
+ * Human review of the Adaptive Conversation edge strip preferred its compact
+ * width, quieter graphite surface, larger icon targets and restrained accent
+ * treatment over the older standalone rail styling. The normal Cockpit now
+ * adopts that visual language without adopting the co-present strip geometry:
+ * it remains an inset, bounded floating utility rail rather than becoming a
+ * full-height application edge.
+ *
+ * Control ownership, ordering and behavior are unchanged.
+ */
+
+html[data-spatial-rail-angle="angled"] {
+  --current-project-rail-compact-width: 56px;
+  --current-project-rail-expanded-width: 196px;
+  --angled-rail-width: var(--current-project-rail-compact-width);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig {
+  width: var(--current-project-rail-compact-width);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] {
+  --angled-rail-width: var(--current-project-rail-expanded-width);
+  width: var(--current-project-rail-expanded-width);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell {
+  grid-template-rows: 40px minmax(0, 1fr) 38px;
+  gap: 0;
+  padding: 7px 6px;
+  border: 1px solid rgba(190, 207, 230, 0.14) !important;
+  border-radius: 12px !important;
+  background:
+    linear-gradient(180deg, rgba(12, 18, 27, 0.985), rgba(8, 13, 20, 0.99)) !important;
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.24),
+    inset 1px 0 rgba(232, 241, 252, 0.025) !important;
+  backdrop-filter: blur(18px);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell:focus-within {
+  border-color: rgba(190, 207, 230, 0.20) !important;
+  box-shadow:
+    0 16px 42px rgba(0, 0, 0, 0.27),
+    inset 1px 0 rgba(232, 241, 252, 0.035) !important;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell::before {
+  top: 7%;
+  bottom: 7%;
+  left: 0;
+  width: 1px;
+  border-radius: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(132, 166, 221, 0.20) 24%,
+    rgba(105, 217, 194, 0.28) 52%,
+    rgba(132, 166, 221, 0.16) 78%,
+    transparent
+  );
+  box-shadow: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-shell::after {
+  display: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-mark {
+  justify-content: center;
+  min-height: 34px;
+  padding: 0;
+  border-bottom-color: rgba(190, 207, 230, 0.08);
+  color: rgba(105, 217, 194, 0.70);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 9px;
+  font-weight: 720;
+  letter-spacing: 0.08em;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="compact"] .cockpit-angled-rail-mark span {
+  display: none;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools {
+  gap: 2px;
+  padding: 7px 0;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button,
+html[data-spatial-rail-angle="angled"] #product-jump-toggle {
+  grid-template-columns: 40px minmax(0, 1fr);
+  height: 38px;
+  min-height: 38px;
+  padding: 0 6px 0 0;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: rgba(169, 187, 210, 0.72);
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button::before {
+  width: 40px;
+  font-size: 14px;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button:hover,
+html[data-spatial-rail-angle="angled"] .reintegration-tools button:focus-visible {
+  border-color: rgba(190, 207, 230, 0.10);
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(236, 242, 249, 0.95);
+  outline: none;
+}
+
+html[data-spatial-rail-angle="angled"] .reintegration-tools button[aria-expanded="true"],
+html[data-spatial-rail-angle="angled"] .reintegration-tools button[aria-pressed="true"] {
+  border-color: rgba(105, 217, 194, 0.18);
+  background: rgba(105, 217, 194, 0.075);
+  color: rgba(183, 235, 224, 0.94);
+}
+
+html[data-spatial-rail-angle="angled"] #zoom-readout {
+  width: 40px;
+  min-width: 40px;
+  padding: 4px 0;
+  color: rgba(155, 174, 199, 0.62);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 9px;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity {
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-self: end;
+  height: 36px;
+  padding: 0 6px 0 0;
+  border: 0;
+  border-top: 1px solid rgba(190, 207, 230, 0.08);
+  border-radius: 0;
+  background: transparent;
+  color: rgba(161, 180, 204, 0.68);
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity:hover,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity:focus-visible {
+  border-color: rgba(190, 207, 230, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(236, 242, 249, 0.92);
+  outline: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-clarity-glyph {
+  width: 40px;
+  font-size: 16px;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-mark {
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-mark span {
+  display: inline;
+  margin: 0;
+  color: rgba(180, 197, 218, 0.70);
+  font-size: 10px;
+  font-weight: 620;
+  letter-spacing: 0.02em;
+  opacity: 1;
+  transform: none;
+}
+
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .reintegration-tools button[data-tooltip]::after,
+html[data-spatial-rail-angle="angled"] .cockpit-angled-rail-rig[data-clarity="expanded"] .cockpit-angled-rail-clarity-label {
+  color: rgba(219, 228, 240, 0.86);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11.5px;
+  font-weight: 590;
+  letter-spacing: 0;
+}

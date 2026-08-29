@@ -29,11 +29,13 @@ async function projectRailGeometry(page: Page) {
       rigTop: rig.top,
       rigBottom: rig.bottom,
       rigWidth: rig.width,
+      rigHeight: rig.height,
       shellLeft: shell.left,
       shellRight: shell.right,
       shellTop: shell.top,
       shellBottom: shell.bottom,
       shellWidth: shell.width,
+      shellHeight: shell.height,
       dockRight: dock.right,
       borderRadius: shellStyle.borderRadius,
       borderLeftWidth: Number.parseFloat(shellStyle.borderLeftWidth),
@@ -93,15 +95,44 @@ test.describe('Adaptive Conversation project-tool edge integration', () => {
     await expect(page.locator('.cockpit-angled-rail-clarity-label')).toBeVisible()
   })
 
-  test('leaves the standalone canonical Project Grid rail presentation unchanged', async ({ page }) => {
+  test('uses the same compact visual language in the standalone rail without turning it into a full-height edge strip', async ({ page }) => {
     await page.goto(canonicalRoute)
     const rig = page.locator('.cockpit-angled-rail-rig')
+    const shell = page.locator('.cockpit-angled-rail-shell')
     await expect(rig).toBeVisible()
+    await expect(shell).toBeVisible()
+    await expect(page.locator('link[data-current-project-rail]')).toHaveCount(1)
 
-    const geometry = await projectRailGeometry(page)
-    expect(geometry).not.toBeNull()
-    expect(geometry!.rigTop).toBeGreaterThan(60)
-    expect(geometry!.rigWidth).toBeGreaterThan(80)
-    expect(geometry!.borderRadius).not.toBe('0px')
+    const compact = await projectRailGeometry(page)
+    expect(compact).not.toBeNull()
+    expect(compact!.rigTop).toBeGreaterThan(60)
+    expect(compact!.rigWidth).toBeGreaterThanOrEqual(55)
+    expect(compact!.rigWidth).toBeLessThanOrEqual(57)
+    expect(compact!.shellWidth).toBeGreaterThanOrEqual(55)
+    expect(compact!.shellWidth).toBeLessThanOrEqual(57)
+    expect(compact!.rigHeight).toBeLessThan(compact!.viewportHeight - 200)
+    expect(compact!.shellHeight).toBeLessThan(compact!.viewportHeight - 200)
+    expect(compact!.borderRadius).toBe('12px')
+    expect(compact!.rigRight).toBeLessThan(compact!.viewportWidth)
+
+    const toolButton = shell.locator('.reintegration-tools button:visible').first()
+    const buttonHeight = await toolButton.evaluate((element) => element.getBoundingClientRect().height)
+    expect(buttonHeight).toBeGreaterThanOrEqual(37)
+
+    await page.locator('.cockpit-angled-rail-clarity').click()
+    await expect(rig).toHaveAttribute('data-clarity', 'expanded')
+    await expect.poll(async () => {
+      const geometry = await projectRailGeometry(page)
+      return geometry?.rigWidth ?? 0
+    }).toBeGreaterThan(190)
+
+    const expanded = await projectRailGeometry(page)
+    expect(expanded).not.toBeNull()
+    expect(expanded!.rigWidth).toBeLessThanOrEqual(197)
+    expect(expanded!.shellWidth).toBeGreaterThan(190)
+    expect(expanded!.shellWidth).toBeLessThanOrEqual(197)
+    expect(expanded!.rigTop).toBe(compact!.rigTop)
+    expect(expanded!.rigHeight).toBe(compact!.rigHeight)
+    expect(expanded!.borderRadius).toBe('12px')
   })
 })

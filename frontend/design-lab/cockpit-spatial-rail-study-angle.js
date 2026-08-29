@@ -1,10 +1,10 @@
 /*
- * Resting-angle Cockpit rail study.
+ * Current Project Cockpit rail controller.
  *
- * The rail's spatial identity is permanent: angle, perspective, thickness and
- * edge attachment are present in the normal compact state. The only expansion
- * in this study is a readability aid that exposes labels. Expansion does not
- * create or intensify the 3D treatment.
+ * This source began as the resting-angle rail study. Later human review flattened
+ * that presentation while preserving the same real controls and clarity-only
+ * expansion behavior. Late presentation layers now define the current compact
+ * visual treatment without changing tool ownership or semantics.
  */
 
 const root = document.documentElement
@@ -15,6 +15,7 @@ const appearancePanel = document.querySelector('#reintegration-appearance-panel'
 const focusPanel = document.querySelector('#reintegration-process-focus-panel')
 
 installReview256Layer()
+installCurrentProjectRailLayer()
 
 if (stage && tools) mountAngledRail()
 
@@ -28,6 +29,15 @@ function installReview256Layer() {
   root.dataset.humanReview256 = 'true'
 }
 
+function installCurrentProjectRailLayer() {
+  if (document.querySelector('link[data-current-project-rail]')) return
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = './cockpit-project-tool-rail-current.css'
+  link.dataset.currentProjectRail = 'true'
+  document.head.appendChild(link)
+}
+
 function mountAngledRail() {
   root.dataset.spatialRailAngle = 'angled'
   tools.dataset.folded = 'false'
@@ -35,7 +45,7 @@ function mountAngledRail() {
   const rig = document.createElement('aside')
   rig.className = 'cockpit-angled-rail-rig'
   rig.dataset.clarity = 'compact'
-  rig.setAttribute('aria-label', 'Angled Project Cockpit tool rail study')
+  rig.setAttribute('aria-label', 'Project Cockpit tool rail')
 
   const back = document.createElement('div')
   back.className = 'cockpit-angled-rail-back'
@@ -102,7 +112,8 @@ function applyCurrentRailControlSet() {
 }
 
 function syncAttachedPanels(expanded) {
-  const right = expanded ? 246 : 94
+  const railWidth = expanded ? 196 : 56
+  const right = railWidth + 18
   for (const panel of [search, appearancePanel, focusPanel]) {
     if (!panel) continue
     panel.style.right = `${right}px`
