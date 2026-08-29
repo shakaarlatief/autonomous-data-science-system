@@ -12,8 +12,8 @@
  * The second responsibility removes `?edge=angled` from the current product
  * review URL without reimplementing the rail. The existing historical angle
  * source is still reused as implementation plumbing, and Checkpoints 255/256
- * flatten it into the current normal-2D presentation. Explicit `edge=` study
- * routes remain untouched.
+ * flatten it into the current normal-2D presentation. Explicit `edge=` and
+ * `rail=` study routes remain untouched.
  */
 
 mountCurrentFlatRailOnCanonicalRoute()
@@ -38,7 +38,7 @@ if (!mount() && 'MutationObserver' in window) {
 
 function mountCurrentFlatRailOnCanonicalRoute() {
   const params = new URLSearchParams(window.location.search)
-  if (params.has('edge')) return
+  if (params.has('edge') || params.has('rail')) return
   if (document.querySelector('.cockpit-angled-rail-rig')) return
 
   if (!document.querySelector('link[data-current-flat-rail-source]')) {
