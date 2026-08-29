@@ -8,16 +8,11 @@ This root README is intentionally stable. Live branch, checkpoint, review and ve
 
 ## Start here
 
-```text
-docs/README.md           repository/documentation structure and artifact roles
-docs/CURRENT_STATE.md    current human-readable project state and exact next step
-docs/current_routing.json machine-readable live routing pointer
-docs/KNOWLEDGE_MAP.md    evergreen subject -> knowledge library
-docs/DEVELOPMENT_METHOD.md how ADS itself is built, verified, preserved and evolved
-docs/CONTINUITY.md       reconstruction and recovery across chats/models/branches
-```
+Open `docs/README.md` first. It is the structural table of contents for the repository and provides the maintained fast-routing table to current state, semantic knowledge, development method, continuity, canonical documentation and historical evidence.
 
-For a new development session, follow `docs/CONTINUITY.md`. For a question about an older or cross-cutting subject, use `docs/KNOWLEDGE_MAP.md` rather than guessing document numbers from memory.
+For an active development continuation, resume from `docs/CURRENT_STATE.md`. For recovery after context loss, follow `docs/CONTINUITY.md`. For an older or cross-cutting subject, use `docs/KNOWLEDGE_MAP.md` rather than guessing document numbers from memory.
+
+The root README deliberately does not maintain a second full catalog of canonical documentation routes. That catalog belongs to `docs/README.md`.
 
 ## Core repository areas
 

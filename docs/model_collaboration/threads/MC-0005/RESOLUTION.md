@@ -6,7 +6,7 @@
 **Frozen review target:** `c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad`  
 **Claude review message:** `messages/001_claude_v07_information_architecture_review.md`  
 **Claude disposition:** `SUPPORT_WITH_NONBLOCKING_IMPROVEMENTS`  
-**Task-owner disposition:** architecture retained; two narrow follow-ups accepted; no new checkpoint
+**Task-owner disposition:** architecture retained; three narrow follow-ups accepted; no new checkpoint
 
 ## 1. Review-integrity verification
 
@@ -49,19 +49,19 @@ That independently strengthens confidence in Checkpoint 266 rather than changing
 ### F1. Subject index is not mechanically tied to `KM-TOPIC` sections
 
 **Claude classification:** highest-priority non-blocking improvement  
-**Task-owner disposition:** `ACCEPT / IMPLEMENT IMMEDIATELY`
+**Task-owner disposition:** `ACCEPT / IMPLEMENTED`
 
 Reason:
 
 The numbered human-facing Subject index and the machine-checked topic markers summarize the same semantic structure. Leaving them independently editable creates a real drift seam, and the project has already observed the same general convenience-index-versus-authoritative-structure failure pattern elsewhere.
 
-Accepted fix:
+Implemented fix:
 
 ```text
 scripts/check_knowledge_map.py
-    verify Subject-index numbering is contiguous
-    verify Subject-index entry count equals machine-routed topic count
-    verify Subject-index display names and order match the headings attached to KM-TOPIC markers
+    verifies Subject-index numbering is contiguous
+    verifies Subject-index entry count equals machine-routed topic count
+    verifies Subject-index display names and order match the headings attached to KM-TOPIC markers
 ```
 
 This is a narrow validator hardening, not a new information architecture.
@@ -84,20 +84,36 @@ reconciliation repeatedly needs ad-hoc direct links to compensate
 ### F3. Root `README.md` and `docs/README.md` have a small stable-pointer redundancy
 
 **Claude classification:** low severity, not a rule violation  
-**Task-owner disposition:** `ACKNOWLEDGE / NO CHANGE`
+**Initial task-owner disposition:** `ACKNOWLEDGE / NO CHANGE`  
+**Post-review disposition after explicit human invitation to apply small worthwhile improvements:** `ACCEPT / IMPLEMENTED`
 
-The duplication is stable structural routing, not volatile state duplication. Root README needs a small usable landing route; `docs/README.md` needs a fuller structural guide. Removing one copy would save little while adding navigation indirection.
+The original duplication was harmless because it contained stable routing rather than volatile state. However, the maintenance benefit of collapsing the near-duplicate six-file routing list is real and the change is trivial.
 
-Revisit only if the two surfaces actually drift.
+Implemented refinement:
+
+```text
+root README
+    remains a useful stable landing page
+    points first to docs/README.md as the maintained structural table of contents
+    retains only three purpose-specific shortcuts:
+        active continuation -> CURRENT_STATE
+        context recovery -> CONTINUITY
+        cross-cutting knowledge -> KNOWLEDGE_MAP
+
+docs/README.md
+    remains the single complete fast-routing catalog for canonical documentation roles
+```
+
+This reduces parallel maintenance without adding meaningful navigation friction.
 
 ### F4. Exhaustive routing coverage is not semantic-routing correctness
 
 **Claude classification:** accepted inherent limitation that should be more explicit  
-**Task-owner disposition:** `ACCEPT / DOCUMENT IMMEDIATELY`
+**Task-owner disposition:** `ACCEPT / IMPLEMENTED`
 
 Mechanical validation can establish that every durable artifact is routed, paths exist and structural contracts hold. It cannot establish that a human-assigned topic is semantically the best topic.
 
-Development Method v0.7 should therefore say explicitly:
+Development Method v0.7 now states explicitly:
 
 ```text
 green Knowledge Map validation
@@ -149,10 +165,10 @@ continuity procedure
 
 Therefore Checkpoint 266 remains `COMPLETE / VALIDATED`, Development Method remains v0.7, and no Checkpoint 267 is created for this review.
 
-The two accepted small changes are implemented in a separate immediate SOLO mutation boundary after this review closes, preserving the review's frozen-target integrity.
+The accepted small changes were implemented in separate immediate SOLO mutation boundaries after the review closed, preserving the review's frozen-target integrity.
 
 ## 5. Product boundary
 
 No Cockpit product decision is affected.
 
-The active product gate remains Checkpoint 264. MC-0005 is now closed and no longer appears as a pending model obligation.
+The active product gate remains Checkpoint 264. MC-0005 is closed and no longer appears as a pending model obligation.
