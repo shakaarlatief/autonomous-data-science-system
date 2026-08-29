@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 256  
-**Date:** 2026-08-28  
+**Checkpoint:** 257  
+**Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -25,18 +25,19 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
+docs/checkpoints/257_canonical_cockpit_review_route_normalized.md
 docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
 docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
 ```
 
-Current human-review task:
+Current human-review task remains:
 
 ```text
 1. inspect Conversation Boxes-mode spacing at the actual local viewport
 2. inspect the current flat right-side Project Grid rail control set
 ```
 
-Current-process Focus is explicitly outside this correction boundary because the project owner confirmed that it is working correctly.
+Checkpoint 257 changes routing only. Current-process Focus remains explicitly outside this correction boundary because the project owner confirmed that it is working correctly.
 
 The Checkpoint 255 live topology compass remains carried forward unchanged.
 
@@ -52,19 +53,34 @@ Primary browser:
 frontend/design-lab/cockpit-reintegration.html
 ```
 
-Current review route:
+Canonical current review route:
 
 ```text
-http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
+http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-The `edge=angled` query is historical implementation plumbing. The visible rail is normal flat 2D.
+No query suffix is required. The plain route mounts the current compact flat 2D rail and the Checkpoint 256 corrections.
+
+Historical route separation is now explicit:
+
+```text
+plain route
+    current human-review Cockpit
+
+?edge=none
+    internal regression-only earlier-shell substrate
+    not a product route or design candidate
+
+explicit ?edge=... / ?rail=...
+    historical rail-study routes
+    isolated from the current default rail
+```
 
 The source-faithful integrated Cockpit remains the protected whole-product design substrate. New shell decisions are evaluated on this complete browser rather than in disconnected fixtures.
 
 ---
 
-# Checkpoint 256 corrections
+# Checkpoint 256 corrections carried forward
 
 ## Conversation rail
 
@@ -79,7 +95,7 @@ canonical WorkUnit size    unchanged
 accepted rail footprint    unchanged
 ```
 
-The deterministic gate now measures the actual rendered WorkUnit `.node-surface` rectangles.
+The deterministic gate measures the actual rendered WorkUnit `.node-surface` rectangles.
 
 Required visible spacing:
 
@@ -88,7 +104,7 @@ project-general -> first WorkUnit  >= 16px
 WorkUnit -> next WorkUnit          >= 20px
 ```
 
-Both requirements are checked at 1600px and 760px viewport widths.
+Both requirements are checked at 1600px and 760px viewport widths on the canonical no-query route.
 
 Held Conversation semantics remain unchanged:
 
@@ -148,7 +164,7 @@ context recession unchanged
 focus UI unchanged
 ```
 
-No Focus implementation was changed in Checkpoint 256.
+No Focus implementation was changed in Checkpoint 256 or Checkpoint 257.
 
 ## Deep Dive topology compass carried forward
 
@@ -165,32 +181,54 @@ compass reads state but never owns or mutates selection
 
 ---
 
+# Checkpoint 257 route normalization
+
+The historical `?edge=angled` query was previously required only because the current flat rail reused the historical angle-study implementation as plumbing.
+
+Checkpoint 257 keeps that exact reuse strategy but makes it a late-mounted default on the plain route. It does not reimplement or redesign the rail.
+
+Explicit historical study queries are protected from default mounting:
+
+```text
+edge parameter present -> do not mount current default rail
+rail parameter present -> do not mount current default rail
+```
+
+Legacy mechanism tests that require the earlier shell controls run through `?edge=none`, while current Checkpoint 256 tests intentionally exercise the plain route directly.
+
+This separates current shell composition from mechanism-preservation regression coverage instead of weakening either one.
+
+---
+
 # Deterministic fidelity status
 
 Implementation target:
 
 ```text
-e2768a807b2a80f438248a25f7d41e53be561d51
+59e5d19b310c4cc89fefc46fb4d116d67bdeefd5
 ```
 
 Latest complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33211613408
-job           98985900484
+workflow run  33236756483
+job           99058967008
 result        SUCCESS
 browser tests 68 / 68 passing
 ```
 
-The newest tests verify:
+The current gate verifies:
 
 ```text
-actual visible Conversation WorkUnit spacing at desktop width
-actual visible Conversation WorkUnit spacing at narrow width
-Fullscreen visible in current flat rail
-Expand selected WorkUnit absent from current flat rail
-Hide project HUD absent from current flat rail
+plain canonical route mounts the Checkpoint 256 current flat rail
+actual visible Conversation WorkUnit spacing on the plain route at desktop width
+actual visible Conversation WorkUnit spacing on the plain route at narrow width
+Fullscreen visible in the current flat rail
+Expand selected WorkUnit absent from the current flat rail
+Hide project HUD absent from the current flat rail
 same control set retained after clarity expansion
+historical source-mechanism tests preserved on the isolated regression substrate
+historical Gen 1 and Gen 2 rail-study routes remain isolated and functional
 all prior source-faithful Cockpit regression checks remain green
 ```
 
@@ -268,7 +306,7 @@ compact native Cockpit composer
 Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
 ```
 
-Checkpoint 256 changes Conversation row geometry and the visible flat-rail control set only. It does not revoke these held semantics.
+Checkpoint 256 changes Conversation row geometry and the visible flat-rail control set only. Checkpoint 257 changes current-route plumbing only. Neither revokes held semantics.
 
 Important accepted targets remain:
 
@@ -312,7 +350,7 @@ Course 2 source-universe gate
 # Exact next step
 
 ```text
-Human visually reviews the two Checkpoint 256 corrections in the live browser.
+Human visually reviews the two Checkpoint 256 corrections on the canonical no-query route.
 
 If Conversation spacing and the rail control set are visually good:
     preserve explicit acceptance / tuning values
