@@ -11,13 +11,13 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            262
+checkpoint            263
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      Conversation Boxes grid-track spacing human recheck
+current boundary      project-general thread containment human recheck
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -58,37 +58,29 @@ http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptiv
 
 ### Conversation Boxes integrity
 
-Checkpoint 262 supersedes the failed Checkpoint 260 row-owned-margin implementation.
+Research 100's CSS Grid track-gap recovery is now human-confirmed for the WorkUnit spacing defect. The project owner's latest screenshot shows the dark breathing room between WorkUnits correctly restored.
 
-The project owner's live Chrome measurements established the exact failure:
+The same screenshot exposed one narrower remaining issue: the General project discussion artifact could still be visually invaded by the first WorkUnit at a wide but vertically short browser viewport.
 
-```text
-WorkUnit row height           54.0px
-computed bottom margin       16px
-row-to-row distance          16.0px
-painted WorkUnit overflow    ~20.8px below row
-visible surface gap          ~1.9px
-```
-
-The problem was CSS Grid track sizing, not stale Git state or missing CSS. The grid accounted for the item margin by shrinking the WorkUnit row while the transformed, overflow-visible canonical WorkUnit continued painting outside that row.
-
-Research 100 therefore restores explicit inter-track spacing and prevents row shrinkage from consuming the accepted breathing room:
+Research 101 preserves the accepted WorkUnit spacing contract and adds explicit containment for the project-general first row:
 
 ```text
 thread-list row-gap          16px
-project row margin            0px
+project row min-height       74px
+project row padding           7px top / 7px bottom
+project artifact min-height  58px
 WorkUnit row margin           0px
 WorkUnit padding              6px top / 6px bottom
 wide WorkUnit min-height     78px
 responsive <=1450 min-height 73px
-canonical WorkUnit           unchanged
+canonical artifacts          unchanged
 ```
 
-The spacing contract still applies to all non-Text Boxes/artifact-compatible rail states.
+The project artifact is not redesigned. The row that owns it now reserves enough track height before the existing 16px grid gap begins.
 
 ### Current-process Focus integrity
 
-No Focus implementation changed in Checkpoint 262.
+No Focus implementation changed in Checkpoint 263.
 
 Research 098's DOM-independent membership and remount synchronization recovery remains current, and the project owner's latest retest reports Focus working as far as tested.
 
@@ -97,15 +89,15 @@ Focus should not be reopened without a new concrete reproduction.
 Latest complete Cockpit fidelity workflow:
 
 ```text
-implementation/test target  b8a2d095214c3417f95180ca519c7b6224739181
-workflow run                33247046868
-job                         99086212488
-browser tests               76 / 76 passing
+implementation/test target  5913467cfffd535215da7ab2cb70bdeb2be9f2e9
+workflow run                33247621778
+job                         99087735314
+browser tests               77 / 77 passing
 ```
 
-The strengthened gate explicitly covers 1600px desktop, 1100px responsive and 760px narrow spacing, legacy `artifact` compatibility, actual visible surface-to-surface separation, Adaptive Dock presentation transitions and all prior source-faithful mechanisms.
+The new regression explicitly exercises a `1776 x 766` short desktop viewport and requires General project discussion to remain a complete first artifact with at least 16px visible separation before the first WorkUnit. All previous spacing, Adaptive Dock, Focus and source-faithful mechanism coverage remains green.
 
-The Adaptive Conversation Dock remains an opt-in product-design candidate. Its design judgment resumes only after the project owner confirms the Boxes rail now visibly separates the conversation objects locally.
+The Adaptive Conversation Dock remains an opt-in product-design candidate. Its design judgment resumes after the project owner visually confirms this final base-rail containment correction.
 
 Production `/cockpit` remains untouched.
 
@@ -167,7 +159,7 @@ The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D
 
 L0 remains provisional. Semantic zoom remains deferred with S0 as the geometric working default.
 
-Checkpoint 262 changes only the implementation mechanism that guarantees the already-reviewed Conversation separation. It does not reopen the spacing target, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
+Checkpoint 263 changes only the containment geometry of the project-general Conversation row at short viewports. It does not reopen the accepted WorkUnit spacing target, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
 
 `docs/cockpit/PHASE_C_DECISION_LEDGER.md` remains the exhaustive disposition ledger for Research 037-088. Later source-recovery and whole-product studies are routed through Research 089 onward, checkpoints and current-state records.
 
@@ -189,6 +181,9 @@ semantic/product authority
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
+docs/research/101_project_general_thread_short_viewport_containment_recovery.md
 
 docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
 docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
