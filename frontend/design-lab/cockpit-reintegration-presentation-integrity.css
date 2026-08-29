@@ -36,8 +36,26 @@ html:not([data-conversation-rail="text"]) .reintegration-thread-list {
   align-content: start;
 }
 
+/*
+ * The project-general artifact is not transformed, but it still lives in the
+ * same auto-row grid. At short desktop heights the grid may otherwise compress
+ * that first button enough for the following transformed WorkUnit surface to
+ * paint into it. Reserve the artifact's existing 58 px footprint plus the
+ * thread-item padding/border so General project discussion remains a distinct
+ * first conversation object rather than becoming a backdrop for WorkUnit 1.
+ */
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: 74px !important;
   margin: 0 !important;
+  padding: 7px !important;
+  overflow: visible !important;
+}
+
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] .reintegration-project-thread-artifact {
+  box-sizing: border-box;
+  min-height: 58px;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
