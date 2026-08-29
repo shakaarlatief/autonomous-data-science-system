@@ -8,7 +8,7 @@
 **Review mode:** ADVERSARIAL_REVIEW  
 **Coordination branch:** `v1-cockpit-design-exploration`  
 **Exact frozen review target:** `c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad`  
-**Target-state write owner:** ChatGPT  
+**Target-state mutation during review:** none  
 **Claude write surface:** `docs/model_collaboration/threads/MC-0005/messages/**`  
 **Current phase:** `WAITING_FOR_CLAUDE_ARCHITECTURE_REVIEW`  
 **Next expected participant:** Claude
@@ -30,6 +30,18 @@ c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
 ```
 
 The coordination branch may move after the review request is created. That does not change the frozen architecture target.
+
+## Review write discipline
+
+This waiting review is read-only with respect to the frozen target architecture.
+
+```text
+target write paths       none
+target-state write owner none
+Claude durable output    MC-0005/messages/** only
+```
+
+ChatGPT remains task owner for later disposition, but does not hold a simultaneous target-state mutation lease merely because it owns the review task. If Claude later identifies a change worth making, that change should be opened and governed as a separate follow-up mutation boundary.
 
 ## Review character
 
@@ -87,6 +99,6 @@ ChatGPT should:
 1. verify the message reviews the exact frozen target;
 2. classify each finding as accepted, rejected, deferred or requiring human choice;
 3. separate factual/structural defects from preference-level alternatives;
-4. update the architecture only if the finding genuinely warrants it;
+4. open a separate target-mutation boundary only if an accepted finding genuinely warrants a change;
 5. preserve a resolution record and close MC-0005;
 6. avoid opening another method checkpoint unless the review causes a material architecture/state transition.
