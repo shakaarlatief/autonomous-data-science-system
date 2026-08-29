@@ -76,13 +76,17 @@ test.describe('Cockpit presentation-state integrity recovery', () => {
     await page.setViewportSize({ width: 1600, height: 1000 })
   })
 
-  test('Conversation structural spacing survives adaptive full-focus and co-present presentation changes', async ({ page }) => {
+  test('Conversation structural spacing survives direct co-present, Threads drawer and full-focus presentation changes', async ({ page }) => {
     await page.goto(adaptiveWorkRoute)
     await expect(page.locator(nodeSelector)).toHaveCount(6)
     await expect(page.locator('html')).toHaveAttribute('data-conversation-integration', 'adaptive-dock')
 
+    /* Adaptive Dock now treats co-presence as the normal one-click workbench entry. */
     await page.locator('#global-conversations').click()
-    await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'full')
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'copresent')
+    await page.locator('#adaptive-conversation-threads').click()
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-rail-drawer', 'open')
+
     await page.locator('[data-conversation-rail-option="boxes"]').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
     await expectWorkUnitRailSpacing(page)
@@ -93,15 +97,16 @@ test.describe('Cockpit presentation-state integrity recovery', () => {
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
     await expectWorkUnitRailSpacing(page)
 
+    await page.locator('.adaptive-conversation-drawer-close').click()
+    await page.locator('#reintegration-conversation-presentation-toggle').click()
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'full')
+    await expect(page.locator('.reintegration-conversation-rail')).toBeVisible()
+    await expectWorkUnitRailSpacing(page)
+
     await page.locator('#reintegration-conversation-presentation-toggle').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'copresent')
     await page.locator('#adaptive-conversation-threads').click()
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail-drawer', 'open')
-    await expectWorkUnitRailSpacing(page)
-
-    await page.locator('.adaptive-conversation-drawer-close').click()
-    await page.locator('#reintegration-conversation-presentation-toggle').click()
-    await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'full')
     await expectWorkUnitRailSpacing(page)
   })
 
