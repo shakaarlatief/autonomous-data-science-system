@@ -156,7 +156,7 @@ test.describe('Professional Conversation co-presence study', () => {
     })).toBeLessThanOrEqual(2)
   })
 
-  test('uses practical keyboard recovery: drawer -> conversation -> Deep Dive', async ({ page }) => {
+  test('Escape returns from Conversation in one step before Deep Dive', async ({ page }) => {
     await page.goto(adaptiveRoute)
 
     await page.keyboard.press('d')
@@ -170,15 +170,56 @@ test.describe('Professional Conversation co-presence study', () => {
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail-drawer', 'open')
 
     await page.keyboard.press('Escape')
-    await expect(page.locator('html')).toHaveAttribute('data-conversation-rail-drawer', 'closed')
-    await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'true')
-    await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused')
-
-    await page.keyboard.press('Escape')
     await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'false')
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-a6-expanded', 'false')
     await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'focused')
 
     await page.keyboard.press('Escape')
     await expect(page.locator('html')).toHaveAttribute('data-deep-focus', 'false')
+  })
+
+  test('F toggles browser fullscreen explicitly and Escape still returns from Conversation', async ({ page }) => {
+    await page.goto(adaptiveRoute)
+    await expect(page.locator('#fullscreen-world')).toHaveAttribute('aria-keyshortcuts', 'F')
+
+    await page.evaluate(() => {
+      let fullscreen = false
+      Object.defineProperty(document, 'fullscreenElement', {
+        configurable: true,
+        get: () => fullscreen ? document.documentElement : null,
+      })
+      Object.defineProperty(document.documentElement, 'requestFullscreen', {
+        configurable: true,
+        value: async () => {
+          fullscreen = true
+          document.documentElement.dataset.testFullscreen = 'true'
+        },
+      })
+      Object.defineProperty(document, 'exitFullscreen', {
+        configurable: true,
+        value: async () => {
+          fullscreen = false
+          document.documentElement.dataset.testFullscreen = 'false'
+        },
+      })
+    })
+
+    await page.keyboard.press('f')
+    await expect(page.locator('html')).toHaveAttribute('data-test-fullscreen', 'true')
+    await page.keyboard.press('f')
+    await expect(page.locator('html')).toHaveAttribute('data-test-fullscreen', 'false')
+
+    await openConversationFromRail(page)
+    await page.keyboard.press('Shift+C')
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-presentation', 'full')
+
+    await page.keyboard.press('f')
+    await expect(page.locator('html')).toHaveAttribute('data-test-fullscreen', 'true')
+    await page.keyboard.press('Escape')
+    await expect(page.locator('html')).toHaveAttribute('data-conversation-open', 'false')
+    await expect(page.locator('html')).toHaveAttribute('data-test-fullscreen', 'true')
+
+    await page.keyboard.press('f')
+    await expect(page.locator('html')).toHaveAttribute('data-test-fullscreen', 'false')
   })
 })
