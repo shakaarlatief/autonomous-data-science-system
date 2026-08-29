@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 
-const route = '/design-lab/cockpit-reintegration.html'
+const route = '/design-lab/cockpit-reintegration.html?edge=none'
 const nodeSelector = '.expansion-practical-node'
 
 async function numericFontSize(page: Page, selector: string) {
