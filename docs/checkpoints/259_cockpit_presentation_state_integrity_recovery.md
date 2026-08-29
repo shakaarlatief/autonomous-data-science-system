@@ -8,8 +8,8 @@
 **Authority:** Current-boundary provenance. This checkpoint repairs implementation integrity for already-held presentation behavior; it does not reopen or replace accepted Conversation spacing values, M09 Focus semantics, or the Adaptive Conversation Dock design question.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
-**Interaction session:** `chatgpt-09`  
-**Conversation title:** `09 - Project Cockpit Design Exploration`  
+**Interaction session:** `chatgpt-10`  
+**Conversation title:** `10 - Project Cockpit Design Exploration`  
 **Primary collaborator:** ChatGPT  
 **Collaboration thread:** `MC-0004`
 
