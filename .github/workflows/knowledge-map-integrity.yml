@@ -1,0 +1,45 @@
+name: Knowledge map integrity
+
+on:
+  push:
+    paths:
+      - docs/KNOWLEDGE_MAP.md
+      - docs/research/**
+      - docs/foundations/**
+      - docs/specifications/**
+      - docs/checkpoints/**
+      - docs/cockpit/**
+      - docs/methodological_knowledge/**
+      - docs/source_universe/**
+      - docs/model_collaboration/**
+      - scripts/check_knowledge_map.py
+      - .github/workflows/knowledge-map-integrity.yml
+  pull_request:
+    paths:
+      - docs/KNOWLEDGE_MAP.md
+      - docs/research/**
+      - docs/foundations/**
+      - docs/specifications/**
+      - docs/checkpoints/**
+      - docs/cockpit/**
+      - docs/methodological_knowledge/**
+      - docs/source_universe/**
+      - docs/model_collaboration/**
+      - scripts/check_knowledge_map.py
+      - .github/workflows/knowledge-map-integrity.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: knowledge-map-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-knowledge-map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate evergreen topic routing
+        run: python scripts/check_knowledge_map.py

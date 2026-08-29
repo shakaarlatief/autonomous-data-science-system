@@ -24,6 +24,8 @@ on:
       - frontend/design-lab/work-unit-detail-expansion-x5-accepted.js
       - frontend/design-lab/work-unit-grammar.js
       - frontend/design-lab/relation-class-grammar.css
+      - docs/checkpoints/**
+      - scripts/select_cockpit_verification.py
       - .github/workflows/cockpit-reintegration-fidelity.yml
   pull_request:
     paths:
@@ -35,14 +37,19 @@ on:
       - frontend/design-lab/work-unit-detail-expansion-x5-accepted.css
       - frontend/design-lab/work-unit-detail-expansion.js
       - frontend/design-lab/work-unit-detail-expansion-x5-accepted.js
+      - scripts/select_cockpit_verification.py
       - .github/workflows/cockpit-reintegration-fidelity.yml
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: cockpit-reintegration-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build-and-browser-fidelity:
+  select-and-verify:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -50,27 +57,85 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine changed files
+        working-directory: .
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          : > changed-files.txt
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            if [[ -n "${BEFORE_SHA:-}" && ! "$BEFORE_SHA" =~ ^0+$ ]]; then
+              git diff --name-only "$BEFORE_SHA" "$HEAD_SHA" > changed-files.txt
+            else
+              git diff-tree --no-commit-id --name-only -r "$HEAD_SHA" > changed-files.txt
+            fi
+          fi
+          echo "Changed files:"
+          cat changed-files.txt || true
+
+      - name: Select verification tier
+        id: select
+        working-directory: .
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          set -euo pipefail
+          python scripts/select_cockpit_verification.py --self-test
+          args=(--event "$EVENT_NAME" --message "${COMMIT_MESSAGE:-}" --github-output "$GITHUB_OUTPUT")
+          while IFS= read -r file; do
+            [[ -n "$file" ]] && args+=(--changed-file "$file")
+          done < changed-files.txt
+          python scripts/select_cockpit_verification.py "${args[@]}"
 
       - name: Set up Node 24
+        if: steps.select.outputs.mode != 'skip'
         uses: actions/setup-node@v5
         with:
           node-version: '24'
           package-manager-cache: false
 
       - name: Install locked dependencies
+        if: steps.select.outputs.mode != 'skip'
         run: npm ci --no-audit --no-fund
 
       - name: Build frontend
+        if: steps.select.outputs.mode != 'skip'
         run: npm run build
 
       - name: Install Chromium
+        if: steps.select.outputs.mode != 'skip'
         run: npx playwright install --with-deps chromium
 
-      - name: Run complete source-faithful reintegration browser gate
-        run: npx playwright test e2e/cockpit-reintegration*.spec.ts
+      - name: Run selected Cockpit browser verification
+        if: steps.select.outputs.mode != 'skip'
+        shell: bash
+        run: npx playwright test ${{ steps.select.outputs.specs }}
+
+      - name: Verification summary
+        if: always()
+        working-directory: .
+        shell: bash
+        run: |
+          {
+            echo "## Cockpit verification selection"
+            echo
+            echo "- Tier: ${{ steps.select.outputs.tier }}"
+            echo "- Mode: ${{ steps.select.outputs.mode }}"
+            echo "- Reason: ${{ steps.select.outputs.reason }}"
+            echo "- Specs: \`${{ steps.select.outputs.specs }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload diagnostics
-        if: ${{ always() }}
+        if: ${{ always() && steps.select.outputs.mode != 'skip' }}
         uses: actions/upload-artifact@v4
         with:
           name: cockpit-reintegration-diagnostics

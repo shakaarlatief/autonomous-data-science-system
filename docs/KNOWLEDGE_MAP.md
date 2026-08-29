@@ -1,459 +1,425 @@
 # Knowledge Map
 
-**Status:** Current routing index  
+**Status:** Current routing index and evergreen topic library  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-29  
-**Current checkpoint:** 264  
+**Current checkpoint:** 265  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
 **Latest specification:** Specification 024  
 **Latest scientific experiment outcome:** `INCOMPLETE / EXECUTION INTEGRITY FAILED`
 
-## Start here
+## How to use this map
+
+This file has two durable layers:
+
+```text
+CURRENT CONTINUATION ROUTE
+    what is active now and what to read next
+
+EVERGREEN TOPIC LIBRARY
+    topic -> current authority + deep rationale + evidence/history + specialized index
+```
+
+The current route may change frequently. The evergreen library must survive stage changes so a future collaborator can find relevant knowledge without already knowing a checkpoint, research or specification number.
+
+## Current continuation route
+
+Start here:
 
 ```text
 README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+docs/checkpoints/265_development_method_v06_knowledge_routing_and_verification_reconciliation.md
+docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
+```
 
+Development Method v0.6 is current. It restores evergreen topic routing and introduces V0-V4 risk-scaled verification.
+
+The active **Cockpit product** human-review gate remains:
+
+```text
 docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
 docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
-
-docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
-docs/research/101_project_general_thread_short_viewport_containment_recovery.md
-
-docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
-docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
-
-docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
-
-docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
-docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
-
-docs/checkpoints/259_cockpit_presentation_state_integrity_recovery.md
-docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
-
-docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
-docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
-
-docs/cockpit/README.md
-docs/cockpit/PHASE_C_DECISION_LEDGER.md
-docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
-docs/cockpit/accepted_implementation_manifest.json
 ```
 
-Current route:
+Required visual result:
 
 ```text
-checkpoint                264
-active branch             v1-cockpit-design-exploration
-latest specification      Specification 024
-promoted Cockpit baseline Specification 008
-interaction session       chatgpt-10
-conversation title        10 - Project Cockpit Design Exploration
-current product boundary  project-general footprint + Boxes selected-surface frame human recheck
+General project discussion
+    same visible footprint as WorkUnit boxes
+    selected frame belongs to visible project box only
+
+WorkUnit conversation
+    selected frame belongs to visible WorkUnit surface only
+
+Conversation spacing
+    remains correct
+
+current-process Focus
+    remains working as far as tested
 ```
 
----
-
-# Checkpoint 264 project-general footprint and selection alignment
-
-The latest human screenshots establish that the previous substantive Conversation rail defects are solved:
-
-```text
-WorkUnit spacing                  human-confirmed correct
-General project containment       human-confirmed correct
-current-process Focus             working as far as tested
-```
-
-The remaining issue was visual consistency between the project-general thread and WorkUnit threads.
-
-## Footprint
-
-The accepted Conversation WorkUnit rail slot is:
-
-```text
-normal rail          232 x 74 px
-responsive <=1450    214 x 69 px
-```
-
-Research 102 aligns the project-general visible artifact to exactly those dimensions. The WorkUnit geometry is not changed.
-
-## Selection frame
-
-Boxes mode now separates structural-row state from visible-object state:
-
-```text
-outer thread row
-    structural
-    transparent while active
-
-project-general selected surface
-    project artifact
-
-WorkUnit selected surface
-    canonical WorkUnit node surface
-```
-
-Text mode retains generic row selection because the row is the visible item there.
-
-This removes the oversized project-row outline visible in the human screenshot and makes both object families use the same selected-surface concept.
-
-Implementation:
-
-```text
-frontend/design-lab/cockpit-reintegration-presentation-integrity.css
-```
-
-Regression:
-
-```text
-frontend/e2e/cockpit-reintegration-review-256.spec.ts
-```
-
-Deterministic evidence:
-
-```text
-implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
-workflow run                33251166351
-job                         99096968925
-result                      SUCCESS
-browser tests               78 / 78 passing
-```
-
-The new regression verifies equal visible project/WorkUnit dimensions, transparent structural active rows, selected-state border/shadow on the visible surfaces and correct selection transfer.
-
-Human visual confirmation remains open.
-
----
-
-# Research 100 and 101 are now human-confirmed substrate
-
-## WorkUnit spacing
-
-Research 100 remains the accepted fix for the CSS Grid track-absorption defect:
-
-```text
-thread-list row-gap          16px
-WorkUnit row margins          0px
-WorkUnit row padding          6px top/bottom
-wide min-height              78px
-responsive min-height        73px
-visible WorkUnit gaps        >=20px regression
-```
-
-The project owner explicitly confirmed the resulting WorkUnit spacing is correct.
-
-## Project-general containment
-
-Research 101 reserved a structural first-row footprint so the first transformed WorkUnit could not paint into General project discussion at short desktop height.
-
-The latest screenshots show that overlap is gone, so Research 101 remains accepted underneath the finer Research 102 alignment.
-
-Equalizing the visible project artifact to 74px produces a 15px painted project-to-first-WorkUnit separation at the short viewport while the structural Grid row-gap remains 16px. The existing spacing is intentionally not enlarged because the human reviewer already accepted it.
-
----
-
-# Current whole-product browser
-
-Primary browser:
+Normal browser:
 
 ```text
 frontend/design-lab/cockpit-reintegration.html
 ```
 
-Normal current substrate:
+Adaptive Conversation Dock remains opt-in and resumes after Checkpoint 264 confirmation:
 
 ```text
-http://localhost:4173/design-lab/cockpit-reintegration.html
+docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
+docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
 ```
 
-Adaptive Conversation Dock candidate:
+Current method tooling:
 
 ```text
-http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
+scripts/select_cockpit_verification.py
+.github/workflows/cockpit-reintegration-fidelity.yml
+scripts/check_knowledge_map.py
+.github/workflows/knowledge-map-integrity.yml
 ```
 
-Route roles:
+Last complete pre-v0.6 Cockpit gate:
 
 ```text
-plain route
-    current source-faithful whole-product substrate
-    Checkpoint 264 footprint/selection-frame recheck surface
-
-?conversation=adaptive-dock
-    professional co-present Conversation candidate
-    product review resumes after Checkpoint 264 confirmation
-
-?edge=none
-    internal earlier-shell regression substrate only
-
-explicit ?edge=... / ?rail=...
-    historical spatial-rail studies
+implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
+workflow run                33251166351
+job                         99096968925
+browser tests               78 / 78 passing
 ```
 
----
+Checkpoint 265 changes development/routing/verification architecture, not the reviewed Cockpit product implementation.
 
-# Current-process Focus status
+## Evergreen topic library
 
-Research 098's Focus lifecycle recovery remains current.
+### System vision, epistemic integrity, admissibility, human/system boundary
+<!-- KM-TOPIC: system-vision -->
 
-The latest human retest reports Focus working as far as tested. No Focus implementation changed in Checkpoints 260, 262, 263 or 264.
-
-Focus is not part of the active defect boundary unless a new concrete reproduction appears.
-
----
-
-# Adaptive Conversation Dock study remains open
-
-Research 097 diagnoses the old co-present composition as a hierarchy problem:
+Use for what ADS is, why it exists beyond one LLM, epistemic integrity, admissibility/risk and responsibility boundaries.
 
 ```text
-wide Conversation surface
-    + permanently visible Conversation thread rail
-    + long-form transcript
-    -> resembles a second full application beside the Cockpit
+docs/VISION.md
+docs/PRINCIPLES.md
+docs/DECISIONS.md
+docs/foundations/001_initial_vision_and_reasoning.md
+docs/foundations/002_epistemic_integrity_and_project_constitution.md
+docs/foundations/003_admissibility_risk_and_assurance.md
+docs/foundations/013_system_level_vision_and_llm_system_human_boundary.md
 ```
 
-The opt-in candidate remains:
+### Project state, initialization, dependency structure and orchestration
+<!-- KM-TOPIC: project-state -->
+
+Use for the project object, state-driven orchestration, dependency-aware work, initialization/bootstrap and project-relative methodological state.
 
 ```text
-full focus
-    source-faithful Quiet Graphite Workspace
-    persistent Boxes/Text rail
-
-co-present
-    compact right secondary dock
-    resizable left edge
-    Cockpit retains majority visible width
-    Threads invokes the same Boxes/Text rail as a drawer
-    A6 becomes an invoked inspector sheet
+docs/foundations/004_project_state_dependency_and_state_driven_orchestration.md
+docs/foundations/005_project_initialization_and_universal_bootstrap.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
+docs/specifications/022_v1_project_state_methodological_horizon_coverage_diagnostic.md
+docs/research/032_project_state_methodological_horizon_coverage_diagnostic.md
 ```
 
-Checkpoints 259-264 are integrity/refinement interruptions. They do not promote or reject the Adaptive Dock candidate.
+### Reusable knowledge, activation, representation, quality and evolution
+<!-- KM-TOPIC: reusable-knowledge -->
 
-Once the Checkpoint 264 visual recheck passes, resume Checkpoint 258 / Research 097 immediately.
-
----
-
-# Interaction provenance
-
-Checkpoint 261 establishes the current interaction:
+Use for reusable methodology/knowledge units, open-world activation, composability, quality and generalization.
 
 ```text
-chatgpt-10
-10 - Project Cockpit Design Exploration
+docs/foundations/006_knowledge_activation_and_open_world_reasoning.md
+docs/foundations/007_reusable_knowledge_representation_and_composable_components.md
+docs/foundations/008_knowledge_quality_generalization_and_evolution.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
 ```
 
-It corrected post-boundary Research 097 / Checkpoint 258 onward metadata after the prior ChatGPT conversation reached its length limit. Pre-boundary ChatGPT-09 history remains unchanged.
+### Evaluation, falsification, supervision and execution integrity
+<!-- KM-TOPIC: evaluation-falsification -->
 
----
-
-# Source-of-truth architecture
-
-Use these layers together:
+Use for falsification-first evaluation, held-out supervision, observability, prototype V0 and experiment integrity.
 
 ```text
-SEMANTIC / PRODUCT AUTHORITY
-    accepted specifications
-    foundations
-    explicit human-reviewed selections
-
-DESIGN DISPOSITION
-    docs/cockpit/PHASE_C_DECISION_LEDGER.md
-    exhaustive for its declared Research 037-088 scope
-
-POST-RECOVERY WHOLE-PRODUCT EVIDENCE
-    Research 089 onward
-    recent checkpoints
-
-IMPLEMENTATION PROVENANCE
-    docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
-    docs/cockpit/accepted_implementation_manifest.json
-
-CURRENT ROUTING
-    docs/CURRENT_STATE.md
-    docs/KNOWLEDGE_MAP.md
-    docs/current_routing.json
-    latest checkpoint + research record
+docs/foundations/009_behavioral_reasoning_regression_and_system_evaluation.md
+docs/foundations/010_minimum_falsification_prototype_and_experimental_contract.md
+docs/foundations/011_prototype_v0_technical_specification.md
+docs/foundations/012_preregistered_held_out_evaluation_protocol.md
+docs/foundations/015_held_out_supervision_and_mechanical_verification_architecture.md
+docs/foundations/016_execution_observability_separation.md
+docs/experiments/prototype_v0/FINAL_RESULTS.md
+prototype_v0/README.md
+docs/checkpoints/096_prototype_v0_final_strong_falsification_and_architecture_diagnostic_conclusion.md
 ```
 
-A future integrator must never infer accepted implementation details from shorthand labels alone.
+Specification 022 remains `INCOMPLETE / EXECUTION INTEGRITY FAILED`; do not infer comparative scientific conclusions from it.
 
----
+### V1 persistence, tooling, interchange and agent runtime
+<!-- KM-TOPIC: v1-runtime-persistence -->
 
-# Provenance and fidelity gates
-
-Implementation-provenance recovery remains complete:
+Use for SQLite/persistence, Python tooling, interchange, runtime selection and runtime bakeoff evidence.
 
 ```text
-manifest entries   23
-required           19
-non-promotable      4
-first history gate 33156357834 PASS
+docs/specifications/001_v1_sqlite_technical_architecture.md
+docs/specifications/002_v1_persistence_tooling_standard.md
+docs/specifications/003_v1_python_project_and_dependency_tooling.md
+docs/specifications/004_v1_reusable_knowledge_interchange.md
+docs/specifications/005_v1_agent_runtime_and_interoperability_bakeoff.md
+docs/research/010_2026_runtime_bakeoff_preimplementation_refresh.md
+docs/research/013_openai_agents_complete_candidate_evidence_and_direct_call_comparison.md
+docs/research/014_langgraph_1_2_10_released_durability_comparator_audit.md
+docs/research/015_langgraph_complete_candidate_three_way_runtime_comparison_and_stop_rule.md
+experiments/runtime_bakeoff/candidates/openai_agents/COMPLETE_RESULT.md
+experiments/runtime_bakeoff/candidates/langgraph_runtime/COMPLETE_RESULT.md
 ```
 
-Current gate model:
+### Retrieval, MethodologicalHorizon, relevance and selective reasoning context
+<!-- KM-TOPIC: retrieval-horizon -->
+
+Use for retrieval benchmarks, exact/hybrid comparators, MethodologicalHorizon construction, relevance and selective context.
 
 ```text
-PROVENANCE GATE
-    PASS
-
-INTERACTION PROVENANCE
-    RECONCILED at Checkpoint 261
-    chatgpt-10 / 10 - Project Cockpit Design Exploration
-
-DETERMINISTIC INTEGRATION GATE
-    PASS, 78/78 at 9881efe313b8cf04d9521c0464050b30b29944c1
-
-HUMAN WORKUNIT SPACING GATE
-    PASSED
-
-HUMAN PROJECT CONTAINMENT GATE
-    PASSED
-
-HUMAN PROJECT FOOTPRINT / SELECTION FRAME GATE
-    OPEN at Checkpoint 264
-
-HUMAN PRODUCT-DESIGN GATE
-    Adaptive Conversation Dock review resumes after Checkpoint 264 confirmation
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/specifications/009_v1_retrieval_and_methodological_horizon_benchmark.md
+docs/specifications/010_v1_exact_semantic_retrieval_comparator.md
+docs/specifications/011_v1_rrf_hybrid_retrieval_comparator.md
+docs/specifications/012_v1_first_methodological_horizon_builder.md
+docs/specifications/013_v1_horizon_relevance_and_selective_context.md
+docs/specifications/014_v1_reasoning_context_value_vertical_slice.md
+docs/OPEN_QUESTIONS.md
 ```
 
----
+### Recommendation, disposition, calibration, provenance and action value
+<!-- KM-TOPIC: recommendation-calibration -->
 
-# Held Conversation architecture
+Use for recommendation value, failure attribution, relation-backed recommendations, system-owned provenance and blocking/calibration semantics.
 
 ```text
-Quiet Graphite baseline
-project-general + WorkUnit-scoped conversations
-Boxes / Text thread navigation
-A6 Adaptive Anchor
-no redundant floating A6 WorkUnit box
-Conversation access from Grid neutral / selected / X5 / Deep Dive
-full-focus + co-present presentation capability
-source work-state preservation
-Conversation ownership independent from SEL2 selection
-compact native Cockpit composer
+docs/specifications/015_v1_recommendation_action_value_vertical_slice.md
+docs/specifications/016_v1_disposition_semantics_failure_attribution_diagnostic.md
+docs/specifications/017_v1_relation_backed_recommendation_action_value_vertical_slice.md
+docs/specifications/018_v1_governed_autonomous_live_experiment_launcher.md
+docs/specifications/019_v1_system_owned_provenance_recommendation_action_value_vertical_slice.md
+docs/specifications/020_v1_recommended_vs_blocking_required_calibration_diagnostic.md
+docs/specifications/021_v1_dependency_backed_recommendation_action_value_vertical_slice.md
+docs/OPEN_QUESTIONS.md
 ```
 
-Checkpoint 264 changes none of those semantics.
+### Methodological Knowledge Universe construction and coverage
+<!-- KM-TOPIC: methodological-knowledge-universe -->
 
----
-
-# Other held Phase-C product direction
+Use for the methodological knowledge universe, coverage architecture, source-to-knowledge construction and current coverage state.
 
 ```text
-G4 Adaptive Hybrid world
-H4 hover/outward response
-Reduced in-box resting light
-scientific category-marker grammar
-Foundation 023 non-semantic appearance configurability
-E5 Hue + Tag relation-class carrier
-D0-D3 directionality
-single terminal-treatment appearance choice
-P7 Neutral Tag + Tone disposition
-current-process focus lens
-conditional runtime semantics
-R1 / T7 switchable operational carrier family
-BLOCKER -> BLOCKS -> BLOCKED
-BLOCKED sharper ring / FAIL smoother ring
-A3 Signal Bars
-SEL2 four outside corner brackets
-X5 balanced two-axis expansion
-L0 provisional Flat Fields
-Z7 Pull-Back Then Dive
-full-stage specialist workspace
-compact topology compass
-S0 Geometric Control provisional working default
-Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
+docs/research/028_system_identity_methodological_navigation_and_knowledge_universe_construction.md
+docs/research/031_methodological_knowledge_universe_coverage_architecture.md
+docs/research/033_methodological_knowledge_universe_construction_framework.md
+docs/foundations/019_methodological_navigation_brain_and_relevance_architecture.md
+docs/foundations/020_reusable_methodological_knowledge_representation_architecture.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+docs/checkpoints/193_methodological_knowledge_universe_construction_framework_frozen.md
 ```
 
-Semantic zoom remains deferred. L0 remains provisional.
+### Source Universe, evidence substrate and permanent vault
+<!-- KM-TOPIC: source-universe -->
 
----
-
-# Failed holistic integration remains excluded
-
-```text
-8e554d847bb3b6318db432abcb5dff742f0fa523
-```
-
-remains diagnostic evidence only, not an accepted baseline, production target or visual source of truth.
-
----
-
-# Recent whole-product studies
+Use for durable source storage, source artifact integrity, evidence provenance, source-substrate validation and paused permanent-vault deployment.
 
 ```text
-Research 092  direct-manipulation spatial rail studies
-Research 093  architectural 3D edge studies
-Research 094  resting angled rail, rejected for current rail direction
-Research 095  flat rail + initial Conversation spacing + live compass
-Research 096  structural Conversation spacing + current flat rail control set
-Research 097  Adaptive Conversation Dock co-presence candidate
-Research 098  intermittent Conversation spacing + Focus integrity recovery
-Research 099  failed Boxes human retest + row-owned-margin recovery attempt
-Research 100  live CSS Grid geometry diagnosis + explicit grid-track spacing recovery
-Research 101  project-general short-height containment recovery
-Research 102  project-general box footprint + selected-surface frame alignment
-```
-
----
-
-# Source Universe route
-
-```text
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
 docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 ```
 
+Current status: substrate accepted; permanent deployment PAUSED, not rejected. Course 2 gate unchanged.
+
+### Development method, preservation, continuity and model collaboration
+<!-- KM-TOPIC: development-continuity -->
+
+Use for how ADS itself is built, preserved, reconstructed, reviewed and coordinated across models/sessions.
+
 ```text
-SOURCE_SUBSTRATE_ACCEPTED
-permanent deployment PAUSED
-Course 2 gate unchanged
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/checkpoints/README.md
+docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
+docs/research/035_multi_model_development_collaboration_architecture.md
+docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
+docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
+docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
+docs/model_collaboration/README.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
+docs/model_collaboration/REVIEW_INBOX.md
+docs/specifications/024_v1_model_collaboration_state_guard.md
 ```
 
----
-
-# MC-0004 collaboration route
+Structural validators:
 
 ```text
-docs/model_collaboration/threads/MC-0004/BRIEF.md
-docs/model_collaboration/threads/MC-0004/THREAD.md
-docs/model_collaboration/threads/MC-0004/STATE.json
+scripts/check_checkpoint_metadata.py
+scripts/check_current_routing.py
+scripts/check_knowledge_map.py
+scripts/check_model_collaboration_state.py
+```
+
+### Project Cockpit architecture and product model
+<!-- KM-TOPIC: cockpit-architecture -->
+
+Use for the interactive workspace vision, project object integration, professional UI foundation and promoted Cockpit interaction architecture.
+
+```text
+docs/foundations/017_interactive_data_science_workspace_and_methodological_navigation_vision.md
+docs/foundations/018_project_object_model_and_professional_developer_workflow_integration.md
+docs/foundations/021_professional_product_interface_and_frontend_design_foundation.md
+docs/specifications/006_v1_frontend_architecture_and_visual_spike.md
+docs/specifications/007_v1_unified_project_cockpit_interaction_spike.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+frontend/design-lab/cockpit-reintegration.html
+```
+
+### Cockpit visual grammar, appearance and connector semantics
+<!-- KM-TOPIC: cockpit-visual-grammar -->
+
+Use for category grammar, WorkUnit appearance, connector class/directionality, disposition/runtime/attention presentation and configurable non-semantic appearance.
+
+```text
+docs/foundations/023_user_configurable_cockpit_appearance_and_semantic_invariants.md
+docs/foundations/024_composable_connector_presentation_and_semantic_directionality.md
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+```
+
+The Phase-C ledger is the disposition index for Research 037-088. Exact accepted implementation provenance is in the manifest.
+
+### Cockpit selection, expansion, focus, Deep Dive and zoom states
+<!-- KM-TOPIC: cockpit-interaction-states -->
+
+Use for SEL2 selection, X5 expansion, current-process Focus, specialist/Deep Dive entry, zoom/recovery and held/provisional state distinctions.
+
+```text
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/specifications/008_v1_project_cockpit_interaction_architecture.md
+docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
+```
+
+Important current distinctions: L0 Flat Fields remains provisional; semantic zoom remains deferred with S0 geometric control as the working default.
+
+### Conversation Workspace, scope, navigation and Cockpit coexistence
+<!-- KM-TOPIC: conversation-workspace -->
+
+Use for Quiet Graphite, project-general versus WorkUnit conversation scope, Boxes/Text, A6, access from Grid/Deep Dive, state preservation and Adaptive Conversation Dock work.
+
+```text
+docs/research/079_conversation_workspace_presentation_architecture_experiment.md
+docs/research/081_independent_conversation_workspace_dual_design_comparison.md
+docs/research/082_conversation_scope_work_unit_anchor_and_quiet_graphite_baseline.md
+docs/research/083_a6_adaptive_anchor_and_canonical_box_sidebar_mode.md
+docs/research/085_conversation_workspace_a6_refinement_and_entry_transition.md
+docs/research/086_conversation_workspace_orthogonal_access_and_coexistence_architecture.md
+docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
+docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
+```
+
+Recent presentation-integrity sequence:
+
+```text
+docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
+docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
+docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
+docs/research/101_project_general_thread_short_viewport_containment_recovery.md
+docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
+```
+
+### Cockpit implementation provenance and source-faithful reintegration
+<!-- KM-TOPIC: cockpit-provenance-fidelity -->
+
+Use for why the first holistic integration failed, exact source recovery, implementation manifest, reintegration and fidelity gates.
+
+```text
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
+docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
+docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+docs/research/090_current_branch_exact_source_compatibility_and_reintegration_strategy.md
+docs/research/091_source_faithful_reintegration_interaction_integrity_gate.md
+docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/cockpit/README.md
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/cockpit/accepted_implementation_manifest.json
+scripts/check_cockpit_implementation_manifest.py
+.github/workflows/cockpit-implementation-provenance.yml
+.github/workflows/cockpit-reintegration-fidelity.yml
+scripts/select_cockpit_verification.py
+```
+
+The failed integrated browser at `8e554d847bb3b6318db432abcb5dff742f0fa523` is diagnostic evidence only, not an accepted baseline.
+
+### Cockpit shell, spatial rail, topology compass and current shell studies
+<!-- KM-TOPIC: cockpit-shell-rail -->
+
+Use for the right-edge rail, depth/direct-manipulation studies, rejected angled rail, flat current rail, live topology compass and current shell controls.
+
+```text
+docs/research/092_spatial_edge_rail_depth_direct_manipulation_and_docking_study.md
+docs/research/093_architectural_cockpit_edge_instrument_surface_depth_study.md
+docs/research/094_resting_angled_rail_spatial_identity_and_clarity_only_expansion.md
+docs/research/095_conversation_spacing_flat_project_rail_and_live_topology_compass.md
+docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
+docs/checkpoints/255_flat_project_tool_rail_and_live_topology_compass_human_review_opened.md
+docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
+docs/checkpoints/257_canonical_cockpit_review_route_normalized.md
+```
+
+The resting angled rail is historical/rejected for the current direction. The flat rail and live topology compass remain the current reviewed substrate.
+
+### Canonical history, major changes, decisions and unresolved questions
+<!-- KM-TOPIC: canonical-history -->
+
+Use when reconstructing why the current project looks the way it does, what is explicitly accepted, what changed structurally and what remains open.
+
+```text
+docs/DECISIONS.md
+docs/OPEN_QUESTIONS.md
+docs/PRINCIPLES.md
+docs/VISION.md
+docs/MAJOR_CHANGES.md
+docs/checkpoints/README.md
+```
+
+Specialized historical indexes should be used instead of scanning every checkpoint blindly:
+
+```text
+docs/methodological_knowledge/COVERAGE_MAP.md
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/model_collaboration/REVIEW_INBOX.md
 ```
 
-No Claude obligation is pending. The next expected actor is the human reviewer.
+## Map maintenance rule
 
----
-
-# Exact next step
+At a meaningful promotion/reconciliation boundary:
 
 ```text
-Pull the latest branch and hard-refresh.
-
-Inspect Boxes on the normal route.
-
-Switch between General project discussion and multiple WorkUnit threads.
-
-Required result:
-    project-general visible box matches WorkUnit footprint
-    General selection frames only the visible project box
-    WorkUnit selection frames only the visible WorkUnit
-    no oversized wrapper appears
-    spacing remains correct
-
-If correct:
-    close Checkpoint 264
-    close the Conversation rail integrity interruption
-    resume Adaptive Conversation Dock review
-
-If still wrong:
-    preserve screenshot and viewport
-    continue only footprint/selection-frame integrity debugging
+1. update the current continuation route if the active state changed;
+2. ask whether any evergreen topic gained/lost a governing source;
+3. link new specialized indexes rather than duplicating them;
+4. preserve maturity/status distinctions;
+5. run scripts/check_knowledge_map.py;
+6. do not update the map merely because another commit/checkpoint exists.
 ```
+
+If a new major domain emerges, add a new topic marker rather than squeezing it into an unrelated category. The validator may be expanded only when a real structural need is observed.

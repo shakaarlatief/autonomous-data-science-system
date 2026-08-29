@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 264  
+**Checkpoint:** 265  
 **Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -21,24 +21,85 @@ Collaboration thread     MC-0004
 
 Repository artifacts remain authoritative across chats and models.
 
----
+## Current Level-2 boundary
 
-# Current active boundary
+Checkpoint 265 is a development-method and knowledge-routing reconciliation, not a Cockpit product decision.
+
+Research 103 found:
 
 ```text
-docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
-docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
+substantive knowledge durability
+    strong
+    no major evidence of lost ADS knowledge
 
-docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
-docs/research/101_project_general_thread_short_viewport_containment_recovery.md
+global discoverability
+    degraded
+    KNOWLEDGE_MAP had become current-Cockpit-heavy and no longer served
+    its original broad topic-library role reliably
 
-docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
-docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
+checkpoint granularity
+    governing policy was sound
+    recent frontend practice became too checkpoint-heavy
+
+Cockpit verification
+    complete 78-test gate was being run too often during tiny iterations
 ```
 
-Checkpoint 264 is the active product gate.
+The response is Development Method v0.6.
 
-The latest human screenshots now establish:
+### Development Method v0.6
+
+```text
+V0  documentation / provenance validators
+V1  targeted regression
+V2  subsystem regression
+V3  full integrated gate
+V4  promotion / release gate
+```
+
+Rules:
+
+```text
+unknown/shared blast radius -> V3
+small isolated iteration -> V1/V2
+low-risk visual tuning -> narrow deterministic check, then human review
+meaningful acceptance closure -> broader/full gate required by the boundary
+promotion/release -> V4
+V1/V2 evidence must never be described as a complete Cockpit pass
+```
+
+Small implementation refinements within the same open human-review question should normally be aggregated inside that boundary rather than creating a new numbered checkpoint per commit.
+
+### Knowledge routing
+
+`docs/KNOWLEDGE_MAP.md` now has two explicit layers:
+
+```text
+Current continuation route
+Evergreen topic library
+```
+
+The evergreen library restores project-wide topic discovery across canonical docs, foundations, research, specifications, checkpoints and specialized indexes.
+
+Structural protection:
+
+```text
+scripts/check_knowledge_map.py
+.github/workflows/knowledge-map-integrity.yml
+```
+
+Cockpit verification selection:
+
+```text
+scripts/select_cockpit_verification.py
+.github/workflows/cockpit-reintegration-fidelity.yml
+```
+
+The selector narrows only high-confidence local changes and falls back to full V3 for mixed/shared/unknown changes. Obsolete same-branch runs are cancelled through CI concurrency control.
+
+## Current Cockpit product boundary remains Checkpoint 264
+
+Latest human-confirmed state:
 
 ```text
 Conversation WorkUnit spacing
@@ -51,327 +112,68 @@ current-process Focus
     working as far as tested
 ```
 
-The remaining Conversation rail issue is deliberately narrow:
+Still awaiting human visual confirmation:
 
 ```text
 General project discussion visible footprint
-    should match WorkUnit box footprint
+    matches WorkUnit box footprint
 
 Boxes selected-state frame
-    should surround the visible selected object itself
-    should not create a larger generic outer-row rectangle
+    frames the actual visible selected project/WorkUnit object
+    no oversized structural row frame
 ```
 
-Research 102 implements that alignment without changing the already accepted WorkUnit spacing, WorkUnit geometry, Focus behavior or Conversation semantics.
-
-Adaptive Conversation Dock product judgment remains paused only until this final small Boxes visual-consistency recheck is confirmed.
-
-Production `/cockpit` remains untouched.
-
----
-
-# Whole-product browser and routes
-
-Primary browser:
+Governing evidence:
 
 ```text
-frontend/design-lab/cockpit-reintegration.html
+docs/checkpoints/264_project_general_footprint_and_selection_frame_human_recheck_opened.md
+docs/research/102_project_general_box_footprint_and_selection_frame_alignment.md
 ```
 
-Normal current substrate:
+Normal route:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-Adaptive Conversation Dock candidate:
+If Checkpoint 264 is visually confirmed, close the Conversation presentation-integrity interruption and resume the Adaptive Conversation Dock review from:
+
+```text
+docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
+docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
+```
+
+Adaptive route:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
 ```
 
-Route roles:
+## Verification status
+
+Last complete Cockpit gate before the v0.6 workflow change:
 
 ```text
-plain route
-    source-faithful whole-product substrate
-    current Checkpoint 264 project-general footprint/selection-frame human-recheck surface
-
-?conversation=adaptive-dock
-    opt-in professional co-present Conversation candidate
-    product-design review resumes after Checkpoint 264 confirmation
-
-?edge=none
-    internal earlier-shell regression substrate only
-
-explicit ?edge=... / ?rail=...
-    historical spatial-rail studies
+implementation/test target  9881efe313b8cf04d9521c0464050b30b29944c1
+workflow run                33251166351
+job                         99096968925
+browser tests               78 / 78 passing
 ```
 
----
+Checkpoint 265 changes the verification workflow itself, so one fresh full V3 Cockpit run is required before the method checkpoint closes. The commit introducing v0.6 explicitly requests that gate with `[full-cockpit]`.
 
-# Research 100 WorkUnit spacing recovery is human-confirmed
-
-The project owner has explicitly confirmed that the WorkUnit-to-WorkUnit spacing is now correct.
-
-The accepted Research 100 contract remains:
+Required repository validators for closure:
 
 ```text
-thread-list row-gap          16px
-WorkUnit row margin           0px
-WorkUnit padding              6px top / 6px bottom
-wide WorkUnit min-height     78px
-responsive <=1450 min-height 73px
-actual visible WorkUnit gap  >=20px deterministic contract
+Knowledge map integrity
+Current routing consistency
+Checkpoint metadata
+full Cockpit V3 reintegration fidelity
 ```
 
-The canonical WorkUnit is not resized or redesigned.
+## Held product decisions
 
-Research 100's root cause remains preserved:
-
-```text
-margin-owned spacing
-    was absorbed into CSS Grid auto-track sizing
-    while transformed WorkUnit children painted beyond shrunken rows
-    producing ~1.9px visible separation despite 16px computed margins
-```
-
-Do not reopen the WorkUnit spacing architecture without new contradictory human evidence.
-
----
-
-# Research 101 project-general containment is human-confirmed
-
-Checkpoint 263 added an explicit structural project row after the first WorkUnit had previously invaded the project-general row at short desktop heights.
-
-The latest screenshots confirm that General project discussion is now a clean standalone first object and is no longer overlapped by WorkUnit 1.
-
-Research 101 therefore remains accepted as the containment mechanism underneath the current finer visual-alignment pass.
-
----
-
-# Checkpoint 264 project-general footprint and selection alignment
-
-## Human evidence
-
-The latest screenshots show two closely related visual inconsistencies after the larger containment defects were fixed:
-
-```text
-General project discussion
-    visible box smaller than the WorkUnit box slots
-
-selected state
-    General received a larger generic thread-row frame
-    WorkUnits visually carried selection on the canonical node surface
-```
-
-The issue is not semantic selection state. It is presentation ownership and geometry.
-
-## Exact footprint alignment
-
-The accepted Conversation WorkUnit slot remains unchanged:
-
-```text
-normal rail          232 x 74 px
-responsive <=1450    214 x 69 px
-```
-
-The project-general artifact now matches that footprint exactly:
-
-```text
-normal project artifact       232 x 74 px
-responsive project artifact   214 x 69 px
-```
-
-The WorkUnit is not resized to fit the project artifact. The project artifact is aligned to the accepted WorkUnit rail footprint.
-
-## Selected-state ownership
-
-In Boxes / artifact-compatible mode:
-
-```text
-outer .reintegration-thread-item
-    structural only
-    transparent even while active
-
-project-general selected surface
-    .reintegration-project-thread-artifact
-
-WorkUnit selected surface
-    .conversation-canonical-node .node-surface
-```
-
-The final integrity layer applies the selected border/shadow to the actual visible object surfaces.
-
-In Text mode the generic row selection treatment remains available because the row itself is the visible navigation object.
-
-## Spacing remains unchanged
-
-The list still owns a structural 16px CSS Grid row gap.
-
-After enlarging the project artifact to the WorkUnit footprint, the short-height painted edge-to-edge project-to-first-WorkUnit distance is 15px because the two visible 1px borders consume one pixel of the nominal track separation measurement. The structural gap remains 16px, and the human-approved WorkUnit spacing is not retuned.
-
-Deterministic contract:
-
-```text
-CSS Grid row-gap                     >=16px
-project -> first WorkUnit dark gap   >=15px
-WorkUnit -> WorkUnit visible gap     >=20px
-```
-
----
-
-# Deterministic fidelity status
-
-Final implementation/test target:
-
-```text
-9881efe313b8cf04d9521c0464050b30b29944c1
-```
-
-The visual implementation is present in its ancestry through:
-
-```text
-524d4fcba3df835de3ecc5757ed4a97dafdd656e
-```
-
-Latest complete Cockpit fidelity workflow:
-
-```text
-workflow run  33251166351
-job           99096968925
-result        SUCCESS
-browser tests 78 / 78 passing
-```
-
-The new regression explicitly verifies:
-
-```text
-project artifact and WorkUnit slot have equal visible width/height
-project outer structural row remains transparent while selected
-WorkUnit outer structural row remains transparent while selected
-project selected surface receives a visible border/shadow
-WorkUnit selected surface receives a visible border/shadow
-selection transfer removes the project selected shadow
-short-height containment remains intact
-all earlier source-faithful mechanisms remain green
-```
-
-An intermediate test compared serialized CSS color strings and was rejected as a brittle assertion because Chromium may represent equivalent/layered colors through different CSS color spaces. The durable test asserts the actual geometry and selected-surface responsibility seen by the human reviewer.
-
-A green deterministic gate still does not substitute for the current human visual recheck.
-
----
-
-# Current-process Focus
-
-No Focus code was changed for Checkpoints 262, 263 or 264.
-
-Research 098's recovery remains current:
-
-```text
-one authoritative focusMembership set
-node scope reapplied from that set
-WorkUnit remount/replacement observer
-membership controls restored on replacement carriers
-relations resynchronized after node repair
-Focus stylesheet statically loaded
-accepted opacity/filter contract protected from later style precedence
-```
-
-Current human evidence is positive: Focus is working as far as tested.
-
-Do not reopen Focus without another concrete reproduction.
-
----
-
-# Adaptive Conversation Dock remains open, not promoted
-
-Checkpoint 258 and Research 097 remain the product-design evidence for Conversation/Cockpit co-presence.
-
-The candidate still tests:
-
-```text
-full-focus
-    source-faithful Quiet Graphite Workspace
-    persistent Boxes/Text rail
-
-co-present
-    compact resizable right-side secondary dock
-    Cockpit remains majority visible
-    Threads invokes the same Boxes/Text rail as a drawer
-    A6 available as invoked inspector sheet
-```
-
-Checkpoints 259-264 are integrity/refinement interruptions underneath that still-open product-design review. They do not accept, reject or retune the Adaptive Dock direction.
-
-Once Checkpoint 264 is visually confirmed, resume the Adaptive Conversation Dock review immediately rather than opening another unrelated design branch.
-
----
-
-# Interaction continuity
-
-Checkpoint 261 remains the provenance boundary for the current conversation:
-
-```text
-interaction session  chatgpt-10
-conversation title   10 - Project Cockpit Design Exploration
-```
-
-Post-boundary Research 097 / Checkpoint 258 onward provenance was reconciled without rewriting pre-boundary ChatGPT-09 history.
-
----
-
-# Held Conversation semantics remain intact
-
-```text
-Quiet Graphite baseline
-project-general + WorkUnit-scoped conversation
-Boxes / Text user-switchable thread navigation
-A6 Adaptive Anchor
-no redundant A6 floating home card
-Conversation access from Grid neutral / selected / X5 / Deep Dive
-full-focus + co-present capability
-source work-state preservation
-Conversation ownership separate from SEL2 selection
-compact native Cockpit composer
-```
-
-Checkpoint 264 changes none of these semantics.
-
----
-
-# Other held Phase-C decisions remain intact
-
-```text
-G4 Adaptive Hybrid world
-H4 hover/world response
-Reduced in-box resting light
-scientific category-marker grammar
-Foundation 023 non-semantic appearance configurability
-E5 Hue + Tag relation-class carrier
-D0-D3 semantic directionality
-single active connector terminal treatment
-P7 Neutral Tag + Tone disposition
-editable current-process focus set
-conditional runtime semantics
-one switchable operational carrier
-T7 Soft Shade runtime tag
-BLOCKER -> BLOCKS -> BLOCKED cause/effect model
-BLOCKED sharper compact ring
-FAIL smoother circular compact ring
-A3 Signal Bars for HIGH attention
-SEL2 four outside corner brackets
-X5 balanced contextual expansion without context recession
-L0 Flat Fields provisional working internal-layout default
-Z7 Pull-Back Then Dive specialist-workspace entry
-full-stage specialist workspace
-compact topology compass retained
-S0 Geometric Control provisional zoom working default
-Specification 008 Jump/search, zoom/recovery and fullscreen capabilities
-```
-
-L0 remains provisional. Semantic zoom remains deferred.
+No Cockpit semantic/product decision is reopened by Checkpoint 265. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
 
 Implementation provenance remains governed by:
 
@@ -382,52 +184,22 @@ docs/cockpit/accepted_implementation_manifest.json
 
 The failed holistic browser at `8e554d847bb3b6318db432abcb5dff742f0fa523` remains diagnostic evidence only.
 
----
+Source-vault bootstrap remains PAUSED, not cancelled. The Course 2 source-universe gate is unchanged.
 
-# Deferred / paused work remains unchanged
+Production `/cockpit` remains untouched.
 
-```text
-semantic zoom
-    DEFERRED
-    S0 geometric control remains the provisional working default
+## Exact next step
 
-source-vault bootstrap
-    PAUSED
-    not cancelled or rejected
+First close Checkpoint 265's method validation gates.
 
-Course 2 source-universe gate
-    unchanged
-```
-
----
-
-# Exact next step
+Then the next product actor is still the human reviewer:
 
 ```text
-Human pulls the latest v1-cockpit-design-exploration branch and hard-refreshes.
-
-Inspect Boxes on:
-    http://localhost:4173/design-lab/cockpit-reintegration.html
-
-Switch between:
-    General project discussion
-    Resolve target definition
-    other WorkUnit threads
-
-Required visible result:
-    General project discussion matches the WorkUnit box footprint
-    selecting General frames only the General project box
-    selecting a WorkUnit frames only that WorkUnit surface
-    no oversized outer-row selection rectangle appears
-    existing spacing remains correct
-    Focus remains stable
-
-If correct:
-    close Checkpoint 264
-    close the Conversation presentation-integrity interruption
-    resume Checkpoint 258 Adaptive Conversation Dock visual review immediately
-
-If still wrong:
-    preserve screenshot and exact viewport/route
-    continue only the footprint/selection-frame boundary
+pull latest v1-cockpit-design-exploration
+hard-refresh
+open http://localhost:4173/design-lab/cockpit-reintegration.html
+switch between General project discussion and WorkUnit conversations
+confirm equal visible footprint and correct selected-surface frame
 ```
+
+If correct, resume the Adaptive Conversation Dock review immediately.
