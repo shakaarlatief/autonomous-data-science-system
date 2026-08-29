@@ -11,13 +11,13 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            256
+checkpoint            257
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      structural Conversation spacing + flat rail control-set human review
+current boundary      canonical-route structural Conversation spacing + flat rail control-set human review
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -36,10 +36,10 @@ frontend/design-lab/cockpit-reintegration.html
 Current human-review route:
 
 ```text
-http://localhost:4173/design-lab/cockpit-reintegration.html?edge=angled
+http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-The `edge=angled` query is historical implementation plumbing. The current right-side rail is normal flat 2D.
+The current Cockpit no longer requires the historical `?edge=angled` suffix. Explicit `edge=` and `rail=` query routes are retained only for historical design studies and regression evidence. `?edge=none` is an internal regression substrate, not a product route.
 
 Current review targets are:
 
@@ -67,13 +67,13 @@ Deep Dive project-position compass
 Latest complete Cockpit fidelity workflow:
 
 ```text
-implementation target  e2768a807b2a80f438248a25f7d41e53be561d51
-workflow run           33211613408
-job                    98985900484
+implementation target  59e5d19b310c4cc89fefc46fb4d116d67bdeefd5
+workflow run           33236756483
+job                    99058967008
 browser tests          68 / 68 passing
 ```
 
-The current gate measures actual rendered Conversation WorkUnit separation at both desktop and narrow widths, rather than relying only on CSS gap values.
+The current gate verifies the plain canonical route directly while preserving historical mechanism and rail-study coverage on isolated explicit query routes.
 
 Production `/cockpit` remains untouched.
 
@@ -126,7 +126,7 @@ exact historical source verification: PASS
 
 The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D0-D3, P7, current-process focus, runtime/T7, BLOCKED/FAIL, A3, SEL2, X5, Z7, S0, Quiet Graphite, Boxes/Text, A6 and Conversation access across Grid and Deep Dive.
 
-Checkpoint 256 changes Conversation row geometry and the current flat-rail control composition only. It does not revoke those held semantics.
+Checkpoint 256 changed Conversation row geometry and the current flat-rail control composition only. Checkpoint 257 normalizes the current review route only. Neither checkpoint revokes held semantics.
 
 The complete disposition history is in `docs/cockpit/PHASE_C_DECISION_LEDGER.md`. The exact implementation source graph is in `docs/cockpit/accepted_implementation_manifest.json`.
 
@@ -149,6 +149,8 @@ semantic decision record
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/257_canonical_cockpit_review_route_normalized.md
 
 docs/checkpoints/256_structural_conversation_spacing_and_project_tool_rail_controls_review_opened.md
 docs/research/096_structural_conversation_spacing_and_current_project_tool_rail_control_set.md
