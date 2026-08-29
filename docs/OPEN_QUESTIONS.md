@@ -1,10 +1,48 @@
 # Open Questions
 
 **Status:** Current canonical unresolved-question register  
-**Last reconciled:** 2026-08-26  
-**Reconciliation context:** Prototype V0 is complete. Bounded V1 has established the project/object foundations, Project Cockpit, governed persistence/interchange, runtime boundary, retrieval/Horizon/selective-context chain, real reasoning-context evidence, dependency-backed sequencing evidence, and the governed autonomous live-experiment launcher. Specification 019 completed its matched system-owned-provenance recommendation/action comparison and remained `FAIL`. Specification 020 then prospectively isolated the `RECOMMENDED` versus dependency-backed `BLOCKING_REQUIRED` construct and completed 36/36 exact observations with every frozen hard gate passing. The bounded outcome is `BLOCKING_BOUNDARY_SUPPORTED`. Production blocking policy and methodological-context recommendation value remain open.
+**Last reconciled:** 2026-08-29  
+**Authority:** Canonical register of important unresolved project questions. Detailed reasoning and historical evolution belong in foundations, research, specifications, checkpoints and Git history. Live implementation/review state belongs in `docs/CURRENT_STATE.md`.
 
-This document records important unresolved questions in current canonical form. Detailed reasoning belongs in foundations, research memos, specifications, checkpoints, experiment records, and Git history.
+## Reconciliation context
+
+Prototype V0 is complete and strongly falsified the tested P0 design without falsifying the broader ADS vision.
+
+Bounded V1 has established or materially advanced:
+
+```text
+project/object architecture and Project Cockpit
+local-first persistence and deterministic interchange
+ADS-owned reasoning-runtime boundary
+retrieval -> explained MethodologicalHorizon -> selective exact-revision context
+real-model selective-context evidence
+bounded dependency-backed sequencing and blocking constructs
+governed live-experiment launch control
+Methodological Knowledge Universe construction architecture
+ADS-owned Source Universe substrate
+governed provider-neutral multi-model development
+```
+
+The recommendation/action sequence remains mixed evidence:
+
+```text
+Specification 015  FAIL
+Specification 016  dependency-backed DEFER-vs-NOT_NOW construct supported
+Specification 017  INCOMPLETE
+Specification 019  FAIL after system-owned provenance repair
+Specification 020  BLOCKING_BOUNDARY_SUPPORTED
+Specification 021  FAIL
+```
+
+Specification 022 then attempted to move evaluation upstream to project-state-to-methodological-horizon coverage, but all planned reasoner observations failed the frozen structured-output contract. Its final classification is:
+
+```text
+INCOMPLETE / EXECUTION INTEGRITY FAILED
+```
+
+No `GENERIC` / `ADS_HORIZON` / `ORACLE_HORIZON` scientific comparison may be inferred from that run.
+
+The current serious methodological-universe program therefore remains a construction and coverage problem rather than a resolved production-navigation architecture.
 
 ---
 
@@ -12,157 +50,148 @@ This document records important unresolved questions in current canonical form. 
 
 ### Q-005. How should explicit knowledge interact with open-ended LLM reasoning?
 
-**Status:** Selective reasoning-context seam supported; downstream recommendation value remains unresolved
+**Status:** Selective reasoning-context seam supported; downstream recommendation/navigation value remains unresolved
 
-Accepted bounded path:
+Supported bounded path:
 
 ```text
 large reusable knowledge universe
     -> retrieval
     -> explained MethodologicalHorizon
     -> applicability / missing-context handling
-    -> bounded task-specific relevance selection
+    -> task-specific relevance selection
     -> selective exact-revision MethodologicalContextPack
     -> ADS-owned ReasoningRuntime
     -> flexible LLM reasoning
 ```
 
-Specification 014 showed `1.000000` frozen semantic quality for SELECTIVE and FULL_HORIZON with a SELECTIVE/FULL input-token ratio of `0.334379`.
+Specification 014 showed equal frozen semantic quality for SELECTIVE and FULL_HORIZON on its benchmark with a SELECTIVE/FULL input-token ratio of `0.334379`.
 
-Specification 015 did not establish recommendation/action value. Specification 016 repaired the construct-validity question around sequencing by requiring an explicit activating dependency. Specification 017 ended incomplete because model-authored `methodological_basis` duplicated system-known provenance. Specification 019 removed that instrumentation confound prospectively and completed the matched comparison, but its frozen result was `FAIL`.
-
-Specification 020 prospectively isolated the `RECOMMENDED` versus `BLOCKING_REQUIRED` boundary. The frozen governed diagnostic completed 36/36 exact observations with every hard gate passing. This supports the bounded construct that blocking becomes operationally separable when one exact active defended downstream scope explicitly depends on one exact unresolved requirement that the candidate action resolves. It does not establish selective methodological-context recommendation value.
-
-Research 028 preserves the broader forward architecture for the eventual methodological universe: system-owned project state provides durable project identity; methodological navigation maps that state into applicable/relevant/recommended/required considerations; and the broad knowledge base should be a governed, revisioned universe rather than an undifferentiated RAG corpus.
+Later recommendation experiments did not establish that selective methodological context produces superior recommendation/action decisions. The central open question is therefore not whether selective context can be mechanically constructed, but when explicit methodology adds value beyond a strong generic reasoner and how that value should be measured on realistic evolving project states.
 
 Still open:
 
 ```text
-whether selective methodological knowledge adds recommendation/action value beyond a strong generic reasoner
-how explicit methodology should influence recommendation calibration without over-blocking
-natural-language/project-state -> task-profile derivation
-harder heterogeneous/changing project states
-open-world concern/action discovery
-final context-budget policy
-production recommendation/persistence semantics
-large-scale governed knowledge-universe construction and coverage measurement
+methodological-context recommendation/action value
+open-world methodological path discovery
+natural-language/project-state -> reasoning-task derivation
+harder heterogeneous and changing project states
+context-budget policy
+how explicit methodology should calibrate recommendations without over-blocking
+large-scale governed knowledge-universe coverage and maintenance
 ```
 
 ### Q-006. How should relevant investigations be activated?
 
-**Status:** Retrieval/Horizon/selective-context mechanics validated; dependency-backed sequencing and blocking constructs supported; production activation policy remains open
+**Status:** Bounded mechanics and structural constructs supported; production activation policy remains open
 
-P0's path-sensitive trigger/frontier machinery should not return unchanged. Current evidence supports staged retrieval/applicability/relevance followed by selective reasoning.
+P0's generic path-sensitive trigger/frontier machinery should not return unchanged.
 
-Supported bounded sequencing constraint:
+Current evidence supports staged retrieval/applicability/relevance and explicit dependency structure where sequencing or blocking must be justified.
+
+Bounded supported distinctions include:
 
 ```text
 DEFER-like sequencing
-    should be backed by an explicit activating dependency/trigger
-    when deterministic separation from NOT_NOW is expected
-```
+    should have an explicit activating dependency when deterministic
+    separation from NOT_NOW is expected
 
-Specification 019 exposed a distinct unresolved boundary: useful model-comparison work was repeatedly escalated from `RECOMMENDED` to `BLOCKING_REQUIRED`.
-
-Specification 020 prospectively tested the stronger construct:
-
-```text
 BLOCKING_REQUIRED
-    exact unresolved requirement
-    + exact active defended downstream scope
-    + explicit scope DEPENDS_ON requirement relation
-    + candidate action resolves that requirement
+    unresolved requirement
+    + active defended downstream scope
+    + explicit dependency
+    + candidate action resolves the requirement
 
 RECOMMENDED
-    worthwhile work
-    + no exact active defended scope blocked on it
+    worthwhile work without an exact active defended scope blocked on it
 ```
-
-The frozen diagnostic returned `BLOCKING_BOUNDARY_SUPPORTED` with exact requirement/scope pointers on all blocking observations and null pointers on all recommended observations. These remain diagnostic semantics only. Production activation and blocking policy remain open.
 
 Still open:
 
 ```text
-project state -> requested reasoning functions
+project state -> candidate concerns and reasoning functions
 open-world concern/action generation
-recommendation -> durable Proposal / Question / Investigation
+recommendation -> durable project object/event mapping
+production REQUIRED / BLOCKING semantics
+production sequencing/dependency relation model
 human approval / automatic-action policy
-production REQUIRED/BLOCKING semantics and scope
-what exact dependency/claim-scope structure makes an action genuinely blocking in production
-production sequencing relation model
 ```
 
 ### Q-008. How should project state be represented?
 
 **Status:** Substantially advanced, not complete
 
-Foundation 018 establishes Objects, Relations, Events, and Views. Specification 016 provides evidence that sequencing becomes more testable when an exact activating relation is represented. Specifications 017 and 019 used experiment-owned trigger pointers and blocked-scope menus. Specification 020 added experiment-owned requirement and downstream-scope identities and supported the bounded construct that an explicit blocking relation can make `RECOMMENDED` versus `BLOCKING_REQUIRED` operationally separable. It still does not define production dependency or claim-scope persistence.
-
-Research 028 sharpens the system-level role of this layer: the system should own durable project identity, state, history, provenance, relations, and authority independently of any particular model response.
+Foundation 018 establishes `Objects`, `Relations`, `Events`, and `Views`. Later experiments support explicit dependency and requirement/scope relations when those relations are supposed to constrain recommendations.
 
 Still open:
 
 ```text
 complete production object/relation schema
-accepted recommendation -> project object/event mapping
-sequencing/dependency persistence
+accepted recommendation -> Proposal / Question / Investigation / event mapping
+sequencing and dependency persistence
 blocking relation between unresolved work and defended downstream scopes
-staleness/invalidation semantics
+staleness / invalidation / repair semantics
 approval and authority state
+admissibility / assurance participation in project state
 ```
 
 ### Q-021. How should model and tool providers be selected?
 
-**Status:** Open; runtime boundary selected, experiment model treatment intentionally fixed
+**Status:** Open; runtime boundary selected, final provider/model policy not selected
 
-D-032 selects OpenAI Agents SDK behind an ADS-owned `ReasoningRuntime` as the initial runtime boundary. Specifications 014-020 reuse one concrete model/runtime treatment where relevant to avoid confounding adjacent experiments. This is not a final provider/model decision.
+D-032 selects OpenAI Agents SDK behind an ADS-owned `ReasoningRuntime` for the initial V1 runtime. This does not make the SDK, provider or one model the semantic authority of ADS and does not select the final model/provider strategy.
+
+Still open:
+
+```text
+model selection by task/risk/cost
+provider portability and fallback policy
+when another runtime or stronger workflow durability is justified
+production tool/provider governance
+```
 
 ### Q-029. How should analytical effort be prioritized?
 
 **Status:** Substantially refined, not resolved
 
-Candidate dimensions include validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent, and human preference.
+Candidate dimensions include validity importance, information gain, downstream impact, uncertainty reduction, risk, cost, redundancy, project intent and human preference.
 
-Specification 016 supports explicit dependency-backed sequencing. Specification 019 failed its frozen recommendation-value advancement gates. Specification 020 subsequently supported a stronger explicit requirement/scope construction for the blocking boundary. No final recommendation ranking/disposition policy is justified.
+Explicit dependency-backed sequencing and a bounded blocking construct are supported, but no general production ranking/disposition policy has been established.
 
 ### Q-037. How should project state activate reusable knowledge and reasoning?
 
-**Status:** Structurally advanced through real reasoning; recommendation-state mapping remains open
+**Status:** Architecture advanced; serious open-world navigation remains unresolved
 
-Current bounded path:
-
-```text
-project-relevant retrieval
-    -> explained MethodologicalHorizon
-    -> explicit applicability/context checks
-    -> explicit task reasoning functions
-    -> selective exact-revision MethodologicalContextPack
-    -> ADS-owned ReasoningRuntime
-    -> measured reasoning output
-```
-
-Specification 019 confirms that exact supplied-context provenance can remain a deterministic system trace while recommendation content remains model-owned. Specification 020 further supports, at the bounded diagnostic layer, explicit system-owned requirement/scope identities and relations as the basis for distinguishing genuinely blocking work from worthwhile non-blocking work.
-
-The production boundary remains how justified recommendations become calibrated, inspectable durable project state without over-automation.
-
-Research 028 records the broader target distinction:
+Current durable distinction:
 
 ```text
 SYSTEM-OWNED PROJECT STATE
-    What is true about this project?
+    what is true about this project?
 
 METHODOLOGICAL NAVIGATION
-    Given what is true, what matters now?
+    given what is true, what matters now?
 
 LLM REASONING
-    Given what matters, how should we reason about it?
+    given what matters, how should we reason about it?
 ```
 
-### Q-044. How should production retrieval, MethodologicalHorizon construction, and selective context work?
+The bounded retrieval/Horizon/context seams work. Specification 022 did not produce valid comparative evidence for project-state-to-horizon coverage because execution integrity failed before scientific comparison.
 
-**Status:** Substantially answered for the first bounded chain through real reasoning; production scaling remains open
+Still open:
 
-Evidence chain:
+```text
+project-state -> methodological-path discovery
+applicability and relevance at serious-universe scale
+coverage measurement and oracle construction
+calibrated recommendation/action generation
+production state mutation from accepted recommendations
+```
+
+### Q-044. How should production retrieval, MethodologicalHorizon construction and selective context work?
+
+**Status:** First bounded chain supported; serious-scale production strategy remains open
+
+Established evidence chain:
 
 ```text
 Checkpoint 135   lexical retrieval
@@ -173,259 +202,269 @@ Checkpoint 143   selective exact-revision context
 Checkpoint 146   real-model selective-context value
 ```
 
-No current downstream evidence justifies returning to retrieval/reranking/vector tuning. Specifications 019-020 address downstream recommendation/calibration questions rather than a demonstrated retrieval deficiency.
+No current evidence justifies optimizing vector/reranking infrastructure merely for its own sake.
 
 Still open:
 
 ```text
 production task-profile derivation
 larger heterogeneous Horizon behavior
-final budgets
-when richer semantic/LLM relevance becomes necessary
-production semantic/fusion infrastructure only when measured deficiency requires it
-knowledge-coverage accounting at broad methodological-universe scale
+final budgets and truncation policy
+when richer semantic or model-based relevance becomes necessary
+production fusion/index infrastructure when measured need appears
+broad methodological-universe coverage accounting
 ```
 
-### Q-045. How should recommendation and reasoning quality be evaluated separately from knowledge coverage and provenance?
+### Q-045. How should recommendation/reasoning quality be separated from knowledge coverage and provenance?
 
-**Status:** Reasoning-quality separation, system-owned provenance separation, and blocking construct validity supported; recommendation value remains unresolved
+**Status:** Several separations established; end-to-end system value unresolved
 
-Specification 014 separated reasoning quality from context size. Specification 015 added deterministic recommendation metrics and a blinded semantic judge. Specification 016 isolated and validated the dependency-backed sequencing construct.
-
-Specification 017 exposed:
+Important distinctions now established are:
 
 ```text
-reasoning function / task profile
-    !=
-reusable knowledge stable-key provenance
+reasoning quality != context size
+system-owned supplied-context provenance != model-authored citation text
+construct validity != recommendation value
+universe coverage != navigation/path coverage
+navigation/path coverage != downstream reasoning quality
 ```
 
-Specification 019 prospectively moved exact supplied-context provenance to deterministic system ownership:
+Specification 019 showed that exact supplied-context provenance can remain system-owned while model recommendation content remains separate. Specification 020 supported one bounded blocking construct. Specification 021 failed its recommendation-value gates. Specification 022 failed execution integrity before a coverage comparison became valid.
+
+Still open:
 
 ```text
-SYSTEM-OWNED PROVENANCE
-    exact supplied stable_key@revision_id
-    methodology payload digest and byte count
-    treatment identity
-
-MODEL-OWNED CONTENT
-    dispositions
-    dependency pointers
-    scopes
-    clarifications
-    rationales
+credible broad-universe coverage metrics
+open-world path-discovery evaluation
+recommendation usefulness and calibration
+human-navigation burden reduction
+how to combine deterministic and semantic evaluation without construct leakage
 ```
-
-The complete matched design then ran without provenance-induced schema failures, but the frozen recommendation-value result was `FAIL`.
-
-Specification 020 kept provenance and supplied requirement/scope identities system-owned while testing only the structural calibration boundary. Its frozen result was `BLOCKING_BOUNDARY_SUPPORTED`, establishing bounded construct-validity evidence only, not methodological-context recommendation value.
-
-Any model-authored knowledge citation layer should be evaluated as a distinct optional capability rather than treated as the authoritative context provenance channel.
 
 ### Q-053. How should authorized live experiments be launched autonomously and safely?
 
-**Status:** Bounded V1 mechanism answered and supported; provider-backed use demonstrated twice; broader approval/orchestration policy remains open
+**Status:** Bounded V1 launch mechanism supported; production authorization lifecycle remains open
 
-Specification 018 establishes and validates the first governed control plane:
+Specification 018 established a repository-governed control plane for explicitly authorized frozen experiments with exact source/ref and CI checks. The mechanism was subsequently used for provider-backed bounded experiments.
 
-```text
-owner-created [ADS LIVE] issue
-    -> repository-controlled launch authorization
-    -> exact owner identity checks
-    -> exact source SHA
-    -> exact successful CI run IDs
-    -> conservative duplicate check
-    -> allowlisted workflow_dispatch
-    -> independently validating target workflow
-```
-
-Original provider-free end-to-end evidence:
-
-```text
-implementation source   27e7bc84b5f63d65d43de9a5bd27d1fdc0677071
-provider-free CI        32660168566
-launcher run            32660333663
-probe run               32660340429
-probe job               97245432893
-outcome                 GOVERNED_LAUNCHER_SUPPORTED
-```
-
-Specification 019 exercised the same control plane for one exact frozen provider-backed experiment and retired its one-shot authorization after preservation.
-
-Specification 020 subsequently used the same control plane for one exact frozen provider-backed run at source `82cfbdd38e9b6c5b4c6ab4e3bd1e4e20f545766a`. The run completed and its raw result was preserved before interpretation. Its one-shot authorization and temporary live-control exposure must now be retired before the next experiment.
-
-Remaining open questions:
+Still open:
 
 ```text
 production human approval/escalation policy
 project-level authorization UX
-authorization expiry/revocation lifecycle
-provider-backed result/status presentation in the Cockpit
-retention and cleanup policy for launch issues and completed authorizations
-multi-user / organization authorization if later required
+authorization expiry and revocation lifecycle
+result/status presentation in the Cockpit
+retention/cleanup policy for completed authorizations
+multi-user or organization authorization if later required
 ```
+
+No current live authorization should be inferred from this canonical question register.
 
 ---
 
-## System purpose, authority, and project constitution
+## System purpose, authority and project constitution
 
 ### Q-001. What exactly must the system accomplish to be considered successful?
 
 **Status:** Partially answered
 
-The purpose is project-relative: create the best defensible data-science process for the project's goals, constraints, deliverables, risk, and desired human involvement while preserving non-negotiable methodological integrity. Cross-project success criteria combining reliability, methodological coverage, human-navigation burden, efficiency, reproducibility, and product usability remain open.
+The purpose is project-relative: create the best defensible data-science process for the project's goals, constraints, deliverables, risk and desired human involvement while preserving non-negotiable methodological integrity.
+
+Cross-project success criteria combining reliability, methodological coverage, human-navigation burden, efficiency, reproducibility and product usability remain open.
 
 ### Q-002. What degree of autonomy should the system have?
 
 **Status:** Substantially reframed, still open
 
-Autonomy should vary with project intent, risk, admissibility, uncertainty, reversibility, authority, action type, and assurance state rather than being one global mode. Final proposal/approval/automatic-action/escalation policy remains open.
+Autonomy should vary with project intent, risk, admissibility, uncertainty, reversibility, authority, action type and assurance state rather than being one global mode.
+
+Final proposal/approval/automatic-action/escalation policy remains open.
 
 ### Q-003. What should the human's role be?
 
 **Status:** Substantially refined, still open
 
-Foundation 013 keeps the human concentrated on goals, semantics, consequential trade-offs, authoritative domain input, critique, approvals, and intervention where judgment adds value. Exact escalation and project-configurable control remain open.
+The human should remain authoritative for project goals, semantics, consequential trade-offs, authoritative domain input, critique, approvals and intervention where judgment adds value.
+
+Exact escalation rules and project-configurable control remain open.
 
 ### Q-027. What belongs in the non-negotiable methodological quality floor?
 
 **Status:** Substantially refined, not finalized
 
-Current epistemic core: semantic validity, information legitimacy, evidence validity, claim validity, and traceability/dependency integrity, preceded by admissibility and followed by risk-sensitive assurance. Exact operationalization across project classes remains open.
+Current epistemic core:
+
+```text
+semantic validity
+information legitimacy
+evidence validity
+claim validity
+traceability and dependency integrity
+```
+
+These sit after admissibility and before risk-sensitive assurance/project-relative optimization. Exact operationalization across project classes remains open.
 
 ### Q-028. How should project intent be represented?
 
 **Status:** Substantially refined, not finalized
 
-Objectives, constraints, deliverables, human-control preferences, definitions, and project/model/operational distinctions remain the leading structure. Final schema and interaction model remain open.
+Objectives, constraints, deliverables, human-control preferences, definitions and project/model/operational distinctions remain the leading structure. Final schema and interaction model remain open.
 
 ### Q-030. Are the five epistemic invariants complete and precise enough?
 
 **Status:** Strong design hypothesis under broader validation
 
-Prototype V0 and later V1 evidence remain compatible with them, but broader project diversity may expose missing distinctions or needed revision.
+Prototype V0 and later V1 evidence remain compatible with them, but broader project diversity may expose missing distinctions or required revision.
 
 ### Q-031. What belongs in the admissibility layer?
 
 **Status:** Open at production depth
 
-Legal, ethical, privacy, policy, safety, organizational, and explicit user constraints are conceptually distinct from methodological validity. Exact scope, representation, and authority remain unresolved.
+Legal, ethical, privacy, policy, safety, organizational and explicit user constraints are conceptually distinct from methodological validity. Exact scope, representation and authority remain unresolved.
 
 ### Q-032. How should risk-sensitive assurance be represented?
 
 **Status:** Open at production depth
 
-A practical model is still needed to link consequence/risk to verification, replication, robustness, subgroup analysis, human approval, monitoring, and documentation requirements.
+A practical model is still needed to connect consequence/risk to verification, replication, robustness, subgroup analysis, human approval, monitoring and documentation requirements.
 
-### Q-035. How should admissibility, risk, controls, approvals, and assurance participate in project state?
+### Q-035. How should admissibility, risk, controls, approvals and assurance participate in project state?
 
 **Status:** Open
 
-The product/object model provides places for Constraints, Questions, Findings, Decisions, events, and approvals, but the complete policy/state representation remains unspecified.
+The object model provides plausible homes for constraints, questions, findings, decisions, events and approvals, but the complete policy/state representation remains unspecified.
 
 ---
 
-## Project objects, evidence, revision, and completion
+## Project objects, evidence, revision and completion
 
 ### Q-010. When is independent review required?
 
 **Status:** Substantially refined, not resolved
 
-Candidate triggers include high risk, epistemic single points of failure, weak high-leverage assumptions, fragile consequential claims, governance requirements, and low-maturity knowledge. Operational policy remains open.
+Candidate triggers include high risk, epistemic single points of failure, weak high-leverage assumptions, fragile consequential claims, governance requirements and low-maturity knowledge. Operational policy remains open.
 
 ### Q-011. What counts as sufficient evidence for a decision?
 
 **Status:** Active
 
-Evidence sufficiency remains decision-specific and may depend on validity, uncertainty, independence, shared ancestry, risk, cost, and probability that additional evidence changes the decision.
+Evidence sufficiency is decision-specific and may depend on validity, uncertainty, independence/shared ancestry, risk, cost and the probability that additional evidence changes the decision.
 
 ### Q-012. How should uncertainty and confidence be represented?
 
 **Status:** Open
 
-No final numerical, categorical, narrative, or structural representation is selected.
+No final numerical, categorical, narrative or structural representation is selected.
 
 ### Q-019. How should invalidation and repair work?
 
 **Status:** Reframed after V0
 
-P0's generic dependency reopening/support-reassessment machinery did not earn its cost as a universal always-on mechanism. Selective evidence-driven staleness/invalidation and targeted repair remain necessary.
+P0's generic dependency reopening/support-reassessment machinery did not earn its cost as a universal always-on mechanism. Selective evidence-driven staleness, invalidation and targeted repair remain necessary.
 
 ### Q-033. Should analytical Questions and Claims be primary state objects?
 
 **Status:** Strongly supported conceptually, not frozen as universal orchestration law
 
-Foundation 018 treats Questions, Findings, Claims, Evidence, and Decisions as central project objects without claiming every workflow reduces to one Question/Claim state machine.
+Foundation 018 treats Questions, Findings, Claims, Evidence and Decisions as central project objects without claiming that every project reduces to one Question/Claim state machine.
 
 ### Q-034. How should project completion be defined?
 
 **Status:** Substantially refined, not resolved
 
-Completion should be obligation/question/deliverable driven and account for residual uncertainty, expected value of additional work, risk, and resource limits.
+Completion should be obligation/question/deliverable driven and account for residual uncertainty, expected value of additional work, risk and resource limits.
 
 ---
 
-## Reusable knowledge and governance
+## Reusable methodological knowledge and governance
 
 ### Q-004. How should data-science knowledge be represented?
 
-**Status:** Substantially answered at conceptual/V1 architecture level; broad construction program specified conceptually
+**Status:** Substantially answered at conceptual/V1 architecture level; serious construction remains open
 
-Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, collections, provenance/governance, retrieval/applicability/context structures, exact revisions, and separation from execution capability.
+Foundation 020 governs `KnowledgeAsset`, `KnowledgeComponent`, `NarrativeFacet`, `KnowledgeRelation`, conditional `KnowledgeRule`, collections, provenance/governance, retrieval/applicability/context structures, exact revisions and separation from execution capability.
 
-Research 028 adds the forward construction strategy: map the methodological universe and coverage gaps, build small canonical source-backed assets, separate intrinsic knowledge/relations/rules/narrative, encode expert questions/evidence expectations, revision and govern accepted assets, test knowledge behavior like software, and use project replay to expose candidate coverage gaps. Large-scale taxonomy, authoring UX, provenance ontology, ingestion automation, and coverage metrics remain open.
+Research 033 and the Methodological Knowledge Universe coverage architecture establish the current broad construction framework. Large-scale taxonomy refinement, construction tooling, coverage metrics and content QA at serious scale remain open.
 
 ### Q-007. What should a reusable decision or knowledge unit contain?
 
 **Status:** Substantially answered conceptually, taxonomy still open
 
-Stable asset/revision identity, components, narrative facets, intrinsic kinds, reasoning functions, static relations, conditional rules, retrieval, applicability, context requirements, expert questions, evidence expectations, semantic checks, provenance, scope, and governance remain distinct. Exact production enums remain intentionally unfrozen.
+Stable asset/revision identity, components, narrative facets, intrinsic kinds, reasoning functions, static relations, conditional rules, retrieval, applicability, context requirements, expert questions, evidence expectations, semantic checks, provenance, scope and governance remain distinct.
+
+Exact production enums remain intentionally unfrozen.
 
 ### Q-018. How should knowledge packages interact?
 
 **Status:** Substantially refined, not resolved at scale
 
-Current architecture uses stable identities, typed semantic relations, conditional rules, reusable concepts, components, and collections rather than one giant package graph. Large-scale deduplication, cycles, conflicting soft guidance, relation quality, and composition behavior remain open.
+The architecture uses stable identities, typed semantic relations, conditional rules, reusable concepts/components and collections rather than one giant package graph.
+
+Still open:
+
+```text
+large-scale deduplication
+cycles and conflicting soft guidance
+relation quality
+composition behavior
+cross-source disagreement
+revision impact
+```
 
 ### Q-022. How should external knowledge and source material be integrated?
 
-**Status:** Substantially advanced conceptually, not complete
+**Status:** Source persistence/substrate architecture accepted; source-to-accepted-knowledge pipeline and permanent deployment remain open
 
-Specification 004 and D-031 establish deterministic interchange and governance safety. Research 028 proposes source-bundle ingestion with LLM-assisted extraction/decomposition, relation/rule proposal, overlap/contradiction checks, deterministic validation, and governed review before accepted revision. Full ingestion tooling and provenance/source persistence remain open.
+This question is now split into distinct layers:
+
+```text
+SOURCE ARTIFACT PERSISTENCE
+    substantially answered for V1
+    D-033 + Specification 023
+    exact artifacts live in an ADS-owned private Source Universe substrate
+
+PERMANENT USER-CONTROLLED VAULT DEPLOYMENT
+    operationally open and currently paused
+    accepted substrate != permanent vault already instantiated
+
+SOURCE -> METHODOLOGICAL KNOWLEDGE
+    still open at serious scale
+    extraction/decomposition, evidence pointers, overlap/contradiction handling,
+    QA, revision and governed acceptance
+```
+
+ChatGPT Library, Project Sources, cloud drives and similar services may be useful intake/synchronization surfaces, but they are not the long-term semantic source authority under the accepted architecture.
+
+Primary sources:
+
+```text
+docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
+docs/specifications/023_v1_source_universe_substrate.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/methodological_knowledge/COVERAGE_MAP.md
+```
 
 ### Q-025. What maturity model should be used for ideas and reusable knowledge?
 
 **Status:** Substantially refined, not finalized
 
-Knowledge role, maturity, enforcement authority, scope confidence, provenance, challenge history, scientific confidence, and operational coverage should remain distinct. Final production promotion/review/freshness lifecycle remains open.
+Knowledge role, maturity, enforcement authority, scope confidence, provenance, challenge history, scientific confidence and operational coverage should remain distinct. Final promotion/review/freshness lifecycle remains open.
 
 ### Q-038. How should reusable knowledge quality and evolution be governed?
 
 **Status:** Substantially refined, not resolved end to end
 
-Foundation 008, Foundation 020, D-031, Specification 004, and Research 028 establish scope-aware, revisioned, provenance-aware, candidate-versus-accepted governance principles. Future automation may propose extraction, relations, contradictions, coverage gaps, or revisions, but automatic learning/promotion remains deliberately unimplemented.
+Current architecture is scope-aware, revisioned, provenance-aware and distinguishes candidate from accepted knowledge.
 
-## Specification 021 result: navigation value remains a distinct open question
+Future automation may propose extraction, relations, contradictions, coverage gaps or revisions, but automatic promotion to accepted methodological authority remains deliberately unimplemented.
 
-Specification 021 completed with frozen outcome `FAIL`, but the benchmark supplied the reasoning function, candidate actions, requirements, scopes, dependency/resolver relations, and defer relations to every condition. It therefore does not answer the system-level question of whether ADS can reduce the human burden of remembering and surfacing important methodological pathways from realistic evolving project state.
+---
 
-The next architecture/evaluation review should distinguish:
+## Methodological-universe coverage after Specifications 021 and 022
 
-```text
-path discovery / coverage
-applicability / relevance
-concrete option generation
-prioritization / disposition
-model-facing context value
-```
+Specification 021 ended `FAIL`, but its benchmark supplied much of the reasoning/action structure to all conditions. It therefore did not answer whether ADS can reduce the human burden of remembering and surfacing important methodological pathways from realistic project state.
 
-Do not collapse these into one GENERIC-vs-SELECTIVE recommendation score.
-
-## Checkpoint 186 methodological-navigation coverage reconciliation
-
-Research 031 sharpens Q-005, Q-006, Q-037, Q-044, and Q-045 without resolving them.
-
-The next evaluation boundary separates:
+Research 031 and Research 033 separate the evaluation problem into:
 
 ```text
 universe coverage
@@ -436,7 +475,9 @@ prioritization / disposition
 model-facing context value
 ```
 
-A methodological-universe gap, a navigation gap, and a downstream reasoning/use gap are distinct failure classes. The leading successor experiment class is a project-state-to-methodological-horizon coverage diagnostic using evolving Foundation-018-aligned state and withholding explicit reasoning-function/action menus from the main reasoner. Exact Specification 022 cases, universe size, oracle, conditions, semantic matching, metrics, thresholds, and advancement outcomes remain open.
+Specification 022 attempted the project-state-to-horizon coverage layer, but execution integrity failed before any valid scientific comparison was available.
+
+Therefore the next legitimate serious-universe evaluation must preserve this separation and must not treat Specification 022 as negative comparative evidence about `ADS_HORIZON` itself.
 
 ---
 
@@ -444,35 +485,49 @@ A methodological-universe gap, a navigation gap, and a downstream reasoning/use 
 
 ### Q-054. How far should governed multi-model collaboration be mechanized?
 
-**Status:** Core collaboration method accepted; further mechanization deliberately open
+**Status:** Core human-supervised method accepted; further mechanization deliberately open
 
-Development Method v0.5, D-034, Specification 024, and MC-0001 through MC-0003 establish the current human-supervised provider-neutral collaboration method.
+D-034, Specification 024 and MC-0001 through MC-0003 establish the current provider-neutral collaboration method. Development Method v0.7 retains that method while refining repository information architecture and verification.
 
-Current accepted boundary:
+Accepted boundary:
 
 ```text
 repository-mediated collaboration
-selective SOLO / REVIEWED / independent-comparative modes
-one task owner + scoped write ownership
+selective SOLO / REVIEWED / independent-comparative / adversarial modes
+one bounded task owner
+ROLE != WRITE_SCOPE
+one target-state write owner at a time
 machine-readable per-thread coherence guard
 manual or issue-assisted asynchronous transport
 deferred review with exact immutable targets and explicit gates
-human arbitration for genuine project-intent/consequential choices
+human arbitration for genuine project-intent or consequential choices
 ```
 
-The following remain open and should be implemented only when real use justifies them:
+Still open, when real use justifies them:
 
 ```text
-cross-thread dependency metadata and downstream impact discovery
+cross-thread dependency metadata and downstream-impact discovery
 generated REVIEW_INBOX / inbox-state consistency validation
 secondary-vs-secondary write-surface overlap protection
 machine-readable review-obligation and gate-boundary fields
 stale/superseded deferred-obligation validation
-whether recurring backlog scale eventually justifies stronger orchestration
+whether recurring backlog scale justifies stronger orchestration
 ```
 
-Unattended scheduled model review is currently deferred rather than accepted. It does not create additional weekly subscription capacity and currently adds unattended write/concurrency, clarification, and budget-consumption risk.
+Unattended scheduled model review and programmatic OpenAI/Anthropic orchestration remain deferred. Reopen them only when measured coordination burden or automated-review value justifies the extra credentials, write isolation, context duplication, retries, budget control and orchestration machinery.
 
-Programmatic OpenAI/Anthropic API orchestration is also deferred. Reopen only when measured manual coordination burden or automated-review value justifies separately metered usage, credentials, context duplication, retries, and orchestration infrastructure.
+No Specification 025 is currently justified.
 
-No Specification 025 is justified yet.
+## Maintenance rule
+
+This file should answer **what remains unresolved now**, not preserve every historical formulation of a question.
+
+When evidence materially advances a question:
+
+```text
+update its status and current unresolved core
+preserve the detailed old reasoning in research/specification/checkpoint history
+do not leave already-resolved implementation questions phrased as current unknowns
+```
+
+Live branch/checkpoint/review details belong in `docs/CURRENT_STATE.md` rather than this register.
