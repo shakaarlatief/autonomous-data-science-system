@@ -19,34 +19,48 @@
  * contract therefore must not disappear merely because a restored browser
  * state still carries that legacy value.
  *
- * Separation is owned by each actual thread row rather than only by the parent
- * grid gap. This keeps the visible space stable even when a transformed
- * canonical WorkUnit, responsive rail geometry, browser-restored state or a
- * late-mounted study stylesheet changes the surrounding list composition.
+ * Human browser geometry at Checkpoint 262 exposed a CSS Grid failure mode in
+ * the previous row-owned-margin implementation. The 16 px bottom margin was
+ * present in computed style, but the auto grid track absorbed that margin by
+ * shrinking the stretched grid item. The canonical transformed WorkUnit then
+ * painted beyond the shrunken row, leaving only ~1.9 px between visible
+ * surfaces despite a computed 16 px margin.
+ *
+ * The stable contract therefore uses an explicit inter-track gap and prevents
+ * the WorkUnit row itself from shrinking below the transformed canonical
+ * artifact's required visual footprint. The canonical WorkUnit is not resized.
  */
 html:not([data-conversation-rail="text"]) .reintegration-thread-list {
-  row-gap: 0 !important;
+  row-gap: 16px !important;
   column-gap: 0 !important;
   align-content: start;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
-  margin: 0 0 16px !important;
+  margin: 0 !important;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
 html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread {
   box-sizing: border-box;
   height: auto !important;
-  min-height: 0 !important;
-  margin: 0 0 16px !important;
+  min-height: 78px !important;
+  margin: 0 !important;
   padding: 6px 4px !important;
   overflow: visible !important;
 }
 
-html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"]:last-child,
-html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread:last-child {
-  margin-bottom: 0 !important;
+/*
+ * The accepted responsive rail renders the 92 px canonical WorkUnit at 0.74
+ * below 1450 px, giving a ~68.1 px visible surface. A 73 px minimum row plus
+ * the 16 px grid gap preserves at least ~20 px between visible surfaces while
+ * keeping the accepted WorkUnit footprint unchanged.
+ */
+@media (max-width: 1450px) {
+  html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
+  html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread {
+    min-height: 73px !important;
+  }
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"] .reintegration-thread-box,
