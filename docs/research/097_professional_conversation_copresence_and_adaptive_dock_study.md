@@ -343,3 +343,85 @@ Does the A6 inspector remain understandable when used from the compact dock?
 ```
 
 If the overall direction is good, later tuning should refine this exact candidate. If the composition still feels wrong, the next experiment should challenge the adaptive-dock family itself rather than cosmetically tuning the old 56vw two-page layout.
+
+## 13. Practical keyboard contract refinement
+
+Human review later exposed an interaction flaw in the first practical keyboard refinement.
+
+The intended contract had become:
+
+```text
+Escape
+    application Back
+
+F
+    enter or exit browser fullscreen
+
+Shift+C
+    switch Conversation between full-focus and co-present presentation
+```
+
+The first implementation correctly gave `F` an explicit fullscreen shortcut, but it did not actually remove the browser's native single-press `Escape` fullscreen exit. The code deliberately avoided `preventDefault()` while `document.fullscreenElement` was active, and the new Playwright regression mocked `document.fullscreenElement` and fullscreen methods without reproducing the browser-owned Escape behavior. Therefore an 81/81 deterministic pass did not contradict the human observation. The test was incomplete for the browser-level behavior being judged.
+
+The corrected Adaptive Dock contract is now:
+
+```text
+normal Escape press
+    application Back only
+    closes Conversation when Conversation is the active layer
+    otherwise continues to the existing Deep Dive / overlay Back recovery
+    does not exit fullscreen
+
+F
+    exclusive normal fullscreen toggle
+```
+
+The adaptive route now requests fullscreen with browser keyboard locking and also uses the Keyboard Lock API to capture `Escape` while fullscreen is active. The top-layer keyboard router always cancels the normal Escape default action in fullscreen, while still allowing the Cockpit's Back routing to execute. The lock is released when fullscreen ends.
+
+The implementation deliberately uses both mechanisms:
+
+```text
+requestFullscreen({ keyboardLock: 'browser', navigationUI: 'hide' })
+
+navigator.keyboard.lock(['Escape'])
+```
+
+The first is the current Fullscreen API keyboard-lock mode. The second is the established Chromium progressive-enhancement mechanism and provides a compatibility path when the newer fullscreen option is unsupported. Unsupported option errors fall back to ordinary `requestFullscreen()` before the explicit Keyboard Lock attempt.
+
+Reference behavior:
+
+```text
+https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen
+https://developer.chrome.com/blog/better-full-screen-mode
+```
+
+Browser security still retains an emergency escape mechanism. In Chromium, a long hold of `Escape` can leave keyboard lock/fullscreen. That safety path is intentionally not treated as an ADS shortcut. The normal press contract is the product interaction being controlled here.
+
+Corrected implementation target:
+
+```text
+6a1386a1dd5045655d38d306a3ecc1fdb4a7ffd2
+```
+
+Complete Cockpit V3 verification:
+
+```text
+workflow run  33266585890
+job           99137601843
+result        SUCCESS
+browser       Chrome for Testing 151.0.7922.34
+browser tests 81 / 81 passing
+```
+
+The strengthened fullscreen test now verifies all of the following explicitly:
+
+```text
+F requests browser fullscreen with keyboardLock=browser
+Escape is captured through the keyboard-lock seam
+Escape closes full-focus Conversation while fullscreen remains active
+another Escape in the plain Cockpit still leaves fullscreen active
+Escape can perform Deep Dive Back while fullscreen remains active
+F exits fullscreen and releases the Escape keyboard lock
+```
+
+Human browser review remains authoritative for the actual reserved-key behavior because the regression necessarily mocks fullscreen state for deterministic headless execution. The human recheck should therefore specifically confirm that a normal Escape press no longer leaves fullscreen in the user's real browser.
