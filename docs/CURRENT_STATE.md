@@ -21,71 +21,101 @@ Collaboration thread     MC-0004
 
 Repository artifacts remain authoritative across chats and models.
 
-## Current Level-2 boundary
+## Development-method boundary
 
-Checkpoint 266 refines the repository information architecture after the broader preservation audit at Research 103 / Checkpoint 265.
+Checkpoint 266 is `COMPLETE / VALIDATED`.
 
-The substantive project knowledge remains preserved. The scaling problem was **discoverability and ownership of navigation responsibilities**, not missing storage.
-
-Development Method v0.7 now separates six concerns explicitly:
+Development Method v0.7 now gives the global repository surfaces distinct owners:
 
 ```text
 README.md              stable repository landing page
 docs/README.md         repository/documentation structure and artifact roles
-CURRENT_STATE.md       sole human-readable live project state
-current_routing.json   sole machine-readable live routing pointer
-KNOWLEDGE_MAP.md       evergreen subject -> knowledge library
-CONTINUITY.md          reconstruction/recovery procedure
+CURRENT_STATE.md       human-readable live project state
+current_routing.json   machine-readable live routing pointer
+KNOWLEDGE_MAP.md       evergreen semantic subject -> knowledge library
+CONTINUITY.md          reconstruction / rotation / recovery procedure
 DEVELOPMENT_METHOD.md  method used to build, verify and preserve ADS
+MAJOR_CHANGES.md       selective structural history
 ```
 
-The Knowledge Map no longer duplicates current checkpoint, branch, CI or next-step state. It is an evergreen semantic library with exhaustive routing for every numbered Foundation, Specification and Research record. Every numbered checkpoint is also assigned to one or more subjects through validated semantic checkpoint ranges, while important checkpoints remain directly linked.
+The semantic Knowledge Map is exhaustively guarded for numbered Foundations, Specifications and Research records, with semantic checkpoint-range coverage and specialized-index reachability.
 
-`docs/README.md` is now the answer to “what kinds of files do we have and what is each one for?”
-
-### Development Method v0.7 verification model
-
-The v0.6 risk-scaled verification ladder remains:
+The canonical global-document reconciliation also completed:
 
 ```text
-V0  documentation / provenance validators
-V1  targeted regression
-V2  subsystem regression
-V3  full integrated gate
-V4  promotion / release gate
+VISION.md
+    stable high-level direction; obsolete immediate-next-step content removed
+
+PRINCIPLES.md
+    retained as stable working principles
+
+DECISIONS.md
+    retained as explicit decision/supersession ledger
+
+OPEN_QUESTIONS.md
+    reconciled through current V1 evidence, including Specification 022
+    and the accepted Source Universe boundary
+
+MAJOR_CHANGES.md
+    updated with Cockpit implementation-provenance recovery and v0.7
+
+model collaboration protocol
+    retained and aligned to current Development Method v0.7
 ```
 
-Unknown/shared blast radius still escalates to V3. Micro-iterations inside one open review question still aggregate rather than creating a checkpoint per tiny commit.
+No monolithic documentation file or heavier semantic repository database was justified.
 
-Checkpoint 266 additionally corrects the v0.6 full-Cockpit workflow invocation so a requested full gate actually expands and runs the complete Cockpit test family rather than a quoted literal glob.
+## Checkpoint 266 validation evidence
 
-## Checkpoint 266 validation status
-
-This information-architecture transition changes validation/routing machinery, so final validation is open until the following evidence is green:
+### Knowledge Map integrity
 
 ```text
-Knowledge map integrity
-    exhaustive Foundation / Specification / Research routing
-    checkpoint semantic-range coverage
-    path integrity
-    no live-state leakage back into KNOWLEDGE_MAP
-
-Current routing consistency
-    current_routing.json agrees with CURRENT_STATE.md
-
-Checkpoint metadata
-    Checkpoints 263 and 264 metadata-only repair accepted
-    current Checkpoint 266 contract valid
-
-Cockpit reintegration fidelity
-    one genuine full V3 run after correcting the full-suite invocation
+fix commit   0791eb1d0569a85aed37fdcb218b0c49835db2e9
+workflow     33256989165
+job          99112350334
+result       SUCCESS
 ```
 
-The previously reported v0.6 run that executed only 16 tests is not accepted as a V3 pass.
+The initial failure was a Markdown inline-code parser defect, not missing semantic routing.
+
+### Current routing consistency
+
+```text
+workflow     33256097893
+Windows job  99109955121   SUCCESS
+Ubuntu job   99109955151   SUCCESS
+```
+
+### Checkpoint metadata
+
+```text
+workflow     33256097922
+job          99109955176
+result       SUCCESS
+```
+
+### Genuine full Cockpit V3
+
+```text
+implementation/method target  9182483af4686037ef2fe9341c31fa0e4de31332
+workflow                      33256097920
+job                           99109955347
+browser tests                 78 / 78 PASS
+```
+
+The actual command was:
+
+```text
+npx playwright test e2e/cockpit-reintegration*.spec.ts
+```
+
+and the logs explicitly report `Running 78 tests` and `78 passed`.
+
+The earlier v0.6 run that executed only 16 tests is not accepted as V3 evidence.
 
 ## Current Cockpit product boundary remains Checkpoint 264
 
-Checkpoint 266 is a Level-2 repository/development-method change. It does not reopen or change the Cockpit product design.
+The repository/development-method reconciliation did not reopen or change the Cockpit product design.
 
 Latest human-confirmed state:
 
@@ -139,7 +169,7 @@ http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptiv
 
 ## Held product/scientific decisions
 
-No Cockpit semantic/product decision is reopened by this repository architecture work. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
+No Cockpit semantic/product decision is reopened by Checkpoint 266. The held source-faithful Phase-C mechanism set, Quiet Graphite Conversation model, Boxes/Text navigation, A6, current-process Focus, Grid/X5/Deep Dive access, state preservation, L0 provisional status, semantic-zoom deferral and exact implementation-provenance architecture remain unchanged.
 
 Implementation provenance remains governed by:
 
@@ -156,9 +186,9 @@ Production `/cockpit` remains untouched.
 
 ## Exact next step
 
-First close Checkpoint 266's validation gates.
+The Level-2 repository information-architecture work is complete.
 
-Then the next product actor remains the human reviewer:
+The next product actor is the human reviewer:
 
 ```text
 pull latest v1-cockpit-design-exploration
@@ -169,3 +199,5 @@ confirm equal visible footprint and correct selected-surface frame
 ```
 
 If correct, resume the Adaptive Conversation Dock review immediately.
+
+A non-blocking Claude review of the finalized repository information architecture may run in parallel against an exact frozen commit. It must not be treated as current authority unless its findings are later dispositioned through normal repository governance.

@@ -1,10 +1,10 @@
 # Checkpoint 266: Repository Information Architecture and Exhaustive Knowledge Routing
 
 **Date:** 2026-08-29  
-**Status:** IMPLEMENTED / FINAL VALIDATION OPEN  
+**Status:** COMPLETE / VALIDATED  
 **Checkpoint class:** DEVELOPMENT_METHOD / KNOWLEDGE_ARCHITECTURE / CONTINUITY  
 **Project stage:** V1 next-generation Project Cockpit design exploration with repository-scale preservation architecture refinement  
-**Scope:** Separates structural, live-state and semantic navigation; introduces exhaustive durable-family topic routing and checkpoint-range coverage; repairs validation ownership; and carries forward the final v0.6 verification closure without changing the active Cockpit product decision.  
+**Scope:** Separates structural, live-state and semantic navigation; introduces exhaustive durable-family topic routing and checkpoint-range coverage; repairs validation ownership and full-gate integrity; and reconciles the global canonical documents without changing the active Cockpit product decision.  
 **Authority:** Governing Level-2 development-method checkpoint. Product semantics remain governed by existing accepted specifications/foundations and the still-open Checkpoint 264 human review.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
@@ -22,7 +22,7 @@ What kinds of files exist and what is each for?
 What knowledge do we have about a subject?
 ```
 
-The audit confirmed that the underlying preservation layers remain strong, but the global navigation surfaces still overlapped enough to create future drift risk.
+The audit confirmed that the underlying preservation layers remained strong, but the global navigation surfaces still overlapped enough to create future drift risk.
 
 ## 2. Research basis
 
@@ -32,7 +32,7 @@ Research 104 performed the repository-scale follow-up audit across:
 canonical global docs
 all 24 numbered Foundations
 all 24 numbered Specifications
-all existing numbered Research records
+all numbered Research records
 checkpoint policy/inventory
 specialized indexes
 current routing / Knowledge Map validators
@@ -43,8 +43,8 @@ Result:
 
 ```text
 substantive preservation    strong
-structural discoverability  needs clearer ownership
-semantic discoverability    needs exhaustive durable-family routing
+structural discoverability  required clearer ownership
+semantic discoverability    required exhaustive durable-family routing
 current-state duplication   unnecessary and risky
 heavy semantic database     not justified
 ```
@@ -68,7 +68,7 @@ MAJOR_CHANGES.md       selective structural history
 
 The v0.6 V0-V4 risk-scaled verification ladder and micro-checkpoint aggregation remain accepted.
 
-## 4. New structural guide
+## 4. Structural guide
 
 Added:
 
@@ -76,20 +76,9 @@ Added:
 docs/README.md
 ```
 
-It defines the purpose, authority and lifecycle of:
+It defines the purpose, authority and lifecycle of canonical global docs, foundations, specifications, research, checkpoints, specialized indexes, code, tests, schemas, migrations, scripts, experiments, Git and CI.
 
-```text
-canonical global docs
-foundations
-specifications
-research
-checkpoints
-specialized domain indexes
-src / frontend / schemas / migrations / scripts / tests / experiments
-Git and CI roles
-```
-
-This is now the canonical answer to “what kinds of files do we have and what are they for?”
+This is the canonical answer to “what kinds of files do we have and what are they for?”
 
 ## 5. Knowledge Map becomes semantic-only
 
@@ -111,7 +100,7 @@ A source may belong to multiple topics.
 
 ## 6. Exhaustive durable-family routing
 
-The Knowledge Map now explicitly routes every numbered file in:
+The Knowledge Map explicitly routes every numbered file in:
 
 ```text
 docs/foundations/
@@ -119,39 +108,13 @@ docs/specifications/
 docs/research/
 ```
 
-This converts the map from a manually helpful index into a mechanically completeness-guarded semantic library for the project's primary durable knowledge families.
+Every numbered checkpoint is additionally assigned through validated `KM-CHECKPOINT-RANGE` records, while important checkpoints remain directly linked under relevant subjects.
 
-## 7. Scalable checkpoint routing
+Specialized indexes remain first-class retrieval surfaces and are routed rather than duplicated.
 
-Every numbered checkpoint is semantically assigned through validated `KM-CHECKPOINT-RANGE` records.
+## 7. Validation architecture
 
-This avoids two bad extremes:
-
-```text
-no checkpoint semantic routing
-    -> history becomes hard to rediscover by topic
-
-hundreds of visible checkpoint links
-    -> Knowledge Map becomes a duplicate chronological directory
-```
-
-Important checkpoints remain directly linked under relevant topics; exact chronology remains in `docs/checkpoints/`, specialized ledgers and Git.
-
-## 8. Specialized indexes retained
-
-The global map continues to route into, rather than duplicate:
-
-```text
-docs/methodological_knowledge/COVERAGE_MAP.md
-docs/cockpit/PHASE_C_DECISION_LEDGER.md
-docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-docs/model_collaboration/REVIEW_INBOX.md
-```
-
-## 9. Validation changes
-
-`check_knowledge_map.py` is strengthened to validate:
+`check_knowledge_map.py` now validates:
 
 ```text
 stable topic IDs
@@ -166,7 +129,7 @@ specialized indexes reachable
 live current-state markers absent from KNOWLEDGE_MAP
 ```
 
-`check_current_routing.py` is simplified so live synchronization is required only between:
+`check_current_routing.py` requires live synchronization only between:
 
 ```text
 current_routing.json
@@ -176,13 +139,54 @@ current checkpoint file existence
 
 The validator no longer forces live state into root README or Knowledge Map.
 
-## 10. Historical metadata repair
+## 8. Canonical global-document reconciliation
 
-Checkpoints 263 and 264 receive metadata-only header repair to satisfy the current provider-neutral contract.
+The closure audit also checked the purpose and currentness of the global canonical files rather than assuming that correct architecture implied current content.
 
-Their substantive historical content is unchanged.
+Retained without structural redesign:
 
-## 11. v0.6 full-gate invocation defect
+```text
+DECISIONS.md
+    explicit accepted project-level decisions and supersession history
+
+PRINCIPLES.md
+    stable cross-project working principles
+
+DEVELOPMENT_METHOD.md
+    operational Level-2 method
+
+CONTINUITY.md
+    reconstruction/rotation/recovery procedure
+```
+
+Reconciled because current canonical content had become stale:
+
+```text
+VISION.md
+    removed obsolete immediate-next-experiment/current-state material
+    restored stable long-term system direction
+    incorporated durable Source Universe and collaboration architecture
+
+OPEN_QUESTIONS.md
+    updated through Specifications 021/022 and current Knowledge/Source Universe state
+    corrected Q-022 from unresolved source persistence to the actual remaining
+    source-vault and source-to-accepted-knowledge questions
+
+MAJOR_CHANGES.md
+    added Cockpit exact-implementation-provenance recovery
+    added Development Method v0.7 information-architecture transition
+
+model_collaboration/README.md
+    aligned protocol authority wording with current Development Method v0.7
+```
+
+The audit did not justify merging these files. Their distinct jobs remain useful.
+
+## 9. Historical metadata repair
+
+Checkpoints 263 and 264 received metadata-only header repair to satisfy the provider-neutral contract. Their substantive historical content was unchanged.
+
+## 10. Full-gate invocation defect and repair
 
 The first forced-full v0.6 Cockpit workflow was inspected and found to have executed only 16 tests, not the expected complete 78-test family.
 
@@ -196,9 +200,69 @@ quoted glob from selector output
 
 That green run is not accepted as V3 evidence.
 
-The workflow now has an explicit full-mode command and a separate narrowed-mode command. This method transition carries forward the requirement for one genuine full V3 pass.
+The workflow was repaired to separate explicit full-mode execution from narrowed-mode execution. Verification tier is now determined by what tests actually executed.
 
-## 12. Product boundary unchanged
+## 11. Final validation evidence
+
+All required closure gates are satisfied.
+
+### Knowledge Map integrity
+
+The first v0.7 run exposed one parser defect only: a Markdown inline-code backtick was retained on a routed path token. The parser was corrected without changing the semantic map.
+
+Final evidence:
+
+```text
+fix commit   0791eb1d0569a85aed37fdcb218b0c49835db2e9
+workflow     33256989165
+job          99112350334
+result       SUCCESS
+```
+
+### Current routing consistency
+
+```text
+workflow     33256097893
+Windows job  99109955121   SUCCESS
+Ubuntu job   99109955151   SUCCESS
+```
+
+### Checkpoint metadata
+
+```text
+workflow     33256097922
+job          99109955176
+result       SUCCESS
+```
+
+### Genuine full Cockpit V3
+
+The repaired full-mode command executed the actual complete family:
+
+```text
+npx playwright test e2e/cockpit-reintegration*.spec.ts
+```
+
+Evidence:
+
+```text
+implementation/method target  9182483af4686037ef2fe9341c31fa0e4de31332
+workflow                      33256097920
+job                           99109955347
+browser tests                 78 / 78 PASS
+```
+
+The logs explicitly report `Running 78 tests` and `78 passed`.
+
+Checkpoint 266 is therefore closed as `COMPLETE / VALIDATED`.
+
+## 12. Relationship to Checkpoint 265
+
+Checkpoint 265 was a valid intermediate repair: it restored broad topic routing and introduced risk-scaled verification.
+
+Its two-layer Knowledge Map and unfinished validation boundary are refined and superseded by the stronger v0.7 architecture here. No scientific/product conclusion from Checkpoint 265 is rewritten.
+
+## 13. Product boundary unchanged
 
 This is a Level-2 repository/development-method checkpoint.
 
@@ -220,25 +284,32 @@ If human-confirmed, resume Checkpoint 258 / Research 097 Adaptive Conversation D
 
 Production `/cockpit` remains untouched.
 
-## 13. Relationship to Checkpoint 265
+## 14. Promotion audit
 
-Checkpoint 265 was a valid intermediate repair: it restored broad topic routing and introduced risk-scaled verification.
-
-Its two-layer Knowledge Map and final validation boundary are refined/superseded here before closure. Checkpoint 265's pending validation obligation is therefore rolled forward to this stronger checkpoint rather than paid twice.
-
-No separate Checkpoint 267 should be created merely to fix validation details inside this same Level-2 boundary.
-
-## 14. Final validation gate
-
-Required closure evidence:
+Promoted/current:
 
 ```text
-Knowledge map integrity           PASS
-Current routing consistency       PASS
-Checkpoint metadata               PASS
-Cockpit reintegration fidelity    genuine full V3 PASS
+Development Method v0.7
+docs/README.md structural guide
+semantic-only exhaustive KNOWLEDGE_MAP
+reconciled VISION / OPEN_QUESTIONS / MAJOR_CHANGES
+risk-scaled verification with actual-execution V3 integrity
+Research 104
+Checkpoint 266
 ```
 
-The full Cockpit gate is forced on the implementation commit because the verification workflow itself changes.
+Not promoted:
 
-After these gates pass, this checkpoint may be marked COMPLETE with a documentation-only V0 closure update. The Cockpit product human-review state remains separate.
+```text
+semantic/vector repository database
+one monolithic canonical document
+per-commit checkpointing
+new Cockpit product decision
+new scientific conclusion from Specification 022
+```
+
+## 15. Exact continuation
+
+The Level-2 architecture review is complete.
+
+The next product action remains the already-open human Checkpoint 264 visual recheck. A second-model architecture review may be opened as a non-blocking collaboration obligation against this frozen v0.7 result; such a review does not reopen Checkpoint 266 unless it produces a substantive finding that warrants revision.
