@@ -53,10 +53,6 @@ html[data-conversation-integration="adaptive-dock"][data-deep-focus="focused"][d
   border-right: 1px solid rgba(185, 206, 240, 0.10);
 }
 
-html[data-conversation-integration="adaptive-dock"][data-deep-focus="focused"][data-conversation-open="true"][data-conversation-presentation="copresent"][data-conversation-dock-resizing="false"] .reintegration-specialist-layer {
-  transition: right 120ms ease;
-}
-
 /* -------------------------------------------------------------------------- */
 /* The resize edge should feel discoverable like a professional split pane.    */
 /* -------------------------------------------------------------------------- */

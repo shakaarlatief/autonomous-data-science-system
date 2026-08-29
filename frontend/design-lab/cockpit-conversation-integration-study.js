@@ -331,7 +331,10 @@ function installResizeBehavior(layer, handle) {
     return next
   }
 
-  const currentWidth = () => layer.getBoundingClientRect().width
+  const currentRequestedWidth = () => {
+    const authored = Number.parseFloat(root.style.getPropertyValue('--adaptive-conversation-dock-width'))
+    return Number.isFinite(authored) ? authored : layer.getBoundingClientRect().width
+  }
 
   handle.setAttribute('aria-valuemin', String(minimumDockWidth()))
   handle.setAttribute('aria-valuemax', String(maximumDockWidth()))
@@ -369,7 +372,7 @@ function installResizeBehavior(layer, handle) {
     }
 
     const delta = event.key === 'ArrowLeft' ? 40 : -40
-    applyWidth(currentWidth() + delta)
+    applyWidth(currentRequestedWidth() + delta)
   })
 
   window.addEventListener('resize', clampAuthoredDockWidth, { passive: true })
