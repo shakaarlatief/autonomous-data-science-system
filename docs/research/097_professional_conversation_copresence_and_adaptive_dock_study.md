@@ -425,3 +425,117 @@ F exits fullscreen and releases the Escape keyboard lock
 ```
 
 Human browser review remains authoritative for the actual reserved-key behavior because the regression necessarily mocks fullscreen state for deterministic headless execution. The human recheck should therefore specifically confirm that a normal Escape press no longer leaves fullscreen in the user's real browser.
+
+## 14. Co-present Project tools edge-utility-strip refinement
+
+After the practical keyboard behavior was accepted for continuation, human review moved to the visual relationship between Conversation and the retained Project Grid tool rail.
+
+The supplied whole-product screenshot exposed a different hierarchy problem from the original nested Conversation rail problem. Conversation itself now behaved as a useful dock, but the Project tool rail still appeared as a rounded, inset floating card with its own top mark, internal stack and surrounding Grid margin. When placed immediately beside the already substantial Conversation dock, the composition read as:
+
+```text
+Project Grid
++
+Conversation dock
++
+third floating mini-application / tool card
+```
+
+That is unnecessarily panel-heavy for a professional workbench. The tools are persistent project utilities, not a third workspace.
+
+### Current adaptive candidate
+
+Only while Conversation is co-present on the opt-in Adaptive Dock route, the existing real Project tool rail is re-presented as a **flush application-edge utility strip**.
+
+```text
+compact width        56px
+expanded clarity     196px
+vertical ownership   full viewport height
+right edge           flush at x = viewport right
+outer card radius    none
+outer floating gap   none
+Conversation seam    direct adjoining boundary
+control semantics    unchanged
+control ordering     unchanged
+canonical rail       unchanged outside co-present Adaptive Dock
+```
+
+The same controls remain mounted and operational. This is therefore a presentation refinement, not a new project-tool system.
+
+The compact state uses restrained icon targets and hover labels. The existing clarity control still widens the same strip and reveals labels when explicit readability is needed. Search, Appearance and Focus surfaces remain invoked panels and stay attached immediately to the left of the utility strip.
+
+The important hierarchy is now:
+
+```text
+primary Project work surface
+secondary resizable Conversation dock
+thin application-level Project utility edge
+```
+
+rather than three visually independent cards.
+
+### Isolation and preserved behavior
+
+The canonical no-query Project Grid rail is deliberately untouched. It retains the current accepted flat compact floating composition from Research 095/096 when Conversation is not co-present.
+
+The edge-strip refinement is restricted to:
+
+```text
+conversation=adaptive-dock
+Conversation open
+presentation=copresent
+Deep Dive not owning the work surface
+```
+
+Deep Dive + Conversation continues to use its dedicated split-workspace composition, where the project rail is not a competing third surface.
+
+### Implementation and targeted verification
+
+Implementation artifacts:
+
+```text
+frontend/design-lab/cockpit-practical-workspace-study.css
+frontend/e2e/cockpit-reintegration-conversation-integration-study.spec.ts
+frontend/e2e/cockpit-reintegration-adaptive-edge-rail.spec.ts
+```
+
+Current implementation/test head:
+
+```text
+b044dfb97039e178b7f5802e35c44a449bcca232
+```
+
+Existing Adaptive Conversation subsystem regression:
+
+```text
+workflow run  33267782088
+job           99140848962
+verification  V1 targeted
+result        SUCCESS
+browser tests 6 / 6 passing
+```
+
+Dedicated edge-utility-strip regression:
+
+```text
+workflow run  33267858446
+job           99141018564
+verification  V1 targeted
+result        SUCCESS
+browser tests 3 / 3 passing
+```
+
+The dedicated checks establish:
+
+```text
+compact rail is flush with the viewport top/right/bottom
+compact width is approximately 56px
+Conversation touches the tool strip at one direct seam
+floating-card border radius is removed in co-presence
+controls retain usable target height
+clarity expansion widens the strip to approximately 196px
+Conversation tracks the widened strip rather than overlapping it
+labels remain available in clarity mode
+standalone canonical Project Grid rail remains unchanged
+```
+
+A new full V3 gate is intentionally deferred at this visual-iteration stage. The relevant Conversation and edge-rail regressions are green, and the repository's risk-scaled verification method calls for targeted evidence during iteration, followed by a wider/full gate at a meaningful acceptance or promotion boundary. Human visual review remains the next authority for whether this new rail composition is actually better.
