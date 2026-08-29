@@ -33,8 +33,23 @@ html:not([data-conversation-rail="text"]) .reintegration-thread-list {
   align-content: start;
 }
 
+/*
+ * Keep the project-general conversation as a complete first artifact at short
+ * desktop heights. Its 58 px artifact plus the existing 7 px thread-item
+ * padding on each side requires a 74 px row before the inter-track gap begins.
+ */
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: 74px !important;
   margin: 0 !important;
+  padding: 7px !important;
+  overflow: visible !important;
+}
+
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] .reintegration-project-thread-artifact {
+  box-sizing: border-box;
+  min-height: 58px;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
