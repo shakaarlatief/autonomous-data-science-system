@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 260  
+**Checkpoint:** 261  
 **Date:** 2026-08-29  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-09
-Conversation title       09 - Project Cockpit Design Exploration
+Interaction session      chatgpt-10
+Conversation title       10 - Project Cockpit Design Exploration
 Primary collaborator     ChatGPT
 Collaboration thread     MC-0004
 ```
@@ -26,11 +26,22 @@ Repository artifacts remain authoritative across chats and models.
 # Current active boundary
 
 ```text
+docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
+
 docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
 docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
 ```
 
-Checkpoint 259's human confirmation produced a split result:
+Checkpoint 261 is a continuity/provenance reconciliation only. The previous ChatGPT conversation reached its length limit and work continued in a new conversation, but the interaction-session identity was not rotated. The current conversation is now canonically:
+
+```text
+chatgpt-10
+10 - Project Cockpit Design Exploration
+```
+
+Post-boundary artifacts from Research 097 / Checkpoint 258 onward that incorrectly carried `chatgpt-09` were corrected. Pre-boundary ChatGPT-09 provenance remains unchanged.
+
+The product boundary itself is still Checkpoint 260. Its human confirmation produced:
 
 ```text
 current-process Focus
@@ -42,7 +53,7 @@ Conversation Boxes
 
 The project owner's screenshots show the canonical Conversation WorkUnit artifacts still stacking as visually joined objects. That direct visual evidence overrides the previous assumption that a green 73/73 browser gate had closed the Conversation spacing defect.
 
-The active gate is now narrow: verify the new row-owned Conversation spacing locally. Adaptive Conversation Dock product judgment remains paused only until this underlying rail presentation is trustworthy again.
+The active product gate is narrow: verify the new row-owned Conversation spacing locally. Adaptive Conversation Dock product judgment remains paused only until this underlying rail presentation is trustworthy again.
 
 Production `/cockpit` remains untouched.
 
