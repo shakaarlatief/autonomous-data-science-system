@@ -186,10 +186,19 @@ html[data-focus-edit="on"] .expansion-practical-node[data-process-scope="current
   border-color: rgba(142, 169, 255, 0.30);
 }
 
-/* Accepted M09 stronger view lens. This is presentation only. */
+/*
+ * Accepted M09 stronger view lens. These are composition guarantees and must
+ * survive route-specific study styles that may be mounted later. !important is
+ * intentionally limited to the accepted focus opacity/filter contract.
+ */
 html[data-process-focus="focused"] .expansion-practical-node[data-process-scope="context"] {
-  opacity: 0.27;
-  filter: saturate(0.38) brightness(0.74);
+  opacity: 0.27 !important;
+  filter: saturate(0.38) brightness(0.74) !important;
+}
+
+html[data-process-focus="focused"] .expansion-practical-node[data-process-scope="current"] {
+  opacity: 1 !important;
+  filter: none !important;
 }
 
 html[data-process-focus="focused"] .expansion-practical-node[data-process-scope="context"] .rest-spill,
@@ -200,13 +209,13 @@ html[data-process-focus="focused"] .expansion-practical-node[data-process-scope=
 }
 
 html[data-process-focus="focused"] .expansion-practical-node[data-process-scope="context"].is-hovered {
-  opacity: 0.72;
-  filter: saturate(0.72) brightness(0.94);
+  opacity: 0.72 !important;
+  filter: saturate(0.72) brightness(0.94) !important;
 }
 
 html[data-process-focus="focused"] .expansion-practical-node[data-process-scope="context"].is-hovered .node-surface {
-  opacity: 0.90;
-  filter: saturate(0.82) brightness(0.97);
+  opacity: 0.90 !important;
+  filter: saturate(0.82) brightness(0.97) !important;
 }
 
 html[data-process-focus="focused"] .expansion-practical-node[data-process-scope="context"].is-hovered .rest-spill,
@@ -217,25 +226,25 @@ html[data-process-focus="focused"] .expansion-practical-node[data-process-scope=
 
 /* Editing temporarily raises contextual nodes so membership remains operable. */
 html[data-process-focus="focused"][data-focus-edit="on"] .expansion-practical-node[data-process-scope="context"] {
-  opacity: 0.58;
-  filter: saturate(0.60) brightness(0.88);
+  opacity: 0.58 !important;
+  filter: saturate(0.60) brightness(0.88) !important;
 }
 
 html[data-process-focus="focused"][data-focus-edit="on"] .expansion-practical-node[data-process-scope="context"].is-hovered {
-  opacity: 0.82;
-  filter: saturate(0.78) brightness(0.96);
+  opacity: 0.82 !important;
+  filter: saturate(0.78) brightness(0.96) !important;
 }
 
 html[data-process-focus="focused"] .reintegration-relation.is-context-edge {
-  opacity: 0.16;
+  opacity: 0.16 !important;
 }
 
 html[data-process-focus="focused"] .reintegration-relation.is-current-edge {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 html[data-process-focus="focused"] .reintegration-relation.is-context-edge.is-related {
-  opacity: 0.48;
+  opacity: 0.48 !important;
 }
 
 html[data-reduced="on"] .reintegration-focus-membership-toggle,

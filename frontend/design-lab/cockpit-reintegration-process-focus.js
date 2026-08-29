@@ -19,11 +19,13 @@ const root = document.documentElement
 const stage = document.querySelector('#reintegration-stage')
 const tools = document.querySelector('.reintegration-tools')
 const relationSvg = document.querySelector('#reintegration-relations')
+const nodeContainer = document.querySelector('#expansion-practical-nodes')
 const appearancePanel = document.querySelector('#reintegration-appearance-panel')
 const appearanceToggle = document.querySelector('#appearance-controls-toggle')
 
 const NODE_SELECTOR = '.expansion-practical-node'
 const DEFAULT_FOCUS_KEYS = new Set(['q', 'i', 'v'])
+const focusMembership = new Set(DEFAULT_FOCUS_KEYS)
 
 root.dataset.processFocus = root.dataset.processFocus || 'context'
 root.dataset.focusEdit = root.dataset.focusEdit || 'off'
@@ -35,6 +37,11 @@ installMembershipControls()
 syncRelationFocusClasses()
 syncFocusUi()
 
+/*
+ * The stylesheet is now statically linked by the integrated browser so focus
+ * presentation is ready before interaction. Keep this installer as a defensive
+ * fallback for historical or isolated fixture entry points.
+ */
 function installStylesheet() {
   if (document.querySelector('link[href="./cockpit-reintegration-process-focus.css"]')) return
   const link = document.createElement('link')
@@ -96,6 +103,8 @@ function mountFocusControl() {
   for (const button of panel.querySelectorAll('[data-process-focus-mode]')) {
     button.addEventListener('click', () => {
       root.dataset.processFocus = button.dataset.processFocusMode === 'focused' ? 'focused' : 'context'
+      syncNodeFocusMembership()
+      syncRelationFocusClasses()
       syncFocusUi()
     })
   }
@@ -126,9 +135,22 @@ function setFocusPanelOpen(open) {
   }
 }
 
+/*
+ * Membership is owned by one explicit set rather than by whichever DOM nodes
+ * happen to be mounted at the moment. This matters because the integrated
+ * Cockpit can rebuild WorkUnit DOM while preserving project semantics. Newly
+ * mounted nodes must immediately recover the same view-composition membership.
+ */
 function applyDefaultMembership() {
+  focusMembership.clear()
+  for (const key of DEFAULT_FOCUS_KEYS) focusMembership.add(key)
+  syncNodeFocusMembership()
+}
+
+function syncNodeFocusMembership() {
   for (const node of document.querySelectorAll(NODE_SELECTOR)) {
-    node.dataset.processScope = DEFAULT_FOCUS_KEYS.has(node.dataset.nodeKey || '') ? 'current' : 'context'
+    const key = node.dataset.nodeKey || ''
+    node.dataset.processScope = focusMembership.has(key) ? 'current' : 'context'
     syncMembershipControl(node)
   }
 }
@@ -149,8 +171,13 @@ function installMembershipControls() {
     button.addEventListener('pointerdown', (event) => event.stopPropagation())
     button.addEventListener('click', (event) => {
       event.stopPropagation()
-      node.dataset.processScope = node.dataset.processScope === 'current' ? 'context' : 'current'
-      syncMembershipControl(node)
+      const key = node.dataset.nodeKey || ''
+      if (!key) return
+
+      if (focusMembership.has(key)) focusMembership.delete(key)
+      else focusMembership.add(key)
+
+      syncNodeFocusMembership()
       syncRelationFocusClasses()
       syncFocusUi()
     })
@@ -212,6 +239,21 @@ function syncFocusUi() {
 if (relationSvg && 'MutationObserver' in window) {
   const relationObserver = new MutationObserver(() => syncRelationFocusClasses())
   relationObserver.observe(relationSvg, { childList: true, subtree: false })
+}
+
+/*
+ * WorkUnit carriers may also be replaced while the project state itself remains
+ * unchanged. Recover focus scope and membership controls whenever that happens,
+ * then resynchronize relation recession from the repaired node state.
+ */
+if (nodeContainer && 'MutationObserver' in window) {
+  const nodeObserver = new MutationObserver(() => {
+    syncNodeFocusMembership()
+    installMembershipControls()
+    syncRelationFocusClasses()
+    syncFocusUi()
+  })
+  nodeObserver.observe(nodeContainer, { childList: true, subtree: false })
 }
 
 /* Panels are bounded view surfaces. Deep focus or Conversation takes ownership. */
