@@ -55,7 +55,7 @@ html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread
   height: auto !important;
   min-height: 78px !important;
   margin: 0 !important;
-  padding: 6px 4px !important;
+  padding: 6px 4px 7px !important;
   overflow: visible !important;
 }
 
@@ -77,11 +77,19 @@ html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-active {
   background: transparent !important;
 }
 
-html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"].is-active .reintegration-project-thread-artifact {
-  border-color: color-mix(in srgb, var(--cq-accent) 31%, rgba(119, 137, 160, 0.31));
+/*
+ * Use one final selected-surface treatment for both object families. Earlier
+ * source layers serialize their equivalent color mixes through different color
+ * spaces; the late integrity layer removes that presentation drift as well as
+ * the differently sized outer project-row frame.
+ */
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"].is-active .reintegration-project-thread-artifact,
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"].is-active .conversation-canonical-node .node-surface,
+html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread.is-active .conversation-canonical-node .node-surface {
+  border-color: color-mix(in srgb, var(--cq-accent) 31%, rgba(119, 137, 160, 0.31)) !important;
   box-shadow:
     0 8px 23px rgba(0, 0, 0, 0.18),
-    0 0 0 1px color-mix(in srgb, var(--cq-accent) 8%, transparent);
+    0 0 0 1px color-mix(in srgb, var(--cq-accent) 8%, transparent) !important;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
