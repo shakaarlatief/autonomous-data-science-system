@@ -1,11 +1,22 @@
 /*
- * Keep the Gen 2 direct-manipulation grip attached to the stationary Cockpit
- * edge while the instrument surface deploys around it.
+ * Cockpit edge-surface late mounting.
  *
- * Reparenting preserves the listeners already installed on the real grip.
- * A MutationObserver is used because the Gen 2 study itself is dynamically
- * imported by the product-surface controller.
+ * Two responsibilities currently live here because this module is loaded after
+ * the product-surface controller has moved the real Cockpit controls into their
+ * final stage-owned container:
+ *
+ *   1. preserve the historical Gen 2 fixed-edge grip correction when a Gen 2
+ *      study is explicitly requested;
+ *   2. mount the current flat Project Grid rail on the canonical no-query route.
+ *
+ * The second responsibility removes `?edge=angled` from the current product
+ * review URL without reimplementing the rail. The existing historical angle
+ * source is still reused as implementation plumbing, and Checkpoints 255/256
+ * flatten it into the current normal-2D presentation. Explicit `edge=` study
+ * routes remain untouched.
  */
+
+mountCurrentFlatRailOnCanonicalRoute()
 
 const mount = () => {
   const rig = document.querySelector('.cockpit-edge-rig')
@@ -23,4 +34,22 @@ if (!mount() && 'MutationObserver' in window) {
     observer.disconnect()
   })
   observer.observe(document.documentElement, { childList: true, subtree: true })
+}
+
+function mountCurrentFlatRailOnCanonicalRoute() {
+  const params = new URLSearchParams(window.location.search)
+  if (params.has('edge')) return
+  if (document.querySelector('.cockpit-angled-rail-rig')) return
+
+  if (!document.querySelector('link[data-current-flat-rail-source]')) {
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.href = './cockpit-spatial-rail-study-angle.css'
+    link.dataset.currentFlatRailSource = 'true'
+    document.head.appendChild(link)
+  }
+
+  import('./cockpit-spatial-rail-study-angle.js').catch((error) => {
+    console.error('Current flat Cockpit rail failed to load', error)
+  })
 }
