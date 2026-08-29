@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-29  
-**Current checkpoint:** 258  
+**Current checkpoint:** 259  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,9 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/259_cockpit_presentation_state_integrity_recovery.md
+docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
 
 docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
 docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
@@ -41,11 +44,11 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                258
+checkpoint                259
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          Adaptive Conversation Dock whole-product human review
+current boundary          presentation-state integrity human confirmation, then Adaptive Conversation Dock review
 ```
 
 ---
@@ -58,13 +61,13 @@ Primary browser:
 frontend/design-lab/cockpit-reintegration.html
 ```
 
-Accepted current substrate:
+Normal current substrate:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-Current opt-in review candidate:
+Adaptive Conversation Dock candidate:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
@@ -74,12 +77,11 @@ Route roles:
 
 ```text
 plain route
-    accepted Checkpoint 256 / 257 continuation substrate
-    adaptive Conversation study absent
+    current source-faithful whole-product substrate
 
 ?conversation=adaptive-dock
     current professional co-present Conversation candidate
-    human review open
+    review resumes after Checkpoint 259 stability confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -90,58 +92,58 @@ explicit ?edge=... / ?rail=...
 
 ---
 
-# Checkpoint 258 boundary
+# Checkpoint 259 presentation-integrity recovery
 
-The project owner accepted the previous Conversation spacing and current flat-rail control-set corrections for continuation.
+Human review found two intermittent failures in already-held surfaces before Adaptive Dock judgment continued.
 
-Accepted continuation values/state:
+## Conversation Boxes
 
-```text
-Conversation list gap                         16px
-Conversation WorkUnit row padding             6px top + bottom
-Fullscreen current flat rail                  present
-Expand selected WorkUnit current flat rail    absent
-Hide project HUD current flat rail            absent
-current-process Focus                          unchanged / working
-live Deep Dive topology compass               carried forward
-```
-
-The newly opened question is only the professional composition of the already-held Conversation Workspace with active Cockpit work.
-
----
-
-# Adaptive Conversation Dock study
-
-Research 097 diagnoses the previous co-present failure as a hierarchy problem:
+Accepted values remain:
 
 ```text
-wide Conversation surface
-    + permanently visible Conversation thread rail
-    + long-form transcript
-    -> visually resembles a second full application beside the Cockpit
+16px list row gap
+6px top/bottom structural WorkUnit-row padding
 ```
 
-The current review candidate retains the source-faithful full-focus Workspace but changes co-present presentation to:
+Research 098 identified selector drift:
 
 ```text
-compact right secondary dock
-resizable left edge
-Cockpit retains majority of visible width
-Threads invokes the same Boxes/Text rail as a drawer
-A6 becomes invoked inspector sheet in compact co-presence
-project-aware composer retained
+current renderer           data-thread-scope="work"
+stale structural selector  .is-workunit-thread
 ```
 
-Current implementation:
+and an avoidable dependency on a late-mounted rail-study stylesheet.
+
+Current recovery artifacts:
 
 ```text
-frontend/design-lab/cockpit-conversation-integration-study.css
-frontend/design-lab/cockpit-conversation-integration-study.js
-frontend/design-lab/cockpit-spatial-rail-study-gen2-anchor.js
-frontend/e2e/cockpit-reintegration-conversation-integration-study.spec.ts
+frontend/design-lab/cockpit-reintegration-presentation-integrity.css
+frontend/design-lab/cockpit-reintegration-review-256.css
+frontend/design-lab/cockpit-reintegration.html
 ```
 
-The ordinary route intentionally remains unchanged until human acceptance.
+The accepted spacing guarantee is now statically present and targets the actual current WorkUnit-row identity. Historical `.is-workunit-thread` remains only as a compatibility fallback.
+
+## Current-process Focus
+
+Research 098 identified lifecycle asymmetry:
+
+```text
+node membership      initialized once
+relation recession   continuously resynchronized
+```
+
+Current recovery artifacts:
+
+```text
+frontend/design-lab/cockpit-reintegration-process-focus.js
+frontend/design-lab/cockpit-reintegration-process-focus.css
+frontend/design-lab/cockpit-reintegration.html
+```
+
+Focus now owns membership independently of DOM instances, repairs replacement WorkUnit carriers, restores membership controls, resynchronizes relation classes, statically loads Focus styling and protects the accepted recession contract against later study-style precedence.
+
+M09 semantics are unchanged.
 
 ---
 
@@ -150,19 +152,66 @@ The ordinary route intentionally remains unchanged until human acceptance.
 Implementation target:
 
 ```text
-00957b684cbc57dad11561f7ed262faf1bba4383
+0374d624ec0e88d65060fb2424ce18291ca40792
 ```
 
 Complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33238181528
-job           99062775945
+workflow run  33240152004
+job           99067985262
 result        SUCCESS
-browser tests 71 / 71 passing
+browser tests 73 / 73 passing
 ```
 
-The three new tests cover adaptive-study isolation, compact-dock/thread-drawer behavior and source-state-safe resize/full-focus restoration. All previous 68 source-faithful Cockpit tests remain green.
+New regression surface:
+
+```text
+frontend/e2e/cockpit-reintegration-presentation-integrity.spec.ts
+```
+
+It verifies:
+
+```text
+Adaptive full-focus / co-present / Threads-drawer Conversation spacing
+Boxes -> Text -> Boxes spacing stability
+static Focus stylesheet readiness
+repeated process-focus switching
+node/relation recession synchronization
+WorkUnit carrier replacement and automatic focus-membership recovery
+```
+
+All previous 71 tests remain green.
+
+---
+
+# Adaptive Conversation Dock study remains open
+
+Research 097 diagnoses the old co-present composition as a hierarchy problem:
+
+```text
+wide Conversation surface
+    + permanently visible Conversation thread rail
+    + long-form transcript
+    -> resembles a second full application beside the Cockpit
+```
+
+The opt-in candidate remains:
+
+```text
+full focus
+    source-faithful Quiet Graphite Workspace
+    persistent Boxes/Text rail
+
+co-present
+    compact right secondary dock
+    resizable left edge
+    Cockpit retains majority visible width
+    Threads invokes the same Boxes/Text rail as a drawer
+    A6 becomes an invoked inspector sheet
+```
+
+Checkpoint 259 neither accepts nor rejects that product-design direction. It repairs the substrate required to judge it reliably.
 
 ---
 
@@ -217,10 +266,13 @@ PROVENANCE GATE
     PASS
 
 DETERMINISTIC INTEGRATION GATE
-    PASS, 71/71 at current implementation target
+    PASS, 73/73 at current implementation target
+
+HUMAN STABILITY CONFIRMATION
+    OPEN at Checkpoint 259
 
 HUMAN PRODUCT-DESIGN GATE
-    OPEN at Checkpoint 258 for Adaptive Conversation Dock
+    Adaptive Conversation Dock review resumes immediately after stability confirmation
 ```
 
 ---
@@ -240,7 +292,7 @@ Conversation ownership independent from SEL2 selection
 compact native Cockpit composer
 ```
 
-Checkpoint 258 does not reopen those decisions. Research 086 remains the key semantic architecture for Conversation/work-context orthogonality.
+Checkpoint 259 changes none of those decisions.
 
 ---
 
@@ -282,43 +334,21 @@ Semantic zoom remains deferred. L0 remains provisional.
 8e554d847bb3b6318db432abcb5dff742f0fa523
 ```
 
-remains:
-
-```text
-FAILED INTEGRATION ATTEMPT
-NOT an accepted baseline
-NOT a production target
-NOT a visual source of truth
-PRESERVED only as diagnostic evidence
-```
-
-Research 088 is the source-level diagnosis. The implementation manifest is the exact source-reuse contract.
+remains diagnostic evidence only, not an accepted baseline, production target or visual source of truth.
 
 ---
 
 # Historical whole-product studies
 
 ```text
-Research 092
-    direct-manipulation spatial rail studies
-
-Research 093
-    architectural 3D edge studies
-
-Research 094
-    resting angled rail, rejected for current rail direction
-
-Research 095
-    flat rail + initial Conversation spacing + live compass
-
-Research 096
-    structural Conversation spacing + current flat rail control set
-
-Research 097
-    current Adaptive Conversation Dock co-presence candidate
+Research 092  direct-manipulation spatial rail studies
+Research 093  architectural 3D edge studies
+Research 094  resting angled rail, rejected for current rail direction
+Research 095  flat rail + initial Conversation spacing + live compass
+Research 096  structural Conversation spacing + current flat rail control set
+Research 097  Adaptive Conversation Dock co-presence candidate
+Research 098  intermittent Conversation spacing + Focus integrity recovery
 ```
-
-Do not revive historical alternatives as current product behavior without explicit new evidence and human direction.
 
 ---
 
@@ -355,14 +385,14 @@ No Claude obligation is pending. The next expected actor is the human reviewer.
 # Exact next step
 
 ```text
-Review the Adaptive Conversation Dock on the opt-in route.
+Pull the latest branch and try to reproduce the two intermittent failures.
 
-If professionally coherent:
-    preserve acceptance and tune only identified details
-    consider making it the default co-present presentation
+If Conversation spacing and Focus remain stable:
+    close Checkpoint 259 human confirmation
+    resume Adaptive Conversation Dock review
 
-If not:
-    challenge the adaptive-dock composition family
-    preserve the accepted Conversation semantic architecture
-    leave the normal no-query Cockpit unchanged
+If either still fails:
+    preserve the exact reproduction sequence
+    keep product-design review paused
+    reopen only presentation-integrity debugging
 ```
