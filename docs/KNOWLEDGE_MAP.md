@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-29  
-**Current checkpoint:** 262  
+**Current checkpoint:** 263  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,9 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/263_project_general_thread_containment_human_recheck_opened.md
+docs/research/101_project_general_thread_short_viewport_containment_recovery.md
 
 docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
 docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
@@ -52,31 +55,80 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                262
+checkpoint                263
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
 interaction session       chatgpt-10
 conversation title        10 - Project Cockpit Design Exploration
-current product boundary  Conversation Boxes grid-track spacing human recheck
+current product boundary  project-general thread containment human recheck
 ```
 
 ---
 
-# Checkpoint 262 live-browser spacing recovery
+# Checkpoint 263 project-general containment recovery
 
-Checkpoint 260 failed human review even though the intended spacing declarations were loaded in the project owner's browser.
-
-The first Chrome diagnostic established:
+Checkpoint 262 produced positive human evidence for the Research 100 WorkUnit spacing repair:
 
 ```text
-rail state                    boxes
-integrity stylesheet loaded   true
-margin-bottom                 16px
-padding top/bottom             6px / 6px
+WorkUnit-to-WorkUnit spacing
+    correct
 ```
 
-The second diagnostic established the exact rendered failure:
+The same human screenshot exposed one narrower residual defect:
+
+```text
+General project discussion
+    first conversation object not fully isolated
+    first WorkUnit visually invades / overlaps the project-general row
+```
+
+Research 101 keeps the human-confirmed WorkUnit spacing mechanism unchanged and gives the project-general row its own explicit containment floor.
+
+Current project-general contract:
+
+```text
+thread-list row-gap          16px
+project row min-height       74px
+project row margin            0px
+project row padding           7px top / 7px bottom
+project artifact min-height  58px
+```
+
+The project artifact itself is not redesigned.
+
+A new regression uses the wide-but-short viewport:
+
+```text
+1776 x 766
+```
+
+and requires:
+
+```text
+project row height >=73.5px
+project row padding >=7px top/bottom
+first WorkUnit surface begins >=16px after project artifact bottom
+WorkUnit-to-WorkUnit visible gaps remain >=20px
+```
+
+Current deterministic evidence:
+
+```text
+implementation/test target  5913467cfffd535215da7ab2cb70bdeb2be9f2e9
+workflow run                33247621778
+job                         99087735314
+result                      SUCCESS
+browser tests               77 / 77 passing
+```
+
+Human visual confirmation of the project-general first artifact remains open.
+
+---
+
+# Research 100 WorkUnit spacing recovery remains accepted by human retest
+
+The project owner's live Chrome measurements established the earlier failure:
 
 ```text
 WorkUnit row border-box       54px
@@ -86,15 +138,14 @@ painted node surface          extends ~20.8px beyond row
 visible surface gap           ~1.9px
 ```
 
-Research 100 identifies the cause as CSS Grid auto-track sizing absorbing the item margin by shrinking the grid item while the transformed, overflow-visible canonical WorkUnit continued painting outside that row.
+Research 100 identified the cause as CSS Grid auto-track sizing absorbing the item margin by shrinking the grid item while the transformed, overflow-visible canonical WorkUnit continued painting outside that row.
 
-The superseded Checkpoint 260 row-owned-margin implementation is therefore preserved as failed diagnostic history, not as the current spacing mechanism.
+The superseded Checkpoint 260 row-owned-margin implementation remains failed diagnostic history, not the current spacing mechanism.
 
-## Current spacing mechanism
+Current WorkUnit spacing mechanism:
 
 ```text
 thread-list row-gap          16px
-project row margin            0px
 WorkUnit row margin           0px
 WorkUnit padding              6px top / 6px bottom
 wide WorkUnit min-height     78px
@@ -129,20 +180,6 @@ frontend/e2e/cockpit-reintegration-review-256.spec.ts
 frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
 ```
 
-Current deterministic evidence:
-
-```text
-implementation/test target  b8a2d095214c3417f95180ca519c7b6224739181
-workflow run                33247046868
-job                         99086212488
-result                      SUCCESS
-browser tests               76 / 76 passing
-```
-
-The new gate explicitly covers 1100px responsive geometry in addition to wide and narrow viewports and requires actual visible WorkUnit surface gaps, not merely computed margins.
-
-Human visual confirmation remains open.
-
 ---
 
 # Current whole-product browser
@@ -170,12 +207,11 @@ Route roles:
 ```text
 plain route
     current source-faithful whole-product substrate
-    Checkpoint 262 Boxes spacing recheck surface
+    Checkpoint 263 project-general containment recheck surface
 
 ?conversation=adaptive-dock
     professional co-present Conversation candidate
-    same Boxes spacing integrity must hold here
-    product review resumes after Checkpoint 262 confirmation
+    product review resumes after Checkpoint 263 confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -190,7 +226,7 @@ explicit ?edge=... / ?rail=...
 
 Research 098's Focus lifecycle recovery remains current.
 
-The latest human retest reports Focus working as far as tested. No Focus implementation changed in Checkpoints 260 or 262.
+The latest human retest reports Focus working as far as tested. No Focus implementation changed in Checkpoints 260, 262 or 263.
 
 Focus is not part of the active defect boundary unless a new concrete reproduction appears.
 
@@ -222,7 +258,7 @@ co-present
     A6 becomes an invoked inspector sheet
 ```
 
-Checkpoint 262 neither accepts nor rejects that product-design direction. Product review resumes after the Boxes spacing substrate is visually confirmed.
+Checkpoint 263 neither accepts nor rejects that product-design direction. Product review resumes after the final base-rail containment issue is visually confirmed.
 
 ---
 
@@ -294,13 +330,16 @@ INTERACTION PROVENANCE
     chatgpt-10 / 10 - Project Cockpit Design Exploration
 
 DETERMINISTIC INTEGRATION GATE
-    PASS, 76/76 at b8a2d095214c3417f95180ca519c7b6224739181
+    PASS, 77/77 at 5913467cfffd535215da7ab2cb70bdeb2be9f2e9
 
-HUMAN BOXES SPACING RECHECK
-    OPEN at Checkpoint 262
+HUMAN WORKUNIT SPACING RECHECK
+    PASS at Checkpoint 262
+
+HUMAN PROJECT-GENERAL CONTAINMENT RECHECK
+    OPEN at Checkpoint 263
 
 HUMAN PRODUCT-DESIGN GATE
-    Adaptive Conversation Dock review resumes after spacing confirmation
+    Adaptive Conversation Dock review resumes after Checkpoint 263 confirmation
 ```
 
 ---
@@ -320,7 +359,7 @@ Conversation ownership independent from SEL2 selection
 compact native Cockpit composer
 ```
 
-Checkpoint 262 changes none of those decisions.
+Checkpoint 263 changes none of those decisions.
 
 ---
 
@@ -378,6 +417,7 @@ Research 097  Adaptive Conversation Dock co-presence candidate
 Research 098  intermittent Conversation spacing + Focus integrity recovery
 Research 099  failed Boxes human retest + row-owned-margin recovery attempt
 Research 100  live CSS Grid geometry diagnosis + explicit grid-track spacing recovery
+Research 101  project-general short-viewport row containment recovery
 ```
 
 ---
@@ -417,24 +457,21 @@ No Claude obligation is pending. The next expected actor is the human reviewer.
 ```text
 Pull the latest branch and hard-refresh.
 
-Inspect Boxes first on:
-    normal route
-
-Then optionally confirm:
-    ?conversation=adaptive-dock route
+Inspect Boxes on the normal route.
 
 Required result:
-    project-general -> first WorkUnit visible separation
-    WorkUnit -> WorkUnit visible separation
-    canonical WorkUnit footprint unchanged
+    General project discussion is a complete standalone first artifact
+    no WorkUnit overlaps it
+    clear dark separation follows it
+    WorkUnit spacing remains correct
     Focus remains stable
 
 If correct:
-    close Checkpoint 262
+    close Checkpoint 263
+    close the Conversation presentation-integrity interruption
     resume Adaptive Conversation Dock review
 
 If still wrong:
-    preserve screenshot and exact route/state
-    keep product-design review paused
-    continue only Conversation spacing integrity debugging with live rendered geometry
+    preserve screenshot and exact viewport/route
+    continue only project-general rail geometry debugging
 ```
