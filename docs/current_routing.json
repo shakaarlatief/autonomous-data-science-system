@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 262,
+  "current_checkpoint": 263,
   "active_development_branch": "v1-cockpit-design-exploration",
   "active_pr": null,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "ed5b60bdc882bed0799ce55228ce8187f9c55aa1",
   "latest_specification": "024",
   "latest_experiment_outcome": "INCOMPLETE",
-  "current_boundary": "next-generation-project-cockpit-mc0004-conversation-boxes-grid-track-spacing-human-recheck"
+  "current_boundary": "next-generation-project-cockpit-mc0004-project-general-thread-containment-human-recheck"
 }
