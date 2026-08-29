@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-29  
-**Current checkpoint:** 261  
+**Current checkpoint:** 262  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,9 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
+docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
 
 docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
 
@@ -49,43 +52,96 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                261
+checkpoint                262
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
 interaction session       chatgpt-10
 conversation title        10 - Project Cockpit Design Exploration
-current product boundary  Conversation Boxes row-owned spacing human recheck
+current product boundary  Conversation Boxes grid-track spacing human recheck
 ```
 
 ---
 
-# Checkpoint 261 interaction provenance reconciliation
+# Checkpoint 262 live-browser spacing recovery
 
-The preceding ChatGPT conversation reached its length limit and development continued in a new ChatGPT conversation. Repository interaction metadata was not rotated at that boundary, so post-boundary work was initially stamped with `chatgpt-09`.
+Checkpoint 260 failed human review even though the intended spacing declarations were loaded in the project owner's browser.
 
-Checkpoint 261 reconstructs the boundary and assigns the current interaction:
-
-```text
-chatgpt-10
-10 - Project Cockpit Design Exploration
-```
-
-Corrected post-boundary provenance includes:
+The first Chrome diagnostic established:
 
 ```text
-Checkpoint 258
-Checkpoint 259
-Checkpoint 260
-Research 097
-Research 098
-CURRENT_STATE
-MC-0004 STATE
+rail state                    boxes
+integrity stylesheet loaded   true
+margin-bottom                 16px
+padding top/bottom             6px / 6px
 ```
 
-Research 099 contained no incorrect interaction-session field. Pre-boundary ChatGPT-09 artifacts remain unchanged.
+The second diagnostic established the exact rendered failure:
 
-This is metadata repair only. The active product gate remains Checkpoint 260.
+```text
+WorkUnit row border-box       54px
+computed margin-bottom        16px
+next row starts               16px later
+painted node surface          extends ~20.8px beyond row
+visible surface gap           ~1.9px
+```
+
+Research 100 identifies the cause as CSS Grid auto-track sizing absorbing the item margin by shrinking the grid item while the transformed, overflow-visible canonical WorkUnit continued painting outside that row.
+
+The superseded Checkpoint 260 row-owned-margin implementation is therefore preserved as failed diagnostic history, not as the current spacing mechanism.
+
+## Current spacing mechanism
+
+```text
+thread-list row-gap          16px
+project row margin            0px
+WorkUnit row margin           0px
+WorkUnit padding              6px top / 6px bottom
+wide WorkUnit min-height     78px
+responsive <=1450 min-height 73px
+canonical WorkUnit           unchanged
+```
+
+This separates responsibilities:
+
+```text
+minimum row height
+    contains transformed canonical artifact footprint
+
+grid-track gap
+    provides visible object separation
+```
+
+The non-Text selector remains, so compatible historical `artifact` state receives the same Boxes contract.
+
+Implementation:
+
+```text
+frontend/design-lab/cockpit-reintegration-presentation-integrity.css
+frontend/design-lab/cockpit-reintegration-review-256.css
+```
+
+Regression coverage:
+
+```text
+frontend/e2e/cockpit-reintegration-presentation-integrity.spec.ts
+frontend/e2e/cockpit-reintegration-review-256.spec.ts
+frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
+```
+
+Current deterministic evidence:
+
+```text
+implementation/test target  b8a2d095214c3417f95180ca519c7b6224739181
+workflow run                33247046868
+job                         99086212488
+result                      SUCCESS
+browser tests               76 / 76 passing
+```
+
+The new gate explicitly covers 1100px responsive geometry in addition to wide and narrow viewports and requires actual visible WorkUnit surface gaps, not merely computed margins.
+
+Human visual confirmation remains open.
 
 ---
 
@@ -114,12 +170,12 @@ Route roles:
 ```text
 plain route
     current source-faithful whole-product substrate
-    Checkpoint 260 Boxes spacing recheck surface
+    Checkpoint 262 Boxes spacing recheck surface
 
 ?conversation=adaptive-dock
     professional co-present Conversation candidate
     same Boxes spacing integrity must hold here
-    product review resumes after Checkpoint 260 confirmation
+    product review resumes after Checkpoint 262 confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -130,105 +186,13 @@ explicit ?edge=... / ?rail=...
 
 ---
 
-# Checkpoint 260 Conversation Boxes human recheck
-
-The Checkpoint 259 retest produced:
-
-```text
-current-process Focus
-    working as far as tested
-
-Conversation Boxes
-    still visually joined
-```
-
-The supplied screenshots are direct human evidence that the prior Conversation recovery was insufficient despite a green 73/73 gate.
-
-Research 099 therefore corrects the implementation diagnosis rather than changing the design target.
-
-## Row-owned spacing
-
-Checkpoint 256's intended visible separation and canonical WorkUnit footprint remain held.
-
-Current implementation:
-
-```text
-parent list row-gap             0px
-project-general bottom margin  16px
-WorkUnit top/bottom padding      6px / 6px
-WorkUnit bottom margin          16px
-last WorkUnit bottom margin      0px
-canonical WorkUnit footprint    unchanged
-```
-
-The separation is now owned by the actual thread rows. It no longer depends on a parent grid gap remaining the spacing carrier.
-
-## Boxes / artifact compatibility
-
-Current selectors protect every non-Text rail state:
-
-```text
-html:not([data-conversation-rail="text"])
-```
-
-This aligns presentation with the Conversation controller, which resolves every non-Text value as Boxes/artifact.
-
-Historical `artifact` is a concrete compatibility state now covered by tests. The human screenshot does not establish that `artifact` was the exact local runtime value, so it is preserved as a proven blind spot rather than asserted as the sole screenshot root cause.
-
-Current implementation artifacts:
-
-```text
-frontend/design-lab/cockpit-reintegration-presentation-integrity.css
-frontend/design-lab/cockpit-reintegration-review-256.css
-```
-
-Current regression artifacts:
-
-```text
-frontend/e2e/cockpit-reintegration-presentation-integrity.spec.ts
-frontend/e2e/cockpit-reintegration-review-256.spec.ts
-frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
-```
-
----
-
 # Current-process Focus status
 
 Research 098's Focus lifecycle recovery remains current.
 
-The latest human retest reports Focus working as far as tested. No Focus implementation changed in Checkpoint 260.
+The latest human retest reports Focus working as far as tested. No Focus implementation changed in Checkpoints 260 or 262.
 
 Focus is not part of the active defect boundary unless a new concrete reproduction appears.
-
----
-
-# Current deterministic evidence
-
-Implementation target:
-
-```text
-29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
-```
-
-Complete Cockpit fidelity workflow:
-
-```text
-workflow run  33241369935
-job           99071179670
-result        SUCCESS
-browser tests 74 / 74 passing
-```
-
-The new 74th test verifies:
-
-```text
-1536 x 864 user-like viewport
-legacy data-conversation-rail="artifact" state
-Boxes UI remains selected
-row-owned visible separation remains intact
-```
-
-The gate also retains adaptive full-focus/co-present/Threads-drawer spacing tests and the Focus remount/synchronization regression.
 
 ---
 
@@ -258,7 +222,20 @@ co-present
     A6 becomes an invoked inspector sheet
 ```
 
-Checkpoint 260 neither accepts nor rejects that product-design direction. It repairs the Boxes rail substrate required to judge it reliably.
+Checkpoint 262 neither accepts nor rejects that product-design direction. Product review resumes after the Boxes spacing substrate is visually confirmed.
+
+---
+
+# Interaction provenance
+
+Checkpoint 261 establishes the current interaction:
+
+```text
+chatgpt-10
+10 - Project Cockpit Design Exploration
+```
+
+It corrected post-boundary Research 097 / Checkpoint 258 onward metadata after the prior ChatGPT conversation reached its length limit. Pre-boundary ChatGPT-09 history remains unchanged.
 
 ---
 
@@ -317,10 +294,10 @@ INTERACTION PROVENANCE
     chatgpt-10 / 10 - Project Cockpit Design Exploration
 
 DETERMINISTIC INTEGRATION GATE
-    PASS, 74/74 at current implementation target
+    PASS, 76/76 at b8a2d095214c3417f95180ca519c7b6224739181
 
 HUMAN BOXES SPACING RECHECK
-    OPEN at Checkpoint 260
+    OPEN at Checkpoint 262
 
 HUMAN PRODUCT-DESIGN GATE
     Adaptive Conversation Dock review resumes after spacing confirmation
@@ -343,7 +320,7 @@ Conversation ownership independent from SEL2 selection
 compact native Cockpit composer
 ```
 
-Checkpoints 260 and 261 change none of those decisions.
+Checkpoint 262 changes none of those decisions.
 
 ---
 
@@ -389,7 +366,7 @@ remains diagnostic evidence only, not an accepted baseline, production target or
 
 ---
 
-# Historical whole-product studies
+# Recent whole-product studies
 
 ```text
 Research 092  direct-manipulation spatial rail studies
@@ -399,7 +376,8 @@ Research 095  flat rail + initial Conversation spacing + live compass
 Research 096  structural Conversation spacing + current flat rail control set
 Research 097  Adaptive Conversation Dock co-presence candidate
 Research 098  intermittent Conversation spacing + Focus integrity recovery
-Research 099  failed Boxes human retest + row-owned spacing recovery
+Research 099  failed Boxes human retest + row-owned-margin recovery attempt
+Research 100  live CSS Grid geometry diagnosis + explicit grid-track spacing recovery
 ```
 
 ---
@@ -439,21 +417,24 @@ No Claude obligation is pending. The next expected actor is the human reviewer.
 ```text
 Pull the latest branch and hard-refresh.
 
-Inspect Boxes on:
+Inspect Boxes first on:
     normal route
+
+Then optionally confirm:
     ?conversation=adaptive-dock route
 
-Confirm:
+Required result:
     project-general -> first WorkUnit visible separation
     WorkUnit -> WorkUnit visible separation
+    canonical WorkUnit footprint unchanged
     Focus remains stable
 
 If correct:
-    close Checkpoint 260
+    close Checkpoint 262
     resume Adaptive Conversation Dock review
 
 If still wrong:
     preserve screenshot and exact route/state
     keep product-design review paused
-    continue only Conversation spacing integrity debugging
+    continue only Conversation spacing integrity debugging with live rendered geometry
 ```
