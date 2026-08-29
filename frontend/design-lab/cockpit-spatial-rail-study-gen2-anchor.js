@@ -64,15 +64,29 @@ function mountOptionalConversationIntegrationStudy() {
   const params = new URLSearchParams(window.location.search)
   if (params.get('conversation') !== 'adaptive-dock') return
 
-  if (!document.querySelector('link[data-conversation-integration-study]')) {
-    const link = document.createElement('link')
-    link.rel = 'stylesheet'
-    link.href = './cockpit-conversation-integration-study.css'
-    link.dataset.conversationIntegrationStudy = 'adaptive-dock'
-    document.head.appendChild(link)
+  const loadController = () => {
+    if (document.documentElement.dataset.conversationIntegrationStudyController === 'loading') return
+    document.documentElement.dataset.conversationIntegrationStudyController = 'loading'
+    import('./cockpit-conversation-integration-study.js').catch((error) => {
+      delete document.documentElement.dataset.conversationIntegrationStudyController
+      console.error('Conversation integration study failed to load', error)
+    })
   }
 
-  import('./cockpit-conversation-integration-study.js').catch((error) => {
-    console.error('Conversation integration study failed to load', error)
-  })
+  const existing = document.querySelector('link[data-conversation-integration-study]')
+  if (existing instanceof HTMLLinkElement) {
+    if (existing.sheet) loadController()
+    else existing.addEventListener('load', loadController, { once: true })
+    return
+  }
+
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = './cockpit-conversation-integration-study.css'
+  link.dataset.conversationIntegrationStudy = 'adaptive-dock'
+  link.addEventListener('load', loadController, { once: true })
+  link.addEventListener('error', () => {
+    console.error('Conversation integration study stylesheet failed to load')
+  }, { once: true })
+  document.head.appendChild(link)
 }
