@@ -2,7 +2,7 @@
 
 **Status:** Current selective structural history  
 **Authority:** Navigation and project-history aid. Detailed decisions, foundations, specifications, checkpoints, final experiment reports, and Git history remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-26
+**Last reviewed:** 2026-08-29
 
 ## Purpose
 
@@ -315,7 +315,7 @@ SOURCE_SUBSTRATE_ACCEPTED
 
 No source PDF, private observed path, private registry snapshot, or backup payload entered public Git.
 
-D-033 now accepts the ADS-owned source-substrate architecture and supersedes D-015 only in its original architectural-uncertainty scope.
+D-033 accepts the ADS-owned source-substrate architecture and supersedes D-015 only in its original architectural-uncertainty scope.
 
 Important remaining boundary:
 
@@ -325,7 +325,7 @@ accepted source-substrate architecture / implementation
 permanent user-controlled source vault already instantiated
 ```
 
-The next operational step is to deploy the accepted source store and registry on durable user-controlled storage, ingest the original local Machine Learning folder, establish an independent backup, and prove clean recovery before Course 2 is admitted.
+The permanent vault deployment was later paused rather than rejected while other ADS architecture work continued.
 
 Key sources:
 
@@ -333,6 +333,7 @@ Key sources:
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/197_source_substrate_canonical_reconciliation_and_promotion_candidate.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
 ---
@@ -359,17 +360,13 @@ Research 036 / MC-0003
     -> later processed in priority order with exact-target discipline
 ```
 
-Development Method v0.5 now makes SOLO work first-class, collaboration selective, task ownership explicit, role separate from write scope, independent review contamination visible, disagreement routable, and provider-neutral interaction provenance mandatory for new checkpoints from Checkpoint 204 onward.
+Development Method v0.5 made SOLO work first-class, collaboration selective, task ownership explicit, role separate from write scope, independent-review contamination visible, disagreement routable, and provider-neutral interaction provenance mandatory for new checkpoints from Checkpoint 204 onward.
 
-The source-vault deployment remains paused rather than cancelled.
-
-Unattended scheduled model review and API orchestration remain deferred. Known future collaboration-mechanization triggers are preserved without opening Specification 025 prematurely.
+Unattended scheduled model review and API orchestration remained deferred. Known future collaboration-mechanization triggers were preserved without opening Specification 025 prematurely.
 
 Key sources:
 
 ```text
-docs/DEVELOPMENT_METHOD.md
-docs/CONTINUITY.md
 docs/DECISIONS.md, D-034
 docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 docs/model_collaboration/README.md
@@ -377,4 +374,88 @@ docs/model_collaboration/threads/MC-0001/RESOLUTION.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
 docs/model_collaboration/threads/MC-0002/RESOLUTION.md
 docs/model_collaboration/threads/MC-0003/RESOLUTION.md
+```
+
+---
+
+## 2026-08-26 to 2026-08-29: Project Cockpit integration moved from summary-driven reconstruction to exact implementation provenance
+
+A first holistic integrated Cockpit was built by reimplementing previously accepted mechanisms from names, summaries and decision labels. Human review showed that the result was not faithful to the exact visual implementations that had actually been accepted.
+
+The project therefore changed the integration discipline:
+
+```text
+accepted visual decision label
+    !=
+accepted implementation source
+```
+
+The recovery introduced an explicit Phase-C decision ledger, exact implementation manifest, exact-history validation and source-faithful holistic reintegration. The failed integrated browser at `8e554d847bb3b6318db432abcb5dff742f0fa523` remains diagnostic evidence only and is not an accepted baseline.
+
+The whole-product substrate is now protected by exact implementation provenance plus browser fidelity gates. Later Conversation, Focus, shell/rail and product-surface studies are evaluated on that recovered integrated substrate rather than on the rejected reconstruction.
+
+Key sources:
+
+```text
+docs/research/087_holistic_integrated_cockpit_baseline_and_accepted_invariants_audit.md
+docs/research/088_integrated_cockpit_fidelity_failure_and_source_of_truth_recovery_audit.md
+docs/research/089_cockpit_implementation_provenance_recovery_completion_and_exact_history_gate.md
+docs/research/090_current_branch_exact_source_compatibility_and_reintegration_strategy.md
+docs/research/091_source_faithful_reintegration_interaction_integrity_gate.md
+docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/cockpit/PHASE_C_DECISION_LEDGER.md
+docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
+docs/cockpit/accepted_implementation_manifest.json
+```
+
+---
+
+## 2026-08-29: Repository information architecture and verification scaled to the larger project
+
+A repository-scale preservation audit found that substantive ADS knowledge remained durable, but global discoverability and responsibility boundaries had begun to drift. `KNOWLEDGE_MAP.md` had accumulated current-stage routing, while live state was duplicated across several global files. The full Cockpit verification gate was also being paid too frequently during tiny iterations, and one intended full-gate command was found to have executed only a narrowed set because of shell/glob quoting.
+
+Development Method v0.6 first restored broad topic routing and introduced V0-V4 risk-scaled verification. A deeper follow-up promoted v0.7 and assigned each global navigation surface one primary responsibility:
+
+```text
+README.md
+    stable repository entry point
+
+docs/README.md
+    structural repository/documentation guide
+
+docs/CURRENT_STATE.md
+    human-readable live project state
+
+docs/current_routing.json
+    machine-readable live routing pointer
+
+docs/KNOWLEDGE_MAP.md
+    evergreen semantic subject library
+
+docs/CONTINUITY.md
+    cross-session reconstruction and recovery procedure
+
+docs/DEVELOPMENT_METHOD.md
+    operational development/preservation/verification method
+
+docs/MAJOR_CHANGES.md
+    selective structural history
+```
+
+The Knowledge Map now supports multiple subject membership and mechanically requires every numbered Foundation, Specification and Research record to be routed to at least one subject. Every numbered checkpoint is covered by compact semantic checkpoint-range metadata, while specialized indexes remain first-class rather than being flattened into the global map.
+
+The verification method retains V0-V4 risk scaling and now defines a full verification tier by what tests actually execute, not by a workflow label. The repaired full Cockpit gate executed all 78 reintegration tests successfully.
+
+Research 104 and Checkpoint 266 record the architecture refinement and validation boundary.
+
+Key sources:
+
+```text
+docs/README.md
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/KNOWLEDGE_MAP.md
+docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
+docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
+docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
 ```
