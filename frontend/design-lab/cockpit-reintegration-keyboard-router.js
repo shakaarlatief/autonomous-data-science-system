@@ -1,42 +1,53 @@
 /*
- * Cockpit top-layer Escape router.
+ * Cockpit top-layer keyboard router.
  *
- * Loaded before the Conversation controller so browser fullscreen and invoked
- * Conversation sublayers get first refusal on Escape. This prevents one mode's
- * recovery handler from swallowing another mode's more immediate exit.
+ * The Adaptive Conversation Dock gives Escape one application meaning:
+ * return from the currently open Conversation workspace. Browser fullscreen is
+ * controlled explicitly with F instead of being treated as the first Cockpit
+ * recovery layer. The browser may still expose its own native Escape behavior
+ * for fullscreen, which web applications cannot disable reliably.
  *
- * It does not own Deep Dive or Conversation closing. If none of the priorities
- * below applies, the existing source controllers receive Escape unchanged.
+ * Outside the opt-in Adaptive Dock route, the existing source controllers keep
+ * their historical keyboard behavior unchanged.
  */
 
 const root = document.documentElement
+const params = new URLSearchParams(window.location.search)
+const adaptiveDock = params.get('conversation') === 'adaptive-dock'
+const fullscreenButton = document.querySelector('#fullscreen-world')
+
+if (adaptiveDock && fullscreenButton instanceof HTMLButtonElement) {
+  fullscreenButton.title = 'Fullscreen (F)'
+  fullscreenButton.setAttribute('aria-keyshortcuts', 'F')
+}
 
 window.addEventListener('keydown', (event) => {
-  if (event.key !== 'Escape') return
+  if (!adaptiveDock) return
+  if (shortcutTargetIsEditable(event.target)) return
+  if (event.ctrlKey || event.metaKey || event.altKey || event.shiftKey) return
 
-  /* Browser fullscreen is outside the Cockpit's view-state stack. Do not call
-   * preventDefault: the browser must retain its native Escape-to-exit behavior.
-   * Stop only app-level listeners from interpreting the same keystroke. */
-  if (document.fullscreenElement) {
+  if (event.key.toLowerCase() === 'f') {
+    event.preventDefault()
     event.stopImmediatePropagation()
+    fullscreenButton?.click()
     return
   }
 
-  if (root.dataset.conversationOpen !== 'true') return
+  if (event.key !== 'Escape' || root.dataset.conversationOpen !== 'true') return
 
-  /* Temporary Conversation surfaces close before the Conversation itself. */
-  if (root.dataset.conversationRailDrawer === 'open') {
-    event.preventDefault()
-    event.stopImmediatePropagation()
-    const close = document.querySelector('.adaptive-conversation-drawer-close')
-    if (close instanceof HTMLButtonElement) close.click()
-    else document.querySelector('#adaptive-conversation-threads')?.click()
-    return
-  }
-
-  if (root.dataset.conversationA6Expanded === 'true') {
-    event.preventDefault()
-    event.stopImmediatePropagation()
-    document.querySelector('#reintegration-a6-close')?.click()
-  }
+  /*
+   * Escape exits Conversation in one step, regardless of whether its Threads
+   * drawer or A6 inspector is open and regardless of full-focus/co-present
+   * presentation. Do not reserve Escape for browser fullscreen. When the
+   * browser itself also exits native fullscreen on Escape, the same keystroke
+   * still returns the user to the Cockpit instead of leaving Conversation open.
+   */
+  if (!document.fullscreenElement) event.preventDefault()
+  event.stopImmediatePropagation()
+  document.querySelector('#reintegration-conversation-close')?.click()
 }, true)
+
+function shortcutTargetIsEditable(target) {
+  if (!(target instanceof Element)) return false
+  return Boolean(target.closest('input, textarea, select, [contenteditable="true"], [role="textbox"]'))
+}
