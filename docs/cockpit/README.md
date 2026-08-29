@@ -3,7 +3,7 @@
 **Status:** Current Phase-C implementation-fidelity governance surface  
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
 **Current branch:** `v1-cockpit-design-exploration`  
-**Current checkpoint:** 261  
+**Current checkpoint:** 262  
 **Last reconciled:** 2026-08-29
 
 ## Purpose
@@ -41,16 +41,16 @@ A future integrator must not infer an implementation merely from labels such as 
 12. latest routed checkpoint + research record
 ```
 
-For the current boundary, read the interaction-provenance reconciliation first, then the still-open product gate:
+For the current boundary:
 
 ```text
-docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
+docs/checkpoints/262_conversation_boxes_grid_track_spacing_human_recheck_opened.md
+docs/research/100_conversation_boxes_css_grid_track_absorption_and_live_geometry_recovery.md
 
-docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
-docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
+docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
 ```
 
-Checkpoint 261 changes metadata only. Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath the temporary Checkpoint 260 integrity recheck.
+Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath the temporary Checkpoint 262 integrity recheck.
 
 ## Artifact roles
 
@@ -68,25 +68,13 @@ REJECTED
 HISTORICAL / DIAGNOSTIC EVIDENCE
 ```
 
-Later source-recovery and whole-product studies, Research 089 onward, are preserved through their own research records, checkpoints and current routing. Do not silently reinterpret the ledger as covering later research numbers it does not claim to cover.
+Later source-recovery and whole-product studies, Research 089 onward, are preserved through their own research records, checkpoints and current routing.
 
 ### `ACCEPTED_IMPLEMENTATION_MANIFEST.md`
 
 Human-readable integration contract for mechanisms that must survive holistic composition.
 
-For each item it records:
-
-```text
-semantic decision
-maturity
-origin evidence
-exact target SHA
-exact implementation source files
-invariants
-allowed integration adaptations
-fixture caveats
-verification method
-```
+For each item it records semantic decision, maturity, origin evidence, exact target SHA, exact implementation source files, invariants, allowed integration adaptations, fixture caveats and verification method.
 
 ### `accepted_implementation_manifest.json`
 
@@ -100,13 +88,7 @@ Current coverage:
 4 non-promotable entries
 ```
 
-### `scripts/check_cockpit_implementation_manifest.py`
-
-Structural and historical validator for the machine-readable manifest. It guards against missing required integration items, invalid target identities, missing source paths, accidental promotion of deferred/provisional material and incomplete verification metadata.
-
-### `.github/workflows/cockpit-implementation-provenance.yml`
-
-Durable exact-history gate:
+### Provenance gate
 
 ```text
 python scripts/check_cockpit_implementation_manifest.py --verify-git-history
@@ -120,32 +102,47 @@ entries=23 required=19 non_promotable=4
 exact historical source verification PASS
 ```
 
-### `.github/workflows/cockpit-reintegration-fidelity.yml`
-
-Whole-product browser gate for the source-faithful integrated Cockpit.
+## Current whole-product fidelity gate
 
 Current complete result:
 
 ```text
-implementation target  29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
-workflow run           33241369935
-job                    99071179670
-browser tests          74 / 74 passing
+implementation/test target  b8a2d095214c3417f95180ca519c7b6224739181
+workflow run                33247046868
+job                         99086212488
+browser tests               76 / 76 passing
 ```
 
-The current gate contains all prior source-faithful mechanism coverage, Adaptive Conversation Dock isolation/state-preservation coverage, Focus lifecycle/remount synchronization coverage and the new Conversation Boxes legacy-artifact/user-like-viewport spacing regression.
+The gate contains all prior source-faithful mechanism coverage plus Adaptive Conversation Dock isolation/state-preservation, Focus lifecycle/remount synchronization and strengthened Conversation spacing coverage at desktop, responsive and narrow widths.
 
-## Human evidence can invalidate a green visual assumption
+## Human evidence governs visible fidelity
 
-Checkpoint 260 records an important governance lesson.
+Checkpoint 262 extends an important governance lesson from Checkpoints 259-260.
 
-The previous 73/73 gate passed, but the project owner's local screenshots still showed Conversation WorkUnit artifacts visibly joined. The deterministic gate therefore did not prove the visible defect was closed.
+The project owner's browser had the current spacing stylesheet and the intended computed values, yet the WorkUnits still looked joined. Live geometry established why:
 
-The correct response was to strengthen the implementation and the test contract rather than treating the test as more authoritative than direct visual evidence.
+```text
+WorkUnit grid row             54px
+computed bottom margin        16px
+painted WorkUnit overflow     ~20.8px
+actual visible surface gap    ~1.9px
+```
 
-Current Conversation spacing implementation now owns the accepted separation at the thread rows rather than at the parent grid, and it applies to every non-Text Boxes/artifact state.
+CSS Grid auto-track sizing was shrinking the margin-bearing grid item while the transformed, overflow-visible canonical WorkUnit continued painting outside it.
 
-The current 74/74 result proves the encoded row-owned contract. Human recheck is still required before the visual issue is closed.
+Therefore the failed row-owned-margin implementation has been replaced by:
+
+```text
+explicit grid row-gap         16px
+zero row margins
+6px WorkUnit top/bottom padding
+78px wide minimum WorkUnit row
+73px responsive <=1450 minimum row
+```
+
+The canonical WorkUnit itself remains unchanged.
+
+The deterministic suite now asserts actual visible surface-to-surface separation and explicitly enters the responsive <=1450px layout at a 1100px viewport. A human visual recheck remains required before this presentation defect is closed.
 
 ## Interaction provenance continuity
 
@@ -156,7 +153,7 @@ interaction session  chatgpt-10
 conversation title   10 - Project Cockpit Design Exploration
 ```
 
-It corrects only post-boundary metadata after an unplanned conversation rotation. It does not change implementation provenance, product decisions or deterministic evidence.
+It corrects only post-boundary metadata after an unplanned conversation rotation. Pre-boundary ChatGPT-09 history remains unchanged.
 
 ## Integration policy
 
@@ -200,45 +197,24 @@ The current `?conversation=adaptive-dock` study follows this policy: it changes 
 
 ### Provenance gate
 
-Establishes:
-
-```text
-manifest structure is valid
-all required mechanism records exist
-all exact historical commits resolve
-all declared source paths exist at those exact commits
-non-promotable entries remain non-promotable
-failed holistic source remains excluded
-```
-
 Current status:
 
 ```text
 PASS
 ```
 
+It establishes that manifest structure is valid, required mechanism records exist, exact historical commits and source paths resolve, non-promotable entries remain non-promotable and the failed holistic source remains excluded.
+
 ### Integrated fidelity gate
-
-Establishes:
-
-```text
-required mechanisms are present
-geometry/visual invariants survive encoded regression states
-interaction behavior survives
-semantic meaning is unchanged
-known fixture defects are not reintroduced
-provisional glue remains separately identifiable
-rejected/deferred candidates are not accidentally revived
-```
 
 Current status:
 
 ```text
 PASS for the current covered implementation
-74 / 74 browser tests at 29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
+76 / 76 browser tests at b8a2d095214c3417f95180ca519c7b6224739181
 ```
 
-A deterministic pass is not human aesthetic/product-design approval and does not overrule direct local visual evidence. Checkpoint 260 remains under human spacing recheck. Checkpoint 258's Adaptive Conversation Dock remains under human product review once that recheck closes.
+A deterministic pass is not human aesthetic/product-design approval and does not overrule direct local visual evidence. Checkpoint 262 remains under human spacing recheck. Checkpoint 258's Adaptive Conversation Dock remains under human product review once that recheck closes.
 
 ## Failed integration
 
