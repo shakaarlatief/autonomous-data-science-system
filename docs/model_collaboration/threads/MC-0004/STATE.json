@@ -3,7 +3,7 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_CONVERSATION_BOXES_GRID_TRACK_SPACING_HUMAN_RECHECK",
+  "phase": "PHASE_C_PROJECT_GENERAL_THREAD_CONTAINMENT_HUMAN_RECHECK",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
@@ -81,10 +81,15 @@
       "A second live Chrome geometry diagnostic measured 54px WorkUnit grid-item rows with 16px computed bottom margins, while transformed node surfaces painted about 20.8px beyond each row, leaving only about 1.9px of actual visible surface separation.",
       "Research 100 identifies CSS Grid auto-track sizing as the exact failure mechanism: item margins were accounted for by shrinking the stretched grid item while the transformed overflow-visible canonical WorkUnit continued painting beyond that row.",
       "Checkpoint 262 replaces the failed margin-owned model with explicit 16px grid-track row-gap, zero row margins, 6px WorkUnit padding, 78px wide minimum WorkUnit row height and 73px minimum height at <=1450px. The canonical WorkUnit itself is unchanged.",
-      "Regression coverage now explicitly exercises 1600px desktop, 1100px responsive and 760px narrow layouts, including legacy artifact state, and requires actual WorkUnit surface-to-surface gaps of at least 20px.",
-      "Workflow run 33247046868 passed 76/76 browser tests at implementation/test target b8a2d095214c3417f95180ca519c7b6224739181."
+      "Regression coverage explicitly exercises 1600px desktop, 1100px responsive and 760px narrow layouts, including legacy artifact state, and requires actual WorkUnit surface-to-surface gaps of at least 20px.",
+      "Workflow run 33247046868 passed 76/76 browser tests at implementation/test target b8a2d095214c3417f95180ca519c7b6224739181.",
+      "The project owner's Checkpoint 262 human retest confirms the WorkUnit spacing is now visually correct.",
+      "The same successful spacing screenshot exposed one residual defect: General project discussion was not fully contained as its own first rail object and the first WorkUnit visibly invaded that row at a wide but vertically short browser viewport.",
+      "Research 101 preserves the human-confirmed WorkUnit grid-track spacing and adds explicit project-row containment: 74px minimum project row height, 7px row padding, 58px project artifact minimum height and the existing 16px inter-track gap.",
+      "A new 1776x766 regression requires the General project discussion artifact to remain distinct from the first WorkUnit while preserving the >=20px WorkUnit surface gaps.",
+      "Workflow run 33247621778 passed 77/77 browser tests at implementation/test target 5913467cfffd535215da7ab2cb70bdeb2be9f2e9."
     ],
-    "notes": "No Claude obligation is pending. The active ChatGPT interaction is chatgpt-10 / 10 - Project Cockpit Design Exploration. Checkpoint 262 is the narrow human recheck of Conversation Boxes visible separation after live browser geometry identified CSS Grid track absorption as the exact cause of the failed row-owned-margin implementation. Focus is not under active repair. The complete Cockpit browser gate passes 76/76 at implementation/test target b8a2d095214c3417f95180ca519c7b6224739181. The human should pull and hard-refresh, verify visible spacing on the normal route and optionally the Adaptive Conversation route, then resume Adaptive Dock product review if correct. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The active ChatGPT interaction is chatgpt-10 / 10 - Project Cockpit Design Exploration. Checkpoint 262's WorkUnit spacing recovery is now human-confirmed. Checkpoint 263 is the narrow human recheck of the remaining General project discussion first-row containment defect. Focus is not under active repair. The complete Cockpit browser gate passes 77/77 at implementation/test target 5913467cfffd535215da7ab2cb70bdeb2be9f2e9, including a new 1776x766 short-height regression. The human should pull and hard-refresh, verify that General project discussion is a complete standalone first artifact with clear separation before WorkUnit 1, and then resume Adaptive Dock product review if correct. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -125,15 +130,16 @@
       "PHASE_C_PRESENTATION_STATE_INTEGRITY_HUMAN_CONFIRMATION",
       "PHASE_C_CONVERSATION_BOXES_ROW_OWNED_SPACING_HUMAN_RECHECK",
       "PHASE_C_CHATGPT_10_INTERACTION_PROVENANCE_RECONCILED",
-      "PHASE_C_CONVERSATION_BOXES_GRID_TRACK_SPACING_HUMAN_RECHECK"
+      "PHASE_C_CONVERSATION_BOXES_GRID_TRACK_SPACING_HUMAN_RECHECK",
+      "PHASE_C_PROJECT_GENERAL_THREAD_CONTAINMENT_HUMAN_RECHECK"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-checkpoint-262-conversation-boxes-grid-track-spacing-human-recheck",
+    "transition_id": "mc0004-checkpoint-263-project-general-thread-containment-human-recheck",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The project owner's live Chrome geometry proved that the Checkpoint 260 16px item-margin model was absorbed by CSS Grid auto-track sizing while the transformed canonical WorkUnit painted outside the shrunken row. Research 100 and Checkpoint 262 replace it with explicit inter-track spacing plus sufficient row height, strengthen responsive geometry tests, and open a human visual recheck after a 76/76 browser gate.",
-    "repository_head": "b8a2d095214c3417f95180ca519c7b6224739181"
+    "reason": "The project owner confirmed the Research 100 WorkUnit spacing recovery is visually correct but the same screenshot showed General project discussion being invaded by the first WorkUnit at a short desktop content height. Research 101 and Checkpoint 263 preserve the accepted WorkUnit grid-track spacing, add explicit project-row containment and open a narrow human recheck after a 77/77 browser gate.",
+    "repository_head": "5913467cfffd535215da7ab2cb70bdeb2be9f2e9"
   }
 }
