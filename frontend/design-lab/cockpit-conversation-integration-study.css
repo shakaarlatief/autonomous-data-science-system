@@ -1,0 +1,294 @@
+/*
+ * Professional Conversation co-presence study.
+ *
+ * This adapter is intentionally opt-in through:
+ *   ?conversation=adaptive-dock
+ *
+ * It does not change the canonical no-query Cockpit. The held Quiet Graphite
+ * Conversation Workspace, Boxes/Text navigation, conversation scope semantics,
+ * A6 inspector and source-work-state preservation remain owned by the existing
+ * source-faithful Conversation integration.
+ *
+ * The study tests one narrower question: how the full Conversation Workspace
+ * should coexist with the Cockpit without looking like two complete pages
+ * forced side by side.
+ */
+
+html[data-conversation-integration="adaptive-dock"] {
+  --adaptive-conversation-dock-width: clamp(520px, 38vw, 650px);
+  --adaptive-conversation-drawer-width: 260px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Co-present mode becomes a native secondary workbench dock                  */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+  left: auto;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(var(--adaptive-conversation-dock-width), calc(100vw - 560px));
+  min-width: min(480px, calc(100vw - 560px));
+  grid-template-columns: minmax(0, 1fr);
+  border-left: 1px solid color-mix(in srgb, var(--cq-line-strong) 88%, transparent);
+  border-radius: 10px 0 0 10px;
+  box-shadow:
+    -10px 0 28px rgba(0, 0, 0, 0.24),
+    -1px 0 0 color-mix(in srgb, var(--cq-accent) 8%, transparent);
+  overflow: hidden;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-main {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+/* The long-form Workspace keeps its permanent navigation rail in full focus.
+ * In co-present mode, that same accepted rail becomes an invoked drawer so the
+ * Cockpit remains the primary visible work surface. */
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-rail {
+  position: absolute;
+  z-index: 18;
+  inset: 0 auto 0 0;
+  width: var(--adaptive-conversation-drawer-width);
+  border-right-color: var(--cq-line-strong);
+  box-shadow: 18px 0 38px rgba(0, 0, 0, 0.34);
+  transform: translateX(calc(-100% - 8px));
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    transform 170ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 130ms ease,
+    visibility 0s linear 170ms;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"][data-conversation-rail-drawer="open"] .reintegration-conversation-rail {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.adaptive-conversation-drawer-close {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .adaptive-conversation-drawer-close {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  flex: 0 0 auto;
+  border: 1px solid var(--cq-line);
+  border-radius: 6px;
+  background: var(--cq-stage);
+  color: var(--cq-muted);
+  cursor: pointer;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .adaptive-conversation-drawer-close:hover,
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .adaptive-conversation-drawer-close:focus-visible {
+  border-color: var(--cq-line-strong);
+  color: var(--cq-text);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dock header and controls                                                   */
+/* -------------------------------------------------------------------------- */
+
+.adaptive-conversation-threads {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .adaptive-conversation-threads {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-header {
+  min-height: 54px;
+  gap: 10px;
+  padding: 8px 11px;
+  background: color-mix(in srgb, var(--cq-stage) 97%, var(--cq-panel-2));
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-title {
+  gap: 8px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-close {
+  width: 28px;
+  height: 28px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-title-row {
+  gap: 6px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-title-row h2 {
+  max-width: 240px;
+  font-size: 12px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-scope-pill {
+  padding: 2px 5px;
+  font-size: 6px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-subtitle {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-actions {
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-actions button {
+  min-height: 28px;
+  padding: 5px 7px;
+  border-radius: 6px;
+  font-size: 7px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-actions button[data-adaptive-hide-in-dock="true"] {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] #reintegration-conversation-presentation-toggle {
+  border-color: var(--cq-line);
+  background: var(--cq-panel);
+  color: var(--cq-text);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .adaptive-conversation-threads[aria-expanded="true"] {
+  border-color: color-mix(in srgb, var(--cq-accent) 28%, var(--cq-line));
+  background: var(--cq-accent-soft);
+  color: var(--cq-accent);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Reading field and composer                                                 */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-transcript {
+  width: min(760px, calc(100% - 28px));
+  padding: 17px 0 22px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-conversation-turn {
+  margin-bottom: 24px;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-full-composer {
+  padding: 7px 11px 10px;
+}
+
+/* HOME stays visible because it carries real conversation ownership. The
+ * generic preserved-state label is redundant in this compact presentation. */
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-full-composer-context > span:last-child {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* A6 remains available, but explicit expansion does not permanently consume  */
+/* one third of a narrow dock. It becomes an invoked inspector sheet.         */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"][data-conversation-a6-expanded="true"] .reintegration-conversation-layer {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-presentation="copresent"] .reintegration-a6-inspector {
+  position: absolute;
+  z-index: 22;
+  inset: 0 0 0 auto;
+  width: min(320px, 82%);
+  border-left-color: var(--cq-line-strong);
+  box-shadow: -16px 0 34px rgba(0, 0, 0, 0.34);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Resize affordance                                                          */
+/* -------------------------------------------------------------------------- */
+
+.adaptive-conversation-resize-handle {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-open="true"][data-conversation-presentation="copresent"] .adaptive-conversation-resize-handle {
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 9px;
+  transform: translateX(-5px);
+  border: 0;
+  background: transparent;
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+.adaptive-conversation-resize-handle::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 4px;
+  width: 1px;
+  border-radius: 1px;
+  background: transparent;
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+
+.adaptive-conversation-resize-handle:hover::after,
+.adaptive-conversation-resize-handle:focus-visible::after,
+html[data-conversation-dock-resizing="true"] .adaptive-conversation-resize-handle::after {
+  background: color-mix(in srgb, var(--cq-accent) 56%, var(--cq-line-strong));
+  box-shadow: 0 0 9px color-mix(in srgb, var(--cq-accent) 20%, transparent);
+}
+
+.adaptive-conversation-resize-handle:focus-visible {
+  outline: none;
+}
+
+html[data-conversation-dock-resizing="true"] {
+  cursor: ew-resize;
+  user-select: none;
+}
+
+/* Full focus deliberately falls through to the source-faithful full Workspace:
+ * permanent Boxes/Text rail, long-form reading width and existing A6 behavior. */
+
+@media (max-width: 1180px) {
+  html[data-conversation-integration="adaptive-dock"] {
+    --adaptive-conversation-dock-width: min(520px, 46vw);
+  }
+
+  html[data-conversation-integration="adaptive-dock"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+    width: var(--adaptive-conversation-dock-width);
+    min-width: 0;
+  }
+}
+
+html[data-reduced="on"][data-conversation-integration="adaptive-dock"] .reintegration-conversation-rail,
+html[data-reduced="on"][data-conversation-integration="adaptive-dock"] .adaptive-conversation-resize-handle::after {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-conversation-integration="adaptive-dock"] .reintegration-conversation-rail,
+  html[data-conversation-integration="adaptive-dock"] .adaptive-conversation-resize-handle::after {
+    transition: none;
+  }
+}
