@@ -3,7 +3,7 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW",
+  "phase": "PHASE_C_CANONICAL_ROUTE_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
@@ -76,9 +76,11 @@
       "Checkpoint 256 therefore combines a 16px list row gap with 6px top/bottom real WorkUnit-row padding and validates actual rendered node-surface separation at both 1600px and 760px widths.",
       "The project owner requested Fullscreen restored to the current flat rail and requested Expand selected WorkUnit and Hide project HUD removed from that rail candidate.",
       "The project owner explicitly confirmed that current-process Focus is working correctly and instructed that Focus be left unchanged.",
-      "Workflow run 33211613408 passed the complete 68-test source-faithful Cockpit suite at implementation target e2768a807b2a80f438248a25f7d41e53be561d51."
+      "The project owner then requested that the current Checkpoint 256 Cockpit be available on the normal no-query link rather than through historical ?edge=angled plumbing.",
+      "Checkpoint 257 makes the plain cockpit-reintegration.html route canonical, isolates explicit edge/rail historical study routes, and uses ?edge=none only as an internal earlier-shell regression substrate.",
+      "Workflow run 33236756483 passed the complete 68-test source-faithful Cockpit suite at implementation target 59e5d19b310c4cc89fefc46fb4d116d67bdeefd5, including direct tests of the plain canonical route."
     ],
-    "notes": "No Claude obligation is pending. The current gate is human review of two narrow Checkpoint 256 corrections: actual visible Conversation Boxes spacing and the current flat right-side rail control set. Focus is explicitly unchanged and working. The Checkpoint 255 live topology compass is carried forward unchanged. The complete browser gate passed 68/68 at implementation target e2768a807b2a80f438248a25f7d41e53be561d51. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The current gate is human review of two narrow Checkpoint 256 corrections on the canonical no-query Cockpit route: actual visible Conversation Boxes spacing and the current flat right-side rail control set. Focus is explicitly unchanged and working. The Checkpoint 255 live topology compass is carried forward unchanged. Checkpoint 257 changes route plumbing only. The complete browser gate passed 68/68 at implementation target 59e5d19b310c4cc89fefc46fb4d116d67bdeefd5. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -113,15 +115,16 @@
       "PHASE_C_ARCHITECTURAL_EDGE_GEN2_REVIEW",
       "PHASE_C_RESTING_ANGLED_RAIL_REVIEW",
       "PHASE_C_FLAT_RAIL_LIVE_COMPASS_REVIEW",
-      "PHASE_C_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW"
+      "PHASE_C_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW",
+      "PHASE_C_CANONICAL_REVIEW_ROUTE_NORMALIZED"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-checkpoint-256-human-review-opened",
+    "transition_id": "mc0004-checkpoint-257-canonical-review-route-normalized",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "Human review showed that row-gap-only Conversation spacing remained visually ineffective and requested a narrower flat-rail control set. Checkpoint 256 reserves structural WorkUnit-row breathing room, validates actual rendered separation, restores Fullscreen, removes two rail controls, and explicitly leaves working Focus unchanged under a 68/68 deterministic gate.",
-    "repository_head": "e2768a807b2a80f438248a25f7d41e53be561d51"
+    "reason": "The project owner requested that the current Checkpoint 256 Cockpit become available on the normal link. Checkpoint 257 makes the no-query route canonical, isolates historical edge/rail studies and earlier-shell regression coverage, and preserves the same human-review boundary under a complete 68/68 deterministic gate.",
+    "repository_head": "59e5d19b310c4cc89fefc46fb4d116d67bdeefd5"
   }
 }
