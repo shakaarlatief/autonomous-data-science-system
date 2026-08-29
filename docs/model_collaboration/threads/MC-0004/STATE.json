@@ -3,7 +3,7 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_PROJECT_GENERAL_THREAD_CONTAINMENT_HUMAN_RECHECK",
+  "phase": "PHASE_C_PROJECT_GENERAL_FOOTPRINT_SELECTION_FRAME_HUMAN_RECHECK",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
@@ -85,11 +85,15 @@
       "Workflow run 33247046868 passed 76/76 browser tests at implementation/test target b8a2d095214c3417f95180ca519c7b6224739181.",
       "The project owner's Checkpoint 262 human retest confirms the WorkUnit spacing is now visually correct.",
       "The same successful spacing screenshot exposed one residual defect: General project discussion was not fully contained as its own first rail object and the first WorkUnit visibly invaded that row at a wide but vertically short browser viewport.",
-      "Research 101 preserves the human-confirmed WorkUnit grid-track spacing and adds explicit project-row containment: 74px minimum project row height, 7px row padding, 58px project artifact minimum height and the existing 16px inter-track gap.",
-      "A new 1776x766 regression requires the General project discussion artifact to remain distinct from the first WorkUnit while preserving the >=20px WorkUnit surface gaps.",
-      "Workflow run 33247621778 passed 77/77 browser tests at implementation/test target 5913467cfffd535215da7ab2cb70bdeb2be9f2e9."
+      "Research 101 preserves the human-confirmed WorkUnit grid-track spacing and adds explicit project-row containment. Workflow run 33247621778 passed 77/77 browser tests at implementation/test target 5913467cfffd535215da7ab2cb70bdeb2be9f2e9.",
+      "The project owner's Checkpoint 263 retest confirms General project discussion is now fully contained and the WorkUnit spacing remains correct.",
+      "The same latest screenshots identify a small remaining consistency issue: the project-general visible artifact is smaller than WorkUnit box slots and its selected state is drawn on a larger generic structural row rather than on the visible artifact itself.",
+      "Research 102 aligns the project-general artifact to the accepted WorkUnit rail footprint: 232x74 normally and 214x69 at <=1450px. WorkUnit geometry is unchanged.",
+      "Research 102 also makes Boxes-mode outer thread rows visually transparent while active, carrying selection on the visible project artifact or canonical WorkUnit node surface. Text mode retains generic row selection.",
+      "The existing 16px grid-track spacing remains unchanged. Equalizing the project artifact footprint produces a 15px painted project-to-first-WorkUnit gap at the short viewport while the structural grid gap remains 16px; WorkUnit-to-WorkUnit visible gaps remain >=20px.",
+      "Workflow run 33251166351 passed 78/78 browser tests at final implementation/test target 9881efe313b8cf04d9521c0464050b30b29944c1."
     ],
-    "notes": "No Claude obligation is pending. The active ChatGPT interaction is chatgpt-10 / 10 - Project Cockpit Design Exploration. Checkpoint 262's WorkUnit spacing recovery is now human-confirmed. Checkpoint 263 is the narrow human recheck of the remaining General project discussion first-row containment defect. Focus is not under active repair. The complete Cockpit browser gate passes 77/77 at implementation/test target 5913467cfffd535215da7ab2cb70bdeb2be9f2e9, including a new 1776x766 short-height regression. The human should pull and hard-refresh, verify that General project discussion is a complete standalone first artifact with clear separation before WorkUnit 1, and then resume Adaptive Dock product review if correct. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. The active ChatGPT interaction is chatgpt-10 / 10 - Project Cockpit Design Exploration. WorkUnit spacing and General project discussion containment are now human-confirmed correct. Checkpoint 264 is a final narrow visual recheck of project-general footprint and selected-surface framing. The project artifact now matches the accepted WorkUnit rail footprint and Boxes selection is drawn on the visible artifact/surface rather than a larger structural wrapper. The complete Cockpit browser gate passes 78/78 at implementation/test target 9881efe313b8cf04d9521c0464050b30b29944c1. If the human confirms the alignment, close this Conversation integrity interruption and resume the still-open Adaptive Conversation Dock review. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -131,15 +135,16 @@
       "PHASE_C_CONVERSATION_BOXES_ROW_OWNED_SPACING_HUMAN_RECHECK",
       "PHASE_C_CHATGPT_10_INTERACTION_PROVENANCE_RECONCILED",
       "PHASE_C_CONVERSATION_BOXES_GRID_TRACK_SPACING_HUMAN_RECHECK",
-      "PHASE_C_PROJECT_GENERAL_THREAD_CONTAINMENT_HUMAN_RECHECK"
+      "PHASE_C_PROJECT_GENERAL_THREAD_CONTAINMENT_HUMAN_RECHECK",
+      "PHASE_C_PROJECT_GENERAL_FOOTPRINT_SELECTION_FRAME_HUMAN_RECHECK"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-checkpoint-263-project-general-thread-containment-human-recheck",
+    "transition_id": "mc0004-checkpoint-264-project-general-footprint-selection-frame-human-recheck",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The project owner confirmed the Research 100 WorkUnit spacing recovery is visually correct but the same screenshot showed General project discussion being invaded by the first WorkUnit at a short desktop content height. Research 101 and Checkpoint 263 preserve the accepted WorkUnit grid-track spacing, add explicit project-row containment and open a narrow human recheck after a 77/77 browser gate.",
-    "repository_head": "5913467cfffd535215da7ab2cb70bdeb2be9f2e9"
+    "reason": "The project owner confirmed WorkUnit spacing and project-general containment are correct, then identified a small remaining visual consistency issue: General project discussion had a smaller visible footprint and a larger structural selected wrapper than WorkUnit conversations. Research 102 and Checkpoint 264 align the project artifact to the accepted WorkUnit rail footprint and move Boxes selection framing onto the visible selected surfaces after a 78/78 browser gate.",
+    "repository_head": "9881efe313b8cf04d9521c0464050b30b29944c1"
   }
 }
