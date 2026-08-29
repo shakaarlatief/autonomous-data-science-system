@@ -1,0 +1,226 @@
+/*
+ * Practical workbench refinement for the opt-in Adaptive Conversation Dock.
+ *
+ * This layer responds to the Checkpoint 264 human confirmation and the first
+ * whole-product Adaptive Dock review. It intentionally stays behind
+ * ?conversation=adaptive-dock while the practical interaction model is under
+ * human review.
+ */
+
+html[data-conversation-integration="adaptive-dock"] {
+  --adaptive-project-rail-reserve: 96px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Conversation is a resizable secondary workbench, not a rail replacement.  */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+  right: var(--adaptive-project-rail-reserve);
+  width: min(
+    var(--adaptive-conversation-dock-width),
+    calc(100vw - var(--adaptive-project-rail-reserve) - 520px)
+  );
+  min-width: min(
+    360px,
+    calc(100vw - var(--adaptive-project-rail-reserve) - 520px)
+  );
+}
+
+/* The existing Project Grid rail remains fully reachable beside the dock. */
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-rig {
+  pointer-events: none;
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-shell,
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .cockpit-angled-rail-clarity {
+  pointer-events: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Deep Dive and Conversation become a true split workspace.                  */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="focused"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+  right: 0;
+  width: min(var(--adaptive-conversation-dock-width), calc(100vw - 520px));
+  min-width: min(360px, calc(100vw - 520px));
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="focused"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-specialist-layer {
+  right: var(--adaptive-conversation-dock-width);
+  width: auto;
+  border-right: 1px solid rgba(185, 206, 240, 0.10);
+}
+
+html[data-conversation-integration="adaptive-dock"][data-deep-focus="focused"][data-conversation-open="true"][data-conversation-presentation="copresent"][data-conversation-dock-resizing="false"] .reintegration-specialist-layer {
+  transition: right 120ms ease;
+}
+
+/* -------------------------------------------------------------------------- */
+/* The resize edge should feel discoverable like a professional split pane.    */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"][data-conversation-open="true"][data-conversation-presentation="copresent"] .adaptive-conversation-resize-handle {
+  width: 12px;
+  transform: translateX(-6px);
+}
+
+html[data-conversation-integration="adaptive-dock"] .adaptive-conversation-resize-handle::after {
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  width: 2px;
+  background: rgba(185, 206, 240, 0.08);
+}
+
+html[data-conversation-integration="adaptive-dock"] .adaptive-conversation-resize-handle:hover::after,
+html[data-conversation-integration="adaptive-dock"] .adaptive-conversation-resize-handle:focus-visible::after,
+html[data-conversation-integration="adaptive-dock"][data-conversation-dock-resizing="true"] .adaptive-conversation-resize-handle::after {
+  background: color-mix(in srgb, var(--cq-accent) 62%, rgba(185, 206, 240, 0.24));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--cq-accent) 20%, transparent);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Remove explanatory chrome that does not help the user operate the product. */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-conversation-subtitle {
+  display: none !important;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-conversation-header {
+  min-height: 54px;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-conversation-title-copy {
+  display: flex;
+  align-items: center;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Direct WorkUnit action: Deep Dive sits beside the accepted X5 Chat action.  */
+/* -------------------------------------------------------------------------- */
+
+.adaptive-deep-dive-action {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-world .expansion-practical-node[data-selected="true"][data-expanded="true"] > .adaptive-deep-dive-action {
+  position: absolute;
+  z-index: 19;
+  right: 116px;
+  bottom: 12px;
+  display: block;
+  min-height: 25px;
+  border: 1px solid rgba(185, 204, 229, 0.18);
+  border-radius: 6px;
+  padding: 0 9px;
+  background: rgba(12, 18, 27, 0.94);
+  color: rgba(226, 234, 244, 0.88);
+  font: 650 7.5px/1 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-world .expansion-practical-node[data-selected="true"][data-expanded="true"] > .adaptive-deep-dive-action:hover,
+html[data-conversation-integration="adaptive-dock"] .reintegration-world .expansion-practical-node[data-selected="true"][data-expanded="true"] > .adaptive-deep-dive-action:focus-visible {
+  border-color: rgba(157, 184, 255, 0.38);
+  background: rgba(20, 29, 41, 0.96);
+  color: #f0f4f8;
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Deep Dive typography: readable product UI instead of micro-label fixture.   */
+/* -------------------------------------------------------------------------- */
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-bar {
+  height: 58px;
+  padding: 0 18px;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-content {
+  height: calc(100% - 58px);
+  gap: 12px;
+  padding: 14px;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-main,
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-side {
+  gap: 12px;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-panel {
+  padding: 16px;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-bar span,
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-panel > span {
+  color: rgba(173, 191, 218, 0.78);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11px;
+  font-weight: 620;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-bar strong {
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 680;
+  line-height: 1.3;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-panel strong {
+  margin-top: 7px;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-panel p {
+  display: none;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-bar button,
+html[data-conversation-integration="adaptive-dock"] .reintegration-deep-conversation-actions button {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+html[data-conversation-integration="adaptive-dock"] .reintegration-topology-compass > span {
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 620 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.25 !important;
+  text-transform: none !important;
+}
+
+@media (max-width: 1280px) {
+  html[data-conversation-integration="adaptive-dock"] {
+    --adaptive-project-rail-reserve: 92px;
+  }
+
+  html[data-conversation-integration="adaptive-dock"][data-deep-focus="false"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+    width: min(var(--adaptive-conversation-dock-width), calc(100vw - var(--adaptive-project-rail-reserve) - 460px));
+    min-width: min(340px, calc(100vw - var(--adaptive-project-rail-reserve) - 460px));
+  }
+
+  html[data-conversation-integration="adaptive-dock"][data-deep-focus="focused"][data-conversation-open="true"][data-conversation-presentation="copresent"] .reintegration-conversation-layer {
+    width: min(var(--adaptive-conversation-dock-width), calc(100vw - 460px));
+    min-width: min(340px, calc(100vw - 460px));
+  }
+}
+
+html[data-reduced="on"][data-conversation-integration="adaptive-dock"] .reintegration-specialist-layer {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-conversation-integration="adaptive-dock"] .reintegration-specialist-layer {
+    transition: none !important;
+  }
+}
