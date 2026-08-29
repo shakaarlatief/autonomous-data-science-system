@@ -93,7 +93,7 @@ def normalize_candidate(line: str) -> str | None:
         return None
     if not candidate.startswith(PATH_PREFIXES):
         return None
-    candidate = candidate.split()[0]
+    candidate = candidate.split()[0].strip("`")
     return candidate.rstrip(",;:")
 
 
