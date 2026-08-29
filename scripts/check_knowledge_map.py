@@ -10,6 +10,8 @@ CHECKPOINT_RANGE_RE = re.compile(
     r"<!--\s*KM-CHECKPOINT-RANGE:\s*(\d{3})-(\d{3})\s+([a-z0-9 -]+?)\s*-->"
 )
 NUMBERED_NAME_RE = re.compile(r"^(\d{3})_.*\.md$")
+SUBJECT_INDEX_ENTRY_RE = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
+SUBJECT_HEADING_RE = re.compile(r"^###\s+(.+?)\s*$")
 
 EXPECTED_TOPICS = {
     "system-identity",
@@ -128,6 +130,33 @@ def checkpoint_numbers(root: Path) -> set[int]:
     return numbers
 
 
+def subject_index_entries(text: str) -> list[tuple[int, str]]:
+    if "## Subject index" not in text or "## Subject library" not in text:
+        return []
+    section = text.split("## Subject index", 1)[1].split("## Subject library", 1)[0]
+    entries: list[tuple[int, str]] = []
+    for line in section.splitlines():
+        match = SUBJECT_INDEX_ENTRY_RE.match(line)
+        if match:
+            entries.append((int(match.group(1)), match.group(2).strip()))
+    return entries
+
+
+def topic_heading_pairs(text: str) -> list[tuple[str, str | None]]:
+    pairs: list[tuple[str, str | None]] = []
+    current_heading: str | None = None
+    for line in text.splitlines():
+        heading = SUBJECT_HEADING_RE.match(line.strip())
+        if heading:
+            current_heading = heading.group(1).strip()
+
+        marker = TOPIC_RE.search(line)
+        if marker:
+            pairs.append((marker.group(1), current_heading))
+            current_heading = None
+    return pairs
+
+
 def validate(root: Path) -> list[str]:
     map_path = root / MAP_PATH
     try:
@@ -158,6 +187,44 @@ def validate(root: Path) -> list[str]:
         errors.append("missing required KM-TOPIC ids: " + ", ".join(missing_topics))
     if unexpected_topics:
         errors.append("unexpected KM-TOPIC ids: " + ", ".join(unexpected_topics))
+
+    subject_entries = subject_index_entries(text)
+    if not subject_entries:
+        errors.append("missing or empty numbered Subject index")
+    else:
+        subject_numbers = [number for number, _ in subject_entries]
+        expected_numbers = list(range(1, len(subject_entries) + 1))
+        if subject_numbers != expected_numbers:
+            errors.append(
+                "Subject index numbering must be contiguous from 1: "
+                + ", ".join(str(number) for number in subject_numbers)
+            )
+
+    topic_pairs = topic_heading_pairs(text)
+    missing_topic_headings = [topic for topic, heading in topic_pairs if heading is None]
+    if missing_topic_headings:
+        errors.append(
+            "KM-TOPIC markers without an immediately preceding level-3 subject heading: "
+            + ", ".join(missing_topic_headings)
+        )
+
+    if subject_entries and not missing_topic_headings:
+        subject_names = [name for _, name in subject_entries]
+        topic_headings = [heading for _, heading in topic_pairs if heading is not None]
+        if len(subject_names) != len(topic_headings):
+            errors.append(
+                "Subject index entry count does not match KM-TOPIC subject count: "
+                f"index={len(subject_names)} topics={len(topic_headings)}"
+            )
+        else:
+            for position, (subject_name, (topic_id, topic_heading)) in enumerate(
+                zip(subject_names, topic_pairs, strict=True), start=1
+            ):
+                if topic_heading is not None and subject_name != topic_heading:
+                    errors.append(
+                        f"Subject index entry {position} does not match KM-TOPIC {topic_id!r} heading: "
+                        f"index={subject_name!r} heading={topic_heading!r}"
+                    )
 
     current_topic: str | None = None
     topic_path_counts: dict[str, int] = {topic: 0 for topic in topic_ids}
@@ -259,6 +326,7 @@ def main() -> int:
 
     text = (root / MAP_PATH).read_text(encoding="utf-8")
     topics = TOPIC_RE.findall(text)
+    subjects = subject_index_entries(text)
     families = {
         relative_dir.as_posix(): len(numbered_files(root, relative_dir))
         for relative_dir in NUMBERED_FAMILIES
@@ -267,6 +335,7 @@ def main() -> int:
     print(
         "Knowledge map integrity: PASS "
         f"topics={len(topics)} "
+        f"subject_index={len(subjects)} "
         f"foundations={families['docs/foundations']} "
         f"specifications={families['docs/specifications']} "
         f"research={families['docs/research']} "

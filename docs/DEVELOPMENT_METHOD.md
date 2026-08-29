@@ -199,6 +199,7 @@ The validator protects:
 
 ```text
 topic identity and non-empty routing
+human-readable Subject-index alignment with KM-TOPIC subject headings
 path integrity
 exhaustive Foundation / Specification / Research coverage
 checkpoint-range coverage
@@ -206,7 +207,7 @@ specialized-index reachability
 absence of live-state sections in the Knowledge Map
 ```
 
-It does not infer semantic authority automatically.
+A green Knowledge Map validator establishes **structural coverage and integrity**, not semantic-routing correctness. It does not infer semantic authority automatically and cannot prove that every artifact was assigned to the best subject. Periodic reconciliation therefore includes a lightweight routing-quality spot-check in addition to mechanical coverage validation.
 
 ## Risk-scaled verification
 
@@ -303,6 +304,7 @@ MC-0001..0003 / v0.5   governed multi-model collaboration
 Research 064           checkpoint hygiene during rapid iteration
 Research 103 / v0.6    evergreen routing recovery + risk-scaled verification
 Research 104 / v0.7    single-responsibility information architecture + exhaustive routing
+MC-0005                 adversarial v0.7 architecture review + narrow routing hardening
 ```
 
 ## Governed multi-model development
@@ -336,6 +338,7 @@ Is CURRENT_STATE concise, present-tense and accurate?
 Does current_routing agree with CURRENT_STATE?
 Does docs/README describe the repository roles that actually exist?
 Does KNOWLEDGE_MAP exhaustively route durable numbered knowledge by subject?
+Does a lightweight sample confirm routing quality, not merely route coverage?
 Are specialized indexes still globally reachable?
 Are VISION/PRINCIPLES/DECISIONS/OPEN_QUESTIONS current?
 Are foundations/specifications/research discoverable by subject?
@@ -369,6 +372,8 @@ Semantic/vector repository retrieval, generated semantic catalogs, contradiction
 
 Development Method v0.7 does **not** introduce a vector/semantic knowledge database because the diagnosed failure remains information architecture and routing discipline, not inability to store or retrieve repository artifacts with the current scale and tooling.
 
+If the central Knowledge Map later becomes a demonstrated reconstruction-read-cost or maintenance bottleneck, or repeated semantic-routing drift survives the current guards, distributed per-artifact topic metadata with a generated semantic view is the leading lightweight successor architecture to evaluate before introducing a heavier semantic repository database.
+
 ## Version history
 
 ### Version 0.7
@@ -385,13 +390,15 @@ Development Method v0.7 does **not** introduce a vector/semantic knowledge datab
 - preserved multiple topic membership where useful;
 - strengthened Knowledge Map CI to detect unassigned durable knowledge and live-state leakage;
 - retained v0.6 checkpoint aggregation and V0-V4 risk-scaled verification;
-- added verification-command integrity after the first v0.6 forced-full workflow executed only a narrowed subset because of quoting.
+- added verification-command integrity after the first v0.6 forced-full workflow executed only a narrowed subset because of quoting;
+- after MC-0005, added Subject-index/`KM-TOPIC` alignment validation and made the structural-coverage-versus-semantic-correctness boundary explicit without changing the v0.7 architecture.
 
 Evidence:
 
 ```text
 docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
 docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
+docs/model_collaboration/threads/MC-0005/RESOLUTION.md
 ```
 
 ### Version 0.6
