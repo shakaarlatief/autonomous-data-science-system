@@ -25,8 +25,20 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number, height = 
   expect(rowGap).toBeGreaterThanOrEqual(16)
 
   const projectThread = page.locator('.reintegration-thread-item[data-thread-scope="project"]')
-  const projectMargin = await projectThread.evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
-  expect(projectMargin).toBeLessThanOrEqual(0.5)
+  const projectGeometry = await projectThread.evaluate((element) => {
+    const style = getComputedStyle(element)
+    const rect = element.getBoundingClientRect()
+    return {
+      marginBottom: Number.parseFloat(style.marginBottom),
+      paddingTop: Number.parseFloat(style.paddingTop),
+      paddingBottom: Number.parseFloat(style.paddingBottom),
+      height: rect.height,
+    }
+  })
+  expect(projectGeometry.marginBottom).toBeLessThanOrEqual(0.5)
+  expect(projectGeometry.paddingTop).toBeGreaterThanOrEqual(7)
+  expect(projectGeometry.paddingBottom).toBeGreaterThanOrEqual(7)
+  expect(projectGeometry.height).toBeGreaterThanOrEqual(73.5)
 
   const workRows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
   const firstWorkGeometry = await workRows.first().evaluate((element) => {
@@ -71,6 +83,10 @@ async function expectVisibleWorkUnitSpacing(page: Page, width: number, height = 
 test.describe('Checkpoint 256 review corrections on the canonical Cockpit route', () => {
   test('Conversation WorkUnits have structural visible separation at the normal desktop viewport', async ({ page }) => {
     await expectVisibleWorkUnitSpacing(page, 1600)
+  })
+
+  test('General project discussion remains a distinct first artifact at a short desktop viewport', async ({ page }) => {
+    await expectVisibleWorkUnitSpacing(page, 1776, 766)
   })
 
   test('Conversation WorkUnits retain structural visible separation at the responsive 1100px viewport', async ({ page }) => {
