@@ -139,7 +139,7 @@ The earlier v0.6 run that executed only 16 tests is not accepted as V3 evidence.
 
 ## Non-blocking second-model architecture review
 
-The finalized v0.7 architecture is now frozen for a direct Claude adversarial review at:
+The finalized v0.7 architecture is frozen for a direct Claude adversarial review at:
 
 ```text
 c834d8298b86a0185ffcc0ffa62d0e9c178cc2ad
@@ -165,7 +165,31 @@ propose the strongest simpler alternative if one exists
 
 This review is optional/non-blocking for product continuation. Checkpoint 266 remains complete unless a later Claude finding is substantively accepted and warrants revision.
 
-Claude can only write to the declared MC-0005 message surface. ChatGPT remains task owner for later disposition.
+MC-0005 is read-only with respect to the frozen target. It has no target write paths and no target-state write owner. Claude may write only to the declared MC-0005 message surface; ChatGPT remains task owner for later disposition.
+
+### Collaboration-state validation reconciliation
+
+Opening MC-0005 exposed an unrelated old operational drift: the collaboration-state workflow was still restricted to the historical `v1-multimodel-development-collaboration` branch, so guarded thread state was not being mechanically checked on the current Cockpit branch.
+
+The workflow is now branch-neutral. Re-enabling it immediately exposed one pre-existing MC-0004 schema violation: a non-schema `status_history` field had been stored inside the `independence` object. The field represented broad Phase-C chronology rather than independence state, so it was removed rather than weakening the schema; that chronology remains preserved in thread/checkpoint/research/Git history.
+
+Final guarded-state validation after the repair:
+
+```text
+workflow     33257576600
+Windows job  99113865887   SUCCESS
+Ubuntu job   99113866011   SUCCESS
+```
+
+Final MC-0005 read-only-scope validation:
+
+```text
+workflow     33257669671
+Ubuntu job   99114107734   SUCCESS
+Windows job  99114107825   SUCCESS
+```
+
+Both runs include guarded-state validation, collaboration-state unit tests and the assertion that `current_routing.json` remains free of collaboration-lock fields.
 
 ## Current Cockpit product boundary remains Checkpoint 264
 
@@ -240,7 +264,7 @@ Production `/cockpit` remains untouched.
 
 ## Exact next steps
 
-Two independent continuations are now legitimate:
+Two independent continuations are legitimate:
 
 ```text
 PRODUCT
