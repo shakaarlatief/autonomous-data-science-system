@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-29  
-**Current checkpoint:** 260  
+**Current checkpoint:** 261  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,8 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/261_chatgpt_10_interaction_provenance_reconciliation.md
 
 docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
 docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
@@ -47,12 +49,43 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                260
+checkpoint                261
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          Conversation Boxes row-owned spacing human recheck
+interaction session       chatgpt-10
+conversation title        10 - Project Cockpit Design Exploration
+current product boundary  Conversation Boxes row-owned spacing human recheck
 ```
+
+---
+
+# Checkpoint 261 interaction provenance reconciliation
+
+The preceding ChatGPT conversation reached its length limit and development continued in a new ChatGPT conversation. Repository interaction metadata was not rotated at that boundary, so post-boundary work was initially stamped with `chatgpt-09`.
+
+Checkpoint 261 reconstructs the boundary and assigns the current interaction:
+
+```text
+chatgpt-10
+10 - Project Cockpit Design Exploration
+```
+
+Corrected post-boundary provenance includes:
+
+```text
+Checkpoint 258
+Checkpoint 259
+Checkpoint 260
+Research 097
+Research 098
+CURRENT_STATE
+MC-0004 STATE
+```
+
+Research 099 contained no incorrect interaction-session field. Pre-boundary ChatGPT-09 artifacts remain unchanged.
+
+This is metadata repair only. The active product gate remains Checkpoint 260.
 
 ---
 
@@ -279,6 +312,10 @@ Current gate model:
 PROVENANCE GATE
     PASS
 
+INTERACTION PROVENANCE
+    RECONCILED at Checkpoint 261
+    chatgpt-10 / 10 - Project Cockpit Design Exploration
+
 DETERMINISTIC INTEGRATION GATE
     PASS, 74/74 at current implementation target
 
@@ -306,7 +343,7 @@ Conversation ownership independent from SEL2 selection
 compact native Cockpit composer
 ```
 
-Checkpoint 260 changes none of those decisions.
+Checkpoints 260 and 261 change none of those decisions.
 
 ---
 
