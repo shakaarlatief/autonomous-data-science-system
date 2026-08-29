@@ -89,14 +89,22 @@ test.describe('Checkpoint 255 whole-Cockpit human-review corrections', () => {
     await expect(page.locator('html')).toHaveAttribute('data-conversation-rail', 'boxes')
 
     const listGap = await page.locator('.reintegration-thread-list').evaluate((element) => Number.parseFloat(getComputedStyle(element).rowGap))
-    expect(listGap).toBeLessThanOrEqual(0.5)
+    expect(listGap).toBeGreaterThanOrEqual(16)
 
     const projectMargin = await page.locator('.reintegration-thread-item[data-thread-scope="project"]').evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
-    expect(projectMargin).toBeGreaterThanOrEqual(16)
+    expect(projectMargin).toBeLessThanOrEqual(0.5)
 
     const workRows = page.locator('.reintegration-thread-item[data-thread-scope="work"]')
-    const firstWorkMargin = await workRows.first().evaluate((element) => Number.parseFloat(getComputedStyle(element).marginBottom))
-    expect(firstWorkMargin).toBeGreaterThanOrEqual(16)
+    const firstWorkGeometry = await workRows.first().evaluate((element) => {
+      const style = getComputedStyle(element)
+      const rect = element.getBoundingClientRect()
+      return {
+        marginBottom: Number.parseFloat(style.marginBottom),
+        height: rect.height,
+      }
+    })
+    expect(firstWorkGeometry.marginBottom).toBeLessThanOrEqual(0.5)
+    expect(firstWorkGeometry.height).toBeGreaterThanOrEqual(72.5)
 
     const project = await page.locator('.reintegration-project-thread-artifact').boundingBox()
     const workSurfaces = page.locator('.reintegration-thread-item[data-thread-scope="work"] .conversation-canonical-node .node-surface')
@@ -112,13 +120,13 @@ test.describe('Checkpoint 255 whole-Cockpit human-review corrections', () => {
     }
 
     const projectGap = surfaces[0].y - ((project?.y ?? 0) + (project?.height ?? 0))
-    expect(projectGap).toBeGreaterThanOrEqual(14)
+    expect(projectGap).toBeGreaterThanOrEqual(16)
 
     for (let index = 1; index < surfaces.length; index += 1) {
       const previous = surfaces[index - 1]
       const current = surfaces[index]
       const visibleGap = current.y - (previous.y + previous.height)
-      expect(visibleGap).toBeGreaterThanOrEqual(14)
+      expect(visibleGap).toBeGreaterThanOrEqual(20)
     }
   })
 
