@@ -40,22 +40,48 @@ html:not([data-conversation-rail="text"]) .reintegration-thread-list {
  * The project-general artifact is not transformed, but it still lives in the
  * same auto-row grid. At short desktop heights the grid may otherwise compress
  * that first button enough for the following transformed WorkUnit surface to
- * paint into it. Reserve the artifact's existing 58 px footprint plus the
- * thread-item padding/border so General project discussion remains a distinct
- * first conversation object rather than becoming a backdrop for WorkUnit 1.
+ * paint into it. Reserve the artifact's footprint plus the thread-item
+ * padding/border so General project discussion remains a distinct first
+ * conversation object rather than becoming a backdrop for WorkUnit 1.
+ *
+ * Checkpoint 264 further aligns the visible project artifact with the accepted
+ * canonical Conversation WorkUnit footprint: 232 x 74 at the normal rail scale
+ * and 214 x 69 in the <=1450 px responsive rail. The outer thread button is
+ * structural only in Boxes mode; selection belongs to the visible artifact,
+ * exactly as WorkUnit selection is drawn on the visible node surface.
  */
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
   box-sizing: border-box;
   height: auto !important;
-  min-height: 74px !important;
+  min-height: 78px !important;
   margin: 0 !important;
-  padding: 7px !important;
+  padding: 6px 4px !important;
   overflow: visible !important;
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] .reintegration-project-thread-artifact {
   box-sizing: border-box;
-  min-height: 58px;
+  width: 232px;
+  height: 74px;
+  min-height: 74px;
+}
+
+/*
+ * Boxes selection must not create a second, differently sized wrapper around
+ * the project artifact or a WorkUnit. The generic thread-item active treatment
+ * remains available in Text mode, while Boxes mode carries selection directly
+ * on the visible artifact surface.
+ */
+html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-active {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+
+html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"].is-active .reintegration-project-thread-artifact {
+  border-color: color-mix(in srgb, var(--cq-accent) 31%, rgba(119, 137, 160, 0.31));
+  box-shadow:
+    0 8px 23px rgba(0, 0, 0, 0.18),
+    0 0 0 1px color-mix(in srgb, var(--cq-accent) 8%, transparent);
 }
 
 html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
@@ -72,9 +98,20 @@ html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit
  * The accepted responsive rail renders the 92 px canonical WorkUnit at 0.74
  * below 1450 px, giving a ~68.1 px visible surface. A 73 px minimum row plus
  * the 16 px grid gap preserves at least ~20 px between visible surfaces while
- * keeping the accepted WorkUnit footprint unchanged.
+ * keeping the accepted WorkUnit footprint unchanged. The project-general
+ * artifact follows the same 214 x 69 visible rail slot at this breakpoint.
  */
 @media (max-width: 1450px) {
+  html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] {
+    min-height: 73px !important;
+  }
+
+  html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="project"] .reintegration-project-thread-artifact {
+    width: 214px;
+    height: 69px;
+    min-height: 69px;
+  }
+
   html:not([data-conversation-rail="text"]) .reintegration-thread-item[data-thread-scope="work"],
   html:not([data-conversation-rail="text"]) .reintegration-thread-item.is-workunit-thread {
     min-height: 73px !important;
