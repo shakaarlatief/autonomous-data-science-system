@@ -3,7 +3,7 @@
   "thread_id": "MC-0004",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
   "lifecycle_state": "ACTIVE",
-  "phase": "PHASE_C_PRESENTATION_STATE_INTEGRITY_HUMAN_CONFIRMATION",
+  "phase": "PHASE_C_CONVERSATION_BOXES_ROW_OWNED_SPACING_HUMAN_RECHECK",
   "target": {
     "branch": "v1-cockpit-design-exploration",
     "base_ref": "2480109fadeee1e480ef03b82e335aacdf9adf91",
@@ -71,17 +71,21 @@
       "Research 092 and Research 093 preserve earlier direct-manipulation and architectural 3D rail candidates as historical evidence.",
       "Research 094 tested a permanent resting angled rail and that treatment was later rejected for the current rail direction.",
       "Checkpoint 255 flattened the current right rail and replaced the static Deep Dive compass with a live Project-Grid-derived topology instrument.",
-      "Research 096 identified the Conversation layout-level blind spot and Checkpoint 256 corrected visible WorkUnit separation with 16px list gap plus 6px top/bottom structural row padding.",
+      "Research 096 identified the Conversation layout-level blind spot and Checkpoint 256 established the accepted visible WorkUnit separation target with 16px separation plus 6px top/bottom structural WorkUnit-row padding.",
       "Checkpoint 256 restored Fullscreen to the current flat rail, removed Expand selected WorkUnit and Hide project HUD from that rail candidate, and initially left current-process Focus unchanged because the project owner reported it working at that review moment.",
       "Checkpoint 257 made the plain cockpit-reintegration.html route canonical, isolated explicit edge/rail historical study routes, and used ?edge=none only as an internal earlier-shell regression substrate.",
       "The project owner accepted the Checkpoint 256/257 corrected Cockpit for continuation and then identified a whole-product hierarchy problem in co-present Conversation.",
       "Research 097 introduced the opt-in Adaptive Conversation Dock candidate: full-focus retains the source-faithful persistent rail, while co-present uses a compact resizable right dock and invokes the same Boxes/Text rail through a Threads drawer.",
       "During initial Adaptive Dock review the project owner paused product judgment because Conversation spacing and current-process Focus both showed intermittent regressions again.",
-      "Research 098 identified real implementation-integrity defects rather than new design disagreements: Conversation structural padding targeted the stale .is-workunit-thread selector instead of current data-thread-scope=work rows, and Focus node membership had a one-time lifecycle while relation recession was continuously resynchronized.",
-      "Checkpoint 259 statically binds accepted Conversation spacing and Focus styling, gives Focus an authoritative DOM-independent membership set with WorkUnit-remount repair, and preserves all held semantics.",
-      "Workflow run 33240152004 passed 73/73 browser tests at implementation target 0374d624ec0e88d65060fb2424ce18291ca40792, including new adaptive Conversation spacing lifecycle and Focus remount/synchronization regressions."
+      "Research 098 repaired Focus lifecycle asymmetry through DOM-independent membership state, WorkUnit-remount repair and synchronized node/relation recession. Its initial Conversation explanation identified selector drift and static style ownership but was later shown by human retest to be incomplete.",
+      "Workflow run 33240152004 passed 73/73 browser tests at implementation target 0374d624ec0e88d65060fb2424ce18291ca40792, but the following human retest still showed Conversation WorkUnit boxes visually joined.",
+      "At the Checkpoint 259 human retest, the project owner reported current-process Focus working as far as tested while Conversation Boxes still lacked the original visible spacing, with screenshots showing the failure on the real integrated Conversation surface.",
+      "Research 099 corrects the Conversation diagnosis: .is-workunit-thread is also restored by the integrated Phase-C adapter, so selector drift alone was insufficient. The stronger weakness was dependence on parent grid gap and exact boxes rail-state matching.",
+      "Checkpoint 260 makes accepted Conversation separation row-owned: parent row-gap is zero, project and WorkUnit rows own 16px following margins, WorkUnit rows retain 6px top/bottom padding, and every non-Text rail state receives the Boxes/artifact spacing contract.",
+      "A new regression forces legacy data-conversation-rail=artifact at a 1536x864 user-like viewport while requiring Boxes to remain selected and visible separation to survive.",
+      "Workflow run 33241369935 passed 74/74 browser tests at implementation target 29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1."
     ],
-    "notes": "No Claude obligation is pending. Checkpoint 259 temporarily pauses Adaptive Conversation Dock product judgment for one human stability confirmation. The two reported intermittent failure families have concrete root-cause fixes and a green 73/73 complete browser gate at implementation target 0374d624ec0e88d65060fb2424ce18291ca40792. The human should pull the branch and try to reproduce collapsed Conversation Boxes spacing and Focus node/relation desynchronization. If stable, resume Checkpoint 258 Adaptive Conversation Dock review immediately. Production /cockpit remains untouched.",
+    "notes": "No Claude obligation is pending. Checkpoint 260 is a narrow human recheck of Conversation Boxes visible separation after the Checkpoint 259 retest confirmed Focus working but disproved the sufficiency of the prior Conversation spacing recovery. Focus is not under active repair. The current implementation owns separation at each Conversation row and protects every non-Text Boxes/artifact state. The complete Cockpit browser gate passes 74/74 at implementation target 29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1. The human should pull and hard-refresh, verify visible spacing on the normal and Adaptive Conversation routes, and then resume Adaptive Dock product review if correct. Production /cockpit remains untouched.",
     "status_history": [
       "PHASE_A_BLIND_TO_CANDIDATE",
       "PHASE_B_COMPARATIVE_ONLY",
@@ -119,15 +123,16 @@
       "PHASE_C_STRUCTURAL_CONVERSATION_SPACING_AND_FLAT_RAIL_CONTROLS_REVIEW",
       "PHASE_C_CANONICAL_REVIEW_ROUTE_NORMALIZED",
       "PHASE_C_ADAPTIVE_CONVERSATION_DOCK_REVIEW",
-      "PHASE_C_PRESENTATION_STATE_INTEGRITY_HUMAN_CONFIRMATION"
+      "PHASE_C_PRESENTATION_STATE_INTEGRITY_HUMAN_CONFIRMATION",
+      "PHASE_C_CONVERSATION_BOXES_ROW_OWNED_SPACING_HUMAN_RECHECK"
     ]
   },
   "last_transition": {
-    "transition_id": "mc0004-checkpoint-259-presentation-state-integrity-recovery",
+    "transition_id": "mc0004-checkpoint-260-conversation-boxes-row-owned-spacing-human-recheck",
     "from_state": "ACTIVE",
     "to_state": "ACTIVE",
     "actor": "chatgpt",
-    "reason": "The project owner reported intermittent recurrence of collapsed Conversation spacing and current-process Focus desynchronization before evaluating the Adaptive Conversation Dock. Research 098 found and repaired stale Conversation row selectors, late style ownership, one-time Focus node membership, and asymmetric node/relation lifecycle handling. The complete browser gate passes 73/73. Human stability confirmation is now required before Adaptive Dock review resumes.",
-    "repository_head": "0374d624ec0e88d65060fb2424ce18291ca40792"
+    "reason": "The Checkpoint 259 human retest confirmed current-process Focus working as far as tested but showed Conversation Boxes still visually joined. Research 099 corrected the incomplete Conversation diagnosis, moved visible separation from parent grid-gap ownership to explicit row-owned geometry, covered every non-Text Boxes/artifact state, and added a user-like legacy-state regression. The complete browser gate passes 74/74. Human visual confirmation is now required before Adaptive Dock review resumes.",
+    "repository_head": "29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1"
   }
 }

@@ -11,13 +11,13 @@ ADS is being developed as a rigorous, adaptive, semi-autonomous environment for 
 ## Current development stage
 
 ```text
-checkpoint            259
+checkpoint            260
 active branch         v1-cockpit-design-exploration
 active PR             none
 promoted V1 head      ed5b60bdc882bed0799ce55228ce8187f9c55aa1
 latest specification  Specification 024
 Cockpit baseline      Specification 008
-current boundary      presentation-state integrity human confirmation, then Adaptive Conversation Dock review
+current boundary      Conversation Boxes row-owned spacing human recheck
 source-vault          PAUSED, preserved, Course 2 gate unchanged
 ```
 
@@ -45,42 +45,59 @@ Adaptive Conversation Dock review route:
 http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock
 ```
 
-Checkpoint 259 interrupts the Adaptive Conversation Dock review only long enough to confirm recovery of two intermittent presentation failures reported by the project owner.
+Checkpoint 260 supersedes the Conversation-spacing part of the Checkpoint 259 human confirmation.
+
+The project owner's latest retest found:
+
+```text
+current-process Focus
+    working as far as tested
+
+Conversation Boxes
+    still visually joined
+    original breathing room still absent
+```
+
+The supplied screenshots are treated as authoritative human evidence. A previous 73/73 deterministic pass therefore did not establish that the local visible spacing failure was actually closed.
 
 ### Conversation Boxes integrity
 
-The accepted spacing remains:
+Checkpoint 256's visual target remains held. The canonical WorkUnit footprint is unchanged.
+
+Research 099 corrects the earlier diagnosis. The stale `.is-workunit-thread` selector was not the complete explanation because the integrated Phase-C adapter also restores that class. The stronger weakness was that visible separation remained dependent on parent grid gap and exact `data-conversation-rail="boxes"` state.
+
+The current Conversation controller resolves every non-Text state as Boxes/artifact, including compatibility with the historical `artifact` representation. The spacing contract is therefore now expressed at the actual thread rows rather than at the parent grid:
 
 ```text
-16px list row gap
-6px top + bottom structural WorkUnit-row padding
-canonical WorkUnit footprint unchanged
+parent list row-gap             0px
+project-general bottom margin  16px
+WorkUnit top/bottom padding      6px / 6px
+WorkUnit bottom margin          16px
+last WorkUnit bottom margin      0px
 ```
 
-Research 098 found selector drift between the current Conversation renderer (`data-thread-scope="work"`) and the historical `.is-workunit-thread` selector used by the structural padding correction. Accepted spacing also depended unnecessarily on a late-mounted rail-study stylesheet.
-
-The recovery moves the accepted spacing contract into a statically loaded presentation-integrity layer and corrects the current selector binding. The spacing is now verified through full-focus, Boxes/Text switching, co-present mode and the Adaptive Dock Threads drawer.
+The implementation matches every non-Text rail state, so a Boxes/artifact-compatible runtime state cannot bypass the accepted spacing merely because its state string is not exactly `boxes`.
 
 ### Current-process Focus integrity
 
-The accepted M09 focus semantics remain unchanged.
+No Focus implementation was changed in Checkpoint 260.
 
-Research 098 found an asymmetric lifecycle: WorkUnit focus membership was initialized once, while relation focus classes were continuously resynchronized. A WorkUnit DOM remount could therefore produce the reported state in which relation lines recessed but WorkUnit boxes did not.
+Research 098's DOM-independent membership and remount synchronization recovery remains current, and the project owner's latest retest reports Focus working as far as tested.
 
-The recovery now keeps one authoritative membership set, repairs membership on WorkUnit remounts, resynchronizes relations after repair, statically loads the Focus stylesheet and protects the accepted recession values from later study-style precedence.
+Focus should not be reopened without a new concrete reproduction.
 
 Latest complete Cockpit fidelity workflow:
 
 ```text
-implementation target  0374d624ec0e88d65060fb2424ce18291ca40792
-workflow run           33240152004
-job                    99067985262
-browser tests          73 / 73 passing
+implementation target  29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
+workflow run           33241369935
+job                    99071179670
+browser tests          74 / 74 passing
 ```
 
-The previous 71 tests remain green. Two new lifecycle regressions explicitly cover the intermittent failure families.
+The new 74th regression forces the historical `artifact` rail state at a 1536 x 864 user-like viewport while requiring Boxes to remain selected and the row-owned visible separation contract to remain intact.
 
-The Adaptive Conversation Dock remains an opt-in candidate. Its product-design judgment resumes immediately after the project owner confirms the repaired spacing and Focus behavior remain stable in normal use.
+The Adaptive Conversation Dock remains an opt-in product-design candidate. Its design judgment resumes only after the project owner confirms the Boxes rail now visibly separates the conversation objects locally.
 
 Production `/cockpit` remains untouched.
 
@@ -142,7 +159,7 @@ The held mechanism set still includes G4, H4, scientific WorkUnit grammar, E5, D
 
 L0 remains provisional. Semantic zoom remains deferred with S0 as the geometric working default.
 
-Checkpoint 259 repairs implementation integrity only. It does not reopen Conversation spacing values, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
+Checkpoint 260 changes only implementation ownership of accepted Conversation spacing. It does not reopen the spacing target, M09 Focus semantics, Quiet Graphite, Boxes/Text, A6, conversation scope/access, source-state preservation or the Adaptive Conversation Dock composition question.
 
 `docs/cockpit/PHASE_C_DECISION_LEDGER.md` remains the exhaustive disposition ledger for Research 037-088. Later source-recovery and whole-product studies are routed through Research 089 onward, checkpoints and current-state records.
 
@@ -164,6 +181,9 @@ semantic/product authority
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
+docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
 
 docs/checkpoints/259_cockpit_presentation_state_integrity_recovery.md
 docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md

@@ -3,7 +3,7 @@
 **Status:** Current Phase-C implementation-fidelity governance surface  
 **Authority:** Specialized integration contract beneath accepted specifications, canonical decisions and foundations. It does not replace their semantic authority.  
 **Current branch:** `v1-cockpit-design-exploration`  
-**Current checkpoint:** 258  
+**Current checkpoint:** 260  
 **Last reconciled:** 2026-08-29
 
 ## Purpose
@@ -44,9 +44,11 @@ A future integrator must not infer an implementation merely from labels such as 
 For the current boundary, the latest routed pair is:
 
 ```text
-docs/checkpoints/258_adaptive_conversation_dock_human_review_opened.md
-docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
+docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
+docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
 ```
+
+Checkpoint 258 / Research 097 remain the still-open Adaptive Conversation Dock product-design pair underneath this temporary integrity recheck.
 
 ## Artifact roles
 
@@ -123,13 +125,25 @@ Whole-product browser gate for the source-faithful integrated Cockpit.
 Current complete result:
 
 ```text
-implementation target  00957b684cbc57dad11561f7ed262faf1bba4383
-workflow run           33238181528
-job                    99062775945
-browser tests          71 / 71 passing
+implementation target  29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
+workflow run           33241369935
+job                    99071179670
+browser tests          74 / 74 passing
 ```
 
-This includes all prior source-faithful mechanism coverage plus the current opt-in Adaptive Conversation Dock isolation and state-preservation tests.
+The current gate contains all prior source-faithful mechanism coverage, Adaptive Conversation Dock isolation/state-preservation coverage, Focus lifecycle/remount synchronization coverage and the new Conversation Boxes legacy-artifact/user-like-viewport spacing regression.
+
+## Human evidence can invalidate a green visual assumption
+
+Checkpoint 260 records an important governance lesson.
+
+The previous 73/73 gate passed, but the project owner's local screenshots still showed Conversation WorkUnit artifacts visibly joined. The deterministic gate therefore did not prove the visible defect was closed.
+
+The correct response was to strengthen the implementation and the test contract rather than treating the test as more authoritative than direct visual evidence.
+
+Current Conversation spacing implementation now owns the accepted separation at the thread rows rather than at the parent grid, and it applies to every non-Text Boxes/artifact state.
+
+The current 74/74 result proves the encoded row-owned contract. Human recheck is still required before the visual issue is closed.
 
 ## Integration policy
 
@@ -196,7 +210,7 @@ Establishes:
 
 ```text
 required mechanisms are present
-geometry/visual invariants survive
+geometry/visual invariants survive encoded regression states
 interaction behavior survives
 semantic meaning is unchanged
 known fixture defects are not reintroduced
@@ -208,10 +222,10 @@ Current status:
 
 ```text
 PASS for the current covered implementation
-71 / 71 browser tests at 00957b684cbc57dad11561f7ed262faf1bba4383
+74 / 74 browser tests at 29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
 ```
 
-A deterministic pass is not a human aesthetic/product-design approval. Checkpoint 258's Adaptive Conversation Dock remains under human visual review.
+A deterministic pass is not human aesthetic/product-design approval and does not overrule direct local visual evidence. Checkpoint 260 remains under human spacing recheck. Checkpoint 258's Adaptive Conversation Dock remains under human product review once that recheck closes.
 
 ## Failed integration
 
@@ -225,13 +239,13 @@ is diagnostic evidence only and must never be used as a visual source of truth o
 
 ## Current review isolation
 
-Accepted current whole-product substrate:
+Normal current whole-product substrate:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html
 ```
 
-Current opt-in candidate:
+Adaptive Conversation candidate:
 
 ```text
 http://localhost:4173/design-lab/cockpit-reintegration.html?conversation=adaptive-dock

@@ -3,7 +3,7 @@
 **Status:** Current routing index  
 **Authority:** Navigation only. This file points to authoritative or explanatory sources and does not replace them.  
 **Last reviewed:** 2026-08-29  
-**Current checkpoint:** 259  
+**Current checkpoint:** 260  
 **Active development branch:** `v1-cockpit-design-exploration`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `ed5b60bdc882bed0799ce55228ce8187f9c55aa1`  
@@ -17,6 +17,9 @@ README.md
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 docs/current_routing.json
+
+docs/checkpoints/260_conversation_boxes_row_owned_spacing_human_recheck_opened.md
+docs/research/099_conversation_boxes_visible_separation_human_retest_and_row_owned_geometry_recovery.md
 
 docs/checkpoints/259_cockpit_presentation_state_integrity_recovery.md
 docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
@@ -44,11 +47,11 @@ docs/cockpit/accepted_implementation_manifest.json
 Current route:
 
 ```text
-checkpoint                259
+checkpoint                260
 active branch             v1-cockpit-design-exploration
 latest specification      Specification 024
 promoted Cockpit baseline Specification 008
-current boundary          presentation-state integrity human confirmation, then Adaptive Conversation Dock review
+current boundary          Conversation Boxes row-owned spacing human recheck
 ```
 
 ---
@@ -78,10 +81,12 @@ Route roles:
 ```text
 plain route
     current source-faithful whole-product substrate
+    Checkpoint 260 Boxes spacing recheck surface
 
 ?conversation=adaptive-dock
-    current professional co-present Conversation candidate
-    review resumes after Checkpoint 259 stability confirmation
+    professional co-present Conversation candidate
+    same Boxes spacing integrity must hold here
+    product review resumes after Checkpoint 260 confirmation
 
 ?edge=none
     internal earlier-shell regression substrate only
@@ -92,58 +97,75 @@ explicit ?edge=... / ?rail=...
 
 ---
 
-# Checkpoint 259 presentation-integrity recovery
+# Checkpoint 260 Conversation Boxes human recheck
 
-Human review found two intermittent failures in already-held surfaces before Adaptive Dock judgment continued.
-
-## Conversation Boxes
-
-Accepted values remain:
+The Checkpoint 259 retest produced:
 
 ```text
-16px list row gap
-6px top/bottom structural WorkUnit-row padding
+current-process Focus
+    working as far as tested
+
+Conversation Boxes
+    still visually joined
 ```
 
-Research 098 identified selector drift:
+The supplied screenshots are direct human evidence that the prior Conversation recovery was insufficient despite a green 73/73 gate.
+
+Research 099 therefore corrects the implementation diagnosis rather than changing the design target.
+
+## Row-owned spacing
+
+Checkpoint 256's intended visible separation and canonical WorkUnit footprint remain held.
+
+Current implementation:
 
 ```text
-current renderer           data-thread-scope="work"
-stale structural selector  .is-workunit-thread
+parent list row-gap             0px
+project-general bottom margin  16px
+WorkUnit top/bottom padding      6px / 6px
+WorkUnit bottom margin          16px
+last WorkUnit bottom margin      0px
+canonical WorkUnit footprint    unchanged
 ```
 
-and an avoidable dependency on a late-mounted rail-study stylesheet.
+The separation is now owned by the actual thread rows. It no longer depends on a parent grid gap remaining the spacing carrier.
 
-Current recovery artifacts:
+## Boxes / artifact compatibility
+
+Current selectors protect every non-Text rail state:
+
+```text
+html:not([data-conversation-rail="text"])
+```
+
+This aligns presentation with the Conversation controller, which resolves every non-Text value as Boxes/artifact.
+
+Historical `artifact` is a concrete compatibility state now covered by tests. The human screenshot does not establish that `artifact` was the exact local runtime value, so it is preserved as a proven blind spot rather than asserted as the sole screenshot root cause.
+
+Current implementation artifacts:
 
 ```text
 frontend/design-lab/cockpit-reintegration-presentation-integrity.css
 frontend/design-lab/cockpit-reintegration-review-256.css
-frontend/design-lab/cockpit-reintegration.html
 ```
 
-The accepted spacing guarantee is now statically present and targets the actual current WorkUnit-row identity. Historical `.is-workunit-thread` remains only as a compatibility fallback.
-
-## Current-process Focus
-
-Research 098 identified lifecycle asymmetry:
+Current regression artifacts:
 
 ```text
-node membership      initialized once
-relation recession   continuously resynchronized
+frontend/e2e/cockpit-reintegration-presentation-integrity.spec.ts
+frontend/e2e/cockpit-reintegration-review-256.spec.ts
+frontend/e2e/cockpit-reintegration-spatial-rail-angle.spec.ts
 ```
 
-Current recovery artifacts:
+---
 
-```text
-frontend/design-lab/cockpit-reintegration-process-focus.js
-frontend/design-lab/cockpit-reintegration-process-focus.css
-frontend/design-lab/cockpit-reintegration.html
-```
+# Current-process Focus status
 
-Focus now owns membership independently of DOM instances, repairs replacement WorkUnit carriers, restores membership controls, resynchronizes relation classes, statically loads Focus styling and protects the accepted recession contract against later study-style precedence.
+Research 098's Focus lifecycle recovery remains current.
 
-M09 semantics are unchanged.
+The latest human retest reports Focus working as far as tested. No Focus implementation changed in Checkpoint 260.
+
+Focus is not part of the active defect boundary unless a new concrete reproduction appears.
 
 ---
 
@@ -152,36 +174,28 @@ M09 semantics are unchanged.
 Implementation target:
 
 ```text
-0374d624ec0e88d65060fb2424ce18291ca40792
+29419f7a1ccbd3cbcdc98f333e1b594c01d63fb1
 ```
 
 Complete Cockpit fidelity workflow:
 
 ```text
-workflow run  33240152004
-job           99067985262
+workflow run  33241369935
+job           99071179670
 result        SUCCESS
-browser tests 73 / 73 passing
+browser tests 74 / 74 passing
 ```
 
-New regression surface:
+The new 74th test verifies:
 
 ```text
-frontend/e2e/cockpit-reintegration-presentation-integrity.spec.ts
+1536 x 864 user-like viewport
+legacy data-conversation-rail="artifact" state
+Boxes UI remains selected
+row-owned visible separation remains intact
 ```
 
-It verifies:
-
-```text
-Adaptive full-focus / co-present / Threads-drawer Conversation spacing
-Boxes -> Text -> Boxes spacing stability
-static Focus stylesheet readiness
-repeated process-focus switching
-node/relation recession synchronization
-WorkUnit carrier replacement and automatic focus-membership recovery
-```
-
-All previous 71 tests remain green.
+The gate also retains adaptive full-focus/co-present/Threads-drawer spacing tests and the Focus remount/synchronization regression.
 
 ---
 
@@ -211,7 +225,7 @@ co-present
     A6 becomes an invoked inspector sheet
 ```
 
-Checkpoint 259 neither accepts nor rejects that product-design direction. It repairs the substrate required to judge it reliably.
+Checkpoint 260 neither accepts nor rejects that product-design direction. It repairs the Boxes rail substrate required to judge it reliably.
 
 ---
 
@@ -266,13 +280,13 @@ PROVENANCE GATE
     PASS
 
 DETERMINISTIC INTEGRATION GATE
-    PASS, 73/73 at current implementation target
+    PASS, 74/74 at current implementation target
 
-HUMAN STABILITY CONFIRMATION
-    OPEN at Checkpoint 259
+HUMAN BOXES SPACING RECHECK
+    OPEN at Checkpoint 260
 
 HUMAN PRODUCT-DESIGN GATE
-    Adaptive Conversation Dock review resumes immediately after stability confirmation
+    Adaptive Conversation Dock review resumes after spacing confirmation
 ```
 
 ---
@@ -292,7 +306,7 @@ Conversation ownership independent from SEL2 selection
 compact native Cockpit composer
 ```
 
-Checkpoint 259 changes none of those decisions.
+Checkpoint 260 changes none of those decisions.
 
 ---
 
@@ -348,6 +362,7 @@ Research 095  flat rail + initial Conversation spacing + live compass
 Research 096  structural Conversation spacing + current flat rail control set
 Research 097  Adaptive Conversation Dock co-presence candidate
 Research 098  intermittent Conversation spacing + Focus integrity recovery
+Research 099  failed Boxes human retest + row-owned spacing recovery
 ```
 
 ---
@@ -385,14 +400,23 @@ No Claude obligation is pending. The next expected actor is the human reviewer.
 # Exact next step
 
 ```text
-Pull the latest branch and try to reproduce the two intermittent failures.
+Pull the latest branch and hard-refresh.
 
-If Conversation spacing and Focus remain stable:
-    close Checkpoint 259 human confirmation
+Inspect Boxes on:
+    normal route
+    ?conversation=adaptive-dock route
+
+Confirm:
+    project-general -> first WorkUnit visible separation
+    WorkUnit -> WorkUnit visible separation
+    Focus remains stable
+
+If correct:
+    close Checkpoint 260
     resume Adaptive Conversation Dock review
 
-If either still fails:
-    preserve the exact reproduction sequence
+If still wrong:
+    preserve screenshot and exact route/state
     keep product-design review paused
-    reopen only presentation-integrity debugging
+    continue only Conversation spacing integrity debugging
 ```
