@@ -2,7 +2,7 @@
 
 **Status:** Current canonical continuity procedure  
 **Aligned development-method version:** 0.7  
-**Last reviewed:** 2026-08-29
+**Last reviewed:** 2026-08-30
 
 ## Purpose
 
@@ -61,6 +61,24 @@ docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 
 Session identity is provenance/navigation metadata, not project authority.
 
+### Automatic new-session allocation
+
+Every newly opened persistent ADS conversation is a new interaction session for provenance, including a conversation opened only because the previous one hit a length/context limit while the underlying project stage remains unchanged.
+
+A new session must **not** inherit the previous conversation's provider-local session ID or visible conversation title merely because `CURRENT_STATE.md` still records that previous session at reconstruction time.
+
+During repository-first reconstruction of a new ADS conversation, the collaborator must proactively:
+
+1. recognize that the interaction itself is new;
+2. derive the next provider-local sequence number from the latest durable interaction provenance for that environment;
+3. establish a fresh `NN - Main Topic / Stage` title based on the active work reconstructed from the repository;
+4. use that new session identity in the conversation immediately rather than continuing under the prior title;
+5. once project-state alignment/authorization permits repository writes, update the live interaction context in `CURRENT_STATE.md` before substantive new durable work is attributed to the session.
+
+The human project owner should not need to remind the collaborator to rotate the session ID/title after opening a continuation chat. This is part of the reconstruction procedure itself.
+
+If the product UI cannot be renamed programmatically by the active tool surface, the repository must still establish and use the correct canonical title immediately; the UI limitation must never be used as a reason to reuse stale session provenance.
+
 ## Required new-session reconstruction
 
 A new session should not begin by reading arbitrary recent files or trusting prior chat memory.
@@ -81,16 +99,18 @@ Then use the subject library in `docs/KNOWLEDGE_MAP.md` to retrieve broader know
 Structural reconstruction and semantic retrieval are deliberately separate jobs:
 
 ```text
-docs/README.md       structure -> artifact role
-CURRENT_STATE        live state -> next action
-KNOWLEDGE_MAP        subject -> relevant knowledge
+docs/README       structure -> artifact role
+CURRENT_STATE     live state -> next action
+KNOWLEDGE_MAP     subject -> relevant knowledge
 ```
+
+The automatic new-session allocation rule above is part of this reconstruction. The prior session metadata found in `CURRENT_STATE.md` is evidence about the previous interaction, not permission to reuse it in the newly opened conversation.
 
 ## Standard continuation prompt
 
 A provider-neutral continuation prompt may use:
 
-> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Follow the project's development/preservation method. Do not make changes yet; first align with me on the current state.
+> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
 
 The collaborator should expand through the Knowledge Map whenever the task touches older or adjacent knowledge.
 
@@ -104,9 +124,9 @@ Before planned rotation:
 2. update `current_routing.json` and `CURRENT_STATE.md` if the live boundary changed;
 3. ensure new durable knowledge is routed in the Knowledge Map when warranted;
 4. preserve exact branch/commit/test/review state needed for continuation in the live state or governing evidence;
-5. start the next conversation with repository-first reconstruction.
+5. start the next conversation with repository-first reconstruction and automatic fresh session/title allocation.
 
-If the boundary is unexpected, reconstruct from the repository first and repair stale routing/provenance only after determining what actually survived.
+If the boundary is unexpected, reconstruct from the repository first, allocate the new interaction identity, and repair stale routing/provenance only after determining what actually survived.
 
 ## Continuity across branches
 
@@ -220,14 +240,15 @@ When a chat ends unexpectedly:
 
 1. identify the repository and likely active branch;
 2. read the structural guide, current routing and current state;
-3. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
-4. inspect recent Git chronology when needed;
-5. separate implementation state from documentation/provenance state;
-6. detect stale routing/session metadata;
-7. use the Knowledge Map to reconstruct older governing knowledge by subject;
-8. preserve the exact surviving product/experiment boundary;
-9. repair continuity metadata conservatively;
-10. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
+3. establish a fresh provider-local interaction-session ID and conversation title for the newly opened recovery chat instead of reusing the ended session's metadata;
+4. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
+5. inspect recent Git chronology when needed;
+6. separate implementation state from documentation/provenance state;
+7. detect stale routing/session metadata;
+8. use the Knowledge Map to reconstruct older governing knowledge by subject;
+9. preserve the exact surviving product/experiment boundary;
+10. repair continuity metadata conservatively;
+11. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
 
 Important distinction:
 
