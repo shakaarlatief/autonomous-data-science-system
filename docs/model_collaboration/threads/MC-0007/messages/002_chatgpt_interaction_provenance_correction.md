@@ -42,6 +42,14 @@ The accepted provenance convention now distinguishes between rewriting Git histo
 
 That correction must add only the missing interaction-provenance fields and must not alter implementation evidence, findings, commands, test results, or other substantive content. The original submitted version remains recoverable at execution-report commit `7ee480709aa1627cc770ebb4f229a3f82b189448`.
 
-After Claude Code performs that bounded correction, this message remains useful historical evidence that the omission was detected after initial submission and corrected transparently rather than through Git-history rewriting.
+Claude Code subsequently completed exactly that bounded provenance-only correction at commit:
+
+```text
+170f6e265829ce2f15f0f528ab4ec47b261980a3
+```
+
+The correcting commit adds only `Interaction environment`, `Project / workspace`, and `Conversation title`; `Interaction session: claude-code-01` was already present. Task-owner inspection confirmed that no implementation evidence, findings, commands, test results, or other substantive content changed. The originally submitted version remains recoverable at `7ee480709aa1627cc770ebb4f229a3f82b189448`.
+
+This message therefore remains useful historical evidence that the omission was detected after initial submission and corrected transparently rather than through Git-history rewriting.
 
 The canonical naming convention is also tightened in `docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md` so future persistent Claude Code sessions receive a provider-local session ID and visible conversation title before substantive work or, at the latest, before the durable report is pushed.
