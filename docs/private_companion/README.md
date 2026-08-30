@@ -1,8 +1,8 @@
 # Private Companion Knowledge Repository
 
-**Status:** Accepted preservation architecture; companion repository creation pending  
+**Status:** Accepted and operational; companion bootstrap complete  
 **Date:** 2026-08-30  
-**Scope:** Define the role, authority, content boundary, and continuity contract for a private companion repository used to preserve private ADS knowledge that should remain available across conversations but must not be committed to the public development repository.
+**Scope:** Define the role, authority, content boundary, and continuity contract for the private companion repository used to preserve private ADS knowledge that should remain available across conversations but must not be committed to the public development repository.
 
 ## Core decision
 
@@ -41,6 +41,19 @@ SECRET STORAGE
     passwords / API keys / tokens / credentials
     never ordinary Git content, even in the private companion repository
 ```
+
+## Repository identity and verified accessibility
+
+The operational companion repository is:
+
+```text
+shakaarlatief/autonomous-data-science-system-private
+visibility: private
+default branch: main
+bootstrap commit: 85fda98b5726b98be026ddd4c4e9ad5a067dd106
+```
+
+The connected GitHub integration successfully read and wrote this repository during bootstrap and subsequently retrieved the migrated Source Vault private record from `main`. The private companion is therefore a usable cross-chat knowledge surface when the GitHub connection remains authorized for it.
 
 ## Authority boundary
 
@@ -124,25 +137,16 @@ local .ads-private file
     execution-ready machine-local representation
 ```
 
-The local file may be regenerated or synchronized from private knowledge when appropriate. It should not be treated as the only durable copy of important private continuity information once the companion repository exists.
+The local file may be regenerated or synchronized from private knowledge when appropriate. It is no longer the only durable copy of important private continuity information.
 
-## Repository name
+## Current private repository structure
 
-The intended companion repository name is:
-
-```text
-autonomous-data-science-system-private
-```
-
-It must be created as a private repository under the same project owner's GitHub account unless a later explicit decision selects a different ownership boundary.
-
-## Initial structure
-
-The initial repository should remain intentionally small:
+The bootstrap intentionally remains small:
 
 ```text
 README.md
 CURRENT_PRIVATE_STATE.md
+.gitignore
 
 source_universe/
     source_vault_bootstrap.json
@@ -151,26 +155,31 @@ machines/
     README.md
 ```
 
+`CURRENT_PRIVATE_STATE.md` is a routing/index surface for relevant private knowledge only. It is not a second project `CURRENT_STATE.md` and owns no ADS development state.
+
 Additional structure should be earned by real private-knowledge needs rather than designed speculatively.
 
-## Initial private Source Vault state
+## Migrated private Source Vault state
 
-The first migrated private knowledge should include the facts already established during Source Vault preflight:
+The first private record is:
 
 ```text
-ORIGINAL_SOURCE_ROOT
-    exact value preserved privately
-    public status remains RESOLVED_PRIVATE
-
-capacity observation
-    exact observed total / used / free / percent values
-    public conclusion remains FAILED_INSUFFICIENT_FREE_SPACE
-
-remaining Source Vault locations
-    remain unresolved until selected
+source_universe/source_vault_bootstrap.json
 ```
 
-The private repository must not contain the Machine Learning PDFs themselves, registry backups, Source Vault object bytes, or credentials.
+It now durably preserves the exact already-known `ORIGINAL_SOURCE_ROOT` and the exact initial capacity observation. Public Git continues to preserve only the safe conclusions:
+
+```text
+ORIGINAL_SOURCE_ROOT          RESOLVED_PRIVATE
+capacity preflight            FAILED_INSUFFICIENT_FREE_SPACE
+cleanup required              YES
+capacity recheck required     YES
+permanent write allowed       NO
+```
+
+The remaining Source Registry, Source Vault, independent-backup, and clean-restore locations remain unresolved until selected.
+
+The private repository does not contain the Machine Learning PDFs themselves, registry backups, Source Vault object bytes, or credentials.
 
 ## Cross-chat continuity
 
@@ -204,19 +213,20 @@ recovery codes
 
 Do not use it as bulk binary storage. Large source artifacts belong in the Source Vault / backup architecture.
 
-## Bootstrap status
+The private repository includes a defensive `.gitignore` for common secret, database, archive, and source-binary file types, but repository policy remains the primary safety boundary.
 
-The public-side authority contract is accepted.
+## Bootstrap classification
 
-Remaining bootstrap work:
+The private companion bootstrap is complete:
 
 ```text
-1. create the private GitHub repository
-2. confirm the connected GitHub integration can read/write it
-3. initialize the minimal private structure
-4. migrate the already-known Source Vault private state
-5. verify a fresh ChatGPT reconstruction can retrieve the private complement
-6. only then classify the companion repository bootstrap as complete
+repository created privately                         PASS
+GitHub integration read access                      PASS
+GitHub integration write access                     PASS
+minimal private structure initialized               PASS
+known Source Vault private state migrated           PASS
+post-write private retrieval verified               PASS
+public/private development authority separated      PASS
 ```
 
-Until step 4 is complete, the existing Git-ignored `.ads-private/` mechanism remains the local execution-state route and the public repository continues to preserve `RESOLVED_PRIVATE` / gate status without exposing exact values.
+The next ADS task is not more companion-repository setup. The active Source Vault blocker remains local storage cleanup followed by a fresh capacity measurement.

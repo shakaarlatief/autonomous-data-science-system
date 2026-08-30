@@ -68,31 +68,36 @@ Requirements:
 source registry and vault are user-controlled
 source binaries remain private
 paths are supplied through configuration / CLI arguments
-no private paths are committed to Git
+no private paths are committed to public Git
 no source binary is committed to Git
 no source is deleted from the original course folder as part of ingestion
 backup is verified before it is considered complete
 ```
 
-Exact private paths and machine-specific measurements are governed separately by:
+Exact private paths and machine-specific measurements are governed by the layered private-state architecture:
 
 ```text
-docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
+public contract
+    docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
+
+private companion knowledge repository
+    shakaarlatief/autonomous-data-science-system-private
+    durable private cross-chat knowledge
+
+machine-local runtime state
+    .ads-private/source_vault_bootstrap.json
+    execution-ready local configuration
 ```
 
-The canonical local state file is:
-
-```text
-.ads-private/source_vault_bootstrap.json
-```
-
-The `.ads-private/` directory is ignored by Git. A public placeholder template is preserved at:
+The `.ads-private/` directory is ignored by the public repository's Git configuration. A public placeholder template is preserved at:
 
 ```text
 docs/source_universe/local_private_state.example.json
 ```
 
-The public repository records whether a private value is resolved and whether the operational gate passed or failed. The local private state carries exact coordinates needed for execution.
+The public repository records whether a private value is resolved and whether the operational gate passed or failed. The private companion preserves the durable exact private complement. The local `.ads-private` state exists for concrete local command execution.
+
+The private companion is not a second ADS development repository and is not Source Vault or secret storage.
 
 A cloud/object-storage provider may be introduced later if measured requirements justify it. The current deployment should not add provider complexity merely for appearance.
 
@@ -112,22 +117,29 @@ capacity preflight            FAILED_INSUFFICIENT_FREE_SPACE
 cleanup required              YES
 capacity recheck required     YES
 permanent write allowed       NO
+private companion             OPERATIONAL
 ```
 
-The exact original-source path and exact capacity measurements are intentionally not reproduced in public Git. The fact that the original source location is already resolved is durable project state and future conversations must not ask the project owner to provide it again merely during reconstruction.
+The exact original-source path and exact initial capacity observation are intentionally not reproduced in public Git. They are durably preserved in the private companion record:
+
+```text
+source_universe/source_vault_bootstrap.json
+```
+
+The fact that the original source location is already resolved is durable project state. Future conversations must not ask the project owner to provide it again merely during reconstruction.
 
 Before ingestion:
 
 ```text
 1. confirm the exact promoted V1 source code is locally available
-2. initialize or verify .ads-private/source_vault_bootstrap.json from the public template
-3. retrieve the already-resolved ORIGINAL_SOURCE_ROOT from private local state when execution needs it
-4. free sufficient storage and rerun the capacity measurement
-5. choose SOURCE_REGISTRY_DATABASE
-6. choose SOURCE_VAULT_ROOT
-7. choose INDEPENDENT_BACKUP_ROOT
-8. choose CLEAN_RESTORE_ROOT
-9. verify SOURCE_VAULT_ROOT is outside the Git repository
+2. free sufficient local storage and rerun the capacity measurement
+3. update or supersede the durable private capacity observation
+4. choose SOURCE_REGISTRY_DATABASE
+5. choose SOURCE_VAULT_ROOT
+6. choose INDEPENDENT_BACKUP_ROOT
+7. choose CLEAN_RESTORE_ROOT
+8. materialize or verify .ads-private/source_vault_bootstrap.json for local execution using the resolved private values
+9. verify SOURCE_VAULT_ROOT is outside the public Git repository
 10. verify the backup root is a distinct destination
 11. verify the original source folder is not being used as the vault
 12. verify sufficient free storage exists for source corpus + backup + temporary restore
@@ -319,7 +331,7 @@ The clean restore location may be deleted after safe non-private recovery eviden
 
 ## 12. What may be preserved in Git after permanent bootstrap
 
-Safe repository evidence may include:
+Safe public-repository evidence may include:
 
 ```text
 checkpoint / deployment classification
@@ -335,7 +347,7 @@ resolved / unresolved private-location status
 capacity gate classification
 ```
 
-Do not commit:
+Do not commit to the public repository:
 
 ```text
 source PDFs/books/slides
@@ -347,6 +359,8 @@ source-vault object bytes
 credentials
 private notes
 ```
+
+The private companion repository may preserve exact private knowledge needed for continuity, but it must not become source-binary, backup-payload, database, or credential storage.
 
 ---
 
