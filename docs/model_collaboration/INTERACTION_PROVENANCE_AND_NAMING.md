@@ -69,7 +69,11 @@ For a collaboration handoff, the task owner should include the intended interact
 
 If the product initially generates its own title, rename the visible conversation promptly once the task scope is known. Do not wait until the session is already closed or its durable report has been pushed.
 
-If this step is missed, preserve the original collaborator-authored artifact and add a provenance correction instead of silently rewriting the collaborator's historical message.
+If this step is missed, correct the provenance transparently. Do not rewrite Git history or silently alter substantive collaborator evidence merely to make an earlier artifact appear as though it had always been complete.
+
+A collaborator-authored canonical artifact may be corrected in a later commit when the correction is factual, bounded, explicitly attributable, and the original version remains recoverable through Git history. Metadata omissions, clerical errors, and known conversation-title corrections are appropriate examples, especially when the originating collaborator can make the correction directly.
+
+For substantive reinterpretation, disagreement, changed findings, changed evidence, or changed conclusions, preserve the original message and add a separate follow-up message or resolution instead of silently replacing the earlier position.
 
 ## 4. Repository interaction-session identity
 
@@ -116,7 +120,9 @@ Source of a user/system-reported configuration value
 
 Model or effort values should not be guessed. If the value comes from the human or product UI rather than model introspection, that source should be clear where it matters.
 
-If a conversation title is corrected after a collaborator has already written a durable message, record the corrected title in a later provenance addendum or resolution. Do not rewrite the earlier collaborator-authored message merely to make its metadata look retrospectively complete.
+If a factual provenance field is discovered to be missing or wrong after a collaborator has already written a durable message, prefer a transparent later correction to the canonical artifact when the originating collaborator can make that bounded correction and Git history preserves the original version. The correcting commit should not change substantive findings or evidence unless a separate substantive follow-up explicitly explains that change.
+
+If direct correction by the originating collaborator is not practical, or if the issue is interpretive rather than clerical, use a later provenance addendum or resolution instead.
 
 ## 6. Checkpoint provenance
 

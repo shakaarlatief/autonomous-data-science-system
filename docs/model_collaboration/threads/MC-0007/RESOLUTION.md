@@ -102,7 +102,7 @@ pre-existing substrate file        7 tests
 combined                           15
 ```
 
-The named tests, the 15-pass output, and the implementation remain internally consistent. The collaborator-authored report is intentionally preserved unchanged; this resolution records the correction rather than rewriting provenance.
+The named tests, the 15-pass output, and the implementation remain internally consistent. This task-owner resolution records the correction without changing the execution evidence or implementation disposition.
 
 ## 5. Interaction-provenance correction
 
@@ -110,7 +110,7 @@ After closure, the project owner identified a second provenance-hygiene defect i
 
 The durable execution report also omitted the normally expected `Interaction environment`, `Project / workspace`, and `Conversation title` fields.
 
-The original collaborator-authored report remains unchanged. The additive correction is preserved in:
+The omission and its exact correct values are preserved in:
 
 ```text
 docs/model_collaboration/threads/MC-0007/messages/002_chatgpt_interaction_provenance_correction.md
@@ -122,7 +122,13 @@ The canonical visible title assigned to the existing Claude Code session is:
 01 - Source Universe Pre-Deployment Recovery Hardening
 ```
 
-This does not change any implementation or verification result. It corrects interaction provenance and tightens the future session-launch naming rule in `docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md`.
+The visible Claude Code conversation has now been renamed to that title.
+
+The provenance convention was refined after this omission was discovered. The project now distinguishes between rewriting Git history and making a transparent later correction to a canonical collaborator-authored artifact. A bounded factual metadata correction may be made in a later commit when the originating collaborator can make it directly and the original artifact remains recoverable through Git history.
+
+Accordingly, Claude Code is authorized to make one provenance-only correction to `001_claude_code_source_hardening_verification.md`, adding the missing interaction environment, project/workspace, interaction session, and conversation title fields without changing any substantive implementation or verification content. The originally submitted report remains permanently recoverable at commit `7ee480709aa1627cc770ebb4f229a3f82b189448`.
+
+After that collaborator-authored correction is pushed, this resolution should be reconciled once more with the exact correction commit SHA. No Source Universe implementation result depends on that metadata-only follow-up.
 
 ## 6. Closure
 
