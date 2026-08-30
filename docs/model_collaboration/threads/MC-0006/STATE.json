@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0006",
+  "review_mode": "ADVERSARIAL_REVIEW",
+  "lifecycle_state": "ACTIVE",
+  "phase": "SOURCE_UNIVERSE_ARCHITECTURE_REVIEW",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c",
+    "description": "Read-only adversarial review of the accepted Source Universe substrate, the permanent Source Vault bootstrap process, and the Source Universe to Methodological Knowledge Universe provenance boundary before the first permanent private registry/vault write.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-10",
+      "roles": ["TASK_OWNER", "RESEARCHER"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude Code",
+      "interaction_session": "claude-code-01",
+      "roles": ["REVIEWER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0006/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": "4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c",
+    "known_exposures": [
+      "Foundation 022, Research 034 and Specification 023 already define and accept the current Source Universe substrate.",
+      "The first VU Machine Learning source corpus already passed the bounded source-substrate validation campaign.",
+      "The permanent Source Vault bootstrap has not yet performed the user's real permanent private registry/vault write.",
+      "The project intends the Source Universe to preserve durable evidence while the Methodological Knowledge Universe contains reusable interpreted methodological knowledge.",
+      "The project owner explicitly requested a second-model review before the permanent deployment begins and has Claude Code available."
+    ],
+    "notes": "This is a direct adversarial review of an existing accepted candidate, not a blind independent design exercise. Claude should challenge defects and unnecessary complexity without treating difference from the existing architecture as a goal."
+  },
+  "last_transition": {
+    "transition_id": "mc0006-source-universe-architecture-review-opened",
+    "from_state": null,
+    "to_state": "ACTIVE",
+    "actor": "chatgpt",
+    "reason": "The project owner made Claude Code available immediately before permanent Source Vault deployment. Existing Claude collaboration threads did not provide a dedicated review of the Source Universe architecture, so the current accepted target is frozen for a read-only adversarial review before the first permanent registry/vault write.",
+    "repository_head": "4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c"
+  }
+}

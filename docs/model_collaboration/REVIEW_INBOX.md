@@ -1,6 +1,6 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-08-29  
+**Date:** 2026-08-30  
 **Status:** Current human-readable routing view  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
@@ -23,9 +23,46 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Pending model obligation
 
-None.
+### MC-0006: Source Universe architecture and permanent Source Vault deployment review
 
-No model trigger should be sent from this inbox until a new explicit obligation is added with an exact thread/request and coordination branch.
+```text
+reviewer            Claude Code
+review mode         ADVERSARIAL_REVIEW
+exact review target 4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c
+coordination branch v1-source-vault-bootstrap-resume
+status              ACTIVE / REVIEW REQUEST OPEN
+blocks              first permanent Source Registry / Source Vault write
+non-blocking for    disk cleanup, free-space investigation, candidate private-location planning
+```
+
+Durable request:
+
+```text
+docs/model_collaboration/threads/MC-0006/BRIEF.md
+docs/model_collaboration/threads/MC-0006/THREAD.md
+docs/model_collaboration/threads/MC-0006/STATE.json
+```
+
+Expected Claude output:
+
+```text
+docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md
+```
+
+Standard Claude Code trigger:
+
+```text
+Work in repository `shakaarlatief/autonomous-data-science-system`.
+Coordination branch: `v1-source-vault-bootstrap-resume`.
+
+Read `docs/current_routing.json` and `docs/model_collaboration/REVIEW_INBOX.md`
+from that exact branch, then follow the referenced MC-0006 brief/thread/state files and
+perform the pending Source Universe architecture review against the exact frozen target.
+
+Do not infer or switch the coordination branch. Do not mutate the review target.
+Write only the review output permitted by MC-0006.
+If the named branch or authoritative routing contradicts this prompt, stop and report the mismatch.
+```
 
 ## Deferred product collaboration
 
