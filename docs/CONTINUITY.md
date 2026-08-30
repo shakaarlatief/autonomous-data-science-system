@@ -14,7 +14,9 @@ Long conversations are temporary working environments. Important knowledge must 
 
 ## Repository authority
 
-The repository remains the durable source of truth whether the active collaborator is ChatGPT, Claude, a future model or the human project owner.
+The public `autonomous-data-science-system` repository remains the sole project-development repository and the durable authority for ADS code, architecture, specifications, decisions, checkpoints, public state and development history.
+
+A private companion repository may preserve private knowledge needed for continuity, but it is not a second development repository and cannot silently override public project-development authority.
 
 Conversation history may help, but must not override repository state. If repository artifacts disagree, resolve through status, scope, chronology, supersession and accepted authority. If material ambiguity remains, surface it explicitly rather than guessing.
 
@@ -38,9 +40,9 @@ docs/KNOWLEDGE_MAP.md
 
 This file explains **how to use those surfaces**. It should not carry a copied current checkpoint, branch, review gate or latest test run.
 
-## Private operational-state continuity
+## Private knowledge and operational-state continuity
 
-Some operational facts are already resolved but cannot safely be committed to a public repository. Exact local filesystem paths and machine-specific storage coordinates are examples.
+Some operational facts are already resolved but cannot safely be committed to the public repository. Exact local filesystem paths and machine-specific storage coordinates are examples.
 
 Continuity must distinguish:
 
@@ -59,15 +61,47 @@ UNAVAILABLE_TO_THIS_SURFACE
 
 When `CURRENT_STATE.md` records a field as `RESOLVED_PRIVATE`, a new collaborator must not ask the human project owner to provide it again merely during reconstruction.
 
-For local-first execution, exact machine-specific values may be preserved in a Git-ignored local operational-state file governed by a domain-specific contract. For the Source Vault bootstrap, that contract is:
+The accepted private-preservation architecture has two different private layers:
+
+```text
+PRIVATE COMPANION KNOWLEDGE REPOSITORY
+    durable private project knowledge
+    cross-chat reconstruction
+    exact private paths and observations where appropriate
+    knowledge only, not ADS development
+
+LOCAL .ads-private STATE
+    machine-local execution configuration
+    direct command/runtime input
+```
+
+The governing companion-repository contract is:
+
+```text
+docs/private_companion/README.md
+```
+
+For the Source Vault bootstrap, the local operational-state contract is:
 
 ```text
 docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
 ```
 
-The public repository remains authoritative for whether a value is resolved, what gate passed or failed and what happens next. The private state carries only the exact coordinates needed to execute locally.
+The public repository remains authoritative for whether a value is resolved, what gate passed or failed and what happens next. The private companion repository carries the durable private complement. The local `.ads-private` state carries execution-ready machine-local values.
 
-If a remote interaction surface cannot access the local private state, preserve the public `RESOLVED_PRIVATE` status. Retrieve or request the exact value only when a concrete execution step actually requires it and no local execution surface can read it. Never silently downgrade a resolved private value to unknown because one tool cannot see it.
+Repository-first reconstruction is always **public-first**:
+
+```text
+1. reconstruct project state from the public ADS repository
+2. determine whether the active public state references private knowledge
+3. when relevant and accessible, retrieve the corresponding private companion state
+4. use local .ads-private state when concrete local execution requires it
+5. preserve the public/private authority boundary while continuing work
+```
+
+If a remote interaction surface cannot access the private companion repository or local state, preserve the public `RESOLVED_PRIVATE` status. Retrieve or request the exact value only when a concrete execution step actually requires it and no accessible private layer can provide it. Never silently downgrade a resolved private value to unknown because one tool cannot see it.
+
+The private companion repository must never become a development fork. ADS code, tests, architecture, specifications, decisions, checkpoints and implementation evolution remain in the public repository.
 
 ## Interaction/session naming
 
@@ -124,6 +158,7 @@ Read in this order:
 6. governing canonical documents/specifications routed by the current state
 7. the current checkpoint/research boundary
 8. specialized ledgers/manifests for the active topic
+9. relevant private companion state when the public state explicitly indicates private knowledge is involved and the companion repository is accessible
 
 Then use the subject library in `docs/KNOWLEDGE_MAP.md` to retrieve broader knowledge relevant to the task without needing to remember document numbers.
 
@@ -137,13 +172,13 @@ KNOWLEDGE_MAP     subject -> relevant knowledge
 
 The automatic new-session allocation rule above is part of this reconstruction. The prior session metadata found in `CURRENT_STATE.md` is evidence about the previous interaction, not permission to reuse it in the newly opened conversation.
 
-When the current state reports a private value as already resolved, apply the private operational-state rule above before asking the project owner to repeat information.
+When the current state reports a private value as already resolved, apply the private knowledge rule above before asking the project owner to repeat information.
 
 ## Standard continuation prompt
 
 A provider-neutral continuation prompt may use:
 
-> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
+> Continue the Autonomous Data Science System project from the repository. Treat the public `autonomous-data-science-system` repository as the sole project-development authority, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. If the public state indicates that relevant private companion knowledge exists and the private repository is accessible, retrieve that private complement after the public reconstruction. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
 
 The collaborator should expand through the Knowledge Map whenever the task touches older or adjacent knowledge.
 
@@ -157,9 +192,10 @@ Before planned rotation:
 2. update `current_routing.json` and `CURRENT_STATE.md` if the live boundary changed;
 3. ensure new durable knowledge is routed in the Knowledge Map when warranted;
 4. preserve exact branch/commit/test/review state needed for continuation in the live state or governing evidence;
-5. start the next conversation with repository-first reconstruction and automatic fresh session/title allocation.
+5. preserve material private continuity facts in the private companion repository when they cannot safely live publicly;
+6. start the next conversation with repository-first reconstruction and automatic fresh session/title allocation.
 
-If the boundary is unexpected, reconstruct from the repository first, allocate the new interaction identity, and repair stale routing/provenance only after determining what actually survived.
+If the boundary is unexpected, reconstruct from the public repository first, allocate the new interaction identity, retrieve relevant private companion knowledge when available, and repair stale routing/provenance only after determining what actually survived.
 
 ## Continuity across branches
 
@@ -175,6 +211,8 @@ historical experiment branches
 The live branch/promotion pointer belongs in `docs/current_routing.json` and is explained in `docs/CURRENT_STATE.md`. Do not copy it into stable navigation documents unless a historical record specifically needs that exact context.
 
 A new collaborator must not silently switch branches based on model memory.
+
+The private companion repository does not participate in ADS development branch selection. Its Git history is private-knowledge preservation history only.
 
 ## Checkpoint continuity
 
@@ -220,6 +258,8 @@ scripts/check_knowledge_map.py
 ```
 
 The map is navigation, not an authority database. A session still reasons from document status, scope, chronology and accepted contracts.
+
+Private companion knowledge should be routed by stable public concepts/IDs rather than by duplicating the entire public Knowledge Map privately.
 
 ## Verification continuity
 
@@ -271,18 +311,20 @@ docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 
 When a chat ends unexpectedly:
 
-1. identify the repository and likely active branch;
+1. identify the public ADS repository and likely active branch;
 2. read the structural guide, current routing and current state;
 3. establish a fresh provider-local interaction-session ID and conversation title for the newly opened recovery chat instead of reusing the ended session's metadata;
-4. preserve any `RESOLVED_PRIVATE` values as resolved and consult the relevant private operational-state contract rather than asking for them again during reconstruction;
-5. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
-6. inspect recent Git chronology when needed;
-7. separate implementation state from documentation/provenance state;
-8. detect stale routing/session metadata;
-9. use the Knowledge Map to reconstruct older governing knowledge by subject;
-10. preserve the exact surviving product/experiment boundary;
-11. repair continuity metadata conservatively;
-12. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
+4. preserve any `RESOLVED_PRIVATE` values as resolved;
+5. if the public state indicates relevant private companion knowledge and that repository is accessible, retrieve the private complement;
+6. consult the local private operational-state contract when concrete local execution requires machine-local values;
+7. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
+8. inspect recent Git chronology when needed;
+9. separate implementation state from documentation/provenance state;
+10. detect stale routing/session metadata;
+11. use the Knowledge Map to reconstruct older governing knowledge by subject;
+12. preserve the exact surviving product/experiment boundary;
+13. repair continuity metadata conservatively;
+14. do not recreate substantive decisions from memory if the repositories already contain stronger evidence.
 
 Important distinction:
 
@@ -315,6 +357,7 @@ canonical docs have not become stale
 specialized ledgers remain linked
 interaction provenance is coherent
 resolved-private operational state is not being mistaken for unresolved state
+private companion knowledge is not competing with public development authority
 checkpoint metadata passes
 collaboration obligations are discoverable
 verification tier/status is represented accurately
@@ -333,6 +376,8 @@ subject map   KNOWLEDGE_MAP.md
 procedure     CONTINUITY.md
 method        DEVELOPMENT_METHOD.md
 ```
+
+The private companion repository adds a private knowledge complement without changing those public authority roles.
 
 Deep preservation rationale remains in:
 
