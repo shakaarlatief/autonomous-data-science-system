@@ -26,7 +26,8 @@ This inbox intentionally does not duplicate that state except where needed to ex
 ### MC-0006: Source Universe architecture and permanent Source Vault deployment review
 
 ```text
-reviewer            Claude Code
+reviewer            Claude / claude-01
+review environment  normal Claude Project with full repository connector access
 review mode         ADVERSARIAL_REVIEW
 exact review target 4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c
 coordination branch v1-source-vault-bootstrap-resume
@@ -41,6 +42,7 @@ Durable request:
 docs/model_collaboration/threads/MC-0006/BRIEF.md
 docs/model_collaboration/threads/MC-0006/THREAD.md
 docs/model_collaboration/threads/MC-0006/STATE.json
+docs/model_collaboration/threads/MC-0006/messages/ENVIRONMENT_SELECTION.md
 ```
 
 Expected Claude output:
@@ -49,7 +51,7 @@ Expected Claude output:
 docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md
 ```
 
-Standard Claude Code trigger:
+Normal Claude trigger:
 
 ```text
 Work in repository `shakaarlatief/autonomous-data-science-system`.
@@ -59,10 +61,14 @@ Read `docs/current_routing.json` and `docs/model_collaboration/REVIEW_INBOX.md`
 from that exact branch, then follow the referenced MC-0006 brief/thread/state files and
 perform the pending Source Universe architecture review against the exact frozen target.
 
-Do not infer or switch the coordination branch. Do not mutate the review target.
-Write only the review output permitted by MC-0006.
+Use the connected repository as the evidence base. Do not infer or switch the coordination branch.
+Do not mutate the review target. Write only the review output permitted by MC-0006.
+Where a conclusion genuinely requires local execution evidence rather than repository inspection,
+identify the smallest targeted verification needed instead of performing deployment work.
 If the named branch or authoritative routing contradicts this prompt, stop and report the mismatch.
 ```
+
+Claude Code is not the substantive MC-0006 reviewer. It remains available for later narrow execution-based verification and Windows-local bootstrap/deployment tasks if MC-0006 identifies evidence gaps that cannot be resolved through repository inspection alone.
 
 ## Deferred product collaboration
 
