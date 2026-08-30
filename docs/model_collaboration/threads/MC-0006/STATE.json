@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0006",
   "review_mode": "ADVERSARIAL_REVIEW",
-  "lifecycle_state": "ACTIVE",
-  "phase": "SOURCE_UNIVERSE_ARCHITECTURE_REVIEW",
+  "lifecycle_state": "WAITING",
+  "phase": "EXECUTION_FOLLOWUP_PENDING",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c",
@@ -38,7 +38,7 @@
       "paths": ["docs/model_collaboration/threads/MC-0006/messages/**"]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": null,
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": "4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c",
@@ -48,16 +48,17 @@
       "The permanent Source Vault bootstrap has not yet performed the user's real permanent private registry/vault write.",
       "The project intends the Source Universe to preserve durable evidence while the Methodological Knowledge Universe contains reusable interpreted methodological knowledge.",
       "The normal Claude Project has full repository access through a custom connector; Claude Code remains available separately for later local execution-based verification and deployment work.",
-      "Before the substantive review began, the project owner requested an explicit Claude-vs-Claude-Code environment assessment; the resulting recommendation was normal Claude for the read-only architecture/repository review and Claude Code only for later targeted execution evidence where required."
+      "Before the substantive review began, the project owner requested an explicit Claude-vs-Claude-Code environment assessment; the resulting recommendation was normal Claude for the read-only architecture/repository review and Claude Code only for later targeted execution evidence where required.",
+      "Claude completed the exact-target review and ChatGPT independently accepted F1 through F4 as pre-deployment recovery-hardening changes while retaining the architecture."
     ],
-    "notes": "This is a direct adversarial review of an existing accepted candidate, not a blind independent design exercise. Normal Claude should challenge defects and unnecessary complexity without treating difference from the existing architecture as a goal. The frozen review target remains unchanged. If the review identifies claims that genuinely require local execution evidence, preserve them explicitly for a separately scoped Claude Code or other execution-agent verification task rather than expanding MC-0006 into deployment work."
+    "notes": "MC-0006 remains waiting rather than closed until the separately scoped MC-0007 hardening/Windows verification evidence is returned and the task owner writes the final resolution. The review itself is complete; no additional Claude response is expected."
   },
   "last_transition": {
-    "transition_id": "mc0006-reviewer-environment-reselected-before-review",
+    "transition_id": "mc0006-findings-dispositioned-execution-followup-opened",
     "from_state": "ACTIVE",
-    "to_state": "ACTIVE",
+    "to_state": "WAITING",
     "actor": "chatgpt",
-    "reason": "Before substantive review began, the project owner clarified that normal Claude already has full repository access through a custom connector and requested an explicit environment comparison. Claude recommended normal Claude for the read-only architecture/repository review, with Claude Code reserved for later narrow execution-based verification and local deployment. MC-0006 therefore changes only reviewer provenance; the exact frozen target and blocking boundary remain unchanged.",
-    "repository_head": "b937ab8a768f9fe1ce8d8bd248d3b07c151f4da8"
+    "reason": "Claude completed the exact-target Source Universe review. ChatGPT independently traced and accepted F1-F4 as narrow pre-deployment recovery-hardening changes, retained the architecture, and separated implementation plus real-Windows verification into MC-0007 before final MC-0006 closure.",
+    "repository_head": "65bf6198ea77565551e4c4dabe690ce204497d79"
   }
 }

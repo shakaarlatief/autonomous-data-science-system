@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0007",
+  "review_mode": "COORDINATED_HANDOFF",
+  "lifecycle_state": "ACTIVE",
+  "phase": "SOURCE_UNIVERSE_PREDEPLOYMENT_HARDENING",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "65bf6198ea77565551e4c4dabe690ce204497d79",
+    "description": "Implement and locally verify the four MC-0006 recovery-hardening findings accepted by ChatGPT before any permanent Source Registry / Source Vault write.",
+    "write_paths": [
+      "src/ads_system/infrastructure/source_store.py",
+      "src/ads_system/application/source_universe.py",
+      "src/ads_system/source_cli.py",
+      "tests/integration/test_source_universe_substrate.py",
+      "tests/integration/test_source_universe_recovery.py",
+      "tests/integration/test_source_universe_cli.py"
+    ]
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": "claude-code",
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-10",
+      "roles": ["TASK_OWNER", "RESEARCHER"]
+    },
+    {
+      "collaborator_id": "claude-code",
+      "interaction_environment": "Claude Code",
+      "interaction_session": "claude-code-01",
+      "roles": ["IMPLEMENTER", "VERIFIER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude-code",
+      "paths": ["docs/model_collaboration/threads/MC-0007/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude-code",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": null,
+    "known_exposures": [
+      "Claude's MC-0006 review identified F1-F4 and explicitly proposed narrow corrections.",
+      "ChatGPT independently traced and accepted F1-F4 before opening this handoff.",
+      "Specification 023 remains the accepted architecture and is not under redesign in MC-0007."
+    ],
+    "notes": "MC-0007 is an implementation/verification handoff, not an independent review. Claude Code should execute the bounded accepted corrections and provide real Windows evidence without performing permanent deployment."
+  },
+  "last_transition": {
+    "transition_id": "mc0007-opened-for-source-hardening-and-windows-verification",
+    "from_state": null,
+    "to_state": "ACTIVE",
+    "actor": "chatgpt",
+    "reason": "MC-0006 produced four accepted narrow recovery-hardening findings whose implementation and local Windows verification are best executed in Claude Code before the first permanent Source Vault write.",
+    "repository_head": "65bf6198ea77565551e4c4dabe690ce204497d79"
+  }
+}

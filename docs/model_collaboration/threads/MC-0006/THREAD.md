@@ -1,7 +1,7 @@
 # MC-0006 Thread: Source Universe Architecture Review
 
 **Thread:** MC-0006  
-**Status:** ACTIVE  
+**Status:** WAITING / EXECUTION FOLLOW-UP PENDING  
 **Review mode:** ADVERSARIAL_REVIEW  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`  
 **Frozen review target:** `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c`
@@ -15,89 +15,93 @@ Provide a read-only second-model challenge of the accepted Source Universe archi
 ```text
 ChatGPT
     TASK_OWNER
-    later dispositions reviewer findings
+    dispositions reviewer findings
+    closes the thread after accepted follow-up evidence is returned
 
 Claude / claude-01
     REVIEWER / CRITIC
     normal Claude Project with full repository access through the custom connector
-    reads frozen target
-    writes only the MC-0006 review message
+    reviewed the frozen target
+    wrote only the MC-0006 review message
 
 Human project owner
     HUMAN_DECIDER if a material architecture/storage tradeoff remains
 ```
 
-Claude Code is intentionally not the MC-0006 reviewer. It remains available for later, separately scoped execution-based verification and Windows-local deployment work if the architectural review identifies evidence questions that genuinely require command/filesystem execution.
+Claude Code is intentionally not the MC-0006 reviewer. It is used separately in MC-0007 for bounded implementation and local Windows execution evidence.
 
-## Read-only review rule
+## Review integrity
 
-The architecture target is frozen at `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c`.
+The architecture target remained frozen at `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c` throughout Claude's review.
 
-Claude must not mutate the target during review. The only permitted Claude write surface is:
-
-```text
-docs/model_collaboration/threads/MC-0006/messages/**
-```
-
-This keeps review evidence separate from later implementation/disposition changes.
-
-## Reviewer-environment decision
-
-MC-0006 was initially routed to Claude Code because the review spans architecture plus implementation and later permanent deployment will require local execution.
-
-Before the substantive review began, the project owner clarified that the normal Claude Project already has full repository access through a custom connector and requested an explicit comparison of Claude versus Claude Code for this exact task.
-
-The resulting split is:
-
-```text
-normal Claude
-    perform MC-0006 architectural/adversarial repository review
-
-Claude Code
-    perform later narrow execution-based verification where required
-    assist with local Windows preflight/deployment only after MC-0006 findings are dispositioned
-```
-
-The environment-selection evidence is preserved in `messages/ENVIRONMENT_SELECTION.md`.
-
-## Expected next action
-
-Claude should read:
-
-```text
-docs/current_routing.json
-docs/model_collaboration/REVIEW_INBOX.md
-docs/model_collaboration/threads/MC-0006/BRIEF.md
-this THREAD.md
-```
-
-Then inspect the frozen target deeply, including the canonical Source Universe architecture, runbook, implementation, migrations/schema, CLI behavior, manifest/fingerprint evidence and tests.
-
-The requested output is:
+Claude's only substantive review write was:
 
 ```text
 docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md
 ```
 
-Where a conclusion depends materially on execution rather than static repository inspection, Claude should say so explicitly and identify the smallest execution check needed. It should not perform the permanent deployment itself.
+The review explicitly names the frozen SHA and the review commit changed only that message.
+
+## Review result
+
+Claude concluded:
+
+```text
+safe to proceed with permanent deployment as designed
+    YES, WITH PRECONDITIONS
+
+MUST_FIX_BEFORE_DEPLOYMENT
+    none
+
+SHOULD_FIX_EARLY
+    F1 staging cleanup on existing-object corruption
+    F2 cleanup of a newly placed object that fails final integrity verification
+    F3 structured partial-failure reporting for batch ingest
+    F4 retry-safe cleanup/publication for failed backup creation
+```
+
+Claude also preserved CLI-consistency, Windows directory-fsync documentation, and full-sweep audit cost as non-blocking watchpoints.
+
+## Task-owner disposition
+
+ChatGPT independently traced F1-F4 against the frozen implementation and accepted all four as narrow recovery-hardening changes to complete before the first permanent Source Vault write.
+
+Durable disposition:
+
+```text
+docs/model_collaboration/threads/MC-0006/messages/002_chatgpt_task_owner_disposition.md
+```
+
+The Source Universe architecture itself is retained. No new source identity model, registry/vault split, backup format, Source-vs-Knowledge-Universe boundary, or provider architecture is justified by the review.
+
+## Execution follow-up
+
+MC-0007 is the separately scoped implementation/verification handoff to Claude Code.
+
+It is responsible for:
+
+```text
+implement accepted F1-F4 hardening
+add direct regressions for each accepted finding
+run the affected and full provider-free test suite on the real local Windows environment
+exercise a disposable backup partial-failure/retry path
+report exact commands/results without touching the permanent vault
+```
+
+Real private-location capacity and real-corpus restore-performance validation remain part of the later permanent-bootstrap preflight after disk cleanup. Exact machine paths and capacity details remain outside public Git.
 
 ## Blocking boundary
 
-Disk cleanup and private-location planning may continue while Claude reviews.
+Disk cleanup and private-location planning may continue.
 
-Do not create/migrate the permanent Source Registry or write the permanent Source Vault until the review has been received and dispositioned.
-
-## After Claude responds
-
-ChatGPT should:
+Do not create/migrate the permanent Source Registry or write the permanent Source Vault until:
 
 ```text
-1. verify Claude reviewed the exact frozen SHA;
-2. classify every finding as accepted / rejected / deferred / human-choice;
-3. distinguish structural defects from hardening preferences;
-4. isolate any execution-dependent evidence gaps for narrow follow-up verification;
-5. implement only accepted changes in a new mutation boundary;
-6. revalidate affected source-substrate gates;
-7. close MC-0006 with a durable RESOLUTION.md;
-8. update current routing only if the review materially changes the active deployment boundary.
+MC-0007 accepted hardening is implemented and verified
+MC-0006 is finally resolved by ChatGPT
+private storage-capacity/separation preflight is satisfactory
 ```
+
+## Next action
+
+Wait for MC-0007 Claude Code implementation/verification evidence. Then ChatGPT should review the diff and execution results, close MC-0007, write the final MC-0006 `RESOLUTION.md`, and only then return to permanent-bootstrap preflight.

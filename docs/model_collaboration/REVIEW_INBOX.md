@@ -23,52 +23,75 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Pending model obligation
 
-### MC-0006: Source Universe architecture and permanent Source Vault deployment review
+### MC-0007: Source Universe pre-deployment recovery hardening and Windows verification
 
 ```text
-reviewer            Claude / claude-01
-review environment  normal Claude Project with full repository connector access
-review mode         ADVERSARIAL_REVIEW
-exact review target 4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c
-coordination branch v1-source-vault-bootstrap-resume
-status              ACTIVE / REVIEW REQUEST OPEN
-blocks              first permanent Source Registry / Source Vault write
-non-blocking for    disk cleanup, free-space investigation, candidate private-location planning
+implementer/verifier  Claude Code / claude-code-01
+mode                  COORDINATED_HANDOFF
+implementation base   65bf6198ea77565551e4c4dabe690ce204497d79
+coordination branch   v1-source-vault-bootstrap-resume
+status                ACTIVE
+blocks                first permanent Source Registry / Source Vault write
+non-blocking for      disk cleanup, free-space investigation, candidate private-location planning
 ```
 
-Durable request:
+Durable task:
 
 ```text
-docs/model_collaboration/threads/MC-0006/BRIEF.md
-docs/model_collaboration/threads/MC-0006/THREAD.md
-docs/model_collaboration/threads/MC-0006/STATE.json
-docs/model_collaboration/threads/MC-0006/messages/ENVIRONMENT_SELECTION.md
+docs/model_collaboration/threads/MC-0007/BRIEF.md
+docs/model_collaboration/threads/MC-0007/THREAD.md
+docs/model_collaboration/threads/MC-0007/STATE.json
 ```
 
-Expected Claude output:
+Expected Claude Code output:
 
 ```text
-docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md
+docs/model_collaboration/threads/MC-0007/messages/001_claude_code_source_hardening_verification.md
 ```
 
-Normal Claude trigger:
+Claude Code trigger:
 
 ```text
 Work in repository `shakaarlatief/autonomous-data-science-system`.
 Coordination branch: `v1-source-vault-bootstrap-resume`.
 
 Read `docs/current_routing.json` and `docs/model_collaboration/REVIEW_INBOX.md`
-from that exact branch, then follow the referenced MC-0006 brief/thread/state files and
-perform the pending Source Universe architecture review against the exact frozen target.
+from that exact branch, then follow MC-0007's BRIEF.md, THREAD.md and STATE.json.
 
-Use the connected repository as the evidence base. Do not infer or switch the coordination branch.
-Do not mutate the review target. Write only the review output permitted by MC-0006.
-Where a conclusion genuinely requires local execution evidence rather than repository inspection,
-identify the smallest targeted verification needed instead of performing deployment work.
-If the named branch or authoritative routing contradicts this prompt, stop and report the mismatch.
+Implement and verify only the accepted Source Universe pre-deployment recovery hardening
+against the exact MC-0007 implementation base. Respect the declared target write paths.
+Run the required provider-free tests on this local Windows checkout and write the single
+MC-0007 execution report permitted by the thread.
+
+Do not create or migrate the permanent Source Registry, do not write the permanent Source Vault,
+do not modify the original educational corpus, and do not perform the real permanent backup/restore.
+If the branch, base, write-surface ownership or authoritative routing contradicts this prompt,
+stop and report the mismatch rather than improvising.
 ```
 
-Claude Code is not the substantive MC-0006 reviewer. It remains available for later narrow execution-based verification and Windows-local bootstrap/deployment tasks if MC-0006 identifies evidence gaps that cannot be resolved through repository inspection alone.
+## Waiting parent review
+
+### MC-0006: Source Universe architecture and permanent Source Vault deployment review
+
+```text
+reviewer             Claude / claude-01
+exact review target  4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c
+review result         YES, WITH PRECONDITIONS
+must-fix architecture none
+accepted hardening    F1-F4
+status                WAITING / EXECUTION FOLLOW-UP PENDING
+```
+
+Claude's review is complete. ChatGPT independently traced and accepted F1-F4 while retaining the Source Universe architecture. MC-0006 now waits only for the separately scoped MC-0007 implementation/Windows evidence and final task-owner resolution.
+
+Durable records:
+
+```text
+docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md
+docs/model_collaboration/threads/MC-0006/messages/002_chatgpt_task_owner_disposition.md
+docs/model_collaboration/threads/MC-0006/THREAD.md
+docs/model_collaboration/threads/MC-0006/STATE.json
+```
 
 ## Deferred product collaboration
 
