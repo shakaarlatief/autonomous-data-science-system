@@ -49,9 +49,27 @@ Each interaction environment maintains its own sequence because conversations ma
 Examples:
 
 ```text
-ChatGPT title  06 - Methodological Knowledge Universe Construction
-Claude title   01 - ADS Development Review & Collaboration
+ChatGPT title      06 - Methodological Knowledge Universe Construction
+Claude title       01 - ADS Development Review & Collaboration
+Claude Code title  01 - Source Universe Pre-Deployment Recovery Hardening
 ```
+
+Claude Code counts as its own interaction environment when work occurs in a persistent Claude Code session, whether launched in the standalone app or through the VS Code extension. A generated task label or collaboration-thread name is not a substitute for the normal visible conversation title.
+
+### Session-launch naming rule
+
+Before substantive work begins in a new persistent interaction session, establish both:
+
+```text
+provider-local interaction session ID
+visible conversation title using NN - Main Topic / Stage
+```
+
+For a collaboration handoff, the task owner should include the intended interaction-session ID and conversation title in the launch instructions when they are known in advance.
+
+If the product initially generates its own title, rename the visible conversation promptly once the task scope is known. Do not wait until the session is already closed or its durable report has been pushed.
+
+If this step is missed, preserve the original collaborator-authored artifact and add a provenance correction instead of silently rewriting the collaborator's historical message.
 
 ## 4. Repository interaction-session identity
 
@@ -60,6 +78,7 @@ Use provider/environment-qualified session IDs:
 ```text
 chatgpt-06
 claude-01
+claude-code-01
 ```
 
 This avoids one artificial global conversation counter while remaining globally unambiguous in repository provenance.
@@ -96,6 +115,8 @@ Source of a user/system-reported configuration value
 ```
 
 Model or effort values should not be guessed. If the value comes from the human or product UI rather than model introspection, that source should be clear where it matters.
+
+If a conversation title is corrected after a collaborator has already written a durable message, record the corrected title in a later provenance addendum or resolution. Do not rewrite the earlier collaborator-authored message merely to make its metadata look retrospectively complete.
 
 ## 6. Checkpoint provenance
 
