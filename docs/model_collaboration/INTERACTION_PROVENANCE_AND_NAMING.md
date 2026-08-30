@@ -2,6 +2,7 @@
 
 **Status:** Accepted collaboration/continuity convention  
 **Date promoted:** 2026-08-26  
+**Last reviewed:** 2026-08-30  
 **Authority:** Canonical provider-neutral interaction-provenance convention under Development Method v0.5 and `docs/checkpoints/README.md`  
 **Scope:** Preserve which concrete interaction environment, workspace, session, and conversation produced ADS development artifacts without making chat history authoritative.
 
@@ -65,9 +66,15 @@ provider-local interaction session ID
 visible conversation title using NN - Main Topic / Stage
 ```
 
+A newly opened conversation is always a new interaction session for provenance, even when it exists only because a previous conversation hit a length/context limit and the underlying ADS work continues at the same project boundary. The new conversation must not reuse the prior session ID or title simply because the live repository state still records the ended interaction during initial reconstruction.
+
+For repository-first continuation or recovery, the collaborator must proactively derive the next provider-local sequence number from durable provenance and establish a fresh title from the active repository stage. The human project owner should not need to remind the collaborator that a newly opened chat needs a new identity.
+
 For a collaboration handoff, the task owner should include the intended interaction-session ID and conversation title in the launch instructions when they are known in advance.
 
 If the product initially generates its own title, rename the visible conversation promptly once the task scope is known. Do not wait until the session is already closed or its durable report has been pushed.
+
+If the active tool surface cannot programmatically rename the product UI, still establish and use the canonical repository title immediately and update live provenance when repository writes are permitted. A UI limitation is not permission to carry forward stale conversation metadata.
 
 If this step is missed, correct the provenance transparently. Do not rewrite Git history or silently alter substantive collaborator evidence merely to make an earlier artifact appear as though it had always been complete.
 
@@ -88,6 +95,8 @@ claude-code-01
 This avoids one artificial global conversation counter while remaining globally unambiguous in repository provenance.
 
 A model/configuration change inside the same long-lived conversation does not by itself create a new interaction-session ID.
+
+A newly opened conversation does create a new provider-local interaction-session ID, even if it is a direct continuation of the same project stage. For example, after `chatgpt-10` ends and a new ChatGPT conversation continues the same Source Universe work, the new conversation should use `chatgpt-11` rather than inheriting `chatgpt-10`.
 
 ## 5. Collaboration-message provenance
 
