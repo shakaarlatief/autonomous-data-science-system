@@ -1,7 +1,7 @@
 # Current State
 
 **Checkpoint:** 267  
-**Date:** 2026-08-29  
+**Date:** 2026-08-30  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -20,21 +20,24 @@ Primary collaborator     ChatGPT
 
 Repository artifacts remain authoritative across chats and models.
 
-The conversation title remains historical interaction provenance. The active ADS work track has now moved away from frontend design and back to Source Universe deployment.
+The conversation title remains historical interaction provenance. The active ADS work track is Source Universe deployment; Cockpit frontend exploration remains paused.
 
 ---
 
-## Current active stage: permanent Source Vault bootstrap resumed
+## Current active stage: permanent Source Vault private-storage preflight
 
-Checkpoint 206 deliberately paused the permanent user-controlled Source Vault bootstrap so the next-generation Project Cockpit could be explored.
-
-The project owner has now explicitly ended that temporary frontend focus for the time being.
+Checkpoint 267 remains the current continuity checkpoint that resumed Source Vault work and paused the Cockpit. Since then, the dedicated Source Universe architecture review and its accepted recovery-hardening follow-up have completed through their own durable model-collaboration resolution records; no additional numbered checkpoint was required because the accepted Source Universe architecture and global repository roles did not change.
 
 Current interpretation:
 
 ```text
 Permanent Source Vault bootstrap
     RESUMED
+    architecture accepted
+    MC-0006 CLOSED
+    MC-0007 CLOSED
+    private storage preflight ACTIVE
+    permanent deployment still incomplete
 
 Next-generation Project Cockpit frontend exploration
     PAUSED
@@ -42,6 +45,14 @@ Next-generation Project Cockpit frontend exploration
     not rejected
     not production-promoted
 ```
+
+There is no pending Claude or Claude Code obligation blocking the Source Vault bootstrap.
+
+The next blocker is operational and human-controlled: enough free storage and satisfactory private locations before the first permanent Source Registry / Source Vault write.
+
+---
+
+## Source Universe architecture and hardening status
 
 The governing source route is:
 
@@ -53,6 +64,8 @@ docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/model_collaboration/threads/MC-0006/RESOLUTION.md
+docs/model_collaboration/threads/MC-0007/RESOLUTION.md
 ```
 
 Specification 023 remains:
@@ -61,11 +74,37 @@ Specification 023 remains:
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
+MC-0006 exact-target Claude review:
+
+```text
+frozen target              4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c
+Claude review commit       65bf6198ea77565551e4c4dabe690ce204497d79
+review conclusion          YES, WITH PRECONDITIONS
+must-fix architecture      none
+architecture disposition   RETAIN
+```
+
+ChatGPT independently accepted Claude's F1-F4 findings as narrow pre-deployment recovery hardening.
+
+MC-0007 implementation/evidence:
+
+```text
+implementation commit      a992fef2eda95109dacd06ee491f4604e6d11891
+execution-report commit    7ee480709aa1627cc770ebb4f229a3f82b189448
+F1-F4                      FIXED / VERIFIED
+source-specific selection  15 passed
+full provider-free suite   158 passed, 2 skipped, 7 warnings
+real Windows execution     confirmed
+permanent vault touched    NO
+```
+
+The Claude Code report contains one non-substantive arithmetic typo in its test-count explanation: the correct source-specific composition is 8 new MC-0007 tests plus 7 pre-existing substrate tests = 15. MC-0007 `RESOLUTION.md` preserves that correction without rewriting the collaborator-authored report.
+
 The permanent user-controlled Source Registry / SourceArtifactStore deployment has **not** yet been completed.
 
 ---
 
-## Accepted source-substrate evidence remains unchanged
+## Accepted first-corpus evidence remains unchanged
 
 The controlled first-corpus result remains:
 
@@ -88,9 +127,9 @@ No educational source binary, private path, private registry snapshot or backup 
 
 ---
 
-## Required private locations for the resumed operation
+## Required private locations
 
-The next real bootstrap step requires the user-controlled locations for:
+The next real bootstrap step requires user-controlled locations for:
 
 ```text
 ORIGINAL_SOURCE_ROOT
@@ -112,6 +151,8 @@ CLEAN_RESTORE_ROOT
 These values must not be invented, guessed or committed.
 
 The original source folder remains read-only input from ADS's perspective.
+
+The Source Universe is local-first, not conceptually machine-bound: the provider-neutral verified backup can be transferred and restored onto another machine. A future remote/object-storage backend remains possible behind the accepted SourceArtifactStore port, but is not required before the first permanent bootstrap.
 
 ---
 
@@ -156,7 +197,7 @@ It was created from the exact frozen Cockpit head:
 04f2a907094b8023ac7377c399a6eef1a6e1da99
 ```
 
-This preserves every repository-knowledge, governance and frontend record accumulated since the original Source Vault pause while making Source Universe deployment the active work again.
+This preserves repository knowledge, governance and frontend records accumulated since the original Source Vault pause while making Source Universe deployment the active work again.
 
 This does **not** promote the frontend candidate. If Source Vault work needs promotion into `v1-frontend-spike` before Cockpit design is separately promoted, isolate the source-specific delta against the promoted integration base rather than merging this continuity branch wholesale.
 
@@ -228,7 +269,7 @@ MAJOR_CHANGES.md       selective structural history
 
 The Knowledge Map remains mechanically guarded for durable numbered families and checkpoint-range coverage. Structural coverage is a floor, not proof of semantic routing quality.
 
-MC-0005 remains closed with no must-fix information-architecture findings.
+MC-0005, MC-0006 and MC-0007 are closed. MC-0004 remains deferred with the paused Cockpit.
 
 ---
 
@@ -270,13 +311,14 @@ Candidate source extraction cannot silently create accepted methodological autho
 
 ## Exact next step
 
-The active continuation is now the same real-world Source Vault gate that existed before the Cockpit design detour:
+The active continuation is:
 
 ```text
-identify the original Machine Learning source folder
-choose permanent registry/vault storage
-choose a genuinely separate backup destination
-choose a temporary clean restore location
+private storage/free-space preflight
+    ->
+resolve the five private locations
+    ->
+verify capacity and genuine backup separation
     ->
 execute docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
@@ -299,6 +341,9 @@ docs/KNOWLEDGE_MAP.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+
+docs/model_collaboration/threads/MC-0006/RESOLUTION.md
+docs/model_collaboration/threads/MC-0007/RESOLUTION.md
 
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md

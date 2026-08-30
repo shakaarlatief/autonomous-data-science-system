@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0007",
   "review_mode": "COORDINATED_HANDOFF",
-  "lifecycle_state": "ACTIVE",
-  "phase": "SOURCE_UNIVERSE_PREDEPLOYMENT_HARDENING",
+  "lifecycle_state": "CLOSED",
+  "phase": "CLOSED_ACCEPTED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "65bf6198ea77565551e4c4dabe690ce204497d79",
@@ -18,7 +18,7 @@
     ]
   },
   "task_owner": "chatgpt",
-  "target_write_owner": "claude-code",
+  "target_write_owner": null,
   "participants": [
     {
       "collaborator_id": "chatgpt",
@@ -45,23 +45,24 @@
       "paths": ["docs/model_collaboration/threads/MC-0007/messages/**"]
     }
   ],
-  "next_expected_actor": "claude-code",
+  "next_expected_actor": null,
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": null,
     "known_exposures": [
       "Claude's MC-0006 review identified F1-F4 and explicitly proposed narrow corrections.",
       "ChatGPT independently traced and accepted F1-F4 before opening this handoff.",
-      "Specification 023 remains the accepted architecture and is not under redesign in MC-0007."
+      "Specification 023 remains the accepted architecture and is not under redesign in MC-0007.",
+      "Claude Code implemented F1-F4 at a992fef2eda95109dacd06ee491f4604e6d11891 and provided real-Windows execution evidence at 7ee480709aa1627cc770ebb4f229a3f82b189448."
     ],
-    "notes": "MC-0007 is an implementation/verification handoff, not an independent review. Claude Code should execute the bounded accepted corrections and provide real Windows evidence without performing permanent deployment."
+    "notes": "MC-0007 is closed after task-owner inspection of the actual diff, authorized write surface, direct regressions and reported real-Windows execution evidence. The collaborator report's small 9+6 test-count arithmetic typo is corrected in RESOLUTION.md without rewriting the original message."
   },
   "last_transition": {
-    "transition_id": "mc0007-opened-for-source-hardening-and-windows-verification",
-    "from_state": null,
-    "to_state": "ACTIVE",
+    "transition_id": "mc0007-closed-accepted-after-task-owner-review",
+    "from_state": "ACTIVE",
+    "to_state": "CLOSED",
     "actor": "chatgpt",
-    "reason": "MC-0006 produced four accepted narrow recovery-hardening findings whose implementation and local Windows verification are best executed in Claude Code before the first permanent Source Vault write.",
-    "repository_head": "65bf6198ea77565551e4c4dabe690ce204497d79"
+    "reason": "Claude Code completed the bounded F1-F4 hardening and Windows verification. ChatGPT inspected the implementation diff, tests, write-surface compliance and execution report, accepted all four fixes, and closed the handoff without authorizing permanent deployment.",
+    "repository_head": "7ee480709aa1627cc770ebb4f229a3f82b189448"
   }
 }

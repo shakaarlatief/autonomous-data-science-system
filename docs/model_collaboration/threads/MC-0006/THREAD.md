@@ -1,48 +1,23 @@
 # MC-0006 Thread: Source Universe Architecture Review
 
 **Thread:** MC-0006  
-**Status:** WAITING / EXECUTION FOLLOW-UP PENDING  
+**Status:** CLOSED / ARCHITECTURE RETAINED  
 **Review mode:** ADVERSARIAL_REVIEW  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`  
-**Frozen review target:** `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c`
+**Frozen review target:** `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c`  
+**Claude review:** `messages/001_claude_source_universe_architecture_review.md`  
+**Task-owner disposition:** `messages/002_chatgpt_task_owner_disposition.md`  
+**Final resolution:** `RESOLUTION.md`
 
 ## Purpose
 
 Provide a read-only second-model challenge of the accepted Source Universe architecture and first permanent user-controlled Source Vault deployment before any permanent registry/vault write occurs.
 
-## Roles
-
-```text
-ChatGPT
-    TASK_OWNER
-    dispositions reviewer findings
-    closes the thread after accepted follow-up evidence is returned
-
-Claude / claude-01
-    REVIEWER / CRITIC
-    normal Claude Project with full repository access through the custom connector
-    reviewed the frozen target
-    wrote only the MC-0006 review message
-
-Human project owner
-    HUMAN_DECIDER if a material architecture/storage tradeoff remains
-```
-
-Claude Code is intentionally not the MC-0006 reviewer. It is used separately in MC-0007 for bounded implementation and local Windows execution evidence.
+That review and its accepted execution follow-up are complete.
 
 ## Review integrity
 
-The architecture target remained frozen at `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c` throughout Claude's review.
-
-Claude's only substantive review write was:
-
-```text
-docs/model_collaboration/threads/MC-0006/messages/001_claude_source_universe_architecture_review.md
-```
-
-The review explicitly names the frozen SHA and the review commit changed only that message.
-
-## Review result
+The architecture target remained frozen at `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c` throughout Claude's review. Claude's substantive review commit changed only the permitted MC-0006 message.
 
 Claude concluded:
 
@@ -60,48 +35,37 @@ SHOULD_FIX_EARLY
     F4 retry-safe cleanup/publication for failed backup creation
 ```
 
-Claude also preserved CLI-consistency, Windows directory-fsync documentation, and full-sweep audit cost as non-blocking watchpoints.
+## Task-owner disposition and execution follow-up
 
-## Task-owner disposition
+ChatGPT independently traced F1-F4 and accepted all four as narrow recovery-hardening changes while retaining the Source Universe architecture.
 
-ChatGPT independently traced F1-F4 against the frozen implementation and accepted all four as narrow recovery-hardening changes to complete before the first permanent Source Vault write.
-
-Durable disposition:
+MC-0007 then implemented and locally verified those accepted changes:
 
 ```text
-docs/model_collaboration/threads/MC-0006/messages/002_chatgpt_task_owner_disposition.md
+implementation commit       a992fef2eda95109dacd06ee491f4604e6d11891
+execution-report commit     7ee480709aa1627cc770ebb4f229a3f82b189448
+source-specific tests       15 passed
+full provider-free suite    158 passed, 2 skipped, 7 warnings
+real Windows execution      confirmed
 ```
 
-The Source Universe architecture itself is retained. No new source identity model, registry/vault split, backup format, Source-vs-Knowledge-Universe boundary, or provider architecture is justified by the review.
+No permanent Source Registry, Source Vault, original educational corpus, real backup, or real clean-restore target was touched.
 
-## Execution follow-up
+## Final architectural disposition
 
-MC-0007 is the separately scoped implementation/verification handoff to Claude Code.
+The architecture remains accepted without redesign. The review strengthens the local-first V1 implementation around partial-failure recovery and operator evidence while preserving the existing source identity, registry/vault, privacy, backup/restore, and Source-vs-Knowledge-Universe boundaries.
 
-It is responsible for:
+## Remaining deployment boundary
+
+There is no remaining MC-0006 or MC-0007 model obligation.
+
+The first permanent Source Registry / Source Vault write still requires a satisfactory private storage preflight:
 
 ```text
-implement accepted F1-F4 hardening
-add direct regressions for each accepted finding
-run the affected and full provider-free test suite on the real local Windows environment
-exercise a disposable backup partial-failure/retry path
-report exact commands/results without touching the permanent vault
+resolve the five private locations
+verify enough free capacity
+verify the backup destination is genuinely suitable/independent
+then execute the permanent bootstrap runbook
 ```
 
-Real private-location capacity and real-corpus restore-performance validation remain part of the later permanent-bootstrap preflight after disk cleanup. Exact machine paths and capacity details remain outside public Git.
-
-## Blocking boundary
-
-Disk cleanup and private-location planning may continue.
-
-Do not create/migrate the permanent Source Registry or write the permanent Source Vault until:
-
-```text
-MC-0007 accepted hardening is implemented and verified
-MC-0006 is finally resolved by ChatGPT
-private storage-capacity/separation preflight is satisfactory
-```
-
-## Next action
-
-Wait for MC-0007 Claude Code implementation/verification evidence. Then ChatGPT should review the diff and execution results, close MC-0007, write the final MC-0006 `RESOLUTION.md`, and only then return to permanent-bootstrap preflight.
+Course 2 remains blocked until the complete permanent bootstrap succeeds.
