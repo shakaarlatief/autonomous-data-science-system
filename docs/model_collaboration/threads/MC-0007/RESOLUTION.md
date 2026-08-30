@@ -104,7 +104,27 @@ combined                           15
 
 The named tests, the 15-pass output, and the implementation remain internally consistent. The collaborator-authored report is intentionally preserved unchanged; this resolution records the correction rather than rewriting provenance.
 
-## 5. Closure
+## 5. Interaction-provenance correction
+
+After closure, the project owner identified a second provenance-hygiene defect in the MC-0007 launch: the Claude Code session had a repository interaction-session ID, `claude-code-01`, but no explicit visible conversation title following the accepted `NN - Main Topic / Stage` convention was established before execution and push.
+
+The durable execution report also omitted the normally expected `Interaction environment`, `Project / workspace`, and `Conversation title` fields.
+
+The original collaborator-authored report remains unchanged. The additive correction is preserved in:
+
+```text
+docs/model_collaboration/threads/MC-0007/messages/002_chatgpt_interaction_provenance_correction.md
+```
+
+The canonical visible title assigned to the existing Claude Code session is:
+
+```text
+01 - Source Universe Pre-Deployment Recovery Hardening
+```
+
+This does not change any implementation or verification result. It corrects interaction provenance and tightens the future session-launch naming rule in `docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md`.
+
+## 6. Closure
 
 MC-0007 is complete. No implementation defect from F1-F4 remains open.
 
