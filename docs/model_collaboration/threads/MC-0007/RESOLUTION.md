@@ -6,6 +6,7 @@
 **Implementation base:** `65bf6198ea77565551e4c4dabe690ce204497d79`  
 **Implementation commit:** `a992fef2eda95109dacd06ee491f4604e6d11891`  
 **Execution report commit:** `7ee480709aa1627cc770ebb4f229a3f82b189448`  
+**Provenance correction commit:** `170f6e265829ce2f15f0f528ab4ec47b261980a3`  
 **Task-owner disposition:** F1-F4 accepted implementation verified; no Source Universe redesign required
 
 ## 1. Write-surface and provenance verification
@@ -20,7 +21,7 @@ tests/integration/test_source_universe_cli.py
 tests/integration/test_source_universe_recovery.py
 ```
 
-The subsequent Claude Code commit changes only the permitted MC-0007 execution-report message.
+The subsequent Claude Code execution-report commit changes only the permitted MC-0007 execution-report message. The later Claude Code provenance-correction commit changes only the same report's interaction-provenance metadata and leaves its substantive execution evidence unchanged.
 
 No permanent Source Registry, Source Vault, private source corpus, real backup, or real clean-restore target was written by MC-0007.
 
@@ -122,16 +123,30 @@ The canonical visible title assigned to the existing Claude Code session is:
 01 - Source Universe Pre-Deployment Recovery Hardening
 ```
 
-The visible Claude Code conversation has now been renamed to that title.
+The visible Claude Code conversation was renamed to that title.
 
 The provenance convention was refined after this omission was discovered. The project now distinguishes between rewriting Git history and making a transparent later correction to a canonical collaborator-authored artifact. A bounded factual metadata correction may be made in a later commit when the originating collaborator can make it directly and the original artifact remains recoverable through Git history.
 
-Accordingly, Claude Code is authorized to make one provenance-only correction to `001_claude_code_source_hardening_verification.md`, adding the missing interaction environment, project/workspace, interaction session, and conversation title fields without changing any substantive implementation or verification content. The originally submitted report remains permanently recoverable at commit `7ee480709aa1627cc770ebb4f229a3f82b189448`.
+Claude Code completed that authorized provenance-only correction at:
 
-After that collaborator-authored correction is pushed, this resolution should be reconciled once more with the exact correction commit SHA. No Source Universe implementation result depends on that metadata-only follow-up.
+```text
+170f6e265829ce2f15f0f528ab4ec47b261980a3
+```
+
+Task-owner inspection of the exact diff confirmed that the commit adds only:
+
+```text
+Interaction environment: Claude Code
+Project / workspace: Autonomous Data Science System
+Conversation title: 01 - Source Universe Pre-Deployment Recovery Hardening
+```
+
+`Interaction session: claude-code-01` was already present. No implementation evidence, findings, commands, test results, or other substantive content changed. The originally submitted report remains permanently recoverable at commit `7ee480709aa1627cc770ebb4f229a3f82b189448`.
+
+The provenance follow-up is therefore fully reconciled and closed. No Source Universe implementation result depends on this metadata-only correction.
 
 ## 6. Closure
 
-MC-0007 is complete. No implementation defect from F1-F4 remains open.
+MC-0007 is complete, including its interaction-provenance follow-up. No implementation defect from F1-F4 remains open and no collaborator obligation remains.
 
 This closure does not authorize Course 2 and does not itself perform the permanent bootstrap. It removes the model-review/implementation blocker. The next boundary is the human-controlled private storage preflight: enough free capacity, the five private locations, and genuine backup separation before the first permanent Source Registry / Source Vault write.
