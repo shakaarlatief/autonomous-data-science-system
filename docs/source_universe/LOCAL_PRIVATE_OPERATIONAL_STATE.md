@@ -10,22 +10,34 @@ The public repository is the authority for project state, architecture, accepted
 
 Those two needs must not be collapsed.
 
-The Source Vault bootstrap therefore uses a two-layer operational-state model:
+The Source Vault bootstrap therefore uses a layered operational-state model:
 
 ```text
-PUBLIC REPOSITORY STATE
+PUBLIC ADS REPOSITORY
+    sole project-development repository
     what is resolved or unresolved
     what gate passed or failed
     what action is next
     public-safe evidence and rationale
 
+PRIVATE COMPANION KNOWLEDGE REPOSITORY
+    durable private knowledge used for continuity across chats
+    exact private paths and observations where appropriate
+    no ADS product development
+
 LOCAL PRIVATE OPERATIONAL STATE
-    exact local paths
+    execution-ready exact local paths
     exact machine/storage measurements when useful
-    other machine-specific values required for execution
+    other machine-specific values required for local execution
 ```
 
 A value being private does not make it unknown to the project.
+
+The governing public-side companion-repository contract is:
+
+```text
+docs/private_companion/README.md
+```
 
 ## Canonical local file
 
@@ -43,7 +55,7 @@ A public template is preserved at:
 docs/source_universe/local_private_state.example.json
 ```
 
-The private file is operational input, not a replacement for `CURRENT_STATE.md`, specifications, checkpoints or accepted public evidence.
+The private file is operational input, not a replacement for `CURRENT_STATE.md`, specifications, checkpoints, accepted public evidence, or the future private companion knowledge repository.
 
 ## Public status vocabulary
 
@@ -77,15 +89,17 @@ If `CURRENT_STATE.md` records a value as `RESOLVED_PRIVATE`, a new conversation 
 Instead:
 
 ```text
-reconstruction surface can access local private state
-    -> read the exact value from the private state before execution
+private companion repository is accessible
+    -> retrieve the durable private value there when relevant
 
-reconstruction surface cannot access local private state
+local execution surface can access .ads-private state
+    -> read the execution-ready local value there
+
+current surface can access neither private layer
     -> preserve the fact that the value is already resolved
     -> do not downgrade it to UNRESOLVED
-    -> request or hand off the exact value only when a concrete local
-       execution step actually requires it and no local execution surface
-       can retrieve it
+    -> request or hand off the exact value only when a concrete execution
+       step actually requires it and no accessible private layer can supply it
 ```
 
 This avoids confusing "not visible to this chat" with "not known to the project".
@@ -112,8 +126,8 @@ Capacity measurements are operational observations, not timeless facts. Record e
 For example:
 
 ```text
-local private state
-    exact volume / bytes / percentages / timestamp
+private companion / local private state
+    exact volume / displayed capacity values / percentages / timestamp
 
 public repository
     capacity preflight failed
@@ -121,17 +135,38 @@ public repository
     recheck required before permanent write
 ```
 
-After cleanup, the local measurement should be refreshed and the public status should be updated if the gate changes.
+After cleanup, the local measurement should be refreshed and the public status should be updated if the gate changes. The durable private companion observation should also be updated or superseded so future chats can recover the latest private state without relying on transient conversation memory.
+
+## Relationship to the private companion repository
+
+The two private layers have different jobs:
+
+```text
+private companion repository
+    durable private knowledge
+    cross-chat reconstruction
+    private continuity/provenance
+
+.ads-private/
+    machine-local execution configuration
+    direct command/runtime input
+```
+
+The companion repository must not become a second ADS development repository. Code, tests, architecture, specifications, decisions, checkpoints, and implementation history remain in the public `autonomous-data-science-system` repository.
+
+Where useful, a local `.ads-private` file may be initialized or refreshed from the corresponding private companion knowledge. This is synchronization of operational values, not cross-repository development.
 
 ## Portability and loss
 
-The local private file is deliberately not synchronized through public Git. Losing that file does not invalidate repository knowledge or Source Universe architecture, but it can require re-resolving machine-specific coordinates.
+The local private file is deliberately not synchronized through public Git. Losing that file does not invalidate repository knowledge or Source Universe architecture, but it can require reconstructing machine-local execution coordinates.
 
-Once the permanent Source Vault exists, private operational state should be included in an appropriate user-controlled private backup strategy if losing those coordinates would create unnecessary recovery work. It should never be added to the public repository merely for convenience.
+Once the private companion repository exists, important private continuity facts should have a durable private copy there so loss of one machine-local file does not force the project owner to repeat already-known information.
+
+Once the permanent Source Vault exists, private operational state should also be included in an appropriate user-controlled private backup strategy if losing those coordinates would create unnecessary recovery work. It should never be added to the public repository merely for convenience.
 
 ## Safety boundary
 
-Never commit:
+Never commit to the public repository:
 
 ```text
 exact private filesystem paths
@@ -141,5 +176,7 @@ source binaries
 backup payloads
 other private machine notes not required as public evidence
 ```
+
+The private companion repository may store private knowledge such as exact paths and observations, but it must still not store ordinary secrets or act as bulk binary/source storage.
 
 Public Git may safely preserve that a private value is resolved, that a gate failed or passed, and what the next action is.
