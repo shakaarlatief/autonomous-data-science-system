@@ -13,20 +13,20 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-10
-Conversation title       10 - Project Cockpit Design Exploration
+Interaction session      chatgpt-11
+Conversation title       11 - Source Vault Bootstrap Preflight
 Primary collaborator     ChatGPT
 ```
 
 Repository artifacts remain authoritative across chats and models.
 
-The conversation title remains historical interaction provenance. The active ADS work track is Source Universe deployment; Cockpit frontend exploration remains paused.
+The interaction identity above is the active provenance for this newly opened continuation session. The prior ChatGPT session `chatgpt-10` / `10 - Project Cockpit Design Exploration` remains historical provenance for work produced there. The active ADS work track is Source Universe deployment; Cockpit frontend exploration remains paused.
 
 ---
 
 ## Current active stage: permanent Source Vault private-storage preflight
 
-Checkpoint 267 remains the current continuity checkpoint that resumed Source Vault work and paused the Cockpit. Since then, the dedicated Source Universe architecture review and its accepted recovery-hardening follow-up have completed through their own durable model-collaboration resolution records; no additional numbered checkpoint was required because the accepted Source Universe architecture and global repository roles did not change.
+Checkpoint 267 remains the current continuity checkpoint that resumed Source Vault work and paused the Cockpit. Since then, the dedicated Source Universe architecture review, its accepted recovery-hardening follow-up, and the bounded MC-0007 interaction-provenance reconciliation have completed through their own durable model-collaboration records; no additional numbered checkpoint was required because the accepted Source Universe architecture and global project boundary did not change.
 
 Current interpretation:
 
@@ -35,7 +35,7 @@ Permanent Source Vault bootstrap
     RESUMED
     architecture accepted
     MC-0006 CLOSED
-    MC-0007 CLOSED
+    MC-0007 CLOSED / provenance reconciled
     private storage preflight ACTIVE
     permanent deployment still incomplete
 
@@ -91,6 +91,7 @@ MC-0007 implementation/evidence:
 ```text
 implementation commit      a992fef2eda95109dacd06ee491f4604e6d11891
 execution-report commit    7ee480709aa1627cc770ebb4f229a3f82b189448
+provenance correction      170f6e265829ce2f15f0f528ab4ec47b261980a3
 F1-F4                      FIXED / VERIFIED
 source-specific selection  15 passed
 full provider-free suite   158 passed, 2 skipped, 7 warnings
@@ -98,7 +99,7 @@ real Windows execution     confirmed
 permanent vault touched    NO
 ```
 
-The Claude Code report contains one non-substantive arithmetic typo in its test-count explanation: the correct source-specific composition is 8 new MC-0007 tests plus 7 pre-existing substrate tests = 15. MC-0007 `RESOLUTION.md` preserves that correction without rewriting the collaborator-authored report.
+The Claude Code report contains one non-substantive arithmetic typo in its test-count explanation: the correct source-specific composition is 8 new MC-0007 tests plus 7 pre-existing substrate tests = 15. MC-0007 `RESOLUTION.md` preserves that correction without changing the execution evidence. The separate missing interaction-provenance fields in the report were later corrected transparently by Claude Code at `170f6e265829ce2f15f0f528ab4ec47b261980a3`; task-owner inspection confirmed that no substantive implementation or verification content changed, and the provenance follow-up is closed.
 
 The permanent user-controlled Source Registry / SourceArtifactStore deployment has **not** yet been completed.
 
@@ -266,6 +267,8 @@ CONTINUITY.md          reconstruction / rotation / recovery procedure
 DEVELOPMENT_METHOD.md  method used to build, verify and preserve ADS
 MAJOR_CHANGES.md       selective structural history
 ```
+
+The Continuity and interaction-provenance conventions now explicitly require every newly opened persistent ADS conversation to allocate a fresh provider-local interaction-session ID and a fresh `NN - Main Topic / Stage` title during repository-first reconstruction, including after unexpected context/length exhaustion. Prior live session metadata must not be silently reused in a new chat.
 
 The Knowledge Map remains mechanically guarded for durable numbered families and checkpoint-range coverage. Structural coverage is a floor, not proof of semantic routing quality.
 
