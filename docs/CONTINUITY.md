@@ -99,7 +99,7 @@ Then use the subject library in `docs/KNOWLEDGE_MAP.md` to retrieve broader know
 Structural reconstruction and semantic retrieval are deliberately separate jobs:
 
 ```text
-docs/README       structure -> artifact role
+docs/README.md    structure -> artifact role
 CURRENT_STATE     live state -> next action
 KNOWLEDGE_MAP     subject -> relevant knowledge
 ```
