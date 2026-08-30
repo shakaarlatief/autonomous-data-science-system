@@ -113,18 +113,24 @@ SOURCE_REGISTRY_DATABASE     UNRESOLVED
 SOURCE_VAULT_ROOT             UNRESOLVED
 INDEPENDENT_BACKUP_ROOT       UNRESOLVED
 CLEAN_RESTORE_ROOT            UNRESOLVED
-capacity preflight            FAILED_INSUFFICIENT_FREE_SPACE
-cleanup required              YES
-capacity recheck required     YES
+cleanup stage                 COMPLETED
+capacity preflight            READY
+capacity recheck required     NO
+backup topology               UNRESOLVED
 permanent write allowed       NO
 private companion             OPERATIONAL
 ```
 
-The exact original-source path and exact initial capacity observation are intentionally not reproduced in public Git. They are durably preserved in the private companion record:
+The formal capacity recheck used the actual original local first-corpus footprint and the current filesystem capacity after cleanup. The exact source path and exact machine-specific measurements are intentionally not reproduced in public Git. They are durably preserved in the private companion through:
 
 ```text
 source_universe/source_vault_bootstrap.json
+source_universe/capacity_recheck_2026-08-30.json
 ```
+
+The capacity result is `READY`. It was derived from the measured first corpus and the storage required for the canonical vault, registry overhead, an independent backup-sized copy, and a temporary clean restore. No arbitrary free-space threshold was used.
+
+Capacity is therefore no longer the active blocker. The remaining blocker is storage-topology resolution: all four remaining private locations must be selected, and the independent backup must be genuinely separate and verifiable before permanent writes begin.
 
 The fact that the original source location is already resolved is durable project state. Future conversations must not ask the project owner to provide it again merely during reconstruction.
 
@@ -132,22 +138,22 @@ Before ingestion:
 
 ```text
 1. confirm the exact promoted V1 source code is locally available
-2. free sufficient local storage and rerun the capacity measurement
-3. update or supersede the durable private capacity observation
-4. choose SOURCE_REGISTRY_DATABASE
+2. free sufficient local storage and rerun the capacity measurement                 COMPLETE
+3. update or supersede the durable private capacity observation                    COMPLETE
+4. choose SOURCE_REGISTRY_DATABASE                                                  NEXT
 5. choose SOURCE_VAULT_ROOT
 6. choose INDEPENDENT_BACKUP_ROOT
 7. choose CLEAN_RESTORE_ROOT
 8. materialize or verify .ads-private/source_vault_bootstrap.json for local execution using the resolved private values
 9. verify SOURCE_VAULT_ROOT is outside the public Git repository
-10. verify the backup root is a distinct destination
+10. verify the backup root is a genuinely separate destination
 11. verify the original source folder is not being used as the vault
-12. verify sufficient free storage exists for source corpus + backup + temporary restore
+12. verify the resolved topology still has sufficient working capacity
 ```
 
-Do not proceed to any permanent Source Registry or Source Vault write while the capacity status remains `FAILED_INSUFFICIENT_FREE_SPACE` or `RECHECK_REQUIRED`.
+Do not proceed to any permanent Source Registry or Source Vault write merely because the capacity gate is `READY`. Permanent writes remain forbidden until the remaining private locations are resolved, local execution state is verified, and genuine backup separation is confirmed.
 
-The first VU corpus observed during development occupied approximately 490 MB. The original local folder may contain additional files, so actual free-space requirements must be checked from the local folder rather than assumed from the ChatGPT batch.
+The earlier approximately 490 MB development-batch observation has now served only as historical evidence. The formal capacity gate is based on the actual local first-corpus measurement preserved privately.
 
 ---
 
