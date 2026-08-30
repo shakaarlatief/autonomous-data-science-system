@@ -36,7 +36,9 @@ Permanent Source Vault bootstrap
     architecture accepted
     MC-0006 CLOSED
     MC-0007 CLOSED / provenance reconciled
-    private storage preflight ACTIVE
+    original source root RESOLVED_PRIVATE
+    capacity preflight FAILED_INSUFFICIENT_FREE_SPACE
+    cleanup / free-space recovery REQUIRED
     permanent deployment still incomplete
 
 Next-generation Project Cockpit frontend exploration
@@ -48,7 +50,7 @@ Next-generation Project Cockpit frontend exploration
 
 There is no pending Claude or Claude Code obligation blocking the Source Vault bootstrap.
 
-The next blocker is operational and human-controlled: enough free storage and satisfactory private locations before the first permanent Source Registry / Source Vault write.
+The active blocker is operational and human-controlled. The original Machine Learning source location has already been resolved privately and must not be requested again merely during reconstruction. An initial capacity check already failed because there is insufficient free storage. Cleanup and a fresh capacity measurement are required before the remaining permanent locations are selected and before any Source Registry / Source Vault write.
 
 ---
 
@@ -63,6 +65,7 @@ docs/specifications/023_v1_source_universe_substrate.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 docs/model_collaboration/threads/MC-0006/RESOLUTION.md
 docs/model_collaboration/threads/MC-0007/RESOLUTION.md
@@ -128,28 +131,58 @@ No educational source binary, private path, private registry snapshot or backup 
 
 ---
 
-## Required private locations
+## Required private locations and recovered preflight status
 
-The next real bootstrap step requires user-controlled locations for:
+The permanent bootstrap uses these user-controlled locations:
 
 ```text
 ORIGINAL_SOURCE_ROOT
     original VU Amsterdam Machine Learning folder
+    status: RESOLVED_PRIVATE
 
 SOURCE_REGISTRY_DATABASE
     permanent SQLite Source Registry
+    status: UNRESOLVED
 
 SOURCE_VAULT_ROOT
     permanent private content-addressed artifact store
+    status: UNRESOLVED
 
 INDEPENDENT_BACKUP_ROOT
     genuinely separate backup destination
+    status: UNRESOLVED
 
 CLEAN_RESTORE_ROOT
     temporary clean restore target
+    status: UNRESOLVED
 ```
 
-These values must not be invented, guessed or committed.
+Capacity state:
+
+```text
+initial capacity preflight   FAILED_INSUFFICIENT_FREE_SPACE
+cleanup required             YES
+capacity recheck required    YES
+permanent write allowed      NO
+```
+
+The exact original-source path and exact machine/storage measurements are intentionally not committed to public Git. They are machine-specific private operational coordinates, not unresolved project knowledge.
+
+The canonical preservation contract for those values is:
+
+```text
+docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
+```
+
+The canonical machine-local file, once initialized on the local repository, is:
+
+```text
+.ads-private/source_vault_bootstrap.json
+```
+
+The `.ads-private/` directory is Git-ignored. A public placeholder template is preserved at `docs/source_universe/local_private_state.example.json`.
+
+A future collaborator must not interpret inability to read that local file from a remote chat surface as evidence that `ORIGINAL_SOURCE_ROOT` is unknown. The public status `RESOLVED_PRIVATE` is authoritative for reconstruction. The exact value should be retrieved from the local private state when a concrete execution step needs it.
 
 The original source folder remains read-only input from ADS's perspective.
 
@@ -162,20 +195,22 @@ The Source Universe is local-first, not conceptually machine-bound: the provider
 Before Course 2:
 
 ```text
-1. resolve the five private locations
-2. check capacity and separation from the Git repository
-3. migrate a clean permanent Source Registry to Alembic head
-4. compare the original Machine Learning folder against the reviewed manifest and prospective fingerprints
-5. preserve every MATCH / DIFFERENT_ARTIFACT / MISSING_LOCAL_SOURCE / ADDITIONAL_LOCAL_SOURCE result
-6. review every mismatch or additional source before ingestion
-7. ingest the reviewed intended corpus
-8. run the working-store integrity audit
-9. create and verify an independent backup
-10. restore into a clean target
-11. run the restored integrity audit
-12. preserve only public-safe deployment evidence
-13. classify bootstrap success or required revision
-14. only then admit the next educational course batch
+1. initialize / verify the Git-ignored local private operational-state file
+2. free sufficient storage and rerun the capacity preflight
+3. resolve the remaining four private locations
+4. verify capacity and genuine backup separation
+5. migrate a clean permanent Source Registry to Alembic head
+6. compare the original Machine Learning folder against the reviewed manifest and prospective fingerprints
+7. preserve every MATCH / DIFFERENT_ARTIFACT / MISSING_LOCAL_SOURCE / ADDITIONAL_LOCAL_SOURCE result
+8. review every mismatch or additional source before ingestion
+9. ingest the reviewed intended corpus
+10. run the working-store integrity audit
+11. create and verify an independent backup
+12. restore into a clean target
+13. run the restored integrity audit
+14. preserve only public-safe deployment evidence
+15. classify bootstrap success or required revision
+16. only then admit the next educational course batch
 ```
 
 No mismatch is silently normalized.
@@ -268,7 +303,9 @@ DEVELOPMENT_METHOD.md  method used to build, verify and preserve ADS
 MAJOR_CHANGES.md       selective structural history
 ```
 
-The Continuity and interaction-provenance conventions now explicitly require every newly opened persistent ADS conversation to allocate a fresh provider-local interaction-session ID and a fresh `NN - Main Topic / Stage` title during repository-first reconstruction, including after unexpected context/length exhaustion. Prior live session metadata must not be silently reused in a new chat.
+The Continuity and interaction-provenance conventions explicitly require every newly opened persistent ADS conversation to allocate a fresh provider-local interaction-session ID and a fresh `NN - Main Topic / Stage` title during repository-first reconstruction, including after unexpected context/length exhaustion. Prior live session metadata must not be silently reused in a new chat.
+
+Continuity now also distinguishes unresolved information from resolved private operational state. A private value that is not visible to a remote chat surface must not be downgraded to unknown when the public repository records it as `RESOLVED_PRIVATE`.
 
 The Knowledge Map remains mechanically guarded for durable numbered families and checkpoint-range coverage. Structural coverage is a floor, not proof of semantic routing quality.
 
@@ -317,14 +354,20 @@ Candidate source extraction cannot silently create accepted methodological autho
 The active continuation is:
 
 ```text
-private storage/free-space preflight
+initialize / verify .ads-private/source_vault_bootstrap.json
     ->
-resolve the five private locations
+clean up local storage
+    ->
+rerun capacity measurement
+    ->
+resolve the remaining four private locations
     ->
 verify capacity and genuine backup separation
     ->
 execute docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
+
+The original source root is already `RESOLVED_PRIVATE`; do not ask the project owner to provide it again merely to reconstruct state.
 
 No Course 2 upload is required or desired before this gate is closed.
 
@@ -344,6 +387,7 @@ docs/KNOWLEDGE_MAP.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
 
 docs/model_collaboration/threads/MC-0006/RESOLUTION.md
 docs/model_collaboration/threads/MC-0007/RESOLUTION.md

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "source_vault_bootstrap": {
+    "original_source_root": "<PRIVATE_PATH>",
+    "source_registry_database": null,
+    "source_vault_root": null,
+    "independent_backup_root": null,
+    "clean_restore_root": null,
+    "capacity_observation": {
+      "volume": "<PRIVATE_OR_LOCAL_VOLUME>",
+      "total_bytes": null,
+      "used_bytes": null,
+      "free_bytes": null,
+      "used_percent": null,
+      "status": "UNKNOWN",
+      "observed_at": null
+    }
+  }
+}

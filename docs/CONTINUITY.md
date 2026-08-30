@@ -38,6 +38,37 @@ docs/KNOWLEDGE_MAP.md
 
 This file explains **how to use those surfaces**. It should not carry a copied current checkpoint, branch, review gate or latest test run.
 
+## Private operational-state continuity
+
+Some operational facts are already resolved but cannot safely be committed to a public repository. Exact local filesystem paths and machine-specific storage coordinates are examples.
+
+Continuity must distinguish:
+
+```text
+UNRESOLVED
+    the project does not yet know or has not yet chosen the value
+
+RESOLVED_PRIVATE
+    the project already knows or has confirmed the value
+    the exact value is intentionally withheld from public Git
+
+UNAVAILABLE_TO_THIS_SURFACE
+    the current chat/tool cannot read the private value directly
+    this does not imply that the project value is unresolved
+```
+
+When `CURRENT_STATE.md` records a field as `RESOLVED_PRIVATE`, a new collaborator must not ask the human project owner to provide it again merely during reconstruction.
+
+For local-first execution, exact machine-specific values may be preserved in a Git-ignored local operational-state file governed by a domain-specific contract. For the Source Vault bootstrap, that contract is:
+
+```text
+docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
+```
+
+The public repository remains authoritative for whether a value is resolved, what gate passed or failed and what happens next. The private state carries only the exact coordinates needed to execute locally.
+
+If a remote interaction surface cannot access the local private state, preserve the public `RESOLVED_PRIVATE` status. Retrieve or request the exact value only when a concrete execution step actually requires it and no local execution surface can read it. Never silently downgrade a resolved private value to unknown because one tool cannot see it.
+
 ## Interaction/session naming
 
 Visible conversations use:
@@ -106,11 +137,13 @@ KNOWLEDGE_MAP     subject -> relevant knowledge
 
 The automatic new-session allocation rule above is part of this reconstruction. The prior session metadata found in `CURRENT_STATE.md` is evidence about the previous interaction, not permission to reuse it in the newly opened conversation.
 
+When the current state reports a private value as already resolved, apply the private operational-state rule above before asking the project owner to repeat information.
+
 ## Standard continuation prompt
 
 A provider-neutral continuation prompt may use:
 
-> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
+> Continue the Autonomous Data Science System project from the repository. Treat the repository as the source of truth, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
 
 The collaborator should expand through the Knowledge Map whenever the task touches older or adjacent knowledge.
 
@@ -241,14 +274,15 @@ When a chat ends unexpectedly:
 1. identify the repository and likely active branch;
 2. read the structural guide, current routing and current state;
 3. establish a fresh provider-local interaction-session ID and conversation title for the newly opened recovery chat instead of reusing the ended session's metadata;
-4. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
-5. inspect recent Git chronology when needed;
-6. separate implementation state from documentation/provenance state;
-7. detect stale routing/session metadata;
-8. use the Knowledge Map to reconstruct older governing knowledge by subject;
-9. preserve the exact surviving product/experiment boundary;
-10. repair continuity metadata conservatively;
-11. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
+4. preserve any `RESOLVED_PRIVATE` values as resolved and consult the relevant private operational-state contract rather than asking for them again during reconstruction;
+5. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
+6. inspect recent Git chronology when needed;
+7. separate implementation state from documentation/provenance state;
+8. detect stale routing/session metadata;
+9. use the Knowledge Map to reconstruct older governing knowledge by subject;
+10. preserve the exact surviving product/experiment boundary;
+11. repair continuity metadata conservatively;
+12. do not recreate substantive decisions from memory if the repository already contains stronger evidence.
 
 Important distinction:
 
@@ -258,9 +292,13 @@ substantive preservation failure
 
 routing/provenance drift
     knowledge exists but discovery or current pointers are stale
+
+private-value visibility gap
+    exact value is intentionally private or inaccessible to this surface
+    public state still records whether it is resolved
 ```
 
-The second should be repaired, not treated as lost knowledge.
+The second should be repaired, not treated as lost knowledge. The third should not be mislabeled as unresolved project knowledge.
 
 ## Periodic reconciliation
 
@@ -276,6 +314,7 @@ checkpoint ranges cover newly created checkpoint numbers
 canonical docs have not become stale
 specialized ledgers remain linked
 interaction provenance is coherent
+resolved-private operational state is not being mistaken for unresolved state
 checkpoint metadata passes
 collaboration obligations are discoverable
 verification tier/status is represented accurately

@@ -23,6 +23,9 @@ credentials*.json
 service-account*.json
 service_account*.json
 
+# ADS machine-local private operational state
+.ads-private/
+
 # IDE and operating-system local files
 .vscode/
 .idea/

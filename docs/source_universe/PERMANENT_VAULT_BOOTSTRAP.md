@@ -2,6 +2,7 @@
 
 **Status:** Active operational runbook for the first user-controlled Source Universe deployment  
 **Date:** 2026-08-25  
+**Last reviewed:** 2026-08-30  
 **Scope:** Deploy the accepted Specification 023 source substrate on durable user-controlled storage and ingest the original VU Amsterdam Machine Learning folder before any additional course corpus is admitted  
 **Authority:** Operational guidance subordinate to Foundation 022, Specification 023, and the current checkpoint. This file does not select a permanent cloud provider, backup provider, or final multi-user deployment topology.
 
@@ -73,26 +74,66 @@ no source is deleted from the original course folder as part of ingestion
 backup is verified before it is considered complete
 ```
 
+Exact private paths and machine-specific measurements are governed separately by:
+
+```text
+docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
+```
+
+The canonical local state file is:
+
+```text
+.ads-private/source_vault_bootstrap.json
+```
+
+The `.ads-private/` directory is ignored by Git. A public placeholder template is preserved at:
+
+```text
+docs/source_universe/local_private_state.example.json
+```
+
+The public repository records whether a private value is resolved and whether the operational gate passed or failed. The local private state carries exact coordinates needed for execution.
+
 A cloud/object-storage provider may be introduced later if measured requirements justify it. The current deployment should not add provider complexity merely for appearance.
 
 ---
 
-## 4. Preflight before any permanent write
+## 4. Current preflight boundary and preflight before any permanent write
+
+Public-safe current state as of 2026-08-30:
+
+```text
+ORIGINAL_SOURCE_ROOT          RESOLVED_PRIVATE
+SOURCE_REGISTRY_DATABASE     UNRESOLVED
+SOURCE_VAULT_ROOT             UNRESOLVED
+INDEPENDENT_BACKUP_ROOT       UNRESOLVED
+CLEAN_RESTORE_ROOT            UNRESOLVED
+capacity preflight            FAILED_INSUFFICIENT_FREE_SPACE
+cleanup required              YES
+capacity recheck required     YES
+permanent write allowed       NO
+```
+
+The exact original-source path and exact capacity measurements are intentionally not reproduced in public Git. The fact that the original source location is already resolved is durable project state and future conversations must not ask the project owner to provide it again merely during reconstruction.
 
 Before ingestion:
 
 ```text
 1. confirm the exact promoted V1 source code is locally available
-2. choose ORIGINAL_SOURCE_ROOT
-3. choose SOURCE_REGISTRY_DATABASE
-4. choose SOURCE_VAULT_ROOT
-5. choose INDEPENDENT_BACKUP_ROOT
-6. choose CLEAN_RESTORE_ROOT
-7. verify SOURCE_VAULT_ROOT is outside the Git repository
-8. verify the backup root is a distinct destination
-9. verify the original source folder is not being used as the vault
-10. verify sufficient free storage exists for source corpus + backup + temporary restore
+2. initialize or verify .ads-private/source_vault_bootstrap.json from the public template
+3. retrieve the already-resolved ORIGINAL_SOURCE_ROOT from private local state when execution needs it
+4. free sufficient storage and rerun the capacity measurement
+5. choose SOURCE_REGISTRY_DATABASE
+6. choose SOURCE_VAULT_ROOT
+7. choose INDEPENDENT_BACKUP_ROOT
+8. choose CLEAN_RESTORE_ROOT
+9. verify SOURCE_VAULT_ROOT is outside the Git repository
+10. verify the backup root is a distinct destination
+11. verify the original source folder is not being used as the vault
+12. verify sufficient free storage exists for source corpus + backup + temporary restore
 ```
+
+Do not proceed to any permanent Source Registry or Source Vault write while the capacity status remains `FAILED_INSUFFICIENT_FREE_SPACE` or `RECHECK_REQUIRED`.
 
 The first VU corpus observed during development occupied approximately 490 MB. The original local folder may contain additional files, so actual free-space requirements must be checked from the local folder rather than assumed from the ChatGPT batch.
 
@@ -290,6 +331,8 @@ registry snapshot digest
 backup manifest digest
 software / migration versions
 validation outcomes
+resolved / unresolved private-location status
+capacity gate classification
 ```
 
 Do not commit:
@@ -297,6 +340,7 @@ Do not commit:
 ```text
 source PDFs/books/slides
 private observed paths
+exact machine-specific private operational coordinates
 private registry snapshot
 backup payload
 source-vault object bytes
