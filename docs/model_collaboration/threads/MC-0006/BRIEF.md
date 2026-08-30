@@ -5,13 +5,16 @@
 **Review mode:** ADVERSARIAL_REVIEW  
 **Exact frozen target:** `4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c`  
 **Target branch:** `v1-source-vault-bootstrap-resume`  
+**Reviewer environment:** normal Claude Project / `claude-01` with full repository access through the custom connector  
 **Purpose:** Conduct a read-only second-model review of the accepted Source Universe substrate, its permanent user-controlled deployment process, and the boundary from durable source evidence into the later Methodological Knowledge Universe before the first permanent private vault write.
 
 ## Why this review exists
 
 The Source Universe architecture was developed and validated before multi-model review became a normal available project-development mode. Claude reviewed the collaboration method, Cockpit work, and repository information architecture in other threads, but there has not yet been a dedicated Claude review of the Source Universe architecture and permanent Source Vault deployment process.
 
-The project owner has now made Claude Code available immediately before the first real permanent deployment. This is a high-leverage point for a bounded adversarial review because the architecture is already concrete and tested, while irreversible user-controlled storage decisions have not yet been made.
+The project owner has normal Claude with full repository access through a custom connector and also has Claude Code available locally. Before the substantive review began, the two environments were explicitly compared for this task. The chosen split is: normal Claude performs the read-only architecture/repository review; Claude Code is reserved for later narrow execution-based verification and Windows-local deployment work when actual command/filesystem evidence is required.
+
+This is a high-leverage point for a bounded adversarial review because the architecture is already concrete and tested, while irreversible user-controlled storage decisions have not yet been made.
 
 This review must not become a generic redesign exercise. Challenge the existing design where evidence warrants it, distinguish actual defects from preferences, and identify the smallest safe corrections if any are needed before deployment.
 
@@ -84,6 +87,14 @@ Assess at least the following.
     - Is any part over-engineered for the current problem?
     - Is any apparently simpler alternative materially safer or easier while preserving exact provenance and recoverability?
 
+## Execution-evidence boundary
+
+The normal Claude reviewer has full repository access but is not being used as the local execution environment for MC-0006.
+
+For any finding where static repository inspection is materially insufficient, especially backup/restore behavior, crash/partial-failure resilience, concurrent-writer behavior or Windows-specific filesystem semantics, explicitly classify the evidence gap and state the smallest targeted execution check needed.
+
+Do not convert MC-0006 into a deployment session. Any such execution check should be performed later through a separately scoped Claude Code or other execution-agent task after the architectural review is preserved.
+
 ## Required review output
 
 Write one durable review message at:
@@ -109,6 +120,7 @@ for every finding:
     smallest justified correction
 source->knowledge boundary assessment
 permanent-bootstrap assessment
+execution-dependent evidence gaps, if any
 strongest simpler alternative, if one exists
 first likely 10x-scale failure
 explicit answer: safe to proceed with permanent deployment as designed, yes/no/yes-with-preconditions
