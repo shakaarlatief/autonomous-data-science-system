@@ -5,11 +5,14 @@ from __future__ import annotations
 import hashlib
 import json
 import mimetypes
+import os
+import shutil
 from dataclasses import dataclass
 from pathlib import Path
 import re
 from collections.abc import Mapping
 from typing import Any, BinaryIO, Protocol
+from uuid import uuid4
 
 from sqlalchemy import Engine
 
@@ -311,43 +314,58 @@ class SourceUniverseService:
         target = Path(backup_root)
         if target.exists() and any(target.iterdir()):
             raise FileExistsError(f"backup target is not empty: {target}")
-        target.mkdir(parents=True, exist_ok=True)
-        registry_dir = target / "registry"
-        registry_dir.mkdir(parents=True, exist_ok=True)
-        snapshot = self.export_snapshot("PRIVATE_SNAPSHOT")
-        snapshot_path = registry_dir / "source_registry_snapshot.json"
-        snapshot_path.write_bytes(snapshot)
-        snapshot_digest = hashlib.sha256(snapshot).hexdigest()
-        with self.engine.connect() as connection:
-            artifacts = SqlAlchemySourceRegistryRepository(connection).list_preserved_artifacts()
-        manifest_objects: list[dict[str, Any]] = []
-        total_bytes = 0
-        for artifact in sorted(artifacts, key=lambda row: row["sha256"]):
-            digest = artifact["sha256"]
-            size = int(artifact["byte_size"])
-            destination = target / "objects" / "sha256" / digest[:2] / digest[2:]
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            with self.store.open(digest) as source_handle, destination.open("wb") as destination_handle:
-                copied_digest, copied_size = _copy_and_hash(source_handle, destination_handle)
-            if copied_digest != digest or copied_size != size:
-                destination.unlink(missing_ok=True)
-                raise SourceRegistryConflict(
-                    f"backup object copy verification failed: {digest}"
-                )
-            manifest_objects.append({"sha256": digest, "byte_size": size})
-            total_bytes += size
-        manifest = {
-            "format": "ADS_SOURCE_BACKUP",
-            "schema_version": 1,
-            "created_at": utc_now_text(),
-            "registry_snapshot_sha256": snapshot_digest,
-            "object_count": len(manifest_objects),
-            "object_total_bytes": total_bytes,
-            "objects": manifest_objects,
-        }
-        manifest_path = target / "backup_manifest.json"
-        manifest_path.write_bytes(_canonical_json_bytes(manifest))
-        self.verify_backup(target)
+        target_pre_existed = target.exists()
+        target.parent.mkdir(parents=True, exist_ok=True)
+        # Build the backup in a temporary sibling and publish it into `target`
+        # only after full verification succeeds, so a mid-copy or
+        # verification failure never leaves a partial, retry-blocking target.
+        staging_target = target.parent / f".{target.name}.partial-{uuid4().hex}"
+        shutil.rmtree(staging_target, ignore_errors=True)
+        staging_target.mkdir(parents=True)
+        try:
+            registry_dir = staging_target / "registry"
+            registry_dir.mkdir(parents=True, exist_ok=True)
+            snapshot = self.export_snapshot("PRIVATE_SNAPSHOT")
+            snapshot_path = registry_dir / "source_registry_snapshot.json"
+            snapshot_path.write_bytes(snapshot)
+            snapshot_digest = hashlib.sha256(snapshot).hexdigest()
+            with self.engine.connect() as connection:
+                artifacts = SqlAlchemySourceRegistryRepository(connection).list_preserved_artifacts()
+            manifest_objects: list[dict[str, Any]] = []
+            total_bytes = 0
+            for artifact in sorted(artifacts, key=lambda row: row["sha256"]):
+                digest = artifact["sha256"]
+                size = int(artifact["byte_size"])
+                destination = staging_target / "objects" / "sha256" / digest[:2] / digest[2:]
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                with self.store.open(digest) as source_handle, destination.open("wb") as destination_handle:
+                    copied_digest, copied_size = _copy_and_hash(source_handle, destination_handle)
+                if copied_digest != digest or copied_size != size:
+                    raise SourceRegistryConflict(
+                        f"backup object copy verification failed: {digest}"
+                    )
+                manifest_objects.append({"sha256": digest, "byte_size": size})
+                total_bytes += size
+            manifest = {
+                "format": "ADS_SOURCE_BACKUP",
+                "schema_version": 1,
+                "created_at": utc_now_text(),
+                "registry_snapshot_sha256": snapshot_digest,
+                "object_count": len(manifest_objects),
+                "object_total_bytes": total_bytes,
+                "objects": manifest_objects,
+            }
+            manifest_path = staging_target / "backup_manifest.json"
+            manifest_path.write_bytes(_canonical_json_bytes(manifest))
+            self.verify_backup(staging_target)
+            if target_pre_existed:
+                target.rmdir()
+            os.replace(staging_target, target)
+        except BaseException:
+            shutil.rmtree(staging_target, ignore_errors=True)
+            if target_pre_existed and not target.exists():
+                target.mkdir(parents=True, exist_ok=True)
+            raise
         return target
 
     @staticmethod

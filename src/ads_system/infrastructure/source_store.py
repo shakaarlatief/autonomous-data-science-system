@@ -63,13 +63,30 @@ class LocalSourceArtifactStore:
         final_path = self.object_path(staged.sha256)
         final_path.parent.mkdir(parents=True, exist_ok=True)
         if final_path.exists():
-            self._verify_path(final_path, staged.sha256, staged.byte_size)
-            staged.staging_path.unlink(missing_ok=True)
+            # The incoming staging copy is redundant either way once a final
+            # object already occupies this content-addressed path. It must
+            # not survive a failed verification of that pre-existing object,
+            # but the pre-existing object itself is never touched here: a
+            # corrupt existing object stays visible for explicit investigation.
+            try:
+                self._verify_path(final_path, staged.sha256, staged.byte_size)
+            finally:
+                staged.staging_path.unlink(missing_ok=True)
             return StoredSourceArtifact(staged.sha256, staged.byte_size, True)
+        replaced = False
         try:
             os.replace(staged.staging_path, final_path)
+            replaced = True
             self._fsync_directory(final_path.parent)
             self._verify_path(final_path, staged.sha256, staged.byte_size)
+        except SourceArtifactIntegrityError:
+            # This invocation just placed final_path itself and proved it bad:
+            # remove the known-bad object so a legitimate retry is not blocked.
+            # A failure here is never a pre-existing object and never caused by
+            # an unrelated fsync/OS error, so this narrow removal is safe.
+            if replaced:
+                final_path.unlink(missing_ok=True)
+            raise
         except BaseException:
             staged.staging_path.unlink(missing_ok=True)
             raise
@@ -149,6 +166,9 @@ class LocalSourceArtifactStore:
     @staticmethod
     def _fsync_directory(path: Path) -> None:
         if os.name == "nt":
+            # Intentional no-op: Python exposes no portable Windows equivalent
+            # to POSIX directory fsync for durable rename metadata, so there
+            # is nothing safe to call here on this platform.
             return
         fd = os.open(path, os.O_RDONLY)
         try:

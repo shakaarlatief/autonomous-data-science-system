@@ -90,25 +90,32 @@ def main(argv: list[str] | None = None) -> int:
     service = _service(args.database, args.vault)
     if args.command == "ingest":
         manifest = load_intake_manifest(args.manifest)
-        outcomes = [
-            service.ingest_file(request)
-            for request in manifest_ingest_requests(manifest, args.root)
-        ]
-        print(
-            json.dumps(
-                [
+        records: list[dict[str, object]] = []
+        any_failed = False
+        for request in manifest_ingest_requests(manifest, args.root):
+            try:
+                outcome = service.ingest_file(request)
+            except Exception as exc:  # noqa: BLE001 - recorded, not swallowed
+                any_failed = True
+                records.append(
                     {
-                        "stable_key": outcome.source.stable_key,
-                        "sha256": outcome.artifact.sha256,
-                        "result": outcome.result,
+                        "stable_key": request.stable_key,
+                        "status": "FAILED",
+                        "error_type": type(exc).__name__,
+                        "error_detail": str(exc),
                     }
-                    for outcome in outcomes
-                ],
-                indent=2,
-                sort_keys=True,
+                )
+                continue
+            records.append(
+                {
+                    "stable_key": outcome.source.stable_key,
+                    "status": "OK",
+                    "sha256": outcome.artifact.sha256,
+                    "result": outcome.result,
+                }
             )
-        )
-        return 0
+        print(json.dumps(records, indent=2, sort_keys=True))
+        return 1 if any_failed else 0
     if args.command == "audit":
         results = service.audit(update_verified_at=True)
         print(
