@@ -2,7 +2,7 @@
 
 **Status:** Current structural guide  
 **Authority:** Navigation and artifact-role contract. Source artifacts remain authoritative for their own scope.  
-**Last reviewed:** 2026-08-29
+**Last reviewed:** 2026-08-30
 
 ## Purpose
 
@@ -44,6 +44,7 @@ docs/KNOWLEDGE_MAP.md
 | Unresolved important questions | `docs/OPEN_QUESTIONS.md` |
 | How ADS itself is developed | `docs/DEVELOPMENT_METHOD.md` |
 | How to reconstruct after context loss | `docs/CONTINUITY.md` |
+| Private companion knowledge-repository boundary | `docs/private_companion/README.md` |
 | Selective structural history | `docs/MAJOR_CHANGES.md` |
 | Deep durable rationale | `docs/foundations/` |
 | Explicit scoped contracts | `docs/specifications/` |
@@ -162,6 +163,14 @@ Specialized Methodological Knowledge Universe documentation. `COVERAGE_MAP.md` i
 
 Source Universe architecture, permanent-vault bootstrap material and validation records. This domain preserves the distinction between source artifacts/evidence provenance and the reusable Methodological Knowledge Universe derived from sources.
 
+### `docs/private_companion/`
+
+Public-side authority and continuity contract for the private companion knowledge repository.
+
+The private companion repository is a **knowledge-preservation complement**, not a second ADS development repository. It may preserve exact private paths, machine/storage observations, private source-location mappings and similar cross-chat continuity facts that should not be exposed in public Git.
+
+The public `autonomous-data-science-system` repository remains the sole location for ADS code, tests, architecture, specifications, decisions, checkpoints and implementation evolution. Large private source artifacts belong in the Source Vault/backup architecture, and credentials/secrets do not belong in ordinary Git even when a repository is private.
+
 ### `docs/model_collaboration/`
 
 Provider-neutral collaboration protocol, review inbox and per-thread state. Per-thread records preserve exact coordination/review provenance; they do not override product/scientific authority merely because another model agreed.
@@ -216,6 +225,22 @@ Python project/dependency/runtime tooling contracts. The lockfile preserves the 
 
 Alembic migration configuration.
 
+## Cross-repository authority boundary
+
+The private companion repository, once created, has a deliberately narrow role:
+
+```text
+public autonomous-data-science-system
+    sole development repository
+    sole authority for project-development state
+
+private autonomous-data-science-system-private
+    durable private knowledge complement only
+    no competing product-development state
+```
+
+A private record may reference public commits, checkpoints or stable identifiers, but must not silently redefine them. If private knowledge exposes a reason to change the ADS product or development method, the actual change is made and preserved in the public repository through the normal development process.
+
 ## Authority and conflict resolution
 
 Repository location alone does not determine truth. Use status, scope, chronology and explicit supersession.
@@ -234,6 +259,8 @@ accepted/frozen specification or explicit contract
 
 `CURRENT_STATE.md` is special because it owns **what is active now**, but it should route to the stronger source when explaining a scientific, architectural or product claim.
 
+The private companion repository is authoritative only for private fields explicitly delegated to it. It cannot overrule the public hierarchy above for project development.
+
 If two durable artifacts genuinely conflict and the hierarchy/status/chronology does not resolve the conflict, record the ambiguity rather than guessing.
 
 ## Anti-duplication contract
@@ -249,6 +276,7 @@ KNOWLEDGE_MAP             evergreen semantic subject library
 CONTINUITY                 reconstruction/recovery protocol
 DEVELOPMENT_METHOD         operational development method
 MAJOR_CHANGES              selective structural history
+private companion          private knowledge complement only
 ```
 
 A small amount of cross-linking is expected. Repeating volatile current checkpoint/branch/test details across several of these files is not.
@@ -266,6 +294,7 @@ Did continuity procedure change?       -> CONTINUITY
 Was the change structurally major?     -> MAJOR_CHANGES
 Did deeper rationale/evidence emerge?  -> foundation/research/specification
 Did chronology materially advance?     -> checkpoint
+Did private continuity knowledge change? -> private companion repository when appropriate
 ```
 
 This separation is intended to make the repository easier to reconstruct as it grows, not merely more documented.
