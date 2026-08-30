@@ -20,13 +20,11 @@ Primary collaborator     ChatGPT
 
 Repository artifacts remain authoritative across chats and models.
 
-The interaction identity above is the active provenance for this newly opened continuation session. The prior ChatGPT session `chatgpt-10` / `10 - Project Cockpit Design Exploration` remains historical provenance for work produced there. The active ADS work track is Source Universe deployment; Cockpit frontend exploration remains paused.
-
 ---
 
-## Current active stage: permanent Source Vault private-storage preflight
+## Current active stage: permanent Source Vault storage-topology resolution
 
-Checkpoint 267 remains the current continuity checkpoint that resumed Source Vault work and paused the Cockpit. Since then, the dedicated Source Universe architecture review, its accepted recovery-hardening follow-up, the bounded MC-0007 interaction-provenance reconciliation, and the private companion knowledge-repository bootstrap have completed through their own durable records; no additional numbered checkpoint was required because the accepted Source Universe architecture and global product-development boundary did not change.
+Checkpoint 267 remains the current continuity checkpoint that resumed Source Vault work and paused the Cockpit. Since then, the Source Universe architecture review, MC-0007 recovery hardening/provenance reconciliation, private companion bootstrap, storage cleanup, and formal capacity recheck have completed without changing the accepted architecture or global product-development boundary, so no additional numbered checkpoint has been required.
 
 Current interpretation:
 
@@ -38,9 +36,12 @@ Permanent Source Vault bootstrap
     MC-0007 CLOSED / provenance reconciled
     private companion knowledge repository OPERATIONAL
     original source root RESOLVED_PRIVATE
-    capacity preflight FAILED_INSUFFICIENT_FREE_SPACE
-    cleanup / free-space recovery REQUIRED
-    permanent deployment still incomplete
+    general cleanup CLOSED
+    formal capacity preflight READY
+    remaining private storage locations UNRESOLVED
+    genuine independent backup topology UNRESOLVED
+    permanent writes NOT YET ALLOWED
+    Course 2 BLOCKED until bootstrap succeeds
 
 Next-generation Project Cockpit frontend exploration
     PAUSED
@@ -49,15 +50,17 @@ Next-generation Project Cockpit frontend exploration
     not production-promoted
 ```
 
-There is no pending Claude or Claude Code obligation blocking the Source Vault bootstrap.
+The prior `FAILED_INSUFFICIENT_FREE_SPACE` state has been superseded. The formal recheck used the actual original local first-corpus footprint and the post-cleanup filesystem capacity. Exact measurements remain private; the durable public conclusion is `READY`.
 
-The private companion repository is now operational and has durably preserved the exact already-known original-source location and the exact initial capacity observation. The active blocker is therefore no longer knowledge preservation or path recovery. It is local storage capacity: cleanup and a fresh capacity measurement are required before the remaining permanent locations are selected and before any Source Registry / Source Vault write.
+Capacity is no longer the blocker. The active boundary is now to resolve the remaining four private locations, with particular attention to a genuinely separate and verifiable independent backup destination, then materialize/verify machine-local execution state before any permanent registry or vault write.
+
+There is no pending Claude or Claude Code obligation blocking the Source Vault bootstrap.
 
 ---
 
 ## Source Universe architecture and hardening status
 
-The governing source route is:
+The governing source route remains:
 
 ```text
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
@@ -79,32 +82,13 @@ Specification 023 remains:
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-MC-0006 exact-target Claude review:
+MC-0006 exact-target Claude review remains accepted with no architecture change required. MC-0007 implemented and verified the recovery hardening, including the corrected source-specific test composition of 8 new tests plus 7 pre-existing substrate tests = 15. The real-Windows provider-free verification remains:
 
 ```text
-frozen target              4ee6b2a1ae9f2856c76ef7d3219031bd4acd364c
-Claude review commit       65bf6198ea77565551e4c4dabe690ce204497d79
-review conclusion          YES, WITH PRECONDITIONS
-must-fix architecture      none
-architecture disposition   RETAIN
-```
-
-ChatGPT independently accepted Claude's F1-F4 findings as narrow pre-deployment recovery hardening.
-
-MC-0007 implementation/evidence:
-
-```text
-implementation commit      a992fef2eda95109dacd06ee491f4604e6d11891
-execution-report commit    7ee480709aa1627cc770ebb4f229a3f82b189448
-provenance correction      170f6e265829ce2f15f0f528ab4ec47b261980a3
-F1-F4                      FIXED / VERIFIED
 source-specific selection  15 passed
 full provider-free suite   158 passed, 2 skipped, 7 warnings
-real Windows execution     confirmed
 permanent vault touched    NO
 ```
-
-The Claude Code report contains one non-substantive arithmetic typo in its test-count explanation: the correct source-specific composition is 8 new MC-0007 tests plus 7 pre-existing substrate tests = 15. MC-0007 `RESOLUTION.md` preserves that correction without changing the execution evidence. The separate missing interaction-provenance fields in the report were later corrected transparently by Claude Code at `170f6e265829ce2f15f0f528ab4ec47b261980a3`; task-owner inspection confirmed that no substantive implementation or verification content changed, and the provenance follow-up is closed.
 
 The permanent user-controlled Source Registry / SourceArtifactStore deployment has **not** yet been completed.
 
@@ -135,33 +119,36 @@ No educational source binary, private path, private registry snapshot or backup 
 
 ## Private companion knowledge repository is operational
 
-The private companion repository is:
+The private companion repository remains:
 
 ```text
 shakaarlatief/autonomous-data-science-system-private
 visibility                 PRIVATE
 default branch             main
-bootstrap commit           85fda98b5726b98be026ddd4c4e9ad5a067dd106
+role                       private knowledge preservation only
 GitHub read verification   PASS
 GitHub write verification  PASS
-post-write retrieval       PASS
 ```
 
-Its role is private knowledge preservation only. All ADS development remains in the public `autonomous-data-science-system` repository.
-
-The migrated private Source Vault record is:
+The primary private bootstrap record remains:
 
 ```text
 source_universe/source_vault_bootstrap.json
 ```
 
-That private record contains the exact already-known `ORIGINAL_SOURCE_ROOT` and the exact initial storage-capacity observation. Those exact values are intentionally omitted from public Git. The remaining four permanent locations are still unresolved.
+The formal post-cleanup capacity recheck is preserved as versioned private evidence at:
 
-The governing boundary is `docs/private_companion/README.md`. The private repository does not contain ADS product code, source PDFs, Source Vault payloads, registry backups, or credentials.
+```text
+source_universe/capacity_recheck_2026-08-30.json
+```
+
+That evidence records the exact actual first-corpus measurement, current local capacity, observed local-volume topology, and the `READY` capacity classification. Exact values are intentionally omitted from public Git.
+
+The private companion is not a second development repository. ADS code, specifications, decisions, checkpoints, tests, frontend work, and implementation history remain in the public repository.
 
 ---
 
-## Required private locations and recovered preflight status
+## Required private locations and current preflight status
 
 The permanent bootstrap uses these user-controlled locations:
 
@@ -188,24 +175,19 @@ CLEAN_RESTORE_ROOT
     status: UNRESOLVED
 ```
 
-Capacity state:
+Current gate state:
 
 ```text
-initial capacity preflight   FAILED_INSUFFICIENT_FREE_SPACE
-exact observation            preserved in private companion
-cleanup required             YES
-capacity recheck required    YES
+initial capacity preflight   FAILED_INSUFFICIENT_FREE_SPACE   historical / superseded
+cleanup stage                COMPLETED
+formal capacity recheck      READY
+capacity recheck required    NO
+backup topology              UNRESOLVED
+remaining private locations  4 UNRESOLVED
 permanent write allowed      NO
 ```
 
-The exact original-source path and exact machine/storage measurements are intentionally not committed to public Git. They are machine-specific private operational coordinates, not unresolved project knowledge.
-
-The durable private knowledge is now preserved at:
-
-```text
-private repository: shakaarlatief/autonomous-data-science-system-private
-private record:     source_universe/source_vault_bootstrap.json
-```
+The exact original-source path and exact machine/storage measurements are intentionally not committed to public Git. They are private operational coordinates, not unresolved project knowledge.
 
 The local execution-state contract remains:
 
@@ -213,19 +195,17 @@ The local execution-state contract remains:
 docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
 ```
 
-and the canonical machine-local runtime file, when a concrete local execution step needs it, remains:
+and the canonical machine-local runtime file, once the remaining values are selected, remains:
 
 ```text
 .ads-private/source_vault_bootstrap.json
 ```
 
-The `.ads-private/` directory is Git-ignored. A public placeholder template is preserved at `docs/source_universe/local_private_state.example.json`. The local file is execution configuration; the private companion is the durable cross-chat private knowledge layer.
+The `.ads-private/` directory is Git-ignored. A public placeholder template remains at `docs/source_universe/local_private_state.example.json`.
 
-A future collaborator must not interpret inability to read one private surface as evidence that `ORIGINAL_SOURCE_ROOT` is unknown. The public status `RESOLVED_PRIVATE` is authoritative for reconstruction, and the private companion should be retrieved when the exact value is needed and accessible.
+A future collaborator must not downgrade `ORIGINAL_SOURCE_ROOT = RESOLVED_PRIVATE` or the capacity result `READY` to unknown merely because one private surface is inaccessible.
 
 The original source folder remains read-only input from ADS's perspective.
-
-The Source Universe is local-first, not conceptually machine-bound: the provider-neutral verified backup can be transferred and restored onto another machine. A future remote/object-storage backend remains possible behind the accepted SourceArtifactStore port, but is not required before the first permanent bootstrap.
 
 ---
 
@@ -234,11 +214,11 @@ The Source Universe is local-first, not conceptually machine-bound: the provider
 Before Course 2:
 
 ```text
-1. clean up local storage
-2. rerun the capacity preflight and update/supersede the private capacity observation
-3. resolve the remaining four private locations
-4. materialize or verify .ads-private/source_vault_bootstrap.json for local execution
-5. verify capacity and genuine backup separation
+1. clean up local storage                                                        COMPLETE
+2. rerun the capacity preflight and update/supersede private capacity evidence  COMPLETE / READY
+3. resolve the remaining four private locations                                 NEXT
+4. materialize or verify .ads-private/source_vault_bootstrap.json
+5. verify the resolved topology and genuine backup separation
 6. migrate a clean permanent Source Registry to Alembic head
 7. compare the original Machine Learning folder against the reviewed manifest and prospective fingerprints
 8. preserve every MATCH / DIFFERENT_ARTIFACT / MISSING_LOCAL_SOURCE / ADDITIONAL_LOCAL_SOURCE result
@@ -261,7 +241,7 @@ Course 2 remains blocked until this gate succeeds.
 
 ## Active branch strategy
 
-The resumed continuity branch is:
+The resumed continuity branch remains:
 
 ```text
 v1-source-vault-bootstrap-resume
@@ -297,23 +277,7 @@ tier      V3 full
 browser   84 / 84 PASS
 ```
 
-The project owner positively accepted the final reviewed direction before the pause, including:
-
-```text
-General project discussion footprint and selected-frame fix
-Adaptive Conversation Dock as a resizable professional split pane
-one-step direct co-present Conversation entry
-Project tools remaining usable beside Conversation
-Deep Dive + Conversation true split-workspace behavior
-Escape as application Back
-F as browser fullscreen toggle
-flush 56px Project utility strip beside Conversation
-same quieter 56px Project-tool visual language in the normal Cockpit
-```
-
-The normal Cockpit rail remains bounded/inset; only Conversation co-presence turns the same tool language into a full-height application-edge strip.
-
-The Cockpit is not declared finished. Final product polish, remaining Deep Dive/practical-workbench review, Adaptive Dock disposition and production `/cockpit` promotion remain open for a future frontend session.
+The accepted reviewed direction before the pause remains preserved in the Cockpit documents. The Cockpit is not declared finished, and production `/cockpit` remains untouched.
 
 Future Cockpit resume route:
 
@@ -323,8 +287,6 @@ docs/cockpit/README.md
 docs/research/097_professional_conversation_copresence_and_adaptive_dock_study.md
 branch v1-cockpit-design-exploration at 04f2a907094b8023ac7377c399a6eef1a6e1da99
 ```
-
-Production `/cockpit` remains untouched.
 
 ---
 
@@ -343,11 +305,7 @@ DEVELOPMENT_METHOD.md  method used to build, verify and preserve ADS
 MAJOR_CHANGES.md       selective structural history
 ```
 
-The Continuity and interaction-provenance conventions explicitly require every newly opened persistent ADS conversation to allocate a fresh provider-local interaction-session ID and a fresh `NN - Main Topic / Stage` title during repository-first reconstruction, including after unexpected context/length exhaustion. Prior live session metadata must not be silently reused in a new chat.
-
-Continuity also distinguishes unresolved information from resolved private operational state and now has a durable private companion surface. A private value that is not visible to one interaction surface must not be downgraded to unknown when the public repository records it as `RESOLVED_PRIVATE`.
-
-The Knowledge Map remains mechanically guarded for durable numbered families and checkpoint-range coverage. Structural coverage is a floor, not proof of semantic routing quality.
+Continuity distinguishes unresolved information from resolved private operational state. A private value not visible to one interaction surface must not be downgraded to unknown when the public repository records it as `RESOLVED_PRIVATE` or `READY`.
 
 MC-0005, MC-0006 and MC-0007 are closed. MC-0004 remains deferred with the paused Cockpit.
 
@@ -391,20 +349,22 @@ Candidate source extraction cannot silently create accepted methodological autho
 
 ## Exact next step
 
-The active continuation is:
+The active continuation is now:
 
 ```text
-clean up local storage
+formal capacity preflight READY
     ->
-rerun capacity measurement
+resolve SOURCE_REGISTRY_DATABASE
     ->
-update / supersede the durable private capacity observation
+resolve SOURCE_VAULT_ROOT
     ->
-resolve the remaining four private locations
+resolve INDEPENDENT_BACKUP_ROOT with genuine separation
+    ->
+resolve CLEAN_RESTORE_ROOT
     ->
 materialize / verify local .ads-private execution state
     ->
-verify capacity and genuine backup separation
+verify resolved topology and backup separation
     ->
 execute docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
@@ -435,6 +395,7 @@ docs/private_companion/README.md
 private companion when relevant and accessible:
 shakaarlatief/autonomous-data-science-system-private/CURRENT_PRIVATE_STATE.md
 shakaarlatief/autonomous-data-science-system-private/source_universe/source_vault_bootstrap.json
+shakaarlatief/autonomous-data-science-system-private/source_universe/capacity_recheck_2026-08-30.json
 
 docs/model_collaboration/threads/MC-0006/RESOLUTION.md
 docs/model_collaboration/threads/MC-0007/RESOLUTION.md
