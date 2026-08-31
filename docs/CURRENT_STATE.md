@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 267  
+**Checkpoint:** 268  
 **Date:** 2026-08-31  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -22,11 +22,11 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: first permanent Source Universe bootstrap
+## Current active stage: Source Vault bootstrap paused before ingestion for local-execution bridge evaluation
 
-Checkpoint 267 remains the current continuity checkpoint that resumed Source Vault work and paused the Cockpit. The accepted architecture has not changed, so no additional numbered checkpoint has been required.
+Checkpoint 268 freezes a clean and reversible boundary immediately before the first permanent source ingestion.
 
-Current interpretation:
+Current Source Universe state:
 
 ```text
 Permanent Source Vault bootstrap
@@ -43,8 +43,13 @@ Permanent Source Vault bootstrap
     machine-local execution state MATERIALIZED / VALID / GIT-IGNORED
     pre-write topology gate READY
     permanent Source Registry MIGRATED / VERIFIED
+    prospective first-corpus comparison COMPLETE
+    comparison result 20 / 20 MATCH
+    DIFFERENT_ARTIFACT 0
+    MISSING_LOCAL_SOURCE 0
+    ADDITIONAL_LOCAL_SOURCE 0
     source ingestion NOT STARTED
-    prospective first-corpus comparison NEXT
+    Codexless local-execution evaluation OPENED before ingestion
     independent encrypted backup round trip NOT YET VERIFIED
     Course 2 BLOCKED until full bootstrap succeeds
 
@@ -55,14 +60,99 @@ Next-generation Project Cockpit frontend exploration
     not production-promoted
 ```
 
-The first permanent Source Registry now exists at the resolved private location. It was created from a clean absent database and migrated to Alembic head `0003_source_universe`. Verification reported 33 SQLite tables and a clean public working tree. No educational source file has yet been ingested into the permanent Source Vault.
+The first permanent Source Registry exists at the resolved private location. It was created from a clean absent database and migrated to Alembic head `0003_source_universe`. Verification reported 33 SQLite tables and a clean public working tree.
 
-The governing public-safe migration evidence is:
+The original VU Amsterdam Machine Learning corpus was then prospectively compared against the frozen first-corpus manifest. All 20 expected entries reproduced the frozen byte-level fingerprints exactly. There were no mismatches, missing sources or additional local sources.
+
+No educational source file has yet been ingested into the permanent Source Vault.
+
+Governing public-safe Source Vault evidence now includes:
 
 ```text
 docs/source_universe/validation/002_permanent_bootstrap_prewrite_gate_ready.md
 docs/source_universe/validation/003_permanent_source_registry_migrated.md
+docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md
 ```
+
+---
+
+## Codexless local execution bridge evaluation
+
+The project owner identified an open-source candidate that may remove increasing manual terminal relay from the ADS collaboration workflow:
+
+```text
+Codexless
+https://github.com/liyana31811/Codexless
+```
+
+The governing evaluation is:
+
+```text
+docs/research/098_codexless_local_execution_bridge_evaluation.md
+docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
+```
+
+Current classification:
+
+```text
+CANDIDATE / EVALUATION OPENED
+NOT an accepted ADS dependency
+NOT an accepted architecture component
+```
+
+Why evaluation is happening now:
+
+```text
+remaining Source Vault work is increasingly machine-local
+manual command -> user execution -> pasted output loops are becoming frequent
+the permanent corpus has not yet been ingested
+therefore this is a clean rollback boundary for evaluating a local bridge
+```
+
+The desired capability is bounded local execution from the existing ChatGPT collaboration surface, not generic machine remote control.
+
+Upstream Codexless documentation reviewed on 2026-08-31 reports Windows Technical Preview support, Node.js 22+ and a working local Codex installation as prerequisites, loopback-only local HTTP service behavior, authenticated tunnel / remote MCP transport for ChatGPT, and upstream real-machine testing on Plus and Pro. The Plus/Pro result is treated as observed upstream evidence, not a durable guarantee of future OpenAI plan policy.
+
+The first ADS evaluation deliberately excludes browser automation.
+
+Initial conceptual authority policy:
+
+```text
+public ADS repository                 controlled read/write + commands/tests
+private Source Universe root          controlled operational read/write as needed
+original educational source corpus    READ ONLY
+arbitrary host filesystem             NOT REQUIRED
+system / credential locations         NOT REQUIRED
+browser automation                    DEFERRED
+```
+
+If adopted, Codexless remains a replaceable execution transport. It does not replace any authority layer:
+
+```text
+public repository              project-development authority
+private companion              durable private continuity complement
+.ads-private                   machine-local operational configuration
+Source Registry / Vault        canonical source substrate
+Codexless                      local execution transport only
+```
+
+Evaluation sequence:
+
+```text
+1. verify Node.js >= 22
+2. verify working local Codex runtime / CLI
+3. review selected Codexless release/tag and installer/security boundary
+4. verify current ChatGPT account exposes required Developer Mode / App path
+5. select authenticated tunnel mechanism
+6. install only after prerequisite review passes
+7. run Codexless doctor against ADS
+8. prove harmless read-only local operations
+9. prove one controlled disposable write + cleanup
+10. classify as ACCEPTED_FOR_ADS_LOCAL_EXECUTION, ACCEPTED_READ_ONLY_ONLY, DEFERRED or REJECTED_FOR_CURRENT_USE
+11. resume Source Vault ingestion through the selected execution path
+```
+
+If the evaluation fails or is abandoned, Source Vault work resumes from the frozen state of permanent registry migrated / verified, 20 / 20 prospective corpus MATCH, source ingestion not started.
 
 ---
 
@@ -82,6 +172,7 @@ docs/private_companion/README.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 docs/source_universe/validation/002_permanent_bootstrap_prewrite_gate_ready.md
 docs/source_universe/validation/003_permanent_source_registry_migrated.md
+docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md
 docs/model_collaboration/threads/MC-0006/RESOLUTION.md
 docs/model_collaboration/threads/MC-0007/RESOLUTION.md
 ```
@@ -92,18 +183,18 @@ Specification 023 remains:
 SOURCE_SUBSTRATE_ACCEPTED
 ```
 
-The accepted Source Universe hardening implementation remains the implementation being exercised. Prior real-Windows provider-free verification remains:
+Prior real-Windows provider-free verification remains:
 
 ```text
 source-specific selection  15 passed
 full provider-free suite   158 passed, 2 skipped, 7 warnings
 ```
 
-The current permanent deployment has now crossed the registry-migration boundary, but has not yet crossed the source-ingestion, backup-acceptance, or recovery-acceptance boundaries.
+The current permanent deployment has crossed the registry-migration and prospective-comparison boundaries, but has not yet crossed source ingestion, working-store audit, backup acceptance or recovery acceptance.
 
 ---
 
-## Accepted first-corpus evidence remains unchanged
+## First-corpus provenance remains preserved
 
 The controlled development-corpus result remains:
 
@@ -120,17 +211,17 @@ The controlled development-corpus result remains:
 SU-G01 through SU-G23 PASS
 ```
 
-That proves the bounded architecture and implementation seam. It is separate from the now-begun permanent local deployment.
+The permanent prospective comparison independently reproduced the same 20 frozen exact artifacts from the original local corpus.
 
-The original permanent first corpus is still the VU Amsterdam Machine Learning collection. Its exact path remains private. Its local existence and approximately `468M` footprint were reverified after machine cleanup before the permanent registry migration.
+The manifest also intentionally contains association judgments such as `CONFIRMED`, `POSSIBLE`, and `UNVERIFIED`. A byte-level `MATCH` does not promote or rewrite those judgments. They remain preserved for ingestion exactly as frozen.
 
-No educational source binary, exact private path, private registry snapshot, backup payload, credential, encryption password, key, or access token belongs in public Git.
+No educational source binary, exact private path, private registry snapshot, backup payload, credential, encryption password, key, tunnel secret or access token belongs in public Git.
 
 ---
 
 ## Private operational state
 
-The private companion repository remains the durable private continuity complement. Exact private locations and observations are preserved there, including:
+The private companion remains the durable private continuity complement. Relevant private records include:
 
 ```text
 source_universe/source_vault_bootstrap.json
@@ -146,7 +237,7 @@ The machine-local execution surface remains:
 
 It is valid JSON and explicitly ignored by public Git.
 
-The permanent topology now has these public-safe statuses:
+Public-safe topology status:
 
 ```text
 ORIGINAL_SOURCE_ROOT          RESOLVED_PRIVATE / EXISTS REVERIFIED
@@ -161,17 +252,13 @@ independent backup verified   NO
 Course 2                      BLOCKED
 ```
 
-The independent remote destination is genuinely separate from the single observed local physical volume. This was sufficient to open the permanent write gate. It does not by itself classify the backup as complete.
-
 ---
 
-## Runtime/tooling state for the bootstrap
+## Runtime/tooling state
 
-The ADS runtime remains Python 3.13. The project pins `.python-version` to `3.13` and the active environment verified as Python 3.13.1.
+ADS remains on Python 3.13.
 
-During the first migration attempt, the standalone `uv` executable was found to be absent after machine cleanup. No migration occurred in that failed attempt. `uv` was then restored at the repository-pinned version and the governed migration succeeded.
-
-Verified tooling at migration time:
+Verified runtime/tooling during the permanent registry migration:
 
 ```text
 Python      3.13.1
@@ -180,36 +267,37 @@ Alembic     1.19.1
 SQLAlchemy  2.0.52
 ```
 
+The standalone `uv` executable had been removed during machine cleanup and was restored at the repository-pinned version before the migration. No migration occurred during the failed pre-restoration attempt.
+
 ---
 
-## Exact permanent-bootstrap sequence
+## Exact remaining Source Vault bootstrap sequence
 
 Before Course 2:
 
 ```text
-1. clean up local storage                                                        COMPLETE
-2. rerun capacity preflight and preserve private evidence                        COMPLETE / READY
-3. resolve private operational locations and remote destination                  COMPLETE
-4. materialize and verify .ads-private/source_vault_bootstrap.json              COMPLETE
-5. verify topology, Git protection, source existence and backup separation       COMPLETE / PREWRITE READY
-6. migrate clean permanent Source Registry to Alembic head                       COMPLETE / VERIFIED
-7. prospectively compare original Machine Learning corpus against frozen manifest NEXT
-8. preserve MATCH / DIFFERENT_ARTIFACT / MISSING_LOCAL_SOURCE / ADDITIONAL_LOCAL_SOURCE results
-9. review every mismatch or additional source before ingestion
-10. ingest only the reviewed intended corpus
-11. run working-store integrity audit
-12. create deterministic verified local backup staging
-13. client-side encrypt and replicate to independent remote storage
-14. retrieve remote encrypted object and reproduce its digest
-15. decrypt into a fresh recovery surface
-16. restore into CLEAN_RESTORE_ROOT
-17. run restored integrity audit
-18. preserve public-safe deployment evidence
-19. classify bootstrap success or required revision
-20. only then admit the next educational course batch
+1. clean local storage                                                            COMPLETE
+2. capacity preflight + private evidence                                           COMPLETE / READY
+3. resolve local private topology + independent remote destination                 COMPLETE
+4. materialize / verify .ads-private runtime state                                 COMPLETE
+5. verify topology, Git protection, source existence and backup separation         COMPLETE / PREWRITE READY
+6. migrate clean permanent Source Registry                                         COMPLETE / VERIFIED
+7. prospectively compare original first corpus                                     COMPLETE / 20 MATCH
+8. evaluate Codexless local execution bridge at frozen pre-ingestion boundary      ACTIVE / OPTIONAL INFRASTRUCTURE EVALUATION
+9. ingest reviewed intended corpus                                                  PENDING
+10. run working-store integrity audit                                               PENDING
+11. create deterministic verified local backup staging                             PENDING
+12. client-side encrypt and replicate to independent Google Drive                   PENDING
+13. retrieve remote encrypted object and reproduce digest                          PENDING
+14. decrypt into fresh recovery surface                                             PENDING
+15. restore into CLEAN_RESTORE_ROOT                                                 PENDING
+16. run restored integrity audit                                                    PENDING
+17. preserve public-safe deployment evidence                                       PENDING
+18. classify bootstrap success or required revision                                PENDING
+19. only then admit next educational course batch                                  BLOCKED
 ```
 
-No mismatch is silently normalized.
+Codexless evaluation is not allowed to weaken any Source Vault gate. It may only improve the execution transport.
 
 ---
 
@@ -218,21 +306,18 @@ No mismatch is silently normalized.
 The active continuation is now:
 
 ```text
-permanent Source Registry migrated / verified
-    ->
-run prospective comparison of original VU Amsterdam Machine Learning folder
-against docs/source_universe/manifests/001_vu_machine_learning.json
-    ->
-preserve all four comparison outcome classes
-    ->
-review any mismatch or additional source
-    ->
-only then permit permanent source ingestion
+Research 098 prerequisite review
+    -> verify Node.js >= 22
+    -> verify local Codex installation/version/path
+    -> inspect selected Codexless release/tag + installer/security boundary
+    -> confirm ChatGPT Developer Mode / App connection availability on current account
+    -> choose authenticated tunnel path
+    -> decide whether installation should proceed
 ```
 
-Source ingestion must not begin before the comparison result has been reviewed.
+Do not begin permanent source ingestion until the Codexless evaluation is explicitly classified or the project owner explicitly decides to stop the evaluation and resume the previous execution path.
 
-The later independent encrypted Google Drive round trip, clean restore, and restored audit remain mandatory before Course 2 is admitted.
+Browser integration is deferred from the first evaluation.
 
 No immediate Specification 022 rerun is planned.
 
@@ -305,12 +390,16 @@ docs/CURRENT_STATE.md
 docs/current_routing.json
 docs/KNOWLEDGE_MAP.md
 
+docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
+docs/research/098_codexless_local_execution_bridge_evaluation.md
+
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
 docs/source_universe/validation/002_permanent_bootstrap_prewrite_gate_ready.md
 docs/source_universe/validation/003_permanent_source_registry_migrated.md
+docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md
 docs/private_companion/README.md
 
 private companion when relevant and accessible:
