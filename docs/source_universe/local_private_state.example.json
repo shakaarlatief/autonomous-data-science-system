@@ -4,7 +4,16 @@
     "original_source_root": "<PRIVATE_PATH>",
     "source_registry_database": null,
     "source_vault_root": null,
+    "backup_staging_root": null,
     "independent_backup_root": null,
+    "independent_backup_transport": {
+      "kind": null,
+      "provider": null,
+      "destination_reference": null,
+      "client_side_encryption_required": true,
+      "encryption_tool": null,
+      "credentials_stored_here": false
+    },
     "clean_restore_root": null,
     "capacity_observation": {
       "volume": "<PRIVATE_OR_LOCAL_VOLUME>",
