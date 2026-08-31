@@ -1,106 +1,118 @@
 # MC-0008 Thread: Repository Governed-Document Integrity Architecture
 
 **Thread:** MC-0008  
-**Status:** WAITING / CLAUDE COMPARATIVE REVIEW  
+**Status:** RESOLVED / ARCHITECTURE ACCEPTED FOR NORMAL ADS GOVERNANCE  
 **Review mode:** INDEPENDENT_THEN_COMPARATIVE  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`  
 **Exact pre-proposal review target:** `7794951cbedd16f2fd1a27170946aa59b952e27a`  
 **Task owner:** ChatGPT / `chatgpt-11`  
-**Claude reviewer:** Claude / `claude-02` / `02 - Repository Governance & Integrity`  
-**Independent proposal:** `messages/001_claude_independent_governed_document_integrity_proposal.md`  
-**Task-owner candidate:** `messages/002_chatgpt_task_owner_disposition_and_candidate_integrity_architecture.md`  
-**Next expected actor:** Claude / `claude-02`  
-**Expected comparative response:** `messages/003_claude_comparative_governed_document_integrity_review.md`
+**Claude reviewer:** `claude-02` / `02 - Repository Governance & Integrity`
 
 ## Purpose
 
-Obtain an independent pre-proposal architecture for scalable repository document metadata, provenance, cross-reference integrity and live-state consistency, then compare that preserved position against a separately frozen ChatGPT task-owner candidate before implementation.
+Obtain an independent pre-proposal architecture for scalable repository document metadata, provenance, cross-reference integrity and live-state consistency before ChatGPT freezes or implements a candidate solution, then compare the task-owner candidate against the preserved independent position.
 
-The trigger is empirical repository-maintenance pressure, not a desire for metadata uniformity. Foundation 014 explicitly allowed stronger machinery to be introduced when manual conventions became insufficient. The current task is to determine the smallest architecture that now deserves promotion.
+The trigger is empirical repository-maintenance pressure, not a desire for metadata uniformity. Foundation 014 explicitly allowed stronger machinery to be introduced when manual conventions became insufficient. MC-0008 determines the smallest architecture that now deserves normal ADS promotion.
 
-## Phase 1: independent proposal — COMPLETE
+## Phase 1: independent proposal
 
-Claude reviewed the exact frozen target:
+**COMPLETE.**
+
+Claude reviewed the frozen target:
 
 ```text
 7794951cbedd16f2fd1a27170946aa59b952e27a
 ```
 
-using `BRIEF.md` as the neutral problem statement.
-
-Claude's independent position is preserved at:
+and preserved its blind-to-candidate position in:
 
 ```text
 messages/001_claude_independent_governed_document_integrity_proposal.md
-commit dbb3336f1b33e2409b3b4d96aba2d862573a154e
+dbb3336f1b33e2409b3b4d96aba2d862573a154e
 ```
 
-The commit changed exactly that one permitted message path. No candidate implementation or canonical target state was exposed before Claude froze the independent position.
+Claude changed only its permitted message path.
 
-## Phase 2: task-owner disposition and candidate freeze — COMPLETE
+## Phase 2: task-owner disposition and candidate freeze
 
-ChatGPT independently traced Claude's proposal against repository evidence and froze the candidate architecture at:
+**COMPLETE.**
+
+ChatGPT independently traced the proposal, dispositioned it, and froze a stronger family-aware candidate in:
 
 ```text
 messages/002_chatgpt_task_owner_disposition_and_candidate_integrity_architecture.md
+11a4520adaf83491f4e2063449ba9b4cbf631c2c
 ```
 
-The candidate accepts Claude's proportionality/no-universal-schema direction but amends the scope around validation/evidence metadata, collaboration-message provenance, live-state freshness, explicit reference existence, aggregate preflight gating and private-companion synchronization.
+No governed-document integrity implementation was performed in this phase.
 
-No repository-wide metadata/reference-integrity implementation has started and no canonical research/specification promotion has occurred yet.
+## Phase 3: comparative review
 
-### Provenance correction
+**COMPLETE.**
 
-The MC-0008 opening state incorrectly recorded the ChatGPT task owner as `chatgpt-12`. The actual task-owner conversation remained the still-active `chatgpt-11`; `chatgpt-12` is the separate fresh Codexless validation conversation. Message 002 documents the clerical correction and the current `STATE.json` records the corrected task-owner session prospectively. Claude Message 001 remains unchanged as authored evidence.
-
-## Phase 3: comparative review — ACTIVE
-
-Claude may now read Message 002 and compare it against the already-preserved independent Message 001.
-
-The comparative pass should distinguish:
+Claude compared the candidate against its preserved independent position and returned:
 
 ```text
-independent convergence
-material disagreement
-new evidence that changes either position
-candidate omissions
-candidate overreach / maintenance tax
-must-fix issues before implementation acceptance
+SUPPORT_WITH_5_BOUNDED_AMENDMENTS
 ```
 
-Claude should specifically answer the comparative questions in Message 002, including whether V1 should cover validation/evidence and collaboration messages, whether highest-checkpoint freshness is a safe invariant, whether typed live routing is proportionate, whether explicit relationship checks belong in V1, whether the aggregate repository-integrity gate is justified, and whether private-companion sync should be a present requirement.
-
-Expected durable response:
+in:
 
 ```text
-docs/model_collaboration/threads/MC-0008/messages/003_claude_comparative_governed_document_integrity_review.md
+messages/003_claude_comparative_governed_document_integrity_review.md
+acb0f80932441cacd324cbda1b29b8a530f73743
 ```
 
-The Phase-1 message remains immutable substantive provenance. Any changed Claude view belongs in Message 003.
+The five amendments concern complete metadata inventory, branch-scoped freshness, explicit test cases, preventive-hardening framing, and strict separation of public/private integrity claims.
 
-## Write scope
+## Phase 4: final reconciliation
 
-Claude may write only:
+**COMPLETE.**
+
+The task owner accepted all five amendments. A temporary read-only metadata inventory was run successfully and its results were frozen in:
 
 ```text
-docs/model_collaboration/threads/MC-0008/messages/**
+messages/004_chatgpt_final_reconciliation_and_accepted_integrity_architecture.md
 ```
 
-No target-state mutation is authorized during comparative review.
+The final accepted design is a family-aware Governed Repository Integrity layer with deterministic identity, prospective metadata, declared-reference, live-state freshness, aggregate public-gate and chat-rotation checks, while keeping private continuity a separately verified surface.
 
-## Blocking rule
-
-Until the comparative review is dispositioned:
+Durable closure:
 
 ```text
-new repository-wide metadata/reference-integrity implementation   BLOCKED
-mass metadata normalization                                      BLOCKED
-canonical promotion of the candidate                              BLOCKED
-ad hoc declaration that the current issue is fully solved         BLOCKED
+RESOLUTION.md
 ```
 
-Routine unrelated repository safety work is not inherently blocked by MC-0008. The project owner has currently chosen to complete this reflection before resuming permanent Source Vault ingestion.
+## Accepted implementation direction
+
+Normal ADS research/specification governance may now implement:
+
+```text
+numbered-identity uniqueness
+prospective family-aware metadata contracts
+declared reference existence checks
+branch-scoped current-state freshness
+current_boundary de-opacification
+validation/evidence provenance as prospective preventive hardening
+collaboration-message provenance using the established collaboration format
+one aggregate public repository-integrity gate
+separate private continuity status
+chat-rotation preflight
+explicit unit/regression tests
+```
+
+Rejected for V1 are a universal schema, sidecars, a central hand-maintained registry, a generalized dependency graph, semantic contradiction detection and mass historical normalization.
+
+## Continuity note
+
+The disposable ChatGPT conversation used to prove Codexless developer-MCP invocation is not a canonical persistent ADS interaction and will be deleted by the project owner. The current persistent ChatGPT session remains `chatgpt-11`. The next persistent chat must be created through the standard continuation procedure before a new canonical session ID/title is minted.
+
+## Blocking rule after resolution
+
+MC-0008 no longer blocks freezing the architecture because the comparative review and reconciliation are complete.
+
+However, the repository is **not yet chat-rotation ready** and the Source Vault remains intentionally paused. The accepted architecture still requires normal ADS research/specification, implementation, deterministic verification, current-state/Knowledge-Map reconciliation and final checkpoint promotion.
 
 ## Authority
 
-MC-0008 is collaboration provenance and coordination state, not project canon. Any accepted architecture must still pass normal research/specification/checkpoint/promotion governance and deterministic validation.
+MC-0008 is collaboration provenance and architecture-review evidence. Project canon still requires the normal research/specification/checkpoint/promotion path.

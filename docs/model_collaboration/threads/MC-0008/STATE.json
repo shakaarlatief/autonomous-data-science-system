@@ -2,12 +2,12 @@
   "schema_version": 1,
   "thread_id": "MC-0008",
   "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
-  "lifecycle_state": "WAITING",
-  "phase": "WAITING_FOR_COMPARATIVE_REVIEW",
+  "lifecycle_state": "RESOLVED",
+  "phase": "ARCHITECTURE_RECONCILED",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "7794951cbedd16f2fd1a27170946aa59b952e27a",
-    "description": "Independent-then-comparative architecture review of ADS governed-document metadata, provenance, reference integrity, live-state synchronization, legacy migration, and mechanical validation before repository-wide metadata-integrity implementation.",
+    "description": "Independent-then-comparative architecture review of ADS governed-document metadata, provenance, reference integrity, live-state synchronization, legacy migration, mechanical validation, public/private integrity separation, and chat-rotation preflight.",
     "write_paths": []
   },
   "task_owner": "chatgpt",
@@ -42,34 +42,28 @@
       ]
     }
   ],
-  "allowed_secondary_write_surfaces": [
-    {
-      "collaborator_id": "claude",
-      "paths": [
-        "docs/model_collaboration/threads/MC-0008/messages/**"
-      ]
-    }
-  ],
-  "next_expected_actor": "claude",
+  "allowed_secondary_write_surfaces": [],
+  "next_expected_actor": null,
   "independence": {
     "status": "COMPARATIVE_ONLY",
     "review_base_ref": "7794951cbedd16f2fd1a27170946aa59b952e27a",
     "known_exposures": [
-      "Foundation 014 already records lightweight document metadata and explicitly defers stronger machine-readable metadata, staleness detection, dependency modeling and authority/supersession checks until observed maintenance pressure justifies them.",
-      "Research 103 and Research 104 already define the accepted repository information architecture, exhaustive Knowledge Map coverage for primary numbered knowledge families, and narrow current-routing validation.",
+      "Foundation 014 records lightweight family-sensitive document metadata and explicitly defers stronger machinery until observed maintenance pressure justifies it.",
+      "Research 103 and Research 104 define accepted repository information architecture, exhaustive Knowledge Map coverage for primary numbered knowledge families, and narrow current-routing validation.",
       "Checkpoint 269 records recent continuity defects including stale current state, a duplicate Research identity, missing Knowledge Map routing and incomplete checkpoint metadata.",
-      "The project owner requested a repository-wide reflection on metadata and provenance across artifact families and explicitly requested Claude's ideas before ChatGPT froze a candidate.",
       "Claude Message 001 was preserved as the blind-to-candidate independent position at commit dbb3336f1b33e2409b3b4d96aba2d862573a154e before any ChatGPT candidate existed.",
-      "ChatGPT Message 002 now freezes the task-owner candidate architecture for the comparative phase; Claude is expected to compare against it rather than preserve a further independence claim."
+      "ChatGPT Message 002 froze the task-owner candidate at commit 11a4520adaf83491f4e2063449ba9b4cbf631c2c.",
+      "Claude Message 003 performed the comparative phase at commit acb0f80932441cacd324cbda1b29b8a530f73743 and returned support with five bounded amendments.",
+      "A temporary read-only metadata inventory ran successfully at commit adce1b47011ec0cee98393c2b6ff8c5c753b0ba0 before the final reconciliation."
     ],
-    "notes": "Phase 1 independence is complete and preserved in Message 001. The thread is now comparative-only. The opening state incorrectly labelled the ChatGPT task owner as chatgpt-12; the actual task-owner conversation remained chatgpt-11, and this clerical provenance error is corrected prospectively here and documented in Message 002 without altering Claude's authored Message 001."
+    "notes": "The independent position remains preserved in Message 001; later messages are comparative/task-owner reconciliation. The opening state incorrectly labelled the current ChatGPT task-owner conversation as chatgpt-12. That clerical error was corrected to chatgpt-11. The project owner has additionally clarified that the separate fresh ChatGPT conversation used only to test Codexless developer-MCP invocation is disposable, is not a canonical persistent ADS session, and will be deleted; the next persistent ChatGPT interaction must be minted only through the normal continuation procedure."
   },
   "last_transition": {
-    "transition_id": "mc0008-candidate-frozen-for-comparative-review",
+    "transition_id": "mc0008-final-architecture-reconciled",
     "from_state": "WAITING",
-    "to_state": "WAITING",
+    "to_state": "RESOLVED",
     "actor": "chatgpt",
-    "reason": "Claude's independent proposal was verified for provenance and write scope, ChatGPT dispositioned it, froze a family-aware Governed Repository Integrity Gate candidate in Message 002, and routed Claude to a comparative review before any implementation or canonical promotion.",
-    "repository_head": "dbb3336f1b33e2409b3b4d96aba2d862573a154e"
+    "reason": "Claude's comparative review was verified, all five bounded amendments were accepted, the requested metadata inventory was completed, and Message 004 freezes the final family-aware governed-repository integrity architecture for normal ADS research/specification/implementation governance. No target-state integrity implementation is accepted by this transition itself.",
+    "repository_head": "adce1b47011ec0cee98393c2b6ff8c5c753b0ba0"
   }
 }
