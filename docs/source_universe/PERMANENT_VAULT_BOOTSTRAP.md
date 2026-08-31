@@ -2,7 +2,7 @@
 
 **Status:** Active operational runbook for the first user-controlled Source Universe deployment  
 **Date:** 2026-08-25  
-**Last reviewed:** 2026-08-30  
+**Last reviewed:** 2026-08-31  
 **Scope:** Deploy the accepted Specification 023 source substrate on durable user-controlled storage and ingest the original VU Amsterdam Machine Learning folder before any additional course corpus is admitted  
 **Authority:** Operational guidance subordinate to Foundation 022, Specification 023, and the current checkpoint. This file does not select a permanent cloud provider, backup provider, or final multi-user deployment topology.
 
@@ -24,9 +24,9 @@ canonical locator: https://mlvu.github.io/
 
 ---
 
-## 2. Four locations must remain conceptually separate
+## 2. Operational locations must remain conceptually separate
 
-The deployment uses four distinct locations:
+The deployment uses four durable conceptual locations:
 
 ```text
 ORIGINAL_SOURCE_ROOT
@@ -40,21 +40,28 @@ SOURCE_VAULT_ROOT
     the canonical private content-addressed artifact store
 
 INDEPENDENT_BACKUP_ROOT
-    a separate recoverable backup destination
+    a genuinely separate recoverable backup destination
+    may be a separate physical device or a remote private storage destination
 ```
 
-A fifth disposable location is used for recovery proof:
+Two disposable/local operational locations may also be used:
 
 ```text
+BACKUP_STAGING_ROOT
+    temporary local target where ADS creates and verifies the deterministic
+    backup bundle before independent replication
+
 CLEAN_RESTORE_ROOT
     temporary clean registry + vault used only to prove recovery
 ```
+
+`BACKUP_STAGING_ROOT` does **not** satisfy the independent-backup requirement when it is on the same physical storage as the canonical vault. It is only a staging surface.
 
 The original course folder is not modified by ingestion.
 
 The Source Vault must not live inside the public Git repository.
 
-The independent backup should not be merely another folder inside the same canonical vault tree. Its purpose is to provide a separate recovery copy.
+The independent backup must not be merely another folder inside the same canonical vault tree or another ordinary directory on the same single physical device. Its purpose is to provide a recovery copy that survives loss of the canonical local storage.
 
 ---
 
@@ -73,6 +80,10 @@ no source binary is committed to Git
 no source is deleted from the original course folder as part of ingestion
 backup is verified before it is considered complete
 ```
+
+A remote backup provider may be used without becoming an ADS authority layer. Provider-specific upload/download tooling remains outside the Source Registry and SourceArtifactStore abstractions. The canonical ADS backup artifact is created and verified first; remote storage is a replication/recovery transport.
+
+When the independent backup is remote, client-side encryption should be used before upload unless the selected provider and deployment explicitly justify another reviewed confidentiality model. Encryption passwords, keys, OAuth credentials, access tokens, recovery secrets, and provider credentials must not be committed to either the public repository or the private companion knowledge repository.
 
 Exact private paths and machine-specific measurements are governed by the layered private-state architecture:
 
@@ -99,24 +110,24 @@ The public repository records whether a private value is resolved and whether th
 
 The private companion is not a second ADS development repository and is not Source Vault or secret storage.
 
-A cloud/object-storage provider may be introduced later if measured requirements justify it. The current deployment should not add provider complexity merely for appearance.
+A cloud/object-storage provider may be introduced or replaced later if measured requirements justify it. The current deployment should not add provider complexity merely for appearance.
 
 ---
 
 ## 4. Current preflight boundary and preflight before any permanent write
 
-Public-safe current state as of 2026-08-30:
+Public-safe current state as of 2026-08-31:
 
 ```text
 ORIGINAL_SOURCE_ROOT          RESOLVED_PRIVATE
-SOURCE_REGISTRY_DATABASE     UNRESOLVED
-SOURCE_VAULT_ROOT             UNRESOLVED
-INDEPENDENT_BACKUP_ROOT       UNRESOLVED
-CLEAN_RESTORE_ROOT            UNRESOLVED
+SOURCE_REGISTRY_DATABASE     RESOLVED_PRIVATE_PENDING_LOCAL_STATE
+SOURCE_VAULT_ROOT             RESOLVED_PRIVATE_PENDING_LOCAL_STATE
+BACKUP_STAGING_ROOT           RESOLVED_PRIVATE_PENDING_LOCAL_STATE
+INDEPENDENT_BACKUP_ROOT       ZERO_COST_REMOTE_ROUTE_SELECTED / DESTINATION_PENDING_VERIFICATION
+CLEAN_RESTORE_ROOT            RESOLVED_PRIVATE_PENDING_LOCAL_STATE
 cleanup stage                 COMPLETED
 capacity preflight            READY
 capacity recheck required     NO
-backup topology               UNRESOLVED
 permanent write allowed       NO
 private companion             OPERATIONAL
 ```
@@ -128,9 +139,9 @@ source_universe/source_vault_bootstrap.json
 source_universe/capacity_recheck_2026-08-30.json
 ```
 
-The capacity result is `READY`. It was derived from the measured first corpus and the storage required for the canonical vault, registry overhead, an independent backup-sized copy, and a temporary clean restore. No arbitrary free-space threshold was used.
+The capacity result is `READY`. It was derived from the measured first corpus and the storage required for the canonical vault, registry overhead, a backup-sized staging copy, and a temporary clean restore. No arbitrary free-space threshold was used.
 
-Capacity is therefore no longer the active blocker. The remaining blocker is storage-topology resolution: all four remaining private locations must be selected, and the independent backup must be genuinely separate and verifiable before permanent writes begin.
+Capacity is therefore no longer the active blocker. The remaining blocker is completing and verifying the independent remote backup destination, materializing the machine-local private execution state, and verifying the resulting topology before permanent writes begin.
 
 The fact that the original source location is already resolved is durable project state. Future conversations must not ask the project owner to provide it again merely during reconstruction.
 
@@ -140,18 +151,20 @@ Before ingestion:
 1. confirm the exact promoted V1 source code is locally available
 2. free sufficient local storage and rerun the capacity measurement                 COMPLETE
 3. update or supersede the durable private capacity observation                    COMPLETE
-4. choose SOURCE_REGISTRY_DATABASE                                                  NEXT
-5. choose SOURCE_VAULT_ROOT
-6. choose INDEPENDENT_BACKUP_ROOT
-7. choose CLEAN_RESTORE_ROOT
-8. materialize or verify .ads-private/source_vault_bootstrap.json for local execution using the resolved private values
-9. verify SOURCE_VAULT_ROOT is outside the public Git repository
-10. verify the backup root is a genuinely separate destination
-11. verify the original source folder is not being used as the vault
-12. verify the resolved topology still has sufficient working capacity
+4. choose SOURCE_REGISTRY_DATABASE                                                  COMPLETE_PRIVATE
+5. choose SOURCE_VAULT_ROOT                                                         COMPLETE_PRIVATE
+6. choose BACKUP_STAGING_ROOT                                                       COMPLETE_PRIVATE
+7. choose INDEPENDENT_BACKUP_ROOT                                                   ROUTE_SELECTED / DESTINATION_VERIFICATION_PENDING
+8. choose CLEAN_RESTORE_ROOT                                                        COMPLETE_PRIVATE
+9. materialize or verify .ads-private/source_vault_bootstrap.json for local execution
+10. verify SOURCE_VAULT_ROOT is outside the public Git repository
+11. verify BACKUP_STAGING_ROOT is treated only as staging, not independent recovery
+12. verify the independent backup destination is genuinely separate and recoverable
+13. verify the original source folder is not being used as the vault
+14. verify the resolved topology still has sufficient working capacity
 ```
 
-Do not proceed to any permanent Source Registry or Source Vault write merely because the capacity gate is `READY`. Permanent writes remain forbidden until the remaining private locations are resolved, local execution state is verified, and genuine backup separation is confirmed.
+Do not proceed to any permanent Source Registry or Source Vault write merely because the capacity gate is `READY`. Permanent writes remain forbidden until local execution state is verified and genuine backup separation is confirmed.
 
 The earlier approximately 490 MB development-batch observation has now served only as historical evidence. The formal capacity gate is based on the actual local first-corpus measurement preserved privately.
 
@@ -291,30 +304,61 @@ Do not proceed to backup acceptance if the working store is dirty.
 
 ---
 
-## 10. Create an independent verified backup
+## 10. Create, encrypt, and independently replicate a verified backup
 
-Command shape:
+First create the canonical ADS backup bundle in the local staging area:
 
 ```text
 uv run --python 3.13 --locked python -m ads_system.source_cli backup \
   --database <SOURCE_REGISTRY_DATABASE> \
   --vault <SOURCE_VAULT_ROOT> \
-  --target <INDEPENDENT_BACKUP_ROOT>
+  --target <BACKUP_STAGING_ROOT>
 ```
 
-The backup contains a deterministic private registry snapshot, exact object payloads, and a backup manifest. Backup creation verifies the copied payload before reporting success.
+The staged backup contains a deterministic private registry snapshot, exact object payloads, and a backup manifest. ADS backup creation verifies the copied payload before reporting success.
+
+When the independent destination is remote, continue with these conceptual steps:
+
+```text
+1. record the staged backup identity / manifest digest
+2. package the verified staged backup into a client-side encrypted archive
+3. calculate a strong digest of the encrypted archive
+4. upload that exact encrypted archive to INDEPENDENT_BACKUP_ROOT
+5. confirm the remote object exists with the expected size
+6. download the remote object into a fresh local location
+7. verify the downloaded encrypted archive digest matches exactly
+```
+
+Only after the independently stored copy has survived that round trip may the remote backup be classified as verified for the bootstrap.
+
+The local staging directory remains disposable and does not satisfy independent recovery by itself.
+
+Provider-specific upload/download commands are operational transport details. They must not silently become part of Source Registry authority or SourceArtifactStore semantics.
 
 The backup destination is private and must not be committed to Git.
 
 ---
 
-## 11. Prove disaster recovery into a clean target
+## 11. Prove disaster recovery from the independent copy into a clean target
 
-Create a clean migrated restore registry and an empty restore vault, then run:
+Recovery proof must start from the independently stored copy, not merely from the local staging directory.
+
+Conceptual sequence:
+
+```text
+remote independent backup
+    -> download encrypted archive into a fresh local recovery location
+    -> verify encrypted archive digest
+    -> decrypt into a fresh local backup input
+    -> restore into CLEAN_RESTORE_ROOT
+    -> run restored integrity audit
+```
+
+After decryption, create a clean migrated restore registry and an empty restore vault, then run:
 
 ```text
 uv run --python 3.13 --locked python -m ads_system.source_cli restore \
-  --backup <INDEPENDENT_BACKUP_ROOT> \
+  --backup <FRESHLY_DECRYPTED_BACKUP_FROM_INDEPENDENT_COPY> \
   --database <CLEAN_RESTORE_DATABASE> \
   --vault <CLEAN_RESTORE_VAULT>
 ```
@@ -324,6 +368,8 @@ Then run the same integrity audit against the restored target.
 Recovery proof requires:
 
 ```text
+independent remote object retrieved successfully
+encrypted archive digest reproduced exactly
 registry semantic state reproduced
 all restored artifact sizes correct
 all restored artifact SHA-256 values correct
@@ -331,7 +377,7 @@ no unexplained orphan objects
 full restored audit clean
 ```
 
-The clean restore location may be deleted after safe non-private recovery evidence has been preserved.
+The clean restore location and local recovery download/decryption surfaces may be deleted after safe non-private recovery evidence has been preserved.
 
 ---
 
@@ -347,6 +393,7 @@ SHA-256 values already approved as safe metadata
 public-safe source metadata
 registry snapshot digest
 backup manifest digest
+encrypted remote-backup archive digest
 software / migration versions
 validation outcomes
 resolved / unresolved private-location status
@@ -363,10 +410,11 @@ private registry snapshot
 backup payload
 source-vault object bytes
 credentials
+encryption passwords or keys
 private notes
 ```
 
-The private companion repository may preserve exact private knowledge needed for continuity, but it must not become source-binary, backup-payload, database, or credential storage.
+The private companion repository may preserve exact private knowledge needed for continuity, but it must not become source-binary, backup-payload, database, credential, or encryption-secret storage.
 
 ---
 
@@ -378,8 +426,8 @@ No additional educational course batch should be admitted until the first perman
 original local corpus reviewed
 all intended files ingested or explicitly accounted for
 working integrity audit clean
-independent backup verified
-clean restore successful
+independent backup verified through separate-storage round trip
+clean restore from independently retrieved copy successful
 restored integrity audit clean
 safe evidence preserved
 ```
@@ -392,7 +440,8 @@ course context
     -> compare / intake review
     -> ingest
     -> audit
-    -> backup update
+    -> verified backup staging
+    -> independent encrypted replication
     -> safe registry evidence
 ```
 
@@ -412,6 +461,7 @@ registry/vault placement conflicts
 source-rights metadata gaps
 performance or storage problems
 recovery failure
+independent remote round-trip failure
 unexplained mismatch with prospectively frozen fingerprints
 private information leaking into public-safe outputs
 ```
