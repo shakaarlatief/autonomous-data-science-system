@@ -1,12 +1,21 @@
 # Checkpoint 268: First Permanent Corpus Matched, Codexless Local Execution Evaluation Opened
 
 **Date:** 2026-08-31  
-**Branch:** `v1-source-vault-bootstrap-resume`  
-**Status:** ACTIVE CONTINUATION BOUNDARY
+**Status:** Active historical continuation boundary  
+**Checkpoint class:** CONTINUITY  
+**Project stage:** Permanent Source Vault bootstrap paused immediately before first permanent source ingestion  
+**Scope:** Freeze the verified registry + 20/20 prospective corpus-match boundary and open the bounded Codexless local-execution evaluation.  
+**Authority:** Historical provenance for the opening boundary. Current routing, Research 105 and later validation/checkpoint records govern the present continuation.  
+**Interaction environment:** ChatGPT  
+**Project / workspace:** Autonomous Data Science System  
+**Interaction session:** `chatgpt-11`  
+**Conversation title:** `11 - Source Vault Bootstrap Preflight`  
+**Primary collaborator:** ChatGPT  
+**Branch:** `v1-source-vault-bootstrap-resume`
 
 ## What is frozen at this checkpoint
 
-The first permanent Source Universe bootstrap has advanced through clean registry creation and prospective corpus comparison without beginning source ingestion.
+The first permanent Source Universe bootstrap advanced through clean registry creation and prospective corpus comparison without beginning source ingestion.
 
 Verified state:
 
@@ -35,37 +44,37 @@ The public-safe comparison evidence is:
 docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md
 ```
 
-## Why Source Vault ingestion is temporarily paused here
+## Why Source Vault ingestion was temporarily paused here
 
-The remaining Source Vault workflow is increasingly machine-local. The current collaboration loop requires ChatGPT to emit commands, the project owner to run them locally, and the resulting output to be relayed back into the conversation.
+The remaining Source Vault workflow was becoming increasingly machine-local. The collaboration loop required ChatGPT to emit commands, the project owner to run them locally, and the resulting output to be relayed back into the conversation.
 
-A candidate open-source bridge, Codexless, may allow the active ChatGPT collaboration surface to perform bounded local project inspection, command execution, guarded edits and verification directly while continuing to use Codex only when agent-level work is actually needed.
+A candidate open-source bridge, Codexless, was identified as a possible way for the active ChatGPT collaboration surface to perform bounded local project inspection, command execution, guarded edits and verification directly while continuing to use Codex only when agent-level work is actually needed.
 
-Because the permanent corpus has not yet been ingested, this is a clean and reversible point to evaluate that execution mechanism without placing the already-verified Source Registry or original educational corpus at unnecessary risk.
+Because the permanent corpus had not yet been ingested, this was a clean and reversible point to evaluate that execution mechanism without placing the already-verified Source Registry or original educational corpus at unnecessary risk.
 
-The governing evaluation record is:
+The governing evaluation record is canonically:
 
 ```text
-docs/research/098_codexless_local_execution_bridge_evaluation.md
+docs/research/105_codexless_local_execution_bridge_evaluation.md
 ```
 
-## Candidate status
+## Candidate status at checkpoint creation
 
-Codexless is **not accepted** at this checkpoint.
+Codexless was **not accepted** at this checkpoint.
 
-Current classification:
+Opening classification:
 
 ```text
 CANDIDATE / EVALUATION OPENED
 ```
 
-Upstream is an independent Technical Preview. Its documented security model and Plus/Pro real-machine testing are useful evidence but do not replace ADS's own bounded evaluation.
+Upstream is an independent Technical Preview. Its documented security model and Plus/Pro real-machine testing were useful evidence but did not replace ADS's own bounded evaluation.
 
-The first evaluation intentionally excludes browser automation.
+The first evaluation intentionally excluded browser automation.
 
-## Evaluation boundary
+## Evaluation boundary opened here
 
-The intended sequence is:
+The intended sequence was:
 
 ```text
 1. verify Node.js >= 22
@@ -111,8 +120,10 @@ source ingestion NOT STARTED
 
 Then run the already-governed ingestion, working-store audit, encrypted independent backup round trip, clean restore and restored audit through the existing manual / Codex / Claude Code execution paths.
 
-## Exact next action
+## Historical next action
 
-Do not ingest yet.
+At creation, the next action was to begin the bounded prerequisite review. Later validation records show that the prerequisite, tunnel, ChatGPT tool-discovery and fresh-chat read-only stages subsequently passed; this historical checkpoint is not rewritten to pretend those later results were already known.
 
-Proceed with the bounded prerequisite review for Research 098, starting with local Node.js and Codex runtime verification and the current ChatGPT Developer Mode / App availability check.
+## Clerical identity correction
+
+The Codexless evaluation was initially referenced here as Research 098. A later continuity audit found that Research 098 was already occupied by the unrelated Cockpit presentation-state integrity record. The Codexless evaluation is therefore canonically Research 105. This path/number correction does not change the checkpoint's substantive historical meaning.
