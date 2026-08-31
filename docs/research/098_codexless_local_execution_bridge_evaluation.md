@@ -72,6 +72,36 @@ Codex Agent escalation remains a separate explicit path
 
 The candidate therefore appears much closer to the needed ADS capability than building a bespoke local bridge immediately.
 
+### Preliminary upstream implementation review
+
+The current upstream `main` package inspected on 2026-08-31 identifies itself as:
+
+```text
+codexless 0.1.1-preview.5
+Node engine requirement >=22
+@openai/codex dependency 0.147.0
+MCP packages 2.0.0
+```
+
+This identifies the currently inspected source state only. ADS has not yet selected a pinned release/tag/commit for installation.
+
+The Windows entrypoint is a small wrapper around `scripts/install.ps1`. Initial installer inspection confirms that it:
+
+```text
+requires Windows
+requires Node.js >=22
+requires npm
+uses a staging directory before activation
+uses lifecycle/activation locking
+has rollback handling for failed activation
+runs doctor checks before accepting the staged installation
+uses %LOCALAPPDATA%\Codexless as the default install location
+uses user-local state outside the install tree
+supports existing-runtime and recommended-runtime modes
+```
+
+The initial review found no reason to reject the candidate before local prerequisite testing. This is not yet a full source-code security audit and does not authorize installation by itself.
+
 ## 3. Security interpretation
 
 Codexless must be treated as software capable of affecting real files and running real commands.
