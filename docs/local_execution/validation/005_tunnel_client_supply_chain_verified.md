@@ -1,7 +1,7 @@
 # Tunnel client supply-chain verification passed
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `OFFICIAL_TUNNEL_CLIENT_ARCHIVE_VERIFIED_RUNTIME_KEY_NEXT`
 
 ## Observed state
