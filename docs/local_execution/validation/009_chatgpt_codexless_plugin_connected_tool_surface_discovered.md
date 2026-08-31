@@ -1,7 +1,7 @@
 # ChatGPT Codexless plug-in connected and tool surface discovered
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `CHATGPT_PLUGIN_CONNECTED_READ_ONLY_VALIDATION_NEXT`
 
 ## Observed product state
