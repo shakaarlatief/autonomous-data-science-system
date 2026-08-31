@@ -1,7 +1,7 @@
 # Secure MCP Tunnel provisioned
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `TUNNEL_PROVISIONED_CLIENT_AND_RUNTIME_KEY_NEXT`
 
 ## Observed product state
