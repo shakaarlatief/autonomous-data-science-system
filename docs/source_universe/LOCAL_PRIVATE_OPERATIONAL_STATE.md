@@ -2,6 +2,7 @@
 
 **Status:** Accepted Source Universe operational-state contract  
 **Date:** 2026-08-30  
+**Last reviewed:** 2026-08-31  
 **Scope:** Preserve machine-specific and private operational coordinates needed to execute the permanent Source Vault bootstrap without leaking them into the public repository or forcing future conversations to ask the project owner for already-resolved information again.
 
 ## Purpose
@@ -28,6 +29,7 @@ PRIVATE COMPANION KNOWLEDGE REPOSITORY
 LOCAL PRIVATE OPERATIONAL STATE
     execution-ready exact local paths
     exact machine/storage measurements when useful
+    remote-backup destination references and transport metadata
     other machine-specific values required for local execution
 ```
 
@@ -55,7 +57,7 @@ A public template is preserved at:
 docs/source_universe/local_private_state.example.json
 ```
 
-The private file is operational input, not a replacement for `CURRENT_STATE.md`, specifications, checkpoints, accepted public evidence, or the future private companion knowledge repository.
+The private file is operational input, not a replacement for `CURRENT_STATE.md`, specifications, checkpoints, accepted public evidence, or the private companion knowledge repository.
 
 ## Public status vocabulary
 
@@ -112,12 +114,18 @@ The local state file may contain:
 ORIGINAL_SOURCE_ROOT
 SOURCE_REGISTRY_DATABASE
 SOURCE_VAULT_ROOT
+BACKUP_STAGING_ROOT
 INDEPENDENT_BACKUP_ROOT
+INDEPENDENT_BACKUP_TRANSPORT
 CLEAN_RESTORE_ROOT
 capacity observations used for the current preflight
 ```
 
-It must not be used to store source binaries, credentials, registry snapshots or backup payloads.
+`BACKUP_STAGING_ROOT` is a local temporary surface where ADS may create and verify its canonical backup bundle. When it resides on the same physical device as the canonical vault, it must never be counted as the independent backup.
+
+`INDEPENDENT_BACKUP_ROOT` may identify a genuinely separate remote destination. `INDEPENDENT_BACKUP_TRANSPORT` may record non-secret provider/transport metadata such as provider class, destination reference, whether client-side encryption is required, and the selected encryption tool.
+
+The local state file must not contain passwords, encryption keys, OAuth credentials, access tokens, recovery secrets, source binaries, registry snapshots, or backup payloads. A field such as `credentials_stored_here` should remain false and exists to make that boundary explicit.
 
 ## Capacity observations
 
@@ -130,9 +138,9 @@ private companion / local private state
     exact volume / displayed capacity values / percentages / timestamp
 
 public repository
-    capacity preflight failed
-    cleanup required
-    recheck required before permanent write
+    capacity preflight failed or passed
+    cleanup / recheck status
+    next operational boundary
 ```
 
 After cleanup, the local measurement should be refreshed and the public status should be updated if the gate changes. The durable private companion observation should also be updated or superseded so future chats can recover the latest private state without relying on transient conversation memory.
@@ -160,7 +168,7 @@ Where useful, a local `.ads-private` file may be initialized or refreshed from t
 
 The local private file is deliberately not synchronized through public Git. Losing that file does not invalidate repository knowledge or Source Universe architecture, but it can require reconstructing machine-local execution coordinates.
 
-Once the private companion repository exists, important private continuity facts should have a durable private copy there so loss of one machine-local file does not force the project owner to repeat already-known information.
+Important private continuity facts should have a durable private copy in the private companion so loss of one machine-local file does not force the project owner to repeat already-known information.
 
 Once the permanent Source Vault exists, private operational state should also be included in an appropriate user-controlled private backup strategy if losing those coordinates would create unnecessary recovery work. It should never be added to the public repository merely for convenience.
 
@@ -170,13 +178,15 @@ Never commit to the public repository:
 
 ```text
 exact private filesystem paths
+private remote destination coordinates when they are not public-safe
 private credentials or tokens
+encryption passwords or keys
 private registry/database contents
 source binaries
 backup payloads
 other private machine notes not required as public evidence
 ```
 
-The private companion repository may store private knowledge such as exact paths and observations, but it must still not store ordinary secrets or act as bulk binary/source storage.
+The private companion repository may store private knowledge such as exact paths, remote destination references, and observations, but it must still not store ordinary secrets or act as bulk binary/source storage.
 
-Public Git may safely preserve that a private value is resolved, that a gate failed or passed, and what the next action is.
+Public Git may safely preserve that a private value is resolved, that a gate failed or passed, what class of independent backup is selected, and what the next action is.
