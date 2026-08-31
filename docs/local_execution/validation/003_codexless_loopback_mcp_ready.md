@@ -1,7 +1,7 @@
 # Codexless loopback MCP validation
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `LOOPBACK_MCP_READY_SECURE_TUNNEL_NEXT`
 
 ## Result
