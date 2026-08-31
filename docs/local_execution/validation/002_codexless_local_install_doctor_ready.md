@@ -1,7 +1,7 @@
 # Codexless local install and doctor validation
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `LOCAL_CORE_READY_TUNNEL_NEXT`
 
 ## Evaluated build
