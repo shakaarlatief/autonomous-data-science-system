@@ -1,6 +1,6 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-08-30  
+**Date:** 2026-08-31  
 **Status:** Current human-readable routing view  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
@@ -23,11 +23,42 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Pending model obligation
 
-None.
+### MC-0008: independent repository metadata/reference-integrity architecture proposal
 
-The Source Universe architecture review and its execution follow-up are both closed. There is currently no Claude or Claude Code obligation blocking the permanent Source Vault bootstrap.
+```text
+reviewer               Claude / intended fresh session claude-02
+mode                   INDEPENDENT_THEN_COMPARATIVE
+coordination branch    v1-source-vault-bootstrap-resume
+exact pre-proposal ref 7794951cbedd16f2fd1a27170946aa59b952e27a
+phase                  WAITING_FOR_INDEPENDENT_PROPOSAL
+next actor             Claude
+write scope            docs/model_collaboration/threads/MC-0008/messages/** only
+```
 
-The remaining pre-deployment boundary is operational and human-controlled: private storage capacity/location suitability before the first permanent Source Registry / Source Vault write.
+Purpose:
+
+```text
+independently diagnose the demonstrated repository metadata/provenance/reference-integrity maintenance problem
+propose the smallest scalable architecture before ChatGPT freezes a candidate
+separate deterministic integrity checks from semantic human/model judgment
+define migration and CI strategy without assuming a universal metadata schema
+```
+
+Durable request:
+
+```text
+docs/model_collaboration/threads/MC-0008/BRIEF.md
+docs/model_collaboration/threads/MC-0008/THREAD.md
+docs/model_collaboration/threads/MC-0008/STATE.json
+```
+
+Expected first response:
+
+```text
+docs/model_collaboration/threads/MC-0008/messages/001_claude_independent_governed_document_integrity_proposal.md
+```
+
+MC-0008 blocks freezing or implementing the new repository-wide metadata/reference-integrity mechanism until the independent first pass is preserved and dispositioned. It is not a newly discovered Source Universe data-integrity defect. The project owner has chosen to complete this repository-preservation reflection before returning to permanent source ingestion.
 
 ## Most recently completed obligations
 

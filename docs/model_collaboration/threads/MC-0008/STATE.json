@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0008",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "WAITING",
+  "phase": "WAITING_FOR_INDEPENDENT_PROPOSAL",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "7794951cbedd16f2fd1a27170946aa59b952e27a",
+    "description": "Independent pre-proposal architecture review of ADS governed-document metadata, provenance, reference integrity, live-state synchronization, legacy migration, and mechanical validation before any repository-wide metadata-integrity implementation is frozen.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-12",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-02",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "COUNTER_DESIGNER",
+        "CRITIC",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0008/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "7794951cbedd16f2fd1a27170946aa59b952e27a",
+    "known_exposures": [
+      "Foundation 014 already records lightweight document metadata and explicitly defers stronger machine-readable metadata, staleness detection, dependency modeling and authority/supersession checks until observed maintenance pressure justifies them.",
+      "Research 103 and Research 104 already define the accepted repository information architecture, exhaustive Knowledge Map coverage for primary numbered knowledge families, and narrow current-routing validation.",
+      "Checkpoint 269 records recent continuity defects including stale current state, a duplicate Research identity, missing Knowledge Map routing and incomplete checkpoint metadata, all repaired as continuity/metadata defects.",
+      "The project owner has now asked for a repository-wide reflection on metadata and provenance across artifact families and wants the architecture improved systematically rather than through another isolated repair.",
+      "No ChatGPT implementation contract or candidate metadata schema has been frozen for MC-0008 before Claude's independent pass."
+    ],
+    "notes": "Claude's first pass is intended to be genuinely pre-proposal. Read the neutral MC-0008 brief and the exact frozen target only for substantive repository evidence. Do not inspect later candidate implementation/design artifacts before freezing the independent position."
+  },
+  "last_transition": {
+    "transition_id": "mc0008-open-independent-review",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "The project owner requested a systematic repository metadata/provenance improvement and explicitly asked for Claude's ideas before implementation. MC-0008 therefore opens an independent pre-proposal architecture pass before ChatGPT freezes or implements a candidate design.",
+    "repository_head": "7794951cbedd16f2fd1a27170946aa59b952e27a"
+  }
+}
