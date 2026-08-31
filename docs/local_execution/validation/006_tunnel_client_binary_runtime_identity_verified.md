@@ -1,7 +1,7 @@
 # Tunnel client binary runtime identity verified
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `TUNNEL_CLIENT_BINARY_READY_RUNTIME_KEY_NEXT`
 
 ## Observed state
