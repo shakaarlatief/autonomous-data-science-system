@@ -23,42 +23,47 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Pending model obligation
 
-### MC-0008: independent repository metadata/reference-integrity architecture proposal
+### MC-0008: comparative repository governed-document integrity review
 
 ```text
-reviewer               Claude / intended fresh session claude-02
-mode                   INDEPENDENT_THEN_COMPARATIVE
-coordination branch    v1-source-vault-bootstrap-resume
-exact pre-proposal ref 7794951cbedd16f2fd1a27170946aa59b952e27a
-phase                  WAITING_FOR_INDEPENDENT_PROPOSAL
-next actor             Claude
-write scope            docs/model_collaboration/threads/MC-0008/messages/** only
+reviewer                  Claude / claude-02
+conversation title        02 - Repository Governance & Integrity
+mode                      INDEPENDENT_THEN_COMPARATIVE
+coordination branch       v1-source-vault-bootstrap-resume
+exact pre-proposal ref    7794951cbedd16f2fd1a27170946aa59b952e27a
+independent proposal      messages/001_claude_independent_governed_document_integrity_proposal.md
+candidate for comparison  messages/002_chatgpt_task_owner_disposition_and_candidate_integrity_architecture.md
+phase                     WAITING_FOR_COMPARATIVE_REVIEW
+next actor                Claude
+write scope               docs/model_collaboration/threads/MC-0008/messages/** only
 ```
 
 Purpose:
 
 ```text
-independently diagnose the demonstrated repository metadata/provenance/reference-integrity maintenance problem
-propose the smallest scalable architecture before ChatGPT freezes a candidate
-separate deterministic integrity checks from semantic human/model judgment
-define migration and CI strategy without assuming a universal metadata schema
+compare the frozen ChatGPT candidate against Claude's already-preserved independent position
+identify genuine convergence and material disagreement
+challenge expanded V1 scope around validation/evidence, collaboration provenance, live-state freshness, reference existence, aggregate gating and private sync
+identify candidate overreach, omissions and any must-fix issue before canonical promotion or implementation
 ```
 
-Durable request:
+Durable routing:
 
 ```text
 docs/model_collaboration/threads/MC-0008/BRIEF.md
 docs/model_collaboration/threads/MC-0008/THREAD.md
 docs/model_collaboration/threads/MC-0008/STATE.json
+docs/model_collaboration/threads/MC-0008/messages/001_claude_independent_governed_document_integrity_proposal.md
+docs/model_collaboration/threads/MC-0008/messages/002_chatgpt_task_owner_disposition_and_candidate_integrity_architecture.md
 ```
 
-Expected first response:
+Expected comparative response:
 
 ```text
-docs/model_collaboration/threads/MC-0008/messages/001_claude_independent_governed_document_integrity_proposal.md
+docs/model_collaboration/threads/MC-0008/messages/003_claude_comparative_governed_document_integrity_review.md
 ```
 
-MC-0008 blocks freezing or implementing the new repository-wide metadata/reference-integrity mechanism until the independent first pass is preserved and dispositioned. It is not a newly discovered Source Universe data-integrity defect. The project owner has chosen to complete this repository-preservation reflection before returning to permanent source ingestion.
+MC-0008 blocks implementing or canonically promoting the new repository-wide metadata/reference-integrity mechanism until the comparative pass is preserved and dispositioned. It is not a Source Universe data-integrity defect. The project owner has chosen to complete this repository-preservation reflection before returning to permanent source ingestion.
 
 ## Most recently completed obligations
 
