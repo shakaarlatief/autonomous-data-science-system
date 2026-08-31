@@ -1,0 +1,93 @@
+name: MC-0008 metadata inventory
+
+on:
+  push:
+    paths:
+      - .github/workflows/mc0008-metadata-inventory.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inventory governed-document header patterns
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import collections
+          import json
+          import re
+          from pathlib import Path
+
+          root = Path('.')
+          field_re = re.compile(r'^\*\*([^*]+):\*\*\s*(.*)$')
+
+          families = {
+              'foundations': sorted((root / 'docs' / 'foundations').glob('[0-9][0-9][0-9]_*.md')),
+              'specifications': sorted((root / 'docs' / 'specifications').glob('[0-9][0-9][0-9]_*.md')),
+              'research': sorted((root / 'docs' / 'research').glob('[0-9][0-9][0-9]_*.md')),
+              'validation_evidence': sorted(
+                  p for p in (root / 'docs').rglob('*.md')
+                  if 'validation' in p.parts and p.is_file()
+              ),
+              'collaboration_messages': sorted(
+                  p for p in (root / 'docs' / 'model_collaboration' / 'threads').glob('MC-*/messages/[0-9][0-9][0-9]_*.md')
+                  if p.is_file()
+              ),
+          }
+
+          def header_fields(path: Path) -> tuple[str, ...]:
+              fields: list[str] = []
+              lines = path.read_text(encoding='utf-8').splitlines()
+              for line in lines[:80]:
+                  if line.startswith('## '):
+                      break
+                  match = field_re.match(line.strip())
+                  if match:
+                      fields.append(match.group(1).strip())
+              return tuple(fields)
+
+          report = {}
+          for family, paths in families.items():
+              field_counts = collections.Counter()
+              signatures = collections.Counter()
+              examples = collections.defaultdict(list)
+              no_fields = []
+              for path in paths:
+                  fields = header_fields(path)
+                  field_counts.update(fields)
+                  signatures[fields] += 1
+                  if len(examples[fields]) < 4:
+                      examples[fields].append(path.as_posix())
+                  if not fields:
+                      no_fields.append(path.as_posix())
+
+              report[family] = {
+                  'file_count': len(paths),
+                  'field_counts': dict(sorted(field_counts.items(), key=lambda kv: (-kv[1], kv[0]))),
+                  'signature_count': len(signatures),
+                  'signatures': [
+                      {
+                          'count': count,
+                          'fields': list(signature),
+                          'examples': examples[signature],
+                      }
+                      for signature, count in sorted(
+                          signatures.items(),
+                          key=lambda item: (-item[1], item[0]),
+                      )
+                  ],
+                  'no_header_field_count': len(no_fields),
+                  'no_header_field_examples': no_fields[:12],
+              }
+
+          print('MC0008_METADATA_INVENTORY_BEGIN')
+          print(json.dumps(report, indent=2, sort_keys=True))
+          print('MC0008_METADATA_INVENTORY_END')
+          PY
