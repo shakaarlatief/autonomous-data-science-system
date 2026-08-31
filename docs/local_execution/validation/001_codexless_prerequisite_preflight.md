@@ -1,7 +1,7 @@
 # Codexless prerequisite preflight
 
 **Date:** 2026-08-31  
-**Research:** `docs/research/098_codexless_local_execution_bridge_evaluation.md`  
+**Research:** `docs/research/105_codexless_local_execution_bridge_evaluation.md`  
 **Classification:** `PREREQUISITES_READY_CONNECTION_PATH_NEXT`
 
 ## Observed local prerequisite state
