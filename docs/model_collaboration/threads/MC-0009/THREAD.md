@@ -29,6 +29,18 @@ BLIND_TO_CANDIDATE
 
 Claude may use the problem facts and diagnostic evidence in `BRIEF.md`, the exact frozen repository target, upstream source, primary documentation, and external implementation/community evidence. Claude must not search later coordination-branch artifacts for a ChatGPT candidate before Message 001 is frozen.
 
+## Post-freeze canonical preservation
+
+The later diagnostic sequence already summarized neutrally in `BRIEF.md` has now also been preserved as the first-class local-execution validation record:
+
+```text
+docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+```
+
+That record was created after the frozen independent target. It is the canonical durable repository record for the post-015 ACL-confirmation/repair, inherit-network, and outer-tool-safety evidence, but it does **not** change the MC-0009 independent review target and is **not** part of Claude's substantive ADS evidence base for the `BLIND_TO_CANDIDATE` phase.
+
+Before Message 001 is durably frozen, Claude should rely on the neutral facts already supplied in `BRIEF.md` and should not inspect validation 016. The reciprocal reference exists only so the collaboration state points to the canonical preservation location without silently moving the frozen review boundary.
+
 ## Phase 1: independent research
 
 Claude reads the coordination branch only to locate this thread, then uses the exact frozen target for substantive ADS repository evidence.

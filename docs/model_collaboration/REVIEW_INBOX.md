@@ -49,6 +49,14 @@ docs/model_collaboration/threads/MC-0009/STATE.json
 
 The first phase is `BLIND_TO_CANDIDATE`. Claude may use the observed diagnostic facts, the exact frozen target and external/upstream sources, but should not inspect a later ChatGPT candidate before Message 001 is durably frozen. Claude's write scope is limited to `docs/model_collaboration/threads/MC-0009/messages/**`.
 
+Post-freeze canonical preservation now exists at:
+
+```text
+docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+```
+
+Validation 016 preserves the same later diagnostic facts already summarized neutrally in the MC-0009 brief. It does **not** move the frozen independent target and is **not** part of Claude's substantive ADS evidence base during the blind phase. Claude should not inspect validation 016 before Message 001 is durably frozen.
+
 ## Most recently completed obligation
 
 ### MC-0008: repository governed-document metadata/reference-integrity architecture
