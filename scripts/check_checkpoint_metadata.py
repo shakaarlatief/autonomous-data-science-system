@@ -8,6 +8,12 @@ from pathlib import Path
 
 
 CHECKPOINT_NAME_RE = re.compile(r"^(?P<number>\d{3})_.*\.md$")
+INTERMEDIATE_PREFIX = "intermediate_"
+INTERMEDIATE_NAME_RE = re.compile(
+    r"^intermediate_\d{4}-\d{2}-\d{2}_[a-z0-9][a-z0-9_-]*\.md$"
+)
+ORIGINAL_IDENTITY_RE = re.compile(r"^`?Checkpoint (?P<number>\d{3})`?$")
+INTERMEDIATE_H1_PREFIX = "# Historical Intermediate Milestone:"
 FIELD_RE = re.compile(r"^\*\*(?P<name>[^*]+):\*\*\s*(?P<value>.*?)(?:\s{2})?$")
 
 HISTORICAL_AUTHORITY_FIELDS = (
@@ -33,6 +39,11 @@ PROVIDER_NEUTRAL_PROVENANCE_FIELDS = (
     "Primary collaborator",
 )
 
+INTERMEDIATE_IDENTITY_FIELDS = (
+    "Original recorded identity",
+    "Identity disposition",
+)
+
 CONTRACT_START_CHECKPOINT = 100
 PROVIDER_NEUTRAL_START_CHECKPOINT = 204
 HEADER_SCAN_LINES = 60
@@ -54,12 +65,14 @@ class Finding:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Validate checkpoint metadata against docs/checkpoints/README.md. "
-            "The historical/authority core is stable. Checkpoints before 204 use "
-            "the historical ChatGPT session-provenance contract; Checkpoint 204+ "
-            "uses provider-neutral interaction provenance. By default, pre-100 "
-            "deficiencies are reported as legacy warnings while Checkpoint 100+ "
-            "deficiencies fail validation."
+            "Validate numbered checkpoint metadata and governed historical-intermediate "
+            "checkpoint milestones against docs/checkpoints/README.md. The historical/"
+            "authority core is stable. Numbered checkpoints before 204 use the historical "
+            "ChatGPT session-provenance contract; Checkpoint 204+ uses provider-neutral "
+            "interaction provenance. By default, pre-100 numbered deficiencies are reported "
+            "as legacy warnings while Checkpoint 100+ deficiencies fail validation. "
+            "Historical-intermediate milestones are always strict and use the provenance era "
+            "of their Original recorded identity."
         )
     )
     parser.add_argument(
@@ -71,7 +84,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Treat metadata deficiencies in legacy checkpoints 000-099 as errors too.",
+        help="Treat metadata deficiencies in legacy numbered checkpoints 000-099 as errors too.",
     )
     return parser.parse_args()
 
@@ -123,6 +136,14 @@ def iter_checkpoint_files(checkpoints_dir: Path) -> list[tuple[int, Path]]:
     return sorted(checkpoints)
 
 
+def iter_intermediate_checkpoint_files(checkpoints_dir: Path) -> list[Path]:
+    return sorted(
+        path
+        for path in checkpoints_dir.iterdir()
+        if path.is_file() and path.name.startswith(INTERMEDIATE_PREFIX)
+    )
+
+
 def format_problem(finding: Finding) -> str:
     parts: list[str] = []
     if finding.missing_fields:
@@ -132,9 +153,58 @@ def format_problem(finding: Finding) -> str:
     return "; ".join(parts)
 
 
+def validate_intermediate_checkpoint(path: Path) -> list[str]:
+    errors: list[str] = []
+
+    if not INTERMEDIATE_NAME_RE.fullmatch(path.name):
+        errors.append(
+            f"{path}: malformed historical-intermediate filename; expected "
+            "intermediate_YYYY-MM-DD_<descriptive-slug>.md"
+        )
+
+    lines = path.read_text(encoding="utf-8").splitlines()
+    h1 = lines[0].strip() if lines else ""
+    if not h1.startswith(INTERMEDIATE_H1_PREFIX):
+        errors.append(
+            f"{path}: H1 must begin with {INTERMEDIATE_H1_PREFIX!r}"
+        )
+
+    fields = read_header_fields(path)
+    original_identity = fields.get("Original recorded identity", "").strip()
+    original_match = ORIGINAL_IDENTITY_RE.fullmatch(original_identity)
+    if not original_identity:
+        errors.append(f"{path}: missing or empty Original recorded identity")
+        checkpoint_number: int | None = None
+    elif original_match is None:
+        errors.append(
+            f"{path}: Original recorded identity must be exactly `Checkpoint NNN`"
+        )
+        checkpoint_number = None
+    else:
+        checkpoint_number = int(original_match.group("number"))
+
+    required_fields = HISTORICAL_AUTHORITY_FIELDS + INTERMEDIATE_IDENTITY_FIELDS
+    if checkpoint_number is not None:
+        required_fields = (
+            required_fields_for_checkpoint(checkpoint_number)
+            + INTERMEDIATE_IDENTITY_FIELDS
+        )
+
+    missing = [field for field in required_fields if field not in fields]
+    empty = [field for field in required_fields if field in fields and not fields[field]]
+
+    if missing:
+        errors.append(f"{path}: missing=" + ", ".join(missing))
+    if empty:
+        errors.append(f"{path}: empty=" + ", ".join(empty))
+
+    return errors
+
+
 def main() -> int:
     args = parse_args()
-    checkpoints_dir = args.root / "docs" / "checkpoints"
+    root = args.root.resolve()
+    checkpoints_dir = root / "docs" / "checkpoints"
     if not checkpoints_dir.is_dir():
         print(f"Checkpoint directory not found: {checkpoints_dir}", file=sys.stderr)
         return 2
@@ -157,11 +227,16 @@ def main() -> int:
         else:
             errors.append(finding)
 
+    intermediate_paths = iter_intermediate_checkpoint_files(checkpoints_dir)
+    intermediate_errors: list[str] = []
+    for path in intermediate_paths:
+        intermediate_errors.extend(validate_intermediate_checkpoint(path))
+
     if legacy_warnings:
         print("Legacy checkpoint metadata still requiring normalization:")
         for finding in legacy_warnings:
             print(
-                f"  WARN {finding.path.relative_to(args.root)}: "
+                f"  WARN {finding.path.relative_to(root)}: "
                 f"{format_problem(finding)}"
             )
         print()
@@ -170,20 +245,33 @@ def main() -> int:
         print("Checkpoint metadata contract violations:")
         for finding in errors:
             print(
-                f"  ERROR {finding.path.relative_to(args.root)}: "
+                f"  ERROR {finding.path.relative_to(root)}: "
                 f"{format_problem(finding)}"
             )
         print()
 
+    if intermediate_errors:
+        print("Historical-intermediate checkpoint integrity violations:")
+        for error in intermediate_errors:
+            try:
+                rendered = str(Path(error.split(":", 1)[0]).relative_to(root)) + error.split(":", 1)[1]
+            except (ValueError, IndexError):
+                rendered = error
+            print(f"  ERROR {rendered}")
+        print()
+
     compliant_count = len(checkpoints) - len(legacy_warnings) - len(errors)
+    intermediate_compliant = len(intermediate_paths) if not intermediate_errors else 0
     print(
         "Checkpoint metadata summary: "
-        f"total={len(checkpoints)}, compliant={compliant_count}, "
-        f"legacy_warnings={len(legacy_warnings)}, errors={len(errors)}, "
+        f"numbered_total={len(checkpoints)}, numbered_compliant={compliant_count}, "
+        f"legacy_warnings={len(legacy_warnings)}, numbered_errors={len(errors)}, "
+        f"historical_intermediates={len(intermediate_paths)}, "
+        f"historical_intermediate_compliant={intermediate_compliant}, "
         f"provider_neutral_from={PROVIDER_NEUTRAL_START_CHECKPOINT}"
     )
 
-    return 1 if errors else 0
+    return 1 if errors or intermediate_errors else 0
 
 
 if __name__ == "__main__":

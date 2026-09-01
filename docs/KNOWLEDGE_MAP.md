@@ -30,7 +30,9 @@ docs/specifications/   every numbered specification must be routed
 docs/research/         every numbered research record must be routed
 ```
 
-Historical checkpoints are much more numerous and are not duplicated as hundreds of visible links. Instead, every numbered checkpoint is covered by validated semantic range assignments later in this file, while especially important checkpoints are linked directly inside relevant subjects. Specialized domain indexes remain authoritative where they exist.
+Historical checkpoints are much more numerous and are not duplicated as hundreds of visible links. Every numbered checkpoint is covered by validated semantic range assignments later in this file, while especially important checkpoints may be linked directly inside relevant subjects.
+
+A governed historical intermediate checkpoint milestone has no active checkpoint number and therefore cannot truthfully participate in a numeric range. Every `docs/checkpoints/intermediate_*.md` milestone must instead be routed directly under at least one semantically appropriate subject. Specialized domain indexes remain authoritative where they exist.
 
 Mechanical coverage and path integrity are checked by `scripts/check_knowledge_map.py`.
 
@@ -275,6 +277,7 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
 docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
 docs/specifications/026_v1_repository_integrity_recovery_amendment.md
+docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
@@ -284,6 +287,7 @@ docs/research/104_repository_information_architecture_and_exhaustive_knowledge_r
 docs/research/105_codexless_local_execution_bridge_evaluation.md
 docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
 docs/research/107_post_outage_repository_integrity_recovery_audit.md
+docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
@@ -463,7 +467,7 @@ docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
 ### Cockpit implementation provenance, source-faithful reintegration and fidelity
 <!-- KM-TOPIC: cockpit-provenance -->
 
-Use for the holistic-integration failure, exact implementation recovery, provenance manifests, source-faithful reintegration and fidelity verification.
+Use for the holistic-integration failure, exact implementation recovery, provenance manifests, source-faithful reintegration, historical intermediate fidelity milestones and fidelity verification.
 
 ```text
 docs/DEVELOPMENT_METHOD.md
@@ -478,6 +482,7 @@ docs/research/091_source_faithful_reintegration_interaction_integrity_gate.md
 docs/research/098_intermittent_cockpit_presentation_state_integrity_recovery.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
 docs/checkpoints/251_cockpit_implementation_provenance_recovered_and_reintegration_opened.md
+docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/cockpit/README.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
@@ -526,6 +531,7 @@ docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
 docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
+docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
 docs/methodological_knowledge/COVERAGE_MAP.md
 docs/cockpit/PHASE_C_DECISION_LEDGER.md
 docs/cockpit/ACCEPTED_IMPLEMENTATION_MANIFEST.md
@@ -563,7 +569,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 267-267 source-universe development-governance cockpit-core conversation-workspace shell-rail -->
 <!-- KM-CHECKPOINT-RANGE: 268-269 source-universe development-governance -->
 
-Important checkpoints are linked directly in the subject sections above. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
+Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
 ## Specialized library indexes
 
@@ -588,8 +594,9 @@ At a meaningful promotion or reconciliation boundary:
 4. link specialized indexes rather than duplicating their full contents;
 5. preserve maturity and authority distinctions in the source artifacts themselves;
 6. extend checkpoint range routing when new checkpoint numbers move beyond the covered range;
-7. add a new subject only when a genuinely distinct durable knowledge domain emerges;
-8. run scripts/check_knowledge_map.py.
+7. directly route every governed historical intermediate checkpoint milestone under at least one subject;
+8. add a new subject only when a genuinely distinct durable knowledge domain emerges;
+9. run scripts/check_knowledge_map.py.
 ```
 
 Do not update this map merely because another commit exists. Update it when the project's durable knowledge structure changes.

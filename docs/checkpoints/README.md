@@ -4,7 +4,8 @@
 **Authority:** Governs metadata and interpretation of files in `docs/checkpoints/`  
 **Initial contract effective from:** Checkpoint 100  
 **Provider-neutral provenance effective from:** Checkpoint 204  
-**Last reviewed:** 2026-08-27
+**Historical-intermediate milestone contract effective from:** Specification 027  
+**Last reviewed:** 2026-09-01
 
 ## Purpose
 
@@ -268,6 +269,64 @@ That historical repair is closed. The v0.5 provider-neutral migration begins pro
 
 ---
 
+## Historical intermediate milestones
+
+A rare identity-repair case may require preserving a real checkpoint-like historical milestone while retiring its numeric identity because that number is canonically owned by a different checkpoint.
+
+Such a record is not deleted when it still contains useful continuity/evidence, and it is not assigned a fabricated replacement number.
+
+The governed filename form is:
+
+```text
+docs/checkpoints/intermediate_YYYY-MM-DD_<descriptive-slug>.md
+```
+
+The H1 must begin with:
+
+```text
+# Historical Intermediate Milestone:
+```
+
+The wrapper must contain the normal historical/authority core plus:
+
+```text
+**Original recorded identity:** `Checkpoint NNN`
+**Identity disposition:** ...
+```
+
+Interaction provenance follows the same checkpoint-era contract as the original recorded checkpoint number. This preserves the represented historical environment rather than rewriting it into a newer schema.
+
+Important semantics:
+
+```text
+Original recorded identity
+    historical provenance only
+    does not reactivate the number
+
+Identity disposition
+    explains why the numeric identity is retired
+
+intermediate_ filename
+    current repository identity of the preserved milestone
+    does not participate in numbered checkpoint freshness or chronology
+```
+
+Every governed `intermediate_...md` milestone is strict regardless of the age of its original number. Missing metadata is an integrity error, not a legacy warning.
+
+Every such milestone must also be directly routed in `docs/KNOWLEDGE_MAP.md` under at least one semantically appropriate subject. Numeric `KM-CHECKPOINT-RANGE` records remain exclusively for canonical numbered checkpoints.
+
+The first governed instance is:
+
+```text
+docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md
+```
+
+Its original `Checkpoint 252` identity is retired. Canonical numbered Checkpoint 252 remains the advanced spatial-rail study.
+
+This class is intentionally narrow. `README.md` and other non-numbered support/index files in this directory are not historical intermediate checkpoint milestones.
+
+---
+
 ## Required templates
 
 ### Checkpoint 204+ template
@@ -301,6 +360,24 @@ Session title
 ```
 
 No historical backfill to the new provider-neutral names is required.
+
+### Historical intermediate template
+
+```markdown
+# Historical Intermediate Milestone: Descriptive title
+
+**Date:** YYYY-MM-DD  
+**Status:** HISTORICAL INTERMEDIATE MILESTONE / NUMBERED IDENTITY RETIRED  
+**Checkpoint class:** CONTINUITY  
+**Project stage:** ...  
+**Scope:** Preserves ...  
+**Authority:** Historical provenance only.  
+<interaction provenance fields required by the original recorded checkpoint era>
+**Original recorded identity:** `Checkpoint NNN`  
+**Identity disposition:** Numbered identity retired because ...
+```
+
+The historical substantive body should be preserved rather than rewritten into current-state language.
 
 ---
 
@@ -347,7 +424,7 @@ This keeps checkpoint history informative as the project grows while preserving 
 
 The normal repository authority hierarchy still applies.
 
-Checkpoints preserve historical state and human/model-review evidence. They do not silently override current canonical documents, accepted/frozen specifications within scope, accepted decisions, or final experiment reports.
+Checkpoints and historical intermediate milestones preserve historical state and human/model-review evidence. They do not silently override current canonical documents, accepted/frozen specifications within scope, accepted decisions, or final experiment reports.
 
 Multi-model consensus inside a checkpoint also does not create automatic authority.
 
@@ -361,7 +438,9 @@ Checkpoint metadata is mechanically validated by:
 scripts/check_checkpoint_metadata.py
 ```
 
-The validator applies the ChatGPT-specific contract to checkpoints before 204 and the provider-neutral contract to Checkpoint 204 onward.
+The validator applies the ChatGPT-specific contract to numbered checkpoints before 204 and the provider-neutral contract to Checkpoint 204 onward.
+
+It also discovers every file beginning with `intermediate_`, enforces the governed filename/H1/identity-disposition contract, and applies the provenance era implied by its `Original recorded identity`.
 
 This versioned validation is deliberate. Metadata should evolve prospectively rather than drift silently.
 
@@ -369,13 +448,15 @@ This versioned validation is deliberate. Metadata should evolve prospectively ra
 
 A checkpoint-producing repository change is not considered operationally closed until the checkpoint metadata validation for that change has completed successfully.
 
+The same rule applies to creation or repair of a governed historical intermediate milestone.
+
 The active collaborator should therefore:
 
 ```text
-write checkpoint
+write checkpoint or historical intermediate milestone
 -> inspect the Checkpoint metadata check result
--> if failed, repair the checkpoint before treating the gate as closed
--> only then rely on the checkpoint as a clean continuation boundary
+-> if failed, repair the record before treating the gate as closed
+-> only then rely on the record as a clean historical/continuity boundary
 ```
 
-A failed metadata check does not invalidate the substantive historical evidence in the checkpoint body, but it is a repository-integrity defect and should not be ignored while continuing to accumulate later checkpoints.
+A failed metadata check does not invalidate substantive historical evidence in the body, but it is a repository-integrity defect and should not be ignored while continuing to accumulate later records.

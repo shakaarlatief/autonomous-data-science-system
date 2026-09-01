@@ -1,7 +1,7 @@
 # Development Method
 
 **Status:** Current canonical project-development method  
-**Current version:** 0.8  
+**Current version:** 0.9  
 **Last reviewed:** 2026-09-01
 
 ## Purpose
@@ -37,7 +37,7 @@ The preservation and verification process must be strong enough for a large long
 
 ## Repository information architecture
 
-Development Method v0.8 preserves the v0.7 single-responsibility information architecture and adds a bounded integrity layer around it:
+Development Method v0.9 preserves the v0.8 single-responsibility information architecture and integrity layer, and closes the historical-intermediate checkpoint edge case identified after the duplicate Checkpoint 252 repair:
 
 ```text
 README.md
@@ -125,14 +125,14 @@ The governed classes are:
 ```text
 live canonical state
 numbered durable knowledge
-checkpoints
+checkpoints and historical intermediate checkpoint milestones
 validation/evidence
 model collaboration
 specialized ledgers/indexes
 global prose/code/Git history
 ```
 
-The public integrity implementation follows Research 106 and Specifications 025/026:
+The public integrity implementation follows Research 106, Research 108 and Specifications 025/026/027:
 
 ```text
 numbered identity
@@ -143,7 +143,14 @@ prospective metadata
     Foundation >= 025 requires Date / Status / Scope
     Specification >= 025 requires Date / Status / Scope
     Research >= 106 requires Date / Status / Scope
-    checkpoint metadata remains governed by the existing checkpoint contract
+    numbered checkpoint metadata remains governed by the existing checkpoint contract
+
+historical intermediate checkpoint milestones
+    explicit intermediate_YYYY-MM-DD_<slug>.md identity
+    no active checkpoint number
+    Original recorded identity + Identity disposition required
+    checkpoint-era metadata/provenance contract remains enforced
+    direct Knowledge Map routing required
 
 validation/evidence
     exact pre-cutover paths are preserved by one immutable compatibility snapshot
@@ -160,6 +167,26 @@ identity agreement
 
 The compatibility snapshot is a migration boundary, not a hand-maintained artifact registry. Normal development must not extend it to bypass prospective validation.
 
+### Historical-intermediate checkpoint identity
+
+A historical intermediate milestone exists only when a real historical checkpoint-like boundary remains useful but its original numeric identity must be retired because that number is canonically owned elsewhere.
+
+The repair rule is:
+
+```text
+use docs/checkpoints/intermediate_YYYY-MM-DD_<descriptive-slug>.md
+preserve the historical substantive body
+preserve Original recorded identity as provenance only
+record a non-empty Identity disposition
+do not fabricate a replacement checkpoint number
+do not participate in numbered current-checkpoint freshness
+require direct Knowledge Map routing
+```
+
+The `intermediate_` prefix is governed. Ordinary non-numbered support files in `docs/checkpoints/`, such as `README.md`, are not checkpoint milestones.
+
+This rule keeps one canonical meaning for every active checkpoint number while preventing useful displaced historical milestones from becoming orphaned evidence.
+
 ## Live-state integrity
 
 `docs/CURRENT_STATE.md` and `docs/current_routing.json` own overlapping live facts and must agree.
@@ -169,6 +196,8 @@ Agreement alone is insufficient when both are stale. On the active development b
 ```text
 current_checkpoint == maximum numbered checkpoint present in that checked branch tree
 ```
+
+Historical intermediate checkpoint milestones do not participate in that maximum because their numeric identity is explicitly retired.
 
 The rule is branch-scoped. An unrelated branch with a different historical checkpoint population does not make the active branch stale.
 
@@ -205,6 +234,8 @@ canonical reconciliation edits belonging to one already-frozen transition
 Several small refinements may be preserved together when that review boundary closes or materially changes.
 
 Closed historical checkpoints are not rewritten to make later events appear contemporaneous. Metadata/provenance-only repair is permitted when it restores the checkpoint contract or corrects provenance without rewriting substantive historical knowledge.
+
+If identity repair displaces a useful historical milestone from the numbered checkpoint family, use the governed historical-intermediate class rather than deleting it or inventing a new number.
 
 Checkpoint metadata and role are governed by `docs/checkpoints/README.md` and mechanically validated.
 
@@ -252,7 +283,9 @@ docs/research/
 
 A source may be routed to multiple subjects. Multiple membership is a feature when it improves retrieval.
 
-Numbered checkpoints are assigned through compact semantic range records so every historical checkpoint belongs to one or more topics without reproducing the entire checkpoint directory as visible prose. Important checkpoints may additionally be linked directly.
+Numbered checkpoints are assigned through compact semantic range records so every historical checkpoint belongs to one or more topics without reproducing the entire checkpoint directory as visible prose. Important numbered checkpoints may additionally be linked directly.
+
+Every governed historical intermediate checkpoint milestone must be linked directly under at least one semantic subject because it has no active checkpoint number and therefore cannot be represented truthfully by a checkpoint range.
 
 Specialized indexes remain first-class retrieval surfaces and should be linked rather than copied into the global map.
 
@@ -263,13 +296,13 @@ scripts/check_knowledge_map.py
 .github/workflows/knowledge-map-integrity.yml
 ```
 
-The validator protects topic identity/non-empty routing, Subject-index alignment, path integrity, exhaustive durable-family coverage, checkpoint-range coverage, specialized-index reachability and absence of live-state leakage.
+The validator protects topic identity/non-empty routing, Subject-index alignment, path integrity, exhaustive durable-family coverage, numbered checkpoint-range coverage, direct historical-intermediate checkpoint coverage, specialized-index reachability and absence of live-state leakage.
 
 A green Knowledge Map validator establishes **structural coverage and integrity**, not semantic-routing correctness. Periodic reconciliation therefore includes a lightweight routing-quality spot-check.
 
 ## Risk-scaled verification
 
-Development Method v0.8 retains the V0-V4 risk-scaled verification model:
+Development Method v0.9 retains the V0-V4 risk-scaled verification model:
 
 ```text
 V0  documentation / provenance
@@ -350,11 +383,11 @@ The aggregate reuses the accepted focused validators rather than creating parall
 family-aware identity and prospective metadata
 validation/evidence compatibility/prospective contract
 typed and compatible explicit references
-Knowledge Map integrity
+Knowledge Map integrity, including direct historical-intermediate routing
 CURRENT_STATE/current_routing synchronization
-active-branch checkpoint freshness
+active-branch numbered-checkpoint freshness
 stable current_boundary
-checkpoint metadata
+numbered and historical-intermediate checkpoint metadata
 model-collaboration state
 ```
 
@@ -383,10 +416,10 @@ Rules:
 private inaccessible
     -> NOT_VERIFIED, not fabricated PASS and not public FAIL
 
-public PASS + required private NOT_VERIFIED
+public PASS + private required but inaccessible
     -> rotation HOLD
 
-public PASS + accessible required private mismatch
+public PASS + accessible private anchor mismatch
     -> rotation FAIL
 
 public PASS + required private PASS + no open transition obligations
@@ -449,6 +482,7 @@ Research 103 / v0.6    evergreen routing recovery + risk-scaled verification
 Research 104 / v0.7    single-responsibility information architecture + exhaustive routing
 MC-0008 / v0.8         family-aware integrity + continuity/preflight hardening
 Research 107           abnormal-interruption recovery audit and classification method
+Research 108 / v0.9    governed historical-intermediate checkpoint integrity
 ```
 
 ## Governed multi-model development
@@ -482,10 +516,11 @@ Ask the questions separately:
 ```text
 Is CURRENT_STATE concise, present-tense and accurate?
 Does current_routing agree with CURRENT_STATE?
-Is the active-branch checkpoint fresh?
+Is the active-branch numbered checkpoint fresh?
 Is current_boundary stable and semantic?
 Does docs/README describe the repository roles that actually exist?
 Does KNOWLEDGE_MAP exhaustively route durable numbered knowledge by subject?
+Are governed historical intermediate checkpoints directly discoverable?
 Does a lightweight sample confirm routing quality, not merely route coverage?
 Are specialized indexes still globally reachable?
 Are VISION/PRINCIPLES/DECISIONS/OPEN_QUESTIONS current?
@@ -522,11 +557,31 @@ AI-assisted curation under normal governance
 
 Semantic/vector repository retrieval, generated semantic catalogs, contradiction engines, generalized dependency graphs and heavier orchestration remain deferred until observed need justifies them.
 
-Development Method v0.8 still does **not** introduce a vector/semantic knowledge database. The integrity layer is deliberately small, typed and attached to existing authority surfaces rather than becoming a second truth system.
+Development Method v0.9 still does **not** introduce a vector/semantic knowledge database. The integrity layer is deliberately small, typed and attached to existing authority surfaces rather than becoming a second truth system.
 
 If the central Knowledge Map later becomes a demonstrated reconstruction-read-cost or maintenance bottleneck, or repeated semantic-routing drift survives the current guards, distributed per-artifact topic metadata with a generated semantic view remains the leading lightweight successor architecture to evaluate before introducing a heavier semantic repository database.
 
 ## Version history
+
+### Version 0.9
+
+**Introduced:** historical-intermediate checkpoint integrity extension, 2026-09-01. No new checkpoint is created merely for this bounded method refinement.
+
+- preserved the single canonical numeric identity of Checkpoint 252;
+- retained the earlier source-faithful milestone as useful historical evidence without fabricating a replacement number;
+- introduced the governed `intermediate_YYYY-MM-DD_<slug>.md` checkpoint-milestone class;
+- extended checkpoint metadata validation to that class;
+- required direct Knowledge Map routing for every governed historical intermediate milestone;
+- preserved numbered checkpoint range coverage and active-checkpoint freshness unchanged;
+- kept ordinary non-numbered checkpoint support files outside the milestone class;
+- retained the existing aggregate public repository-integrity gate rather than creating a parallel validator system.
+
+Evidence:
+
+```text
+docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
+docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md
+```
 
 ### Version 0.8
 

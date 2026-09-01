@@ -10,6 +10,10 @@ CHECKPOINT_RANGE_RE = re.compile(
     r"<!--\s*KM-CHECKPOINT-RANGE:\s*(\d{3})-(\d{3})\s+([a-z0-9 -]+?)\s*-->"
 )
 NUMBERED_NAME_RE = re.compile(r"^(\d{3})_.*\.md$")
+INTERMEDIATE_PREFIX = "intermediate_"
+INTERMEDIATE_CHECKPOINT_NAME_RE = re.compile(
+    r"^intermediate_\d{4}-\d{2}-\d{2}_[a-z0-9][a-z0-9_-]*\.md$"
+)
 SUBJECT_INDEX_ENTRY_RE = re.compile(r"^\s*(\d+)\.\s+(.+?)\s*$")
 SUBJECT_HEADING_RE = re.compile(r"^###\s+(.+?)\s*$")
 
@@ -77,7 +81,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Validate the ADS evergreen semantic Knowledge Map, including exhaustive "
-            "numbered durable-family routing and checkpoint topic coverage."
+            "numbered durable-family routing, numbered checkpoint topic coverage, and "
+            "direct routing of governed historical-intermediate checkpoint milestones."
         )
     )
     parser.add_argument(
@@ -128,6 +133,39 @@ def checkpoint_numbers(root: Path) -> set[int]:
         if match:
             numbers.add(int(match.group(1)))
     return numbers
+
+
+def intermediate_checkpoint_paths(root: Path) -> tuple[set[str], list[str]]:
+    directory = root / "docs" / "checkpoints"
+    if not directory.is_dir():
+        return set(), []
+
+    paths: set[str] = set()
+    errors: list[str] = []
+    for path in directory.iterdir():
+        if not path.is_file() or not path.name.startswith(INTERMEDIATE_PREFIX):
+            continue
+        relative = path.relative_to(root).as_posix()
+        if not INTERMEDIATE_CHECKPOINT_NAME_RE.fullmatch(path.name):
+            errors.append(
+                "malformed historical-intermediate checkpoint filename: " + relative
+            )
+            continue
+        paths.add(relative)
+    return paths, errors
+
+
+def validate_intermediate_checkpoint_routes(
+    root: Path, routed_paths: set[str]
+) -> list[str]:
+    paths, errors = intermediate_checkpoint_paths(root)
+    missing = sorted(paths - routed_paths)
+    if missing:
+        errors.append(
+            "historical-intermediate checkpoints without direct semantic routing: "
+            + ", ".join(missing)
+        )
+    return errors
 
 
 def subject_index_entries(text: str) -> list[tuple[int, str]]:
@@ -265,6 +303,8 @@ def validate(root: Path) -> list[str]:
                 + ", ".join(missing_routes)
             )
 
+    errors.extend(validate_intermediate_checkpoint_routes(root, routed_paths))
+
     missing_specialized = sorted(REQUIRED_SPECIALIZED_ROUTES - routed_paths)
     if missing_specialized:
         errors.append(
@@ -332,6 +372,7 @@ def main() -> int:
         for relative_dir in NUMBERED_FAMILIES
     }
     checkpoints = len(checkpoint_numbers(root))
+    intermediate_checkpoints = len(intermediate_checkpoint_paths(root)[0])
     print(
         "Knowledge map integrity: PASS "
         f"topics={len(topics)} "
@@ -340,6 +381,7 @@ def main() -> int:
         f"specifications={families['docs/specifications']} "
         f"research={families['docs/research']} "
         f"checkpoint_numbers={checkpoints} "
+        f"historical_intermediates={intermediate_checkpoints} "
         f"map={MAP_PATH}"
     )
     return 0
