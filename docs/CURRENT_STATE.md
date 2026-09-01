@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 269  
+**Checkpoint:** 270  
 **Date:** 2026-09-01  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-13
-Conversation title       13 - Repository Integrity / Canonical Reconciliation
+Interaction session      chatgpt-14
+Conversation title       14 - Codexless Write Validation and Source Vault Resume
 Primary collaborator     ChatGPT
 ```
 
@@ -22,98 +22,186 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: governed repository integrity hardening
+## Current active stage: Codexless local execution accepted, direct-lane authority audit before Source Vault resume
 
-The v0.8 repository-integrity architecture is implemented and its reconciled public target at commit `284c99e094a44750404fa197da127bfaf6d9b93a` passed the full Repository Integrity workflow on Ubuntu and Windows. The private companion was separately reconciled against that public target.
-
-A later audit of the repaired duplicate Checkpoint 252 case identified one bounded edge case: the useful source-faithful reintegration milestone whose numeric identity was retired remained outside both numbered-checkpoint metadata enumeration and numbered Knowledge Map range coverage.
-
-Research 108 and Specification 027 close that gap without changing numbered chronology.
-
-The current integrity architecture now distinguishes:
+Research 105 has crossed the controlled-write boundary and is now closed as:
 
 ```text
-numbered checkpoints
-    numbered identity
-    checkpoint-era metadata validation
-    active-branch freshness participation
-    compact Knowledge Map range coverage
-
-historical intermediate checkpoint milestones
-    non-numbered intermediate_YYYY-MM-DD_<slug>.md identity
-    Original recorded identity retained as provenance only
-    Identity disposition required
-    checkpoint-era metadata validation
-    direct Knowledge Map routing
-    no participation in numbered freshness or checkpoint ranges
+ACCEPTED_FOR_ADS_LOCAL_EXECUTION
 ```
 
-The existing aggregate public integrity gate remains the authority for exact-target acceptance. A public branch mutation is accepted only when the Repository Integrity workflow passes on that exact HEAD; prior green runs are not inherited automatically.
+The accepted result is deliberately scoped. Codexless is accepted as a **replaceable bounded local execution transport**, not as a new project authority, mandatory core dependency, or permission source.
+
+The final controlled local validation proved the full sequence against the real ADS checkout:
+
+```text
+clean local checkout synchronized by strict fast-forward
+local HEAD == origin-tracking HEAD
+one exact disposable artifact created
+text-exact readback PASS
+byte-exact readback PASS
+disposable artifact deleted
+working tree returned clean
+protected Source Universe state unchanged
+```
+
+Detailed evidence is preserved in:
+
+```text
+docs/local_execution/validation/012_controlled_write_read_delete_local_operation_verified.md
+docs/research/105_codexless_local_execution_bridge_evaluation.md
+docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+```
 
 ---
 
-## Checkpoint 252 identity repair remains canonical
+## Research 105 acceptance evidence
 
-Canonical numbered Checkpoint 252 remains:
+Before synchronization, the local checkout was clean at:
+
+```text
+284c99e094a44750404fa197da127bfaf6d9b93a
+```
+
+while the matching origin-tracking branch was at:
+
+```text
+063fdc99c76d7821efc58bb83823bcad33c068c5
+```
+
+The direct bridge command lane reached the real local repository but the current `:workspace` / `workspaceWrite` command-execution sandbox denied the `.git/FETCH_HEAD` write required by `git pull --ff-only`.
+
+The formal Codex agent lane then entered the normal exact-command approval path. The project owner granted a one-time approval for only:
+
+```text
+git pull --ff-only origin v1-source-vault-bootstrap-resume
+```
+
+The strict fast-forward succeeded without merge, rebase, reset, commit, push, or GitHub write.
+
+The disposable proof used:
+
+```text
+tests/research105_disposable_probe_20260901_7f3c9a2e.txt
+```
+
+with exact UTF-8 content:
+
+```text
+Research 105 disposable controlled-write proof.
+Nonce: 20260901-7f3c9a2e
+```
+
+and verified:
+
+```text
+text-exact match   True
+byte-exact match   True
+byte count         73
+SHA-256            2489c0a51e8c8f003043b8bd59f75fbf46590301a243d316645b4e2f990be564
+```
+
+The artifact was deleted, final existence was `False`, and the final local status was clean with local HEAD and origin both at `063fdc99c76d7821efc58bb83823bcad33c068c5`.
+
+A public preservation commit created after that local proof necessarily advances origin beyond the validation target. Before the next machine-local ADS mutation, the local checkout must therefore be fast-forwarded again to the then-current public HEAD.
+
+---
+
+## Direct-lane permission and supervision follow-up
+
+Research 105 acceptance does not hide the observed execution asymmetry:
+
+```text
+direct read / inspection                 PASS
+direct command execution                 PASS within current sandbox authority
+direct Git metadata write                BLOCKED at .git/FETCH_HEAD under current command/exec sandbox
+formal permission-aware Git operation    PASS after exact one-time approval
+controlled disposable local write        PASS
+```
+
+The project owner selected a bounded post-acceptance audit before permanent Source Vault ingestion resumes.
+
+The audit must reconstruct the actual implementation and prior setup from repository authority rather than guess from current UI behavior. It should distinguish at least:
+
+```text
+ChatGPT plug-in permission
+Developer MCP host capability
+Secure MCP Tunnel authority
+OpenAI tunnel-client/runtime-key authority
+Codexless transport configuration
+Codex project trust / permission profile
+command/exec sandbox projection
+workspace writable roots
+.git metadata treatment
+formal Codex agent approval routing
+```
+
+The goal is **not** unrestricted host access. The goal is to determine whether routine ADS-local writes and ordinary Git operations can be enabled safely through the direct ChatGPT -> bridge lane, using the smallest authority required, while unrelated host state, sensitive locations, credentials, private source material and browser authority remain outside the required boundary.
+
+If that refinement is not safely configurable or is not worth the complexity, Research 105 remains accepted through the already-proven formal permission-aware path.
+
+---
+
+## Known current Codexless integration limitations
+
+The following observations remain material:
+
+1. The current direct `command_exec` sandbox can deny Git metadata mutation even when the repository working tree is otherwise inside the workspace authority ceiling.
+2. During the formal Codex test, the visible Call Codex card remained in `Codex running` while the underlying agent was actually `awaitingApproval`. The bounded agent-state query exposed the exact pending command. Future supervision should not equate the Rich Card presentation with authoritative agent state when progress appears stalled.
+3. The persistent `chatgpt-14` conversation experienced intermittent ChatGPT host rejection of Developer MCP invocation after earlier successful bridge calls. Fresh disposable diagnostic conversations remained usable. This is a host/runtime integration limitation, not evidence that the local transport proof failed.
+4. The formal Call Codex card reported a high token-usage figure for the bounded task. The accounting semantics and cause are not yet audited, so no cost/efficiency conclusion is frozen from that observation alone.
+5. Browser integration remains deferred.
+
+---
+
+## Repository integrity hardening remains accepted
+
+The v0.8/v0.9 repository-integrity architecture remains the governing continuity and public-integrity framework. The reconciled public target at `284c99e094a44750404fa197da127bfaf6d9b93a` passed the full Repository Integrity workflow on Ubuntu and Windows, and the later historical-intermediate extension at `063fdc99c76d7821efc58bb83823bcad33c068c5` also passed the exact public workflows before the Research 105 local synchronization.
+
+The integrity architecture continues to distinguish numbered checkpoints from governed historical intermediate milestones. Canonical numbered Checkpoint 252 remains:
 
 ```text
 docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
 ```
 
-The earlier source-faithful reintegration milestone remains preserved as:
+The useful earlier source-faithful reintegration milestone remains preserved as:
 
 ```text
 docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md
 ```
 
-That intermediate record is still useful historical continuity and repair provenance. It receives no replacement checkpoint number.
+No renumbering of later checkpoints occurs.
 
-Specification 027 now makes its status mechanically explicit:
-
-```text
-metadata/provenance validation      REQUIRED
-direct semantic Knowledge Map route REQUIRED
-numbered checkpoint range           NOT APPLICABLE
-current_checkpoint freshness        NOT APPLICABLE
-```
-
-No renumbering of Checkpoint 253 onward occurs.
+Any new public branch mutation must pass the Repository Integrity workflow on its own exact HEAD before a new `PUBLIC_REPOSITORY_INTEGRITY=PASS` claim is made for that target.
 
 ---
 
-## Current canonical integrity route
+## Current canonical route
 
-The governing route for the present repository-integrity boundary is:
+The governing route for the current boundary is:
 
 ```text
-docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
-docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
 docs/research/105_codexless_local_execution_bridge_evaluation.md
-docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
-docs/research/107_post_outage_repository_integrity_recovery_audit.md
-docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
-docs/specifications/024_v1_model_collaboration_state_guard.md
-docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
-docs/specifications/026_v1_repository_integrity_recovery_amendment.md
-docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md
-docs/checkpoints/README.md
-docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
-docs/checkpoints/269_codexless_read_path_verified_continuity_reconciled_for_chatgpt_12_handoff.md
+docs/local_execution/validation/011_fresh_chat_read_only_local_operation_verified.md
+docs/local_execution/validation/012_controlled_write_read_delete_local_operation_verified.md
+docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/CONTINUITY.md
 docs/DEVELOPMENT_METHOD.md
 docs/current_routing.json
 docs/KNOWLEDGE_MAP.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
-Development Method v0.9 is the current operational method for this refinement.
+Repository-integrity background remains governed by Research 103-108 and Specifications 024-027.
 
-SOLO execution is proportionate here. The method keeps SOLO as the default for routine bounded work and requires multi-model collaboration when independent review or counter-design value justifies the coordination cost. Research 108 records why another Claude round was not required for this narrow edge case.
+Development Method v0.9 remains the current operational method.
 
 ---
 
 ## Source Vault remains paused and unchanged
 
-Repository-integrity hardening does not authorize Source Vault ingestion.
+The local-execution proof did not authorize or perform source ingestion.
 
 The permanent Source Universe remains frozen at:
 
@@ -134,21 +222,37 @@ Course 2                            BLOCKED
 
 The original source root and other machine-specific operational coordinates remain `RESOLVED_PRIVATE`. Their exact values do not belong in public Git.
 
-The next-generation Project Cockpit frontend exploration remains paused at its previously frozen state. This integrity refinement changes only repository governance around the preserved intermediate milestone; it does not alter accepted Cockpit design or implementation evidence.
+The next-generation Project Cockpit frontend exploration remains paused at its previously frozen state.
+
+Research 105 itself no longer blocks Source Vault ingestion. The current pause exists because the project owner selected the bounded direct-lane authority audit as the next engineering step before ingestion resumes.
 
 ---
 
-## Research 105 remains open at the controlled-write boundary
+## Interaction-provenance naming clarification
 
-The Codexless local-execution evaluation remains:
+The canonical naming guide has been clarified for this session boundary.
+
+The abstract pattern:
 
 ```text
-OPEN / READ-ONLY PATH VERIFIED / WRITE VALIDATION PENDING
+NN - Main Topic / Stage
 ```
 
-The controlled disposable write/read/delete proof has not been run and must not be inferred from GitHub-side repository mutations.
+uses `/` as explanatory notation meaning "main topic or stage". A literal slash is **not required punctuation**. Natural human wording is preferred, including conjunctions such as `and` when a title combines related concepts.
 
-That proof must test the actual local Codexless bridge against the actual local checkout, remain outside authoritative Source Universe state, and leave protected state unchanged.
+Therefore this session correctly uses:
+
+```text
+14 - Codexless Write Validation and Source Vault Resume
+```
+
+Historical titles that accurately record the title actually used are not retroactively rewritten merely for cosmetic conformity.
+
+The canonical rule lives in:
+
+```text
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
+```
 
 ---
 
@@ -167,28 +271,29 @@ CHAT_ROTATION_PREFLIGHT
     PASS | HOLD | FAIL
 ```
 
-A public PASS never proves private freshness. After any new public continuity commit, the private public-safe synchronization anchor must be reconciled separately before a new private PASS is claimed.
+A public PASS never proves private freshness. After the public commit preserving Checkpoint 270 and Research 105 closure, the private companion's public-safe synchronization anchor must be reconciled separately before a new private PASS is claimed for that boundary.
 
-Even when public and private integrity are both green, the open Research 105 local-execution obligation keeps chat-rotation preflight at HOLD until that transition obligation is resolved or explicitly reclassified.
+No deliberate chat rotation is currently required. A future rotation claim must evaluate the exact public target, required private continuity and any then-open transition obligations rather than inheriting an older PASS/HOLD state.
 
 ---
 
 ## Exact continuation order
 
-For the current branch HEAD:
+From the Research 105 acceptance boundary:
 
 ```text
-1. require the complete Repository Integrity workflow to pass on the exact public commit
-2. if private continuity is required, reconcile its public-safe anchor to that exact public commit and verify it separately
-3. keep CHAT_ROTATION_PREFLIGHT at HOLD while Research 105 remains an open transition obligation
-4. resume the controlled disposable Codexless local write/read/delete proof only through the actual local execution bridge
-5. classify the local-execution bridge explicitly
-6. only after prerequisite gates permit it, resume permanent Source Vault bootstrap/ingestion
+1. preserve Research 105 closure and Checkpoint 270 coherently
+2. require the complete Repository Integrity workflow to pass on the exact new public HEAD
+3. reconcile the private companion public-safe anchor to that exact public commit and verify private continuity separately
+4. before further local work, fast-forward the local checkout from the validation target to the new public HEAD
+5. reconstruct and audit the direct-lane permission architecture from durable repository evidence
+6. determine whether a smaller safe direct-write/Git authority configuration exists or keep the proven formal approval lane
+7. resume reviewed ingestion of the frozen 20-entry first corpus into the permanent Source Registry and Source Vault
+8. run the working-store integrity audit before accepting any backup
+9. continue deterministic encrypted backup, remote retrieval, decryption, clean restore and restored integrity proof
 ```
 
-If the public gate exposes an unexpected defect, diagnose the exact contract before further mutation. Do not weaken validators to obtain a green result.
-
-No new checkpoint is created merely because Research 108, Specification 027 or Development Method v0.9 exists. A checkpoint after 269 still requires a meaningful verified transition.
+Do not weaken repository-integrity validators or Source Universe safety boundaries merely to simplify the local execution path.
 
 ---
 
@@ -209,18 +314,14 @@ Then read the governing current boundary:
 
 ```text
 docs/research/105_codexless_local_execution_bridge_evaluation.md
-docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
-docs/research/107_post_outage_repository_integrity_recovery_audit.md
-docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
-docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
-docs/specifications/026_v1_repository_integrity_recovery_amendment.md
-docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md
-docs/checkpoints/README.md
-docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md
-docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
-docs/checkpoints/269_codexless_read_path_verified_continuity_reconciled_for_chatgpt_12_handoff.md
+docs/local_execution/validation/012_controlled_write_read_delete_local_operation_verified.md
+docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/DEVELOPMENT_METHOD.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
+
+Read Research 106-108 and Specifications 025-027 when repository-integrity details are relevant to the next mutation.
 
 When relevant and accessible, retrieve the private companion only after the public reconstruction.
 

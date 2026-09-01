@@ -1,13 +1,14 @@
 # Research 105: Codexless Local Execution Bridge Evaluation
 
-**Status:** OPEN / READ-ONLY PATH VERIFIED / WRITE VALIDATION PENDING  
-**Date:** 2026-08-31  
+**Status:** CLOSED / `ACCEPTED_FOR_ADS_LOCAL_EXECUTION`  
+**Opened:** 2026-08-31  
+**Closed:** 2026-09-01  
 **Scope:** Evaluate whether Codexless can provide the active ChatGPT collaboration surface with a safe, bounded local execution bridge for ADS work before permanent Source Vault ingestion continues.  
-**Decision state:** Not yet accepted as an ADS dependency or architecture component. The full read-only product path is proven; governed local write behavior remains to be validated before classification.
+**Decision state:** Accepted as a replaceable bounded local execution transport. Read-only local access, direct command execution within the current sandbox, a permission-aware local write path, exact disposable write/read/delete behavior, visible denial, cleanup, and protected-state preservation have been proven. Acceptance does not make Codexless a core ADS dependency or authority layer.
 
 ## 1. Why this evaluation exists
 
-The first permanent Source Universe bootstrap has reached a point where most remaining work is machine-local:
+The first permanent Source Universe bootstrap reached a point where most remaining work is machine-local:
 
 ```text
 local Source Registry
@@ -31,8 +32,6 @@ ChatGPT reasons
     -> repeat
 ```
 
-This is transparent and safe but increasingly inefficient as ADS becomes more operationally local.
-
 The desired execution shape is:
 
 ```text
@@ -53,7 +52,7 @@ Candidate upstream project:
 https://github.com/liyana31811/Codexless
 ```
 
-Codexless is an independent open-source project, not an OpenAI product, and is currently a Technical Preview.
+Codexless is an independent open-source project, not an OpenAI product, and was evaluated as Technical Preview infrastructure.
 
 The ADS evaluation pinned and reviewed:
 
@@ -64,7 +63,7 @@ runtime mode               existing-only
 public MCP tool surface    42 tools
 ```
 
-The local Codex runtime used by the evaluation is:
+The local Codex runtime used by the evaluation was:
 
 ```text
 Codex CLI                  0.151.0
@@ -78,9 +77,9 @@ The evaluated Windows environment also satisfied the selected Codexless prerequi
 
 ## 3. Security and authority interpretation
 
-Codexless must be treated as software capable of affecting real files and running real commands. It is therefore evaluated as a transport under existing authority, not as a new authority source.
+Codexless must be treated as software capable of affecting real files and running real commands. It is therefore accepted as a transport under existing authority, not as a new authority source.
 
-Current ADS authority policy:
+ADS authority policy remains:
 
 ```text
 PUBLIC ADS REPOSITORY
@@ -118,7 +117,7 @@ No bridge result may weaken Source Vault governance, provenance requirements, se
 
 ## 4. Frozen Source Vault boundary
 
-The bridge evaluation began before source ingestion at a clean rollback point:
+The bridge evaluation began and ended before source ingestion at a clean rollback point:
 
 ```text
 permanent Source Registry      migrated / verified
@@ -134,11 +133,11 @@ independent backup round trip  not yet verified
 Course 2                       BLOCKED
 ```
 
-If the local bridge is rejected or deferred, Source Vault work can resume from exactly this boundary through the prior manual / Codex / Claude Code execution paths.
+The local execution evaluation did not modify authoritative Source Universe state.
 
 ## 5. Completed evaluation evidence
 
-The following bounded validations have been completed and preserved under `docs/local_execution/validation/`:
+The bounded validation chain is preserved under `docs/local_execution/validation/`:
 
 ```text
 001  local prerequisite preflight
@@ -151,7 +150,8 @@ The following bounded validations have been completed and preserved under `docs/
 008  foreground Secure MCP Tunnel health/readiness
 009  ChatGPT developer plug-in connection + tool discovery
 010  pre-existing chat host rejected developer-MCP invocation
-011  fresh-chat read-only local operation succeeded
+011  fresh disposable-chat read-only local operation succeeded
+012  controlled permission-aware write/read/delete local operation succeeded
 ```
 
 Important verified properties include:
@@ -171,20 +171,20 @@ browser integration            deferred
 
 No runtime API key, token, tunnel credential, browser profile, encryption secret, source binary, or private filesystem coordinate is stored in the public repository.
 
-## 6. Fresh-chat read-only result
+## 6. Read-only local path result
 
-The first invocation attempt from the long-running pre-installation ChatGPT conversation was rejected by the ChatGPT host before reaching the local bridge:
+The first invocation attempt from a long-running pre-installation ChatGPT conversation was rejected by the ChatGPT host before reaching the local bridge:
 
 ```text
 FORBIDDEN: This conversation does not support developer MCPs
 ```
 
-This did not mutate local state and was not classified as a Codexless/tunnel failure because the transport and tool-discovery layers had already passed.
+That did not mutate local state and was not classified as a Codexless/tunnel failure.
 
-A fresh ChatGPT conversation created after plug-in installation then successfully performed a read-only inspection of the real local ADS repository through the full product path:
+A fresh **disposable diagnostic interaction** created after plug-in installation then successfully performed a read-only inspection of the real local ADS repository through the full product path:
 
 ```text
-fresh ChatGPT conversation
+fresh disposable ChatGPT interaction
   -> ADS Codexless Local Bridge
   -> OpenAI Secure MCP Tunnel
   -> tunnel-client
@@ -203,99 +203,173 @@ repository-root enumeration   PASS
 local modifications           none
 ```
 
-The local checkout was also observed behind the remote branch at that moment because continuity evidence had been committed remotely during setup. The exact current behind count is intentionally not treated as durable state. A reviewed fast-forward-only synchronization is required before the write test.
+The successful diagnostic interaction did not consume a persistent ADS ChatGPT session number. Validation 011 has been reconciled accordingly after the provenance correction already preserved in Checkpoint 269 and Research 107.
 
-## 7. Remaining controlled write validation
+## 7. Controlled synchronization and local write result
 
-Read-only success is not sufficient for full ADS adoption. The next test must be deliberately disposable and outside authoritative Source Universe state.
-
-Required sequence:
+Before the write test, the real local checkout was clean but one commit behind its matching origin-tracking branch:
 
 ```text
-1. fast-forward the clean local branch to current origin
-2. verify local branch == remote and working tree clean
-3. create one exact disposable test artifact in an approved non-authoritative test surface
-4. read it back and verify exact contents
-5. remove only the artifact created by the test
-6. verify cleanup
-7. verify Git / protected Source Universe state remains unchanged
-8. preserve the evidence
+local HEAD   284c99e094a44750404fa197da127bfaf6d9b93a
+origin HEAD  063fdc99c76d7821efc58bb83823bcad33c068c5
 ```
 
-The first write test must not touch:
+A direct bridge `command_exec` attempt reached the local repository but could not complete `git pull --ff-only` because the active `:workspace` / `workspaceWrite` sandbox denied the `.git/FETCH_HEAD` write:
 
 ```text
-Source Registry
-Source Vault
-original educational corpus
-.ads-private credentials/secrets
-backup payloads
-recovery artifacts
+error: cannot open '.git/FETCH_HEAD': Permission denied
 ```
 
-## 8. Classification rule
+The failed attempt left the working tree clean.
 
-Possible classifications remain:
+The formal Codex agent lane was then used specifically so the blocked Git metadata operation could enter the normal permission-request path. It paused at one exact approval request for:
+
+```text
+git pull --ff-only origin v1-source-vault-bootstrap-resume
+```
+
+No additional permissions were requested. The project owner granted a one-time approval only.
+
+The strict fast-forward succeeded:
+
+```text
+284c99e094a44750404fa197da127bfaf6d9b93a
+    ->
+063fdc99c76d7821efc58bb83823bcad33c068c5
+```
+
+No merge, rebase, reset, commit, push, or GitHub write occurred.
+
+The controlled test then created exactly one non-authoritative artifact:
+
+```text
+tests/research105_disposable_probe_20260901_7f3c9a2e.txt
+```
+
+Exact UTF-8 content, including the final newline:
+
+```text
+Research 105 disposable controlled-write proof.
+Nonce: 20260901-7f3c9a2e
+```
+
+Exact verification result:
+
+```text
+text-exact match   True
+byte-exact match   True
+byte count         73
+SHA-256            2489c0a51e8c8f003043b8bd59f75fbf46590301a243d316645b4e2f990be564
+```
+
+The first verification attempt encountered a PowerShell parser error before reading or modifying anything. A Base64 byte-comparison verification then passed.
+
+The agent deleted only the disposable artifact. Final state:
+
+```text
+artifact exists                                False
+local HEAD                                     063fdc99c76d7821efc58bb83823bcad33c068c5
+origin/v1-source-vault-bootstrap-resume        063fdc99c76d7821efc58bb83823bcad33c068c5
+working tree                                   clean
+staged changes                                 none
+unstaged changes                               none
+protected Source Universe mutation             none
+```
+
+The full evidence is preserved in validation 012.
+
+## 8. Final classification
+
+Research 105 is classified:
 
 ```text
 ACCEPTED_FOR_ADS_LOCAL_EXECUTION
-    bounded local reads and controlled writes work reliably
-    authority remains acceptably constrained
-    denials fail visibly
-    provenance/results are inspectable
-    no secret leakage is observed
-
-ACCEPTED_READ_ONLY_ONLY
-    local inspection is useful but mutation is not yet trustworthy
-
-DEFERRED
-    product, tunnel, stability, or integration limitations prevent useful adoption now
-
-REJECTED_FOR_CURRENT_USE
-    security, authority, or reliability problems make the bridge unsuitable
 ```
 
-Acceptance as a local execution bridge does not make Codexless a core ADS product dependency. It remains replaceable infrastructure unless a later architectural decision explicitly elevates it.
+The acceptance criteria are satisfied at the evaluated boundary:
 
-## 9. Browser policy
+```text
+bounded local reads work                       PASS
+controlled local write works                   PASS
+exact readback is inspectable                  PASS
+delete-only cleanup works                      PASS
+permission denial fails visibly                PASS
+permission-aware approved operation works      PASS
+protected state remains unchanged              PASS
+no secret leakage observed                     PASS
+```
 
-Browser automation remains outside this first evaluation because filesystem, Git, command and test execution address the immediate bottleneck while logged-in browser authority introduces a larger privacy and prompt-injection surface.
+Acceptance is intentionally scoped. It means ADS may use Codexless as a replaceable local execution transport where its resolved authority is appropriate. It does **not** mean:
 
-Browser capability may be evaluated separately later only if a concrete ADS workflow materially benefits from it.
+```text
+Codexless is a core ADS architectural authority
+all local operations are permitted
+all direct command/exec mutations work
+browser automation is accepted
+arbitrary host filesystem access is required
+formal Codex agents must be used for every task
+```
 
-## 10. Relationship to Codex and Claude Code
+## 9. Direct lane versus formal Codex agent lane
 
-Codexless does not replace local Codex or Claude Code as engineering agents.
+The evaluation established an important routing distinction:
 
 ```text
 simple local inspection / deterministic execution
-    -> direct bridge tools where sufficient
+    -> direct bridge tools where the current authority permits the operation
 
-complex multi-file engineering / autonomous coding task
-    -> Codex or Claude Code when agent reasoning is useful
+operation blocked by command/exec sandbox but legitimately eligible for approval
+    -> formal Codex agent lane can enter the explicit permission-request workflow
 
-ChatGPT
-    -> primary reasoning / coordination surface for the current ADS collaboration
+complex multi-file engineering / autonomous coding
+    -> Codex or Claude Code only when agent reasoning adds value
 ```
 
-## 11. Exact next action
+The current direct command lane cannot perform at least the Git metadata write required by `.git/FETCH_HEAD` under the present sandbox projection. This is a concrete follow-up engineering question, not a hidden acceptance assumption.
 
-The next action is still **not Source Vault ingestion**.
+The project owner has selected a bounded post-acceptance audit to reconstruct the bridge/tunnel/Codex permission architecture from durable repository evidence and determine whether routine ADS-local writes and normal Git operations can be enabled safely through the direct ChatGPT -> bridge lane without invoking a formal Codex model for every mutation.
 
-It is:
+## 10. Observability and host-runtime limitations
+
+The formal agent task exposed a UI/observability limitation: the visible Call Codex card remained in a `Codex running` state while the underlying agent was actually `awaitingApproval`. Reading the bounded agent state exposed the exact pending command immediately.
+
+Future supervision should therefore distinguish presentation state from authoritative agent state when progress appears stalled.
+
+The persistent `chatgpt-14` interaction also experienced intermittent ChatGPT host rejection of Developer MCP invocation after earlier successful bridge calls:
 
 ```text
-use the fresh ChatGPT continuation session with ADS Codexless Local Bridge
-    -> fast-forward the clean local ADS branch to current origin
-    -> verify branch/current working-tree state
-    -> perform the controlled disposable write/read/delete test
-    -> classify Codexless explicitly
+FORBIDDEN: This conversation does not support developer MCPs
 ```
 
-Only after explicit classification should Source Vault ingestion resume through the selected execution path. Browser integration remains deferred.
+Fresh disposable conversations remained able to invoke the bridge. This remains a ChatGPT host/runtime integration limitation and should be investigated separately from the accepted local transport behavior.
 
-## 12. Numbering correction provenance
+The formal Call Codex card also reported a high token-usage figure for the bounded task. That observation may matter to efficiency, but its exact accounting semantics and cause have not been audited and no architectural conclusion is inferred from it yet.
+
+## 11. Browser policy
+
+Browser automation remains outside this evaluation because filesystem, Git, command and test execution address the immediate operational bottleneck while logged-in browser authority introduces a larger privacy and prompt-injection surface.
+
+Browser capability may be evaluated separately later only if a concrete ADS workflow materially benefits from it.
+
+## 12. Exact continuation after acceptance
+
+The local-execution acceptance prerequisite is now closed. Source Vault ingestion is no longer blocked by Research 105 itself.
+
+The selected immediate continuation is:
+
+```text
+preserve Research 105 acceptance evidence
+    -> reconcile public/private continuity for the new boundary
+    -> reconstruct the direct-lane permission architecture from repository evidence
+    -> determine the smallest safe authority change, if any, for routine direct local writes / Git
+    -> fast-forward the local checkout after any new public preservation commit
+    -> resume permanent Source Vault bootstrap/ingestion from the unchanged pre-ingestion boundary
+```
+
+If the direct-lane authority refinement is deferred or rejected, that does not reopen Research 105 automatically. The accepted formal permission-aware lane remains available as the proven governed local write path.
+
+## 13. Numbering correction provenance
 
 This record was initially created under the filename/number `098_codexless_local_execution_bridge_evaluation.md`. During the planned chat-rotation continuity audit, the repository was found to already contain the unrelated accepted historical Research 098 for Cockpit presentation-state recovery.
 
-The Codexless evaluation is therefore canonically renumbered to **Research 105**. This is a clerical identity correction only; it does not alter the evaluation evidence or scientific meaning of either research record.
+The Codexless evaluation is therefore canonically Research 105. This was a clerical identity correction only and did not alter the evaluation evidence or scientific meaning of either research record.

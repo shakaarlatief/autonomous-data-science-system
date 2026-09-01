@@ -2,7 +2,7 @@
 
 **Status:** Accepted collaboration/continuity convention  
 **Date promoted:** 2026-08-26  
-**Last reviewed:** 2026-08-30  
+**Last reviewed:** 2026-09-01  
 **Authority:** Canonical provider-neutral interaction-provenance convention under Development Method v0.5 and `docs/checkpoints/README.md`  
 **Scope:** Preserve which concrete interaction environment, workspace, session, and conversation produced ADS development artifacts without making chat history authoritative.
 
@@ -39,11 +39,29 @@ The shared visible name improves human navigation but is not a unique session id
 
 ## 3. Visible conversation naming
 
-The accepted visible naming pattern is:
+The accepted visible naming pattern is written abstractly as:
 
 ```text
 NN - Main Topic / Stage
 ```
+
+### Slash notation clarification
+
+The slash in that abstract pattern is **not required literal punctuation**. It means "main topic or stage" and indicates that the descriptive portion of the title should naturally communicate the main topic, the current stage, or both.
+
+Use ordinary human wording rather than forcing a slash into every title. When two related concepts are combined, a natural conjunction such as `and` is preferred when that reads better.
+
+For example:
+
+```text
+14 - Codexless Write Validation and Source Vault Resume
+```
+
+is fully compliant with the convention.
+
+A literal slash may still be used when it is genuinely the natural wording of the actual title. The convention governs identity and clarity, not cosmetic punctuation.
+
+Historical conversation titles that accurately record the title actually used must not be retroactively changed merely to make punctuation cosmetically uniform.
 
 Each interaction environment maintains its own sequence because conversations may rotate independently and may overlap in time.
 
@@ -63,7 +81,7 @@ Before substantive work begins in a new persistent interaction session, establis
 
 ```text
 provider-local interaction session ID
-visible conversation title using NN - Main Topic / Stage
+visible conversation title using the accepted NN - <natural descriptive title> convention
 ```
 
 A newly opened conversation is always a new interaction session for provenance, even when it exists only because a previous conversation hit a length/context limit and the underlying ADS work continues at the same project boundary. The new conversation must not reuse the prior session ID or title simply because the live repository state still records the ended interaction during initial reconstruction.
@@ -97,6 +115,8 @@ This avoids one artificial global conversation counter while remaining globally 
 A model/configuration change inside the same long-lived conversation does not by itself create a new interaction-session ID.
 
 A newly opened conversation does create a new provider-local interaction-session ID, even if it is a direct continuation of the same project stage. For example, after `chatgpt-10` ends and a new ChatGPT conversation continues the same Source Universe work, the new conversation should use `chatgpt-11` rather than inheriting `chatgpt-10`.
+
+Disposable diagnostic, plug-in validation, or transport-test conversations do not automatically consume a persistent ADS interaction-session number. They should be classified explicitly as disposable when their purpose is only bounded validation rather than persistent project collaboration.
 
 ## 5. Collaboration-message provenance
 
@@ -152,8 +172,6 @@ Interaction session
 Conversation title
 Primary collaborator
 ```
-
-Collaboration thread/role and model/configuration remain optional extensions where useful.
 
 Historical checkpoints are not rewritten merely for cosmetic uniformity.
 

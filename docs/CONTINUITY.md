@@ -132,11 +132,21 @@ PRIVATE_CONTINUITY_INTEGRITY=NOT_VERIFIED
 
 ## Interaction/session naming
 
-Visible conversations use:
+Visible conversations use the abstract convention:
 
 ```text
 NN - Main Topic / Stage
 ```
+
+The `/` in that notation means **main topic or stage**. It is not required literal punctuation. Use natural human wording for the descriptive title, including a conjunction such as `and` when that is clearer. A literal slash is used only when it is genuinely natural for the actual title. Historical exact titles are not rewritten merely for cosmetic punctuation consistency.
+
+For example:
+
+```text
+14 - Codexless Write Validation and Source Vault Resume
+```
+
+is fully compliant with the convention.
 
 Provider-local repository session IDs may use forms such as:
 
@@ -163,7 +173,7 @@ During repository-first reconstruction of a new ADS conversation, the collaborat
 
 1. recognize that the interaction itself is new;
 2. derive the next provider-local sequence number from the latest durable interaction provenance for that environment;
-3. establish a fresh `NN - Main Topic / Stage` title based on the active work reconstructed from the repository;
+3. establish a fresh `NN - <natural descriptive title>` based on the active work reconstructed from the repository;
 4. use that new session identity in the conversation immediately rather than continuing under the prior title;
 5. once project-state alignment/authorization permits repository writes, update the live interaction context in `CURRENT_STATE.md` before substantive new durable work is attributed to the session.
 
@@ -209,7 +219,7 @@ When the current state reports a private value as already resolved, apply the pr
 
 A provider-neutral continuation prompt may use:
 
-> Continue the Autonomous Data Science System project from the repository. Treat the public `autonomous-data-science-system` repository as the sole project-development authority, not prior chat memory. First read README.md, docs/README.md, docs/CONTINUITY.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. If the public state indicates that relevant private companion knowledge exists and the private repository is accessible, retrieve that private complement after the public reconstruction. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
+> Continue the Autonomous Data Science System project from the repository. Treat the public `autonomous-data-science-system` repository as the sole project-development authority, not prior chat memory. First read README.md, docs/README.md, docs/CONTINUITY.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - <natural descriptive title>` from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. If the public state indicates that relevant private companion knowledge exists and the private repository is accessible, retrieve that private complement after the public reconstruction. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
 
 The collaborator should expand through the Knowledge Map whenever the task touches older or adjacent knowledge.
 
