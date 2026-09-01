@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0009",
+  "review_mode": "INDEPENDENT_THEN_COMPARATIVE",
+  "lifecycle_state": "WAITING",
+  "phase": "INDEPENDENT_RESEARCH_REQUESTED",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "cb48c1ac539592e63b13cbc8e4e2413cb0b196a0",
+    "description": "Independent research into whether ordinary ChatGPT Chat can safely dispatch bounded local Git operations through a trusted MCP bridge without a Codex model-agent turn, including outer tool-safety behavior, MCP contract design, execution primitive, authority bounding and falsification criteria.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-14",
+      "roles": [
+        "TASK_OWNER",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": [
+        "INDEPENDENT_REVIEWER",
+        "COUNTER_DESIGNER",
+        "RESEARCHER"
+      ]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": [
+        "HUMAN_DECIDER"
+      ]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": [
+        "docs/model_collaboration/threads/MC-0009/messages/**"
+      ]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "BLIND_TO_CANDIDATE",
+    "review_base_ref": "cb48c1ac539592e63b13cbc8e4e2413cb0b196a0",
+    "known_exposures": [
+      "Claude is intentionally exposed to the observed direct-lane diagnostic facts summarized in MC-0009 BRIEF, including successful bounded local execution, the active ads-direct-git profile, the repaired stale Windows ACL denial, inherit-only network widening, the outer ChatGPT/OpenAI safety block, and the fact that the formal Codex agent lane can perform Git operations.",
+      "Claude may inspect the exact frozen ADS target and upstream/public sources needed to research the problem.",
+      "Claude is intentionally not exposed before Message 001 to a frozen ChatGPT candidate implementation for a new Git-specific MCP surface; no such candidate is preserved in the repository at thread opening."
+    ],
+    "notes": "Independent phase first. Coordination-branch reads are limited to locating and understanding MC-0009; substantive ADS repository evidence is anchored to the exact frozen target. After Message 001 is frozen, ChatGPT will disposition it before any comparative phase is opened."
+  },
+  "last_transition": {
+    "transition_id": "mc0009-independent-research-requested",
+    "from_state": null,
+    "to_state": "WAITING",
+    "actor": "chatgpt",
+    "reason": "Opened a neutral Claude independent-research pass before freezing any ChatGPT candidate direct-Git MCP architecture, so feasibility, tool-contract design, execution primitive and abandonment criteria can be challenged without candidate anchoring.",
+    "repository_head": "cb48c1ac539592e63b13cbc8e4e2413cb0b196a0"
+  }
+}

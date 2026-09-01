@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-08-31  
-**Status:** Current human-readable routing view  
+**Date:** 2026-09-01  
+**Status:** PENDING CLAUDE OBLIGATION / MC-0009 INDEPENDENT RESEARCH  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -23,9 +23,31 @@ This inbox intentionally does not duplicate that state except where needed to ex
 
 ## Pending model obligation
 
-There is currently **no pending Claude obligation** in the active repository-preservation review.
+### MC-0009: ChatGPT local Git through MCP feasibility and safety architecture
 
-MC-0008 completed both the independent and comparative phases. The next work belongs to normal ChatGPT task-owner governance: promote the accepted architecture through Research/Specification, implement it, repair known continuity/routing drift, and verify the resulting repository/chat-rotation gate.
+```text
+reviewer / researcher     Claude / claude-03
+mode                      INDEPENDENT_THEN_COMPARATIVE
+coordination branch       v1-source-vault-bootstrap-resume
+frozen independent target cb48c1ac539592e63b13cbc8e4e2413cb0b196a0
+kind                      independent technical research / counter-design
+priority                  HIGH
+gate                      before implementing or freezing a new direct-Git MCP architecture
+expected output           docs/model_collaboration/threads/MC-0009/messages/001_claude_independent_chatgpt_local_git_mcp_feasibility_research.md
+status                    WAITING_FOR_CLAUDE
+```
+
+Claude must first preserve an independent position on whether ordinary ChatGPT Chat can safely dispatch bounded local Git operations through a trusted MCP bridge without a Codex model-agent turn, and on the smallest supported architecture/experiment that can distinguish a tool-contract issue from an immutable platform prohibition.
+
+The detailed neutral contract is in:
+
+```text
+docs/model_collaboration/threads/MC-0009/BRIEF.md
+docs/model_collaboration/threads/MC-0009/THREAD.md
+docs/model_collaboration/threads/MC-0009/STATE.json
+```
+
+The first phase is `BLIND_TO_CANDIDATE`. Claude may use the observed diagnostic facts, the exact frozen target and external/upstream sources, but should not inspect a later ChatGPT candidate before Message 001 is durably frozen. Claude's write scope is limited to `docs/model_collaboration/threads/MC-0009/messages/**`.
 
 ## Most recently completed obligation
 
