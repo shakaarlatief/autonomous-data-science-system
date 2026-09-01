@@ -1,8 +1,8 @@
 # Development Method
 
 **Status:** Current canonical project-development method  
-**Current version:** 0.7  
-**Last reviewed:** 2026-08-29
+**Current version:** 0.8  
+**Last reviewed:** 2026-09-01
 
 ## Purpose
 
@@ -15,7 +15,7 @@ Level 1  target ADS product/system
 Level 2  method used to build, preserve, verify and evolve ADS
 ```
 
-Both levels should be evidence-driven. The development method must preserve authority, maturity, provenance, reversibility, discoverability and proportionality of effort.
+Both levels should be evidence-driven. The development method must preserve authority, maturity, provenance, reversibility, discoverability, integrity and proportionality of effort.
 
 Deep historical rationale remains in foundations, research, specifications, checkpoints, collaboration records, ledgers and Git history. This document is the operational method.
 
@@ -27,9 +27,9 @@ explore / discuss
 -> investigate or implement at the smallest justified scope
 -> verify proportionately to risk
 -> obtain human/model review where required
--> preserve a checkpoint when the boundary materially changes
+-> reconcile canonical state when the boundary changes
+-> preserve a checkpoint when a meaningful verified boundary is earned
 -> perform promotion audit
--> update canonical knowledge/routing where warranted
 -> continue
 ```
 
@@ -37,7 +37,7 @@ The preservation and verification process must be strong enough for a large long
 
 ## Repository information architecture
 
-Development Method v0.7 gives each global navigation/state surface one primary responsibility:
+Development Method v0.8 preserves the v0.7 single-responsibility information architecture and adds a bounded integrity layer around it:
 
 ```text
 README.md
@@ -72,15 +72,17 @@ Cross-linking is expected. Volatile checkpoint/branch/test state should not be c
 
 ### Why the separation matters
 
-As the repository grows, three different retrieval questions must not collapse into one document:
+As the repository grows, different retrieval questions must not collapse into one document:
 
 ```text
-Where am I now?               -> CURRENT_STATE / current_routing
+Where am I now?                -> CURRENT_STATE / current_routing
 What kind of artifact is this? -> docs/README
 What do we know about X?       -> KNOWLEDGE_MAP
+How do I reconstruct safely?   -> CONTINUITY
+How do we build/verify ADS?    -> DEVELOPMENT_METHOD
 ```
 
-A document that tries to answer all three will become noisy, stale and difficult to maintain.
+A document that tries to answer all of them will become noisy, stale and difficult to maintain.
 
 ## Knowledge layers and authority
 
@@ -110,15 +112,82 @@ Practical authority order within the relevant scope:
 6. checkpoints/collaboration records for provenance;
 7. raw history.
 
-`CURRENT_STATE.md` is authoritative for **what boundary is active now**, but should route to stronger evidence for the underlying product/scientific claim.
+`CURRENT_STATE.md` is authoritative for **what boundary is active now**, but routes to stronger evidence for the underlying product/scientific claim.
 
 Unresolvable conflicts become explicit open questions rather than guesses.
+
+## Family-aware repository integrity
+
+ADS does not impose one universal Markdown schema on its history. Repository integrity is family-aware and prospective.
+
+The governed classes are:
+
+```text
+live canonical state
+numbered durable knowledge
+checkpoints
+validation/evidence
+model collaboration
+specialized ledgers/indexes
+global prose/code/Git history
+```
+
+The public integrity implementation follows Research 106 and Specifications 025/026:
+
+```text
+numbered identity
+    unique inside each governed family
+    same number across different families remains valid
+
+prospective metadata
+    Foundation >= 025 requires Date / Status / Scope
+    Specification >= 025 requires Date / Status / Scope
+    Research >= 106 requires Date / Status / Scope
+    checkpoint metadata remains governed by the existing checkpoint contract
+
+validation/evidence
+    exact pre-cutover paths are preserved by one immutable compatibility snapshot
+    new paths require Date, a result field and a governed anchor
+
+declared references
+    new generic references use the strict typed Declared references field
+    unambiguous existing explicit relationship fields remain compatibility-checked
+    mixed narrative prose is never mined heuristically
+
+identity agreement
+    if an H1 explicitly declares governed family + number, it must agree with the filename
+```
+
+The compatibility snapshot is a migration boundary, not a hand-maintained artifact registry. Normal development must not extend it to bypass prospective validation.
+
+## Live-state integrity
+
+`docs/CURRENT_STATE.md` and `docs/current_routing.json` own overlapping live facts and must agree.
+
+Agreement alone is insufficient when both are stale. On the active development branch:
+
+```text
+current_checkpoint == maximum numbered checkpoint present in that checked branch tree
+```
+
+The rule is branch-scoped. An unrelated branch with a different historical checkpoint population does not make the active branch stale.
+
+`current_boundary` is a semantic routing label, not a second checkpoint title. It must satisfy the stable bounded contract:
+
+```text
+lowercase words separated by hyphens only
+no digits
+no underscores
+maximum length 64
+```
+
+Exact historical identity belongs in dedicated checkpoint/research/specification fields and artifacts.
 
 ## Checkpoint granularity
 
 The active AI collaborator is responsible for detecting natural checkpoints. A checkpoint is normally warranted when a concept or decision stabilizes, a substantial implementation/experiment milestone is reached, a human-review question materially changes, acceptance/rejection/promotion status changes, the project changes direction, a reusable lesson is discovered, continuity becomes fragile, or preservation is explicitly requested.
 
-A checkpoint is **not** warranted merely because another commit or small visual adjustment occurred.
+A checkpoint is **not** warranted merely because another commit, specification or small adjustment occurred.
 
 ### Micro-iteration rule
 
@@ -130,13 +199,12 @@ small geometry/copy refinements
 small implementation defects inside the same hypothesis
 test corrections preserving the same contract
 exact-target refreshes within the same review question
+canonical reconciliation edits belonging to one already-frozen transition
 ```
 
 Several small refinements may be preserved together when that review boundary closes or materially changes.
 
-Closed historical checkpoints are not rewritten to make later events appear contemporaneous. An explicitly open review checkpoint may receive a bounded update while the exact same question remains open, provided chronology remains clear in Git.
-
-Metadata-only repair is permitted when it restores the checkpoint metadata contract without altering substantive historical claims.
+Closed historical checkpoints are not rewritten to make later events appear contemporaneous. Metadata/provenance-only repair is permitted when it restores the checkpoint contract or corrects provenance without rewriting substantive historical knowledge.
 
 Checkpoint metadata and role are governed by `docs/checkpoints/README.md` and mechanically validated.
 
@@ -195,23 +263,13 @@ scripts/check_knowledge_map.py
 .github/workflows/knowledge-map-integrity.yml
 ```
 
-The validator protects:
+The validator protects topic identity/non-empty routing, Subject-index alignment, path integrity, exhaustive durable-family coverage, checkpoint-range coverage, specialized-index reachability and absence of live-state leakage.
 
-```text
-topic identity and non-empty routing
-human-readable Subject-index alignment with KM-TOPIC subject headings
-path integrity
-exhaustive Foundation / Specification / Research coverage
-checkpoint-range coverage
-specialized-index reachability
-absence of live-state sections in the Knowledge Map
-```
-
-A green Knowledge Map validator establishes **structural coverage and integrity**, not semantic-routing correctness. It does not infer semantic authority automatically and cannot prove that every artifact was assigned to the best subject. Periodic reconciliation therefore includes a lightweight routing-quality spot-check in addition to mechanical coverage validation.
+A green Knowledge Map validator establishes **structural coverage and integrity**, not semantic-routing correctness. Periodic reconciliation therefore includes a lightweight routing-quality spot-check.
 
 ## Risk-scaled verification
 
-Development Method v0.7 retains the v0.6 separation between **development verification** and **acceptance verification**.
+Development Method v0.8 retains the V0-V4 risk-scaled verification model:
 
 ```text
 V0  documentation / provenance
@@ -275,13 +333,98 @@ scripts/select_cockpit_verification.py
 
 Only high-confidence local path families may narrow the suite. Mixed/shared/unknown changes fall back conservatively to V3.
 
-Same-branch obsolete CI runs should be cancelled when a newer push supersedes them.
+Same-branch obsolete CI runs should be cancelled when a newer push supersedes them where the workflow supports that behavior.
+
+## Public repository integrity gate
+
+When the repository-integrity architecture is in scope, the deterministic aggregate must report exactly one public result:
+
+```text
+PUBLIC_REPOSITORY_INTEGRITY=PASS
+PUBLIC_REPOSITORY_INTEGRITY=FAIL
+```
+
+The aggregate reuses the accepted focused validators rather than creating parallel truth systems. It covers at least:
+
+```text
+family-aware identity and prospective metadata
+validation/evidence compatibility/prospective contract
+typed and compatible explicit references
+Knowledge Map integrity
+CURRENT_STATE/current_routing synchronization
+active-branch checkpoint freshness
+stable current_boundary
+checkpoint metadata
+model-collaboration state
+```
+
+A failure is not repaired by weakening the validator. Diagnose the exact contract and classify whether the repository or the implementation is wrong.
+
+The active development branch may be unprotected. A passing GitHub Actions workflow is useful evidence, but it must not be described as enforced branch protection. Before a governed integrity transition is accepted, run the relevant deterministic gate on the actual target through a controlled execution surface or equivalently authoritative path and preserve what actually ran.
+
+## Private continuity and transition preflight
+
+Public repository integrity and private continuity are orthogonal claims:
+
+```text
+PUBLIC_REPOSITORY_INTEGRITY
+    PASS | FAIL
+
+PRIVATE_CONTINUITY_INTEGRITY
+    PASS | FAIL | NOT_VERIFIED
+
+CHAT_ROTATION_PREFLIGHT
+    PASS | HOLD | FAIL
+```
+
+Rules:
+
+```text
+private inaccessible
+    -> NOT_VERIFIED, not fabricated PASS and not public FAIL
+
+public PASS + required private NOT_VERIFIED
+    -> rotation HOLD
+
+public PASS + accessible required private mismatch
+    -> rotation FAIL
+
+public PASS + required private PASS + no open transition obligations
+    -> rotation may PASS
+```
+
+The private companion's public-safe synchronization anchor is stored in its existing `CURRENT_PRIVATE_STATE.md` as the public continuity checkpoint and exact public commit last reconciled against.
 
 ## Coherent repository writes
 
 When several routing/canonical files represent one logical transition, prefer one coherent multi-file commit/tree update where practical. This reduces transient contradictions, redundant CI starts and noisy history.
 
 Do not batch unrelated changes merely for convenience.
+
+Before the final branch ref is advanced for a multi-file mutation, re-read the branch HEAD. If it moved since the operation was prepared, do not force the write; reconstruct against the new target.
+
+## Abnormal execution interruption recovery
+
+A tool-backed task can terminate after some durable writes complete but before later writes, verification, reconciliation or the final report. The correct recovery behavior is repository-first reconstruction, not trust in the interrupted conversation and not blind replay of the plan.
+
+After an outage, tool failure, unexplained termination or user interruption during a multi-step repository mutation:
+
+```text
+1. inspect current branch HEAD before further mutation
+2. identify the last independently trusted durable boundary
+3. enumerate commits/files/actions that actually completed after it
+4. compare completed work with the intended staged plan
+5. classify apparent inconsistencies as:
+       EXPECTED / DEFERRED
+       KNOWN DEFECT / PLANNED REPAIR
+       INTERRUPTION RESIDUE
+       NEW UNPLANNED DEFECT
+6. repair only findings appropriate to the current stage
+7. rerun required verification rather than inheriting interrupted completion claims
+8. preserve a recovery record when the interruption materially affects continuity
+```
+
+A user interruption is allowed and does not itself imply Git corruption. Completed Git operations remain durable. The protocol prevents a partially completed logical workflow from being mistaken for a completed transition.
 
 ## Real-project and system-gap extraction
 
@@ -304,7 +447,8 @@ MC-0001..0003 / v0.5   governed multi-model collaboration
 Research 064           checkpoint hygiene during rapid iteration
 Research 103 / v0.6    evergreen routing recovery + risk-scaled verification
 Research 104 / v0.7    single-responsibility information architecture + exhaustive routing
-MC-0005                 adversarial v0.7 architecture review + narrow routing hardening
+MC-0008 / v0.8         family-aware integrity + continuity/preflight hardening
+Research 107           abnormal-interruption recovery audit and classification method
 ```
 
 ## Governed multi-model development
@@ -325,17 +469,21 @@ One collaborator owns target-state writes unless secondary write surfaces are ex
 
 ## Interaction provenance
 
-Visible conversations use `NN - Main Topic / Stage` with provider-local IDs such as `chatgpt-10` or `claude-01`. Provider/model identity is provenance, not authority.
+Visible conversations use `NN - Main Topic / Stage` with provider-local IDs such as `chatgpt-13` or `claude-01`. Provider/model identity is provenance, not authority.
+
+Every newly opened persistent interaction receives a fresh identity. Disposable diagnostic/plugin test interactions are not automatically promoted into the persistent ADS session sequence.
 
 ## Knowledge reconciliation
 
-Perform broader reconciliation at meaningful stage boundaries, major method revisions, observed routing drift, major experiment/specification closure, prototype generation changes, or contradiction/staleness events.
+Perform broader reconciliation at meaningful stage boundaries, major method revisions, observed routing drift, major experiment/specification closure, prototype generation changes, contradiction/staleness events, or after a staged integrity implementation explicitly reaches its canonical-reconciliation phase.
 
 Ask the questions separately:
 
 ```text
 Is CURRENT_STATE concise, present-tense and accurate?
 Does current_routing agree with CURRENT_STATE?
+Is the active-branch checkpoint fresh?
+Is current_boundary stable and semantic?
 Does docs/README describe the repository roles that actually exist?
 Does KNOWLEDGE_MAP exhaustively route durable numbered knowledge by subject?
 Does a lightweight sample confirm routing quality, not merely route coverage?
@@ -345,6 +493,8 @@ Are foundations/specifications/research discoverable by subject?
 Are detailed runs in the right ledgers?
 Are checkpoint/session/collaboration metadata coherent?
 Are pending reviews discoverable?
+Does the relevant public integrity aggregate pass on the actual target?
+Is private continuity evaluated separately when required?
 Does MAJOR_CHANGES capture significant structural evolution?
 ```
 
@@ -353,6 +503,8 @@ Reconciliation is periodic, not per-commit.
 ## Continuity
 
 Canonical cross-session reconstruction is defined in `docs/CONTINUITY.md`.
+
+Bootstrap-critical reconstruction must directly read `docs/CONTINUITY.md` as the third mandatory first-read after `README.md` and `docs/README.md`; it must not depend on an indirect routing hop.
 
 Substantive preservation failure and routing drift are different problems. If durable source artifacts exist, repair routing conservatively rather than recreating knowledge from memory.
 
@@ -370,40 +522,43 @@ AI-assisted curation under normal governance
 
 Semantic/vector repository retrieval, generated semantic catalogs, contradiction engines, generalized dependency graphs and heavier orchestration remain deferred until observed need justifies them.
 
-Development Method v0.7 does **not** introduce a vector/semantic knowledge database because the diagnosed failure remains information architecture and routing discipline, not inability to store or retrieve repository artifacts with the current scale and tooling.
+Development Method v0.8 still does **not** introduce a vector/semantic knowledge database. The integrity layer is deliberately small, typed and attached to existing authority surfaces rather than becoming a second truth system.
 
-If the central Knowledge Map later becomes a demonstrated reconstruction-read-cost or maintenance bottleneck, or repeated semantic-routing drift survives the current guards, distributed per-artifact topic metadata with a generated semantic view is the leading lightweight successor architecture to evaluate before introducing a heavier semantic repository database.
+If the central Knowledge Map later becomes a demonstrated reconstruction-read-cost or maintenance bottleneck, or repeated semantic-routing drift survives the current guards, distributed per-artifact topic metadata with a generated semantic view remains the leading lightweight successor architecture to evaluate before introducing a heavier semantic repository database.
 
 ## Version history
 
-### Version 0.7
+### Version 0.8
 
-**Introduced:** Checkpoint 266, 2026-08-29
+**Introduced:** repository-integrity canonical reconciliation, 2026-09-01. A checkpoint is intentionally deferred until the wider transition earns a meaningful verified boundary.
 
-- separated stable landing, structural guide, live state, machine routing, semantic subject library and continuity procedure;
-- added `docs/README.md` as the repository/documentation artifact-role map;
-- made `CURRENT_STATE.md` the sole human-readable owner of volatile current state;
-- made `current_routing.json` the sole compact machine-readable current pointer;
-- made `KNOWLEDGE_MAP.md` evergreen subject routing only;
-- required exhaustive topic routing for every numbered Foundation, Specification and Research record;
-- added validated semantic checkpoint-range coverage for all numbered checkpoints;
-- preserved multiple topic membership where useful;
-- strengthened Knowledge Map CI to detect unassigned durable knowledge and live-state leakage;
-- retained v0.6 checkpoint aggregation and V0-V4 risk-scaled verification;
-- added verification-command integrity after the first v0.6 forced-full workflow executed only a narrowed subset because of quoting;
-- after MC-0005, added Subject-index/`KM-TOPIC` alignment validation and made the structural-coverage-versus-semantic-correctness boundary explicit without changing the v0.7 architecture.
+- retained the v0.7 single-responsibility repository information architecture;
+- added family-aware prospective repository-integrity contracts rather than a universal historical schema;
+- added branch-scoped current-checkpoint freshness and stable semantic `current_boundary` rules;
+- added the aggregate `PUBLIC_REPOSITORY_INTEGRITY` gate without replacing focused validators;
+- separated public integrity, private continuity and chat-rotation preflight claims;
+- added the private-side public continuity anchor contract;
+- made `docs/CONTINUITY.md` an explicit mandatory bootstrap read;
+- added abnormal-execution interruption recovery and four-way finding classification;
+- made coherent multi-file canonical reconciliation and branch-HEAD revalidation explicit;
+- preserved Source Vault and product-specific authority boundaries while strengthening Level-2 governance.
 
 Evidence:
 
 ```text
-docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
-docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
-docs/model_collaboration/threads/MC-0005/RESOLUTION.md
+docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
+docs/research/107_post_outage_repository_integrity_recovery_audit.md
+docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
+docs/specifications/026_v1_repository_integrity_recovery_amendment.md
 ```
+
+### Version 0.7
+
+Checkpoint 266, 2026-08-29: separated stable landing, structural guide, live state, machine routing, semantic subject library and continuity procedure; required exhaustive durable-family routing; added checkpoint-range coverage and verification-command integrity; retained v0.6 risk-scaled verification and checkpoint aggregation.
 
 ### Version 0.6
 
-Checkpoint 265, 2026-08-29: restored broad topic routing after discoverability drift; introduced V0-V4 risk-scaled verification, Cockpit selector/concurrency cancellation and stronger micro-checkpoint aggregation. Its two-layer Knowledge Map was an intermediate repair and is refined by v0.7.
+Checkpoint 265, 2026-08-29: restored broad topic routing after discoverability drift; introduced V0-V4 risk-scaled verification, Cockpit selector/concurrency cancellation and stronger micro-checkpoint aggregation. Its two-layer Knowledge Map was an intermediate repair and was refined by v0.7.
 
 ### Version 0.5
 

@@ -1,12 +1,12 @@
 # Continuity
 
 **Status:** Current canonical continuity procedure  
-**Aligned development-method version:** 0.7  
-**Last reviewed:** 2026-08-30
+**Aligned development-method version:** 0.8  
+**Last reviewed:** 2026-09-01
 
 ## Purpose
 
-This document defines how the Autonomous Data Science System project continues across chats, sessions, models, branches and context boundaries.
+This document defines how the Autonomous Data Science System project continues across chats, sessions, models, branches, tool interruptions and context boundaries.
 
 > A new collaborator must be able to reconstruct current project state from persistent repository artifacts without requiring the previous conversation or relying on model memory.
 
@@ -22,7 +22,7 @@ Conversation history may help, but must not override repository state. If reposi
 
 ## Separation of continuity concerns
 
-Continuity should reconstruct state from dedicated owners rather than duplicating volatile information inside this procedure:
+Continuity reconstructs state from dedicated owners rather than duplicating volatile information inside this procedure:
 
 ```text
 docs/README.md
@@ -36,9 +36,15 @@ docs/CURRENT_STATE.md
 
 docs/KNOWLEDGE_MAP.md
     evergreen subject library for broader/older knowledge
+
+docs/CONTINUITY.md
+    reconstruction, rotation and recovery procedure
+
+docs/DEVELOPMENT_METHOD.md
+    development, verification, preservation and reconciliation method
 ```
 
-This file explains **how to use those surfaces**. It should not carry a copied current checkpoint, branch, review gate or latest test run.
+This file explains **how to use those surfaces**. It does not carry a copied current checkpoint, branch, review gate or latest test run.
 
 ## Private knowledge and operational-state continuity
 
@@ -87,7 +93,7 @@ For the Source Vault bootstrap, the local operational-state contract is:
 docs/source_universe/LOCAL_PRIVATE_OPERATIONAL_STATE.md
 ```
 
-The public repository remains authoritative for whether a value is resolved, what gate passed or failed and what happens next. The private companion repository carries the durable private complement. The local `.ads-private` state carries execution-ready machine-local values.
+The public repository remains authoritative for whether a value is resolved, what public gate passed or failed and what happens next. The private companion repository carries the durable private complement. The local `.ads-private` state carries execution-ready machine-local values.
 
 Repository-first reconstruction is always **public-first**:
 
@@ -103,6 +109,27 @@ If a remote interaction surface cannot access the private companion repository o
 
 The private companion repository must never become a development fork. ADS code, tests, architecture, specifications, decisions, checkpoints and implementation evolution remain in the public repository.
 
+### Public/private continuity anchor
+
+When the private companion is deliberately reconciled to a public boundary, `CURRENT_PRIVATE_STATE.md` carries the public-safe synchronization anchor defined by Specification 026:
+
+```text
+Public continuity checkpoint
+Public continuity commit
+```
+
+These values identify the public checkpoint and exact public commit against which the private continuity content was last reconciled. They contain no private path or secret.
+
+Private continuity has an independent result:
+
+```text
+PRIVATE_CONTINUITY_INTEGRITY=PASS
+PRIVATE_CONTINUITY_INTEGRITY=FAIL
+PRIVATE_CONTINUITY_INTEGRITY=NOT_VERIFIED
+```
+
+`NOT_VERIFIED` means the current verification surface did not prove private freshness. It is not public failure and it does not make resolved private facts unresolved.
+
 ## Interaction/session naming
 
 Visible conversations use:
@@ -114,7 +141,7 @@ NN - Main Topic / Stage
 Provider-local repository session IDs may use forms such as:
 
 ```text
-chatgpt-10
+chatgpt-13
 claude-01
 ```
 
@@ -146,19 +173,22 @@ If the product UI cannot be renamed programmatically by the active tool surface,
 
 ## Required new-session reconstruction
 
-A new session should not begin by reading arbitrary recent files or trusting prior chat memory.
+A new session must not begin by reading arbitrary recent files or trusting prior chat memory.
 
-Read in this order:
+Bootstrap-critical authority is read directly in this order:
 
 1. `README.md`
 2. `docs/README.md`
-3. `docs/current_routing.json`
-4. `docs/CURRENT_STATE.md`
-5. `docs/KNOWLEDGE_MAP.md`
-6. governing canonical documents/specifications routed by the current state
-7. the current checkpoint/research boundary
-8. specialized ledgers/manifests for the active topic
-9. relevant private companion state when the public state explicitly indicates private knowledge is involved and the companion repository is accessible
+3. `docs/CONTINUITY.md`
+4. `docs/current_routing.json`
+5. `docs/CURRENT_STATE.md`
+6. `docs/KNOWLEDGE_MAP.md`
+7. governing canonical documents/specifications routed by the current state
+8. the current checkpoint/research boundary
+9. specialized ledgers/manifests for the active topic
+10. relevant private companion state when the public state explicitly indicates private knowledge is involved and the companion repository is accessible
+
+`docs/CONTINUITY.md` is deliberately a direct mandatory first read. Bootstrap-critical authority must not depend on first discovering this procedure indirectly through `docs/README.md`.
 
 Then use the subject library in `docs/KNOWLEDGE_MAP.md` to retrieve broader knowledge relevant to the task without needing to remember document numbers.
 
@@ -166,11 +196,12 @@ Structural reconstruction and semantic retrieval are deliberately separate jobs:
 
 ```text
 docs/README.md    structure -> artifact role
+CONTINUITY        bootstrap/recovery -> procedure
 CURRENT_STATE     live state -> next action
 KNOWLEDGE_MAP     subject -> relevant knowledge
 ```
 
-The automatic new-session allocation rule above is part of this reconstruction. The prior session metadata found in `CURRENT_STATE.md` is evidence about the previous interaction, not permission to reuse it in the newly opened conversation.
+The automatic new-session allocation rule above is part of this reconstruction. Prior session metadata found in `CURRENT_STATE.md` is evidence about the previous interaction, not permission to reuse it in the newly opened conversation.
 
 When the current state reports a private value as already resolved, apply the private knowledge rule above before asking the project owner to repeat information.
 
@@ -178,9 +209,46 @@ When the current state reports a private value as already resolved, apply the pr
 
 A provider-neutral continuation prompt may use:
 
-> Continue the Autonomous Data Science System project from the repository. Treat the public `autonomous-data-science-system` repository as the sole project-development authority, not prior chat memory. First read README.md, docs/README.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. If the public state indicates that relevant private companion knowledge exists and the private repository is accessible, retrieve that private complement after the public reconstruction. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
+> Continue the Autonomous Data Science System project from the repository. Treat the public `autonomous-data-science-system` repository as the sole project-development authority, not prior chat memory. First read README.md, docs/README.md, docs/CONTINUITY.md, docs/current_routing.json, docs/CURRENT_STATE.md, and docs/KNOWLEDGE_MAP.md. Reconstruct where the project currently stands, the important accepted conclusions and unresolved questions, and the next legitimate step. Treat this conversation as a new interaction session: proactively establish the next provider-local session ID and a fresh `NN - Main Topic / Stage` title from the active repository state instead of reusing the previous session's title. Preserve `RESOLVED_PRIVATE` operational values as resolved even if this chat cannot see their exact local value. If the public state indicates that relevant private companion knowledge exists and the private repository is accessible, retrieve that private complement after the public reconstruction. Follow the project's development/preservation method. Do not make substantive project changes yet; first align with me on the current state.
 
 The collaborator should expand through the Knowledge Map whenever the task touches older or adjacent knowledge.
+
+## Public repository integrity
+
+The canonical public integrity result is:
+
+```text
+PUBLIC_REPOSITORY_INTEGRITY=PASS|FAIL
+```
+
+The aggregate public gate covers the bounded contracts defined by Research 106 and Specifications 025/026, including family identity, prospective metadata, typed references, current-state/routing agreement and active-branch freshness, stable `current_boundary`, Knowledge Map integrity, checkpoint metadata and model-collaboration state.
+
+A public `PASS` must come from the deterministic aggregate on the actual target. It must never be inferred because a workflow was intended to run or because individual files appear consistent by inspection.
+
+The active development branch may be unprotected. A green GitHub Actions run is evidence, not proof that branch protection enforces the gate. Development and transition claims must describe the enforcement actually present.
+
+## Chat-rotation preflight
+
+A stronger deliberate-rotation result is:
+
+```text
+CHAT_ROTATION_PREFLIGHT=PASS|HOLD|FAIL
+```
+
+Interpretation:
+
+```text
+PASS
+    public integrity passes and every continuity surface required for the rotation is verified sufficiently
+
+HOLD
+    public integrity passes, but required private continuity is NOT_VERIFIED or another non-failure transition obligation remains open
+
+FAIL
+    required public or verified-private integrity fails
+```
+
+`HOLD` is not repository corruption. It prevents a stronger rotation-ready claim until the outstanding continuity evidence is available.
 
 ## Proactive conversation rotation
 
@@ -193,9 +261,12 @@ Before planned rotation:
 3. ensure new durable knowledge is routed in the Knowledge Map when warranted;
 4. preserve exact branch/commit/test/review state needed for continuation in the live state or governing evidence;
 5. preserve material private continuity facts in the private companion repository when they cannot safely live publicly;
-6. start the next conversation with repository-first reconstruction and automatic fresh session/title allocation.
+6. run the relevant public integrity gate on the actual target;
+7. evaluate private continuity separately when required and accessible;
+8. evaluate chat-rotation preflight and do not describe `HOLD` as `PASS`;
+9. start the next conversation with repository-first reconstruction and automatic fresh session/title allocation.
 
-If the boundary is unexpected, reconstruct from the public repository first, allocate the new interaction identity, retrieve relevant private companion knowledge when available, and repair stale routing/provenance only after determining what actually survived.
+If the boundary is unexpected, use the abnormal-interruption recovery procedure below instead of assuming the planned rotation sequence completed.
 
 ## Continuity across branches
 
@@ -212,13 +283,15 @@ The live branch/promotion pointer belongs in `docs/current_routing.json` and is 
 
 A new collaborator must not silently switch branches based on model memory.
 
+Current-checkpoint freshness is branch-scoped: the active branch must point to its own maximum numbered checkpoint, while unrelated branches may legitimately preserve different checkpoint populations.
+
 The private companion repository does not participate in ADS development branch selection. Its Git history is private-knowledge preservation history only.
 
 ## Checkpoint continuity
 
 Checkpoints preserve meaningful project-state boundaries, not every commit.
 
-Under Development Method v0.7, micro-iterations within one open review question are normally aggregated. Git preserves the exact implementation sequence; the checkpoint preserves the meaningful state transition.
+Under the current Development Method, micro-iterations within one open review question are normally aggregated. Git preserves the exact implementation sequence; the checkpoint preserves the meaningful state transition.
 
 When continuing an open checkpoint, distinguish:
 
@@ -273,9 +346,12 @@ exact tests/workflow run
 implementation target SHA
 human-review status
 whether a broader gate is still required before acceptance/promotion
+PUBLIC_REPOSITORY_INTEGRITY status when the integrity architecture is in scope
+PRIVATE_CONTINUITY_INTEGRITY status when private reconciliation is in scope
+CHAT_ROTATION_PREFLIGHT status when a deliberate rotation claim is in scope
 ```
 
-Never describe a V1 targeted or V2 subsystem pass as a complete V3 integrated pass.
+Never describe a V1 targeted or V2 subsystem pass as a complete V3 integrated pass. Never describe `NOT_VERIFIED` or `HOLD` as `PASS`.
 
 Risk-scaled verification is governed by `docs/DEVELOPMENT_METHOD.md`.
 
@@ -309,14 +385,14 @@ docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
 
 ## Recovery after unplanned context loss
 
-When a chat ends unexpectedly:
+When a chat ends unexpectedly without evidence of a partially executed mutation:
 
 1. identify the public ADS repository and likely active branch;
-2. read the structural guide, current routing and current state;
+2. perform the mandatory bootstrap reads, including `docs/CONTINUITY.md` directly;
 3. establish a fresh provider-local interaction-session ID and conversation title for the newly opened recovery chat instead of reusing the ended session's metadata;
 4. preserve any `RESOLVED_PRIVATE` values as resolved;
 5. if the public state indicates relevant private companion knowledge and that repository is accessible, retrieve the private complement;
-6. consult the local private operational-state contract when concrete local execution requires machine-local values;
+6. consult local private operational-state contracts only when concrete local execution requires machine-local values;
 7. verify the current checkpoint exists rather than assuming the final chat message committed successfully;
 8. inspect recent Git chronology when needed;
 9. separate implementation state from documentation/provenance state;
@@ -340,7 +416,30 @@ private-value visibility gap
     public state still records whether it is resolved
 ```
 
-The second should be repaired, not treated as lost knowledge. The third should not be mislabeled as unresolved project knowledge.
+Routing/provenance drift should be repaired, not treated as lost knowledge. A private visibility gap should not be mislabeled as unresolved project knowledge.
+
+## Recovery after abnormal execution interruption
+
+An outage, tool failure, unexplained task termination or user interruption can occur during a multi-step repository mutation after some durable writes have completed but before later writes, verification or reconciliation.
+
+Do not trust the interrupted conversation's implication of completion and do not blindly rerun the entire intended plan.
+
+Use this bounded recovery sequence:
+
+1. inspect current branch HEAD before further mutation;
+2. identify the last independently trusted durable boundary;
+3. enumerate commits, files and actions that actually completed after that boundary;
+4. compare completed work with the intended staged plan;
+5. classify every apparent inconsistency as one of:
+   - `EXPECTED / DEFERRED`
+   - `KNOWN DEFECT / PLANNED REPAIR`
+   - `INTERRUPTION RESIDUE`
+   - `NEW UNPLANNED DEFECT`
+6. repair only findings appropriate to the current stage;
+7. rerun required verification rather than inheriting pre-interruption success claims;
+8. preserve a recovery record when the interruption materially affects project continuity.
+
+A user interruption is allowed and does not itself imply Git corruption. Completed Git operations remain durable. This protocol exists to prevent a partially completed logical workflow from being mistaken for a completed transition.
 
 ## Periodic reconciliation
 
@@ -348,6 +447,8 @@ At meaningful stage boundaries, verify separately:
 
 ```text
 CURRENT_STATE / current_routing agree
+active-branch current checkpoint is fresh
+current_boundary is a stable semantic label
 root README remains stable and non-duplicative
 docs/README still describes the actual repository artifact families
 KNOWLEDGE_MAP retains exhaustive subject coverage
@@ -361,13 +462,16 @@ private companion knowledge is not competing with public development authority
 checkpoint metadata passes
 collaboration obligations are discoverable
 verification tier/status is represented accurately
+public integrity is verified when the transition requires it
+private continuity is evaluated separately when relevant
+chat-rotation preflight is not overclaimed
 ```
 
 Do not run the whole reconciliation after every small implementation commit.
 
 ## Version relationship
 
-Development Method v0.7 strengthens continuity by giving each navigation surface one primary responsibility:
+Development Method v0.8 strengthens the v0.7 information architecture without creating a second authority database:
 
 ```text
 structure     docs/README.md
@@ -375,15 +479,22 @@ live state    CURRENT_STATE.md + current_routing.json
 subject map   KNOWLEDGE_MAP.md
 procedure     CONTINUITY.md
 method        DEVELOPMENT_METHOD.md
+public gate   repository-integrity aggregate
+private gate  separate private-continuity evaluator
+transition    chat-rotation preflight
 ```
 
-The private companion repository adds a private knowledge complement without changing those public authority roles.
+The private companion repository remains a private knowledge complement and does not change public development authority.
 
-Deep preservation rationale remains in:
+Deep preservation and integrity rationale remains in:
 
 ```text
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
 docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
+docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
+docs/research/107_post_outage_repository_integrity_recovery_audit.md
+docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
+docs/specifications/026_v1_repository_integrity_recovery_amendment.md
 ```

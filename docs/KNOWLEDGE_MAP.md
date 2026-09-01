@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library  
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.  
-**Last reviewed:** 2026-08-29
+**Last reviewed:** 2026-09-01
 
 ## Purpose
 
@@ -242,18 +242,20 @@ docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 ### Source Universe, evidence substrate and permanent vault
 <!-- KM-TOPIC: source-universe -->
 
-Use for durable source storage, artifact integrity, evidence provenance, source-substrate validation and permanent-vault deployment/resumption.
+Use for durable source storage, artifact integrity, evidence provenance, source-substrate validation, permanent-vault deployment/resumption and the bounded local-execution prerequisite opened before ingestion.
 
 ```text
 docs/DECISIONS.md
 docs/foundations/022_source_universe_artifact_integrity_and_evidence_provenance_architecture.md
 docs/specifications/023_v1_source_universe_substrate.md
 docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
+docs/research/105_codexless_local_execution_bridge_evaluation.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
+docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
 ```
 
 Current substrate status is routed from `CURRENT_STATE.md`; this subject section preserves the durable architecture and evidence chain rather than copying live status.
@@ -271,12 +273,17 @@ docs/MAJOR_CHANGES.md
 docs/checkpoints/README.md
 docs/foundations/014_knowledge_preservation_architecture_and_evolution.md
 docs/specifications/024_v1_model_collaboration_state_guard.md
+docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
+docs/specifications/026_v1_repository_integrity_recovery_amendment.md
 docs/research/035_multi_model_development_collaboration_architecture.md
 docs/research/036_deferred_asynchronous_review_and_catchup_architecture.md
 docs/research/064_rapid_iteration_repository_preservation_audit_and_checkpoint_hygiene.md
 docs/research/080_explicit_coordination_branch_claude_trigger_hardening.md
 docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verification_audit.md
 docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
+docs/research/105_codexless_local_execution_bridge_evaluation.md
+docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
+docs/research/107_post_outage_repository_integrity_recovery_audit.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
@@ -285,6 +292,8 @@ docs/checkpoints/204_multimodel_collaboration_method_promoted.md
 docs/checkpoints/265_development_method_v06_knowledge_routing_and_verification_reconciliation.md
 docs/checkpoints/266_repository_information_architecture_and_exhaustive_knowledge_routing.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
+docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
+docs/checkpoints/269_codexless_read_path_verified_continuity_reconciled_for_chatgpt_12_handoff.md
 ```
 
 ### Project Cockpit product architecture and professional interaction model
@@ -552,6 +561,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 258-264 conversation-workspace cockpit-provenance -->
 <!-- KM-CHECKPOINT-RANGE: 265-266 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 267-267 source-universe development-governance cockpit-core conversation-workspace shell-rail -->
+<!-- KM-CHECKPOINT-RANGE: 268-269 source-universe development-governance -->
 
 Important checkpoints are linked directly in the subject sections above. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
