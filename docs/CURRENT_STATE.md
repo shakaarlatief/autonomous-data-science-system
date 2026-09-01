@@ -22,186 +22,277 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Codexless local execution accepted, direct-lane authority audit before Source Vault resume
+## Current active stage: semantic direct Git fetch verified, stronger synchronization contract next
 
-Research 105 has crossed the controlled-write boundary and is now closed as:
+Research 105 remains accepted as:
 
 ```text
 ACCEPTED_FOR_ADS_LOCAL_EXECUTION
 ```
 
-The accepted result is deliberately scoped. Codexless is accepted as a **replaceable bounded local execution transport**, not as a new project authority, mandatory core dependency, or permission source.
+Codexless remains accepted only as a **replaceable bounded local execution transport**. It is not a project authority, mandatory core dependency, permission source, or unrestricted host-control path.
 
-The final controlled local validation proved the full sequence against the real ADS checkout:
+The post-acceptance direct-lane authority audit has now established an important additional capability boundary:
 
 ```text
-clean local checkout synchronized by strict fast-forward
-local HEAD == origin-tracking HEAD
-one exact disposable artifact created
-text-exact readback PASS
-byte-exact readback PASS
-disposable artifact deleted
-working tree returned clean
-protected Source Universe state unchanged
+generic codex.command_exec carrying git fetch origin
+    BLOCKED BY CHATGPT/OPENAI BEFORE LOCAL EXECUTION
+
+bounded codex.git_fetch_origin
+    DISCOVERED BY CHATGPT
+    DISPATCHED THROUGH THE NORMAL HOST SAFETY LAYER
+    EXECUTED THROUGH THE EXISTING CODEX AUTHORITY BACKEND
+    git fetch origin EXIT 0
 ```
 
-Detailed evidence is preserved in:
+The completed fetch-specific evidence is preserved in:
 
 ```text
-docs/local_execution/validation/012_controlled_write_read_delete_local_operation_verified.md
-docs/research/105_codexless_local_execution_bridge_evaluation.md
-docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/local_execution/validation/013_direct_lane_git_metadata_permission_profile_source_audit.md
+docs/local_execution/validation/014_direct_git_profile_runtime_application_partial.md
+docs/local_execution/validation/015_direct_git_profile_active_metadata_write_denied_windows_acl_investigation.md
+docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+docs/local_execution/validation/017_bounded_semantic_git_fetch_mcp_dispatch_experiment_opened.md
+docs/local_execution/validation/018_semantic_git_fetch_origin_dispatch_verified.md
+```
+
+Validation 018 is the current fetch-specific result owner.
+
+---
+
+## Direct-lane audit result to date
+
+The audit separated several distinct layers rather than treating local Git as one permission switch.
+
+### Codex profile and Windows filesystem boundary
+
+The custom direct profile is:
+
+```text
+profile                  ads-direct-git
+extends                  :workspace
+trusted ADS root         C:\Projects_Data\autonomous-data-science-system
+explicit writable root   .git
+inherit networkAccess    true
+readOnly downscope       :read-only
+authority source         host-profile-override
+```
+
+The earlier `.git/FETCH_HEAD` denial was not caused by profile-selection failure. Host inspection confirmed a stale Windows workspace-capability DENY ACE persisted alongside the newer `.git` writable capability. Exactly the stale workspace-SID deny rules on `.git` were removed, leaving the narrower `.git` capability intact.
+
+After that ACL repair, the filesystem boundary was crossed successfully and the next inner failure was network-disabled execution. The inherit profile was then widened only with `network={enabled=true}`. `access=readOnly` continued to downscope to `:read-only` and did not inherit that network widening.
+
+### Outer ChatGPT tool-safety boundary
+
+With filesystem and inherit-network authority ready, a final generic `codex.command_exec` request containing `git fetch origin` was blocked by ChatGPT/OpenAI before local dispatch.
+
+No wrapper, alternate command, `codex.process`, Codex agent, or disguised fallback was used to route around that block.
+
+This established the A-side observation for the later semantic-tool experiment.
+
+---
+
+## Semantic Git fetch experiment
+
+Validation 017 froze a dedicated action:
+
+```text
+codex.git_fetch_origin
+```
+
+The caller schema is a strict empty object. The caller cannot choose:
+
+```text
+command
+cwd
+remote
+URL
+refspec
+branch
+credentials
+permission profile
+```
+
+Internally the action is fixed to:
+
+```text
+git fetch origin
+```
+
+through the same existing Codex authority executor and official Codex App Server `command/exec` path with:
+
+```text
+access      inherit
+timeout     30 seconds
+profile     ads-direct-git
+```
+
+The conservative MCP annotations remain:
+
+```text
+readOnlyHint     false
+destructiveHint  true
+idempotentHint   false
+openWorldHint    true
+```
+
+The experiment did not mislabel fetch as read-only or additive-only merely to influence host safety behavior.
+
+---
+
+## Codexless live-factory correction and public surface
+
+The first local experimental patch added the new allowlist entry correctly but registered the action in a factory that the running public HTTP path did not use. That produced a real MCP initialize failure because the live allowlist contained a tool that the actual server configuration had not registered.
+
+The implementation was corrected so the semantic action is registered in the live `mcp-server-factory.mjs` path, only for `publicPreview`, while preserving the same authority backend and narrow caller contract.
+
+Focused syntax/contract checks passed.
+
+The live surface then became:
+
+```text
+Codexless version              0.1.1-preview.5
+total MCP actions              43
+private app-only actions        3
+publicly callable actions      40
+```
+
+The three private app-only actions remain:
+
+```text
+codex.agent_card_state
+codex.agent_commit
+codex.agent_decline
+```
+
+The Secure MCP Tunnel recovered to:
+
+```text
+/healthz   200 live
+/readyz    200 ready
+```
+
+The existing ChatGPT developer MCP app was refreshed through its `Vernieuwen` action. Fresh ChatGPT discovery then reported 40 publicly callable tools and exposed `codex.git_fetch_origin`.
+
+---
+
+## Validation 018 execution result
+
+Immediately before the single semantic fetch call:
+
+```text
+branch
+    v1-source-vault-bootstrap-resume
+
+local HEAD
+    063fdc99c76d7821efc58bb83823bcad33c068c5
+
+origin/v1-source-vault-bootstrap-resume
+    ca42678c9873d350ab5dd9d2b577f36eecdc5854
+
+status
+    ## v1-source-vault-bootstrap-resume...origin/v1-source-vault-bootstrap-resume [behind 12]
+
+working tree
+    clean
+```
+
+`codex.git_fetch_origin` was invoked exactly once and returned:
+
+```text
+exit status             0
+stdout                  empty
+stderr                  empty
+requested access        inherit
+effective profile       ads-direct-git
+permission ceiling      ads-direct-git
+authority source        host-profile-override
+```
+
+Read-only post-inspection showed local `HEAD`, upstream commit, status and working tree unchanged.
+
+`.git/FETCH_HEAD` was demonstrably refreshed:
+
+```text
+before timestamp  2026-09-01T16:45:08.3729850Z
+after timestamp   2026-09-01T17:25:19.4063452Z
+length             8711 bytes before and after
+SHA-256            f1e35235bc0b4679e1577222d36fc8e6ce3bd3007a8104eefe340feafb91592d before and after
+```
+
+The timestamp change proves the fetch executed and refreshed Git metadata. The unchanged digest shows the fetched reference content available at that moment had not changed.
+
+No pull, merge, checkout, reset, rebase, commit, push, agent, process tool, wrapper, or alternate fetch mechanism was used.
+
+---
+
+## Current interpretation
+
+The strongest supported conclusion is:
+
+```text
+ChatGPT -> bounded semantic MCP action -> Codex command/exec -> Git fetch
+    VERIFIED for codex.git_fetch_origin on the trusted ADS repository
+```
+
+The A/B result supports that the MCP action contract materially affected dispatchability for this exact operation. It does **not** prove that semantic naming alone controls ChatGPT safety decisions, that every bounded semantic action will be dispatched, or that Git operations in general are accepted.
+
+The direct lane is therefore more capable than the earlier generic-command observation suggested, while remaining intentionally bounded.
+
+The following stronger operations are still untested and unaccepted:
+
+```text
+pull
+merge
+checkout
+reset
+rebase
+commit
+push
+arbitrary Git subcommands
+arbitrary host process execution
 ```
 
 ---
 
-## Research 105 acceptance evidence
+## Next direct-lane engineering boundary
 
-Before synchronization, the local checkout was clean at:
+The next useful question is checked-out-branch synchronization, not another fetch test.
 
-```text
-284c99e094a44750404fa197da127bfaf6d9b93a
-```
-
-while the matching origin-tracking branch was at:
+A possible future action is conceptually:
 
 ```text
-063fdc99c76d7821efc58bb83823bcad33c068c5
+codex.git_pull_ff_only
 ```
 
-The direct bridge command lane reached the real local repository but the current `:workspace` / `workspaceWrite` command-execution sandbox denied the `.git/FETCH_HEAD` write required by `git pull --ff-only`.
+but **no implementation is authorized yet by Validation 018**.
 
-The formal Codex agent lane then entered the normal exact-command approval path. The project owner granted a one-time approval for only:
+A separate contract must be frozen first because fast-forward pull can change local `HEAD` and working-tree files. That contract should specify at least:
 
 ```text
-git pull --ff-only origin v1-source-vault-bootstrap-resume
+fixed trusted repository
+fixed current configured upstream/origin behavior
+strict fast-forward-only semantics
+clean-tree and branch preconditions
+no merge commit
+no rebase
+no reset
+no checkout
+no force behavior
+no arbitrary caller command/remote/refspec
+exact authority profile
+postcondition/status verification
+failure and uncertainty handling
+outer ChatGPT dispatch as a separately observed result
 ```
 
-The strict fast-forward succeeded without merge, rebase, reset, commit, push, or GitHub write.
-
-The disposable proof used:
-
-```text
-tests/research105_disposable_probe_20260901_7f3c9a2e.txt
-```
-
-with exact UTF-8 content:
-
-```text
-Research 105 disposable controlled-write proof.
-Nonce: 20260901-7f3c9a2e
-```
-
-and verified:
-
-```text
-text-exact match   True
-byte-exact match   True
-byte count         73
-SHA-256            2489c0a51e8c8f003043b8bd59f75fbf46590301a243d316645b4e2f990be564
-```
-
-The artifact was deleted, final existence was `False`, and the final local status was clean with local HEAD and origin both at `063fdc99c76d7821efc58bb83823bcad33c068c5`.
-
-A public preservation commit created after that local proof necessarily advances origin beyond the validation target. Before the next machine-local ADS mutation, the local checkout must therefore be fast-forwarded again to the then-current public HEAD.
-
----
-
-## Direct-lane permission and supervision follow-up
-
-Research 105 acceptance does not hide the observed execution asymmetry:
-
-```text
-direct read / inspection                 PASS
-direct command execution                 PASS within current sandbox authority
-direct Git metadata write                BLOCKED at .git/FETCH_HEAD under current command/exec sandbox
-formal permission-aware Git operation    PASS after exact one-time approval
-controlled disposable local write        PASS
-```
-
-The project owner selected a bounded post-acceptance audit before permanent Source Vault ingestion resumes.
-
-The audit must reconstruct the actual implementation and prior setup from repository authority rather than guess from current UI behavior. It should distinguish at least:
-
-```text
-ChatGPT plug-in permission
-Developer MCP host capability
-Secure MCP Tunnel authority
-OpenAI tunnel-client/runtime-key authority
-Codexless transport configuration
-Codex project trust / permission profile
-command/exec sandbox projection
-workspace writable roots
-.git metadata treatment
-formal Codex agent approval routing
-```
-
-The goal is **not** unrestricted host access. The goal is to determine whether routine ADS-local writes and ordinary Git operations can be enabled safely through the direct ChatGPT -> bridge lane, using the smallest authority required, while unrelated host state, sensitive locations, credentials, private source material and browser authority remain outside the required boundary.
-
-If that refinement is not safely configurable or is not worth the complexity, Research 105 remains accepted through the already-proven formal permission-aware path.
-
----
-
-## Known current Codexless integration limitations
-
-The following observations remain material:
-
-1. The current direct `command_exec` sandbox can deny Git metadata mutation even when the repository working tree is otherwise inside the workspace authority ceiling.
-2. During the formal Codex test, the visible Call Codex card remained in `Codex running` while the underlying agent was actually `awaitingApproval`. The bounded agent-state query exposed the exact pending command. Future supervision should not equate the Rich Card presentation with authoritative agent state when progress appears stalled.
-3. The persistent `chatgpt-14` conversation experienced intermittent ChatGPT host rejection of Developer MCP invocation after earlier successful bridge calls. Fresh disposable diagnostic conversations remained usable. This is a host/runtime integration limitation, not evidence that the local transport proof failed.
-4. The formal Call Codex card reported a high token-usage figure for the bounded task. The accounting semantics and cause are not yet audited, so no cost/efficiency conclusion is frozen from that observation alone.
-5. Browser integration remains deferred.
-
----
-
-## Repository integrity hardening remains accepted
-
-The v0.8/v0.9 repository-integrity architecture remains the governing continuity and public-integrity framework. The reconciled public target at `284c99e094a44750404fa197da127bfaf6d9b93a` passed the full Repository Integrity workflow on Ubuntu and Windows, and the later historical-intermediate extension at `063fdc99c76d7821efc58bb83823bcad33c068c5` also passed the exact public workflows before the Research 105 local synchronization.
-
-The integrity architecture continues to distinguish numbered checkpoints from governed historical intermediate milestones. Canonical numbered Checkpoint 252 remains:
-
-```text
-docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
-```
-
-The useful earlier source-faithful reintegration milestone remains preserved as:
-
-```text
-docs/checkpoints/intermediate_2026-08-28_source_faithful_reintegration_interaction_integrity_gate.md
-```
-
-No renumbering of later checkpoints occurs.
-
-Any new public branch mutation must pass the Repository Integrity workflow on its own exact HEAD before a new `PUBLIC_REPOSITORY_INTEGRITY=PASS` claim is made for that target.
-
----
-
-## Current canonical route
-
-The governing route for the current boundary is:
-
-```text
-docs/research/105_codexless_local_execution_bridge_evaluation.md
-docs/local_execution/validation/011_fresh_chat_read_only_local_operation_verified.md
-docs/local_execution/validation/012_controlled_write_read_delete_local_operation_verified.md
-docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
-docs/CONTINUITY.md
-docs/DEVELOPMENT_METHOD.md
-docs/current_routing.json
-docs/KNOWLEDGE_MAP.md
-docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-```
-
-Repository-integrity background remains governed by Research 103-108 and Specifications 024-027.
-
-Development Method v0.9 remains the current operational method.
+If a direct semantic pull route is not worth the additional complexity or is blocked, the already-proven formal Codex permission-aware synchronization path remains available.
 
 ---
 
 ## Source Vault remains paused and unchanged
 
-The local-execution proof did not authorize or perform source ingestion.
+No Source Universe or permanent Source Vault state was touched during the direct-lane Git audit or semantic fetch experiment.
 
 The permanent Source Universe remains frozen at:
 
@@ -220,80 +311,74 @@ clean restore + restored audit      PENDING
 Course 2                            BLOCKED
 ```
 
-The original source root and other machine-specific operational coordinates remain `RESOLVED_PRIVATE`. Their exact values do not belong in public Git.
+The original source root and other machine-specific operational coordinates remain `RESOLVED_PRIVATE` and do not belong in public Git.
 
-The next-generation Project Cockpit frontend exploration remains paused at its previously frozen state.
-
-Research 105 itself no longer blocks Source Vault ingestion. The current pause exists because the project owner selected the bounded direct-lane authority audit as the next engineering step before ingestion resumes.
+Source Vault ingestion remains paused because the project owner chose to finish or deliberately bound the direct-lane synchronization investigation before resuming ingestion.
 
 ---
 
-## Interaction-provenance naming clarification
+## Repository integrity and development method
 
-The canonical naming guide has been clarified for this session boundary.
+Research 103-108 and Specifications 024-027 continue to govern repository integrity and continuity.
 
-The abstract pattern:
+Development Method v0.9 remains current.
 
-```text
-NN - Main Topic / Stage
-```
+Canonical numbered Checkpoint 270 remains the latest numbered checkpoint. Validation 018 is a meaningful fetch-specific experimental result inside the still-open direct-lane synchronization investigation, so no new numbered checkpoint is created by this preservation step.
 
-uses `/` as explanatory notation meaning "main topic or stage". A literal slash is **not required punctuation**. Natural human wording is preferred, including conjunctions such as `and` when a title combines related concepts.
+Any new public branch mutation must pass the Repository Integrity workflow on its exact new HEAD before a new exact-target `PUBLIC_REPOSITORY_INTEGRITY=PASS` claim is made.
 
-Therefore this session correctly uses:
-
-```text
-14 - Codexless Write Validation and Source Vault Resume
-```
-
-Historical titles that accurately record the title actually used are not retroactively rewritten merely for cosmetic conformity.
-
-The canonical rule lives in:
-
-```text
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
-```
+The public repository remains the sole project-development authority.
 
 ---
 
-## Public/private/preflight claims remain separate
+## Model collaboration state
 
-The integrity architecture distinguishes:
+MC-0009 remains `DEFERRED / NON-BLOCKING`.
+
+Claude's originally planned independent feasibility research was not required to proceed with the bounded experiment. A later counter-design or independent review may still be useful, but it is not an acceptance gate for the verified fetch result.
+
+No Claude Message 001 is assumed to exist unless it is later preserved in the governed collaboration thread.
+
+---
+
+## Current canonical route
+
+The governing route for the current boundary is:
 
 ```text
-PUBLIC_REPOSITORY_INTEGRITY
-    PASS | FAIL
-
-PRIVATE_CONTINUITY_INTEGRITY
-    PASS | FAIL | NOT_VERIFIED
-
-CHAT_ROTATION_PREFLIGHT
-    PASS | HOLD | FAIL
+docs/research/105_codexless_local_execution_bridge_evaluation.md
+docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+docs/local_execution/validation/017_bounded_semantic_git_fetch_mcp_dispatch_experiment_opened.md
+docs/local_execution/validation/018_semantic_git_fetch_origin_dispatch_verified.md
+docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/model_collaboration/threads/MC-0009/STATE.json
+docs/DEVELOPMENT_METHOD.md
+docs/CONTINUITY.md
+docs/current_routing.json
+docs/KNOWLEDGE_MAP.md
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
-A public PASS never proves private freshness. After the public commit preserving Checkpoint 270 and Research 105 closure, the private companion's public-safe synchronization anchor must be reconciled separately before a new private PASS is claimed for that boundary.
-
-No deliberate chat rotation is currently required. A future rotation claim must evaluate the exact public target, required private continuity and any then-open transition obligations rather than inheriting an older PASS/HOLD state.
+Repository-integrity background remains governed by Research 103-108 and Specifications 024-027.
 
 ---
 
 ## Exact continuation order
 
-From the Research 105 acceptance boundary:
+From the verified semantic-fetch boundary:
 
 ```text
-1. preserve Research 105 closure and Checkpoint 270 coherently
-2. require the complete Repository Integrity workflow to pass on the exact new public HEAD
-3. reconcile the private companion public-safe anchor to that exact public commit and verify private continuity separately
-4. before further local work, fast-forward the local checkout from the validation target to the new public HEAD
-5. reconstruct and audit the direct-lane permission architecture from durable repository evidence
-6. determine whether a smaller safe direct-write/Git authority configuration exists or keep the proven formal approval lane
-7. resume reviewed ingestion of the frozen 20-entry first corpus into the permanent Source Registry and Source Vault
-8. run the working-store integrity audit before accepting any backup
-9. continue deterministic encrypted backup, remote retrieval, decryption, clean restore and restored integrity proof
+1. preserve Validation 018 and refresh CURRENT_STATE/current_routing coherently
+2. require Repository Integrity to pass on the exact preservation HEAD
+3. before the next machine-local ADS mutation, recognize that the local checkout is still behind the public branch and must be synchronized through an accepted route
+4. if continuing the direct-lane investigation, freeze a separate strict fast-forward pull contract before implementing or dispatching any semantic pull tool
+5. otherwise deliberately defer that stronger experiment and use the already-proven formal Codex synchronization route
+6. once the direct-lane synchronization boundary is resolved or deliberately deferred, resume reviewed ingestion of the frozen 20-entry first corpus
+7. run the working-store integrity audit before accepting any backup
+8. continue deterministic encrypted backup, remote retrieval, decryption, clean restore and restored integrity proof
 ```
 
-Do not weaken repository-integrity validators or Source Universe safety boundaries merely to simplify the local execution path.
+Do not weaken Git safety, repository-integrity validators, Source Universe controls, or private/public separation merely to simplify local execution.
 
 ---
 
@@ -310,19 +395,16 @@ docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
 ```
 
-Then read the governing current boundary:
+Then read the current direct-lane boundary:
 
 ```text
 docs/research/105_codexless_local_execution_bridge_evaluation.md
-docs/local_execution/validation/012_controlled_write_read_delete_local_operation_verified.md
+docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+docs/local_execution/validation/017_bounded_semantic_git_fetch_mcp_dispatch_experiment_opened.md
+docs/local_execution/validation/018_semantic_git_fetch_origin_dispatch_verified.md
 docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
-docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/DEVELOPMENT_METHOD.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
-Read Research 106-108 and Specifications 025-027 when repository-integrity details are relevant to the next mutation.
-
 When relevant and accessible, retrieve the private companion only after the public reconstruction.
-
-The public repository remains the sole project-development authority.
