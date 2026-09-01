@@ -24,7 +24,25 @@ refresh the ChatGPT developer MCP app after a surface change
 recover safely when the foreground terminal is lost
 ```
 
-Do not reconstruct those commands from prior chat memory when the runbook is available.
+Before starting Codexless for ADS, also use:
+
+```text
+docs/local_execution/AUTHORITY_BOOTSTRAP.md
+```
+
+This is the canonical ADS-specific parent-shell/bootstrap procedure for restoring:
+
+```text
+CODEXLESS_PROFILE
+CODEXLESS_CONFIG_OVERRIDES_FILE
+CODEXLESS_DEFAULT_CWD
+```
+
+and verifying that `inherit` resolves to the accepted `ads-direct-git` authority with network enabled while `readOnly` still downscopes to `:read-only`.
+
+A healthy HTTP process alone is not sufficient evidence that the accepted ADS authority configuration was loaded. Authority must be verified after restart before any mutation experiment.
+
+Do not reconstruct these commands or authority inputs from prior chat memory when the repository procedures are available.
 
 Exact secrets and private operational identifiers are intentionally excluded from the public repository and remain `RESOLVED_PRIVATE` in the accepted private/local continuity layer.
 
@@ -32,7 +50,7 @@ Exact secrets and private operational identifiers are intentionally excluded fro
 
 `docs/local_execution/validation/` contains chronological evidence for the Codexless/Secure MCP Tunnel/ChatGPT local-execution investigation.
 
-Validation records preserve what was tested and observed. They do not replace the evergreen startup/recovery procedure in `OPERATIONS.md`, and historical validation commands should not automatically be treated as the current operational method.
+Validation records preserve what was tested and observed. They do not replace the evergreen startup/recovery procedures, and historical validation commands should not automatically be treated as the current operational method.
 
 Current live interpretation and the next legitimate mutation remain owned by:
 
