@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
 **Date:** 2026-09-01  
-**Status:** PENDING CLAUDE OBLIGATION / MC-0009 INDEPENDENT RESEARCH  
+**Status:** NO BLOCKING CLAUDE OBLIGATION / MC-0009 DEFERRED  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -21,7 +21,7 @@ docs/current_routing.json
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
 
-## Pending model obligation
+## Deferred model obligation
 
 ### MC-0009: ChatGPT local Git through MCP feasibility and safety architecture
 
@@ -31,15 +31,15 @@ mode                      INDEPENDENT_THEN_COMPARATIVE
 coordination branch       v1-source-vault-bootstrap-resume
 frozen independent target cb48c1ac539592e63b13cbc8e4e2413cb0b196a0
 kind                      independent technical research / counter-design
-priority                  HIGH
-gate                      before implementing or freezing a new direct-Git MCP architecture
+priority                  HIGH when resumed
+current gate              NONE for the bounded semantic Git-fetch experiment
 expected output           docs/model_collaboration/threads/MC-0009/messages/001_claude_independent_chatgpt_local_git_mcp_feasibility_research.md
-status                    WAITING_FOR_CLAUDE
+status                    DEFERRED_BY_HUMAN_ROUTING
 ```
 
-Claude must first preserve an independent position on whether ordinary ChatGPT Chat can safely dispatch bounded local Git operations through a trusted MCP bridge without a Codex model-agent turn, and on the smallest supported architecture/experiment that can distinguish a tool-contract issue from an immutable platform prohibition.
+The project owner explicitly chose to proceed without waiting for Claude's first response. Claude's research remains useful but no longer blocks the current smallest controlled direct-Git experiment.
 
-The detailed neutral contract is in:
+The detailed contract and deferral semantics are in:
 
 ```text
 docs/model_collaboration/threads/MC-0009/BRIEF.md
@@ -47,15 +47,19 @@ docs/model_collaboration/threads/MC-0009/THREAD.md
 docs/model_collaboration/threads/MC-0009/STATE.json
 ```
 
-The first phase is `BLIND_TO_CANDIDATE`. Claude may use the observed diagnostic facts, the exact frozen target and external/upstream sources, but should not inspect a later ChatGPT candidate before Message 001 is durably frozen. Claude's write scope is limited to `docs/model_collaboration/threads/MC-0009/messages/**`.
-
-Post-freeze canonical preservation now exists at:
+The canonical post-015 diagnostic preservation record is:
 
 ```text
 docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
 ```
 
-Validation 016 preserves the same later diagnostic facts already summarized neutrally in the MC-0009 brief. It does **not** move the frozen independent target and is **not** part of Claude's substantive ADS evidence base during the blind phase. Claude should not inspect validation 016 before Message 001 is durably frozen.
+The currently authorized experiment is opened in:
+
+```text
+docs/local_execution/validation/017_bounded_semantic_git_fetch_mcp_dispatch_experiment_opened.md
+```
+
+If Claude later resumes the originally intended blind pass, it must remain anchored to the exact frozen target and must not inspect descendant ChatGPT candidate/implementation material before freezing Message 001. If that exposure has already occurred, the collaboration must be reclassified honestly rather than claiming `BLIND_TO_CANDIDATE`.
 
 ## Most recently completed obligation
 
