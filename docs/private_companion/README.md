@@ -1,48 +1,23 @@
 # Private Companion Knowledge Repository
 
-**Status:** Accepted and operational; companion bootstrap complete  
-**Date:** 2026-08-30  
-**Scope:** Define the role, authority, content boundary, and continuity contract for the private companion repository used to preserve private ADS knowledge that should remain available across conversations but must not be committed to the public development repository.
+**Status:** Accepted and operational  
+**Last reviewed:** 2026-09-01  
+**Scope:** Define the role, authority, content boundary, and continuity contract for the private companion repository used to preserve private ADS knowledge that should survive chat rotation but must not be committed to the public development repository.
 
-## Core decision
+## Core authority boundary
 
-The Autonomous Data Science System continues to be **developed in the public `autonomous-data-science-system` repository**.
-
-The private companion repository is not a second development repository, not a private fork, and not an alternate source of implementation truth.
-
-Its sole purpose is durable preservation of project knowledge that is useful for continuity or execution but inappropriate for public Git.
-
-Conceptually:
+The public `autonomous-data-science-system` repository remains the sole ADS project-development repository and the sole authority for:
 
 ```text
-PUBLIC ADS REPOSITORY
-    sole project-development repository
-    code / tests / schemas / migrations
-    architecture / specifications / decisions
-    foundations / research / checkpoints
-    public-safe current state and provenance
-    public-safe Source Universe metadata
-
-PRIVATE COMPANION KNOWLEDGE REPOSITORY
-    private project knowledge only
-    exact local paths and machine coordinates
-    private operational observations
-    private source-location mappings
-    private continuity facts that should survive chat rotation
-    private reports whose usefulness is primarily knowledge preservation
-
-PRIVATE SOURCE VAULT / BACKUP STORAGE
-    source binaries
-    datasets / PDFs / books / slides
-    registry snapshots and backup payloads
-    large or binary private evidence artifacts
-
-SECRET STORAGE
-    passwords / API keys / tokens / credentials
-    never ordinary Git content, even in the private companion repository
+code / tests / schemas / migrations
+architecture / specifications / decisions
+foundations / research / checkpoints
+public current state and routing
+verification / promotion / development history
+public-safe Source Universe evidence
 ```
 
-## Repository identity and verified accessibility
+The private companion repository is a **knowledge-preservation complement only**. It is not a private development fork, not a competing `CURRENT_STATE`, and not an alternate source of implementation truth.
 
 The operational companion repository is:
 
@@ -50,183 +25,151 @@ The operational companion repository is:
 shakaarlatief/autonomous-data-science-system-private
 visibility: private
 default branch: main
-bootstrap commit: 85fda98b5726b98be026ddd4c4e9ad5a067dd106
 ```
 
-The connected GitHub integration successfully read and wrote this repository during bootstrap and subsequently retrieved the migrated Source Vault private record from `main`. The private companion is therefore a usable cross-chat knowledge surface when the GitHub connection remains authorized for it.
-
-## Authority boundary
-
-The public ADS repository remains authoritative for:
+## What belongs where
 
 ```text
-what ADS is
-what is being built
-implementation state
-accepted architecture
-specifications and contracts
-decisions
-checkpoints and chronological development state
-public current routing
-verification and promotion state
-public-safe Source Universe evidence
+PUBLIC ADS REPOSITORY
+    project-development authority
+    public-safe state, evidence, contracts and chronology
+
+PRIVATE COMPANION KNOWLEDGE REPOSITORY
+    exact private paths and machine/storage coordinates
+    private operational observations
+    private source-location mappings
+    other durable private continuity knowledge
+
+LOCAL .ads-private STATE
+    execution-ready machine-local configuration
+    direct runtime inputs
+
+PRIVATE SOURCE VAULT / BACKUP STORAGE
+    source binaries
+    datasets / PDFs / books / slides
+    registry snapshots and backup payloads
+
+SECRET STORAGE
+    passwords / API keys / tokens / credentials / encryption secrets
 ```
 
-The private companion repository is authoritative only for private knowledge fields explicitly delegated to it by the public repository.
+The private companion must never be used for ordinary secrets or as bulk source/backup storage merely because it is private.
 
-A private record must not silently override or contradict public project-development authority. If a conflict is discovered, the public repository records the disposition and the private record is corrected or superseded transparently.
+## Single-owner rule
 
-## No development in the private companion repository
-
-The following are explicitly out of scope:
-
-```text
-ADS application code
-frontend code
-tests
-schemas
-migrations
-experiments that define project behavior
-feature branches for ADS development
-pull requests that implement ADS product changes
-canonical specifications or architectural decisions
-copies of CURRENT_STATE.md intended to compete with the public version
-```
-
-A private note may reference public commits, checkpoints, or stable IDs, but development changes themselves belong in the public repository.
-
-## Knowledge ownership without duplication
-
-Each fact should have one primary owner.
+Each fact should have one primary authority layer.
 
 Example:
 
 ```text
 public CURRENT_STATE
     ORIGINAL_SOURCE_ROOT = RESOLVED_PRIVATE
-    capacity preflight = FAILED_INSUFFICIENT_FREE_SPACE
-    cleanup required = YES
+    source ingestion = NOT STARTED
 
 private companion
     exact ORIGINAL_SOURCE_ROOT path
-    exact observed storage figures
-    machine/profile context for that observation
+    exact private storage topology
 ```
 
-The private repository should not duplicate large public documents merely to make them easier to find. It should store the private complement to public state.
+A private record may reference a public commit, checkpoint, specification, or stable identifier, but it cannot silently redefine public project-development state. If a conflict is discovered, resolve it explicitly and preserve the disposition in the appropriate authority layer.
 
-## Relationship to machine-local `.ads-private/`
+## Relationship to `.ads-private/`
 
-The Git-ignored local directory remains useful:
+The Git-ignored local directory:
 
 ```text
 .ads-private/
 ```
 
-Its role is **machine-local execution configuration**.
+is machine-local execution configuration. The companion repository instead provides durable private knowledge across chats and machines.
 
-The private companion repository has a different role: **durable private knowledge and cross-chat reconstruction**.
-
-A normal pattern is:
+Normal direction:
 
 ```text
 private companion knowledge
-    durable private value / observation
-        ->
-local .ads-private file
-    execution-ready machine-local representation
+    -> materialize or verify local .ads-private execution state
+    -> execute under public ADS contracts
 ```
 
-The local file may be regenerated or synchronized from private knowledge when appropriate. It is no longer the only durable copy of important private continuity information.
+Synchronizing a private value into local operational state does not make the companion repository a development repository.
 
-## Current private repository structure
+## Current private continuity surface
 
-The bootstrap intentionally remains small:
+The primary private routing surface is:
 
 ```text
-README.md
 CURRENT_PRIVATE_STATE.md
-.gitignore
-
-source_universe/
-    source_vault_bootstrap.json
-
-machines/
-    README.md
 ```
 
-`CURRENT_PRIVATE_STATE.md` is a routing/index surface for relevant private knowledge only. It is not a second project `CURRENT_STATE.md` and owns no ADS development state.
-
-Additional structure should be earned by real private-knowledge needs rather than designed speculatively.
-
-## Migrated private Source Vault state
-
-The first private record is:
+It carries the public-safe synchronization anchor:
 
 ```text
-source_universe/source_vault_bootstrap.json
+Public continuity checkpoint
+Public continuity commit
 ```
 
-It now durably preserves the exact already-known `ORIGINAL_SOURCE_ROOT` and the exact initial capacity observation. Public Git continues to preserve only the safe conclusions:
+and points to the private records relevant to the current ADS boundary.
 
-```text
-ORIGINAL_SOURCE_ROOT          RESOLVED_PRIVATE
-capacity preflight            FAILED_INSUFFICIENT_FREE_SPACE
-cleanup required              YES
-capacity recheck required     YES
-permanent write allowed       NO
-```
+For Source Vault bootstrap continuity, the current detailed private topology/evidence is routed from `CURRENT_PRIVATE_STATE.md`. Historical or superseded private observations remain provenance and must not override the latest routed private record.
 
-The remaining Source Registry, Source Vault, independent-backup, and clean-restore locations remain unresolved until selected.
+Do not copy volatile Source Vault status into this contract. Live public project state belongs in `docs/CURRENT_STATE.md`; live private routing belongs in the companion `CURRENT_PRIVATE_STATE.md`.
 
-The private repository does not contain the Machine Learning PDFs themselves, registry backups, Source Vault object bytes, or credentials.
-
-## Cross-chat continuity
+## Cross-chat reconstruction
 
 Repository-first reconstruction remains public-first:
 
 ```text
-1. reconstruct project state from autonomous-data-science-system
-2. inspect whether the active public state references private companion knowledge
-3. when relevant and accessible, read the corresponding private companion state
-4. preserve the public/private authority boundary while continuing work
+1. reconstruct ADS from the public repository using docs/CONTINUITY.md
+2. determine whether the public active state references private knowledge
+3. when relevant and accessible, read private CURRENT_PRIVATE_STATE.md
+4. follow its routed private records only as a complement
+5. use local .ads-private state only when concrete local execution requires it
 ```
 
-A new conversation must not require the project owner to repeat a value already marked `RESOLVED_PRIVATE` merely because the public repository intentionally withholds its exact value.
+A collaborator must not ask the project owner to repeat a value already marked `RESOLVED_PRIVATE` merely because the public repository intentionally withholds its exact value.
 
-If the private companion repository is temporarily inaccessible, the public repository still preserves whether the private value is resolved and what the current project blocker is. Inaccessibility is not equivalent to unresolved knowledge.
+If the companion is inaccessible, preserve `RESOLVED_PRIVATE`; do not silently downgrade it to `UNRESOLVED`.
 
-## Security and privacy boundary
+## Private continuity integrity
 
-The companion repository is private, but that does not make it suitable for all sensitive material.
+When deliberate chat rotation or another continuity transition requires private verification, compare the companion's public continuity anchor against the exact public target.
 
-Do not store ordinary secrets such as:
+The governed result is:
 
 ```text
-API keys
+PRIVATE_CONTINUITY_INTEGRITY=PASS
+PRIVATE_CONTINUITY_INTEGRITY=FAIL
+PRIVATE_CONTINUITY_INTEGRITY=NOT_VERIFIED
+```
+
+The public checker is:
+
+```text
+scripts/check_private_continuity.py
+```
+
+`NOT_VERIFIED` means the current surface did not prove private freshness. It is not public repository failure.
+
+## Security boundary
+
+Never store in ordinary Git, public or private:
+
+```text
 passwords
+API keys
 access tokens
 private keys
 service-account credentials
 recovery codes
+encryption passwords or keys
 ```
 
-Do not use it as bulk binary storage. Large source artifacts belong in the Source Vault / backup architecture.
+Do not use the companion for Source Vault object bytes, source binaries, registry databases, backup archives, or other bulk private payloads.
 
-The private repository includes a defensive `.gitignore` for common secret, database, archive, and source-binary file types, but repository policy remains the primary safety boundary.
+The companion may preserve private paths, remote destination references, non-secret machine observations, and private reports when they are genuinely useful for continuity.
 
 ## Bootstrap classification
 
-The private companion bootstrap is complete:
+The private companion bootstrap is complete and operational. Future work should update private knowledge only when the active public ADS boundary creates or changes a private continuity fact.
 
-```text
-repository created privately                         PASS
-GitHub integration read access                      PASS
-GitHub integration write access                     PASS
-minimal private structure initialized               PASS
-known Source Vault private state migrated           PASS
-post-write private retrieval verified               PASS
-public/private development authority separated      PASS
-```
-
-The next ADS task is not more companion-repository setup. The active Source Vault blocker remains local storage cleanup followed by a fresh capacity measurement.
+The repository, not prior chat memory, owns the public/private authority boundary.
