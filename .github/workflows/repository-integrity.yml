@@ -15,6 +15,7 @@ on:
       - scripts/check_knowledge_map.py
       - scripts/check_model_collaboration_state.py
       - tests/unit/test_repository_integrity.py
+      - tests/unit/test_repository_integrity_aggregate.py
       - tests/unit/test_current_routing_integrity.py
       - tests/unit/test_continuity_preflight.py
       - .github/workflows/repository-integrity.yml
@@ -31,6 +32,7 @@ on:
       - scripts/check_knowledge_map.py
       - scripts/check_model_collaboration_state.py
       - tests/unit/test_repository_integrity.py
+      - tests/unit/test_repository_integrity_aggregate.py
       - tests/unit/test_current_routing_integrity.py
       - tests/unit/test_continuity_preflight.py
       - .github/workflows/repository-integrity.yml
@@ -56,6 +58,7 @@ jobs:
         run: >-
           uv run --python 3.13 --locked python -m pytest -q
           tests/unit/test_repository_integrity.py
+          tests/unit/test_repository_integrity_aggregate.py
           tests/unit/test_current_routing_integrity.py
           tests/unit/test_continuity_preflight.py
       - name: Run aggregate public repository-integrity gate

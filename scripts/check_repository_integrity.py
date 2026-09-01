@@ -16,10 +16,21 @@ class ValidatorResult:
     output: str
 
 
-FOCUSED_VALIDATORS: tuple[tuple[str, str], ...] = (
-    ("checkpoint metadata", "check_checkpoint_metadata.py"),
-    ("Knowledge Map", "check_knowledge_map.py"),
-    ("model collaboration state", "check_model_collaboration_state.py"),
+@dataclass(frozen=True)
+class FocusedValidator:
+    name: str
+    script_name: str
+    accepts_root_argument: bool = True
+
+
+FOCUSED_VALIDATORS: tuple[FocusedValidator, ...] = (
+    FocusedValidator("checkpoint metadata", "check_checkpoint_metadata.py"),
+    FocusedValidator("Knowledge Map", "check_knowledge_map.py"),
+    FocusedValidator(
+        "model collaboration state",
+        "check_model_collaboration_state.py",
+        accepts_root_argument=False,
+    ),
 )
 
 
@@ -43,13 +54,35 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def run_validator(
-    root: Path, name: str, script_name: str, extra_args: tuple[str, ...] = ()
-) -> ValidatorResult:
-    command = [sys.executable, str(root / "scripts" / script_name), "--root", str(root)]
+def validator_command(
+    root: Path,
+    script_name: str,
+    *,
+    accepts_root_argument: bool,
+    extra_args: tuple[str, ...] = (),
+) -> list[str]:
+    command = [sys.executable, str(root / "scripts" / script_name)]
+    if accepts_root_argument:
+        command.extend(("--root", str(root)))
     command.extend(extra_args)
+    return command
+
+
+def run_validator(
+    root: Path,
+    name: str,
+    script_name: str,
+    *,
+    accepts_root_argument: bool = True,
+    extra_args: tuple[str, ...] = (),
+) -> ValidatorResult:
     completed = subprocess.run(
-        command,
+        validator_command(
+            root,
+            script_name,
+            accepts_root_argument=accepts_root_argument,
+            extra_args=extra_args,
+        ),
         cwd=root,
         capture_output=True,
         text=True,
@@ -76,8 +109,15 @@ def main() -> int:
         print("Family-aware repository contracts: PASS")
 
     results: list[ValidatorResult] = []
-    for name, script_name in FOCUSED_VALIDATORS:
-        results.append(run_validator(root, name, script_name))
+    for validator in FOCUSED_VALIDATORS:
+        results.append(
+            run_validator(
+                root,
+                validator.name,
+                validator.script_name,
+                accepts_root_argument=validator.accepts_root_argument,
+            )
+        )
 
     routing_args: tuple[str, ...] = ()
     if args.checked_branch:
@@ -87,7 +127,7 @@ def main() -> int:
             root,
             "current routing",
             "check_current_routing.py",
-            routing_args,
+            extra_args=routing_args,
         )
     )
 
