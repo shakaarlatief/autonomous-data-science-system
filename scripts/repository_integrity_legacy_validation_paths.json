@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "Immutable compatibility snapshot for validation/evidence Markdown artifacts that predate the prospective Specification 025 metadata contract.",
+  "inventory_commit": "adce1b47011ec0cee98393c2b6ff8c5c753b0ba0",
+  "inventory_workflow_run": 33415541195,
+  "inventory_job": 99565171066,
+  "legacy_paths": [
+    "docs/local_execution/validation/001_codexless_prerequisite_preflight.md",
+    "docs/local_execution/validation/002_codexless_local_install_doctor_ready.md",
+    "docs/local_execution/validation/003_codexless_loopback_mcp_ready.md",
+    "docs/local_execution/validation/004_secure_mcp_tunnel_provisioned.md",
+    "docs/local_execution/validation/005_tunnel_client_supply_chain_verified.md",
+    "docs/local_execution/validation/006_tunnel_client_binary_runtime_identity_verified.md",
+    "docs/local_execution/validation/007_tunnel_runtime_doctor_ready.md",
+    "docs/local_execution/validation/008_secure_mcp_tunnel_runtime_ready.md",
+    "docs/local_execution/validation/009_chatgpt_codexless_plugin_connected_tool_surface_discovered.md",
+    "docs/local_execution/validation/010_existing_chat_developer_mcp_invocation_blocked.md",
+    "docs/local_execution/validation/011_fresh_chat_read_only_local_operation_verified.md",
+    "docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md",
+    "docs/source_universe/validation/002_permanent_bootstrap_prewrite_gate_ready.md",
+    "docs/source_universe/validation/003_permanent_source_registry_migrated.md",
+    "docs/source_universe/validation/004_permanent_first_corpus_prospective_compare_all_match.md"
+  ]
+}

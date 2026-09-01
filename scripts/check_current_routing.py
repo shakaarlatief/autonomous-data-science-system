@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
+import subprocess
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -24,6 +26,9 @@ EXPECTED_KEYS = {
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 BRANCH_RE = re.compile(r"^[A-Za-z0-9._/-]+$")
 SPEC_RE = re.compile(r"^\d{3}$")
+BOUNDARY_RE = re.compile(r"^[a-z]+(?:-[a-z]+)*$")
+CHECKPOINT_NAME_RE = re.compile(r"^(?P<number>\d{3})_.*\.md$")
+MAX_BOUNDARY_LENGTH = 64
 
 
 @dataclass(frozen=True)
@@ -45,8 +50,8 @@ class ManifestError(ValueError):
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Validate the machine-readable current-routing manifest and ensure the "
-            "sole human-readable current-state owner agrees with it."
+            "Validate the machine-readable current-routing manifest, its human-readable "
+            "owner, stable boundary identity, and active-branch checkpoint freshness."
         )
     )
     parser.add_argument(
@@ -54,6 +59,13 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=Path(__file__).resolve().parents[1],
         help="Repository root. Defaults to the parent of scripts/.",
+    )
+    parser.add_argument(
+        "--checked-branch",
+        help=(
+            "Branch represented by the checked tree. When omitted, infer from GitHub "
+            "Actions environment variables or the local Git worktree."
+        ),
     )
     return parser.parse_args()
 
@@ -125,8 +137,14 @@ def load_manifest(path: Path) -> RoutingState:
         raise ManifestError("latest_specification must be a zero-padded three-digit identifier")
     if not latest_experiment_outcome.strip():
         raise ManifestError("latest_experiment_outcome must be non-empty")
-    if not current_boundary.strip():
-        raise ManifestError("current_boundary must be non-empty")
+    if (
+        len(current_boundary) > MAX_BOUNDARY_LENGTH
+        or not BOUNDARY_RE.fullmatch(current_boundary)
+    ):
+        raise ManifestError(
+            "current_boundary must be at most 64 characters and match "
+            "^[a-z]+(?:-[a-z]+)*$"
+        )
 
     return RoutingState(
         current_checkpoint=current_checkpoint,
@@ -174,10 +192,22 @@ def validate_current_state(root: Path, state: RoutingState) -> list[str]:
     return errors
 
 
-def validate_checkpoint_exists(root: Path, checkpoint: int) -> list[str]:
+def checkpoint_files(root: Path) -> list[tuple[int, Path]]:
     checkpoint_dir = root / "docs" / "checkpoints"
-    prefix = f"{checkpoint:03d}_"
-    matches = [path for path in checkpoint_dir.glob(f"{prefix}*.md") if path.is_file()]
+    if not checkpoint_dir.is_dir():
+        return []
+    checkpoints: list[tuple[int, Path]] = []
+    for path in checkpoint_dir.iterdir():
+        if not path.is_file():
+            continue
+        match = CHECKPOINT_NAME_RE.match(path.name)
+        if match:
+            checkpoints.append((int(match.group("number")), path))
+    return sorted(checkpoints)
+
+
+def validate_checkpoint_exists(root: Path, checkpoint: int) -> list[str]:
+    matches = [path for number, path in checkpoint_files(root) if number == checkpoint]
     if len(matches) == 1:
         return []
     if not matches:
@@ -188,17 +218,62 @@ def validate_checkpoint_exists(root: Path, checkpoint: int) -> list[str]:
     ]
 
 
+def validate_checkpoint_freshness(
+    root: Path, state: RoutingState, checked_branch: str
+) -> list[str]:
+    if checked_branch != state.active_development_branch:
+        return []
+    checkpoints = checkpoint_files(root)
+    if not checkpoints:
+        return ["no numbered checkpoint files available for active-branch freshness"]
+    maximum = max(number for number, _ in checkpoints)
+    if state.current_checkpoint != maximum:
+        return [
+            "active-branch current checkpoint is stale: "
+            f"manifest={state.current_checkpoint:03d}, branch_max={maximum:03d}, "
+            f"branch={checked_branch}"
+        ]
+    return []
+
+
+def detect_checked_branch(root: Path) -> str:
+    for name in ("GITHUB_HEAD_REF", "GITHUB_REF_NAME"):
+        value = os.environ.get(name, "").strip()
+        if value:
+            return value
+    try:
+        completed = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ManifestError(
+            "unable to determine checked branch; pass --checked-branch explicitly"
+        ) from exc
+    branch = completed.stdout.strip()
+    if not branch or branch == "HEAD":
+        raise ManifestError(
+            "unable to determine checked branch; pass --checked-branch explicitly"
+        )
+    return branch
+
+
 def main() -> int:
     args = parse_args()
     root = args.root.resolve()
     try:
         state = load_manifest(root / MANIFEST_RELATIVE_PATH)
+        checked_branch = args.checked_branch or detect_checked_branch(root)
     except ManifestError as exc:
         print(f"Current routing manifest error: {exc}", file=sys.stderr)
         return 2
 
     errors = validate_checkpoint_exists(root, state.current_checkpoint)
     errors.extend(validate_current_state(root, state))
+    errors.extend(validate_checkpoint_freshness(root, state, checked_branch))
 
     if errors:
         print("Current routing consistency violations:")
@@ -209,11 +284,13 @@ def main() -> int:
     print(
         "Current routing consistency: PASS "
         f"checkpoint={state.current_checkpoint:03d} "
+        f"checked_branch={checked_branch} "
         f"active_branch={state.active_development_branch} "
         f"active_pr={expected_pr_text(state.active_pr)} "
         f"promoted={state.promoted_integration_branch}@{state.promoted_integration_sha} "
         f"latest_specification={state.latest_specification} "
-        f"latest_outcome={state.latest_experiment_outcome}"
+        f"latest_outcome={state.latest_experiment_outcome} "
+        f"current_boundary={state.current_boundary}"
     )
     return 0
 

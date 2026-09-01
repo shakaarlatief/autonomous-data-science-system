@@ -1,0 +1,62 @@
+name: Repository integrity
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - docs/**
+      - scripts/repository_integrity.py
+      - scripts/repository_integrity_legacy_validation_paths.json
+      - scripts/check_repository_integrity.py
+      - scripts/check_current_routing.py
+      - scripts/check_private_continuity.py
+      - scripts/check_chat_rotation_preflight.py
+      - scripts/check_checkpoint_metadata.py
+      - scripts/check_knowledge_map.py
+      - scripts/check_model_collaboration_state.py
+      - tests/unit/test_repository_integrity.py
+      - tests/unit/test_current_routing_integrity.py
+      - tests/unit/test_continuity_preflight.py
+      - .github/workflows/repository-integrity.yml
+  pull_request:
+    paths:
+      - docs/**
+      - scripts/repository_integrity.py
+      - scripts/repository_integrity_legacy_validation_paths.json
+      - scripts/check_repository_integrity.py
+      - scripts/check_current_routing.py
+      - scripts/check_private_continuity.py
+      - scripts/check_chat_rotation_preflight.py
+      - scripts/check_checkpoint_metadata.py
+      - scripts/check_knowledge_map.py
+      - scripts/check_model_collaboration_state.py
+      - tests/unit/test_repository_integrity.py
+      - tests/unit/test_current_routing_integrity.py
+      - tests/unit/test_continuity_preflight.py
+      - .github/workflows/repository-integrity.yml
+
+permissions:
+  contents: read
+
+jobs:
+  repository-integrity:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.5'
+          enable-cache: true
+      - name: Run repository-integrity regression tests
+        run: >-
+          uv run --python 3.13 --locked python -m pytest -q
+          tests/unit/test_repository_integrity.py
+          tests/unit/test_current_routing_integrity.py
+          tests/unit/test_continuity_preflight.py
+      - name: Run aggregate public repository-integrity gate
+        run: uv run --python 3.13 --locked python scripts/check_repository_integrity.py
