@@ -1,16 +1,79 @@
-# Checkpoint 252: Source-Faithful Reintegration Interaction-Integrity Gate
+# Historical Intermediate Milestone: Source-Faithful Reintegration Interaction-Integrity Gate
 
 **Date:** 2026-08-28  
-**Status:** Current implementation-review checkpoint at creation  
+**Status:** HISTORICAL INTERMEDIATE MILESTONE / NUMBERED IDENTITY RETIRED  
 **Checkpoint class:** CONTINUITY / PRODUCT_DESIGN / INTEGRATION_FIDELITY  
 **Project stage:** V1 next-generation Project Cockpit source-faithful holistic reintegration  
 **Scope:** Preserves the first green cross-mechanism reintegration milestone after the Checkpoint 250-251 provenance recovery, while keeping holistic human fidelity review open.  
-**Authority:** Integration-routing checkpoint. Earlier specifications, foundations and explicit human-reviewed Phase-C selections retain their established product/design authority.  
+**Authority:** Historical provenance only. This record was originally created as `Checkpoint 252` at commit `b607453ffed324be7bea0554f6067fa8fd4f8845`, but later repository chronology canonically assigned numeric Checkpoint 252 to the advanced spatial-rail study. Research 091 remains the primary execution-evidence record for this milestone.  
 **Interaction environment:** ChatGPT  
 **Project / workspace:** Autonomous Data Science System  
 **Interaction session:** `chatgpt-09`  
 **Conversation title:** `09 - Project Cockpit Design Exploration`  
-**Primary collaborator:** ChatGPT
+**Primary collaborator:** ChatGPT  
+**Original recorded identity:** `Checkpoint 252`  
+**Identity disposition:** Numbered identity retired on 2026-09-01 after a Git-provenance audit; no replacement checkpoint number was assigned.
+
+## 0. Identity-repair provenance
+
+This file preserves an intermediate milestone that was originally written as:
+
+```text
+docs/checkpoints/252_source_faithful_reintegration_interaction_integrity_gate.md
+```
+
+The original creation commit was:
+
+```text
+b607453ffed324be7bea0554f6067fa8fd4f8845
+Open Checkpoint 252 interaction-integrity review
+2026-08-28T10:04:22Z
+```
+
+A later, different milestone was also created with numeric identity 252:
+
+```text
+docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
+
+e112c2c297d0b260389520a280757a942b9bb442
+Open advanced spatial rail human review
+2026-08-28T18:10:39Z
+```
+
+The later repository chronology makes the intended canonical identity unambiguous:
+
+```text
+between the first 252 creation and the later spatial-rail 252 creation
+    docs/CURRENT_STATE.md had no checkpoint-routing commit
+    docs/current_routing.json had no checkpoint-routing commit
+    docs/KNOWLEDGE_MAP.md had no checkpoint-routing commit
+
+spatial-rail 252 then propagated immediately through:
+    0f8689c7bc7ee6fcff76be6e14db2b5f6996a264  CURRENT_STATE -> Checkpoint 252
+    b44fd7b0d98d7809bd44cea356d391669ba2273a  current_routing -> Checkpoint 252
+    62c2afa7af81f723d542aaf342dfe5d8983d6a4b  Knowledge Map -> spatial-rail study
+    b26c75262594b476418bb62350735c6582f58713  MC-0004 -> spatial-rail human review
+
+Checkpoint 253 subsequently states explicitly that
+"Checkpoint 252 opened the first three-way spatial rail study."
+```
+
+Therefore the repair is intentionally narrow:
+
+```text
+canonical numbered Checkpoint 252
+    remains docs/checkpoints/252_advanced_integrated_cockpit_spatial_rail_study_opened.md
+
+this earlier milestone
+    remains preserved as historical evidence
+    no longer participates in the numbered checkpoint identity family
+    receives no fabricated replacement number
+
+Checkpoints 253 onward
+    are not renumbered
+```
+
+The original substantive milestone text is preserved below. References inside it to "this checkpoint" reflect the wording at the time of creation and are retained as historical provenance.
 
 ## 1. Preserved milestone
 
