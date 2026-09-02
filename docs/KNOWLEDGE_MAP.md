@@ -292,6 +292,7 @@ docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardeni
 docs/research/107_post_outage_repository_integrity_recovery_audit.md
 docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
 docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
+docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_release.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
@@ -306,6 +307,7 @@ docs/checkpoints/269_codexless_read_path_verified_continuity_reconciled_for_chat
 docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
+docs/checkpoints/273_durable_bidirectional_codex_thread_handoff_verified_cooperative_release_next.md
 ```
 
 ### Project Cockpit product architecture and professional interaction model
@@ -576,6 +578,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 265-266 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 267-267 source-universe development-governance cockpit-core conversation-workspace shell-rail -->
 <!-- KM-CHECKPOINT-RANGE: 268-272 source-universe development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 273-273 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

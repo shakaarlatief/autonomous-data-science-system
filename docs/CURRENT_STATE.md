@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 272  
+**Checkpoint:** 273
 **Date:** 2026-09-02  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -22,34 +22,28 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Codex formal-thread handoff verified, H6 Desktop deeplink activation next
+## Current active stage: durable bidirectional Codex thread handoff verified; cooperative Desktop release investigation next
 
-Checkpoint 272 records a post-Checkpoint-271 operational integration investigation into formal Codex threads created through ADS/Codexless.
+Checkpoint 273 closes the prepared H6 activation gate from Checkpoint 272 and preserves the stronger bidirectional same-thread result.
 
-The investigation established three separate layers that must not be conflated:
+The verified architecture now separates four layers:
 
 ```text
 Codex thread persistence
 Codex writer/process ownership
-Codex Desktop sidebar catalog reconciliation
+Codex Desktop sidebar/catalog reconciliation
+durable cross-client thread identity and runtime-agent rehydration
 ```
 
-The strongest accepted result is H4: completed ADS Codex threads now freeze their result/resource receipt, unsubscribe, release the formal-agent App Server process, remain readable through frozen task state, and can later be continued from another Codex client on the same underlying thread identity. This behavior is live and empirically verified.
+H6 is live: completed ADS Codex tasks expose the exact persisted `threadId` plus `codex://threads/<threadId>`, and the Rich Task Card's `Open in Codex Desktop` handoff was verified against a real same-thread Desktop continuation.
 
-A separate Codex Desktop `Recent`/sidebar catalog issue remains. Valid externally created ADS threads may be absent from Desktop's local catalog even though they are directly openable with `codex://threads/<thread-id>`. Creating/completing a genuine Desktop-native thread repeatedly triggered catalog reconciliation; opening a deeplink, continuing the external thread, or merely opening the New Chat composer did not.
+The durable identity is `threadId`; Codexless `agentRef` values are ephemeral runtime handles. Model-free `codex.agent_bind` was published and live-verified, including re-binding the same persisted thread after a complete Codexless restart to a new fresh `agentRef` without starting a turn. After Codex Desktop was fully quit, an approved bound send reacquired the same persisted thread and returned exact marker `DURABLE_THREAD_BIND_REACQUIRE_COMPLETE`, followed by terminal `thread/released` and `app-server/released` events.
 
-The current H6 candidate therefore exposes the exact canonical Desktop deeplink directly on completed ADS Codex tasks instead of manipulating Desktop private catalog state.
+Desktop writer release remains the current UX limitation. On the tested Windows build, switching away from the thread or closing the Desktop window did not release its writer; fully quitting Desktop with `Ctrl+Q` did. The next bounded integration question is whether Desktop exposes a supported per-thread release/unsubscribe or equivalent Desktop-originated lifecycle action so a future `Proceed in Chat` control can transfer ownership without quitting the whole application.
 
-Current H6 boundary:
+The final combined live discriminator `Desktop owns -> new non-owning bind -> conflicting bound send` was not executed: the OpenAI platform safety layer blocked Step 1 before Codexless. Its correct classification is `BLOCKED_BY_PLATFORM_SAFETY / INCOMPLETE`, not PASS or FAIL. No retry, wrapper or workaround was attempted.
 
-```text
-H4 writer/process release          VERIFIED / LIVE
-H6 deeplink candidate              PREPARED / PREFLIGHTED
-H6 live activation                 NOT YET PERFORMED
-post-H6 real acceptance test       NOT YET PERFORMED
-```
-
-The immediate next action is the already-prepared fail-closed H6 activation and one fresh minimal formal Codex acceptance test. After this integration gate closes, the substantive project route returns to Source Vault reviewed ingestion from the unchanged Checkpoint-271 source boundary.
+The substantive Source Vault route remains unchanged and resumes after this user-selected Codex integration investigation is deliberately closed.
 
 The earlier direct synchronization result remains accepted for the exact frozen contracts:
 
@@ -291,7 +285,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 272 is now the current meaningful project boundary. It preserves the Chat-15 Codex formal-thread handoff investigation and the pre-activation H6 Desktop deeplink boundary; Source Vault continuation remains the next substantive ADS stage after that integration gate closes.
+Canonical numbered Checkpoint 273 is now the current meaningful project boundary. It preserves the live H6 Desktop handoff, durable `threadId` bind/restart rehydration, same-thread ChatGPT reacquisition, the Desktop writer-release ladder, and the final combined active-writer discriminator being blocked by platform safety before Codexless execution. The immediate integration boundary is the supported cooperative Desktop release investigation; Source Vault continuation remains the next substantive ADS stage after that user-selected integration work closes.
 
 The public repository remains the sole project-development authority.
 
@@ -312,22 +306,20 @@ The direct semantic fetch/pull experiments resolved the immediate feasibility qu
 ## Current canonical route
 
 ```text
+docs/checkpoints/273_durable_bidirectional_codex_thread_handoff_verified_cooperative_release_next.md
+docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_release.md
+docs/local_execution/validation/027_codex_desktop_deeplink_handoff_live_verified.md
+docs/local_execution/validation/028_codex_desktop_catalog_writer_ownership_followup.md
+docs/local_execution/validation/029_durable_thread_bind_restart_reacquisition_verified.md
+docs/local_execution/validation/030_bound_active_writer_combined_live_test_blocked_by_platform_safety.md
 docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
 docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
-docs/local_execution/validation/024_completed_codex_thread_writer_handoff_verified.md
-docs/local_execution/validation/025_codex_desktop_catalog_reconciliation_trigger_isolated.md
-docs/local_execution/validation/026_codex_desktop_deeplink_handoff_candidate_preflighted.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
-docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
-docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/local_execution/OPERATIONS.md
 docs/local_execution/AUTHORITY_BOOTSTRAP.md
 docs/local_execution/ACL_INTEGRITY_GATE.md
-docs/local_execution/validation/018_semantic_git_fetch_origin_dispatch_verified.md
-docs/local_execution/validation/019_bounded_semantic_git_pull_ff_only_contract_frozen.md
-docs/local_execution/validation/020_semantic_git_pull_ff_only_dispatched_local_fetch_head_denied.md
-docs/local_execution/validation/021_semantic_git_pull_ff_only_verified_after_acl_repair.md
-docs/research/105_codexless_local_execution_bridge_evaluation.md
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
+docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/current_routing.json
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
@@ -336,9 +328,9 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ## Conversation-rotation boundary
 
-The earlier Checkpoint-271 rotation opportunity was not taken; substantial Codex integration work continued in this same interaction and is now preserved as Checkpoint 272.
+Substantial Codex integration work continued in `chatgpt-15` beyond Checkpoint 272 and is now preserved as Checkpoint 273.
 
-Do not rotate merely because Checkpoint 272 exists while the already-prepared H6 activation/acceptance gate is still the immediate next bounded action. A deliberate rotation remains valid if context pressure or user preference warrants it, but it must reconstruct from Checkpoint 272 and Research 109 rather than treating Source Vault ingestion as the immediate first action.
+The repository is now sufficient to reconstruct the achieved durable bidirectional handoff and the exact remaining UX problem without relying on this chat. A deliberate rotation is valid after the current uncommitted preservation changes are reviewed, committed/pushed through the accepted route, and the required continuity/integrity gates are evaluated.
 
 When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual transition evidence:
 
@@ -346,11 +338,11 @@ When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual tra
 exact-head public Repository Integrity PASS
 required private continuity anchor reconciled and verified when applicable
 local checkout synchronized with the public authority when required
-no unrecorded H6 activation/result state
+no unrecorded cooperative-release experiment state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the exact H6 activation/acceptance boundary unless the repository has advanced further.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codex-desktop-cooperative-release-investigation-next` boundary unless the repository has advanced further.
 
 ---
 
@@ -363,16 +355,18 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/273_durable_bidirectional_codex_thread_handoff_verified_cooperative_release_next.md
+docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_release.md
+docs/local_execution/validation/029_durable_thread_bind_restart_reacquisition_verified.md
+docs/local_execution/validation/030_bound_active_writer_combined_live_test_blocked_by_platform_safety.md
 docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
 docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
-docs/local_execution/validation/026_codex_desktop_deeplink_handoff_candidate_preflighted.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
-docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
-docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/local_execution/OPERATIONS.md
 docs/local_execution/AUTHORITY_BOOTSTRAP.md
 docs/local_execution/ACL_INTEGRITY_GATE.md
-docs/local_execution/validation/021_semantic_git_pull_ff_only_verified_after_acl_repair.md
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
+docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/DEVELOPMENT_METHOD.md
 ```
