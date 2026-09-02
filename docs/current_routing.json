@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "current_checkpoint": 273,
+  "current_checkpoint": 274,
   "active_development_branch": "v1-source-vault-bootstrap-resume",
   "active_pr": null,
   "promoted_integration_branch": "v1-frontend-spike",
   "promoted_integration_sha": "2480109fadeee1e480ef03b82e335aacdf9adf91",
   "latest_specification": "027",
   "latest_experiment_outcome": "INCOMPLETE",
-  "current_boundary": "codex-desktop-cooperative-release-investigation-next"
+  "current_boundary": "source-vault-reviewed-first-corpus-ingestion"
 }

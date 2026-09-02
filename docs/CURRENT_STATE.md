@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 273
+**Checkpoint:** 274
 **Date:** 2026-09-02  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -22,11 +22,11 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: durable bidirectional Codex thread handoff verified; cooperative Desktop release investigation next
+## Current active stage: Codex Desktop handoff integration closed; reviewed Source Vault ingestion active
 
-Checkpoint 273 closes the prepared H6 activation gate from Checkpoint 272 and preserves the stronger bidirectional same-thread result.
+Checkpoint 274 closes the remaining cooperative Desktop release question for the tested scope and returns the active project boundary to reviewed Source Vault ingestion of the frozen 20-entry first corpus.
 
-The verified architecture now separates four layers:
+The completed integration architecture separates four layers:
 
 ```text
 Codex thread persistence
@@ -35,15 +35,15 @@ Codex Desktop sidebar/catalog reconciliation
 durable cross-client thread identity and runtime-agent rehydration
 ```
 
-H6 is live: completed ADS Codex tasks expose the exact persisted `threadId` plus `codex://threads/<threadId>`, and the Rich Task Card's `Open in Codex Desktop` handoff was verified against a real same-thread Desktop continuation.
+H6 remains live: completed ADS Codex tasks expose the exact persisted `threadId` plus `codex://threads/<threadId>`, and the Rich Task Card's `Open in Codex Desktop` handoff was verified against a real same-thread Desktop continuation.
 
-The durable identity is `threadId`; Codexless `agentRef` values are ephemeral runtime handles. Model-free `codex.agent_bind` was published and live-verified, including re-binding the same persisted thread after a complete Codexless restart to a new fresh `agentRef` without starting a turn. After Codex Desktop was fully quit, an approved bound send reacquired the same persisted thread and returned exact marker `DURABLE_THREAD_BIND_REACQUIRE_COMPLETE`, followed by terminal `thread/released` and `app-server/released` events.
+The durable identity is `threadId`; Codexless `agentRef` values are ephemeral runtime handles. Model-free `codex.agent_bind` remains verified, including re-binding after a complete Codexless restart.
 
-Desktop writer release remains the current UX limitation. On the tested Windows build, switching away from the thread or closing the Desktop window did not release its writer; fully quitting Desktop with `Ctrl+Q` did. The next bounded integration question is whether Desktop exposes a supported per-thread release/unsubscribe or equivalent Desktop-originated lifecycle action so a future `Proceed in Chat` control can transfer ownership without quitting the whole application.
+The final cooperative handoff used disposable ADS-root thread `01a060d7-7249-78b2-b4a0-61cc4376da4f`. It was continued in Codex Desktop and archived through the supported Desktop UI while Desktop remained running. Newly published model-free `codex.thread_unarchive`, implemented through official `thread/read` plus `thread/unarchive`, successfully unarchived it. Model-free bind then returned fresh `agentRef` `agent_7d5d070f-24c0-470b-9164-2ca7db2623a4`. After normal metered user approval, turn `01a0628f-8415-77d3-9a8d-2ab29f204c53` resumed the same persisted thread and completed exact result `ARCHIVE_UNARCHIVE_REACQUIRE_COMPLETE`.
 
-The final combined live discriminator `Desktop owns -> new non-owning bind -> conflicting bound send` was not executed: the OpenAI platform safety layer blocked Step 1 before Codexless. Its correct classification is `BLOCKED_BY_PLATFORM_SAFETY / INCOMPLETE`, not PASS or FAIL. No retry, wrapper or workaround was attempted.
+The accepted operational classifications are `UNARCHIVE_PATH=PASS`, `POST_UNARCHIVE_BIND=PASS`, and `ARCHIVE_RELEASES_DESKTOP_WRITER=PASS`. The last classification is scoped to the observed successful sequence; no claim is made about an unobserved internal instant at which the writer lease was released.
 
-The substantive Source Vault route remains unchanged and resumes after this user-selected Codex integration investigation is deliberately closed.
+After restart, live Codexless health reported `toolCount 46` and tunnel ready HTTP 200. No private Codex DB/session/catalog write, forced process termination, Desktop quit, permission widening, cross-client forced unsubscribe, or safety workaround was used. The Codex handoff integration is closed for current scope.
 
 The earlier direct synchronization result remains accepted for the exact frozen contracts:
 
@@ -285,7 +285,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 273 is now the current meaningful project boundary. It preserves the live H6 Desktop handoff, durable `threadId` bind/restart rehydration, same-thread ChatGPT reacquisition, the Desktop writer-release ladder, and the final combined active-writer discriminator being blocked by platform safety before Codexless execution. The immediate integration boundary is the supported cooperative Desktop release investigation; Source Vault continuation remains the next substantive ADS stage after that user-selected integration work closes.
+Canonical numbered Checkpoint 274 is now the current meaningful project boundary. It preserves the completed Archive -> Unarchive -> Bind -> Resume sequence, closes the Codex Desktop handoff integration for current scope, and returns the active route to reviewed ingestion of the frozen 20-entry first corpus.
 
 The public repository remains the sole project-development authority.
 
@@ -306,6 +306,9 @@ The direct semantic fetch/pull experiments resolved the immediate feasibility qu
 ## Current canonical route
 
 ```text
+docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md
+docs/research/111_archive_unarchive_reacquire_closes_codex_desktop_handoff.md
+docs/local_execution/validation/031_desktop_archive_unarchive_rebind_resume_verified.md
 docs/checkpoints/273_durable_bidirectional_codex_thread_handoff_verified_cooperative_release_next.md
 docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_release.md
 docs/local_execution/validation/027_codex_desktop_deeplink_handoff_live_verified.md
@@ -328,9 +331,9 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ## Conversation-rotation boundary
 
-Substantial Codex integration work continued in `chatgpt-15` beyond Checkpoint 272 and is now preserved as Checkpoint 273.
+Substantial Codex integration work continued in `chatgpt-15` beyond Checkpoint 273 and is now preserved as Checkpoint 274.
 
-The repository is now sufficient to reconstruct the achieved durable bidirectional handoff and the exact remaining UX problem without relying on this chat. A deliberate rotation is valid after the current uncommitted preservation changes are reviewed, committed/pushed through the accepted route, and the required continuity/integrity gates are evaluated.
+The repository is now sufficient to reconstruct the completed cooperative archive/unarchive handoff and the restored Source Vault boundary without relying on this chat. A deliberate rotation is valid after the current uncommitted preservation changes are reviewed, committed/pushed through the accepted route, and the required continuity/integrity gates are evaluated.
 
 When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual transition evidence:
 
@@ -338,11 +341,11 @@ When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual tra
 exact-head public Repository Integrity PASS
 required private continuity anchor reconciled and verified when applicable
 local checkout synchronized with the public authority when required
-no unrecorded cooperative-release experiment state
+no unrecorded archive/unarchive handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codex-desktop-cooperative-release-investigation-next` boundary unless the repository has advanced further.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `source-vault-reviewed-first-corpus-ingestion` boundary unless the repository has advanced further.
 
 ---
 
@@ -355,10 +358,11 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md
+docs/research/111_archive_unarchive_reacquire_closes_codex_desktop_handoff.md
+docs/local_execution/validation/031_desktop_archive_unarchive_rebind_resume_verified.md
 docs/checkpoints/273_durable_bidirectional_codex_thread_handoff_verified_cooperative_release_next.md
 docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_release.md
-docs/local_execution/validation/029_durable_thread_bind_restart_reacquisition_verified.md
-docs/local_execution/validation/030_bound_active_writer_combined_live_test_blocked_by_platform_safety.md
 docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
 docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
