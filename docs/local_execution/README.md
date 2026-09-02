@@ -76,6 +76,33 @@ That record is intentionally broader than Codexless operation. It preserves why 
 
 Use the detailed validation chronology when exact technical evidence is needed. Use the lessons synthesis when the question is what ADS should learn from the investigation and how those lessons should inform future cross-layer debugging and architecture work.
 
+## Formal Codex thread handoff and Desktop integration
+
+The post-Checkpoint-271 formal Codex thread investigation is preserved in:
+
+```text
+docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
+docs/local_execution/validation/022_formal_codex_thread_persistence_and_desktop_visibility_baseline.md
+docs/local_execution/validation/023_thread_source_user_visibility_hypothesis_falsified.md
+docs/local_execution/validation/024_completed_codex_thread_writer_handoff_verified.md
+docs/local_execution/validation/025_codex_desktop_catalog_reconciliation_trigger_isolated.md
+docs/local_execution/validation/026_codex_desktop_deeplink_handoff_candidate_preflighted.md
+```
+
+The key accepted distinction is:
+
+```text
+Codex thread persistence
+    !=
+writer/process ownership
+    !=
+Codex Desktop sidebar catalog reconciliation
+```
+
+H4 post-completion writer/process release is live and empirically verified. The H6 canonical `codex://threads/<thread-id>` handoff candidate is prepared and preflighted but is not yet live at the current checkpoint.
+
+Do not manipulate Codex Desktop private catalog/session databases to improve visibility. The deterministic supported handoff direction is the exact thread deeplink plus the verified release lifecycle.
+
 ## Validation evidence
 
 `docs/local_execution/validation/` contains chronological evidence for the Codexless/Secure MCP Tunnel/ChatGPT local-execution investigation.

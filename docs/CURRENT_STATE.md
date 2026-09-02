@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 271  
+**Checkpoint:** 272  
 **Date:** 2026-09-02  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-14
-Conversation title       14 - Codexless Write Validation and Source Vault Resume
+Interaction session      chatgpt-15
+Conversation title       15 - Codex Desktop Thread Handoff and Source Vault Continuation
 Primary collaborator     ChatGPT
 ```
 
@@ -22,11 +22,36 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: direct bounded Git investigation closed, Source Vault reviewed ingestion next
+## Current active stage: Codex formal-thread handoff verified, H6 Desktop deeplink activation next
 
-Checkpoint 271 closes the bounded post-Checkpoint-270 investigation into whether the direct model-free ChatGPT -> bounded MCP -> Codex command/exec route can safely perform the ADS synchronization needed before Source Vault work resumes.
+Checkpoint 272 records a post-Checkpoint-271 operational integration investigation into formal Codex threads created through ADS/Codexless.
 
-The answer is accepted for the exact frozen contracts:
+The investigation established three separate layers that must not be conflated:
+
+```text
+Codex thread persistence
+Codex writer/process ownership
+Codex Desktop sidebar catalog reconciliation
+```
+
+The strongest accepted result is H4: completed ADS Codex threads now freeze their result/resource receipt, unsubscribe, release the formal-agent App Server process, remain readable through frozen task state, and can later be continued from another Codex client on the same underlying thread identity. This behavior is live and empirically verified.
+
+A separate Codex Desktop `Recent`/sidebar catalog issue remains. Valid externally created ADS threads may be absent from Desktop's local catalog even though they are directly openable with `codex://threads/<thread-id>`. Creating/completing a genuine Desktop-native thread repeatedly triggered catalog reconciliation; opening a deeplink, continuing the external thread, or merely opening the New Chat composer did not.
+
+The current H6 candidate therefore exposes the exact canonical Desktop deeplink directly on completed ADS Codex tasks instead of manipulating Desktop private catalog state.
+
+Current H6 boundary:
+
+```text
+H4 writer/process release          VERIFIED / LIVE
+H6 deeplink candidate              PREPARED / PREFLIGHTED
+H6 live activation                 NOT YET PERFORMED
+post-H6 real acceptance test       NOT YET PERFORMED
+```
+
+The immediate next action is the already-prepared fail-closed H6 activation and one fresh minimal formal Codex acceptance test. After this integration gate closes, the substantive project route returns to Source Vault reviewed ingestion from the unchanged Checkpoint-271 source boundary.
+
+The earlier direct synchronization result remains accepted for the exact frozen contracts:
 
 ```text
 codex.git_fetch_origin
@@ -266,7 +291,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 271 is now the current meaningful project boundary. It closes the direct Git feasibility investigation and returns the project to Source Vault continuation.
+Canonical numbered Checkpoint 272 is now the current meaningful project boundary. It preserves the Chat-15 Codex formal-thread handoff investigation and the pre-activation H6 Desktop deeplink boundary; Source Vault continuation remains the next substantive ADS stage after that integration gate closes.
 
 The public repository remains the sole project-development authority.
 
@@ -287,6 +312,11 @@ The direct semantic fetch/pull experiments resolved the immediate feasibility qu
 ## Current canonical route
 
 ```text
+docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
+docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
+docs/local_execution/validation/024_completed_codex_thread_writer_handoff_verified.md
+docs/local_execution/validation/025_codex_desktop_catalog_reconciliation_trigger_isolated.md
+docs/local_execution/validation/026_codex_desktop_deeplink_handoff_candidate_preflighted.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
@@ -306,23 +336,21 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ## Conversation-rotation boundary
 
-This is a natural planned-rotation point for `chatgpt-14`.
+The earlier Checkpoint-271 rotation opportunity was not taken; substantial Codex integration work continued in this same interaction and is now preserved as Checkpoint 272.
 
-The durable project boundary is already Source Vault ingestion next. Planned rotation must still follow `docs/CONTINUITY.md` and evaluate the actual transition evidence rather than assuming readiness from prose.
+Do not rotate merely because Checkpoint 272 exists while the already-prepared H6 activation/acceptance gate is still the immediate next bounded action. A deliberate rotation remains valid if context pressure or user preference warrants it, but it must reconstruct from Checkpoint 272 and Research 109 rather than treating Source Vault ingestion as the immediate first action.
 
-Required transition checks are external to the durable checkpoint itself:
+When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual transition evidence:
 
 ```text
 exact-head public Repository Integrity PASS
-required private continuity anchor reconciled and verified
-local checkout fast-forwarded if it is behind the public authority
-no other open transition obligation
+required private continuity anchor reconciled and verified when applicable
+local checkout synchronized with the public authority when required
+no unrecorded H6 activation/result state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A final local synchronization after this checkpoint is expected because public preservation advances the branch. That operational catch-up does not create another project checkpoint and should not be copied into live state as a permanently volatile exact local-HEAD fact.
-
-If rotation passes, the new persistent conversation must use the standard continuation procedure in `docs/CONTINUITY.md`, allocate a fresh provider-local session/title, reconstruct public authority first, and then retrieve relevant private complement where available.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the exact H6 activation/acceptance boundary unless the repository has advanced further.
 
 ---
 
@@ -335,6 +363,9 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
+docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
+docs/local_execution/validation/026_codex_desktop_deeplink_handoff_candidate_preflighted.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
