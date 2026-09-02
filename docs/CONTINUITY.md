@@ -1,8 +1,8 @@
 # Continuity
 
 **Status:** Current canonical continuity procedure  
-**Aligned development-method version:** 0.8  
-**Last reviewed:** 2026-09-01
+**Aligned development-method version:** 0.9  
+**Last reviewed:** 2026-09-02
 
 ## Purpose
 
@@ -481,7 +481,7 @@ Do not run the whole reconciliation after every small implementation commit.
 
 ## Version relationship
 
-Development Method v0.8 strengthens the v0.7 information architecture without creating a second authority database:
+Development Method v0.9 preserves the v0.8 integrity/continuity architecture and adds the governed historical-intermediate checkpoint extension without creating a second authority database:
 
 ```text
 structure     docs/README.md
@@ -505,6 +505,8 @@ docs/research/103_repository_knowledge_discoverability_and_risk_scaled_verificat
 docs/research/104_repository_information_architecture_and_exhaustive_knowledge_routing_refinement.md
 docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
 docs/research/107_post_outage_repository_integrity_recovery_audit.md
+docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
 docs/specifications/025_v1_governed_repository_integrity_and_continuity_hardening.md
 docs/specifications/026_v1_repository_integrity_recovery_amendment.md
+docs/specifications/027_v1_historical_intermediate_checkpoint_integrity_extension.md
 ```
