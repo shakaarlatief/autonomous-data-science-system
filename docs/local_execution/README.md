@@ -1,7 +1,7 @@
 # Local Execution
 
 **Status:** Current local-execution navigation  
-**Last reviewed:** 2026-09-01
+**Last reviewed:** 2026-09-02
 
 This directory contains durable ADS evidence, accepted bounded capability records, and operational guidance for the local-execution bridge.
 
@@ -63,6 +63,18 @@ docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 ```
 
 It records the exact verified `codex.git_pull_ff_only` contract and explicitly excludes stronger Git authority such as commit, push, reset, rebase, checkout, merge commits, force behavior, or arbitrary Git execution.
+
+## Cross-cutting investigation lessons
+
+The broader methodological and diagnostic lessons extracted from the completed direct Git investigation are preserved in:
+
+```text
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
+```
+
+That record is intentionally broader than Codexless operation. It preserves why ADS must distinguish a failed route from an impossible capability, localize failures by system layer, use targeted research before freezing stronger conclusions when evidence is ambiguous, design the smallest safe discriminating experiment, preserve negative evidence by layer, treat runtime bootstrap/lifecycle state as part of reproducibility, and keep successful capability claims bounded to the exact contract that was actually verified.
+
+Use the detailed validation chronology when exact technical evidence is needed. Use the lessons synthesis when the question is what ADS should learn from the investigation and how those lessons should inform future cross-layer debugging and architecture work.
 
 ## Validation evidence
 
