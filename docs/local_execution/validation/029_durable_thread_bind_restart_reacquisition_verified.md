@@ -1,8 +1,8 @@
 # Durable Codex thread bind, restart rehydration, and same-thread reacquisition verified
 
-**Date:** 2026-09-02  
-**Status:** `DURABLE_THREAD_BIND_RESTART_REACQUISITION_PASS`  
-**Scope:** Preserve the live acceptance of model-free durable `threadId` binding, fresh runtime-agent rehydration after Codexless restart, and a later approved same-thread Codex continuation after Desktop released the writer.  
+**Date:** 2026-09-02
+**Status:** `DURABLE_THREAD_BIND_RESTART_REACQUISITION_PASS`
+**Scope:** Preserve the live acceptance of model-free durable `threadId` binding, fresh runtime-agent rehydration after Codexless restart, and a later approved same-thread Codex continuation after Desktop released the writer.
 **Authority:** Bounded local-execution evidence for the tested Codexless implementation. It verifies the public behavior observed live and keeps unobserved internal event claims out of scope.
 
 ## Accepted design

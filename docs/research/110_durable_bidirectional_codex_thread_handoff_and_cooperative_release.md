@@ -1,9 +1,9 @@
 # Research 110: Durable Bidirectional Codex Thread Handoff and Cooperative Release
 
-**Status:** CORE BIDIRECTIONAL HANDOFF VERIFIED / COOPERATIVE DESKTOP RELEASE INVESTIGATION NEXT  
-**Date:** 2026-09-02  
-**Opened:** 2026-09-02  
-**Scope:** Preserve the post-Research-109 work that activated H6, characterized Desktop catalog and writer ownership more precisely, introduced model-free durable thread binding, verified restart rehydration and same-thread ChatGPT reacquisition, and defines the next supported investigation: a Desktop-side cooperative release path suitable for a future `Proceed in Chat` experience.  
+**Status:** CORE BIDIRECTIONAL HANDOFF VERIFIED / COOPERATIVE DESKTOP RELEASE INVESTIGATION NEXT
+**Date:** 2026-09-02
+**Opened:** 2026-09-02
+**Scope:** Preserve the post-Research-109 work that activated H6, characterized Desktop catalog and writer ownership more precisely, introduced model-free durable thread binding, verified restart rehydration and same-thread ChatGPT reacquisition, and defines the next supported investigation: a Desktop-side cooperative release path suitable for a future `Proceed in Chat` experience.
 **Authority:** Bounded local-execution and integration research. The public ADS repository remains sole project-development authority. This record does not authorize private Codex database edits, forced writer takeover, or platform-safety evasion.
 
 ## 1. Objective

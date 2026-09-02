@@ -1,16 +1,16 @@
 # Checkpoint 273: Durable Bidirectional Codex Thread Handoff Verified, Cooperative Release Next
 
-**Date:** 2026-09-02  
-**Status:** Verified infrastructure/continuity checkpoint; cooperative Desktop release investigation remains open  
-**Checkpoint class:** INFRASTRUCTURE  
-**Project stage:** Post-Checkpoint-272 Codex thread-handoff integration; H6 live, durable bind/restart rehydration/same-thread reacquisition verified, Desktop cooperative release UX next  
-**Scope:** Records the live H6 acceptance, refined Desktop catalog and writer-ownership behavior, the model-free durable `codex.agent_bind` design and publication fix, restart rehydration to a fresh runtime `agentRef`, same-thread ChatGPT reacquisition after Desktop release, and the final combined active-writer live discriminator being blocked by platform safety before Codexless execution.  
-**Authority:** Historical verification and continuity provenance. Research 110 and Validations 027-030 govern detailed evidence. Current continuation is governed by `docs/CURRENT_STATE.md` and `docs/current_routing.json`. The combined active-writer live discriminator remains incomplete and must not be reported as PASS or FAIL.  
-**Interaction environment:** ChatGPT  
-**Project / workspace:** Autonomous Data Science System  
-**Interaction session:** `chatgpt-15`  
-**Conversation title:** `15 - Codex Desktop Thread Handoff and Source Vault Continuation`  
-**Primary collaborator:** ChatGPT  
+**Date:** 2026-09-02
+**Status:** Verified infrastructure/continuity checkpoint; cooperative Desktop release investigation remains open
+**Checkpoint class:** INFRASTRUCTURE
+**Project stage:** Post-Checkpoint-272 Codex thread-handoff integration; H6 live, durable bind/restart rehydration/same-thread reacquisition verified, Desktop cooperative release UX next
+**Scope:** Records the live H6 acceptance, refined Desktop catalog and writer-ownership behavior, the model-free durable `codex.agent_bind` design and publication fix, restart rehydration to a fresh runtime `agentRef`, same-thread ChatGPT reacquisition after Desktop release, and the final combined active-writer live discriminator being blocked by platform safety before Codexless execution.
+**Authority:** Historical verification and continuity provenance. Research 110 and Validations 027-030 govern detailed evidence. Current continuation is governed by `docs/CURRENT_STATE.md` and `docs/current_routing.json`. The combined active-writer live discriminator remains incomplete and must not be reported as PASS or FAIL.
+**Interaction environment:** ChatGPT
+**Project / workspace:** Autonomous Data Science System
+**Interaction session:** `chatgpt-15`
+**Conversation title:** `15 - Codex Desktop Thread Handoff and Source Vault Continuation`
+**Primary collaborator:** ChatGPT
 **Branch:** `v1-source-vault-bootstrap-resume`
 
 ## Meaningful state transition

@@ -1,8 +1,8 @@
 # Codex Desktop deeplink handoff live verified
 
-**Date:** 2026-09-02  
-**Status:** `H6_LIVE_ACCEPTANCE_PASS`  
-**Scope:** Preserve the live H6 activation and acceptance proving that a completed ADS formal Codex task exposes the exact persisted thread identity and an `Open in Codex Desktop` handoff that continues the same thread.  
+**Date:** 2026-09-02
+**Status:** `H6_LIVE_ACCEPTANCE_PASS`
+**Scope:** Preserve the live H6 activation and acceptance proving that a completed ADS formal Codex task exposes the exact persisted thread identity and an `Open in Codex Desktop` handoff that continues the same thread.
 **Authority:** Bounded local-execution/UI integration evidence. It verifies exact-thread handoff on the tested Codex/Codexless build and does not imply automatic Desktop sidebar registration.
 
 ## Live result

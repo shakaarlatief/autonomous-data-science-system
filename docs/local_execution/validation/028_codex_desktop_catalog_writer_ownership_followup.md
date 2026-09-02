@@ -1,8 +1,8 @@
 # Codex Desktop catalog and writer-ownership follow-up
 
-**Date:** 2026-09-02  
-**Status:** `CATALOG_RECONCILIATION_CHARACTERIZED / WRITER_RELEASE_LADDER_VERIFIED`  
-**Scope:** Preserve the post-H6 evidence separating transient Desktop visibility, persistent local catalog adoption, and writer-ownership release behavior.  
+**Date:** 2026-09-02
+**Status:** `CATALOG_RECONCILIATION_CHARACTERIZED / WRITER_RELEASE_LADDER_VERIFIED`
+**Scope:** Preserve the post-H6 evidence separating transient Desktop visibility, persistent local catalog adoption, and writer-ownership release behavior.
 **Authority:** Bounded UI/catalog and lifecycle evidence. It does not authorize private Codex database mutation or forceful writer takeover.
 
 ## Catalog follow-up

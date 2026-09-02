@@ -1,8 +1,8 @@
 # Bound active-writer combined live test blocked by platform safety
 
-**Date:** 2026-09-02  
-**Status:** `BLOCKED_BY_PLATFORM_SAFETY / COMBINED_LIVE_DISCRIMINANT_INCOMPLETE`  
-**Scope:** Preserve the final planned live discriminant for the durable thread-bind design, in which Codex Desktop deliberately retained writer ownership while ChatGPT attempted a non-owning bind followed by a conflicting send.  
+**Date:** 2026-09-02
+**Status:** `BLOCKED_BY_PLATFORM_SAFETY / COMBINED_LIVE_DISCRIMINANT_INCOMPLETE`
+**Scope:** Preserve the final planned live discriminant for the durable thread-bind design, in which Codex Desktop deliberately retained writer ownership while ChatGPT attempted a non-owning bind followed by a conflicting send.
 **Authority:** Negative platform-dispatch evidence only. This record is neither a PASS nor a FAIL of `codex.agent_bind` or the Codex active-writer contract because the Step 1 call did not reach Codexless.
 
 ## Planned discriminator
