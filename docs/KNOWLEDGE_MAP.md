@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library  
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.  
-**Last reviewed:** 2026-09-01
+**Last reviewed:** 2026-09-02
 
 ## Purpose
 
@@ -254,11 +254,13 @@ docs/research/034_durable_source_universe_and_evidence_substrate_architecture.md
 docs/research/105_codexless_local_execution_bridge_evaluation.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 docs/source_universe/validation/001_vu_machine_learning_source_substrate_result.md
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/checkpoints/196_source_substrate_accepted_first_corpus_validated.md
 docs/checkpoints/198_source_substrate_promoted_permanent_vault_bootstrap_opened.md
 docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
 docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 ```
 
 Current substrate status is routed from `CURRENT_STATE.md`; this subject section preserves the durable architecture and evidence chain rather than copying live status.
@@ -289,6 +291,7 @@ docs/research/105_codexless_local_execution_bridge_evaluation.md
 docs/research/106_governed_repository_integrity_and_continuity_bootstrap_hardening.md
 docs/research/107_post_outage_repository_integrity_recovery_audit.md
 docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverability_audit.md
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
 docs/model_collaboration/DEFERRED_REVIEW_AND_CATCHUP.md
@@ -300,6 +303,7 @@ docs/checkpoints/267_cockpit_frontend_paused_source_vault_bootstrap_resumed.md
 docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_opened.md
 docs/checkpoints/269_codexless_read_path_verified_continuity_reconciled_for_chatgpt_12_handoff.md
 docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 ```
 
 ### Project Cockpit product architecture and professional interaction model
@@ -569,7 +573,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 258-264 conversation-workspace cockpit-provenance -->
 <!-- KM-CHECKPOINT-RANGE: 265-266 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 267-267 source-universe development-governance cockpit-core conversation-workspace shell-rail -->
-<!-- KM-CHECKPOINT-RANGE: 268-270 source-universe development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 268-271 source-universe development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

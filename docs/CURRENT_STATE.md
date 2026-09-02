@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 270  
-**Date:** 2026-09-01  
+**Checkpoint:** 271  
+**Date:** 2026-09-02  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -22,9 +22,28 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: semantic strict-fast-forward pull verified, Source Vault resume next
+## Current active stage: direct bounded Git investigation closed, Source Vault reviewed ingestion next
 
-Research 105 remains accepted as:
+Checkpoint 271 closes the bounded post-Checkpoint-270 investigation into whether the direct model-free ChatGPT -> bounded MCP -> Codex command/exec route can safely perform the ADS synchronization needed before Source Vault work resumes.
+
+The answer is accepted for the exact frozen contracts:
+
+```text
+codex.git_fetch_origin
+    VERIFIED
+    fixed git fetch origin
+
+codex.git_pull_ff_only
+    VERIFIED
+    fixed trusted ADS branch/upstream
+    strict fast-forward only
+    clean-tree fail-closed preconditions
+    no caller-controlled Git arguments
+```
+
+The successful strict-fast-forward pull was also followed by another successful routine bounded synchronization using the same accepted contract.
+
+Research 105 remains:
 
 ```text
 ACCEPTED_FOR_ADS_LOCAL_EXECUTION
@@ -32,167 +51,92 @@ ACCEPTED_FOR_ADS_LOCAL_EXECUTION
 
 Codexless remains a replaceable bounded local-execution transport. It is not project authority, a mandatory core dependency, a permission source, or an unrestricted host-control path.
 
-The direct-lane synchronization feasibility investigation is now resolved for the exact bounded contracts that were frozen and tested.
+The direct synchronization feasibility question that paused Source Vault work is closed for its exact accepted scope.
 
-Verified sequence:
+---
+
+## What the investigation established
+
+The investigation distinguished multiple execution layers rather than treating every failed attempt as the same failure:
 
 ```text
-generic codex.command_exec carrying git fetch origin
-    BLOCKED BY CHATGPT/OPENAI BEFORE LOCAL EXECUTION
+ChatGPT / OpenAI outer safety and dispatch
+MCP action contract
+Codexless routing and public surface
+Codex authority/profile resolution
+network authority
+Codex command/exec sandbox
+Windows filesystem ACLs / capability identities
+Git semantics
+repository branch/upstream/cleanliness state
+postcondition verification
+```
+
+Key evidence sequence:
+
+```text
+generic codex.command_exec carrying Git
+    BLOCKED BEFORE LOCAL EXECUTION
 
 bounded codex.git_fetch_origin
     DISCOVERED
     DISPATCHED
-    EXECUTED THROUGH CODEX command/exec
-    git fetch origin EXIT 0
+    EXECUTED THROUGH MODEL-FREE CODEX command/exec
+    EXIT 0
 
 bounded codex.git_pull_ff_only first dispatch
     DISCOVERED
     DISPATCHED
-    REACHED LOCAL CODEX command/exec
-    FAILED LOCALLY AT .git/FETCH_HEAD WITH PERMISSION DENIED
+    REACHED LOCAL EXECUTION
+    FAILED AT .git/FETCH_HEAD WITH PERMISSION DENIED
     REPOSITORY UNCHANGED
 
 read-only host diagnosis
-    CONFIRMED RECURRENT WINDOWS WORKSPACE-CAPABILITY DENY ON .git
-    CONFIRMED INHERITED DENY ON .git/FETCH_HEAD
-    CONFIRMED DEDICATED .git WRITABLE CAPABILITY STILL HAD MODIFY
+    RECURRENT WINDOWS WORKSPACE-CAPABILITY DENY CONFIRMED ON .git
+    INHERITED DENY CONFIRMED ON .git/FETCH_HEAD
+    DEDICATED .git WRITABLE CAPABILITY STILL HAD MODIFY
 
 guarded host ACL repair
-    BACKUP CREATED IN PRIVATE/LOCAL TEMPORARY STATE
-    EXACT TWO EXPLICIT DENY RULES SELECTED
-    EXACT TWO -> ZERO IN-MEMORY GUARD PASSED
+    BACKUP CREATED
+    EXACT TWO MATCHING EXPLICIT DENY RULES REQUIRED
+    TWO -> ZERO IN-MEMORY GUARD PASSED
     ACL WRITTEN ONLY AFTER GUARDS PASSED
     POST-REPAIR DENY ABSENT
-    MODIFY CAPABILITIES PRESENT
+    EXPECTED MODIFY ALLOWANCES PRESENT
 
-bounded codex.git_pull_ff_only second separately authorized dispatch
-    DISCOVERED
+second separately authorized semantic pull dispatch
     DISPATCHED EXACTLY ONCE
-    EXECUTED THROUGH CODEX command/exec
-    git pull --ff-only ... EXIT 0
+    EXIT 0
     STRICT FAST-FORWARD VERIFIED
     CLEAN POSTFLIGHT VERIFIED
+    OLD-HEAD ANCESTRY VERIFIED
+
+later routine bounded synchronization
+    EXIT 0
+    STRICT FAST-FORWARD VERIFIED AGAIN
 ```
 
-Current result owners:
-
-```text
-docs/local_execution/validation/018_semantic_git_fetch_origin_dispatch_verified.md
-docs/local_execution/validation/019_bounded_semantic_git_pull_ff_only_contract_frozen.md
-docs/local_execution/validation/020_semantic_git_pull_ff_only_dispatched_local_fetch_head_denied.md
-docs/local_execution/validation/021_semantic_git_pull_ff_only_verified_after_acl_repair.md
-docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
-```
-
-The direct synchronization feasibility question that paused Source Vault work is no longer open.
+The first failed semantic pull was useful evidence because it localized the first failing layer after proving earlier layers had succeeded.
 
 ---
 
-## Verified semantic strict-fast-forward result
+## Accepted Git boundary remains deliberately narrow
 
-The successful second dispatch began from:
+Accepted:
 
 ```text
-branch
-    v1-source-vault-bootstrap-resume
-
-upstream
-    origin/v1-source-vault-bootstrap-resume
-
-local HEAD
-    063fdc99c76d7821efc58bb83823bcad33c068c5
-
-remote-tracking HEAD
-    93948ae2fbacb0b725aa7442283697e134dd1dbc
-
-status
-    ## v1-source-vault-bootstrap-resume...origin/v1-source-vault-bootstrap-resume [behind 18]
-
-working tree / index
-    clean
-    no staged changes
-    no unstaged tracked changes
-    no untracked files
+fixed semantic fetch from origin
+fixed trusted-branch strict-fast-forward pull
+bounded network + Git-metadata authority
+clean-tree and repository-state fail-closed checks
+readOnly downscope to :read-only
+postflight equality / cleanliness / ancestry verification
 ```
 
-All authority invariants matched:
+Not accepted merely because pull succeeded:
 
 ```text
-permission ceiling        ads-direct-git
-effective inherit profile ads-direct-git
-authority source           host-profile-override
-inherit networkAccess      true
-trusted ADS root           C:\Projects_Data\autonomous-data-science-system
-readOnly effective profile :read-only
-```
-
-The exact fixed mutation remained:
-
-```text
-git pull --ff-only --no-rebase --no-tags --no-recurse-submodules origin v1-source-vault-bootstrap-resume
-```
-
-The result was:
-
-```text
-exit status               0
-stdout                     reported Updating 063fdc9..93948ae / Fast-forward
-stderr                     expected origin branch -> FETCH_HEAD line
-local HEAD before          063fdc99c76d7821efc58bb83823bcad33c068c5
-local HEAD after           93948ae2fbacb0b725aa7442283697e134dd1dbc
-```
-
-Postflight established:
-
-```text
-branch unchanged
-upstream unchanged
-local HEAD == origin tracking HEAD
-pre-operation HEAD is ancestor of post-operation HEAD
-working tree clean
-index clean
-no untracked files
-no ahead/behind divergence
-```
-
-The local checkout was therefore synchronized to the then-current public authority head `93948ae2fbacb0b725aa7442283697e134dd1dbc` by strict fast-forward.
-
-Subsequent public evidence/operations commits that preserve this result may make the local checkout appear behind again. That is expected repository evolution, not a failure of the verified synchronization result.
-
----
-
-## Current Codexless surface and bounded acceptance
-
-The local experimental surface remains:
-
-```text
-Codexless version              0.1.1-preview.5
-total MCP actions              44
-private app-only actions        3
-publicly callable actions      41
-codex.git_fetch_origin         public
-codex.git_pull_ff_only         public
-codex.process                  not public
-```
-
-Accepted direct Git capability is deliberately narrow:
-
-```text
-codex.git_fetch_origin
-    verified for fixed git fetch origin contract
-
-codex.git_pull_ff_only
-    verified for fixed trusted ADS branch
-    exact upstream origin/v1-source-vault-bootstrap-resume
-    strict fast-forward only
-    clean-tree fail-closed precondition
-    no caller-controlled Git arguments
-```
-
-The following remain unaccepted:
-
-```text
+arbitrary Git commands
 commit
 push
 force push
@@ -200,49 +144,69 @@ reset
 checkout
 rebase
 merge commits
-arbitrary branch/refspec selection
-arbitrary Git commands
+arbitrary branch / remote / refspec selection
 public codex.process
-permission widening
+unrestricted host access
 automatic ACL repair
+permission widening to bypass a guard
+```
+
+Exact accepted capability is governed by:
+
+```text
+docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 ```
 
 ---
 
-## Durable authority and ACL lifecycle procedure
+## Durable operational and investigation knowledge
 
-The ADS-specific operational procedure is now repository-owned in:
+Repository-owned operational procedures:
 
 ```text
 docs/local_execution/OPERATIONS.md
 docs/local_execution/AUTHORITY_BOOTSTRAP.md
 docs/local_execution/ACL_INTEGRITY_GATE.md
+docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 ```
 
-`AUTHORITY_BOOTSTRAP.md` owns the parent-shell `CODEXLESS_*` bootstrap and the required authority verification.
+The authority bootstrap is part of reproducible ADS operation. A healthy Codexless process or ready tunnel is not sufficient evidence that the ADS-specific `ads-direct-git` authority is active.
 
-`ACL_INTEGRITY_GATE.md` owns the read-only Windows `.git` / `FETCH_HEAD` integrity gate required before direct Git mutation after relevant Codex/Codexless/sandbox lifecycle changes.
+The Windows Git-metadata ACL condition is lifecycle-sensitive. The problematic workspace-capability DENY was observed to recur after later lifecycle activity even while the logical profile still reported `.git` as writable. The exact recreating lifecycle event was not isolated, so no stronger causal claim is made.
 
-The ACL recurrence is confirmed, but the exact lifecycle event that recreated the DENY has not been isolated. Therefore:
+After relevant Codex/Codexless/sandbox lifecycle changes:
 
 ```text
-healthy HTTP/tunnel state
-    is necessary but not sufficient
-
-correct ads-direct-git authority report
-    is necessary but not sufficient
-
-current Git metadata ACL integrity gate
-    must also pass before direct Git mutation after relevant lifecycle change
+restore and verify the ADS authority bootstrap
+-> run the read-only ACL integrity gate before direct Git mutation
+-> stop if a DENY is detected
 ```
 
-A detected DENY is a stop condition. ACL repair is never automatic merely to make a Git operation pass.
+ACL repair is never automatic merely to make a Git operation pass.
+
+Broader reusable lessons are preserved in:
+
+```text
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
+```
+
+The central methodological rule is disciplined claim scope:
+
+```text
+a failed route is not automatically an impossible capability
+```
+
+when multiple contracts or layers can still explain the result.
+
+Future cross-layer investigations should localize the failure, research relevant contracts when ambiguity remains, design the smallest safe discriminating experiment, keep it fail-closed, preserve negative evidence by layer, change only the implicated layer, and keep successful claims bounded to the exact verified contract.
 
 ---
 
-## Source Vault state and resumed route
+## Current Source Vault state
 
-The permanent Source Universe remains frozen at:
+The Source Universe remained untouched throughout the direct Git investigation.
+
+Current permanent Source Vault boundary:
 
 ```text
 permanent Source Registry           MIGRATED / VERIFIED
@@ -259,11 +223,40 @@ clean restore + restored audit      PENDING
 Course 2                            BLOCKED
 ```
 
-No Source Universe, Source Vault, original corpus, credential, backup, or recovery state was touched during the Codexless pull investigation or ACL repair.
+The original source root and other machine/storage coordinates remain `RESOLVED_PRIVATE`. Their exact values must be retrieved from the accepted private/local continuity layer only when concrete execution requires them.
 
-The direct synchronization blocker is now resolved for the required strict fast-forward contract. The project route may therefore return to the Source Vault continuation sequence.
+No Source Universe, Source Vault, original corpus, credential, backup payload, or recovery state was changed by the Codexless/direct-Git work.
 
-The original source root and other machine-specific operational coordinates remain `RESOLVED_PRIVATE` and do not belong in public Git.
+---
+
+## Exact next Source Vault action
+
+The next substantive ADS action is:
+
+```text
+reviewed ingestion of the frozen 20-entry first corpus
+```
+
+Then:
+
+```text
+working-store integrity audit
+-> deterministic backup staging
+-> client-side encryption
+-> independent remote replication
+-> remote retrieval
+-> encrypted-object digest reproduction
+-> decryption
+-> clean restore
+-> restored integrity audit
+-> Course 2 unblock only after the accepted recovery proof succeeds
+```
+
+The governing Source Vault procedure is:
+
+```text
+docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+```
 
 ---
 
@@ -273,13 +266,13 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 270 remains the latest numbered checkpoint. Validation 021 and the semantic-pull acceptance record resolve the bounded post-270 synchronization investigation without creating a new numbered checkpoint.
-
-Any public branch mutation must pass Repository Integrity on its exact resulting HEAD before a new exact-target `PUBLIC_REPOSITORY_INTEGRITY=PASS` claim is made.
+Canonical numbered Checkpoint 271 is now the current meaningful project boundary. It closes the direct Git feasibility investigation and returns the project to Source Vault continuation.
 
 The public repository remains the sole project-development authority.
 
-Private machine-specific values and secrets remain `RESOLVED_PRIVATE`.
+Any public branch mutation must pass Repository Integrity on its exact resulting HEAD before an exact-target `PUBLIC_REPOSITORY_INTEGRITY=PASS` claim is made.
+
+Private continuity remains an orthogonal claim and must be reconciled to the exact public boundary when required for planned conversation rotation.
 
 ---
 
@@ -294,39 +287,42 @@ The direct semantic fetch/pull experiments resolved the immediate feasibility qu
 ## Current canonical route
 
 ```text
-docs/research/105_codexless_local_execution_bridge_evaluation.md
-docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
+docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
+docs/local_execution/OPERATIONS.md
+docs/local_execution/AUTHORITY_BOOTSTRAP.md
+docs/local_execution/ACL_INTEGRITY_GATE.md
 docs/local_execution/validation/018_semantic_git_fetch_origin_dispatch_verified.md
 docs/local_execution/validation/019_bounded_semantic_git_pull_ff_only_contract_frozen.md
 docs/local_execution/validation/020_semantic_git_pull_ff_only_dispatched_local_fetch_head_denied.md
 docs/local_execution/validation/021_semantic_git_pull_ff_only_verified_after_acl_repair.md
-docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
-docs/local_execution/AUTHORITY_BOOTSTRAP.md
-docs/local_execution/ACL_INTEGRITY_GATE.md
-docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
+docs/research/105_codexless_local_execution_bridge_evaluation.md
 docs/current_routing.json
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 ```
 
 ---
 
-## Exact continuation order
+## Conversation-rotation boundary
+
+This is a natural planned-rotation point for `chatgpt-14`.
+
+The durable project boundary is already Source Vault ingestion next. Planned rotation must still follow `docs/CONTINUITY.md` and evaluate the actual transition evidence rather than assuming readiness from prose.
+
+Required transition checks are external to the durable checkpoint itself:
 
 ```text
-1. preserve Validation 021, bounded semantic-pull acceptance, ACL integrity gate, CURRENT_STATE, and current_routing coherently
-2. require Current routing consistency and Repository integrity to pass on the exact resulting public HEAD
-3. reconstruct the Source Vault continuation boundary from repository authority and private resolved coordinates only where required
-4. before any local direct Git mutation after relevant lifecycle changes, apply AUTHORITY_BOOTSTRAP and ACL_INTEGRITY_GATE
-5. resume reviewed ingestion of the frozen 20-entry first corpus
-6. run the working-store integrity audit before accepting any backup
-7. continue deterministic encrypted backup
-8. prove remote retrieval and decryption
-9. perform clean restore
-10. prove restored integrity
-11. unblock Course 2 only after the accepted Source Vault gates pass
+exact-head public Repository Integrity PASS
+required private continuity anchor reconciled and verified
+local checkout fast-forwarded if it is behind the public authority
+no other open transition obligation
+CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-Do not weaken Git safety, repository-integrity validators, Source Universe controls, private/public separation, or ChatGPT/OpenAI platform safety.
+A final local synchronization after this checkpoint is expected because public preservation advances the branch. That operational catch-up does not create another project checkpoint and should not be copied into live state as a permanently volatile exact local-HEAD fact.
+
+If rotation passes, the new persistent conversation must use the standard continuation procedure in `docs/CONTINUITY.md`, allocate a fresh provider-local session/title, reconstruct public authority first, and then retrieve relevant private complement where available.
 
 ---
 
@@ -339,12 +335,13 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
+docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
+docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/local_execution/OPERATIONS.md
 docs/local_execution/AUTHORITY_BOOTSTRAP.md
 docs/local_execution/ACL_INTEGRITY_GATE.md
-docs/local_execution/SEMANTIC_PULL_ACCEPTANCE.md
 docs/local_execution/validation/021_semantic_git_pull_ff_only_verified_after_acl_repair.md
-docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
 docs/DEVELOPMENT_METHOD.md
 ```
