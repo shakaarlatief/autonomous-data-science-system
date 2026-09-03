@@ -366,7 +366,24 @@ custom ADS renderer is therefore necessary    not established
 
 Primary evidence: `docs/local_execution/validation/040_codex_pdf_skill_visual_read_reuse_experiment.md`.
 
-## 14. Current disposition
+## 14. E117-3 live result: native Codex local-image vision qualified
+
+A second bounded live experiment tested an existing authorized repository PNG through the exact installed Codex native image path. Codex used its maintained `view_image` capability and visually inspected the image successfully. It reported a concrete visual-only fact from the screenshot and required no file copy, conversion, render step, OCR path, or custom script. No authority or sandbox blocker occurred.
+
+This is decisive positive reuse evidence for the downstream visual stage:
+
+```text
+existing authorized local image
+    -> Codex native view_image / local image input
+    -> model vision
+    -> visual reasoning
+```
+
+Therefore Research 117 should not design a separate ADS image-understanding subsystem. The unresolved document problem is now narrower: obtain an authorized page/image representation from a PDF or other visually meaningful document and hand that representation to the already-working native image path.
+
+Primary evidence: `docs/local_execution/validation/041_codex_native_local_image_view_qualified.md`.
+
+## 15. Current disposition
 
 ```text
 KEEP

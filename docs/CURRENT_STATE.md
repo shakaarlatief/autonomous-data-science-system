@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 281
+**Checkpoint:** 282
 **Date:** 2026-09-03  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -24,7 +24,7 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 281 records the first live Research 117 reuse experiment after the Checkpoint 280 architecture stop rule. The `big-data-statistics` workspace is now intentionally admitted for `read + agent` only, with no write, browser, or Git capability. Registry revision is `4` with content hash `2960f0b113550301a692470b0f2ff527317812550b6d3ae7cd2e519c94ad9e80`. The active machine-readable boundary is now `codex-pdf-skill-routed-visual-render-local-dependency-blocked`.
+Checkpoint 282 records the successful Research 117 E117-3 native local-image qualification. Current Codex can attach and visually inspect an authorized local PNG through its maintained `view_image` path with no copy, render, conversion, OCR, custom script, or authority blocker. The active machine-readable boundary is now `codex-native-local-image-vision-qualified`. Checkpoint 281 remains the immediately preceding PDF-Skill reuse result: routing passed, but local PDF page rendering was blocked by the current renderer dependency.
 
 Research 117 currently pauses new custom `codex.document_render`, OCR, and DOCX/PPTX/XLSX adapter implementation. Official OpenAI file-input documentation already provides PDF multimodality as extracted text plus an image of every page; current Codex App Server/upstream source has image/local-image input semantics; and live model-free Codex Skill discovery on this machine found maintained OpenAI primary-runtime skills for PDF, Documents/DOCX, Presentations/PPTX, and Spreadsheets/XLSX with visual render/inspection workflows. The first live PDF-Skill experiment proved routing but exposed a local renderer dependency gap: the discovered Poppler executable was an uninitialized MiKTeX stub, so no page image was visually inspected. This does not establish a need for a custom ADS renderer. MarkItDown, Docling and PyMuPDF4LLM remain fallback benchmark candidates only if native OpenAI/Codex paths leave concrete gaps. Validation 040 preserves the exact result.
 
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 281 is now the current meaningful project boundary. It preserves the first live Research 117 PDF-Skill reuse result: maintained Skill routing passed, visual rendering was blocked by a local dependency, and no custom ADS renderer was accepted. Checkpoint 280 remains the architecture stop-rule boundary beneath it, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 282 is now the current meaningful project boundary. It preserves the successful native Codex local-image-to-model-vision qualification and narrows the unresolved document problem to rendering / authorized media handoff. Checkpoint 281 remains the PDF-Skill renderer-dependency result, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,7 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/282_codex_native_local_image_view_qualified.md
 docs/checkpoints/281_codex_pdf_skill_reuse_experiment_rendering_dependency_blocked.md
 docs/checkpoints/280_reuse_first_document_architecture_and_local_media_bridge_research.md
 docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
@@ -358,6 +359,7 @@ docs/local_execution/validation/037_flexible_authority_live_source_published_res
 docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
 docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
 docs/local_execution/validation/040_codex_pdf_skill_visual_read_reuse_experiment.md
+docs/local_execution/validation/041_codex_native_local_image_view_qualified.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
@@ -409,7 +411,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codex-pdf-skill-routed-visual-render-local-dependency-blocked` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codex-native-local-image-vision-qualified` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -422,6 +424,7 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/282_codex_native_local_image_view_qualified.md
 docs/checkpoints/281_codex_pdf_skill_reuse_experiment_rendering_dependency_blocked.md
 docs/checkpoints/280_reuse_first_document_architecture_and_local_media_bridge_research.md
 docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
@@ -438,6 +441,7 @@ docs/local_execution/validation/037_flexible_authority_live_source_published_res
 docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
 docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
 docs/local_execution/validation/040_codex_pdf_skill_visual_read_reuse_experiment.md
+docs/local_execution/validation/041_codex_native_local_image_view_qualified.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
