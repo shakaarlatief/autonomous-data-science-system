@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 279
+**Checkpoint:** 280
 **Date:** 2026-09-03  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -22,9 +22,13 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: generic workspace document reading qualified inside the broader upstream research phase
+## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 279 preserves the accepted extension beyond the Research 116 core: `workspace-standard` now supports explicit ordinary non-Git exact-root admission, the first such workspace (`big-data-statistics`) is live with only `read`, and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. A fresh disposable ChatGPT conversation invoked that exact semantic action against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 is the decisive live evidence. The active machine-readable boundary is now `codexless-generic-workspace-document-read-qualified`.
+Checkpoint 280 opens Research 117 after the live Checkpoint 279 PDF qualification. The project owner explicitly challenged whether ADS was about to rebuild capabilities already provided by OpenAI, Codex, Liyana's Codexless ecosystem, or mature document libraries. The active machine-readable boundary is now `reuse-first-multimodal-document-architecture-research-opened`.
+
+Research 117 currently pauses new custom `codex.document_render`, OCR, and DOCX/PPTX/XLSX adapter implementation. Official OpenAI file-input documentation already provides PDF multimodality as extracted text plus an image of every page; current Codex App Server/upstream source has image/local-image input semantics; and live model-free Codex Skill discovery on this machine found maintained OpenAI primary-runtime skills for PDF, Documents/DOCX, Presentations/PPTX, and Spreadsheets/XLSX with visual render/inspection workflows. These are now the first reuse targets. MarkItDown, Docling and PyMuPDF4LLM remain fallback benchmark candidates only if native OpenAI/Codex paths leave concrete gaps.
+
+Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission, `big-data-statistics` is live with only `read`, and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. A fresh disposable ChatGPT conversation invoked that exact semantic action against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive qualification evidence.
 
 The PDF parser is hardened out of the main Codexless event loop into a dedicated bounded Node child process with a 256 MiB V8 old-space ceiling, 30-second default hard deadline, bounded protocol output, Node permission restrictions, disabled PDF JavaScript evaluation/system-font lookup/worker fetch, and deterministic termination/recovery on timeout. The main process performs a bounded file-handle read capped at 32 MiB plus one byte and revalidates identity/size after reading. Focused qualification is `DOCUMENT_READ_REGRESSION=PASS tests=11`, while flexible authority, bounded Git, dependency, and 52-tool public-surface regressions also pass.
 
@@ -317,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 279 is now the current meaningful project boundary. It preserves the live-qualified 52-tool surface, generic `workspace-standard` ordinary-folder admission, hardened first-class `codex.document_read`, reviewed private local-runtime preservation, and the accepted Research 116 flexible multi-repository core inside the broader Research 113 program.
+Canonical numbered Checkpoint 280 is now the current meaningful project boundary. It preserves the reuse-first document-architecture stop rule opened by Research 117 while retaining the accepted Checkpoint 279 live-qualified 52-tool `workspace-standard` + `codex.document_read` baseline beneath it.
 
 The public repository remains the sole project-development authority.
 
@@ -338,10 +342,12 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/280_reuse_first_document_architecture_and_local_media_bridge_research.md
 docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
 docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
 docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
 docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
+docs/research/117_reuse_first_multimodal_document_architecture_and_local_media_handoff.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
 docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md
@@ -401,7 +407,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codexless-generic-workspace-document-read-qualified` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `reuse-first-multimodal-document-architecture-research-opened` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -414,10 +420,12 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/280_reuse_first_document_architecture_and_local_media_bridge_research.md
 docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
 docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
 docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
 docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
+docs/research/117_reuse_first_multimodal_document_architecture_and_local_media_handoff.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
 docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md

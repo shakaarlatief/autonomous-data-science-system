@@ -151,14 +151,16 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ---
 
-## AB-005: Document rendering, OCR, and additional document adapters
+## AB-005: Reuse-first multimodal document architecture
 
-**Status:** OPEN / BASELINE DOCUMENT READ ACCEPTED
+**Status:** RESEARCHING / CUSTOM IMPLEMENTATION PAUSED
 **Priority:** P1
 
 The first-class `codex.document_read` PDF baseline is no longer open work. It is live-qualified on Codexless `0.1.1-preview.9` / 52 tools through Validation 039 and Checkpoint 279, including the isolated bounded `pdfjs-dist@5.4.624` parser child and a real read-only personal-PDF test.
 
-Remaining document-system directions are deliberately separate capabilities:
+Research 117 has now changed the default direction: before ADS builds any of the capabilities below, first test/reuse native OpenAI PDF multimodality, installed Codex PDF/Documents/Presentations/Spreadsheets Skills, App Server image/local-image semantics, and only then mature converters such as MarkItDown, Docling, or PyMuPDF4LLM if concrete gaps remain. The likely missing problem is a safe local-file/media handoff seam, not document understanding itself.
+
+Remaining document-system directions are deliberately separate capabilities and are paused pending those reuse experiments:
 
 ```text
 codex.document_render
