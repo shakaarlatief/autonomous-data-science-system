@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 274
-**Date:** 2026-09-02  
+**Checkpoint:** 276
+**Date:** 2026-09-03  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`  
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-15
-Conversation title       15 - Codex Desktop Thread Handoff and Source Vault Continuation
+Interaction session      chatgpt-16
+Conversation title       16 - Codex Live Task Viewer Publication and Source Vault Continuation
 Primary collaborator     ChatGPT
 ```
 
@@ -22,9 +22,15 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Codex Desktop handoff integration closed; reviewed Source Vault ingestion active
+## Current active stage: comprehensive Codex/Codexless upstream ecosystem research active; Source Vault and v17 implementation paused
 
-Checkpoint 274 closes the remaining cooperative Desktop release question for the tested scope and returns the active project boundary to reviewed Source Vault ingestion of the frozen 20-entry first corpus.
+Checkpoint 276 opens Research 113, a comprehensive evidence-driven study of the current OpenAI Codex/App Server ecosystem, the public Codexless project, and relevant issues, pull requests, discussions, source, schemas, tests, and community design ideas before further local Codexless architecture changes. The project owner explicitly pauses both v17 live-viewer implementation and reviewed Source Vault ingestion while this Level-2 research phase is active.
+
+The v16 viewer is preserved as the current working experimental baseline. It was published successfully as `ui://toolwire/codex-task-card-v16.html` on public Codexless `0.1.1-preview.7` with `toolCount 48`. After the controlled Codexless restart, tunnel reconnect, ChatGPT plug-in refresh, and a fresh disposable test chat, live transport, automatic card updates, streamed command output, and terminal transition all worked. A separate native Codex Desktop recording showed that v16 still lacks Desktop-style semantic grouping and narrative hierarchy, so implementation is paused rather than prematurely polishing the event-log renderer.
+
+Initial primary-source inspection already shows important upstream evolution, including explicit `Thread -> Turn -> Item` lifecycle semantics, history pagination without resume, thread status notifications, connection-scoped unsubscribe/unload behavior, experimental same-turn steering, persistent thread queues, structured command/file-change items, richer approval-reviewer paths, and expanded subagent/project/thread APIs. These are research candidates, not adopted ADS changes. Research 113 governs evidence classes, comparison methodology, and stop rules.
+
+Research 114 now preserves the first deep official App Server capability baseline and ADS implications. Research 115 separately maps the active public Codexless architecture/PR landscape, including lifecycle-state consolidation, fail-closed same-turn steering, Browser elicitation policy, and the need to distinguish current public source from lagging README/tool-count documentation. `docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md` is the living cross-source disposition index.
 
 The completed integration architecture separates four layers:
 
@@ -39,11 +45,17 @@ H6 remains live: completed ADS Codex tasks expose the exact persisted `threadId`
 
 The durable identity is `threadId`; Codexless `agentRef` values are ephemeral runtime handles. Model-free `codex.agent_bind` remains verified, including re-binding after a complete Codexless restart.
 
-The final cooperative handoff used disposable ADS-root thread `01a060d7-7249-78b2-b4a0-61cc4376da4f`. It was continued in Codex Desktop and archived through the supported Desktop UI while Desktop remained running. Newly published model-free `codex.thread_unarchive`, implemented through official `thread/read` plus `thread/unarchive`, successfully unarchived it. Model-free bind then returned fresh `agentRef` `agent_7d5d070f-24c0-470b-9164-2ca7db2623a4`. After normal metered user approval, turn `01a0628f-8415-77d3-9a8d-2ab29f204c53` resumed the same persisted thread and completed exact result `ARCHIVE_UNARCHIVE_REACQUIRE_COMPLETE`.
+The final guided handoff used exact persisted thread `01a063b1-0d21-7011-b17c-514eb0359a15`. After source marker `PROCEED_IN_CHAT_UI_SOURCE_COMPLETE`, the user opened the exact thread in Desktop, selected `Proceed in Chat`, archived it while Desktop remained running, and selected `I've archived it — Continue`. The card reached `Ready in Chat` through model-free verification, unarchive, and rebound without starting a model turn.
 
-The accepted operational classifications are `UNARCHIVE_PATH=PASS`, `POST_UNARCHIVE_BIND=PASS`, and `ARCHIVE_RELEASES_DESKTOP_WRITER=PASS`. The last classification is scoped to the observed successful sequence; no claim is made about an unobserved internal instant at which the writer lease was released.
+A separate stateless MCP request resolved exact task reference `task_e89b4b3c-0e43-40a2-b3d3-aa32a9fe31e7` to fresh `agentRef` `agent_645095a6-efa5-4224-a8c1-029da74abea7`, the same `threadId`, `boundThread=true`, `status=idle`, `canSend=true`, `turnId=null`, `pendingApproval=null`, `modelTurnStarted=false`, and `handoffStatus=ready`. This proves Ready survives across distinct requests through runtime-lifetime shared `agentPreviewState`; it remains intentionally non-persistent across process restart.
 
-After restart, live Codexless health reported `toolCount 46` and tunnel ready HTTP 200. No private Codex DB/session/catalog write, forced process termination, Desktop quit, permission widening, cross-client forced unsubscribe, or safety workaround was used. The Codex handoff integration is closed for current scope.
+Ordinary metered `codex.agent_send` then resumed the same thread. Turn `01a063b5-c8d9-7692-b8b1-d23a0a55a7ea` completed exact result `PROCEED_IN_CHAT_END_TO_END_COMPLETE`, with `thread/reacquired`, `turn/accepted`, `turn/started`, `turn/completed`, `thread/released`, and `app-server/released` observed. A second same-thread cycle then visibly completed markers `SECOND_DESKTOP_CYCLE_SOURCE` and `SECOND_CHAT_CYCLE_COMPLETE` after the two first-cycle markers. This proves repeatable cooperative handoff on one durable thread.
+
+Codexless remained public version `0.1.1-preview.7`, `toolCount 48`, with tunnel ready HTTP 200. Desktop briefly showed stale archived presentation state after backend reacquisition; `Dearchiveren en openen` failed, but a Desktop restart plus the exact thread deep link restored the correct conversation. This is a Desktop UI synchronization/cache quirk, not a backend failure.
+
+No forced writer stealing, private Codex DB/session/catalog write, Desktop forced termination for handoff, permission widening, or manual raw lifecycle workaround was used. Desktop voluntarily released by archive; Chat verified, unarchived, rebound and resolved Ready model-free. Only ordinary metered `agent_send` began the continuation turn. The guided handoff UX/integration is closed for current scope.
+
+Checkpoint 274 is locally committed at `c0b9101` but is not known to be pushed: the direct sandboxed push could not access the configured Git credential-manager / VS Code askpass path. No workaround was attempted. Checkpoint 275 remains uncommitted because its originating reconciliation turn did not reach a clean finalization boundary. Validation created repository-local `.tmp/pytest-checkpoint-275/` residue and then proposed an exact-path-guarded cleanup containing `Remove-Item -Recurse -Force`. The user approved that pending Codex action, but the outer OpenAI tool-dispatch safety layer blocked the programmatic approval before it reached Codexless; the request type also did not support decline. The Codex turn therefore remained paused before cleanup/final status verification, and the repository was deliberately not committed or pushed as though that reconciliation had completed. The current `git status` warning that `.tmp/pytest-checkpoint-275/` cannot be opened is known interruption residue from that exact validation/cleanup sequence, not unexplained repository corruption. Nothing was deleted through the blocked action. Origin synchronization is not claimed.
 
 The earlier direct synchronization result remains accepted for the exact frozen contracts:
 
@@ -248,9 +260,9 @@ No Source Universe, Source Vault, original corpus, credential, backup payload, o
 
 ---
 
-## Exact next Source Vault action
+## Preserved next Source Vault action (currently paused)
 
-The next substantive ADS action is:
+When the current Research 113 Level-2 route closes, the preserved next Source Vault action is:
 
 ```text
 reviewed ingestion of the frozen 20-entry first corpus
@@ -285,7 +297,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 274 is now the current meaningful project boundary. It preserves the completed Archive -> Unarchive -> Bind -> Resume sequence, closes the Codex Desktop handoff integration for current scope, and returns the active route to reviewed ingestion of the frozen 20-entry first corpus.
+Canonical numbered Checkpoint 276 is now the current meaningful project boundary. It preserves the working v16 live-viewer baseline, the native Desktop presentation comparison, the retirement of obsolete MC-0009, the opening of Research 113 and MC-0010, and the project-owner decision to pause v17 and Source Vault ingestion while comprehensive Codex/Codexless upstream ecosystem research is active.
 
 The public repository remains the sole project-development authority.
 
@@ -297,15 +309,26 @@ Private continuity remains an orthogonal claim and must be reconciled to the exa
 
 ## Model collaboration state
 
-MC-0009 remains `DEFERRED / NON-BLOCKING`.
+The obsolete MC-0009 direct-Git feasibility collaboration has been retired by explicit project-owner decision. It never received a Claude Message 001; its bounded Git question was later resolved experimentally, its thread directory has been removed, and it is no longer a live routing obligation. Historical validation prose may retain provenance that MC-0009 existed at the time.
 
-The direct semantic fetch/pull experiments resolved the immediate feasibility question without requiring Claude Message 001. No Claude response is assumed to exist unless later preserved through the governed collaboration thread.
+MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REVIEWED` collaboration, not a blind-to-candidate pass. Claude is intentionally allowed to inspect the current ADS Codexless architecture, v16/Desktop comparison, Research 113, and relevant validation history, then independently research and challenge the upstream ecosystem. ChatGPT research may continue while the Claude contribution is unavailable, but the separate report should be considered before final architecture reconciliation when practically available.
 
 ---
 
 ## Current canonical route
 
 ```text
+docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
+docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
+docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
+docs/research/115_public_codexless_current_architecture_pr_landscape_and_ads_delta.md
+docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
+docs/model_collaboration/threads/MC-0010/BRIEF.md
+docs/model_collaboration/threads/MC-0010/THREAD.md
+docs/model_collaboration/threads/MC-0010/STATE.json
+docs/checkpoints/275_guided_proceed_in_chat_roundtrip_verified_source_vault_active.md
+docs/research/112_guided_proceed_in_chat_shared_ready_and_repeatable_roundtrip.md
+docs/local_execution/validation/032_guided_proceed_in_chat_repeatable_same_thread_verified.md
 docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md
 docs/research/111_archive_unarchive_reacquire_closes_codex_desktop_handoff.md
 docs/local_execution/validation/031_desktop_archive_unarchive_rebind_resume_verified.md
@@ -331,9 +354,9 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ## Conversation-rotation boundary
 
-Substantial Codex integration work continued in `chatgpt-15` beyond Checkpoint 273 and is now preserved as Checkpoint 274.
+The guided handoff boundary is preserved through Checkpoint 275. The current `chatgpt-16` interaction then published and tested v16, compared it against native Codex Desktop presentation, and opened Checkpoint 276 / Research 113 for comprehensive upstream ecosystem research.
 
-The repository is now sufficient to reconstruct the completed cooperative archive/unarchive handoff and the restored Source Vault boundary without relying on this chat. A deliberate rotation is valid after the current uncommitted preservation changes are reviewed, committed/pushed through the accepted route, and the required continuity/integrity gates are evaluated.
+The repository now preserves the guided/repeated handoff, the Checkpoint 275 interruption residue, the v16 publication/test and Desktop comparison, and the opening of the comprehensive upstream research route. Checkpoint 274 is local-only at `c0b9101`, while Checkpoints 275-276 and their current research/collaboration artifacts remain uncommitted. A deliberate rotation is valid only after publication state is truthfully reconciled through an authorized route and the required continuity/integrity gates are evaluated.
 
 When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual transition evidence:
 
@@ -341,11 +364,11 @@ When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual tra
 exact-head public Repository Integrity PASS
 required private continuity anchor reconciled and verified when applicable
 local checkout synchronized with the public authority when required
-no unrecorded archive/unarchive handoff state
+no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `source-vault-reviewed-first-corpus-ingestion` boundary unless the repository has advanced further.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codexless-upstream-ecosystem-research` boundary unless the repository has advanced further. The preserved Source Vault ingestion route remains paused beneath that Level-2 research boundary.
 
 ---
 
@@ -358,6 +381,17 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
+docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
+docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
+docs/research/115_public_codexless_current_architecture_pr_landscape_and_ads_delta.md
+docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
+docs/model_collaboration/threads/MC-0010/BRIEF.md
+docs/model_collaboration/threads/MC-0010/THREAD.md
+docs/model_collaboration/threads/MC-0010/STATE.json
+docs/checkpoints/275_guided_proceed_in_chat_roundtrip_verified_source_vault_active.md
+docs/research/112_guided_proceed_in_chat_shared_ready_and_repeatable_roundtrip.md
+docs/local_execution/validation/032_guided_proceed_in_chat_repeatable_same_thread_verified.md
 docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md
 docs/research/111_archive_unarchive_reacquire_closes_codex_desktop_handoff.md
 docs/local_execution/validation/031_desktop_archive_unarchive_rebind_resume_verified.md

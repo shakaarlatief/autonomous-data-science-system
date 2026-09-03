@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-01  
-**Status:** NO BLOCKING CLAUDE OBLIGATION / MC-0009 DEFERRED  
+**Date:** 2026-09-03  
+**Status:** MC-0010 PARALLEL UPSTREAM RESEARCH OPEN / NON-BLOCKING FOR COLLECTION  
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -21,45 +21,45 @@ docs/current_routing.json
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
 
-## Deferred model obligation
+## Current parallel research obligation
 
-### MC-0009: ChatGPT local Git through MCP feasibility and safety architecture
+### MC-0010: current Codex and Codexless upstream ecosystem research
 
 ```text
-reviewer / researcher     Claude / claude-03
-mode                      INDEPENDENT_THEN_COMPARATIVE
+reviewer / researcher     secondary Claude collaborator / pending allocation
+mode                      REVIEWED
 coordination branch       v1-source-vault-bootstrap-resume
-frozen independent target cb48c1ac539592e63b13cbc8e4e2413cb0b196a0
-kind                      independent technical research / counter-design
-priority                  HIGH when resumed
-current gate              NONE for the bounded semantic Git-fetch experiment
-expected output           docs/model_collaboration/threads/MC-0009/messages/001_claude_independent_chatgpt_local_git_mcp_feasibility_research.md
-status                    DEFERRED_BY_HUMAN_ROUTING
+opening base              c0b9101a82f688be25dfc6dbf565813d51cc51a5
+kind                      current-context upstream research / critique / counter-design
+priority                  HIGH
+current gate              NON-BLOCKING for research collection; consider before final architecture reconciliation
+expected output           docs/model_collaboration/threads/MC-0010/messages/001_claude_current_codex_codexless_ecosystem_research.md
+status                    OPEN / MESSAGE 001 NOT YET PRODUCED
 ```
 
-The project owner explicitly chose to proceed without waiting for Claude's first response. Claude's research remains useful but no longer blocks the current smallest controlled direct-Git experiment.
+The project owner explicitly requested a new broad current-context Claude research pass. It is intended to improve search coverage, source evaluation, criticism, and alternative-design discovery while ChatGPT executes Research 113 in parallel.
 
-The detailed contract and deferral semantics are in:
+The detailed contract is in:
 
 ```text
-docs/model_collaboration/threads/MC-0009/BRIEF.md
-docs/model_collaboration/threads/MC-0009/THREAD.md
-docs/model_collaboration/threads/MC-0009/STATE.json
+docs/model_collaboration/threads/MC-0010/BRIEF.md
+docs/model_collaboration/threads/MC-0010/THREAD.md
+docs/model_collaboration/threads/MC-0010/STATE.json
 ```
 
-The canonical post-015 diagnostic preservation record is:
+The active research program is:
 
 ```text
-docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md
+docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 ```
 
-The currently authorized experiment is opened in:
+The opening research-direction checkpoint is:
 
 ```text
-docs/local_execution/validation/017_bounded_semantic_git_fetch_mcp_dispatch_experiment_opened.md
+docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 ```
 
-If Claude later resumes the originally intended blind pass, it must remain anchored to the exact frozen target and must not inspect descendant ChatGPT candidate/implementation material before freezing Message 001. If that exposure has already occurred, the collaboration must be reclassified honestly rather than claiming `BLIND_TO_CANDIDATE`.
+MC-0010 is intentionally current-context rather than blind. Its epistemic value comes from a separate model performing its own search, source evaluation, and architecture critique while fully aware of the current ADS implementation and evidence. The obsolete MC-0009 thread was explicitly retired on 2026-09-03 and is no longer a collaboration obligation.
 
 ## Most recently completed obligation
 

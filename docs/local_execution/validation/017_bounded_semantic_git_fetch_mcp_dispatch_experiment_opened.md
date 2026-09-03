@@ -5,7 +5,7 @@
 **Result:** `CONTROLLED SEMANTIC-TOOL A/B EXPERIMENT FROZEN`  
 **Scope:** Define the smallest first experiment for testing whether ordinary ChatGPT can dispatch a bounded local Git fetch through Codexless when Git is exposed as a narrow semantic MCP action instead of an arbitrary command tool.  
 **Authority:** Bounded local-execution validation design. This record authorizes only the experiment defined below; it does not accept a new permanent execution architecture.  
-**Declared references:** `research:105`, `checkpoint:270`, `path:docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md`, `path:docs/model_collaboration/threads/MC-0009/THREAD.md`, `path:docs/DEVELOPMENT_METHOD.md`
+**Declared references:** `research:105`, `checkpoint:270`, `path:docs/local_execution/validation/016_direct_git_acl_repair_network_profile_and_outer_tool_safety_boundary.md`, `path:docs/DEVELOPMENT_METHOD.md`
 
 ## 1. Routing decision
 

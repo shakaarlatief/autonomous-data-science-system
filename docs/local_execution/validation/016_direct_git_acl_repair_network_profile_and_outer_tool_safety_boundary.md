@@ -4,7 +4,7 @@
 **Status:** `DIRECT_GIT_PROFILE_PARTIAL / FILESYSTEM BLOCKER RESOLVED / INHERIT NETWORK ENABLED / OUTER CHATGPT TOOL-SAFETY BLOCKED FINAL FETCH DISPATCH`  
 **Scope:** Preserve the post-015 direct-lane diagnostic sequence from host ACL confirmation through the final ChatGPT/OpenAI tool-safety block.  
 **Authority:** Bounded local-execution evidence. This record does not classify a new Git-specific MCP architecture as accepted, does not alter Research 105 acceptance, and does not authorize Source Vault ingestion.  
-**Declared references:** `research:105`, `checkpoint:270`, `path:docs/local_execution/validation/013_direct_lane_git_metadata_permission_profile_source_audit.md`, `path:docs/local_execution/validation/014_direct_git_profile_runtime_application_partial.md`, `path:docs/local_execution/validation/015_direct_git_profile_active_metadata_write_denied_windows_acl_investigation.md`, `path:docs/model_collaboration/threads/MC-0009/BRIEF.md`, `path:docs/CURRENT_STATE.md`
+**Declared references:** `research:105`, `checkpoint:270`, `path:docs/local_execution/validation/013_direct_lane_git_metadata_permission_profile_source_audit.md`, `path:docs/local_execution/validation/014_direct_git_profile_runtime_application_partial.md`, `path:docs/local_execution/validation/015_direct_git_profile_active_metadata_write_denied_windows_acl_investigation.md`, `path:docs/CURRENT_STATE.md`
 
 ## 1. Why this record exists
 

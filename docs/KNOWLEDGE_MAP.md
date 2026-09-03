@@ -2,7 +2,7 @@
 
 **Status:** Current evergreen subject library  
 **Authority:** Navigation only. This file routes subjects to repository evidence and does not replace the authority of the routed artifacts.  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-03
 
 ## Purpose
 
@@ -262,6 +262,8 @@ docs/checkpoints/268_first_corpus_matched_codexless_local_execution_evaluation_o
 docs/checkpoints/270_codexless_controlled_write_verified_local_execution_accepted.md
 docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_resume_ready.md
 docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md
+docs/checkpoints/275_guided_proceed_in_chat_roundtrip_verified_source_vault_active.md
+docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 ```
 
 Current substrate status is routed from `CURRENT_STATE.md`; this subject section preserves the durable architecture and evidence chain rather than copying live status.
@@ -295,6 +297,11 @@ docs/research/108_historical_intermediate_checkpoint_integrity_and_discoverabili
 docs/research/109_codex_desktop_thread_handoff_and_catalog_reconciliation.md
 docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_release.md
 docs/research/111_archive_unarchive_reacquire_closes_codex_desktop_handoff.md
+docs/research/112_guided_proceed_in_chat_shared_ready_and_repeatable_roundtrip.md
+docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
+docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
+docs/research/115_public_codexless_current_architecture_pr_landscape_and_ads_delta.md
+docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
@@ -311,6 +318,8 @@ docs/checkpoints/271_bounded_direct_git_synchronization_verified_source_vault_re
 docs/checkpoints/272_codex_desktop_thread_handoff_verified_deeplink_candidate_preflighted.md
 docs/checkpoints/273_durable_bidirectional_codex_thread_handoff_verified_cooperative_release_next.md
 docs/checkpoints/274_archive_unarchive_reacquire_verified_source_vault_ingestion_resumed.md
+docs/checkpoints/275_guided_proceed_in_chat_roundtrip_verified_source_vault_active.md
+docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 ```
 
 ### Project Cockpit product architecture and professional interaction model
@@ -583,6 +592,8 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 268-272 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 273-273 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 274-274 source-universe development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 275-275 source-universe development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
