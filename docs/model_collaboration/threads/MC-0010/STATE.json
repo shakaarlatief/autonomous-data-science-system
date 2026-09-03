@@ -3,10 +3,10 @@
   "thread_id": "MC-0010",
   "review_mode": "REVIEWED",
   "lifecycle_state": "OPEN",
-  "phase": "PARALLEL_UPSTREAM_RESEARCH_READY_AT_QUALIFIED_MULTI_REPO_BOUNDARY",
+  "phase": "PARALLEL_UPSTREAM_RESEARCH_READY_AT_QUALIFIED_DOCUMENT_READ_BOUNDARY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
-    "base_ref": "ea30fb17cbfb103575ce6e44f15850b23ed100da",
+    "base_ref": "bd7a2fcf802d99e6b9dd2b94745f248f347a12a9",
     "description": "Parallel current-context Claude research on the OpenAI Codex/App Server and public Codexless ecosystem, compared against ADS's current Codexless architecture before final architecture reconciliation.",
     "write_paths": []
   },
@@ -56,18 +56,18 @@
     "review_base_ref": null,
     "known_exposures": [
       "Claude is intentionally exposed to the current ADS Codexless architecture and validation history.",
-      "Claude may read Research 113-116, the v16/Desktop comparison, and the accepted Checkpoint 278 flexible-authority boundary before producing its report.",
-      "Claude should inspect private runtime implementation evidence at shakaarlatief/autonomous-data-science-system-local-runtime main commit 8d33e5408fde10dde1a974f0f1d5da11b84b8f9f when repository access is available.",
+      "Claude may read Research 113-116, the v16/Desktop comparison, and the accepted Checkpoint 279 generic-workspace/document-read boundary before producing its report.",
+      "Claude should inspect private runtime implementation evidence at shakaarlatief/autonomous-data-science-system-local-runtime main commit d86a96e2a26fbc946a31e28ef1ca14c8a129628a when repository access is available.",
       "The collaboration seeks separate research coverage and critique, not blind-to-candidate independence."
     ],
     "notes": "The exact Claude provider-local interaction session will be allocated only when the fresh persistent Claude interaction is actually opened; no unused intended session identity from retired MC-0009 is treated as an accomplished interaction."
   },
   "last_transition": {
-    "transition_id": "mc0010-ready-qualified-multi-repo-boundary",
+    "transition_id": "mc0010-ready-qualified-document-read-boundary",
     "from_state": "OPEN",
     "to_state": "OPEN",
     "actor": "chatgpt",
-    "reason": "Research 116 is now core-qualified and synchronized. Route the pending Claude research to the current public ADS boundary plus the separately versioned private runtime implementation evidence before final architecture reconciliation.",
-    "repository_head": "ea30fb17cbfb103575ce6e44f15850b23ed100da"
+    "reason": "Checkpoint 279 now qualifies generic workspace authority and the 52-tool document-read boundary. Route the pending Claude research to frozen public content baseline bd7a2fc plus the separately versioned private runtime evidence at d86a96e before final architecture reconciliation.",
+    "repository_head": "bd7a2fcf802d99e6b9dd2b94745f248f347a12a9"
   }
 }

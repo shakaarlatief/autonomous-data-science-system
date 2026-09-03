@@ -521,21 +521,23 @@ This extension does not change the Research 116 core conclusion. Ordinary worksp
 The accepted Research 116 core plus generic-workspace/document-read extension is now being preserved and synchronized in both repositories:
 
 ```text
-public ADS
-    Checkpoint 279 preservation pending exact commit at this pre-commit boundary
+public Checkpoint 279 content baseline
+    bd7a2fcf802d99e6b9dd2b94745f248f347a12a9
 
-private local-runtime
-    799390a5d0347b46e0be6caaf70a912ca83bac64
+private local-runtime evidence
+    d86a96e2a26fbc946a31e28ef1ca14c8a129628a
+    RUNTIME_STATE.json -> public checkpoint 279 / bd7a2fcf...
 ```
+
+The public/private pair above is deliberately non-recursive. A later public collaboration-routing envelope may point to both exact frozen evidence commits without requiring another private provenance update merely because the routing pointer itself changed.
 
 Continue with:
 
 ```text
-1. commit/push Checkpoint 279 and pass exact-head public Repository Integrity
-2. advance private RUNTIME_STATE.json to that exact public Checkpoint 279 commit and push the provenance-only private follow-up
-3. verify a fresh Claude environment can access both public ADS and private runtime evidence before Message 001
-4. deliberately rotate to chatgpt-17 with the stable 52-tool schema only after continuity preflight
-5. resume the broader Research 113 upstream ecosystem study
-6. keep Validation 035 plus the explicit architecture backlog open
-7. resume Source Vault only when the broader Level-2 research route is deliberately closed
+1. publish the MC-0010 routing envelope that points Claude to both frozen evidence boundaries
+2. verify a fresh Claude environment can access both public ADS and private runtime evidence before Message 001
+3. deliberately rotate to chatgpt-17 with the stable 52-tool schema only after continuity preflight
+4. resume the broader Research 113 upstream ecosystem study
+5. keep Validation 035 plus the explicit architecture backlog open
+6. resume Source Vault only when the broader Level-2 research route is deliberately closed
 ```

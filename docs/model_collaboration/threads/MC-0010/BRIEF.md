@@ -23,9 +23,9 @@ This is intentionally **not** a blind-to-candidate review.
 
 Claude should understand the current ADS architecture and evidence before evaluating upstream alternatives. The goal is diversity of search, interpretation, criticism, and design ideas, not artificial independence.
 
-Claude should inspect the current coordination-branch material through the accepted Research 116 / Checkpoint 278 boundary, not stop at the original opening snapshot. The public ADS authority is currently synchronized at `ea30fb17cbfb103575ce6e44f15850b23ed100da` on `v1-source-vault-bootstrap-resume`.
+Claude should inspect the current coordination-branch material through the accepted Checkpoint 279 generic-workspace/document-read boundary, not stop at the original opening snapshot. The frozen public research-content baseline for this collaboration is `bd7a2fcf802d99e6b9dd2b94745f248f347a12a9` on `v1-source-vault-bootstrap-resume`; later commits may route the collaboration without recursively changing that research-content base.
 
-Claude should also inspect the private runtime implementation repository `shakaarlatief/autonomous-data-science-system-local-runtime` at `main` commit `8d33e5408fde10dde1a974f0f1d5da11b84b8f9f`. That repository is implementation/preservation evidence only and must not be treated as competing project-development authority. If the Claude environment cannot access that private repository, stop and report the access limitation instead of inferring its contents from public summaries alone.
+Claude should also inspect the private runtime implementation repository `shakaarlatief/autonomous-data-science-system-local-runtime` at `main` commit `d86a96e2a26fbc946a31e28ef1ca14c8a129628a`. That repository preserves the reviewed `workspace-standard` and hardened `codex.document_read` implementation evidence and is implementation/preservation evidence only, not competing project-development authority. If the Claude environment cannot access that private repository, stop and report the access limitation instead of inferring its contents from public summaries alone.
 
 Do not optimize for agreement with ChatGPT. Identify important upstream capabilities, risks, issues, proposals, or architectural alternatives even when they imply replacing or simplifying current ADS work.
 
@@ -51,11 +51,14 @@ docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
 docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
+docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md
 docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
 docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
 docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
+docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
+docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/OPERATIONS.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
