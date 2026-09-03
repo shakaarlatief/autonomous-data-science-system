@@ -350,7 +350,23 @@ host/model handoff reliability
 maintenance burden
 ```
 
-## 13. Current disposition
+## 13. E117-2 live result: maintained Codex PDF Skill routed, visual render blocked
+
+The first live reuse experiment is now complete. The `big-data-statistics` workspace was deliberately widened from `read` to `read + agent` only. Registry revision advanced to `4` with content hash `2960f0b113550301a692470b0f2ff527317812550b6d3ae7cd2e519c94ad9e80`; no write/browser/Git capability was added.
+
+A bounded Codex turn on page 1 of `BDS-exam-24-25-solutions.pdf` successfully routed the maintained OpenAI PDF Skill. The visual inspection itself did not complete because the local renderer path was unavailable: the discovered Poppler executable was an uninitialized MiKTeX stub and no alternative renderer was available under the no-modification constraint. No source file was modified and no visual fact was invented.
+
+This changes the evidence, but not the reuse-first conclusion:
+
+```text
+maintained PDF Skill exists and routes        proven
+current-machine visual renderer is ready      not proven / blocked
+custom ADS renderer is therefore necessary    not established
+```
+
+Primary evidence: `docs/local_execution/validation/040_codex_pdf_skill_visual_read_reuse_experiment.md`.
+
+## 14. Current disposition
 
 ```text
 KEEP

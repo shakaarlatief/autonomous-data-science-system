@@ -179,7 +179,7 @@ stronger parser isolation
 
 Do not weaken the accepted `codex.document_read` authority contract merely to add these companions. Rendering/OCR/adapters should continue to inherit explicit workspace authority and remain semantic rather than arbitrary host-file execution paths.
 
-Primary accepted baseline evidence: `docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md`.
+Primary accepted baseline evidence: `docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md`. Validation 040 additionally proves that the maintained Codex PDF Skill routes in the authorized workspace, while current-machine visual rendering is blocked by a local renderer dependency. This is negative reuse evidence, not justification for a custom ADS renderer.
 
 ---
 
