@@ -73,7 +73,7 @@ private companion
 
 A private record may reference a public commit, checkpoint, specification, or stable identifier, but it cannot silently redefine public project-development state. If a conflict is discovered, resolve it explicitly and preserve the disposition in the appropriate authority layer.
 
-## Relationship to `.ads-private/`
+## Relationship to `.ads-private/` and the private local-runtime repository
 
 The Git-ignored local directory:
 
@@ -81,17 +81,43 @@ The Git-ignored local directory:
 .ads-private/
 ```
 
-is machine-local execution configuration. The companion repository instead provides durable private knowledge across chats and machines.
+is machine-local execution configuration. The companion repository instead provides durable private **knowledge** across chats and machines.
 
-Normal direction:
+A separate private repository now preserves reviewed non-secret runtime/materialization bytes:
+
+```text
+shakaarlatief/autonomous-data-science-system-local-runtime
+```
+
+Its public-side contract is:
+
+```text
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
+```
+
+The distinction is:
+
+```text
+private companion
+    durable private semantic facts / continuity knowledge
+
+private local-runtime repository
+    versioned non-secret runtime implementation/materialization evidence
+
+local .ads-private
+    execution-ready materialization on this machine
+```
+
+Normal direction for a private fact remains:
 
 ```text
 private companion knowledge
     -> materialize or verify local .ads-private execution state
+    -> optionally preserve the reviewed non-secret materialization in the private runtime repository
     -> execute under public ADS contracts
 ```
 
-Synchronizing a private value into local operational state does not make the companion repository a development repository.
+Synchronizing a private value into local operational state or preserving that materialization in the private runtime repository does not make either private repository a competing ADS development authority.
 
 ## Current private continuity surface
 

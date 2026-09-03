@@ -45,6 +45,7 @@ docs/KNOWLEDGE_MAP.md
 | How ADS itself is developed | `docs/DEVELOPMENT_METHOD.md` |
 | How to reconstruct after context loss | `docs/CONTINUITY.md` |
 | Private companion knowledge-repository boundary | `docs/private_companion/README.md` |
+| Private local-runtime repository boundary | `docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md` |
 | Selective structural history | `docs/MAJOR_CHANGES.md` |
 | Deep durable rationale | `docs/foundations/` |
 | Explicit scoped contracts | `docs/specifications/` |
@@ -227,7 +228,7 @@ Alembic migration configuration.
 
 ## Cross-repository authority boundary
 
-The private companion repository, once created, has a deliberately narrow role:
+ADS now uses three Git repository roles with deliberately different authority:
 
 ```text
 public autonomous-data-science-system
@@ -237,6 +238,17 @@ public autonomous-data-science-system
 private autonomous-data-science-system-private
     durable private knowledge complement only
     no competing product-development state
+
+private autonomous-data-science-system-local-runtime
+    versioned non-secret local/runtime implementation evidence
+    preserves `.ads-private` materialization/candidates/deployment provenance
+    no competing product-development state
+```
+
+The local-runtime contract is:
+
+```text
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 ```
 
 A private record may reference public commits, checkpoints or stable identifiers, but must not silently redefine them. If private knowledge exposes a reason to change the ADS product or development method, the actual change is made and preserved in the public repository through the normal development process.

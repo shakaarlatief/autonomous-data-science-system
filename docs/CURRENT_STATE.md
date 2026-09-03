@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 276
+**Checkpoint:** 278
 **Date:** 2026-09-03  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -22,9 +22,21 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: comprehensive Codex/Codexless upstream ecosystem research active; Source Vault and v17 implementation paused
+## Current active stage: flexible multi-repository Codexless authority qualified inside the broader upstream research phase
 
-Checkpoint 276 opens Research 113, a comprehensive evidence-driven study of the current OpenAI Codex/App Server ecosystem, the public Codexless project, and relevant issues, pull requests, discussions, source, schemas, tests, and community design ideas before further local Codexless architecture changes. The project owner explicitly pauses both v17 live-viewer implementation and reviewed Source Vault ingestion while this Level-2 research phase is active.
+Checkpoint 278 preserves the accepted Research 116 boundary: live Codexless `0.1.1-preview.8` with 51 MCP tools, explicit two-layer admission of the private `autonomous-data-science-system-local-runtime` workspace, reviewed non-secret runtime-repository bootstrap, the private authenticated Git transport correction, and end-to-end generalized fetch/push qualification against `ads-local-runtime`. The active machine-readable boundary is now `codexless-flexible-multi-repository-authority-qualified`.
+
+The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is now proven through the bounded host-network substrate with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true` at private runtime commit `0ce61ba794929ee71c555d480a936fdced28ef2e`.
+
+The public ADS branch is now synchronized: local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were both verified at `94e7bf7a011c202d2c9def718e3f2eefd066f1b8` after `codex.git_push_ff_only` completed with `PUBLIC_REPOSITORY_INTEGRITY=PASS` and `retried=false`. The known protected `.tmp/pytest-*` warning remains interruption residue and was not modified.
+
+The live Codexless server now exposes 51 public MCP tools on `0.1.1-preview.8`. A fresh disposable ChatGPT conversation discovered and contract-validated the stable flexible-authority surface, including `codex.workspace_authority` and generalized semantic Git with optional `workspaceId`. The server itself reports 51 tools while the connector projection exposed 47 callable recipients in that disposable conversation; the four omitted compatibility actions do not block workspace authority or generalized Git. Ordinary future workspace registrations now change server-owned policy rather than the MCP schema.
+
+Validation 035 now preserves a separate supervision-liveness gap discovered during the active Research 116 Codex candidate task. After ChatGPT approved one in-turn command and ended its response, Codex resumed, reached a second approval shortly afterward, and remained blocked until the user sent another message. The Rich Task Card could reflect `Action required`, but ChatGPT itself did not autonomously wake to inspect/resolve the new state. The same reproduction also reinforces the open question of whether writer ownership can be cooperatively transferred/reacquired during an active turn rather than only through the already-verified idle archive/unarchive/rebind handoff. This is now a first-class Codexless research/architecture issue, not an incidental UI observation.
+
+The private runtime repository now preserves reviewed non-secret `.ads-private/codexless` implementation evidence without becoming a competing ADS project-development authority. Its trust/bootstrap sequence is closed: supported App Server `config/batchWrite` trust qualification passed against Codex `0.152.1`, the explicit Codexless workspace registry admission created `ads-local-runtime`, the first reviewed import produced root commit `0ce61ba794929ee71c555d480a936fdced28ef2e`, and the one-time host bootstrap created `origin/main`. Validation 038 then closed the authenticated-private Git boundary after the published host-network correction: generalized fetch succeeded and generalized push returned up to date with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true`.
+
+Checkpoint 276 opened Research 113, a comprehensive evidence-driven study of the current OpenAI Codex/App Server ecosystem, the public Codexless project, and relevant issues, pull requests, discussions, source, schemas, tests, and community design ideas before further local Codexless architecture changes. That broader research remains active. The project owner continues to pause both v17 live-viewer implementation and reviewed Source Vault ingestion while this Level-2 research phase and its current authority subproblem are active.
 
 The v16 viewer is preserved as the current working experimental baseline. It was published successfully as `ui://toolwire/codex-task-card-v16.html` on public Codexless `0.1.1-preview.7` with `toolCount 48`. After the controlled Codexless restart, tunnel reconnect, ChatGPT plug-in refresh, and a fresh disposable test chat, live transport, automatic card updates, streamed command output, and terminal transition all worked. A separate native Codex Desktop recording showed that v16 still lacks Desktop-style semantic grouping and narrative hierarchy, so implementation is paused rather than prematurely polishing the event-log renderer.
 
@@ -55,7 +67,7 @@ Codexless remained public version `0.1.1-preview.7`, `toolCount 48`, with tunnel
 
 No forced writer stealing, private Codex DB/session/catalog write, Desktop forced termination for handoff, permission widening, or manual raw lifecycle workaround was used. Desktop voluntarily released by archive; Chat verified, unarchived, rebound and resolved Ready model-free. Only ordinary metered `agent_send` began the continuation turn. The guided handoff UX/integration is closed for current scope.
 
-Checkpoint 274 is locally committed at `c0b9101` but is not known to be pushed: the direct sandboxed push could not access the configured Git credential-manager / VS Code askpass path. No workaround was attempted. Checkpoint 275 remains uncommitted because its originating reconciliation turn did not reach a clean finalization boundary. Validation created repository-local `.tmp/pytest-checkpoint-275/` residue and then proposed an exact-path-guarded cleanup containing `Remove-Item -Recurse -Force`. The user approved that pending Codex action, but the outer OpenAI tool-dispatch safety layer blocked the programmatic approval before it reached Codexless; the request type also did not support decline. The Codex turn therefore remained paused before cleanup/final status verification, and the repository was deliberately not committed or pushed as though that reconciliation had completed. The current `git status` warning that `.tmp/pytest-checkpoint-275/` cannot be opened is known interruption residue from that exact validation/cleanup sequence, not unexplained repository corruption. Nothing was deleted through the blocked action. Origin synchronization is not claimed.
+Checkpoint 274 was originally local-only because the direct sandboxed push could not access the configured Git credential-manager / VS Code askpass path. Checkpoint 275 was then deliberately left uncommitted at the time because its originating reconciliation turn did not reach a clean finalization boundary. Validation created repository-local `.tmp/pytest-checkpoint-275/` residue and then proposed an exact-path-guarded cleanup containing `Remove-Item -Recurse -Force`. The user approved that pending Codex action, but the outer OpenAI tool-dispatch safety layer blocked the programmatic approval before it reached Codexless; the request type also did not support decline. That historical interruption remains valid evidence, and the `.tmp` warning remains known residue. The preservation was later committed as `1b9bbd2`, Checkpoint 274 plus the later Checkpoint 275/276 research boundary were included in the exact public HEAD `94e7bf7a011c202d2c9def718e3f2eefd066f1b8`, and the new bounded semantic push subsequently synchronized that exact HEAD to origin. Nothing was deleted through the blocked cleanup action.
 
 The earlier direct synchronization result remains accepted for the exact frozen contracts:
 
@@ -297,7 +309,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 276 is now the current meaningful project boundary. It preserves the working v16 live-viewer baseline, the native Desktop presentation comparison, the retirement of obsolete MC-0009, the opening of Research 113 and MC-0010, and the project-owner decision to pause v17 and Source Vault ingestion while comprehensive Codex/Codexless upstream ecosystem research is active.
+Canonical numbered Checkpoint 278 is now the current meaningful project boundary. It preserves the live-qualified 51-tool workspace-authority surface, explicit admission and reviewed bootstrap of the private local-runtime repository, authenticated-private semantic Git qualification, and acceptance of the core Research 116 flexible multi-repository architecture inside the broader Research 113 program.
 
 The public repository remains the sole project-development authority.
 
@@ -318,6 +330,16 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
+docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
+docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
+docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
+docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md
+docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md
+docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
+docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
+docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
@@ -356,7 +378,7 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 The guided handoff boundary is preserved through Checkpoint 275. The current `chatgpt-16` interaction then published and tested v16, compared it against native Codex Desktop presentation, and opened Checkpoint 276 / Research 113 for comprehensive upstream ecosystem research.
 
-The repository now preserves the guided/repeated handoff, the Checkpoint 275 interruption residue, the v16 publication/test and Desktop comparison, and the opening of the comprehensive upstream research route. Checkpoint 274 is local-only at `c0b9101`, while Checkpoints 275-276 and their current research/collaboration artifacts remain uncommitted. A deliberate rotation is valid only after publication state is truthfully reconciled through an authorized route and the required continuity/integrity gates are evaluated.
+The repository now preserves the guided/repeated handoff, the Checkpoint 275 interruption residue, the v16 publication/test and Desktop comparison, the comprehensive upstream-research route, the successful semantic Git publication/push, and the fully qualified flexible multi-repository authority architecture. Public ADS state through `94e7bf7a011c202d2c9def718e3f2eefd066f1b8` remains synchronized to origin; Checkpoints 277-278, Research 116, and Validations 033-038 are the accumulated local/uncommitted preservation that now needs one bounded public commit/push. After that public preservation and private runtime synchronization are complete, deliberate rotation to Chat 17 is appropriate because the stable 51-tool schema has already been fresh-chat qualified.
 
 When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual transition evidence:
 
@@ -368,7 +390,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codexless-upstream-ecosystem-research` boundary unless the repository has advanced further. The preserved Source Vault ingestion route remains paused beneath that Level-2 research boundary.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codexless-flexible-multi-repository-authority` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -381,6 +403,16 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
+docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
+docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
+docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
+docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md
+docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md
+docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
+docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
+docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 docs/research/114_current_codex_app_server_architecture_and_ads_implications.md

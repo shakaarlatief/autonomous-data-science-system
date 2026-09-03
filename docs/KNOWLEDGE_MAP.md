@@ -301,7 +301,15 @@ docs/research/112_guided_proceed_in_chat_shared_ready_and_repeatable_roundtrip.m
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
 docs/research/115_public_codexless_current_architecture_pr_landscape_and_ads_delta.md
+docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
 docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
+docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
+docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md
+docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md
+docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
+docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
+docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
 docs/model_collaboration/INTERACTION_PROVENANCE_AND_NAMING.md
@@ -594,6 +602,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 274-274 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 275-275 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

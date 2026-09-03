@@ -67,7 +67,7 @@ UNAVAILABLE_TO_THIS_SURFACE
 
 When `CURRENT_STATE.md` records a field as `RESOLVED_PRIVATE`, a new collaborator must not ask the human project owner to provide it again merely during reconstruction.
 
-The accepted private-preservation architecture has two different private layers:
+The accepted private-preservation architecture now has three distinct private/runtime layers:
 
 ```text
 PRIVATE COMPANION KNOWLEDGE REPOSITORY
@@ -75,6 +75,11 @@ PRIVATE COMPANION KNOWLEDGE REPOSITORY
     cross-chat reconstruction
     exact private paths and observations where appropriate
     knowledge only, not ADS development
+
+PRIVATE LOCAL-RUNTIME REPOSITORY
+    versioned non-secret runtime/materialization evidence
+    preserves reviewed .ads-private candidates/activation/regression state
+    implementation evidence only, not ADS project authority
 
 LOCAL .ads-private STATE
     machine-local execution configuration
@@ -85,6 +90,12 @@ The governing companion-repository contract is:
 
 ```text
 docs/private_companion/README.md
+```
+
+The governing private local-runtime repository contract is:
+
+```text
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 ```
 
 For the Source Vault bootstrap, the local operational-state contract is:
