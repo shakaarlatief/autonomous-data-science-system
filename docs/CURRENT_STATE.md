@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 278
+**Checkpoint:** 279
 **Date:** 2026-09-03  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -22,15 +22,23 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: flexible multi-repository Codexless authority qualified inside the broader upstream research phase
+## Current active stage: generic workspace document reading qualified inside the broader upstream research phase
 
-Checkpoint 278 preserves the accepted Research 116 boundary: live Codexless `0.1.1-preview.8` with 51 MCP tools, explicit two-layer admission of the private `autonomous-data-science-system-local-runtime` workspace, reviewed non-secret runtime-repository bootstrap, the private authenticated Git transport correction, and end-to-end generalized fetch/push qualification against `ads-local-runtime`. The active machine-readable boundary is now `codexless-flexible-multi-repository-authority-qualified`.
+Checkpoint 279 preserves the accepted extension beyond the Research 116 core: `workspace-standard` now supports explicit ordinary non-Git exact-root admission, the first such workspace (`big-data-statistics`) is live with only `read`, and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. A fresh disposable ChatGPT conversation invoked that exact semantic action against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 is the decisive live evidence. The active machine-readable boundary is now `codexless-generic-workspace-document-read-qualified`.
+
+The PDF parser is hardened out of the main Codexless event loop into a dedicated bounded Node child process with a 256 MiB V8 old-space ceiling, 30-second default hard deadline, bounded protocol output, Node permission restrictions, disabled PDF JavaScript evaluation/system-font lookup/worker fetch, and deterministic termination/recovery on timeout. The main process performs a bounded file-handle read capped at 32 MiB plus one byte and revalidates identity/size after reading. Focused qualification is `DOCUMENT_READ_REGRESSION=PASS tests=11`, while flexible authority, bounded Git, dependency, and 52-tool public-surface regressions also pass.
+
+The workspace registry is now revision `3`, content hash `a1b430bc29bb29aa9736db3d63c92746be698d445043d12a1fedf7a61aa37319`, with `ads-public`, `ads-local-runtime`, and `big-data-statistics`. The last workspace intentionally has no write, agent, browser, or Git capability. The exact personal root remains machine-local rather than public project authority.
+
+`docs/OPEN_ARCHITECTURE_BACKLOG.md` is now the durable index for explicit future architecture ideas and deferred side tracks. It preserves, among other items, mobile/device-independent connector access, narrow `%LOCALAPPDATA%` runtime-maintenance authority, autonomous Codex supervision/wakeup, active-turn writer transfer, Rich Card actionability, shared spectator synchronization, v17 semantic viewer work, and broader host-capability taxonomy. It is an index, not a replacement for `CURRENT_STATE.md`, `OPEN_QUESTIONS.md`, research, validation evidence, or accepted specifications.
+
+Checkpoint 278 remains the accepted Research 116 core boundary: live flexible multi-repository authority, explicit two-layer admission of the private `autonomous-data-science-system-local-runtime` workspace, reviewed non-secret runtime-repository bootstrap, the private authenticated Git transport correction, and end-to-end generalized fetch/push qualification against `ads-local-runtime`.
 
 The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is now proven through the bounded host-network substrate with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true` at private runtime commit `0ce61ba794929ee71c555d480a936fdced28ef2e`.
 
 The public ADS branch is now synchronized: local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were both verified at `94e7bf7a011c202d2c9def718e3f2eefd066f1b8` after `codex.git_push_ff_only` completed with `PUBLIC_REPOSITORY_INTEGRITY=PASS` and `retried=false`. The known protected `.tmp/pytest-*` warning remains interruption residue and was not modified.
 
-The live Codexless server now exposes 51 public MCP tools on `0.1.1-preview.8`. A fresh disposable ChatGPT conversation discovered and contract-validated the stable flexible-authority surface, including `codex.workspace_authority` and generalized semantic Git with optional `workspaceId`. The server itself reports 51 tools while the connector projection exposed 47 callable recipients in that disposable conversation; the four omitted compatibility actions do not block workspace authority or generalized Git. Ordinary future workspace registrations now change server-owned policy rather than the MCP schema.
+The live Codexless server now exposes 52 public MCP tools on `0.1.1-preview.9`. Fresh disposable ChatGPT discovery contract-validated the current surface and directly invoked `codex.document_read`; the earlier 51-tool/47-recipient projection mismatch remains preserved as historical host evidence in Validation 034 rather than current live state. Ordinary future workspace registrations continue to change server-owned policy without another MCP schema publication.
 
 Validation 035 now preserves a separate supervision-liveness gap discovered during the active Research 116 Codex candidate task. After ChatGPT approved one in-turn command and ended its response, Codex resumed, reached a second approval shortly afterward, and remained blocked until the user sent another message. The Rich Task Card could reflect `Action required`, but ChatGPT itself did not autonomously wake to inspect/resolve the new state. The same reproduction also reinforces the open question of whether writer ownership can be cooperatively transferred/reacquired during an active turn rather than only through the already-verified idle archive/unarchive/rebind handoff. This is now a first-class Codexless research/architecture issue, not an incidental UI observation.
 
@@ -309,7 +317,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 278 is now the current meaningful project boundary. It preserves the live-qualified 51-tool workspace-authority surface, explicit admission and reviewed bootstrap of the private local-runtime repository, authenticated-private semantic Git qualification, and acceptance of the core Research 116 flexible multi-repository architecture inside the broader Research 113 program.
+Canonical numbered Checkpoint 279 is now the current meaningful project boundary. It preserves the live-qualified 52-tool surface, generic `workspace-standard` ordinary-folder admission, hardened first-class `codex.document_read`, reviewed private local-runtime preservation, and the accepted Research 116 flexible multi-repository core inside the broader Research 113 program.
 
 The public repository remains the sole project-development authority.
 
@@ -330,6 +338,7 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
 docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
 docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
 docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
@@ -340,6 +349,8 @@ docs/local_execution/validation/035_running_codex_supervision_liveness_gap_repro
 docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
 docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
 docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
+docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
+docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
@@ -378,7 +389,7 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 The guided handoff boundary is preserved through Checkpoint 275. The current `chatgpt-16` interaction then published and tested v16, compared it against native Codex Desktop presentation, and opened Checkpoint 276 / Research 113 for comprehensive upstream ecosystem research.
 
-The repository now preserves the guided/repeated handoff, the Checkpoint 275 interruption residue, the v16 publication/test and Desktop comparison, the comprehensive upstream-research route, the successful semantic Git publication/push, and the fully qualified flexible multi-repository authority architecture. Public ADS authority is synchronized to origin through the accepted Checkpoint 278 / Research 116 preservation, and the private runtime repository is independently synchronized to `origin/main` at `8d33e5408fde10dde1a974f0f1d5da11b84b8f9f`, preserving the corrected private-network Git implementation. MC-0010 is now routed to the current public ADS boundary plus that exact private runtime implementation commit. Before the Claude research starts, verify that the fresh Claude environment can actually access both repositories; if private-repository access is unavailable, preserve that limitation rather than substituting public summaries. After MC-0010 routing is published, deliberate rotation to Chat 17 is appropriate because the stable 51-tool schema has already been fresh-chat qualified.
+The repository now preserves the guided/repeated handoff, the Checkpoint 275 interruption residue, the v16 publication/test and Desktop comparison, the comprehensive upstream-research route, the successful semantic Git publication/push, the flexible multi-repository authority architecture, the `workspace-standard` generic non-Git extension, and live first-class PDF document reading. Public ADS authority is being advanced through Checkpoint 279, while the private runtime repository already preserves the corresponding non-secret runtime bytes at `799390a5d0347b46e0be6caaf70a912ca83bac64`; a final provenance-only `RUNTIME_STATE.json` follow-up must point that private snapshot to the exact public Checkpoint 279 commit after the public commit exists. MC-0010 remains routed to the public ADS boundary plus private runtime evidence. Before Claude Message 001, verify that a fresh Claude environment can actually access both repositories; if private-repository access is unavailable, preserve that limitation rather than substituting public summaries. Deliberate rotation to Chat 17 is appropriate only after the Checkpoint 279 public/private preservation and chat-rotation preflight, using the stable 52-tool surface.
 
 When rotation is chosen, follow `docs/CONTINUITY.md` and evaluate the actual transition evidence:
 
@@ -390,7 +401,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codexless-flexible-multi-repository-authority` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codexless-generic-workspace-document-read-qualified` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -403,6 +414,7 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/279_generic_workspace_document_read_and_architecture_backlog_qualified.md
 docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
 docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
 docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
@@ -413,6 +425,8 @@ docs/local_execution/validation/035_running_codex_supervision_liveness_gap_repro
 docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
 docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
 docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
+docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
+docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 docs/research/114_current_codex_app_server_architecture_and_ads_implications.md

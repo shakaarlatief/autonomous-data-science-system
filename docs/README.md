@@ -42,6 +42,7 @@ docs/KNOWLEDGE_MAP.md
 | Current governing principles | `docs/PRINCIPLES.md` |
 | Accepted explicit decisions | `docs/DECISIONS.md` |
 | Unresolved important questions | `docs/OPEN_QUESTIONS.md` |
+| Explicit deferred architecture ideas and side-track backlog | `docs/OPEN_ARCHITECTURE_BACKLOG.md` |
 | How ADS itself is developed | `docs/DEVELOPMENT_METHOD.md` |
 | How to reconstruct after context loss | `docs/CONTINUITY.md` |
 | Private companion knowledge-repository boundary | `docs/private_companion/README.md` |
@@ -82,6 +83,10 @@ Accepted explicit cross-project decisions and their status. A decision record sh
 ### `docs/OPEN_QUESTIONS.md`
 
 Important unresolved questions whose uncertainty materially affects future design or scientific interpretation. Closed questions should be resolved into the appropriate stronger layer rather than accumulating indefinitely.
+
+### `docs/OPEN_ARCHITECTURE_BACKLOG.md`
+
+A compact durable index for explicit future architecture ideas, known integration gaps, deferred side tracks and continuation obligations that the project owner wants to revisit. It is not a second current-state document and does not replace `OPEN_QUESTIONS`, research/validation evidence, or accepted architecture. When an item becomes accepted, the stronger evidence layer owns the result and the backlog is narrowed or closed accordingly.
 
 ### `docs/DEVELOPMENT_METHOD.md`
 

@@ -488,25 +488,54 @@ This closes the Research 116 core question. Adding a future ordinary filesystem/
 
 The accepted scope is deliberately not universal arbitrary-host authority. Codexless self-maintenance, process lifecycle, Windows services/registry, credential stores, and other non-workspace host capabilities remain separate future authority classes if the project chooses to generalize them.
 
-## 18. Exact continuation
+## 18. Accepted follow-up: generic non-Git workspace policy and document reading
 
-The accepted Research 116 boundary is now preserved and synchronized in both repositories:
+A direct ordinary-folder test after the core Research 116 close exposed one semantic refinement: the existing `runtime-private-bootstrap` policy could technically cover a non-Git folder, but that name and Git-oriented semantics were inappropriate for a generic personal/project directory. The accepted follow-up therefore adds server-recognized `workspace-standard` for ordinary non-Git authority.
+
+Its deliberate rule is:
+
+```text
+workspace-standard
+    ordinary filesystem/project authority
+    no semantic Git capability
+    protectedPathPolicy.id = workspace-standard-v1
+    protectedPathPolicy.paths = []
+```
+
+If semantic Git capability is requested with `workspace-standard`, registration/update fails closed with `WORKSPACE_POLICY_INCOMPATIBLE`. Git still requires an explicit Git integrity policy.
+
+The first live ordinary-folder registration is `big-data-statistics` with only `read`. Registry revision `3` / content hash `a1b430bc29bb29aa9736db3d63c92746be698d445043d12a1fedf7a61aa37319` preserves three workspaces: `ads-public`, `ads-local-runtime`, and `big-data-statistics`.
+
+This follow-up also demonstrates why stable workspace policy and MCP action schemas should remain separate. Adding the ordinary folder required no new action schema. Adding semantic document understanding did require one new action: `codex.document_read`.
+
+The live document surface is Codexless `0.1.1-preview.9`, `codexless-public-preview-v2`, 52 public tools. `codex.document_read` is model-free/read-only, inherits the existing workspace `read` capability, accepts only bounded workspace context + relative document path + optional pages + output bound, and first supports PDF through pinned `pdfjs-dist@5.4.624`.
+
+Before publication, untrusted PDF parsing was hardened into a dedicated bounded Node child process rather than the main Codexless event loop. The parser has a hard deadline and memory ceiling; file reads are capped at 32 MiB plus one byte and revalidated after reading. Focused regression is `DOCUMENT_READ_REGRESSION=PASS tests=11`.
+
+A fresh disposable ChatGPT conversation then invoked `codex.document_read` directly against a real PDF in the read-only ordinary workspace and returned source hash/size, parser provenance, page count, selected/returned pages, embedded text, truncation metadata, and `ocrPerformed=false`. Validation 039 preserves the exact result.
+
+This extension does not change the Research 116 core conclusion. Ordinary workspace admission remains policy-driven behind stable authority schemas; host/runtime maintenance remains a separate future authority class.
+
+## 19. Exact continuation
+
+The accepted Research 116 core plus generic-workspace/document-read extension is now being preserved and synchronized in both repositories:
 
 ```text
 public ADS
-    81c03f90617800ca4fdd862964bc0007b9a7acfa
+    Checkpoint 279 preservation pending exact commit at this pre-commit boundary
 
 private local-runtime
-    8d33e5408fde10dde1a974f0f1d5da11b84b8f9f
+    799390a5d0347b46e0be6caaf70a912ca83bac64
 ```
 
 Continue with:
 
 ```text
-1. publish the updated MC-0010 routing that points Claude to both public ADS authority and private runtime implementation evidence
-2. verify the fresh Claude environment can actually access the private runtime repository before starting Message 001
-3. deliberately rotate to chatgpt-17 with the stable 51-tool schema after continuity preflight
-4. resume the broader Research 113 upstream ecosystem study
-5. keep Validation 035 supervision/wakeup and active-turn writer-transfer research explicitly open
-6. resume Source Vault only when the broader Level-2 research route is deliberately closed
+1. commit/push Checkpoint 279 and pass exact-head public Repository Integrity
+2. advance private RUNTIME_STATE.json to that exact public Checkpoint 279 commit and push the provenance-only private follow-up
+3. verify a fresh Claude environment can access both public ADS and private runtime evidence before Message 001
+4. deliberately rotate to chatgpt-17 with the stable 52-tool schema only after continuity preflight
+5. resume the broader Research 113 upstream ecosystem study
+6. keep Validation 035 plus the explicit architecture backlog open
+7. resume Source Vault only when the broader Level-2 research route is deliberately closed
 ```
