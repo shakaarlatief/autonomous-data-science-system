@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 282
+**Checkpoint:** 283
 **Date:** 2026-09-03  
 **Active development branch:** `v1-source-vault-bootstrap-resume`  
 **Active PR:** none  
@@ -24,7 +24,7 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 282 records the successful Research 117 E117-3 native local-image qualification. Current Codex can attach and visually inspect an authorized local PNG through its maintained `view_image` path with no copy, render, conversion, OCR, custom script, or authority blocker. The active machine-readable boundary is now `codex-native-local-image-vision-qualified`. Checkpoint 281 remains the immediately preceding PDF-Skill reuse result: routing passed, but local PDF page rendering was blocked by the current renderer dependency.
+Checkpoint 283 records the preflight-qualified Research 117 direct ChatGPT-host MCP image bridge candidate. `codex.image_read` is designed as a model-free read-only seam that returns one authorized local PNG/JPEG/WebP as standard MCP image content, with no Codex model turn, OCR, rendering, Browser action, write, Git operation, or new external dependency. Candidate validation passed at preview `0.1.1-preview.10` / 53 tools, but live publication through ordinary `command_exec` was correctly denied at the `%LOCALAPPDATA%\\Codexless` host-state boundary before any live file changed. The active machine-readable boundary is now `model-free-mcp-image-bridge-publication-preflight-qualified`. Checkpoint 282 remains the successful native Codex local-image vision qualification and Checkpoint 281 remains the PDF-Skill renderer-dependency result.
 
 Research 117 currently pauses new custom `codex.document_render`, OCR, and DOCX/PPTX/XLSX adapter implementation. Official OpenAI file-input documentation already provides PDF multimodality as extracted text plus an image of every page; current Codex App Server/upstream source has image/local-image input semantics; and live model-free Codex Skill discovery on this machine found maintained OpenAI primary-runtime skills for PDF, Documents/DOCX, Presentations/PPTX, and Spreadsheets/XLSX with visual render/inspection workflows. The first live PDF-Skill experiment proved routing but exposed a local renderer dependency gap: the discovered Poppler executable was an uninitialized MiKTeX stub, so no page image was visually inspected. This does not establish a need for a custom ADS renderer. MarkItDown, Docling and PyMuPDF4LLM remain fallback benchmark candidates only if native OpenAI/Codex paths leave concrete gaps. Validation 040 preserves the exact result.
 
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 282 is now the current meaningful project boundary. It preserves the successful native Codex local-image-to-model-vision qualification and narrows the unresolved document problem to rendering / authorized media handoff. Checkpoint 281 remains the PDF-Skill renderer-dependency result, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 283 is now the current meaningful project boundary. It preserves the qualified model-free `codex.image_read` MCP-image bridge candidate and the exact host-state publication boundary. No direct ChatGPT image-vision claim is made yet. Checkpoint 282 remains the native Codex local-image-to-model-vision qualification, Checkpoint 281 remains the PDF-Skill renderer-dependency result, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,7 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/283_model_free_mcp_image_bridge_publication_preflight_qualified.md
 docs/checkpoints/282_codex_native_local_image_view_qualified.md
 docs/checkpoints/281_codex_pdf_skill_reuse_experiment_rendering_dependency_blocked.md
 docs/checkpoints/280_reuse_first_document_architecture_and_local_media_bridge_research.md
@@ -360,6 +361,7 @@ docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_cre
 docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
 docs/local_execution/validation/040_codex_pdf_skill_visual_read_reuse_experiment.md
 docs/local_execution/validation/041_codex_native_local_image_view_qualified.md
+docs/local_execution/validation/042_model_free_mcp_image_bridge_publication_preflight_qualified.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
@@ -411,7 +413,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `codex-native-local-image-vision-qualified` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `model-free-mcp-image-bridge-publication-preflight-qualified` boundary unless the repository has advanced further. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -424,6 +426,7 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/283_model_free_mcp_image_bridge_publication_preflight_qualified.md
 docs/checkpoints/282_codex_native_local_image_view_qualified.md
 docs/checkpoints/281_codex_pdf_skill_reuse_experiment_rendering_dependency_blocked.md
 docs/checkpoints/280_reuse_first_document_architecture_and_local_media_bridge_research.md
@@ -442,6 +445,7 @@ docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_cre
 docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md
 docs/local_execution/validation/040_codex_pdf_skill_visual_read_reuse_experiment.md
 docs/local_execution/validation/041_codex_native_local_image_view_qualified.md
+docs/local_execution/validation/042_model_free_mcp_image_bridge_publication_preflight_qualified.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md

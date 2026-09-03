@@ -383,7 +383,60 @@ Therefore Research 117 should not design a separate ADS image-understanding subs
 
 Primary evidence: `docs/local_execution/validation/041_codex_native_local_image_view_qualified.md`.
 
-## 15. Current disposition
+## 15. E117-1 direct ChatGPT-host MCP image experiment is currently blocked by Browser compatibility state
+
+The existing `codex.browser_screenshot` tool is already ideal for the direct host experiment because it returns a standard MCP image content block rather than base64 inside JSON. A fresh model-free `codex.browser_status` probe on 2026-09-03 returned:
+
+```text
+status: unavailable
+reason: chrome_skill_unavailable
+chromeSkill: missing
+```
+
+Therefore Research 117 cannot yet use the current Browser screenshot action to prove whether this ChatGPT developer-MCP host exposes MCP image content directly to the current ChatGPT model. This is a Browser compatibility/runtime state issue, not evidence for or against MCP image visibility itself.
+
+The maintained `codexless-browser-repair` Skill was re-read. It requires model-free compatibility evidence first and explicitly forbids using private workarounds or broad authority changes merely to restore Browser. Research 117 should therefore diagnose the current Browser compatibility state through the governed repair path before any screenshot-based E117-1 test. No Browser repair has yet been accepted by this research record.
+
+Current official evidence also confirms the architectural possibility but not the exact ChatGPT-host behavior:
+
+```text
+MCP tool results can contain ImageContent
+OpenAI Responses/function outputs can carry image/file content
+OpenAI native model inputs accept image and file inputs
+```
+
+The exact end-to-end ChatGPT developer-MCP projection remains an empirical host question.
+
+## 16. E117-1 direct-host image bridge candidate is preflight-qualified
+
+Because Browser is unavailable, Research 117 prepared the narrower generic seam required to test the actual host question without another Codex model turn: `codex.image_read`.
+
+The candidate requires only existing workspace `read`, accepts one bounded workspace-relative PNG/JPEG/WebP, reuses the same canonical containment and file-identity principles as the document reader, records SHA-256 provenance, and returns the image as standard MCP `image` content plus compact metadata. It does not start a model turn, OCR, render, browse, mutate, use Git, or externally upload the file.
+
+Qualification results:
+
+```text
+IMAGE_READ_REGRESSION=PASS tests=7
+FLEXIBLE_AUTHORITY_REGRESSION=PASS tests=7
+BOUNDED_GIT_FETCH_ORIGIN=PASS tools=53
+BOUNDED_GIT_PULL_FF_ONLY=PASS tools=53
+PUBLIC_SURFACE_REGISTRATION=PASS tools=53
+IMAGE_READ_PUBLICATION_PREFLIGHT=PASS
+EXPECTED_PUBLIC_SERVER_VERSION=0.1.1-preview.10
+EXPECTED_PUBLIC_SURFACE_VERSION=codexless-public-preview-v2
+EXPECTED_PUBLIC_TOOL_COUNT=53
+MODEL_TURN_REQUIRED=false
+NEW_EXTERNAL_DEPENDENCY=false
+NO_LIVE_FILES_MODIFIED=true
+```
+
+A guarded live-publication attempt through ordinary `codex.command_exec` was blocked when that sandbox attempted to write `%LOCALAPPDATA%\\Codexless`. Post-failure hashes proved the live runtime remained exactly on preview.9 / 52 tools, `image-reader.mjs` remained absent, and no temporary publication residue remained. This is an authority-boundary result rather than a candidate failure.
+
+The exact next step is a host PowerShell run of the guarded helper, followed by controlled restart/reconnect/schema refresh and a fresh disposable ChatGPT test. Only a visual-only fact from `codex.image_read` may establish that this ChatGPT developer-MCP host routes MCP image content into model vision.
+
+Primary evidence: `docs/local_execution/validation/042_model_free_mcp_image_bridge_publication_preflight_qualified.md`.
+
+## 17. Current disposition
 
 ```text
 KEEP

@@ -90,7 +90,7 @@ ordinary workspace authority != host runtime-maintenance authority
 
 Publication should use server-owned known install locations, exact candidate hashes, guarded atomic replacement, backup, verification, and rollback. Do not solve this by registering `%LOCALAPPDATA%` as an ordinary workspace.
 
-Primary context: Research 116 and existing guarded host publication helpers.
+Primary context: Research 116 and existing guarded host publication helpers. Validation 042 now provides a concrete reproduced case: the `codex.image_read` publication helper passed all candidate gates, but ordinary inherited `command_exec` was denied before writing `%LOCALAPPDATA%\\Codexless`; live hashes remained unchanged. This is exactly the separation this backlog item should solve without broadening workspace authority.
 
 ---
 
