@@ -17,10 +17,12 @@ The thread exists to improve search coverage, challenge interpretation, identify
 ## Current phase
 
 ```text
-PARALLEL_UPSTREAM_RESEARCH_OPEN
+PARALLEL_UPSTREAM_RESEARCH_READY_AT_QUALIFIED_MULTI_REPO_BOUNDARY
 ```
 
 The detailed contract is in `BRIEF.md`.
+
+The current public research boundary is `ea30fb17cbfb103575ce6e44f15850b23ed100da`, and the private runtime evidence boundary is `8d33e5408fde10dde1a974f0f1d5da11b84b8f9f`. Claude should inspect both when the fresh collaboration session is opened; inability to access the private repository must be reported rather than silently substituted with public summaries.
 
 Claude has not yet produced Message 001. No Claude conclusion may be inferred until a durable message exists.
 

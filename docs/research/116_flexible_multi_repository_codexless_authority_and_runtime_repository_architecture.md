@@ -503,9 +503,10 @@ private local-runtime
 Continue with:
 
 ```text
-1. update MC-0010 so Claude can inspect both public ADS authority and the private runtime implementation repository
-2. deliberately rotate to chatgpt-17 with the stable 51-tool schema after continuity preflight
-3. resume the broader Research 113 upstream ecosystem study
-4. keep Validation 035 supervision/wakeup and active-turn writer-transfer research explicitly open
-5. resume Source Vault only when the broader Level-2 research route is deliberately closed
+1. publish the updated MC-0010 routing that points Claude to both public ADS authority and private runtime implementation evidence
+2. verify the fresh Claude environment can actually access the private runtime repository before starting Message 001
+3. deliberately rotate to chatgpt-17 with the stable 51-tool schema after continuity preflight
+4. resume the broader Research 113 upstream ecosystem study
+5. keep Validation 035 supervision/wakeup and active-turn writer-transfer research explicitly open
+6. resume Source Vault only when the broader Level-2 research route is deliberately closed
 ```

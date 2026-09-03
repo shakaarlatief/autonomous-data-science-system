@@ -23,7 +23,9 @@ This is intentionally **not** a blind-to-candidate review.
 
 Claude should understand the current ADS architecture and evidence before evaluating upstream alternatives. The goal is diversity of search, interpretation, criticism, and design ideas, not artificial independence.
 
-Claude may inspect current coordination-branch material, including Research 105-113, Checkpoints 268-276, relevant local-execution validation records, runbooks, and current Codexless-related state.
+Claude should inspect the current coordination-branch material through the accepted Research 116 / Checkpoint 278 boundary, not stop at the original opening snapshot. The public ADS authority is currently synchronized at `ea30fb17cbfb103575ce6e44f15850b23ed100da` on `v1-source-vault-bootstrap-resume`.
+
+Claude should also inspect the private runtime implementation repository `shakaarlatief/autonomous-data-science-system-local-runtime` at `main` commit `8d33e5408fde10dde1a974f0f1d5da11b84b8f9f`. That repository is implementation/preservation evidence only and must not be treated as competing project-development authority. If the Claude environment cannot access that private repository, stop and report the access limitation instead of inferring its contents from public summaries alone.
 
 Do not optimize for agreement with ChatGPT. Identify important upstream capabilities, risks, issues, proposals, or architectural alternatives even when they imply replacing or simplifying current ADS work.
 
@@ -42,7 +44,18 @@ docs/research/110_durable_bidirectional_codex_thread_handoff_and_cooperative_rel
 docs/research/111_archive_unarchive_reacquire_closes_codex_desktop_handoff.md
 docs/research/112_guided_proceed_in_chat_shared_ready_and_repeatable_roundtrip.md
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
+docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
+docs/research/115_public_codexless_current_architecture_pr_landscape_and_ads_delta.md
+docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repository_architecture.md
+docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/checkpoints/276_codex_codexless_upstream_ecosystem_research_opened_source_vault_paused.md
+docs/checkpoints/277_semantic_git_publication_runtime_repository_and_flexible_authority_opened.md
+docs/checkpoints/278_flexible_multi_repository_authority_and_private_git_qualified.md
+docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
+docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md
+docs/local_execution/validation/036_live_config_batchwrite_qualification_host_boundary.md
+docs/local_execution/validation/037_flexible_authority_live_source_published_restart_pending.md
+docs/local_execution/validation/038_runtime_repository_bootstrap_private_git_credentials_boundary.md
 docs/local_execution/OPERATIONS.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
