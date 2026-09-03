@@ -99,14 +99,27 @@ The accepted architecture is flexible for registered filesystem/project roots an
 
 Validation 035 remains open: ChatGPT autonomous supervision/wakeup after its response ends and cooperative active-turn writer transfer are still unresolved architecture questions.
 
+## Post-checkpoint synchronization
+
+This checkpoint's preservation is now synchronized in both repositories:
+
+```text
+public ADS
+    81c03f90617800ca4fdd862964bc0007b9a7acfa
+
+private local-runtime
+    8d33e5408fde10dde1a974f0f1d5da11b84b8f9f
+```
+
+The private runtime follow-up commit was created and pushed through the normal generalized semantic commit/push path with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, and `postflightOk=true`.
+
 ## Exact continuation
 
 ```text
-1. synchronize corrected `.ads-private` runtime implementation into the private local-runtime repository through normal semantic commit/push
-2. publish this Research 116/Checkpoint 278 public preservation through bounded semantic commit/push
-3. update MC-0010 to route Claude to both public ADS and private runtime evidence
-4. rotate deliberately to chatgpt-17 with the stable 51-tool schema
-5. resume broader Research 113 upstream ecosystem research
-6. keep Validation 035 supervision/writer-transfer research open
-7. resume Source Vault only after deliberate closure of the broader Level-2 research route
+1. update MC-0010 to route Claude to both public ADS and private runtime evidence
+2. evaluate continuity/chat-rotation preflight
+3. rotate deliberately to chatgpt-17 with the stable 51-tool schema
+4. resume broader Research 113 upstream ecosystem research
+5. keep Validation 035 supervision/writer-transfer research open
+6. resume Source Vault only after deliberate closure of the broader Level-2 research route
 ```

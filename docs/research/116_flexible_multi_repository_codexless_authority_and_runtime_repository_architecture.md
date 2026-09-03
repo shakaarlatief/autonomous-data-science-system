@@ -490,13 +490,22 @@ The accepted scope is deliberately not universal arbitrary-host authority. Codex
 
 ## 18. Exact continuation
 
+The accepted Research 116 boundary is now preserved and synchronized in both repositories:
+
 ```text
-1. preserve this accepted Research 116 boundary in the next checkpoint/current routing
-2. synchronize the corrected runtime implementation into the private local-runtime repository using normal semantic commit/push
-3. publish the accumulated public ADS Research 116 documentation through bounded semantic commit/push
-4. update MC-0010 so Claude can inspect both public ADS authority and the private runtime implementation repository
-5. deliberately rotate to chatgpt-17 with the stable 51-tool schema
-6. resume the broader Research 113 upstream ecosystem study
-7. keep Validation 035 supervision/wakeup and active-turn writer-transfer research explicitly open
-8. resume Source Vault only when the broader Level-2 research route is deliberately closed
+public ADS
+    81c03f90617800ca4fdd862964bc0007b9a7acfa
+
+private local-runtime
+    8d33e5408fde10dde1a974f0f1d5da11b84b8f9f
+```
+
+Continue with:
+
+```text
+1. update MC-0010 so Claude can inspect both public ADS authority and the private runtime implementation repository
+2. deliberately rotate to chatgpt-17 with the stable 51-tool schema after continuity preflight
+3. resume the broader Research 113 upstream ecosystem study
+4. keep Validation 035 supervision/wakeup and active-turn writer-transfer research explicitly open
+5. resume Source Vault only when the broader Level-2 research route is deliberately closed
 ```

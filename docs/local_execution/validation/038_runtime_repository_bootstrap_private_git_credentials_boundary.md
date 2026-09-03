@@ -306,4 +306,43 @@ This is the decisive end-to-end proof that the stable generalized multi-reposito
 
 The earlier private credential failure is therefore resolved by the bounded host-network transport correction, not by widening caller authority or exposing credentials.
 
+## Normal post-bootstrap runtime synchronization
+
+After the public Research 116 preservation was committed and pushed at:
+
+```text
+81c03f90617800ca4fdd862964bc0007b9a7acfa
+```
+
+the private runtime repository was updated through the now-normal generalized semantic path. Four corrected/new `.ads-private/codexless` files were synchronized, `RUNTIME_STATE.json` was advanced to public Checkpoint `278` / commit `81c03f90617800ca4fdd862964bc0007b9a7acfa`, and the reviewed worktree scan returned:
+
+```text
+WORKTREE_FILES=177
+WORKTREE_BYTES=2498491
+FLAGGED_FILES=0
+```
+
+`codex.git_commit_paths(workspaceId="ads-local-runtime")` created:
+
+```text
+8d33e5408fde10dde1a974f0f1d5da11b84b8f9f
+Preserve qualified private Git transport
+```
+
+with exact parent `0ce61ba794929ee71c555d480a936fdced28ef2e` and `postflightOk=true`.
+
+`codex.git_push_ff_only` then published that exact private runtime commit with:
+
+```text
+RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+retried=false
+headAfter=8d33e5408fde10dde1a974f0f1d5da11b84b8f9f
+remoteTrackingHeadAfter=8d33e5408fde10dde1a974f0f1d5da11b84b8f9f
+trackedWorkingTreeCleanAfter=true
+remoteRefreshAfterExitCode=0
+postflightOk=true
+```
+
+This proves that the one-time commit-zero/remote-branch bootstrap is no longer needed for ordinary private runtime maintenance: subsequent reviewed changes can use the stable generalized commit/push contracts end to end.
+
 No Source Vault payload, private Source Vault values, credentials, protected `.tmp`, or unrelated public ADS Git history was changed during this qualification.
