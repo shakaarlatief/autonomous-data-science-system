@@ -841,7 +841,15 @@ The MCP schema continues to require binary `resources/read` contents as base64, 
 
 Primary evidence: Validation 056 and Checkpoint 297.
 
-## 31. Current disposition
+## 31. E117-5k live publication result: large-PDF scaling files published, restart pending
+
+The guarded host publication helper was run from ordinary PowerShell and the exact large-PDF scaling candidate was published into `%LOCALAPPDATA%\Codexless`. The publication output reported `DOCUMENT_RESOURCE_LARGE_PUBLICATION_RESULT=PASS`, `PAUSED_LOOPBACK_RENDER_TRANSPORT_MODIFIED=false`, and `RESTART_PERFORMED=false`. Independent post-publication hashes match the qualified preview.14 candidate for all six changed files.
+
+The running process still reports preview.13 / v2 / 56 because the helper intentionally performs no restart. This is expected. The next action is the repository-authoritative controlled restart, followed by preview.14 / v2 / 56 verification, tunnel health/readiness 200/200, preserved smoke tests, and progressive live host qualification at 4.23 / 8.31 / 30.67 / 75.22 MiB.
+
+Primary evidence: Validation 057 and Checkpoint 298.
+
+## 32. Current disposition
 
 ```text
 KEEP
