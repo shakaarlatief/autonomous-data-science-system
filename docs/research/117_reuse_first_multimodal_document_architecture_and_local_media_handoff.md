@@ -605,7 +605,43 @@ A private ignored correction candidate now keeps command stdout as compact contr
 
 Primary evidence: `docs/local_execution/validation/048_representative_pdf_fidelity_exposes_windows_command_exec_capture_ceiling.md` and Checkpoint 289.
 
-## 22. Current disposition
+## 22. E117-5b result: first-party Chat PDF Skill makes native local-file handoff the next reuse-first experiment
+
+The project owner surfaced the current first-party ChatGPT PDF plugin/Skill after Checkpoint 289 localized the page-image transport ceiling. Its router identifies PDF as a Skill and, in Chat, falls back to `/home/oai/skills/pdfs/SKILL.md`. The current Chat PDF Skill was read directly and is itself a mature render-first workflow covering visual review, extraction, OCR, preflight, editing, renderer comparison and verification. The installed Codex primary runtime separately exposes the maintained `pdf:pdf` Skill for local-machine PDFs.
+
+This changes priority, not the evidence already accepted. ADS already owns the local Windows authority side:
+
+```text
+registered local workspace
+    -> existing read capability
+    -> canonical containment
+    -> exact local bytes + provenance
+```
+
+The missing question is whether those exact authorized PDF bytes can cross the developer-MCP host boundary as a standard MCP PDF resource and be promoted into the same native PDF/file-input treatment available to an ordinary Chat attachment.
+
+The exact installed MCP SDK used by Codexless supports both embedded resource content and resource links in tool results. A model-free schema probe accepted both an embedded `application/pdf` blob and an `application/pdf` `resource_link`. Current OpenAI documentation also confirms MCP-based ChatGPT apps, native model file inputs, and file/resource outputs, but it does not clearly specify the exact inbound promotion rule needed here. Therefore this remains an empirical host question rather than an inferred capability.
+
+The existing ADS Browser upload path can already bind an authorized local file to a Chrome file chooser using canonical path, size and SHA-256. That is retained as a diagnostic/fallback, not the preferred architecture, because it depends on UI state and effectively automates manual upload.
+
+The Checkpoint 289 authenticated loopback page-image transport candidate is consequently paused before publication. The preferred next experiment is the smaller semantic seam:
+
+```text
+authorized local PDF
+    -> bounded ADS file reader
+    -> standard MCP application/pdf resource
+    -> ChatGPT host
+    -> native PDF/file interpretation if supported
+    -> first-party PDF capability
+```
+
+A private ignored candidate now implements only that authority/provenance reader and an embedded-resource result shape. Its focused reader regression passes 5 tests and candidate surface target is preview.12 / 55 tools. No live runtime file has been changed and no host claim is made yet.
+
+The earlier temporary `tunnel_active_organization_required` observation is not attributed to the PDF plugin. The project owner clarified that the message originated from the phone; mobile/device connector behavior is already a separate deferred architecture topic.
+
+Primary evidence: `docs/local_execution/validation/049_official_pdf_skill_local_ads_handoff_research_prioritized.md` and Checkpoint 290.
+
+## 23. Current disposition
 
 ```text
 KEEP
@@ -623,11 +659,13 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 INVESTIGATE FIRST
-    authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
+    local-authorized-PDF -> standard MCP PDF resource -> native ChatGPT file-input/Skill handoff
     native OpenAI PDF file-input multimodality
     installed Codex PDF/Documents/Presentations/Spreadsheets Skills
     document/page representation -> already-qualified native image path
-    local-authorized-file -> native file-input handoff
+
+PAUSE UNTIL NATIVE HANDOFF RESULT
+    authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
 
 BENCHMARK ONLY IF NEEDED
     MarkItDown
