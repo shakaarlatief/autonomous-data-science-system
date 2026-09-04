@@ -727,7 +727,43 @@ For Research 117, the important architectural result is that the ChatGPT host-cr
 
 The next transport question remains unchanged: avoid multi-megabyte inline base64 for representative PDFs. Test server-owned `resource_link` plus resource-fetch/materialization semantics before resuming the paused loopback renderer transport.
 
-## 26. Current disposition
+## 26. E117-5f publication-preflight result: MCP resource-link PDF transport qualified locally
+
+Checkpoint 292 narrowed the full-PDF problem to transport. The tiny embedded MCP PDF became a ChatGPT-side attachment and was fully inspectable on the next turn, including automatic use of the built-in PDF Skill and its renderer-parity workflow. The representative 1.68 MiB cheat sheet, however, expands to roughly 2.24 million base64 characters inside the embedded-resource tool result and repeatedly hit the host's misleading `maximum chat length is reached` failure.
+
+E117-5f therefore changes only the transport envelope. The new candidate `codex.document_file_link` reuses the already-qualified `DocumentFileReader` authority/provenance path but returns a small MCP `resource_link` rather than embedding the PDF bytes in the tool result. A runtime-scoped, process-local resource store owns an opaque 256-bit-random `codexless://document-resource/<token>` URI, keeps at most eight prepared PDFs for fifteen minutes, and serves the exact PDF bytes only through the standard MCP `resources/read` callback. The caller cannot select the resource URI.
+
+Integrated staging passed:
+
+```text
+DOCUMENT_RESOURCE_LINK_REGRESSION=PASS tests=8
+DOCUMENT_FILE_READ_REGRESSION=PASS tests=5
+BOUNDED_GIT_FETCH_ORIGIN=PASS tools=56
+BOUNDED_GIT_PULL_FF_ONLY=PASS tools=56
+PUBLIC_SURFACE_REGISTRATION=PASS tools=56
+IMAGE_READ_REGRESSION=PASS tests=7
+DOCUMENT_RENDER_REGRESSION=PASS tests=10
+DOCUMENT_RESOURCE_LINK_PUBLICATION_PREFLIGHT=PASS
+EXPECTED_PUBLIC_SERVER_VERSION=0.1.1-preview.13
+EXPECTED_PUBLIC_SURFACE_VERSION=codexless-public-preview-v2
+EXPECTED_PUBLIC_TOOL_COUNT=56
+TOOL_RESULT_CONTENT=resource_link/application-pdf
+RESOURCE_READ_CONTENT=blob/application-pdf
+TOOL_RESULT_EMBEDS_PDF_BYTES=false
+MODEL_TURN_REQUIRED=false
+BROWSER_REQUIRED=false
+NEW_EXTERNAL_DEPENDENCY=false
+PAUSED_LOOPBACK_RENDER_TRANSPORT_OVERLAID=false
+NO_LIVE_FILES_MODIFIED=true
+```
+
+The candidate also verifies the registered MCP `ResourceTemplate` callback directly, not only the tool-result schema. It preserves the existing embedded `codex.document_file_read` route for A/B evidence and does not overlay the paused Checkpoint 289 loopback-render transport.
+
+The decisive host behavior remains unproven. A separate `resources/read` response still carries the PDF as base64 on the MCP wire, so Research 117 must not assume that ChatGPT handles it as an out-of-band file transfer. After guarded publication/restart/schema refresh, the live experiment must determine whether ChatGPT actually follows the resource link, materializes the PDF and avoids the representative inline-tool-result failure. If that route fails or is materially inferior, the next primary whole-PDF experiment is ADS Browser upload into ChatGPT's normal file-input control.
+
+Primary evidence: `docs/local_execution/validation/052_mcp_pdf_resource_link_publication_preflight_qualified.md` and Checkpoint 293.
+
+## 27. Current disposition
 
 ```text
 KEEP
@@ -745,12 +781,15 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 INVESTIGATE FIRST
-    local-authorized-PDF -> standard MCP PDF resource -> native ChatGPT file-input/Skill handoff
-    native OpenAI PDF file-input multimodality
+    codex.document_file_link -> MCP resource_link/resources-read -> ChatGPT whole-PDF materialization
+    if resource_link fails/inferior: ADS Browser -> normal ChatGPT file upload
+    native OpenAI PDF file-input multimodality only if a separate API path is explicitly accepted
+
+KEEP AS SUPPORTING / FALLBACK
     installed Codex PDF/Documents/Presentations/Spreadsheets Skills
     document/page representation -> already-qualified native image path
 
-PAUSE UNTIL NATIVE HANDOFF RESULT
+PAUSE UNTIL WHOLE-PDF HANDOFF RESULT
     authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
 
 BENCHMARK ONLY IF NEEDED
