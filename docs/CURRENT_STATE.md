@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 286
+**Checkpoint:** 287
 **Date:** 2026-09-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -24,7 +24,7 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 286 records the Research 117 publication-preflight qualification of the thin `codex.document_render` seam. Rather than launching Poppler directly with ordinary Codexless host identity, the candidate keeps PDF rendering inside the existing Codex `command/exec` read-only sandbox and reuses maintained primary-runtime `pdfjs-dist@5.6.205` plus `@napi-rs/canvas@0.1.100` to rasterize selected pages entirely in memory. Direct discrimination proved the read-only sandbox denies workspace and ordinary `%TEMP%` writes, permits managed-runtime reads, blocks tested non-loopback TCP, and permits loopback. The fixed candidate returns validated PNG pages as standard MCP image content, requires only existing workspace `read`, starts no model turn, adds no external dependency, and exposes no caller-selected renderer/sandbox/output/write controls. Validation 045 records `DOCUMENT_RENDER_PUBLICATION_PREFLIGHT=PASS`; the active machine-readable boundary is now `sandboxed-managed-pdf-render-publication-preflight-qualified`. Current live Codexless remains preview.10 / 53 tools until guarded host publication and restart.
+Checkpoint 287 records successful guarded host publication of the preflight-qualified `codex.document_render` candidate into the installed `%LOCALAPPDATA%\Codexless` source tree. The helper reran all accepted candidate gates and returned `DOCUMENT_RENDER_PUBLICATION_RESULT=PASS`; it updated only the expected renderer/runtime/test files and performed no restart. A separate model-free health query after publication proved the still-running process remains `0.1.1-preview.10` / `codexless-public-preview-v2` / 53 tools, which is expected because source replacement does not hot-reload the existing Node process. The installed source now targets preview.11 / 54 tools, while the active machine-readable boundary is `document-render-live-source-published-restart-pending`. The next action is the repository-authoritative full controlled restart from `docs/local_execution/OPERATIONS.md`, beginning by stopping the tunnel first while keeping its Git Bash shell open.
 
 Research 117 therefore continues to reject a custom PDF rendering engine, OCR subsystem, and default DOCX/PPTX/XLSX adapters. Checkpoint 285 remains important reuse evidence because maintained Poppler independently proved page rasterization was already available, but Checkpoint 286 supersedes direct Poppler execution as the preferred semantic-seam candidate because the maintained PDF.js + canvas path can render in memory under the existing read-only Codex sandbox. The candidate target is preview.11 / 54 tools with `codex.document_read`, `codex.document_render`, and `codex.image_read` all preserved. Representative annotated/math/table/multi-column/scanned PDF fidelity remains unqualified and begins only after live `document_render` publication/visual qualification. MarkItDown, Docling and PyMuPDF4LLM remain fallback benchmarks only if concrete native/runtime gaps remain.
 
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 286 is now the current meaningful project boundary. It preserves publication-preflight qualification of the sandboxed maintained `codex.document_render` candidate at preview.11 / 54 tools, with no live publication yet. The preferred path keeps PDF rasterization inside the existing Codex `command/exec` read-only sandbox and reuses maintained primary-runtime PDF.js + canvas, while exposing only a bounded semantic page-render contract and standard MCP image outputs. Checkpoint 285 remains the independent managed-Poppler reuse qualification, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 287 is now the current meaningful project boundary. It preserves successful guarded host publication of the qualified `codex.document_render` source into the installed Codexless runtime while explicitly retaining the split-state fact that the foreground process still serves preview.10 / 53 tools until controlled restart. Checkpoint 286 remains the publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate at preview.11 / 54 tools, Checkpoint 285 remains the independent managed-Poppler reuse qualification, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/287_document_render_live_source_published_restart_pending.md
+docs/local_execution/validation/046_document_render_live_source_published_restart_pending.md
 docs/checkpoints/286_sandboxed_managed_pdf_render_publication_preflight_qualified.md
 docs/local_execution/validation/045_sandboxed_managed_pdf_render_publication_preflight_qualified.md
 docs/checkpoints/285_managed_primary_runtime_poppler_page_rendering_probe_qualified.md
@@ -419,7 +421,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `sandboxed-managed-pdf-render-publication-preflight-qualified` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `document-render-live-source-published-restart-pending` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -432,6 +434,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/287_document_render_live_source_published_restart_pending.md
+docs/local_execution/validation/046_document_render_live_source_published_restart_pending.md
 docs/checkpoints/286_sandboxed_managed_pdf_render_publication_preflight_qualified.md
 docs/local_execution/validation/045_sandboxed_managed_pdf_render_publication_preflight_qualified.md
 docs/checkpoints/285_managed_primary_runtime_poppler_page_rendering_probe_qualified.md
