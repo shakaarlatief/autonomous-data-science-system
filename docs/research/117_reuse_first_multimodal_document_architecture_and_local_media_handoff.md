@@ -857,7 +857,27 @@ The next unresolved claim is the actual ChatGPT-host large-resource ladder, begi
 
 Primary evidence: Validation 058 and Checkpoint 299.
 
-## 33. Current disposition
+## 33. E117-5m host-ladder result: folder contamination found; clean >4 MiB PASS
+
+A cumulative four-file test inside a ChatGPT folder/project that already contained the Machine Learning source files reported all four `codex.document_file_link` calls successful through 78,874,939 bytes. That run is accepted as direct ADS tool-success evidence at all four sizes, but not as clean host-materialization qualification because the surrounding ChatGPT folder already exposed the same files and therefore contaminates attribution of file availability to the MCP handoff.
+
+A second cumulative test in a fresh no-folder chat established the first clean host result above the former 4 MiB ceiling: `52.Trees.annotated.pdf` at 4,435,890 bytes materialized at `/mnt/data/52.Trees.annotated.pdf` with no inline PDF bytes and no transport/context failure. `32.LinearModels2.annotated.pdf` at 8,715,014 bytes also returned a successful resource-link tool result without inline bytes or explicit transport failure, but that chat did not expose sufficient host evidence that the second file materialized. Per the stop rule, larger tiers were not attempted there.
+
+Accepted boundary:
+
+```text
+clean 4.23 MiB host materialization                       PASS
+clean 8.31 MiB ADS resource-link tool call               PASS
+clean 8.31 MiB host materialization                      INCONCLUSIVE
+folder cumulative ADS tool calls 4.23/8.31/30.67/75.22  PASS
+folder cumulative host materialization attribution       CONTAMINATED / NOT ACCEPTED
+```
+
+The next discriminating experiment is therefore a fresh no-folder single-file test of `32.LinearModels2.annotated.pdf`. If that passes, continue upward with similarly clean single-file tests.
+
+Primary evidence: Validation 059 and Checkpoint 300.
+
+## 34. Current disposition
 
 ```text
 KEEP
