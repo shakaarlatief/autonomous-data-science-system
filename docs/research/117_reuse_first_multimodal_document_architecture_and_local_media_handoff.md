@@ -895,7 +895,21 @@ The next real-file discriminator is `31.ProbabilisticModels1.annotated.pdf` at a
 
 Primary evidence: Validation 060 and Checkpoint 301.
 
-## 35. Current disposition
+## 35. E117-5o clean result: 6.63 MiB resource-link host materialization passed
+
+A fresh no-folder single-file test of `31.ProbabilisticModels1.annotated.pdf` at 6,954,298 bytes produced a successful metadata-only `codex.document_file_link` result and direct host materialization evidence: host file ID `file_0000000025b8821093307c7a9dd642b5` and `/mnt/data/31.ProbabilisticModels1.annotated.pdf`. No explicit transport/context failure or visible `resources/read` trace was surfaced.
+
+Accepted result:
+
+```text
+CLEAN_INTERMEDIATE_RESOURCE_LINK_MATERIALIZATION=PASS
+```
+
+Combined with the clean 8,715,014-byte failure, the observed host boundary is now above 6,954,298 bytes and at or below 8,715,014 bytes for the tested files. This is not yet proof of a pure byte threshold. Additional real PDFs near 7-8 MiB are needed to distinguish size from file-specific or host-state behavior.
+
+Primary evidence: Validation 061 and Checkpoint 302.
+
+## 36. Current disposition
 
 ```text
 KEEP
