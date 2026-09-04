@@ -849,7 +849,15 @@ The running process still reports preview.13 / v2 / 56 because the helper intent
 
 Primary evidence: Validation 057 and Checkpoint 298.
 
-## 32. Current disposition
+## 32. E117-5l live activation result: preview.14 document smokes passed
+
+After controlled restart, live Codexless reports preview.14 / v2 / 56 and tunnel health/readiness are HTTP 200/200. Preserved `codex.document_read` and `codex.document_render` smokes against the two-page probe both passed with the same expected parser/renderer versions, source/page hashes, dimensions and visual markers. The large-file scaling overlay therefore activated without regressing the previously qualified document paths.
+
+The next unresolved claim is the actual ChatGPT-host large-resource ladder, beginning with `52.Trees.annotated.pdf` at 4.23 MiB and stopping at the first failed tier before continuing to 8.31, 30.67 and 75.22 MiB.
+
+Primary evidence: Validation 058 and Checkpoint 299.
+
+## 33. Current disposition
 
 ```text
 KEEP

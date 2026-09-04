@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 298
+**Checkpoint:** 299
 **Date:** 2026-09-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 298 is now the current meaningful project boundary. It preserves publication-preflight qualification of the 96 MiB resource-link scaling candidate targeting preview.14 / 56 while live remains preview.13 / 56. Checkpoint 296 preserves scanned/image-heavy full-PDF access, Checkpoint 295 preserves representative 1.68 MiB full-PDF access, Checkpoint 294 preserves tiny resource-link host materialization, and Checkpoint 293 remains the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result: attachment materialization PASS, same-turn native PDF access FAIL, next-turn full-PDF inspection PASS, and representative inline-base64 transport unsuitable as tested. Checkpoint 291 remains the preflight boundary for the now-live `codex.document_file_read` embedded-resource experiment, Checkpoint 290 remains the reuse-first reprioritization toward native/first-party whole-PDF handling, Checkpoint 289 remains the representative Windows buffered `command/exec` transport-ceiling boundary, Checkpoint 288 remains `MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS` for its tested smaller pages, Checkpoint 287 remains the earlier host-publication/restart-pending boundary, Checkpoint 286 remains publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate, Checkpoint 285 remains independent managed-Poppler reuse evidence, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 299 is now the current meaningful project boundary. It preserves publication-preflight qualification of the 96 MiB resource-link scaling candidate targeting preview.14 / 56 while live remains preview.13 / 56. Checkpoint 296 preserves scanned/image-heavy full-PDF access, Checkpoint 295 preserves representative 1.68 MiB full-PDF access, Checkpoint 294 preserves tiny resource-link host materialization, and Checkpoint 293 remains the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result: attachment materialization PASS, same-turn native PDF access FAIL, next-turn full-PDF inspection PASS, and representative inline-base64 transport unsuitable as tested. Checkpoint 291 remains the preflight boundary for the now-live `codex.document_file_read` embedded-resource experiment, Checkpoint 290 remains the reuse-first reprioritization toward native/first-party whole-PDF handling, Checkpoint 289 remains the representative Windows buffered `command/exec` transport-ceiling boundary, Checkpoint 288 remains `MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS` for its tested smaller pages, Checkpoint 287 remains the earlier host-publication/restart-pending boundary, Checkpoint 286 remains publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate, Checkpoint 285 remains independent managed-Poppler reuse evidence, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/299_large_pdf_resource_link_preview14_live_smokes_passed.md
+docs/local_execution/validation/058_large_pdf_resource_link_preview14_live_smokes_passed.md
 docs/checkpoints/298_large_pdf_resource_link_publication_passed_restart_pending.md
 docs/local_execution/validation/057_large_pdf_resource_link_publication_passed_restart_pending.md
 docs/checkpoints/297_large_pdf_resource_link_scaling_publication_preflight_qualified.md
@@ -443,7 +445,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `large-pdf-resource-link-publication-passed-restart-pending` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `large-pdf-resource-link-live-smokes-passed` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -456,6 +458,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/299_large_pdf_resource_link_preview14_live_smokes_passed.md
+docs/local_execution/validation/058_large_pdf_resource_link_preview14_live_smokes_passed.md
 docs/checkpoints/298_large_pdf_resource_link_publication_passed_restart_pending.md
 docs/local_execution/validation/057_large_pdf_resource_link_publication_passed_restart_pending.md
 docs/checkpoints/297_large_pdf_resource_link_scaling_publication_preflight_qualified.md
