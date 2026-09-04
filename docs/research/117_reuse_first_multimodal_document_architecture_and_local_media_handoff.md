@@ -877,7 +877,25 @@ The next discriminating experiment is therefore a fresh no-folder single-file te
 
 Primary evidence: Validation 059 and Checkpoint 300.
 
-## 34. Current disposition
+## 34. E117-5n clean result: 8.31 MiB resource-link host materialization failed
+
+A fresh no-folder single-file test of `32.LinearModels2.annotated.pdf` at 8,715,014 bytes produced a successful `codex.document_file_link` result with no inline PDF bytes/base64 and no explicit request-size, timeout, transport, maximum-chat-length, or context failure. However, on the next normal ChatGPT turn, the conversation file layer reported zero files, a filename-specific conversation search returned no result, and `/mnt/data` contained no PDF. The file therefore was not available to ChatGPT for direct PDF inspection.
+
+Accepted result:
+
+```text
+8.31 MiB ADS resource-link preparation       PASS
+8.31 MiB ChatGPT host materialization        FAIL
+8.31 MiB next-turn full-PDF access           FAIL
+```
+
+This proves the new 96 MiB Codexless source ceiling is not the limiting layer at 8.31 MiB. The failure occurs later than resource preparation, but the exact hidden host layer remains unknown because no explicit `resources/read` trace or transport error is surfaced. The clean 4,435,890-byte file remains PASS, so the currently observed host materialization boundary lies somewhere above 4,435,890 bytes and at or below 8,715,014 bytes.
+
+The next real-file discriminator is `31.ProbabilisticModels1.annotated.pdf` at approximately 6.63 MiB. Do not proceed to the 30.67/75.22 MiB tiers until the hidden boundary is localized.
+
+Primary evidence: Validation 060 and Checkpoint 301.
+
+## 35. Current disposition
 
 ```text
 KEEP
