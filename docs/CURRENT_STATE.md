@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 285
+**Checkpoint:** 286
 **Date:** 2026-09-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -24,9 +24,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 285 records the next Research 117 reuse qualification: the maintained OpenAI/Codex primary runtime already contains Poppler `26.07.0`, and a bounded model-free two-page PDF -> PNG -> `codex.image_read` -> ChatGPT vision probe passed. The primary-runtime `runtime.json` lists `poppler` among managed native dependencies for bundle `26.903.11726`; the real binaries are under the documented runtime dependency tree even though `pdftoppm` is absent from ordinary PATH and `dependencies/bin/override`. Validation 044 therefore narrows the missing document capability to a thin read-only authority/provenance page-render seam plus representative fidelity qualification, not a custom PDF rendering engine. The active machine-readable boundary is now `managed-primary-runtime-poppler-page-rendering-probe-qualified`. Checkpoint 284 remains the live-qualified direct ChatGPT-host MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, and Checkpoints 282/281 preserve the native Codex image qualification and earlier PDF-Skill renderer-discovery failure respectively.
+Checkpoint 286 records the Research 117 publication-preflight qualification of the thin `codex.document_render` seam. Rather than launching Poppler directly with ordinary Codexless host identity, the candidate keeps PDF rendering inside the existing Codex `command/exec` read-only sandbox and reuses maintained primary-runtime `pdfjs-dist@5.6.205` plus `@napi-rs/canvas@0.1.100` to rasterize selected pages entirely in memory. Direct discrimination proved the read-only sandbox denies workspace and ordinary `%TEMP%` writes, permits managed-runtime reads, blocks tested non-loopback TCP, and permits loopback. The fixed candidate returns validated PNG pages as standard MCP image content, requires only existing workspace `read`, starts no model turn, adds no external dependency, and exposes no caller-selected renderer/sandbox/output/write controls. Validation 045 records `DOCUMENT_RENDER_PUBLICATION_PREFLIGHT=PASS`; the active machine-readable boundary is now `sandboxed-managed-pdf-render-publication-preflight-qualified`. Current live Codexless remains preview.10 / 53 tools until guarded host publication and restart.
 
-Research 117 continues to pause a custom PDF rendering engine, OCR subsystem, and DOCX/PPTX/XLSX adapters. Official OpenAI file-input documentation already provides PDF multimodality as extracted text plus an image of every page; current Codex App Server/upstream source has image/local-image semantics; and installed OpenAI primary-runtime Skills cover PDF, Documents/DOCX, Presentations/PPTX, and Spreadsheets/XLSX. Validation 040 proved the PDF Skill routed but its turn discovered only an unusable MiKTeX `pdftoppm` stub. Validation 044 now shows that this was a discovery/resolution problem rather than an absent renderer: the maintained primary runtime itself contains working Poppler and successfully produced page PNGs for direct ChatGPT vision. The next design target is therefore a thin model-free `document_render`-class seam around maintained dependencies, followed by representative fidelity testing. MarkItDown, Docling and PyMuPDF4LLM remain fallback benchmarks only if concrete native/runtime gaps remain.
+Research 117 therefore continues to reject a custom PDF rendering engine, OCR subsystem, and default DOCX/PPTX/XLSX adapters. Checkpoint 285 remains important reuse evidence because maintained Poppler independently proved page rasterization was already available, but Checkpoint 286 supersedes direct Poppler execution as the preferred semantic-seam candidate because the maintained PDF.js + canvas path can render in memory under the existing read-only Codex sandbox. The candidate target is preview.11 / 54 tools with `codex.document_read`, `codex.document_render`, and `codex.image_read` all preserved. Representative annotated/math/table/multi-column/scanned PDF fidelity remains unqualified and begins only after live `document_render` publication/visual qualification. MarkItDown, Docling and PyMuPDF4LLM remain fallback benchmarks only if concrete native/runtime gaps remain.
 
 Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. At that qualification boundary `big-data-statistics` had only `read`; Research 117 later added `agent` explicitly for the bounded reuse experiment while retaining no write/browser/Git capability. A fresh disposable ChatGPT conversation had already invoked `codex.document_read` against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive baseline qualification evidence.
 
@@ -40,7 +40,7 @@ Checkpoint 278 remains the accepted Research 116 core boundary: live flexible mu
 
 The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is now proven through the bounded host-network substrate with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true` at private runtime commit `0ce61ba794929ee71c555d480a936fdced28ef2e`.
 
-The current synchronized public boundary is commit `db19b65cbc71b55000c02dbec869be7aa7b27b6a`, where local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were equal after `codex.git_push_ff_only` completed with `PUBLIC_REPOSITORY_INTEGRITY=PASS`, `retried=false`, clean tracked postflight, and `postflightOk=true`. This exact public HEAD includes Checkpoint 285 and Validation 044. The known protected `.tmp/pytest-*` warning remains interruption residue and was not modified.
+The latest synchronized public boundary before the current Checkpoint 286 reconciliation is commit `e0a819777cf923a828b3a5c217af8e273f82aef2`, where local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were equal after bounded semantic push and clean tracked postflight. Checkpoint 286 and Validation 045 are newer local reconciliation state until their exact resulting HEAD is committed, integrity-checked, pushed, and postflight-verified. The known protected `.tmp/pytest-*` warning remains interruption residue and was not modified.
 
 The live Codexless server now exposes 53 public MCP tools on `0.1.1-preview.10`. Fresh disposable ChatGPT discovery and E117-1 directly qualified `codex.image_read` as standard MCP image content visible to ChatGPT model vision, while the previously qualified `codex.document_read` remains projected. The earlier 51-tool/47-recipient projection mismatch remains preserved as historical host evidence in Validation 034 rather than current live state. Ordinary future workspace registrations continue to change server-owned policy without another MCP schema publication.
 
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 285 is now the current meaningful project boundary. It preserves the bounded qualification of the maintained primary-runtime Poppler PDF-to-PNG path feeding the already-qualified `codex.image_read` ChatGPT-vision route, and it corrects the earlier interpretation that the PDF Skill renderer blocker implied Poppler was absent. Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`; Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 286 is now the current meaningful project boundary. It preserves publication-preflight qualification of the sandboxed maintained `codex.document_render` candidate at preview.11 / 54 tools, with no live publication yet. The preferred path keeps PDF rasterization inside the existing Codex `command/exec` read-only sandbox and reuses maintained primary-runtime PDF.js + canvas, while exposing only a bounded semantic page-render contract and standard MCP image outputs. Checkpoint 285 remains the independent managed-Poppler reuse qualification, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/286_sandboxed_managed_pdf_render_publication_preflight_qualified.md
+docs/local_execution/validation/045_sandboxed_managed_pdf_render_publication_preflight_qualified.md
 docs/checkpoints/285_managed_primary_runtime_poppler_page_rendering_probe_qualified.md
 docs/local_execution/validation/044_managed_primary_runtime_poppler_page_rendering_probe_qualified.md
 docs/checkpoints/284_model_free_mcp_image_bridge_live_chatgpt_vision_qualified.md
@@ -417,7 +419,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `managed-primary-runtime-poppler-page-rendering-probe-qualified` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `sandboxed-managed-pdf-render-publication-preflight-qualified` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -430,6 +432,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/286_sandboxed_managed_pdf_render_publication_preflight_qualified.md
+docs/local_execution/validation/045_sandboxed_managed_pdf_render_publication_preflight_qualified.md
 docs/checkpoints/285_managed_primary_runtime_poppler_page_rendering_probe_qualified.md
 docs/local_execution/validation/044_managed_primary_runtime_poppler_page_rendering_probe_qualified.md
 docs/checkpoints/284_model_free_mcp_image_bridge_live_chatgpt_vision_qualified.md

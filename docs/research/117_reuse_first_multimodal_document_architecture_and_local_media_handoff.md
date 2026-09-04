@@ -494,18 +494,76 @@ workspace-authorized PDF
 
 Primary evidence: `docs/local_execution/validation/044_managed_primary_runtime_poppler_page_rendering_probe_qualified.md` and Checkpoint 285.
 
-## 19. Current disposition
+## 19. E117-4b publication-preflight result: sandboxed maintained PDF.js + canvas page rendering qualified
+
+Validation 044 proved that maintained primary-runtime Poppler could rasterize PDF pages, but direct Poppler execution would have launched an untrusted-document parser with ordinary Codexless host identity. E117-4b therefore tested whether the existing Codex `command/exec` read-only sandbox could own the render execution instead.
+
+Direct discrimination established:
+
+```text
+workspace write under :read-only      denied
+ordinary %TEMP% write                 denied
+managed runtime reads                 allowed
+non-loopback TCP probe                denied / EACCES
+loopback TCP                           available
+```
+
+Because the maintained primary runtime also contains `pdfjs-dist@5.6.205`, `@napi-rs/canvas@0.1.100`, and the matching Windows canvas package, Research 117 qualified an in-memory renderer child that needs no workspace or host-temp output:
+
+```text
+authorized PDF
+    -> existing workspace read authority
+    -> canonical containment + bounded source preflight
+    -> existing Codex command/exec :read-only sandbox
+    -> maintained primary-runtime PDF.js + canvas
+    -> in-memory PNG page(s)
+    -> bounded internal stdout protocol
+    -> page/image/source provenance validation
+    -> standard MCP image content
+```
+
+The candidate semantic surface is `codex.document_render`. Public inputs are only `cwd`, one bounded workspace-relative `documentPath`, and an ordered unique list of at most four 1-based pages. DPI is fixed at 150. The caller cannot select the executable, backend, arbitrary arguments, output path, permission profile, sandbox, Browser, Agent, OCR, Git, workspace identity override, write authority, or the larger internal renderer transport ceiling.
+
+The internal stdout ceiling required for page-image base64 is exposed only inside `CodexAuthorityExecutor.exec`; the strict public `codex.command_exec` schema rejects the corresponding field. This therefore does not widen remote caller authority.
+
+The first PDF.js sandbox probe exposed a standard-font path-resolution warning even though the managed font files existed and were readable. The issue was resolved by supplying normalized filesystem-path strings rather than `file://` URL strings to PDF.js' Node data factories. The corrected maintained renderer produced the synthetic visual probe without that warning. Host-side visual materialization of the same stack was inspected through `codex.image_read` and preserved the expected page headings, bars/rectangles, labels and diagonal geometry.
+
+Qualification results:
+
+```text
+DOCUMENT_RENDER_REGRESSION=PASS tests=10
+FLEXIBLE_AUTHORITY_REGRESSION=PASS tests=7
+BOUNDED_GIT_FETCH_ORIGIN=PASS tools=54
+BOUNDED_GIT_PULL_FF_ONLY=PASS tools=54
+PUBLIC_SURFACE_REGISTRATION=PASS tools=54
+IMAGE_READ_REGRESSION=PASS tests=7
+DOCUMENT_RENDER_PUBLICATION_PREFLIGHT=PASS
+PUBLIC_COMMAND_INTERNAL_OUTPUT_CAP_REMOTE_SCHEMA=REJECTED
+EXPECTED_PUBLIC_SERVER_VERSION=0.1.1-preview.11
+EXPECTED_PUBLIC_SURFACE_VERSION=codexless-public-preview-v2
+EXPECTED_PUBLIC_TOOL_COUNT=54
+MODEL_TURN_REQUIRED=false
+NEW_EXTERNAL_DEPENDENCY=false
+NO_LIVE_FILES_MODIFIED=true
+```
+
+This supersedes direct Poppler execution as the preferred semantic-seam candidate while retaining Checkpoint 285 as independent reuse evidence that the managed runtime already contained a viable renderer. Live publication remains separate because `%LOCALAPPDATA%\\Codexless` is intentionally outside ordinary workspace authority. The existing AB-002 / AB-017 authority work remains the future owner of that broader runtime-maintenance architecture; E117-4b does not solve it by widening workspace access.
+
+Primary evidence: `docs/local_execution/validation/045_sandboxed_managed_pdf_render_publication_preflight_qualified.md` and Checkpoint 286.
+
+## 20. Current disposition
 
 ```text
 KEEP
     workspace-standard authority architecture
     live codex.document_read baseline
     live codex.image_read -> ChatGPT vision path
-    maintained primary-runtime Poppler as the current PDF page-render reuse candidate
+    sandboxed maintained primary-runtime PDF.js + canvas as the preferred PDF page-render candidate
+    managed Poppler as independent reuse evidence / fallback comparator
     deterministic provenance and fail-closed constraints
 
 STOP FOR NOW
-    custom codex.document_render implementation
+    custom PDF rendering engine
     custom OCR subsystem
     custom DOCX/PPTX/XLSX adapters
 
