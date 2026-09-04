@@ -583,14 +583,37 @@ No intermediate workspace image, Browser, OCR, extra image-read hop, new externa
 
 Primary evidence: `docs/local_execution/validation/047_document_render_live_chatgpt_vision_qualified.md` and Checkpoint 288.
 
-## 21. Current disposition
+## 21. E117-5a representative result: Windows buffered command/exec transport ceiling localized
+
+Representative real-document testing exposed a transport limitation that the smaller Checkpoint 288 qualification did not exercise.
+
+Ordinary mathematical and text-heavy pages continue to pass. A dense page producing a 6.9 MiB PNG correctly fails the semantic 4 MiB page guard. However, an image-only cheat sheet, scanned/handwritten page, and dense theory sheet each render successfully through the maintained PDF.js + canvas stack to PNGs of roughly 1.16-1.23 MiB, yet live `codex.document_render` fails with `DOCUMENT_RENDER_PROTOCOL_ERROR / invalid JSON`.
+
+The failure is now localized to buffered App Server transport rather than rendering fidelity. Current official Codex App Server documentation defines a 1 MiB default per-stream `command/exec` capture limit, while current Windows restricted-token source requires that default buffered cap and rejects custom output caps/streaming for that sandbox. Inspection of the preview.11 candidate found that its internal 11.75 MiB allowance was applied only after the App Server response and was never forwarded upstream. The fake regression executor therefore missed the real Windows cap.
+
+Accepted claim scope is corrected to:
+
+```text
+ordinary/smaller page render -> ChatGPT vision     QUALIFIED
+representative >1 MiB PNG stdout transport         NOT QUALIFIED
+semantic 4 MiB page limit                          WORKING / FAIL-CLOSED
+maintained PDF.js + canvas renderer                still preferred
+OCR/fallback stack requirement                     NOT ESTABLISHED
+```
+
+A private ignored correction candidate now keeps command stdout as compact control JSON and transfers page bytes through a bounded authenticated parent-owned loopback binary channel. The parent generates a random 256-bit token and ephemeral `127.0.0.1` destination; the caller cannot select either. Aggregate/page/header limits and parent hash/signature/dimension verification remain bounded. Focused candidate unit regression passes 10 tests, but the cross-boundary Windows sandbox transport is not yet live-qualified and must not be published.
+
+Primary evidence: `docs/local_execution/validation/048_representative_pdf_fidelity_exposes_windows_command_exec_capture_ceiling.md` and Checkpoint 289.
+
+## 22. Current disposition
 
 ```text
 KEEP
     workspace-standard authority architecture
     live codex.document_read baseline
     live codex.image_read -> ChatGPT vision path
-    live sandboxed maintained primary-runtime PDF.js + canvas as the accepted PDF page-render path
+    maintained primary-runtime PDF.js + canvas as the accepted renderer for qualified ordinary pages
+    Checkpoint 288 direct ChatGPT page-vision path within its tested smaller-page scope
     managed Poppler as independent reuse evidence / fallback comparator
     deterministic provenance and fail-closed constraints
 
@@ -600,6 +623,7 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 INVESTIGATE FIRST
+    authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
     native OpenAI PDF file-input multimodality
     installed Codex PDF/Documents/Presentations/Spreadsheets Skills
     document/page representation -> already-qualified native image path
