@@ -808,11 +808,46 @@ This means the preferred resource-link whole-PDF route now covers both represent
 
 Primary evidence: Validation 055 and Checkpoint 296.
 
-## 30. Current disposition
+## 30. E117-5j publication-preflight result: large-PDF resource-link scaling qualified locally
+
+The newly authorized read-only Machine Learning corpus exposed that large-file support is a primary requirement rather than an edge case. Its annotated lecture PDFs range from 4.23 MiB to 75.22 MiB, so every lecture is above the original 4 MiB experiment ceiling. The largest current lecture is `51.Deep Learning2.annotated.pdf` at 75.22 MiB.
+
+The scaling candidate deliberately does **not** raise the embedded `codex.document_file_read` ceiling. That route remains capped at 4 MiB because its PDF base64 is placed directly in the original tool result and already failed on a much smaller representative file. Only `codex.document_file_link` receives a new 96 MiB source ceiling.
+
+The candidate also removes persistent base64 buffering from resource preparation. Preparation now resolves authority/canonical containment, validates the PDF header, streams SHA-256, revalidates source identity, and stores only an ephemeral internal file binding plus provenance. When the host resolves the resource, the exact bound path/size/mtime/filesystem identity and SHA-256 are revalidated before the temporary MCP `blob` is produced.
+
+Integrated qualification passed:
+
+```text
+DOCUMENT_FILE_READ_REGRESSION=PASS tests=7
+DOCUMENT_RESOURCE_LINK_REGRESSION=PASS tests=9
+BOUNDED_GIT_FETCH_ORIGIN=PASS tools=56
+BOUNDED_GIT_PULL_FF_ONLY=PASS tools=56
+PUBLIC_SURFACE_REGISTRATION=PASS tools=56
+IMAGE_READ_REGRESSION=PASS tests=7
+DOCUMENT_RENDER_REGRESSION=PASS tests=10
+DOCUMENT_RESOURCE_LARGE_PUBLICATION_PREFLIGHT=PASS
+EXPECTED_PUBLIC_SERVER_VERSION=0.1.1-preview.14
+EXPECTED_PUBLIC_TOOL_COUNT=56
+EMBEDDED_DOCUMENT_FILE_READ_LIMIT_BYTES=4194304
+RESOURCE_LINK_DOCUMENT_LIMIT_BYTES=100663296
+RESOURCE_PREPARE_RETAINS_BASE64=false
+RESOURCE_FETCH_REVALIDATES_SIZE_MTIME_IDENTITY_SHA256=true
+PAUSED_LOOPBACK_RENDER_TRANSPORT_OVERLAID=false
+NO_LIVE_FILES_MODIFIED=true
+```
+
+The MCP schema continues to require binary `resources/read` contents as base64, so this does not prove the ChatGPT host/tunnel can carry a 75 MiB PDF. Current ordinary ChatGPT uploads have a 512 MB per-file hard limit, but that product limit is only context and cannot be transferred to the MCP path by inference. The live experiment therefore progresses through real lecture files at 4.23, 8.31, 30.67 and 75.22 MiB and stops at the first failed tier.
+
+Primary evidence: Validation 056 and Checkpoint 297.
+
+## 31. Current disposition
 
 ```text
 KEEP
     workspace-standard authority architecture
+    codex.document_file_link as the preferred whole-PDF transport within the live-qualified size range
+    next-turn ChatGPT built-in PDF workflow on materialized attachments
     live codex.document_read baseline
     live codex.image_read -> ChatGPT vision path
     maintained primary-runtime PDF.js + canvas as the accepted renderer for qualified ordinary pages
@@ -826,15 +861,16 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 INVESTIGATE FIRST
-    codex.document_file_link -> MCP resource_link/resources-read -> ChatGPT whole-PDF materialization
-    if resource_link fails/inferior: ADS Browser -> normal ChatGPT file upload
-    native OpenAI PDF file-input multimodality only if a separate API path is explicitly accepted
+    progressive large-PDF resource_link host qualification through the 4.23 / 8.31 / 30.67 / 75.22 MiB lecture tiers
+    only after live evidence decide whether the 96 MiB research ceiling is accepted, reduced, or redesigned
 
 KEEP AS SUPPORTING / FALLBACK
+    ADS Browser -> normal ChatGPT file upload if resource_link fails at required sizes
     installed Codex PDF/Documents/Presentations/Spreadsheets Skills
     document/page representation -> already-qualified native image path
+    native OpenAI PDF file-input API only if a separate API path is explicitly accepted
 
-PAUSE UNTIL WHOLE-PDF HANDOFF RESULT
+PAUSE WHILE WHOLE-PDF RESOURCE-LINK SCALING IS ACTIVE
     authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
 
 BENCHMARK ONLY IF NEEDED

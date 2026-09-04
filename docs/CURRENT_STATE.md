@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 296
+**Checkpoint:** 297
 **Date:** 2026-09-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -24,9 +24,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 295 records the representative-size whole-PDF PASS for the new MCP `resource_link` transport. Preview.13 / v2 / 56 is live, tunnel health/readiness are both HTTP 200, and preserved `document_read` / `document_render` smokes passed after restart. In a fresh disposable chat, `codex.document_file_link` on the 2,372-byte `probe.pdf` returned only metadata plus a standard `resource_link`, with no PDF base64 in the original tool result, and the ChatGPT host materialized `probe.pdf` as a conversation file. Same-turn parsed/rendered PDF contents were still not exposed, matching the prior host behavior, and no explicit `resources/read` trace was surfaced. The active machine-readable boundary is now `scanned-mcp-pdf-resource-link-full-pdf-access-passed`.
+Checkpoint 297 records publication-preflight qualification of large-PDF scaling for the already-successful MCP `resource_link` whole-PDF transport. Preview.13 / v2 / 56 remains live. Checkpoints 295-296 established representative dense-PDF and 14-page scanned-PDF next-turn full access. A newly authorized read-only Machine Learning workspace then exposed the practical scaling requirement: its annotated lecture PDFs range from 4.23 MiB to 75.22 MiB, so every lecture exceeds the existing 4 MiB handoff experiment ceiling. The active machine-readable boundary is now `large-pdf-resource-link-scaling-publication-preflight-qualified`.
 
-This is the key transport proof we needed: the host can resolve the linked MCP resource sufficiently to materialize a normal PDF file without putting the PDF bytes in the original tool-result envelope. The decisive next experiment is now representative-size qualification with `CheatSheet_A4.pdf`, which previously failed through inline embedded-resource transport because its tool-result base64 expanded to roughly 2.24 million characters. If the representative PDF materializes without the maximum-chat-length failure and is fully inspectable on the next turn without another ADS call, `resource_link` becomes the preferred whole-PDF route. If it fails, the next primary route is ADS Browser upload. The Checkpoint 289 loopback page-render transport remains paused.
+The preview.14 candidate keeps the unsafe inline embedded `codex.document_file_read` route at 4 MiB and widens only `codex.document_file_link` to a separate 96 MiB source ceiling, enough to cover the current lecture corpus. Resource preparation no longer retains the PDF/base64 in the process-level store: it validates authority/path/header, streams SHA-256, stores only an ephemeral immutable file binding/provenance record, and revalidates canonical path, size, mtime, filesystem identity and full SHA-256 before resource fetch materializes the temporary MCP base64 blob. Integrated regressions pass and no live files changed. The next step is guarded publication, controlled restart, then progressive real-host tests at 4.23, 8.31, 30.67 and 75.22 MiB, stopping at the first failed tier. The Checkpoint 289 loopback page-render transport remains paused.
 
 Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. At that qualification boundary `big-data-statistics` had only `read`; Research 117 later added `agent` explicitly for the bounded reuse experiment while retaining no write/browser/Git capability. A fresh disposable ChatGPT conversation had already invoked `codex.document_read` against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive baseline qualification evidence.
 
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 296 is now the current meaningful project boundary. It preserves the live tiny-PDF `resource_link` host-materialization PASS on preview.13 / 56. Checkpoint 293 remains the publication-preflight qualification boundary for `codex.document_file_link`. Checkpoint 292 preserves the live embedded-PDF host result: attachment materialization PASS, same-turn native PDF access FAIL, next-turn full-PDF inspection PASS, and representative inline-base64 transport unsuitable as tested. Checkpoint 291 remains the preflight boundary for the now-live `codex.document_file_read` embedded-resource experiment, Checkpoint 290 remains the reuse-first reprioritization toward native/first-party whole-PDF handling, Checkpoint 289 remains the representative Windows buffered `command/exec` transport-ceiling boundary, Checkpoint 288 remains `MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS` for its tested smaller pages, Checkpoint 287 remains the earlier host-publication/restart-pending boundary, Checkpoint 286 remains publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate, Checkpoint 285 remains independent managed-Poppler reuse evidence, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 297 is now the current meaningful project boundary. It preserves publication-preflight qualification of the 96 MiB resource-link scaling candidate targeting preview.14 / 56 while live remains preview.13 / 56. Checkpoint 296 preserves scanned/image-heavy full-PDF access, Checkpoint 295 preserves representative 1.68 MiB full-PDF access, Checkpoint 294 preserves tiny resource-link host materialization, and Checkpoint 293 remains the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result: attachment materialization PASS, same-turn native PDF access FAIL, next-turn full-PDF inspection PASS, and representative inline-base64 transport unsuitable as tested. Checkpoint 291 remains the preflight boundary for the now-live `codex.document_file_read` embedded-resource experiment, Checkpoint 290 remains the reuse-first reprioritization toward native/first-party whole-PDF handling, Checkpoint 289 remains the representative Windows buffered `command/exec` transport-ceiling boundary, Checkpoint 288 remains `MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS` for its tested smaller pages, Checkpoint 287 remains the earlier host-publication/restart-pending boundary, Checkpoint 286 remains publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate, Checkpoint 285 remains independent managed-Poppler reuse evidence, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/297_large_pdf_resource_link_scaling_publication_preflight_qualified.md
+docs/local_execution/validation/056_large_pdf_resource_link_scaling_publication_preflight_qualified.md
 docs/checkpoints/296_scanned_mcp_pdf_resource_link_full_pdf_access_passed.md
 docs/local_execution/validation/055_scanned_mcp_pdf_resource_link_full_pdf_access_passed.md
 docs/checkpoints/295_representative_mcp_pdf_resource_link_full_pdf_access_passed.md
@@ -439,7 +441,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `scanned-mcp-pdf-resource-link-full-pdf-access-passed` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `large-pdf-resource-link-scaling-publication-preflight-qualified` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -452,6 +454,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/297_large_pdf_resource_link_scaling_publication_preflight_qualified.md
+docs/local_execution/validation/056_large_pdf_resource_link_scaling_publication_preflight_qualified.md
 docs/checkpoints/296_scanned_mcp_pdf_resource_link_full_pdf_access_passed.md
 docs/local_execution/validation/055_scanned_mcp_pdf_resource_link_full_pdf_access_passed.md
 docs/checkpoints/295_representative_mcp_pdf_resource_link_full_pdf_access_passed.md
