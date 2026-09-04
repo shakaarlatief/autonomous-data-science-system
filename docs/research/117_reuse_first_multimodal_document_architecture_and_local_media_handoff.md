@@ -678,7 +678,56 @@ The critical host question therefore remains cleanly isolated: after guarded pub
 
 Primary evidence: `docs/local_execution/validation/050_document_file_handoff_publication_preflight_qualified.md` and Checkpoint 291.
 
-## 24. Current disposition
+## 24. E117-5d live result: MCP PDF resource materializes attachment but not same-turn native PDF input
+
+After guarded preview.12 publication, controlled restart, and ChatGPT app refresh, live Codexless reported `0.1.1-preview.12` / `codexless-public-preview-v2` / 55 tools. The existing `codex.document_read` smoke remained valid. A corrected `codex.document_render` smoke against `docs/local_execution/validation/generated/e117_managed_poppler_probe/probe.pdf` also succeeded, confirming that the earlier post-refresh render failure was only an incorrect test path and not a preview.12 regression.
+
+The new `codex.document_file_read` host experiment then produced two distinct results.
+
+First, a representative 1,679,081-byte `CheatSheet_A4.pdf` repeatedly triggered the ChatGPT UI error `maximum chat length is reached` in fresh chats that could immediately answer an ordinary `hello`. Its inline base64 representation is approximately 2.24 million characters before protocol overhead. The exact host limit is unknown, but the inline embedded-resource approach is not viable for representative files as tested.
+
+Second, a tiny 2,372-byte two-page `probe.pdf` succeeded. The host visibly materialized the MCP-returned PDF as a `probe.pdf` attachment/file card in the conversation. However, the same assistant turn explicitly did not receive parsed PDF content, rendered pages, or a native visual representation in model context and therefore could not report content/layout facts. The exact host verdict was:
+
+```text
+MCP_PDF_RESOURCE_TO_CHATGPT_NATIVE_PDF=FAIL
+```
+
+The important corrected decomposition is therefore:
+
+```text
+ADS exact local PDF bytes -> MCP application/pdf resource       PASS
+ChatGPT host file/attachment materialization                    PASS
+same-turn automatic native PDF model promotion                  FAIL
+representative inline-base64 embedded-resource transport         FAIL AS TESTED
+```
+
+This still leaves one smaller reuse-first question open because the host created a file attachment artifact. Before resuming the paused loopback renderer transport, test whether the first-party PDF Skill can consume that already-materialized `probe.pdf` in the **next turn of the same disposable conversation**. That requires no ADS code change, restart, or schema refresh.
+
+If next-turn first-party PDF consumption passes, the remaining transport problem becomes avoiding inline binary payloads for representative files, with a server-owned MCP `resource_link` plus resource-read route the next candidate. If it fails, the materialized file card is not a usable bridge into first-party PDF understanding.
+
+Primary evidence: `docs/local_execution/validation/051_mcp_pdf_resource_materializes_attachment_but_not_same_turn_native_pdf.md` and Checkpoint 292.
+
+## 25. E117-5e claim correction: next-turn native PDF access passed, explicit PDF-plugin invocation remains unproven
+
+The follow-up conversation visibly showed the user's `@PDF` text as ordinary prompt text rather than a confirmed plugin/source pill. The returned answer nevertheless recovered the exact two-page visual facts from `probe.pdf` after that PDF had been materialized by the preceding ADS tool turn.
+
+The accepted conclusion is therefore narrower and stronger in the right place:
+
+```text
+MCP-returned PDF -> host attachment/file materialization          PASS
+same-turn native PDF model access                               FAIL
+next-turn normal ChatGPT inspection of materialized PDF          PASS
+explicit user-visible @PDF plugin invocation                     UNPROVEN
+PDF Skill/plugin required for the successful next-turn read      NOT ESTABLISHED
+```
+
+Current OpenAI product documentation distinguishes Skills from native file handling: Skills are reusable workflows/instructions and can be used automatically when helpful; plugins may package Skills and can also be explicitly selected or @-mentioned when available. Separately, OpenAI models support PDF/file inputs directly. Therefore the observed next-turn success must not be attributed specifically to the visible PDF plugin unless that invocation is independently proven.
+
+For Research 117, the important architectural result is that the ChatGPT host-created PDF attachment becomes readable/visually inspectable on a subsequent turn without another ADS read/render call. This is enough to keep the two-stage local-authority -> host attachment -> native ChatGPT PDF handling route alive even if the PDF plugin itself was not invoked.
+
+The next transport question remains unchanged: avoid multi-megabyte inline base64 for representative PDFs. Test server-owned `resource_link` plus resource-fetch/materialization semantics before resuming the paused loopback renderer transport.
+
+## 26. Current disposition
 
 ```text
 KEEP
