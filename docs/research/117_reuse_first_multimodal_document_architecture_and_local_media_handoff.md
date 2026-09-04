@@ -779,7 +779,22 @@ This qualifies only the tiny file. The next decisive test is `CheatSheet_A4.pdf`
 
 Primary evidence: `docs/local_execution/validation/053_tiny_mcp_pdf_resource_link_host_materialization_passed.md` and Checkpoint 294.
 
-## 28. Current disposition
+## 28. E117-5h live result: representative resource-link full-PDF access passed
+
+The 1,679,081-byte `CheatSheet_A4.pdf` passed the new route. The original `codex.document_file_link` result contained metadata plus a small `resource_link`, no PDF bytes/base64, and triggered no maximum-chat-length failure. The ChatGPT host materialized `/mnt/data/CheatSheet_A4.pdf`. On the next user turn, without another ADS call, ChatGPT used its built-in PDF workflow to inspect and render both pages and reported concrete page-specific visual/layout/content facts.
+
+Accepted results:
+
+```text
+REPRESENTATIVE_MCP_PDF_RESOURCE_LINK_MATERIALIZATION=PASS
+REPRESENTATIVE_RESOURCE_LINK_NEXT_TURN_FULL_PDF_ACCESS=PASS
+```
+
+This makes `codex.document_file_link` the preferred whole-PDF transport within the currently qualified source-size envelope. Browser upload and the paused page-render loopback remain fallbacks. Next qualification target: `Adobe Scan BDS_Exercises_Misha.pdf` to test scanned/image-heavy behavior.
+
+Primary evidence: Validation 054 and Checkpoint 295.
+
+## 29. Current disposition
 
 ```text
 KEEP
