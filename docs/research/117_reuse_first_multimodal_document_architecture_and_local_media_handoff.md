@@ -763,7 +763,23 @@ The decisive host behavior remains unproven. A separate `resources/read` respons
 
 Primary evidence: `docs/local_execution/validation/052_mcp_pdf_resource_link_publication_preflight_qualified.md` and Checkpoint 293.
 
-## 27. Current disposition
+## 27. E117-5g live result: tiny MCP resource-link PDF materialization passed
+
+After guarded publication and controlled restart, preview.13 / v2 / 56 became live and tunnel health/readiness both returned HTTP 200. Preserved `document_read` and `document_render` smokes passed. A fresh disposable ChatGPT chat then invoked only `codex.document_file_link` on the 2,372-byte `probe.pdf`.
+
+The tool succeeded and its original result contained metadata plus a standard `resource_link`, not PDF bytes/base64. The ChatGPT host subsequently materialized `probe.pdf` as a conversation file. No explicit `resources/read` trace was exposed to the model, so the precise hidden host fetch mechanism remains unobserved, but the materialization itself is direct evidence that the link was resolved sufficiently for host-level file creation. Same-turn PDF content access remained unavailable, consistent with the prior embedded-resource experiment.
+
+Accepted claim:
+
+```text
+MCP_PDF_RESOURCE_LINK_MATERIALIZATION=PASS
+```
+
+This qualifies only the tiny file. The next decisive test is `CheatSheet_A4.pdf` from `big-data-statistics`, because the old inline embedded-resource route failed on that 1.68 MiB PDF when its base64 expanded to roughly 2.24 million characters in the tool-result envelope. Success now requires no maximum-chat-length failure, host file materialization, and next-turn complete-PDF inspection without another ADS call.
+
+Primary evidence: `docs/local_execution/validation/053_tiny_mcp_pdf_resource_link_host_materialization_passed.md` and Checkpoint 294.
+
+## 28. Current disposition
 
 ```text
 KEEP
