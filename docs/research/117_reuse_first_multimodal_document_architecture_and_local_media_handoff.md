@@ -551,14 +551,46 @@ This supersedes direct Poppler execution as the preferred semantic-seam candidat
 
 Primary evidence: `docs/local_execution/validation/045_sandboxed_managed_pdf_render_publication_preflight_qualified.md` and Checkpoint 286.
 
-## 20. Current disposition
+## 20. E117-4d live result: sandboxed document rendering reaches ChatGPT vision
+
+After successful host publication, the repository-authoritative controlled restart/reconnect sequence and ChatGPT app refresh completed. Live verification established Codexless `0.1.1-preview.11`, surface `codexless-public-preview-v2`, 54 tools, tunnel health/readiness HTTP 200, and preserved `codex.document_read` behavior.
+
+A fresh disposable ChatGPT conversation then invoked only `codex.document_render` on the known two-page authorized PDF. It explicitly reported receiving actual PNG page images and recovered multiple visual-only facts from both pages that were absent from the prompt. It also reported the exact maintained renderer metadata: `pdfjs-dist@5.6.205`, `@napi-rs/canvas@0.1.100`, fixed 150 DPI, `codex-command-exec-read-only` isolation, `[1,2]` page selection and no OCR.
+
+The fresh host classified:
+
+```text
+MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS
+```
+
+The continuing Chat 17 session independently reproduced the live call, received both standard MCP page images, and visually confirmed the same page geometry and labels.
+
+This closes the semantic PDF page-render transport question for the exact tested configuration:
+
+```text
+workspace-authorized PDF
+    -> existing read authority
+    -> bounded source validation
+    -> Codex command/exec :read-only sandbox
+    -> maintained PDF.js + canvas
+    -> in-memory PNG page(s)
+    -> standard MCP image content
+    -> ChatGPT native vision
+    -> PASS
+```
+
+No intermediate workspace image, Browser, OCR, extra image-read hop, new external dependency, or Codex model turn is required for the tested path.
+
+Primary evidence: `docs/local_execution/validation/047_document_render_live_chatgpt_vision_qualified.md` and Checkpoint 288.
+
+## 21. Current disposition
 
 ```text
 KEEP
     workspace-standard authority architecture
     live codex.document_read baseline
     live codex.image_read -> ChatGPT vision path
-    sandboxed maintained primary-runtime PDF.js + canvas as the preferred PDF page-render candidate
+    live sandboxed maintained primary-runtime PDF.js + canvas as the accepted PDF page-render path
     managed Poppler as independent reuse evidence / fallback comparator
     deterministic provenance and fail-closed constraints
 
