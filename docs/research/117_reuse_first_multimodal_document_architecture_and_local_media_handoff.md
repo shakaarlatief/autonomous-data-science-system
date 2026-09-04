@@ -641,7 +641,44 @@ The earlier temporary `tunnel_active_organization_required` observation is not a
 
 Primary evidence: `docs/local_execution/validation/049_official_pdf_skill_local_ads_handoff_research_prioritized.md` and Checkpoint 290.
 
-## 23. Current disposition
+## 23. E117-5c result: bounded MCP PDF resource handoff candidate preflight-qualified
+
+The minimal local-PDF handoff candidate is now publication-preflight qualified without changing the live preview.11 runtime.
+
+Candidate action:
+
+```text
+codex.document_file_read
+```
+
+It accepts only `cwd` plus one bounded workspace-relative PDF path, requires existing workspace `read`, performs canonical containment and identity checks, enforces a conservative 4 MiB source limit, validates PDF bytes, records SHA-256/size/name/provenance, and returns the exact source bytes as standard MCP embedded `application/pdf` resource content. It starts no model turn and uses no parser, renderer, OCR, Browser, Git, write authority, upload destination or external API.
+
+The exact installed MCP SDK accepts the candidate embedded-resource shape. Integrated staging from live preview.11 plus only the file-handoff overlay passed:
+
+```text
+DOCUMENT_FILE_READ_REGRESSION=PASS tests=5
+BOUNDED_GIT_FETCH_ORIGIN=PASS tools=55
+BOUNDED_GIT_PULL_FF_ONLY=PASS tools=55
+PUBLIC_SURFACE_REGISTRATION=PASS tools=55
+IMAGE_READ_REGRESSION=PASS tests=7
+DOCUMENT_RENDER_REGRESSION=PASS tests=10
+DOCUMENT_FILE_HANDOFF_PUBLICATION_PREFLIGHT=PASS
+EXPECTED_PUBLIC_SERVER_VERSION=0.1.1-preview.12
+EXPECTED_PUBLIC_SURFACE_VERSION=codexless-public-preview-v2
+EXPECTED_PUBLIC_TOOL_COUNT=55
+PAUSED_LOOPBACK_RENDER_TRANSPORT_OVERLAID=false
+NO_LIVE_FILES_MODIFIED=true
+```
+
+The staging helper explicitly pins the live preview.11 hashes of `codex-authority-executor.mjs`, `document-renderer.mjs`, `document-render-child.mjs`, and the live document-render regression. Those paused loopback-transport files are not part of the preview.12 overlay.
+
+The live process remains preview.11 / 54 tools and `codex.document_read` still returns `SANDBOX` through `pdfjs-dist@5.4.624` with OCR false.
+
+The critical host question therefore remains cleanly isolated: after guarded publication/restart/schema refresh, does ChatGPT treat the returned MCP PDF resource as an actual native PDF/file input that can feed the first-party PDF capability? No answer is inferred before that host experiment.
+
+Primary evidence: `docs/local_execution/validation/050_document_file_handoff_publication_preflight_qualified.md` and Checkpoint 291.
+
+## 24. Current disposition
 
 ```text
 KEEP

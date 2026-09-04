@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 290
+**Checkpoint:** 291
 **Date:** 2026-09-04
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -24,9 +24,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 290 reprioritizes Research 117 after the project owner surfaced the first-party ChatGPT PDF plugin/Skill. The Chat PDF router identifies the capability as a Skill and points Chat to `/home/oai/skills/pdfs/SKILL.md`; that maintained capability was read directly and already owns render-first visual review, extraction, OCR, preflight, editing, renderer comparison and verification. The installed Codex primary runtime separately exposes the maintained `pdf:pdf` Skill. ADS already owns bounded local Windows workspace authority and exact file bytes, while the installed MCP SDK accepts both embedded `application/pdf` resources and PDF `resource_link` tool-result shapes. The remaining high-value question is whether ChatGPT promotes an MCP-returned authorized local PDF into the same native PDF/file-input path used by an ordinary attachment. The active machine-readable boundary is now `official-pdf-skill-local-ads-handoff-research-prioritized`.
+Checkpoint 291 records publication-preflight qualification of the minimal `codex.document_file_read` host experiment opened by Checkpoint 290. The candidate requires only existing workspace `read`, accepts `cwd` plus one bounded workspace-relative PDF, performs canonical containment/source-identity/media checks, enforces a conservative 4 MiB source ceiling, records SHA-256/size/name provenance, and returns the exact PDF bytes as standard MCP embedded `application/pdf` resource content. Integrated staging from the exact live preview.11 runtime passed the 5-test file-reader regression, 55-tool bounded-Git/public-surface regressions, the existing image-read regression, and the existing 10-test document-render regression. The candidate target is preview.12 / v2 / 55 tools. Live remains preview.11 / 54 and the active machine-readable boundary is now `document-file-handoff-publication-preflight-qualified`.
 
-Research 117 therefore pauses the Checkpoint 289 authenticated loopback page-image transport candidate before publication. A smaller private ignored preview.12 / 55-tool experiment now implements only a bounded PDF file reader behind existing workspace `read` authority and returns standard MCP `application/pdf` embedded-resource content; its focused file-reader regression passes 5 tests. No live runtime file has been changed and no host promotion claim has been made. If the native handoff works, ADS can keep `codex.document_read` for deterministic text/provenance and let the first-party PDF capability own richer document interpretation; if it fails, the loopback renderer transport remains a fallback candidate. OCR, Docling, MarkItDown and PyMuPDF4LLM remain deferred until this reuse-first host handoff question is settled.
+The guarded publication helper explicitly overlays only the new file-handoff reader, its runtime/surface wiring and related tests. It pins and preserves the live preview.11 hashes of `codex-authority-executor.mjs`, `document-renderer.mjs`, `document-render-child.mjs`, and the live document-render regression so the paused Checkpoint 289 loopback transport cannot be accidentally published with this experiment. The helper's no-publish run returned `DOCUMENT_FILE_HANDOFF_PUBLICATION_PREFLIGHT=PASS`, `PAUSED_LOOPBACK_RENDER_TRANSPORT_OVERLAID=false`, and `NO_LIVE_FILES_MODIFIED=true`. The critical ChatGPT host question remains unproven until guarded publication/restart/schema refresh: whether an MCP-returned PDF resource is promoted into actual native PDF/file-input treatment usable by the first-party PDF capability.
 
 Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. At that qualification boundary `big-data-statistics` had only `read`; Research 117 later added `agent` explicitly for the bounded reuse experiment while retaining no write/browser/Git capability. A fresh disposable ChatGPT conversation had already invoked `codex.document_read` against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive baseline qualification evidence.
 
@@ -40,7 +40,7 @@ Checkpoint 278 remains the accepted Research 116 core boundary: live flexible mu
 
 The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is now proven through the bounded host-network substrate with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true` at private runtime commit `0ce61ba794929ee71c555d480a936fdced28ef2e`.
 
-The current synchronized public boundary is commit `aaf8c59e25125933113a41a6f6298ce116750253`, where local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were equal after `codex.git_push_ff_only` completed with `PUBLIC_REPOSITORY_INTEGRITY=PASS`, `retried=false`, clean tracked postflight, and `postflightOk=true`. This exact public HEAD includes Checkpoint 290 and Validation 049. The known protected `.tmp/pytest-*` warning remains interruption residue and was not modified.
+The latest synchronized public boundary before the current Checkpoint 291 reconciliation is commit `7fd95d43c786c6752ffe8fca0dd4e6553a91ab3d`, where local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were equal after bounded semantic push and clean tracked postflight. Checkpoint 291 and Validation 050 are newer local reconciliation state until their exact resulting HEAD is committed, integrity-checked, pushed, and postflight-verified. The known protected `.tmp/pytest-*` warning remains interruption residue and was not modified.
 
 The live Codexless server now exposes 54 public MCP tools on `0.1.1-preview.11`. The refreshed surface preserves `codex.document_read` and `codex.image_read` and adds live-qualified `codex.document_render`. Fresh disposable ChatGPT testing proves both the earlier direct image bridge (`MCP_IMAGE_TO_CHATGPT_VISION=PASS`) and the new direct PDF-page render bridge (`MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS`). Tunnel health and readiness are both verified at HTTP 200. The earlier 51-tool/47-recipient projection mismatch remains historical host evidence in Validation 034 rather than current live state. Ordinary future workspace registrations continue to change server-owned policy without another MCP schema publication.
 
@@ -321,7 +321,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 290 is now the current meaningful project boundary. It preserves the reuse-first reprioritization toward an authorized local-PDF -> standard MCP PDF resource -> native ChatGPT file-input/first-party PDF Skill experiment before any further custom page-image transport publication. Checkpoint 289 remains the representative Windows buffered `command/exec` transport-ceiling boundary, Checkpoint 288 remains `MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS` for its tested smaller pages at preview.11 / 54 tools, Checkpoint 287 remains the host-publication/restart-pending boundary, Checkpoint 286 remains publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate, Checkpoint 285 remains independent managed-Poppler reuse evidence, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 291 is now the current meaningful project boundary. It preserves publication-preflight qualification of the bounded `codex.document_file_read` candidate targeting preview.12 / 55 tools while live Codexless remains preview.11 / 54. Checkpoint 290 remains the reuse-first reprioritization toward authorized local PDF -> standard MCP PDF resource -> native ChatGPT file-input/first-party PDF Skill handoff, Checkpoint 289 remains the representative Windows buffered `command/exec` transport-ceiling boundary, Checkpoint 288 remains `MCP_DOCUMENT_RENDER_TO_CHATGPT_VISION=PASS` for its tested smaller pages, Checkpoint 287 remains the host-publication/restart-pending boundary, Checkpoint 286 remains publication-preflight qualification of the sandboxed maintained PDF.js + canvas candidate, Checkpoint 285 remains independent managed-Poppler reuse evidence, Checkpoint 284 remains the live-qualified model-free MCP image bridge with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, Checkpoint 283 remains its publication-preflight boundary, Checkpoint 282 remains native Codex local-image vision, Checkpoint 281 remains the earlier PDF-Skill renderer-discovery failure, Checkpoint 280 remains the reuse-first stop rule, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +342,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/291_document_file_handoff_publication_preflight_qualified.md
+docs/local_execution/validation/050_document_file_handoff_publication_preflight_qualified.md
 docs/checkpoints/290_official_pdf_skill_local_ads_handoff_research_prioritized.md
 docs/local_execution/validation/049_official_pdf_skill_local_ads_handoff_research_prioritized.md
 docs/checkpoints/289_representative_pdf_fidelity_exposes_windows_command_exec_capture_ceiling.md
@@ -427,7 +429,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `official-pdf-skill-local-ads-handoff-research-prioritized` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `document-file-handoff-publication-preflight-qualified` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -440,6 +442,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/291_document_file_handoff_publication_preflight_qualified.md
+docs/local_execution/validation/050_document_file_handoff_publication_preflight_qualified.md
 docs/checkpoints/290_official_pdf_skill_local_ads_handoff_research_prioritized.md
 docs/local_execution/validation/049_official_pdf_skill_local_ads_handoff_research_prioritized.md
 docs/checkpoints/289_representative_pdf_fidelity_exposes_windows_command_exec_capture_ceiling.md
