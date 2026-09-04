@@ -1,4 +1,4 @@
-﻿# Research 117: Reuse-First Multimodal Document Architecture and Local Media Handoff
+# Research 117: Reuse-First Multimodal Document Architecture and Local Media Handoff
 
 **Date:** 2026-09-03
 **Status:** ACTIVE / REUSE-FIRST ARCHITECTURE RESEARCH
@@ -436,12 +436,36 @@ The exact next step is a host PowerShell run of the guarded helper, followed by 
 
 Primary evidence: `docs/local_execution/validation/042_model_free_mcp_image_bridge_publication_preflight_qualified.md`.
 
-## 17. Current disposition
+## 17. E117-1 live result: direct ChatGPT-host MCP image vision qualified
+
+The guarded `codex.image_read` candidate was published successfully through the host-state publication helper, followed by the repository-authoritative controlled restart/reconnect sequence and ChatGPT developer-MCP refresh. Read-only post-restart verification established live Codexless `0.1.1-preview.10`, surface `codexless-public-preview-v2`, 53 public tools, the expected ADS `defaultCwd`, tunnel `/healthz` HTTP 200, and tunnel `/readyz` HTTP 200. The refreshed ChatGPT tool projection exposes both `codex.image_read` and the preserved `codex.document_read` action.
+
+A fresh disposable ChatGPT conversation then called only `codex.image_read` against the authorized repository PNG `frontend/e2e/visual.spec.ts-snapshots/overview-light-chromium-linux.png`. The prompt deliberately withheld the expected visual facts and prohibited Codex agent turns, Browser, OCR, shell execution, repository reads, web search, metadata inference, filename inference, and prior-knowledge substitution.
+
+The fresh conversation explicitly reported receiving actual visual image content rather than only metadata/text and recovered multiple pixel-derived facts, including the `Customer Churn Prediction` dashboard, the right-side `What matters now` panel, the pale-orange `APPROVAL REQUIRED` card for `Missingness pattern investigation`, its `Approve & run` / `Reject` controls, and multiple `Runs & activity` states. Validation 041 had independently inspected the same image through Codex native `view_image` and already identified the same dashboard plus the right-side approval panel.
+
+The exact host classification is therefore:
+
+```text
+MCP_IMAGE_TO_CHATGPT_VISION=PASS
+MODEL_FREE_MCP_IMAGE_BRIDGE=LIVE_QUALIFIED
+EXTRA_CODEX_MODEL_TURN_REQUIRED=false
+BROWSER_REQUIRED=false
+OCR_REQUIRED=false
+CUSTOM_IMAGE_UNDERSTANDING_REQUIRED=false
+```
+
+This closes the unresolved E117-1 host question. Standard MCP image content returned by the bounded read-only `codex.image_read` path is sufficient for direct ChatGPT model vision in the exact tested developer-MCP host configuration.
+
+Primary evidence: `docs/local_execution/validation/043_model_free_mcp_image_bridge_live_chatgpt_vision_qualified.md` and Checkpoint 284.
+
+## 18. Current disposition
 
 ```text
 KEEP
     workspace-standard authority architecture
     live codex.document_read baseline
+    live codex.image_read -> ChatGPT vision path
     deterministic provenance and fail-closed constraints
 
 STOP FOR NOW
@@ -452,8 +476,7 @@ STOP FOR NOW
 INVESTIGATE FIRST
     native OpenAI PDF file-input multimodality
     installed Codex PDF/Documents/Presentations/Spreadsheets Skills
-    App Server localImage/image semantics
-    MCP image-result visibility in ChatGPT
+    document/page representation -> already-qualified native image path
     local-authorized-file -> native file-input handoff
 
 BENCHMARK ONLY IF NEEDED

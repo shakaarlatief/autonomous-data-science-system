@@ -1,4 +1,4 @@
-﻿# Open Architecture Backlog
+# Open Architecture Backlog
 
 **Status:** Current durable architecture and integration backlog
 **Opened:** 2026-09-03
@@ -179,7 +179,7 @@ stronger parser isolation
 
 Do not weaken the accepted `codex.document_read` authority contract merely to add these companions. Rendering/OCR/adapters should continue to inherit explicit workspace authority and remain semantic rather than arbitrary host-file execution paths.
 
-Primary accepted baseline evidence: `docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md`. Validation 040 proves that the maintained Codex PDF Skill routes in the authorized workspace while current-machine visual rendering is blocked by a local renderer dependency. Validation 041 then proves that an already-authorized local PNG can be attached and visually understood through Codex's native `view_image` path with no intermediate copy/render/conversion/OCR step. Therefore the remaining gap is the document-page/media handoff seam, not image understanding itself.
+Primary accepted baseline evidence: `docs/local_execution/validation/039_workspace_standard_and_document_read_live_qualified.md`. Validation 040 proves that the maintained Codex PDF Skill routes in the authorized workspace while current-machine visual rendering is blocked by a local renderer dependency. Validation 041 proves that an already-authorized local PNG can be attached and visually understood through Codex's native `view_image` path with no intermediate copy/render/conversion/OCR step. Validation 043 now additionally proves the model-free direct-host path: `codex.image_read` returns standard MCP image content that a fresh ChatGPT developer-MCP conversation can visually inspect, with `MCP_IMAGE_TO_CHATGPT_VISION=PASS`, no extra Codex model turn, no Browser and no OCR. Therefore image understanding and the ChatGPT-host MCP image seam are both qualified; the remaining gap is document/page representation and format-specific handoff into one of the already-working native vision routes.
 
 ---
 
@@ -506,6 +506,419 @@ ensure Codexless design never depends on bypassing platform privacy interlocks
 ```
 
 This is a host/privacy integration observation, not a reason to weaken the consent layer.
+
+---
+
+## AB-022: Reconstruction-to-operational-authority routing and required-read enforcement
+
+**Status:** OPEN / REPRODUCED ARCHITECTURE GAP
+**Priority:** P0
+
+A concrete failure was reproduced at the start of `chatgpt-17` after an unexpected context-limit termination. The new session correctly performed the canonical public bootstrap reads and reconstructed Checkpoint 283 / Research 117, but it did not read `docs/local_execution/OPERATIONS.md` before giving the next operational restart instructions. This happened even though:
+
+```text
+CURRENT_STATE.md
+    listed docs/local_execution/OPERATIONS.md in Minimum reading for continuation
+
+Checkpoint 283
+    said to restart Codexless using the controlled runbook
+
+Validation 042
+    required controlled restart/reconnect/schema refresh after publication
+
+OPERATIONS.md
+    was the authoritative owner of the exact full restart order
+```
+
+The result was a wrong instruction from the collaborator: stop Codexless first and then stop the tunnel. The repository-authoritative full controlled restart order is the reverse at the beginning: stop the tunnel first, keep its Git Bash shell open, then stop/restart Codexless, verify the new local surface, restart/verify the tunnel, and only then refresh ChatGPT. The project owner noticed the mismatch and forced a direct runbook check before acting on the incorrect order.
+
+This must be treated as more than an isolated collaborator mistake. The repository contained the correct knowledge and even linked it from the live state, but the reconstruction architecture did not make consumption of the task-relevant operational authority sufficiently reliable before action guidance was produced.
+
+Research targets:
+
+```text
+make active next-action routing resolve the governing operational/specification authority, not only the current checkpoint/research narrative
+
+separate "minimum reading exists" from "required authority was actually consumed before an action is recommended"
+
+consider typed/machine-readable next-action prerequisites or governing-procedure references where an exact procedure owns execution order
+
+consider a lightweight reconstruction/action preflight that can prove task-relevant required reads were resolved before operational mutation guidance
+
+avoid solving the problem by making every new chat read the entire repository or an ever-growing static list
+
+preserve the distinction between information-architecture failure, routing failure, and collaborator non-compliance, while designing the system so high-consequence omissions are harder to make
+
+add a regression/validation scenario based on this exact restart-order miss once a stronger routing mechanism is designed
+```
+
+Acceptance direction:
+
+```text
+new session reconstructs current boundary
+    -> active next action is identified
+    -> governing execution authority is resolved automatically or fail-visibly
+    -> collaborator reads that authority before giving exact operational steps
+    -> action order is reproduced from the authority rather than chat memory/inference
+```
+
+This issue is directly relevant to continuity, knowledge routing, operational safety and the wider ADS goal that the repository should make correct continuation behavior recoverable across chats rather than merely store the answer somewhere discoverable.
+
+---
+
+## AB-023: Open Architecture Backlog vs Open Questions discoverability and usage audit
+
+**Status:** OPEN / SELF-AUDIT REQUESTED
+**Priority:** P1
+
+The project owner explicitly requested a follow-up audit of whether `docs/OPEN_ARCHITECTURE_BACKLOG.md` itself is sufficiently clear, easy to discover and reliably used, including whether its role is clearly distinguished from `docs/OPEN_QUESTIONS.md` and other current-state/research surfaces.
+
+Current repository inspection already shows that the distinction is documented in several places:
+
+```text
+docs/README.md
+    fast-routes explicit deferred architecture ideas and side tracks to OPEN_ARCHITECTURE_BACKLOG
+    separately routes important unresolved questions to OPEN_QUESTIONS
+
+OPEN_ARCHITECTURE_BACKLOG.md
+    defines itself as planning/retrieval for future architecture ideas, known gaps,
+    deferred side tracks and continuation obligations
+    explicitly says it is not a second CURRENT_STATE or replacement for OPEN_QUESTIONS/research/evidence
+
+OPEN_QUESTIONS.md
+    defines itself as the canonical register of important unresolved project questions
+
+CURRENT_STATE.md and KNOWLEDGE_MAP.md
+    already link the architecture backlog in the active development-governance route
+```
+
+So the current concern is not simply that the backlog has no documentation. The `chatgpt-17` restart-order miss exposed a more general risk: knowledge can be clearly documented and linked yet still fail to influence the collaborator at the moment it matters. The backlog/open-question audit should therefore examine both **human clarity** and **operational routing behavior**.
+
+Audit targets:
+
+```text
+is the backlog purpose obvious from the mandatory bootstrap path without prior memory?
+
+is the difference between OPEN_ARCHITECTURE_BACKLOG and OPEN_QUESTIONS sufficiently crisp for future collaborators deciding where to preserve a new issue?
+
+are "remember this / investigate later / architecture gap / deferred side track" triggers reliably routed to the backlog during normal work and chat rotation?
+
+are important backlog items surfaced when they become relevant to an active stage, or can they remain technically discoverable but practically invisible?
+
+should CURRENT_STATE, KNOWLEDGE_MAP, CONTINUITY or DEVELOPMENT_METHOD carry a stronger typed/backlog-routing obligation without duplicating the backlog contents?
+
+can lightweight validation or reconstruction checks detect when an explicitly relevant backlog obligation was skipped?
+```
+
+This backlog item deliberately preserves the recursive concern itself: even the mechanism used to remember future architecture work must be evaluated for whether future sessions are reliably led to it, rather than assuming that a well-written Markdown file is sufficient.
+
+The concrete `chatgpt-17` wording that triggered this audit also exposed a smaller manifestation of the same problem: after publication, the collaborator suggested to "refresh the connector/app if that surface supports it" instead of immediately following the already-preserved exact ChatGPT developer-MCP refresh procedure in `docs/local_execution/OPERATIONS.md`. The repository already records the observed path (`Settings -> Plug-ins -> ADS Codexless Local Bridge -> Vernieuwen`) and the invariant that refresh occurs only after Codexless and tunnel readiness are healthy. This should be included in the eventual routing regression together with the incorrect restart order: task-relevant operational knowledge existed, but generic fallback wording was produced because the governing runbook had not been consumed.
+
+---
+
+## AB-024: High-recall new-session reconstruction and hierarchical knowledge traversal
+
+**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Priority:** P0
+
+The project owner challenged the current continuation framing around "minimum reading." The objective of a fresh persistent ADS conversation should not be to consume the smallest possible amount of repository knowledge that permits the next action. It should be to reconstruct the **best practically achievable understanding of the whole project**, including current state, governing authority, important historical context, parent workstreams, unresolved obligations, and task-relevant deep evidence.
+
+The existing architecture already contains strong ingredients: `README.md` as the stable entry point, `docs/README.md` as the structural guide, `CURRENT_STATE.md` / `current_routing.json` as live-state owners, `KNOWLEDGE_MAP.md` as the exhaustive semantic routing layer, `CONTINUITY.md` as the reconstruction procedure, and specialized foundations/research/specifications/checkpoints/ledgers. Research 103 and 104 explicitly strengthened repository-wide discoverability and exhaustive routing. Foundation 014 also anticipated stronger indexes, semantic retrieval, dependency graphs and machine-checkable metadata if observed retrieval failures eventually justified them.
+
+The `chatgpt-17` restart-order miss now provides new evidence that **having comprehensive knowledge stored and routed is not equivalent to having it activated in the new collaborator's working context**. The current long "Minimum reading for continuation" list also risks becoming a static enumeration whose existence does not prove that the listed knowledge was actually traversed or understood.
+
+The architecture audit should therefore distinguish two goals that must not be conflated:
+
+```text
+maximum repository bytes read
+    !=
+maximum useful project understanding
+```
+
+Literal exhaustive reading of every repository file on every new chat may waste context on implementation detail, duplicate historical states, stale evidence, generated artifacts and low-relevance material. It can also make authority distinctions harder rather than easier. The desired target is instead **high-recall, authority-aware, hierarchical reconstruction** that seeks the maximum useful understanding while preserving context quality.
+
+Candidate reconstruction shape to research:
+
+```text
+stable project entry / authority
+    -> structural repository map
+    -> current live state + machine route
+    -> active workstream and its complete parent/resume chain
+    -> governing canonical procedures/specifications for the next boundary
+    -> semantic Knowledge Map neighborhood around the active work
+    -> current open questions / architecture backlog / continuation obligations
+    -> relevant foundations and accepted decisions
+    -> relevant research, validations and historical checkpoints
+    -> specialized ledgers/manifests/private complement where applicable
+    -> coverage/reconstruction receipt showing what was actually traversed
+```
+
+Research targets:
+
+```text
+replace "bare minimum" as the implicit optimization target with maximum useful/high-recall understanding
+
+determine whether a cold-start orientation pass should inspect repository-wide metadata/index coverage before selective deep reads
+
+define which knowledge classes should always be activated in a new persistent conversation and which should remain retrievable on demand
+
+make authority, chronology, supersession and current-vs-historical status explicit during reconstruction
+
+investigate a machine-readable traversal plan or generated reconstruction manifest rather than relying on one manually growing list
+
+consider whether the observed retrieval failure now justifies stronger dependency/graph/index machinery previously deferred by Foundation 014 and Research 104
+
+measure reconstruction completeness and missed-governing-artifact failures rather than only whether the current checkpoint was found
+
+preserve context-window efficiency without using efficiency as a reason to omit important project knowledge
+```
+
+A likely professional target is a layered process where the system first obtains broad repository awareness, then expands deterministically into the active and semantically adjacent knowledge, and finally reads exact governing evidence before giving operational or architectural guidance. This is a research direction, not yet an accepted replacement for the current continuation procedure.
+
+Primary context: Foundation 014, Research 103, Research 104, `docs/CONTINUITY.md`, `docs/KNOWLEDGE_MAP.md`, and AB-022.
+
+---
+
+## AB-025: Nested workstream graph, active route stack, and deterministic resume semantics
+
+**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Priority:** P1
+
+ADS frequently leaves the main development route for a bounded investigation or implementation branch, and that side route can itself open another nested route. The current repository preserves many of these relationships in prose, checkpoints and continuation obligations, but the active machine route remains largely flat. `docs/current_routing.json`, for example, identifies one `current_boundary` but does not encode the parent workstream, nested child route, return condition or exact resume target.
+
+The current project state demonstrates the need clearly. A simplified conceptual route is:
+
+```text
+Source Vault / Source Universe continuation
+    PAUSED while broader Level-2 research is active
+    |
+    -> Research 113: Codex / Codexless upstream ecosystem research
+         |
+         -> Research 117: reuse-first multimodal document architecture
+              |
+              -> E117-1: direct ChatGPT MCP image visibility
+                   -> current codex.image_read publication / host test
+
+separate paused sibling/related route:
+    v17 semantic Codex task viewer
+```
+
+When the innermost work closes, ADS needs to know which parent boundary becomes active again. When Research 117 closes, the wider Research 113 route may still have unfinished obligations. When that Level-2 research closes, the preserved Source Vault ingestion route should resume at its exact stored action rather than requiring a future collaborator to reconstruct the return path from scattered prose.
+
+A pure chronological timeline is insufficient because chronology answers "what happened when," while continuation requires "what is active, what interrupted what, what depends on what, and where do we return?" A pure tree may also be insufficient because some workstreams can depend on multiple other branches. The audit should therefore compare a simple tree against a more general **workstream DAG plus one explicit active stack/breadcrumb**.
+
+Candidate node semantics to research:
+
+```text
+workstream / route id
+human title
+status: ACTIVE / PAUSED / BLOCKED / READY / CLOSED
+parent route(s)
+child route(s)
+why opened
+opened-from boundary
+blocking/dependency relation
+current boundary
+completion / return condition
+exact resume target after closure
+governing evidence
+related backlog/open-question ids
+historical checkpoints / commits
+```
+
+Candidate live representation:
+
+```text
+MAIN ROUTE
+    -> parent workstream
+        -> child workstream
+            -> current leaf
+
+ACTIVE STACK
+    [main, parent, child, leaf]
+
+ON LEAF CLOSE
+    resolve declared return condition
+    -> activate parent or next dependency
+    -> never guess the resume point from chat memory
+```
+
+Research targets:
+
+```text
+make nested side missions first-class rather than prose-only continuation knowledge
+
+separate chronological history from dependency/resumption structure
+
+ensure every PAUSED route has a reason, blocker/return condition and exact resume target
+
+ensure opening a nested route records the parent edge automatically or through a required development-method step
+
+consider extending current_routing.json versus introducing a separate machine-readable workstream-routing artifact with a generated human view
+
+validate that no active/paused branch becomes orphaned and that completed child routes lead deterministically to the next eligible parent/peer route
+
+integrate backlog/open-question obligations without turning either file into the live routing graph
+
+preserve Git/checkpoints as historical provenance while giving current continuation a separate explicit control-flow representation
+```
+
+This should also improve new-session reconstruction: instead of only learning the current leaf, a collaborator can reconstruct the entire active breadcrumb and understand why the project is temporarily doing the current work, what broader objective it serves, and what comes next when it closes.
+
+Primary context: `docs/current_routing.json`, `docs/CURRENT_STATE.md`, `docs/CONTINUITY.md`, Foundation 014, Research 104, AB-022, AB-024, and CO-003.
+
+---
+
+## AB-026: Knowledge Map topic saturation, hierarchical decomposition, and retrieval usability
+
+**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Priority:** P1
+
+The project owner suspects that the current `docs/KNOWLEDGE_MAP.md` subject taxonomy may itself be approaching a retrieval-scaling failure even though its mechanical coverage contract is healthy. The concern is that too many artifacts can accumulate under one broad subject. If one topic eventually routes dozens or hundreds of files, a future collaborator may technically discover the correct section while still failing to inspect enough of the material inside that section to recover the important knowledge.
+
+Current repository evidence supports treating this as a real audit target rather than only a hypothetical concern. Research 103 already identified discoverability and routing quality as the main scaling pressure. Research 104 deliberately introduced exhaustive subject routing and warned against giant tables, hundreds of visible checkpoint links, and absorption of specialized indexes into the global map. The current Knowledge Map now contains visibly uneven fan-out: some subjects remain compact, while broad subjects such as `development-governance` route a large set of foundations, specifications, research records, validations, ledgers, local-execution documents, backlog material and checkpoints. The map can therefore satisfy exhaustive coverage while still becoming too coarse at the point of use.
+
+The key distinction to preserve is:
+
+```text
+coverage completeness
+    !=
+retrieval usability
+
+"artifact is assigned to a topic"
+    !=
+"a collaborator can efficiently identify and consume the important artifacts inside that topic"
+```
+
+The audit should investigate whether the global topic layer needs another level of semantic structure rather than continuing to append direct file paths to broad subjects indefinitely.
+
+Candidate directions to compare include:
+
+```text
+hierarchical topics / subtopics
+    broad domain -> narrower semantic clusters -> artifacts
+
+topic-local indexes
+    one global subject points to a specialized sub-index when fan-out becomes large
+
+core vs extended evidence
+    small governing/entry set first, deeper supporting evidence separately reachable
+
+artifact-role grouping inside a subject
+    canonical / foundation / specification / research / validation / historical evidence
+
+priority or authority-aware routing
+    distinguish "read first" from "supporting / historical / optional deep evidence"
+
+machine-generated or validated fan-out metrics
+    warn when one topic becomes semantically overloaded
+
+cross-topic graph edges
+    preserve multiple genuine memberships without forcing every relationship into one flat list
+```
+
+Research targets:
+
+```text
+audit every current Knowledge Map subject for semantic coherence, direct-artifact count, overlap, authority mix and likely retrieval burden
+
+identify sections that are broad because the domain is genuinely broad versus sections that have become catch-all buckets
+
+preserve exhaustive coverage while reducing the number of direct artifacts a collaborator must scan before finding the governing subset
+
+consider stable subtopic IDs and validator support rather than informal headings that can drift
+
+consider whether specialized indexes should be introduced earlier, not only after a whole domain becomes very large
+
+ensure decomposition does not create a second failure where knowledge becomes fragmented across too many tiny categories
+
+define practical saturation signals or thresholds from observed use rather than choosing arbitrary limits
+
+test reconstruction scenarios against the redesigned map: can a fresh collaborator reach the right governing evidence without already knowing filenames or document numbers?
+```
+
+This concern is closely connected to AB-024. High-recall reconstruction cannot rely on a Knowledge Map that is exhaustive only in the set-theoretic sense; its semantic neighborhoods must remain traversable enough that broad project understanding can actually be activated. It is also connected to Foundation 014's distinction between durability and discoverability: a file may be perfectly preserved and formally routed while still being practically hidden inside an overloaded category.
+
+Primary context: `docs/KNOWLEDGE_MAP.md`, Foundation 014, Research 064, Research 103, Research 104, AB-022, and AB-024.
+
+---
+
+## AB-027: Deferred architecture risks, known weaknesses, and evolution-trigger register
+
+**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Priority:** P1
+
+The project owner identified a recurring pattern across ADS development: a new problem is observed in live use, the collaborator investigates it, and repository research then reveals that the same weakness, possible future failure mode, or escalation condition had already been anticipated earlier. The prior work often explicitly said some version of:
+
+```text
+this may become a problem later
+this is a known limitation
+we deliberately accept this simpler architecture for now
+revisit this if X happens
+stronger machinery is not justified yet
+this future mechanism should be introduced only when measured pressure appears
+```
+
+The knowledge is therefore durable, but these **latent architecture warnings and reopen conditions are scattered across foundations, decisions, research records, specifications and checkpoints**. They are often rediscovered only after the project owner independently notices the concrete symptom. That is weaker than the intended repository-memory architecture.
+
+This pattern is already visible in current evidence. Foundation 014 explicitly deferred stronger preservation infrastructure while naming future triggers such as unreliable Knowledge Map maintenance, frequent failure to discover existing knowledge, dependency networks too large for prose, expensive reconciliation, and multi-contributor coordination pressure. Research 064 said stronger knowledge machinery should wait for a real discoverability or synchronization failure. Research 103 later recorded that such discoverability pressure had arrived. Research 104 again deferred a heavier semantic/vector/dependency system until concrete retrieval failures remained after the lighter architecture was used. D-024 similarly preserved future upgrades and trigger conditions. Other decisions preserve their own escalation conditions, for example D-032 for stronger workflow durability/runtime machinery and D-034 for collaboration mechanization.
+
+The architectural issue is therefore not lack of foresight. It is that foresight does not yet have a sufficiently reliable **promotion and monitoring surface**.
+
+The audit should determine whether `docs/OPEN_ARCHITECTURE_BACKLOG.md` should become the canonical retrieval index for this class of knowledge, or whether a distinct but tightly integrated architecture-evolution register is justified. Do not create another competing repository-memory layer merely for naming convenience. The selected design should have one clear owner and link back to the detailed evidence rather than copying it.
+
+Candidate entry semantics to research:
+
+```text
+stable issue / trigger id
+short weakness or deferred-capability title
+current accepted architecture / workaround
+known limitation or risk
+why the stronger alternative was deferred
+observable trigger(s) that should cause reconsideration
+current trigger state: NOT_OBSERVED / PARTIAL / OBSERVED / SUPERSEDED
+source decisions / foundations / research / validations
+related active backlog / open-question / workstream ids
+last reconciliation date
+result when revisited: KEEP / RESEARCH / IMPLEMENT / CLOSE
+```
+
+Research targets:
+
+```text
+perform a retrospective repository-wide extraction of explicitly known limitations, deferred upgrades, reopen conditions and future escalation triggers
+
+identify items that are currently buried only inside long-form research or decision rationale and are not represented in the architecture backlog
+
+separate ordinary speculative ideas from explicit known weaknesses and evidence-backed future triggers
+
+make trigger conditions discoverable before a failure is rediscovered conversationally
+
+at meaningful reconciliation boundaries, evaluate whether any stored trigger has become true or materially closer to true
+
+when a live problem is reported, check the trigger/weakness register early as part of diagnosis rather than only after broad ad hoc searching
+
+link each concise register item to authoritative detailed evidence so the index does not become another source of substantive truth
+
+preserve historical cases where the project correctly anticipated a limitation and later observed its trigger, because these are valuable evidence about architecture evolution
+
+integrate with AB-023/024/026 so backlog discoverability, new-session reconstruction and Knowledge Map routing all surface relevant known weaknesses at the right time
+```
+
+A useful end state would let a future collaborator answer immediately:
+
+```text
+What weaknesses of the current architecture do we already know about?
+What did we deliberately postpone?
+Why did we postpone it?
+What event would justify reopening it?
+Have any of those trigger conditions now occurred?
+Where is the detailed reasoning/evidence?
+```
+
+This is directly aligned with Foundation 014's principle that the preservation architecture itself must remain empirical. ADS should not merely preserve past architectural decisions; it should preserve the **conditions under which those decisions were intentionally provisional** and make those conditions easy to monitor.
+
+Primary context: Foundation 014, D-024, D-032, D-034, Research 064, Research 103, Research 104, AB-023, AB-024, and AB-026.
 
 ---
 
