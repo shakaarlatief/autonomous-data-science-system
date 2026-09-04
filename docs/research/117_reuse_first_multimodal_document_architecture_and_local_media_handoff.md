@@ -459,13 +459,49 @@ This closes the unresolved E117-1 host question. Standard MCP image content retu
 
 Primary evidence: `docs/local_execution/validation/043_model_free_mcp_image_bridge_live_chatgpt_vision_qualified.md` and Checkpoint 284.
 
-## 18. Current disposition
+## 18. E117-4a live result: maintained primary-runtime Poppler page rendering qualified
+
+The next reuse-first probe found that the maintained OpenAI/Codex primary runtime already contains a usable Poppler installation even though `pdftoppm` is absent from the ordinary host PATH and from `dependencies/bin/override`.
+
+The installed primary-runtime Skills explicitly document `load_workspace_dependencies` as the preferred dependency resolver and `~/.cache/codex-runtimes/codex-primary-runtime/dependencies/` as the fallback when that loader is unavailable. The current Codexless public surface does not expose a `load_workspace_dependencies` action. Read-only inspection of the documented fallback root found Poppler `26.07.0` under `dependencies/native/poppler/Library/bin/`, and `runtime.json` independently lists `poppler` among the managed native dependencies for bundle `26.903.11726`.
+
+A bounded two-page PDF probe was rendered model-free with the exact managed `pdftoppm.exe` at 150 DPI. It exited `0`, produced two PNG pages, and both pages were then visually inspected through the already-qualified `codex.image_read` path. The expected text, colored rectangles, diagonal line, and increasing bar geometry were visible.
+
+This establishes the exact simple-case pipeline:
+
+```text
+authorized PDF bytes
+    -> maintained OpenAI/Codex primary-runtime Poppler
+    -> PNG page representation
+    -> codex.image_read
+    -> ChatGPT native vision
+    -> PASS
+```
+
+Poppler emitted missing-display-font warnings for `Symbol` and `ArialUnicode`. They did not affect the synthetic probe, but they prevent a stronger representative-document fidelity claim until annotated/math/table/multi-column/scanned cases are tested.
+
+Validation 040 therefore remains a valid execution result but must be interpreted narrowly: its Codex turn found an unusable MiKTeX `pdftoppm` stub and did not discover the managed primary-runtime Poppler path. It is no longer evidence that a separate Poppler installation is required.
+
+The architectural gap is now a thin semantic seam rather than a rendering engine:
+
+```text
+workspace-authorized PDF
+    -> supported managed-runtime resolution
+    -> bounded selected-page rendering
+    -> standard MCP image content
+    -> source/render provenance
+```
+
+Primary evidence: `docs/local_execution/validation/044_managed_primary_runtime_poppler_page_rendering_probe_qualified.md` and Checkpoint 285.
+
+## 19. Current disposition
 
 ```text
 KEEP
     workspace-standard authority architecture
     live codex.document_read baseline
     live codex.image_read -> ChatGPT vision path
+    maintained primary-runtime Poppler as the current PDF page-render reuse candidate
     deterministic provenance and fail-closed constraints
 
 STOP FOR NOW
