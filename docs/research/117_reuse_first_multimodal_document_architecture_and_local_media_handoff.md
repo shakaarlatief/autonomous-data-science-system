@@ -794,7 +794,21 @@ This makes `codex.document_file_link` the preferred whole-PDF transport within t
 
 Primary evidence: Validation 054 and Checkpoint 295.
 
-## 29. Current disposition
+## 29. E117-5i live result: scanned resource-link full-PDF access passed
+
+The 14-page `Adobe Scan BDS_Exercises_Misha.pdf` was directly inspected on the ChatGPT side after resource-link materialization. It is primarily scanned/image-based with one full-page raster JPEG per page plus an existing noisy text layer. ChatGPT used maintained PDF inspection/rendering plus `pdftotext` and `pdfimages -list`; it did not invoke OCR because direct rendering/vision plus the existing text layer was sufficient for the requested analysis.
+
+Accepted result:
+
+```text
+SCANNED_RESOURCE_LINK_NEXT_TURN_FULL_PDF_ACCESS=PASS
+```
+
+This means the preferred resource-link whole-PDF route now covers both representative dense/born-digital PDFs and scanned/image-heavy PDFs within the current 4 MiB source ceiling without custom ADS OCR. OCR remains an optional maintained escalation for a future genuinely image-only/no-useful-text case. The next primary question is larger-file scaling and whether the current store/source ceiling should be improved before acceptance as a broader document-handoff architecture.
+
+Primary evidence: Validation 055 and Checkpoint 296.
+
+## 30. Current disposition
 
 ```text
 KEEP
