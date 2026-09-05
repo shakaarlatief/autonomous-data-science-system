@@ -930,6 +930,67 @@ Primary context: Foundation 014, D-024, D-032, D-034, Research 064, Research 103
 
 ---
 
+## AB-028: Post-Browser Astra independent architecture review after the GPT-5.6 Sol baseline
+
+**Status:** READY AFTER BROWSER BASELINE
+**Priority:** P1
+
+The project owner explicitly wants the newly available Astra model treated as a material architecture-review opportunity rather than a routine model substitution. Do not switch the current unfinished Research 117 Browser thread away from GPT-5.6 Sol. First finish and fully live-qualify the existing 5.6 Sol Browser solution so ADS has one clean accepted baseline with attributable implementation and test evidence.
+
+After that baseline is complete, open a **new Codex thread with Astra**. The Astra task should not begin as a narrow request to "improve the Browser fix" and should not be over-anchored on the existing implementation. Its first pass should independently review the broader current integration architecture and ask what it would design or simplify from the present requirements and evidence.
+
+Primary review scope:
+
+```text
+ChatGPT <-> Codexless <-> Codex App Server <-> Codex Desktop
+
+active-turn writer ownership and cooperative handoff
+approval supervision and native auto_review
+Call Codex consent vs lower-layer reviewer policy
+Rich Task Cards and task/thread lifecycle
+thread persistence, rebind, archive/unarchive and cross-client continuity
+runtime publication / maintenance authority
+Browser / Chrome compatibility and file-upload fallback
+model-free execution and semantic tool boundaries
+local document / image / PDF handoff architecture
+host materialization limits and fallback design
+upstream mechanisms that may replace custom Codexless machinery
+security, authority, fail-closed behavior and unnecessary complexity
+```
+
+Desired comparison sequence:
+
+```text
+1. GPT-5.6 Sol finishes the existing Browser thread.
+2. ChatGPT independently reviews the resulting code and evidence.
+3. Publish/live-test/fix until the Browser + PDF fallback baseline is genuinely accepted.
+4. Commit/push/checkpoint/validate that baseline.
+5. Start a fresh Astra Codex thread.
+6. Give Astra repository authority/evidence and requirements, but ask for an independent architecture assessment before showing it the implementation as the assumed answer.
+7. Then let Astra inspect and challenge the accepted 5.6 Sol implementation.
+8. Compare proposed simplifications/improvements against the live-qualified baseline.
+9. Change ADS only where evidence supports an improvement; newer-model suggestions are not accepted merely because the model is newer.
+```
+
+Questions Astra should explicitly answer include:
+
+```text
+Is the Browser fallback architecture itself the right solution?
+Did the accepted baseline introduce avoidable complexity?
+Are there newer/native Codex or OpenAI mechanisms ADS missed?
+Are any Skills/Browser/App Server assumptions obsolete?
+Can custom compatibility layers now be deleted or narrowed?
+Is there a more direct solution to local-file/PDF handoff?
+Are approval, writer-ownership, task-card or runtime-publication boundaries incomplete?
+What would Astra design if starting from current ADS requirements rather than implementation history?
+```
+
+This item is also an architecture-evolution trigger under AB-027: a materially stronger/new model can justify a deliberate independent re-evaluation of previously accepted custom architecture, especially in a rapidly changing upstream ecosystem. The trigger does **not** mean rewriting working systems by default. The professional comparison is an evidence-backed challenger review against a fully tested baseline.
+
+Related work: Research 113, Research 117, AB-003, AB-004, AB-005, AB-007, AB-012, AB-013, AB-017, AB-018, AB-019, AB-020, and AB-027.
+
+---
+
 # Continuation obligations that must not be forgotten
 
 ## CO-001: MC-0010 Claude dual-repository research
