@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 304
+**Checkpoint:** 305
 **Date:** 2026-09-05
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -24,10 +24,13 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
 
-Checkpoint 304 is the current boundary. Research 117 localized the clean ChatGPT host materialization boundary for the live MCP `resource_link` PDF handoff to a narrow observed interval: 7,417,428 bytes is the highest confirmed clean PASS and 7,993,210 bytes is the lowest confirmed clean FAIL, a 575,782-byte interval. This is not claimed as an exact or universal host maximum. Resource-link preparation continues to succeed beyond that range, so the limiting hidden host materialization/resolution layer remains unobserved. The direct HTTPS/raw-PDF alternative was separately classified `NOT_FEASIBLE` under the current Secure MCP Tunnel because it transports MCP JSON-RPC rather than exposing an arbitrary public raw-GET origin.
+Checkpoint 305 is the current boundary. Research 117 still retains the clean MCP `resource_link` host-materialization interval from Checkpoint 303: 7,417,428 bytes is the highest confirmed clean PASS and 7,993,210 bytes is the lowest confirmed clean FAIL, without claiming an exact or universal host maximum. The direct HTTPS/raw-PDF alternative remains `NOT_FEASIBLE` under the current Secure MCP Tunnel.
 
-Two cross-cutting Codexless corrections are now live-qualified. Formal Codex turns keep the existing initial `Call Codex?` consent and bounded permission profile but explicitly use App Server `approvalPolicy=on-request` with `approvalsReviewer=auto_review`; a fresh routine-command qualification completed without Codexless entering `awaitingApproval`. A separate PowerShell wrapper-classifier false positive was then corrected after ordinary Markdown content containing the word `Codex` was mistaken for a wrapped Codex CLI launch. Live qualification proved that documentation/search/here-string data is allowed again, model-free new-file creation with Codex prose passes, and a genuine wrapped `codex exec --help` remains blocked with `FORMAL_CODEX_AGENT_REQUIRED`. Browser upload compatibility remains unresolved with `chrome_skill_unavailable` and is the next Research 117 fallback investigation.
+The GPT-5.6 Sol Browser compatibility investigation is now complete as a blocked architecture baseline. It localized `chrome_skill_unavailable` primarily to stale Codexless discovery assumptions around the retired `chrome:control-chrome` Skill projection and qualified current installed Browser/Chrome plugin discovery with a 7/7 focused compatibility pass. Maintained Browser documentation and installed source establish automatic release of claimed existing tabs at the end of a genuine Codex turn, but current Codexless Browser execution uses direct model-free `mcpServer/tool/call` without a genuine `turn/start -> turn/completed` lifecycle and no public release/unclaim method was found. The candidate therefore stopped before publication, real tab claim, or PDF upload with classification `BLOCKED_NO_SUPPORTED_CODEXLESS_DIRECT_CALL_CLEANUP`.
 
+The complete GPT-5.6 Sol baseline is preserved in the private local-runtime repository at `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and successful push postflight. The next active Research 117 step is AB-028: start a fresh Astra Codex Desktop thread for an independent architecture and solution search that actively challenges the Browser execution primitive and broader ChatGPT <-> Codexless <-> Codex App Server <-> Codex Desktop architecture rather than merely patching the 5.6 Sol candidate.
+
+Two earlier cross-cutting Codexless corrections remain live-qualified. Formal Codex turns preserve the initial `Call Codex?` consent and bounded permission profile while using App Server `approvalPolicy=on-request` with `approvalsReviewer=auto_review`; the PowerShell wrapper classifier also allows documentation/search/here-string data containing `Codex` while genuine wrapped Codex CLI execution remains blocked.
 Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. At that qualification boundary `big-data-statistics` had only `read`; Research 117 later added `agent` explicitly for the bounded reuse experiment while retaining no write/browser/Git capability. A fresh disposable ChatGPT conversation had already invoked `codex.document_read` against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive baseline qualification evidence.
 
 The PDF parser is hardened out of the main Codexless event loop into a dedicated bounded Node child process with a 256 MiB V8 old-space ceiling, 30-second default hard deadline, bounded protocol output, Node permission restrictions, disabled PDF JavaScript evaluation/system-font lookup/worker fetch, and deterministic termination/recovery on timeout. The main process performs a bounded file-handle read capped at 32 MiB plus one byte and revalidates identity/size after reading. Focused qualification is `DOCUMENT_READ_REGRESSION=PASS tests=11`, while flexible authority, bounded Git, dependency, and 52-tool public-surface regressions also pass.
@@ -38,11 +41,11 @@ The workspace registry is now revision `5`, content hash `0016f8ccaf84a7f9ff5188
 
 Checkpoint 278 remains the accepted Research 116 core boundary: live flexible multi-repository authority, explicit two-layer admission of the private `autonomous-data-science-system-local-runtime` workspace, reviewed non-secret runtime-repository bootstrap, the private authenticated Git transport correction, and end-to-end generalized fetch/push qualification against `ads-local-runtime`.
 
-The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is now proven through the bounded host-network substrate with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true` at private runtime commit `0ce61ba794929ee71c555d480a936fdced28ef2e`.
+The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is proven through the bounded host-network substrate. The latest preserved local-runtime boundary is `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`, which stores the GPT-5.6 Sol Browser baseline plus the guarded recurring Git-ACL repair helper. Its push passed `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true`.
 
-The synchronized public boundary immediately before this preservation work is commit `4b36d625d4a9f038bb72c280959e061f97d6b94d`, where local `HEAD` and `origin/v1-source-vault-bootstrap-resume` were equal. That exact public HEAD includes Checkpoint 302 and Validation 061. The known protected `.tmp/pytest-*` warning residue remains untouched.
+The public baseline immediately before Checkpoint 305 preservation was `30437ff9df9a9bfcedcba8841c65e68fc309549a`, which already included the AB-028 Astra follow-up obligation. The known protected `.tmp/pytest-*` warning residue remains untouched.
 
-The live Codexless server currently exposes 56 public MCP tools on `0.1.1-preview.14` / `codexless-public-preview-v2`. It preserves the live-qualified `codex.document_read`, `codex.image_read`, `codex.document_render`, embedded `codex.document_file_read`, and resource-link `codex.document_file_link` paths. The resource-link source ceiling is 96 MiB, but clean ChatGPT host materialization is only confirmed through 7,417,428 bytes and fails from 7,993,210 bytes in the current observed near-threshold ladder. Formal Codex turns now request native `auto_review` under `approvalPolicy=on-request` while preserving the initial `Call Codex?` consent and existing bounded permission profile. The PowerShell direct-Codex guard is also live-qualified after correcting its documentation-text false positive without weakening genuine wrapped Codex CLI blocking.
+The live Codexless server remains on the previously qualified preview.14 document/runtime boundary for this checkpoint; the GPT-5.6 Sol Browser candidate was deliberately not published. The live document paths, 96 MiB resource-link source ceiling, near-threshold host materialization evidence, native `auto_review`, and direct-Codex guard therefore remain unchanged. Checkpoint 305 changes the architecture/research boundary, not the live Browser runtime.
 
 Validation 035 now preserves a separate supervision-liveness gap discovered during the active Research 116 Codex candidate task. After ChatGPT approved one in-turn command and ended its response, Codex resumed, reached a second approval shortly afterward, and remained blocked until the user sent another message. The Rich Task Card could reflect `Action required`, but ChatGPT itself did not autonomously wake to inspect/resolve the new state. The same reproduction also reinforces the open question of whether writer ownership can be cooperatively transferred/reacquired during an active turn rather than only through the already-verified idle archive/unarchive/rebind handoff. This is now a first-class Codexless research/architecture issue, not an incidental UI observation.
 
@@ -69,7 +72,7 @@ H6 remains live: completed ADS Codex tasks expose the exact persisted `threadId`
 
 The durable identity is `threadId`; Codexless `agentRef` values are ephemeral runtime handles. Model-free `codex.agent_bind` remains verified, including re-binding after a complete Codexless restart.
 
-The final guided handoff used exact persisted thread `01a063b1-0d21-7011-b17c-514eb0359a15`. After source marker `PROCEED_IN_CHAT_UI_SOURCE_COMPLETE`, the user opened the exact thread in Desktop, selected `Proceed in Chat`, archived it while Desktop remained running, and selected `I've archived it — Continue`. The card reached `Ready in Chat` through model-free verification, unarchive, and rebound without starting a model turn.
+The final guided handoff used exact persisted thread `01a063b1-0d21-7011-b17c-514eb0359a15`. After source marker `PROCEED_IN_CHAT_UI_SOURCE_COMPLETE`, the user opened the exact thread in Desktop, selected `Proceed in Chat`, archived it while Desktop remained running, and selected `I've archived it â€” Continue`. The card reached `Ready in Chat` through model-free verification, unarchive, and rebound without starting a model turn.
 
 A separate stateless MCP request resolved exact task reference `task_e89b4b3c-0e43-40a2-b3d3-aa32a9fe31e7` to fresh `agentRef` `agent_645095a6-efa5-4224-a8c1-029da74abea7`, the same `threadId`, `boundThread=true`, `status=idle`, `canSend=true`, `turnId=null`, `pendingApproval=null`, `modelTurnStarted=false`, and `handoffStatus=ready`. This proves Ready survives across distinct requests through runtime-lifetime shared `agentPreviewState`; it remains intentionally non-persistent across process restart.
 
@@ -202,7 +205,7 @@ merge commits
 arbitrary branch / remote / refspec selection
 public codex.process
 unrestricted host access
-automatic ACL repair
+arbitrary or unguarded ACL repair
 permission widening to bypass a guard
 ```
 
@@ -237,7 +240,7 @@ restore and verify the ADS authority bootstrap
 -> stop if a DENY is detected
 ```
 
-ACL repair is never automatic merely to make a Git operation pass.
+ACL repair is never automatic merely to make a Git operation pass. A project-owner standing authorization now exists only for the exact recurring registered-repository workspace-capability DENY defect after fresh read-only diagnosis matches the guarded contract in `ACL_INTEGRITY_GATE.md`; any drift remains a stop condition.
 
 Broader reusable lessons are preserved in:
 
@@ -321,7 +324,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 304 is now the current meaningful project boundary. Checkpoint 304 preserves the live-qualified direct-Codex guard correction: ordinary PowerShell documentation/search/here-string data containing `Codex` is allowed again, model-free new-file creation passes, and genuine wrapped `codex exec` remains blocked. Checkpoint 303 preserves the localized resource-link host materialization interval, direct-HTTPS rejection, native `auto_review` live qualification, and Browser fallback continuation. Checkpoints 302-293 remain the detailed progression from intermediate/large resource-link host tests through the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result, Checkpoints 291-280 preserve the preceding document-handoff/reuse-first/render/image experiments, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 305 is now the current meaningful project boundary. Checkpoint 305 preserves the completed GPT-5.6 Sol Browser compatibility baseline: current Browser/Chrome plugin discovery is qualified, genuine-turn claimed-tab cleanup is understood, direct Codexless call cleanup remains unsupported/unproven, no Browser candidate was published, and the independent Astra architecture/solution review is now ready. Checkpoint 304 preserves the live-qualified direct-Codex guard correction, while Checkpoint 303 preserves the localized resource-link host materialization interval, direct-HTTPS rejection, native `auto_review` live qualification, and Browser fallback opening. Checkpoints 302-293 remain the detailed progression from intermediate/large resource-link host tests through the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result, Checkpoints 291-280 preserve the preceding document-handoff/reuse-first/render/image experiments, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -342,6 +345,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/305_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
+docs/local_execution/validation/064_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
 docs/checkpoints/304_direct_codex_guard_false_positive_live_qualified.md
 docs/local_execution/validation/063_direct_codex_guard_false_positive_live_qualified.md
 docs/checkpoints/303_resource_link_boundary_native_auto_review_live_qualified.md
@@ -468,6 +473,10 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/305_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
+docs/local_execution/validation/064_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
+docs/checkpoints/304_direct_codex_guard_false_positive_live_qualified.md
+docs/local_execution/validation/063_direct_codex_guard_false_positive_live_qualified.md
 docs/checkpoints/302_clean_6_63mib_resource_link_host_materialization_passed.md
 docs/local_execution/validation/061_clean_6_63mib_resource_link_host_materialization_passed.md
 docs/checkpoints/301_clean_8mib_resource_link_host_materialization_failed.md

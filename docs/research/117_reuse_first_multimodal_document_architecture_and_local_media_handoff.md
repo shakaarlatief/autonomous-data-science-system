@@ -985,7 +985,37 @@ MODEL_FREE_NEW_FILE_WITH_CODEX_PROSE=PASS
 
 Primary evidence: Validation 063 and Checkpoint 304.
 
-## 40. Current disposition
+## 40. E117 Browser fallback result: GPT-5.6 Sol discovery fix qualified, direct-call cleanup blocked
+
+The existing GPT-5.6 Sol Codex Desktop Browser thread completed a bounded continuation against the current local-runtime implementation. It localized `chrome_skill_unavailable` primarily to Codexless adapter drift: the old adapter required the retired `chrome:control-chrome` Skill projection, while current Codex `0.153.0` exposes maintained Browser/Chrome bundles through installed-plugin discovery plus the supported `node_repl` Browser runtime.
+
+A focused compatibility candidate now discovers an enabled, available, same-build `openai-bundled` Browser/Chrome pair, validates manifests/files/cache containment, binds the current Browser client hash, preserves the legacy Skill fallback, and fails closed when current plugins are explicitly disabled. ChatGPT independently reran the focused suite and obtained `7/7 PASS`; syntax checks and `git diff --check` also passed.
+
+The decisive remaining boundary is lifecycle rather than discovery. Maintained Browser documentation and the installed Browser service establish that an existing user tab claimed through `browser.user.claimTab()` is automatically released and left open when a genuine Codex turn ends. `markDeliverable()` and `markHandoff()` are survival classifications, not public release APIs. No maintained `releaseTab` / `unclaimTab` equivalent was found.
+
+Current Codexless Browser execution uses direct model-free `mcpServer/tool/call` rather than a genuine `turn/start -> turn/completed` lifecycle. Therefore the maintained automatic claimed-tab cleanup contract cannot safely be inherited merely by supplying synthetic turn/session metadata. The investigation explicitly rejected inventing `turn_ended`, treating mark operations as release, closing the user's tab as cleanup, relying on process teardown, or calling private cleanup internals.
+
+Accepted classification:
+
+```text
+RESEARCH_117_BROWSER_COMPATIBILITY =
+BLOCKED_NO_SUPPORTED_CODEXLESS_DIRECT_CALL_CLEANUP
+```
+
+No Browser candidate was published, no real user tab was claimed or mutated, no PDF was uploaded, and no Machine Learning authority was widened. The maintained Browser/Chrome runtime itself is reachable in the Codex Desktop host context, so Browser reinstall is not required for the current root cause.
+
+The complete GPT-5.6 Sol baseline is preserved in the private local-runtime repository at:
+
+```text
+e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c
+```
+
+with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and successful push postflight. This baseline is intentionally a blocked architecture result, not accepted live Browser runtime code.
+
+The next Research 117 action is the independent Astra architecture/solution search preserved in AB-028. Astra should challenge the execution primitive itself and investigate supported alternatives such as a genuine App Server turn lifecycle, another maintained Browser primitive, an explicit release contract, a new-tab/deliverable design that avoids claiming existing user tabs, or a different whole-PDF fallback.
+
+Primary evidence: Validation 064 and Checkpoint 305.
+## 41. Current disposition
 
 ```text
 KEEP
@@ -1005,9 +1035,9 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 INVESTIGATE FIRST
-    current Browser/Chrome compatibility drift behind `chrome_skill_unavailable`
-    ADS Browser -> normal ChatGPT file upload for PDFs above the clean resource-link host materialization range
-    only after Browser evidence decide whether a separate public download gateway or another whole-PDF transport is justified
+    independent Astra architecture/solution search for the blocked Browser direct-call lifecycle
+    supported Browser execution/release alternatives before any real tab claim or PDF upload
+    only after that review decide whether Browser upload, a different whole-PDF transport, or an upstream mechanism is justified
 
 KEEP AS SUPPORTING / FALLBACK
     live `codex.document_file_link` within its clean host-qualified range and as preparation evidence above it
@@ -1015,7 +1045,7 @@ KEEP AS SUPPORTING / FALLBACK
     document/page representation -> already-qualified native image path
     native OpenAI PDF file-input API only if a separate API path is explicitly accepted
 
-PAUSE WHILE THE BROWSER WHOLE-PDF FALLBACK IS BEING QUALIFIED
+PAUSE WHILE THE ASTRA BROWSER / WHOLE-PDF ARCHITECTURE REVIEW IS ACTIVE
     authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
 
 BENCHMARK ONLY IF NEEDED

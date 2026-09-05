@@ -102,7 +102,7 @@ Do not use the Git mutation itself as a probe.
 
 ## Repair boundary
 
-ACL repair is never automatic. A repair requires a separately authorized, evidence-driven step that at minimum:
+ACL repair is never automatic merely because a Git mutation is desired. A repair requires either a separately authorized evidence-driven step or an already-recorded standing authorization whose exact guard contract matches the fresh diagnosis. In either case the repair must at minimum:
 
 ```text
 backs up the current .git SDDL to private/local temporary storage;
@@ -121,6 +121,29 @@ Do not hard-code a historical capability SID into the evergreen public procedure
 
 Do not broaden filesystem roots, grant generic FullControl, modify unrelated repositories, alter `.agents` or `.codex`, or change tunnel/network authority as part of an ACL repair.
 
+## Standing authorization for the exact recurring ADS Git-metadata defect
+
+On 2026-09-05 the project owner explicitly granted standing authorization for future repair of the already-reproduced lifecycle-sensitive Codex workspace-capability DENY condition so repeated approval is not required when the exact same guarded defect recurs.
+
+This standing authorization is deliberately narrow. It is valid only after fresh read-only diagnosis proves all of the following:
+
+```text
+target is the registered ADS repository's own .git metadata path
+current sandbox token / authority evidence resolves the exact active workspace-capability SID
+exactly two explicit DENY ACEs for that SID are present on .git
+the dedicated .git writable capability is current and retains Modify on .git and FETCH_HEAD
+no broader path, unrelated repository, credential, registry, service or host authority is involved
+the guarded helper creates a pre-repair SDDL backup outside ordinary Git content
+in-memory removal reaches exactly two removed / zero remaining before Set-Acl
+post-repair .git and FETCH_HEAD contain no matching DENY
+dedicated .git writable Modify remains present after repair
+```
+
+If any identity, rule count, path, capability, ACL shape, backup condition or postcondition differs, the standing authorization does not apply. Stop and obtain a new evidence-driven decision rather than broadening the repair.
+
+The standing authorization does not grant arbitrary ACL mutation, generic permission widening, FullControl, historical-SID reuse, or automatic repair of unknown Git failures. The helper must resolve/use current evidence and fail closed on drift.
+
+Primary evidence: Validation 064 and the guarded local-runtime helper preserved in the private local-runtime repository.
 ## Post-repair rule
 
 A successful ACL repair does not itself authorize Git synchronization. After repair:

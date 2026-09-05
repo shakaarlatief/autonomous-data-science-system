@@ -932,12 +932,12 @@ Primary context: Foundation 014, D-024, D-032, D-034, Research 064, Research 103
 
 ## AB-028: Post-Browser Astra independent architecture review after the GPT-5.6 Sol baseline
 
-**Status:** READY AFTER BROWSER BASELINE
+**Status:** READY / GPT-5.6 SOL BLOCKED BASELINE PRESERVED
 **Priority:** P1
 
-The project owner explicitly wants the newly available Astra model treated as a material architecture-review opportunity rather than a routine model substitution. Do not switch the current unfinished Research 117 Browser thread away from GPT-5.6 Sol. First finish and fully live-qualify the existing 5.6 Sol Browser solution so ADS has one clean accepted baseline with attributable implementation and test evidence.
+The project owner explicitly wants the newly available Astra model treated as a material architecture-review opportunity rather than a routine model substitution. The existing GPT-5.6 Sol Research 117 Browser thread has now completed its bounded baseline: maintained Browser/Chrome discovery was qualified, but live Browser publication correctly stopped because direct `mcpServer/tool/call` has no proven supported claimed-tab cleanup equivalent to a genuine Codex turn. That blocked result is preserved as Validation 064 / Checkpoint 305 and private local-runtime commit `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`.
 
-After that baseline is complete, open a **new Codex thread with Astra**. The Astra task should not begin as a narrow request to "improve the Browser fix" and should not be over-anchored on the existing implementation. Its first pass should independently review the broader current integration architecture and ask what it would design or simplify from the present requirements and evidence.
+The next action is to open a **new Codex thread with Astra**. The Astra task should not begin as a narrow request to "improve the Browser fix" and should not be over-anchored on the existing implementation. Its first pass should independently review the broader current integration architecture, actively search for supported solutions to the Browser lifecycle blocker, and ask what it would design or simplify from the present requirements and evidence.
 
 Primary review scope:
 
@@ -961,14 +961,14 @@ security, authority, fail-closed behavior and unnecessary complexity
 Desired comparison sequence:
 
 ```text
-1. GPT-5.6 Sol finishes the existing Browser thread.
-2. ChatGPT independently reviews the resulting code and evidence.
-3. Publish/live-test/fix until the Browser + PDF fallback baseline is genuinely accepted.
-4. Commit/push/checkpoint/validate that baseline.
+1. GPT-5.6 Sol finished the existing Browser thread and qualified current-plugin discovery.
+2. ChatGPT independently reviewed the code/tests and confirmed the maintained genuine-turn cleanup contract.
+3. The baseline stopped safely before publication because direct-call claimed-tab cleanup is unsupported/unproven.
+4. Commit/push/checkpoint/validate that blocked baseline as evidence rather than forcing a workaround.
 5. Start a fresh Astra Codex thread.
-6. Give Astra repository authority/evidence and requirements, but ask for an independent architecture assessment before showing it the implementation as the assumed answer.
-7. Then let Astra inspect and challenge the accepted 5.6 Sol implementation.
-8. Compare proposed simplifications/improvements against the live-qualified baseline.
+6. Give Astra repository authority/evidence and requirements, but ask for an independent architecture and solution search before treating the GPT-5.6 Sol implementation as the assumed answer.
+7. Then let Astra inspect and challenge the preserved GPT-5.6 Sol baseline and its blocker.
+8. Compare supported alternatives, simplifications and upstream mechanisms against that evidence-backed baseline.
 9. Change ADS only where evidence supports an improvement; newer-model suggestions are not accepted merely because the model is newer.
 ```
 
@@ -976,19 +976,22 @@ Questions Astra should explicitly answer include:
 
 ```text
 Is the Browser fallback architecture itself the right solution?
-Did the accepted baseline introduce avoidable complexity?
+Did the preserved baseline introduce avoidable complexity?
 Are there newer/native Codex or OpenAI mechanisms ADS missed?
 Are any Skills/Browser/App Server assumptions obsolete?
 Can custom compatibility layers now be deleted or narrowed?
+Is there a supported Browser execution primitive with a genuine cleanup lifecycle?
+Can existing-tab claiming be avoided entirely?
 Is there a more direct solution to local-file/PDF handoff?
 Are approval, writer-ownership, task-card or runtime-publication boundaries incomplete?
 What would Astra design if starting from current ADS requirements rather than implementation history?
 ```
 
+Astra should actively search for solutions rather than merely review the blocker. Candidate outcomes include a supported genuine App Server turn/lifecycle, another maintained Browser API path, an explicit release/unclaim contract, a new-tab/deliverable architecture, a different whole-PDF handoff, or a well-evidenced conclusion that no supported route currently exists.
+
 This item is also an architecture-evolution trigger under AB-027: a materially stronger/new model can justify a deliberate independent re-evaluation of previously accepted custom architecture, especially in a rapidly changing upstream ecosystem. The trigger does **not** mean rewriting working systems by default. The professional comparison is an evidence-backed challenger review against a fully tested baseline.
 
 Related work: Research 113, Research 117, AB-003, AB-004, AB-005, AB-007, AB-012, AB-013, AB-017, AB-018, AB-019, AB-020, and AB-027.
-
 ---
 
 # Continuation obligations that must not be forgotten
