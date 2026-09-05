@@ -1074,12 +1074,11 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 TEST NEXT
-    controlled second formal Astra worker from the registered ADS repository-root cwd
-    exact maintained primary-runtime Python + Poppler paths supplied with no installation
-    worker file activity confined to the held-out scratch source/output subtree
-    maintained extraction + all-page local rendering + native local-image vision
-    source-bound evidence receipt plus independent held-out evaluation
-    classify the changed-condition workflow PASS / FAIL / AMBIGUOUS before live integration
+    direct ChatGPT local-file capability matrix under Research 119
+    large-PDF direct source/file transport beyond the clean resource_link host envelope without a reasoning-model intermediary
+    generic/native whole-file handoff for DOCX/PPTX/XLSX where supported
+    faithful model-free text/structure/rendered-media fallbacks where whole-file handoff is unavailable
+    classify success by what source information reaches ChatGPT directly
 
 KEEP AS SUPPORTING / FALLBACK
     live `codex.document_file_link` within its clean host-qualified range and as preparation evidence above it
@@ -1089,7 +1088,9 @@ KEEP AS SUPPORTING / FALLBACK
 
 DEFER / OPTIONAL FALLBACK
     authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
-    Browser upload and direct Browser mutation unless the semantic workflow fails a real requirement
+    Browser upload only if cleaner supported direct host/file transport is inadequate
+    direct Browser mutation unless a real direct-access transport requirement justifies it
+    formal Codex semantic document delegation as a separate optional future capability, not a source-access substitute
 
 BENCHMARK ONLY IF NEEDED
     MarkItDown
@@ -1097,4 +1098,31 @@ BENCHMARK ONLY IF NEEDED
     PyMuPDF4LLM
 ```
 
-This is the current best reuse-first direction, not yet final architecture acceptance.
+This current disposition is governed by Research 119's restored direct-access objective.
+
+## 43. Research 119 scope correction: direct ChatGPT local-file access is the governing objective
+
+The project owner clarified that this workstream is not primarily designing a document-analysis architecture for the future ADS application. The immediate goal is to extend ordinary ChatGPT chat with bounded access to files in already-authorized local-machine workspaces through Codexless.
+
+The manual-upload baseline makes the acceptance criterion precise. The user can already attach supported files directly to ChatGPT, including large PDFs. Therefore a pipeline in which a Codex reasoning model reads the local source and returns a summary/evidence package to ChatGPT does not solve the intended access problem. It is delegated document analysis and remains a separate optional capability.
+
+The governing distinction is now:
+
+```text
+DIRECT CHATGPT LOCAL-FILE ACCESS
+    actual source or faithful model-free source representation reaches ChatGPT directly
+
+DELEGATED DOCUMENT ANALYSIS
+    another reasoning model interprets the source before ChatGPT receives it
+
+ADS PRODUCT ARCHITECTURE
+    separate future system-design question that may reuse either capability when justified
+```
+
+This correction preserves the useful Research 118 findings about resource links, host materialization, Browser lifecycle, maintained PDF runtimes, local rendering, source identity and provenance. It reclassifies the semantic evidence receipt and held-out worker as optional future delegation research rather than the active large-file solution.
+
+The prepared second Astra semantic-worker task was declined before any model turn. No semantic Attempt 02 remains pending.
+
+Research 117 therefore returns to its original local-media handoff problem: expose authorized local file content directly to ChatGPT through whole-file/native transport where possible, and otherwise through deterministic, faithful model-free representations such as text, structure, cells or rendered media.
+
+Primary evidence: Research 119 and Checkpoint 308.

@@ -157,16 +157,16 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** RESEARCHING / ATTEMPT 01 AMBIGUOUS / CONTROLLED SECOND RUN READY
+**Status:** RESEARCHING / DIRECT CHATGPT LOCAL-FILE ACCESS OBJECTIVE RESTORED
 **Priority:** P1
 
-Research 118 / Validation 066 / Checkpoint 307 now preserve the first held-out 11,825,407-byte semantic worker as `AMBIGUOUS`, not a semantic failure. The worker stopped fail-closed when it could not establish the maintained execution runtime from the selected nested scratch cwd. Model-free reconciliation then proved the exact maintained primary-runtime parser/extractor/Poppler stack is available, reproduced the nested-cwd write setup failure, rendered all eight pages successfully from the registered ADS repository root, and verified the local-image-to-native-vision path. The next action is the controlled changed-condition second worker from the repository-root execution context, not new rendering/OCR implementation, Browser upload, or a blind retry.
+Research 119 / Checkpoint 308 restore the actual objective: ordinary ChatGPT chat should gain direct bounded access to files in already-authorized local-machine workspaces through Codexless, without requiring the user to manually upload each file and without inserting a Codex reasoning model merely because the source is local. Whole-file/native handoff is preferred when supported; faithful model-free text, structure, cells or rendered media delivered directly to ChatGPT are valid fallbacks. Research 118's semantic-worker/receipt branch remains preserved only as optional future delegated-analysis or ADS-product research. The prepared second Astra semantic-worker task was declined before any model turn.
 
 The first-class `codex.document_read` PDF baseline is no longer open work. It is live-qualified on Codexless `0.1.1-preview.9` / 52 tools through Validation 039 and Checkpoint 279, including the isolated bounded `pdfjs-dist@5.4.624` parser child and a real read-only personal-PDF test.
 
-Research 117 has now changed the default direction: before ADS builds any of the capabilities below, first test/reuse native OpenAI PDF multimodality, installed Codex PDF/Documents/Presentations/Spreadsheets Skills, App Server image/local-image semantics, and only then mature converters such as MarkItDown, Docling, or PyMuPDF4LLM if concrete gaps remain. The likely missing problem is a safe local-file/media handoff seam, not document understanding itself.
+Research 117/119 now applies a direct-access-first rule: first reuse supported ChatGPT/OpenAI/MCP file transport and model-free source/media delivery so ChatGPT itself receives the authorized local source. Installed Codex Skills and Codex workers can still inform implementation or serve optional delegation workflows, but they are not the default data path for this objective. Mature converters such as MarkItDown, Docling, or PyMuPDF4LLM remain candidates only when a concrete format gap cannot be solved through supported direct/native or deterministic source representations.
 
-Remaining document-system directions are deliberately separate capabilities and are paused pending those reuse experiments:
+The immediate next route is a file-type capability matrix: large-PDF direct access beyond the current resource-link host boundary, then DOCX/PPTX/XLSX whole-file handoff where supported and faithful model-free structure/rendering fallbacks where it is not. Remaining document-system directions are separate capabilities:
 
 ```text
 codex.document_render
@@ -937,7 +937,7 @@ Primary context: Foundation 014, D-024, D-032, D-034, Research 064, Research 103
 **Status:** CLOSED / PHASE 2 COMPLETE / RESEARCH 118
 **Priority:** P1
 
-Closure 2026-09-05: Astra completed the independent Phase 1 review before private Sol exposure, then completed Phase 2 against the frozen Sol baseline. Research 118 / Validation 065 / Checkpoint 306 preserve the reconciliation. The reviewed private source-bound PDF evidence candidate is preserved at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`. Direct existing-tab Browser mutation remains blocked, direct new-tab mutation is deferred as lifecycle-unproven, and the Browser-free held-out semantic PDF experiment is now the exact next Research 117 action. This backlog item is closed; live semantic qualification remains under AB-005 / Research 117-118 rather than reopening AB-028.
+Closure 2026-09-05: Astra completed the independent Phase 1 review before private Sol exposure, then completed Phase 2 against the frozen Sol baseline. Research 118 / Validation 065 / Checkpoint 306 preserve that reconciliation. The reviewed private source-bound PDF evidence candidate is preserved at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`. Direct existing-tab Browser mutation remains blocked and direct new-tab mutation remains deferred as lifecycle-unproven. Research 119 / Checkpoint 308 subsequently corrected the governing local-file objective: the Phase 2 semantic-worker recommendation is optional delegated-analysis research, not the direct ChatGPT file-access solution. AB-028 stays closed; the active direct-access work remains under AB-005 / Research 117/119.
 
 The project owner explicitly wants the newly available Astra model treated as a material architecture-review opportunity rather than a routine model substitution. The existing GPT-5.6 Sol Research 117 Browser thread has now completed its bounded baseline: maintained Browser/Chrome discovery was qualified, but live Browser publication correctly stopped because direct `mcpServer/tool/call` has no proven supported claimed-tab cleanup equivalent to a genuine Codex turn. That blocked result is preserved as Validation 064 / Checkpoint 305 and private local-runtime commit `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`.
 

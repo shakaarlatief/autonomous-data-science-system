@@ -1,0 +1,504 @@
+# Research 119: ChatGPT Local-Machine File Access Objective Restoration
+
+**Date:** 2026-09-05
+**Status:** ACTIVE / SCOPE CORRECTION ACCEPTED / DIRECT CHATGPT LOCAL-FILE ACCESS RESTORED AS THE RESEARCH OBJECTIVE
+**Scope:** Restore the actual purpose of the current Codexless document/file work after Research 118 drifted from direct ChatGPT local-file access into Codex semantic delegation. Define what counts as success, preserve the useful transport/runtime evidence, reclassify the semantic-worker branch as optional future delegation research rather than the solution to the current problem, and establish the next direct-access research route across file types.
+**Authority:** Level-2 local-capability research. The public ADS repository is being used to build, preserve and test this capability, but the capability under investigation is not the ADS product's own document-analysis architecture. Findings may later be reused by ADS if useful. The current target is ordinary ChatGPT chat gaining authorized local-machine file access through Codexless.
+**Declared references:** `research:117`, `research:118`, `checkpoint:307`, `path:docs/local_execution/validation/066_astra_large_pdf_semantic_worker_ambiguous_runtime_cwd_reconciled.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
+
+## 1. The actual objective
+
+The project owner clarified the governing intent explicitly on 2026-09-05.
+
+The goal of this work is:
+
+```text
+user authorizes a local folder/workspace
+    -> Codexless can reach files inside that authorized local root
+    -> this ordinary ChatGPT conversation can directly use those files
+    -> no manual upload should be required for normal use
+```
+
+This is analogous to a capability Codex already has in its own local execution environment, but the target here is **ChatGPT chat itself**, not Codex.
+
+The important distinction is:
+
+```text
+Codex already has authorized local-machine file access
+ChatGPT normally does not
+Codexless is being extended so ChatGPT can gain bounded authorized local-file access too
+```
+
+The public ADS repository is the development and preservation authority for this engineering work. That does not mean the target architecture being designed is automatically the future ADS product architecture.
+
+The eventual ADS system has its own UI, runtime and architecture questions. ADS may choose Codex workers, direct model inputs, parsers, specialized services, or any combination that is best for the ADS product. That is a separate design problem.
+
+## 2. Manual ChatGPT upload is the baseline comparator, not the target workflow
+
+The user can already take a PDF or another supported file and manually attach it to ChatGPT. That gives ChatGPT direct access to the source through normal product file handling.
+
+Therefore the current problem is not:
+
+```text
+How can any model on the machine understand this file?
+```
+
+Codex already makes that possible.
+
+It is also not:
+
+```text
+How can the user somehow get this file into ChatGPT?
+```
+
+Manual upload already makes that possible.
+
+The problem is specifically:
+
+```text
+How can ChatGPT gain the same practical access automatically through the user's existing local authorization,
+without requiring the user to locate and upload the file manually each time?
+```
+
+A proposed solution must therefore be compared against ordinary manual attachment. If it gives ChatGPT a weaker derived interpretation when the user could simply attach the source, it is not solving the intended access problem.
+
+## 3. What counts as direct ChatGPT access
+
+Two forms of access can legitimately satisfy the current objective.
+
+### A. Whole-file/native host access
+
+Preferred when the ChatGPT host supports it:
+
+```text
+authorized local file
+    -> Codexless model-free transport
+    -> actual file becomes a ChatGPT conversation file/input
+    -> ChatGPT can inspect it using normal native file handling
+```
+
+This is the strongest form because ChatGPT retains the source itself and can answer later questions that were not anticipated at handoff time.
+
+`codex.document_file_link` is the clearest existing example for PDF within its currently qualified host envelope.
+
+### B. Faithful model-free source representations delivered directly to ChatGPT
+
+When whole-file materialization is unavailable or inefficient, a direct source representation can still satisfy the objective if no intermediary model interprets the content first.
+
+Examples:
+
+```text
+PDF
+    -> deterministic page text -> ChatGPT
+    -> rendered page image -> ChatGPT vision
+
+image
+    -> exact image bytes/content -> ChatGPT vision
+
+spreadsheet
+    -> sheets/cells/formulas/metadata -> ChatGPT
+    -> rendered ranges/charts -> ChatGPT vision when needed
+
+presentation
+    -> slide text/structure -> ChatGPT
+    -> rendered slides -> ChatGPT vision
+
+word-processing document
+    -> structured text/tables/media -> ChatGPT
+    -> rendered pages -> ChatGPT vision when layout matters
+```
+
+The reasoning remains in ChatGPT. Codexless may parse, render, package or transport the source, but it should not require a second reasoning model merely because the file is local.
+
+## 4. What does NOT solve this objective
+
+The following architecture is not the solution to the current local-file-access problem:
+
+```text
+local file
+    -> formal Codex model task
+    -> Codex reads/interprets the file
+    -> Codex returns summary/evidence/findings
+    -> ChatGPT reasons from Codex's interpretation
+```
+
+That is **delegated document analysis**, not direct ChatGPT local-file access.
+
+It may be useful later for other purposes, including:
+
+```text
+parallel analysis of many documents
+large batch work
+specialized bounded workers
+ADS product workflows
+expensive local tasks intentionally delegated away from the initiating chat
+```
+
+But it must remain a separate capability and must not be presented as a replacement for source access in ordinary ChatGPT chat.
+
+The distinction is fundamental because a semantic worker chooses what to preserve. If the user later asks about an unanticipated figure, equation, table, footnote, slide, cell or page relationship, ChatGPT may need to invoke the worker again. Direct source access avoids that unnecessary intermediary.
+
+## 5. How the scope drift happened
+
+Research 117 initially tracked the correct problem. It built and qualified several direct model-free paths from local authorized files into ChatGPT:
+
+```text
+codex.document_read
+codex.image_read
+codex.document_render
+codex.document_file_read
+codex.document_file_link
+```
+
+The critical whole-file finding was that MCP `resource_link` can materialize a local PDF into the ChatGPT conversation and make it fully inspectable on the next turn.
+
+A clean host boundary was then observed:
+
+```text
+highest confirmed PASS  7,417,428 bytes
+lowest confirmed FAIL    7,993,210 bytes
+```
+
+The exact hidden enforcing component remains unknown.
+
+At that point the research question should have remained:
+
+```text
+How do we extend or complement direct ChatGPT access beyond this host-materialization boundary?
+```
+
+Instead, the Astra review was allowed to broaden the success criterion. The Phase 2 prompt explicitly allowed a solution where the original PDF did not become available to the initiating ChatGPT conversation if the user's task could be satisfied another way.
+
+That instruction changed the objective from:
+
+```text
+ChatGPT directly gains local-file access
+```
+
+to:
+
+```text
+ChatGPT can obtain useful information from the local file somehow
+```
+
+Those goals are not equivalent.
+
+Research 118 then produced a technically rigorous source-bound semantic-evidence worker design. The engineering quality of that candidate does not change the fact that it addresses a different problem.
+
+The orchestration error is therefore preserved explicitly rather than attributed only to Astra:
+
+```text
+ROOT_CAUSE_OF_SCOPE_DRIFT
+    the research/prompt success criterion permitted semantic substitution for direct source access
+
+NOT_THE_ROOT_CAUSE
+    Astra merely failing to follow a correct local-file-access objective
+```
+
+This distinction is important for future model collaboration. A strong model can optimize the wrong objective extremely well if the objective itself is widened incorrectly.
+
+## 6. Disposition of Astra Phase 1 and Phase 2 work
+
+The Astra work is not deleted or treated as worthless.
+
+### Retain as directly useful to the real objective
+
+Phase 1 and Phase 2 produced or reinforced useful evidence about:
+
+```text
+MCP resource_link behavior
+hidden ChatGPT host materialization boundary
+binary/base64 envelope hypotheses
+current OpenAI/Codex file-input mechanisms
+current Codexless PDF/image mechanisms
+Browser upload as a possible transport fallback
+Browser lifecycle constraints
+current maintained PDF runtimes/renderers
+large local page-image handling
+source authority, hashing and revalidation invariants
+```
+
+Those findings remain relevant to direct local-file access.
+
+### Reclassify as optional future delegation research
+
+The following Phase 2 material is no longer the active solution path:
+
+```text
+formal Codex large-PDF semantic worker
+source-bound semantic evidence receipt as a substitute for direct access
+held-out semantic worker qualification as the next Research 117 discriminator
+```
+
+The private candidate at:
+
+```text
+a5025c2071077f719dcc59c7dfd729ee59ec34eb
+```
+
+remains preserved as implementation/research evidence. It may later inform intentional document-worker or ADS product architecture, but it is not required for ChatGPT to access local files.
+
+The first formal held-out worker remains historically `AMBIGUOUS`. No second semantic worker is needed for the current objective.
+
+## 7. Attempt 02 was explicitly cancelled before execution
+
+A second GPT-6 Astra semantic-worker task had been prepared after Checkpoint 307 but had not started because it was awaiting the normal Call Codex consent stage.
+
+After the objective correction, that prepared task was explicitly declined through the task decision surface.
+
+Result:
+
+```text
+ASTRA_SEMANTIC_ATTEMPT_02
+    REJECTED_BEFORE_MODEL_TURN
+
+model turn started
+    NO
+
+metered Astra work consumed by Attempt 02
+    NO
+```
+
+This prevents the obsolete semantic-delegation branch from continuing accidentally.
+
+## 8. Existing direct-access capabilities that remain accepted
+
+The active direct-access baseline is already substantial.
+
+### Plain text and repository text
+
+`codex.read_many` provides bounded model-free UTF-8 file reads inside authorized local roots.
+
+### Images
+
+`codex.image_read` is live-qualified:
+
+```text
+authorized local PNG/JPEG/WebP
+    -> standard MCP image content
+    -> ChatGPT native vision
+    -> no Codex model turn
+```
+
+This directly satisfies the current goal for supported image files.
+
+### PDF embedded text
+
+`codex.document_read` is live-qualified:
+
+```text
+authorized local PDF
+    -> deterministic bounded PDF.js extraction
+    -> ChatGPT text context
+    -> no Codex model turn
+```
+
+### PDF page vision
+
+`codex.document_render` is live-qualified for its tested ordinary-page envelope:
+
+```text
+authorized local PDF page(s)
+    -> maintained PDF.js + canvas rendering
+    -> standard MCP image content
+    -> ChatGPT native vision
+    -> no Codex model turn
+```
+
+Representative image-heavy pages exposed a serialized command-output limit in this implementation. That is a transport/representation engineering problem, not a reason to insert a reasoning model.
+
+### Whole PDF
+
+`codex.document_file_link` is live-qualified within the clean host-materialization envelope:
+
+```text
+authorized local PDF
+    -> small MCP resource_link tool result
+    -> ChatGPT host materializes actual PDF
+    -> next-turn normal ChatGPT full-PDF inspection
+```
+
+This is exactly the desired whole-file behavior.
+
+The remaining problem is extending the same experience to larger PDFs and to other useful local file types.
+
+## 9. Correct active architecture principle
+
+The active architecture principle is now:
+
+```text
+AUTHORIZED LOCAL SOURCE
+        |
+        v
+    CODEXLESS
+        |
+        +-> exact/native file handoff ------------> ChatGPT native file handling
+        |
+        +-> deterministic text/structure ---------> ChatGPT reasoning
+        |
+        +-> faithful rendered media --------------> ChatGPT native vision
+        |
+        +-> format-specific source representation -> ChatGPT
+
+NO INTERMEDIARY REASONING MODEL REQUIRED BY DEFAULT
+```
+
+Codex remains useful in two separate roles:
+
+```text
+1. development tool
+   Codex can help implement/test/debug Codexless itself.
+
+2. optional delegated worker
+   A future workflow may intentionally ask Codex to analyze files.
+```
+
+Neither role makes Codex part of the default file-access data path.
+
+## 10. Separation from ADS product architecture
+
+This distinction must survive future reconstruction.
+
+The current work is happening in the Autonomous Data Science System development repository because Codexless and the local execution bridge are developed and preserved here.
+
+The capability under test is nevertheless:
+
+```text
+ChatGPT chat <-> authorized local machine files
+```
+
+It is **not automatically**:
+
+```text
+future ADS application document architecture
+```
+
+For the future ADS product, the best design may use Codex, direct OpenAI file inputs, specialized document services, multiple workers, deterministic parsers, or another composition. That decision should be made from ADS product requirements at the appropriate time.
+
+Knowledge and infrastructure produced here may be reused by ADS, but current ChatGPT-local-file research must not be distorted merely to make it look like an ADS product subsystem.
+
+## 11. Correct next research route
+
+Research 117 now returns to direct, model-free ChatGPT access.
+
+The next work should build a format/capability matrix from the user-facing perspective:
+
+```text
+Can ChatGPT directly access this authorized local file through Codexless?
+If yes, through what representation?
+If no, what exact transport/format seam is missing?
+```
+
+Priority order:
+
+```text
+1. PDF
+   preserve whole-file resource_link where qualified
+   solve or bypass the >7.4-8.0 MB host-materialization gap without a reasoning-model intermediary
+   retain direct text/page-image access as complementary source access
+
+2. Images
+   already direct-qualified for PNG/JPEG/WebP
+   audit other practically relevant image formats only when needed
+
+3. DOCX / other word-processing documents
+   determine whether actual file materialization through a generic resource-link route can feed normal ChatGPT document handling
+   otherwise expose faithful model-free structure/text/media/page renderings
+
+4. PPTX
+   prefer actual file handoff when possible
+   otherwise direct slide structure/text + rendered slide images to ChatGPT
+
+5. XLSX / spreadsheet formats
+   prefer actual file handoff when possible
+   otherwise direct workbook/sheet/cell/formula semantics plus visual chart/range representations
+
+6. other local file families
+   classify from real user need rather than building generic adapters speculatively
+```
+
+The research should first look for reusable native OpenAI/ChatGPT/MCP mechanisms before adding custom format implementations.
+
+## 12. Large-PDF question restated correctly
+
+The 7.4-8.0 MB materialization boundary remains a real direct-access problem.
+
+The relevant questions are now:
+
+```text
+Can the hidden resource_link host boundary be avoided through another supported file/resource transport?
+Can a large local PDF be split into native ChatGPT-consumable source parts without semantic interpretation?
+Can rendered page images be exposed directly to ChatGPT without the current stdout/base64 bottleneck?
+Can a generic ChatGPT file-attachment/resource mechanism accept local authorized bytes beyond the current MCP resource-link path?
+Can Browser upload safely automate the same ordinary ChatGPT file control only as a transport fallback, if no cleaner host primitive exists?
+```
+
+The wrong question for this workstream is:
+
+```text
+Can Codex understand the large PDF well enough that ChatGPT no longer needs access to it?
+```
+
+That question belongs to optional delegated-document-analysis research.
+
+## 13. Acceptance criteria for the overall local-file capability
+
+A professional end state should let the user do something like:
+
+```text
+"Read the PDF in my authorized Machine Learning folder."
+"Compare this local spreadsheet with that local report."
+"Look at slide 14 of the presentation in my authorized folder."
+```
+
+without manually attaching the files first.
+
+ChatGPT should then be able to obtain the source itself or faithful source representations through bounded Codexless tools.
+
+The user should not need to care whether the internal direct representation is:
+
+```text
+native conversation file
+bounded text
+page image
+slide image
+sheet/cell structure
+another format-faithful representation
+```
+
+as long as ChatGPT itself receives the source information directly and the bridge preserves authority, provenance, fidelity and fail-closed behavior.
+
+## 14. Durable guardrail
+
+Future collaborators must preserve this distinction:
+
+```text
+DIRECT CHATGPT LOCAL-FILE ACCESS
+    source or faithful source representation reaches ChatGPT model context directly
+    no intermediary reasoning model required
+
+DELEGATED FILE ANALYSIS
+    another model reads the source and returns an interpretation
+    useful separate capability, but not a substitute for direct access
+
+ADS PRODUCT ARCHITECTURE
+    separate future system-design question
+    may reuse either or both depending on ADS requirements
+```
+
+If a proposed solution changes categories, that must be stated explicitly before it becomes the active architecture.
+
+## 15. Current classification
+
+```text
+CHATGPT_LOCAL_MACHINE_FILE_ACCESS_OBJECTIVE = RESTORED
+MANUAL_UPLOAD = BASELINE_COMPARATOR_NOT_TARGET_WORKFLOW
+CODEX_MODEL_AS_DEFAULT_FILE_INTERMEDIARY = REJECT_FOR_THIS_OBJECTIVE
+MODEL_FREE_SOURCE_HANDOFF = PREFERRED
+NATIVE_WHOLE_FILE_HANDOFF = PREFERRED_WHEN_SUPPORTED
+MODEL_FREE_FAITHFUL_SOURCE_REPRESENTATION = ACCEPTABLE_FALLBACK
+ASTRA_PHASE2_SEMANTIC_RECEIPT = PRESERVE_AS_OPTIONAL_FUTURE_DELEGATION_RESEARCH
+ASTRA_SEMANTIC_ATTEMPT_02 = DECLINED_BEFORE_START
+ADS_PRODUCT_DOCUMENT_ARCHITECTURE = SEPARATE_FUTURE_QUESTION
+NEXT_RESEARCH = DIRECT_CHATGPT_FILE_ACCESS_MATRIX_AND_LARGE_PDF_TRANSPORT_GAP
+```

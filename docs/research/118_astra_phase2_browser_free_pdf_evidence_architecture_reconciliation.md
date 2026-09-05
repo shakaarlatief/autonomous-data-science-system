@@ -1,7 +1,7 @@
 # Research 118: Astra Phase 2 Browser-Free PDF Evidence Architecture Reconciliation
 
 **Date:** 2026-09-05
-**Status:** PHASE 2 COMPLETE / FIRST LIVE SEMANTIC ATTEMPT AMBIGUOUS / ENVIRONMENT RECONCILED / CONTROLLED SECOND RUN READY
+**Status:** HISTORICAL PHASE 2 COMPLETE / SEMANTIC-DELEGATION RECOMMENDATION SUPERSEDED FOR CURRENT DIRECT-ACCESS OBJECTIVE
 **Scope:** Reconcile the independent GPT-6 Astra Phase 1 architecture challenge with the frozen GPT-5.6 Sol Browser implementation, current ADS document requirements, current installed Codex/App Server mechanisms, and current public Codexless evidence. Select the smallest supported next architecture and preserve the non-live source-bound PDF evidence candidate without claiming live semantic qualification.
 **Authority:** Level-2 architecture research under Research 113/117. The public ADS repository remains the sole project-development authority. The private local-runtime candidate is implementation evidence only and is not a live Codexless publication or accepted production surface.
 **Declared references:** `research:113`, `research:117`, `checkpoint:305`, `path:docs/local_execution/validation/064_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md`, `path:docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
@@ -385,4 +385,16 @@ evaluator key
     still withheld
 ```
 
-Checkpoint 307 and Validation 066 preserve this boundary. The next semantic judgment must come from the controlled second worker and independent evidence review.
+Checkpoint 307 and Validation 066 preserve this historical boundary. Research 119 subsequently corrected the governing objective before the controlled second worker began.
+
+## 12. Research 119 scope correction and supersession
+
+The project owner clarified that the immediate workstream is not to design a semantic document-analysis substitute for source access. The goal is to give ordinary ChatGPT chat direct bounded access to files in authorized local-machine workspaces through Codexless, without requiring manual upload.
+
+Because the user can already attach supported files directly to ChatGPT, a formal Codex worker that reads the file and sends ChatGPT a semantic summary/evidence package is a separate delegated-analysis capability, not a replacement for direct file access.
+
+Therefore the Phase 2 semantic-evidence candidate remains preserved as technically useful optional future research, including possible later ADS product reuse, but it is no longer the active Research 117 solution. The prepared second semantic-worker task was declined before any model turn started.
+
+Useful Research 118 findings remain active where they bear directly on source access: the resource-link host boundary, maintained runtime behavior, local page rendering, Browser lifecycle constraints, source hashing/revalidation, and upstream file/transport evidence.
+
+The new governing route is Research 119 / Checkpoint 308: actual file/native handoff where supported, otherwise faithful model-free source representations delivered directly into ChatGPT text or vision context. Future ADS product document architecture remains a separate design problem.
