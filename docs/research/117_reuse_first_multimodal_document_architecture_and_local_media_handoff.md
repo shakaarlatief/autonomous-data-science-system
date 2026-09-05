@@ -909,7 +909,83 @@ Combined with the clean 8,715,014-byte failure, the observed host boundary is no
 
 Primary evidence: Validation 061 and Checkpoint 302.
 
-## 36. Current disposition
+## 36. E117-5p clean result: near-threshold resource-link host boundary localized
+
+Additional fresh no-folder single-file tests narrowed the clean ChatGPT host materialization interval materially beyond Checkpoint 302.
+
+Accepted direct results:
+
+```text
+7,305,623 B  Lecture-BDS-4-24-25-print.pdf  PASS
+7,417,428 B  Lecture_4_Week_2.pdf            PASS
+7,993,210 B  CheatSheet_A4_FullWidth.pdf    FAIL
+8,715,014 B  32.LinearModels2.annotated.pdf FAIL, independently repeated
+```
+
+The current observed clean interval is therefore:
+
+```text
+highest confirmed PASS  7,417,428 bytes
+lowest confirmed FAIL    7,993,210 bytes
+interval width              575,782 bytes, approximately 0.55 MiB
+```
+
+The 7,993,210-byte value is not an exact or universal host maximum. `codex.document_file_link` resource preparation itself continues to succeed beyond this range, including the repeated 8,715,014-byte case. The first limiting hidden host materialization/resolution layer remains unobserved because no explicit host-side `resources/read`, transport, or materialization failure is surfaced.
+
+Primary evidence: Validation 062 and Checkpoint 303.
+
+## 37. E117-5q direct HTTPS/raw-PDF route rejected under the current tunnel
+
+A separate reuse-first investigation tested whether the MCP PDF handoff could bypass the hidden resource-link materialization limit by exposing a direct HTTPS PDF URL. The result was:
+
+```text
+DIRECT_HTTPS_RAW_PDF_CANDIDATE = NOT_FEASIBLE
+```
+
+HTTPS resource links are schema-valid, but the current Secure MCP Tunnel is an MCP JSON-RPC transport rather than an arbitrary public raw-GET reverse proxy. No candidate code was published. A future direct-HTTPS route would require a separately supported public HTTPS download gateway or explicit raw-GET tunnel mode.
+
+Primary evidence: Validation 062 and Checkpoint 303.
+
+## 38. Cross-cutting Codex supervision result: native Auto-review live-qualified
+
+The Browser compatibility work reproduced the already-preserved Validation 035 liveness problem in practical use: routine Codex in-turn approvals can arrive after the calling ChatGPT turn ends, while Desktop cannot service the approval if Codexless owns the active writer.
+
+Research into current Codex App Server behavior found the supported lower-level reviewer equivalent of Desktop `Approve for me`: `approvalsReviewer=auto_review`. Codexless formal turns now keep the separate ChatGPT-side `Call Codex?` consent and the existing resolved permission profile while explicitly requesting:
+
+```text
+approvalPolicy     = on-request
+approvalsReviewer  = auto_review
+```
+
+A fresh live qualification under `ads-direct-git` completed routine read-only PowerShell and Git status work without an in-turn approval surfacing and without Codexless entering `awaitingApproval`.
+
+Accepted result:
+
+```text
+NATIVE_AUTO_REVIEW_LIVE_QUALIFICATION=PASS
+```
+
+This mitigates the repeated routine approval symptom. It does not close autonomous ChatGPT wakeup, completion/error notification, risky-action escalation, or active-writer transfer questions.
+
+Primary evidence: Validation 062 and Checkpoint 303.
+
+## 39. Cross-cutting Codexless guard correction discovered during preservation
+
+While preserving the new evidence model-free, ordinary PowerShell `Set-Content` documentation containing the word `Codex` was falsely rejected with `FORMAL_CODEX_AGENT_REQUIRED`. Investigation localized the problem to the direct-Codex wrapper guard scanning PowerShell command source too broadly. The guard's purpose remains required: genuine formal Codex model/control work must not bypass the visible Call Codex flow through `codex.command_exec` or a generic process lane.
+
+A narrow correction was built from the exact live source tree and live-qualified after restart. Quoted prose, search patterns, and PowerShell here-string document bodies containing `Codex` are allowed again; a genuine wrapped `codex exec --help` remains rejected; and the original end-to-end model-free new-file creation use case now passes with no probe residue.
+
+Accepted results:
+
+```text
+DIRECT_CODEX_GUARD_FALSE_POSITIVE_FIXED=PASS
+DIRECT_WRAPPED_CODEX_MODEL_CONTROL_GUARD_PRESERVED=PASS
+MODEL_FREE_NEW_FILE_WITH_CODEX_PROSE=PASS
+```
+
+Primary evidence: Validation 063 and Checkpoint 304.
+
+## 40. Current disposition
 
 ```text
 KEEP
@@ -929,16 +1005,17 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 INVESTIGATE FIRST
-    progressive large-PDF resource_link host qualification through the 4.23 / 8.31 / 30.67 / 75.22 MiB lecture tiers
-    only after live evidence decide whether the 96 MiB research ceiling is accepted, reduced, or redesigned
+    current Browser/Chrome compatibility drift behind `chrome_skill_unavailable`
+    ADS Browser -> normal ChatGPT file upload for PDFs above the clean resource-link host materialization range
+    only after Browser evidence decide whether a separate public download gateway or another whole-PDF transport is justified
 
 KEEP AS SUPPORTING / FALLBACK
-    ADS Browser -> normal ChatGPT file upload if resource_link fails at required sizes
+    live `codex.document_file_link` within its clean host-qualified range and as preparation evidence above it
     installed Codex PDF/Documents/Presentations/Spreadsheets Skills
     document/page representation -> already-qualified native image path
     native OpenAI PDF file-input API only if a separate API path is explicitly accepted
 
-PAUSE WHILE WHOLE-PDF RESOURCE-LINK SCALING IS ACTIVE
+PAUSE WHILE THE BROWSER WHOLE-PDF FALLBACK IS BEING QUALIFIED
     authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
 
 BENCHMARK ONLY IF NEEDED

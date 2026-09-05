@@ -345,12 +345,16 @@ App Server approvalsReviewer
 
 Possible future integration exists, but collapsing these layers would lose useful policy separation.
 
-Preliminary classification:
+Validation 062 subsequently live-qualified the complement for the tested routine-command case. Codexless formal turns now request `approvalPolicy=on-request` plus `approvalsReviewer=auto_review` while preserving the separate initial `Call Codex?` gate and existing bounded permission profile. A fresh task completed routine read-only PowerShell and Git status commands without surfacing an in-turn approval or entering `awaitingApproval`.
+
+Current classification:
 
 ```text
 Call Profile                         KEEP_ADS
-approvalsReviewer / auto_review      INVESTIGATE AS COMPLEMENT
+approvalsReviewer / auto_review      LIVE-QUALIFIED COMPLEMENT FOR ROUTINE CASE
 silent replacement of Call Profile  REJECT
+broader risky-action escalation      INVESTIGATE
+autonomous ChatGPT wakeup            STILL OPEN
 ```
 
 ## 11. Multi-agent/subagent expansion

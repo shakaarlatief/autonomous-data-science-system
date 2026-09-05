@@ -92,11 +92,13 @@ Publication should use server-owned known install locations, exact candidate has
 
 Primary context: Research 116 and existing guarded host publication helpers. Validation 042 now provides a concrete reproduced case: the `codex.image_read` publication helper passed all candidate gates, but ordinary inherited `command_exec` was denied before writing `%LOCALAPPDATA%\\Codexless`; live hashes remained unchanged. This is exactly the separation this backlog item should solve without broadening workspace authority.
 
+Validations 062-063 add two later examples. The native Auto-review executor and the direct-Codex guard correction were both safely qualified inside the authorized local-runtime workspace, but live installation still required one-time guarded host PowerShell publication with exact old/new hashes, backup, atomic replacement, verification, and rollback. Those bootstraps are accepted operational evidence, not a solution to AB-002.
+
 ---
 
 ## AB-003: Autonomous supervision and wakeup for long-running Codex tasks
 
-**Status:** OPEN / REPRODUCED ARCHITECTURE GAP
+**Status:** OPEN / WAKEUP GAP REMAINS / ROUTINE APPROVAL MITIGATION LIVE
 **Priority:** P0
 
 Validation 035 reproduced the liveness failure:
@@ -123,6 +125,8 @@ prominent actionable card state for approval/error/completion
 ```
 
 The Call Profile is policy guidance, not a scheduler. The permanent design must close the liveness gap rather than merely instruct the assistant to supervise harder.
+
+Validation 062 live-qualified one important mitigation: formal turns now use App Server `approvalPolicy=on-request` with `approvalsReviewer=auto_review` while preserving the separate initial `Call Codex?` gate and existing bounded permission profile. Routine in-turn command approvals no longer reproduced the `awaitingApproval` stall in the tested case. AB-003 remains open because ChatGPT still has no demonstrated autonomous wakeup for task completion, errors, escalations, or any future action that native Auto-review cannot safely resolve.
 
 Primary evidence: `docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md`.
 
@@ -315,19 +319,21 @@ queued work has predictable persistence/recovery
 
 ## AB-012: App Server reviewer / auto-review integration with Call Profile
 
-**Status:** RESEARCHING
+**Status:** LIVE-QUALIFIED COMPLEMENT / BROADER ESCALATION BEHAVIOR OPEN
 **Priority:** P1
 
-Study whether App Server `approvalsReviewer` / `auto_review` can complement the ChatGPT-side Codex Call Profile.
+Validation 062 established the supported complement for the tested routine-command case. Codexless formal turns now explicitly request App Server `approvalPolicy=on-request` plus `approvalsReviewer=auto_review`, while the separate ChatGPT-side `Call Codex?` gate and the resolved bounded permission profile remain unchanged.
 
-Do not collapse the layers without evidence:
+The layers stay distinct:
 
 ```text
-Call Profile        user-authored policy for calling/supervising Codex
-App Server reviewer lower-level in-turn action review/routing
+Call Profile        user-authored policy for whether/how ChatGPT calls and supervises Codex
+App Server reviewer lower-level in-turn action risk review/routing
 ```
 
-A future design may allow routine low-risk approvals under explicit user policy while preserving user review for high-risk or ambiguous actions.
+A fresh formal task under `ads-direct-git` completed routine PowerShell and Git status work without surfacing an in-turn approval or entering `awaitingApproval`. Full access was not used.
+
+This does not prove every action can or should be auto-reviewed. High-risk/ambiguous escalation behavior, user-facing explanation for native reviewer decisions, and interaction with the still-open autonomous wakeup/writer-ownership questions remain research work.
 
 ---
 
@@ -417,6 +423,8 @@ other non-workspace host resources
 ```
 
 Each class should be semantic, narrow, server-owned and independently permissioned. Research 116 deliberately closed workspace/project authority without claiming universal host authority. AB-002 is the first concrete instance.
+
+Validations 062-063 reinforce this separation. Two exact runtime publications were safe to perform only through guarded host PowerShell because ordinary workspace authority intentionally does not grant `%LOCALAPPDATA%` installation authority. The successful one-time bootstraps should inform the eventual semantic runtime-maintenance capability, not justify broad ordinary host access.
 
 ---
 
