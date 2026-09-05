@@ -157,8 +157,10 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** RESEARCHING / CUSTOM IMPLEMENTATION PAUSED
+**Status:** RESEARCHING / ASTRA PHASE 2 COMPLETE / SEMANTIC LARGE-PDF TEST READY
 **Priority:** P1
+
+Research 118 / Validation 065 / Checkpoint 306 now select a Browser-free, source-bound semantic evidence workflow as the immediate large-PDF discriminator. The reviewed private candidate is preserved at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`; live semantic qualification is still pending. The next action is one held-out 11,825,407-byte mixed-PDF formal Codex task with independent evidence review, not new rendering/OCR implementation or Browser upload.
 
 The first-class `codex.document_read` PDF baseline is no longer open work. It is live-qualified on Codexless `0.1.1-preview.9` / 52 tools through Validation 039 and Checkpoint 279, including the isolated bounded `pdfjs-dist@5.4.624` parser child and a real read-only personal-PDF test.
 
@@ -932,8 +934,10 @@ Primary context: Foundation 014, D-024, D-032, D-034, Research 064, Research 103
 
 ## AB-028: Post-Browser Astra independent architecture review after the GPT-5.6 Sol baseline
 
-**Status:** READY / GPT-5.6 SOL BLOCKED BASELINE PRESERVED
+**Status:** CLOSED / PHASE 2 COMPLETE / RESEARCH 118
 **Priority:** P1
+
+Closure 2026-09-05: Astra completed the independent Phase 1 review before private Sol exposure, then completed Phase 2 against the frozen Sol baseline. Research 118 / Validation 065 / Checkpoint 306 preserve the reconciliation. The reviewed private source-bound PDF evidence candidate is preserved at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`. Direct existing-tab Browser mutation remains blocked, direct new-tab mutation is deferred as lifecycle-unproven, and the Browser-free held-out semantic PDF experiment is now the exact next Research 117 action. This backlog item is closed; live semantic qualification remains under AB-005 / Research 117-118 rather than reopening AB-028.
 
 The project owner explicitly wants the newly available Astra model treated as a material architecture-review opportunity rather than a routine model substitution. The existing GPT-5.6 Sol Research 117 Browser thread has now completed its bounded baseline: maintained Browser/Chrome discovery was qualified, but live Browser publication correctly stopped because direct `mcpServer/tool/call` has no proven supported claimed-tab cleanup equivalent to a genuine Codex turn. That blocked result is preserved as Validation 064 / Checkpoint 305 and private local-runtime commit `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`.
 

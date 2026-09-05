@@ -62,6 +62,10 @@ H INFERENCE
 | Public Codexless lifecycle kernels | Open PR #2 proposes Browser/Agent lifecycle consolidation. `E` | ADS local fork has accumulated handoff/live-viewer lifecycle state and guards. | Potential upstream simplification or conflict with local divergence. | `MORE_EVIDENCE_REQUIRED` | Deep-read PR #2 and tests. |
 | Public Codexless Browser elicitation | Open PR #4 treats semantic recognition separately from approval policy. `E/D` | ADS Browser path uses dynamic confirmation policy and prepared exact actions. | Principle strongly aligns with ADS: known request shape is not approval evidence. | `KEEP_ADS` / `MONITOR` | Verify final upstream merge/disposition. |
 
+| Direct Browser lifecycle outside a genuine turn | Direct `mcpServer/tool/call` is distinct from `turn/start -> turn/completed`; current installed Browser cleanup is tied to genuine-turn lifecycle. `A/B/G` | Frozen Sol direct existing-tab paths can claim tabs while explicit release remains unsupported; Astra Phase 2 keeps mutation unpublished. | Do not infer release from synthetic metadata, `markDeliverable`, or process shutdown. Prefer genuine-turn ownership if Browser mutation becomes necessary. | `KEEP_ADS` / `MORE_EVIDENCE_REQUIRED` | Research 118 / Validation 065; qualify genuine-turn ADS integration only if Browser returns to the critical path. |
+| Browser plugin discovery provenance | Installed Browser/Chrome pairing and client hashing are implemented in the frozen Sol candidate. `G` | Astra Phase 2 reproduced an out-of-bundle version-root junction acceptance and unchanged compatibility result after service-byte drift at the same path. | Future reuse should strengthen containment and service-byte binding rather than publishing the frozen discovery seam unchanged. | `POTENTIAL_IMPROVEMENT` | Two synthetic defect reproductions in the preserved Phase 2 candidate; historical Validation 064 remains scoped to its original 7 tests. |
+| Large-PDF semantic evidence handoff | Current maintained Codex runtime already provides bounded PDF extraction/rendering and local-image vision primitives. `A/B/G` | ADS now has an unpublished source-bound coverage/evidence receipt candidate and an exact held-out 11.8 MB semantic experiment. | A Browser-free semantic workflow may satisfy large-document understanding even when original-file host materialization fails, without claiming it replaces every attachment use case. | `POTENTIAL_SIMPLIFICATION` / `MORE_EVIDENCE_REQUIRED` | Run the single formal held-out task from Research 118 / Validation 065 and classify PASS / FAIL / AMBIGUOUS. |
+
 ## Research notes
 
 This file intentionally stays concise. When a row requires more than a bounded summary, open a numbered research record and link it here rather than turning the matrix into an unreviewable wall of text.
@@ -71,6 +75,7 @@ Current deep records:
 ```text
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md
 docs/research/114_current_codex_app_server_architecture_and_ads_implications.md
+docs/research/118_astra_phase2_browser_free_pdf_evidence_architecture_reconciliation.md
 ```
 
 Planned next records:

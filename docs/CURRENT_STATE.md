@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 305
+**Checkpoint:** 306
 **Date:** 2026-09-05
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-17
-Conversation title       17 - MCP Image Bridge Publication Recovery and Multimodal Document Continuation
+Interaction session      chatgpt-18
+Conversation title       18 - Astra Architecture Review and Multimodal Handoff Continuation
 Primary collaborator     ChatGPT
 ```
 
@@ -22,13 +22,15 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: reuse-first multimodal document architecture research inside the broader upstream research phase
+## Current active stage: held-out semantic large-PDF qualification inside reuse-first multimodal document research
 
-Checkpoint 305 is the current boundary. Research 117 still retains the clean MCP `resource_link` host-materialization interval from Checkpoint 303: 7,417,428 bytes is the highest confirmed clean PASS and 7,993,210 bytes is the lowest confirmed clean FAIL, without claiming an exact or universal host maximum. The direct HTTPS/raw-PDF alternative remains `NOT_FEASIBLE` under the current Secure MCP Tunnel.
+Checkpoint 306 is the current boundary. GPT-6 Astra completed the planned independent Phase 1 architecture challenge and the Phase 2 reconciliation against the frozen GPT-5.6 Sol implementation. Research 118 and Validation 065 preserve that review. The resulting non-live source-bound PDF evidence candidate is preserved in the private local-runtime repository at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`; the bounded private push passed `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, and `postflightOk=true`.
 
-The GPT-5.6 Sol Browser compatibility investigation is now complete as a blocked architecture baseline. It localized `chrome_skill_unavailable` primarily to stale Codexless discovery assumptions around the retired `chrome:control-chrome` Skill projection and qualified current installed Browser/Chrome plugin discovery with a 7/7 focused compatibility pass. Maintained Browser documentation and installed source establish automatic release of claimed existing tabs at the end of a genuine Codex turn, but current Codexless Browser execution uses direct model-free `mcpServer/tool/call` without a genuine `turn/start -> turn/completed` lifecycle and no public release/unclaim method was found. The candidate therefore stopped before publication, real tab claim, or PDF upload with classification `BLOCKED_NO_SUPPORTED_CODEXLESS_DIRECT_CALL_CLEANUP`.
+The preferred document direction is now Browser-free for the immediate large-file fallback. `codex.document_file_link` remains preferred within the clean-qualified host-materialization range. The historical clean interval is unchanged: 7,417,428 bytes is the highest confirmed PASS and 7,993,210 bytes is the lowest confirmed FAIL, without claiming an exact or universal host maximum. Above that materialization boundary, the next discriminator is one genuine formal Codex document task using maintained extraction, rendering, and native local-image vision, followed by a source-bound coverage/evidence receipt and independent review. The direct HTTPS/raw-PDF alternative remains `NOT_FEASIBLE` under the current Secure MCP Tunnel.
 
-The complete GPT-5.6 Sol baseline is preserved in the private local-runtime repository at `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and successful push postflight. The next active Research 117 step is AB-028: start a fresh Astra Codex Desktop thread for an independent architecture and solution search that actively challenges the Browser execution primitive and broader ChatGPT <-> Codexless <-> Codex App Server <-> Codex Desktop architecture rather than merely patching the 5.6 Sol candidate.
+The frozen GPT-5.6 Sol Browser baseline remains at `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`. Astra Phase 2 confirmed strong Sol invariants including exact prepared actions, source hashing/revalidation, uncertainty handling, and no blind replay, while also reproducing two discovery weaknesses and sharpening the lifecycle boundary. Direct model-free existing-tab Browser mutation remains blocked because supported release is unavailable outside a genuine turn and the frozen pre-claim guard is not enforced on every claim path. Direct model-free new-tab mutation is deferred because `tabs.new()` plus `markDeliverable()` does not prove a complete direct-call lifecycle. Browser upload is therefore an optional later fallback rather than the current document critical path.
+
+The exact next Research 117 action is the single held-out semantic experiment specified by the preserved private Phase 2 `WORKFLOW.md`: one formal Codex task on an eight-page 11,825,407-byte mixed PDF, with the evaluator key withheld from the worker. The workflow must be classified `PASS / FAIL / AMBIGUOUS` from actual page coverage, evidence references, held-out answers, and source identity before the receipt seam is integrated into live Codexless or Browser work is reopened.
 
 Two earlier cross-cutting Codexless corrections remain live-qualified. Formal Codex turns preserve the initial `Call Codex?` consent and bounded permission profile while using App Server `approvalPolicy=on-request` with `approvalsReviewer=auto_review`; the PowerShell wrapper classifier also allows documentation/search/here-string data containing `Codex` while genuine wrapped Codex CLI execution remains blocked.
 Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. At that qualification boundary `big-data-statistics` had only `read`; Research 117 later added `agent` explicitly for the bounded reuse experiment while retaining no write/browser/Git capability. A fresh disposable ChatGPT conversation had already invoked `codex.document_read` against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive baseline qualification evidence.
@@ -41,7 +43,7 @@ The workspace registry is now revision `5`, content hash `0016f8ccaf84a7f9ff5188
 
 Checkpoint 278 remains the accepted Research 116 core boundary: live flexible multi-repository authority, explicit two-layer admission of the private `autonomous-data-science-system-local-runtime` workspace, reviewed non-secret runtime-repository bootstrap, the private authenticated Git transport correction, and end-to-end generalized fetch/push qualification against `ads-local-runtime`.
 
-The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is proven through the bounded host-network substrate. The latest preserved local-runtime boundary is `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`, which stores the GPT-5.6 Sol Browser baseline plus the guarded recurring Git-ACL repair helper. Its push passed `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true`.
+The stable architecture now supports explicit register/update/remove of ordinary filesystem/project roots without another MCP schema publication. Per-workspace capability checks remain server-owned; semantic Git selects only `workspaceId`, derives branch/upstream dynamically, preserves the registered remote and integrity policy, and exposes no caller-selected cwd/URL/refspec/credentials/config/profile/sandbox/force inputs. Authenticated private Git is proven through the bounded host-network substrate. The latest preserved local-runtime boundary is `a5025c2071077f719dcc59c7dfd729ee59ec34eb`, which adds the reviewed GPT-6 Astra Phase 2 source-bound PDF evidence candidate while preserving the frozen GPT-5.6 Sol Browser baseline at `e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c`. The latest private push passed `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`, `retried=false`, exact local/remote equality, clean tracked postflight, and `postflightOk=true`.
 
 The public baseline immediately before Checkpoint 305 preservation was `30437ff9df9a9bfcedcba8841c65e68fc309549a`, which already included the AB-028 Astra follow-up obligation. The known protected `.tmp/pytest-*` warning residue remains untouched.
 
@@ -324,7 +326,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 305 is now the current meaningful project boundary. Checkpoint 305 preserves the completed GPT-5.6 Sol Browser compatibility baseline: current Browser/Chrome plugin discovery is qualified, genuine-turn claimed-tab cleanup is understood, direct Codexless call cleanup remains unsupported/unproven, no Browser candidate was published, and the independent Astra architecture/solution review is now ready. Checkpoint 304 preserves the live-qualified direct-Codex guard correction, while Checkpoint 303 preserves the localized resource-link host materialization interval, direct-HTTPS rejection, native `auto_review` live qualification, and Browser fallback opening. Checkpoints 302-293 remain the detailed progression from intermediate/large resource-link host tests through the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result, Checkpoints 291-280 preserve the preceding document-handoff/reuse-first/render/image experiments, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 306 is now the current meaningful project boundary. Checkpoint 306 preserves the completed GPT-6 Astra Phase 2 reconciliation, the reviewed non-live source-bound PDF evidence candidate, the blocked direct existing-tab Browser lifecycle, the deferred direct new-tab lifecycle, and the exact held-out semantic PDF experiment now ready. Checkpoint 305 remains the completed GPT-5.6 Sol Browser compatibility baseline. Checkpoint 304 preserves the live-qualified direct-Codex guard correction, while Checkpoint 303 preserves the localized resource-link host materialization interval, direct-HTTPS rejection, native `auto_review` live qualification, and Browser fallback opening. Checkpoints 302-293 remain the detailed progression from intermediate/large resource-link host tests through the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result, Checkpoints 291-280 preserve the preceding document-handoff/reuse-first/render/image experiments, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -345,6 +347,9 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/306_astra_phase2_browser_free_pdf_evidence_review_complete.md
+docs/local_execution/validation/065_astra_phase2_pdf_evidence_candidate_reviewed.md
+docs/research/118_astra_phase2_browser_free_pdf_evidence_architecture_reconciliation.md
 docs/checkpoints/305_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
 docs/local_execution/validation/064_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
 docs/checkpoints/304_direct_codex_guard_false_positive_live_qualified.md
@@ -446,7 +451,7 @@ docs/source_universe/PERMANENT_VAULT_BOOTSTRAP.md
 
 ## Conversation-rotation boundary
 
-The guided handoff boundary is preserved through Checkpoint 275. The previous `chatgpt-16` interaction then published and tested v16, compared it against native Codex Desktop presentation, and opened Checkpoint 276 / Research 113 for comprehensive upstream ecosystem research. The current `chatgpt-17` interaction is the recovery/continuation session after the unexpected Chat 16 context-limit termination.
+The guided handoff boundary is preserved through Checkpoint 275. `chatgpt-17` then continued Research 113/117 through the document-resource and Browser-baseline work and closed at Checkpoint 305 after its own context-limit termination. The current `chatgpt-18` interaction completed the independent Astra architecture challenge, exposed the frozen Sol implementation only after Phase 1, reconciled and preserved the Phase 2 candidate at Checkpoint 306, and is now at the held-out semantic large-PDF qualification boundary.
 
 The repository now preserves the guided/repeated handoff, the Checkpoint 275 interruption residue, the v16 publication/test and Desktop comparison, the comprehensive upstream-research route, the successful semantic Git publication/push, the flexible multi-repository authority architecture, the `workspace-standard` generic non-Git extension, and live first-class PDF document reading. `chatgpt-17` also reproduced a continuity/routing weakness: the correct operational restart and ChatGPT app-refresh procedure already existed in `docs/local_execution/OPERATIONS.md`, but the collaborator initially gave generic/incorrect operational guidance before reading that governing runbook. The instance and the requested follow-up architecture audit are preserved in `docs/OPEN_ARCHITECTURE_BACKLOG.md` as AB-022 and AB-023; no routing fix has yet been accepted. The frozen public Checkpoint 279 content baseline is `bd7a2fcf802d99e6b9dd2b94745f248f347a12a9`. The private runtime repository is synchronized to that public baseline at `d86a96e2a26fbc946a31e28ef1ca14c8a129628a`, where `RUNTIME_STATE.json` explicitly records public Checkpoint 279 / `bd7a2fcf...`; this avoids recursive public/private anchoring while allowing a later public routing-envelope commit to point MC-0010 at both frozen evidence boundaries. Before Claude Message 001, verify that a fresh Claude environment can actually access both repositories; if private-repository access is unavailable, preserve that limitation rather than substituting public summaries. The earlier planned Chat 17 rotation preflight referred to the then-stable 52-tool surface; the current live surface is now 54 tools after the qualified `codex.image_read` and `codex.document_render` publications.
 
@@ -460,7 +465,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover any relevant private complement, and continue from the `clean-resource-link-host-materialization-passed` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover the relevant private local-runtime complement when accessible, and continue from the `astra-phase-two-review-complete-semantic-pdf-test-ready` boundary unless the repository has advanced further. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -473,6 +478,9 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/306_astra_phase2_browser_free_pdf_evidence_review_complete.md
+docs/local_execution/validation/065_astra_phase2_pdf_evidence_candidate_reviewed.md
+docs/research/118_astra_phase2_browser_free_pdf_evidence_architecture_reconciliation.md
 docs/checkpoints/305_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
 docs/local_execution/validation/064_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md
 docs/checkpoints/304_direct_codex_guard_false_positive_live_qualified.md

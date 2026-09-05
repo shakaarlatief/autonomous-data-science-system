@@ -1012,10 +1012,47 @@ e45a5de7ddae7f8158445b4b71d9c5f70cab8a2c
 
 with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and successful push postflight. This baseline is intentionally a blocked architecture result, not accepted live Browser runtime code.
 
-The next Research 117 action is the independent Astra architecture/solution search preserved in AB-028. Astra should challenge the execution primitive itself and investigate supported alternatives such as a genuine App Server turn lifecycle, another maintained Browser primitive, an explicit release contract, a new-tab/deliverable design that avoids claiming existing user tabs, or a different whole-PDF fallback.
+At Checkpoint 305 the next Research 117 action was the independent Astra architecture/solution search preserved in AB-028. That obligation is now complete through Research 118 / Validation 065 / Checkpoint 306; the historical baseline above remains unchanged.
 
 Primary evidence: Validation 064 and Checkpoint 305.
-## 41. Current disposition
+
+## 41. Astra Phase 2 reconciliation selects Browser-free semantic evidence test
+
+Research 118 / Validation 065 completed the planned independent-first Astra review. Astra Phase 1 challenged the public architecture without private Sol implementation access. Phase 2 then inspected the frozen Sol baseline and preserved the strongest implemented invariants while changing the preferred large-document fallback.
+
+The reviewed private candidate is preserved at:
+
+```text
+a5025c2071077f719dcc59c7dfd729ee59ec34eb
+```
+
+Key accepted conclusions:
+
+```text
+model-free existing-tab Browser mutation
+    BLOCKED
+
+model-free new-tab Browser mutation
+    DEFER_UNPROVEN_DIRECT_CALL_LIFECYCLE
+
+Browser upload
+    OPTIONAL_DEFERRED_FALLBACK
+
+large PDF above clean host-materialization qualification
+    TEST one genuine formal Codex semantic document task
+    with maintained extraction/rendering/native local-image vision
+    and a source-bound evidence/coverage receipt
+```
+
+Phase 2 also reproduced two frozen Browser-discovery weaknesses: a version-root junction can escape the resolved bundle root, and service bytes are not independently bound by the current compatibility receipt. These findings narrow future reuse requirements without rewriting Validation 064's historical 7/7 focused result.
+
+The new private receipt candidate passed 34 focused tests, and two additional synthetic tests reproduced the frozen discovery weaknesses. ChatGPT independently reran the combined candidate suite and obtained 36/36 PASS. The receipt deliberately keeps `understandingVerified=false`; live semantic correctness remains unqualified.
+
+The exact next experiment is one held-out eight-page 11,825,407-byte mixed PDF task with the evaluator key withheld from the worker. It must be classified `PASS / FAIL / AMBIGUOUS` from actual page coverage, evidence references, held-out answers, and source identity before live receipt integration.
+
+Primary evidence: Research 118, Validation 065, Checkpoint 306, and the private candidate at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`.
+
+## 42. Current disposition
 
 ```text
 KEEP
@@ -1034,10 +1071,11 @@ STOP FOR NOW
     custom OCR subsystem
     custom DOCX/PPTX/XLSX adapters
 
-INVESTIGATE FIRST
-    independent Astra architecture/solution search for the blocked Browser direct-call lifecycle
-    supported Browser execution/release alternatives before any real tab claim or PDF upload
-    only after that review decide whether Browser upload, a different whole-PDF transport, or an upstream mechanism is justified
+TEST NEXT
+    one formal Codex task on the held-out 11,825,407-byte mixed PDF
+    maintained extraction + rendering + native local-image vision
+    source-bound evidence receipt plus independent held-out evaluation
+    classify the exact workflow PASS / FAIL / AMBIGUOUS before live integration
 
 KEEP AS SUPPORTING / FALLBACK
     live `codex.document_file_link` within its clean host-qualified range and as preparation evidence above it
@@ -1045,8 +1083,9 @@ KEEP AS SUPPORTING / FALLBACK
     document/page representation -> already-qualified native image path
     native OpenAI PDF file-input API only if a separate API path is explicitly accepted
 
-PAUSE WHILE THE ASTRA BROWSER / WHOLE-PDF ARCHITECTURE REVIEW IS ACTIVE
+DEFER / OPTIONAL FALLBACK
     authenticated parent-owned loopback binary transfer across actual Windows :read-only sandbox
+    Browser upload and direct Browser mutation unless the semantic workflow fails a real requirement
 
 BENCHMARK ONLY IF NEEDED
     MarkItDown
