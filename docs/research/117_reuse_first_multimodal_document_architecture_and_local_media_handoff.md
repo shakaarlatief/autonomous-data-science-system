@@ -1048,9 +1048,11 @@ Phase 2 also reproduced two frozen Browser-discovery weaknesses: a version-root 
 
 The new private receipt candidate passed 34 focused tests, and two additional synthetic tests reproduced the frozen discovery weaknesses. ChatGPT independently reran the combined candidate suite and obtained 36/36 PASS. The receipt deliberately keeps `understandingVerified=false`; live semantic correctness remains unqualified.
 
-The exact next experiment is one held-out eight-page 11,825,407-byte mixed PDF task with the evaluator key withheld from the worker. It must be classified `PASS / FAIL / AMBIGUOUS` from actual page coverage, evidence references, held-out answers, and source identity before live receipt integration.
+The first held-out eight-page 11,825,407-byte worker has now run. It completed terminally and fail-closed but returned no semantic answers because the maintained execution runtime could not be established with sufficient certainty from the selected nested scratch cwd. Per Research 118, Attempt 01 is `AMBIGUOUS`, not a semantic failure. Model-free reconciliation then proved the exact maintained primary-runtime parser/extractor/Poppler stack is available, reproduced the nested-cwd write setup failure, and proved the same renderer can generate all eight local page PNGs from the registered repository root with native local-image vision available afterward.
 
-Primary evidence: Research 118, Validation 065, Checkpoint 306, and the private candidate at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`.
+The next experiment is therefore a controlled changed-condition second worker, not a blind replay: run from the registered ADS repository-root cwd, confine file activity to the existing scratch source/output subtree, supply the exact maintained primary-runtime paths without installing anything, keep the evaluator key withheld, and classify `PASS / FAIL / AMBIGUOUS` only from actual all-page coverage, evidence references, held-out answers, and source identity.
+
+Primary evidence: Research 118, Validation 065, Validation 066, Checkpoints 306-307, and the private candidate at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`.
 
 ## 42. Current disposition
 
@@ -1072,10 +1074,12 @@ STOP FOR NOW
     custom DOCX/PPTX/XLSX adapters
 
 TEST NEXT
-    one formal Codex task on the held-out 11,825,407-byte mixed PDF
-    maintained extraction + rendering + native local-image vision
+    controlled second formal Astra worker from the registered ADS repository-root cwd
+    exact maintained primary-runtime Python + Poppler paths supplied with no installation
+    worker file activity confined to the held-out scratch source/output subtree
+    maintained extraction + all-page local rendering + native local-image vision
     source-bound evidence receipt plus independent held-out evaluation
-    classify the exact workflow PASS / FAIL / AMBIGUOUS before live integration
+    classify the changed-condition workflow PASS / FAIL / AMBIGUOUS before live integration
 
 KEEP AS SUPPORTING / FALLBACK
     live `codex.document_file_link` within its clean host-qualified range and as preparation evidence above it

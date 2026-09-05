@@ -157,10 +157,10 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** RESEARCHING / ASTRA PHASE 2 COMPLETE / SEMANTIC LARGE-PDF TEST READY
+**Status:** RESEARCHING / ATTEMPT 01 AMBIGUOUS / CONTROLLED SECOND RUN READY
 **Priority:** P1
 
-Research 118 / Validation 065 / Checkpoint 306 now select a Browser-free, source-bound semantic evidence workflow as the immediate large-PDF discriminator. The reviewed private candidate is preserved at `a5025c2071077f719dcc59c7dfd729ee59ec34eb`; live semantic qualification is still pending. The next action is one held-out 11,825,407-byte mixed-PDF formal Codex task with independent evidence review, not new rendering/OCR implementation or Browser upload.
+Research 118 / Validation 066 / Checkpoint 307 now preserve the first held-out 11,825,407-byte semantic worker as `AMBIGUOUS`, not a semantic failure. The worker stopped fail-closed when it could not establish the maintained execution runtime from the selected nested scratch cwd. Model-free reconciliation then proved the exact maintained primary-runtime parser/extractor/Poppler stack is available, reproduced the nested-cwd write setup failure, rendered all eight pages successfully from the registered ADS repository root, and verified the local-image-to-native-vision path. The next action is the controlled changed-condition second worker from the repository-root execution context, not new rendering/OCR implementation, Browser upload, or a blind retry.
 
 The first-class `codex.document_read` PDF baseline is no longer open work. It is live-qualified on Codexless `0.1.1-preview.9` / 52 tools through Validation 039 and Checkpoint 279, including the isolated bounded `pdfjs-dist@5.4.624` parser child and a real read-only personal-PDF test.
 

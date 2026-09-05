@@ -1,7 +1,7 @@
 # Research 118: Astra Phase 2 Browser-Free PDF Evidence Architecture Reconciliation
 
 **Date:** 2026-09-05
-**Status:** COMPLETE / PHASE 2 ARCHITECTURE RECONCILIATION / LIVE SEMANTIC QUALIFICATION PENDING
+**Status:** PHASE 2 COMPLETE / FIRST LIVE SEMANTIC ATTEMPT AMBIGUOUS / ENVIRONMENT RECONCILED / CONTROLLED SECOND RUN READY
 **Scope:** Reconcile the independent GPT-6 Astra Phase 1 architecture challenge with the frozen GPT-5.6 Sol Browser implementation, current ADS document requirements, current installed Codex/App Server mechanisms, and current public Codexless evidence. Select the smallest supported next architecture and preserve the non-live source-bound PDF evidence candidate without claiming live semantic qualification.
 **Authority:** Level-2 architecture research under Research 113/117. The public ADS repository remains the sole project-development authority. The private local-runtime candidate is implementation evidence only and is not a live Codexless publication or accepted production surface.
 **Declared references:** `research:113`, `research:117`, `checkpoint:305`, `path:docs/local_execution/validation/064_gpt56_browser_compatibility_baseline_blocked_direct_call_cleanup.md`, `path:docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
@@ -337,3 +337,52 @@ new Browser candidate                    publishable
 ```
 
 The next project boundary is empirical: run the single held-out 11.8 MB semantic document experiment before integrating the receipt into live Codexless or reopening Browser mutation work.
+
+## 11. First live worker attempt: AMBIGUOUS, then environment reconciled
+
+The first formal held-out worker ran after Checkpoint 306 with GPT-6 Astra at high reasoning effort against the exact 11,825,407-byte source. The worker received no evaluator key, prior QA, generator, private candidate implementation, Browser authority, upload route, or dependency-install permission.
+
+The task completed normally but deliberately returned no page count, extraction, rendering, visual inspection, or semantic answers because it could not establish the maintained PDF execution runtime with sufficient certainty. It preserved the exact source SHA-256 before and after preliminary checks. Under this research record's preregistered rules:
+
+```text
+ASTRA_PDF_SEMANTIC_ATTEMPT_01 = AMBIGUOUS
+SEMANTIC_CORRECTNESS = NOT_EVALUATED
+```
+
+The project did not replay the task. Validation 066 records the model-free environment reconciliation. The decisive findings are:
+
+```text
+maintained PDF Skill bundle       26.904.11930
+primary runtime bundle            26.904.11930
+primary runtime Python            3.12.14
+primary runtime Poppler           26.07.0
+source parsing from scratch cwd   PASS
+all-page text extraction          PASS
+write-capable nested cwd setup    FAIL / helper_unknown_error
+same renderer from repo root      PASS
+all 8 pages -> local PNGs         PASS
+local PNG -> native image vision  PASS
+```
+
+The ambiguity is therefore localized to the selected nested working-directory/write-capable sandbox setup plus insufficient runtime-path discovery, not to absence of maintained PDF capabilities or corruption of the fixture. A write-capable command from the nested scratch cwd reproduces `helper_unknown_error: setup refresh had errors`; the same maintained `pdftoppm` executable succeeds from the registered repository root while writing only into the scratch subtree.
+
+Keeping rendered pages local is also important for this fixture. The current in-memory `codex.document_render` path succeeds for smaller single pages, while an image-heavy page and a multi-page request can hit its serialized command-output protocol. The maintained Poppler route rendered all eight pages to local PNGs successfully, including approximately 3.35 MB image-heavy pages, without moving those image bytes through stdout/base64.
+
+The controlled follow-up condition is intentionally different from Attempt 01 and is not a blind retry:
+
+```text
+execution cwd
+    registered ADS repository root
+
+worker file boundary
+    .tmp/astra-phase2-pdf-worker-01/source.pdf
+    plus worker-created outputs in that scratch subtree only
+
+maintained runtime
+    exact primary-runtime Python and Poppler paths supplied
+
+evaluator key
+    still withheld
+```
+
+Checkpoint 307 and Validation 066 preserve this boundary. The next semantic judgment must come from the controlled second worker and independent evidence review.
