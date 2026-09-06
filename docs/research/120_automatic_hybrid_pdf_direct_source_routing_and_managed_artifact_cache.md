@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / RENDER-SERIALIZATION LIVE ACTIVATION QUALIFIED / FRESH-HOST INTENT MATRIX NEXT
+**Status:** ACTIVE / FRESH-HOST INTENT MATRIX QUALIFIED / >192 MiB FACADE ISOLATION NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -968,3 +968,53 @@ Checkpoint 325 / Validation 083 preserve this source-published / restart-pending
 ## 24. Checkpoint 326 live activation qualification
 
 After the full controlled restart, the local service returned preview.16 / 60 tools and the tunnel returned HTTP 200 for both health and readiness. The exact pre-fix discriminator now succeeds live: `codex.document_render` on source pages `[16,49]` returns both PNGs in one request with the same Checkpoint 321 hashes (`aca9...56023` and `2eaa...e927`) and direct ChatGPT image delivery. Repeated persistent-session calls returned the identical hashes. This closes the low-level renderer activation defect. The remaining public proof is the fresh disposable five-call `codex.pdf_access` intent matrix; the >192 MiB facade-isolation qualification stays sequenced after that matrix passes. Checkpoint 326 / Validation 084 preserve this boundary.
+
+## 25. Checkpoint 327 fresh-host intent-matrix qualification
+
+The fresh disposable five-call public facade matrix now passes completely after the renderer repair. Exactly five `codex.pdf_access` calls were made, in the frozen order, with no retries and no compensating ADS tool:
+
+```text
+explicit text
+    requested/effective  text / text
+    primary route        direct-text
+
+explicit visual
+    requested/effective  visual / visual
+    primary route        direct-render
+
+explicit mixed
+    requested/effective  mixed / mixed
+    primary route        direct-text-plus-selective-render
+
+auto + visualRequired=false
+    requested/effective  auto / text
+    primary route        direct-text
+
+auto + visualRequired=true
+    requested/effective  auto / mixed
+    primary route        direct-text-plus-selective-render
+```
+
+All text-bearing calls returned source pages 16 and 49 with 17,999 and 1,345 characters respectively, 19,344 characters total, without truncation. All rendering-dependent calls returned both pages with identical live metadata across Calls 2, 3 and 5:
+
+```text
+page 16  1240 x 1755 / 583,130 bytes
+         aca9cfadbfcb99382e22a2472495f26d1ab097922ce9406d66a8121810a56023
+
+page 49  1240 x 1755 / 535,152 bytes
+         2eaaa5f2ffaae9b3d1e171d200d412dc1c545425d5f539e48513ac25c4e5e927
+```
+
+The ChatGPT model directly inspected every returned image from its originating facade call. No route returned a PDF resource link, no rendered-image base64 was embedded in structured/text metadata, and there was no host PDF materialization stage. The qualification used no OCR, Browser, Agent/reasoning-model intermediary, web search, ordinary ChatGPT PDF tooling, source-workspace write, manual source upload, or ADS tool other than the five facade calls.
+
+This closes the renderer/intention-matrix repair sequence opened at Checkpoint 322. The remaining Research 120 public proof is now the route family that crosses the 192 MiB direct-processing boundary:
+
+```text
+isolate-then-text
+isolate-then-render
+isolate-then-text-plus-render
+```
+
+That qualification should use a valid authorized PDF above 201,326,592 bytes, preserve original source-page provenance, expose direct text/image content to ChatGPT, leave the source workspace unchanged, and verify managed-artifact reuse when the public result makes it observable.
+
+Checkpoint 327 / Validation 085 preserve this boundary.
