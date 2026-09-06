@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / ARCHITECTURE ACCEPTED FOR IMPLEMENTATION
+**Status:** ACTIVE / CORE IMPLEMENTATION QUALIFIED / PUBLIC FACADE NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -482,3 +482,77 @@ NEXT
     implement managed artifact manager + deterministic splitter/isolation seam;
     then expose the automatic high-level routing facade
 ```
+
+## 16. Checkpoint 318 implementation qualification
+
+The first two items in the earlier `NEXT` sequence are now complete.
+
+### Live 192 MiB envelope
+
+After the controlled restart, the existing public `codex.document_read` and `codex.document_render` tools both passed against the same valid 134,218,426-byte PDF. The direct-processing extension is therefore live-qualified rather than merely source-published.
+
+### Managed core
+
+The private implementation now includes:
+
+```text
+PdfSourceProfiler
+PdfAccessPolicy
+PdfNativeSplitter
+PageRangeIsolator
+PdfArtifactManager
+PdfArtifactTextReader
+PdfArtifactRenderer
+PdfArtifactResourceStore
+PdfAccessOrchestrator
+```
+
+Combined private regression result:
+
+```text
+42 / 42 PASS
+```
+
+The qualification covers the requirements identified in Section 14:
+
+```text
+route-policy tests                     PASS
+source drift invalidation              PASS
+authority revalidation                 PASS
+atomic generation cleanup              PASS
+reuse after manager reconstruction     PASS
+eviction + deterministic regeneration  PASS
+lease-aware eviction protection        PASS
+rendered-page split equivalence         PASS
+page order/provenance                   PASS
+oversized-page detection                PASS
+real Machine Learning corpus            PASS
+```
+
+A valid source above 192 MiB was also isolated to a bounded page artifact and then used for both embedded-text extraction and page rendering, with the result mapped back to the original source page. This closes the core very-large-source path experimentally.
+
+The selected native splitter implementation is maintained primary-runtime `pypdf 6.10.0`. Real annotated Machine Learning PDFs emit bounded repair diagnostics for malformed object pointers; these warnings are preserved in generated manifests rather than silently discarded.
+
+`51.Deep Learning2.annotated.pdf` now provides the representative mixed-native case under the accepted algorithm: all ordinary ranges fit the 7,000,000-byte native target while pages 16 and 49 remain individually oversized and therefore route to embedded text + rendered-page fallback.
+
+The implementation is preserved in the private local-runtime repository at:
+
+```text
+3cf995e358425c4db970337f0413a8862bb5a564
+RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+postflightOk=true
+```
+
+No new public MCP action has been exposed yet. The remaining Research 120 implementation step is now:
+
+```text
+qualified PdfAccessOrchestrator
+    -> bounded public MCP facade
+    -> resource_link projection for native whole/parts
+    -> text projection for embedded text
+    -> image projection for rendered pages
+    -> full existing-surface regression
+    -> guarded live publication only after PASS
+```
+
+Checkpoint 318 / Validation 076 are the detailed preservation boundary.
