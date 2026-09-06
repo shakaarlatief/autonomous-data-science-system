@@ -305,6 +305,7 @@ docs/research/116_flexible_multi_repository_codexless_authority_and_runtime_repo
 docs/research/117_reuse_first_multimodal_document_architecture_and_local_media_handoff.md
 docs/research/118_astra_phase2_browser_free_pdf_evidence_architecture_reconciliation.md
 docs/research/119_chatgpt_local_machine_file_access_objective_restoration.md
+docs/research/120_automatic_hybrid_pdf_direct_source_routing_and_managed_artifact_cache.md
 docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
@@ -360,6 +361,8 @@ docs/local_execution/validation/073_large_pdf_text_read_source_published_restart
 docs/checkpoints/315_large_pdf_text_read_source_published_restart_pending.md
 docs/local_execution/validation/074_large_pdf_text_read_qualified.md
 docs/checkpoints/316_large_pdf_text_read_qualified.md
+docs/local_execution/validation/075_hybrid_pdf_routing_architecture_and_192mib_source_published.md
+docs/checkpoints/317_hybrid_pdf_routing_architecture_and_192mib_source_published.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
@@ -655,7 +658,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-316 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-317 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
