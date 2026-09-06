@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / FRESH-HOST INTENT MATRIX QUALIFIED / >192 MiB FACADE ISOLATION NEXT
+**Status:** QUALIFIED / PUBLIC PDF ROUTE FAMILY COMPLETE / AB-005 FILE-TYPE MATRIX NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -1018,3 +1018,61 @@ isolate-then-text-plus-render
 That qualification should use a valid authorized PDF above 201,326,592 bytes, preserve original source-page provenance, expose direct text/image content to ChatGPT, leave the source workspace unchanged, and verify managed-artifact reuse when the public result makes it observable.
 
 Checkpoint 327 / Validation 085 preserve this boundary.
+
+## 26. Checkpoint 328 >192 MiB public facade isolation qualification and Research 120 closure
+
+The final public route family now passes above the 192 MiB direct-processing envelope. A valid deterministic one-page synthetic PDF of 211,813,221 bytes was created in protected runtime `.tmp`; its visible page contained ordinary embedded text and vector graphics, while an unreferenced large stream supplied the controlled source-size pressure. The source SHA-256 was `00dfd5d9a983647bf7e35ee884796bc5f629807a1a1253ef613c42492e75c9c7`.
+
+Three high-level facade calls directly qualified every isolation route class:
+
+```text
+text
+    -> isolate-then-text
+    -> first page-isolation generation created
+
+visual
+    -> isolate-then-render
+    -> same page-isolation generation reused
+
+mixed
+    -> isolate-then-text-plus-render
+    -> same page-isolation generation reused for both modalities
+```
+
+The reusable managed artifact was:
+
+```text
+fileName       isolate-p1-534f32c53733.pdf
+SHA-256        534f32c537334241d7cd3c3a9d571f919e7f3851c246171e67772b18849a5f03
+sizeBytes      862
+sourcePageMap  [1]
+generationKey 24ef9217052288d105762fbea1e7148e3e2c736f7652c4d69be22c46c7fc0f43
+```
+
+Text extraction returned 122 untruncated characters and explicitly mapped artifact page 1 back to `sourcePageNumber:1`. Rendering returned one directly inspectable 1275 x 1651 PNG, 48,898 bytes, SHA-256 `aeb0cb98eb4ac5fc31ae099f42882e7c3d0c0bfdae6254b29bb2d865e3514427`, likewise mapped to source page 1. The visual and mixed calls returned the same image hash.
+
+After all calls, an independent source hash check still matched the original source SHA-256, and the source test directory contained exactly one file: the source itself. No split PDF, isolated PDF, render or manifest appeared beside it. This directly verifies that the public route uses the Codexless-managed artifact layer rather than requiring source-workspace writes.
+
+The isolated renderer emitted Node's standard `--allow-addons` warning because the maintained `@napi-rs/canvas` native addon is enabled. Functional qualification is unaffected, but this is intentionally preserved as a hardening caveat: the trusted native addon is part of the accepted maintained runtime, while Node's permission model must not be represented as an OS-grade isolation boundary merely because the route succeeds.
+
+Research 120 is now qualified for its accepted PDF direct-source scope. The public evidence covers:
+
+```text
+native whole/split routing
+native oversized-page text+vision fallback
+direct text
+direct render
+direct mixed
+auto text-first routing
+auto mixed routing when vision is required
+>192 MiB isolate-then-text
+>192 MiB isolate-then-render
+>192 MiB isolate-then-text-plus-render
+managed artifact generation + reuse
+original source-page provenance
+source-workspace cleanliness
+```
+
+Further PDF threshold tests are not the default next action. New PDF work should reopen only when new evidence exposes an unqualified route, fidelity problem, naturally complex very-large-source problem, host behavior change, or hardening trigger. The active broader document-access work returns to AB-005's file-type capability matrix for DOCX, PPTX, XLSX and other justified formats.
+
+Checkpoint 328 / Validation 086 preserve this closure boundary.
