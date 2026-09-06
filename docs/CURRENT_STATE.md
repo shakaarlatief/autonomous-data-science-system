@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 310
+**Checkpoint:** 311
 **Date:** 2026-09-06
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -24,7 +24,7 @@ Repository artifacts remain authoritative across chats and models.
 
 ## Current active stage: direct ChatGPT local-machine file access through Codexless
 
-Checkpoint 310 is the current boundary. Research 119 remains the governing scope correction: ordinary ChatGPT should gain direct bounded access to authorized local-machine files through Codexless without requiring manual upload or a reasoning-model intermediary. This capability is being developed in the ADS repositories but remains distinct from future ADS product document architecture. The fresh Checkpoint 309 host-capability discriminator is now resolved: the current ChatGPT host advertises `updateModelContext` but does not advertise its `resourceLink` modality.
+Checkpoint 311 is the current boundary. Research 119 remains the governing scope correction: ordinary ChatGPT should gain direct bounded access to authorized local-machine files through Codexless without requiring manual upload or a reasoning-model intermediary. This capability is being developed in the ADS repositories but remains distinct from future ADS product document architecture. The Checkpoint 310 direct-host discriminator is resolved and the next multi-native-PDF experiment has now passed: the 11,825,407-byte eight-page source was deterministically split into three native PDFs below the clean host envelope, all three materialized into one ChatGPT conversation through `codex.document_file_link`, and ChatGPT directly inspected and reasoned across the complete ordered source.
 
 The manual-upload baseline remains decisive. The user can already attach supported files, including large PDFs, directly to ChatGPT. Therefore the active work is about automatic direct source access from authorized local roots, not about having another model interpret local files for ChatGPT.
 
@@ -38,7 +38,7 @@ The temporary exact-root `codexless-live` ordinary workspace admission used only
 
 The host-capability candidate, live-publication evidence, fresh-host result, request-local store regression, resolved public-preservation handoff, and exact guarded Checkpoint 309 public Git-ACL repair helper are preserved in the private runtime repository at `2f53d142181bc4363c8edb96c651c15b3c960a44`, synchronized exactly to `origin/main` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and `postflightOk=true`. The current private candidate tree contains only the four source delta files plus its tests/docs; the full qualification snapshot remains in its parent history.
 
-The exact next Research 117/119 action is now the deterministic multi-native-PDF `document_file_link` qualification. Use the already established approximately 11.8 MiB source fixture, deterministically produce valid ordered PDF parts that each remain below the known clean host-materialization PASS envelope, hand every part to the same ordinary ChatGPT conversation, and verify direct source access across the complete ordered page set. A PASS establishes multi-part native source access only; it does not establish that the unchanged large PDF materializes as one ChatGPT file. Browser upload remains only a later transport fallback.
+The deterministic multi-native-PDF `document_file_link` qualification has now passed. The next Research 117/119 decision is architectural rather than mechanical: decide whether to productize deterministic native PDF splitting as the oversized-PDF fallback now, or first compare its practical UX/document-wide semantic trade-offs against the heavier Browser-upload fallback and any newly available supported native host primitive. The split mechanism is proven to work for direct source access; unchanged oversized whole-file materialization remains unproven.
 
 Two earlier cross-cutting Codexless corrections remain live-qualified. Formal Codex turns preserve the initial `Call Codex?` consent and bounded permission profile while using App Server `approvalPolicy=on-request` with `approvalsReviewer=auto_review`; the PowerShell wrapper classifier also allows documentation/search/here-string data containing `Codex` while genuine wrapped Codex CLI execution remains blocked.
 Checkpoint 279 remains fully accepted beneath this research boundary: `workspace-standard` supports explicit ordinary non-Git exact-root admission and Codexless `0.1.1-preview.9` / `codexless-public-preview-v2` exposes 52 MCP tools including first-class `codex.document_read`. At that qualification boundary `big-data-statistics` had only `read`; Research 117 later added `agent` explicitly for the bounded reuse experiment while retaining no write/browser/Git capability. A fresh disposable ChatGPT conversation had already invoked `codex.document_read` against a real PDF and returned bounded embedded text plus source/parser/page provenance with no OCR and no file mutation. Validation 039 remains the decisive baseline qualification evidence.
@@ -334,7 +334,7 @@ Research 103-108 and Specifications 024-027 continue to govern repository integr
 
 Development Method v0.9 remains current.
 
-Canonical numbered Checkpoint 310 is now the current meaningful project boundary. Checkpoint 310 preserves the fresh-host result that `updateModelContext` is advertised without the `resourceLink` modality, localizes the later `not_recorded` result to request-local probe-store lifetime, and routes the next direct-access qualification to deterministic multi-native-PDF `document_file_link`. Checkpoint 309 remains the live 59-tool host-capability diagnostic publication and same-conversation stale-projection boundary. Checkpoint 308 remains the governing objective correction that restores direct ChatGPT local-machine file access through Codexless and separates it from delegated document analysis and future ADS product architecture. Checkpoint 307 remains the historical first held-out Astra semantic-worker `AMBIGUOUS` result and environment diagnosis. Checkpoint 306 remains the completed GPT-6 Astra Phase 2 reconciliation and preserved non-live source-bound semantic-evidence candidate. Checkpoint 305 remains the completed GPT-5.6 Sol Browser compatibility baseline. Checkpoint 304 preserves the live-qualified direct-Codex guard correction, while Checkpoint 303 preserves the localized resource-link host materialization interval, direct-HTTPS rejection, native `auto_review` live qualification, and Browser fallback opening. Checkpoints 302-293 remain the detailed progression from intermediate/large resource-link host tests through the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result, Checkpoints 291-280 preserve the preceding document-handoff/reuse-first/render/image experiments, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
+Canonical numbered Checkpoint 311 is now the current meaningful project boundary. Checkpoint 311 preserves the successful multi-native-PDF direct-access qualification for the 11,825,407-byte source, including deterministic three-part generation, exact 8/8 render fidelity, 3/3 ChatGPT host materialization, native PDF inspection, and cross-part reasoning with no semantic intermediary. Checkpoint 310 remains the resolved fresh-host result that `updateModelContext` is advertised without the `resourceLink` modality. Checkpoint 309 remains the live 59-tool host-capability diagnostic publication and same-conversation stale-projection boundary. Checkpoint 308 remains the governing objective correction that restores direct ChatGPT local-machine file access through Codexless and separates it from delegated document analysis and future ADS product architecture. Checkpoint 307 remains the historical first held-out Astra semantic-worker `AMBIGUOUS` result and environment diagnosis. Checkpoint 306 remains the completed GPT-6 Astra Phase 2 reconciliation and preserved non-live source-bound semantic-evidence candidate. Checkpoint 305 remains the completed GPT-5.6 Sol Browser compatibility baseline. Checkpoint 304 preserves the live-qualified direct-Codex guard correction, while Checkpoint 303 preserves the localized resource-link host materialization interval, direct-HTTPS rejection, native `auto_review` live qualification, and Browser fallback opening. Checkpoints 302-293 remain the detailed progression from intermediate/large resource-link host tests through the original resource-link publication-preflight boundary. Checkpoint 292 preserves the live embedded-PDF host result, Checkpoints 291-280 preserve the preceding document-handoff/reuse-first/render/image experiments, and Checkpoint 279 remains the accepted `workspace-standard` + `codex.document_read` baseline.
 
 The public repository remains the sole project-development authority.
 
@@ -355,6 +355,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/311_multi_native_pdf_direct_access_qualified.md
+docs/local_execution/validation/069_multi_native_pdf_direct_access_qualified.md
 docs/checkpoints/310_fresh_chat_host_resource_link_not_advertised_multi_pdf_next.md
 docs/local_execution/validation/068_fresh_chat_host_capability_resource_link_not_advertised.md
 docs/checkpoints/309_chatgpt_host_capability_probe_live_fresh_chat_required.md
@@ -481,7 +483,7 @@ no unrecorded guided or repeated handoff state
 CHAT_ROTATION_PREFLIGHT evaluated as PASS / HOLD / FAIL from actual evidence
 ```
 
-A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover the relevant private local-runtime complement when accessible, and continue from the `chatgpt-host-resource-link-not-advertised-multi-pdf-next` boundary unless the repository has advanced further. The disposable qualification chat is now closed as evidence: fresh tool projection and MCP App initialization passed, while `updateModelContext.resourceLink` was not advertised. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
+A new persistent conversation must allocate a fresh provider-local session/title, reconstruct public authority first, recover the relevant private local-runtime complement when accessible, and continue from the `multi-native-pdf-direct-access-qualified` boundary unless the repository has advanced further. The deterministic multi-native-PDF direct-access experiment is now closed as PASS evidence; the next decision is whether to productize that fallback now or first compare its UX/document-wide semantic trade-offs against heavier Browser upload or any newly available supported native host primitive. For operational continuation steps, the collaborator must also resolve and read the governing procedure referenced by the active boundary before giving exact execution instructions; AB-022 preserves the currently observed gap while a stronger mechanism remains unaccepted. The broader `codexless-upstream-ecosystem-research` program remains active above that sub-boundary, and the preserved Source Vault ingestion route remains paused beneath the Level-2 research phase.
 
 ---
 
@@ -494,6 +496,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/311_multi_native_pdf_direct_access_qualified.md
+docs/local_execution/validation/069_multi_native_pdf_direct_access_qualified.md
 docs/checkpoints/310_fresh_chat_host_resource_link_not_advertised_multi_pdf_next.md
 docs/local_execution/validation/068_fresh_chat_host_capability_resource_link_not_advertised.md
 docs/checkpoints/309_chatgpt_host_capability_probe_live_fresh_chat_required.md

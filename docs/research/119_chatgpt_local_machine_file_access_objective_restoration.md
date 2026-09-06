@@ -627,3 +627,50 @@ UPDATE_MODEL_CONTEXT_RESOURCE_LINK = NOT_ADVERTISED
 PROBE_RESULT_STORE = REQUEST_LOCAL_BUG
 NEXT_RESEARCH = DETERMINISTIC_MULTI_NATIVE_PDF_DOCUMENT_FILE_LINK
 ```
+
+## 18. Checkpoint 311 multi-native-PDF direct-access qualification passed
+
+The deterministic multi-native-PDF fallback has now been tested end to end on the established 11,825,407-byte eight-page source.
+
+A naive two-part split was deliberately rejected because pages 1-4 alone produced approximately 7.87 MiB, above the highest clean whole-file host PASS of 7,417,428 bytes. A deterministic contiguous-range size search under that conservative ceiling selected the minimum three-part partition:
+
+```text
+source pages 1-3    3,936,427 bytes
+source page 4       3,935,151 bytes
+source pages 5-8    3,955,281 bytes
+```
+
+The model-free splitter reproduced all output hashes exactly across reruns. Model-free Poppler rendering of the original and split parts produced exact image-hash equality for all eight pages.
+
+Each part was then handed off through the already-qualified `codex.document_file_link` mechanism in the same ordinary ChatGPT conversation. All three resource-link calls succeeded and the ChatGPT host materialized all three as actual PDF files in the conversation file layer. Ordinary ChatGPT-side PDF Skill inspection reported the expected 3 + 1 + 4 page structure and ChatGPT directly inspected source content across all parts.
+
+Cross-part source reasoning was also verified. Page 1 contains opening inventory 137 units and page 8 contains closing inventory 219 units, allowing ChatGPT itself to compute the source-supported +82 unit change even though those pages reside in different materialized PDF parts.
+
+Accepted result:
+
+```text
+MULTI_NATIVE_PDF_DIRECT_ACCESS = PASS
+PART_GENERATION_DETERMINISTIC = PASS
+PAGE_RENDER_FIDELITY = 8/8 EXACT
+CHATGPT_HOST_MATERIALIZATION = 3/3 PASS
+CHATGPT_NATIVE_PDF_INSPECTION = PASS
+CROSS_PART_REASONING = PASS
+SEMANTIC_INTERMEDIARY = NONE
+UNCHANGED_OVERSIZED_WHOLE_FILE_MATERIALIZATION = NOT_ESTABLISHED
+```
+
+This changes the architecture status materially. Deterministic native PDF splitting is no longer speculative; it is a proven direct-source fallback for this oversized fixture.
+
+It should remain subordinate to unchanged whole-file handoff because splitting can weaken document-wide semantics such as signatures, outlines, links, forms, attachments, and the user's single-file experience. The next decision is therefore whether to productize this fallback now or first compare its UX/document-container trade-offs against the heavier Browser-upload fallback and any newly available supported native host primitive.
+
+Primary evidence: Validation 069 and Checkpoint 311.
+
+Updated classification:
+
+```text
+OVERSIZED_PDF_DIRECT_SOURCE_FALLBACK = QUALIFIED
+PREFERRED_WITHIN_HOST_ENVELOPE = UNCHANGED_NATIVE_WHOLE_FILE_RESOURCE_LINK
+FALLBACK_BEYOND_HOST_ENVELOPE = DETERMINISTIC_NATIVE_PDF_PARTS
+BROWSER_UPLOAD = LATER_HEAVIER_FALLBACK / NOT_YET_REQUIRED
+NEXT_RESEARCH = PRODUCTIZATION_DECISION_AND_FILE_TYPE_EXTENSION
+```
