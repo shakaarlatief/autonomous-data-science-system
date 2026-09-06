@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / RENDER-SERIALIZATION LIVE SOURCE PUBLISHED / CONTROLLED RESTART NEXT
+**Status:** ACTIVE / RENDER-SERIALIZATION LIVE ACTIVATION QUALIFIED / FRESH-HOST INTENT MATRIX NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -963,3 +963,8 @@ Those values prove only that the old running process remains healthy. They do no
 `docs/local_execution/OPERATIONS.md` was re-read before issuing restart guidance. The next accepted sequence is therefore the full controlled restart with tunnel stop first, Codexless restart and local verification second, tunnel restart/readiness verification third, and fresh disposable host qualification only after both layers are healthy.
 
 Checkpoint 325 / Validation 083 preserve this source-published / restart-pending boundary.
+
+
+## 24. Checkpoint 326 live activation qualification
+
+After the full controlled restart, the local service returned preview.16 / 60 tools and the tunnel returned HTTP 200 for both health and readiness. The exact pre-fix discriminator now succeeds live: `codex.document_render` on source pages `[16,49]` returns both PNGs in one request with the same Checkpoint 321 hashes (`aca9...56023` and `2eaa...e927`) and direct ChatGPT image delivery. Repeated persistent-session calls returned the identical hashes. This closes the low-level renderer activation defect. The remaining public proof is the fresh disposable five-call `codex.pdf_access` intent matrix; the >192 MiB facade-isolation qualification stays sequenced after that matrix passes. Checkpoint 326 / Validation 084 preserve this boundary.
