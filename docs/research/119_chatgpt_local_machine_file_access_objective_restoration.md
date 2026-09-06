@@ -862,3 +862,52 @@ INSTALLED_GT32MIB_PDFJS_TEXT_SMOKE = PASS
 REAL_78MB_PAGE16_DIRECT_TEXT = PENDING_RESTART
 NEXT_RESEARCH = RESTART_THEN_DOCUMENT_READ_PAGE16
 ```
+
+## 23. Checkpoint 316 large-source embedded text qualifies end to end
+
+After the canonical controlled restart, ordinary ChatGPT invoked the unchanged existing `codex.document_read` action on page 16 of the real 78,874,939-byte `51.Deep Learning2.annotated.pdf` source in the read-only Machine Learning workspace.
+
+The call succeeded and returned:
+
+```text
+source SHA-256
+    3872d5b3957d4313ab154a8405222d47098dda50657b660330ea0eecdce24110
+
+parser
+    pdfjs-dist 5.4.624
+
+page 16
+    embedded-text characters  17,999
+    returned characters       17,999
+    truncated                 false
+    OCR                       false
+```
+
+The returned embedded text directly includes the StyleGAN discussion, `latent vector`, `per-layer noise`, the explanation of feeding the latent vector at each generator stage, and the later `changing the latent vector` section. This is direct PDF text-layer evidence, not OCR and not a semantic receipt.
+
+The source SHA-256 exactly matches Checkpoint 314's page-render qualification. The same 78.9 MB authorized local PDF can therefore now reach ordinary ChatGPT through two complementary first-class model-free channels:
+
+```text
+selected page -> codex.document_read   -> embedded text -> ChatGPT text context
+selected page -> codex.document_render -> PNG image     -> ChatGPT native vision
+```
+
+No manual upload, Browser, source-workspace write, semantic worker or Codex reasoning-model turn was used.
+
+This closes the large-source text gap for authorized PDF sources within the current 96 MiB direct-source envelope. The next research problem is policy/integration rather than basic access: select automatically among whole-file native handoff, native PDF splitting, embedded text and rendered-page vision according to user intent and each route's independent limits.
+
+Primary evidence: Validation 074 and Checkpoint 316.
+
+Updated classification:
+
+```text
+LARGE_SOURCE_TEXT_ADMISSION_96MIB = QUALIFIED
+REAL_78MB_PAGE16_DIRECT_TEXT = PASS
+PAGE16_TEXT_CHARACTERS = 17999
+TRUNCATED = FALSE
+OCR = NONE
+READ_ONLY_SOURCE_WORKSPACE = PASS
+LARGE_SOURCE_VISUAL_ROUTE = QUALIFIED
+LARGE_SOURCE_TEXT_ROUTE = QUALIFIED
+NEXT_RESEARCH = GENERALIZE_AUTOMATIC_HYBRID_DIRECT_SOURCE_POLICY
+```
