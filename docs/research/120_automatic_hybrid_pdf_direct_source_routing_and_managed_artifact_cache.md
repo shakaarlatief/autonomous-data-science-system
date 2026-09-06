@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / FRESH-CHAT NATIVE SPLIT QUALIFIED / MIXED TEXT-VISION NEXT
+**Status:** ACTIVE / FRESH-CHAT NATIVE HYBRID QUALIFIED / PUBLIC INTENT MATRIX + >192 MIB NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -676,3 +676,67 @@ No manual source upload, OCR, Browser, Agent, source-workspace write or reasonin
 The next bounded qualification is intentionally not another native split test. Use the same high-level facade against `51.Deep Learning2.annotated.pdf` to exercise mixed text/vision behavior and the individually oversized native pages 16 and 49. The goal is to prove that the facade can combine bounded native parts with direct embedded text and rendered-page image content in one automatic route, and that ChatGPT can consume those modalities without falling back to a semantic worker.
 
 Checkpoint 320 / Validation 078 are the detailed fresh-host native split boundary. The corresponding private runtime continuity/evidence update is synchronized at `a8f26df8a54e6a8c935e5bbff42499e6cb86cec6` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and `postflightOk=true`.
+
+## 19. Checkpoint 321 fresh-chat native hybrid qualification
+
+The high-level native route now also passes the difficult individually-oversized-page case end to end on the actual ChatGPT host.
+
+One fresh disposable ChatGPT conversation invoked exactly one `codex.pdf_access` call on the 78,874,939-byte `51.Deep Learning2.annotated.pdf` with `intent=native` and a 50,000-character total fallback-text budget.
+
+The facade selected:
+
+```text
+primary route  native-parts-plus-page-fallback
+native mode    parts-plus-page-fallback
+```
+
+and reused fourteen deterministic native PDF parts for every source-page range that could fit below the 7,000,000-byte native-part target. Individually oversized source pages 16 and 49 were not rasterized and mislabeled as native PDFs. They were instead exposed through the accepted faithful fallback:
+
+```text
+page 16
+    embedded text  17,999 chars
+    rendered PNG   1240 x 1755 / 583,130 bytes
+
+page 49
+    embedded text  1,345 chars
+    rendered PNG   1240 x 1755 / 535,152 bytes
+```
+
+The one facade result projected:
+
+```text
+resourceLinkCount  14
+imageCount         2
+```
+
+with neither PDF bytes/base64 nor rendered-image base64 embedded inside the structured/text metadata. The fourteen PDFs traveled through separate MCP resource-link items and the two rendered pages through separate MCP image content items.
+
+The ChatGPT model directly inspected both returned images without another ADS call. The host then materialized all fourteen native resources as actual `/mnt/data` conversation PDF files. Ordinary ChatGPT-side PDF tooling independently inspected the materialized pages-1-7 part and reported a seven-page PDF with concrete generative-model first-page content.
+
+This closes the complete public `intent=native` route at the host boundary:
+
+```text
+authorized large local PDF
+    -> codex.pdf_access
+    -> deterministic native parts for host-fit page ranges
+    -> text + rendered-image fallback for individually oversized native pages
+    -> direct ChatGPT image understanding
+    -> host materialization of every native resource
+    -> ordinary ChatGPT PDF inspection
+```
+
+No OCR, Browser, Agent, source-workspace write, manual source upload, web search or semantic/reasoning-model intermediary was used in the facade path.
+
+The next Research 120 evidence should now avoid repeating the native route. Remaining public-surface qualification is:
+
+```text
+explicit text intent
+explicit visual intent
+explicit mixed intent
+auto intent
+>192 MiB page/range isolation through codex.pdf_access
+```
+
+The direct-processing primitives and private >192 MiB isolator are already separately qualified. The remaining objective is to prove their high-level facade projection and host consumption, then determine whether Research 120 can close or whether any new failure exposes another bounded implementation seam.
+
+Checkpoint 321 / Validation 079 are the detailed fresh-host native hybrid boundary. The corresponding private runtime continuity/evidence update is synchronized at `d1728207a5b0a4e3f168fad999aa400c2db0019d` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and `postflightOk=true`.
