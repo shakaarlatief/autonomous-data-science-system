@@ -1,7 +1,7 @@
 # Research 121: Non-PDF File Capability Matrix and Native Handoff Reuse
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / OFFICE SCRATCH CANDIDATE QUALIFIED / AB-020 RESTART + LIVE PROOF NEXT
+**Status:** ACTIVE / OFFICE PREVIEW.17 PUBLICATION PREFLIGHT QUALIFIED / HOST PUBLICATION NEXT
 **Scope:** Determine the professional direct-source architecture for authorized DOCX, PPTX and XLSX files after the PDF route family closed under Research 120. Prefer whole-file/native ChatGPT handoff when the host can consume the original file faithfully; add model-free structure or rendering fallbacks only where direct native handling is insufficient.
 **Declared references:** `research:119`, `research:120`, `checkpoint:328`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -188,9 +188,9 @@ Checkpoint 328 exposed Node's standard `--allow-addons` warning on cached PDF re
 The private-runtime preservation gate reached its previously reproduced 32 KiB tracked-path enumeration edge before a clean new candidate file could be added. Checkpoint 330 / Validation 088 qualify the bounded AB-020 correction and guarded publication preflight. Therefore the immediate sequence is:
 
 ```text
-restart onto the now-published AB-020 semantic-git correction
--> prove one real private semantic push above the old 32 KiB tracked-path envelope
--> move the already-qualified private Codexless generic file-link candidate from protected scratch into durable private Git
+AB-020 live proof completed above the old 32 KiB envelope
+-> Office candidate durably preserved in private Git
+-> publish the guarded preview.17 Office file-link package
 -> qualify authority, MIME allowlist, binding, TTL, drift and no-inline-bytes tests
 -> generate tiny deterministic DOCX/PPTX/XLSX fixtures
 -> stage/public-regress without changing existing PDF contracts
