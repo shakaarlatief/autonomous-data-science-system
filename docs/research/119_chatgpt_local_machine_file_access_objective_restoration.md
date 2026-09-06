@@ -564,3 +564,66 @@ SAME_CHAT_TOOL_PROJECTION = STALE
 UPDATE_MODEL_CONTEXT_RESOURCE_LINK = NOT_YET_OBSERVED
 NEXT_RESEARCH = FRESH_CHAT_HOST_CAPABILITY_HANDSHAKE
 ```
+
+## 17. Checkpoint 310 fresh-host discriminator resolved
+
+The fresh disposable ChatGPT conversation projected the newly published probe tools successfully and mounted the MCP App. The widget visibly completed the standard `ui/initialize` handshake and displayed the current ChatGPT host capability object.
+
+Observed host capability core:
+
+```text
+updateModelContext = {}
+message = {}
+downloadFile = absent/null
+serverResources = advertised
+serverTools = advertised
+logging = advertised
+openLinks = advertised
+```
+
+The MCP Apps capability contract models `updateModelContext` as a set of independently optional supported content modalities. `resourceLink?: {}` is the explicit indicator that resource-link content blocks are supported. The current host advertised `updateModelContext` itself but no `resourceLink` property.
+
+Accepted result:
+
+```text
+UPDATE_MODEL_CONTEXT = ADVERTISED
+UPDATE_MODEL_CONTEXT_RESOURCE_LINK = NOT_ADVERTISED
+```
+
+The proposed tiny-PDF `resourceLink -> ui/update-model-context` qualification is therefore not run on this host. Protocol availability remains useful upstream evidence, but the current ChatGPT host advertisement does not expose the required modality.
+
+The later model-visible result tool returned `{ "status": "not_recorded" }` twice even though the widget visibly reported a recorded host snapshot. Source review and a new focused regression localize that discrepancy to the diagnostic itself: the HTTP runtime constructs a fresh `McpServer` per request, while the probe's default store is created inside each server registration. Two independent registrations therefore receive isolated stores. The raw `ui/initialize` snapshot remains valid host evidence; only the convenience persistence/readback path was defective.
+
+The Checkpoint 309 branch now resolves to:
+
+```text
+NOT_ADVERTISED
+    -> close the resourceLink update-model-context candidate for the current host
+    -> return to deterministic multi-native-PDF document_file_link qualification
+```
+
+The next experiment must preserve direct-source semantics:
+
+```text
+large authorized PDF
+    -> deterministic valid PDF parts
+    -> each part below the known clean materialization PASS envelope
+    -> codex.document_file_link for all ordered parts
+    -> one ordinary ChatGPT conversation receives the native parts
+    -> ChatGPT verifies access across the complete ordered page set
+```
+
+A PASS proves multi-part native source access. It does not prove unchanged whole-file materialization above the current host boundary.
+
+Primary evidence: Validation 068 and Checkpoint 310.
+
+Updated classification:
+
+```text
+HOST_CAPABILITY_PROBE = QUALIFICATION_COMPLETE
+FRESH_CHAT_TOOL_PROJECTION = PASS
+UPDATE_MODEL_CONTEXT = ADVERTISED
+UPDATE_MODEL_CONTEXT_RESOURCE_LINK = NOT_ADVERTISED
+PROBE_RESULT_STORE = REQUEST_LOCAL_BUG
+NEXT_RESEARCH = DETERMINISTIC_MULTI_NATIVE_PDF_DOCUMENT_FILE_LINK
+```

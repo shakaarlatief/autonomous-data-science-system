@@ -159,12 +159,12 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** RESEARCHING / HOST-CAPABILITY PROBE LIVE / FRESH-CHAT QUALIFICATION READY
+**Status:** RESEARCHING / `resourceLink` MODEL-CONTEXT MODALITY NOT ADVERTISED / MULTI-NATIVE-PDF QUALIFICATION NEXT
 **Priority:** P1
 
 Research 119 / Checkpoint 308 restore the actual objective: ordinary ChatGPT chat should gain direct bounded access to files in already-authorized local-machine workspaces through Codexless, without requiring the user to manually upload each file and without inserting a Codex reasoning model merely because the source is local. Whole-file/native handoff is preferred when supported; faithful model-free text, structure, cells or rendered media delivered directly to ChatGPT are valid fallbacks. Research 118's semantic-worker/receipt branch remains preserved only as optional future delegated-analysis or ADS-product research. The prepared second Astra semantic-worker task was declined before any model turn.
 
-Checkpoint 309 / Validation 067 now add the narrowest direct-host discriminator before PDF splitting. A temporary read-only MCP Apps diagnostic is live on Codexless `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel is ready. Its only purpose is to observe whether the actual ChatGPT host advertises `updateModelContext.resourceLink`. The originating persistent conversation retained its older callable tool projection after Plugin refresh, so the live probe cannot be invoked here. The exact next action is a fresh disposable ChatGPT conversation that runs the probe and classifies the modality as `ADVERTISED` or `NOT_ADVERTISED`.
+Checkpoint 309 / Validation 067 introduced the narrow direct-host discriminator before PDF splitting. Checkpoint 310 / Validation 068 now resolve it. A fresh disposable ChatGPT conversation projected the 59-tool probe surface successfully, mounted the MCP App, and visibly completed `ui/initialize`. The current host advertised `updateModelContext: {}` with no `resourceLink` property, so `updateModelContext` is advertised but its `resourceLink` modality is not. The later result-tool `not_recorded` response is separately localized to request-local default store lifetime and does not invalidate the raw host snapshot. The tiny `resourceLink -> ui/update-model-context` PDF test is skipped; the exact next direct-access action is deterministic multi-native-PDF `document_file_link` qualification.
 
 The first-class `codex.document_read` PDF baseline is no longer open work. It is live-qualified on Codexless `0.1.1-preview.9` / 52 tools through Validation 039 and Checkpoint 279, including the isolated bounded `pdfjs-dist@5.4.624` parser child and a real read-only personal-PDF test.
 
@@ -245,7 +245,7 @@ Design this with AB-003, AB-004 and the v17 viewer rather than as an isolated UI
 
 Validation 034 showed an existing conversation can retain an older callable action projection after the live MCP server publishes new actions. Research 116 therefore moved ordinary workspace/project variability into server-owned policy behind stable schemas.
 
-Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. The next qualification therefore requires a fresh chat. This is not evidence that the live server lacks those tools; it is evidence that refresh did not replace the callable projection for this already-open conversation.
+Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. Validation 068 then confirms that a separate fresh disposable conversation did expose those new tools and successfully mounted the probe MCP App. For this publication cycle, the observed rule is therefore: same-chat Plugin refresh retained the stale projection, while a fresh chat acquired the updated projection. The broader cause/lifecycle contract remains open.
 
 Remaining questions:
 
