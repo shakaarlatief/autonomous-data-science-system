@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / CORE IMPLEMENTATION QUALIFIED / PUBLIC FACADE NEXT
+**Status:** ACTIVE / PUBLIC FACADE SOURCE PUBLISHED / CONTROLLED RESTART NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -362,7 +362,7 @@ manifest-aware regeneration
 no eviction while an artifact/resource is actively leased
 ```
 
-Exact quota and idle-age defaults should be calibrated from real corpus measurements rather than frozen arbitrarily in this research record.
+The first product candidate now uses a bounded 2 GiB total managed-artifact quota and a 30-day idle horizon. These are operational defaults, not fundamental architectural maxima. They can be recalibrated from corpus/usage evidence without changing the source-authority or regeneration model.
 
 Small manifests may be retained longer than the large byte artifacts because they are cheap and accelerate deterministic reconstruction.
 
@@ -478,9 +478,10 @@ VERY_LARGE_SOURCE
     isolate bounded page/range before text/render
 
 NEXT
-    qualify 192 MiB live source extension after restart;
-    implement managed artifact manager + deterministic splitter/isolation seam;
-    then expose the automatic high-level routing facade
+    controlled restart of the published preview.16 source;
+    verify local 60-tool health and tunnel readiness;
+    refresh the developer MCP app;
+    fresh-chat discovery and representative codex.pdf_access qualification
 ```
 
 ## 16. Checkpoint 318 implementation qualification
@@ -555,4 +556,69 @@ qualified PdfAccessOrchestrator
     -> guarded live publication only after PASS
 ```
 
-Checkpoint 318 / Validation 076 are the detailed preservation boundary.
+Checkpoint 318 / Validation 076 are the detailed core-qualification boundary.
+
+## 17. Checkpoint 319 public-facade publication boundary
+
+The remaining public-facade implementation seam is now complete at the source-publication level.
+
+The candidate exposes one bounded high-level action:
+
+```text
+codex.pdf_access
+```
+
+The public facade preserves the direct-source architecture rather than introducing a semantic worker. It projects native PDFs/parts as MCP `resource_link` content, embedded text as text metadata, and rendered fallback pages as ordinary MCP image content. The candidate also adds explicit result/cache bounds:
+
+```text
+native PDF resource links per result   <= 48
+oversized-page fallback text           one shared total request budget
+managed artifact quota                 2 GiB
+managed artifact idle horizon          30 days
+active leases                          protected from eviction
+```
+
+The combined private core/facade regression now passes:
+
+```text
+49 / 49 PASS
+```
+
+A staged mirror of the installed Codexless runtime also passes the adapted existing public regressions at the intended 60-tool candidate surface:
+
+```text
+bounded Git fetch                       PASS tools=60
+bounded Git pull                        PASS tools=60
+document file-read                      PASS tests=7
+document render                         PASS tests=10
+document resource-link                  PASS tests=9
+image read                              PASS tests=7
+public surface registration             PASS tools=60
+```
+
+The guarded host publication was then executed without widening ordinary workspace authority. Independent post-publication hashes show exact equality between the installed source/test payload and the qualified candidate/staging copies:
+
+```text
+source files matching candidate        17 / 17
+adapted installed tests matching stage  4 / 4
+```
+
+The active process was intentionally not restarted by publication. It therefore remains on:
+
+```text
+0.1.1-preview.15-host-capability-probe
+59 tools
+```
+
+with tunnel health/readiness still HTTP 200. This is a source-published, restart-pending state, not yet an end-to-end `codex.pdf_access` host qualification.
+
+Private evidence is synchronized at:
+
+```text
+85b1de4bad00e71a723a6c7e3a89b959b2582241  Qualify hybrid PDF public facade candidate
+8e2b98cfe5cd7eecafb9764dfd9e29b5602638d4  Record hybrid PDF live source publication
+RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+postflightOk=true
+```
+
+Checkpoint 319 / Validation 077 are the detailed source-publication boundary. The next step is the exact controlled restart/reconnect/app-refresh sequence owned by `docs/local_execution/OPERATIONS.md`, followed by fresh-chat discovery and representative `codex.pdf_access` qualification.
