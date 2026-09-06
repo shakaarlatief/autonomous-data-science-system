@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / PUBLIC FACADE SOURCE PUBLISHED / CONTROLLED RESTART NEXT
+**Status:** ACTIVE / FRESH-CHAT NATIVE SPLIT QUALIFIED / MIXED TEXT-VISION NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -621,4 +621,58 @@ RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
 postflightOk=true
 ```
 
-Checkpoint 319 / Validation 077 are the detailed source-publication boundary. The next step is the exact controlled restart/reconnect/app-refresh sequence owned by `docs/local_execution/OPERATIONS.md`, followed by fresh-chat discovery and representative `codex.pdf_access` qualification.
+Checkpoint 319 / Validation 077 are the detailed source-publication boundary.
+
+## 18. Checkpoint 320 fresh-chat native split qualification
+
+The preview.16 activation and first representative fresh-host route now pass end to end.
+
+After the controlled restart and tunnel reconnect:
+
+```text
+version        0.1.1-preview.16-hybrid-pdf-access
+toolCount      60
+surfaceVersion codexless-public-preview-v2
+tunnel health  200
+tunnel ready   200
+```
+
+After the developer MCP app refresh, a fresh disposable ChatGPT conversation discovered `codex.pdf_access` and invoked it exactly once on:
+
+```text
+C:\School\Machine Learning\32.LinearModels2.annotated.pdf
+intent=native
+```
+
+The facade selected:
+
+```text
+primary route  native-parts
+native mode    parts
+```
+
+and returned the deterministic split previously qualified in the private/core evidence:
+
+```text
+pages 1-34   6,851,116 bytes
+pages 35-38  1,646,076 bytes
+```
+
+The tool result contained metadata plus two PDF `resource_link` items and no inline PDF bytes/base64. The ChatGPT host then materialized both resources as actual conversation PDF files. Ordinary ChatGPT-side PDF tooling inspected the first materialized part successfully, confirmed 34 pages, and described concrete first-page visual/content structure.
+
+This closes the native split route at the actual host boundary:
+
+```text
+authorized local PDF > native whole target
+    -> codex.pdf_access
+    -> deterministic managed native parts
+    -> MCP resource_link projection
+    -> host file materialization
+    -> ordinary ChatGPT PDF inspection
+```
+
+No manual source upload, OCR, Browser, Agent, source-workspace write or reasoning-model intermediary was used.
+
+The next bounded qualification is intentionally not another native split test. Use the same high-level facade against `51.Deep Learning2.annotated.pdf` to exercise mixed text/vision behavior and the individually oversized native pages 16 and 49. The goal is to prove that the facade can combine bounded native parts with direct embedded text and rendered-page image content in one automatic route, and that ChatGPT can consume those modalities without falling back to a semantic worker.
+
+Checkpoint 320 / Validation 078 are the detailed fresh-host native split boundary.
