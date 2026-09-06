@@ -817,3 +817,48 @@ BROWSER = NONE
 REASONING_MODEL_INTERMEDIARY = NONE
 NEXT_RESEARCH = GENERALIZE_HYBRID_POLICY_AND_LARGE_SOURCE_TEXT_PATH
 ```
+
+## 22. Checkpoint 315 large-source embedded-text route published
+
+The corresponding large-source `codex.document_read` gap is now addressed in source and awaiting only a controlled runtime restart plus the real page-16 qualification.
+
+Before publication, the live first-class tool was called on page 16 of the 78,874,939-byte `51.Deep Learning2.annotated.pdf` source and failed before page selection:
+
+```text
+DOCUMENT_SIZE_LIMIT
+limitBytes  33,554,432
+sizeBytes   78,874,939
+```
+
+This proves the old restriction was the whole-source admission ceiling, not the selected page size.
+
+The candidate keeps the existing public `codex.document_read` contract and read-only authority but raises its bounded source ceiling from 32 MiB to 96 MiB. The isolated PDF.js child was also tightened for large inputs: the server-owned source size is passed through private protocol metadata, the child allocates one exact bounded input buffer, rejects length mismatch, and gives PDF.js a zero-copy `Uint8Array` view over that buffer.
+
+Pre-restart evidence:
+
+```text
+candidate syntax                         PASS
+focused >32 MiB source tests             3/3 PASS
+live source publication                  PASS
+installed valid source bytes             36,700,855
+installed parser                          pdfjs-dist 5.4.624
+installed >32 MiB text extraction smoke  PASS
+public tool schema/count change          NONE
+source-workspace write                    NONE
+reasoning-model intermediary              NONE
+```
+
+The temporary installed-runtime workspace admission was removed after publication/testing. The normal Machine Learning workspace remains strictly read-only.
+
+The running Codexless process still has the old module loaded, so no real 78.9 MB end-to-end claim is made yet. The exact next experiment is the canonical controlled restart followed by same-chat `codex.document_read` on page 16 with `maxCharacters=25000`. No Plugin refresh is required.
+
+Primary evidence: Validation 073 and Checkpoint 315.
+
+Updated classification:
+
+```text
+LARGE_SOURCE_TEXT_ADMISSION_96MIB = SOURCE_PUBLISHED
+INSTALLED_GT32MIB_PDFJS_TEXT_SMOKE = PASS
+REAL_78MB_PAGE16_DIRECT_TEXT = PENDING_RESTART
+NEXT_RESEARCH = RESTART_THEN_DOCUMENT_READ_PAGE16
+```
