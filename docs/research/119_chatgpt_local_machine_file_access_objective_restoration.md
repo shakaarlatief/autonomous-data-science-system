@@ -727,3 +727,42 @@ OVERSIZED_SINGLE_NATIVE_PAGE = CONFIRMED_REAL_CASE
 READ_ONLY_SOURCE_WORKSPACE = MUST_REMAIN_SUPPORTED
 NEXT_RESEARCH = HYBRID_OVERSIZED_SINGLE_PAGE_DIRECT_SOURCE_ROUTE
 ```
+
+## 20. Checkpoint 313 renderer-only large-source route published
+
+The first bounded oversized-single-page route is now implemented and source-published for live qualification. The representative source remains `51.Deep Learning2.annotated.pdf` at 78,874,939 bytes, where page 16 alone serializes to a 15,944,609-byte native one-page PDF.
+
+A model-free feasibility run using the same maintained PDF.js + `@napi-rs/canvas` stack as `codex.document_render` succeeded directly against the read-only 78,874,939-byte source:
+
+```text
+page 16 render at 150 DPI
+    dimensions    1240 x 1755
+    PNG bytes     583,130
+    PNG SHA-256   aca9cfadbfcb99382e22a2472495f26d1ab097922ce9406d66a8121810a56023
+
+page 16 embedded text
+    characters    17,999
+    SHA-256       6829039204ef86c6204e3ca2d8c3b74e77b94c07ec8d7fc885c5a3e15ae52ba2
+```
+
+The combined render/text probe also passed under a 256 MiB Node heap. This shows that the existing 32 MiB failure was a source-admission-policy limitation rather than a fundamental inability of the maintained runtime to process the page.
+
+The chosen implementation is deliberately narrow. `codex.document_read` remains unchanged at its current 32 MiB source ceiling. Only `document-renderer.mjs` receives a separate 96 MiB source ceiling. The renderer parent no longer retains the entire source twice for identity verification; it validates the PDF header from the first 1,024 bytes and computes SHA-256 in bounded 1 MiB chunks before and after the existing sandboxed render. Canonical path, size, mtime, dev/inode and SHA drift checks remain in force, while existing per-page and aggregate PNG ceilings remain 4 MiB and 8 MiB respectively.
+
+Static candidate tests passed, the reviewed source was published to the installed Codexless tree with a hash-verified backup, and the installed document-render regression is 10/10 PASS. The temporary exact-root runtime publication admission was removed again after verification; the normal Machine Learning workspace remains read-only.
+
+The currently running Codexless process still has the pre-publication module loaded. Therefore no end-to-end host claim is made yet. The exact next experiment is the canonical controlled Codexless/tunnel restart followed by the unchanged existing `codex.document_render` tool on Machine Learning page 16 in the same ChatGPT conversation. No Plugin refresh is required because the tool schema and tool count did not change.
+
+Primary evidence: Validation 071 and Checkpoint 313.
+
+Updated classification:
+
+```text
+LARGE_PDF_PAGE_RENDER_FEASIBILITY = PASS
+RENDERER_96MIB_SOURCE_CANDIDATE = STATIC_PASS
+LIVE_SOURCE_PUBLICATION = PASS
+SOURCE_WORKSPACE_WRITE = NONE
+TOOL_SCHEMA_CHANGE = NONE
+END_TO_END_CHATGPT_PAGE16_RENDER = PENDING_RESTART
+NEXT_RESEARCH = RESTART_THEN_DOCUMENT_RENDER_PAGE16
+```
