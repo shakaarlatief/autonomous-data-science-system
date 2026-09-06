@@ -161,7 +161,7 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** IN_PROGRESS / OFFICE BASELINE QUALIFIED / AB-020 LIVE ACTIVATION PREREQUISITE
+**Status:** IN_PROGRESS / OFFICE SCRATCH CANDIDATE QUALIFIED / AB-020 RESTART + LIVE PROOF NEXT
 **Priority:** P1
 
 Research 119 / Checkpoint 308 restore the actual objective: ordinary ChatGPT chat should gain direct bounded access to files in already-authorized local-machine workspaces through Codexless, without requiring the user to manually upload each file and without inserting a Codex reasoning model merely because the source is local. Whole-file/native handoff is preferred when supported; faithful model-free text, structure, cells or rendered media delivered directly to ChatGPT are valid fallbacks. Research 118's semantic-worker/receipt branch remains preserved only as optional future delegated-analysis or ADS-product research. The prepared second Astra semantic-worker task was declined before any model turn.
@@ -172,7 +172,7 @@ The first-class `codex.document_read` PDF baseline is no longer open work. It is
 
 Research 117/119 now applies a direct-access-first rule: first reuse supported ChatGPT/OpenAI/MCP file transport and model-free source/media delivery so ChatGPT itself receives the authorized local source. Installed Codex Skills and Codex workers can still inform implementation or serve optional delegation workflows, but they are not the default data path for this objective. Mature converters such as MarkItDown, Docling, or PyMuPDF4LLM remain candidates only when a concrete format gap cannot be solved through supported direct/native or deterministic source representations.
 
-The immediate next route remains the Research 121 Office capability matrix, but Checkpoint 330 makes one infrastructure prerequisite explicit: publish/restart the bounded AB-020 private-integrity scanner correction and prove a real semantic push above the old 32 KiB tracked-path envelope before adding new tracked `codex.file_link` source files. After that proof, implement and qualify whole-file DOCX/PPTX/XLSX handoff first, then add faithful model-free structure/rendering fallbacks only where the fresh-host matrix demonstrates missing material content or fidelity. Remaining document-system directions are separate capabilities:
+The immediate next route remains the Research 121 Office capability matrix. Checkpoint 331 already qualifies the `codex.file_link` scratch candidate and deterministic DOCX/PPTX/XLSX fixtures. Checkpoint 332 now preserves successful publication of the AB-020 integrity correction, but the process still needs the controlled restart and one real private semantic push above the old 32 KiB tracked-path envelope before new tracked Office source paths are admitted. After that proof, preserve the qualified candidate privately, publish preview.17, and run the fresh-host Office fidelity matrix; add model-free structure/rendering fallbacks only where that matrix demonstrates missing material content or fidelity. Remaining document-system directions are separate capabilities:
 
 ```text
 codex.document_render
@@ -508,7 +508,7 @@ Checkpoint 323 converted that anticipated edge into a direct live reproduction. 
 
 Checkpoint 330 / Validation 088 now qualify the permanent bounded-enumeration correction. Instead of transporting the complete tracked-file list through the generic 32 KiB response envelope, the candidate launches one fixed server-owned read-only Node scanner inside the already-authorized sandbox. The scanner internally permits a separately bounded 4 MiB tracked-path enumeration and at most 20,000 tracked files, preserves the existing containment/regular-file/2 MiB-per-file/50 MiB-total/binary/secret gates, and returns only compact JSON. Malformed/truncated scanner receipts or scanner failure remain fail-closed. A regression deliberately creates a tracked-path set above 32 KiB and passes.
 
-The candidate is privately preserved at `7e70bd05e4da76ff1ad260b2b1cbdc5c1d65a3fb`, and its guarded publication preflight passes 8/8 focused tests plus three staged 60-tool public regressions without modifying the live runtime. AB-020 remains open only until the exact source is published, the runtime is restarted, and one normal private semantic push succeeds with the tracked-path enumeration actually above the old generic ceiling.
+The candidate is privately preserved at `7e70bd05e4da76ff1ad260b2b1cbdc5c1d65a3fb`. Checkpoint 332 / Validation 090 now preserve successful host publication and independent installed-hash verification at `3b2ddbbe00339045b81044bb3e1e39c314a461a7e0f8e4e608b79b4b0f37de02`. AB-020 remains open only until the runtime is restarted onto those bytes and one normal private semantic push succeeds with the tracked-path enumeration actually above the old generic ceiling.
 
 Primary contract: `docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md`.
 
