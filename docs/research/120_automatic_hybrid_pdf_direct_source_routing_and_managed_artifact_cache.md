@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / GUARDED RENDER-SERIALIZATION PUBLICATION PREFLIGHT QUALIFIED / HOST PUBLICATION NEXT
+**Status:** ACTIVE / RENDER-SERIALIZATION LIVE SOURCE PUBLISHED / CONTROLLED RESTART NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -933,3 +933,33 @@ With `-Publish`, the helper performs atomic replacement of exactly the renderer 
 Because ordinary `ads-local-runtime` workspace authority does not own `%LOCALAPPDATA%\\Codexless`, the accepted next action remains execution of this exact helper from ordinary host PowerShell. After a PASS receipt, the installed hashes must be independently re-read before the source-published/restart-pending state is preserved.
 
 Checkpoint 324 / Validation 082 preserve this exact preflight boundary.
+
+## 23. Checkpoint 325 live-source publication / restart pending
+
+The qualified ordinary-host publication has now completed. The helper reran all seven live-disk public regressions and reported PASS, then explicitly stopped with `RESTART_PERFORMED=false`.
+
+Independent read-only verification confirmed the installed bytes now exactly match the qualified targets:
+
+```text
+document-renderer.mjs
+42199fca624f931f0076a502dbe4c4710f26f0769db50a64a2ac2174b6899b43
+
+document-render-regression.mjs
+3e60f761ebf5d68dcf4b05969e62dc3cf3d6931aebe4ab7403b66fc37ac4b725
+```
+
+Before restart, the active process and tunnel remained healthy at:
+
+```text
+0.1.1-preview.16-hybrid-pdf-access
+60 tools
+codexless-public-preview-v2
+tunnel /healthz 200
+tunnel /readyz 200
+```
+
+Those values prove only that the old running process remains healthy. They do not prove that the newly published renderer bytes are active.
+
+`docs/local_execution/OPERATIONS.md` was re-read before issuing restart guidance. The next accepted sequence is therefore the full controlled restart with tunnel stop first, Codexless restart and local verification second, tunnel restart/readiness verification third, and fresh disposable host qualification only after both layers are healthy.
+
+Checkpoint 325 / Validation 083 preserve this source-published / restart-pending boundary.
