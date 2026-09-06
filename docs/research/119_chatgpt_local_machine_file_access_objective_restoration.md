@@ -766,3 +766,54 @@ TOOL_SCHEMA_CHANGE = NONE
 END_TO_END_CHATGPT_PAGE16_RENDER = PENDING_RESTART
 NEXT_RESEARCH = RESTART_THEN_DOCUMENT_RENDER_PAGE16
 ```
+
+## 21. Checkpoint 314 oversized-page direct vision qualifies end to end
+
+After the canonical controlled restart, ordinary ChatGPT invoked the unchanged existing `codex.document_render` tool on page 16 of the real 78,874,939-byte `51.Deep Learning2.annotated.pdf` source in the read-only Machine Learning workspace.
+
+The call succeeded and returned:
+
+```text
+source SHA-256
+    3872d5b3957d4313ab154a8405222d47098dda50657b660330ea0eecdce24110
+
+page 16
+    media type    image/png
+    dimensions    1240 x 1755
+    bytes         583,130
+    SHA-256       aca9cfadbfcb99382e22a2472495f26d1ab097922ce9406d66a8121810a56023
+```
+
+The live returned image hash exactly matched the pre-restart feasibility render. More importantly, the standard MCP image content reached ChatGPT itself and was directly inspected with native vision. Visible content included the StyleGAN architecture diagram, `latent vector` and `per-layer noise` labels, generated-face examples, and the lower `changing the latent vector` section. This is direct image evidence, not a semantic receipt and not reconstructed from earlier extracted text.
+
+The successful live path is therefore:
+
+```text
+78,874,939-byte authorized local PDF
+    -> read-only Machine Learning authority
+    -> model-free PDF.js + canvas page render
+    -> 583,130-byte standard MCP PNG
+    -> ordinary ChatGPT native vision
+```
+
+No manual upload, Browser, OCR, source-workspace write, semantic worker, or Codex reasoning-model turn was used.
+
+This closes the exact oversized-single-page visual question raised by Checkpoint 312 for sources within the 96 MiB renderer ceiling. It does not yet solve every large-PDF concern. In particular, `codex.document_read` still has the separate 32 MiB source ceiling, and no automatic hybrid dispatcher yet chooses among unchanged whole-file handoff, native PDF splitting and rendered-page fallback.
+
+Primary evidence: Validation 072 and Checkpoint 314.
+
+Updated classification:
+
+```text
+OVERSIZED_SINGLE_PAGE_DIRECT_VISION = QUALIFIED
+LARGE_PDF_PAGE16_DIRECT_RENDER = PASS
+SOURCE_BYTES = 78874939
+PAGE16_NATIVE_PDF_BYTES = 15944609
+PAGE16_RENDER_BYTES = 583130
+CHATGPT_NATIVE_VISUAL_INSPECTION = PASS
+READ_ONLY_SOURCE_WORKSPACE = PASS
+MANUAL_UPLOAD = NONE
+BROWSER = NONE
+REASONING_MODEL_INTERMEDIARY = NONE
+NEXT_RESEARCH = GENERALIZE_HYBRID_POLICY_AND_LARGE_SOURCE_TEXT_PATH
+```
