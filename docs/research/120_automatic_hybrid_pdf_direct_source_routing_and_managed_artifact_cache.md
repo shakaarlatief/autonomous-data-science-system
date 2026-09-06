@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / FRESH-CHAT NATIVE HYBRID QUALIFIED / PUBLIC INTENT MATRIX + >192 MIB NEXT
+**Status:** ACTIVE / INTENT MATRIX FAILED / MULTI-PAGE DIRECT-RENDER TRANSPORT FIX NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -740,3 +740,79 @@ auto intent
 The direct-processing primitives and private >192 MiB isolator are already separately qualified. The remaining objective is to prove their high-level facade projection and host consumption, then determine whether Research 120 can close or whether any new failure exposes another bounded implementation seam.
 
 Checkpoint 321 / Validation 079 are the detailed fresh-host native hybrid boundary. The corresponding private runtime continuity/evidence update is synchronized at `d1728207a5b0a4e3f168fad999aa400c2db0019d` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and `postflightOk=true`.
+
+## 20. Checkpoint 322 intent-matrix failure and renderer transport localization
+
+The remaining semantic intent matrix was attempted in one fresh disposable ChatGPT conversation with exactly five `codex.pdf_access` calls. The overall qualification failed.
+
+The text-only branches passed exactly as designed:
+
+```text
+explicit text
+    requested intent   text
+    effective intent   text
+    primary route      direct-text
+    pages              16,49
+    total text         19,344 chars
+
+auto + visualRequired=false
+    requested intent   auto
+    effective intent   text
+    primary route      direct-text
+    pages              16,49
+    total text         19,344 chars
+```
+
+Every rendering-dependent branch failed with the same lower-layer error:
+
+```text
+visual
+mixed
+auto + visualRequired=true
+
+DOCUMENT_RENDER_PROTOCOL_ERROR
+sandboxed renderer returned invalid JSON
+```
+
+The explicit visual Call 2 contained one preserved qualification deviation because `visualPages:[16,49]` was supplied in addition to the scheduled `pages:[16,49]`. No retry was made because the frozen experiment allowed exactly five ADS calls. Calls 3 and 5 matched their scheduled inputs and independently failed with the same renderer error, so the overall finding does not depend on that deviation.
+
+The persistent ADS conversation then used the already-qualified low-level renderer to discriminate the failure:
+
+```text
+codex.document_render pages [16,49]
+    FAIL / invalid JSON
+
+codex.document_render page [16]
+    PASS
+    583,130 bytes
+    aca9cfadbfcb99382e22a2472495f26d1ab097922ce9406d66a8121810a56023
+
+codex.document_render page [49]
+    PASS
+    535,152 bytes
+    2eaaa5f2ffaae9b3d1e171d200d412dc1c545425d5f539e48513ac25c4e5e927
+```
+
+The individual hashes exactly match the Checkpoint 321 native-hybrid fallback images. The semantic route planner is therefore not disproven, and page rendering fidelity for these pages remains qualified.
+
+The active direct renderer currently passes the complete selected page list to one read-only sandbox child, whose JSON stdout embeds every rendered PNG as base64. The two known PNGs produce about 1.49 million base64 characters before JSON framing. Validation 048 / Checkpoint 289 had already established that the Windows restricted-token App Server path cannot reliably carry buffered `command/exec` stdout once this protocol exceeds its approximately one MiB capture envelope.
+
+The smallest justified repair is therefore local to `DocumentRenderer`:
+
+```text
+preserve public request contract: up to four ordered pages
+
+internally
+    -> execute one read-only sandbox child per selected page
+    -> validate every one-page protocol
+    -> require page-count consistency
+    -> combine results in requested order
+    -> apply existing 4 MiB per-page and 8 MiB aggregate image limits
+    -> preserve source identity revalidation
+```
+
+This correction is intentionally narrower than reviving the earlier unqualified loopback binary transport. It addresses multi-page aggregation when each individual page already fits the observed buffered transport envelope. It does not claim to solve the separate known case where a single high-detail page itself exceeds that envelope.
+
+The public >192 MiB isolation qualification is now sequenced after this repair and a successful fresh-chat intent-matrix retest. Skipping directly to the isolation proof would leave a known public semantic route unqualified.
+
+Checkpoint 322 / Validation 080 preserve the exact failure and diagnosis boundary.
