@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / INTENT MATRIX FAILED / MULTI-PAGE DIRECT-RENDER TRANSPORT FIX NEXT
+**Status:** ACTIVE / DIRECT-RENDER SERIALIZATION CANDIDATE QUALIFIED / GUARDED LIVE PUBLICATION NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -816,3 +816,76 @@ This correction is intentionally narrower than reviving the earlier unqualified 
 The public >192 MiB isolation qualification is now sequenced after this repair and a successful fresh-chat intent-matrix retest. Skipping directly to the isolation proof would leave a known public semantic route unqualified.
 
 Checkpoint 322 / Validation 080 preserve the exact failure and diagnosis boundary.
+
+## 21. Checkpoint 323 direct-render serialization candidate
+
+The smallest repair identified at Checkpoint 322 is now implemented and privately qualified without changing the public facade contract or semantic routing policy.
+
+`DocumentRenderer` still accepts one ordered, unique selection of up to four source pages. Internally, however, the renderer now executes one read-only sandbox child per selected page instead of placing all page PNG base64 inside one shared child stdout protocol:
+
+```text
+public pages [p1,p2,...]
+    -> child render [p1]
+    -> child render [p2]
+    -> ...
+    -> validate each one-page protocol
+    -> require identical source pageCount across executions
+    -> preserve requested order
+    -> combine validated page records
+    -> apply existing 4 MiB per-page / 8 MiB aggregate limits
+    -> revalidate source identity after rendering
+```
+
+The correction does not alter:
+
+```text
+public tool schema
+intent resolution
+DPI
+renderer dependency set
+source authority
+OCR policy
+cache semantics
+page-level PNG fidelity requirements
+```
+
+Two focused regression cases now prove ordered serialized execution and fail-closed behavior on inconsistent child page counts. The complete hybrid-PDF candidate suite passes:
+
+```text
+tests       51
+pass        51
+fail        0
+cancelled   0
+skipped     0
+```
+
+The qualified candidate renderer SHA-256 is:
+
+```text
+42199fca624f931f0076a502dbe4c4710f26f0769db50a64a2ac2174b6899b43
+```
+
+Private preservation also exposed the anticipated AB-020 scaling edge. The first semantic private push failed closed when `git ls-files --cached -z` reached 32,841 bytes for 412 tracked paths and was truncated by the generic 32 KiB command-output envelope. No integrity rule was disabled. The two new test cases were consolidated into an existing tracked candidate test file, preserving the 51/51 regression result while returning tracked-path enumeration to 32,753 bytes / 411 files. The normal bounded push then passed.
+
+The exact private boundary is:
+
+```text
+ad61a5619165ec5675e75daecdb4fdb29ea6f19a
+RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+postflightOk=true
+```
+
+This does not solve AB-020 permanently; it only preserves the candidate within the current bounded gate.
+
+The installed preview.16 runtime still contains the old renderer at this checkpoint. Therefore Research 120 now advances through:
+
+```text
+renderer-only guarded publication against exact live baseline
+-> independent live hash verification
+-> full controlled restart from docs/local_execution/OPERATIONS.md
+-> verify local preview.16 / 60-tool health and tunnel readiness
+-> fresh disposable five-call intent-matrix retest
+-> >192 MiB high-level facade isolation only after the rendering matrix passes
+```
+
+Checkpoint 323 / Validation 081 preserve the exact candidate qualification boundary.
