@@ -1,7 +1,7 @@
 # Research 120: Automatic Hybrid PDF Direct-Source Routing and Managed Artifact Cache
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / DIRECT-RENDER SERIALIZATION CANDIDATE QUALIFIED / GUARDED LIVE PUBLICATION NEXT
+**Status:** ACTIVE / GUARDED RENDER-SERIALIZATION PUBLICATION PREFLIGHT QUALIFIED / HOST PUBLICATION NEXT
 **Scope:** Define the professional automatic routing architecture for direct ChatGPT access to authorized local PDFs across whole-file handoff, native PDF splitting, embedded-text extraction and rendered-page vision; define how generated split PDFs should be stored/reused without modifying source workspaces; and replace repeated ad-hoc source-limit increases with a bounded direct-processing envelope plus deterministic isolation fallback for very large sources.
 **Declared references:** `research:119`, `checkpoint:311`, `checkpoint:312`, `checkpoint:314`, `checkpoint:316`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -889,3 +889,47 @@ renderer-only guarded publication against exact live baseline
 ```
 
 Checkpoint 323 / Validation 081 preserve the exact candidate qualification boundary.
+
+## 22. Checkpoint 324 guarded publication preflight
+
+The renderer fix now has a separately qualified live-publication package. The first staged run correctly exposed one stale installed render-regression assumption: the old regression required a single child invocation for pages `[2,1]`, while the qualified implementation intentionally executes `[2]` and `[1]` separately. No live file was modified by that failure.
+
+The matching regression expectation was adapted only to the intentional transport contract. It still verifies read-only authority, capability, child executable/path and stdout ceiling for every serialized execution.
+
+Exact publication bindings are:
+
+```text
+installed renderer before
+f7f057b70341531d1f3c07853c0741c8668efed3473d33e9c355917fdd2297ef
+
+qualified renderer after
+42199fca624f931f0076a502dbe4c4710f26f0769db50a64a2ac2174b6899b43
+
+installed render regression before
+24581331f7442bd44af37dbe3d559135117bbe48f69bc215e98822b825e7feb6
+
+adapted render regression after
+3e60f761ebf5d68dcf4b05969e62dc3cf3d6931aebe4ab7403b66fc37ac4b725
+```
+
+The protected scratch helper SHA-256 is:
+
+```text
+a05578345be3b5652f5319280d525ac696e60d0c8462a33b8ebdcae8877ad58b
+```
+
+The final no-publish preflight passed:
+
+```text
+private hybrid-PDF suite            51 / 51
+staged public regression scripts     7 / 7
+public surface                       60 tools
+live files modified                  no
+restart performed                    no
+```
+
+With `-Publish`, the helper performs atomic replacement of exactly the renderer and matching regression file with timestamped backups, exact before/after hash checks, post-write live-disk regressions and reverse-order rollback on any later failure. It deliberately does not restart Codexless.
+
+Because ordinary `ads-local-runtime` workspace authority does not own `%LOCALAPPDATA%\\Codexless`, the accepted next action remains execution of this exact helper from ordinary host PowerShell. After a PASS receipt, the installed hashes must be independently re-read before the source-published/restart-pending state is preserved.
+
+Checkpoint 324 / Validation 082 preserve this exact preflight boundary.
