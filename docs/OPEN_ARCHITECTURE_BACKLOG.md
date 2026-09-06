@@ -94,6 +94,8 @@ Primary context: Research 116 and existing guarded host publication helpers. Val
 
 Validations 062-063 add two later examples. The native Auto-review executor and the direct-Codex guard correction were both safely qualified inside the authorized local-runtime workspace, but live installation still required one-time guarded host PowerShell publication with exact old/new hashes, backup, atomic replacement, verification, and rollback. Those bootstraps are accepted operational evidence, not a solution to AB-002.
 
+Validation 067 provides a third concrete case. Publication of the temporary ChatGPT host-capability probe failed closed from the normal `ads-local-runtime` authority because the live `%LOCALAPPDATA%\\Codexless` install remained outside ordinary workspace write authority. A temporary exact-root `codexless-live` `workspace-standard` admission was used only to publish the already-qualified bytes, then removed immediately after verification. This was a bounded operational workaround, not the desired permanent architecture. AB-002 remains open specifically so future runtime maintenance does not require temporarily treating the install root as an ordinary workspace.
+
 ---
 
 ## AB-003: Autonomous supervision and wakeup for long-running Codex tasks
@@ -157,10 +159,12 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** RESEARCHING / DIRECT CHATGPT LOCAL-FILE ACCESS OBJECTIVE RESTORED
+**Status:** RESEARCHING / HOST-CAPABILITY PROBE LIVE / FRESH-CHAT QUALIFICATION READY
 **Priority:** P1
 
 Research 119 / Checkpoint 308 restore the actual objective: ordinary ChatGPT chat should gain direct bounded access to files in already-authorized local-machine workspaces through Codexless, without requiring the user to manually upload each file and without inserting a Codex reasoning model merely because the source is local. Whole-file/native handoff is preferred when supported; faithful model-free text, structure, cells or rendered media delivered directly to ChatGPT are valid fallbacks. Research 118's semantic-worker/receipt branch remains preserved only as optional future delegated-analysis or ADS-product research. The prepared second Astra semantic-worker task was declined before any model turn.
+
+Checkpoint 309 / Validation 067 now add the narrowest direct-host discriminator before PDF splitting. A temporary read-only MCP Apps diagnostic is live on Codexless `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel is ready. Its only purpose is to observe whether the actual ChatGPT host advertises `updateModelContext.resourceLink`. The originating persistent conversation retained its older callable tool projection after Plugin refresh, so the live probe cannot be invoked here. The exact next action is a fresh disposable ChatGPT conversation that runs the probe and classifies the modality as `ADVERTISED` or `NOT_ADVERTISED`.
 
 The first-class `codex.document_read` PDF baseline is no longer open work. It is live-qualified on Codexless `0.1.1-preview.9` / 52 tools through Validation 039 and Checkpoint 279, including the isolated bounded `pdfjs-dist@5.4.624` parser child and a real read-only personal-PDF test.
 
@@ -240,6 +244,8 @@ Design this with AB-003, AB-004 and the v17 viewer rather than as an isolated UI
 **Priority:** P1
 
 Validation 034 showed an existing conversation can retain an older callable action projection after the live MCP server publishes new actions. Research 116 therefore moved ordinary workspace/project variability into server-owned policy behind stable schemas.
+
+Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. The next qualification therefore requires a fresh chat. This is not evidence that the live server lacks those tools; it is evidence that refresh did not replace the callable projection for this already-open conversation.
 
 Remaining questions:
 

@@ -502,3 +502,65 @@ ASTRA_SEMANTIC_ATTEMPT_02 = DECLINED_BEFORE_START
 ADS_PRODUCT_DOCUMENT_ARCHITECTURE = SEPARATE_FUTURE_QUESTION
 NEXT_RESEARCH = DIRECT_CHATGPT_FILE_ACCESS_MATRIX_AND_LARGE_PDF_TRANSPORT_GAP
 ```
+
+## 16. Checkpoint 309 direct-host capability discriminator
+
+A corrected-objective Astra review subsequently converged on the same category boundary: actual/native file handoff is preferred, deterministic model-free source representations are valid fallbacks, and semantic model delegation is separate. Before running its proposed multi-native-PDF split experiment, ChatGPT identified one narrower supported-host question that should be resolved first.
+
+Current MCP Apps protocol surfaces allow a host to advertise `updateModelContext` modalities, including `resourceLink`. Current OpenAI Plugin documentation also acknowledges files returned by tool file references, but no general custom-MCP mechanism has been established for minting a ChatGPT-managed file ID from arbitrary local bytes. The distinction is therefore:
+
+```text
+protocol / product surface exists
+    !=
+this exact ChatGPT MCP host advertises and accepts it
+```
+
+To avoid inferring support from documentation alone, a temporary read-only MCP Apps host-capability probe was implemented and qualified. It performs only the standard `ui/initialize` handshake and records a narrow whitelist of advertised host capability metadata. It reads no local document bytes, invokes no Browser, calls no file picker/upload helper, and does not invoke `ui/update-model-context` during discovery.
+
+The probe was live-published as:
+
+```text
+Codexless version
+    0.1.1-preview.15-host-capability-probe
+
+source tool count
+    59
+```
+
+Direct post-restart evidence returned that exact version/tool count and Secure MCP Tunnel `/readyz = ready`. The one-time exact-root runtime workspace admission used for publication was removed again immediately afterward; the durable workspace registry returned to its normal four-workspace shape.
+
+The user then refreshed `ADS Codexless Local Bridge` in the same persistent ChatGPT conversation. ChatGPT-side tool rediscovery still exposed the older callable projection and did not show the three newly published probe tools. This is classified as another same-conversation projection-staleness reproduction, not a live-server publication failure.
+
+The exact next experiment is therefore a fresh disposable ChatGPT conversation:
+
+```text
+fresh chat
+    -> verify codex.host_capability_probe is projected
+    -> run the read-only MCP App probe
+    -> read codex.host_capability_probe_result
+    -> classify updateModelContext.resourceLink
+```
+
+Decision rule:
+
+```text
+ADVERTISED
+    -> qualify one tiny known PDF resourceLink through ui/update-model-context
+    -> this remains direct source access
+    -> do not infer large-file success merely from capability advertisement
+
+NOT_ADVERTISED
+    -> stop this host-model-context route for the current ChatGPT host
+    -> proceed to the deterministic multi-native-PDF document_file_link experiment
+```
+
+Primary evidence: Validation 067 and Checkpoint 309.
+
+Updated classification:
+
+```text
+HOST_CAPABILITY_PROBE = LIVE
+SAME_CHAT_TOOL_PROJECTION = STALE
+UPDATE_MODEL_CONTEXT_RESOURCE_LINK = NOT_YET_OBSERVED
+NEXT_RESEARCH = FRESH_CHAT_HOST_CAPABILITY_HANDSHAKE
+```
