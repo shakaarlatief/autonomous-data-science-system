@@ -674,3 +674,56 @@ FALLBACK_BEYOND_HOST_ENVELOPE = DETERMINISTIC_NATIVE_PDF_PARTS
 BROWSER_UPLOAD = LATER_HEAVIER_FALLBACK / NOT_YET_REQUIRED
 NEXT_RESEARCH = PRODUCTIZATION_DECISION_AND_FILE_TYPE_EXTENSION
 ```
+
+## 19. Checkpoint 312 Machine Learning generalization narrows native splitting
+
+The Checkpoint 311 fallback was then tested conceptually and model-free against the larger PDFs in the authorized read-only `machine-learning` workspace.
+
+Fifteen PDFs exceed the 7,417,428-byte highest clean whole-file PASS. Several are much larger, including approximately 75.2 MiB `51.Deep Learning2.annotated.pdf` and 55.7 MiB `11.Introduction.annotated.pdf`.
+
+The important new result is that page-range splitting alone is not universal. Model-free single-page serialization found individual source pages whose native one-page PDFs already exceed a 7,000,000-byte planning target:
+
+```text
+11.Introduction.annotated.pdf page 12    17,597,874 bytes
+51.Deep Learning2.annotated.pdf page 16  15,944,609 bytes
+71.Reinforcement Learning.annotated.pdf page 18  14,059,747 bytes
+41.DeepLearning1.annotated.pdf page 39   14,048,969 bytes
+21.Methodology1.annotated.pdf page 27    10,025,200 bytes
+Transformers.annotated.pdf page 32       9,422,430 bytes
+```
+
+Basic pypdf content-stream compression/deduplication did not materially shrink the worst Deep Learning 2 page. Inspection showed many embedded image resources, so the page payload itself is genuinely large.
+
+The current `codex.document_read` and `codex.document_render` tools also reject whole source PDFs above 33,554,432 bytes before page selection. Therefore those tools cannot currently serve as the oversized-single-page fallback for a 40-75 MiB source without first isolating the page internally.
+
+The direct-source hierarchy is now:
+
+```text
+unchanged native whole file
+    -> preferred when host-qualified
+
+native PDF page-range parts
+    -> proven when all resulting parts fit
+
+single native page still oversized
+    -> hybrid faithful model-free representation required
+    -> isolate exact page internally
+    -> deliver page text plus high-fidelity visual/source representation directly to ChatGPT
+    -> no reasoning-model intermediary
+
+Browser upload
+    -> remains heavier fallback/comparison route
+```
+
+The production mechanism should not require writing split files back into the source workspace. `machine-learning` intentionally has read-only authority. Generated parts/renders should be Codexless-owned ephemeral resources or deterministically regenerated from verified source identity.
+
+Primary evidence: Validation 070 and Checkpoint 312.
+
+Updated classification:
+
+```text
+NATIVE_PDF_SPLITTER = QUALIFIED_BUT_NOT_UNIVERSAL
+OVERSIZED_SINGLE_NATIVE_PAGE = CONFIRMED_REAL_CASE
+READ_ONLY_SOURCE_WORKSPACE = MUST_REMAIN_SUPPORTED
+NEXT_RESEARCH = HYBRID_OVERSIZED_SINGLE_PAGE_DIRECT_SOURCE_ROUTE
+```
