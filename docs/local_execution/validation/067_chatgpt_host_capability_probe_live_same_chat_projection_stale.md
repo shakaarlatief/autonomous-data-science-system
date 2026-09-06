@@ -152,3 +152,39 @@ CURRENT_CHAT_NEW_TOOL_PROJECTION = STALE
 HOST_UPDATE_MODEL_CONTEXT_RESOURCE_LINK = NOT_YET_OBSERVED
 NEXT = FRESH_DISPOSABLE_CHAT_HOST_CAPABILITY_HANDSHAKE
 ```
+
+## Public preservation postflight
+
+During public Checkpoint 309 preservation, the known recurring Windows `.git` ACL defect reappeared for the active workspace capability SID. The guarded host-side repair removed only the two currently active explicit DENY ACEs while leaving the legacy SID rules unchanged and preserving the dedicated Git writable capability.
+
+Direct post-repair verification from ChatGPT returned:
+
+```text
+active workspace SID
+    GIT_DENY=0
+    FETCH_DENY=0
+
+legacy workspace SID
+    GIT_DENY=2
+    FETCH_DENY=1
+
+dedicated Git writable SID
+    GIT_MODIFY=1
+    FETCH_MODIFY=1
+```
+
+The public validators were rerun and all passed, including checkpoint metadata, Knowledge Map integrity, current routing, aggregate `PUBLIC_REPOSITORY_INTEGRITY=PASS`, and `git diff --check`.
+
+Checkpoint 309 was then committed and pushed through the bounded semantic Git path:
+
+```text
+public checkpoint commit
+    eae08179e9fbc25d7fb0c1c3247d2e0c9e1c2d5d
+
+push integrity
+    PUBLIC_REPOSITORY_INTEGRITY=PASS
+    postflightOk=true
+    local HEAD == origin/v1-source-vault-bootstrap-resume
+```
+
+The private runtime complement was updated after that push and is synchronized at `5f60d2e059bdef9b3c3e268f6e6507d65e1a3dac` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and `postflightOk=true`.
