@@ -675,4 +675,4 @@ No manual source upload, OCR, Browser, Agent, source-workspace write or reasonin
 
 The next bounded qualification is intentionally not another native split test. Use the same high-level facade against `51.Deep Learning2.annotated.pdf` to exercise mixed text/vision behavior and the individually oversized native pages 16 and 49. The goal is to prove that the facade can combine bounded native parts with direct embedded text and rendered-page image content in one automatic route, and that ChatGPT can consume those modalities without falling back to a semantic worker.
 
-Checkpoint 320 / Validation 078 are the detailed fresh-host native split boundary.
+Checkpoint 320 / Validation 078 are the detailed fresh-host native split boundary. The corresponding private runtime continuity/evidence update is synchronized at `a8f26df8a54e6a8c935e5bbff42499e6cb86cec6` with `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS` and `postflightOk=true`.
