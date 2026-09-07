@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / FORWARD + ROLLBACK EXECUTION QUALIFIED / FINAL READBACK BEFORE CLOSURE
+**Status:** CLOSED / LIVE SEMANTIC PUBLICATION + RESTART + ROLLBACK QUALIFIED
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -150,6 +150,8 @@ Validation 121 / Checkpoint 363 close the post-activation public readback portio
 Validation 122 / Checkpoint 364 qualify semantic rollback publication. The public rollback call returned `armed`, the detached operation reached durable `succeeded`, exact preview.20 source hashes were restored, a rollback pending activation was created, and preview.21 plus the tunnel intentionally remain running. AB-002 now advances to rollback restart activation and final readback/state qualification.
 
 Validation 123 / Checkpoint 365 qualify rollback activation itself. Semantic restart replaces preview.21 with healthy preview.20 / 63, preserves the exact tunnel process and restored hashes, returns durable `succeeded`, clears pending/lock state and removes the active managed-release pointer because preview.20 is the unmanaged predecessor. AB-002 now has both forward and rollback execution paths production-qualified; only final public rollback status/verify readback remains before closure can be considered.
+
+Validation 124 / Checkpoint 366 close AB-002. Fresh-host rollback status returns durable `rollback_release / succeeded`; post-rollback verify returns the exact expected two mismatches; independent final inspection confirms healthy preview.20 / 63, exact restored hashes, no pending/active managed release or mutation lock, clean synchronized private source and tunnel `live/ready`. The accepted architecture now performs ordinary future release publication, activation, verification, rollback and Codexless-only restart through narrow semantic surfaces without ordinary `%LOCALAPPDATA%` workspace authority, caller-selected process/path/command authority, a user-run installation helper or manual Codexless/tunnel restart. Reopen AB-002 only if a materially different runtime topology/authority contract or new reproduced maintenance failure makes this accepted class insufficient.
 
 ---
 
@@ -481,7 +483,7 @@ Track official daemon/local-control transports as possible simplifications of Co
 
 ## AB-017: Broader host-capability taxonomy beyond workspaces
 
-**Status:** RESEARCHING / RUNTIME-MAINTENANCE AUTHORITY CLASS ACTIVE
+**Status:** RESEARCHING / FIRST RUNTIME-MAINTENANCE AUTHORITY CLASS RESOLVED / BROADER TAXONOMY OPEN
 **Priority:** P2
 
 Define explicit authority classes for host operations that are not naturally ordinary project workspaces:
@@ -497,6 +499,8 @@ other non-workspace host resources
 ```
 
 Each class should be semantic, narrow, server-owned and independently permissioned. Research 116 deliberately closed workspace/project authority without claiming universal host authority. AB-002 is the first concrete instance.
+
+Checkpoint 366 / Validation 124 close that first concrete instance: installed Codexless publication/restart/verify/rollback is now a live-qualified semantic authority class. This does not close AB-017. The broader taxonomy for Windows services, registry, credential-mediated operations, machine configuration and other non-workspace host resources remains research work and must continue to require independent semantic authority rather than inheriting runtime-maintenance privileges.
 
 Validations 062-063 reinforce this separation. Two exact runtime publications were safe to perform only through guarded host PowerShell because ordinary workspace authority intentionally does not grant `%LOCALAPPDATA%` installation authority. The successful one-time bootstraps should inform the eventual semantic runtime-maintenance capability, not justify broad ordinary host access.
 

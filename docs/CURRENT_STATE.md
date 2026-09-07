@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 365
+**Checkpoint:** 366
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 366 is the current boundary. Validation 124 closes AB-002 for the accepted narrow runtime self-maintenance scope. Fresh-host rollback `status` returns durable `rollback_release / succeeded`; post-rollback `verify` returns the expected `verification_failed` with exactly two mismatches because preview.20 is installed while the prepared target remains preview.21. Independent inspection confirms healthy preview.20 / 63 at PID 10280 / `ri_3901...`, exact restored preview.20 hashes, no pending activation, no active managed release, no shared mutation lock, a clean synchronized private release source at `7aa303f...`, and tunnel `live/ready`. Forward semantic update and explicit semantic rollback are therefore both production-qualified without a user-run `%LOCALAPPDATA%` publication helper or manual Codexless/tunnel restart. Research 122 remains active for AB-001 device-independent connector reachability and then AB-006 interruption/cross-device task recovery. The next discriminator is the native-mobile versus mobile-browser ChatGPT access matrix.
 
 Checkpoint 365 is the current boundary. Validation 123 live-qualifies semantic rollback activation: one bounded restart replaced preview.21 PID 56332 / `ri_3ae3...` with healthy preview.20 / 63 PID 10280 / `ri_3901...`, while exact restored preview.20 hashes remained installed and the same tunnel PID 67468 stayed `live/ready`. Durable restart status is `succeeded`, pending activation and the shared lock are cleared, and the active managed-release pointer is absent as expected when rolling the first managed release back to its unmanaged preview.20 predecessor. Forward update and rollback execution are now both production-qualified without ordinary-host publication or manual restart. The final AB-002 gate is read-only fresh-host rollback status plus expected preview.21 verification mismatch after rollback.
 
