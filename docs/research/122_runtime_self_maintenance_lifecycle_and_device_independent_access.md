@@ -454,3 +454,11 @@ The next step is an exact guarded preview.18 publication preflight. Live publica
 8. keep full tunnel restart only for tunnel/profile/credential/runtime changes or tunnel failure
 9. continue the separate mobile-web/device matrix afterward
 ```
+
+## 19. Preview.18 guarded publication preflight qualified
+
+Checkpoint 344 / Validation 102 now qualify the exact source-only preview.18 publication package. The protected helper is bound to private head `610fb6c1480012b0db80965239493348e5de5a58` and helper SHA-256 `5c1de81279e4dbf4fb009aa585ca8d832cfd863dbe8765e6139ab75a0542802f`. It requires the exact running preview.17 / 61-tool baseline, exact old/new file hashes, seven absent new source paths, the unchanged AB-020 semantic-Git hash and a live/ready production tunnel before any mutation is possible.
+
+Two complete no-publish runs passed all eight staged public regressions, the 12/12 + 7/7 + 6/6 lifecycle suites, all three isolated lifecycle probes and a direct smoke test of the same Windows `File.Replace` forward/rollback primitive used by publication. No live file was changed and no restart occurred.
+
+Publication remains a separate ordinary-host action because preview.17 intentionally has no runtime-maintenance install authority. The helper will replace four source files and three matching regression files and add seven source modules, using timestamped atomic backups, exact post-write hashes, live-disk regressions and fail-closed rollback. A successful source publication must still be independently verified before the one final runbook-controlled bootstrap restart that activates `codex.runtime_maintenance`.
