@@ -161,7 +161,7 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** IN_PROGRESS / OFFICE PREVIEW.17 SOURCE PUBLISHED / CONTROLLED RESTART NEXT
+**Status:** IN_PROGRESS / OFFICE PREVIEW.17 LIVE / FRESH CHAT HOST MATRIX NEXT
 **Priority:** P1
 
 Research 119 / Checkpoint 308 restore the actual objective: ordinary ChatGPT chat should gain direct bounded access to files in already-authorized local-machine workspaces through Codexless, without requiring the user to manually upload each file and without inserting a Codex reasoning model merely because the source is local. Whole-file/native handoff is preferred when supported; faithful model-free text, structure, cells or rendered media delivered directly to ChatGPT are valid fallbacks. Research 118's semantic-worker/receipt branch remains preserved only as optional future delegated-analysis or ADS-product research. The prepared second Astra semantic-worker task was declined before any model turn.

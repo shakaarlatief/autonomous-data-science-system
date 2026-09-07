@@ -1,7 +1,7 @@
 # Research 121: Non-PDF File Capability Matrix and Native Handoff Reuse
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / OFFICE PREVIEW.17 SOURCE PUBLISHED / CONTROLLED RESTART NEXT
+**Status:** ACTIVE / OFFICE PREVIEW.17 LIVE / FRESH CHAT HOST MATRIX NEXT
 **Scope:** Determine the professional direct-source architecture for authorized DOCX, PPTX and XLSX files after the PDF route family closed under Research 120. Prefer whole-file/native ChatGPT handoff when the host can consume the original file faithfully; add model-free structure or rendering fallbacks only where direct native handling is insufficient.
 **Declared references:** `research:119`, `research:120`, `checkpoint:328`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
