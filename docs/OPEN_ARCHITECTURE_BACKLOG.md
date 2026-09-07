@@ -161,7 +161,7 @@ Primary evidence: Validation 035, Research 109-112, Validations 027-032.
 
 ## AB-005: Reuse-first multimodal document architecture
 
-**Status:** IN_PROGRESS / OFFICE PREVIEW.17 LIVE / FRESH CHAT HOST MATRIX NEXT
+**Status:** RESOLVED FOR ACCEPTED PDF + OFFICE DIRECT-SOURCE SCOPE / REOPEN ON NEW FORMAT OR RENDERED-FIDELITY TRIGGER
 **Priority:** P1
 
 Research 119 / Checkpoint 308 restore the actual objective: ordinary ChatGPT chat should gain direct bounded access to files in already-authorized local-machine workspaces through Codexless, without requiring the user to manually upload each file and without inserting a Codex reasoning model merely because the source is local. Whole-file/native handoff is preferred when supported; faithful model-free text, structure, cells or rendered media delivered directly to ChatGPT are valid fallbacks. Research 118's semantic-worker/receipt branch remains preserved only as optional future delegated-analysis or ADS-product research. The prepared second Astra semantic-worker task was declined before any model turn.
@@ -172,7 +172,17 @@ The first-class `codex.document_read` PDF baseline is no longer open work. It is
 
 Research 117/119 now applies a direct-access-first rule: first reuse supported ChatGPT/OpenAI/MCP file transport and model-free source/media delivery so ChatGPT itself receives the authorized local source. Installed Codex Skills and Codex workers can still inform implementation or serve optional delegation workflows, but they are not the default data path for this objective. Mature converters such as MarkItDown, Docling, or PyMuPDF4LLM remain candidates only when a concrete format gap cannot be solved through supported direct/native or deterministic source representations.
 
-The immediate next route remains the Research 121 Office capability matrix. Checkpoint 333 closes the concrete AB-020 scaling defect and durably preserves the Office candidate at private head `fa5cc2a6c3e6d47f45961ab475c2ac66c24aff0b`. Checkpoint 334 now qualifies the exact guarded preview.17 publication package: 10/10 file-link tests, seven 61-tool staged public regressions, and 8/8 AB-020 regressions all pass with no live preview.17 file modified. The next action is ordinary-host publication, controlled restart, fresh ChatGPT discovery and the DOCX/PPTX/XLSX fidelity matrix; add model-free fallbacks only where that matrix demonstrates missing material content or fidelity. Remaining document-system directions are separate capabilities:
+Checkpoint 339 / Validation 097 close the Research 121 Office capability matrix. A refreshed fresh ChatGPT conversation exposed `codex.file_link`; exactly one DOCX, PPTX and XLSX call each succeeded; all three original files materialized with exact byte size/SHA-256; and ordinary ChatGPT-side inspection established native content/structure beyond flattened text. DOCX preserved table structure plus the embedded image, PPTX preserved two-slide ordering plus picture-object placement and embedded image content, and XLSX preserved sheets, formulas, cached values and style metadata. No format-specific parser/render fallback is required for the accepted whole-file direct-source objective. Pixel-identical Microsoft Office rendering was not claimed and is now a trigger-based separate capability only if a future task explicitly needs final rendered fidelity.
+
+The accepted current direct-source family is therefore:
+
+```text
+local images        -> codex.image_read
+PDF                  -> codex.pdf_access + qualified semantic fallback routes
+DOCX / PPTX / XLSX  -> codex.file_link native whole-file handoff
+```
+
+Remaining document-system directions are separate capabilities rather than unfinished AB-005 work:
 
 ```text
 codex.document_render
@@ -247,7 +257,7 @@ Design this with AB-003, AB-004 and the v17 viewer rather than as an isolated UI
 
 Validation 034 showed an existing conversation can retain an older callable action projection after the live MCP server publishes new actions. Research 116 therefore moved ordinary workspace/project variability into server-owned policy behind stable schemas.
 
-Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. Validation 068 then confirms that a separate fresh disposable conversation did expose those new tools and successfully mounted the probe MCP App. Validation 078 reproduces the same lifecycle pattern on the preview.16 / 60-tool publication: this persistent conversation still lacks callable `codex.pdf_access`, while a fresh disposable chat immediately discovered and executed the facade successfully. The observed rule therefore remains: same-chat Plugin refresh can retain a stale callable projection, while a fresh chat acquires the updated projection. The broader cause/lifecycle contract remains open.
+Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. Validation 068 then confirms that a separate fresh disposable conversation did expose those new tools and successfully mounted the probe MCP App. Validation 078 reproduces the same lifecycle pattern on the preview.16 / 60-tool publication: the persistent conversation lacked callable `codex.pdf_access`, while a fresh disposable chat immediately discovered and executed the facade successfully. Validation 096 / Checkpoint 338 reproduce the pattern again for preview.17 / 61 tools: the live runtime and tunnel were healthy but the persistent chat did not expose newly added `codex.file_link`. Validation 097 then closes the fresh-chat discriminator: after app refresh, a fresh disposable conversation exposed `codex.file_link` and successfully executed the complete DOCX/PPTX/XLSX matrix. The observed rule therefore remains: same-chat Plugin refresh can retain a stale callable projection, while a fresh chat acquires the updated projection. The broader cause/lifecycle contract remains open.
 
 Remaining questions:
 

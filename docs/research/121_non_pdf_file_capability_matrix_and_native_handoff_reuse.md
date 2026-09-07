@@ -1,7 +1,7 @@
 # Research 121: Non-PDF File Capability Matrix and Native Handoff Reuse
 
 **Date:** 2026-09-06
-**Status:** ACTIVE / OFFICE PREVIEW.17 LIVE / FRESH CHAT HOST MATRIX NEXT
+**Status:** COMPLETE / DOCX-PPTX-XLSX NATIVE WHOLE-FILE HANDOFF QUALIFIED
 **Scope:** Determine the professional direct-source architecture for authorized DOCX, PPTX and XLSX files after the PDF route family closed under Research 120. Prefer whole-file/native ChatGPT handoff when the host can consume the original file faithfully; add model-free structure or rendering fallbacks only where direct native handling is insufficient.
 **Declared references:** `research:119`, `research:120`, `checkpoint:328`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
@@ -183,20 +183,52 @@ Do not broaden the first candidate to executables, archives, arbitrary binary bl
 
 Checkpoint 328 exposed Node's standard `--allow-addons` warning on cached PDF rendering. That warning remains an AB-027 hardening trigger and does not justify using rendering as the default for Office files. Native whole-file handoff should be tried first precisely because it is both simpler and preserves the original source.
 
-## 11. Next implementation step
+## 11. Final fresh-host qualification
 
-The private-runtime preservation gate reached its previously reproduced 32 KiB tracked-path enumeration edge before a clean new candidate file could be added. Checkpoint 330 / Validation 088 qualify the bounded AB-020 correction and guarded publication preflight. Therefore the immediate sequence is:
+Checkpoint 339 / Validation 097 close the planned sequence. After preview.17 was published, restarted and exposed in a refreshed fresh ChatGPT conversation, exactly one `codex.file_link` call was executed for each deterministic DOCX, PPTX and XLSX fixture. All three source identities matched exactly and all three resources materialized into the ChatGPT file layer.
+
+The native inspection result was stronger than flattened text extraction:
 
 ```text
-AB-020 live proof completed above the old 32 KiB envelope
--> Office candidate durably preserved in private Git
--> publish the guarded preview.17 Office file-link package
--> qualify authority, MIME allowlist, binding, TTL, drift and no-inline-bytes tests
--> generate tiny deterministic DOCX/PPTX/XLSX fixtures
--> stage/public-regress without changing existing PDF contracts
--> guarded publication and controlled restart
--> fresh disposable three-format host-materialization/fidelity matrix
--> add format-specific fallback only where the matrix demonstrates a real gap
+DOCX
+    exact source identity
+    title + marker text
+    2x2 table structure
+    embedded 64x64 image
+    four-quadrant image content
+
+PPTX
+    exact source identity
+    two-slide ordering
+    slide-specific marker text
+    embedded picture object
+    picture placement/dimensions
+    four-quadrant image content
+
+XLSX
+    exact source identity
+    two-sheet structure
+    marker text and numeric values
+    formulas + cached values
+    distinct styled header metadata
 ```
 
-This research deliberately stops before assuming that successful manual uploads imply successful MCP materialization or that successful file materialization implies full multimodal fidelity.
+The original ADS tool results contained metadata/resource links rather than source bytes/base64. ChatGPT-side inspection operated on the materialized original Office files.
+
+The XLSX artifact importer timed out in the fresh host, but that failed convenience path was excluded from the evidence; direct inspection of the intact materialized OOXML workbook still established the required content, formulas, sheets and style metadata.
+
+## 12. Accepted architecture and closure
+
+For the accepted direct-source objective:
+
+```text
+DOCX  -> codex.file_link native whole-file handoff
+PPTX  -> codex.file_link native whole-file handoff
+XLSX  -> codex.file_link native whole-file handoff
+```
+
+No format-specific parser/render fallback is justified by the observed host matrix. The fallback rule remains trigger-based rather than speculative.
+
+This qualification does not claim pixel-identical rendering against Microsoft Word, PowerPoint or Excel. If a future use case explicitly requires final rendered-page/slide/workbook visual fidelity, that is a separate model-free rendering question and may reopen only that narrow capability.
+
+Research 121 is complete for its declared DOCX/PPTX/XLSX whole-file direct-access scope.
