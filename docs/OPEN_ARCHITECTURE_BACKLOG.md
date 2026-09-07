@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.18 GUARDED PUBLICATION PREFLIGHT QUALIFIED / ORDINARY-HOST PUBLICATION NEXT
+**Status:** RESEARCHING / PREVIEW.18 SOURCE PUBLISHED / ONE FINAL BOOTSTRAP RESTART NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -110,6 +110,8 @@ Validation 100 / Checkpoint 342 qualify the next layer. A private file-backed le
 Validation 101 / Checkpoint 343 qualify that next gate. The candidate now has a private random runtime instance identity and shutdown token, exact health-to-identity matching, a fixed authenticated loopback graceful-shutdown endpoint, a production-shaped one-shot supervisor that never kills an arbitrary PID, a fixed replacement-worker launcher, durable active-operation exclusion, and direct Codexless-owned semantic dispatch that returns an armed receipt before the fixed destructive delay. Functional probes prove exact-instance replacement, acceptance before restart, idempotent replay, wrong-token rejection and private identity cleanup. The staged preview.18 integration exposes only `restart_codexless`/`status` plus `requestId` at 62 tools and preserves existing Git/PDF/Office regressions. Production is still preview.17 / 61 tools; the next gate is guarded preview.18 source publication and one final runbook-controlled bootstrap restart before the new tool can live-qualify itself.
 
 Validation 102 / Checkpoint 344 qualify the guarded publication package itself. The helper is exact-head/hash bound, requires the running preview.17 / 61-tool and live/ready tunnel baseline, stages and tests the full 62-tool integration, exercises the same Windows atomic forward/rollback primitive before mutation, and has passed two complete no-publish runs. Publication will remain source-only with exact backups/rollback and `RESTART_PERFORMED=false`; ordinary-host publication is now the next gate.
+
+Validation 103 / Checkpoint 345 preserve successful ordinary-host source publication. Independent rehashing proves every installed preview.18 publication target exactly matches the qualified candidate while AB-020 semantic-Git and preserved document regressions remain unchanged. The currently running process is still preview.17 / 61 tools and the tunnel remains live/ready, so the next gate is the one final full runbook-controlled bootstrap restart before the 62nd tool can be discovered and live-qualified.
 
 ---
 

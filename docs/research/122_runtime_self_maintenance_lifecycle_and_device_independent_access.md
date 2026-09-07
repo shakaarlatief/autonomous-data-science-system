@@ -462,3 +462,11 @@ Checkpoint 344 / Validation 102 now qualify the exact source-only preview.18 pub
 Two complete no-publish runs passed all eight staged public regressions, the 12/12 + 7/7 + 6/6 lifecycle suites, all three isolated lifecycle probes and a direct smoke test of the same Windows `File.Replace` forward/rollback primitive used by publication. No live file was changed and no restart occurred.
 
 Publication remains a separate ordinary-host action because preview.17 intentionally has no runtime-maintenance install authority. The helper will replace four source files and three matching regression files and add seven source modules, using timestamped atomic backups, exact post-write hashes, live-disk regressions and fail-closed rollback. A successful source publication must still be independently verified before the one final runbook-controlled bootstrap restart that activates `codex.runtime_maintenance`.
+
+## 20. Preview.18 source published, activation restart pending
+
+Checkpoint 345 / Validation 103 preserve successful guarded source publication of the preview.18 runtime-maintenance package. The publication helper reran all staged/public/lifecycle tests, wrote exact timestamped backups, installed the qualified four changed source files, seven new runtime-maintenance modules and three matching regression files, then reran live-disk regressions. It explicitly performed no restart.
+
+A separate read-only verification rehashed every installed publication target. All eleven preview.18 source files and all three preview.18 regression files exactly match the qualified candidate hashes; the existing Office/PDF/image regressions remain unchanged; AB-020 `semantic-git.mjs` remains exactly `3b2ddbbe00339045b81044bb3e1e39c314a461a7e0f8e4e608b79b4b0f37de02`.
+
+The active process is deliberately still `0.1.1-preview.17-office-file-link` / 61 tools, while the tunnel is still `live/ready`. The next boundary is therefore one final full runbook-controlled bootstrap restart. Only after preview.18 / 62 tools is active, tunnel health/readiness is re-established, the developer MCP app is refreshed and a fresh chat discovers `codex.runtime_maintenance` may production self-restart be tested.
