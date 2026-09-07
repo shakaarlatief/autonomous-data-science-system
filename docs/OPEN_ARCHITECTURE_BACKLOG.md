@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.21 SEMANTIC SOURCE PUBLISHED / ACTIVATION + VERIFY/ROLLBACK NEXT
+**Status:** IN_PROGRESS / PREVIEW.21 END-TO-END FORWARD SEMANTIC UPDATE QUALIFIED / VERIFY + ROLLBACK NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -142,6 +142,8 @@ Validation 117 / Checkpoint 359 qualify that genuine next-version bundle. `previ
 Validation 118 / Checkpoint 360 qualify live preparation and the pre-publication verifier. `prepare` returned `prepared`; `verify` returned the expected two-file mismatch while independent checks prove the live preview.20 install/process/tunnel remain unchanged. This establishes server-owned prepared state plus real installed-byte verification before mutation. AB-002 now advances to one isolated semantic `publish` call, followed by independent source/status verification before any activation restart.
 
 Validation 119 / Checkpoint 361 qualify the first semantic installed-source publication. The public publish call returned `armed`, the detached operation reached durable `succeeded`, exact preview.21 bytes are installed, a forward pending activation is present, the shared lock is released, and preview.20 plus the same tunnel remain running. This is the first real proof that `%LOCALAPPDATA%` publication no longer needs an ordinary-host helper. AB-002 now advances to semantic activation, post-activation verify/status, and live rollback/recovery qualification.
+
+Validation 120 / Checkpoint 362 complete the forward update proof. Semantic restart replaced preview.20 with healthy preview.21 / 63, preserved the exact tunnel process, returned durable `succeeded`, cleared pending/lock state, and finalized preview.21 as the active managed release with immutable activation history. No ordinary-host publication or manual restart was used. AB-002 now requires only post-activation public verify/status plus explicit semantic rollback and rollback activation qualification before closure can be considered.
 
 ---
 

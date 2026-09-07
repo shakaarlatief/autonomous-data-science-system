@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 361
+**Checkpoint:** 362
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 362 is the current boundary. Validation 120 qualifies the first end-to-end normal future update through semantic release + semantic restart. Preview.21 source was already published semantically; one bounded maintenance restart then replaced preview.20 PID 41548 / `ri_c862...` with healthy `0.1.1-preview.21-semantic-release-e2e` PID 56332 / `ri_3ae3...`, while the exact same tunnel PID 67468 stayed `live/ready`. Durable restart status is `succeeded`, pending activation and the shared lock are cleared, preview.21 is recorded as the active managed release with immutable history, and installed target hashes remain exact. No user-run `%LOCALAPPDATA%` publication helper or manual Codexless/tunnel restart was used for preview.21. Remaining AB-002 work is host-visible post-activation verify/status plus explicit semantic rollback and rollback activation qualification.
 
 Checkpoint 361 is the current boundary. Validation 119 qualifies the first real semantic publication into the installed Codexless tree. Fresh-host `codex.runtime_release publish` returned `armed`; the detached operation then reached durable `succeeded`, both installed targets exactly match preview.21 hashes, the shared mutation lock is released, and a forward pending-activation contract binds preview.20 / 63 to preview.21 / 63. The still-running process remains preview.20 PID 41548 / `ri_c862...` and the tunnel remains `live/ready`, proving publication itself did not restart either layer. This is the first production proof that ordinary installed-source publication can occur without a user-run `%LOCALAPPDATA%` helper. The next isolated mutation is semantic restart activation.
 
