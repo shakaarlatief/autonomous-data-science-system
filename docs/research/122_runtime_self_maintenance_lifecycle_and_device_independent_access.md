@@ -516,3 +516,11 @@ No live self-restart has been attempted. Refresh the existing developer MCP app 
 Checkpoint 352 / Validation 110 close the host-schema compatibility gate. After app refresh, a completely fresh ChatGPT conversation exposed `codex.runtime_maintenance` as a structured callable object with only required `action` and `requestId`; `action` is the literal union `restart_codexless | status`; `requestId` retains its string bounds/pattern; and the generic index-signature projection seen under preview.18 is gone. No ADS tool was invoked.
 
 This is the required host-side counterpart to Validation 109's process-live local MCP schema proof. The first production self-restart is now authorized for qualification using one stable requestId and exactly one restart call, followed by durable status recovery after reconnection.
+
+## 28. First production self-restart qualified
+
+Checkpoint 353 / Validation 111 close the ordinary Codexless-only lifecycle restart path. A fresh ChatGPT host called `restart_codexless` exactly once with stable requestId `r122.live.preview19.restart.20260907.01` and received an `armed` receipt 8 ms after acceptance, before the helper's fixed destructive delay. The old PID/instance (`8564`, `ri_e052...`) was then replaced by PID `69280` / instance `ri_780a...`, with preview.19 / 62 tools healthy afterward.
+
+The tunnel remained the same process: its listener process had started before the operation and remained listening afterward while health/readiness stayed `live/ready`. A later status call for the exact requestId returned durable terminal `succeeded` with no recovery path. An explicit same-request restart replay after terminal success returned the same operation/timestamps, and a post-delay check proved the replacement PID/instance remained unchanged, so no duplicate restart occurred.
+
+Ordinary future Codexless-only restarts may now use `codex.runtime_maintenance` instead of the manual tunnel/Codexless Ctrl+C sequence. Full tunnel restart remains appropriate only for tunnel/profile/credential/runtime changes or tunnel failure. Runtime publication/verify/rollback authority is still separate unfinished AB-002 work; the mobile/web device matrix remains unfinished AB-001 work in this Research 122 stage.

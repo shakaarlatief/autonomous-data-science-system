@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.19 FRESH-HOST SCHEMA PASS / FIRST LIVE SELF-RESTART NEXT
+**Status:** IN_PROGRESS / LIVE CODEXLESS SELF-RESTART QUALIFIED / SEMANTIC PUBLICATION-VERIFY-ROLLBACK STILL OPEN
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -124,6 +124,8 @@ Validation 108 / Checkpoint 350 preserve successful preview.19 source publicatio
 Validation 109 / Checkpoint 351 qualify preview.19 process-live activation. Exact runtime-instance binding and tunnel recovery pass, and direct MCP initialize/tools-list now returns the corrected flat schema with required `action`/`requestId`, action enum, `additionalProperties: false`, and no top-level union. The next gate is refreshed fresh-chat host projection; no live self-restart has yet been invoked.
 
 Validation 110 / Checkpoint 352 close the fresh-host schema gate. After app refresh, a disposable fresh chat projects `codex.runtime_maintenance` as a structured object containing only required `action` and `requestId`, with the exact two-action enum and requestId bounds/pattern; the preview.18 generic-map projection is gone. No ADS tool was invoked. The first production self-restart qualification is now the next gate.
+
+Validation 111 / Checkpoint 353 qualify the first production self-restart end to end. The fresh-host restart returned `armed` before destructive work, the exact old Codexless instance was replaced by a new preview.19 / 62-tool instance, the same tunnel process stayed running and healthy, durable status returned `succeeded`, and explicit same-request replay produced no second restart. Ordinary Codexless-only lifecycle restart is therefore live-qualified. AB-002 remains open for the other half of its original objective: narrow semantic publication/verify/rollback of qualified installed-runtime bytes without ordinary `%LOCALAPPDATA%` workspace authority or host PowerShell helpers.
 
 ---
 
