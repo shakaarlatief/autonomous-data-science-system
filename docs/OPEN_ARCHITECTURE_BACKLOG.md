@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.19 SOURCE PUBLISHED + HASH VERIFIED / MANUAL ACTIVATION RESTART NEXT
+**Status:** RESEARCHING / PREVIEW.19 ACTIVE + LOCAL FLAT SCHEMA PASS / CHATGPT HOST SCHEMA DISCOVERY NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -120,6 +120,8 @@ Validation 105 / Checkpoint 347 localize a new host-schema fidelity gate. Fresh-
 Validation 107 / Checkpoint 349 qualify the exact three-file guarded publication package for preview.19. Two no-publish preflights passed the wire-schema assertion, eight public regressions, lifecycle suites/probes and atomic replacement/rollback smoke. The helper performs no restart; ordinary-host source publication is next, followed by independent installed-hash verification and a manual activation restart because the preview.18 host projection is not accepted for self-restart bootstrap.
 
 Validation 108 / Checkpoint 350 preserve successful preview.19 source publication. Independent read-only rehashing proves the exact three qualified installed hashes and unchanged AB-020 semantic-Git while the active process remains preview.18 / 62 and the tunnel remains live/ready. One manual runbook-controlled activation restart is next; only after preview.19 is active and a fresh chat projects the flat schema structurally may the first production self-restart be invoked.
+
+Validation 109 / Checkpoint 351 qualify preview.19 process-live activation. Exact runtime-instance binding and tunnel recovery pass, and direct MCP initialize/tools-list now returns the corrected flat schema with required `action`/`requestId`, action enum, `additionalProperties: false`, and no top-level union. The next gate is refreshed fresh-chat host projection; no live self-restart has yet been invoked.
 
 ---
 

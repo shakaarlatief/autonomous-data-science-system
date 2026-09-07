@@ -502,3 +502,11 @@ Publication replaces only `mcp-server-factory.mjs`, `surface-contracts.mjs`, and
 Checkpoint 350 / Validation 108 preserve successful guarded source-only publication of the preview.19 flat-schema correction. The helper reran all public/lifecycle regressions, replaced exactly three files with verified timestamped backups and performed no restart. Independent read-only rehashing then proved all three installed files exactly match the qualified candidate while AB-020 semantic-Git remains unchanged.
 
 The active process is intentionally still preview.18 / 62 tools and the tunnel remains live/ready. The next step is one manual runbook-controlled activation restart. Preview.18's generically projected host schema remains disqualified for mutation bootstrap. After preview.19 is active, refresh the app and require a fresh-chat structured-schema discovery PASS before the first live self-restart.
+
+## 26. Preview.19 activation and process-live flat schema qualified
+
+Checkpoint 351 / Validation 109 preserve successful manual activation of preview.19. The active process now reports `0.1.1-preview.19-runtime-maintenance-schema` / 62 tools; listener PID, private runtime identity and public health all bind to the same instance; the private shutdown token remains absent from public health; and the tunnel is `live/ready`.
+
+A direct process-live MCP initialize/tools-list proves that `codex.runtime_maintenance` now serializes as one flat top-level object with exactly `action` and `requestId`, both required, `additionalProperties: false`, no top-level `oneOf`, and action enum `restart_codexless | status`. This closes the local/server half of Validation 105's host-schema fidelity issue.
+
+No live self-restart has been attempted. Refresh the existing developer MCP app and use a fresh disposable ChatGPT conversation to determine whether the host now preserves the flat schema. Only a structured fresh-host PASS permits the first production `restart_codexless` test.
