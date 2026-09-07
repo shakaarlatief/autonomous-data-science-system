@@ -70,7 +70,15 @@ post-activation verify     verified / mismatchCount=0
 
 The public contract remains `0.1.1-preview.20-runtime-release`, `codexless-public-preview-v2`, 63 tools. Only internal semantic-Git implementation and regression coverage changed.
 
-## 5. Durable recovery rule
+## 5. Post-activation semantic commit proof
+
+After activation and post-activation release verification, the repaired `codex.git_commit_paths` surface was used again on the public repository with one exact declared documentation path, expected-HEAD binding, empty-index precondition, exact staging, diff and parent checks. The commit succeeded through the semantic surface, providing a real post-activation proof that repository metadata mutation no longer depends on the ordinary Codex command sandbox.
+
+```text
+SEMANTIC_GIT_POSTACTIVATION_COMMIT=PASS
+```
+
+## 6. Durable recovery rule
 
 For the same failure class:
 
@@ -86,7 +94,7 @@ For the same failure class:
 
 The public operations runbook owns this procedure going forward.
 
-## 6. Disposition
+## 7. Disposition
 
 This incident does not reopen Research 122 or AB-002. The already-qualified self-maintenance architecture performed the recovery and semantic publication used here. Research 113 remains active.
 
