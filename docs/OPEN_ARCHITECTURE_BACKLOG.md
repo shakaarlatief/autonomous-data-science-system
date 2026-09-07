@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / LIVE CODEXLESS SELF-RESTART QUALIFIED / SEMANTIC PUBLICATION-VERIFY-ROLLBACK STILL OPEN
+**Status:** IN_PROGRESS / LIVE SELF-RESTART QUALIFIED / PREVIEW.20 SEMANTIC RELEASE CANDIDATE QUALIFIED / BOOTSTRAP PUBLICATION NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -126,6 +126,8 @@ Validation 109 / Checkpoint 351 qualify preview.19 process-live activation. Exac
 Validation 110 / Checkpoint 352 close the fresh-host schema gate. After app refresh, a disposable fresh chat projects `codex.runtime_maintenance` as a structured object containing only required `action` and `requestId`, with the exact two-action enum and requestId bounds/pattern; the preview.18 generic-map projection is gone. No ADS tool was invoked. The first production self-restart qualification is now the next gate.
 
 Validation 111 / Checkpoint 353 qualify the first production self-restart end to end. The fresh-host restart returned `armed` before destructive work, the exact old Codexless instance was replaced by a new preview.19 / 62-tool instance, the same tunnel process stayed running and healthy, durable status returned `succeeded`, and explicit same-request replay produced no second restart. Ordinary Codexless-only lifecycle restart is therefore live-qualified. AB-002 remains open for the other half of its original objective: narrow semantic publication/verify/rollback of qualified installed-runtime bytes without ordinary `%LOCALAPPDATA%` workspace authority or host PowerShell helpers.
+
+Validation 112 / Checkpoint 354 qualify that remaining authority class in an isolated preview.20 candidate. The proposed 63rd tool accepts only a semantic action, bounded release/request identifiers and an exact private source HEAD; release bytes are fixed to a clean synchronized private-runtime release namespace and exact hashes. Publication is baseline-hash bound, regression-gated, snapshot-backed and source-only until pending activation. The existing exact-instance restart helper now verifies the pending target contract and automatically recovers previous source/runtime on failed forward activation; rollback has symmetric target-reapply recovery. Immutable activation history fixes chained release rollback semantics. No live install mutation occurred. AB-002 remains open only for the guarded preview.20 bootstrap publication, live host-schema/operation qualification and confirmation that subsequent qualified releases no longer require ordinary-host publication helpers.
 
 ---
 
