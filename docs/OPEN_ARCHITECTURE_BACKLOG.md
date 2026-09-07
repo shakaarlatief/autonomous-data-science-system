@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.21 PREPARED + PREVERIFY QUALIFIED / FIRST LIVE SEMANTIC PUBLISH NEXT
+**Status:** IN_PROGRESS / PREVIEW.21 SEMANTIC SOURCE PUBLISHED / ACTIVATION + VERIFY/ROLLBACK NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -140,6 +140,8 @@ Validation 116 / Checkpoint 358 close the refreshed-host schema gate. A fresh di
 Validation 117 / Checkpoint 359 qualify that genuine next-version bundle. `preview21-semantic-release-e2e` is committed at clean synchronized private head `7aa303f...`, changes only the public version constant plus matching exact-version regression, binds exact live preview.20 baseline hashes and target payload hashes, and passes the full nine-script staged release regression set. No live mutation has occurred. AB-002 now advances to live semantic prepare/pre-publication verification before the first semantic publish.
 
 Validation 118 / Checkpoint 360 qualify live preparation and the pre-publication verifier. `prepare` returned `prepared`; `verify` returned the expected two-file mismatch while independent checks prove the live preview.20 install/process/tunnel remain unchanged. This establishes server-owned prepared state plus real installed-byte verification before mutation. AB-002 now advances to one isolated semantic `publish` call, followed by independent source/status verification before any activation restart.
+
+Validation 119 / Checkpoint 361 qualify the first semantic installed-source publication. The public publish call returned `armed`, the detached operation reached durable `succeeded`, exact preview.21 bytes are installed, a forward pending activation is present, the shared lock is released, and preview.20 plus the same tunnel remain running. This is the first real proof that `%LOCALAPPDATA%` publication no longer needs an ordinary-host helper. AB-002 now advances to semantic activation, post-activation verify/status, and live rollback/recovery qualification.
 
 ---
 

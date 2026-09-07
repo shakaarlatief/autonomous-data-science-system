@@ -47,7 +47,7 @@ ChatGPT calls Codexless
     -> result becomes uncertain / unavailable
 ```
 
-The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œgive command_exec permission to kill/restart everything.ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â
+The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“give command_exec permission to kill/restart everything.ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â
 
 The architecture needs a separately owned lifecycle mechanism that can accept a bounded operation while the normal MCP path is alive, then complete process recovery independently after the request has been acknowledged.
 
@@ -586,3 +586,9 @@ Checkpoint 360 / Validation 118 qualify the first live `codex.runtime_release` u
 Independent read-only inspection afterward confirmed the runtime remains preview.20 / 63, the same process instance is still active, both target files still have their exact preview.20 baseline hashes, the tunnel is live/ready and the private release source remains clean/synchronized at `7aa303f...`. No publish, rollback or restart occurred.
 
 The next live boundary is the first semantic `publish` only. It must remain separated from activation so source mutation, regression/snapshot gating and durable release status can be independently verified before `codex.runtime_maintenance` activates preview.21.
+
+## 36. First semantic installed-source publication qualified live
+
+Checkpoint 361 / Validation 119 qualify the first real `codex.runtime_release publish` mutation against the installed Codexless tree. The public call returned `armed` in 8 ms with no host-authority leakage. The detached release operation then reached durable `succeeded`, released the shared mutation lock, wrote the exact two preview.21 target hashes and created the expected forward pending-activation contract from preview.20 / 63 to preview.21 / 63.
+
+Independent health proves the old preview.20 process remains running and the managed tunnel remains live/ready. This establishes the intended source-published/activation-pending split and, critically, proves ordinary future installed-source publication no longer requires a user-run `%LOCALAPPDATA%` PowerShell helper. The next isolated mutation is semantic restart activation.

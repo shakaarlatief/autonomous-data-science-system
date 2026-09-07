@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 360
+**Checkpoint:** 361
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 361 is the current boundary. Validation 119 qualifies the first real semantic publication into the installed Codexless tree. Fresh-host `codex.runtime_release publish` returned `armed`; the detached operation then reached durable `succeeded`, both installed targets exactly match preview.21 hashes, the shared mutation lock is released, and a forward pending-activation contract binds preview.20 / 63 to preview.21 / 63. The still-running process remains preview.20 PID 41548 / `ri_c862...` and the tunnel remains `live/ready`, proving publication itself did not restart either layer. This is the first production proof that ordinary installed-source publication can occur without a user-run `%LOCALAPPDATA%` helper. The next isolated mutation is semantic restart activation.
 
 Checkpoint 360 is the current boundary. Validation 118 live-qualifies `codex.runtime_release prepare` plus pre-publication `verify` for the genuine preview.21 bundle. Prepare returned `prepared`; verify returned the exactly expected `verification_failed` with `mismatchCount=2`, proving live verification still sees the two preview.20 baseline files. Independent inspection confirms preview.20 / 63 remains the same running instance, both live file hashes are unchanged, tunnel is `live/ready`, and private release source remains clean/synchronized at `7aa303f...`. The next isolated mutation is one semantic `publish` call only. Do not combine publish and restart: preserve the source-published/activation-pending boundary first, then activate through the already-qualified semantic self-restart.
 
