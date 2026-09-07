@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.21 FORWARD UPDATE + PUBLIC READBACK QUALIFIED / SEMANTIC ROLLBACK NEXT
+**Status:** IN_PROGRESS / SEMANTIC ROLLBACK SOURCE RESTORE QUALIFIED / ROLLBACK ACTIVATION NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -146,6 +146,8 @@ Validation 119 / Checkpoint 361 qualify the first semantic installed-source publ
 Validation 120 / Checkpoint 362 complete the forward update proof. Semantic restart replaced preview.20 with healthy preview.21 / 63, preserved the exact tunnel process, returned durable `succeeded`, cleared pending/lock state, and finalized preview.21 as the active managed release with immutable activation history. No ordinary-host publication or manual restart was used. AB-002 now requires only post-activation public verify/status plus explicit semantic rollback and rollback activation qualification before closure can be considered.
 
 Validation 121 / Checkpoint 363 close the post-activation public readback portion. Fresh-host status returns the original publish operation as durable `succeeded`, fresh-host verify reports `verified` with zero mismatches, and independent inspection confirms the active preview.21 install/process/tunnel remain unchanged. AB-002 now advances to semantic rollback publication followed by separate rollback activation and final-state qualification.
+
+Validation 122 / Checkpoint 364 qualify semantic rollback publication. The public rollback call returned `armed`, the detached operation reached durable `succeeded`, exact preview.20 source hashes were restored, a rollback pending activation was created, and preview.21 plus the tunnel intentionally remain running. AB-002 now advances to rollback restart activation and final readback/state qualification.
 
 ---
 

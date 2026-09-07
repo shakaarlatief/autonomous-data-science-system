@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 363
+**Checkpoint:** 364
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 364 is the current boundary. Validation 122 qualifies semantic rollback source restoration separately from runtime activation. Fresh-host `codex.runtime_release rollback` returned `armed`; the detached rollback reached durable `succeeded`, restored both preview.20 source hashes exactly, released the shared mutation lock, and created a rollback-direction pending activation. The executing process is deliberately still preview.21 PID 56332 / `ri_3ae3...`, the active-release record still points to preview.21, and the tunnel remains `live/ready`. The next isolated mutation is one semantic restart expected to activate preview.20 / 63 from the restored bytes, clear pending state, remove the active managed-release pointer, and preserve the tunnel.
 
 Checkpoint 363 is the current boundary. Validation 121 qualifies fresh-host public readback after the first end-to-end semantic forward update. `codex.runtime_release status` for the original publish requestId returns the durable `publish_release / succeeded` operation, and post-activation `verify` returns `verified` with `mismatchCount=0` for preview.21 / 63. Independent live inspection confirms the same preview.21 process remains active, exact target hashes are installed, pending activation and the shared mutation lock are absent, the active managed release is preview.21, and the tunnel remains `live/ready`. The next isolated mutation is semantic rollback publication only; rollback activation must remain separate so restored preview.20 source and rollback pending state can be verified before restart.
 
