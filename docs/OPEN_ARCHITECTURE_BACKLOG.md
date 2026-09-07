@@ -154,12 +154,14 @@ Validation 123 / Checkpoint 365 qualify rollback activation itself. Semantic res
 
 Validation 124 / Checkpoint 366 close AB-002. Fresh-host rollback status returns durable `rollback_release / succeeded`; post-rollback verify returns the exact expected two mismatches; independent final inspection confirms healthy preview.20 / 63, exact restored hashes, no pending/active managed release or mutation lock, clean synchronized private source and tunnel `live/ready`. The accepted architecture now performs ordinary future release publication, activation, verification, rollback and Codexless-only restart through narrow semantic surfaces without ordinary `%LOCALAPPDATA%` workspace authority, caller-selected process/path/command authority, a user-run installation helper or manual Codexless/tunnel restart. Reopen AB-002 only if a materially different runtime topology/authority contract or new reproduced maintenance failure makes this accepted class insufficient.
 
+Validation 127 / Checkpoint 369 exercise that accepted architecture during a real post-closure recovery. A Windows Codex installation-generation transition orphaned sandbox-helper resolution; bounded semantic restart recovered command execution while preserving the managed tunnel. The same incident also exposed that semantic `git_commit_paths` should treat `git add` and `git commit` as bounded host-owned repository-metadata mutations rather than ordinary Codex command-sandbox writes. The corrected host-metadata route was published and activated through `codex.runtime_release` plus `codex.runtime_maintenance` without broadening `.git` ACLs or public authority. This strengthens rather than reopens AB-002.
+
 ---
 
 ## AB-003: Autonomous supervision and wakeup for long-running Codex tasks
 
-**Status:** OPEN / WAKEUP GAP REMAINS / ROUTINE APPROVAL MITIGATION LIVE
-**Priority:** P0
+**Status:** DEFERRED / OPTIONAL DIRECT-CODEX ORCHESTRATION CONVENIENCE
+**Priority:** P2
 
 Validation 035 reproduced the liveness failure:
 
@@ -190,12 +192,14 @@ Validation 062 live-qualified one important mitigation: formal turns now use App
 
 Primary evidence: `docs/local_execution/validation/035_running_codex_supervision_liveness_gap_reproduced.md`.
 
+Checkpoint 368 / Validation 126 change the priority rather than disputing the reproduced gap. The project owner accepts manual ChatGPT-to-Codex prompt transfer, and current OpenAI Codex Remote already provides supported phone supervision for Windows-hosted Codex work. Autonomous ChatGPT wakeup is therefore no longer a core ADS blocker. Reopen this item only if direct ADS-to-Codex orchestration is deliberately re-prioritized and a concrete workflow needs unattended assistant-side supervision beyond native Remote.
+
 ---
 
 ## AB-004: Active-turn writer ownership transfer and reacquisition
 
-**Status:** OPEN / RESEARCH QUESTION
-**Priority:** P0
+**Status:** DEFERRED / OPTIONAL DIRECT-CODEX DESKTOP-HANDOFF RESEARCH
+**Priority:** P2
 
 Support a professional handoff between ChatGPT/Codexless and Codex Desktop while a turn is active, not only after the thread becomes idle.
 
@@ -212,6 +216,8 @@ how are pending approvals routed when ownership changes?
 The verified idle archive -> unarchive -> rebind -> resume path remains accepted.
 
 Primary evidence: Validation 035, Research 109-112, Validations 027-032.
+
+Checkpoint 368 / Validation 126 demote active-turn writer transfer from a core requirement. The accepted workflow is manual prompt copy/paste plus native Codex Remote, so ChatGPT/Codexless does not need to own and transfer every active Codex thread. Preserve the verified idle handoff and this research question for future optional direct-orchestration work only.
 
 ---
 
@@ -263,8 +269,8 @@ Primary accepted baseline evidence: `docs/local_execution/validation/039_workspa
 
 ## AB-006: Robust Codex task recovery after caller/tunnel/device interruption
 
-**Status:** RESEARCHING / CONNECTOR REACHABILITY RESOLVED / CROSS-DEVICE TASK RECOVERY NEXT
-**Priority:** P0
+**Status:** DEFERRED / OPTIONAL CODEXLESS-DIRECT TASK RECOVERY / NATIVE REMOTE ACCEPTED
+**Priority:** P2
 
 A task already accepted under Codexless should remain recoverable when the ChatGPT client changes device, the tunnel temporarily rejects the caller, or the supervising chat cannot poll.
 
@@ -283,12 +289,14 @@ caller-device changes do not silently orphan supervision
 This is distinct from AB-001 (connector access) and AB-003 (automatic wakeup).
 Checkpoint 367 / Validation 125 now remove the AB-001 prerequisite: normal phone-browser ChatGPT reaches the same ADS connector successfully. AB-006 can therefore test recovery on a real supported second client rather than conflating task continuity with connector availability. The first discriminator should use a bounded non-destructive task whose durable identity is known on laptop, switch to the phone browser without creating replacement work, inspect surviving task/card/thread state, then return to laptop and verify the same identity/state before any continuation.
 
+Checkpoint 368 / Validation 126 supersede that next discriminator as a project blocker. Current OpenAI Codex Remote is now live-qualified on the paired Windows/iPhone setup, including phone-started continuation of the same desktop Codex thread while the visible desktop UI is closed. Because the project owner accepts manual prompt/result transfer, direct Codexless-owned task recovery across devices is optional convenience work. Preserve the original guarantees if direct orchestration returns to scope, but do not block the broader ADS roadmap on them.
+
 ---
 
 ## AB-007: Actionable Rich Card supervision surface
 
-**Status:** OPEN
-**Priority:** P1
+**Status:** DEFERRED / OPTIONAL CUSTOM RICH-CARD SUPERVISION
+**Priority:** P2
 
 Make the Rich Task Card a professional supervisory surface rather than only a passive status display.
 
@@ -304,6 +312,8 @@ cross-device card continuity
 ```
 
 Design this with AB-003, AB-004 and the v17 viewer rather than as an isolated UI patch.
+
+Checkpoint 368 / Validation 126 also demote this item. Native Codex Remote already supplies the user-facing mobile supervision surface, and the project owner does not require ChatGPT to launch every Codex turn directly. Rich Card improvements remain useful only for optional direct Codexless orchestration or future viewer work; they are no longer a core mobile requirement.
 
 ---
 

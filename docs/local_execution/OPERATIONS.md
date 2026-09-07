@@ -1,7 +1,7 @@
 # Local Execution Operations Runbook
 
 **Status:** Current evergreen operational procedure  
-**Last reviewed:** 2026-09-01  
+**Last reviewed:** 2026-09-07
 **Scope:** Start, stop, restart, verify and reconnect the ADS Codexless loopback HTTP service and OpenAI Secure MCP Tunnel without relying on chat memory.  
 **Authority:** Operational procedure only. `docs/CURRENT_STATE.md` and the active validation record own the current experiment, expected tool surface and next mutation. This runbook does not widen local authority or replace the security contracts in the validation records.
 
@@ -355,6 +355,73 @@ Do not automatically classify the difference as stale discovery. Some actions ma
 ### Browser/manual GET reports unsupported media type on `/mcp`
 
 A browser GET is not a valid Streamable HTTP MCP initialize request. Use `/healthz`, tunnel `/readyz`, or an actual MCP client/discovery flow instead.
+
+### Windows Codex sandbox helper suddenly reports `program not found`
+
+A reproduced 2026-09-07 failure returned:
+
+```text
+windows sandbox: orchestrator_helper_launch_failed
+setup refresh failed to launch helper
+helper=codex-windows-sandbox-setup.exe
+error=program not found
+```
+
+First separate tunnel health from Codex App Server command execution. If the tunnel is still forwarding and Codexless is reachable, do not restart or reconfigure the tunnel merely because the Windows helper fails.
+
+Inspect the current sandbox log and Codex installation generations. Public-safe locations are:
+
+```powershell
+$SandboxLog = Join-Path $HOME ".codex\.sandbox\sandbox.$((Get-Date).ToString('yyyy-MM-dd')).log"
+$CodexBin = Join-Path $env:LOCALAPPDATA "OpenAI\Codex\bin"
+
+Get-Content $SandboxLog -Tail 200
+
+Get-ChildItem $CodexBin -Directory -ErrorAction SilentlyContinue |
+    Select-Object Name, FullName, CreationTime, LastWriteTime |
+    Sort-Object LastWriteTime -Descending
+
+Get-ChildItem $CodexBin -Recurse -File -ErrorAction SilentlyContinue |
+    Where-Object {
+        $_.Name -in @(
+            "codex.exe",
+            "codex-command-runner.exe",
+            "codex-windows-sandbox-setup.exe",
+            "codex-code-mode-host.exe"
+        )
+    } |
+    Select-Object FullName, Length, LastWriteTime
+```
+
+Look for a transition from a full generation-qualified helper path to a bare helper-name lookup, and determine whether another installation generation still contains the complete helper set. A failed `where.exe codex-windows-sandbox-setup.exe` is not decisive because healthy Codex normally resolves this helper relative to its own installation generation rather than requiring it on the global `PATH`.
+
+If a complete generation exists but the running Codex process is orphaned from it, use the already-qualified bounded semantic restart rather than opening/closing the desktop UI or broadly killing Codex processes:
+
+```text
+codex.runtime_maintenance
+    action: restart_codexless
+    requestId: one new stable idempotency key
+```
+
+Then require durable `status=succeeded` and verify one fresh read-only command. The managed tunnel should remain running for this Codexless-only recovery path.
+
+Do not claim that an app refresh/update caused the generation transition unless independent product evidence establishes that causal link. The observed filesystem timing is correlation evidence only.
+
+### Semantic Git reports a `.git` metadata-write denial
+
+Do not respond by making `.git` generally writable or broadening Windows ACLs. Semantic Git repository-metadata mutation is a distinct bounded authority class. The accepted implementation keeps read-only preflight/postflight through ordinary Codex authority while routing exact `git add` and `git commit` operations through the pre-existing bounded host Git substrate.
+
+If this failure reappears after an update:
+
+```text
+1. verify ordinary read-only command execution first;
+2. verify the live semantic-Git implementation is the accepted host-metadata-routing version;
+3. keep expected-HEAD, exact-path staging, protected-path, diff, branch/upstream and parent checks enabled;
+4. do not use ACL broadening, force operations or arbitrary host Git as a workaround;
+5. repair or republish the bounded semantic Git implementation if the host-metadata route regressed.
+```
+
+Validation 127 / Checkpoint 369 own the qualification evidence for this recovery class.
 
 ## Security and authority invariants
 

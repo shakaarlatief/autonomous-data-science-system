@@ -1,7 +1,7 @@
 # Research 113: Codex and Codexless Upstream Ecosystem Architecture Research Program
 
 **Date:** 2026-09-03  
-**Status:** ACTIVE / COMPREHENSIVE UPSTREAM RESEARCH OPENED  
+**Status:** ACTIVE / RESUMED AFTER RESEARCH 122 PRODUCT-REUSE QUALIFICATION
 **Scope:** Establishes a broad evidence-driven research program over the current OpenAI Codex/App Server ecosystem, the public Codexless project, relevant issues, pull requests, discussions, and ADS's own experimentally verified local-execution architecture before further live-viewer or Codexless architecture work.  
 **Authority:** Active bounded research program. It may identify candidates, risks, replacements, and monitoring targets, but it does not by itself supersede accepted ADS contracts or authorize implementation changes.  
 **Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `checkpoint:275`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`
@@ -438,3 +438,10 @@ ADS-local Codexless deltas and validation history
 Populate the comparison matrix and open narrower research records when a topic produces enough durable findings to justify one.
 
 Source Vault ingestion remains preserved but paused during this project-owner-selected Level-2 research phase.
+## 13. Research 122 return boundary: prefer native Codex Remote over custom mobile orchestration
+
+Checkpoint 368 / Validation 126 return control to this program with a material reuse-first finding. The current OpenAI product now provides native Codex Remote for paired Windows/iPhone supervision, and live qualification proved desktop-started work can be continued from the phone and then reopened on Windows as the same thread. The project owner also accepts manual copy/paste of exact Codex prompts and results, so direct ADS-to-Codex dispatch is no longer a core requirement.
+
+Accordingly, the upstream survey should no longer treat custom cross-device Codex cards, active-turn Desktop ownership transfer, ChatGPT autonomous wakeup, or mobile Codex viewing as prerequisites for ADS progress. They remain optional convenience branches and should be revisited only if a concrete workflow demonstrates material benefit beyond native Remote plus manual prompt transfer. The main Research 113 rule is reinforced: reuse supported upstream capabilities before extending Codexless.
+
+The exact next research action remains the comparison survey in Section 12 across official App Server evidence, openai/codex issue/PR/discussion clusters, public Codexless, and ADS-local deltas. Source Vault ingestion remains paused until this broader Level-2 survey produces a clear implementation/resume decision.
