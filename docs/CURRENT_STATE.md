@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 355
+**Checkpoint:** 356
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 356 is the current boundary. Validation 114 preserves successful source-only publication of preview.20 from private head `77e13dc69aec8e2fdc7ffa8379cccf039046785e`. The protected helper returned PASS with all nine live-disk public regressions green and no restart. Independent verification compared all 22 candidate `src`/`test` files against the installed Codexless tree with zero mismatches. The executing process is still preview.19 / 62 tools at PID 69280 / instance `ri_780a...`, while the managed tunnel remains `live/ready`. This is the deliberate source-published / activation-pending boundary. The next step is one semantic `codex.runtime_maintenance restart_codexless` call from the already-live preview.19 surface to activate the newly installed preview.20 / 63-tool runtime.
 
 Checkpoint 355 is the current boundary. Validation 113 qualifies the corrected final preview.20 runtime-release candidate at private head `77e13dc69aec8e2fdc7ffa8379cccf039046785e` and the exact guarded one-time source-publication helper. The bootstrap correction is essential: when still-running preview.19 dispatches the newly installed maintenance supervisor, the supervisor now detects the old launcher environment, derives the fixed install root from its own installed module location, and derives the preview.20 / 63 replacement contract from newly installed server-owned surface constants. A dedicated isolated preview.19 -> preview.20 restart probe passes. Two complete no-publish helper runs pass all nine staged public regressions, 12/7/6 lifecycle suites, six lifecycle/release functional probes and Windows atomic replace/add rollback smoke. The helper performs no restart and live production remains preview.19 / 62 tools with tunnel live/ready. Ordinary-host source-only publication through that exact helper is next; after independent hash verification, activation should use the already-live semantic self-restart.
 

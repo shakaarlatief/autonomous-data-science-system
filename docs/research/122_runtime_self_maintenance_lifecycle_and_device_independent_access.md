@@ -548,3 +548,11 @@ The corrected private candidate is preserved at `77e13dc69aec8e2fdc7ffa8379cccf0
 The exact one-time publication helper is now hash-bound and qualified twice in no-publish mode. It is stored only in private `.tmp`, has SHA-256 `c88c3085a14024e57d738ee8110a332bbfc5e0dbe908c8574410ca8598d52a0c`, accepts only `-Publish`, requires exact preview.19 live/candidate hashes plus clean synchronized private head and tunnel live/ready, runs the complete matrix, exercises Windows atomic replace/add rollback semantics, and performs no restart. Production remains preview.19 / 62 tools.
 
 The next step is ordinary-host source-only publication through that exact helper. After independent installed-hash verification, activation should use the already-live `codex.runtime_maintenance` self-restart rather than manual Codexless/tunnel restart.
+
+## 31. Preview.20 source published; semantic activation pending
+
+Checkpoint 356 / Validation 114 preserve the first source-only publication using the exact helper qualified in Checkpoint 355. The helper returned PASS, created timestamped backups for every replacement, added only the qualified absent runtime-release files, reran all nine live-disk public regressions and deliberately performed no restart.
+
+Independent post-publication verification compared all 22 preview.20 candidate `src`/`test` files against the installed Codexless tree with zero mismatches. The executing process remains the old preview.19 / 62-tool instance and the same managed tunnel remains `live/ready`. Private source head/upstream remain exact at `77e13dc69aec8e2fdc7ffa8379cccf039046785e`.
+
+This is the intended split boundary: preview.20 source is installed while preview.19 is still executing. The next operation is the first semantic bootstrap activation through the already-live `codex.runtime_maintenance restart_codexless` tool. No ordinary-host Codexless or tunnel stop/start is required for that activation attempt.
