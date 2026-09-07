@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.19 FLAT HOST-SCHEMA CANDIDATE QUALIFIED / GUARDED PUBLICATION NEXT
+**Status:** RESEARCHING / PREVIEW.19 PUBLICATION PREFLIGHT QUALIFIED / ORDINARY-HOST PUBLICATION NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -116,6 +116,8 @@ Validation 103 / Checkpoint 345 preserve successful ordinary-host source publica
 Validation 104 / Checkpoint 346 qualify that activation gate. The active process now reports preview.18 / 62 tools; listener PID, private runtime identity and public health all bind to the same instance; the private shutdown token is not exposed; the tunnel is live/ready; and a direct local MCP initialize/tools-list returns exactly 62 tools including `codex.runtime_maintenance` with the intended closed schema. ChatGPT app refresh plus fresh-chat host discovery is now the next gate before any live restart mutation.
 
 Validation 105 / Checkpoint 347 localize a new host-schema fidelity gate. Fresh-chat discovery exposed `codex.runtime_maintenance`, but ChatGPT genericized the top-level discriminated-union schema to `{ [key: string]: any }`, so the action enum, required `requestId` and `additionalProperties: false` were not host-certifiable. No tool was invoked. Local MCP remained strictly validated, so this is projection fidelity rather than server authority widening. Validation 106 / Checkpoint 348 qualify a minimal preview.19 correction: one strict top-level object with an action enum plus required `requestId`, with an actual MCP initialize/tools-list wire regression proving the serialized schema. Core public and lifecycle suites remain green; production stays preview.18 / 62 tools pending guarded publication.
+
+Validation 107 / Checkpoint 349 qualify the exact three-file guarded publication package for preview.19. Two no-publish preflights passed the wire-schema assertion, eight public regressions, lifecycle suites/probes and atomic replacement/rollback smoke. The helper performs no restart; ordinary-host source publication is next, followed by independent installed-hash verification and a manual activation restart because the preview.18 host projection is not accepted for self-restart bootstrap.
 
 ---
 
