@@ -43,12 +43,14 @@ Closed/accepted work should normally move into the stronger evidence layer and b
 
 ## AB-001: Device-independent ChatGPT access to the local ADS connector
 
-**Status:** OPEN / REPRODUCTION OBSERVED
+**Status:** RESEARCHING / NATIVE MOBILE CURRENTLY WEB-ONLY PRODUCT CONSTRAINT / MOBILE-WEB MATRIX NEXT
 **Priority:** P0
 
 If the user's laptop is running Codexless and the tunnel, the same authorized ADS connector should work from ChatGPT on laptop, phone, tablet, or another signed-in client.
 
 Observed in `chatgpt-16`: the connector worked from the laptop, while the same conversation on the phone returned `401 tunnel_active_organization_required` even though the laptop remained on.
+
+Research 122 / Validation 098 add an important current product constraint. Current OpenAI Developer Mode/MCP-app documentation states that MCP apps are not available on mobile and are web-only. The historical native-phone failure therefore must not be diagnosed merely as a dead laptop/tunnel. The next discriminator is device-surface specific: reproduce the native mobile-app behavior, then test `chatgpt.com` from the phone browser and, only if materially useful, desktop-site mode. If mobile web works, prefer that supported ChatGPT web path. If it does not, compare explicit remote/operator alternatives rather than weakening tunnel organization/principal validation.
 
 Research/acceptance targets:
 
@@ -65,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** OPEN
+**Status:** RESEARCHING / NATIVE TUNNEL MANAGED-RUNTIME PATH FOUND / SUPERVISOR CONTRACT NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -97,6 +99,8 @@ Validations 062-063 add two later examples. The native Auto-review executor and 
 Validation 067 provides a third concrete case. Publication of the temporary ChatGPT host-capability probe failed closed from the normal `ads-local-runtime` authority because the live `%LOCALAPPDATA%\\Codexless` install remained outside ordinary workspace write authority. A temporary exact-root `codexless-live` `workspace-standard` admission was used only to publish the already-qualified bytes, then removed immediately after verification. This was a bounded operational workaround, not the desired permanent architecture. AB-002 remains open specifically so future runtime maintenance does not require temporarily treating the install root as an ordinary workspace.
 
 Validation 077 adds a fourth case and a cleaner workaround pattern. The normal `ads-local-runtime` authority again refused a direct write to `%LOCALAPPDATA%\\Codexless`, and this time no temporary live-install workspace was registered. A guarded ordinary-host PowerShell helper bound exact live/candidate hashes, staged and regressed the 60-tool candidate, performed atomic replacement with backups/rollback, and independent post-publication reads verified exact installed hashes. This confirms that the desired future semantic runtime-maintenance capability should reproduce those narrow publication/verification/rollback semantics without turning the install tree into an ordinary workspace.
+
+Research 122 / Validation 098 add a new reuse-first discriminator. The exact installed tunnel-client v0.0.13 already exposes native managed-runtime lifecycle commands including `runtimes connect`, `status`, `stop`, `list`, `rm` and `cleanup`; its help explicitly positions `runtimes connect` as the long-lived runtime path managed by Codex. A direct `runtimes list --json` probe failed under ordinary ADS workspace authority only because the tunnel client attempted to initialize its default user-profile state directory. The same command succeeded with `TUNNEL_CLIENT_STATE_DIR` redirected into a bounded admitted temporary root. The current design target is therefore a dedicated runtime-maintenance state/credential/lifecycle authority that reuses the native tunnel manager, not broad `%LOCALAPPDATA%`/process authority and not a custom tunnel daemon by default. A separately owned supervisor/deferred helper is still required for Codexless/tunnel restart because a process cannot synchronously guarantee the response to the request that stops its own transport.
 
 ---
 
@@ -207,7 +211,7 @@ Primary accepted baseline evidence: `docs/local_execution/validation/039_workspa
 
 ## AB-006: Robust Codex task recovery after caller/tunnel/device interruption
 
-**Status:** OPEN
+**Status:** RESEARCHING / AFTER CONNECTOR REACHABILITY MATRIX
 **Priority:** P0
 
 A task already accepted under Codexless should remain recoverable when the ChatGPT client changes device, the tunnel temporarily rejects the caller, or the supervising chat cannot poll.
@@ -427,7 +431,7 @@ Track official daemon/local-control transports as possible simplifications of Co
 
 ## AB-017: Broader host-capability taxonomy beyond workspaces
 
-**Status:** OPEN / FUTURE ARCHITECTURE
+**Status:** RESEARCHING / RUNTIME-MAINTENANCE AUTHORITY CLASS ACTIVE
 **Priority:** P2
 
 Define explicit authority classes for host operations that are not naturally ordinary project workspaces:

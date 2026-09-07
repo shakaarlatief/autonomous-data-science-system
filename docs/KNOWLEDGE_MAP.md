@@ -307,6 +307,7 @@ docs/research/118_astra_phase2_browser_free_pdf_evidence_architecture_reconcilia
 docs/research/119_chatgpt_local_machine_file_access_objective_restoration.md
 docs/research/120_automatic_hybrid_pdf_direct_source_routing_and_managed_artifact_cache.md
 docs/research/121_non_pdf_file_capability_matrix_and_native_handoff_reuse.md
+docs/research/122_runtime_self_maintenance_lifecycle_and_device_independent_access.md
 docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
@@ -408,6 +409,8 @@ docs/local_execution/validation/096_office_preview17_restarted_live_fresh_chat_d
 docs/checkpoints/338_office_preview17_live_fresh_chat_discovery_next.md
 docs/local_execution/validation/097_office_file_link_fresh_chat_matrix_qualified.md
 docs/checkpoints/339_office_file_link_fresh_chat_matrix_qualified_research121_complete.md
+docs/local_execution/validation/098_runtime_lifecycle_and_device_access_research_baseline.md
+docs/checkpoints/340_runtime_lifecycle_and_device_access_research_opened.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
@@ -703,7 +706,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-339 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-340 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
