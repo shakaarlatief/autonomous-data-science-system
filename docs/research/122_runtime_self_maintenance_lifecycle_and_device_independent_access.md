@@ -339,3 +339,70 @@ The durable private candidate currently preserves the 12-test semantic coordinat
 5. only after helper qualification, decide the one-time production migration sequence
 6. run the phone native-app vs mobile-web matrix with safe local diagnostics
 ```
+
+## 15. Detached one-shot helper and durable operation layer qualified in isolation
+
+The next private candidate layer is now preserved at private runtime head:
+
+```text
+22773bb9d39f29f091b06f90f970730e01bd46d9
+```
+
+It adds a file-backed operation ledger and a detached one-shot launcher around the previously qualified semantic coordinator. The new focused suite passes:
+
+```text
+DETACHED_RUNTIME_MAINTENANCE_REGRESSION=PASS tests=6
+RUNTIME_MAINTENANCE_REGRESSION=PASS tests=12
+```
+
+The durable ledger uses a server-owned absolute state root, hashes request IDs before they become filenames, persists request-to-operation identity across independent instances, performs same-directory atomic JSON replacement, and rejects unexpected host-shaped fields or malformed persisted receipts.
+
+The detached launcher exposes only one variable at dispatch time: the already-bound opaque operation ID. Node executable, supervisor script, working directory, state root and environment are server-owned configuration. The helper is spawned detached with ignored stdio and is unref'd; caller-selected PID/path/command/action/secret fields are absent.
+
+A real two-turn dummy-service probe then tested whether an external helper can outlive the invocation that launched it. The launch invocation started service generation A and a delayed detached helper. The surrounding generic `command_exec` call itself timed out rather than returning a clean acceptance result. Despite that caller timeout, an independent later inspection found that the detached helper had continued execution, terminated generation A, started generation B on the same endpoint, verified the replacement healthy, and written a terminal durable receipt:
+
+```text
+receiptStatus=succeeded
+replacementGeneration=B
+replacementHealthy=true
+replacementProcessAlive=true
+```
+
+Cleanup removed the dummy listener and state, while the real Codexless service remained healthy at 61 tools and the production tunnel remained ready.
+
+The timeout is an important boundary. It proves the helper can survive a caller/execution-wrapper failure, but it also shows that generic `codex.command_exec` must not be used as the permanent detached-lifecycle launcher. The production `codex.runtime_maintenance` implementation should spawn the one-shot helper directly from the long-lived Codexless server process, record the durable operation before dispatch, return the accepted receipt before the fixed destructive delay, and make a later status/read path authoritative if delivery is uncertain.
+
+This separates three claims clearly:
+
+```text
+detached helper survival after caller failure       QUALIFIED
+durable operation receipt across invocations       QUALIFIED
+clean synchronous launch from generic command_exec  NOT QUALIFIED / NOT TARGET ARCHITECTURE
+direct Codexless-owned helper dispatch               NEXT IMPLEMENTATION STEP
+```
+
+The previously staged managed-tunnel recovery probe was formatting-cleaned before private preservation. Its final preserved SHA-256 is `e3707abc0ff49864d8217b92c03300b74effba9f718ab85bb388bcc234881648`; Validation 099's earlier `422905...` value remains accurate only for the pre-preservation copy explicitly described there.
+
+## 16. Refined lifecycle sequence
+
+The preferred architecture is now concrete enough to implement in production-shaped private code:
+
+```text
+normal Codexless publication
+    -> validate exact qualified candidate/manifest
+    -> durable operation record
+    -> direct Codexless-owned detached helper launch
+    -> return accepted operation receipt
+    -> fixed short delay
+    -> helper verifies exact managed Codexless process identity
+    -> helper restarts Codexless only
+    -> helper polls local /healthz for expected version/tool count
+    -> helper records terminal receipt
+    -> managed tunnel remains running throughout
+    -> next ChatGPT MCP initialization uses recovered Codexless backend
+
+full tunnel restart
+    only for tunnel/profile/credential/runtime changes or tunnel failure
+```
+
+The next hard requirement is therefore exact process identity and a production-shaped one-shot supervisor entrypoint. Do not move to live publication before those checks are qualified on an isolated Codexless-style worker.

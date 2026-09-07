@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / SAME MANAGED TUNNEL BACKEND RECOVERY QUALIFIED / DETACHED HELPER NEXT
+**Status:** RESEARCHING / DETACHED HELPER SURVIVAL + DURABLE LEDGER QUALIFIED / PROCESS IDENTITY NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -104,6 +104,8 @@ Research 122 / Validation 098 add a new reuse-first discriminator. The exact ins
 
 
 Validation 099 / Checkpoint 341 strengthen that discriminator with a functional failure/recovery test. An isolated managed tunnel forwarded real MCP initialize/tools-list traffic to Codexless, returned a visible 502 for a queued command while the local MCP path was intentionally absent, stayed running, and then forwarded a new initialize plus tools/list after the path returned without any tunnel reconnect. The preferred ordinary maintenance path is therefore now tunnel-preserving: a separately owned deferred helper should restart Codexless only, while full managed-tunnel stop/connect is reserved for tunnel-specific changes or failure. Tunnel `/readyz` alone is not sufficient proof of local-backend recovery because the isolated runtime could remain nominally ready while the backend path was absent.
+
+Validation 100 / Checkpoint 342 qualify the next layer. A private file-backed ledger now preserves request-to-operation identity across independent instances using a server-owned state root, hashed request-index filenames and atomic JSON replacement; a narrow detached launcher accepts only the already-bound opaque operation ID while executable/script/cwd/state/environment remain server-owned. The focused suites pass 12/12 plus 6/6. A real isolated dummy-service probe then demonstrated that the detached helper continued after the invoking generic `command_exec` wrapper timed out, replaced generation A with healthy generation B on the same endpoint, and wrote a durable `succeeded` receipt read by a later invocation. The timeout is explicitly not treated as a clean launch result: generic `command_exec` is rejected as the permanent launcher. The intended semantic `codex.runtime_maintenance` implementation must dispatch the helper directly from Codexless, return/record the accepted operation before the destructive delay, and use later requestId/operationId status as authoritative if delivery is uncertain. The next gate is exact Codexless process/listener identity plus an isolated production-shaped worker restart.
 
 ---
 
