@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.20 RUNTIME_RELEASE HOST SCHEMA QUALIFIED / END-TO-END SEMANTIC UPDATE NEXT
+**Status:** IN_PROGRESS / PREVIEW.21 BUNDLE QUALIFIED / LIVE SEMANTIC PREPARE-PUBLISH-ACTIVATE NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -136,6 +136,8 @@ Validation 114 / Checkpoint 356 preserve the successful source-only publication 
 Validation 115 / Checkpoint 357 qualify that semantic bootstrap activation in production. The old preview.19 process returned `armed`, the newly installed supervisor launched preview.20 / 63 successfully, both PID and instance changed, durable status returned `succeeded`, and the same tunnel PID remained live/ready throughout. No manual process/tunnel restart was needed. AB-002 now advances to refreshed-host `codex.runtime_release` schema discovery and then one later qualified release updated end to end through the semantic release + semantic restart path, which is the proof required to retire ordinary-host publication helpers for normal future updates.
 
 Validation 116 / Checkpoint 358 close the refreshed-host schema gate. A fresh disposable chat projects `codex.runtime_release` as one strict four-field object with required semantic action/release/request/source-head inputs and no generic host-authority surface. No tool was invoked in that chat. AB-002 now advances to the decisive normal-update proof: build a genuine next-version release bundle under the fixed private namespace, then qualify prepare -> publish -> activation -> verify/status and rollback/recovery through the semantic surfaces without another ordinary-host install helper.
+
+Validation 117 / Checkpoint 359 qualify that genuine next-version bundle. `preview21-semantic-release-e2e` is committed at clean synchronized private head `7aa303f...`, changes only the public version constant plus matching exact-version regression, binds exact live preview.20 baseline hashes and target payload hashes, and passes the full nine-script staged release regression set. No live mutation has occurred. AB-002 now advances to live semantic prepare/pre-publication verification before the first semantic publish.
 
 ---
 

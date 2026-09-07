@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 358
+**Checkpoint:** 359
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 359 is the current boundary. Validation 117 qualifies the first genuine next-version bundle for the live semantic release path: `preview21-semantic-release-e2e` at clean synchronized private head `7aa303f4f362f7d4a3ae9b4d492679751c5e892b`, targeting `0.1.1-preview.21-semantic-release-e2e` / 63 tools. The canonical manifest has two exact replace entries whose expected-current hashes match live preview.20 and whose payload hashes match the preserved private bytes. A staged exact-live overlay passes all nine declared public/release regressions. No live install/runtime mutation or prepared release state has occurred yet. The next gate is fresh-host `prepare` plus pre-publication `verify`, with publish explicitly forbidden until those live receipts are qualified.
 
 Checkpoint 358 is the current boundary. Validation 116 qualifies the refreshed fresh-chat host projection of live preview.20 `codex.runtime_release`: one structured object with exactly four required fields (`action`, `releaseId`, `requestId`, `expectedSourceHead`), the exact five-action enum, bounded release/request identifiers and exact lowercase 40-hex source HEAD. No generic-map projection or caller-selected host/process/filesystem authority is exposed. No ADS tool was invoked in the disposable qualification chat. Direct local health remains preview.20 / 63 tools with tunnel `live/ready`. The next objective is now the decisive AB-002 proof: construct a genuine next-version release bundle in the fixed private namespace, qualify it completely against preview.20, then execute the update through semantic release + semantic restart without another ordinary-host `%LOCALAPPDATA%` publication helper.
 

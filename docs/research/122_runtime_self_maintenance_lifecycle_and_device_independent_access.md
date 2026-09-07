@@ -47,7 +47,7 @@ ChatGPT calls Codexless
     -> result becomes uncertain / unavailable
 ```
 
-The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be â€œgive command_exec permission to kill/restart everything.â€
+The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be Ã¢â‚¬Å“give command_exec permission to kill/restart everything.Ã¢â‚¬Â
 
 The architecture needs a separately owned lifecycle mechanism that can accept a bounded operation while the normal MCP path is alive, then complete process recovery independently after the request has been acknowledged.
 
@@ -570,3 +570,11 @@ This is the first production proof that an already-running old Codexless process
 Checkpoint 358 / Validation 116 close the ChatGPT host-projection gate for `codex.runtime_release`. A refreshed disposable conversation exposed a strict named four-field callable object rather than a generic map. All four fields are required; the five-action enum is structurally visible; `releaseId` and `requestId` retain bounded identifier patterns; and `expectedSourceHead` is constrained to exact lowercase 40-hex. No caller-selected path, install root, process, command, environment, tunnel, credential, sandbox, regression list or other host authority is exposed. No ADS tool was invoked in that fresh chat.
 
 The current persistent conversation remains stale by design and is not used to qualify the new callable projection. Direct local health still confirms preview.20 / 63 tools with tunnel live/ready. The next proof should be a real next-version update bundle, prepared from the fixed private runtime-release namespace and then exercised through semantic prepare/publish + semantic restart/verification, rather than another ordinary-host installation helper.
+
+## 34. First genuine next-version semantic release bundle qualified
+
+Checkpoint 359 / Validation 117 preserve the first real post-preview.20 release bundle at private head `7aa303f4f362f7d4a3ae9b4d492679751c5e892b`. `preview21-semantic-release-e2e` targets `0.1.1-preview.21-semantic-release-e2e` with the same 63-tool surface and intentionally changes only `src/surface-contracts.mjs` plus the matching exact-version public registration regression. This minimizes unrelated feature risk while exercising a genuine next-version installed-source transition.
+
+The final manifest is canonical and accepted by the actual preview.20 manifest validator; its expected-current hashes exactly match the live preview.20 installation; its payload hashes exactly match the committed target bytes; and a staged exact-live overlay passes all nine declared public/release regressions. The bundle is synchronized to upstream with the private repository clean, satisfying the live reader's source-binding preconditions.
+
+The next live discriminator is non-destructive to the install: fresh-host `prepare` followed by pre-publication `verify`. Publication remains blocked until those live receipts prove the fixed private bundle can be prepared and that verification observes the expected two-file preview.20/preview.21 mismatch.
