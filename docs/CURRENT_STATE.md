@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 356
+**Checkpoint:** 357
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 357 is the current boundary. Validation 115 live-qualifies the one-time preview.19 -> preview.20 semantic bootstrap activation. The already-live preview.19 `codex.runtime_maintenance` surface returned `armed` before destructive work, and the newly installed bootstrap-compatible supervisor replaced PID 69280 / instance `ri_780a...` with PID 41548 / `ri_c862...`, healthy as `0.1.1-preview.20-runtime-release` / 63 tools. The managed tunnel remained the exact same PID 67468 and stayed `live/ready`. Durable status for the exact requestId returned `succeeded` with no recovery. Manual Codexless/tunnel restart was not needed. The current conversation predates the new tool projection, so the next gate is developer-plugin refresh and fresh-chat schema discovery of `codex.runtime_release` without invoking it.
 
 Checkpoint 356 is the current boundary. Validation 114 preserves successful source-only publication of preview.20 from private head `77e13dc69aec8e2fdc7ffa8379cccf039046785e`. The protected helper returned PASS with all nine live-disk public regressions green and no restart. Independent verification compared all 22 candidate `src`/`test` files against the installed Codexless tree with zero mismatches. The executing process is still preview.19 / 62 tools at PID 69280 / instance `ri_780a...`, while the managed tunnel remains `live/ready`. This is the deliberate source-published / activation-pending boundary. The next step is one semantic `codex.runtime_maintenance restart_codexless` call from the already-live preview.19 surface to activate the newly installed preview.20 / 63-tool runtime.
 

@@ -556,3 +556,11 @@ Checkpoint 356 / Validation 114 preserve the first source-only publication using
 Independent post-publication verification compared all 22 preview.20 candidate `src`/`test` files against the installed Codexless tree with zero mismatches. The executing process remains the old preview.19 / 62-tool instance and the same managed tunnel remains `live/ready`. Private source head/upstream remain exact at `77e13dc69aec8e2fdc7ffa8379cccf039046785e`.
 
 This is the intended split boundary: preview.20 source is installed while preview.19 is still executing. The next operation is the first semantic bootstrap activation through the already-live `codex.runtime_maintenance restart_codexless` tool. No ordinary-host Codexless or tunnel stop/start is required for that activation attempt.
+
+## 32. Preview.20 semantic bootstrap activation qualified live
+
+Checkpoint 357 / Validation 115 close the live bootstrap activation seam. After preview.20 source had been published and independently verified while preview.19 remained running, ChatGPT invoked the existing bounded `codex.runtime_maintenance restart_codexless` tool exactly once with stable requestId `r122.live.preview20.bootstrap.20260907.01`. The dispatch returned `armed` in 6 ms before destructive work.
+
+The installed preview.20 supervisor then replaced PID 69280 / `ri_780a...` directly with PID 41548 / `ri_c862...`, healthy as `0.1.1-preview.20-runtime-release` with 63 tools. The managed tunnel stayed the exact same PID 67468 and remained `live/ready`. Durable status returned terminal `succeeded` with no recovery path.
+
+This is the first production proof that an already-running old Codexless process can activate newly installed next-version source through the semantic restart path without manual Codexless or tunnel stop/start. The current conversation remains unsuitable for new-tool discovery because its host projection predates preview.20; a refreshed Plugin plus fresh disposable chat is the next qualification for `codex.runtime_release`.

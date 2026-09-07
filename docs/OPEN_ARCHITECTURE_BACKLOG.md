@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.20 SOURCE PUBLISHED / SEMANTIC ACTIVATION + LIVE RELEASE QUALIFICATION NEXT
+**Status:** IN_PROGRESS / PREVIEW.20 LIVE 63 TOOLS / FRESH-HOST RUNTIME_RELEASE + END-TO-END UPDATE QUALIFICATION NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -132,6 +132,8 @@ Validation 112 / Checkpoint 354 qualify that remaining authority class in an iso
 Validation 113 / Checkpoint 355 harden the one-time preview.19 -> preview.20 activation seam before publication. The newly installed supervisor can now distinguish the legacy preview.19 launcher environment, derive its fixed install root from its own module location and derive the preview.20 replacement contract from newly installed surface constants, while normal preview.20+ restarts retain explicit process-bound configuration. The dedicated bootstrap probe passes. The exact helper, bound to private head `77e13dc...` and SHA-256 `c88c3085...`, passed two complete no-publish runs with the full public/lifecycle/release matrix and Windows atomic forward/rollback smoke. Production remains unchanged. AB-002 now advances to source-only publication, semantic activation, fresh-host `codex.runtime_release` qualification and proof that a later qualified release can use the semantic release path end to end without another ordinary-host publication helper.
 
 Validation 114 / Checkpoint 356 preserve the successful source-only publication boundary. The qualified helper published preview.20, all nine live-disk public regressions passed, and independent post-publication comparison found zero mismatches across all 22 candidate `src`/`test` files. The executing process remains preview.19 / 62 and the tunnel remains `live/ready`, so no hidden restart occurred. AB-002 now advances to semantic bootstrap activation through `codex.runtime_maintenance`, followed by refreshed-host `codex.runtime_release` schema/live-operation qualification.
+
+Validation 115 / Checkpoint 357 qualify that semantic bootstrap activation in production. The old preview.19 process returned `armed`, the newly installed supervisor launched preview.20 / 63 successfully, both PID and instance changed, durable status returned `succeeded`, and the same tunnel PID remained live/ready throughout. No manual process/tunnel restart was needed. AB-002 now advances to refreshed-host `codex.runtime_release` schema discovery and then one later qualified release updated end to end through the semantic release + semantic restart path, which is the proof required to retire ordinary-host publication helpers for normal future updates.
 
 ---
 
