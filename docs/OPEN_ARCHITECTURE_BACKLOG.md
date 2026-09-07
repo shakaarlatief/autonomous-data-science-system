@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.19 PUBLICATION PREFLIGHT QUALIFIED / ORDINARY-HOST PUBLICATION NEXT
+**Status:** RESEARCHING / PREVIEW.19 SOURCE PUBLISHED + HASH VERIFIED / MANUAL ACTIVATION RESTART NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -118,6 +118,8 @@ Validation 104 / Checkpoint 346 qualify that activation gate. The active process
 Validation 105 / Checkpoint 347 localize a new host-schema fidelity gate. Fresh-chat discovery exposed `codex.runtime_maintenance`, but ChatGPT genericized the top-level discriminated-union schema to `{ [key: string]: any }`, so the action enum, required `requestId` and `additionalProperties: false` were not host-certifiable. No tool was invoked. Local MCP remained strictly validated, so this is projection fidelity rather than server authority widening. Validation 106 / Checkpoint 348 qualify a minimal preview.19 correction: one strict top-level object with an action enum plus required `requestId`, with an actual MCP initialize/tools-list wire regression proving the serialized schema. Core public and lifecycle suites remain green; production stays preview.18 / 62 tools pending guarded publication.
 
 Validation 107 / Checkpoint 349 qualify the exact three-file guarded publication package for preview.19. Two no-publish preflights passed the wire-schema assertion, eight public regressions, lifecycle suites/probes and atomic replacement/rollback smoke. The helper performs no restart; ordinary-host source publication is next, followed by independent installed-hash verification and a manual activation restart because the preview.18 host projection is not accepted for self-restart bootstrap.
+
+Validation 108 / Checkpoint 350 preserve successful preview.19 source publication. Independent read-only rehashing proves the exact three qualified installed hashes and unchanged AB-020 semantic-Git while the active process remains preview.18 / 62 and the tunnel remains live/ready. One manual runbook-controlled activation restart is next; only after preview.19 is active and a fresh chat projects the flat schema structurally may the first production self-restart be invoked.
 
 ---
 

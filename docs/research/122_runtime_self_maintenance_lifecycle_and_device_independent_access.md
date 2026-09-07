@@ -496,3 +496,9 @@ A new actual MCP wire regression sends initialize + tools/list through linked MC
 Checkpoint 349 / Validation 107 now qualify the exact three-file source-only publication package for the preview.19 flat-schema correction. The helper is bound to private head `ac3e05de0ebd9553eafb322ce19ec17539f1c09d` and helper SHA-256 `3ce8d4561886a8101525666cc6c084ed94b2f9607d36ec5a7ea797961b2be165`. Two complete no-publish runs passed the actual MCP wire-schema regression, all eight public regressions, all lifecycle suites/probes, and the exact Windows atomic forward/rollback primitive.
 
 Publication replaces only `mcp-server-factory.mjs`, `surface-contracts.mjs`, and `public-surface-registration.mjs`, uses verified timestamped backups, performs no restart, and requires the current preview.18 / 62-tool process plus live/ready tunnel throughout. Because preview.18's ChatGPT host schema projection was rejected for mutation use, preview.19 activation will still use a manual runbook-controlled restart after source publication/verification.
+
+## 25. Preview.19 source published, activation restart pending
+
+Checkpoint 350 / Validation 108 preserve successful guarded source-only publication of the preview.19 flat-schema correction. The helper reran all public/lifecycle regressions, replaced exactly three files with verified timestamped backups and performed no restart. Independent read-only rehashing then proved all three installed files exactly match the qualified candidate while AB-020 semantic-Git remains unchanged.
+
+The active process is intentionally still preview.18 / 62 tools and the tunnel remains live/ready. The next step is one manual runbook-controlled activation restart. Preview.18's generically projected host schema remains disqualified for mutation bootstrap. After preview.19 is active, refresh the app and require a fresh-chat structured-schema discovery PASS before the first live self-restart.
