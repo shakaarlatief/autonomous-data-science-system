@@ -406,3 +406,51 @@ full tunnel restart
 ```
 
 The next hard requirement is therefore exact process identity and a production-shaped one-shot supervisor entrypoint. Do not move to live publication before those checks are qualified on an isolated Codexless-style worker.
+
+## 17. Production-shaped direct dispatch and exact-instance restart qualified
+
+Checkpoint 343 / Validation 101 now close the isolated lifecycle questions left by Checkpoint 342. The private runtime repository is synchronized at `610fb6c1480012b0db80965239493348e5de5a58` and contains the direct semantic dispatch service, durable active-operation lock, private runtime instance identity, authenticated fixed-loopback graceful shutdown, production-shaped one-shot supervisor entrypoint, fixed replacement worker launcher, and a 62-tool preview.18 integration candidate.
+
+The exact safety shape is:
+
+```text
+Codexless request handler
+    -> persist requestId / operationId
+    -> acquire durable active-operation lock
+    -> mark operation armed
+    -> launch detached helper directly
+    -> return armed receipt before destructive delay
+
+helper
+    -> read private runtime identity
+    -> require /healthz to match exact instance/PID/version/surface/tool count
+    -> POST fixed loopback shutdown endpoint with private token + exact instanceId
+    -> wait for old instance to disappear
+    -> launch one fixed server-owned Codexless worker definition
+    -> require different instanceId and expected version/surface/tool count
+    -> record durable succeeded/failed state
+    -> release durable active-operation lock
+
+managed tunnel
+    -> remains running throughout ordinary Codexless-only restart
+```
+
+Focused suites pass 12/12, 7/7 and 6/6. Functional probes separately prove graceful exact-instance replacement, direct acceptance before restart, idempotent replay without a second restart, private shutdown-token handling, wrong-token rejection and clean identity removal after shutdown. No arbitrary PID kill is part of the accepted candidate.
+
+The public integration target is `0.1.1-preview.18-runtime-maintenance`, still on `codexless-public-preview-v2`, with 62 tools. `codex.runtime_maintenance` accepts only `restart_codexless` or `status` plus caller-stable `requestId`; it exposes no general process/filesystem/tunnel/credential authority. The staged 62-tool public surface and existing Office/PDF/Git regressions pass. Production remains preview.17 / 61 tools and is not yet evidence of live self-restart.
+
+The next step is an exact guarded preview.18 publication preflight. Live publication must remain hash-bound, backup/rollback capable and restart-free until independently verified. The first live use of the new mutation tool must occur only after the preview.18 source is published, the current runbook-controlled bootstrap restart activates it, local/tunnel health is verified, the ChatGPT app surface is refreshed, and a fresh chat discovers the new tool.
+
+## 18. Refined immediate next work
+
+```text
+1. build and qualify the exact preview.18 guarded publication package
+2. publish source without restarting; independently verify exact installed hashes
+3. perform the one final runbook-controlled bootstrap restart needed to activate codex.runtime_maintenance
+4. verify preview.18 / 62 tools and tunnel recovery
+5. refresh the developer MCP app and use a fresh chat for discovery
+6. invoke one bounded restart_codexless qualification and recover its durable status after reconnection
+7. if that live test passes, ordinary future Codexless-only restarts move to codex.runtime_maintenance
+8. keep full tunnel restart only for tunnel/profile/credential/runtime changes or tunnel failure
+9. continue the separate mobile-web/device matrix afterward
+```
