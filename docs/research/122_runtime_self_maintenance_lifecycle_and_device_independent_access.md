@@ -47,7 +47,7 @@ ChatGPT calls Codexless
     -> result becomes uncertain / unavailable
 ```
 
-The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œgive command_exec permission to kill/restart everything.ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â
+The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“give command_exec permission to kill/restart everything.ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â
 
 The architecture needs a separately owned lifecycle mechanism that can accept a bounded operation while the normal MCP path is alive, then complete process recovery independently after the request has been acknowledged.
 
@@ -598,3 +598,9 @@ Independent health proves the old preview.20 process remains running and the man
 Checkpoint 362 / Validation 120 complete the forward path of the decisive AB-002 proof. After preview.21 source was published through `codex.runtime_release`, ChatGPT invoked one bounded semantic restart. Preview.20 PID 41548 / `ri_c862...` was replaced by preview.21 PID 56332 / `ri_3ae3...`, while the exact same tunnel PID 67468 remained live/ready. Durable restart status is `succeeded`, pending activation is cleared, the release is recorded as active with immutable history, and installed target hashes remain exact.
 
 Preview.21 therefore represents the first normal future Codexless update performed end to end without a user-run `%LOCALAPPDATA%` source helper and without manual Codexless/tunnel restart. The remaining release qualification is host-visible post-activation verify/status plus explicit semantic rollback to preview.20 and rollback activation/recovery-state verification.
+
+## 38. Post-activation public status and verification qualified
+
+Checkpoint 363 / Validation 121 close the forward-path public readback gate. Fresh-host `status` for the original publish requestId returns the same durable `succeeded` operation recorded locally, while fresh-host `verify` returns `verified` with zero mismatches for the active preview.21 target. Neither call exposes host/process/filesystem authority. Independent inspection confirms preview.21 remains active, exact target hashes are installed, pending/lock state is clear and the tunnel remains live/ready.
+
+The next isolated mutation is semantic rollback publication only. Rollback activation remains a separate subsequent restart qualification so restored preview.20 bytes, rollback ledger state and pending rollback metadata can be independently verified while preview.21 is still executing.

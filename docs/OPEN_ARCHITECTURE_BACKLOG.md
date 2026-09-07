@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.21 END-TO-END FORWARD SEMANTIC UPDATE QUALIFIED / VERIFY + ROLLBACK NEXT
+**Status:** IN_PROGRESS / PREVIEW.21 FORWARD UPDATE + PUBLIC READBACK QUALIFIED / SEMANTIC ROLLBACK NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -144,6 +144,8 @@ Validation 118 / Checkpoint 360 qualify live preparation and the pre-publication
 Validation 119 / Checkpoint 361 qualify the first semantic installed-source publication. The public publish call returned `armed`, the detached operation reached durable `succeeded`, exact preview.21 bytes are installed, a forward pending activation is present, the shared lock is released, and preview.20 plus the same tunnel remain running. This is the first real proof that `%LOCALAPPDATA%` publication no longer needs an ordinary-host helper. AB-002 now advances to semantic activation, post-activation verify/status, and live rollback/recovery qualification.
 
 Validation 120 / Checkpoint 362 complete the forward update proof. Semantic restart replaced preview.20 with healthy preview.21 / 63, preserved the exact tunnel process, returned durable `succeeded`, cleared pending/lock state, and finalized preview.21 as the active managed release with immutable activation history. No ordinary-host publication or manual restart was used. AB-002 now requires only post-activation public verify/status plus explicit semantic rollback and rollback activation qualification before closure can be considered.
+
+Validation 121 / Checkpoint 363 close the post-activation public readback portion. Fresh-host status returns the original publish operation as durable `succeeded`, fresh-host verify reports `verified` with zero mismatches, and independent inspection confirms the active preview.21 install/process/tunnel remain unchanged. AB-002 now advances to semantic rollback publication followed by separate rollback activation and final-state qualification.
 
 ---
 
