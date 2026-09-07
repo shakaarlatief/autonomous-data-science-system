@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 354
+**Checkpoint:** 355
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 355 is the current boundary. Validation 113 qualifies the corrected final preview.20 runtime-release candidate at private head `77e13dc69aec8e2fdc7ffa8379cccf039046785e` and the exact guarded one-time source-publication helper. The bootstrap correction is essential: when still-running preview.19 dispatches the newly installed maintenance supervisor, the supervisor now detects the old launcher environment, derives the fixed install root from its own installed module location, and derives the preview.20 / 63 replacement contract from newly installed server-owned surface constants. A dedicated isolated preview.19 -> preview.20 restart probe passes. Two complete no-publish helper runs pass all nine staged public regressions, 12/7/6 lifecycle suites, six lifecycle/release functional probes and Windows atomic replace/add rollback smoke. The helper performs no restart and live production remains preview.19 / 62 tools with tunnel live/ready. Ordinary-host source-only publication through that exact helper is next; after independent hash verification, activation should use the already-live semantic self-restart.
 
 Checkpoint 354 is the current boundary and Research 122 remains active. Validation 112 now qualifies the complete preview.20 semantic runtime-release candidate at private head `00355fa8354147a8c62dfd40521c122dede5530b`: a strict 63-tool `codex.runtime_release` surface with fixed private release-source authority, exact source-HEAD and payload hashes, prepared server-owned state, staged/live regression gates, installed-baseline hashes, durable rollback snapshots, pending activation, immutable chained activation history, and release-aware reuse of the already-qualified `codex.runtime_maintenance` restart path. Real isolated worker probes pass forward activation, forward startup-failure recovery, rollback activation and rollback startup-failure recovery. Production remains preview.19 / 62 tools and was not mutated. The next gate is an exact guarded one-time preview.20 bootstrap publication preflight; successful source publication should then be activated through the already-live self-restart rather than another manual Codexless stop/start.
 

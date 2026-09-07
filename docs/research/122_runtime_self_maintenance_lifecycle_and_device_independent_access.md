@@ -536,3 +536,15 @@ Activation deliberately reuses the already-qualified `codex.runtime_maintenance 
 Qualification also corrected chained-release state semantics before publication. Immutable activation history now preserves predecessor release identity so `A -> B -> rollback B` returns to active A rather than incorrectly clearing managed state. The focused release suite passes 11/11, both release-aware probes pass two scenarios each, the nine staged public regressions pass at 63 tools, the existing 12/7/6 lifecycle suites remain green, and the actual MCP wire schema passes for both runtime mutation tools.
 
 Production remains preview.19 / 62 tools. The next gate is a guarded one-time preview.20 bootstrap publication package. After source publication and independent hash verification, activation should use the already-live semantic self-restart rather than another manual Codexless stop/start.
+
+## 30. Preview.20 bootstrap compatibility and guarded publication preflight qualified
+
+Checkpoint 355 / Validation 113 close the final pre-publication discriminator. The first preview.20 candidate correctly modeled release publication and post-preview.20 restart semantics, but a one-time bootstrap detail had to be hardened before live source mutation: the currently running preview.19 service launches the on-disk supervisor with preview.19 expected version/tool-count values and without the new preview.20 install-root environment field.
+
+The final supervisor now treats absence of that new field as a narrowly defined source-activation bootstrap. It derives its own fixed install root from the newly installed module location and derives the replacement version/surface/tool-count contract from the newly installed server-owned surface constants. Normal preview.20+ restarts still use the explicit process-bound install root and expected contract. A dedicated isolated probe reproducing the preview.19 environment passed an armed-before-restart transition directly into preview.20 / 63 tools.
+
+The corrected private candidate is preserved at `77e13dc69aec8e2fdc7ffa8379cccf039046785e`. After correction, all nine staged public regressions, 11 release tests, 12/7/6 lifecycle suites, three established lifecycle probes, both two-scenario release-aware probes and the new bootstrap compatibility probe pass.
+
+The exact one-time publication helper is now hash-bound and qualified twice in no-publish mode. It is stored only in private `.tmp`, has SHA-256 `c88c3085a14024e57d738ee8110a332bbfc5e0dbe908c8574410ca8598d52a0c`, accepts only `-Publish`, requires exact preview.19 live/candidate hashes plus clean synchronized private head and tunnel live/ready, runs the complete matrix, exercises Windows atomic replace/add rollback semantics, and performs no restart. Production remains preview.19 / 62 tools.
+
+The next step is ordinary-host source-only publication through that exact helper. After independent installed-hash verification, activation should use the already-live `codex.runtime_maintenance` self-restart rather than manual Codexless/tunnel restart.
