@@ -1,4 +1,4 @@
-﻿# Research 122: Runtime Self-Maintenance, Lifecycle Supervision, and Device-Independent Access
+# Research 122: Runtime Self-Maintenance, Lifecycle Supervision, and Device-Independent Access
 
 **Date:** 2026-09-07
 **Status:** ACTIVE / ARCHITECTURE BASELINE OPENED
@@ -274,4 +274,68 @@ This research begins with three strong constraints:
 4. build a non-destructive prototype around an isolated test runtime/process before touching the live tunnel
 5. run the phone surface matrix with safe local diagnostics
 6. only then decide whether to implement runtime self-maintenance and/or a phone fallback product surface
+```
+
+## 13. Managed tunnel survives local MCP target outage and recovers without reconnect
+
+The first isolated functional lifecycle discriminator is now complete. It used the exact installed tunnel-client v0.0.13 with all state/profile material redirected into the private runtime workspace `.tmp`, a fake loopback control plane implementing the published OpenAI poll/response contract, a dummy runtime-key reference, and a temporary loopback reverse proxy in front of the already-running Codexless MCP. No production tunnel ID/key, remote tunnel state, or live Codexless process was mutated.
+
+The probe sent real MCP commands through the isolated managed tunnel rather than relying only on `/readyz`:
+
+```text
+1. initialize + tools/list through the isolated managed tunnel
+   -> PASS, 61 tools
+
+2. remove the local MCP path by stopping/destroying the proxy
+   -> a new queued tools/list returned an HTTP-style 502 failure
+   -> managed tunnel process remained alive
+
+3. restore the local MCP path on the same endpoint
+   -> new initialize succeeded
+   -> new tools/list succeeded, 61 tools
+   -> no runtimes connect/restart was issued between outage and recovery
+```
+
+Exact functional result:
+
+```text
+preOutageToolsList=true
+outageFailureObserved=true
+outageRespCode=502
+postRecoveryNewInitialize=true
+postRecoveryToolsList=true
+tunnelProcessRunning=true
+tunnelHealthy=true
+tunnelReady=true
+sameManagedRuntimeStayedUp=true
+beforeToolCount=61
+afterToolCount=61
+```
+
+This is decisive for the main restart architecture. A managed tunnel does not need to be restarted merely because its local MCP target temporarily disappears. It can remain connected to the control plane, fail requests visibly during the outage, and forward newly initialized MCP traffic after the target returns.
+
+Therefore the preferred normal publication/restart path is now:
+
+```text
+managed tunnel remains running
+    -> bounded external one-shot helper restarts Codexless only
+    -> helper verifies local Codexless health
+    -> subsequent MCP initialize/tools calls flow through the same tunnel runtime
+```
+
+A full tunnel stop/connect is reserved for tunnel-client/profile/credential/runtime changes or a failed tunnel itself. This materially narrows the authority needed for ordinary Codexless publications.
+
+One caveat remains: tunnel readiness may remain positive while a previously healthy backend is temporarily absent. The stronger evidence is therefore the actual command failure/recovery result above, not a readiness flag alone. Operational health design must not use tunnel `/readyz` as the only proof that a restarted local backend is usable.
+
+The durable private candidate currently preserves the 12-test semantic coordinator/managed-tunnel adapter at private head `413fba007de7c1d763ef4412921369d96e7131af`. The functional probe source is staged for the next private evidence commit with SHA-256 `422905f509466f56ddf3dc00b8c352a0fe6fa40d30bafcea96718db2854d9995`.
+
+## 14. Refined immediate next work
+
+```text
+1. implement the minimum detached one-shot lifecycle owner for Codexless-only restart
+2. give that helper a durable bounded operation ledger and exact process identity contract
+3. qualify helper survival + dummy service restart without touching production
+4. define private tunnel credential/state bootstrap for eventual managed-runtime migration
+5. only after helper qualification, decide the one-time production migration sequence
+6. run the phone native-app vs mobile-web matrix with safe local diagnostics
 ```

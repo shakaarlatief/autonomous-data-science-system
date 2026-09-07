@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / NATIVE TUNNEL MANAGED-RUNTIME PATH FOUND / SUPERVISOR CONTRACT NEXT
+**Status:** RESEARCHING / SAME MANAGED TUNNEL BACKEND RECOVERY QUALIFIED / DETACHED HELPER NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -101,6 +101,9 @@ Validation 067 provides a third concrete case. Publication of the temporary Chat
 Validation 077 adds a fourth case and a cleaner workaround pattern. The normal `ads-local-runtime` authority again refused a direct write to `%LOCALAPPDATA%\\Codexless`, and this time no temporary live-install workspace was registered. A guarded ordinary-host PowerShell helper bound exact live/candidate hashes, staged and regressed the 60-tool candidate, performed atomic replacement with backups/rollback, and independent post-publication reads verified exact installed hashes. This confirms that the desired future semantic runtime-maintenance capability should reproduce those narrow publication/verification/rollback semantics without turning the install tree into an ordinary workspace.
 
 Research 122 / Validation 098 add a new reuse-first discriminator. The exact installed tunnel-client v0.0.13 already exposes native managed-runtime lifecycle commands including `runtimes connect`, `status`, `stop`, `list`, `rm` and `cleanup`; its help explicitly positions `runtimes connect` as the long-lived runtime path managed by Codex. A direct `runtimes list --json` probe failed under ordinary ADS workspace authority only because the tunnel client attempted to initialize its default user-profile state directory. The same command succeeded with `TUNNEL_CLIENT_STATE_DIR` redirected into a bounded admitted temporary root. The current design target is therefore a dedicated runtime-maintenance state/credential/lifecycle authority that reuses the native tunnel manager, not broad `%LOCALAPPDATA%`/process authority and not a custom tunnel daemon by default. A separately owned supervisor/deferred helper is still required for Codexless/tunnel restart because a process cannot synchronously guarantee the response to the request that stops its own transport.
+
+
+Validation 099 / Checkpoint 341 strengthen that discriminator with a functional failure/recovery test. An isolated managed tunnel forwarded real MCP initialize/tools-list traffic to Codexless, returned a visible 502 for a queued command while the local MCP path was intentionally absent, stayed running, and then forwarded a new initialize plus tools/list after the path returned without any tunnel reconnect. The preferred ordinary maintenance path is therefore now tunnel-preserving: a separately owned deferred helper should restart Codexless only, while full managed-tunnel stop/connect is reserved for tunnel-specific changes or failure. Tunnel `/readyz` alone is not sufficient proof of local-backend recovery because the isolated runtime could remain nominally ready while the backend path was absent.
 
 ---
 
