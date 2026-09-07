@@ -510,3 +510,9 @@ Checkpoint 351 / Validation 109 preserve successful manual activation of preview
 A direct process-live MCP initialize/tools-list proves that `codex.runtime_maintenance` now serializes as one flat top-level object with exactly `action` and `requestId`, both required, `additionalProperties: false`, no top-level `oneOf`, and action enum `restart_codexless | status`. This closes the local/server half of Validation 105's host-schema fidelity issue.
 
 No live self-restart has been attempted. Refresh the existing developer MCP app and use a fresh disposable ChatGPT conversation to determine whether the host now preserves the flat schema. Only a structured fresh-host PASS permits the first production `restart_codexless` test.
+
+## 27. Preview.19 fresh-host schema projection qualified
+
+Checkpoint 352 / Validation 110 close the host-schema compatibility gate. After app refresh, a completely fresh ChatGPT conversation exposed `codex.runtime_maintenance` as a structured callable object with only required `action` and `requestId`; `action` is the literal union `restart_codexless | status`; `requestId` retains its string bounds/pattern; and the generic index-signature projection seen under preview.18 is gone. No ADS tool was invoked.
+
+This is the required host-side counterpart to Validation 109's process-live local MCP schema proof. The first production self-restart is now authorized for qualification using one stable requestId and exactly one restart call, followed by durable status recovery after reconnection.
