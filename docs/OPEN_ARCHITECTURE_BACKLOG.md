@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.18 SOURCE PUBLISHED / ONE FINAL BOOTSTRAP RESTART NEXT
+**Status:** RESEARCHING / PREVIEW.18 ACTIVE + LOCAL 62-TOOL DISCOVERY PASS / CHATGPT HOST DISCOVERY NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -112,6 +112,8 @@ Validation 101 / Checkpoint 343 qualify that next gate. The candidate now has a 
 Validation 102 / Checkpoint 344 qualify the guarded publication package itself. The helper is exact-head/hash bound, requires the running preview.17 / 61-tool and live/ready tunnel baseline, stages and tests the full 62-tool integration, exercises the same Windows atomic forward/rollback primitive before mutation, and has passed two complete no-publish runs. Publication will remain source-only with exact backups/rollback and `RESTART_PERFORMED=false`; ordinary-host publication is now the next gate.
 
 Validation 103 / Checkpoint 345 preserve successful ordinary-host source publication. Independent rehashing proves every installed preview.18 publication target exactly matches the qualified candidate while AB-020 semantic-Git and preserved document regressions remain unchanged. The currently running process is still preview.17 / 61 tools and the tunnel remains live/ready, so the next gate is the one final full runbook-controlled bootstrap restart before the 62nd tool can be discovered and live-qualified.
+
+Validation 104 / Checkpoint 346 qualify that activation gate. The active process now reports preview.18 / 62 tools; listener PID, private runtime identity and public health all bind to the same instance; the private shutdown token is not exposed; the tunnel is live/ready; and a direct local MCP initialize/tools-list returns exactly 62 tools including `codex.runtime_maintenance` with the intended closed schema. ChatGPT app refresh plus fresh-chat host discovery is now the next gate before any live restart mutation.
 
 ---
 

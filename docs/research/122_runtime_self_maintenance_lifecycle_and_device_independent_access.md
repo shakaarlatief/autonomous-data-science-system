@@ -470,3 +470,11 @@ Checkpoint 345 / Validation 103 preserve successful guarded source publication o
 A separate read-only verification rehashed every installed publication target. All eleven preview.18 source files and all three preview.18 regression files exactly match the qualified candidate hashes; the existing Office/PDF/image regressions remain unchanged; AB-020 `semantic-git.mjs` remains exactly `3b2ddbbe00339045b81044bb3e1e39c314a461a7e0f8e4e608b79b4b0f37de02`.
 
 The active process is deliberately still `0.1.1-preview.17-office-file-link` / 61 tools, while the tunnel is still `live/ready`. The next boundary is therefore one final full runbook-controlled bootstrap restart. Only after preview.18 / 62 tools is active, tunnel health/readiness is re-established, the developer MCP app is refreshed and a fresh chat discovers `codex.runtime_maintenance` may production self-restart be tested.
+
+## 21. Preview.18 bootstrap activation and local discovery qualified
+
+Checkpoint 346 / Validation 104 preserve successful activation of preview.18 after the one final runbook-controlled bootstrap restart. The active runtime now reports `0.1.1-preview.18-runtime-maintenance` / 62 tools, with a private instance identity bound exactly to the listening process and a shutdown token that remains absent from public health output. The production tunnel is again `live/ready`.
+
+A separate direct local MCP initialize and tools/list against the active process returned exactly 62 tools and included `codex.runtime_maintenance` with the intended closed two-action schema. This is active local registration evidence rather than source-only evidence.
+
+No production self-restart has been invoked. The next discriminator is ChatGPT host projection after refreshing the existing developer MCP app. A fresh disposable chat must discover `codex.runtime_maintenance` before the first live mutation.
