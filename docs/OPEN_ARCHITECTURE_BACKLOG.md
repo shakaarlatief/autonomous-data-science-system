@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / SEMANTIC ROLLBACK SOURCE RESTORE QUALIFIED / ROLLBACK ACTIVATION NEXT
+**Status:** IN_PROGRESS / FORWARD + ROLLBACK EXECUTION QUALIFIED / FINAL READBACK BEFORE CLOSURE
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -148,6 +148,8 @@ Validation 120 / Checkpoint 362 complete the forward update proof. Semantic rest
 Validation 121 / Checkpoint 363 close the post-activation public readback portion. Fresh-host status returns the original publish operation as durable `succeeded`, fresh-host verify reports `verified` with zero mismatches, and independent inspection confirms the active preview.21 install/process/tunnel remain unchanged. AB-002 now advances to semantic rollback publication followed by separate rollback activation and final-state qualification.
 
 Validation 122 / Checkpoint 364 qualify semantic rollback publication. The public rollback call returned `armed`, the detached operation reached durable `succeeded`, exact preview.20 source hashes were restored, a rollback pending activation was created, and preview.21 plus the tunnel intentionally remain running. AB-002 now advances to rollback restart activation and final readback/state qualification.
+
+Validation 123 / Checkpoint 365 qualify rollback activation itself. Semantic restart replaces preview.21 with healthy preview.20 / 63, preserves the exact tunnel process and restored hashes, returns durable `succeeded`, clears pending/lock state and removes the active managed-release pointer because preview.20 is the unmanaged predecessor. AB-002 now has both forward and rollback execution paths production-qualified; only final public rollback status/verify readback remains before closure can be considered.
 
 ---
 
