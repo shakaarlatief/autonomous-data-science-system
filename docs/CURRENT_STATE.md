@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 357
+**Checkpoint:** 358
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 358 is the current boundary. Validation 116 qualifies the refreshed fresh-chat host projection of live preview.20 `codex.runtime_release`: one structured object with exactly four required fields (`action`, `releaseId`, `requestId`, `expectedSourceHead`), the exact five-action enum, bounded release/request identifiers and exact lowercase 40-hex source HEAD. No generic-map projection or caller-selected host/process/filesystem authority is exposed. No ADS tool was invoked in the disposable qualification chat. Direct local health remains preview.20 / 63 tools with tunnel `live/ready`. The next objective is now the decisive AB-002 proof: construct a genuine next-version release bundle in the fixed private namespace, qualify it completely against preview.20, then execute the update through semantic release + semantic restart without another ordinary-host `%LOCALAPPDATA%` publication helper.
 
 Checkpoint 357 is the current boundary. Validation 115 live-qualifies the one-time preview.19 -> preview.20 semantic bootstrap activation. The already-live preview.19 `codex.runtime_maintenance` surface returned `armed` before destructive work, and the newly installed bootstrap-compatible supervisor replaced PID 69280 / instance `ri_780a...` with PID 41548 / `ri_c862...`, healthy as `0.1.1-preview.20-runtime-release` / 63 tools. The managed tunnel remained the exact same PID 67468 and stayed `live/ready`. Durable status for the exact requestId returned `succeeded` with no recovery. Manual Codexless/tunnel restart was not needed. The current conversation predates the new tool projection, so the next gate is developer-plugin refresh and fresh-chat schema discovery of `codex.runtime_release` without invoking it.
 

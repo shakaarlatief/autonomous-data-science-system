@@ -47,7 +47,7 @@ ChatGPT calls Codexless
     -> result becomes uncertain / unavailable
 ```
 
-The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be “give command_exec permission to kill/restart everything.”
+The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be â€œgive command_exec permission to kill/restart everything.â€
 
 The architecture needs a separately owned lifecycle mechanism that can accept a bounded operation while the normal MCP path is alive, then complete process recovery independently after the request has been acknowledged.
 
@@ -564,3 +564,9 @@ Checkpoint 357 / Validation 115 close the live bootstrap activation seam. After 
 The installed preview.20 supervisor then replaced PID 69280 / `ri_780a...` directly with PID 41548 / `ri_c862...`, healthy as `0.1.1-preview.20-runtime-release` with 63 tools. The managed tunnel stayed the exact same PID 67468 and remained `live/ready`. Durable status returned terminal `succeeded` with no recovery path.
 
 This is the first production proof that an already-running old Codexless process can activate newly installed next-version source through the semantic restart path without manual Codexless or tunnel stop/start. The current conversation remains unsuitable for new-tool discovery because its host projection predates preview.20; a refreshed Plugin plus fresh disposable chat is the next qualification for `codex.runtime_release`.
+
+## 33. Fresh-host preview.20 runtime-release schema qualified
+
+Checkpoint 358 / Validation 116 close the ChatGPT host-projection gate for `codex.runtime_release`. A refreshed disposable conversation exposed a strict named four-field callable object rather than a generic map. All four fields are required; the five-action enum is structurally visible; `releaseId` and `requestId` retain bounded identifier patterns; and `expectedSourceHead` is constrained to exact lowercase 40-hex. No caller-selected path, install root, process, command, environment, tunnel, credential, sandbox, regression list or other host authority is exposed. No ADS tool was invoked in that fresh chat.
+
+The current persistent conversation remains stale by design and is not used to qualify the new callable projection. Direct local health still confirms preview.20 / 63 tools with tunnel live/ready. The next proof should be a real next-version update bundle, prepared from the fixed private runtime-release namespace and then exercised through semantic prepare/publish + semantic restart/verification, rather than another ordinary-host installation helper.
