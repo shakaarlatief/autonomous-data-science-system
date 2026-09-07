@@ -47,7 +47,7 @@ ChatGPT calls Codexless
     -> result becomes uncertain / unavailable
 ```
 
-The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be Ã¢â‚¬Å“give command_exec permission to kill/restart everything.Ã¢â‚¬Â
+The same dependency is even stronger if the action stops the tunnel that carries the request. Therefore the permanent solution cannot simply be ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œgive command_exec permission to kill/restart everything.ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â
 
 The architecture needs a separately owned lifecycle mechanism that can accept a bounded operation while the normal MCP path is alive, then complete process recovery independently after the request has been acknowledged.
 
@@ -578,3 +578,11 @@ Checkpoint 359 / Validation 117 preserve the first real post-preview.20 release 
 The final manifest is canonical and accepted by the actual preview.20 manifest validator; its expected-current hashes exactly match the live preview.20 installation; its payload hashes exactly match the committed target bytes; and a staged exact-live overlay passes all nine declared public/release regressions. The bundle is synchronized to upstream with the private repository clean, satisfying the live reader's source-binding preconditions.
 
 The next live discriminator is non-destructive to the install: fresh-host `prepare` followed by pre-publication `verify`. Publication remains blocked until those live receipts prove the fixed private bundle can be prepared and that verification observes the expected two-file preview.20/preview.21 mismatch.
+
+## 35. Live prepare and pre-publication verification qualified
+
+Checkpoint 360 / Validation 118 qualify the first live `codex.runtime_release` use against `preview21-semantic-release-e2e`. A refreshed disposable chat made exactly two release calls. `prepare` returned `prepared` for the exact two-file, manifest-bound target. A subsequent pre-publication `verify` returned `verification_failed` with `mismatchCount=2`, exactly as predicted while preview.20 remains installed. This is positive evidence that verification inspects live installed bytes rather than accepting prepared metadata blindly.
+
+Independent read-only inspection afterward confirmed the runtime remains preview.20 / 63, the same process instance is still active, both target files still have their exact preview.20 baseline hashes, the tunnel is live/ready and the private release source remains clean/synchronized at `7aa303f...`. No publish, rollback or restart occurred.
+
+The next live boundary is the first semantic `publish` only. It must remain separated from activation so source mutation, regression/snapshot gating and durable release status can be independently verified before `codex.runtime_maintenance` activates preview.21.

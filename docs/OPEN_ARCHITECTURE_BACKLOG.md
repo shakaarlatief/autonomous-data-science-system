@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** IN_PROGRESS / PREVIEW.21 BUNDLE QUALIFIED / LIVE SEMANTIC PREPARE-PUBLISH-ACTIVATE NEXT
+**Status:** IN_PROGRESS / PREVIEW.21 PREPARED + PREVERIFY QUALIFIED / FIRST LIVE SEMANTIC PUBLISH NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -138,6 +138,8 @@ Validation 115 / Checkpoint 357 qualify that semantic bootstrap activation in pr
 Validation 116 / Checkpoint 358 close the refreshed-host schema gate. A fresh disposable chat projects `codex.runtime_release` as one strict four-field object with required semantic action/release/request/source-head inputs and no generic host-authority surface. No tool was invoked in that chat. AB-002 now advances to the decisive normal-update proof: build a genuine next-version release bundle under the fixed private namespace, then qualify prepare -> publish -> activation -> verify/status and rollback/recovery through the semantic surfaces without another ordinary-host install helper.
 
 Validation 117 / Checkpoint 359 qualify that genuine next-version bundle. `preview21-semantic-release-e2e` is committed at clean synchronized private head `7aa303f...`, changes only the public version constant plus matching exact-version regression, binds exact live preview.20 baseline hashes and target payload hashes, and passes the full nine-script staged release regression set. No live mutation has occurred. AB-002 now advances to live semantic prepare/pre-publication verification before the first semantic publish.
+
+Validation 118 / Checkpoint 360 qualify live preparation and the pre-publication verifier. `prepare` returned `prepared`; `verify` returned the expected two-file mismatch while independent checks prove the live preview.20 install/process/tunnel remain unchanged. This establishes server-owned prepared state plus real installed-byte verification before mutation. AB-002 now advances to one isolated semantic `publish` call, followed by independent source/status verification before any activation restart.
 
 ---
 

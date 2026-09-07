@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 359
+**Checkpoint:** 360
 **Date:** 2026-09-07
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: runtime self-maintenance, lifecycle supervision, and device-independent access
+
+Checkpoint 360 is the current boundary. Validation 118 live-qualifies `codex.runtime_release prepare` plus pre-publication `verify` for the genuine preview.21 bundle. Prepare returned `prepared`; verify returned the exactly expected `verification_failed` with `mismatchCount=2`, proving live verification still sees the two preview.20 baseline files. Independent inspection confirms preview.20 / 63 remains the same running instance, both live file hashes are unchanged, tunnel is `live/ready`, and private release source remains clean/synchronized at `7aa303f...`. The next isolated mutation is one semantic `publish` call only. Do not combine publish and restart: preserve the source-published/activation-pending boundary first, then activate through the already-qualified semantic self-restart.
 
 Checkpoint 359 is the current boundary. Validation 117 qualifies the first genuine next-version bundle for the live semantic release path: `preview21-semantic-release-e2e` at clean synchronized private head `7aa303f4f362f7d4a3ae9b4d492679751c5e892b`, targeting `0.1.1-preview.21-semantic-release-e2e` / 63 tools. The canonical manifest has two exact replace entries whose expected-current hashes match live preview.20 and whose payload hashes match the preserved private bytes. A staged exact-live overlay passes all nine declared public/release regressions. No live install/runtime mutation or prepared release state has occurred yet. The next gate is fresh-host `prepare` plus pre-publication `verify`, with publish explicitly forbidden until those live receipts are qualified.
 
