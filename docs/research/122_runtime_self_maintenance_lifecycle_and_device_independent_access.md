@@ -478,3 +478,15 @@ Checkpoint 346 / Validation 104 preserve successful activation of preview.18 aft
 A separate direct local MCP initialize and tools/list against the active process returned exactly 62 tools and included `codex.runtime_maintenance` with the intended closed two-action schema. This is active local registration evidence rather than source-only evidence.
 
 No production self-restart has been invoked. The next discriminator is ChatGPT host projection after refreshing the existing developer MCP app. A fresh disposable chat must discover `codex.runtime_maintenance` before the first live mutation.
+
+## 22. Fresh-host union schema projection failed closed
+
+The first refreshed fresh-chat discovery of active preview.18 successfully exposed `codex.runtime_maintenance`, but ChatGPT projected its top-level discriminated-union schema as `{ [key: string]: any }`. The fresh chat therefore could not verify the action enum, required `requestId`, or `additionalProperties: false` from the callable schema. It invoked no ADS tool and correctly classified the requested qualification as FAIL.
+
+Direct local MCP evidence remains narrow: preview.18 `tools/list` still contains the strict two-branch `oneOf`. This makes the result a host schema-fidelity problem, not server authority widening. The current host also projects `codex.workspace_authority`, another top-level discriminated union, as the same generic map while ordinary top-level object tools remain structured. Research 122 therefore blocks the live restart and avoids top-level union/`oneOf` for this mutation-sensitive surface where a flat object is semantically equivalent.
+
+## 23. Preview.19 flat schema candidate qualified
+
+The private runtime repository now preserves the corrective candidate at `ac3e05de0ebd9553eafb322ce19ec17539f1c09d`. Preview.19 remains a 62-tool `codexless-public-preview-v2` surface and changes only the runtime-maintenance schema/version/test integration relative to preview.18. The new tool schema is one strict object with required `action` and `requestId`; `action` is the enum `restart_codexless | status`; additional properties remain forbidden.
+
+A new actual MCP wire regression sends initialize + tools/list through linked MCP transports and proves that the serialized schema has top-level object properties/required, the action enum, the requestId bounds/pattern, no top-level `oneOf`, and `additionalProperties: false`. The eight staged public compatibility scripts and all 12/7/6 lifecycle suites plus three functional probes pass. Production remains preview.18 / 62 tools and no live mutation has been attempted. Guarded preview.19 publication is the next gate.

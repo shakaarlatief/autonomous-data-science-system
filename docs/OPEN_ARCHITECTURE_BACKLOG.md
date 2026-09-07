@@ -67,7 +67,7 @@ preserve least authority; do not weaken tunnel authentication to fix this
 
 ## AB-002: Narrow Codexless runtime self-maintenance authority
 
-**Status:** RESEARCHING / PREVIEW.18 ACTIVE + LOCAL 62-TOOL DISCOVERY PASS / CHATGPT HOST DISCOVERY NEXT
+**Status:** RESEARCHING / PREVIEW.19 FLAT HOST-SCHEMA CANDIDATE QUALIFIED / GUARDED PUBLICATION NEXT
 **Priority:** P1
 
 Allow tightly bounded publication/recovery of the installed Codexless runtime without granting general filesystem authority over `%LOCALAPPDATA%` or another broad user-profile root.
@@ -114,6 +114,8 @@ Validation 102 / Checkpoint 344 qualify the guarded publication package itself. 
 Validation 103 / Checkpoint 345 preserve successful ordinary-host source publication. Independent rehashing proves every installed preview.18 publication target exactly matches the qualified candidate while AB-020 semantic-Git and preserved document regressions remain unchanged. The currently running process is still preview.17 / 61 tools and the tunnel remains live/ready, so the next gate is the one final full runbook-controlled bootstrap restart before the 62nd tool can be discovered and live-qualified.
 
 Validation 104 / Checkpoint 346 qualify that activation gate. The active process now reports preview.18 / 62 tools; listener PID, private runtime identity and public health all bind to the same instance; the private shutdown token is not exposed; the tunnel is live/ready; and a direct local MCP initialize/tools-list returns exactly 62 tools including `codex.runtime_maintenance` with the intended closed schema. ChatGPT app refresh plus fresh-chat host discovery is now the next gate before any live restart mutation.
+
+Validation 105 / Checkpoint 347 localize a new host-schema fidelity gate. Fresh-chat discovery exposed `codex.runtime_maintenance`, but ChatGPT genericized the top-level discriminated-union schema to `{ [key: string]: any }`, so the action enum, required `requestId` and `additionalProperties: false` were not host-certifiable. No tool was invoked. Local MCP remained strictly validated, so this is projection fidelity rather than server authority widening. Validation 106 / Checkpoint 348 qualify a minimal preview.19 correction: one strict top-level object with an action enum plus required `requestId`, with an actual MCP initialize/tools-list wire regression proving the serialized schema. Core public and lifecycle suites remain green; production stays preview.18 / 62 tools pending guarded publication.
 
 ---
 
@@ -269,12 +271,12 @@ Design this with AB-003, AB-004 and the v17 viewer rather than as an isolated UI
 
 ## AB-008: Stable MCP schema and ChatGPT tool-projection lifecycle
 
-**Status:** OPEN / MONITOR
+**Status:** OPEN / MONITOR / TOP-LEVEL UNION SCHEMA GENERICIZATION REPRODUCED
 **Priority:** P1
 
 Validation 034 showed an existing conversation can retain an older callable action projection after the live MCP server publishes new actions. Research 116 therefore moved ordinary workspace/project variability into server-owned policy behind stable schemas.
 
-Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. Validation 068 then confirms that a separate fresh disposable conversation did expose those new tools and successfully mounted the probe MCP App. Validation 078 reproduces the same lifecycle pattern on the preview.16 / 60-tool publication: the persistent conversation lacked callable `codex.pdf_access`, while a fresh disposable chat immediately discovered and executed the facade successfully. Validation 096 / Checkpoint 338 reproduce the pattern again for preview.17 / 61 tools: the live runtime and tunnel were healthy but the persistent chat did not expose newly added `codex.file_link`. Validation 097 then closes the fresh-chat discriminator: after app refresh, a fresh disposable conversation exposed `codex.file_link` and successfully executed the complete DOCX/PPTX/XLSX matrix. The observed rule therefore remains: same-chat Plugin refresh can retain a stale callable projection, while a fresh chat acquires the updated projection. The broader cause/lifecycle contract remains open.
+Validation 067 reproduces the behavior more strongly. The live server was directly verified at `0.1.1-preview.15-host-capability-probe` / 59 tools and the tunnel was ready; the user then refreshed the existing `ADS Codexless Local Bridge` Plugin in the same persistent conversation. ChatGPT-side rediscovery still did not expose the three newly added host-capability tools. Validation 068 then confirms that a separate fresh disposable conversation did expose those new tools and successfully mounted the probe MCP App. Validation 078 reproduces the same lifecycle pattern on the preview.16 / 60-tool publication: the persistent conversation lacked callable `codex.pdf_access`, while a fresh disposable chat immediately discovered and executed the facade successfully. Validation 096 / Checkpoint 338 reproduce the pattern again for preview.17 / 61 tools: the live runtime and tunnel were healthy but the persistent chat did not expose newly added `codex.file_link`. Validation 097 then closes the fresh-chat discriminator: after app refresh, a fresh disposable conversation exposed `codex.file_link` and successfully executed the complete DOCX/PPTX/XLSX matrix. The observed rule therefore remains: same-chat Plugin refresh can retain a stale callable projection, while a fresh chat acquires the updated projection. The broader cause/lifecycle contract remains open. Validation 105 adds a distinct schema-shape projection failure. A fresh chat did acquire the new runtime-maintenance tool, but its top-level discriminated union was projected as a generic map. The current host likewise genericizes the older workspace-authority discriminated union, while ordinary top-level object schemas remain structured. Preview.19 therefore uses a flat strict object for the mutation-sensitive runtime-maintenance surface and adds wire-schema regression coverage. This does not resolve the host behavior generally; AB-008 remains open.
 
 Remaining questions:
 
