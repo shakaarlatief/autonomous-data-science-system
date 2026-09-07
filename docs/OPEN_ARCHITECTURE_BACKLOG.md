@@ -43,7 +43,7 @@ Closed/accepted work should normally move into the stronger evidence layer and b
 
 ## AB-001: Device-independent ChatGPT access to the local ADS connector
 
-**Status:** RESEARCHING / NATIVE MOBILE CURRENTLY WEB-ONLY PRODUCT CONSTRAINT / MOBILE-WEB MATRIX NEXT
+**Status:** RESOLVED FOR CONNECTOR REACHABILITY / MOBILE WEB PASS / NATIVE APP AUTH-CONTEXT FAIL
 **Priority:** P0
 
 If the user's laptop is running Codexless and the tunnel, the same authorized ADS connector should work from ChatGPT on laptop, phone, tablet, or another signed-in client.
@@ -51,6 +51,7 @@ If the user's laptop is running Codexless and the tunnel, the same authorized AD
 Observed in `chatgpt-16`: the connector worked from the laptop, while the same conversation on the phone returned `401 tunnel_active_organization_required` even though the laptop remained on.
 
 Research 122 / Validation 098 add an important current product constraint. Current OpenAI Developer Mode/MCP-app documentation states that MCP apps are not available on mobile and are web-only. The historical native-phone failure therefore must not be diagnosed merely as a dead laptop/tunnel. The next discriminator is device-surface specific: reproduce the native mobile-app behavior, then test `chatgpt.com` from the phone browser and, only if materially useful, desktop-site mode. If mobile web works, prefer that supported ChatGPT web path. If it does not, compare explicit remote/operator alternatives rather than weakening tunnel organization/principal validation.
+Validation 125 / Checkpoint 367 complete that matrix. A fresh native-app chat discovered the ADS connector/tool but the invocation returned HTTP 401 `tunnel_active_organization_required`. A fresh ordinary phone-browser `chatgpt.com` conversation then invoked the same `codex.account_preflight` successfully with no connector/MCP/transport/auth/client error, while the local tunnel logged dispatcher forwarding and the laptop conversation remained usable afterward. Normal mobile web is therefore the accepted phone solution; desktop-site mode is unnecessary. AB-001 is resolved for connector reachability. Task/card/approval continuity across devices is deliberately not inferred and remains AB-006.
 
 Research/acceptance targets:
 
@@ -262,7 +263,7 @@ Primary accepted baseline evidence: `docs/local_execution/validation/039_workspa
 
 ## AB-006: Robust Codex task recovery after caller/tunnel/device interruption
 
-**Status:** RESEARCHING / AFTER CONNECTOR REACHABILITY MATRIX
+**Status:** RESEARCHING / CONNECTOR REACHABILITY RESOLVED / CROSS-DEVICE TASK RECOVERY NEXT
 **Priority:** P0
 
 A task already accepted under Codexless should remain recoverable when the ChatGPT client changes device, the tunnel temporarily rejects the caller, or the supervising chat cannot poll.
@@ -280,6 +281,7 @@ caller-device changes do not silently orphan supervision
 ```
 
 This is distinct from AB-001 (connector access) and AB-003 (automatic wakeup).
+Checkpoint 367 / Validation 125 now remove the AB-001 prerequisite: normal phone-browser ChatGPT reaches the same ADS connector successfully. AB-006 can therefore test recovery on a real supported second client rather than conflating task continuity with connector availability. The first discriminator should use a bounded non-destructive task whose durable identity is known on laptop, switch to the phone browser without creating replacement work, inspect surviving task/card/thread state, then return to laptop and verify the same identity/state before any continuation.
 
 ---
 
