@@ -315,7 +315,13 @@ Validation 142 / Checkpoint 385 close the package-deployment architecture gap. T
 
 A real package load and real v2 release prepare both reproduced tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`. Native Windows file locking prevents safe same-process generation deletion after load, so generation garbage collection is deliberately separated from release rollback.
 
-## 16. Current disposition
+## 16. Live dependency-aware runtime and exact keyring activation
+
+Validation 143 / Checkpoint 386 first live-qualify the source-only bootstrap to `0.1.1-preview.22-github-g0-bootstrap`, proving that the old v1 engine can install the dependency-aware v2 implementation and restart with an empty dependency binding. Validation 144 / Checkpoint 387 then use that live v2 engine to prepare and activate the fixed `github-keyring-win32-x64` dependency under target version `0.1.1-preview.23-github-g0-keyring`. Postactivation verification reports one runtime dependency and zero source mismatches while the public surface remains 63 tools with no `github.*` action.
+
+The exact generation has independently and during release regression loaded `@napi-rs/keyring` from tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`. No GitHub credential was created by the package activation. The remaining G0 boundary is now the explicit device-flow/control surface rather than storage or deployment.
+
+## 17. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -330,5 +336,10 @@ CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
 CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
 CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
 G0_IMPLEMENTATION_CONTRACT=READY
-NEXT=BUILD_SOURCE_ONLY_G0_DEPENDENCY_BOOTSTRAP_RELEASE_V1
+LIVE_RUNTIME_RELEASE_ENGINE=V2_CAPABLE
+RUNTIME_DEPENDENCY_COUNT=1
+KEYRING_GENERATION_ACTIVE=YES
+PUBLIC_GITHUB_ACTIONS=0
+LIVE_GITHUB_AUTH=NOT_STARTED
+NEXT=DESIGN_AND_IMPLEMENT_GITHUB_AUTHORIZATION_CONTROL_SURFACE
 ```

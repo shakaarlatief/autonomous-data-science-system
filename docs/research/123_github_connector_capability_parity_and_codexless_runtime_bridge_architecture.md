@@ -372,21 +372,32 @@ The old engine prepared the bundle, publication succeeded under operation `rm_92
 
 The public surface is unchanged at 63 tools with no `github.*` action, and no live GitHub authorization or GitHub API call was started. This closes the self-bootstrap problem identified at Checkpoint 385.
 
-## 25. Current boundary
+## 25. Live exact keyring-generation activation
 
-Research 123 remains active. The live runtime can now consume dependency-aware Runtime Release v2 manifests. The next bounded step is a v2 release that declares only server-owned dependency id `github-keyring-win32-x64`, freezes the exact immutable generation during preparation, advances the runtime version without changing the public tool surface, and restarts into one active dependency. Live GitHub authorization remains blocked until that activation is separately verified.
+Validation 144 / Checkpoint 387 live-qualify the first Runtime Release v2 dependency activation at private head `19a4d1852f99f0d10d1a5b4bca23c0f39d825bb1`. Release `github-g0-keyring-activation-v2` declares only server-owned dependency id `github-keyring-win32-x64`, advances the runtime to `0.1.1-preview.23-github-g0-keyring`, retains surface `codexless-public-preview-v2` and 63 tools, and introduces no public GitHub action.
+
+A fresh real-binding smoke resolved the exact immutable tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858` and loaded the native keyring `Entry` constructor without reading or writing credentials. The live v2 engine then prepared one runtime dependency, publication operation `rm_080792c073690364c32fa90c7c1da128` succeeded with fifteen regressions including that smoke, and restart operation `rm_41cf35130455181ec38697d2aa1ae435` succeeded without recovery. Fresh postactivation verification returns `runtimeDependencyCount=1` and zero source mismatches.
+
+The package-deployment path is therefore closed for G0. The internal GitHub kernel still has no configured live authorization lifecycle on the public MCP surface, and no GitHub token or API request was created by this activation.
+
+## 26. Current boundary
+
+Research 123 remains active. The next work is not another package/release blocker. It is the explicit authorization-control support contract needed to expose GitHub App device flow safely to ChatGPT before any of the 89 parity actions are published. This support contract is infrastructure, not part of the native 89-action parity count. It should report non-secret authorization metadata, begin/status/poll/cancel a bounded in-memory device-flow reference, and allow explicit protected-token clearing without exposing tokens, device codes, client secrets, arbitrary scopes, URLs, headers or package authority.
+
+After that support surface is live-qualified, the first read-only parity action bundle can begin.
 
 ```text
 RESEARCH123=ACTIVE
-G0_PRIVATE_HEAD=21b8597abde893a2b6e6b9b91d3488de0fe8aa16
+G0_PRIVATE_HEAD=19a4d1852f99f0d10d1a5b4bca23c0f39d825bb1
 G0_SOURCE_BOOTSTRAP=LIVE
-LIVE_RUNTIME_VERSION=0.1.1-preview.22-github-g0-bootstrap
+LIVE_RUNTIME_VERSION=0.1.1-preview.23-github-g0-keyring
 LIVE_RUNTIME_RELEASE_ENGINE=V2_CAPABLE
-RUNTIME_DEPENDENCY_COUNT=0
+RUNTIME_DEPENDENCY_COUNT=1
+KEYRING_TREE_SHA256=abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858
 PUBLIC_TOOL_COUNT=63
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=BUILD_AND_ACTIVATE_GITHUB_KEYRING_RELEASE_V2
+NEXT=DESIGN_AND_IMPLEMENT_GITHUB_AUTHORIZATION_CONTROL_SURFACE
 ```

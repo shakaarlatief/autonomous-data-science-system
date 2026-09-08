@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 386
+**Checkpoint:** 387
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 387 live-qualifies the first Runtime Release v2 dependency activation. Private local-runtime head `19a4d1852f99f0d10d1a5b4bca23c0f39d825bb1` preserves release `github-g0-keyring-activation-v2` (manifest SHA-256 `33d8b19ae09c10f602857828e1257c8e5db1d050646d9769eeb9c09ee6ff81f1`), which declares only fixed dependency id `github-keyring-win32-x64`, advances the runtime to `0.1.1-preview.23-github-g0-keyring`, keeps the public tool count at 63, and adds no `github.*` action. A fresh real-binding smoke loaded `@napi-rs/keyring` from immutable tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`; live v2 prepare returned `runtimeDependencyCount=1`; publication operation `rm_080792c073690364c32fa90c7c1da128` succeeded with all 15 regressions; postpublication verification reached zero mismatches; restart operation `rm_41cf35130455181ec38697d2aa1ae435` succeeded without recovery; and fresh postactivation verification reports `runtimeDependencyCount=1`, `mismatchCount=0`. The exact keyring generation is therefore active for the live worker, while live GitHub authorization, protected GitHub-token creation, GitHub API requests, and public parity actions remain unstarted. The next boundary is an explicit bounded GitHub authorization-control support surface before the first read-only parity action bundle.
 
 Checkpoint 386 live-qualifies the source-only G0 dependency bootstrap. Private local-runtime head `21b8597abde893a2b6e6b9b91d3488de0fe8aa16` preserves release `github-g0-dependency-bootstrap-v1` (26 files, 14 regressions, manifest SHA-256 `77dde3e241d422ba2d7e8e66edb3d9dbe89383fb57f1bd48209294f158a30fe2`). The still-live v1 engine prepared it successfully, the expected prepublication verification reported 26 mismatches, publication operation `rm_92d5a1cdf16ee979cabda34918b5c686` succeeded, postpublication verification reached zero mismatches, and restart operation `rm_1dcf2e517515a89eee1c5c651bc440ef` activated target version `0.1.1-preview.22-github-g0-bootstrap` with no recovery. Fresh postactivation verification comes from the new dependency-aware release service and returns `runtimeDependencyCount=0`, `mismatchCount=0`, target tool count 63. The v2-capable release engine and G0 source are therefore live with an intentionally empty dependency binding, zero public `github.*` actions, and no live GitHub authorization. The next boundary is a Runtime Release v2 activation of only the fixed `github-keyring-win32-x64` generation.
 
@@ -419,6 +421,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/387_github_g0_keyring_generation_live_auth_control_surface_next.md
+docs/local_execution/validation/144_github_g0_keyring_generation_live_activation_qualified.md
 docs/checkpoints/386_github_g0_source_bootstrap_live_keyring_activation_next.md
 docs/local_execution/validation/143_github_g0_source_bootstrap_release_live_qualified.md
 docs/checkpoints/385_github_g0_immutable_dependency_generations_qualified_bootstrap_release_next.md

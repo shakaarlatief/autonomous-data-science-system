@@ -1,7 +1,7 @@
 # GitHub Connector Preimplementation Evidence Gaps
 
 **Date:** 2026-09-08
-**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / G0 IMMUTABLE DEPENDENCY GENERATIONS QUALIFIED / SOURCE-ONLY BOOTSTRAP RELEASE NEXT
+**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / G0 KEYRING GENERATION LIVE / AUTHORIZATION CONTROL SURFACE NEXT
 **Research:** Research 123
 **Purpose:** Convert the final 89-action native-schema reconciliation into a bounded evidence plan that closes only gaps material to practical GitHub parity, without attempting to clone host-internal wrapper details that were never projected.
 
@@ -125,6 +125,7 @@ Validation 139 / Checkpoint 382 move G0 from design to a privately preserved can
 Validation 140 / Checkpoint 383 close the OS-keyring adapter gate with a successful exact-package Windows x64 import plus one synthetic normal-user-session Credential Manager set/read/delete/cleanup lifecycle. The earlier sandbox logon-session failure is therefore localized to execution context.
 Validation 141 / Checkpoint 384 then qualify lazy main-runtime G0 source composition while preserving zero public GitHub actions. The surviving G0 blocker is no longer action schema, logic, or Windows storage; it is deterministic package provisioning because Runtime Release v1 cannot install the exact native keyring dependency.
 Validation 142 / Checkpoint 385 close that deployment design gap with exact immutable package generations, canonical worker bindings, v2 release-state integration, ordinary-restart persistence and activation recovery. A real native keyring generation and real v2 release preparation both pass; loaded native package deletion is intentionally deferred because same-process Windows removal returned `EPERM` and post-process removal succeeded.
+Validation 143 / Checkpoint 386 live-bootstrap the dependency-aware source through the old v1 engine, and Validation 144 / Checkpoint 387 then activate one exact keyring generation under v2 with zero public GitHub actions. Package deployment is now closed as a G0 evidence gap. The remaining pre-action G0 gap is how device authorization is deliberately exposed to the developer-MCP caller without leaking hidden OAuth/token state.
 
 ## Implementation gate
 
@@ -137,4 +138,4 @@ ACTION_SPECIFIC PARITY PUBLICATION      BLOCKED UNTIL RELEVANT GAP DISPOSITION
 BROAD 89-ACTION NATIVE REPLAY           NOT JUSTIFIED
 ```
 
-The next substantive work is the source-only Runtime Release v1 bootstrap that installs the dependency-aware engine and G0 source while keeping the dependency binding empty; only after that runtime is live-qualified should v2 activate the exact keyring generation. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.
+The next substantive work is an explicit bounded GitHub authorization-control support surface, followed by live device-flow qualification and only then the first read-only parity action bundle. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.
