@@ -113,6 +113,38 @@ def main() -> int:
         if pr_comments.get("pagination", {}).get("behavior") != "UNSPECIFIED":
             fail("fetch_pr_comments unspecified pagination contract drift")
 
+    if captured_count >= 45:
+        file_patch = actions[30]
+        if file_patch.get("errorContract", {}).get("descriptiveHttpStatus", {}).get("404") != "GitHub could not resolve the repository or pull request.":
+            fail("fetch_pr_file_patch documented 404 contract drift")
+        if "patch=null" not in file_patch.get("resultContract", {}).get("description", ""):
+            fail("fetch_pr_file_patch valid-empty patch=null contract missing")
+        pr_patch = actions[31]
+        if pr_patch.get("pagination", {}).get("behavior") != "ALL_CHANGED_FILE_PAGES_INTERNAL":
+            fail("fetch_pr_patch all-pages contract drift")
+        artifacts = actions[34]
+        if artifacts.get("pagination", {}).get("behavior") != "FIRST_PAGE_ONLY":
+            fail("fetch_workflow_run_artifacts first-page-only contract drift")
+        jobs = actions[35]
+        if jobs.get("pagination", {}).get("behavior") != "FIRST_PAGE_ONLY_LATEST_ATTEMPT":
+            fail("fetch_workflow_run_jobs latest-attempt/first-page contract drift")
+        for index in (37, 40, 41):
+            if actions[index].get("pagination", {}).get("behavior") != "PAGE_PER_PAGE":
+                fail(f"reaction pagination contract drift at ordinal {index + 1}")
+        diff = actions[38]
+        fmt = diff["inputSchema"]["properties"]["format"]
+        if fmt.get("enum") != ["diff", "patch"] or fmt.get("default") != "diff":
+            fail("get_pr_diff format enum/default drift")
+        profile = actions[42]
+        if profile.get("inputType") is not None or profile["inputSchema"]["properties"] != {}:
+            fail("get_profile zero-argument contract drift")
+        repo = actions[43]
+        if not any("Exactly one of repository_full_name, repository_id, repository_url" in value for value in repo.get("conditionalRules", [])):
+            fail("get_repo repository-selector XOR missing")
+        permission = actions[44]
+        if not any("No permission-result enum is projected" in value for value in permission.get("conditionalRules", [])):
+            fail("get_repo_collaborator_permission result-enum omission not preserved")
+
     print("GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE=PASS")
     print(f"GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE_COUNT={captured_count}_OF_89")
     return 0

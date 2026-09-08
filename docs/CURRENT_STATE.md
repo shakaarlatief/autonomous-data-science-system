@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 375
+**Checkpoint:** 376
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 376 preserves native GitHub schema-capture Batch 3 and advances cumulative discovery evidence to `45 / 89` with zero GitHub action invocations. The batch supplies the first concrete valid-empty/not-found contract: `fetch_pr_file_patch` returns `patch=null` for a valid PR lacking the validated changed path, but documents 404 for an unresolved repository/PR and explicitly says not to retry alternative paths. It further differentiates all-pages PR patch retrieval, first-page workflow artifacts, latest-attempt plus first-page workflow jobs, and explicit page/per_page reaction pagination. `get_pr_diff` exposes `diff | patch` with default `diff`; `get_profile` is zero-argument; `get_repo` repeats the Enterprise-aware selector XOR; collaborator-permission output values remain unprojected. Implementation remains unstarted and projected actions 46-60 are the next discovery-only Batch 4.
 
 Checkpoint 375 preserves native GitHub schema-capture Batch 2 and advances the fixed-projection machine evidence to `30 / 89` with zero GitHub action invocations. The batch resolves `GitHub.download_user_content` as a narrowly allowlisted private-user-image URL downloader, confirms workflow-artifact redirect plus reusable file-reference semantics, and demonstrates action-specific pagination: commit workflow runs are first-page-only, issue comments are internally all-pages, and PR-comments pagination is unspecified. `GitHub.create_tree.tree_elements` is genericized to `{ [key: string]: any }[]`, so exact inner tree-entry schema remains a preimplementation evidence gap. `fetch_issue.repository_url` explicitly mentions GitHub Enterprise Server custom hostnames and GHE.com API hosts; this is now a Research 123 host-scope follow-up rather than an assumed global capability. Implementation remains unstarted, and projected actions 31-45 are the next discovery-only Batch 3.
 
@@ -397,6 +399,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/376_github_native_schema_capture_batch3_preserved.md
+docs/local_execution/validation/133_github_native_schema_capture_batch3_preserved.md
 docs/checkpoints/375_github_native_schema_capture_batch2_preserved.md
 docs/local_execution/validation/132_github_native_schema_capture_batch2_preserved.md
 docs/checkpoints/374_github_native_schema_capture_batch1_preserved.md
@@ -627,6 +631,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/376_github_native_schema_capture_batch3_preserved.md
+docs/local_execution/validation/133_github_native_schema_capture_batch3_preserved.md
 docs/checkpoints/375_github_native_schema_capture_batch2_preserved.md
 docs/local_execution/validation/132_github_native_schema_capture_batch2_preserved.md
 docs/checkpoints/374_github_native_schema_capture_batch1_preserved.md

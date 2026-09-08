@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "qualificationDate": "2026-09-08",
-  "status": "PARTIAL_30_OF_89",
+  "status": "PARTIAL_45_OF_89",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
-  "sourceValidation": "docs/local_execution/validation/132_github_native_schema_capture_batch2_preserved.md",
+  "sourceValidation": "docs/local_execution/validation/133_github_native_schema_capture_batch3_preserved.md",
   "projection": {
     "actionCount": 89,
     "actionsInvoked": 0,
@@ -18,21 +18,29 @@
     "errorCodeEnumExposed": false,
     "httpStatusMappingExposed": false,
     "retryContractExposed": false,
-    "capturedActionsWithPaginationInputs": 0,
+    "capturedActionsWithPaginationInputs": 3,
     "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded.",
     "batch2StrongestGenericization": "GitHub.create_tree.tree_elements items are projected only as { [key: string]: any }.",
     "batch2PaginationEvidence": {
       "GitHub.fetch_commit_workflow_runs": "FIRST_PAGE_ONLY",
       "GitHub.fetch_issue_comments": "ALL_PAGES_INTERNAL",
       "GitHub.fetch_pr_comments": "UNSPECIFIED"
-    }
+    },
+    "batch3PaginationEvidence": {
+      "GitHub.fetch_pr_patch": "ALL_CHANGED_FILE_PAGES_INTERNAL",
+      "GitHub.fetch_workflow_run_artifacts": "FIRST_PAGE_ONLY",
+      "GitHub.fetch_workflow_run_jobs": "FIRST_PAGE_ONLY_LATEST_ATTEMPT",
+      "reaction_readers": "PAGE_PER_PAGE"
+    },
+    "batch3ConcreteErrorEvidence": "GitHub.fetch_pr_file_patch documents patch=null for a valid PR missing the path, plus 404 for unresolved repository/PR and a no-retry-other-paths instruction."
   },
-  "capturedCount": 30,
+  "capturedCount": 45,
   "batchesCompleted": [
     1,
-    2
+    2,
+    3
   ],
-  "nextOrdinal": 31,
+  "nextOrdinal": 46,
   "actions": [
     {
       "ordinal": 1,
@@ -1573,6 +1581,701 @@
       "resultContract": {
         "projectedType": "any",
         "description": "Semantic result is one normalized array; normalized entry/discriminator/order/ID/author/timestamp/review-state fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 31,
+      "nativeAction": "GitHub.fetch_pr_file_patch",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch the patch for one validated changed file in an accessible pull request. Call list_pr_changed_filenames first, then pass an exact returned path. A valid pull request that does not contain the path returns patch=null. A 404 means GitHub could not resolve the repository or pull request; do not retry other paths.",
+      "inputType": "fetch_pr_file_patch_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number",
+          "path"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "path": {
+            "type": "string",
+            "description": "Exact changed-file path returned by list_pr_changed_filenames; do not guess paths or use this action for discovery."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Call list_pr_changed_filenames first and pass an exact returned path."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Patch for one changed file in one accessible pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Valid PR with missing changed path yields patch=null; actual result-object fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "descriptiveHttpStatus": {
+          "404": "GitHub could not resolve the repository or pull request."
+        },
+        "retryNotes": [
+          "Do not retry alternative paths after the documented 404."
+        ]
+      }
+    },
+    {
+      "ordinal": 32,
+      "nativeAction": "GitHub.fetch_pr_patch",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch the patch for a GitHub pull request across all changed-file pages.",
+      "inputType": "fetch_pr_patch_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ALL_CHANGED_FILE_PAGES_INTERNAL",
+        "automaticAllPages": true,
+        "continuationExposed": false,
+        "pageInputExposed": false,
+        "limitInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Full pull-request patch across changed files.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Patch content; representation/truncation schema not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 33,
+      "nativeAction": "GitHub.fetch_workflow_job_logs",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch decoded logs for a GitHub Actions workflow job. GitHub serves through a temporary redirect; client follows redirect before decoding bytes.",
+      "inputType": "fetch_workflow_job_logs_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "job_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "job_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow job ID."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Temporary redirect is followed internally before decoding."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub Actions workflow-job logs.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Temporary redirect followed internally; returned bytes decoded; decoded representation/metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 34,
+      "nativeAction": "GitHub.fetch_workflow_job_steps",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch steps for a GitHub Actions workflow job. Returns only step summaries, not the full job payload.",
+      "inputType": "fetch_workflow_job_steps_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "job_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "job_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow job ID."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Steps belonging to one GitHub Actions workflow job.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Step summaries only; full job payload excluded; summary fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 35,
+      "nativeAction": "GitHub.fetch_workflow_run_artifacts",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch artifacts for a GitHub Actions workflow run. Wrapper returns first page only.",
+      "inputType": "fetch_workflow_run_artifacts_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "run_id"
+        ],
+        "optional": [
+          "name"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "run_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow run ID."
+          },
+          "name": {
+            "type": "string|null",
+            "description": "Optional artifact-name filter.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FIRST_PAGE_ONLY",
+        "automaticAllPages": false,
+        "continuationExposed": false,
+        "pageInputExposed": false,
+        "limitInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Workflow artifacts associated with one GitHub Actions workflow run.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Artifact list/object schema and pagination metadata omitted."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 36,
+      "nativeAction": "GitHub.fetch_workflow_run_jobs",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch jobs for a GitHub Actions workflow run. Wrapper returns latest attempt jobs from first page only.",
+      "inputType": "fetch_workflow_run_jobs_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "run_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "run_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow run ID."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Only latest workflow attempt is exposed; no input selects previous attempts."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FIRST_PAGE_ONLY_LATEST_ATTEMPT",
+        "automaticAllPages": false,
+        "continuationExposed": false,
+        "pageInputExposed": false,
+        "limitInputExposed": false,
+        "attemptSelectorExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Jobs for the latest attempt of a GitHub Actions workflow run.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Job model and pagination metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 37,
+      "nativeAction": "GitHub.get_commit_combined_status",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch the combined CI status and individual status checks for a commit.",
+      "inputType": "get_commit_combined_status_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "commit_sha"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "commit_sha": {
+            "type": "string",
+            "description": "Commit SHA."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Commit CI/status information including combined status and individual status checks.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Combined-status fields, status-check schema/state enum/counts not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 38,
+      "nativeAction": "GitHub.get_issue_comment_reactions",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch reactions for an issue comment.",
+      "inputType": "get_issue_comment_reactions_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id"
+        ],
+        "optional": [
+          "per_page",
+          "page"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Numeric identifier."
+          },
+          "per_page": {
+            "type": "integer|null",
+            "description": "Maximum number of results to return.",
+            "default": null
+          },
+          "page": {
+            "type": "integer|null",
+            "description": "1-based page number.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "PAGE_PER_PAGE",
+        "pageInputExposed": true,
+        "perPageInputExposed": true,
+        "cursorExposed": false,
+        "continuationExposed": false,
+        "pageSemantics": "1-based; no machine-readable minimum or per_page maximum projected."
+      },
+      "classification": "read",
+      "resourceScope": "Reactions attached to one issue comment.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Reaction model and page metadata are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 39,
+      "nativeAction": "GitHub.get_pr_diff",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch just the diff or patch text for a pull request.",
+      "inputType": "get_pr_diff_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [
+          "format"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "format": {
+            "type": "string",
+            "description": "diff = unified diff; patch = patch text.",
+            "enum": [
+              "diff",
+              "patch"
+            ],
+            "default": "diff"
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Pull-request textual code changes.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Diff or patch text; exact output field/wrapper schema not exposed."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 40,
+      "nativeAction": "GitHub.get_pr_info",
+      "titleExposed": false,
+      "title": null,
+      "description": "Get metadata (title, description, refs, and status) for a pull request. Does not include actual code changes.",
+      "inputType": "get_pr_info_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Use fetch_pr_patch for diff/per-file patches; get_users_recent_prs_in_repo(include_diff=True) is described for listing the authenticated user own PRs."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Pull-request metadata.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Includes title, description, refs, status; explicitly excludes actual code changes; normalized metadata model not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 41,
+      "nativeAction": "GitHub.get_pr_reactions",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch reactions for a GitHub pull request.",
+      "inputType": "get_pr_reactions_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [
+          "per_page",
+          "page"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Numeric identifier."
+          },
+          "per_page": {
+            "type": "integer|null",
+            "description": "Maximum number of results to return.",
+            "default": null
+          },
+          "page": {
+            "type": "integer|null",
+            "description": "1-based page number.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "PAGE_PER_PAGE",
+        "pageInputExposed": true,
+        "perPageInputExposed": true,
+        "cursorExposed": false,
+        "continuationExposed": false,
+        "pageSemantics": "1-based; no machine-readable minimum or per_page maximum projected."
+      },
+      "classification": "read",
+      "resourceScope": "Reactions attached to a pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Reaction model and page metadata are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 42,
+      "nativeAction": "GitHub.get_pr_review_comment_reactions",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch reactions for a pull request review comment.",
+      "inputType": "get_pr_review_comment_reactions_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id"
+        ],
+        "optional": [
+          "per_page",
+          "page"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Numeric identifier."
+          },
+          "per_page": {
+            "type": "integer|null",
+            "description": "Maximum number of results to return.",
+            "default": null
+          },
+          "page": {
+            "type": "integer|null",
+            "description": "1-based page number.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "PAGE_PER_PAGE",
+        "pageInputExposed": true,
+        "perPageInputExposed": true,
+        "cursorExposed": false,
+        "continuationExposed": false,
+        "pageSemantics": "1-based; no machine-readable minimum or per_page maximum projected."
+      },
+      "classification": "read",
+      "resourceScope": "Reactions on a pull-request review comment.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Reaction model and page metadata are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 43,
+      "nativeAction": "GitHub.get_profile",
+      "titleExposed": false,
+      "title": null,
+      "description": "Retrieve the GitHub profile for the authenticated user.",
+      "inputType": null,
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [],
+        "properties": {}
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Profile of the currently authenticated GitHub user.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "No profile field schema is projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 44,
+      "nativeAction": "GitHub.get_repo",
+      "titleExposed": false,
+      "title": null,
+      "description": "Retrieve metadata for a GitHub repository. Exactly one of repository_full_name, repository_id, or repository_url must be populated.",
+      "inputType": "get_repo_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [
+          "repository_full_name",
+          "repository_id",
+          "repository_url"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string|null",
+            "description": "Repository in owner/name form.",
+            "default": null
+          },
+          "repository_id": {
+            "type": "integer|null",
+            "description": "Numeric GitHub repository ID; use when stable repository id is available.",
+            "default": null
+          },
+          "repository_url": {
+            "type": "string|null",
+            "description": "Repository or nested repository URL; explicitly supports GitHub Enterprise Server custom hostnames and GHE.com API hosts.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Exactly one of repository_full_name, repository_id, repository_url is required; XOR is descriptive rather than a structural oneOf."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repository metadata resolved by owner/name, stable numeric ID, or supported GitHub/nested URL.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository metadata fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 45,
+      "nativeAction": "GitHub.get_repo_collaborator_permission",
+      "titleExposed": false,
+      "title": null,
+      "description": "Return the collaborator permission level for a user on a repository.",
+      "inputType": "get_repo_collaborator_permission_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "username"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "username": {
+            "type": "string",
+            "description": "GitHub username to check against repository."
+          }
+        }
+      },
+      "conditionalRules": [
+        "No permission-result enum is projected; do not infer read/write/admin or other values from the input contract."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Effective collaborator permission relationship between one GitHub user and one repository.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "A permission level is returned, but value type, field name, enum, and supplementary role metadata are not projected."
       },
       "errorContract": {
         "structuredSchemaExposed": false

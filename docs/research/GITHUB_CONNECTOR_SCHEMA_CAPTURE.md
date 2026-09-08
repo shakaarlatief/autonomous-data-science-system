@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** BATCH 2 PRESERVED / 30 OF 89 CONTRACTS CAPTURED / BATCH 3 NEXT
+**Status:** BATCH 3 PRESERVED / 45 OF 89 CONTRACTS CAPTURED / BATCH 4 NEXT
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -168,6 +168,25 @@ GitHub.get_repo_collaborator_permission
 
 After these actions, stop. Do not continue into the next batch.
 ```
+
+### Batch 3 preservation result
+
+Validation 133 / Checkpoint 376 preserve cumulative schema capture at `45 / 89` with zero GitHub action invocations. Batch 3 adds concrete valid-empty/not-found/retry evidence and extends the action-specific pagination matrix:
+
+```text
+GitHub.fetch_pr_file_patch
+    valid PR + absent changed path -> patch=null
+    unresolved repository / PR -> 404
+    documented 404 -> do not retry alternative paths
+
+GitHub.fetch_pr_patch               ALL CHANGED-FILE PAGES internally
+GitHub.fetch_workflow_run_artifacts FIRST PAGE ONLY
+GitHub.fetch_workflow_run_jobs      LATEST ATTEMPT + FIRST PAGE ONLY
+reaction readers                    explicit page + per_page
+GitHub.get_pr_diff.format           diff | patch, default diff
+```
+
+`get_profile` is a true zero-argument action. `get_repo` repeats the descriptive repository-selector XOR and Enterprise/GHE.com URL evidence. `get_repo_collaborator_permission` does not expose the possible result permission values, so no permission enum is inferred.
 
 ## Batch 4: projected actions 46-60
 

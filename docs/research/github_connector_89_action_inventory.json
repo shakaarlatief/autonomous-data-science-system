@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "qualificationDate": "2026-09-08",
-  "status": "FRESH_PROJECTION_EXACT_NAMES_CONFIRMED_SCHEMA_CAPTURE_30_OF_89",
+  "status": "FRESH_PROJECTION_EXACT_NAMES_CONFIRMED_SCHEMA_CAPTURE_45_OF_89",
   "sourceValidation": "docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "provenance": {
@@ -13,9 +13,9 @@
       "reconstructionOnly": "GitHub.add_issue_comment",
       "interpretation": "RECONSTRUCTION_DEFECT_NOT_CONNECTOR_DRIFT"
     },
-    "fullNativeInputSchemaCapture": "30_OF_89_CAPTURED",
+    "fullNativeInputSchemaCapture": "45_OF_89_CAPTURED",
     "nativeSchemaCaptureArtifact": "docs/research/github_connector_native_schema_capture.json",
-    "nativeSchemaCaptureLatestValidation": "docs/local_execution/validation/132_github_native_schema_capture_batch2_preserved.md"
+    "nativeSchemaCaptureLatestValidation": "docs/local_execution/validation/133_github_native_schema_capture_batch3_preserved.md"
   },
   "actionCount": 89,
   "negativeChallengeNewActions": 0,

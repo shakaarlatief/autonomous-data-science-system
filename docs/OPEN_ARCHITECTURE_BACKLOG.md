@@ -1119,6 +1119,8 @@ Validation 131 / Checkpoint 374 preserve discovery-only schema Batch 1 for proje
 
 Validation 132 / Checkpoint 375 advance the same fixed discovery projection to `30 / 89`. Batch 2 confirms action-specific pagination, a genericized `create_tree.tree_elements` inner schema, a host-restricted `download_user_content` URL contract, workflow-artifact reusable file-reference semantics, and a bounded GET-only generic `fetch` rather than arbitrary HTTP. `fetch_issue.repository_url` explicitly names GitHub Enterprise Server custom hostnames and GHE.com API hosts, so final Research 123 architecture must reconcile endpoint-specific Enterprise selector support rather than assuming github.com-only scope globally. Batch 3 is next; implementation remains unstarted.
 
+Validation 133 / Checkpoint 376 advance the same discovery projection to `45 / 89`. Batch 3 adds explicit valid-empty (`patch=null`) versus unresolved-resource (404) semantics for `fetch_pr_file_patch` plus a documented no-retry-other-paths rule, further differentiates all-pages, first-page-only, latest-attempt-only, and page/per_page pagination contracts, and confirms a zero-argument profile lookup plus repository-selector XOR. Collaborator-permission output values remain hidden behind `any`, so exact result enums remain a later parity-evidence gap. Batch 4 is next; implementation remains unstarted.
+
 ---
 
 # Continuation obligations that must not be forgotten

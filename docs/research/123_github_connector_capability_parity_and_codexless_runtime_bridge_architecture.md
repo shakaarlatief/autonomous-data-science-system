@@ -278,9 +278,17 @@ Validation 132 / Checkpoint 375 preserve projected actions 16-30 and advance cum
 
 Pagination is demonstrably action-specific: `fetch_commit_workflow_runs` returns only the first page and exposes no continuation; `fetch_issue_comments` fetches all pages internally; `fetch_pr_comments` does not state an all-pages guarantee. `fetch_issue.repository_url` also explicitly names GitHub Enterprise Server custom hostnames and GHE.com API hosts as accepted selectors. That endpoint-specific evidence is now a host-scope follow-up for the final GitHub App/API architecture rather than a reason to assume either universal Enterprise support or github.com-only parity.
 
-## 14. Current boundary
+## 14. Native schema Batch 3 result
 
-Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `30 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+Validation 133 / Checkpoint 376 preserve projected actions 31-45 and advance cumulative native schema capture to `45 / 89`, again with zero GitHub action invocations. Batch 3 adds concrete error/valid-empty semantics rather than only absent structured error-schema evidence.
+
+`GitHub.fetch_pr_file_patch` requires a path first validated by `list_pr_changed_filenames`; an accessible PR that does not contain the path returns `patch=null`, while a documented 404 means GitHub could not resolve the repository or pull request and the connector says not to retry alternative paths. This is direct evidence for preserving valid-empty versus not-found distinctions and no-blind-retry behavior.
+
+Pagination/selection behavior expands again: `fetch_pr_patch` spans all changed-file pages; workflow-run artifacts are first-page-only; workflow-run jobs are both latest-attempt-only and first-page-only; reaction readers expose explicit 1-based `page` plus `per_page`. `get_pr_diff` exposes `diff | patch` with default `diff`, while `get_pr_info` deliberately excludes code changes. `get_profile` is zero-argument. `get_repo` repeats the descriptive repository selector XOR and Enterprise/GHE.com URL evidence. `get_repo_collaborator_permission` exposes no permission-result enum, so result values remain an output-shape gap.
+
+## 15. Current boundary
+
+Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `45 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
@@ -295,14 +303,17 @@ GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=30_OF_89
+NATIVE_SCHEMA_CAPTURE=45_OF_89
 CREATE_TREE_INNER_SCHEMA=GENERICIZED
 PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
+VALID_EMPTY_VS_NOT_FOUND=EXPLICITLY_OBSERVED
+NO_BLIND_RETRY_SEMANTIC=OBSERVED
 ENTERPRISE_SELECTOR_SCOPE=FOLLOWUP_REQUIRED
+PERMISSION_RESULT_ENUM=NOT_PROJECTED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_3
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_4
 ```
