@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** BATCH 4 PRESERVED / 60 OF 89 CONTRACTS CAPTURED / BATCH 5 NEXT
+**Status:** BATCH 5 PRESERVED / 75 OF 89 CONTRACTS CAPTURED / FINAL BATCH NEXT
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -258,6 +258,37 @@ GitHub.search_branches
 
 After these actions, stop. Do not continue into the next batch.
 ```
+
+### Batch 5 preservation result
+
+Validation 135 / Checkpoint 378 preserve cumulative schema capture at `75 / 89` with zero GitHub action invocations. Batch 5 is mutation-heavy (`13 / 15`) and captures several high-value safety contracts:
+
+```text
+GitHub.merge_pull_request.merge_method
+    merge | squash | rebase
+
+GitHub.merge_pull_request.expected_head_sha
+    explicit optimistic concurrency guard
+    GitHub rejects merge if PR head moved
+
+GitHub.reply_to_review_comment
+    top-level inline review comment ID required
+    replies-to-replies unsupported
+
+workflow rerun actions
+    GitHub Actions write permission required
+
+GitHub.search
+    topn final result limit
+    empty query is valid no-results
+    no continuation interface projected
+
+GitHub.search_branches
+    opaque cursor + page_size
+    next-cursor response field hidden by any
+```
+
+Reviewer request/removal actions expose individual/team arrays but no projected at-least-one rule. The final discovery batch contains the remaining fourteen projected actions.
 
 ## Batch 6: projected actions 76-89
 

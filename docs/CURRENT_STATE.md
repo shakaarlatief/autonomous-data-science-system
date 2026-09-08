@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 377
+**Checkpoint:** 378
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 378 preserves native GitHub schema-capture Batch 5 and advances cumulative discovery evidence to `75 / 89` with zero GitHub action invocations. The batch captures the exact PR merge-method enum and `expected_head_sha` optimistic-concurrency guard, preserves reviewer request/removal optional-array ambiguity, confirms top-level-only inline review replies, and records GitHub Actions write permission for both exposed rerun mutations. It also distinguishes final-`topn` code search with valid-empty empty-query behavior from opaque-cursor branch search. Thirteen of the fifteen Batch 5 actions are mutations. Implementation remains unstarted, only fourteen native action contracts remain, and projected actions 76-89 are the final discovery-only Batch 6 before final 89-action reconciliation.
 
 Checkpoint 377 preserves native GitHub schema-capture Batch 4 and advances cumulative discovery evidence to `60 / 89` with zero GitHub action invocations. The batch directly captures installation/account discovery and installation-scoped repository listing, further supporting the selected GitHub App/user-token architecture. It confirms internal-final-limit recent-PR pagination, all-pages changed-filename listing, recent-issue pagination until `top_k` or exhaustion, zero-based repository offsets, and unspecified pagination for PR review threads/reviews and organization lists. Four actions are zero-argument calls. `lock_issue_conversation.lock_reason` is a genuine four-value enum, while recent-PR state and repository-affiliation examples remain plain strings. Implementation remains unstarted and projected actions 61-75 are the next discovery-only Batch 5.
 
@@ -401,6 +403,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/378_github_native_schema_capture_batch5_preserved.md
+docs/local_execution/validation/135_github_native_schema_capture_batch5_preserved.md
 docs/checkpoints/377_github_native_schema_capture_batch4_preserved.md
 docs/local_execution/validation/134_github_native_schema_capture_batch4_preserved.md
 docs/checkpoints/376_github_native_schema_capture_batch3_preserved.md
@@ -635,6 +639,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/378_github_native_schema_capture_batch5_preserved.md
+docs/local_execution/validation/135_github_native_schema_capture_batch5_preserved.md
 docs/checkpoints/377_github_native_schema_capture_batch4_preserved.md
 docs/local_execution/validation/134_github_native_schema_capture_batch4_preserved.md
 docs/checkpoints/376_github_native_schema_capture_batch3_preserved.md

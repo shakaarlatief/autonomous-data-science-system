@@ -176,6 +176,41 @@ def main() -> int:
         if reason.get("enum") != ["off-topic", "too heated", "resolved", "spam"] or reason.get("default") is not None:
             fail("lock_issue_conversation lock_reason enum/default drift")
 
+    if captured_count >= 75:
+        merge = actions[61]
+        merge_method = merge["inputSchema"]["properties"]["merge_method"]
+        if merge_method.get("enum") != ["merge", "squash", "rebase"] or merge_method.get("default") is not None:
+            fail("merge_pull_request merge_method enum/default drift")
+        if not any("expected_head_sha" in value and "rejects" in value for value in merge.get("conditionalRules", [])):
+            fail("merge_pull_request optimistic-concurrency rule missing")
+        remove_reviewers = actions[64]
+        if not any("No at-least-one requirement" in value for value in remove_reviewers.get("conditionalRules", [])):
+            fail("remove_pull_request_reviewers optional-array ambiguity not preserved")
+        reply = actions[68]
+        if not any("Replies to replies" in value for value in reply.get("conditionalRules", [])):
+            fail("reply_to_review_comment top-level-only rule missing")
+        request_reviewers = actions[69]
+        if not any("No projected rule requires" in value for value in request_reviewers.get("conditionalRules", [])):
+            fail("request_pull_request_reviewers optional-array ambiguity not preserved")
+        for index in (70, 71):
+            if not any("Actions write permission" in value for value in actions[index].get("conditionalRules", [])):
+                fail(f"workflow rerun Actions-write permission rule drift at ordinal {index + 1}")
+        search = actions[73]
+        if search.get("pagination", {}).get("behavior") != "FINAL_TOPN_NO_CONTINUATION_PROJECTED":
+            fail("search topn/no-continuation contract drift")
+        if not any("Empty query" in value for value in search.get("conditionalRules", [])):
+            fail("search empty-query valid-empty behavior missing")
+        branches = actions[74]
+        if branches.get("pagination", {}).get("behavior") != "OPAQUE_CURSOR":
+            fail("search_branches cursor contract drift")
+        if branches.get("pagination", {}).get("nextCursorOutputFieldExposed") is not False:
+            fail("search_branches hidden next-cursor output field must remain preserved")
+        batch5 = actions[60:75]
+        if sum(1 for item in batch5 if item.get("classification") == "write") != 13:
+            fail("Batch 5 mutation count drift")
+        if [item["nativeAction"] for item in batch5 if item.get("classification") == "read"] != ["GitHub.search", "GitHub.search_branches"]:
+            fail("Batch 5 read-only action set drift")
+
     print("GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE=PASS")
     print(f"GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE_COUNT={captured_count}_OF_89")
     return 0

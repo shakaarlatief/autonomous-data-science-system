@@ -1123,6 +1123,8 @@ Validation 133 / Checkpoint 376 advance the same discovery projection to `45 / 8
 
 Validation 134 / Checkpoint 377 advance the same fixed discovery projection to `60 / 89`. Batch 4 captures installation/account discovery and installation-scoped repository listing, further differentiates final-limit/internal, all-pages, until-limit-or-exhaustion, zero-based-offset, and unspecified pagination contracts, and records four zero-argument identity/account/org actions. `lock_issue_conversation.lock_reason` is a real four-value enum while recent-PR state and repository affiliation examples remain untyped strings. Batch 5 is next; implementation remains unstarted.
 
+Validation 135 / Checkpoint 378 advance the same fixed discovery projection to `75 / 89`. Batch 5 captures exact merge-method and expected-head concurrency behavior, reviewer-array ambiguity, top-level-only inline review replies, GitHub Actions write permission for rerun mutations, final-limit code search with valid-empty empty query, and opaque-cursor branch search. Thirteen of fifteen Batch 5 actions are mutating. Fourteen native action contracts remain in the final discovery batch; implementation remains unstarted.
+
 ---
 
 # Continuation obligations that must not be forgotten

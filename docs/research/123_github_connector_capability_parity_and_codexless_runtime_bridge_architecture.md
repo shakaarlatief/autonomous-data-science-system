@@ -296,9 +296,19 @@ Four actions are true zero-argument calls: `get_user_login`, `list_installed_acc
 
 The host still projects return type `any` and no structured error schema across the batch, so installation/account/review/repository output models remain a later result-shape evidence question rather than an inferred contract.
 
-## 16. Current boundary
+## 16. Native schema Batch 5 result
 
-Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `60 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+Validation 135 / Checkpoint 378 preserve projected actions 61-75 and advance cumulative native schema capture to `75 / 89`, again with zero GitHub action invocations.
+
+Batch 5 captures the strongest PR merge safety contract so far. `merge_pull_request.merge_method` is exactly `merge | squash | rebase`, and optional `expected_head_sha` is an explicit optimistic-concurrency guard: GitHub rejects the merge when the pull-request head moved. The description also exposes semantic merge result fields `sha`, `merged`, and `message`, although their machine types remain hidden behind `any`.
+
+Reviewer request/removal actions expose optional individual/team arrays but no projected at-least-one rule. `reply_to_review_comment` requires the thread's top-level inline review comment ID and explicitly does not support replies-to-replies. Both exposed Actions rerun mutations require GitHub Actions write permission.
+
+Search semantics diverge again: `search` exposes a final `topn` limit, treats empty query as valid no-results, and exposes no continuation interface; `search_branches` exposes an opaque cursor plus `page_size`, while the `any` output hides the response field carrying the next cursor. Batch 5 contains thirteen mutations and two reads, so later parity qualification will require correspondingly bounded disposable mutation fixtures.
+
+## 17. Current boundary
+
+Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `75 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
@@ -313,7 +323,7 @@ GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=60_OF_89
+NATIVE_SCHEMA_CAPTURE=75_OF_89
 CREATE_TREE_INNER_SCHEMA=GENERICIZED
 PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
 VALID_EMPTY_VS_NOT_FOUND=EXPLICITLY_OBSERVED
@@ -324,10 +334,13 @@ INSTALLATION_DISCOVERY=CAPTURED
 ZERO_BASED_OFFSET_PAGINATION=CAPTURED
 REVIEW_LIST_PAGINATION=UNSPECIFIED
 LOCK_REASON_ENUM=CAPTURED
+MERGE_EXPECTED_HEAD_CONCURRENCY=CAPTURED
+ACTIONS_RERUN_WRITE_PERMISSION=CAPTURED
+BRANCH_SEARCH_CURSOR=CAPTURED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_5
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_6
 ```

@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "qualificationDate": "2026-09-08",
-  "status": "PARTIAL_60_OF_89",
+  "status": "PARTIAL_75_OF_89",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
-  "sourceValidation": "docs/local_execution/validation/134_github_native_schema_capture_batch4_preserved.md",
+  "sourceValidation": "docs/local_execution/validation/135_github_native_schema_capture_batch5_preserved.md",
   "projection": {
     "actionCount": 89,
     "actionsInvoked": 0,
@@ -18,7 +18,7 @@
     "errorCodeEnumExposed": false,
     "httpStatusMappingExposed": false,
     "retryContractExposed": false,
-    "capturedActionsWithPaginationInputs": 8,
+    "capturedActionsWithPaginationInputs": 10,
     "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded.",
     "batch2StrongestGenericization": "GitHub.create_tree.tree_elements items are projected only as { [key: string]: any }.",
     "batch2PaginationEvidence": {
@@ -45,16 +45,24 @@
       "GitHub.list_installed_accounts",
       "GitHub.list_user_org_memberships",
       "GitHub.list_user_orgs"
-    ]
+    ],
+    "batch5MutationCount": 13,
+    "batch5ReadOnlyActions": [
+      "GitHub.search",
+      "GitHub.search_branches"
+    ],
+    "batch5ConcurrencyEvidence": "GitHub.merge_pull_request.expected_head_sha explicitly rejects merge when PR head moved.",
+    "batch5CursorEvidence": "GitHub.search_branches exposes opaque cursor input while any output hides the returned next-cursor field."
   },
-  "capturedCount": 60,
+  "capturedCount": 75,
   "batchesCompleted": [
     1,
     2,
     3,
-    4
+    4,
+    5
   ],
-  "nextOrdinal": 61,
+  "nextOrdinal": 76,
   "actions": [
     {
       "ordinal": 1,
@@ -2949,6 +2957,761 @@
       "resultContract": {
         "projectedType": "any",
         "description": "Return remains any; Boolean/empty/normalized object form is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 61,
+      "nativeAction": "GitHub.mark_pull_request_ready_for_review",
+      "titleExposed": false,
+      "title": null,
+      "description": "Mark a draft pull request as ready for review. Returns the connector normalized PR snapshot after the transition.",
+      "inputType": "mark_pull_request_ready_for_review_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Description scopes the operation to a draft pull request."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Pull-request draft/readiness state.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized PR snapshot after transition; exact snapshot fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 62,
+      "nativeAction": "GitHub.merge_pull_request",
+      "titleExposed": false,
+      "title": null,
+      "description": "Merge a pull request immediately. Returns GitHub merge result payload containing sha, merged, and message.",
+      "inputType": "merge_pull_request_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [
+          "merge_method",
+          "commit_title",
+          "commit_message",
+          "expected_head_sha"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "merge_method": {
+            "type": "string|null",
+            "description": "Optional merge method.",
+            "enum": [
+              "merge",
+              "squash",
+              "rebase"
+            ],
+            "default": null
+          },
+          "commit_title": {
+            "type": "string|null",
+            "description": "Optional merge commit title override.",
+            "default": null
+          },
+          "commit_message": {
+            "type": "string|null",
+            "description": "Optional merge commit message override.",
+            "default": null
+          },
+          "expected_head_sha": {
+            "type": "string|null",
+            "description": "Optional expected PR head SHA; GitHub rejects merge when supplied SHA no longer matches current PR head.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "expected_head_sha provides an optimistic-concurrency safeguard: GitHub rejects the merge if the PR head moved."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Immediate pull-request merge.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "GitHub merge-result payload with sha, merged, and message; field types not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "descriptiveRejections": [
+          "expected_head_sha mismatch because PR head moved"
+        ]
+      }
+    },
+    {
+      "ordinal": 63,
+      "nativeAction": "GitHub.remove_issue_assignees",
+      "titleExposed": false,
+      "title": null,
+      "description": "Remove assignees from an issue or pull request. Returns a normalized issue snapshot after the mutation.",
+      "inputType": "remove_issue_assignees_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number",
+          "assignees"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          },
+          "assignees": {
+            "type": "array<string>",
+            "description": "GitHub usernames to remove; no minItems/maxItems projected."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Unlike add_issue_assignees, no 10-assignee limit is described; none is inferred."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Assignee set of an issue or pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized issue snapshot after mutation; fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 64,
+      "nativeAction": "GitHub.remove_issue_label",
+      "titleExposed": false,
+      "title": null,
+      "description": "Remove one label from an issue or pull request. Returns a normalized issue snapshot after the mutation.",
+      "inputType": "remove_issue_label_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number",
+          "label"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          },
+          "label": {
+            "type": "string",
+            "description": "Label name to remove."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "One label on an issue or pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized issue snapshot after mutation; fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 65,
+      "nativeAction": "GitHub.remove_pull_request_reviewers",
+      "titleExposed": false,
+      "title": null,
+      "description": "Remove individual or team reviewer requests from a pull request. Returns the connector normalized PR snapshot after the mutation.",
+      "inputType": "remove_pull_request_reviewers_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [
+          "reviewers",
+          "team_reviewers"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "reviewers": {
+            "type": "array<string>|null",
+            "description": "GitHub usernames to remove from review requests.",
+            "default": null
+          },
+          "team_reviewers": {
+            "type": "array<string>|null",
+            "description": "Team slugs to remove from review requests.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "No at-least-one requirement is projected for reviewers/team_reviewers.",
+        "No XOR or other structural relationship between reviewer arrays is projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Individual and team review requests on a pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized PR snapshot after mutation; exact fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 66,
+      "nativeAction": "GitHub.remove_reaction_from_issue_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Remove a reaction from an issue comment.",
+      "inputType": "remove_reaction_from_issue_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id",
+          "reaction_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Target numeric identifier."
+          },
+          "reaction_id": {
+            "type": "integer",
+            "description": "Reaction ID to remove."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reaction attached to an issue comment.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "No response semantics beyond projected any."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 67,
+      "nativeAction": "GitHub.remove_reaction_from_pr",
+      "titleExposed": false,
+      "title": null,
+      "description": "Remove a reaction from a GitHub pull request.",
+      "inputType": "remove_reaction_from_pr_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number",
+          "reaction_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Target numeric identifier."
+          },
+          "reaction_id": {
+            "type": "integer",
+            "description": "Reaction ID to remove."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reaction attached directly to a pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "No response semantics beyond projected any."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 68,
+      "nativeAction": "GitHub.remove_reaction_from_pr_review_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Remove a reaction from a pull request review comment.",
+      "inputType": "remove_reaction_from_pr_review_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id",
+          "reaction_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Target numeric identifier."
+          },
+          "reaction_id": {
+            "type": "integer",
+            "description": "Reaction ID to remove."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reaction attached to a pull-request review comment.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "No response semantics beyond projected any."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 69,
+      "nativeAction": "GitHub.reply_to_review_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Reply to an inline review comment on a PR Files changed thread. comment_id must be the thread top-level inline review comment ID; replies-to-replies are not supported by the API.",
+      "inputType": "reply_to_review_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number",
+          "comment_id",
+          "comment"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Must identify the thread top-level inline review comment."
+          },
+          "comment": {
+            "type": "string",
+            "description": "Reply body."
+          }
+        }
+      },
+      "conditionalRules": [
+        "comment_id must be the thread top-level inline review comment ID.",
+        "Replies to replies are explicitly unsupported by the API."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reply within an inline pull-request review thread in the Files Changed surface.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Response comment model not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "descriptiveRejections": [
+          "Replies-to-replies are unsupported."
+        ]
+      }
+    },
+    {
+      "ordinal": 70,
+      "nativeAction": "GitHub.request_pull_request_reviewers",
+      "titleExposed": false,
+      "title": null,
+      "description": "Request individual or team reviewers on a pull request. Returns the connector normalized PR snapshot after the review request mutation.",
+      "inputType": "request_pull_request_reviewers_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [
+          "reviewers",
+          "team_reviewers"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "reviewers": {
+            "type": "array<string>|null",
+            "description": "Optional GitHub usernames to request.",
+            "default": null
+          },
+          "team_reviewers": {
+            "type": "array<string>|null",
+            "description": "Optional team slugs to request.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "No projected rule requires either optional reviewer array to be non-empty.",
+        "No relationship between individual and team arrays is structurally exposed."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Individual and team review requests on a pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized PR snapshot after mutation; exact fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 71,
+      "nativeAction": "GitHub.rerun_failed_workflow_run_jobs",
+      "titleExposed": false,
+      "title": null,
+      "description": "Re-run all failed jobs in a GitHub Actions workflow run. Use this to retry only failed jobs instead of starting a full new attempt for successful jobs too. Linked GitHub app/token must have Actions write permission.",
+      "inputType": "rerun_failed_workflow_run_jobs_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "run_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "run_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow run ID."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Retries failed jobs only and does not start a full new attempt for successful jobs.",
+        "Requires GitHub Actions write permission for the repository."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Failed jobs of one GitHub Actions workflow run.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Acknowledgement/job/run result schema not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "permissionNotes": [
+          "GitHub Actions write permission required."
+        ]
+      }
+    },
+    {
+      "ordinal": 72,
+      "nativeAction": "GitHub.rerun_workflow_job",
+      "titleExposed": false,
+      "title": null,
+      "description": "Re-run one GitHub Actions workflow job. Use when a specific failed or cancelled job should be retried without re-running every failed job in the workflow run. Linked GitHub app/token must have Actions write permission.",
+      "inputType": "rerun_workflow_job_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "job_id"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "job_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow job ID."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Description specifically frames operation for failed or cancelled jobs.",
+        "Requires GitHub Actions write permission for the repository."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "One GitHub Actions workflow job.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Result schema not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "permissionNotes": [
+          "GitHub Actions write permission required."
+        ]
+      }
+    },
+    {
+      "ordinal": 73,
+      "nativeAction": "GitHub.resolve_review_thread",
+      "titleExposed": false,
+      "title": null,
+      "description": "Resolve an inline pull request review thread.",
+      "inputType": "resolve_review_thread_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "thread_id"
+        ],
+        "optional": [],
+        "properties": {
+          "thread_id": {
+            "type": "string",
+            "description": "GraphQL review-thread node ID."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Resolution state of an inline pull-request review thread addressed by GraphQL node ID.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returned thread/resolution model not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 74,
+      "nativeAction": "GitHub.search",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search GitHub files and return matching excerpts when available. Query should be plain text without GitHub query flags; repository_name or org can narrow scope. Code search covers default branch. Empty query returns no results.",
+      "inputType": "search_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "topn",
+          "repository_name",
+          "org"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Plain string query; avoid GitHub query flags such as is:pr. Empty query returns no results."
+          },
+          "topn": {
+            "type": "integer",
+            "description": "Final maximum number of results to return.",
+            "default": 20
+          },
+          "repository_name": {
+            "type": "string|array<string>|null",
+            "description": "Repository owner/name value(s), or short repository names when org is supplied. Fully qualified names retain explicit owner even when org is set.",
+            "default": null
+          },
+          "org": {
+            "type": "string|null",
+            "description": "Organization used to narrow search scope and disambiguate short repository names.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Empty query is a valid non-error that yields no results.",
+        "Code search covers default branch.",
+        "Use fetch_file for complete file contents.",
+        "No internal automatic-pagination guarantee is projected."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FINAL_TOPN_NO_CONTINUATION_PROJECTED",
+        "finalLimitInput": "topn",
+        "defaultFinalLimit": 20,
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub repository files/code search over linked accessible scope, optionally narrowed by repository/org.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Matching files and excerpts when available; fields/ranking/match positions/truncation metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 75,
+      "nativeAction": "GitHub.search_branches",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search GitHub branches within a repository.",
+      "inputType": "search_branches_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "owner",
+          "repo_name",
+          "query"
+        ],
+        "optional": [
+          "page_size",
+          "cursor"
+        ],
+        "properties": {
+          "owner": {
+            "type": "string",
+            "description": "GitHub repository owner or organization."
+          },
+          "repo_name": {
+            "type": "string",
+            "description": "Repository name without owner prefix."
+          },
+          "query": {
+            "type": "string",
+            "description": "Branch search query."
+          },
+          "page_size": {
+            "type": "integer",
+            "description": "Maximum number of results.",
+            "default": 20
+          },
+          "cursor": {
+            "type": "string|null",
+            "description": "Opaque cursor from a previous branch search.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "OPAQUE_CURSOR",
+        "pageSizeInput": "page_size",
+        "defaultPageSize": 20,
+        "cursorInput": "cursor",
+        "cursorOpaque": true,
+        "nextCursorOutputFieldExposed": false,
+        "pageInputExposed": false,
+        "offsetInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Branch search within one explicitly selected repository.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Branch-result fields and continuation metadata not machine-projected; response field containing next cursor is hidden by any."
       },
       "errorContract": {
         "structuredSchemaExposed": false
