@@ -1,7 +1,7 @@
 # GitHub Connector Preimplementation Evidence Gaps
 
 **Date:** 2026-09-08
-**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / G0 AUTHORIZATION SUPPORT LIVE / FRESH-CHAT HOST QUALIFICATION NEXT
+**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / AUTHORIZATION FLAT SCHEMA LIVE / FRESH-CHAT REQUALIFICATION NEXT
 **Research:** Research 123
 **Purpose:** Convert the final 89-action native-schema reconciliation into a bounded evidence plan that closes only gaps material to practical GitHub parity, without attempting to clone host-internal wrapper details that were never projected.
 
@@ -127,6 +127,7 @@ Validation 141 / Checkpoint 384 then qualify lazy main-runtime G0 source composi
 Validation 142 / Checkpoint 385 close that deployment design gap with exact immutable package generations, canonical worker bindings, v2 release-state integration, ordinary-restart persistence and activation recovery. A real native keyring generation and real v2 release preparation both pass; loaded native package deletion is intentionally deferred because same-process Windows removal returned `EPERM` and post-process removal succeeded.
 Validation 143 / Checkpoint 386 live-bootstrap the dependency-aware source through the old v1 engine, and Validation 144 / Checkpoint 387 then activate one exact keyring generation under v2 with zero public GitHub actions. Package deployment is now closed as a G0 evidence gap. The remaining pre-action G0 gap is how device authorization is deliberately exposed to the developer-MCP caller without leaking hidden OAuth/token state.
 Validation 145 / Checkpoint 388 close the local-runtime authorization-support implementation gap: one strict `codex.github_authorization` support tool is live at 64 tools, local MCP schema discovery passes, and metadata-only live invocation confirms no configured App client ID or stored authorization. The same persistent ChatGPT conversation retains a stale callable projection, leaving only a fresh-chat host-projection/metadata gate before actual authorization setup.
+Validation 146 / Checkpoint 389 show that the first fresh-host projection genericized the top-level authorization union and safety-blocked the single metadata attempt before a bridge result. The local server remained strict. The established AB-008 flat-object remediation is now live at preview.25 with all accepted fields structurally visible locally and exact cross-field rules retained server-side. The remaining evidence gap is a second fresh-host discriminator proving whether that flat shape projects and whether metadata is then allowed.
 
 ## Implementation gate
 
@@ -139,4 +140,4 @@ ACTION_SPECIFIC PARITY PUBLICATION      BLOCKED UNTIL RELEVANT GAP DISPOSITION
 BROAD 89-ACTION NATIVE REPLAY           NOT JUSTIFIED
 ```
 
-The next substantive work is a refreshed fresh-chat projection/schema qualification of the live authorization-control support tool plus one metadata-only call. Actual GitHub App configuration/device flow and then the first read-only parity action bundle remain later gates. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.
+The next substantive work is a refreshed fresh-chat requalification of the preview.25 flat authorization schema plus exactly one metadata-only call. Actual GitHub App configuration/device flow and then the first read-only parity action bundle remain later gates. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.

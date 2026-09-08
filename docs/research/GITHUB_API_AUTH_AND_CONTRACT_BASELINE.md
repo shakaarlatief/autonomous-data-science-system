@@ -329,7 +329,13 @@ The final live release `github-auth-control-v2-fix2` preserves one exact `github
 
 The current persistent ChatGPT conversation retains a stale callable projection, so fresh-chat host schema/metadata qualification remains required before actual user authorization is attempted.
 
-## 18. Current disposition
+## 18. Host projection correction for authorization support
+
+Validation 146 / Checkpoint 389 reproduce the known developer-MCP top-level-union projection defect on the live GitHub authorization support tool. The strict local preview.24 `oneOf` is projected by a fresh ChatGPT host only as `{ [key: string]: any }`, after which the single metadata attempt is blocked by host safety controls before any Runtime Bridge payload returns. That ordering does not prove the generic schema caused the safety block, but it is sufficient to reject the union shape for a mutation-sensitive authorization tool.
+
+Preview.25 therefore applies the already qualified flat-schema pattern. The live schema now structurally exposes required six-value `action`, bounded optional `requestId`, bounded optional `authorizationRef`, optional literal `confirmClear=true`, and `additionalProperties=false`. Server-side cross-field validation preserves exact action semantics. The 16-regression release and activation pass; direct local metadata remains unconfigured/unauthorized and no GitHub request has started.
+
+## 19. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -353,5 +359,5 @@ GITHUB_APP_CLIENT_ID_CONFIGURED=false
 STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_SCHEMA_AND_METADATA_QUALIFICATION
+NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_FLAT_SCHEMA_AND_METADATA_REQUALIFICATION
 ```

@@ -390,27 +390,32 @@ Two failed immutable release attempts remain preserved rather than rewritten. Th
 
 The live server is now 64 tools, but the current persistent ChatGPT conversation still does not project `codex.github_authorization` as a callable action. This is another AB-008 same-conversation stale-projection observation.
 
-## 27. Current boundary
+## 27. Fresh-host union genericization and flat authorization correction
 
-Research 123 remains active. The next gate is a refreshed fresh disposable ChatGPT conversation: confirm `codex.github_authorization` is host-projected, preserve its actual host-visible schema, and invoke exactly `metadata` once. Do not begin or poll device flow in that projection qualification.
+Validation 146 / Checkpoint 389 preserve the first fresh-host qualification of `codex.github_authorization`. The tool name and description projected, but the host collapsed the strict local six-branch authorization union to `{ [key: string]: any }`. The one allowed `metadata` invocation was blocked by host safety controls before a Runtime Bridge payload returned. No title/annotations or machine-readable action fields were visible in that projection. Local preview.24 MCP discovery still showed the intended closed `oneOf`, so this is another direct AB-008 local-union/host-generic-map reproduction. The safety-block cause is not asserted beyond that evidence.
 
-After that gate closes, Research 123 can decide the server-owned GitHub App registration/client-ID configuration and explicit user device-authorization qualification. Only after authorization is independently live-qualified should the first read-only parity-action bundle begin.
+The correction reuses the already qualified preview.19/preview.20 pattern rather than adding a new workaround. Private head `ad10aa30342503d303b6a22629fe56dc914f0fa2` flattens the authorization support schema to one strict object containing required six-value `action` plus optional bounded `requestId`, `authorizationRef` and literal `confirmClear=true`; exact per-action field combinations are server-validated with `GITHUB_AUTHORIZATION_INPUT_INVALID`. A dedicated MCP wire regression proves no top-level union and full field visibility.
+
+Release `github-auth-control-flat-v2` passed all sixteen staged regressions, published successfully under `rm_6215ff67fd5ca530af3ca953b0cad03a`, and activated successfully under restart `rm_accbd4edacc46458cae81dd493173feb`. The active runtime is now `0.1.1-preview.25-github-auth-flat`, 64 tools, one exact keyring dependency and zero source mismatches. Direct local MCP `tools/list` exposes the flat schema and a local metadata-only call remains non-secret with `configured=false`, `authorized=false`, `storedAuthorization=false`.
+
+## 28. Current boundary
+
+Research 123 remains active. Refresh the current renamed developer-MCP Plugin and use a fresh disposable ChatGPT conversation to requalify `codex.github_authorization`. A PASS now requires a structurally projected flat object and one successful `metadata` result. Do not begin/poll/cancel/clear device flow.
+
+If the flat schema projects but metadata remains host-blocked, treat that as a distinct safety-classification issue rather than another schema-fidelity failure. If both schema and metadata pass, proceed to server-owned GitHub App client-ID configuration/device-flow qualification before any read-only parity bundle.
 
 ```text
 RESEARCH123=ACTIVE
-G0_PRIVATE_HEAD=d63bb48112985fd05e4a32925b83e75214dd2a4a
-LIVE_RUNTIME_VERSION=0.1.1-preview.24-github-auth-control
-LIVE_RUNTIME_RELEASE_ENGINE=V2_CAPABLE
-RUNTIME_DEPENDENCY_COUNT=1
+PRIVATE_RUNTIME_HEAD=ad10aa30342503d303b6a22629fe56dc914f0fa2
+LIVE_RUNTIME_VERSION=0.1.1-preview.25-github-auth-flat
 PUBLIC_TOOL_COUNT=64
-AUTH_SUPPORT_TOOL=codex.github_authorization
-LIVE_LOCAL_AUTH_METADATA=PASS
-GITHUB_APP_CLIENT_ID_CONFIGURED=false
-STORED_GITHUB_AUTHORIZATION=false
-SAME_CHAT_TOOL_PROJECTION=STALE
+RUNTIME_DEPENDENCY_COUNT=1
+PREVIEW24_HOST_SCHEMA=GENERIC_MAP
+PREVIEW24_METADATA=HOST_SAFETY_BLOCKED
+PREVIEW25_LOCAL_FLAT_SCHEMA=PASS
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_SCHEMA_AND_METADATA_QUALIFICATION
+NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_FLAT_SCHEMA_AND_METADATA_REQUALIFICATION
 ```

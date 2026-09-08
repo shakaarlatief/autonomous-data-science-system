@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 / G0 AUTHORIZATION SUPPORT LIVE / FRESH-CHAT HOST QUALIFICATION NEXT
+**Status:** ACTIVE RESEARCH 123 / AUTHORIZATION FLAT SCHEMA LIVE / FRESH-CHAT REQUALIFICATION NEXT
 **Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
@@ -322,6 +322,7 @@ Validation 141 / Checkpoint 384 qualify the first main-runtime G0 source integra
 Validation 142 / Checkpoint 385 qualify immutable runtime dependency generations at private head `5b63371536fa2f09bb122ed09470ec5204f18d9b`. Real keyring generation preparation/loading and real Runtime Release v2 preparation both resolve the exact 10-file / 1,971,364-byte tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`. Windows `EPERM` on same-process deletion after native loading establishes immutable generation retention; release/rollback/restart/recovery switch exact worker bindings instead of mutating live `node_modules`. The combined suite passes 22/22 with zero public `github.*` actions.
 Validation 143 / Checkpoint 386 live-qualify the source-only dependency-aware runtime bootstrap, then Validation 144 / Checkpoint 387 activate the exact `github-keyring-win32-x64` generation under Runtime Release v2. The replacement runtime reports one dependency, zero source mismatches, 63 public tools and zero public `github.*` actions. G0 storage/deployment is therefore live-capable; an explicit authorization-control support surface is the next gate before read-only parity actions.
 Validation 145 / Checkpoint 388 then live-qualify one separate `codex.github_authorization` support tool at 64 public tools while exact `github.*` parity remains 0/89. The final fix2 release passes, direct local MCP discovery exposes the strict metadata/begin/status/poll/cancel/clear schema, and live metadata confirms no configured client ID or stored authorization. The current persistent ChatGPT projection remains stale, so fresh-chat support-tool schema/metadata qualification is next before any device flow or parity action publication.
+Validation 146 / Checkpoint 389 capture the first fresh-host result: preview.24 exposes only a generic map for the local strict top-level authorization union and the one metadata attempt is host-safety-blocked before any Runtime Bridge payload. Preview.25 replaces the union with the previously qualified flat strict object pattern, passes all 16 release regressions, activates successfully, and serializes the bounded fields locally. Fresh-chat flat-schema + metadata requalification is now the only support-surface gate before client-ID/device-flow work.
 
 Validation 137 / Checkpoint 380 preserve the final reconciliation. All 89 host-visible request contracts were captured with zero missing actions, but all 89 machine-readable output schemas and all 89 structured error schemas remain unavailable, and `create_tree` retains a genericized nested input. The result is `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE` for exact native-wrapper wire parity while practical action/request mapping is complete. G0 auth/transport work is opened because these action-specific gaps do not constrain the independent GitHub authority/API kernel; action publication remains evidence-gated.
 
@@ -346,5 +347,5 @@ EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
 G0_AUTH_TRANSPORT_KERNEL=PRIVATE_CANDIDATE_QUALIFIED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_SCHEMA_AND_METADATA_QUALIFICATION
+NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_FLAT_SCHEMA_AND_METADATA_REQUALIFICATION
 ```
