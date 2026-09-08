@@ -343,7 +343,13 @@ The owner also supplied current ChatGPT UI evidence showing the Plugin display n
 
 The next platform gate is now the exact GitHub App permission manifest required by the 89-action parity target. Device flow remains disabled in practice until the dedicated App exists, has the frozen minimal permission superset, and its non-secret client ID is installed in server-owned configuration.
 
-## 20. Current disposition
+## 20. Frozen GitHub App permission manifest
+
+Validation 148 / Checkpoint 391 derive every exact native action against current GitHub endpoint permission evidence and freeze the initial dedicated App manifest at seven repository permissions: `actions=write`, `contents=write`, `issues=write`, `metadata=read`, `pull_requests=write`, `statuses=read`, and `workflows=write`. Organization, account and enterprise permissions remain empty; webhooks remain disabled; Administration, Checks and Members remain no-access.
+
+This is exact at the REST documentation layer. GitHub's own App guidance does not publish an exact GraphQL permission matrix and explicitly tells developers to test their intended GraphQL operations. Eight observed PR/review operations therefore remain an empirical sufficiency check under the already-required `pull_requests=write`; no speculative extra permission is added.
+
+## 21. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -367,5 +373,5 @@ GITHUB_APP_CLIENT_ID_CONFIGURED=false
 STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=DERIVE_AND_FREEZE_GITHUB_APP_PERMISSION_MANIFEST
+NEXT=FREEZE_GITHUB_APP_REGISTRATION_CONFIGURATION
 ```

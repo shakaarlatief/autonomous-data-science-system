@@ -518,6 +518,10 @@ docs/local_execution/validation/146_github_authorization_host_union_genericizati
 docs/checkpoints/389_github_authorization_flat_schema_live_fresh_chat_requalification_next.md
 docs/local_execution/validation/147_github_authorization_flat_fresh_host_and_live_plugin_name_qualified.md
 docs/checkpoints/390_github_authorization_fresh_host_pass_live_name_qualified_permission_manifest_next.md
+docs/research/GITHUB_APP_PERMISSION_MANIFEST.md
+docs/research/github_app_permission_manifest.json
+docs/local_execution/validation/148_github_app_rest_permission_manifest_frozen_graphql_probe_required.md
+docs/checkpoints/391_github_app_permission_manifest_frozen_registration_config_next.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
@@ -813,7 +817,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-390 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-391 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

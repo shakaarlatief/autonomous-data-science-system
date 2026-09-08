@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 / AUTHORIZATION SUPPORT HOST-QUALIFIED / APP PERMISSION MANIFEST NEXT
+**Status:** ACTIVE RESEARCH 123 / APP PERMISSION MANIFEST FROZEN / REGISTRATION CONFIGURATION NEXT
 **Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
@@ -324,6 +324,7 @@ Validation 143 / Checkpoint 386 live-qualify the source-only dependency-aware ru
 Validation 145 / Checkpoint 388 then live-qualify one separate `codex.github_authorization` support tool at 64 public tools while exact `github.*` parity remains 0/89. The final fix2 release passes, direct local MCP discovery exposes the strict metadata/begin/status/poll/cancel/clear schema, and live metadata confirms no configured client ID or stored authorization. The current persistent ChatGPT projection remains stale, so fresh-chat support-tool schema/metadata qualification is next before any device flow or parity action publication.
 Validation 146 / Checkpoint 389 capture the first fresh-host result: preview.24 exposes only a generic map for the local strict top-level authorization union and the one metadata attempt is host-safety-blocked before any Runtime Bridge payload. Preview.25 replaces the union with the previously qualified flat strict object pattern, passes all 16 release regressions, activates successfully, and serializes the bounded fields locally. Fresh-chat flat-schema + metadata requalification is now the only support-surface gate before client-ID/device-flow work.
 Validation 147 / Checkpoint 390 close that discriminator: preview.25 projects as a structured flat bounded object in a fresh host, the exactly one metadata call succeeds and returns the expected unconfigured/unauthorized state, and no authorization mutation occurs. The current ChatGPT Plugin display name `Codexless Runtime Bridge` is also directly qualified from owner-supplied UI evidence. Authorization support is therefore host-ready; the exact GitHub App permission manifest becomes the immediate pre-registration gate.
+Validation 148 / Checkpoint 391 then map all 89 actions to current official GitHub permission evidence and freeze seven repository permissions: Actions(write), Contents(write), Issues(write), Metadata(read), Pull requests(write), Commit statuses(read), and Workflows(write). Organization/account/enterprise permissions and webhooks remain absent; Administration/Checks/Members are explicitly excluded. GitHub does not publish an exact GraphQL App permission table, so eight PR/review GraphQL operations retain an empirical sufficiency probe under already-required Pull requests(write), with no speculative widening.
 
 Validation 137 / Checkpoint 380 preserve the final reconciliation. All 89 host-visible request contracts were captured with zero missing actions, but all 89 machine-readable output schemas and all 89 structured error schemas remain unavailable, and `create_tree` retains a genericized nested input. The result is `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE` for exact native-wrapper wire parity while practical action/request mapping is complete. G0 auth/transport work is opened because these action-specific gaps do not constrain the independent GitHub authority/API kernel; action publication remains evidence-gated.
 
@@ -348,5 +349,5 @@ EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
 G0_AUTH_TRANSPORT_KERNEL=PRIVATE_CANDIDATE_QUALIFIED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=DERIVE_AND_FREEZE_GITHUB_APP_PERMISSION_MANIFEST
+NEXT=FREEZE_GITHUB_APP_REGISTRATION_CONFIGURATION
 ```

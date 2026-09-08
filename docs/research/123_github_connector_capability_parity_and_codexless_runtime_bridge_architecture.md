@@ -406,27 +406,38 @@ Exactly one `metadata` invocation succeeds through the host and returns `configu
 
 The project owner also supplied a current ChatGPT UI screenshot showing the connected Plugin as `Codexless Runtime Bridge`. That direct UI evidence closes the live Plugin display-name rename left open at Checkpoint 370. `ADS` remains the overall project/system name; historical exact `ADS Codexless Local Bridge` evidence remains untouched.
 
-## 29. Current boundary
+## 29. GitHub App permission manifest
 
-Research 123 remains active. The authorization support surface is now host-qualified, but actual GitHub authorization remains intentionally unconfigured and unstarted. Before creating/configuring the dedicated GitHub App, derive and freeze the exact minimal GitHub App permission manifest from official endpoint requirements for the 89-action practical parity target. This was already a frozen architecture requirement at Checkpoint 372 and now becomes the immediate gate.
+Validation 148 / Checkpoint 391 derive the first registration-ready permission manifest from the exact 89-action inventory and current official GitHub REST permission requirements. The machine artifact `github_app_permission_manifest.json` preserves one exact mapping row per native action and `check_github_app_permission_manifest.py` protects inventory order, manifest minimality and the GraphQL evidence boundary.
 
-Only after that manifest is preserved should the project register/configure the GitHub App, enable device flow, place only the non-secret client ID in the fixed server-owned runtime configuration path, and qualify explicit user authorization. Token material remains protected-store only.
+The frozen initial repository permissions are exactly: Actions(write), Contents(write), Issues(write), Metadata(read), Pull requests(write), Commit statuses(read), and Workflows(write). No organization/account/enterprise permission or webhook event is requested. Administration, Checks and Members remain explicitly absent. `Workflows(write)` is required for practical parity because GitHub conditionally requires it for file/ref mutations that affect `.github/workflows`, while the observed native actions accept arbitrary repository paths/refs.
+
+The remaining permission uncertainty is intentionally narrow. GitHub publishes exact REST permission requirements but tells GitHub App developers to test GraphQL queries/mutations for sufficient permissions rather than publishing an exact GraphQL permission matrix. Eight observed actions use GraphQL or GraphQL-node handling, all in the pull-request/review family. The App already needs Pull requests(write) for ordinary REST parity mutations, so that is the frozen least-privilege candidate and no speculative permission is added. A post-registration live GraphQL sufficiency probe is mandatory.
+
+## 30. Current boundary
+
+Research 123 remains active. Freeze the non-secret GitHub App registration configuration around the seven-permission manifest before asking the project owner to create/install the App in GitHub's account UI. That configuration must deliberately set owner/installability, canonical App identity, webhook-disabled state, device-flow enablement, repository-selection policy, and any callback/homepage requirements without widening permissions.
+
+No App/client ID/token exists yet, so do not begin device authorization. After the App exists, configure only its non-secret client ID in fixed server-owned Runtime Bridge configuration and then qualify metadata, one explicit device flow, installation/repository scope derivation and the GraphQL permission probes before publishing read-only parity actions.
 
 ```text
 RESEARCH123=ACTIVE
-PRIVATE_RUNTIME_HEAD=ad10aa30342503d303b6a22629fe56dc914f0fa2
-LIVE_RUNTIME_VERSION=0.1.1-preview.25-github-auth-flat
-PUBLIC_TOOL_COUNT=64
-RUNTIME_DEPENDENCY_COUNT=1
-FRESH_PREVIEW25_HOST_SCHEMA=STRUCTURED_FLAT
-FRESH_PREVIEW25_METADATA=PASS
-LIVE_PLUGIN_DISPLAY_NAME=Codexless Runtime Bridge
-PLUGIN_DISPLAY_RENAME=QUALIFIED
+GITHUB_APP_PERMISSION_MAPPING=89_OF_89
+GITHUB_APP_REPOSITORY_PERMISSION_COUNT=7
+GITHUB_APP_REPOSITORY_PERMISSIONS=actions:write,contents:write,issues:write,metadata:read,pull_requests:write,statuses:read,workflows:write
+GITHUB_APP_ORGANIZATION_PERMISSIONS=NONE
+GITHUB_APP_ACCOUNT_PERMISSIONS=NONE
+GITHUB_APP_ENTERPRISE_PERMISSIONS=NONE
+GITHUB_APP_WEBHOOKS=DISABLED
+GITHUB_APP_ADMINISTRATION=NO_ACCESS
+GITHUB_APP_CHECKS=NO_ACCESS
+GITHUB_APP_MEMBERS=NO_ACCESS
+GRAPHQL_PERMISSION_SUFFICIENCY=LIVE_PROBE_REQUIRED
+GITHUB_APP_REGISTERED=false
 GITHUB_APP_CLIENT_ID_CONFIGURED=false
-STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=DERIVE_AND_FREEZE_GITHUB_APP_PERMISSION_MANIFEST
+NEXT=FREEZE_GITHUB_APP_REGISTRATION_CONFIGURATION
 ```

@@ -1,0 +1,1816 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-08",
+  "research": "123",
+  "status": "REST_DERIVED_REGISTRATION_MANIFEST_FROZEN_GRAPHQL_SUFFICIENCY_PENDING_LIVE_PROBE",
+  "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
+  "sourceSchemaCapture": "docs/research/github_connector_native_schema_capture.json",
+  "targetActionCount": 89,
+  "authorizationModel": "github-app-user-access-token-device-flow",
+  "githubComRestApiVersion": "2026-03-10",
+  "registrationPermissionManifest": {
+    "repositoryPermissions": {
+      "actions": "write",
+      "contents": "write",
+      "issues": "write",
+      "metadata": "read",
+      "pull_requests": "write",
+      "statuses": "read",
+      "workflows": "write"
+    },
+    "organizationPermissions": {},
+    "accountPermissions": {},
+    "enterprisePermissions": {},
+    "webhookActive": false,
+    "webhookEvents": []
+  },
+  "permissionCount": 7,
+  "permissionDisposition": {
+    "administration": "NO_ACCESS",
+    "checks": "NO_ACCESS",
+    "membersOrganization": "NO_ACCESS",
+    "webhooksRepository": "NO_ACCESS",
+    "deployments": "NO_ACCESS",
+    "environments": "NO_ACCESS",
+    "secrets": "NO_ACCESS",
+    "variables": "NO_ACCESS",
+    "pages": "NO_ACCESS",
+    "securityAdvisories": "NO_ACCESS",
+    "userAccountPermissions": "NONE",
+    "organizationPermissions": "NONE",
+    "enterprisePermissions": "NONE"
+  },
+  "minimalityRationale": {
+    "actions": "Actions(write) is needed by the two observed rerun mutations and subsumes Actions(read) for run/job/log/artifact reads.",
+    "contents": "Contents(write) is needed by raw Git object creation, file mutations and PR merge, and subsumes Contents(read).",
+    "issues": "Issues(write) is needed by issue creation/update and issue-reaction mutations, and subsumes Issues(read).",
+    "metadata": "Metadata(read) is needed by repository lookup/discovery, installation repository enumeration and collaborator permission.",
+    "pull_requests": "Pull requests(write) is needed by PR creation/update/reviews/reviewers/comments/reactions and is the least-privilege candidate for the observed GraphQL PR operations.",
+    "statuses": "Commit statuses(read) is needed by get_commit_combined_status; no target action writes commit statuses.",
+    "workflows": "Workflows(write) is conditionally required by file/ref mutations when .github/workflows content is affected; native file/ref actions accept arbitrary targets, so practical parity needs it."
+  },
+  "graphqlPermissionEvidence": {
+    "officialExactPermissionMappingDocumented": false,
+    "officialGuidance": "GitHub instructs GitHub App developers to test GraphQL queries/mutations for required permissions; insufficient permission returns 401.",
+    "candidatePermission": "pull_requests:write",
+    "candidateWhy": "All observed GraphQL operations are pull-request/review-thread resources, and Pull requests(write) is independently required by REST parity actions.",
+    "liveSufficiencyProbeRequiredBeforeDeviceFlowBroadQualification": true,
+    "affectedActions": [
+      {
+        "nativeAction": "GitHub.convert_pull_request_to_draft",
+        "use": "mutation"
+      },
+      {
+        "nativeAction": "GitHub.dismiss_pull_request_review",
+        "use": "mutation_or_node_resolution"
+      },
+      {
+        "nativeAction": "GitHub.enable_auto_merge",
+        "use": "mutation"
+      },
+      {
+        "nativeAction": "GitHub.list_pull_request_review_threads",
+        "use": "query"
+      },
+      {
+        "nativeAction": "GitHub.list_pull_request_reviews",
+        "use": "query"
+      },
+      {
+        "nativeAction": "GitHub.mark_pull_request_ready_for_review",
+        "use": "mutation"
+      },
+      {
+        "nativeAction": "GitHub.resolve_review_thread",
+        "use": "mutation"
+      },
+      {
+        "nativeAction": "GitHub.unresolve_review_thread",
+        "use": "mutation"
+      }
+    ]
+  },
+  "searchPermissionEvidence": {
+    "standaloneSearchPermissionExists": false,
+    "uatSearchEndpointsAvailable": true,
+    "policy": "Do not invent a Search permission. Search visibility is constrained by the user/app repository/resource intersection; mapped resource permissions already cover private target data."
+  },
+  "fetchFacadeEvidence": {
+    "addsPermission": false,
+    "policy": "The bounded native fetch facade is endpoint/resource dependent. It must remain inside the same fixed manifest and reject endpoint families requiring permissions outside it, including Administration-only resources."
+  },
+  "officialSources": [
+    "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app",
+    "https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps",
+    "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api",
+    "https://docs.github.com/en/rest/repos/contents",
+    "https://docs.github.com/en/rest/git/refs",
+    "https://docs.github.com/en/rest/git/commits",
+    "https://docs.github.com/en/rest/branches/branches",
+    "https://docs.github.com/en/rest/pulls/pulls",
+    "https://docs.github.com/en/rest/pulls/reviews",
+    "https://docs.github.com/en/rest/pulls/comments",
+    "https://docs.github.com/en/rest/pulls/review-requests",
+    "https://docs.github.com/en/rest/issues/issues",
+    "https://docs.github.com/en/rest/issues/comments",
+    "https://docs.github.com/en/rest/issues/labels",
+    "https://docs.github.com/en/rest/issues/assignees",
+    "https://docs.github.com/en/rest/reactions/reactions",
+    "https://docs.github.com/en/rest/actions/artifacts",
+    "https://docs.github.com/en/rest/actions/workflow-runs",
+    "https://docs.github.com/en/rest/commits/statuses",
+    "https://docs.github.com/en/rest/apps/installations",
+    "https://docs.github.com/en/rest/repos/repos",
+    "https://docs.github.com/en/rest/users/users",
+    "https://docs.github.com/en/rest/orgs/members",
+    "https://docs.github.com/en/rest/orgs/orgs",
+    "https://docs.github.com/en/rest/authentication/endpoints-available-for-github-app-user-access-tokens"
+  ],
+  "actions": [
+    {
+      "ordinal": 1,
+      "nativeAction": "GitHub.add_comment_to_issue",
+      "targetAction": "github.add_comment_to_issue",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Issue comments endpoint accepts Issues(write) OR Pull requests(write); native action is PR-conversation scoped.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 2,
+      "nativeAction": "GitHub.add_issue_assignees",
+      "targetAction": "github.add_issue_assignees",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Shared issue/PR assignee endpoint accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 3,
+      "nativeAction": "GitHub.add_issue_labels",
+      "targetAction": "github.add_issue_labels",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Shared issue/PR labels endpoint accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 4,
+      "nativeAction": "GitHub.add_reaction_to_issue_comment",
+      "targetAction": "github.add_reaction_to_issue_comment",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Issue-comment reaction create requires Issues(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 5,
+      "nativeAction": "GitHub.add_reaction_to_pr",
+      "targetAction": "github.add_reaction_to_pr",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Pull-request top-level reaction uses issue-reaction endpoint; requires Issues(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 6,
+      "nativeAction": "GitHub.add_reaction_to_pr_review_comment",
+      "targetAction": "github.add_reaction_to_pr_review_comment",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Pull-request review-comment reaction create requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 7,
+      "nativeAction": "GitHub.add_review_to_pr",
+      "targetAction": "github.add_review_to_pr",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create pull-request review requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 8,
+      "nativeAction": "GitHub.compare_commits",
+      "targetAction": "github.compare_commits",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Compare commits requires Contents(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 9,
+      "nativeAction": "GitHub.convert_pull_request_to_draft",
+      "targetAction": "github.convert_pull_request_to_draft",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Draft-state mutation is GraphQL; exact GitHub App GraphQL permissions are not documented, so Pull requests(write) sufficiency must be live-tested.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "mutation"
+    },
+    {
+      "ordinal": 10,
+      "nativeAction": "GitHub.create_blob",
+      "targetAction": "github.create_blob",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create Git blob requires Contents(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 11,
+      "nativeAction": "GitHub.create_branch",
+      "targetAction": "github.create_branch",
+      "mappingKind": "rest_conditional_workflows",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          },
+          {
+            "permission": "workflows",
+            "displayName": "Workflows",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create Git ref requires Contents(write); GitHub documents an alternative permission set adding Workflows(write).",
+      "notes": "Practical arbitrary-ref parity retains Workflows(write) so refs may target commits that add/modify .github/workflows.",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 12,
+      "nativeAction": "GitHub.create_commit",
+      "targetAction": "github.create_commit",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create Git commit requires Contents(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 13,
+      "nativeAction": "GitHub.create_file",
+      "targetAction": "github.create_file",
+      "mappingKind": "rest_conditional_workflows",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          },
+          {
+            "permission": "workflows",
+            "displayName": "Workflows",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create/update repository content requires Contents(write), with Workflows(write) for .github/workflows.",
+      "notes": "Native create_file accepts arbitrary repository paths, so practical parity retains Workflows(write).",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 14,
+      "nativeAction": "GitHub.create_issue",
+      "targetAction": "github.create_issue",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create issue requires Issues(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 15,
+      "nativeAction": "GitHub.create_pull_request",
+      "targetAction": "github.create_pull_request",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create pull request requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 16,
+      "nativeAction": "GitHub.create_tree",
+      "targetAction": "github.create_tree",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Create Git tree requires Contents(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 17,
+      "nativeAction": "GitHub.delete_file",
+      "targetAction": "github.delete_file",
+      "mappingKind": "rest_conditional_workflows",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          },
+          {
+            "permission": "workflows",
+            "displayName": "Workflows",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Delete repository content requires Contents(write), with Workflows(write) for .github/workflows.",
+      "notes": "Native delete_file accepts arbitrary paths, so practical parity retains Workflows(write).",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 18,
+      "nativeAction": "GitHub.dismiss_pull_request_review",
+      "targetAction": "github.dismiss_pull_request_review",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Native input is a GraphQL review node ID. REST review dismissal requires Pull requests(write); any GraphQL node resolution/mutation sufficiency must be live-tested.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "mutation_or_node_resolution"
+    },
+    {
+      "ordinal": 19,
+      "nativeAction": "GitHub.download_user_content",
+      "targetAction": "github.download_user_content",
+      "mappingKind": "no_independent_permission",
+      "requiredPermissionSets": [],
+      "basis": "Private user-content image download adds no separate GitHub App permission category in the captured contract.",
+      "notes": "Access remains subordinate to authenticated source resource access.",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 20,
+      "nativeAction": "GitHub.download_workflow_artifact",
+      "targetAction": "github.download_workflow_artifact",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Download workflow artifact requires Actions(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 21,
+      "nativeAction": "GitHub.enable_auto_merge",
+      "targetAction": "github.enable_auto_merge",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Auto-merge enablement is GraphQL; Pull requests(write) is the least-privilege candidate already required independently, with live sufficiency test required.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "mutation"
+    },
+    {
+      "ordinal": 22,
+      "nativeAction": "GitHub.fetch",
+      "targetAction": "github.fetch",
+      "mappingKind": "resource_dependent_allowlist",
+      "requiredPermissionSets": [],
+      "basis": "Bounded GET facade spans approved GitHub repository resource families; permission is endpoint/resource dependent.",
+      "notes": "It adds no permission beyond the fixed manifest and must reject admin-only/unlisted endpoint families.",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 23,
+      "nativeAction": "GitHub.fetch_blob",
+      "targetAction": "github.fetch_blob",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Fetch Git blob requires Contents(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 24,
+      "nativeAction": "GitHub.fetch_commit",
+      "targetAction": "github.fetch_commit",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Fetch commit requires Contents(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 25,
+      "nativeAction": "GitHub.fetch_commit_workflow_runs",
+      "targetAction": "github.fetch_commit_workflow_runs",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Commit workflow-run lookup uses Actions(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 26,
+      "nativeAction": "GitHub.fetch_file",
+      "targetAction": "github.fetch_file",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Fetch repository file requires Contents(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 27,
+      "nativeAction": "GitHub.fetch_issue",
+      "targetAction": "github.fetch_issue",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Issue resource access accepts Issues(read) OR Pull requests(read) when number identifies a PR issue object.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 28,
+      "nativeAction": "GitHub.fetch_issue_comments",
+      "targetAction": "github.fetch_issue_comments",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Issue-comment reads accept Issues(read) OR Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 29,
+      "nativeAction": "GitHub.fetch_pr",
+      "targetAction": "github.fetch_pr",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Pull-request fetch is semantically covered by Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 30,
+      "nativeAction": "GitHub.fetch_pr_comments",
+      "targetAction": "github.fetch_pr_comments",
+      "mappingKind": "composite_rest",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          },
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Native merged PR timeline combines PR review comments and issue-style conversation comments.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 31,
+      "nativeAction": "GitHub.fetch_pr_file_patch",
+      "targetAction": "github.fetch_pr_file_patch",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Changed-file patch derives from PR files; Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 32,
+      "nativeAction": "GitHub.fetch_pr_patch",
+      "targetAction": "github.fetch_pr_patch",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Pull-request patch retrieval is covered by Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 33,
+      "nativeAction": "GitHub.fetch_workflow_job_logs",
+      "targetAction": "github.fetch_workflow_job_logs",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Workflow job logs require Actions(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 34,
+      "nativeAction": "GitHub.fetch_workflow_job_steps",
+      "targetAction": "github.fetch_workflow_job_steps",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Workflow job details/steps require Actions(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 35,
+      "nativeAction": "GitHub.fetch_workflow_run_artifacts",
+      "targetAction": "github.fetch_workflow_run_artifacts",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Workflow-run artifacts require Actions(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 36,
+      "nativeAction": "GitHub.fetch_workflow_run_jobs",
+      "targetAction": "github.fetch_workflow_run_jobs",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Workflow-run jobs require Actions(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 37,
+      "nativeAction": "GitHub.get_commit_combined_status",
+      "targetAction": "github.get_commit_combined_status",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "statuses",
+            "displayName": "Commit statuses",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Combined commit status requires Commit statuses(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 38,
+      "nativeAction": "GitHub.get_issue_comment_reactions",
+      "targetAction": "github.get_issue_comment_reactions",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Issue-comment reaction listing requires Issues(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 39,
+      "nativeAction": "GitHub.get_pr_diff",
+      "targetAction": "github.get_pr_diff",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "PR diff/patch retrieval is covered by Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 40,
+      "nativeAction": "GitHub.get_pr_info",
+      "targetAction": "github.get_pr_info",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "PR metadata requires Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 41,
+      "nativeAction": "GitHub.get_pr_reactions",
+      "targetAction": "github.get_pr_reactions",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "PR top-level reactions use issue-reaction resource; Issues(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 42,
+      "nativeAction": "GitHub.get_pr_review_comment_reactions",
+      "targetAction": "github.get_pr_review_comment_reactions",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "PR review-comment reactions require Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 43,
+      "nativeAction": "GitHub.get_profile",
+      "targetAction": "github.get_profile",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "Get authenticated user requires no GitHub App permission.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 44,
+      "nativeAction": "GitHub.get_repo",
+      "targetAction": "github.get_repo",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Get repository requires Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 45,
+      "nativeAction": "GitHub.get_repo_collaborator_permission",
+      "targetAction": "github.get_repo_collaborator_permission",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Get collaborator permission requires Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 46,
+      "nativeAction": "GitHub.get_user_login",
+      "targetAction": "github.get_user_login",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "Authenticated-user identity/login requires no App permission.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 47,
+      "nativeAction": "GitHub.get_users_recent_prs_in_repo",
+      "targetAction": "github.get_users_recent_prs_in_repo",
+      "mappingKind": "composite_search",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          },
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Recent PR search is visibility bounded; optional diff/comments augmentation consumes PR and issue-comment reads.",
+      "notes": "No standalone Search permission exists.",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 48,
+      "nativeAction": "GitHub.label_pr",
+      "targetAction": "github.label_pr",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "PR labels use shared issue labels endpoint; Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 49,
+      "nativeAction": "GitHub.list_installations",
+      "targetAction": "github.list_installations",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "List app installations accessible to a GitHub App user access token requires no App permission.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 50,
+      "nativeAction": "GitHub.list_installed_accounts",
+      "targetAction": "github.list_installed_accounts",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "Installed-account list derives from user-accessible app installations; no App permission is added.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 51,
+      "nativeAction": "GitHub.list_pr_changed_filenames",
+      "targetAction": "github.list_pr_changed_filenames",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "List PR changed files requires Pull requests(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 52,
+      "nativeAction": "GitHub.list_pull_request_review_threads",
+      "targetAction": "github.list_pull_request_review_threads",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Review-thread query is GraphQL; Pull requests(read) candidate is covered by manifest write, with live sufficiency test required.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "query"
+    },
+    {
+      "ordinal": 53,
+      "nativeAction": "GitHub.list_pull_request_reviews",
+      "targetAction": "github.list_pull_request_reviews",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Native reviews listing is GraphQL-normalized; Pull requests(read) candidate requires live GraphQL sufficiency test.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "query"
+    },
+    {
+      "ordinal": 54,
+      "nativeAction": "GitHub.list_recent_issues",
+      "targetAction": "github.list_recent_issues",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "Authenticated-user issue listing requires no App permission.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 55,
+      "nativeAction": "GitHub.list_repositories",
+      "targetAction": "github.list_repositories",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "List repositories for authenticated user requires Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 56,
+      "nativeAction": "GitHub.list_repositories_by_affiliation",
+      "targetAction": "github.list_repositories_by_affiliation",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Repository discovery by affiliation requires Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 57,
+      "nativeAction": "GitHub.list_repositories_by_installation",
+      "targetAction": "github.list_repositories_by_installation",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "List repositories accessible to user token for an installation requires Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 58,
+      "nativeAction": "GitHub.list_user_org_memberships",
+      "targetAction": "github.list_user_org_memberships",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "List organization memberships for authenticated user requires no App permission.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 59,
+      "nativeAction": "GitHub.list_user_orgs",
+      "targetAction": "github.list_user_orgs",
+      "mappingKind": "rest_no_permission",
+      "requiredPermissionSets": [],
+      "basis": "List organizations for authenticated user requires no App permission.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 60,
+      "nativeAction": "GitHub.lock_issue_conversation",
+      "targetAction": "github.lock_issue_conversation",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Lock issue/PR conversation accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 61,
+      "nativeAction": "GitHub.mark_pull_request_ready_for_review",
+      "targetAction": "github.mark_pull_request_ready_for_review",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Ready-for-review mutation is GraphQL; Pull requests(write) candidate requires live sufficiency test.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "mutation"
+    },
+    {
+      "ordinal": 62,
+      "nativeAction": "GitHub.merge_pull_request",
+      "targetAction": "github.merge_pull_request",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Merge pull request requires Contents(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 63,
+      "nativeAction": "GitHub.remove_issue_assignees",
+      "targetAction": "github.remove_issue_assignees",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Remove issue/PR assignees accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 64,
+      "nativeAction": "GitHub.remove_issue_label",
+      "targetAction": "github.remove_issue_label",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Remove issue/PR label accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 65,
+      "nativeAction": "GitHub.remove_pull_request_reviewers",
+      "targetAction": "github.remove_pull_request_reviewers",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Remove requested PR reviewers requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 66,
+      "nativeAction": "GitHub.remove_reaction_from_issue_comment",
+      "targetAction": "github.remove_reaction_from_issue_comment",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Delete issue-comment reaction requires Issues(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 67,
+      "nativeAction": "GitHub.remove_reaction_from_pr",
+      "targetAction": "github.remove_reaction_from_pr",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Delete PR top-level reaction uses issue-reaction endpoint; Issues(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 68,
+      "nativeAction": "GitHub.remove_reaction_from_pr_review_comment",
+      "targetAction": "github.remove_reaction_from_pr_review_comment",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Delete PR review-comment reaction requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 69,
+      "nativeAction": "GitHub.reply_to_review_comment",
+      "targetAction": "github.reply_to_review_comment",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Reply to PR review comment requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 70,
+      "nativeAction": "GitHub.request_pull_request_reviewers",
+      "targetAction": "github.request_pull_request_reviewers",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Request PR reviewers requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 71,
+      "nativeAction": "GitHub.rerun_failed_workflow_run_jobs",
+      "targetAction": "github.rerun_failed_workflow_run_jobs",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Re-run failed workflow-run jobs requires Actions(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 72,
+      "nativeAction": "GitHub.rerun_workflow_job",
+      "targetAction": "github.rerun_workflow_job",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "actions",
+            "displayName": "Actions",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Re-run workflow job requires Actions(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 73,
+      "nativeAction": "GitHub.resolve_review_thread",
+      "targetAction": "github.resolve_review_thread",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Resolve review thread is GraphQL; Pull requests(write) candidate requires live sufficiency test.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "mutation"
+    },
+    {
+      "ordinal": 74,
+      "nativeAction": "GitHub.search",
+      "targetAction": "github.search",
+      "mappingKind": "search_visibility",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Plain native search is code search. UAT search endpoints exist without a standalone Search permission category; private results are bounded by repository/content authority.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 75,
+      "nativeAction": "GitHub.search_branches",
+      "targetAction": "github.search_branches",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "List/search branches requires Contents(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 76,
+      "nativeAction": "GitHub.search_commits",
+      "targetAction": "github.search_commits",
+      "mappingKind": "search_visibility",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Commit search has no standalone Search permission category; private result visibility is bounded by content authority.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 77,
+      "nativeAction": "GitHub.search_installed_repositories_streaming",
+      "targetAction": "github.search_installed_repositories_streaming",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Installed-repository streaming search is repository discovery within the installation/user intersection; Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 78,
+      "nativeAction": "GitHub.search_installed_repositories_v2",
+      "targetAction": "github.search_installed_repositories_v2",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Installed-repository v2 search is repository discovery within the installation/user intersection; Metadata(read).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 79,
+      "nativeAction": "GitHub.search_issues",
+      "targetAction": "github.search_issues",
+      "mappingKind": "search_visibility",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Issue search has no standalone Search permission category; private visibility is bounded by issue/repository authority.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 80,
+      "nativeAction": "GitHub.search_prs",
+      "targetAction": "github.search_prs",
+      "mappingKind": "search_visibility",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "PR search has no standalone Search permission category; private visibility is bounded by PR/repository authority.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 81,
+      "nativeAction": "GitHub.search_repositories",
+      "targetAction": "github.search_repositories",
+      "mappingKind": "search_visibility",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "metadata",
+            "displayName": "Metadata",
+            "level": "read"
+          }
+        ]
+      ],
+      "basis": "Repository search has no standalone Search permission category; Metadata(read) covers private installed-repository discovery.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 82,
+      "nativeAction": "GitHub.unlock_issue_conversation",
+      "targetAction": "github.unlock_issue_conversation",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Unlock issue/PR conversation accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 83,
+      "nativeAction": "GitHub.unresolve_review_thread",
+      "targetAction": "github.unresolve_review_thread",
+      "mappingKind": "graphql_empirical",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Unresolve review thread is GraphQL; Pull requests(write) candidate requires live sufficiency test.",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": true,
+      "graphqlUse": "mutation"
+    },
+    {
+      "ordinal": 84,
+      "nativeAction": "GitHub.update_file",
+      "targetAction": "github.update_file",
+      "mappingKind": "rest_conditional_workflows",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          },
+          {
+            "permission": "workflows",
+            "displayName": "Workflows",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Update file requires Contents(write), with Workflows(write) for .github/workflows.",
+      "notes": "Native update_file accepts arbitrary paths, so Workflows(write) is retained.",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 85,
+      "nativeAction": "GitHub.update_issue",
+      "targetAction": "github.update_issue",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Update issue requires Issues(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 86,
+      "nativeAction": "GitHub.update_issue_comment",
+      "targetAction": "github.update_issue_comment",
+      "mappingKind": "rest_alternative_permissions",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "issues",
+            "displayName": "Issues",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Update issue comment accepts Issues(write) OR Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 87,
+      "nativeAction": "GitHub.update_pull_request",
+      "targetAction": "github.update_pull_request",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Update pull request requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 88,
+      "nativeAction": "GitHub.update_ref",
+      "targetAction": "github.update_ref",
+      "mappingKind": "rest_conditional_workflows",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          }
+        ],
+        [
+          {
+            "permission": "contents",
+            "displayName": "Contents",
+            "level": "write"
+          },
+          {
+            "permission": "workflows",
+            "displayName": "Workflows",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Update Git ref requires Contents(write); GitHub documents an alternative permission set adding Workflows(write).",
+      "notes": "Practical arbitrary-ref parity retains Workflows(write).",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    },
+    {
+      "ordinal": 89,
+      "nativeAction": "GitHub.update_review_comment",
+      "targetAction": "github.update_review_comment",
+      "mappingKind": "rest_exact",
+      "requiredPermissionSets": [
+        [
+          {
+            "permission": "pull_requests",
+            "displayName": "Pull requests",
+            "level": "write"
+          }
+        ]
+      ],
+      "basis": "Update PR review comment requires Pull requests(write).",
+      "notes": "",
+      "graphqlPermissionSufficiencyProbeRequired": false
+    }
+  ]
+}
