@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "qualificationDate": "2026-09-08",
-  "status": "CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION",
+  "status": "RECONCILED_89_OF_89_CONTRACT_INCOMPLETE",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
-  "sourceValidation": "docs/local_execution/validation/136_github_native_schema_capture_batch6_preserved.md",
+  "sourceValidation": "docs/local_execution/validation/137_github_89_schema_final_reconciliation_contract_gaps_localized.md",
   "projection": {
     "actionCount": 89,
     "actionsInvoked": 0,
@@ -4717,5 +4717,44 @@
         "structuredSchemaExposed": false
       }
     }
-  ]
+  ],
+  "finalReconciliation": {
+    "projectedActionCount": 89,
+    "capturedActionCount": 89,
+    "missingActionCount": 0,
+    "extraActionCount": 0,
+    "hostVisibleSchemaCaptureComplete": true,
+    "exactRuntimeBridgeContractComplete": false,
+    "result": "GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE",
+    "interpretation": "INVENTORY_AND_HOST_VISIBLE_REQUEST_CONTRACT_COMPLETE_FULL_WIRE_PARITY_INCOMPLETE",
+    "projectionWideGaps": {
+      "machineReadableOutputSchemasMissing": 89,
+      "structuredErrorSchemasMissing": 89,
+      "separateActionTitlesMissing": 89,
+      "createTreeNestedInputGenericized": true
+    },
+    "materialAmbiguities": [
+      "create_tree.tree_elements nested entry schema is genericized as { [key: string]: any }[].",
+      "create_pull_request alias precedence/conflict handling for head_branch/head and base_branch/base is not projected.",
+      "create_pull_request complete machine-readable valid source/target field combinations are not projected.",
+      "fetch_pr optional comment-inclusion condition is not exposed as an input or rule.",
+      "search_repositories topn/per_page alias precedence is not projected when both are supplied.",
+      "cursor/next-token result field names and envelopes remain hidden behind any outputs.",
+      "some collection actions do not state whether all pages are consumed.",
+      "enable_auto_merge merge-method inference procedure and exact success result are not projected.",
+      "download/file-reference result schemas are not projected.",
+      "update_issue exposes no explicit existing-milestone clear operation.",
+      "reviewer request/removal actions expose no projected at-least-one reviewer-array requirement.",
+      "several example value domains remain plain strings rather than enums.",
+      "cross-field constraints for create_branch, fetch_issue, get_repo, add_review_to_pr, and create_pull_request are descriptive rather than structurally encoded."
+    ],
+    "implementationDisposition": {
+      "actionInventoryMappingReady": true,
+      "hostVisibleRequestSchemaMappingReady": true,
+      "fullNativeWireContractReady": false,
+      "g0AuthTransportKernelBlockedByTheseActionSpecificGaps": false,
+      "actionSpecificParityPublicationBlockedUntilGapDisposition": true
+    },
+    "next": "TARGETED_PARITY_EVIDENCE_GAP_CLOSURE_AND_G0_KERNEL_BOUNDARY_DESIGN"
+  }
 }

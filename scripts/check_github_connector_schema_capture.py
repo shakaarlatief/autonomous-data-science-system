@@ -266,8 +266,42 @@ def main() -> int:
             fail("Batch 6 read count drift")
         if sum(1 for item in batch6 if item.get("classification") == "write") != 8:
             fail("Batch 6 mutation count drift")
-        if capture.get("status") != "CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION":
-            fail("89-action capture must remain pending final reconciliation until separately reconciled")
+        if capture.get("status") != "RECONCILED_89_OF_89_CONTRACT_INCOMPLETE":
+            fail("89-action capture must preserve the final reconciled incomplete-contract classification")
+        reconciliation = capture.get("finalReconciliation", {})
+        expected_counts = {
+            "projectedActionCount": 89,
+            "capturedActionCount": 89,
+            "missingActionCount": 0,
+            "extraActionCount": 0,
+        }
+        for key, expected_value in expected_counts.items():
+            if reconciliation.get(key) != expected_value:
+                fail(f"finalReconciliation {key} drift")
+        if reconciliation.get("hostVisibleSchemaCaptureComplete") is not True:
+            fail("host-visible schema capture must be complete")
+        if reconciliation.get("exactRuntimeBridgeContractComplete") is not False:
+            fail("exact Runtime Bridge contract must remain incomplete")
+        if reconciliation.get("result") != "GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE":
+            fail("final reconciliation result drift")
+        gaps = reconciliation.get("projectionWideGaps", {})
+        if gaps.get("machineReadableOutputSchemasMissing") != 89:
+            fail("all 89 machine-readable output schemas must remain recorded as unavailable")
+        if gaps.get("structuredErrorSchemasMissing") != 89:
+            fail("all 89 structured error schemas must remain recorded as unavailable")
+        if gaps.get("separateActionTitlesMissing") != 89:
+            fail("all 89 separate action titles must remain recorded as unavailable")
+        if gaps.get("createTreeNestedInputGenericized") is not True:
+            fail("create_tree nested input genericization must remain preserved")
+        disposition = reconciliation.get("implementationDisposition", {})
+        if disposition.get("actionInventoryMappingReady") is not True or disposition.get("hostVisibleRequestSchemaMappingReady") is not True:
+            fail("inventory/request-schema implementation mapping readiness drift")
+        if disposition.get("fullNativeWireContractReady") is not False:
+            fail("full native wire contract must remain not ready")
+        if disposition.get("g0AuthTransportKernelBlockedByTheseActionSpecificGaps") is not False:
+            fail("action-specific projection gaps must not falsely block the independent G0 auth/transport kernel")
+        if disposition.get("actionSpecificParityPublicationBlockedUntilGapDisposition") is not True:
+            fail("action-specific parity publication must remain blocked pending gap disposition")
 
     print("GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE=PASS")
     print(f"GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE_COUNT={captured_count}_OF_89")

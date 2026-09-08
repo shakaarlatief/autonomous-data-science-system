@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** ALL 89 CONTRACTS CAPTURED / FINAL RECONCILIATION NEXT
+**Status:** FINAL RECONCILIATION COMPLETE / HOST-VISIBLE 89 OF 89 / EXACT WIRE CONTRACT INCOMPLETE
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -367,6 +367,24 @@ GITHUB_89_SCHEMA_CAPTURE=PASS
 or
 GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
 ```
+
+## Final reconciliation result
+
+The same fixed GitHub-only conversation completed the final reconciliation with zero action invocations.
+
+```text
+projected actions                         89
+captured host-visible action contracts    89
+missing                                    0
+extra                                      0
+output schemas projected                   0 / 89
+structured error schemas projected         0 / 89
+create_tree nested entry schema            genericized
+
+GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
+```
+
+This closes the schema-capture procedure itself. `INCOMPLETE` means exact native-wrapper wire cloning is unavailable from host discovery; it does not mean the 89-action inventory/request capture is incomplete. Gap disposition and the new implementation boundary are owned by `GITHUB_CONNECTOR_PREIMPLEMENTATION_EVIDENCE_GAPS.md`, Validation 137 and Checkpoint 380.
 
 ## Preservation rule
 

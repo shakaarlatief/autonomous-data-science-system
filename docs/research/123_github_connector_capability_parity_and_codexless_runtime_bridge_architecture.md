@@ -316,9 +316,19 @@ The final batch adds several high-value search and mutation constraints. Commit 
 
 All 89 host-visible contracts are now captured in the machine artifact, but the status deliberately remains `CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION`. The known host-projection gaps around `any` outputs, hidden normalized models, genericized inner schemas, descriptive-only validation and unspecified pagination must be reconciled before implementation contracts are frozen.
 
-## 18. Current boundary
+## 18. Final 89-action schema reconciliation
 
-Research 123 remains active. Native schema discovery has reached `89 / 89` in the same fixed GitHub-only conversation, with zero GitHub action invocations across the six batches. Final same-conversation reconciliation is now the only remaining discovery step before deciding whether targeted stronger evidence is needed. Implementation has not started.
+Validation 137 / Checkpoint 380 preserve the final same-conversation reconciliation after all six native schema batches. The inventory is exact and complete at 89/89, with zero missing or extra projected actions and zero GitHub action invocations during discovery.
+
+The reconciliation marker is deliberately `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE`. This means exact native-wrapper wire parity cannot be reconstructed from the host projection: every action returns machine type `any`, every structured error schema is absent, separate title metadata is absent, and `create_tree.tree_elements` is structurally genericized. Several cross-field rules, alias semantics, pagination guarantees and continuation result fields are also descriptive or hidden.
+
+This result does **not** invalidate practical action mapping. Action names, host-visible request fields, required/optional status, defaults, visible enums, visible constraints, read/mutation classification and visible pagination semantics are captured for all 89. The dedicated gap plan now distinguishes native host-visible contracts, authoritative GitHub platform contracts and wrapper-only hidden behavior.
+
+G0 is opened because the remaining gaps are action-specific and do not constrain the independent GitHub authority/API substrate. G0 may implement GitHub App/device-flow authorization, protected server-owned token lifecycle, installation-derived scope, bounded REST/GraphQL transport and transport-level semantic errors without declaring any `github.*` action parity-qualified. Action-specific publication remains gated by its relevant platform/result/error evidence. Broad live replay of all 89 native actions is not justified merely to sample hidden `any` results.
+
+## 19. Current boundary
+
+Research 123 remains active. Native host-visible schema discovery and final reconciliation are complete. Exact native-wrapper wire cloning remains incomplete, but practical action/request mapping is ready. The next substantive phase is G0 plus authoritative GitHub API contract mapping, with targeted native wrapper qualification only for concrete material gaps that survive platform mapping.
 
 ```text
 RESEARCH123=ACTIVE
@@ -326,34 +336,24 @@ GITHUB_CONNECTOR_BASELINE=89_ACTIONS_OBSERVED
 GITHUB_NEGATIVE_CHALLENGE=SAME_89_ACTIONS
 FRESH_GITHUB_ACTION_COUNT=89
 FRESH_GITHUB_ACTIONS_INVOKED=0
-CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED_BY_CHECKPOINT373
-FRESH_ONLY_ACTION=GitHub.download_user_content
-RECONSTRUCTION_ONLY_ACTION=GitHub.add_issue_comment
 GITHUB_ACTION_NAMES_MAPPED=89_OF_89
+NATIVE_HOST_VISIBLE_SCHEMA_CAPTURE=89_OF_89_COMPLETE
+GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
+EXACT_NATIVE_WRAPPER_WIRE_CONTRACT=INCOMPLETE
+PRACTICAL_ACTION_MAPPING=READY
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=89_OF_89_PENDING_FINAL_RECONCILIATION
 CREATE_TREE_INNER_SCHEMA=GENERICIZED
+HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_89_OF_89
+HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_89_OF_89
 PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
-VALID_EMPTY_VS_NOT_FOUND=EXPLICITLY_OBSERVED
-NO_BLIND_RETRY_SEMANTIC=OBSERVED
 ENTERPRISE_SELECTOR_SCOPE=FOLLOWUP_REQUIRED
-PERMISSION_RESULT_ENUM=NOT_PROJECTED
-INSTALLATION_DISCOVERY=CAPTURED
-ZERO_BASED_OFFSET_PAGINATION=CAPTURED
-REVIEW_LIST_PAGINATION=UNSPECIFIED
-LOCK_REASON_ENUM=CAPTURED
-MERGE_EXPECTED_HEAD_CONCURRENCY=CAPTURED
-ACTIONS_RERUN_WRITE_PERMISSION=CAPTURED
-BRANCH_SEARCH_CURSOR=CAPTURED
-UPDATE_FILE_SEQUENTIAL_GUARD=CAPTURED
-UPDATE_ISSUE_MILESTONE_CLEAR=NOT_EXPOSED
-UPDATE_REF_SCOPE=BRANCH_ORIENTED
-HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED
-HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED
+G0_AUTH_TRANSPORT_KERNEL=READY_TO_BEGIN
+ACTION_SPECIFIC_PARITY_PUBLICATION=EVIDENCE_GATED
+BROAD_NATIVE_89_ACTION_REPLAY=NOT_JUSTIFIED
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=FINAL_GITHUB_89_SCHEMA_RECONCILIATION
+NEXT=G0_PLUS_AUTHORITATIVE_GITHUB_API_CONTRACT_MAPPING
 ```

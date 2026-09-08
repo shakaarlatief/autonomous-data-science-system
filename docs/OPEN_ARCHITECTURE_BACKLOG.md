@@ -1127,6 +1127,8 @@ Validation 135 / Checkpoint 378 advance the same fixed discovery projection to `
 
 Validation 136 / Checkpoint 379 complete the six-batch native schema discovery at `89 / 89` with zero GitHub action invocations. Batch 6 adds qualifier-only commit-search rejection plus the recent-commit empty-query exception, opaque next-token and 1-based-page installed-repository search, issue-search selector-family exclusivity, sequential same-path file-write constraints with named `content_sha`, issue replacement-set semantics with no milestone-clear path, and branch-only `update_ref(force=false)` semantics. The machine capture remains explicitly pending final same-conversation reconciliation; implementation is still unstarted.
 
+Validation 137 / Checkpoint 380 close that reconciliation. All 89 host-visible request contracts are captured, but exact native-wrapper wire parity remains incomplete because every result/error schema is hidden and `create_tree` retains nested input genericization. The project therefore rejects an indiscriminate 89-action live replay: practical action mapping is ready, authoritative GitHub platform contract mapping becomes the primary evidence source, and targeted native wrapper qualifications are reserved for material behaviors that survive that mapping. The independent G0 GitHub App/device-flow/auth/REST-GraphQL kernel is ready to begin; no action-specific parity publication is implied.
+
 ---
 
 # Continuation obligations that must not be forgotten

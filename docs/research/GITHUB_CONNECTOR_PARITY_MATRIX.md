@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE 89 OF 89 / FINAL RECONCILIATION PENDING
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns native schema Batch 1; Validation 132 owns Batch 2; Validation 133 owns Batch 3; Validation 134 owns Batch 4; Validation 135 owns Batch 5; Validation 136 owns Batch 6.
+**Status:** ACTIVE RESEARCH 123 / HOST-VISIBLE 89-ACTION SCHEMA RECONCILED / EXACT NATIVE WIRE CONTRACT INCOMPLETE / G0 READY
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -315,6 +315,8 @@ Validation 135 / Checkpoint 378 advance the fixed projection to `75 / 89`. Batch
 
 Validation 136 / Checkpoint 379 complete the six-batch discovery capture at `89 / 89`. Batch 6 adds qualifier-only commit-search rejection plus the narrow recent-commit empty-query exception, opaque next-token and 1-based-page repository search variants, sequential same-path file-write requirements with named `content_sha`, issue replacement-set semantics plus a milestone-clear gap, and branch-oriented `update_ref(force=false)` with no tag/ref namespace selector. The capture is complete but intentionally remains pending final same-conversation reconciliation before implementation contracts are frozen.
 
+Validation 137 / Checkpoint 380 preserve the final reconciliation. All 89 host-visible request contracts were captured with zero missing actions, but all 89 machine-readable output schemas and all 89 structured error schemas remain unavailable, and `create_tree` retains a genericized nested input. The result is `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE` for exact native-wrapper wire parity while practical action/request mapping is complete. G0 auth/transport work is opened because these action-specific gaps do not constrain the independent GitHub authority/API kernel; action publication remains evidence-gated.
+
 ## Design disposition
 
 ```text
@@ -331,8 +333,10 @@ CALLER_SUPPLIED_CREDENTIALS=FORBIDDEN
 CALLER_SUPPLIED_ARBITRARY_HTTP=FORBIDDEN
 TARGET_PUBLIC_SHAPE=EXPLICIT_GITHUB_ACTIONS
 TOOL_COUNT_SCALING=EMPIRICAL_QUALIFICATION_REQUIRED
-NATIVE_FULL_SCHEMA_CAPTURE=89_OF_89_PENDING_FINAL_RECONCILIATION
+NATIVE_HOST_VISIBLE_SCHEMA_CAPTURE=89_OF_89_COMPLETE
+EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
+G0_AUTH_TRANSPORT_KERNEL=READY_TO_BEGIN
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=FINAL_GITHUB_89_SCHEMA_RECONCILIATION
+NEXT=G0_PLUS_AUTHORITATIVE_GITHUB_API_CONTRACT_MAPPING
 ```
