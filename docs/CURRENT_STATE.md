@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 391
+**Checkpoint:** 392
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 392 freezes the exact non-secret GitHub App registration and first-installation configuration around that seven-permission manifest. The App is to be registered under personal account `shakaarlatief` as `Codexless Runtime Bridge`, with homepage at the public ADS repository, Any account/public installability, device flow enabled, expiring user authorization tokens enabled, install-time OAuth authorization disabled, no callback/setup URL, webhooks disabled, no private-key bootstrap, and no extra organization/account/enterprise permissions. Public visibility is required to preserve later personal+organization installation parity; it does not itself grant repository authority. The first live installation is deliberately staged to `Only select repositories` with only `shakaarlatief/autonomous-data-science-system`, so authorization/installation-scope/GraphQL sufficiency can be qualified with minimal blast radius before any broader installation is approved. A GitHub-supported prefill URL and exact owner checklist are machine-preserved and validated. No App/client ID/token exists yet; the next step is the owner-performed account UI creation/install using that frozen configuration.
 
 Checkpoint 391 freezes the first dedicated GitHub App authority manifest for the exact 89-action parity target. Validation 148 maps every native action in exact inventory order and the new machine validator passes 89/89. The REST-derived initial App requests exactly seven repository permission families: Actions(write), Contents(write), Issues(write), Metadata(read), Pull requests(write), Commit statuses(read), and Workflows(write); organization/account/enterprise permissions and webhooks remain empty, and Administration/Checks/Members are explicitly excluded. Workflows(write) is retained because the observed arbitrary file/ref mutations must remain able to affect `.github/workflows`. Current GitHub documentation does not publish an exact GitHub App permission table for GraphQL and instead instructs developers to test intended queries/mutations; eight observed PR/review actions therefore remain a live sufficiency probe under the already-required Pull requests(write), with no speculative extra permission. No GitHub App has yet been registered, no client ID is configured, and live GitHub auth remains unstarted. The next boundary is to freeze the exact non-secret App registration configuration before the owner performs the account-bound GitHub UI creation/install step.
 
@@ -429,6 +431,10 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/392_github_app_registration_configuration_frozen_owner_creation_next.md
+docs/local_execution/validation/149_github_app_registration_configuration_frozen_owner_creation_next.md
+docs/research/GITHUB_APP_REGISTRATION_CONFIGURATION.md
+docs/research/github_app_registration_configuration.json
 docs/checkpoints/391_github_app_permission_manifest_frozen_registration_config_next.md
 docs/local_execution/validation/148_github_app_rest_permission_manifest_frozen_graphql_probe_required.md
 docs/research/GITHUB_APP_PERMISSION_MANIFEST.md

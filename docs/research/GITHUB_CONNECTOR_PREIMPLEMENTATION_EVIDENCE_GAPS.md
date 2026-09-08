@@ -1,7 +1,7 @@
 # GitHub Connector Preimplementation Evidence Gaps
 
 **Date:** 2026-09-08
-**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / APP PERMISSION MANIFEST FROZEN / REGISTRATION CONFIGURATION NEXT
+**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / APP REGISTRATION CONFIGURATION FROZEN / OWNER CREATION NEXT
 **Research:** Research 123
 **Purpose:** Convert the final 89-action native-schema reconciliation into a bounded evidence plan that closes only gaps material to practical GitHub parity, without attempting to clone host-internal wrapper details that were never projected.
 
@@ -130,6 +130,7 @@ Validation 145 / Checkpoint 388 close the local-runtime authorization-support im
 Validation 146 / Checkpoint 389 show that the first fresh-host projection genericized the top-level authorization union and safety-blocked the single metadata attempt before a bridge result. The local server remained strict. The established AB-008 flat-object remediation is now live at preview.25 with all accepted fields structurally visible locally and exact cross-field rules retained server-side. The remaining evidence gap is a second fresh-host discriminator proving whether that flat shape projects and whether metadata is then allowed.
 Validation 147 / Checkpoint 390 close the remaining support-tool host gap: the flat preview.25 schema projects structurally in a fresh conversation and metadata succeeds without side effects. The remaining pre-authorization evidence gap is now the exact minimal GitHub App permission manifest required by the 89-action target before App registration and device flow.
 Validation 148 / Checkpoint 391 close the REST permission-manifest gap with a machine-validated 89/89 mapping and seven-permission repository manifest. The only remaining permission uncertainty is GitHub-documented-as-empirical GraphQL sufficiency for eight PR/review operations. Because Pull requests(write) is already independently required, no extra permission is added; a live post-registration GraphQL probe remains mandatory.
+Validation 149 / Checkpoint 392 close the remaining non-secret registration-design gap. App identity/owner/visibility, device-flow/token-expiration settings, webhook-disabled state, exact permission reuse and initial one-repository installation scope are frozen and validator-protected. The remaining boundary is account-bound GitHub UI creation/install, after which Client ID configuration and live authorization can begin.
 
 ## Implementation gate
 

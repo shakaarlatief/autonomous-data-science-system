@@ -414,30 +414,39 @@ The frozen initial repository permissions are exactly: Actions(write), Contents(
 
 The remaining permission uncertainty is intentionally narrow. GitHub publishes exact REST permission requirements but tells GitHub App developers to test GraphQL queries/mutations for sufficient permissions rather than publishing an exact GraphQL permission matrix. Eight observed actions use GraphQL or GraphQL-node handling, all in the pull-request/review family. The App already needs Pull requests(write) for ordinary REST parity mutations, so that is the frozen least-privilege candidate and no speculative permission is added. A post-registration live GraphQL sufficiency probe is mandatory.
 
-## 30. Current boundary
+## 30. Frozen GitHub App registration configuration
 
-Research 123 remains active. Freeze the non-secret GitHub App registration configuration around the seven-permission manifest before asking the project owner to create/install the App in GitHub's account UI. That configuration must deliberately set owner/installability, canonical App identity, webhook-disabled state, device-flow enablement, repository-selection policy, and any callback/homepage requirements without widening permissions.
+Validation 149 / Checkpoint 392 freeze the non-secret registration and first-installation settings around the seven-permission manifest. The dedicated App is owned by the personal account that owns the canonical public ADS repository and requests the canonical name `Codexless Runtime Bridge`; GitHub itself must confirm global name availability at creation. The App is configured as Any account/public so the same registration can later be installed on explicitly approved personal and organization accounts. A private personal-account App would be owner-account-only and would structurally prevent the multi-installation parity target.
 
-No App/client ID/token exists yet, so do not begin device authorization. After the App exists, configure only its non-secret client ID in fixed server-owned Runtime Bridge configuration and then qualify metadata, one explicit device flow, installation/repository scope derivation and the GraphQL permission probes before publishing read-only parity actions.
+The authorization configuration is deliberately separate from installation: device flow ON, expiring user access tokens ON, Request user authorization during installation OFF, no callback URL, no setup URL, webhooks OFF, and no private key/JWT bootstrap. The seven repository permissions are reused exactly. A GitHub-supported registration prefill URL captures the identity, visibility, webhook and permission fields; device flow and token-expiration toggles remain manual confirmations because GitHub does not expose them in the documented URL-parameter table.
+
+The first installation is intentionally limited to the owner account and `Only select repositories` with only `shakaarlatief/autonomous-data-science-system`. This minimizes the first live authorization blast radius while allowing installation-intersection and read-only GraphQL sufficiency qualification. It does not weaken the final parity target; broader installations remain explicit future approvals.
+
+## 31. Current boundary
+
+Research 123 now reaches an account-bound manual boundary. The owner must create the GitHub App in GitHub's UI using the frozen registration configuration and install it on the one selected repository. No current Runtime Bridge action can perform this GitHub account-registration operation.
+
+After creation/install, return only non-secret registration evidence (App ID, Client ID, installation ID and setting confirmation). Do not paste client secret, private key, token or device code. The next technical step is then the fixed server-owned Client ID configuration path followed by a metadata-only gate requiring `configured=true`, `storedAuthorization=false` before explicit device flow.
 
 ```text
 RESEARCH123=ACTIVE
 GITHUB_APP_PERMISSION_MAPPING=89_OF_89
 GITHUB_APP_REPOSITORY_PERMISSION_COUNT=7
-GITHUB_APP_REPOSITORY_PERMISSIONS=actions:write,contents:write,issues:write,metadata:read,pull_requests:write,statuses:read,workflows:write
-GITHUB_APP_ORGANIZATION_PERMISSIONS=NONE
-GITHUB_APP_ACCOUNT_PERMISSIONS=NONE
-GITHUB_APP_ENTERPRISE_PERMISSIONS=NONE
-GITHUB_APP_WEBHOOKS=DISABLED
-GITHUB_APP_ADMINISTRATION=NO_ACCESS
-GITHUB_APP_CHECKS=NO_ACCESS
-GITHUB_APP_MEMBERS=NO_ACCESS
-GRAPHQL_PERMISSION_SUFFICIENCY=LIVE_PROBE_REQUIRED
+GITHUB_APP_REGISTRATION_CONFIGURATION=FROZEN
+GITHUB_APP_OWNER=shakaarlatief
+GITHUB_APP_NAME=Codexless Runtime Bridge
+GITHUB_APP_VISIBILITY=ANY_ACCOUNT_PUBLIC
+DEVICE_FLOW=ENABLED
+EXPIRE_USER_AUTH_TOKENS=ENABLED
+REQUEST_OAUTH_ON_INSTALL=DISABLED
+WEBHOOKS=DISABLED
+PRIVATE_KEY_BOOTSTRAP=NOT_USED
+INITIAL_INSTALL_SCOPE=ONE_SELECTED_REPOSITORY
 GITHUB_APP_REGISTERED=false
 GITHUB_APP_CLIENT_ID_CONFIGURED=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=FREEZE_GITHUB_APP_REGISTRATION_CONFIGURATION
+NEXT=OWNER_CREATE_AND_INSTALL_GITHUB_APP
 ```

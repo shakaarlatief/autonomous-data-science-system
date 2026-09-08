@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-08",
+  "research": "123",
+  "status": "FROZEN_OWNER_UI_REGISTRATION_REQUIRED",
+  "registrationOwner": {
+    "accountType": "personal",
+    "login": "shakaarlatief",
+    "basis": "Canonical public ADS repository origin is owned by this account. Public App visibility is selected so the same App can later be installed on additional user-controlled organizations/accounts without changing registration ownership."
+  },
+  "appIdentity": {
+    "requestedName": "Codexless Runtime Bridge",
+    "maxGitHubNameLength": 34,
+    "requestedNameLength": 24,
+    "uniquenessMustBeConfirmedByGitHubAtCreation": true,
+    "description": "GitHub capability layer for the Autonomous Data Science System through Codexless Runtime Bridge.",
+    "homepageUrl": "https://github.com/shakaarlatief/autonomous-data-science-system"
+  },
+  "authorizationSettings": {
+    "enableDeviceFlow": true,
+    "requestUserAuthorizationDuringInstallation": false,
+    "expireUserAuthorizationTokens": true,
+    "callbackUrls": [],
+    "setupUrl": null,
+    "redirectOnUpdate": false,
+    "clientSecretRequiredForSelectedDeviceFlow": false,
+    "privateKeyRequiredForSelectedUserTokenDeviceFlow": false,
+    "generatePrivateKeyDuringBootstrap": false
+  },
+  "installationSettings": {
+    "visibility": "public",
+    "githubUiChoice": "Any account",
+    "rationale": "The 89-action target includes installation/account discovery and is intended to work across personal and organization installations. A private App could only be installed on its owner account. Public visibility does not itself grant repository authority; each installation remains separately approved and repository-scoped.",
+    "initialQualificationInstallAccount": "shakaarlatief",
+    "initialRepositoryAccessPolicy": "only_selected_repositories",
+    "initialSelectedRepositories": [
+      "shakaarlatief/autonomous-data-science-system"
+    ],
+    "initialScopeRationale": "Use the canonical public ADS repository for the first authorization/install/GraphQL sufficiency qualification to minimize blast radius. General parity scope is expanded only after G0 passes and with explicit installation approval.",
+    "productionScopePolicy": "installation-derived; each account installation may be All repositories or Only select repositories as explicitly approved by the owner/admin. Runtime Bridge must never widen beyond GitHub installation scope."
+  },
+  "webhookSettings": {
+    "active": false,
+    "url": null,
+    "secret": null,
+    "events": []
+  },
+  "permissions": {
+    "actions": "write",
+    "contents": "write",
+    "issues": "write",
+    "metadata": "read",
+    "pull_requests": "write",
+    "statuses": "read",
+    "workflows": "write"
+  },
+  "organizationPermissions": {},
+  "accountPermissions": {},
+  "enterprisePermissions": {},
+  "prefillRegistrationUrl": "https://github.com/settings/apps/new?name=Codexless+Runtime+Bridge&description=GitHub+capability+layer+for+the+Autonomous+Data+Science+System+through+Codexless+Runtime+Bridge.&url=https%3A%2F%2Fgithub.com%2Fshakaarlatief%2Fautonomous-data-science-system&request_oauth_on_install=false&public=true&webhook_active=false&actions=write&contents=write&issues=write&metadata=read&pull_requests=write&statuses=read&workflows=write",
+  "prefillLimitations": [
+    "GitHub registration URL parameters do not expose the Enable Device Flow toggle in the documented parameter table; verify/select it manually in the UI.",
+    "The documented URL-parameter surface does not expose the Expire user authorization tokens toggle; leave expiration enabled manually.",
+    "GitHub App name uniqueness is enforced by GitHub at creation time and cannot be proven by repository state.",
+    "Repository selection occurs at installation time, not registration time."
+  ],
+  "manualCreationChecklist": [
+    "Open the frozen personal-account prefill URL.",
+    "Confirm GitHub App name is Codexless Runtime Bridge; if GitHub reports a uniqueness conflict, stop and report it rather than silently renaming.",
+    "Confirm homepage and description exactly match this artifact.",
+    "Leave Callback URL blank.",
+    "Leave Request user authorization (OAuth) during installation unchecked.",
+    "Leave Expire user authorization tokens enabled.",
+    "Enable Device Flow.",
+    "Leave Setup URL blank and Redirect on update disabled.",
+    "Disable Webhook Active; no webhook URL, secret or events.",
+    "Confirm exactly the seven repository permissions from the frozen manifest and no other permission families.",
+    "Select Any account for installability.",
+    "Create the GitHub App.",
+    "Do not generate a private key.",
+    "Record App ID and Client ID as non-secret identifiers; do not copy Client secret into chat/repository.",
+    "Install the App on the personal owner account with Only select repositories and select only shakaarlatief/autonomous-data-science-system for the first qualification."
+  ],
+  "next": "OWNER_CREATE_AND_INSTALL_GITHUB_APP_THEN_CONFIGURE_NON_SECRET_CLIENT_ID"
+}

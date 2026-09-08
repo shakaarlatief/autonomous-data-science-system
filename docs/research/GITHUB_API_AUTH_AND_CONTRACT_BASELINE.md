@@ -349,7 +349,13 @@ Validation 148 / Checkpoint 391 derive every exact native action against current
 
 This is exact at the REST documentation layer. GitHub's own App guidance does not publish an exact GraphQL permission matrix and explicitly tells developers to test their intended GraphQL operations. Eight observed PR/review operations therefore remain an empirical sufficiency check under the already-required `pull_requests=write`; no speculative extra permission is added.
 
-## 21. Current disposition
+## 21. Frozen registration and first-installation configuration
+
+Validation 149 / Checkpoint 392 freeze the account-bound GitHub App creation choices before any live registration occurs. The App is to be owned by personal account `shakaarlatief`, request the canonical name `Codexless Runtime Bridge`, use the public ADS repository as homepage, remain installable on Any account, keep webhooks off, enable device flow and expiring user access tokens, avoid install-time OAuth authorization, and use no callback/setup URL or private-key bootstrap.
+
+The first installation is intentionally limited to `Only select repositories` with the canonical public ADS repository. That scope is sufficient for authorization, installation-intersection and read-only GraphQL sufficiency qualification while minimizing first-live blast radius. It does not alter the final installation-derived parity model.
+
+## 22. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -373,5 +379,5 @@ GITHUB_APP_CLIENT_ID_CONFIGURED=false
 STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=FREEZE_GITHUB_APP_REGISTRATION_CONFIGURATION
+NEXT=OWNER_CREATE_AND_INSTALL_GITHUB_APP
 ```
