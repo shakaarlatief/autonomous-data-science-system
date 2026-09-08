@@ -335,7 +335,15 @@ Validation 146 / Checkpoint 389 reproduce the known developer-MCP top-level-unio
 
 Preview.25 therefore applies the already qualified flat-schema pattern. The live schema now structurally exposes required six-value `action`, bounded optional `requestId`, bounded optional `authorizationRef`, optional literal `confirmClear=true`, and `additionalProperties=false`. Server-side cross-field validation preserves exact action semantics. The 16-regression release and activation pass; direct local metadata remains unconfigured/unauthorized and no GitHub request has started.
 
-## 19. Current disposition
+## 19. Fresh-host authorization support and live Plugin-name qualification
+
+Validation 147 / Checkpoint 390 close the fresh-host support-surface gate. Preview.25 projects as a structured flat bounded object in a fresh ChatGPT conversation and exactly one `metadata` call reaches Runtime Bridge successfully. The returned state remains unconfigured and unauthorized, with no stored credential. The host does not separately render `additionalProperties=false`, so that exact keyword remains local-wire evidence rather than a host-visible claim.
+
+The owner also supplied current ChatGPT UI evidence showing the Plugin display name `Codexless Runtime Bridge`. This closes the live Plugin display-name rename that had remained open since Checkpoint 370 while preserving historical exact labels as evidence.
+
+The next platform gate is now the exact GitHub App permission manifest required by the 89-action parity target. Device flow remains disabled in practice until the dedicated App exists, has the frozen minimal permission superset, and its non-secret client ID is installed in server-owned configuration.
+
+## 20. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -359,5 +367,5 @@ GITHUB_APP_CLIENT_ID_CONFIGURED=false
 STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_FLAT_SCHEMA_AND_METADATA_REQUALIFICATION
+NEXT=DERIVE_AND_FREEZE_GITHUB_APP_PERMISSION_MANIFEST
 ```

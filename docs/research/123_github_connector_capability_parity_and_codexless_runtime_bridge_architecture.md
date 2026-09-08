@@ -43,7 +43,7 @@ local runtime
     machine execution environment behind the bridge
 ```
 
-Historical records that contain the exact earlier display name `ADS Codexless Local Bridge` remain valid historical evidence and are not rewritten merely for terminology cleanup. Actual live connector/display-name/tunnel renaming is implementation work that must be mapped and qualified before being claimed complete.
+Historical records that contain the exact earlier display name `ADS Codexless Local Bridge` remain valid historical evidence and are not rewritten merely for terminology cleanup. Validation 147 / Checkpoint 390 now qualify the current live ChatGPT Plugin display name as `Codexless Runtime Bridge` from direct owner-supplied UI evidence. This closes the Plugin display-name rename only; historical internal compatibility identifiers or tunnel/runtime identifiers are not rewritten merely to match the UI label.
 
 ## 3. Current coexistence problem remains reproduced
 
@@ -398,11 +398,19 @@ The correction reuses the already qualified preview.19/preview.20 pattern rather
 
 Release `github-auth-control-flat-v2` passed all sixteen staged regressions, published successfully under `rm_6215ff67fd5ca530af3ca953b0cad03a`, and activated successfully under restart `rm_accbd4edacc46458cae81dd493173feb`. The active runtime is now `0.1.1-preview.25-github-auth-flat`, 64 tools, one exact keyring dependency and zero source mismatches. Direct local MCP `tools/list` exposes the flat schema and a local metadata-only call remains non-secret with `configured=false`, `authorized=false`, `storedAuthorization=false`.
 
-## 28. Current boundary
+## 28. Fresh-host flat authorization and live Plugin-name qualification
 
-Research 123 remains active. Refresh the current renamed developer-MCP Plugin and use a fresh disposable ChatGPT conversation to requalify `codex.github_authorization`. A PASS now requires a structurally projected flat object and one successful `metadata` result. Do not begin/poll/cancel/clear device flow.
+Validation 147 / Checkpoint 390 close the preview.25 fresh-host discriminator. A refreshed fresh disposable ChatGPT conversation projects `codex.github_authorization` as a structured flat bounded schema rather than a generic map. The machine-visible host contract includes required six-value `action`, optional `requestId` with 1..128 bounds and regex, optional exact-format `authorizationRef`, and optional literal `confirmClear=true`. The host rendering does not separately print `additionalProperties=false`, so that keyword remains a local MCP wire fact from Validation 146 rather than an overclaimed host-visible field. No top-level `oneOf`/`anyOf` or arbitrary index signature is projected.
 
-If the flat schema projects but metadata remains host-blocked, treat that as a distinct safety-classification issue rather than another schema-fidelity failure. If both schema and metadata pass, proceed to server-owned GitHub App client-ID configuration/device-flow qualification before any read-only parity bundle.
+Exactly one `metadata` invocation succeeds through the host and returns `configured=false`, `initialized=false`, `authorized=false`, `storedAuthorization=false`, `github-app-user-token-device-flow`, `github.com`, and REST `2026-03-10`. No user code, verification URI, authorizationRef, token, credential write/delete or GitHub API/OAuth operation occurs. This resolves the concrete preview.24 qualification failure and validates the flat schema shape for this support tool.
+
+The project owner also supplied a current ChatGPT UI screenshot showing the connected Plugin as `Codexless Runtime Bridge`. That direct UI evidence closes the live Plugin display-name rename left open at Checkpoint 370. `ADS` remains the overall project/system name; historical exact `ADS Codexless Local Bridge` evidence remains untouched.
+
+## 29. Current boundary
+
+Research 123 remains active. The authorization support surface is now host-qualified, but actual GitHub authorization remains intentionally unconfigured and unstarted. Before creating/configuring the dedicated GitHub App, derive and freeze the exact minimal GitHub App permission manifest from official endpoint requirements for the 89-action practical parity target. This was already a frozen architecture requirement at Checkpoint 372 and now becomes the immediate gate.
+
+Only after that manifest is preserved should the project register/configure the GitHub App, enable device flow, place only the non-secret client ID in the fixed server-owned runtime configuration path, and qualify explicit user authorization. Token material remains protected-store only.
 
 ```text
 RESEARCH123=ACTIVE
@@ -410,12 +418,15 @@ PRIVATE_RUNTIME_HEAD=ad10aa30342503d303b6a22629fe56dc914f0fa2
 LIVE_RUNTIME_VERSION=0.1.1-preview.25-github-auth-flat
 PUBLIC_TOOL_COUNT=64
 RUNTIME_DEPENDENCY_COUNT=1
-PREVIEW24_HOST_SCHEMA=GENERIC_MAP
-PREVIEW24_METADATA=HOST_SAFETY_BLOCKED
-PREVIEW25_LOCAL_FLAT_SCHEMA=PASS
+FRESH_PREVIEW25_HOST_SCHEMA=STRUCTURED_FLAT
+FRESH_PREVIEW25_METADATA=PASS
+LIVE_PLUGIN_DISPLAY_NAME=Codexless Runtime Bridge
+PLUGIN_DISPLAY_RENAME=QUALIFIED
+GITHUB_APP_CLIENT_ID_CONFIGURED=false
+STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_FLAT_SCHEMA_AND_METADATA_REQUALIFICATION
+NEXT=DERIVE_AND_FREEZE_GITHUB_APP_PERMISSION_MANIFEST
 ```
