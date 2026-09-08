@@ -306,9 +306,19 @@ Reviewer request/removal actions expose optional individual/team arrays but no p
 
 Search semantics diverge again: `search` exposes a final `topn` limit, treats empty query as valid no-results, and exposes no continuation interface; `search_branches` exposes an opaque cursor plus `page_size`, while the `any` output hides the response field carrying the next cursor. Batch 5 contains thirteen mutations and two reads, so later parity qualification will require correspondingly bounded disposable mutation fixtures.
 
-## 17. Current boundary
+## 17. Native schema Batch 6 result
 
-Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `75 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+Validation 136 / Checkpoint 379 preserve projected actions 76-89 and complete cumulative native schema capture at `89 / 89`, again with zero GitHub action invocations.
+
+The final batch adds several high-value search and mutation constraints. Commit search exposes `best-match | author-date | committer-date` and `desc | asc`, rejects qualifier-only queries, and documents a narrow empty-query plus `repository_full_name` path for listing recent commits. Installed-repository search exposes both opaque `next_token` continuation and a separate 1-based page model, while repository search exposes 1-based paging plus a `topn` alias for `per_page`. Issue search allows at most one repository-selector family; PR search does not project an equivalent mutual-exclusion rule.
+
+`update_file` requires the current blob SHA, exposes semantic result values for commit SHA and `content_sha`, and explicitly says same-path update/delete writes must not run in parallel. `update_issue` uses full replacement semantics for assignees and labels and exposes no explicit way to clear an existing milestone. `update_ref` remains branch-oriented with `force=false` default and no tag/ref-namespace selector. `update_review_comment` can edit both inline review comments and replies, unlike the top-level-only creation rule of `reply_to_review_comment`.
+
+All 89 host-visible contracts are now captured in the machine artifact, but the status deliberately remains `CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION`. The known host-projection gaps around `any` outputs, hidden normalized models, genericized inner schemas, descriptive-only validation and unspecified pagination must be reconciled before implementation contracts are frozen.
+
+## 18. Current boundary
+
+Research 123 remains active. Native schema discovery has reached `89 / 89` in the same fixed GitHub-only conversation, with zero GitHub action invocations across the six batches. Final same-conversation reconciliation is now the only remaining discovery step before deciding whether targeted stronger evidence is needed. Implementation has not started.
 
 ```text
 RESEARCH123=ACTIVE
@@ -323,7 +333,7 @@ GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=75_OF_89
+NATIVE_SCHEMA_CAPTURE=89_OF_89_PENDING_FINAL_RECONCILIATION
 CREATE_TREE_INNER_SCHEMA=GENERICIZED
 PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
 VALID_EMPTY_VS_NOT_FOUND=EXPLICITLY_OBSERVED
@@ -337,10 +347,13 @@ LOCK_REASON_ENUM=CAPTURED
 MERGE_EXPECTED_HEAD_CONCURRENCY=CAPTURED
 ACTIONS_RERUN_WRITE_PERMISSION=CAPTURED
 BRANCH_SEARCH_CURSOR=CAPTURED
+UPDATE_FILE_SEQUENTIAL_GUARD=CAPTURED
+UPDATE_ISSUE_MILESTONE_CLEAR=NOT_EXPOSED
+UPDATE_REF_SCOPE=BRANCH_ORIENTED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_6
+NEXT=FINAL_GITHUB_89_SCHEMA_RECONCILIATION
 ```

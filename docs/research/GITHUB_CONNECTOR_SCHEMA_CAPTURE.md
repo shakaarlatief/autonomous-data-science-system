@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** BATCH 5 PRESERVED / 75 OF 89 CONTRACTS CAPTURED / FINAL BATCH NEXT
+**Status:** ALL 89 CONTRACTS CAPTURED / FINAL RECONCILIATION NEXT
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -314,6 +314,40 @@ GitHub.update_review_comment
 
 After these actions, stop.
 ```
+
+### Batch 6 preservation result
+
+Validation 136 / Checkpoint 379 preserve cumulative schema capture at `89 / 89` with zero GitHub action invocations. The six-batch discovery phase is complete, but final reconciliation remains pending. Batch 6 adds:
+
+```text
+GitHub.search_commits
+    qualifier-only queries rejected
+    empty query + repository_full_name exception for recent commits
+
+GitHub.search_installed_repositories_streaming
+    opaque next_token continuation
+
+GitHub.search_installed_repositories_v2
+    1-based page
+
+GitHub.search_repositories
+    1-based page + topn alias for per_page
+
+GitHub.update_file
+    current blob SHA required
+    same-path update/delete writes must not run in parallel
+    content_sha named for sequential follow-up
+
+GitHub.update_issue
+    assignees/labels replace full sets
+    no explicit milestone-clear operation projected
+
+GitHub.update_ref
+    force=false default
+    branch-oriented; no tag/ref-namespace selector
+```
+
+The machine artifact status is intentionally `CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION`. Run the final reconciliation below in the same fixed GitHub-only conversation before freezing implementation contracts.
 
 ## Final reconciliation message
 

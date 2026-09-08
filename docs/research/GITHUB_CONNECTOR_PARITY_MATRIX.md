@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE 75 OF 89
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns native schema Batch 1; Validation 132 owns Batch 2; Validation 133 owns Batch 3; Validation 134 owns Batch 4; Validation 135 owns Batch 5.
+**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE 89 OF 89 / FINAL RECONCILIATION PENDING
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns native schema Batch 1; Validation 132 owns Batch 2; Validation 133 owns Batch 3; Validation 134 owns Batch 4; Validation 135 owns Batch 5; Validation 136 owns Batch 6.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -313,6 +313,8 @@ Validation 134 / Checkpoint 377 advance the fixed projection to `60 / 89`. Batch
 
 Validation 135 / Checkpoint 378 advance the fixed projection to `75 / 89`. Batch 5 captures the exact PR merge-method enum plus `expected_head_sha` optimistic concurrency, reviewer-array ambiguity, top-level-only inline review replies, GitHub Actions write permission for both exposed rerun mutations, valid-empty empty-query search semantics, and an opaque cursor contract for branch search. Thirteen of the fifteen Batch 5 actions are mutations, which informs later fixture/risk qualification.
 
+Validation 136 / Checkpoint 379 complete the six-batch discovery capture at `89 / 89`. Batch 6 adds qualifier-only commit-search rejection plus the narrow recent-commit empty-query exception, opaque next-token and 1-based-page repository search variants, sequential same-path file-write requirements with named `content_sha`, issue replacement-set semantics plus a milestone-clear gap, and branch-oriented `update_ref(force=false)` with no tag/ref namespace selector. The capture is complete but intentionally remains pending final same-conversation reconciliation before implementation contracts are frozen.
+
 ## Design disposition
 
 ```text
@@ -329,8 +331,8 @@ CALLER_SUPPLIED_CREDENTIALS=FORBIDDEN
 CALLER_SUPPLIED_ARBITRARY_HTTP=FORBIDDEN
 TARGET_PUBLIC_SHAPE=EXPLICIT_GITHUB_ACTIONS
 TOOL_COUNT_SCALING=EMPIRICAL_QUALIFICATION_REQUIRED
-NATIVE_FULL_SCHEMA_CAPTURE=75_OF_89
+NATIVE_FULL_SCHEMA_CAPTURE=89_OF_89_PENDING_FINAL_RECONCILIATION
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_6
+NEXT=FINAL_GITHUB_89_SCHEMA_RECONCILIATION
 ```

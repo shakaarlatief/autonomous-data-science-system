@@ -211,6 +211,64 @@ def main() -> int:
         if [item["nativeAction"] for item in batch5 if item.get("classification") == "read"] != ["GitHub.search", "GitHub.search_branches"]:
             fail("Batch 5 read-only action set drift")
 
+    if captured_count >= 89:
+        commits = actions[75]
+        if commits["inputSchema"]["properties"]["sort"].get("enum") != ["best-match", "author-date", "committer-date"]:
+            fail("search_commits sort enum drift")
+        if commits["inputSchema"]["properties"]["order"].get("enum") != ["desc", "asc"]:
+            fail("search_commits order enum drift")
+        if not any("qualifier-only" in value for value in commits.get("conditionalRules", [])):
+            fail("search_commits qualifier-only rejection rule missing")
+        streaming = actions[76]
+        if streaming.get("pagination", {}).get("behavior") != "OPAQUE_NEXT_TOKEN":
+            fail("streaming installed-repository next_token contract drift")
+        if streaming.get("pagination", {}).get("nextTokenOutputFieldExposed") is not False:
+            fail("streaming next-token output field must remain hidden")
+        installed_v2 = actions[77]
+        if installed_v2.get("pagination", {}).get("behavior") != "ONE_BASED_PAGE":
+            fail("installed-repositories-v2 page contract drift")
+        issues = actions[78]
+        if issues["inputSchema"]["properties"]["state"].get("enum") != ["open", "closed"]:
+            fail("search_issues state enum drift")
+        if not any("at most one repository-selector family" in value for value in issues.get("conditionalRules", [])):
+            fail("search_issues selector-family constraint missing")
+        prs = actions[79]
+        if prs["inputSchema"]["properties"]["state"].get("enum") != ["open", "closed", "all"]:
+            fail("search_prs state enum drift")
+        repositories = actions[80]
+        if repositories.get("pagination", {}).get("behavior") != "ONE_BASED_PAGE_WITH_ALIAS_LIMIT":
+            fail("search_repositories page/alias-limit contract drift")
+        if not any("alias for per_page" in value for value in repositories.get("conditionalRules", [])):
+            fail("search_repositories topn alias contract missing")
+        update_file = actions[83]
+        if "content_sha" not in update_file.get("resultContract", {}).get("description", ""):
+            fail("update_file content_sha result-field evidence missing")
+        if not any("same path in parallel" in value for value in update_file.get("conditionalRules", [])):
+            fail("update_file sequential same-path write rule missing")
+        update_issue = actions[84]
+        if update_issue["inputSchema"]["properties"]["state_reason"].get("enum") != ["completed", "not_planned", "duplicate", "reopened"]:
+            fail("update_issue state_reason enum drift")
+        if not any("clear an existing milestone" in value for value in update_issue.get("conditionalRules", [])):
+            fail("update_issue milestone-clear gap missing")
+        update_pr = actions[86]
+        if update_pr["inputSchema"]["properties"]["state"].get("enum") != ["open", "closed"]:
+            fail("update_pull_request state enum drift")
+        update_ref = actions[87]
+        if update_ref["inputSchema"]["properties"]["force"].get("default") is not False:
+            fail("update_ref force default drift")
+        if not any("no tag/ref-namespace selector" in value for value in update_ref.get("conditionalRules", [])):
+            fail("update_ref branch-only scope evidence missing")
+        update_review = actions[88]
+        if not any("top-level inline review comments and replies" in value for value in update_review.get("conditionalRules", [])):
+            fail("update_review_comment reply-support distinction missing")
+        batch6 = actions[75:89]
+        if sum(1 for item in batch6 if item.get("classification") == "read") != 6:
+            fail("Batch 6 read count drift")
+        if sum(1 for item in batch6 if item.get("classification") == "write") != 8:
+            fail("Batch 6 mutation count drift")
+        if capture.get("status") != "CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION":
+            fail("89-action capture must remain pending final reconciliation until separately reconciled")
+
     print("GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE=PASS")
     print(f"GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE_COUNT={captured_count}_OF_89")
     return 0

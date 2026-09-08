@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "qualificationDate": "2026-09-08",
-  "status": "PARTIAL_75_OF_89",
+  "status": "CAPTURED_89_OF_89_PENDING_FINAL_RECONCILIATION",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
-  "sourceValidation": "docs/local_execution/validation/135_github_native_schema_capture_batch5_preserved.md",
+  "sourceValidation": "docs/local_execution/validation/136_github_native_schema_capture_batch6_preserved.md",
   "projection": {
     "actionCount": 89,
     "actionsInvoked": 0,
@@ -18,7 +18,7 @@
     "errorCodeEnumExposed": false,
     "httpStatusMappingExposed": false,
     "retryContractExposed": false,
-    "capturedActionsWithPaginationInputs": 10,
+    "capturedActionsWithPaginationInputs": 16,
     "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded.",
     "batch2StrongestGenericization": "GitHub.create_tree.tree_elements items are projected only as { [key: string]: any }.",
     "batch2PaginationEvidence": {
@@ -52,17 +52,36 @@
       "GitHub.search_branches"
     ],
     "batch5ConcurrencyEvidence": "GitHub.merge_pull_request.expected_head_sha explicitly rejects merge when PR head moved.",
-    "batch5CursorEvidence": "GitHub.search_branches exposes opaque cursor input while any output hides the returned next-cursor field."
+    "batch5CursorEvidence": "GitHub.search_branches exposes opaque cursor input while any output hides the returned next-cursor field.",
+    "batch6ReadOnlyActions": [
+      "GitHub.search_commits",
+      "GitHub.search_installed_repositories_streaming",
+      "GitHub.search_installed_repositories_v2",
+      "GitHub.search_issues",
+      "GitHub.search_prs",
+      "GitHub.search_repositories"
+    ],
+    "batch6MutationCount": 8,
+    "batch6SearchPaginationEvidence": {
+      "search_installed_repositories_streaming": "OPAQUE_NEXT_TOKEN",
+      "search_installed_repositories_v2": "ONE_BASED_PAGE",
+      "search_repositories": "ONE_BASED_PAGE_WITH_ALIAS_LIMIT",
+      "search_commits/search_issues/search_prs": "FINAL_TOPN_NO_CONTINUATION_PROJECTED"
+    },
+    "batch6SequentialWriteEvidence": "GitHub.update_file explicitly says not to run update/delete writes for the same path in parallel and exposes content_sha for subsequent sequential update.",
+    "batch6UpdateIssueGap": "No explicit way to clear an existing milestone is projected.",
+    "batch6RefScope": "GitHub.update_ref remains branch-oriented; no tag/ref-namespace selector is projected."
   },
-  "capturedCount": 75,
+  "capturedCount": 89,
   "batchesCompleted": [
     1,
     2,
     3,
     4,
-    5
+    5,
+    6
   ],
-  "nextOrdinal": 76,
+  "nextOrdinal": null,
   "actions": [
     {
       "ordinal": 1,
@@ -3712,6 +3731,987 @@
       "resultContract": {
         "projectedType": "any",
         "description": "Branch-result fields and continuation metadata not machine-projected; response field containing next cursor is hidden by any."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 76,
+      "nativeAction": "GitHub.search_commits",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search GitHub commits globally, by organization, or optionally by repository. Include at least one non-qualifier search term in the query. To list recent commits without matching text, pass an empty query with repository_full_name and use the default descending order.",
+      "inputType": "search_commits_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "repository_full_name",
+          "repository_id",
+          "repository_url",
+          "org",
+          "topn",
+          "sort",
+          "order"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Commit-search query; qualifier-only queries are rejected, with documented empty-query + repository_full_name exception for recent commits."
+          },
+          "repository_full_name": {
+            "type": "string|array<string>|null",
+            "description": "Repository full-name selector(s).",
+            "default": null
+          },
+          "repository_id": {
+            "type": "integer|array<integer>|null",
+            "description": "Repository numeric-ID selector(s).",
+            "default": null
+          },
+          "repository_url": {
+            "type": "string|array<string>|null",
+            "description": "Repository URL selector(s).",
+            "default": null
+          },
+          "org": {
+            "type": "string|null",
+            "description": "Optional organization scope.",
+            "default": null
+          },
+          "topn": {
+            "type": "integer",
+            "description": "Maximum result count.",
+            "default": 20
+          },
+          "sort": {
+            "type": "string|null",
+            "description": "Commit-search sort order.",
+            "enum": [
+              "best-match",
+              "author-date",
+              "committer-date"
+            ],
+            "default": null
+          },
+          "order": {
+            "type": "string|null",
+            "description": "Sort direction.",
+            "enum": [
+              "desc",
+              "asc"
+            ],
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Query must include at least one non-qualifier search term; GitHub rejects qualifier-only queries.",
+        "Special exception: empty query with repository_full_name may list recent commits using default descending order.",
+        "No selector-combination rule is projected."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FINAL_TOPN_NO_CONTINUATION_PROJECTED",
+        "finalLimitInput": "topn",
+        "defaultFinalLimit": 20,
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub commit search globally, by organization, or selected repositories.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Commit-search results; commit fields, totals and match metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "descriptiveRejections": [
+          "Qualifier-only commit query is rejected."
+        ]
+      }
+    },
+    {
+      "ordinal": 77,
+      "nativeAction": "GitHub.search_installed_repositories_streaming",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search for a repository, not a file, by name or description. Use search for file search.",
+      "inputType": "search_installed_repositories_streaming_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "limit",
+          "next_token",
+          "option_enrich_code_search_index_availability",
+          "option_enrich_code_search_index_request_concurrency_limit"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Repository name/description search query."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum result count.",
+            "default": 10
+          },
+          "next_token": {
+            "type": "string|null",
+            "description": "Opaque continuation token from previous search.",
+            "default": null
+          },
+          "option_enrich_code_search_index_availability": {
+            "type": "boolean",
+            "description": "Optionally enrich repositories with code-search-index availability.",
+            "default": true
+          },
+          "option_enrich_code_search_index_request_concurrency_limit": {
+            "type": "integer",
+            "description": "Concurrency limit for search-index enrichment requests.",
+            "default": 10
+          }
+        }
+      },
+      "conditionalRules": [
+        "Searches repositories, not files.",
+        "next_token is opaque.",
+        "No projected min/max for limit or enrichment concurrency."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "OPAQUE_NEXT_TOKEN",
+        "limitInput": "limit",
+        "defaultLimit": 10,
+        "continuationInput": "next_token",
+        "continuationOpaque": true,
+        "nextTokenOutputFieldExposed": false,
+        "pageInputExposed": false,
+        "offsetInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repository discovery across GitHub App installation scope.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository collection with optional search-index enrichment; next-token output field hidden by any."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 78,
+      "nativeAction": "GitHub.search_installed_repositories_v2",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search repositories within the user installations using GitHub search.",
+      "inputType": "search_installed_repositories_v2_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "limit",
+          "installation_ids",
+          "page",
+          "include_search_index_status"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Repository search query."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum result count.",
+            "default": 10
+          },
+          "installation_ids": {
+            "type": "array<string>|null",
+            "description": "Optional GitHub App installation IDs.",
+            "default": null
+          },
+          "page": {
+            "type": "integer",
+            "description": "1-based page number.",
+            "default": 1
+          },
+          "include_search_index_status": {
+            "type": "boolean",
+            "description": "Optionally enrich each repository with search-index status.",
+            "default": false
+          }
+        }
+      },
+      "conditionalRules": [
+        "page is explicitly 1-based.",
+        "No installation-ID format/count bound projected."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ONE_BASED_PAGE",
+        "pageInput": "page",
+        "defaultPage": 1,
+        "limitInput": "limit",
+        "defaultLimit": 10,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repository search within selected or all user GitHub App installations.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository result model/page metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 79,
+      "nativeAction": "GitHub.search_issues",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search one repository or every repository the linked account can access. Supply at most one repository selector. Empty lists mean no repository filter. A repo:owner/name query does not require a separate repository selector.",
+      "inputType": "search_issues_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "repository_full_name",
+          "repository_id",
+          "repository_url",
+          "topn",
+          "sort",
+          "order",
+          "state"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "GitHub issue search query; may contain repo:, org:, and other GitHub qualifiers."
+          },
+          "repository_full_name": {
+            "type": "string|array<string>|null",
+            "description": "Repository full-name selector(s).",
+            "default": null
+          },
+          "repository_id": {
+            "type": "integer|array<integer>|null",
+            "description": "Repository numeric-ID selector(s).",
+            "default": null
+          },
+          "repository_url": {
+            "type": "string|array<string>|null",
+            "description": "Repository URL selector(s).",
+            "default": null
+          },
+          "topn": {
+            "type": "integer",
+            "description": "Maximum result count.",
+            "default": 20
+          },
+          "sort": {
+            "type": "string|null",
+            "description": "Issue-search sort.",
+            "enum": [
+              "best-match",
+              "created",
+              "updated",
+              "comments",
+              "reactions",
+              "interactions"
+            ],
+            "default": null
+          },
+          "order": {
+            "type": "string|null",
+            "description": "Sort direction.",
+            "enum": [
+              "desc",
+              "asc"
+            ],
+            "default": null
+          },
+          "state": {
+            "type": "string|null",
+            "description": "Issue state filter.",
+            "enum": [
+              "open",
+              "closed"
+            ],
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Supply at most one repository-selector family.",
+        "Empty repository-selector lists mean no repository filter.",
+        "repo:owner/name may be embedded directly in query without separate repository selector.",
+        "Without repository selector, search spans linked-account accessible repositories."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FINAL_TOPN_NO_CONTINUATION_PROJECTED",
+        "finalLimitInput": "topn",
+        "defaultFinalLimit": 20,
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub issue search within one selected repository or across all repositories accessible to linked account.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Issue-search result model/search metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 80,
+      "nativeAction": "GitHub.search_prs",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search GitHub pull requests globally, by organization, or optionally by repository.",
+      "inputType": "search_prs_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "repository_full_name",
+          "repository_id",
+          "repository_url",
+          "org",
+          "topn",
+          "sort",
+          "order",
+          "state"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Pull-request search query."
+          },
+          "repository_full_name": {
+            "type": "string|array<string>|null",
+            "description": "Repository full-name selector(s).",
+            "default": null
+          },
+          "repository_id": {
+            "type": "integer|array<integer>|null",
+            "description": "Repository numeric-ID selector(s).",
+            "default": null
+          },
+          "repository_url": {
+            "type": "string|array<string>|null",
+            "description": "Repository URL selector(s).",
+            "default": null
+          },
+          "org": {
+            "type": "string|null",
+            "description": "Optional organization scope.",
+            "default": null
+          },
+          "topn": {
+            "type": "integer",
+            "description": "Maximum result count.",
+            "default": 20
+          },
+          "sort": {
+            "type": "string|null",
+            "description": "PR search sort.",
+            "enum": [
+              "best-match",
+              "created",
+              "updated",
+              "comments",
+              "reactions",
+              "interactions"
+            ],
+            "default": null
+          },
+          "order": {
+            "type": "string|null",
+            "description": "Sort direction.",
+            "enum": [
+              "desc",
+              "asc"
+            ],
+            "default": null
+          },
+          "state": {
+            "type": "string|null",
+            "description": "PR state filter.",
+            "enum": [
+              "open",
+              "closed",
+              "all"
+            ],
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Repository selector fields may accept scalar or arrays.",
+        "No repository-selector mutual-exclusion rule is described; none is inferred."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FINAL_TOPN_NO_CONTINUATION_PROJECTED",
+        "finalLimitInput": "topn",
+        "defaultFinalLimit": 20,
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Pull-request search globally, by organization, or selected repositories.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "PR search result model/search metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 81,
+      "nativeAction": "GitHub.search_repositories",
+      "titleExposed": false,
+      "title": null,
+      "description": "Search for a repository, not a file, by name or description. Use search for file search.",
+      "inputType": "search_repositories_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "optional": [
+          "per_page",
+          "page",
+          "org",
+          "topn"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Repository name/description query."
+          },
+          "per_page": {
+            "type": "integer|null",
+            "description": "Maximum result count for the page.",
+            "default": null
+          },
+          "page": {
+            "type": "integer",
+            "description": "1-based page number.",
+            "default": 1
+          },
+          "org": {
+            "type": "string|null",
+            "description": "Optional organization scope.",
+            "default": null
+          },
+          "topn": {
+            "type": "integer|null",
+            "description": "Alias for per_page.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "topn is described as an alias for per_page.",
+        "No precedence/conflict rule is projected when both topn and per_page are supplied.",
+        "page is explicitly 1-based."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ONE_BASED_PAGE_WITH_ALIAS_LIMIT",
+        "pageInput": "page",
+        "defaultPage": 1,
+        "perPageInput": "per_page",
+        "topnAliasFor": "per_page",
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub repository search by name/description, optionally organization-scoped.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository search result/page metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 82,
+      "nativeAction": "GitHub.unlock_issue_conversation",
+      "titleExposed": false,
+      "title": null,
+      "description": "Unlock an issue or pull request conversation.",
+      "inputType": "unlock_issue_conversation_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Conversation-lock state on an issue or pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Return remains any; no normalized/success schema projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 83,
+      "nativeAction": "GitHub.unresolve_review_thread",
+      "titleExposed": false,
+      "title": null,
+      "description": "Mark an inline pull request review thread as unresolved.",
+      "inputType": "unresolve_review_thread_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "thread_id"
+        ],
+        "optional": [],
+        "properties": {
+          "thread_id": {
+            "type": "string",
+            "description": "GraphQL review-thread node ID."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Resolution state of one inline pull-request review thread.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returned GraphQL/thread model not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 84,
+      "nativeAction": "GitHub.update_file",
+      "titleExposed": false,
+      "title": null,
+      "description": "Replace a UTF-8 text file through GitHub contents API. Returns resulting commit SHA and content blob SHA. Use content_sha for a subsequent sequential update. Do not run update/delete writes for the same path in parallel.",
+      "inputType": "update_file_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "path",
+          "content",
+          "message",
+          "sha"
+        ],
+        "optional": [
+          "branch"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "path": {
+            "type": "string",
+            "description": "Existing repository file path."
+          },
+          "content": {
+            "type": "string",
+            "description": "Complete replacement UTF-8 text; wrapper Base64-encodes for GitHub contents API."
+          },
+          "message": {
+            "type": "string",
+            "description": "Commit message."
+          },
+          "sha": {
+            "type": "string",
+            "description": "Current blob SHA, usually from fetch_file."
+          },
+          "branch": {
+            "type": "string|null",
+            "description": "Optional target branch; null uses default branch.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Do not run update/delete writes for the same path in parallel.",
+        "Requires current file blob SHA.",
+        "No file-size/path/branch/SHA-pattern/message-length constraint projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Existing repository file contents and resulting commit/content blob.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Description exposes resulting commit SHA and content blob SHA, including result field name content_sha for subsequent sequential update."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "concurrencyNotes": [
+          "Explicitly avoid same-path update/delete writes in parallel."
+        ]
+      }
+    },
+    {
+      "ordinal": 85,
+      "nativeAction": "GitHub.update_issue",
+      "titleExposed": false,
+      "title": null,
+      "description": "Update a GitHub issue including title/body, state, labels, assignees, or milestone. Returns normalized issue snapshot after patch.",
+      "inputType": "update_issue_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number"
+        ],
+        "optional": [
+          "title",
+          "body",
+          "state",
+          "state_reason",
+          "assignees",
+          "labels",
+          "milestone"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          },
+          "title": {
+            "type": "string|null",
+            "description": "Replacement issue title.",
+            "default": null
+          },
+          "body": {
+            "type": "string|null",
+            "description": "Replacement issue body.",
+            "default": null
+          },
+          "state": {
+            "type": "string|null",
+            "description": "Issue state.",
+            "enum": [
+              "open",
+              "closed"
+            ],
+            "default": null
+          },
+          "state_reason": {
+            "type": "string|null",
+            "description": "Reason associated with state change.",
+            "enum": [
+              "completed",
+              "not_planned",
+              "duplicate",
+              "reopened"
+            ],
+            "default": null
+          },
+          "assignees": {
+            "type": "array<string>|null",
+            "description": "Full assignee set, replacing existing set.",
+            "default": null
+          },
+          "labels": {
+            "type": "array<string>|null",
+            "description": "Full label set, replacing existing set.",
+            "default": null
+          },
+          "milestone": {
+            "type": "integer|null",
+            "description": "Milestone number to set.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "state_reason is used with state changes.",
+        "assignees and labels are full replacement sets.",
+        "Wrapper does not expose an explicit way to clear an existing milestone.",
+        "No at-least-one patch-field requirement is projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Issue metadata/state/labels/assignees/milestone.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized issue snapshot after patch; exact fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 86,
+      "nativeAction": "GitHub.update_issue_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Update a top-level PR Conversation comment (Issue comment).",
+      "inputType": "update_issue_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id",
+          "comment"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Issue-comment ID."
+          },
+          "comment": {
+            "type": "string",
+            "description": "Replacement comment body."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Existing top-level PR conversation comment represented as issue comment.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Updated comment model not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 87,
+      "nativeAction": "GitHub.update_pull_request",
+      "titleExposed": false,
+      "title": null,
+      "description": "Update PR metadata, base branch, or open/closed state. Returns connector normalized PR snapshot.",
+      "inputType": "update_pull_request_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [
+          "title",
+          "body",
+          "state",
+          "base_branch",
+          "maintainer_can_modify"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "title": {
+            "type": "string|null",
+            "description": "Replacement PR title.",
+            "default": null
+          },
+          "body": {
+            "type": "string|null",
+            "description": "Replacement PR body.",
+            "default": null
+          },
+          "state": {
+            "type": "string|null",
+            "description": "Close or reopen PR.",
+            "enum": [
+              "open",
+              "closed"
+            ],
+            "default": null
+          },
+          "base_branch": {
+            "type": "string|null",
+            "description": "Retarget PR to another base branch.",
+            "default": null
+          },
+          "maintainer_can_modify": {
+            "type": "boolean|null",
+            "description": "Whether maintainers may push commits to head branch.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "No at-least-one update requirement projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Pull-request metadata/state/base branch/maintainer modification permission.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized PR snapshot; exact fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 88,
+      "nativeAction": "GitHub.update_ref",
+      "titleExposed": false,
+      "title": null,
+      "description": "Move branch ref to the given commit SHA.",
+      "inputType": "update_ref_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "branch_name",
+          "sha"
+        ],
+        "optional": [
+          "force"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "Branch name to create or update."
+          },
+          "sha": {
+            "type": "string",
+            "description": "Target commit SHA."
+          },
+          "force": {
+            "type": "boolean",
+            "description": "Force update even when not fast-forward.",
+            "default": false
+          }
+        }
+      },
+      "conditionalRules": [
+        "force defaults false; no typed fast-forward validation rule is projected.",
+        "Action-level description is branch-oriented and no tag/ref-namespace selector is exposed.",
+        "Field description says branch name to create or update, but no broader ref namespace is projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Repository branch Git ref.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Updated-ref model not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 89,
+      "nativeAction": "GitHub.update_review_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Update an inline review comment or a reply on a PR.",
+      "inputType": "update_review_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id",
+          "comment"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Numeric issue or review comment ID."
+          },
+          "comment": {
+            "type": "string",
+            "description": "Replacement inline review comment/reply body."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Supports both top-level inline review comments and replies, unlike reply_to_review_comment creation which permits replies only to a thread top-level comment."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Existing pull-request inline review comment or reply.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Updated comment model not projected."
       },
       "errorContract": {
         "structuredSchemaExposed": false

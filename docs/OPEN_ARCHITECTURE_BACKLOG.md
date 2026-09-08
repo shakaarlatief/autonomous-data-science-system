@@ -1125,6 +1125,8 @@ Validation 134 / Checkpoint 377 advance the same fixed discovery projection to `
 
 Validation 135 / Checkpoint 378 advance the same fixed discovery projection to `75 / 89`. Batch 5 captures exact merge-method and expected-head concurrency behavior, reviewer-array ambiguity, top-level-only inline review replies, GitHub Actions write permission for rerun mutations, final-limit code search with valid-empty empty query, and opaque-cursor branch search. Thirteen of fifteen Batch 5 actions are mutating. Fourteen native action contracts remain in the final discovery batch; implementation remains unstarted.
 
+Validation 136 / Checkpoint 379 complete the six-batch native schema discovery at `89 / 89` with zero GitHub action invocations. Batch 6 adds qualifier-only commit-search rejection plus the recent-commit empty-query exception, opaque next-token and 1-based-page installed-repository search, issue-search selector-family exclusivity, sequential same-path file-write constraints with named `content_sha`, issue replacement-set semantics with no milestone-clear path, and branch-only `update_ref(force=false)` semantics. The machine capture remains explicitly pending final same-conversation reconciliation; implementation is still unstarted.
+
 ---
 
 # Continuation obligations that must not be forgotten
