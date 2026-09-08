@@ -321,7 +321,15 @@ Validation 143 / Checkpoint 386 first live-qualify the source-only bootstrap to 
 
 The exact generation has independently and during release regression loaded `@napi-rs/keyring` from tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`. No GitHub credential was created by the package activation. The remaining G0 boundary is now the explicit device-flow/control surface rather than storage or deployment.
 
-## 17. Current disposition
+## 17. Live authorization-control support surface
+
+Validation 145 / Checkpoint 388 move the authorization-control contract from design into the active 64-tool runtime. `codex.github_authorization` is a support tool outside the native 89-action parity count. Its strict semantic operations are metadata, begin, status, poll, cancel and explicit clear. Secret-bearing and transport-authority fields remain absent from its caller schema.
+
+The final live release `github-auth-control-v2-fix2` preserves one exact `github-keyring-win32-x64` dependency and passed all release regressions. Direct local MCP discovery shows the complete support schema. A metadata-only live invocation reports no configured GitHub App client ID and no stored authorization; no device-flow or GitHub request has been initiated.
+
+The current persistent ChatGPT conversation retains a stale callable projection, so fresh-chat host schema/metadata qualification remains required before actual user authorization is attempted.
+
+## 18. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -339,7 +347,11 @@ G0_IMPLEMENTATION_CONTRACT=READY
 LIVE_RUNTIME_RELEASE_ENGINE=V2_CAPABLE
 RUNTIME_DEPENDENCY_COUNT=1
 KEYRING_GENERATION_ACTIVE=YES
+AUTHORIZATION_SUPPORT_SURFACE=LIVE_LOCAL_MCP
+PUBLIC_TOOL_COUNT=64
+GITHUB_APP_CLIENT_ID_CONFIGURED=false
+STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=DESIGN_AND_IMPLEMENT_GITHUB_AUTHORIZATION_CONTROL_SURFACE
+NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_SCHEMA_AND_METADATA_QUALIFICATION
 ```

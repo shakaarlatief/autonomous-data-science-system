@@ -380,24 +380,37 @@ A fresh real-binding smoke resolved the exact immutable tree `abe67a212121747d57
 
 The package-deployment path is therefore closed for G0. The internal GitHub kernel still has no configured live authorization lifecycle on the public MCP surface, and no GitHub token or API request was created by this activation.
 
-## 26. Current boundary
+## 26. Live authorization-control support surface
 
-Research 123 remains active. The next work is not another package/release blocker. It is the explicit authorization-control support contract needed to expose GitHub App device flow safely to ChatGPT before any of the 89 parity actions are published. This support contract is infrastructure, not part of the native 89-action parity count. It should report non-secret authorization metadata, begin/status/poll/cancel a bounded in-memory device-flow reference, and allow explicit protected-token clearing without exposing tokens, device codes, client secrets, arbitrary scopes, URLs, headers or package authority.
+Validation 145 / Checkpoint 388 live-qualify the explicit GitHub App authorization-control support surface at private local-runtime head `d63bb48112985fd05e4a32925b83e75214dd2a4a`. The final immutable release is `github-auth-control-v2-fix2`, target version `0.1.1-preview.24-github-auth-control`, 64 public tools, one exact keyring runtime dependency and manifest SHA-256 `92554d6da7418885fcb491f1c16a2527517ca09d6c230d0d8a5dc54e1421a7be`. Publication and restart both succeeded without recovery, and postactivation verification reports zero source mismatches.
 
-After that support surface is live-qualified, the first read-only parity action bundle can begin.
+The one new public support tool is `codex.github_authorization`, separate from the 89-action parity namespace. Its closed operations are `metadata`, `begin(requestId)`, `status(authorizationRef)`, `poll(authorizationRef)`, `cancel(authorizationRef)` and `clear(confirmClear=true)`. It exposes no client secret, token, private device code, arbitrary OAuth scope, URL/header/method, keyring payload or package authority. Direct live local MCP `tools/list` contains the tool and its full schema. A live metadata-only invocation returned `configured=false`, `initialized=false`, `authorized=false` and `storedAuthorization=false` for github.com REST `2026-03-10`; it started no device flow and made no GitHub OAuth/API request.
+
+Two failed immutable release attempts remain preserved rather than rewritten. The original release failed a public-surface regression; changed bytes under that prepared ID then correctly produced a prepared-release conflict. The first new immutable retry exposed two older semantic-Git tests that still froze 63 tools. The final fix updated those exact expectations and passed. This strengthens the release/regression contract rather than weakening it.
+
+The live server is now 64 tools, but the current persistent ChatGPT conversation still does not project `codex.github_authorization` as a callable action. This is another AB-008 same-conversation stale-projection observation.
+
+## 27. Current boundary
+
+Research 123 remains active. The next gate is a refreshed fresh disposable ChatGPT conversation: confirm `codex.github_authorization` is host-projected, preserve its actual host-visible schema, and invoke exactly `metadata` once. Do not begin or poll device flow in that projection qualification.
+
+After that gate closes, Research 123 can decide the server-owned GitHub App registration/client-ID configuration and explicit user device-authorization qualification. Only after authorization is independently live-qualified should the first read-only parity-action bundle begin.
 
 ```text
 RESEARCH123=ACTIVE
-G0_PRIVATE_HEAD=19a4d1852f99f0d10d1a5b4bca23c0f39d825bb1
-G0_SOURCE_BOOTSTRAP=LIVE
-LIVE_RUNTIME_VERSION=0.1.1-preview.23-github-g0-keyring
+G0_PRIVATE_HEAD=d63bb48112985fd05e4a32925b83e75214dd2a4a
+LIVE_RUNTIME_VERSION=0.1.1-preview.24-github-auth-control
 LIVE_RUNTIME_RELEASE_ENGINE=V2_CAPABLE
 RUNTIME_DEPENDENCY_COUNT=1
-KEYRING_TREE_SHA256=abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858
-PUBLIC_TOOL_COUNT=63
+PUBLIC_TOOL_COUNT=64
+AUTH_SUPPORT_TOOL=codex.github_authorization
+LIVE_LOCAL_AUTH_METADATA=PASS
+GITHUB_APP_CLIENT_ID_CONFIGURED=false
+STORED_GITHUB_AUTHORIZATION=false
+SAME_CHAT_TOOL_PROJECTION=STALE
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=DESIGN_AND_IMPLEMENT_GITHUB_AUTHORIZATION_CONTROL_SURFACE
+NEXT=FRESH_CHAT_GITHUB_AUTHORIZATION_SCHEMA_AND_METADATA_QUALIFICATION
 ```
