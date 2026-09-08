@@ -508,6 +508,8 @@ docs/local_execution/validation/141_github_g0_main_runtime_integration_candidate
 docs/checkpoints/384_github_g0_runtime_integration_candidate_qualified_dependency_provisioning_next.md
 docs/local_execution/validation/142_github_g0_immutable_dependency_generation_release_architecture_qualified.md
 docs/checkpoints/385_github_g0_immutable_dependency_generations_qualified_bootstrap_release_next.md
+docs/local_execution/validation/143_github_g0_source_bootstrap_release_live_qualified.md
+docs/checkpoints/386_github_g0_source_bootstrap_live_keyring_activation_next.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
@@ -803,7 +805,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-385 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-386 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

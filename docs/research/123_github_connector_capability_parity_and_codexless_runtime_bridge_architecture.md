@@ -364,24 +364,29 @@ A real package preparation and load succeeded for 10 files / 1,971,364 bytes at 
 
 The G0 keyring importer now resolves only through that exact dependency resolver and has no ambient live-`node_modules` fallback. The combined focused suite passes 22/22; source syntax passes 21/21 for the combined G0 candidate and 15/15 for the release dependency candidate; the focused secret scanner reports zero matches. No GitHub credential or public `github.*` action was introduced.
 
-## 24. Current boundary
+## 24. Live source-only G0 bootstrap
 
-Research 123 remains active. Dependency preparation, immutable generation selection and rollback/recovery are implementation-qualified, but the live Codexless runtime still runs the v1 release engine and therefore cannot consume a v2 dependency manifest yet. The next step is one source-only Runtime Release v1 bootstrap: install the dependency-aware release engine, immutable resolver and G0 source integration while keeping the worker dependency binding empty and the public GitHub action count at zero. After that source runtime is live-qualified, Runtime Release v2 can activate the exact keyring generation.
+Validation 143 / Checkpoint 386 live-qualify the source-only bootstrap release at private head `21b8597abde893a2b6e6b9b91d3488de0fe8aa16`. Release `github-g0-dependency-bootstrap-v1` deliberately remains manifest v1 so the old live engine can consume it. It carries 26 source/test files and 14 regressions while preserving target surface `codexless-public-preview-v2` and 63 tools.
+
+The old engine prepared the bundle, publication succeeded under operation `rm_92d5a1cdf16ee979cabda34918b5c686`, exact installed-source verification reached zero mismatches, and restart operation `rm_1dcf2e517515a89eee1c5c651bc440ef` activated version `0.1.1-preview.22-github-g0-bootstrap` without recovery. A fresh postactivation verification returned the new dependency-aware field `runtimeDependencyCount=0`, proving that the upgraded Release v2-capable source is live while the keyring generation remains deliberately unbound.
+
+The public surface is unchanged at 63 tools with no `github.*` action, and no live GitHub authorization or GitHub API call was started. This closes the self-bootstrap problem identified at Checkpoint 385.
+
+## 25. Current boundary
+
+Research 123 remains active. The live runtime can now consume dependency-aware Runtime Release v2 manifests. The next bounded step is a v2 release that declares only server-owned dependency id `github-keyring-win32-x64`, freezes the exact immutable generation during preparation, advances the runtime version without changing the public tool surface, and restarts into one active dependency. Live GitHub authorization remains blocked until that activation is separately verified.
 
 ```text
 RESEARCH123=ACTIVE
-G0_PRIVATE_HEAD=5b63371536fa2f09bb122ed09470ec5204f18d9b
-IMMUTABLE_DEPENDENCY_GENERATIONS=QUALIFIED
-KEYRING_TREE_SHA256=abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858
-RUNTIME_RELEASE_V2_DEPENDENCY_PREPARE=PASS
-COMBINED_FOCUSED_TESTS=22_OF_22_PASS
-G0_COMBINED_SYNTAX=21_OF_21_PASS
-RELEASE_DEPENDENCY_SYNTAX=15_OF_15_PASS
+G0_PRIVATE_HEAD=21b8597abde893a2b6e6b9b91d3488de0fe8aa16
+G0_SOURCE_BOOTSTRAP=LIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.22-github-g0-bootstrap
+LIVE_RUNTIME_RELEASE_ENGINE=V2_CAPABLE
+RUNTIME_DEPENDENCY_COUNT=0
 PUBLIC_TOOL_COUNT=63
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-LIVE_RUNTIME_RELEASE_ENGINE=V1
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=BUILD_SOURCE_ONLY_G0_DEPENDENCY_BOOTSTRAP_RELEASE_V1
+NEXT=BUILD_AND_ACTIVATE_GITHUB_KEYRING_RELEASE_V2
 ```
