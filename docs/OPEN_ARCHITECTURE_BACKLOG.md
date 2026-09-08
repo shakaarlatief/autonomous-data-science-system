@@ -1131,6 +1131,7 @@ Validation 137 / Checkpoint 380 close that reconciliation. All 89 host-visible r
 
 Validation 138 / Checkpoint 381 freeze the first authoritative GitHub platform pass. GitHub App user-access-token/device-flow auth, installation/user intersection scope, eight-hour/six-month token rotation, github.com REST `2026-03-10`, required User-Agent, create-tree nested entry semantics, create-PR head/base requirements and same-path Contents serialization are now source-backed. G0 implementation may begin without live credentials; the protected Windows token-store mechanism is the next local design choice.
 Validation 139 / Checkpoint 382 implement and privately preserve the first G0 auth/transport candidate at `3c5f3688ec578c0817953890dc69ecb7ce679153`. The focused 12/12 suite uses fake HTTP/keyring only; the candidate has not touched live GitHub or the OS credential store. The conservative private secret scanner initially rejected source syntax, was not weakened, and passed after scanner-safe code/fixture correction. Concrete Windows keyring import + synthetic credential round-trip is next before runtime integration.
+Validation 140 / Checkpoint 383 then qualify the exact keyring package on Windows x64 and complete one synthetic normal-user-session Credential Manager set/read-match/delete/absence lifecycle. The sandbox-only `ERROR_NO_SUCH_LOGON_SESSION` is localized to execution context. Main-runtime G0 integration is now the next Research 123 implementation boundary.
 
 ---
 

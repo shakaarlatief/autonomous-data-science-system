@@ -301,7 +301,11 @@ Validation 139 / Checkpoint 382 implement the source-backed contract at private 
 
 The production keyring adapter is intentionally still a boundary rather than a live claim. Exact package import/API behavior plus a synthetic Windows Credential Manager round trip must pass before runtime integration.
 
-## 13. Current disposition
+## 13. Windows protected-store qualification
+
+Validation 140 / Checkpoint 383 qualify the exact `@napi-rs/keyring@2.0.0` adapter on Windows x64. The package imports with the expected entry API, and one bounded normal-user-session synthetic Credential Manager lifecycle completed set/read-match/delete/verified-absence successfully. No GitHub credential was used. The earlier sandbox `ERROR_NO_SUCH_LOGON_SESSION` is classified as execution-context evidence rather than package incompatibility.
+
+## 14. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -316,5 +320,5 @@ CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
 CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
 CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
 G0_IMPLEMENTATION_CONTRACT=READY
-NEXT=WINDOWS_KEYRING_IMPORT_AND_SYNTHETIC_CREDENTIAL_ROUNDTRIP
+NEXT=INTEGRATE_G0_INTO_MAIN_CODEXLESS_RUNTIME_CANDIDATE
 ```

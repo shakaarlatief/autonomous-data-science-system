@@ -1,7 +1,7 @@
 # GitHub Connector Preimplementation Evidence Gaps
 
 **Date:** 2026-09-08
-**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / G0 PRIVATE CANDIDATE QUALIFIED / ACTION-SPECIFIC GAPS REMAIN EVIDENCE-GATED
+**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / G0 PRIVATE CANDIDATE + WINDOWS KEYRING QUALIFIED / MAIN RUNTIME INTEGRATION NEXT
 **Research:** Research 123
 **Purpose:** Convert the final 89-action native-schema reconciliation into a bounded evidence plan that closes only gaps material to practical GitHub parity, without attempting to clone host-internal wrapper details that were never projected.
 
@@ -122,6 +122,8 @@ The remaining hidden native wrapper outputs/errors do not reopen those platform 
 
 Validation 139 / Checkpoint 382 move G0 from design to a privately preserved candidate. Twelve focused tests cover protected-store serialization, device flow, refresh, fixed REST routing, semantic errors, GraphQL registry and installation-derived scope. No native-wrapper result-shape claim is added by this work. The Windows OS-keyring adapter remains a concrete runtime qualification gate before integration.
 
+Validation 140 / Checkpoint 383 close the OS-keyring adapter gate with a successful exact-package Windows x64 import plus one synthetic normal-user-session Credential Manager set/read/delete/cleanup lifecycle. The earlier sandbox logon-session failure is therefore localized to execution context.
+
 ## Implementation gate
 
 ```text
@@ -133,4 +135,4 @@ ACTION_SPECIFIC PARITY PUBLICATION      BLOCKED UNTIL RELEVANT GAP DISPOSITION
 BROAD 89-ACTION NATIVE REPLAY           NOT JUSTIFIED
 ```
 
-The next substantive work is Windows keyring adapter import and synthetic credential round-trip qualification, followed by main-runtime G0 integration if that gate passes. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.
+The next substantive work is main-runtime G0 integration with explicit dependency packaging/loading and integration regressions. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.

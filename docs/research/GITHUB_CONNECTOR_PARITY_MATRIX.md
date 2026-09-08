@@ -317,6 +317,8 @@ Validation 136 / Checkpoint 379 complete the six-batch discovery capture at `89 
 
 Validation 139 / Checkpoint 382 now preserve the first private G0 implementation at `3c5f3688ec578c0817953890dc69ecb7ce679153`: protected-token-store abstraction, device flow, single-flight refresh, fixed github.com REST transport, server-owned GraphQL registry, semantic errors and installation-derived authority. The focused suite passes 12/12 with no live GitHub/OS credential activity. The next gate is the concrete Windows keyring import and synthetic set/get/delete qualification before main-runtime integration.
 
+Validation 140 / Checkpoint 383 close that Windows protected-store gate. Exact `@napi-rs/keyring@2.0.0` import/API compatibility passed on Windows x64 and one normal-user-session synthetic Credential Manager set/read-match/delete/verified-absence lifecycle passed. No GitHub token or GitHub network call was involved, the synthetic secret was not printed, and staging-only dependency/cache material was removed afterward. Main-runtime G0 integration is now next.
+
 Validation 137 / Checkpoint 380 preserve the final reconciliation. All 89 host-visible request contracts were captured with zero missing actions, but all 89 machine-readable output schemas and all 89 structured error schemas remain unavailable, and `create_tree` retains a genericized nested input. The result is `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE` for exact native-wrapper wire parity while practical action/request mapping is complete. G0 auth/transport work is opened because these action-specific gaps do not constrain the independent GitHub authority/API kernel; action publication remains evidence-gated.
 
 ## Design disposition
@@ -340,5 +342,5 @@ EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
 G0_AUTH_TRANSPORT_KERNEL=PRIVATE_CANDIDATE_QUALIFIED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=WINDOWS_KEYRING_IMPORT_AND_SYNTHETIC_CREDENTIAL_ROUNDTRIP
+NEXT=INTEGRATE_G0_INTO_MAIN_CODEXLESS_RUNTIME_CANDIDATE
 ```

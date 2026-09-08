@@ -342,24 +342,30 @@ The focused candidate suite passes 12/12 with fake HTTP/keyring implementations 
 
 The private runtime integrity gate also provided useful negative evidence. Its first push rejected ordinary token-handling source syntax as secret-like material. The gate was kept intact; code/fixtures were changed until the exact scanner patterns produced zero matches, after which normal semantic push passed `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`.
 
-## 21. Current boundary
+## 21. Windows protected-store host qualification
 
-Research 123 remains active. The G0 semantic architecture is now implemented and privately regression-qualified, but the concrete Windows keyring adapter has not yet been exercised against the OS credential store. The next bounded gate is dependency import/API compatibility plus one synthetic set/get/delete round trip and verified cleanup using the fixed candidate service/account identity. No GitHub token is needed for that qualification.
+Validation 140 / Checkpoint 383 close the concrete Windows keyring discriminator. The exact `@napi-rs/keyring@2.0.0` package had already passed import/API checks under Windows x64. A sandboxed Credential Manager write failed with `ERROR_NO_SUCH_LOGON_SESSION`, but the same package then completed one bounded normal-user-session synthetic lifecycle with set/read-match/delete/verified-absence all true. No GitHub token was involved and the synthetic secret was neither printed nor persisted.
+
+This separates package/runtime viability from sandbox logon-session limitations. The temporary package tree and npm cache used for qualification were removed afterward.
+
+## 22. Current boundary
+
+Research 123 remains active. The G0 architecture, focused candidate tests, exact Windows package import, and OS Credential Manager storage lifecycle are all qualified. The next substantive work is to integrate those modules into a main Codexless runtime candidate with explicit dependency packaging/loading and integration regressions. Live GitHub authorization and public `github.*` actions remain deliberately later gates.
 
 ```text
 RESEARCH123=ACTIVE
 G0_INTERNAL_CANDIDATE=IMPLEMENTED
 G0_PRIVATE_HEAD=3c5f3688ec578c0817953890dc69ecb7ce679153
 G0_FOCUSED_TESTS=12_OF_12_PASS
-RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+WINDOWS_KEYRING_IMPORT=PASS
+WINDOWS_CREDENTIAL_MANAGER_ROUNDTRIP=PASS
+PROTECTED_TOKEN_STORE=IMPLEMENTATION_QUALIFIED
 GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
 PRACTICAL_ACTION_MAPPING=READY
 LIVE_GITHUB_CREDENTIAL=NOT_USED
-REAL_GITHUB_NETWORK_CALL=NOT_PERFORMED
-REAL_OS_CREDENTIAL_WRITE=NOT_PERFORMED
 PUBLIC_GITHUB_ACTIONS=NOT_REGISTERED
-LIVE_CODEXLESS_INSTALL=UNCHANGED
+LIVE_CODEXLESS_G0=NOT_INSTALLED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=WINDOWS_KEYRING_IMPORT_AND_SYNTHETIC_CREDENTIAL_ROUNDTRIP
+NEXT=INTEGRATE_G0_INTO_MAIN_CODEXLESS_RUNTIME_CANDIDATE
 ```
