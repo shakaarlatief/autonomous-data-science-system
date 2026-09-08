@@ -1,7 +1,7 @@
 # Private Companion Knowledge Repository
 
 **Status:** Accepted and operational  
-**Last reviewed:** 2026-09-01  
+**Last reviewed:** 2026-09-08
 **Scope:** Define the role, authority, content boundary, and continuity contract for the private companion repository used to preserve private ADS knowledge that should survive chat rotation but must not be committed to the public development repository.
 
 ## Core authority boundary
@@ -139,6 +139,38 @@ and points to the private records relevant to the current ADS boundary.
 For Source Vault bootstrap continuity, the current detailed private topology/evidence is routed from `CURRENT_PRIVATE_STATE.md`. Historical or superseded private observations remain provenance and must not override the latest routed private record.
 
 Do not copy volatile Source Vault status into this contract. Live public project state belongs in `docs/CURRENT_STATE.md`; live private routing belongs in the companion `CURRENT_PRIVATE_STATE.md`.
+
+## Runtime Bridge workspace authority
+
+The private companion may be admitted as a first-class Codexless Runtime Bridge workspace without changing its repository role. The accepted workspace identity is `ads-private`.
+
+The current dedicated Git integrity policy is:
+
+```text
+integrityPolicyId   private-companion
+protected policy    private-companion-v1
+protected paths     .git
+allowed remote      origin
+```
+
+When explicitly authorized, the companion may use the same stable workspace capabilities as the other managed project repositories:
+
+```text
+read
+write
+agent
+browser
+git_fetch
+git_pull_ff_only
+git_commit_paths
+git_push_ff_only
+```
+
+Operational capability is not development authority. These capabilities exist so private continuity knowledge can be read, reconciled and preserved directly. They do not permit the companion to redefine ADS architecture, specifications, checkpoints, code or public current state.
+
+The private-companion Git integrity policy is repository-specific. Do not substitute `workspace-standard` for semantic Git and do not reuse the local-runtime repository's `runtime-private-bootstrap` policy merely because both repositories are private.
+
+The exact local clone path is machine-private continuity and may be preserved inside the companion's `machines/` records. It does not belong in the public repository.
 
 ## Cross-chat reconstruction
 
