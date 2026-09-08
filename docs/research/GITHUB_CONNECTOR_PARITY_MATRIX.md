@@ -1,25 +1,33 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / 89 ACTIONS MAPPED / NATIVE SCHEMA CAPTURE REQUIRED BEFORE IMPLEMENTATION
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two fresh GitHub-only qualification results and their conservative negative-capability interpretation.
+**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE IN PROGRESS
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 
 ## Purpose and provenance
 
 Research 123 requires every observed native GitHub connector action to be mapped before implementation begins.
 
-Validation 128 preserved exactly 89 observed actions and zero newly discovered actions in the negative-capability challenge, but summarized action families instead of reproducing all 89 names and schemas. The inventory closes the exact-name preservation gap. The names were reconstructed from the two 2026-09-08 GitHub-only qualification transcripts and cross-checked against the count/family evidence already preserved in Validation 128.
+Validation 128 preserved exactly 89 observed actions and zero newly discovered actions in the negative-capability challenge, but did not reproduce all 89 names and schemas. Checkpoint 372 reconstructed the exact names from prior qualification transcripts. The later fresh GitHub-only schema-capture conversation again projected exactly 89 actions with zero action invocations and exposed one Checkpoint 372 reconstruction defect:
 
-This is not a claim that `chatgpt-20` freshly projected the native GitHub connector. The complete native schemas, enum constraints and per-action pagination behavior were not preserved publicly. A fresh read-only GitHub-only schema capture is therefore mandatory before implementation contracts are frozen.
+```text
+fresh projection only        GitHub.download_user_content
+Checkpoint 372 inventory only GitHub.add_issue_comment
+```
+
+`GitHub.add_comment_to_issue` is present in the fresh projection; `GitHub.add_issue_comment` is not. Validation 130 / Checkpoint 373 classify this as `RECONSTRUCTION_DEFECT_NOT_CONNECTOR_DRIFT` and preserve the exact fresh projected order in the machine-readable inventory.
+
+The complete native schemas, enum constraints and per-action pagination behavior remain under discovery-only capture in that same fixed fresh GitHub conversation. Implementation contracts remain blocked until the schema capture is reconciled.
 
 The frozen baseline is:
 
 ```text
 repository / installation / branch / commit / file / raw Git   29
 issues                                                           17
+content download                                                   1
 Actions / CI                                                       9
-pull requests / reviews                                           33
+pull requests / reviews                                           32
 repository permission                                              1
 TOTAL                                                              89
 ```
@@ -51,8 +59,9 @@ The local Git actions are not remote GitHub parity because they operate on regis
 |---|---:|---|---|---|
 | Repository / installation / branch / commit / file / raw Git | 29 | 0 | bounded reads + semantic Git safety | GitHub App user auth + REST |
 | Issues | 17 | 0 | mutation uncertainty + exact IDs | REST Issues / labels / assignees / reactions / lock |
+| Content download | 1 | 0 | resource/file handoff | Pending exact native schema capture for `download_user_content` |
 | Actions / CI | 9 | 0 | bounded reads + resource handoff | REST Actions + artifact handoff |
-| Pull requests / reviews | 33 | 0 | mutation safety + exact object identity | REST + GraphQL for PR/review-thread state |
+| Pull requests / reviews | 32 | 0 | mutation safety + exact object identity | REST + GraphQL for PR/review-thread state |
 | Repository permission | 1 | 0 | authority/error patterns | REST collaborator permission |
 
 The exact 89 row mappings, target `github.*` names, read/write class, reuse basis and target transport are canonical in `github_connector_89_action_inventory.json`.
@@ -277,7 +286,7 @@ Every slice must retain existing local Runtime Bridge capabilities.
 
 ## Mandatory native-schema gate
 
-The exact 89 names are now durable, but complete native schemas were not preserved in Validation 128. Before implementation begins, a fresh GitHub-only disposable qualification must capture for all 89:
+The exact fresh 89-action names/order are now durable after Validation 130 / Checkpoint 373, but complete native schemas were not preserved in Validation 128. The same fixed fresh GitHub-only conversation must now capture schemas for all 89 before implementation begins:
 
 ```text
 exact action name
@@ -297,6 +306,8 @@ That qualification is discovery-only and performs no GitHub mutation. The batchi
 
 ```text
 EXACT_ACTION_NAMES_MAPPED=89/89
+FRESH_PROJECTED_ORDER_CONFIRMED=89/89
+CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED
 EXACT_REMOTE_RUNTIME_BRIDGE_PARITY_NOW=0/89
 PARITY_ACTIONS_MISSING=89
 LOCAL_REUSE_AVAILABLE=YES
@@ -307,6 +318,6 @@ CALLER_SUPPLIED_CREDENTIALS=FORBIDDEN
 CALLER_SUPPLIED_ARBITRARY_HTTP=FORBIDDEN
 TARGET_PUBLIC_SHAPE=EXPLICIT_GITHUB_ACTIONS
 TOOL_COUNT_SCALING=EMPIRICAL_QUALIFICATION_REQUIRED
-NATIVE_FULL_SCHEMA_CAPTURE=PENDING
-NEXT=FRESH_READ_ONLY_89_ACTION_SCHEMA_CAPTURE
+NATIVE_FULL_SCHEMA_CAPTURE=IN_PROGRESS
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_1
 ```

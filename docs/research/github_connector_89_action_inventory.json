@@ -1,22 +1,28 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "qualificationDate": "2026-09-08",
-  "status": "FROZEN_RECONSTRUCTED_OBSERVED_BASELINE",
+  "status": "FRESH_PROJECTION_EXACT_NAMES_CONFIRMED_SCHEMA_CAPTURE_ACTIVE",
   "sourceValidation": "docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "provenance": {
-    "actionNames": "Reconstructed from the two fresh 2026-09-08 GitHub-only qualification transcripts after the public validation had preserved only the exact count and grouped capability evidence.",
-    "publicCrossCheck": "Validation 128 independently preserves actionCount=89, negativeChallengeNewActions=0, exercised capability families, merge disposition, and conservative negative classification.",
-    "freshLiveProjectionInChatgpt20": false,
-    "fullNativeInputSchemaCapture": "PENDING_REQUALIFICATION_BEFORE_SLICE_IMPLEMENTATION"
+    "historicalCountEvidence": "Validation 128 preserves 89 actions in both 2026-09-08 GitHub-only qualifications and zero additions in the negative challenge.",
+    "checkpoint372Reconstruction": "Checkpoint 372 reconstructed exact names because Validation 128 did not preserve them; that reconstruction contained one name-level error.",
+    "freshSchemaCaptureProjection": "A later fresh GitHub-only discovery-only conversation projected exactly 89 actions in the exact order preserved here and invoked no GitHub action.",
+    "checkpoint372ExactNameCorrection": {
+      "freshOnly": "GitHub.download_user_content",
+      "reconstructionOnly": "GitHub.add_issue_comment",
+      "interpretation": "RECONSTRUCTION_DEFECT_NOT_CONNECTOR_DRIFT"
+    },
+    "fullNativeInputSchemaCapture": "IN_PROGRESS"
   },
   "actionCount": 89,
   "negativeChallengeNewActions": 0,
   "groupCounts": {
-    "repository-git": 29,
     "issues": 17,
+    "pull-requests-reviews": 32,
+    "repository-git": 29,
+    "content-download": 1,
     "actions-ci": 9,
-    "pull-requests-reviews": 33,
     "permissions": 1
   },
   "mappingLegend": {
@@ -27,356 +33,16 @@
   "actions": [
     {
       "ordinal": 1,
-      "nativeAction": "GitHub.get_user_login",
-      "targetAction": "github.get_user_login",
-      "domain": "repository-git",
-      "mutability": "read",
+      "nativeAction": "GitHub.add_comment_to_issue",
+      "targetAction": "github.add_comment_to_issue",
+      "domain": "issues",
+      "mutability": "write",
       "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
       "targetTransport": "REST"
     },
     {
       "ordinal": 2,
-      "nativeAction": "GitHub.get_profile",
-      "targetAction": "github.get_profile",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 3,
-      "nativeAction": "GitHub.list_installations",
-      "targetAction": "github.list_installations",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
-    },
-    {
-      "ordinal": 4,
-      "nativeAction": "GitHub.list_installed_accounts",
-      "targetAction": "github.list_installed_accounts",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
-    },
-    {
-      "ordinal": 5,
-      "nativeAction": "GitHub.list_user_orgs",
-      "targetAction": "github.list_user_orgs",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 6,
-      "nativeAction": "GitHub.list_user_org_memberships",
-      "targetAction": "github.list_user_org_memberships",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 7,
-      "nativeAction": "GitHub.list_repositories",
-      "targetAction": "github.list_repositories",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 8,
-      "nativeAction": "GitHub.list_repositories_by_affiliation",
-      "targetAction": "github.list_repositories_by_affiliation",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 9,
-      "nativeAction": "GitHub.list_repositories_by_installation",
-      "targetAction": "github.list_repositories_by_installation",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
-    },
-    {
-      "ordinal": 10,
-      "nativeAction": "GitHub.search_installed_repositories_streaming",
-      "targetAction": "github.search_installed_repositories_streaming",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
-    },
-    {
-      "ordinal": 11,
-      "nativeAction": "GitHub.search_installed_repositories_v2",
-      "targetAction": "github.search_installed_repositories_v2",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
-    },
-    {
-      "ordinal": 12,
-      "nativeAction": "GitHub.search_repositories",
-      "targetAction": "github.search_repositories",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 13,
-      "nativeAction": "GitHub.get_repo",
-      "targetAction": "github.get_repo",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 14,
-      "nativeAction": "GitHub.fetch",
-      "targetAction": "github.fetch",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 15,
-      "nativeAction": "GitHub.search",
-      "targetAction": "github.search",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 16,
-      "nativeAction": "GitHub.search_branches",
-      "targetAction": "github.search_branches",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 17,
-      "nativeAction": "GitHub.search_commits",
-      "targetAction": "github.search_commits",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 18,
-      "nativeAction": "GitHub.fetch_file",
-      "targetAction": "github.fetch_file",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 19,
-      "nativeAction": "GitHub.fetch_blob",
-      "targetAction": "github.fetch_blob",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 20,
-      "nativeAction": "GitHub.fetch_commit",
-      "targetAction": "github.fetch_commit",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 21,
-      "nativeAction": "GitHub.compare_commits",
-      "targetAction": "github.compare_commits",
-      "domain": "repository-git",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 22,
-      "nativeAction": "GitHub.create_blob",
-      "targetAction": "github.create_blob",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 23,
-      "nativeAction": "GitHub.create_tree",
-      "targetAction": "github.create_tree",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 24,
-      "nativeAction": "GitHub.create_commit",
-      "targetAction": "github.create_commit",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 25,
-      "nativeAction": "GitHub.create_branch",
-      "targetAction": "github.create_branch",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 26,
-      "nativeAction": "GitHub.create_file",
-      "targetAction": "github.create_file",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 27,
-      "nativeAction": "GitHub.update_file",
-      "targetAction": "github.update_file",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 28,
-      "nativeAction": "GitHub.delete_file",
-      "targetAction": "github.delete_file",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 29,
-      "nativeAction": "GitHub.update_ref",
-      "targetAction": "github.update_ref",
-      "domain": "repository-git",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 30,
-      "nativeAction": "GitHub.create_issue",
-      "targetAction": "github.create_issue",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 31,
-      "nativeAction": "GitHub.fetch_issue",
-      "targetAction": "github.fetch_issue",
-      "domain": "issues",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 32,
-      "nativeAction": "GitHub.search_issues",
-      "targetAction": "github.search_issues",
-      "domain": "issues",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 33,
-      "nativeAction": "GitHub.list_recent_issues",
-      "targetAction": "github.list_recent_issues",
-      "domain": "issues",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 34,
-      "nativeAction": "GitHub.fetch_issue_comments",
-      "targetAction": "github.fetch_issue_comments",
-      "domain": "issues",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 35,
-      "nativeAction": "GitHub.update_issue",
-      "targetAction": "github.update_issue",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 36,
       "nativeAction": "GitHub.add_issue_assignees",
       "targetAction": "github.add_issue_assignees",
       "domain": "issues",
@@ -386,17 +52,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 37,
-      "nativeAction": "GitHub.remove_issue_assignees",
-      "targetAction": "github.remove_issue_assignees",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 38,
+      "ordinal": 3,
       "nativeAction": "GitHub.add_issue_labels",
       "targetAction": "github.add_issue_labels",
       "domain": "issues",
@@ -406,37 +62,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 39,
-      "nativeAction": "GitHub.remove_issue_label",
-      "targetAction": "github.remove_issue_label",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 40,
-      "nativeAction": "GitHub.add_issue_comment",
-      "targetAction": "github.add_issue_comment",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 41,
-      "nativeAction": "GitHub.update_issue_comment",
-      "targetAction": "github.update_issue_comment",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 42,
+      "ordinal": 4,
       "nativeAction": "GitHub.add_reaction_to_issue_comment",
       "targetAction": "github.add_reaction_to_issue_comment",
       "domain": "issues",
@@ -446,147 +72,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 43,
-      "nativeAction": "GitHub.get_issue_comment_reactions",
-      "targetAction": "github.get_issue_comment_reactions",
-      "domain": "issues",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 44,
-      "nativeAction": "GitHub.remove_reaction_from_issue_comment",
-      "targetAction": "github.remove_reaction_from_issue_comment",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 45,
-      "nativeAction": "GitHub.lock_issue_conversation",
-      "targetAction": "github.lock_issue_conversation",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 46,
-      "nativeAction": "GitHub.unlock_issue_conversation",
-      "targetAction": "github.unlock_issue_conversation",
-      "domain": "issues",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 47,
-      "nativeAction": "GitHub.fetch_commit_workflow_runs",
-      "targetAction": "github.fetch_commit_workflow_runs",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 48,
-      "nativeAction": "GitHub.fetch_workflow_run_jobs",
-      "targetAction": "github.fetch_workflow_run_jobs",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 49,
-      "nativeAction": "GitHub.fetch_workflow_job_steps",
-      "targetAction": "github.fetch_workflow_job_steps",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 50,
-      "nativeAction": "GitHub.fetch_workflow_job_logs",
-      "targetAction": "github.fetch_workflow_job_logs",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 51,
-      "nativeAction": "GitHub.fetch_workflow_run_artifacts",
-      "targetAction": "github.fetch_workflow_run_artifacts",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 52,
-      "nativeAction": "GitHub.download_workflow_artifact",
-      "targetAction": "github.download_workflow_artifact",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_RESOURCE_LINK_FILE_HANDOFF_PATTERN",
-      "targetTransport": "REST+RESOURCE_HANDOFF"
-    },
-    {
-      "ordinal": 53,
-      "nativeAction": "GitHub.get_commit_combined_status",
-      "targetAction": "github.get_commit_combined_status",
-      "domain": "actions-ci",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 54,
-      "nativeAction": "GitHub.rerun_failed_workflow_run_jobs",
-      "targetAction": "github.rerun_failed_workflow_run_jobs",
-      "domain": "actions-ci",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 55,
-      "nativeAction": "GitHub.rerun_workflow_job",
-      "targetAction": "github.rerun_workflow_job",
-      "domain": "actions-ci",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 56,
-      "nativeAction": "GitHub.add_comment_to_issue",
-      "targetAction": "github.add_comment_to_issue",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 57,
+      "ordinal": 5,
       "nativeAction": "GitHub.add_reaction_to_pr",
       "targetAction": "github.add_reaction_to_pr",
       "domain": "pull-requests-reviews",
@@ -596,7 +82,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 58,
+      "ordinal": 6,
       "nativeAction": "GitHub.add_reaction_to_pr_review_comment",
       "targetAction": "github.add_reaction_to_pr_review_comment",
       "domain": "pull-requests-reviews",
@@ -606,7 +92,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 59,
+      "ordinal": 7,
       "nativeAction": "GitHub.add_review_to_pr",
       "targetAction": "github.add_review_to_pr",
       "domain": "pull-requests-reviews",
@@ -616,7 +102,17 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 60,
+      "ordinal": 8,
+      "nativeAction": "GitHub.compare_commits",
+      "targetAction": "github.compare_commits",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 9,
       "nativeAction": "GitHub.convert_pull_request_to_draft",
       "targetAction": "github.convert_pull_request_to_draft",
       "domain": "pull-requests-reviews",
@@ -626,7 +122,57 @@
       "targetTransport": "GRAPHQL"
     },
     {
-      "ordinal": 61,
+      "ordinal": 10,
+      "nativeAction": "GitHub.create_blob",
+      "targetAction": "github.create_blob",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 11,
+      "nativeAction": "GitHub.create_branch",
+      "targetAction": "github.create_branch",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 12,
+      "nativeAction": "GitHub.create_commit",
+      "targetAction": "github.create_commit",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 13,
+      "nativeAction": "GitHub.create_file",
+      "targetAction": "github.create_file",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 14,
+      "nativeAction": "GitHub.create_issue",
+      "targetAction": "github.create_issue",
+      "domain": "issues",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 15,
       "nativeAction": "GitHub.create_pull_request",
       "targetAction": "github.create_pull_request",
       "domain": "pull-requests-reviews",
@@ -636,7 +182,27 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 62,
+      "ordinal": 16,
+      "nativeAction": "GitHub.create_tree",
+      "targetAction": "github.create_tree",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 17,
+      "nativeAction": "GitHub.delete_file",
+      "targetAction": "github.delete_file",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 18,
       "nativeAction": "GitHub.dismiss_pull_request_review",
       "targetAction": "github.dismiss_pull_request_review",
       "domain": "pull-requests-reviews",
@@ -646,7 +212,27 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 63,
+      "nativeAction": "GitHub.download_user_content",
+      "targetAction": "github.download_user_content",
+      "domain": "content-download",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_RESOURCE_LINK_FILE_HANDOFF_PATTERN",
+      "targetTransport": "PENDING_NATIVE_SCHEMA_CAPTURE",
+      "ordinal": 19
+    },
+    {
+      "ordinal": 20,
+      "nativeAction": "GitHub.download_workflow_artifact",
+      "targetAction": "github.download_workflow_artifact",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_RESOURCE_LINK_FILE_HANDOFF_PATTERN",
+      "targetTransport": "REST+RESOURCE_HANDOFF"
+    },
+    {
+      "ordinal": 21,
       "nativeAction": "GitHub.enable_auto_merge",
       "targetAction": "github.enable_auto_merge",
       "domain": "pull-requests-reviews",
@@ -656,7 +242,77 @@
       "targetTransport": "GRAPHQL"
     },
     {
-      "ordinal": 64,
+      "ordinal": 22,
+      "nativeAction": "GitHub.fetch",
+      "targetAction": "github.fetch",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 23,
+      "nativeAction": "GitHub.fetch_blob",
+      "targetAction": "github.fetch_blob",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 24,
+      "nativeAction": "GitHub.fetch_commit",
+      "targetAction": "github.fetch_commit",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 25,
+      "nativeAction": "GitHub.fetch_commit_workflow_runs",
+      "targetAction": "github.fetch_commit_workflow_runs",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 26,
+      "nativeAction": "GitHub.fetch_file",
+      "targetAction": "github.fetch_file",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 27,
+      "nativeAction": "GitHub.fetch_issue",
+      "targetAction": "github.fetch_issue",
+      "domain": "issues",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 28,
+      "nativeAction": "GitHub.fetch_issue_comments",
+      "targetAction": "github.fetch_issue_comments",
+      "domain": "issues",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 29,
       "nativeAction": "GitHub.fetch_pr",
       "targetAction": "github.fetch_pr",
       "domain": "pull-requests-reviews",
@@ -666,7 +322,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 65,
+      "ordinal": 30,
       "nativeAction": "GitHub.fetch_pr_comments",
       "targetAction": "github.fetch_pr_comments",
       "domain": "pull-requests-reviews",
@@ -676,7 +332,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 66,
+      "ordinal": 31,
       "nativeAction": "GitHub.fetch_pr_file_patch",
       "targetAction": "github.fetch_pr_file_patch",
       "domain": "pull-requests-reviews",
@@ -686,7 +342,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 67,
+      "ordinal": 32,
       "nativeAction": "GitHub.fetch_pr_patch",
       "targetAction": "github.fetch_pr_patch",
       "domain": "pull-requests-reviews",
@@ -696,7 +352,67 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 68,
+      "ordinal": 33,
+      "nativeAction": "GitHub.fetch_workflow_job_logs",
+      "targetAction": "github.fetch_workflow_job_logs",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 34,
+      "nativeAction": "GitHub.fetch_workflow_job_steps",
+      "targetAction": "github.fetch_workflow_job_steps",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 35,
+      "nativeAction": "GitHub.fetch_workflow_run_artifacts",
+      "targetAction": "github.fetch_workflow_run_artifacts",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 36,
+      "nativeAction": "GitHub.fetch_workflow_run_jobs",
+      "targetAction": "github.fetch_workflow_run_jobs",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 37,
+      "nativeAction": "GitHub.get_commit_combined_status",
+      "targetAction": "github.get_commit_combined_status",
+      "domain": "actions-ci",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 38,
+      "nativeAction": "GitHub.get_issue_comment_reactions",
+      "targetAction": "github.get_issue_comment_reactions",
+      "domain": "issues",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 39,
       "nativeAction": "GitHub.get_pr_diff",
       "targetAction": "github.get_pr_diff",
       "domain": "pull-requests-reviews",
@@ -706,7 +422,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 69,
+      "ordinal": 40,
       "nativeAction": "GitHub.get_pr_info",
       "targetAction": "github.get_pr_info",
       "domain": "pull-requests-reviews",
@@ -716,7 +432,7 @@
       "targetTransport": "REST+GRAPHQL_AGGREGATION"
     },
     {
-      "ordinal": 70,
+      "ordinal": 41,
       "nativeAction": "GitHub.get_pr_reactions",
       "targetAction": "github.get_pr_reactions",
       "domain": "pull-requests-reviews",
@@ -726,7 +442,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 71,
+      "ordinal": 42,
       "nativeAction": "GitHub.get_pr_review_comment_reactions",
       "targetAction": "github.get_pr_review_comment_reactions",
       "domain": "pull-requests-reviews",
@@ -736,7 +452,47 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 72,
+      "ordinal": 43,
+      "nativeAction": "GitHub.get_profile",
+      "targetAction": "github.get_profile",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 44,
+      "nativeAction": "GitHub.get_repo",
+      "targetAction": "github.get_repo",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 45,
+      "nativeAction": "GitHub.get_repo_collaborator_permission",
+      "targetAction": "github.get_repo_collaborator_permission",
+      "domain": "permissions",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 46,
+      "nativeAction": "GitHub.get_user_login",
+      "targetAction": "github.get_user_login",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 47,
       "nativeAction": "GitHub.get_users_recent_prs_in_repo",
       "targetAction": "github.get_users_recent_prs_in_repo",
       "domain": "pull-requests-reviews",
@@ -746,7 +502,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 73,
+      "ordinal": 48,
       "nativeAction": "GitHub.label_pr",
       "targetAction": "github.label_pr",
       "domain": "pull-requests-reviews",
@@ -756,7 +512,27 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 74,
+      "ordinal": 49,
+      "nativeAction": "GitHub.list_installations",
+      "targetAction": "github.list_installations",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
+    },
+    {
+      "ordinal": 50,
+      "nativeAction": "GitHub.list_installed_accounts",
+      "targetAction": "github.list_installed_accounts",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
+    },
+    {
+      "ordinal": 51,
       "nativeAction": "GitHub.list_pr_changed_filenames",
       "targetAction": "github.list_pr_changed_filenames",
       "domain": "pull-requests-reviews",
@@ -766,7 +542,7 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 75,
+      "ordinal": 52,
       "nativeAction": "GitHub.list_pull_request_review_threads",
       "targetAction": "github.list_pull_request_review_threads",
       "domain": "pull-requests-reviews",
@@ -776,7 +552,7 @@
       "targetTransport": "GRAPHQL"
     },
     {
-      "ordinal": 76,
+      "ordinal": 53,
       "nativeAction": "GitHub.list_pull_request_reviews",
       "targetAction": "github.list_pull_request_reviews",
       "domain": "pull-requests-reviews",
@@ -786,7 +562,77 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 77,
+      "ordinal": 54,
+      "nativeAction": "GitHub.list_recent_issues",
+      "targetAction": "github.list_recent_issues",
+      "domain": "issues",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 55,
+      "nativeAction": "GitHub.list_repositories",
+      "targetAction": "github.list_repositories",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 56,
+      "nativeAction": "GitHub.list_repositories_by_affiliation",
+      "targetAction": "github.list_repositories_by_affiliation",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 57,
+      "nativeAction": "GitHub.list_repositories_by_installation",
+      "targetAction": "github.list_repositories_by_installation",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
+    },
+    {
+      "ordinal": 58,
+      "nativeAction": "GitHub.list_user_org_memberships",
+      "targetAction": "github.list_user_org_memberships",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 59,
+      "nativeAction": "GitHub.list_user_orgs",
+      "targetAction": "github.list_user_orgs",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 60,
+      "nativeAction": "GitHub.lock_issue_conversation",
+      "targetAction": "github.lock_issue_conversation",
+      "domain": "issues",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 61,
       "nativeAction": "GitHub.mark_pull_request_ready_for_review",
       "targetAction": "github.mark_pull_request_ready_for_review",
       "domain": "pull-requests-reviews",
@@ -796,7 +642,7 @@
       "targetTransport": "GRAPHQL"
     },
     {
-      "ordinal": 78,
+      "ordinal": 62,
       "nativeAction": "GitHub.merge_pull_request",
       "targetAction": "github.merge_pull_request",
       "domain": "pull-requests-reviews",
@@ -806,97 +652,27 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 79,
-      "nativeAction": "GitHub.remove_reaction_from_pr",
-      "targetAction": "github.remove_reaction_from_pr",
-      "domain": "pull-requests-reviews",
+      "ordinal": 63,
+      "nativeAction": "GitHub.remove_issue_assignees",
+      "targetAction": "github.remove_issue_assignees",
+      "domain": "issues",
       "mutability": "write",
       "currentRuntimeBridgeParity": "MISSING",
       "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
       "targetTransport": "REST"
     },
     {
-      "ordinal": 80,
-      "nativeAction": "GitHub.remove_reaction_from_pr_review_comment",
-      "targetAction": "github.remove_reaction_from_pr_review_comment",
-      "domain": "pull-requests-reviews",
+      "ordinal": 64,
+      "nativeAction": "GitHub.remove_issue_label",
+      "targetAction": "github.remove_issue_label",
+      "domain": "issues",
       "mutability": "write",
       "currentRuntimeBridgeParity": "MISSING",
       "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
       "targetTransport": "REST"
     },
     {
-      "ordinal": 81,
-      "nativeAction": "GitHub.reply_to_review_comment",
-      "targetAction": "github.reply_to_review_comment",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 82,
-      "nativeAction": "GitHub.request_pull_request_reviewers",
-      "targetAction": "github.request_pull_request_reviewers",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 83,
-      "nativeAction": "GitHub.resolve_review_thread",
-      "targetAction": "github.resolve_review_thread",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "GRAPHQL"
-    },
-    {
-      "ordinal": 84,
-      "nativeAction": "GitHub.search_prs",
-      "targetAction": "github.search_prs",
-      "domain": "pull-requests-reviews",
-      "mutability": "read",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 85,
-      "nativeAction": "GitHub.unresolve_review_thread",
-      "targetAction": "github.unresolve_review_thread",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "GRAPHQL"
-    },
-    {
-      "ordinal": 86,
-      "nativeAction": "GitHub.update_pull_request",
-      "targetAction": "github.update_pull_request",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 87,
-      "nativeAction": "GitHub.update_review_comment",
-      "targetAction": "github.update_review_comment",
-      "domain": "pull-requests-reviews",
-      "mutability": "write",
-      "currentRuntimeBridgeParity": "MISSING",
-      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
-      "targetTransport": "REST"
-    },
-    {
-      "ordinal": 88,
+      "ordinal": 65,
       "nativeAction": "GitHub.remove_pull_request_reviewers",
       "targetAction": "github.remove_pull_request_reviewers",
       "domain": "pull-requests-reviews",
@@ -906,13 +682,243 @@
       "targetTransport": "REST"
     },
     {
-      "ordinal": 89,
-      "nativeAction": "GitHub.get_repo_collaborator_permission",
-      "targetAction": "github.get_repo_collaborator_permission",
-      "domain": "permissions",
+      "ordinal": 66,
+      "nativeAction": "GitHub.remove_reaction_from_issue_comment",
+      "targetAction": "github.remove_reaction_from_issue_comment",
+      "domain": "issues",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 67,
+      "nativeAction": "GitHub.remove_reaction_from_pr",
+      "targetAction": "github.remove_reaction_from_pr",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 68,
+      "nativeAction": "GitHub.remove_reaction_from_pr_review_comment",
+      "targetAction": "github.remove_reaction_from_pr_review_comment",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 69,
+      "nativeAction": "GitHub.reply_to_review_comment",
+      "targetAction": "github.reply_to_review_comment",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 70,
+      "nativeAction": "GitHub.request_pull_request_reviewers",
+      "targetAction": "github.request_pull_request_reviewers",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 71,
+      "nativeAction": "GitHub.rerun_failed_workflow_run_jobs",
+      "targetAction": "github.rerun_failed_workflow_run_jobs",
+      "domain": "actions-ci",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 72,
+      "nativeAction": "GitHub.rerun_workflow_job",
+      "targetAction": "github.rerun_workflow_job",
+      "domain": "actions-ci",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 73,
+      "nativeAction": "GitHub.resolve_review_thread",
+      "targetAction": "github.resolve_review_thread",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "GRAPHQL"
+    },
+    {
+      "ordinal": 74,
+      "nativeAction": "GitHub.search",
+      "targetAction": "github.search",
+      "domain": "repository-git",
       "mutability": "read",
       "currentRuntimeBridgeParity": "MISSING",
       "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 75,
+      "nativeAction": "GitHub.search_branches",
+      "targetAction": "github.search_branches",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 76,
+      "nativeAction": "GitHub.search_commits",
+      "targetAction": "github.search_commits",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 77,
+      "nativeAction": "GitHub.search_installed_repositories_streaming",
+      "targetAction": "github.search_installed_repositories_streaming",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
+    },
+    {
+      "ordinal": 78,
+      "nativeAction": "GitHub.search_installed_repositories_v2",
+      "targetAction": "github.search_installed_repositories_v2",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "GITHUB_APP_USER_AUTH+REST"
+    },
+    {
+      "ordinal": 79,
+      "nativeAction": "GitHub.search_issues",
+      "targetAction": "github.search_issues",
+      "domain": "issues",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 80,
+      "nativeAction": "GitHub.search_prs",
+      "targetAction": "github.search_prs",
+      "domain": "pull-requests-reviews",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 81,
+      "nativeAction": "GitHub.search_repositories",
+      "targetAction": "github.search_repositories",
+      "domain": "repository-git",
+      "mutability": "read",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_BOUNDED_READ_PAGINATION_AND_ERROR_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 82,
+      "nativeAction": "GitHub.unlock_issue_conversation",
+      "targetAction": "github.unlock_issue_conversation",
+      "domain": "issues",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 83,
+      "nativeAction": "GitHub.unresolve_review_thread",
+      "targetAction": "github.unresolve_review_thread",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "GRAPHQL"
+    },
+    {
+      "ordinal": 84,
+      "nativeAction": "GitHub.update_file",
+      "targetAction": "github.update_file",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 85,
+      "nativeAction": "GitHub.update_issue",
+      "targetAction": "github.update_issue",
+      "domain": "issues",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 86,
+      "nativeAction": "GitHub.update_issue_comment",
+      "targetAction": "github.update_issue_comment",
+      "domain": "issues",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 87,
+      "nativeAction": "GitHub.update_pull_request",
+      "targetAction": "github.update_pull_request",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 88,
+      "nativeAction": "GitHub.update_ref",
+      "targetAction": "github.update_ref",
+      "domain": "repository-git",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "LOCAL_SEMANTIC_GIT_SAFETY_AND_GIT_OBJECT_PATTERNS",
+      "targetTransport": "REST"
+    },
+    {
+      "ordinal": 89,
+      "nativeAction": "GitHub.update_review_comment",
+      "targetAction": "github.update_review_comment",
+      "domain": "pull-requests-reviews",
+      "mutability": "write",
+      "currentRuntimeBridgeParity": "MISSING",
+      "reuseBasis": "EXISTING_MUTATION_IDEMPOTENCY_AND_FAIL_VISIBLE_PATTERNS",
       "targetTransport": "REST"
     }
   ]

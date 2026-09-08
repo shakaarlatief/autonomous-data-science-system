@@ -238,21 +238,39 @@ The design also freezes action-specific pagination/error/mutation rules, explici
 
 One evidence gap remains before implementation contracts can be frozen: Validation 128 preserved the exact count and capability families but not the complete native action schemas. The next gate is therefore one fresh GitHub-only discovery conversation using the preserved batched schema-capture procedure. It performs no GitHub mutation.
 
-## 11. Current boundary
+## 11. Fresh exact-name projection correction
 
-Research 123 remains active. The 89-action functional mapping and authentication/API architecture are designed; implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+The required fresh GitHub-only schema-capture conversation independently projected exactly 89 actions and invoked none. Its exact ordered action inventory exposed one defect in the Checkpoint 372 reconstructed names:
+
+```text
+fresh projection only        GitHub.download_user_content
+Checkpoint 372 inventory only GitHub.add_issue_comment
+```
+
+`GitHub.add_comment_to_issue` is projected; `GitHub.add_issue_comment` is not. Because Validation 128 never publicly preserved all exact names, Validation 130 / Checkpoint 373 classify this as a Checkpoint 372 reconstruction defect rather than connector drift. The schema-version-2 machine inventory now preserves the exact fresh projected order.
+
+The architecture selected at Checkpoint 372 remains accepted. The correction changes one action identity/family assignment but does not change the 89-action count, GitHub App/device-flow direction, installation-derived scope, internal REST/GraphQL design, or exact remote parity state.
+
+## 12. Current boundary
+
+Research 123 remains active. The exact fresh 89-action inventory is now frozen and native schema capture is in progress in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
 GITHUB_CONNECTOR_BASELINE=89_ACTIONS_OBSERVED
 GITHUB_NEGATIVE_CHALLENGE=SAME_89_ACTIONS
+FRESH_GITHUB_ACTION_COUNT=89
+FRESH_GITHUB_ACTIONS_INVOKED=0
+CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED_BY_CHECKPOINT373
+FRESH_ONLY_ACTION=GitHub.download_user_content
+RECONSTRUCTION_ONLY_ACTION=GitHub.add_issue_comment
 GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=PENDING
+NATIVE_SCHEMA_CAPTURE=IN_PROGRESS
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=FRESH_READ_ONLY_89_ACTION_SCHEMA_CAPTURE
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_1
 ```

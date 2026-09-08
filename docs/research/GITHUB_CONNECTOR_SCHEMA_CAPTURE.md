@@ -1,15 +1,27 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** READY / DISCOVERY-ONLY PREIMPLEMENTATION QUALIFICATION
+**Status:** INVENTORY CONFIRMED / CHECKPOINT 372 EXACT-NAME RECONSTRUCTION CORRECTED / SCHEMA BATCHES IN PROGRESS
 **Research:** Research 123
-**Purpose:** Recover the exact native GitHub connector action contracts that Validation 128 did not reproduce in full, without performing any GitHub mutation.
+**Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
-## Why this capture is required
+## Fixed projection evidence
 
-The public repository now durably owns the exact 89 action names through `github_connector_89_action_inventory.json`, but the complete native schemas remain missing from durable evidence. Practical parity requires exact fields, enums, limits and pagination semantics rather than plausible approximations.
+The fresh GitHub-only schema-capture conversation completed its inventory phase with exactly 89 projected actions and zero action invocations. The count matches Validation 128.
 
-The capture must use a fresh GitHub-only ChatGPT conversation because the current persistent Runtime Bridge conversation does not reliably co-project the native GitHub connector.
+Comparison against the Checkpoint 372 reconstructed inventory exposed one exact-name reconstruction defect while leaving the count unchanged:
+
+```text
+fresh projection contains      GitHub.download_user_content
+Checkpoint 372 reconstruction  GitHub.add_issue_comment
+
+fresh projection also contains GitHub.add_comment_to_issue
+fresh projection does not contain GitHub.add_issue_comment
+```
+
+Because Validation 128 did not publicly preserve all exact action names, this is classified as `RECONSTRUCTION_DEFECT_NOT_CONNECTOR_DRIFT`. The exact fresh projected order is now canonical in `github_connector_89_action_inventory.json`.
+
+Continue all remaining schema batches in this same GitHub-only conversation so every schema is captured from one fixed host projection.
 
 ## Qualification rules
 
@@ -29,202 +41,193 @@ no generic fetch invocation merely to probe an endpoint
 
 Tool/action discovery and schema inspection are sufficient. Do not invoke mutating actions.
 
-At the start, report the complete projected GitHub action count. If it is not exactly 89, preserve the observed count and differences instead of forcing the old conclusion.
-
-For every requested action report:
+The inventory phase is complete. For every remaining requested action capture:
 
 ```text
 exact action name
-title
-full description
+title and full description
 complete input schema
 required fields
 optional fields
 enum values
 validation constraints / limits
-pagination / cursor / limit semantics visible in the contract
+pagination / cursor / continuation / limit semantics visible in the contract
 whether read-only or mutating
-resource/object operated on
-result-shape notes visible from the action contract
+GitHub resource/object scope
+visible result-shape and error-contract notes
 ```
 
-Do not infer undocumented fields. If a property is genericized or omitted by the host projection, report that exact limitation.
+Do not infer undocumented fields. If the host projection genericizes, truncates or omits anything, report that exact limitation.
 
-## Initial message for the fresh GitHub-only conversation
-
-Copy this first:
+## Batch 1: projected actions 1-15
 
 ```text
-@GitHub
+Continue the Research 123 discovery-only schema capture in this same GitHub-only conversation.
 
-This is the Research 123 read-only native GitHub schema-capture qualification.
+Do not invoke any GitHub action. Do not use Browser, web search, shell, ADS/Runtime Bridge, or another connector.
 
-Do not invoke any GitHub action. Discovery/schema inspection only.
-Do not use Browser, web search, shell, Codex Agent, ADS/Runtime Bridge, or any other connector.
-
-First inspect the GitHub actions actually projected in this fresh conversation.
-Report the exact projected action count and the exact ordered action names.
-
-The preserved 2026-09-08 baseline expected 89 actions. Do not force that result: if this fresh projection differs, report the new count and exact added/missing names.
-
-After reporting the inventory, stop. I will send schema-capture batches in follow-up messages in this same conversation.
-```
-
-## Batch 1: repository / installation / Git, actions 1-15
-
-```text
-Continue discovery only. Do not invoke any action.
-
-For each action below, report its exact title, description, complete input schema, required/optional fields, enums, validation constraints, pagination/cursor/limit behavior visible in the schema, read/mutation classification, and resource scope.
-
-GitHub.get_user_login
-GitHub.get_profile
-GitHub.list_installations
-GitHub.list_installed_accounts
-GitHub.list_user_orgs
-GitHub.list_user_org_memberships
-GitHub.list_repositories
-GitHub.list_repositories_by_affiliation
-GitHub.list_repositories_by_installation
-GitHub.search_installed_repositories_streaming
-GitHub.search_installed_repositories_v2
-GitHub.search_repositories
-GitHub.get_repo
-GitHub.fetch
-GitHub.search
-```
-
-## Batch 2: repository / Git, actions 16-29
-
-```text
-Continue discovery only. Do not invoke any action.
-
-Capture the same complete contract fields for:
-
-GitHub.search_branches
-GitHub.search_commits
-GitHub.fetch_file
-GitHub.fetch_blob
-GitHub.fetch_commit
-GitHub.compare_commits
-GitHub.create_blob
-GitHub.create_tree
-GitHub.create_commit
-GitHub.create_branch
-GitHub.create_file
-GitHub.update_file
-GitHub.delete_file
-GitHub.update_ref
-```
-
-## Batch 3: issues, actions 30-46
-
-```text
-Continue discovery only. Do not invoke any action.
-
-Capture the same complete contract fields for:
-
-GitHub.create_issue
-GitHub.fetch_issue
-GitHub.search_issues
-GitHub.list_recent_issues
-GitHub.fetch_issue_comments
-GitHub.update_issue
-GitHub.add_issue_assignees
-GitHub.remove_issue_assignees
-GitHub.add_issue_labels
-GitHub.remove_issue_label
-GitHub.add_issue_comment
-GitHub.update_issue_comment
-GitHub.add_reaction_to_issue_comment
-GitHub.get_issue_comment_reactions
-GitHub.remove_reaction_from_issue_comment
-GitHub.lock_issue_conversation
-GitHub.unlock_issue_conversation
-```
-
-## Batch 4: Actions / CI, actions 47-55
-
-```text
-Continue discovery only. Do not invoke any action.
-
-Capture the same complete contract fields for:
-
-GitHub.fetch_commit_workflow_runs
-GitHub.fetch_workflow_run_jobs
-GitHub.fetch_workflow_job_steps
-GitHub.fetch_workflow_job_logs
-GitHub.fetch_workflow_run_artifacts
-GitHub.download_workflow_artifact
-GitHub.get_commit_combined_status
-GitHub.rerun_failed_workflow_run_jobs
-GitHub.rerun_workflow_job
-```
-
-## Batch 5: pull requests / reviews, actions 56-72
-
-```text
-Continue discovery only. Do not invoke any action.
-
-Capture the same complete contract fields for:
+For each action below, report the complete contract fields defined above.
 
 GitHub.add_comment_to_issue
+GitHub.add_issue_assignees
+GitHub.add_issue_labels
+GitHub.add_reaction_to_issue_comment
 GitHub.add_reaction_to_pr
 GitHub.add_reaction_to_pr_review_comment
 GitHub.add_review_to_pr
+GitHub.compare_commits
 GitHub.convert_pull_request_to_draft
+GitHub.create_blob
+GitHub.create_branch
+GitHub.create_commit
+GitHub.create_file
+GitHub.create_issue
 GitHub.create_pull_request
+
+After these actions, stop. Do not continue into the next batch.
+```
+
+## Batch 2: projected actions 16-30
+
+```text
+Continue the Research 123 discovery-only schema capture in this same GitHub-only conversation.
+
+Do not invoke any GitHub action. Capture the same complete contract fields for:
+
+GitHub.create_tree
+GitHub.delete_file
 GitHub.dismiss_pull_request_review
+GitHub.download_user_content
+GitHub.download_workflow_artifact
 GitHub.enable_auto_merge
+GitHub.fetch
+GitHub.fetch_blob
+GitHub.fetch_commit
+GitHub.fetch_commit_workflow_runs
+GitHub.fetch_file
+GitHub.fetch_issue
+GitHub.fetch_issue_comments
 GitHub.fetch_pr
 GitHub.fetch_pr_comments
+
+After these actions, stop. Do not continue into the next batch.
+```
+
+## Batch 3: projected actions 31-45
+
+```text
+Continue the Research 123 discovery-only schema capture in this same GitHub-only conversation.
+
+Do not invoke any GitHub action. Capture the same complete contract fields for:
+
 GitHub.fetch_pr_file_patch
 GitHub.fetch_pr_patch
+GitHub.fetch_workflow_job_logs
+GitHub.fetch_workflow_job_steps
+GitHub.fetch_workflow_run_artifacts
+GitHub.fetch_workflow_run_jobs
+GitHub.get_commit_combined_status
+GitHub.get_issue_comment_reactions
 GitHub.get_pr_diff
 GitHub.get_pr_info
 GitHub.get_pr_reactions
 GitHub.get_pr_review_comment_reactions
-GitHub.get_users_recent_prs_in_repo
+GitHub.get_profile
+GitHub.get_repo
+GitHub.get_repo_collaborator_permission
+
+After these actions, stop. Do not continue into the next batch.
 ```
 
-## Batch 6: pull requests / reviews + permission, actions 73-89
+## Batch 4: projected actions 46-60
 
 ```text
-Continue discovery only. Do not invoke any action.
+Continue the Research 123 discovery-only schema capture in this same GitHub-only conversation.
 
-Capture the same complete contract fields for:
+Do not invoke any GitHub action. Capture the same complete contract fields for:
 
+GitHub.get_user_login
+GitHub.get_users_recent_prs_in_repo
 GitHub.label_pr
+GitHub.list_installations
+GitHub.list_installed_accounts
 GitHub.list_pr_changed_filenames
 GitHub.list_pull_request_review_threads
 GitHub.list_pull_request_reviews
+GitHub.list_recent_issues
+GitHub.list_repositories
+GitHub.list_repositories_by_affiliation
+GitHub.list_repositories_by_installation
+GitHub.list_user_org_memberships
+GitHub.list_user_orgs
+GitHub.lock_issue_conversation
+
+After these actions, stop. Do not continue into the next batch.
+```
+
+## Batch 5: projected actions 61-75
+
+```text
+Continue the Research 123 discovery-only schema capture in this same GitHub-only conversation.
+
+Do not invoke any GitHub action. Capture the same complete contract fields for:
+
 GitHub.mark_pull_request_ready_for_review
 GitHub.merge_pull_request
+GitHub.remove_issue_assignees
+GitHub.remove_issue_label
+GitHub.remove_pull_request_reviewers
+GitHub.remove_reaction_from_issue_comment
 GitHub.remove_reaction_from_pr
 GitHub.remove_reaction_from_pr_review_comment
 GitHub.reply_to_review_comment
 GitHub.request_pull_request_reviewers
+GitHub.rerun_failed_workflow_run_jobs
+GitHub.rerun_workflow_job
 GitHub.resolve_review_thread
+GitHub.search
+GitHub.search_branches
+
+After these actions, stop. Do not continue into the next batch.
+```
+
+## Batch 6: projected actions 76-89
+
+```text
+Continue the Research 123 discovery-only schema capture in this same GitHub-only conversation.
+
+Do not invoke any GitHub action. Capture the same complete contract fields for:
+
+GitHub.search_commits
+GitHub.search_installed_repositories_streaming
+GitHub.search_installed_repositories_v2
+GitHub.search_issues
 GitHub.search_prs
+GitHub.search_repositories
+GitHub.unlock_issue_conversation
 GitHub.unresolve_review_thread
+GitHub.update_file
+GitHub.update_issue
+GitHub.update_issue_comment
 GitHub.update_pull_request
+GitHub.update_ref
 GitHub.update_review_comment
-GitHub.remove_pull_request_reviewers
-GitHub.get_repo_collaborator_permission
+
+After these actions, stop.
 ```
 
 ## Final reconciliation message
 
 ```text
-Without invoking any GitHub action, reconcile the six schema-capture batches.
+Without invoking any GitHub action, reconcile the six completed schema-capture batches against the exact 89-action projection from the opening inventory.
 
 Report:
 1. projected action count;
-2. number of exact baseline actions whose full schema was captured;
-3. any action whose host schema was genericized, truncated or unavailable;
-4. any baseline action missing from this projection;
-5. any new projected action not in the 89-action baseline;
-6. whether all 89 exact baseline contracts are now sufficiently captured for implementation mapping.
+2. number of exact projected actions whose full host-visible schema was captured;
+3. any action whose schema was genericized, truncated or unavailable;
+4. any projected action not captured;
+5. any schema-level ambiguity that would prevent faithful Runtime Bridge implementation;
+6. whether all 89 exact projected contracts are sufficiently captured for implementation mapping.
 
 Finish with exactly one:
 GITHUB_89_SCHEMA_CAPTURE=PASS
@@ -234,4 +237,4 @@ GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
 
 ## Preservation rule
 
-Do not treat a changed future projection as corruption of the 2026-09-08 baseline. The baseline remains historical evidence. If the fresh projection changes, preserve both the historical 89-action parity target and the newly observed surface, then decide explicitly whether Research 123 parity should target the historical baseline, the new superset, or both.
+The historical two 89-action qualifications in Validation 128 remain valid count/capability evidence. Checkpoint 372 remains historical evidence of the first mapping attempt, but its exact-name reconstruction is superseded by Validation 130 / Checkpoint 373 and the fresh projection preserved in `github_connector_89_action_inventory.json`. Do not rewrite the historical checkpoint as if the error had never occurred.
