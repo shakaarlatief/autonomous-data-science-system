@@ -270,9 +270,17 @@ Two projected enums are exact evidence: `add_review_to_pr.action = COMMENT | APP
 
 Some descriptions state normalized issue/PR snapshots or SHA/compare results while the machine return schema remains `any`. This is preserved as an evidence gap rather than filled by inference. Final parity reconciliation must determine whether additional live-result capture is required before claiming exact output-shape parity.
 
-## 13. Current boundary
+## 13. Native schema Batch 2 result
 
-Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `15 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+Validation 132 / Checkpoint 375 preserve projected actions 16-30 and advance cumulative native schema capture to `30 / 89`, again with zero GitHub action invocations. Batch 2 confirms the expected Batch 1 output/error projection limitations and adds several architecture-relevant contracts.
+
+`GitHub.create_tree.tree_elements` is genericized to `{ [key: string]: any }[]`, so exact inner tree-entry schema remains unproven by host discovery. `GitHub.download_user_content` is now resolved as a read-only semantic downloader restricted to `https://private-user-images.githubusercontent.com`, while `GitHub.download_workflow_artifact` explicitly follows GitHub's redirect and returns a reusable ZIP file reference. These are bounded URL/file semantics, not arbitrary caller HTTP authority.
+
+Pagination is demonstrably action-specific: `fetch_commit_workflow_runs` returns only the first page and exposes no continuation; `fetch_issue_comments` fetches all pages internally; `fetch_pr_comments` does not state an all-pages guarantee. `fetch_issue.repository_url` also explicitly names GitHub Enterprise Server custom hostnames and GHE.com API hosts as accepted selectors. That endpoint-specific evidence is now a host-scope follow-up for the final GitHub App/API architecture rather than a reason to assume either universal Enterprise support or github.com-only parity.
+
+## 14. Current boundary
+
+Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `30 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
@@ -287,11 +295,14 @@ GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=15_OF_89
-HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
-HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
+NATIVE_SCHEMA_CAPTURE=30_OF_89
+CREATE_TREE_INNER_SCHEMA=GENERICIZED
+PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
+ENTERPRISE_SELECTOR_SCOPE=FOLLOWUP_REQUIRED
+HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED
+HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_2
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_3
 ```

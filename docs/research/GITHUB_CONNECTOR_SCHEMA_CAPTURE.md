@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** BATCH 1 PRESERVED / 15 OF 89 CONTRACTS CAPTURED / BATCH 2 NEXT
+**Status:** BATCH 2 PRESERVED / 30 OF 89 CONTRACTS CAPTURED / BATCH 3 NEXT
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -127,6 +127,21 @@ GitHub.fetch_pr_comments
 
 After these actions, stop. Do not continue into the next batch.
 ```
+
+### Batch 2 preservation result
+
+Validation 132 / Checkpoint 375 preserve cumulative schema capture at `30 / 89` with zero GitHub action invocations. Batch 2 confirms action-specific pagination and a stronger host genericization:
+
+```text
+GitHub.create_tree.tree_elements        { [key: string]: any }[]
+GitHub.fetch_commit_workflow_runs       FIRST PAGE ONLY
+GitHub.fetch_issue_comments             ALL PAGES internally
+GitHub.fetch_pr_comments                 pagination unspecified
+GitHub.download_user_content             private-user-images.githubusercontent.com only
+GitHub.download_workflow_artifact        reusable file reference after redirect
+```
+
+`fetch_issue.repository_url` also explicitly documents GitHub Enterprise Server custom hostnames and GHE.com API hosts, which is now an architecture follow-up rather than an assumed global host capability.
 
 ## Batch 3: projected actions 31-45
 

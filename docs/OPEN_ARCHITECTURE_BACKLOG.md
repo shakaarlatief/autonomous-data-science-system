@@ -1117,6 +1117,8 @@ Validation 130 / Checkpoint 373 preserve the first exact fresh inventory from th
 
 Validation 131 / Checkpoint 374 preserve discovery-only schema Batch 1 for projected actions 1-15. All fifteen expose input object contracts, but all fifteen project return type `any`; separate action-title metadata and structured error schemas are absent. Several conditional rules appear only descriptively rather than structurally. The specialized schema-capture artifact is mechanically validated at `15 / 89`. Continue Batch 2 in the same fixed GitHub-only conversation before implementation; final Research 123 reconciliation must explicitly decide whether exact normalized output shapes require additional live-result evidence beyond host schema discovery.
 
+Validation 132 / Checkpoint 375 advance the same fixed discovery projection to `30 / 89`. Batch 2 confirms action-specific pagination, a genericized `create_tree.tree_elements` inner schema, a host-restricted `download_user_content` URL contract, workflow-artifact reusable file-reference semantics, and a bounded GET-only generic `fetch` rather than arbitrary HTTP. `fetch_issue.repository_url` explicitly names GitHub Enterprise Server custom hostnames and GHE.com API hosts, so final Research 123 architecture must reconcile endpoint-specific Enterprise selector support rather than assuming github.com-only scope globally. Batch 3 is next; implementation remains unstarted.
+
 ---
 
 # Continuation obligations that must not be forgotten

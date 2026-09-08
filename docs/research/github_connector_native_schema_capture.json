@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "qualificationDate": "2026-09-08",
-  "status": "PARTIAL_15_OF_89",
+  "status": "PARTIAL_30_OF_89",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
-  "sourceValidation": "docs/local_execution/validation/131_github_native_schema_capture_batch1_preserved.md",
+  "sourceValidation": "docs/local_execution/validation/132_github_native_schema_capture_batch2_preserved.md",
   "projection": {
     "actionCount": 89,
     "actionsInvoked": 0,
@@ -19,13 +19,20 @@
     "httpStatusMappingExposed": false,
     "retryContractExposed": false,
     "capturedActionsWithPaginationInputs": 0,
-    "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded."
+    "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded.",
+    "batch2StrongestGenericization": "GitHub.create_tree.tree_elements items are projected only as { [key: string]: any }.",
+    "batch2PaginationEvidence": {
+      "GitHub.fetch_commit_workflow_runs": "FIRST_PAGE_ONLY",
+      "GitHub.fetch_issue_comments": "ALL_PAGES_INTERNAL",
+      "GitHub.fetch_pr_comments": "UNSPECIFIED"
+    }
   },
-  "capturedCount": 15,
+  "capturedCount": 30,
   "batchesCompleted": [
-    1
+    1,
+    2
   ],
-  "nextOrdinal": 16,
+  "nextOrdinal": 31,
   "actions": [
     {
       "ordinal": 1,
@@ -863,6 +870,709 @@
       "resultContract": {
         "projectedType": "any",
         "description": "Normalized PR snapshot; snapshot fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 16,
+      "nativeAction": "GitHub.create_tree",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a tree object in the repository from the given elements.",
+      "inputType": "create_tree_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "tree_elements"
+        ],
+        "optional": [
+          "base_tree_sha"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form; maps to REST owner/repo path parameters."
+          },
+          "tree_elements": {
+            "type": "array<map<string,any>>",
+            "description": "Tree entries to include in the new tree object.",
+            "itemSchemaGenericized": true,
+            "itemSchema": "{ [key: string]: any }"
+          },
+          "base_tree_sha": {
+            "type": "string|null",
+            "description": "Optional base tree SHA to build on; null creates from scratch.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Inner tree-entry properties, required fields, enums, modes, types, and path rules are not projected and must not be inferred."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Git tree object in a repository.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 17,
+      "nativeAction": "GitHub.delete_file",
+      "titleExposed": false,
+      "title": null,
+      "description": "Delete a file through GitHub contents API. Returns only the resulting commit SHA.",
+      "inputType": "delete_file_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "path",
+          "message",
+          "sha"
+        ],
+        "optional": [
+          "branch"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "path": {
+            "type": "string",
+            "description": "Path for existing file."
+          },
+          "message": {
+            "type": "string",
+            "description": "Commit message for deletion."
+          },
+          "sha": {
+            "type": "string",
+            "description": "Current blob SHA, usually obtained from fetch_file."
+          },
+          "branch": {
+            "type": "string|null",
+            "description": "Optional branch; null means default branch.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Repository contents/file deletion plus resulting commit.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returns only resulting commit SHA; raw string versus wrapped field is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 18,
+      "nativeAction": "GitHub.dismiss_pull_request_review",
+      "titleExposed": false,
+      "title": null,
+      "description": "Dismiss a submitted pull request review. Returns the normalized review snapshot after dismissal.",
+      "inputType": "dismiss_pull_request_review_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "review_id",
+          "message"
+        ],
+        "optional": [],
+        "properties": {
+          "review_id": {
+            "type": "string",
+            "description": "GraphQL pull request review node ID."
+          },
+          "message": {
+            "type": "string",
+            "description": "Dismissal message explaining why the review is dismissed."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Submitted pull-request review addressed by GraphQL review node ID.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized review snapshot after dismissal; normalized fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 19,
+      "nativeAction": "GitHub.download_user_content",
+      "titleExposed": false,
+      "title": null,
+      "description": "Download a GitHub private user image attachment URL. Use only for private-user-images.githubusercontent.com URLs; use fetch/fetch_file for repository files.",
+      "inputType": "download_user_content_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "optional": [],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Only https://private-user-images.githubusercontent.com URLs are supported.",
+            "semanticLimits": [
+              "Scheme/host restricted to https://private-user-images.githubusercontent.com.",
+              "Repository files must use fetch or fetch_file."
+            ]
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub private user image attachments in issues or pull requests.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Download/file result is projected as any; file-reference fields, bytes representation, metadata, and MIME information are not exposed."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "descriptiveRejections": [
+          "Unsupported URL families are excluded by the contract."
+        ]
+      }
+    },
+    {
+      "ordinal": 20,
+      "nativeAction": "GitHub.download_workflow_artifact",
+      "titleExposed": false,
+      "title": null,
+      "description": "Download a GitHub Actions workflow artifact ZIP archive. Client follows GitHub temporary redirect and returns a reusable file reference for ZIP bytes.",
+      "inputType": "download_workflow_artifact_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "artifact_id"
+        ],
+        "optional": [
+          "file_name"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "artifact_id": {
+            "type": "integer",
+            "description": "GitHub Actions workflow artifact ID."
+          },
+          "file_name": {
+            "type": "string|null",
+            "description": "Optional ZIP file name for returned file reference.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub Actions workflow artifact archive.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Connector follows temporary redirect and returns a reusable file reference for ZIP bytes; file-reference schema is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 21,
+      "nativeAction": "GitHub.enable_auto_merge",
+      "titleExposed": false,
+      "title": null,
+      "description": "Enable auto-merge for a pull request. Wrapper infers merge method from repository settings and returns only success.",
+      "inputType": "enable_auto_merge_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Merge method is inferred from repository settings; no merge-method input is exposed."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Pull-request auto-merge configuration.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returns only success; representation/type of success is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 22,
+      "nativeAction": "GitHub.fetch",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch approved public GitHub repository resources and repository files through an allowlisted GET-only surface. JSON is returned unchanged; oversized/non-UTF-8 responses are rejected and binary downloads are unsupported.",
+      "inputType": "fetch_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "optional": [],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Approved GitHub repository/file/directory/issue/PR/commit/branch/blob/README/workflow/release/Git-data/status/ruleset/search URL.",
+            "semanticLimits": [
+              "Supported hosts: github.com, api.github.com, raw.githubusercontent.com.",
+              "Non-public-GitHub hosts and unlisted endpoint families are rejected.",
+              "Sensitive user, organization, and secrets API families are unsupported.",
+              "Contents URLs without ref use repository default branch.",
+              "Responses must be UTF-8 text; oversized/non-UTF-8 responses rejected; binary downloads unsupported.",
+              "Active repository permissions apply; managed GitHub App installations lack administration access for endpoints that require it."
+            ]
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "No connector-level page/cursor/continuation fields or automatic pagination contract is projected."
+      },
+      "classification": "read",
+      "resourceScope": "Broad approved public GitHub repository-resource GET surface.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "JSON responses returned unchanged; UTF-8 text supported; no union output schema projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false,
+        "descriptiveRejections": [
+          "Unlisted endpoints",
+          "Non-public-GitHub hosts",
+          "Oversized responses",
+          "Non-UTF-8 responses"
+        ],
+        "permissionNotes": [
+          "Managed GitHub App installations cannot read branch-protection endpoints that require administration permission."
+        ]
+      }
+    },
+    {
+      "ordinal": 23,
+      "nativeAction": "GitHub.fetch_blob",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch blob content by SHA from the given repository.",
+      "inputType": "fetch_blob_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "blob_sha"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "blob_sha": {
+            "type": "string",
+            "description": "Blob SHA returned by GitHub."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Git blob object content.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Blob content returned, but content field, encoding, SHA, size, truncation model, and object schema are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 24,
+      "nativeAction": "GitHub.fetch_commit",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch a commit with its metadata, diff, and canonical URL.",
+      "inputType": "fetch_commit_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "commit_sha"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "commit_sha": {
+            "type": "string",
+            "description": "Commit SHA."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repository commit.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Contains commit metadata, diff, and canonical URL; exact properties/nested types are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 25,
+      "nativeAction": "GitHub.fetch_commit_workflow_runs",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch GitHub Actions workflow runs associated with a commit SHA. Wrapper filters to pull-request-triggered runs and returns the first page only.",
+      "inputType": "fetch_commit_workflow_runs_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "commit_sha"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "commit_sha": {
+            "type": "string",
+            "description": "Commit SHA."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Wrapper filters to pull-request-triggered workflow runs."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "FIRST_PAGE_ONLY",
+        "automaticAllPages": false,
+        "continuationExposed": false,
+        "pageInputExposed": false,
+        "limitInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub Actions workflow runs associated with a commit, filtered to PR-triggered runs.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Workflow-run collection schema is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 26,
+      "nativeAction": "GitHub.fetch_file",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch file content by repository path, using the default branch when ref is omitted.",
+      "inputType": "fetch_file_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "path"
+        ],
+        "optional": [
+          "ref",
+          "encoding",
+          "start_line",
+          "end_line"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "path": {
+            "type": "string",
+            "description": "Repository path."
+          },
+          "ref": {
+            "type": "string|null",
+            "description": "Optional branch, tag, or commit ref; default branch used when omitted.",
+            "default": null
+          },
+          "encoding": {
+            "type": "string",
+            "description": "Output encoding.",
+            "enum": [
+              "utf-8",
+              "base64"
+            ],
+            "default": "utf-8"
+          },
+          "start_line": {
+            "type": "integer|null",
+            "description": "Optional 1-based first line.",
+            "default": null,
+            "exclusiveMinimum": 0
+          },
+          "end_line": {
+            "type": "integer|null",
+            "description": "Optional 1-based last line.",
+            "default": null,
+            "exclusiveMinimum": 0
+          }
+        }
+      },
+      "conditionalRules": [
+        "Line numbering is 1-based.",
+        "No projected relation such as end_line >= start_line; do not infer one."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repository file content at optional branch/tag/commit ref.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "No path/SHA/content/encoding/truncation/line metadata output schema is projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 27,
+      "nativeAction": "GitHub.fetch_issue",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch a GitHub issue. Exactly one repository selector must be populated.",
+      "inputType": "fetch_issue_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "issue_number"
+        ],
+        "optional": [
+          "repository_full_name",
+          "repository_id",
+          "repository_url"
+        ],
+        "properties": {
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          },
+          "repository_full_name": {
+            "type": "string|null",
+            "description": "Repository in owner/name form.",
+            "default": null
+          },
+          "repository_id": {
+            "type": "integer|null",
+            "description": "Numeric GitHub repository ID; use when stable repository id is available.",
+            "default": null
+          },
+          "repository_url": {
+            "type": "string|null",
+            "description": "GitHub repository or nested repository URL; supports GitHub Enterprise Server custom hostnames and GHE.com API hosts.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Exactly one of repository_full_name, repository_id, repository_url is required; XOR is descriptive rather than structurally encoded."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub issue selected by full name, numeric repository ID, or supported repository/nested URL.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Issue model fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 28,
+      "nativeAction": "GitHub.fetch_issue_comments",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch comments for a GitHub issue across all pages.",
+      "inputType": "fetch_issue_comments_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "issue_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ALL_PAGES_INTERNAL",
+        "automaticAllPages": true,
+        "continuationExposed": false,
+        "pageInputExposed": false,
+        "limitInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Issue comments for one GitHub issue.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Comment-array schema, fields, pagination metadata, and completeness marker are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 29,
+      "nativeAction": "GitHub.fetch_pr",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch a pull request with its diff, metadata, and optionally comments.",
+      "inputType": "fetch_pr_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Description says comments are optional output content, but no include_comments or condition-controlling input is projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Pull request including metadata and diff.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Contains PR metadata, diff, and optionally comments; exact schemas not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 30,
+      "nativeAction": "GitHub.fetch_pr_comments",
+      "titleExposed": false,
+      "title": null,
+      "description": "Fetch a merged PR discussion timeline combining issue comments, inline review comments, and review submissions into one normalized array.",
+      "inputType": "fetch_pr_comments_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "UNSPECIFIED",
+        "automaticAllPages": null,
+        "note": "Unlike fetch_issue_comments, no all-pages guarantee is stated; none is inferred."
+      },
+      "classification": "read",
+      "resourceScope": "Merged pull-request discussion/review timeline over issue comments, inline review comments, and review submissions.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Semantic result is one normalized array; normalized entry/discriminator/order/ID/author/timestamp/review-state fields are not projected."
       },
       "errorContract": {
         "structuredSchemaExposed": false

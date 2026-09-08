@@ -44,7 +44,7 @@ def main() -> int:
     expected_names = [item.get("nativeAction") for item in expected]
     names = [item.get("nativeAction") for item in actions]
     if names != expected_names:
-        fail("captured names/order must match inventory ordinals 1..15 exactly")
+        fail("captured names/order must match the inventory prefix exactly")
     if [item.get("ordinal") for item in actions] != list(range(1, captured_count + 1)):
         fail(f"captured ordinals must be contiguous 1..{captured_count}")
 
@@ -83,6 +83,35 @@ def main() -> int:
         fail("create_blob encoding enum drift")
     if blob["inputSchema"]["properties"]["encoding"].get("default") != "utf-8":
         fail("create_blob encoding default drift")
+
+    if captured_count >= 30:
+        tree = actions[15]
+        tree_elements = tree["inputSchema"]["properties"]["tree_elements"]
+        if tree_elements.get("itemSchemaGenericized") is not True or tree_elements.get("itemSchema") != "{ [key: string]: any }":
+            fail("create_tree inner-entry genericization drift")
+        user_content = actions[18]
+        url_limits = user_content["inputSchema"]["properties"]["url"].get("semanticLimits", [])
+        if not any("private-user-images.githubusercontent.com" in value for value in url_limits):
+            fail("download_user_content host restriction missing")
+        commit_runs = actions[24]
+        if commit_runs.get("pagination", {}).get("behavior") != "FIRST_PAGE_ONLY":
+            fail("fetch_commit_workflow_runs first-page-only contract drift")
+        file_action = actions[25]
+        file_props = file_action["inputSchema"]["properties"]
+        if file_props["encoding"].get("enum") != ["utf-8", "base64"] or file_props["encoding"].get("default") != "utf-8":
+            fail("fetch_file encoding enum/default drift")
+        if file_props["start_line"].get("exclusiveMinimum") != 0 or file_props["end_line"].get("exclusiveMinimum") != 0:
+            fail("fetch_file line-bound constraints drift")
+        issue = actions[26]
+        issue_rules = issue.get("conditionalRules", [])
+        if not any("Exactly one of repository_full_name, repository_id, repository_url" in value for value in issue_rules):
+            fail("fetch_issue repository-selector XOR missing")
+        issue_comments = actions[27]
+        if issue_comments.get("pagination", {}).get("behavior") != "ALL_PAGES_INTERNAL":
+            fail("fetch_issue_comments all-pages contract drift")
+        pr_comments = actions[29]
+        if pr_comments.get("pagination", {}).get("behavior") != "UNSPECIFIED":
+            fail("fetch_pr_comments unspecified pagination contract drift")
 
     print("GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE=PASS")
     print(f"GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE_COUNT={captured_count}_OF_89")
