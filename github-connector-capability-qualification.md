@@ -9,3 +9,10 @@ This file is intentionally isolated to the temporary qualification branch and mu
 - Branch creation succeeded.
 - File creation committed remotely.
 - File replacement/update succeeded through the contents API.
+- Draft PR creation and PR metadata/comment/review mutations succeeded.
+- Inline review-thread reply/edit/reaction/resolve/unresolve mutations succeeded.
+- Temporary issue creation/update/lock/unlock/close mutations succeeded.
+
+## Follow-up
+
+This section was added after PR creation to verify that a subsequent branch commit updates the existing PR and any connected CI state.
