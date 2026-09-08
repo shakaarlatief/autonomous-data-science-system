@@ -1,0 +1,872 @@
+{
+  "schemaVersion": 1,
+  "qualificationDate": "2026-09-08",
+  "status": "PARTIAL_15_OF_89",
+  "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
+  "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
+  "sourceValidation": "docs/local_execution/validation/131_github_native_schema_capture_batch1_preserved.md",
+  "projection": {
+    "actionCount": 89,
+    "actionsInvoked": 0,
+    "fixedConversation": true
+  },
+  "projectionWideLimitations": {
+    "separateActionTitleExposed": false,
+    "projectedReturnType": "any",
+    "machineReadableOutputSchemaExposed": false,
+    "structuredErrorSchemaExposed": false,
+    "errorCodeEnumExposed": false,
+    "httpStatusMappingExposed": false,
+    "retryContractExposed": false,
+    "capturedActionsWithPaginationInputs": 0,
+    "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded."
+  },
+  "capturedCount": 15,
+  "batchesCompleted": [
+    1
+  ],
+  "nextOrdinal": 16,
+  "actions": [
+    {
+      "ordinal": 1,
+      "nativeAction": "GitHub.add_comment_to_issue",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a top-level PR Conversation comment (Issue comment).",
+      "inputType": "add_comment_to_issue_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number",
+          "comment"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form; maps to REST owner/repo path parameters."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          },
+          "comment": {
+            "type": "string",
+            "description": "Top-level comment body."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Top-level conversation / issue comment associated with a pull request.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 2,
+      "nativeAction": "GitHub.add_issue_assignees",
+      "titleExposed": false,
+      "title": null,
+      "description": "Add assignees to an issue or pull request. Returns a normalized issue snapshot after the mutation.",
+      "inputType": "add_issue_assignees_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number",
+          "assignees"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          },
+          "assignees": {
+            "type": "array<string>",
+            "description": "GitHub usernames to add; additive to existing assignees.",
+            "semanticLimits": [
+              "Endpoint supports up to 10 assignees; no schema-level maxItems projected."
+            ]
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Issue or pull request assignee collection.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized issue snapshot after mutation; snapshot fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 3,
+      "nativeAction": "GitHub.add_issue_labels",
+      "titleExposed": false,
+      "title": null,
+      "description": "Add labels to an issue or pull request. Returns a normalized issue snapshot after the mutation.",
+      "inputType": "add_issue_labels_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number",
+          "labels"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number."
+          },
+          "labels": {
+            "type": "array<string>",
+            "description": "Labels to add; additive, unlike update_issue(labels=...) which replaces the full set."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Issue or pull request labels.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized issue snapshot after mutation; snapshot fields are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 4,
+      "nativeAction": "GitHub.add_reaction_to_issue_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Add a reaction to an issue comment.",
+      "inputType": "add_reaction_to_issue_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id",
+          "reaction"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Numeric issue or review comment ID."
+          },
+          "reaction": {
+            "type": "string",
+            "description": "Reaction identifier such as +1 or eyes; examples only, no enum projected."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reaction on an issue comment.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 5,
+      "nativeAction": "GitHub.add_reaction_to_pr",
+      "titleExposed": false,
+      "title": null,
+      "description": "Add a reaction to a GitHub pull request.",
+      "inputType": "add_reaction_to_pr_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number",
+          "reaction"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          },
+          "reaction": {
+            "type": "string",
+            "description": "Reaction identifier such as +1 or eyes; examples only, no enum projected."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reaction on a pull request.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 6,
+      "nativeAction": "GitHub.add_reaction_to_pr_review_comment",
+      "titleExposed": false,
+      "title": null,
+      "description": "Add a reaction to a pull request review comment.",
+      "inputType": "add_reaction_to_pr_review_comment_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "comment_id",
+          "reaction"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "comment_id": {
+            "type": "integer",
+            "description": "Numeric issue or review comment ID."
+          },
+          "reaction": {
+            "type": "string",
+            "description": "Reaction identifier such as +1 or eyes; examples only, no enum projected."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Reaction on a pull-request review comment.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 7,
+      "nativeAction": "GitHub.add_review_to_pr",
+      "titleExposed": false,
+      "title": null,
+      "description": "Add a review to a GitHub pull request. review is required for REQUEST_CHANGES and COMMENT events.",
+      "inputType": "add_review_to_pr_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number",
+          "action"
+        ],
+        "optional": [
+          "review",
+          "file_comments",
+          "commit_id"
+        ],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "COMMENT",
+              "APPROVE",
+              "REQUEST_CHANGES"
+            ]
+          },
+          "review": {
+            "type": "string|null",
+            "default": null
+          },
+          "file_comments": {
+            "type": "array<object>|null",
+            "default": null,
+            "itemSchema": {
+              "required": [
+                "path",
+                "body"
+              ],
+              "optional": [
+                "position",
+                "line",
+                "side",
+                "start_line",
+                "start_side"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "description": "Repository path."
+                },
+                "position": {
+                  "type": "integer|null",
+                  "description": "Position in diff, counted below @@ hunk header and across hunks until a new file.",
+                  "default": null
+                },
+                "body": {
+                  "type": "string",
+                  "description": "Review comment body."
+                },
+                "line": {
+                  "type": "integer|null",
+                  "description": "File line number for line-based comments.",
+                  "default": null
+                },
+                "side": {
+                  "type": "string|null",
+                  "description": "Diff side; LEFT/RIGHT are examples, not enum values.",
+                  "default": null
+                },
+                "start_line": {
+                  "type": "integer|null",
+                  "description": "Starting line for multi-line range.",
+                  "default": null
+                },
+                "start_side": {
+                  "type": "string|null",
+                  "description": "Diff side for start_line; no enum projected.",
+                  "default": null
+                }
+              }
+            }
+          },
+          "commit_id": {
+            "type": "string|null",
+            "description": "Optional commit SHA to anchor the review.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "review required when action is COMMENT",
+        "review required when action is REQUEST_CHANGES",
+        "No machine-readable rule projected for position versus line or multi-line field combinations."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Pull-request review submission, optionally with inline file comments and anchoring commit.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 8,
+      "nativeAction": "GitHub.compare_commits",
+      "titleExposed": false,
+      "title": null,
+      "description": "Compare two commits/refs and return per-file stats plus compare metadata. Thin wrapper around GithubPlugin.compare_commits with a stable, compact response shape.",
+      "inputType": "compare_commits_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "base",
+          "head"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          },
+          "head": {
+            "type": "string"
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Comparison between two repository commits/refs.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Stable compact response containing per-file statistics and compare metadata; properties/types not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 9,
+      "nativeAction": "GitHub.convert_pull_request_to_draft",
+      "titleExposed": false,
+      "title": null,
+      "description": "Convert an open pull request back to draft state. Returns the connector normalized PR snapshot after the transition.",
+      "inputType": "convert_pull_request_to_draft_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull request number."
+          }
+        }
+      },
+      "conditionalRules": [
+        "Description scopes transition to an open pull request."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Pull-request draft state.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized PR snapshot after transition; snapshot fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 10,
+      "nativeAction": "GitHub.create_blob",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a blob in the repository and return its SHA.",
+      "inputType": "create_blob_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "content"
+        ],
+        "optional": [
+          "encoding"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "content": {
+            "type": "string",
+            "description": "Blob content."
+          },
+          "encoding": {
+            "type": "string",
+            "enum": [
+              "utf-8",
+              "base64"
+            ],
+            "default": "utf-8"
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Git data blob object in a repository.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returns blob SHA; wrapping as raw string versus object is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 11,
+      "nativeAction": "GitHub.create_branch",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a new branch from exactly one existing commit SHA or base ref.",
+      "inputType": "create_branch_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "branch_name"
+        ],
+        "optional": [
+          "sha",
+          "base_ref"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "New branch name."
+          },
+          "sha": {
+            "type": "string|null",
+            "description": "Existing commit SHA.",
+            "default": null
+          },
+          "base_ref": {
+            "type": "string|null",
+            "description": "Existing branch, tag, or commit ref.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Exactly one of sha or base_ref must be provided; XOR is descriptive, not structurally encoded."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Repository branch / Git ref creation from an existing commit or ref.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 12,
+      "nativeAction": "GitHub.create_commit",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a commit pointing to tree_sha with one or more parents.",
+      "inputType": "create_commit_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "message",
+          "tree_sha",
+          "parent_sha"
+        ],
+        "optional": [
+          "additional_parent_shas"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "message": {
+            "type": "string",
+            "description": "Commit message."
+          },
+          "tree_sha": {
+            "type": "string",
+            "description": "Tree SHA."
+          },
+          "parent_sha": {
+            "type": "string",
+            "description": "Primary parent commit SHA."
+          },
+          "additional_parent_shas": {
+            "type": "array<string>|null",
+            "description": "Additional ordered commit parent SHAs.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Git commit object, including multi-parent commits.",
+      "resultContract": {
+        "projectedType": "any"
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 13,
+      "nativeAction": "GitHub.create_file",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a new UTF-8 text file through GitHub contents API. Returns only the resulting commit SHA, not GitHub full content/commit payload.",
+      "inputType": "create_file_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "path",
+          "content",
+          "message"
+        ],
+        "optional": [
+          "branch"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "path": {
+            "type": "string",
+            "description": "New file path; must not already exist on target branch."
+          },
+          "content": {
+            "type": "string",
+            "description": "Complete UTF-8 text contents; wrapper Base64-encodes for GitHub contents API."
+          },
+          "message": {
+            "type": "string",
+            "description": "Commit message."
+          },
+          "branch": {
+            "type": "string|null",
+            "description": "Existing branch; null means repository default branch; does not create a branch.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "Target path must not already exist on target branch.",
+        "Branch, when supplied, is an existing branch."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Repository contents/file creation plus resulting commit.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returns only resulting commit SHA; exact wrapping not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 14,
+      "nativeAction": "GitHub.create_issue",
+      "titleExposed": false,
+      "title": null,
+      "description": "Create a GitHub issue. Returns a normalized issue snapshot, not GitHub raw REST payload.",
+      "inputType": "create_issue_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "title"
+        ],
+        "optional": [
+          "body",
+          "assignees",
+          "labels",
+          "milestone"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "title": {
+            "type": "string",
+            "description": "Issue title."
+          },
+          "body": {
+            "type": "string|null",
+            "description": "Optional Markdown body.",
+            "default": null
+          },
+          "assignees": {
+            "type": "array<string>|null",
+            "description": "Optional GitHub usernames.",
+            "default": null
+          },
+          "labels": {
+            "type": "array<string>|null",
+            "description": "Optional labels.",
+            "default": null
+          },
+          "milestone": {
+            "type": "integer|null",
+            "description": "Optional milestone number.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Repository issue creation with optional metadata.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized issue snapshot; snapshot fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 15,
+      "nativeAction": "GitHub.create_pull_request",
+      "titleExposed": false,
+      "title": null,
+      "description": "Open a pull request in the repository. Returns connector normalized PR snapshot, not full REST response payload.",
+      "inputType": "create_pull_request_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name"
+        ],
+        "optional": [
+          "title",
+          "body",
+          "head_branch",
+          "base_branch",
+          "draft",
+          "head",
+          "base",
+          "issue",
+          "head_repo",
+          "maintainer_can_modify"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "title": {
+            "type": "string|null",
+            "description": "Title; required unless issue is supplied.",
+            "default": null
+          },
+          "body": {
+            "type": "string|null",
+            "description": "PR description/summary.",
+            "default": null
+          },
+          "head_branch": {
+            "type": "string|null",
+            "description": "Compatibility alias for head.",
+            "default": null
+          },
+          "base_branch": {
+            "type": "string|null",
+            "description": "Compatibility alias for base.",
+            "default": null
+          },
+          "draft": {
+            "type": "boolean",
+            "description": "Create as draft.",
+            "default": false
+          },
+          "head": {
+            "type": "string|null",
+            "description": "REST head branch.",
+            "default": null
+          },
+          "base": {
+            "type": "string|null",
+            "description": "REST base branch.",
+            "default": null
+          },
+          "issue": {
+            "type": "integer|null",
+            "description": "Existing issue number to convert into a pull request.",
+            "default": null
+          },
+          "head_repo": {
+            "type": "string|null",
+            "description": "Repository where head branch lives; required by GitHub for some same-organization cross-repository PRs.",
+            "default": null
+          },
+          "maintainer_can_modify": {
+            "type": "boolean|null",
+            "description": "Whether maintainers may modify the PR branch.",
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [
+        "title required unless issue is supplied.",
+        "head_repo required by GitHub for some same-organization cross-repository pull requests.",
+        "No precedence, mutual-exclusion, equality, or conflict-resolution rule is projected between head_branch/head or base_branch/base.",
+        "The projected schema does not mark head/head_branch/base/base_branch as unconditionally required."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Pull-request creation, including draft, issue conversion, and some cross-repository heads.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Normalized PR snapshot; snapshot fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    }
+  ]
+}

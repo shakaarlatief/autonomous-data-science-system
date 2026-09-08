@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 373
+**Checkpoint:** 374
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 374 preserves native GitHub schema-capture Batch 1 from the same fixed fresh GitHub-only conversation. Exact host-visible contracts for projected actions 1-15 are now machine-preserved in `docs/research/github_connector_native_schema_capture.json` and mechanically validated at `15 / 89`; no GitHub action was invoked. The first batch establishes an important parity constraint: all fifteen actions expose object input contracts, but all fifteen project return type `any`, no separate action-title metadata, and no machine-readable structured error schema. Several cross-field rules are descriptive rather than structurally encoded, including review-body conditions, the `create_branch` sha/base_ref XOR, and parts of `create_pull_request` validation. Exact projected enums include `add_review_to_pr.action = COMMENT | APPROVE | REQUEST_CHANGES` and `create_blob.encoding = utf-8 | base64` with default `utf-8`. Implementation remains unstarted; projected actions 16-30 are now the exact next discovery-only Batch 2, including the corrected `GitHub.download_user_content` action.
 
 Checkpoint 373 corrects the one exact-name defect exposed when the required fresh GitHub-only schema-capture conversation returned its actual projected inventory. The host again projected exactly 89 actions and no GitHub action was invoked. Compared with the Checkpoint 372 reconstructed inventory, the fresh projection contains `GitHub.download_user_content`, not `GitHub.add_issue_comment`; `GitHub.add_comment_to_issue` remains the projected issue-comment creation action. Because Validation 128 never publicly preserved all exact names, Validation 130 classifies this as `RECONSTRUCTION_DEFECT_NOT_CONNECTOR_DRIFT`. The schema-version-2 machine inventory now preserves the exact fresh projected order and the validator asserts that order. The Checkpoint 372 GitHub App/device-flow, installation-scope, REST/GraphQL and mutation-safety architecture remains accepted. Native schema capture is now active in the same fixed GitHub-only conversation, with projected actions 1-15 as Batch 1 and implementation still not started.
 
@@ -393,6 +395,15 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/374_github_native_schema_capture_batch1_preserved.md
+docs/local_execution/validation/131_github_native_schema_capture_batch1_preserved.md
+docs/research/github_connector_native_schema_capture.json
+docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
+docs/checkpoints/373_github_fresh_projection_exact_inventory_corrected_schema_capture_opened.md
+docs/local_execution/validation/130_github_fresh_projection_exact_inventory_correction_and_schema_capture_opened.md
+docs/research/github_connector_89_action_inventory.json
+docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
+docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md
 docs/checkpoints/347_runtime_maintenance_fresh_chat_schema_projection_failed_localized.md
 docs/local_execution/validation/105_runtime_maintenance_fresh_chat_schema_projection_failed_localized.md
 docs/checkpoints/353_runtime_maintenance_first_live_self_restart_qualified.md
@@ -612,6 +623,13 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/374_github_native_schema_capture_batch1_preserved.md
+docs/local_execution/validation/131_github_native_schema_capture_batch1_preserved.md
+docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md
+docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
+docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
+docs/research/github_connector_89_action_inventory.json
+docs/research/github_connector_native_schema_capture.json
 docs/checkpoints/342_detached_runtime_helper_survival_qualified.md
 docs/local_execution/validation/100_detached_runtime_helper_survival_qualified.md
 docs/checkpoints/341_managed_tunnel_backend_recovery_qualified.md

@@ -251,9 +251,28 @@ Checkpoint 372 inventory only GitHub.add_issue_comment
 
 The architecture selected at Checkpoint 372 remains accepted. The correction changes one action identity/family assignment but does not change the 89-action count, GitHub App/device-flow direction, installation-derived scope, internal REST/GraphQL design, or exact remote parity state.
 
-## 12. Current boundary
+## 12. Native schema Batch 1 result
 
-Research 123 remains active. The exact fresh 89-action inventory is now frozen and native schema capture is in progress in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+Validation 131 / Checkpoint 374 preserve projected action contracts 1-15 from the same fixed GitHub-only conversation with zero GitHub action invocations. The specialized machine evidence now lives in `docs/research/github_connector_native_schema_capture.json` and is guarded by `scripts/check_github_connector_schema_capture.py`.
+
+Batch 1 demonstrates that input projection fidelity is substantially stronger than output/error projection fidelity:
+
+```text
+input object contracts                       15 / 15 exposed
+separate action title metadata                0 / 15 exposed
+projected return type                         any for 15 / 15
+machine-readable output schemas               0 / 15 exposed
+structured error schemas                      0 / 15 exposed
+pagination-bearing inputs                     0 / 15 exposed
+```
+
+Two projected enums are exact evidence: `add_review_to_pr.action = COMMENT | APPROVE | REQUEST_CHANGES` and `create_blob.encoding = utf-8 | base64` with default `utf-8`. Several cross-field rules are descriptive rather than structurally encoded, including review-body requirements, the `create_branch` sha/base_ref XOR, and parts of `create_pull_request` validation.
+
+Some descriptions state normalized issue/PR snapshots or SHA/compare results while the machine return schema remains `any`. This is preserved as an evidence gap rather than filled by inference. Final parity reconciliation must determine whether additional live-result capture is required before claiming exact output-shape parity.
+
+## 13. Current boundary
+
+Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `15 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
@@ -268,9 +287,11 @@ GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=IN_PROGRESS
+NATIVE_SCHEMA_CAPTURE=15_OF_89
+HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
+HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_1
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_2
 ```

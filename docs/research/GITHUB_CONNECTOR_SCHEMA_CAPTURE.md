@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** INVENTORY CONFIRMED / CHECKPOINT 372 EXACT-NAME RECONSTRUCTION CORRECTED / SCHEMA BATCHES IN PROGRESS
+**Status:** BATCH 1 PRESERVED / 15 OF 89 CONTRACTS CAPTURED / BATCH 2 NEXT
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -86,6 +86,21 @@ GitHub.create_pull_request
 
 After these actions, stop. Do not continue into the next batch.
 ```
+
+### Batch 1 preservation result
+
+Batch 1 completed with zero GitHub action invocations and is preserved by Validation 131 / Checkpoint 374 plus `github_connector_native_schema_capture.json`.
+
+```text
+captured contracts                         15 / 89
+separate action title metadata exposed      0 / 15
+projected return type                       any for 15 / 15
+machine-readable output schemas exposed     0 / 15
+structured error schemas exposed            0 / 15
+pagination-bearing inputs exposed            0 / 15
+```
+
+Exact enums observed in this batch are `add_review_to_pr.action = COMMENT | APPROVE | REQUEST_CHANGES` and `create_blob.encoding = utf-8 | base64` with default `utf-8`. Several conditional constraints are descriptive rather than structurally encoded. Final parity reconciliation must preserve this distinction and determine whether additional live-result evidence is needed for exact normalized output shapes.
 
 ## Batch 2: projected actions 16-30
 

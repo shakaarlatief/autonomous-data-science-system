@@ -1,9 +1,10 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE IN PROGRESS
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction.
+**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE 15 OF 89
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns native schema Batch 1.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
+**Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
 ## Purpose and provenance
 
@@ -302,6 +303,8 @@ visible result/error contract details
 
 That qualification is discovery-only and performs no GitHub mutation. The batching procedure is in `docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md`.
 
+Validation 131 / Checkpoint 374 preserve Batch 1 as `15 / 89`. All fifteen actions expose object input contracts, but all fifteen project return type `any`, no separate title metadata, and no machine-readable structured error schema. Several cross-field rules are descriptive rather than structurally encoded. This is now a first-class parity constraint: faithful input-schema reproduction can proceed from discovery, while exact normalized output-shape parity may require additional live-result evidence after the six discovery batches are reconciled.
+
 ## Design disposition
 
 ```text
@@ -318,6 +321,8 @@ CALLER_SUPPLIED_CREDENTIALS=FORBIDDEN
 CALLER_SUPPLIED_ARBITRARY_HTTP=FORBIDDEN
 TARGET_PUBLIC_SHAPE=EXPLICIT_GITHUB_ACTIONS
 TOOL_COUNT_SCALING=EMPIRICAL_QUALIFICATION_REQUIRED
-NATIVE_FULL_SCHEMA_CAPTURE=IN_PROGRESS
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_1
+NATIVE_FULL_SCHEMA_CAPTURE=15_OF_89
+HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
+HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_2
 ```
