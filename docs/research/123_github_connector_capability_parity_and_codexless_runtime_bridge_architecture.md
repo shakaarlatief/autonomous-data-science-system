@@ -422,31 +422,35 @@ The authorization configuration is deliberately separate from installation: devi
 
 The first installation is intentionally limited to the owner account and `Only select repositories` with only `shakaarlatief/autonomous-data-science-system`. This minimizes the first live authorization blast radius while allowing installation-intersection and read-only GraphQL sufficiency qualification. It does not weaken the final parity target; broader installations remain explicit future approvals.
 
-## 31. Current boundary
+## 31. Extended GitHub capability scope reopened
 
-Research 123 now reaches an account-bound manual boundary. The owner must create the GitHub App in GitHub's UI using the frozen registration configuration and install it on the one selected repository. No current Runtime Bridge action can perform this GitHub account-registration operation.
+Validation 150 / Checkpoint 393 preserve a deliberate product-scope expansion before the dedicated GitHub App is created. Research 123 is no longer only an 89-action parity implementation. The target becomes native connector parity plus selected GitHub capabilities that a project-owned App can expose but the provider-owned ChatGPT GitHub integration does not currently project. Repository creation/administration is explicitly desired.
 
-After creation/install, return only non-secret registration evidence (App ID, Client ID, installation ID and setting confirmation). Do not paste client secret, private key, token or device code. The next technical step is then the fixed server-owned Client ID configuration path followed by a metadata-only gate requiring `configured=true`, `storedAuthorization=false` before explicit device flow.
+Current official GitHub permission documentation plus the owner's live registration UI show a much broader permission surface than the seven parity-derived repository families. `GITHUB_APP_EXTENDED_PERMISSION_REVIEW.md` records the established repository/organization/user/enterprise headings and newer preview categories such as Agent tasks. Repository Administration(write) is the strongest immediate extension candidate because it covers repository creation/deletion/settings/teams/collaborators and related administrative APIs. Other strong candidates include Checks(write), Commit statuses(write), Deployments(write), Environments(write), Variables(write), code/security alert families, Attestations, Agent tasks/variables and selected Codespaces/Pages/custom-property capabilities.
+
+The review distinguishes maximum useful developer capability from indiscriminate authority. Secret-value permission families are deferred until a secure secret transport exists. Repository Webhooks(write) is deferred until external destinations are bounded. Organization/account/enterprise permissions will be selected only where they add concrete development workflows because they broaden approval requirements.
+
+The owner also clarified that the personal App installation should cover **All repositories**, not remain limited to the ADS repository. Organization repositories continue to require explicit installation/approval and remain bounded by the user + installation intersection.
+
+## 32. Current boundary
+
+Do not create the App from the Checkpoint 392 seven-permission prefill. That configuration remains historical parity/preflight evidence but is superseded pending the extended review.
+
+The immediate next task is to reconcile the complete live GitHub registration permission list for this account, including preview/live-only categories, against official current documentation and then freeze a broad professional developer-superset manifest. Only after that manifest is frozen should App registration resume.
 
 ```text
 RESEARCH123=ACTIVE
-GITHUB_APP_PERMISSION_MAPPING=89_OF_89
-GITHUB_APP_REPOSITORY_PERMISSION_COUNT=7
-GITHUB_APP_REGISTRATION_CONFIGURATION=FROZEN
-GITHUB_APP_OWNER=shakaarlatief
-GITHUB_APP_NAME=Codexless Runtime Bridge
-GITHUB_APP_VISIBILITY=ANY_ACCOUNT_PUBLIC
-DEVICE_FLOW=ENABLED
-EXPIRE_USER_AUTH_TOKENS=ENABLED
-REQUEST_OAUTH_ON_INSTALL=DISABLED
-WEBHOOKS=DISABLED
-PRIVATE_KEY_BOOTSTRAP=NOT_USED
-INITIAL_INSTALL_SCOPE=ONE_SELECTED_REPOSITORY
+TARGET=GITHUB_PARITY_PLUS_EXTENSIONS
+PARITY_ACTION_COUNT=89
+PARITY_ONLY_APP_CREATION=PAUSED
+EXTENDED_PERMISSION_REVIEW=ACTIVE
+REPOSITORY_ADMINISTRATION=STRONG_CANDIDATE
+PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
 GITHUB_APP_REGISTERED=false
 GITHUB_APP_CLIENT_ID_CONFIGURED=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=OWNER_CREATE_AND_INSTALL_GITHUB_APP
+NEXT=CAPTURE_AND_RECONCILE_COMPLETE_LIVE_PERMISSION_UI
 ```
