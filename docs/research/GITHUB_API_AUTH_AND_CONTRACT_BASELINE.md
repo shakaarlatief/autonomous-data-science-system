@@ -305,7 +305,11 @@ The production keyring adapter is intentionally still a boundary rather than a l
 
 Validation 140 / Checkpoint 383 qualify the exact `@napi-rs/keyring@2.0.0` adapter on Windows x64. The package imports with the expected entry API, and one bounded normal-user-session synthetic Credential Manager lifecycle completed set/read-match/delete/verified-absence successfully. No GitHub credential was used. The earlier sandbox `ERROR_NO_SUCH_LOGON_SESSION` is classified as execution-context evidence rather than package incompatibility.
 
-## 14. Current disposition
+## 14. Main-runtime integration and dependency boundary
+
+Validation 141 / Checkpoint 384 integrate the internal G0 kernel into a main-runtime candidate with lazy startup and no public GitHub action registration. The source integration is qualified, but the current Runtime Release v1 mechanism cannot provision the exact native keyring package into the installed runtime because package manifests and `node_modules` are outside its bounded target roots. This deployment gap must close before a live configured G0 release.
+
+## 15. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -320,5 +324,5 @@ CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
 CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
 CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
 G0_IMPLEMENTATION_CONTRACT=READY
-NEXT=INTEGRATE_G0_INTO_MAIN_CODEXLESS_RUNTIME_CANDIDATE
+NEXT=BOUNDED_RUNTIME_DEPENDENCY_PROVISIONING_DESIGN
 ```

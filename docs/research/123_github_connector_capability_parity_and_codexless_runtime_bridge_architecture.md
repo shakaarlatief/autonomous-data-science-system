@@ -348,24 +348,33 @@ Validation 140 / Checkpoint 383 close the concrete Windows keyring discriminator
 
 This separates package/runtime viability from sandbox logon-session limitations. The temporary package tree and npm cache used for qualification were removed afterward.
 
-## 22. Current boundary
+## 22. Main-runtime G0 source integration
 
-Research 123 remains active. The G0 architecture, focused candidate tests, exact Windows package import, and OS Credential Manager storage lifecycle are all qualified. The next substantive work is to integrate those modules into a main Codexless runtime candidate with explicit dependency packaging/loading and integration regressions. Live GitHub authorization and public `github.*` actions remain deliberately later gates.
+Validation 141 / Checkpoint 384 preserve the first main-runtime source integration at private head `6ce0da8818a455731acc10ba231ef9f52c0c8206`. Public-preview construction now has a lazy internal GitHub kernel that reads only whether `CODEXLESS_GITHUB_APP_CLIENT_ID` is configured at startup, performs no keyring import/credential read/network request until future internal services are requested, and exposes only non-secret runtime metadata. The MCP server factory and public allowlist are intentionally unchanged, so the public surface remains 63 tools with zero `github.*` actions.
+
+The candidate passes 9/9 source syntax checks and 4/4 integration regressions with zero secret-scanner matches and no live GitHub or OS credential activity. The private push passes `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`.
+
+The release-path inspection exposes one deployment blocker: Runtime Release v1 owns only `src`, `test`, `scripts`, and `config` targets and has no package dependency transaction. It cannot provision `@napi-rs/keyring@2.0.0` into the installed runtime. Because temporary host-qualification staging was removed, a source-only G0 release would be incomplete when configured.
+
+## 23. Current boundary
+
+Research 123 remains active. G0 logic, Windows storage, and main-runtime source composition are qualified. The next substantive work is a bounded dependency provisioning/rollback architecture for exact runtime packages. It must not accept caller-selected packages, arbitrary install commands, or committed native `node_modules` blobs. Live GitHub authorization and action publication remain later gates.
 
 ```text
 RESEARCH123=ACTIVE
 G0_INTERNAL_CANDIDATE=IMPLEMENTED
-G0_PRIVATE_HEAD=3c5f3688ec578c0817953890dc69ecb7ce679153
-G0_FOCUSED_TESTS=12_OF_12_PASS
-WINDOWS_KEYRING_IMPORT=PASS
+G0_MAIN_RUNTIME_SOURCE_INTEGRATION=QUALIFIED
+G0_PRIVATE_HEAD=6ce0da8818a455731acc10ba231ef9f52c0c8206
+G0_SOURCE_SYNTAX=9_OF_9_PASS
+G0_INTEGRATION_TESTS=4_OF_4_PASS
 WINDOWS_CREDENTIAL_MANAGER_ROUNDTRIP=PASS
-PROTECTED_TOKEN_STORE=IMPLEMENTATION_QUALIFIED
-GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
-PRACTICAL_ACTION_MAPPING=READY
-LIVE_GITHUB_CREDENTIAL=NOT_USED
-PUBLIC_GITHUB_ACTIONS=NOT_REGISTERED
-LIVE_CODEXLESS_G0=NOT_INSTALLED
+RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+PUBLIC_TOOL_COUNT=63
+PUBLIC_GITHUB_ACTIONS=0
+RUNTIME_RELEASE_V1_PACKAGE_PROVISIONING=NOT_SUPPORTED
+G0_LIVE_RELEASE=BLOCKED_BY_DEPENDENCY_PROVISIONING
+LIVE_GITHUB_AUTH=NOT_STARTED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=INTEGRATE_G0_INTO_MAIN_CODEXLESS_RUNTIME_CANDIDATE
+NEXT=BOUNDED_RUNTIME_DEPENDENCY_PROVISIONING_DESIGN
 ```

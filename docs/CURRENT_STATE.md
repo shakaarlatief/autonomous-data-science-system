@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 383
+**Checkpoint:** 384
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 384 qualifies the first main-runtime G0 source-integration candidate at private local-runtime head `6ce0da8818a455731acc10ba231ef9f52c0c8206`. The candidate composes a lazy internal GitHub runtime kernel into public-preview construction while preserving the existing 63-tool public surface and zero `github.*` actions. Syntax checks pass 9/9, integration regressions pass 4/4, the secret scanner reports zero matches, and the private push passes `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`. The only newly localized live-release blocker is deployment dependency provisioning: Runtime Release v1 may target only `src`, `test`, `scripts`, and `config`, and cannot provision root package manifests or `node_modules`; the Windows-qualified `@napi-rs/keyring@2.0.0` staging tree was intentionally removed. The next work is therefore a bounded deterministic dependency-provisioning/rollback extension, not live GitHub auth or public action registration.
 
 Checkpoint 383 closes the concrete Windows protected-store discriminator. The exact `@napi-rs/keyring@2.0.0` package loaded successfully on Windows x64 and one bounded normal-user-session synthetic Credential Manager lifecycle returned `set=true`, `readMatch=true`, `delete=true`, `absentAfterDelete=true`, and `cleanupAttempted=true`. No GitHub token was used, the synthetic secret stayed in memory and was not printed, and staging-only `node_modules`/npm-cache artifacts were removed afterward. The earlier sandbox `ERROR_NO_SUCH_LOGON_SESSION` is therefore localized to sandbox execution context rather than keyring incompatibility. Main Codexless G0 integration is now the next step; live GitHub authorization and public `github.*` actions remain unstarted.
 
@@ -413,6 +415,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/384_github_g0_runtime_integration_candidate_qualified_dependency_provisioning_next.md
+docs/local_execution/validation/141_github_g0_main_runtime_integration_candidate_qualified.md
 docs/checkpoints/383_github_g0_windows_keyring_qualified_runtime_integration_next.md
 docs/local_execution/validation/140_github_g0_windows_keyring_host_roundtrip_qualified.md
 docs/checkpoints/382_github_g0_private_candidate_qualified_keyring_runtime_next.md
@@ -661,6 +665,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/384_github_g0_runtime_integration_candidate_qualified_dependency_provisioning_next.md
+docs/local_execution/validation/141_github_g0_main_runtime_integration_candidate_qualified.md
 docs/checkpoints/383_github_g0_windows_keyring_qualified_runtime_integration_next.md
 docs/local_execution/validation/140_github_g0_windows_keyring_host_roundtrip_qualified.md
 docs/checkpoints/382_github_g0_private_candidate_qualified_keyring_runtime_next.md
