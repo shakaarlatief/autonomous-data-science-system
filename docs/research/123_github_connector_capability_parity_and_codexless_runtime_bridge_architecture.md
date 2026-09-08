@@ -219,16 +219,40 @@ The stage should proceed in this order:
 12. resume Research 113 or the owner's separately planned next stage according to the explicit owner decision at closure.
 ```
 
-## 10. Current boundary
+## 10. ChatGPT-20 parity mapping and architecture result
 
-Research 123 is active. No GitHub parity implementation, credential change, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion has been authorized merely by this research record.
+The first substantive Research 123 design pass is now preserved in:
+
+```text
+docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
+docs/research/github_connector_89_action_inventory.json
+docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
+scripts/check_github_connector_parity_inventory.py
+```
+
+The exact 89 action names are mapped one-for-one to target `github.*` Runtime Bridge actions. Inspection of the current Runtime Bridge implementation finds no exact remote GitHub REST/GraphQL action, so exact parity is presently `0 / 89`; the existing local semantic Git layer is reusable architecture, not remote GitHub parity.
+
+The preferred authentication design is a dedicated GitHub App using a user access token obtained through GitHub device flow. This is required to preserve installation-aware semantics without exposing caller-supplied credentials. Repository scope follows the app installation; API transport is an internal server-owned REST/GraphQL client; access and refresh tokens remain outside ordinary Git and MCP arguments/results.
+
+The design also freezes action-specific pagination/error/mutation rules, explicit `github.*` public naming, artifact resource handoff, non-force/stale-head safeguards, and incremental projection qualification toward the full 89-action surface.
+
+One evidence gap remains before implementation contracts can be frozen: Validation 128 preserved the exact count and capability families but not the complete native action schemas. The next gate is therefore one fresh GitHub-only discovery conversation using the preserved batched schema-capture procedure. It performs no GitHub mutation.
+
+## 11. Current boundary
+
+Research 123 remains active. The 89-action functional mapping and authentication/API architecture are designed; implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
 GITHUB_CONNECTOR_BASELINE=89_ACTIONS_OBSERVED
 GITHUB_NEGATIVE_CHALLENGE=SAME_89_ACTIONS
+GITHUB_ACTION_NAMES_MAPPED=89_OF_89
+RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
+AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
+TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
+NATIVE_SCHEMA_CAPTURE=PENDING
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=CHATGPT20_RECONSTRUCT_AND_DESIGN_GITHUB_PARITY
+NEXT=FRESH_READ_ONLY_89_ACTION_SCHEMA_CAPTURE
 ```

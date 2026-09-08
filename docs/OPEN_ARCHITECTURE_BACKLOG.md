@@ -1111,6 +1111,8 @@ Negative connector findings remain conservative `NOT_OBSERVED_IN_THIS_PROJECTION
 
 Research 123 owns the implementation and qualification route. Research 113 is paused, not completed. Source Vault remains paused. The project owner's separately planned next stage comes after this parity work unless explicitly redirected.
 
+Checkpoint 372 design work maps all 89 exact baseline action names into the planned github.* Runtime Bridge namespace and selects a dedicated GitHub App user-token/device-flow architecture with installation-derived repository scope, internal REST/GraphQL transport, server-owned secret storage, structured pagination/errors and mutation guards. Exact remote parity remains 0/89 because implementation has not started. The public qualification had not preserved complete native schemas, so the next Research 123 gate is the discovery-only batched 89-action schema capture defined in docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md; no GitHub mutation is required for that gate.
+
 ---
 
 # Continuation obligations that must not be forgotten

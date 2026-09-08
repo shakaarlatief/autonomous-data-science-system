@@ -309,6 +309,9 @@ docs/research/120_automatic_hybrid_pdf_direct_source_routing_and_managed_artifac
 docs/research/121_non_pdf_file_capability_matrix_and_native_handoff_reuse.md
 docs/research/122_runtime_self_maintenance_lifecycle_and_device_independent_access.md
 docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md
+docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
+docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
+docs/research/github_connector_89_action_inventory.json
 docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
@@ -474,6 +477,7 @@ docs/local_execution/validation/128_github_connector_capability_parity_baseline_
 docs/checkpoints/370_github_parity_stage_opened_chatgpt20_handoff_ready.md
 docs/local_execution/validation/129_private_companion_runtime_bridge_authority_and_semantic_git_qualified.md
 docs/checkpoints/371_private_companion_runtime_bridge_authority_qualified.md
+docs/checkpoints/372_github_89_action_parity_matrix_and_auth_architecture_frozen.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
@@ -769,7 +773,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-371 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-372 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 
