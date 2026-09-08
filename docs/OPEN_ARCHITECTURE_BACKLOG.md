@@ -1129,6 +1129,8 @@ Validation 136 / Checkpoint 379 complete the six-batch native schema discovery a
 
 Validation 137 / Checkpoint 380 close that reconciliation. All 89 host-visible request contracts are captured, but exact native-wrapper wire parity remains incomplete because every result/error schema is hidden and `create_tree` retains nested input genericization. The project therefore rejects an indiscriminate 89-action live replay: practical action mapping is ready, authoritative GitHub platform contract mapping becomes the primary evidence source, and targeted native wrapper qualifications are reserved for material behaviors that survive that mapping. The independent G0 GitHub App/device-flow/auth/REST-GraphQL kernel is ready to begin; no action-specific parity publication is implied.
 
+Validation 138 / Checkpoint 381 freeze the first authoritative GitHub platform pass. GitHub App user-access-token/device-flow auth, installation/user intersection scope, eight-hour/six-month token rotation, github.com REST `2026-03-10`, required User-Agent, create-tree nested entry semantics, create-PR head/base requirements and same-path Contents serialization are now source-backed. G0 implementation may begin without live credentials; the protected Windows token-store mechanism is the next local design choice.
+
 ---
 
 # Continuation obligations that must not be forgotten

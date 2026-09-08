@@ -326,34 +326,36 @@ This result does **not** invalidate practical action mapping. Action names, host
 
 G0 is opened because the remaining gaps are action-specific and do not constrain the independent GitHub authority/API substrate. G0 may implement GitHub App/device-flow authorization, protected server-owned token lifecycle, installation-derived scope, bounded REST/GraphQL transport and transport-level semantic errors without declaring any `github.*` action parity-qualified. Action-specific publication remains gated by its relevant platform/result/error evidence. Broad live replay of all 89 native actions is not justified merely to sample hidden `any` results.
 
-## 19. Current boundary
+## 19. Official GitHub API/auth baseline
 
-Research 123 remains active. Native host-visible schema discovery and final reconciliation are complete. Exact native-wrapper wire cloning remains incomplete, but practical action/request mapping is ready. The next substantive phase is G0 plus authoritative GitHub API contract mapping, with targeted native wrapper qualification only for concrete material gaps that survive platform mapping.
+Validation 138 / Checkpoint 381 apply current official GitHub platform documentation to the reconciled connector surface. The selected GitHub App user-access-token/device-flow architecture is confirmed: user tokens are bounded by both app and user access, installation scope is directly enumerable, device-flow token issuance does not require a client secret, and refresh likewise may omit the client secret when the token originated through device flow. The current expiring user-token lifecycle is eight hours plus a six-month refresh token.
+
+For the first github.com target, the REST transport is pinned to API version `2026-03-10`, `application/vnd.github+json`, a fixed valid User-Agent and Bearer user authorization. Enterprise Server is intentionally separate because supported REST API versions differ.
+
+The same platform pass closes the most important host-projection request gaps: Git Tree entries now have authoritative path/mode/type/sha/content semantics; create-PR requires normalized head/base and title/issue conditional behavior; Contents create/update/delete operations on the same path must be serialized. Native alias precedence remains hidden, so Codexless adopts an explicit fail-closed conflict rule rather than guessing.
+
+## 20. Current boundary
+
+Research 123 remains active. G0 now has both the reconciled native capability map and the authoritative GitHub platform contract needed to begin implementation. No live credential or GitHub mutation is required for the first local-runtime candidate. The concrete protected Windows token-store implementation is the main remaining G0 design choice.
 
 ```text
 RESEARCH123=ACTIVE
-GITHUB_CONNECTOR_BASELINE=89_ACTIONS_OBSERVED
-GITHUB_NEGATIVE_CHALLENGE=SAME_89_ACTIONS
-FRESH_GITHUB_ACTION_COUNT=89
-FRESH_GITHUB_ACTIONS_INVOKED=0
-GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 NATIVE_HOST_VISIBLE_SCHEMA_CAPTURE=89_OF_89_COMPLETE
 GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
-EXACT_NATIVE_WRAPPER_WIRE_CONTRACT=INCOMPLETE
 PRACTICAL_ACTION_MAPPING=READY
-RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
-AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
-TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-CREATE_TREE_INNER_SCHEMA=GENERICIZED
-HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_89_OF_89
-HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_89_OF_89
-PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
-ENTERPRISE_SELECTOR_SCOPE=FOLLOWUP_REQUIRED
-G0_AUTH_TRANSPORT_KERNEL=READY_TO_BEGIN
+GITHUB_APP_USER_TOKEN_MODEL=CONFIRMED
+DEVICE_FLOW_NO_CLIENT_SECRET=CONFIRMED
+REFRESH_NO_CLIENT_SECRET_AFTER_DEVICE_FLOW=CONFIRMED
+INSTALLATION_USER_SCOPE=CONFIRMED
+REST_GITHUB_COM_API_VERSION=2026-03-10
+REST_USER_AGENT_REQUIRED=CONFIRMED
+CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
+CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
+CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
+G0_IMPLEMENTATION_CONTRACT=READY
+LIVE_GITHUB_CREDENTIALS=NOT_REQUIRED_FOR_FIRST_CANDIDATE
 ACTION_SPECIFIC_PARITY_PUBLICATION=EVIDENCE_GATED
-BROAD_NATIVE_89_ACTION_REPLAY=NOT_JUSTIFIED
-CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=G0_PLUS_AUTHORITATIVE_GITHUB_API_CONTRACT_MAPPING
+NEXT=G0_PROTECTED_TOKEN_STORE_AND_AUTH_TRANSPORT_IMPLEMENTATION
 ```

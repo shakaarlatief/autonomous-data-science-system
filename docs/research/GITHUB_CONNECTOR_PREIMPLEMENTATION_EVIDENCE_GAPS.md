@@ -1,7 +1,7 @@
 # GitHub Connector Preimplementation Evidence Gaps
 
 **Date:** 2026-09-08
-**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / PRACTICAL CAPABILITY MAPPING READY / EXACT NATIVE WIRE CONTRACT INCOMPLETE
+**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / FIRST GITHUB PLATFORM GAPS CLOSED / G0 IMPLEMENTATION READY
 **Research:** Research 123
 **Purpose:** Convert the final 89-action native-schema reconciliation into a bounded evidence plan that closes only gaps material to practical GitHub parity, without attempting to clone host-internal wrapper details that were never projected.
 
@@ -112,6 +112,12 @@ Already-proven specific semantics, such as `fetch_pr_file_patch` valid-empty ver
 
 `fetch_issue.repository_url` and `get_repo.repository_url` explicitly mention GitHub Enterprise Server custom hostnames and GHE.com API hosts. This is endpoint-specific evidence, not proof of universal Enterprise support. G0 should avoid an architecture that precludes future Enterprise routing, while initial github.com/GitHub App qualification may remain the bounded first target. Enterprise parity must be declared separately.
 
+## Official GitHub platform pass
+
+Validation 138 / Checkpoint 381 close the initial platform-level gaps using current official GitHub documentation. `create_tree` nested entry semantics, create-PR normalized head/base requirements, GitHub App user-token/device-flow authority, installation-derived user scope, github.com REST versioning/headers and same-path Contents serialization are now implementation-grade.
+
+The remaining hidden native wrapper outputs/errors do not reopen those platform contracts. They remain per-action result/qualification concerns.
+
 ## Implementation gate
 
 ```text
@@ -123,4 +129,4 @@ ACTION_SPECIFIC PARITY PUBLICATION      BLOCKED UNTIL RELEVANT GAP DISPOSITION
 BROAD 89-ACTION NATIVE REPLAY           NOT JUSTIFIED
 ```
 
-The next substantive work is G0 plus authoritative GitHub API contract mapping. Targeted native-wrapper qualification is reserved for concrete material gaps that survive that mapping.
+The next substantive work is G0 protected-token/auth/transport implementation. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.

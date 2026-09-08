@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 380
+**Checkpoint:** 381
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 381 freezes the current official GitHub platform baseline needed for G0. Current GitHub documentation confirms the selected GitHub App user-access-token/device-flow model, user+app intersection authority, installation-derived repository scope, device-flow issuance and refresh without a client secret, eight-hour access tokens plus six-month refresh tokens, and explicit github.com REST version `2026-03-10` with required User-Agent. The same pass closes platform-level `create_tree` nested entry semantics, create-PR normalized head/base requirements, and same-path Contents write serialization. The G0 implementation contract is therefore ready without any live GitHub credential or mutation; the protected Windows token-store implementation is the main local design choice next.
 
 Checkpoint 380 preserves the final 89-action GitHub schema reconciliation. The six-batch host-visible capture is exact at `89 / 89` with zero missing/extra actions and zero GitHub action invocations, but the final native marker is `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE` because every output schema and structured error schema is hidden by the host projection and `create_tree.tree_elements` remains genericized. This is now explicitly treated as an exact native-wrapper wire-contract gap, not a failure of practical capability mapping. Action/request mapping is ready. Broad replay of all 89 native actions is not justified. The independent G0 GitHub App/device-flow/auth/REST-GraphQL transport kernel is ready to begin while action-specific publication remains evidence-gated. Authoritative GitHub API contract mapping and targeted wrapper qualification only for surviving material gaps are the next Research 123 route.
 
@@ -407,6 +409,9 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/381_github_official_api_baseline_g0_contract_ready.md
+docs/local_execution/validation/138_github_official_api_auth_and_first_contract_gaps_resolved.md
+docs/research/GITHUB_API_AUTH_AND_CONTRACT_BASELINE.md
 docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md
 docs/local_execution/validation/137_github_89_schema_final_reconciliation_contract_gaps_localized.md
 docs/research/GITHUB_CONNECTOR_PREIMPLEMENTATION_EVIDENCE_GAPS.md
@@ -648,6 +653,9 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/381_github_official_api_baseline_g0_contract_ready.md
+docs/local_execution/validation/138_github_official_api_auth_and_first_contract_gaps_resolved.md
+docs/research/GITHUB_API_AUTH_AND_CONTRACT_BASELINE.md
 docs/checkpoints/380_github_schema_reconciled_g0_and_targeted_evidence_ready.md
 docs/local_execution/validation/137_github_89_schema_final_reconciliation_contract_gaps_localized.md
 docs/research/GITHUB_CONNECTOR_PREIMPLEMENTATION_EVIDENCE_GAPS.md
