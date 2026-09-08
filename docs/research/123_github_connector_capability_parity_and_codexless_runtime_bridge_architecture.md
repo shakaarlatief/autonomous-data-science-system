@@ -286,9 +286,19 @@ Validation 133 / Checkpoint 376 preserve projected actions 31-45 and advance cum
 
 Pagination/selection behavior expands again: `fetch_pr_patch` spans all changed-file pages; workflow-run artifacts are first-page-only; workflow-run jobs are both latest-attempt-only and first-page-only; reaction readers expose explicit 1-based `page` plus `per_page`. `get_pr_diff` exposes `diff | patch` with default `diff`, while `get_pr_info` deliberately excludes code changes. `get_profile` is zero-argument. `get_repo` repeats the descriptive repository selector XOR and Enterprise/GHE.com URL evidence. `get_repo_collaborator_permission` exposes no permission-result enum, so result values remain an output-shape gap.
 
-## 15. Current boundary
+## 15. Native schema Batch 4 result
 
-Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `45 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
+Validation 134 / Checkpoint 377 preserve projected actions 46-60 and advance cumulative native schema capture to `60 / 89`, again with zero GitHub action invocations.
+
+Batch 4 strengthens the installation-aware discovery evidence through `list_installations`, `list_installed_accounts`, and `list_repositories_by_installation`. It also confirms that listing semantics remain action-specific: recent PRs internally paginate to a final `limit`; changed PR filenames span all file-list pages; recent issues continue until `top_k` or source exhaustion; repository list families expose zero-based `page_offset`; review-thread/review and organization-list pagination remain unspecified.
+
+Four actions are true zero-argument calls: `get_user_login`, `list_installed_accounts`, `list_user_org_memberships`, and `list_user_orgs`. Recent-PR `state` examples and repository `affiliation` examples remain plain strings rather than enums, while `lock_issue_conversation.lock_reason` is a genuine projected enum of `off-topic | too heated | resolved | spam` with null default.
+
+The host still projects return type `any` and no structured error schema across the batch, so installation/account/review/repository output models remain a later result-shape evidence question rather than an inferred contract.
+
+## 16. Current boundary
+
+Research 123 remains active. The exact fresh 89-action inventory is frozen and native schema capture has reached `60 / 89` in the same fixed GitHub-only conversation. Implementation has not started. No credential mutation, GitHub App registration, live GitHub action publication, live connector rename, runtime release, repository-administration mutation, or Source Vault ingestion is implied by this research record.
 
 ```text
 RESEARCH123=ACTIVE
@@ -303,17 +313,21 @@ GITHUB_ACTION_NAMES_MAPPED=89_OF_89
 RUNTIME_BRIDGE_EXACT_REMOTE_PARITY=0_OF_89
 AUTH_DIRECTION=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 TARGET_PUBLIC_ACTIONS=EXPLICIT_GITHUB_NAMESPACE
-NATIVE_SCHEMA_CAPTURE=45_OF_89
+NATIVE_SCHEMA_CAPTURE=60_OF_89
 CREATE_TREE_INNER_SCHEMA=GENERICIZED
 PAGINATION_POLICY=ACTION_SPECIFIC_CONFIRMED
 VALID_EMPTY_VS_NOT_FOUND=EXPLICITLY_OBSERVED
 NO_BLIND_RETRY_SEMANTIC=OBSERVED
 ENTERPRISE_SELECTOR_SCOPE=FOLLOWUP_REQUIRED
 PERMISSION_RESULT_ENUM=NOT_PROJECTED
+INSTALLATION_DISCOVERY=CAPTURED
+ZERO_BASED_OFFSET_PAGINATION=CAPTURED
+REVIEW_LIST_PAGINATION=UNSPECIFIED
+LOCK_REASON_ENUM=CAPTURED
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED
 CONNECTOR_CANONICAL_NAME=CODEXLESS_RUNTIME_BRIDGE
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_4
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_5
 ```

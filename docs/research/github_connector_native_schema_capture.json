@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "qualificationDate": "2026-09-08",
-  "status": "PARTIAL_45_OF_89",
+  "status": "PARTIAL_60_OF_89",
   "sourceResearch": "docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md",
   "sourceInventory": "docs/research/github_connector_89_action_inventory.json",
-  "sourceValidation": "docs/local_execution/validation/133_github_native_schema_capture_batch3_preserved.md",
+  "sourceValidation": "docs/local_execution/validation/134_github_native_schema_capture_batch4_preserved.md",
   "projection": {
     "actionCount": 89,
     "actionsInvoked": 0,
@@ -18,7 +18,7 @@
     "errorCodeEnumExposed": false,
     "httpStatusMappingExposed": false,
     "retryContractExposed": false,
-    "capturedActionsWithPaginationInputs": 3,
+    "capturedActionsWithPaginationInputs": 8,
     "note": "Descriptions may expose semantic result/validation contracts that are not structurally encoded.",
     "batch2StrongestGenericization": "GitHub.create_tree.tree_elements items are projected only as { [key: string]: any }.",
     "batch2PaginationEvidence": {
@@ -32,15 +32,29 @@
       "GitHub.fetch_workflow_run_jobs": "FIRST_PAGE_ONLY_LATEST_ATTEMPT",
       "reaction_readers": "PAGE_PER_PAGE"
     },
-    "batch3ConcreteErrorEvidence": "GitHub.fetch_pr_file_patch documents patch=null for a valid PR missing the path, plus 404 for unresolved repository/PR and a no-retry-other-paths instruction."
+    "batch3ConcreteErrorEvidence": "GitHub.fetch_pr_file_patch documents patch=null for a valid PR missing the path, plus 404 for unresolved repository/PR and a no-retry-other-paths instruction.",
+    "batch4PaginationEvidence": {
+      "GitHub.get_users_recent_prs_in_repo": "INTERNAL_PAGINATION_TO_FINAL_LIMIT",
+      "GitHub.list_pr_changed_filenames": "ALL_FILE_LIST_PAGES_INTERNAL",
+      "GitHub.list_recent_issues": "INTERNAL_PAGINATION_TO_LIMIT_OR_EXHAUSTION",
+      "repository_list_family": "ZERO_BASED_OFFSET",
+      "review_threads_reviews_org_membership_lists": "UNSPECIFIED"
+    },
+    "batch4ZeroArgumentActions": [
+      "GitHub.get_user_login",
+      "GitHub.list_installed_accounts",
+      "GitHub.list_user_org_memberships",
+      "GitHub.list_user_orgs"
+    ]
   },
-  "capturedCount": 45,
+  "capturedCount": 60,
   "batchesCompleted": [
     1,
     2,
-    3
+    3,
+    4
   ],
-  "nextOrdinal": 46,
+  "nextOrdinal": 61,
   "actions": [
     {
       "ordinal": 1,
@@ -2276,6 +2290,665 @@
       "resultContract": {
         "projectedType": "any",
         "description": "A permission level is returned, but value type, field name, enum, and supplementary role metadata are not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 46,
+      "nativeAction": "GitHub.get_user_login",
+      "titleExposed": false,
+      "title": null,
+      "description": "Return the GitHub login for the authenticated user.",
+      "inputType": null,
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [],
+        "properties": {}
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Identity/login of the currently authenticated GitHub user.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Returns the authenticated user login; raw string versus wrapped property is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 47,
+      "nativeAction": "GitHub.get_users_recent_prs_in_repo",
+      "titleExposed": false,
+      "title": null,
+      "description": "List the user's recent GitHub pull requests in a repository. limit is the final number of PRs returned. The connector paginates the underlying GitHub search endpoint to satisfy larger limits.",
+      "inputType": "get_users_recent_prs_in_repo_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name"
+        ],
+        "optional": [
+          "limit",
+          "state",
+          "include_diff",
+          "include_comments"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Final maximum number of PRs returned.",
+            "default": 20
+          },
+          "state": {
+            "type": "string",
+            "description": "PR state filter; open, closed and all are examples, not a projected enum.",
+            "default": "all"
+          },
+          "include_diff": {
+            "type": "boolean",
+            "description": "Include pull-request diff in each result.",
+            "default": false
+          },
+          "include_comments": {
+            "type": "boolean",
+            "description": "Include pull-request comments in each result.",
+            "default": false
+          }
+        }
+      },
+      "conditionalRules": [
+        "state examples open/closed/all are descriptive, not a machine enum."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "INTERNAL_PAGINATION_TO_FINAL_LIMIT",
+        "finalLimitInput": "limit",
+        "defaultFinalLimit": 20,
+        "automaticInternalPagination": true,
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false,
+        "exhaustionBehavior": "Continues until requested limit is satisfied or underlying results are exhausted; only limit-satisfaction is expressly stated by the description."
+      },
+      "classification": "read",
+      "resourceScope": "Recent pull requests for the authenticated user within one repository.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "PR collection; optional diff/comments; exact item schema not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 48,
+      "nativeAction": "GitHub.label_pr",
+      "titleExposed": false,
+      "title": null,
+      "description": "Label a pull request.",
+      "inputType": "label_pr_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "pr_number",
+          "label"
+        ],
+        "optional": [],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          },
+          "label": {
+            "type": "string",
+            "description": "Label to add to the pull request."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Label collection on one pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "No normalized PR/issue result contract is described; return remains any."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 49,
+      "nativeAction": "GitHub.list_installations",
+      "titleExposed": false,
+      "title": null,
+      "description": "List installations, optionally limited to managed setup account types.",
+      "inputType": "list_installations_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [
+          "manageable_only"
+        ],
+        "properties": {
+          "manageable_only": {
+            "type": "boolean",
+            "description": "Optionally limit installations to managed setup account types; exact account-type set is not projected.",
+            "default": false
+          }
+        }
+      },
+      "conditionalRules": [
+        "Exact account types covered by managed setup are not projected."
+      ],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "read",
+      "resourceScope": "GitHub App installations visible through the authenticated connection.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Installation collection; installation fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 50,
+      "nativeAction": "GitHub.list_installed_accounts",
+      "titleExposed": false,
+      "title": null,
+      "description": "List all accounts that the user has installed our GitHub app on.",
+      "inputType": null,
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [],
+        "properties": {}
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "DESCRIPTION_SAYS_ALL_BUT_MECHANISM_UNSPECIFIED",
+        "note": "Description says all accounts, but no page/cursor/continuation behavior is projected."
+      },
+      "classification": "read",
+      "resourceScope": "User or organization accounts on which the GitHub app is installed for the current user.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Account collection; fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 51,
+      "nativeAction": "GitHub.list_pr_changed_filenames",
+      "titleExposed": false,
+      "title": null,
+      "description": "List changed filenames for a PR across all paginated file-list pages.",
+      "inputType": "list_pr_changed_filenames_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ALL_FILE_LIST_PAGES_INTERNAL",
+        "automaticAllPages": true,
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false,
+        "limitInputExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Changed filenames for one pull request.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Semantic result is changed filenames; plain string array versus wrapper is not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 52,
+      "nativeAction": "GitHub.list_pull_request_review_threads",
+      "titleExposed": false,
+      "title": null,
+      "description": "List inline review threads on a pull request, including resolved state. Returns GraphQL review thread nodes, including comment bodies and resolution metadata.",
+      "inputType": "list_pull_request_review_threads_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "UNSPECIFIED",
+        "note": "No paging controls or all-pages guarantee projected."
+      },
+      "classification": "read",
+      "resourceScope": "GraphQL pull-request inline review threads.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "GraphQL review-thread nodes including comment bodies/resolution metadata; exact node/connection/comment schema not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 53,
+      "nativeAction": "GitHub.list_pull_request_reviews",
+      "titleExposed": false,
+      "title": null,
+      "description": "List review submissions on a pull request. Returns GraphQL review nodes normalized into the connector's review model.",
+      "inputType": "list_pull_request_reviews_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repo_full_name",
+          "pr_number"
+        ],
+        "optional": [],
+        "properties": {
+          "repo_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "pr_number": {
+            "type": "integer",
+            "description": "Pull-request number."
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "UNSPECIFIED",
+        "note": "No paging controls or all-pages guarantee projected."
+      },
+      "classification": "read",
+      "resourceScope": "Submitted GraphQL pull-request reviews.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "GraphQL review nodes normalized into connector review model; source and normalized model schemas not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 54,
+      "nativeAction": "GitHub.list_recent_issues",
+      "titleExposed": false,
+      "title": null,
+      "description": "Return the most recent GitHub issues the user can access. top_k is the final result limit. The connector transparently paginates GitHub's issues API until that limit is reached or no more pages exist.",
+      "inputType": "list_recent_issues_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [
+          "top_k"
+        ],
+        "properties": {
+          "top_k": {
+            "type": "integer",
+            "description": "Final result limit.",
+            "default": 20
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "INTERNAL_PAGINATION_TO_LIMIT_OR_EXHAUSTION",
+        "finalLimitInput": "top_k",
+        "defaultFinalLimit": 20,
+        "automaticInternalPagination": true,
+        "stopConditions": [
+          "top_k results reached",
+          "no more pages exist"
+        ],
+        "pageInputExposed": false,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Most recent issues accessible to the authenticated user.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Issue collection; issue model and ordering metadata not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 55,
+      "nativeAction": "GitHub.list_repositories",
+      "titleExposed": false,
+      "title": null,
+      "description": "List repositories accessible to the authenticated user.",
+      "inputType": "list_repositories_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [
+          "page_size",
+          "page_offset",
+          "owner",
+          "include_search_index_status"
+        ],
+        "properties": {
+          "page_size": {
+            "type": "integer",
+            "description": "Maximum number of results returned.",
+            "default": 20
+          },
+          "page_offset": {
+            "type": "integer",
+            "description": "Zero-based result offset.",
+            "default": 0
+          },
+          "owner": {
+            "type": "string|null",
+            "description": "Optional owner login filter.",
+            "default": null
+          },
+          "include_search_index_status": {
+            "type": "boolean",
+            "description": "Include code-search-index availability metadata for each repository.",
+            "default": false
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ZERO_BASED_OFFSET",
+        "pageSizeInput": "page_size",
+        "defaultPageSize": 20,
+        "offsetInput": "page_offset",
+        "defaultOffset": 0,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repositories accessible to the authenticated user, optionally owner-filtered.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository collection; search-index-status enrichment fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 56,
+      "nativeAction": "GitHub.list_repositories_by_affiliation",
+      "titleExposed": false,
+      "title": null,
+      "description": "List repositories accessible to the authenticated user filtered by affiliation.",
+      "inputType": "list_repositories_by_affiliation_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "affiliation"
+        ],
+        "optional": [
+          "page_size",
+          "page_offset"
+        ],
+        "properties": {
+          "affiliation": {
+            "type": "string",
+            "description": "GitHub affiliation filter; owner, collaborator and organization_member are examples, not a projected enum."
+          },
+          "page_size": {
+            "type": "integer",
+            "description": "Maximum number of results.",
+            "default": 100
+          },
+          "page_offset": {
+            "type": "integer",
+            "description": "Zero-based result offset.",
+            "default": 0
+          }
+        }
+      },
+      "conditionalRules": [
+        "affiliation examples are descriptive rather than an enum."
+      ],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ZERO_BASED_OFFSET",
+        "pageSizeInput": "page_size",
+        "defaultPageSize": 100,
+        "offsetInput": "page_offset",
+        "defaultOffset": 0,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repositories accessible to authenticated user filtered by affiliation.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository collection; model omitted."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 57,
+      "nativeAction": "GitHub.list_repositories_by_installation",
+      "titleExposed": false,
+      "title": null,
+      "description": "List repositories accessible to the authenticated user.",
+      "inputType": "list_repositories_by_installation_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "installation_id"
+        ],
+        "optional": [
+          "page_size",
+          "page_offset"
+        ],
+        "properties": {
+          "installation_id": {
+            "type": "integer",
+            "description": "GitHub App installation ID used as filter."
+          },
+          "page_size": {
+            "type": "integer",
+            "description": "Maximum number of returned repositories.",
+            "default": 20
+          },
+          "page_offset": {
+            "type": "integer",
+            "description": "Zero-based result offset.",
+            "default": 0
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": true,
+        "behavior": "ZERO_BASED_OFFSET",
+        "pageSizeInput": "page_size",
+        "defaultPageSize": 20,
+        "offsetInput": "page_offset",
+        "defaultOffset": 0,
+        "cursorExposed": false,
+        "continuationExposed": false
+      },
+      "classification": "read",
+      "resourceScope": "Repositories accessible through one GitHub App installation.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Repository collection; installation/repository fields omitted."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 58,
+      "nativeAction": "GitHub.list_user_org_memberships",
+      "titleExposed": false,
+      "title": null,
+      "description": "List the authenticated user's organization memberships.",
+      "inputType": null,
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [],
+        "properties": {}
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "UNSPECIFIED",
+        "note": "No all-pages guarantee or continuation mechanism projected."
+      },
+      "classification": "read",
+      "resourceScope": "Organization-membership records for the authenticated GitHub user.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Membership states/roles/organization fields not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 59,
+      "nativeAction": "GitHub.list_user_orgs",
+      "titleExposed": false,
+      "title": null,
+      "description": "List organizations the authenticated user is a member of.",
+      "inputType": null,
+      "inputSchema": {
+        "type": "object",
+        "required": [],
+        "optional": [],
+        "properties": {}
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false,
+        "behavior": "UNSPECIFIED",
+        "note": "No all-pages guarantee or continuation mechanism projected."
+      },
+      "classification": "read",
+      "resourceScope": "Organizations of which the authenticated GitHub user is a member.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Organization fields/collection shape not projected."
+      },
+      "errorContract": {
+        "structuredSchemaExposed": false
+      }
+    },
+    {
+      "ordinal": 60,
+      "nativeAction": "GitHub.lock_issue_conversation",
+      "titleExposed": false,
+      "title": null,
+      "description": "Lock an issue or pull request conversation. Allowed lock_reason values are off-topic, too heated, resolved, and spam.",
+      "inputType": "lock_issue_conversation_input",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "repository_full_name",
+          "issue_number"
+        ],
+        "optional": [
+          "lock_reason"
+        ],
+        "properties": {
+          "repository_full_name": {
+            "type": "string",
+            "description": "Repository in owner/name form."
+          },
+          "issue_number": {
+            "type": "integer",
+            "description": "Issue number in the repository."
+          },
+          "lock_reason": {
+            "type": "string|null",
+            "description": "Optional reason for locking the conversation.",
+            "enum": [
+              "off-topic",
+              "too heated",
+              "resolved",
+              "spam"
+            ],
+            "default": null
+          }
+        }
+      },
+      "conditionalRules": [],
+      "pagination": {
+        "exposed": false
+      },
+      "classification": "write",
+      "resourceScope": "Conversation-lock state of an issue or pull request through GitHub shared issue/conversation model.",
+      "resultContract": {
+        "projectedType": "any",
+        "description": "Return remains any; Boolean/empty/normalized object form is not projected."
       },
       "errorContract": {
         "structuredSchemaExposed": false

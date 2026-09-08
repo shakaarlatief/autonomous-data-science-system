@@ -1,7 +1,7 @@
 # GitHub Connector 89-Action Native Schema Capture
 
 **Date:** 2026-09-08
-**Status:** BATCH 3 PRESERVED / 45 OF 89 CONTRACTS CAPTURED / BATCH 4 NEXT
+**Status:** BATCH 4 PRESERVED / 60 OF 89 CONTRACTS CAPTURED / BATCH 5 NEXT
 **Research:** Research 123
 **Purpose:** Capture the exact native GitHub connector action contracts from one fixed fresh 89-action projection without invoking any GitHub action.
 
@@ -213,6 +213,25 @@ GitHub.lock_issue_conversation
 
 After these actions, stop. Do not continue into the next batch.
 ```
+
+### Batch 4 preservation result
+
+Validation 134 / Checkpoint 377 preserve cumulative schema capture at `60 / 89` with zero GitHub action invocations. Batch 4 confirms installation-aware discovery, several additional pagination modes, four zero-argument actions, and one genuine mutation enum:
+
+```text
+GitHub.get_user_login                       zero-argument
+GitHub.list_installed_accounts              zero-argument
+GitHub.list_user_org_memberships            zero-argument
+GitHub.list_user_orgs                       zero-argument
+GitHub.get_users_recent_prs_in_repo         internal pagination to final limit
+GitHub.list_pr_changed_filenames            all file-list pages internally
+GitHub.list_recent_issues                    until top_k or source exhaustion
+repository list family                      zero-based page_offset
+review threads / review submissions         pagination unspecified
+GitHub.lock_issue_conversation.lock_reason  off-topic | too heated | resolved | spam
+```
+
+The recent-PR `state` examples and repository `affiliation` examples remain plain strings, not projected enums. Installation/account collections and review-thread/review collections still lack machine-readable result schemas.
 
 ## Batch 5: projected actions 61-75
 

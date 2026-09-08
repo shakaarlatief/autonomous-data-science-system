@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE 45 OF 89
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns native schema Batch 1; Validation 132 owns Batch 2; Validation 133 owns Batch 3.
+**Status:** ACTIVE RESEARCH 123 DESIGN BASELINE / FRESH 89-ACTION EXACT INVENTORY CONFIRMED / NATIVE SCHEMA CAPTURE 60 OF 89
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns native schema Batch 1; Validation 132 owns Batch 2; Validation 133 owns Batch 3; Validation 134 owns Batch 4.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -309,6 +309,8 @@ Validation 132 / Checkpoint 375 advance the same fixed projection to `30 / 89`. 
 
 Validation 133 / Checkpoint 376 advance the fixed projection to `45 / 89`. Batch 3 provides the first concrete valid-empty versus 404 contract (`fetch_pr_file_patch`), including an explicit no-retry-other-paths rule after the documented 404. It further distinguishes all-pages PR patching, first-page-only workflow artifacts, latest-attempt/first-page workflow jobs, and explicit page/per_page reaction pagination. `get_pr_diff` exposes `diff | patch` with default `diff`; `get_profile` is zero-argument; `get_repo` repeats the Enterprise-aware selector XOR; collaborator-permission result values remain unprojected.
 
+Validation 134 / Checkpoint 377 advance the fixed projection to `60 / 89`. Batch 4 captures installation/account discovery directly, confirms internal-final-limit, all-pages, until-limit-or-exhaustion and zero-based-offset pagination variants, and preserves review-thread/review/org-list pagination as unspecified. Four actions are true zero-argument calls. `lock_issue_conversation.lock_reason` is a genuine four-value enum, while recent-PR state and repository affiliation examples remain unrestricted strings.
+
 ## Design disposition
 
 ```text
@@ -325,8 +327,8 @@ CALLER_SUPPLIED_CREDENTIALS=FORBIDDEN
 CALLER_SUPPLIED_ARBITRARY_HTTP=FORBIDDEN
 TARGET_PUBLIC_SHAPE=EXPLICIT_GITHUB_ACTIONS
 TOOL_COUNT_SCALING=EMPIRICAL_QUALIFICATION_REQUIRED
-NATIVE_FULL_SCHEMA_CAPTURE=45_OF_89
+NATIVE_FULL_SCHEMA_CAPTURE=60_OF_89
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_4
+NEXT=GITHUB_SCHEMA_CAPTURE_BATCH_5
 ```

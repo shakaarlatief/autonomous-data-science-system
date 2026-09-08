@@ -145,6 +145,37 @@ def main() -> int:
         if not any("No permission-result enum is projected" in value for value in permission.get("conditionalRules", [])):
             fail("get_repo_collaborator_permission result-enum omission not preserved")
 
+    if captured_count >= 60:
+        if actions[45].get("inputType") is not None or actions[45]["inputSchema"]["properties"] != {}:
+            fail("get_user_login zero-argument contract drift")
+        recent_prs = actions[46]
+        if recent_prs.get("pagination", {}).get("behavior") != "INTERNAL_PAGINATION_TO_FINAL_LIMIT":
+            fail("get_users_recent_prs_in_repo pagination contract drift")
+        if recent_prs["inputSchema"]["properties"]["state"].get("enum") is not None:
+            fail("get_users_recent_prs_in_repo state examples must not become an enum")
+        changed = actions[50]
+        if changed.get("pagination", {}).get("behavior") != "ALL_FILE_LIST_PAGES_INTERNAL":
+            fail("list_pr_changed_filenames all-pages contract drift")
+        recent_issues = actions[53]
+        if recent_issues.get("pagination", {}).get("behavior") != "INTERNAL_PAGINATION_TO_LIMIT_OR_EXHAUSTION":
+            fail("list_recent_issues pagination contract drift")
+        repos = actions[54]
+        if repos.get("pagination", {}).get("behavior") != "ZERO_BASED_OFFSET":
+            fail("list_repositories offset pagination contract drift")
+        affiliation = actions[55]
+        if affiliation["inputSchema"]["properties"]["affiliation"].get("enum") is not None:
+            fail("list_repositories_by_affiliation examples must not become an enum")
+        for index in (54, 55, 56):
+            if actions[index].get("pagination", {}).get("behavior") != "ZERO_BASED_OFFSET":
+                fail(f"repository list offset pagination drift at ordinal {index + 1}")
+        zero_arg_indices = (45, 49, 57, 58)
+        if any(actions[i].get("inputType") is not None for i in zero_arg_indices):
+            fail("Batch 4 zero-argument action contract drift")
+        lock = actions[59]
+        reason = lock["inputSchema"]["properties"]["lock_reason"]
+        if reason.get("enum") != ["off-topic", "too heated", "resolved", "spam"] or reason.get("default") is not None:
+            fail("lock_issue_conversation lock_reason enum/default drift")
+
     print("GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE=PASS")
     print(f"GITHUB_CONNECTOR_NATIVE_SCHEMA_CAPTURE_COUNT={captured_count}_OF_89")
     return 0

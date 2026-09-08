@@ -1121,6 +1121,8 @@ Validation 132 / Checkpoint 375 advance the same fixed discovery projection to `
 
 Validation 133 / Checkpoint 376 advance the same discovery projection to `45 / 89`. Batch 3 adds explicit valid-empty (`patch=null`) versus unresolved-resource (404) semantics for `fetch_pr_file_patch` plus a documented no-retry-other-paths rule, further differentiates all-pages, first-page-only, latest-attempt-only, and page/per_page pagination contracts, and confirms a zero-argument profile lookup plus repository-selector XOR. Collaborator-permission output values remain hidden behind `any`, so exact result enums remain a later parity-evidence gap. Batch 4 is next; implementation remains unstarted.
 
+Validation 134 / Checkpoint 377 advance the same fixed discovery projection to `60 / 89`. Batch 4 captures installation/account discovery and installation-scoped repository listing, further differentiates final-limit/internal, all-pages, until-limit-or-exhaustion, zero-based-offset, and unspecified pagination contracts, and records four zero-argument identity/account/org actions. `lock_issue_conversation.lock_reason` is a real four-value enum while recent-PR state and repository affiliation examples remain untyped strings. Batch 5 is next; implementation remains unstarted.
+
 ---
 
 # Continuation obligations that must not be forgotten
