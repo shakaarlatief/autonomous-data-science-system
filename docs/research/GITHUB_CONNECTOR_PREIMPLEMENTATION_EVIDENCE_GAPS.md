@@ -1,7 +1,7 @@
 # GitHub Connector Preimplementation Evidence Gaps
 
 **Date:** 2026-09-08
-**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / FIRST GITHUB PLATFORM GAPS CLOSED / G0 IMPLEMENTATION READY
+**Status:** FINAL SCHEMA RECONCILIATION COMPLETE / G0 PRIVATE CANDIDATE QUALIFIED / ACTION-SPECIFIC GAPS REMAIN EVIDENCE-GATED
 **Research:** Research 123
 **Purpose:** Convert the final 89-action native-schema reconciliation into a bounded evidence plan that closes only gaps material to practical GitHub parity, without attempting to clone host-internal wrapper details that were never projected.
 
@@ -118,15 +118,19 @@ Validation 138 / Checkpoint 381 close the initial platform-level gaps using curr
 
 The remaining hidden native wrapper outputs/errors do not reopen those platform contracts. They remain per-action result/qualification concerns.
 
+## G0 implementation result
+
+Validation 139 / Checkpoint 382 move G0 from design to a privately preserved candidate. Twelve focused tests cover protected-store serialization, device flow, refresh, fixed REST routing, semantic errors, GraphQL registry and installation-derived scope. No native-wrapper result-shape claim is added by this work. The Windows OS-keyring adapter remains a concrete runtime qualification gate before integration.
+
 ## Implementation gate
 
 ```text
 HOST_VISIBLE_SCHEMA_CAPTURE             COMPLETE 89 / 89
 EXACT_NATIVE_WRAPPER_WIRE_CONTRACT      INCOMPLETE
 PRACTICAL_ACTION_MAPPING                READY
-G0_AUTH_TRANSPORT_KERNEL                READY TO BEGIN
+G0_AUTH_TRANSPORT_KERNEL                PRIVATE CANDIDATE QUALIFIED
 ACTION_SPECIFIC PARITY PUBLICATION      BLOCKED UNTIL RELEVANT GAP DISPOSITION
 BROAD 89-ACTION NATIVE REPLAY           NOT JUSTIFIED
 ```
 
-The next substantive work is G0 protected-token/auth/transport implementation. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.
+The next substantive work is Windows keyring adapter import and synthetic credential round-trip qualification, followed by main-runtime G0 integration if that gate passes. Authoritative GitHub API mapping continues per action bundle, while targeted native-wrapper qualification remains reserved for concrete material gaps that survive platform mapping.

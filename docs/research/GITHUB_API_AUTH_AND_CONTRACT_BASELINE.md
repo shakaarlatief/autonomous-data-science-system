@@ -295,7 +295,13 @@ GitHubGraphqlTransport
 
 The protected-store concrete Windows implementation remains the main G0 implementation design choice still to resolve locally. It should reuse a maintained OS protection mechanism where practical rather than invent custom cryptography.
 
-## 12. Current disposition
+## 12. G0 private candidate implementation
+
+Validation 139 / Checkpoint 382 implement the source-backed contract at private head `3c5f3688ec578c0817953890dc69ecb7ce679153`. Syntax validation and 12 focused fake-transport/keyring regressions pass. The implementation preserves no-plaintext-fallback protected storage, private device codes, single-flight refresh, fixed github.com REST routing/version/headers, no automatic mutation retry, server-owned GraphQL documents and installation-derived repository scope.
+
+The production keyring adapter is intentionally still a boundary rather than a live claim. Exact package import/API behavior plus a synthetic Windows Credential Manager round trip must pass before runtime integration.
+
+## 13. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -310,5 +316,5 @@ CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
 CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
 CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
 G0_IMPLEMENTATION_CONTRACT=READY
-NEXT=G0_PROTECTED_TOKEN_STORE_AND_AUTH_TRANSPORT_IMPLEMENTATION
+NEXT=WINDOWS_KEYRING_IMPORT_AND_SYNTHETIC_CREDENTIAL_ROUNDTRIP
 ```

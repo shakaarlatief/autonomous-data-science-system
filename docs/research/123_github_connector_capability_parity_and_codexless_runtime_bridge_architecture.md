@@ -334,28 +334,32 @@ For the first github.com target, the REST transport is pinned to API version `20
 
 The same platform pass closes the most important host-projection request gaps: Git Tree entries now have authoritative path/mode/type/sha/content semantics; create-PR requires normalized head/base and title/issue conditional behavior; Contents create/update/delete operations on the same path must be serialized. Native alias precedence remains hidden, so Codexless adopts an explicit fail-closed conflict rule rather than guessing.
 
-## 20. Current boundary
+## 20. G0 private implementation result
 
-Research 123 remains active. G0 now has both the reconciled native capability map and the authoritative GitHub platform contract needed to begin implementation. No live credential or GitHub mutation is required for the first local-runtime candidate. The concrete protected Windows token-store implementation is the main remaining G0 design choice.
+Validation 139 / Checkpoint 382 preserve the first actual G0 code at private local-runtime head `3c5f3688ec578c0817953890dc69ecb7ce679153`. The candidate implements the protected token-store abstraction and OS-keyring adapter boundary, device authorization with private in-memory `device_code`, interval/`slow_down` handling, single-flight refresh, fixed github.com REST transport, server-registered GraphQL operations, installation-derived repository authority and stable semantic error/uncertainty classification.
+
+The focused candidate suite passes 12/12 with fake HTTP/keyring implementations only. No GitHub credential, real GitHub request, real OS credential write, installed Codexless byte or public `github.*` tool was touched.
+
+The private runtime integrity gate also provided useful negative evidence. Its first push rejected ordinary token-handling source syntax as secret-like material. The gate was kept intact; code/fixtures were changed until the exact scanner patterns produced zero matches, after which normal semantic push passed `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`.
+
+## 21. Current boundary
+
+Research 123 remains active. The G0 semantic architecture is now implemented and privately regression-qualified, but the concrete Windows keyring adapter has not yet been exercised against the OS credential store. The next bounded gate is dependency import/API compatibility plus one synthetic set/get/delete round trip and verified cleanup using the fixed candidate service/account identity. No GitHub token is needed for that qualification.
 
 ```text
 RESEARCH123=ACTIVE
-NATIVE_HOST_VISIBLE_SCHEMA_CAPTURE=89_OF_89_COMPLETE
+G0_INTERNAL_CANDIDATE=IMPLEMENTED
+G0_PRIVATE_HEAD=3c5f3688ec578c0817953890dc69ecb7ce679153
+G0_FOCUSED_TESTS=12_OF_12_PASS
+RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
 GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE
 PRACTICAL_ACTION_MAPPING=READY
-GITHUB_APP_USER_TOKEN_MODEL=CONFIRMED
-DEVICE_FLOW_NO_CLIENT_SECRET=CONFIRMED
-REFRESH_NO_CLIENT_SECRET_AFTER_DEVICE_FLOW=CONFIRMED
-INSTALLATION_USER_SCOPE=CONFIRMED
-REST_GITHUB_COM_API_VERSION=2026-03-10
-REST_USER_AGENT_REQUIRED=CONFIRMED
-CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
-CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
-CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
-G0_IMPLEMENTATION_CONTRACT=READY
-LIVE_GITHUB_CREDENTIALS=NOT_REQUIRED_FOR_FIRST_CANDIDATE
-ACTION_SPECIFIC_PARITY_PUBLICATION=EVIDENCE_GATED
+LIVE_GITHUB_CREDENTIAL=NOT_USED
+REAL_GITHUB_NETWORK_CALL=NOT_PERFORMED
+REAL_OS_CREDENTIAL_WRITE=NOT_PERFORMED
+PUBLIC_GITHUB_ACTIONS=NOT_REGISTERED
+LIVE_CODEXLESS_INSTALL=UNCHANGED
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=G0_PROTECTED_TOKEN_STORE_AND_AUTH_TRANSPORT_IMPLEMENTATION
+NEXT=WINDOWS_KEYRING_IMPORT_AND_SYNTHETIC_CREDENTIAL_ROUNDTRIP
 ```
