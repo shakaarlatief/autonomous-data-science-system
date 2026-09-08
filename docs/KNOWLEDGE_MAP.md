@@ -308,6 +308,7 @@ docs/research/119_chatgpt_local_machine_file_access_objective_restoration.md
 docs/research/120_automatic_hybrid_pdf_direct_source_routing_and_managed_artifact_cache.md
 docs/research/121_non_pdf_file_capability_matrix_and_native_handoff_reuse.md
 docs/research/122_runtime_self_maintenance_lifecycle_and_device_independent_access.md
+docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md
 docs/research/CODEX_UPSTREAM_ADS_COMPARISON_MATRIX.md
 docs/local_execution/LOCAL_RUNTIME_REPOSITORY.md
 docs/local_execution/validation/033_semantic_git_commit_push_surface_publication_and_public_ads_push_verified.md
@@ -469,6 +470,8 @@ docs/local_execution/validation/126_native_codex_remote_and_phone_split_qualifie
 docs/checkpoints/368_native_codex_remote_qualified_research122_closed.md
 docs/local_execution/validation/127_windows_codex_generation_recovery_and_semantic_git_host_metadata_qualified.md
 docs/checkpoints/369_windows_codex_recovery_semantic_git_metadata_hardened.md
+docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md
+docs/checkpoints/370_github_parity_stage_opened_chatgpt20_handoff_ready.md
 docs/OPEN_ARCHITECTURE_BACKLOG.md
 docs/local_execution/DIRECT_GIT_INVESTIGATION_LESSONS.md
 docs/model_collaboration/README.md
@@ -764,7 +767,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-369 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-370 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

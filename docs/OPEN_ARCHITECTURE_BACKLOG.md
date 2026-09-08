@@ -1096,6 +1096,23 @@ This item is also an architecture-evolution trigger under AB-027: a materially s
 Related work: Research 113, Research 117, AB-003, AB-004, AB-005, AB-007, AB-012, AB-013, AB-017, AB-018, AB-019, AB-020, and AB-027.
 ---
 
+## AB-029: Native GitHub connector capability parity inside Codexless Runtime Bridge
+
+**Status:** ACTIVE / RESEARCH 123
+**Priority:** P1
+
+The current ChatGPT host does not reliably allow the custom developer MCP and the native GitHub connector to execute in the same conversation. Validation 034 preserved the repeated coexistence failure, and Validation 128 rechecked the boundary from normal mobile web: the Codexless developer-MCP surface remained callable and `codex.account_preflight` passed while the GitHub connector was not projected in that conversation.
+
+Two fresh GitHub-only qualifications now provide a concrete parity target. Both projected the same 89 GitHub actions. The first live-qualified a broad remote development workflow including direct file commits, raw Git blob/tree/commit/ref operations, PR/review/thread collaboration, issue lifecycle operations, and Actions/CI inspection. The second explicitly challenged negative conclusions and discovered no additional action or equivalent route for the previously absent capability families.
+
+The target is practical capability parity, not a weaker read-only approximation. Codexless Runtime Bridge should preserve the currently observed GitHub connector's information fidelity, authorization/scope semantics, pagination and continuation behavior, structured failure distinctions, file and raw Git mutations, PR/review collaboration, issue lifecycle operations, Actions inspection/reruns, and exposed merge authority. `Bounded` should describe the authority shape and credential safety, not intentionally reduce useful GitHub power.
+
+Negative connector findings remain conservative `NOT_OBSERVED_IN_THIS_PROJECTION` results rather than permanent global impossibilities. Features not observed in the current native connector may later be added as ADS supersets, but they are not required for first parity closure.
+
+Research 123 owns the implementation and qualification route. Research 113 is paused, not completed. Source Vault remains paused. The project owner's separately planned next stage comes after this parity work unless explicitly redirected.
+
+---
+
 # Continuation obligations that must not be forgotten
 
 ## CO-001: MC-0010 Claude dual-repository research

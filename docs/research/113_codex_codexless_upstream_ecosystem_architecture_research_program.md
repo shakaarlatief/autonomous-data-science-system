@@ -1,10 +1,14 @@
 # Research 113: Codex and Codexless Upstream Ecosystem Architecture Research Program
 
 **Date:** 2026-09-03  
-**Status:** ACTIVE / RESUMED AFTER RESEARCH 122 PRODUCT-REUSE QUALIFICATION
+**Status:** PAUSED / OWNER-DIRECTED RESEARCH 123 GITHUB PARITY INSERTION
 **Scope:** Establishes a broad evidence-driven research program over the current OpenAI Codex/App Server ecosystem, the public Codexless project, relevant issues, pull requests, discussions, and ADS's own experimentally verified local-execution architecture before further live-viewer or Codexless architecture work.  
 **Authority:** Active bounded research program. It may identify candidates, risks, replacements, and monitoring targets, but it does not by itself supersede accepted ADS contracts or authorize implementation changes.  
-**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `checkpoint:275`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`
+**Declared references:** `research:105`, `research:109`, `research:110`, `research:111`, `research:112`, `research:123`, `checkpoint:275`, `checkpoint:370`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/model_collaboration/README.md`
+
+## Interruption note added 2026-09-08
+
+After Research 122 closed, this program briefly resumed. The project owner then deliberately inserted Research 123 to reproduce the native GitHub connector's practical development capability inside the Codexless Runtime Bridge before proceeding to the separately planned next stage. Research 113 is paused, not completed or superseded permanently. Its existing evidence and exact continuation remain valid when the owner resumes it.
 
 ## 1. Why this research phase exists
 

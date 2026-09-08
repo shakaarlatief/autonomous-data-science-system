@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 369
-**Date:** 2026-09-07
+**Checkpoint:** 370
+**Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Research 113 upstream ecosystem architecture survey
+## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
+
+Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. The next persistent session is reserved as `chatgpt-20`, title `20 - GitHub Capability Parity and Codexless Runtime Bridge`.
 
 Checkpoint 369 preserves a post-closure operational hardening without reopening Research 122. Validation 127 localizes a Windows Codex installation-generation failure in which the running process lost its sandbox-helper resolution while the ADS tunnel remained healthy. The already-qualified bounded `codex.runtime_maintenance` restart recovered command execution by launching against a complete installed generation. A separate semantic-Git hardening then moved bounded `git add`/`git commit` metadata mutations from the ordinary Codex command sandbox to the existing host Git substrate while preserving exact-path, expected-HEAD, branch/upstream, protected-path, diff, parent and clean-index gates. Release `semantic-git-host-metadata-v2` was prepared, published, activated and post-verified with zero mismatches while the public runtime contract remained preview.20 / 63 tools. The operations runbook now owns the recovery sequence. AB-002 and Research 122 remain closed; Research 113 remains active.
 
