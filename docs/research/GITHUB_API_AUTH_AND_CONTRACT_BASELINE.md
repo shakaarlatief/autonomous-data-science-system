@@ -309,7 +309,13 @@ Validation 140 / Checkpoint 383 qualify the exact `@napi-rs/keyring@2.0.0` adapt
 
 Validation 141 / Checkpoint 384 integrate the internal G0 kernel into a main-runtime candidate with lazy startup and no public GitHub action registration. The source integration is qualified, but the current Runtime Release v1 mechanism cannot provision the exact native keyring package into the installed runtime because package manifests and `node_modules` are outside its bounded target roots. This deployment gap must close before a live configured G0 release.
 
-## 15. Current disposition
+## 15. Immutable keyring dependency generation
+
+Validation 142 / Checkpoint 385 close the package-deployment architecture gap. The exact Windows keyring packages are prepared into an immutable server-owned generation, identified to workers only by `{dependencyId, treeSha256}`. Runtime Release v2 carries server-owned dependency ids at manifest level, freezes exact tree refs at prepare time, preserves previous/target refs through pending and active release state, and switches those refs across activation, rollback, ordinary restart and recovery. The G0 keyring importer resolves only from the bound generation, with no ambient package fallback.
+
+A real package load and real v2 release prepare both reproduced tree `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`. Native Windows file locking prevents safe same-process generation deletion after load, so generation garbage collection is deliberately separated from release rollback.
+
+## 16. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -324,5 +330,5 @@ CREATE_TREE_PLATFORM_SCHEMA=RESOLVED
 CREATE_PULL_REQUEST_PLATFORM_REQUIREMENTS=RESOLVED
 CONTENTS_SAME_PATH_SERIALIZATION=CONFIRMED
 G0_IMPLEMENTATION_CONTRACT=READY
-NEXT=BOUNDED_RUNTIME_DEPENDENCY_PROVISIONING_DESIGN
+NEXT=BUILD_SOURCE_ONLY_G0_DEPENDENCY_BOOTSTRAP_RELEASE_V1
 ```

@@ -356,25 +356,32 @@ The candidate passes 9/9 source syntax checks and 4/4 integration regressions wi
 
 The release-path inspection exposes one deployment blocker: Runtime Release v1 owns only `src`, `test`, `scripts`, and `config` targets and has no package dependency transaction. It cannot provision `@napi-rs/keyring@2.0.0` into the installed runtime. Because temporary host-qualification staging was removed, a source-only G0 release would be incomplete when configured.
 
-## 23. Current boundary
+## 23. Immutable runtime dependency generations
 
-Research 123 remains active. G0 logic, Windows storage, and main-runtime source composition are qualified. The next substantive work is a bounded dependency provisioning/rollback architecture for exact runtime packages. It must not accept caller-selected packages, arbitrary install commands, or committed native `node_modules` blobs. Live GitHub authorization and action publication remain later gates.
+Validation 142 / Checkpoint 385 close the package-provisioning architecture blocker at private local-runtime head `5b63371536fa2f09bb122ed09470ec5204f18d9b`. The exact Windows keyring package is prepared as a server-owned immutable generation and selected by canonical `{dependencyId, treeSha256}` worker binding. The Runtime Release v2 candidate stores those refs in prepared/pending/active state and selects target/previous generations correctly for forward activation, rollback, ordinary restart and recovery. Runtime startup revalidates every bound generation before exposing the resolver.
+
+A real package preparation and load succeeded for 10 files / 1,971,364 bytes at tree digest `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858`. Real Release v2 preparation produced the same exact generation binding. A Windows discriminator also established why the generation must remain immutable: deleting the loaded native generation in the same Node process failed with `EPERM`, while cleanup succeeded after process exit. Rollback therefore switches worker bindings instead of replacing/deleting loaded native package directories.
+
+The G0 keyring importer now resolves only through that exact dependency resolver and has no ambient live-`node_modules` fallback. The combined focused suite passes 22/22; source syntax passes 21/21 for the combined G0 candidate and 15/15 for the release dependency candidate; the focused secret scanner reports zero matches. No GitHub credential or public `github.*` action was introduced.
+
+## 24. Current boundary
+
+Research 123 remains active. Dependency preparation, immutable generation selection and rollback/recovery are implementation-qualified, but the live Codexless runtime still runs the v1 release engine and therefore cannot consume a v2 dependency manifest yet. The next step is one source-only Runtime Release v1 bootstrap: install the dependency-aware release engine, immutable resolver and G0 source integration while keeping the worker dependency binding empty and the public GitHub action count at zero. After that source runtime is live-qualified, Runtime Release v2 can activate the exact keyring generation.
 
 ```text
 RESEARCH123=ACTIVE
-G0_INTERNAL_CANDIDATE=IMPLEMENTED
-G0_MAIN_RUNTIME_SOURCE_INTEGRATION=QUALIFIED
-G0_PRIVATE_HEAD=6ce0da8818a455731acc10ba231ef9f52c0c8206
-G0_SOURCE_SYNTAX=9_OF_9_PASS
-G0_INTEGRATION_TESTS=4_OF_4_PASS
-WINDOWS_CREDENTIAL_MANAGER_ROUNDTRIP=PASS
-RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS
+G0_PRIVATE_HEAD=5b63371536fa2f09bb122ed09470ec5204f18d9b
+IMMUTABLE_DEPENDENCY_GENERATIONS=QUALIFIED
+KEYRING_TREE_SHA256=abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858
+RUNTIME_RELEASE_V2_DEPENDENCY_PREPARE=PASS
+COMBINED_FOCUSED_TESTS=22_OF_22_PASS
+G0_COMBINED_SYNTAX=21_OF_21_PASS
+RELEASE_DEPENDENCY_SYNTAX=15_OF_15_PASS
 PUBLIC_TOOL_COUNT=63
 PUBLIC_GITHUB_ACTIONS=0
-RUNTIME_RELEASE_V1_PACKAGE_PROVISIONING=NOT_SUPPORTED
-G0_LIVE_RELEASE=BLOCKED_BY_DEPENDENCY_PROVISIONING
 LIVE_GITHUB_AUTH=NOT_STARTED
+LIVE_RUNTIME_RELEASE_ENGINE=V1
 RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=BOUNDED_RUNTIME_DEPENDENCY_PROVISIONING_DESIGN
+NEXT=BUILD_SOURCE_ONLY_G0_DEPENDENCY_BOOTSTRAP_RELEASE_V1
 ```

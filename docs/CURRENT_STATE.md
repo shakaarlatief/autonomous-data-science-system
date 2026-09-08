@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 384
+**Checkpoint:** 385
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Historical exact connector names remain evidence until an actual live rename is implemented and qualified. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 385 closes the runtime dependency-provisioning architecture blocker with immutable native-package generations. Private local-runtime head `5b63371536fa2f09bb122ed09470ec5204f18d9b` now integrates exact server-owned dependency preparation, canonical `{dependencyId, treeSha256}` worker bindings, Runtime Release v2 dependency state, activation/rollback/restart/recovery selection, startup revalidation, and G0 keyring loading through the exact generation only. A real Windows x64 `@napi-rs/keyring@2.0.0` generation prepared and loaded successfully at tree digest `abe67a212121747d57d1bb78cd7880e7e7bb29e1f44e2ba8ec5010e5f1e50858` (10 files, 1,971,364 bytes), and real Runtime Release v2 preparation produced the same binding. Same-process deletion after native loading failed with Windows `EPERM` while post-process cleanup succeeded, so release/rollback now switches immutable worker bindings rather than mutating loaded live `node_modules`. Combined focused regressions pass 22/22, candidate syntax passes 21/21 and 15/15, the secret scanner reports zero matches, and private publication passes `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`. The current live runtime still has Release v1, so the next step is a source-only v1 bootstrap release that installs the dependency-aware engine/G0 source with an empty dependency binding before v2 activates the keyring generation.
 
 Checkpoint 384 qualifies the first main-runtime G0 source-integration candidate at private local-runtime head `6ce0da8818a455731acc10ba231ef9f52c0c8206`. The candidate composes a lazy internal GitHub runtime kernel into public-preview construction while preserving the existing 63-tool public surface and zero `github.*` actions. Syntax checks pass 9/9, integration regressions pass 4/4, the secret scanner reports zero matches, and the private push passes `RUNTIME_PRIVATE_BOOTSTRAP_SAFETY=PASS`. The only newly localized live-release blocker is deployment dependency provisioning: Runtime Release v1 may target only `src`, `test`, `scripts`, and `config`, and cannot provision root package manifests or `node_modules`; the Windows-qualified `@napi-rs/keyring@2.0.0` staging tree was intentionally removed. The next work is therefore a bounded deterministic dependency-provisioning/rollback extension, not live GitHub auth or public action registration.
 
@@ -415,6 +417,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/385_github_g0_immutable_dependency_generations_qualified_bootstrap_release_next.md
+docs/local_execution/validation/142_github_g0_immutable_dependency_generation_release_architecture_qualified.md
 docs/checkpoints/384_github_g0_runtime_integration_candidate_qualified_dependency_provisioning_next.md
 docs/local_execution/validation/141_github_g0_main_runtime_integration_candidate_qualified.md
 docs/checkpoints/383_github_g0_windows_keyring_qualified_runtime_integration_next.md
@@ -665,6 +669,8 @@ docs/CONTINUITY.md
 docs/current_routing.json
 docs/CURRENT_STATE.md
 docs/KNOWLEDGE_MAP.md
+docs/checkpoints/385_github_g0_immutable_dependency_generations_qualified_bootstrap_release_next.md
+docs/local_execution/validation/142_github_g0_immutable_dependency_generation_release_architecture_qualified.md
 docs/checkpoints/384_github_g0_runtime_integration_candidate_qualified_dependency_provisioning_next.md
 docs/local_execution/validation/141_github_g0_main_runtime_integration_candidate_qualified.md
 docs/checkpoints/383_github_g0_windows_keyring_qualified_runtime_integration_next.md
