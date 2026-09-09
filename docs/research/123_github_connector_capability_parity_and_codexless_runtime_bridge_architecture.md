@@ -1486,3 +1486,27 @@ EXACT_NATIVE_WRAPPER_PARITY_ROWS_CLOSED=0_OF_89
 RESEARCH123_NATIVE_PARITY_IMPLEMENTATION=STRUCTURALLY_COMPLETE_WITH_RESIDUAL_EVIDENCE_GATES
 NEXT=EXTENDED_GITHUB_REPOSITORY_ADMINISTRATION_FOUNDATION_DESIGN
 ```
+
+## 66. First beyond-parity Repository Administration foundation frozen
+
+Validation 184 / Checkpoint 427 freeze the first extension slice after native-parity reconciliation. Current GitHub platform documentation and the already-installed extended App permission profile support exactly three first actions: `github.list_repository_collaborators`, `github.list_repository_invitations`, and personal-only `github.create_repository`.
+
+The two reads remain installation-authorized repository operations. Collaborator listing exposes only bounded `affiliation=all|direct|outside`, optional `permission=pull|triage|push|maintain|admin`, page size and page; the normalized result preserves user identity, highest `roleName` and base-role permission booleans without claiming to identify the source of an organization-level grant. Invitation listing exposes one bounded page of open invitations with normalized invitee/inviter/repository metadata and no mutation inputs.
+
+`github.create_repository` deliberately uses the authenticated-user `POST /user/repos` path rather than an organization selector. The current GitHub user sees no organizations, and organization repository creation has extra membership/policy/custom-property/team semantics. The caller contract is limited to a documented repository name (`1..100`, ASCII letters/digits/`.`/`-`/`_`), optional description/homepage, semantic `visibility=private|public` with Runtime Bridge default `private`, and `auto_init` default `false`. Runtime Bridge maps visibility to GitHub's `private` boolean and exposes none of the raw endpoint's broader feature/template/merge/security settings.
+
+Repository creation is serialized by authenticated user plus lowercase name and is mutation-aware single-attempt. A classifiable GitHub HTTP response is definite; transport failure before a classifiable response remains uncertain and must never be replayed automatically. A future positive-live create requires separate owner authorization for one exact name/visibility, and should preferably create a repository the owner genuinely wants rather than qualification clutter.
+
+Collaborator writes, invitation mutations, rename, visibility changes, archive, transfer, deletion and repository ruleset/policy writes are explicitly deferred. Those actions can notify/revoke third parties, materially change accessibility or block development workflows and need separate semantic/confirmation contracts.
+
+```text
+RESEARCH123=ACTIVE
+EXTENDED_REPOSITORY_ADMIN_FOUNDATION_ACTIONS=3
+EXTENDED_REPOSITORY_ADMIN_READS=2
+EXTENDED_REPOSITORY_ADMIN_WRITES=1
+CREATE_REPOSITORY_SCOPE=PERSONAL_AUTHENTICATED_USER_ONLY
+CREATE_REPOSITORY_DEFAULT_VISIBILITY=PRIVATE
+CREATE_REPOSITORY_DEFAULT_AUTO_INIT=false
+ADMINISTRATION_MUTATION_OCCURRED=false
+NEXT=IMPLEMENT_EXTENDED_REPOSITORY_ADMINISTRATION_FOUNDATION
+```
