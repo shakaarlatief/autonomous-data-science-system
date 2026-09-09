@@ -959,3 +959,51 @@ NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=33
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=DISPOSABLE_REPOSITORY_GIT_POSITIVE_MUTATION_QUALIFICATION
 ```
+
+## 51. Repository Git mutation family positive-live qualified; issue mutations next
+
+Validation 169 / Checkpoint 412 close the first native GitHub write family with a separately authorized disposable positive mutation sequence. The successful sequence exercises all eight preview.34 repository Git/content actions exactly once against the canonical public repository and one dedicated qualification branch. No mutation result is uncertain and no mutation call is retried.
+
+The qualification begins from exact read-only preconditions: main commit `3c7bcc51b10bfac787aee4b12cc3cd0f6b553400`, main tree `12ddbad2d7a81f8b5def10ac2c103a5817a58f20`, branch `r123/runtime-bridge-g3-qualification-20260909` absent, and both qualification paths absent on main. A first Node harness interruption occurs while parsing MCP initialize before any `tools/call`; the successful Python stateless harness re-establishes those same absence preconditions, proving that no mutation was issued by the failed harness and that the later sequence is not a retry of an uncertain write.
+
+The Contents API path is created, updated using exact returned content SHA `c13d21944504fa63a9823ab9e6f1e371bd3ce872`, and deleted using exact returned content SHA `20d0e7c0cbca9f6ec3f6bdf765059b6e099c71b3`. The resulting deletion commit `7d6123cc4e9f1a0bf998b65615277a1e32f7b4cb` is read back and its tree is verified to equal the original main tree.
+
+The raw Git sequence then creates blob `9461d695574713a653f90ffd16b2c77bf5c98ee0`, tree `de0b463f9d36c6a13ea395d293e29e4b5d90b4da`, commit `88e70054a93956b469f5533ffd9949d3a1c72e6f` parented to the deletion commit, and advances only the disposable branch through `update_ref(force=false)`. Postflight fetches prove the temporary Contents path is absent, the raw qualification file is present with the exact expected content and blob SHA, and main remains unchanged at the exact preflight commit SHA. `compare_commits(main, qualification-branch)` reports `ahead`, ahead-by four, behind-by zero, total four commits.
+
+The branch remains intentionally as an explicit qualification artifact because the captured native connector does not expose a branch-delete action. Research 123 does not silently invoke broader non-parity authority for cleanup.
+
+The first mutation family therefore has the following practical evidence stack:
+
+```text
+local wire schemas                    8 / 8
+fresh-host projection/boundedness     8 / 8
+fresh-host no-write guard invocation  PASS
+positive live GitHub mutations        8 / 8
+postflight object/ref/state checks     PASS
+mutation retries                       0
+mutation-uncertain results             0
+main movement                          none
+```
+
+This still does not reveal the native connector's hidden result schemas, so exact wrapper parity remains `0 / 89`. The next implementation family is the twelve issue mutations.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.34-github-repository-git-mutations
+LIVE_PUBLIC_TOOL_COUNT=120
+LIVE_GITHUB_TOOL_COUNT=56
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+LIVE_GITHUB_REPOSITORY_GIT_MUTATION_TOOL_COUNT=8
+REPOSITORY_GIT_MUTATION_FRESH_HOST_SCHEMA=PASS_8_OF_8
+REPOSITORY_GIT_MUTATION_POSITIVE_LIVE=PASS_8_OF_8
+REPOSITORY_GIT_MUTATION_RETRIES=0
+REPOSITORY_GIT_MUTATION_UNCERTAIN=0
+MAIN_MOVED=false
+FORCE_USED=false
+DISPOSABLE_BRANCH=r123/runtime-bridge-g3-qualification-20260909
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=8
+NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=33
+ISSUE_WRITE_ACTIONS_NEXT=12
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=GITHUB_ISSUE_MUTATION_IMPLEMENTATION
+```
