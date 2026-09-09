@@ -668,3 +668,50 @@ PROTECTED_AUTHORIZATION_HEALTHY=true
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=TARGETED_HOST_LIST_INSTALLED_ACCOUNTS_REQUALIFICATION
 ```
+
+## 44. Targeted installed-accounts host recheck closed G1
+
+Validation 162 / Checkpoint 405 close the single unresolved fresh-host G1 action left by Validation 161. `github.list_installed_accounts` remained projected in the disposable ChatGPT host and a new separately authorized invocation succeeded exactly once with no input. It returned `schemaVersion=codexless.github-readonly.v1`, one installed account, and confirmed personal account `shakaarlatief` with type `User`. No credential secret appeared and no GitHub mutation occurred.
+
+The original Validation 161 failure remains first-class evidence:
+
+```text
+mcp_network_error / network_error / Connection failed.
+```
+
+It is not retroactively converted into an initial PASS. Instead, the preserved evidence composes cleanly:
+
+```text
+Validation 161  -> 7 / 7 projected, 6 / 7 live reads, one connector transport failure
+Validation 162  -> targeted unresolved host read PASS
+Combined G1    -> 7 / 7 host live coverage PASS
+```
+
+No Plugin rescan, Runtime Bridge restart or GitHub authorization change was needed between the failure and successful targeted host call, supporting the transient connector-transport classification without claiming an exact transport root cause.
+
+Research 123 now advances to G2. The intended repository-git read-only action set is:
+
+```text
+github.compare_commits
+github.fetch
+github.fetch_blob
+github.fetch_commit
+github.fetch_file
+github.search
+github.search_branches
+github.search_commits
+github.search_installed_repositories_streaming
+github.search_installed_repositories_v2
+github.search_repositories
+```
+
+These eleven actions cover the G2 design label `fetch/search + branches/commits/files/blobs/compare` while leaving issue, PR/review and Actions-specific reads in their later slices. Exact native input contracts are already preserved by the 89-action schema capture; native output envelopes remain hidden behind `any` and must not be invented.
+
+```text
+RESEARCH123=ACTIVE
+G1_FRESH_HOST_PROJECTION=PASS_7_OF_7
+G1_FRESH_HOST_LIVE_COVERAGE=PASS_7_OF_7
+ORIGINAL_G1_TRANSPORT_FAILURE_PRESERVED=true
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=G2_FETCH_SEARCH_BRANCH_COMMIT_FILE_BLOB_COMPARE_READONLY_IMPLEMENTATION
+```

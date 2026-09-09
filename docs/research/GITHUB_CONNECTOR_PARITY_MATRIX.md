@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-09
-**Status:** ACTIVE RESEARCH 123 / G1 HOST PROJECTION 7 OF 7 / LIVE READS 6 OF 7 / ONE TARGETED HOST RECHECK NEXT
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads; Validation 161 owns their fresh-host 7/7 projection, 6/7 live-read FAIL and post-failure local transport discriminator.
+**Status:** ACTIVE RESEARCH 123 / G1 FRESH-HOST GATE CLOSED / G2 READ-ONLY IMPLEMENTATION NEXT
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads; Validation 161 owns their fresh-host 7/7 projection, 6/7 live-read FAIL and post-failure local transport discriminator; Validation 162 owns the targeted installed-accounts host recheck that closes combined G1 host coverage at 7/7.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -369,11 +369,13 @@ G1_LOCAL_MCP_PROJECTION=PASS_7_OF_7
 G1_LOCAL_LIVE_READS=PASS_7_OF_7
 G1_FRESH_HOST_PROJECTION=PASS_7_OF_7
 G1_FRESH_HOST_LIVE_READS=PASS_6_OF_7
-G1_FRESH_HOST_OVERALL=FAIL
+G1_FRESH_HOST_INITIAL=FAIL_6_OF_7
 G1_FAILED_HOST_ACTION=github.list_installed_accounts
 G1_FAILED_HOST_ERROR=mcp_network_error_network_error_connection_failed
 G1_POST_FAILURE_LOCAL_ACTION=PASS
+G1_TARGETED_HOST_RECHECK=PASS
+G1_FRESH_HOST_COMBINED_LIVE_COVERAGE=PASS_7_OF_7
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=TARGETED_HOST_LIST_INSTALLED_ACCOUNTS_REQUALIFICATION
+NEXT=G2_FETCH_SEARCH_BRANCH_COMMIT_FILE_BLOB_COMPARE_READONLY_IMPLEMENTATION
 ```
