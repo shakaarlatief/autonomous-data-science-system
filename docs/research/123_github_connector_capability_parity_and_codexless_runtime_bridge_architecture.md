@@ -803,3 +803,37 @@ NATIVE_READ_ACTIONS_REMAINING=26
 NATIVE_WRITE_ACTIONS_REMAINING=41
 NEXT=ALL_REMAINING_GITHUB_READONLY_IMPLEMENTATION
 ```
+
+## 47. All 48 read actions live; final read fresh-host gate next
+
+Validation 165 / Checkpoint 408 complete Runtime Bridge implementation of the captured native read inventory. The 26-action final read batch adds the remaining issue, PR/review, Actions/CI and content-download reads, bringing the live public GitHub read surface to all 48 native read action names.
+
+The first immutable release, `github-all-readonly-expansion-v1`, activated preview.32 at 112 total tools / 48 GitHub reads. Focused integration and reconstructed public-surface regressions passed, and local live qualification produced successful application results for 25 of the 26 new actions against bounded canonical public fixtures. No GitHub mutation or credential disclosure occurred. The sole positive-live fixture gap is `github.download_user_content`: no suitable `private-user-images.githubusercontent.com` URL exists in the inspected canonical public material, so the project keeps that positive live call fixture-gated instead of manufacturing or searching unrelated private content. Its allowlist guard and synthetic positive transfer remain regression-qualified.
+
+Preview.32 also exposed an artifact handoff quality defect before fresh-host qualification. A live 322,868-byte workflow artifact downloaded correctly but was embedded as roughly 430,492 base64 characters in the ordinary tool result. The native connector description explicitly promises a reusable file reference, and Research 123 had already selected resource/file handoff for artifacts. The project therefore corrected the implementation before asking the owner to qualify it in ChatGPT.
+
+Corrected release `github-all-readonly-expansion-v2`, preserved at private local-runtime head `3be4bfb1bdabecd1833aa42844e7047f0a34f787`, activates `0.1.1-preview.33-github-all-readonly-resource-links`. Both GitHub download actions now return compact metadata plus a server-generated MCP `resource_link`; bytes remain in a bounded ephemeral server-owned resource store and are returned only through `resources/read`. The first v2 prepare attempt correctly rejected unchanged `replace` entries because current and target hashes were identical; the manifest was reduced to six distinct replacements without widening the release contract. Publication and restart then succeeded without recovery and postactivation verification reports zero mismatches.
+
+A live postactivation artifact call returned `text + resource_link`, no embedded base64, and a separate `resources/read` reproduced 322,868 bytes with SHA-256 `8d271d9db840ae4f43ddd8c36766198dbb528118656c567f5d3fcf8ecbb02b2e`, exactly matching the compact tool metadata. Health/ready report 112 tools and protected GitHub authorization remains stored, authorized and non-expired.
+
+This already-open `chatgpt-21` conversation still does not project the new 26 exact GitHub actions, reproducing AB-008 same-chat staleness. The next bounded gate is therefore one refreshed fresh disposable ChatGPT conversation that discovers all 26, captures their bounded host-visible schemas and performs safe read-only live qualification using the preserved canonical issue/PR/workflow/artifact fixtures. `github.download_user_content` should not be forced positive without an appropriate authorized URL.
+
+Once that host gate closes, all 48 read actions will be both live and fresh-host-qualified. The remaining native inventory will then be exactly 41 write actions, which should be grouped by mutation risk and disposable fixture family rather than by the earlier small read-only batch cadence.
+
+Exact native-wrapper parity remains conservatively `0 / 89`; capability success does not reveal hidden native output envelopes or unresolved wrapper-only option semantics.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.33-github-all-readonly-resource-links
+LIVE_PUBLIC_TOOL_COUNT=112
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+NATIVE_READ_ACTIONS_IMPLEMENTED=48_OF_48
+FRESH_HOST_QUALIFIED_READS=22_OF_48
+FRESH_HOST_PENDING_READS=26
+NEW_READ_LOCAL_LIVE_SUCCESS=25_OF_26
+DOWNLOAD_USER_CONTENT_POSITIVE_LIVE=FIXTURE_GATED
+DOWNLOAD_WORKFLOW_ARTIFACT_RESOURCE_LINK=PASS
+NATIVE_WRITE_ACTIONS_REMAINING=41
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_ALL_REMAINING_READONLY_SCHEMA_AND_LIVE_QUALIFICATION
+```

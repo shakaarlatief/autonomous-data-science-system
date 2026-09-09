@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-09
-**Status:** ACTIVE RESEARCH 123 / G2 FRESH-HOST PASS / ALL REMAINING READ-ONLY IMPLEMENTATION NEXT
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads; Validation 161 owns their fresh-host 7/7 projection, 6/7 live-read FAIL and post-failure local transport discriminator; Validation 162 owns the targeted installed-accounts host recheck that closes combined G1 host coverage at 7/7; Validation 163 owns preview.31 G2 implementation, publication, activation and same-chat stale-projection evidence; Validation 164 owns fresh-host G2 11/11 schema and live-read qualification.
+**Status:** ACTIVE RESEARCH 123 / ALL 48 READS LIVE / FINAL 26-ACTION FRESH-HOST GATE NEXT
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads; Validation 161 owns their fresh-host 7/7 projection, 6/7 live-read FAIL and post-failure local transport discriminator; Validation 162 owns the targeted installed-accounts host recheck that closes combined G1 host coverage at 7/7; Validation 163 owns preview.31 G2 implementation, publication, activation and same-chat stale-projection evidence; Validation 164 owns fresh-host G2 11/11 schema and live-read qualification; Validation 165 owns implementation and live activation of the final 26 read actions plus the preview.33 GitHub download resource-link correction and local-live qualification.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -37,7 +37,7 @@ TOTAL                                                              89
 
 ## Mapping conclusion
 
-Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and twenty-two public read-only GitHub tools. Validation 157 and Validation 159 locally and fresh-host-qualified the first four foundation actions. Validation 160 then published preview.30 and locally live-qualified seven additional identity/account/repository-discovery/permission reads; Validation 161 projected all seven in a fresh host and initially completed six of seven live reads before `github.list_installed_accounts` hit one connector network failure. Validation 162 then requalified exactly that unresolved action successfully, closing combined G1 fresh-host coverage at eleven of eleven public G1 tools without rewriting the original transient failure. Validation 163 publishes and activates eleven additional G2 compare/fetch/blob/commit/file/code-search/branch-search/commit-search/repository-search actions on preview.31, bringing the live surface to twenty-two GitHub read-only tools. Those new G2 actions remain pending refreshed fresh-host qualification because this persistent conversation still has the earlier stale projection. Exact native parity remains `0 / 89`, however, because the project still refuses to infer hidden native output envelopes or unresolved option semantics. `github.list_installations(manageable_only=true)` remains unqualified; search-index enrichment remains fail-closed where the native enrichment contract is hidden; Enterprise-host repository URL routing remains separately unqualified; and conflicting hidden alias precedence is not guessed. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
+Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and all forty-eight captured native read action names as public `github.*` read-only tools. Validation 157/159 close the first four foundation reads, Validation 160-162 close the remaining seven G1 reads, and Validation 163/164 close the eleven G2 repository fetch/search/branch/commit/file/blob/compare reads in both runtime and fresh-host use. Validation 165 then implements the final twenty-six issue, PR/review, Actions/CI and content-download reads in one larger release family, activates preview.33 at 112 total tools / 48 GitHub reads, and locally live-qualifies twenty-five of those twenty-six new actions against canonical public fixtures. `github.download_user_content` remains positive-live-fixture-gated because no suitable authorized private-user-images URL exists in the canonical public evidence; its strict host allowlist and positive synthetic resource transfer are regression-qualified. Workflow artifact download is live-qualified as compact MCP `resource_link` plus separate `resources/read`, with no ZIP bytes/base64 embedded in the tool result. Fresh-host coverage is now 22/48 and the final 26-action host gate is next. Exact native parity remains `0 / 89`, because the project still refuses to infer hidden native output envelopes or unresolved option semantics. `github.list_installations(manageable_only=true)` remains unqualified; search-index enrichment remains fail-closed where the native enrichment contract is hidden; Enterprise-host repository URL routing remains separately unqualified; and conflicting hidden alias precedence is not guessed. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
 
 Existing Runtime Bridge mechanisms remain reusable:
 
@@ -340,11 +340,11 @@ FRESH_PROJECTED_ORDER_CONFIRMED=89/89
 CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED
 EXACT_REMOTE_RUNTIME_BRIDGE_PARITY_NOW=0/89
 PARITY_ACTIONS_MISSING=89
-LIVE_GITHUB_READONLY_TOOLS=22
+LIVE_GITHUB_READONLY_TOOLS=48
 FRESH_HOST_QUALIFIED_GITHUB_TOOLS=22
 NEW_G1_LOCAL_LIVE_TOOLS=7
-LIVE_RUNTIME_VERSION=0.1.1-preview.31-github-g2-readonly
-LIVE_MCP_TOOL_COUNT=86
+LIVE_RUNTIME_VERSION=0.1.1-preview.33-github-all-readonly-resource-links
+LIVE_MCP_TOOL_COUNT=112
 LOCAL_REUSE_AVAILABLE=YES
 AUTH_ARCHITECTURE=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 GITHUB_USER_AUTHORIZED=true
@@ -381,9 +381,16 @@ G2_FRESH_HOST_PROJECTION=PASS_11_OF_11
 G2_FRESH_HOST_LIVE_READS=PASS_11_OF_11
 SAME_CHAT_G2_PROJECTION=STALE
 NATIVE_READ_ACTIONS_TOTAL=48
-NATIVE_READ_ACTIONS_REMAINING=26
+NATIVE_READ_ACTIONS_IMPLEMENTED=48
+NATIVE_READ_ACTIONS_REMAINING=0
+FRESH_HOST_QUALIFIED_GITHUB_TOOLS=22
+FRESH_HOST_PENDING_READS=26
+FINAL_READ_BATCH_LOCAL_LIVE_SUCCESS=25_OF_26
+DOWNLOAD_USER_CONTENT_POSITIVE_LIVE=FIXTURE_GATED
+DOWNLOAD_WORKFLOW_ARTIFACT_RESOURCE_LINK=PASS
+SAME_CHAT_FINAL_READ_PROJECTION=STALE
 NATIVE_WRITE_ACTIONS_REMAINING=41
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=ALL_REMAINING_GITHUB_READONLY_IMPLEMENTATION
+NEXT=FRESH_CHAT_ALL_REMAINING_READONLY_SCHEMA_AND_LIVE_QUALIFICATION
 ```
