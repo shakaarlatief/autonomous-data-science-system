@@ -1,0 +1,776 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-09",
+  "research": "123",
+  "status": "LIVE_UI_CAPTURE_COMPLETE_BROAD_SUPERSET_CANDIDATE",
+  "source": "Owner-supplied GitHub App registration screenshots in ChatGPT conversation; exact live UI labels transcribed manually and reconciled against current GitHub documentation.",
+  "counts": {
+    "repository": 40,
+    "organization": 42,
+    "account": 19,
+    "enterprise": 17,
+    "total": 118
+  },
+  "repositoryPermissions": [
+    {
+      "name": "Actions",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": "read_write"
+    },
+    {
+      "name": "Administration",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Agent secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Agent tasks",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Agent variables",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Artifact metadata",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Attestations",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Checks",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Code quality",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Code scanning alerts",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Codespaces",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Codespaces lifecycle admin",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Codespaces metadata",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Codespaces secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Commit statuses",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": "read_only"
+    },
+    {
+      "name": "Contents",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": "read_write"
+    },
+    {
+      "name": "Copilot agent settings",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom properties",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Dependabot alerts",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Dependabot secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Deployments",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Discussions",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Environments",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Issues",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": "read_write"
+    },
+    {
+      "name": "License compliance alerts",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Merge queues",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Metadata",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": "read_only_mandatory"
+    },
+    {
+      "name": "Packages",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Pages",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Projects",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Pull requests",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": "read_write"
+    },
+    {
+      "name": "Repository security advisories",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Secret scanning alert dismissal requests",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Secret scanning alerts",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Secret scanning push protection bypass requests",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Single file",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Variables",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Webhooks",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Workflows",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": "read_write"
+    }
+  ],
+  "organizationPermissions": [
+    {
+      "name": "API Insights",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Administration",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Agent secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Agent variables",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Blocking users",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Campaigns",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Copilot Spaces",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Copilot agent settings",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Copilot content exclusion",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom organization roles",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom properties",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom properties for organizations",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom repository roles",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Events",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "GitHub Copilot Business",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Hosted runner custom images",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Issue Fields",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Issue Types",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Members",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Models",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Network configurations",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization Copilot metrics",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization announcement banners",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization bypass requests for secret scanning",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization codespaces",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization codespaces secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization codespaces settings",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization credentials",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization dependabot secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization dismissal requests for Dependabot",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization dismissal requests for code scanning",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization innersource vulnerabilities",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Organization private registries",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Personal access token requests",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Personal access tokens",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Plan",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Projects",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Secret scanning alert dismissal requests",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Self-hosted runners",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Variables",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Webhooks",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    }
+  ],
+  "accountPermissions": [
+    {
+      "name": "Block another user",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Codespaces user secrets",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Copilot Chat",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Copilot Editor Context",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Email addresses",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Events",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Followers",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "GPG keys",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Gists",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Git SSH keys",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Interaction limits",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Issue Fields",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Issue Types",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Models",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Plan",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Profile",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "SSH signing keys",
+      "recommendedAccess": "read_only",
+      "recommendationTier": "ENABLE_NOW_READ_ONLY",
+      "currentlySelected": null
+    },
+    {
+      "name": "Starring",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    },
+    {
+      "name": "Watching",
+      "recommendedAccess": "highest_available",
+      "recommendationTier": "ENABLE_NOW",
+      "currentlySelected": null
+    }
+  ],
+  "enterprisePermissions": [
+    {
+      "name": "Copilot usage records",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom enterprise roles",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Custom properties",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise AI controls",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise Copilot metrics",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise SCIM",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise billing",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise credentials",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise custom organization roles",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise custom properties for organizations",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise innersource vulnerabilities",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise organization installation repositories",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise organization installations",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise organizations",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise people",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise single sign-on",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    },
+    {
+      "name": "Enterprise teams",
+      "recommendedAccess": "no_access",
+      "recommendationTier": "DEFER_OR_EXCLUDE",
+      "currentlySelected": null
+    }
+  ],
+  "policy": {
+    "goal": "maximum useful professional developer capability, not maximum checkbox count",
+    "personalInstallationScope": "all_repositories",
+    "organizationInstallationScope": "explicitly approved installations; authority remains user \u2229 installation \u2229 app permissions",
+    "deferredSensitiveFamilies": [
+      "repository Agent secrets",
+      "repository Codespaces secrets",
+      "repository Dependabot secrets",
+      "repository Secrets",
+      "repository Webhooks",
+      "organization Agent secrets",
+      "organization codespaces secrets",
+      "organization credentials",
+      "organization dependabot secrets",
+      "organization private registries",
+      "organization Personal access token requests",
+      "organization Personal access tokens",
+      "organization Secrets",
+      "organization Webhooks",
+      "account Codespaces user secrets",
+      "enterprise permissions"
+    ],
+    "redundantFamilies": [
+      "repository Single file is unnecessary because Contents(read/write) is broader"
+    ],
+    "guardedHighConsequenceFamilies": [
+      "repository Administration",
+      "repository Repository security advisories",
+      "repository Secret scanning push protection bypass requests",
+      "organization Administration",
+      "organization Members",
+      "organization Self-hosted runners"
+    ],
+    "notes": [
+      "highest_available means choose the highest non-secret/non-webhook level exposed by the current GitHub registration dropdown, ordinarily Read and write where GitHub supports it.",
+      "Enterprise permissions are excluded from the initial App because no enterprise target is currently established and some enterprise installation-management permissions restrict cross-enterprise installability.",
+      "Account Copilot Chat and Copilot Editor Context are excluded because they are Copilot Extension context permissions, not needed for Codexless GitHub API authority."
+    ]
+  },
+  "officialEvidenceUrls": [
+    "https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps",
+    "https://docs.github.com/en/enterprise-cloud@latest/rest/authentication/permissions-required-for-github-apps?apiVersion=2026-03-10",
+    "https://docs.github.com/en/rest/apps/apps",
+    "https://docs.github.com/en/rest/agent-tasks/agent-tasks",
+    "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app"
+  ]
+}

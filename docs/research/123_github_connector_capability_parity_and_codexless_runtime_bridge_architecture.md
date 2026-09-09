@@ -432,25 +432,36 @@ The review distinguishes maximum useful developer capability from indiscriminate
 
 The owner also clarified that the personal App installation should cover **All repositories**, not remain limited to the ADS repository. Organization repositories continue to require explicit installation/approval and remain bounded by the user + installation intersection.
 
-## 32. Current boundary
+## 32. Complete live GitHub permission inventory
 
-Do not create the App from the Checkpoint 392 seven-permission prefill. That configuration remains historical parity/preflight evidence but is superseded pending the extended review.
+Validation 151 / Checkpoint 394 close the live-permission discovery gap. Owner-supplied screenshots cover all four current GitHub App permission groups and expose 118 selectable/mandatory permission rows: 40 repository, 42 organization, 19 account and 17 enterprise. This live surface is broader than the consolidated public permission index and includes current/preview capabilities such as Agent tasks, Discussions, License compliance alerts, Merge queues, Packages, Projects, security-request families, Models, newer organization administration/security/Copilot controls and expanded enterprise-preview permissions.
 
-The immediate next task is to reconcile the complete live GitHub registration permission list for this account, including preview/live-only categories, against official current documentation and then freeze a broad professional developer-superset manifest. Only after that manifest is frozen should App registration resume.
+The machine artifact `github_app_live_permission_inventory_20260909.json` preserves the exact live labels and a broad developer-superset candidate. The candidate enables or reads 34 repository, 30 organization and 10 account permission families, with all 17 enterprise permissions off. The only repository permissions kept off are Agent secrets, Codespaces secrets, Dependabot secrets, Actions Secrets, redundant Single file and Webhooks. Repository Administration is retained as a core extension because GitHub confirms Administration(write) can create repositories for the authenticated user and organizations plus manage broad repository settings.
+
+The selection policy remains maximum useful professional development capability rather than maximum checkbox count. Secret-value families remain deferred until secure value transport exists; Webhooks remain deferred until external destinations are explicitly bounded. Organization credential/PAT/billing-sensitive families remain excluded from the current broad profile, while organization developer/admin/security capabilities are generally included. Enterprise permissions remain out of scope until a real enterprise target exists.
+
+## 33. Current boundary
+
+Research 123 remains active. The next step is to freeze the **final extended permission manifest** from the live 118-option candidate and rebuild the GitHub App registration prefill/checklist around it. The owner should not create the App from the historical seven-permission URL.
+
+The intended personal installation remains All repositories. Organization installations remain explicit and user/installation/app-intersection bounded. No GitHub App/client ID/token exists yet.
 
 ```text
 RESEARCH123=ACTIVE
 TARGET=GITHUB_PARITY_PLUS_EXTENSIONS
-PARITY_ACTION_COUNT=89
-PARITY_ONLY_APP_CREATION=PAUSED
-EXTENDED_PERMISSION_REVIEW=ACTIVE
-REPOSITORY_ADMINISTRATION=STRONG_CANDIDATE
+LIVE_PERMISSION_OPTION_COUNT=118
+REPOSITORY_OPTIONS=40
+ORGANIZATION_OPTIONS=42
+ACCOUNT_OPTIONS=19
+ENTERPRISE_OPTIONS=17
+BROAD_SUPERSET_CANDIDATE=READY
+REPOSITORY_ADMINISTRATION=INCLUDED
+SECRET_VALUE_PERMISSIONS=DEFER
+WEBHOOK_MANAGEMENT=DEFER
+ENTERPRISE_PERMISSIONS=NONE
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
 GITHUB_APP_REGISTERED=false
-GITHUB_APP_CLIENT_ID_CONFIGURED=false
-PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-RESEARCH113=PAUSED_NOT_CLOSED
 SOURCE_VAULT=PAUSED
-NEXT=CAPTURE_AND_RECONCILE_COMPLETE_LIVE_PERMISSION_UI
+NEXT=FREEZE_EXTENDED_PERMISSION_MANIFEST_AND_REBUILD_REGISTRATION_PREFILL
 ```
