@@ -12,7 +12,7 @@ Live non-secret identifiers visible in GitHub:
 App name   Codexless Runtime Bridge
 Owner      shakaarlatief
 App ID     4881901
-Client ID  Iv23ligrmw82wVOSGTWn
+Client ID  Iv23lirgmw82wV0SGTWn
 Slug       codexless-runtime-bridge
 Public URL https://github.com/apps/codexless-runtime-bridge
 ```
@@ -47,7 +47,7 @@ Destroying the local private half does not affect the GitHub installation or dev
 VALIDATION154=PASS
 GITHUB_APP_REGISTERED=true
 APP_ID=4881901
-CLIENT_ID=Iv23ligrmw82wVOSGTWn
+CLIENT_ID=Iv23lirgmw82wV0SGTWn
 APP_SLUG=codexless-runtime-bridge
 GITHUB_APP_INSTALLED=false
 PRIVATE_KEY_GENERATED=false

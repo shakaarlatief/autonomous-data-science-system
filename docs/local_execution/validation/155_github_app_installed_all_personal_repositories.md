@@ -93,7 +93,7 @@ No Client secret should be generated.
 After the owner confirms local PEM deletion, configure only the non-secret Client ID:
 
 ```text
-Iv23ligrmw82wVOSGTWn
+Iv23lirgmw82wV0SGTWn
 ```
 
 into the fixed server-owned Runtime Bridge GitHub authorization configuration. Then qualify:

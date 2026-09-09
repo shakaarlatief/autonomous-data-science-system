@@ -363,7 +363,7 @@ The registration prefill contains 56 independently documented permission paramet
 
 ## 23. Live registration and installation-key gate
 
-Validation 154 / Checkpoint 397 preserve the first live GitHub App registration. The public/non-secret identifiers are App ID `4881901`, Client ID `Iv23ligrmw82wVOSGTWn`, and slug `codexless-runtime-bridge`. GitHub's current post-registration UI explicitly requires generating a private key before installation. This is an installation/UI bootstrap gate, not a change to the selected Runtime Bridge user-token authorization model.
+Validation 154 / Checkpoint 397 preserve the first live GitHub App registration. The public/non-secret identifiers are App ID `4881901`, Client ID `Iv23lirgmw82wV0SGTWn`, and slug `codexless-runtime-bridge`. GitHub's current post-registration UI explicitly requires generating a private key before installation. This is an installation/UI bootstrap gate, not a change to the selected Runtime Bridge user-token authorization model.
 
 Official GitHub device-flow documentation requires `client_id` and `device_code`, not a client secret. Refreshing a user access token originally issued through device flow likewise does not require a client secret. GitHub App private keys authenticate as the App itself for JWT/installation-token flows. Runtime Bridge does not currently use that authority. Therefore generate one key only to satisfy the install gate, never expose or commit its PEM, install the App, then destroy the downloaded local private half; keep Client secret ungenerated.
 
@@ -371,7 +371,7 @@ Official GitHub device-flow documentation requires `client_id` and `device_code`
 
 Validation 155 / Checkpoint 398 preserve successful installation of the dedicated GitHub App on `shakaarlatief` with `All repositories`. The App private key required by GitHub's install gate has served its only current purpose; Runtime Bridge does not use App-JWT/private-key authority. The downloaded local PEM must therefore be deleted before live user authorization. No Client secret has been generated.
 
-After PEM deletion, the next runtime authority mutation is limited to configuring the non-secret Client ID `Iv23ligrmw82wVOSGTWn` in fixed server-owned configuration. `codex.github_authorization metadata` must then show `configured=true` while `storedAuthorization=false` before any `begin` action.
+After PEM deletion, the next runtime authority mutation is limited to configuring the non-secret Client ID `Iv23lirgmw82wV0SGTWn` in fixed server-owned configuration. `codex.github_authorization metadata` must then show `configured=true` while `storedAuthorization=false` before any `begin` action.
 
 ## 25. Current disposition
 
@@ -395,7 +395,7 @@ AUTHORIZATION_SUPPORT_SURFACE=LIVE_LOCAL_MCP
 PUBLIC_TOOL_COUNT=64
 GITHUB_APP_REGISTERED=true
 GITHUB_APP_ID=4881901
-GITHUB_APP_CLIENT_ID=Iv23ligrmw82wVOSGTWn
+GITHUB_APP_CLIENT_ID=Iv23lirgmw82wV0SGTWn
 GITHUB_APP_INSTALLED=true
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
 INSTALLATION_ID=NOT_YET_CAPTURED

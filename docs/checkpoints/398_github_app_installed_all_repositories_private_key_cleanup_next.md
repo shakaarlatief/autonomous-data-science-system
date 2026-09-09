@@ -16,7 +16,7 @@
 App name              Codexless Runtime Bridge
 Owner                 shakaarlatief
 App ID                4881901
-Client ID             Iv23ligrmw82wVOSGTWn
+Client ID             Iv23lirgmw82wV0SGTWn
 Slug                  codexless-runtime-bridge
 Registered            true
 Installed             true

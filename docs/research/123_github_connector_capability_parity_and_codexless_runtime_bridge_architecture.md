@@ -456,7 +456,7 @@ The App has not yet been created in this evidence, so no App ID, Client ID, inst
 
 ## 35. Live GitHub App registered; installation private-key gate discovered
 
-Validation 154 / Checkpoint 397 preserve the successful live App creation. GitHub registered `Codexless Runtime Bridge` under `shakaarlatief` with App ID `4881901`, Client ID `Iv23ligrmw82wVOSGTWn`, and slug `codexless-runtime-bridge`. The App is not yet installed and no Client secret, private key, access token, refresh token or device code has been generated.
+Validation 154 / Checkpoint 397 preserve the successful live App creation. GitHub registered `Codexless Runtime Bridge` under `shakaarlatief` with App ID `4881901`, Client ID `Iv23lirgmw82wV0SGTWn`, and slug `codexless-runtime-bridge`. The App is not yet installed and no Client secret, private key, access token, refresh token or device code has been generated.
 
 GitHub's current post-registration UI now exposes an empirical gate not represented in the earlier design assumptions: `Registration successful. You must generate a private key in order to install your GitHub App.` This requires a bounded bootstrap correction. Official GitHub documentation still confirms that user access-token device flow itself uses the App Client ID and device code without a client secret, and refresh of a user token originally produced by device flow likewise does not require a client secret. GitHub App private keys are for authenticating as the App itself, including JWT/installation-token flows, which the selected Runtime Bridge authorization path does not use.
 
@@ -468,28 +468,43 @@ Validation 155 / Checkpoint 398 preserve successful installation of `Codexless R
 
 The GitHub-required private key was generated only to satisfy the installation gate discovered at Checkpoint 397. No Runtime Bridge flow uses the private key. The downloaded local PEM is now a temporary bootstrap credential and must be deleted before live authorization proceeds. No Client secret has been generated.
 
-## 37. Current boundary
+## 37. Interrupted authorization recovery and Client-ID correction
 
-Research 123 remains active. The immediate owner action is to delete the downloaded GitHub App `.pem` file locally and confirm deletion without sending the file or its contents. Once that cleanup is confirmed, configure only the non-secret Client ID `Iv23ligrmw82wVOSGTWn` into the fixed server-owned Runtime Bridge GitHub authorization configuration.
+Validation 156 / Checkpoint 399 close the interrupted device-flow bootstrap. The owner supplied current GitHub App settings evidence showing `Enable Device Flow` ON, so the earlier HTTP 404 was not caused by a disabled App setting. A public GitHub App lookup for slug `codexless-runtime-bridge` instead exposed a transcription defect in the Client ID previously copied from manual UI evidence. The live App record binds App ID `4881901` to corrected Client ID `Iv23lirgmw82wV0SGTWn`.
 
-The next runtime qualification must be metadata-only and require `configured=true`, `storedAuthorization=false` before beginning exactly one explicit device authorization.
+Direct non-secret transport discrimination reproduced HTTP 404 `Not Found` with the superseded value and HTTP 200 with the live value. Earlier public occurrences were repaired as a factual identifier correction; Git history preserves the superseded transcription. No access token, refresh token or private device code was printed by these diagnostics.
+
+Private local-runtime head `6d641881423ea50e0fdf1329782dd2489735d551` preserves the corrected immutable release path. Release `github-client-config-v3` corrected the configuration but its first restart failed safely because the target version contract was not updated in `surface-contracts.mjs`; automatic runtime recovery restored the previous healthy worker. New immutable release `github-client-config-v4` corrected both configuration and runtime identity, published successfully, restarted without recovery, and postactivation verification reports `0.1.1-preview.27-github-client-id-correction`, 64 tools, one runtime dependency and zero mismatches.
+
+## 38. Live GitHub user authorization qualified
+
+Exactly one corrected Runtime Bridge device authorization was begun after metadata confirmed `configured=true`, `storedAuthorization=false`. The Runtime Bridge returned only the bounded authorization reference, user code and verification URI while retaining GitHub's private `device_code` internally.
+
+After the owner completed GitHub authorization, exactly one poll of that same authorization reference returned `status=authorized`. Follow-up metadata now reports `authorized=true`, `storedAuthorization=true`, non-expired access and refresh lifetimes, `github-app-user-token-device-flow`, `github.com` and REST `2026-03-10`. A later status read of the consumed authorization reference returned `GITHUB_DEVICE_FLOW_REF_UNKNOWN`, confirming the pending in-memory device-flow session was removed after successful protected token storage. No token value was exposed through MCP or committed to Git.
+
+The owner had already confirmed deletion of the locally downloaded PEM. Runtime Bridge still does not use App private-key/JWT authority, and no Client secret was generated.
+
+## 39. Current boundary
+
+Research 123 remains active. G0 live user authorization is now qualified, while public `github.*` parity actions remain `0 / 89`. The next bounded gate is to expose and live-qualify the first read-only GitHub action bundle needed to prove authenticated identity, installation-derived repository scope and the GraphQL/REST authority substrate before remote mutation actions are published.
 
 ```text
 RESEARCH123=ACTIVE
 TARGET=GITHUB_PARITY_PLUS_EXTENSIONS
 GITHUB_APP_REGISTERED=true
 GITHUB_APP_ID=4881901
-GITHUB_APP_CLIENT_ID=Iv23ligrmw82wVOSGTWn
+GITHUB_APP_CLIENT_ID=Iv23lirgmw82wV0SGTWn
 GITHUB_APP_SLUG=codexless-runtime-bridge
 GITHUB_APP_INSTALLED=true
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
 INSTALLATION_ID=NOT_YET_CAPTURED
 PRIVATE_KEY_GENERATED=true
-LOCAL_PRIVATE_KEY_DELETION=PENDING_USER_CONFIRMATION
+LOCAL_PRIVATE_KEY_DELETION=CONFIRMED_BY_OWNER
 CLIENT_SECRET_GENERATED=false
-GITHUB_APP_CLIENT_ID_CONFIGURED=false
+GITHUB_APP_CLIENT_ID_CONFIGURED=true
+GITHUB_USER_AUTHORIZED=true
+STORED_AUTHORIZATION=true
 PUBLIC_GITHUB_ACTIONS=0
-LIVE_GITHUB_AUTH=NOT_STARTED
 SOURCE_VAULT=PAUSED
-NEXT=OWNER_DELETE_LOCAL_PEM_THEN_CONFIGURE_NON_SECRET_CLIENT_ID
+NEXT=AUTHENTICATED_IDENTITY_INSTALLATION_SCOPE_AND_FIRST_READ_ONLY_GITHUB_ACTION_QUALIFICATION
 ```
