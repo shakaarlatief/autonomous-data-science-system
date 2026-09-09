@@ -454,29 +454,35 @@ Validation 153 / Checkpoint 396 close the final manual registration-form gate. O
 
 The App has not yet been created in this evidence, so no App ID, Client ID, installation or GitHub authorization exists. The owner may now click `Create GitHub App`, then install it on personal account `shakaarlatief` with **All repositories**.
 
-## 35. Current boundary
+## 35. Live GitHub App registered; installation private-key gate discovered
 
-Research 123 is now at the account-bound creation/install step with no remaining pre-creation configuration ambiguity. After the owner creates and installs the App, preserve only non-secret App identity/install evidence, then configure the non-secret Client ID through the fixed server-owned Runtime Bridge path and require metadata to show `configured=true`, `storedAuthorization=false` before beginning explicit device authorization.
+Validation 154 / Checkpoint 397 preserve the successful live App creation. GitHub registered `Codexless Runtime Bridge` under `shakaarlatief` with App ID `4881901`, Client ID `Iv23ligrmw82wVOSGTWn`, and slug `codexless-runtime-bridge`. The App is not yet installed and no Client secret, private key, access token, refresh token or device code has been generated.
+
+GitHub's current post-registration UI now exposes an empirical gate not represented in the earlier design assumptions: `Registration successful. You must generate a private key in order to install your GitHub App.` This requires a bounded bootstrap correction. Official GitHub documentation still confirms that user access-token device flow itself uses the App Client ID and device code without a client secret, and refresh of a user token originally produced by device flow likewise does not require a client secret. GitHub App private keys are for authenticating as the App itself, including JWT/installation-token flows, which the selected Runtime Bridge authorization path does not use.
+
+The corrected installation sequence is therefore to generate exactly one App private key only to satisfy GitHub's current install gate, never expose or commit the PEM, never use it for Runtime Bridge API authority, install the App on `shakaarlatief` with All repositories, then securely destroy the downloaded local private-key file. GitHub stores only the public portion of the registered key, so destroying the local private half does not alter the installation relation; if an App-authenticated flow is intentionally added later, a new private key can be generated under a dedicated secure-key architecture.
+
+## 36. Current boundary
+
+Research 123 remains active. The next owner action is to generate one GitHub App private key, install the App with All repositories, and then destroy the local downloaded PEM without ever sending it through ChatGPT or committing it. Do not generate a Client secret. After installation, return only non-secret installation evidence/ID.
+
+Once installation is preserved, configure the non-secret Client ID into the fixed Runtime Bridge server-owned configuration, qualify `metadata` as `configured=true`, `storedAuthorization=false`, then begin exactly one explicit user device authorization.
 
 ```text
 RESEARCH123=ACTIVE
 TARGET=GITHUB_PARITY_PLUS_EXTENSIONS
-EXTENDED_SELECTED_PERMISSION_COUNT=74
-REPOSITORY_SELECTED=34
-ORGANIZATION_SELECTED=30
-ACCOUNT_SELECTED=10
-ENTERPRISE_SELECTED=0
-DEVICE_FLOW=ON
-EXPIRE_USER_TOKENS=ON
-REQUEST_OAUTH_ON_INSTALL=OFF
-WEBHOOKS=OFF
-APP_VISIBILITY=ANY_ACCOUNT_PUBLIC
+GITHUB_APP_REGISTERED=true
+GITHUB_APP_ID=4881901
+GITHUB_APP_CLIENT_ID=Iv23ligrmw82wVOSGTWn
+GITHUB_APP_SLUG=codexless-runtime-bridge
+GITHUB_APP_INSTALLED=false
+PRIVATE_KEY_GENERATED=false
+CLIENT_SECRET_GENERATED=false
+DEVICE_FLOW_RUNTIME_PRIVATE_KEY_REQUIRED=false
+GITHUB_INSTALL_UI_PRIVATE_KEY_GATE=true
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
-EXTENDED_APP_PRECREATION_UI=VERIFIED
-GITHUB_APP_REGISTERED=false
-GITHUB_APP_CLIENT_ID_CONFIGURED=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 SOURCE_VAULT=PAUSED
-NEXT=OWNER_CLICK_CREATE_AND_INSTALL_ALL_PERSONAL_REPOSITORIES
+NEXT=OWNER_GENERATE_ONE_PRIVATE_KEY_INSTALL_ALL_REPOSITORIES_THEN_DESTROY_LOCAL_PEM
 ```

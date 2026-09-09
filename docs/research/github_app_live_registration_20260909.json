@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-09",
+  "research": "123",
+  "status": "REGISTERED_INSTALLATION_BLOCKED_PENDING_PRIVATE_KEY",
+  "app": {
+    "name": "Codexless Runtime Bridge",
+    "slug": "codexless-runtime-bridge",
+    "owner": "shakaarlatief",
+    "appId": 4881901,
+    "clientId": "Iv23ligrmw82wVOSGTWn",
+    "publicUrl": "https://github.com/apps/codexless-runtime-bridge",
+    "settingsUrl": "https://github.com/settings/apps/codexless-runtime-bridge"
+  },
+  "credentialState": {
+    "clientSecretGenerated": false,
+    "privateKeyGenerated": false,
+    "userAccessTokenGenerated": false,
+    "refreshTokenGenerated": false,
+    "deviceCodeGenerated": false
+  },
+  "installationState": {
+    "installed": false,
+    "targetAccount": "shakaarlatief",
+    "targetRepositoryScope": "all_repositories",
+    "githubUiGate": "Registration successful. You must generate a private key in order to install your GitHub App."
+  },
+  "architectureReconciliation": {
+    "deviceFlowStillUsesClientIdOnly": true,
+    "deviceFlowClientSecretRequired": false,
+    "deviceFlowRefreshClientSecretRequired": false,
+    "privateKeyNeededForRuntimeUserTokenFlow": false,
+    "privateKeyNeededForGitHubCurrentInstallGate": true,
+    "privateKeyRuntimeUsePlanned": false,
+    "privateKeyHandlingPlan": "Generate exactly one GitHub App private key to satisfy the current GitHub installation gate; never paste or commit it; use it for no Runtime Bridge authentication; after installation, destroy the downloaded private key file locally while leaving the corresponding public key registered at GitHub. The user-token device-flow runtime continues to use only the non-secret Client ID and protected user/refresh tokens."
+  },
+  "officialSources": [
+    "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/managing-private-keys-for-github-apps",
+    "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app",
+    "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/refreshing-user-access-tokens",
+    "https://docs.github.com/en/apps/using-github-apps/installing-your-own-github-app"
+  ],
+  "next": "OWNER_GENERATE_ONE_PRIVATE_KEY_INSTALL_APP_ALL_REPOSITORIES_THEN_DESTROY_LOCAL_PEM"
+}
