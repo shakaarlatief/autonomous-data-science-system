@@ -541,3 +541,38 @@ Continue with:
 5. keep Validation 035 plus the explicit architecture backlog open
 6. resume Source Vault only when the broader Level-2 research route is deliberately closed
 ```
+
+## 20. Accepted follow-up: failure-atomic semantic commit staging
+
+Validation 158 / Checkpoint 401 close a semantic Git transaction-lifecycle gap discovered during Research 123. The accepted `codex.git_commit_paths` precondition already required an empty index and staged only the exact declared paths, but a later pre-commit guard such as `git diff --cached --check` could fail after staging and deliberately leave that staged index in place. This made a failed semantic operation block the next semantic commit until the owner manually unstaged the index.
+
+The accepted correction keeps the stable public schema unchanged and makes temporary staging failure-atomic when safety can be proven. The semantic commit transaction now follows:
+
+```text
+initial index must be empty
+    -> stage only declared paths
+    -> verify staged scope
+    -> run pre-commit guards
+
+if definite failure occurs before a commit exists
+    -> require HEAD == original expectedHead
+    -> require every staged path belongs to the declared transaction scope
+    -> git restore --staged --source=HEAD -- <declared paths>
+    -> verify index empty
+    -> preserve working-tree edits
+    -> return original semantic failure with indexRestored=true
+
+if restoration cannot be verified
+    -> GIT_COMMIT_PATHS_ROLLBACK_FAILED
+
+if commit result is uncertain and HEAD changed
+    -> do not auto-restore
+    -> do not retry
+    -> fail visibly because the commit may have succeeded
+```
+
+This is narrower and safer than adding a general `git reset` or unrestricted unstage action merely to repair internal commit lifecycle failures. A separate semantic staging-management action may still be added later if an actual user workflow requires it, but normal recovery from staging introduced by `git_commit_paths` is now owned by `git_commit_paths` itself.
+
+Private runtime head `ffb0356acb0dc69024146869c5bebe0ee76de5a3` preserves immutable release `semantic-git-transactional-commit-v1`. Preview.29 keeps the public tool count at 68 and the semantic Git input schema unchanged. The focused fixture regression proves a trailing-whitespace diff-check failure restores the index, preserves the working-tree edit, and allows the corrected commit to be retried without manual unstage. The same behavior was then reproduced through the live public semantic tool: `GIT_COMMIT_PATHS_DIFF_CHECK_FAILED` returned `indexRestored=true` and immediate reconciliation proved an empty index with unchanged HEAD.
+
+This follow-up does not reopen the broader Research 116 authority design. It strengthens the already accepted semantic Git transaction contract while preserving all existing authority boundaries. Active Research 123 resumes at the fresh-host qualification of the four live GitHub read-only foundation tools.

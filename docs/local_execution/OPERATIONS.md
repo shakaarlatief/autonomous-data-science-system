@@ -423,6 +423,21 @@ If this failure reappears after an update:
 
 Validation 127 / Checkpoint 369 own the qualification evidence for this recovery class.
 
+### A guarded semantic commit fails after staging
+
+Preview.29 changes the normal recovery contract. `codex.git_commit_paths` still requires an initially empty index, but staging introduced by that operation is now automatically restored after a definite pre-commit or commit failure when HEAD remains unchanged and every staged path belongs to the declared transaction scope. Working-tree edits are preserved.
+
+Do not ask the owner to run `git restore --staged -- .` merely because `git diff --cached --check` or another guarded semantic-commit phase failed. First inspect the returned structured details. Healthy automatic recovery includes:
+
+```text
+indexRestored=true
+rollbackAttempted=true
+```
+
+and must be followed by read-only reconciliation when the workflow needs stronger proof. If cleanup cannot be proven, the semantic tool returns `GIT_COMMIT_PATHS_ROLLBACK_FAILED`; preserve that failure and investigate rather than broadening Git authority. If a commit result is uncertain and HEAD changed, automatic rollback is intentionally suppressed because the commit may have succeeded.
+
+Validation 158 / Checkpoint 401 own the live qualification for this transaction-recovery class.
+
 ## Security and authority invariants
 
 Operational recovery must not silently change the accepted authority model.

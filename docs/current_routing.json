@@ -1,6 +1,6 @@
 {
     "schema_version": 1,
-    "current_checkpoint": 400,
+    "current_checkpoint": 401,
     "active_development_branch": "v1-source-vault-bootstrap-resume",
     "active_pr": null,
     "promoted_integration_branch": "v1-frontend-spike",
