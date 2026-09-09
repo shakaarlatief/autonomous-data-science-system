@@ -715,3 +715,49 @@ ORIGINAL_G1_TRANSPORT_FAILURE_PRESERVED=true
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=G2_FETCH_SEARCH_BRANCH_COMMIT_FILE_BLOB_COMPARE_READONLY_IMPLEMENTATION
 ```
+
+## 45. G2 preview.31 live; fresh-host qualification next
+
+Validation 163 / Checkpoint 406 preserve live activation of the eleven-action G2 read-only repository fetch/search/branch/commit/file/blob/compare slice. Private local-runtime head `b446a3fc2ff480e66acc81ddad56f12bb871feca` preserves corrected immutable release `github-g2-readonly-expansion-v2`, targeting `0.1.1-preview.31-github-g2-readonly`, 86 public tools, 22 GitHub read-only tools, ten release files, sixteen regressions and one exact runtime dependency.
+
+The new public actions are:
+
+```text
+github.compare_commits
+github.fetch
+github.fetch_blob
+github.fetch_commit
+github.fetch_file
+github.search
+github.search_branches
+github.search_commits
+github.search_installed_repositories_streaming
+github.search_installed_repositories_v2
+github.search_repositories
+```
+
+The implementation remains installation-scoped and read-only. The generic fetch action is GET-only and limited to approved GitHub repository URL families; caller-supplied credentials, arbitrary methods, arbitrary headers, arbitrary GraphQL documents and non-GitHub host authority remain absent. Hidden native search-index enrichment behavior is not invented, Enterprise repository URL routing remains separately unqualified, and conflicting repository-search `per_page`/`topn` aliases fail closed instead of guessing precedence.
+
+The first immutable v1 release path produced two useful fail-closed results. Its initial 17-regression manifest exceeded the existing Runtime Release v2 ceiling of sixteen and was rejected without widening that contract. After reducing the matrix to sixteen, the release prepared successfully but publication failed with `RUNTIME_RELEASE_REGRESSION_FAILED`. A reconstructed current-source stage localized the failing regression to an incorrect test expectation: nullable commit-search `sort` correctly serializes the visible enum `best-match | author-date | committer-date` plus null, while the test had expected no enum. The product schema was correct and the test was repaired. Because the v1 release ID was already immutably bound, the changed manifest/bytes correctly returned `RUNTIME_RELEASE_PREPARED_CONFLICT`; the corrected release therefore moved to a new immutable v2 ID.
+
+Corrected v2 publication operation `rm_59bfec18a65b6d64e35b5ad003f7463d` succeeded after the full bounded release regression matrix. Restart operation `rm_ad739f5850d15cd2b7eb267d6ca25c0b` then activated preview.31 without recovery. One immediate read-only restart-status request crossed the deliberate worker-replacement window and returned host HTTP 502; the restart mutation was not replayed, and the same durable operation later returned `succeeded`. Fresh postactivation release verification reports `targetToolCount=86`, `fileCount=10`, `runtimeDependencyCount=1`, and `mismatchCount=0`.
+
+Protected GitHub authorization survived activation and remains configured, stored, authorized and non-expired. No credential value or GitHub mutation appeared.
+
+Targeted tool rediscovery inside this already-open `chatgpt-21` conversation still projects only the earlier G1 GitHub names. The eleven G2 actions are absent from this same-chat host surface despite the verified live preview.31 source contract. This is another AB-008 same-chat projection-staleness observation. The project therefore does not force live G2 calls through a stale host. The next bounded gate is one fresh disposable ChatGPT conversation that discovers the eleven exact actions, captures their bounded host-visible schemas and executes a bounded read-only live qualification against installation-authorized GitHub state.
+
+Exact native-wrapper parity remains conservatively `0 / 89`. The live Runtime Bridge capabilities are real, but hidden native output envelopes and unresolved option semantics are not silently promoted into exact wire parity.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.31-github-g2-readonly
+LIVE_PUBLIC_TOOL_COUNT=86
+LIVE_GITHUB_READONLY_TOOL_COUNT=22
+G2_NEW_TOOL_COUNT=11
+G2_RELEASE_V2=PASS
+G2_POSTACTIVATION_VERIFY=PASS_ZERO_MISMATCH
+PROTECTED_AUTHORIZATION_HEALTHY=true
+SAME_CHAT_G2_PROJECTION=STALE
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_G2_SCHEMA_AND_LIVE_READ_QUALIFICATION
+```
