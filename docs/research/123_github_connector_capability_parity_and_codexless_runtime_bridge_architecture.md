@@ -1428,3 +1428,36 @@ CURRENT_ENVIRONMENT_MAX_POSITIVE_LIVE=37_OF_41
 PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 NEXT=EXPLICIT_OWNER_AUTHORIZATION_FOR_ISOLATED_UPDATE_AND_MERGE_PR_FIXTURE
 ```
+
+## 64. Update/merge positive-live closed; 37/41 writes qualified and four remain environment-gated
+
+Validation 182 / Checkpoint 425 close successful positive-live qualification of `github.update_pull_request` and `github.merge_pull_request` using a new disposable PR fixture wholly isolated from PR #84 and from `main`.
+
+A fresh read-only lookup established `main=3c7bcc51b10bfac787aee4b12cc3cd0f6b553400`. Disposable base `r123/update-merge-base-20260909` and head `r123/update-merge-head-20260909` were created from that exact SHA. A single fixture file commit advanced only the disposable head to `4e73cdb991870dbd99c3f9d5733171a802813ba4`, after which PR #85 was opened from that head to the disposable base.
+
+`github.update_pull_request` was invoked exactly once and changed bounded title/body metadata while preserving open/unmerged state and exact head/base refs. A separate read-only PR lookup then re-established the exact head SHA. `github.merge_pull_request` was invoked exactly once with `merge_method=squash` and mandatory `expected_head_sha=4e73cdb991870dbd99c3f9d5733171a802813ba4`. It returned `merged=true` and merge SHA `c409925a1589da7976628f6fc2534f13481a4ba0`.
+
+Postflight shows disposable base `r123/update-merge-base-20260909` at the returned merge SHA, disposable head unchanged at its fixture commit, PR #85 closed/merged, and `main` unchanged at `3c7bcc51b10bfac787aee4b12cc3cd0f6b553400`. Neither mutation was retried and neither produced mutation uncertainty. PR #84 was not replayed. The disposable branches remain because branch deletion is absent from the captured native 89-action baseline and non-parity cleanup is not silently introduced.
+
+Native-write positive-live coverage is now 37/41: repository Git/content 8/8, issues 12/12, PR/review 15/19 and Actions rerun 2/2. The final four write positive-live gaps are environment-gated rather than implementation gaps: review dismissal requires a genuine dismissible second-reviewer fixture; auto-merge requires repository-level auto-merge enablement; reviewer request/removal require a known second reviewer or team.
+
+All 89 captured action names and all 41 write names remain implemented. Exact native-wrapper parity remains conservatively `0 / 89` because hidden native output envelopes and deliberate Runtime Bridge semantic narrowings remain explicit. The next Research 123 step is a read-only reconciliation of every remaining parity/qualification gap and classification into closable, fixture-gated, configuration-gated, hidden-contract-gated or intentionally narrowed.
+
+```text
+RESEARCH123=ACTIVE
+QUALIFICATION_PR_NUMBER=85
+UPDATE_PULL_REQUEST_POSITIVE_LIVE=PASS
+MERGE_PULL_REQUEST_POSITIVE_LIVE=PASS
+UPDATE_MERGE_MUTATION_RETRIES=0
+UPDATE_MERGE_MUTATION_UNCERTAIN_RESULTS=0
+MAIN_MOVED=false
+PR84_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+NATIVE_WRITE_POSITIVE_LIVE=37_OF_41
+NATIVE_WRITE_POSITIVE_REMAINING=4
+PR_REVIEW_MUTATION_POSITIVE_LIVE=PASS_15_OF_19
+PR_REVIEW_MUTATION_POSITIVE_REMAINING=4
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=41_OF_41
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=RESEARCH123_REMAINING_PARITY_GAP_RECONCILIATION
+```
