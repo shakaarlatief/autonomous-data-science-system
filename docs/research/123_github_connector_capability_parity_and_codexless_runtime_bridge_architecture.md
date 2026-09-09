@@ -1306,3 +1306,32 @@ PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=ACTIONS_RERUN_POSITIVE_LIVE_FIXTURE_PREFLIGHT
 ```
+
+## 60. Actions rerun positive-live fixtures qualified read-only; owner authorization next
+
+Validation 178 / Checkpoint 421 perform only read-only fixture preflight for the two final Actions rerun positive-live mutations. Recent `reconcile-spec021-fail-boundary.yml` failures were unsuitable because they contained zero jobs, so historical validation workflows with real failed jobs were examined instead.
+
+For `github.rerun_failed_workflow_run_jobs`, the selected fixture is Knowledge map integrity run `33501596538` at head SHA `a2f215fe66c881049e0456e7ecc28df4ae54aad7`, completed with failure on attempt 1. It contains exactly one failed job, `99835969925` (`validate-knowledge-map`). The exact historical workflow declares only `permissions: contents: read`, checks out source and runs `python scripts/check_knowledge_map.py`.
+
+For `github.rerun_workflow_job`, the selected independent fixture is Current routing consistency run `33501718088` at head SHA `8c602f79d0137ac0b0155ed67f8d74246324b07a`, completed with failure on attempt 1. The exact target job is `99836356121`, `validate-current-routing (ubuntu-latest)`, completed/failure in that run. Its historical workflow also declares only `permissions: contents: read`, checks out source and runs `python scripts/check_current_routing.py`.
+
+Using distinct workflow runs avoids changing the second fixture while qualifying the first action. Both workflows are read-only repository validators and expose no deployment, release, package publication, issue/PR mutation, repository-content write or external-service mutation step. The expected positive-live side effect is therefore limited to GitHub Actions compute and run/job attempt state.
+
+No positive rerun is performed by this preflight. A later owner-authorized sequence must reread the exact selected run/job immediately before each write, invoke each rerun mutation exactly once, stop on any `mutationUncertain=true`, never retry an uncertain mutation, and verify acceptance by read-only run/job attempt state.
+
+```text
+RESEARCH123=ACTIVE
+ACTIONS_RERUN_POSITIVE_FIXTURE_PREFLIGHT=PASS_2_OF_2
+RUN_LEVEL_FIXTURE_RUN_ID=33501596538
+RUN_LEVEL_FIXTURE_JOB_ID=99835969925
+SINGLE_JOB_FIXTURE_RUN_ID=33501718088
+SINGLE_JOB_FIXTURE_JOB_ID=99836356121
+FIXTURE_WORKFLOW_PERMISSIONS=CONTENTS_READ_ONLY
+ACTIONS_RERUN_MUTATION_POSITIVE_LIVE=0_OF_2
+ACTIONS_RERUN_MUTATION_OCCURRED=false
+PR_REVIEW_MUTATION_POSITIVE_LIVE=PASS_13_OF_19
+PR_REVIEW_MUTATION_UNCERTAIN_RESULTS=1
+PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=EXPLICIT_OWNER_AUTHORIZATION_FOR_TWO_ACTIONS_RERUN_MUTATIONS
+```
