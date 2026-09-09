@@ -1461,3 +1461,28 @@ NATIVE_WRITE_ACTIONS_IMPLEMENTED=41_OF_41
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=RESEARCH123_REMAINING_PARITY_GAP_RECONCILIATION
 ```
+
+## 65. Native parity implementation structurally complete; extended repository administration next
+
+Validation 183 / Checkpoint 426 reconcile the residual native-parity gap set after 89/89 action implementation and 37/41 write positive-live coverage. Runtime Bridge has complete action-name implementation and fresh-host schema coverage for the captured 89-action provider surface, while positive-live action coverage is 84/89.
+
+The five action-level positive-live gaps are all prerequisite-gated rather than missing implementations: `download_user_content` needs a real private-user-images fixture; dismiss-review needs a genuine dismissible second-reviewer fixture; auto-merge needs repository-level auto-merge enabled; reviewer request/removal need a known second reviewer or team. Research 123 will not manufacture third-party relationships, alter unrelated repository configuration, or fabricate a content-download URL just to force those rows green.
+
+Three option/host semantics remain separately fail-closed or out of current target scope. Live preview.38 reconfirms `GITHUB_PARITY_OPTION_NOT_QUALIFIED` for `list_installations(manageable_only=true)` and `list_repositories(include_search_index_status=true)`. An Enterprise-style repository URL is rejected as `GITHUB_ENTERPRISE_NOT_QUALIFIED`; the current project App/runtime target remains github.com and the selected App profile enables no enterprise permissions.
+
+Exact provider-wrapper parity remains `0 / 89` because the host never projected machine-readable native output schemas, structured error schemas or normalized result envelopes and leaves several wrapper-specific precedence/pagination semantics hidden or descriptive. Platform contracts and live behavior support practical safe implementations but cannot prove hidden provider normalization. That metric therefore remains an evidence statement and is not treated as an implementation score.
+
+The native-parity implementation phase is structurally complete under current evidence and environment. Research 123 remains active because Checkpoint 393 deliberately expanded the product goal beyond provider parity to selected capabilities enabled by the project-owned GitHub App. Repository Administration(write) was already selected as the strongest first extension family and was explicitly requested by the owner. The next step is read-only design/research of a bounded semantic administration foundation before exposing any new administration mutation.
+
+```text
+RESEARCH123=ACTIVE
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+FRESH_HOST_SCHEMA_COVERAGE=89_OF_89
+POSITIVE_LIVE_ACTIONS=84_OF_89
+POSITIVE_LIVE_ACTION_GAPS=5
+NATIVE_OPTION_HOST_GAPS=3
+NATIVE_ACTIONS_UNIMPLEMENTED=0
+EXACT_NATIVE_WRAPPER_PARITY_ROWS_CLOSED=0_OF_89
+RESEARCH123_NATIVE_PARITY_IMPLEMENTATION=STRUCTURALLY_COMPLETE_WITH_RESIDUAL_EVIDENCE_GATES
+NEXT=EXTENDED_GITHUB_REPOSITORY_ADMINISTRATION_FOUNDATION_DESIGN
+```
