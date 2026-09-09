@@ -462,11 +462,17 @@ GitHub's current post-registration UI now exposes an empirical gate not represen
 
 The corrected installation sequence is therefore to generate exactly one App private key only to satisfy GitHub's current install gate, never expose or commit the PEM, never use it for Runtime Bridge API authority, install the App on `shakaarlatief` with All repositories, then securely destroy the downloaded local private-key file. GitHub stores only the public portion of the registered key, so destroying the local private half does not alter the installation relation; if an App-authenticated flow is intentionally added later, a new private key can be generated under a dedicated secure-key architecture.
 
-## 36. Current boundary
+## 36. Live App installed on all personal repositories
 
-Research 123 remains active. The next owner action is to generate one GitHub App private key, install the App with All repositories, and then destroy the local downloaded PEM without ever sending it through ChatGPT or committing it. Do not generate a Client secret. After installation, return only non-secret installation evidence/ID.
+Validation 155 / Checkpoint 398 preserve successful installation of `Codexless Runtime Bridge` on the owner's personal account. The live GitHub installation page shows the App as `Installed now` and `All repositories` selected. This closes the personal-repository installation-scope gate and matches the clarified target that Codexless should cover all repositories under the personal installation rather than only ADS. The installation ID is not yet captured.
 
-Once installation is preserved, configure the non-secret Client ID into the fixed Runtime Bridge server-owned configuration, qualify `metadata` as `configured=true`, `storedAuthorization=false`, then begin exactly one explicit user device authorization.
+The GitHub-required private key was generated only to satisfy the installation gate discovered at Checkpoint 397. No Runtime Bridge flow uses the private key. The downloaded local PEM is now a temporary bootstrap credential and must be deleted before live authorization proceeds. No Client secret has been generated.
+
+## 37. Current boundary
+
+Research 123 remains active. The immediate owner action is to delete the downloaded GitHub App `.pem` file locally and confirm deletion without sending the file or its contents. Once that cleanup is confirmed, configure only the non-secret Client ID `Iv23ligrmw82wVOSGTWn` into the fixed server-owned Runtime Bridge GitHub authorization configuration.
+
+The next runtime qualification must be metadata-only and require `configured=true`, `storedAuthorization=false` before beginning exactly one explicit device authorization.
 
 ```text
 RESEARCH123=ACTIVE
@@ -475,14 +481,15 @@ GITHUB_APP_REGISTERED=true
 GITHUB_APP_ID=4881901
 GITHUB_APP_CLIENT_ID=Iv23ligrmw82wVOSGTWn
 GITHUB_APP_SLUG=codexless-runtime-bridge
-GITHUB_APP_INSTALLED=false
-PRIVATE_KEY_GENERATED=false
-CLIENT_SECRET_GENERATED=false
-DEVICE_FLOW_RUNTIME_PRIVATE_KEY_REQUIRED=false
-GITHUB_INSTALL_UI_PRIVATE_KEY_GATE=true
+GITHUB_APP_INSTALLED=true
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
+INSTALLATION_ID=NOT_YET_CAPTURED
+PRIVATE_KEY_GENERATED=true
+LOCAL_PRIVATE_KEY_DELETION=PENDING_USER_CONFIRMATION
+CLIENT_SECRET_GENERATED=false
+GITHUB_APP_CLIENT_ID_CONFIGURED=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 SOURCE_VAULT=PAUSED
-NEXT=OWNER_GENERATE_ONE_PRIVATE_KEY_INSTALL_ALL_REPOSITORIES_THEN_DESTROY_LOCAL_PEM
+NEXT=OWNER_DELETE_LOCAL_PEM_THEN_CONFIGURE_NON_SECRET_CLIENT_ID
 ```

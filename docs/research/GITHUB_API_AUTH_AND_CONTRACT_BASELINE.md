@@ -367,7 +367,13 @@ Validation 154 / Checkpoint 397 preserve the first live GitHub App registration.
 
 Official GitHub device-flow documentation requires `client_id` and `device_code`, not a client secret. Refreshing a user access token originally issued through device flow likewise does not require a client secret. GitHub App private keys authenticate as the App itself for JWT/installation-token flows. Runtime Bridge does not currently use that authority. Therefore generate one key only to satisfy the install gate, never expose or commit its PEM, install the App, then destroy the downloaded local private half; keep Client secret ungenerated.
 
-## 24. Current disposition
+## 24. Live installation complete; local bootstrap-key cleanup pending
+
+Validation 155 / Checkpoint 398 preserve successful installation of the dedicated GitHub App on `shakaarlatief` with `All repositories`. The App private key required by GitHub's install gate has served its only current purpose; Runtime Bridge does not use App-JWT/private-key authority. The downloaded local PEM must therefore be deleted before live user authorization. No Client secret has been generated.
+
+After PEM deletion, the next runtime authority mutation is limited to configuring the non-secret Client ID `Iv23ligrmw82wVOSGTWn` in fixed server-owned configuration. `codex.github_authorization metadata` must then show `configured=true` while `storedAuthorization=false` before any `begin` action.
+
+## 25. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -390,11 +396,15 @@ PUBLIC_TOOL_COUNT=64
 GITHUB_APP_REGISTERED=true
 GITHUB_APP_ID=4881901
 GITHUB_APP_CLIENT_ID=Iv23ligrmw82wVOSGTWn
-GITHUB_APP_INSTALLED=false
+GITHUB_APP_INSTALLED=true
+PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
+INSTALLATION_ID=NOT_YET_CAPTURED
+PRIVATE_KEY_GENERATED=true
+LOCAL_PRIVATE_KEY_DELETION=PENDING_USER_CONFIRMATION
 GITHUB_INSTALL_UI_PRIVATE_KEY_GATE=true
 GITHUB_APP_CLIENT_ID_CONFIGURED=false
 STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=OWNER_GENERATE_ONE_PRIVATE_KEY_INSTALL_ALL_REPOSITORIES_THEN_DESTROY_LOCAL_PEM
+NEXT=OWNER_DELETE_LOCAL_PEM_THEN_CONFIGURE_NON_SECRET_CLIENT_ID
 ```

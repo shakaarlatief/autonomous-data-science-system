@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "date": "2026-09-09",
   "research": "123",
-  "status": "REGISTERED_INSTALLATION_BLOCKED_PENDING_PRIVATE_KEY",
+  "status": "REGISTERED_AND_INSTALLED_ALL_PERSONAL_REPOSITORIES_LOCAL_PRIVATE_KEY_DELETION_PENDING",
   "app": {
     "name": "Codexless Runtime Bridge",
     "slug": "codexless-runtime-bridge",
@@ -14,16 +14,18 @@
   },
   "credentialState": {
     "clientSecretGenerated": false,
-    "privateKeyGenerated": false,
+    "privateKeyGenerated": true,
     "userAccessTokenGenerated": false,
     "refreshTokenGenerated": false,
     "deviceCodeGenerated": false
   },
   "installationState": {
-    "installed": false,
+    "installed": true,
     "targetAccount": "shakaarlatief",
     "targetRepositoryScope": "all_repositories",
-    "githubUiGate": "Registration successful. You must generate a private key in order to install your GitHub App."
+    "installationId": null,
+    "installationIdStatus": "NOT_YET_CAPTURED",
+    "liveEvidence": "Owner-supplied GitHub installation screenshot shows Codexless Runtime Bridge as Installed now and Repository access = All repositories."
   },
   "architectureReconciliation": {
     "deviceFlowStillUsesClientIdOnly": true,
@@ -32,7 +34,7 @@
     "privateKeyNeededForRuntimeUserTokenFlow": false,
     "privateKeyNeededForGitHubCurrentInstallGate": true,
     "privateKeyRuntimeUsePlanned": false,
-    "privateKeyHandlingPlan": "Generate exactly one GitHub App private key to satisfy the current GitHub installation gate; never paste or commit it; use it for no Runtime Bridge authentication; after installation, destroy the downloaded private key file locally while leaving the corresponding public key registered at GitHub. The user-token device-flow runtime continues to use only the non-secret Client ID and protected user/refresh tokens."
+    "privateKeyHandlingPlan": "A GitHub App private key was generated only because GitHub required one before installation. The App is now installed. The downloaded local PEM must now be securely destroyed and never used by Runtime Bridge; the corresponding GitHub-side public key may remain registered. Runtime Bridge continues with Client ID + device-flow user tokens."
   },
   "officialSources": [
     "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/managing-private-keys-for-github-apps",
@@ -40,5 +42,5 @@
     "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/refreshing-user-access-tokens",
     "https://docs.github.com/en/apps/using-github-apps/installing-your-own-github-app"
   ],
-  "next": "OWNER_GENERATE_ONE_PRIVATE_KEY_INSTALL_APP_ALL_REPOSITORIES_THEN_DESTROY_LOCAL_PEM"
+  "next": "OWNER_DELETE_DOWNLOADED_PRIVATE_KEY_PEM_THEN_CONFIGURE_NON_SECRET_CLIENT_ID"
 }

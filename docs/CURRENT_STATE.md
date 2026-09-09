@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 397
+**Checkpoint:** 398
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 398 records successful installation of the live `Codexless Runtime Bridge` GitHub App on personal account `shakaarlatief` with **All repositories** selected. Owner-supplied GitHub evidence shows the App as `Installed now` and the repository-access selector at All repositories, matching the clarified broad personal-repository target. The installation ID has not yet been captured. Because GitHub required an App private key before installation, a private key was generated solely to cross that gate; Runtime Bridge still does not use App-JWT/private-key authority. The immediate security boundary is therefore local deletion of the downloaded `.pem` private key before authorization proceeds. No Client secret has been generated, no user/refresh token exists, and live GitHub device authorization remains unstarted. After PEM deletion is confirmed, the next technical step is fixed server-owned configuration of non-secret Client ID `Iv23ligrmw82wVOSGTWn`, followed by a metadata-only qualification requiring `configured=true` and `storedAuthorization=false`.
 
 Checkpoint 397 records the first live GitHub App registration. GitHub created `Codexless Runtime Bridge` under owner `shakaarlatief` with App ID `4881901`, Client ID `Iv23ligrmw82wVOSGTWn`, and slug `codexless-runtime-bridge`. The App is registered but not yet installed and no client secret, private key, access token, refresh token or device code exists. GitHub's post-registration UI now exposes an empirical installation gate requiring a private key before the App can be installed. This corrects the earlier no-private-key bootstrap assumption without changing Runtime Bridge's selected user-token/device-flow architecture: official GitHub device flow uses Client ID and device code, and refresh of device-flow-derived user tokens does not require a client secret. The corrected bootstrap is to generate exactly one App private key solely to satisfy GitHub's install gate, never expose/commit/use it in Runtime Bridge, install on `shakaarlatief` with All repositories, then securely destroy the downloaded local PEM while leaving the GitHub-side public key registration intact.
 
@@ -441,6 +443,9 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/398_github_app_installed_all_repositories_private_key_cleanup_next.md
+docs/local_execution/validation/155_github_app_installed_all_personal_repositories.md
+docs/research/github_app_live_registration_20260909.json
 docs/checkpoints/397_github_app_registered_private_key_install_gate_next.md
 docs/local_execution/validation/154_github_app_registered_private_key_install_gate_discovered.md
 docs/research/github_app_live_registration_20260909.json
