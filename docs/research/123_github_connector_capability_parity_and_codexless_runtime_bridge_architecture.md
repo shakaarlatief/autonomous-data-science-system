@@ -1373,3 +1373,26 @@ PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=PR_REVIEW_REMAINING_SIX_QUALIFICATION_RESOLUTION_DESIGN
 ```
+
+## 62. Remaining six classified: two isolatable, four environment-gated; semantic hardening next
+
+Validation 180 / Checkpoint 423 perform read-only resolution design for the six PR/review positive-live gaps after Actions rerun closure. All twelve installed repositories report `allow_auto_merge=false`, and all discovered pull requests across the installed surface are authored by `shakaarlatief`; no second-user/bot-authored PR or organization-team fixture is present. Generic collaborator/team enumeration remains intentionally outside the bounded fetch allowlist, so a reviewer identity must not be guessed.
+
+The previous dismissal uncertainty is explained by target state. GitHub's GraphQL dismissal mutation applies to approved/rejected reviews, while Validation 175 targeted a COMMENTED review. Runtime Bridge currently resolves only review scope and then dispatches GraphQL, causing a known semantic rejection to become conservatively `mutationUncertain=true`. The next hardening should resolve review `databaseId` and `state`, reject anything other than APPROVED/CHANGES_REQUESTED before mutation, and use GitHub's fixed REST dismissal endpoint so classifiable HTTP validation responses remain non-uncertain.
+
+Auto-merge also needs deterministic preflight hardening. The service reads merge-method settings but does not currently reject repository `allow_auto_merge=false` before GraphQL. Because every installed repository has auto-merge disabled, the service should fail closed before mutation in this environment. Research 123 will not silently change repository settings outside the captured 89-action surface merely to force a positive qualification.
+
+`github.update_pull_request` and `github.merge_pull_request` are independent of those environment gates and can be qualified on a fresh disposable base/head/PR fixture without touching PR #84. Their exact positive sequence must be separately authorized. Under the present environment, successful positive-live write coverage can therefore reach 37/41; the remaining four are environment-gated until repository configuration or a known second reviewer/team fixture changes.
+
+```text
+RESEARCH123=ACTIVE
+PR_REVIEW_REMAINING_SIX_DESIGN=PASS
+PR_REVIEW_READY_FOR_ISOLATED_POSITIVE=2
+PR_REVIEW_ENVIRONMENT_GATED=4
+CURRENT_ENVIRONMENT_MAX_POSITIVE_LIVE=37_OF_41
+PR_REVIEW_MUTATION_POSITIVE_LIVE=PASS_13_OF_19
+NATIVE_WRITE_POSITIVE_LIVE=35_OF_41
+PR_REVIEW_MUTATION_UNCERTAIN_RESULTS=1
+PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+NEXT=PR_REVIEW_SEMANTIC_GUARD_HARDENING_PREVIEW38
+```
