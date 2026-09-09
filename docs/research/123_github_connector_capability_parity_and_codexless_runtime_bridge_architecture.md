@@ -440,28 +440,39 @@ The machine artifact `github_app_live_permission_inventory_20260909.json` preser
 
 The selection policy remains maximum useful professional development capability rather than maximum checkbox count. Secret-value families remain deferred until secure value transport exists; Webhooks remain deferred until external destinations are explicitly bounded. Organization credential/PAT/billing-sensitive families remain excluded from the current broad profile, while organization developer/admin/security capabilities are generally included. Enterprise permissions remain out of scope until a real enterprise target exists.
 
-## 33. Current boundary
+## 33. Extended permission manifest and registration frozen
 
-Research 123 remains active. The next step is to freeze the **final extended permission manifest** from the live 118-option candidate and rebuild the GitHub App registration prefill/checklist around it. The owner should not create the App from the historical seven-permission URL.
+Validation 152 / Checkpoint 395 convert the 118-row live UI inventory into the first actual broader-than-native App creation profile. The frozen profile selects 74 rows: 34 repository, 30 organization, 10 account and no enterprise permission. Native 89-action connector parity remains a subset rather than the ceiling. Repository Administration(write) is explicitly included so future bounded Codexless actions can create repositories and manage repository settings/collaborators; Checks/status publication, deployments/environments, Codespaces, discussions, packages/projects, security management, Agent/Copilot surfaces and selected organization/account administration are also included.
 
-The intended personal installation remains All repositories. Organization installations remain explicit and user/installation/app-intersection bounded. No GitHub App/client ID/token exists yet.
+The profile deliberately stops short of indiscriminate authority. Repository Agent secrets, Codespaces secrets, Dependabot secrets, Actions Secrets, Single file and Webhooks remain No access. Organization secret/credential/PAT/webhook families and unrelated account-control permissions remain excluded; all enterprise permissions remain off. High-consequence selected permissions still require semantic Runtime Bridge actions and confirmation controls before public exposure.
+
+The registration prefill embeds 56 independently documented permission parameter names. Eighteen current live/newer permission rows are manual UI selections because their registration parameter names were not independently verified. The project explicitly prefers a manual row over inventing an undocumented query key. Device Flow ON, user-token expiration ON, install-time OAuth OFF, webhook Active OFF, Any-account/public visibility and personal installation All repositories are frozen.
+
+## 34. Current boundary
+
+Research 123 now reaches the owner GitHub UI creation boundary again, this time with the extended profile rather than the superseded seven-permission baseline. The owner should open the new extended registration prefill, complete the 18 manual permission rows and manual switches, select Any account, create the App, then install it on `shakaarlatief` with All repositories.
+
+Return only non-secret App ID, Client ID, App slug/settings URL, installation ID and setting confirmation. Do not paste client secret, private key, access token, refresh token, device code or webhook secret. After creation/install, preserve the actual registration evidence, configure only the non-secret Client ID into fixed server-owned Runtime Bridge configuration, require metadata to show `configured=true`, `storedAuthorization=false`, and only then begin explicit device flow.
 
 ```text
 RESEARCH123=ACTIVE
 TARGET=GITHUB_PARITY_PLUS_EXTENSIONS
 LIVE_PERMISSION_OPTION_COUNT=118
-REPOSITORY_OPTIONS=40
-ORGANIZATION_OPTIONS=42
-ACCOUNT_OPTIONS=19
-ENTERPRISE_OPTIONS=17
-BROAD_SUPERSET_CANDIDATE=READY
-REPOSITORY_ADMINISTRATION=INCLUDED
-SECRET_VALUE_PERMISSIONS=DEFER
-WEBHOOK_MANAGEMENT=DEFER
-ENTERPRISE_PERMISSIONS=NONE
+EXTENDED_SELECTED_PERMISSION_COUNT=74
+REPOSITORY_SELECTED=34
+ORGANIZATION_SELECTED=30
+ACCOUNT_SELECTED=10
+ENTERPRISE_SELECTED=0
+DOCUMENTED_PREFILL_PERMISSION_COUNT=56
+MANUAL_LIVE_UI_PERMISSION_COUNT=18
+REPOSITORY_ADMINISTRATION=WRITE
+SECRET_VALUE_PERMISSIONS=NO_ACCESS
+WEBHOOK_MANAGEMENT=NO_ACCESS
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
 GITHUB_APP_REGISTERED=false
+GITHUB_APP_CLIENT_ID_CONFIGURED=false
+PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 SOURCE_VAULT=PAUSED
-NEXT=FREEZE_EXTENDED_PERMISSION_MANIFEST_AND_REBUILD_REGISTRATION_PREFILL
+NEXT=OWNER_CREATE_EXTENDED_GITHUB_APP_AND_INSTALL_ALL_PERSONAL_REPOSITORIES
 ```

@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-09",
+  "research": "123",
+  "status": "FROZEN_EXTENDED_REGISTRATION_CONFIGURATION",
+  "registrationOwner": {
+    "accountType": "personal",
+    "login": "shakaarlatief"
+  },
+  "appIdentity": {
+    "name": "Codexless Runtime Bridge",
+    "description": "GitHub capability layer for the Autonomous Data Science System through Codexless Runtime Bridge.",
+    "url": "https://github.com/shakaarlatief/autonomous-data-science-system"
+  },
+  "visibility": {
+    "githubUiChoice": "Any account",
+    "public": true
+  },
+  "authorizationSettings": {
+    "enableDeviceFlow": true,
+    "expireUserAuthorizationTokens": true,
+    "requestUserAuthorizationDuringInstallation": false,
+    "callbackUrls": [],
+    "setupUrl": null,
+    "redirectOnUpdate": false
+  },
+  "webhookSettings": {
+    "active": false,
+    "url": null,
+    "secret": null,
+    "events": []
+  },
+  "permissionManifestPath": "docs/research/github_app_extended_permission_manifest.json",
+  "selectedCounts": {
+    "repository": 34,
+    "organization": 30,
+    "account": 10,
+    "enterprise": 0,
+    "total": 74
+  },
+  "prefill": {
+    "documentedPermissionParameterCount": 56,
+    "manualLiveUiPermissionCount": 18,
+    "manualLiveUiSelections": [
+      {
+        "scope": "repository",
+        "displayName": "Agent tasks",
+        "access": "write"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Agent variables",
+        "access": "write"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Copilot agent settings",
+        "access": "read"
+      },
+      {
+        "scope": "repository",
+        "displayName": "License compliance alerts",
+        "access": "read"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Secret scanning alert dismissal requests",
+        "access": "write"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Secret scanning push protection bypass requests",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Agent variables",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Copilot Spaces",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Copilot content exclusion",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Hosted runner custom images",
+        "access": "read"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Issue Fields",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization Copilot metrics",
+        "access": "read"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization bypass requests for secret scanning",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization dismissal requests for Dependabot",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization innersource vulnerabilities",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Secret scanning alert dismissal requests",
+        "access": "write"
+      },
+      {
+        "scope": "account",
+        "displayName": "Issue Fields",
+        "access": "write"
+      },
+      {
+        "scope": "account",
+        "displayName": "Issue Types",
+        "access": "write"
+      }
+    ],
+    "url": "https://github.com/settings/apps/new?name=Codexless+Runtime+Bridge&description=GitHub+capability+layer+for+the+Autonomous+Data+Science+System+through+Codexless+Runtime+Bridge.&url=https%3A%2F%2Fgithub.com%2Fshakaarlatief%2Fautonomous-data-science-system&request_oauth_on_install=false&public=true&webhook_active=false&actions=write&administration=write&artifact_metadata=write&attestations=write&checks=write&code_quality=write&security_events=write&codespaces=write&codespaces_lifecycle_admin=write&codespaces_metadata=read&statuses=write&contents=write&repository_custom_properties=write&vulnerability_alerts=write&deployments=write&discussions=write&environments=write&issues=write&merge_queues=write&metadata=read&packages=write&pages=write&repository_projects=admin&pull_requests=write&repository_advisories=write&secret_scanning_alerts=write&actions_variables=write&workflows=write&organization_api_insights=read&organization_administration=write&organization_campaigns=write&organization_copilot_agent_settings=write&organization_custom_org_roles=write&organization_custom_properties=admin&custom_properties_for_organizations=write&organization_custom_roles=write&organization_events=read&issue_types=write&members=write&organization_models=read&organization_network_configurations=write&organization_codespaces=write&organization_codespaces_settings=write&organization_code_scanning_dismissal_requests=write&organization_plan=read&organization_projects=admin&organization_self_hosted_runners=write&organization_actions_variables=write&user_events=read&gpg_keys=read&gists=write&keys=read&user_models=read&git_signing_ssh_public_keys=read&starring=write&watching=write",
+    "note": "Only current permission parameter names independently documented by GitHub are embedded. Live-only/newer permissions without a separately verified parameter name remain manual UI selections rather than guessed URL parameters."
+  },
+  "manualPermissionSelections": [
+    {
+      "scope": "repository",
+      "displayName": "Agent tasks",
+      "access": "write"
+    },
+    {
+      "scope": "repository",
+      "displayName": "Agent variables",
+      "access": "write"
+    },
+    {
+      "scope": "repository",
+      "displayName": "Copilot agent settings",
+      "access": "read"
+    },
+    {
+      "scope": "repository",
+      "displayName": "License compliance alerts",
+      "access": "read"
+    },
+    {
+      "scope": "repository",
+      "displayName": "Secret scanning alert dismissal requests",
+      "access": "write"
+    },
+    {
+      "scope": "repository",
+      "displayName": "Secret scanning push protection bypass requests",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Agent variables",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Copilot Spaces",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Copilot content exclusion",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Hosted runner custom images",
+      "access": "read"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Issue Fields",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Organization Copilot metrics",
+      "access": "read"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Organization bypass requests for secret scanning",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Organization dismissal requests for Dependabot",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Organization innersource vulnerabilities",
+      "access": "write"
+    },
+    {
+      "scope": "organization",
+      "displayName": "Secret scanning alert dismissal requests",
+      "access": "write"
+    },
+    {
+      "scope": "account",
+      "displayName": "Issue Fields",
+      "access": "write"
+    },
+    {
+      "scope": "account",
+      "displayName": "Issue Types",
+      "access": "write"
+    }
+  ],
+  "installationSettings": {
+    "initialPersonalAccount": "shakaarlatief",
+    "initialRepositoryAccessPolicy": "all_repositories",
+    "organizationPolicy": "Install the same public App explicitly on each relevant organization/account; repository scope is chosen at installation and effective authority remains user \u2229 installation \u2229 app permissions."
+  },
+  "bootstrapCredentials": {
+    "clientId": "non-secret identifier to configure later in fixed Runtime Bridge server-owned configuration",
+    "clientSecret": "do not copy into chat/repository; not required by selected device-flow token exchange",
+    "privateKey": "do not generate/use for current user-token device-flow bootstrap",
+    "tokens": "protected OS credential store only after explicit user authorization"
+  },
+  "manualChecklist": [
+    "Open the extended prefill URL from this artifact.",
+    "Confirm App name exactly Codexless Runtime Bridge. If GitHub reports a uniqueness conflict, stop and return that evidence rather than silently renaming.",
+    "Confirm homepage and description exactly match the artifact.",
+    "Confirm Request user authorization during installation is OFF.",
+    "Confirm Callback URL and Setup URL are blank; redirect-on-update remains OFF.",
+    "Confirm Expire user authorization tokens is ON.",
+    "Confirm Enable Device Flow is ON.",
+    "Confirm webhook Active is OFF and no webhook URL/secret/events are configured.",
+    "Confirm Where can this GitHub App be installed? is Any account.",
+    "Verify the prefill-selected permission rows against the frozen manifest.",
+    "Manually set each of the 18 live/newer permission rows listed in this artifact because their URL parameter names were not independently verified.",
+    "Confirm the six repository No-access rows, twelve organization No-access rows, nine account No-access rows, and all seventeen enterprise rows remain No access.",
+    "Create the GitHub App. Do not generate a private key.",
+    "Install it on personal account shakaarlatief with All repositories.",
+    "Return only non-secret App ID, Client ID, installation ID, App slug/settings URL and screenshots/settings confirmation. Do not paste client secret, private key, access token, refresh token, device_code, webhook secret or any other credential."
+  ],
+  "next": "OWNER_CREATE_EXTENDED_GITHUB_APP_AND_INSTALL_ALL_PERSONAL_REPOSITORIES"
+}

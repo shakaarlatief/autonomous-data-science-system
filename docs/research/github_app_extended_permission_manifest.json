@@ -1,0 +1,656 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-09",
+  "research": "123",
+  "status": "FROZEN_EXTENDED_DEVELOPER_SUPERSET",
+  "goal": "native GitHub connector parity plus bounded GitHub extensions",
+  "liveUiSource": "docs/research/github_app_live_permission_inventory_20260909.json",
+  "liveOptionCounts": {
+    "repository": 40,
+    "organization": 42,
+    "account": 19,
+    "enterprise": 17,
+    "total": 118
+  },
+  "selectedCounts": {
+    "repository": 34,
+    "organization": 30,
+    "account": 10,
+    "enterprise": 0,
+    "total": 74
+  },
+  "repositoryPermissions": [
+    {
+      "displayName": "Actions",
+      "access": "write",
+      "prefillParameter": "actions",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Administration",
+      "access": "write",
+      "prefillParameter": "administration",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Agent tasks",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Agent variables",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Artifact metadata",
+      "access": "write",
+      "prefillParameter": "artifact_metadata",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Attestations",
+      "access": "write",
+      "prefillParameter": "attestations",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Checks",
+      "access": "write",
+      "prefillParameter": "checks",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Code quality",
+      "access": "write",
+      "prefillParameter": "code_quality",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Code scanning alerts",
+      "access": "write",
+      "prefillParameter": "security_events",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Codespaces",
+      "access": "write",
+      "prefillParameter": "codespaces",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Codespaces lifecycle admin",
+      "access": "write",
+      "prefillParameter": "codespaces_lifecycle_admin",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Codespaces metadata",
+      "access": "read",
+      "prefillParameter": "codespaces_metadata",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Commit statuses",
+      "access": "write",
+      "prefillParameter": "statuses",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Contents",
+      "access": "write",
+      "prefillParameter": "contents",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Copilot agent settings",
+      "access": "read",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Custom properties",
+      "access": "write",
+      "prefillParameter": "repository_custom_properties",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Dependabot alerts",
+      "access": "write",
+      "prefillParameter": "vulnerability_alerts",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Deployments",
+      "access": "write",
+      "prefillParameter": "deployments",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Discussions",
+      "access": "write",
+      "prefillParameter": "discussions",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Environments",
+      "access": "write",
+      "prefillParameter": "environments",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Issues",
+      "access": "write",
+      "prefillParameter": "issues",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "License compliance alerts",
+      "access": "read",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Merge queues",
+      "access": "write",
+      "prefillParameter": "merge_queues",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Metadata",
+      "access": "read",
+      "prefillParameter": "metadata",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Packages",
+      "access": "write",
+      "prefillParameter": "packages",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Pages",
+      "access": "write",
+      "prefillParameter": "pages",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Projects",
+      "access": "admin",
+      "prefillParameter": "repository_projects",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Pull requests",
+      "access": "write",
+      "prefillParameter": "pull_requests",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Repository security advisories",
+      "access": "write",
+      "prefillParameter": "repository_advisories",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Secret scanning alert dismissal requests",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Secret scanning alerts",
+      "access": "write",
+      "prefillParameter": "secret_scanning_alerts",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Secret scanning push protection bypass requests",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Variables",
+      "access": "write",
+      "prefillParameter": "actions_variables",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Workflows",
+      "access": "write",
+      "prefillParameter": "workflows",
+      "prefillMode": "documented"
+    }
+  ],
+  "organizationPermissions": [
+    {
+      "displayName": "API Insights",
+      "access": "read",
+      "prefillParameter": "organization_api_insights",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Administration",
+      "access": "write",
+      "prefillParameter": "organization_administration",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Agent variables",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Campaigns",
+      "access": "write",
+      "prefillParameter": "organization_campaigns",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Copilot Spaces",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Copilot agent settings",
+      "access": "write",
+      "prefillParameter": "organization_copilot_agent_settings",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Copilot content exclusion",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Custom organization roles",
+      "access": "write",
+      "prefillParameter": "organization_custom_org_roles",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Custom properties",
+      "access": "admin",
+      "prefillParameter": "organization_custom_properties",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Custom properties for organizations",
+      "access": "write",
+      "prefillParameter": "custom_properties_for_organizations",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Custom repository roles",
+      "access": "write",
+      "prefillParameter": "organization_custom_roles",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Events",
+      "access": "read",
+      "prefillParameter": "organization_events",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Hosted runner custom images",
+      "access": "read",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Issue Fields",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Issue Types",
+      "access": "write",
+      "prefillParameter": "issue_types",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Members",
+      "access": "write",
+      "prefillParameter": "members",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Models",
+      "access": "read",
+      "prefillParameter": "organization_models",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Network configurations",
+      "access": "write",
+      "prefillParameter": "organization_network_configurations",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Organization Copilot metrics",
+      "access": "read",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Organization bypass requests for secret scanning",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Organization codespaces",
+      "access": "write",
+      "prefillParameter": "organization_codespaces",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Organization codespaces settings",
+      "access": "write",
+      "prefillParameter": "organization_codespaces_settings",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Organization dismissal requests for Dependabot",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Organization dismissal requests for code scanning",
+      "access": "write",
+      "prefillParameter": "organization_code_scanning_dismissal_requests",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Organization innersource vulnerabilities",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Plan",
+      "access": "read",
+      "prefillParameter": "organization_plan",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Projects",
+      "access": "admin",
+      "prefillParameter": "organization_projects",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Secret scanning alert dismissal requests",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Self-hosted runners",
+      "access": "write",
+      "prefillParameter": "organization_self_hosted_runners",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Variables",
+      "access": "write",
+      "prefillParameter": "organization_actions_variables",
+      "prefillMode": "documented"
+    }
+  ],
+  "accountPermissions": [
+    {
+      "displayName": "Events",
+      "access": "read",
+      "prefillParameter": "user_events",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "GPG keys",
+      "access": "read",
+      "prefillParameter": "gpg_keys",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Gists",
+      "access": "write",
+      "prefillParameter": "gists",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Git SSH keys",
+      "access": "read",
+      "prefillParameter": "keys",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Issue Fields",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Issue Types",
+      "access": "write",
+      "prefillParameter": null,
+      "prefillMode": "manual_live_ui"
+    },
+    {
+      "displayName": "Models",
+      "access": "read",
+      "prefillParameter": "user_models",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "SSH signing keys",
+      "access": "read",
+      "prefillParameter": "git_signing_ssh_public_keys",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Starring",
+      "access": "write",
+      "prefillParameter": "starring",
+      "prefillMode": "documented"
+    },
+    {
+      "displayName": "Watching",
+      "access": "write",
+      "prefillParameter": "watching",
+      "prefillMode": "documented"
+    }
+  ],
+  "enterprisePermissions": [],
+  "explicitNoAccess": {
+    "repository": [
+      "Agent secrets",
+      "Codespaces secrets",
+      "Dependabot secrets",
+      "Secrets",
+      "Single file",
+      "Webhooks"
+    ],
+    "organization": [
+      "Agent secrets",
+      "Blocking users",
+      "GitHub Copilot Business",
+      "Organization announcement banners",
+      "Organization codespaces secrets",
+      "Organization credentials",
+      "Organization dependabot secrets",
+      "Organization private registries",
+      "Personal access token requests",
+      "Personal access tokens",
+      "Secrets",
+      "Webhooks"
+    ],
+    "account": [
+      "Block another user",
+      "Codespaces user secrets",
+      "Copilot Chat",
+      "Copilot Editor Context",
+      "Email addresses",
+      "Followers",
+      "Interaction limits",
+      "Plan",
+      "Profile"
+    ],
+    "enterprise": [
+      "Copilot usage records",
+      "Custom enterprise roles",
+      "Custom properties",
+      "Enterprise AI controls",
+      "Enterprise Copilot metrics",
+      "Enterprise SCIM",
+      "Enterprise billing",
+      "Enterprise credentials",
+      "Enterprise custom organization roles",
+      "Enterprise custom properties for organizations",
+      "Enterprise innersource vulnerabilities",
+      "Enterprise organization installation repositories",
+      "Enterprise organization installations",
+      "Enterprise organizations",
+      "Enterprise people",
+      "Enterprise single sign-on",
+      "Enterprise teams"
+    ]
+  },
+  "registration": {
+    "owner": "shakaarlatief",
+    "identity": {
+      "name": "Codexless Runtime Bridge",
+      "description": "GitHub capability layer for the Autonomous Data Science System through Codexless Runtime Bridge.",
+      "url": "https://github.com/shakaarlatief/autonomous-data-science-system"
+    },
+    "publicAnyAccount": true,
+    "webhookActive": false,
+    "requestOauthOnInstall": false,
+    "enableDeviceFlowManual": true,
+    "expireUserAuthorizationTokensManual": true,
+    "callbackUrls": [],
+    "setupUrl": null,
+    "privateKeyBootstrap": false,
+    "personalInstallationRepositoryScope": "all_repositories"
+  },
+  "prefill": {
+    "documentedPermissionParameterCount": 56,
+    "manualLiveUiPermissionCount": 18,
+    "manualLiveUiSelections": [
+      {
+        "scope": "repository",
+        "displayName": "Agent tasks",
+        "access": "write"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Agent variables",
+        "access": "write"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Copilot agent settings",
+        "access": "read"
+      },
+      {
+        "scope": "repository",
+        "displayName": "License compliance alerts",
+        "access": "read"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Secret scanning alert dismissal requests",
+        "access": "write"
+      },
+      {
+        "scope": "repository",
+        "displayName": "Secret scanning push protection bypass requests",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Agent variables",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Copilot Spaces",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Copilot content exclusion",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Hosted runner custom images",
+        "access": "read"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Issue Fields",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization Copilot metrics",
+        "access": "read"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization bypass requests for secret scanning",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization dismissal requests for Dependabot",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Organization innersource vulnerabilities",
+        "access": "write"
+      },
+      {
+        "scope": "organization",
+        "displayName": "Secret scanning alert dismissal requests",
+        "access": "write"
+      },
+      {
+        "scope": "account",
+        "displayName": "Issue Fields",
+        "access": "write"
+      },
+      {
+        "scope": "account",
+        "displayName": "Issue Types",
+        "access": "write"
+      }
+    ],
+    "url": "https://github.com/settings/apps/new?name=Codexless+Runtime+Bridge&description=GitHub+capability+layer+for+the+Autonomous+Data+Science+System+through+Codexless+Runtime+Bridge.&url=https%3A%2F%2Fgithub.com%2Fshakaarlatief%2Fautonomous-data-science-system&request_oauth_on_install=false&public=true&webhook_active=false&actions=write&administration=write&artifact_metadata=write&attestations=write&checks=write&code_quality=write&security_events=write&codespaces=write&codespaces_lifecycle_admin=write&codespaces_metadata=read&statuses=write&contents=write&repository_custom_properties=write&vulnerability_alerts=write&deployments=write&discussions=write&environments=write&issues=write&merge_queues=write&metadata=read&packages=write&pages=write&repository_projects=admin&pull_requests=write&repository_advisories=write&secret_scanning_alerts=write&actions_variables=write&workflows=write&organization_api_insights=read&organization_administration=write&organization_campaigns=write&organization_copilot_agent_settings=write&organization_custom_org_roles=write&organization_custom_properties=admin&custom_properties_for_organizations=write&organization_custom_roles=write&organization_events=read&issue_types=write&members=write&organization_models=read&organization_network_configurations=write&organization_codespaces=write&organization_codespaces_settings=write&organization_code_scanning_dismissal_requests=write&organization_plan=read&organization_projects=admin&organization_self_hosted_runners=write&organization_actions_variables=write&user_events=read&gpg_keys=read&gists=write&keys=read&user_models=read&git_signing_ssh_public_keys=read&starring=write&watching=write",
+    "note": "Only current permission parameter names independently documented by GitHub are embedded. Live-only/newer permissions without a separately verified parameter name remain manual UI selections rather than guessed URL parameters."
+  },
+  "guardrails": {
+    "secrets": "No secret-value permission family is selected initially. Add only after a secure secret-value transport/mutation contract is implemented.",
+    "webhooks": "Repository and organization Webhooks remain disabled/no-access until outbound destinations are explicitly bounded.",
+    "highConsequence": "Administration, security-advisory, bypass/dismissal, organization-member/admin, runner, and similar write capabilities must be exposed only through bounded semantic Runtime Bridge actions with explicit confirmation where appropriate.",
+    "enterprise": "All enterprise permissions remain off until an actual enterprise target exists."
+  },
+  "sources": [
+    "https://docs.github.com/en/apps/sharing-github-apps/registering-a-github-app-using-url-parameters",
+    "https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/choosing-permissions-for-a-github-app",
+    "https://docs.github.com/en/rest/authentication/permissions-required-for-github-apps",
+    "https://docs.github.com/en/rest/apps/apps",
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+    "https://docs.github.com/en/rest/agent-tasks/agent-tasks"
+  ]
+}

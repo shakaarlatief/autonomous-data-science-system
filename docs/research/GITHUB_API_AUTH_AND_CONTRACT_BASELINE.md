@@ -355,7 +355,13 @@ Validation 149 / Checkpoint 392 freeze the account-bound GitHub App creation cho
 
 The first installation is intentionally limited to `Only select repositories` with the canonical public ADS repository. That scope is sufficient for authorization, installation-intersection and read-only GraphQL sufficiency qualification while minimizing first-live blast radius. It does not alter the final installation-derived parity model.
 
-## 22. Current disposition
+## 22. Extended App authority supersedes parity-only registration
+
+Validation 150-152 / Checkpoints 393-395 reopen and then refreeze the GitHub App authority because Codexless is now explicitly intended to exceed the provider-owned native connector where useful. Owner-supplied live UI evidence exposes 118 permission rows. The initial extended profile selects 74: 34 repository, 30 organization, 10 account and no enterprise permissions. Repository Administration(write) is included for later bounded repository creation/administration; secret-value and Webhook permission families remain excluded pending purpose-built safety contracts.
+
+The registration prefill contains 56 independently documented permission parameters. Eighteen current live/newer rows remain manual rather than using guessed query keys. Personal installation scope is All repositories. This extended profile, not the historical seven-permission baseline, is now the creation authority.
+
+## 23. Current disposition
 
 ```text
 GITHUB_APP_USER_ACCESS_TOKEN_MODEL=CONFIRMED
@@ -379,5 +385,5 @@ GITHUB_APP_CLIENT_ID_CONFIGURED=false
 STORED_GITHUB_AUTHORIZATION=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
-NEXT=OWNER_CREATE_AND_INSTALL_GITHUB_APP
+NEXT=OWNER_CREATE_EXTENDED_GITHUB_APP_AND_INSTALL_ALL_PERSONAL_REPOSITORIES
 ```
