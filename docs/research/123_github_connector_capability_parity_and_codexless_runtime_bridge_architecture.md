@@ -761,3 +761,45 @@ SAME_CHAT_G2_PROJECTION=STALE
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=FRESH_CHAT_G2_SCHEMA_AND_LIVE_READ_QUALIFICATION
 ```
+
+## 46. G2 fresh-host gate closed; all remaining read-only actions next
+
+Validation 164 / Checkpoint 407 close the fresh-host gate for all eleven preview.31 G2 read-only actions. Every exact action projected in the disposable host, every visible schema remained bounded, and every live read succeeded exactly once. No retries, GitHub mutations or credential disclosures occurred.
+
+The qualification derived the blob SHA for `github.fetch_blob` from the preceding canonical `docs/CONTINUITY.md` read rather than guessing it. Installed-repository search kept native search-index enrichment explicitly disabled. `github.search` returned a valid zero-match response with `incompleteResults=true`, and `github.search_commits` returned a valid zero-match response; both were preserved as successful bounded reads without retry.
+
+Combined fresh-host capability is now:
+
+```text
+G1 read-only tools   11 / 11 PASS
+G2 read-only tools   11 / 11 PASS
+combined             22 fresh-host-qualified public github.* reads
+```
+
+The captured 89-action native inventory contains 48 read actions and 41 write actions. The 22 implemented/fresh-host-qualified reads therefore leave exactly 26 read actions. They are concentrated in four remaining read domains:
+
+```text
+content-download      1
+actions-ci            6
+issues                5
+pull-requests-reviews 14
+                      --
+remaining reads       26
+```
+
+The repeated success of protected GitHub authorization, installation-derived authority, fixed REST/GraphQL transport, release activation, MCP serialization, fresh-host projection and two independent read-only capability families changes the preferred implementation cadence. Research 123 no longer needs another sequence of tiny read-only releases. The next phase should implement all 26 remaining read actions as one larger read-only release family, while retaining domain-specific regression fixtures, fail-closed semantics and live qualification summaries inside that release.
+
+This cadence change does not authorize or combine GitHub mutations. The remaining 41 write actions remain a separate later risk boundary, to be subdivided by mutation risk after all read-only capability is closed.
+
+Exact native-wrapper parity remains conservatively `0 / 89` because hidden native output envelopes and unresolved option semantics are still not inferred from capability success.
+
+```text
+RESEARCH123=ACTIVE
+G1_FRESH_HOST=PASS_11_OF_11
+G2_FRESH_HOST=PASS_11_OF_11
+LIVE_FRESH_HOST_QUALIFIED_READS=22
+NATIVE_READ_ACTIONS_TOTAL=48
+NATIVE_READ_ACTIONS_REMAINING=26
+NATIVE_WRITE_ACTIONS_REMAINING=41
+NEXT=ALL_REMAINING_GITHUB_READONLY_IMPLEMENTATION
+```
