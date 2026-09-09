@@ -885,3 +885,37 @@ REPOSITORY_GIT_WRITE_ACTIONS_NEXT=8
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=GITHUB_REPOSITORY_GIT_MUTATION_IMPLEMENTATION
 ```
+
+## 49. Repository Git mutation preview.34 live locally; fresh-host mutation gate next
+
+Validation 167 / Checkpoint 410 move the first eight native write actions from design into the active Runtime Bridge without yet performing a positive GitHub mutation. The live preview.34 surface now contains 120 public tools and 56 GitHub actions: all 48 reads plus `create_blob`, `create_branch`, `create_commit`, `create_file`, `create_tree`, `delete_file`, `update_file` and `update_ref`.
+
+The mutation implementation preserves installation-derived repository scope and fixed server-owned GitHub transport. Every actual write is marked `mutation=true`; transport uncertainty remains fail-visible and non-retryable. Same-path Contents writes are serialized, update/delete require current blob SHA, branch creation requires exactly one source selector, arbitrary ref namespaces remain absent, and `update_ref(force=true)` fails closed. `create_tree` deliberately improves on the native wrapper's genericized nested map by exposing the strict GitHub-platform entry schema already frozen in the API contract baseline.
+
+The first immutable v1 release surfaced an important Runtime Release infrastructure finding. Publication terminated as `RUNTIME_RELEASE_PUBLICATION_ROLLBACK_FAILED`; the public receipt does not expose the original forward failure and Research 123 does not infer it. Post-failure target verification showed all ten target files mismatched, confirming the preview.34 target was not left installed. The later successful v2 publication then passed its exact expected-current baseline check, establishing the preview.33 source baseline before applying the corrected target. Independent inspection of Runtime Release v2 shows that publication recovery restores the old snapshot and then reruns the target release's regression list. A regression path introduced by the same release as an add-mode target is therefore structurally absent after a correct restore and can make rollback validation itself fail.
+
+The correction uses a new immutable release rather than rewriting prepared state. `github-repository-git-mutations-v2`, at private local-runtime head `fc86cdc827d8c6850539e3f94052d6209f4152f4`, preserves the focused mutation regression independently but excludes that target-only add-mode test from the release rollback matrix. The sixteen Runtime Release regressions are paths valid on both target and restored previous source. Publication operation `rm_de22ee201cfe489bc97f4b795841b6dc` succeeds, restart `rm_0ddd5b6891b5c60ac2e667964363460d` succeeds, and postactivation verification reports zero mismatches.
+
+Fresh loopback health reports preview.34 with 120 tools. A new stateless MCP initialize/tools-list reports 56 GitHub tools and all eight mutation actions with strict `additionalProperties=false` schemas. The runtime exposes no caller-selected token, credential, host, endpoint, HTTP method/header, arbitrary GraphQL document, ref namespace or permission-profile authority.
+
+Two live guard probes establish the pre-write fail-closed behavior without dispatching a GitHub mutation. A branch-create request containing both SHA and base-ref returns `GITHUB_BRANCH_BASE_INVALID`; an update-ref request with `force=true` returns `GITHUB_FORCE_REF_UPDATE_NOT_QUALIFIED`. Both are non-retryable, not mutation-uncertain, and have no GitHub request ID. Installation-authority reads may precede those semantic guards, but no write is sent.
+
+The current persistent ChatGPT host remains stale for the eight new action names, consistent with AB-008. Because these are mutation-sensitive tools, the next gate is fresh-host discovery and schema qualification before Research 123 opens any disposable positive live-write fixture. The remaining native write inventory is still 41 action names; eight are implemented/live but positive-live is 0/8. Correct family totals remain 8 repository Git/content, 12 issues, 19 PR/review and 2 Actions rerun.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.34-github-repository-git-mutations
+LIVE_PUBLIC_TOOL_COUNT=120
+LIVE_GITHUB_TOOL_COUNT=56
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+LIVE_GITHUB_REPOSITORY_GIT_MUTATION_TOOL_COUNT=8
+REPOSITORY_GIT_MUTATION_WIRE_SCHEMA=PASS_8_OF_8
+REPOSITORY_GIT_MUTATION_POSITIVE_LIVE=0_OF_8
+GITHUB_MUTATION_OCCURRED=false
+V1_PUBLICATION_ROLLBACK_FAILURE=PRESERVED
+V1_FORWARD_FAILURE_CAUSE=UNOBSERVED
+V2_PUBLICATION_AND_ACTIVATION=PASS
+NATIVE_WRITE_ACTIONS_REMAINING=41
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_REPOSITORY_GIT_MUTATION_SCHEMA_QUALIFICATION
+```
