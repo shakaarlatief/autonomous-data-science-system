@@ -1396,3 +1396,35 @@ PR_REVIEW_MUTATION_UNCERTAIN_RESULTS=1
 PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 NEXT=PR_REVIEW_SEMANTIC_GUARD_HARDENING_PREVIEW38
 ```
+
+## 63. Preview.38 hardens dismissal and auto-merge preconditions; isolated update/merge authorization next
+
+Validation 181 / Checkpoint 424 implement and activate Runtime Bridge preview.38 without changing the 153-tool public schema surface. The release removes two avoidable uncertainty paths identified in Validation 180.
+
+Dismiss-review scope now resolves GraphQL review node ID, database ID, state, PR number and repository. The action rejects anything other than `APPROVED` or `CHANGES_REQUESTED` before mutation, then re-resolves and rechecks scope/state inside the serialized PR mutation boundary. Valid dismissal dispatch now uses GitHub's fixed REST review-dismissal endpoint with the resolved database ID, preserving the caller's GraphQL node-ID contract while allowing classifiable GitHub HTTP validation responses to remain `mutationUncertain=false`.
+
+Auto-merge now deterministically rejects repository `allow_auto_merge != true` before the GraphQL mutation. Merge-method inference remains server-owned for repositories where auto-merge is actually enabled.
+
+Focused PR/review tests pass 4/4. Runtime Release `prepare` succeeds for the exact hash-bound release and remains the authoritative complete regression gate; a manual reconstructed broad stage was incomplete because its bounded command sandbox timed out during dependency installation and the partial stage then lacked `zod/v4`. That stage-assembly failure is not treated as candidate regression evidence.
+
+Immutable release `github-pr-review-semantic-hardening-v1` is bound to local-runtime head `7eda5dbce805dd4452d4ec6a667ee39e4e45fc74`, target `0.1.1-preview.38-github-pr-review-semantic-hardening`, 153 tools and manifest SHA-256 `7edebf36973d619e808773b74ddc5a37c96c79830db5dd7ebb411b219892cb0c`. Publication `rm_0f90c312dbeef95f087c33e36b70282f` and restart `rm_2c63a4ae62bf7a60cda02c1486c7f88e` both succeed without recovery; postactivation verification reports zero mismatches.
+
+Live no-write qualification against the existing PR #84 environment now returns deterministic `GITHUB_PR_REVIEW_NOT_DISMISSIBLE` for its COMMENTED review and `GITHUB_AUTO_MERGE_DISABLED` for repository configuration, both `retryable=false` and `mutationUncertain=false`. Neither underlying mutation is dispatched and no PR #84 mutation is replayed.
+
+Positive-live coverage remains 35/41. `github.update_pull_request` and `github.merge_pull_request` are ready for a fresh isolated disposable PR fixture; dismissal and reviewer request/removal remain second-reviewer/team gated, and auto-merge remains repository-configuration gated. The current installed environment can therefore reach 37/41 without non-parity environment mutation. The next boundary is explicit owner authorization for the exact isolated update+merge sequence.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.38-github-pr-review-semantic-hardening
+LIVE_PUBLIC_TOOL_COUNT=153
+LIVE_GITHUB_TOOL_COUNT=89
+DISMISS_REVIEW_COMMENTED_GUARD=PASS_NO_WRITE
+DISMISS_REVIEW_COMMENTED_MUTATION_UNCERTAIN=false
+AUTO_MERGE_DISABLED_GUARD=PASS_NO_WRITE
+AUTO_MERGE_DISABLED_MUTATION_UNCERTAIN=false
+NATIVE_WRITE_POSITIVE_LIVE=35_OF_41
+NATIVE_WRITE_POSITIVE_REMAINING=6
+CURRENT_ENVIRONMENT_MAX_POSITIVE_LIVE=37_OF_41
+PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+NEXT=EXPLICIT_OWNER_AUTHORIZATION_FOR_ISOLATED_UPDATE_AND_MERGE_PR_FIXTURE
+```
