@@ -919,3 +919,43 @@ NATIVE_WRITE_ACTIONS_REMAINING=41
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=FRESH_CHAT_REPOSITORY_GIT_MUTATION_SCHEMA_QUALIFICATION
 ```
+
+## 50. Repository Git mutation fresh-host schema gate closed; disposable positive write next
+
+Validation 168 / Checkpoint 411 close the refreshed ChatGPT host schema/guard gate for all eight preview.34 repository Git/content mutation actions. All eight exact action names project in the fresh host, every caller-visible contract remains sufficiently bounded to establish caller authority, and no credential/token, GitHub host, arbitrary URL/endpoint, HTTP method/header, GraphQL document, ref namespace, permission profile, transport implementation, filesystem path or shell authority is exposed.
+
+The complete field-by-field Part A schema transcript was not copied into this persistent conversation. Research 123 therefore does not reconstruct those details from memory. Validation 167 remains the exact local MCP wire-schema authority, while Validation 168 establishes fresh-host projection/boundedness and application-guard behavior. The owner notes that some semantic cross-field constraints remain descriptive rather than separately rendered as host machine-readable `oneOf` or `additionalProperties` keywords; that does not obscure the bounded caller authority established by the projection.
+
+The fresh host then made exactly two deliberately non-writing guard calls. `github.create_branch` with both `sha` and `base_ref` returned `GITHUB_BRANCH_BASE_INVALID`; `github.update_ref` with `force=true` returned `GITHUB_FORCE_REF_UPDATE_NOT_QUALIFIED`. Both results carried `retryable=false`, `mutationUncertain=false`, `githubRequestId=null`, and no retry occurred. No branch, blob, tree, commit, file, deletion, update or ref movement was produced.
+
+This closes the schema/guard gate, not positive mutation parity. Repository Git/content mutation status is therefore:
+
+```text
+implemented/live mutation actions        8 / 8
+fresh-host projected/bounded             8 / 8
+positive-live mutation actions           0 / 8
+GitHub mutation during schema gate       none
+```
+
+The next legitimate gate is a separately authorized disposable positive-mutation qualification. Its safe structure is one dedicated qualification branch created from an exact known commit SHA, a unique test path for Contents create/update/delete, and a separate raw-Git blob/tree/commit sequence advanced only through `update_ref(force=false)`. Sequential writes must consume the exact returned content/object SHAs, `main` must never move, and any uncertain mutation must stop the sequence with no replay.
+
+The native 89-action baseline exposes no branch-delete action. Branch cleanup is therefore not silently bundled into the parity test. The disposable branch must either remain as an explicit qualification artifact or be removed later only through separately authorized non-parity authority.
+
+The remaining unimplemented native writes stay at 33: twelve issue mutations, nineteen PR/review mutations and two Actions rerun mutations. Exact native-wrapper parity remains conservatively `0 / 89` because hidden native output envelopes and unresolved wrapper semantics remain unclaimed.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.34-github-repository-git-mutations
+LIVE_PUBLIC_TOOL_COUNT=120
+LIVE_GITHUB_TOOL_COUNT=56
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+LIVE_GITHUB_REPOSITORY_GIT_MUTATION_TOOL_COUNT=8
+REPOSITORY_GIT_MUTATION_WIRE_SCHEMA=PASS_8_OF_8
+REPOSITORY_GIT_MUTATION_FRESH_HOST_SCHEMA=PASS_8_OF_8
+REPOSITORY_GIT_MUTATION_POSITIVE_LIVE=0_OF_8
+GITHUB_MUTATION_OCCURRED=false
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=8
+NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=33
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=DISPOSABLE_REPOSITORY_GIT_POSITIVE_MUTATION_QUALIFICATION
+```
