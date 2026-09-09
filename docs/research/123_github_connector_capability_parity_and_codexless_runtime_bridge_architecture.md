@@ -1007,3 +1007,56 @@ ISSUE_WRITE_ACTIONS_NEXT=12
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=GITHUB_ISSUE_MUTATION_IMPLEMENTATION
 ```
+
+## 52. Issue mutation preview.35 live locally; fresh-host schema gate next
+
+Validation 170 / Checkpoint 413 implement, publish and activate all twelve captured native issue mutation action names on Runtime Bridge preview.35 without performing a positive issue mutation. Private local-runtime head `6f1651a0c5258f1d9185962798f43babdf7ba018` preserves immutable release `github-issue-mutations-v1`, targeting `0.1.1-preview.35-github-issue-mutations`, 132 public tools, ten release files, sixteen rollback-compatible regressions and the existing protected keyring runtime dependency.
+
+The twelve issue mutation tools are:
+
+```text
+github.add_comment_to_issue
+github.add_issue_assignees
+github.add_issue_labels
+github.add_reaction_to_issue_comment
+github.create_issue
+github.lock_issue_conversation
+github.remove_issue_assignees
+github.remove_issue_label
+github.remove_reaction_from_issue_comment
+github.unlock_issue_conversation
+github.update_issue
+github.update_issue_comment
+```
+
+Implementation keeps installation-derived repository authority and fixed server-owned GitHub REST routes. Actual writes use mutation-aware transport, uncertain writes remain single-attempt/fail-visible, and same-issue or same-comment mutation streams are serialized. Caller inputs are additionally bounded where GitHub platform behavior is known: issue titles are capped at 256 characters, bodies/comments at 65,536, add-assignee sets at ten, label sets at 100, and reactions are limited to GitHub's eight documented reaction identifiers. `lock_reason`, issue `state` and `state_reason` are typed enums. `state_reason` requires an explicit state in the same request. Null optional fields are omitted rather than interpreted as undocumented clearing operations; the captured native wrapper has no explicit milestone-clear input, so Runtime Bridge does not invent one.
+
+Focused integration qualification passes fixed installation-scoped endpoint routing, normalized result handling, pre-transport input guards, same-issue serialization and uncertain-mutation single-attempt behavior. A reconstructed current-source public-surface qualification passes all prior GitHub read and repository-Git mutation contracts plus `GITHUB_ISSUE_MUTATION_WIRE_SCHEMA=PASS tools=12` and `PUBLIC_SURFACE_REGISTRATION=PASS tools=132`.
+
+The immutable release prepares successfully with manifest SHA-256 `66802022e3e8375b0eab14b395d74462de6f8e067c4996ee14d190d642c354ea`. Prepublication verify returns the expected target mismatch state. Publication operation `rm_cfe9e661da3d6035b6f4f7273089a304` succeeds without recovery, restart `rm_0fc4891d51a6ec8c18932ed772000b9d` succeeds without recovery, and postactivation verify reports zero mismatches. Fresh local loopback health reports preview.35 / 132 public tools. Stateless MCP `tools/list` reports 68 GitHub tools: 48 reads, eight repository Git/content writes and twelve issue writes.
+
+Two deliberate live no-write probes are rejected at input validation before handler or transport dispatch: an unsupported reaction value `party`, and `update_issue` carrying `state_reason=completed` with no state. Neither creates a GitHub request or mutation. Immediately after restart, the stored access token had naturally expired while the refresh token remained valid. One safe read-only login request exercised the normal refresh path; subsequent metadata reports stored/authorized with access and refresh non-expired and no refresh recommendation. No new device flow, clear, disconnect or reconnect occurs.
+
+The existing persistent `chatgpt-21` host predates preview.35 projection and is not authoritative for the twelve new names. The next gate is therefore one refreshed disposable ChatGPT conversation that confirms all twelve exact issue mutation names and bounded host-visible schemas and performs only fail-closed no-write guard calls. Positive-live issue coverage remains `0 / 12` until a later separately authorized disposable issue sequence. Because the native captured surface contains no issue-delete action, such a fixture should be closed and retained as an explicit qualification artifact rather than silently removed with non-parity authority.
+
+Runtime Bridge now implements twenty of the forty-one captured native write actions. Twenty-one remain unimplemented: nineteen PR/review mutations and two Actions reruns. Hidden native result envelopes remain unavailable, so exact native-wrapper parity remains conservatively `0 / 89`.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.35-github-issue-mutations
+LIVE_PUBLIC_TOOL_COUNT=132
+LIVE_GITHUB_TOOL_COUNT=68
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+LIVE_GITHUB_REPOSITORY_GIT_MUTATION_TOOL_COUNT=8
+LIVE_GITHUB_ISSUE_MUTATION_TOOL_COUNT=12
+ISSUE_MUTATION_WIRE_SCHEMA=PASS_12_OF_12
+ISSUE_MUTATION_POSITIVE_LIVE=0_OF_12
+ISSUE_MUTATION_OCCURRED=false
+PROTECTED_AUTHORIZATION_PRESERVED=true
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=20
+NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=21
+PR_REVIEW_WRITE_ACTIONS_UNIMPLEMENTED=19
+ACTIONS_RERUN_WRITE_ACTIONS_UNIMPLEMENTED=2
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_ISSUE_MUTATION_SCHEMA_QUALIFICATION
+```
