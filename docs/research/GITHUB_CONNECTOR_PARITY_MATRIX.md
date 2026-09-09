@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-09
-**Status:** ACTIVE RESEARCH 123 / FOUR-TOOL READ-ONLY FOUNDATION LIVE LOCALLY / FRESH-HOST QUALIFICATION NEXT
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification.
+**Status:** ACTIVE RESEARCH 123 / FOUR-TOOL READ-ONLY FOUNDATION FRESH-HOST QUALIFIED / G1 READ-ONLY EXPANSION NEXT
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -37,7 +37,7 @@ TOTAL                                                              89
 
 ## Mapping conclusion
 
-Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and four public read-only foundation tools: `github.get_profile`, `github.get_user_login`, `github.list_installations`, and `github.list_repositories_by_installation`. Validation 157 live-qualified all four against the protected GitHub App user authorization through the active local MCP server. Exact native parity remains `0 / 89`, however, because the current bundle is deliberately not yet classified as four fully closed native-wrapper rows: `github.list_installations(manageable_only=true)` fails closed until the native managed-account filter semantics are evidenced, and the new names still require fresh-ChatGPT-host projection qualification. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
+Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and four public read-only foundation tools: `github.get_profile`, `github.get_user_login`, `github.list_installations`, and `github.list_repositories_by_installation`. Validation 157 live-qualified all four against the protected GitHub App user authorization through the active local MCP server, and Validation 159 then qualified all four through a refreshed fresh ChatGPT host with four successful read-only calls. Exact native parity remains `0 / 89`, however, because the current bundle is deliberately not yet classified as four fully closed native-wrapper rows: `github.list_installations(manageable_only=true)` still fails closed until the native managed-account filter semantics are evidenced, while native machine-readable output schemas remain hidden behind `any`. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
 
 Existing Runtime Bridge mechanisms remain reusable:
 
@@ -341,7 +341,7 @@ CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED
 EXACT_REMOTE_RUNTIME_BRIDGE_PARITY_NOW=0/89
 PARITY_ACTIONS_MISSING=89
 LIVE_GITHUB_FOUNDATION_TOOLS=4
-LIVE_RUNTIME_VERSION=0.1.1-preview.28-github-readonly-foundation
+LIVE_RUNTIME_VERSION=0.1.1-preview.29-semantic-git-transactional-commit
 LIVE_MCP_TOOL_COUNT=68
 LOCAL_REUSE_AVAILABLE=YES
 AUTH_ARCHITECTURE=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
@@ -359,8 +359,9 @@ EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
 G0_AUTH_TRANSPORT_KERNEL=LIVE
 GRAPHQL_VIEWER_QUERY=PASS
 KNOWN_PARTIAL_PARITY_GAP=github.list_installations.manageable_only_true
-SAME_CHAT_NEW_TOOL_PROJECTION=STALE
+FRESH_HOST_FOUNDATION_PROJECTION=PASS_4_OF_4
+FRESH_HOST_FOUNDATION_LIVE_READS=PASS_4_OF_4
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=FRESH_CHAT_GITHUB_READONLY_FOUNDATION_SCHEMA_AND_LIVE_READ_QUALIFICATION
+NEXT=G1_IDENTITY_ACCOUNT_REPOSITORY_PERMISSION_READONLY_EXPANSION
 ```

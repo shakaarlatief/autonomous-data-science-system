@@ -537,3 +537,47 @@ SAME_CHAT_NEW_TOOL_PROJECTION=STALE
 SOURCE_VAULT=PAUSED
 NEXT=FRESH_CHAT_GITHUB_READONLY_FOUNDATION_SCHEMA_AND_LIVE_READ_QUALIFICATION
 ```
+
+## 41. Fresh-host four-action read-only foundation qualified
+
+Validation 159 / Checkpoint 402 close the fresh-ChatGPT-host projection gate left by Checkpoint 400 and resumed after the Checkpoint 401 semantic-Git reliability correction. The project owner supplied the completed refreshed disposable-chat qualification with final marker `GITHUB_READONLY_FOUNDATION_FRESH_HOST=PASS`.
+
+All four expected actions projected and all four authorized live reads succeeded in the required order:
+
+```text
+github.get_profile
+github.get_user_login
+github.list_installations(manageable_only=false)
+github.list_repositories_by_installation(page_size=20,page_offset=0)
+```
+
+The two identity calls agree on authenticated login `shakaarlatief`. Installation enumeration returns one personal User installation with `repositorySelection=all`. Installation-scoped repository enumeration returns 12 of 12 repositories, `hasMore=false`, and confirms `shakaarlatief/autonomous-data-science-system` is inside installation-derived scope. Installation ID and unrelated private repository names are deliberately not preserved.
+
+The fresh-host result reports bounded schemas and no caller-selected token, credential, GitHub host, URL, REST endpoint, GraphQL document, HTTP method/header, permission profile or equivalent arbitrary transport authority. No access token, refresh token, device code, client secret, Authorization header or credential-store payload appeared, and no GitHub mutation occurred.
+
+The owner did not reproduce the field-by-field Part A host-schema transcript in the persistent project conversation. This is an evidence-boundary detail, not a failed qualification: Validation 157 already preserves the exact local MCP serialized schemas, while Validation 159 preserves the fresh-host presence/boundedness judgment and four-call live-read result. No missing Part A fields are reconstructed from memory or inference.
+
+The known `github.list_installations(manageable_only=true)` native-wrapper semantic gap remains open because the fresh qualification intentionally exercised only `false`. The broader 89-action host projection also still hides machine-readable output schemas behind `any`. Exact native-wrapper wire parity therefore remains conservatively `0 / 89`; Research 123 does not silently redefine that metric merely because the four Runtime Bridge foundation capabilities are now live and host-qualified.
+
+The next implementation boundary is the remainder of G1 read-only identity/account/repository-discovery/permission coverage. Strong direct candidates from the already captured native contracts are:
+
+```text
+github.get_repo
+github.get_repo_collaborator_permission
+github.list_installed_accounts
+github.list_repositories
+github.list_repositories_by_affiliation
+github.list_user_org_memberships
+github.list_user_orgs
+```
+
+Search-installed-repository actions remain better grouped with G2 search. The unresolved `manageable_only=true` option can be targeted separately and must not block unrelated read-only G1 expansion.
+
+```text
+RESEARCH123=ACTIVE
+GITHUB_READONLY_FOUNDATION_FRESH_HOST=PASS
+FRESH_HOST_FOUNDATION_ACTIONS=4_OF_4
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+KNOWN_PARTIAL_PARITY_GAP=github.list_installations.manageable_only_true
+NEXT=G1_IDENTITY_ACCOUNT_REPOSITORY_PERMISSION_READONLY_EXPANSION
+```
