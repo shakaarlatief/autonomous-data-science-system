@@ -1240,3 +1240,38 @@ NATIVE_ACTION_NAMES_IMPLEMENTED=87_OF_89
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=GITHUB_ACTIONS_RERUN_MUTATION_IMPLEMENTATION_WITH_PR_REVIEW_STOP_PRESERVED
 ```
+
+## 58. All 89 captured GitHub action names implemented; Actions rerun fresh-host gate next
+
+Validation 176 / Checkpoint 419 implement, publish and locally qualify the final two captured GitHub mutation action names: `github.rerun_failed_workflow_run_jobs` and `github.rerun_workflow_job`. Runtime Bridge preview.37 is live at 153 public tools and exactly 89 GitHub tools, which is the first Research 123 runtime with all 89 captured native GitHub action names implemented simultaneously.
+
+Both rerun actions use installation-derived repository authority and fixed server-owned GitHub Actions REST endpoints. `rerun_failed_workflow_run_jobs` preflights the workflow run and requires completed status before dispatching the fixed rerun-failed-jobs endpoint. `rerun_workflow_job` reads the target job, derives its workflow-run ID, serializes by that run, revalidates the job and requires completed failure/cancelled state before dispatching the fixed job-rerun endpoint. Both use mutation-aware single-attempt transport, so uncertain writes remain fail-visible and are never replayed automatically.
+
+Focused integration passes four cases: both fixed rerun routes, state guards, invalid positive-ID guards and mutation-uncertainty single-attempt behavior. Broad current-source qualification passes 153-tool registration, 48 read schemas, eight repository Git/content mutation schemas, twelve issue schemas, nineteen PR/review schemas and two Actions rerun schemas.
+
+Immutable release `github-actions-rerun-mutations-v1` is bound to local-runtime head `f29241ce1be4368fcd956c197e5d976eef6f15b8`, target `0.1.1-preview.37-github-actions-rerun-mutations`, target tool count 153 and manifest SHA-256 `eb8393734f0d9af0ebd33ea32e7b6cbd950bbe27f8c7e540a62e10ca4f314eaf`. Publication operation `rm_7ed8b32ea3b9c8c8196bf066516b8a43` and restart operation `rm_e6ed454622ddfb9c5ab6f0eb9680eba7` both succeed without recovery; postactivation verify reports zero mismatches.
+
+Live local MCP health reports preview.37 / 153 tools; stateless `tools/list` reports exactly 89 GitHub tools and both rerun names. Deliberate invalid `run_id=0` and `job_id=0` probes are rejected by input validation before dispatch, so no workflow rerun occurs. Protected authorization remains stored/authorized with non-expired access/refresh authorization.
+
+Implementation-name coverage is therefore 89/89 and native write-name coverage is 41/41. This must not be conflated with exact native-wrapper parity: native output envelopes remain hidden and multiple Runtime Bridge actions intentionally narrow hidden or unsafe semantics, so exact native parity rows closed remain `0 / 89`.
+
+Positive-live coverage remains incomplete in two independent places. PR/review remains stopped at 13/19 after the explicit `dismiss_pull_request_review` mutation-uncertainty result, with no replay. Actions rerun is 0/2 positive-live until a refreshed host schema/guard gate and separately authorized workflow-rerun fixture. The persistent `chatgpt-21` host predates preview.37 projection, so the next gate is a fresh disposable ChatGPT qualification of the two rerun actions only.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.37-github-actions-rerun-mutations
+LIVE_PUBLIC_TOOL_COUNT=153
+LIVE_GITHUB_TOOL_COUNT=89
+ACTIONS_RERUN_MUTATION_WIRE_SCHEMA=PASS_2_OF_2
+ACTIONS_RERUN_MUTATION_FRESH_HOST_SCHEMA=PENDING
+ACTIONS_RERUN_MUTATION_POSITIVE_LIVE=0_OF_2
+ACTIONS_RERUN_MUTATION_OCCURRED=false
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=41_OF_41
+NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=0
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+PR_REVIEW_MUTATION_POSITIVE_LIVE=PASS_13_OF_19
+PR_REVIEW_MUTATION_UNCERTAIN_RESULTS=1
+PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_ACTIONS_RERUN_MUTATION_SCHEMA_QUALIFICATION
+```

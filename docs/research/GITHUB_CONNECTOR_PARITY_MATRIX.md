@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-09
-**Status:** ACTIVE RESEARCH 123 / PR-REVIEW POSITIVE-LIVE 13 OF 19 / MUTATION-UNCERTAINTY STOP / ACTIONS RERUN IMPLEMENTATION NEXT
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads; Validation 161 owns their fresh-host 7/7 projection, 6/7 live-read FAIL and post-failure local transport discriminator; Validation 162 owns the targeted installed-accounts host recheck that closes combined G1 host coverage at 7/7; Validation 163 owns preview.31 G2 implementation, publication, activation and same-chat stale-projection evidence; Validation 164 owns fresh-host G2 11/11 schema and live-read qualification; Validation 165 owns implementation and live activation of the final 26 read actions plus the preview.33 GitHub download resource-link correction and local-live qualification; Validation 166 owns the final 26-action fresh-host gate and closes 48/48 host-qualified read coverage; Validation 167 owns preview.34 implementation/activation of the first eight repository Git/content mutations, preserves the v1 publication rollback-failure history, qualifies the corrected rollback-compatible v2 release, and establishes local wire-schema plus non-writing fail-closed guard behavior; Validation 168 owns the fresh-host 8/8 mutation projection/boundedness result and reproduces both no-write application guards through ChatGPT; Validation 169 owns the separately authorized positive-live 8/8 disposable repository Git/content mutation sequence and postflight state verification; Validation 170 owns preview.35 implementation/publication/activation of all twelve issue mutations, their local MCP wire schemas, no-write guard probes and authorization continuity; Validation 171 owns the fresh-host 12/12 issue-mutation projection/boundedness result and reproduces the invalid-reaction plus state-reason-without-state no-write guards through ChatGPT; Validation 172 owns the separately authorized positive-live 12/12 disposable issue mutation sequence and postflight issue/comment/reaction verification. Validation 173 owns preview.36 implementation/publication/activation of all nineteen PR/review mutations, their local wire schemas, local no-write guards, zero-mismatch postactivation verification and authorization continuity. Validation 174 owns the fresh-host 19/19 PR/review projection/boundedness result and the three deterministic no-write guard calls. Validation 175 owns the owner-authorized positive-live PR/review subset, timeout reconstruction, fresh thread-state fixture, explicit dismissal mutation-uncertainty stop and postflight proving main unchanged.
+**Status:** ACTIVE RESEARCH 123 / ALL 89 ACTION NAMES IMPLEMENTED / ACTIONS RERUN FRESH-HOST SCHEMA GATE NEXT
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads; Validation 161 owns their fresh-host 7/7 projection, 6/7 live-read FAIL and post-failure local transport discriminator; Validation 162 owns the targeted installed-accounts host recheck that closes combined G1 host coverage at 7/7; Validation 163 owns preview.31 G2 implementation, publication, activation and same-chat stale-projection evidence; Validation 164 owns fresh-host G2 11/11 schema and live-read qualification; Validation 165 owns implementation and live activation of the final 26 read actions plus the preview.33 GitHub download resource-link correction and local-live qualification; Validation 166 owns the final 26-action fresh-host gate and closes 48/48 host-qualified read coverage; Validation 167 owns preview.34 implementation/activation of the first eight repository Git/content mutations, preserves the v1 publication rollback-failure history, qualifies the corrected rollback-compatible v2 release, and establishes local wire-schema plus non-writing fail-closed guard behavior; Validation 168 owns the fresh-host 8/8 mutation projection/boundedness result and reproduces both no-write application guards through ChatGPT; Validation 169 owns the separately authorized positive-live 8/8 disposable repository Git/content mutation sequence and postflight state verification; Validation 170 owns preview.35 implementation/publication/activation of all twelve issue mutations, their local MCP wire schemas, no-write guard probes and authorization continuity; Validation 171 owns the fresh-host 12/12 issue-mutation projection/boundedness result and reproduces the invalid-reaction plus state-reason-without-state no-write guards through ChatGPT; Validation 172 owns the separately authorized positive-live 12/12 disposable issue mutation sequence and postflight issue/comment/reaction verification. Validation 173 owns preview.36 implementation/publication/activation of all nineteen PR/review mutations, their local wire schemas, local no-write guards, zero-mismatch postactivation verification and authorization continuity. Validation 174 owns the fresh-host 19/19 PR/review projection/boundedness result and the three deterministic no-write guard calls. Validation 175 owns the owner-authorized positive-live PR/review subset, timeout reconstruction, fresh thread-state fixture, explicit dismissal mutation-uncertainty stop and postflight proving main unchanged. Validation 176 owns preview.37 implementation/publication/activation of both Actions rerun mutations, their 2/2 wire schemas, no-write ID guards and the resulting 89/89 implemented action-name surface.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -399,11 +399,11 @@ HOST_SURFACE_SCALE_112_TOOLS=PASS
 SAME_CHAT_FINAL_READ_PROJECTION=STALE
 POSITIVE_LIVE_READ_ACTIONS=47_OF_48
 NATIVE_WRITE_ACTIONS_TOTAL=41
-NATIVE_WRITE_ACTIONS_IMPLEMENTED=39
-NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=2
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=41
+NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=0
 ISSUE_WRITE_ACTIONS_IMPLEMENTED=12
 PR_REVIEW_WRITE_ACTIONS_IMPLEMENTED=19
-ACTIONS_RERUN_WRITE_ACTIONS_UNIMPLEMENTED=2
+ACTIONS_RERUN_WRITE_ACTIONS_IMPLEMENTED=2
 REPOSITORY_GIT_MUTATION_WIRE_SCHEMA=PASS_8_OF_8
 REPOSITORY_GIT_MUTATION_FRESH_HOST_SCHEMA=PASS_8_OF_8
 REPOSITORY_GIT_MUTATION_CREATE_BRANCH_GUARD=PASS_EXPECTED_REJECTION
@@ -438,9 +438,13 @@ PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 QUALIFICATION_PR_NUMBER=84
 PR_REVIEW_MUTATION_OCCURRED=true
 MAIN_MOVED=false
-LIVE_RUNTIME_VERSION=0.1.1-preview.36-github-pr-review-mutations
-LIVE_PUBLIC_TOOL_COUNT=151
-LIVE_GITHUB_TOOL_COUNT=87
-NATIVE_ACTION_NAMES_IMPLEMENTED=87_OF_89
-NEXT=GITHUB_ACTIONS_RERUN_MUTATION_IMPLEMENTATION_WITH_PR_REVIEW_STOP_PRESERVED
+LIVE_RUNTIME_VERSION=0.1.1-preview.37-github-actions-rerun-mutations
+LIVE_PUBLIC_TOOL_COUNT=153
+LIVE_GITHUB_TOOL_COUNT=89
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+ACTIONS_RERUN_MUTATION_WIRE_SCHEMA=PASS_2_OF_2
+ACTIONS_RERUN_MUTATION_FRESH_HOST_SCHEMA=PENDING
+ACTIONS_RERUN_MUTATION_POSITIVE_LIVE=0_OF_2
+ACTIONS_RERUN_MUTATION_OCCURRED=false
+NEXT=FRESH_CHAT_ACTIONS_RERUN_MUTATION_SCHEMA_QUALIFICATION
 ```
