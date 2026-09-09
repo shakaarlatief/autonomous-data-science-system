@@ -1275,3 +1275,34 @@ PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=FRESH_CHAT_ACTIONS_RERUN_MUTATION_SCHEMA_QUALIFICATION
 ```
+
+## 59. Actions rerun fresh-host schema gate closed; positive-live fixture preflight next
+
+Validation 177 / Checkpoint 420 close the refreshed ChatGPT host schema/guard gate for the final two preview.37 GitHub Actions rerun mutation actions. The owner returned fresh-host evidence that both exact action names project with strict bounded object schemas and `additionalProperties=false`.
+
+`github.rerun_failed_workflow_run_jobs` exposes only required `repo_full_name` with length 3..512 and required integer `run_id` with range 1..9007199254740991. `github.rerun_workflow_job` exposes only required `repo_full_name` with the same string bounds and required integer `job_id` with the same positive range. No optional caller fields/defaults are exposed, and neither contract exposes credentials, Authorization headers, GitHub hosts, arbitrary URLs/endpoints, HTTP methods/headers, GraphQL documents, permission profiles, transports, filesystem paths, shell commands or process authority.
+
+Exactly two invalid no-write calls used identifier zero. Both were rejected by the ChatGPT host schema before Runtime Bridge/GitHub dispatch: `run_id=0` failed the minimum-one contract for failed-run rerun and `job_id=0` failed the minimum-one contract for single-job rerun. There were zero retries, zero mutation-uncertain results, zero positive mutation dispatches and zero GitHub workflow/job changes. No third GitHub call was made.
+
+The evidence stack for the final two implementation names is therefore complete through local wire plus fresh-host schema/guard qualification. Runtime Bridge remains at 89/89 implemented captured GitHub action names and 41/41 implemented native write names. Exact native-wrapper parity remains conservatively `0 / 89` because native output envelopes remain hidden and deliberate Runtime Bridge semantic narrowings remain explicit.
+
+Positive-live Actions rerun qualification is still 0/2. The next step is read-only fixture preflight to locate a completed workflow run containing failed jobs and a concrete failed or cancelled job suitable for a bounded rerun test. No positive rerun is authorized by Checkpoint 420. The independent PR/review family remains stopped at 13/19 after the preserved dismissal mutation-uncertainty result and no replay has occurred.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.37-github-actions-rerun-mutations
+LIVE_PUBLIC_TOOL_COUNT=153
+LIVE_GITHUB_TOOL_COUNT=89
+ACTIONS_RERUN_MUTATION_WIRE_SCHEMA=PASS_2_OF_2
+ACTIONS_RERUN_MUTATION_FRESH_HOST_SCHEMA=PASS_2_OF_2
+ACTIONS_RERUN_MUTATION_FRESH_HOST_GUARDS=PASS_2_OF_2
+ACTIONS_RERUN_MUTATION_POSITIVE_LIVE=0_OF_2
+ACTIONS_RERUN_MUTATION_OCCURRED=false
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=41_OF_41
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+PR_REVIEW_MUTATION_POSITIVE_LIVE=PASS_13_OF_19
+PR_REVIEW_MUTATION_UNCERTAIN_RESULTS=1
+PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=ACTIONS_RERUN_POSITIVE_LIVE_FIXTURE_PREFLIGHT
+```
