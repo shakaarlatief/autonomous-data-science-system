@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
 **Date:** 2026-09-09
-**Status:** ACTIVE RESEARCH 123 / FOUR-TOOL READ-ONLY FOUNDATION FRESH-HOST QUALIFIED / G1 READ-ONLY EXPANSION NEXT
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS.
+**Status:** ACTIVE RESEARCH 123 / ELEVEN-TOOL G1 READ-ONLY SURFACE LIVE LOCALLY / SEVEN-TOOL FRESH-HOST QUALIFICATION NEXT
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification; Validation 159 owns the refreshed fresh-host four-action projection and live-read PASS; Validation 160 owns preview.30 publication/activation plus local-live qualification of the seven additional G1 reads.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -37,7 +37,7 @@ TOTAL                                                              89
 
 ## Mapping conclusion
 
-Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and four public read-only foundation tools: `github.get_profile`, `github.get_user_login`, `github.list_installations`, and `github.list_repositories_by_installation`. Validation 157 live-qualified all four against the protected GitHub App user authorization through the active local MCP server, and Validation 159 then qualified all four through a refreshed fresh ChatGPT host with four successful read-only calls. Exact native parity remains `0 / 89`, however, because the current bundle is deliberately not yet classified as four fully closed native-wrapper rows: `github.list_installations(manageable_only=true)` still fails closed until the native managed-account filter semantics are evidenced, while native machine-readable output schemas remain hidden behind `any`. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
+Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and eleven public read-only G1 tools. Validation 157 and Validation 159 locally and fresh-host-qualified the first four foundation actions. Validation 160 then published preview.30 and locally live-qualified seven additional identity/account/repository-discovery/permission reads: `github.get_repo`, `github.get_repo_collaborator_permission`, `github.list_installed_accounts`, `github.list_repositories`, `github.list_repositories_by_affiliation`, `github.list_user_org_memberships`, and `github.list_user_orgs`. Exact native parity remains `0 / 89`, however, because the project still refuses to infer hidden native output envelopes or unresolved option semantics. `github.list_installations(manageable_only=true)` remains unqualified; `github.list_repositories(include_search_index_status=true)` remains fail-closed because the native enrichment contract is hidden; and Enterprise-host repository URL routing remains separately unqualified. The seven preview.30 additions also still require fresh-ChatGPT-host projection/live-read qualification. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
 
 Existing Runtime Bridge mechanisms remain reusable:
 
@@ -340,9 +340,11 @@ FRESH_PROJECTED_ORDER_CONFIRMED=89/89
 CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED
 EXACT_REMOTE_RUNTIME_BRIDGE_PARITY_NOW=0/89
 PARITY_ACTIONS_MISSING=89
-LIVE_GITHUB_FOUNDATION_TOOLS=4
-LIVE_RUNTIME_VERSION=0.1.1-preview.29-semantic-git-transactional-commit
-LIVE_MCP_TOOL_COUNT=68
+LIVE_GITHUB_READONLY_TOOLS=11
+FRESH_HOST_QUALIFIED_GITHUB_TOOLS=4
+NEW_G1_LOCAL_LIVE_TOOLS=7
+LIVE_RUNTIME_VERSION=0.1.1-preview.30-github-g1-readonly
+LIVE_MCP_TOOL_COUNT=75
 LOCAL_REUSE_AVAILABLE=YES
 AUTH_ARCHITECTURE=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
 GITHUB_USER_AUTHORIZED=true
@@ -359,9 +361,14 @@ EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
 G0_AUTH_TRANSPORT_KERNEL=LIVE
 GRAPHQL_VIEWER_QUERY=PASS
 KNOWN_PARTIAL_PARITY_GAP=github.list_installations.manageable_only_true
+KNOWN_PARTIAL_PARITY_GAP_2=github.list_repositories.include_search_index_status_true
+ENTERPRISE_REPOSITORY_URL=NOT_QUALIFIED
 FRESH_HOST_FOUNDATION_PROJECTION=PASS_4_OF_4
 FRESH_HOST_FOUNDATION_LIVE_READS=PASS_4_OF_4
+G1_LOCAL_MCP_PROJECTION=PASS_7_OF_7
+G1_LOCAL_LIVE_READS=PASS_7_OF_7
+G1_FRESH_HOST_PROJECTION=PENDING_7_ACTIONS
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=G1_IDENTITY_ACCOUNT_REPOSITORY_PERMISSION_READONLY_EXPANSION
+NEXT=FRESH_CHAT_GITHUB_G1_READONLY_SCHEMA_AND_LIVE_READ_QUALIFICATION
 ```

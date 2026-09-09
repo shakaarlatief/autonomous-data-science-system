@@ -581,3 +581,57 @@ EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 KNOWN_PARTIAL_PARITY_GAP=github.list_installations.manageable_only_true
 NEXT=G1_IDENTITY_ACCOUNT_REPOSITORY_PERMISSION_READONLY_EXPANSION
 ```
+
+## 42. G1 seven-action read-only expansion live-qualified locally
+
+Validation 160 / Checkpoint 403 publish and activate the remainder of the G1 identity/account/repository-discovery/permission read-only slice. Private local-runtime head `7af8600dd2213d2fc2e5aca3b3ef32b8fafeacc6` preserves immutable release `github-g1-readonly-expansion-v1`, targeting `0.1.1-preview.30-github-g1-readonly`, 75 public tools, nine release files and one exact runtime dependency.
+
+The first release-manifest draft declared 18 regressions and was correctly rejected by the existing Runtime Release v2 maximum of 16. The project kept that release bound unchanged and reduced the bundle to a still-representative 16-regression matrix. Separately, the private-runtime integrity scanner rejected a synthetic test token whose value resembled secret material; the fixture was changed rather than weakening the scanner. Neither event involved a real credential.
+
+Prepublication verification reported the expected nine target mismatches against preview.29. Publication operation `rm_bc3ee2e4f09d12ed8f92af6686663961` then succeeded without recovery. Restart operation `rm_9c321da1381ec4ebd69657441d939be6` activated preview.30 without recovery, and postactivation verification returned `mismatchCount=0`. Protected GitHub App user authorization survived activation and remained configured, stored, authorized and non-expired.
+
+A fresh stateless loopback MCP initialize/tools-list returned exactly 75 public tools and eleven `github.*` actions. The seven additions are:
+
+```text
+github.get_repo
+github.get_repo_collaborator_permission
+github.list_installed_accounts
+github.list_repositories
+github.list_repositories_by_affiliation
+github.list_user_org_memberships
+github.list_user_orgs
+```
+
+All seven new actions were then invoked exactly once read-only against live GitHub. The canonical public ADS repository resolved successfully and reported public visibility. Collaborator permission for `shakaarlatief` on that repository returned `admin`. Installed-account enumeration returned one personal User account. Owner-filtered repository listing and owner-affiliation listing each returned twelve repositories, no continuation, and the canonical ADS repository present. Organization memberships and organization listings both returned zero. Unrelated private repository names were deliberately not printed or preserved. No GitHub mutation or credential exposure occurred.
+
+The new repository operations remain installation-scoped rather than caller-authority-scoped. `github.get_repo` accepts only one repository selector at a time and requires the selected repository to be available through the authorized App installation before repository data is returned. `github.list_repositories_by_affiliation` intersects GitHub's authenticated-user affiliation result with installation-derived repository scope.
+
+Three known gaps remain explicitly fail-closed or separately scoped:
+
+```text
+github.list_installations(manageable_only=true)
+    -> native managed-account filter semantics still hidden
+
+github.list_repositories(include_search_index_status=true)
+    -> native search-index enrichment contract still hidden
+
+github.get_repo(repository_url=<Enterprise host>)
+    -> Enterprise routing not yet qualified; initial URL selector is github.com-only
+```
+
+The native host still exposes machine output as `any`, so exact native-wrapper wire parity remains conservatively `0 / 89`. The eleven actions are real live Runtime Bridge capabilities, but Research 123 does not convert implementation/live-use evidence into exact native-wrapper parity where output or option semantics remain undocumented.
+
+After preview.30 activation, the active MCP contains all eleven names while this persistent `chatgpt-21` connector projection still exposes only the prior four GitHub actions. This is the established AB-008 same-conversation stale-projection class. The next bounded gate is therefore a refreshed fresh disposable ChatGPT qualification of the seven new actions. G2 fetch/search/branch/commit/file reads begin only after that host gate is preserved.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.30-github-g1-readonly
+LIVE_MCP_TOOL_COUNT=75
+LIVE_GITHUB_READONLY_TOOLS=11
+G1_NEW_TOOLS=7
+G1_LOCAL_MCP_PROJECTION=PASS_7_OF_7
+G1_LOCAL_LIVE_READS=PASS_7_OF_7
+G1_FRESH_HOST_PROJECTION=PENDING_7_ACTIONS
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_GITHUB_G1_READONLY_SCHEMA_AND_LIVE_READ_QUALIFICATION
+```
