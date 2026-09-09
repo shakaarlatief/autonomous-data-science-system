@@ -1335,3 +1335,41 @@ PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=EXPLICIT_OWNER_AUTHORIZATION_FOR_TWO_ACTIONS_RERUN_MUTATIONS
 ```
+
+## 61. Actions rerun positive-live closed 2/2; six PR/review positive-live actions remain
+
+Validation 179 / Checkpoint 422 close positive-live qualification of both GitHub Actions rerun mutation actions after explicit owner authorization. The two actions use distinct historical read-only validation workflows selected in Validation 178, so the first rerun does not invalidate the second fixture.
+
+`github.rerun_failed_workflow_run_jobs` was invoked exactly once for Knowledge map integrity run `33501596538`, whose fresh preflight remained completed/failure at attempt 1 and head SHA `a2f215fe66c881049e0456e7ecc28df4ae54aad7`. Runtime Bridge returned `accepted=true` with no uncertainty. Read-only postflight observed the same run at attempt 2 and new job `102615182694`, `validate-knowledge-map`, attempt 2, completed/failure.
+
+`github.rerun_workflow_job` was then invoked exactly once for failed Ubuntu job `99836356121` from independent Current routing consistency run `33501718088`. Fresh preflight confirmed the run remained completed/failure at attempt 1 and the exact job remained completed/failure under run `33501718088`. Runtime Bridge returned `accepted=true` with no uncertainty. Read-only postflight observed run attempt 2 and newly executed Ubuntu job `102615588321`, attempt 2, completed/failure.
+
+Neither mutation was retried and neither produced a mutation-uncertain result. The repeated validation failures do not negate successful rerun qualification; run-attempt increments and new target-job identities prove GitHub accepted and executed the reruns. Both historical workflows declare only `permissions: contents: read`, so the expected qualification side effect is Actions compute/run state rather than repository or external-service mutation.
+
+The Actions rerun family is therefore closed 2/2 across implementation, local wire schema, fresh-host schema/guard and positive-live layers. Across the 41 captured native write names, successful positive-live coverage is now 35/41: 8/8 repository Git/content, 12/12 issue, 13/19 PR/review and 2/2 Actions rerun.
+
+The only six remaining write positive-live gaps are the six PR/review actions already preserved by Validation 175. That uncertainty boundary remains intact: `dismiss_pull_request_review` returned `mutationUncertain=true` and was not replayed; auto-merge is configuration-gated; reviewer request/removal are fixture-gated; and PR update/merge were not invoked after the stop. No PR/review mutation was resumed while qualifying Actions reruns. The next project boundary is design/reconciliation for those six actions, not automatic continuation.
+
+```text
+RESEARCH123=ACTIVE
+ACTIONS_RERUN_MUTATION_POSITIVE_LIVE=PASS_2_OF_2
+ACTIONS_RERUN_MUTATION_RETRIES=0
+ACTIONS_RERUN_MUTATION_UNCERTAIN_RESULTS=0
+RUN_LEVEL_RERUN_RUN_ID=33501596538
+RUN_LEVEL_RERUN_NEW_ATTEMPT=2
+RUN_LEVEL_RERUN_NEW_JOB_ID=102615182694
+SINGLE_JOB_RERUN_RUN_ID=33501718088
+SINGLE_JOB_RERUN_ORIGINAL_JOB_ID=99836356121
+SINGLE_JOB_RERUN_NEW_ATTEMPT=2
+SINGLE_JOB_RERUN_NEW_JOB_ID=102615588321
+NATIVE_WRITE_POSITIVE_LIVE=35_OF_41
+NATIVE_WRITE_POSITIVE_REMAINING=6
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=41_OF_41
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+PR_REVIEW_MUTATION_POSITIVE_LIVE=PASS_13_OF_19
+PR_REVIEW_MUTATION_POSITIVE_REMAINING=6
+PR_REVIEW_MUTATION_UNCERTAIN_RESULTS=1
+PR_REVIEW_MUTATION_REPLAY_AFTER_UNCERTAINTY=0
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=PR_REVIEW_REMAINING_SIX_QUALIFICATION_RESOLUTION_DESIGN
+```
