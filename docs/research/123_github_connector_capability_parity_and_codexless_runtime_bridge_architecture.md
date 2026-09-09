@@ -635,3 +635,36 @@ G1_FRESH_HOST_PROJECTION=PENDING_7_ACTIONS
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=FRESH_CHAT_GITHUB_G1_READONLY_SCHEMA_AND_LIVE_READ_QUALIFICATION
 ```
+
+## 43. Seven-action G1 fresh-host qualification failed on one connector transport read
+
+Validation 161 / Checkpoint 404 preserve the refreshed fresh-ChatGPT-host qualification of the seven preview.30 G1 actions. All seven exact action names projected and the supplied host qualification judged all seven schemas bounded, with no caller-selected token, credential, GitHub host, arbitrary URL, REST endpoint, GraphQL document, HTTP method/header, permission profile or equivalent arbitrary transport authority.
+
+The qualification attempted all seven live reads exactly once and in the required order. Six succeeded. `github.get_repo` resolved `shakaarlatief/autonomous-data-science-system`; `github.get_repo_collaborator_permission` returned `admin`; both repository listing routes returned twelve repositories with the canonical ADS repository present and no continuation; and both organization reads returned count zero. No unrelated private repository names, secrets or GitHub mutations were preserved.
+
+The only failed live call was `github.list_installed_accounts`, which returned before any application result with:
+
+```text
+type     mcp_network_error
+code     network_error
+message  Connection failed.
+```
+
+The disposable qualification did not retry the read and therefore correctly ended `GITHUB_G1_READONLY_FRESH_HOST=FAIL`. This result does not invalidate the 7/7 host projection or the six successful live reads.
+
+After the failure was supplied to the persistent project conversation, protected authorization metadata remained healthy and a fresh stateless active-loopback MCP invocation of exactly `github.list_installed_accounts` succeeded with one installed account containing personal User `shakaarlatief`. This is a discriminator, not a retroactive repair of the failed host qualification. It establishes that preview.30 action logic and stored authorization remained operational after the fresh-host error, while leaving the exact connector/tunnel root cause unresolved.
+
+The remaining G1 host gate is therefore reduced to one read-only action. The six successful fresh-host calls should not be repeated merely for symmetry. A separately authorized follow-up call to `github.list_installed_accounts` in the same disposable conversation is sufficient if that conversation still projects the action; otherwise one new disposable chat may be used. No Plugin rescan, Runtime Bridge publication or GitHub authorization mutation is required before that discriminator.
+
+```text
+RESEARCH123=ACTIVE
+G1_FRESH_HOST_PROJECTION=PASS_7_OF_7
+G1_FRESH_HOST_LIVE_READS=PASS_6_OF_7
+G1_FRESH_HOST_OVERALL=FAIL
+FAILED_ACTION=github.list_installed_accounts
+FAILED_ACTION_CLASS=connector_network_before_application_result
+POST_FAILURE_LOCAL_ACTION=PASS
+PROTECTED_AUTHORIZATION_HEALTHY=true
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=TARGETED_HOST_LIST_INSTALLED_ACCOUNTS_REQUALIFICATION
+```
