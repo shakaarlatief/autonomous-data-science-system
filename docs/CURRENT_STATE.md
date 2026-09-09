@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 395
+**Checkpoint:** 396
 **Date:** 2026-09-08
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-20`, titled `20 - GitHub Capability Parity and Codexless Runtime Bridge`, is now active.
+
+Checkpoint 396 closes the final owner-UI pre-creation gate. Owner-supplied screenshots show the manually completed GitHub registration form now matches the frozen 74-row extended profile exactly: Repository permissions 33 selected + 1 mandatory = 34 total, Organization 30, Account 10, Enterprise 0; Device Flow ON; expiring user authorization tokens ON; install-time OAuth OFF; Setup/Redirect blank/off; Webhook inactive with blank URL/secret; and Any account selected. The App has not yet been created, so no client ID, installation or GitHub authorization exists. The owner may now click Create GitHub App, then install it on `shakaarlatief` with All repositories and return only non-secret identifiers/evidence.
 
 Checkpoint 395 freezes the first actual extended GitHub App creation target after the complete 118-row live permission capture. Validation 152 selects 74 live permission rows: 34 repository, 30 organization, 10 account and zero enterprise. The old seven-permission parity set remains a subset, with Commit statuses upgraded to write; Repository Administration(write) is now explicitly included so Codexless can later expose bounded repository creation/settings/collaborator capabilities beyond the provider-owned native GitHub connector. Only six repository rows remain No access: Agent secrets, Codespaces secrets, Dependabot secrets, Actions Secrets, redundant Single file and Webhooks. The registration prefill embeds 56 independently documented permission parameter names and leaves 18 newer/live-only rows as explicit manual selections rather than guessing query keys. Device Flow ON, expiring user tokens ON, install-time OAuth OFF, webhooks OFF, Any-account/public visibility and personal installation `All repositories` are frozen. No App/client ID/token exists yet. The next step is the owner-performed App creation/install using the extended prefill and manual checklist.
 
@@ -437,6 +439,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/396_github_extended_app_precreation_verified_owner_create_now.md
+docs/local_execution/validation/153_github_extended_app_precreation_ui_verified.md
 docs/checkpoints/395_github_extended_permission_manifest_frozen_owner_creation_next.md
 docs/local_execution/validation/152_github_extended_permission_manifest_and_registration_prefill_frozen.md
 docs/research/GITHUB_APP_EXTENDED_PERMISSION_MANIFEST.md

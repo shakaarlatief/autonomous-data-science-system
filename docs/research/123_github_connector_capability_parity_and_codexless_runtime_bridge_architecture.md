@@ -448,31 +448,35 @@ The profile deliberately stops short of indiscriminate authority. Repository Age
 
 The registration prefill embeds 56 independently documented permission parameter names. Eighteen current live/newer permission rows are manual UI selections because their registration parameter names were not independently verified. The project explicitly prefers a manual row over inventing an undocumented query key. Device Flow ON, user-token expiration ON, install-time OAuth OFF, webhook Active OFF, Any-account/public visibility and personal installation All repositories are frozen.
 
-## 34. Current boundary
+## 34. Owner UI pre-creation qualification
 
-Research 123 now reaches the owner GitHub UI creation boundary again, this time with the extended profile rather than the superseded seven-permission baseline. The owner should open the new extended registration prefill, complete the 18 manual permission rows and manual switches, select Any account, create the App, then install it on `shakaarlatief` with All repositories.
+Validation 153 / Checkpoint 396 close the final manual registration-form gate. Owner-supplied screenshots show the completed form now matches the frozen extended profile exactly: repository 33 selected + 1 mandatory = 34 total, organization 30, account 10, enterprise 0. Device Flow is ON, expiring user authorization tokens are ON, install-time OAuth authorization is OFF, wildcard matching is OFF, Setup URL and Redirect URI are blank, Redirect on update is OFF, Webhook Active is OFF with blank URL/secret, and `Any account` is selected.
 
-Return only non-secret App ID, Client ID, App slug/settings URL, installation ID and setting confirmation. Do not paste client secret, private key, access token, refresh token, device code or webhook secret. After creation/install, preserve the actual registration evidence, configure only the non-secret Client ID into fixed server-owned Runtime Bridge configuration, require metadata to show `configured=true`, `storedAuthorization=false`, and only then begin explicit device flow.
+The App has not yet been created in this evidence, so no App ID, Client ID, installation or GitHub authorization exists. The owner may now click `Create GitHub App`, then install it on personal account `shakaarlatief` with **All repositories**.
+
+## 35. Current boundary
+
+Research 123 is now at the account-bound creation/install step with no remaining pre-creation configuration ambiguity. After the owner creates and installs the App, preserve only non-secret App identity/install evidence, then configure the non-secret Client ID through the fixed server-owned Runtime Bridge path and require metadata to show `configured=true`, `storedAuthorization=false` before beginning explicit device authorization.
 
 ```text
 RESEARCH123=ACTIVE
 TARGET=GITHUB_PARITY_PLUS_EXTENSIONS
-LIVE_PERMISSION_OPTION_COUNT=118
 EXTENDED_SELECTED_PERMISSION_COUNT=74
 REPOSITORY_SELECTED=34
 ORGANIZATION_SELECTED=30
 ACCOUNT_SELECTED=10
 ENTERPRISE_SELECTED=0
-DOCUMENTED_PREFILL_PERMISSION_COUNT=56
-MANUAL_LIVE_UI_PERMISSION_COUNT=18
-REPOSITORY_ADMINISTRATION=WRITE
-SECRET_VALUE_PERMISSIONS=NO_ACCESS
-WEBHOOK_MANAGEMENT=NO_ACCESS
+DEVICE_FLOW=ON
+EXPIRE_USER_TOKENS=ON
+REQUEST_OAUTH_ON_INSTALL=OFF
+WEBHOOKS=OFF
+APP_VISIBILITY=ANY_ACCOUNT_PUBLIC
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
+EXTENDED_APP_PRECREATION_UI=VERIFIED
 GITHUB_APP_REGISTERED=false
 GITHUB_APP_CLIENT_ID_CONFIGURED=false
 PUBLIC_GITHUB_ACTIONS=0
 LIVE_GITHUB_AUTH=NOT_STARTED
 SOURCE_VAULT=PAUSED
-NEXT=OWNER_CREATE_EXTENDED_GITHUB_APP_AND_INSTALL_ALL_PERSONAL_REPOSITORIES
+NEXT=OWNER_CLICK_CREATE_AND_INSTALL_ALL_PERSONAL_REPOSITORIES
 ```
