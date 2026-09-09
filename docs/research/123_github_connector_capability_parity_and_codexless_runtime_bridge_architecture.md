@@ -837,3 +837,51 @@ NATIVE_WRITE_ACTIONS_REMAINING=41
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=FRESH_CHAT_ALL_REMAINING_READONLY_SCHEMA_AND_LIVE_QUALIFICATION
 ```
+
+## 48. All 48 GitHub reads fresh-host-qualified; repository Git mutations next
+
+Validation 166 / Checkpoint 409 close the final fresh-host read gate. All 26 preview.33 additions projected simultaneously in a refreshed disposable ChatGPT host with bounded caller-visible contracts, and the full 112-tool / 48-GitHub-read surface showed no scale-induced projection failure. The host did not separately render `additionalProperties=false`, titles or annotations for this batch, so those exact host-visible details remain unclaimed rather than inferred from local MCP wire evidence.
+
+Calls 2-26 all returned successful application results exactly once against canonical Research 123 fixtures. `github.download_user_content` was intentionally invoked once with a non-allowlisted hostname and returned the expected bounded rejection. Because no authorized `private-user-images.githubusercontent.com` fixture exists in the canonical public evidence, positive live behavior remains `FIXTURE_GATED`; the project does not search unrelated private repositories or invent a URL merely to force a positive result.
+
+The canonical issue #82, PR #81, workflow run `32815726116`, job `97703468768` and artifact `9553693015` all resolved. The host qualification also read PR comments/reviews/review threads, the known changed filename, workflow logs/steps/artifacts/jobs, combined commit status, valid zero-reaction collections, recent issues/recent PRs and issue/PR search results. Workflow-artifact download returned compact metadata plus a reusable resource/file handoff and did not embed ZIP bytes/base64 in the structured tool result.
+
+The read phase is therefore complete at the capability/action-name level:
+
+```text
+native read actions                       48
+Runtime Bridge live read actions          48
+fresh-host projected / bounded            48 / 48
+positive-live actions                      47 / 48
+positive-live fixture-gated                github.download_user_content
+```
+
+No credential secret or GitHub mutation appeared. Known wrapper-semantic gaps remain open, including `manageable_only=true`, search-index enrichment, Enterprise repository-URL routing and hidden native output envelopes, so exact native-wrapper parity remains conservatively `0 / 89`.
+
+The remaining 41 native actions are all writes. The next implementation cadence is risk/fixture based rather than returning to small read-only slices:
+
+```text
+repository Git / content mutations     8
+issue mutations                       12
+PR / review mutations                 19
+Actions rerun mutations                2
+                                      --
+remaining writes                      41
+```
+
+The first mutation family is the eight repository Git/content primitives: `github.create_blob`, `github.create_branch`, `github.create_commit`, `github.create_file`, `github.create_tree`, `github.delete_file`, `github.update_file`, and `github.update_ref`. Implementation should first be qualified under fake/server-owned transport with installation scope, stale-SHA/non-force/no-blind-retry semantics and no live GitHub mutation. Live qualification, when separately authorized, must use a disposable branch and exact expected object identities.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.33-github-all-readonly-resource-links
+LIVE_PUBLIC_TOOL_COUNT=112
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+FRESH_HOST_QUALIFIED_READ_ACTIONS=48_OF_48
+POSITIVE_LIVE_READ_ACTIONS=47_OF_48
+DOWNLOAD_USER_CONTENT_POSITIVE_LIVE=FIXTURE_GATED
+HOST_SURFACE_SCALE_112_TOOLS=PASS
+NATIVE_WRITE_ACTIONS_REMAINING=41
+REPOSITORY_GIT_WRITE_ACTIONS_NEXT=8
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=GITHUB_REPOSITORY_GIT_MUTATION_IMPLEMENTATION
+```
