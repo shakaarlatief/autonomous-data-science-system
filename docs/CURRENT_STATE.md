@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-20
-Conversation title       20 - GitHub Capability Parity and Codexless Runtime Bridge
+Interaction session      chatgpt-21
+Conversation title       21 - GitHub Device Flow Recovery and Authorization Diagnosis
 Primary collaborator     ChatGPT
 ```
 
