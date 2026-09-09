@@ -32,7 +32,7 @@
   },
   "mappingLegend": {
     "currentRuntimeBridgeParity": {
-      "MISSING": "No exact remote GitHub action currently exists in the Runtime Bridge."
+      "MISSING": "No fully qualified exact native-parity row is currently closed for this action. A corresponding Runtime Bridge foundation implementation may exist while host/result/semantic parity evidence remains incomplete."
     }
   },
   "actions": [

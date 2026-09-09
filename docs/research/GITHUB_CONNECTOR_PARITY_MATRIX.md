@@ -1,8 +1,8 @@
 # GitHub Connector 89-Action Parity Matrix
 
-**Date:** 2026-09-08
-**Status:** ACTIVE RESEARCH 123 / APP REGISTRATION CONFIGURATION FROZEN / OWNER CREATION NEXT
-**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition.
+**Date:** 2026-09-09
+**Status:** ACTIVE RESEARCH 123 / FOUR-TOOL READ-ONLY FOUNDATION LIVE LOCALLY / FRESH-HOST QUALIFICATION NEXT
+**Authority:** Specialized Research 123 parity/design artifact. Validation 128 remains authoritative for the two earlier 89-action qualification results and conservative negative-capability interpretation; Validation 130 owns the fresh exact-name correction; Validation 131 owns Batch 1; Validation 132 Batch 2; Validation 133 Batch 3; Validation 134 Batch 4; Validation 135 Batch 5; Validation 136 Batch 6; Validation 137 owns final reconciliation and gap disposition; Validation 157 owns the first live four-tool read-only Runtime Bridge foundation and its deliberately partial parity classification.
 **Machine-readable inventory:** `docs/research/github_connector_89_action_inventory.json`
 **Machine-readable native schema capture:** `docs/research/github_connector_native_schema_capture.json`
 
@@ -37,7 +37,7 @@ TOTAL                                                              89
 
 ## Mapping conclusion
 
-There is currently no exact remote GitHub API parity action in Codexless Runtime Bridge. The inspected Runtime Bridge source contains generalized local semantic Git but no GitHub REST/GraphQL capability layer. All 89 inventory rows therefore begin with `currentRuntimeBridgeParity=MISSING`.
+Codexless Runtime Bridge now contains a live GitHub REST/GraphQL authority layer and four public read-only foundation tools: `github.get_profile`, `github.get_user_login`, `github.list_installations`, and `github.list_repositories_by_installation`. Validation 157 live-qualified all four against the protected GitHub App user authorization through the active local MCP server. Exact native parity remains `0 / 89`, however, because the current bundle is deliberately not yet classified as four fully closed native-wrapper rows: `github.list_installations(manageable_only=true)` fails closed until the native managed-account filter semantics are evidenced, and the new names still require fresh-ChatGPT-host projection qualification. The inventory therefore continues to use `currentRuntimeBridgeParity=MISSING` to mean that no fully qualified exact native-parity row is closed yet, not that no corresponding Runtime Bridge implementation exists.
 
 Existing Runtime Bridge mechanisms remain reusable:
 
@@ -327,6 +327,8 @@ Validation 147 / Checkpoint 390 close that discriminator: preview.25 projects as
 Validation 148 / Checkpoint 391 then map all 89 actions to current official GitHub permission evidence and freeze seven repository permissions: Actions(write), Contents(write), Issues(write), Metadata(read), Pull requests(write), Commit statuses(read), and Workflows(write). Organization/account/enterprise permissions and webhooks remain absent; Administration/Checks/Members are explicitly excluded. GitHub does not publish an exact GraphQL App permission table, so eight PR/review GraphQL operations retain an empirical sufficiency probe under already-required Pull requests(write), with no speculative widening.
 Validation 149 / Checkpoint 392 freeze the non-secret GitHub App registration around that manifest: personal owner `shakaarlatief`, canonical App name, Any account/public installability, device flow and expiring tokens enabled, install-time OAuth off, no callback/setup URL, webhooks disabled, no private-key bootstrap, and first installation limited to the canonical public ADS repository. The project is now at the owner-performed GitHub UI creation/install boundary.
 Validation 150-152 / Checkpoints 393-395 then expand the product goal beyond parity before App creation. The complete live registration surface contains 118 permission rows; the frozen extended profile selects 74 (34 repository, 30 organization, 10 account, 0 enterprise), explicitly includes Repository Administration(write), and preserves connector parity as a subset. Fifty-six permission rows are reproducibly prefilled from independently documented parameter names; eighteen live/newer rows remain manual rather than guessed. Secret-value families and Webhooks stay off, while personal installation scope becomes All repositories.
+Validation 153-156 / Checkpoints 396-399 then close the owner UI, App registration, installation, Client-ID correction and device-flow authorization sequence. The dedicated App is installed on the personal account with All repositories, the local bootstrap PEM has been deleted, no Client secret exists, and protected GitHub App user authorization is current and non-expired.
+Validation 157 / Checkpoint 400 publish and locally live-qualify the first four `github.*` read-only foundation tools on preview.28. The fixed GraphQL viewer query resolves the authenticated login, REST installation enumeration returns one All-repositories installation, and repository enumeration confirms the canonical ADS repository is in scope. Exact parity deliberately remains `0 / 89` because `list_installations(manageable_only=true)` is still fail-closed pending native managed-account semantics and the four new names still require fresh ChatGPT host projection qualification.
 
 Validation 137 / Checkpoint 380 preserve the final reconciliation. All 89 host-visible request contracts were captured with zero missing actions, but all 89 machine-readable output schemas and all 89 structured error schemas remain unavailable, and `create_tree` retains a genericized nested input. The result is `GITHUB_89_SCHEMA_CAPTURE=INCOMPLETE` for exact native-wrapper wire parity while practical action/request mapping is complete. G0 auth/transport work is opened because these action-specific gaps do not constrain the independent GitHub authority/API kernel; action publication remains evidence-gated.
 
@@ -338,9 +340,15 @@ FRESH_PROJECTED_ORDER_CONFIRMED=89/89
 CHECKPOINT372_EXACT_NAME_RECONSTRUCTION=CORRECTED
 EXACT_REMOTE_RUNTIME_BRIDGE_PARITY_NOW=0/89
 PARITY_ACTIONS_MISSING=89
+LIVE_GITHUB_FOUNDATION_TOOLS=4
+LIVE_RUNTIME_VERSION=0.1.1-preview.28-github-readonly-foundation
+LIVE_MCP_TOOL_COUNT=68
 LOCAL_REUSE_AVAILABLE=YES
 AUTH_ARCHITECTURE=GITHUB_APP_USER_TOKEN_DEVICE_FLOW
+GITHUB_USER_AUTHORIZED=true
+STORED_AUTHORIZATION=true
 REPOSITORY_SCOPE=GITHUB_APP_INSTALLATION
+PERSONAL_INSTALLATION_SCOPE=ALL_REPOSITORIES
 PRODUCTION_TRANSPORT=INTERNAL_REST_GRAPHQL_CLIENT
 CALLER_SUPPLIED_CREDENTIALS=FORBIDDEN
 CALLER_SUPPLIED_ARBITRARY_HTTP=FORBIDDEN
@@ -348,8 +356,11 @@ TARGET_PUBLIC_SHAPE=EXPLICIT_GITHUB_ACTIONS
 TOOL_COUNT_SCALING=EMPIRICAL_QUALIFICATION_REQUIRED
 NATIVE_HOST_VISIBLE_SCHEMA_CAPTURE=89_OF_89_COMPLETE
 EXACT_NATIVE_WIRE_CONTRACT=INCOMPLETE
-G0_AUTH_TRANSPORT_KERNEL=PRIVATE_CANDIDATE_QUALIFIED
+G0_AUTH_TRANSPORT_KERNEL=LIVE
+GRAPHQL_VIEWER_QUERY=PASS
+KNOWN_PARTIAL_PARITY_GAP=github.list_installations.manageable_only_true
+SAME_CHAT_NEW_TOOL_PROJECTION=STALE
 HOST_MACHINE_OUTPUT_SCHEMA=NOT_PROJECTED_IN_BATCH1
 HOST_STRUCTURED_ERROR_SCHEMA=NOT_PROJECTED_IN_BATCH1
-NEXT=OWNER_CREATE_EXTENDED_GITHUB_APP_AND_INSTALL_ALL_PERSONAL_REPOSITORIES
+NEXT=FRESH_CHAT_GITHUB_READONLY_FOUNDATION_SCHEMA_AND_LIVE_READ_QUALIFICATION
 ```

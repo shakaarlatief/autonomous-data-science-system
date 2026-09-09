@@ -484,9 +484,32 @@ After the owner completed GitHub authorization, exactly one poll of that same au
 
 The owner had already confirmed deletion of the locally downloaded PEM. Runtime Bridge still does not use App private-key/JWT authority, and no Client secret was generated.
 
-## 39. Current boundary
+## 39. First public GitHub read-only foundation live-qualified locally
 
-Research 123 remains active. G0 live user authorization is now qualified, while public `github.*` parity actions remain `0 / 89`. The next bounded gate is to expose and live-qualify the first read-only GitHub action bundle needed to prove authenticated identity, installation-derived repository scope and the GraphQL/REST authority substrate before remote mutation actions are published.
+Validation 157 / Checkpoint 400 advance the live Runtime Bridge from authorization-only G0 to its first public `github.*` action bundle. Private local-runtime head `a18983d2b2199f350d07664cfe91dbf013e2df3c` preserves final immutable release `github-readonly-foundation-v3`. The release migrates the historical G0 invariant that public GitHub action count must remain zero to the intentional four-action foundation, while retaining lazy construction, protected-store isolation and no-network-at-construction guarantees.
+
+Publication operation `rm_d607e555f858e60d7ae5c253fcc71215` succeeded after the full bounded regression matrix. Restart operation `rm_86a5699c3cf0160932348716698b4230` then activated `0.1.1-preview.28-github-readonly-foundation` without recovery. Fresh postactivation verification reports 68 public tools, one exact runtime dependency and zero source mismatches. Direct Codexless health is live, and the already-running tunnel remains `live` and `ready` without restart.
+
+The four public tools are:
+
+```text
+github.get_profile
+github.get_user_login
+github.list_installations
+github.list_repositories_by_installation
+```
+
+`github.get_profile` and `github.get_user_login` use a fixed server-owned GraphQL viewer query. The installation/repository actions use the fixed github.com REST transport with the protected GitHub App user access token and installation-derived authority. Callers cannot supply tokens, hosts, endpoints, GraphQL documents, HTTP methods/headers or permission overrides.
+
+A fresh stateless local MCP session against the active server discovered all 68 tools and invoked all four new actions read-only. The GraphQL viewer query returned authenticated login `shakaarlatief`. Installation enumeration returned one installation with `repositorySelection=all`. Repository enumeration returned twelve repositories through that installation and confirmed `shakaarlatief/autonomous-data-science-system` is in scope. Other repository names and all credential values were intentionally omitted from preservation.
+
+The current bundle is deliberately a read-only **foundation**, not yet four fully closed native parity rows. The known discriminator is `github.list_installations(manageable_only=true)`: the native connector says this filters to managed setup account types but does not project the exact account-type/filter semantics. Runtime Bridge therefore fails closed with `GITHUB_PARITY_OPTION_NOT_QUALIFIED` rather than inventing wrapper behavior. The successful viewer GraphQL query also does not close the separate permission-sufficiency probes required for the eight PR/review GraphQL operations.
+
+The same persistent `chatgpt-21` conversation still exposes its earlier connector tool projection and does not expose any of the four new `github.*` names even though direct active MCP `tools/list` contains them. This is the already-established AB-008 same-conversation stale-projection class. The decisive evidence is exact-name presence in live MCP and exact-name absence from this conversation, not a raw count comparison alone.
+
+## 40. Current boundary
+
+Research 123 remains active. The live Runtime Bridge now has four public read-only GitHub foundation tools, while exact native parity remains `0 / 89` until fresh-host qualification and the remaining native-contract gap are closed. The next bounded gate is to refresh/rescan the existing `Codexless Runtime Bridge` Plugin and use a fresh disposable ChatGPT conversation to capture the four host-visible schemas and invoke each new action once read-only. No remote GitHub mutation is authorized by this checkpoint.
 
 ```text
 RESEARCH123=ACTIVE
@@ -497,14 +520,20 @@ GITHUB_APP_CLIENT_ID=Iv23lirgmw82wV0SGTWn
 GITHUB_APP_SLUG=codexless-runtime-bridge
 GITHUB_APP_INSTALLED=true
 PERSONAL_INSTALL_SCOPE=ALL_REPOSITORIES
-INSTALLATION_ID=NOT_YET_CAPTURED
+INSTALLATION_ID=RESOLVED_LIVE_NOT_PUBLICLY_REPRODUCED
 PRIVATE_KEY_GENERATED=true
 LOCAL_PRIVATE_KEY_DELETION=CONFIRMED_BY_OWNER
 CLIENT_SECRET_GENERATED=false
 GITHUB_APP_CLIENT_ID_CONFIGURED=true
 GITHUB_USER_AUTHORIZED=true
 STORED_AUTHORIZATION=true
-PUBLIC_GITHUB_ACTIONS=0
+LIVE_RUNTIME_VERSION=0.1.1-preview.28-github-readonly-foundation
+LIVE_PUBLIC_TOOL_COUNT=68
+LIVE_GITHUB_FOUNDATION_TOOLS=4
+EXACT_PARITY_ROWS_CLOSED=0
+KNOWN_PARTIAL_PARITY_GAP=github.list_installations.manageable_only_true
+GRAPHQL_VIEWER_QUERY=PASS
+SAME_CHAT_NEW_TOOL_PROJECTION=STALE
 SOURCE_VAULT=PAUSED
-NEXT=AUTHENTICATED_IDENTITY_INSTALLATION_SCOPE_AND_FIRST_READ_ONLY_GITHUB_ACTION_QUALIFICATION
+NEXT=FRESH_CHAT_GITHUB_READONLY_FOUNDATION_SCHEMA_AND_LIVE_READ_QUALIFICATION
 ```
