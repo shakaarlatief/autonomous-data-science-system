@@ -1140,3 +1140,42 @@ ACTIONS_RERUN_WRITE_ACTIONS_UNIMPLEMENTED=2
 EXACT_NATIVE_PARITY_ROWS_CLOSED=0
 NEXT=GITHUB_PR_REVIEW_MUTATION_IMPLEMENTATION
 ```
+
+## 55. PR/review mutation family live on preview.36; fresh-host schema gate next
+
+Validation 173 / Checkpoint 416 implement, publish, activate and locally qualify all nineteen captured native pull-request/review mutation action names on Runtime Bridge preview.36. The live surface is now 151 public tools / 87 GitHub tools: 48 reads, eight repository Git/content writes, twelve issue writes and nineteen PR/review writes.
+
+The implementation uses fixed installation-scoped REST/GraphQL operations, server-side serialization for same-object mutation sequences, no automatic replay of uncertain mutations, bounded text/list/enumeration inputs and fixed GraphQL node-to-repository scope queries before node-ID mutations. No caller-selected credential, GitHub host, arbitrary endpoint/method/header, GraphQL document, permission-profile, transport or host-process authority is exposed.
+
+Several Runtime Bridge contracts intentionally narrow the captured native wrapper where hidden semantics would otherwise be unsafe or ambiguous. `github.merge_pull_request` requires `expected_head_sha` and rereads the live PR head before mutation. `github.create_pull_request` currently supports same-repository head branches and rejects conflicting aliases, cross-repository heads and simultaneous issue+title ambiguity. COMMENT and REQUEST_CHANGES reviews require a body; reviewer-request/removal operations require a non-empty user/team set; inline comments use bounded repository-relative paths plus explicit diff coordinates. These narrowings are practical safety semantics, not claims of exact native-wrapper equivalence.
+
+Focused integration tests pass all nineteen routes, fail-closed semantic guards, merge stale-head protection and single-attempt mutation-uncertainty handling. Reconstructed broad wire qualification passes at 151 tools with 48 read schemas, eight repository Git/content mutation schemas, twelve issue schemas and nineteen PR/review schemas.
+
+The immutable release is bound to local-runtime source head `70dd9d028e20d607e58aa1012b1b961125e6213e`, target `0.1.1-preview.36-github-pr-review-mutations`, 151 tools and manifest SHA-256 `ea3addeb85c89704a451285f0e6a2767f85a246bc410e502595c0722a974394b`. Publication operation `rm_94f667f33c1350fae18a5a0214a0795d` and restart operation `rm_8656dfe9141c9aa51ab1cba699063d34` both succeed without recovery; postactivation verification reports zero mismatches. Protected authorization remains configured/stored/authorized with non-expired access/refresh authorization and no refresh recommendation.
+
+Direct live MCP health returns preview.36 with 151 tools, and stateless `tools/list` returns 87 GitHub tools with all nineteen new names. Two deliberately invalid local-live calls remain no-write: unsupported PR reaction `party` and an empty reviewer request are rejected during input validation before GitHub dispatch. Positive-live PR/review mutation therefore remains `0 / 19`.
+
+The persistent `chatgpt-21` host predates preview.36 projection and is not authoritative for the newly activated tools. The next gate is one refreshed disposable ChatGPT conversation that discovers all nineteen exact names, records their host-visible bounded schemas and performs deterministic no-write guard calls only. A later positive-live qualification must use a deliberately prepared disposable branch/PR/review fixture and derive downstream object IDs from actual results; merge must retain exact expected-head binding.
+
+Only two captured native write action names remain unimplemented: the two GitHub Actions rerun mutations. Runtime Bridge therefore implements 39/41 write names and 87/89 captured native GitHub action names overall. Exact native-wrapper parity remains conservatively `0 / 89` because hidden native output envelopes and unresolved wrapper semantics remain explicit gaps.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.36-github-pr-review-mutations
+LIVE_PUBLIC_TOOL_COUNT=151
+LIVE_GITHUB_TOOL_COUNT=87
+LIVE_GITHUB_READONLY_TOOL_COUNT=48
+LIVE_GITHUB_REPOSITORY_GIT_MUTATION_TOOL_COUNT=8
+LIVE_GITHUB_ISSUE_MUTATION_TOOL_COUNT=12
+LIVE_GITHUB_PR_REVIEW_MUTATION_TOOL_COUNT=19
+PR_REVIEW_MUTATION_WIRE_SCHEMA=PASS_19_OF_19
+PR_REVIEW_MUTATION_FRESH_HOST_SCHEMA=PENDING
+PR_REVIEW_MUTATION_POSITIVE_LIVE=0_OF_19
+PR_REVIEW_MUTATION_OCCURRED=false
+NATIVE_WRITE_ACTIONS_IMPLEMENTED=39
+NATIVE_WRITE_ACTIONS_UNIMPLEMENTED=2
+NATIVE_ACTION_NAMES_IMPLEMENTED=87_OF_89
+ACTIONS_RERUN_WRITE_ACTIONS_UNIMPLEMENTED=2
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_CHAT_PR_REVIEW_MUTATION_SCHEMA_QUALIFICATION
+```
