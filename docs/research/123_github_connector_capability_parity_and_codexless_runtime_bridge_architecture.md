@@ -1590,3 +1590,26 @@ CREATE_REPOSITORY_POSTFLIGHT=PASS
 EXTENDED_REPOSITORY_ADMIN_FOUNDATION=COMPLETE
 NEXT=EXTENDED_GITHUB_NEXT_CAPABILITY_FAMILY_DESIGN
 ```
+
+## 70. CI Evidence Publication selected as second beyond-parity family
+
+Validation 188 / Checkpoint 431 select the second beyond-parity GitHub extension family after Repository Administration completion. The current installation metadata directly confirms `checks=write` and `statuses=write`. The native connector can read combined commit statuses and Actions execution state but does not publish rich Check runs or commit-status contexts, so CI Evidence Publication closes a meaningful professional development gap.
+
+The frozen first slice contains six actions: `github.get_check_run`, `github.list_check_runs_for_ref`, `github.list_check_run_annotations`, `github.create_check_run`, `github.update_check_run`, and `github.create_commit_status`.
+
+Checks write authority is deliberately narrowed. Runtime Bridge exposes only queued/in-progress/completed states and excludes GitHub-Action-only waiting/requested/pending plus the GitHub-owned stale conclusion. Completed state requires a conclusion. Caller timestamps, arbitrary details URLs, images and requested-action buttons are not exposed. Check output is bounded to title/summary/text plus at most 50 strict repository-relative annotations. Update transitions are monotonic and read-before-write; completed checks cannot be reopened. Mutation uncertainty never triggers automatic replay.
+
+Commit-status publication uses a server-owned namespace: the caller supplies only a constrained `context_suffix` and Runtime Bridge writes `codexless/<suffix>`. This avoids clobbering or impersonating status contexts owned by other CI providers. The first slice exposes no arbitrary `target_url`. The target commit is installation-scope-resolved before mutation.
+
+Manual check-suite creation/preferences and rerequest are deferred. Check-run creation automatically associates a suite, while rerequest emits webhook events and the App webhook receiver remains intentionally disabled. No CI-evidence mutation has occurred. The next step is local six-tool implementation/publication and deterministic no-write qualification before any positive Check/status write is separately authorized.
+
+```text
+RESEARCH123=ACTIVE
+EXTENDED_CI_EVIDENCE_FOUNDATION_ACTIONS=6
+EXTENDED_CI_EVIDENCE_READS=3
+EXTENDED_CI_EVIDENCE_WRITES=3
+CHECKS_PERMISSION=LIVE_WRITE_CONFIRMED
+COMMIT_STATUSES_PERMISSION=LIVE_WRITE_CONFIRMED
+CI_EVIDENCE_MUTATION_OCCURRED=false
+NEXT=IMPLEMENT_EXTENDED_CI_EVIDENCE_FOUNDATION
+```
