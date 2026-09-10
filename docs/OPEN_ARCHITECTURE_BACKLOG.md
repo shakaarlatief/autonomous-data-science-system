@@ -1151,6 +1151,65 @@ Validation 155 / Checkpoint 398 then close the personal-installation gate: the A
 
 ---
 
+## AB-030: Governed ADS validation to GitHub CI-evidence workflow
+
+**Status:** OPEN / DESIGN CANDIDATE AFTER CI-EVIDENCE FOUNDATION QUALIFICATION
+**Priority:** P1
+
+The CI Evidence Publication foundation introduced under Research 123 is a publication capability, not a new validator or an automatic pre-push gate. A valuable next architecture step is to connect existing ADS validation and repository-integrity evidence to that GitHub publication surface so that the exact result of governed local validation can become first-class visible evidence on the corresponding GitHub commit or pull request.
+
+Candidate workflow:
+
+```text
+ADS prepares a repository change
+    -> resolve the required V0-V4 verification level and governing validators
+    -> run the required local deterministic / integrated validation
+    -> fail closed locally if the required validation is incomplete or fails
+    -> create/push the exact commit through the existing guarded Git path when authorized
+    -> bind the resulting exact GitHub commit SHA
+    -> publish a Codexless-owned GitHub Check and/or namespaced commit status
+    -> attach bounded summaries and useful file/line annotations where available
+    -> update the Check monotonically to its final completed conclusion
+    -> use the GitHub-visible evidence for review, PR decisions, and later audit
+```
+
+The key architectural distinction must remain explicit:
+
+```text
+ADS validation / repository-integrity mechanisms
+    decide what was actually checked and whether the change is acceptable
+
+GitHub CI Evidence Publication
+    records and exposes that already-earned evidence on the exact commit
+```
+
+GitHub publication must therefore never turn a missing, partial, stale, or failed local validation into a green status merely because a status can be written. The published result should carry enough provenance to identify the exact commit and the validation family/tier that produced it. Existing local push/integrity guards remain authoritative for whether a push is permitted unless a later accepted architecture deliberately changes that responsibility.
+
+Useful future decisions include:
+
+```text
+which ADS validators deserve persistent GitHub Checks versus lightweight commit statuses
+whether publication occurs only after push, during PR preparation, or at several lifecycle points
+how V0-V4 verification tiers map to stable Check names and conclusions
+how exact test/validator provenance is summarized without duplicating large logs
+when line-level annotations are useful and trustworthy
+how repeated validation of the same SHA is versioned or updated without hiding earlier failures
+how local ADS evidence should coexist with GitHub Actions results rather than impersonate them
+whether selected Codexless Checks should eventually participate in merge or branch-protection policy
+how publication failure is handled so GitHub visibility failure does not falsify the underlying local validation result
+```
+
+The first concrete example worth evaluating after the six-action CI-evidence foundation is live-qualified is publication of an exact `PUBLIC_REPOSITORY_INTEGRITY` result for one explicitly selected commit under a Codexless-owned Check/status identity. Positive publication must remain separately authorized until Research 123 deliberately opens that workflow.
+
+Primary current foundation:
+
+```text
+docs/local_execution/validation/188_github_extended_ci_evidence_foundation_design.md
+docs/checkpoints/431_github_extended_ci_evidence_foundation_designed_implementation_next.md
+```
+
+---
+
 # Continuation obligations that must not be forgotten
 
 ## CO-001: MC-0010 Claude dual-repository research
