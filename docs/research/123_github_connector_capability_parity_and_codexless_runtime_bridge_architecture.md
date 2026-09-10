@@ -1882,3 +1882,32 @@ HISTORICAL_BRANCH_CLEANUP=NOT_AUTHORIZED
 AB030=PARKED_UNCHANGED
 NEXT=IMPLEMENT_GITHUB_DELETE_BRANCH_FOUNDATION
 ```
+
+## 80. Git Reference Lifecycle preview.43 live-local qualification complete; fresh-host gate next
+
+Validation 198 / Checkpoint 441 advance the fourth beyond-parity family from design into the live Runtime Bridge. `github.delete_branch` is implemented in immutable release `github-git-reference-lifecycle-v1`, bound to private local-runtime source head `7b426a4844d4d26f995fd2c4964397eb97753533`. The release publishes runtime `0.1.1-preview.43-github-git-reference-lifecycle` with 169 public tools / 105 GitHub tools, and postactivation verification reports zero mismatches.
+
+Fresh stateless MCP discovery exposes the exact strict three-field caller contract: installation-authorized `repository_full_name`, bounded `branch_name`, and required hexadecimal `expected_head_sha`, with `additionalProperties=false` and destructive/non-idempotent annotations. The dedicated fake-dependency suite passes 9/9, covering successful fake deletion, branch-name validation, default/protected-branch rejection, stale-head rejection, destructive-state drift during serialized revalidation, definite GitHub failures, and mutation uncertainty with exactly one DELETE and zero automatic replay.
+
+Two real GitHub deterministic no-write guards then passed against the canonical repository. Exact current `main` was rejected before mutation with `GITHUB_DEFAULT_BRANCH_DELETE_FORBIDDEN`. Exact current `v1-source-vault-bootstrap-resume` was called with deliberately stale `expected_head_sha=0000000` and rejected before mutation with `GITHUB_BRANCH_HEAD_CHANGED`. Both were non-retryable and non-uncertain, and read-only postflight confirmed both branches remained unchanged. No branch deletion occurred.
+
+The already-open persistent `chatgpt-22` Plugin projection does not directly expose the newly activated action, while the fresh stateless MCP surface does. This is the known same-conversation host-projection staleness class. The next gate is therefore one fresh disposable ChatGPT-host qualification after normal Plugin refresh/rescan. That fresh host must first capture the exact projected action/schema and then run only the default-branch and stale-head invalid no-write guards, followed by read-only postflight. Positive deletion remains unauthorized until that gate passes and a newly created disposable qualification branch is frozen.
+
+Existing historical branches are explicitly excluded from tool qualification. Actual branch cleanup remains a separate classification task and is not automatically required for Research 123 closure. After Git Reference Lifecycle itself closes, Research 123 should make one final value decision around the smallest useful Repository Governance foundation rather than continue implementing every technically available GitHub surface. Release/tag, security findings, deployments/environments/variables, Codespaces, Pages, Packages, Discussions, Projects, Agent tasks, organization/team administration and other optional capability families remain recorded for future need. Secret-value and webhook-management authority remain deferred. AB-030 remains parked unchanged.
+
+```text
+RESEARCH123=ACTIVE
+GIT_REFERENCE_LIFECYCLE_FOUNDATION=LIVE_LOCAL_QUALIFIED
+LIVE_RUNTIME_VERSION=0.1.1-preview.43-github-git-reference-lifecycle
+LIVE_PUBLIC_TOOL_COUNT=169
+LIVE_GITHUB_TOOL_COUNT=105
+GITHUB_DELETE_BRANCH_WIRE_SCHEMA=PASS_1_OF_1
+GITHUB_DELETE_BRANCH_FAKE_TESTS=PASS_9_OF_9
+GITHUB_DELETE_BRANCH_LOCAL_NO_WRITE_GUARDS=PASS_2_OF_2
+GITHUB_DELETE_BRANCH_POSITIVE_WRITES=0_OF_1
+GITHUB_DELETE_BRANCH_MUTATION_RETRIES=0
+GITHUB_DELETE_BRANCH_MUTATION_UNCERTAIN_RESULTS=0
+HISTORICAL_BRANCH_CLEANUP=NOT_AUTHORIZED
+AB030=PARKED_UNCHANGED
+NEXT=FRESH_HOST_GITHUB_DELETE_BRANCH_SCHEMA_GUARD_QUALIFICATION
+```
