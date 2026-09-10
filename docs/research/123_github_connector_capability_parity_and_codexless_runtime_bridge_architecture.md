@@ -1852,3 +1852,33 @@ GITHUB_MUTATION_OCCURRED=false
 AB030=PARKED_UNCHANGED
 NEXT=DESIGN_GITHUB_GIT_REFERENCE_LIFECYCLE_FOUNDATION
 ```
+
+## 79. Git Reference Lifecycle foundation frozen as one bounded branch-delete action
+
+Validation 197 / Checkpoint 440 freeze the fourth beyond-parity family at its smallest useful implementation boundary. Runtime Bridge already supports branch search, creation and non-force ref movement, so only one new public action is necessary:
+
+```text
+github.delete_branch
+```
+
+Its caller contract is intentionally only `repository_full_name`, bounded `branch_name`, and required `expected_head_sha`. The raw GitHub generic reference namespace is not exposed. Runtime Bridge constructs only `heads/<branch>` and provides no force flag, default-branch override, protected-branch override, ruleset bypass, raw URL/endpoint, credential or transport authority.
+
+Before destructive dispatch, Runtime Bridge must resolve installation authority, read current repository metadata for the default branch, read the exact branch for current head SHA and protection state, reject default/protected branches, and require the expected head SHA to match. The action then serializes by repository + branch, repeats the default-branch/identity/protection/head checks inside the mutation boundary, and only then issues one fixed GitHub delete-reference request. A successful HTTP 204 becomes a bounded deleted-branch receipt. Classifiable 404/409/422 responses remain definite. Transport ambiguity after DELETE becomes mutation uncertainty and is never automatically replayed.
+
+Tag lifecycle is deliberately excluded because the canonical repository currently has zero tags and no active release/tag workflow. It belongs with any later Release/Tag family rather than being included merely because tags are also Git refs. Positive-live tool qualification will create a new disposable `r123/git-reference-delete-positive-20260910-01` branch from an exact frozen commit, read it, delete it exactly once, and confirm absence. Existing historical branches are not positive-live fixtures and remain untouched until a separate cleanup classification establishes which are actually disposable.
+
+```text
+RESEARCH123=ACTIVE
+GIT_REFERENCE_LIFECYCLE_FOUNDATION=DESIGNED
+GIT_REFERENCE_LIFECYCLE_NEW_ACTIONS=1
+GIT_REFERENCE_LIFECYCLE_ACTION=github.delete_branch
+DELETE_BRANCH_DEFAULT_BRANCH_GUARD=REQUIRED
+DELETE_BRANCH_PROTECTED_BRANCH_GUARD=REQUIRED
+DELETE_BRANCH_EXPECTED_HEAD_GUARD=REQUIRED
+DELETE_BRANCH_SERIALIZED_REREAD=REQUIRED
+DELETE_BRANCH_MUTATION_REPLAY=FORBIDDEN_AFTER_UNCERTAINTY
+TAG_LIFECYCLE=DEFERRED
+HISTORICAL_BRANCH_CLEANUP=NOT_AUTHORIZED
+AB030=PARKED_UNCHANGED
+NEXT=IMPLEMENT_GITHUB_DELETE_BRANCH_FOUNDATION
+```
