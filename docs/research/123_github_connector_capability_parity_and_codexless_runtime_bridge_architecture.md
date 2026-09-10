@@ -1911,3 +1911,30 @@ HISTORICAL_BRANCH_CLEANUP=NOT_AUTHORIZED
 AB030=PARKED_UNCHANGED
 NEXT=FRESH_HOST_GITHUB_DELETE_BRANCH_SCHEMA_GUARD_QUALIFICATION
 ```
+
+## 81. Git Reference Lifecycle fresh-host gate closed; disposable positive qualification next
+
+Validation 199 / Checkpoint 442 close the fresh-host non-writing qualification for `github.delete_branch`. The owner-supplied disposable-host result ends `GITHUB_DELETE_BRANCH_FRESH_HOST=PASS`: the exact action projected with exactly three required caller fields and the expected visible bounds/pattern; no optional fields/defaults or caller-selected credential, GitHub host/URL/endpoint, method/header, GraphQL document, generic ref namespace, force/default/protection bypass, permission profile, transport, filesystem, shell or process authority were exposed.
+
+The fresh host did not visibly expose separate `additionalProperties` or annotations, so those are not inferred from local MCP evidence. Semantic protections described by the host remain separately recorded: exact current-head validation, default/protected branch rejection, repeated destructive-boundary checks, server-owned `refs/heads/<branch>` construction and no automatic retry after uncertain deletion.
+
+The host read exact current branch identities, then invoked exactly two deterministic invalid `github.delete_branch` calls. Exact `main` returned `GITHUB_DEFAULT_BRANCH_DELETE_FORBIDDEN`; the active development branch with stale `expected_head_sha=0000000` returned `GITHUB_BRANCH_HEAD_CHANGED`. Both were `retryable=false` and `mutationUncertain=false`. Read-only postflight proved both branches remained at their original SHAs and protection states. Zero positive deletions, branch creations, ref updates, retries or uncertain mutations occurred.
+
+A separate read-only branch search confirms the disposable positive fixture name `r123/git-reference-delete-positive-20260910-01` is currently absent. The exact source commit is frozen as Checkpoint 441 public commit `058a7cf28d2ba5adc5d8cffb9d5b65a14f9dd19e`. Positive-live qualification is not authorized by this checkpoint: after explicit owner authorization, create that exact disposable branch once at the frozen SHA, read it back, require exact SHA plus `protected=false`, delete only that exact branch once, stop on any mutation uncertainty without replay, and read-only confirm absence. Existing historical branches remain excluded from tool qualification.
+
+After this positive sequence passes, Git Reference Lifecycle can close as the fourth beyond-parity family. Historical branch cleanup remains a separate optional repository-maintenance task. Research 123 should then make the final value decision around the smallest useful Repository Governance foundation instead of automatically adding more GitHub surfaces. AB-030 remains parked unchanged.
+
+```text
+RESEARCH123=ACTIVE
+GITHUB_DELETE_BRANCH_FRESH_HOST=PASS
+GITHUB_DELETE_BRANCH_FRESH_HOST_PROJECTION=PASS_1_OF_1
+GITHUB_DELETE_BRANCH_FRESH_HOST_NO_WRITE_GUARDS=PASS_2_OF_2
+GITHUB_DELETE_BRANCH_FRESH_HOST_POSTFLIGHT=PASS
+GITHUB_DELETE_BRANCH_POSITIVE_WRITES=0_OF_1
+POSITIVE_FIXTURE_BRANCH=r123/git-reference-delete-positive-20260910-01
+POSITIVE_FIXTURE_SOURCE_SHA=058a7cf28d2ba5adc5d8cffb9d5b65a14f9dd19e
+POSITIVE_FIXTURE_CURRENTLY_EXISTS=false
+HISTORICAL_BRANCH_CLEANUP=NOT_AUTHORIZED
+AB030=PARKED_UNCHANGED
+NEXT=EXPLICIT_OWNER_AUTHORIZATION_FOR_DISPOSABLE_CREATE_DELETE_QUALIFICATION
+```
