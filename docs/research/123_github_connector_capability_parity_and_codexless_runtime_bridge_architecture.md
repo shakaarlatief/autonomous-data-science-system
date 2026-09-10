@@ -1989,3 +1989,26 @@ CANONICAL_PROTECTION_MUTATION_AUTHORIZED=false
 AB030=PARKED_UNCHANGED
 NEXT=IMPLEMENT_REPOSITORY_BRANCH_SAFETY_GOVERNANCE_FOUNDATION
 ```
+
+## 84. Repository Branch-Safety Governance preview.44 implemented and locally qualified
+
+Validation 202 / Checkpoint 445 preserve successful implementation, immutable publication, activation, and local-live non-writing qualification of the fifth family. Runtime Bridge preview.44 is active at `0.1.1-preview.44-github-repository-branch-safety-governance` with 172 public tools / 108 GitHub tools. Release `github-repository-branch-safety-governance-v1` is bound to private local-runtime source head `4e02b105e698265b72e449b8211a20aa20a22b14`; postactivation verification reports zero mismatches.
+
+The dedicated service suite passes 13/13. Fresh local MCP discovery projects all three frozen strict contracts. Live reads show `main@3c7bcc51b10bfac787aee4b12cc3cd0f6b553400` and `v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91` both remain unprotected. Stale-head create and absent-protection delete guards each fail before mutation with definite non-retryable/non-uncertain results, and postflight proves both branches unchanged.
+
+Two additional fail-closed details are implemented: branch-level `protected=true` cannot be bypassed merely because the classic protection endpoint returns absent, and signed-commit protection is included in baseline comparison so the delete action cannot remove a stronger signed policy.
+
+No positive branch-protection mutation has occurred. A fresh disposable ChatGPT host must now qualify the three exact projected actions, canonical reads, and deterministic invalid no-write guards. Positive capability qualification remains later and disposable-only. Permanent protection of `main` and `v1-frontend-spike` remains a separate explicit owner decision. AB-030 remains parked unchanged.
+
+```text
+RESEARCH123=ACTIVE
+FIFTH_FAMILY_PREVIEW44=LIVE
+FIFTH_FAMILY_FAKE_TESTS=PASS_13_OF_13
+FIFTH_FAMILY_LOCAL_WIRE=PASS_3_OF_3
+FIFTH_FAMILY_LOCAL_READS=PASS_2_OF_2
+FIFTH_FAMILY_LOCAL_NO_WRITE_GUARDS=PASS_2_OF_2
+FIFTH_FAMILY_POSITIVE_WRITES=0
+CANONICAL_PROTECTION_MUTATION_AUTHORIZED=false
+AB030=PARKED_UNCHANGED
+NEXT=FRESH_CHAT_REPOSITORY_BRANCH_SAFETY_SCHEMA_GUARD_QUALIFICATION
+```
