@@ -1698,3 +1698,40 @@ COMMIT_STATUS_ID=53895827310
 COMMIT_STATUS_CONTEXT=codexless/ci-evidence-qualification
 NEXT=EXTENDED_GITHUB_NEXT_CAPABILITY_FAMILY_DESIGN
 ```
+
+## 74. GitHub Actions Orchestration selected as third beyond-parity family
+
+Validation 192 / Checkpoint 435 select and freeze the third beyond-parity GitHub extension family as **GitHub Actions Orchestration**. This continues Research 123 capability breadth after Repository Administration and CI Evidence Publication while leaving AB-030 parked exactly as requested.
+
+The current ADS repository makes Actions orchestration materially useful: it contains 34 workflow files and 27 of them declare `workflow_dispatch`. The live GitHub App installation still reports `Actions=write` and `Workflows=write`; the selected REST endpoints require Actions read/write, so no App permission change is required for this foundation.
+
+The six-action first slice is:
+
+```text
+github.list_repository_workflows   read
+github.get_workflow                read
+github.get_workflow_run            read
+github.dispatch_workflow           write
+github.rerun_workflow_run          write
+github.cancel_workflow_run         write
+```
+
+The three reads establish exact workflow/run identity rather than forcing orchestration to depend on heuristic search. `dispatch_workflow` accepts only a positive numeric workflow ID, explicit `branch|tag` ref identity, required `expected_ref_sha`, and at most 25 strict primitive input entries with unique names and the current 65,535-character GitHub payload ceiling. Runtime Bridge resolves the ref to one exact commit, requires the expected SHA to match, revalidates workflow/ref state inside the serialized mutation boundary, and uses only GitHub's fixed workflow-dispatch endpoint. Current GitHub API behavior returns the exact created `workflow_run_id`, allowing the successful mutation to bind directly to its new run.
+
+Whole-run rerun and cancellation are also concurrency-bound. Both require exact run ID, expected head SHA and expected run attempt. Rerun requires a completed run and leaves debug logging disabled in the first slice. Cancellation rejects completed runs, treats HTTP 202 only as acceptance of the cancellation request, preserves state conflicts as definite, and never automatically escalates to force-cancel. All three writes retain the existing one-dispatch/no-automatic-replay mutation-uncertainty contract.
+
+Force-cancel, workflow enable/disable, destructive run/log/artifact/cache deletion, fork-run approval, deployment approvals, `repository_dispatch`, workflow-YAML mutation, raw debug-rerun control and Actions policy mutation are explicitly deferred into separate semantic families or recovery paths. Existing `Repository integrity` and `Knowledge map integrity` workflows are promising read-only-qualified future fixtures because they support `workflow_dispatch` and declare `contents: read`, but no positive Actions mutation is authorized by this design checkpoint.
+
+The next boundary is local implementation/publication of these six actions with strict schemas, fake-dependency route/normalization tests, deterministic no-write guards, and mutation-uncertainty tests. Positive workflow dispatch, whole-run rerun and cancellation remain separately owner-authorized after live activation and fresh-host qualification.
+
+```text
+RESEARCH123=ACTIVE
+THIRD_BEYOND_PARITY_FAMILY=GITHUB_ACTIONS_ORCHESTRATION
+ACTIONS_ORCHESTRATION_FOUNDATION_ACTIONS=6
+ACTIONS_ORCHESTRATION_READS=3
+ACTIONS_ORCHESTRATION_WRITES=3
+LIVE_ACTIONS_PERMISSION=WRITE_CONFIRMED
+ACTIONS_ORCHESTRATION_MUTATION_OCCURRED=false
+AB030=PARKED_UNCHANGED
+NEXT=IMPLEMENT_EXTENDED_GITHUB_ACTIONS_ORCHESTRATION_FOUNDATION
+```
