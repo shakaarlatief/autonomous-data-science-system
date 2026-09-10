@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 431
+**Checkpoint:** 432
 **Date:** 2026-09-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-22`, titled `22 - GitHub CI Evidence Publication and Qualification`, is now active.
+
+Checkpoint 432 activates and locally qualifies the second beyond-parity GitHub extension family. Runtime Bridge is live as `0.1.1-preview.41-github-ci-evidence` with 162 public tools / 98 GitHub tools; all six CI-evidence names are present in stateless loopback MCP discovery. Immutable release `github-ci-evidence-v2`, bound to local-runtime source head `f35d9049049abc7d2301a0b73c22087f35fb84b3`, published and activated without recovery, and postactivation verification reports zero mismatches. The first prepare attempt exposed a working-tree CRLF versus canonical-LF Runtime Release manifest defect under `core.autocrlf=true`; normalizing the working tree revealed no Git content delta, and the private local-runtime repository is now durably hardened at `bcbf0e1f612f67c5f56a718098a2828f53588251` with `.gitattributes` forcing Runtime Release manifests to LF. All three new Check reads are positive-live qualified against public commit `06b8480cc289395e831cb587eba20495c8265b0e`; five deterministic invalid write guards pass, including monotonic completed-Check protection. Postflight proves zero Codexless Check Runs and zero commit statuses were created. Protected GitHub authorization remains healthy. This persistent `chatgpt-22` projection is stale for the six new names, so the next gate is Plugin refresh/rescan plus one fresh disposable ChatGPT schema/read/no-write qualification. Positive CI-evidence writes remain separately owner-authorized afterward. AB-030 preserves the future idea of publishing already-earned ADS validation evidence to GitHub; preview.41 itself does not add automatic pre-push validation or merge protection.
 
 Checkpoint 431 freezes the second beyond-parity GitHub extension family as **CI Evidence Publication**. The live App installation confirms `checks=write` and `statuses=write`. The six-action foundation contains three Checks reads (`github.get_check_run`, `github.list_check_runs_for_ref`, `github.list_check_run_annotations`), two Checks writes (`github.create_check_run`, `github.update_check_run`), and namespaced `github.create_commit_status`. Check writes expose only queued/in-progress/completed lifecycle states, exclude GitHub-Action-only statuses and stale conclusion, use strict output/annotation bounds, preserve server-owned timestamps, and enforce monotonic update transitions with read-before-write scope revalidation and no replay after mutation uncertainty. Commit statuses always use a server-owned `codexless/<context_suffix>` context namespace and expose no arbitrary target URL, preventing accidental overwrite/impersonation of unrelated CI providers. Manual check-suite controls and rerequest are deferred because suite creation is automatic and rerequest depends on webhook handling while the App webhook receiver remains disabled. No CI-evidence mutation occurred. The next boundary is local implementation/publication of the six-tool foundation with fake-dependency tests and no positive write.
 
@@ -509,6 +511,10 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/432_github_ci_evidence_preview41_live_fresh_host_qualification_next.md
+docs/local_execution/validation/189_github_ci_evidence_preview41_live_local_qualified.md
+docs/checkpoints/431_github_extended_ci_evidence_foundation_designed_implementation_next.md
+docs/local_execution/validation/188_github_extended_ci_evidence_foundation_design.md
 docs/checkpoints/398_github_app_installed_all_repositories_private_key_cleanup_next.md
 docs/local_execution/validation/155_github_app_installed_all_personal_repositories.md
 docs/research/github_app_live_registration_20260909.json

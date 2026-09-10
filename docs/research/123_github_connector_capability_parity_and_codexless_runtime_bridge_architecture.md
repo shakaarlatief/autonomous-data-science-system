@@ -1613,3 +1613,32 @@ COMMIT_STATUSES_PERMISSION=LIVE_WRITE_CONFIRMED
 CI_EVIDENCE_MUTATION_OCCURRED=false
 NEXT=IMPLEMENT_EXTENDED_CI_EVIDENCE_FOUNDATION
 ```
+
+## 71. CI Evidence preview.41 live locally; fresh-host gate next
+
+Validation 189 / Checkpoint 432 publish, activate, and locally qualify the six-action CI Evidence Publication foundation without performing any positive Check Run or commit-status write. Corrected immutable release `github-ci-evidence-v2` targets `0.1.1-preview.41-github-ci-evidence` at 162 public tools / 98 GitHub tools. Publication operation `rm_9e3cf60f8ab306bbf7b5bcc7200d92a0` and activation restart `rm_800505880afb2e808fe67d785f2859fc` both succeeded without recovery; postactivation Runtime Release verification reports zero mismatches.
+
+The first release `prepare` exposed a reproducibility defect rather than an implementation failure. The working-tree `release.json` had CRLF line endings under `core.autocrlf=true`, while Runtime Release requires exact canonical `JSON.stringify(..., null, 2)` plus LF bytes. Git already stored the manifest in canonical LF form, so normalizing the working tree produced no Git content delta and the same logical prepare request then succeeded. The private local-runtime repository is now hardened at `bcbf0e1f612f67c5f56a718098a2828f53588251` with `.gitattributes` forcing Runtime Release manifests to `text eol=lf`; its private integrity push passed. The immutable release remains correctly bound to its earlier source head `f35d9049049abc7d2301a0b73c22087f35fb84b3`.
+
+Fresh loopback health reports preview.41 / 162 tools. Stateless local MCP discovery reports exactly 98 `github.*` tools and all six CI-evidence action names. All three reads are positive-live qualified against public ADS commit `06b8480cc289395e831cb587eba20495c8265b0e`: `list_check_runs_for_ref` returns four completed successful GitHub Actions Check Runs, `get_check_run` resolves exact `repository-integrity (ubuntu-latest)` Check Run `102790611224`, and `list_check_run_annotations` returns a valid empty annotation page for that run.
+
+Five deterministic invalid write guards pass with no positive mutation: traversal annotation paths are rejected; completed Checks without conclusions are rejected; conclusions on in-progress Checks are rejected; invalid commit-status context suffixes are rejected; and attempting to reopen the completed live Check Run returns `GITHUB_CHECK_STATUS_REGRESSION`, `retryable=false`, `mutationUncertain=false`, with no GitHub request ID. Postflight still shows exactly the four GitHub Actions Check Runs, zero Codexless Check Runs, and zero commit-status contexts on the selected SHA. Protected GitHub authorization remains healthy after activation.
+
+The current persistent `chatgpt-22` host projection remains stale for the six newly activated names even though direct live MCP discovery proves them present. This matches AB-008. The next gate is therefore Plugin refresh/rescan followed by one fresh disposable ChatGPT conversation that captures the six host-visible schemas, exercises the three read-only Check actions on safe fixtures, and repeats deterministic invalid no-write guards only. Positive `create_check_run`, `update_check_run`, and `create_commit_status` qualification remains behind a later separate owner authorization for one exact commit and exact visible evidence payload.
+
+The newly recorded AB-030 workflow idea remains a future integration candidate rather than an activated policy: ADS validation earns the evidence, and CI Evidence Publication can later expose that earned result on GitHub. No automatic pre-push validation, merge gate, or branch-protection dependency is introduced by preview.41 itself.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.41-github-ci-evidence
+LIVE_PUBLIC_TOOL_COUNT=162
+LIVE_GITHUB_TOOL_COUNT=98
+CI_EVIDENCE_ACTIONS=6
+CI_EVIDENCE_READS_LOCAL_LIVE=PASS_3_OF_3
+CI_EVIDENCE_NO_WRITE_GUARDS=PASS_5_OF_5
+CI_EVIDENCE_POSITIVE_WRITES=0_OF_3
+CI_EVIDENCE_MUTATION_OCCURRED=false
+POSTACTIVATION_VERIFY=PASS_ZERO_MISMATCH
+SAME_CHAT_CI_EVIDENCE_PROJECTION=STALE
+NEXT=FRESH_CHAT_CI_EVIDENCE_SCHEMA_READ_GUARD_QUALIFICATION
+```
