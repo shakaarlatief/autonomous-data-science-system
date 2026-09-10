@@ -1822,3 +1822,33 @@ READ_ONLY_DUPLICATE_PREFLIGHT_CALLS=4
 AB030=PARKED_UNCHANGED
 NEXT=EXTENDED_GITHUB_NEXT_CAPABILITY_FAMILY_DESIGN
 ```
+
+## 78. Remaining extension landscape reviewed; Git Reference Lifecycle selected fourth
+
+Validation 196 / Checkpoint 439 perform the first explicit value review after completion of the third beyond-parity family. The review establishes that Research 123 does not have a predetermined extension-family total. GitHub's complete API surface is not a mandatory implementation checklist; each new family must close a concrete ADS need with a bounded semantic contract and feasible qualification path.
+
+The live App already carries broad repository authority including Administration, Contents, Deployments, Environments, Variables, Codespaces, Pages, Packages, Discussions, security findings, Attestations, Agent tasks and related developer permissions. Permission availability is therefore not the main selection constraint. Current repository state and actual ADS workflow need are more important.
+
+A concrete branch-lifecycle gap is now the strongest immediate need. The repository currently has 59 remote branches, including five remaining `r123/*` qualification branches, while Research 123 explicitly records that temporary branches remained because the native connector exposed no branch-delete action. Current GitHub documentation provides a fixed delete-reference endpoint requiring `Contents(write)`, already present on the App, with default-branch deletion rejected by GitHub. Git Reference Lifecycle is therefore selected as the fourth beyond-parity family, with safe branch deletion as the initial design target. No branch is deleted or otherwise mutated by this selection.
+
+The review also establishes a ranked but non-binding remainder. Repository Governance is the strongest likely later candidate because the canonical repository currently has no rulesets and `main` is not branch-protected, but those are high-consequence policy controls and should not be mixed into routine ref cleanup. Release/Tag Management, Security Findings, and Deployments/Environments/Variables remain credible need-triggered candidates. The repository currently has zero tags, zero GitHub Releases, disabled security-analysis features, and no workflow use of environments, variables, deployment objects, `repository_dispatch` or merge-group semantics. Codespaces, Pages, Packages, Discussions, Projects, Agent tasks and organization/team administration remain optional until concrete workflows justify them. Secret-value and webhook-management APIs remain deliberately deferred.
+
+The next design pass should freeze the smallest coherent Git Reference Lifecycle foundation, leading with a strongly guarded branch-delete action based on repository, exact branch name and required expected head SHA. Expected principles include installation-derived scope, exact preflight, default-branch rejection, stale-SHA protection, serialization by repository/branch, reread immediately before one fixed DELETE, and no automatic replay after mutation uncertainty. Tag lifecycle remains an explicit design question because the repository has zero tags and does not share the immediate cleanup need.
+
+```text
+RESEARCH123=ACTIVE
+EXTENDED_GITHUB_FAMILY_TOTAL=NOT_PREDETERMINED
+COMPLETED_BEYOND_PARITY_FAMILIES=3
+FOURTH_FAMILY_SELECTED=GIT_REFERENCE_LIFECYCLE
+FOURTH_FAMILY_INITIAL_TARGET=BOUNDED_BRANCH_DELETION
+REMOTE_BRANCH_COUNT_OBSERVED=59
+R123_QUALIFICATION_BRANCHES_OBSERVED=5
+REPOSITORY_GOVERNANCE=STRONG_LIKELY_LATER_CANDIDATE
+RELEASE_TAG_MANAGEMENT=NEED_TRIGGERED_CANDIDATE
+SECURITY_FINDINGS=NEED_TRIGGERED_CANDIDATE
+DEPLOYMENTS_ENVIRONMENTS_VARIABLES=NEED_TRIGGERED_CANDIDATE
+BRANCH_CLEANUP_AUTHORIZED=false
+GITHUB_MUTATION_OCCURRED=false
+AB030=PARKED_UNCHANGED
+NEXT=DESIGN_GITHUB_GIT_REFERENCE_LIFECYCLE_FOUNDATION
+```
