@@ -1510,3 +1510,33 @@ CREATE_REPOSITORY_DEFAULT_AUTO_INIT=false
 ADMINISTRATION_MUTATION_OCCURRED=false
 NEXT=IMPLEMENT_EXTENDED_REPOSITORY_ADMINISTRATION_FOUNDATION
 ```
+
+## 67. Repository Administration preview.40 live; fresh-host schema/read gate next
+
+Validation 185 / Checkpoint 428 implement and activate the first beyond-parity Repository Administration foundation as three new public GitHub actions. Runtime Bridge now exposes 156 public tools / 92 GitHub tools locally: the 89 captured native action names plus `github.list_repository_collaborators`, `github.list_repository_invitations`, and personal-only `github.create_repository`.
+
+The administration service preserves the Validation 184 authority boundaries. Both reads require installation-derived repository authority and fixed REST endpoints. Repository creation accepts only a restricted name, optional description/homepage, semantic private/public visibility with private as default, and false-by-default auto initialization. It resolves and revalidates the authenticated personal user server-side, serializes by user/name, and uses mutation-aware one-attempt transport. Organization owner/template/settings/ruleset/destructive lifecycle and arbitrary transport authority remain absent.
+
+Focused fake-dependency administration tests pass 4/4. The first count-corrected activation, preview.39, revealed a separate outer-runtime integration omission: the service existed inside `services()` and MCP registrations existed, but the returned kernel facade did not delegate the three new methods. Safe local reads therefore failed with `...is not a function`. No administration write was dispatched. The narrow v3 repair adds those delegates and a facade regression.
+
+Immutable release `github-repository-administration-v3` is bound to synchronized local-runtime head `5846f02785c97df99c0ba8edc47f160a3710ef2b`, target `0.1.1-preview.40-github-repository-administration`, 156 tools and manifest `a638f715565ebf939cdaa37ea9e1caeb743b1b5939423b68537da0346fd5e778`. Publication `rm_5ebc427e137f0e8492f4ac5614683473` and restart `rm_9996fa2b896186b148b80b2a5a7056e2` both succeed without recovery; postactivation verification reports zero mismatches.
+
+Direct local MCP `tools/list` reports exactly 92 `github.*` actions and all three administration names. `github.list_repository_collaborators` succeeds on the canonical ADS repository with one collaborator including the authenticated user. `github.list_repository_invitations` succeeds with zero open invitations. One deliberately invalid `github.create_repository` request using `name="bad name"` is rejected by the repository-name regex before Runtime Bridge/GitHub mutation dispatch. No schema-valid create request has been issued and no repository administration mutation occurred.
+
+The persistent ChatGPT host predates preview.40 and remains projection-stale. The next gate is a refreshed disposable fresh-host qualification of all three exact names, bounded schemas, the two reads and deterministic no-write guards. Positive repository creation remains 0/1 and requires separate owner authorization for one exact repository name and visibility after the host gate.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.40-github-repository-administration
+LIVE_PUBLIC_TOOL_COUNT=156
+LIVE_GITHUB_TOOL_COUNT=92
+EXTENDED_REPOSITORY_ADMIN_IMPLEMENTED=3_OF_3
+EXTENDED_REPOSITORY_ADMIN_LOCAL_LIVE_READS=PASS_2_OF_2
+CREATE_REPOSITORY_NO_WRITE_GUARD=PASS
+CREATE_REPOSITORY_POSITIVE_LIVE=0_OF_1
+ADMINISTRATION_MUTATION_OCCURRED=false
+SAME_CHAT_REPOSITORY_ADMIN_PROJECTION=STALE
+NATIVE_ACTION_NAMES_IMPLEMENTED=89_OF_89
+EXACT_NATIVE_PARITY_ROWS_CLOSED=0
+NEXT=FRESH_HOST_REPOSITORY_ADMINISTRATION_SCHEMA_QUALIFICATION
+```
