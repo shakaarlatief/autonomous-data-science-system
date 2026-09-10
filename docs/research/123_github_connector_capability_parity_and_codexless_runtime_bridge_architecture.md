@@ -1,9 +1,9 @@
 # Research 123: GitHub Connector Capability Parity and Codexless Runtime Bridge Architecture
 
 **Date:** 2026-09-08
-**Status:** ACTIVE / OWNER-DIRECTED INSERTION BEFORE PLANNED NEXT STAGE
+**Status:** COMPLETE / GITHUB PARITY + SELECTED BEYOND-PARITY EXTENSIONS CLOSED / NEXT STAGE AWAITING OWNER
 **Scope:** Establish the exact currently observed GitHub-connected development capability surface available to ChatGPT, define practical parity requirements for the custom local connector, and formalize the connector terminology needed to keep the overall Autonomous Data Science System distinct from its transport/runtime bridge.
-**Authority:** Active Level-2 architecture research. It may define implementation and qualification work for GitHub capability parity, but it does not by itself widen GitHub, local-runtime, workspace, credential, or repository authority.
+**Authority:** Closed Level-2 architecture research. It remains authoritative for the Research 123 GitHub parity and selected beyond-parity evidence, contracts, implementation decisions and qualification history, but it does not by itself widen GitHub, local-runtime, workspace, credential, or repository authority.
 **Declared references:** `research:113`, `research:116`, `checkpoint:370`, `path:docs/local_execution/validation/034_chatgpt_tool_projection_refresh_and_connector_coexistence_observations.md`, `path:docs/local_execution/validation/128_github_connector_capability_parity_baseline_and_coexistence_recheck.md`, `path:docs/local_execution/OPERATIONS.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`
 
 ## 1. Owner-directed stage insertion
@@ -2063,4 +2063,32 @@ MUTATION_UNCERTAIN_RESULTS=0
 CANONICAL_PROTECTION_MUTATION_AUTHORIZED=false
 AB030=PARKED_UNCHANGED
 NEXT=CANONICAL_BRANCH_PROTECTION_DECISION_AND_RESEARCH123_CLOSURE
+```
+
+## 87. Canonical branch safety applied; Research 123 closed
+
+Validation 205 / Checkpoint 448 resolve the final Research 123 policy decision. After explicit owner authorization, fresh exact reads confirmed `main@3c7bcc51b10bfac787aee4b12cc3cd0f6b553400` and `v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91` were both still unprotected. Runtime Bridge then created `codexless.branch-safety-baseline.v1` exactly once on each branch using those exact head SHAs.
+
+Postflight reads confirmed both branch heads unchanged and both branches now protected by the exact fixed baseline: administrator enforcement is enabled, force pushes and branch deletion are disabled, while required status checks, required pull-request reviews, signed commits, branch locking and push restrictions remain absent. The final canonical policy application used two protection-create mutations, zero retries, zero mutation-uncertain results, and zero branch-head changes.
+
+Research 123 is therefore complete. All 89 captured native GitHub action names are structurally implemented under the explicit residual provider-wrapper and fixture/environment caveats, and all five owner-selected beyond-parity families are complete end to end: Repository Administration, CI Evidence Publication, GitHub Actions Orchestration, Git Reference Lifecycle, and Repository Branch-Safety Governance. No sixth GitHub family is scheduled.
+
+AB-029 closes with Research 123. Optional GitHub surfaces remain documented for future need rather than implemented now. Secret-value and webhook-management authority remain deferred, historical branch cleanup remains optional and unperformed, and AB-030 remains parked unchanged. Research 113 and Source Vault remain paused because the owner has not yet selected the next ADS stage.
+
+```text
+RESEARCH123=COMPLETE
+AB029=COMPLETE
+NATIVE_GITHUB_ACTION_NAMES_STRUCTURALLY_IMPLEMENTED=89_OF_89
+COMPLETED_BEYOND_PARITY_FAMILIES=5
+CANONICAL_BRANCH_SAFETY=ACTIVE
+MAIN_BRANCH_SAFETY=ACTIVE
+PROMOTED_INTEGRATION_BRANCH_SAFETY=ACTIVE
+BRANCH_SAFETY_PROFILE=codexless.branch-safety-baseline.v1
+CANONICAL_PROTECTION_CREATIONS=2
+MUTATION_RETRIES=0
+MUTATION_UNCERTAIN_RESULTS=0
+AB030=PARKED_UNCHANGED
+RESEARCH113=PAUSED
+SOURCE_VAULT=PAUSED
+NEXT=OWNER_SELECTS_NEXT_ADS_STAGE
 ```

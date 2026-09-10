@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 447
+**Checkpoint:** 448
 **Date:** 2026-09-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,9 +22,11 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
+## Current active stage: Research 123 complete; awaiting project-owner next-stage selection
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-22`, titled `22 - GitHub CI Evidence Publication and Qualification`, is now active.
+
+Checkpoint 448 closes Research 123 after the owner-authorized permanent application of `codexless.branch-safety-baseline.v1` to both durable canonical branches. Fresh exact preflight confirmed `main@3c7bcc51b10bfac787aee4b12cc3cd0f6b553400` and `v1-frontend-spike@2480109fadeee1e480ef03b82e335aacdf9adf91` were still unprotected. Runtime Bridge then created the fixed safety baseline exactly once on each branch with zero retries and zero mutation uncertainty. Read-only postflight confirmed both head SHAs unchanged and both branches now report `protected=true`, `codexlessSafetyBaseline=true`, and profile `codexless.branch-safety-baseline.v1`. The permanent policy still allows ordinary fast-forward updates while blocking force pushes and branch deletion for administrators as well as other actors; it introduces no required PRs, status checks, reviews, signed commits, or branch lock. Research 123 is now complete: all 89 captured native GitHub action names are structurally implemented under the preserved evidence caveats, and all five selected beyond-parity families are complete end to end. AB-029 closes with Research 123. No sixth GitHub family is scheduled; optional GitHub surfaces remain documented for future need. AB-030 remains parked unchanged. Research 113 and Source Vault remain paused until the project owner explicitly selects the next ADS stage.
 
 Checkpoint 447 completes **Repository Branch-Safety Governance** end to end. After explicit owner authorization, disposable branch `r123/branch-safety-governance-positive-20260910-01` was created once at frozen source commit `b748038492197d8fdaa9f816e155051f16a3966e`, read unprotected at that exact SHA, protected exactly once with `codexless.branch-safety-baseline.v1`, read back with the exact fixed baseline, unprotected exactly once by removing only that baseline, read back unprotected again at the unchanged head, deleted exactly once through `github.delete_branch`, and confirmed absent by exact-name branch search. Positive mutation accounting was one branch create, one protection create, one protection delete, and one branch delete, with zero mutation retries and zero mutation-uncertain results. All effects were confined to the disposable fixture; `main` and `v1-frontend-spike` were not targeted. The fifth and intended-final important beyond-parity GitHub family is therefore fully qualified across design, implementation, immutable publication, local and fresh-host non-writing gates, and positive-live mutation/readback/cleanup. The only remaining Research 123 GitHub decision is whether to apply the already-designed minimal branch-safety baseline permanently to `main` and `v1-frontend-spike`; that durable repository-policy change remains separately unauthorized. AB-030 remains parked unchanged.
 
@@ -541,6 +543,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/448_research123_github_stage_complete_awaiting_owner_next_stage.md
+docs/local_execution/validation/205_canonical_branch_safety_applied_research123_closed.md
 docs/checkpoints/447_repository_branch_safety_complete_canonical_protection_decision_next.md
 docs/local_execution/validation/204_repository_branch_safety_positive_live_qualified.md
 docs/checkpoints/446_repository_branch_safety_fresh_host_pass_positive_live_authorization_next.md
