@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 443
+**Checkpoint:** 444
 **Date:** 2026-09-10
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -25,6 +25,8 @@ Repository artifacts remain authoritative across chats and models.
 ## Current active stage: Research 123 GitHub connector capability parity and Codexless Runtime Bridge architecture
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-22`, titled `22 - GitHub CI Evidence Publication and Qualification`, is now active.
+
+Checkpoint 444 selects and freezes the fifth and final important GitHub extension family for the current ADS stage: **Repository Branch-Safety Governance**. Read-only GitHub evidence confirms no repository rulesets, no `main` branch protection, no `v1-frontend-spike` branch protection, and live App `Administration=write`. Because the promoted integration branch is a durable accepted-state boundary yet existing ADS automation still performs ordinary fast-forward pushes to it, broad PR/status-check enforcement would be disruptive. The fixed governance baseline therefore preserves normal fast-forward updates while blocking force pushes and branch deletion for everyone including administrators. Exactly three actions are designed: `github.get_branch_protection`, create-only `github.create_branch_safety_protection`, and baseline-only `github.delete_branch_safety_protection`. Callers cannot select protection policy fields, bypass actors, wildcard targets, rulesets, required checks/reviews, force/deletion allowances, or transport authority. Create refuses any existing protection rather than overwrite it; delete refuses any protection that differs from the exact `codexless.branch-safety-baseline.v1` profile. Positive qualification will use only a disposable branch. Permanent protection of `main` and `v1-frontend-spike` remains a separate explicit owner-authorization gate after tool qualification. Other GitHub surfaces remain deferred for future need, and AB-030 remains parked unchanged.
 
 Checkpoint 443 completes Git Reference Lifecycle as the fourth beyond-parity GitHub family. The owner-authorized disposable positive-live sequence created `r123/git-reference-delete-positive-20260910-01` exactly once at frozen source commit `058a7cf28d2ba5adc5d8cffb9d5b65a14f9dd19e`, read it back at that exact SHA with `protected=false`, deleted only that exact branch exactly once through `github.delete_branch`, and confirmed absence by read-only postflight. The create and delete mutations were each dispatched once with zero retries and zero mutation-uncertain results. No historical branch was deleted and no repository content, commit object, PR/issue, release, deployment, secret, variable, setting, or protection rule changed. Git Reference Lifecycle is therefore complete across design, implementation, local qualification, fresh-host qualification, and positive-live deletion. Historical branch cleanup remains optional and separately classified. The next Research 123 boundary is the final value decision around whether a small Repository Governance foundation is important enough to implement before closing the GitHub extension stage. AB-030 remains parked unchanged.
 
@@ -533,6 +535,8 @@ MC-0010 is now `OPEN / PARALLEL UPSTREAM RESEARCH`. It is a current-context `REV
 ## Current canonical route
 
 ```text
+docs/checkpoints/444_repository_branch_safety_governance_selected_design_implementation_next.md
+docs/local_execution/validation/201_repository_governance_value_decision_and_branch_safety_design.md
 docs/checkpoints/443_github_git_reference_lifecycle_complete_governance_value_decision_next.md
 docs/local_execution/validation/200_github_delete_branch_positive_live_qualified.md
 docs/checkpoints/442_github_delete_branch_fresh_host_pass_positive_live_authorization_next.md

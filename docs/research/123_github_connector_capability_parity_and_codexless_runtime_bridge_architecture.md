@@ -1964,3 +1964,28 @@ HISTORICAL_BRANCH_CLEANUP=NOT_AUTHORIZED
 AB030=PARKED_UNCHANGED
 NEXT=FINAL_REPOSITORY_GOVERNANCE_VALUE_DECISION
 ```
+
+## 83. Final Repository Governance value decision selects minimal branch safety
+
+Validation 201 / Checkpoint 444 conclude that one final GitHub family is materially useful before Research 123 closes: **Repository Branch-Safety Governance**. Read-only GitHub evidence shows no repository rulesets and no branch protection on either `main` or promoted integration branch `v1-frontend-spike`; the installed App has `Administration=write`.
+
+Broad PR/status-check enforcement is deliberately not selected. ADS still has maintained automation that performs an ordinary fast-forward push directly to `v1-frontend-spike`, so the present server-side protection need is narrower: allow ordinary fast-forward pushes while blocking force pushes and deletion for everyone including administrators.
+
+The frozen family contains exactly three actions: `github.get_branch_protection`, create-only `github.create_branch_safety_protection`, and baseline-only `github.delete_branch_safety_protection`. Runtime Bridge owns the fixed `codexless.branch-safety-baseline.v1` profile; callers cannot select required checks/reviews, bypass actors, force/deletion allowances, branch patterns, rulesets, or transport authority. Create refuses to overwrite any existing protection, and delete refuses to remove any policy that differs from the exact Codexless baseline.
+
+Capability qualification will use only a disposable branch. Permanent application to `main` and `v1-frontend-spike` remains a separate final owner-authorized repository-policy mutation after the three tools themselves qualify. Other optional GitHub families remain documented for future need rather than scheduled now. AB-030 remains parked unchanged.
+
+```text
+RESEARCH123=ACTIVE
+FIFTH_BEYOND_PARITY_FAMILY=REPOSITORY_BRANCH_SAFETY_GOVERNANCE
+FIFTH_FAMILY_ACTIONS=3
+BRANCH_SAFETY_PROFILE=codexless.branch-safety-baseline.v1
+BLOCK_FORCE_PUSHES=true
+BLOCK_DELETIONS=true
+ENFORCE_ADMINS=true
+REQUIRE_PULL_REQUESTS=false
+REQUIRE_STATUS_CHECKS=false
+CANONICAL_PROTECTION_MUTATION_AUTHORIZED=false
+AB030=PARKED_UNCHANGED
+NEXT=IMPLEMENT_REPOSITORY_BRANCH_SAFETY_GOVERNANCE_FOUNDATION
+```
