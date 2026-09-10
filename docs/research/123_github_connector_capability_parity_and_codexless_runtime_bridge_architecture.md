@@ -1642,3 +1642,30 @@ POSTACTIVATION_VERIFY=PASS_ZERO_MISMATCH
 SAME_CHAT_CI_EVIDENCE_PROJECTION=STALE
 NEXT=FRESH_CHAT_CI_EVIDENCE_SCHEMA_READ_GUARD_QUALIFICATION
 ```
+
+## 72. CI Evidence fresh-host six-action gate closed; positive-live writes next
+
+Validation 190 / Checkpoint 433 preserve the owner-supplied refreshed disposable ChatGPT qualification of Runtime Bridge preview.41. The fresh-host result closes with `GITHUB_CI_EVIDENCE_FRESH_HOST=PASS`: all six exact CI-evidence actions projected, all six host-visible schemas were sufficiently bounded, all three authorized Check reads succeeded exactly once, and all five deterministic invalid write guards rejected safely.
+
+The read fixture remained `shakaarlatief/autonomous-data-science-system` commit `06b8480cc289395e831cb587eba20495c8265b0e` with Check Run `102790611224`. `list_check_runs_for_ref` returned four completed successful GitHub Actions checks, `get_check_run` resolved the exact repository-integrity Ubuntu fixture, and `list_check_run_annotations` returned a valid empty collection.
+
+The fresh host independently reproduced the intended enforcement layers. Traversal annotation path `../README.md` was rejected by Runtime Bridge validation; `status=completed` without conclusion and `status=in_progress` with conclusion were both rejected before create dispatch; `context_suffix=bad/name` failed the host machine-readable `^[A-Za-z0-9._-]+$` schema before Plugin dispatch; and reopening the completed Check Run returned `GITHUB_CHECK_STATUS_REGRESSION`, `retryable=false`, `mutationUncertain=false`, `githubRequestId=null`. There were zero retries, zero mutation-uncertain results, no credential exposure and zero positive CI-evidence writes.
+
+All non-writing gates for the second beyond-parity foundation are therefore complete. The remaining action-level gate is positive-live qualification of `github.create_check_run`, `github.update_check_run`, and `github.create_commit_status`.
+
+Checkpoint 433 freezes, but does not authorize, the preferred positive-live fixture. The target should be the exact public Checkpoint 433 commit. One Check Run named `Codexless Runtime Bridge / CI Evidence Qualification` should be created `in_progress`, then exactly that returned Check Run ID should be completed once with conclusion `success` and one `notice` annotation on the Checkpoint 433 file. One commit status should then be published with suffix `ci-evidence-qualification`, producing server-owned context `codexless/ci-evidence-qualification` and description `Runtime Bridge CI evidence qualification passed`. Each write remains exactly-once and stops without replay on mutation uncertainty, followed by read-only Check/annotation/combined-status postflight.
+
+This qualification artifact is deliberately scoped to the CI Evidence Publication primitive itself. It does not create branch protection, a merge gate, an automatic pre-push validator, or a general claim that GitHub-visible status replaces ADS verification. AB-030 remains the later architecture step for connecting already-earned ADS validation evidence to this publication primitive.
+
+```text
+RESEARCH123=ACTIVE
+LIVE_RUNTIME_VERSION=0.1.1-preview.41-github-ci-evidence
+CI_EVIDENCE_FRESH_HOST_PROJECTION=PASS_6_OF_6
+CI_EVIDENCE_FRESH_HOST_SCHEMA=PASS_6_OF_6
+CI_EVIDENCE_FRESH_HOST_READS=PASS_3_OF_3
+CI_EVIDENCE_FRESH_HOST_NO_WRITE_GUARDS=PASS_5_OF_5
+CI_EVIDENCE_POSITIVE_WRITES=0_OF_3
+CI_EVIDENCE_MUTATION_OCCURRED=false
+GITHUB_CI_EVIDENCE_FRESH_HOST=PASS
+NEXT=EXPLICIT_OWNER_AUTHORIZATION_FOR_CI_EVIDENCE_POSITIVE_LIVE
+```
