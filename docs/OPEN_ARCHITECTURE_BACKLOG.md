@@ -620,7 +620,7 @@ This is a host/privacy integration observation, not a reason to weaken the conse
 
 ## AB-022: Reconstruction-to-operational-authority routing and required-read enforcement
 
-**Status:** OPEN / REPRODUCED ARCHITECTURE GAP
+**Status:** RESEARCHING / RESEARCH 124 / REPRODUCED ARCHITECTURE GAP
 **Priority:** P0
 
 A concrete failure was reproduced at the start of `chatgpt-17` after an unexpected context-limit termination. The new session correctly performed the canonical public bootstrap reads and reconstructed Checkpoint 283 / Research 117, but it did not read `docs/local_execution/OPERATIONS.md` before giving the next operational restart instructions. This happened even though:
@@ -677,7 +677,7 @@ This issue is directly relevant to continuity, knowledge routing, operational sa
 
 ## AB-023: Open Architecture Backlog vs Open Questions discoverability and usage audit
 
-**Status:** OPEN / SELF-AUDIT REQUESTED
+**Status:** RESEARCHING / RESEARCH 124 / SELF-AUDIT REQUESTED
 **Priority:** P1
 
 The project owner explicitly requested a follow-up audit of whether `docs/OPEN_ARCHITECTURE_BACKLOG.md` itself is sufficiently clear, easy to discover and reliably used, including whether its role is clearly distinguished from `docs/OPEN_QUESTIONS.md` and other current-state/research surfaces.
@@ -727,7 +727,7 @@ The concrete `chatgpt-17` wording that triggered this audit also exposed a small
 
 ## AB-024: High-recall new-session reconstruction and hierarchical knowledge traversal
 
-**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Status:** RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT
 **Priority:** P0
 
 The project owner challenged the current continuation framing around "minimum reading." The objective of a fresh persistent ADS conversation should not be to consume the smallest possible amount of repository knowledge that permits the next action. It should be to reconstruct the **best practically achievable understanding of the whole project**, including current state, governing authority, important historical context, parent workstreams, unresolved obligations, and task-relevant deep evidence.
@@ -790,7 +790,7 @@ Primary context: Foundation 014, Research 103, Research 104, `docs/CONTINUITY.md
 
 ## AB-025: Nested workstream graph, active route stack, and deterministic resume semantics
 
-**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Status:** RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT
 **Priority:** P1
 
 ADS frequently leaves the main development route for a bounded investigation or implementation branch, and that side route can itself open another nested route. The current repository preserves many of these relationships in prose, checkpoints and continuation obligations, but the active machine route remains largely flat. `docs/current_routing.json`, for example, identifies one `current_boundary` but does not encode the parent workstream, nested child route, return condition or exact resume target.
@@ -880,7 +880,7 @@ Primary context: `docs/current_routing.json`, `docs/CURRENT_STATE.md`, `docs/CON
 
 ## AB-026: Knowledge Map topic saturation, hierarchical decomposition, and retrieval usability
 
-**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Status:** RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT
 **Priority:** P1
 
 The project owner suspects that the current `docs/KNOWLEDGE_MAP.md` subject taxonomy may itself be approaching a retrieval-scaling failure even though its mechanical coverage contract is healthy. The concern is that too many artifacts can accumulate under one broad subject. If one topic eventually routes dozens or hundreds of files, a future collaborator may technically discover the correct section while still failing to inspect enough of the material inside that section to recover the important knowledge.
@@ -954,7 +954,7 @@ Primary context: `docs/KNOWLEDGE_MAP.md`, Foundation 014, Research 064, Research
 
 ## AB-027: Deferred architecture risks, known weaknesses, and evolution-trigger register
 
-**Status:** OPEN / ARCHITECTURE AUDIT REQUESTED
+**Status:** RESEARCHING / RESEARCH 124 / ARCHITECTURE AUDIT
 **Priority:** P1
 
 The project owner identified a recurring pattern across ADS development: a new problem is observed in live use, the collaborator investigates it, and repository research then reveals that the same weakness, possible future failure mode, or escalation condition had already been anticipated earlier. The prior work often explicitly said some version of:

@@ -1,7 +1,7 @@
 # Current State
 
-**Checkpoint:** 448
-**Date:** 2026-09-10
+**Checkpoint:** 449
+**Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
 **Promoted V1 integration branch:** `v1-frontend-spike` at `2480109fadeee1e480ef03b82e335aacdf9adf91`
@@ -13,8 +13,8 @@
 ```text
 Interaction environment  ChatGPT
 Project / workspace      Autonomous Data Science System
-Interaction session      chatgpt-22
-Conversation title       22 - GitHub CI Evidence Publication and Qualification
+Interaction session      chatgpt-23
+Conversation title       23 - Knowledge Preservation Architecture Redesign
 Primary collaborator     ChatGPT
 ```
 
@@ -22,7 +22,11 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Research 123 complete; awaiting project-owner next-stage selection
+## Current active stage: Research 124 knowledge architecture redesign
+
+Checkpoint 449 opens Research 124 after the project owner explicitly selected a full redesign of the ADS project-knowledge architecture as the next stage. The current architecture remains operationally authoritative during the redesign, but it is an input and migration boundary rather than a constraint on the successor. The stage begins from purpose rather than implementation mechanism: turn an ever-growing project history into durable, usable, scalable project understanding across time, conversations, models and collaborators. The owner rejects both exhaustive rereading and bare-minimum continuation as the optimization target; the goal is maximum useful, authority-aware understanding under finite context, with one repository-native entry path, broad-to-deep hierarchical reconstruction, reliable cognitive activation, traceable synthesis and strong authority/supersession semantics. AB-022 through AB-027 are primary evidence inputs, stronger previously deferred graph/index/semantic/vector/database options are reopened for comparison, and no target architecture is yet selected. Research 113 remains paused, Source Vault remains paused, and AB-030 remains parked. The immediate next boundary is a neutral whole-repository knowledge-architecture/artifact inventory and failure/scale-pressure audit before requirements and candidate designs are frozen.
+
+During the Research 124 opening conversation, a laptop restart also exposed that the public tunnel operations procedure still depended on terminal-session environment variables. The local tunnel path was recovered and migrated to a persistent named profile with a separate local secret reference; clean-environment `doctor` validation passed, tunnel liveness/readiness returned HTTP 200, and the public operations runbook was updated without exposing private tunnel, credential or user-specific path values. This operational repair is also concrete evidence for the redesign: preserved knowledge must remain current and consumable when reality changes.
 
 Checkpoint 370 opens Research 123 as an owner-directed stage insertion before the separately planned next stage. Two fresh GitHub-only qualifications on 2026-09-08 converged on the same 89-action connector projection and live-qualified a substantial remote development workflow, including direct file commits, raw Git object/ref construction, deep PR/review collaboration, issue lifecycle operations, and Actions/CI inspection. A second intent-specific negative challenge discovered no additional actions, so absent capability families are now classified conservatively as `NOT_OBSERVED_IN_THIS_PROJECTION` rather than permanent global impossibilities. In the same `chatgpt-19` mobile-web conversation, the Codexless developer MCP remained callable and `codex.account_preflight` passed while the native GitHub connector was not projected, preserving the coexistence problem already recorded by Validation 034. The project owner selected `Codexless Runtime Bridge` as the canonical forward-looking name for the custom connector, while `ADS` remains reserved for the complete Autonomous Data Science System. Validation 147 / Checkpoint 390 now qualify the live ChatGPT Plugin display name as `Codexless Runtime Bridge`; historical exact connector names remain evidence and are not rewritten. Research 113 is paused, not completed; Source Vault remains paused. Persistent session `chatgpt-22`, titled `22 - GitHub CI Evidence Publication and Qualification`, is now active.
 
