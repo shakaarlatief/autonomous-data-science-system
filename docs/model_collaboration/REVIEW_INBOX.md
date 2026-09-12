@@ -33,8 +33,8 @@ opening base               1a422c79dc67384426ad10e28c2fc6845147f9e0
 kind                       foundational reflection / critique / research / design-method discussion
 priority                   CURRENT PROJECT-OWNER PRIORITY
 current gate               obtain and seriously consider Claude contribution before target-architecture design resumes
-expected output            docs/model_collaboration/threads/MC-0011/messages/003_claude_focused_foundational_followup.md
-status                     OPEN / CLAUDE 001 + CHATGPT 002 PRESERVED / AWAITING CLAUDE MESSAGE 003
+expected output            docs/model_collaboration/threads/MC-0011/messages/005_claude_architecture_boundary_and_sequence_followup.md
+status                     OPEN / CLAUDE 001+003 + CHATGPT 002+004 PRESERVED / AWAITING CLAUDE MESSAGE 005
 conversation               03 - Project Knowledge Architecture Foundations and Design Method
 ```
 
