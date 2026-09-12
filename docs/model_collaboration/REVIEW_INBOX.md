@@ -1,7 +1,7 @@
 # Model Collaboration Review Inbox
 
-**Date:** 2026-09-03  
-**Status:** MC-0010 PARALLEL UPSTREAM RESEARCH OPEN / NON-BLOCKING FOR COLLECTION  
+**Date:** 2026-09-12
+**Status:** MC-0011 FOUNDATIONAL KNOWLEDGE-ARCHITECTURE DIALOGUE OPEN / MC-0010 DEFERRED BY OWNER ROUTING
 **Authority:** Convenience index only. Per-thread `STATE.json`, `THREAD.md`, frozen requests, exact Git refs and resolution records remain authoritative.  
 **Repository:** `shakaarlatief/autonomous-data-science-system`  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
@@ -21,25 +21,54 @@ docs/current_routing.json
 
 This inbox intentionally does not duplicate that state except where needed to explain collaboration obligations.
 
-## Current parallel research obligation
+## Current active collaboration obligation
+
+### MC-0011: project-development knowledge architecture foundational dialogue
+
+```text
+collaborator               Claude / intended claude-03
+mode                       REVIEWED / current-context foundational dialogue
+coordination branch        v1-source-vault-bootstrap-resume
+opening base               1a422c79dc67384426ad10e28c2fc6845147f9e0
+kind                       foundational reflection / critique / research / design-method discussion
+priority                   CURRENT PROJECT-OWNER PRIORITY
+current gate               obtain and seriously consider Claude contribution before target-architecture design resumes
+expected output            docs/model_collaboration/threads/MC-0011/messages/001_claude_foundational_knowledge_architecture_reflection.md
+status                     OPEN / AWAITING CLAUDE MESSAGE 001
+conversation               03 - Project Knowledge Architecture Foundations and Design Method
+```
+
+The detailed contract is in:
+
+```text
+docs/model_collaboration/threads/MC-0011/BRIEF.md
+docs/model_collaboration/threads/MC-0011/THREAD.md
+docs/model_collaboration/threads/MC-0011/STATE.json
+```
+
+This obligation concerns the project-development knowledge architecture that supports work on the Autonomous Data Science System project. It is not the architecture of ADS itself. The dialogue is intentionally broader than asking Claude to design an architecture: Claude should critique the purpose, Phase A/B framing, newly observed activation/scope weaknesses, methodology, missing concepts and relevant external fields. Target-architecture design is paused during this foundational round.
+
+One potentially relevant external paper/video is intentionally withheld during the first Claude turn to preserve a pre-exposure baseline and reduce design fixation. Claude should not infer or search for that unidentified source.
+
+## Deferred older collaboration obligation
 
 ### MC-0010: current Codex and Codexless upstream ecosystem research
 
 ```text
-reviewer / researcher     secondary Claude collaborator / pending allocation
+reviewer / researcher     Claude / unallocated while deferred
 mode                      REVIEWED
 coordination branch       v1-source-vault-bootstrap-resume
 opening base              c0b9101a82f688be25dfc6dbf565813d51cc51a5
 current public target     bd7a2fcf802d99e6b9dd2b94745f248f347a12a9 (frozen research-content baseline)
 private runtime evidence  shakaarlatief/autonomous-data-science-system-local-runtime main @ d86a96e2a26fbc946a31e28ef1ca14c8a129628a
 kind                      current-context upstream research / critique / counter-design
-priority                  HIGH
-current gate              NON-BLOCKING for research collection; consider before final architecture reconciliation
+priority                  DEFERRED BY CURRENT PROJECT-OWNER ROUTING
+current gate              NONE while deferred; resume only by explicit later owner routing
 expected output           docs/model_collaboration/threads/MC-0010/messages/001_claude_current_codex_codexless_ecosystem_research.md
-status                    OPEN / READY AT QUALIFIED DOCUMENT-READ BOUNDARY / MESSAGE 001 NOT YET PRODUCED
+status                    DEFERRED / MESSAGE 001 NOT PRODUCED
 ```
 
-The project owner explicitly requested a new broad current-context Claude research pass. It is intended to improve search coverage, source evaluation, criticism, and alternative-design discovery while ChatGPT executes Research 113 in parallel.
+MC-0010 was originally opened as a broad current-context Claude research pass for Research 113. The project owner has now explicitly paused this older obligation while Research 124 project-development knowledge-architecture work is the active priority. Preserve the thread for later resumption, but do not execute it during the MC-0011 launch.
 
 The detailed contract is in:
 
@@ -49,7 +78,7 @@ docs/model_collaboration/threads/MC-0010/THREAD.md
 docs/model_collaboration/threads/MC-0010/STATE.json
 ```
 
-The active research program is:
+The associated paused research program is:
 
 ```text
 docs/research/113_codex_codexless_upstream_ecosystem_architecture_research_program.md

@@ -1,7 +1,7 @@
 # MC-0010 Thread: Current Codex and Codexless Upstream Ecosystem Research
 
 **Thread:** MC-0010  
-**Status:** OPEN / PARALLEL CLAUDE RESEARCH REQUEST PREPARED  
+**Status:** DEFERRED / PAUSED BY PROJECT-OWNER ROUTING WHILE RESEARCH 124 IS ACTIVE
 **Review mode:** REVIEWED  
 **Coordination branch:** `v1-source-vault-bootstrap-resume`  
 **Opening repository head:** `c0b9101a82f688be25dfc6dbf565813d51cc51a5`  
@@ -17,10 +17,10 @@ The thread exists to improve search coverage, challenge interpretation, identify
 ## Current phase
 
 ```text
-PARALLEL_UPSTREAM_RESEARCH_READY_AT_QUALIFIED_DOCUMENT_READ_BOUNDARY
+DEFERRED_BY_OWNER_ROUTING_RESEARCH124_PRIORITY
 ```
 
-The detailed contract is in `BRIEF.md`.
+The project owner explicitly paused this older Claude obligation while Research 124 project-development knowledge-architecture work is active. The detailed contract remains preserved in `BRIEF.md` for possible later resumption, but Claude should not execute MC-0010 unless a future owner routing decision reopens it.
 
 The frozen public research-content boundary is `bd7a2fcf802d99e6b9dd2b94745f248f347a12a9`, and the private runtime evidence boundary is `d86a96e2a26fbc946a31e28ef1ca14c8a129628a`. These include Checkpoint 279, `workspace-standard`, the hardened 52-tool `codex.document_read` boundary, and the durable architecture backlog. Claude should inspect both when the fresh collaboration session is opened; inability to access the private repository must be reported rather than silently substituted with public summaries.
 

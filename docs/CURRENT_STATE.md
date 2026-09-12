@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 452
+**Checkpoint:** 453
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -22,7 +22,9 @@ Repository artifacts remain authoritative across chats and models.
 
 ---
 
-## Current active stage: Research 124 knowledge architecture redesign
+## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 453 pauses target-architecture construction and opens the foundational Claude dialogue before design proceeds. The project owner clarified that the architecture under redesign is **project-development knowledge infrastructure supporting the Autonomous Data Science System project**, not the architecture of ADS itself. The same exchange exposed two new failure cases: ChatGPT failed to activate the already-preserved repository-native model-collaboration procedure until the owner reminded it, and ChatGPT semantically conflated the project-development knowledge architecture with ADS. These are now preserved as evidence for cognitive activation and semantic scope/domain identity. The owner also rejected a shallow architecture-tournament/model-selection framing: alternatives, prototypes and stress tests may still be used, but as instruments for deep reasoning, falsification and refinement rather than as substitutes for architecture design. MC-0011 is now the active current-context foundational dialogue with intended Claude session `claude-03`; target-architecture design remains paused while Claude examines the purpose, framing, Phase A/B work, methodology, missing ideas and relevant external fields. A potentially relevant external paper/video remains intentionally withheld during Claude's first round to preserve a pre-exposure baseline. MC-0010 and older Claude obligations are deferred by explicit owner routing.
 
 Checkpoint 452 completes Research 124 Phase B and freezes the architecture-neutral acceptance boundary before candidate design. Research 124 now contains 45 requirements, 15 non-negotiable invariants and 16 shared stress scenarios covering repository-native bootstrap, broad-to-deep reconstruction, observable reconstruction receipts, governing-authority activation before consequential action, known-risk surfacing, authority/supersession/conflict semantics, traceable synthesis, one explicit development authority, rebuildable derived representations, deterministic nested workstream resume, fixed-budget 5x/10x scale behavior, bounded marginal maintenance, public/private isolation, interruption recovery and structural plus cognitive qualification. The requirements explicitly separate ordinary relevance retrieval from required-authority resolution: semantic/vector retrieval remains an open candidate accelerator but cannot be the sole high-consequence authority path. No graph, database, vector, metadata, checkpoint, domain-guide or bootstrap implementation has been selected. The active next boundary is to construct genuinely different candidate architecture families against this same frozen requirement set, then subject them to independent-first challenge and common stress scenarios before target selection.
 

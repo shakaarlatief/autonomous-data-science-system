@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "thread_id": "MC-0011",
+  "review_mode": "REVIEWED",
+  "lifecycle_state": "OPEN",
+  "phase": "FOUNDATIONAL_DIALOGUE_AWAITING_CLAUDE_001",
+  "target": {
+    "branch": "v1-source-vault-bootstrap-resume",
+    "base_ref": "1a422c79dc67384426ad10e28c2fc6845147f9e0",
+    "description": "Current-context foundational multi-model dialogue about the project-development knowledge architecture supporting ADS, before target-architecture design resumes.",
+    "write_paths": []
+  },
+  "task_owner": "chatgpt",
+  "target_write_owner": null,
+  "participants": [
+    {
+      "collaborator_id": "chatgpt",
+      "interaction_environment": "ChatGPT",
+      "interaction_session": "chatgpt-23",
+      "roles": ["TASK_OWNER", "RESEARCHER", "CRITIC"]
+    },
+    {
+      "collaborator_id": "claude",
+      "interaction_environment": "Claude",
+      "interaction_session": "claude-03",
+      "roles": ["REVIEWER", "CRITIC", "COUNTER_DESIGNER", "RESEARCHER"]
+    },
+    {
+      "collaborator_id": "human",
+      "interaction_environment": "Human",
+      "interaction_session": "project-owner",
+      "roles": ["HUMAN_DECIDER"]
+    }
+  ],
+  "allowed_secondary_write_surfaces": [
+    {
+      "collaborator_id": "claude",
+      "paths": ["docs/model_collaboration/threads/MC-0011/messages/**"]
+    }
+  ],
+  "next_expected_actor": "claude",
+  "independence": {
+    "status": "NOT_APPLICABLE",
+    "review_base_ref": null,
+    "known_exposures": [
+      "Claude is intentionally exposed to the current Research 124 purpose, Phase A evidence, Phase B requirements/invariants and post-Phase-B failure observations.",
+      "Claude is intentionally allowed to inspect the repository's historical knowledge-preservation architecture and observed failures.",
+      "One potentially relevant external paper/video is intentionally withheld from the first Claude round to create a pre-exposure baseline and reduce design fixation."
+    ],
+    "notes": "This is current-context foundational collaboration rather than blind independent counter-design. The temporary withholding applies only to the unidentified external source; it does not hide the current repository architecture or ChatGPT's Research 124 work."
+  },
+  "last_transition": {
+    "transition_id": "mc0011-open-foundational-dialogue",
+    "from_state": null,
+    "to_state": "OPEN",
+    "actor": "chatgpt",
+    "reason": "The project owner requested deep Claude participation before target-architecture design, corrected the shallow architecture-selection framing, identified the collaboration-protocol activation failure as new evidence, clarified that the project-development knowledge architecture is not ADS itself, and explicitly paused older Claude obligations.",
+    "repository_head": "1a422c79dc67384426ad10e28c2fc6845147f9e0"
+  }
+}

@@ -1,8 +1,8 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-12
-**Status:** ACTIVE / PHASE B REQUIREMENTS AND INVARIANTS COMPLETE / CANDIDATE ARCHITECTURES NEXT / TARGET ARCHITECTURE NOT YET SELECTED
-**Scope:** Redesign how ADS preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially.
+**Status:** ACTIVE / PHASE B COMPLETE / POST-PHASE-B WEAKNESSES CAPTURED / FOUNDATIONAL CLAUDE DIALOGUE NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
 
@@ -43,7 +43,7 @@ The emerging purpose is therefore:
 
 A fuller working formulation is:
 
-> **The purpose of the ADS project-knowledge architecture is to provide durable, scalable continuity of project understanding across time, conversations, models and collaborators. It must preserve accumulated knowledge, structure its authority and relationships, enable high-recall reconstruction and progressively deeper navigation, activate relevant knowledge when needed, preserve historical provenance without overwhelming current reasoning, and allow the project to grow substantially without requiring any individual reasoning context to contain or reread the entire project.**
+> **The purpose of the project-development knowledge architecture supporting the ADS project is to provide durable, scalable continuity of project understanding across time, conversations, models and collaborators. It must preserve accumulated knowledge, structure its authority and relationships, enable high-recall reconstruction and progressively deeper navigation, activate relevant knowledge when needed, preserve historical provenance without overwhelming current reasoning, and allow the project to grow substantially without requiring any individual reasoning context to contain or reread the entire project.**
 
 This wording is provisional and should be tested during the requirements phase, but the distinction underneath it is already important:
 
@@ -1226,9 +1226,11 @@ Three design consequences are now explicit:
 
 The target architecture remains unselected.
 
-## 45. Next phase: candidate architecture families
+## 45. Originally planned next phase: candidate architecture families
 
-The next phase should construct multiple genuinely different candidate families against the same frozen requirements rather than incrementally polishing the current design.
+This section preserves the Phase-B plan that existed before the project owner's immediate post-freeze methodology correction. Section 48 supersedes it as the current routing boundary. Candidate alternatives and shared stress tests remain useful later, but they are not the immediate next activity and must not become a shallow architecture-tournament or model-selection exercise.
+
+When target-architecture design eventually resumes, serious alternatives should still be used to expose trade-offs and hidden assumptions rather than incrementally polishing the current design.
 
 The candidate set should include at minimum serious variants of:
 
@@ -1254,4 +1256,94 @@ INVARIANTS_COUNT=15
 FROZEN_STRESS_SCENARIOS=16
 TARGET_ARCHITECTURE=NOT_SELECTED
 NEXT=CANDIDATE_ARCHITECTURE_FAMILIES
+```
+
+## 46. Post-Phase-B evidence: collaboration-process activation failure
+
+Immediately after Phase B, the project owner requested that Claude join the foundational discussion before architecture design proceeds. The first ChatGPT response incorrectly reverted to an ad hoc human-relay pattern: it drafted a large task prompt for the owner to copy into Claude instead of first using the repository-native model-collaboration protocol already preserved in `docs/model_collaboration/README.md`, `REVIEW_INBOX.md` and the `MC-*` thread machinery.
+
+The owner had to remind ChatGPT how the established collaboration process works.
+
+This is direct new evidence for the same class of problem that motivates cognitive activation in Research 124:
+
+```text
+correct process knowledge existed durably
+    +
+current collaborator had repository access
+    +
+process was relevant to the immediate task
+    !=
+process was activated at the decision point
+```
+
+The failure is stronger evidence than a simple missing link. The project had already invested in a repository-native collaboration protocol specifically so the human would not need to carry a large task contract between models, yet the reasoning process defaulted to the generic manual pattern until corrected by the owner.
+
+This reinforces KA-R09 and the broader cognitive-activation layer. A mature project-development knowledge architecture must help activate not only domain facts and operational runbooks, but also **governing process knowledge about how project work itself is supposed to proceed** when the triggering situation occurs.
+
+It also exposes a useful qualification question for later design work:
+
+> Can the system recognize the current task class and activate the governing project-development procedure before the collaborator improvises a generic workflow?
+
+## 47. Post-Phase-B evidence: semantic scope conflation
+
+The same exchange exposed a second weakness. ChatGPT referred to the knowledge architecture under redesign as though it were "ADS" itself.
+
+The project owner clarified the scope:
+
+```text
+ADS
+    = the Autonomous Data Science System being built
+
+project-development knowledge architecture
+    = infrastructure used to preserve, structure, reconstruct, activate and evolve
+      understanding about the ADS project and its development
+```
+
+The second supports development of the first. It is not the ADS product/system architecture itself.
+
+This distinction matters because a large long-lived project can contain multiple architectural domains:
+
+```text
+ADS product/system architecture
+project-development knowledge architecture
+local execution / Runtime Bridge architecture
+model-collaboration architecture
+Source Vault architecture
+Project Cockpit architecture
+other future project-support infrastructure
+```
+
+If synthesis, retrieval or routing collapses these scopes into one undifferentiated "ADS architecture", the collaborator can select the wrong authority or reason at the wrong conceptual level even when every underlying document is individually correct.
+
+Therefore semantic **scope identity** is now an explicit concern for the next discussion. Phase B remains the current stable requirements baseline, but it is not treated as immutable in the face of newly observed evidence. The Claude foundational dialogue should examine whether scope/domain identity deserves an explicit requirement/invariant and how strongly the architecture should represent it.
+
+## 48. Design phase paused for foundational multi-model dialogue
+
+The project owner has also corrected the methodology implied by the phrase `candidate architecture families`.
+
+The next stage must not become a model-selection-style exercise in which several shallow architectures are generated, scored and a numerical winner is chosen. Alternative designs, prototypes and common stress tests remain valuable, but they are subordinate to deep architecture reasoning.
+
+The intended design philosophy is now:
+
+```text
+understand the problem and conceptual structure deeply
+    -> derive architecture principles and necessary mechanisms
+    -> use alternatives to expose trade-offs and hidden assumptions
+    -> use prototypes/experiments where reality is uncertain
+    -> use stress tests primarily to falsify, qualify and refine reasoning
+    -> synthesize a coherent architecture whose components can be justified
+```
+
+Research 124 target-architecture construction is therefore paused before Phase C while a current-context Claude collaboration examines the purpose, framing, Phase A/B work, missing concepts, methodology and relevant external fields without being forced to produce a target architecture.
+
+An external paper/video that may be relevant is intentionally withheld during the first Claude discussion round. This creates a preserved pre-exposure baseline and reduces design fixation. The source may be introduced later through a separate collaboration turn so pre- and post-exposure reasoning remain distinguishable.
+
+```text
+POST_PHASE_B_EVIDENCE=CAPTURED
+COLLABORATION_PROTOCOL_ACTIVATION_FAILURE=OBSERVED
+SEMANTIC_SCOPE_CONFLATION=OBSERVED
+ADS_PRODUCT_ARCHITECTURE_NE_PROJECT_KNOWLEDGE_ARCHITECTURE=true
+PHASE_B_BASELINE=STABLE_BUT_AMENDABLE_BY_NEW_EVIDENCE
+TARGET_ARCHITECTURE_DESIGN=PAUSED
+NEXT=CLAUDE_FOUNDATIONAL_KNOWLEDGE_ARCHITECTURE_DIALOGUE
 ```

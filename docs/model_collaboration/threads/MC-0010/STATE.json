@@ -2,8 +2,8 @@
   "schema_version": 1,
   "thread_id": "MC-0010",
   "review_mode": "REVIEWED",
-  "lifecycle_state": "OPEN",
-  "phase": "PARALLEL_UPSTREAM_RESEARCH_READY_AT_QUALIFIED_DOCUMENT_READ_BOUNDARY",
+  "lifecycle_state": "DEFERRED",
+  "phase": "DEFERRED_BY_OWNER_ROUTING_RESEARCH124_PRIORITY",
   "target": {
     "branch": "v1-source-vault-bootstrap-resume",
     "base_ref": "bd7a2fcf802d99e6b9dd2b94745f248f347a12a9",
@@ -50,7 +50,7 @@
       ]
     }
   ],
-  "next_expected_actor": "claude",
+  "next_expected_actor": null,
   "independence": {
     "status": "NOT_APPLICABLE",
     "review_base_ref": null,
@@ -63,11 +63,11 @@
     "notes": "The exact Claude provider-local interaction session will be allocated only when the fresh persistent Claude interaction is actually opened; no unused intended session identity from retired MC-0009 is treated as an accomplished interaction."
   },
   "last_transition": {
-    "transition_id": "mc0010-ready-qualified-document-read-boundary",
+    "transition_id": "mc0010-deferred-by-owner-routing-research124-priority",
     "from_state": "OPEN",
-    "to_state": "OPEN",
-    "actor": "chatgpt",
-    "reason": "Checkpoint 279 now qualifies generic workspace authority and the 52-tool document-read boundary. Route the pending Claude research to frozen public content baseline bd7a2fc plus the separately versioned private runtime evidence at d86a96e before final architecture reconciliation.",
-    "repository_head": "bd7a2fcf802d99e6b9dd2b94745f248f347a12a9"
+    "to_state": "DEFERRED",
+    "actor": "human",
+    "reason": "The project owner explicitly paused older Claude obligations while Research 124 project-development knowledge-architecture work is the active priority. MC-0010 remains preserved and may be resumed only by later explicit routing; it is not a prerequisite for the new foundational Research 124 dialogue.",
+    "repository_head": "1a422c79dc67384426ad10e28c2fc6845147f9e0"
   }
 }
