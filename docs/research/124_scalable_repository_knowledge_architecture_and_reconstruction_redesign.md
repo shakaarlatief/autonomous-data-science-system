@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-12
-**Status:** ACTIVE / FAILURE CORPUS V0.1 COMPLETE / BLIND BASELINE PROTOCOL NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / BLIND BASELINE PROTOCOL V0.1 FROZEN / PILOT EXECUTION NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -1749,4 +1749,90 @@ STRUCTURAL_GAP_ROWS=1
 TARGET_ARCHITECTURE_REMEDIES_ENCODED=false
 WITHHELD_EXTERNAL_SOURCE_USED=false
 NEXT=BLIND_BASELINE_PROTOCOL_DESIGN
+```
+## 56. Blind baseline protocol V0.1 frozen
+
+The failure corpus is now paired with a contamination-controlled historical-snapshot pilot protocol:
+
+```text
+docs/research/project_knowledge_baselines/PROJECT_KNOWLEDGE_BLIND_BASELINE_PROTOCOL.md
+```
+
+The protocol exists because current repository state already contains Research 124 diagnoses. A fresh-session trial against current HEAD would therefore test whether a collaborator can consume an explicit diagnosis, not whether the earlier architecture naturally routed the collaborator before the diagnosis existed.
+
+Each pilot scenario therefore binds one exact historical commit as the sole project-evidence snapshot. The tested collaborator may reason broadly within that snapshot but may not use descendant/current project content, evaluator records, external sources or prior-chat project memory as evidence. If exact snapshot access cannot be constrained reliably, the trial is invalid rather than silently falling back to current HEAD.
+
+### 56.1 Initial pilot matrix
+
+Four deliberately different historical mechanisms are selected:
+
+```text
+BL-001  operational governing-procedure activation
+        snapshot a570f0d87b77960ae0715b291de0d5f6e884e4d0
+        parent KF-SD-01
+
+BL-002  repository-native model-collaboration dispatch
+        snapshot 1a422c79dc67384426ad10e28c2fc6845147f9e0
+        parent KF-SD-03
+
+BL-003  broad project orientation under drifted global navigation
+        snapshot f355994c538e0b9b28b5a3c2a5814252ffea1939
+        parent KF-RD-01
+
+BL-004  exact-source fidelity before holistic Cockpit integration
+        snapshot 2d425c76c385961cdd7f986c17ed83437a3d3806
+        parents KF-AS-01 / KF-CS-01
+```
+
+The first pilot uses fresh ChatGPT and Claude disposable conversations, one replicate per scenario/environment, for eight initial trials. Additional replicates are targeted only where environments disagree, a result is borderline, or behavior appears stochastic.
+
+This is intentionally not a model leaderboard. The goal is to characterize how the current/historical project-development knowledge architecture behaves across mechanisms and collaborator environments.
+
+### 56.2 Evaluation dimensions
+
+The frozen qualitative dimensions are:
+
+```text
+S1 task/situation recognition
+S2 governing-source discovery
+S3 governing-source consumption
+S4 authority/source-strength selection
+S5 final task correctness / fidelity
+S6 uncertainty calibration
+S7 broad-vs-narrow context appropriateness
+S8 read/tool cost and irrelevant-context burden
+```
+
+Results are classified `PASS / PARTIAL / FAIL / N/A` per dimension. There is no aggregate numeric winner score.
+
+Failure attribution must distinguish at least source absence, discoverability, dispatch, authority resolution, post-consumption reasoning, calibration, tool-access and protocol-contamination problems.
+
+### 56.3 Result isolation
+
+Each trial receives one unique result path under:
+
+```text
+docs/research/project_knowledge_baselines/results/
+```
+
+The tested collaborator may preserve only that result artifact after reasoning is complete. It may not mutate the historical snapshot or other project state. Trials should run sequentially enough that each result commit can synchronize before the next writer commits.
+
+The evaluator corpus, protocol scoring criteria and prior results are not trial input.
+
+### 56.4 External-evidence boundary
+
+Broad external literature research and the project owner's withheld paper/video remain paused until the initial behavioral pilot is completed or explicitly classified infeasible with a preserved reason.
+
+This preserves the pre-external-evidence baseline generated by both the foundational dialogue and the fresh-session trials.
+
+```text
+BLIND_BASELINE_PROTOCOL_V01=FROZEN
+PILOT_SCENARIOS=4
+PILOT_ENVIRONMENTS=CHATGPT_CLAUDE
+INITIAL_TRIALS=8
+HISTORICAL_SNAPSHOT_ISOLATION=REQUIRED
+AGGREGATE_MODEL_SCORE=NONE
+TARGET_ARCHITECTURE=NOT_SELECTED
+WITHHELD_EXTERNAL_SOURCE=STILL_WITHHELD
+NEXT=EXECUTE_BLIND_BASELINE_PILOT
 ```

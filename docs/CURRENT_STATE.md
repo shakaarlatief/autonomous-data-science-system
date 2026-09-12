@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 455
+**Checkpoint:** 456
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 456 freezes the contamination-controlled historical-snapshot baseline protocol and four pilot requests. The initial pilot uses four distinct historical mechanisms and two fresh collaborator environments, ChatGPT and Claude, for eight planned first-pass trials. Each request binds an exact historical commit as the sole project-evidence snapshot; later Research 124 diagnoses, evaluator records, web research, prior-chat project memory and previous trial outputs are excluded from task evidence. Results are evaluated qualitatively across recognition, source discovery/consumption, authority selection, correctness/fidelity, calibration, context appropriateness and read/tool burden without an aggregate model score. Broad external research and the owner paper/video remain paused until the pilot completes or is explicitly classified infeasible. The immediate next boundary is fresh-session pilot execution, beginning with one scenario pair and synchronizing each result before another writer commits.
 
 Checkpoint 455 freezes the first bounded historical failure corpus before any successor-mechanism probe. `docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md` now contains 22 solution-neutral case rows across nine failure/mechanism classes: 21 observed failures, near-misses, recovery events or composite patterns plus one explicitly non-failure structural nested-resume gap. The strongest repeated evidence currently concerns routing/current-state/convenience-view drift, situation-dispatch failure despite durable governing knowledge, and synthesis/promotion fidelity loss between source evidence and higher-level representations. Sparse classes remain sparse rather than being padded. The corpus is evaluator evidence and must not simply be fed to a supposedly blind collaborator; the next boundary is contamination-controlled blind-baseline protocol design that separates source project state, evaluator case knowledge, test prompt and post-run scoring. Target-architecture design remains paused and the owner paper/video remains withheld.
 
