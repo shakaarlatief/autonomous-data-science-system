@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 456
+**Checkpoint:** 457
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,8 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 project-development knowledge architecture redesign
+
+Checkpoint 457 records the project-owner decision to narrow the blind historical baseline pilot to ChatGPT only before any trial execution. The four historical scenarios, exact snapshots, contamination controls, evaluator dimensions and result-isolation rules remain unchanged, but the active matrix is now four fresh ChatGPT trials rather than eight ChatGPT-plus-Claude trials. Claude is explicitly out of scope for this pilot; any later cross-model study requires a separate owner-approved protocol. Broad external research and the owner paper/video remain paused until the ChatGPT pilot completes or is explicitly classified infeasible.
 
 Checkpoint 456 freezes the contamination-controlled historical-snapshot baseline protocol and four pilot requests. The initial pilot uses four distinct historical mechanisms and two fresh collaborator environments, ChatGPT and Claude, for eight planned first-pass trials. Each request binds an exact historical commit as the sole project-evidence snapshot; later Research 124 diagnoses, evaluator records, web research, prior-chat project memory and previous trial outputs are excluded from task evidence. Results are evaluated qualitatively across recognition, source discovery/consumption, authority selection, correctness/fidelity, calibration, context appropriateness and read/tool burden without an aggregate model score. Broad external research and the owner paper/video remain paused until the pilot completes or is explicitly classified infeasible. The immediate next boundary is fresh-session pilot execution, beginning with one scenario pair and synchronizing each result before another writer commits.
 

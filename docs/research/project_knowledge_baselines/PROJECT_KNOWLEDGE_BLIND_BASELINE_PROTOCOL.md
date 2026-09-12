@@ -54,17 +54,16 @@ Every trial uses a new disposable conversation with no preceding trial in that c
 For the initial pilot:
 
 ```text
-model environments    ChatGPT and Claude
+model environments    ChatGPT only
 replicates             one per environment per scenario initially
-repeat policy          add a second fresh replicate when:
-                       - the two environments disagree materially;
+repeat policy          add a second fresh ChatGPT replicate when:
                        - a result is borderline/ambiguous;
                        - a critical dispatch case passes/fails for reasons that appear stochastic.
 ```
 
-The first pilot therefore begins with 8 trials: 4 scenarios x 2 model environments.
+The first pilot therefore begins with 4 trials: 4 scenarios x 1 ChatGPT environment.
 
-A later Codex or other-model trial may be added as a separate model-family/environment study. It should not be mixed into the first ChatGPT/Claude baseline summary.
+Claude and other model environments are intentionally out of scope for this baseline by explicit project-owner decision. A later cross-model study would require a separate owner-approved protocol rather than being assumed as part of this pilot.
 
 ## 4. Source-read integrity
 
@@ -252,14 +251,14 @@ A model may independently discover later ideas from the frozen snapshot itself. 
 
 ## 10. Pilot stopping rule
 
-After the initial 8 trials:
+After the initial 4 trials:
 
 ```text
-if both environments behave consistently across all four scenarios
+if the four ChatGPT scenarios produce clear, stable mechanism evidence
     -> preserve the baseline and move to external research / targeted mechanism questions
 
-if environments disagree or one scenario is unstable
-    -> run targeted second replicates only for those cells
+if one scenario is borderline, ambiguous or appears stochastic
+    -> run a targeted second fresh ChatGPT replicate only for that scenario
 
 if protocol contamination/access problems dominate
     -> fix the harness before drawing architectural conclusions
@@ -282,13 +281,9 @@ Initial result paths are reserved as:
 
 ```text
 docs/research/project_knowledge_baselines/results/BL-001_chatgpt_a.md
-docs/research/project_knowledge_baselines/results/BL-001_claude_a.md
 docs/research/project_knowledge_baselines/results/BL-002_chatgpt_a.md
-docs/research/project_knowledge_baselines/results/BL-002_claude_a.md
 docs/research/project_knowledge_baselines/results/BL-003_chatgpt_a.md
-docs/research/project_knowledge_baselines/results/BL-003_claude_a.md
 docs/research/project_knowledge_baselines/results/BL-004_chatgpt_a.md
-docs/research/project_knowledge_baselines/results/BL-004_claude_a.md
 ```
 
 Trials should run sequentially enough that each result commit can be synchronized before the next writer commits. This avoids turning the baseline into a concurrent-write test.
@@ -311,8 +306,8 @@ No broad external literature search and no owner paper/video exposure should occ
 ```text
 BASELINE_PROTOCOL_VERSION=0.1
 PILOT_SCENARIOS=4
-PILOT_ENVIRONMENTS=CHATGPT_CLAUDE
-INITIAL_TRIALS=8
+PILOT_ENVIRONMENTS=CHATGPT_ONLY
+INITIAL_TRIALS=4
 TARGET_ARCHITECTURE_REMEDY_DISCLOSED=false
 EXTERNAL_RESEARCH_STARTED=false
 WITHHELD_OWNER_SOURCE_EXPOSED=false
