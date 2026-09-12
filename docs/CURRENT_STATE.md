@@ -1,6 +1,6 @@
 # Current State
 
-**Checkpoint:** 449
+**Checkpoint:** 450
 **Date:** 2026-09-12
 **Active development branch:** `v1-source-vault-bootstrap-resume`
 **Active PR:** none
@@ -23,6 +23,10 @@ Repository artifacts remain authoritative across chats and models.
 ---
 
 ## Current active stage: Research 124 knowledge architecture redesign
+
+Checkpoint 450 completes Research 124 Phase A, the neutral whole-repository knowledge-architecture baseline. The measured system now contains 1,499 tracked files, 963 files under `docs/`, 986 Markdown files, 124 numbered Research records and 450 numbered Checkpoints. The six mandatory bootstrap reads total about 325 KB / 324.5k characters at the baseline, while `CURRENT_STATE.md` alone is about 222.9 KB and contains 102 explicit historical checkpoint paragraphs. The Knowledge Map remains mechanically valid but `development-governance` now routes 293 direct paths, far above every other topic, establishing real topic-saturation pressure. `current_routing.json` remains intentionally compact but cannot represent nested parent/child workstreams, pause/return conditions or exact resume targets. Existing deterministic validators strongly protect structural integrity but do not yet measure high-recall reconstruction, authority selection, cognitive activation, context efficiency or deterministic resume. Several escalation triggers previously deferred by Foundation 014 and Research 064/103/104 are therefore now at least partly observed. No target architecture is selected. The active next boundary is to convert the purpose, failure model and measured baseline into explicit requirements and invariants before comparing candidate architectures.
+
+The local branch currently contains the Research 124 opening and Phase A preservation commits but is ahead of its remote tracking branch because the bounded semantic push path fails its own integrity preflight when it invokes bare global `python`, which lacks the repository's `jsonschema` dependency. The same formal aggregate integrity gate passes in the repository-managed Python environment. No bypass or force push was used. Remote publication remains pending repair or explicit accepted resolution of that execution-environment mismatch.
 
 Checkpoint 449 opens Research 124 after the project owner explicitly selected a full redesign of the ADS project-knowledge architecture as the next stage. The current architecture remains operationally authoritative during the redesign, but it is an input and migration boundary rather than a constraint on the successor. The stage begins from purpose rather than implementation mechanism: turn an ever-growing project history into durable, usable, scalable project understanding across time, conversations, models and collaborators. The owner rejects both exhaustive rereading and bare-minimum continuation as the optimization target; the goal is maximum useful, authority-aware understanding under finite context, with one repository-native entry path, broad-to-deep hierarchical reconstruction, reliable cognitive activation, traceable synthesis and strong authority/supersession semantics. AB-022 through AB-027 are primary evidence inputs, stronger previously deferred graph/index/semantic/vector/database options are reopened for comparison, and no target architecture is yet selected. Research 113 remains paused, Source Vault remains paused, and AB-030 remains parked. The immediate next boundary is a neutral whole-repository knowledge-architecture/artifact inventory and failure/scale-pressure audit before requirements and candidate designs are frozen.
 

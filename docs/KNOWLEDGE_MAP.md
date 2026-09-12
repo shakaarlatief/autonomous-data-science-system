@@ -311,6 +311,7 @@ docs/research/122_runtime_self_maintenance_lifecycle_and_device_independent_acce
 docs/research/123_github_connector_capability_parity_and_codexless_runtime_bridge_architecture.md
 docs/research/124_scalable_repository_knowledge_architecture_and_reconstruction_redesign.md
 docs/checkpoints/449_scalable_knowledge_architecture_redesign_opened.md
+docs/checkpoints/450_knowledge_architecture_baseline_inventory_complete_requirements_next.md
 docs/research/GITHUB_CONNECTOR_PARITY_MATRIX.md
 docs/research/GITHUB_CONNECTOR_SCHEMA_CAPTURE.md
 docs/research/github_connector_89_action_inventory.json
@@ -843,7 +844,7 @@ The following compact routing records assign every numbered checkpoint to one or
 <!-- KM-CHECKPOINT-RANGE: 276-276 source-universe development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 277-278 development-governance -->
 <!-- KM-CHECKPOINT-RANGE: 279-279 development-governance -->
-<!-- KM-CHECKPOINT-RANGE: 280-449 development-governance -->
+<!-- KM-CHECKPOINT-RANGE: 280-450 development-governance -->
 
 Important numbered checkpoints are linked directly in the subject sections above. Governed historical intermediate milestones are also linked directly because they have no numeric range identity. For exact chronological history, use `docs/checkpoints/README.md`, the checkpoint directory, specialized ledgers and Git history.
 

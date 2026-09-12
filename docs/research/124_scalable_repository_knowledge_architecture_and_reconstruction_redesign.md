@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-12
-**Status:** ACTIVE / PURPOSE AND REQUIREMENTS DISCOVERY / TARGET ARCHITECTURE NOT YET SELECTED
+**Status:** ACTIVE / PHASE A BASELINE COMPLETE / REQUIREMENTS AND INVARIANTS NEXT / TARGET ARCHITECTURE NOT YET SELECTED
 **Scope:** Redesign how ADS preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -360,26 +360,356 @@ The independent model should receive a neutral requirements/evidence brief rathe
 
 Research 124 has **not** yet selected a graph database, vector database, semantic index, universal metadata schema, new checkpoint system, replacement for research/specification files, domain-guide format, generated catalog, bootstrap executable, workstream-DAG implementation or migration plan.
 
-## 18. Immediate next boundary
+## 18. Phase A baseline inventory method
 
-The next research boundary is a neutral whole-repository knowledge-architecture inventory and failure/scale-pressure audit, followed by a requirements/invariants brief.
+The first whole-repository audit was intentionally descriptive. It measured the current information architecture before proposing a successor.
 
-No target architecture should be frozen until that evidence is available.
+The inventory used the tracked working tree and repository-owned validators to measure:
+
+```text
+repository and documentation volume
+artifact-family counts and sizes
+Git/change velocity
+mandatory reconstruction read cost
+live-state document growth
+Knowledge Map fan-out and overlap
+machine-readable routing and metadata coverage
+specialized domain navigation surfaces
+validator guarantees and blind spots
+branch/workstream signals
+backlog and open-question load
+```
+
+These measurements are a baseline snapshot around Checkpoint 449. They are not permanent thresholds and they do not by themselves prescribe a target architecture.
+
+## 19. Repository scale and growth pressure
+
+At the Checkpoint 449 baseline the repository contains:
+
+```text
+tracked files                         1,499
+tracked bytes                         17,635,353
+docs/ files                             963
+Markdown files                          986
+Markdown bytes                        9,163,256
+Git commits                            2,411
+local branches                              7
+remote branches                            59
+```
+
+The repository began on 2026-08-07 and reached this baseline on 2026-09-12. Commit activity was highly concentrated on some development days, including 361 commits on 2026-08-27, 265 on 2026-08-26, 243 on 2026-08-28 and 207 on 2026-08-20. The important signal is not that this velocity will remain constant. It is that knowledge volume and chronology can expand much faster than a manually curated navigation surface might assume.
+
+The documentation tree is already dominated by historical/evidence families:
+
+```text
+checkpoints             452 files     about 2.90 MB
+research                143 files     about 2.56 MB
+local_execution         213 files     about 1.34 MB
+model_collaboration      71 files     about 0.64 MB
+foundations               25 files     about 0.56 MB
+specifications            27 files     about 0.53 MB
+```
+
+The numbered durable families contain:
+
+```text
+Foundations               24
+Specifications            27
+Research records         124
+Numbered checkpoints     450
+```
+
+Checkpoint production itself has reached dozens of records on individual days. For example, 34 checkpoints were dated 2026-09-07 and another 34 were dated 2026-09-09. Research also had bursts such as 28 records dated 2026-08-27. This makes chronology durable, but it also means that chronology cannot be the primary reconstruction mechanism at larger scale.
+
+## 20. Raw-document scale and concentration
+
+The 986 Markdown files have a median size of about 6.5 KB and a median length of about 173 lines. The upper tail is much larger:
+
+```text
+P90 size        about 17.0 KB
+P95 size        about 23.9 KB
+P99 size        about 42.3 KB
+maximum         about 254.6 KB
+```
+
+Several important navigation/state/research surfaces are individually large:
+
+```text
+Research 122                    about 254.6 KB
+CURRENT_STATE.md                about 222.9 KB
+Research 123                    about 208.9 KB
+OPEN_ARCHITECTURE_BACKLOG.md    about 115.7 KB
+Research 117                     about 72.5 KB
+Research 037                     about 64.8 KB
+KNOWLEDGE_MAP.md                 about 59.0 KB
+DECISIONS.md                     about 46.5 KB
+```
+
+This matters because the architecture cannot assume that a file is cheap to consume merely because it is a navigation or current-state artifact.
+
+## 21. Mandatory bootstrap cost is already substantial
+
+The current continuity contract directly requires these six bootstrap reads before deeper task-specific traversal:
+
+```text
+README.md
+docs/README.md
+docs/CONTINUITY.md
+docs/current_routing.json
+docs/CURRENT_STATE.md
+docs/KNOWLEDGE_MAP.md
+```
+
+At the baseline snapshot they total approximately:
+
+```text
+325,489 bytes
+324,505 characters
+```
+
+A crude characters-divided-by-four proxy is about 81,000 tokens. This is **not** a tokenizer measurement and should not be treated as an exact model-context cost. It is sufficient, however, to show the order of magnitude and the direction of travel.
+
+Most of that cost comes from two files:
+
+```text
+CURRENT_STATE.md      about 222.9 KB
+KNOWLEDGE_MAP.md       about 59.0 KB
+```
+
+The mandatory bootstrap therefore consumes a large amount of context before the collaborator reads the governing research, specification, operational procedure, domain guide, private complement or exact evidence required by the active task.
+
+This is direct evidence for the scaling principle established in Section 5. The current reconstruction cost is already coupled too strongly to accumulated repository history.
+
+## 22. CURRENT_STATE has accumulated historical burden
+
+`docs/README.md` defines `CURRENT_STATE.md` as the sole human-readable owner of live state and says it should remain present-tense and relatively concise, with older reasoning moved out once historical.
+
+The baseline file is approximately 222.9 KB and contains 102 explicit `Checkpoint NNN` historical paragraphs, spanning many boundaries from the current stage back into earlier work. Its structure includes extensive investigation/history sections before the continuation boundary.
+
+This does not mean the historical material is unimportant. It means the **representation has drifted from its stated single responsibility**:
+
+```text
+intended role
+    current human-readable state and next boundary
+
+observed accumulated role
+    current state + long historical synthesis + continuity evidence + many checkpoint summaries
+```
+
+That drift increases cold-start context cost and creates duplication with checkpoints, research records and history surfaces. A successor architecture should preserve the useful synthesis while separating live state from historical accumulation more reliably.
+
+## 23. Knowledge Map saturation is now measured
+
+The current Knowledge Map has 19 validated topic IDs. Using the same route-normalization logic as the repository validator, the map currently contains approximately 602 route entries covering 467 unique routed paths.
+
+Fan-out is extremely uneven. The largest topic is:
+
+```text
+development-governance     293 direct routed paths
+```
+
+The next largest topics are only in the twenties:
+
+```text
+work-unit-visual-grammar    27
+conversation-workspace      25
+canonical-history           23
+cockpit-provenance          22
+recommendation-action       21
+```
+
+The `development-governance` topic mixes large numbers of checkpoints, local-execution records, research records, specifications, collaboration material and core documents. This turns AB-026 from a hypothetical concern into an observed saturation signal.
+
+The map also legitimately routes some artifacts into multiple topics. There are hundreds of route entries for fewer unique paths, and several central documents appear in many semantic neighborhoods. Cross-topic membership is useful, but the current flat representation gives no machine-readable distinction between:
+
+```text
+read-first governing source
+current synthesis
+supporting evidence
+historical provenance
+optional deep evidence
+```
+
+The existing validator proves exhaustive coverage and path validity. It does **not** prove retrieval usability, semantic coherence, authority ranking or successful consumption of the governing source.
+
+Therefore:
+
+> **Coverage completeness is not retrieval usability.**
+
+## 24. Current routing is compact but cannot represent nested continuation
+
+`docs/current_routing.json` is intentionally compact and currently contains only the live checkpoint, active branch/PR, promoted integration branch/SHA, latest specification/outcome and one `current_boundary`.
+
+That compactness is useful, but it does not encode:
+
+```text
+parent workstream
+child workstream
+active breadcrumb / stack
+why a side route opened
+pause reason
+blocking dependency
+return condition
+exact resume target
+multiple dependency edges
+```
+
+Those relationships currently live mainly in prose, checkpoints and human interpretation. This is direct support for AB-025: chronology and one flat current pointer are not equivalent to an explicit continuation/control-flow model.
+
+## 25. Machine-readable relationship coverage remains sparse
+
+The repository has introduced stronger prospective metadata, but it is not a project-wide knowledge graph.
+
+At the baseline, explicit `Declared references` metadata appears in only a small portion of the numbered families:
+
+```text
+Foundations          0 / 24
+Specifications       3 / 27
+Research            14 / 124
+Checkpoints           0 / 450
+```
+
+This is consistent with the deliberate prospective cutover introduced by the integrity-hardening work. It was never intended as a mass legacy rewrite.
+
+Other machine-readable knowledge surfaces are specialized rather than global, including current routing, Cockpit manifests, model-collaboration thread state, GitHub inventories and Source Universe manifests. There is no general repository-wide machine representation of authority, supersession, dependency, semantic domain, workstream control flow and synthesis/source relationships.
+
+This is not automatically a defect. It identifies the current boundary that stronger candidate architectures must be compared against.
+
+## 26. Specialized domain guides show a useful pattern and a maintenance warning
+
+The repository already contains several specialized navigation surfaces. The strongest example is `docs/cockpit/README.md`, which preserves:
+
+```text
+status and authority
+pause boundary
+exact resume anchor
+human-confirmed state
+required reading order
+artifact roles
+provenance and fidelity gates
+resume rule
+```
+
+`docs/local_execution/README.md`, `docs/model_collaboration/README.md` and the methodological-knowledge coverage map provide similar domain-specific routing for their own scopes.
+
+This is evidence that **hierarchical project -> domain -> evidence navigation is useful in practice**. It does not establish that manually maintained README files are the correct long-term implementation. The redesign should separate the useful semantic pattern from its current storage format and maintenance burden.
+
+## 27. Structural validators are strong but cognitive correctness is largely untested
+
+The repository has earned meaningful deterministic integrity protections. Current validators can prove, among other things:
+
+```text
+numbered-family identity and metadata contracts
+checkpoint metadata completeness
+Knowledge Map topic and route coverage
+routed-path existence
+current-routing schema and checkpoint freshness
+model-collaboration state coherence
+selected typed reference validity
+```
+
+The formal aggregate public gate passes when run in the repository's managed Python environment.
+
+However, these validators mostly answer structural questions. They do not yet measure whether a fresh collaborator:
+
+```text
+formed an adequate broad project model
+selected the correct authority among several candidates
+noticed a relevant known weakness
+consumed the governing operational procedure before giving instructions
+understood the active parent/child workstream chain
+avoided stale or superseded synthesis
+used an appropriate amount of context
+could explain what important knowledge remained unread
+```
+
+The AB-022 restart-order failure demonstrates this gap concretely. The successor architecture therefore needs qualification scenarios for **reconstruction and activation quality**, not only repository consistency.
+
+## 28. Baseline interpretation against the four capability layers
+
+The current architecture is strongest at **durability**. Git, numbered evidence families, checkpoints and integrity gates preserve a great deal of history and make accidental disappearance increasingly visible.
+
+It is materially stronger than an unstructured document archive at **discoverability and reconstruction**, because it has structural guides, current state, semantic routing, domain indexes and explicit continuity procedures. But the measured bootstrap cost, topic saturation and live-state accumulation show that the current strategy is becoming expensive to consume.
+
+The weakest measured layer is **cognitive activation**. The repository can contain and route the correct authority without guaranteeing that a collaborator consumes it before reasoning or acting.
+
+**Abstraction and synthesis** exist, but their lifecycle is largely manual and their boundaries are not yet strong enough to prevent synthesized live-state/navigation artifacts from growing with history.
+
+The baseline therefore supports this provisional diagnosis:
+
+```text
+durability                  STRONG
+structural integrity        STRONG
+basic discoverability       STRONG BUT SCALING
+high-recall reconstruction  PARTIAL
+context efficiency          UNDER PRESSURE
+hierarchical traversal      PARTIAL / DOMAIN-SPECIFIC
+relationship semantics      PARTIAL
+nested resume semantics     WEAK / PROSE-HEAVY
+cognitive activation        WEAKLY VERIFIED
+synthesis lifecycle         PARTIAL / MANUAL
+```
+
+These are research classifications, not final scores.
+
+## 29. Previously deferred escalation triggers are now partly observed
+
+Foundation 014 and Research 064/103/104 deliberately deferred stronger machinery until real pressure appeared. The current audit shows that several of those trigger classes are no longer merely theoretical:
+
+```text
+frequent discoverability/activation failure
+    observed through AB-022 and related operational misses
+
+manual/global navigation saturation
+    observed in the 293-path development-governance topic
+
+reconstruction read cost growth
+    observed in the roughly 325 KB mandatory bootstrap
+
+prose-heavy dependency/resume structure
+    observed in flat current routing plus nested workstream history
+
+large reconciliation surfaces
+    observed in CURRENT_STATE, backlog, Knowledge Map and checkpoint accumulation
+```
+
+This does **not** prove that a graph database, vector database or any other specific stronger mechanism is now correct. It does prove that those options should no longer be dismissed merely because earlier research deferred them.
+
+## 30. Phase A conclusions and next boundary
+
+The baseline audit changes the research from a general concern into a measured scaling problem.
+
+The current architecture has succeeded at something important: it has preserved enough project knowledge and provenance that this redesign can reconstruct why earlier choices were made. The problem is not that the system failed completely. The problem is that the successful accumulation of knowledge is itself creating reconstruction, routing and activation costs that the current representation does not scale away.
+
+The next phase should therefore convert the purpose, failure model and measured baseline into explicit **requirements and invariants** before architecture candidates are designed.
+
+The requirements phase should answer questions such as:
+
+```text
+what every fresh collaborator must know at project level
+what can remain latent until a domain/task activates it
+what must be machine-resolvable before consequential action
+what authority/supersession semantics must be explicit
+what reconstruction coverage must be measurable
+what context-budget behavior is acceptable
+what must remain Git-authoritative and rebuildable
+what historical provenance may be compressed but never lost
+what workstream/resume semantics must be deterministic
+what generated views may exist and how drift is prevented
+what 5x and 10x scale targets the architecture must satisfy
+```
+
+No target architecture is selected by Phase A.
 
 ```text
 RESEARCH124=ACTIVE
-PURPOSE_FIRST=true
-CURRENT_ARCHITECTURE=OPERATIONAL_AUTHORITY_DURING_REDESIGN
-FULL_REDESIGN_ALLOWED=true
-SUNK_COST_CONSTRAINT=false
-READ_EVERYTHING_TARGET=false
-BARE_MINIMUM_TARGET=false
-TARGET=MAXIMUM_USEFUL_AUTHORITY_AWARE_UNDERSTANDING
-ONE_REPOSITORY_NATIVE_ENTRY=REQUIREMENT
+PHASE_A_BASELINE_INVENTORY=COMPLETE
+MEASURED_BOOTSTRAP_PRESSURE=OBSERVED
+KNOWLEDGE_MAP_SATURATION=OBSERVED
+CURRENT_STATE_ACCUMULATION=OBSERVED
+NESTED_ROUTING_GAP=OBSERVED
+COGNITIVE_ACTIVATION_GAP=OBSERVED
+STRONGER_ARCHITECTURE_OPTIONS=REOPENED_FOR_COMPARISON
 TARGET_ARCHITECTURE=NOT_SELECTED
-AB022_027=PRIMARY_INPUTS
-RESEARCH113=PAUSED
-SOURCE_VAULT=PAUSED
-AB030=PARKED
-NEXT=WHOLE_REPOSITORY_KNOWLEDGE_ARCHITECTURE_INVENTORY
+NEXT=REQUIREMENTS_AND_INVARIANTS
 ```
