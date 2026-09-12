@@ -1,7 +1,7 @@
 # Research 124: Scalable Repository Knowledge Architecture and Reconstruction Redesign
 
 **Date:** 2026-09-12
-**Status:** ACTIVE / FOUNDATIONAL CLAUDE DIALOGUE RESOLVED / INITIAL EMPIRICAL DENSITY AUDIT COMPLETE / FAILURE CORPUS + BLIND BASELINES + EXTERNAL RESEARCH NEXT / TARGET ARCHITECTURE DESIGN PAUSED
+**Status:** ACTIVE / FAILURE CORPUS V0.1 COMPLETE / BLIND BASELINE PROTOCOL NEXT / TARGET ARCHITECTURE DESIGN PAUSED
 **Scope:** Redesign how the ADS project preserves, structures, reconstructs, retrieves, activates, validates, evolves and migrates project-development knowledge as the repository, project history, domains, workstreams and collaborating models grow substantially. This is project-support infrastructure around ADS development, not the architecture of the Autonomous Data Science System product itself.
 **Authority:** Active Level-2 architecture research. This record owns the redesign inquiry and preserves the project-owner mandate, research questions and emerging conceptual conclusions. It does not yet replace the current repository information architecture, continuity procedure, authority hierarchy or integrity contracts.
 **Declared references:** `research:064`, `research:103`, `research:104`, `research:106`, `research:107`, `research:108`, `checkpoint:448`, `path:docs/foundations/014_knowledge_preservation_architecture_and_evolution.md`, `path:docs/OPEN_ARCHITECTURE_BACKLOG.md`, `path:docs/CONTINUITY.md`, `path:docs/DEVELOPMENT_METHOD.md`, `path:docs/KNOWLEDGE_MAP.md`
@@ -1654,4 +1654,99 @@ CHECKPOINT_COUNT_PRIMARY_GRANULARITY_FAILURE=NOT_SUPPORTED_BY_FIRST_SAMPLE
 ACTIVE_SURFACE_ACCUMULATION_HYPOTHESIS=STRENGTHENED
 WITHHELD_EXTERNAL_SOURCE=STILL_WITHHELD
 NEXT=BOUNDED_HISTORICAL_FAILURE_CORPUS
+```
+## 55. Bounded historical failure corpus V0.1 complete
+
+The first Research 124 empirical failure corpus is now preserved at:
+
+```text
+docs/research/PROJECT_KNOWLEDGE_FAILURE_CORPUS.md
+```
+
+The corpus is deliberately solution-neutral. It records what failed, what was merely a near-miss, what required recovery, and what remains only a structural gap. It does not encode the successor mechanism expected to solve each case.
+
+V0.1 contains 22 case rows across nine mechanism classes:
+
+```text
+retrieval / discoverability                         3
+stale convenience / derived / duplicated view       3
+situation dispatch / governing-procedure activation 3
+required authority / source selection               2
+semantic scope / identity conflation                3
+continuation / resume                               2
+compression / synthesis / transcription             3
+public / private continuity boundary                2
+latent known-risk / reopen-trigger activation       1 composite pattern
+```
+
+One row, `KF-CR-02`, is explicitly `STRUCTURAL_GAP_NOT_FAILURE`. The remaining 21 rows are observed failures, near-misses, recovery events or composite observed patterns. Row count is not a prevalence estimate; several cases share a broader episode and some classes remain sparse.
+
+### 55.1 Important empirical distinctions
+
+The corpus reinforces that the redesign cannot be evaluated through one generic "retrieval succeeded" metric.
+
+Observed mechanisms include:
+
+```text
+knowledge preserved but global semantic route drifted
+live/current copies diverged while substantive truth survived
+correct governing procedure linked but never activated before guidance
+weaker prose summary used instead of stronger exact implementation source
+accepted source contract narrowed during promotion
+semantic identities/scopes conflated
+abnormal interruption made intended-vs-completed continuation ambiguous
+summary/transcription corrupted quantitative evidence
+public/private continuity surfaces fell out of synchronization
+known escalation triggers remained latent until live pressure was noticed independently
+```
+
+These mechanisms differ in where the failure occurs. Some are storage/routing problems, some are dispatch problems, some are authority/provenance problems, and some are lossy abstraction/promotion problems.
+
+### 55.2 Strongest repeated evidence currently available
+
+The best-supported repeated patterns are:
+
+```text
+routing/current-state/convenience-view drift
+    multiple durable examples across current routing, Knowledge Map and summary surfaces
+
+situation-dispatch failure
+    at least two distinct task families:
+        exact operational restart procedure
+        repository-native model collaboration procedure
+
+synthesis/promotion fidelity loss
+    exact Cockpit implementation evidence replaced by prose-level reinterpretation
+    metadata inventory counts corrupted in durable transcription
+    accepted integrity-contract details dropped during specification promotion
+```
+
+By contrast, deterministic nested resume remains mainly an observed structural weakness rather than a demonstrated wrong-resume event. The corpus preserves that evidentiary asymmetry instead of treating every Research 124 concern as equally proven.
+
+### 55.3 Evaluator contamination constraint
+
+The corpus itself is evaluator evidence. A future "blind" collaborator should not simply be told to read the corpus before performing a baseline task, because that would disclose both the historical failure classes and the cases selected for evaluation.
+
+The next phase must therefore design a baseline protocol that separates:
+
+```text
+source project state available to the tested collaborator
+
+evaluator-only case selection / expected evidence
+
+task prompt presented to the tested collaborator
+
+post-run scoring against the frozen corpus
+```
+
+The protocol must also avoid accidentally testing a post-diagnosis repository state that already describes the exact failure being elicited unless the scenario intentionally measures whether current architecture now activates the lesson.
+
+```text
+FAILURE_CORPUS_V01=COMPLETE
+CASE_ROWS=22
+OBSERVED_OR_NEAR_RECOVERY_PATTERN_ROWS=21
+STRUCTURAL_GAP_ROWS=1
+TARGET_ARCHITECTURE_REMEDIES_ENCODED=false
+WITHHELD_EXTERNAL_SOURCE_USED=false
+NEXT=BLIND_BASELINE_PROTOCOL_DESIGN
 ```
