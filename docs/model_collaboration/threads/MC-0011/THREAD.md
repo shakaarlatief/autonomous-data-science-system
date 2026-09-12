@@ -1,7 +1,7 @@
 # MC-0011 Thread: Project-Development Knowledge Architecture Foundational Dialogue
 
 **Thread:** MC-0011
-**Status:** OPEN / CHATGPT MESSAGE 004 PRESERVED / AWAITING CLAUDE MESSAGE 005
+**Status:** OPEN / FOUNDATIONAL DIALOGUE COMPLETE / AWAITING PROJECT-OWNER CLOSURE DECISION
 **Review mode:** REVIEWED / CURRENT-CONTEXT FOUNDATIONAL DIALOGUE
 **Coordination branch:** `v1-source-vault-bootstrap-resume`
 **Opening repository head:** `1a422c79dc67384426ad10e28c2fc6845147f9e0`
@@ -20,7 +20,7 @@ The knowledge architecture discussed here is project-development infrastructure 
 ## Current phase
 
 ```text
-FOUNDATIONAL_DIALOGUE_AWAITING_CLAUDE_005
+FOUNDATIONAL_DIALOGUE_AWAITING_OWNER_CLOSURE_DECISION
 ```
 
 The detailed contract is in `BRIEF.md`.
